@@ -82,6 +82,9 @@ export function weightedMean(values, weights) {
   if (!Array.isArray(values) || !Array.isArray(weights) || values.length !== weights.length) throw new RangeError('Mismatched arrays');
   for (const value of values) numericValue(value);
   const normalized = normalizeWeights(weights);
+  // Preserve constant-input identity exactly, including assessment grade boundaries.
+  // Validate weights first: equal inputs must not hide invalid or zero-total weights.
+  if (values.every(value => value === values[0])) return values[0] === 0 ? 0 : values[0];
   // Clamp only the final roundoff, never invalid source data.
   return clamp(sum(values.map((value, i) => value * normalized[i])));
 }

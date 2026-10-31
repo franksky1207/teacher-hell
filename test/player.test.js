@@ -202,7 +202,7 @@ test('whole runtime graph remains acyclic, local/browser-compatible and N1 is no
   scan(root);
   function visit(path,stack=[]) { assert.ok(!stack.includes(path)); assert.ok(graph.has(path));graph.get(path).forEach(dep=>visit(dep,[...stack,path])); }
   for (const path of graph.keys()) { visit(path); await import(path); }
-  assert.equal(graph.size,11);
+  assert.equal(graph.size,14);
 });
 
 test('10,000 feasible initializations: strict totals, diversity, extrema and continuation statistics', t => {

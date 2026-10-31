@@ -17,7 +17,8 @@ function uniqueList(ids) {
 }
 
 /** O(people + care links + stored relationships); no all-pairs traversal. */
-export function validateWorld(world) {
+export function validateWorld(world, { stage = 'initial' } = {}) {
+  if (!['initial','runtime'].includes(stage)) throw new RangeError('Unknown validation stage');
   assertShape(world,['version','player','school','classroom','people','families','careLinks','contacts','relationships','reputations','random']);
   if (world.version!==1) throw new RangeError('Unsupported world version');
   const player=restoreCreation(world.player);
@@ -31,7 +32,7 @@ export function validateWorld(world) {
   identifier(classroom.id);
   if (classroom.schoolId!==world.school.id || classroom.teacherId!==playerId) throw new RangeError('Invalid class assignment');
   uniqueList(classroom.studentIds);
-  if (classroom.studentIds.length!==40) throw new RangeError('First cohort must start with 40 students');
+  if (stage==='initial' && classroom.studentIds.length!==40) throw new RangeError('First cohort must start with 40 students');
   exactRecord(classroom.values,GROUP_CODES);
   const ids=new Set([playerId,world.school.id,classroom.id]);
   if (ids.size!==3) throw new RangeError('Entity identity collision');
@@ -62,35 +63,50 @@ export function validateWorld(world) {
       }
     }
   }
-  if (students!==40 || classroom.studentIds.some(id=>!Object.hasOwn(world.people,id) || world.people[id].kind!=='student')) throw new RangeError('Invalid core student membership');
+  if ((stage==='initial' && students!==40) || classroom.studentIds.some(id=>!Object.hasOwn(world.people,id) || world.people[id].kind!=='student')) throw new RangeError('Invalid core student membership');
   for (const count of familyCounts.values()) if (!count.students || !count.caregivers) throw new RangeError('Orphan household');
   if (!Array.isArray(world.careLinks)) throw new TypeError('Care links required');
   const links=new Set(), caredFor=new Set(), activeCaregivers=new Set();
   for (const link of world.careLinks) {
     assertShape(link,['studentId','caregiverId']);
+    identifier(link.studentId); identifier(link.caregiverId);
     const student=Object.hasOwn(world.people,link.studentId)?world.people[link.studentId]:null;
     const caregiver=Object.hasOwn(world.people,link.caregiverId)?world.people[link.caregiverId]:null;
     const key=directedKey(link.studentId,link.caregiverId);
     if (!student || !caregiver || student.kind!=='student' || caregiver.kind!=='caregiver' || student.familyId!==caregiver.familyId || links.has(key)) throw new RangeError('Invalid care link');
     links.add(key); caredFor.add(student.id); activeCaregivers.add(caregiver.id);
   }
-  if (caredFor.size!==40 || Object.values(world.people).some(p=>p.kind==='caregiver' && !activeCaregivers.has(p.id))) throw new RangeError('Missing care association');
+  if (caredFor.size!==students || Object.values(world.people).some(p=>p.kind==='caregiver' && !activeCaregivers.has(p.id))) throw new RangeError('Missing care association');
   for (const [key,contact] of table(world.contacts)) {
     assertShape(contact,['a','b','reference']); identifier(contact.reference);
+    identifier(contact.a); identifier(contact.b);
     personValues(world,contact.a); personValues(world,contact.b);
     if (contact.a===contact.b || key!==contactKey(contact.a,contact.b)) throw new RangeError('Invalid contact');
   }
   for (const [key,relation] of table(world.relationships)) {
     assertShape(relation,['fromId','toId','basis','values']);
+    identifier(relation.fromId); identifier(relation.toId);
     if (key!==directedKey(relation.fromId,relation.toId)) throw new RangeError('Invalid relationship key');
     assertShape(relation.basis,['kind','referenceId']);
-    const expected=relationshipBasis(world,relation.fromId,relation.toId);
-    if (expected.kind!==relation.basis.kind || expected.referenceId!==relation.basis.referenceId) throw new RangeError('Invalid relationship basis');
+    // Stored class provenance can outlive active membership; it is not a new contact claim.
+    const fromStudent=Object.hasOwn(world.people,relation.fromId)&&world.people[relation.fromId].kind==='student';
+    const toStudent=Object.hasOwn(world.people,relation.toId)&&world.people[relation.toId].kind==='student';
+    const caregiverId=relation.fromId===playerId?relation.toId:relation.toId===playerId?relation.fromId:null;
+    const historicalClass=stage==='runtime'&&relation.basis.referenceId===classroom.id&&(
+      (relation.basis.kind==='teacher-assignment'&&((relation.fromId===playerId&&toStudent)||(relation.toId===playerId&&fromStudent)))||
+      (relation.basis.kind==='same-class'&&fromStudent&&toStudent&&relation.fromId!==relation.toId)||
+      (relation.basis.kind==='care-assignment'&&caregiverId!==null&&Object.hasOwn(world.people,caregiverId)&&world.people[caregiverId].kind==='caregiver')
+    );
+    if (!historicalClass) {
+      const expected=relationshipBasis(world,relation.fromId,relation.toId);
+      if (expected.kind!==relation.basis.kind || expected.referenceId!==relation.basis.referenceId) throw new RangeError('Invalid relationship basis');
+    }
     exactRecord(relation.values,RELATION_CODES);
     if (relation.toId===playerId && !Object.hasOwn(world.reputations,key)) throw new RangeError('Missing incoming expectation');
   }
   for (const [key,reputation] of table(world.reputations)) {
     assertShape(reputation,['fromId','toId','scope','values']); identifier(reputation.scope);
+    identifier(reputation.fromId); identifier(reputation.toId);
     if (!Object.hasOwn(world.relationships,key) || key!==directedKey(reputation.fromId,reputation.toId) || reputation.toId!==playerId) throw new RangeError('Dangling reputation source');
     exactRecord(reputation.values,REPUTATION_CODES);
   }

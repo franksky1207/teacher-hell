@@ -26,6 +26,16 @@ export function applyDelta(value, delta) {
   return value + delta;
 }
 
+/** Reflect a natural perturbation at 0/100, without accumulating a boundary atom.
+ * Direct/externally determined changes continue to use saturating applyDelta.
+ */
+export function reflectDelta(value, delta) {
+  numericValue(value); finite(delta);
+  if (delta === 0) return value;
+  const folded = ((value + delta % 200) % 200 + 200) % 200;
+  return folded <= 100 ? folded : 200 - folded;
+}
+
 export function probability(value) { return inRange(value, 0, 1); }
 export function toProbability(value) { return numericValue(value) / 100; }
 

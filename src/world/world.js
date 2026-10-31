@@ -61,9 +61,9 @@ export function createWorld({ seed, player, mode='private' }) {
 }
 
 /** No generation, repair or draws during reload. Operations below return new worlds. */
-export function restoreWorld(saved) {
+export function restoreWorld(saved, options) {
   const world=typeof saved==='string'?JSON.parse(saved):saved;
-  validateWorld(world); return clone(world);
+  validateWorld(world, options); return clone(world);
 }
 
 /** Stable caller IDs identify the same person; tags merge without resampling an existing individual. */

@@ -116,20 +116,21 @@ function checkRecoveryWindow(saved,request) {
     if(old.type==='recovery' && context.startHour<old.context.startHour+old.context.hours && old.context.startHour<context.startHour+context.hours) throw new RangeError('Recovery time already settled');
   }
 }
-/** Caller order is authoritative. One returned envelope contains world + N4/N6 cursors + receipts. */
-export function settleResult(saved,request) {
-  validateSettlement(saved);requestShape(request);
+/** Shared numerical transaction path. Only caller-owned validated state enters here. */
+function prepareConfirmed(saved,request,lookup,checkWindow) {
+  requestShape(request);
   if(request.attemptId!==saved.attemptId) throw new RangeError('Wrong school-year attempt');
-  const encoded=canonicalData(request), prior=saved.receipts.find(r=>r.id===request.id);
+  const encoded=canonicalData(request),prior=lookup(request.id);
   if(prior) {
     if(prior.request!==encoded) throw new RangeError('Confirmed result cannot be changed');
-    return clone(saved);
+    return null;
   }
   if(request.sequence!==saved.receipts.length+1||request.date!==saved.evolution.clock.date||saved.evolution.clock.lastNaturalDate!==request.date) throw new RangeError('Result confirmation must match next sequence and current date');
-  if(request.operation.type==='recovery') checkRecoveryWindow(saved,request);
-  const next=clone(saved),rng=restoreRandom(saved.random),world=next.evolution.world;
+  if(request.operation.type==='recovery') checkWindow(request);
+  const evolution=clone(saved.evolution),rng=restoreRandom(saved.random),world=evolution.world;
   const before=request.operation.type==='recovery'?deriveWorldPanel(world):null;
-  const {changes,recovery}=resolveOperation(world,request.operation,rng);
+  // Detach effect targets too: later caller edits must never change locked receipts.
+  const {changes,recovery}=resolveOperation(world,clone(request.operation),rng);
   for(const change of changes) {
     const record=validateChange(world,change);finite(change.delta);
     record[change.code]=applyDelta(record[change.code],change.delta);
@@ -139,9 +140,63 @@ export function settleResult(saved,request) {
     recovery.improved=STATE_NAMES.filter(name=>after[name]>before[name]);
     recovery.worsened=STATE_NAMES.filter(name=>after[name]<before[name]);
   }
-  next.random=rng.snapshot();
-  next.receipts.push({id:request.id,sequence:request.sequence,date:request.date,request:encoded,changes,recovery});
-  return validateSettlement(next);
+  validateEvolution(evolution);
+  const receipt={id:request.id,sequence:request.sequence,date:request.date,request:encoded,changes,recovery};
+  return {evolution,random:rng.snapshot(),receipt};
+}
+/** Pure import-safe path: audit the supplied ledger; publish only a complete envelope. */
+export function settleResult(saved,request) {
+  validateSettlement(saved);
+  const prepared=prepareConfirmed(saved,request,id=>saved.receipts.find(r=>r.id===id),r=>checkRecoveryWindow(saved,r));
+  if(!prepared)return clone(saved);
+  return {version:1,attemptId:saved.attemptId,evolution:prepared.evolution,random:prepared.random,receipts:[...clone(saved.receipts),prepared.receipt]};
+}
+
+/** Reassemble an atomically stored checkpoint and its append-only receipt rows. */
+export function restoreSettlementCheckpoint(checkpoint,receipts) {
+  assertShape(checkpoint,['version','attemptId','evolution','random','receiptCount']);
+  if(!Number.isSafeInteger(checkpoint.receiptCount)||checkpoint.receiptCount<0||!Array.isArray(receipts)||receipts.length!==checkpoint.receiptCount) throw new RangeError('Checkpoint/receipt count mismatch');
+  const {version,attemptId,evolution,random}=checkpoint;
+  return restoreSettlement({version,attemptId,evolution,random,receipts});
+}
+
+/** Exclusive in-memory owner. Audit JSON once, then index immutable historical receipts.
+ * Never accepts a trusted flag or exposes internal state. snapshot() is the save boundary.
+ * No receipt is dropped; snapshots retain the original version-1 JSON contract.
+ */
+export function createSettlementSession(saved) {
+  let state=restoreSettlement(saved);
+  const ids=new Map(state.receipts.map(r=>[r.id,r])),windows=new Map();
+  function indexWindow(receipt) {
+    const op=JSON.parse(receipt.request).operation;
+    if(op.type==='recovery') {
+      if(!windows.has(receipt.date))windows.set(receipt.date,[]);
+      windows.get(receipt.date).push([op.context.startHour,op.context.startHour+op.context.hours]);
+    }
+  }
+  state.receipts.forEach(indexWindow);
+  return Object.freeze({
+    cursor:()=>({attemptId:state.attemptId,date:state.evolution.clock.date,year:state.evolution.world.player.year,nextSequence:state.receipts.length+1}),
+    snapshot:()=>clone(state),
+    checkpoint:()=>clone({version:state.version,attemptId:state.attemptId,evolution:state.evolution,random:state.random,receiptCount:state.receipts.length}),
+    world:()=>clone(state.evolution.world),
+    advanceDay(input) {
+      const evolution=advanceDay(state.evolution,input);
+      state={...state,evolution};
+      return clone(evolution.clock);
+    },
+    settle(request) {
+      const prepared=prepareConfirmed(state,request,id=>ids.get(id),r=>{
+        const c=validateRecovery(r.operation.context);
+        if((windows.get(r.date)??[]).some(([start,end])=>c.startHour<end&&start<c.startHour+c.hours)) throw new RangeError('Recovery time already settled');
+      });
+      if(!prepared)return clone(ids.get(request.id));
+      // All potentially rejecting numeric/structural checks completed before publication.
+      state={...state,evolution:prepared.evolution,random:prepared.random};
+      state.receipts.push(prepared.receipt);ids.set(prepared.receipt.id,prepared.receipt);indexWindow(prepared.receipt);
+      return clone(prepared.receipt);
+    },
+  });
 }
 export function settleResults(saved,requests) {
   if(!Array.isArray(requests)) throw new TypeError('Ordered requests required');

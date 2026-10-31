@@ -68,7 +68,7 @@ export function restoreWorld(saved, options) {
 
 /** Stable caller IDs identify the same person; tags merge without resampling an existing individual. */
 export function ensureNPCs(saved,specs) {
-  validateWorld(saved);
+  validateWorld(saved,{stage:'runtime'});
   if (!Array.isArray(specs)) throw new TypeError('NPC specifications required');
   const world=clone(saved), rng=restoreRandom(world.random.people);
   for (const spec of specs) {
@@ -81,12 +81,12 @@ export function ensureNPCs(saved,specs) {
       put(world.people,spec.id,createPerson(spec.id,'other',spec.roleIds,rng));
     }
   }
-  world.random.people=rng.snapshot();return validateWorld(world);
+  world.random.people=rng.snapshot();return validateWorld(world,{stage:'runtime'});
 }
 
 /** Declare supplied pre-existing acquaintance facts in one transaction, without events/draws. */
 export function withAcquaintances(saved,facts) {
-  validateWorld(saved);
+  validateWorld(saved,{stage:'runtime'});
   if (!Array.isArray(facts)) throw new TypeError('Acquaintance facts required');
   const world=clone(saved);
   for (const fact of facts) {
@@ -97,7 +97,7 @@ export function withAcquaintances(saved,facts) {
       if (world.contacts[key].reference!==reference) throw new RangeError('Conflicting acquaintance fact');
     } else put(world.contacts,key,{a,b,reference});
   }
-  return validateWorld(world);
+  return validateWorld(world,{stage:'runtime'});
 }
 export function withAcquaintance(saved,a,b,reference) {
   return withAcquaintances(saved,[{a,b,reference}]);
@@ -105,20 +105,22 @@ export function withAcquaintance(saved,a,b,reference) {
 
 /** Batch API avoids copying/validating the whole world once per new relation. */
 export function ensureRelationships(saved,pairs) {
-  validateWorld(saved);
+  validateWorld(saved,{stage:'runtime'});
   if (!Array.isArray(pairs)) throw new TypeError('Relationship pairs required');
   const world=clone(saved),rng=restoreRandom(world.random.relationships);
   for (const pair of pairs) {
     if (!Array.isArray(pair) || pair.length!==2) throw new TypeError('Expected directional pair');
-    relationshipBasis(world,...pair);appendRelation(world,...pair,rng);
+    pair.forEach(identifier);
+    if(!Object.hasOwn(world.relationships,directedKey(...pair))) relationshipBasis(world,...pair);
+    appendRelation(world,...pair,rng);
   }
-  world.random.relationships=rng.snapshot();return validateWorld(world);
+  world.random.relationships=rng.snapshot();return validateWorld(world,{stage:'runtime'});
 }
 
 /** N2-compatible views, not activation: never combine these with bootstrap automatically. */
 export function playerEvaluationSources(world) {
-  validateWorld(world);
-  return Object.entries(world.reputations).map(([key,rep])=>({sourceId:rep.fromId,kind:'person',targetId:rep.toId,
+  validateWorld(world,{stage:'runtime'});
+  return Object.entries(world.reputations).filter(([,rep])=>rep.toId===world.player.current.playerId).map(([key,rep])=>({sourceId:rep.fromId,kind:'person',targetId:rep.toId,
     scope:rep.scope,weight:1,values:{...rep.values,...world.relationships[key].values}}))
     .map(source=>{ delete source.values['5-2'];return source; });
 }

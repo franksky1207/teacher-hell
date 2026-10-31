@@ -1,0 +1,13 @@
+{
+  "name": "teacher-hell",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test --test-isolation=none",
+    "test:coverage": "node --test --test-isolation=none --experimental-test-coverage",
+    "simulate:long": "node --expose-gc simulation/durability.js"
+  }
+}

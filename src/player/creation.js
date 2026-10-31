@@ -90,7 +90,7 @@ export function createCandidate({ seed, playerId, schoolId }) {
   return freezeTree({ version:1, phase:'candidate', candidate, random:rng.snapshot() });
 }
 
-export function restoreCreation(saved) {
+export function restoreCreation(saved, options = {}) {
   const state = typeof saved === 'string' ? JSON.parse(saved) : saved;
   if (!state || !['candidate','confirmed'].includes(state.phase)) throw new TypeError('Unknown creation phase');
   const candidate = state.phase === 'candidate';
@@ -99,7 +99,7 @@ export function restoreCreation(saved) {
   restoreRandom(state.random); // Validate without consuming a draw.
   validateInitial(candidate ? state.candidate : state.initial);
   if (!candidate) {
-    derivePanel(state.current); // Current abilities may grow; no 240/fixed-state constraint.
+    derivePanel(state.current, options); // Current abilities may grow; no 240/fixed-state constraint.
     if (!Number.isSafeInteger(state.year) || state.year < 1 ||
         state.initial.playerId !== state.current.playerId || state.initial.schoolId !== state.current.schoolId) throw new RangeError('Career identity/year mismatch');
   }

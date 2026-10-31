@@ -1,3 +1,4 @@
+import { resolveWorldEvaluations, validateSocial } from './evaluations.js';
 import { assertShape, identifier } from '../player/panel.js';
 import { restoreCreation } from '../player/creation.js';
 import { restoreRandom } from '../numeric/random.js';
@@ -19,9 +20,9 @@ function uniqueList(ids) {
 /** O(people + care links + stored relationships); no all-pairs traversal. */
 export function validateWorld(world, { stage = 'initial' } = {}) {
   if (!['initial','runtime'].includes(stage)) throw new RangeError('Unknown validation stage');
-  assertShape(world,['version','player','school','classroom','people','families','careLinks','contacts','relationships','reputations','random']);
+  assertShape(world,['version','player','school','classroom','people','families','careLinks','contacts','relationships','reputations','random',...(Object.hasOwn(world,'social')?['social']:[])]);
   if (world.version!==1) throw new RangeError('Unsupported world version');
-  const player=restoreCreation(world.player);
+  const player=restoreCreation(world.player,{resolveEvaluations: entries => resolveWorldEvaluations(world,entries)});
   if (player.phase!=='confirmed') throw new RangeError('Confirm player before world initialization');
   const playerId=player.current.playerId;
   assertShape(world.school,['id','mode','values']);
@@ -107,13 +108,14 @@ export function validateWorld(world, { stage = 'initial' } = {}) {
   for (const [key,reputation] of table(world.reputations)) {
     assertShape(reputation,['fromId','toId','scope','values']); identifier(reputation.scope);
     identifier(reputation.fromId); identifier(reputation.toId);
-    if (!Object.hasOwn(world.relationships,key) || key!==directedKey(reputation.fromId,reputation.toId) || reputation.toId!==playerId) throw new RangeError('Dangling reputation source');
+    if (!Object.hasOwn(world.relationships,key) || key!==directedKey(reputation.fromId,reputation.toId) || (reputation.toId!==playerId && !Object.hasOwn(world.social?.attestations ?? {},key))) throw new RangeError('Dangling reputation source');
     exactRecord(reputation.values,REPUTATION_CODES);
   }
   for (const evaluation of player.current.evaluations) {
     if (evaluation.kind==='person') personValues(world,evaluation.sourceId);
-    if (evaluation.kind==='group' && ![classroom.id,world.school.id].includes(evaluation.sourceId)) throw new RangeError('Unknown evaluation group');
+    if (evaluation.kind==='group' && ![classroom.id,world.school.id].includes(evaluation.sourceId) && !Object.hasOwn(world.social?.groups ?? {},evaluation.sourceId)) throw new RangeError('Unknown evaluation group');
   }
+  if (Object.hasOwn(world,'social')) validateSocial(world);
   assertShape(world.random,['structure','people','relationships','environment']);
   Object.values(world.random).forEach(restoreRandom);
   return world;

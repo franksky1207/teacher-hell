@@ -11,6 +11,7 @@ export function evolutionHolders(world) {
     ...['person','life','work'].map(name=>({id:key(`player-${name}`,player),record:current[name],isPlayer:true,year:world.player.year,kind:`player-${name}`})),
     ...Object.values(world.people).map(p=>({id:key('person',p.id),record:p.values,isPlayer:false,year:1,kind:'person',familyId:p.familyId,schoolExposure:p.kind==='student'&&activeStudents.has(p.id) ? .25 : 0})),
     ...Object.values(world.families).map(f=>({id:key('family',f.id),record:f.values,isPlayer:false,year:1,kind:'family'})),
+    ...Object.values(world.social?.groups ?? {}).filter(g=>g.kind==='local').map(g=>({id:key('group',g.id),record:g.values,isPlayer:false,year:1,kind:'group'})),
     {id:key('classroom',world.classroom.id),record:world.classroom.values,isPlayer:false,year:1,kind:'classroom'},
     {id:key('school',world.school.id),record:world.school.values,isPlayer:false,year:1,kind:'school'},
   ];

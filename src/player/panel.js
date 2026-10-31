@@ -42,7 +42,7 @@ export function identifier(value) {
 }
 
 /** One player's applicable sources; no panel fields or world/NPC generation. */
-export function validateSources(sources) {
+export function validateSources(sources, { resolveEvaluations } = {}) {
   assertShape(sources, ['playerId','schoolId','person','life','work','outlook','evaluations']);
   identifier(sources.playerId); identifier(sources.schoolId);
   if (sources.playerId === sources.schoolId) throw new RangeError('Player and school identities must differ');
@@ -51,8 +51,11 @@ export function validateSources(sources) {
   if (sources.outlook.fromId !== sources.playerId || sources.outlook.toId !== sources.schoolId) throw new RangeError('Invalid outward relationship direction');
   validateRecord(sources.outlook.values);
   if (!Array.isArray(sources.evaluations) || sources.evaluations.length === 0) throw new RangeError('Evaluation sources required');
+  const referenced = sources.evaluations.some(source => Object.hasOwn(source, 'reference'));
+  if (referenced && (!resolveEvaluations || sources.evaluations.some(source => Object.hasOwn(source, 'values')))) throw new RangeError('References require world resolution; no mixed bootstrap');
+  const evaluations = referenced ? resolveEvaluations(sources.evaluations) : sources.evaluations;
   const ids = new Set();
-  for (const source of sources.evaluations) {
+  for (const source of evaluations) {
     assertShape(source, ['sourceId','kind','targetId','scope','weight','values']);
     identifier(source.sourceId); identifier(source.scope);
     if (!['bootstrap','person','group'].includes(source.kind) || source.targetId !== sources.playerId ||
@@ -64,7 +67,7 @@ export function validateSources(sources) {
   }
   // Validate every required source even when its evaluation weight is zero.
   for (const entries of Object.values(PANEL_SOURCES)) for (const [holder, code] of entries) {
-    if (holder === 'evaluation') sources.evaluations.forEach(source => requireValue(source.values, code));
+    if (holder === 'evaluation') evaluations.forEach(source => requireValue(source.values, code));
     else requireValue(holder === 'outlook' ? sources.outlook.values : sources[holder], code);
   }
   return sources;
@@ -78,12 +81,14 @@ function project(entries, resolve) {
 }
 
 /** Pure one-way view. No initialization special case, normalization to 240, or write-back. */
-export function derivePanel(sources) {
-  validateSources(sources);
+export function derivePanel(sources, options = {}) {
+  let resolved;
+  validateSources(sources, {resolveEvaluations: options.resolveEvaluations ? entries => (resolved = options.resolveEvaluations(entries)) : undefined});
+  const evaluations = resolved ?? sources.evaluations;
   const result = {};
   for (const [name, entries] of Object.entries(PANEL_SOURCES)) {
     if (name === '聲望') {
-      result[name] = weightedMean(sources.evaluations.map(source => project(entries, () => source.values)), sources.evaluations.map(source => source.weight));
+      result[name] = weightedMean(evaluations.map(source => project(entries, () => source.values)), evaluations.map(source => source.weight));
     } else {
       const value = project(entries, holder => holder === 'outlook' ? sources.outlook.values : sources[holder]);
       // Present stress reserve can be full despite low skill when support is ample.

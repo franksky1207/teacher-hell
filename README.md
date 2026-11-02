@@ -6,7 +6,7 @@ N1～N8純數值工程已完成封版驗收；這不是完整遊戲。最新架�
 
 ## 目前工程入口｜第一階段基礎
 
-第01、02批在 `integrate/phase1-foundation` 累積開發；正式22批、契約責任及各批交接集中於
+第01～03批在 `integrate/phase1-foundation` 累積開發；正式22批、契約責任及各批交接集中於
 [docs/05](docs/05-未定案與工作方式.md#第01批工程紀錄與後續介面2026-11-02)。
 這一節取代下面歷史N1～N8章節對「目前工具鏈」的說明；歷史驗收數據仍保留。
 
@@ -33,13 +33,14 @@ npm run preview
 | `npm run check` | 全部JS語法、執行模組的分層依賴與無環檢查 |
 | `npm run test:unit` | 核心數學、record、PRNG單元套件（core／random） |
 | `npm run test:contract` | 新外層資料格式、錯誤輸入、N1～N8相容契約 |
-| `npm run test:integration` | 既有N8跨模組整合＋世界交易套件 |
+| `npm run test:integration` | 既有N8跨模組整合＋世界交易及存檔套件 |
 | `npm run test:scenario` | 合成情境重設、固定種子及JSON後續重現 |
 | `npm run test:tooling` | 架構、選測、防零測試、建置重現與預覽伺服器 |
-| `npm run test:quick` | unit＋contract＋scenario＋tooling＋runtime；不跑舊大量統計套件 |
-| `npm run test:module -- module=...` | 精準選core/random/player/world/evolution/evolution-stress/social/changes/assessment/integration/contracts/scenario/architecture/tooling/runtime/runtime-stress；numeric為core＋random別名 |
+| `npm run test:quick` | unit＋contract＋scenario＋tooling＋runtime＋storage；不跑舊大量統計套件 |
+| `npm run test:module -- module=...` | 精準選core/random/player/world/evolution/evolution-stress/social/changes/assessment/integration/contracts/scenario/architecture/tooling/runtime/runtime-stress/storage；numeric為core＋random別名 |
 | `npm test` | 全部回歸，含N1～N8原數值測試與新測試 |
 | `npm run test:coverage` | 相同全回歸加Node涵蓋率 |
+| `npm run test:storage:browser` | 真實Chromium三槽IndexedDB、雙頁CAS、故障注入、備份恢復及合成大檔容量；暫存profile，與玩家資料隔離 |
 | `npm run test:browser` | 可選：需已安裝Chromium（或CHROMIUM_BIN）；本機CDP驗收子路徑、重設及窄視窗重載，不代表Safari |
 
 可於測試指令後加 `-- --name 正規表示式`；module指令例子如上。零命中回傳非零狀態，不冒稱通過。
@@ -58,7 +59,9 @@ CI只有一個快速工作流程，於PR及手動呼叫執行 `npm ci --ignore-s
 
 第02批已加入記憶體世界交易、因果／知情投影與唯一結算，入口為 `src/runtime/`，
 詳細契約及第03批交接見 [docs/05第02批紀錄](docs/05-未定案與工作方式.md#第02批工程紀錄與第03批交接2026-11-02)。
-目前仍待：03三槽原子持久化，04完整40年校曆。
+第03批已加入三槽IndexedDB、CAS、完整快照、匯出入及恢復，入口為 `src/storage/`；
+[資料契約與04交接](docs/05-未定案與工作方式.md#第03批工程紀錄恢復查核與第04批交接2026-11-02)。
+目前仍待：04完整40年校曆，以及Safari／iPhone真機存檔驗證。
 N3歷史班級驗證及N7跨屆／在籍／多成果的原有限制仍未修改，不能把新引用封套稱為那些功能已完成。
 
 ### 第01批實際驗收紀錄（2026-11-02）
@@ -1420,3 +1423,39 @@ heap包含測試複本與GC波動，不能當作手機常駐記憶體保證；�
 
 未執行：完整涵蓋率、正式30年CLI、Safari／iPhone真機、磁碟存檔／多頁CAS、正式校曆與事件內容。
 本批無上述後續實作；第03批須承接完整世界與收據，DB成功後才安裝記憶體草稿。
+
+## 第03批本次驗收紀錄（2026-11-02）
+
+中斷前第03批未提交修改／原測試紀錄未找回，恢復0個第03批修改檔；前兩批遠端提交完整保留。
+本次在`integrate/phase1-foundation`補作並重新驗收，不沿用原對話的12組／794萬bytes紀錄。
+實作與恢復API見[docs/05第03批紀錄](docs/05-未定案與工作方式.md#第03批工程紀錄恢復查核與第04批交接2026-11-02)。
+環境：Node24.19.0、npm11.9.0、Chromium154.0.8037.57（Debian13），暫存profile與隔離DB。
+
+| 本次實際命令／檢查 | 結果 |
+|---|---|
+| `npm ci --ignore-scripts` | 安裝成功；只有原Acorn開發依賴，未新增依賴 |
+| `npm run test:module -- module=storage,runtime,contracts,architecture` | 37通過、0失敗、0跳過，11.76秒；其中storage 7項 |
+| `npm test`（最終實作） | 135通過、0失敗、0跳過，129.18秒；含N1～N8、01／02及新存檔回歸 |
+| `npm run verify:quick` | 53通過、0失敗、0跳過；語法、35個執行模組分層／無環及確定性build通過 |
+| `npm run test:browser` | 退出0；01／02既有子路徑、ES modules、重設、390×844重載及世界交易／知情投影通過 |
+| `npm run test:storage:browser` | 退出0；真實雙頁CAS、三槽、重送、實際重載、abort／注入配額／記憶體發布故障、N6唯一結算與原子回復、版本／匯入／重試／缺頁與備份恢復全部通過 |
+| `git diff --exit-code origin/main -- src/numeric src/player src/world src/social src/evolution src/changes src/assessment simulation` | 退出0；原27個N1～N8執行模組及模擬無變更 |
+| `git diff --check` | 通過 |
+
+大資料測試走正式runtime與storage API：30個合成年度bucket、30事件、600事實、長篇原文及完整收據；
+開學快照也包含全部600事實，與目前世界一起匯出 **20,721,680 bytes（約19.76 MiB），33個磁碟分段**。
+合成世界生成431ms；寫入2710ms、匯出757ms、匯入1769ms、完整讀取及驗證787ms。
+另外通過大檔匯入中止後原metadata／pages完全相同，以及實際頁面重載後世界／opening各600事實完整保留。
+逐欄比對所有輸出，沒有截斷或摘要化歷史；並非只比大小或筆數。
+Chrome回報heap 266,263,168 bytes，包含多份測試複本、序列化字串及GC波動，**不是峰值或手機常駐保證**。
+
+初輪瀏覽器因缺少testId被字串化誤接受而失敗，修正後通過。
+後續自查補強分段原子性、永久generation、重試去重／舊頁token、開學交易快照與受損payload的安全備份恢復，
+補測後最終精準、Chromium及完整回歸均無未解失敗。磁碟成功但記憶體同步失敗明報已提交且需恢復，
+不當作回滾；上層應保留原操作ID，恢復後重送不再結算。
+
+第03批實作及本次列出的自動驗收通過；**未測Safari／iPhone真機、真實配額耗盡、硬體斷電及手機記憶體峰值**，
+不宣稱跨裝置完整驗收。30個bucket只驗容量，未執行正式30年十屆遊戲、平衡或完整內容驗收。
+仍以全量驗證／重寫快照為基礎，後續應量測真正晚期世界，再決定Worker／增量索引；不以刪歷史換速度。
+04固定40年校曆與18節課表尚未開始；11年度授權、12／14正式存檔介面、16手機整合另依原藍圖承接。
+共用PR保持Draft；不合併main、不部署、不建立Release。

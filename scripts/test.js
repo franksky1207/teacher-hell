@@ -5,11 +5,11 @@ const legacy = ['assessment','changes','core','evolution','evolution-stress','in
 export const suites = Object.freeze({
   unit: ['core','random'],
   contract: ['contracts'],
-  integration: ['integration','runtime'],
+  integration: ['integration','runtime','storage'],
   scenario: ['scenario'],
   tooling: ['architecture','tooling'],
-  quick: ['runtime','core','random','contracts','scenario','architecture','tooling'],
-  regression: [...legacy,'runtime','runtime-stress','contracts','scenario','architecture','tooling'],
+  quick: ['storage','runtime','core','random','contracts','scenario','architecture','tooling'],
+  regression: ['storage',...legacy,'runtime','runtime-stress','contracts','scenario','architecture','tooling'],
 });
 export function testSelection(args) {
   const [selection = 'regression', ...rest] = args;

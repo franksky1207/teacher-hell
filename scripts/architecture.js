@@ -12,6 +12,7 @@ const allowed = {
   assessment: ['assessment','social','world','player','numeric'],
   contracts: ['contracts','changes','evolution','social','world','player','numeric','assessment'],
   runtime: ['runtime','contracts','changes','evolution','social','world','player','numeric'],
+  storage: ['storage','runtime','contracts','changes'],
   web: ['web','contracts'],
 };
 function layer(path) {

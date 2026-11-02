@@ -1,0 +1,106 @@
+/** Real Chromium IndexedDB acceptance runner. Temporary profile/site, no player data. */
+import { spawn } from 'node:child_process';
+import { mkdtemp, cp, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join, resolve } from 'node:path';
+import { once } from 'node:events';
+import { root } from './project.js';
+import { createPreviewServer } from './preview.js';
+
+const temporary = await mkdtemp(join(tmpdir(),'teacher-hell-browser-'));
+let browser, server, socket;
+try {
+  await cp(resolve(root,'dist'),join(temporary,'site','teacher-hell'),{recursive:true});
+  await cp(resolve(root,'test/support'),join(temporary,'site','teacher-hell/test/support'),{recursive:true});
+  server=await createPreviewServer(join(temporary,'site'));server.listen(0,'127.0.0.1');await once(server,'listening');
+  const url=`http://127.0.0.1:${server.address().port}/teacher-hell/`;
+  browser=spawn(process.env.CHROMIUM_BIN || 'chromium',[
+    '--headless','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-first-run',
+    '--no-default-browser-check','--disable-background-networking','--disable-extensions','--disable-sync',
+    `--user-data-dir=${join(temporary,'profile')}`,'--remote-debugging-port=0','about:blank',
+  ],{stdio:['ignore','ignore','pipe']});
+  const debuggerUrl=await new Promise((resolve,reject)=>{
+    const timer=setTimeout(()=>reject(new Error('Chromium debugger startup timed out')),15000);
+    browser.once('error',error=>{clearTimeout(timer);reject(error);});
+    browser.once('exit',code=>{clearTimeout(timer);reject(new Error(`Chromium exited before debugger: ${code}`));});
+    browser.stderr.on('data',chunk=>{
+      const match=String(chunk).match(/DevTools listening on (ws:\/\/[^\s]+)/);
+      if(match){clearTimeout(timer);resolve(match[1]);}
+    });
+  });
+  socket=new WebSocket(debuggerUrl);await once(socket,'open');
+  let sequence=0;const pending=new Map();
+  socket.addEventListener('message',event=>{
+    const message=JSON.parse(event.data),entry=pending.get(message.id);
+    if(entry){pending.delete(message.id);clearTimeout(entry.timer);message.error?entry.reject(new Error(JSON.stringify(message.error))):entry.resolve(message.result);}
+  });
+  const call=(method,params={},sessionId)=>new Promise((resolve,reject)=>{
+    const id=++sequence,timer=setTimeout(()=>{pending.delete(id);reject(new Error(`CDP timeout: ${method}`));},120000);
+    pending.set(id,{resolve,reject,timer});socket.send(JSON.stringify({id,method,params,...(sessionId?{sessionId}:{})}));
+  });
+  const {targetId}=await call('Target.createTarget',{url:'about:blank'});
+  const {sessionId}=await call('Target.attachToTarget',{targetId,flatten:true});
+  const evaluate=async expression=>{
+    const out=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true},sessionId);
+    if(out.exceptionDetails)throw new Error(JSON.stringify(out.exceptionDetails));
+    return out.result.value;
+  };
+  await call('Page.enable',{},sessionId);
+  const passed=async()=>{
+    for(let i=0;i<100;i++){
+      const state=await evaluate('document.querySelector("#status")?.dataset.status');
+      if(state==='passed')return;
+      if(state==='failed')throw new Error(await evaluate('document.querySelector("#status").textContent'));
+      await new Promise(resolve=>setTimeout(resolve,100));
+    }
+    throw new Error('Engineering page did not finish');
+  };
+  await call('Page.navigate',{url},sessionId);await passed();
+  await evaluate('document.querySelector("#repeat").click()');await passed();
+  await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true},sessionId);
+  await evaluate('document.querySelector("#status").dataset.status="pending"');
+  await call('Page.reload',{},sessionId);await passed();
+  const evalIn=async (expression,sid=sessionId)=>{
+    const out=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true},sid);
+    if(out.exceptionDetails)throw Error(JSON.stringify(out.exceptionDetails));return out.result.value;
+  };
+  const testId=temporary.split('/').at(-1);
+  const setup=initialize=>`(async()=>{globalThis.checks=await import('./test/support/storage-checks.js');globalThis.st=await checks.setup(${JSON.stringify(testId)},${initialize});return true;})()`;
+  await evalIn(setup(true));
+  console.log('PASS',await evalIn('checks.basics(st)'));
+  const second=await call('Target.createTarget',{url});
+  const peer=await call('Target.attachToTarget',{targetId:second.targetId,flatten:true});
+  // Navigation is asynchronous. Probe only the same-origin document before imports.
+  for(let i=0;i<100;i++){if(await evalIn(`location.href===${JSON.stringify(url)} && document.readyState==='complete'`,peer.sessionId))break;await new Promise(r=>setTimeout(r,100));}
+  await evalIn(setup(false),peer.sessionId);
+  const race=await Promise.all([evalIn("checks.compete(st,'tab-a')"),evalIn("checks.compete(st,'tab-b')",peer.sessionId)]);
+  if(race.filter(r=>r.ok).length!==1||race.find(r=>!r.ok).code!=='STALE')throw Error('Cross-page CAS failed: '+JSON.stringify(race));
+  const winningTag=race[0].ok?'tab-a':'tab-b';console.log('PASS real two-page simultaneous CAS:',JSON.stringify(race.map(r=>({ok:r.ok,code:r.code,revision:r.token?.revision}))));
+  console.log('PASS',await evalIn(`checks.replay(st,${JSON.stringify(winningTag)})`,peer.sessionId));
+  console.log('PASS',await evalIn('checks.faults(st)'));
+  await evalIn('st.db.close()');
+  await call('Page.navigate',{url:'about:blank'},sessionId);
+  await call('Page.navigate',{url},sessionId);await passed();await evalIn(setup(false));
+  const revision=await evalIn("st.session.snapshot().payload.world.extensions['teacher-hell/world'].revision");if(revision!==2)throw Error('Actual navigation lost committed world');
+  console.log('PASS actual page reload after memory-publication failure: revision',revision);
+  console.log('PASS',await evalIn('checks.importsAndRetry(st)'));
+  console.log('PASS',await evalIn('checks.decision(st)'));
+  await evalIn('checks.holdSlot(st)');
+  const other=await evalIn(`(async()=>{const s=await (await import('./src/storage/session.js')).createStoredSession(st.db,3);return s.import(await s.export(),{expectedToken:s.snapshot().token,confirmed:true});})()`,peer.sessionId);
+  if(!other.committed)throw Error('Other slot blocked');await evalIn('checks.releaseSlot(st)');console.log('PASS held slot 1 transaction does not block slot 3 in another page');
+  console.log('PASS',await evalIn('checks.namespaceAndCorruption(st)'));
+  const metrics=await evalIn('checks.capacity(st)');console.log('PASS capacity',JSON.stringify(metrics));
+  await evalIn('st.db.close()');await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();await evalIn(setup(false));
+  const large=await evalIn(`(async()=>{const p=(await st.db.read(2)).payload;return {facts:p.world.extensions['teacher-hell/world'].facts.length,openingFacts:p.opening.extensions['teacher-hell/world'].facts.length};})()`);
+  if(large.facts!==600||large.openingFacts!==600)throw Error('Large reload lost history');console.log('PASS actual page reload restores large world and full opening snapshot',JSON.stringify(large));
+  console.log('PASS Chromium storage: all checks complete; synthetic only; NOT Safari/iPhone or full 30-year gameplay.');
+  await call('Browser.close');
+} finally {
+  socket?.close();
+  if(browser?.pid && browser.exitCode===null && browser.signalCode===null){
+    const timeout=setTimeout(()=>browser.kill('SIGKILL'),3000);
+    try{await once(browser,'exit');}finally{clearTimeout(timeout);}
+  }
+  if(server)await new Promise(resolve=>server.close(resolve));
+  await rm(temporary,{recursive:true,force:true,maxRetries:5,retryDelay:100});
+}

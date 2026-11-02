@@ -20,7 +20,8 @@
     "test:coverage": "node scripts/project.js test regression --coverage",
     "verify:quick": "npm run check && npm run test:quick && npm run build",
     "simulate:long": "node --expose-gc simulation/durability.js",
-    "test:browser": "npm run build && node scripts/browser-smoke.js"
+    "test:browser": "npm run build && node scripts/browser-smoke.js",
+    "test:storage:browser": "npm run build && node scripts/storage-browser.js"
   },
   "devDependencies": {
     "acorn": "8.15.0"

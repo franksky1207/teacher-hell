@@ -1497,3 +1497,8 @@ Chromium正式情境完成合法世界、合成成果、原N6、時間、歷史�
 **第04批及第一階段本次工程／自動驗收通過，具備技術整合條件；是否合併仍待使用者另行授權。**
 Safari／iPhone、真實配額耗盡／斷電、手機記憶體峰值及正式96主題／十屆30年遊戲／平衡未測，不能冒稱通過。
 保持Draft、不Ready、不合併main、不部署、不建Release、不開始05。
+
+第08批NPC工程驗收（非正式玩家介面）：`npm run demo:npc`／`npm run test:npc:routes`
+沿用第07批CLI入口，重現傾聽、情緒與無玩家介入同儕三種情境，列出合法知情、行為因果、
+N5／N6效果、候選資格及恢復／重送。精準測試：`npm run test:module -- module=autonomy`；
+十屆合成負載：`node simulation/npc-social.js`。工程設定、正式介面、結果與限制集中於docs/05第08批紀錄。

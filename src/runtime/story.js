@@ -131,7 +131,7 @@ export function validateStoryHistory(w){
    need(same(compiled.state,h.data.state)&&same(compiled.operations,h.data.operations),'illegal story transition or consequences');
    for(const operation of compiled.operations){
     if(operation.type==='fact'){const f=r(w).facts.find(f=>f.id===operation.id);need(f&&f.description===operation.description&&same(f.data,operation.data)&&same(f.subjectIds,operation.subjectIds)&&same(f.witnessIds,operation.witnessIds)&&same(f.categoryCodes,operation.categoryCodes)&&same(f.causeIds,operation.causeIds)&&f.eventId===e.id&&f.stageId===operation.stageId,'fact differs from action');}
-    if(operation.type==='learn'){const learned=r(w).knowledge.find(k=>k.actorId===operation.actorId&&k.claimId===operation.claimId&&k.versionId===operation.versionId);need(learned&&same(learned.source,operation.source)&&learned.belief===operation.belief&&learned.confidence===operation.confidence,'knowledge differs from action');}
+    if(operation.type==='learn'){const learned=r(w).knowledge.find(k=>k.actorId===operation.actorId&&k.claimId===operation.claimId&&k.versionId===operation.versionId);need(learned&&same(learned.source,operation.source)&&r(w).history[learned.order-1].data.belief===operation.belief&&r(w).history[learned.order-1].data.confidence===operation.confidence,'knowledge differs from action');}
     if(operation.type==='reveal')need(r(w).disclosures.some(d=>d.actorId===operation.actorId&&d.factId===operation.factId&&same(d.source,operation.source)),'disclosure differs from action');
     if(operation.type==='result'){const result=e.results.find(x=>x.id===operation.id);need(result&&result.factId===operation.factId&&result.stageId===operation.stageId&&result.subjectId===operation.subjectId&&result.facet===operation.facet&&same(result.effectIds,operation.effects.map(e=>e.id)),'missing causal result');for(const eff of operation.effects){const nr=w.numeric.receipts.find(x=>x.id===eff.id)??r(w).numericArchives.flatMap(a=>a.receipts).find(x=>x.id===eff.id);need(nr&&same(JSON.parse(nr.request).operation,eff.operation),'N6 differs from action');}}
    }
@@ -140,6 +140,12 @@ export function validateStoryHistory(w){
   for(const h of r(w).history.filter(x=>x.eventId===e.id&&x.type!=='story')){
    const owner=entries.find(x=>x.operationId===h.operationId);
    const request=JSON.parse(r(w).commits.find(q=>q.id===h.operationId).request);
+   const external=r(w).history.find(x=>x.operationId===h.operationId&&['npc-update','npc-clarify'].includes(x.type)&&x.data.operations.some(o=>h.type==='claim'?o.type==='claim'&&o.id===h.data.claimId&&o.versionId===h.data.versionId:['knowledge','belief'].includes(h.type)&&['learn','belief'].includes(o.type)&&o.actorId===h.data.actorId&&o.claimId===h.data.claimId&&(o.versionId===h.data.versionId||h.type==='belief'&&o.belief==='believed'&&same(h.data.after,{belief:'uncertain',confidence:.4}))));
+   if(external&&['claim','knowledge','belief'].includes(h.type)){
+    const background=r(w).history.find(x=>x.operationId===h.operationId&&['npc-update','npc-clarify'].includes(x.type));
+    need(background&&background.data.operations.some(o=>h.type==='claim'?o.type==='claim'&&o.id===h.data.claimId&&o.versionId===h.data.versionId:['learn','belief'].includes(o.type)&&o.actorId===h.data.actorId&&o.claimId===h.data.claimId&&(o.versionId===h.data.versionId||h.type==='belief'&&o.belief==='believed'&&same(h.data.after,{belief:'uncertain',confidence:.4}))),'unowned external knowledge change');
+    continue;
+   }
    need(owner&&!request.operations.some(o=>o.eventId===e.id&&!['story','admit-event'].includes(o.type)),'unowned playable consequence');
    const operations=owner.data.operations;
    if(h.type==='claim'){const claim=r(w).claims.find(c=>c.id===h.data.claimId);need(operations.some(o=>o.type==='claim'&&o.id===claim.id&&o.statement===claim.statement&&o.sourceId===claim.sourceId),'claim changed');}

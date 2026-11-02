@@ -133,6 +133,12 @@ try {
   console.log('PASS phase 07 actual navigation restores pending story confirmation');
   const storySaved=await evalIn('story.storyContinue(storyTest)');
   console.log('PASS phase 07 N6 rollback/dedup/three slots/import/cross-day/two completed branches',JSON.stringify(storySaved.report));
+  const npcSaved=await evalIn(`(async()=>{const npc=await import('./test/support/npc-checks.js');return npc.npcStorage(${JSON.stringify(testId)});})()`);
+  console.log('PASS phase 08 NPC atomic rollback/replay/three slots/export/import',JSON.stringify(npcSaved.report));
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+  const npcRestored=await evalIn(`(async()=>{const npc=await import('./test/support/npc-checks.js');return npc.npcSignature(${JSON.stringify(testId)});})()`);
+  if(npcRestored!==npcSaved.signature)throw Error('NPC actual navigation changed world/history/PRNG');
+  console.log('PASS phase 08 actual navigation restores exact autonomous world');
   console.log('PASS Chromium storage: all checks complete; synthetic only; NOT Safari/iPhone or full 30-year gameplay.');
   await call('Browser.close');
 } finally {

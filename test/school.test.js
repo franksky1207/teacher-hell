@@ -14,33 +14,7 @@ import { evolutionHolders,evolveWorldSnapshot } from '../src/evolution/step.js';
 import { calendarDay,yearData,positionFor,gradeAt,careerRange } from '../src/calendar/calendar.js';
 import { addDays } from '../src/calendar/civil.js';
 
-const n=w=>w.numeric.evolution.world;
-const school=(change,basisFactId=null)=>({type:'school',change,basisFactId});
-function commit(w,tag,ops){return prepareWorldOperation(w,{...request(w,tag,ops),calendarContext:{kind:'procedure'}}).world;}
-function initial(seed=11){let w=runtimeScenario(seed);w.enrollments=[];return commit(w,'initialize',[school({type:'school-initialize',academicYear:2026})]);}
-function cause(w,tag,ids=[w.identity.playerId,...n(w).classroom.studentIds]){
- const e=event(w,tag);e.definitionId='procedure:school';e.participantIds=ids;
- const f=fact(e,tag,{subjectIds:ids,witnessIds:[],categoryCodes:['H01-1']});
- return {world:commit(w,tag,[open(e),f]),id:f.id};
-}
-function change(w,tag,changes){const c=cause(w,tag,[w.identity.playerId,...Object.keys(n(w).people)]);return commit(c.world,tag+'-apply',changes.map(x=>school(x,c.id)));}
-const leave=(id,status='transferred-out')=>({type:'school-leave',personId:id,status,reason:'documented enrollment decision'});
-const enter=(classId,personId=null,action='transfer-in')=>({type:'school-enroll',classId,personId,action,source:'documented source school'});
-
-/** Engineering date baselines only: retain identity and history, do not claim daily gameplay. */
-function longPlan(w){
- const positions=[];for(let date=w.position.date;date<=careerRange(2026).end;date=addDays(date,1)){
-  const p=date===w.position.date?structuredClone(w.position):positionFor(date,calendarDay(date,gradeAt(date,2026)).slots[0].id,2026);if(p.serviceYear===1){p.schoolYearId=w.position.schoolYearId;p.openingId=w.position.openingId;}if(p.serviceYear<=30)positions.push(p);
- }
- runtimeOf(w).plan={id:'synthetic-school-thirty-year-baselines',validation:'unverified',positions,cursor:0};w.position=structuredClone(positions[0]);
- Object.assign(w.numeric.evolution.clock,{date:w.position.date,schoolYearId:w.position.schoolYearId,openingId:w.position.openingId,lastNaturalDate:null});return restoreWorldState(w);
-}
-function baseline(w,date){
- w=structuredClone(w);const p=runtimeOf(w).plan;const cursor=p.positions.findIndex(x=>x.date===date);assert.ok(cursor>=p.cursor);
- p.cursor=cursor;w.position=structuredClone(p.positions[cursor]);n(w).player.year=w.position.serviceYear;
- Object.assign(w.numeric.evolution.clock,{date,schoolYearId:w.position.schoolYearId,openingId:w.position.openingId,lastNaturalDate:null});return restoreWorldState(w);
-}
-function year(w,y){w=baseline(w,yearData(y).summerCamp);return commit(w,'year-'+y,[school({type:'school-year',academicYear:y})]);}
+import { n,school,commit,initial,cause,change,leave,enter,longPlan,baseline,year } from './support/school-scenario.js';
 
 test('school: first forty unique identities, formal ten names, random homeroom and deterministic restore',()=>{
  const w=initial(),r=n(w).registry,ids=n(w).classroom.studentIds;

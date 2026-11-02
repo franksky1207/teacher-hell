@@ -1,3 +1,4 @@
+import { validateNpcHistory } from './autonomy.js';
 import { validateStoryHistory } from './story.js';
 import { validateEventSelectionHistory } from './event-selection.js';
 import { isFormal, validateFormalPlan, planPosition } from './schedule.js';
@@ -170,6 +171,7 @@ export function validateWorldState(world) {
     for(const h of r.history)if(h.type==='belief'&&h.data.actorId===k.actorId&&h.data.claimId===k.claimId&&h.data.versionId===k.versionId){ensure(h.order>k.order&&same(h.data.before,current),'LEDGER','Broken belief revision chain');current=h.data.after;}
     ensure(same(current,{belief:k.belief,confidence:k.confidence}),'LEDGER','Belief differs from revision history');
   }
+  unique(r.knowledge.filter(k=>k.belief==='believed'),k=>key(k.actorId,k.claimId),'unique certain claim conclusion');
   for(const d of r.disclosures){
     assertShape(d,['actorId','factId','at','cursor','order','source']);stamp(world,d.at,d.cursor);
     validateSource(world,d.actorId,d.factId,null,null,d.source,d.at,d.cursor,d.order);
@@ -207,6 +209,7 @@ export function validateWorldState(world) {
   for(const commit of r.commits)for(const id of commit.numericReceiptIds)ensure(r.effects.some(e=>e.attemptId===commit.attemptId&&e.numericReceiptId===id),'LEDGER','Commit references missing effect');
   validateEventSelectionHistory(world);
   validateStoryHistory(world);
+  validateNpcHistory(world);
   return world;
 }
 export function restoreWorldState(saved) {

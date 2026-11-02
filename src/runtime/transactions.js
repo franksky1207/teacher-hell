@@ -1,3 +1,5 @@
+import { createRelationship, createReputation, directedKey, contactKey } from '../world/relationships.js';
+import { compileNpcUpdate, checkNpcGroup, compileNpcClarification } from './autonomy.js';
 import { compileStory, guardStoryOperation, storyContent } from './story.js';
 import { registerEventCatalogue, selectWorldEvents, admissionEvent, lifecycleChange, eventExposure, guardSelectedProgress } from './event-selection.js';
 import { initializeRegistry, schoolCatalogue } from '../world/registry.js';
@@ -41,12 +43,26 @@ function preconditions(world,conditions) {
     else throw new WorldError('PRECONDITION','Unknown precondition');
   }
 }
-function execute(world,command,op,numericSession,receipt,selectedAdmission=false,storyInternal=false) {
+function execute(world,command,op,numericSession,receipt,selectedAdmission=false,storyInternal=false,npcInternal=false) {
   const r=runtimeOf(world);
-  guardStoryOperation(world,op,storyInternal);
-  guardCalendarOperation(world,command,op);
+  guardStoryOperation(world,op,storyInternal||npcInternal);
+  if(!npcInternal)guardCalendarOperation(world,command,op);
   guardSelectedProgress(world,op);
-  if(op.type==='story'){
+  if(op.type==='npc-update'){
+    assertShape(op,['type']);world.numeric=numericSession.snapshot();
+    const data=compileNpcUpdate(world);
+    if(data.duplicate)return numericSession;
+    if(!data.decisions.length)return numericSession;
+    for(const child of data.operations)numericSession=execute(world,command,child,numericSession,receipt,false,false,true);
+    world.random.social=data.randomAfter;
+    history(world,command,'npc-update',null,null,[],data);
+  } else if(op.type==='npc-clarify'){
+    const beforeOrder=r.history.length+1,operations=compileNpcClarification(world,op);
+    for(const child of operations)numericSession=execute(world,command,child,numericSession,receipt,false,false,true);
+    history(world,command,'npc-clarify',null,null,[],{operation:op,operations,beforeOrder});
+  } else if(op.type==='npc-group'){
+    history(world,command,'npc-group',null,null,[op.basisFactId],checkNpcGroup(world,op));
+  } else if(op.type==='story'){
     ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player operates a story');
     if(op.action==='confirm')naturalAt(world,numericSession,world.position);
     world.numeric=numericSession.snapshot();
@@ -85,7 +101,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     ensure(!op.event.facts.length&&!op.event.knowledge.length&&!op.event.results.length&&op.event.choice?.confirmedOptionId==null,'SCHEMA','Open an empty event; create facts/results through operations');
     ensure(!r.stages.some(s=>s.id===op.event.stageId),'DUPLICATE','Stage already exists');
     op.event.participantIds.forEach(id=>knownActor(world,id));world.events.push(clone(op.event));
-    const admission=calendarAdmission(world,command);
+    const admission=npcInternal?null:calendarAdmission(world,command);
     const h=history(world,command,'stage',op.event.id,op.event.stageId,[],{definitionId:op.event.definitionId,...(admission?{calendarAdmission:admission}:{})});
     r.stages.push({id:op.event.stageId,eventId:op.event.id,order:h.order});
   } else if(op.type==='fact') {
@@ -99,6 +115,16 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     const fact={id:op.id,eventId:event.id,stageId:event.stageId,subjectIds:clone(op.subjectIds),witnessIds:clone(op.witnessIds),description:op.description,
       occurredAt:momentOf(world),cursor:r.plan.cursor,order:h.order,categoryCodes:clone(op.categoryCodes),causeIds:clone(op.causeIds),data:clone(op.data)};
     r.facts.push(fact);event.facts.push({id:fact.id,subjectIds:clone(fact.subjectIds),occurredAt:momentOf(world)});
+    if(fact.data.type==='contact'){
+      const snapshot=numericSession.snapshot(),n=snapshot.evolution.world,rng=restoreRandom(n.random.relationships);
+      for(const a of fact.subjectIds)for(const b of fact.subjectIds)if(a!==b&&!n.relationships[directedKey(a,b)]){
+        const contact=contactKey(a,b);n.contacts[contact]??={a,b,reference:fact.id};
+        n.relationships[directedKey(a,b)]=createRelationship(n,a,b,rng);
+        if(b===world.identity.playerId)n.reputations[directedKey(a,b)]=createReputation(n,a,b,rng);
+      }
+      n.random.relationships=rng.snapshot();numericSession=createSettlementSession(snapshot);world.numeric=clone(snapshot);
+    }
+
   } else if(op.type==='link-fact') {
     assertShape(op,['type','eventId','stageId','factId']);const e=atCurrentStage(world,op.eventId,op.stageId),f=findFact(world,op.factId);
     ensure(!e.facts.some(ref=>ref.id===f.id),'DUPLICATE','Fact already linked');involve(e,...f.subjectIds);
@@ -116,13 +142,22 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     validateSource(world,op.actorId,f.id,c.id,c.versionId,op.source,momentOf(world),r.plan.cursor,r.history.length+1);
     const h=history(world,command,'knowledge',f.eventId,f.stageId,[f.id],{actorId:op.actorId,claimId:c.id,versionId:c.versionId,belief:op.belief,confidence:op.confidence});
     r.knowledge.push({actorId:op.actorId,factId:f.id,claimId:c.id,versionId:c.versionId,acquiredAt:momentOf(world),cursor:r.plan.cursor,order:h.order,source:clone(op.source),belief:op.belief,confidence:op.confidence});
-    for(const event of world.events)if(event.facts.some(ref=>ref.id===f.id))involve(event,op.actorId,op.source.actorId);
+    if(op.belief==='believed')for(const old of r.knowledge.filter(k=>k.actorId===op.actorId&&k.claimId===c.id&&k.versionId!==c.versionId&&k.belief==='believed')){
+      const before={belief:old.belief,confidence:old.confidence};old.belief='uncertain';old.confidence=.4;
+      history(world,command,'belief',f.eventId,f.stageId,[f.id],{actorId:old.actorId,claimId:old.claimId,versionId:old.versionId,before,after:{belief:old.belief,confidence:old.confidence}});
+    }
+    for(const event of world.events)if(event.facts.some(ref=>ref.id===f.id)&&!storyContent(world,event.id))involve(event,op.actorId,op.source.actorId);
   } else if(op.type==='belief') {
     assertShape(op,['type','actorId','claimId','versionId','belief','confidence']);
     ensure(['believed','rejected','uncertain'].includes(op.belief),'KNOWLEDGE','Invalid belief');probability(op.confidence);
     const k=findKnowledge(world,op.actorId,op.claimId,op.versionId);ensure(k,'KNOWLEDGE','Cannot believe an unknown version');
     const f=findFact(world,k.factId);const before={belief:k.belief,confidence:k.confidence};k.belief=op.belief;k.confidence=op.confidence;
     history(world,command,'belief',f.eventId,f.stageId,[f.id],{actorId:k.actorId,claimId:k.claimId,versionId:k.versionId,before,after:{belief:k.belief,confidence:k.confidence}});
+    if(k.belief==='believed')for(const old of r.knowledge.filter(x=>x!==k&&x.actorId===k.actorId&&x.claimId===k.claimId&&x.belief==='believed')){
+      const before={belief:old.belief,confidence:old.confidence};old.belief='uncertain';old.confidence=.4;
+      history(world,command,'belief',f.eventId,f.stageId,[f.id],{actorId:old.actorId,claimId:old.claimId,versionId:old.versionId,before,after:{belief:old.belief,confidence:old.confidence}});
+    }
+
   } else if(op.type==='reveal') {
     assertShape(op,['type','actorId','factId','source']);const f=findFact(world,op.factId);
     ensure(!r.disclosures.some(d=>d.actorId===op.actorId&&d.factId===f.id),'DUPLICATE','Fact already disclosed');
@@ -162,6 +197,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
   } else if(op.type==='plan-vacation') {
     const panel=deriveWorldPanel(numericSession.world());planVacation(world,op,Object.fromEntries(STATE_NAMES.map(k=>[k,panel[k]])));history(world,command,'vacation-plan',null,null,[],{id:op.id,direction:op.direction,weeks:op.weeks});
   } else if(op.type==='finish-slot') {
+    numericSession=execute(world,command,{type:'npc-update'},numericSession,receipt);
     finishCalendarSlot(world,op);naturalAt(world,numericSession,world.position);history(world,command,'slot-complete',null,null,[],{activityIds:op.completedActivityIds});
   } else if(op.type==='prepare-semester') {
     prepareSemester(world,op);history(world,command,'timetable',null,null,[],{semesterId:op.semesterId});

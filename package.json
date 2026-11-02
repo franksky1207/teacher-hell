@@ -26,7 +26,9 @@
     "calendar:check": "node scripts/calendar.js --check",
     "demo:story": "node scripts/story-demo.js",
     "test:story:routes": "node scripts/story-demo.js --regression",
-    "test:story:browser": "npm run build && node scripts/storage-browser.js --story-only"
+    "test:story:browser": "npm run build && node scripts/storage-browser.js --story-only",
+    "demo:npc": "node scripts/story-demo.js --npc",
+    "test:npc:routes": "node scripts/story-demo.js --npc --regression"
   },
   "devDependencies": {
     "acorn": "8.15.0"

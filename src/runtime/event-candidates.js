@@ -1,3 +1,4 @@
+import { npcGroups } from './autonomy.js';
 import { validateStoryReference } from './story-content.js';
 /** Internal engine contracts. Content/eligibility/weights/lifecycle remain separate. */
 import { TOPIC_IDS } from './topics.js';
@@ -29,11 +30,12 @@ export function validateEventDefinitions(definitions){
   const core=tuple(d.coreCodes);need(!coreByTopic.has(d.topicId)||coreByTopic.get(d.topicId)===core,'Topic core must be shared');coreByTopic.set(d.topicId,core);
   need(d.weights.length===6&&d.weights.every(x=>Number.isFinite(x)&&x>=0)&&Math.abs(d.weights.reduce((a,b)=>a+b,0)-1)<1e-12,'Six weights must sum to one');
   need(d.directions.length===6&&d.directions.every(x=>[1,-1].includes(x)),'Explicit six directions');
-  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['companions','roleIds','affiliation','knowledge'].filter(k=>Object.hasOwn(e,k))]);
+  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['companions','roleIds','affiliation','knowledge','groups'].filter(k=>Object.hasOwn(e,k))]);
   need(e.people.length>0&&e.people.every(x=>['player','student','caregiver','staff','reunion','contact'].includes(x)),'Participant scopes');
   for(const k of ['dayKinds','slotIds','facts','history','numeric'])need(Array.isArray(e[k]),`Eligibility ${k} array`);
   if(e.roleIds)need(Array.isArray(e.roleIds)&&e.roleIds.every(id=>Number.isInteger(id)&&id>=1&&id<=35),'Role eligibility IDs');
   if(e.affiliation){assertShape(e.affiliation,['classId','status']);identifier(e.affiliation.classId);need(['active','former'].includes(e.affiliation.status),'Affiliation status');}
+  if(e.groups){need(Array.isArray(e.groups),'Group eligibility');for(const g of e.groups){assertShape(g,['groupId']);identifier(g.groupId);}}
   if(e.knowledge){need(Array.isArray(e.knowledge),'Knowledge eligibility');for(const k of e.knowledge){assertShape(k,['actorId','claimId','versionId','belief']);[k.actorId,k.claimId,k.versionId].forEach(identifier);need(['believed','rejected','uncertain','any'].includes(k.belief),'Knowledge belief');}}
   if(e.companions){need(Array.isArray(e.companions),'Companion array');for(const c of e.companions){assertShape(c,['personId','contactFactId']);identifier(c.personId);identifier(c.contactFactId);}}
   need(d.type==='cumulative'?e.history.length>0:e.history.length===0,'Cumulative needs history; direct cannot duplicate cumulative');
@@ -106,6 +108,7 @@ export function buildEventCandidates(world,definitions,{engineering=false}={}){
    if(e.roleIds&&!e.roleIds.every(id=>(world.numeric.evolution.world.people[person]?.roleIds??[8,9]).includes(id)))reason='role-condition';
    if(e.affiliation&&!world.numeric.evolution.world.registry.enrollments.some(a=>a.personId===person&&a.classId===e.affiliation.classId&&(e.affiliation.status==='active'?a.until===null:a.until!==null)))reason='affiliation-condition';
    if(e.knowledge&&!e.knowledge.every(k=>r.knowledge.some(x=>x.actorId===(k.actorId==='participant'?person:k.actorId)&&x.claimId===k.claimId&&x.versionId===k.versionId&&(k.belief==='any'||x.belief===k.belief))))reason='knowledge-condition';
+   if(e.groups&&!e.groups.every(g=>npcGroups(world).some(x=>x.id===g.groupId&&!x.ended&&x.memberIds.includes(person))))reason='group-condition';
    if(e.enrollment&&!enrollmentEligibility(world.numeric.evolution.world,{personId:person,...e.enrollment}).eligible)reason='enrollment';
    if(e.history.some(h=>(index.history.get(tuple(person,h.code))??[]).filter(x=>h.status==='any'||x.status===h.status).length<h.minimum))reason='history-threshold';
    try{if(e.numeric.some(n=>{const [v]=numericSources(world,person,[n.source],[n.code]);return v<n.min||v>n.max;}))reason='numeric-condition';}catch{reason='numeric-source-missing';}

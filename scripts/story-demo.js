@@ -5,7 +5,13 @@ import { beginDemo,apply,storyAction,advanceDemo,completeRoute } from '../test/s
 import { readStory } from '../src/runtime/story.js';
 import { restoreWorldState } from '../src/runtime/model.js';
 import { readPlayerView } from '../src/runtime/views.js';
-if(process.argv.includes('--regression')){
+if(process.argv.includes('--npc')){
+ const {npcRoute,peerScenario,npcApply,npcReport}=await import('../test/support/npc-scenario.js');
+ const reports=['listen','angry'].map(route=>({route,...npcReport(npcRoute(route).world)}));
+ const peer=peerScenario();reports.push({route:'autonomous-peers',...npcReport(npcApply(peer.world,[{type:'npc-update'}]))});
+ await mkdir('simulation/results',{recursive:true});await writeFile('simulation/results/npc-routes-20261102.json',JSON.stringify(reports,null,2)+'\n');
+ for(const report of reports)console.log(JSON.stringify(report));
+}else if(process.argv.includes('--regression')){
  const reports=['listen','angry'].map(id=>{const {world,report}=completeRoute(id);return {...report,known:readPlayerView(world).claims};});
  await mkdir('simulation/results',{recursive:true});await writeFile('simulation/results/story-routes-20261102.json',JSON.stringify(reports,null,2)+'\n');
  for(const r of reports)console.log(JSON.stringify({route:r.route,choices:r.choices,stages:r.stages,ended:r.final.ended,teacherDelta:r.final.teacherDelta,restored:r.restored}));

@@ -6,8 +6,23 @@
     "node": ">=24"
   },
   "scripts": {
-    "test": "node --test --test-isolation=none",
-    "test:coverage": "node --test --test-isolation=none --experimental-test-coverage",
-    "simulate:long": "node --expose-gc simulation/durability.js"
+    "check": "node scripts/project.js check",
+    "build": "node scripts/project.js build",
+    "preview": "node scripts/project.js preview",
+    "test": "node scripts/project.js test regression",
+    "test:unit": "node scripts/project.js test unit",
+    "test:contract": "node scripts/project.js test contract",
+    "test:integration": "node scripts/project.js test integration",
+    "test:scenario": "node scripts/project.js test scenario",
+    "test:tooling": "node scripts/project.js test tooling",
+    "test:quick": "node scripts/project.js test quick",
+    "test:module": "node scripts/project.js test",
+    "test:coverage": "node scripts/project.js test regression --coverage",
+    "verify:quick": "npm run check && npm run test:quick && npm run build",
+    "simulate:long": "node --expose-gc simulation/durability.js",
+    "test:browser": "npm run build && node scripts/browser-smoke.js"
+  },
+  "devDependencies": {
+    "acorn": "8.15.0"
   }
 }

@@ -49,3 +49,10 @@ test('storage: retry re-delivery is idempotent; changed seeds conflict; atomic o
  assert.deepEqual(s.snapshot().payload.opening,opening);assert.equal(runtimeOf(s.snapshot().payload.world).commits.length,2);
  const stale=await createStoredSession(db,1);await s.execute(sample(s.snapshot().payload.world,'after-retry'));await assert.rejects(stale.retry(opts),{code:'STALE'});
 });
+
+test('storage: an overwritten career cannot impersonate the old operation receipt even with identical request IDs',async()=>{
+ const db=memory(),a=await createStoredSession(db,1),w=runtimeScenario();await a.initialize(w);const q=sample(w,'same-id-across-careers');await a.execute(q);const original=a.snapshot(),replacement=structuredClone(original.payload);
+ replacement.world.identity.careerId=id('career','replacement');replacement.opening.identity.careerId=id('career','replacement');
+ const manager=await createStoredSession(db,1);await manager.import(JSON.stringify(replacement),{expectedToken:manager.snapshot().token,confirmed:true});const disk=await db.read(1);
+ await assert.rejects(a.execute(q),{code:'STALE'});assert.deepEqual(a.snapshot(),original);assert.deepEqual(await db.read(1),disk);
+});

@@ -121,7 +121,7 @@ function execute(world,command,op,numericSession,receipt) {
   } else if(op.type==='plan-vacation') {
     const panel=deriveWorldPanel(numericSession.world());planVacation(world,op,Object.fromEntries(STATE_NAMES.map(k=>[k,panel[k]])));history(world,command,'vacation-plan',null,null,[],{id:op.id,direction:op.direction,weeks:op.weeks});
   } else if(op.type==='finish-slot') {
-    finishCalendarSlot(world,op);history(world,command,'slot-complete',null,null,[],{activityIds:op.completedActivityIds});
+    finishCalendarSlot(world,op);naturalAt(world,numericSession,world.position);history(world,command,'slot-complete',null,null,[],{activityIds:op.completedActivityIds});
   } else if(op.type==='prepare-semester') {
     prepareSemester(world,op);history(world,command,'timetable',null,null,[],{semesterId:op.semesterId});
   } else if(op.type==='advance-time') {

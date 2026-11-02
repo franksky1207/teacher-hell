@@ -6,7 +6,7 @@ N1～N8純數值工程已完成封版驗收；這不是完整遊戲。最新架�
 
 ## 目前工程入口｜第一階段基礎
 
-第01～03批在 `integrate/phase1-foundation` 累積開發；正式22批、契約責任及各批交接集中於
+第01～04批在 `integrate/phase1-foundation` 累積開發；正式22批、契約責任及各批交接集中於
 [docs/05](docs/05-未定案與工作方式.md#第01批工程紀錄與後續介面2026-11-02)。
 這一節取代下面歷史N1～N8章節對「目前工具鏈」的說明；歷史驗收數據仍保留。
 
@@ -30,14 +30,15 @@ npm run preview
 
 | 指令 | 實際範圍 |
 |---|---|
+| `npm run calendar:build`／`calendar:check` | 有限40年固定排程重建／保存內容重現性檢查；衝突不偷改規則 |
 | `npm run check` | 全部JS語法、執行模組的分層依賴與無環檢查 |
 | `npm run test:unit` | 核心數學、record、PRNG單元套件（core／random） |
 | `npm run test:contract` | 新外層資料格式、錯誤輸入、N1～N8相容契約 |
-| `npm run test:integration` | 既有N8跨模組整合＋世界交易及存檔套件 |
+| `npm run test:integration` | 既有N8跨模組整合＋世界交易、存檔及正式校曆接合套件 |
 | `npm run test:scenario` | 合成情境重設、固定種子及JSON後續重現 |
 | `npm run test:tooling` | 架構、選測、防零測試、建置重現與預覽伺服器 |
-| `npm run test:quick` | unit＋contract＋scenario＋tooling＋runtime＋storage；不跑舊大量統計套件 |
-| `npm run test:module -- module=...` | 精準選core/random/player/world/evolution/evolution-stress/social/changes/assessment/integration/contracts/scenario/architecture/tooling/runtime/runtime-stress/storage；numeric為core＋random別名 |
+| `npm run test:quick` | unit＋contract＋scenario＋tooling＋runtime＋storage＋calendar＋calendar-integration；不跑舊大量統計套件 |
+| `npm run test:module -- module=...` | 精準選core/random/player/world/evolution/evolution-stress/social/changes/assessment/integration/contracts/scenario/architecture/tooling/runtime/runtime-stress/storage/calendar/calendar-integration；numeric為core＋random別名 |
 | `npm test` | 全部回歸，含N1～N8原數值測試與新測試 |
 | `npm run test:coverage` | 相同全回歸加Node涵蓋率 |
 | `npm run test:storage:browser` | 真實Chromium三槽IndexedDB、雙頁CAS、故障注入、備份恢復及合成大檔容量；暫存profile，與玩家資料隔離 |
@@ -61,9 +62,10 @@ CI只有一個快速工作流程，於PR及手動呼叫執行 `npm ci --ignore-s
 詳細契約及第03批交接見 [docs/05第02批紀錄](docs/05-未定案與工作方式.md#第02批工程紀錄與第03批交接2026-11-02)。
 第03批已加入三槽IndexedDB、CAS、完整快照、匯出入及恢復，入口為 `src/storage/`；
 [資料契約與04交接](docs/05-未定案與工作方式.md#第03批工程紀錄恢復查核與第04批交接2026-11-02)。
-第04批校曆／課表候選正在整合，因13個活動碰撞及2個期末邊界待裁決，**尚未通過04／第一階段整合，不具備合併條件**。
-[當前阻擋與實測](docs/05-未定案與工作方式.md#第04批候選工程與第一階段阻擋紀錄2026-11-02尚未驗收)；[來源及規則](docs/07-課表與校曆規劃.md#第04批來源工程設定與碰撞查核2026-11-02候選尚未驗收)。
-Safari／iPhone真機存檔驗證仍待辦。
+第04批固定40年校曆、九科18節課表及01～04世界／存檔整合已通過本次工程驗收。
+[目前驗收與交接](docs/05-未定案與工作方式.md#第04批工程與第一階段整合驗收2026-11-02)；
+[校曆來源及活動／期末例外](docs/07-課表與校曆規劃.md#第04批來源工程設定與碰撞驗證2026-11-02)。
+PR仍為Draft，是否合併另待使用者授權；Safari／iPhone真機仍未驗證。
 N3歷史班級驗證及N7跨屆／在籍／多成果的原有限制仍未修改，不能把新引用封套稱為那些功能已完成。
 
 ### 第01批實際驗收紀錄（2026-11-02）
@@ -1459,23 +1461,39 @@ Chrome回報heap 266,263,168 bytes，包含多份測試複本、序列化字串�
 第03批實作及本次列出的自動驗收通過；**未測Safari／iPhone真機、真實配額耗盡、硬體斷電及手機記憶體峰值**，
 不宣稱跨裝置完整驗收。30個bucket只驗容量，未執行正式30年十屆遊戲、平衡或完整內容驗收。
 仍以全量驗證／重寫快照為基礎，後續應量測真正晚期世界，再決定Worker／增量索引；不以刪歷史換速度。
-04固定40年校曆與18節課表尚未開始；11年度授權、12／14正式存檔介面、16手機整合另依原藍圖承接。
+第03批結束時04尚未開始，目前04完成情況見下節；11年度授權、12／14正式存檔介面、16手機整合另依原藍圖承接。
 共用PR保持Draft；不合併main、不部署、不建立Release。
 
 
-## 第04批候選現況（2026-11-02；尚未完成）
+## 第04批與第一階段01～04本次驗收（2026-11-02）
 
-有限40年候選、九科課表與runtime／storage接合及測試程式已保存，但未決日期不能自行改規則：
-使用者已同意活動撞假日改同週前一天；2034教師節前一天又是中秋，另有家長日／清明連假，共13個活動衝突。
-2050／2061端午打斷6月底週三至五，最近完整6月考期是6/15～17，是否提前尚待裁決。
-候選生成會報錯，所有包含未決年份的30年新生涯在建立前拒絕，避免玩到中途缺日期。
+使用者本次修訂：一般活動假日逐日前移；家長日維持星期六，假日延一週；期末受假日打斷改同週星期二起，
+假日休息後續考滿3個上課日。原WIP 13個活動＋2個年度衝突已全部解除，沒有取消活動或提前到6/17。
+2050期末考6/21、22、24；2061考6/21、23、24；2034教師節活動9/26，2032春家長日3/6（六）。
 
-- 日期／年級全掃描與獨立課表等精準子集：7通過；14,610天、43,830年級日、540份可重現18節課表。
-- 完整新增calendar／calendar-integration：19項中8通過、11失敗，未決碰撞使正式世界路徑遭前置拒絕；沒有把11項算作通過。
-- 原01～03與N1～N8：135通過、0失敗、0跳過（123.95秒），原27模組及simulation不變。
-- 原工程Chromium及明選`test:storage:browser -- --storage-only`存檔回歸通過；後者明列未執行正式01～04情境。
-- 當前預設快速／完整驗收會納入未決日期失敗，不為綠燈移除測試。完整正式校曆瀏覽器及30年位置／跨年情境尚未通過。
+| 本次實際命令／檢查 | 結果 |
+|---|---|
+| `npm run calendar:build`＋`npm run calendar:check` | 40年零未解衝突；生成內容可重現 |
+| `npm run test:module -- module=calendar,calendar-integration,runtime,storage,contracts,architecture` | 59通過、0失敗、0跳過 |
+| `npm test` | **157通過、0失敗、0跳過，128.68秒**；含N1～N8與01～04 |
+| `npm run verify:quick` | **75通過、0失敗、0跳過**；語法／分層／無環／build通過 |
+| `npm run test:browser` | 退出0，原工程頁與runtime／知情投影回歸 |
+| `npm run test:storage:browser`（預設完整） | 退出0，三槽／真實雙頁CAS／故障／大檔及正式01～04整合通過，沒有跳過calendar情境 |
+| 原27個N1～N8模組及simulation對main差異、`git diff --check` | 無差異／通過 |
 
-命令：`npm run calendar:build`、`npm run calendar:check`、
-`npm run test:module -- module=calendar,calendar-integration`；詳細API、來源、碰撞與交接集中在docs/05、07。
-**04未通過，第一階段未通過，不可合併**；維持Draft，未部署、未建Release、未啟動05。
+完整掃描14,610天、43,830年級日、408,874時段（約1.70秒）；九科540份18節課表同種子重現（約128ms）。
+連續30年10,939個日期位置與29次開學切換通過；2026～2035起始暑輔皆可玩完整30學年，越界拒絕。
+只保存校曆版本與目前計畫／已固定課表，不將約280KB的40年metadata複製進每個世界。
+
+Chromium正式情境完成合法世界、合成成果、原N6、時間、歷史、CAS保存、實際頁面重載、重送去重、
+第二分頁舊世界拒寫、合法開學原子快照及失敗嘗試N6／事件／事實隔離；另驗正式世界磁碟故障與記憶體發布故障；槽位換成另一生涯後，舊請求即使重用相同操作ID也拒絕。
+大檔20,721,680 bytes／33段完整往返，world及opening各600事實無刪減；
+本次寫入2052ms、匯出653ms、匯入1345ms、讀取685ms，heap371,232,374 bytes含複本及GC，非手機峰值或常駐保證。
+
+原WIP曾新增19項8過11敗、quick72項61過11敗，均如實保存；使用者裁決後重測，最終沒有未解測試失敗。
+另外補強時段完成後禁止追加行為、假期不丟既有課表、禁止任意預建未來課表、開學快照先於首slot行為及完整結束資格。
+詳細來源、資料契約、修正原因、合成情境界線及05～22交接集中在docs/05、07，沒有逐年新增規格文件。
+
+**第04批及第一階段本次工程／自動驗收通過，具備技術整合條件；是否合併仍待使用者另行授權。**
+Safari／iPhone、真實配額耗盡／斷電、手機記憶體峰值及正式96主題／十屆30年遊戲／平衡未測，不能冒稱通過。
+保持Draft、不Ready、不合併main、不部署、不建Release、不開始05。

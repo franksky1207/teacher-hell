@@ -99,6 +99,11 @@ try {
   console.log('PASS phase 01–04 legal calendar/world/N6/history/PRNG/IndexedDB/restore/replay',JSON.stringify(await evalIn('phase.scenario(pt)')));
   await evalIn('phase.stalePhase(pt)',peer.sessionId);console.log('PASS phase 01–04 real second-page stale world blocked');
   console.log('PASS phase 01–04 atomic legal opening and isolated retry',JSON.stringify(await evalIn('phase.annualPhase(pt)')));
+  console.log('PASS phase 01–04 formal time/table/random quota rollback and disk-success publication fault',JSON.stringify(await evalIn('phase.formalFaults(pt)')));
+  const phaseSaved=await evalIn('JSON.stringify(pt.s.snapshot())');await evalIn('pt.db.close()');
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();await evalIn(phaseSetup(false));
+  if(await evalIn('JSON.stringify(pt.s.snapshot())')!==phaseSaved)throw Error('Actual phase reload changed calendar/table/history/PRNG');
+  console.log('PASS phase 01–04 actual page navigation restores exact formal world and fixed timetable');
   }else console.log('NOT EXECUTED: phase 01–04 calendar scenario (--storage-only explicitly selected)');
   console.log('PASS Chromium storage: all checks complete; synthetic only; NOT Safari/iPhone or full 30-year gameplay.');
   await call('Browser.close');

@@ -33,15 +33,22 @@ export function compileCalendar(){
   candidates.sort((a,b)=>Math.abs(Date.parse(a)-Date.parse(anchor))-Math.abs(Date.parse(b)-Date.parse(anchor))||a.localeCompare(b));
   requireCalendar(candidates.length,'COLLISION',`No two consecutive school days near ${anchor}`);return [candidates[0],addDays(candidates[0],1)];
  }
+ function finalExam(targetFriday){
+  let friday=targetFriday;
+  for(let attempt=0;attempt<8;attempt++,friday=addDays(friday,-7)){
+   const standard=[-2,-1,0].map(n=>addDays(friday,n));
+   if(standard.every(free))return {dates:standard,rule:friday===targetFriday?'wednesday-friday':'prior-legal-week'};
+   const interrupted=datesBetween(addDays(friday,-3),friday).filter(free).slice(0,3);
+   if(interrupted.length===3)return {dates:interrupted,rule:'tuesday-skip-holiday'};
+  }
+  requireCalendar(false,'COLLISION',`No legal final examination block near ${targetFriday}`);
+ }
  for(const a of ASTRONOMY){
-  const y=a.year;let springFinal=onOrBefore(`${y}-06-30`,5);
-  while(![-2,-1,0].every(n=>free(addDays(springFinal,n))))springFinal=addDays(springFinal,-7);
-  if(springFinal<`${y}-06-21`)conflicts.push({code:'ANNUAL_FINAL_BOUNDARY',date:springFinal,year:y,reason:'端午使6月底沒有完整週三至五考期；提前至6/15–17尚待確認'});
-  const summerStart=addDays(springFinal,3),summerCamp=addDays(summerStart,21),autumnStart=addDays(summerStart,56);
+  const y=a.year,springExam=finalExam(onOrBefore(`${y}-06-30`,5)),springFinal=springExam.dates.at(-1);
+  const summerStart=onOrAfter(addDays(springFinal,1),1),summerCamp=addDays(summerStart,21),autumnStart=addDays(summerStart,56);
   requireCalendar(free(autumnStart),'COLLISION',`Autumn Monday holiday ${autumnStart}`);
-  let winterFinal=onOrBefore(`${y}-01-23`,5);
-  while(![-2,-1,0].every(n=>free(addDays(winterFinal,n))))winterFinal=addDays(winterFinal,-7);
-  const primary=addDays(winterFinal,3),newYearEnd=addDays(a.cny,4);
+  const winterExam=finalExam(onOrBefore(`${y}-01-23`,5)),winterFinal=winterExam.dates.at(-1);
+  const primary=onOrAfter(addDays(winterFinal,1),1),newYearEnd=addDays(a.cny,4);
   const cnyConflict=datesBetween(primary,addDays(primary,4)).some(d=>d>=addDays(a.cny,-2)&&d<=newYearEnd);
   let springStart=onOrAfter([`${y}-02-08`,addDays(newYearEnd,1),addDays(winterFinal,10)].sort().at(-1),1);
   let winterCamp=primary;
@@ -50,12 +57,12 @@ export function compileCalendar(){
    winterCamp=addDays(springStart,-7);
   }else while(!free(springStart)||springStart<=addDays(winterCamp,4))springStart=addDays(springStart,7);
   const previousAutumn=years.at(-1)?.autumnStart??onOrAfter(`${y-1}-08-24`,1);
-  const terms=[{id:`${y-1}:autumn`,academicYear:y-1,kind:'autumn',start:previousAutumn,end:winterFinal},{id:`${y}:spring`,academicYear:y-1,kind:'spring',start:springStart,end:springFinal}];
+  const terms=[{id:`${y-1}:autumn`,academicYear:y-1,kind:'autumn',start:previousAutumn,end:winterFinal,finalExamRule:winterExam.rule},{id:`${y}:spring`,academicYear:y-1,kind:'spring',start:springStart,end:springFinal,finalExamRule:springExam.rule}];
   for(const term of terms){
    const count=Math.floor((Date.parse(term.end)-Date.parse(term.start))/604800000)+1;
    const anchor1=addDays(term.start,(Math.max(1,Math.round(count*7/(term.kind==='autumn'?21:20)))-1)*7);
    const anchor2=addDays(term.start,(Math.max(2,Math.round(count*(term.kind==='autumn'?14:13)/(term.kind==='autumn'?21:20)))-1)*7);
-   term.exams=[examPair(anchor1,addDays(term.start,21),addDays(term.end,-28)),examPair(anchor2,addDays(term.start,49),addDays(term.end,-14)),[-2,-1,0].map(n=>addDays(term.end,n))];
+   term.exams=[examPair(anchor1,addDays(term.start,21),addDays(term.end,-28)),examPair(anchor2,addDays(term.start,49),addDays(term.end,-14)),(term.kind==='autumn'?winterExam:springExam).dates];
    term.weeks=count;
   }
   years.push({year:y,cny:a.cny,winterFinal,winterCamp,winterCampMoved:cnyConflict,springStart,springFinal,summerStart,summerCamp,summerCampEnd:addDays(summerCamp,27),autumnStart,terms,activities:[]});
@@ -66,9 +73,12 @@ export function compileCalendar(){
  function addActivity(year,term,kind,grades,date,slots,rule){
   if(date<FIRST_DATE||date>LAST_DATE)return;
   const originalDate=date;
-  if(holidays.has(date)){
-   const previous=addDays(date,-1);
-   if(weekMonday(previous)===weekMonday(date)&&!holidays.has(previous)&&weekday(previous)<=5)date=previous;
+  if(kind==='parents'){
+   while(holidays.has(date)&&date<=term.end)date=addDays(date,7);
+   if(date>term.end){conflicts.push({code:'PARENTS_HOLIDAY',date,rule});return;}
+  }else if(holidays.has(date)){
+   do{date=addDays(date,-1);}while(weekMonday(date)===weekMonday(originalDate)&&(holidays.has(date)||weekday(date)>5));
+   if(weekMonday(date)!==weekMonday(originalDate)){conflicts.push({code:'ACTIVITY_WEEK_EXHAUSTED',date:originalDate,rule});return;}
   }
   const entry={id:`${term?.id??year.year}:${kind}:${grades.join('')}`,kind,grades,date,slots,rule,originalDate};
   if(holidays.has(date)){
@@ -122,5 +132,5 @@ export function compileCalendar(){
   if(halloween)addActivity(year,autumn,'halloween',[1,2,3],halloween,['p6','p7'],'halloween-week-variable-weekday');else conflicts.push({code:'HALLOWEEN',year:year.year});
   addActivity(year,autumn,'christmas',[1,2,3],onOrBefore(addDays(`${year.year}-12-25`,-1),4),['private'],'thursday-evening-before-christmas');
  }
- return {version:CALENDAR_VERSION,range:[FIRST_DATE,LAST_DATE],provenance:{law:'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020095',astronomy:'https://www.hko.gov.hk/tc/gts/time/calendar/text/',policy:'game-world freeze of 2025 statute; future observances NOT government announcements',schoolAnchors:'last legal June Friday; eight summer weeks; last legal Friday on/before Jan23; spring Monday after lunar Jan5 and Feb8'},years,holidays:[...holidays].sort(([a],[b])=>a.localeCompare(b)),conflicts};
+ return {version:CALENDAR_VERSION,range:[FIRST_DATE,LAST_DATE],provenance:{law:'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020095',astronomy:'https://www.hko.gov.hk/tc/gts/time/calendar/text/',policy:'game-world freeze of 2025 statute; future observances NOT government announcements',schoolAnchors:'June final week; interrupted finals start Tuesday and skip holidays; eight summer weeks; last legal Friday on/before Jan23; spring Monday after lunar Jan5 and Feb8'},years,holidays:[...holidays].sort(([a],[b])=>a.localeCompare(b)),conflicts};
 }

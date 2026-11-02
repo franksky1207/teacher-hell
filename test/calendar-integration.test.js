@@ -1,18 +1,20 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { calendarWorld,advanceRequest,atDate } from './support/calendar.js';
-import { request,event,fact,result,open,id } from './support/runtime.js';
+import { request,event,fact,result,open,id,runtimeScenario } from './support/runtime.js';
 import { prepareWorldOperation,startCalendarWorld,forkWorldAttempt } from '../src/runtime/transactions.js';
 import { runtimeOf,restoreWorldState } from '../src/runtime/model.js';
 import { createSave,restoreSave } from '../src/storage/format.js';
 import { CALENDAR,calendarDay,yearData,gradeAt } from '../src/calendar/calendar.js';
-import { nextVacationOperation } from '../src/runtime/schedule.js';
+import { nextVacationOperation,calendarMilestones } from '../src/runtime/schedule.js';
 import { addDays } from '../src/calendar/civil.js';
 
 test('calendar-integration: untouched baseline adopts real calendar and persisted PRNG timetable once',()=>{
  const w=calendarWorld(),r=runtimeOf(w);assert.equal(r.plan.validation,'fixed-calendar-v1');assert.equal(w.position.date,yearData(2026).summerCamp);assert.deepEqual(restoreSave(JSON.stringify(createSave(w,w))),createSave(w,w));assert.deepEqual(restoreWorldState(JSON.stringify(w)),w);
+ const missingRandom=structuredClone(w);delete missingRandom.random.schedule;assert.throws(()=>restoreWorldState(missingRandom),/RANDOM/);
+ const forged=runtimeScenario();runtimeOf(forged).plan.validation='fixed-calendar-v1';assert.throws(()=>restoreWorldState(forged));
  const changed=prepareWorldOperation(w,request(w,'already-started',[{type:'sample',stream:'events',id:'x',weights:[1,2]}])).world;assert.throws(()=>startCalendarWorld(changed,{}),/MIGRATION/);
- for(const mutate of [p=>p.calendarVersion='future',p=>p.cursor++,p=>p.tables[0].lessons[1]={...p.tables[0].lessons[0]},p=>p.positions=[w.position]]){const bad=structuredClone(w);mutate(runtimeOf(bad).plan);assert.throws(()=>restoreWorldState(bad));}
+ for(const mutate of [p=>p.calendarVersion='future',p=>p.cursor++,p=>p.tables[0].lessons[1]={...p.tables[0].lessons[0]},p=>p.positions=[w.position],p=>p.vacation=false,p=>p.cursor=Number.MAX_SAFE_INTEGER]){const bad=structuredClone(w);mutate(runtimeOf(bad).plan);assert.throws(()=>restoreWorldState(bad));}
 });
 test('calendar-integration: time requires a completed slot, consecutive progression, atomic rollback and replay',()=>{
  const w=calendarWorld(),before=structuredClone(w),p=runtimeOf(w).plan;
@@ -65,4 +67,17 @@ test('calendar-integration: durable week direction pauses for choices, resumes a
  let days=0,lastRequest;while(nextVacationOperation(w).status==='advance'){lastRequest=nextVacationOperation(w).request;w=prepareWorldOperation(w,lastRequest).world;days++;assert.ok(days<=7);}
  assert.equal(days,7);assert.equal(w.position.date,'2026-08-24');assert.equal(w.position.slotId,'early');assert.equal(runtimeOf(w).history.filter(h=>h.type==='vacation-summary').length,1);const before=structuredClone(w);assert.equal(prepareWorldOperation(w,lastRequest).duplicate,true);assert.deepEqual(w,before);
  assert.throws(()=>prepareWorldOperation(w,request(w,'bad-week',[{type:'plan-vacation',id:'camp',weeks:1,direction:'rest'}])),/VACATION/);
+});
+
+test('calendar-integration: completed slots cannot accept late work; reviews wait for the final slot; snapshots precede first-slot actions',()=>{
+ const w=calendarWorld(),sample={type:'sample',stream:'events',id:'late',weights:[1,2]};
+ const closed=prepareWorldOperation(w,request(w,'close',[{type:'finish-slot',completedActivityIds:[]}])).world;
+ assert.throws(()=>prepareWorldOperation(closed,request(closed,'late',[sample])),/TIME_BARRIER/);
+ const changed=prepareWorldOperation(w,request(w,'initial-work',[sample])).world;assert.throws(()=>createSave(changed,changed),/SNAPSHOT/);
+ const y=yearData(2027),before=atDate(addDays(y.autumnStart,-1)),opening=prepareWorldOperation(before,advanceRequest(before,'fresh-opening')).world;
+ const late=prepareWorldOperation(opening,request(opening,'late-opening',[sample])).world;assert.throws(()=>createSave(late,late),/SNAPSHOT/);assert.doesNotThrow(()=>createSave(opening,opening));
+ const vacationMissing=atDate('2027-02-07');runtimeOf(vacationMissing).plan.tables.pop();assert.throws(()=>restoreWorldState(vacationMissing),/TIMETABLE/);
+ const final=atDate(y.springFinal,'private');assert.equal(calendarMilestones(final).annualSettlementReady,false);
+ const finished=prepareWorldOperation(final,request(final,'final-finish',[{type:'finish-slot',completedActivityIds:[]}])).world;assert.equal(calendarMilestones(finished).annualSettlementReady,true);assert.equal(calendarMilestones(finished).semesterReviewReady,true);
+ const summer=atDate(addDays(y.springFinal,1));assert.equal(calendarMilestones(summer).postAnnualSummer,true);assert.equal(calendarMilestones(calendarWorld()).postAnnualSummer,false);
 });

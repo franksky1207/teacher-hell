@@ -15,6 +15,13 @@ export function teachingTerm(date){requireDate(date);const y=yearData(Number(dat
  if(inRange(date,y.winterCamp,addDays(y.winterCamp,4)))return {id:`${y.year}:spring`,academicYear:y.year-1,camp:'winter'};
  return normal?{id:normal.id,academicYear:normal.academicYear,camp:null}:null;
 }
+/** Latest semester whose camp has begun, including its intervening vacation dates. */
+export function latestPreparedSemester(date){
+ requireDate(date);const y=yearData(Number(date.slice(0,4)));
+ if(date>=y.summerCamp)return {id:`${y.year}:autumn`,academicYear:y.year};
+ if(date>=y.winterCamp)return {id:`${y.year}:spring`,academicYear:y.year-1};
+ return {id:`${y.year-1}:autumn`,academicYear:y.year-1};
+}
 function basicDay(date,grade){
  requireDate(date);need([1,2,3].includes(grade),'CALENDAR','Grade must be 1, 2 or 3');
  const y=yearData(Number(date.slice(0,4))),dow=weekday(date),term=teachingTerm(date),newYear=inRange(date,addDays(y.cny,-1),addDays(y.cny,4));
@@ -66,7 +73,7 @@ export function slotOccupancy(date,grade,slotId,table=null){
 }
 export function careerRange(startYear){
  const first=yearData(startYear),last=yearData(startYear+30); // Year 1 ends the following June.
- need(!CALENDAR.conflicts.some(c=>{const d=c.date??c.week;return d&&d>=first.summerCamp&&d<=last.springFinal;}),'COLLISION','Unresolved activity collision in career range');
+ need(CALENDAR.conflicts.length===0,'COLLISION','Fixed calendar has unresolved scheduling constraints');
  return {start:first.summerCamp,end:last.springFinal,startYear};
 }
 export function newCareerStart(realDate){requireDate(realDate);let y=Number(realDate.slice(0,4));if(realDate<yearData(y).summerCamp)y--;return careerRange(y);}
@@ -79,5 +86,5 @@ export function positionFor(date,slotId,startYear){
  return {date,slotId,schoolYearId:`challenge:${startYear}:${serviceYear}`,openingId:`opening:${openingDate}`,serviceYear,statisticsPeriodId:stats};
 }
 export const cursorFor=(date,slotId,startYear)=>{const slots=calendarDay(date,gradeAt(date,startYear)).slots,index=slots.findIndex(s=>s.id===slotId);need(index>=0,'SLOT','Unknown slot');return dayNumber(date)*32+index;};
-export function positionAt(cursor,startYear){need(Number.isSafeInteger(cursor)&&cursor>=0,'TIME','Invalid calendar cursor');const date=new Date(Math.floor(cursor/32)*86400000).toISOString().slice(0,10),slot=calendarDay(date,gradeAt(date,startYear)).slots[cursor%32];need(slot,'SLOT','Calendar cursor points into nonexistent slot');return positionFor(date,slot.id,startYear);}
+export function positionAt(cursor,startYear){need(Number.isSafeInteger(cursor)&&cursor>=dayNumber(CALENDAR.range[0])*32&&cursor<=(dayNumber(CALENDAR.range[1])+1)*32-1,'TIME','Calendar cursor outside supported civil dates');const date=new Date(Math.floor(cursor/32)*86400000).toISOString().slice(0,10),slot=calendarDay(date,gradeAt(date,startYear)).slots[cursor%32];need(slot,'SLOT','Calendar cursor points into nonexistent slot');return positionFor(date,slot.id,startYear);}
 export function nextPosition(position,startYear){const slots=calendarDay(position.date,gradeAt(position.date,startYear)).slots,index=slots.findIndex(s=>s.id===position.slotId);need(index>=0,'SLOT','Unknown current slot');const date=index+1<slots.length?position.date:addDays(position.date,1),id=index+1<slots.length?slots[index+1].id:calendarDay(date,gradeAt(date,startYear)).slots[0].id;return positionFor(date,id,startYear);}

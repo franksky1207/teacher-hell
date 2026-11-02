@@ -4,7 +4,7 @@ import { performance } from 'node:perf_hooks';
 import { compileCalendar } from '../src/calendar/rules.js';
 import { ASTRONOMY } from '../src/calendar/astronomy.js';
 import { CALENDAR,calendarDay,yearData,careerRange,newCareerStart,gradeAt,positionFor,nextPosition,slotOccupancy } from '../src/calendar/calendar.js';
-import { addDays,dayNumber,weekday,datesBetween,weekMonday } from '../src/calendar/civil.js';
+import { addDays,dayNumber,weekday,datesBetween,weekMonday,onOrAfter } from '../src/calendar/civil.js';
 import { SUBJECT_LOAD,generateTimetable,validateTimetable } from '../src/calendar/timetable.js';
 import { createRandom } from '../src/numeric/random.js';
 import { catalogue } from './support/calendar.js';
@@ -27,17 +27,27 @@ test('calendar: all forty years preserve camps, Monday openings, legal exams and
  let moved=0;
  for(const y of CALENDAR.years){
   assert.equal(weekday(y.summerCamp),1);assert.equal(dayNumber(y.summerCamp)-dayNumber(y.summerStart),21);assert.equal(dayNumber(y.summerCampEnd)-dayNumber(y.summerCamp),27);assert.equal(dayNumber(y.autumnStart)-dayNumber(y.summerStart),56);assert.equal(weekday(y.autumnStart),1);assert.equal(weekday(y.winterCamp),1);assert.equal(weekday(y.springStart),1);
-  if(y.winterCampMoved){moved++;assert.equal(y.winterCamp,addDays(y.springStart,-7));}else assert.equal(y.winterCamp,addDays(y.winterFinal,3));
+  if(y.winterCampMoved){moved++;assert.equal(y.winterCamp,addDays(y.springStart,-7));}else assert.equal(y.winterCamp,onOrAfter(addDays(y.winterFinal,1),1));
   for(const date of datesBetween(y.winterCamp,addDays(y.winterCamp,4)))assert.equal(calendarDay(date,1).kind,'winter-camp');
-  for(const term of y.terms){for(const pair of term.exams){for(const d of pair){assert.ok(weekday(d)<=5);if(d>='2026-01-01'&&d<='2065-12-31')assert.equal(calendarDay(d,1).holiday.length,0);}for(let i=1;i<pair.length;i++)assert.equal(pair[i],addDays(pair[i-1],1));}if(!term.truncated)assert.deepEqual(term.exams[2],[-2,-1,0].map(n=>addDays(term.end,n)));}
+  for(const term of y.terms){for(const [examIndex,pair] of term.exams.entries()){for(const d of pair){assert.ok(weekday(d)<=5);if(d>='2026-01-01'&&d<='2065-12-31')assert.equal(calendarDay(d,1).holiday.length,0);}for(let i=1;i<pair.length;i++){if(examIndex<2)assert.equal(pair[i],addDays(pair[i-1],1));else for(const skipped of datesBetween(addDays(pair[i-1],1),addDays(pair[i],-1)))assert.ok(weekday(skipped)>5||calendarDay(skipped,1).holiday.length>0);}}if(!term.truncated){assert.equal(term.exams[2].length,3);assert.equal(term.exams[2].at(-1),term.end);assert.equal(weekday(term.exams[2][0]),term.finalExamRule==='tuesday-skip-holiday'?2:3);}}
   const trips=y.activities.filter(a=>a.kind.startsWith('graduation-trip')).sort((a,b)=>a.date.localeCompare(b.date));assert.equal(trips.length,3);assert.deepEqual(trips.map(a=>a.date),[0,1,2].map(n=>addDays(trips[0].date,n)));assert.ok(trips.every(a=>weekday(a.date)<=5));const spring=y.terms.find(t=>t.kind==='spring');assert.ok(spring.grade2SecondExam.at(-1)<trips[0].date);assert.ok(spring.exams[1].every(d=>calendarDay(d,1).exam));
  }
  assert.ok(moved>0&&moved<40);
 });
 test('calendar: all required activities survive, obey priority, holiday backward adjustment and class coverage',()=>{
  const ids=new Set();let shifted=0;
+ for(const year of CALENDAR.years){
+  for(const term of year.terms.filter(t=>t.start>='2026-01-01')){
+   const list=CALENDAR.years.flatMap(y=>y.activities).filter(a=>a.id.startsWith(term.id+':'));
+   const common=['parents','field-trip'],specific=term.kind==='autumn'?['anniversary','class-song','english-song']:['sports','fair','graduation-trip-1','graduation-trip-2','graduation-trip-3','graduation','university-fair','japan-visit'];
+   for(const kind of [...common,...specific,...(term.truncated?[]:['clubs'])])assert.ok(list.some(a=>a.kind===kind),`${term.id} missing ${kind}`);
+   for(const grade of [1,2])assert.ok(list.some(a=>a.kind==='field-trip'&&a.grades.includes(grade)));
+  }
+  for(const kind of ['teachers-day','halloween','christmas'])assert.ok(year.activities.some(a=>a.kind===kind),`${year.year} missing ${kind}`);
+ }
+
  for(const y of CALENDAR.years)for(const a of y.activities){assert.ok(!ids.has(a.id));ids.add(a.id);for(const grade of a.grades){const day=calendarDay(a.date,grade);assert.equal(day.holiday.length,0);assert.ok(day.slots.some(s=>s.activityIds.includes(a.id)));assert.ok(day.slots.filter(s=>s.activityIds.includes(a.id)).every(s=>s.protected));}
-  if(a.date!==a.originalDate){shifted++;assert.ok(a.date<a.originalDate);assert.equal(weekMonday(a.date),weekMonday(a.originalDate));}
+  if(a.kind==='parents'){assert.equal(weekday(a.date),6);assert.equal(weekday(a.originalDate),6);assert.equal((dayNumber(a.date)-dayNumber(a.originalDate))%7,0);assert.ok(a.date>=a.originalDate);}else if(a.date!==a.originalDate){shifted++;assert.ok(a.date<a.originalDate);assert.equal(weekMonday(a.date),weekMonday(a.originalDate));}
  }
  assert.ok(shifted>=6);assert.ok(CALENDAR.years.some(y=>y.activities.some(a=>a.kind==='teachers-day'&&a.originalDate==='2028-09-28'&&a.date==='2028-09-27')));
 });
@@ -72,7 +82,7 @@ test('calendar: nominal lesson overwritten by exams / activities without redrawi
 });
 test('calendar: supported career start uses supplied real date and rejects insufficient horizon / invalid civil dates',()=>{
  assert.equal(newCareerStart('2026-11-02').start,yearData(2026).summerCamp);assert.equal(newCareerStart(yearData(2027).summerCamp).startYear,2027);assert.equal(newCareerStart(addDays(yearData(2027).summerCamp,-1)).startYear,2026);
- for(let y=2026;y<=2035;y++){const r=careerRange(y);assert.equal(r.end,yearData(y+30).springFinal);assert.ok(r.end<='2065-12-31');}
+ for(let y=2026;y<=2035;y++){const r=careerRange(y);assert.equal(r.end,yearData(y+30).springFinal);assert.ok(r.end<='2065-12-31');const slots=calendarDay(r.end,gradeAt(r.end,y)).slots,p=positionFor(r.end,slots.at(-1).id,y);assert.equal(p.serviceYear,30);assert.throws(()=>nextPosition(p,y),/RANGE/);}
  for(const d of ['2026-02-29','2028-02-30','2025-12-31','2066-01-01'])assert.throws(()=>calendarDay(d,1));assert.throws(()=>newCareerStart('2026-01-01'));assert.throws(()=>newCareerStart('2036-12-01'));assert.throws(()=>careerRange(2036));
 });
 test('calendar: continuous 30-year per-day positions preserve service/opening/statistics boundaries',t=>{
@@ -82,4 +92,13 @@ test('calendar: continuous 30-year per-day positions preserve service/opening/st
   const end=positionFor(date,d.slots.at(-1).id,2026);if(date<range.end){const next=nextPosition(end,2026);assert.equal(next.date,addDays(date,1));}
  }
  assert.equal(openings,29);assert.equal(last.serviceYear,30);t.diagnostic(JSON.stringify({continuousDays:days,serviceOpenings:openings,elapsedMs:Math.round(performance.now()-at),note:'Calendar traversal, not 30-year NPC/gameplay simulation'}));
+});
+
+test('calendar: confirmed holiday exceptions keep parents on Saturday and June finals in their original week',()=>{
+ const all=CALENDAR.years.flatMap(y=>y.activities);
+ assert.equal(all.find(a=>a.kind==='teachers-day'&&a.originalDate==='2034-09-28').date,'2034-09-26');
+ assert.equal(all.find(a=>a.kind==='parents'&&a.originalDate==='2032-02-28').date,'2032-03-06');
+ assert.deepEqual(yearData(2050).terms.find(t=>t.kind==='spring').exams[2],['2050-06-21','2050-06-22','2050-06-24']);
+ assert.deepEqual(yearData(2061).terms.find(t=>t.kind==='spring').exams[2],['2061-06-21','2061-06-23','2061-06-24']);
+ for(const year of [2050,2061]){assert.equal(yearData(year).springFinal,`${year}-06-24`);const lunar=ASTRONOMY.find(a=>a.year===year),eve=addDays(lunar.dragon,-1),grade=gradeAt(eve,2035),slots=calendarDay(eve,grade).slots,p=positionFor(eve,slots.at(-1).id,2035),next=nextPosition(p,2035);assert.equal(next.date,lunar.dragon);assert.equal(calendarDay(next.date,gradeAt(next.date,2035)).kind,'holiday');}
 });

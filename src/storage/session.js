@@ -21,6 +21,7 @@ export async function createStoredSession(storage,slot,{afterPersist}={}) {
     execute:(request,{captureOpening=false}={})=>serial(async()=>{
       ready();ensure(current.payload,'EMPTY','Slot is empty');const disk=await storage.read(slot);ensure(disk.payload,'STALE','Slot was deleted');
       if(!sameToken(disk.token,current.token)){
+        ensure(disk.token.careerId===current.token.careerId,'STALE','Slot now belongs to another career; do not replay an old career request');
         const prior=runtimeOf(disk.payload.world).commits.find(c=>c.id===request.id&&c.attemptId===request.attemptId);
         ensure(prior,'STALE','Slot changed; recover first');
         const repeated=prepareWorldOperation(disk.payload.world,request);

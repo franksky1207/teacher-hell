@@ -97,7 +97,7 @@ export function validateWorldState(world) {
   const r=runtimeOf(world);
   assertShape(r,['version','revision','plan','facts','claims','knowledge','disclosures','history','commits','stages','effects','numericArchives']);
   ensure(r.version===1&&Number.isSafeInteger(r.revision)&&r.revision>=0,'VERSION','Unknown world runtime version/revision');
-  validatePlan(r.plan);ensure(same(world.position,planPosition(r.plan)),'TIME','Position is not the plan cursor');
+  validatePlan(r.plan);if(isFormal(r.plan))ensure(Object.hasOwn(world.random,'schedule'),'RANDOM','Formal timetable random stream is missing');ensure(same(world.position,planPosition(r.plan)),'TIME','Position is not the plan cursor');
   for(const name of ['facts','claims','knowledge','disclosures','history','commits','stages','effects','numericArchives'])ensure(Array.isArray(r[name]),'SCHEMA',`${name} must be an array`);
   unique(r.facts,f=>f.id,'fact IDs');unique(r.claims,c=>key(c.id,c.versionId),'claim versions');
   unique(r.knowledge,k=>key(k.actorId,k.claimId,k.versionId),'knowledge keys');unique(r.disclosures,d=>key(d.actorId,d.factId),'disclosures');

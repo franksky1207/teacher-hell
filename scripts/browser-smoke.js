@@ -40,7 +40,7 @@ try {
   const {targetId}=await call('Target.createTarget',{url:'about:blank'});
   const {sessionId}=await call('Target.attachToTarget',{targetId,flatten:true});
   const evaluate=async expression=>{
-    const out=await call('Runtime.evaluate',{expression,returnByValue:true},sessionId);
+    const out=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true},sessionId);
     if(out.exceptionDetails)throw new Error(JSON.stringify(out.exceptionDetails));
     return out.result.value;
   };
@@ -59,11 +59,28 @@ try {
   await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true},sessionId);
   await evaluate('document.querySelector("#status").dataset.status="pending"');
   await call('Page.reload',{},sessionId);await passed();
-  console.log('PASS Chromium: project subpath, ES modules, contract JSON, reset and narrow viewport reload. NOT Safari or gameplay/storage validation.');
+  const worldCheck=await evaluate(`(async()=>{
+    const {startWorld,prepareWorldOperation}=await import('./src/runtime/transactions.js');
+    const {restoreWorldState}=await import('./src/runtime/model.js');
+    const {readPlayerView}=await import('./src/runtime/views.js');
+    const {createId}=await import('./src/contracts/foundation.js');
+    const f=await (await fetch('./health-fixture.json')).json();f.events=[];
+    const w=startWorld(f,{id:'browser-synthetic',validation:'unverified',positions:[f.position]});
+    const q={id:createId('operation',['browser-synthetic']),attemptId:w.identity.attemptId,actorId:w.identity.playerId,expectedRevision:0,preconditions:[],operations:[{type:'sample',id:'draw',stream:'events',weights:[1,2,3]}]};
+    const before=JSON.stringify(w),next=prepareWorldOperation(w,q),restored=restoreWorldState(JSON.stringify(next.world));
+    let rejected=false;try{prepareWorldOperation(w,{...q,operations:[...q.operations,{type:'invalid'}]});}catch{rejected=true;}
+    if(!rejected||before!==JSON.stringify(w)||JSON.stringify(restored)!==JSON.stringify(next.world)||!prepareWorldOperation(restored,q).duplicate||readPlayerView(restored).facts.length)throw Error('Browser world atomicity/replay/projection failed');
+    return true;
+  })()`);
+  if(worldCheck!==true)throw new Error('Browser world check did not complete');
+  console.log('PASS Chromium: project subpath, ES modules, contract JSON, reset, narrow viewport reload; runtime transaction/rollback, JSON restore, replay and projection. NOT Safari or gameplay/storage validation.');
   await call('Browser.close');
 } finally {
   socket?.close();
-  if(browser?.pid && browser.exitCode===null){browser.kill('SIGKILL');await once(browser,'exit').catch(()=>{});}
+  if(browser?.pid && browser.exitCode===null && browser.signalCode===null){
+    const timeout=setTimeout(()=>browser.kill('SIGKILL'),3000);
+    try{await once(browser,'exit');}finally{clearTimeout(timeout);}
+  }
   if(server)await new Promise(resolve=>server.close(resolve));
-  await rm(temporary,{recursive:true,force:true});
+  await rm(temporary,{recursive:true,force:true,maxRetries:5,retryDelay:100});
 }

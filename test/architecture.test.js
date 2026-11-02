@@ -36,6 +36,7 @@ test('architecture: rejects reversed edges, indirect cycles, missing dependencie
     new Map([['src/numeric/math.js','import(path);']]),
     new Map([['web/view.js','import "../src/numeric/math.js";'],['src/numeric/math.js','export const x=1;']]),
     new Map([['src/unknown/a.js','export const x=1;']]),
+    new Map([['src/changes/a.js','import "../runtime/a.js";'],['src/runtime/a.js','export const x=1;']]),
   ];
   for (const sources of cases) assert.ok(analyzeArchitecture(sources).errors.length>0);
   assert.match(analyzeArchitecture(cases[1]).errors.join('\n'), /cycle/);

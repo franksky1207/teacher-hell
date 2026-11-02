@@ -11,6 +11,7 @@ const allowed = {
   changes: ['changes','evolution','social','world','player','numeric'],
   assessment: ['assessment','social','world','player','numeric'],
   contracts: ['contracts','changes','evolution','social','world','player','numeric','assessment'],
+  runtime: ['runtime','contracts','changes','evolution','social','world','player','numeric'],
   web: ['web','contracts'],
 };
 function layer(path) {

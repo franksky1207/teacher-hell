@@ -6,7 +6,7 @@ import { canonicalData, validateSettlement } from '../changes/settlement.js';
 import { gameDate } from '../evolution/time.js';
 import { restoreRandom } from '../numeric/random.js';
 
-const kinds = new Set(['career','attempt','cohort','class','enrollment','event','stage','fact','claim','result','effect','settlement']);
+const kinds = new Set(['career','attempt','cohort','class','enrollment','event','stage','fact','claim','result','effect','settlement','operation','history']);
 function fail(path, message) { throw new RangeError(`${path}: ${message}`); }
 function shape(value, keys, path) {
   try { assertShape(value, keys); } catch { fail(path, `expected fields ${keys.join(', ')}`); }
@@ -100,7 +100,8 @@ export function validateEventEnvelope(event, path = 'event') {
     claims.set(k.claimId, k.factId);
   }
   list(event.results, `${path}.results`, (result, p) => {
-    shape(result, ['id','factId','subjectId','facet','effectIds','settlementId'], p);
+    shape(result, ['id','factId','subjectId','facet','effectIds','settlementId',...(Object.hasOwn(result,'stageId')?['stageId']:[])], p);
+    if(Object.hasOwn(result,'stageId'))ref(result.stageId,'stage',`${p}.stageId`);
     ref(result.id, 'result', `${p}.id`); ref(result.factId, 'fact', `${p}.factId`);
     participant(result.subjectId, `${p}.subjectId`); text(result.facet, `${p}.facet`);
     if (!facts.get(result.factId)?.subjectIds.includes(result.subjectId)) fail(p, 'result subject absent from fact');
@@ -109,7 +110,7 @@ export function validateEventEnvelope(event, path = 'event') {
     ref(result.settlementId, 'settlement', `${p}.settlementId`);
   });
   distinct(event.results.map(r => r.id), `${path}.results`);
-  distinct(event.results.map(r => JSON.stringify([r.factId,r.subjectId,r.facet])), `${path}.results.facets`);
+  distinct(event.results.map(r => JSON.stringify([r.stageId??null,r.factId,r.subjectId,r.facet])), `${path}.results.facets`);
   distinct(event.results.flatMap(r => r.effectIds), `${path}.results.effects`);
   if (event.choice !== null) {
     const c = event.choice, p = `${path}.choice`;

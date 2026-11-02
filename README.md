@@ -6,7 +6,7 @@ N1～N8純數值工程已完成封版驗收；這不是完整遊戲。最新架�
 
 ## 目前工程入口｜第一階段基礎
 
-第01批在 `integrate/phase1-foundation` 累積開發；正式22批、契約責任與02交接集中於
+第01、02批在 `integrate/phase1-foundation` 累積開發；正式22批、契約責任及各批交接集中於
 [docs/05](docs/05-未定案與工作方式.md#第01批工程紀錄與後續介面2026-11-02)。
 這一節取代下面歷史N1～N8章節對「目前工具鏈」的說明；歷史驗收數據仍保留。
 
@@ -33,11 +33,11 @@ npm run preview
 | `npm run check` | 全部JS語法、執行模組的分層依賴與無環檢查 |
 | `npm run test:unit` | 核心數學、record、PRNG單元套件（core／random） |
 | `npm run test:contract` | 新外層資料格式、錯誤輸入、N1～N8相容契約 |
-| `npm run test:integration` | 既有N8跨模組整合套件 |
+| `npm run test:integration` | 既有N8跨模組整合＋世界交易套件 |
 | `npm run test:scenario` | 合成情境重設、固定種子及JSON後續重現 |
 | `npm run test:tooling` | 架構、選測、防零測試、建置重現與預覽伺服器 |
-| `npm run test:quick` | unit＋contract＋scenario＋tooling；不跑舊大量統計套件 |
-| `npm run test:module -- module=...` | 精準選core/random/player/world/evolution/evolution-stress/social/changes/assessment/integration/contracts/scenario/architecture/tooling；numeric為core＋random別名 |
+| `npm run test:quick` | unit＋contract＋scenario＋tooling＋runtime；不跑舊大量統計套件 |
+| `npm run test:module -- module=...` | 精準選core/random/player/world/evolution/evolution-stress/social/changes/assessment/integration/contracts/scenario/architecture/tooling/runtime/runtime-stress；numeric為core＋random別名 |
 | `npm test` | 全部回歸，含N1～N8原數值測試與新測試 |
 | `npm run test:coverage` | 相同全回歸加Node涵蓋率 |
 | `npm run test:browser` | 可選：需已安裝Chromium（或CHROMIUM_BIN）；本機CDP驗收子路徑、重設及窄視窗重載，不代表Safari |
@@ -56,7 +56,9 @@ CI只有一個快速工作流程，於PR及手動呼叫執行 `npm ci --ignore-s
 原27個N1～N8執行模組保持不變；原player測試中的全src固定27檔／無DOM斷言，
 移至新的AST分層架構套件，現在只在純邏輯層禁止平台API，允許 `web/` 使用DOM。
 
-目前仍待：02世界交易／因果／知情投影，03三槽原子持久化，04完整40年校曆。
+第02批已加入記憶體世界交易、因果／知情投影與唯一結算，入口為 `src/runtime/`，
+詳細契約及第03批交接見 [docs/05第02批紀錄](docs/05-未定案與工作方式.md#第02批工程紀錄與第03批交接2026-11-02)。
+目前仍待：03三槽原子持久化，04完整40年校曆。
 N3歷史班級驗證及N7跨屆／在籍／多成果的原有限制仍未修改，不能把新引用封套稱為那些功能已完成。
 
 ### 第01批實際驗收紀錄（2026-11-02）
@@ -1390,3 +1392,31 @@ JSON欄位順序、無關NPC、原子拒絕、既有結果防重複、嚴格初�
 尚未開發：正式事件引擎、96主題及小主題、NPC自主行為／實際傳播、玩家選項與劇情、實際學年終局、完整30年人物生命週期、正式年度／生涯結局、遊戲網頁介面、20%／60%真實通關率平衡。
 N8不以危機分數代替失敗、不設定固定淘汰率，也不宣稱合成壓測證實正式遊戲好玩或平衡。
 後續可以沿用27模組、版本1存檔、私有會話／checkpoint、N7證據契約及本批可重跑驗收程式；正式遊戲工程須另外開發。
+
+### 第02批實際驗收紀錄（2026-11-02）
+
+同一Node／npm環境，原27個N1～N8模組及`simulation/`與main逐檔相同。
+
+| 實際命令／檢查 | 結果 |
+|---|---|
+| `npm ci --ignore-scripts`＋`npm run verify:quick` | 46項通過、0失敗、0跳過；語法、分層／無環、建置通過 |
+| `npm test` | 128項通過、0失敗、0跳過，109.00秒，含N1～N8及第01／02批完整回歸 |
+| `npm run test:module -- module=runtime,contracts,architecture` | 30項通過、0失敗、0跳過 |
+| 乾淨來源複本：`npm ci --ignore-scripts`＋`npm run verify:quick` | 46項通過、0失敗、0跳過；未沿用node_modules或dist |
+| `npm run test:browser` | Chromium子路徑、重設、390×844重載，以及瀏覽器內runtime交易／失敗拒絕／JSON恢復／重送／投影通過 |
+| `git diff --exit-code origin/main -- src/numeric src/player src/world src/social src/evolution src/changes src/assessment simulation` | 通過，原核心／模擬無修改 |
+
+runtime共有16項行為／異常測試；
+另有`runtime-stress`的160次連續合成交易、40事件、80人物、160事實、40筆N6收據，
+比較兩條相同操作序列及定期JSON還原。負載約27秒（含雙路比對；回歸輸出另有當次數據），
+資料約195KB增至765KB；完整回歸會輸出當次JSON bytes、耗時及heap使用量。
+heap包含測試複本與GC波動，不能當作手機常駐記憶體保證；沒有正式30年／遊戲平衡驗收。
+
+初輪runtime測試12通過／1失敗，原因是測試試圖在保留在籍名冊時移除N3核心學生標籤，
+改驗合法標籤調整後通過，保留05生命週期責任。瀏覽器初輪功能檢查通過但退出清理ENOTEMPTY失敗，
+修正為等待Chromium退出並有限重試清理後，整個指令退出0；沒有隱藏原失敗。
+自查另修正跨階段過度去重、禁止新階段預先確認選項、拒絕先寫無效再覆蓋的中間認知，
+並驗證歷史、收據及目前認知一致。
+
+未執行：完整涵蓋率、正式30年CLI、Safari／iPhone真機、磁碟存檔／多頁CAS、正式校曆與事件內容。
+本批無上述後續實作；第03批須承接完整世界與收據，DB成功後才安裝記憶體草稿。

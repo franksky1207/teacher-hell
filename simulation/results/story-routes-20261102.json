@@ -1,0 +1,228 @@
+[
+  {
+    "route": "listen",
+    "choices": [
+      "listen",
+      "plan"
+    ],
+    "stages": [
+      {
+        "stage": "opening",
+        "date": "2026-07-20"
+      },
+      {
+        "stage": "listen",
+        "date": "2026-07-21"
+      }
+    ],
+    "immediate": [
+      "教師看到學生提供的小考成績單，三次分數為78、74及52。",
+      "教師與學生約定隔日再談生活與作業安排。"
+    ],
+    "final": {
+      "eventId": "event:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"day:2026-07-20\",\"2026-07-20\",\"[\\\"engineering:learning-conversation\\\",[\\\"world:school:cohort:1:student:0\\\"],[]]\"]",
+      "page": {
+        "order": 2,
+        "text": "我晚上要幫忙顧店，但也有幾題真的不會。",
+        "speaker": "world:school:cohort:1:student:0",
+        "scene": "school:counselling-corner",
+        "cast": [
+          {
+            "role": "participant",
+            "position": "center",
+            "expression": "calm",
+            "actorId": "world:school:cohort:1:student:0"
+          }
+        ],
+        "presentation": "dialogue"
+      },
+      "pageIndex": 1,
+      "pageCount": 2,
+      "canPrevious": false,
+      "canNext": false,
+      "choices": [],
+      "confirmation": null,
+      "canFinish": false,
+      "waiting": false,
+      "canResume": false,
+      "ended": true,
+      "teacherDelta": {
+        "教學能力": 0,
+        "班級經營": 0,
+        "溝通協調": 0,
+        "行政應對": 0,
+        "危機處理": 0,
+        "情緒調適": 0,
+        "體力": 0,
+        "精神": 0.5895247552543879,
+        "抗壓": 0,
+        "聲望": 0,
+        "熱忱": 0,
+        "情緒": 1.1790495105087757
+      },
+      "result": [
+        "教師看到學生提供的小考成績單，三次分數為78、74及52。",
+        "教師與學生約定隔日再談生活與作業安排。",
+        "雙方排出補交安排，學生自行陳述有顧店情形，原因未全查證。"
+      ]
+    },
+    "facts": [
+      {
+        "description": "教師看到學生提供的小考成績單，三次分數為78、74及52。",
+        "causeIds": []
+      },
+      {
+        "description": "教師與學生約定隔日再談生活與作業安排。",
+        "causeIds": [
+          "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"premise\"]"
+        ]
+      },
+      {
+        "description": "雙方排出補交安排，學生自行陳述有顧店情形，原因未全查證。",
+        "causeIds": [
+          "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"opening\",\"listen\"]"
+        ]
+      }
+    ],
+    "restored": true,
+    "known": [
+      {
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"listen\\\"]\",\"1\"]",
+        "versionId": "1",
+        "statement": "成績變化的原因尚待查明。",
+        "sourceId": "teacher",
+        "acquiredAt": {
+          "date": "2026-07-20",
+          "slotId": "early"
+        },
+        "belief": "uncertain",
+        "confidence": 0.6
+      },
+      {
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"listen\\\",\\\"plan\\\"]\",\"1\"]",
+        "versionId": "1",
+        "statement": "成績變化的原因尚待查明。",
+        "sourceId": "teacher",
+        "acquiredAt": {
+          "date": "2026-07-21",
+          "slotId": "early"
+        },
+        "belief": "uncertain",
+        "confidence": 0.6
+      }
+    ]
+  },
+  {
+    "route": "angry",
+    "choices": [
+      "angry",
+      "plan"
+    ],
+    "stages": [
+      {
+        "stage": "opening",
+        "date": "2026-07-20"
+      },
+      {
+        "stage": "boundary",
+        "date": "2026-07-21"
+      }
+    ],
+    "immediate": [
+      "教師看到學生提供的小考成績單，三次分數為78、74及52。",
+      "教師當面表達疲憊，學生交出缺交清單，約定隔日核對。"
+    ],
+    "final": {
+      "eventId": "event:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"day:2026-07-20\",\"2026-07-20\",\"[\\\"engineering:learning-conversation\\\",[\\\"world:school:cohort:1:student:0\\\"],[]]\"]",
+      "page": {
+        "order": 2,
+        "text": "我列好了。家裡的事我還不想說。",
+        "speaker": "world:school:cohort:1:student:0",
+        "scene": "school:counselling-corner",
+        "cast": [
+          {
+            "role": "participant",
+            "position": "center",
+            "expression": "calm",
+            "actorId": "world:school:cohort:1:student:0"
+          }
+        ],
+        "presentation": "dialogue"
+      },
+      "pageIndex": 1,
+      "pageCount": 2,
+      "canPrevious": false,
+      "canNext": false,
+      "choices": [],
+      "confirmation": null,
+      "canFinish": false,
+      "waiting": false,
+      "canResume": false,
+      "ended": true,
+      "teacherDelta": {
+        "教學能力": 0,
+        "班級經營": 0,
+        "溝通協調": 0,
+        "行政應對": 0,
+        "危機處理": 0,
+        "情緒調適": 0,
+        "體力": 0,
+        "精神": -0.5,
+        "抗壓": 0,
+        "聲望": 0,
+        "熱忱": 0,
+        "情緒": -1
+      },
+      "result": [
+        "教師看到學生提供的小考成績單，三次分數為78、74及52。",
+        "教師當面表達疲憊，學生交出缺交清單，約定隔日核對。",
+        "雙方依缺交清單排出安排，家庭原因仍未確認。"
+      ]
+    },
+    "facts": [
+      {
+        "description": "教師看到學生提供的小考成績單，三次分數為78、74及52。",
+        "causeIds": []
+      },
+      {
+        "description": "教師當面表達疲憊，學生交出缺交清單，約定隔日核對。",
+        "causeIds": [
+          "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"premise\"]"
+        ]
+      },
+      {
+        "description": "雙方依缺交清單排出安排，家庭原因仍未確認。",
+        "causeIds": [
+          "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"opening\",\"angry\"]"
+        ]
+      }
+    ],
+    "restored": true,
+    "known": [
+      {
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"angry\\\"]\",\"1\"]",
+        "versionId": "1",
+        "statement": "成績變化的原因尚待查明。",
+        "sourceId": "teacher",
+        "acquiredAt": {
+          "date": "2026-07-20",
+          "slotId": "early"
+        },
+        "belief": "uncertain",
+        "confidence": 0.6
+      },
+      {
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"boundary\\\",\\\"plan\\\"]\",\"1\"]",
+        "versionId": "1",
+        "statement": "成績變化的原因尚待查明。",
+        "sourceId": "teacher",
+        "acquiredAt": {
+          "date": "2026-07-21",
+          "slotId": "early"
+        },
+        "belief": "uncertain",
+        "confidence": 0.6
+      }
+    ]
+  }
+]

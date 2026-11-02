@@ -1,3 +1,4 @@
+import { validateStoryReference } from './story-content.js';
 /** Internal engine contracts. Content/eligibility/weights/lifecycle remain separate. */
 import { TOPIC_IDS } from './topics.js';
 import { canonicalData } from '../changes/settlement.js';
@@ -92,6 +93,7 @@ export function buildEventCandidates(world,definitions,{engineering=false}={}){
  const day=calendarDay(world.position.date,gradeAt(world.position.date,r.plan.startYear)),index=eventIndex(world),candidates=[],rejected=[];
  for(const d of definitions){
   need(!(index.byDefinition.get(d.id)??[]).some(s=>s.topicId!==d.topicId||s.type!==d.type),'Stable subtopic identity cannot change topic or type');
+  if(d.content.status==='ready'||d.content.resourceId.startsWith('engineering:'))validateStoryReference(d);
   if(d.content.status!=='ready'&&!(engineering&&d.content.status==='engineering-test'))continue;
   const e=d.eligibility,p=d.repetition,content=Object.freeze(structuredClone(d.content)),groups=Object.freeze([...p.exclusionGroups]),people=[...new Set(e.people.flatMap(scope=>participantPool(world,scope,index)))].sort();
   const current=day.slots.findIndex(s=>s.id===world.position.slotId),slots=Object.freeze(day.slots.slice(current).filter(s=>!s.protected&&(!e.slotIds.length||e.slotIds.includes(s.id))).map(s=>s.id));

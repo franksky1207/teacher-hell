@@ -1,3 +1,4 @@
+import { validateStoryHistory } from './story.js';
 import { validateEventSelectionHistory } from './event-selection.js';
 import { isFormal, validateFormalPlan, planPosition } from './schedule.js';
 /** Authoritative world extension of Foundation v1; no disk or calendar generation. */
@@ -122,7 +123,7 @@ export function validateWorldState(world) {
     for(const draw of commit.draws){
       identifier(draw.id);identifier(draw.stream);
       if(Object.hasOwn(draw,'poolSize')){
-        assertShape(draw,['id','stream','index','poolSize','totalWeight','selectedKey','selectedWeight']);identifier(draw.selectedKey);
+        assertShape(draw,['id','stream','index','poolSize','totalWeight','selectedKey','selectedWeight',...(Object.hasOwn(draw,'candidate')?['candidate']:[])]);identifier(draw.selectedKey);
         ensure(draw.stream==='events'&&Number.isSafeInteger(draw.poolSize)&&draw.poolSize>0&&Number.isInteger(draw.index)&&draw.index>=0&&draw.index<draw.poolSize&&Number.isFinite(draw.totalWeight)&&draw.totalWeight>0&&Number.isFinite(draw.selectedWeight)&&draw.selectedWeight>0&&draw.selectedWeight<=draw.totalWeight,'LEDGER','Invalid compact event draw');
       }else{assertShape(draw,['id','stream','index','weights']);ensure(Array.isArray(draw.weights)&&draw.weights.length>0&&draw.weights.every(n=>Number.isFinite(n)&&n>=0)&&Number.isInteger(draw.index)&&draw.index>=0&&draw.index<draw.weights.length&&draw.weights[draw.index]>0,'LEDGER','Invalid recorded draw');}
     }
@@ -205,6 +206,7 @@ export function validateWorldState(world) {
   unique(resultKeys,k=>k,'semantic result keys');
   for(const commit of r.commits)for(const id of commit.numericReceiptIds)ensure(r.effects.some(e=>e.attemptId===commit.attemptId&&e.numericReceiptId===id),'LEDGER','Commit references missing effect');
   validateEventSelectionHistory(world);
+  validateStoryHistory(world);
   return world;
 }
 export function restoreWorldState(saved) {

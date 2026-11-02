@@ -1,3 +1,4 @@
+import { validateStoryReference } from './story-content.js';
 /** Detached draft helpers; only transactions.js may publish their effects. */
 import { validateEventDefinitions, buildEventCandidates, eventIndex, weighEventCandidate, candidateConflict } from './event-candidates.js';
 import { canonicalData } from '../changes/settlement.js';
@@ -10,6 +11,7 @@ const runtime=w=>w.extensions['teacher-hell/world'];
 const tuple=(...x)=>JSON.stringify(x);
 export function registerEventCatalogue(world,op){
  assertShape(op,['type','catalogueId','definitions','bindings','engineering']);identifier(op.catalogueId);validateEventDefinitions(op.definitions);
+ for(const d of op.definitions)if(d.content.status==='ready'||d.content.resourceId.startsWith('engineering:'))validateStoryReference(d);
  need(typeof op.engineering==='boolean'&&Array.isArray(op.bindings)&&op.bindings.length===op.definitions.length,'Catalogue weight bindings');
  const ids=new Set(op.definitions.map(d=>d.id));need(new Set(op.bindings.map(b=>b.definitionId)).size===ids.size,'One binding per definition');
  for(const b of op.bindings){assertShape(b,['definitionId','sources','valence']);need(ids.has(b.definitionId)&&Array.isArray(b.sources)&&b.sources.length===6&&b.sources.every(s=>typeof s==='string'&&s.length)&&['negative','neutral','positive'].includes(b.valence),'Invalid catalogue binding');}
@@ -49,7 +51,7 @@ export function selectWorldEvents(world,operation,command,receipt){
   receipt.draws.push({id:`event-pick:${day.date}:${selected.length}`,stream:'events',index:pick,poolSize:pool.length,totalWeight:weights.reduce((a,b)=>a+b,0),selectedKey:c.key,selectedWeight:c.effectiveWeight});
   if(!slotId){pool.splice(pick,1);continue;}
   const eventId=createId('event',[world.identity.attemptId,groupId,day.date,c.key]),stageId=createId('stage',[eventId,'initial']);
-  const s={...c,slotId,groupId,eventId,stageId,status:'reserved'};selected.push(s);slotsUsed.add(slotId);
+  const s={...c,slotId,groupId,eventId,stageId,status:'reserved'};receipt.draws.at(-1).candidate=canonicalData(s);selected.push(s);slotsUsed.add(slotId);
   pool=pool.filter(other=>{const reason=candidateConflict(other,s,day.date);if(reason){excluded.push({key:other.key,reason});return false;}return !!usable(other);});
  }
  world.random.events=rng.snapshot();
@@ -95,11 +97,16 @@ export function validateEventSelectionHistory(world){
    if(count)need(replay.weightedIndex(count.weights)===count.index&&d.requested===count.index,'Count draw differs from locked decision');
    for(const [i,s] of d.selected.entries()){
     const pick=commit.draws.find(v=>v.id===`event-pick:${h.at.date}:${i}`);
+    need(pick?.candidate===canonicalData(s)||pick?.candidate===undefined&&s.content.status!=='ready'&&!s.content.resourceId.startsWith('engineering:'),'Candidate differs from transaction evidence');
     need(pick?.selectedKey===s.key&&pick.selectedWeight===s.effectiveWeight&&(i!==0||pick.poolSize===d.poolSize),'Selection differs from draw receipt');replay.next();
    }
    need(canonicalData(replay.snapshot())===canonicalData(d.randomAfter),'Selection random state chain differs');
    need(Number.isInteger(d.requested)&&d.requested>=0&&d.requested<=5&&Array.isArray(d.selected)&&d.selected.length<=d.requested,'Invalid count');
    for(const s of d.selected){
+    const source=d.catalogueId!==null?r.history.find(c=>c.type==='event-catalogue'&&c.data.catalogueId===d.catalogueId).data:JSON.parse(commit.request).operations.find(o=>o.type==='draw-events');
+    const definition=source.definitions.find(x=>x.id===s.definitionId);
+    need(definition&&definition.topicId===s.topicId&&definition.type===s.type&&canonicalData(definition.content)===canonicalData(s.content),'Reservation content differs from registered definition');
+    if(definition.content.status==='ready'||definition.content.resourceId.startsWith('engineering:'))validateStoryReference(definition);
     validateId(s.eventId,'event');validateId(s.stageId,'stage');
     const at=day.slots.findIndex(x=>x.id===s.slotId),start=day.slots.findIndex(x=>x.id===h.at.slotId),slots=usedSlots.get(day.date)??new Set();
     need(at>=start&&at>=0&&!day.slots[at].protected&&!slots.has(s.slotId),'Reservation at illegal/duplicate slot');

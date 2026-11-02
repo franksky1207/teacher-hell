@@ -48,9 +48,9 @@ export function guardCalendarOperation(world,command,op){
  need(['formal-event','activity','procedure','routine'].includes(context.kind),'CALENDAR_CONTEXT','Unknown calendar result channel');
  need(op.type==='advance-time'||op.type==='prepare-semester'||!world.extensions['teacher-hell/world'].history.some(h=>h.type==='slot-complete'&&h.cursor===plan.cursor),'TIME_BARRIER','Completed slot is closed to further work; advance before starting another action');
  if(['advance-time','finish-slot','prepare-semester','plan-vacation'].includes(op.type))return;
- const domain=['draw-events','admit-event','event-lifecycle','event-exposure','school','open-event','fact','link-fact','claim','learn','belief','reveal','result','confirm-choice','stage','enrollment-reference','role'].includes(op.type);
+ const domain=['story','draw-events','admit-event','event-lifecycle','event-exposure','school','open-event','fact','link-fact','claim','learn','belief','reveal','result','confirm-choice','stage','enrollment-reference','role'].includes(op.type);
  if(!domain)return;
- if(['draw-events','admit-event','event-lifecycle','event-exposure'].includes(op.type))need(context.kind==='formal-event','CALENDAR_CONTEXT','Event selection requires the formal channel');
+ if(['story','draw-events','admit-event','event-lifecycle','event-exposure'].includes(op.type))need(context.kind==='formal-event','CALENDAR_CONTEXT','Event selection requires the formal channel');
  if(op.type==='school')need(context.kind==='procedure','CALENDAR_CONTEXT','School affiliations require the procedure channel');
  need(context.kind!=='routine','CALENDAR_CONTEXT','Routine operations cannot disguise formal event work');
  if(slot.protected&&op.type!=='draw-events')need(context.kind==='activity'||context.kind==='procedure','ACTIVITY_PROTECTED','Formal new events and old continuations stop in protected activity slots');
@@ -113,8 +113,11 @@ export function planVacation(world,op,before){
 }
 export function nextVacationOperation(world){
  const plan=world.extensions['teacher-hell/world'].plan,task=plan.vacation;if(!isFormal(plan)||!task)return {status:'idle'};
+ const story=world.extensions['teacher-hell/world'].history.filter(h=>h.type==='story');
+ const attention=world.events.map(e=>({event:e,state:story.findLast(h=>h.eventId===e.id)?.data.state})).find(x=>x.state&&x.state.mode!=='ended'&&(x.state.mode!=='waiting'||x.state.dueDate<=world.position.date&&!formalSlot(world).slot.protected));
+ if(attention)return {status:attention.state.mode==='waiting'?'follow-up-required':'decision-required',eventId:attention.event.id,direction:task.direction,endDate:task.endDate};
  if(world.events.some(e=>e.choice&&e.choice.confirmedOptionId===null))return {status:'decision-required',direction:task.direction,endDate:task.endDate};
- const r=world.extensions['teacher-hell/world'];return {status:'advance',direction:task.direction,endDate:task.endDate,request:{id:createId('operation',[world.identity.attemptId,task.id,String(plan.cursor),'vacation-step']),attemptId:world.identity.attemptId,expectedRevision:r.revision,actorId:world.identity.playerId,preconditions:[],operations:[{type:'finish-slot',completedActivityIds:[]},{type:'advance-time',planId:plan.id,steps:1}],calendarContext:{kind:'routine'}}};
+ const r=world.extensions['teacher-hell/world'];return {status:'advance',direction:task.direction,endDate:task.endDate,request:{id:createId('operation',[world.identity.attemptId,task.id,String(plan.cursor),'vacation-step']),attemptId:world.identity.attemptId,expectedRevision:r.revision,actorId:world.identity.playerId,preconditions:[],operations:[...(r.history.some(h=>h.type==='slot-complete'&&h.cursor===plan.cursor)?[]:[{type:'finish-slot',completedActivityIds:[]}]),{type:'advance-time',planId:plan.id,steps:1}],calendarContext:{kind:'routine'}}};
 }
 
 /** Milestones are permissions for the later annual controller, never a pass/fail verdict. */

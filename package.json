@@ -23,7 +23,10 @@
     "test:browser": "npm run build && node scripts/browser-smoke.js",
     "test:storage:browser": "npm run build && node scripts/storage-browser.js",
     "calendar:build": "node scripts/calendar.js",
-    "calendar:check": "node scripts/calendar.js --check"
+    "calendar:check": "node scripts/calendar.js --check",
+    "demo:story": "node scripts/story-demo.js",
+    "test:story:routes": "node scripts/story-demo.js --regression",
+    "test:story:browser": "npm run build && node scripts/storage-browser.js --story-only"
   },
   "devDependencies": {
     "acorn": "8.15.0"

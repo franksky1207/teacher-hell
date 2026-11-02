@@ -66,6 +66,7 @@ try {
   };
   const testId=temporary.split('/').at(-1);
   const setup=initialize=>`(async()=>{globalThis.checks=await import('./test/support/storage-checks.js');globalThis.st=await checks.setup(${JSON.stringify(testId)},${initialize});return true;})()`;
+  if(!process.argv.includes('--story-only')){
   await evalIn(setup(true));
   console.log('PASS',await evalIn('checks.basics(st)'));
   const second=await call('Target.createTarget',{url});
@@ -123,6 +124,15 @@ try {
   const eventRestored=await evalIn(`(async()=>{const ev=await import('./test/support/event-checks.js');return ev.eventSignature(${JSON.stringify(testId)});})()`);
   if(eventRestored!==eventSaved.signature)throw Error('Event page reload changed committed selection');
   console.log('PASS phase 06 actual navigation restores exact event identity/history/PRNG');
+  }
+  await evalIn(`(async()=>{globalThis.story=await import('./test/support/story-checks.js');globalThis.storyTest=await story.storySetup(${JSON.stringify(testId)},true);return true;})()`);
+  const pendingStory=await evalIn('(async()=>JSON.stringify(await storyTest.db.read(1)))()');await evalIn('storyTest.db.close()');
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+  const restoredStory=await evalIn(`(async()=>{globalThis.story=await import('./test/support/story-checks.js');globalThis.storyTest=await story.storySetup(${JSON.stringify(testId)},false);return JSON.stringify(await storyTest.db.read(1));})()`);
+  if(restoredStory!==pendingStory)throw Error('Story reload changed pending confirmation');
+  console.log('PASS phase 07 actual navigation restores pending story confirmation');
+  const storySaved=await evalIn('story.storyContinue(storyTest)');
+  console.log('PASS phase 07 N6 rollback/dedup/three slots/import/cross-day/two completed branches',JSON.stringify(storySaved.report));
   console.log('PASS Chromium storage: all checks complete; synthetic only; NOT Safari/iPhone or full 30-year gameplay.');
   await call('Browser.close');
 } finally {

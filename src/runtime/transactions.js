@@ -1,3 +1,4 @@
+import { compileStory, guardStoryOperation, storyContent } from './story.js';
 import { registerEventCatalogue, selectWorldEvents, admissionEvent, lifecycleChange, eventExposure, guardSelectedProgress } from './event-selection.js';
 import { initializeRegistry, schoolCatalogue } from '../world/registry.js';
 import { careerRange } from '../calendar/calendar.js';
@@ -40,11 +41,22 @@ function preconditions(world,conditions) {
     else throw new WorldError('PRECONDITION','Unknown precondition');
   }
 }
-function execute(world,command,op,numericSession,receipt,selectedAdmission=false) {
+function execute(world,command,op,numericSession,receipt,selectedAdmission=false,storyInternal=false) {
   const r=runtimeOf(world);
+  guardStoryOperation(world,op,storyInternal);
   guardCalendarOperation(world,command,op);
   guardSelectedProgress(world,op);
-  if(op.type==='register-event-catalogue'){
+  if(op.type==='story'){
+    ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player operates a story');
+    if(op.action==='confirm')naturalAt(world,numericSession,world.position);
+    world.numeric=numericSession.snapshot();
+    const compiled=compileStory(world,op);
+    const beforePanel=deriveWorldPanel(numericSession.world());
+    for(const child of compiled.operations)numericSession=execute(world,command,child,numericSession,receipt,false,op.eventId);
+    const panel=deriveWorldPanel(numericSession.world());
+    compiled.state.panelDelta=Object.fromEntries(Object.keys(panel).map(k=>[k,compiled.state.panelDelta[k]+(op.action==='confirm'?panel[k]-beforePanel[k]:0)]));
+    history(world,command,'story',op.eventId,world.events.find(e=>e.id===op.eventId).stageId,[],{action:clone(op),state:compiled.state,operations:compiled.operations,inputs:compiled.inputs});
+  } else if(op.type==='register-event-catalogue'){
     history(world,command,'event-catalogue',null,null,[],registerEventCatalogue(world,op));
   } else if(op.type==='draw-events'){
     world.numeric=numericSession.snapshot();
@@ -54,6 +66,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     const event=admissionEvent(world,op);
     numericSession=execute(world,command,{type:'open-event',event},numericSession,receipt,true);
     history(world,command,'event-lifecycle',event.id,event.stageId,[],{previous:'reserved',status:'active',basisFactId:null});
+    if(storyContent(world,event.id))numericSession=execute(world,command,{type:'story',eventId:event.id,action:'start',optionId:null},numericSession,receipt);
   } else if(op.type==='event-exposure'){
     const data=eventExposure(world,op),event=findEvent(world,op.eventId);
     history(world,command,'event-exposure',event.id,event.stageId,[op.basisFactId],data);
@@ -213,6 +226,8 @@ export function prepareWorldOperation(saved,request) {
     if(prior){ensure(prior.request===encoded,'CONFLICT','Operation ID reused with different content');return {world,receipt:clone(prior),duplicate:true};}
     ensure(request.expectedRevision===r.revision,'STALE','World revision changed');preconditions(world,request.preconditions);
     ensure(Array.isArray(request.operations)&&request.operations.length>0,'SCHEMA','Nonempty operations required');
+    const storyIds=request.operations.filter(o=>o.type==='story'||o.type==='admit-event').map(o=>o.eventId);
+    ensure(new Set(storyIds).size===storyIds.length,'STORY','One story action per event per transaction');
     const command=clone(request),offset=r.history.length;
     const receipt={id:command.id,attemptId:command.attemptId,revision:r.revision+1,request:encoded,historyIds:[],numericReceiptIds:[],draws:[]};
     let numerical=createSettlementSession(world.numeric);

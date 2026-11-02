@@ -105,6 +105,12 @@ try {
   if(await evalIn('JSON.stringify(pt.s.snapshot())')!==phaseSaved)throw Error('Actual phase reload changed calendar/table/history/PRNG');
   console.log('PASS phase 01–04 actual page navigation restores exact formal world and fixed timetable');
   }else console.log('NOT EXECUTED: phase 01–04 calendar scenario (--storage-only explicitly selected)');
+  const schoolSaved=await evalIn(`(async()=>{const module=await import('./test/support/school-checks.js');return module.schoolStorage(${JSON.stringify(testId)});})()`);
+  console.log('PASS phase 05 school: real IndexedDB rollback/replay/import/reopen/retry/three slots',JSON.stringify(schoolSaved.report));
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+  const schoolRestored=await evalIn(`(async()=>{const module=await import('./test/support/school-checks.js');return module.restoredSchoolSignature(${JSON.stringify(testId)});})()`);
+  if(schoolRestored!==schoolSaved.signature)throw Error('School page reload changed identity/history/random');
+  console.log('PASS phase 05 actual page navigation preserves the complete school world');
   console.log('PASS Chromium storage: all checks complete; synthetic only; NOT Safari/iPhone or full 30-year gameplay.');
   await call('Browser.close');
 } finally {

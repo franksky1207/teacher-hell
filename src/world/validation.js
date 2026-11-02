@@ -1,3 +1,4 @@
+import { validateRegistry, historicalSchoolBasis } from './registry.js';
 import { resolveWorldEvaluations, validateSocial } from './evaluations.js';
 import { assertShape, identifier } from '../player/panel.js';
 import { restoreCreation } from '../player/creation.js';
@@ -20,7 +21,7 @@ function uniqueList(ids) {
 /** O(people + care links + stored relationships); no all-pairs traversal. */
 export function validateWorld(world, { stage = 'initial' } = {}) {
   if (!['initial','runtime'].includes(stage)) throw new RangeError('Unknown validation stage');
-  assertShape(world,['version','player','school','classroom','people','families','careLinks','contacts','relationships','reputations','random',...(Object.hasOwn(world,'social')?['social']:[])]);
+  assertShape(world,['version','player','school','classroom','people','families','careLinks','contacts','relationships','reputations','random',...(Object.hasOwn(world,'social')?['social']:[]),...(Object.hasOwn(world,'registry')?['registry']:[])]);
   if (world.version!==1) throw new RangeError('Unsupported world version');
   const player=restoreCreation(world.player,{resolveEvaluations: entries => resolveWorldEvaluations(world,entries)});
   if (player.phase!=='confirmed') throw new RangeError('Confirm player before world initialization');
@@ -57,7 +58,7 @@ export function validateWorld(world, { stage = 'initial' } = {}) {
       if (!family) throw new RangeError('Dangling family reference');
       if (person.kind==='student') {
         students++; family.students++;
-        if (!person.roleIds.includes(11)) throw new RangeError('Missing core student tag');
+        if (!(world.registry?person.roleIds.some(id=>[11,12,13,18].includes(id)):person.roleIds.includes(11))) throw new RangeError('Missing core student tag');
       } else {
         family.caregivers++;
         if (!person.roleIds.includes(19)) throw new RangeError('Missing caregiver tag');
@@ -93,11 +94,11 @@ export function validateWorld(world, { stage = 'initial' } = {}) {
     const fromStudent=Object.hasOwn(world.people,relation.fromId)&&world.people[relation.fromId].kind==='student';
     const toStudent=Object.hasOwn(world.people,relation.toId)&&world.people[relation.toId].kind==='student';
     const caregiverId=relation.fromId===playerId?relation.toId:relation.toId===playerId?relation.fromId:null;
-    const historicalClass=stage==='runtime'&&relation.basis.referenceId===classroom.id&&(
+    const historicalClass=stage==='runtime'&&(world.registry?historicalSchoolBasis(world,relation):relation.basis.referenceId===classroom.id&&(
       (relation.basis.kind==='teacher-assignment'&&((relation.fromId===playerId&&toStudent)||(relation.toId===playerId&&fromStudent)))||
       (relation.basis.kind==='same-class'&&fromStudent&&toStudent&&relation.fromId!==relation.toId)||
       (relation.basis.kind==='care-assignment'&&caregiverId!==null&&Object.hasOwn(world.people,caregiverId)&&world.people[caregiverId].kind==='caregiver')
-    );
+    ));
     if (!historicalClass) {
       const expected=relationshipBasis(world,relation.fromId,relation.toId);
       if (expected.kind!==relation.basis.kind || expected.referenceId!==relation.basis.referenceId) throw new RangeError('Invalid relationship basis');
@@ -113,8 +114,9 @@ export function validateWorld(world, { stage = 'initial' } = {}) {
   }
   for (const evaluation of player.current.evaluations) {
     if (evaluation.kind==='person') personValues(world,evaluation.sourceId);
-    if (evaluation.kind==='group' && ![classroom.id,world.school.id].includes(evaluation.sourceId) && !Object.hasOwn(world.social?.groups ?? {},evaluation.sourceId)) throw new RangeError('Unknown evaluation group');
+    if (evaluation.kind==='group' && ![classroom.id,world.school.id].includes(evaluation.sourceId) && !world.registry?.classes[evaluation.sourceId]?.values && !Object.hasOwn(world.social?.groups ?? {},evaluation.sourceId)) throw new RangeError('Unknown evaluation group');
   }
+  if (Object.hasOwn(world,'registry')) validateRegistry(world);
   if (Object.hasOwn(world,'social')) validateSocial(world);
   assertShape(world.random,['structure','people','relationships','environment']);
   Object.values(world.random).forEach(restoreRandom);

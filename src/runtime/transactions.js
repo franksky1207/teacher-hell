@@ -1,7 +1,11 @@
+import { initializeRegistry, schoolCatalogue } from '../world/registry.js';
+import { careerRange } from '../calendar/calendar.js';
+import { SUBJECT_LOAD } from '../calendar/timetable.js';
+import { executeSchool, arrangeReplenishment, dueTransfers } from './school.js';
 import { deriveWorldPanel } from '../social/reputation.js';
 import { STATE_NAMES } from '../player/panel.js';
 import { isFormal, planPosition, planVacation, createCalendarBaseline, guardCalendarOperation, calendarAdmission, finishCalendarSlot, advanceFormalSlot, prepareSemester } from './schedule.js';
-import { createId, validateId, validateEventEnvelope, restoreFoundationEnvelope } from '../contracts/foundation.js';
+import { createId, validateId, validateEventEnvelope, restoreFoundationEnvelope, schoolEnrollmentReferences } from '../contracts/foundation.js';
 import { canonicalData, createSettlementSession, startSettlement } from '../changes/settlement.js';
 import { targetRecord } from '../changes/targets.js';
 import { createRandom, restoreRandom } from '../numeric/random.js';
@@ -38,7 +42,12 @@ function preconditions(world,conditions) {
 function execute(world,command,op,numericSession,receipt) {
   const r=runtimeOf(world);
   guardCalendarOperation(world,command,op);
-  if(op.type==='open-event') {
+  if(op.type==='school'){
+    const result=executeSchool(world,op,numericSession);
+    history(world,command,'school',null,null,op.basisFactId===null?[]:[op.basisFactId],result.data);
+    world.numeric=clone(result.snapshot);
+    return createSettlementSession(result.snapshot);
+  } else if(op.type==='open-event') {
     assertShape(op,['type','event']);validateEventEnvelope(op.event);
     ensure(!world.events.some(e=>e.id===op.event.id),'DUPLICATE','Event ID already exists');
     ensure(!op.event.facts.length&&!op.event.knowledge.length&&!op.event.results.length&&op.event.choice?.confirmedOptionId==null,'SCHEMA','Open an empty event; create facts/results through operations');
@@ -135,6 +144,11 @@ function execute(world,command,op,numericSession,receipt) {
       naturalAt(world,numericSession,world.position);
       for(let i=0;i<op.steps;i++){r.plan.cursor++;world.position=clone(r.plan.positions[r.plan.cursor]);naturalAt(world,numericSession,world.position);}
     }
+    for(;;){
+      const pending=dueTransfers(numericSession.world(),world.position.date)[0];if(!pending)break;
+      const completed=executeSchool(world,pending,numericSession);
+      history(world,command,'school',null,null,[pending.basisFactId],completed.data);numericSession=createSettlementSession(completed.snapshot);world.numeric=clone(completed.snapshot);
+    }
     history(world,command,'time',null,null,[],{planId:r.plan.id,steps:op.steps});
   } else if(op.type==='sample') {
     assertShape(op,['type','stream','id','weights']);identifier(op.id);
@@ -142,6 +156,7 @@ function execute(world,command,op,numericSession,receipt) {
     const rng=restoreRandom(world.random[op.stream]),index=rng.weightedIndex(op.weights);world.random[op.stream]=rng.snapshot();
     receipt.draws.push({id:op.id,stream:op.stream,index,weights:clone(op.weights)});
   } else if(op.type==='enrollment-reference') {
+    ensure(!numericSession.world().registry,'ENROLLMENT','Registry-managed affiliations cannot use reference-only enrollment writes');
     assertShape(op,['type','record','basisFactId']);ensure(findFact(world,op.basisFactId).subjectIds.includes(op.record.personId),'REFERENCE','Enrollment lacks a fact about this person');ensure(!world.enrollments.some(e=>e.id===op.record.id),'DUPLICATE','Enrollment ID already exists');
     world.enrollments.push(clone(op.record));history(world,command,'enrollment',null,null,[op.basisFactId],{enrollmentId:op.record.id});
   } else if(op.type==='role') {
@@ -183,7 +198,17 @@ export function prepareWorldOperation(saved,request) {
     const receipt={id:command.id,attemptId:command.attemptId,revision:r.revision+1,request:encoded,historyIds:[],numericReceiptIds:[],draws:[]};
     let numerical=createSettlementSession(world.numeric);
     for(const operation of command.operations)numerical=execute(world,command,operation,numerical,receipt);
-    world.numeric=numerical.snapshot();syncReferences(world);r.revision++;
+    const arrangement=arrangeReplenishment(world,command,numerical);
+    if(arrangement){history(world,command,'school',null,null,[arrangement.data.basisFactId],arrangement.data);numerical=createSettlementSession(arrangement.snapshot);}
+    world.numeric=numerical.snapshot();
+    const school=world.numeric.evolution.world;
+    if(school.registry)world.enrollments=schoolEnrollmentReferences(school);
+    if(school.registry&&command.operations.some(op=>op.type==='school'&&['school-enroll','school-leave','school-graduate'].includes(op.change.type))){
+      const count=school.classroom.studentIds.length;
+      const allGraduated=count===0&&command.operations.some(op=>op.type==='school'&&op.change.type==='school-graduate')&&school.registry.enrollments.filter(e=>e.classId===school.classroom.id).every(e=>e.until!==null);
+      ensure(count>=38||allGraduated,'ENROLLMENT','Sub-38 exceptional rule is undecided');
+    }
+    syncReferences(world);r.revision++;
     receipt.historyIds=r.history.slice(offset).map(h=>h.id);r.commits.push(receipt);
     return {world:restoreWorldState(world),receipt:clone(receipt),duplicate:false};
   } catch(error) {
@@ -227,3 +252,14 @@ export function forkWorldAttempt(openingSnapshot,{attemptId,seeds}) {
 }
 
 export function startCalendarWorld(foundation,options){const adopted=createCalendarBaseline(foundation,options);return startWorld(adopted.foundation,adopted.plan);}
+
+/** Bootstrap the real school catalogue through the same checked initial transaction.
+ * Preview generation is a detached proposal only; the committed operation owns RNG/history.
+ */
+export function startSchoolCareer(foundation,{startYear,subject,seed}){
+ ensure(foundation.enrollments.length===0,'MIGRATION','Reference-only affiliations need explicit migration');
+ const preview=clone(foundation.numeric.evolution.world);
+ initializeRegistry(preview,{academicYear:startYear,date:careerRange(startYear).start});
+ const baseline=startCalendarWorld(foundation,{startYear,subject,seed,classes:schoolCatalogue(preview,Object.keys(SUBJECT_LOAD)),homeClassId:preview.classroom.id});
+ return prepareWorldOperation(baseline,{id:createId('operation',[baseline.identity.careerId,'initialize-school']),attemptId:baseline.identity.attemptId,expectedRevision:0,actorId:baseline.identity.playerId,preconditions:[],calendarContext:{kind:'procedure'},operations:[{type:'school',basisFactId:null,change:{type:'school-initialize',academicYear:startYear}}]}).world;
+}

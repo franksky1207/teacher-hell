@@ -94,7 +94,12 @@ export function knowledgeReferences(world,event) {
 }
 export function validateWorldState(world) {
   validateFoundationEnvelope(world);
-  const r=runtimeOf(world);
+  const r=runtimeOf(world),school=world.numeric.evolution.world.registry;
+  if(school){
+    for(const record of [...school.enrollments,...school.assignments])ensure(record.from<=world.position.date&&(record.until===null||record.until<=world.position.date),'TIME','School history extends into the future');
+    for(const t of school.transfers)ensure(t.createdAt<=world.position.date&&(t.completedAt===null||t.completedAt<=world.position.date),'TIME','Transfer result extends into the future');
+    if(isFormal(r.plan))for(const table of r.plan.tables)ensure(table.classes.every(c=>school.classes[c.id]?.cohortStart===c.cohortStart)&&Object.hasOwn(school.classes,table.homeClassId),'TIMETABLE','Saved timetable references an unknown school class');
+  }
   assertShape(r,['version','revision','plan','facts','claims','knowledge','disclosures','history','commits','stages','effects','numericArchives']);
   ensure(r.version===1&&Number.isSafeInteger(r.revision)&&r.revision>=0,'VERSION','Unknown world runtime version/revision');
   validatePlan(r.plan);if(isFormal(r.plan))ensure(Object.hasOwn(world.random,'schedule'),'RANDOM','Formal timetable random stream is missing');ensure(same(world.position,planPosition(r.plan)),'TIME','Position is not the plan cursor');

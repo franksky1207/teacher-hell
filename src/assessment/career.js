@@ -1,6 +1,6 @@
 import { assertShape } from '../player/panel.js';
 import { weightedMean } from '../numeric/math.js';
-import { sourceReader, idList, insufficient, uniqueOutcomes } from './evidence.js';
+import { sourceReader, idList, insufficient, uniqueOutcomes, cohortEnrollments } from './evidence.js';
 import { loadYear, developmentMetrics, growthMetric, stateMetric } from './annual.js';
 import { CAREER_LIMITS, outcomeScore, scoredResult } from './grading.js';
 
@@ -23,7 +23,7 @@ export function rateCareer(input,source) {
     }
     if(y.completion.outcome!=='success')return {status:'not-successful',score:null,grade:null,year:s.year};
   }
-  const allStudents=new Set(),cohortMetrics=[];
+  const allStudents=new Map(),cohortMetrics=[];
   const rows=uniqueOutcomes(years.flatMap(y=>y.rows));
   const required=['handling','student','relationship','quality','continuity','contribution'];
   const missing=required.filter(k=>!rows.some(r=>r.kind===k&&(k!=='handling'||r.significant))).map(k=>({id:'career',reason:`missing-${k}-outcomes`}));
@@ -32,7 +32,16 @@ export function rateCareer(input,source) {
     const cohort=cohorts[i],expected=[i*3+1,i*3+2,i*3+3];
     if(cohort.playerId!==first.playerId||cohort.schoolId!==first.schoolId||cohort.years.some((y,j)=>y!==expected[j]))throw new RangeError('Invalid three-year cohort');
     const members=new Set(cohort.studentIds);
-    for(const id of members) {if(allStudents.has(id))throw new RangeError('Core student reused across cohorts');allStudents.add(id);}
+    const affiliations=cohortEnrollments(reader,cohort);
+    if(reader.missing.length)return insufficient(reader.missing);
+    for(const id of members) {
+      const previous=allStudents.get(id);
+      if(previous){
+        const continued=affiliations.some(e=>e.personId===id&&['repeat','return'].includes(e.reason)&&previous.some(p=>p.id===e.previousEnrollmentId&&p.personId===id&&p.untilYear<=e.fromYear));
+        if(!continued)throw new RangeError('Core student reused across cohorts without a dated enrollment chain');
+      }
+      allStudents.set(id,affiliations.filter(e=>e.personId===id));
+    }
     const ownYears=years.slice(i*3,i*3+3);
     if(ownYears.some(y=>y.summary.cohortId!==cohort.id||y.start.students.concat(y.end.students).some(s=>!members.has(s.id))))throw new RangeError('Cohort enrollment/summary mismatch');
     const ownRows=rows.filter(r=>r.cohortId===cohort.id&&r.kind==='student');

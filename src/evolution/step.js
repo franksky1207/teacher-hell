@@ -1,3 +1,4 @@
+import { dailySchoolPeople } from '../world/registry.js';
 import { validateRecord, requireValue } from '../numeric/record.js';
 import { reflectDelta } from '../numeric/math.js';
 import { fieldRandom, naturalDelta, stabilizeOrdinaryDelta, fieldDynamics, TRAINABLE_FACTORS } from './model.js';
@@ -6,11 +7,12 @@ const key=(kind,id)=>JSON.stringify([kind,id]);
 /** Canonical holder references; player sources are not duplicated in the NPC map. */
 export function evolutionHolders(world) {
   const current=world.player.current,player=current.playerId;
-  const activeStudents=new Set(world.classroom.studentIds);
+  const activeStudents=new Set(world.classroom.studentIds),daily=dailySchoolPeople(world);
+  const activeFamilies=daily?new Set(Object.values(world.people).filter(p=>daily.has(p.id)).map(p=>p.familyId)):null;
   return [
     ...['person','life','work'].map(name=>({id:key(`player-${name}`,player),record:current[name],isPlayer:true,year:world.player.year,kind:`player-${name}`})),
-    ...Object.values(world.people).map(p=>({id:key('person',p.id),record:p.values,isPlayer:false,year:1,kind:'person',familyId:p.familyId,schoolExposure:p.kind==='student'&&activeStudents.has(p.id) ? .25 : 0})),
-    ...Object.values(world.families).map(f=>({id:key('family',f.id),record:f.values,isPlayer:false,year:1,kind:'family'})),
+    ...Object.values(world.people).filter(p=>!daily||daily.has(p.id)).map(p=>({id:key('person',p.id),record:p.values,isPlayer:false,year:1,kind:'person',familyId:p.familyId,schoolExposure:p.kind==='student'&&activeStudents.has(p.id) ? .25 : 0})),
+    ...Object.values(world.families).filter(f=>!activeFamilies||activeFamilies.has(f.id)).map(f=>({id:key('family',f.id),record:f.values,isPlayer:false,year:1,kind:'family'})),
     ...Object.values(world.social?.groups ?? {}).filter(g=>g.kind==='local').map(g=>({id:key('group',g.id),record:g.values,isPlayer:false,year:1,kind:'group'})),
     {id:key('classroom',world.classroom.id),record:world.classroom.values,isPlayer:false,year:1,kind:'classroom'},
     {id:key('school',world.school.id),record:world.school.values,isPlayer:false,year:1,kind:'school'},

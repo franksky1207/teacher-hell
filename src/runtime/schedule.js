@@ -36,6 +36,8 @@ export function prepareSemester(world,op){
  const next=nextPosition(world.position,plan.startYear),target=teachingTerm(next.date),y=yearData(Number(next.date.slice(0,4)));
  need(next.slotId==='early'&&(next.date===y.summerCamp||next.date===y.winterCamp)&&target?.id===op.semesterId,'TIMETABLE','Prepare semester only at the next camp opening boundary');
  need(!plan.tables.some(t=>t.semesterId===op.semesterId),'DUPLICATE','Semester timetable already fixed');
+ const registry=world.numeric.evolution.world.registry;
+ if(registry){need(op.homeClassId===registry.homeClassId&&op.classes.every(c=>registry.classes[c.id]?.cohortStart===c.cohortStart&&[0,1,2].includes(registry.academicYear-c.cohortStart)),'TIMETABLE','Timetable catalogue must match authoritative school affiliations');}
  const generated=generateTimetable({subject:plan.subject,semesterId:target.id,academicYear:target.academicYear,classes:op.classes,homeClassId:op.homeClassId,previous:plan.tables.at(-1),random:world.random.schedule});
  plan.tables.push(generated.table);world.random.schedule=generated.random;
 }
@@ -46,8 +48,9 @@ export function guardCalendarOperation(world,command,op){
  need(['formal-event','activity','procedure','routine'].includes(context.kind),'CALENDAR_CONTEXT','Unknown calendar result channel');
  need(op.type==='advance-time'||op.type==='prepare-semester'||!world.extensions['teacher-hell/world'].history.some(h=>h.type==='slot-complete'&&h.cursor===plan.cursor),'TIME_BARRIER','Completed slot is closed to further work; advance before starting another action');
  if(['advance-time','finish-slot','prepare-semester','plan-vacation'].includes(op.type))return;
- const domain=['open-event','fact','link-fact','claim','learn','belief','reveal','result','confirm-choice','stage','enrollment-reference','role'].includes(op.type);
+ const domain=['school','open-event','fact','link-fact','claim','learn','belief','reveal','result','confirm-choice','stage','enrollment-reference','role'].includes(op.type);
  if(!domain)return;
+ if(op.type==='school')need(context.kind==='procedure','CALENDAR_CONTEXT','School affiliations require the procedure channel');
  need(context.kind!=='routine','CALENDAR_CONTEXT','Routine operations cannot disguise formal event work');
  if(slot.protected)need(context.kind==='activity'||context.kind==='procedure','ACTIVITY_PROTECTED','Formal new events and old continuations stop in protected activity slots');
  if(context.kind==='activity'){
@@ -78,7 +81,7 @@ export function validateOpeningSnapshot(world){
  const range=careerRange(plan.startYear),date=world.position.date,y=yearData(Number(date.slice(0,4)));
  need((date===range.start||date===y.autumnStart&&world.position.serviceYear>1)&&world.position.slotId==='early','SNAPSHOT','Formal retry snapshots belong only to initial summer opening or a subsequent actual autumn opening');
  const r=world.extensions['teacher-hell/world'];
- if(date===range.start){need(r.revision===0,'SNAPSHOT','Initial opening snapshot precedes the first world action');return;}
+ if(date===range.start){const initialized=r.revision===1&&r.history.length===1&&r.history[0].type==='school'&&r.history[0].data.change.type==='school-initialize'&&r.commits.length===1&&!r.commits[0].draws.length&&!world.events.length;need(r.revision===0||initialized,'SNAPSHOT','Initial opening snapshot precedes the first world action');return;}
  const entries=r.history.filter(h=>h.cursor===plan.cursor),entry=entries[0],last=r.commits.at(-1);
  need(entries.length===1&&entry.type==='time'&&last?.id===entry.operationId&&JSON.parse(last.request).operations?.at(-1)?.type==='advance-time','SNAPSHOT','Capture an autumn opening immediately on entry, before any work in its first slot');
 }

@@ -29,3 +29,12 @@ export function readHistoricalReview(saved) {
   return {mode:'retrospective-objective',facts:r.facts.map(f=>({id:f.id,eventId:f.eventId,description:f.description,subjectIds:f.subjectIds,at:f.occurredAt,causeIds:f.causeIds,categoryCodes:f.categoryCodes})),
     claims:r.claims.map(c=>({id:c.id,versionId:c.versionId,statement:c.statement,sourceId:c.sourceId,at:c.at})),counts};
 }
+
+/** Official current homeroom data only; no backstage traits or school-wide directory. */
+export function readSchoolRoster(saved){
+ const w=restoreWorldState(saved),numeric=w.numeric.evolution.world,r=numeric.registry;
+ if(!r)return null;
+ return {classId:r.homeClassId,className:r.classes[r.homeClassId].name,grade:r.academicYear-r.cohortStart+1,
+  students:numeric.classroom.studentIds.map(id=>({id,name:r.profiles[id].displayName,
+   caregivers:numeric.careLinks.filter(l=>l.studentId===id).map(l=>({id:l.caregiverId,name:r.profiles[l.caregiverId].displayName}))}))};
+}

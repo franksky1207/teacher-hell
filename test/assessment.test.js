@@ -257,3 +257,24 @@ test('formal authority adapter is contract-tested with an explicit mock, not rea
   const wrong=fixture(1);wrong.records.get('outcome:1:student').subjectId='not-enrolled';
   wrong.records.get('fact:1:student').subjectIds=['not-enrolled'];assert.throws(()=>rateAnnual('year:1',wrong.source));
 });
+
+test('assessment: explicit causal enrollment evidence permits a mid-year pupil absent from both snapshots',()=>{
+ const f=fixture(1),cohort=f.records.get('cohort:0'),person='short-enrollment';cohort.studentIds.push(person);cohort.enrollmentRefs=['enrollment:short'];
+ f.records.set('fact:short',{id:'fact:short',kind:'fact',provenance:'synthetic',playerId:'teacher',schoolId:'school',year:1,attemptId:'attempt:1',confirmed:true,subjectIds:[person]});
+ f.records.set('enrollment:short',{id:'enrollment:short',kind:'enrollment',provenance:'synthetic',playerId:'teacher',schoolId:'school',personId:person,cohortId:cohort.id,fromYear:1,untilYear:1,basisFactId:'fact:short',previousEnrollmentId:null,reason:'transfer'});
+ f.records.get('outcome:1:student').subjectId=person;f.records.get('fact:1:student').subjectIds=[person];
+ assert.equal(rateAnnual('year:1',f.source).status,'synthetic');
+ f.records.get('fact:short').subjectIds=['someone-else'];assert.throws(()=>rateAnnual('year:1',f.source));
+});
+
+test('assessment: cross-cohort identity requires a proven chronological enrollment chain',()=>{
+ const f=fixture(),first=f.records.get('cohort:0'),next=f.records.get('cohort:1'),person=first.studentIds[0];next.studentIds.push(person);
+ for(const [cohort,id,fromYear,untilYear,reason,previousEnrollmentId] of [[first,'old-enrollment',1,3,'initial',null],[next,'repeat-enrollment',4,6,'repeat','old-enrollment']]){
+  cohort.enrollmentRefs=[id];const factId='cause:'+id;
+  f.records.set(factId,{id:factId,kind:'fact',provenance:'synthetic',playerId:'teacher',schoolId:'school',year:fromYear,attemptId:'attempt:'+fromYear,confirmed:true,subjectIds:[person]});
+  f.records.set(id,{id,kind:'enrollment',provenance:'synthetic',playerId:'teacher',schoolId:'school',personId:person,cohortId:cohort.id,fromYear,untilYear,basisFactId:factId,reason,previousEnrollmentId});
+ }
+ assert.equal(career(f).status,'synthetic');
+ f.records.get('repeat-enrollment').previousEnrollmentId='unrelated';assert.throws(()=>career(f),/enrollment chain/);
+ f.records.get('repeat-enrollment').previousEnrollmentId='old-enrollment';f.records.get('old-enrollment').untilYear=5;assert.throws(()=>career(f),/enrollment chain/);
+});

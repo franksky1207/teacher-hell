@@ -1,8 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, readdirSync } from 'node:fs';
-import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { readFileSync } from 'node:fs';
 import { performance } from 'node:perf_hooks';
 import { ABILITY_NAMES, STATE_NAMES, PANEL_SOURCES, derivePanel, validateSources } from '../src/player/panel.js';
 import { INITIAL_STATES, sampleAbilityFactors, initialFromFactors, createCandidate, rerollCandidate, confirmCandidate, restoreCreation } from '../src/player/creation.js';
@@ -180,29 +178,6 @@ test('candidate rerolls, confirmation, reload replay and initial/current separat
   for (const change of [s=>{s.year=0;},s=>{s.year=1.5;},s=>{s.current.schoolId='other';s.current.outlook.toId='other';},s=>{s.current.playerId='other';}]) {
     const s=clone(confirmed); change(s); assert.throws(() => restoreCreation(s));
   }
-});
-
-test('whole runtime graph remains acyclic, local/browser-compatible and N1 is not coupled to player', async () => {
-  const root=fileURLToPath(new URL('../src/',import.meta.url)), graph=new Map();
-  function scan(dir) {
-    for (const entry of readdirSync(dir,{withFileTypes:true})) {
-      const path=resolve(dir,entry.name);
-      if(entry.isDirectory()) { scan(path); continue; }
-      assert.match(entry.name,/\.js$/); assert.doesNotMatch(entry.name,/batch|^n[1-8]\./i);
-      const source=readFileSync(path,'utf8').replace(/\/\*[\s\S]*?\*\/|\/\/[^\n]*/g,'');
-      assert.ok(source.trim().length>100);
-      assert.doesNotMatch(source,/Math\.random|Date\.now|node:|process\.|window\.|document\.|\brequire\(/);
-      const deps=[...source.matchAll(/from ['"]([^'"]+)['"]/g)].map(m=>{
-        assert.match(m[1],/^\.{1,2}\//); return resolve(dirname(path),m[1]);
-      });
-      if(path.includes('/numeric/')) deps.forEach(dep=>assert.ok(dep.includes('/numeric/')));
-      graph.set(path,deps);
-    }
-  }
-  scan(root);
-  function visit(path,stack=[]) { assert.ok(!stack.includes(path)); assert.ok(graph.has(path));graph.get(path).forEach(dep=>visit(dep,[...stack,path])); }
-  for (const path of graph.keys()) { visit(path); await import(path); }
-  assert.equal(graph.size,27);
 });
 
 test('10,000 feasible initializations: strict totals, diversity, extrema and continuation statistics', t => {

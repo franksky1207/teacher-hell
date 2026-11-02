@@ -4,6 +4,95 @@
 N1～N8純數值工程已完成封版驗收；這不是完整遊戲。最新架構、30年實測與限制見文末N8。
 舊批次章節保留當時的驗收與待辦語境；本次N8已獲使用者明確授權，全部檢查通過後直接合併main，未授權部署。
 
+## 目前工程入口｜第一階段基礎
+
+第01～04批在 `integrate/phase1-foundation` 累積開發；正式22批、契約責任及各批交接集中於
+[docs/05](docs/05-未定案與工作方式.md#第01批工程紀錄與後續介面2026-11-02)。
+這一節取代下面歷史N1～N8章節對「目前工具鏈」的說明；歷史驗收數據仍保留。
+
+Node版本見 `.nvmrc`（24.19.0），Node 24+；npm鎖檔固定開發依賴。
+執行期仍為零第三方依賴；唯一開發依賴Acorn 8.15.0用於語法／AST相依邊界檢查，不進網頁產物。
+
+```sh
+npm ci --ignore-scripts
+npm run verify:quick
+npm run test:module -- module=world,contracts --name JSON
+npm test
+npm run test:coverage
+npm run build
+npm run preview
+```
+
+最後兩個指令只建置本機工程驗收頁及在 `http://127.0.0.1:4173` 預覽；不部署、不建立正式遊戲。
+頁面使用合成種子11，可重設並檢查契約，完全不讀寫localStorage／IndexedDB或玩家存檔。
+`dist/`可刪除重建、不提交；內含合成資料，不能作正式遊戲發布候選。
+建置以標準相對ES modules輸出，不需打包器；同一來源兩次建置的manifest及檔案雜湊相同。
+
+| 指令 | 實際範圍 |
+|---|---|
+| `npm run calendar:build`／`calendar:check` | 有限40年固定排程重建／保存內容重現性檢查；衝突不偷改規則 |
+| `npm run check` | 全部JS語法、執行模組的分層依賴與無環檢查 |
+| `npm run test:unit` | 核心數學、record、PRNG單元套件（core／random） |
+| `npm run test:contract` | 新外層資料格式、錯誤輸入、N1～N8相容契約 |
+| `npm run test:integration` | 既有N8跨模組整合＋世界交易、存檔及正式校曆接合套件 |
+| `npm run test:scenario` | 合成情境重設、固定種子及JSON後續重現 |
+| `npm run test:tooling` | 架構、選測、防零測試、建置重現與預覽伺服器 |
+| `npm run test:quick` | unit＋contract＋scenario＋tooling＋runtime＋storage＋calendar＋calendar-integration；不跑舊大量統計套件 |
+| `npm run test:module -- module=...` | 精準選core/random/player/world/evolution/evolution-stress/social/changes/assessment/integration/contracts/scenario/architecture/tooling/runtime/runtime-stress/storage/calendar/calendar-integration；numeric為core＋random別名 |
+| `npm test` | 全部回歸，含N1～N8原數值測試與新測試 |
+| `npm run test:coverage` | 相同全回歸加Node涵蓋率 |
+| `npm run test:storage:browser` | 真實Chromium三槽IndexedDB、雙頁CAS、故障注入、備份恢復及合成大檔容量；暫存profile，與玩家資料隔離 |
+| `npm run test:browser` | 可選：需已安裝Chromium（或CHROMIUM_BIN）；本機CDP驗收子路徑、重設及窄視窗重載，不代表Safari |
+
+可於測試指令後加 `-- --name 正規表示式`；module指令例子如上。零命中回傳非零狀態，不冒稱通過。
+Node TAP輸出實際pass／fail／skipped，選測指令亦列明選入檔案與未執行範圍。
+原測試檔混有契約、統計與容量案例，保留其歷史內容及模組選測；分層入口不宣稱舊檔已全部重新分類。
+完整回歸可能需數十秒，覆蓋率更久；不是每次小修改的預設驗收。
+
+CI只有一個快速工作流程，於PR及手動呼叫執行 `npm ci --ignore-scripts`、`npm run verify:quick`；
+不在push與PR重複跑，不部署、不跑完整30年矩陣。完整回歸與長年驗收由階段／影響範圍決定，
+需另附執行證據，不能把快速CI通過當作完整階段驗收。
+
+新模組 `src/contracts/foundation.js` 為純資料驗證及既有數值封套的外層適配；
+沒有世界命令、事件抽選、數值更新、正式存檔、遷移器或校曆。
+原27個N1～N8執行模組保持不變；原player測試中的全src固定27檔／無DOM斷言，
+移至新的AST分層架構套件，現在只在純邏輯層禁止平台API，允許 `web/` 使用DOM。
+
+第02批已加入記憶體世界交易、因果／知情投影與唯一結算，入口為 `src/runtime/`，
+詳細契約及第03批交接見 [docs/05第02批紀錄](docs/05-未定案與工作方式.md#第02批工程紀錄與第03批交接2026-11-02)。
+第03批已加入三槽IndexedDB、CAS、完整快照、匯出入及恢復，入口為 `src/storage/`；
+[資料契約與04交接](docs/05-未定案與工作方式.md#第03批工程紀錄恢復查核與第04批交接2026-11-02)。
+第04批固定40年校曆、九科18節課表及01～04世界／存檔整合已通過本次工程驗收。
+[目前驗收與交接](docs/05-未定案與工作方式.md#第04批工程與第一階段整合驗收2026-11-02)；
+[校曆來源及活動／期末例外](docs/07-課表與校曆規劃.md#第04批來源工程設定與碰撞驗證2026-11-02)。
+PR仍為Draft，是否合併另待使用者授權；Safari／iPhone真機仍未驗證。
+N3歷史班級驗證及N7跨屆／在籍／多成果的原有限制仍未修改，不能把新引用封套稱為那些功能已完成。
+
+### 第01批實際驗收紀錄（2026-11-02）
+
+Node 24.19.0／npm 11.9.0；以本批合成fixture及原測試執行：
+
+| 實際命令／檢查 | 結果 |
+|---|---|
+| `npm run verify:quick` | 30項通過、0失敗、0跳過；語法／分層架構與靜態建置通過 |
+| `npm run test:contract` | 11項通過、0失敗、0跳過 |
+| `npm test` | 111項通過、0失敗、0跳過，約67.28秒；含原數值／統計／整合與移交後架構驗證 |
+| `npm run test:module -- module=world,contracts --name JSON` | 1項命中並通過，0失敗；其他名稱未執行，不冒稱全模組回歸 |
+| 新的乾淨來源目錄內 `npm ci --ignore-scripts`、`npm run verify:quick` | 安裝及30項快速測試、建置通過；沒有沿用原node_modules或dist |
+| `npm run test:browser` | 本機Chromium通過：`/teacher-hell/`子路徑、ES modules、契約JSON、重設、390×844視窗重載 |
+| 建置重現／預覽安全 | 同來源兩次manifest完全相等；MIME、GET／HEAD、拒絕POST／目錄逃逸／外部symlink通過 |
+| `git diff --check`及原27執行模組比對 | 通過；N1～N8原程式無差異 |
+
+自查修復：IDtuple允許重複組件；合成fixture先做JSON往返以避免共用物件參照改動到兩個時間欄位，
+讓取得時間早於發生的錯誤測試真正有效；跨事件一致事實引用允許重用、不一致者拒絕；
+外層串流不得影射既有數值串流；零命中選測改成失敗；瀏覽器重載先清除舊通過標記再等待新頁。
+首次快速測試29／30通過，修正上述fixture後30／30；沒有未解測試失敗。
+原始Chromium dump-dom呼叫在環境中停滯，已終止，改用有時限及清理的CDP煙霧指令並通過。
+
+未執行：完整覆蓋率重跑（本批已跑必要完整回歸）、昂貴完整30年CLI、Safari真機、
+尚未存在的正式世界交易／存檔／40年校曆／事件玩法。既存N8驗證JSON維持歷史證據，不改寫成新遊戲驗收。
+Actions執行狀態以Draft PR上實際結果為準，本機結果不冒充遠端結果。
+
 ## 數值核心開發（N1）
 
 正式規格仍以 `docs/00`～`docs/05` 六份文件為準；本節僅記錄工程選型、介面及驗收。
@@ -1310,3 +1399,101 @@ JSON欄位順序、無關NPC、原子拒絕、既有結果防重複、嚴格初�
 尚未開發：正式事件引擎、96主題及小主題、NPC自主行為／實際傳播、玩家選項與劇情、實際學年終局、完整30年人物生命週期、正式年度／生涯結局、遊戲網頁介面、20%／60%真實通關率平衡。
 N8不以危機分數代替失敗、不設定固定淘汰率，也不宣稱合成壓測證實正式遊戲好玩或平衡。
 後續可以沿用27模組、版本1存檔、私有會話／checkpoint、N7證據契約及本批可重跑驗收程式；正式遊戲工程須另外開發。
+
+### 第02批實際驗收紀錄（2026-11-02）
+
+同一Node／npm環境，原27個N1～N8模組及`simulation/`與main逐檔相同。
+
+| 實際命令／檢查 | 結果 |
+|---|---|
+| `npm ci --ignore-scripts`＋`npm run verify:quick` | 46項通過、0失敗、0跳過；語法、分層／無環、建置通過 |
+| `npm test` | 128項通過、0失敗、0跳過，109.00秒，含N1～N8及第01／02批完整回歸 |
+| `npm run test:module -- module=runtime,contracts,architecture` | 30項通過、0失敗、0跳過 |
+| 乾淨來源複本：`npm ci --ignore-scripts`＋`npm run verify:quick` | 46項通過、0失敗、0跳過；未沿用node_modules或dist |
+| `npm run test:browser` | Chromium子路徑、重設、390×844重載，以及瀏覽器內runtime交易／失敗拒絕／JSON恢復／重送／投影通過 |
+| `git diff --exit-code origin/main -- src/numeric src/player src/world src/social src/evolution src/changes src/assessment simulation` | 通過，原核心／模擬無修改 |
+
+runtime共有16項行為／異常測試；
+另有`runtime-stress`的160次連續合成交易、40事件、80人物、160事實、40筆N6收據，
+比較兩條相同操作序列及定期JSON還原。負載約27秒（含雙路比對；回歸輸出另有當次數據），
+資料約195KB增至765KB；完整回歸會輸出當次JSON bytes、耗時及heap使用量。
+heap包含測試複本與GC波動，不能當作手機常駐記憶體保證；沒有正式30年／遊戲平衡驗收。
+
+初輪runtime測試12通過／1失敗，原因是測試試圖在保留在籍名冊時移除N3核心學生標籤，
+改驗合法標籤調整後通過，保留05生命週期責任。瀏覽器初輪功能檢查通過但退出清理ENOTEMPTY失敗，
+修正為等待Chromium退出並有限重試清理後，整個指令退出0；沒有隱藏原失敗。
+自查另修正跨階段過度去重、禁止新階段預先確認選項、拒絕先寫無效再覆蓋的中間認知，
+並驗證歷史、收據及目前認知一致。
+
+未執行：完整涵蓋率、正式30年CLI、Safari／iPhone真機、磁碟存檔／多頁CAS、正式校曆與事件內容。
+本批無上述後續實作；第03批須承接完整世界與收據，DB成功後才安裝記憶體草稿。
+
+## 第03批本次驗收紀錄（2026-11-02）
+
+中斷前第03批未提交修改／原測試紀錄未找回，恢復0個第03批修改檔；前兩批遠端提交完整保留。
+本次在`integrate/phase1-foundation`補作並重新驗收，不沿用原對話的12組／794萬bytes紀錄。
+實作與恢復API見[docs/05第03批紀錄](docs/05-未定案與工作方式.md#第03批工程紀錄恢復查核與第04批交接2026-11-02)。
+環境：Node24.19.0、npm11.9.0、Chromium154.0.8037.57（Debian13），暫存profile與隔離DB。
+
+| 本次實際命令／檢查 | 結果 |
+|---|---|
+| `npm ci --ignore-scripts` | 安裝成功；只有原Acorn開發依賴，未新增依賴 |
+| `npm run test:module -- module=storage,runtime,contracts,architecture` | 37通過、0失敗、0跳過，11.76秒；其中storage 7項 |
+| `npm test`（最終實作） | 135通過、0失敗、0跳過，129.18秒；含N1～N8、01／02及新存檔回歸 |
+| `npm run verify:quick` | 53通過、0失敗、0跳過；語法、35個執行模組分層／無環及確定性build通過 |
+| `npm run test:browser` | 退出0；01／02既有子路徑、ES modules、重設、390×844重載及世界交易／知情投影通過 |
+| `npm run test:storage:browser` | 退出0；真實雙頁CAS、三槽、重送、實際重載、abort／注入配額／記憶體發布故障、N6唯一結算與原子回復、版本／匯入／重試／缺頁與備份恢復全部通過 |
+| `git diff --exit-code origin/main -- src/numeric src/player src/world src/social src/evolution src/changes src/assessment simulation` | 退出0；原27個N1～N8執行模組及模擬無變更 |
+| `git diff --check` | 通過 |
+
+大資料測試走正式runtime與storage API：30個合成年度bucket、30事件、600事實、長篇原文及完整收據；
+開學快照也包含全部600事實，與目前世界一起匯出 **20,721,680 bytes（約19.76 MiB），33個磁碟分段**。
+合成世界生成431ms；寫入2710ms、匯出757ms、匯入1769ms、完整讀取及驗證787ms。
+另外通過大檔匯入中止後原metadata／pages完全相同，以及實際頁面重載後世界／opening各600事實完整保留。
+逐欄比對所有輸出，沒有截斷或摘要化歷史；並非只比大小或筆數。
+Chrome回報heap 266,263,168 bytes，包含多份測試複本、序列化字串及GC波動，**不是峰值或手機常駐保證**。
+
+初輪瀏覽器因缺少testId被字串化誤接受而失敗，修正後通過。
+後續自查補強分段原子性、永久generation、重試去重／舊頁token、開學交易快照與受損payload的安全備份恢復，
+補測後最終精準、Chromium及完整回歸均無未解失敗。磁碟成功但記憶體同步失敗明報已提交且需恢復，
+不當作回滾；上層應保留原操作ID，恢復後重送不再結算。
+
+第03批實作及本次列出的自動驗收通過；**未測Safari／iPhone真機、真實配額耗盡、硬體斷電及手機記憶體峰值**，
+不宣稱跨裝置完整驗收。30個bucket只驗容量，未執行正式30年十屆遊戲、平衡或完整內容驗收。
+仍以全量驗證／重寫快照為基礎，後續應量測真正晚期世界，再決定Worker／增量索引；不以刪歷史換速度。
+第03批結束時04尚未開始，目前04完成情況見下節；11年度授權、12／14正式存檔介面、16手機整合另依原藍圖承接。
+共用PR保持Draft；不合併main、不部署、不建立Release。
+
+
+## 第04批與第一階段01～04本次驗收（2026-11-02）
+
+使用者本次修訂：一般活動假日逐日前移；家長日維持星期六，假日延一週；期末受假日打斷改同週星期二起，
+假日休息後續考滿3個上課日。原WIP 13個活動＋2個年度衝突已全部解除，沒有取消活動或提前到6/17。
+2050期末考6/21、22、24；2061考6/21、23、24；2034教師節活動9/26，2032春家長日3/6（六）。
+
+| 本次實際命令／檢查 | 結果 |
+|---|---|
+| `npm run calendar:build`＋`npm run calendar:check` | 40年零未解衝突；生成內容可重現 |
+| `npm run test:module -- module=calendar,calendar-integration,runtime,storage,contracts,architecture` | 59通過、0失敗、0跳過 |
+| `npm test` | **157通過、0失敗、0跳過，128.68秒**；含N1～N8與01～04 |
+| `npm run verify:quick` | **75通過、0失敗、0跳過**；語法／分層／無環／build通過 |
+| `npm run test:browser` | 退出0，原工程頁與runtime／知情投影回歸 |
+| `npm run test:storage:browser`（預設完整） | 退出0，三槽／真實雙頁CAS／故障／大檔及正式01～04整合通過，沒有跳過calendar情境 |
+| 原27個N1～N8模組及simulation對main差異、`git diff --check` | 無差異／通過 |
+
+完整掃描14,610天、43,830年級日、408,874時段（約1.70秒）；九科540份18節課表同種子重現（約128ms）。
+連續30年10,939個日期位置與29次開學切換通過；2026～2035起始暑輔皆可玩完整30學年，越界拒絕。
+只保存校曆版本與目前計畫／已固定課表，不將約280KB的40年metadata複製進每個世界。
+
+Chromium正式情境完成合法世界、合成成果、原N6、時間、歷史、CAS保存、實際頁面重載、重送去重、
+第二分頁舊世界拒寫、合法開學原子快照及失敗嘗試N6／事件／事實隔離；另驗正式世界磁碟故障與記憶體發布故障；槽位換成另一生涯後，舊請求即使重用相同操作ID也拒絕。
+大檔20,721,680 bytes／33段完整往返，world及opening各600事實無刪減；
+本次寫入2052ms、匯出653ms、匯入1345ms、讀取685ms，heap371,232,374 bytes含複本及GC，非手機峰值或常駐保證。
+
+原WIP曾新增19項8過11敗、quick72項61過11敗，均如實保存；使用者裁決後重測，最終沒有未解測試失敗。
+另外補強時段完成後禁止追加行為、假期不丟既有課表、禁止任意預建未來課表、開學快照先於首slot行為及完整結束資格。
+詳細來源、資料契約、修正原因、合成情境界線及05～22交接集中在docs/05、07，沒有逐年新增規格文件。
+
+**第04批及第一階段本次工程／自動驗收通過，具備技術整合條件；是否合併仍待使用者另行授權。**
+Safari／iPhone、真實配額耗盡／斷電、手機記憶體峰值及正式96主題／十屆30年遊戲／平衡未測，不能冒稱通過。
+保持Draft、不Ready、不合併main、不部署、不建Release、不開始05。

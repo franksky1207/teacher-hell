@@ -4,6 +4,86 @@
 N1～N8純數值工程已完成封版驗收；這不是完整遊戲。最新架構、30年實測與限制見文末N8。
 舊批次章節保留當時的驗收與待辦語境；本次N8已獲使用者明確授權，全部檢查通過後直接合併main，未授權部署。
 
+## 目前工程入口｜第一階段基礎
+
+第01批在 `integrate/phase1-foundation` 累積開發；正式22批、契約責任與02交接集中於
+[docs/05](docs/05-未定案與工作方式.md#第01批工程紀錄與後續介面2026-11-02)。
+這一節取代下面歷史N1～N8章節對「目前工具鏈」的說明；歷史驗收數據仍保留。
+
+Node版本見 `.nvmrc`（24.19.0），Node 24+；npm鎖檔固定開發依賴。
+執行期仍為零第三方依賴；唯一開發依賴Acorn 8.15.0用於語法／AST相依邊界檢查，不進網頁產物。
+
+```sh
+npm ci --ignore-scripts
+npm run verify:quick
+npm run test:module -- module=world,contracts --name JSON
+npm test
+npm run test:coverage
+npm run build
+npm run preview
+```
+
+最後兩個指令只建置本機工程驗收頁及在 `http://127.0.0.1:4173` 預覽；不部署、不建立正式遊戲。
+頁面使用合成種子11，可重設並檢查契約，完全不讀寫localStorage／IndexedDB或玩家存檔。
+`dist/`可刪除重建、不提交；內含合成資料，不能作正式遊戲發布候選。
+建置以標準相對ES modules輸出，不需打包器；同一來源兩次建置的manifest及檔案雜湊相同。
+
+| 指令 | 實際範圍 |
+|---|---|
+| `npm run check` | 全部JS語法、執行模組的分層依賴與無環檢查 |
+| `npm run test:unit` | 核心數學、record、PRNG單元套件（core／random） |
+| `npm run test:contract` | 新外層資料格式、錯誤輸入、N1～N8相容契約 |
+| `npm run test:integration` | 既有N8跨模組整合套件 |
+| `npm run test:scenario` | 合成情境重設、固定種子及JSON後續重現 |
+| `npm run test:tooling` | 架構、選測、防零測試、建置重現與預覽伺服器 |
+| `npm run test:quick` | unit＋contract＋scenario＋tooling；不跑舊大量統計套件 |
+| `npm run test:module -- module=...` | 精準選core/random/player/world/evolution/evolution-stress/social/changes/assessment/integration/contracts/scenario/architecture/tooling；numeric為core＋random別名 |
+| `npm test` | 全部回歸，含N1～N8原數值測試與新測試 |
+| `npm run test:coverage` | 相同全回歸加Node涵蓋率 |
+| `npm run test:browser` | 可選：需已安裝Chromium（或CHROMIUM_BIN）；本機CDP驗收子路徑、重設及窄視窗重載，不代表Safari |
+
+可於測試指令後加 `-- --name 正規表示式`；module指令例子如上。零命中回傳非零狀態，不冒稱通過。
+Node TAP輸出實際pass／fail／skipped，選測指令亦列明選入檔案與未執行範圍。
+原測試檔混有契約、統計與容量案例，保留其歷史內容及模組選測；分層入口不宣稱舊檔已全部重新分類。
+完整回歸可能需數十秒，覆蓋率更久；不是每次小修改的預設驗收。
+
+CI只有一個快速工作流程，於PR及手動呼叫執行 `npm ci --ignore-scripts`、`npm run verify:quick`；
+不在push與PR重複跑，不部署、不跑完整30年矩陣。完整回歸與長年驗收由階段／影響範圍決定，
+需另附執行證據，不能把快速CI通過當作完整階段驗收。
+
+新模組 `src/contracts/foundation.js` 為純資料驗證及既有數值封套的外層適配；
+沒有世界命令、事件抽選、數值更新、正式存檔、遷移器或校曆。
+原27個N1～N8執行模組保持不變；原player測試中的全src固定27檔／無DOM斷言，
+移至新的AST分層架構套件，現在只在純邏輯層禁止平台API，允許 `web/` 使用DOM。
+
+目前仍待：02世界交易／因果／知情投影，03三槽原子持久化，04完整40年校曆。
+N3歷史班級驗證及N7跨屆／在籍／多成果的原有限制仍未修改，不能把新引用封套稱為那些功能已完成。
+
+### 第01批實際驗收紀錄（2026-11-02）
+
+Node 24.19.0／npm 11.9.0；以本批合成fixture及原測試執行：
+
+| 實際命令／檢查 | 結果 |
+|---|---|
+| `npm run verify:quick` | 30項通過、0失敗、0跳過；語法／分層架構與靜態建置通過 |
+| `npm run test:contract` | 11項通過、0失敗、0跳過 |
+| `npm test` | 111項通過、0失敗、0跳過，約67.28秒；含原數值／統計／整合與移交後架構驗證 |
+| `npm run test:module -- module=world,contracts --name JSON` | 1項命中並通過，0失敗；其他名稱未執行，不冒稱全模組回歸 |
+| 新的乾淨來源目錄內 `npm ci --ignore-scripts`、`npm run verify:quick` | 安裝及30項快速測試、建置通過；沒有沿用原node_modules或dist |
+| `npm run test:browser` | 本機Chromium通過：`/teacher-hell/`子路徑、ES modules、契約JSON、重設、390×844視窗重載 |
+| 建置重現／預覽安全 | 同來源兩次manifest完全相等；MIME、GET／HEAD、拒絕POST／目錄逃逸／外部symlink通過 |
+| `git diff --check`及原27執行模組比對 | 通過；N1～N8原程式無差異 |
+
+自查修復：IDtuple允許重複組件；合成fixture先做JSON往返以避免共用物件參照改動到兩個時間欄位，
+讓取得時間早於發生的錯誤測試真正有效；跨事件一致事實引用允許重用、不一致者拒絕；
+外層串流不得影射既有數值串流；零命中選測改成失敗；瀏覽器重載先清除舊通過標記再等待新頁。
+首次快速測試29／30通過，修正上述fixture後30／30；沒有未解測試失敗。
+原始Chromium dump-dom呼叫在環境中停滯，已終止，改用有時限及清理的CDP煙霧指令並通過。
+
+未執行：完整覆蓋率重跑（本批已跑必要完整回歸）、昂貴完整30年CLI、Safari真機、
+尚未存在的正式世界交易／存檔／40年校曆／事件玩法。既存N8驗證JSON維持歷史證據，不改寫成新遊戲驗收。
+Actions執行狀態以Draft PR上實際結果為準，本機結果不冒充遠端結果。
+
 ## 數值核心開發（N1）
 
 正式規格仍以 `docs/00`～`docs/05` 六份文件為準；本節僅記錄工程選型、介面及驗收。

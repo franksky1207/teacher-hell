@@ -1,3 +1,4 @@
+import { isFormal, validateOpeningSnapshot } from '../runtime/schedule.js';
 /** Versioned, complete save payload. No migration guesses and no replay on restore. */
 import { restoreWorldState, runtimeOf, ensure, same } from '../runtime/model.js';
 import { canonicalData } from '../changes/settlement.js';
@@ -9,6 +10,9 @@ export function restoreSave(input) {
   const world=restoreWorldState(value.world),opening=value.opening===null?null:restoreWorldState(value.opening);
   for(const saved of [world,opening].filter(Boolean))ensure(saved.versions.rules==='n1-n8-v1','VERSION','Unsupported rules version');
   if(opening){
+    validateOpeningSnapshot(opening);
+    const wp=runtimeOf(world).plan,op=runtimeOf(opening).plan;
+    ensure(isFormal(wp)===isFormal(op)&&(!isFormal(wp)||(wp.calendarVersion===op.calendarVersion&&wp.startYear===op.startYear&&wp.subject===op.subject)),'SNAPSHOT','Snapshot calendar differs from current world');
     ensure(['careerId','playerId','schoolId'].every(k=>opening.identity[k]===world.identity[k]),'SNAPSHOT','Opening belongs to another career/person/school');
     ensure(opening.position.openingId===world.position.openingId&&opening.position.schoolYearId===world.position.schoolYearId,'SNAPSHOT','Opening belongs to another year');
     ensure(runtimeOf(opening).revision<=runtimeOf(world).revision,'SNAPSHOT','Opening is newer than world');

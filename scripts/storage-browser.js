@@ -93,6 +93,13 @@ try {
   await evalIn('st.db.close()');await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();await evalIn(setup(false));
   const large=await evalIn(`(async()=>{const p=(await st.db.read(2)).payload;return {facts:p.world.extensions['teacher-hell/world'].facts.length,openingFacts:p.opening.extensions['teacher-hell/world'].facts.length};})()`);
   if(large.facts!==600||large.openingFacts!==600)throw Error('Large reload lost history');console.log('PASS actual page reload restores large world and full opening snapshot',JSON.stringify(large));
+  if(!process.argv.includes('--storage-only')){
+  const phaseSetup=init=>`(async()=>{globalThis.phase=await import('./test/support/phase1-checks.js');globalThis.pt=await phase.setupPhase(${JSON.stringify(testId)},${init});return true;})()`;
+  await evalIn(phaseSetup(true));await evalIn(phaseSetup(false),peer.sessionId);
+  console.log('PASS phase 01–04 legal calendar/world/N6/history/PRNG/IndexedDB/restore/replay',JSON.stringify(await evalIn('phase.scenario(pt)')));
+  await evalIn('phase.stalePhase(pt)',peer.sessionId);console.log('PASS phase 01–04 real second-page stale world blocked');
+  console.log('PASS phase 01–04 atomic legal opening and isolated retry',JSON.stringify(await evalIn('phase.annualPhase(pt)')));
+  }else console.log('NOT EXECUTED: phase 01–04 calendar scenario (--storage-only explicitly selected)');
   console.log('PASS Chromium storage: all checks complete; synthetic only; NOT Safari/iPhone or full 30-year gameplay.');
   await call('Browser.close');
 } finally {

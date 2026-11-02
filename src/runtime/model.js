@@ -1,3 +1,4 @@
+import { isFormal, validateFormalPlan, planPosition } from './schedule.js';
 /** Authoritative world extension of Foundation v1; no disk or calendar generation. */
 import { createId, validateFoundationEnvelope, validateId, validateMoment } from '../contracts/foundation.js';
 import { canonicalData, validateSettlement } from '../changes/settlement.js';
@@ -42,6 +43,7 @@ export function validatePosition(p) {
   ensure(Number.isInteger(p.serviceYear)&&p.serviceYear>=1&&p.serviceYear<=30,'TIME','Invalid service year');
 }
 export function validatePlan(plan) {
+  if(isFormal(plan))return validateFormalPlan(plan);
   assertShape(plan,['id','validation','positions','cursor']);identifier(plan.id);
   ensure(plan.validation==='unverified','CALENDAR','Only explicitly unverified supplied schedules are supported before batch 04');
   ensure(Array.isArray(plan.positions)&&plan.positions.length>0,'TIME','Explicit positions required');
@@ -62,7 +64,7 @@ export function stamp(world,at,cursor) {
   validateMoment(at);
   const plan=runtimeOf(world).plan;
   ensure(Number.isInteger(cursor)&&cursor>=0&&cursor<=plan.cursor,'TIME','Invalid recorded cursor');
-  ensure(same(at,{date:plan.positions[cursor].date,slotId:plan.positions[cursor].slotId}),'TIME','Recorded moment differs from supplied order');
+  ensure(same(at,{date:planPosition(plan,cursor).date,slotId:planPosition(plan,cursor).slotId}),'TIME','Recorded moment differs from supplied order');
 }
 /** All historical sources must precede acquisition, including within one slot. */
 export function validateSource(world,actor,factId,claimId,versionId,source,at,cursor,order) {
@@ -95,7 +97,7 @@ export function validateWorldState(world) {
   const r=runtimeOf(world);
   assertShape(r,['version','revision','plan','facts','claims','knowledge','disclosures','history','commits','stages','effects','numericArchives']);
   ensure(r.version===1&&Number.isSafeInteger(r.revision)&&r.revision>=0,'VERSION','Unknown world runtime version/revision');
-  validatePlan(r.plan);ensure(same(world.position,r.plan.positions[r.plan.cursor]),'TIME','Position is not the plan cursor');
+  validatePlan(r.plan);ensure(same(world.position,planPosition(r.plan)),'TIME','Position is not the plan cursor');
   for(const name of ['facts','claims','knowledge','disclosures','history','commits','stages','effects','numericArchives'])ensure(Array.isArray(r[name]),'SCHEMA',`${name} must be an array`);
   unique(r.facts,f=>f.id,'fact IDs');unique(r.claims,c=>key(c.id,c.versionId),'claim versions');
   unique(r.knowledge,k=>key(k.actorId,k.claimId,k.versionId),'knowledge keys');unique(r.disclosures,d=>key(d.actorId,d.factId),'disclosures');

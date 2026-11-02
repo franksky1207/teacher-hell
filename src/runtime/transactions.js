@@ -1,3 +1,6 @@
+import { deriveWorldPanel } from '../social/reputation.js';
+import { STATE_NAMES } from '../player/panel.js';
+import { isFormal, planPosition, planVacation, createCalendarBaseline, guardCalendarOperation, calendarAdmission, finishCalendarSlot, advanceFormalSlot, prepareSemester } from './schedule.js';
 import { createId, validateId, validateEventEnvelope, restoreFoundationEnvelope } from '../contracts/foundation.js';
 import { canonicalData, createSettlementSession, startSettlement } from '../changes/settlement.js';
 import { targetRecord } from '../changes/targets.js';
@@ -34,13 +37,15 @@ function preconditions(world,conditions) {
 }
 function execute(world,command,op,numericSession,receipt) {
   const r=runtimeOf(world);
+  guardCalendarOperation(world,command,op);
   if(op.type==='open-event') {
     assertShape(op,['type','event']);validateEventEnvelope(op.event);
     ensure(!world.events.some(e=>e.id===op.event.id),'DUPLICATE','Event ID already exists');
     ensure(!op.event.facts.length&&!op.event.knowledge.length&&!op.event.results.length&&op.event.choice?.confirmedOptionId==null,'SCHEMA','Open an empty event; create facts/results through operations');
     ensure(!r.stages.some(s=>s.id===op.event.stageId),'DUPLICATE','Stage already exists');
     op.event.participantIds.forEach(id=>knownActor(world,id));world.events.push(clone(op.event));
-    const h=history(world,command,'stage',op.event.id,op.event.stageId,[],{definitionId:op.event.definitionId});
+    const admission=calendarAdmission(world,command);
+    const h=history(world,command,'stage',op.event.id,op.event.stageId,[],{definitionId:op.event.definitionId,...(admission?{calendarAdmission:admission}:{})});
     r.stages.push({id:op.event.stageId,eventId:op.event.id,order:h.order});
   } else if(op.type==='fact') {
     assertShape(op,['type','id','eventId','stageId','subjectIds','witnessIds','description','data','categoryCodes','causeIds']);
@@ -113,11 +118,23 @@ function execute(world,command,op,numericSession,receipt) {
     ensure(event.choice===null||event.choice.confirmedOptionId!==null,'CHOICE','Cannot abandon an unresolved decision');
     ensure(!r.stages.some(s=>s.id===op.stageId),'DUPLICATE','Stage ID already used');event.stageId=op.stageId;event.choice=clone(op.choice);
     const h=history(world,command,'stage',event.id,event.stageId,[],{previousStageId:op.fromStageId});r.stages.push({id:op.stageId,eventId:event.id,order:h.order});
+  } else if(op.type==='plan-vacation') {
+    const panel=deriveWorldPanel(numericSession.world());planVacation(world,op,Object.fromEntries(STATE_NAMES.map(k=>[k,panel[k]])));history(world,command,'vacation-plan',null,null,[],{id:op.id,direction:op.direction,weeks:op.weeks});
+  } else if(op.type==='finish-slot') {
+    finishCalendarSlot(world,op);history(world,command,'slot-complete',null,null,[],{activityIds:op.completedActivityIds});
+  } else if(op.type==='prepare-semester') {
+    prepareSemester(world,op);history(world,command,'timetable',null,null,[],{semesterId:op.semesterId});
   } else if(op.type==='advance-time') {
     assertShape(op,['type','planId','steps']);ensure(op.planId===r.plan.id&&Number.isInteger(op.steps)&&op.steps>0,'TIME','Invalid time progression');
-    ensure(r.plan.cursor+op.steps<r.plan.positions.length,'TIME','Supplied schedule exhausted');
-    naturalAt(world,numericSession,world.position);
-    for(let i=0;i<op.steps;i++){r.plan.cursor++;world.position=clone(r.plan.positions[r.plan.cursor]);naturalAt(world,numericSession,world.position);}
+    if(isFormal(r.plan)){
+      naturalAt(world,numericSession,world.position);
+      if(r.plan.vacation&&world.position.date===r.plan.vacation.endDate){const task=r.plan.vacation,panel=deriveWorldPanel(numericSession.world()),after=Object.fromEntries(STATE_NAMES.map(k=>[k,panel[k]]));history(world,command,'vacation-summary',null,null,[],{...task,after,delta:Object.fromEntries(STATE_NAMES.map(k=>[k,after[k]-task.before[k]]))});r.plan.vacation=null;}
+      advanceFormalSlot(world,op);naturalAt(world,numericSession,world.position);
+    }else{
+      ensure(r.plan.cursor+op.steps<r.plan.positions.length,'TIME','Supplied schedule exhausted');
+      naturalAt(world,numericSession,world.position);
+      for(let i=0;i<op.steps;i++){r.plan.cursor++;world.position=clone(r.plan.positions[r.plan.cursor]);naturalAt(world,numericSession,world.position);}
+    }
     history(world,command,'time',null,null,[],{planId:r.plan.id,steps:op.steps});
   } else if(op.type==='sample') {
     assertShape(op,['type','stream','id','weights']);identifier(op.id);
@@ -145,7 +162,7 @@ export function startWorld(foundation,plan) {
   const world=restoreFoundationEnvelope(foundation);
   ensure(!Object.hasOwn(world.extensions,WORLD_KEY),'VERSION','Runtime already exists; use restoreWorldState');
   ensure(world.events.length===0,'MIGRATION','Reference-only events require explicit domain import, not invented facts');
-  const supplied={...clone(plan),cursor:0};validatePlan(supplied);ensure(same(supplied.positions[0],world.position),'TIME','Plan must begin at the existing position');
+  const supplied=isFormal(plan)?clone(plan):{...clone(plan),cursor:0};validatePlan(supplied);ensure(same(planPosition(supplied),world.position),'TIME','Plan must begin at the existing position');
   world.extensions[WORLD_KEY]={version:1,revision:0,plan:supplied,facts:[],claims:[],knowledge:[],disclosures:[],history:[],commits:[],stages:[],effects:[],numericArchives:[]};
   return restoreWorldState(world);
 }
@@ -155,7 +172,7 @@ export function startWorld(foundation,plan) {
 export function prepareWorldOperation(saved,request) {
   try {
     const world=restoreWorldState(saved);canonicalData(request);
-    assertShape(request,['id','attemptId','expectedRevision','actorId','preconditions','operations']);
+    assertShape(request,['id','attemptId','expectedRevision','actorId','preconditions','operations',...(Object.hasOwn(request,'calendarContext')?['calendarContext']:[])]);
     validateId(request.id,'operation');identifier(request.attemptId);knownActor(world,request.actorId);
     ensure(request.attemptId===world.identity.attemptId,'ATTEMPT','Wrong attempt');
     const r=runtimeOf(world),encoded=canonicalData(request),prior=r.commits.find(c=>c.id===request.id&&c.attemptId===request.attemptId);
@@ -171,7 +188,7 @@ export function prepareWorldOperation(saved,request) {
     return {world:restoreWorldState(world),receipt:clone(receipt),duplicate:false};
   } catch(error) {
     if(error instanceof WorldError)throw error;
-    throw new WorldError('INVALID',error.message);
+    throw new WorldError(error.code??'INVALID',error.message);
   }
 }
 function freeze(value) { if(value&&typeof value==='object'&&!Object.isFrozen(value)){Object.values(value).forEach(freeze);Object.freeze(value);}return value; }
@@ -208,3 +225,5 @@ export function forkWorldAttempt(openingSnapshot,{attemptId,seeds}) {
   r.revision++;r.commits.push({id,attemptId,revision:r.revision,request:canonicalData(request),historyIds:[h.id],numericReceiptIds:[],draws:[]});
   return restoreWorldState(world);
 }
+
+export function startCalendarWorld(foundation,options){const adopted=createCalendarBaseline(foundation,options);return startWorld(adopted.foundation,adopted.plan);}

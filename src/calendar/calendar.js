@@ -41,7 +41,7 @@ export function calendarDay(date,grade){
  const normal=terms.find(t=>inRange(date,t.start,t.end)),exam=normal?(grade===2&&normal.grade2SecondExam?[...normal.exams[0],...normal.grade2SecondExam,...normal.exams[2]]:normal.exams.flat()).includes(date):false;
  const week=normal?Math.floor((dayNumber(date)-dayNumber(normal.start))/7)+1:null;
  const slots=slotIds.map(id=>{
-  const occupying=acts.filter(a=>a.slots.includes(id)||a.slots.includes('all')&&id!=='private');
+  const occupying=acts.filter(a=>a.slots.includes(id)||a.slots.includes('morning')&&['early','p1','p2','p3','p4'].includes(id)||a.slots.includes('afternoon')&&['p5','p6','p7','p8'].includes(id)||a.slots.includes('all')&&id!=='private');
   const period=/^p[1-8]$/.test(id)?Number(id.slice(1)):null;
   const fixed=base.weekday===5&&[6,7].includes(period)&&week!==null&&week%2===0?(period===6?'assembly':'class-meeting'):null;
   return {id,period,kind:occupying.length?'activity':exam&&period?'exam':fixed??(period?'period':id),activityIds:occupying.map(a=>a.id),protected:occupying.length>0};

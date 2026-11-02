@@ -1,3 +1,4 @@
+import { validateEventSelectionHistory } from './event-selection.js';
 import { isFormal, validateFormalPlan, planPosition } from './schedule.js';
 /** Authoritative world extension of Foundation v1; no disk or calendar generation. */
 import { createId, validateFoundationEnvelope, validateId, validateMoment } from '../contracts/foundation.js';
@@ -118,7 +119,13 @@ export function validateWorldState(world) {
     ensure((request.expectedRevision??request.openingRevision)===i,'LEDGER','Receipt base revision mismatch');
     for(const list of [commit.historyIds,commit.numericReceiptIds,commit.draws])ensure(Array.isArray(list),'LEDGER','Invalid receipt lists');
     unique(commit.historyIds,id=>id,'receipt history');unique(commit.numericReceiptIds,id=>id,'receipt effects');unique(commit.draws,d=>d.id,'receipt draws');
-    for(const draw of commit.draws){assertShape(draw,['id','stream','index','weights']);identifier(draw.id);identifier(draw.stream);ensure(Array.isArray(draw.weights)&&draw.weights.length>0&&draw.weights.every(n=>Number.isFinite(n)&&n>=0)&&Number.isInteger(draw.index)&&draw.index>=0&&draw.index<draw.weights.length&&draw.weights[draw.index]>0,'LEDGER','Invalid recorded draw');}
+    for(const draw of commit.draws){
+      identifier(draw.id);identifier(draw.stream);
+      if(Object.hasOwn(draw,'poolSize')){
+        assertShape(draw,['id','stream','index','poolSize','totalWeight','selectedKey','selectedWeight']);identifier(draw.selectedKey);
+        ensure(draw.stream==='events'&&Number.isSafeInteger(draw.poolSize)&&draw.poolSize>0&&Number.isInteger(draw.index)&&draw.index>=0&&draw.index<draw.poolSize&&Number.isFinite(draw.totalWeight)&&draw.totalWeight>0&&Number.isFinite(draw.selectedWeight)&&draw.selectedWeight>0&&draw.selectedWeight<=draw.totalWeight,'LEDGER','Invalid compact event draw');
+      }else{assertShape(draw,['id','stream','index','weights']);ensure(Array.isArray(draw.weights)&&draw.weights.length>0&&draw.weights.every(n=>Number.isFinite(n)&&n>=0)&&Number.isInteger(draw.index)&&draw.index>=0&&draw.index<draw.weights.length&&draw.weights[draw.index]>0,'LEDGER','Invalid recorded draw');}
+    }
     for(const id of commit.historyIds)ensure(history.get(id)?.operationId===commit.id&&history.get(id)?.attemptId===commit.attemptId,'LEDGER','Missing commit history');
   });
   unique(r.commits,c=>key(c.attemptId,c.id),'operation IDs');ensure(r.commits.length===r.revision,'LEDGER','Commit count/revision mismatch');
@@ -197,6 +204,7 @@ export function validateWorldState(world) {
   }
   unique(resultKeys,k=>k,'semantic result keys');
   for(const commit of r.commits)for(const id of commit.numericReceiptIds)ensure(r.effects.some(e=>e.attemptId===commit.attemptId&&e.numericReceiptId===id),'LEDGER','Commit references missing effect');
+  validateEventSelectionHistory(world);
   return world;
 }
 export function restoreWorldState(saved) {

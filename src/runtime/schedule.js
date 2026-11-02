@@ -48,11 +48,12 @@ export function guardCalendarOperation(world,command,op){
  need(['formal-event','activity','procedure','routine'].includes(context.kind),'CALENDAR_CONTEXT','Unknown calendar result channel');
  need(op.type==='advance-time'||op.type==='prepare-semester'||!world.extensions['teacher-hell/world'].history.some(h=>h.type==='slot-complete'&&h.cursor===plan.cursor),'TIME_BARRIER','Completed slot is closed to further work; advance before starting another action');
  if(['advance-time','finish-slot','prepare-semester','plan-vacation'].includes(op.type))return;
- const domain=['school','open-event','fact','link-fact','claim','learn','belief','reveal','result','confirm-choice','stage','enrollment-reference','role'].includes(op.type);
+ const domain=['draw-events','admit-event','event-lifecycle','event-exposure','school','open-event','fact','link-fact','claim','learn','belief','reveal','result','confirm-choice','stage','enrollment-reference','role'].includes(op.type);
  if(!domain)return;
+ if(['draw-events','admit-event','event-lifecycle','event-exposure'].includes(op.type))need(context.kind==='formal-event','CALENDAR_CONTEXT','Event selection requires the formal channel');
  if(op.type==='school')need(context.kind==='procedure','CALENDAR_CONTEXT','School affiliations require the procedure channel');
  need(context.kind!=='routine','CALENDAR_CONTEXT','Routine operations cannot disguise formal event work');
- if(slot.protected)need(context.kind==='activity'||context.kind==='procedure','ACTIVITY_PROTECTED','Formal new events and old continuations stop in protected activity slots');
+ if(slot.protected&&op.type!=='draw-events')need(context.kind==='activity'||context.kind==='procedure','ACTIVITY_PROTECTED','Formal new events and old continuations stop in protected activity slots');
  if(context.kind==='activity'){
   need(slot.activityIds.includes(context.activityId),'ACTIVITY_PROTECTED','Activity result does not belong to this occupied slot');
   const event=op.event??world.events.find(e=>e.id===op.eventId);if(event)need(event.definitionId===`activity:${context.activityId}`,'ACTIVITY_PROTECTED','Cannot relabel an existing formal event as an activity');
@@ -66,6 +67,7 @@ export function guardCalendarOperation(world,command,op){
 export function finishCalendarSlot(world,op){
  assertShape(op,['type','completedActivityIds']);const r=world.extensions['teacher-hell/world'];need(isFormal(r.plan),'CALENDAR','Formal slot completion requires calendar');
  const {slot}=formalSlot(world);need(Array.isArray(op.completedActivityIds)&&new Set(op.completedActivityIds).size===op.completedActivityIds.length&&JSON.stringify([...op.completedActivityIds].sort())===JSON.stringify([...slot.activityIds].sort()),'TIME_BARRIER','Must acknowledge exactly the occupied activities');
+ need(!r.history.some(h=>h.type==='event-selection'&&h.data.selected.some(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!world.events.some(e=>e.id===s.eventId))),'TIME_BARRIER','Admit the locked event before leaving its slot');
  need(!world.events.some(e=>e.choice&&e.choice.confirmedOptionId===null),'TIME_BARRIER','Unresolved player decision blocks time');
  need(!r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor),'DUPLICATE','Slot already completed');
 }

@@ -111,6 +111,18 @@ try {
   const schoolRestored=await evalIn(`(async()=>{const module=await import('./test/support/school-checks.js');return module.restoredSchoolSignature(${JSON.stringify(testId)});})()`);
   if(schoolRestored!==schoolSaved.signature)throw Error('School page reload changed identity/history/random');
   console.log('PASS phase 05 actual page navigation preserves the complete school world');
+  const eventSetup=initialize=>`(async()=>{globalThis.ev=await import('./test/support/event-checks.js');globalThis.et=await ev.eventSetup(${JSON.stringify(testId)},${initialize});return true;})()`;
+  await evalIn(eventSetup(true));await evalIn(eventSetup(false),peer.sessionId);
+  console.log('PASS phase 06',await evalIn('ev.eventDrawFailure(et)'));
+  const eventRace=await Promise.all([evalIn("ev.eventCompete(et,'event-tab-a')"),evalIn("ev.eventCompete(et,'event-tab-b')",peer.sessionId)]);
+  if(eventRace.filter(r=>r.ok).length!==1||eventRace.find(r=>!r.ok)?.code!=='STALE')throw Error('Event draw CAS failed: '+JSON.stringify(eventRace));
+  console.log('PASS phase 06 actual two-page event draw CAS',JSON.stringify(eventRace));
+  const eventSaved=await evalIn('ev.eventStorageChecks(et)');
+  console.log('PASS phase 06 atomic event reserve/admit/replay/rollback/import/retry/isolation/reopen',JSON.stringify(eventSaved.report));
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+  const eventRestored=await evalIn(`(async()=>{const ev=await import('./test/support/event-checks.js');return ev.eventSignature(${JSON.stringify(testId)});})()`);
+  if(eventRestored!==eventSaved.signature)throw Error('Event page reload changed committed selection');
+  console.log('PASS phase 06 actual navigation restores exact event identity/history/PRNG');
   console.log('PASS Chromium storage: all checks complete; synthetic only; NOT Safari/iPhone or full 30-year gameplay.');
   await call('Browser.close');
 } finally {

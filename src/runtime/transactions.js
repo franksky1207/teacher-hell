@@ -1,3 +1,4 @@
+import { registerEventCatalogue, selectWorldEvents, admissionEvent, lifecycleChange, eventExposure, guardSelectedProgress } from './event-selection.js';
 import { initializeRegistry, schoolCatalogue } from '../world/registry.js';
 import { careerRange } from '../calendar/calendar.js';
 import { SUBJECT_LOAD } from '../calendar/timetable.js';
@@ -39,16 +40,34 @@ function preconditions(world,conditions) {
     else throw new WorldError('PRECONDITION','Unknown precondition');
   }
 }
-function execute(world,command,op,numericSession,receipt) {
+function execute(world,command,op,numericSession,receipt,selectedAdmission=false) {
   const r=runtimeOf(world);
   guardCalendarOperation(world,command,op);
-  if(op.type==='school'){
+  guardSelectedProgress(world,op);
+  if(op.type==='register-event-catalogue'){
+    history(world,command,'event-catalogue',null,null,[],registerEventCatalogue(world,op));
+  } else if(op.type==='draw-events'){
+    world.numeric=numericSession.snapshot();
+    const data=selectWorldEvents(world,op,command,receipt);
+    history(world,command,'event-selection',null,null,[],data);
+  } else if(op.type==='admit-event'){
+    const event=admissionEvent(world,op);
+    numericSession=execute(world,command,{type:'open-event',event},numericSession,receipt,true);
+    history(world,command,'event-lifecycle',event.id,event.stageId,[],{previous:'reserved',status:'active',basisFactId:null});
+  } else if(op.type==='event-exposure'){
+    const data=eventExposure(world,op),event=findEvent(world,op.eventId);
+    history(world,command,'event-exposure',event.id,event.stageId,[op.basisFactId],data);
+  } else if(op.type==='event-lifecycle'){
+    const data=lifecycleChange(world,op),event=findEvent(world,op.eventId);
+    history(world,command,'event-lifecycle',event.id,event.stageId,[op.basisFactId],data);
+  } else if(op.type==='school'){
     const result=executeSchool(world,op,numericSession);
     history(world,command,'school',null,null,op.basisFactId===null?[]:[op.basisFactId],result.data);
     world.numeric=clone(result.snapshot);
     return createSettlementSession(result.snapshot);
   } else if(op.type==='open-event') {
     assertShape(op,['type','event']);validateEventEnvelope(op.event);
+    ensure(selectedAdmission||/^(synthetic:|procedure:|activity:)/.test(op.event.definitionId),'EVENT_SELECTION','Formal events must use a locked selection admission');
     ensure(!world.events.some(e=>e.id===op.event.id),'DUPLICATE','Event ID already exists');
     ensure(!op.event.facts.length&&!op.event.knowledge.length&&!op.event.results.length&&op.event.choice?.confirmedOptionId==null,'SCHEMA','Open an empty event; create facts/results through operations');
     ensure(!r.stages.some(s=>s.id===op.event.stageId),'DUPLICATE','Stage already exists');

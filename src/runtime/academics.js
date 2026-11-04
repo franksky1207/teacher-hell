@@ -8,7 +8,18 @@ import { need,score,rulesFor,standard,graduation } from '../academics/rules.js';
 import { emptyAcademics,openTerm,assess,closeTerm,ranking,academicMark,createLearner } from '../academics/learning.js';
 const runtime=w=>w.extensions['teacher-hell/world'];
 const equal=(a,b)=>canonicalData(a)===canonicalData(b);
-export function academicState(w){const s=emptyAcademics();for(const h of runtime(w).history)if(h.type==='academic')applyAcademic(s,structuredClone(h.data.input),restoreRandom(h.data.randomBefore));return s;}
+// Only an exclusive, unpublished ordered-command draft may follow its journal.
+// Import validation still independently replays every academic row below.
+const projections=new WeakMap();
+export function withAcademicProjection(w,work){
+ need(!projections.has(w),'academic projection already owned');projections.set(w,{state:emptyAcademics(),cursor:0});
+ try{return work();}finally{projections.delete(w);}
+}
+export function academicState(w){
+ const owned=projections.get(w),s=owned?.state??emptyAcademics(),history=runtime(w).history;
+ for(let i=owned?.cursor??0;i<history.length;i++){const h=history[i];if(h.type==='academic')applyAcademic(s,structuredClone(h.data.input),restoreRandom(h.data.randomBefore));}
+ if(owned){owned.cursor=history.length;return structuredClone(s);}return s;
+}
 function termAt(w){return teachingTerm(w.position.date)??latestPreparedSemester(w.position.date);}
 export function academicInput(w,op){
  const r=runtime(w),registry=w.numeric.evolution.world.registry;need(registry,'formal school identities required');

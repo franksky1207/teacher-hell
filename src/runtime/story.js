@@ -96,7 +96,8 @@ export function guardStoryOperation(w,op,internal){
  if(op.type==='story'||!r(w).history.some(h=>h.type==='event-selection'))return;
  if(internal&&!['finish-slot','advance-time'].includes(op.type))return;
  if(['finish-slot','advance-time'].includes(op.type)){
-  need(!w.events.some(e=>{const s=storyState(w,e.id);return e.id!==internal&&storyContent(w,e.id)&&(!s||!['waiting','ended'].includes(s.mode)||s.mode==='waiting'&&s.dueDate<=w.position.date&&!formalSlot(w).slot.protected);}), 'unfinished story or due follow-up blocks time');return;
+  const selected=new Set(r(w).history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected.map(s=>s.eventId))),states=new Map(r(w).history.filter(h=>h.type==='story').map(h=>[h.eventId,h.data.state]));
+  need(!w.events.some(e=>{if(e.id===internal||!selected.has(e.id))return false;const s=states.get(e.id);return storyContent(w,e.id)&&(!s||!['waiting','ended'].includes(s.mode)||s.mode==='waiting'&&s.dueDate<=w.position.date&&!formalSlot(w).slot.protected);}), 'unfinished story or due follow-up blocks time');return;
  }
  let id=op.eventId;
  if(!id&&op.factId)id=r(w).facts.find(f=>f.id===op.factId)?.eventId;

@@ -2,6 +2,7 @@ import { isFormal, validateOpeningSnapshot } from '../runtime/schedule.js';
 /** Versioned, complete save payload. No migration guesses and no replay on restore. */
 import { restoreWorldState, runtimeOf, ensure, same } from '../runtime/model.js';
 import { canonicalData } from '../changes/settlement.js';
+import { ANNUAL_KEY } from '../runtime/annual.js';
 export const SAVE_KIND='teacher-hell-save';
 export function restoreSave(input) {
   const value=typeof input==='string'?JSON.parse(input):structuredClone(input);
@@ -10,6 +11,7 @@ export function restoreSave(input) {
   const world=restoreWorldState(value.world),opening=value.opening===null?null:restoreWorldState(value.opening);
   for(const saved of [world,opening].filter(Boolean))ensure(saved.versions.rules==='n1-n8-v1','VERSION','Unsupported rules version');
   if(opening){
+    if(world.extensions[ANNUAL_KEY]||opening.extensions[ANNUAL_KEY])ensure(!!world.extensions[ANNUAL_KEY]&&!!opening.extensions[ANNUAL_KEY]&&same(world.extensions[ANNUAL_KEY],opening.extensions[ANNUAL_KEY]),'SNAPSHOT','Annual observation opening differs from the saved opening');
     validateOpeningSnapshot(opening);
     const wp=runtimeOf(world).plan,op=runtimeOf(opening).plan;
     ensure(isFormal(wp)===isFormal(op)&&(!isFormal(wp)||(wp.calendarVersion===op.calendarVersion&&wp.startYear===op.startYear&&wp.subject===op.subject)),'SNAPSHOT','Snapshot calendar differs from current world');

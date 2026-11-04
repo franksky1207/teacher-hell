@@ -1,12 +1,13 @@
 import { initializeSemesterReviews, pendingSemesterReview, semesterReviewData, acknowledgeSemesterReview } from './reviews.js';
+import { initializeAnnualObservations,compileAnnualSuccess,annualResult,ANNUAL_KEY } from './annual.js';
 import { compileInstitution,tickOperation } from './procedures.js';
-import { compileAcademic,academicState } from './academics.js';
+import { compileAcademic,academicState,withAcademicProjection } from './academics.js';
 import { compileCampus,schoolEnabled,schoolActions,schoolEventOccupied } from './campus.js';
-import { formalSlot } from './schedule.js';
+import { formalSlot,calendarMilestones } from './schedule.js';
 import { semester,teachingTerm } from '../calendar/calendar.js';
 import { createRelationship, createReputation, directedKey, contactKey } from '../world/relationships.js';
 import { compileNpcUpdate, checkNpcGroup, compileNpcClarification } from './autonomy.js';
-import { compileStory, guardStoryOperation, storyContent } from './story.js';
+import { compileStory, guardStoryOperation, storyContent,readStory } from './story.js';
 import { registerEventCatalogue, selectWorldEvents, admissionEvent, lifecycleChange, eventExposure, guardSelectedProgress } from './event-selection.js';
 import { initializeRegistry, schoolCatalogue } from '../world/registry.js';
 import { careerRange } from '../calendar/calendar.js';
@@ -36,8 +37,16 @@ function atCurrentStage(world,eventId,stageId) {
 }
 function involve(event,...ids) { event.participantIds=[...new Set([...event.participantIds,...ids])]; }
 function syncReferences(world) { for(const event of world.events)event.knowledge=knowledgeReferences(world,event); }
+function syncNumeric(world,session){
+  const {receiptCount,...current}=session.checkpoint();
+  world.numeric={...current,receipts:world.numeric.receipts};
+}
+const naturalSessions=new WeakMap();
 function naturalAt(world,numericSession,position) {
+  const stamp=key(position.date,position.schoolYearId,position.openingId,position.serviceYear);
+  if(naturalSessions.get(numericSession)===stamp)return;
   numericSession.advanceDay({date:position.date,schoolYearId:position.schoolYearId,openingId:position.openingId,serviceYear:position.serviceYear});
+  naturalSessions.set(numericSession,stamp);
 }
 function preconditions(world,conditions) {
   ensure(Array.isArray(conditions),'SCHEMA','Preconditions required');
@@ -53,21 +62,24 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
   const r=runtimeOf(world);
   ensure(!pendingSemesterReview(world)||['read-semester-review','institution-tick'].includes(op.type),'REVIEW_PENDING','Read the saved semester review before continuing');
   if(op.type==='institution-tick'){
-    assertShape(op,['type']);world.numeric=numericSession.snapshot();const tick=tickOperation(world);if(!tick)return numericSession;
+    assertShape(op,['type']);syncNumeric(world,numericSession);const tick=tickOperation(world);if(!tick)return numericSession;
     for(const child of [{type:'open-event',event:tick.event},tick.fact,tick.operation])numericSession=execute(world,command,child,numericSession,receipt,false,false,true);
     return numericSession;
   }
   guardStoryOperation(world,op,storyInternal||npcInternal);
   if(!npcInternal&&!(storyInternal&&['academic','institution'].includes(op.type)))guardCalendarOperation(world,command,op);
   guardSelectedProgress(world,op);
-  if(op.type==='read-semester-review'){
+  if(op.type==='settle-school-year'){
+    assertShape(op,['type']);ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player settles a year');
+    syncNumeric(world,numericSession);history(world,command,'annual-success',null,null,[],compileAnnualSuccess(world));
+  } else if(op.type==='read-semester-review'){
     ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player can acknowledge a report');
     history(world,command,'semester-review-read',null,null,[],acknowledgeSemesterReview(world,op));
   } else if(op.type==='institution'){
-    world.numeric=numericSession.snapshot();const data=compileInstitution(world,op);history(world,command,'institution',null,null,[op.basisFactId],data);
+    syncNumeric(world,numericSession);const data=compileInstitution(world,op);history(world,command,'institution',null,null,[op.basisFactId],data);
   } else if(op.type==='academic'){
     ensure(command.actorId===world.identity.playerId,'ACTOR','Academic operations belong to the teacher');
-    world.numeric=numericSession.snapshot();const data=compileAcademic(world,op);world.random.academics=data.randomAfter;history(world,command,'academic',null,null,op.basisFactId?[op.basisFactId]:[],data);
+    syncNumeric(world,numericSession);const data=compileAcademic(world,op);world.random.academics=data.randomAfter;history(world,command,'academic',null,null,op.basisFactId?[op.basisFactId]:[],data);
     if(op.action==='publish'){
       const make=kind=>createId(kind,[world.identity.attemptId,'academic-report',data.input.termId,op.personId]),eventId=make('event'),stageId=make('stage'),factId=make('fact'),claimId=make('claim'),accessId=createId('fact',[factId,'student-access']),teacher=world.identity.playerId;
       const children=[{type:'open-event',event:{schemaVersion:1,id:eventId,definitionId:'procedure:academic-report',contentVersion:'school-v1',type:'direct',participantIds:[teacher,op.personId],stageId,facts:[],knowledge:[],results:[],choice:null}},
@@ -79,7 +91,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
       for(const child of children)numericSession=execute(world,command,child,numericSession,receipt,false,false,true);
     }
   } else if(op.type==='campus'){
-    assertShape(op,['type','activity']);world.numeric=numericSession.snapshot();const data=compileCampus(world,op.activity);
+    assertShape(op,['type','activity']);syncNumeric(world,numericSession);const data=compileCampus(world,op.activity);
     for(const child of data.operations)numericSession=execute(world,command,child,numericSession,receipt,false,false,true);
     world.random.campus=data.randomAfter;history(world,command,'campus',null,null,[],data);
   } else if(op.type==='school-action'){
@@ -89,7 +101,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     if(pendingSemesterReview(world))return numericSession;
     return execute(world,command,{type:'advance-time',planId:r.plan.id,steps:1},numericSession,receipt);
   } else if(op.type==='npc-update'){
-    assertShape(op,['type']);world.numeric=numericSession.snapshot();
+    assertShape(op,['type']);syncNumeric(world,numericSession);
     const data=compileNpcUpdate(world);
     if(data.duplicate)return numericSession;
     if(!data.decisions.length)return numericSession;
@@ -105,7 +117,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
   } else if(op.type==='story'){
     ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player operates a story');
     if(op.action==='confirm')naturalAt(world,numericSession,world.position);
-    world.numeric=numericSession.snapshot();
+    syncNumeric(world,numericSession);
     const compiled=compileStory(world,op);
     const beforePanel=deriveWorldPanel(numericSession.world());
     for(const child of compiled.operations)numericSession=execute(world,command,child,numericSession,receipt,false,op.eventId);
@@ -115,7 +127,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
   } else if(op.type==='register-event-catalogue'){
     history(world,command,'event-catalogue',null,null,[],registerEventCatalogue(world,op));
   } else if(op.type==='draw-events'){
-    world.numeric=numericSession.snapshot();
+    syncNumeric(world,numericSession);
     const data=selectWorldEvents(world,op,command,receipt);
     history(world,command,'event-selection',null,null,[],data);
   } else if(op.type==='admit-event'){
@@ -255,12 +267,13 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     numericSession=execute(world,command,{type:'institution-tick'},numericSession,receipt);
     numericSession=execute(world,command,{type:'npc-update'},numericSession,receipt);
     finishCalendarSlot(world,op);naturalAt(world,numericSession,world.position);history(world,command,'slot-complete',null,null,[],{activityIds:op.completedActivityIds});
-    world.numeric=numericSession.snapshot();
+    syncNumeric(world,numericSession);
     const review=semesterReviewData(world);if(review)history(world,command,'semester-review',null,null,[],review);
   } else if(op.type==='prepare-semester') {
     prepareSemester(world,op);history(world,command,'timetable',null,null,[],{semesterId:op.semesterId});
   } else if(op.type==='advance-time') {
     ensure(!pendingSemesterReview(world),'REVIEW_PENDING','Read the saved semester review before advancing');
+    if(world.extensions[ANNUAL_KEY]&&calendarMilestones(world).annualSettlementReady)ensure(annualResult(world),'ANNUAL_PENDING','Settle the academic year before continuing');
     assertShape(op,['type','planId','steps']);ensure(op.planId===r.plan.id&&Number.isInteger(op.steps)&&op.steps>0,'TIME','Invalid time progression');
     if(isFormal(r.plan)){
       naturalAt(world,numericSession,world.position);
@@ -313,9 +326,9 @@ export function startWorld(foundation,plan) {
 
 /** Pure preparation. All changes occur on a detached draft; callers publish the returned
  * world only after success. No callbacks, platform I/O, global state or implicit draws. */
-export function prepareWorldOperation(saved,request) {
+function prepareDraft(world,request,ownedNumeric=null) {
   try {
-    const world=restoreWorldState(saved);canonicalData(request);
+    canonicalData(request);
     assertShape(request,['id','attemptId','expectedRevision','actorId','preconditions','operations',...(Object.hasOwn(request,'calendarContext')?['calendarContext']:[])]);
     validateId(request.id,'operation');identifier(request.attemptId);knownActor(world,request.actorId);
     ensure(request.attemptId===world.identity.attemptId,'ATTEMPT','Wrong attempt');
@@ -324,17 +337,18 @@ export function prepareWorldOperation(saved,request) {
     ensure(request.expectedRevision===r.revision,'STALE','World revision changed');preconditions(world,request.preconditions);
     ensure(Array.isArray(request.operations)&&request.operations.length>0,'SCHEMA','Nonempty operations required');
     if(request.operations.some(op=>op.type==='read-semester-review'))ensure(request.operations.length===1,'REVIEW_READ','Acknowledge a report in its own timeless transaction');
+    if(request.operations.some(op=>op.type==='settle-school-year'))ensure(request.operations.length===1,'ANNUAL','Settle a year in its own timeless transaction');
     const storyIds=request.operations.filter(o=>o.type==='story'||o.type==='admit-event').map(o=>o.eventId);
     ensure(new Set(storyIds).size===storyIds.length,'STORY','One story action per event per transaction');
     const command=clone(request),offset=r.history.length;
     const receipt={id:command.id,attemptId:command.attemptId,revision:r.revision+1,request:encoded,historyIds:[],numericReceiptIds:[],draws:[]};
-    let numerical=createSettlementSession(world.numeric);
+    let numerical=ownedNumeric??createSettlementSession(world.numeric);
     for(const operation of command.operations)numerical=execute(world,command,operation,numerical,receipt);
-    const readingOnly=command.operations[0].type==='read-semester-review';
+    const readingOnly=['read-semester-review','settle-school-year'].includes(command.operations[0].type);
     if(!readingOnly)numerical=execute(world,command,{type:'institution-tick'},numerical,receipt);
     const arrangement=readingOnly?null:arrangeReplenishment(world,command,numerical);
     if(arrangement){history(world,command,'school',null,null,[arrangement.data.basisFactId],arrangement.data);numerical=createSettlementSession(arrangement.snapshot);}
-    world.numeric=numerical.snapshot();
+    if(ownedNumeric)syncNumeric(world,numerical);else world.numeric=numerical.snapshot();
     const school=world.numeric.evolution.world;
     if(school.registry)world.enrollments=schoolEnrollmentReferences(school);
     if(school.registry&&command.operations.some(op=>op.type==='school'&&['school-enroll','school-leave','school-graduate'].includes(op.change.type))){
@@ -344,11 +358,35 @@ export function prepareWorldOperation(saved,request) {
     }
     syncReferences(world);r.revision++;
     receipt.historyIds=r.history.slice(offset).map(h=>h.id);r.commits.push(receipt);
-    return {world:restoreWorldState(world),receipt:clone(receipt),duplicate:false};
+    return {world,receipt:clone(receipt),duplicate:false,numerical};
   } catch(error) {
     if(error instanceof WorldError)throw error;
     throw new WorldError(error.code??'INVALID',error.message);
   }
+}
+export function prepareWorldOperation(saved,request){
+ try{const result=prepareDraft(restoreWorldState(saved),request);return {world:restoreWorldState(result.world),receipt:result.receipt,duplicate:result.duplicate};}
+ catch(error){if(error instanceof WorldError)throw error;throw new WorldError(error.code??'INVALID',error.message);}
+}
+
+/** Atomic ordered-command preparation. Each command uses the exact normal guards,
+ * numeric transactions and receipts. The entire input/output is fully validated;
+ * provisional contexts never expose or publish the transaction-owned draft.
+ * Useful for bounded replay and callers batching automatic routine operations.
+ * No trusted flag, skipped date, synthetic result, or alternate time engine. */
+export function prepareWorldSequence(saved,nextRequest,{limit=10000}={}){
+ ensure(typeof nextRequest==='function'&&Number.isInteger(limit)&&limit>0&&limit<=10000,'SEQUENCE','A bounded command producer is required');
+ let world=restoreWorldState(saved),numerical=createSettlementSession(world.numeric);const receipts=[];
+ return withAcademicProjection(world,()=>{
+ for(let i=0;i<=limit;i++){
+  const state=runtimeOf(world),selected=new Set(state.history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected.map(s=>s.eventId))),storyStates=new Map(state.history.filter(h=>h.type==='story').map(h=>[h.eventId,h.data.state])),stories=world.events.filter(e=>selected.has(e.id)&&storyContent(world,e.id)&&storyStates.get(e.id)?.mode!=='ended').map(e=>readStory(world,e.id));
+  const context={identity:world.identity,position:world.position,revision:state.revision,plan:state.plan,actions:schoolActions(world),pendingReview:pendingSemesterReview(world)?.id??null,annualSettled:!!annualResult(world),
+   dayDrawn:state.history.some(h=>h.type==='event-selection'&&h.at.date===world.position.date),slotComplete:state.history.some(h=>h.type==='slot-complete'&&h.cursor===state.plan.cursor),
+   reserved:state.history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).filter(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!world.events.some(e=>e.id===s.eventId)),stories};
+  const request=nextRequest(clone(context));if(request===null){world.numeric=numerical.snapshot();return {world:restoreWorldState(world),receipts};}
+  ensure(i<limit,'SEQUENCE_LIMIT','Command sequence did not terminate');const prepared=prepareDraft(world,request,numerical);world=prepared.world;numerical=prepared.numerical??numerical;receipts.push(prepared.receipt);
+ }
+ });
 }
 function freeze(value) { if(value&&typeof value==='object'&&!Object.isFrozen(value)){Object.values(value).forEach(freeze);Object.freeze(value);}return value; }
 /** Exclusive owner. Prepare does not publish. Batch 03 persists ticket.world and receipt
@@ -410,3 +448,4 @@ export function startSchoolCareer(foundation,{startYear,subject,seed}){
 export function startReviewedSchoolCareer(foundation,options){
  return restoreWorldState(initializeSemesterReviews(startSchoolCareer(foundation,options)));
 }
+export function startAnnualSchoolCareer(foundation,options){return restoreWorldState(initializeAnnualObservations(startReviewedSchoolCareer(foundation,options)));}

@@ -33,7 +33,9 @@
     "simulate:school": "node --expose-gc simulation/school-academics.js",
     "demo:procedures": "node scripts/procedure-demo.js",
     "simulate:procedures": "node --expose-gc simulation/institution-history.js",
-    "demo:reviews": "node scripts/review-demo.js"
+    "demo:reviews": "node scripts/review-demo.js",
+    "demo:annual": "node scripts/annual-demo.js",
+    "test:annual:browser": "npm run build && node scripts/storage-browser.js --annual"
   },
   "devDependencies": {
     "acorn": "8.15.0"

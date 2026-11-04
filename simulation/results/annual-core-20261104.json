@@ -1,0 +1,213 @@
+{
+  "scenario": "11-B first actual academic year, seed 74, listen choice",
+  "provenance": "all dates/slots executed with production core; engineering catalogue, no skipped baselines",
+  "baseline": "3dc4c890681cca5df028a645677d34148575de0c",
+  "start": {
+    "date": "2026-07-20",
+    "slotId": "early",
+    "schoolYearId": "challenge:2026:1",
+    "openingId": "opening:2026-07-20",
+    "serviceYear": 1,
+    "statisticsPeriodId": "2026:autumn"
+  },
+  "end": {
+    "date": "2027-06-25",
+    "slotId": "private",
+    "schoolYearId": "challenge:2026:1",
+    "openingId": "opening:2026-07-20",
+    "serviceYear": 1,
+    "statisticsPeriodId": "2027:spring"
+  },
+  "completedYears": 1,
+  "commands": 3606,
+  "formalEvents": 1,
+  "historyCount": 23661,
+  "rosterCount": 40,
+  "coverage": {
+    "slots": 3254,
+    "completed": 3254,
+    "days": 341,
+    "missing": [],
+    "undrawnDates": []
+  },
+  "rating": {
+    "status": "rated",
+    "provenance": "formal",
+    "score": 76.06653851042338,
+    "grade": "B",
+    "parts": {
+      "handling": 35,
+      "students": 13.133742103263884,
+      "relationships": 12.16603943944901,
+      "states": 11.428859984205333,
+      "growth": 4.337896983505162
+    },
+    "metrics": {
+      "handling": 100,
+      "students": 52.53496841305554,
+      "relationships": 81.10692959632672,
+      "states": 76.19239989470222,
+      "growth": 43.37896983505162
+    }
+  },
+  "evidenceCounts": {
+    "snapshot": 2,
+    "cohort": 1,
+    "fact": 53,
+    "handling": 1,
+    "student": 40,
+    "relationship": 11,
+    "completion": 1,
+    "year-summary": 1
+  },
+  "criteria": [
+    "assigned-lessons-with-confirmed-domain-results",
+    "recorded-academic-marks-credits-attendance",
+    "observed-directed-relationship"
+  ],
+  "comparison": {
+    "教學能力": {
+      "start": 10.470703125,
+      "end": 11.148274729680677,
+      "delta": 0.6775716046806775
+    },
+    "班級經營": {
+      "start": 42.626953125,
+      "end": 44.74965971957173,
+      "delta": 2.1227065945717314
+    },
+    "溝通協調": {
+      "start": 63.619140625,
+      "end": 64.57400835911866,
+      "delta": 0.9548677341186647
+    },
+    "行政應對": {
+      "start": 59.1337890625,
+      "end": 58.33827698674789,
+      "delta": -0.7955120757521073
+    },
+    "危機處理": {
+      "start": 17.921875,
+      "end": 16.011622061783406,
+      "delta": -1.910252938216594
+    },
+    "情緒調適": {
+      "start": 46.2275390625,
+      "end": 47.85323933169735,
+      "delta": 1.6257002691973526
+    },
+    "體力": {
+      "start": 100,
+      "end": 75.37395215463856,
+      "delta": -24.62604784536144
+    },
+    "精神": {
+      "start": 100,
+      "end": 78.09896472123015,
+      "delta": -21.901035278769854
+    },
+    "抗壓": {
+      "start": 100,
+      "end": 100,
+      "delta": 0
+    },
+    "聲望": {
+      "start": 40,
+      "end": 40,
+      "delta": 0
+    },
+    "熱忱": {
+      "start": 100,
+      "end": 84.46694447803013,
+      "delta": -15.533055521969871
+    },
+    "情緒": {
+      "start": 100,
+      "end": 79.21453801431456,
+      "delta": -20.785461985685444
+    }
+  },
+  "reviewChecks": [
+    {
+      "id": "history:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"operation:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"annual-driver\\\",\\\"2048\\\"]\",\"13491\"]",
+      "periodId": "2026:autumn",
+      "at": {
+        "date": "2027-01-22",
+        "slotId": "private"
+      },
+      "blockedAdvance": true,
+      "savedUnread": true,
+      "readReplay": true
+    },
+    {
+      "id": "history:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"operation:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"annual-driver\\\",\\\"3606\\\"]\",\"23659\"]",
+      "periodId": "2027:spring",
+      "at": {
+        "date": "2027-06-25",
+        "slotId": "private"
+      },
+      "blockedAdvance": true,
+      "savedUnread": true,
+      "readReplay": true
+    }
+  ],
+  "assertions": {
+    "settlementNumericUnchanged": true,
+    "settlementRandomUnchanged": true,
+    "settlementPositionUnchanged": true,
+    "sameRequestDuplicate": true,
+    "newRequestRepeatRejected": true,
+    "fullSaveRestoredIdentically": true
+  },
+  "performance": {
+    "elapsedMs": 968966.004619,
+    "saveBytes": 43600040,
+    "restoreMs": 13115.687782000052,
+    "memorySample": {
+      "rss": 2249166848,
+      "heapTotal": 1413754880,
+      "heapUsed": 1131237400,
+      "external": 2050085,
+      "arrayBuffers": 137467
+    },
+    "scope": "Node desktop sample includes copies, serialized payload and GC; not a peak or phone guarantee"
+  },
+  "saveSha256": "e9216763dcf9172ce69f3d1fb6d816e34df95873ded8e18884f67270cde6a3ae",
+  "artifacts": "work/annual/world.json and report.json; regenerate with npm run demo:annual",
+  "chromium": {
+    "version": "154.0.8037.57",
+    "fullExistingIntegration": true,
+    "annual": {
+      "hash": "e9216763dcf9172ce69f3d1fb6d816e34df95873ded8e18884f67270cde6a3ae",
+      "bytes": 43600040,
+      "year": 1,
+      "score": 76.06653851042338,
+      "grade": "B",
+      "comparisonCount": 12,
+      "importMs": 42611.799999999814,
+      "exportMs": 23019.10000000056,
+      "restoreMs": 20794.099999999627,
+      "elapsedMs": 366961.9000000004,
+      "heapUsed": 855343706
+    },
+    "navigation": {
+      "hash": "e9216763dcf9172ce69f3d1fb6d816e34df95873ded8e18884f67270cde6a3ae",
+      "bytes": 43600040,
+      "year": 1,
+      "score": 76.06653851042338,
+      "grade": "B",
+      "comparisonCount": 12,
+      "importMs": null,
+      "exportMs": 22233.5,
+      "restoreMs": 19024.800000000745,
+      "elapsedMs": 58943,
+      "heapUsed": 688170359
+    },
+    "assertions": {
+      "twelveValuesMatchActualPanels": true,
+      "postAnnualAdvanceAndRestorePreserveResult": true,
+      "playerViewExcludesRawNpcSnapshots": true,
+      "nodeBrowserNavigationExactSaveHash": true
+    }
+  }
+}

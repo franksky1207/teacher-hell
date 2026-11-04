@@ -180,7 +180,7 @@ export function validateNpcHistory(w){
  const r=runtime(w),seen=new Set(),randomByAttempt=new Map();
  for(const h of r.history.filter(h=>h.type==='npc-update')){
   const request=JSON.parse(r.commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId).request);
-  need(request.operations.some(o=>o.type==='npc-update'||o.type==='finish-slot'||o.type==='story'&&o.action==='finish'),'unowned autonomy update');
+  need(request.operations.some(o=>o.type==='npc-update'||o.type==='finish-slot'||o.type==='story'&&o.action==='finish'||o.type==='school-action'&&r.history.some(c=>c.type==='campus'&&c.operationId===h.operationId&&c.cursor===h.cursor)&&r.history.some(c=>c.type==='slot-complete'&&c.operationId===h.operationId&&c.cursor===h.cursor)),'unowned autonomy update');
   const d=h.data;assertShape(d,['version','classroom','inputs','decisions','operations','randomBefore','randomAfter','duplicate','beforeOrder']);need(d.version===AUTONOMY_VERSION,'unsupported action version');
   need(!seen.has(h.cursor),'duplicate update at one slot');seen.add(h.cursor);
   if(randomByAttempt.has(h.attemptId))need(same(d.randomBefore,randomByAttempt.get(h.attemptId)),'random chain mismatch');randomByAttempt.set(h.attemptId,d.randomAfter);

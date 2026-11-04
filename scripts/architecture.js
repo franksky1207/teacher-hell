@@ -13,7 +13,7 @@ const allowed = {
   contracts: ['contracts','changes','evolution','social','world','player','numeric','assessment'],
   academics: ['academics','player','numeric'],
   calendar: ['calendar','numeric'],
-  runtime: ['academics','calendar','runtime','contracts','changes','evolution','social','world','player','numeric'],
+  runtime: ['assessment','academics','calendar','runtime','contracts','changes','evolution','social','world','player','numeric'],
   storage: ['storage','runtime','contracts','changes'],
   web: ['web','contracts'],
 };

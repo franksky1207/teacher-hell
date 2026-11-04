@@ -12,6 +12,7 @@ let browser, server, socket;
 try {
   await cp(resolve(root,'dist'),join(temporary,'site','teacher-hell'),{recursive:true});
   await cp(resolve(root,'test/support'),join(temporary,'site','teacher-hell/test/support'),{recursive:true});
+  if(process.argv.includes('--annual'))await cp(resolve(root,'work/annual/world.json'),join(temporary,'site','teacher-hell/test/support/annual-completed.json'));
   server=await createPreviewServer(join(temporary,'site'));server.listen(0,'127.0.0.1');await once(server,'listening');
   const url=`http://127.0.0.1:${server.address().port}/teacher-hell/`;
   browser=spawn(process.env.CHROMIUM_BIN || 'chromium',[
@@ -34,8 +35,8 @@ try {
     const message=JSON.parse(event.data),entry=pending.get(message.id);
     if(entry){pending.delete(message.id);clearTimeout(entry.timer);message.error?entry.reject(new Error(JSON.stringify(message.error))):entry.resolve(message.result);}
   });
-  const call=(method,params={},sessionId)=>new Promise((resolve,reject)=>{
-    const id=++sequence,timer=setTimeout(()=>{pending.delete(id);reject(new Error(`CDP timeout: ${method}`));},120000);
+  const call=(method,params={},sessionId,timeoutMs=120000)=>new Promise((resolve,reject)=>{
+    const id=++sequence,timer=setTimeout(()=>{pending.delete(id);reject(new Error(`CDP timeout: ${method}`));},timeoutMs);
     pending.set(id,{resolve,reject,timer});socket.send(JSON.stringify({id,method,params,...(sessionId?{sessionId}:{})}));
   });
   const {targetId}=await call('Target.createTarget',{url:'about:blank'});
@@ -60,8 +61,8 @@ try {
   await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true},sessionId);
   await evaluate('document.querySelector("#status").dataset.status="pending"');
   await call('Page.reload',{},sessionId);await passed();
-  const evalIn=async (expression,sid=sessionId)=>{
-    const out=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true},sid);
+  const evalIn=async (expression,sid=sessionId,timeoutMs=120000)=>{
+    const out=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true},sid,timeoutMs);
     if(out.exceptionDetails)throw Error(JSON.stringify(out.exceptionDetails));return out.result.value;
   };
   const testId=temporary.split('/').at(-1);
@@ -162,7 +163,13 @@ try {
   const procedureRestored=await evalIn(`(async()=>{const module=await import('./test/support/procedure-checks.js');return module.procedureSignature(${JSON.stringify(testId)});})()`);
   if(procedureRestored!==procedureSaved.signature)throw Error('Procedure actual navigation changed deadlines/evidence/history');
   console.log('PASS phase 10 actual navigation restores exact institutional world');
-  console.log('PASS Chromium storage: all checks complete; synthetic only; NOT Safari/iPhone or full 30-year gameplay.');
+  if(process.argv.includes('--annual')){
+   const run=initialize=>`(async()=>{const annual=await import('./test/support/annual-checks.js');return annual.annualStorage(${JSON.stringify(testId)},${initialize});})()`;
+   const saved=await evalIn(run(true),sessionId,600000);console.log('PASS real first-year annual IndexedDB rollback/import/CAS/dedup/three slots',JSON.stringify(saved));
+   await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+   const reopened=await evalIn(run(false),sessionId,600000);if(saved.hash!==reopened.hash)throw Error('Annual navigation changed the saved world');console.log('PASS actual navigation restores the real annual result',JSON.stringify(reopened));
+  }
+  console.log('PASS Chromium storage: all checks complete; engineering acceptance only; NOT Safari/iPhone or full 30-year gameplay.');
   await call('Browser.close');
 } finally {
   socket?.close();

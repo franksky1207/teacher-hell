@@ -1,4 +1,5 @@
 import { readSemesterReviews } from './reviews.js';
+import { readAnnualResults } from './annual.js';
 /** Read-only audience projections. Never return NPC records, RNG, hidden event lists,
  * permission facts, undisclosed truth, or internal outcome/engine status. */
 import { deriveWorldPanel } from '../social/reputation.js';
@@ -42,3 +43,6 @@ export function readSchoolRoster(saved){
 
 /** Saved, player-visible reports only. No importance scores, current states or replay. */
 export function readSemesterReviewHistory(saved){return readSemesterReviews(restoreWorldState(saved));}
+export function readAnnualHistory(saved){return readAnnualResults(restoreWorldState(saved)).map(report=>({id:report.id,year:report.year,status:report.status,at:report.at,
+ score:report.evidence.rating.score,grade:report.evidence.rating.grade,parts:report.evidence.rating.parts,comparison:report.comparison,reviewIds:report.reviewIds,summary:report.summary,
+ evidence:report.evidence.sources.map(({id,factId,nature,criterion,historyIds,eventIds,factIds})=>({id,factId,nature,criterion,historyIds,eventIds,factIds}))}));}

@@ -1,4 +1,5 @@
 import { validateSemesterReviews } from './reviews.js';
+import { validateAnnualObservations } from './annual.js';
 import { validateInstitutionHistory,mayReadProcedureFact } from './procedures.js';
 import { validateAcademicHistory } from './academics.js';
 import { validateCampusHistory } from './campus.js';
@@ -30,7 +31,7 @@ export function worldAttemptIds(world){
 }
 function validateAttemptLineage(world){
   const lineage=world.extensions[ATTEMPT_LINEAGE_KEY],lastRetry=runtimeOf(world).history.findLast(h=>h.type==='retry');
-  if(!lineage){ensure(!lastRetry?.data.attemptIds,'ATTEMPT','Retry identity lineage is missing');return;}
+  if(!lineage){ensure(!lastRetry?.data.attemptIds&&!runtimeOf(world).commits.some(c=>JSON.parse(c.request).attemptIds),'ATTEMPT','Retry identity lineage is missing');return;}
   assertShape(lineage,['version','attemptIds']);
   ensure(lineage.version===1&&Array.isArray(lineage.attemptIds)&&lineage.attemptIds.length>1,'ATTEMPT','Invalid retry identity lineage');
   unique(lineage.attemptIds,id=>id,'attempt lineage');lineage.attemptIds.forEach(id=>validateId(id,'attempt'));
@@ -232,6 +233,7 @@ export function validateWorldState(world) {
   unique(resultKeys,k=>k,'semantic result keys');
   for(const commit of r.commits)for(const id of commit.numericReceiptIds)ensure(r.effects.some(e=>e.attemptId===commit.attemptId&&e.numericReceiptId===id),'LEDGER','Commit references missing effect');
   validateSemesterReviews(world);
+  validateAnnualObservations(world);
   validateAttemptLineage(world);
   validateEventSelectionHistory(world);
   validateStoryHistory(world);

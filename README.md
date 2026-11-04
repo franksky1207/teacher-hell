@@ -1520,3 +1520,24 @@ N5／N6效果、候選資格及恢復／重送。精準測試：`npm run test:mo
 第09批學業／日常工程入口：`npm run demo:school`，可用`-- --scenario=A`（A～F）及`--seed=74`指定情境。
 正式操作仍經原世界交易；`npm run test:module -- module=academics`精準驗證，`npm run simulate:school`量測合成60學期負載。
 資料契約、法規來源／未來假設、基線與完整遊戲的界線見docs/05第09批紀錄。沒有新增玩家網頁或部署。
+
+第11批11-B第一學年入口：`startAnnualSchoolCareer`保存暑輔首日的正式年度基線；
+沿原`school-action`／事件／學業／程序推進，閱讀兩份11-A回顧後，在六月最後考試日最後時段
+用獨立`settle-school-year`交易完成原N7評級。`readAnnualHistory`提供玩家可見年度紀錄，
+三槽保存仍用`createStoredSession.execute`、原CAS及匯入匯出，沒有另一套世界或評分引擎。
+
+```sh
+npm run demo:annual
+npm run test:module -- module=annual,assessment,reviews,storage,runtime
+npm run test:annual:browser
+```
+
+`demo:annual`從2026-07-20暑輔首日逐日期／時段執行完整第一學年，配置少量工程故事，
+不注入年度成果、不跳過事件／回顧屏障。世界與來源報告保存在隔離的`work/annual`；
+`-- --until=2026-07-21`僅驗短期流程，不能作年度通關證據；
+`-- --resume`只讀取先前實際執行、讀完學期回顧後保存的完整檢查點。
+`test:annual:browser`要求先生成真實完整年度存檔，再跑原完整Chromium儲存整合及年度大檔驗證。
+詳細證據映射、實測與相容性界線集中於docs/05的11-B節；11-C～11-F另待後續，不在本入口自動執行。
+完整第一年工程情境（seed74、listen）已得原N7 **76.06653851042338／B**：341天、3254個時段、
+1件正式抽選事件，年度交易無數值回饋，含opening存檔43,600,040 bytes並完整恢復。
+精簡可審查結果見[年度工程證據](simulation/results/annual-core-20261104.json)；此為桌機工程驗證，未宣稱手機或完整30年通過。

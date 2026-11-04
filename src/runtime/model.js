@@ -1,3 +1,4 @@
+import { validateSemesterReviews } from './reviews.js';
 import { validateInstitutionHistory,mayReadProcedureFact } from './procedures.js';
 import { validateAcademicHistory } from './academics.js';
 import { validateCampusHistory } from './campus.js';
@@ -212,6 +213,7 @@ export function validateWorldState(world) {
   }
   unique(resultKeys,k=>k,'semantic result keys');
   for(const commit of r.commits)for(const id of commit.numericReceiptIds)ensure(r.effects.some(e=>e.attemptId===commit.attemptId&&e.numericReceiptId===id),'LEDGER','Commit references missing effect');
+  validateSemesterReviews(world);
   validateEventSelectionHistory(world);
   validateStoryHistory(world);
   validateNpcHistory(world);

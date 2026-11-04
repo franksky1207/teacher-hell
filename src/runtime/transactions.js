@@ -1,3 +1,4 @@
+import { initializeSemesterReviews, pendingSemesterReview, semesterReviewData, acknowledgeSemesterReview } from './reviews.js';
 import { compileInstitution,tickOperation } from './procedures.js';
 import { compileAcademic,academicState } from './academics.js';
 import { compileCampus,schoolEnabled,schoolActions,schoolEventOccupied } from './campus.js';
@@ -50,6 +51,7 @@ function preconditions(world,conditions) {
 }
 function execute(world,command,op,numericSession,receipt,selectedAdmission=false,storyInternal=false,npcInternal=false) {
   const r=runtimeOf(world);
+  ensure(!pendingSemesterReview(world)||['read-semester-review','institution-tick'].includes(op.type),'REVIEW_PENDING','Read the saved semester review before continuing');
   if(op.type==='institution-tick'){
     assertShape(op,['type']);world.numeric=numericSession.snapshot();const tick=tickOperation(world);if(!tick)return numericSession;
     for(const child of [{type:'open-event',event:tick.event},tick.fact,tick.operation])numericSession=execute(world,command,child,numericSession,receipt,false,false,true);
@@ -58,7 +60,10 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
   guardStoryOperation(world,op,storyInternal||npcInternal);
   if(!npcInternal&&!(storyInternal&&['academic','institution'].includes(op.type)))guardCalendarOperation(world,command,op);
   guardSelectedProgress(world,op);
-  if(op.type==='institution'){
+  if(op.type==='read-semester-review'){
+    ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player can acknowledge a report');
+    history(world,command,'semester-review-read',null,null,[],acknowledgeSemesterReview(world,op));
+  } else if(op.type==='institution'){
     world.numeric=numericSession.snapshot();const data=compileInstitution(world,op);history(world,command,'institution',null,null,[op.basisFactId],data);
   } else if(op.type==='academic'){
     ensure(command.actorId===world.identity.playerId,'ACTOR','Academic operations belong to the teacher');
@@ -81,6 +86,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     assertShape(op,['type','activity']);ensure(schoolEnabled(world),'SCHOOL','Open academic term before school actions');
     numericSession=execute(world,command,{type:'campus',activity:op.activity},numericSession,receipt);
     numericSession=execute(world,command,{type:'finish-slot',completedActivityIds:formalSlot(world).slot.activityIds},numericSession,receipt);
+    if(pendingSemesterReview(world))return numericSession;
     return execute(world,command,{type:'advance-time',planId:r.plan.id,steps:1},numericSession,receipt);
   } else if(op.type==='npc-update'){
     assertShape(op,['type']);world.numeric=numericSession.snapshot();
@@ -249,9 +255,12 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     numericSession=execute(world,command,{type:'institution-tick'},numericSession,receipt);
     numericSession=execute(world,command,{type:'npc-update'},numericSession,receipt);
     finishCalendarSlot(world,op);naturalAt(world,numericSession,world.position);history(world,command,'slot-complete',null,null,[],{activityIds:op.completedActivityIds});
+    world.numeric=numericSession.snapshot();
+    const review=semesterReviewData(world);if(review)history(world,command,'semester-review',null,null,[],review);
   } else if(op.type==='prepare-semester') {
     prepareSemester(world,op);history(world,command,'timetable',null,null,[],{semesterId:op.semesterId});
   } else if(op.type==='advance-time') {
+    ensure(!pendingSemesterReview(world),'REVIEW_PENDING','Read the saved semester review before advancing');
     assertShape(op,['type','planId','steps']);ensure(op.planId===r.plan.id&&Number.isInteger(op.steps)&&op.steps>0,'TIME','Invalid time progression');
     if(isFormal(r.plan)){
       naturalAt(world,numericSession,world.position);
@@ -314,14 +323,16 @@ export function prepareWorldOperation(saved,request) {
     if(prior){ensure(prior.request===encoded,'CONFLICT','Operation ID reused with different content');return {world,receipt:clone(prior),duplicate:true};}
     ensure(request.expectedRevision===r.revision,'STALE','World revision changed');preconditions(world,request.preconditions);
     ensure(Array.isArray(request.operations)&&request.operations.length>0,'SCHEMA','Nonempty operations required');
+    if(request.operations.some(op=>op.type==='read-semester-review'))ensure(request.operations.length===1,'REVIEW_READ','Acknowledge a report in its own timeless transaction');
     const storyIds=request.operations.filter(o=>o.type==='story'||o.type==='admit-event').map(o=>o.eventId);
     ensure(new Set(storyIds).size===storyIds.length,'STORY','One story action per event per transaction');
     const command=clone(request),offset=r.history.length;
     const receipt={id:command.id,attemptId:command.attemptId,revision:r.revision+1,request:encoded,historyIds:[],numericReceiptIds:[],draws:[]};
     let numerical=createSettlementSession(world.numeric);
     for(const operation of command.operations)numerical=execute(world,command,operation,numerical,receipt);
-    numerical=execute(world,command,{type:'institution-tick'},numerical,receipt);
-    const arrangement=arrangeReplenishment(world,command,numerical);
+    const readingOnly=command.operations[0].type==='read-semester-review';
+    if(!readingOnly)numerical=execute(world,command,{type:'institution-tick'},numerical,receipt);
+    const arrangement=readingOnly?null:arrangeReplenishment(world,command,numerical);
     if(arrangement){history(world,command,'school',null,null,[arrangement.data.basisFactId],arrangement.data);numerical=createSettlementSession(arrangement.snapshot);}
     world.numeric=numerical.snapshot();
     const school=world.numeric.evolution.world;
@@ -385,4 +396,9 @@ export function startSchoolCareer(foundation,{startYear,subject,seed}){
  initializeRegistry(preview,{academicYear:startYear,date:careerRange(startYear).start});
  const baseline=startCalendarWorld(foundation,{startYear,subject,seed,classes:schoolCatalogue(preview,Object.keys(SUBJECT_LOAD)),homeClassId:preview.classroom.id});
  return prepareWorldOperation(baseline,{id:createId('operation',[baseline.identity.careerId,'initialize-school']),attemptId:baseline.identity.attemptId,expectedRevision:0,actorId:baseline.identity.playerId,preconditions:[],calendarContext:{kind:'procedure'},operations:[{type:'school',basisFactId:null,change:{type:'school-initialize',academicYear:startYear}}]}).world;
+}
+
+/** New formal semester-report lifecycle; no date baselines or synthesized reports. */
+export function startReviewedSchoolCareer(foundation,options){
+ return restoreWorldState(initializeSemesterReviews(startSchoolCareer(foundation,options)));
 }

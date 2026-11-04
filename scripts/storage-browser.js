@@ -139,6 +139,12 @@ try {
   const npcRestored=await evalIn(`(async()=>{const npc=await import('./test/support/npc-checks.js');return npc.npcSignature(${JSON.stringify(testId)});})()`);
   if(npcRestored!==npcSaved.signature)throw Error('NPC actual navigation changed world/history/PRNG');
   console.log('PASS phase 08 actual navigation restores exact autonomous world');
+  const reviewSaved=await evalIn(`(async()=>{const reviews=await import('./test/support/review-checks.js');return reviews.reviewStorage(${JSON.stringify(testId)});})()`);
+  console.log('PASS semester report boundary IndexedDB rollback/replay/import/three slots',JSON.stringify(reviewSaved.report));
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+  const reviewRestored=await evalIn(`(async()=>{const reviews=await import('./test/support/review-checks.js');return reviews.reviewSignature(${JSON.stringify(testId)});})()`);
+  if(reviewRestored!==reviewSaved.signature)throw Error('Review navigation changed report/read state');
+  console.log('PASS actual navigation preserves saved semester report and read state');
   const academicSaved=await evalIn(`(async()=>{const school=await import('./test/support/academic-checks.js');return school.academicStorage(${JSON.stringify(testId)});})()`);
   console.log('PASS phase 09 real IndexedDB academic/routine/N6/RNG rollback/replay/three slots/import',JSON.stringify(academicSaved.report));
   await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();

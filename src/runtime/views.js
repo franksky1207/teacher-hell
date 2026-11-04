@@ -1,3 +1,4 @@
+import { readSemesterReviews } from './reviews.js';
 /** Read-only audience projections. Never return NPC records, RNG, hidden event lists,
  * permission facts, undisclosed truth, or internal outcome/engine status. */
 import { deriveWorldPanel } from '../social/reputation.js';
@@ -38,3 +39,6 @@ export function readSchoolRoster(saved){
   students:numeric.classroom.studentIds.map(id=>({id,name:r.profiles[id].displayName,
    caregivers:numeric.careLinks.filter(l=>l.studentId===id).map(l=>({id:l.caregiverId,name:r.profiles[l.caregiverId].displayName}))}))};
 }
+
+/** Saved, player-visible reports only. No importance scores, current states or replay. */
+export function readSemesterReviewHistory(saved){return readSemesterReviews(restoreWorldState(saved));}

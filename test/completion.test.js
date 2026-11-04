@@ -48,9 +48,17 @@ test('completion: missing, duplicated, wrong-attempt and recycled evidence canno
 });
 
 test('completion: thirty disjoint annual sources unify into ten cohorts, affiliations remain causal and immutable',()=>{
- const w=completionContract(),e=careerEvidence(w),students=new Set();
+ const w=completionContract(),registry=w.numeric.evolution.world.registry,parents=new Set();
+ for(const h of runtime(w).history.filter(h=>h.type==='annual-success')){
+  const index=Math.floor((h.data.year-1)/3),parent='caregiver:'+index;parents.add(parent);registry.profiles[parent]={displayName:parent};
+  const row=h.data.evidence.records.find(r=>r.kind==='relationship');row.subjectId=h.data.year===30?'caregiver:0':parent;
+  h.data.evidence.records.find(r=>r.id===row.factId).subjectIds=[row.subjectId];h.data.evidence.sources.find(s=>s.id===row.id).direction={fromId:row.subjectId,toId:'teacher'};
+ }
+ const profilesBefore=JSON.stringify(registry.profiles),e=careerEvidence(w),students=new Set();
+ assert.equal(parents.size,10);assert.equal(new Set([...e.records.values()].filter(r=>r.kind==='relationship').map(r=>r.subjectId)).size,10);
+ assert.equal(e.records.get('outcome:30:relationship').subjectId,'caregiver:0');assert.equal(JSON.stringify(registry.profiles),profilesBefore);
  for(const id of e.cohortRefs){const c=e.records.get(id);assert.equal(c.studentIds.length,40);assert.equal(c.enrollmentRefs.length,40);for(const s of c.studentIds){assert.ok(!students.has(s));students.add(s);}for(const ref of c.enrollmentRefs){const a=e.records.get(ref);assert.ok(e.records.has(a.basisFactId));assert.equal(a.cohortId,id);}}
- assert.equal(students.size,400);assert.equal(e.yearRefs.length,30);
+ assert.equal(students.size,400);assert.ok([...parents].every(id=>!students.has(id)));assert.equal(e.yearRefs.length,30);
  const summaries=runtime(w).history.filter(h=>h.type==='annual-success');assert.notEqual(e.records.get(e.yearRefs[0]),summaries[0].data.evidence.records.at(-1));
  // Delayed qualification is descriptive, never an extra teacher penalty.
  const baseline=score(w);runtime(w).history.push({id:'graduation',type:'cohort-completion',data:{classId:'class:cohort:0',outcomes:Array.from({length:40},(_,i)=>({personId:`student:0:${i}`,qualification:{eligible:i<7}}))}});assert.deepEqual(score(w),baseline);

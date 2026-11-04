@@ -28,7 +28,9 @@
     "test:story:routes": "node scripts/story-demo.js --regression",
     "test:story:browser": "npm run build && node scripts/storage-browser.js --story-only",
     "demo:npc": "node scripts/story-demo.js --npc",
-    "test:npc:routes": "node scripts/story-demo.js --npc --regression"
+    "test:npc:routes": "node scripts/story-demo.js --npc --regression",
+    "demo:school": "node scripts/school-demo.js",
+    "simulate:school": "node --expose-gc simulation/school-academics.js"
   },
   "devDependencies": {
     "acorn": "8.15.0"

@@ -139,6 +139,12 @@ try {
   const npcRestored=await evalIn(`(async()=>{const npc=await import('./test/support/npc-checks.js');return npc.npcSignature(${JSON.stringify(testId)});})()`);
   if(npcRestored!==npcSaved.signature)throw Error('NPC actual navigation changed world/history/PRNG');
   console.log('PASS phase 08 actual navigation restores exact autonomous world');
+  const academicSaved=await evalIn(`(async()=>{const school=await import('./test/support/academic-checks.js');return school.academicStorage(${JSON.stringify(testId)});})()`);
+  console.log('PASS phase 09 real IndexedDB academic/routine/N6/RNG rollback/replay/three slots/import',JSON.stringify(academicSaved.report));
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+  const academicRestored=await evalIn(`(async()=>{const school=await import('./test/support/academic-checks.js');return school.academicSignature(${JSON.stringify(testId)});})()`);
+  if(academicRestored!==academicSaved.signature)throw Error('Academic page navigation changed grades/routine/random');
+  console.log('PASS phase 09 actual page navigation restores exact academic world');
   console.log('PASS Chromium storage: all checks complete; synthetic only; NOT Safari/iPhone or full 30-year gameplay.');
   await call('Browser.close');
 } finally {

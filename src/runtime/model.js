@@ -1,3 +1,5 @@
+import { validateAcademicHistory } from './academics.js';
+import { validateCampusHistory } from './campus.js';
 import { validateNpcHistory } from './autonomy.js';
 import { validateStoryHistory } from './story.js';
 import { validateEventSelectionHistory } from './event-selection.js';
@@ -97,6 +99,7 @@ export function knowledgeReferences(world,event) {
 }
 export function validateWorldState(world) {
   validateFoundationEnvelope(world);
+  validateAcademicHistory(world);validateCampusHistory(world);
   const r=runtimeOf(world),school=world.numeric.evolution.world.registry;
   if(school){
     for(const record of [...school.enrollments,...school.assignments])ensure(record.from<=world.position.date&&(record.until===null||record.until<=world.position.date),'TIME','School history extends into the future');

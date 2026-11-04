@@ -1,3 +1,7 @@
+import { compileAcademic,academicState } from './academics.js';
+import { compileCampus,schoolEnabled,schoolActions,schoolEventOccupied } from './campus.js';
+import { formalSlot } from './schedule.js';
+import { semester,teachingTerm } from '../calendar/calendar.js';
 import { createRelationship, createReputation, directedKey, contactKey } from '../world/relationships.js';
 import { compileNpcUpdate, checkNpcGroup, compileNpcClarification } from './autonomy.js';
 import { compileStory, guardStoryOperation, storyContent } from './story.js';
@@ -46,9 +50,31 @@ function preconditions(world,conditions) {
 function execute(world,command,op,numericSession,receipt,selectedAdmission=false,storyInternal=false,npcInternal=false) {
   const r=runtimeOf(world);
   guardStoryOperation(world,op,storyInternal||npcInternal);
-  if(!npcInternal)guardCalendarOperation(world,command,op);
+  if(!npcInternal&&!(storyInternal&&op.type==='academic'))guardCalendarOperation(world,command,op);
   guardSelectedProgress(world,op);
-  if(op.type==='npc-update'){
+  if(op.type==='academic'){
+    ensure(command.actorId===world.identity.playerId,'ACTOR','Academic operations belong to the teacher');
+    world.numeric=numericSession.snapshot();const data=compileAcademic(world,op);world.random.academics=data.randomAfter;history(world,command,'academic',null,null,op.basisFactId?[op.basisFactId]:[],data);
+    if(op.action==='publish'){
+      const make=kind=>createId(kind,[world.identity.attemptId,'academic-report',data.input.termId,op.personId]),eventId=make('event'),stageId=make('stage'),factId=make('fact'),claimId=make('claim'),accessId=createId('fact',[factId,'student-access']),teacher=world.identity.playerId;
+      const children=[{type:'open-event',event:{schemaVersion:1,id:eventId,definitionId:'procedure:academic-report',contentVersion:'school-v1',type:'direct',participantIds:[teacher,op.personId],stageId,facts:[],knowledge:[],results:[],choice:null}},
+       {type:'fact',id:factId,eventId,stageId,subjectIds:[teacher,op.personId],witnessIds:[teacher],description:'學校完成當期客觀成績通知。',data:{type:'academic-report',...data.result},categoryCodes:[],causeIds:[]},
+       {type:'claim',id:claimId,versionId:'report-v1',factId,statement:'學生取得本學期成績通知，平均為'+data.result.average+'。',sourceId:teacher},
+       {type:'learn',actorId:teacher,claimId,versionId:'report-v1',source:{kind:'observation',actorId:teacher,basisFactId:factId},belief:'believed',confidence:1},
+       {type:'fact',id:accessId,eventId,stageId,subjectIds:[op.personId],witnessIds:[op.personId],description:'學生取得自己的成績通知。',data:{type:'access',claimRefs:[{id:claimId,versionId:'report-v1'}]},categoryCodes:[],causeIds:[factId]},
+       {type:'learn',actorId:op.personId,claimId,versionId:'report-v1',source:{kind:'document',actorId:op.personId,basisFactId:accessId},belief:'believed',confidence:1}];
+      for(const child of children)numericSession=execute(world,command,child,numericSession,receipt,false,false,true);
+    }
+  } else if(op.type==='campus'){
+    assertShape(op,['type','activity']);world.numeric=numericSession.snapshot();const data=compileCampus(world,op.activity);
+    for(const child of data.operations)numericSession=execute(world,command,child,numericSession,receipt,false,false,true);
+    world.random.campus=data.randomAfter;history(world,command,'campus',null,null,[],data);
+  } else if(op.type==='school-action'){
+    assertShape(op,['type','activity']);ensure(schoolEnabled(world),'SCHOOL','Open academic term before school actions');
+    numericSession=execute(world,command,{type:'campus',activity:op.activity},numericSession,receipt);
+    numericSession=execute(world,command,{type:'finish-slot',completedActivityIds:formalSlot(world).slot.activityIds},numericSession,receipt);
+    return execute(world,command,{type:'advance-time',planId:r.plan.id,steps:1},numericSession,receipt);
+  } else if(op.type==='npc-update'){
     assertShape(op,['type']);world.numeric=numericSession.snapshot();
     const data=compileNpcUpdate(world);
     if(data.duplicate)return numericSession;
@@ -93,7 +119,9 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     const result=executeSchool(world,op,numericSession);
     history(world,command,'school',null,null,op.basisFactId===null?[]:[op.basisFactId],result.data);
     world.numeric=clone(result.snapshot);
-    return createSettlementSession(result.snapshot);
+    numericSession=createSettlementSession(result.snapshot);
+    if(schoolEnabled(world)&&['school-enroll','school-leave','school-transfer-complete'].includes(op.change.type)){const term=teachingTerm(world.position.date);if(term&&academicState(world).terms[term.id]&&!academicState(world).terms[term.id].closed)return execute(world,command,{type:'academic',action:'sync',termId:term.id},numericSession,receipt,false,false,true);}
+    return numericSession;
   } else if(op.type==='open-event') {
     assertShape(op,['type','event']);validateEventEnvelope(op.event);
     ensure(selectedAdmission||/^(synthetic:|procedure:|activity:)/.test(op.event.definitionId),'EVENT_SELECTION','Formal events must use a locked selection admission');
@@ -197,6 +225,19 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
   } else if(op.type==='plan-vacation') {
     const panel=deriveWorldPanel(numericSession.world());planVacation(world,op,Object.fromEntries(STATE_NAMES.map(k=>[k,panel[k]])));history(world,command,'vacation-plan',null,null,[],{id:op.id,direction:op.direction,weeks:op.weeks});
   } else if(op.type==='finish-slot') {
+    if(schoolEnabled(world)&&!schoolEventOccupied(world)&&!r.history.some(h=>h.type==='campus'&&h.cursor===r.plan.cursor)){
+      const activity=r.plan.vacation?.direction??(schoolActions(world).includes('automatic')?'automatic':null);
+      ensure(activity,'SCHOOL_ACTION','Choose the legal routine activity before completing this slot');
+      numericSession=execute(world,command,{type:'campus',activity},numericSession,receipt);
+    }
+    if(schoolEnabled(world)){
+      const term=teachingTerm(world.position.date);
+      if(term){const savedTerm=academicState(world).terms[term.id];if(!savedTerm)numericSession=execute(world,command,{type:'academic',action:'open',termId:term.id},numericSession,receipt,false,false,true);}
+      if(term&&!term.camp){const meta=semester(term.id),grade=formalSlot(world).day.grade,exams=grade===2&&meta.grade2SecondExam?[meta.exams[0],meta.grade2SecondExam,meta.exams[2]]:meta.exams;
+        for(const round of [1,2,3,0])if(['p8','dinner','study1','study2','study3','private'].includes(world.position.slotId)&&world.position.date===exams[round===0?2:round-1].at(-1)&&!r.history.some(h=>h.type==='academic'&&h.data.input.termId===term.id&&h.data.input.action==='assess'&&h.data.input.round===round))numericSession=execute(world,command,{type:'academic',action:'assess',termId:term.id,round},numericSession,receipt,false,false,true);
+      }
+    }
+    if(schoolEnabled(world)){const term=teachingTerm(world.position.date),day=formalSlot(world).day;if(term&&!term.camp&&world.position.date===semester(term.id).end&&day.slots.at(-1).id===world.position.slotId&&!academicState(world).terms[term.id]?.closed)numericSession=execute(world,command,{type:'academic',action:'close',termId:term.id},numericSession,receipt,false,false,true);}
     numericSession=execute(world,command,{type:'npc-update'},numericSession,receipt);
     finishCalendarSlot(world,op);naturalAt(world,numericSession,world.position);history(world,command,'slot-complete',null,null,[],{activityIds:op.completedActivityIds});
   } else if(op.type==='prepare-semester') {
@@ -217,6 +258,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
       const completed=executeSchool(world,pending,numericSession);
       history(world,command,'school',null,null,[pending.basisFactId],completed.data);numericSession=createSettlementSession(completed.snapshot);world.numeric=clone(completed.snapshot);
     }
+    if(schoolEnabled(world)){const term=teachingTerm(world.position.date),saved=term?academicState(world).terms[term.id]:null;if(saved&&!saved.closed&&numericSession.world().classroom.studentIds.some(id=>!saved.rows.some(row=>row.id===id)))numericSession=execute(world,command,{type:'academic',action:'sync',termId:term.id},numericSession,receipt,false,false,true);}
     history(world,command,'time',null,null,[],{planId:r.plan.id,steps:op.steps});
   } else if(op.type==='sample') {
     assertShape(op,['type','stream','id','weights']);identifier(op.id);

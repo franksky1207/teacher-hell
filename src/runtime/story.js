@@ -53,6 +53,7 @@ export function compileStory(w,op){
    const subjects=[...new Set(Object.values(actors))];
    operations.push({type:'fact',id:fid,eventId:e.id,stageId:e.stageId,subjectIds:subjects,witnessIds:subjects,description:out.fact,data:{type:'story-action',optionId:o.id,contentVersion:c.version},categoryCodes:out.historyCodes,causeIds:state.basisFactId?[state.basisFactId]:[]});
    operations.push({type:'reveal',actorId:actors.teacher,factId:fid,source:{kind:'observation',actorId:actors.teacher,basisFactId:fid}});
+   for(const [index,change] of (out.academic??[]).entries()){const personId=actors[change.role],basisFactId=createId('fact',[fid,'academic',String(index)]),effect={personId,subject:change.subject,delta:change.delta};operations.push({type:'fact',id:basisFactId,eventId:e.id,stageId:e.stageId,subjectIds:[personId],witnessIds:[personId,actors.teacher],description:'本次互動對學生後續學習狀態形成影響。',data:{type:'academic-influence',change:effect},categoryCodes:[],causeIds:[fid]},{type:'academic',action:'influence',...effect,basisFactId});}
    for(const [i,q] of out.claims.entries()){
     const id=createId('claim',[fid,String(i)]),actorId=actors[q.role];
     operations.push({type:'claim',id,versionId:c.version,factId:fid,statement:q.statement,sourceId:actorId});
@@ -130,6 +131,7 @@ export function validateStoryHistory(w){
    }
    need(same(compiled.state,h.data.state)&&same(compiled.operations,h.data.operations),'illegal story transition or consequences');
    for(const operation of compiled.operations){
+    if(operation.type==='academic')need(r(w).history.some(entry=>entry.type==='academic'&&entry.operationId===h.operationId&&same(entry.data.operation,operation)),'academic consequence differs from story');
     if(operation.type==='fact'){const f=r(w).facts.find(f=>f.id===operation.id);need(f&&f.description===operation.description&&same(f.data,operation.data)&&same(f.subjectIds,operation.subjectIds)&&same(f.witnessIds,operation.witnessIds)&&same(f.categoryCodes,operation.categoryCodes)&&same(f.causeIds,operation.causeIds)&&f.eventId===e.id&&f.stageId===operation.stageId,'fact differs from action');}
     if(operation.type==='learn'){const learned=r(w).knowledge.find(k=>k.actorId===operation.actorId&&k.claimId===operation.claimId&&k.versionId===operation.versionId);need(learned&&same(learned.source,operation.source)&&r(w).history[learned.order-1].data.belief===operation.belief&&r(w).history[learned.order-1].data.confidence===operation.confidence,'knowledge differs from action');}
     if(operation.type==='reveal')need(r(w).disclosures.some(d=>d.actorId===operation.actorId&&d.factId===operation.factId&&same(d.source,operation.source)),'disclosure differs from action');

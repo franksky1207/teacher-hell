@@ -47,6 +47,7 @@ export function guardCalendarOperation(world,command,op){
  assertShape(context,context.kind==='activity'?['kind','activityId']:['kind']);
  need(['formal-event','activity','procedure','routine'].includes(context.kind),'CALENDAR_CONTEXT','Unknown calendar result channel');
  need(op.type==='advance-time'||op.type==='prepare-semester'||!world.extensions['teacher-hell/world'].history.some(h=>h.type==='slot-complete'&&h.cursor===plan.cursor),'TIME_BARRIER','Completed slot is closed to further work; advance before starting another action');
+ if(['academic','campus','school-action'].includes(op.type))need(context.kind==='routine'||context.kind==='procedure','CALENDAR_CONTEXT','School operations require routine/procedure context');
  if(['advance-time','finish-slot','prepare-semester','plan-vacation'].includes(op.type))return;
  const domain=['story','draw-events','admit-event','event-lifecycle','event-exposure','school','open-event','fact','link-fact','claim','learn','belief','reveal','result','confirm-choice','stage','enrollment-reference','role'].includes(op.type);
  if(!domain)return;
@@ -113,6 +114,12 @@ export function planVacation(world,op,before){
 }
 export function nextVacationOperation(world){
  const plan=world.extensions['teacher-hell/world'].plan,task=plan.vacation;if(!isFormal(plan)||!task)return {status:'idle'};
+ const state=world.extensions['teacher-hell/world'];
+ if(state.history.some(h=>h.type==='academic')){
+  const reserved=state.history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!world.events.some(e=>e.id===s.eventId));
+  if(reserved)return {status:'admission-required',eventId:reserved.eventId};
+  if(!state.history.some(h=>h.type==='event-selection'&&h.at.date===world.position.date))return {status:'event-draw-required',catalogueId:state.history.findLast(h=>h.type==='event-catalogue')?.data.catalogueId??null,direction:task.direction,endDate:task.endDate};
+ }
  const story=world.extensions['teacher-hell/world'].history.filter(h=>h.type==='story');
  const attention=world.events.map(e=>({event:e,state:story.findLast(h=>h.eventId===e.id)?.data.state})).find(x=>x.state&&x.state.mode!=='ended'&&(x.state.mode!=='waiting'||x.state.dueDate<=world.position.date&&!formalSlot(world).slot.protected));
  if(attention)return {status:attention.state.mode==='waiting'?'follow-up-required':'decision-required',eventId:attention.event.id,direction:task.direction,endDate:task.endDate};

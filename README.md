@@ -1502,3 +1502,7 @@ Safari／iPhone、真實配額耗盡／斷電、手機記憶體峰值及正式96
 沿用第07批CLI入口，重現傾聽、情緒與無玩家介入同儕三種情境，列出合法知情、行為因果、
 N5／N6效果、候選資格及恢復／重送。精準測試：`npm run test:module -- module=autonomy`；
 十屆合成負載：`node simulation/npc-social.js`。工程設定、正式介面、結果與限制集中於docs/05第08批紀錄。
+
+第09批學業／日常工程入口：`npm run demo:school`，可用`-- --scenario=A`（A～F）及`--seed=74`指定情境。
+正式操作仍經原世界交易；`npm run test:module -- module=academics`精準驗證，`npm run simulate:school`量測合成60學期負載。
+資料契約、法規來源／未來假設、基線與完整遊戲的界線見docs/05第09批紀錄。沒有新增玩家網頁或部署。

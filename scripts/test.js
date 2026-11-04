@@ -5,11 +5,11 @@ const legacy = ['assessment','changes','core','evolution','evolution-stress','in
 export const suites = Object.freeze({
   unit: ['core','random'],
   contract: ['contracts'],
-  integration: ['autonomy','story','events','school','calendar-integration','integration','runtime','storage'],
+  integration: ['academics','autonomy','story','events','school','calendar-integration','integration','runtime','storage'],
   scenario: ['scenario'],
   tooling: ['architecture','tooling'],
-  quick: ['autonomy','story','events','school','calendar','calendar-integration','storage','runtime','core','random','contracts','scenario','architecture','tooling'],
-  regression: ['autonomy','story','events','school','calendar','calendar-integration','storage',...legacy,'runtime','runtime-stress','contracts','scenario','architecture','tooling'],
+  quick: ['academics','autonomy','story','events','school','calendar','calendar-integration','storage','runtime','core','random','contracts','scenario','architecture','tooling'],
+  regression: ['academics','autonomy','story','events','school','calendar','calendar-integration','storage',...legacy,'runtime','runtime-stress','contracts','scenario','architecture','tooling'],
 });
 export function testSelection(args) {
   const [selection = 'regression', ...rest] = args;

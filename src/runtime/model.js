@@ -138,6 +138,11 @@ export function validateWorldState(world) {
   unique(r.history,h=>h.id,'history IDs');unique(r.effects,e=>e.id,'effect IDs');unique(r.stages,s=>s.id,'stage IDs');
   unique(r.numericArchives,a=>a.attemptId,'numeric archives');
   const history=new Map(r.history.map(h=>[h.id,h]));
+  // Temporary first-match indexes only: every source row is still audited below.
+  const stages=new Map(r.stages.map(s=>[s.id,s])),effects=new Map(r.effects.map(e=>[e.id,e])),effectReceipts=new Set(r.effects.map(e=>key(e.attemptId,e.numericReceiptId))),results=new Map(),resultHistory=new Map();
+  for(const event of world.events)for(const result of event.results)if(!results.has(result.id))results.set(result.id,result);
+  for(const h of r.history)if(h.type==='result'&&!resultHistory.has(h.data.resultId))resultHistory.set(h.data.resultId,h);
+
   r.commits.forEach((commit,i)=>{
     assertShape(commit,['id','attemptId','revision','request','historyIds','numericReceiptIds','draws']);
     validateId(commit.id,'operation');identifier(commit.attemptId);
@@ -171,7 +176,7 @@ export function validateWorldState(world) {
     validateId(f.id,'fact');const event=findEvent(world,f.eventId);validateId(f.stageId,'stage');stamp(world,f.occurredAt,f.cursor);
     ensure(history.get(r.history[f.order-1]?.id)?.data.factId===f.id&&r.history[f.order-1]?.type==='fact','LEDGER','Fact lacks creation history');
     ensure(Array.isArray(f.subjectIds)&&f.subjectIds.length>0&&Array.isArray(f.witnessIds)&&Array.isArray(f.categoryCodes)&&Array.isArray(f.causeIds),'SCHEMA','Invalid fact lists');unique(f.subjectIds,id=>id,'fact subjects');
-    ensure(r.stages.some(s=>s.id===f.stageId&&s.eventId===f.eventId&&s.order<f.order),'REFERENCE','Fact has no preceding stage');
+    ensure(stages.get(f.stageId)?.eventId===f.eventId&&stages.get(f.stageId).order<f.order,'REFERENCE','Fact has no preceding stage');
     unique(f.categoryCodes,c=>c,'history codes');unique(f.witnessIds,c=>c,'witnesses');unique(f.causeIds,c=>c,'causes');
     for(const id of f.subjectIds){knownActor(world,id);ensure(event.participantIds.includes(id),'REFERENCE','Fact subject not involved');}
     for(const id of f.witnessIds){knownActor(world,id);ensure(event.participantIds.includes(id),'REFERENCE','Witness not involved');}
@@ -206,7 +211,7 @@ export function validateWorldState(world) {
   for(const event of world.events){
     ensure(same(event.knowledge,knowledgeReferences(world,event)),'KNOWLEDGE','Carrier differs from knowledge authority');
     for(const ref of event.facts){const f=findFact(world,ref.id);ensure(same(ref,{id:f.id,subjectIds:f.subjectIds,occurredAt:f.occurredAt}),'REFERENCE','Conflicting fact reference');}
-    ensure(r.stages.some(s=>s.id===event.stageId&&s.eventId===event.id),'REFERENCE','Missing current stage');
+    ensure(stages.get(event.stageId)?.eventId===event.id,'REFERENCE','Missing current stage');
   }
   for(const stage of r.stages){assertShape(stage,['id','eventId','order']);validateId(stage.id,'stage');findEvent(world,stage.eventId);ensure(r.history[stage.order-1]?.stageId===stage.id,'LEDGER','Stage lacks history');}
   const receipts=new Map(world.numeric.receipts.map(receipt=>[key(world.numeric.attemptId,receipt.id),receipt]));
@@ -217,7 +222,7 @@ export function validateWorldState(world) {
   }
   for(const effect of r.effects){
     assertShape(effect,['id','resultId','attemptId','numericReceiptId','order']);validateId(effect.id,'effect');
-    const result=world.events.flatMap(e=>e.results).find(result=>result.id===effect.resultId);
+    const result=results.get(effect.resultId);
     ensure(result?.effectIds.includes(effect.id)&&receipts.has(key(effect.attemptId,effect.numericReceiptId)),'LEDGER','Unlinked numerical effect');
     const h=r.history[effect.order-1],receipt=receipts.get(key(effect.attemptId,effect.numericReceiptId));
     ensure(effect.id===effect.numericReceiptId&&h?.type==='effect'&&h.data.effectId===effect.id&&h.data.resultId===effect.resultId&&h.attemptId===effect.attemptId&&same(h.data.changes,receipt.changes),'LEDGER','Effect differs from numerical history');
@@ -225,14 +230,14 @@ export function validateWorldState(world) {
   }
   const resultKeys=[];
   for(const event of world.events)for(const result of event.results){
-    const h=r.history.find(h=>h.type==='result'&&h.data.resultId===result.id);
-    ensure(h&&h.eventId===event.id&&h.stageId===result.stageId&&h.factIds.includes(result.factId)&&r.stages.some(s=>s.id===h.stageId&&s.eventId===event.id),'LEDGER','Result lacks stage history');
+    const h=resultHistory.get(result.id);
+    ensure(h&&h.eventId===event.id&&h.stageId===result.stageId&&h.factIds.includes(result.factId)&&stages.get(h.stageId)?.eventId===event.id,'LEDGER','Result lacks stage history');
     ensure(result.settlementId===createId('settlement',[h.attemptId,h.operationId]),'LEDGER','Result points to a different operation');
     resultKeys.push(key(event.id,h.stageId,result.factId,result.subjectId,result.facet));
-    for(const id of result.effectIds)ensure(r.effects.some(e=>e.id===id&&e.resultId===result.id),'LEDGER','Missing numerical effect receipt');
+    for(const id of result.effectIds)ensure(effects.get(id)?.resultId===result.id,'LEDGER','Missing numerical effect receipt');
   }
   unique(resultKeys,k=>k,'semantic result keys');
-  for(const commit of r.commits)for(const id of commit.numericReceiptIds)ensure(r.effects.some(e=>e.attemptId===commit.attemptId&&e.numericReceiptId===id),'LEDGER','Commit references missing effect');
+  for(const commit of r.commits)for(const id of commit.numericReceiptIds)ensure(effectReceipts.has(key(commit.attemptId,id)),'LEDGER','Commit references missing effect');
   validateSemesterReviews(world);
   validateAnnualObservations(world);
   validateAttemptLineage(world);
@@ -244,5 +249,5 @@ export function validateWorldState(world) {
 }
 export function restoreWorldState(saved) {
   const world=typeof saved==='string'?JSON.parse(saved):saved;
-  canonicalData(world);validateWorldState(world);return structuredClone(world);
+  validateWorldState(world);return structuredClone(world);
 }

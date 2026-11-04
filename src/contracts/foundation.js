@@ -2,7 +2,7 @@
  * N1–N8 stay opaque and authoritative inside numeric; no fields are added there.
  */
 import { assertShape, identifier } from '../player/panel.js';
-import { canonicalData, validateSettlement } from '../changes/settlement.js';
+import { canonicalData,validateData, validateSettlement } from '../changes/settlement.js';
 import { gameDate } from '../evolution/time.js';
 import { restoreRandom } from '../numeric/random.js';
 
@@ -130,7 +130,7 @@ export function validateEventEnvelope(event, path = 'event') {
  * Batch 02 owns command/commit invariants; 03 owns disk atomicity/migrations; 04 owns calendar legality.
  */
 export function validateFoundationEnvelope(value) {
-  canonicalData(value);
+  validateData(value);
   shape(value, ['kind','schemaVersion','versions','identity','position','numeric','random','enrollments','events','extensions'], 'foundation');
   if (value.kind !== 'teacher-hell-foundation' || value.schemaVersion !== 1) fail('foundation', 'unsupported transport');
   shape(value.versions, ['world','save','rules','content','assets'], 'versions');

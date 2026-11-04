@@ -50,3 +50,21 @@ export function readAnnualHistory(saved){return readAnnualResults(restoreWorldSt
 
 /** Current known terminal only; no crisis memory, RNG or hidden NPC fields. */
 export function readAnnualFailure(saved){return readFailure(restoreWorldState(saved));}
+
+/** A specifically requested former class, frozen at its completion order. This is
+ * no alumni directory: later claims, disclosures and private lives stay outside. */
+export function readArchivedClass(saved,classId){
+ const w=restoreWorldState(saved),r=runtimeOf(w),entry=r.history.find(h=>h.type==='cohort-completion'&&h.data.classId===classId);
+ if(!entry)return null;
+ const registry=w.numeric.evolution.world.registry,people=new Set(registry.enrollments.filter(e=>e.classId===classId&&e.from<=entry.at.date).map(e=>e.personId));
+ for(const l of w.numeric.evolution.world.careLinks)if(people.has(l.studentId))people.add(l.caregiverId);
+ const facts=r.facts.filter(f=>f.order<=entry.order&&f.subjectIds.some(id=>people.has(id))&&(f.witnessIds.includes(w.identity.playerId)||r.disclosures.some(d=>d.actorId===w.identity.playerId&&d.factId===f.id&&d.order<=entry.order)));
+ const claims=r.knowledge.filter(k=>k.actorId===w.identity.playerId&&k.order<=entry.order&&r.facts.some(f=>f.id===k.factId&&f.subjectIds.some(id=>people.has(id)))).map(k=>{
+  const c=r.claims.find(c=>c.id===k.claimId&&c.versionId===k.versionId),acquired=r.history[k.order-1];let belief=acquired.data.belief;
+  for(const h of r.history)if(h.order<=entry.order&&h.type==='belief'&&h.data.actorId===k.actorId&&h.data.claimId===c.id&&h.data.versionId===c.versionId)belief=h.data.after.belief;
+  return {claimId:c.id,versionId:c.versionId,statement:c.statement,sourceId:k.source.actorId,belief};
+ });
+ return {mode:'archived-known-class',classId,className:registry.classes[classId].name,at:structuredClone(entry.at),
+  members:[...people].map(id=>({id,name:registry.profiles[id].displayName})),facts:facts.map(f=>({id:f.id,description:f.description,subjectIds:f.subjectIds,at:f.occurredAt})),claims,
+  annualIds:r.history.filter(h=>h.type==='annual-success'&&h.data.end.classroom.id===classId&&h.order<entry.order).map(h=>h.id)};
+}

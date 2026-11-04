@@ -8,17 +8,19 @@ import { root } from './project.js';
 import { createPreviewServer } from './preview.js';
 
 const temporary = await mkdtemp(join(tmpdir(),'teacher-hell-browser-'));
-let browser, server, socket;
+let browser, server, socket, browserDiagnostics='';
 try {
   await cp(resolve(root,'dist'),join(temporary,'site','teacher-hell'),{recursive:true});
   await cp(resolve(root,'test/support'),join(temporary,'site','teacher-hell/test/support'),{recursive:true});
   if(process.argv.includes('--failure-only'))for(const name of ['cycle-1','cycle-2','cycle-3','physical'])await cp(resolve(root,`work/failure/${name}.json`),join(temporary,'site',`teacher-hell/test/support/failure-${name}.json`));
+  if(process.argv.includes('--career-only'))await cp(resolve(root,'work/career/failure-4-1.json'),join(temporary,'site','teacher-hell/test/support/career-failure.json'));
   if(process.argv.includes('--annual'))await cp(resolve(root,'work/annual/world.json'),join(temporary,'site','teacher-hell/test/support/annual-completed.json'));
   server=await createPreviewServer(join(temporary,'site'));server.listen(0,'127.0.0.1');await once(server,'listening');
   const url=`http://127.0.0.1:${server.address().port}/teacher-hell/`;
   browser=spawn(process.env.CHROMIUM_BIN || 'chromium',[
     '--headless','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-first-run',
     '--no-default-browser-check','--disable-background-networking','--disable-extensions','--disable-sync',
+    ...(process.argv.includes('--career-only')?['--js-flags=--expose-gc --max-old-space-size=4096']:[]),
     `--user-data-dir=${join(temporary,'profile')}`,'--remote-debugging-port=0','about:blank',
   ],{stdio:['ignore','ignore','pipe']});
   const debuggerUrl=await new Promise((resolve,reject)=>{
@@ -26,6 +28,7 @@ try {
     browser.once('error',error=>{clearTimeout(timer);reject(error);});
     browser.once('exit',code=>{clearTimeout(timer);reject(new Error(`Chromium exited before debugger: ${code}`));});
     browser.stderr.on('data',chunk=>{
+      browserDiagnostics=(browserDiagnostics+String(chunk)).slice(-16384);
       const match=String(chunk).match(/DevTools listening on (ws:\/\/[^\s]+)/);
       if(match){clearTimeout(timer);resolve(match[1]);}
     });
@@ -34,6 +37,8 @@ try {
   let sequence=0;const pending=new Map();
   socket.addEventListener('message',event=>{
     const message=JSON.parse(event.data),entry=pending.get(message.id);
+    if(message.method==='Runtime.consoleAPICalled'&&typeof message.params.args[0]?.value==='string'&&message.params.args[0].value.startsWith('CAREER '))console.log(...message.params.args.map(a=>a.value));
+    if(message.method==='Inspector.targetCrashed')for(const [id,call] of pending){clearTimeout(call.timer);pending.delete(id);call.reject(new Error('Chromium renderer crashed: '+browserDiagnostics));}
     if(entry){pending.delete(message.id);clearTimeout(entry.timer);message.error?entry.reject(new Error(JSON.stringify(message.error))):entry.resolve(message.result);}
   });
   const call=(method,params={},sessionId,timeoutMs=120000)=>new Promise((resolve,reject)=>{
@@ -48,6 +53,8 @@ try {
     return out.result.value;
   };
   await call('Page.enable',{},sessionId);
+  await call('Inspector.enable',{},sessionId);
+  await call('Runtime.enable',{},sessionId);
   const passed=async()=>{
     for(let i=0;i<100;i++){
       const state=await evaluate('document.querySelector("#status")?.dataset.status');
@@ -68,7 +75,7 @@ try {
   };
   const testId=temporary.split('/').at(-1);
   const setup=initialize=>`(async()=>{globalThis.checks=await import('./test/support/storage-checks.js');globalThis.st=await checks.setup(${JSON.stringify(testId)},${initialize});return true;})()`;
-  if(!process.argv.includes('--story-only')&&!process.argv.includes('--failure-only')){
+  if(!process.argv.includes('--story-only')&&!process.argv.includes('--failure-only')&&!process.argv.includes('--career-only')){
   await evalIn(setup(true));
   console.log('PASS',await evalIn('checks.basics(st)'));
   const second=await call('Target.createTarget',{url});
@@ -132,7 +139,7 @@ try {
   if(eventRestored!==eventSaved.signature)throw Error('Event page reload changed committed selection');
   console.log('PASS phase 06 actual navigation restores exact event identity/history/PRNG');
   }
-  if(!process.argv.includes('--failure-only')){
+  if(!process.argv.includes('--failure-only')&&!process.argv.includes('--career-only')){
   await evalIn(`(async()=>{globalThis.story=await import('./test/support/story-checks.js');globalThis.storyTest=await story.storySetup(${JSON.stringify(testId)},true);return true;})()`);
   const pendingStory=await evalIn('(async()=>JSON.stringify(await storyTest.db.read(1)))()');await evalIn('storyTest.db.close()');
   await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
@@ -177,6 +184,13 @@ try {
    const saved=await evalIn(run(true),sessionId,600000);console.log('PASS real first-year annual IndexedDB rollback/import/CAS/dedup/three slots',JSON.stringify(saved));
    await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
    const reopened=await evalIn(run(false),sessionId,600000);if(saved.hash!==reopened.hash)throw Error('Annual navigation changed the saved world');console.log('PASS actual navigation restores the real annual result',JSON.stringify(reopened));
+  }
+  if(process.argv.includes('--career-only')){
+   console.log('Career desktop heap limit',await evalIn('performance.memory?.jsHeapSizeLimit'));
+   const run=initialize=>`(async()=>{const m=await import('./test/support/career-checks.js');return m.careerStorage(${JSON.stringify(testId)},${initialize});})()`;
+   const saved=await evalIn(run(true),sessionId,1200000);console.log('PASS fourth-year real IndexedDB failure/retry and prior graduation preservation',JSON.stringify(saved));
+   await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+   const reopened=await evalIn(run(false),sessionId,1200000);if(saved.hash!==reopened.hash)throw Error('Fourth-year actual navigation changed world');console.log('PASS actual navigation preserves fourth-year opening and three successes',JSON.stringify(reopened));
   }
   console.log('PASS Chromium storage: all checks complete; engineering acceptance only; NOT Safari/iPhone or full 30-year gameplay.');
   await call('Browser.close');

@@ -1,4 +1,5 @@
-import { homeroomOperation } from './homeroom.js';
+import { permitsStoryFollowup } from './story-content.js';
+import { homeroomOperation,homeroomBaseline,HOMEROOM_KEY } from './homeroom.js';
 import { institutionState } from './procedures.js';
 import { targetRecord } from '../changes/targets.js';
 import { applyDelta } from '../numeric/math.js';
@@ -7,7 +8,7 @@ import { resolveStory,storyDigest } from './story-content.js';
 import { createId } from '../contracts/foundation.js';
 import { canonicalData } from '../changes/settlement.js';
 import { deriveWorldPanel } from '../social/reputation.js';
-import { formalSlot } from './schedule.js';
+import { formalSlot,planPosition } from './schedule.js';
 import { assertShape } from '../player/panel.js';
 const r=w=>w.extensions['teacher-hell/world'];
 const need=(v,m)=>{if(!v)throw new RangeError(`STORY: ${m}`);};
@@ -61,7 +62,7 @@ export function compileStory(w,op){
     const change={action:'duty-response',id:duty.id,response:out.institution.response},basisFactId=createId('fact',[fid,'institution']);
     operations.push({type:'fact',id:basisFactId,eventId:e.id,stageId:e.stageId,subjectIds:[actors.teacher],witnessIds:[actors.teacher],description:'教師對已登錄的額外職責作出明確回應。',data:{type:'institution-action',operation:change},categoryCodes:[],causeIds:[fid]},{type:'institution',actorId:actors.teacher,basisFactId,change});
    }
-   if(out.duty){const duty=homeroomOperation(w,e.id,fid,out.duty.kind);operations.push(duty);if(out.duty.secondary)operations.push(homeroomOperation(w,e.id,fid,out.duty.secondary));if(duty.data.effectiveAt){const basisFactId=createId('fact',[fid,'duty-execution']),change={type:'school-assignment',id:createId('operation',[fid,'duty-ended']),personId:actors.teacher,roleId:9,classId:null,endsId:duty.data.assignmentId};operations.push({type:'fact',id:basisFactId,eventId:e.id,stageId:e.stageId,subjectIds:subjects,witnessIds:subjects,description:duty.data.description,data:{type:'homeroom-execution',kind:duty.data.kind},categoryCodes:[],causeIds:[fid]},{type:'reveal',actorId:actors.teacher,factId:basisFactId,source:{kind:'observation',actorId:actors.teacher,basisFactId}},{type:'school',basisFactId,change});}}
+   if(out.duty){const duty=homeroomOperation(w,e.id,fid,out.duty.kind);if(duty.data.kind!==out.duty.kind)operations.find(op=>op.type==='fact'&&op.id===fid).description=duty.data.description;operations.push(duty);if(out.duty.secondary)operations.push(homeroomOperation(w,e.id,fid,out.duty.secondary));if(duty.data.effectiveAt){const basisFactId=createId('fact',[fid,'duty-execution']),change={type:'school-assignment',id:createId('operation',[fid,'duty-ended']),personId:actors.teacher,roleId:9,classId:null,endsId:duty.data.assignmentId};operations.push({type:'fact',id:basisFactId,eventId:e.id,stageId:e.stageId,subjectIds:subjects,witnessIds:subjects,description:duty.data.description,data:{type:'homeroom-execution',kind:duty.data.kind},categoryCodes:[],causeIds:[fid]},{type:'reveal',actorId:actors.teacher,factId:basisFactId,source:{kind:'observation',actorId:actors.teacher,basisFactId}},{type:'school',basisFactId,change});}}
    for(const [index,change] of (out.academic??[]).entries()){const personId=actors[change.role],basisFactId=createId('fact',[fid,'academic',String(index)]),effect={personId,subject:change.subject,delta:change.delta};operations.push({type:'fact',id:basisFactId,eventId:e.id,stageId:e.stageId,subjectIds:[personId],witnessIds:[personId,actors.teacher],description:'本次互動對學生後續學習狀態形成影響。',data:{type:'academic-influence',change:effect},categoryCodes:[],causeIds:[fid]},{type:'academic',action:'influence',...effect,basisFactId});}
    for(const [i,q] of out.claims.entries()){
     const id=createId('claim',[fid,String(i)]),actorId=actors[q.role];
@@ -88,7 +89,7 @@ export function compileStory(w,op){
    // A stage consumes its current slot. Immediate stages share that slot until completion.
    if(['waiting','ended'].includes(state.mode))operations.push({type:'finish-slot',completedActivityIds:[]});
   }else if(op.action==='resume'){
-   need(state.mode==='waiting'&&state.dueDate<=w.position.date,'follow-up not due');
+   need(state.mode==='waiting'&&state.dueDate<=w.position.date&&permitsStoryFollowup(w,e),'follow-up not due or awaiting the next academic opening');
    operations.push({type:'event-lifecycle',eventId:e.id,status:'active',basisFactId:state.basisFactId});enter();
   }else throw new RangeError('STORY: unknown action');
  }
@@ -100,7 +101,7 @@ export function guardStoryOperation(w,op,internal){
  if(internal&&!['finish-slot','advance-time'].includes(op.type))return;
  if(['finish-slot','advance-time'].includes(op.type)){
   const selected=new Set(r(w).history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected.map(s=>s.eventId))),states=new Map(r(w).history.filter(h=>h.type==='story').map(h=>[h.eventId,h.data.state]));
-  need(!w.events.some(e=>{if(e.id===internal||!selected.has(e.id))return false;const s=states.get(e.id);return storyContent(w,e.id)&&(!s||!['waiting','ended'].includes(s.mode)||s.mode==='waiting'&&s.dueDate<=w.position.date&&!formalSlot(w).slot.protected);}), 'unfinished story or due follow-up blocks time');return;
+  need(!w.events.some(e=>{if(e.id===internal||!selected.has(e.id))return false;const s=states.get(e.id);return storyContent(w,e.id)&&(!s||!['waiting','ended'].includes(s.mode)||s.mode==='waiting'&&s.dueDate<=w.position.date&&permitsStoryFollowup(w,e)&&!formalSlot(w).slot.protected);}), 'unfinished story or due follow-up blocks time');return;
  }
  let id=op.eventId;
  if(!id&&op.factId)id=r(w).facts.find(f=>f.id===op.factId)?.eventId;
@@ -115,7 +116,7 @@ export function readStory(w,eventId){
  canPrevious:state.mode==='reading'&&state.page>0,canNext:state.mode==='reading'&&state.page<s.pages.length-1,
  choices:state.mode==='reading'&&state.page===s.pages.length-1?availableStoryChoices(w,e,s).map(o=>({id:o.id,text:o.text})):[],
  confirmation:state.mode==='confirming'?{optionId:state.pending,text:s.choices.find(o=>o.id===state.pending).text}:null,
- canFinish:state.mode==='result'||state.mode==='reading'&&!s.choices.length&&state.page===s.pages.length-1,waiting:state.mode==='waiting',canResume:state.mode==='waiting'&&state.dueDate<=w.position.date&&!formalSlot(w).slot.protected,ended:state.mode==='ended',teacherDelta:state.panelDelta,
+ canFinish:state.mode==='result'||state.mode==='reading'&&!s.choices.length&&state.page===s.pages.length-1,waiting:state.mode==='waiting',canResume:state.mode==='waiting'&&state.dueDate<=w.position.date&&permitsStoryFollowup(w,e)&&!formalSlot(w).slot.protected,ended:state.mode==='ended',teacherDelta:state.panelDelta,
  result:state.mode==='result'||state.mode==='ended'?r(w).disclosures.filter(d=>d.actorId===w.identity.playerId&&e.facts.some(f=>f.id===d.factId)).map(d=>r(w).facts.find(f=>f.id===d.factId).description):[]};
 }
 /** Audit action transitions and compiled consequences, never trust saved stage/page labels. */
@@ -128,7 +129,7 @@ export function validateStoryHistory(w){
    const commit=r(w).commits.find(q=>q.id===h.operationId),request=JSON.parse(commit.request);let op=request.operations.find(o=>o.type==='story'&&o.eventId===e.id);
    if(!op&&request.operations.some(o=>o.type==='admit-event'&&o.eventId===e.id))op={type:'story',eventId:e.id,action:'start',optionId:null};
    need(op&&same(op,h.data.action),'history action differs');
-   const atWorld=structuredClone(w);atWorld.position={...atWorld.position,...h.at};r(atWorld).plan.cursor=h.cursor;
+   const atWorld=structuredClone(w);atWorld.identity.attemptId=h.attemptId;atWorld.position=planPosition(r(w).plan,h.cursor);if(w.extensions[HOMEROOM_KEY])atWorld.extensions[HOMEROOM_KEY]=structuredClone(homeroomBaseline({...w,position:atWorld.position}));r(atWorld).plan.cursor=h.cursor;
    r(atWorld).history=r(w).history.filter(x=>x.order<h.order&&!(x.operationId===h.operationId&&(x.eventId===e.id||['institution','homeroom-result','school'].includes(x.type)&&h.data.operations.some(o=>o.type==='homeroom-result'&&same(o.data,x.data)||o.type==='school'&&same(o.change,x.data.change)||same(o,x.data.operation??null)))));
    const ae=atWorld.events.find(x=>x.id===e.id);ae.stageId=stageId(e,c,previous?.stage??c.entry);ae.choice=carrier(c,previous?.stage??c.entry);
    for(const input of h.data.inputs){need(Number.isFinite(input.value)&&input.value>=0&&input.value<=100,'invalid qualification witness');targetRecord(atWorld.numeric.evolution.world,input.target)[input.code]=input.value;}

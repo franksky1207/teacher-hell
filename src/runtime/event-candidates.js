@@ -38,7 +38,7 @@ export function validateEventDefinitions(definitions){
   const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['companions','roleIds','affiliation','knowledge','groups','academic','procedure','homeroom'].filter(k=>Object.hasOwn(e,k))]);
   need(e.people.length>0&&e.people.every(x=>['player','student','caregiver','staff','reunion','contact'].includes(x)),'Participant scopes');
   for(const k of ['dayKinds','slotIds','facts','history','numeric'])need(Array.isArray(e[k]),`Eligibility ${k} array`);
-  if(e.homeroom)need(['ordinary','social','crisis','support'].includes(e.homeroom),'Homeroom qualification');
+  if(e.homeroom)need(['ordinary','social','crisis','support','placement'].includes(e.homeroom),'Homeroom qualification');
   if(e.procedure){need(Array.isArray(e.procedure),'Procedure qualifications');for(const p of e.procedure){assertShape(p,['kind','status']);identifier(p.kind);identifier(p.status);}}
   if(e.academic){need(Array.isArray(e.academic),'Academic qualifications');for(const a of e.academic){need(['makeup','credit-deficit','change','admission'].includes(a.kind)&&typeof a.termId==='string','academic condition');}}
   if(e.roleIds)need(Array.isArray(e.roleIds)&&e.roleIds.every(id=>Number.isInteger(id)&&id>=1&&id<=35),'Role eligibility IDs');
@@ -69,6 +69,22 @@ export function eventIndex(world){
  const add=(map,key,s)=>{const list=map.get(key)??[];list.push(s);map.set(key,list);};
  for(const s of records){add(byTopicPerson,tuple(s.topicId,[...s.participantIds].sort()),s);add(byDefinition,s.definitionId,s);for(const g of s.exclusionGroups)add(byExclusion,g,s);}
  return {institution:institutionState(world),academics:academicState(world),records,byTopicPerson,byDefinition,byExclusion,exposures,history,facts:new Map(r.facts.map(f=>[f.id,f])),school:readSchoolCandidates(world.numeric.evolution.world)};
+}
+/** Qualification does not assign a class or decide an annual terminal. */
+function homeroomRejection(w,mode,person,index){
+ if(!w.extensions[HOMEROOM_KEY])return 'homeroom-disabled';
+ const r=runtime(w),n=w.numeric.evolution.world,registry=n.registry;
+ if(mode==='placement'){
+  if(registry.cohortStart===registry.startYear||registry.cohortStart!==registry.academicYear||!r.history.some(h=>h.type==='year-transition'&&h.data.academicYear===registry.cohortStart&&h.data.classId!==h.data.previousClassId)||index.records.some(s=>s.definitionId==='homeroom:new-cohort-placement'&&s.date>=String(registry.cohortStart)+'-01-01'))return 'no-new-placement';
+  return registry.assignments.some(a=>a.personId===person&&a.roleId===1&&a.until===null)?null:'principal-required';
+ }
+ if(r.history.some(h=>h.type==='annual-success'&&h.data.year===w.position.serviceYear))return 'annual-intermission';
+ if(mode==='crisis'&&!crisisCandidateParameters(n,[{id:'homeroom-crisis',eligible:true,channels:['composite',...Object.keys(crisisContext(w).risk.single)]}])[0].opened)return 'no-crisis';
+ if(mode==='social'){
+  const origins=new Set(['appointment:office:1:0']);for(const a of registry.assignments)if(origins.has(a.endsId))origins.add(a.id);
+  if(!registry.assignments.some(a=>origins.has(a.id)&&a.until===null&&a.personId===person))return 'principal-required';
+ }
+ return null;
 }
 function participantPool(world,scope,index){
  const n=world.numeric.evolution.world,r=n.registry;
@@ -109,7 +125,7 @@ export function buildEventCandidates(world,definitions,{engineering=false}={}){
   const current=day.slots.findIndex(s=>s.id===world.position.slotId),slots=Object.freeze(day.slots.slice(current).filter(s=>!s.protected&&(!e.slotIds.length||e.slotIds.includes(s.id))).map(s=>s.id));
   for(const person of people){
    let reason=null;const facts=e.facts.map(f=>index.facts.get(f.id));
-   if(e.homeroom){const c=world.extensions[HOMEROOM_KEY]?crisisContext(world):null;if(!c)reason='homeroom-disabled';else if(e.homeroom==='crisis'&&!crisisCandidateParameters(world.numeric.evolution.world,[{id:'homeroom-crisis',eligible:true,channels:['composite',...Object.keys(c.risk.single)]}])[0].opened)reason='no-crisis';else if(e.homeroom==='social'){const a=world.numeric.evolution.world.registry.assignments;const origins=new Set(['appointment:office:1:0']);for(const x of a)if(origins.has(x.endsId))origins.add(x.id);if(!a.some(x=>origins.has(x.id)&&x.until===null&&x.personId===person))reason='principal-required';}}
+   if(e.homeroom)reason=homeroomRejection(world,e.homeroom,person,index);
    if(e.dayKinds.length&&!e.dayKinds.includes(day.kind)||e.from!==null&&day.date<e.from||e.until!==null&&day.date>e.until)reason='calendar-condition';
    if(facts.some((f,i)=>!f||e.facts[i].participant&&!f.subjectIds.includes(person)))reason='objective-condition';
    if((e.companions??[]).some(c=>{const f=index.facts.get(c.contactFactId);return !f||f.data?.type!=='contact'||f.occurredAt.date!==day.date||!f.subjectIds.includes(person)||!f.subjectIds.includes(c.personId)||!world.numeric.evolution.world.people[c.personId]&&c.personId!==world.identity.playerId;}))reason='companion-contact-required';

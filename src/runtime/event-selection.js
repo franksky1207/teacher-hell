@@ -57,9 +57,12 @@ export function selectWorldEvents(world,operation,command,receipt){
  const summarize=rows=>{const counts=new Map();for(const row of rows)counts.set(row.reason,(counts.get(row.reason)??0)+1);return [...counts].map(([reason,count])=>({reason,count}));};
  return {version:1,catalogueId,poolSize,groupId,requested,selected,rejected:summarize(built.rejected),excluded:summarize(excluded),randomBefore:before,randomAfter:rng.snapshot(),operationId:command.id};
 }
-export function selectedEvent(world,eventId){
- const selected=eventIndex(world).records.find(s=>s.eventId===eventId);need(selected,'Unknown selected event');return selected;
+function selectionRecord(world,eventId){
+ const history=runtime(world).history,selected=history.find(h=>h.type==='event-selection'&&h.data.selected.some(s=>s.eventId===eventId))?.data.selected.find(s=>s.eventId===eventId);
+ return selected?{...selected,status:history.findLast(h=>h.type==='event-lifecycle'&&h.eventId===eventId)?.data.status??'reserved'}:null;
 }
+export function selectedEvent(world,eventId){const selected=selectionRecord(world,eventId);need(selected,'Unknown selected event');return selected;}
+
 export function admissionEvent(world,op){
  assertShape(op,['type','eventId']);const s=selectedEvent(world,op.eventId);
  need(s.status==='reserved'&&!world.events.some(e=>e.id===s.eventId),'Already admitted');
@@ -157,5 +160,5 @@ export function eventExposure(world,op){
 }
 export function guardSelectedProgress(world,op){
  if(!['stage','result','confirm-choice','event-exposure'].includes(op.type)||!runtime(world).history.some(h=>h.type==='event-selection'))return;
- const s=eventIndex(world).records.find(s=>s.eventId===op.eventId);if(s)need(['active','waiting'].includes(s.status),'Selected event is reserved or ended');
+ const s=selectionRecord(world,op.eventId);if(s)need(['active','waiting'].includes(s.status),'Selected event is reserved or ended');
 }

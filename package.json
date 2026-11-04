@@ -37,7 +37,12 @@
     "demo:annual": "node scripts/annual-demo.js",
     "test:annual:browser": "npm run build && node scripts/storage-browser.js --annual",
     "demo:failure": "node scripts/failure-demo.js",
-    "test:failure:browser": "npm run build && node scripts/storage-browser.js --failure-only"
+    "test:failure:browser": "npm run build && node scripts/storage-browser.js --failure-only",
+    "demo:career": "node --max-old-space-size=3072 --expose-gc scripts/career-demo.js",
+    "demo:career:retry": "node --max-old-space-size=4096 --expose-gc scripts/career-retry-demo.js",
+    "demo:career:boundary": "node --max-old-space-size=3072 --expose-gc scripts/career-boundary-demo.js",
+    "test:career:browser": "npm run build && node scripts/storage-browser.js --career-only",
+    "demo:career:report": "node --max-old-space-size=3072 --expose-gc scripts/career-report.js"
   },
   "devDependencies": {
     "acorn": "8.15.0"

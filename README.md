@@ -1,9 +1,9 @@
 # teacher-hell
 
-> 第11批已完成11-A學期回顧及11-B第一學年正式通關；11-C已形成正式事件、客觀原班職務中斷、失敗結算、存讀與授權重試的第一學年閉環；身心／社會代表事件及驗收紀錄見docs/05文末。11-D～11-F未開始，第二階段尚未具備合併條件。`npm run demo:annual`可重建完整第一學年；`demo:reviews`仍是明標跳過日期的期末邊界示範。
+> 第11批已完成11-A學期回顧及11-B第一學年正式通關；11-C已形成正式事件、客觀原班職務中斷、失敗結算、存讀與授權重試的第一學年閉環；身心／社會代表事件及驗收紀錄見docs/05文末。11-D已完成三年同屆、正常結屆及跨年／跨屆重試核心閉環；11-E～11-F未開始，第二階段尚未具備合併條件。`npm run demo:annual`可重建完整第一學年；`demo:reviews`仍是明標跳過日期的期末邊界示範。
 教師荒謬地獄
 
-目前：01～04已合併main，05～10、11-A／11-B及11-C正式失敗／重試累積於Draft [PR #20](https://github.com/franksky1207/teacher-hell/pull/20)。未發布或部署。以下舊批次紀錄保留當時語境；最新契約、代表事件與驗收見 [docs/05](docs/05-未定案與工作方式.md)文末。
+目前：01～04已合併main，05～10及11-A～11-D累積於Draft [PR #20](https://github.com/franksky1207/teacher-hell/pull/20)。未發布或部署。以下舊批次紀錄保留當時語境；最新契約、代表事件與驗收見 [docs/05](docs/05-未定案與工作方式.md)文末。
 
 ```sh
 npm ci
@@ -1541,3 +1541,27 @@ npm run test:annual:browser
 完整第一年工程情境（seed74、listen）已得原N7 **76.06653851042338／B**：341天、3254個時段、
 1件正式抽選事件，年度交易無數值回饋，含opening存檔43,600,040 bytes並完整恢復。
 精簡可審查結果見[年度工程證據](simulation/results/annual-core-20261104.json)；此為桌機工程驗證，未宣稱手機或完整30年通過。
+
+11-D沿用`startFailureSchoolCareer`及原世界／儲存API：六月`settle-school-year`成功後，
+暑輔前以獨立`transition-school-year`完成升級或按個別資格正常結屆；
+實際開學的時間交易才更新年度基線、原班任職與opening，儲存層同次CAS自動保存新起點。
+新屆班級由學校固定分配，正式代表事件可表達接受、異議協商或拒絕理由，不重新抽班。
+
+```sh
+npm run demo:career
+npm run demo:career:retry -- --year=2
+npm run demo:career:retry -- --year=3
+npm run demo:career:retry -- --year=4
+npm run demo:career:boundary
+npm run test:career:browser > work/career-browser.log 2>&1
+npm test > work/regression-indexed.log 2>&1
+npm run demo:career:report
+```
+
+上述為隔離`work/career`的正式核心驗收，建議依序執行以限制大檔峰值記憶體。
+完整四年及多次重試可耗時數小時，需要數GiB記憶體；不是快速CI的一部分。
+第四年Chromium大檔入口明設4 GiB測試heap並釋放驗收暫存副本；預設設定曾發生renderer中斷，不能據此宣稱一般裝置容量通過。
+`demo:career -- --resume=year-2`等參數只接受來源報告SHA-256相符的實際checkpoint；
+不改日期、年級或成敗旗標。年度2／3的失敗分支與年度4多次重試各自從真正opening開始。
+開學原子性另驗日期到期轉入、寫入中止及重送；完整世界檔不提交Git。
+這些入口不執行11-E／11-F；最新實測與長期容量限制集中於docs/05。

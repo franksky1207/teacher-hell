@@ -48,6 +48,11 @@ test('failure: full three retries, reload/export/import, CAS, wrong authorizatio
  const opening=failureOpening(),db=memory(),s=await createStoredSession(db,1);await s.initialize(opening);
  const empty=s.snapshot();await assert.rejects(s.retry({attemptId:id('attempt','unfailed'),seeds:{}}),{code:'RETRY_UNAUTHORIZED'});assert.deepEqual(s.snapshot(),empty);
  let w=outcome('social');
+ // Retry validates frozen source branches and returns an independently owned
+ // world; reducing large temporary copies must not weaken isolation.
+ const freeze=v=>{if(v&&typeof v==='object'&&!Object.isFrozen(v)){Object.freeze(v);for(const x of Object.values(v))freeze(x);}return v;},frozenOpening=freeze(clone(opening)),frozenFailure=freeze(clone(w));
+ const detached=forkWorldAttempt(frozenOpening,retryOptions(w,99),frozenFailure);detached.events.push({id:'discarded-isolation-probe'});
+ assert.deepEqual(frozenOpening,opening);assert.deepEqual(frozenFailure,w);assert.equal(detached.events.length,opening.events.length+1);
  for(let n=1;n<=3;n++){
   if(n>1)w=runFailure(s.snapshot().payload.world,{route:'social',maxDays:5}).world;
   await s.import(createSave(w,opening),{expectedToken:s.snapshot().token,confirmed:true});

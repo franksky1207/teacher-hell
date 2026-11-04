@@ -1,3 +1,4 @@
+import { permitsStoryFollowup } from './story-content.js';
 import { directedKey } from '../world/relationships.js';
 /** Slot actions compile to existing objective facts/results and N6; no event draws. */
 import { createId } from '../contracts/foundation.js';
@@ -9,7 +10,7 @@ import { academicState } from './academics.js';
 const r=w=>w.extensions['teacher-hell/world'];
 const need=(ok,message)=>{if(!ok)throw new RangeError(`CAMPUS: ${message}`);};
 export function schoolEnabled(w){return r(w).history.some(h=>h.type==='academic');}
-export function pendingSchoolEvent(w){const state=r(w),stories=new Map(state.history.filter(h=>h.type==='story').map(h=>[h.eventId,h.data.state])),admitted=new Set(w.events.map(e=>e.id));return state.history.some(h=>h.type==='event-selection'&&h.data.selected.some(s=>s.date===w.position.date&&s.slotId===w.position.slotId&&!admitted.has(s.eventId)))||w.events.some(e=>{const story=stories.get(e.id);return e.choice&&e.choice.confirmedOptionId===null||story&&story.mode!=='ended'&&(story.mode!=='waiting'||story.dueDate<=w.position.date);});}
+export function pendingSchoolEvent(w){const state=r(w),stories=new Map(state.history.filter(h=>h.type==='story').map(h=>[h.eventId,h.data.state])),admitted=new Set(w.events.map(e=>e.id));return state.history.some(h=>h.type==='event-selection'&&h.data.selected.some(s=>s.date===w.position.date&&s.slotId===w.position.slotId&&!admitted.has(s.eventId)))||w.events.some(e=>{const story=stories.get(e.id);return e.choice&&e.choice.confirmedOptionId===null||story&&story.mode!=='ended'&&(story.mode!=='waiting'||story.dueDate<=w.position.date&&permitsStoryFollowup(w,e));});}
 export function readSchoolTodos(w){return w.events.filter(e=>e.type==='cumulative').map(e=>{const state=r(w).history.findLast(h=>h.type==='story'&&h.eventId===e.id)?.data.state,life=r(w).history.findLast(h=>h.type==='event-lifecycle'&&h.eventId===e.id)?.data.status;return {eventId:e.id,state:state?.mode==='ended'||life==='ended'?'completed':state?.mode==='waiting'&&state.dueDate>w.position.date?'deferred':'pending',eligible:!!state&&state.mode==='waiting'&&state.dueDate<=w.position.date&&!formalSlot(w).slot.protected,dueDate:state?.dueDate??null};});}
 export function schoolEventOccupied(w){return r(w).history.some(h=>h.cursor===r(w).plan.cursor&&h.eventId&&w.events.some(e=>e.id===h.eventId&&!/^(procedure:|activity:)/.test(e.definitionId)));}
 export function schoolActions(w){
@@ -59,10 +60,25 @@ export function compileCampus(w,activity){
  }
  return {version:1,inputs,activity,day:day.date,slot:structuredClone(slot),randomBefore,randomAfter:rng.snapshot(),operations};
 }
-export function validateCampusHistory(w){const state=r(w),seen=new Set();let random=null,previousAttempt=null;for(const h of state.history)if(h.type==='campus'){
- const d=h.data;assertShape(d,['version','inputs','activity','day','slot','randomBefore','randomAfter','operations']);need(d.version===1&&d.day===h.at.date&&!seen.has(h.cursor),'campus version/date/duplicate');seen.add(h.cursor);
- if(random&&previousAttempt===h.attemptId)need(canonicalData(random)===canonicalData(d.randomBefore),'campus random chain');const rng=restoreRandom(d.randomBefore);rng.next(); // polarity has at most two draws
- if(canonicalData(rng.snapshot())!==canonicalData(d.randomAfter))rng.next();need(canonicalData(rng.snapshot())===canonicalData(d.randomAfter),'campus random witness');random=d.randomAfter;previousAttempt=h.attemptId;
- const commit=state.commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId);need(JSON.parse(commit.request).operations.some(op=>['campus','school-action','finish-slot'].includes(op.type)),'campus transaction ownership');
- for(const op of d.operations){if(op.type==='fact')need(state.facts.some(f=>f.id===op.id&&f.description===op.description&&canonicalData(f.data)===canonicalData(op.data)),'missing campus fact');if(op.type==='result'){need(w.events.some(e=>e.results.some(x=>x.id===op.id&&x.effectIds.every(id=>state.effects.some(y=>y.id===id)))),'missing campus result');for(const effect of op.effects){const numeric=[...w.numeric.receipts,...state.numericArchives.flatMap(a=>a.receipts)].find(x=>x.id===effect.id);need(numeric&&canonicalData(JSON.parse(numeric.request).operation)===canonicalData(effect.operation),'campus N6 receipt differs');}}}
- }if(random&&state.history.findLast(h=>h.type==='campus')?.attemptId===w.identity.attemptId)need(canonicalData(random)===canonicalData(w.random.campus),'campus RNG head');}
+export function validateCampusHistory(w){
+ const state=r(w),seen=new Set(),commits=new Map(state.commits.map(c=>[JSON.stringify([c.attemptId,c.id]),c])),facts=new Map(state.facts.map(f=>[f.id,f])),effects=new Set(state.effects.map(e=>e.id)),receipts=new Map(),results=new Map();
+ // Ephemeral indexes preserve the original first-match receipt and any-match
+ // result semantics. Full histories remain stored and independently checked.
+ for(const receipt of [...w.numeric.receipts,...state.numericArchives.flatMap(a=>a.receipts)])if(!receipts.has(receipt.id))receipts.set(receipt.id,receipt);
+ for(const e of w.events)for(const result of e.results){const rows=results.get(result.id)??[];rows.push(result);results.set(result.id,rows);}
+ let random=null,previousAttempt=null;
+ for(const h of state.history)if(h.type==='campus'){
+  const d=h.data;assertShape(d,['version','inputs','activity','day','slot','randomBefore','randomAfter','operations']);need(d.version===1&&d.day===h.at.date&&!seen.has(h.cursor),'campus version/date/duplicate');seen.add(h.cursor);
+  if(random&&previousAttempt===h.attemptId)need(canonicalData(random)===canonicalData(d.randomBefore),'campus random chain');const rng=restoreRandom(d.randomBefore);rng.next();
+  if(canonicalData(rng.snapshot())!==canonicalData(d.randomAfter))rng.next();need(canonicalData(rng.snapshot())===canonicalData(d.randomAfter),'campus random witness');random=d.randomAfter;previousAttempt=h.attemptId;
+  const commit=commits.get(JSON.stringify([h.attemptId,h.operationId]));need(JSON.parse(commit.request).operations.some(op=>['campus','school-action','finish-slot'].includes(op.type)),'campus transaction ownership');
+  for(const op of d.operations){
+   if(op.type==='fact'){const f=facts.get(op.id);need(f&&f.description===op.description&&canonicalData(f.data)===canonicalData(op.data),'missing campus fact');}
+   if(op.type==='result'){
+    need((results.get(op.id)??[]).some(x=>x.effectIds.every(id=>effects.has(id))),'missing campus result');
+    for(const effect of op.effects){const numeric=receipts.get(effect.id);need(numeric&&canonicalData(JSON.parse(numeric.request).operation)===canonicalData(effect.operation),'campus N6 receipt differs');}
+   }
+  }
+ }
+ if(random&&state.history.findLast(h=>h.type==='campus')?.attemptId===w.identity.attemptId)need(canonicalData(random)===canonicalData(w.random.campus),'campus RNG head');
+}

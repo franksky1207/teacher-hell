@@ -100,12 +100,22 @@ export const REPLACEMENT_STORY=dutyAsset('unfair-replacement','E06-02','校長�
  choice('help','尋求同事陪同面談。',false,'support',dutyOutcome('notice','教師尋求支持；撤換仍待實際執行。',[],'execution',1)),
  choice('protest','我不接受這種不合理安排！',true,'action',dutyOutcome('notice','教師抗議校方安排；原班職務目前仍在。',[],'execution',1)),
  choice('pending','提出離職申請，等候處理。',false,'defer',dutyOutcome('resignation-pending','教師提出辭職，尚未生效；原班導師仍是本人。',[],'execution',1))],[executed]);
+/** Assignment remains the school's fixed, journaled decision. Objection never
+ * silently redraws a class or revokes the guaranteed next opening. */
+export const PLACEMENT_STORY=dutyAsset('new-cohort-placement','E06-02','學校已分配下一屆導師班。這項安排未必公平；你可以表達立場，但不能自行挑班。',[
+ choice('accept','接下任務，先保存安排的依據。',false,'action',{fact:'教師確認校方已確定的導師班安排，既有爭議仍保留。',claims:[],changes:[],historyCodes:[],next:next()}),
+ choice('negotiate','提出異議，要求校方協商工作安排。',false,'support',{fact:'教師提出分班異議並要求協商；校方本次未同意更換班級，異議與原任職一起保存。',claims:[],changes:[],historyCodes:[],next:next()}),
+ choice('refuse','這種安排我不能接受！',true,'refuse',{fact:'教師拒絕接受分班理由；校方仍維持已確定任職，拒絕不等於生效離職，爭議留待後續。',claims:[],changes:[],historyCodes:[],next:next()})]);
 export function homeroomCatalogue(){
- const definitions=[PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY].map(c=>({id:c.definitionId,topicId:c.topicId,type:c===BURNOUT_STORY||c===RELIEF_STORY?'cumulative':'direct',content:{resourceId:c.resourceId,version:c.version,status:c.status},coreCodes:['1-2','1-3','1-4'],additionalCodes:['3-1','3-2','3-3'],weights:Array(6).fill(1/6),directions:[1,1,1,1,1,1],eligibility:{people:[c===REPLACEMENT_STORY?'staff':c===PRESSURE_STORY?'student':'player'],dayKinds:[],slotIds:[],from:null,until:null,facts:[],history:c===BURNOUT_STORY||c===RELIEF_STORY?[{code:'H06-1',minimum:3,status:'any'}]:[],numeric:[],enrollment:null,homeroom:c===REPLACEMENT_STORY?'social':c===PRESSURE_STORY?'ordinary':c===BURNOUT_STORY?'crisis':'support'},repetition:{cooldownDays:0,exclusionGroups:['homeroom-interruption'],sameFact:true,reason:'Consequences retain a single source and respect the existing daily budget'}}));
+ const definitions=[PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY].map(c=>({id:c.definitionId,topicId:c.topicId,type:c===BURNOUT_STORY||c===RELIEF_STORY?'cumulative':'direct',content:{resourceId:c.resourceId,version:c.version,status:c.status},coreCodes:['1-2','1-3','1-4'],additionalCodes:['3-1','3-2','3-3'],weights:Array(6).fill(1/6),directions:[1,1,1,1,1,1],eligibility:{people:[c===REPLACEMENT_STORY||c===PLACEMENT_STORY?'staff':c===PRESSURE_STORY?'student':'player'],dayKinds:[],slotIds:[],from:null,until:null,facts:[],history:c===BURNOUT_STORY||c===RELIEF_STORY?[{code:'H06-1',minimum:3,status:'any'}]:[],numeric:[],enrollment:null,homeroom:c===PLACEMENT_STORY?'placement':c===REPLACEMENT_STORY?'social':c===PRESSURE_STORY?'ordinary':c===BURNOUT_STORY?'crisis':'support'},repetition:{cooldownDays:0,exclusionGroups:['homeroom-interruption'],sameFact:true,reason:'Consequences retain a single source and respect the existing daily budget'}}));
  return {type:'register-event-catalogue',catalogueId:'homeroom:representatives-v1',definitions,bindings:definitions.map(d=>({definitionId:d.id,sources:Array(6).fill(d.id===REPLACEMENT_STORY.definitionId?'participant':'player-person'),valence:d.id===RELIEF_STORY.definitionId?'positive':'negative'})),engineering:false};
 }
-const assets=freeze([DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY]);
+const assets=freeze([DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY]);
 export function resolveStory(ref){const c=assets.find(c=>c.resourceId===ref.resourceId&&c.version===ref.version);need(c,'RESOURCE','missing immutable content version');return c;}
 export function validateStoryReference(d){const c=resolveStory(d.content);need(c.definitionId===d.id&&c.topicId===d.topicId&&c.status===d.content.status,'REFERENCE','definition/content identity');if(c.resourceId.startsWith('homeroom:'))need(canonicalData(d)===canonicalData(homeroomCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal homeroom qualification/authority cannot be relabeled');return c;}
 
 export function storyDigest(c){let hash=14695981039346656037n;for(const char of canonicalData(c)){hash^=BigInt(char.codePointAt(0));hash=BigInt.asUintN(64,hash*1099511628211n);}return hash.toString(16).padStart(16,'0');}
+
+/** A completed challenge has no new failure window. Keep pending duty stories
+ * and their due dates intact; resume only after the next actual opening. */
+export function permitsStoryFollowup(w,event){return !event.definitionId.startsWith('homeroom:')||event.definitionId===PLACEMENT_STORY.definitionId||!w.extensions['teacher-hell/world'].history.some(h=>h.type==='annual-success'&&h.data.year===w.position.serviceYear);}

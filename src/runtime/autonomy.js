@@ -7,7 +7,7 @@ import { forwardingProbability, adoptionProbability } from '../social/informatio
 import { prepareRelationshipChange } from '../social/relations.js';
 import { directedKey } from '../world/relationships.js';
 import { assertShape } from '../player/panel.js';
-import { isFormal, formalSlot } from './schedule.js';
+import { isFormal, formalSlot,planPosition } from './schedule.js';
 const runtime=w=>w.extensions['teacher-hell/world'];
 const need=(v,m)=>{if(!v)throw new RangeError(`NPC: ${m}`);};
 const same=(a,b)=>canonicalData(a)===canonicalData(b);
@@ -174,6 +174,15 @@ export function checkNpcGroup(w,op){
  if(!g)need(op.memberIds.length>=2,'formation requires shared experience');
  return {groupId:op.groupId,action:op.action,memberIds:op.memberIds,basisFactId:f.id};
 }
+/** Only the historical audit's mutable projection is detached. Journal, receipts
+ * and immutable event carriers are read-only inputs to the pure compiler; copying
+ * the entire accumulated career for every NPC observation grows quadratically. */
+function auditProjection(w,h){
+ const r=runtime(w),n=w.numeric.evolution.world;
+ return {...w,identity:{...w.identity,attemptId:h.attemptId},position:planPosition(r.plan,h.cursor),random:{...w.random},
+  numeric:{...w.numeric,evolution:{...w.numeric.evolution,world:{...n,classroom:{...n.classroom},people:{...n.people},relationships:{...n.relationships}}}},
+  extensions:{...w.extensions,'teacher-hell/world':{...r,plan:{...r.plan}}}};
+}
 /** Import audit: reconstruct historical information and recorded numerical witnesses,
  * then recompile; also bind every generated consequence to its actual ledger row. */
 export function validateNpcHistory(w){
@@ -184,16 +193,16 @@ export function validateNpcHistory(w){
   const d=h.data;assertShape(d,['version','classroom','inputs','decisions','operations','randomBefore','randomAfter','duplicate','beforeOrder']);need(d.version===AUTONOMY_VERSION,'unsupported action version');
   need(!seen.has(h.cursor),'duplicate update at one slot');seen.add(h.cursor);
   if(randomByAttempt.has(h.attemptId))need(same(d.randomBefore,randomByAttempt.get(h.attemptId)),'random chain mismatch');randomByAttempt.set(h.attemptId,d.randomAfter);
-  const at=structuredClone(w),a=runtime(at);
+  const at=auditProjection(w,h),a=runtime(at);
   at.numeric.evolution.world.classroom.id=d.classroom.id;at.numeric.evolution.world.classroom.studentIds=[...d.classroom.studentIds];
   need(d.classroom.studentIds.every(id=>(!w.numeric.evolution.world.registry||w.numeric.evolution.world.registry.enrollments.some(e=>e.personId===id&&e.classId===d.classroom.id))),'unknown historical class');
-  at.position={...at.position,...h.at};a.plan.cursor=h.cursor;
+  a.plan.cursor=h.cursor;
   need(Number.isInteger(d.beforeOrder)&&d.beforeOrder<h.order,'action order');
   a.history=r.history.filter(x=>x.order<=d.beforeOrder);
   a.facts=r.facts.filter(x=>x.order<=d.beforeOrder);a.claims=r.claims.filter(x=>x.order<=d.beforeOrder);
   a.knowledge=structuredClone(r.knowledge.filter(x=>x.order<=d.beforeOrder));
   for(const k of a.knowledge){const acquired=r.history[k.order-1];let state={belief:acquired.data.belief,confidence:acquired.data.confidence};for(const b of a.history)if(b.type==='belief'&&b.data.actorId===k.actorId&&b.data.claimId===k.claimId&&b.data.versionId===k.versionId)state=b.data.after;Object.assign(k,state);}
-  for(const input of d.inputs){need(at.numeric.evolution.world.people[input.item.actorId],'unknown input actor');at.numeric.evolution.world.people[input.item.actorId].values=input.values;at.numeric.evolution.world.people[input.item.actorId].roleIds=[...input.roleIds];if(input.teacherEdge)at.numeric.evolution.world.relationships[directedKey(input.item.actorId,w.identity.playerId)]=input.teacherEdge;if(input.route){at.numeric.evolution.world.people[input.route.to.id].values=input.route.to.values;for(const e of [input.route.left,input.route.right])at.numeric.evolution.world.relationships[directedKey(e.fromId,e.toId)]=e;}if(input.repairEdge){const e=input.repairEdge;at.numeric.evolution.world.relationships[directedKey(e.fromId,e.toId)]=e;}}
+  for(const input of d.inputs){need(at.numeric.evolution.world.people[input.item.actorId],'unknown input actor');at.numeric.evolution.world.people[input.item.actorId]={...at.numeric.evolution.world.people[input.item.actorId],values:input.values,roleIds:[...input.roleIds]};if(input.teacherEdge)at.numeric.evolution.world.relationships[directedKey(input.item.actorId,w.identity.playerId)]=input.teacherEdge;if(input.route){at.numeric.evolution.world.people[input.route.to.id]={...at.numeric.evolution.world.people[input.route.to.id],values:input.route.to.values};for(const e of [input.route.left,input.route.right])at.numeric.evolution.world.relationships[directedKey(e.fromId,e.toId)]=e;}if(input.repairEdge){const e=input.repairEdge;at.numeric.evolution.world.relationships[directedKey(e.fromId,e.toId)]=e;}}
   at.random.social=d.randomBefore;
   need(same(compileNpcUpdate(at),d),'action audit mismatch');
   for(const op of d.operations){
@@ -205,7 +214,7 @@ export function validateNpcHistory(w){
  }
  if(randomByAttempt.has(w.identity.attemptId))need(same(w.random.social,randomByAttempt.get(w.identity.attemptId)),'current social random differs');
  for(const h of r.history.filter(h=>h.type==='npc-clarify')){
-  const at=structuredClone(w),a=runtime(at);a.plan.cursor=h.cursor;
+  const at=auditProjection(w,h),a=runtime(at);a.plan.cursor=h.cursor;
   a.knowledge=r.knowledge.filter(k=>k.order<h.data.beforeOrder);a.facts=r.facts.filter(f=>f.order<h.data.beforeOrder);a.claims=r.claims.filter(c=>c.order<h.data.beforeOrder);
   need(same(compileNpcClarification(at,h.data.operation),h.data.operations),'clarification audit');
  }

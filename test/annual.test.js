@@ -109,3 +109,23 @@ test('annual: batched real school day equals individual commands including NPC, 
  let individual=initial;for(const q of requests)individual=prepareWorldOperation(individual,q).world;
  assert.deepEqual(batch,individual);
 });
+
+test('annual: future years and cohorts cannot be injected before a completed legal year',()=>{
+ const w=annualOpening({continuity:true,events:false}),before=JSON.stringify(w);
+ assert.throws(()=>apply(w,'early-year-transition',[{type:'transition-school-year'}]),/verified annual success/);
+ for(const change of [{type:'school-year',academicYear:2027},{type:'school-cohort'},{type:'school-graduate',personIds:w.numeric.evolution.world.classroom.studentIds,reason:'test'}]){
+  assert.throws(()=>prepareWorldOperation(w,{...request(w,'inject-'+change.type,[{type:'school',basisFactId:null,change}]),calendarContext:{kind:'procedure'}}),/annual transition/);
+ }
+ assert.equal(JSON.stringify(w),before);
+});
+
+test('annual: placement is a ready school decision with genuine objection choices and no first-cohort redraw',async()=>{
+ const {homeroomCatalogue,PLACEMENT_STORY}=await import('../src/runtime/story-content.js');
+ const {buildEventCandidates}=await import('../src/runtime/event-candidates.js');
+ const {readArchivedClass}=await import('../src/runtime/views.js');
+ const w=annualOpening({continuity:true,events:false}),definition=homeroomCatalogue().definitions.find(d=>d.id===PLACEMENT_STORY.definitionId);
+ assert.equal(PLACEMENT_STORY.status,'ready');assert.deepEqual(PLACEMENT_STORY.stages[0].choices.map(o=>o.id),['accept','negotiate','refuse']);
+ assert.ok(PLACEMENT_STORY.stages[0].choices.some(o=>o.emotional));assert.ok(PLACEMENT_STORY.stages[0].choices.every(o=>!o.outcome.duty));
+ assert.equal(buildEventCandidates(w,[definition]).candidates.length,0);
+ assert.equal(readArchivedClass(w,w.numeric.evolution.world.classroom.id),null);
+});

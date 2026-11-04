@@ -30,6 +30,7 @@ export function executeSchool(world,op,numericSession){
  if(change.type==='school-transfer-plan')ensure(change.source===op.basisFactId,'REFERENCE','Transfer arrangement must retain its causal fact');
  if(change.type==='school-transfer-complete'){const t=numeric.registry?.transfers.find(t=>t.id===change.id);ensure(t?.source===op.basisFactId,'REFERENCE','Transfer completion changed its cause');}
  if(runtimeOf(world).history.some(h=>h.type==='academic')){
+  if(change.type==='school-leave'&&change.status==='graduated')ensure(readAcademicQualification(world,change.personId).eligible,'ACADEMIC_QUALIFICATION','Graduation requires actual recorded credits');
   if(change.type==='school-graduate')ensure(change.personIds.every(id=>readAcademicQualification(world,id).eligible),'ACADEMIC_QUALIFICATION','Graduation requires actual recorded credits');
   if(change.type==='school-enroll'&&change.action==='repeat')ensure(readAcademicQualification(world,change.personId).repeatEligible,'ACADEMIC_QUALIFICATION','Repeat requires an actual academic qualification');
  }

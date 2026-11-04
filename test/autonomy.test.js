@@ -82,3 +82,17 @@ test('npc: witnessed version-specific evidence may support and later refute a ru
  assert.equal(readPlayerView(w).facts.length,0);assert.ok(npcReport(w).restored);
  assert.throws(()=>npcApply(w,[{type:'npc-clarify',sourceId:b,toId:a,claimId,versionId:'original',contactId,evidence:{factId:'fact:["evidence-rejected"]',conclusion:'rejected'}}]));
 });
+
+test('npc: retained pre-opening social history audits its recorded attempt after a new attempt is initialized',async()=>{
+ // Engineering retry-carrier test only; the real later-year terminal is in demo:career.
+ const {forkWorldAttempt}=await import('../src/runtime/transactions.js');const {createId}=await import('../src/contracts/foundation.js');
+ const {world}=peerScenario(),w=npcApply(world,[{type:'npc-update'}]),before=clone(runtimeOf(w).history);
+ const next=forkWorldAttempt(w,{attemptId:createId('attempt',['retained-npc-audit']),seeds:{settlement:31,streams:Object.fromEntries(Object.keys(w.random).map(k=>[k,32]))}});
+ assert.deepEqual(runtimeOf(next).history.slice(0,before.length),before);assert.notEqual(next.identity.attemptId,w.identity.attemptId);assert.doesNotThrow(()=>restoreWorldState(next));
+});
+
+test('npc: historical audit accepts deeply frozen evidence without modifying any shared source',()=>{
+ const {world}=peerScenario(),w=npcApply(world,[{type:'npc-update'}]),before=JSON.stringify(w);
+ const freeze=value=>{if(value&&typeof value==='object'&&!Object.isFrozen(value)){Object.values(value).forEach(freeze);Object.freeze(value);}return value;};
+ assert.doesNotThrow(()=>restoreWorldState(freeze(w)));assert.equal(JSON.stringify(w),before);
+});

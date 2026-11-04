@@ -1,13 +1,13 @@
 import { failureResult } from './homeroom.js';
 /** Annual observations are projections of the world journal, never writable scores.
- * Semester reports remain a separate reading barrier. Only the first year is enabled. */
+ * Semester reports remain a separate reading barrier. Each challenge uses its actual legal opening. */
 import { captureAssessment,validateSnapshot } from '../assessment/evidence.js';
 import { rateAnnual } from '../assessment/annual.js';
 import { development,mean } from '../assessment/grading.js';
 import { canonicalData } from '../changes/settlement.js';
 import { assertShape,ABILITY_NAMES,STATE_NAMES } from '../player/panel.js';
-import { careerRange,positionFor,nextPosition,calendarDay,gradeAt,slotOccupancy } from '../calendar/calendar.js';
-import { academicState } from './academics.js';
+import { careerRange,positionFor,nextPosition,calendarDay,gradeAt,slotOccupancy,cursorFor,yearData } from '../calendar/calendar.js';
+import { academicState,readAcademicQualification } from './academics.js';
 import { pendingSemesterReview,REVIEW_KEY } from './reviews.js';
 
 export const ANNUAL_KEY='teacher-hell/annual-observations';
@@ -16,23 +16,34 @@ const need=(ok,message)=>{if(!ok)throw new RangeError(`ANNUAL: ${message}`);};
 const same=(a,b)=>canonicalData(a)===canonicalData(b);
 const names=[...ABILITY_NAMES,...STATE_NAMES];
 function relations(w){const n=w.numeric.evolution.world,p=w.identity.playerId;return Object.entries(n.relationships).filter(([,e])=>e.fromId===p&&n.people[e.toId]||e.toId===p&&n.people[e.fromId]).map(([id,e])=>({id,fromId:e.fromId,toId:e.toId,values:structuredClone(e.values)}));}
-function snapshot(w,label){return captureAssessment(w.numeric.evolution.world,{id:`annual:${w.identity.attemptId}:${label}`,provenance:'formal',attemptId:w.identity.attemptId});}
+function snapshot(w,label){return captureAssessment(w.numeric.evolution.world,{id:`annual:${w.identity.attemptId}:${w.position.serviceYear===1?'':w.position.serviceYear+':'}${label}`,provenance:'formal',attemptId:w.identity.attemptId});}
 export function initializeAnnualObservations(w){
  const state=r(w);need(!w.extensions[ANNUAL_KEY]&&w.extensions[REVIEW_KEY]&&state.revision===1&&state.history.length===1,'initialize at untouched reviewed summer opening');
  need(!w.numeric.receipts.length&&w.numeric.evolution.clock.lastNaturalDate===null,'annual opening precedes all natural updates and effects');
  need(w.position.date===careerRange(state.plan.startYear).start&&w.position.slotId==='early','first summer opening required');
  w.extensions[ANNUAL_KEY]={version:1,at:structuredClone(w.position),start:snapshot(w,'start'),relations:relations(w)};return w;
 }
-export function annualResult(w){return r(w).history.find(h=>h.type==='annual-success')??null;}
+export function annualResult(w){return r(w).history.find(h=>h.type==='annual-success'&&h.data.year===w.position.serviceYear)??null;}
+export function annualBaseline(w,year=w.position.serviceYear){
+ const openings=r(w).history.filter(h=>h.type==='academic-opening');
+ return openings.find(h=>h.data.annual.start.year===year)?.data.annual??openings[0]?.data.previousAnnual??w.extensions[ANNUAL_KEY];
+}
+/** Captured by the autumn entry transaction, after background deadlines. */
+export function openAnnualObservations(w){
+ const previous=w.extensions[ANNUAL_KEY];need(previous&&w.position.serviceYear===previous.start.year+1,'consecutive annual opening required');
+ need(r(w).history.some(h=>h.type==='annual-success'&&h.data.year===previous.start.year),'previous year must succeed');
+ const annual={version:1,at:structuredClone(w.position),start:snapshot(w,'start'),relations:relations(w)};
+ w.extensions[ANNUAL_KEY]=annual;return {previousAnnual:structuredClone(previous),annual:structuredClone(annual)};
+}
 /** Exact slots, including vacations and protected activities, not elapsed days. */
 export function annualCoverage(w,untilOrder=r(w).history.length){
  const baseline=w.extensions[ANNUAL_KEY];need(baseline,'annual opening is missing');
- const history=r(w).history.slice(0,untilOrder),completed=new Set(history.filter(h=>h.type==='slot-complete').map(h=>`${h.at.date}/${h.at.slotId}`)),draws=new Set(history.filter(h=>h.type==='event-selection').map(h=>h.at.date));
+ const openingCursor=cursorFor(baseline.at.date,baseline.at.slotId,r(w).plan.startYear),history=r(w).history.slice(0,untilOrder).filter(h=>h.cursor>=openingCursor),completed=new Set(history.filter(h=>h.type==='slot-complete').map(h=>`${h.at.date}/${h.at.slotId}`)),draws=new Set(history.filter(h=>h.type==='event-selection').map(h=>h.at.date));
  const missing=[],dates=new Set();let position=baseline.at,slots=0;
  while(position.date<w.position.date||position.date===w.position.date){
   slots++;dates.add(position.date);const key=`${position.date}/${position.slotId}`;if(!completed.has(key))missing.push(key);
   if(position.date===w.position.date&&position.slotId===w.position.slotId)break;
-  position=nextPosition(position,r(w).plan.startYear);need(slots<6000,'first-year coverage exceeded');
+  position=nextPosition(position,r(w).plan.startYear);need(slots<6000,'annual coverage exceeded');
  }
  return {slots,completed:slots-missing.length,days:dates.size,missing,undrawnDates:[...dates].filter(d=>!draws.has(d))};
 }
@@ -43,16 +54,16 @@ export function annualCoverage(w,untilOrder=r(w).history.length){
  * Relationships describe recorded subjective states, never objective misconduct. */
 export function annualEvidence(w,{end=snapshot(w,'end'),endRelations=relations(w),untilOrder=r(w).history.length}={}){
  const baseline=w.extensions[ANNUAL_KEY];need(baseline,'annual opening is missing');
- const history=r(w).history.slice(0,untilOrder),n=w.numeric.evolution.world,year=w.position.serviceYear,attemptId=w.identity.attemptId;
+ const openingCursor=cursorFor(baseline.at.date,baseline.at.slotId,r(w).plan.startYear),history=r(w).history.slice(0,untilOrder).filter(h=>h.cursor>=openingCursor),n=w.numeric.evolution.world,year=w.position.serviceYear,attemptId=w.identity.attemptId;
  const header={provenance:'formal',playerId:w.identity.playerId,schoolId:w.identity.schoolId,year,attemptId};
  const prefix=`annual:${attemptId}:${year}`,cohortId=`${prefix}:cohort`,records=[],sources=[];
  const start={...structuredClone(baseline.start),id:`${prefix}:start`,attemptId},finish={...structuredClone(end),id:`${prefix}:end`};
  records.push(start,finish);
- const students=[...new Set(n.registry.enrollments.filter(e=>e.classId===start.classroom.id&&e.from<=w.position.date).map(e=>e.personId))];
- records.push({id:cohortId,kind:'cohort',...header,years:[1,2,3],studentIds:students,importance:1});
+ const students=[...new Set(n.registry.enrollments.filter(e=>e.classId===start.classroom.id&&e.from<=w.position.date&&(e.until===null||e.until>=baseline.at.date)).map(e=>e.personId))];
+ records.push({id:cohortId,kind:'cohort',...header,years:Array.from({length:3},(_,i)=>Math.floor((year-1)/3)*3+1+i),studentIds:students,importance:1});
  // Cohort headers have a different N7 schema from annual records.
  delete records.at(-1).year;delete records.at(-1).attemptId;
- const cohort=records.at(-1),transient=n.registry.enrollments.filter(e=>e.classId===start.classroom.id&&e.from<=w.position.date&&!start.students.concat(finish.students).some(s=>s.id===e.personId));
+ const cohort=records.at(-1),transient=n.registry.enrollments.filter(e=>e.classId===start.classroom.id&&e.from<=w.position.date&&(e.until===null||e.until>=baseline.at.date)&&!start.students.concat(finish.students).some(s=>s.id===e.personId));
  if(transient.length){cohort.enrollmentRefs=[];for(const entry of transient){
   const id=`${prefix}:enrollment:${entry.id}`,basisFactId=`${id}:basis`,prior=n.registry.enrollments.filter(e=>e.personId===entry.personId&&e.from<=entry.from&&e.id!==entry.id).at(-1),change=history.findLast(h=>h.type==='school'&&h.data.change.personId===entry.personId&&h.at.date===entry.from)?.data.change;
   records.push({id:basisFactId,kind:'fact',...header,confirmed:true,subjectIds:[entry.personId,header.playerId]},
@@ -88,9 +99,9 @@ export function annualEvidence(w,{end=snapshot(w,'end'),endRelations=relations(w
   const q={'unsubstantiated':100,'substantiated':0,'insufficient-evidence':50}[c.finding];if(q===undefined)continue;
   observe('handling',f.id,header.playerId,q,100,100,{criterion:'competent-committee-finding',historyIds:[h.id],eventIds:[f.eventId],factIds:[f.id],finding:c.finding},true);
  }
- const atWorld={...w,extensions:{...w.extensions,'teacher-hell/world':{...r(w),history}}},a=academicState(atWorld);
+ const atWorld={...w,extensions:{...w.extensions,'teacher-hell/world':{...r(w),history:r(w).history.slice(0,untilOrder)}}},a=academicState(atWorld);
  for(const id of students){
-  const closed=Object.values(a.terms).filter(t=>t.closed&&t.year===r(w).plan.startYear),rows=closed.flatMap(t=>t.results?.filter(row=>row.id===id)??[]),courses=rows.flatMap(row=>row.courses??[]);
+  const closed=Object.values(a.terms).filter(t=>t.closed&&t.year===r(w).plan.startYear+year-1),rows=closed.flatMap(t=>t.results?.filter(row=>row.id===id)??[]),courses=rows.flatMap(row=>row.courses??[]);
   if(!rows.length||!courses.length)continue;
   const learner=a.students[id],attendance=mean([...new Set(courses.map(c=>c.subject))].map(s=>learner.subjects[s].attendance));
   observe('student',id,id,mean(rows.map(row=>row.average)),100*courses.reduce((s,c)=>s+c.earned,0)/courses.reduce((s,c)=>s+c.credits,0),attendance,{criterion:'recorded-academic-marks-credits-attendance',historyIds:history.filter(h=>h.type==='academic'&&(!h.data.input.personId||h.data.input.personId===id)).map(h=>h.id),eventIds:[],factIds:[]});
@@ -118,21 +129,21 @@ export function annualEvidence(w,{end=snapshot(w,'end'),endRelations=relations(w
 
 function eligibility(w){
  need(!failureResult(w),'failed year cannot receive success');
- need(w.extensions[ANNUAL_KEY]&&w.position.serviceYear===1,'only the initialized first academic year is enabled');
+ need(w.extensions[ANNUAL_KEY]&&w.position.serviceYear===w.extensions[ANNUAL_KEY].start.year,'current academic year opening required');
  need(!pendingSemesterReview(w),'read the semester review first');
  const day=calendarDay(w.position.date,gradeAt(w.position.date,r(w).plan.startYear));
  need(day.annualBoundary&&day.slots.at(-1).id===w.position.slotId,'June final examination boundary required');
  need(r(w).history.some(h=>h.type==='slot-complete'&&h.cursor===r(w).plan.cursor),'complete final slot first');
- const reviews=r(w).history.filter(h=>h.type==='semester-review');need(reviews.length===2&&reviews.every(h=>r(w).history.some(a=>a.type==='semester-review-read'&&a.data.reviewId===h.id)),'both semester reports must be read');
+ const reviews=r(w).history.filter(h=>h.type==='semester-review'&&positionFor(h.at.date,h.at.slotId,r(w).plan.startYear).serviceYear===w.position.serviceYear);need(reviews.length===2&&reviews.every(h=>r(w).history.some(a=>a.type==='semester-review-read'&&a.data.reviewId===h.id)),'both semester reports must be read');
  const coverage=annualCoverage(w);need(!coverage.missing.length&&!coverage.undrawnDates.length,'incomplete legal slots or daily event draws');
- const academics=academicState(w);need([`${r(w).plan.startYear}:autumn`,`${r(w).plan.startYear+1}:spring`].every(id=>academics.terms[id]?.closed&&academics.terms[id].assessments.length===4),'both academic semesters must be formally closed');
+ const academics=academicState(w),y=r(w).plan.startYear+w.position.serviceYear-1;need([`${y}:autumn`,`${y+1}:spring`].every(id=>academics.terms[id]?.closed&&academics.terms[id].assessments.length===4),'both academic semesters must be formally closed');
  return {coverage,reviews};
 }
 export function compileAnnualSuccess(w){
  need(!annualResult(w),'year is already settled');
  const {coverage,reviews}=eligibility(w);
  const end=snapshot(w,'end'),endRelations=relations(w),evidence=annualEvidence(w,{end,endRelations});need(evidence.rating.status==='rated','formal evidence is insufficient');
- return {version:1,year:1,attemptId:w.identity.attemptId,status:'success',at:structuredClone(w.position),untilOrder:r(w).history.length,coverage,reviewIds:reviews.map(h=>h.id),end,endRelations,evidence,
+ return {version:1,year:w.position.serviceYear,attemptId:w.identity.attemptId,status:'success',at:structuredClone(w.position),untilOrder:r(w).history.length,coverage,reviewIds:reviews.map(h=>h.id),end,endRelations,evidence,
   comparison:Object.fromEntries(names.map(name=>[name,{start:w.extensions[ANNUAL_KEY].start.abilities[name]??w.extensions[ANNUAL_KEY].start.states[name],end:end.abilities[name]??end.states[name],delta:(end.abilities[name]??end.states[name])-(w.extensions[ANNUAL_KEY].start.abilities[name]??w.extensions[ANNUAL_KEY].start.states[name])}])),summary:'本學年依正式校曆及已保存的世界證據完成結算；未結事項及人物歷史保留。'};
 }
 export function validateAnnualObservations(w){
@@ -140,18 +151,51 @@ export function validateAnnualObservations(w){
  const settlements=r(w).commits.filter(c=>JSON.parse(c.request).operations?.some(op=>op.type==='settle-school-year'));
  if(!baseline){need(!reports.length&&!settlements.length,'annual opening is missing');return;}
  assertShape(baseline,['version','at','start','relations']);need(baseline.version===1&&w.extensions[REVIEW_KEY],'unsupported annual observation version');validateSnapshot(baseline.start,'formal');
- need(same(baseline.at,positionFor(careerRange(r(w).plan.startYear).start,'early',r(w).plan.startYear)),'annual opening date differs');
- need(same(baseline.start.abilities,w.extensions[REVIEW_KEY].abilities),'annual and semester openings differ');
- need(reports.length<=1&&settlements.length===reports.length,'duplicate or missing first-year result');
- for(const h of reports){const before={...w,identity:{...w.identity,attemptId:h.attemptId},position:h.data.at,extensions:{...w.extensions,'teacher-hell/world':{...r(w),plan:{...r(w).plan,cursor:h.cursor},history:r(w).history.slice(0,h.order-1)}}};
+ const openingDate=baseline.start.year===1?careerRange(r(w).plan.startYear).start:yearData(r(w).plan.startYear+baseline.start.year-1).autumnStart;
+ need(same(baseline.at,positionFor(openingDate,'early',r(w).plan.startYear)),'annual opening date differs');
+ if(baseline.start.year===1)need(same(baseline.start.abilities,w.extensions[REVIEW_KEY].abilities),'annual and semester openings differ');
+ const openings=r(w).history.filter(h=>h.type==='academic-opening');
+ need(openings.length===w.position.serviceYear-1,'missing or repeated formal opening');
+ let prior=null;
+ for(const entry of openings){
+  const d=entry.data,p=positionFor(entry.at.date,entry.at.slotId,r(w).plan.startYear),owner=r(w).commits.find(c=>c.id===entry.operationId&&c.attemptId===entry.attemptId),request=JSON.parse(owner.request);
+  assertShape(d,['previousAnnual','annual','previousHomeroom','homeroom']);
+  need(p.serviceYear===(prior?.data.annual.start.year??1)+1&&p.slotId==='early'&&p.date===yearData(r(w).plan.startYear+p.serviceYear-1).autumnStart,'nonconsecutive autumn opening');
+  need(same(d.annual.at,p)&&d.annual.start.year===p.serviceYear&&d.previousAnnual.start.year===p.serviceYear-1&&(!prior||same(d.previousAnnual,prior.data.annual)),'broken annual opening chain');
+  need(r(w).history.some(h=>h.type==='annual-success'&&h.data.year===p.serviceYear-1&&h.order<entry.order),'opening precedes annual success');
+  need(request.operations.some(op=>['advance-time','school-action'].includes(op.type))&&r(w).history.some(h=>h.type==='time'&&h.operationId===entry.operationId&&h.cursor===entry.cursor&&h.order<entry.order),'opening lacks actual calendar entry');
+  validateSnapshot(d.annual.start,'formal');
+  if(d.homeroom)need(d.homeroom.openingId===p.openingId&&d.homeroom.schoolYearId===p.schoolYearId&&w.numeric.evolution.world.registry.assignments.some(a=>a.id===d.homeroom.assignmentId&&a.classId===d.homeroom.classId&&a.personId===w.identity.playerId&&a.from<=p.date&&(a.until===null||a.until>=p.date)),'opening lacks legal original duty');
+  prior=entry;
+ }
+ const transitions=r(w).history.filter(h=>h.type==='year-transition');
+ const requestedTransitions=r(w).commits.filter(c=>JSON.parse(c.request).operations?.some(op=>op.type==='transition-school-year'));
+ need(requestedTransitions.length===transitions.length,'missing annual affiliation transaction');
+ for(const [i,h] of transitions.entries()){
+  assertShape(h.data,['academicYear','previousClassId','classId','successId']);const target=r(w).plan.startYear+i+1,next=nextPosition(positionFor(h.at.date,h.at.slotId,r(w).plan.startYear),r(w).plan.startYear),success=reports.find(s=>s.id===h.data.successId),owner=r(w).commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId),request=JSON.parse(owner.request);
+  need(h.data.academicYear===target&&next.date===yearData(target).summerCamp&&next.slotId==='early'&&success?.data.year===i+1&&success.order<h.order,'annual affiliations lack a legal prior success or camp boundary');
+  need(request.operations.length===1&&request.operations[0].type==='transition-school-year','annual affiliations require an isolated request');
+  const rows=r(w).history.filter(s=>s.operationId===h.operationId&&s.type==='school'),yearRow=rows.filter(s=>s.data.change.type==='school-year'),cohorts=rows.filter(s=>s.data.change.type==='school-cohort');
+  need(yearRow.length===1&&yearRow[0].data.change.academicYear===target&&cohorts.length===((i+1)%3===0?1:0),'annual school operations differ');
+  need((h.data.classId===h.data.previousClassId)===!cohorts.length,'illegal homeroom change during a cohort');
+  const completion=r(w).history.find(s=>s.operationId===h.operationId&&s.type==='cohort-completion');
+  if(cohorts.length){need(completion&&completion.data.classId===h.data.previousClassId,'cohort completion archive missing');const at={...w,position:positionFor(h.at.date,h.at.slotId,r(w).plan.startYear),extensions:{...w.extensions,'teacher-hell/world':{...r(w),history:r(w).history.slice(0,completion.order-1)}}},academics=academicState(at),outcomes=completion.data.outcomes;
+   need(new Set(outcomes.map(o=>o.personId)).size===outcomes.length,'duplicate cohort qualification');
+   for(const o of outcomes){need(same(o.qualification,readAcademicQualification(at,o.personId,academics)),'cohort qualification changed');need(rows.some(s=>s.data.change.type==='school-leave'&&s.data.change.personId===o.personId&&s.data.change.status===(o.qualification.eligible?'graduated':'delayed')&&s.data.basisFactId===completion.factIds[0]),'individual graduation or extension was not executed');}
+   const cohort=w.numeric.evolution.world.registry.cohorts.find(c=>c.startYear===target);need(cohort&&cohort.classId===h.data.classId&&cohort.initialStudentIds.length===40,'new cohort must have forty durable identities');
+  }else need(!completion,'unexpected graduation archive');
+ }
+ const latest=openings.at(-1);if(latest)need(same(latest.data.annual,baseline),'annual opening differs from entry transaction');
+ need(new Set(reports.map(h=>h.data.year)).size===reports.length&&settlements.length===reports.length,'duplicate or missing annual result');
+ for(const h of reports){const baseline=annualBaseline(w,h.data.year);const before={...w,identity:{...w.identity,attemptId:h.attemptId},position:h.data.at,extensions:{...w.extensions,[ANNUAL_KEY]:baseline,'teacher-hell/world':{...r(w),plan:{...r(w).plan,cursor:h.cursor},history:r(w).history.slice(0,h.order-1)}}};
   assertShape(h.data,['version','year','attemptId','status','at','untilOrder','coverage','reviewIds','end','endRelations','evidence','comparison','summary']);assertShape(h.data.comparison,names);need(h.data.version===1,'unsupported annual report version');
   need(h.data.untilOrder===h.order-1&&h.attemptId===h.data.attemptId&&same(h.data.at,positionFor(h.at.date,h.at.slotId,r(w).plan.startYear)),'annual result ownership differs');
   const qualified=eligibility(before);need(same(qualified.reviews.map(h=>h.id),h.data.reviewIds),'annual semester links differ');
   const owner=r(w).commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId);need(JSON.parse(owner.request).operations.length===1&&JSON.parse(owner.request).operations[0].type==='settle-school-year','annual result requires an isolated settlement request');
   // Rebuild every source and every N7 component on restore; saved scores are not authority.
   const evidence=annualEvidence(before,{end:h.data.end,endRelations:h.data.endRelations,untilOrder:h.data.untilOrder});need(same(evidence,h.data.evidence),'annual evidence or N7 rating changed');
-  const edges=new Map(baseline.relations.map(e=>[e.id,structuredClone(e.values)]));
-  for(const change of before.extensions['teacher-hell/world'].history.filter(h=>h.type==='effect').flatMap(h=>h.data.observed??[]))if(change.target.kind==='relationship'&&edges.has(change.target.id)){
+  const openingCursor=cursorFor(baseline.at.date,baseline.at.slotId,r(w).plan.startYear),edges=new Map(baseline.relations.map(e=>[e.id,structuredClone(e.values)]));
+  for(const change of before.extensions['teacher-hell/world'].history.filter(h=>h.type==='effect'&&h.cursor>=openingCursor).flatMap(h=>h.data.observed??[]))if(change.target.kind==='relationship'&&edges.has(change.target.id)){
    const values=edges.get(change.target.id);need(values[change.code]===change.before,'annual relationship observation chain differs');values[change.code]=change.after;
   }
   for(const edge of h.data.endRelations)if(edges.has(edge.id))need(same(edges.get(edge.id),edge.values),'annual relationship endpoint differs from actual effects');
@@ -160,7 +204,7 @@ export function validateAnnualObservations(w){
   for(const edge of h.data.endRelations)need(same(historicalEdges.get(edge.id),edge.values),'annual relationship endpoint changed');
   if(same(w.position,h.data.at))need(same(snapshot(w,'end'),h.data.end)&&same(relations(w),h.data.endRelations),'annual endpoint differs from the current world');
   need(same(annualCoverage(before),h.data.coverage)&&!h.data.coverage.missing.length&&!h.data.coverage.undrawnDates.length,'annual coverage changed');
-  need(h.data.status==='success'&&h.data.year===1&&evidence.rating.status==='rated','invalid annual success');
+  need(h.data.status==='success'&&h.data.year===before.position.serviceYear&&evidence.rating.status==='rated','invalid annual success');
   need(names.every(name=>{const c=h.data.comparison[name];return c&&c.start===(baseline.start.abilities[name]??baseline.start.states[name])&&c.end===(h.data.end.abilities[name]??h.data.end.states[name])&&c.delta===c.end-c.start;}),'annual twelve-value comparison differs');
  }
 }

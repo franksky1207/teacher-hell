@@ -37,7 +37,7 @@ export async function createStoredSession(storage,slot,{afterPersist}={}) {
       const prior=runtimeOf(current.payload.world).commits.find(c=>c.id===createId('operation',[options.attemptId,'initialize-retry'])&&c.attemptId===options.attemptId);
       if(prior){const recorded=JSON.parse(prior.request);ensure(sameRequest(recorded.seeds,options.seeds),'CONFLICT','Retry attempt reused with different seeds');return {committed:true,recoveryRequired:false,receipt:structuredClone(prior),duplicate:true,token:structuredClone(current.token)};}
       ensure(options.attemptId!==current.payload.world.identity.attemptId,'ATTEMPT','Retry requires a fresh attempt');
-      const next=forkWorldAttempt(current.payload.opening,options);return publish(createSave(next,current.payload.opening),current.token,runtimeOf(next).commits.at(-1));}),
+      const next=forkWorldAttempt(current.payload.opening,options,current.payload.world);return publish(createSave(next,current.payload.opening),current.token,runtimeOf(next).commits.at(-1));}),
     export:()=>serial(async()=>{ready();ensure(current.payload,'EMPTY','Slot is empty');return encodeSave(current.payload);}),
     // UI shows reviewImport() summary first, then passes the exact token after a second confirmation.
     reviewImport:input=>serial(async()=>{ready();const incoming=restoreSave(input),disk=await storage.read(slot);return {incoming:{identity:structuredClone(incoming.world.identity),position:structuredClone(incoming.world.position)},replacing:disk.payload?{identity:structuredClone(disk.payload.world.identity),position:structuredClone(disk.payload.world.position)}:null,token:disk.token};}),

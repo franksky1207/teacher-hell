@@ -132,6 +132,19 @@ test('runtime: explicit retry forks the opening snapshot, preserves prior histor
  assert.throws(()=>forkWorldAttempt(retry,{attemptId,seeds}),/ATTEMPT/);assert.throws(()=>forkWorldAttempt(opening,{attemptId,seeds:{settlement:33,streams:{}}}));
 });
 
+test('runtime: abandoned-world retry tracks retired identities and rejects foreign opening prefixes',()=>{
+ const initial=runtimeScenario(),options=tag=>({attemptId:id('attempt',tag),seeds:{settlement:33,streams:{events:44}}});
+ const first=forkWorldAttempt(initial,options('lineage-first'));
+ const second=forkWorldAttempt(initial,options('lineage-second'),first);
+ assert.deepEqual(forkWorldAttempt(initial,options('lineage-second'),first),second);
+ assert.throws(()=>forkWorldAttempt(initial,options('lineage-first'),second),{code:'ATTEMPT'});
+ const foreign=structuredClone(first);foreign.identity.careerId=id('career','foreign-lineage');
+ assert.throws(()=>forkWorldAttempt(initial,options('foreign-retry'),foreign),{code:'SNAPSHOT'});
+ const opening=apply(initial,'one-opening',[sample]),unrelated=apply(initial,'other-opening',[sample]);
+ assert.throws(()=>forkWorldAttempt(opening,options('unrelated-retry'),unrelated),{code:'SNAPSHOT'});
+ assert.equal(runtimeOf(second).history.length,1);assert.equal(runtimeOf(second).history[0].data.abandonedAttemptId,first.identity.attemptId);
+});
+
 test('runtime: a genuine later stage may affect the same facet; replay in that stage still cannot',()=>{
  let {w,e,a}=setup();w=apply(w,'first-effect',[result(e,a,'first',2,'trust')]);
  const stageId=id('stage','one','later');w=apply(w,'later-stage',[{type:'stage',eventId:e.id,fromStageId:e.stageId,stageId,choice:null}]);

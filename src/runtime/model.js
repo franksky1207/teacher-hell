@@ -14,6 +14,7 @@ import { nextGameDate } from '../evolution/time.js';
 import { probability } from '../numeric/math.js';
 
 export const WORLD_KEY = 'teacher-hell/world';
+export const ATTEMPT_LINEAGE_KEY = 'teacher-hell/attempt-lineage';
 export const HISTORY_CODES = Object.freeze(Array.from({length:10},(_,i)=>Array.from({length:6},(_,j)=>`H${String(i+1).padStart(2,'0')}-${j+1}`)).flat());
 export class WorldError extends Error {
   constructor(code, message) { super(`${code}: ${message}`); this.name='WorldError'; this.code=code; }
@@ -21,6 +22,23 @@ export class WorldError extends Error {
 export function ensure(condition, code, message) { if (!condition) throw new WorldError(code,message); }
 export const same = (a,b) => canonicalData(a) === canonicalData(b);
 export const runtimeOf = world => world.extensions[WORLD_KEY];
+/** Identity tombstones only. Discarded facts, decisions and numeric receipts never
+ * become part of the successful world merely to prevent an attempt ID being reused. */
+export function worldAttemptIds(world){
+  const r=runtimeOf(world);
+  return [...new Set([...(world.extensions[ATTEMPT_LINEAGE_KEY]?.attemptIds??[]),world.identity.attemptId,...r.commits.map(c=>c.attemptId),...r.numericArchives.map(a=>a.attemptId),...r.history.filter(h=>h.type==='retry').flatMap(h=>h.data.attemptIds??[])])];
+}
+function validateAttemptLineage(world){
+  const lineage=world.extensions[ATTEMPT_LINEAGE_KEY],lastRetry=runtimeOf(world).history.findLast(h=>h.type==='retry');
+  if(!lineage){ensure(!lastRetry?.data.attemptIds,'ATTEMPT','Retry identity lineage is missing');return;}
+  assertShape(lineage,['version','attemptIds']);
+  ensure(lineage.version===1&&Array.isArray(lineage.attemptIds)&&lineage.attemptIds.length>1,'ATTEMPT','Invalid retry identity lineage');
+  unique(lineage.attemptIds,id=>id,'attempt lineage');lineage.attemptIds.forEach(id=>validateId(id,'attempt'));
+  ensure(same(lineage.attemptIds,lastRetry?.data.attemptIds)&&lineage.attemptIds.at(-1)===world.identity.attemptId,'ATTEMPT','Retry identity lineage differs from its receipt');
+  const receipt=runtimeOf(world).commits.find(c=>c.id===lastRetry.operationId&&c.attemptId===lastRetry.attemptId);
+  ensure(same(lineage.attemptIds,JSON.parse(receipt.request).attemptIds),'ATTEMPT','Retry identity lineage differs from its request');
+  ensure(worldAttemptIds(world).every(id=>lineage.attemptIds.includes(id)),'ATTEMPT','Retry identity lineage omits an established attempt');
+}
 export const key = (...parts) => JSON.stringify(parts);
 export const momentOf = world => ({date:world.position.date,slotId:world.position.slotId});
 export function unique(rows, select, label) {
@@ -214,6 +232,7 @@ export function validateWorldState(world) {
   unique(resultKeys,k=>k,'semantic result keys');
   for(const commit of r.commits)for(const id of commit.numericReceiptIds)ensure(r.effects.some(e=>e.attemptId===commit.attemptId&&e.numericReceiptId===id),'LEDGER','Commit references missing effect');
   validateSemesterReviews(world);
+  validateAttemptLineage(world);
   validateEventSelectionHistory(world);
   validateStoryHistory(world);
   validateNpcHistory(world);

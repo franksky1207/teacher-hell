@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { runtimeScenario,request,id } from './support/runtime.js';
+import { runtimeScenario,request,id,event,fact,open,result } from './support/runtime.js';
 import { createSave,restoreSave,saveToken,sameToken } from '../src/storage/format.js';
 import { createStoredSession } from '../src/storage/session.js';
 import { runtimeOf,WorldError } from '../src/runtime/model.js';
@@ -55,4 +55,61 @@ test('storage: an overwritten career cannot impersonate the old operation receip
  replacement.world.identity.careerId=id('career','replacement');replacement.opening.identity.careerId=id('career','replacement');
  const manager=await createStoredSession(db,1);await manager.import(JSON.stringify(replacement),{expectedToken:manager.snapshot().token,confirmed:true});const disk=await db.read(1);
  await assert.rejects(a.execute(q),{code:'STALE'});assert.deepEqual(a.snapshot(),original);assert.deepEqual(await db.read(1),disk);
+});
+
+test('storage: retired attempt IDs cannot be reused after two retries or export/import',async()=>{
+ const db=memory(),s=await createStoredSession(db,1),w=runtimeScenario();await s.initialize(w);
+ const options=tag=>({attemptId:id('attempt',tag),seeds:{settlement:24,streams:{events:25}}});
+ await s.retry(options('first'));const first=s.snapshot().payload.world;
+ const oldRequest=sample(first,'retired-request');await s.execute(oldRequest);
+ await s.retry(options('second'));const second=s.snapshot();
+ await assert.rejects(s.execute(oldRequest),{code:'ATTEMPT'});
+ await assert.rejects(s.retry(options('first')),{code:'ATTEMPT'});
+ assert.deepEqual(s.snapshot(),second);assert.deepEqual(await db.read(1),second);
+ const imported=await createStoredSession(db,2);await imported.import(await s.export(),{expectedToken:null});
+ await assert.rejects(imported.retry(options('first')),{code:'ATTEMPT'});
+ await imported.retry(options('third'));
+ assert.equal(imported.snapshot().payload.world.identity.attemptId,options('third').attemptId);
+ assert.deepEqual(imported.snapshot().payload.opening,w);
+});
+
+test('storage: a failed retry write consumes no attempt ID and stale pages cannot retry',async()=>{
+ const db=memory(),s=await createStoredSession(db,1),w=runtimeScenario();await s.initialize(w);
+ const peer=await createStoredSession(db,1),before=s.snapshot();
+ const options={attemptId:id('attempt','atomic-lineage'),seeds:{settlement:81,streams:{events:82}}};
+ db.fail();await assert.rejects(s.retry(options),/quota/);
+ assert.deepEqual(s.snapshot(),before);assert.deepEqual(await db.read(1),before);
+ await s.retry(options);const saved=s.snapshot();
+ await assert.rejects(peer.retry({attemptId:id('attempt','stale-lineage'),seeds:options.seeds}),{code:'STALE'});
+ assert.deepEqual(await db.read(1),saved);
+ const reloaded=await createStoredSession(db,1);assert.equal((await reloaded.retry(options)).duplicate,true);
+ assert.deepEqual(reloaded.snapshot(),saved);
+});
+
+test('storage: missing, altered or unsupported retry lineage fails save validation',async()=>{
+ const db=memory(),s=await createStoredSession(db,1),w=runtimeScenario();await s.initialize(w);
+ await s.retry({attemptId:id('attempt','validated-lineage'),seeds:{settlement:81,streams:{events:82}}});
+ const saved=s.snapshot().payload,key='teacher-hell/attempt-lineage';
+ for(const mutate of [p=>delete p.world.extensions[key],p=>p.world.extensions[key].version=2,p=>p.world.extensions[key].attemptIds.pop(),p=>p.world.extensions[key].attemptIds.push(id('attempt','unrecorded'))]){
+  const bad=clone(saved);mutate(bad);assert.throws(()=>restoreSave(bad));
+ }
+ assert.deepEqual(restoreSave(JSON.stringify(saved)),saved);
+});
+
+test('storage: repeated retry keeps the full opening and removes abandoned facts and numeric outcomes',async()=>{
+ const db=memory(),s=await createStoredSession(db,1),w=runtimeScenario(),e=event(w);
+ await s.initialize(w);await s.execute(request(w,'opening-fact',[open(e),fact(e)]),{captureOpening:true});
+ const opening=s.snapshot().payload.opening,subject=e.participantIds[1];
+ const options=tag=>({attemptId:id('attempt',tag),seeds:{settlement:41,streams:{events:42}}});
+ for(const tag of ['full-first','full-second','full-third']){
+  const current=s.snapshot().payload.world;
+  const q=request(current,tag,[fact(e,'abandoned-'+tag),result(e,subject,'numeric-'+tag,5,tag)]);
+  await s.execute(q);assert.notDeepEqual(s.snapshot().payload.world.numeric.evolution,opening.numeric.evolution);
+  await s.retry(options(tag));const next=s.snapshot().payload;
+  assert.deepEqual(next.opening,opening);assert.deepEqual(next.world.numeric.evolution,opening.numeric.evolution);
+  assert.deepEqual(next.world.events,opening.events);assert.deepEqual(next.world.enrollments,opening.enrollments);
+  for(const field of ['facts','claims','knowledge','disclosures','effects','stages'])assert.deepEqual(runtimeOf(next.world)[field],runtimeOf(opening)[field]);
+  assert.equal(next.world.numeric.receipts.length,0);assert.equal(runtimeOf(next.world).commits.length,runtimeOf(opening).commits.length+1);
+  await assert.rejects(s.execute(q),{code:'ATTEMPT'});
+ }
 });

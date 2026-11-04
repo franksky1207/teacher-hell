@@ -55,6 +55,35 @@ export async function importsAndRetry(t){
  const old=before.token;await s.delete({expectedToken:old,confirmed:true});await s.initialize(t.w);await rejects(()=>t.db.write(1,createSave(t.w,t.w),old),'STALE');
  await rejects(()=>s.import(text,{expectedToken:review.token,confirmed:true}),'STALE');return 'versions / overwrite review / retry snapshot / deletion ABA';
 }
+/** Retry identity safety only. Supplied moments, no annual failure/completion claim. */
+export async function retryLineageStorage(testId,initialize=true){
+ const db=createIndexedDBStorage({factory:globalThis.indexedDB,namespace:'test',testId:testId+'-retry-lineage'});
+ try{
+  const s=await createStoredSession(db,1),w=runtimeScenario(71);
+  const options=tag=>({attemptId:id('attempt','lineage-'+tag),seeds:{settlement:92,streams:{events:93}}});
+  if(initialize){
+   await s.initialize(w);await s.retry(options('first'));
+   const first=s.snapshot().payload.world,old=request(first,'abandoned-lineage-draw',[{type:'sample',stream:'events',id:'discarded',weights:[1,2,3]}]);
+   await s.execute(old);await s.retry(options('second'));
+   const before=s.snapshot();await rejects(()=>s.execute(old),'ATTEMPT');
+   await rejects(()=>s.retry(options('first')),'ATTEMPT');check(equal(s.snapshot(),before),'retired attempt modified memory');
+   const abortDriver=createIndexedDBStorage({factory:globalThis.indexedDB,namespace:'test',testId:testId+'-retry-lineage',faults:{beforeCommit({transaction}){transaction.abort();}}});
+   try{const failing=await createStoredSession(abortDriver,1);await rejects(()=>failing.retry(options('third')));check(equal(await db.read(1),before),'failed retry consumed an ID or modified disk');}finally{await abortDriver.close();}
+   const imported=await createStoredSession(db,2);await imported.import(await s.export(),{expectedToken:null});
+   await rejects(()=>imported.retry(options('first')),'ATTEMPT');check(equal(imported.snapshot().payload,s.snapshot().payload),'import changed retry state');
+  }else{
+   const before=s.snapshot();await rejects(()=>s.retry(options('first')),'ATTEMPT');
+   check(equal(s.snapshot(),before),'navigation lost retired identity protection');
+   const stale=await createStoredSession(db,1);await s.retry(options('third'));
+   const after=s.snapshot();await rejects(()=>stale.retry(options('fourth')),'STALE');
+   check(equal(await db.read(1),after),'stale retry overwrote new attempt');
+   check(equal(after.payload.opening,w),'retry regenerated or modified opening');
+   check(runtimeOf(after.payload.world).history.length===1&&runtimeOf(after.payload.world).facts.length===0,'discarded attempt history leaked');
+   check((await s.retry(options('third'))).duplicate,'retry re-delivery wrote a new attempt');
+  }
+  const text=await s.export();return {provenance:'synthetic retry safety only; no annual failure or success',saveBytes:new TextEncoder().encode(text).byteLength,signature:JSON.stringify(s.snapshot())};
+ }finally{await db.close();}
+}
 export async function decision(t){
  const s=await createStoredSession(t.db,1),w=s.snapshot().payload.world,e=event(w,'choice',{nodeId:'choose',options:[{id:'a',emotional:true},{id:'b',emotional:false},{id:'c',emotional:false}],confirmedOptionId:null});
  const q=request(w,'open-choice',[open(e),fact(e)]);await s.execute(q);const pending=s.snapshot(),reopen=await createStoredSession(t.db,1);check(equal(reopen.snapshot(),pending),'pending choice rerolled');

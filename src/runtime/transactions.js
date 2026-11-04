@@ -22,7 +22,7 @@ import { createRandom, restoreRandom } from '../numeric/random.js';
 import { assertShape, identifier } from '../player/panel.js';
 import { probability } from '../numeric/math.js';
 import { validateRoles } from '../world/roles.js';
-import { WORLD_KEY, WorldError, ensure, same, runtimeOf, key, momentOf, knownActor, findEvent, findFact, findClaim, findKnowledge, knowledgeReferences, validatePlan, validateSource, restoreWorldState } from './model.js';
+import { WORLD_KEY, ATTEMPT_LINEAGE_KEY, worldAttemptIds, WorldError, ensure, same, runtimeOf, key, momentOf, knownActor, findEvent, findFact, findClaim, findKnowledge, knowledgeReferences, validatePlan, validateSource, restoreWorldState } from './model.js';
 
 const clone=value=>structuredClone(value);
 function history(world,command,type,eventId,stageId,factIds,data) {
@@ -370,17 +370,25 @@ export function createWorldSession(saved) {
 /** Explicit retry initialization from an opening snapshot, not from the failed world.
  * Annual authorization/snapshot selection belongs to batch 11; seeds are caller-owned.
  * Retain only the snapshot's legitimate history and archive its original N6 ledger.
+ * Stored callers must pass the abandoned world as argument three to retain IDs
+ * retired since the opening. The two-argument form only knows the supplied snapshot.
  */
-export function forkWorldAttempt(openingSnapshot,{attemptId,seeds}) {
+export function forkWorldAttempt(openingSnapshot,{attemptId,seeds},abandonedSnapshot=openingSnapshot) {
   const world=restoreWorldState(openingSnapshot),r=runtimeOf(world);validateId(attemptId,'attempt');
-  ensure(attemptId!==world.identity.attemptId&&!r.commits.some(c=>c.attemptId===attemptId),'ATTEMPT','Attempt ID must be fresh');
+  const abandoned=restoreWorldState(abandonedSnapshot),previous=runtimeOf(abandoned);
+  ensure(['careerId','playerId','schoolId'].every(k=>world.identity[k]===abandoned.identity[k])&&world.position.openingId===abandoned.position.openingId&&world.position.schoolYearId===abandoned.position.schoolYearId,'SNAPSHOT','Abandoned attempt belongs to another career or opening');
+  ensure(['commits','history'].every(field=>r[field].every((entry,index)=>same(entry,previous[field][index]))),'SNAPSHOT','Opening must precede the abandoned attempt');
+  const used=[...new Set([...worldAttemptIds(world),...worldAttemptIds(abandoned)])];
+  ensure(!used.includes(attemptId),'ATTEMPT','Attempt ID must never have been used in this career');
   canonicalData(seeds);assertShape(seeds,['settlement','streams']);assertShape(seeds.streams,Object.keys(world.random));
   const old=world.numeric;r.numericArchives.push({attemptId:old.attemptId,random:old.random,receipts:old.receipts});
   world.numeric=startSettlement(old.evolution,{seed:seeds.settlement,attemptId});world.identity.attemptId=attemptId;
   for(const name of Object.keys(world.random))world.random[name]=createRandom(seeds.streams[name]).snapshot();
   const id=createId('operation',[attemptId,'initialize-retry']);
-  const request={id,attemptId,seeds:clone(seeds),openingRevision:r.revision};
-  const h=history(world,request,'retry',null,null,[],{previousAttemptId:old.attemptId,openingRevision:r.revision});
+  const attemptIds=[...used,attemptId];
+  const request={id,attemptId,seeds:clone(seeds),openingRevision:r.revision,attemptIds};
+  world.extensions[ATTEMPT_LINEAGE_KEY]={version:1,attemptIds};
+  const h=history(world,request,'retry',null,null,[],{previousAttemptId:old.attemptId,abandonedAttemptId:abandoned.identity.attemptId,openingRevision:r.revision,attemptIds});
   r.revision++;r.commits.push({id,attemptId,revision:r.revision,request:canonicalData(request),historyIds:[h.id],numericReceiptIds:[],draws:[]});
   return restoreWorldState(world);
 }

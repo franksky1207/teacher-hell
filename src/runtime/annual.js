@@ -114,7 +114,7 @@ export function annualEvidence(w,{end=snapshot(w,'end'),endRelations=relations(w
   if(!old){const values=structuredClone(edge.values);for(const change of history.filter(h=>h.type==='effect').flatMap(h=>h.data.observed??[]).filter(c=>c.target.kind==='relationship'&&c.target.id===edge.id).reverse()){need(values[change.code]===change.after,'relationship effect chain differs');values[change.code]=change.before;}old={values};}
   const interactions=history.filter(h=>h.type==='effect'&&h.data.changes.some(c=>c.target.kind==='relationship'&&c.target.id===edge.id)&&h.factIds.some(id=>r(w).facts.some(f=>f.id===id&&f.witnessIds.includes(w.identity.playerId))||r(w).disclosures.some(d=>d.factId===id&&d.actorId===w.identity.playerId&&d.order<=untilOrder)));
   if(!interactions.length)continue;
-  const quality=mean([development(old.values['5-1'],edge.values['5-1']),development(old.values['5-3'],edge.values['5-3']),development(100-old.values['5-4'],100-edge.values['5-4'])]);
+  const quality=relationshipMetric(old.values,edge.values);
   observe('relationship',edge.id,edge.fromId===header.playerId?edge.toId:edge.fromId,quality,100,100,{criterion:'observed-directed-relationship',direction:{fromId:edge.fromId,toId:edge.toId},historyIds:interactions.map(h=>h.id),eventIds:[...new Set(interactions.map(h=>h.eventId))],factIds:[...new Set(interactions.flatMap(h=>h.factIds))]});
  }
  const basisId=`${prefix}:completion-basis`,completionRef=`${prefix}:completion`,summaryRef=`${prefix}:summary`;
@@ -210,3 +210,6 @@ export function validateAnnualObservations(w){
 }
 /** Engineering/retrospective authority, including hidden observation witnesses. */
 export function readAnnualResults(w){return r(w).history.filter(h=>h.type==='annual-success').map(h=>({id:h.id,...structuredClone(h.data)}));}
+
+/** Shared N7 directed-perception observation; no numeric state is changed. */
+export function relationshipMetric(before,after){return mean([development(before['5-1'],after['5-1']),development(before['5-3'],after['5-3']),development(100-before['5-4'],100-after['5-4'])]);}

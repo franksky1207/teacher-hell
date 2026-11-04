@@ -1,9 +1,9 @@
 # teacher-hell
 
-> 第11批已完成11-A學期回顧及11-B第一學年正式通關；11-C已形成正式事件、客觀原班職務中斷、失敗結算、存讀與授權重試的第一學年閉環；身心／社會代表事件及驗收紀錄見docs/05文末。11-D已完成三年同屆、正常結屆及跨年／跨屆重試核心閉環；11-E～11-F未開始，第二階段尚未具備合併條件。`npm run demo:annual`可重建完整第一學年；`demo:reviews`仍是明標跳過日期的期末邊界示範。
+> 第11批已完成11-A學期回顧及11-B第一學年正式通關；11-C已形成正式事件、客觀原班職務中斷、失敗結算、存讀與授權重試的第一學年閉環；身心／社會代表事件及驗收紀錄見docs/05文末。11-D已完成三年同屆、正常結屆及跨年／跨屆重試核心閉環；11-E已接上N7生涯結算、歷史導向結局及獨立紀念庫，驗證區分真實短期世界與30年契約邊界；11-F未開始，第二階段尚未具備合併條件。`npm run demo:annual`可重建完整第一學年；`demo:reviews`仍是明標跳過日期的期末邊界示範。
 教師荒謬地獄
 
-目前：01～04已合併main，05～10及11-A～11-D累積於Draft [PR #20](https://github.com/franksky1207/teacher-hell/pull/20)。未發布或部署。以下舊批次紀錄保留當時語境；最新契約、代表事件與驗收見 [docs/05](docs/05-未定案與工作方式.md)文末。
+目前：01～04已合併main，05～10及11-A～11-E累積於Draft [PR #20](https://github.com/franksky1207/teacher-hell/pull/20)。未發布或部署。以下舊批次紀錄保留當時語境；最新契約、代表事件與驗收見 [docs/05](docs/05-未定案與工作方式.md)文末。
 
 ```sh
 npm ci
@@ -1565,3 +1565,23 @@ npm run demo:career:report
 不改日期、年級或成敗旗標。年度2／3的失敗分支與年度4多次重試各自從真正opening開始。
 開學原子性另驗日期到期轉入、寫入中止及重送；完整世界檔不提交Git。
 這些入口不執行11-E／11-F；最新實測與長期容量限制集中於docs/05。
+
+
+### 11-E：30年結算、歷史導向結局與生涯紀念
+
+正式第30年年度成功在原交易產生唯一生涯結算；`readCareerHistory`讀取封存結果。
+原N7六項權重／精度不變，資料轉接與來源責任見[docs/04](docs/04-筆記本學年與結局.md#30年正式證據與紀念資料契約11-e)。
+紀念獨立於三個遊玩槽，完成後自動保存，失敗可補存；`listMemorials`可查閱，`restart`只接受經原核心驗證的全新第一年opening。
+
+```sh
+npm run demo:completion                     # 明標30年契約輸入，絕非自然世界通關
+npm run test:module -- module=completion,assessment,storage
+npm run test:completion:browser             # 真正IndexedDB、三槽與實際導航
+# 以下先以demo:career重建實際11-D checkpoint；每檔獨立處理，限制RAM峰值
+node --max-old-space-size=3072 --expose-gc scripts/completion-world-check.js --checkpoint=year-1
+# 同入口另驗 year-2、year-3、opening-4
+```
+
+契約替身由既有N7 fixture組建，不能經正式世界還原器匯入，不向玩家存檔寫入假通關history。
+完整Node、Chromium、來源雜湊及新增容量／時間量測見docs/05的11-E紀錄及`simulation/results/completion-core-20261105.json`。
+尚未進行真正30年逐時段自然世界、手機／Safari、平衡與11-F；沒有合併main或部署。

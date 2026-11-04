@@ -1,3 +1,5 @@
+import { validateMemorial } from './memorial.js';
+import { canonicalData } from '../changes/settlement.js';
 /** Platform adapter. Each slot has its own DB, so large transactions cannot lock other slots.
  * A permanent generation record survives deletion to prevent stale-token ABA writes. */
 import { restoreSave, saveToken, sameToken } from './format.js';
@@ -18,6 +20,36 @@ export function createIndexedDBStorage({factory,namespace,testId, faults={}}) {
       request.onsuccess=()=>{const db=request.result;if(closed||rejected){db.close();reject(new WorldError('STORAGE','Storage closed'));return;}db.onversionchange=()=>{db.close();connections.delete(slot);};resolve(db);};
     }));
     return connections.get(slot);
+  }
+  let memorialConnection;
+  function openMemorial(){
+    ensure(!closed,'STORAGE','Storage closed');
+    if(!memorialConnection)memorialConnection=new Promise((resolve,reject)=>{
+      const req=factory.open(`${prefix}:memorials`,1);
+      req.onupgradeneeded=()=>req.result.createObjectStore('memorials',{keyPath:'id'});
+      req.onerror=()=>{memorialConnection=null;reject(req.error);};
+      req.onblocked=()=>{memorialConnection=null;reject(new WorldError('BLOCKED','Memorial storage blocked'));};
+      req.onsuccess=()=>{const db=req.result;if(closed){db.close();reject(new WorldError('STORAGE','Storage closed'));return;}db.onversionchange=()=>{db.close();memorialConnection=null;};resolve(db);};
+    });return memorialConnection;
+  }
+  async function listMemorials(){
+    const db=await openMemorial(),rows=await new Promise((resolve,reject)=>{const tx=db.transaction('memorials','readonly'),req=tx.objectStore('memorials').getAll();tx.oncomplete=()=>resolve(req.result);tx.onabort=()=>reject(tx.error);tx.onerror=()=>{};});
+    return rows.map(row=>{try{return {status:'valid',record:validateMemorial(row)};}catch{return {status:'corrupt',id:typeof row?.id==='string'?row.id:null};}});
+  }
+  async function writeMemorial(input){
+    const m=validateMemorial(input),db=await openMemorial();
+    return new Promise((resolve,reject)=>{const tx=db.transaction('memorials','readwrite'),store=tx.objectStore('memorials');let failure,result;
+      tx.oncomplete=()=>resolve(result);tx.onabort=()=>reject(failure??tx.error??new WorldError('ABORT','Memorial write aborted'));tx.onerror=()=>{};
+      const req=store.get(m.id);req.onsuccess=()=>{try{
+        if(req.result){
+          let old;try{old=validateMemorial(req.result);}catch{ensure(req.result.kind==='teacher-hell-memorial'&&req.result.version===1&&req.result.id===m.id,'MEMORIAL','Unsupported memorial cannot be overwritten');}
+          if(old){ensure(canonicalData(old)===canonicalData(m),'CONFLICT','Career memorial differs');result={status:'retained',duplicate:true,id:m.id};}
+          else {store.put(m);result={status:'retained',duplicate:false,repaired:true,id:m.id};}
+        }
+        else {store.add(m);result={status:'retained',duplicate:false,id:m.id};}
+        faults.beforeMemorialCommit?.({transaction:tx});
+      }catch(error){failure=error;tx.abort();}};
+    });
   }
   async function read(slot){
     const db=await open(slot);
@@ -70,5 +102,5 @@ export function createIndexedDBStorage({factory,namespace,testId, faults={}}) {
       };
     });
   }
-  return Object.freeze({read,write,inspect,async close(){closed=true;for(const connection of connections.values())try{(await connection).close();}catch{}connections.clear();}});
+  return Object.freeze({read,write,inspect,listMemorials,writeMemorial,async close(){closed=true;for(const connection of connections.values())try{(await connection).close();}catch{}connections.clear();if(memorialConnection)try{(await memorialConnection).close();}catch{} }});
 }

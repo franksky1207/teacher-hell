@@ -42,7 +42,9 @@
     "demo:career:retry": "node --max-old-space-size=4096 --expose-gc scripts/career-retry-demo.js",
     "demo:career:boundary": "node --max-old-space-size=3072 --expose-gc scripts/career-boundary-demo.js",
     "test:career:browser": "npm run build && node scripts/storage-browser.js --career-only",
-    "demo:career:report": "node --max-old-space-size=3072 --expose-gc scripts/career-report.js"
+    "demo:career:report": "node --max-old-space-size=3072 --expose-gc scripts/career-report.js",
+    "demo:completion": "node --expose-gc scripts/completion-demo.js",
+    "test:completion:browser": "npm run demo:completion && npm run build && node scripts/storage-browser.js --completion-only"
   },
   "devDependencies": {
     "acorn": "8.15.0"

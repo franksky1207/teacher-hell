@@ -12,6 +12,7 @@ let browser, server, socket, browserDiagnostics='';
 try {
   await cp(resolve(root,'dist'),join(temporary,'site','teacher-hell'),{recursive:true});
   await cp(resolve(root,'test/support'),join(temporary,'site','teacher-hell/test/support'),{recursive:true});
+  if(process.argv.includes('--completion-only'))await cp(resolve(root,'work/completion/memorial.json'),join(temporary,'site','teacher-hell/test/support/completion-memorial.json'));
   if(process.argv.includes('--failure-only'))for(const name of ['cycle-1','cycle-2','cycle-3','physical'])await cp(resolve(root,`work/failure/${name}.json`),join(temporary,'site',`teacher-hell/test/support/failure-${name}.json`));
   if(process.argv.includes('--career-only'))await cp(resolve(root,'work/career/failure-4-1.json'),join(temporary,'site','teacher-hell/test/support/career-failure.json'));
   if(process.argv.includes('--annual'))await cp(resolve(root,'work/annual/world.json'),join(temporary,'site','teacher-hell/test/support/annual-completed.json'));
@@ -75,6 +76,13 @@ try {
   };
   const testId=temporary.split('/').at(-1);
   const setup=initialize=>`(async()=>{globalThis.checks=await import('./test/support/storage-checks.js');globalThis.st=await checks.setup(${JSON.stringify(testId)},${initialize});return true;})()`;
+  if(process.argv.includes('--completion-only')){
+    const expression=initialize=>`(async()=>{const m=await import('./test/support/completion-checks.js');return m.completionStorage(${JSON.stringify(testId)},${initialize});})()`;
+    console.log('PASS 11-E memorial IndexedDB',JSON.stringify(await evalIn(expression(true))));
+    await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+    console.log('PASS 11-E actual navigation',JSON.stringify(await evalIn(expression(false))));
+  }
+  if(!process.argv.includes('--completion-only')){
   if(!process.argv.includes('--story-only')&&!process.argv.includes('--failure-only')&&!process.argv.includes('--career-only')){
   await evalIn(setup(true));
   console.log('PASS',await evalIn('checks.basics(st)'));
@@ -193,6 +201,7 @@ try {
    const reopened=await evalIn(run(false),sessionId,1200000);if(saved.hash!==reopened.hash)throw Error('Fourth-year actual navigation changed world');console.log('PASS actual navigation preserves fourth-year opening and three successes',JSON.stringify(reopened));
   }
   console.log('PASS Chromium storage: all checks complete; engineering acceptance only; NOT Safari/iPhone or full 30-year gameplay.');
+  }
   await call('Browser.close');
 } finally {
   socket?.close();

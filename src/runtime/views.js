@@ -1,3 +1,4 @@
+import { readCareerCompletion } from './career.js';
 import { readFailure } from './homeroom.js';
 import { readSemesterReviews } from './reviews.js';
 import { readAnnualResults } from './annual.js';
@@ -68,3 +69,6 @@ export function readArchivedClass(saved,classId){
   members:[...people].map(id=>({id,name:registry.profiles[id].displayName})),facts:facts.map(f=>({id:f.id,description:f.description,subjectIds:f.subjectIds,at:f.occurredAt})),claims,
   annualIds:r.history.filter(h=>h.type==='annual-success'&&h.data.end.classroom.id===classId&&h.order<entry.order).map(h=>h.id)};
 }
+
+/** Locked player-known ending; viewing performs no settlement. */
+export function readCareerHistory(saved){return readCareerCompletion(restoreWorldState(saved));}

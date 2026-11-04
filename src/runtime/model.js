@@ -1,3 +1,4 @@
+import { validateCareerCompletion } from './career.js';
 import { validateHomeroom } from './homeroom.js';
 import { validateSemesterReviews } from './reviews.js';
 import { validateAnnualObservations } from './annual.js';
@@ -240,6 +241,7 @@ export function validateWorldState(world) {
   for(const commit of r.commits)for(const id of commit.numericReceiptIds)ensure(effectReceipts.has(key(commit.attemptId,id)),'LEDGER','Commit references missing effect');
   validateSemesterReviews(world);
   validateAnnualObservations(world);
+  validateCareerCompletion(world);
   validateAttemptLineage(world);
   validateEventSelectionHistory(world);
   validateStoryHistory(world);

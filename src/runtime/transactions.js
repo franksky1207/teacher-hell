@@ -1,3 +1,4 @@
+import { careerResult,compileCareerCompletion } from './career.js';
 import { HOMEROOM_KEY,initializeHomeroom,failureResult,compileFailure,crisisObservation,authorizeRetry } from './homeroom.js';
 import { initializeSemesterReviews, pendingSemesterReview, semesterReviewData, acknowledgeSemesterReview } from './reviews.js';
 import { initializeAnnualObservations,compileAnnualSuccess,annualResult,ANNUAL_KEY,openAnnualObservations } from './annual.js';
@@ -93,6 +94,10 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
   } else if(op.type==='settle-school-year'){
     assertShape(op,['type']);ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player settles a year');
     syncNumeric(world,numericSession);history(world,command,'annual-success',null,null,[],compileAnnualSuccess(world));
+    if(world.position.serviceYear===30)history(world,command,'career-completion',null,null,[],compileCareerCompletion(world));
+  } else if(op.type==='settle-career'){
+    assertShape(op,['type']);ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player settles a career');
+    syncNumeric(world,numericSession);history(world,command,'career-completion',null,null,[],compileCareerCompletion(world));
   } else if(op.type==='read-semester-review'){
     ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player can acknowledge a report');
     history(world,command,'semester-review-read',null,null,[],acknowledgeSemesterReview(world,op));
@@ -363,10 +368,11 @@ function prepareDraft(world,request,ownedNumeric=null) {
     ensure(request.attemptId===world.identity.attemptId,'ATTEMPT','Wrong attempt');
     const r=runtimeOf(world),encoded=canonicalData(request),prior=r.commits.find(c=>c.id===request.id&&c.attemptId===request.attemptId);
     if(prior){ensure(prior.request===encoded,'CONFLICT','Operation ID reused with different content');return {world,receipt:clone(prior),duplicate:true};}
-    ensure(request.expectedRevision===r.revision,'STALE','World revision changed');ensure(!failureResult(world),'YEAR_FAILED','Retry the failed year before further world actions');preconditions(world,request.preconditions);
+    ensure(request.expectedRevision===r.revision,'STALE','World revision changed');ensure(!failureResult(world),'YEAR_FAILED','Retry the failed year before further world actions');ensure(!careerResult(world),'CAREER_COMPLETE','The completed career is frozen');preconditions(world,request.preconditions);
     ensure(Array.isArray(request.operations)&&request.operations.length>0,'SCHEMA','Nonempty operations required');
     if(request.operations.some(op=>op.type==='read-semester-review'))ensure(request.operations.length===1,'REVIEW_READ','Acknowledge a report in its own timeless transaction');
     if(request.operations.some(op=>op.type==='transition-school-year'))ensure(request.operations.length===1,'ANNUAL','Transition a year in its own transaction');
+    if(request.operations.some(op=>op.type==='settle-career'))ensure(request.operations.length===1,'CAREER','Settle a career in its own timeless transaction');
     if(request.operations.some(op=>op.type==='settle-school-year'))ensure(request.operations.length===1,'ANNUAL','Settle a year in its own timeless transaction');
     const storyIds=request.operations.filter(o=>o.type==='story'||o.type==='admit-event').map(o=>o.eventId);
     ensure(new Set(storyIds).size===storyIds.length,'STORY','One story action per event per transaction');
@@ -374,7 +380,7 @@ function prepareDraft(world,request,ownedNumeric=null) {
     const receipt={id:command.id,attemptId:command.attemptId,revision:r.revision+1,request:encoded,historyIds:[],numericReceiptIds:[],draws:[]};
     let numerical=ownedNumeric??createSettlementSession(world.numeric);
     for(const operation of command.operations)numerical=execute(world,command,operation,numerical,receipt);
-    const readingOnly=['read-semester-review','settle-school-year','transition-school-year'].includes(command.operations[0].type);
+    const readingOnly=['read-semester-review','settle-school-year','transition-school-year','settle-career'].includes(command.operations[0].type);
     if(!readingOnly)numerical=execute(world,command,{type:'institution-tick'},numerical,receipt);
     const arrangement=readingOnly?null:arrangeReplenishment(world,command,numerical);
     if(arrangement){history(world,command,'school',null,null,[arrangement.data.basisFactId],arrangement.data);numerical=createSettlementSession(arrangement.snapshot);}

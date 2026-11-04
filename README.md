@@ -1,12 +1,24 @@
 # teacher-hell
 教師荒謬地獄
 
+目前：01～04已合併main，05～10累積於Draft [PR #20](https://github.com/franksky1207/teacher-hell/pull/20)。11尚未開始，未發布或部署。以下舊批次紀錄保留當時語境；最新契約、法規來源及驗收見 [docs/05第10批](docs/05-未定案與工作方式.md#第10批工程校園制度行政程序與職責2026-11-04)。
+
+```sh
+npm ci
+npm run demo:procedures                      # A～F；原操作／事實／收據在work/procedures
+npm run demo:procedures -- --scenario=C --seed=74
+npm run test:module -- module=procedures
+npm test
+npm run test:storage:browser
+npm run simulate:procedures                 # 明標合成30年程序journal，非第11批遊戲
+```
+
 N1～N8純數值工程已完成封版驗收；這不是完整遊戲。最新架構、30年實測與限制見文末N8。
-舊批次章節保留當時的驗收與待辦語境；本次N8已獲使用者明確授權，全部檢查通過後直接合併main，未授權部署。
+舊批次章節保留當時的驗收與待辦語境；N1～N8已在先前階段整合。本批10沿用Draft PR #20，不合併main、不部署。
 
-## 目前工程入口｜第一階段基礎
+## 第一階段基礎工程入口（歷史紀錄）
 
-第01～04批在 `integrate/phase1-foundation` 累積開發；正式22批、契約責任及各批交接集中於
+第01～04批已合併main，原累積分支為 `integrate/phase1-foundation`；正式22批、契約責任及各批交接集中於
 [docs/05](docs/05-未定案與工作方式.md#第01批工程紀錄與後續介面2026-11-02)。
 這一節取代下面歷史N1～N8章節對「目前工具鏈」的說明；歷史驗收數據仍保留。
 

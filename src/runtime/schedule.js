@@ -47,7 +47,7 @@ export function guardCalendarOperation(world,command,op){
  assertShape(context,context.kind==='activity'?['kind','activityId']:['kind']);
  need(['formal-event','activity','procedure','routine'].includes(context.kind),'CALENDAR_CONTEXT','Unknown calendar result channel');
  need(op.type==='advance-time'||op.type==='prepare-semester'||!world.extensions['teacher-hell/world'].history.some(h=>h.type==='slot-complete'&&h.cursor===plan.cursor),'TIME_BARRIER','Completed slot is closed to further work; advance before starting another action');
- if(['academic','campus','school-action'].includes(op.type))need(context.kind==='routine'||context.kind==='procedure','CALENDAR_CONTEXT','School operations require routine/procedure context');
+ if(['academic','campus','school-action','institution'].includes(op.type))need(context.kind==='routine'||context.kind==='procedure','CALENDAR_CONTEXT','School operations require routine/procedure context');
  if(['advance-time','finish-slot','prepare-semester','plan-vacation'].includes(op.type))return;
  const domain=['story','draw-events','admit-event','event-lifecycle','event-exposure','school','open-event','fact','link-fact','claim','learn','belief','reveal','result','confirm-choice','stage','enrollment-reference','role'].includes(op.type);
  if(!domain)return;

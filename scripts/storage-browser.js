@@ -145,6 +145,12 @@ try {
   const academicRestored=await evalIn(`(async()=>{const school=await import('./test/support/academic-checks.js');return school.academicSignature(${JSON.stringify(testId)});})()`);
   if(academicRestored!==academicSaved.signature)throw Error('Academic page navigation changed grades/routine/random');
   console.log('PASS phase 09 actual page navigation restores exact academic world');
+  const procedureSaved=await evalIn(`(async()=>{const module=await import('./test/support/procedure-checks.js');return module.procedureStorage(${JSON.stringify(testId)});})()`);
+  console.log('PASS phase 10 real IndexedDB procedures/protection/deadlines/long duty/rollback/replay/import/three slots',JSON.stringify(procedureSaved.report));
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+  const procedureRestored=await evalIn(`(async()=>{const module=await import('./test/support/procedure-checks.js');return module.procedureSignature(${JSON.stringify(testId)});})()`);
+  if(procedureRestored!==procedureSaved.signature)throw Error('Procedure actual navigation changed deadlines/evidence/history');
+  console.log('PASS phase 10 actual navigation restores exact institutional world');
   console.log('PASS Chromium storage: all checks complete; synthetic only; NOT Safari/iPhone or full 30-year gameplay.');
   await call('Browser.close');
 } finally {

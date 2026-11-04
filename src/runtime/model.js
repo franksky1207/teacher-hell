@@ -1,3 +1,4 @@
+import { validateInstitutionHistory,mayReadProcedureFact } from './procedures.js';
 import { validateAcademicHistory } from './academics.js';
 import { validateCampusHistory } from './campus.js';
 import { validateNpcHistory } from './autonomy.js';
@@ -74,6 +75,7 @@ export function stamp(world,at,cursor) {
 /** All historical sources must precede acquisition, including within one slot. */
 export function validateSource(world,actor,factId,claimId,versionId,source,at,cursor,order) {
   assertShape(source,['kind','actorId','basisFactId']);knownActor(world,actor);knownActor(world,source.actorId);
+  ensure(mayReadProcedureFact(world,actor,factId,order),'KNOWLEDGE','Confidential procedure information requires explicit access');
   const fact=findFact(world,factId),basis=findFact(world,source.basisFactId);
   ensure(basis.order<order&&fact.order<order&&basis.cursor<=cursor&&fact.cursor<=cursor,'KNOWLEDGE','Source/fact was not available yet');
   ensure(basis.occurredAt.date<=at.date,'KNOWLEDGE','Source occurs after acquisition');
@@ -99,7 +101,7 @@ export function knowledgeReferences(world,event) {
 }
 export function validateWorldState(world) {
   validateFoundationEnvelope(world);
-  validateAcademicHistory(world);validateCampusHistory(world);
+  validateInstitutionHistory(world);validateAcademicHistory(world);validateCampusHistory(world);
   const r=runtimeOf(world),school=world.numeric.evolution.world.registry;
   if(school){
     for(const record of [...school.enrollments,...school.assignments])ensure(record.from<=world.position.date&&(record.until===null||record.until<=world.position.date),'TIME','School history extends into the future');

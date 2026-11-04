@@ -1,3 +1,4 @@
+import { institutionState,procedureEligible } from './procedures.js';
 import { academicEligible,academicState } from './academics.js';
 import { npcGroups } from './autonomy.js';
 import { validateStoryReference } from './story-content.js';
@@ -31,9 +32,10 @@ export function validateEventDefinitions(definitions){
   const core=tuple(d.coreCodes);need(!coreByTopic.has(d.topicId)||coreByTopic.get(d.topicId)===core,'Topic core must be shared');coreByTopic.set(d.topicId,core);
   need(d.weights.length===6&&d.weights.every(x=>Number.isFinite(x)&&x>=0)&&Math.abs(d.weights.reduce((a,b)=>a+b,0)-1)<1e-12,'Six weights must sum to one');
   need(d.directions.length===6&&d.directions.every(x=>[1,-1].includes(x)),'Explicit six directions');
-  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['companions','roleIds','affiliation','knowledge','groups','academic'].filter(k=>Object.hasOwn(e,k))]);
+  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['companions','roleIds','affiliation','knowledge','groups','academic','procedure'].filter(k=>Object.hasOwn(e,k))]);
   need(e.people.length>0&&e.people.every(x=>['player','student','caregiver','staff','reunion','contact'].includes(x)),'Participant scopes');
   for(const k of ['dayKinds','slotIds','facts','history','numeric'])need(Array.isArray(e[k]),`Eligibility ${k} array`);
+  if(e.procedure){need(Array.isArray(e.procedure),'Procedure qualifications');for(const p of e.procedure){assertShape(p,['kind','status']);identifier(p.kind);identifier(p.status);}}
   if(e.academic){need(Array.isArray(e.academic),'Academic qualifications');for(const a of e.academic){need(['makeup','credit-deficit','change','admission'].includes(a.kind)&&typeof a.termId==='string','academic condition');}}
   if(e.roleIds)need(Array.isArray(e.roleIds)&&e.roleIds.every(id=>Number.isInteger(id)&&id>=1&&id<=35),'Role eligibility IDs');
   if(e.affiliation){assertShape(e.affiliation,['classId','status']);identifier(e.affiliation.classId);need(['active','former'].includes(e.affiliation.status),'Affiliation status');}
@@ -62,7 +64,7 @@ export function eventIndex(world){
  const byTopicPerson=new Map(),byDefinition=new Map(),byExclusion=new Map();
  const add=(map,key,s)=>{const list=map.get(key)??[];list.push(s);map.set(key,list);};
  for(const s of records){add(byTopicPerson,tuple(s.topicId,[...s.participantIds].sort()),s);add(byDefinition,s.definitionId,s);for(const g of s.exclusionGroups)add(byExclusion,g,s);}
- return {academics:academicState(world),records,byTopicPerson,byDefinition,byExclusion,exposures,history,facts:new Map(r.facts.map(f=>[f.id,f])),school:readSchoolCandidates(world.numeric.evolution.world)};
+ return {institution:institutionState(world),academics:academicState(world),records,byTopicPerson,byDefinition,byExclusion,exposures,history,facts:new Map(r.facts.map(f=>[f.id,f])),school:readSchoolCandidates(world.numeric.evolution.world)};
 }
 function participantPool(world,scope,index){
  const n=world.numeric.evolution.world,r=n.registry;
@@ -112,6 +114,7 @@ export function buildEventCandidates(world,definitions,{engineering=false}={}){
    if(e.knowledge&&!e.knowledge.every(k=>r.knowledge.some(x=>x.actorId===(k.actorId==='participant'?person:k.actorId)&&x.claimId===k.claimId&&x.versionId===k.versionId&&(k.belief==='any'||x.belief===k.belief))))reason='knowledge-condition';
    if(e.groups&&!e.groups.every(g=>npcGroups(world).some(x=>x.id===g.groupId&&!x.ended&&x.memberIds.includes(person))))reason='group-condition';
    if(e.academic&&!e.academic.every(a=>academicEligible(world,person,a,index.academics)))reason='academic-condition';
+   if(e.procedure&&!e.procedure.every(p=>procedureEligible(world,person,p,index.institution)))reason='procedure-condition';
    if(e.enrollment&&!enrollmentEligibility(world.numeric.evolution.world,{personId:person,...e.enrollment}).eligible)reason='enrollment';
    if(e.history.some(h=>(index.history.get(tuple(person,h.code))??[]).filter(x=>h.status==='any'||x.status===h.status).length<h.minimum))reason='history-threshold';
    try{if(e.numeric.some(n=>{const [v]=numericSources(world,person,[n.source],[n.code]);return v<n.min||v>n.max;}))reason='numeric-condition';}catch{reason='numeric-source-missing';}

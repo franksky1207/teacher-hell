@@ -56,7 +56,7 @@ export function npcWork(w){
   if(former&&!paths.some(f=>f.subjectIds.includes(k.actorId)))continue;
   const claim=r.claims.find(c=>c.id===k.claimId&&c.versionId===k.versionId);
   if(!done(w,k.actorId,k.claimId,k.versionId,k.belief))work.push({kind:'reaction',actorId:k.actorId,claimId:k.claimId,versionId:k.versionId});
-  for(const f of paths)if(f.subjectIds.includes(k.actorId))for(const toId of f.subjectIds){
+  for(const f of paths)if(!r.facts.find(fact=>fact.id===claim.factId)?.data.confidential&&f.subjectIds.includes(k.actorId))for(const toId of f.subjectIds){
    if(toId===k.actorId||toId===w.identity.playerId||!w.numeric.evolution.world.people[toId])continue;
    if(r.knowledge.some(x=>x.actorId===toId&&x.claimId===claim.id))continue;
    if(r.history.some(h=>h.type==='npc-update'&&h.data.decisions.some(d=>d.kind==='forward'&&d.actorId===k.actorId&&d.toId===toId&&d.claimId===claim.id&&d.action==='forward')))continue;

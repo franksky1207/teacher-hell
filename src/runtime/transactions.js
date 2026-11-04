@@ -1,3 +1,4 @@
+import { compileInstitution,tickOperation } from './procedures.js';
 import { compileAcademic,academicState } from './academics.js';
 import { compileCampus,schoolEnabled,schoolActions,schoolEventOccupied } from './campus.js';
 import { formalSlot } from './schedule.js';
@@ -49,10 +50,17 @@ function preconditions(world,conditions) {
 }
 function execute(world,command,op,numericSession,receipt,selectedAdmission=false,storyInternal=false,npcInternal=false) {
   const r=runtimeOf(world);
+  if(op.type==='institution-tick'){
+    assertShape(op,['type']);world.numeric=numericSession.snapshot();const tick=tickOperation(world);if(!tick)return numericSession;
+    for(const child of [{type:'open-event',event:tick.event},tick.fact,tick.operation])numericSession=execute(world,command,child,numericSession,receipt,false,false,true);
+    return numericSession;
+  }
   guardStoryOperation(world,op,storyInternal||npcInternal);
-  if(!npcInternal&&!(storyInternal&&op.type==='academic'))guardCalendarOperation(world,command,op);
+  if(!npcInternal&&!(storyInternal&&['academic','institution'].includes(op.type)))guardCalendarOperation(world,command,op);
   guardSelectedProgress(world,op);
-  if(op.type==='academic'){
+  if(op.type==='institution'){
+    world.numeric=numericSession.snapshot();const data=compileInstitution(world,op);history(world,command,'institution',null,null,[op.basisFactId],data);
+  } else if(op.type==='academic'){
     ensure(command.actorId===world.identity.playerId,'ACTOR','Academic operations belong to the teacher');
     world.numeric=numericSession.snapshot();const data=compileAcademic(world,op);world.random.academics=data.randomAfter;history(world,command,'academic',null,null,op.basisFactId?[op.basisFactId]:[],data);
     if(op.action==='publish'){
@@ -238,6 +246,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
       }
     }
     if(schoolEnabled(world)){const term=teachingTerm(world.position.date),day=formalSlot(world).day;if(term&&!term.camp&&world.position.date===semester(term.id).end&&day.slots.at(-1).id===world.position.slotId&&!academicState(world).terms[term.id]?.closed)numericSession=execute(world,command,{type:'academic',action:'close',termId:term.id},numericSession,receipt,false,false,true);}
+    numericSession=execute(world,command,{type:'institution-tick'},numericSession,receipt);
     numericSession=execute(world,command,{type:'npc-update'},numericSession,receipt);
     finishCalendarSlot(world,op);naturalAt(world,numericSession,world.position);history(world,command,'slot-complete',null,null,[],{activityIds:op.completedActivityIds});
   } else if(op.type==='prepare-semester') {
@@ -260,6 +269,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     }
     if(schoolEnabled(world)){const term=teachingTerm(world.position.date),saved=term?academicState(world).terms[term.id]:null;if(saved&&!saved.closed&&numericSession.world().classroom.studentIds.some(id=>!saved.rows.some(row=>row.id===id)))numericSession=execute(world,command,{type:'academic',action:'sync',termId:term.id},numericSession,receipt,false,false,true);}
     history(world,command,'time',null,null,[],{planId:r.plan.id,steps:op.steps});
+    numericSession=execute(world,command,{type:'institution-tick'},numericSession,receipt);
   } else if(op.type==='sample') {
     assertShape(op,['type','stream','id','weights']);identifier(op.id);
     ensure(Object.hasOwn(world.random,op.stream),'RANDOM','Unknown managed stream');ensure(!receipt.draws.some(d=>d.id===op.id),'DUPLICATE','Draw ID already used within operation');
@@ -310,6 +320,7 @@ export function prepareWorldOperation(saved,request) {
     const receipt={id:command.id,attemptId:command.attemptId,revision:r.revision+1,request:encoded,historyIds:[],numericReceiptIds:[],draws:[]};
     let numerical=createSettlementSession(world.numeric);
     for(const operation of command.operations)numerical=execute(world,command,operation,numerical,receipt);
+    numerical=execute(world,command,{type:'institution-tick'},numerical,receipt);
     const arrangement=arrangeReplenishment(world,command,numerical);
     if(arrangement){history(world,command,'school',null,null,[arrangement.data.basisFactId],arrangement.data);numerical=createSettlementSession(arrangement.snapshot);}
     world.numeric=numerical.snapshot();

@@ -1,3 +1,4 @@
+import { HOMEROOM_KEY,initializeHomeroom,failureResult,compileFailure,crisisObservation,authorizeRetry } from './homeroom.js';
 import { initializeSemesterReviews, pendingSemesterReview, semesterReviewData, acknowledgeSemesterReview } from './reviews.js';
 import { initializeAnnualObservations,compileAnnualSuccess,annualResult,ANNUAL_KEY } from './annual.js';
 import { compileInstitution,tickOperation } from './procedures.js';
@@ -60,6 +61,7 @@ function preconditions(world,conditions) {
 }
 function execute(world,command,op,numericSession,receipt,selectedAdmission=false,storyInternal=false,npcInternal=false) {
   const r=runtimeOf(world);
+  ensure(storyInternal||npcInternal||['story','institution-tick'].includes(op.type)||!r.history.some(h=>h.type==='homeroom-result'&&h.data.effectiveAt),'YEAR_FAILED','No ordinary actions after effective interruption');
   ensure(!pendingSemesterReview(world)||['read-semester-review','institution-tick'].includes(op.type),'REVIEW_PENDING','Read the saved semester review before continuing');
   if(op.type==='institution-tick'){
     assertShape(op,['type']);syncNumeric(world,numericSession);const tick=tickOperation(world);if(!tick)return numericSession;
@@ -67,9 +69,11 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     return numericSession;
   }
   guardStoryOperation(world,op,storyInternal||npcInternal);
-  if(!npcInternal&&!(storyInternal&&['academic','institution'].includes(op.type)))guardCalendarOperation(world,command,op);
+  if(!npcInternal&&!(storyInternal&&['academic','institution','school','homeroom-result'].includes(op.type)))guardCalendarOperation(world,command,op);
   guardSelectedProgress(world,op);
-  if(op.type==='settle-school-year'){
+  if(op.type==='homeroom-result'){
+    ensure(storyInternal&&op.eventId===storyInternal,'DUTY_SOURCE','Duty results require a confirmed registered story');history(world,command,'homeroom-result',op.eventId,findEvent(world,op.eventId).stageId,[op.basisFactId],op.data);
+  } else if(op.type==='settle-school-year'){
     assertShape(op,['type']);ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player settles a year');
     syncNumeric(world,numericSession);history(world,command,'annual-success',null,null,[],compileAnnualSuccess(world));
   } else if(op.type==='read-semester-review'){
@@ -142,6 +146,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     const data=lifecycleChange(world,op),event=findEvent(world,op.eventId);
     history(world,command,'event-lifecycle',event.id,event.stageId,[op.basisFactId],data);
   } else if(op.type==='school'){
+    if(world.extensions[HOMEROOM_KEY]&&op.change.type==='school-assignment'&&op.change.endsId===world.extensions[HOMEROOM_KEY].assignmentId)ensure(storyInternal,'DUTY_SOURCE','Original duty execution requires its registered story consequence');
     const result=executeSchool(world,op,numericSession);
     history(world,command,'school',null,null,op.basisFactId===null?[]:[op.basisFactId],result.data);
     world.numeric=clone(result.snapshot);
@@ -334,7 +339,7 @@ function prepareDraft(world,request,ownedNumeric=null) {
     ensure(request.attemptId===world.identity.attemptId,'ATTEMPT','Wrong attempt');
     const r=runtimeOf(world),encoded=canonicalData(request),prior=r.commits.find(c=>c.id===request.id&&c.attemptId===request.attemptId);
     if(prior){ensure(prior.request===encoded,'CONFLICT','Operation ID reused with different content');return {world,receipt:clone(prior),duplicate:true};}
-    ensure(request.expectedRevision===r.revision,'STALE','World revision changed');preconditions(world,request.preconditions);
+    ensure(request.expectedRevision===r.revision,'STALE','World revision changed');ensure(!failureResult(world),'YEAR_FAILED','Retry the failed year before further world actions');preconditions(world,request.preconditions);
     ensure(Array.isArray(request.operations)&&request.operations.length>0,'SCHEMA','Nonempty operations required');
     if(request.operations.some(op=>op.type==='read-semester-review'))ensure(request.operations.length===1,'REVIEW_READ','Acknowledge a report in its own timeless transaction');
     if(request.operations.some(op=>op.type==='settle-school-year'))ensure(request.operations.length===1,'ANNUAL','Settle a year in its own timeless transaction');
@@ -356,6 +361,8 @@ function prepareDraft(world,request,ownedNumeric=null) {
       const allGraduated=count===0&&command.operations.some(op=>op.type==='school'&&op.change.type==='school-graduate')&&school.registry.enrollments.filter(e=>e.classId===school.classroom.id).every(e=>e.until!==null);
       ensure(count>=38||allGraduated,'ENROLLMENT','Sub-38 exceptional rule is undecided');
     }
+    if(world.extensions[HOMEROOM_KEY]&&!r.history.some(h=>h.type==='crisis-observation'&&h.at.date===world.position.date)&&!r.history.some(h=>h.type==='annual-success'))history(world,command,'crisis-observation',null,null,[],crisisObservation(world));
+    const failure=compileFailure(world);if(failure)history(world,command,'annual-failure',null,null,failure.factIds,failure);
     syncReferences(world);r.revision++;
     receipt.historyIds=r.history.slice(offset).map(h=>h.id);r.commits.push(receipt);
     return {world,receipt:clone(receipt),duplicate:false,numerical};
@@ -406,18 +413,15 @@ export function createWorldSession(saved) {
 }
 
 /** Explicit retry initialization from an opening snapshot, not from the failed world.
- * Annual authorization/snapshot selection belongs to batch 11; seeds are caller-owned.
+ * Formal annual retries require the verified current terminal; seeds name opening streams.
  * Retain only the snapshot's legitimate history and archive its original N6 ledger.
  * Stored callers must pass the abandoned world as argument three to retain IDs
  * retired since the opening. The two-argument form only knows the supplied snapshot.
  */
-export function forkWorldAttempt(openingSnapshot,{attemptId,seeds},abandonedSnapshot=openingSnapshot) {
-  const world=restoreWorldState(openingSnapshot),r=runtimeOf(world);validateId(attemptId,'attempt');
+export function forkWorldAttempt(openingSnapshot,options,abandonedSnapshot=openingSnapshot) {
+  const {attemptId,seeds}=options;const world=restoreWorldState(openingSnapshot),r=runtimeOf(world);validateId(attemptId,'attempt');
   const abandoned=restoreWorldState(abandonedSnapshot),previous=runtimeOf(abandoned);
-  // This is an engineering snapshot primitive, not a failure authorization.
-  // No existing institutional finding defines an effective career-ending sanction.
-  // Keep the formal annual lifecycle closed until that rule and its verifier exist.
-  ensure(!world.extensions[ANNUAL_KEY]&&!abandoned.extensions[ANNUAL_KEY],'RETRY_UNAUTHORIZED','Formal annual retry requires a verified effective failure terminal; no such source is defined yet');
+  const authorization=world.extensions[ANNUAL_KEY]||abandoned.extensions[ANNUAL_KEY]?authorizeRetry(abandoned,options):null;
   ensure(['careerId','playerId','schoolId'].every(k=>world.identity[k]===abandoned.identity[k])&&world.position.openingId===abandoned.position.openingId&&world.position.schoolYearId===abandoned.position.schoolYearId,'SNAPSHOT','Abandoned attempt belongs to another career or opening');
   ensure(['commits','history'].every(field=>r[field].every((entry,index)=>same(entry,previous[field][index]))),'SNAPSHOT','Opening must precede the abandoned attempt');
   const used=[...new Set([...worldAttemptIds(world),...worldAttemptIds(abandoned)])];
@@ -428,7 +432,7 @@ export function forkWorldAttempt(openingSnapshot,{attemptId,seeds},abandonedSnap
   for(const name of Object.keys(world.random))world.random[name]=createRandom(seeds.streams[name]).snapshot();
   const id=createId('operation',[attemptId,'initialize-retry']);
   const attemptIds=[...used,attemptId];
-  const request={id,attemptId,seeds:clone(seeds),openingRevision:r.revision,attemptIds};
+  const request={id,attemptId,seeds:clone(seeds),openingRevision:r.revision,attemptIds,...(authorization?{authorization}: {})};
   world.extensions[ATTEMPT_LINEAGE_KEY]={version:1,attemptIds};
   const h=history(world,request,'retry',null,null,[],{previousAttemptId:old.attemptId,abandonedAttemptId:abandoned.identity.attemptId,openingRevision:r.revision,attemptIds});
   r.revision++;r.commits.push({id,attemptId,revision:r.revision,request:canonicalData(request),historyIds:[h.id],numericReceiptIds:[],draws:[]});
@@ -453,3 +457,6 @@ export function startReviewedSchoolCareer(foundation,options){
  return restoreWorldState(initializeSemesterReviews(startSchoolCareer(foundation,options)));
 }
 export function startAnnualSchoolCareer(foundation,options){return restoreWorldState(initializeAnnualObservations(startReviewedSchoolCareer(foundation,options)));}
+
+/** Opt-in v1 continuity extension, initialized only at the legal opening; old saves remain unchanged. */
+export function startFailureSchoolCareer(foundation,options){return restoreWorldState(initializeHomeroom(startAnnualSchoolCareer(foundation,options)));}

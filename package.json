@@ -35,7 +35,9 @@
     "simulate:procedures": "node --expose-gc simulation/institution-history.js",
     "demo:reviews": "node scripts/review-demo.js",
     "demo:annual": "node scripts/annual-demo.js",
-    "test:annual:browser": "npm run build && node scripts/storage-browser.js --annual"
+    "test:annual:browser": "npm run build && node scripts/storage-browser.js --annual",
+    "demo:failure": "node scripts/failure-demo.js",
+    "test:failure:browser": "npm run build && node scripts/storage-browser.js --failure-only"
   },
   "devDependencies": {
     "acorn": "8.15.0"

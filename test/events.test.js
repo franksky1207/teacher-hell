@@ -9,7 +9,7 @@ import { prepareWorldOperation,createWorldSession,forkWorldAttempt } from '../sr
 import { restoreWorldState,runtimeOf } from '../src/runtime/model.js';
 import { readPlayerView } from '../src/runtime/views.js';
 import { createId } from '../src/contracts/foundation.js';
-import { createRandom } from '../src/numeric/random.js';
+import { createRandom,restoreRandom } from '../src/numeric/random.js';
 import { calendarDay,gradeAt } from '../src/calendar/calendar.js';
 import { eventWorld,definition,binding,draw } from './support/event-fixtures.js';
 import { request,fact } from './support/runtime.js';
@@ -30,11 +30,12 @@ test('events: contract rejects duplicate direct/cumulative, wrong core and malfo
  assert.throws(()=>validateEventDefinitions([{...d,weights:[1,1,1,1,1,1]}]));
  assert.throws(()=>validateEventDefinitions([{...d,topicId:'invented'}]));
 });
-test('events: pure candidates precede count, no numeric/history/random mutation',()=>{
+test('events: candidate queries stay pure; daily count locks before candidate scarcity',()=>{
  const w=eventWorld(),before=structuredClone(w),d=definition(),built=buildEventCandidates(w,[d],{engineering:true});
  assert.equal(built.candidates.length,40);assert.deepEqual(w,before);assert.deepEqual(buildEventCandidates(w,[d]).candidates,[]);
  const none=definition('none',{eligibility:{...d.eligibility,numeric:[{source:'participant',code:'1-1',min:100,max:100}]}});
- const no=run(w,draw([none])).world;assert.deepEqual(no.random.events,w.random.events);assert.equal(selection(no).requested,0);assert.equal(selection(no).selected.length,0);
+ const counter=restoreRandom(w.random.events),expected=counter.weightedIndex(Array(6).fill(1));
+ const no=run(w,draw([none])).world;assert.deepEqual(no.random.events,counter.snapshot());assert.equal(selection(no).requested,expected);assert.equal(selection(no).selected.length,0);assert.equal(selection(run(w,draw([d])).world).requested,expected);assert.equal(runtimeOf(no).commits.at(-1).draws[0].id,'event-count:'+w.position.date);
  assert.ok(selection(no).rejected.length>0);
 });
 test('events: exact K scales B only; cross-holder sources and reversed directions',()=>{

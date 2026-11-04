@@ -27,25 +27,24 @@ export function selectWorldEvents(world,operation,command,receipt){
  if(Object.hasOwn(operation,'catalogueId')){assertShape(operation,['type','catalogueId']);const catalogue=runtime(world).history.find(h=>h.type==='event-catalogue'&&h.data.catalogueId===operation.catalogueId);need(catalogue,'Catalogue must be registered before drawing');catalogueId=operation.catalogueId;op={type:'draw-events',definitions:catalogue.data.definitions,bindings:catalogue.data.bindings,engineering:catalogue.data.engineering};}
  else need(operation.engineering===true,'Formal draws must reference a registered catalogue');
  assertShape(op,['type','definitions','bindings','engineering']);need(typeof op.engineering==='boolean','Explicit engineering flag');
- // No random object is restored until the complete legal pool has been built.
- const built=buildEventCandidates(world,op.definitions,{engineering:op.engineering}),{day}=built,r=runtime(world),index=eventIndex(world);
+ // Lock the existing day budget/count before constructing or weighting candidates.
+ const day=calendarDay(world.position.date,gradeAt(world.position.date,runtime(world).plan.startYear)),r=runtime(world),index=eventIndex(world);
  need(!r.history.some(h=>h.type==='event-selection'&&h.at.date===day.date),'Day already decided; never reroll');
  need(Array.isArray(op.bindings)&&op.bindings.length===op.definitions.length&&new Set(op.bindings.map(b=>b.definitionId)).size===op.bindings.length,'One weight binding per definition');
  const defs=new Map(op.definitions.map(d=>[d.id,d])),bindings=new Map(op.bindings.map(b=>[b.definitionId,b]));
  need(op.bindings.every(b=>defs.has(b.definitionId)),'Unknown weight binding');
  for(const b of op.bindings){assertShape(b,['definitionId','sources','valence']);need(Array.isArray(b.sources)&&b.sources.length===6&&b.sources.every(s=>typeof s==='string'&&s.length)&&['negative','neutral','positive'].includes(b.valence),'Invalid weight binding');}
- let pool=[];
- for(const c of built.candidates){try{const weighted=weighEventCandidate(world,c,defs.get(c.definitionId),bindings.get(c.definitionId),index);if(weighted.effectiveWeight>0)pool.push(weighted);else built.rejected.push({key:c.key,reason:'zero-weight'});}catch(error){if(!(error instanceof RangeError))throw error;built.rejected.push({key:c.key,reason:'numeric-weight-source-missing'});}}
  const groupId=day.segment?.id??`day:${day.date}`,priorSelections=index.records.filter(s=>s.groupId===groupId),admissions=r.history.flatMap(h=>h.data.calendarAdmission?[h.data.calendarAdmission]:[]).filter(a=>a.groupId===groupId),reserved=priorSelections.filter(s=>!world.events.some(e=>e.id===s.eventId));
  const occupied=[...admissions,...reserved],slotsUsed=new Set(occupied.filter(s=>s.date===day.date).map(s=>s.slotId));
  const rng=restoreRandom(world.random.events),before=rng.snapshot(),draw=(id,weights)=>{const i=rng.weightedIndex(weights);receipt.draws.push({id,stream:'events',index:i,weights:[...weights]});return i;};
  let max=day.segment?Math.max(0,day.segment.quota-occupied.length):day.quota?.kind==='saturday'?2:day.quota?.max??0;
  if(!day.segment)max=Math.max(0,max-occupied.length);
  const usable=c=>c.slotIds.find(s=>!slotsUsed.has(s)&&(!(day.quota?.kind==='saturday')||['morning','afternoon'].includes(s))&&(!s.startsWith('study')||!Array.from(slotsUsed).some(x=>x.startsWith('study'))));
- pool=pool.filter(c=>usable(c));
- // Uniform bounded daily count is an engineering default, not a new finalized game rule.
- const poolSize=pool.length;
- const requested=pool.length&&max>0?(day.segment?max:draw(`event-count:${day.date}`,Array(max+1).fill(1))):0,selected=[],excluded=[];
+ const requested=max>0?(day.segment?max:draw(`event-count:${day.date}`,Array(max+1).fill(1))):0,selected=[],excluded=[];
+ const built=buildEventCandidates(world,op.definitions,{engineering:op.engineering});
+ let pool=[];
+ for(const c of built.candidates){try{const weighted=weighEventCandidate(world,c,defs.get(c.definitionId),bindings.get(c.definitionId),index);if(weighted.effectiveWeight>0)pool.push(weighted);else built.rejected.push({key:c.key,reason:'zero-weight'});}catch(error){if(!(error instanceof RangeError))throw error;built.rejected.push({key:c.key,reason:'numeric-weight-source-missing'});}}
+ pool=pool.filter(c=>usable(c));const poolSize=pool.length;
  while(selected.length<requested&&pool.length){
   const weights=pool.map(c=>c.effectiveWeight),pick=rng.weightedIndex(weights),c=pool[pick],slotId=usable(c);
   receipt.draws.push({id:`event-pick:${day.date}:${selected.length}`,stream:'events',index:pick,poolSize:pool.length,totalWeight:weights.reduce((a,b)=>a+b,0),selectedKey:c.key,selectedWeight:c.effectiveWeight});
@@ -115,7 +114,7 @@ export function validateEventSelectionHistory(world){
     need(!ids.has(s.eventId)&&s.date===h.at.date&&s.groupId===d.groupId&&s.status==='reserved','Invalid reservation');
     need(s.eventId===createId('event',[h.attemptId,s.groupId,s.date,s.key])&&s.stageId===createId('stage',[s.eventId,'initial']),'Selection identity differs');
     need(s.key===tuple(s.definitionId,s.participantIds,s.factIds)&&s.participantIds.length>=1&&s.slotIds.includes(s.slotId),'Invalid candidate key/slot');
-    need(s.rawWeight>=0&&s.rawWeight<=100&&[1.6,1,0.7].includes(s.k)&&s.exposureFactor>=1&&s.exposureFactor<=2&&s.effectiveWeight===s.rawWeight*s.k*s.exposureFactor,'Invalid recorded weight');
+    need(s.rawWeight>=0&&s.rawWeight<=100&&[1.6,1,0.7].includes(s.k)&&s.exposureFactor>=1&&s.exposureFactor<=2&&(definition.eligibility.homeroom?Number.isFinite(s.riskFactor)&&s.riskFactor>=1&&s.riskFactor<=25:s.riskFactor===undefined)&&s.effectiveWeight===s.rawWeight*s.k*s.exposureFactor*(s.riskFactor??1),'Invalid recorded weight');
     need(s.participantIds.every(id=>id===world.identity.playerId||Object.hasOwn(world.numeric.evolution.world.people,id)),'Missing participant');
     ids.add(s.eventId);statuses.set(s.eventId,'reserved');
    }

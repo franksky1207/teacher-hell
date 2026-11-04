@@ -33,7 +33,8 @@ export function validateStory(c){
     else if(condition.type==='numeric'){assertShape(condition,['type','role','holder','code','min','max']);need(roles.includes(condition.role)&&['person','life','work','outlook'].includes(condition.holder)&&/^(?:[1-9]|1[0-2])-[1-4]$/.test(condition.code)&&Number.isFinite(condition.min)&&Number.isFinite(condition.max)&&condition.min>=0&&condition.max<=100&&condition.min<=condition.max,'QUALIFICATION','numeric bounds');}
     else need(false,'QUALIFICATION','unknown condition');
    }identifier(o.id);identifier(o.text);need(typeof o.emotional==='boolean'&&['action','defer','refuse','support'].includes(o.kind),'CHOICE','option kind');
-   const r=o.outcome;assertShape(r,['fact','claims','changes','historyCodes','next',...['academic','institution'].filter(k=>Object.hasOwn(r,k))]);
+   const r=o.outcome;assertShape(r,['fact','claims','changes','historyCodes','next',...['academic','institution','duty'].filter(k=>Object.hasOwn(r,k))]);
+   if(r.duty){assertShape(r.duty,['kind',...(Object.hasOwn(r.duty,'secondary')?['secondary']:[])]);if(r.duty.secondary)need(r.duty.kind==='resigned'&&r.duty.secondary==='unable','DUTY','compatible concurrent consequences');need(['pressure','relief','thought','resignation-pending','temporary','notice','resigned','replaced','unable','restored'].includes(r.duty.kind),'DUTY','supported objective consequence');}
    if(r.institution){assertShape(r.institution,['kind','response']);need(r.institution.kind==='duty-response'&&['accept','refuse','negotiate','protest','delay','seek-help'].includes(r.institution.response),'INSTITUTION','supported institutional consequence');}
    if(r.academic){need(Array.isArray(r.academic)&&new Set(r.academic.map(a=>JSON.stringify([a.role,a.subject]))).size===r.academic.length,'ACADEMIC','unique learning outcomes');for(const a of r.academic){assertShape(a,['role','subject','delta']);need(['participant','companion'].includes(a.role)&&typeof a.subject==='string'&&a.subject.length>0&&Number.isFinite(a.delta)&&Math.abs(a.delta)<=30,'ACADEMIC','bounded student learning effect');}}identifier(r.fact);
    for(const q of r.claims){assertShape(q,['role','statement','belief','visible']);need(roles.includes(q.role)&&['believed','uncertain','rejected'].includes(q.belief)&&typeof q.visible==='boolean','KNOWLEDGE','claim');identifier(q.statement);}
@@ -69,8 +70,42 @@ export const ACADEMIC_STORY=validateStory({...structuredClone(SHORT_STORY),resou
 export const DUTY_STORY=validateStory({...structuredClone(SHORT_STORY),resourceId:'engineering:duty-conversation',definitionId:'engineering:duty-conversation',topicId:'E06-01',premise:{description:'教師收到已登錄的額外職責邀請，原有導師及授課責任仍在。',data:{type:'duty-conversation'}},stages:[{id:'opening',pages:[page(1,'這份額外工作需要有人承辦。你仍須照原課表授課。')],choices:[
  ['accept','我接受，請把期限與支援寫清楚。',false,'action'],['negotiate','先談分工與期限，再決定怎麼承接。',false,'support'],['refuse','這次我不承接，請校方另作安排。',false,'refuse'],['protest','事情又往導師身上堆，我真的受夠了！',true,'action']
  ].map(([id,text,emotional,kind])=>choice(id,text,emotional,kind,{fact:'教師表達額外職責的'+({accept:'接受',negotiate:'協商',refuse:'拒絕',protest:'不滿'})[id]+'立場，校方後續仍依權責處理。',claims:[],changes:[],historyCodes:[],next:next(),institution:{kind:'duty-response',response:id}})),next:null}]});
-const assets=freeze([DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY]);
+// Small formal representative catalogue; these are playable assets, not test flags.
+const dutyOutcome=(kind,text,changes=[],nextStage=null,afterDays=0)=>({fact:text,claims:[],changes:changes.map(([holder,code,delta])=>({role:'teacher',holder,code,delta})),historyCodes:kind==='pressure'?['H06-1']:[],next:next(nextStage,afterDays),duty:{kind}});
+const dutyPage=text=>[page(1,text)];
+const routineChanges=[['work','11-1',12],['work','11-2',-10],['person','2-3',10],['person','2-2',8],['person','4-1',-6],['life','7-4',-5]];
+const restoreChanges=[['work','11-1',-12],['work','11-2',12],['person','2-3',-15],['person','2-2',-12],['person','4-1',8],['life','7-4',8]];
+const dutyAsset=(id,topic,text,choices,extra=[])=>validateStory({resourceId:'homeroom:'+id,definitionId:'homeroom:'+id,version:'1',topicId:topic,status:'ready',entry:'opening',premise:{description:text,data:{type:'homeroom-context',route:id}},stages:[{id:'opening',pages:dutyPage(text),choices,next:null},...extra]});
+export const PRESSURE_STORY=dutyAsset('ordinary-pressure','E06-03','日常工作又遇到互相衝突的要求，教師必須回應。',[
+ choice('coordinate','先協調目前的工作。',false,'action',dutyOutcome('pressure','教師處理一次普通工作衝突，付出實際負荷。',routineChanges)),
+ choice('help','請同事協助分工。',false,'support',dutyOutcome('relief','同事本次確實提供協助，教師暫時喘息。',restoreChanges)),
+ choice('protest','事情又堆過來，我真的很累！',true,'action',dutyOutcome('pressure','教師表達疲憊，工作仍持續形成消耗。',routineChanges)),
+ choice('think','今天先停下來整理自己的想法。',false,'defer',dutyOutcome('thought','教師出現辭職念頭，沒有提出或完成離職。'))]);
+const concurrentDeparture=dutyOutcome('resigned','求援沒有讓任教繼續；教師已無法履行原班職務，並確定離職與實際停止帶班。');concurrentDeparture.duty.secondary='unable';
+export const BURNOUT_STORY=dutyAsset('exhaustion-departure','E06-03','又一件普通工作衝突遇上長期耗竭，教師發現自己已無法繼續承擔原班。',[
+ choice('help','試著向人說明現在的處境。',false,'support',concurrentDeparture),
+ choice('explain','如實說明已無法繼續履行帶班責任。',false,'action',dutyOutcome('unable','重大身心事件使教師確定無法繼續帶原班。')),
+ choice('cry','我已經撐不住了。',true,'action',dutyOutcome('resigned','長期耗竭在這一刻形成實際離職結果，不只是辭職念頭。'))]);
+export const RELIEF_STORY=dutyAsset('crisis-support','E06-03','困境尚未消失，但先前的互動與求援讓支持出現。',[
+ choice('accept','接受這次具體的協助。',false,'support',dutyOutcome('relief','教師取得支持並繼續帶班；累積危機並未被抹除。',restoreChanges)),
+ choice('leave','先請短假，安排暫時代理。',false,'action',dutyOutcome('temporary','短期代理已安排，原班導師職務保留。',restoreChanges)),
+ choice('sigh','讓我先喘口氣，好嗎。',true,'action',dutyOutcome('relief','這次支持讓當前身心狀態改善。',restoreChanges))]);
+const executed={id:'execution',pages:dutyPage('校方已決定實際執行撤換；你仍保有任課，但不再擔任原班導師。'),choices:[
+ choice('appeal','提出異議，要求保留爭議紀錄。',false,'action',dutyOutcome('replaced','撤換已實際執行；教師提出異議，合法性仍有爭議。')),
+ choice('handover','保全資料，完成必要交接。',false,'action',dutyOutcome('replaced','原班導師已被實際撤換，教師仍任課。')),
+ choice('protest','沒有過錯也要我走，這算什麼！',true,'action',dutyOutcome('replaced','校方仍執行撤換，教師公開表達不滿。')),
+ choice('review','請外部單位介入覆核尚未執行的安排。',false,'support',dutyOutcome('restored','本次覆核使校方在執行前撤回安排；原班導師職務保留。'))],next:null};
+export const REPLACEMENT_STORY=dutyAsset('unfair-replacement','E06-02','校長因外部要求決定撤換原班導師，未以教師違規成立為前提。',[
+ choice('appeal','要求說明並提出異議。',false,'action',dutyOutcome('notice','教師取得撤換通知並提出異議；此刻尚未執行。',[],'execution',1)),
+ choice('help','尋求同事陪同面談。',false,'support',dutyOutcome('notice','教師尋求支持；撤換仍待實際執行。',[],'execution',1)),
+ choice('protest','我不接受這種不合理安排！',true,'action',dutyOutcome('notice','教師抗議校方安排；原班職務目前仍在。',[],'execution',1)),
+ choice('pending','提出離職申請，等候處理。',false,'defer',dutyOutcome('resignation-pending','教師提出辭職，尚未生效；原班導師仍是本人。',[],'execution',1))],[executed]);
+export function homeroomCatalogue(){
+ const definitions=[PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY].map(c=>({id:c.definitionId,topicId:c.topicId,type:c===BURNOUT_STORY||c===RELIEF_STORY?'cumulative':'direct',content:{resourceId:c.resourceId,version:c.version,status:c.status},coreCodes:['1-2','1-3','1-4'],additionalCodes:['3-1','3-2','3-3'],weights:Array(6).fill(1/6),directions:[1,1,1,1,1,1],eligibility:{people:[c===REPLACEMENT_STORY?'staff':c===PRESSURE_STORY?'student':'player'],dayKinds:[],slotIds:[],from:null,until:null,facts:[],history:c===BURNOUT_STORY||c===RELIEF_STORY?[{code:'H06-1',minimum:3,status:'any'}]:[],numeric:[],enrollment:null,homeroom:c===REPLACEMENT_STORY?'social':c===PRESSURE_STORY?'ordinary':c===BURNOUT_STORY?'crisis':'support'},repetition:{cooldownDays:0,exclusionGroups:['homeroom-interruption'],sameFact:true,reason:'Consequences retain a single source and respect the existing daily budget'}}));
+ return {type:'register-event-catalogue',catalogueId:'homeroom:representatives-v1',definitions,bindings:definitions.map(d=>({definitionId:d.id,sources:Array(6).fill(d.id===REPLACEMENT_STORY.definitionId?'participant':'player-person'),valence:d.id===RELIEF_STORY.definitionId?'positive':'negative'})),engineering:false};
+}
+const assets=freeze([DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY]);
 export function resolveStory(ref){const c=assets.find(c=>c.resourceId===ref.resourceId&&c.version===ref.version);need(c,'RESOURCE','missing immutable content version');return c;}
-export function validateStoryReference(d){const c=resolveStory(d.content);need(c.definitionId===d.id&&c.topicId===d.topicId&&c.status===d.content.status,'REFERENCE','definition/content identity');return c;}
+export function validateStoryReference(d){const c=resolveStory(d.content);need(c.definitionId===d.id&&c.topicId===d.topicId&&c.status===d.content.status,'REFERENCE','definition/content identity');if(c.resourceId.startsWith('homeroom:'))need(canonicalData(d)===canonicalData(homeroomCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal homeroom qualification/authority cannot be relabeled');return c;}
 
 export function storyDigest(c){let hash=14695981039346656037n;for(const char of canonicalData(c)){hash^=BigInt(char.codePointAt(0));hash=BigInt.asUintN(64,hash*1099511628211n);}return hash.toString(16).padStart(16,'0');}

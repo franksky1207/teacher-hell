@@ -1,3 +1,4 @@
+import { validateHomeroom } from './homeroom.js';
 import { validateSemesterReviews } from './reviews.js';
 import { validateAnnualObservations } from './annual.js';
 import { validateInstitutionHistory,mayReadProcedureFact } from './procedures.js';
@@ -238,6 +239,7 @@ export function validateWorldState(world) {
   validateEventSelectionHistory(world);
   validateStoryHistory(world);
   validateNpcHistory(world);
+  validateHomeroom(world);
   return world;
 }
 export function restoreWorldState(saved) {

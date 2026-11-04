@@ -1,3 +1,5 @@
+import { HOMEROOM_KEY,crisisContext } from './homeroom.js';
+import { crisisCandidateParameters } from '../assessment/crisis.js';
 import { institutionState,procedureEligible } from './procedures.js';
 import { academicEligible,academicState } from './academics.js';
 import { npcGroups } from './autonomy.js';
@@ -14,6 +16,7 @@ import { dayNumber } from '../calendar/civil.js';
 import { isFormal } from './schedule.js';
 import { assertShape, identifier } from '../player/panel.js';
 
+const STATE_CHANNELS=['體力','精神','抗壓','聲望','熱忱','情緒'];
 const need=(ok,message)=>{if(!ok)throw new RangeError(`EVENT_CANDIDATE: ${message}`);};
 const runtime=w=>w.extensions['teacher-hell/world'];
 export const EVENT_K=Object.freeze({negative:1.6,neutral:1,positive:0.7});
@@ -32,9 +35,10 @@ export function validateEventDefinitions(definitions){
   const core=tuple(d.coreCodes);need(!coreByTopic.has(d.topicId)||coreByTopic.get(d.topicId)===core,'Topic core must be shared');coreByTopic.set(d.topicId,core);
   need(d.weights.length===6&&d.weights.every(x=>Number.isFinite(x)&&x>=0)&&Math.abs(d.weights.reduce((a,b)=>a+b,0)-1)<1e-12,'Six weights must sum to one');
   need(d.directions.length===6&&d.directions.every(x=>[1,-1].includes(x)),'Explicit six directions');
-  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['companions','roleIds','affiliation','knowledge','groups','academic','procedure'].filter(k=>Object.hasOwn(e,k))]);
+  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['companions','roleIds','affiliation','knowledge','groups','academic','procedure','homeroom'].filter(k=>Object.hasOwn(e,k))]);
   need(e.people.length>0&&e.people.every(x=>['player','student','caregiver','staff','reunion','contact'].includes(x)),'Participant scopes');
   for(const k of ['dayKinds','slotIds','facts','history','numeric'])need(Array.isArray(e[k]),`Eligibility ${k} array`);
+  if(e.homeroom)need(['ordinary','social','crisis','support'].includes(e.homeroom),'Homeroom qualification');
   if(e.procedure){need(Array.isArray(e.procedure),'Procedure qualifications');for(const p of e.procedure){assertShape(p,['kind','status']);identifier(p.kind);identifier(p.status);}}
   if(e.academic){need(Array.isArray(e.academic),'Academic qualifications');for(const a of e.academic){need(['makeup','credit-deficit','change','admission'].includes(a.kind)&&typeof a.termId==='string','academic condition');}}
   if(e.roleIds)need(Array.isArray(e.roleIds)&&e.roleIds.every(id=>Number.isInteger(id)&&id>=1&&id<=35),'Role eligibility IDs');
@@ -105,6 +109,7 @@ export function buildEventCandidates(world,definitions,{engineering=false}={}){
   const current=day.slots.findIndex(s=>s.id===world.position.slotId),slots=Object.freeze(day.slots.slice(current).filter(s=>!s.protected&&(!e.slotIds.length||e.slotIds.includes(s.id))).map(s=>s.id));
   for(const person of people){
    let reason=null;const facts=e.facts.map(f=>index.facts.get(f.id));
+   if(e.homeroom){const c=world.extensions[HOMEROOM_KEY]?crisisContext(world):null;if(!c)reason='homeroom-disabled';else if(e.homeroom==='crisis'&&!crisisCandidateParameters(world.numeric.evolution.world,[{id:'homeroom-crisis',eligible:true,channels:['composite',...Object.keys(c.risk.single)]}])[0].opened)reason='no-crisis';else if(e.homeroom==='social'){const a=world.numeric.evolution.world.registry.assignments;const origins=new Set(['appointment:office:1:0']);for(const x of a)if(origins.has(x.endsId))origins.add(x.id);if(!a.some(x=>origins.has(x.id)&&x.until===null&&x.personId===person))reason='principal-required';}}
    if(e.dayKinds.length&&!e.dayKinds.includes(day.kind)||e.from!==null&&day.date<e.from||e.until!==null&&day.date>e.until)reason='calendar-condition';
    if(facts.some((f,i)=>!f||e.facts[i].participant&&!f.subjectIds.includes(person)))reason='objective-condition';
    if((e.companions??[]).some(c=>{const f=index.facts.get(c.contactFactId);return !f||f.data?.type!=='contact'||f.occurredAt.date!==day.date||!f.subjectIds.includes(person)||!f.subjectIds.includes(c.personId)||!world.numeric.evolution.world.people[c.personId]&&c.personId!==world.identity.playerId;}))reason='companion-contact-required';
@@ -136,5 +141,6 @@ export function weighEventCandidate(world,c,definition,binding,index){
  // Bounded engineering exposure adjustment, independent of valence. No quota/guarantee.
  const counts=index.school.studentIds.map(id=>index.exposures.get(id)??0),max=Math.max(0,...counts),count=index.exposures.get(c.participantIds[0])??0;
  const exposureFactor=index.school.studentIds.includes(c.participantIds[0])?1+Math.min(1,(max-count)/10):1;
- return {...c,rawWeight,k,exposureFactor,effectiveWeight:rawWeight*k*exposureFactor};
+ const riskFactor=definition.eligibility.homeroom==='crisis'?crisisCandidateParameters(world.numeric.evolution.world,[{id:'homeroom-crisis',eligible:true,channels:['composite',...STATE_CHANNELS]}])[0].multiplier*(1+Math.min(4,crisisContext(world).memory/10)):definition.eligibility.homeroom==='support'?1+Math.min(4,Object.values(world.numeric.evolution.world.relationships).filter(x=>x.toId===world.identity.playerId&&x.values['5-1']>60).length/5):1;
+ return {...c,rawWeight,k,exposureFactor,...(definition.eligibility.homeroom?{riskFactor}:{}),effectiveWeight:rawWeight*k*exposureFactor*riskFactor};
 }

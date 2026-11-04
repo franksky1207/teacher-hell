@@ -12,6 +12,7 @@ let browser, server, socket;
 try {
   await cp(resolve(root,'dist'),join(temporary,'site','teacher-hell'),{recursive:true});
   await cp(resolve(root,'test/support'),join(temporary,'site','teacher-hell/test/support'),{recursive:true});
+  if(process.argv.includes('--failure-only'))for(const name of ['cycle-1','cycle-2','cycle-3','physical'])await cp(resolve(root,`work/failure/${name}.json`),join(temporary,'site',`teacher-hell/test/support/failure-${name}.json`));
   if(process.argv.includes('--annual'))await cp(resolve(root,'work/annual/world.json'),join(temporary,'site','teacher-hell/test/support/annual-completed.json'));
   server=await createPreviewServer(join(temporary,'site'));server.listen(0,'127.0.0.1');await once(server,'listening');
   const url=`http://127.0.0.1:${server.address().port}/teacher-hell/`;
@@ -67,7 +68,7 @@ try {
   };
   const testId=temporary.split('/').at(-1);
   const setup=initialize=>`(async()=>{globalThis.checks=await import('./test/support/storage-checks.js');globalThis.st=await checks.setup(${JSON.stringify(testId)},${initialize});return true;})()`;
-  if(!process.argv.includes('--story-only')){
+  if(!process.argv.includes('--story-only')&&!process.argv.includes('--failure-only')){
   await evalIn(setup(true));
   console.log('PASS',await evalIn('checks.basics(st)'));
   const second=await call('Target.createTarget',{url});
@@ -131,6 +132,7 @@ try {
   if(eventRestored!==eventSaved.signature)throw Error('Event page reload changed committed selection');
   console.log('PASS phase 06 actual navigation restores exact event identity/history/PRNG');
   }
+  if(!process.argv.includes('--failure-only')){
   await evalIn(`(async()=>{globalThis.story=await import('./test/support/story-checks.js');globalThis.storyTest=await story.storySetup(${JSON.stringify(testId)},true);return true;})()`);
   const pendingStory=await evalIn('(async()=>JSON.stringify(await storyTest.db.read(1)))()');await evalIn('storyTest.db.close()');
   await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
@@ -163,6 +165,13 @@ try {
   const procedureRestored=await evalIn(`(async()=>{const module=await import('./test/support/procedure-checks.js');return module.procedureSignature(${JSON.stringify(testId)});})()`);
   if(procedureRestored!==procedureSaved.signature)throw Error('Procedure actual navigation changed deadlines/evidence/history');
   console.log('PASS phase 10 actual navigation restores exact institutional world');
+  }
+  if(process.argv.includes('--failure-only')){
+   const run=initialize=>`(async()=>{const m=await import('./test/support/failure-checks.js');return m.failureStorage(${JSON.stringify(testId)},${initialize});})()`;
+   console.log('PASS formal failure IndexedDB',JSON.stringify(await evalIn(run(true),sessionId,600000)));
+   await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+   console.log('PASS actual navigation restores formal retry',JSON.stringify(await evalIn(run(false),sessionId,600000)));
+  }
   if(process.argv.includes('--annual')){
    const run=initialize=>`(async()=>{const annual=await import('./test/support/annual-checks.js');return annual.annualStorage(${JSON.stringify(testId)},${initialize});})()`;
    const saved=await evalIn(run(true),sessionId,600000);console.log('PASS real first-year annual IndexedDB rollback/import/CAS/dedup/three slots',JSON.stringify(saved));

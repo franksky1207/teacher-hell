@@ -1,3 +1,4 @@
+import { HOMEROOM_KEY } from '../runtime/homeroom.js';
 import { isFormal, validateOpeningSnapshot } from '../runtime/schedule.js';
 /** Versioned, complete save payload. No migration guesses and no replay on restore. */
 import { restoreWorldState, runtimeOf, ensure, same } from '../runtime/model.js';
@@ -10,7 +11,9 @@ export function restoreSave(input) {
   ensure(Object.keys(value).sort().join(',')==='kind,opening,version,world','SCHEMA','Unexpected save fields');
   const world=restoreWorldState(value.world),opening=value.opening===null?null:restoreWorldState(value.opening);
   for(const saved of [world,opening].filter(Boolean))ensure(saved.versions.rules==='n1-n8-v1','VERSION','Unsupported rules version');
+  if(world.extensions[HOMEROOM_KEY])ensure(opening,'SNAPSHOT','Formal continuity saves require their legal opening');
   if(opening){
+    if(world.extensions[HOMEROOM_KEY]||opening.extensions[HOMEROOM_KEY])ensure(!!world.extensions[HOMEROOM_KEY]&&!!opening.extensions[HOMEROOM_KEY]&&same(world.extensions[HOMEROOM_KEY],opening.extensions[HOMEROOM_KEY]),'SNAPSHOT','Homeroom opening differs');
     if(world.extensions[ANNUAL_KEY]||opening.extensions[ANNUAL_KEY])ensure(!!world.extensions[ANNUAL_KEY]&&!!opening.extensions[ANNUAL_KEY]&&same(world.extensions[ANNUAL_KEY],opening.extensions[ANNUAL_KEY]),'SNAPSHOT','Annual observation opening differs from the saved opening');
     validateOpeningSnapshot(opening);
     const wp=runtimeOf(world).plan,op=runtimeOf(opening).plan;

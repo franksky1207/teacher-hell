@@ -1,3 +1,4 @@
+import { readFailure } from './homeroom.js';
 import { readSemesterReviews } from './reviews.js';
 import { readAnnualResults } from './annual.js';
 /** Read-only audience projections. Never return NPC records, RNG, hidden event lists,
@@ -46,3 +47,6 @@ export function readSemesterReviewHistory(saved){return readSemesterReviews(rest
 export function readAnnualHistory(saved){return readAnnualResults(restoreWorldState(saved)).map(report=>({id:report.id,year:report.year,status:report.status,at:report.at,
  score:report.evidence.rating.score,grade:report.evidence.rating.grade,parts:report.evidence.rating.parts,comparison:report.comparison,reviewIds:report.reviewIds,summary:report.summary,
  evidence:report.evidence.sources.map(({id,factId,nature,criterion,historyIds,eventIds,factIds})=>({id,factId,nature,criterion,historyIds,eventIds,factIds}))}));}
+
+/** Current known terminal only; no crisis memory, RNG or hidden NPC fields. */
+export function readAnnualFailure(saved){return readFailure(restoreWorldState(saved));}

@@ -1,3 +1,4 @@
+import { homeroomOperation } from './homeroom.js';
 import { institutionState } from './procedures.js';
 import { targetRecord } from '../changes/targets.js';
 import { applyDelta } from '../numeric/math.js';
@@ -31,6 +32,7 @@ export function compileStory(w,op){
  const previous=storyState(w,e.id);need(!previous||previous.contentDigest===storyDigest(c),'content version changed in place; retain old resource or migrate explicitly');
  const state=previous?structuredClone(previous):{contentDigest:storyDigest(c),stage:c.entry,page:0,pending:null,mode:'reading',next:null,dueDate:null,basisFactId:null,panelDelta:Object.fromEntries(Object.keys(deriveWorldPanel(w.numeric.evolution.world)).map(k=>[k,0]))};
  const s=c.stages.find(s=>s.id===state.stage),operations=[],inputs=[];
+ if(op.action==='confirm'&&s.choices.some(o=>o.outcome.duty))for(const holder of ['person','life','work','outlook']){const target={kind:'player-'+holder,id:w.identity.playerId};for(const [code,value] of Object.entries(targetRecord(w.numeric.evolution.world,target)))inputs.push({target,code,value});}
  if(['select','confirm'].includes(op.action))for(const option of s.choices)for(const condition of option.requires??[])if(condition.type==='numeric'){const target={kind:condition.role==='teacher'?`player-${condition.holder}`:'person',id:condition.role==='teacher'?w.identity.playerId:e.participantIds[condition.role==='companion'?1:0]};const value=targetRecord(w.numeric.evolution.world,target)[condition.code];need(Number.isFinite(value),'missing qualification field');inputs.push({target,code:condition.code,value});}
  need(op.action==='select'?typeof op.optionId==='string':op.optionId===null,'option only on select');
  if(op.action==='start'){need(!previous,'already started');
@@ -59,6 +61,7 @@ export function compileStory(w,op){
     const change={action:'duty-response',id:duty.id,response:out.institution.response},basisFactId=createId('fact',[fid,'institution']);
     operations.push({type:'fact',id:basisFactId,eventId:e.id,stageId:e.stageId,subjectIds:[actors.teacher],witnessIds:[actors.teacher],description:'教師對已登錄的額外職責作出明確回應。',data:{type:'institution-action',operation:change},categoryCodes:[],causeIds:[fid]},{type:'institution',actorId:actors.teacher,basisFactId,change});
    }
+   if(out.duty){const duty=homeroomOperation(w,e.id,fid,out.duty.kind);operations.push(duty);if(out.duty.secondary)operations.push(homeroomOperation(w,e.id,fid,out.duty.secondary));if(duty.data.effectiveAt){const basisFactId=createId('fact',[fid,'duty-execution']),change={type:'school-assignment',id:createId('operation',[fid,'duty-ended']),personId:actors.teacher,roleId:9,classId:null,endsId:duty.data.assignmentId};operations.push({type:'fact',id:basisFactId,eventId:e.id,stageId:e.stageId,subjectIds:subjects,witnessIds:subjects,description:duty.data.description,data:{type:'homeroom-execution',kind:duty.data.kind},categoryCodes:[],causeIds:[fid]},{type:'reveal',actorId:actors.teacher,factId:basisFactId,source:{kind:'observation',actorId:actors.teacher,basisFactId}},{type:'school',basisFactId,change});}}
    for(const [index,change] of (out.academic??[]).entries()){const personId=actors[change.role],basisFactId=createId('fact',[fid,'academic',String(index)]),effect={personId,subject:change.subject,delta:change.delta};operations.push({type:'fact',id:basisFactId,eventId:e.id,stageId:e.stageId,subjectIds:[personId],witnessIds:[personId,actors.teacher],description:'本次互動對學生後續學習狀態形成影響。',data:{type:'academic-influence',change:effect},categoryCodes:[],causeIds:[fid]},{type:'academic',action:'influence',...effect,basisFactId});}
    for(const [i,q] of out.claims.entries()){
     const id=createId('claim',[fid,String(i)]),actorId=actors[q.role];
@@ -66,7 +69,7 @@ export function compileStory(w,op){
     operations.push({type:'learn',actorId,claimId:id,versionId:c.version,source:{kind:'observation',actorId,basisFactId:fid},belief:q.belief,confidence:.6});
     if(q.visible&&actorId!==actors.teacher){operations.push({type:'fact',id:createId('fact',[id,'contact']),eventId:e.id,stageId:e.stageId,subjectIds:subjects,witnessIds:subjects,description:'當事人向教師表達自己的看法。',data:{type:'contact'},categoryCodes:[],causeIds:[fid]});operations.push({type:'learn',actorId:actors.teacher,claimId:id,versionId:c.version,source:{kind:'communication',actorId,basisFactId:createId('fact',[id,'contact'])},belief:'uncertain',confidence:.5});}
    }
-   if(!r(w).history.some(h=>h.type==='event-exposure'&&h.eventId===e.id))operations.push({type:'event-exposure',eventId:e.id,participantIds:[...e.participantIds].filter(id=>id!==w.identity.playerId),basisFactId:fid});
+   if(e.participantIds.some(id=>id!==actors.teacher)&&!r(w).history.some(h=>h.type==='event-exposure'&&h.eventId===e.id))operations.push({type:'event-exposure',eventId:e.id,participantIds:[...e.participantIds].filter(id=>id!==w.identity.playerId),basisFactId:fid});
    const changes=out.changes.map(x=>({target:{kind:x.role==='teacher'?`player-${x.holder}`:'person',id:actors[x.role]},code:x.code,delta:x.delta}));
    operations.push({type:'result',id:createId('result',[fid]),eventId:e.id,stageId:e.stageId,factId:fid,subjectId:actors.teacher,facet:'confirmed-action',effects:[{id:createId('effect',[fid]),operation:{type:'direct',changes}}]});
    state.basisFactId=fid;state.pending=null;state.next=out.next.stage;state.dueDate=due(w.position.date,out.next.afterDays);state.mode='result';
@@ -126,18 +129,21 @@ export function validateStoryHistory(w){
    if(!op&&request.operations.some(o=>o.type==='admit-event'&&o.eventId===e.id))op={type:'story',eventId:e.id,action:'start',optionId:null};
    need(op&&same(op,h.data.action),'history action differs');
    const atWorld=structuredClone(w);atWorld.position={...atWorld.position,...h.at};r(atWorld).plan.cursor=h.cursor;
-   r(atWorld).history=r(w).history.filter(x=>x.order<h.order&&!(x.operationId===h.operationId&&(x.eventId===e.id||x.type==='institution'&&h.data.operations.some(o=>same(o,x.data.operation)))));
+   r(atWorld).history=r(w).history.filter(x=>x.order<h.order&&!(x.operationId===h.operationId&&(x.eventId===e.id||['institution','homeroom-result','school'].includes(x.type)&&h.data.operations.some(o=>o.type==='homeroom-result'&&same(o.data,x.data)||o.type==='school'&&same(o.change,x.data.change)||same(o,x.data.operation??null)))));
    const ae=atWorld.events.find(x=>x.id===e.id);ae.stageId=stageId(e,c,previous?.stage??c.entry);ae.choice=carrier(c,previous?.stage??c.entry);
    for(const input of h.data.inputs){need(Number.isFinite(input.value)&&input.value>=0&&input.value<=100,'invalid qualification witness');targetRecord(atWorld.numeric.evolution.world,input.target)[input.code]=input.value;}
+   if(c.stages.some(s=>s.choices.some(o=>o.outcome.duty))){for(const a of atWorld.numeric.evolution.world.registry.assignments)if(a.until&&a.until>=h.at.date)a.until=null;atWorld.numeric.evolution.world.registry.assignments=atWorld.numeric.evolution.world.registry.assignments.filter(a=>!r(w).history.some(x=>x.type==='school'&&x.order>=h.order&&x.data.change.id===a.id));}
    const compiled=compileStory(atWorld,op);need(same(compiled.inputs,h.data.inputs),'qualification witness differs');
    if(op.action==='confirm'){
     const effect=r(w).history.find(x=>x.operationId===h.operationId&&x.type==='effect'&&x.eventId===e.id);need(effect,'missing effect audit');
-    const before=structuredClone(w.numeric.evolution.world),after=structuredClone(before);
+    const before=structuredClone(c.stages.some(s=>s.choices.some(o=>o.outcome.duty))?atWorld.numeric.evolution.world:w.numeric.evolution.world),after=structuredClone(before);
     for(const x of effect.data.observed){const change=effect.data.changes.find(c=>same(c.target,x.target)&&c.code===x.code);need(change&&x.after===applyDelta(x.before,change.delta),'invalid numerical observation');targetRecord(before,x.target)[x.code]=x.before;targetRecord(after,x.target)[x.code]=x.after;}
     const a=deriveWorldPanel(before),b=deriveWorldPanel(after);compiled.state.panelDelta=Object.fromEntries(Object.keys(a).map(k=>[k,compiled.state.panelDelta[k]+(b[k]-a[k])]));
    }
    need(same(compiled.state,h.data.state)&&same(compiled.operations,h.data.operations),'illegal story transition or consequences');
    for(const operation of compiled.operations){
+    if(operation.type==='school')need(r(w).history.some(entry=>entry.type==='school'&&entry.operationId===h.operationId&&same(entry.data.change,operation.change)&&entry.data.basisFactId===operation.basisFactId),'school consequence differs from story');
+    if(operation.type==='homeroom-result')need(r(w).history.some(entry=>entry.type==='homeroom-result'&&entry.operationId===h.operationId&&same(entry.data,operation.data)),'homeroom consequence differs from story');
     if(operation.type==='institution')need(r(w).history.some(entry=>entry.type==='institution'&&entry.operationId===h.operationId&&same(entry.data.operation,operation)),'institution consequence differs from story');
     if(operation.type==='academic')need(r(w).history.some(entry=>entry.type==='academic'&&entry.operationId===h.operationId&&same(entry.data.operation,operation)),'academic consequence differs from story');
     if(operation.type==='fact'){const f=r(w).facts.find(f=>f.id===operation.id);need(f&&f.description===operation.description&&same(f.data,operation.data)&&same(f.subjectIds,operation.subjectIds)&&same(f.witnessIds,operation.witnessIds)&&same(f.categoryCodes,operation.categoryCodes)&&same(f.causeIds,operation.causeIds)&&f.eventId===e.id&&f.stageId===operation.stageId,'fact differs from action');}

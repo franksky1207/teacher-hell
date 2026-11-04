@@ -1,3 +1,4 @@
+import { failureResult } from './homeroom.js';
 /** Annual observations are projections of the world journal, never writable scores.
  * Semester reports remain a separate reading barrier. Only the first year is enabled. */
 import { captureAssessment,validateSnapshot } from '../assessment/evidence.js';
@@ -116,6 +117,7 @@ export function annualEvidence(w,{end=snapshot(w,'end'),endRelations=relations(w
 }
 
 function eligibility(w){
+ need(!failureResult(w),'failed year cannot receive success');
  need(w.extensions[ANNUAL_KEY]&&w.position.serviceYear===1,'only the initialized first academic year is enabled');
  need(!pendingSemesterReview(w),'read the semester review first');
  const day=calendarDay(w.position.date,gradeAt(w.position.date,r(w).plan.startYear));

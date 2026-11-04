@@ -3,7 +3,7 @@ import { runtimeScenario,request,event,fact,open,id,result } from './runtime.js'
 import { createIndexedDBStorage } from '../../src/storage/indexeddb.js';
 import { createStoredSession,reviewRecoveryImport,importRecoveryBackup } from '../../src/storage/session.js';
 import { createSave,restoreSave } from '../../src/storage/format.js';
-import { runtimeOf } from '../../src/runtime/model.js';
+import { runtimeOf,ATTEMPT_LINEAGE_KEY } from '../../src/runtime/model.js';
 import { prepareWorldOperation } from '../../src/runtime/transactions.js';
 const equal=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 const check=(value,label)=>{if(!value)throw Error(label);};
@@ -60,11 +60,13 @@ export async function retryLineageStorage(testId,initialize=true){
  const db=createIndexedDBStorage({factory:globalThis.indexedDB,namespace:'test',testId:testId+'-retry-lineage'});
  try{
   const s=await createStoredSession(db,1),w=runtimeScenario(71);
+  const measurements=[],bytes=value=>new TextEncoder().encode(JSON.stringify(value)).byteLength;
+  const measure=async label=>{const at=performance.now(),text=await s.export(),exportMs=performance.now()-at,restoreAt=performance.now(),payload=restoreSave(text);measurements.push({label,saveBytes:new TextEncoder().encode(text).byteLength,openingBytes:bytes(payload.opening),lineageBytes:bytes(payload.world.extensions[ATTEMPT_LINEAGE_KEY]??null),exportMs,restoreMs:performance.now()-restoreAt,heapUsed:performance.memory?.usedJSHeapSize??null});};
   const options=tag=>({attemptId:id('attempt','lineage-'+tag),seeds:{settlement:92,streams:{events:93}}});
   if(initialize){
-   await s.initialize(w);await s.retry(options('first'));
+   await s.initialize(w);await measure('engineering-before-retry');await s.retry(options('first'));await measure('engineering-first-retry');
    const first=s.snapshot().payload.world,old=request(first,'abandoned-lineage-draw',[{type:'sample',stream:'events',id:'discarded',weights:[1,2,3]}]);
-   await s.execute(old);await s.retry(options('second'));
+   await s.execute(old);await s.retry(options('second'));await measure('engineering-second-retry');
    const before=s.snapshot();await rejects(()=>s.execute(old),'ATTEMPT');
    await rejects(()=>s.retry(options('first')),'ATTEMPT');check(equal(s.snapshot(),before),'retired attempt modified memory');
    const abortDriver=createIndexedDBStorage({factory:globalThis.indexedDB,namespace:'test',testId:testId+'-retry-lineage',faults:{beforeCommit({transaction}){transaction.abort();}}});
@@ -74,14 +76,14 @@ export async function retryLineageStorage(testId,initialize=true){
   }else{
    const before=s.snapshot();await rejects(()=>s.retry(options('first')),'ATTEMPT');
    check(equal(s.snapshot(),before),'navigation lost retired identity protection');
-   const stale=await createStoredSession(db,1);await s.retry(options('third'));
+   const stale=await createStoredSession(db,1);await s.retry(options('third'));await measure('engineering-third-retry');
    const after=s.snapshot();await rejects(()=>stale.retry(options('fourth')),'STALE');
    check(equal(await db.read(1),after),'stale retry overwrote new attempt');
    check(equal(after.payload.opening,w),'retry regenerated or modified opening');
    check(runtimeOf(after.payload.world).history.length===1&&runtimeOf(after.payload.world).facts.length===0,'discarded attempt history leaked');
    check((await s.retry(options('third'))).duplicate,'retry re-delivery wrote a new attempt');
   }
-  const text=await s.export();return {provenance:'synthetic retry safety only; no annual failure or success',saveBytes:new TextEncoder().encode(text).byteLength,signature:JSON.stringify(s.snapshot())};
+  const text=await s.export();return {provenance:'synthetic retry safety only; no annual failure or success',saveBytes:new TextEncoder().encode(text).byteLength,measurements,signature:JSON.stringify(s.snapshot())};
  }finally{await db.close();}
 }
 export async function decision(t){

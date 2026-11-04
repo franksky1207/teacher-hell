@@ -3,6 +3,7 @@
 import { prepareWorldOperation, forkWorldAttempt } from '../runtime/transactions.js';
 import { createId } from '../contracts/foundation.js';
 import { runtimeOf, ensure } from '../runtime/model.js';
+import { ANNUAL_KEY } from '../runtime/annual.js';
 import { createSave, restoreSave, encodeSave, sameToken, sameRequest } from './format.js';
 export async function createStoredSession(storage,slot,{afterPersist}={}) {
   let current=await storage.read(slot),recoveryRequired=false,tail=Promise.resolve();
@@ -34,6 +35,7 @@ export async function createStoredSession(storage,slot,{afterPersist}={}) {
     captureOpening:()=>serial(async()=>{ready();ensure(current.payload,'EMPTY','Slot is empty');return publish(createSave(current.payload.world,current.payload.world),current.token);}),
     retry:options=>serial(async()=>{ready();ensure(current.payload?.opening,'SNAPSHOT','No opening snapshot');
       const disk=await storage.read(slot);ensure(sameToken(disk.token,current.token),'STALE','Retry target changed; recover first');
+      ensure(!current.payload.world.extensions[ANNUAL_KEY]&&!current.payload.opening.extensions[ANNUAL_KEY],'RETRY_UNAUTHORIZED','Formal annual retry requires a verified effective failure terminal; no such source is defined yet');
       const prior=runtimeOf(current.payload.world).commits.find(c=>c.id===createId('operation',[options.attemptId,'initialize-retry'])&&c.attemptId===options.attemptId);
       if(prior){const recorded=JSON.parse(prior.request);ensure(sameRequest(recorded.seeds,options.seeds),'CONFLICT','Retry attempt reused with different seeds');return {committed:true,recoveryRequired:false,receipt:structuredClone(prior),duplicate:true,token:structuredClone(current.token)};}
       ensure(options.attemptId!==current.payload.world.identity.attemptId,'ATTEMPT','Retry requires a fresh attempt');

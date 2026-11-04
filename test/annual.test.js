@@ -50,6 +50,11 @@ test('annual: genuine committee results distinguish exoneration, substantiation 
   const evidence=annualEvidence(w),row=evidence.records.find(row=>row.kind==='handling');
   assert.equal(row.quality,quality);assert.equal(evidence.sources.find(s=>s.id===row.id).finding,finding);
   assert.equal(evidence.rating.status,'insufficient'); // No semester transcripts or relationship observations yet.
+  // An authoritative finding is not a defined career-ending sanction, even
+  // when substantiated and notified through the real institutional operations.
+  const beforeRetry=JSON.stringify(w);
+  assert.throws(()=>forkWorldAttempt(w,{attemptId:id('attempt','finding-retry'),seeds:{settlement:33,streams:{events:44}}},w),{code:'RETRY_UNAUTHORIZED'});
+  assert.equal(JSON.stringify(w),beforeRetry);
   const q=request(w,'replay-'+finding,[{type:'sample',stream:'events',id:'same',weights:[1]}]);const changed=prepareWorldOperation(w,q).world;
   assert.deepEqual(annualEvidence(changed),evidence);assert.equal(prepareWorldOperation(changed,q).duplicate,true);
  }

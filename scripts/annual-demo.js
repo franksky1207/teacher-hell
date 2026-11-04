@@ -6,8 +6,8 @@ import { readSemesterReviews,pendingSemesterReview } from '../src/runtime/review
 import { runtimeOf } from '../src/runtime/model.js';
 import { createSave,encodeSave,restoreSave } from '../src/storage/format.js';
 import { canonicalData } from '../src/changes/settlement.js';
-import { prepareWorldOperation } from '../src/runtime/transactions.js';
-import { request } from '../test/support/runtime.js';
+import { prepareWorldOperation,forkWorldAttempt } from '../src/runtime/transactions.js';
+import { request,id } from '../test/support/runtime.js';
 import assert from 'node:assert/strict';
 const start=performance.now(),resume=process.argv.includes('--resume');let opening,initial,prior=null;
 if(resume){const checkpoint=restoreSave(await readFile('work/annual/checkpoint.json','utf8'));opening=checkpoint.opening;initial=checkpoint.world;prior=JSON.parse(await readFile('work/annual/checkpoint-meta.json','utf8'));}
@@ -32,6 +32,9 @@ if(!partial){
  assert.equal(prepareWorldOperation(settled.world,q).duplicate,true);assert.throws(()=>prepareWorldOperation(settled.world,{...request(settled.world,'duplicate-annual',[{type:'settle-school-year'}]),calendarContext:{kind:'routine'}}),/already settled/);
  result={world:settled.world};commands++;
  assert.equal(readAnnualResults(result.world).length,1);assert.equal(readSemesterReviews(result.world).length,2);assert.ok(readSemesterReviews(result.world).every(r=>r.status==='read'));
+ const beforeRetry=JSON.stringify(result.world);
+ assert.throws(()=>forkWorldAttempt(opening,{attemptId:id('attempt','successful-year-retry'),seeds:{settlement:22,streams:Object.fromEntries(Object.keys(result.world.random).map(k=>[k,33]))}},result.world),{code:'RETRY_UNAUTHORIZED'});
+ assert.equal(JSON.stringify(result.world),beforeRetry);
 }
 const payload=encodeSave(createSave(result.world,opening)),at=performance.now(),restored=restoreSave(payload),restoreMs=performance.now()-at;
 if(canonicalData(restored.world)!==canonicalData(result.world))throw Error('Annual save changed on restore');

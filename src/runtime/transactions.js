@@ -414,6 +414,10 @@ export function createWorldSession(saved) {
 export function forkWorldAttempt(openingSnapshot,{attemptId,seeds},abandonedSnapshot=openingSnapshot) {
   const world=restoreWorldState(openingSnapshot),r=runtimeOf(world);validateId(attemptId,'attempt');
   const abandoned=restoreWorldState(abandonedSnapshot),previous=runtimeOf(abandoned);
+  // This is an engineering snapshot primitive, not a failure authorization.
+  // No existing institutional finding defines an effective career-ending sanction.
+  // Keep the formal annual lifecycle closed until that rule and its verifier exist.
+  ensure(!world.extensions[ANNUAL_KEY]&&!abandoned.extensions[ANNUAL_KEY],'RETRY_UNAUTHORIZED','Formal annual retry requires a verified effective failure terminal; no such source is defined yet');
   ensure(['careerId','playerId','schoolId'].every(k=>world.identity[k]===abandoned.identity[k])&&world.position.openingId===abandoned.position.openingId&&world.position.schoolYearId===abandoned.position.schoolYearId,'SNAPSHOT','Abandoned attempt belongs to another career or opening');
   ensure(['commits','history'].every(field=>r[field].every((entry,index)=>same(entry,previous[field][index]))),'SNAPSHOT','Opening must precede the abandoned attempt');
   const used=[...new Set([...worldAttemptIds(world),...worldAttemptIds(abandoned)])];

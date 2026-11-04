@@ -87,10 +87,10 @@ try {
   console.log('PASS actual page reload after memory-publication failure: revision',revision);
   console.log('PASS',await evalIn('checks.importsAndRetry(st)'));
   const lineage=await evalIn(`checks.retryLineageStorage(${JSON.stringify(testId)})`);
-  console.log('PASS retry identity rollback/import/isolation',JSON.stringify({provenance:lineage.provenance,saveBytes:lineage.saveBytes}));
+  console.log('PASS retry identity rollback/import/isolation',JSON.stringify({provenance:lineage.provenance,saveBytes:lineage.saveBytes,measurements:lineage.measurements}));
   await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();await evalIn(setup(false));
   const lineageRestored=await evalIn(`checks.retryLineageStorage(${JSON.stringify(testId)},false)`);
-  console.log('PASS actual navigation retains retired attempts; third retry, duplicate and stale writer',JSON.stringify({provenance:lineageRestored.provenance,saveBytes:lineageRestored.saveBytes}));
+  console.log('PASS actual navigation retains retired attempts; third retry, duplicate and stale writer',JSON.stringify({provenance:lineageRestored.provenance,saveBytes:lineageRestored.saveBytes,measurements:lineageRestored.measurements}));
   console.log('PASS',await evalIn('checks.decision(st)'));
   await evalIn('checks.holdSlot(st)');
   const other=await evalIn(`(async()=>{const s=await (await import('./src/storage/session.js')).createStoredSession(st.db,3);return s.import(await s.export(),{expectedToken:s.snapshot().token,confirmed:true});})()`,peer.sessionId);

@@ -4,9 +4,29 @@ import { runtimeScenario,request,id,event,fact,open,result } from './support/run
 import { createSave,restoreSave,saveToken,sameToken } from '../src/storage/format.js';
 import { createStoredSession } from '../src/storage/session.js';
 import { runtimeOf,WorldError } from '../src/runtime/model.js';
+import { annualOpening } from './support/annual-scenario.js';
+import { forkWorldAttempt } from '../src/runtime/transactions.js';
 const clone=structuredClone;
 function memory(){const slots=new Map(),counts=new Map();let fail=false;return {fail(){fail=true;},async read(n){return clone(slots.get(n)??{payload:null,token:null});},async write(n,payload,expected){const old=await this.read(n);if(!sameToken(old.token,expected))throw new WorldError('STALE','changed');if(fail){fail=false;throw new Error('quota');}const generation=(counts.get(n)??0)+1;counts.set(n,generation);const saved={payload:clone(payload),token:payload?saveToken({payload,generation}):null};slots.set(n,saved);return clone(saved);}};}
 const sample=(world,tag)=>request(world,tag,[{type:'sample',stream:'events',id:tag,weights:[1,2,3]}]);
+test('storage: formal annual play cannot use engineering retry before failure, after reload or across slots',async()=>{
+ let opening;const w=annualOpening({events:false,onOpening:value=>opening=value}),db=memory(),s=await createStoredSession(db,1);
+ await s.initialize(opening);const stale=await createStoredSession(db,1);
+ await s.import(createSave(w,opening),{expectedToken:s.snapshot().token,confirmed:true});
+ const before=s.snapshot(),options={attemptId:id('attempt','unauthorized-annual'),seeds:{settlement:22,streams:Object.fromEntries(Object.keys(w.random).map(k=>[k,33]))}};
+ // Repeated attempts neither consume an ID nor rotate RNG/history/revision.
+ for(let n=0;n<3;n++)await assert.rejects(s.retry(options),{code:'RETRY_UNAUTHORIZED'});
+ assert.deepEqual(s.snapshot(),before);assert.deepEqual(await db.read(1),before);
+ await assert.rejects(stale.retry(options),{code:'STALE'});
+ assert.throws(()=>forkWorldAttempt(opening,options),{code:'RETRY_UNAUTHORIZED'});
+ assert.throws(()=>forkWorldAttempt(opening,options,w),{code:'RETRY_UNAUTHORIZED'});
+ const exported=await s.export(),imported=await createStoredSession(db,2);await imported.import(exported,{expectedToken:null});
+ const reloaded=await createStoredSession(db,2),copy=reloaded.snapshot();await assert.rejects(reloaded.retry(options),{code:'RETRY_UNAUTHORIZED'});
+ assert.deepEqual(reloaded.snapshot(),copy);assert.deepEqual((await db.read(1)),before);assert.equal((await db.read(3)).payload,null);
+ // A blocked retry must not lock normal play or corrupt the original opening.
+ const q=sample(w,'continue-after-denied-retry');await s.execute(q);assert.equal((await s.execute(q)).duplicate,true);
+ assert.deepEqual(s.snapshot().payload.opening,opening);
+});
 test('storage: version rejection and detached complete world/opening roundtrip',()=>{
   const w=runtimeScenario(),p=createSave(w,w);assert.deepEqual(restoreSave(JSON.stringify(p)),p);p.world.random.events.state=0;assert.deepEqual(w,runtimeScenario());
   for(const mutate of [p=>p.version=2,p=>p.world.extensions['teacher-hell/world'].version=2,p=>p.world.schemaVersion=8,p=>p.extra=true]){const bad=createSave(w,w);mutate(bad);assert.throws(()=>restoreSave(bad));}

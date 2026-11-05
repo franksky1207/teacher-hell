@@ -19,6 +19,10 @@ if(process.argv.includes('--verify-source-only')){
  assert.equal(sha(JSON.stringify(complete.world)),manifest.files['world.json'].sha256);
  assert.equal(sha(JSON.stringify(complete.opening)),manifest.files['opening.json'].sha256);
  assert.equal(r.history.filter(h=>h.type==='annual-success').length,3);assert.equal(careerResult(complete.world).data.years,3);
+ let storageChecks=null;
+ try{storageChecks=JSON.parse(await readFile(`${root}/storage-checks.json`,'utf8'));}
+ catch(error){if(error.code!=='ENOENT')throw error;}
+ if(storageChecks){assert.equal(storageChecks.kind,'T4-real-checkpoint-storage-validation');assert.equal(storageChecks.difficulty,manifest.difficulty);assert.equal(storageChecks.sourceCommit,manifest.sourceCommit);assert.equal(storageChecks.failed,0);assert.equal(storageChecks.passed,storageChecks.checks.length);report.storageChecks=storageChecks;}
  report.kind='T4-retained-source-retrieval-verification';report.sourceRun=process.env.T4_SOURCE_RUN??null;report.checks=['all original raw file SHA-256 and bytes','world/opening subdocuments equal original envelope','full completed-world restore under current code'];report.passed=3;report.failed=0;report.files=manifest.files;report.completedAt=new Date().toISOString();
  await writeFile(`${root}/source-verification.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 }else{

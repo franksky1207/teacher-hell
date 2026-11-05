@@ -15,8 +15,10 @@ import { sourceFact } from '../test/support/procedure-scenario.js';
 import { memorialFromWorld } from '../src/storage/memorial.js';
 const difficulty=process.argv.find(a=>a.startsWith('--difficulty='))?.split('=')[1]??'normal';
 assert.ok(['easy','normal','hard'].includes(difficulty));
+const shellQuote=value=>"'"+value.replaceAll("'","'\\''")+"'";
+const reproductionCommand=['node','--max-old-space-size=6144','--expose-gc','scripts/three-year-demo.js',...process.argv.slice(2)].map(shellQuote).join(' ');
 const root=`work/three-year-${difficulty}`,sha=bytes=>createHash('sha256').update(bytes).digest('hex');await mkdir(root,{recursive:true});
-const manifest={kind:'T4-continuous-production-source',difficulty,seed:{foundation:74,events:1,schedule:75,background:(75^0x54325032)>>>0},sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),driver:'scripts/three-year-demo.js',driverSha256:sha(await readFile('scripts/three-year-demo.js')),command:`node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty=${difficulty}`,node:process.version,arguments:process.argv.slice(2),runId:process.env.GITHUB_RUN_ID??null,files:{},years:[],status:'running'};
+const manifest={kind:'T4-continuous-production-source',difficulty,seed:{foundation:74,events:1,schedule:75,background:(75^0x54325032)>>>0},sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),driver:'scripts/three-year-demo.js',driverSha256:sha(await readFile('scripts/three-year-demo.js')),command:reproductionCommand,node:process.version,arguments:process.argv.slice(2),runId:process.env.GITHUB_RUN_ID??null,files:{},years:[],status:'running'};
 const saveManifest=()=>writeFile(`${root}/manifest.json`,JSON.stringify(manifest,null,2)+'\n');
 async function persist(name,bytes){await writeFile(`${root}/${name}.partial`,bytes);await rename(`${root}/${name}.partial`,`${root}/${name}`);manifest.files[name]={bytes:Buffer.byteLength(bytes),sha256:sha(bytes)};await saveManifest();}
 let opening,w,lastLogged=null;const started=performance.now();

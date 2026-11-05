@@ -6,7 +6,7 @@ import { compileInstitution,tickOperation } from './procedures.js';
 import { compileAcademic,academicState,withAcademicProjection,readAcademicQualification } from './academics.js';
 import { compileCampus,schoolEnabled,schoolActions,schoolEventOccupied } from './campus.js';
 import { formalSlot,calendarMilestones } from './schedule.js';
-import { semester,teachingTerm,yearData,nextPosition } from '../calendar/calendar.js';
+import { planMode,THREE_YEAR,newThreeYearStart,semester,teachingTerm,yearData,nextPosition } from '../calendar/calendar.js';
 import { createRelationship, createReputation, directedKey, contactKey } from '../world/relationships.js';
 import { compileNpcUpdate, checkNpcGroup, compileNpcClarification } from './autonomy.js';
 import { compileStory, guardStoryOperation, storyContent,readStory } from './story.js';
@@ -76,7 +76,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     ensure(storyInternal&&op.eventId===storyInternal,'DUTY_SOURCE','Duty results require a confirmed registered story');history(world,command,'homeroom-result',op.eventId,findEvent(world,op.eventId).stageId,[op.basisFactId],op.data);
   } else if(op.type==='transition-school-year'){
     assertShape(op,['type']);ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player continues a year');
-    syncNumeric(world,numericSession);const n=numericSession.world(),target=n.registry.academicYear+1,y=yearData(target),next=nextPosition(world.position,r.plan.startYear);
+    syncNumeric(world,numericSession);const n=numericSession.world(),target=n.registry.academicYear+1,y=yearData(target),next=nextPosition(world.position,r.plan.startYear,planMode(r.plan));
     ensure(world.extensions[ANNUAL_KEY]&&annualResult(world),'ANNUAL_PENDING','A verified annual success is required');
     ensure(next.date===y.summerCamp&&next.slotId==='early'&&r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor),'TIME','Transition immediately before the next summer camp');
     const academics=academicState(world),ended=n.registry.enrollments.filter(e=>e.until===null&&target-n.registry.classes[e.classId].cohortStart>2),outcomes=ended.map(e=>({personId:e.personId,qualification:readAcademicQualification(world,e.personId,academics)}));
@@ -304,7 +304,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     if(world.extensions[ANNUAL_KEY]&&calendarMilestones(world).annualSettlementReady)ensure(annualResult(world),'ANNUAL_PENDING','Settle the academic year before continuing');
     assertShape(op,['type','planId','steps']);ensure(op.planId===r.plan.id&&Number.isInteger(op.steps)&&op.steps>0,'TIME','Invalid time progression');
     if(isFormal(r.plan)){
-      const next=nextPosition(world.position,r.plan.startYear);if(world.extensions[ANNUAL_KEY]&&next.serviceYear>world.position.serviceYear){ensure(annualResult(world)&&numericSession.world().registry.academicYear===r.plan.startYear+next.serviceYear-1,'ANNUAL_PENDING','Complete annual affiliations before autumn opening');const single=command.operations.length===1&&['advance-time','school-action'].includes(command.operations[0].type),vacationEnd=command.operations.length===2&&command.operations[0].type==='finish-slot'&&command.operations[1].type==='advance-time';ensure(single||vacationEnd,'SNAPSHOT','Autumn entry must finish its atomic command before further work');}
+      const next=nextPosition(world.position,r.plan.startYear,planMode(r.plan));if(world.extensions[ANNUAL_KEY]&&next.serviceYear>world.position.serviceYear){ensure(annualResult(world)&&numericSession.world().registry.academicYear===r.plan.startYear+next.serviceYear-1,'ANNUAL_PENDING','Complete annual affiliations before autumn opening');const single=command.operations.length===1&&['advance-time','school-action'].includes(command.operations[0].type),vacationEnd=command.operations.length===2&&command.operations[0].type==='finish-slot'&&command.operations[1].type==='advance-time';ensure(single||vacationEnd,'SNAPSHOT','Autumn entry must finish its atomic command before further work');}
       naturalAt(world,numericSession,world.position);
       if(r.plan.vacation&&world.position.date===r.plan.vacation.endDate){const task=r.plan.vacation,panel=deriveWorldPanel(numericSession.world()),after=Object.fromEntries(STATE_NAMES.map(k=>[k,panel[k]]));history(world,command,'vacation-summary',null,null,[],{...task,after,delta:Object.fromEntries(STATE_NAMES.map(k=>[k,after[k]-task.before[k]]))});r.plan.vacation=null;}
       advanceFormalSlot(world,op);naturalAt(world,numericSession,world.position);
@@ -456,6 +456,7 @@ export function forkWorldAttempt(openingSnapshot,options,abandonedSnapshot=openi
   const abandoned=typeof abandonedSnapshot==='string'?JSON.parse(abandonedSnapshot):abandonedSnapshot;
   validateWorldState(abandoned);
   const previous=runtimeOf(abandoned);
+  ensure(r.plan.validation===previous.plan.validation&&r.plan.id===previous.plan.id&&same(r.plan.career??null,previous.plan.career??null),'SNAPSHOT','Retry career mode or difficulty differs');
   const authorization=world.extensions[ANNUAL_KEY]||abandoned.extensions[ANNUAL_KEY]?authorizeRetry(abandoned,options):null;
   ensure(['careerId','playerId','schoolId'].every(k=>world.identity[k]===abandoned.identity[k])&&world.position.openingId===abandoned.position.openingId&&world.position.schoolYearId===abandoned.position.schoolYearId,'SNAPSHOT','Abandoned attempt belongs to another career or opening');
   ensure(['commits','history'].every(field=>r[field].every((entry,index)=>same(entry,previous[field][index]))),'SNAPSHOT','Opening must precede the abandoned attempt');
@@ -479,12 +480,12 @@ export function startCalendarWorld(foundation,options){const adopted=createCalen
 /** Bootstrap the real school catalogue through the same checked initial transaction.
  * Preview generation is a detached proposal only; the committed operation owns RNG/history.
  */
-export function startSchoolCareer(foundation,{startYear,subject,seed}){
+export function startSchoolCareer(foundation,{startYear,subject,seed,career=null}){
  ensure(foundation.enrollments.length===0,'MIGRATION','Reference-only affiliations need explicit migration');
- const preview=clone(foundation.numeric.evolution.world);
- initializeRegistry(preview,{academicYear:startYear,date:careerRange(startYear).start});
- const baseline=startCalendarWorld(foundation,{startYear,subject,seed,classes:schoolCatalogue(preview,Object.keys(SUBJECT_LOAD)),homeClassId:preview.classroom.id});
- return prepareWorldOperation(baseline,{id:createId('operation',[baseline.identity.careerId,'initialize-school']),attemptId:baseline.identity.attemptId,expectedRevision:0,actorId:baseline.identity.playerId,preconditions:[],calendarContext:{kind:'procedure'},operations:[{type:'school',basisFactId:null,change:{type:'school-initialize',academicYear:startYear}}]}).world;
+ const preview=clone(foundation.numeric.evolution.world),mode=planMode({validation:career===null?'fixed-calendar-v1':'fixed-calendar-v2',...(career===null?{}:{career})});
+ initializeRegistry(preview,{academicYear:startYear,date:careerRange(startYear,mode).start});
+ const baseline=startCalendarWorld(foundation,{startYear,subject,seed,career,classes:schoolCatalogue(preview,Object.keys(SUBJECT_LOAD)),homeClassId:preview.classroom.id});
+ return prepareWorldOperation(baseline,{id:createId('operation',career===null?[baseline.identity.careerId,'initialize-school']:[baseline.identity.careerId,'initialize-three-year-school',String(startYear),career.difficulty]),attemptId:baseline.identity.attemptId,expectedRevision:0,actorId:baseline.identity.playerId,preconditions:[],calendarContext:{kind:'procedure'},operations:[{type:'school',basisFactId:null,change:{type:'school-initialize',academicYear:startYear}}]}).world;
 }
 
 /** New formal semester-report lifecycle; no date baselines or synthesized reports. */
@@ -495,3 +496,10 @@ export function startAnnualSchoolCareer(foundation,options){return restoreWorldS
 
 /** Opt-in v1 continuity extension, initialized only at the legal opening; old saves remain unchanged. */
 export function startFailureSchoolCareer(foundation,options){return restoreWorldState(initializeHomeroom(startAnnualSchoolCareer(foundation,options)));}
+
+/** T1 formal entry: explicit Taiwan civil date; the resulting startYear is locked in the plan.
+ * Veteran initial sources/relationships remain a T2 responsibility. */
+export function startThreeYearSchoolCareer(foundation,{taipeiDate,difficulty,subject,seed}){
+ const {startYear}=newThreeYearStart(taipeiDate);
+ return startFailureSchoolCareer(foundation,{startYear,subject,seed,career:{version:1,mode:THREE_YEAR,difficulty}});
+}

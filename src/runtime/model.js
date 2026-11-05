@@ -132,8 +132,16 @@ export function validateWorldState(world) {
   }
   assertShape(r,['version','revision','plan','facts','claims','knowledge','disclosures','history','commits','stages','effects','numericArchives']);
   ensure(r.version===1&&Number.isSafeInteger(r.revision)&&r.revision>=0,'VERSION','Unknown world runtime version/revision');
-  validatePlan(r.plan);if(isFormal(r.plan))ensure(Object.hasOwn(world.random,'schedule'),'RANDOM','Formal timetable random stream is missing');ensure(same(world.position,planPosition(r.plan)),'TIME','Position is not the plan cursor');
+  validatePlan(r.plan);if(r.plan.validation==='fixed-calendar-v2')ensure(world.numeric.evolution.world.player.year===world.position.serviceYear,'TIME','Three-year numeric play year differs from calendar');if(isFormal(r.plan))ensure(Object.hasOwn(world.random,'schedule'),'RANDOM','Formal timetable random stream is missing');ensure(same(world.position,planPosition(r.plan)),'TIME','Position is not the plan cursor');
   for(const name of ['facts','claims','knowledge','disclosures','history','commits','stages','effects','numericArchives'])ensure(Array.isArray(r[name]),'SCHEMA',`${name} must be an array`);
+  // Bind opt-in identity to its existing initialization ledger, so changing all plan
+  // tags together cannot silently reinterpret an initialized three-year world as v1.
+  const initialization=r.commits[0];
+  if(initialization){
+    validateId(initialization.id,'operation');const parts=JSON.parse(initialization.id.slice('operation:'.length)),marked=parts[1]==='initialize-three-year-school';
+    if(r.plan.validation==='fixed-calendar-v2')ensure(initialization.id===createId('operation',[world.identity.careerId,'initialize-three-year-school',String(r.plan.startYear),r.plan.career.difficulty]),'MODE','Three-year identity differs from its initialization ledger');
+    else ensure(!marked,'MODE','Three-year initialization cannot become a legacy world');
+  }
   unique(r.facts,f=>f.id,'fact IDs');unique(r.claims,c=>key(c.id,c.versionId),'claim versions');
   unique(r.knowledge,k=>key(k.actorId,k.claimId,k.versionId),'knowledge keys');unique(r.disclosures,d=>key(d.actorId,d.factId),'disclosures');
   unique(r.history,h=>h.id,'history IDs');unique(r.effects,e=>e.id,'effect IDs');unique(r.stages,s=>s.id,'stage IDs');

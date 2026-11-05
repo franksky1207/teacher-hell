@@ -19,7 +19,7 @@ function checkedSave(input,detach) {
     if(world.extensions[ANNUAL_KEY]||opening.extensions[ANNUAL_KEY])ensure(!!world.extensions[ANNUAL_KEY]&&!!opening.extensions[ANNUAL_KEY]&&same(world.extensions[ANNUAL_KEY],opening.extensions[ANNUAL_KEY]),'SNAPSHOT','Annual observation opening differs from the saved opening');
     validateOpeningSnapshot(opening);
     const wp=runtimeOf(world).plan,op=runtimeOf(opening).plan;
-    ensure(isFormal(wp)===isFormal(op)&&(!isFormal(wp)||(wp.calendarVersion===op.calendarVersion&&wp.startYear===op.startYear&&wp.subject===op.subject)),'SNAPSHOT','Snapshot calendar differs from current world');
+    ensure(isFormal(wp)===isFormal(op)&&(!isFormal(wp)||(wp.validation===op.validation&&wp.id===op.id&&same(wp.career??null,op.career??null)&&wp.calendarVersion===op.calendarVersion&&wp.startYear===op.startYear&&wp.subject===op.subject)),'SNAPSHOT','Snapshot calendar differs from current world');
     ensure(['careerId','playerId','schoolId'].every(k=>opening.identity[k]===world.identity[k]),'SNAPSHOT','Opening belongs to another career/person/school');
     ensure(opening.position.openingId===world.position.openingId&&opening.position.schoolYearId===world.position.schoolYearId,'SNAPSHOT','Opening belongs to another year');
     ensure(runtimeOf(opening).revision<=runtimeOf(world).revision,'SNAPSHOT','Opening is newer than world');

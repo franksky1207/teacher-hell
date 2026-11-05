@@ -133,3 +133,35 @@ test('storage: repeated retry keeps the full opening and removes abandoned facts
   await assert.rejects(s.execute(q),{code:'ATTEMPT'});
  }
 });
+
+import { startThreeYearSchoolCareer } from '../src/runtime/transactions.js';
+import { teacherTenure } from '../src/runtime/schedule.js';
+import { foundationScenario } from './support/scenarios.js';
+function threeYearOpening(difficulty){const f=foundationScenario(74);f.events=[];f.enrollments=[];return startThreeYearSchoolCareer(f,{taipeiDate:'2062-11-05',difficulty,subject:'國文',seed:75});}
+test('storage T1: all three slots retain mode, difficulty, locked year and tenure through CAS/export/import/reload',async t=>{
+ const db=memory();
+ for(const [index,difficulty] of ['easy','normal','hard'].entries()){
+  const slot=index+1,w=threeYearOpening(difficulty),session=await createStoredSession(db,slot);await session.initialize(w);
+  const stale=await createStoredSession(db,slot);await session.execute(sample(w,'three-year-'+difficulty));
+  await assert.rejects(stale.execute(sample(w,'stale-three-year-'+difficulty)),{code:'STALE'});
+  const saved=session.snapshot(),backup=await session.export();assert.equal(restoreSave(backup).world.position.serviceYear,1);
+  // A future real-world date selects a different new opening; it cannot change this save's 2062 start.
+  assert.equal(runtimeOf(restoreSave(backup).world).plan.startYear,2062);
+  for(const instant of ['2062-12-31T15:59:59Z','2062-12-31T16:00:00Z','2063-07-01T00:00:00Z']){
+   t.mock.method(Date,'now',()=>Date.parse(instant));assert.deepEqual(restoreSave(backup),saved.payload);t.mock.restoreAll();
+  }
+  const reloaded=await createStoredSession(db,slot);assert.deepEqual(reloaded.snapshot(),saved);
+  await reloaded.import(backup,{expectedToken:saved.token,confirmed:true});
+  const restored=reloaded.snapshot().payload;assert.deepEqual(restored,saved.payload);assert.equal(teacherTenure(restored.world),[20,10,1][index]);
+  assert.deepEqual(restored.opening,w);assert.equal(runtimeOf(restored.world).history.filter(h=>h.type==='annual-success').length,0);
+ }
+ assert.equal((await db.read(4)).payload,null);
+});
+test('storage T1: import and retry reject mismatched mode/difficulty without changing the stored opening',async()=>{
+ const db=memory(),session=await createStoredSession(db,1),w=threeYearOpening('easy');await session.initialize(w);const before=session.snapshot();
+ for(const mutate of [p=>p.world.extensions['teacher-hell/world'].plan.career.difficulty='normal',p=>delete p.world.extensions['teacher-hell/world'].plan.career,p=>p.world.numeric.evolution.world.player.year=20]){
+  const bad=structuredClone(before.payload);mutate(bad);await assert.rejects(session.import(bad,{expectedToken:before.token,confirmed:true}));assert.deepEqual(await db.read(1),before);
+ }
+ const normal=threeYearOpening('normal');assert.throws(()=>forkWorldAttempt(w,{attemptId:id('attempt','wrong-mode'),seeds:{}},normal),{code:'SNAPSHOT'});
+ const mixed=structuredClone(before.payload);mixed.world=normal;await assert.rejects(session.import(mixed,{expectedToken:before.token,confirmed:true}),{code:'SNAPSHOT'});assert.deepEqual(await db.read(1),before);
+});

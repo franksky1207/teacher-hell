@@ -10,7 +10,7 @@ export const NOTEBOOK_TABS=Object.freeze([
  {id:'career',label:'職涯紀錄',description:'教師生涯與過往班級'}
 ]);
 export function renderNotebookView({date,grade,readonly=false,tab='overview'}){
- if(typeof date!=='string'||!/^\\d{4}-\\d{2}-\\d{2}$/.test(date)||![1,2,3].includes(grade))throw new TypeError('Invalid notebook public context');
+ if(typeof date!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(date)||![1,2,3].includes(grade))throw new TypeError('Invalid notebook public context');
  const chosen=NOTEBOOK_TABS.find(x=>x.id===tab);
  if(!chosen)throw new RangeError('Unknown notebook tab');
  const tabs=NOTEBOOK_TABS.map(item=>`<button type="button" role="tab" id="notebook-tab-${item.id}" aria-controls="notebook-content" aria-selected="${item.id===tab}" data-action="notebook-tab:${item.id}" class="notebook-tab${item.id===tab?' notebook-tab--active':''}">${esc(item.label)}</button>`).join('');

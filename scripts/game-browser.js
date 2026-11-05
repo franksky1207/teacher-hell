@@ -19,7 +19,7 @@ try {
     `--user-data-dir=${join(temporary,'profile')}`,'--remote-debugging-port=0','about:blank',
   ],{stdio:['ignore','ignore','pipe']});
   const debuggerUrl=await new Promise((resolve,reject)=>{
-    const timer=setTimeout(()=>reject(new Error('Chromium debugger startup timed out')),15000);
+    const timer=setTimeout(()=>reject(new Error('Chromium debugger startup timed out')),30000);
     browser.once('error',error=>{clearTimeout(timer);reject(error);});
     browser.once('exit',code=>{clearTimeout(timer);reject(new Error(`Chromium exited before debugger: ${code}`));});
     browser.stderr.on('data',chunk=>{

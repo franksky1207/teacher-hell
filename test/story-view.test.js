@@ -29,7 +29,7 @@ test('13-A: rejects invalid projection and option counts',()=>{
 });
 
 test('13-C: only confirmed disclosures and public, rounded panel changes are shown',()=>{
- const content={pageIndex:2,canNext:false,canFinish:true,result:['教師已知道<事實>。'],
+ const content={pageIndex:2,canNext:false,canFinish:true,resultConfirmed:true,result:['教師已知道<事實>。'],
   teacherDelta:{教學能力:1.8,精神:-2.1,體力:0.2,隱藏參數:99}};
  const html=renderStoryView(read(content));
  assert.match(html,/aria-label="事件結果"/);
@@ -43,7 +43,7 @@ test('13-C: only confirmed disclosures and public, rounded panel changes are sho
  assert.doesNotMatch(pending,/aria-label="事件結果"/);
 });
 test('13-C: confirmed result has no previous/cancel/reconfirm action',()=>{
- const html=renderStoryView(read({pageIndex:2,canNext:false,canPrevious:false,canFinish:true,result:['已知事實'],teacherDelta:{}}));
+ const html=renderStoryView(read({pageIndex:2,canNext:false,canPrevious:false,canFinish:true,resultConfirmed:true,result:['已知事實'],teacherDelta:{}}));
  assert.match(html,/data-story-action="finish"/);
  assert.doesNotMatch(html,/data-story-action="previous"|data-story-action="cancel"|data-story-action="confirm"|data-story-advance/);
 });
@@ -52,4 +52,10 @@ test('13-C: eight options render eight controls without padding',()=>{
  const html=renderStoryView(read({pageIndex:2,canNext:false,choices:eight}));
  assert.equal((html.match(/data-story-action="select"/g)||[]).length,8);
  assert.doesNotMatch(html,/data-story-action="confirm"|data-story-action="finish"/);
+});
+
+test('13-C: narrative-only final page does not claim a confirmed result',()=>{
+ const html=renderStoryView(read({pageIndex:2,canNext:false,canFinish:true,result:[],teacherDelta:{}}));
+ assert.doesNotMatch(html,/aria-label="事件結果"/);
+ assert.match(html,/data-story-action="finish"/);
 });

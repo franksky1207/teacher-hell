@@ -86,3 +86,14 @@ test('13-C: immediate successor stays in the same admitted story',async()=>{
  assert.equal(world.extensions['teacher-hell/world'].history.filter(h=>h.type==='choice').length,1);
  assert.equal(world.extensions['teacher-hell/world'].history.filter(h=>h.type==='event-selection').length,1);
 });
+
+test('13-C: resultConfirmed matches persisted formal mode, not the button text',()=>{
+ let {world}=beginDemo();
+ assert.equal(currentStory(world).resultConfirmed,false);
+ while(currentStory(world).canNext)world=issue(world,'next');
+ world=issue(world,'select','listen');
+ assert.equal(currentStory(world).resultConfirmed,false);
+ world=issue(world,'confirm');
+ assert.equal(currentStory(world).resultConfirmed,true);
+ assert.equal(currentStory(structuredClone(world)).resultConfirmed,true);
+});

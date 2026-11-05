@@ -13,7 +13,7 @@ export function currentStory(world){
   if(!state||state.mode==='ended')continue;
   const view=readStory(world,event.id);
   if(view.waiting&&!view.canResume)continue;
-  candidates.push(view);
+  candidates.push({...view,resultConfirmed:state.mode==='result'});
  }
  return candidates[0]??null;
 }

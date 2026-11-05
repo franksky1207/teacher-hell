@@ -1,6 +1,6 @@
 /** Optional local Chromium/CDP smoke. No downloads, persistent profiles or player data. */
 import { spawn } from 'node:child_process';
-import { mkdtemp, cp, rm } from 'node:fs/promises';
+import { mkdtemp, cp, rm, readdir, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { once } from 'node:events';
@@ -40,12 +40,14 @@ try {
   const {targetId}=await call('Target.createTarget',{url:'about:blank'});
   const {sessionId}=await call('Target.attachToTarget',{targetId,flatten:true});
   const evaluate=async expression=>{
-    const out=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true},sessionId);
+    const out=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true,userGesture:true},sessionId);
     if(out.exceptionDetails)throw new Error(JSON.stringify(out.exceptionDetails));
     return out.result.value;
   };
   await call('Page.enable',{},sessionId);
-  await call('Page.addScriptToEvaluateOnNewDocument',{source:`window.confirm = () => true; window.alert = x => { window.lastAlert=x; }; const NativeDate=Date; window.Date=class extends NativeDate { constructor(...args){super(...(args.length?args:['2026-11-05T12:00:00Z']));} static now(){return NativeDate.parse('2026-11-05T12:00:00Z');} };`},sessionId);
+  await call('Browser.setDownloadBehavior',{behavior:'allow',downloadPath:temporary});
+  await call('Page.setInterceptFileChooserDialog',{enabled:true},sessionId);
+  await call('Page.addScriptToEvaluateOnNewDocument',{source:`window.confirm = x => { (window.confirmPrompts ??= []).push(x); return window.confirmAnswers?.length ? window.confirmAnswers.shift() : true; }; window.alert = x => { window.lastAlert=x; }; const NativeDate=Date; window.Date=class extends NativeDate { constructor(...args){super(...(args.length?args:['2026-11-05T12:00:00Z']));} static now(){return NativeDate.parse('2026-11-05T12:00:00Z');} };`},sessionId);
   const wait=async selector=>{for(let i=0;i<400;i++){if(await evaluate(`!!document.querySelector(${JSON.stringify(selector)})`))return;await new Promise(r=>setTimeout(r,100));}throw Error('Missing '+selector+' '+await evaluate('document.body.innerText')+' ALERT '+await evaluate('window.lastAlert'));};
   const click=async action=>{await wait(`[data-action="${action}"]`);await evaluate(`document.querySelector(${JSON.stringify(`[data-action="${action}"]`)}).click()`);};
   const includes=async text=>{if(!await evaluate(`document.body.innerText.includes(${JSON.stringify(text)})`))throw Error('Missing text '+text);};
@@ -54,26 +56,36 @@ try {
   await click('new:1');await click('difficulty:hard');await click('teacher');await wait('[data-action="reroll"]');
   const before=await evaluate('document.querySelector(".bars").innerText');await click('reroll');await wait('[data-action="reroll"]');
   const after=await evaluate('document.querySelector(".bars").innerText');if(before===after)throw Error('Reroll did not change abilities');
-  await click('subjects');await click('subject:英文');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes('任教第 1 年');
+  await click('subjects');await click('subject:英文');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes('任教第 1 年');await includes('暑輔第 1 週');
+  if(!await evaluate(`Array.from(document.querySelectorAll('.states button')).every(b=>/ [0-9]+$/.test(b.textContent))`))throw Error('States must display integers');
   await click('opening-next');await click('opening-next');await click('timetable');await wait('.table');
   if(await evaluate('document.querySelectorAll(".table button").length')!==40)throw Error('Expected 40 cells');
   const expected=await evaluate(`(async()=>{const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js');const s=createIndexedDBStorage({factory:indexedDB,namespace:'development'});const w=(await s.read(1)).payload.world;const p=w.extensions['teacher-hell/world'].plan,t=p.tables[0],reg=w.numeric.evolution.world.registry;await s.close();return t.classes.map(c=>'高'+'一二三'[t.academicYear-c.cohortStart]+reg.classes[c.id].name);})()`);
   const displayed=await evaluate(`Array.from(document.querySelectorAll('.table button'),x=>x.textContent)`);
   if(!expected.every(name=>displayed.includes(name)))throw Error('Actual class names missing from timetable '+JSON.stringify({expected,displayed}));
-  for(let i=0;i<6;i++)await click('week:1');
-  await includes('週會');await includes('班會');await click('week:1');
-  if(await evaluate(`document.body.innerText.includes('週會')`))throw Error('Odd week incorrectly shows assembly');
-  for(let i=0;i<3;i++)await click('week:1');await wait('.table');
-  if(!await evaluate(`Array.from(document.querySelectorAll('.table button')).some(b=>b.textContent==='活動')`))throw Error('Calendar activity overlay missing');
-  await evaluate(`Array.from(document.querySelectorAll('.table button')).find(b=>b.textContent==='活動').click()`);
-  if(!await evaluate(`window.lastAlert?.includes('教師節')`))throw Error('Activity detail not shown');
-  await click('week:1');await includes('考試');
-  await click('week:0');await click('close');
+  await includes('實際當週');
+  if(!await evaluate(`document.querySelector('[data-action="week:odd"]').disabled && document.querySelector('[data-action="week:even"]').disabled`))throw Error('Camp must not invent semester parity');
+  await click('close');
   await call('Page.reload',{},sessionId);await wait('[data-action="continue"]');await click('continue');await wait('[data-action="timetable"]');await includes('任教第 1 年');
   await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true},sessionId);await click('timetable');await wait('.table');
   const layout=await evaluate(`(()=>{const t=document.querySelector('.table'),r=t.getBoundingClientRect();return {width:r.width,scroll:t.scrollWidth,client:t.clientWidth,count:t.querySelectorAll('button').length};})()`);
   if(layout.scroll>layout.client||layout.count!==40)throw Error('Mobile table overflow '+JSON.stringify(layout));
   await click('close');await click('menu');await click('slots');await wait('[data-action="new:2"]');
+  await click('export:1');let exported;
+  for(let i=0;i<200;i++){exported=(await readdir(temporary)).find(n=>n.endsWith('.json'));if(exported)break;await new Promise(r=>setTimeout(r,100));}
+  if(!exported)throw Error('UI export did not download JSON');
+  const choose=async (action,path)=>{const chosen=new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('File chooser timeout')),10000);const onMessage=e=>{const m=JSON.parse(e.data);if(m.method==='Page.fileChooserOpened'){clearTimeout(timer);socket.removeEventListener('message',onMessage);resolve(m.params.backendNodeId);}};socket.addEventListener('message',onMessage);});await click(action);const backendNodeId=await chosen;await call('DOM.setFileInputFiles',{files:[path],backendNodeId},sessionId);};
+  const digest=async i=>evaluate(`(async()=>{const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js');const s=createIndexedDBStorage({factory:indexedDB,namespace:'development'});const x=await s.read(${i});await s.close();const bytes=new TextEncoder().encode(JSON.stringify(x.payload));return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),x=>x.toString(16).padStart(2,'0')).join('');})()`);
+  const sourceDigest=await digest(1);await choose('import:2',join(temporary,exported));
+  for(let i=0;i<300;i++){if(await evaluate(`!!document.querySelector('[data-action="load:2"]')`))break;await new Promise(r=>setTimeout(r,100));}
+  if(await digest(2)!==sourceDigest)throw Error('Imported world differs from exported world');
+  await call('Page.reload',{},sessionId);await wait('[data-action="slots"]');await click('slots');await wait('[data-action="load:2"]');if(await digest(2)!==sourceDigest)throw Error('Reload changed imported save');
+  await evaluate('window.confirmAnswers=[false]');await choose('import:2',join(temporary,exported));await new Promise(r=>setTimeout(r,300));if(await digest(2)!==sourceDigest)throw Error('Cancelled import changed target');
+  await evaluate('window.confirmAnswers=[true,false];window.confirmPrompts=[]');await choose('import:2',join(temporary,exported));await new Promise(r=>setTimeout(r,300));if(await digest(2)!==sourceDigest)throw Error('Cancelled overwrite changed target');if(await evaluate('window.confirmPrompts.length')!==2)throw Error('Overwrite requires two confirmations');
+  const bad=join(temporary,'invalid.txt');await writeFile(bad,'{broken');await choose('import:2',bad);await new Promise(r=>setTimeout(r,300));if(await digest(2)!==sourceDigest)throw Error('Invalid import changed target');if(!await evaluate(`window.lastAlert?.includes('匯入失敗')`))throw Error('Invalid file error not shown');
+  const isolation=await evaluate(`(async()=>{const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js');const s=createIndexedDBStorage({factory:indexedDB,namespace:'player'});const x=await s.read(1);await s.close();return x.payload===null;})()`);if(!isolation)throw Error('Player namespace not isolated');
+  await click('delete:2');for(let i=0;i<200&&!await evaluate(`!document.querySelector('[data-action="load:2"]')`);i++)await new Promise(r=>setTimeout(r,100));
+
   for(const [number,mode,year] of [[2,'easy','20'],[3,'normal','10']]){
     await click(`new:${number}`);await click(`difficulty:${mode}`);await click('teacher');await wait('[data-action="subjects"]');await click('subjects');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes(`任教第 ${year} 年`);await click('menu');await click('slots');await wait('[data-action="new:1"]');
   }

@@ -93,6 +93,43 @@ try {
   await click('new:2');await click('difficulty:hard');await click('teacher');await wait('[data-action="subjects"]');await click('subjects');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes('任教第 1 年');
   await click('menu');await click('slots');await wait('[data-action="delete:3"]');await includes('任教第 10 年');
   await click('delete:3');for(let i=0;i<200&&!await evaluate('document.body.innerText.includes("空存檔")');i++)await new Promise(r=>setTimeout(r,100));await includes('空存檔');await click('load:1');await wait('[data-action="timetable"]');await includes('任教第 1 年');
+  // Phase 13-G: disposable DOM only; never persist a test event in a player slot.
+  for(const [width,height,expected] of [[390,844,2],[1280,800,4]]){
+    await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<650},sessionId);
+    const layout=await evaluate(`(async()=>{
+      const {renderStoryView}=await import('./web/story-view.js');
+      const game=document.querySelector('.game');
+      const original=game?.querySelector('.story');
+      if(!game||!original)throw Error('Missing game shell');
+      original.remove();game.classList.add('game--story');
+      const page={text:'長篇對話。'.repeat(130),speaker:null,presentation:'narration',cast:[]};
+      const choices=Array.from({length:8},(_,i)=>({id:'option-'+i,text:('第'+(i+1)+'個選項。').repeat(35)}));
+      const sceneView={label:'校園談話角落',speaker:'旁白',cast:[
+        {name:'學生',kind:'student',position:'left',expression:'sad',tone:1,speaking:false},
+        {name:'教職員',kind:'adult',position:'right',expression:'calm',tone:0,speaking:true}
+      ]};
+      let stage;
+      try{
+        game.insertAdjacentHTML('beforeend',renderStoryView({page,pageIndex:2,pageCount:3,canPrevious:true,canNext:false,
+          choices,confirmation:null,canFinish:false,waiting:false,canResume:false,ended:false,sceneView}));
+        stage=game.querySelector('.story-view');
+        const panel=stage.querySelector('.story-choice-panel'),grid=stage.querySelector('.story-choice-grid');
+        const reader=stage.querySelector('.story-reader'),rect=stage.getBoundingClientRect();
+        const states=game.querySelector('.states').getBoundingClientRect();
+        return {columns:getComputedStyle(grid).gridTemplateColumns.trim().split(' ').filter(Boolean).length,
+          count:grid.querySelectorAll('button').length,cast:stage.querySelectorAll('.story-actor').length,
+          withinX:rect.left>=-1&&rect.right<=innerWidth+1,
+          withinY:rect.top>=states.bottom-2&&rect.bottom<=innerHeight+2,
+          mainScroll:game.scrollHeight<=game.clientHeight+2,
+          choicesScrollable:panel.scrollHeight>panel.clientHeight,
+          readerScrollable:reader.scrollHeight>reader.clientHeight};
+      }finally{stage?.remove();game.classList.remove('game--story');game.append(original)}
+    })()`);
+    if(layout.columns!==expected||layout.count!==8||layout.cast!==2||!layout.withinX||
+      !layout.withinY||!layout.mainScroll||!layout.choicesScrollable||!layout.readerScrollable)
+      throw Error('Phase 13 responsive layout failure '+JSON.stringify({width,height,layout}));
+    console.log('PASS Phase 13 responsive '+width+'x'+height+' '+JSON.stringify(layout));
+  }
   console.log('PASS Chromium: desktop create, reroll, subject, save/reload, timetable 40 cells and week switch; mobile five-column layout without horizontal overflow.');
   await call('Browser.close');
 } finally {

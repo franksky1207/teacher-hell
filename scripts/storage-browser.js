@@ -1,6 +1,6 @@
 /** Real Chromium IndexedDB acceptance runner. Temporary profile/site, no player data. */
-import { spawn } from 'node:child_process';
-import { mkdtemp, cp, rm } from 'node:fs/promises';
+import { spawn, execFileSync } from 'node:child_process';
+import { mkdtemp, cp, rm, writeFile, readFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { once } from 'node:events';
@@ -12,6 +12,10 @@ let browser, server, socket, browserDiagnostics='';
 try {
   await cp(resolve(root,'dist'),join(temporary,'site','teacher-hell'),{recursive:true});
   await cp(resolve(root,'test/support'),join(temporary,'site','teacher-hell/test/support'),{recursive:true});
+  if(process.argv.includes('--s2')){
+    await cp(resolve(root,'work/source/completed.json'),join(temporary,'site/teacher-hell/test/support/s2-completed.json'));
+    if(process.argv.includes('--legacy'))await writeFile(join(temporary,'site/teacher-hell/src/storage/indexeddb.js'),execFileSync('git',['show','53bf641:src/storage/indexeddb.js'],{cwd:root}));
+  }
   if(process.argv.includes('--completion-only'))await cp(resolve(root,'work/completion/memorial.json'),join(temporary,'site','teacher-hell/test/support/completion-memorial.json'));
   if(process.argv.includes('--failure-only'))for(const name of ['cycle-1','cycle-2','cycle-3','physical'])await cp(resolve(root,`work/failure/${name}.json`),join(temporary,'site',`teacher-hell/test/support/failure-${name}.json`));
   if(process.argv.includes('--career-only'))await cp(resolve(root,'work/career/failure-4-1.json'),join(temporary,'site','teacher-hell/test/support/career-failure.json'));
@@ -21,7 +25,7 @@ try {
   browser=spawn(process.env.CHROMIUM_BIN || 'chromium',[
     '--headless','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-first-run',
     '--no-default-browser-check','--disable-background-networking','--disable-extensions','--disable-sync',
-    ...(process.argv.includes('--career-only')?['--js-flags=--expose-gc --max-old-space-size=4096']:[]),
+    ...((process.argv.includes('--career-only')||process.argv.includes('--s2'))?['--js-flags=--expose-gc --max-old-space-size=6144','--enable-precise-memory-info']:[]),
     `--user-data-dir=${join(temporary,'profile')}`,'--remote-debugging-port=0','about:blank',
   ],{stdio:['ignore','ignore','pipe']});
   const debuggerUrl=await new Promise((resolve,reject)=>{
@@ -74,6 +78,18 @@ try {
     const out=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true},sid,timeoutMs);
     if(out.exceptionDetails)throw Error(JSON.stringify(out.exceptionDetails));return out.result.value;
   };
+  if(process.argv.includes('--s2')){
+    const manifest=JSON.parse(await readFile(resolve(root,'work/source/manifest.json'),'utf8'));
+    const testId=temporary.split('/').at(-1),expected=manifest.files['completed.json'].sha256;
+    const run=init=>`(async()=>{const checks=await import('./test/support/storage-checks.js');return checks.s2Storage(${JSON.stringify(testId)},${init},${JSON.stringify(expected)});})()`;
+    const initial=await evalIn(run(true),sessionId,1200000);
+    await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+    const restarted=await evalIn(run(false),sessionId,1200000);
+    const report={difficulty:manifest.difficulty,legacy:process.argv.includes('--legacy'),initial,restarted};
+    const name=report.legacy?'legacy':'gzip';await writeFile(resolve(root,`work/source/s2-browser-${name}.json`),JSON.stringify(report,null,2));
+    const {gzipSync}=await import('node:zlib'),encoded=gzipSync(JSON.stringify(report)).toString('base64');
+    for(let i=0;i<encoded.length;i+=3000)console.log(`::notice title=S2 browser ${name} ${i/3000}::${encoded.slice(i,i+3000)}`);
+  }else{
   const testId=temporary.split('/').at(-1);
   const setup=initialize=>`(async()=>{globalThis.checks=await import('./test/support/storage-checks.js');globalThis.st=await checks.setup(${JSON.stringify(testId)},${initialize});return true;})()`;
   if(process.argv.includes('--completion-only')){
@@ -201,6 +217,7 @@ try {
    const reopened=await evalIn(run(false),sessionId,1200000);if(saved.hash!==reopened.hash)throw Error('Fourth-year actual navigation changed world');console.log('PASS actual navigation preserves fourth-year opening and three successes',JSON.stringify(reopened));
   }
   console.log('PASS Chromium storage: all checks complete; engineering acceptance only; NOT Safari/iPhone or full 30-year gameplay.');
+  }
   }
   await call('Browser.close');
 } finally {

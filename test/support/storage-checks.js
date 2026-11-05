@@ -136,8 +136,50 @@ export async function namespaceAndCorruption(t){
  await rejects(()=>importRecoveryBackup(db,1,'{}',{expectedToken:review.token,confirmed:true}));
  await importRecoveryBackup(db,1,text,{expectedToken:review.token,confirmed:true});check(equal((await db.read(1)).payload,original.payload),'backup recovery differs');
  await rejects(()=>importRecoveryBackup(db,1,text,{expectedToken:review.token,confirmed:true}),'STALE');
+ // Install precisely the old text-page layout, then prove read-only loading,
+ // failed lazy upgrade rollback, and successful CAS upgrade preserve every byte.
+ const legacyRaw=await new Promise(resolve=>{const req=globalThis.indexedDB.open(`teacher-hell:test:${testId}:v1:slot1`,1);req.onsuccess=()=>resolve(req.result);});
+ const saved=await db.read(1),legacyText=JSON.stringify(saved.payload),legacyPages=[];
+ for(let i=0;i<legacyText.length;i+=262144)legacyPages.push(legacyText.slice(i,i+262144));
+ await new Promise((resolve,reject)=>{const tx=legacyRaw.transaction(['state','pages'],'readwrite');tx.objectStore('pages').clear();legacyPages.forEach((p,i)=>tx.objectStore('pages').put(p,i));tx.objectStore('state').put({token:saved.token,chunkCount:legacyPages.length},'save');tx.oncomplete=resolve;tx.onabort=()=>reject(tx.error);});
+ check(equal(await db.read(1),saved),'legacy IDB read differs');
+ const aborted=createIndexedDBStorage({factory:globalThis.indexedDB,namespace:'test',testId,faults:{beforeCommit({transaction}){transaction.abort();}}});
+ await rejects(()=>aborted.write(1,saved.payload,saved.token));check(equal(await db.read(1),saved),'failed upgrade changed legacy data');await aborted.close();
+ const upgraded=await db.write(1,saved.payload,saved.token);check(equal(upgraded.payload,saved.payload),'upgrade lost data');
+ check(equal(await db.read(1),upgraded),'upgraded reload differs');legacyRaw.close();
  await db.close();
  const future=await new Promise((resolve,reject)=>{const r=globalThis.indexedDB.open(`teacher-hell:test:${testId}:v1:slot1`,2);r.onerror=()=>reject(r.error);r.onsuccess=()=>resolve(r.result);});future.close();
  const older=createIndexedDBStorage({factory:globalThis.indexedDB,namespace:'test',testId});await rejects(()=>older.read(1),'VersionError');await older.close();
  return 'player/development namespaces (test DBs only); corrupt pages / confirmed backup recovery / future DB version rejection';
+}
+
+/** S2: actual retained T4 checkpoint, full JSON hash, real IDB; no generated substitute. */
+export async function s2Storage(testId,initialize,expected){
+ const {careerResult}=await import('../../src/runtime/career.js');
+ const hash=async text=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text))),x=>x.toString(16).padStart(2,'0')).join('');
+ const db=createIndexedDBStorage({factory:globalThis.indexedDB,namespace:'test',testId}),metrics={stages:{},heap:[]};
+ let maxDelay=0,last=performance.now();const timer=setInterval(()=>{const now=performance.now();maxDelay=Math.max(maxDelay,now-last-20);last=now;},20);
+ const timed=async(name,fn)=>{const at=performance.now(),out=await fn();metrics.stages[name]=performance.now()-at;metrics.heap.push({stage:name,used:performance.memory?.usedJSHeapSize??null});return out;};
+ try{
+  if(initialize){
+   let text=await (await fetch('./test/support/s2-completed.json')).text();check(await hash(text)===expected,'Original source hash differs');
+   let payload=JSON.parse(text);text=null;globalThis.gc?.();
+   let stored=await timed('write',()=>db.write(1,payload,null));payload=null;stored=null;globalThis.gc?.();
+  }
+  let stored=await timed('read',()=>db.read(1));
+  check(await timed('fullStateHash',()=>hash(JSON.stringify(stored.payload)))===expected,'Complete world/opening state differs');
+  const r=runtimeOf(stored.payload.world);check(r.history.filter(h=>h.type==='annual-success').length===3,'Lost annual settlements');
+  check(careerResult(stored.payload.world).data.years===3,'Lost completion');
+  const prior=JSON.parse(r.commits.at(-1).request);
+  check(prepareWorldOperation(stored.payload.world,prior).duplicate,'Terminal replay was not deduplicated');
+  await rejects(()=>prepareWorldOperation(stored.payload.world,{...prior,id:id('operation','s2-after-complete')}),'CAREER_COMPLETE');
+  metrics.revision=stored.token.revision;stored=null;globalThis.gc?.();
+  const raw=await new Promise((resolve,reject)=>{const req=globalThis.indexedDB.open(`teacher-hell:test:${testId}:v1:slot1`,1);req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});
+  const physical=await new Promise((resolve,reject)=>{const tx=raw.transaction(['state','pages']),h=tx.objectStore('state').get('save'),p=tx.objectStore('pages').getAll();tx.oncomplete=()=>resolve({head:h.result,pages:p.result});tx.onabort=()=>reject(tx.error);});raw.close();
+  metrics.metadata=physical.head;metrics.pageBytes=physical.pages.reduce((n,p)=>n+(typeof p==='string'?new TextEncoder().encode(p).length:p.byteLength),0);
+  metrics.metadataBytes=new TextEncoder().encode(JSON.stringify(physical.head)).length;
+  // Let the heartbeat report the final synchronous verification pause too.
+  await new Promise(r=>setTimeout(r,30));metrics.maxMainThreadDelayMs=maxDelay;
+  return metrics;
+ }finally{clearInterval(timer);await db.close();}
 }

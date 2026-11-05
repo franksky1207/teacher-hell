@@ -4,6 +4,52 @@ import { canonicalData } from '../changes/settlement.js';
  * A permanent generation record survives deletion to prevent stale-token ABA writes. */
 import { restoreSave, saveToken, sameToken } from './format.js';
 import { ensure, WorldError } from '../runtime/model.js';
+// Physical storage v2 wraps the unchanged complete v1 save. Compression and
+// verification run outside IDB transactions. Export/import remain portable v1 JSON.
+const PAGE_BYTES=262144;
+async function pageDigest(pages){
+  const bytes=await new Blob(pages).arrayBuffer();
+  return Array.from(new Uint8Array(await globalThis.crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');
+}
+export async function packStoredText(text){
+  // Older engines retain the original format; never write a codec they cannot read.
+  if(typeof globalThis.CompressionStream!=='function'||typeof globalThis.DecompressionStream!=='function'){
+    const pages=[];for(let i=0;i<text.length;i+=PAGE_BYTES)pages.push(text.slice(i,i+PAGE_BYTES));
+    return {pages,metadata:{chunkCount:pages.length}};
+  }
+  let offset=0,rawBytes=0;
+  const encoder=new TextEncoder(),source=new ReadableStream({pull(controller){
+    if(offset===text.length){controller.close();return;}
+    let end=Math.min(offset+PAGE_BYTES,text.length);
+    // A split surrogate pair must not become two replacement characters.
+    if(end<text.length&&text.charCodeAt(end-1)>=0xd800&&text.charCodeAt(end-1)<=0xdbff)end--;
+    const bytes=encoder.encode(text.slice(offset,end));offset=end;rawBytes+=bytes.length;controller.enqueue(bytes);
+  }}),pages=[];
+  const reader=source.pipeThrough(new globalThis.CompressionStream('gzip')).getReader();
+  try{for(;;){const {done,value:bytes}=await reader.read();if(done)break;
+    for(let i=0;i<bytes.length;i+=PAGE_BYTES)pages.push(bytes.slice(i,i+PAGE_BYTES));
+  }}finally{await reader.cancel().catch(()=>{});reader.releaseLock();}
+  return {pages,metadata:{format:2,codec:'gzip',rawBytes,sha256:await pageDigest(pages),chunkCount:pages.length}};
+}
+export async function unpackStoredText(head,pages){
+  ensure(Number.isSafeInteger(head.chunkCount)&&head.chunkCount>0&&head.chunkCount===pages.length,'CORRUPT','Missing save pages');
+  if(head.format===undefined){ensure(pages.every(p=>typeof p==='string'),'CORRUPT','Invalid legacy pages');return pages.join('');}
+  ensure(head.format===2&&head.codec==='gzip','VERSION','Unsupported physical save format/codec');
+  ensure(Number.isSafeInteger(head.rawBytes)&&head.rawBytes>0&&typeof head.sha256==='string'&&/^[0-9a-f]{64}$/.test(head.sha256)&&pages.every(p=>p instanceof Uint8Array&&p.length>0&&p.length<=PAGE_BYTES),'CORRUPT','Invalid compressed metadata/pages');
+  ensure(typeof globalThis.DecompressionStream==='function','CODEC','This browser cannot decompress this save; use a supported browser');
+  ensure(await pageDigest(pages)===head.sha256,'CORRUPT','Compressed save checksum differs');
+  let index=0,total=0;const decoder=new TextDecoder('utf-8',{fatal:true}),parts=[];
+  const source=new ReadableStream({pull(controller){if(index===pages.length)controller.close();else controller.enqueue(pages[index++]);}});
+  const reader=source.pipeThrough(new globalThis.DecompressionStream('gzip')).getReader();
+  try{
+    for(;;){const {done,value:bytes}=await reader.read();if(done)break;
+      total+=bytes.length;ensure(total<=head.rawBytes,'CORRUPT','Save expands beyond declared size');parts.push(decoder.decode(bytes,{stream:true}));
+    }
+    parts.push(decoder.decode());
+  }catch(error){throw new WorldError('CORRUPT','Damaged compressed save: '+error.message);}
+  finally{await reader.cancel().catch(()=>{});reader.releaseLock();}
+  ensure(total===head.rawBytes,'CORRUPT','Expanded save size differs');return parts.join('');
+}
 export function createIndexedDBStorage({factory,namespace,testId, faults={}}) {
   ensure(factory&&typeof factory.open==='function','STORAGE','IndexedDB unavailable');
   ensure(['player','development','test'].includes(namespace),'NAMESPACE','Explicit storage namespace required');
@@ -58,8 +104,8 @@ export function createIndexedDBStorage({factory,namespace,testId, faults={}}) {
       tx.oncomplete=()=>resolve({head:head.result,pages:pages.result});tx.onabort=()=>reject(tx.error??new WorldError('ABORT','Read aborted'));tx.onerror=()=>{};
     });
     if(!record.head){ensure(record.pages.length===0,'CORRUPT','Orphan save pages');return {payload:null,token:null};}
-    ensure(record.head.chunkCount===record.pages.length&&record.pages.every(p=>typeof p==='string'),'CORRUPT','Missing save pages');
-    const payload=restoreSave(record.pages.join('')),token=saveToken({generation:record.head.token?.generation,payload});
+    const text=await unpackStoredText(record.head,record.pages);
+    const payload=restoreSave(text),token=saveToken({generation:record.head.token?.generation,payload});
     ensure(sameToken(token,record.head.token),'CORRUPT','Save metadata disagrees with world');return {payload,token};
   }
 
@@ -77,8 +123,8 @@ export function createIndexedDBStorage({factory,namespace,testId, faults={}}) {
   }
   async function write(slot,payload,expectedToken){
     // Expensive validation happens before opening the write transaction, with no async gap inside it.
-    const checked=payload===null?null:restoreSave(payload),chunks=[];
-    if(checked){const encoded=JSON.stringify(checked);for(let offset=0;offset<encoded.length;offset+=262144)chunks.push(encoded.slice(offset,offset+262144));}
+    const checked=payload===null?null:restoreSave(payload);
+    const packed=checked?await packStoredText(JSON.stringify(checked)):null;
     const db=await open(slot);
     return new Promise((resolve,reject)=>{
       const tx=db.transaction(['state','pages'],'readwrite'),store=tx.objectStore('state'),pages=tx.objectStore('pages');let failure,result;
@@ -91,7 +137,7 @@ export function createIndexedDBStorage({factory,namespace,testId, faults={}}) {
             try{
               const generation=(counter.result??0)+1;ensure(Number.isSafeInteger(generation),'VERSION','Generation exhausted');
               pages.clear();
-              if(checked){const token=saveToken({generation,payload:checked});chunks.forEach((chunk,index)=>pages.put(chunk,index));store.put({token,chunkCount:chunks.length},'save');result={payload:checked,token};}
+              if(checked){const token=saveToken({generation,payload:checked});packed.pages.forEach((chunk,index)=>pages.put(chunk,index));store.put({token,...packed.metadata},'save');result={payload:checked,token};}
               else {store.delete('save');result={payload:null,token:null};}
               store.put(generation,'generation');
               // Test-only synchronous fault point, after requests are queued but before commit.

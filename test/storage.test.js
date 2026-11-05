@@ -186,3 +186,24 @@ test('storage T2 contract: N6 direct major changes keep their full magnitude and
  const before=state.evolution.world.player.current.person['2-1'],delta=40,q={attemptId:state.attemptId,id:'t2-direct-shock',sequence:1,date:p.date,operation:{type:'direct',changes:[{target:{kind:'player-person',id:w.identity.playerId},code:'2-1',delta}]}};
  const changed=settleResult(state,q);assert.equal(changed.evolution.world.player.current.person['2-1'],Math.min(100,before+delta));assert.equal(changed.receipts[0].changes[0].delta,40);assert.deepEqual(settleResult(changed,q),changed);
 });
+
+test('storage physical v2: exact UTF-8, legacy, bounded expansion and hostile codecs/pages',async()=>{
+ const {packStoredText,unpackStoredText}=await import('../src/storage/indexeddb.js');
+ // Split exactly inside a surrogate pair at the physical input boundary.
+ const text='a'.repeat(262143)+'😀繁體中文'.repeat(40000),packed=await packStoredText(text);
+ assert.equal(packed.metadata.format,2);assert.ok(packed.pages.every(p=>p instanceof Uint8Array));
+ assert.equal(await unpackStoredText(packed.metadata,packed.pages),text);
+ assert.equal(await unpackStoredText({chunkCount:2},['舊檔','😀']),'舊檔😀');
+ for(const metadata of [{...packed.metadata,format:3},{...packed.metadata,codec:'brotli'},{...packed.metadata,rawBytes:1},{...packed.metadata,rawBytes:packed.metadata.rawBytes+1},{...packed.metadata,sha256:'0'.repeat(64)},{...packed.metadata,chunkCount:0}])await assert.rejects(unpackStoredText(metadata,packed.pages));
+ const pages=packed.pages.map(p=>p.slice());pages[0][0]^=1;
+ await assert.rejects(unpackStoredText(packed.metadata,pages),{code:'CORRUPT'});
+ await assert.rejects(unpackStoredText(packed.metadata,packed.pages.slice(1)),{code:'CORRUPT'});
+ await assert.rejects(unpackStoredText(packed.metadata,['wrong type']),{code:'CORRUPT'});
+ const original=globalThis.CompressionStream,decoder=globalThis.DecompressionStream;
+ try{
+  globalThis.CompressionStream=undefined;const legacy=await packStoredText(text);
+  assert.equal(legacy.metadata.format,undefined);assert.equal(await unpackStoredText(legacy.metadata,legacy.pages),text);
+  globalThis.DecompressionStream=undefined;await assert.rejects(unpackStoredText(packed.metadata,packed.pages),{code:'CODEC'});
+  assert.equal(await unpackStoredText(legacy.metadata,legacy.pages),text);
+ }finally{globalThis.CompressionStream=original;globalThis.DecompressionStream=decoder;}
+});

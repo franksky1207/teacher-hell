@@ -129,6 +129,8 @@ jobs:
         difficulty: [easy, normal, hard]
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
@@ -140,10 +142,23 @@ jobs:
           path: work/source
           run-id: ${{ matrix.difficulty == 'easy' && '41971561739' || '41971866724' }}
           github-token: ${{ github.token }}
-      - if: inputs.s2_phase == 'analysis'
+      - name: Full retained-source attribution
         run: node --max-old-space-size=6144 --expose-gc scripts/save-capacity.js attribute work/source
       - if: inputs.s2_phase == 'acceptance'
         run: node --max-old-space-size=6144 --expose-gc scripts/storage-s2.js work/source
+      - if: inputs.s2_phase == 'acceptance'
+        run: |
+          npm run build
+          node scripts/storage-browser.js --s2 --legacy
+          node scripts/storage-browser.js --s2
+        env:
+          CHROMIUM_BIN: google-chrome
+      - if: inputs.s2_phase == 'acceptance' && matrix.difficulty == 'easy'
+        run: |
+          node --max-old-space-size=6144 --expose-gc scripts/three-year-checks.js work/source
+          node scripts/storage-browser.js --storage-only
+        env:
+          CHROMIUM_BIN: google-chrome
       - uses: actions/upload-artifact@v4
         if: always()
         with:

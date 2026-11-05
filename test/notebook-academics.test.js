@@ -53,8 +53,8 @@ test('14-D: score publication begins the next calendar day for all three exam ro
   assert.equal(isExamScorePublished('2026:autumn',1,round,last),false);
   assert.equal(isExamScorePublished('2026:autumn',1,round,next),true);
  }
- assert.equal(isExamScorePublished('2026:spring',2,2,'2027-05-04'),false);
- assert.equal(isExamScorePublished('2026:spring',2,2,'2027-05-05'),true);
+ assert.equal(isExamScorePublished('2027:spring',2,2,'2027-05-04'),false);
+ assert.equal(isExamScorePublished('2027:spring',2,2,'2027-05-05'),true);
  assert.throws(()=>isExamScorePublished('2026:autumn',1,0,'2026-10-06'),RangeError);
 });
 test('14-D: term close on final day keeps third exam, term mark and credits undisclosed',()=>{

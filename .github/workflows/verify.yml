@@ -4,6 +4,10 @@ on:
     branches: [main]
   workflow_dispatch:
     inputs:
+      s2_phase:
+        description: S2 retained-source analysis or acceptance (empty disables)
+        type: string
+        default: ''
       three_year:
         description: Run T4 continuous three-year acceptance and retain raw checkpoints
         type: boolean
@@ -36,7 +40,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   quick:
-    if: github.event_name != 'workflow_dispatch' || !inputs.three_year
+    if: github.event_name != 'workflow_dispatch' || (!inputs.three_year && inputs.s2_phase == '')
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -113,4 +117,36 @@ jobs:
           path: ${{ inputs.verify_source_only && format('work/three-year-{0}/source-verification.json', matrix.difficulty) || format('work/three-year-{0}/', matrix.difficulty) }}
           retention-days: 90
           compression-level: 0
+          if-no-files-found: error
+
+  s2-storage:
+    if: github.event_name == 'workflow_dispatch' && inputs.s2_phase != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        difficulty: [easy, normal, hard]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: t4-three-year-${{ matrix.difficulty }}
+          path: work/source
+          run-id: ${{ matrix.difficulty == 'easy' && '41971561739' || '41971866724' }}
+          github-token: ${{ github.token }}
+      - if: inputs.s2_phase == 'analysis'
+        run: node --max-old-space-size=6144 --expose-gc scripts/save-capacity.js attribute work/source
+      - if: inputs.s2_phase == 'acceptance'
+        run: node --max-old-space-size=6144 --expose-gc scripts/storage-s2.js work/source
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: s2-${{ inputs.s2_phase }}-${{ matrix.difficulty }}
+          path: work/source/s2-*.json
           if-no-files-found: error

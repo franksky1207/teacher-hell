@@ -1,6 +1,6 @@
 /** Explicit synthetic school catalogue and late-date baselines. No lifecycle/gameplay claim. */
 import { foundationScenario } from './scenarios.js';
-import { startCalendarWorld,prepareWorldOperation } from '../../src/runtime/transactions.js';
+import { startCalendarWorld,prepareWorldOperation,startThreeYearSchoolCareer } from '../../src/runtime/transactions.js';
 import { runtimeOf,restoreWorldState } from '../../src/runtime/model.js';
 import { createRandom } from '../../src/numeric/random.js';
 import { startEvolution } from '../../src/evolution/time.js';
@@ -25,3 +25,6 @@ export function atDate(date,slotId=null){
  w.numeric=startSettlement(evolution,{seed:45,attemptId:w.identity.attemptId});return restoreWorldState(w);
 }
 export const advance=(w,tag)=>prepareWorldOperation(w,advanceRequest(w,tag)).world;
+
+/** Actual T2 product opening; no invented runtime history or old students. */
+export function experiencedOpening(difficulty='easy',seed=75){const f=foundationScenario(74);f.events=[];f.enrollments=[];return startThreeYearSchoolCareer(f,{taipeiDate:'2026-11-05',difficulty,subject:'國文',seed});}

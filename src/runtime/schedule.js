@@ -7,13 +7,20 @@ import { planMode,careerYears,THREE_YEAR,DIFFICULTY_TENURE,CALENDAR_VERSION,care
 import { generateTimetable,validateTimetable } from '../calendar/timetable.js';
 import { requireCalendar as need } from '../calendar/civil.js';
 export const isFormal=plan=>['fixed-calendar-v1','fixed-calendar-v2'].includes(plan.validation);
-export const calendarPlanId=plan=>`calendar:${CALENDAR_VERSION}:${plan.startYear}`+(planMode(plan)===THREE_YEAR?`:three-year:${plan.career.difficulty}`:'');
+export const calendarPlanId=plan=>`calendar:${CALENDAR_VERSION}:${plan.startYear}`+(planMode(plan)===THREE_YEAR?`:three-year:${plan.career.difficulty}`+(plan.career.version===2?`:background-v1:${plan.career.backgroundSeed}`:''):'');
 /** The difficulty is the only persisted tenure authority; no cached year or fictitious experience. */
 export function teacherTenure(world){
  const plan=world.extensions['teacher-hell/world'].plan;validateFormalPlan(plan);
  const position=planPosition(plan),year=position.serviceYear;
  need(Object.keys(position).every(k=>world.position[k]===position[k])&&world.numeric.evolution.world.player.year===year,'TIME','Play year differs from authoritative calendar');
- return (planMode(plan)===THREE_YEAR?DIFFICULTY_TENURE[plan.career.difficulty]:1)+year-1;
+ return teacherTenureAt(world,position);
+}
+/** Explicit target position during a legal autumn transition, before numeric year catches up. */
+export function teacherTenureAt(world,position){
+ const plan=world.extensions['teacher-hell/world'].plan,mode=planMode(plan);
+ const expected=positionFor(position.date,position.slotId,plan.startYear,mode);
+ need(Object.keys(expected).every(k=>position[k]===expected[k]),'TIME','Tenure target differs from fixed calendar');
+ return (mode===THREE_YEAR?DIFFICULTY_TENURE[plan.career.difficulty]:1)+position.serviceYear-1;
 }
 export function validateFormalPlan(plan){
  assertShape(plan,['id','validation','calendarVersion','startYear','subject','tables','cursor','vacation',...(plan.validation==='fixed-calendar-v2'?['career']:[])]);

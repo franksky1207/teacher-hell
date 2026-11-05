@@ -1,3 +1,4 @@
+import { validatePrehistoryOpening } from '../world/prehistory.js';
 import { validateCareerCompletion } from './career.js';
 import { validateHomeroom } from './homeroom.js';
 import { validateSemesterReviews } from './reviews.js';
@@ -139,9 +140,17 @@ export function validateWorldState(world) {
   const initialization=r.commits[0];
   if(initialization){
     validateId(initialization.id,'operation');const parts=JSON.parse(initialization.id.slice('operation:'.length)),marked=parts[1]==='initialize-three-year-school';
-    if(r.plan.validation==='fixed-calendar-v2')ensure(initialization.id===createId('operation',[world.identity.careerId,'initialize-three-year-school',String(r.plan.startYear),r.plan.career.difficulty]),'MODE','Three-year identity differs from its initialization ledger');
+    if(r.plan.validation==='fixed-calendar-v2')ensure(initialization.id===createId('operation',[world.identity.careerId,'initialize-three-year-school',String(r.plan.startYear),r.plan.career.difficulty,...(r.plan.career.version===2?['background-v1',String(r.plan.career.backgroundSeed)]:[])]),'MODE','Three-year identity differs from its initialization ledger');
     else ensure(!marked,'MODE','Three-year initialization cannot become a legacy world');
   }
+  const numericWorld=world.numeric.evolution.world,experienced=numericWorld.player.version===2;
+  if(r.plan.career?.version===2&&r.revision>0){
+    const c=r.plan.career;
+    ensure(numericWorld.school.mode==='private','MODE','Formal T2 careers require the same private school');
+    ensure(experienced===(c.difficulty!=='hard'),'MODE','Experienced initialization differs from difficulty');
+    if(experienced)ensure(numericWorld.background.subject===r.plan.subject&&numericWorld.player.origin.seed===c.backgroundSeed&&numericWorld.player.origin.count===(c.difficulty==='normal'?4:6),'MODE','Background origin differs from career');
+  }else ensure(!experienced,'MODE','Experienced sources require their explicit T2 career identity');
+  if(world.numeric.evolution.clock.lastNaturalDate===null)validatePrehistoryOpening(numericWorld);
   unique(r.facts,f=>f.id,'fact IDs');unique(r.claims,c=>key(c.id,c.versionId),'claim versions');
   unique(r.knowledge,k=>key(k.actorId,k.claimId,k.versionId),'knowledge keys');unique(r.disclosures,d=>key(d.actorId,d.factId),'disclosures');
   unique(r.history,h=>h.id,'history IDs');unique(r.effects,e=>e.id,'effect IDs');unique(r.stages,s=>s.id,'stage IDs');

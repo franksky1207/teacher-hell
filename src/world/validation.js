@@ -1,3 +1,4 @@
+import { validatePrehistory } from './prehistory.js';
 import { validateRegistry, historicalSchoolBasis } from './registry.js';
 import { resolveWorldEvaluations, validateSocial } from './evaluations.js';
 import { assertShape, identifier } from '../player/panel.js';
@@ -21,7 +22,7 @@ function uniqueList(ids) {
 /** O(people + care links + stored relationships); no all-pairs traversal. */
 export function validateWorld(world, { stage = 'initial' } = {}) {
   if (!['initial','runtime'].includes(stage)) throw new RangeError('Unknown validation stage');
-  assertShape(world,['version','player','school','classroom','people','families','careLinks','contacts','relationships','reputations','random',...(Object.hasOwn(world,'social')?['social']:[]),...(Object.hasOwn(world,'registry')?['registry']:[])]);
+  assertShape(world,['version','player','school','classroom','people','families','careLinks','contacts','relationships','reputations','random',...(Object.hasOwn(world,'social')?['social']:[]),...(Object.hasOwn(world,'registry')?['registry']:[]),...(Object.hasOwn(world,'background')?['background']:[])]);
   if (world.version!==1) throw new RangeError('Unsupported world version');
   const player=restoreCreation(world.player,{resolveEvaluations: entries => resolveWorldEvaluations(world,entries)});
   if (player.phase!=='confirmed') throw new RangeError('Confirm player before world initialization');
@@ -118,6 +119,7 @@ export function validateWorld(world, { stage = 'initial' } = {}) {
   }
   if (Object.hasOwn(world,'registry')) validateRegistry(world);
   if (Object.hasOwn(world,'social')) validateSocial(world);
+  validatePrehistory(world);
   assertShape(world.random,['structure','people','relationships','environment']);
   Object.values(world.random).forEach(restoreRandom);
   return world;

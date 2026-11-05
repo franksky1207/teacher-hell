@@ -5,12 +5,14 @@ import { fieldRandom, naturalDelta, stabilizeOrdinaryDelta, fieldDynamics, TRAIN
 
 const key=(kind,id)=>JSON.stringify([kind,id]);
 /** Canonical holder references; player sources are not duplicated in the NPC map. */
-export function evolutionHolders(world) {
+export function evolutionHolders(world,{teacherTenure=world.player.year}={}) {
+  if(!Number.isSafeInteger(teacherTenure)||teacherTenure<world.player.year)throw new RangeError('Invalid explicit teacher tenure');
+  if(world.player.version===2&&teacherTenure!==(world.player.origin.count===4?10:20)+world.player.year-1)throw new RangeError('Explicit teacher tenure differs from experienced origin');
   const current=world.player.current,player=current.playerId;
   const activeStudents=new Set(world.classroom.studentIds),daily=dailySchoolPeople(world);
   const activeFamilies=daily?new Set(Object.values(world.people).filter(p=>daily.has(p.id)).map(p=>p.familyId)):null;
   return [
-    ...['person','life','work'].map(name=>({id:key(`player-${name}`,player),record:current[name],isPlayer:true,year:world.player.year,kind:`player-${name}`})),
+    ...['person','life','work'].map(name=>({id:key(`player-${name}`,player),record:current[name],isPlayer:true,year:teacherTenure,kind:`player-${name}`})),
     ...Object.values(world.people).filter(p=>!daily||daily.has(p.id)).map(p=>({id:key('person',p.id),record:p.values,isPlayer:false,year:1,kind:'person',familyId:p.familyId,schoolExposure:p.kind==='student'&&activeStudents.has(p.id) ? .25 : 0})),
     ...Object.values(world.families).filter(f=>!activeFamilies||activeFamilies.has(f.id)).map(f=>({id:key('family',f.id),record:f.values,isPlayer:false,year:1,kind:'family'})),
     ...Object.values(world.social?.groups ?? {}).filter(g=>g.kind==='local').map(g=>({id:key('group',g.id),record:g.values,isPlayer:false,year:1,kind:'group'})),
@@ -76,8 +78,8 @@ export function commitRecord(record,changes,{isPlayer=false,year=1}={}) {
 }
 
 /** Caller validates world once at transaction boundaries. No clock/year changes here. */
-export function evolveWorldSnapshot(world,daySeed) {
-  const result=structuredClone(world),before=evolutionHolders(world),after=evolutionHolders(result);
+export function evolveWorldSnapshot(world,daySeed,context={}) {
+  const result=structuredClone(world),before=evolutionHolders(world,context),after=evolutionHolders(result,context);
   const proposals=new Map(before.map(holder=>[holder.id,proposeRecord(holder,daySeed)]));
   proposals.set('school-driver',proposals.get(key('school',world.school.id)));
   const targets=new Map(after.map(holder=>[holder.id,holder.record]));

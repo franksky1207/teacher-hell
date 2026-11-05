@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { FIELDS } from '../src/numeric/dictionary.js';
 import { applyDelta, reflectDelta } from '../src/numeric/math.js';
-import { createRandom } from '../src/numeric/random.js';
+import { createRandom,restoreRandom } from '../src/numeric/random.js';
 import { updateValue } from '../src/numeric/record.js';
 import { createCandidate,confirmCandidate } from '../src/player/creation.js';
 import { derivePanel,ABILITY_NAMES } from '../src/player/panel.js';
@@ -212,4 +212,38 @@ test('school workload coupling requires actual class membership, not a generic N
   assert.ok(Math.abs(coupledChanges({...outside,schoolExposure:.25},base,all)['2-3']-.45)<1e-12);
   const holders=evolutionHolders(world);
   assert.ok(holders.filter(h=>h.kind==='person'&&h.schoolExposure>0).length===40);
+});
+
+import { experiencedOpening,advanceRequest } from './support/calendar.js';
+import { prepareWorldOperation } from '../src/runtime/transactions.js';
+import { teacherTenure } from '../src/runtime/schedule.js';
+import { yearData,positionFor,THREE_YEAR } from '../src/calendar/calendar.js';
+import { addDays } from '../src/calendar/civil.js';
+test('evolution T2 contract: runtime passes 20/10/1 tenure once, leaves play year and NPC evolution intact',()=>{
+ for(const difficulty of ['easy','normal','hard']){
+  const w=experiencedOpening(difficulty),e=w.numeric.evolution,tenure=teacherTenure(w),at={date:w.position.date,schoolYearId:w.position.schoolYearId,openingId:w.position.openingId,serviceYear:1,teacherTenure:tenure};
+  const expected=advanceDay(e,at),next=prepareWorldOperation(w,advanceRequest(w,'t2-natural')).world;
+  assert.deepEqual(next.numeric.evolution,expected);assert.equal(next.position.serviceYear,1);assert.equal(next.numeric.evolution.world.player.year,1);
+  assert.deepEqual(advanceDay(expected,at),expected);assert.deepEqual(advanceDay(restoreEvolution(JSON.stringify(expected)),at),expected);
+  const root=restoreRandom(e.random),daySeed=fieldRandom(root.nextUint32(),at.date,'natural-day-v1').nextUint32();
+  assert.deepEqual(expected.random,root.snapshot());assert.deepEqual(expected.world,evolveWorldSnapshot(e.world,daySeed,{teacherTenure:tenure}));
+  const reference=copy(e.world);
+  if(reference.player.version===2){reference.player.version=1;reference.player.initial=reference.player.origin.base;delete reference.player.origin;delete reference.background;delete reference.registry.responsibilities;}
+  validateWorld(reference,{stage:'runtime'});const original=evolveWorldSnapshot(reference,daySeed);
+  for(const field of ['people','families','school','classroom','contacts','relationships','reputations','random'])assert.deepEqual(expected.world[field],original[field]);
+  if(tenure>1){assert.notDeepEqual(expected.world.player.current,original.player.current);assert.throws(()=>advanceDay(e,{...at,teacherTenure:1}));assert.throws(()=>advanceDay(e,{...at,teacherTenure:NaN}));assert.throws(()=>evolveWorldSnapshot(e.world,daySeed));}
+  else assert.deepEqual(advanceDay(e,{date:at.date,schoolYearId:at.schoolYearId,openingId:at.openingId,serviceYear:1}),expected);
+ }
+});
+
+test('evolution T2 contract: year two/three inputs retain continuity and apply original tenure formulas',()=>{
+ for(const [difficulty,entry] of [['easy',20],['normal',10],['hard',1]])for(const year of [2,3]){
+  // Explicit lower-level opening probe, not fabricated prior annual successes.
+  const w=experiencedOpening(difficulty),state=copy(w.numeric.evolution),date=yearData(2026+year-1).autumnStart,before=addDays(date,-1),p=positionFor(date,'early',2026,THREE_YEAR);
+  state.world.player.year=year-1;state.clock={date:before,lastNaturalDate:before,schoolYearId:'probe:'+String(year-1),openingId:'probe-opening:'+String(year-1)};
+  const at={date,schoolYearId:p.schoolYearId,openingId:p.openingId,serviceYear:year,teacherTenure:entry+year-1},next=advanceDay(state,at);
+  assert.equal(next.world.player.year,year);assert.ok(evolutionHolders(next.world,{teacherTenure:at.teacherTenure}).filter(h=>h.isPlayer).every(h=>h.year===at.teacherTenure));
+  assert.equal(annualGrowthRate(at.teacherTenure),at.teacherTenure===1?0:2.4/(1+(at.teacherTenure-2)/6));assert.equal(dailyStability(at.teacherTenure),.35+.65/Math.sqrt(at.teacherTenure));
+  assert.throws(()=>advanceDay(state,{...at,serviceYear:20}));assert.deepEqual(advanceDay(next,at),next);
+ }
 });

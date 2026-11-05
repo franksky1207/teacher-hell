@@ -39,7 +39,10 @@ export function restoreEvolution(saved) {
 /** Pure atomic transaction: publish/persist only the returned envelope, never half a day. */
 export function advanceDay(saved,input) {
   validateEvolution(saved);
-  assertShape(input,['date','schoolYearId','openingId','serviceYear']);
+  assertShape(input,['date','schoolYearId','openingId','serviceYear',...(Object.hasOwn(input,'teacherTenure')?['teacherTenure']:[])]);
+  const tenure=Object.hasOwn(input,'teacherTenure')?input.teacherTenure:input.serviceYear;
+  if(!Number.isSafeInteger(tenure)||tenure<input.serviceYear)throw new RangeError('Invalid explicit teacher tenure');
+  if(saved.world.player.version===2&&tenure!==(saved.world.player.origin.count===4?10:20)+input.serviceYear-1)throw new RangeError('Teacher tenure differs from validated background');
   gameDate(input.date);identifier(input.schoolYearId);identifier(input.openingId);
   if(!Number.isSafeInteger(input.serviceYear)||input.serviceYear<1) throw new RangeError('Invalid service year');
   const clock=saved.clock,year=saved.world.player.year;
@@ -54,7 +57,7 @@ export function advanceDay(saved,input) {
   const baseline={...saved.world,player:{...saved.world.player,year:input.serviceYear}};
   const rng=restoreRandom(saved.random);
   const daySeed=fieldRandom(rng.nextUint32(),input.date,'natural-day-v1').nextUint32();
-  const world=evolveWorldSnapshot(baseline,daySeed);
+  const world=evolveWorldSnapshot(baseline,daySeed,{teacherTenure:tenure});
   const result={version:1,world,clock:{date:input.date,lastNaturalDate:input.date,schoolYearId:input.schoolYearId,openingId:input.openingId},random:rng.snapshot()};
   return validateEvolution(result);
 }

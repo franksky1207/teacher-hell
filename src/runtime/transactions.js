@@ -1,3 +1,4 @@
+import { initializePrehistory } from '../world/prehistory.js';
 import { careerResult,compileCareerCompletion } from './career.js';
 import { HOMEROOM_KEY,initializeHomeroom,failureResult,compileFailure,crisisObservation,authorizeRetry } from './homeroom.js';
 import { initializeSemesterReviews, pendingSemesterReview, semesterReviewData, acknowledgeSemesterReview } from './reviews.js';
@@ -5,7 +6,7 @@ import { initializeAnnualObservations,compileAnnualSuccess,annualResult,ANNUAL_K
 import { compileInstitution,tickOperation } from './procedures.js';
 import { compileAcademic,academicState,withAcademicProjection,readAcademicQualification } from './academics.js';
 import { compileCampus,schoolEnabled,schoolActions,schoolEventOccupied } from './campus.js';
-import { formalSlot,calendarMilestones } from './schedule.js';
+import { formalSlot,calendarMilestones,teacherTenureAt } from './schedule.js';
 import { planMode,THREE_YEAR,newThreeYearStart,semester,teachingTerm,yearData,nextPosition } from '../calendar/calendar.js';
 import { createRelationship, createReputation, directedKey, contactKey } from '../world/relationships.js';
 import { compileNpcUpdate, checkNpcGroup, compileNpcClarification } from './autonomy.js';
@@ -47,7 +48,7 @@ const naturalSessions=new WeakMap();
 function naturalAt(world,numericSession,position) {
   const stamp=key(position.date,position.schoolYearId,position.openingId,position.serviceYear);
   if(naturalSessions.get(numericSession)===stamp)return;
-  numericSession.advanceDay({date:position.date,schoolYearId:position.schoolYearId,openingId:position.openingId,serviceYear:position.serviceYear});
+  numericSession.advanceDay({date:position.date,schoolYearId:position.schoolYearId,openingId:position.openingId,serviceYear:position.serviceYear,...(runtimeOf(world).plan.validation==='fixed-calendar-v2'?{teacherTenure:teacherTenureAt(world,position)}:{})});
   naturalSessions.set(numericSession,stamp);
 }
 function preconditions(world,conditions) {
@@ -171,6 +172,9 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     if(world.extensions[ANNUAL_KEY]&&['school-year','school-cohort','school-graduate'].includes(op.change.type))ensure(npcInternal,'ANNUAL','Formal affiliations require the annual transition');
     if(world.extensions[HOMEROOM_KEY]&&op.change.type==='school-assignment'){const n=numericSession.world(),current=n.registry.assignments.find(a=>a.id===op.change.endsId);if(current?.personId===world.identity.playerId&&current.roleId===9&&[world.extensions[HOMEROOM_KEY].classId,n.registry.homeClassId].includes(current.classId))ensure(storyInternal,'DUTY_SOURCE','Original duty execution requires its registered story consequence');if(op.change.personId===world.identity.playerId&&op.change.roleId===9&&op.change.classId!==null)ensure(npcInternal,'DUTY_SOURCE','Only a lawful annual transition assigns the formal homeroom');}
     const result=executeSchool(world,op,numericSession);
+    if(op.change.type==='school-initialize'&&r.plan.career?.version===2&&r.plan.career.difficulty!=='hard'){
+      const c=r.plan.career;initializePrehistory(result.snapshot.evolution.world,{seed:c.backgroundSeed,count:c.difficulty==='normal'?4:6,subject:r.plan.subject});
+    }
     history(world,command,'school',null,null,op.basisFactId===null?[]:[op.basisFactId],result.data);
     world.numeric=clone(result.snapshot);
     numericSession=createSettlementSession(result.snapshot);
@@ -485,7 +489,7 @@ export function startSchoolCareer(foundation,{startYear,subject,seed,career=null
  const preview=clone(foundation.numeric.evolution.world),mode=planMode({validation:career===null?'fixed-calendar-v1':'fixed-calendar-v2',...(career===null?{}:{career})});
  initializeRegistry(preview,{academicYear:startYear,date:careerRange(startYear,mode).start});
  const baseline=startCalendarWorld(foundation,{startYear,subject,seed,career,classes:schoolCatalogue(preview,Object.keys(SUBJECT_LOAD)),homeClassId:preview.classroom.id});
- return prepareWorldOperation(baseline,{id:createId('operation',career===null?[baseline.identity.careerId,'initialize-school']:[baseline.identity.careerId,'initialize-three-year-school',String(startYear),career.difficulty]),attemptId:baseline.identity.attemptId,expectedRevision:0,actorId:baseline.identity.playerId,preconditions:[],calendarContext:{kind:'procedure'},operations:[{type:'school',basisFactId:null,change:{type:'school-initialize',academicYear:startYear}}]}).world;
+ return prepareWorldOperation(baseline,{id:createId('operation',career===null?[baseline.identity.careerId,'initialize-school']:[baseline.identity.careerId,'initialize-three-year-school',String(startYear),career.difficulty,...(career.version===2?['background-v1',String(career.backgroundSeed)]:[])]),attemptId:baseline.identity.attemptId,expectedRevision:0,actorId:baseline.identity.playerId,preconditions:[],calendarContext:{kind:'procedure'},operations:[{type:'school',basisFactId:null,change:{type:'school-initialize',academicYear:startYear}}]}).world;
 }
 
 /** New formal semester-report lifecycle; no date baselines or synthesized reports. */
@@ -497,9 +501,9 @@ export function startAnnualSchoolCareer(foundation,options){return restoreWorldS
 /** Opt-in v1 continuity extension, initialized only at the legal opening; old saves remain unchanged. */
 export function startFailureSchoolCareer(foundation,options){return restoreWorldState(initializeHomeroom(startAnnualSchoolCareer(foundation,options)));}
 
-/** T1 formal entry: explicit Taiwan civil date; the resulting startYear is locked in the plan.
- * Veteran initial sources/relationships remain a T2 responsibility. */
+/** Formal entry: explicit Taiwan civil date and an opt-in T2 background identity.
+ * The existing school initialization transaction completes all sources before the first slot. */
 export function startThreeYearSchoolCareer(foundation,{taipeiDate,difficulty,subject,seed}){
  const {startYear}=newThreeYearStart(taipeiDate);
- return startFailureSchoolCareer(foundation,{startYear,subject,seed,career:{version:1,mode:THREE_YEAR,difficulty}});
+ return startFailureSchoolCareer(foundation,{startYear,subject,seed,career:{version:2,mode:THREE_YEAR,difficulty,backgroundSeed:(seed^0x54325032)>>>0}});
 }

@@ -4,6 +4,7 @@ import { restoreRandom } from '../numeric/random.js';
 import { createPerson, sampleRecord, withFamilyContext, FAMILY_CODES, GROUP_CODES } from './people.js';
 import { validateRoles } from './roles.js';
 
+export const SCHOOL_SUBJECTS=Object.freeze(['國文','英文','數學','地理','歷史','物理','化學','公民','生物']);
 export const CLASS_NAMES=Object.freeze([... '忠孝仁愛信義和平勤樸']);
 const need=(ok,message)=>{if(!ok)throw new RangeError(message);};
 const own=(o,k)=>Object.hasOwn(o,k);
@@ -45,7 +46,7 @@ export function initializeRegistry(w,{academicYear,date:at}){
  w.random.structure=rng.snapshot();
  // Lightweight identities/appointments: no simulated daily timetable for every employee.
  const people=restoreRandom(w.random.people),structure=restoreRandom(w.random.structure);
- const subjects=['國文','英文','數學','地理','歷史','物理','化學','公民','生物'];
+ const subjects=SCHOOL_SUBJECTS;
  const slots=[...subjects.flatMap(subject=>Array.from({length:10},(_,i)=>({key:`teacher:${subject}:${i}`,roleId:8}))),
   ...[1,2,3,4,5,6,7,10].flatMap(roleId=>Array.from({length:roleId===1?2:3},(_,i)=>({key:`office:${roleId}:${i}`,roleId})))];
  for(const slot of slots){const id=`staff:${encodeURIComponent(w.school.id)}:${slot.key}`;need(!own(w.people,id),'Initial staff identity collision');w.people[id]=createPerson(id,'other',[slot.roleId],people);profile(w,id,structure);r.assignments.push({id:`appointment:${slot.key}`,personId:id,roleId:slot.roleId,classId:null,from:at,until:null});}
@@ -171,7 +172,7 @@ export function historicalSchoolBasis(w,relation){
  return false;
 }
 export function validateRegistry(w){
- const r=w.registry;assertShape(r,['version','startYear','academicYear','initialClassId','homeClassId','cohortStart','homeIndex','nextPerson','nextEnrollment','classes','cohorts','enrollments','assignments','transfers','profiles']);
+ const r=w.registry;assertShape(r,['version','startYear','academicYear','initialClassId','homeClassId','cohortStart','homeIndex','nextPerson','nextEnrollment','classes','cohorts','enrollments','assignments','transfers','profiles',...(own(r,'responsibilities')?['responsibilities']:[])]);
  need(r.version===1&&Number.isInteger(r.homeIndex)&&r.homeIndex>=1&&r.homeIndex<=10,'Unsupported school registry version/index');year(r.startYear);year(r.academicYear);year(r.cohortStart);need(r.startYear<=r.cohortStart&&r.cohortStart<=r.academicYear,'Invalid cohort order');
  for(const k of ['nextPerson','nextEnrollment'])need(Number.isSafeInteger(r[k])&&r[k]>0,'Invalid registry counter');
  need(r.homeClassId===w.classroom.id&&own(r.classes,r.initialClassId)&&own(r.classes,r.homeClassId),'Homeroom registry mismatch');
@@ -204,6 +205,10 @@ export function validateRegistry(w){
  const originalStudents=new Set();unique(list(r.cohorts).map(c=>c.id));need(r.cohorts.length>=1&&r.cohorts.length<=10,'Career supports ten generated homeroom cohorts');for(const [index,c] of r.cohorts.entries()){assertShape(c,['id','startYear','classId','initialStudentIds']);need(c.startYear===r.startYear+index*3&&r.classes[c.classId]?.cohortStart===c.startYear&&r.classes[c.classId]?.cohortId===c.id&&c.initialStudentIds.length===40,'Invalid initial cohort');unique(c.initialStudentIds);for(const id of c.initialStudentIds){need(!originalStudents.has(id),'Initial natural person recycled into another generated cohort');originalStudents.add(id);need(r.enrollments.some(e=>e.personId===id&&e.classId===c.classId&&e.reason==='initial'),'Missing original cohort enrollment');}}
  need(r.cohorts.at(-1).startYear===r.cohortStart,'Current cohort differs from generated history');
  unique(list(r.assignments).map(a=>a.id));for(const a of r.assignments){assertShape(a,['id','personId','roleId','classId','from','until']);identifier(a.id);ref(w,a.personId);validateRoles([a.roleId]);need(a.classId===null||own(r.classes,a.classId),'Unknown historical teaching class');date(a.from);if(a.until!==null){date(a.until);need(a.until>=a.from,'Assignment reversed');}}
+ if(own(r,'responsibilities')){
+  unique(list(r.responsibilities).map(a=>a.id));need(r.responsibilities.length<=1&&w.background,'Bounded background responsibility required');
+  for(const a of r.responsibilities){assertShape(a,['id','personId','appointedBy','title','scope','subject','sourceId','from','until','authority','responsibilities']);ref(w,a.personId);ref(w,a.appointedBy);date(a.from);need(r.assignments.some(issuer=>issuer.personId===a.appointedBy&&issuer.roleId===1&&issuer.from<=a.from&&(issuer.until===null||issuer.until>=a.from)),'Initial responsibility requires a school-level appointing authority');need(a.personId===w.player.current.playerId&&a.scope===w.school.id&&a.from===r.assignments[0].from&&a.until===null&&a.authority==='coordination-only','Invalid initial school responsibility');}
+ }
  unique(list(r.transfers).map(t=>t.id));for(const t of r.transfers){assertShape(t,['type','id','classId','personId','dueDate','source','status','createdAt','completedAt']);need(t.type==='school-transfer-plan'&&own(r.classes,t.classId),'Invalid transfer plan');identifier(t.id);identifier(t.source);date(t.createdAt);date(t.dueDate);need(t.dueDate>t.createdAt,'Transfer must be arranged in advance');need(['scheduled','completed'].includes(t.status),'Invalid transfer status');if(t.personId!==null)need(w.people[t.personId]?.kind==='student','Unknown transfer student');if(t.status==='completed'){date(t.completedAt);need(t.completedAt>=t.dueDate&&r.enrollments.some(e=>e.personId===t.personId&&e.classId===t.classId&&e.from===t.completedAt),'Transfer result missing');}else need(t.completedAt===null,'Pending transfer already completed');}
  for(const [id,p] of Object.entries(r.profiles)){ref(w,id);assertShape(p,['displayName','appearance']);identifier(p.displayName);assertShape(p.appearance,['variant']);need(Number.isInteger(p.appearance.variant)&&p.appearance.variant>=0&&p.appearance.variant<=65535,'Invalid durable appearance');}
  need(r.classes[r.homeClassId].index===r.homeIndex,'Random homeroom selection mismatch');
@@ -219,3 +224,6 @@ export function dailySchoolPeople(w){
  for(const p of Object.values(w.people))if(p.kind==='other')active.add(p.id);
  return active;
 }
+
+/** Limited coordination duties; these confer no investigation/discipline powers or lesson relief. */
+export const schoolResponsibilities=w=>structuredClone(w.registry?.responsibilities??[]);

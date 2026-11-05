@@ -78,7 +78,8 @@ export function planMode(plan){
  if(plan.validation==='fixed-calendar-v1'){need(!Object.hasOwn(plan,'career'),'MODE','Legacy calendar cannot carry three-year identity');return CAREER_30;}
  need(plan.validation==='fixed-calendar-v2','MODE','Unknown formal calendar mode');
  const c=plan.career;
- need(c&&Object.keys(c).sort().join(',')==='difficulty,mode,version'&&c.version===1&&c.mode===THREE_YEAR&&typeof c.difficulty==='string'&&Object.hasOwn(DIFFICULTY_TENURE,c.difficulty),'MODE','Invalid three-year career identity');
+ need(c&&Object.keys(c).sort().join(',')===(c.version===2?'backgroundSeed,difficulty,mode,version':'difficulty,mode,version')&&[1,2].includes(c.version)&&c.mode===THREE_YEAR&&typeof c.difficulty==='string'&&Object.hasOwn(DIFFICULTY_TENURE,c.difficulty),'MODE','Invalid three-year career identity');
+ if(c.version===2)need(Number.isInteger(c.backgroundSeed)&&c.backgroundSeed>=0&&c.backgroundSeed<=0xffffffff,'MODE','Explicit uint32 background seed required');
  return THREE_YEAR;
 }
 export function careerYears(mode=CAREER_30){need([CAREER_30,THREE_YEAR].includes(mode),'MODE','Unknown career mode');return mode===THREE_YEAR?3:30;}

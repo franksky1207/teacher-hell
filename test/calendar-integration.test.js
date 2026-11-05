@@ -86,12 +86,12 @@ test('calendar-integration: completed slots cannot accept late work; reviews wai
 import { foundationScenario } from './support/scenarios.js';
 import { startThreeYearSchoolCareer,startFailureSchoolCareer } from '../src/runtime/transactions.js';
 import { teacherTenure,validateFormalPlan } from '../src/runtime/schedule.js';
-import { THREE_YEAR,planMode,positionFor,cursorFor,careerRange,DIFFICULTY_TENURE } from '../src/calendar/calendar.js';
+import { THREE_YEAR,newThreeYearStart,planMode,positionFor,cursorFor,careerRange,DIFFICULTY_TENURE } from '../src/calendar/calendar.js';
 import { generateTimetable } from '../src/calendar/timetable.js';
 import { schoolCatalogue } from '../src/world/registry.js';
 import { SUBJECT_LOAD } from '../src/calendar/timetable.js';
 function t1Foundation(){const f=foundationScenario(74);f.events=[];f.enrollments=[];return f;}
-function t1World(difficulty='easy',taipeiDate='2026-11-05'){return startThreeYearSchoolCareer(t1Foundation(),{taipeiDate,difficulty,subject:'國文',seed:75});}
+function t1World(difficulty='easy',taipeiDate='2026-11-05'){const {startYear}=newThreeYearStart(taipeiDate);return startFailureSchoolCareer(t1Foundation(),{startYear,subject:'國文',seed:75,career:{version:1,mode:THREE_YEAR,difficulty}});}
 
 test('calendar-integration T1: all difficulties create play year one with no veteran awards, histories or relations',()=>{
  const old=startFailureSchoolCareer(t1Foundation(),{startYear:2026,subject:'國文',seed:75});
@@ -147,4 +147,54 @@ test('calendar-integration T1: forged difficulty, tenure, mode and twentieth pla
  const save=createSave(t1World(),t1World());save.world= t1World('normal');assert.throws(()=>restoreSave(save),/SNAPSHOT/);
  const old=calendarWorld();assert.equal(planMode(runtimeOf(old).plan),'career-30');assert.equal(teacherTenure(old),1);assert.equal(Object.hasOwn(runtimeOf(old).plan,'career'),false);
  assert.deepEqual(restoreSave(JSON.stringify(createSave(old,old))).world,old);
+});
+
+import { experiencedOpening } from './support/calendar.js';
+import { deriveWorldPanel } from '../src/social/reputation.js';
+import { derivePanel,ABILITY_NAMES,STATE_NAMES } from '../src/player/panel.js';
+import { directedKey,contactKey } from '../src/world/relationships.js';
+import { schoolResponsibilities } from '../src/world/registry.js';
+import { validateWorld } from '../src/world/validation.js';
+test('calendar-integration T2: real seeded openings preserve novice contracts, streams, roster and teaching load',()=>{
+ const hard=experiencedOpening('hard'),ordinary=hard.numeric.evolution.world;
+ const legacy=startFailureSchoolCareer(t1Foundation(),{startYear:2026,subject:'國文',seed:75});assert.deepEqual(hard.numeric,legacy.numeric);
+ for(const [difficulty,tenure] of [['easy',20],['normal',10],['hard',1]]){
+  const w=experiencedOpening(difficulty),n=w.numeric.evolution.world,p=deriveWorldPanel(n),r=runtimeOf(w);
+  assert.deepEqual(experiencedOpening(difficulty),w);assert.equal(teacherTenure(w),tenure);assert.equal(w.position.serviceYear,1);assert.equal(n.player.year,1);
+  assert.equal(r.history.length,1);assert.equal(r.history[0].type,'school');assert.equal(w.events.length,0);assert.equal(w.numeric.receipts.length,0);assert.equal(r.numericArchives.length,0);
+  assert.equal(n.classroom.studentIds.length,40);assert.equal(n.registry.cohorts.length,1);assert.deepEqual(n.people,ordinary.people);assert.deepEqual(n.families,ordinary.families);assert.deepEqual(n.careLinks,ordinary.careLinks);assert.deepEqual(n.registry.enrollments,ordinary.registry.enrollments);
+  assert.deepEqual(n.random,ordinary.random);assert.deepEqual(w.random,hard.random);assert.deepEqual(w.numeric.random,hard.numeric.random);assert.deepEqual(w.numeric.evolution.random,hard.numeric.evolution.random);assert.deepEqual(n.player.random,ordinary.player.random);
+  const table=r.plan.tables[0];assert.equal(table.lessons.length,18);assert.ok(table.lessons.some(l=>l.classId===table.homeClassId));assert.deepEqual(table,runtimeOf(hard).plan.tables[0]);
+  assert.deepEqual(n.registry.assignments,ordinary.registry.assignments);validateWorld(n,{stage:'runtime'});
+  if(difficulty==='hard'){assert.equal(n.player.version,1);assert.equal(n.background,undefined);assert.deepEqual(STATE_NAMES.map(k=>p[k]),[100,100,100,40,100,100]);assert.equal(ABILITY_NAMES.reduce((s,k)=>s+p[k],0),240);}
+  else{
+   assert.equal(n.player.version,2);assert.equal(n.background.episodes.length,difficulty==='normal'?4:6);assert.deepEqual(p,derivePanel(n.player.initial));assert.notDeepEqual(p,deriveWorldPanel(ordinary));
+   assert.equal(n.player.current.evaluations.length,3);assert.equal(Object.keys(n.contacts).length,Object.keys(ordinary.contacts).length+3);
+   for(const [key,edge] of Object.entries(ordinary.relationships))assert.deepEqual(n.relationships[key],edge);
+   for(const id of n.player.origin.staffIds){assert.equal(n.people[id].kind,'other');const incoming=n.relationships[directedKey(id,w.identity.playerId)],outgoing=n.relationships[directedKey(w.identity.playerId,id)],source=n.social.attestations[directedKey(id,w.identity.playerId)];assert.notDeepEqual(incoming.values,outgoing.values);assert.ok(n.background.episodes.some(e=>e.id===source.basisId&&e.participantIds.includes(id)&&e.playerKnown));assert.equal(n.contacts[contactKey(id,w.identity.playerId)].reference,source.basisId);}
+  }
+  assert.deepEqual(restoreSave(JSON.stringify(createSave(w,w))).world,w);
+ }
+});
+test('calendar-integration T2: responsibilities have bounded school provenance and no implicit procedural powers',()=>{
+ let withDuty,withoutDuty;
+ for(let seed=0;seed<12&&(!withDuty||!withoutDuty);seed++){const w=experiencedOpening('easy',seed);if(schoolResponsibilities(w.numeric.evolution.world).length)withDuty=w;else withoutDuty=w;}
+ assert.ok(withDuty&&withoutDuty);
+ const n=withDuty.numeric.evolution.world,[duty]=schoolResponsibilities(n);assert.equal(duty.personId,withDuty.identity.playerId);assert.equal(duty.scope,n.school.id);assert.ok(n.registry.assignments.some(a=>a.personId===duty.appointedBy&&a.roleId===1));assert.equal(duty.authority,'coordination-only');assert.equal(duty.subject,duty.title==='subject-convenor'?runtimeOf(withDuty).plan.subject:null);assert.ok(duty.responsibilities.length>=2);assert.ok(n.background.episodes.some(e=>e.id===duty.sourceId&&e.type==='school-service'));
+ assert.equal(n.registry.assignments.filter(a=>a.personId===withDuty.identity.playerId&&a.roleId===9&&a.until===null).length,1);assert.equal(n.people[withDuty.identity.playerId],undefined);assert.equal(runtimeOf(withDuty).plan.tables[0].lessons.length,18);
+ duty.title='principal';assert.notEqual(schoolResponsibilities(n)[0].title,'principal');
+ assert.deepEqual(schoolResponsibilities(experiencedOpening('hard').numeric.evolution.world),[]);
+});
+test('calendar-integration T2: malformed background, opinions, staff, seed and mode cannot survive restoration',()=>{
+ for(const mutate of [
+  n=>n.background=null,n=>n.background.subject='英文',n=>n.background.episodes[0].outcome=99,n=>n.background.episodes.push(n.background.episodes[0]),n=>n.background.episodes[0].schoolId='another-school',
+  n=>n.player.initial.person['3-1']++,n=>n.player.current.person['3-1']++,n=>n.player.origin.count=4,n=>n.player.origin.staffIds[0]=n.classroom.studentIds[0],
+  n=>delete n.contacts[contactKey(n.player.current.playerId,n.player.origin.staffIds[0])],
+  n=>n.social.attestations[directedKey(n.player.origin.staffIds[0],n.player.current.playerId)].basisId='invented',
+  n=>n.player.current.evaluations=n.player.origin.base.evaluations,n=>delete n.background,
+  n=>n.registry.responsibilities=[{title:'principal'}],
+ ]){const w=experiencedOpening();mutate(w.numeric.evolution.world);assert.throws(()=>restoreWorldState(w));}
+ for(const mutate of [c=>c.backgroundSeed++,c=>c.difficulty='normal',c=>c.version=1]){const w=experiencedOpening();mutate(runtimeOf(w).plan.career);assert.throws(()=>restoreWorldState(w));}
+ const publicFoundation=t1Foundation();publicFoundation.numeric.evolution.world.school.mode='public';assert.throws(()=>startThreeYearSchoolCareer(publicFoundation,{taipeiDate:'2026-11-05',difficulty:'hard',subject:'國文',seed:75}));
+ const mixed=createSave(experiencedOpening(),experiencedOpening());mixed.opening=experiencedOpening('normal');assert.throws(()=>restoreSave(mixed));
 });

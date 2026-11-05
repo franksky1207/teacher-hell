@@ -165,3 +165,24 @@ test('storage T1: import and retry reject mismatched mode/difficulty without cha
  const normal=threeYearOpening('normal');assert.throws(()=>forkWorldAttempt(w,{attemptId:id('attempt','wrong-mode'),seeds:{}},normal),{code:'SNAPSHOT'});
  const mixed=structuredClone(before.payload);mixed.world=normal;await assert.rejects(session.import(mixed,{expectedToken:before.token,confirmed:true}),{code:'SNAPSHOT'});assert.deepEqual(await db.read(1),before);
 });
+
+import { experiencedOpening } from './support/calendar.js';
+import { runFailure } from './support/failure-scenario.js';
+import { failureResult } from '../src/runtime/homeroom.js';
+import { settleResult,advanceSettlementDay } from '../src/changes/settlement.js';
+test('storage T2 integration: actual veteran failure restores source values, contacts, responsibility and clean opening through retry/CAS/import',async()=>{
+ const opening=experiencedOpening('easy'),failed=runFailure(opening,{route:'social',maxDays:6}).world,terminal=failureResult(failed);
+ assert.ok(terminal,'Actual social terminal must be reached without synthetic failure flags');
+ const db=memory(),session=await createStoredSession(db,1);await session.initialize(opening);let before=session.snapshot();await session.import(createSave(failed,opening),{expectedToken:before.token,confirmed:true});
+ const stale=await createStoredSession(db,1),options={attemptId:id('attempt','t2-real-retry'),seeds:{settlement:33,streams:Object.fromEntries(Object.keys(opening.random).map(k=>[k,3]))},failureId:terminal.id,failedAttemptId:failed.identity.attemptId,schoolYearId:failed.position.schoolYearId,expectedRevision:runtimeOf(failed).revision};
+ before=session.snapshot();db.fail();await assert.rejects(session.retry(options),/quota/);assert.deepEqual(await db.read(1),before);
+ await session.retry(options);await assert.rejects(stale.retry(options),{code:'STALE'});assert.equal((await session.retry(options)).duplicate,true);
+ const payload=session.snapshot().payload;assert.deepEqual(payload.opening,opening);assert.deepEqual(payload.world.numeric.evolution,opening.numeric.evolution);assert.equal(teacherTenure(payload.world),20);assert.equal(failureResult(payload.world),null);assert.equal(payload.world.position.date,opening.position.date);assert.equal(payload.world.numeric.receipts.length,0);assert.equal(payload.world.events.length,0);
+ const exported=await session.export(),other=await createStoredSession(db,2);await other.import(exported,{expectedToken:null});assert.deepEqual(other.snapshot().payload,payload);assert.deepEqual((await createStoredSession(db,2)).snapshot().payload,payload);assert.equal((await db.read(3)).payload,null);
+ const bad=structuredClone(payload);bad.world.numeric.evolution.world.background.episodes[0].outcome=99;await assert.rejects(other.import(bad,{expectedToken:other.snapshot().token,confirmed:true}));assert.deepEqual(other.snapshot().payload,payload);
+});
+test('storage T2 contract: N6 direct major changes keep their full magnitude and receipts with senior N4 context',()=>{
+ const w=experiencedOpening('easy'),p=w.position,state=advanceSettlementDay(w.numeric,{date:p.date,schoolYearId:p.schoolYearId,openingId:p.openingId,serviceYear:1,teacherTenure:20});
+ const before=state.evolution.world.player.current.person['2-1'],delta=40,q={attemptId:state.attemptId,id:'t2-direct-shock',sequence:1,date:p.date,operation:{type:'direct',changes:[{target:{kind:'player-person',id:w.identity.playerId},code:'2-1',delta}]}};
+ const changed=settleResult(state,q);assert.equal(changed.evolution.world.player.current.person['2-1'],Math.min(100,before+delta));assert.equal(changed.receipts[0].changes[0].delta,40);assert.deepEqual(settleResult(changed,q),changed);
+});

@@ -43,3 +43,46 @@ test('13-B: choice selection is persisted; no local simulated result',()=>{
  assert.equal(currentStory(world).confirmation,null);
  assert.throws(()=>makeStoryRequest(world,eventId,'confirm'));
 });
+
+test('13-C: cancel and reselect do not settle; confirm settles once and locks rollback',()=>{
+ let {world,eventId}=beginDemo();
+ while(currentStory(world).canNext)world=issue(world,'next');
+ const numericBefore=structuredClone(world.numeric);
+ world=issue(world,'select','listen');
+ assert.deepEqual(world.numeric,numericBefore);
+ world=issue(world,'cancel');
+ world=issue(world,'select','angry');
+ assert.deepEqual(world.numeric,numericBefore);
+ assert.equal(currentStory(world).confirmation.optionId,'angry');
+ world=issue(world,'confirm');
+ assert.equal(world.extensions['teacher-hell/world'].history.filter(h=>h.type==='story'&&h.eventId===eventId&&h.data.action.action==='confirm').length,1);
+ assert.equal(currentStory(world).canFinish,true);
+ assert.equal(currentStory(world).canPrevious,false);
+ assert.throws(()=>makeStoryRequest(world,eventId,'cancel'));
+ assert.throws(()=>makeStoryRequest(world,eventId,'confirm'));
+ assert.throws(()=>makeStoryRequest(world,eventId,'previous'));
+ assert.notDeepEqual(world.numeric,numericBefore);
+});
+test('13-C: restored result and formally deferred follow-up do not settle twice',()=>{
+ let {world,eventId}=beginDemo();
+ while(currentStory(world).canNext)world=issue(world,'next');
+ world=issue(world,'select','listen');
+ world=issue(world,'confirm');
+ const restored=structuredClone(world);
+ assert.deepEqual(currentStory(restored).teacherDelta,currentStory(world).teacherDelta);
+ assert.deepEqual(currentStory(restored).result,currentStory(world).result);
+ world=issue(restored,'finish');
+ assert.equal(world.extensions['teacher-hell/world'].history.filter(h=>h.type==='story').at(-1).data.state.mode,'waiting');
+ assert.equal(currentStory(world),null);
+ assert.throws(()=>makeStoryRequest(world,eventId,'resume'));
+ assert.equal(world.extensions['teacher-hell/world'].history.filter(h=>h.type==='choice').length,1);
+});
+test('13-C: immediate successor stays in the same admitted story',async()=>{
+ const {IMMEDIATE_STORY}=await import('../src/runtime/story-content.js');
+ let {world,eventId}=beginDemo(1,IMMEDIATE_STORY);
+ while(currentStory(world).canNext)world=issue(world,'next');
+ world=issue(world,'select','listen');world=issue(world,'confirm');world=issue(world,'finish');
+ assert.equal(currentStory(world).pageIndex,0);
+ assert.equal(world.extensions['teacher-hell/world'].history.filter(h=>h.type==='choice').length,1);
+ assert.equal(world.extensions['teacher-hell/world'].history.filter(h=>h.type==='event-selection').length,1);
+});

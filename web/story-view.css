@@ -12,3 +12,12 @@
 .story-confirm p{margin:0 0 .5rem}
 .story-finish,.story-resume{text-align:right}
 @media(max-width:650px){.story-view{left:.5rem;right:.5rem;bottom:.5rem;max-height:calc(100dvh - 5rem)}.story-reader{padding:.8rem;min-height:5rem}.story-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.story-choice-grid button{font-size:.9rem;padding:.55rem .5rem}}
+
+/* Phase 13-C: neutral, disclosed results after confirmation only. */
+.story-result{background:#111c30ed;border:1px solid #d6c8aa;border-radius:.55rem;padding:.6rem .85rem;min-width:0;overflow-wrap:anywhere}
+.story-result h3{font-size:.9rem;font-weight:700;margin:.25rem 0}
+.story-result p{font-size:.88rem;margin:.3rem 0}
+.story-result-facts{margin:.25rem 0 .6rem;padding-left:1.4rem;font-size:.88rem;line-height:1.45}
+.story-result-deltas{display:flex;gap:.35rem .7rem;flex-wrap:wrap;font-size:.85rem}
+.story-result-deltas span{white-space:nowrap}
+@media(max-width:650px){.story-result{padding:.5rem .65rem}}

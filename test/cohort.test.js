@@ -140,3 +140,13 @@ test('T3 30-year domain transaction probe: common leaves still feed school-year 
  assert.equal(prepareWorldOperation(after,q).duplicate,true);
  assert.throws(()=>prepareWorldOperation(after,{...request(after,'different-completion',operations),calendarContext:{kind:'procedure'}}));
 });
+
+
+test('T4 terminal audit: a different assignment cannot disguise an early end of the opening homeroom duty',()=>{
+ const w=probe(),{after,h}=materialize(w,compiled(w)),registry=n(after).registry;
+ const original=registry.assignments.find(a=>a.personId===w.identity.playerId&&a.roleId===9&&a.classId===h.data.classId);
+ after.extensions['teacher-hell/homeroom-continuity']={assignmentId:original.id};
+ validateCohortArchive(after,h);
+ registry.assignments.push({...original,id:'forged-substitute-duty'});original.until='2029-06-01';
+ assert.throws(()=>validateCohortArchive(after,h),/actual dated assignment end/);
+});

@@ -110,7 +110,7 @@ export async function capacity(t){
  at=performance.now();const loaded=await t.db.read(2),readMs=performance.now()-at;check(equal(loaded.payload,restoreSave(text)),'large roundtrip differs');check(runtimeOf(loaded.payload.world).facts.length===600&&runtimeOf(loaded.payload.opening).facts.length===600,'history/opening truncated');
  const abortDriver=createIndexedDBStorage({factory:globalThis.indexedDB,namespace:'test',testId:t.testId,faults:{beforeCommit({transaction}){transaction.abort();}}});
  const failing=await createStoredSession(abortDriver,2);await rejects(()=>failing.import(text,{expectedToken:loaded.token,confirmed:true}));const preserved=await t.db.read(2);check(equal(preserved,loaded),'aborted large import partially changed pages');await abortDriver.close();
- const head=await new Promise((resolve,reject)=>{const r=globalThis.indexedDB.open(`teacher-hell:test:${t.testId}:v1:slot2`,1);r.onerror=()=>reject(r.error);r.onsuccess=()=>{const db=r.result,tx=db.transaction('state'),get=tx.objectStore('state').get('save');tx.oncomplete=()=>{db.close();resolve(get.result);};};});check(head.chunkCount>1,'large payload was not segmented');
+ const head=await new Promise((resolve,reject)=>{const r=globalThis.indexedDB.open(`teacher-hell:test:${t.testId}:v1:slot2`,1);r.onerror=()=>reject(r.error);r.onsuccess=()=>{const db=r.result,tx=db.transaction('state'),get=tx.objectStore('state').get('save');tx.oncomplete=()=>{db.close();resolve(get.result);};};});check(head.format===2?head.chunkCount>=1&&head.rawBytes===bytes:head.chunkCount>1,'physical pages/expanded size disagree');
  return {syntheticOnly:true,chunks:head.chunkCount,annualBuckets:30,events:30,facts:600,bytes,generateMs:Math.round(generateMs),writeMs:Math.round(writeMs),exportMs:Math.round(exportMs),importMs:Math.round(importMs),readMs:Math.round(readMs),heap:performance.memory?.usedJSHeapSize??null,note:'Desktop Chromium; heap includes copies/GC; not device capacity or gameplay balance'};
 }
 export async function holdSlot(t){
@@ -157,7 +157,7 @@ export async function namespaceAndCorruption(t){
 export async function s2Storage(testId,initialize,expected){
  const {careerResult}=await import('../../src/runtime/career.js');
  const hash=async text=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text))),x=>x.toString(16).padStart(2,'0')).join('');
- const db=createIndexedDBStorage({factory:globalThis.indexedDB,namespace:'test',testId}),metrics={stages:{},heap:[]};
+ const db=createIndexedDBStorage({factory:globalThis.indexedDB,namespace:'test',testId}),metrics={stages:{},heap:[],storageBefore:await globalThis.navigator.storage.estimate()};
  let maxDelay=0,last=performance.now();const timer=setInterval(()=>{const now=performance.now();maxDelay=Math.max(maxDelay,now-last-20);last=now;},20);
  const timed=async(name,fn)=>{const at=performance.now(),out=await fn();metrics.stages[name]=performance.now()-at;metrics.heap.push({stage:name,used:performance.memory?.usedJSHeapSize??null});return out;};
  try{
@@ -186,6 +186,7 @@ export async function s2Storage(testId,initialize,expected){
   metrics.revision=stored.token.revision;stored=null;globalThis.gc?.();
   const raw=await new Promise((resolve,reject)=>{const req=globalThis.indexedDB.open(`teacher-hell:test:${testId}:v1:slot1`,1);req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});
   const physical=await new Promise((resolve,reject)=>{const tx=raw.transaction(['state','pages']),h=tx.objectStore('state').get('save'),p=tx.objectStore('pages').getAll();tx.oncomplete=()=>resolve({head:h.result,pages:p.result});tx.onabort=()=>reject(tx.error);});raw.close();
+  metrics.storageAfter=await globalThis.navigator.storage.estimate();
   metrics.metadata=physical.head;metrics.pageBytes=physical.pages.reduce((n,p)=>n+(typeof p==='string'?new TextEncoder().encode(p).length:p.byteLength),0);
   metrics.metadataBytes=new TextEncoder().encode(JSON.stringify(physical.head)).length;
   // Let the heartbeat report the final synchronous verification pause too.

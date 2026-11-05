@@ -8,7 +8,8 @@ import { root } from './project.js';
 import { createPreviewServer } from './preview.js';
 
 const temporary = await mkdtemp(join(tmpdir(),'teacher-hell-browser-'));
-let browser, server, socket, browserDiagnostics='';
+let browser, server, socket, browserDiagnostics='',rssTimer,peakBrowserRssBytes=0;
+const sampleBrowserRss=()=>{if(!browser?.pid)return;try{const rows=execFileSync('ps',['-eo','ppid=,pid=,rss='],{encoding:'utf8'}).trim().split('\n').map(line=>line.trim().split(/\s+/).map(Number)),ids=new Set([browser.pid]);let changed=true;while(changed){changed=false;for(const [parent,pid] of rows)if(ids.has(parent)&&!ids.has(pid)){ids.add(pid);changed=true;}}peakBrowserRssBytes=Math.max(peakBrowserRssBytes,rows.reduce((n,[,pid,rss])=>n+(ids.has(pid)?rss*1024:0),0));}catch{}};
 try {
   await cp(resolve(root,'dist'),join(temporary,'site','teacher-hell'),{recursive:true});
   await cp(resolve(root,'test/support'),join(temporary,'site','teacher-hell/test/support'),{recursive:true});
@@ -82,10 +83,12 @@ try {
     const manifest=JSON.parse(await readFile(resolve(root,'work/source/manifest.json'),'utf8'));
     const testId=temporary.split('/').at(-1)+(manifest.difficulty==='easy'&&!process.argv.includes('--legacy')?'-faults':''),expected=manifest.files['completed.json'].sha256;
     const run=init=>`(async()=>{const checks=await import('./test/support/storage-checks.js');return checks.s2Storage(${JSON.stringify(testId)},${init},${JSON.stringify(expected)});})()`;
+    rssTimer=setInterval(sampleBrowserRss,250);
     const initial=await evalIn(run(true),sessionId,1200000);
     await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
     const restarted=await evalIn(run(false),sessionId,1200000);
-    const report={difficulty:manifest.difficulty,legacy:process.argv.includes('--legacy'),initial,restarted};
+    sampleBrowserRss();clearInterval(rssTimer);
+    const report={difficulty:manifest.difficulty,legacy:process.argv.includes('--legacy'),peakBrowserRssBytes,rssNote:'250ms sampled sum of browser process tree RSS; shared pages may be double counted; not an iPhone peak',initial,restarted};
     const name=report.legacy?'legacy':'gzip';await writeFile(resolve(root,`work/source/s2-browser-${name}.json`),JSON.stringify(report,null,2));
     const {gzipSync}=await import('node:zlib'),encoded=gzipSync(JSON.stringify(report)).toString('base64');
     for(let i=0;i<encoded.length;i+=3000)console.log(`::notice title=S2 browser ${name} ${i/3000}::${encoded.slice(i,i+3000)}`);
@@ -221,6 +224,7 @@ try {
   }
   await call('Browser.close');
 } finally {
+  clearInterval(rssTimer);
   socket?.close();
   if(browser?.pid && browser.exitCode===null && browser.signalCode===null){
     const timeout=setTimeout(()=>browser.kill('SIGKILL'),3000);

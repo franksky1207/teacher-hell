@@ -143,19 +143,20 @@ jobs:
           run-id: ${{ matrix.difficulty == 'easy' && '41971561739' || '41971866724' }}
           github-token: ${{ github.token }}
       - name: Full retained-source attribution
+        if: inputs.s2_phase != 'browser'
         run: node --max-old-space-size=6144 --expose-gc scripts/save-capacity.js attribute work/source
       - if: inputs.s2_phase == 'acceptance'
         run: node --max-old-space-size=6144 --expose-gc scripts/storage-s2.js work/source
-      - if: inputs.s2_phase == 'acceptance'
+      - if: inputs.s2_phase == 'acceptance' || inputs.s2_phase == 'browser'
         run: |
           npm run build
           node scripts/storage-browser.js --s2 --legacy
           node scripts/storage-browser.js --s2
         env:
           CHROMIUM_BIN: google-chrome
-      - if: inputs.s2_phase == 'acceptance' && matrix.difficulty == 'easy'
+      - if: (inputs.s2_phase == 'acceptance' || inputs.s2_phase == 'browser') && matrix.difficulty == 'easy'
         run: |
-          node --max-old-space-size=6144 --expose-gc scripts/three-year-checks.js work/source
+          if [ '${{ inputs.s2_phase }}' = acceptance ]; then node --max-old-space-size=6144 --expose-gc scripts/three-year-checks.js work/source; fi
           node scripts/storage-browser.js --storage-only
         env:
           CHROMIUM_BIN: google-chrome

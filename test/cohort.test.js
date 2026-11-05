@@ -150,3 +150,12 @@ test('T4 terminal audit: a different assignment cannot disguise an early end of 
  registry.assignments.push({...original,id:'forged-substitute-duty'});original.until='2029-06-01';
  assert.throws(()=>validateCohortArchive(after,h),/actual dated assignment end/);
 });
+
+test('A1 cohort adapter: completion certificate and incomplete are distinct, without changing career lifecycle',()=>{
+ let w=probe();const personId=n(w).classroom.studentIds[1],records=structuredClone(runtimeOf(w).facts.find(f=>f.data.type==='academic-recognition').data.records);
+ let remaining=120;for(const c of records.toSorted((a,b)=>b.credits-a.credits)){c.earned=c.credits<=remaining?c.credits:0;c.mark=c.earned?80:35;remaining-=c.earned;}assert.equal(remaining,0);
+ const source=sourceFact(w,{type:'academic-recognition',records},[personId]);w=source.world;w=prepareWorldOperation(w,{...request(w,'a1-completion-certificate',[{type:'academic',action:'recognize',personId,records,basisFactId:source.fact.id}]),calendarContext:{kind:'procedure'}}).world;
+ const q=readAcademicQualification(w,personId);assert.equal(q.earned,120);assert.equal(q.eligible,false);assert.equal(q.certificateEligible,true);
+ const plan=compiled(w),leaves=plan.operations.filter(o=>o.type==='school'&&o.change.type==='school-leave');assert.equal(leaves.filter(o=>o.change.status==='graduated').length,1);assert.equal(leaves.filter(o=>o.change.status==='course-completed').length,1);assert.equal(leaves.filter(o=>o.change.status==='incomplete').length,38);assert.equal(leaves.filter(o=>o.change.status==='delayed').length,0);
+ const {after,h}=materialize(w,plan);validateCohortArchive(after,h);assert.equal(n(after).registry.academicYear,2028);assert.equal(n(after).registry.cohorts.length,1);
+});

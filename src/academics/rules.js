@@ -2,7 +2,13 @@
 import { assertShape } from '../player/panel.js';
 export const need=(ok,message)=>{if(!ok)throw new RangeError(`ACADEMICS: ${message}`);};
 export const score=n=>Math.round(Math.max(0,Math.min(100,n))*10)/10;
-export function semesterScore(ordinary,exams){need(exams.length===3&&[ordinary,...exams].every(n=>Number.isFinite(n)&&n>=0&&n<=100),'four bounded marks required');return Math.round(ordinary*.4+exams.reduce((a,b)=>a+b,0)*.2);}
+export function semesterScore(ordinary,exams,version=2){
+ need([1,2].includes(version)&&exams.length===3&&[ordinary,...exams].every(n=>Number.isFinite(n)&&n>=0&&n<=100),'four bounded marks required');
+ // School marks are registered to one decimal. Integer tenths avoid a binary
+ // 49.49999999999999 accidentally failing the statutory half-up boundary.
+ if(version===2&&[ordinary,...exams].every(n=>Math.abs(n*10-Math.round(n*10))<1e-9))return Math.round((Math.round(ordinary*10)*4+exams.reduce((n,x)=>n+Math.round(x*10)*2,0))/100);
+ return Math.round(ordinary*.4+exams.reduce((a,b)=>a+b,0)*.2);
+}
 export function rulesFor(year,version=2){need(Number.isInteger(year)&&year>=2026&&year<=2065,'unsupported rule year');need([1,2].includes(version),'unsupported academic version');if(version===2)return {id:'tw-108-111-assessment-2025+school-a1-v2',version:2,from:2026,until:2065,provenance:'current-law-frozen-game-policy',source:'https://edu.law.moe.gov.tw/LawContent.aspx?id=GL001247',pass:60,makeup:40,graduationCredits:150,requiredMin:102,electiveMin:40,studyCredits:182,certificateCredits:120,repeatRatio:.5};return {id:year===2026?'tw-assessment-2025-12-18+school-v1':year<2030?'school-assumption-2027-v1':'school-assumption-2030-v1',from:year===2026?2026:year<2030?2027:2030,until:year===2026?2026:year<2030?2029:2065,provenance:year===2026?'current-assessment-law+school-curriculum-assumption':'game-world-assumption',source:'https://edu.law.moe.gov.tw/LawContent.aspx?id=GL001247',pass:60,makeup:40,graduationCredits:year<2030?150:152,requiredRatio:1,electiveMin:40,repeatRatio:.5};}
 export function standard(rule,status,grade){
  if(status&&typeof status==='object'){assertShape(status,['kind','pass','makeup']);need(status.kind==='individual-plan'&&Number.isFinite(status.pass)&&status.pass>0&&status.pass<=100&&Number.isFinite(status.makeup)&&status.makeup>=0&&status.makeup<status.pass,'verified individual assessment standard');return {pass:status.pass,makeup:status.makeup};}

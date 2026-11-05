@@ -166,3 +166,47 @@ test('A1 normal end-slot: academic support is journaled automatically; final-day
  w=academicBaseline(w,'2027-01-24',calendarDay('2027-01-24',1).slots.at(-1).id);w=applySchool(w,[{type:'campus',activity:'rest'},{type:'finish-slot',completedActivityIds:[]}]);
  const later=runtimeOf(w).history.findLast(h=>h.type==='academic'&&h.data.input.action==='support');assert.equal(later.data.input.date,'2027-01-24');assert.ok(later.data.result.makeups.length>0);assert.deepEqual(restoreSave(encodeSave(createSave(w))).world,w);
 });
+
+test('A1 retake: later-semester applications preserve prior failed attempts and plans',async()=>{
+ const {academicSupport}=await import('../src/runtime/academics.js'),x=await a1Course({mastery:20,participation:100}),fixed={next:()=>.5};x.course.makeupEligible=false;
+ x.applyAcademic(x.s,{...x.op,action:'retake-plan',date:'2027-01-24'},fixed);for(const date of ['2027-01-25','2027-01-26','2027-01-27','2027-01-28','2027-01-29','2027-02-01'])academicSupport(x.s,{termId:x.op.termId,date},fixed);
+ assert.equal(x.course.earned,0);assert.ok(x.course.retake);assert.throws(()=>x.applyAcademic(x.s,{...x.op,action:'retake-plan',date:'2027-02-02'},fixed),/pending/);
+ x.s.terms['2027:spring']={termId:'2027:spring',year:2026,grade:1,closed:false,results:[]};x.applyAcademic(x.s,{...x.op,action:'retake-plan',date:'2027-02-15'},fixed);
+ assert.equal(x.course.retakePlans.length,1);assert.equal(x.course.retakeAttempts.length,1);assert.equal(x.course.retakeAttempts[0].mark<60,true);assert.equal(x.course.retakePlan.studiedPeriods,0);
+});
+
+test('A1 support: actual 15 applicants use six periods/credit and multiple courses share one daily budget',async()=>{
+ const {academicSupport}=await import('../src/runtime/academics.js'),x=await a1Course({mark:20}),fixed={next:()=>0};
+ const term=x.s.terms[x.op.termId];term.supportPrepared=false;term.results=[];
+ for(let n=0;n<15;n++){const id='applicant:'+n;x.s.students[id]=structuredClone(x.s.students.p);term.results.push({id,courses:[{...x.course,makeupEligible:false}, {...x.course,subject:'英文',makeupEligible:false}]});}
+ delete x.s.students.p;const out=academicSupport(x.s,{termId:x.op.termId,date:'2027-01-22'},fixed);assert.equal(out.plans.length,30);assert.ok(term.results.every(r=>r.courses.every(c=>c.retakePlan.mode==='class'&&c.retakePlan.requiredPeriods===24)));
+ const next=academicSupport(x.s,{termId:x.op.termId,date:'2027-01-25'},fixed);for(const id of Object.keys(x.s.students))assert.equal(next.study.filter(r=>r.personId===id).reduce((n,r)=>n+r.periods,0),2);
+});
+
+test('A1 supplementary failure: a completed unsuccessful supplement remains eligible for timed retake',async()=>{
+ const {applyAcademic,academicSupport}=await import('../src/runtime/academics.js'),s=emptyAcademics(),rng=createRandom(91),fixed={next:()=>.5};s.students.p=createLearner(rng);Object.assign(s.students.p.subjects.本土語文,{mastery:20,state:65,participation:100});s.terms['2027:autumn']={termId:'2027:autumn',year:2027,grade:2,closed:false,results:[]};
+ applyAcademic(s,{action:'supplement-plan',personId:'p',termId:'2027:autumn',course:{subject:'本土語文',credits:1,required:true,level:1,half:'autumn'},basisFactId:'review:failed-supplement',date:'2027-09-01'},fixed);
+ for(const date of ['2027-09-02','2027-09-03','2027-09-06'])academicSupport(s,{termId:'2027:autumn',date},fixed);
+ const c=s.supplements[0];assert.equal(c.completed,true);assert.equal(c.earned,0);applyAcademic(s,{action:'retake-plan',termId:'2026:autumn',personId:'p',subject:c.subject,date:'2027-09-07'},fixed);assert.equal(c.retakePlan.requiredPeriods,3);assert.equal(c.originalMark,c.mark);assert.throws(()=>applyAcademic(s,{action:'retake',termId:'2026:autumn',personId:'p',subject:c.subject,date:'2027-10-01'},fixed),/incomplete/);
+});
+
+test('A1 transfer: reviewed failed course can be retaken; already recognized credit cannot be retaken again',async()=>{
+ const {applyAcademic,academicSupportDue}=await import('../src/runtime/academics.js'),x=await a1Course({mastery:20}),record={subject:'本土語文',credits:1,required:true,level:1,half:'autumn',mark:35,earned:0};
+ applyAcademic(x.s,{action:'recognize',personId:'p',termId:x.op.termId,records:[record],date:'2027-01-22',basisFactId:'review:failed-course'},x.rng);
+ applyAcademic(x.s,{action:'retake-plan',personId:'p',subject:record.subject,termId:x.op.termId,date:'2027-01-24'},x.rng);assert.equal(x.s.recognized[0].retakePlan.requiredPeriods,3);assert.equal(x.s.recognized[0].year,2026);
+ const passed=await a1Course();passed.s.terms[passed.op.termId].rows=[{id:'p'}];applyAcademic(passed.s,{action:'recognize',personId:'p',termId:passed.op.termId,records:[{subject:'國文',credits:4,required:true,level:1,half:'autumn',mark:80,earned:4}],date:'2027-01-22',basisFactId:'review:passed-course'},passed.rng);
+ assert.throws(()=>applyAcademic(passed.s,{...passed.op,action:'retake-plan',date:'2027-01-24'},passed.rng),/unearned/);assert.equal(academicSupportDue(passed.s,'2027-01-25'),false);
+});
+
+test('A1 decimal boundaries: exact 40/20/20/20 half-up without changing archived v1 arithmetic',()=>{
+ assert.equal(semesterScore(2.8,[76.3,23.3,47.3]),31);assert.equal(semesterScore(29.3,[58.2,60.4,70.3]),50);
+ assert.equal(semesterScore(2.8,[76.3,23.3,47.3],1),30);assert.equal(semesterScore(29.3,[58.2,60.4,70.3],1),49);
+ assert.throws(()=>emptyAcademics(3),/version/);
+});
+
+test('A1 annual credit is reconsidered after a later failed spring makeup improves the registered mark',async()=>{
+ const {academicSupport}=await import('../src/runtime/academics.js'),x=await a1Course({mark:62,mastery:58});x.course.earned=4;x.course.makeupEligible=false;
+ const spring={...x.course,mark:55,originalMark:55,registered:55,earned:0,makeupEligible:true};x.s.terms['2027:spring']={termId:'2027:spring',year:2026,grade:1,closed:true,closedAt:'2027-06-25',results:[{id:'p',courses:[spring]}]};
+ academicSupport(x.s,{date:'2027-06-25',termId:'2027:spring'},{next:()=>.5});assert.equal(spring.annual.average,58.5);assert.equal(spring.earned,0);
+ academicSupport(x.s,{date:'2027-06-27',termId:'2027:spring'},{next:()=>.5});assert.equal(spring.makeup.registered,58);assert.equal(spring.annual.average,60);assert.equal(spring.earned,4);assert.equal(spring.mark,58);assert.equal(spring.originalMark,55);assert.equal(spring.method,'annual-average');assert.equal(spring.annualHistory[0].average,58.5);
+});

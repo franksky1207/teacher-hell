@@ -9,7 +9,7 @@ import {semester} from '../src/calendar/calendar.js';
 import {createRandom,restoreRandom} from '../src/numeric/random.js';
 import {emptyAcademics,createLearner} from '../src/academics/learning.js';
 import {rulesFor,graduation,academicSubjects,subjectFamily} from '../src/academics/rules.js';
-import {applyAcademic,academicSupport,academicSupportDue} from '../src/runtime/academics.js';
+import {applyAcademic,academicSupport,academicSupportDue,readAcademicQualification} from '../src/runtime/academics.js';
 const sha=x=>createHash('sha256').update(x).digest('hex');
 const records=(s,id)=>[...Object.values(s.terms).flatMap(t=>(t.results?.find(r=>r.id===id)?.courses??[]).map(c=>({...c,year:t.year,level:t.grade,half:t.termId.endsWith('spring')?'spring':'autumn'}))),...(s.recognized??[]).filter(r=>r.personId===id),...(s.supplements??[]).filter(r=>r.personId===id)];
 function distribution(values){const x=values.toSorted((a,b)=>a-b),q=p=>x.length?x[Math.floor((x.length-1)*p)]:null;return {count:x.length,min:x[0]??null,p10:q(.1),median:q(.5),p90:q(.9),max:x.at(-1)??null,mean:x.reduce((n,v)=>n+v,0)/(x.length||1)};}
@@ -26,7 +26,7 @@ if(process.argv[2]==='--extract'){
  let payload=JSON.parse(bytes.toString());bytes=null;const history=payload.world.extensions['teacher-hell/world'].history,journal=history.filter(h=>h.type==='academic'),archive=history.find(h=>h.type==='cohort-completion');
  const state=emptyAcademics(1);for(const h of journal){assert.equal(h.data.version,1);const rng=restoreRandom(h.data.randomBefore),out=applyAcademic(state,structuredClone(h.data.input),rng,1);assert.deepEqual(out,h.data.result);assert.deepEqual(rng.snapshot(),h.data.randomAfter);}
  const source={difficulty:manifest.difficulty,sourceCommit:manifest.sourceCommit,file:manifest.files['completed.json'],academicRows:journal.length,actions:Object.fromEntries([...new Set(journal.map(h=>h.data.input.action))].map(action=>[action,journal.filter(h=>h.data.input.action===action).length]))},students=[];
- for(const outcome of archive.data.outcomes){const rs=records(state,outcome.personId),old=graduation(rs,rulesFor(2026,1));const latest=Math.max(0,...rs.map(r=>r.year??0)),current=rs.filter(r=>r.year===latest);old.repeatEligible=new Set(current.map(r=>r.half)).size===2&&graduation(current,rulesFor(2026,1)).repeatEligible;assert.deepEqual(old,outcome.qualification,'Archived old qualification must remain unchanged');
+ for(const outcome of archive.data.outcomes){const rs=records(state,outcome.personId),old=readAcademicQualification(payload.world,outcome.personId,state);assert.deepEqual(old,outcome.qualification,'Archived old qualification must remain unchanged');
   const thresholdOnly={...old,eligible:old.complete&&old.earned>=150&&old.requiredEarned>=102&&old.electiveEarned>=40};
   const deficits={total:Math.max(0,150-old.earned),required:Math.max(0,102-old.requiredEarned),elective:Math.max(0,40-old.electiveEarned)};
   students.push({id:outcome.personId,old,thresholdOnly,deficits,newCurriculumAudit:(()=>{const q=graduation(rs,rulesFor(2026,2));return {eligible:q.eligible,status:q.status,reasons:q.reasons,missingRequiredCourses:q.missingRequired.length};})()});

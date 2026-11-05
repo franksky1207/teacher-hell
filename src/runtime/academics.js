@@ -11,6 +11,15 @@ const equal=(a,b)=>canonicalData(a)===canonicalData(b);
 export const academicVersion=w=>runtime(w).history.find(h=>h.type==='academic')?.data.version??runtime(w).history.findLast(h=>h.type==='retry')?.data.academicPolicy??2;
 const versionOf=s=>s.version??1;
 const addDays=(date,n)=>new Date(Date.parse(date+'T00:00:00Z')+n*86400000).toISOString().slice(0,10);
+const annualAverage=(autumn,spring,pass,version)=>{const registered=c=>c.makeup?.registered??(c.makeup?c.makeup.mark>=pass?pass:Math.round(c.makeup.mark):0);return score((Math.max(version===2?autumn.originalMark??autumn.mark:autumn.mark,registered(autumn))+Math.max(version===2?spring.originalMark??spring.mark:spring.mark,registered(spring)))/2);};
+const supplementTermId=c=>`${c.year+(c.half==='spring'?1:0)}:${c.half}`;
+const reviewedCourses=s=>s.version===2?[...(s.supplements??[]).filter(c=>c.completed),...(s.recognized??[])]:[];
+function termForInput(s,input){
+ if(s.terms[input.termId])return s.terms[input.termId];
+ if(!['retake-plan','retake'].includes(input.action))return undefined;
+ const courses=reviewedCourses(s).filter(c=>c.personId===input.personId&&supplementTermId(c)===input.termId);
+ return courses.length?{termId:input.termId,year:courses[0].year,grade:courses[0].level,closed:true,closedAt:courses[0].date,results:[{id:input.personId,courses}]}:undefined;
+}
 // Only an exclusive, unpublished ordered-command draft may follow its journal.
 // Import validation still independently replays every academic row below.
 const projections=new WeakMap();
@@ -28,7 +37,7 @@ export function academicInput(w,op){
  const r=runtime(w),registry=w.numeric.evolution.world.registry;need(registry,'formal school identities required');
  assertShape(op,['type','action',...['termId','round','personId','subject','basisFactId','delta','status','node','track','aspiration','offered','classSizes','attendance','records','course','netMajorDemerits'].filter(k=>Object.hasOwn(op,k))]);
  const action=op.action;need(['support','supplement-plan','supplement','conduct','recognize','attendance','retake-plan','publish','sync','open','assess','close','influence','makeup','retake','annual-credit','direction','admission','standard','participation','size'].includes(action),'unknown academic operation');
- const state=academicState(w),termId=op.termId??termAt(w).id,t=state.terms[termId],meta=semester(termId);
+ const state=academicState(w),termId=op.termId??termAt(w).id,t=termForInput(state,{...op,termId}),meta=semester(termId);
  const input={action,date:w.position.date,termId,...Object.fromEntries(Object.entries(op).filter(([k])=>!['type','action','termId'].includes(k)))};
  if(action==='open'||action==='sync'){
   need(termAt(w).id===termId,'cannot open another semester');
@@ -77,7 +86,7 @@ export function academicInput(w,op){
 }
 export function applyAcademic(s,input,rng,version=versionOf(s)){
  need(version===versionOf(s),'academic policy cannot change during replay');
- const {action,termId,personId,subject}=input,t=s.terms[termId],learner=s.students[personId];
+ const {action,termId,personId,subject}=input,t=termForInput(s,input),learner=s.students[personId];
  if(action==='open')return openTerm(s,input,rng);
  if(action==='sync'){
   need(t&&!t.closed,'open term required for roster sync');
@@ -99,7 +108,7 @@ export function applyAcademic(s,input,rng,version=versionOf(s)){
  }
  if(action==='attendance'){const a=input.attendance;assertShape(a,['totalPeriods','unexcused','personal','exemptPersonal']);need(Object.values(a).every(Number.isInteger)&&a.totalPeriods>0&&a.unexcused>=0&&a.personal>=0&&a.exemptPersonal>=0&&a.exemptPersonal<=a.personal&&a.unexcused+a.personal<=a.totalPeriods,'attendance counts');need(learner.subjects[subject]&&t.rows.find(r=>r.id===personId)?.courses.some(c=>c.subject===subject&&c.credits*18===a.totalPeriods),'attendance course load');learner.subjects[subject].attendance=score(100*(1-(a.unexcused+a.personal-a.exemptPersonal)/a.totalPeriods));learner.subjects[subject].absence=structuredClone(a);return learner.subjects[subject].attendance;}
  if(action==='recognize'){s.recognized??=[];need(Array.isArray(input.records)&&input.records.length>0,'recognized credit records');for(const c of input.records){assertShape(c,['subject','credits','required','level','half','mark','earned']);need([1,2,3].includes(c.level)&&['autumn','spring'].includes(c.half)&&Number.isFinite(c.mark)&&c.mark>=0&&c.mark<=100&&Number.isInteger(c.credits)&&c.credits>0&&[0,c.credits].includes(c.earned),'recognized academic record');if(version===2){need(typeof c.required==='boolean'&&((c.mark>=standard(rulesFor(t?.year??2026,2),learner.status,c.level).pass)===(c.earned===c.credits)),'recognized mark and credit disagree');}
- need(!s.recognized.some(r=>r.personId===personId&&r.subject===c.subject&&r.level===c.level&&r.half===c.half),'credit already recognized');s.recognized.push({...c,personId,basisFactId:input.basisFactId});}return input.records;}
+ need(!s.recognized.some(r=>r.personId===personId&&r.subject===c.subject&&r.level===c.level&&r.half===c.half),'credit already recognized');const context=t??Object.values(s.terms).findLast(term=>term.rows?.some(row=>row.id===personId));if(version===2)need(context,'recognition requires a current academic record');s.recognized.push({...c,...version===2?{year:context.year-(context.grade-c.level),date:input.date,originalMark:c.mark,registered:c.mark,completed:true,makeupEligible:false}:{},personId,basisFactId:input.basisFactId});}return input.records;}
  if(action==='standard'){standard(rulesFor(t?.year??Number(input.date.slice(0,4)),version),input.status,t?.grade??1);learner.status=input.status;return input.status;}
  if(action==='conduct'){need(version===2&&Number.isInteger(input.netMajorDemerits)&&input.netMajorDemerits>=0,'reviewed demerits');s.conduct??={};s.conduct[personId]={netMajorDemerits:input.netMajorDemerits,basisFactId:input.basisFactId,date:input.date};return s.conduct[personId];}
  if(action==='supplement-plan'){
@@ -112,9 +121,9 @@ export function applyAcademic(s,input,rng,version=versionOf(s)){
  }
  if(action==='supplement'){
   const c=s.supplements?.find(c=>c.personId===personId&&c.subject===subject&&!c.completed);need(c?.plan.studiedPeriods>=c.plan.requiredPeriods,'supplement study schedule incomplete');
-  const rawScore=academicMark(learner,subject,0,rng),mark=Math.round(rawScore),pass=standard(rulesFor(2026,2),learner.status,c.level).pass;c.rawScore=rawScore;c.mark=c.registered=mark;c.earned=mark>=pass?c.credits:0;c.completed=true;c.method=c.earned?'supplement':'unearned';c.date=input.date;return {...c};
+  const rawScore=academicMark(learner,subject,0,rng),mark=Math.round(rawScore),pass=standard(rulesFor(2026,2),learner.status,c.level).pass;c.rawScore=rawScore;c.originalMark=mark;c.mark=c.registered=mark;c.earned=mark>=pass?c.credits:0;c.completed=true;c.method=c.earned?'supplement':'unearned';c.date=input.date;return {...c};
  }
- const row=t?.results?.find(r=>r.id===personId),course=row?.courses.find(c=>c.subject===subject);
+ const row=t?.results?.find(r=>r.id===personId),course=[row?.courses.find(c=>c.subject===subject),...reviewedCourses(s).filter(c=>c.personId===personId&&c.subject===subject&&supplementTermId(c)===termId)].filter(Boolean).sort((a,b)=>b.earned-a.earned)[0];
  if(action==='publish'){need(row&&t.closed,'closed transcript required');s.published??=[];const key=JSON.stringify([termId,personId]);need(!s.published.includes(key),'transcript already published');s.published.push(key);return {termId,personId,average:row.average,courses:row.courses.map(c=>({subject:c.subject,mark:c.mark,earned:c.earned})),ruleId:t.ruleId};}
  if(action==='direction'){
   need(['undecided','humanities','science','vocational'].includes(input.track)&&['university','technical','work','retake'].includes(input.aspiration),'direction');const natural=['humanities','science','vocational'],means=[['國文','歷史','公民'],['數學','物理','化學'],['生活科技','專題選修']].map(subjects=>subjects.reduce((n,s)=>n+learner.subjects[s].baseline,0)/subjects.length);learner.track=natural[rng.weightedIndex(means.map((v,i)=>1+v/20+(natural[i]===input.track?1:0)))];learner.aspiration=['university','technical','work','retake'][rng.weightedIndex([2+Math.max(...means)/30,2,1,1].map((v,i)=>v+(['university','technical','work','retake'][i]===input.aspiration?1:0)))];return {track:learner.track,aspiration:learner.aspiration};
@@ -131,12 +140,12 @@ export function applyAcademic(s,input,rng,version=versionOf(s)){
   need(course&&course.earned===0&&!course[action],'credit path missing/already attempted');need(action!=='makeup'||course.makeupEligible,'not makeup eligible');
   if(action==='makeup'&&version===2)need(input.date>=addDays(t.closedAt,2)&&input.date<=addDays(t.closedAt,30),'makeup calendar window');
   const rawScore=academicMark(learner,subject,version===1&&action==='retake'?-8:0,rng),mark=version===2?Math.round(rawScore):rawScore,pass=standard(rulesFor(t.year,version),learner.status,t.grade).pass;
-  if(version===2&&action==='retake')course.retakePlan.completed=true;course[action]={mark,date:input.date,...version===2?{rawScore}:{},...version===2&&action==='retake'?{termSequence:Object.keys(s.terms).length}:{},registered:mark>=pass?pass:Math.round(Math.max(mark,course.mark))};if(mark>=pass){course.earned=course.credits;course.method=action;}if(version===2){course.mark=course.registered=course[action].registered;refreshRow(row);}return {...course};
+  if(version===2&&action==='retake')course.retakePlan.completed=true;course[action]={mark,date:input.date,...version===2?{rawScore}:{},...version===2&&action==='retake'?{termSequence:Object.keys(s.terms).length}:{},registered:mark>=pass?pass:Math.round(Math.max(mark,course.mark))};if(mark>=pass){course.earned=course.credits;course.method=action;}if(version===2){course.mark=course.registered=course[action].registered;if(row)refreshRow(row);}return {...course};
  }
  if(action==='annual-credit'){
   need(course&&termId.endsWith('spring'),'spring course required');const autumn=s.terms[`${t.year}:autumn`]?.results?.find(r=>r.id===personId)?.courses.find(c=>c.subject===subject);
-  need(autumn&&(version===2||autumn.credits===course.credits)&&!course.annual,'matching autumn/spring credits required');const pass=standard(rulesFor(t.year,version),learner.status,t.grade).pass,registered=c=>c.makeup?.registered??(c.makeup?c.makeup.mark>=pass?pass:Math.round(c.makeup.mark):0),average=score((Math.max(version===2?autumn.originalMark??autumn.mark:autumn.mark,registered(autumn))+Math.max(version===2?course.originalMark??course.mark:course.mark,registered(course)))/2);
-  course.annual={average,date:input.date};if(average>=pass)for(const c of [autumn,course])if(c.earned===0){c.earned=c.credits;c.method='annual-average';}return {average,earned:course.earned,autumnEarned:autumn.earned};
+  need(autumn&&(version===2||autumn.credits===course.credits),'matching autumn/spring credits required');const pass=standard(rulesFor(t.year,version),learner.status,t.grade).pass,average=annualAverage(autumn,course,pass,version);
+  need(!course.annual||version===2&&average>course.annual.average,'annual result unchanged/already awarded');if(course.annual){course.annualHistory??=[];course.annualHistory.push({...course.annual});}course.annual={average,date:input.date};if(average>=pass)for(const c of [autumn,course])if(c.earned===0){c.earned=c.credits;c.method='annual-average';}return {average,earned:course.earned,autumnEarned:autumn.earned};
  }
  if(action==='admission'){
   need(!s.admissions.some(a=>a.personId===personId&&a.year===t.year&&a.node===input.node),'node already resolved');
@@ -181,7 +190,7 @@ export function readAcademicQualification(w,personId,projection=null){
  const result=graduation(records,rule,{netMajorDemerits:s.conduct?.[personId]?.netMajorDemerits??0,studyPeriodComplete}),latest=Math.max(0,...records.map(r=>r.year??0)),current=records.filter(r=>r.year===latest);
  result.repeatEligible=new Set(current.map(r=>r.half)).size===2&&graduation(current,rule).repeatEligible;return result;
 }
-export function academicEligible(w,personId,condition,projection=null){const s=projection??academicState(w),t=s.terms[condition.termId],row=t?.results?.find(r=>r.id===personId);if(condition.kind==='makeup')return !!row?.courses.some(c=>c.makeupEligible&&c.earned===0);if(condition.kind==='credit-deficit')return !!row?.courses.some(c=>c.earned===0);if(condition.kind==='admission')return s.admissions.some(a=>a.personId===personId&&a.node===condition.node&&a.accepted===condition.accepted);if(condition.kind==='change'){const a=t?.assessments.find(a=>a.round===condition.from)?.marks.find(m=>m.id===personId),b=t?.assessments.find(a=>a.round===condition.to)?.marks.find(m=>m.id===personId);return !!a&&!!b&&b.marks[condition.subject]-a.marks[condition.subject]<=condition.maximum;}return false;}
+export function academicEligible(w,personId,condition,projection=null){const s=projection??academicState(w),t=s.terms[condition.termId],row=t?.results?.find(r=>r.id===personId);if(condition.kind==='makeup')return s.version===2?fullCourses(s).some(x=>x.t.termId===condition.termId&&x.row.id===personId&&x.course.makeupEligible&&x.course.earned===0):!!row?.courses.some(c=>c.makeupEligible&&c.earned===0);if(condition.kind==='credit-deficit')return s.version===2?fullCourses(s).some(x=>x.t.termId===condition.termId&&x.row.id===personId&&x.course.earned===0):!!row?.courses.some(c=>c.earned===0);if(condition.kind==='admission')return s.admissions.some(a=>a.personId===personId&&a.node===condition.node&&a.accepted===condition.accepted);if(condition.kind==='change'){const a=t?.assessments.find(a=>a.round===condition.from)?.marks.find(m=>m.id===personId),b=t?.assessments.find(a=>a.round===condition.to)?.marks.find(m=>m.id===personId);return !!a&&!!b&&b.marks[condition.subject]-a.marks[condition.subject]<=condition.maximum;}return false;}
 
 
 function refreshRow(row){
@@ -189,11 +198,15 @@ function refreshRow(row){
 }
 const scoreTotal=(courses,fn)=>Math.round(courses.reduce((n,c)=>n+fn(c),0)*10)/10;
 const retakeRequestDue=(s,c)=>!c.earned&&c.supportDecisionTermCount!==Object.keys(s.terms).length&&(!c.makeupEligible||c.makeup||c.makeupExpired)&&(!c.retakePlan||c.retakePlan.completed);
-const fullCourses=s=>Object.values(s.terms).filter(t=>t.closed).flatMap(t=>(t.results??[]).filter(r=>s.students[r.id]).flatMap(row=>row.courses.map(course=>({t,row,course}))));
+const fullCourses=s=>{
+ const rows=[...Object.values(s.terms).filter(t=>t.closed).flatMap(t=>(t.results??[]).filter(r=>s.students[r.id]).flatMap(row=>row.courses.map(course=>({t,row,course})))),...reviewedCourses(s).map(course=>({t:{termId:supplementTermId(course),year:course.year,grade:course.level,closed:true,closedAt:course.date},row:{id:course.personId,courses:[course]},course}))],unique=new Map();
+ for(const x of rows){const key=x.row.id+'/'+creditIdentity({...x.course,level:x.t.grade,half:x.t.termId.endsWith('spring')?'spring':'autumn'}),old=unique.get(key);if(!old||x.course.earned>old.course.earned)unique.set(key,x);}return [...unique.values()];
+};
+function annualReviews(s,active){const pending=[];for(const t of Object.values(s.terms).filter(t=>t.closed&&t.termId.endsWith('spring')))for(const row of t.results.filter(r=>active(r.id)&&s.students[r.id]))for(const c of row.courses){const autumn=s.terms[`${t.year}:autumn`]?.results?.find(r=>r.id===row.id)?.courses.find(a=>a.subject===c.subject),pass=standard(rulesFor(t.year,2),s.students[row.id].status,t.grade).pass;if(autumn&&(!c.annual||annualAverage(autumn,c,pass,2)>c.annual.average))pending.push({t,row,c});}return pending;}
 export function academicSupportDue(s,date,activeIds=null){
  const active=id=>activeIds===null||activeIds.includes(id);
  if(s.version!==2||s.supportDates?.includes(date))return false;
- return Object.values(s.terms).some(t=>t.closed&&!t.supportPrepared)||fullCourses(s).some(({row,course:c})=>active(row.id)&&c.earned===0&&(retakeRequestDue(s,c)||c.makeupDue&&date>=c.makeupDue&&!c.makeup||c.retakePlan&&!c.retakePlan.completed&&date>c.retakePlan.from))||(s.supplements??[]).some(c=>active(c.personId)&&!c.completed&&date>c.plan.from);
+ return annualReviews(s,active).length>0||Object.values(s.terms).some(t=>t.closed&&!t.supportPrepared)||fullCourses(s).some(({row,course:c})=>active(row.id)&&c.earned===0&&(retakeRequestDue(s,c)||c.makeupDue&&date>=c.makeupDue&&!c.makeup||c.retakePlan&&!c.retakePlan.completed&&date>c.retakePlan.from))||(s.supplements??[]).some(c=>active(c.personId)&&!c.completed&&date>c.plan.from);
 }
 /** School support is an academic journal operation at an actually visited date.
  * Two face-to-face study periods per student/day, shared across all pending
@@ -220,9 +233,11 @@ export function academicSupport(s,input,rng){
   if(input.date>addDays(t.closedAt,30)){c.makeupExpired=true;delete c.makeupDue;plan(item);out.expired.push({personId:row.id,subject:c.subject});continue;}
   out.makeups.push({personId:row.id,termId:t.termId,subject:c.subject,...applyAcademic(s,{action:'makeup',termId:t.termId,personId:row.id,subject:c.subject,date:input.date},rng)});if(!c.earned)plan(item);
  }}
+ // A later spring makeup may improve the annual average even if it still fails.
+ for(const {t,row,c} of annualReviews(s,active))out.annual.push({personId:row.id,subject:c.subject,...applyAcademic(s,{action:'annual-credit',termId:t.termId,personId:row.id,subject:c.subject,date:input.date},rng)});
  for(const item of courses())if(retakeRequestDue(s,item.course))plan(item);
  // Group only actual same-day applicants, not everybody with an insufficient mark.
- for(const p of out.plans){const applicants=out.plans.filter(q=>q.termId===p.termId&&q.subject===p.subject);if(applicants.length>=15){const c=s.terms[p.termId].results.find(r=>r.id===p.personId).courses.find(c=>c.subject===p.subject);c.retakePlan.mode=p.mode='class';c.retakePlan.requiredPeriods=c.credits*6;}}
+ for(const p of out.plans){const applicants=out.plans.filter(q=>q.termId===p.termId&&q.subject===p.subject);if(applicants.length>=15){const c=courses().find(x=>x.t.termId===p.termId&&x.row.id===p.personId&&x.course.subject===p.subject).course;c.retakePlan.mode=p.mode='class';c.retakePlan.requiredPeriods=c.credits*6;}}
  const weekday=new Date(input.date+'T00:00:00Z').getUTCDay();
  if(weekday!==0&&weekday!==6)for(const [personId,learner] of Object.entries(s.students)){
   if(!active(personId))continue;let budget=2;const tasks=[...courses().filter(x=>x.row.id===personId&&!x.course.earned&&x.course.retakePlan&&!x.course.retakePlan.completed).map(x=>({...x,plan:x.course.retakePlan,kind:'retake'})),...(s.supplements??[]).filter(c=>c.personId===personId&&!c.completed).map(c=>({course:c,plan:c.plan,kind:'supplement'}))];

@@ -45,7 +45,7 @@ try {
     return out.result.value;
   };
   await call('Page.enable',{},sessionId);
-  await call('Page.addScriptToEvaluateOnNewDocument',{source:'window.confirm = () => true; window.alert = x => { window.lastAlert=x; };'},sessionId);
+  await call('Page.addScriptToEvaluateOnNewDocument',{source:`window.confirm = () => true; window.alert = x => { window.lastAlert=x; }; const NativeDate=Date; window.Date=class extends NativeDate { constructor(...args){super(...(args.length?args:['2026-11-05T12:00:00Z']));} static now(){return NativeDate.parse('2026-11-05T12:00:00Z');} };`},sessionId);
   const wait=async selector=>{for(let i=0;i<400;i++){if(await evaluate(`!!document.querySelector(${JSON.stringify(selector)})`))return;await new Promise(r=>setTimeout(r,100));}throw Error('Missing '+selector+' '+await evaluate('document.body.innerText')+' ALERT '+await evaluate('window.lastAlert'));};
   const click=async action=>{await wait(`[data-action="${action}"]`);await evaluate(`document.querySelector(${JSON.stringify(`[data-action="${action}"]`)}).click()`);};
   const includes=async text=>{if(!await evaluate(`document.body.innerText.includes(${JSON.stringify(text)})`))throw Error('Missing text '+text);};
@@ -57,7 +57,18 @@ try {
   await click('subjects');await click('subject:英文');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes('任教第 1 年');
   await click('opening-next');await click('opening-next');await click('timetable');await wait('.table');
   if(await evaluate('document.querySelectorAll(".table button").length')!==40)throw Error('Expected 40 cells');
-  await click('week:1');await wait('.table');await click('close');
+  const expected=await evaluate(`(async()=>{const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js');const s=createIndexedDBStorage({factory:indexedDB,namespace:'development'});const w=(await s.read(1)).payload.world;const p=w.extensions['teacher-hell/world'].plan,t=p.tables[0],reg=w.numeric.evolution.world.registry;await s.close();return t.classes.map(c=>'高'+'一二三'[t.academicYear-c.cohortStart]+reg.classes[c.id].name);})()`);
+  const displayed=await evaluate(`Array.from(document.querySelectorAll('.table button'),x=>x.textContent)`);
+  if(!expected.every(name=>displayed.includes(name)))throw Error('Actual class names missing from timetable '+JSON.stringify({expected,displayed}));
+  for(let i=0;i<6;i++)await click('week:1');
+  await includes('週會');await includes('班會');await click('week:1');
+  if(await evaluate(`document.body.innerText.includes('週會')`))throw Error('Odd week incorrectly shows assembly');
+  for(let i=0;i<3;i++)await click('week:1');await wait('.table');
+  if(!await evaluate(`Array.from(document.querySelectorAll('.table button')).some(b=>b.textContent==='活動')`))throw Error('Calendar activity overlay missing');
+  await evaluate(`Array.from(document.querySelectorAll('.table button')).find(b=>b.textContent==='活動').click()`);
+  if(!await evaluate(`window.lastAlert?.includes('教師節')`))throw Error('Activity detail not shown');
+  await click('week:1');await includes('考試');
+  await click('week:0');await click('close');
   await call('Page.reload',{},sessionId);await wait('[data-action="continue"]');await click('continue');await wait('[data-action="timetable"]');await includes('任教第 1 年');
   await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true},sessionId);await click('timetable');await wait('.table');
   const layout=await evaluate(`(()=>{const t=document.querySelector('.table'),r=t.getBoundingClientRect();return {width:r.width,scroll:t.scrollWidth,client:t.clientWidth,count:t.querySelectorAll('button').length};})()`);
@@ -67,6 +78,8 @@ try {
     await click(`new:${number}`);await click(`difficulty:${mode}`);await click('teacher');await wait('[data-action="subjects"]');await click('subjects');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes(`任教第 ${year} 年`);await click('menu');await click('slots');await wait('[data-action="new:1"]');
   }
   await includes('任教第 1 年');await includes('任教第 20 年');await includes('任教第 10 年');
+  await click('new:2');await click('difficulty:hard');await click('teacher');await wait('[data-action="subjects"]');await click('subjects');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes('任教第 1 年');
+  await click('menu');await click('slots');await wait('[data-action="delete:3"]');await includes('任教第 10 年');
   await click('delete:3');for(let i=0;i<200&&!await evaluate('document.body.innerText.includes("空存檔")');i++)await new Promise(r=>setTimeout(r,100));await includes('空存檔');await click('load:1');await wait('[data-action="timetable"]');await includes('任教第 1 年');
   console.log('PASS Chromium: desktop create, reroll, subject, save/reload, timetable 40 cells and week switch; mobile five-column layout without horizontal overflow.');
   await call('Browser.close');

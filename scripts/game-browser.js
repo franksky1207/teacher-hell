@@ -12,7 +12,7 @@ let browser, server, socket;
 try {
   await cp(resolve(root,'dist'),join(temporary,'site','teacher-hell'),{recursive:true});
   server=await createPreviewServer(join(temporary,'site'));server.listen(0,'127.0.0.1');await once(server,'listening');
-  const url=`http://127.0.0.1:${server.address().port}/teacher-hell/`;
+  const url=process.env.PREVIEW_URL || `http://127.0.0.1:${server.address().port}/teacher-hell/`;
   browser=spawn(process.env.CHROMIUM_BIN || 'chromium',[
     '--headless','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-first-run',
     '--no-default-browser-check','--disable-background-networking','--disable-extensions','--disable-sync',

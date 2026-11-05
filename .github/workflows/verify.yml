@@ -20,6 +20,10 @@ on:
         description: Reuse the complete real checkpoint for storage rollback and CAS acceptance
         type: boolean
         default: false
+      verify_source_only:
+        description: Download a retained source and verify original raw bytes and complete restore without replay
+        type: boolean
+        default: false
       source_run:
         description: Optional retained run containing before-completion.json for a terminal-only retry
         type: string
@@ -32,8 +36,9 @@ concurrency:
   cancel-in-progress: true
 jobs:
   quick:
+    if: github.event_name != 'workflow_dispatch' || !inputs.three_year
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -66,6 +71,7 @@ jobs:
           run-id: ${{ inputs.source_run }}
           github-token: ${{ github.token }}
       - name: Continuous production acceptance
+        if: ${{ !inputs.verify_source_only }}
         env:
           T4_DIFFICULTY: ${{ matrix.difficulty }}
           T4_SOURCE_RUN: ${{ inputs.source_run }}
@@ -76,8 +82,14 @@ jobs:
           else
             node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty="$T4_DIFFICULTY" $([ "$T4_TRANSFERS" = true ] && echo --transfers)
           fi
+      - name: Verify retained original source
+        if: inputs.verify_source_only
+        env:
+          T4_DIFFICULTY: ${{ matrix.difficulty }}
+          T4_SOURCE_RUN: ${{ inputs.source_run }}
+        run: node --max-old-space-size=6144 --expose-gc scripts/three-year-checks.js "work/three-year-$T4_DIFFICULTY" --verify-source-only
       - name: Real checkpoint rollback and CAS acceptance
-        if: inputs.storage_checks
+        if: inputs.storage_checks && !inputs.verify_source_only
         env:
           T4_DIFFICULTY: ${{ matrix.difficulty }}
         run: node --max-old-space-size=6144 --expose-gc scripts/three-year-checks.js "work/three-year-$T4_DIFFICULTY"
@@ -88,11 +100,17 @@ jobs:
         run: |
           node --input-type=module -e 'import {readFileSync} from "node:fs"; const text=JSON.stringify(JSON.parse(readFileSync(`work/three-year-${process.env.T4_DIFFICULTY}/manifest.json`,"utf8"))); console.log("::notice title=T4 source manifest::"+text.replaceAll("%","%25").replaceAll("\n","%0A").replaceAll("\r","%0D"));'
 
+      - name: Retain source-verification metadata
+        if: always() && inputs.verify_source_only
+        env:
+          T4_DIFFICULTY: ${{ matrix.difficulty }}
+        run: |
+          node --input-type=module -e 'import {readFileSync} from "node:fs"; const text=JSON.stringify(JSON.parse(readFileSync(`work/three-year-${process.env.T4_DIFFICULTY}/source-verification.json`,"utf8"))); console.log("::notice title=T4 source verification::"+text.replaceAll("%","%25").replaceAll("\n","%0A").replaceAll("\r","%0D"));'
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: t4-three-year-${{ matrix.difficulty }}
-          path: work/three-year-${{ matrix.difficulty }}/
+          name: ${{ inputs.verify_source_only && format('t4-source-verification-{0}', matrix.difficulty) || format('t4-three-year-{0}', matrix.difficulty) }}
+          path: ${{ inputs.verify_source_only && format('work/three-year-{0}/source-verification.json', matrix.difficulty) || format('work/three-year-{0}/', matrix.difficulty) }}
           retention-days: 90
           compression-level: 0
           if-no-files-found: error

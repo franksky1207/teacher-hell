@@ -13,6 +13,15 @@ const sha=bytes=>createHash('sha256').update(bytes).digest('hex'),manifest=JSON.
 assert.equal(manifest.status,'passed');assert.equal(manifest.kind,'T4-continuous-production-source');
 const report={kind:'T4-real-checkpoint-storage-validation',sourceCommit:manifest.sourceCommit,difficulty:manifest.difficulty,checks:[],startedAt:new Date().toISOString()};
 async function load(name){const bytes=await readFile(`${root}/${name}`);assert.equal(bytes.length,manifest.files[name].bytes);assert.equal(sha(bytes),manifest.files[name].sha256);return restoreSave(bytes.toString());}
+if(process.argv.includes('--verify-source-only')){
+ for(const [name,meta] of Object.entries(manifest.files)){const bytes=await readFile(`${root}/${name}`);assert.equal(bytes.length,meta.bytes);assert.equal(sha(bytes),meta.sha256);}
+ const complete=await load('completed.json'),r=runtimeOf(complete.world);
+ assert.equal(sha(JSON.stringify(complete.world)),manifest.files['world.json'].sha256);
+ assert.equal(sha(JSON.stringify(complete.opening)),manifest.files['opening.json'].sha256);
+ assert.equal(r.history.filter(h=>h.type==='annual-success').length,3);assert.equal(careerResult(complete.world).data.years,3);
+ report.kind='T4-retained-source-retrieval-verification';report.sourceRun=process.env.T4_SOURCE_RUN??null;report.checks=['all original raw file SHA-256 and bytes','world/opening subdocuments equal original envelope','full completed-world restore under current code'];report.passed=3;report.failed=0;report.files=manifest.files;report.completedAt=new Date().toISOString();
+ await writeFile(`${root}/source-verification.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+}else{
 let before=await load('before-completion.json');assert.equal(careerResult(before.world),null);
 const beforeRevision=runtimeOf(before.world).revision,operation=JSON.parse(runtimeOf((await load('completed.json')).world).commits.at(-1).request);
 let stored={payload:before,token:saveToken({payload:before,generation:1})},fault=null,writes=0,memorialWrites=0;before=null;
@@ -42,3 +51,5 @@ const archive=r.history.find(h=>h.type==='cohort-completion'),eligible=archive.d
 try{assert.throws(()=>restoreSave(stored.payload));}finally{archive.data.outcomes[0].qualification.eligible=eligible;}
 report.checks.push('changed academic qualification rejected');
 report.writes=writes;report.memorialWrites=memorialWrites;report.passed=report.checks.length;report.failed=0;report.completedAt=new Date().toISOString();await writeFile(`${root}/storage-checks.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+
+}

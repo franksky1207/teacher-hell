@@ -67,8 +67,8 @@ test('T4 B: genuine three-mode openings preserve tenure and reject early complet
 
 /** A: explicit N7/ending adapter double. Full restore must reject this; no
  * fixture-produced annual success is ever used as continuous acceptance. */
-function threeYearContract(){
- const w=completionContract({years:3}),r=runtimeOf(w),n=w.numeric.evolution.world;
+function threeYearContract(options={}){
+ const w=completionContract({years:3,...options}),r=runtimeOf(w),n=w.numeric.evolution.world;
  r.plan={startYear:2026,validation:'fixed-calendar-v2',career:{version:1,mode:'three-year',difficulty:'hard'}};
  w.position={date:'2029-06-29',slotId:'private',serviceYear:3};
  n.classroom={id:n.registry.cohorts[0].classId,studentIds:[]};n.registry.academicYear=2028;
@@ -85,6 +85,11 @@ test('T4 A: three-year ending and qualification summaries have actual source ref
  assert.deepEqual(d.rating.details.scale.weights,CAREER_LIMITS);assert.deepEqual(d.annualIds,['annual:1','annual:2','annual:3']);
  assert.equal(d.cohorts[0].qualification.eligible,20);assert.equal(d.cohorts[0].qualification.notYetEligible,20);
  assert.match(d.ending.text,/20人符合畢業資格，20人/);assert.ok(d.ending.fragments.every(f=>f.refs.length));
+ const high=compileThreeYearCareerCompletion(threeYearContract({quality:100,before:0,after:100}));
+ const low=compileThreeYearCareerCompletion(threeYearContract({quality:0,before:100,after:0}));
+ assert.equal(high.rating.grade,'SS');assert.equal(low.rating.grade,'F');assert.match(low.ending.text,/正式總評為F/);
+ for(const difficulty of ['easy','normal','hard']){const same=threeYearContract();runtimeOf(same).plan.career.difficulty=difficulty;assert.deepEqual(compileThreeYearCareerCompletion(same).rating,d.rating);}
+
  runtimeOf(w).history.push({type:'career-completion',data:d});assert.equal(memorialFromWorld(w),null);
  assert.throws(()=>restoreWorldState(w));
 });

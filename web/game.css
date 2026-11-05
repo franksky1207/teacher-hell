@@ -82,3 +82,19 @@
 .notebook-history-pagination{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:.7rem;font-variant-numeric:tabular-nums}
 .notebook-history-pagination button{padding:.4rem .6rem}
 @media(max-width:650px){.notebook-history-years button{font-size:.75rem}.notebook-history-item{padding:.5rem}.notebook-history-meta{font-size:.74rem}}
+
+/* Phase 14-D: responsive, read-only subject marks and credit qualifications. */
+.notebook-academic-layout{display:grid;grid-template-columns:minmax(8rem,28%) minmax(0,1fr);gap:.6rem;min-width:0}
+.notebook-academic-list{display:grid;align-content:start;gap:.2rem;max-height:52dvh;overflow:auto;overscroll-behavior:contain}
+.notebook-academic-student{text-align:left;padding:.35rem .5rem;min-width:0;overflow-wrap:anywhere;font-size:.85rem}
+.notebook-academic-active{background:#715b59;border-color:#f5d390;outline:1px solid #f5d390}
+.notebook-academic-details{min-width:0;max-height:60dvh;overflow:auto;overscroll-behavior:contain}
+.notebook-academic-details h3,.notebook-academic-details h4{color:#f5d390}
+.notebook-academic-credits{padding:.5rem;border:1px solid #8196a0;border-radius:.4rem}
+.notebook-academic-terms{display:flex;flex-wrap:wrap;gap:.3rem;margin:.5rem 0}
+.notebook-academic-term{font-size:.82rem;padding:.3rem .45rem}
+.notebook-academic-table-wrap{max-width:100%;overflow-x:auto;overscroll-behavior:contain}
+.notebook-academic-table{width:100%;border-collapse:collapse;font-size:.82rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.notebook-academic-table th,.notebook-academic-table td{padding:.4rem .35rem;border-bottom:1px solid #708191;text-align:center}
+.notebook-academic-table tbody th{text-align:left}
+@media(max-width:650px){.notebook-academic-layout{grid-template-columns:minmax(0,1fr)}.notebook-academic-list{grid-template-columns:repeat(3,minmax(0,1fr));max-height:18dvh}.notebook-academic-details{max-height:none}.notebook-academic-table{font-size:.75rem}}

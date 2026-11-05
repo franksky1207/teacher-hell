@@ -95,6 +95,12 @@ try {
   await click('notebook-event-kind:fact');
   if(!await evaluate("!!document.querySelector('.notebook-history-kinds [aria-pressed=\"true\"][data-action=\"notebook-event-kind:fact\"]')"))
     throw Error('Notebook history kind filter failed');
+  await click('notebook-tab:academics');
+  if(!await evaluate("document.querySelector('.notebook [aria-selected=\"true\"]')?.dataset.action==='notebook-tab:academics'&&document.querySelectorAll('.notebook-academic-student').length>=38"))
+    throw Error('Notebook academic roster missing');
+  await evaluate("document.querySelector('.notebook-academic-student').click()");
+  if(!await evaluate("!!document.querySelector('.notebook-academic-details h3') && document.querySelector('.notebook-academic-details')?.innerText.includes('尚未結算')"))
+    throw Error('Notebook academic opening must not fabricate grades');
   await click('close');
   if(await evaluate("!!document.querySelector('.overlay')"))throw Error('Notebook overlay did not close');
   const notebookAfter=await evaluate(`(async()=>{

@@ -9,7 +9,8 @@ test('14-B: projection reads only official class roster and player disclosures',
  const p=projectNotebookPeople(w);
  assert.ok(p.people.some(x=>x.kind==='student'));
  assert.equal(p.people.length,new Set(p.people.map(x=>x.id)).size);
- assert.deepEqual(p.facts,[]);
+ assert.ok(p.facts.every(f=>Array.isArray(f.subjectIds)&&typeof f.description==='string'));
+ assert.ok(p.facts.some(f=>f.description.includes('小考'))); // Opening prehistory is already player-disclosed.
  assert.equal(JSON.stringify(w),before);
  const raw=JSON.stringify(p);
  for(const forbidden of ['numeric','random','receipts','evolution','hidden'])assert.ok(!raw.includes(forbidden));
@@ -17,10 +18,10 @@ test('14-B: projection reads only official class roster and player disclosures',
 test('14-B: event not yet disclosed is absent from notebook despite internal history',()=>{
  let {world:w,eventId}=beginDemo();
  const noKnowledge=projectNotebookPeople(w);
- assert.equal(noKnowledge.facts.length,0);
+ const alreadyKnown=structuredClone(noKnowledge.facts);
  while(readStory(w,eventId).canNext)w=apply(w,[storyAction(eventId,'next')]);
  w=apply(w,[storyAction(eventId,'select','listen')]);
- assert.equal(projectNotebookPeople(w).facts.length,0);
+ assert.deepEqual(projectNotebookPeople(w).facts,alreadyKnown); // Selection is not confirmation.
 });
 
 test('14-B: colon-delimited IDs render as one encoded action',()=>{

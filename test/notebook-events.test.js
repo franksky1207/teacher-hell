@@ -47,7 +47,7 @@ test('14-C: occurred versus learned dates and claims remain clearly separated',(
 test('14-C: narrative strings escape HTML and no write actions are emitted',()=>{
  const data={entries:[{kind:'fact',learnedDate:'2026-12-01',occurredDate:null,text:'<img src=x onerror=bad()>'},{kind:'claim',learnedDate:'2026-11-01',text:'<script>alert(1)</script>',sourceName:'<家長>',belief:'尚待確認'}]};
  const html=renderNotebookEvents(data);
- assert.doesNotMatch(html,/<img|<script>| onerror=/);
+ assert.doesNotMatch(html,/<img|<script>|<[^>]+ onerror=/);
  assert.match(html,/&lt;img/);assert.match(html,/&lt;script&gt;/);assert.match(html,/&lt;家長&gt;/);
  assert.doesNotMatch(html,/data-story-action|data-action="advance-time"|data-option-id/);
 });

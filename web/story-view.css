@@ -43,3 +43,20 @@
 @keyframes story-cast-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:650px){.story-scene,.story-stage{min-height:clamp(5rem,20dvh,10rem)}.story-actor{height:clamp(5rem,19dvh,10rem);width:46%}.story-actor-head{width:51%;left:24.5%}.story-view{max-height:calc(100dvh - 4rem)}}
 @media(prefers-reduced-motion:reduce){.story-actor{animation:none}}
+
+/* Phase 13-E: phone, chat and document reading skins. */
+.story-view[data-story-format="phone"] .story-reader{border-color:#7e9eaf}
+.story-phone{background:#142137;border-radius:.7rem;padding:.8rem;min-height:5rem;text-align:center}
+.story-phone-status{font-size:.75rem;color:#9dd4ba}
+.story-phone-speaker{font-weight:700;margin:.4rem 0}
+.story-phone-content{white-space:pre-wrap;overflow-wrap:anywhere;text-align:left;margin:.5rem 0 0}
+.story-chat{display:flex;flex-direction:column;gap:.45rem;max-height:34dvh;overflow-y:auto;overscroll-behavior:contain;padding:.25rem}
+.story-chat-line{max-width:82%;align-self:flex-start;min-width:0}
+.story-chat-line--own{align-self:flex-end}
+.story-chat-person{font-size:.73rem;color:#c0c9d2}
+.story-chat-bubble{margin:.15rem 0 0;background:#34485e;border-radius:.8rem .8rem .8rem .15rem;padding:.5rem .65rem;white-space:pre-wrap;overflow-wrap:anywhere}
+.story-chat-line--own .story-chat-bubble{background:#3e6153;border-radius:.8rem .8rem .15rem .8rem}
+.story-document{padding:.6rem;background:#e9e5d9;color:#242c39;border-radius:.35rem;max-height:35dvh;overflow-y:auto}
+.story-document h3{font-size:.95rem;margin:0 0 .4rem}
+.story-document-content{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65;margin:0}
+@media(max-width:650px){.story-chat{max-height:28dvh}.story-document{max-height:30dvh}.story-phone{padding:.5rem}}

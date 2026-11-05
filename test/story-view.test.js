@@ -1,3 +1,4 @@
+import {renderSpecialStoryBody} from '../web/story-formats.js';
 import {projectStoryScene,renderStoryScene} from '../web/story-scene.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -94,4 +95,32 @@ test('13-D: re-projected previous page restores expression and position',()=>{
  const b=renderStoryScene(projectStoryScene(w,{page:{...page,cast:[{actorId:'s1',position:'right',expression:'happy'}]}}));
  assert.match(a,/story-actor--left/);assert.match(a,/data-expression="sad"/);
  assert.match(b,/story-actor--right/);assert.match(b,/data-expression="happy"/);
+});
+
+test('13-E: phone scene has a caller panel but never invents duration or buttons',()=>{
+ const html=renderStoryView(read({page:{text:'請問老師在嗎？',speaker:'caller',presentation:'phone'},pageIndex:0,sceneView:{speaker:'家長',cast:[],label:'校園談話角落'}}));
+ assert.match(html,/aria-label="電話通話"/);
+ assert.match(html,/家長/);
+ assert.doesNotMatch(html,/story-scene|掛斷|00:00|通話秒數/);
+});
+test('13-E: chat bubbles show source speakers and only supplied read history',()=>{
+ const html=renderStoryView(read({page:{text:'第二句',speaker:'student',presentation:'chat'},chatMessages:[{speaker:'家長',text:'第一句',own:false},{speaker:'老師',text:'第二句',own:true}]}));
+ assert.match(html,/aria-label="聊天紀錄"/);
+ assert.match(html,/story-chat-line--own/);
+ assert.match(html,/第一句/);
+ assert.match(html,/第二句/);
+ assert.doesNotMatch(html,/story-scene/);
+ const attack=renderSpecialStoryBody('chat','內容','老師',[{speaker:'<img>',text:'<script>惡意</script>',own:false}]);
+ assert.doesNotMatch(attack,/<img>|<script>/);
+ assert.match(attack,/&lt;script&gt;/);
+});
+test('13-E: notice, email and news use distinct escaped document displays',()=>{
+ for(const type of ['notice','email','news']){
+  const html=renderStoryView(read({page:{text:'公告<重要>內容',speaker:null,presentation:type}}));
+  assert.match(html,new RegExp('data-story-format="'+type+'"'));
+  assert.match(html,/story-document/);
+  assert.match(html,/公告&lt;重要&gt;內容/);
+  assert.doesNotMatch(html,/story-scene/);
+ }
+ assert.throws(()=>renderSpecialStoryBody('chat','x','老師',[{speaker:null,text:'x'}]),TypeError);
 });

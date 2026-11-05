@@ -30,3 +30,15 @@ test('story: immutable resource digest and transaction selection evidence reject
 test('story: protected slots forbid both story execution and follow-up availability',async()=>{const {compileStory}=await import('../src/runtime/story.js'),{positionFor,cursorFor}=await import('../src/calendar/calendar.js');let {w,eventId}=last();w=decide(w,eventId,'listen');w=apply(w,[storyAction(eventId,'finish')]);w.position=positionFor('2026-11-20','p6',2026);runtimeOf(w).plan.cursor=cursorFor(w.position.date,w.position.slotId,2026);assert.equal(readStory(w,eventId).canResume,false);assert.throws(()=>compileStory(w,storyAction(eventId,'resume')),/protected/);});
 test('story: qualified extra options preserve three basic choices',async()=>{const {availableStoryChoices}=await import('../src/runtime/story.js');const {world:w,eventId}=beginDemo(),e=w.events.find(e=>e.id===eventId),stage=clone(DEMO_STORY.stages[0]);stage.choices[3].requires=[{type:'fact',id:'not-yet-observed'}];assert.equal(availableStoryChoices(w,e,stage).length,3);stage.choices[3].requires=[{type:'numeric',role:'teacher',holder:'person',code:'3-1',min:0,max:100}];assert.equal(availableStoryChoices(w,e,stage).length,4);stage.choices[3].requires[0].min=100;assert.equal(availableStoryChoices(w,e,stage).length,3);});
 test('story: vacation driver retains direction and resumes at consumed-slot boundary',async()=>{const {nextVacationOperation}=await import('../src/runtime/schedule.js');let {world:w,eventId}=beginDemo(1,DEMO_STORY,'2027-02-01');w=apply(w,[{type:'plan-vacation',id:'story-vacation',weeks:1,direction:'rest'}]);assert.equal(nextVacationOperation(w).status,'decision-required');while(readStory(w,eventId).canNext)w=apply(w,[storyAction(eventId,'next')]);w=decide(w,eventId,'listen');w=apply(w,[storyAction(eventId,'finish')]);const next=nextVacationOperation(w);assert.equal(next.direction,'rest');assert.deepEqual(next.request.operations.map(o=>o.type),['advance-time']);w=prepareWorldOperation(w,next.request).world;assert.equal(nextVacationOperation(w).status,'follow-up-required');w=apply(w,[storyAction(eventId,'resume')]);assert.equal(nextVacationOperation(w).status,'decision-required');assert.equal(runtimeOf(w).plan.vacation.direction,'rest');});
+
+test('13-E: three document presentation kinds satisfy validated content contract',()=>{
+ for(const type of ['notice','email','news']){
+  const content=structuredClone(DEMO_STORY);
+  content.stages[0].pages[0].presentation=type;
+  content.stages[0].pages[0].speaker=null;
+  assert.doesNotThrow(()=>validateStory(content));
+ }
+ const invalidDocument=structuredClone(DEMO_STORY);
+ invalidDocument.stages[0].pages[0].presentation='unsupported-document';
+ assert.throws(()=>validateStory(invalidDocument));
+});

@@ -1,3 +1,4 @@
+import {renderSpecialStoryBody} from './story-formats.js';
 import {renderStoryScene} from './story-scene.js';
 /** Phase 13-A: display-only projection from formal readStory(). World changes belong to the host. */
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -19,7 +20,7 @@ function renderConfirmedResult(v){
 }
 export function renderStoryView(v){
  if(!v||!v.page||typeof v.page.text!=='string'||!Number.isInteger(v.pageIndex)||!Number.isInteger(v.pageCount)||v.pageCount<1||v.pageIndex<0||v.pageIndex>=v.pageCount)throw new TypeError('Invalid readStory projection');
- const p=v.page,format=['dialogue','narration','phone','chat'].includes(p.presentation)?p.presentation:'narration';
+ const p=v.page,format=['dialogue','narration','phone','chat','notice','email','news'].includes(p.presentation)?p.presentation:'narration';
  const last=v.pageIndex===v.pageCount-1,previous=!!v.canPrevious,next=!!v.canNext&&!last;
  const choices=Array.isArray(v.choices)?v.choices:[],confirming=!!v.confirmation,waiting=!!v.waiting,ended=!!v.ended;
  if(choices.some(o=>!o||typeof o.id!=='string'||typeof o.text!=='string'))throw new TypeError('Invalid choices');
@@ -36,5 +37,5 @@ export function renderStoryView(v){
  else if(finish)actions=`<div class="story-finish">${button('結束','finish')}</div>`;
  else if(resume)actions=`<div class="story-resume">${button('繼續','resume')}</div>`;
  const state=ended?'ended':waiting?'waiting':confirming?'confirming':finish?'finishing':'reading';
- return `<section class="story-view" aria-label="劇情" data-story-format="${format}" data-story-state="${state}">${v.sceneView?renderStoryScene(v.sceneView):''}<div class="story-reader" aria-label="劇情閱讀"${advance}><div class="story-speaker">${esc(speaker)}</div><p class="story-text">${esc(p.text)}</p></div><nav class="story-navigation" aria-label="劇情翻頁"><span class="story-page-number" aria-label="頁碼">${v.pageIndex+1}／${v.pageCount}</span>${previous?button('上一頁','previous'):''}${next?button('下一頁','next'):''}</nav>${finish&&v.resultConfirmed===true?renderConfirmedResult(v):''}${actions}</section>`;
+ return `<section class="story-view" aria-label="劇情" data-story-format="${format}" data-story-state="${state}">${['phone','chat','notice','email','news'].includes(format)?'':v.sceneView?renderStoryScene(v.sceneView):''}<div class="story-reader" aria-label="劇情閱讀"${advance}><div class="story-speaker">${esc(speaker)}</div>${renderSpecialStoryBody(format,p.text,speaker,v.chatMessages)}</div><nav class="story-navigation" aria-label="劇情翻頁"><span class="story-page-number" aria-label="頁碼">${v.pageIndex+1}／${v.pageCount}</span>${previous?button('上一頁','previous'):''}${next?button('下一頁','next'):''}</nav>${finish&&v.resultConfirmed===true?renderConfirmedResult(v):''}${actions}</section>`;
 }

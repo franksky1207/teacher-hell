@@ -58,7 +58,36 @@ try {
   const after=await evaluate('document.querySelector(".bars").innerText');if(before===after)throw Error('Reroll did not change abilities');
   await click('subjects');await click('subject:英文');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes('任教第 1 年');await includes('暑輔第 1 週');
   if(!await evaluate(`Array.from(document.querySelectorAll('.states button')).every(b=>/ [0-9]+$/.test(b.textContent))`))throw Error('States must display integers');
-  await click('opening-next');await click('opening-next');await click('timetable');await wait('.table');
+  await click('opening-next');await click('opening-next');
+  // Phase 14-A: check actual modal navigation without mutating the saved world.
+  const notebookBefore=await evaluate(`(async()=>{
+    const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js');
+    const storage=createIndexedDBStorage({factory:indexedDB,namespace:'development'});
+    const entry=await storage.read(1);await storage.close();
+    return JSON.stringify(entry.payload.world);
+  })()`);
+  await click('notebook');await wait('.notebook');
+  const notebookStart=await evaluate(`({
+    tabs:document.querySelectorAll('.notebook [role="tab"]').length,
+    active:document.querySelector('.notebook [aria-selected="true"]')?.dataset.action,
+    date:document.querySelector('.notebook-content')?.innerText.includes('紀錄日期')
+  })`);
+  if(notebookStart.tabs!==6||notebookStart.active!=='notebook-tab:overview'||!notebookStart.date)
+    throw Error('Notebook overview or six categories missing '+JSON.stringify(notebookStart));
+  await click('notebook-tab:people');
+  if(!await evaluate(`document.querySelector('.notebook [aria-selected="true"]')?.dataset.action==='notebook-tab:people'&&document.querySelector('.notebook-content')?.innerText.includes('尚未接入')`))
+    throw Error('Notebook category navigation failed');
+  await click('close');
+  if(await evaluate(`!!document.querySelector('.overlay')`))throw Error('Notebook overlay did not close');
+  const notebookAfter=await evaluate(`(async()=>{
+    const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js');
+    const storage=createIndexedDBStorage({factory:indexedDB,namespace:'development'});
+    const entry=await storage.read(1);await storage.close();
+    return JSON.stringify(entry.payload.world);
+  })()`);
+  if(notebookBefore!==notebookAfter)throw Error('Notebook browsing unexpectedly changed save world');
+  console.log('PASS Phase 14-A notebook browser open, six tabs, category navigation, close, read-only save');
+  await click('timetable');await wait('.table');
   if(await evaluate('document.querySelectorAll(".table button").length')!==40)throw Error('Expected 40 cells');
   const expected=await evaluate(`(async()=>{const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js');const s=createIndexedDBStorage({factory:indexedDB,namespace:'development'});const w=(await s.read(1)).payload.world;const p=w.extensions['teacher-hell/world'].plan,t=p.tables[0],reg=w.numeric.evolution.world.registry;await s.close();return t.classes.map(c=>'高'+'一二三'[t.academicYear-c.cohortStart]+reg.classes[c.id].name);})()`);
   const displayed=await evaluate(`Array.from(document.querySelectorAll('.table button'),x=>x.textContent)`);

@@ -23,7 +23,7 @@ jobs:
       - name: Validate syntax and architecture
         run: npm run check
       - name: Run formal story and phase 13 UI regression
-        run: npm run test:module -- module=story,story-view,story-controller,story-shell,story-test-runner,notebook-view
+        run: npm run test:module -- module=story,story-view,story-controller,story-shell,story-test-runner,notebook-view,notebook-people
       - name: Build preview assets without publishing
         run: npm run build
       - name: Chromium game and mobile browser regression

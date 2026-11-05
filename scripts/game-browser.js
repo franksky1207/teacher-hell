@@ -75,10 +75,17 @@ try {
   if(notebookStart.tabs!==6||notebookStart.active!=='notebook-tab:overview'||!notebookStart.date)
     throw Error('Notebook overview or six categories missing '+JSON.stringify(notebookStart));
   await click('notebook-tab:people');
-  if(!await evaluate(`document.querySelector('.notebook [aria-selected="true"]')?.dataset.action==='notebook-tab:people'&&document.querySelector('.notebook-content')?.innerText.includes('尚未接入')`))
-    throw Error('Notebook category navigation failed');
+  const rosterCheck=await evaluate(`({
+    active:document.querySelector('.notebook [aria-selected="true"]')?.dataset.action,
+    count:document.querySelectorAll('.notebook-person').length
+  })`);
+  if(rosterCheck.active!=='notebook-tab:people'||rosterCheck.count<38)
+    throw Error('Notebook official class roster missing '+JSON.stringify(rosterCheck));
+  await evaluate("document.querySelector('.notebook-person').click()");
+  if(!await evaluate("!!document.querySelector('.notebook-person--active') && !!document.querySelector('.notebook-person-details h3')"))
+    throw Error('Notebook selection did not render a person');
   await click('close');
-  if(await evaluate(`!!document.querySelector('.overlay')`))throw Error('Notebook overlay did not close');
+  if(await evaluate("!!document.querySelector('.overlay')"))throw Error('Notebook overlay did not close');
   const notebookAfter=await evaluate(`(async()=>{
     const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js');
     const storage=createIndexedDBStorage({factory:indexedDB,namespace:'development'});

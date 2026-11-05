@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {projectNotebookPeople} from '../web/notebook-people.js';
+import {projectNotebookPeople,renderNotebookPeople} from '../web/notebook-people.js';
 import {beginDemo,apply,storyAction} from './support/story-scenario.js';
 import {readStory} from '../src/runtime/story.js';
 test('14-B: projection reads only official class roster and player disclosures',()=>{
@@ -21,4 +21,11 @@ test('14-B: event not yet disclosed is absent from notebook despite internal his
  while(readStory(w,eventId).canNext)w=apply(w,[storyAction(eventId,'next')]);
  w=apply(w,[storyAction(eventId,'select','listen')]);
  assert.equal(projectNotebookPeople(w).facts.length,0);
+});
+
+test('14-B: colon-delimited IDs render as one encoded action',()=>{
+ const id='student:cohort:123';
+ const data={className:'智班',people:[{id,name:'同學',kind:'student',relation:'導師班學生'}],facts:[],claims:[]};
+ const html=renderNotebookPeople(data,id);
+ assert.match(html,/data-action="notebook-person:student:cohort:123"/);
 });

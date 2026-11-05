@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       s2_phase:
-        description: S2 retained-source analysis or acceptance (empty disables)
+        description: S2 analysis, acceptance, browser, or faults (empty disables)
         type: string
         default: ''
       three_year:
@@ -126,7 +126,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        difficulty: [easy, normal, hard]
+        difficulty: ${{ fromJSON(inputs.s2_phase == 'faults' && '["easy"]' || '["easy","normal","hard"]') }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -143,7 +143,7 @@ jobs:
           run-id: ${{ matrix.difficulty == 'easy' && '41971561739' || '41971866724' }}
           github-token: ${{ github.token }}
       - name: Full retained-source attribution
-        if: inputs.s2_phase != 'browser'
+        if: inputs.s2_phase == 'analysis' || inputs.s2_phase == 'acceptance'
         run: node --max-old-space-size=6144 --expose-gc scripts/save-capacity.js attribute work/source
       - if: inputs.s2_phase == 'acceptance'
         run: node --max-old-space-size=6144 --expose-gc scripts/storage-s2.js work/source
@@ -154,9 +154,13 @@ jobs:
           node scripts/storage-browser.js --s2
         env:
           CHROMIUM_BIN: google-chrome
-      - if: (inputs.s2_phase == 'acceptance' || inputs.s2_phase == 'browser') && matrix.difficulty == 'easy'
+      - if: (inputs.s2_phase == 'acceptance' || inputs.s2_phase == 'browser' || inputs.s2_phase == 'faults') && matrix.difficulty == 'easy'
         run: |
-          if [ '${{ inputs.s2_phase }}' = acceptance ]; then node --max-old-space-size=6144 --expose-gc scripts/three-year-checks.js work/source; fi
+          if [ '${{ inputs.s2_phase }}' != browser ]; then
+            node --max-old-space-size=6144 --expose-gc scripts/three-year-checks.js work/source
+            node --input-type=module -e 'import {readFileSync} from "node:fs"; import {gzipSync} from "node:zlib"; console.log("::notice title=S2 faults::"+gzipSync(readFileSync("work/source/storage-checks.json")).toString("base64"))'
+          fi
+          npm run build
           node scripts/storage-browser.js --storage-only
         env:
           CHROMIUM_BIN: google-chrome
@@ -164,5 +168,7 @@ jobs:
         if: always()
         with:
           name: s2-${{ inputs.s2_phase }}-${{ matrix.difficulty }}
-          path: work/source/s2-*.json
+          path: |
+            work/source/s2-*.json
+            work/source/storage-checks.json
           if-no-files-found: error

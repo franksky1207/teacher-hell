@@ -29,6 +29,10 @@ export async function replay(t,tag){
 }
 export async function faults(t){
  const before=await t.db.read(1);
+ const nativeCompression=globalThis.CompressionStream;
+ try{globalThis.CompressionStream=class{constructor(){throw Error('injected codec failure');}};await rejects(()=>t.db.write(1,before.payload,before.token));}
+ finally{globalThis.CompressionStream=nativeCompression;}
+ check(equal(await t.db.read(1),before),'codec failure modified old save');
  for(const mode of ['abort','quota']){
   const driver=createIndexedDBStorage({factory:globalThis.indexedDB,namespace:'test',testId:t.testId,faults:{beforeCommit({transaction}){if(mode==='abort')transaction.abort();else throw new DOMException('injected quota','QuotaExceededError');}}});
   const s=await createStoredSession(driver,1),q=request(before.payload.world,'fault-'+mode,[{type:'sample',stream:'events',id:'fault-draw',weights:[1,2]}]);

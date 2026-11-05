@@ -197,6 +197,13 @@ test('storage physical v2: exact UTF-8, legacy, bounded expansion and hostile co
  for(const metadata of [{...packed.metadata,format:3},{...packed.metadata,codec:'brotli'},{...packed.metadata,rawBytes:1},{...packed.metadata,rawBytes:packed.metadata.rawBytes+1},{...packed.metadata,sha256:'0'.repeat(64)},{...packed.metadata,chunkCount:0}])await assert.rejects(unpackStoredText(metadata,packed.pages));
  const pages=packed.pages.map(p=>p.slice());pages[0][0]^=1;
  await assert.rejects(unpackStoredText(packed.metadata,pages),{code:'CORRUPT'});
+ // Even after a hostile editor recomputes the outer digest, gzip integrity and
+ // the unchanged inner save validator remain mandatory.
+ const damaged=packed.pages.map(p=>p.slice());damaged.at(-1)[damaged.at(-1).length-1]^=1;
+ const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',await new Blob(damaged).arrayBuffer())),b=>b.toString(16).padStart(2,'0')).join('');
+ await assert.rejects(unpackStoredText({...packed.metadata,sha256:digest},damaged),{code:'CORRUPT'});
+ const invalid=await packStoredText(JSON.stringify({...createSave(runtimeScenario()),version:9}));
+ await assert.rejects(async()=>restoreSave(await unpackStoredText(invalid.metadata,invalid.pages)),{code:'VERSION'});
  await assert.rejects(unpackStoredText(packed.metadata,packed.pages.slice(1)),{code:'CORRUPT'});
  await assert.rejects(unpackStoredText(packed.metadata,['wrong type']),{code:'CORRUPT'});
  const original=globalThis.CompressionStream,decoder=globalThis.DecompressionStream;

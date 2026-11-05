@@ -1,6 +1,8 @@
 /** Phase 14-D: display-only projection of official homeroom transcripts and qualification. */
 import {readSchoolRoster} from '../src/runtime/views.js';
 import {academicState,readGrades,readAcademicQualification} from '../src/runtime/academics.js';
+import {semester} from '../src/calendar/calendar.js';
+import {addDays} from '../src/calendar/civil.js';
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const finite=value=>typeof value==='number'&&Number.isFinite(value)?String(value):'—';
 const semesterLabel=id=>{const match=/^(\d{4}):(autumn|spring)$/.exec(id);return match?`${match[1]}學年${match[2]==='autumn'?'上':'下'}學期`:id;};
@@ -18,16 +20,27 @@ export function projectNotebookAcademics(world,studentId=null,termId=null){
  if(selected&&termId!==null&&!terms.some(t=>t.id===termId))throw new RangeError('Unknown student term');
  const term=terms.find(t=>t.id===chosen)??null;
  const transcript=selected&&term?readGrades(world,selected.id,term.id):null;
+ const examCalendar=term?semester(term.id):null;
+ const finalExamDay=examCalendar?.exams[2].at(-1)??null;
+ const finalReleased=!finalExamDay||world.position.date>=addDays(finalExamDay,1);
+ const visibleRound=round=>{
+  if(round===0)return true;
+  const examDays=round===2&&academic.terms[term.id].grade===2&&examCalendar.grade2SecondExam
+   ?examCalendar.grade2SecondExam:examCalendar.exams[round-1];
+  return world.position.date>=addDays(examDays.at(-1),1);
+ };
  // The official graduation query is a projection, never a student status write.
  const qualification=selected?readAcademicQualification(world,selected.id,academic):null;
  return {students,selectedId:selected?.id??null,terms,selectedTerm:term?.id??null,
+  pendingPublication:!!term&&!!term.closed&&!finalReleased,
   transcript:transcript?{
-   closed:!!term.closed,
-   assessments:transcript.assessments.map(a=>({round:a.round,marks:a.marks?{...a.marks}:null})),
-   courses:(transcript.semester?.courses??[]).map(c=>({subject:c.subject,mark:c.mark,credits:c.credits,earned:c.earned,required:c.required})),
+   closed:!!term.closed&&finalReleased,
+   assessments:transcript.assessments.map(a=>({round:a.round,marks:visibleRound(a.round)&&a.marks?{...a.marks}:null})),
+   courses:(finalReleased?transcript.semester?.courses??[]:[]).map(c=>({subject:c.subject,mark:c.mark,credits:c.credits,earned:c.earned,required:c.required})),
    planned:transcript.courses.map(c=>({subject:c.subject,credits:c.credits,required:c.required}))
   }:null,
-  qualification:qualification?{
+  // Final-day credits and derived qualification may reveal a hidden third exam result.
+  qualification:qualification&&finalReleased?{
    earned:qualification.earned,requiredEarned:qualification.requiredEarned,electiveEarned:qualification.electiveEarned,
    complete:qualification.complete,eligible:qualification.eligible,status:qualification.status,
    reasons:qualification.reasons??[],repeatEligible:qualification.repeatEligible,extensionEligible:qualification.extensionEligible
@@ -47,7 +60,7 @@ export function renderNotebookAcademics(data){
   const regular=t?.assessments.find(a=>a.round===0)?.marks??null;
   const courses=t?.closed?t.courses:t?.planned??[];
   const rows=courses.map(c=>`<tr><th scope="row">${esc(c.subject)}</th><td>${finite(regular?.[c.subject])}</td>${rounds.map(r=>`<td>${finite(r?.[c.subject])}</td>`).join('')}<td>${t?.closed?finite(c.mark):'—'}</td><td>${t?.closed?finite(c.earned):'—'}／${finite(c.credits)}</td></tr>`).join('');
-  content=`<h3>${esc(student?.name??'學生')}</h3>${credit}<div class="notebook-academic-terms" aria-label="選擇學期">${termButtons}</div>${t?`<p class="notebook-hint">${t.closed?'正式學期成績與已取得學分':'本學期尚未結算，未提供最終成績或學分判定。'}</p><div class="notebook-academic-table-wrap"><table class="notebook-academic-table"><thead><tr><th>科目</th><th>平時</th><th>一段</th><th>二段</th><th>三段</th><th>學期</th><th>學分</th></tr></thead><tbody>${rows||'<tr><td colspan="7">尚無已建立課程</td></tr>'}</tbody></table></div>`:'<p>目前尚無正式學期成績紀錄。</p>'}`;
+  content=`<h3>${esc(student?.name??'學生')}</h3>${data.pendingPublication?'<p class="notebook-hint">期末考成績與學期結算已完成，隔天開放查閱。</p>':''}${credit}<div class="notebook-academic-terms" aria-label="選擇學期">${termButtons}</div>${t?`<p class="notebook-hint">${t.closed?'正式學期成績與已取得學分':'本學期尚未結算，未提供最終成績或學分判定。'}</p><div class="notebook-academic-table-wrap"><table class="notebook-academic-table"><thead><tr><th>科目</th><th>平時</th><th>一段</th><th>二段</th><th>三段</th><th>學期</th><th>學分</th></tr></thead><tbody>${rows||'<tr><td colspan="7">尚無已建立課程</td></tr>'}</tbody></table></div>`:'<p>目前尚無正式學期成績紀錄。</p>'}`;
  }
  return `<section class="notebook-academics" aria-label="學業成績與學分"><p class="notebook-hint">資料來源為學校正式學業紀錄；查閱不產生段考、學分或畢業結算。</p><div class="notebook-academic-layout"><div class="notebook-academic-list" aria-label="導師班學生名單">${roster||'<p>尚無可查閱學生。</p>'}</div><div class="notebook-academic-details">${content}</div></div></section>`;
 }

@@ -109,6 +109,12 @@ try {
   })()`);
   if(!academicCheck.selected||!academicCheck.detail||(!academicCheck.empty&&!academicCheck.open))
     throw Error('Notebook academic opening must not fabricate grades '+JSON.stringify(academicCheck));
+  await click('notebook-tab:semesters');
+  if(!await evaluate("!!document.querySelector('.notebook-reviews') && document.querySelector('.notebook-reviews').innerText.includes('尚無已完成的學期總結')"))
+    throw Error('Notebook semester empty archive invalid');
+  await click('notebook-tab:career');
+  if(!await evaluate("!!document.querySelector('.notebook-career') && document.querySelector('.notebook-career').innerText.includes('生涯進行中')"))
+    throw Error('Notebook career status invalid');
   await click('close');
   if(await evaluate("!!document.querySelector('.overlay')"))throw Error('Notebook overlay did not close');
   const notebookAfter=await evaluate(`(async()=>{

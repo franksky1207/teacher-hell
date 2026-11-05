@@ -98,3 +98,14 @@
 .notebook-academic-table th,.notebook-academic-table td{padding:.4rem .35rem;border-bottom:1px solid #708191;text-align:center}
 .notebook-academic-table tbody th{text-align:left}
 @media(max-width:650px){.notebook-academic-layout{grid-template-columns:minmax(0,1fr)}.notebook-academic-list{grid-template-columns:repeat(3,minmax(0,1fr));max-height:18dvh}.notebook-academic-details{max-height:none}.notebook-academic-table{font-size:.75rem}}
+
+/* Phase 14-E: saved semester reports and compact completion records. */
+.notebook-reviews,.notebook-career{min-width:0;overflow-wrap:anywhere;line-height:1.65}
+.notebook-review-picker{display:flex;flex-wrap:wrap;gap:.4rem}
+.notebook-review-picker button{padding:.4rem;font-size:.8rem}
+.notebook-review-details,.notebook-annual-card{border:1px solid #718193;background:#13243b;border-radius:.4rem;padding:.7rem;margin:.5rem 0}
+.notebook-review-scores{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.2rem}
+.notebook-review-scores p{margin:.2rem}
+.notebook-ending{white-space:pre-wrap;line-height:1.8;padding:.7rem;border-left:2px solid #f5d390}
+.notebook-review-details h3,.notebook-review-details h4,.notebook-career h3{color:#f5d390}
+@media(max-width:650px){.notebook-review-scores{grid-template-columns:minmax(0,1fr)}}

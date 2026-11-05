@@ -41,3 +41,16 @@
  .game--story .story-scene{display:none}
  .game--story .story-choice-panel{max-height:27dvh}
 }
+
+/* Phase 14-A: notebook navigation inside the established modal; no gameplay actions. */
+.notebook{display:grid;grid-template-columns:minmax(9rem,12rem) minmax(0,1fr);gap:.8rem;min-height:16rem}
+.notebook-tabs{display:grid;align-content:start;gap:.4rem;min-width:0}
+.notebook-tab{text-align:left;min-width:0;white-space:normal;overflow-wrap:anywhere;font-size:.92rem}
+.notebook-tab--active{background:#715b59;border-color:#f5d390}
+.notebook-tab[aria-selected="true"]{outline:1px solid #f5d390}
+.notebook-content{min-width:0;border:1px solid #7e90a0;border-radius:.5rem;background:#101d32b8;padding:1rem;overflow-wrap:anywhere}
+.notebook-summary{display:grid;gap:.35rem}
+.notebook-summary p{margin:.2rem 0}
+.notebook-hint,.notebook-empty p{color:#d9d3c6;line-height:1.7}
+.notebook-empty h3{color:#f5d390}
+@media(max-width:650px){.notebook{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);gap:.55rem}.notebook-tabs{grid-template-columns:repeat(3,minmax(0,1fr));gap:.3rem}.notebook-tab{text-align:center;padding:.5rem .2rem;font-size:.78rem;min-height:2.8rem}.notebook-content{padding:.75rem;min-height:12rem}}

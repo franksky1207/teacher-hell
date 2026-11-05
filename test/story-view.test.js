@@ -15,7 +15,7 @@ test('Phase 13-A: choices and confirmation remain distinct controls',()=>{
 });
 test('Phase 13-A: untrusted text and attributes are escaped',()=>{
  const html=renderStoryView(read({page:{text:'<img src=x onerror=alert(1)>',speaker:null,presentation:'dialogue'},pageIndex:2,canNext:false,choices:[{id:'x" onclick="x',text:'<script>alert(1)</script>'}]}));
- assert.doesNotMatch(html,/<img|<script|onclick=/);assert.match(html,/&lt;img/);assert.match(html,/&quot;/);
+ assert.doesNotMatch(html,/<img|<script|\\sonclick=\"/);assert.match(html,/&lt;img/);assert.match(html,/&quot;/);
 });
 test('Phase 13-A: incomplete readStory projection is rejected',()=>{
  assert.throws(()=>renderStoryView(null));assert.throws(()=>renderStoryView(read({pageIndex:3})));

@@ -21,3 +21,25 @@
 .story-result-deltas{display:flex;gap:.35rem .7rem;flex-wrap:wrap;font-size:.85rem}
 .story-result-deltas span{white-space:nowrap}
 @media(max-width:650px){.story-result{padding:.5rem .65rem}}
+
+/* Phase 13-D: temporary structural cast and expression placeholders. */
+.story-scene{position:relative;min-height:clamp(6rem,23dvh,14rem);border:1px solid #8199a6;border-bottom:0;background:linear-gradient(0deg,#182b45,#7e9b9d55);border-radius:.5rem .5rem 0 0;pointer-events:none;overflow:hidden}
+.story-scene-label{position:absolute;top:.3rem;left:.6rem;color:#eee;font-size:.75rem;text-shadow:0 2px 4px #000;z-index:1}
+.story-stage{min-height:clamp(6rem,23dvh,14rem);display:flex;justify-content:space-around;align-items:flex-end;gap:.5rem;padding:1rem .8rem 0}
+.story-actor{--coat:#6d93ad;--face:#e5bea4;position:relative;display:flex;align-items:center;justify-content:flex-end;flex-direction:column;width:42%;max-width:10rem;height:clamp(6rem,22dvh,13rem);filter:brightness(.65);opacity:.82;animation:story-cast-in .2s ease-out both}
+.story-actor--speaking{filter:brightness(1);opacity:1}
+.story-actor--adult{--coat:#27364b;--face:#344358}
+.story-actor--tone-1{--coat:#8279a3}.story-actor--tone-2{--coat:#ae8169}.story-actor--tone-3{--coat:#578d86}.story-actor--tone-4{--coat:#9e7695}.story-actor--tone-5{--coat:#7383b6}
+.story-actor-shape{width:100%;height:100%;position:relative}
+.story-actor-head{position:absolute;top:5%;left:27%;width:46%;height:43%;border-radius:46%;border:3px solid #29384c;background:var(--face);box-shadow:0 -8px 0 #283648;z-index:1}
+.story-actor-face{position:absolute;top:55%;left:28%;width:44%;height:5%;background:#6c5150;border-radius:90%}
+.story-actor[data-expression="happy"] .story-actor-face{height:12%;border-radius:0 0 90% 90%}
+.story-actor[data-expression="angry"] .story-actor-face{transform:rotate(10deg)}
+.story-actor[data-expression="sad"] .story-actor-face{transform:rotate(-10deg)}
+.story-actor[data-expression="surprised"] .story-actor-face{width:15%;height:15%;left:43%;border-radius:50%}
+.story-actor[data-expression="embarrassed"] .story-actor-head{box-shadow:0 -8px 0 #283648,inset 10px -7px 0 #d67e8a55}
+.story-actor-body{position:absolute;bottom:0;width:100%;height:60%;border:3px solid #283648;border-radius:40% 40% 0 0;background:var(--coat)}
+.story-actor-name{position:absolute;bottom:.15rem;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#14243ce8;border-radius:.3rem;padding:.1rem .45rem;font-size:.75rem;z-index:2}
+@keyframes story-cast-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:650px){.story-scene,.story-stage{min-height:clamp(5rem,20dvh,10rem)}.story-actor{height:clamp(5rem,19dvh,10rem);width:46%}.story-actor-head{width:51%;left:24.5%}.story-view{max-height:calc(100dvh - 4rem)}}
+@media(prefers-reduced-motion:reduce){.story-actor{animation:none}}

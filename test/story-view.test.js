@@ -1,3 +1,4 @@
+import {projectStoryScene,renderStoryScene} from '../web/story-scene.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {renderStoryView} from '../web/story-view.js';
@@ -58,4 +59,39 @@ test('13-C: narrative-only final page does not claim a confirmed result',()=>{
  const html=renderStoryView(read({pageIndex:2,canNext:false,canFinish:true,result:[],teacherDelta:{}}));
  assert.doesNotMatch(html,/aria-label="事件結果"/);
  assert.match(html,/data-story-action="finish"/);
+});
+
+test('13-D: two participants render distinct placeholders, expressions and active speaker',()=>{
+ const w={identity:{playerId:'teacher'},numeric:{evolution:{world:{people:{s1:{kind:'student'},a1:{kind:'other'}},registry:{profiles:{s1:{displayName:'陳同學',appearance:{variant:11}},a1:{displayName:'林主任'}}}}}}};
+ const page={scene:'school:counselling-corner',presentation:'dialogue',text:'請說',speaker:'s1',cast:[{actorId:'s1',position:'left',expression:'happy'},{actorId:'a1',position:'right',expression:'angry'}]};
+ const projected=projectStoryScene(w,{page}),html=renderStoryScene(projected);
+ assert.equal(projected.cast.length,2);assert.equal(projected.speaker,'陳同學');assert.equal(projected.cast[0].tone,5);
+ assert.match(html,/story-actor--student/);assert.match(html,/story-actor--adult/);
+ assert.match(html,/story-actor--speaking/);assert.match(html,/data-expression="happy"/);assert.match(html,/data-expression="angry"/);
+ assert.match(renderStoryView({page,pageIndex:0,pageCount:1,canFinish:true,sceneView:projected}),/陳同學/);
+});
+test('13-D: phone has no remote portrait, narrator has none, teacher has none',()=>{
+ const w={identity:{playerId:'teacher'},numeric:{evolution:{world:{people:{s1:{kind:'student'}},registry:{profiles:{s1:{displayName:'王同學'}}}}}}};
+ const page={scene:'school:counselling-corner',text:'內容',speaker:'teacher',cast:[{actorId:'s1',position:'center',expression:'calm'}]};
+ assert.equal(projectStoryScene(w,{page:{...page,presentation:'dialogue'}}).speaker,'老師');
+ const phone=projectStoryScene(w,{page:{...page,presentation:'phone',speaker:'s1'}});
+ assert.equal(phone.cast.length,0);assert.doesNotMatch(renderStoryScene(phone),/story-actor--student/);
+ const narrator=projectStoryScene(w,{page:{...page,presentation:'narration',speaker:null,cast:[]}});
+ assert.equal(narrator.speaker,'旁白');assert.equal(narrator.cast.length,0);
+});
+test('13-D: bound cast only; names and scene labels are escaped',()=>{
+ const w={identity:{playerId:'teacher'},numeric:{evolution:{world:{people:{s1:{kind:'student'},secret:{kind:'student'}},registry:{profiles:{s1:{displayName:'<script>不安全</script>'},secret:{displayName:'秘密角色'}}}}}}};
+ const scene=projectStoryScene(w,{page:{scene:'unknown',presentation:'dialogue',text:'內容',speaker:'s1',cast:[{actorId:'s1',position:'left',expression:'surprised'}]}});
+ const html=renderStoryScene(scene);
+ assert.match(html,/&lt;script&gt;/);assert.doesNotMatch(html,/<script>|秘密角色/);
+ assert.equal(scene.label,'目前場景');
+ assert.throws(()=>renderStoryScene({...scene,cast:[...scene.cast,...scene.cast,...scene.cast]}),TypeError);
+});
+test('13-D: re-projected previous page restores expression and position',()=>{
+ const w={identity:{playerId:'teacher'},numeric:{evolution:{world:{people:{s1:{kind:'student'}},registry:{profiles:{s1:{displayName:'吳同學'}}}}}}};
+ const page={scene:'school:counselling-corner',presentation:'dialogue',text:'內容',speaker:'s1'};
+ const a=renderStoryScene(projectStoryScene(w,{page:{...page,cast:[{actorId:'s1',position:'left',expression:'sad'}]}}));
+ const b=renderStoryScene(projectStoryScene(w,{page:{...page,cast:[{actorId:'s1',position:'right',expression:'happy'}]}}));
+ assert.match(a,/story-actor--left/);assert.match(a,/data-expression="sad"/);
+ assert.match(b,/story-actor--right/);assert.match(b,/data-expression="happy"/);
 });

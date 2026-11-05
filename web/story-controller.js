@@ -1,3 +1,4 @@
+import {projectStoryScene} from './story-scene.js';
 /** Phase 13-B: legal readStory projections and persisted story operations. No event generation. */
 import {readStory,storyState,storyContent} from '../src/runtime/story.js';
 import {createId} from '../src/contracts/foundation.js';
@@ -13,7 +14,7 @@ export function currentStory(world){
   if(!state||state.mode==='ended')continue;
   const view=readStory(world,event.id);
   if(view.waiting&&!view.canResume)continue;
-  candidates.push({...view,resultConfirmed:state.mode==='result'});
+  candidates.push({...view,resultConfirmed:state.mode==='result',sceneView:projectStoryScene(world,view)});
  }
  return candidates[0]??null;
 }

@@ -214,3 +214,20 @@ test('storage physical v2: exact UTF-8, legacy, bounded expansion and hostile co
   assert.equal(await unpackStoredText(legacy.metadata,legacy.pages),text);
  }finally{globalThis.CompressionStream=original;globalThis.DecompressionStream=decoder;}
 });
+
+import { academicVersion } from '../src/runtime/academics.js';
+test('T5: formal openings use academic v2 and slot deletion and replacement stay isolated',async()=>{
+ const db=memory(),sessions=[];
+ for(const [i,difficulty] of ['easy','normal','hard'].entries()){
+  const w=threeYearOpening(difficulty),s=await createStoredSession(db,i+1);
+  assert.equal(academicVersion(w),2);await s.initialize(w);sessions.push(s);
+ }
+ const original=await Promise.all([1,2,3].map(n=>db.read(n)));
+ await assert.rejects(sessions[1].delete({expectedToken:original[1].token}),{code:'CONFIRM'});
+ await sessions[1].delete({expectedToken:original[1].token,confirmed:true});
+ assert.equal((await db.read(2)).payload,null);
+ assert.deepEqual(await db.read(1),original[0]);assert.deepEqual(await db.read(3),original[2]);
+ await sessions[1].import(await sessions[0].export(),{expectedToken:null});
+ assert.deepEqual((await db.read(2)).payload,original[0].payload);
+ assert.deepEqual(await db.read(1),original[0]);assert.deepEqual(await db.read(3),original[2]);
+});

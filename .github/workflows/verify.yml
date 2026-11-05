@@ -64,6 +64,9 @@ jobs:
             npm run test:academic
             node --test --test-name-pattern='detached complete world/opening|physical v2' test/storage.test.js
             npm run build
+          elif [[ "$(git log -1 --format=%s)" == T5:* ]]; then
+            npm run check
+            node --test --test-name-pattern="T5:|calendar T1:|calendar-integration T2: real seeded|storage T1:|storage: version rejection|storage: failed write|storage: serialize queued|storage: import confirmation|storage physical v2:|A1 compatibility:|T4 B: genuine" test/calendar.test.js test/calendar-integration.test.js test/storage.test.js test/academics.test.js test/three-year.test.js
           else
             npm run verify:quick
           fi

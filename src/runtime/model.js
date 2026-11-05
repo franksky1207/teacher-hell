@@ -1,3 +1,15 @@
+import { validateCohortCompletions } from './cohort.js';
+import { validatePrehistoryOpening } from '../world/prehistory.js';
+import { validateCareerCompletion } from './career.js';
+import { validateHomeroom } from './homeroom.js';
+import { validateSemesterReviews } from './reviews.js';
+import { validateAnnualObservations } from './annual.js';
+import { validateInstitutionHistory,mayReadProcedureFact } from './procedures.js';
+import { validateAcademicHistory } from './academics.js';
+import { validateCampusHistory } from './campus.js';
+import { validateNpcHistory } from './autonomy.js';
+import { validateStoryHistory } from './story.js';
+import { validateEventSelectionHistory } from './event-selection.js';
 import { isFormal, validateFormalPlan, planPosition } from './schedule.js';
 /** Authoritative world extension of Foundation v1; no disk or calendar generation. */
 import { createId, validateFoundationEnvelope, validateId, validateMoment } from '../contracts/foundation.js';
@@ -7,6 +19,7 @@ import { nextGameDate } from '../evolution/time.js';
 import { probability } from '../numeric/math.js';
 
 export const WORLD_KEY = 'teacher-hell/world';
+export const ATTEMPT_LINEAGE_KEY = 'teacher-hell/attempt-lineage';
 export const HISTORY_CODES = Object.freeze(Array.from({length:10},(_,i)=>Array.from({length:6},(_,j)=>`H${String(i+1).padStart(2,'0')}-${j+1}`)).flat());
 export class WorldError extends Error {
   constructor(code, message) { super(`${code}: ${message}`); this.name='WorldError'; this.code=code; }
@@ -14,6 +27,23 @@ export class WorldError extends Error {
 export function ensure(condition, code, message) { if (!condition) throw new WorldError(code,message); }
 export const same = (a,b) => canonicalData(a) === canonicalData(b);
 export const runtimeOf = world => world.extensions[WORLD_KEY];
+/** Identity tombstones only. Discarded facts, decisions and numeric receipts never
+ * become part of the successful world merely to prevent an attempt ID being reused. */
+export function worldAttemptIds(world){
+  const r=runtimeOf(world);
+  return [...new Set([...(world.extensions[ATTEMPT_LINEAGE_KEY]?.attemptIds??[]),world.identity.attemptId,...r.commits.map(c=>c.attemptId),...r.numericArchives.map(a=>a.attemptId),...r.history.filter(h=>h.type==='retry').flatMap(h=>h.data.attemptIds??[])])];
+}
+function validateAttemptLineage(world){
+  const lineage=world.extensions[ATTEMPT_LINEAGE_KEY],lastRetry=runtimeOf(world).history.findLast(h=>h.type==='retry');
+  if(!lineage){ensure(!lastRetry?.data.attemptIds&&!runtimeOf(world).commits.some(c=>JSON.parse(c.request).attemptIds),'ATTEMPT','Retry identity lineage is missing');return;}
+  assertShape(lineage,['version','attemptIds']);
+  ensure(lineage.version===1&&Array.isArray(lineage.attemptIds)&&lineage.attemptIds.length>1,'ATTEMPT','Invalid retry identity lineage');
+  unique(lineage.attemptIds,id=>id,'attempt lineage');lineage.attemptIds.forEach(id=>validateId(id,'attempt'));
+  ensure(same(lineage.attemptIds,lastRetry?.data.attemptIds)&&lineage.attemptIds.at(-1)===world.identity.attemptId,'ATTEMPT','Retry identity lineage differs from its receipt');
+  const receipt=runtimeOf(world).commits.find(c=>c.id===lastRetry.operationId&&c.attemptId===lastRetry.attemptId);
+  ensure(same(lineage.attemptIds,JSON.parse(receipt.request).attemptIds),'ATTEMPT','Retry identity lineage differs from its request');
+  ensure(worldAttemptIds(world).every(id=>lineage.attemptIds.includes(id)),'ATTEMPT','Retry identity lineage omits an established attempt');
+}
 export const key = (...parts) => JSON.stringify(parts);
 export const momentOf = world => ({date:world.position.date,slotId:world.position.slotId});
 export function unique(rows, select, label) {
@@ -69,6 +99,7 @@ export function stamp(world,at,cursor) {
 /** All historical sources must precede acquisition, including within one slot. */
 export function validateSource(world,actor,factId,claimId,versionId,source,at,cursor,order) {
   assertShape(source,['kind','actorId','basisFactId']);knownActor(world,actor);knownActor(world,source.actorId);
+  ensure(mayReadProcedureFact(world,actor,factId,order),'KNOWLEDGE','Confidential procedure information requires explicit access');
   const fact=findFact(world,factId),basis=findFact(world,source.basisFactId);
   ensure(basis.order<order&&fact.order<order&&basis.cursor<=cursor&&fact.cursor<=cursor,'KNOWLEDGE','Source/fact was not available yet');
   ensure(basis.occurredAt.date<=at.date,'KNOWLEDGE','Source occurs after acquisition');
@@ -94,16 +125,43 @@ export function knowledgeReferences(world,event) {
 }
 export function validateWorldState(world) {
   validateFoundationEnvelope(world);
-  const r=runtimeOf(world);
+  validateInstitutionHistory(world);validateAcademicHistory(world);validateCampusHistory(world);
+  const r=runtimeOf(world),school=world.numeric.evolution.world.registry;
+  if(school){
+    for(const record of [...school.enrollments,...school.assignments])ensure(record.from<=world.position.date&&(record.until===null||record.until<=world.position.date),'TIME','School history extends into the future');
+    for(const t of school.transfers)ensure(t.createdAt<=world.position.date&&(t.completedAt===null||t.completedAt<=world.position.date),'TIME','Transfer result extends into the future');
+    if(isFormal(r.plan))for(const table of r.plan.tables)ensure(table.classes.every(c=>school.classes[c.id]?.cohortStart===c.cohortStart)&&Object.hasOwn(school.classes,table.homeClassId),'TIMETABLE','Saved timetable references an unknown school class');
+  }
   assertShape(r,['version','revision','plan','facts','claims','knowledge','disclosures','history','commits','stages','effects','numericArchives']);
   ensure(r.version===1&&Number.isSafeInteger(r.revision)&&r.revision>=0,'VERSION','Unknown world runtime version/revision');
-  validatePlan(r.plan);if(isFormal(r.plan))ensure(Object.hasOwn(world.random,'schedule'),'RANDOM','Formal timetable random stream is missing');ensure(same(world.position,planPosition(r.plan)),'TIME','Position is not the plan cursor');
+  validatePlan(r.plan);if(r.plan.validation==='fixed-calendar-v2')ensure(world.numeric.evolution.world.player.year===world.position.serviceYear,'TIME','Three-year numeric play year differs from calendar');if(isFormal(r.plan))ensure(Object.hasOwn(world.random,'schedule'),'RANDOM','Formal timetable random stream is missing');ensure(same(world.position,planPosition(r.plan)),'TIME','Position is not the plan cursor');
   for(const name of ['facts','claims','knowledge','disclosures','history','commits','stages','effects','numericArchives'])ensure(Array.isArray(r[name]),'SCHEMA',`${name} must be an array`);
+  // Bind opt-in identity to its existing initialization ledger, so changing all plan
+  // tags together cannot silently reinterpret an initialized three-year world as v1.
+  const initialization=r.commits[0];
+  if(initialization){
+    validateId(initialization.id,'operation');const parts=JSON.parse(initialization.id.slice('operation:'.length)),marked=parts[1]==='initialize-three-year-school';
+    if(r.plan.validation==='fixed-calendar-v2')ensure(initialization.id===createId('operation',[world.identity.careerId,'initialize-three-year-school',String(r.plan.startYear),r.plan.career.difficulty,...(r.plan.career.version===2?['background-v1',String(r.plan.career.backgroundSeed)]:[])]),'MODE','Three-year identity differs from its initialization ledger');
+    else ensure(!marked,'MODE','Three-year initialization cannot become a legacy world');
+  }
+  const numericWorld=world.numeric.evolution.world,experienced=numericWorld.player.version===2;
+  if(r.plan.career?.version===2&&r.revision>0){
+    const c=r.plan.career;
+    ensure(numericWorld.school.mode==='private','MODE','Formal T2 careers require the same private school');
+    ensure(experienced===(c.difficulty!=='hard'),'MODE','Experienced initialization differs from difficulty');
+    if(experienced)ensure(numericWorld.background.subject===r.plan.subject&&numericWorld.player.origin.seed===c.backgroundSeed&&numericWorld.player.origin.count===(c.difficulty==='normal'?4:6),'MODE','Background origin differs from career');
+  }else ensure(!experienced,'MODE','Experienced sources require their explicit T2 career identity');
+  if(world.numeric.evolution.clock.lastNaturalDate===null)validatePrehistoryOpening(numericWorld);
   unique(r.facts,f=>f.id,'fact IDs');unique(r.claims,c=>key(c.id,c.versionId),'claim versions');
   unique(r.knowledge,k=>key(k.actorId,k.claimId,k.versionId),'knowledge keys');unique(r.disclosures,d=>key(d.actorId,d.factId),'disclosures');
   unique(r.history,h=>h.id,'history IDs');unique(r.effects,e=>e.id,'effect IDs');unique(r.stages,s=>s.id,'stage IDs');
   unique(r.numericArchives,a=>a.attemptId,'numeric archives');
   const history=new Map(r.history.map(h=>[h.id,h]));
+  // Temporary first-match indexes only: every source row is still audited below.
+  const stages=new Map(r.stages.map(s=>[s.id,s])),effects=new Map(r.effects.map(e=>[e.id,e])),effectReceipts=new Set(r.effects.map(e=>key(e.attemptId,e.numericReceiptId))),results=new Map(),resultHistory=new Map();
+  for(const event of world.events)for(const result of event.results)if(!results.has(result.id))results.set(result.id,result);
+  for(const h of r.history)if(h.type==='result'&&!resultHistory.has(h.data.resultId))resultHistory.set(h.data.resultId,h);
+
   r.commits.forEach((commit,i)=>{
     assertShape(commit,['id','attemptId','revision','request','historyIds','numericReceiptIds','draws']);
     validateId(commit.id,'operation');identifier(commit.attemptId);
@@ -113,7 +171,13 @@ export function validateWorldState(world) {
     ensure((request.expectedRevision??request.openingRevision)===i,'LEDGER','Receipt base revision mismatch');
     for(const list of [commit.historyIds,commit.numericReceiptIds,commit.draws])ensure(Array.isArray(list),'LEDGER','Invalid receipt lists');
     unique(commit.historyIds,id=>id,'receipt history');unique(commit.numericReceiptIds,id=>id,'receipt effects');unique(commit.draws,d=>d.id,'receipt draws');
-    for(const draw of commit.draws){assertShape(draw,['id','stream','index','weights']);identifier(draw.id);identifier(draw.stream);ensure(Array.isArray(draw.weights)&&draw.weights.length>0&&draw.weights.every(n=>Number.isFinite(n)&&n>=0)&&Number.isInteger(draw.index)&&draw.index>=0&&draw.index<draw.weights.length&&draw.weights[draw.index]>0,'LEDGER','Invalid recorded draw');}
+    for(const draw of commit.draws){
+      identifier(draw.id);identifier(draw.stream);
+      if(Object.hasOwn(draw,'poolSize')){
+        assertShape(draw,['id','stream','index','poolSize','totalWeight','selectedKey','selectedWeight',...(Object.hasOwn(draw,'candidate')?['candidate']:[])]);identifier(draw.selectedKey);
+        ensure(draw.stream==='events'&&Number.isSafeInteger(draw.poolSize)&&draw.poolSize>0&&Number.isInteger(draw.index)&&draw.index>=0&&draw.index<draw.poolSize&&Number.isFinite(draw.totalWeight)&&draw.totalWeight>0&&Number.isFinite(draw.selectedWeight)&&draw.selectedWeight>0&&draw.selectedWeight<=draw.totalWeight,'LEDGER','Invalid compact event draw');
+      }else{assertShape(draw,['id','stream','index','weights']);ensure(Array.isArray(draw.weights)&&draw.weights.length>0&&draw.weights.every(n=>Number.isFinite(n)&&n>=0)&&Number.isInteger(draw.index)&&draw.index>=0&&draw.index<draw.weights.length&&draw.weights[draw.index]>0,'LEDGER','Invalid recorded draw');}
+    }
     for(const id of commit.historyIds)ensure(history.get(id)?.operationId===commit.id&&history.get(id)?.attemptId===commit.attemptId,'LEDGER','Missing commit history');
   });
   unique(r.commits,c=>key(c.attemptId,c.id),'operation IDs');ensure(r.commits.length===r.revision,'LEDGER','Commit count/revision mismatch');
@@ -131,7 +195,7 @@ export function validateWorldState(world) {
     validateId(f.id,'fact');const event=findEvent(world,f.eventId);validateId(f.stageId,'stage');stamp(world,f.occurredAt,f.cursor);
     ensure(history.get(r.history[f.order-1]?.id)?.data.factId===f.id&&r.history[f.order-1]?.type==='fact','LEDGER','Fact lacks creation history');
     ensure(Array.isArray(f.subjectIds)&&f.subjectIds.length>0&&Array.isArray(f.witnessIds)&&Array.isArray(f.categoryCodes)&&Array.isArray(f.causeIds),'SCHEMA','Invalid fact lists');unique(f.subjectIds,id=>id,'fact subjects');
-    ensure(r.stages.some(s=>s.id===f.stageId&&s.eventId===f.eventId&&s.order<f.order),'REFERENCE','Fact has no preceding stage');
+    ensure(stages.get(f.stageId)?.eventId===f.eventId&&stages.get(f.stageId).order<f.order,'REFERENCE','Fact has no preceding stage');
     unique(f.categoryCodes,c=>c,'history codes');unique(f.witnessIds,c=>c,'witnesses');unique(f.causeIds,c=>c,'causes');
     for(const id of f.subjectIds){knownActor(world,id);ensure(event.participantIds.includes(id),'REFERENCE','Fact subject not involved');}
     for(const id of f.witnessIds){knownActor(world,id);ensure(event.participantIds.includes(id),'REFERENCE','Witness not involved');}
@@ -157,6 +221,7 @@ export function validateWorldState(world) {
     for(const h of r.history)if(h.type==='belief'&&h.data.actorId===k.actorId&&h.data.claimId===k.claimId&&h.data.versionId===k.versionId){ensure(h.order>k.order&&same(h.data.before,current),'LEDGER','Broken belief revision chain');current=h.data.after;}
     ensure(same(current,{belief:k.belief,confidence:k.confidence}),'LEDGER','Belief differs from revision history');
   }
+  unique(r.knowledge.filter(k=>k.belief==='believed'),k=>key(k.actorId,k.claimId),'unique certain claim conclusion');
   for(const d of r.disclosures){
     assertShape(d,['actorId','factId','at','cursor','order','source']);stamp(world,d.at,d.cursor);
     validateSource(world,d.actorId,d.factId,null,null,d.source,d.at,d.cursor,d.order);
@@ -165,7 +230,7 @@ export function validateWorldState(world) {
   for(const event of world.events){
     ensure(same(event.knowledge,knowledgeReferences(world,event)),'KNOWLEDGE','Carrier differs from knowledge authority');
     for(const ref of event.facts){const f=findFact(world,ref.id);ensure(same(ref,{id:f.id,subjectIds:f.subjectIds,occurredAt:f.occurredAt}),'REFERENCE','Conflicting fact reference');}
-    ensure(r.stages.some(s=>s.id===event.stageId&&s.eventId===event.id),'REFERENCE','Missing current stage');
+    ensure(stages.get(event.stageId)?.eventId===event.id,'REFERENCE','Missing current stage');
   }
   for(const stage of r.stages){assertShape(stage,['id','eventId','order']);validateId(stage.id,'stage');findEvent(world,stage.eventId);ensure(r.history[stage.order-1]?.stageId===stage.id,'LEDGER','Stage lacks history');}
   const receipts=new Map(world.numeric.receipts.map(receipt=>[key(world.numeric.attemptId,receipt.id),receipt]));
@@ -176,7 +241,7 @@ export function validateWorldState(world) {
   }
   for(const effect of r.effects){
     assertShape(effect,['id','resultId','attemptId','numericReceiptId','order']);validateId(effect.id,'effect');
-    const result=world.events.flatMap(e=>e.results).find(result=>result.id===effect.resultId);
+    const result=results.get(effect.resultId);
     ensure(result?.effectIds.includes(effect.id)&&receipts.has(key(effect.attemptId,effect.numericReceiptId)),'LEDGER','Unlinked numerical effect');
     const h=r.history[effect.order-1],receipt=receipts.get(key(effect.attemptId,effect.numericReceiptId));
     ensure(effect.id===effect.numericReceiptId&&h?.type==='effect'&&h.data.effectId===effect.id&&h.data.resultId===effect.resultId&&h.attemptId===effect.attemptId&&same(h.data.changes,receipt.changes),'LEDGER','Effect differs from numerical history');
@@ -184,17 +249,25 @@ export function validateWorldState(world) {
   }
   const resultKeys=[];
   for(const event of world.events)for(const result of event.results){
-    const h=r.history.find(h=>h.type==='result'&&h.data.resultId===result.id);
-    ensure(h&&h.eventId===event.id&&h.stageId===result.stageId&&h.factIds.includes(result.factId)&&r.stages.some(s=>s.id===h.stageId&&s.eventId===event.id),'LEDGER','Result lacks stage history');
+    const h=resultHistory.get(result.id);
+    ensure(h&&h.eventId===event.id&&h.stageId===result.stageId&&h.factIds.includes(result.factId)&&stages.get(h.stageId)?.eventId===event.id,'LEDGER','Result lacks stage history');
     ensure(result.settlementId===createId('settlement',[h.attemptId,h.operationId]),'LEDGER','Result points to a different operation');
     resultKeys.push(key(event.id,h.stageId,result.factId,result.subjectId,result.facet));
-    for(const id of result.effectIds)ensure(r.effects.some(e=>e.id===id&&e.resultId===result.id),'LEDGER','Missing numerical effect receipt');
+    for(const id of result.effectIds)ensure(effects.get(id)?.resultId===result.id,'LEDGER','Missing numerical effect receipt');
   }
   unique(resultKeys,k=>k,'semantic result keys');
-  for(const commit of r.commits)for(const id of commit.numericReceiptIds)ensure(r.effects.some(e=>e.attemptId===commit.attemptId&&e.numericReceiptId===id),'LEDGER','Commit references missing effect');
+  for(const commit of r.commits)for(const id of commit.numericReceiptIds)ensure(effectReceipts.has(key(commit.attemptId,id)),'LEDGER','Commit references missing effect');
+  validateSemesterReviews(world);
+  validateAnnualObservations(world);validateCohortCompletions(world);
+  validateCareerCompletion(world);
+  validateAttemptLineage(world);
+  validateEventSelectionHistory(world);
+  validateStoryHistory(world);
+  validateNpcHistory(world);
+  validateHomeroom(world);
   return world;
 }
 export function restoreWorldState(saved) {
   const world=typeof saved==='string'?JSON.parse(saved):saved;
-  canonicalData(world);validateWorldState(world);return structuredClone(world);
+  validateWorldState(world);return structuredClone(world);
 }

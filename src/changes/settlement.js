@@ -7,6 +7,23 @@ import { validateChange } from './targets.js';
 import { shockDelta, validateShock, recoveryChanges, validateRecovery } from './model.js';
 
 const clone=value=>structuredClone(value);
+/** Same strict JSON-data boundary as canonicalData, without constructing a
+ * discarded full-career string when a caller only needs type validation. */
+export function validateData(value){
+  if(value===null||['boolean','string'].includes(typeof value))return;
+  if(typeof value==='number'){finite(value);return;}
+  if(Array.isArray(value)){
+    if(Object.getPrototypeOf(value)!==Array.prototype||Reflect.ownKeys(value).length!==value.length+1)throw new TypeError('Dense data arrays required');
+    for(let i=0;i<value.length;i++){
+      const d=Object.getOwnPropertyDescriptor(value,String(i));
+      if(!d||!d.enumerable||!Object.hasOwn(d,'value'))throw new TypeError('Array data properties required');
+      validateData(d.value);
+    }
+    return;
+  }
+  assertShape(value,Object.keys(value??{}));
+  for(const key of Object.keys(value))validateData(Object.getOwnPropertyDescriptor(value,key).value);
+}
 // Canonical JSON data only: rejects getters, symbols, undefined and non-finite numbers.
 export function canonicalData(value) {
   if (value===null || typeof value==='boolean' || typeof value==='string') return JSON.stringify(value);
@@ -28,17 +45,17 @@ function requestShape(request) {
   identifier(request.attemptId);identifier(request.id);gameDate(request.date);
   if (!Number.isSafeInteger(request.sequence)||request.sequence<1) throw new RangeError('Positive confirmation sequence required');
 }
-function validateOperation(world,operation) {
+function validateOperation(world,operation,receiptDate=null) {
   if (operation.type==='direct') {
     assertShape(operation,['type','changes']);
     if(!Array.isArray(operation.changes)) throw new TypeError('Changes required');
-    for(const change of operation.changes) {validateChange(world,change);finite(change.delta);}
+    for(const change of operation.changes) {validateChange(world,change,{receiptDate});finite(change.delta);}
   } else if(operation.type==='shock') {
     assertShape(operation,['type','effects']);
     if(!Array.isArray(operation.effects)) throw new TypeError('Shock effects required');
     for(const effect of operation.effects) {
       assertShape(effect,['target','code','severity','direction','scale']);validateShock(effect);
-      validateChange(world,{target:effect.target,code:effect.code,delta:0});
+      validateChange(world,{target:effect.target,code:effect.code,delta:0},{receiptDate});
     }
   } else if(operation.type==='recovery') {
     assertShape(operation,['type','context']);validateRecovery(operation.context);
@@ -57,7 +74,7 @@ export function validateSettlement(state) {
     ids.add(r.id);priorDate=r.date;
     const request=JSON.parse(r.request);requestShape(request);
     if(canonicalData(request)!==r.request||request.attemptId!==state.attemptId||request.id!==r.id||request.sequence!==r.sequence||request.date!==r.date) throw new RangeError('Receipt identity mismatch');
-    validateOperation(state.evolution.world,request.operation);
+    validateOperation(state.evolution.world,request.operation,r.date);
     if ((request.operation.type==='recovery') !== (r.recovery!==null)) throw new RangeError('Recovery receipt type mismatch');
     if (request.operation.type==='direct' && canonicalData(request.operation.changes)!==canonicalData(r.changes)) throw new RangeError('Direct receipt changed');
     if (request.operation.type==='recovery') {
@@ -65,7 +82,7 @@ export function validateSettlement(state) {
       const c=request.operation.context;windows.get(r.date).push([c.startHour,c.startHour+c.hours]);
     }
     if(!Array.isArray(r.changes)) throw new TypeError('Receipt changes required');
-    for(const change of r.changes) {validateChange(state.evolution.world,change);finite(change.delta);}
+    for(const change of r.changes) {validateChange(state.evolution.world,change,{receiptDate:r.date});finite(change.delta);}
     if (r.recovery!==null) {
       assertShape(r.recovery,['favorableAttempt','opportunity','improved','worsened']);
       if(typeof r.recovery.favorableAttempt!=='boolean'||typeof r.recovery.opportunity!=='boolean') throw new TypeError('Invalid recovery audit');

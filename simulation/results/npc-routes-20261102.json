@@ -1,0 +1,586 @@
+[
+  {
+    "route": "listen",
+    "resend": true,
+    "knowledge": [
+      {
+        "actorId": "world:school:cohort:1:student:0",
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"listen\\\"]\",\"0\"]",
+        "versionId": "1",
+        "source": {
+          "kind": "observation",
+          "actorId": "world:school:cohort:1:student:0",
+          "basisFactId": "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"opening\",\"listen\"]"
+        },
+        "belief": "believed"
+      },
+      {
+        "actorId": "teacher",
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"listen\\\"]\",\"1\"]",
+        "versionId": "1",
+        "source": {
+          "kind": "observation",
+          "actorId": "teacher",
+          "basisFactId": "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"opening\",\"listen\"]"
+        },
+        "belief": "uncertain"
+      },
+      {
+        "actorId": "world:school:cohort:1:caregiver:0-0",
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"listen\\\"]\",\"0\"]",
+        "versionId": "1",
+        "source": {
+          "kind": "communication",
+          "actorId": "world:school:cohort:1:student:0",
+          "basisFactId": "fact:[\"event:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"family-contact\\\"]\"]"
+        },
+        "belief": "uncertain"
+      }
+    ],
+    "consequences": [
+      [
+        {
+          "target": {
+            "kind": "relationship",
+            "id": "[\"world:school:cohort:1:student:0\",\"teacher\"]"
+          },
+          "code": "5-1",
+          "before": 55.323013660249245,
+          "after": 56.323013660249245
+        },
+        {
+          "target": {
+            "kind": "relationship",
+            "id": "[\"world:school:cohort:1:student:0\",\"teacher\"]"
+          },
+          "code": "5-4",
+          "before": 78.24829417484258,
+          "after": 77.24829417484258
+        },
+        {
+          "target": {
+            "kind": "reputation",
+            "id": "[\"world:school:cohort:1:student:0\",\"teacher\"]"
+          },
+          "code": "8-1",
+          "before": 70.84366475974093,
+          "after": 71.84366475974093
+        }
+      ]
+    ],
+    "objectiveActions": [
+      {
+        "id": "fact:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"npc\",\"660928\",\"0\",\"forward\",\"world:school:cohort:1:student:0\"]",
+        "description": "兩人接觸時轉述未經查證的說法。",
+        "data": {
+          "type": "npc-forward",
+          "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"listen\\\"]\",\"0\"]",
+          "versionId": "1",
+          "parentVersionId": "1",
+          "mode": "verbatim"
+        },
+        "causeIds": [
+          "fact:[\"event:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"family-contact\\\"]\"]"
+        ]
+      },
+      {
+        "id": "fact:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"npc\",\"660928\",\"1\",\"reaction\",\"world:school:cohort:1:student:0\"]",
+        "description": "人物依已知說法選擇傾向支持。",
+        "data": {
+          "type": "npc-action",
+          "action": "support",
+          "actorId": "world:school:cohort:1:student:0",
+          "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"listen\\\"]\",\"0\"]",
+          "versionId": "1"
+        },
+        "causeIds": [
+          "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"opening\",\"listen\"]"
+        ]
+      },
+      {
+        "id": "fact:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"npc\",\"660929\",\"0\",\"reaction\",\"world:school:cohort:1:caregiver:0-0\"]",
+        "description": "人物依已知說法選擇傾向支持。",
+        "data": {
+          "type": "npc-action",
+          "action": "support",
+          "actorId": "world:school:cohort:1:caregiver:0-0",
+          "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"listen\\\"]\",\"0\"]",
+          "versionId": "1"
+        },
+        "causeIds": [
+          "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"opening\",\"listen\"]"
+        ]
+      }
+    ],
+    "position": {
+      "date": "2026-07-20",
+      "slotId": "p1",
+      "schoolYearId": "challenge:2026:1",
+      "openingId": "opening:2026-07-20",
+      "serviceYear": 1,
+      "statisticsPeriodId": "2026:autumn"
+    },
+    "decisions": [
+      {
+        "kind": "forward",
+        "actorId": "world:school:cohort:1:student:0",
+        "toId": "world:school:cohort:1:caregiver:0-0",
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"listen\\\"]\",\"0\"]",
+        "versionId": "1",
+        "contactId": "fact:[\"event:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"family-contact\\\"]\"]",
+        "action": "forward",
+        "belief": "uncertain",
+        "mode": "verbatim",
+        "receivedVersionId": "1"
+      },
+      {
+        "kind": "reaction",
+        "actorId": "world:school:cohort:1:student:0",
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"listen\\\"]\",\"0\"]",
+        "versionId": "1",
+        "action": "support",
+        "basisBelief": "believed",
+        "statement": "老師願意聽我說，但我還不敢全說。",
+        "factId": "fact:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"npc\",\"660928\",\"1\",\"reaction\",\"world:school:cohort:1:student:0\"]"
+      },
+      {
+        "kind": "reaction",
+        "actorId": "world:school:cohort:1:caregiver:0-0",
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"listen\\\"]\",\"0\"]",
+        "versionId": "1",
+        "action": "support",
+        "basisBelief": "uncertain",
+        "statement": "老師願意聽我說，但我還不敢全說。",
+        "factId": "fact:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"npc\",\"660929\",\"0\",\"reaction\",\"world:school:cohort:1:caregiver:0-0\"]"
+      }
+    ],
+    "player": {
+      "actorId": "teacher",
+      "revision": 12,
+      "position": {
+        "date": "2026-07-20",
+        "slotId": "p1",
+        "schoolYearId": "challenge:2026:1",
+        "openingId": "opening:2026-07-20",
+        "serviceYear": 1,
+        "statisticsPeriodId": "2026:autumn"
+      },
+      "calendarValidation": "fixed-calendar-v1",
+      "panel": {
+        "教學能力": 29.960693359375,
+        "班級經營": 90.679443359375,
+        "溝通協調": 57.202880859375,
+        "行政應對": 13.0115966796875,
+        "危機處理": 9.3369140625,
+        "情緒調適": 39.8084716796875,
+        "體力": 99.80199446041138,
+        "精神": 99.21120869956911,
+        "抗壓": 100,
+        "聲望": 40,
+        "熱忱": 98.90774966532365,
+        "情緒": 98.52142016893252
+      },
+      "claims": [
+        {
+          "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"listen\\\"]\",\"1\"]",
+          "versionId": "1",
+          "statement": "成績變化的原因尚待查明。",
+          "sourceId": "teacher",
+          "acquiredAt": {
+            "date": "2026-07-20",
+            "slotId": "early"
+          },
+          "belief": "uncertain",
+          "confidence": 0.6
+        }
+      ],
+      "facts": [
+        {
+          "id": "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"premise\"]",
+          "description": "教師看到學生提供的小考成績單，三次分數為78、74及52。",
+          "subjectIds": [
+            "world:school:cohort:1:student:0",
+            "teacher"
+          ],
+          "occurredAt": {
+            "date": "2026-07-20",
+            "slotId": "early"
+          },
+          "learnedAt": {
+            "date": "2026-07-20",
+            "slotId": "early"
+          }
+        },
+        {
+          "id": "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"opening\",\"listen\"]",
+          "description": "教師與學生約定隔日再談生活與作業安排。",
+          "subjectIds": [
+            "teacher",
+            "world:school:cohort:1:student:0"
+          ],
+          "occurredAt": {
+            "date": "2026-07-20",
+            "slotId": "early"
+          },
+          "learnedAt": {
+            "date": "2026-07-20",
+            "slotId": "early"
+          }
+        }
+      ],
+      "choices": [
+        {
+          "eventId": "event:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"day:2026-07-20\",\"2026-07-20\",\"[\\\"engineering:learning-conversation\\\",[\\\"world:school:cohort:1:student:0\\\"],[]]\"]",
+          "stageId": "stage:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"initial\"]",
+          "at": {
+            "date": "2026-07-20",
+            "slotId": "early"
+          },
+          "actorId": "teacher",
+          "nodeId": "opening",
+          "optionId": "listen",
+          "optionText": "先聽他說最近一天是怎麼過的。"
+        }
+      ]
+    },
+    "candidateCount": 1,
+    "restored": true,
+    "formalSelections": 1,
+    "numericReceipts": 2
+  },
+  {
+    "route": "angry",
+    "resend": true,
+    "knowledge": [
+      {
+        "actorId": "world:school:cohort:1:student:0",
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"angry\\\"]\",\"0\"]",
+        "versionId": "1",
+        "source": {
+          "kind": "observation",
+          "actorId": "world:school:cohort:1:student:0",
+          "basisFactId": "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"opening\",\"angry\"]"
+        },
+        "belief": "believed"
+      },
+      {
+        "actorId": "teacher",
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"angry\\\"]\",\"1\"]",
+        "versionId": "1",
+        "source": {
+          "kind": "observation",
+          "actorId": "teacher",
+          "basisFactId": "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"opening\",\"angry\"]"
+        },
+        "belief": "uncertain"
+      },
+      {
+        "actorId": "world:school:cohort:1:caregiver:0-0",
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"angry\\\"]\",\"0\"]",
+        "versionId": "1",
+        "source": {
+          "kind": "communication",
+          "actorId": "world:school:cohort:1:student:0",
+          "basisFactId": "fact:[\"event:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"family-contact\\\"]\"]"
+        },
+        "belief": "uncertain"
+      }
+    ],
+    "consequences": [
+      [
+        {
+          "target": {
+            "kind": "relationship",
+            "id": "[\"world:school:cohort:1:student:0\",\"teacher\"]"
+          },
+          "code": "5-1",
+          "before": 55.323013660249245,
+          "after": 54.323013660249245
+        },
+        {
+          "target": {
+            "kind": "relationship",
+            "id": "[\"world:school:cohort:1:student:0\",\"teacher\"]"
+          },
+          "code": "5-4",
+          "before": 78.24829417484258,
+          "after": 79.24829417484258
+        },
+        {
+          "target": {
+            "kind": "reputation",
+            "id": "[\"world:school:cohort:1:student:0\",\"teacher\"]"
+          },
+          "code": "8-2",
+          "before": 52.90018808865256,
+          "after": 53.90018808865256
+        }
+      ]
+    ],
+    "objectiveActions": [
+      {
+        "id": "fact:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"npc\",\"660928\",\"0\",\"forward\",\"world:school:cohort:1:student:0\"]",
+        "description": "兩人接觸時轉述未經查證的說法。",
+        "data": {
+          "type": "npc-forward",
+          "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"angry\\\"]\",\"0\"]",
+          "versionId": "1",
+          "parentVersionId": "1",
+          "mode": "verbatim"
+        },
+        "causeIds": [
+          "fact:[\"event:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"family-contact\\\"]\"]"
+        ]
+      },
+      {
+        "id": "fact:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"npc\",\"660928\",\"1\",\"reaction\",\"world:school:cohort:1:student:0\"]",
+        "description": "人物依已知說法選擇保留質疑。",
+        "data": {
+          "type": "npc-action",
+          "action": "question",
+          "actorId": "world:school:cohort:1:student:0",
+          "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"angry\\\"]\",\"0\"]",
+          "versionId": "1"
+        },
+        "causeIds": [
+          "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"opening\",\"angry\"]"
+        ]
+      },
+      {
+        "id": "fact:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"npc\",\"660929\",\"0\",\"reaction\",\"world:school:cohort:1:caregiver:0-0\"]",
+        "description": "人物依已知說法選擇傾向支持。",
+        "data": {
+          "type": "npc-action",
+          "action": "support",
+          "actorId": "world:school:cohort:1:caregiver:0-0",
+          "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"angry\\\"]\",\"0\"]",
+          "versionId": "1"
+        },
+        "causeIds": [
+          "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"opening\",\"angry\"]"
+        ]
+      }
+    ],
+    "position": {
+      "date": "2026-07-20",
+      "slotId": "p1",
+      "schoolYearId": "challenge:2026:1",
+      "openingId": "opening:2026-07-20",
+      "serviceYear": 1,
+      "statisticsPeriodId": "2026:autumn"
+    },
+    "decisions": [
+      {
+        "kind": "forward",
+        "actorId": "world:school:cohort:1:student:0",
+        "toId": "world:school:cohort:1:caregiver:0-0",
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"angry\\\"]\",\"0\"]",
+        "versionId": "1",
+        "contactId": "fact:[\"event:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"family-contact\\\"]\"]",
+        "action": "forward",
+        "belief": "uncertain",
+        "mode": "verbatim",
+        "receivedVersionId": "1"
+      },
+      {
+        "kind": "reaction",
+        "actorId": "world:school:cohort:1:student:0",
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"angry\\\"]\",\"0\"]",
+        "versionId": "1",
+        "action": "question",
+        "basisBelief": "believed",
+        "statement": "老師很急，我不知道要怎麼回答。",
+        "factId": "fact:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"npc\",\"660928\",\"1\",\"reaction\",\"world:school:cohort:1:student:0\"]"
+      },
+      {
+        "kind": "reaction",
+        "actorId": "world:school:cohort:1:caregiver:0-0",
+        "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"angry\\\"]\",\"0\"]",
+        "versionId": "1",
+        "action": "support",
+        "basisBelief": "uncertain",
+        "statement": "老師很急，我不知道要怎麼回答。",
+        "factId": "fact:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"npc\",\"660929\",\"0\",\"reaction\",\"world:school:cohort:1:caregiver:0-0\"]"
+      }
+    ],
+    "player": {
+      "actorId": "teacher",
+      "revision": 12,
+      "position": {
+        "date": "2026-07-20",
+        "slotId": "p1",
+        "schoolYearId": "challenge:2026:1",
+        "openingId": "opening:2026-07-20",
+        "serviceYear": 1,
+        "statisticsPeriodId": "2026:autumn"
+      },
+      "calendarValidation": "fixed-calendar-v1",
+      "panel": {
+        "教學能力": 29.960693359375,
+        "班級經營": 90.679443359375,
+        "溝通協調": 57.202880859375,
+        "行政應對": 13.0115966796875,
+        "危機處理": 9.3369140625,
+        "情緒調適": 39.8084716796875,
+        "體力": 99.80199446041138,
+        "精神": 98.58620869956911,
+        "抗壓": 100,
+        "聲望": 40,
+        "熱忱": 98.90774966532365,
+        "情緒": 97.27142016893252
+      },
+      "claims": [
+        {
+          "claimId": "claim:[\"fact:[\\\"event:[\\\\\\\"attempt:[\\\\\\\\\\\\\\\"synthetic\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"day:2026-07-20\\\\\\\",\\\\\\\"2026-07-20\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"engineering:learning-conversation\\\\\\\\\\\\\\\",[\\\\\\\\\\\\\\\"world:school:cohort:1:student:0\\\\\\\\\\\\\\\"],[]]\\\\\\\"]\\\",\\\"1\\\",\\\"opening\\\",\\\"angry\\\"]\",\"1\"]",
+          "versionId": "1",
+          "statement": "成績變化的原因尚待查明。",
+          "sourceId": "teacher",
+          "acquiredAt": {
+            "date": "2026-07-20",
+            "slotId": "early"
+          },
+          "belief": "uncertain",
+          "confidence": 0.6
+        }
+      ],
+      "facts": [
+        {
+          "id": "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"premise\"]",
+          "description": "教師看到學生提供的小考成績單，三次分數為78、74及52。",
+          "subjectIds": [
+            "world:school:cohort:1:student:0",
+            "teacher"
+          ],
+          "occurredAt": {
+            "date": "2026-07-20",
+            "slotId": "early"
+          },
+          "learnedAt": {
+            "date": "2026-07-20",
+            "slotId": "early"
+          }
+        },
+        {
+          "id": "fact:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"1\",\"opening\",\"angry\"]",
+          "description": "教師當面表達疲憊，學生交出缺交清單，約定隔日核對。",
+          "subjectIds": [
+            "teacher",
+            "world:school:cohort:1:student:0"
+          ],
+          "occurredAt": {
+            "date": "2026-07-20",
+            "slotId": "early"
+          },
+          "learnedAt": {
+            "date": "2026-07-20",
+            "slotId": "early"
+          }
+        }
+      ],
+      "choices": [
+        {
+          "eventId": "event:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"day:2026-07-20\",\"2026-07-20\",\"[\\\"engineering:learning-conversation\\\",[\\\"world:school:cohort:1:student:0\\\"],[]]\"]",
+          "stageId": "stage:[\"event:[\\\"attempt:[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1\\\\\\\"]\\\",\\\"day:2026-07-20\\\",\\\"2026-07-20\\\",\\\"[\\\\\\\"engineering:learning-conversation\\\\\\\",[\\\\\\\"world:school:cohort:1:student:0\\\\\\\"],[]]\\\"]\",\"initial\"]",
+          "at": {
+            "date": "2026-07-20",
+            "slotId": "early"
+          },
+          "actorId": "teacher",
+          "nodeId": "opening",
+          "optionId": "angry",
+          "optionText": "我也快撐不住了，今天先把沒交的說清楚。"
+        }
+      ]
+    },
+    "candidateCount": 1,
+    "restored": true,
+    "formalSelections": 1,
+    "numericReceipts": 2
+  },
+  {
+    "route": "autonomous-peers",
+    "resend": true,
+    "knowledge": [],
+    "consequences": [
+      [
+        {
+          "target": {
+            "kind": "relationship",
+            "id": "[\"world:school:cohort:1:student:0\",\"world:school:cohort:1:student:1\"]"
+          },
+          "code": "5-2",
+          "before": 58.78526348969899,
+          "after": 57.78526348969899
+        }
+      ]
+    ],
+    "objectiveActions": [
+      {
+        "id": "fact:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"npc\",\"660928\",\"0\",\"repair\",\"world:school:cohort:1:student:0\"]",
+        "description": "人物在再次接觸時選擇保持距離。",
+        "data": {
+          "type": "npc-action",
+          "action": "distant",
+          "actorId": "world:school:cohort:1:student:0"
+        },
+        "causeIds": [
+          "fact:[\"event:[\\\"npc-peer\\\",\\\"1\\\"]\",\"conflict\"]",
+          "fact:[\"event:[\\\"npc-peer\\\",\\\"1\\\"]\",\"contact\"]"
+        ]
+      }
+    ],
+    "position": {
+      "date": "2026-07-20",
+      "slotId": "early",
+      "schoolYearId": "challenge:2026:1",
+      "openingId": "opening:2026-07-20",
+      "serviceYear": 1,
+      "statisticsPeriodId": "2026:autumn"
+    },
+    "decisions": [
+      {
+        "kind": "repair",
+        "actorId": "world:school:cohort:1:student:0",
+        "toId": "world:school:cohort:1:student:1",
+        "contactId": "fact:[\"event:[\\\"npc-peer\\\",\\\"1\\\"]\",\"contact\"]",
+        "causeId": "fact:[\"event:[\\\"npc-peer\\\",\\\"1\\\"]\",\"conflict\"]",
+        "action": "distant",
+        "factId": "fact:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"npc\",\"660928\",\"0\",\"repair\",\"world:school:cohort:1:student:0\"]"
+      }
+    ],
+    "player": {
+      "actorId": "teacher",
+      "revision": 3,
+      "position": {
+        "date": "2026-07-20",
+        "slotId": "early",
+        "schoolYearId": "challenge:2026:1",
+        "openingId": "opening:2026-07-20",
+        "serviceYear": 1,
+        "statisticsPeriodId": "2026:autumn"
+      },
+      "calendarValidation": "fixed-calendar-v1",
+      "panel": {
+        "教學能力": 29.960693359375,
+        "班級經營": 90.679443359375,
+        "溝通協調": 57.202880859375,
+        "行政應對": 13.0115966796875,
+        "危機處理": 9.3369140625,
+        "情緒調適": 39.8084716796875,
+        "體力": 99.80199446041138,
+        "精神": 98.96120869956911,
+        "抗壓": 100,
+        "聲望": 40,
+        "熱忱": 98.90774966532365,
+        "情緒": 98.02142016893252
+      },
+      "claims": [],
+      "facts": [],
+      "choices": []
+    },
+    "candidateCount": 2,
+    "restored": true,
+    "formalSelections": 0,
+    "numericReceipts": 1
+  }
+]

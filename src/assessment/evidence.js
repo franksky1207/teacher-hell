@@ -67,7 +67,8 @@ function validateOutcome(r,p) {
   if(!r.importance||!r.responsibility||typeof r.significant!=='boolean') throw new RangeError('Outcome responsibility/importance required');return r;
 }
 function validateCohort(r,p) {
-  assertShape(r,['id','kind','provenance','playerId','schoolId','years','studentIds','importance']);header(r,'cohort',p);
+  assertShape(r,['id','kind','provenance','playerId','schoolId','years','studentIds','importance',...(Object.hasOwn(r,'enrollmentRefs')?['enrollmentRefs']:[])]);
+  if(Object.hasOwn(r,'enrollmentRefs'))idList(r.enrollmentRefs,{empty:true});header(r,'cohort',p);
   identifier(r.playerId);identifier(r.schoolId);probability(r.importance);
   if(!r.importance||idList(r.studentIds).length!==r.studentIds.length||!Array.isArray(r.years)||r.years.length!==3) throw new RangeError('Three-year cohort required');
   r.years.forEach(yearNumber);
@@ -90,6 +91,7 @@ export function sourceReader(source) {
     else if(kind==='year-summary') validateSummary(record,source.provenance);
     else if(kind==='fact') validateFact(record,source.provenance);
     else if(kind==='completion') validateCompletion(record,source.provenance);
+    else if(kind==='enrollment')validateEnrollmentEvidence(record,source.provenance);
     else if(kind==='cohort') validateCohort(record,source.provenance);
     else validateOutcome(record,source.provenance);
     return record;
@@ -106,4 +108,23 @@ export function uniqueOutcomes(rows) {
     byId.set(row.id,row);facts.set(row.factId,row.id);
   }
   return [...byId.values()];
+}
+
+/** Explicit dated affiliation evidence, separate from three-year homeroom ownership. */
+export function validateEnrollmentEvidence(r,p){
+ assertShape(r,['id','kind','provenance','playerId','schoolId','personId','cohortId','fromYear','untilYear','basisFactId','previousEnrollmentId','reason']);header(r,'enrollment',p);
+ for(const name of ['playerId','schoolId','personId','cohortId','basisFactId'])identifier(r[name]);
+ if(r.previousEnrollmentId!==null)identifier(r.previousEnrollmentId);
+ yearNumber(r.fromYear);yearNumber(r.untilYear);
+ if(r.untilYear<r.fromYear||!['initial','transfer','repeat','return'].includes(r.reason))throw new RangeError('Invalid enrollment evidence interval/reason');
+ return r;
+}
+export function cohortEnrollments(reader,cohort){
+ const rows=(cohort.enrollmentRefs??[]).map(id=>reader.read(id,'enrollment')).filter(Boolean);
+ for(const e of rows){
+  if(e.playerId!==cohort.playerId||e.schoolId!==cohort.schoolId||e.cohortId!==cohort.id||!cohort.studentIds.includes(e.personId)||e.fromYear>cohort.years[2]||e.untilYear<cohort.years[0])throw new RangeError('Enrollment evidence differs from cohort');
+  const fact=reader.read(e.basisFactId,'fact');
+  if(fact&&(fact.playerId!==e.playerId||fact.schoolId!==e.schoolId||fact.year!==e.fromYear||!fact.subjectIds.includes(e.personId)))throw new RangeError('Enrollment evidence lacks matching causal fact');
+ }
+ return rows;
 }

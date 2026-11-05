@@ -246,3 +246,29 @@ test('each projection attains 0/100 on legal current sources and matches an inde
     assert.equal(derivePanel(sources)[name],reference);
   }
 });
+
+// T2 unit contracts use abstract staff IDs, not claims about played school years.
+import { createExperiencedPlayer,experiencedProfile } from '../src/player/creation.js';
+test('player T2 unit: novice rules remain strict; experienced creation has a reproducible bounded origin',()=>{
+ const novice=confirmCandidate(createCandidate({seed:74,playerId:'teacher',schoolId:'school'})),staffIds=['staff:a','staff:b','staff:c'];
+ for(const count of [4,6]){
+  const options={seed:75,count,staffIds},senior=createExperiencedPlayer(novice,options);
+  assert.equal(senior.version,2);assert.equal(senior.year,1);assert.deepEqual(createExperiencedPlayer(novice,options),senior);assert.deepEqual(restoreCreation(JSON.stringify(senior)),senior);
+  const panel=derivePanel(senior.initial);for(const value of Object.values(panel))assert.ok(value>=0&&value<=100);assert.notEqual(ABILITY_NAMES.reduce((n,k)=>n+panel[k],0),240);
+  assert.throws(()=>rerollCandidate(senior));
+  for(const mutate of [s=>s.initial.person['3-1']++,s=>s.origin.seed++,s=>s.origin.count=19,s=>s.origin.staffIds[0]=s.origin.staffIds[1],s=>s.version=1]){const bad=structuredClone(senior);mutate(bad);assert.throws(()=>restoreCreation(bad));}
+ }
+ const bad=structuredClone(novice);bad.initial.person['3-1']++;assert.throws(()=>restoreCreation(bad));
+});
+test('player T2 unit: seeded experience permits setbacks, stagnation, extremes and nonmonotonic seniority',()=>{
+ const novice=confirmCandidate(createCandidate({seed:74,playerId:'teacher',schoolId:'school'})),staffIds=['staff:a','staff:b','staff:c'],outcomes=new Set(),types=new Set();let lower=0,regressed=0,extremes=0,duties=0,noDuty=0;
+ for(let seed=0;seed<64;seed++){
+  const ten=experiencedProfile({seed,base:novice.initial,count:4,staffIds}),twenty=experiencedProfile({seed,base:novice.initial,count:6,staffIds});
+  const a=derivePanel(ten.sources),b=derivePanel(twenty.sources),n=derivePanel(novice.initial);
+  lower+=ABILITY_NAMES.some(k=>b[k]<a[k]);regressed+=ABILITY_NAMES.some(k=>b[k]<n[k]);extremes+=ABILITY_NAMES.some(k=>b[k]<20||b[k]>80);
+  for(const e of twenty.episodes){outcomes.add(e.outcome);types.add(e.type);}if(twenty.duty)duties++;else noDuty++;
+  for(const source of [ten.sources,twenty.sources])for(const v of Object.values(derivePanel(source)))assert.ok(Number.isFinite(v)&&v>=0&&v<=100);
+  assert.ok(STATE_NAMES.some(k=>b[k]<100));
+ }
+ assert.deepEqual([...outcomes].sort(),[-1,0,1]);assert.ok(types.size>=5&&lower>0&&regressed>0&&extremes>0&&duties>0&&noDuty>0);
+});

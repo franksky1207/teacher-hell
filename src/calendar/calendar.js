@@ -71,20 +71,34 @@ export function slotOccupancy(date,grade,slotId,table=null){
  let lesson=null;if(table){validateTimetable(table);need(day.courseSemesterId===table.semesterId,'TIMETABLE','Wrong semester timetable');if(!slot.protected&&!day.exam&&['school','summer-camp','winter-camp'].includes(day.kind)&&slot.period)lesson=table.lessons.find(l=>l.weekday===day.weekday&&l.period===slot.period)??null;}
  return {...slot,lesson,teachingAutomatic:lesson!==null};
 }
-export function careerRange(startYear){
- const first=yearData(startYear),last=yearData(startYear+30); // Year 1 ends the following June.
+export const CAREER_30='career-30',THREE_YEAR='three-year';
+export const DIFFICULTY_TENURE=Object.freeze({easy:20,normal:10,hard:1});
+/** v1 is exclusively the retained 30-year core; v2 requires an explicit three-year identity. */
+export function planMode(plan){
+ if(plan.validation==='fixed-calendar-v1'){need(!Object.hasOwn(plan,'career'),'MODE','Legacy calendar cannot carry three-year identity');return CAREER_30;}
+ need(plan.validation==='fixed-calendar-v2','MODE','Unknown formal calendar mode');
+ const c=plan.career;
+ need(c&&Object.keys(c).sort().join(',')===(c.version===2?'backgroundSeed,difficulty,mode,version':'difficulty,mode,version')&&[1,2].includes(c.version)&&c.mode===THREE_YEAR&&typeof c.difficulty==='string'&&Object.hasOwn(DIFFICULTY_TENURE,c.difficulty),'MODE','Invalid three-year career identity');
+ if(c.version===2)need(Number.isInteger(c.backgroundSeed)&&c.backgroundSeed>=0&&c.backgroundSeed<=0xffffffff,'MODE','Explicit uint32 background seed required');
+ return THREE_YEAR;
+}
+export function careerYears(mode=CAREER_30){need([CAREER_30,THREE_YEAR].includes(mode),'MODE','Unknown career mode');return mode===THREE_YEAR?3:30;}
+/** Caller supplies an already determined Asia/Taipei civil date. Never reads the device clock. */
+export function newThreeYearStart(taipeiDate){requireDate(taipeiDate);const y=Number(taipeiDate.slice(0,4));return careerRange(taipeiDate<=yearData(y).springFinal?y-1:y,THREE_YEAR);}
+export function careerRange(startYear,mode=CAREER_30){
+ const first=yearData(startYear),last=yearData(startYear+careerYears(mode)); // Year 1 ends the following June.
  need(CALENDAR.conflicts.length===0,'COLLISION','Fixed calendar has unresolved scheduling constraints');
  return {start:first.summerCamp,end:last.springFinal,startYear};
 }
 export function newCareerStart(realDate){requireDate(realDate);let y=Number(realDate.slice(0,4));if(realDate<yearData(y).summerCamp)y--;return careerRange(y);}
 export function gradeAt(date,startYear){const y=Number(date.slice(0,4)),academic=y-(date<yearData(y).summerCamp?1:0);return ((academic-startYear)%3+3)%3+1;}
-export function positionFor(date,slotId,startYear){
- const range=careerRange(startYear);need(date>=range.start&&date<=range.end,'RANGE','Date outside supported 30-year career');const y=Number(date.slice(0,4)),meta=yearData(y),lastOpening=date>=meta.autumnStart?y:y-1;
+export function positionFor(date,slotId,startYear,mode=CAREER_30){
+ const range=careerRange(startYear,mode);need(date>=range.start&&date<=range.end,'RANGE',`Date outside supported ${careerYears(mode)}-year career`);const y=Number(date.slice(0,4)),meta=yearData(y),lastOpening=date>=meta.autumnStart?y:y-1;
  const serviceYear=Math.max(1,lastOpening-startYear+1),openingDate=serviceYear===1?range.start:yearData(startYear+serviceYear-1).autumnStart;
  const stats=date>meta.springFinal?`${y}:autumn`:date>meta.winterFinal?`${y}:spring`:`${y-1}:autumn`;
  slotOccupancy(date,gradeAt(date,startYear),slotId);
  return {date,slotId,schoolYearId:`challenge:${startYear}:${serviceYear}`,openingId:`opening:${openingDate}`,serviceYear,statisticsPeriodId:stats};
 }
 export const cursorFor=(date,slotId,startYear)=>{const slots=calendarDay(date,gradeAt(date,startYear)).slots,index=slots.findIndex(s=>s.id===slotId);need(index>=0,'SLOT','Unknown slot');return dayNumber(date)*32+index;};
-export function positionAt(cursor,startYear){need(Number.isSafeInteger(cursor)&&cursor>=dayNumber(CALENDAR.range[0])*32&&cursor<=(dayNumber(CALENDAR.range[1])+1)*32-1,'TIME','Calendar cursor outside supported civil dates');const date=new Date(Math.floor(cursor/32)*86400000).toISOString().slice(0,10),slot=calendarDay(date,gradeAt(date,startYear)).slots[cursor%32];need(slot,'SLOT','Calendar cursor points into nonexistent slot');return positionFor(date,slot.id,startYear);}
-export function nextPosition(position,startYear){const slots=calendarDay(position.date,gradeAt(position.date,startYear)).slots,index=slots.findIndex(s=>s.id===position.slotId);need(index>=0,'SLOT','Unknown current slot');const date=index+1<slots.length?position.date:addDays(position.date,1),id=index+1<slots.length?slots[index+1].id:calendarDay(date,gradeAt(date,startYear)).slots[0].id;return positionFor(date,id,startYear);}
+export function positionAt(cursor,startYear,mode=CAREER_30){need(Number.isSafeInteger(cursor)&&cursor>=dayNumber(CALENDAR.range[0])*32&&cursor<=(dayNumber(CALENDAR.range[1])+1)*32-1,'TIME','Calendar cursor outside supported civil dates');const date=new Date(Math.floor(cursor/32)*86400000).toISOString().slice(0,10),slot=calendarDay(date,gradeAt(date,startYear)).slots[cursor%32];need(slot,'SLOT','Calendar cursor points into nonexistent slot');return positionFor(date,slot.id,startYear,mode);}
+export function nextPosition(position,startYear,mode=CAREER_30){const slots=calendarDay(position.date,gradeAt(position.date,startYear)).slots,index=slots.findIndex(s=>s.id===position.slotId);need(index>=0,'SLOT','Unknown current slot');const date=index+1<slots.length?position.date:addDays(position.date,1),id=index+1<slots.length?slots[index+1].id:calendarDay(date,gradeAt(date,startYear)).slots[0].id;return positionFor(date,id,startYear,mode);}

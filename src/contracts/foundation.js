@@ -2,7 +2,7 @@
  * N1–N8 stay opaque and authoritative inside numeric; no fields are added there.
  */
 import { assertShape, identifier } from '../player/panel.js';
-import { canonicalData, validateSettlement } from '../changes/settlement.js';
+import { canonicalData,validateData, validateSettlement } from '../changes/settlement.js';
 import { gameDate } from '../evolution/time.js';
 import { restoreRandom } from '../numeric/random.js';
 
@@ -130,7 +130,7 @@ export function validateEventEnvelope(event, path = 'event') {
  * Batch 02 owns command/commit invariants; 03 owns disk atomicity/migrations; 04 owns calendar legality.
  */
 export function validateFoundationEnvelope(value) {
-  canonicalData(value);
+  validateData(value);
   shape(value, ['kind','schemaVersion','versions','identity','position','numeric','random','enrollments','events','extensions'], 'foundation');
   if (value.kind !== 'teacher-hell-foundation' || value.schemaVersion !== 1) fail('foundation', 'unsupported transport');
   shape(value.versions, ['world','save','rules','content','assets'], 'versions');
@@ -163,6 +163,7 @@ export function validateFoundationEnvelope(value) {
   distinct(value.enrollments.map(e => e.id), 'enrollments');
   const people = new Set([world.player.current.playerId, ...Object.keys(world.people)]);
   for (const e of value.enrollments) if (!people.has(e.personId)) fail('enrollments.personId', 'missing numeric person');
+  if(world.registry&&canonicalData(value.enrollments)!==canonicalData(schoolEnrollmentReferences(world)))fail('enrollments','carrier differs from school registry authority');
   list(value.events, 'events', validateEventEnvelope);
   distinct(value.events.map(e => e.id), 'events');
   const factRefs = new Map();
@@ -184,4 +185,12 @@ export function restoreFoundationEnvelope(saved) {
   const value = typeof saved === 'string' ? JSON.parse(saved) : saved;
   validateFoundationEnvelope(value);
   return structuredClone(value);
+}
+
+/** Compatibility carrier projection; the school registry is the only affiliation authority. */
+export function schoolEnrollmentReferences(world){
+ const r=world.registry;
+ return r.enrollments.map(e=>({id:createId('enrollment',[world.school.id,e.id]),personId:e.personId,
+  cohortId:createId('cohort',[e.cohortId]),classId:createId('class',[e.classId]),
+  from:{date:e.from,slotId:'school-affiliation'},until:e.until===null?null:{date:e.until,slotId:'school-affiliation'}}));
 }

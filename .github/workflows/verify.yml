@@ -3,15 +3,82 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      academic_source:
+        description: A1 academic-only extraction from retained T4 files; never runs a game driver
+        type: boolean
+        default: false
+      s2_phase:
+        description: S2 analysis, acceptance, browser, or faults (empty disables)
+        type: string
+        default: ''
+      three_year:
+        description: Run T4 continuous three-year acceptance and retain raw checkpoints
+        type: boolean
+        default: false
+      difficulties:
+        description: JSON array of the modes requiring continuous acceptance
+        type: string
+        default: '["easy","normal","hard"]'
+      transfers:
+        description: Exercise a documented outgoing and incoming pupil on the real source
+        type: boolean
+        default: false
+      storage_checks:
+        description: Reuse the complete real checkpoint for storage rollback and CAS acceptance
+        type: boolean
+        default: false
+      verify_source_only:
+        description: Download a retained source and verify original raw bytes and complete restore without replay
+        type: boolean
+        default: false
+      source_run:
+        description: Optional retained run containing before-completion.json for a terminal-only retry
+        type: string
+        default: ''
 permissions:
   contents: read
+  actions: read
 concurrency:
-  group: foundation-${{ github.event.pull_request.number || github.ref }}
+  group: foundation-${{ github.event_name == 'workflow_dispatch' && (inputs.three_year || inputs.s2_phase != '' || inputs.academic_source) && github.run_id || github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 jobs:
   quick:
+    if: github.event_name != 'workflow_dispatch' || (!inputs.three_year && inputs.s2_phase == '' && !inputs.academic_source)
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Scoped validation (A1 never runs annual or three-year drivers)
+        shell: bash
+        run: |
+          if [[ "$(git log -1 --format=%s)" == A1:* ]]; then
+            npm run check
+            npm run test:academic
+            node --test --test-name-pattern='detached complete world/opening|physical v2' test/storage.test.js
+            npm run build
+          elif [[ "$(git log -1 --format=%s)" == T5:* ]]; then
+            npm run check
+            node --test --test-name-pattern="T5:|calendar T1:|calendar-integration T2: real seeded|storage T1:|storage: version rejection|storage: failed write|storage: serialize queued|storage: import confirmation|storage physical v2:|A1 compatibility:|T4 B: genuine" test/calendar.test.js test/calendar-integration.test.js test/storage.test.js test/academics.test.js test/three-year.test.js
+          else
+            npm run verify:quick
+          fi
+
+  three-year:
+    if: github.event_name == 'workflow_dispatch' && inputs.three_year
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        difficulty: ${{ fromJSON(inputs.difficulties || '["easy","normal","hard"]') }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -19,4 +86,135 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npm run verify:quick
+      - uses: actions/download-artifact@v4
+        if: inputs.source_run != ''
+        with:
+          name: t4-three-year-${{ matrix.difficulty }}
+          path: work/three-year-${{ matrix.difficulty }}/
+          run-id: ${{ inputs.source_run }}
+          github-token: ${{ github.token }}
+      - name: Continuous production acceptance
+        if: ${{ !inputs.verify_source_only }}
+        env:
+          T4_DIFFICULTY: ${{ matrix.difficulty }}
+          T4_SOURCE_RUN: ${{ inputs.source_run }}
+          T4_TRANSFERS: ${{ inputs.transfers }}
+        run: |
+          if [ -n "$T4_SOURCE_RUN" ]; then
+            node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty="$T4_DIFFICULTY" --resume="work/three-year-$T4_DIFFICULTY/before-completion.json"
+          else
+            node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty="$T4_DIFFICULTY" $([ "$T4_TRANSFERS" = true ] && echo --transfers)
+          fi
+      - name: Verify retained original source
+        if: inputs.verify_source_only
+        env:
+          T4_DIFFICULTY: ${{ matrix.difficulty }}
+          T4_SOURCE_RUN: ${{ inputs.source_run }}
+        run: node --max-old-space-size=6144 --expose-gc scripts/three-year-checks.js "work/three-year-$T4_DIFFICULTY" --verify-source-only
+      - name: Real checkpoint rollback and CAS acceptance
+        if: inputs.storage_checks && !inputs.verify_source_only
+        env:
+          T4_DIFFICULTY: ${{ matrix.difficulty }}
+        run: node --max-old-space-size=6144 --expose-gc scripts/three-year-checks.js "work/three-year-$T4_DIFFICULTY"
+      - name: Retain manifest metadata in the check result
+        if: always()
+        env:
+          T4_DIFFICULTY: ${{ matrix.difficulty }}
+        run: |
+          node --input-type=module -e 'import {readFileSync} from "node:fs"; const text=JSON.stringify(JSON.parse(readFileSync(`work/three-year-${process.env.T4_DIFFICULTY}/manifest.json`,"utf8"))); console.log("::notice title=T4 source manifest::"+text.replaceAll("%","%25").replaceAll("\n","%0A").replaceAll("\r","%0D"));'
+
+      - name: Retain source-verification metadata
+        if: always() && inputs.verify_source_only
+        env:
+          T4_DIFFICULTY: ${{ matrix.difficulty }}
+        run: |
+          node --input-type=module -e 'import {readFileSync} from "node:fs"; const text=JSON.stringify(JSON.parse(readFileSync(`work/three-year-${process.env.T4_DIFFICULTY}/source-verification.json`,"utf8"))); console.log("::notice title=T4 source verification::"+text.replaceAll("%","%25").replaceAll("\n","%0A").replaceAll("\r","%0D"));'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ${{ inputs.verify_source_only && format('t4-source-verification-{0}', matrix.difficulty) || format('t4-three-year-{0}', matrix.difficulty) }}
+          path: ${{ inputs.verify_source_only && format('work/three-year-{0}/source-verification.json', matrix.difficulty) || format('work/three-year-{0}/', matrix.difficulty) }}
+          retention-days: 90
+          compression-level: 0
+          if-no-files-found: error
+
+  s2-storage:
+    if: github.event_name == 'workflow_dispatch' && inputs.s2_phase != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        difficulty: ${{ fromJSON(inputs.s2_phase == 'faults' && '["easy"]' || '["easy","normal","hard"]') }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: t4-three-year-${{ matrix.difficulty }}
+          path: work/source
+          run-id: ${{ matrix.difficulty == 'easy' && '41971561739' || '41971866724' }}
+          github-token: ${{ github.token }}
+      - name: Full retained-source attribution
+        if: inputs.s2_phase == 'analysis' || inputs.s2_phase == 'acceptance'
+        run: node --max-old-space-size=6144 --expose-gc scripts/save-capacity.js attribute work/source
+      - if: inputs.s2_phase == 'acceptance'
+        run: node --max-old-space-size=6144 --expose-gc scripts/storage-s2.js work/source
+      - if: inputs.s2_phase == 'acceptance' || inputs.s2_phase == 'browser'
+        run: |
+          npm run build
+          node scripts/storage-browser.js --s2 --legacy
+          node scripts/storage-browser.js --s2
+        env:
+          CHROMIUM_BIN: google-chrome
+      - if: (inputs.s2_phase == 'acceptance' || inputs.s2_phase == 'browser' || inputs.s2_phase == 'faults') && matrix.difficulty == 'easy'
+        run: |
+          if [ '${{ inputs.s2_phase }}' != browser ]; then
+            node --max-old-space-size=6144 --expose-gc scripts/three-year-checks.js work/source
+            node --input-type=module -e 'import {readFileSync} from "node:fs"; import {gzipSync} from "node:zlib"; console.log("::notice title=S2 faults::"+gzipSync(readFileSync("work/source/storage-checks.json")).toString("base64"))'
+          fi
+          npm run build
+          node scripts/storage-browser.js --storage-only
+        env:
+          CHROMIUM_BIN: google-chrome
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: s2-${{ inputs.s2_phase }}-${{ matrix.difficulty }}
+          path: |
+            work/source/s2-*.json
+            work/source/storage-checks.json
+          if-no-files-found: error
+
+  a1-academics:
+    if: github.event_name == 'workflow_dispatch' && inputs.academic_source
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        difficulty: [easy, normal, hard]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - uses: actions/download-artifact@v4
+        with:
+          name: t4-three-year-${{ matrix.difficulty }}
+          path: work/a1-source
+          run-id: ${{ matrix.difficulty == 'easy' && '41971561739' || '41971866724' }}
+          github-token: ${{ github.token }}
+      - name: Extract academic facts and recalculate only; no calendar/game simulation
+        run: node --max-old-space-size=4096 simulation/school-academics.js --extract work/a1-source
+      - uses: actions/upload-artifact@v4
+        with:
+          name: a1-academic-${{ matrix.difficulty }}
+          path: work/a1-source/a1-academic.json
+          if-no-files-found: error

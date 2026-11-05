@@ -10,7 +10,7 @@ import { startEvolution,advanceDay,nextGameDate } from '../src/evolution/time.js
 import { deriveWorldPanel,attestPersonEvaluation,activateReputation,registerGroup,registerGroupEvaluation,registerPersonEvaluation } from '../src/social/reputation.js';
 import { SHOCK_RANGES,shockDelta,RECOVERY_PROFILES,recoveryChanges,validateRecovery } from '../src/changes/model.js';
 import { targetRecord } from '../src/changes/targets.js';
-import { canonicalData,startSettlement,restoreSettlement,validateSettlement,settleResult,settleResults,advanceSettlementDay,advanceSchedule } from '../src/changes/settlement.js';
+import { canonicalData,validateData,startSettlement,restoreSettlement,validateSettlement,settleResult,settleResults,advanceSettlementDay,advanceSchedule } from '../src/changes/settlement.js';
 const copy=x=>structuredClone(x);
 const player=confirmCandidate(createCandidate({seed:3,playerId:'teacher',schoolId:'school'}));
 const makeWorld=()=>createWorld({seed:8,player});
@@ -76,8 +76,9 @@ test('illegal multi-holder transactions and malformed JSON inputs reject atomica
   assert.throws(()=>settleResult(unset,direct(unset,'null',[change('2-3',1)])));
   const r=direct(s,'getter',[]);let called=false;
   Object.defineProperty(r.operation.changes,0,{enumerable:true,get(){called=true;return change('2-3',1);}});
-  assert.throws(()=>settleResult(s,r));assert.equal(called,false);
-  for(const value of [undefined,()=>{},[,,],Object.assign([],{extra:1}),{bad:undefined}]) assert.throws(()=>canonicalData(value));
+  assert.throws(()=>settleResult(s,r));assert.throws(()=>validateData(r));assert.equal(called,false);
+  for(const value of [undefined,()=>{},[,,],Object.assign([],{extra:1}),{bad:undefined},{bad:NaN},{[Symbol('hidden')]:1},new Date()]){assert.throws(()=>canonicalData(value));assert.throws(()=>validateData(value));}
+  const frozen=Object.freeze({b:2,a:Object.freeze([1,null])});validateData(frozen);assert.deepEqual(frozen,{b:2,a:[1,null]});
   assert.equal(canonicalData({b:2,a:[1,null]}),canonicalData({a:[1,null],b:2}));
   const baseline=startEvolution(makeWorld(),{seed:1,date:'2026-08-28',schoolYearId:'Y1',openingId:'O1'});
   const pending=startSettlement(baseline,{seed:1,attemptId:'a'});
@@ -282,4 +283,16 @@ test('500 holiday trajectories and one 400-NPC transaction retain heterogeneous 
   assert.deepEqual(restoreSettlement(JSON.stringify(out)),out);
   longGains.sort((a,b)=>a-b);
   t.diagnostic(JSON.stringify({holidayTrajectories:500,activeRecoveryDays:7000,meanShortGain:shortGain/500,meanLongGain:longGain/500,longGainMin:longGains[0],longGainMedian:longGains[250],longGainMax:longGains.at(-1),allFull,negativeDays,updatedNPCs:400,changes:800,transactionMs}));
+});
+
+test('changes: historical class receipts resolve only a dated archived homeroom; fresh effects cannot rewrite it',async()=>{
+ const {targetRecord,validateChange}=await import('../src/changes/targets.js');
+ // Holder-resolution unit fixture, not a simulated graduation or annual success.
+ const values={'6-3':42},w={school:{id:'school',values:{}},player:{current:{playerId:'teacher'}},classroom:{id:'new-class',values:{'6-3':50}},registry:{classes:{old:{values}},cohorts:[{classId:'old'}],assignments:[{personId:'teacher',roleId:9,classId:'old',from:'2026-07-20',until:'2029-07-22'}]}};
+ const change={target:{kind:'classroom',id:'old'},code:'6-3',delta:1};
+ assert.equal(validateChange(w,change,{receiptDate:'2029-06-29'}),values);assert.equal(targetRecord(w,{kind:'group',id:'old'},{receiptDate:'2029-06-29'}),values);assert.throws(()=>validateChange(w,{...change,target:{kind:'group',id:'old'}}),/Unknown group/);
+ assert.throws(()=>validateChange(w,change),/Unknown numeric target/);
+ assert.throws(()=>targetRecord(w,change.target,{receiptDate:'2029-08-27'}),/Unknown numeric target/);
+ assert.throws(()=>targetRecord(w,change.target,{receiptDate:'2026-07-19'}),/Unknown numeric target/);
+ assert.equal(values['6-3'],42);
 });

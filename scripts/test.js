@@ -3,13 +3,14 @@ import { spawnSync } from 'node:child_process';
 
 const legacy = ['assessment','changes','core','evolution','evolution-stress','integration','player','random','social','world'];
 export const suites = Object.freeze({
+  academic: ['academics','cohort','contracts','architecture','tooling'],
   unit: ['core','random'],
   contract: ['contracts'],
-  integration: ['calendar-integration','integration','runtime','storage'],
+  integration: ['three-year','cohort','completion','failure','annual','reviews','procedures','academics','autonomy','story','events','school','calendar-integration','integration','runtime','storage'],
   scenario: ['scenario'],
   tooling: ['architecture','tooling'],
-  quick: ['calendar','calendar-integration','storage','runtime','core','random','contracts','scenario','architecture','tooling'],
-  regression: ['calendar','calendar-integration','storage',...legacy,'runtime','runtime-stress','contracts','scenario','architecture','tooling'],
+  quick: ['three-year','cohort','completion','failure','annual','reviews','procedures','academics','autonomy','story','events','school','calendar','calendar-integration','storage','runtime','core','random','contracts','scenario','architecture','tooling'],
+  regression: ['three-year','cohort','completion','failure','annual','reviews','procedures','academics','autonomy','story','events','school','calendar','calendar-integration','storage',...legacy,'runtime','runtime-stress','contracts','scenario','architecture','tooling'],
 });
 export function testSelection(args) {
   const [selection = 'regression', ...rest] = args;

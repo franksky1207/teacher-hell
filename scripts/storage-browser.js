@@ -1,6 +1,6 @@
 /** Real Chromium IndexedDB acceptance runner. Temporary profile/site, no player data. */
-import { spawn } from 'node:child_process';
-import { mkdtemp, cp, rm } from 'node:fs/promises';
+import { spawn, execFileSync } from 'node:child_process';
+import { mkdtemp, cp, rm, writeFile, readFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { once } from 'node:events';
@@ -8,15 +8,25 @@ import { root } from './project.js';
 import { createPreviewServer } from './preview.js';
 
 const temporary = await mkdtemp(join(tmpdir(),'teacher-hell-browser-'));
-let browser, server, socket;
+let browser, server, socket, browserDiagnostics='',rssTimer,peakBrowserRssBytes=0;
+const sampleBrowserRss=()=>{if(!browser?.pid)return;try{const rows=execFileSync('ps',['-eo','ppid=,pid=,rss='],{encoding:'utf8'}).trim().split('\n').map(line=>line.trim().split(/\s+/).map(Number)),ids=new Set([browser.pid]);let changed=true;while(changed){changed=false;for(const [parent,pid] of rows)if(ids.has(parent)&&!ids.has(pid)){ids.add(pid);changed=true;}}peakBrowserRssBytes=Math.max(peakBrowserRssBytes,rows.reduce((n,[,pid,rss])=>n+(ids.has(pid)?rss*1024:0),0));}catch{}};
 try {
   await cp(resolve(root,'dist'),join(temporary,'site','teacher-hell'),{recursive:true});
   await cp(resolve(root,'test/support'),join(temporary,'site','teacher-hell/test/support'),{recursive:true});
+  if(process.argv.includes('--s2')){
+    await cp(resolve(root,'work/source/completed.json'),join(temporary,'site/teacher-hell/test/support/s2-completed.json'));
+    if(process.argv.includes('--legacy'))await writeFile(join(temporary,'site/teacher-hell/src/storage/indexeddb.js'),execFileSync('git',['show','53bf641:src/storage/indexeddb.js'],{cwd:root}));
+  }
+  if(process.argv.includes('--completion-only'))await cp(resolve(root,'work/completion/memorial.json'),join(temporary,'site','teacher-hell/test/support/completion-memorial.json'));
+  if(process.argv.includes('--failure-only'))for(const name of ['cycle-1','cycle-2','cycle-3','physical'])await cp(resolve(root,`work/failure/${name}.json`),join(temporary,'site',`teacher-hell/test/support/failure-${name}.json`));
+  if(process.argv.includes('--career-only'))await cp(resolve(root,'work/career/failure-4-1.json'),join(temporary,'site','teacher-hell/test/support/career-failure.json'));
+  if(process.argv.includes('--annual'))await cp(resolve(root,'work/annual/world.json'),join(temporary,'site','teacher-hell/test/support/annual-completed.json'));
   server=await createPreviewServer(join(temporary,'site'));server.listen(0,'127.0.0.1');await once(server,'listening');
   const url=`http://127.0.0.1:${server.address().port}/teacher-hell/`;
   browser=spawn(process.env.CHROMIUM_BIN || 'chromium',[
     '--headless','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-first-run',
     '--no-default-browser-check','--disable-background-networking','--disable-extensions','--disable-sync',
+    ...((process.argv.includes('--career-only')||process.argv.includes('--s2'))?['--js-flags=--expose-gc --max-old-space-size=6144','--enable-precise-memory-info']:[]),
     `--user-data-dir=${join(temporary,'profile')}`,'--remote-debugging-port=0','about:blank',
   ],{stdio:['ignore','ignore','pipe']});
   const debuggerUrl=await new Promise((resolve,reject)=>{
@@ -24,6 +34,7 @@ try {
     browser.once('error',error=>{clearTimeout(timer);reject(error);});
     browser.once('exit',code=>{clearTimeout(timer);reject(new Error(`Chromium exited before debugger: ${code}`));});
     browser.stderr.on('data',chunk=>{
+      browserDiagnostics=(browserDiagnostics+String(chunk)).slice(-16384);
       const match=String(chunk).match(/DevTools listening on (ws:\/\/[^\s]+)/);
       if(match){clearTimeout(timer);resolve(match[1]);}
     });
@@ -32,10 +43,12 @@ try {
   let sequence=0;const pending=new Map();
   socket.addEventListener('message',event=>{
     const message=JSON.parse(event.data),entry=pending.get(message.id);
+    if(message.method==='Runtime.consoleAPICalled'&&typeof message.params.args[0]?.value==='string'&&message.params.args[0].value.startsWith('CAREER '))console.log(...message.params.args.map(a=>a.value));
+    if(message.method==='Inspector.targetCrashed')for(const [id,call] of pending){clearTimeout(call.timer);pending.delete(id);call.reject(new Error('Chromium renderer crashed: '+browserDiagnostics));}
     if(entry){pending.delete(message.id);clearTimeout(entry.timer);message.error?entry.reject(new Error(JSON.stringify(message.error))):entry.resolve(message.result);}
   });
-  const call=(method,params={},sessionId)=>new Promise((resolve,reject)=>{
-    const id=++sequence,timer=setTimeout(()=>{pending.delete(id);reject(new Error(`CDP timeout: ${method}`));},120000);
+  const call=(method,params={},sessionId,timeoutMs=120000)=>new Promise((resolve,reject)=>{
+    const id=++sequence,timer=setTimeout(()=>{pending.delete(id);reject(new Error(`CDP timeout: ${method}`));},timeoutMs);
     pending.set(id,{resolve,reject,timer});socket.send(JSON.stringify({id,method,params,...(sessionId?{sessionId}:{})}));
   });
   const {targetId}=await call('Target.createTarget',{url:'about:blank'});
@@ -46,6 +59,8 @@ try {
     return out.result.value;
   };
   await call('Page.enable',{},sessionId);
+  await call('Inspector.enable',{},sessionId);
+  await call('Runtime.enable',{},sessionId);
   const passed=async()=>{
     for(let i=0;i<100;i++){
       const state=await evaluate('document.querySelector("#status")?.dataset.status');
@@ -60,12 +75,34 @@ try {
   await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true},sessionId);
   await evaluate('document.querySelector("#status").dataset.status="pending"');
   await call('Page.reload',{},sessionId);await passed();
-  const evalIn=async (expression,sid=sessionId)=>{
-    const out=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true},sid);
+  const evalIn=async (expression,sid=sessionId,timeoutMs=120000)=>{
+    const out=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true},sid,timeoutMs);
     if(out.exceptionDetails)throw Error(JSON.stringify(out.exceptionDetails));return out.result.value;
   };
+  if(process.argv.includes('--s2')){
+    const manifest=JSON.parse(await readFile(resolve(root,'work/source/manifest.json'),'utf8'));
+    const testId=temporary.split('/').at(-1)+(manifest.difficulty==='easy'&&!process.argv.includes('--legacy')?'-faults':''),expected=manifest.files['completed.json'].sha256;
+    const run=init=>`(async()=>{const checks=await import('./test/support/storage-checks.js');return checks.s2Storage(${JSON.stringify(testId)},${init},${JSON.stringify(expected)});})()`;
+    rssTimer=setInterval(sampleBrowserRss,250);
+    const initial=await evalIn(run(true),sessionId,1200000);
+    await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+    const restarted=await evalIn(run(false),sessionId,1200000);
+    sampleBrowserRss();clearInterval(rssTimer);
+    const report={difficulty:manifest.difficulty,legacy:process.argv.includes('--legacy'),peakBrowserRssBytes,rssNote:'250ms sampled sum of browser process tree RSS; shared pages may be double counted; not an iPhone peak',initial,restarted};
+    const name=report.legacy?'legacy':'gzip';await writeFile(resolve(root,`work/source/s2-browser-${name}.json`),JSON.stringify(report,null,2));
+    const {gzipSync}=await import('node:zlib'),encoded=gzipSync(JSON.stringify(report)).toString('base64');
+    for(let i=0;i<encoded.length;i+=3000)console.log(`::notice title=S2 browser ${name} ${i/3000}::${encoded.slice(i,i+3000)}`);
+  }else{
   const testId=temporary.split('/').at(-1);
   const setup=initialize=>`(async()=>{globalThis.checks=await import('./test/support/storage-checks.js');globalThis.st=await checks.setup(${JSON.stringify(testId)},${initialize});return true;})()`;
+  if(process.argv.includes('--completion-only')){
+    const expression=initialize=>`(async()=>{const m=await import('./test/support/completion-checks.js');return m.completionStorage(${JSON.stringify(testId)},${initialize});})()`;
+    console.log('PASS 11-E memorial IndexedDB',JSON.stringify(await evalIn(expression(true))));
+    await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+    console.log('PASS 11-E actual navigation',JSON.stringify(await evalIn(expression(false))));
+  }
+  if(!process.argv.includes('--completion-only')){
+  if(!process.argv.includes('--story-only')&&!process.argv.includes('--failure-only')&&!process.argv.includes('--career-only')){
   await evalIn(setup(true));
   console.log('PASS',await evalIn('checks.basics(st)'));
   const second=await call('Target.createTarget',{url});
@@ -84,6 +121,11 @@ try {
   const revision=await evalIn("st.session.snapshot().payload.world.extensions['teacher-hell/world'].revision");if(revision!==2)throw Error('Actual navigation lost committed world');
   console.log('PASS actual page reload after memory-publication failure: revision',revision);
   console.log('PASS',await evalIn('checks.importsAndRetry(st)'));
+  const lineage=await evalIn(`checks.retryLineageStorage(${JSON.stringify(testId)})`);
+  console.log('PASS retry identity rollback/import/isolation',JSON.stringify({provenance:lineage.provenance,saveBytes:lineage.saveBytes,measurements:lineage.measurements}));
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();await evalIn(setup(false));
+  const lineageRestored=await evalIn(`checks.retryLineageStorage(${JSON.stringify(testId)},false)`);
+  console.log('PASS actual navigation retains retired attempts; third retry, duplicate and stale writer',JSON.stringify({provenance:lineageRestored.provenance,saveBytes:lineageRestored.saveBytes,measurements:lineageRestored.measurements}));
   console.log('PASS',await evalIn('checks.decision(st)'));
   await evalIn('checks.holdSlot(st)');
   const other=await evalIn(`(async()=>{const s=await (await import('./src/storage/session.js')).createStoredSession(st.db,3);return s.import(await s.export(),{expectedToken:s.snapshot().token,confirmed:true});})()`,peer.sessionId);
@@ -105,9 +147,84 @@ try {
   if(await evalIn('JSON.stringify(pt.s.snapshot())')!==phaseSaved)throw Error('Actual phase reload changed calendar/table/history/PRNG');
   console.log('PASS phase 01–04 actual page navigation restores exact formal world and fixed timetable');
   }else console.log('NOT EXECUTED: phase 01–04 calendar scenario (--storage-only explicitly selected)');
-  console.log('PASS Chromium storage: all checks complete; synthetic only; NOT Safari/iPhone or full 30-year gameplay.');
+  const schoolSaved=await evalIn(`(async()=>{const module=await import('./test/support/school-checks.js');return module.schoolStorage(${JSON.stringify(testId)});})()`);
+  console.log('PASS phase 05 school: real IndexedDB rollback/replay/import/reopen/retry/three slots',JSON.stringify(schoolSaved.report));
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+  const schoolRestored=await evalIn(`(async()=>{const module=await import('./test/support/school-checks.js');return module.restoredSchoolSignature(${JSON.stringify(testId)});})()`);
+  if(schoolRestored!==schoolSaved.signature)throw Error('School page reload changed identity/history/random');
+  console.log('PASS phase 05 actual page navigation preserves the complete school world');
+  const eventSetup=initialize=>`(async()=>{globalThis.ev=await import('./test/support/event-checks.js');globalThis.et=await ev.eventSetup(${JSON.stringify(testId)},${initialize});return true;})()`;
+  await evalIn(eventSetup(true));await evalIn(eventSetup(false),peer.sessionId);
+  console.log('PASS phase 06',await evalIn('ev.eventDrawFailure(et)'));
+  const eventRace=await Promise.all([evalIn("ev.eventCompete(et,'event-tab-a')"),evalIn("ev.eventCompete(et,'event-tab-b')",peer.sessionId)]);
+  if(eventRace.filter(r=>r.ok).length!==1||eventRace.find(r=>!r.ok)?.code!=='STALE')throw Error('Event draw CAS failed: '+JSON.stringify(eventRace));
+  console.log('PASS phase 06 actual two-page event draw CAS',JSON.stringify(eventRace));
+  const eventSaved=await evalIn('ev.eventStorageChecks(et)');
+  console.log('PASS phase 06 atomic event reserve/admit/replay/rollback/import/retry/isolation/reopen',JSON.stringify(eventSaved.report));
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+  const eventRestored=await evalIn(`(async()=>{const ev=await import('./test/support/event-checks.js');return ev.eventSignature(${JSON.stringify(testId)});})()`);
+  if(eventRestored!==eventSaved.signature)throw Error('Event page reload changed committed selection');
+  console.log('PASS phase 06 actual navigation restores exact event identity/history/PRNG');
+  }
+  if(!process.argv.includes('--failure-only')&&!process.argv.includes('--career-only')){
+  await evalIn(`(async()=>{globalThis.story=await import('./test/support/story-checks.js');globalThis.storyTest=await story.storySetup(${JSON.stringify(testId)},true);return true;})()`);
+  const pendingStory=await evalIn('(async()=>JSON.stringify(await storyTest.db.read(1)))()');await evalIn('storyTest.db.close()');
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+  const restoredStory=await evalIn(`(async()=>{globalThis.story=await import('./test/support/story-checks.js');globalThis.storyTest=await story.storySetup(${JSON.stringify(testId)},false);return JSON.stringify(await storyTest.db.read(1));})()`);
+  if(restoredStory!==pendingStory)throw Error('Story reload changed pending confirmation');
+  console.log('PASS phase 07 actual navigation restores pending story confirmation');
+  const storySaved=await evalIn('story.storyContinue(storyTest)');
+  console.log('PASS phase 07 N6 rollback/dedup/three slots/import/cross-day/two completed branches',JSON.stringify(storySaved.report));
+  const npcSaved=await evalIn(`(async()=>{const npc=await import('./test/support/npc-checks.js');return npc.npcStorage(${JSON.stringify(testId)});})()`);
+  console.log('PASS phase 08 NPC atomic rollback/replay/three slots/export/import',JSON.stringify(npcSaved.report));
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+  const npcRestored=await evalIn(`(async()=>{const npc=await import('./test/support/npc-checks.js');return npc.npcSignature(${JSON.stringify(testId)});})()`);
+  if(npcRestored!==npcSaved.signature)throw Error('NPC actual navigation changed world/history/PRNG');
+  console.log('PASS phase 08 actual navigation restores exact autonomous world');
+  const reviewSaved=await evalIn(`(async()=>{const reviews=await import('./test/support/review-checks.js');return reviews.reviewStorage(${JSON.stringify(testId)});})()`);
+  console.log('PASS semester report boundary IndexedDB rollback/replay/import/three slots',JSON.stringify(reviewSaved.report));
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+  const reviewRestored=await evalIn(`(async()=>{const reviews=await import('./test/support/review-checks.js');return reviews.reviewSignature(${JSON.stringify(testId)});})()`);
+  if(reviewRestored!==reviewSaved.signature)throw Error('Review navigation changed report/read state');
+  console.log('PASS actual navigation preserves saved semester report and read state');
+  const academicSaved=await evalIn(`(async()=>{const school=await import('./test/support/academic-checks.js');return school.academicStorage(${JSON.stringify(testId)});})()`);
+  console.log('PASS phase 09 real IndexedDB academic/routine/N6/RNG rollback/replay/three slots/import',JSON.stringify(academicSaved.report));
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+  const academicRestored=await evalIn(`(async()=>{const school=await import('./test/support/academic-checks.js');return school.academicSignature(${JSON.stringify(testId)});})()`);
+  if(academicRestored!==academicSaved.signature)throw Error('Academic page navigation changed grades/routine/random');
+  console.log('PASS phase 09 actual page navigation restores exact academic world');
+  const procedureSaved=await evalIn(`(async()=>{const module=await import('./test/support/procedure-checks.js');return module.procedureStorage(${JSON.stringify(testId)});})()`);
+  console.log('PASS phase 10 real IndexedDB procedures/protection/deadlines/long duty/rollback/replay/import/three slots',JSON.stringify(procedureSaved.report));
+  await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+  const procedureRestored=await evalIn(`(async()=>{const module=await import('./test/support/procedure-checks.js');return module.procedureSignature(${JSON.stringify(testId)});})()`);
+  if(procedureRestored!==procedureSaved.signature)throw Error('Procedure actual navigation changed deadlines/evidence/history');
+  console.log('PASS phase 10 actual navigation restores exact institutional world');
+  }
+  if(process.argv.includes('--failure-only')){
+   const run=initialize=>`(async()=>{const m=await import('./test/support/failure-checks.js');return m.failureStorage(${JSON.stringify(testId)},${initialize});})()`;
+   console.log('PASS formal failure IndexedDB',JSON.stringify(await evalIn(run(true),sessionId,600000)));
+   await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+   console.log('PASS actual navigation restores formal retry',JSON.stringify(await evalIn(run(false),sessionId,600000)));
+  }
+  if(process.argv.includes('--annual')){
+   const run=initialize=>`(async()=>{const annual=await import('./test/support/annual-checks.js');return annual.annualStorage(${JSON.stringify(testId)},${initialize});})()`;
+   const saved=await evalIn(run(true),sessionId,600000);console.log('PASS real first-year annual IndexedDB rollback/import/CAS/dedup/three slots',JSON.stringify(saved));
+   await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+   const reopened=await evalIn(run(false),sessionId,600000);if(saved.hash!==reopened.hash)throw Error('Annual navigation changed the saved world');console.log('PASS actual navigation restores the real annual result',JSON.stringify(reopened));
+  }
+  if(process.argv.includes('--career-only')){
+   console.log('Career desktop heap limit',await evalIn('performance.memory?.jsHeapSizeLimit'));
+   const run=initialize=>`(async()=>{const m=await import('./test/support/career-checks.js');return m.careerStorage(${JSON.stringify(testId)},${initialize});})()`;
+   const saved=await evalIn(run(true),sessionId,1200000);console.log('PASS fourth-year real IndexedDB failure/retry and prior graduation preservation',JSON.stringify(saved));
+   await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();
+   const reopened=await evalIn(run(false),sessionId,1200000);if(saved.hash!==reopened.hash)throw Error('Fourth-year actual navigation changed world');console.log('PASS actual navigation preserves fourth-year opening and three successes',JSON.stringify(reopened));
+  }
+  console.log('PASS Chromium storage: all checks complete; engineering acceptance only; NOT Safari/iPhone or full 30-year gameplay.');
+  }
+  }
   await call('Browser.close');
 } finally {
+  clearInterval(rssTimer);
   socket?.close();
   if(browser?.pid && browser.exitCode===null && browser.signalCode===null){
     const timeout=setTimeout(()=>browser.kill('SIGKILL'),3000);

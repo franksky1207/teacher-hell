@@ -1,0 +1,14 @@
+/** Fresh validation of actual 11-D driver checkpoints, never fabricated annual history. */
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+import {restoreSave} from '../src/storage/format.js';
+import {careerEvidence,compileCareerCompletion} from '../src/runtime/career.js';
+import {rateCareer} from '../src/assessment/career.js';
+const tag=process.argv.find(a=>a.startsWith('--checkpoint='))?.slice(13);assert.ok(['year-1','year-2','year-3','opening-4'].includes(tag));
+let text=await readFile(`work/career/${tag}.json`,'utf8');const manifest=JSON.parse(await readFile('work/career/report.json','utf8')),sha256=createHash('sha256').update(text).digest('hex');assert.equal(sha256,manifest.checkpoints[tag].sha256);
+const restoredAt=performance.now(),p=restoreSave(text),restoreMs=performance.now()-restoredAt;text=null;globalThis.gc?.();
+const w=p.world,r=w.extensions['teacher-hell/world'],annualDigest=()=>createHash('sha256').update(JSON.stringify(r.history.filter(h=>h.type==='annual-success').map(h=>h.data.evidence))).digest('hex'),originalAnnualDigest=annualDigest(),before=JSON.stringify({numeric:w.numeric,random:w.random,position:w.position}),startMemory=process.memoryUsage(),at=performance.now(),e=careerEvidence(w),projectionMs=performance.now()-at,afterMemory=process.memoryUsage();
+const out=rateCareer({yearRefs:e.yearRefs,cohortRefs:e.cohortRefs},e.source);assert.equal(out.status,'insufficient');assert.equal(out.grade,null);assert.throws(()=>compileCareerCompletion(w),/thirty legal/);assert.equal(JSON.stringify({numeric:w.numeric,random:w.random,position:w.position}),before);assert.equal(annualDigest(),originalAnnualDigest);
+const report={checkpoint:tag,provenance:'actual continuous legal 11-D driver checkpoint, freshly restoreSave-validated by 11-E core',sha256,restoreMs,projectionMs,projectionHeapDelta:afterMemory.heapUsed-startMemory.heapUsed,projectionRssDelta:afterMemory.rss-startMemory.rss,successfulYears:e.yearRefs.length,cohorts:e.cohortRefs.length,records:e.records.size,status:out.status,grade:out.grade,completionBytesAdded:0,annualEvidenceDigest:originalAnnualDigest,annualEvidenceUnchanged:true,students:e.cohortRefs.map(id=>({id,students:e.records.get(id).studentIds.length,enrollments:e.records.get(id).enrollmentRefs.length})),annualIds:r.history.filter(h=>h.type==='annual-success').map(h=>h.id),registryCohorts:w.numeric.evolution.world.registry.cohorts.map(c=>({id:c.id,classId:c.classId,startYear:c.startYear})),graduated:w.numeric.evolution.world.registry.enrollments.filter(e=>e.status==='graduated').length,delayed:w.numeric.evolution.world.registry.enrollments.filter(e=>e.status==='delayed').length};
+await mkdir('work/completion',{recursive:true});await writeFile(`work/completion/formal-${tag}.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));

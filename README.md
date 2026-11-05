@@ -1,12 +1,26 @@
 # teacher-hell
+
+> 第11批已完成11-A學期回顧及11-B第一學年正式通關；11-C已形成正式事件、客觀原班職務中斷、失敗結算、存讀與授權重試的第一學年閉環；身心／社會代表事件及驗收紀錄見docs/05文末。11-D已完成三年同屆、正常結屆及跨年／跨屆重試核心閉環；11-E已接上N7生涯結算、歷史導向結局及獨立紀念庫，驗證區分真實短期世界與30年契約邊界；11-F未開始，第二階段尚未具備合併條件。`npm run demo:annual`可重建完整第一學年；`demo:reviews`仍是明標跳過日期的期末邊界示範。
 教師荒謬地獄
 
+目前：01～04已合併main，05～10及11-A～11-E累積於Draft [PR #20](https://github.com/franksky1207/teacher-hell/pull/20)。未發布或部署。以下舊批次紀錄保留當時語境；最新契約、代表事件與驗收見 [docs/05](docs/05-未定案與工作方式.md)文末。
+
+```sh
+npm ci
+npm run demo:procedures                      # A～F；原操作／事實／收據在work/procedures
+npm run demo:procedures -- --scenario=C --seed=74
+npm run test:module -- module=procedures
+npm test
+npm run test:storage:browser
+npm run simulate:procedures                 # 明標合成30年程序journal，非第11批遊戲
+```
+
 N1～N8純數值工程已完成封版驗收；這不是完整遊戲。最新架構、30年實測與限制見文末N8。
-舊批次章節保留當時的驗收與待辦語境；本次N8已獲使用者明確授權，全部檢查通過後直接合併main，未授權部署。
+舊批次章節保留當時的驗收與待辦語境；N1～N8已在先前階段整合。05～10及11工作中增量沿用Draft PR #20，不合併main、不部署。
 
-## 目前工程入口｜第一階段基礎
+## 第一階段基礎工程入口（歷史紀錄）
 
-第01～04批在 `integrate/phase1-foundation` 累積開發；正式22批、契約責任及各批交接集中於
+第01～04批已合併main，原累積分支為 `integrate/phase1-foundation`；正式22批、契約責任及各批交接集中於
 [docs/05](docs/05-未定案與工作方式.md#第01批工程紀錄與後續介面2026-11-02)。
 這一節取代下面歷史N1～N8章節對「目前工具鏈」的說明；歷史驗收數據仍保留。
 
@@ -1497,3 +1511,77 @@ Chromium正式情境完成合法世界、合成成果、原N6、時間、歷史�
 **第04批及第一階段本次工程／自動驗收通過，具備技術整合條件；是否合併仍待使用者另行授權。**
 Safari／iPhone、真實配額耗盡／斷電、手機記憶體峰值及正式96主題／十屆30年遊戲／平衡未測，不能冒稱通過。
 保持Draft、不Ready、不合併main、不部署、不建Release、不開始05。
+
+第08批NPC工程驗收（非正式玩家介面）：`npm run demo:npc`／`npm run test:npc:routes`
+沿用第07批CLI入口，重現傾聽、情緒與無玩家介入同儕三種情境，列出合法知情、行為因果、
+N5／N6效果、候選資格及恢復／重送。精準測試：`npm run test:module -- module=autonomy`；
+十屆合成負載：`node simulation/npc-social.js`。工程設定、正式介面、結果與限制集中於docs/05第08批紀錄。
+
+第09批學業／日常工程入口：`npm run demo:school`，可用`-- --scenario=A`（A～F）及`--seed=74`指定情境。
+正式操作仍經原世界交易；`npm run test:module -- module=academics`精準驗證，`npm run simulate:school`量測合成60學期負載。
+資料契約、法規來源／未來假設、基線與完整遊戲的界線見docs/05第09批紀錄。沒有新增玩家網頁或部署。
+
+第11批11-B第一學年入口：`startAnnualSchoolCareer`保存暑輔首日的正式年度基線；
+沿原`school-action`／事件／學業／程序推進，閱讀兩份11-A回顧後，在六月最後考試日最後時段
+用獨立`settle-school-year`交易完成原N7評級。`readAnnualHistory`提供玩家可見年度紀錄，
+三槽保存仍用`createStoredSession.execute`、原CAS及匯入匯出，沒有另一套世界或評分引擎。
+
+```sh
+npm run demo:annual
+npm run test:module -- module=annual,assessment,reviews,storage,runtime
+npm run test:annual:browser
+```
+
+`demo:annual`從2026-07-20暑輔首日逐日期／時段執行完整第一學年，配置少量工程故事，
+不注入年度成果、不跳過事件／回顧屏障。世界與來源報告保存在隔離的`work/annual`；
+`-- --until=2026-07-21`僅驗短期流程，不能作年度通關證據；
+`-- --resume`只讀取先前實際執行、讀完學期回顧後保存的完整檢查點。
+`test:annual:browser`要求先生成真實完整年度存檔，再跑原完整Chromium儲存整合及年度大檔驗證。
+詳細證據映射、實測與相容性界線集中於docs/05的11-B節；11-C另有`npm run demo:failure`及`npm run test:failure:browser`直接驗收入口；11-D～11-F不在本入口執行。
+完整第一年工程情境（seed74、listen）已得原N7 **76.06653851042338／B**：341天、3254個時段、
+1件正式抽選事件，年度交易無數值回饋，含opening存檔43,600,040 bytes並完整恢復。
+精簡可審查結果見[年度工程證據](simulation/results/annual-core-20261104.json)；此為桌機工程驗證，未宣稱手機或完整30年通過。
+
+11-D沿用`startFailureSchoolCareer`及原世界／儲存API：六月`settle-school-year`成功後，
+暑輔前以獨立`transition-school-year`完成升級或按個別資格正常結屆；
+實際開學的時間交易才更新年度基線、原班任職與opening，儲存層同次CAS自動保存新起點。
+新屆班級由學校固定分配，正式代表事件可表達接受、異議協商或拒絕理由，不重新抽班。
+
+```sh
+npm run demo:career
+npm run demo:career:retry -- --year=2
+npm run demo:career:retry -- --year=3
+npm run demo:career:retry -- --year=4
+npm run demo:career:boundary
+npm run test:career:browser > work/career-browser.log 2>&1
+npm test > work/regression-indexed.log 2>&1
+npm run demo:career:report
+```
+
+上述為隔離`work/career`的正式核心驗收，建議依序執行以限制大檔峰值記憶體。
+完整四年及多次重試可耗時數小時，需要數GiB記憶體；不是快速CI的一部分。
+第四年Chromium大檔入口明設4 GiB測試heap並釋放驗收暫存副本；預設設定曾發生renderer中斷，不能據此宣稱一般裝置容量通過。
+`demo:career -- --resume=year-2`等參數只接受來源報告SHA-256相符的實際checkpoint；
+不改日期、年級或成敗旗標。年度2／3的失敗分支與年度4多次重試各自從真正opening開始。
+開學原子性另驗日期到期轉入、寫入中止及重送；完整世界檔不提交Git。
+這些入口不執行11-E／11-F；最新實測與長期容量限制集中於docs/05。
+
+
+### 11-E：30年結算、歷史導向結局與生涯紀念
+
+正式第30年年度成功在原交易產生唯一生涯結算；`readCareerHistory`讀取封存結果。
+原N7六項權重／精度不變，資料轉接與來源責任見[docs/04](docs/04-筆記本學年與結局.md#30年正式證據與紀念資料契約11-e)。
+紀念獨立於三個遊玩槽，完成後自動保存，失敗可補存；`listMemorials`可查閱，`restart`只接受經原核心驗證的全新第一年opening。
+
+```sh
+npm run demo:completion                     # 明標30年契約輸入，絕非自然世界通關
+npm run test:module -- module=completion,assessment,storage
+npm run test:completion:browser             # 真正IndexedDB、三槽與實際導航
+# 以下先以demo:career重建實際11-D checkpoint；每檔獨立處理，限制RAM峰值
+node --max-old-space-size=3072 --expose-gc scripts/completion-world-check.js --checkpoint=year-1
+# 同入口另驗 year-2、year-3、opening-4
+```
+
+契約替身由既有N7 fixture組建，不能經正式世界還原器匯入，不向玩家存檔寫入假通關history。
+完整Node、Chromium、來源雜湊及新增容量／時間量測見docs/05的11-E紀錄及`simulation/results/completion-core-20261105.json`。
+尚未進行真正30年逐時段自然世界、手機／Safari、平衡與11-F；沒有合併main或部署。

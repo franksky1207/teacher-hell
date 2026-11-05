@@ -22,7 +22,7 @@ export function validateSocial(world) {
       if ([world.school.id,world.classroom.id,world.player.current.playerId].includes(id) || Object.hasOwn(world.people,id) || Object.hasOwn(world.families,id)) throw new RangeError('Group identity collision');
       assertShape(g.values,['9-2','6-3','6-4']); validateRecord(g.values);
       Object.keys(g.values).forEach(code=>requireValue(g.values,code));
-    } else if (g.values !== null || id !== world[g.kind === 'school'?'school':'classroom'].id) throw new RangeError('Group must reference its authoritative holder');
+    } else if (g.values !== null || (id !== world[g.kind === 'school'?'school':'classroom'].id && !(g.kind==='classroom'&&world.registry?.classes[id]?.values))) throw new RangeError('Group must reference its authoritative holder');
   }
   for (const [key,a] of Object.entries(social.attestations)) {
     assertShape(a,['fromId','toId','scope','basisId']); identifier(a.scope); identifier(a.basisId);

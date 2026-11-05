@@ -1,0 +1,550 @@
+{
+  "scope": "T4 only; actual continuous three-year sources with existing 11-D driver, separate A/B contracts and prefixes",
+  "startHead": "67bc3840d684382a03cdec916d0a36ca0cc8154e",
+  "resumedHead": "df6fc1f2e1a98b935ec3324db1414e52c55815cd",
+  "runtimeHead": "ea1562cc038d79920d85cda0ddb971a5940394bf",
+  "evidenceToolHead": "cc65351f1633ab5424fd6357a60ea3b14e478662",
+  "createdAt": "2026-11-05T06:14:29.762395+00:00",
+  "tests": {
+    "localQuickBeforeFinalAssignmentGuard": {
+      "passed": 261,
+      "failed": 0,
+      "skipped": 0
+    },
+    "additionalCompatibility": {
+      "passed": 84,
+      "failed": 0,
+      "skipped": 0
+    },
+    "focusedAfterFinalAssignmentGuard": {
+      "passed": 17,
+      "failed": 0,
+      "skipped": 0,
+      "overlapsQuick": true
+    },
+    "latestCodeActionsQuick": {
+      "runId": 41977121474,
+      "conclusion": "success"
+    },
+    "continuousModes": {
+      "passed": 3,
+      "failed": 0
+    },
+    "realSourceStorageFaultChecks": {
+      "passed": 8,
+      "failed": 0,
+      "adapter": "in-memory CAS storage, actual before/after production world"
+    },
+    "retainedSourceChecks": {
+      "passed": 9,
+      "failed": 0
+    }
+  },
+  "sources": {
+    "easy": {
+      "manifest": {
+        "kind": "T4-continuous-production-source",
+        "difficulty": "easy",
+        "seed": {
+          "foundation": 74,
+          "events": 1,
+          "schedule": 75,
+          "background": 1412583545
+        },
+        "sourceCommit": "eee7f137a94051e544cbb271ff61cc46c78ce63c",
+        "driver": "scripts/three-year-demo.js",
+        "driverSha256": "e3407fb2d14f114654608bfe172afae259aac0f6577161adc66610da60148218",
+        "command": "node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty=easy",
+        "node": "v24.19.0",
+        "arguments": [
+          "--difficulty=easy",
+          "--transfers"
+        ],
+        "runId": "41971561739",
+        "files": {
+          "latest-opening.json": {
+            "bytes": 188280148,
+            "sha256": "94894907f163130d2e425272f4f843486b24cb279e397799ab43e0312bb2d12e"
+          },
+          "before-completion.json": {
+            "bytes": 229993320,
+            "sha256": "d604e2182e0043047b47895755194416fe606687a1ad2662388401e904a62fcc"
+          },
+          "completed.json": {
+            "bytes": 230579857,
+            "sha256": "30c78a4dd75534ce09f5fe9b084caf21f57f9627b8f73e27a92a452bb5a411bc"
+          },
+          "world.json": {
+            "bytes": 136439753,
+            "sha256": "2024547d47447cc5297c05cb1ab4e3843eeb714a37040af81785f78a7cb647bf"
+          },
+          "opening.json": {
+            "bytes": 94140044,
+            "sha256": "23e0fad8dccc32cdcad8c0c0263bcc002b0b06c5886d9e2bb184b06b765f21ef"
+          }
+        },
+        "years": [
+          {
+            "year": 1,
+            "date": "2027-06-25",
+            "tenure": 20,
+            "annualId": "history:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"operation:[\\\"runtime-test\\\",\\\"T4-complete-1\\\"]\",\"24008\"]",
+            "annualGrade": "B",
+            "revision": 3611
+          },
+          {
+            "year": 2,
+            "date": "2028-06-30",
+            "tenure": 21,
+            "annualId": "history:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"operation:[\\\"runtime-test\\\",\\\"T4-complete-2\\\"]\",\"49411\"]",
+            "annualGrade": "B",
+            "revision": 7450
+          },
+          {
+            "year": 3,
+            "date": "2029-06-29",
+            "tenure": 22,
+            "annualId": "history:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"operation:[\\\"runtime-test\\\",\\\"T4-complete-3\\\"]\",\"75474\"]",
+            "annualGrade": "B",
+            "revision": 11380
+          }
+        ],
+        "status": "passed",
+        "transfer": {
+          "departedStudentId": "world:school:cohort:1:student:1",
+          "causeFactId": "fact:[\"runtime-test\",\"source-3\"]"
+        },
+        "calendarVersion": "tw-school-2026-2065-v1",
+        "career": {
+          "version": 2,
+          "mode": "three-year",
+          "difficulty": "easy",
+          "backgroundSeed": 1412583545
+        },
+        "lastObserved": {
+          "date": "2029-06-29",
+          "revision": 11361
+        },
+        "completion": {
+          "id": "history:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"operation:[\\\"runtime-test\\\",\\\"T4-complete-3\\\"]\",\"75520\"]",
+          "grade": "B",
+          "score": 71.51313068987845,
+          "parts": {
+            "handling": 30,
+            "cohorts": 12.879297540588727,
+            "relationships": 11.173156824104783,
+            "growth": 7.597171446008764,
+            "quality": 6.693269753746713,
+            "contribution": 3.170235125429463
+          },
+          "graduated": 7,
+          "delayed": 33
+        },
+        "elapsedMs": 2726726.661149
+      },
+      "reproductionCommand": "node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty=easy --transfers",
+      "reproductionRef": "eee7f137a94051e544cbb271ff61cc46c78ce63c",
+      "originalArtifact": {
+        "id": 13392074664,
+        "name": "t4-three-year-easy",
+        "size_in_bytes": 879437794,
+        "created_at": "2026-11-05T06:04:41Z",
+        "expires_at": "2027-02-03T05:03:25Z",
+        "expired": false,
+        "digest": "sha256:d15362dd4da37a1c3bdc975840863cca81b27c5f4797952c1ddeed874bce5220"
+      },
+      "verification": {
+        "runId": 41978147048,
+        "jobId": 127081750021,
+        "headSha": "cc65351f1633ab5424fd6357a60ea3b14e478662",
+        "conclusion": "success",
+        "report": {
+          "kind": "T4-retained-source-retrieval-verification",
+          "sourceCommit": "eee7f137a94051e544cbb271ff61cc46c78ce63c",
+          "difficulty": "easy",
+          "checks": [
+            "all original raw file SHA-256 and bytes",
+            "world/opening subdocuments equal original envelope",
+            "full completed-world restore under current code"
+          ],
+          "startedAt": "2026-11-05T06:07:01.015Z",
+          "storageChecks": {
+            "kind": "T4-real-checkpoint-storage-validation",
+            "sourceCommit": "eee7f137a94051e544cbb271ff61cc46c78ce63c",
+            "difficulty": "easy",
+            "checks": [
+              "prepared terminal discarded on failed write",
+              "CAS conflict publishes no partial terminal",
+              "successful atomic CAS contains one annual/cohort/terminal",
+              "lost response and stale peer redelivery both deduplicate",
+              "new IDs rejected after freeze; no memorial writes",
+              "recomputed rating rejects changed score",
+              "missing owned terminal receipt rejected",
+              "changed academic qualification rejected"
+            ],
+            "startedAt": "2026-11-05T05:49:05.035Z",
+            "writes": 3,
+            "memorialWrites": 0,
+            "passed": 8,
+            "failed": 0,
+            "completedAt": "2026-11-05T06:04:33.143Z"
+          },
+          "sourceRun": "41971561739",
+          "passed": 3,
+          "failed": 0,
+          "files": {
+            "latest-opening.json": {
+              "bytes": 188280148,
+              "sha256": "94894907f163130d2e425272f4f843486b24cb279e397799ab43e0312bb2d12e"
+            },
+            "before-completion.json": {
+              "bytes": 229993320,
+              "sha256": "d604e2182e0043047b47895755194416fe606687a1ad2662388401e904a62fcc"
+            },
+            "completed.json": {
+              "bytes": 230579857,
+              "sha256": "30c78a4dd75534ce09f5fe9b084caf21f57f9627b8f73e27a92a452bb5a411bc"
+            },
+            "world.json": {
+              "bytes": 136439753,
+              "sha256": "2024547d47447cc5297c05cb1ab4e3843eeb714a37040af81785f78a7cb647bf"
+            },
+            "opening.json": {
+              "bytes": 94140044,
+              "sha256": "23e0fad8dccc32cdcad8c0c0263bcc002b0b06c5886d9e2bb184b06b765f21ef"
+            }
+          },
+          "completedAt": "2026-11-05T06:08:03.014Z"
+        }
+      }
+    },
+    "normal": {
+      "manifest": {
+        "kind": "T4-continuous-production-source",
+        "difficulty": "normal",
+        "seed": {
+          "foundation": 74,
+          "events": 1,
+          "schedule": 75,
+          "background": 1412583545
+        },
+        "sourceCommit": "eee7f137a94051e544cbb271ff61cc46c78ce63c",
+        "driver": "scripts/three-year-demo.js",
+        "driverSha256": "e3407fb2d14f114654608bfe172afae259aac0f6577161adc66610da60148218",
+        "command": "node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty=normal",
+        "node": "v24.19.0",
+        "arguments": [
+          "--difficulty=normal"
+        ],
+        "runId": "41971866724",
+        "files": {
+          "latest-opening.json": {
+            "bytes": 188213000,
+            "sha256": "11492b3514acf9289ad598681a7b78bf5304fd4a5577bd28012fc7f882cbc960"
+          },
+          "before-completion.json": {
+            "bytes": 229925809,
+            "sha256": "1c4bd01cd08293fc11b2d76228e2bb0d867680ad4b21b8127b6b8550e1168915"
+          },
+          "completed.json": {
+            "bytes": 230512232,
+            "sha256": "d340e644913a4b9757c693f853dbbaa68a923202376bbdcb151709841812887d"
+          },
+          "world.json": {
+            "bytes": 136405702,
+            "sha256": "719779c58c6381a630e78584835f6ac90195d16defaeccce7f196956c2ce13fe"
+          },
+          "opening.json": {
+            "bytes": 94106470,
+            "sha256": "11696b23a351e986c6a19d45daa6e9ebf5bc979f5fb1cd72404584005ae222c1"
+          }
+        },
+        "years": [
+          {
+            "year": 1,
+            "date": "2027-06-25",
+            "tenure": 10,
+            "annualId": "history:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"operation:[\\\"runtime-test\\\",\\\"T4-complete-1\\\"]\",\"24002\"]",
+            "annualGrade": "B",
+            "revision": 3609
+          },
+          {
+            "year": 2,
+            "date": "2028-06-30",
+            "tenure": 11,
+            "annualId": "history:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"operation:[\\\"runtime-test\\\",\\\"T4-complete-2\\\"]\",\"49405\"]",
+            "annualGrade": "B",
+            "revision": 7448
+          },
+          {
+            "year": 3,
+            "date": "2029-06-29",
+            "tenure": 12,
+            "annualId": "history:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"operation:[\\\"runtime-test\\\",\\\"T4-complete-3\\\"]\",\"75468\"]",
+            "annualGrade": "B",
+            "revision": 11378
+          }
+        ],
+        "status": "passed",
+        "calendarVersion": "tw-school-2026-2065-v1",
+        "career": {
+          "version": 2,
+          "mode": "three-year",
+          "difficulty": "normal",
+          "backgroundSeed": 1412583545
+        },
+        "lastObserved": {
+          "date": "2029-06-29",
+          "revision": 11359
+        },
+        "completion": {
+          "id": "history:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"operation:[\\\"runtime-test\\\",\\\"T4-complete-3\\\"]\",\"75514\"]",
+          "grade": "B",
+          "score": 72.33712592335861,
+          "parts": {
+            "handling": 30,
+            "cohorts": 12.837739288960016,
+            "relationships": 11.30459171748447,
+            "growth": 7.9386190892371475,
+            "quality": 7.098787577247525,
+            "contribution": 3.1573882504294626
+          },
+          "graduated": 7,
+          "delayed": 33
+        },
+        "elapsedMs": 2708038.088101
+      },
+      "reproductionCommand": "node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty=normal",
+      "reproductionRef": "eee7f137a94051e544cbb271ff61cc46c78ce63c",
+      "originalArtifact": {
+        "id": 13391823313,
+        "name": "t4-three-year-normal",
+        "size_in_bytes": 879166864,
+        "created_at": "2026-11-05T05:51:40Z",
+        "expires_at": "2027-02-03T05:06:17Z",
+        "expired": false,
+        "digest": "sha256:b61be72547745a5bdf5c05eb112eca90c63c06f0a6652fdfb4d4dc9d76338961"
+      },
+      "verification": {
+        "runId": 41977277412,
+        "jobId": 127078976888,
+        "headSha": "cc65351f1633ab5424fd6357a60ea3b14e478662",
+        "conclusion": "success",
+        "report": {
+          "kind": "T4-retained-source-retrieval-verification",
+          "sourceCommit": "eee7f137a94051e544cbb271ff61cc46c78ce63c",
+          "difficulty": "normal",
+          "checks": [
+            "all original raw file SHA-256 and bytes",
+            "world/opening subdocuments equal original envelope",
+            "full completed-world restore under current code"
+          ],
+          "startedAt": "2026-11-05T05:58:21.658Z",
+          "sourceRun": "41971866724",
+          "passed": 3,
+          "failed": 0,
+          "files": {
+            "latest-opening.json": {
+              "bytes": 188213000,
+              "sha256": "11492b3514acf9289ad598681a7b78bf5304fd4a5577bd28012fc7f882cbc960"
+            },
+            "before-completion.json": {
+              "bytes": 229925809,
+              "sha256": "1c4bd01cd08293fc11b2d76228e2bb0d867680ad4b21b8127b6b8550e1168915"
+            },
+            "completed.json": {
+              "bytes": 230512232,
+              "sha256": "d340e644913a4b9757c693f853dbbaa68a923202376bbdcb151709841812887d"
+            },
+            "world.json": {
+              "bytes": 136405702,
+              "sha256": "719779c58c6381a630e78584835f6ac90195d16defaeccce7f196956c2ce13fe"
+            },
+            "opening.json": {
+              "bytes": 94106470,
+              "sha256": "11696b23a351e986c6a19d45daa6e9ebf5bc979f5fb1cd72404584005ae222c1"
+            }
+          },
+          "completedAt": "2026-11-05T05:59:06.168Z"
+        }
+      }
+    },
+    "hard": {
+      "manifest": {
+        "kind": "T4-continuous-production-source",
+        "difficulty": "hard",
+        "seed": {
+          "foundation": 74,
+          "events": 1,
+          "schedule": 75,
+          "background": 1412583545
+        },
+        "sourceCommit": "eee7f137a94051e544cbb271ff61cc46c78ce63c",
+        "driver": "scripts/three-year-demo.js",
+        "driverSha256": "e3407fb2d14f114654608bfe172afae259aac0f6577161adc66610da60148218",
+        "command": "node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty=hard",
+        "node": "v24.19.0",
+        "arguments": [
+          "--difficulty=hard"
+        ],
+        "runId": "41971866724",
+        "files": {
+          "latest-opening.json": {
+            "bytes": 188094128,
+            "sha256": "11b2d3779af258c36482cda330ce1a95dc9fb462a9ad0aba110f3f825a4b307d"
+          },
+          "before-completion.json": {
+            "bytes": 229787368,
+            "sha256": "4c939e8dae00e95985593c32460da082efc460e5e375792f4948b5401e04bbac"
+          },
+          "completed.json": {
+            "bytes": 230370660,
+            "sha256": "75a7bd21b55a94480b0f2f1cafcd45edcda06a32086b8b7021ac451a9a70cb38"
+          },
+          "world.json": {
+            "bytes": 136323566,
+            "sha256": "0baa1999847b06ec28e1aa8e3b295242abdc11a383d1585d918715d37a05201b"
+          },
+          "opening.json": {
+            "bytes": 94047034,
+            "sha256": "b088ff2a8d1f8f47f24614acbfe1c6916af761361dde165be5af60a5e3f69ec0"
+          }
+        },
+        "years": [
+          {
+            "year": 1,
+            "date": "2027-06-25",
+            "tenure": 1,
+            "annualId": "history:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"operation:[\\\"runtime-test\\\",\\\"T4-complete-1\\\"]\",\"24002\"]",
+            "annualGrade": "B",
+            "revision": 3609
+          },
+          {
+            "year": 2,
+            "date": "2028-06-30",
+            "tenure": 2,
+            "annualId": "history:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"operation:[\\\"runtime-test\\\",\\\"T4-complete-2\\\"]\",\"49405\"]",
+            "annualGrade": "B",
+            "revision": 7448
+          },
+          {
+            "year": 3,
+            "date": "2029-06-29",
+            "tenure": 3,
+            "annualId": "history:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"operation:[\\\"runtime-test\\\",\\\"T4-complete-3\\\"]\",\"75468\"]",
+            "annualGrade": "B",
+            "revision": 11378
+          }
+        ],
+        "status": "passed",
+        "calendarVersion": "tw-school-2026-2065-v1",
+        "career": {
+          "version": 2,
+          "mode": "three-year",
+          "difficulty": "hard",
+          "backgroundSeed": 1412583545
+        },
+        "lastObserved": {
+          "date": "2029-06-29",
+          "revision": 11359
+        },
+        "completion": {
+          "id": "history:[\"attempt:[\\\"synthetic\\\",\\\"1\\\"]\",\"operation:[\\\"runtime-test\\\",\\\"T4-complete-3\\\"]\",\"75514\"]",
+          "grade": "B",
+          "score": 71.1204812703883,
+          "parts": {
+            "handling": 30,
+            "cohorts": 12.837833038960014,
+            "relationships": 11.306130741874712,
+            "growth": 6.614082107392338,
+            "quality": 7.203550256731765,
+            "contribution": 3.1588851254294616
+          },
+          "graduated": 7,
+          "delayed": 33
+        },
+        "elapsedMs": 2130379.6878319997
+      },
+      "reproductionCommand": "node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty=hard",
+      "reproductionRef": "eee7f137a94051e544cbb271ff61cc46c78ce63c",
+      "originalArtifact": {
+        "id": 13391272329,
+        "name": "t4-three-year-hard",
+        "size_in_bytes": 878626399,
+        "created_at": "2026-11-05T05:42:07Z",
+        "expires_at": "2027-02-03T05:06:17Z",
+        "expired": false,
+        "digest": "sha256:40f8190c984b14d1b59b7bf4f61fece2b00c04efce88509fd92bb60fdcb3dc88"
+      },
+      "verification": {
+        "runId": 41975819746,
+        "jobId": 127074304700,
+        "headSha": "ea1562cc038d79920d85cda0ddb971a5940394bf",
+        "conclusion": "success",
+        "report": {
+          "kind": "T4-retained-source-retrieval-verification",
+          "sourceCommit": "eee7f137a94051e544cbb271ff61cc46c78ce63c",
+          "difficulty": "hard",
+          "checks": [
+            "all original raw file SHA-256 and bytes",
+            "world/opening subdocuments equal original envelope",
+            "full completed-world restore under current code"
+          ],
+          "startedAt": "2026-11-05T05:44:03.825Z",
+          "sourceRun": "41971866724",
+          "passed": 3,
+          "failed": 0,
+          "files": {
+            "latest-opening.json": {
+              "bytes": 188094128,
+              "sha256": "11b2d3779af258c36482cda330ce1a95dc9fb462a9ad0aba110f3f825a4b307d"
+            },
+            "before-completion.json": {
+              "bytes": 229787368,
+              "sha256": "4c939e8dae00e95985593c32460da082efc460e5e375792f4948b5401e04bbac"
+            },
+            "completed.json": {
+              "bytes": 230370660,
+              "sha256": "75a7bd21b55a94480b0f2f1cafcd45edcda06a32086b8b7021ac451a9a70cb38"
+            },
+            "world.json": {
+              "bytes": 136323566,
+              "sha256": "0baa1999847b06ec28e1aa8e3b295242abdc11a383d1585d918715d37a05201b"
+            },
+            "opening.json": {
+              "bytes": 94047034,
+              "sha256": "b088ff2a8d1f8f47f24614acbfe1c6916af761361dde165be5af60a5e3f69ec0"
+            }
+          },
+          "completedAt": "2026-11-05T05:44:37.300Z"
+        }
+      }
+    }
+  },
+  "initialFailuresAndCancellations": [
+    {
+      "runId": 41969807970,
+      "case": "easy real first-year story panel audit failed; full historical panel witnesses implemented; normal/hard interrupted by shared concurrency, fixed before final source runs"
+    },
+    {
+      "runId": 41971561739,
+      "workflowConclusion": "cancelled",
+      "actualContinuousAndStorageJobConclusion": "success",
+      "reason": "old quick job exceeded 10-minute timeout; all continuous and storage steps passed; later quick limit 20 minutes and latest quick passed"
+    }
+  ],
+  "notExecuted": [
+    "natural thirty-year playthrough",
+    "natural SS/F playthroughs (SS/F validated only with explicitly labelled N7/ending contracts)",
+    "large real IndexedDB/browser/iPhone performance acceptance",
+    "S2 codecs or deduplication",
+    "T5 player UI"
+  ],
+  "retrieval": {
+    "directDownload": "gh run download <sourceRun> --name t4-three-year-<difficulty> --dir work/t4-source-<difficulty>",
+    "verifiedRunnerDownload": "gh workflow run verify.yml --ref integrate/phase2-world-events-20261102 -f three_year=true -f difficulties='[\"<difficulty>\"]' -f source_run=<sourceRun> -f verify_source_only=true",
+    "currentWorkerLimitation": "Actions blob CONNECT returns 403 in this Codex worker; original download, raw SHA-256/bytes and full restore all verified in fresh GitHub Actions runners instead",
+    "retention": "90 days; exact expiry in each originalArtifact; retrieve before expiry",
+    "largeRawFilesInGit": false
+  }
+}

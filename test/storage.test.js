@@ -1,12 +1,32 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { runtimeScenario,request,id } from './support/runtime.js';
+import { runtimeScenario,request,id,event,fact,open,result } from './support/runtime.js';
 import { createSave,restoreSave,saveToken,sameToken } from '../src/storage/format.js';
 import { createStoredSession } from '../src/storage/session.js';
 import { runtimeOf,WorldError } from '../src/runtime/model.js';
+import { annualOpening } from './support/annual-scenario.js';
+import { forkWorldAttempt } from '../src/runtime/transactions.js';
 const clone=structuredClone;
 function memory(){const slots=new Map(),counts=new Map();let fail=false;return {fail(){fail=true;},async read(n){return clone(slots.get(n)??{payload:null,token:null});},async write(n,payload,expected){const old=await this.read(n);if(!sameToken(old.token,expected))throw new WorldError('STALE','changed');if(fail){fail=false;throw new Error('quota');}const generation=(counts.get(n)??0)+1;counts.set(n,generation);const saved={payload:clone(payload),token:payload?saveToken({payload,generation}):null};slots.set(n,saved);return clone(saved);}};}
 const sample=(world,tag)=>request(world,tag,[{type:'sample',stream:'events',id:tag,weights:[1,2,3]}]);
+test('storage: formal annual play cannot use engineering retry before failure, after reload or across slots',async()=>{
+ let opening;const w=annualOpening({events:false,onOpening:value=>opening=value}),db=memory(),s=await createStoredSession(db,1);
+ await s.initialize(opening);const stale=await createStoredSession(db,1);
+ await s.import(createSave(w,opening),{expectedToken:s.snapshot().token,confirmed:true});
+ const before=s.snapshot(),options={attemptId:id('attempt','unauthorized-annual'),seeds:{settlement:22,streams:Object.fromEntries(Object.keys(w.random).map(k=>[k,33]))}};
+ // Repeated attempts neither consume an ID nor rotate RNG/history/revision.
+ for(let n=0;n<3;n++)await assert.rejects(s.retry(options),{code:'RETRY_UNAUTHORIZED'});
+ assert.deepEqual(s.snapshot(),before);assert.deepEqual(await db.read(1),before);
+ await assert.rejects(stale.retry(options),{code:'STALE'});
+ assert.throws(()=>forkWorldAttempt(opening,options),{code:'RETRY_UNAUTHORIZED'});
+ assert.throws(()=>forkWorldAttempt(opening,options,w),{code:'RETRY_UNAUTHORIZED'});
+ const exported=await s.export(),imported=await createStoredSession(db,2);await imported.import(exported,{expectedToken:null});
+ const reloaded=await createStoredSession(db,2),copy=reloaded.snapshot();await assert.rejects(reloaded.retry(options),{code:'RETRY_UNAUTHORIZED'});
+ assert.deepEqual(reloaded.snapshot(),copy);assert.deepEqual((await db.read(1)),before);assert.equal((await db.read(3)).payload,null);
+ // A blocked retry must not lock normal play or corrupt the original opening.
+ const q=sample(w,'continue-after-denied-retry');await s.execute(q);assert.equal((await s.execute(q)).duplicate,true);
+ assert.deepEqual(s.snapshot().payload.opening,opening);
+});
 test('storage: version rejection and detached complete world/opening roundtrip',()=>{
   const w=runtimeScenario(),p=createSave(w,w);assert.deepEqual(restoreSave(JSON.stringify(p)),p);p.world.random.events.state=0;assert.deepEqual(w,runtimeScenario());
   for(const mutate of [p=>p.version=2,p=>p.world.extensions['teacher-hell/world'].version=2,p=>p.world.schemaVersion=8,p=>p.extra=true]){const bad=createSave(w,w);mutate(bad);assert.throws(()=>restoreSave(bad));}
@@ -55,4 +75,159 @@ test('storage: an overwritten career cannot impersonate the old operation receip
  replacement.world.identity.careerId=id('career','replacement');replacement.opening.identity.careerId=id('career','replacement');
  const manager=await createStoredSession(db,1);await manager.import(JSON.stringify(replacement),{expectedToken:manager.snapshot().token,confirmed:true});const disk=await db.read(1);
  await assert.rejects(a.execute(q),{code:'STALE'});assert.deepEqual(a.snapshot(),original);assert.deepEqual(await db.read(1),disk);
+});
+
+test('storage: retired attempt IDs cannot be reused after two retries or export/import',async()=>{
+ const db=memory(),s=await createStoredSession(db,1),w=runtimeScenario();await s.initialize(w);
+ const options=tag=>({attemptId:id('attempt',tag),seeds:{settlement:24,streams:{events:25}}});
+ await s.retry(options('first'));const first=s.snapshot().payload.world;
+ const oldRequest=sample(first,'retired-request');await s.execute(oldRequest);
+ await s.retry(options('second'));const second=s.snapshot();
+ await assert.rejects(s.execute(oldRequest),{code:'ATTEMPT'});
+ await assert.rejects(s.retry(options('first')),{code:'ATTEMPT'});
+ assert.deepEqual(s.snapshot(),second);assert.deepEqual(await db.read(1),second);
+ const imported=await createStoredSession(db,2);await imported.import(await s.export(),{expectedToken:null});
+ await assert.rejects(imported.retry(options('first')),{code:'ATTEMPT'});
+ await imported.retry(options('third'));
+ assert.equal(imported.snapshot().payload.world.identity.attemptId,options('third').attemptId);
+ assert.deepEqual(imported.snapshot().payload.opening,w);
+});
+
+test('storage: a failed retry write consumes no attempt ID and stale pages cannot retry',async()=>{
+ const db=memory(),s=await createStoredSession(db,1),w=runtimeScenario();await s.initialize(w);
+ const peer=await createStoredSession(db,1),before=s.snapshot();
+ const options={attemptId:id('attempt','atomic-lineage'),seeds:{settlement:81,streams:{events:82}}};
+ db.fail();await assert.rejects(s.retry(options),/quota/);
+ assert.deepEqual(s.snapshot(),before);assert.deepEqual(await db.read(1),before);
+ await s.retry(options);const saved=s.snapshot();
+ await assert.rejects(peer.retry({attemptId:id('attempt','stale-lineage'),seeds:options.seeds}),{code:'STALE'});
+ assert.deepEqual(await db.read(1),saved);
+ const reloaded=await createStoredSession(db,1);assert.equal((await reloaded.retry(options)).duplicate,true);
+ assert.deepEqual(reloaded.snapshot(),saved);
+});
+
+test('storage: missing, altered or unsupported retry lineage fails save validation',async()=>{
+ const db=memory(),s=await createStoredSession(db,1),w=runtimeScenario();await s.initialize(w);
+ await s.retry({attemptId:id('attempt','validated-lineage'),seeds:{settlement:81,streams:{events:82}}});
+ const saved=s.snapshot().payload,key='teacher-hell/attempt-lineage';
+ for(const mutate of [p=>delete p.world.extensions[key],p=>p.world.extensions[key].version=2,p=>p.world.extensions[key].attemptIds.pop(),p=>p.world.extensions[key].attemptIds.push(id('attempt','unrecorded'))]){
+  const bad=clone(saved);mutate(bad);assert.throws(()=>restoreSave(bad));
+ }
+ assert.deepEqual(restoreSave(JSON.stringify(saved)),saved);
+});
+
+test('storage: repeated retry keeps the full opening and removes abandoned facts and numeric outcomes',async()=>{
+ const db=memory(),s=await createStoredSession(db,1),w=runtimeScenario(),e=event(w);
+ await s.initialize(w);await s.execute(request(w,'opening-fact',[open(e),fact(e)]),{captureOpening:true});
+ const opening=s.snapshot().payload.opening,subject=e.participantIds[1];
+ const options=tag=>({attemptId:id('attempt',tag),seeds:{settlement:41,streams:{events:42}}});
+ for(const tag of ['full-first','full-second','full-third']){
+  const current=s.snapshot().payload.world;
+  const q=request(current,tag,[fact(e,'abandoned-'+tag),result(e,subject,'numeric-'+tag,5,tag)]);
+  await s.execute(q);assert.notDeepEqual(s.snapshot().payload.world.numeric.evolution,opening.numeric.evolution);
+  await s.retry(options(tag));const next=s.snapshot().payload;
+  assert.deepEqual(next.opening,opening);assert.deepEqual(next.world.numeric.evolution,opening.numeric.evolution);
+  assert.deepEqual(next.world.events,opening.events);assert.deepEqual(next.world.enrollments,opening.enrollments);
+  for(const field of ['facts','claims','knowledge','disclosures','effects','stages'])assert.deepEqual(runtimeOf(next.world)[field],runtimeOf(opening)[field]);
+  assert.equal(next.world.numeric.receipts.length,0);assert.equal(runtimeOf(next.world).commits.length,runtimeOf(opening).commits.length+1);
+  await assert.rejects(s.execute(q),{code:'ATTEMPT'});
+ }
+});
+
+import { startThreeYearSchoolCareer } from '../src/runtime/transactions.js';
+import { teacherTenure } from '../src/runtime/schedule.js';
+import { foundationScenario } from './support/scenarios.js';
+function threeYearOpening(difficulty){const f=foundationScenario(74);f.events=[];f.enrollments=[];return startThreeYearSchoolCareer(f,{taipeiDate:'2062-11-05',difficulty,subject:'國文',seed:75});}
+test('storage T1: all three slots retain mode, difficulty, locked year and tenure through CAS/export/import/reload',async t=>{
+ const db=memory();
+ for(const [index,difficulty] of ['easy','normal','hard'].entries()){
+  const slot=index+1,w=threeYearOpening(difficulty),session=await createStoredSession(db,slot);await session.initialize(w);
+  const stale=await createStoredSession(db,slot);await session.execute(sample(w,'three-year-'+difficulty));
+  await assert.rejects(stale.execute(sample(w,'stale-three-year-'+difficulty)),{code:'STALE'});
+  const saved=session.snapshot(),backup=await session.export();assert.equal(restoreSave(backup).world.position.serviceYear,1);
+  // A future real-world date selects a different new opening; it cannot change this save's 2062 start.
+  assert.equal(runtimeOf(restoreSave(backup).world).plan.startYear,2062);
+  for(const instant of ['2062-12-31T15:59:59Z','2062-12-31T16:00:00Z','2063-07-01T00:00:00Z']){
+   t.mock.method(Date,'now',()=>Date.parse(instant));assert.deepEqual(restoreSave(backup),saved.payload);t.mock.restoreAll();
+  }
+  const reloaded=await createStoredSession(db,slot);assert.deepEqual(reloaded.snapshot(),saved);
+  await reloaded.import(backup,{expectedToken:saved.token,confirmed:true});
+  const restored=reloaded.snapshot().payload;assert.deepEqual(restored,saved.payload);assert.equal(teacherTenure(restored.world),[20,10,1][index]);
+  assert.deepEqual(restored.opening,w);assert.equal(runtimeOf(restored.world).history.filter(h=>h.type==='annual-success').length,0);
+ }
+ assert.equal((await db.read(4)).payload,null);
+});
+test('storage T1: import and retry reject mismatched mode/difficulty without changing the stored opening',async()=>{
+ const db=memory(),session=await createStoredSession(db,1),w=threeYearOpening('easy');await session.initialize(w);const before=session.snapshot();
+ for(const mutate of [p=>p.world.extensions['teacher-hell/world'].plan.career.difficulty='normal',p=>delete p.world.extensions['teacher-hell/world'].plan.career,p=>p.world.numeric.evolution.world.player.year=20]){
+  const bad=structuredClone(before.payload);mutate(bad);await assert.rejects(session.import(bad,{expectedToken:before.token,confirmed:true}));assert.deepEqual(await db.read(1),before);
+ }
+ const normal=threeYearOpening('normal');assert.throws(()=>forkWorldAttempt(w,{attemptId:id('attempt','wrong-mode'),seeds:{}},normal),{code:'SNAPSHOT'});
+ const mixed=structuredClone(before.payload);mixed.world=normal;await assert.rejects(session.import(mixed,{expectedToken:before.token,confirmed:true}),{code:'SNAPSHOT'});assert.deepEqual(await db.read(1),before);
+});
+
+import { experiencedOpening } from './support/calendar.js';
+import { runFailure } from './support/failure-scenario.js';
+import { failureResult } from '../src/runtime/homeroom.js';
+import { settleResult,advanceSettlementDay } from '../src/changes/settlement.js';
+test('storage T2 integration: actual veteran failure restores source values, contacts, responsibility and clean opening through retry/CAS/import',async()=>{
+ const opening=experiencedOpening('easy'),failed=runFailure(opening,{route:'social',maxDays:6}).world,terminal=failureResult(failed);
+ assert.ok(terminal,'Actual social terminal must be reached without synthetic failure flags');
+ const db=memory(),session=await createStoredSession(db,1);await session.initialize(opening);let before=session.snapshot();await session.import(createSave(failed,opening),{expectedToken:before.token,confirmed:true});
+ const stale=await createStoredSession(db,1),options={attemptId:id('attempt','t2-real-retry'),seeds:{settlement:33,streams:Object.fromEntries(Object.keys(opening.random).map(k=>[k,3]))},failureId:terminal.id,failedAttemptId:failed.identity.attemptId,schoolYearId:failed.position.schoolYearId,expectedRevision:runtimeOf(failed).revision};
+ before=session.snapshot();db.fail();await assert.rejects(session.retry(options),/quota/);assert.deepEqual(await db.read(1),before);
+ await session.retry(options);await assert.rejects(stale.retry(options),{code:'STALE'});assert.equal((await session.retry(options)).duplicate,true);
+ const payload=session.snapshot().payload;assert.deepEqual(payload.opening,opening);assert.deepEqual(payload.world.numeric.evolution,opening.numeric.evolution);assert.equal(teacherTenure(payload.world),20);assert.equal(failureResult(payload.world),null);assert.equal(payload.world.position.date,opening.position.date);assert.equal(payload.world.numeric.receipts.length,0);assert.equal(payload.world.events.length,0);
+ const exported=await session.export(),other=await createStoredSession(db,2);await other.import(exported,{expectedToken:null});assert.deepEqual(other.snapshot().payload,payload);assert.deepEqual((await createStoredSession(db,2)).snapshot().payload,payload);assert.equal((await db.read(3)).payload,null);
+ const bad=structuredClone(payload);bad.world.numeric.evolution.world.background.episodes[0].outcome=99;await assert.rejects(other.import(bad,{expectedToken:other.snapshot().token,confirmed:true}));assert.deepEqual(other.snapshot().payload,payload);
+});
+test('storage T2 contract: N6 direct major changes keep their full magnitude and receipts with senior N4 context',()=>{
+ const w=experiencedOpening('easy'),p=w.position,state=advanceSettlementDay(w.numeric,{date:p.date,schoolYearId:p.schoolYearId,openingId:p.openingId,serviceYear:1,teacherTenure:20});
+ const before=state.evolution.world.player.current.person['2-1'],delta=40,q={attemptId:state.attemptId,id:'t2-direct-shock',sequence:1,date:p.date,operation:{type:'direct',changes:[{target:{kind:'player-person',id:w.identity.playerId},code:'2-1',delta}]}};
+ const changed=settleResult(state,q);assert.equal(changed.evolution.world.player.current.person['2-1'],Math.min(100,before+delta));assert.equal(changed.receipts[0].changes[0].delta,40);assert.deepEqual(settleResult(changed,q),changed);
+});
+
+test('storage physical v2: exact UTF-8, legacy, bounded expansion and hostile codecs/pages',async()=>{
+ const {packStoredText,unpackStoredText}=await import('../src/storage/indexeddb.js');
+ // Split exactly inside a surrogate pair at the physical input boundary.
+ const text='a'.repeat(262143)+'😀繁體中文'.repeat(40000),packed=await packStoredText(text);
+ assert.equal(packed.metadata.format,2);assert.ok(packed.pages.every(p=>p instanceof Uint8Array));
+ assert.equal(await unpackStoredText(packed.metadata,packed.pages),text);
+ assert.equal(await unpackStoredText({chunkCount:2},['舊檔','😀']),'舊檔😀');
+ for(const metadata of [{...packed.metadata,format:3},{...packed.metadata,codec:'brotli'},{...packed.metadata,rawBytes:1},{...packed.metadata,rawBytes:packed.metadata.rawBytes+1},{...packed.metadata,sha256:'0'.repeat(64)},{...packed.metadata,chunkCount:0}])await assert.rejects(unpackStoredText(metadata,packed.pages));
+ const pages=packed.pages.map(p=>p.slice());pages[0][0]^=1;
+ await assert.rejects(unpackStoredText(packed.metadata,pages),{code:'CORRUPT'});
+ // Even after a hostile editor recomputes the outer digest, gzip integrity and
+ // the unchanged inner save validator remain mandatory.
+ const damaged=packed.pages.map(p=>p.slice());damaged.at(-1)[damaged.at(-1).length-1]^=1;
+ const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',await new Blob(damaged).arrayBuffer())),b=>b.toString(16).padStart(2,'0')).join('');
+ await assert.rejects(unpackStoredText({...packed.metadata,sha256:digest},damaged),{code:'CORRUPT'});
+ const invalid=await packStoredText(JSON.stringify({...createSave(runtimeScenario()),version:9}));
+ await assert.rejects(async()=>restoreSave(await unpackStoredText(invalid.metadata,invalid.pages)),{code:'VERSION'});
+ await assert.rejects(unpackStoredText(packed.metadata,packed.pages.slice(1)),{code:'CORRUPT'});
+ await assert.rejects(unpackStoredText(packed.metadata,['wrong type']),{code:'CORRUPT'});
+ const original=globalThis.CompressionStream,decoder=globalThis.DecompressionStream;
+ try{
+  globalThis.CompressionStream=undefined;const legacy=await packStoredText(text);
+  assert.equal(legacy.metadata.format,undefined);assert.equal(await unpackStoredText(legacy.metadata,legacy.pages),text);
+  globalThis.DecompressionStream=undefined;await assert.rejects(unpackStoredText(packed.metadata,packed.pages),{code:'CODEC'});
+  assert.equal(await unpackStoredText(legacy.metadata,legacy.pages),text);
+ }finally{globalThis.CompressionStream=original;globalThis.DecompressionStream=decoder;}
+});
+
+import { academicVersion } from '../src/runtime/academics.js';
+test('T5: formal openings use academic v2 and slot deletion and replacement stay isolated',async()=>{
+ const db=memory(),sessions=[];
+ for(const [i,difficulty] of ['easy','normal','hard'].entries()){
+  const w=threeYearOpening(difficulty),s=await createStoredSession(db,i+1);
+  assert.equal(academicVersion(w),2);await s.initialize(w);sessions.push(s);
+ }
+ const original=await Promise.all([1,2,3].map(n=>db.read(n)));
+ await assert.rejects(sessions[1].delete({expectedToken:original[1].token}),{code:'CONFIRM'});
+ await sessions[1].delete({expectedToken:original[1].token,confirmed:true});
+ assert.equal((await db.read(2)).payload,null);
+ assert.deepEqual(await db.read(1),original[0]);assert.deepEqual(await db.read(3),original[2]);
+ await sessions[1].import(await sessions[0].export(),{expectedToken:null});
+ assert.deepEqual((await db.read(2)).payload,original[0].payload);
+ assert.deepEqual(await db.read(1),original[0]);assert.deepEqual(await db.read(3),original[2]);
 });

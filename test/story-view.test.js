@@ -124,3 +124,21 @@ test('13-E: notice, email and news use distinct escaped document displays',()=>{
  }
  assert.throws(()=>renderSpecialStoryBody('chat','x','老師',[{speaker:null,text:'x'}]),TypeError);
 });
+
+test('13-F: long content preserves safe text and controls without prematurely choosing',()=>{
+ const many='很長的對話。'.repeat(120);
+ const eight=Array.from({length:8},(_,i)=>({id:'option-'+i,text:'回應'+i+'：'+many}));
+ const html=renderStoryView(read({page:{text:many,speaker:null,presentation:'narration'},pageIndex:2,canNext:false,choices:eight}));
+ assert.equal((html.match(/data-story-action="select"/g)||[]).length,8);
+ assert.doesNotMatch(html,/data-story-action="confirm"|data-story-action="finish"/);
+ assert.match(html,/很長的對話/);
+});
+test('13-F: scrolling chat or documents does not introduce extra story operations',()=>{
+ const h=renderStoryView(read({page:{text:'已讀',speaker:'s',presentation:'chat'},chatMessages:Array.from({length:25},(_,i)=>({speaker:'家長',text:'訊息'+i,own:false}))}));
+ assert.equal((h.match(/data-story-action="next"/g)||[]).length,1);
+ assert.equal((h.match(/data-story-advance="next"/g)||[]).length,1);
+ assert.match(h,/訊息24/);
+ const doc=renderStoryView(read({page:{text:'通知'.repeat(300),speaker:null,presentation:'notice'}}));
+ assert.equal((doc.match(/data-story-action="next"/g)||[]).length,1);
+ assert.match(doc,/story-document/);
+});

@@ -60,3 +60,13 @@
 .story-document h3{font-size:.95rem;margin:0 0 .4rem}
 .story-document-content{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65;margin:0}
 @media(max-width:650px){.story-chat{max-height:28dvh}.story-document{max-height:30dvh}.story-phone{padding:.5rem}}
+
+/* Phase 13-F: independent scroll regions, keyboard focus and readable density. */
+.story-view,.story-reader,.story-choice-panel,.story-confirm,.story-result{min-width:0}
+.story-view button{touch-action:manipulation}
+.story-view button:focus-visible{outline:2px solid #f5d390;outline-offset:2px}
+.story-view .story-navigation button{min-height:2.35rem;padding:.3rem .7rem}
+.story-view .story-choice-grid button{min-height:2.65rem}
+.story-view .story-reader{scrollbar-gutter:stable}
+.story-view .story-chat,.story-view .story-document{max-height:none}
+@media(max-width:650px){.story-view .story-choice-grid button{min-height:2.75rem}}

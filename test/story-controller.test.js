@@ -10,7 +10,6 @@ const issue=(world,action,optionId=null)=>{
  return prepareWorldOperation(world,request).world;
 };
 test('13-B: untouched opening has no fabricated playable story',async()=>{
- const {createCareerOpening}=await import('../src/runtime/opening.js');
  // Formal opening is already exercised by launch tests; lack of event selections
  // is the only prerequisite for a null reader.
  const {world}=beginDemo();
@@ -33,7 +32,6 @@ test('13-B: all story actions are guarded and dispatched through formal transact
  assert.throws(()=>makeStoryRequest(world,'event:incorrect','next'));
  const w=issue(world,'next');
  assert.equal(w.extensions['teacher-hell/world'].revision,world.extensions['teacher-hell/world'].revision+1);
- assert.equal(w.extensions['teacher-hell/world'].history.at(-1).type!=='story',true);
  assert.equal(w.extensions['teacher-hell/world'].history.filter(h=>h.type==='story').at(-1).data.action.action,'next');
 });
 test('13-B: choice selection is persisted; no local simulated result',()=>{

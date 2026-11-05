@@ -36,6 +36,8 @@ export function executeSchool(world,op,numericSession){
  if(runtimeOf(world).history.some(h=>h.type==='academic')){
   if(change.type==='school-leave'&&change.status==='graduated')ensure(readAcademicQualification(world,change.personId).eligible,'ACADEMIC_QUALIFICATION','Graduation requires actual recorded credits');
   if(change.type==='school-graduate')ensure(change.personIds.every(id=>readAcademicQualification(world,id).eligible),'ACADEMIC_QUALIFICATION','Graduation requires actual recorded credits');
+  if(change.type==='school-leave'&&change.status==='course-completed')ensure(readAcademicQualification(world,change.personId).certificateEligible,'ACADEMIC_QUALIFICATION','Course completion certificate requires recorded study and credits');
+  if(change.type==='school-leave'&&change.status==='incomplete'){const q=readAcademicQualification(world,change.personId);ensure(q.version===2&&!q.eligible&&!q.certificateEligible,'ACADEMIC_QUALIFICATION','Incomplete qualification differs');}
   if(change.type==='school-enroll'&&change.action==='repeat')ensure(readAcademicQualification(world,change.personId).repeatEligible,'ACADEMIC_QUALIFICATION','Repeat requires an actual academic qualification');
  }
  numeric=applySchoolOperation(numeric,change,at);

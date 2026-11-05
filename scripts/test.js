@@ -3,6 +3,7 @@ import { spawnSync } from 'node:child_process';
 
 const legacy = ['assessment','changes','core','evolution','evolution-stress','integration','player','random','social','world'];
 export const suites = Object.freeze({
+  academic: ['academics','cohort','contracts','architecture','tooling'],
   unit: ['core','random'],
   contract: ['contracts'],
   integration: ['three-year','cohort','completion','failure','annual','reviews','procedures','academics','autonomy','story','events','school','calendar-integration','integration','runtime','storage'],

@@ -5,7 +5,7 @@ import { HOMEROOM_KEY,initializeHomeroom,failureResult,compileFailure,crisisObse
 import { initializeSemesterReviews, pendingSemesterReview, semesterReviewData, acknowledgeSemesterReview } from './reviews.js';
 import { initializeAnnualObservations,compileAnnualSuccess,compileThreeYearCohortCompletion,annualResult,ANNUAL_KEY,openAnnualObservations } from './annual.js';
 import { compileInstitution,tickOperation } from './procedures.js';
-import { compileAcademic,academicState,withAcademicProjection } from './academics.js';
+import { compileAcademic,academicState,withAcademicProjection,academicSupportDue,academicVersion } from './academics.js';
 import { compileCampus,schoolEnabled,schoolActions,schoolEventOccupied } from './campus.js';
 import { formalSlot,calendarMilestones,teacherTenureAt } from './schedule.js';
 import { planMode,THREE_YEAR,newThreeYearStart,semester,teachingTerm,yearData,nextPosition } from '../calendar/calendar.js';
@@ -302,6 +302,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
       }
     }
     if(schoolEnabled(world)){const term=teachingTerm(world.position.date),day=formalSlot(world).day;if(term&&!term.camp&&world.position.date===semester(term.id).end&&day.slots.at(-1).id===world.position.slotId&&!academicState(world).terms[term.id]?.closed)numericSession=execute(world,command,{type:'academic',action:'close',termId:term.id},numericSession,receipt,false,false,true);}
+    if(schoolEnabled(world)&&formalSlot(world).day.slots.at(-1).id===world.position.slotId&&academicSupportDue(academicState(world),world.position.date,numericSession.world().registry.enrollments.filter(e=>e.until===null).map(e=>e.personId)))numericSession=execute(world,command,{type:'academic',action:'support'},numericSession,receipt,false,false,true);
     numericSession=execute(world,command,{type:'institution-tick'},numericSession,receipt);
     numericSession=execute(world,command,{type:'npc-update'},numericSession,receipt);
     finishCalendarSlot(world,op);naturalAt(world,numericSession,world.position);history(world,command,'slot-complete',null,null,[],{activityIds:op.completedActivityIds});
@@ -478,9 +479,10 @@ export function forkWorldAttempt(openingSnapshot,options,abandonedSnapshot=openi
   for(const name of Object.keys(world.random))world.random[name]=createRandom(seeds.streams[name]).snapshot();
   const id=createId('operation',[attemptId,'initialize-retry']);
   const attemptIds=[...used,attemptId];
-  const request={id,attemptId,seeds:clone(seeds),openingRevision:r.revision,attemptIds,...(authorization?{authorization}: {})};
+  const academicPolicy=academicVersion(abandoned);
+  const request={id,attemptId,seeds:clone(seeds),openingRevision:r.revision,attemptIds,academicPolicy,...(authorization?{authorization}: {})};
   world.extensions[ATTEMPT_LINEAGE_KEY]={version:1,attemptIds};
-  const h=history(world,request,'retry',null,null,[],{previousAttemptId:old.attemptId,abandonedAttemptId:abandoned.identity.attemptId,openingRevision:r.revision,attemptIds});
+  const h=history(world,request,'retry',null,null,[],{previousAttemptId:old.attemptId,abandonedAttemptId:abandoned.identity.attemptId,openingRevision:r.revision,attemptIds,academicPolicy});
   r.revision++;r.commits.push({id,attemptId,revision:r.revision,request:canonicalData(request),historyIds:[h.id],numericReceiptIds:[],draws:[]});
   validateWorldState(world);return world;
 }

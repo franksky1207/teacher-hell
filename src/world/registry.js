@@ -119,7 +119,7 @@ export function applySchoolOperation(w,op,at){
   assertShape(op,['type','personIds','reason']);list(op.personIds);unique(op.personIds);need(op.personIds.length>0,'Graduate list required');
   for(const personId of op.personIds)applySchoolOperation(w,{type:'school-leave',personId,status:'graduated',reason:op.reason},at);
  }else if(op.type==='school-leave'){
-  assertShape(op,['type','personId','status','reason']);identifier(op.reason);need(['transferred-out','suspended','delayed','graduated'].includes(op.status),'Unknown leaving status');
+  assertShape(op,['type','personId','status','reason']);identifier(op.reason);need(['transferred-out','suspended','delayed','graduated','course-completed','incomplete'].includes(op.status),'Unknown leaving status');
   const e=r.enrollments.find(e=>e.personId===op.personId&&e.until===null);need(e,'No active enrollment');
   if(op.status==='graduated')need(r.academicYear-r.classes[e.classId].cohortStart>=2&&Number(at.slice(0,4))>=r.classes[e.classId].cohortStart+3,'Cannot graduate before grade three');
   e.until=at;e.status=op.status;
@@ -196,7 +196,7 @@ export function validateRegistry(w){
  const active=new Set();unique(list(r.enrollments).map(e=>e.id));need(r.enrollments.every(e=>/^school-enrollment:[1-9][0-9]*$/.test(e.id)&&Number(e.id.split(':')[1])<r.nextEnrollment),'Enrollment counter does not follow stored IDs');
  const byPerson=new Map();
  for(const e of r.enrollments){assertShape(e,['id','personId','cohortId','classId','from','until','reason','status']);identifier(e.id);identifier(e.reason);need(w.people[e.personId]?.kind==='student'&&r.classes[e.classId]?.cohortId===e.cohortId,'Invalid enrollment identity');date(e.from);if(e.until!==null){date(e.until);need(e.until>=e.from&&e.status!=='enrolled','Enrollment interval reversed or not closed');}else{need(!active.has(e.personId)&&e.status==='enrolled','Multiple current enrollments');active.add(e.personId);}
-  need(['enrolled','transfer-in','change-class','repeat','return','transferred-out','suspended','delayed','graduated'].includes(e.status),'Invalid enrollment status');
+  need(['enrolled','transfer-in','change-class','repeat','return','transferred-out','suspended','delayed','graduated','course-completed','incomplete'].includes(e.status),'Invalid enrollment status');
   const rows=byPerson.get(e.personId)??[];rows.push(e);byPerson.set(e.personId,rows);
  }
  for(const rows of byPerson.values()){rows.sort((a,b)=>a.from.localeCompare(b.from));for(let i=1;i<rows.length;i++)need(rows[i-1].until!==null&&rows[i-1].until<=rows[i].from,'Overlapping person enrollment');}

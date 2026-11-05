@@ -21,10 +21,10 @@ import { annualOpening,runAnnual } from './support/annual-scenario.js';
 // skipped calendar baselines are NOT a legal three-year production playthrough.
 function probe(){
  let w=year(year(longPlan(initial(74)),2027),2028);
- const personId=n(w).classroom.studentIds[0],records=[1,2,3].flatMap(level=>['autumn','spring'].flatMap(half=>curriculum(level,'science').map(c=>({...c,level,half,mark:80,earned:c.credits}))));
+ const personId=n(w).classroom.studentIds[0],records=[1,2,3].flatMap(level=>['autumn','spring'].flatMap(half=>curriculum(level,'science',null,null,2,half).map(c=>({...c,level,half,mark:80,earned:c.credits}))));
  const cause=sourceFact(w,{type:'academic-recognition',records},[personId]);w=cause.world;
  w=prepareWorldOperation(w,{...request(w,'cohort-recognize',[{type:'academic',action:'open',termId:'2028:autumn'},{type:'academic',action:'recognize',personId,records,basisFactId:cause.fact.id}]),calendarContext:{kind:'procedure'}}).world;
- return baseline(w,'2029-06-22');
+ return baseline(w,'2029-06-29');
 }
 function compiled(w,terminal=true){return compileCohortCompletion(w,id('operation','cohort-probe'),{terminal});}
 // Internal transaction harness only. It executes the production school adapter,
@@ -39,11 +39,11 @@ function materialize(w,plan){
  return {after,h,append};
 }
 
-test('T3 compiler unit: official academic recognition yields mixed graduation/extension with no mutation or fourth year',()=>{
+test('T3 compiler unit: official academic recognition yields mixed graduation/incomplete study with no mutation or fourth year',()=>{
  const w=probe(),before=JSON.stringify(w),plan=compiled(w),a=plan.archive;
  assert.equal(a.data.outcomes.length,40);assert.equal(a.data.outcomes.filter(o=>o.qualification.eligible).length,1);
  for(const o of a.data.outcomes)assert.deepEqual(o.qualification,readAcademicQualification(w,o.personId));
- assert.equal(plan.operations.filter(o=>o.type==='school'&&o.change.status==='delayed').length,39);
+ assert.equal(plan.operations.filter(o=>o.type==='school'&&o.change.status==='incomplete').length,39);
  assert.ok(!plan.operations.some(o=>['school-year','school-cohort'].includes(o.change?.type)));
  assert.deepEqual(compiled(w),plan);assert.equal(JSON.stringify(w),before);
 });

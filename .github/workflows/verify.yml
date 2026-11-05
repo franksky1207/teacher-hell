@@ -4,6 +4,10 @@ on:
     branches: [main]
   workflow_dispatch:
     inputs:
+      academic_source:
+        description: A1 academic-only extraction from retained T4 files; never runs a game driver
+        type: boolean
+        default: false
       s2_phase:
         description: S2 analysis, acceptance, browser, or faults (empty disables)
         type: string
@@ -36,11 +40,11 @@ permissions:
   contents: read
   actions: read
 concurrency:
-  group: foundation-${{ github.event_name == 'workflow_dispatch' && (inputs.three_year || inputs.s2_phase != '') && github.run_id || github.event.pull_request.number || github.ref }}
+  group: foundation-${{ github.event_name == 'workflow_dispatch' && (inputs.three_year || inputs.s2_phase != '' || inputs.academic_source) && github.run_id || github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 jobs:
   quick:
-    if: github.event_name != 'workflow_dispatch' || (!inputs.three_year && inputs.s2_phase == '')
+    if: github.event_name != 'workflow_dispatch' || (!inputs.three_year && inputs.s2_phase == '' && !inputs.academic_source)
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -50,7 +54,17 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npm run verify:quick
+      - name: Scoped validation (A1 never runs annual or three-year drivers)
+        shell: bash
+        run: |
+          if [[ "$(git log -1 --format=%s)" == A1:* ]]; then
+            npm run check
+            npm run test:academic
+            node --test --test-name-pattern='detached complete world/opening|physical v2' test/storage.test.js
+            npm run build
+          else
+            npm run verify:quick
+          fi
 
   three-year:
     if: github.event_name == 'workflow_dispatch' && inputs.three_year
@@ -171,4 +185,31 @@ jobs:
           path: |
             work/source/s2-*.json
             work/source/storage-checks.json
+          if-no-files-found: error
+
+  a1-academics:
+    if: github.event_name == 'workflow_dispatch' && inputs.academic_source
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        difficulty: [easy, normal, hard]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - uses: actions/download-artifact@v4
+        with:
+          name: t4-three-year-${{ matrix.difficulty }}
+          path: work/a1-source
+          run-id: ${{ matrix.difficulty == 'easy' && '41971561739' || '41971866724' }}
+          github-token: ${{ github.token }}
+      - name: Extract academic facts and recalculate only; no calendar/game simulation
+        run: node --max-old-space-size=4096 simulation/school-academics.js --extract work/a1-source
+      - uses: actions/upload-artifact@v4
+        with:
+          name: a1-academic-${{ matrix.difficulty }}
+          path: work/a1-source/a1-academic.json
           if-no-files-found: error

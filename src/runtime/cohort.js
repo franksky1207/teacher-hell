@@ -3,7 +3,7 @@
 import { assertShape } from '../player/panel.js';
 import { createId } from '../contracts/foundation.js';
 import { canonicalData } from '../changes/settlement.js';
-import { academicState,readAcademicQualification } from './academics.js';
+import { academicState,readAcademicQualification,qualificationDisposition } from './academics.js';
 const r=w=>w.extensions['teacher-hell/world'];
 const need=(v,m)=>{if(!v)throw new RangeError(`COHORT: ${m}`);};
 const same=(a,b)=>canonicalData(a)===canonicalData(b);
@@ -17,9 +17,9 @@ export function compileCohortCompletion(w,operationId,{terminal=false}={}){
  const academics=academicState(w),outcomes=entries.map(e=>({personId:e.personId,qualification:readAcademicQualification(w,e.personId,academics)}));
  const eventId=createId('event',[operationId,'cohort-completion']),stageId=createId('stage',[operationId,'cohort-completion']),factId=createId('fact',[operationId,'cohort-completion']),subjectIds=[w.identity.playerId,...outcomes.map(o=>o.personId)];
  const operations=[{type:'open-event',event:{schemaVersion:1,id:eventId,definitionId:'procedure:cohort-completion',contentVersion:'school-v1',type:'direct',participantIds:subjectIds,stageId,facts:[],knowledge:[],results:[],choice:null}},
-  {type:'fact',id:factId,eventId,stageId,subjectIds,witnessIds:[w.identity.playerId],description:'學校依三年學業紀錄確認本屆學生畢業或延修資格，保留人物及學籍歷史。',data:{type:'cohort-completion',outcomes},categoryCodes:[],causeIds:[]},
+  {type:'fact',id:factId,eventId,stageId,subjectIds,witnessIds:[w.identity.playerId],description:outcomes.some(o=>o.qualification.version===2)?'學校依學業紀錄區分畢業證書、修業證明與尚未完成修業資格，保留人物及學籍歷史。':'學校依三年學業紀錄確認本屆學生畢業或延修資格，保留人物及學籍歷史。',data:{type:'cohort-completion',outcomes},categoryCodes:[],causeIds:[]},
   {type:'reveal',actorId:w.identity.playerId,factId,source:{kind:'observation',actorId:w.identity.playerId,basisFactId:factId}},
-  ...outcomes.map(o=>({type:'school',basisFactId:factId,change:{type:'school-leave',personId:o.personId,status:o.qualification.eligible?'graduated':'delayed',reason:factId}}))];
+  ...outcomes.map(o=>({type:'school',basisFactId:factId,change:{type:'school-leave',personId:o.personId,status:qualificationDisposition(o.qualification),reason:factId}}))];
  if(terminal)operations.push({type:'school',basisFactId:factId,change:{type:'school-end-homeroom',classId,reason:factId}});
  return {operations,archive:{eventId,stageId,factIds:[factId],data:{classId,outcomes}}};
 }
@@ -109,6 +109,6 @@ export function validateCohortArchive(w,h){
   for(const o of h.data.outcomes){
    need(same(o.qualification,readAcademicQualification(prefix,o.personId,academics)),'cohort qualification changed');
    const matches=rows.filter(s=>s.data.change.personId===o.personId);
-   need(matches.length===1&&matches[0].order>fact.order&&matches[0].order<h.order&&same(matches[0].data,{basisFactId:fact.id,change:{type:'school-leave',personId:o.personId,status:o.qualification.eligible?'graduated':'delayed',reason:fact.id}}),'individual graduation or extension lacks its ordered causal receipt');
+   need(matches.length===1&&matches[0].order>fact.order&&matches[0].order<h.order&&same(matches[0].data,{basisFactId:fact.id,change:{type:'school-leave',personId:o.personId,status:qualificationDisposition(o.qualification),reason:fact.id}}),'individual graduation or extension lacks its ordered causal receipt');
   }
 }

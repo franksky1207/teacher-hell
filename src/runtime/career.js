@@ -186,7 +186,7 @@ function compileCompletion(w,span){
   need(registry.academicYear===r.plan.startYear+2&&registry.assignments.some(a=>a.personId===w.identity.playerId&&a.roleId===9&&a.classId===first.classroom.id&&a.until===w.position.date),'three-year duty must end on its real completion date');
   need(!registry.enrollments.some(e=>e.classId===first.classroom.id&&e.until===null),'original class still contains active enrollments');
   const graduated=archive.data.outcomes.filter(o=>o.qualification.eligible).length,delayed=archive.data.outcomes.length-graduated;
-  ending.fragments.push({layer:'objective',text:`本屆實際結屆學生中，${graduated}人符合畢業資格，${delayed}人依學籍制度延修。`,refs:[archive.id]},{layer:'objective',text:`三年正式總評為${rating.grade}，原始總分${rating.score}。`,refs:reports.map(h=>h.id)});
+  ending.fragments.push({layer:'objective',text:archive.data.outcomes.some(o=>o.qualification.version===2)?`本屆實際結屆學生中，${graduated}人符合畢業資格，${archive.data.outcomes.filter(o=>o.qualification.certificateEligible).length}人符合修業證明資格，${archive.data.outcomes.filter(o=>!o.qualification.eligible&&!o.qualification.certificateEligible).length}人尚未完成證書資格；未自動判定為延修。`:`本屆實際結屆學生中，${graduated}人符合畢業資格，${delayed}人依學籍制度延修。`,refs:[archive.id]},{layer:'objective',text:`三年正式總評為${rating.grade}，原始總分${rating.score}。`,refs:reports.map(h=>h.id)});
   ending.text=ending.fragments.map(f=>f.text).join('\n');
   rating.details.scale={years:3,cohorts:1,teachingYears:3,qualityObservations:2,weights:{...CAREER_LIMITS}};
  }

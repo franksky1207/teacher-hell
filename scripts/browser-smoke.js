@@ -60,11 +60,11 @@ try {
   await evaluate('document.querySelector("#status").dataset.status="pending"');
   await call('Page.reload',{},sessionId);await passed();
   const worldCheck=await evaluate(`(async()=>{
-    const {startWorld,prepareWorldOperation}=await import('../src/runtime/transactions.js');
-    const {restoreWorldState}=await import('../src/runtime/model.js');
-    const {readPlayerView}=await import('../src/runtime/views.js');
-    const {createId}=await import('../src/contracts/foundation.js');
-    const f=await (await fetch('../health-fixture.json')).json();f.events=[];
+    const {startWorld,prepareWorldOperation}=await import('./src/runtime/transactions.js');
+    const {restoreWorldState}=await import('./src/runtime/model.js');
+    const {readPlayerView}=await import('./src/runtime/views.js');
+    const {createId}=await import('./src/contracts/foundation.js');
+    const f=await (await fetch('./health-fixture.json')).json();f.events=[];
     const w=startWorld(f,{id:'browser-synthetic',validation:'unverified',positions:[f.position]});
     const q={id:createId('operation',['browser-synthetic']),attemptId:w.identity.attemptId,actorId:w.identity.playerId,expectedRevision:0,preconditions:[],operations:[{type:'sample',id:'draw',stream:'events',weights:[1,2,3]}]};
     const before=JSON.stringify(w),next=prepareWorldOperation(w,q),restored=restoreWorldState(JSON.stringify(next.world));

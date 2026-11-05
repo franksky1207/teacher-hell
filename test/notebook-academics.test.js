@@ -4,6 +4,7 @@ import {projectNotebookAcademics,renderNotebookAcademics,isExamScorePublished,is
 import {createCareerOpening} from '../src/runtime/opening.js';
 import {academicWorld,completeAcademic,academicBaseline} from './support/academic-scenario.js';
 import {readSchoolRoster} from '../src/runtime/views.js';
+import {readGrades} from '../src/runtime/academics.js';
 test('14-D: current class roster only, opening term has no fabricated marks or earned credits',()=>{
  const world=academicWorld(),before=JSON.stringify(world);
  const overview=projectNotebookAcademics(world);
@@ -20,15 +21,17 @@ test('14-D: current class roster only, opening term has no fabricated marks or e
  assert.doesNotMatch(html,/符合畢業條件/);
  assert.equal(JSON.stringify(world),before);
 });
-test('14-D: closed academic semester reads actual school marks, scores and earned credits only',()=>{
+test('14-D: closed academic semester remains computed but release is deferred in notebook',()=>{
  const world=completeAcademic(),base=projectNotebookAcademics(world);
  const person=base.students[0],data=projectNotebookAcademics(world,person.id,'2026:autumn');
- assert.ok(data.transcript.closed);
+ const result=readGrades(world,person.id,'2026:autumn');
+ assert.ok(result.semester.courses.length>0);
+ assert.equal(data.pendingPublication,true);
+ assert.equal(data.transcript.closed,false);
  assert.equal(data.transcript.assessments.length,4);
- assert.ok(data.transcript.courses.length>0);
- assert.ok(data.transcript.courses.every(c=>Number.isFinite(c.mark)));
- assert.match(renderNotebookAcademics(data),/學期/);
- assert.match(renderNotebookAcademics(data),/累積學分/);
+ assert.deepEqual(data.transcript.courses,[]);
+ assert.equal(data.qualification,null);
+ assert.match(renderNotebookAcademics(data),/隔天開放查閱/);
 });
 test('14-D: invalid student or term rejected, no other class roster listed',()=>{
  const world=academicWorld(),roster=projectNotebookAcademics(world);

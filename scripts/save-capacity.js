@@ -248,7 +248,7 @@ async function study(manifestFile='work/s1/manifest.json',output='simulation/res
 }
 async function main(args){
  const [cmd,...rest]=args;
- if(cmd==='attribute'){const [directory]=rest,manifest=JSON.parse(await readFile(`${directory}/manifest.json`,'utf8')),bytes=await readFile(`${directory}/completed.json`);assert.equal(sha256(bytes),manifest.files['completed.json'].sha256);const report={difficulty:manifest.difficulty,source:manifest.files['completed.json'],attribution:attributeSave(JSON.parse(bytes.toString()))};await writeFile(`${directory}/s2-analysis.json`,JSON.stringify(report,null,2));console.log('::notice title=S2 analysis::'+JSON.stringify(report));}
+ if(cmd==='attribute'){const [directory]=rest,manifest=JSON.parse(await readFile(`${directory}/manifest.json`,'utf8')),bytes=await readFile(`${directory}/completed.json`);assert.equal(sha256(bytes),manifest.files['completed.json'].sha256);const report={difficulty:manifest.difficulty,source:manifest.files['completed.json'],attribution:attributeSave(JSON.parse(bytes.toString()))};await writeFile(`${directory}/s2-analysis.json`,JSON.stringify(report,null,2));const encoded=Buffer.from(JSON.stringify(report)).toString('base64');for(let i=0;i<encoded.length;i+=3000)console.log(`::notice title=S2 analysis ${i/3000}::${encoded.slice(i,i+3000)}`);}
  else if(cmd==='worker'){assert.equal(rest.length,3);console.log(JSON.stringify(await measureFile(...rest)));}
  else if(cmd==='fixtures'){assert.ok(rest.length<=1);const m=await fixtures(...rest);console.log(JSON.stringify(m,null,2));}
  else if(cmd==='study'){assert.ok(rest.length<=2);await study(...rest);}

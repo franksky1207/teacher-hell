@@ -16,3 +16,12 @@ test('formal launch preserves rerolled candidate and round trips all three diffi
   assert.deepEqual(restored.world,w);
  }
 });
+
+test('experienced launch accepts the complete uint32 seed range',()=>{
+ const candidate=createCandidate({seed:12,playerId:'teacher',schoolId:'school'});
+ for(const seed of [0,0x80000000,0xffffffff]){
+  const w=createCareerOpening({candidate,seed,taipeiDate:'2026-11-05',difficulty:'easy',subject:'英文',careerKey:`seed-${seed}`});
+  assert.equal(teacherTenure(w),20);
+  assert.deepEqual(restoreSave(encodeSave(createSave(w,w))).world,w);
+ }
+});

@@ -45,7 +45,9 @@
     "demo:career:report": "node --max-old-space-size=3072 --expose-gc scripts/career-report.js",
     "demo:completion": "node --expose-gc scripts/completion-demo.js",
     "test:completion:browser": "npm run demo:completion && npm run build && node scripts/storage-browser.js --completion-only",
-    "test:academic": "node scripts/project.js test academic"
+    "test:academic": "node scripts/project.js test academic",
+    "test:game:browser": "npm run build && node scripts/game-browser.js",
+    "deploy:preview": "bash scripts/deploy-preview.sh"
   },
   "devDependencies": {
     "acorn": "8.15.0"

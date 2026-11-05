@@ -80,7 +80,7 @@ try {
   };
   if(process.argv.includes('--s2')){
     const manifest=JSON.parse(await readFile(resolve(root,'work/source/manifest.json'),'utf8'));
-    const testId=temporary.split('/').at(-1),expected=manifest.files['completed.json'].sha256;
+    const testId=temporary.split('/').at(-1)+(manifest.difficulty==='easy'&&!process.argv.includes('--legacy')?'-faults':''),expected=manifest.files['completed.json'].sha256;
     const run=init=>`(async()=>{const checks=await import('./test/support/storage-checks.js');return checks.s2Storage(${JSON.stringify(testId)},${init},${JSON.stringify(expected)});})()`;
     const initial=await evalIn(run(true),sessionId,1200000);
     await call('Page.navigate',{url:'about:blank'},sessionId);await call('Page.navigate',{url},sessionId);await passed();

@@ -173,6 +173,16 @@ export async function s2Storage(testId,initialize,expected){
   const prior=JSON.parse(r.commits.at(-1).request);
   check(prepareWorldOperation(stored.payload.world,prior).duplicate,'Terminal replay was not deduplicated');
   await rejects(()=>prepareWorldOperation(stored.payload.world,{...prior,id:id('operation','s2-after-complete')}),'CAREER_COMPLETE');
+  if(initialize&&testId.endsWith('-faults')){
+   metrics.realSourceFaults=[];
+   for(const mode of ['abort','quota','stale']){
+    const driver=createIndexedDBStorage({factory:globalThis.indexedDB,namespace:'test',testId,faults:{beforeCommit({transaction}){if(mode==='abort')transaction.abort();if(mode==='quota')throw new DOMException('injected quota','QuotaExceededError');}}});
+    await timed('failedWrite-'+mode,()=>rejects(()=>driver.write(1,stored.payload,mode==='stale'?null:stored.token),mode==='stale'?'STALE':mode==='quota'?'QuotaExceededError':undefined));
+    // Full-payload reload verifies no prepared pages escaped the aborted CAS.
+    let preserved=await db.read(1);check(equal(preserved.token,stored.token),'Failed write changed token');
+    check(await hash(JSON.stringify(preserved.payload))===expected,'Failed write changed source');preserved=null;await driver.close();globalThis.gc?.();metrics.realSourceFaults.push(mode);
+   }
+  }
   metrics.revision=stored.token.revision;stored=null;globalThis.gc?.();
   const raw=await new Promise((resolve,reject)=>{const req=globalThis.indexedDB.open(`teacher-hell:test:${testId}:v1:slot1`,1);req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});
   const physical=await new Promise((resolve,reject)=>{const tx=raw.transaction(['state','pages']),h=tx.objectStore('state').get('save'),p=tx.objectStore('pages').getAll();tx.oncomplete=()=>resolve({head:h.result,pages:p.result});tx.onabort=()=>reject(tx.error);});raw.close();

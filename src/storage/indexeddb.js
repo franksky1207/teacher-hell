@@ -13,7 +13,7 @@ async function pageDigest(pages){
 }
 export async function packStoredText(text){
   // Older engines retain the original format; never write a codec they cannot read.
-  if(typeof globalThis.CompressionStream!=='function'||typeof globalThis.DecompressionStream!=='function'){
+  if(typeof globalThis.CompressionStream!=='function'||typeof globalThis.DecompressionStream!=='function'||!globalThis.crypto?.subtle){
     const pages=[];for(let i=0;i<text.length;i+=PAGE_BYTES)pages.push(text.slice(i,i+PAGE_BYTES));
     return {pages,metadata:{chunkCount:pages.length}};
   }
@@ -25,10 +25,14 @@ export async function packStoredText(text){
     if(end<text.length&&text.charCodeAt(end-1)>=0xd800&&text.charCodeAt(end-1)<=0xdbff)end--;
     const bytes=encoder.encode(text.slice(offset,end));offset=end;rawBytes+=bytes.length;controller.enqueue(bytes);
   }}),pages=[];
+  let pending=new Uint8Array(PAGE_BYTES),used=0;
   const reader=source.pipeThrough(new globalThis.CompressionStream('gzip')).getReader();
   try{for(;;){const {done,value:bytes}=await reader.read();if(done)break;
-    for(let i=0;i<bytes.length;i+=PAGE_BYTES)pages.push(bytes.slice(i,i+PAGE_BYTES));
+    for(let i=0;i<bytes.length;){const count=Math.min(PAGE_BYTES-used,bytes.length-i);pending.set(bytes.subarray(i,i+count),used);used+=count;i+=count;
+      if(used===PAGE_BYTES){pages.push(pending);pending=new Uint8Array(PAGE_BYTES);used=0;}
+    }
   }}finally{await reader.cancel().catch(()=>{});reader.releaseLock();}
+  if(used)pages.push(pending.slice(0,used));
   return {pages,metadata:{format:2,codec:'gzip',rawBytes,sha256:await pageDigest(pages),chunkCount:pages.length}};
 }
 export async function unpackStoredText(head,pages){
@@ -36,7 +40,7 @@ export async function unpackStoredText(head,pages){
   if(head.format===undefined){ensure(pages.every(p=>typeof p==='string'),'CORRUPT','Invalid legacy pages');return pages.join('');}
   ensure(head.format===2&&head.codec==='gzip','VERSION','Unsupported physical save format/codec');
   ensure(Number.isSafeInteger(head.rawBytes)&&head.rawBytes>0&&typeof head.sha256==='string'&&/^[0-9a-f]{64}$/.test(head.sha256)&&pages.every(p=>p instanceof Uint8Array&&p.length>0&&p.length<=PAGE_BYTES),'CORRUPT','Invalid compressed metadata/pages');
-  ensure(typeof globalThis.DecompressionStream==='function','CODEC','This browser cannot decompress this save; use a supported browser');
+  ensure(typeof globalThis.DecompressionStream==='function'&&globalThis.crypto?.subtle,'CODEC','This browser cannot decompress this save; use a supported browser');
   ensure(await pageDigest(pages)===head.sha256,'CORRUPT','Compressed save checksum differs');
   let index=0,total=0;const decoder=new TextDecoder('utf-8',{fatal:true}),parts=[];
   const source=new ReadableStream({pull(controller){if(index===pages.length)controller.close();else controller.enqueue(pages[index++]);}});

@@ -123,6 +123,11 @@ export function applySchoolOperation(w,op,at){
   const e=r.enrollments.find(e=>e.personId===op.personId&&e.until===null);need(e,'No active enrollment');
   if(op.status==='graduated')need(r.academicYear-r.classes[e.classId].cohortStart>=2&&Number(at.slice(0,4))>=r.classes[e.classId].cohortStart+3,'Cannot graduate before grade three');
   e.until=at;e.status=op.status;
+ }else if(op.type==='school-end-homeroom'){
+  assertShape(op,['type','classId','reason']);identifier(op.reason);
+  need(op.classId===r.homeClassId&&!r.enrollments.some(e=>e.classId===op.classId&&e.until===null),'Complete the original roster before ending its duty');
+  const assignment=r.assignments.find(a=>a.personId===w.player.current.playerId&&a.roleId===9&&a.classId===op.classId&&a.until===null);
+  need(assignment,'No active original homeroom duty');assignment.until=at;
  }else if(op.type==='school-transfer-plan'){
   assertShape(op,['type','id','classId','personId','dueDate','source']);identifier(op.id);identifier(op.source);date(op.dueDate);
   need(!r.transfers.some(t=>t.id===op.id)&&op.dueDate>at,'Transfer must be a distinct future arrangement');

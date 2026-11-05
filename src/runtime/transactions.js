@@ -1,10 +1,11 @@
+import { compileCohortCompletion } from './cohort.js';
 import { initializePrehistory } from '../world/prehistory.js';
 import { careerResult,compileCareerCompletion } from './career.js';
 import { HOMEROOM_KEY,initializeHomeroom,failureResult,compileFailure,crisisObservation,authorizeRetry } from './homeroom.js';
 import { initializeSemesterReviews, pendingSemesterReview, semesterReviewData, acknowledgeSemesterReview } from './reviews.js';
 import { initializeAnnualObservations,compileAnnualSuccess,annualResult,ANNUAL_KEY,openAnnualObservations } from './annual.js';
 import { compileInstitution,tickOperation } from './procedures.js';
-import { compileAcademic,academicState,withAcademicProjection,readAcademicQualification } from './academics.js';
+import { compileAcademic,academicState,withAcademicProjection } from './academics.js';
 import { compileCampus,schoolEnabled,schoolActions,schoolEventOccupied } from './campus.js';
 import { formalSlot,calendarMilestones,teacherTenureAt } from './schedule.js';
 import { planMode,THREE_YEAR,newThreeYearStart,semester,teachingTerm,yearData,nextPosition } from '../calendar/calendar.js';
@@ -80,13 +81,10 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     syncNumeric(world,numericSession);const n=numericSession.world(),target=n.registry.academicYear+1,y=yearData(target),next=nextPosition(world.position,r.plan.startYear,planMode(r.plan));
     ensure(world.extensions[ANNUAL_KEY]&&annualResult(world),'ANNUAL_PENDING','A verified annual success is required');
     ensure(next.date===y.summerCamp&&next.slotId==='early'&&r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor),'TIME','Transition immediately before the next summer camp');
-    const academics=academicState(world),ended=n.registry.enrollments.filter(e=>e.until===null&&target-n.registry.classes[e.classId].cohortStart>2),outcomes=ended.map(e=>({personId:e.personId,qualification:readAcademicQualification(world,e.personId,academics)}));
-    if(outcomes.length){
-      const eventId=createId('event',[command.id,'cohort-completion']),stageId=createId('stage',[command.id,'cohort-completion']),factId=createId('fact',[command.id,'cohort-completion']);
-      for(const child of [{type:'open-event',event:{schemaVersion:1,id:eventId,definitionId:'procedure:cohort-completion',contentVersion:'school-v1',type:'direct',participantIds:[world.identity.playerId,...outcomes.map(o=>o.personId)],stageId,facts:[],knowledge:[],results:[],choice:null}},
-       {type:'fact',id:factId,eventId,stageId,subjectIds:[world.identity.playerId,...outcomes.map(o=>o.personId)],witnessIds:[world.identity.playerId],description:'學校依三年學業紀錄確認本屆學生畢業或延修資格，保留人物及學籍歷史。',data:{type:'cohort-completion',outcomes},categoryCodes:[],causeIds:[]},{type:'reveal',actorId:world.identity.playerId,factId,source:{kind:'observation',actorId:world.identity.playerId,basisFactId:factId}}])numericSession=execute(world,command,child,numericSession,receipt,false,false,true);
-      for(const o of outcomes)numericSession=execute(world,command,{type:'school',basisFactId:factId,change:{type:'school-leave',personId:o.personId,status:o.qualification.eligible?'graduated':'delayed',reason:factId}},numericSession,receipt,false,false,true);
-      history(world,command,'cohort-completion',eventId,stageId,[factId],{classId:n.registry.homeClassId,outcomes});
+    if(n.registry.enrollments.some(e=>e.until===null&&target-n.registry.classes[e.classId].cohortStart>2)){
+      const completion=compileCohortCompletion(world,command.id);
+      for(const child of completion.operations)numericSession=execute(world,command,child,numericSession,receipt,false,false,true);
+      const a=completion.archive;history(world,command,'cohort-completion',a.eventId,a.stageId,a.factIds,a.data);
     }
     numericSession=execute(world,command,{type:'school',basisFactId:null,change:{type:'school-year',academicYear:target}},numericSession,receipt,false,false,true);
     if(target===n.registry.cohortStart+3)numericSession=execute(world,command,{type:'school',basisFactId:null,change:{type:'school-cohort'}},numericSession,receipt,false,false,true);
@@ -169,6 +167,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     const data=lifecycleChange(world,op),event=findEvent(world,op.eventId);
     history(world,command,'event-lifecycle',event.id,event.stageId,[op.basisFactId],data);
   } else if(op.type==='school'){
+    if(op.change.type==='school-end-homeroom')ensure(npcInternal,'ANNUAL','Normal duty completion is internal to the atomic completion transaction');
     if(world.extensions[ANNUAL_KEY]&&['school-year','school-cohort','school-graduate'].includes(op.change.type))ensure(npcInternal,'ANNUAL','Formal affiliations require the annual transition');
     if(world.extensions[HOMEROOM_KEY]&&op.change.type==='school-assignment'){const n=numericSession.world(),current=n.registry.assignments.find(a=>a.id===op.change.endsId);if(current?.personId===world.identity.playerId&&current.roleId===9&&[world.extensions[HOMEROOM_KEY].classId,n.registry.homeClassId].includes(current.classId))ensure(storyInternal,'DUTY_SOURCE','Original duty execution requires its registered story consequence');if(op.change.personId===world.identity.playerId&&op.change.roleId===9&&op.change.classId!==null)ensure(npcInternal,'DUTY_SOURCE','Only a lawful annual transition assigns the formal homeroom');}
     const result=executeSchool(world,op,numericSession);

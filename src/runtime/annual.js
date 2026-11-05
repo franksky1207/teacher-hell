@@ -1,3 +1,4 @@
+import { compileCohortCompletion,beforeCohortCompletion } from './cohort.js';
 import { failureResult } from './homeroom.js';
 /** Annual observations are projections of the world journal, never writable scores.
  * Semester reports remain a separate reading barrier. Each challenge uses its actual legal opening. */
@@ -202,7 +203,11 @@ export function validateAnnualObservations(w){
   const historicalEdges=new Map(relations(w).map(e=>[e.id,structuredClone(e.values)]));
   for(const change of r(w).history.slice(h.order).filter(h=>h.type==='effect').flatMap(h=>h.data.observed??[]).reverse())if(change.target.kind==='relationship'&&historicalEdges.has(change.target.id)){const values=historicalEdges.get(change.target.id);need(values[change.code]===change.after,'later relationship effect chain differs');values[change.code]=change.before;}
   for(const edge of h.data.endRelations)need(same(historicalEdges.get(edge.id),edge.values),'annual relationship endpoint changed');
-  if(same(w.position,h.data.at))need(same(snapshot(w,'end'),h.data.end)&&same(relations(w),h.data.endRelations),'annual endpoint differs from the current world');
+  if(same(w.position,h.data.at)){
+   const completion=r(w).history.find(c=>c.type==='cohort-completion'&&c.order>h.order&&c.at.date===h.at.date&&c.at.slotId===h.at.slotId);
+   const endpoint=completion?beforeCohortCompletion(w,completion):w;
+   need(same(snapshot(endpoint,'end'),h.data.end)&&same(relations(endpoint),h.data.endRelations),'annual endpoint differs from the current world');
+  }
   need(same(annualCoverage(before),h.data.coverage)&&!h.data.coverage.missing.length&&!h.data.coverage.undrawnDates.length,'annual coverage changed');
   need(h.data.status==='success'&&h.data.year===before.position.serviceYear&&evidence.rating.status==='rated','invalid annual success');
   need(names.every(name=>{const c=h.data.comparison[name];return c&&c.start===(baseline.start.abilities[name]??baseline.start.states[name])&&c.end===(h.data.end.abilities[name]??h.data.end.states[name])&&c.delta===c.end-c.start;}),'annual twelve-value comparison differs');
@@ -213,3 +218,25 @@ export function readAnnualResults(w){return r(w).history.filter(h=>h.type==='ann
 
 /** Shared N7 directed-perception observation; no numeric state is changed. */
 export function relationshipMetric(before,after){return mean([development(before['5-1'],after['5-1']),development(before['5-3'],after['5-3']),development(100-before['5-4'],100-after['5-4'])]);}
+
+/** T3 preparation only: T4 must consume operations + archive in the SAME owned
+ * transaction as its N7 report, ending and freeze. This returns no committable world
+ * and is intentionally absent from the public operation dispatcher. */
+export function compileThreeYearCohortCompletion(w,operationId){
+ need(planMode(r(w).plan)==='three-year'&&w.position.serviceYear===3,'third playable year in three-year mode required');
+ need(annualResult(w),'verified annual success required before cohort completion');
+ eligibility(w);
+ const success=annualResult(w),owner=r(w).commits.find(c=>c.id===success.operationId&&c.attemptId===success.attemptId);
+ if(owner)validateAnnualObservations(w);
+ else{
+  // The annual row may have just been compiled in T4's transaction-owned draft.
+  // Recompute it from the complete prefix; never accept a caller's success flag.
+  need(success.operationId===operationId&&success===r(w).history.at(-1)&&success.order===r(w).history.length,'uncommitted annual success must belong to this ordered transaction');
+  const before={...w,extensions:{...w.extensions,'teacher-hell/world':{...r(w),history:r(w).history.slice(0,-1)}}};
+  validateAnnualObservations(before);
+  need(same(compileAnnualSuccess(before),success.data),'uncommitted annual success differs from its actual sources');
+ }
+ need(same(success.data.at,w.position),'complete at the June annual success position');
+ const result=compileCohortCompletion(w,operationId,{terminal:true});
+ return {...result,successId:success.id,successOrder:success.order};
+}

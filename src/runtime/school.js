@@ -27,6 +27,10 @@ export function executeSchool(world,op,numericSession){
   if(change.personId!==null&&change.personId!==undefined&&numeric.people[change.personId])ensure(fact.subjectIds.includes(change.personId),'REFERENCE','School cause does not concern this person');
   else ensure(fact.subjectIds.includes(world.identity.playerId),'REFERENCE','New identity or arrangement requires a school/teacher cause');
  }
+ if(change.type==='school-end-homeroom'){
+  const fact=findFact(world,op.basisFactId);
+  ensure(fact.data.type==='cohort-completion'&&change.reason===fact.id&&fact.subjectIds.includes(world.identity.playerId),'REFERENCE','Normal duty completion requires its objective cohort fact');
+ }
  if(change.type==='school-transfer-plan')ensure(change.source===op.basisFactId,'REFERENCE','Transfer arrangement must retain its causal fact');
  if(change.type==='school-transfer-complete'){const t=numeric.registry?.transfers.find(t=>t.id===change.id);ensure(t?.source===op.basisFactId,'REFERENCE','Transfer completion changed its cause');}
  if(runtimeOf(world).history.some(h=>h.type==='academic')){

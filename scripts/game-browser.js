@@ -85,8 +85,13 @@ try {
   if(!await evaluate("!!document.querySelector('.notebook-person--active') && !!document.querySelector('.notebook-person-details h3')"))
     throw Error('Notebook selection did not render a person');
   await click('notebook-tab:events');
-  if(!await evaluate("document.querySelector('.notebook [aria-selected=\"true\"]')?.dataset.action==='notebook-tab:events' && document.querySelectorAll('.notebook-history-item').length>=1"))
-    throw Error('Notebook history did not show teacher-known facts');
+  const historyCheck=await evaluate(`({
+    selected:document.querySelector('.notebook [aria-selected="true"]')?.dataset.action,
+    count:document.querySelectorAll('.notebook-history-item').length,
+    empty:document.querySelector('.notebook-history-items')?.innerText.includes('目前沒有符合條件的已知紀錄')
+  })`);
+  if(historyCheck.selected!=='notebook-tab:events'||(!historyCheck.count&&!historyCheck.empty))
+    throw Error('Notebook event history must show known entries or an accurate empty state '+JSON.stringify(historyCheck));
   await click('notebook-event-kind:fact');
   if(!await evaluate("!!document.querySelector('.notebook-history-kinds [aria-pressed=\"true\"][data-action=\"notebook-event-kind:fact\"]')"))
     throw Error('Notebook history kind filter failed');

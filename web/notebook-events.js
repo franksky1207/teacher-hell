@@ -29,7 +29,7 @@ export function projectNotebookEvents(world){
    belief:attitudes[c.belief]??'紀錄中態度未標示'});
  }
  // Sort by the date the teacher could know about it, not the hidden event chronology.
- entries.sort((a,b)=>(b.learnedDate??'').localeCompare(a.learnedDate??'')||(a.kind==='fact'?-1:1));
+ entries.sort((a,b)=>(b.learnedDate??'').localeCompare(a.learnedDate??'')||(a.kind===b.kind?0:a.kind==='fact'?-1:1));
  return {entries};
 }
 export function renderNotebookEvents(data,{year='all',kind='all',page=1}={}){

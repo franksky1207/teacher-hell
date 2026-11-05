@@ -1,0 +1,14 @@
+/* Phase 13-A standalone reader; main shell links this in 13-B. */
+.story-view{position:absolute;bottom:1rem;left:clamp(.75rem,12vw,15rem);right:clamp(.75rem,8vw,9rem);display:flex;flex-direction:column;gap:.5rem;max-height:calc(100dvh - 7rem);color:#f8f4e9;z-index:2}
+.story-reader{background:#111c30ed;border:1px solid #d6c8aa;border-radius:.55rem;min-height:6rem;min-width:0;padding:1rem 1.2rem;box-shadow:0 8px 24px #0008}
+.story-reader[data-story-advance="next"]{cursor:pointer}
+.story-speaker{font-weight:700;font-size:.87rem;color:#f5d390;margin-bottom:.4rem}
+.story-text{margin:0;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}
+.story-navigation,.story-decision-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:.5rem}
+.story-page-number{margin-right:auto;font-size:.85rem;font-variant-numeric:tabular-nums}
+.story-confirm,.story-choice-panel,.story-finish,.story-resume{background:#111c30ed;border:1px solid #d6c8aa;border-radius:.55rem;padding:.65rem}
+.story-choice-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.5rem}
+.story-choice-grid button{min-width:0;white-space:normal;overflow-wrap:anywhere;text-align:left}
+.story-confirm p{margin:0 0 .5rem}
+.story-finish,.story-resume{text-align:right}
+@media(max-width:650px){.story-view{left:.5rem;right:.5rem;bottom:.5rem;max-height:calc(100dvh - 5rem)}.story-reader{padding:.8rem;min-height:5rem}.story-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.story-choice-grid button{font-size:.9rem;padding:.55rem .5rem}}

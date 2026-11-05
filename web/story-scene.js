@@ -13,7 +13,10 @@ export function projectStoryScene(world,view){
    tone:student&&Number.isSafeInteger(profile?.appearance?.variant)?profile.appearance.variant%6:0,
    speaking:id===page.speaker,id};
  });
- const speaker=page.speaker===null?'旁白':page.speaker===world.identity.playerId?'老師':cast.find(a=>a.id===page.speaker)?.name??(page.presentation==='phone'?'通話':'對話');
+ const castActor=Array.isArray(page.cast)?page.cast.find(a=>a.actorId===page.speaker):null;
+ const knownProfile=castActor?worldData.registry.profiles?.[castActor.actorId]:null;
+ const knownName=typeof knownProfile?.displayName==='string'&&knownProfile.displayName.trim()?knownProfile.displayName:null;
+ const speaker=page.speaker===null?'旁白':page.speaker===world.identity.playerId?'老師':cast.find(a=>a.id===page.speaker)?.name??knownName??(page.presentation==='phone'?'通話':'對話');
  return {label:page.scene==='school:counselling-corner'?'校園談話角落':'目前場景',cast,speaker};
 }
 export function renderStoryScene(scene){

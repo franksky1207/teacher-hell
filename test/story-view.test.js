@@ -142,3 +142,18 @@ test('13-F: scrolling chat or documents does not introduce extra story operation
  assert.equal((doc.match(/data-story-action="next"/g)||[]).length,1);
  assert.match(doc,/story-document/);
 });
+
+test('13-G: caller name is disclosed only from the current page cast',()=>{
+ const world={identity:{playerId:'teacher'},numeric:{evolution:{world:{
+  people:{parent:{kind:'other'},unseen:{kind:'other'}},
+  registry:{profiles:{parent:{displayName:'張家長'},unseen:{displayName:'秘密人物'}}}
+ }}}};
+ const page={text:'您好',speaker:'parent',presentation:'phone',scene:'school:counselling-corner',
+  cast:[{actorId:'parent',position:'center',expression:'calm'}]};
+ const projected=projectStoryScene(world,{page});
+ assert.equal(projected.cast.length,0);
+ assert.equal(projected.speaker,'張家長');
+ const html=renderStoryView({page,pageIndex:0,pageCount:1,canFinish:true,sceneView:projected});
+ assert.match(html,/張家長/);
+ assert.doesNotMatch(html,/秘密人物|story-actor--adult/);
+});

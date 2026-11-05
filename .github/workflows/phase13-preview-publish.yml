@@ -1,0 +1,45 @@
+name: Publish phase 13 verified preview
+on:
+  push:
+    branches:
+      - integrate/phase3-web-20261105
+    paths:
+      - .github/workflows/phase13-preview-publish.yml
+permissions:
+  contents: write
+concurrency:
+  group: teacher-hell-preview-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Verify phase 13 source before publication
+        run: |
+          npm run check
+          npm run test:module -- module=story,story-view,story-controller,story-shell,story-test-runner
+      - name: Configure automated publication identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Publish preview directory only
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/deploy-preview.sh
+      - name: Verify published preview tree preserves Pages root
+        run: |
+          git fetch origin gh-pages
+          test "$(git ls-tree FETCH_HEAD .nojekyll | wc -l)" -eq 1
+          test "$(git ls-tree FETCH_HEAD preview | wc -l)" -eq 1
+          test "$(git ls-tree FETCH_HEAD:preview index.html | wc -l)" -eq 1
+          test "$(git ls-tree FETCH_HEAD:preview web/game.js | wc -l)" -eq 1
+          echo "PASS: preview publication and Pages root preservation"

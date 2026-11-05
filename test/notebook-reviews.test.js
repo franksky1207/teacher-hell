@@ -8,6 +8,8 @@ import {academicBaseline} from './support/academic-scenario.js';
 import {request} from './support/runtime.js';
 import {yearData} from '../src/calendar/calendar.js';
 import {pendingSemesterReview} from '../src/runtime/reviews.js';
+import {createId} from '../src/contracts/foundation.js';
+import {restoreWorldState} from '../src/runtime/model.js';
 const initial=()=>{const f=foundationScenario(74);f.events=[];f.enrollments=[];return startReviewedSchoolCareer(f,{startYear:2026,subject:'國文',seed:75});};
 const finish=w=>prepareWorldOperation(w,{...request(w,'finish14E',[{type:'finish-slot',completedActivityIds:[]}]),calendarContext:{kind:'routine'}}).world;
 test('14-E: initial notebook contains no fabricated semester, year or ending',()=>{
@@ -42,4 +44,18 @@ test('14-E: all six notebook tabs include both formal summary views',()=>{
  const b=renderNotebookView({date:'2027-01-22',grade:1,tab:'career',career:{completed:false,serviceYear:1}});
  assert.match(a,/學期及學年回顧/);assert.match(b,/教師職涯/);
  assert.equal((a.match(/role="tab"/g)||[]).length,6);
+});
+
+test('14-E: real pending-review acknowledgment is timeless, persisted and cannot repeat',()=>{
+ const world=finish(academicBaseline(initial(),yearData(2027).winterFinal,'private'));
+ const pending=pendingSemesterReview(world),beforeDate=structuredClone(world.position),beforeNumeric=structuredClone(world.numeric),beforeRandom=structuredClone(world.random);
+ const requestData={id:createId('operation',[world.identity.attemptId,'read-semester-review',pending.id]),attemptId:world.identity.attemptId,expectedRevision:world.extensions['teacher-hell/world'].revision,actorId:world.identity.playerId,preconditions:[],operations:[{type:'read-semester-review',reviewId:pending.id}]};
+ const next=prepareWorldOperation(world,requestData).world;
+ assert.equal(pendingSemesterReview(next),null);
+ assert.equal(projectNotebookReviews(next).semesters[0].status,'read');
+ assert.deepEqual(next.position,beforeDate);
+ assert.deepEqual(next.numeric,beforeNumeric);
+ assert.deepEqual(next.random,beforeRandom);
+ assert.deepEqual(restoreWorldState(next),next);
+ assert.equal(prepareWorldOperation(next,requestData).duplicate,true);
 });

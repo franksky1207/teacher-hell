@@ -1,9 +1,9 @@
-import { compileCohortCompletion } from './cohort.js';
+import { compileCohortCompletion,validateCohortArchive } from './cohort.js';
 import { initializePrehistory } from '../world/prehistory.js';
-import { careerResult,compileCareerCompletion } from './career.js';
+import { careerResult,compileCareerCompletion,compileThreeYearCareerCompletion } from './career.js';
 import { HOMEROOM_KEY,initializeHomeroom,failureResult,compileFailure,crisisObservation,authorizeRetry } from './homeroom.js';
 import { initializeSemesterReviews, pendingSemesterReview, semesterReviewData, acknowledgeSemesterReview } from './reviews.js';
-import { initializeAnnualObservations,compileAnnualSuccess,annualResult,ANNUAL_KEY,openAnnualObservations } from './annual.js';
+import { initializeAnnualObservations,compileAnnualSuccess,compileThreeYearCohortCompletion,annualResult,ANNUAL_KEY,openAnnualObservations } from './annual.js';
 import { compileInstitution,tickOperation } from './procedures.js';
 import { compileAcademic,academicState,withAcademicProjection } from './academics.js';
 import { compileCampus,schoolEnabled,schoolActions,schoolEventOccupied } from './campus.js';
@@ -93,7 +93,13 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
   } else if(op.type==='settle-school-year'){
     assertShape(op,['type']);ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player settles a year');
     syncNumeric(world,numericSession);history(world,command,'annual-success',null,null,[],compileAnnualSuccess(world));
-    if(world.position.serviceYear===30)history(world,command,'career-completion',null,null,[],compileCareerCompletion(world));
+    if(planMode(r.plan)===THREE_YEAR&&world.position.serviceYear===3){
+      const completion=compileThreeYearCohortCompletion(world,command.id);
+      for(const child of completion.operations)numericSession=execute(world,command,child,numericSession,receipt,false,false,true);
+      const a=completion.archive;const archive=history(world,command,'cohort-completion',a.eventId,a.stageId,a.factIds,a.data);
+      syncNumeric(world,numericSession);validateCohortArchive(world,archive);
+      history(world,command,'career-completion',null,null,[],compileThreeYearCareerCompletion(world));
+    }else if(world.position.serviceYear===30)history(world,command,'career-completion',null,null,[],compileCareerCompletion(world));
   } else if(op.type==='settle-career'){
     assertShape(op,['type']);ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player settles a career');
     syncNumeric(world,numericSession);history(world,command,'career-completion',null,null,[],compileCareerCompletion(world));

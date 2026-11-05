@@ -77,12 +77,13 @@ export function validateCohortCompletions(w){
  for(const h of history.filter(h=>h.type==='cohort-completion')){
   need(!seen.has(h.data.classId),'duplicate class completion');seen.add(h.data.classId);
   const transition=history.find(s=>s.type==='year-transition'&&s.operationId===h.operationId&&s.attemptId===h.attemptId&&s.order>h.order);
-  // T4 must replace this closed gate with its complete atomic terminal validator.
-  // There is deliberately no accepted persisted three-year half-completion in T3.
-  need(transition,'completion requires its atomic year transition; three-year terminal is not enabled');
-  const success=history.find(s=>s.type==='annual-success'&&s.id===transition.data.successId&&s.order<h.order);
+  const terminal=history.find(s=>s.type==='career-completion'&&s.operationId===h.operationId&&s.attemptId===h.attemptId&&s.order>h.order);
+  const three=r(w).plan.career?.mode==='three-year';
+  need(three?terminal&&!transition:transition,'completion requires its atomic year transition or complete three-year terminal');
+  const success=history.find(s=>s.type==='annual-success'&&(three?s.operationId===h.operationId&&s.data.year===3:s.id===transition.data.successId)&&s.order<h.order);
+  if(three)need(terminal.data.years===3&&terminal.data.annualIds.includes(success?.id)&&success.order<r(w).facts.find(f=>f.id===h.factIds[0])?.order,'three-year completion lacks its ordered annual/terminal sources');
   const owner=r(w).commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId),operations=owner&&JSON.parse(owner.request).operations;
-  need(w.extensions['teacher-hell/annual-observations']&&success&&operations?.length===1&&operations[0].type==='transition-school-year','completion lacks its verified annual source/transaction');
+  need(w.extensions['teacher-hell/annual-observations']&&success&&operations?.length===1&&operations[0].type===(three?'settle-school-year':'transition-school-year'),'completion lacks its verified annual source/transaction');
   validateCohortArchive(w,h);
  }
 }

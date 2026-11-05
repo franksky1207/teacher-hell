@@ -19,7 +19,7 @@ export function validateMemorial(input){
 }
 /** Requires a world already validated at the save/session boundary. */
 export function memorialFromWorld(w){
- const h=careerResult(w);if(!h)return null;const d=h.data;
+ const h=careerResult(w);if(!h||h.data.mode==='three-year')return null;const d=h.data;
  const data={careerId:d.careerId,completionRef:h.id,completedAt:{...d.at},years:30,score:d.rating.score,grade:d.rating.grade,parts:d.rating.parts,cohorts:d.cohorts,people:d.people.map(p=>({...p,name:excerpt(p.name,80)})),events:d.events.map(e=>({...e,description:excerpt(e.description,240),subjectIds:e.subjectIds.slice(0,8)})),abilities:d.abilities,states:d.states,ending:excerpt(d.ending.text,1200)};
  return validateMemorial({kind:'teacher-hell-memorial',version:1,id:`memorial:${d.careerId}`,data,checksum:digest(data)});
 }

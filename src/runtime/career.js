@@ -1,3 +1,4 @@
+import { planMode,THREE_YEAR } from '../calendar/calendar.js';
 import { yearData } from '../calendar/calendar.js';
 import { sourceReader } from '../assessment/evidence.js';
 import { loadYear } from '../assessment/annual.js';
@@ -5,7 +6,7 @@ import { relationshipMetric } from './annual.js';
 import { academicState,readAcademicQualification } from './academics.js';
 /** Read-only N7 bridge. The validated world journal remains the sole authority.
  * No saved parallel world, fabricated annual successes, or implicit host clock. */
-import { rateCareer } from '../assessment/career.js';
+import { rateCareer,rateThreeYearCareer } from '../assessment/career.js';
 import { mean,development,outcomeScore,gradeForScore,CAREER_LIMITS } from '../assessment/grading.js';
 import { canonicalData } from '../changes/settlement.js';
 import { ABILITY_NAMES,STATE_NAMES,assertShape } from '../player/panel.js';
@@ -17,10 +18,11 @@ export const careerResult=w=>runtime(w).history.find(h=>h.type==='career-complet
 
 /** Only reports already checked by validateAnnualObservations enter this adapter.
  * Shared records are referenced; just cohort headers and remapped rows are small projections. */
-export function careerEvidence(w){
+export function careerEvidence(w,{years:span=30}={}){
+ need([3,30].includes(span),'unsupported source span');
  const r=runtime(w),reports=r.history.filter(h=>h.type==='annual-success').sort((a,b)=>a.data.year-b.data.year),records=new Map(),yearRefs=[],cohortRefs=[],sources=[];
  const n=w.numeric.evolution.world,registry=n.registry;
- const affiliationYear=date=>{const y=Number(date.slice(0,4));return Math.max(1,Math.min(30,y-r.plan.startYear+(date>=yearData(y).summerCamp?1:0)));};
+ const affiliationYear=date=>{const y=Number(date.slice(0,4));return Math.max(1,Math.min(span,y-r.plan.startYear+(date>=yearData(y).summerCamp?1:0)));};
  const put=row=>{need(!records.has(row.id),'duplicate canonical evidence ID');records.set(row.id,row);return row.id;};
  const cohorts=new Map();
  for(const h of reports){
@@ -79,17 +81,17 @@ export function careerEvidence(w){
  // Sustained assigned teaching is a single career-scale responsibility outcome,
  // not thirty major incidents. Reuse its measured N7 quality, never volume or tenure.
  // Committee findings stay independent; annual significance/grades are untouched.
- if(reports.length===30){
+ if(reports.length===span){
   const deliverySources=[...new Map(sources.filter(s=>s.criterion==='assigned-lessons-with-confirmed-domain-results').map(s=>[s.id,s])).values()],delivery=deliverySources.map(s=>records.get(s.id));
   const reader=sourceReader({provenance:'formal',resolve:id=>records.get(id)});yearRefs.forEach(ref=>loadYear(reader,ref));
-  if(delivery.length===30&&new Set(delivery.map(row=>row.year)).size===30&&delivery.every(row=>row.kind==='handling')&&!reader.missing.length){
-   observe(reports[29],'handling','sustained-teaching',outcomeScore(delivery),{criterion:'thirty-year-confirmed-teaching-responsibility',outcomeRefs:delivery.map(row=>row.id)} ,true);
+  if(delivery.length===span&&new Set(delivery.map(row=>row.year)).size===span&&delivery.every(row=>row.kind==='handling')&&!reader.missing.length){
+   observe(reports[span-1],'handling','sustained-teaching',outcomeScore(delivery),{criterion:span===30?'thirty-year-confirmed-teaching-responsibility':'three-year-confirmed-teaching-responsibility',outcomeRefs:delivery.map(row=>row.id)} ,true);
    const routineIds=new Set(delivery.map(row=>row.id));
    for(const ref of yearRefs){const summary=records.get(ref);records.set(ref,{...summary,evidenceRefs:summary.evidenceRefs.filter(id=>!routineIds.has(id))});}
   }
  }
  for(const h of reports){
-  if(h.data.year<30)observe(h,'quality','historical-quality',mean(Object.values(h.data.end.states)),{criterion:'historical-six-state-endpoint',snapshotRef:h.data.end.id});
+  if(h.data.year<span)observe(h,'quality','historical-quality',mean(Object.values(h.data.end.states)),{criterion:'historical-six-state-endpoint',snapshotRef:h.data.end.id});
   observe(h,'continuity','legal-coverage',100*h.data.coverage.completed/h.data.coverage.slots,{criterion:'validated-legal-slot-coverage',coverageRef:h.id});
  }
  // Legal summers belong to the continuous career even though next year's
@@ -125,8 +127,8 @@ export function careerEvidence(w){
 }
 
 /** Fixed prose fragments compose only already-established observations. Not an event engine. */
-export function composeCareerEnding({rating,start,end,events=[],opinions=[],relationships=[],unresolved=[]}){
- const fragments=[{layer:'objective',text:'三十個學年的正式紀錄在這裡合攏；未結的事情沒有因此消失。',refs:[]}];
+export function composeCareerEnding({rating,start,end,events=[],opinions=[],relationships=[],unresolved=[],years=30}){
+ const fragments=[{layer:'objective',text:years===3?'三個學年的正式紀錄在這裡合攏；未結的事情沒有因此消失。':'三十個學年的正式紀錄在這裡合攏；未結的事情沒有因此消失。',refs:years===3?[start.id,end.id]:[]}];
  const growing=ABILITY_NAMES.filter(n=>end.abilities[n]>start.abilities[n]);
  if(growing.length)fragments.push({layer:'objective',text:`與生涯起點相比，${growing.join('、')}有所成長。`,refs:[start.id,end.id]});
  if(end.states.精神<35||end.states.體力<30)fragments.push({layer:'objective',text:'最後留下的體力與精神紀錄，也記下了這段工作的消耗。',refs:[end.id]});
@@ -138,14 +140,17 @@ export function composeCareerEnding({rating,start,end,events=[],opinions=[],rela
  return {version:1,fragments,text:fragments.map(f=>f.text).join('\n'),grade:rating.grade};
 }
 
-export function compileCareerCompletion(w){
+export const compileCareerCompletion=w=>compileCompletion(w,30);
+export const compileThreeYearCareerCompletion=w=>compileCompletion(w,3);
+function compileCompletion(w,span){
  const r=runtime(w);need(!careerResult(w),'already completed');
  const reports=r.history.filter(h=>h.type==='annual-success').sort((a,b)=>a.data.year-b.data.year);
- need(w.position.serviceYear===30&&reports.length===30&&reports.every((h,i)=>h.data.year===i+1&&h.data.status==='success'),'thirty legal successful years required');
- need(!r.history.some(h=>h.type==='annual-failure'&&h.data.year===30),'failed thirtieth year');
- const evidence=careerEvidence(w),rating=rateCareer({yearRefs:evidence.yearRefs,cohortRefs:evidence.cohortRefs},evidence.source);
+ need(w.position.serviceYear===span&&reports.length===span&&reports.every((h,i)=>h.data.year===i+1&&h.data.status==='success'),span===30?'thirty legal successful years required':'three legal successful years required');
+ if(span===3)need(planMode(r.plan)===THREE_YEAR,'three-year career mode required');
+ need(!r.history.some(h=>h.type==='annual-failure'&&h.data.year===span),'failed final year');
+ const evidence=careerEvidence(w,{years:span}),rating=(span===3?rateThreeYearCareer:rateCareer)({yearRefs:evidence.yearRefs,cohortRefs:evidence.cohortRefs},evidence.source);
  need(rating.status==='rated','formal N7 evidence is insufficient');
- const first=reports[0].data.evidence.records.find(x=>x.id===evidence.records.get(evidence.yearRefs[0]).startRef),end=reports[29].data.end;
+ const first=reports[0].data.evidence.records.find(x=>x.id===evidence.records.get(evidence.yearRefs[0]).startRef),end=reports[span-1].data.end;
  const known=new Set(r.disclosures.filter(d=>d.actorId===w.identity.playerId).map(d=>d.factId));
  const visible=f=>known.has(f.id)||f.witnessIds.includes(w.identity.playerId);
  const important=new Map();
@@ -162,20 +167,39 @@ export function compileCareerCompletion(w){
  const states=new Map(r.history.filter(h=>h.type==='story').map(h=>[h.eventId,h]));
  const unresolved=[...states.values()].filter(h=>h.data.state.mode!=='ended'&&knownEvents.has(h.eventId)).map(h=>({id:h.id,eventId:h.eventId}));
  const academic=academicState(w);
- const ending=composeCareerEnding({rating,start:first,end,events,opinions,relationships:selected,unresolved});
- return {version:1,careerId:w.identity.careerId,years:30,at:structuredClone(w.position),annualIds:reports.map(h=>h.id),rating,
+ const ending=composeCareerEnding({rating,start:first,end,events,opinions,relationships:selected,unresolved,years:span});
+ if(span===3){
+  const archive=r.history.find(h=>h.type==='cohort-completion'&&h.data.classId===first.classroom.id);
+  need(archive&&archive.data.outcomes.length>0,'three-year qualification archive required');
+  const n=w.numeric.evolution.world,registry=n.registry;
+  need(r.plan.validation==='fixed-calendar-v2'&&registry.cohorts.length===1&&registry.cohorts[0].classId===first.classroom.id&&n.classroom.id===first.classroom.id&&n.classroom.studentIds.length===0,'three-year original class must be archived without replacement');
+  need(registry.academicYear===r.plan.startYear+2&&registry.assignments.some(a=>a.personId===w.identity.playerId&&a.roleId===9&&a.classId===first.classroom.id&&a.until===w.position.date),'three-year duty must end on its real completion date');
+  need(!registry.enrollments.some(e=>e.classId===first.classroom.id&&e.until===null),'original class still contains active enrollments');
+  const graduated=archive.data.outcomes.filter(o=>o.qualification.eligible).length,delayed=archive.data.outcomes.length-graduated;
+  ending.fragments.push({layer:'objective',text:`本屆實際結屆學生中，${graduated}人符合畢業資格，${delayed}人依學籍制度延修。`,refs:[archive.id]},{layer:'objective',text:`三年正式總評為${rating.grade}，原始總分${rating.score}。`,refs:reports.map(h=>h.id)});
+  ending.text=ending.fragments.map(f=>f.text).join('\n');
+  rating.details.scale={years:3,cohorts:1,teachingYears:3,qualityObservations:2,weights:{...CAREER_LIMITS}};
+ }
+ return {version:1,careerId:w.identity.careerId,years:span,...(span===3?{mode:THREE_YEAR}:{}),at:structuredClone(w.position),annualIds:reports.map(h=>h.id),rating,
   cohorts:evidence.cohortRefs.map(id=>{const c=evidence.records.get(id),years=reports.filter(h=>c.years.includes(h.data.year)),archive=r.history.find(h=>h.type==='cohort-completion'&&h.data.classId===years[0].data.end.classroom.id);return {id,years:c.years,students:c.studentIds.length,classId:years[0].data.end.classroom.id,annualIds:years.map(h=>h.id),qualificationRef:archive?.id??null,qualification:cohortQualification(w,c.studentIds,archive,academic,years.at(-1).id)};}),
   abilities:Object.fromEntries(ABILITY_NAMES.map(n=>[n,{start:first.abilities[n],end:end.abilities[n],delta:end.abilities[n]-first.abilities[n]}])),states:structuredClone(end.states),
   people:selected.map(({quality,...p})=>p),events,opinions,unresolved,ending};
 }
 export function validateCareerCompletion(w){
- const r=runtime(w),entries=r.history.filter(h=>h.type==='career-completion'),requests=r.commits.filter(c=>JSON.parse(c.request).operations?.some(o=>o.type==='settle-career'||o.type==='settle-school-year'&&r.history.some(h=>h.type==='annual-success'&&h.data.year===30&&h.operationId===c.id)));
+ const r=runtime(w),entries=r.history.filter(h=>h.type==='career-completion'),requests=r.commits.filter(c=>JSON.parse(c.request).operations?.some(o=>o.type==='settle-career'||o.type==='settle-school-year'&&r.history.some(h=>h.type==='annual-success'&&h.data.year===(r.plan.career?.mode===THREE_YEAR?3:30)&&h.operationId===c.id)));
  need(entries.length<=1&&entries.length===requests.length,'missing or repeated completion');
  if(!entries.length)return;
  const h=entries[0],owner=requests[0],request=JSON.parse(owner.request);
  need(owner.id===h.operationId&&owner.attemptId===h.attemptId&&request.operations.length===1&&request.actorId===w.identity.playerId,'completion ownership differs');
+ if(r.plan.career?.mode===THREE_YEAR){
+  const own=r.history.filter(s=>s.operationId===h.operationId&&s.attemptId===h.attemptId),annual=own.filter(s=>s.type==='annual-success'),archives=own.filter(s=>s.type==='cohort-completion');
+  need(request.operations[0].type==='settle-school-year'&&annual.length===1&&annual[0].data.year===3&&archives.length===1&&annual[0].order<archives[0].order&&archives[0].order<h.order&&own.at(-1)===h,'three-year terminal must be the same ordered annual/cohort/completion transaction');
+  need(own[0]===annual[0]&&equal(h.at,annual[0].at)&&equal(h.at,archives[0].at),'three-year completion changed its boundary');
+  need(!own.some(s=>s.type==='school'&&['school-year','school-cohort'].includes(s.data.change.type)),'three-year terminal cannot advance or replace the class');
+ }
+
  const before={...w,extensions:{...w.extensions,'teacher-hell/world':{...r,history:r.history.slice(0,h.order-1)}}};
- need(equal(compileCareerCompletion(before),h.data),'saved N7 completion or ending changed');
+ need(equal((r.plan.career?.mode===THREE_YEAR?compileThreeYearCareerCompletion:compileCareerCompletion)(before),h.data),'saved N7 completion or ending changed');
  need(!r.history.some(e=>e.order>h.order),'completed career is frozen');
 }
 export function readCareerCompletion(w){const h=careerResult(w);if(!h)return null;const {details,...rating}=h.data.rating;return {id:h.id,...structuredClone({...h.data,rating})};}

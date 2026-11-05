@@ -44,7 +44,7 @@ export async function createStoredSession(storage,slot,{afterPersist}={}) {
       const disk=await (storage.inspect?storage.inspect(slot):storage.read(slot));ensure(sameToken(disk.token,expectedToken)&&sameToken(current.token,expectedToken),'STALE','Restart target changed');
       const fresh=createSave(world,world),r=runtimeOf(fresh.world);
       ensure(fresh.world.identity.careerId!==current.payload.world.identity.careerId&&fresh.world.position.serviceYear===1&&r.revision===1&&r.history.length===1&&fresh.world.extensions[ANNUAL_KEY],'CAREER','Supply an untouched new formal career');
-      ensure((await archive()).status==='retained','MEMORIAL','Retain the completed memorial before restarting');
+      ensure(current.payload.world.extensions['teacher-hell/world'].plan.career?.mode==='three-year'||(await archive()).status==='retained','MEMORIAL','Retain the completed memorial before restarting');
       return publish(fresh,expectedToken);
     }),
     snapshot(){ready();return copyStored(current);},
@@ -79,7 +79,7 @@ export async function createStoredSession(storage,slot,{afterPersist}={}) {
       ensure(sameToken(disk.token,expectedToken),'STALE','Import target changed');ensure(!disk.payload||confirmed===true,'CONFIRM','Review existing career and confirm overwrite');
       if(disk.payload&&careerResult(disk.payload.world))await retainMemorial(storage,disk.payload.world);
       disk=null;const publishing=publish(incoming,expectedToken);incoming=null;return publishing;}),
-    delete:({expectedToken,confirmed=false}={})=>serial(async()=>{ready();ensure(confirmed===true,'CONFIRM','Deletion requires confirmation');ensure(sameToken(current.token,expectedToken),'STALE','Recover the reviewed deletion target first');if(current.payload&&careerResult(current.payload.world))ensure((await archive()).status==='retained','MEMORIAL','Retain the completed memorial before deletion');return publish(null,expectedToken);}),
+    delete:({expectedToken,confirmed=false}={})=>serial(async()=>{ready();ensure(confirmed===true,'CONFIRM','Deletion requires confirmation');ensure(sameToken(current.token,expectedToken),'STALE','Recover the reviewed deletion target first');if(current.payload&&careerResult(current.payload.world))ensure(current.payload.world.extensions['teacher-hell/world'].plan.career?.mode==='three-year'||(await archive()).status==='retained','MEMORIAL','Retain the completed memorial before deletion');return publish(null,expectedToken);}),
   });
 }
 

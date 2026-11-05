@@ -3,6 +3,11 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      three_year:
+        description: Run T4 continuous three-year acceptance and retain raw checkpoints
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -20,3 +25,28 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: npm run verify:quick
+
+  three-year:
+    if: github.event_name == 'workflow_dispatch' && inputs.three_year
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        difficulty: [easy, normal, hard]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty=${{ matrix.difficulty }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: t4-three-year-${{ matrix.difficulty }}
+          path: work/three-year-${{ matrix.difficulty }}/
+          retention-days: 90
+          compression-level: 0
+          if-no-files-found: error

@@ -18,10 +18,10 @@ export function validateStory(c){
   assertShape(s,['id','pages','choices','next']);identifier(s.id);need(s.pages.length>0,'EMPTY','pages');
   for(const [i,p] of s.pages.entries()){
    assertShape(p,['order','text','speaker','scene','cast','presentation']);identifier(p.text);need(scenes.includes(p.scene),'SCENE','unknown scene resource');
-   need(p.order===i+1,'PAGE','page order');need(['dialogue','narration','phone','chat'].includes(p.presentation),'PAGE','presentation');
+   need(p.order===i+1,'PAGE','page order');need(['dialogue','narration','phone','chat','notice','email','news'].includes(p.presentation),'PAGE','presentation');
    need(p.cast.length<=2&&new Set(p.cast.map(a=>a.role)).size===p.cast.length&&new Set(p.cast.map(a=>a.position)).size===p.cast.length,'CAST','at most two unique actors');
    for(const a of p.cast){assertShape(a,['role','position','expression']);need(['participant','companion'].includes(a.role)&&['left','right','center'].includes(a.position),'CAST','actor reference');need(expressions.includes(a.expression),'CAST','expression');}
-   need(p.speaker===null?p.presentation==='narration':roles.includes(p.speaker)&&(p.speaker==='teacher'||p.cast.some(a=>a.role===p.speaker)),'SPEAKER','speaker/cast');
+   need(p.speaker===null?['narration','notice','email','news'].includes(p.presentation):roles.includes(p.speaker)&&(p.speaker==='teacher'||p.cast.some(a=>a.role===p.speaker)),'SPEAKER','speaker/cast');
   }
   need(Array.isArray(s.choices),'CHOICE','choices');
   if(s.choices.length){need(s.next===null&&s.choices.length>=3&&s.choices.length<=8,'CHOICE','3–8 decisions');need(s.choices.filter(o=>!o.requires?.length).length>=3&&s.choices.some(o=>o.emotional&&!o.requires?.length),'QUALIFICATION','three basic options and emotion stay available');const n=s.choices.filter(o=>o.emotional).length;need(n>=1&&n<=2,'EMOTION','1–2 emotional options');}

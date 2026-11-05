@@ -1,0 +1,72 @@
+/* Phase 13-A standalone reader; main shell links this in 13-B. */
+.story-view{position:absolute;bottom:1rem;left:clamp(.75rem,12vw,15rem);right:clamp(.75rem,8vw,9rem);display:flex;flex-direction:column;gap:.5rem;max-height:calc(100dvh - 7rem);color:#f8f4e9;z-index:2}
+.story-reader{background:#111c30ed;border:1px solid #d6c8aa;border-radius:.55rem;min-height:6rem;min-width:0;padding:1rem 1.2rem;box-shadow:0 8px 24px #0008}
+.story-reader[data-story-advance="next"]{cursor:pointer}
+.story-speaker{font-weight:700;font-size:.87rem;color:#f5d390;margin-bottom:.4rem}
+.story-text{margin:0;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}
+.story-navigation,.story-decision-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:.5rem}
+.story-page-number{margin-right:auto;font-size:.85rem;font-variant-numeric:tabular-nums}
+.story-confirm,.story-choice-panel,.story-finish,.story-resume{background:#111c30ed;border:1px solid #d6c8aa;border-radius:.55rem;padding:.65rem}
+.story-choice-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.5rem}
+.story-choice-grid button{min-width:0;white-space:normal;overflow-wrap:anywhere;text-align:left}
+.story-confirm p{margin:0 0 .5rem}
+.story-finish,.story-resume{text-align:right}
+@media(max-width:650px){.story-view{left:.5rem;right:.5rem;bottom:.5rem;max-height:calc(100dvh - 5rem)}.story-reader{padding:.8rem;min-height:5rem}.story-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.story-choice-grid button{font-size:.9rem;padding:.55rem .5rem}}
+
+/* Phase 13-C: neutral, disclosed results after confirmation only. */
+.story-result{background:#111c30ed;border:1px solid #d6c8aa;border-radius:.55rem;padding:.6rem .85rem;min-width:0;overflow-wrap:anywhere}
+.story-result h3{font-size:.9rem;font-weight:700;margin:.25rem 0}
+.story-result p{font-size:.88rem;margin:.3rem 0}
+.story-result-facts{margin:.25rem 0 .6rem;padding-left:1.4rem;font-size:.88rem;line-height:1.45}
+.story-result-deltas{display:flex;gap:.35rem .7rem;flex-wrap:wrap;font-size:.85rem}
+.story-result-deltas span{white-space:nowrap}
+@media(max-width:650px){.story-result{padding:.5rem .65rem}}
+
+/* Phase 13-D: temporary structural cast and expression placeholders. */
+.story-scene{position:relative;min-height:clamp(6rem,23dvh,14rem);border:1px solid #8199a6;border-bottom:0;background:linear-gradient(0deg,#182b45,#7e9b9d55);border-radius:.5rem .5rem 0 0;pointer-events:none;overflow:hidden}
+.story-scene-label{position:absolute;top:.3rem;left:.6rem;color:#eee;font-size:.75rem;text-shadow:0 2px 4px #000;z-index:1}
+.story-stage{min-height:clamp(6rem,23dvh,14rem);display:flex;justify-content:space-around;align-items:flex-end;gap:.5rem;padding:1rem .8rem 0}
+.story-actor{--coat:#6d93ad;--face:#e5bea4;position:relative;display:flex;align-items:center;justify-content:flex-end;flex-direction:column;width:42%;max-width:10rem;height:clamp(6rem,22dvh,13rem);filter:brightness(.65);opacity:.82;animation:story-cast-in .2s ease-out both}
+.story-actor--speaking{filter:brightness(1);opacity:1}
+.story-actor--adult{--coat:#27364b;--face:#344358}
+.story-actor--tone-1{--coat:#8279a3}.story-actor--tone-2{--coat:#ae8169}.story-actor--tone-3{--coat:#578d86}.story-actor--tone-4{--coat:#9e7695}.story-actor--tone-5{--coat:#7383b6}
+.story-actor-shape{width:100%;height:100%;position:relative}
+.story-actor-head{position:absolute;top:5%;left:27%;width:46%;height:43%;border-radius:46%;border:3px solid #29384c;background:var(--face);box-shadow:0 -8px 0 #283648;z-index:1}
+.story-actor-face{position:absolute;top:55%;left:28%;width:44%;height:5%;background:#6c5150;border-radius:90%}
+.story-actor[data-expression="happy"] .story-actor-face{height:12%;border-radius:0 0 90% 90%}
+.story-actor[data-expression="angry"] .story-actor-face{transform:rotate(10deg)}
+.story-actor[data-expression="sad"] .story-actor-face{transform:rotate(-10deg)}
+.story-actor[data-expression="surprised"] .story-actor-face{width:15%;height:15%;left:43%;border-radius:50%}
+.story-actor[data-expression="embarrassed"] .story-actor-head{box-shadow:0 -8px 0 #283648,inset 10px -7px 0 #d67e8a55}
+.story-actor-body{position:absolute;bottom:0;width:100%;height:60%;border:3px solid #283648;border-radius:40% 40% 0 0;background:var(--coat)}
+.story-actor-name{position:absolute;bottom:.15rem;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#14243ce8;border-radius:.3rem;padding:.1rem .45rem;font-size:.75rem;z-index:2}
+@keyframes story-cast-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:650px){.story-scene,.story-stage{min-height:clamp(5rem,20dvh,10rem)}.story-actor{height:clamp(5rem,19dvh,10rem);width:46%}.story-actor-head{width:51%;left:24.5%}.story-view{max-height:calc(100dvh - 4rem)}}
+@media(prefers-reduced-motion:reduce){.story-actor{animation:none}}
+
+/* Phase 13-E: phone, chat and document reading skins. */
+.story-view[data-story-format="phone"] .story-reader{border-color:#7e9eaf}
+.story-phone{background:#142137;border-radius:.7rem;padding:.8rem;min-height:5rem;text-align:center}
+.story-phone-status{font-size:.75rem;color:#9dd4ba}
+.story-phone-speaker{font-weight:700;margin:.4rem 0}
+.story-phone-content{white-space:pre-wrap;overflow-wrap:anywhere;text-align:left;margin:.5rem 0 0}
+.story-chat{display:flex;flex-direction:column;gap:.45rem;max-height:34dvh;overflow-y:auto;overscroll-behavior:contain;padding:.25rem}
+.story-chat-line{max-width:82%;align-self:flex-start;min-width:0}
+.story-chat-line--own{align-self:flex-end}
+.story-chat-person{font-size:.73rem;color:#c0c9d2}
+.story-chat-bubble{margin:.15rem 0 0;background:#34485e;border-radius:.8rem .8rem .8rem .15rem;padding:.5rem .65rem;white-space:pre-wrap;overflow-wrap:anywhere}
+.story-chat-line--own .story-chat-bubble{background:#3e6153;border-radius:.8rem .8rem .15rem .8rem}
+.story-document{padding:.6rem;background:#e9e5d9;color:#242c39;border-radius:.35rem;max-height:35dvh;overflow-y:auto}
+.story-document h3{font-size:.95rem;margin:0 0 .4rem}
+.story-document-content{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65;margin:0}
+@media(max-width:650px){.story-chat{max-height:28dvh}.story-document{max-height:30dvh}.story-phone{padding:.5rem}}
+
+/* Phase 13-F: independent scroll regions, keyboard focus and readable density. */
+.story-view,.story-reader,.story-choice-panel,.story-confirm,.story-result{min-width:0}
+.story-view button{touch-action:manipulation}
+.story-view button:focus-visible{outline:2px solid #f5d390;outline-offset:2px}
+.story-view .story-navigation button{min-height:2.35rem;padding:.3rem .7rem}
+.story-view .story-choice-grid button{min-height:2.65rem}
+.story-view .story-reader{scrollbar-gutter:stable}
+.story-view .story-chat,.story-view .story-document{max-height:none}
+@media(max-width:650px){.story-view .story-choice-grid button{min-height:2.75rem}}

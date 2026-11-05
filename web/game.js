@@ -66,5 +66,6 @@ app.addEventListener('click',async event=>{
    return;
   }
  }
+ if(storyBusy)return;
  const el=event.target.closest('[data-action]');if(!el)return;const action=el.dataset.action;if(action==='outside'&&event.target!==el)return;try{el.disabled=true;await act(action,el);}catch(error){console.error(error);alert(`操作失敗：${error.message}`);if(screen==='slots')await showSlots();}finally{el.disabled=false;}});
 showHome();

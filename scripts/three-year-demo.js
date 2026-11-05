@@ -11,20 +11,32 @@ import { careerResult } from '../src/runtime/career.js';
 import { teacherTenure } from '../src/runtime/schedule.js';
 import { request } from '../test/support/runtime.js';
 import { encodeSave,restoreSave,SAVE_KIND } from '../src/storage/format.js';
+import { sourceFact } from '../test/support/procedure-scenario.js';
 import { memorialFromWorld } from '../src/storage/memorial.js';
 const difficulty=process.argv.find(a=>a.startsWith('--difficulty='))?.split('=')[1]??'normal';
 assert.ok(['easy','normal','hard'].includes(difficulty));
 const root=`work/three-year-${difficulty}`,sha=bytes=>createHash('sha256').update(bytes).digest('hex');await mkdir(root,{recursive:true});
-const manifest={kind:'T4-continuous-production-source',difficulty,seed:{foundation:74,events:1,schedule:75,background:(75^0x54325032)>>>0},sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),driver:'scripts/three-year-demo.js',driverSha256:sha(await readFile('scripts/three-year-demo.js')),command:`node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty=${difficulty}`,node:process.version,runId:process.env.GITHUB_RUN_ID??null,files:{},years:[],status:'running'};
+const manifest={kind:'T4-continuous-production-source',difficulty,seed:{foundation:74,events:1,schedule:75,background:(75^0x54325032)>>>0},sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),driver:'scripts/three-year-demo.js',driverSha256:sha(await readFile('scripts/three-year-demo.js')),command:`node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty=${difficulty}`,node:process.version,arguments:process.argv.slice(2),runId:process.env.GITHUB_RUN_ID??null,files:{},years:[],status:'running'};
 const saveManifest=()=>writeFile(`${root}/manifest.json`,JSON.stringify(manifest,null,2)+'\n');
 async function persist(name,bytes){await writeFile(`${root}/${name}.partial`,bytes);await rename(`${root}/${name}.partial`,`${root}/${name}`);manifest.files[name]={bytes:Buffer.byteLength(bytes),sha256:sha(bytes)};await saveManifest();}
 let opening,w,lastLogged=null;const started=performance.now();
 try{
  const resume=process.argv.find(a=>a.startsWith('--resume='))?.slice(9);
  if(resume){const saved=restoreSave(await readFile(resume,'utf8'));w=saved.world;opening=saved.opening;assert.equal(runtimeOf(w).plan.career.difficulty,difficulty);manifest.resumedFrom={path:resume,sha256:sha(await readFile(resume))};}
- else w=annualOpening({difficulty,onOpening:x=>opening=x});
+ else{
+  w=annualOpening({difficulty,onOpening:x=>opening=x});
+  if(process.argv.includes('--transfers')){
+   const student=w.numeric.evolution.world.classroom.studentIds[1],classId=w.numeric.evolution.world.classroom.id;
+   const cause=sourceFact(w,{type:'documented-cohort-transfer'},[w.identity.playerId,student]);w=cause.world;
+   w=prepareWorldOperation(w,{...request(w,'T4-legal-transfer',[
+    {type:'school',basisFactId:cause.fact.id,change:{type:'school-leave',personId:student,status:'transferred-out',reason:cause.fact.id}},
+    {type:'school',basisFactId:cause.fact.id,change:{type:'school-enroll',personId:null,classId,action:'transfer-in',source:cause.fact.id}}
+   ]),calendarContext:{kind:'procedure'}}).world;
+   manifest.transfer={departedStudentId:student,causeFactId:cause.fact.id};
+  }
+ }
  manifest.calendarVersion=runtimeOf(w).plan.calendarVersion;manifest.career=runtimeOf(w).plan.career;
- const onDate=(date,revision)=>{if(date.endsWith('-01')&&lastLogged!==date){lastLogged=date;console.log(JSON.stringify({date,revision,elapsedMs:performance.now()-started,rss:process.memoryUsage().rss}));}};
+ const onDate=(date,revision)=>{manifest.lastObserved={date,revision};if(date.endsWith('-01')&&lastLogged!==date){lastLogged=date;console.log(JSON.stringify({date,revision,elapsedMs:performance.now()-started,rss:process.memoryUsage().rss}));}};
  while(w.position.serviceYear<=3&&!careerResult(w)){
   const year=w.position.serviceYear;
   assert.equal(teacherTenure(w),({easy:20,normal:10,hard:1})[difficulty]+year-1);
@@ -49,6 +61,7 @@ try{
   assert.equal(careerResult(w),null);
   w=runAnnual(w,{continueAfterSuccess:true,stopAtOpening:true,onDate}).world;opening=w;
   assert.equal(w.position.serviceYear,year+1);
+  await persist('latest-opening.json',encodeSave({kind:SAVE_KIND,version:1,world:w,opening}));
  }
  manifest.status='passed';manifest.elapsedMs=performance.now()-started;await saveManifest();console.log(JSON.stringify(manifest));
 }catch(error){manifest.status='failed';manifest.error={message:error.message,stack:error.stack};manifest.elapsedMs=performance.now()-started;await saveManifest();throw error;}

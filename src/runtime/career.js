@@ -1,3 +1,4 @@
+import { institutionState } from './procedures.js';
 import { planMode,THREE_YEAR } from '../calendar/calendar.js';
 import { yearData } from '../calendar/calendar.js';
 import { sourceReader } from '../assessment/evidence.js';
@@ -166,6 +167,15 @@ function compileCompletion(w,span){
  const selected=[...relationships.filter(x=>x.quality>=70).slice(-5),...relationships.filter(x=>x.quality<40).slice(-5)];
  const states=new Map(r.history.filter(h=>h.type==='story').map(h=>[h.eventId,h]));
  const unresolved=[...states.values()].filter(h=>h.data.state.mode!=='ended'&&knownEvents.has(h.eventId)).map(h=>({id:h.id,eventId:h.eventId}));
+ if(span===3){
+  const institution=institutionState(w);
+  const addPending=(entry,kind)=>{
+   const source=r.history.findLast(h=>h.type==='institution'&&h.data.result?.id===entry.id);
+   if(source)unresolved.push({id:source.id,[kind+'Id']:entry.id});
+  };
+  for(const c of institution.cases){const origin=r.facts.find(f=>f.id===c.originFactId);if(c.status!=='closed'&&origin&&visible(origin))addPending(c,'case');}
+  for(const d of institution.duties)if(d.holderId===w.identity.playerId&&!d.endedAt&&['active','pending-resolution'].includes(d.status))addPending(d,'duty');
+ }
  const academic=academicState(w);
  const ending=composeCareerEnding({rating,start:first,end,events,opinions,relationships:selected,unresolved,years:span});
  if(span===3){

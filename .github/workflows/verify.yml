@@ -8,8 +8,25 @@ on:
         description: Run T4 continuous three-year acceptance and retain raw checkpoints
         type: boolean
         default: false
+      difficulties:
+        description: JSON array of the modes requiring continuous acceptance
+        type: string
+        default: '["easy","normal","hard"]'
+      transfers:
+        description: Exercise a documented outgoing and incoming pupil on the real source
+        type: boolean
+        default: false
+      storage_checks:
+        description: Reuse the complete real checkpoint for storage rollback and CAS acceptance
+        type: boolean
+        default: false
+      source_run:
+        description: Optional retained run containing before-completion.json for a terminal-only retry
+        type: string
+        default: ''
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: foundation-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
@@ -33,7 +50,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        difficulty: [easy, normal, hard]
+        difficulty: ${{ fromJSON(inputs.difficulties || '["easy","normal","hard"]') }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -41,7 +58,36 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty=${{ matrix.difficulty }}
+      - uses: actions/download-artifact@v4
+        if: inputs.source_run != ''
+        with:
+          name: t4-three-year-${{ matrix.difficulty }}
+          path: work/three-year-${{ matrix.difficulty }}/
+          run-id: ${{ inputs.source_run }}
+          github-token: ${{ github.token }}
+      - name: Continuous production acceptance
+        env:
+          T4_DIFFICULTY: ${{ matrix.difficulty }}
+          T4_SOURCE_RUN: ${{ inputs.source_run }}
+          T4_TRANSFERS: ${{ inputs.transfers }}
+        run: |
+          if [ -n "$T4_SOURCE_RUN" ]; then
+            node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty="$T4_DIFFICULTY" --resume="work/three-year-$T4_DIFFICULTY/before-completion.json"
+          else
+            node --max-old-space-size=6144 --expose-gc scripts/three-year-demo.js --difficulty="$T4_DIFFICULTY" $([ "$T4_TRANSFERS" = true ] && echo --transfers)
+          fi
+      - name: Real checkpoint rollback and CAS acceptance
+        if: inputs.storage_checks
+        env:
+          T4_DIFFICULTY: ${{ matrix.difficulty }}
+        run: node --max-old-space-size=6144 --expose-gc scripts/three-year-checks.js "work/three-year-$T4_DIFFICULTY"
+      - name: Retain manifest metadata in the check result
+        if: always()
+        env:
+          T4_DIFFICULTY: ${{ matrix.difficulty }}
+        run: |
+          node --input-type=module -e 'import {readFileSync} from "node:fs"; const text=JSON.stringify(JSON.parse(readFileSync(`work/three-year-${process.env.T4_DIFFICULTY}/manifest.json`,"utf8"))); console.log("::notice title=T4 source manifest::"+text.replaceAll("%","%25").replaceAll("\n","%0A").replaceAll("\r","%0D"));'
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:

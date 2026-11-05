@@ -27,13 +27,13 @@ export function availableStoryChoices(w,e,stage){return stage.choices.filter(opt
  const target={kind:condition.role==='teacher'?`player-${condition.holder}`:'person',id:condition.role==='teacher'?w.identity.playerId:e.participantIds[condition.role==='companion'?1:0]};
  try{const value=targetRecord(w.numeric.evolution.world,target)[condition.code];return Number.isFinite(value)&&value>=condition.min&&value<=condition.max;}catch{return false;}
 }));}
-export function compileStory(w,op){
+export function compileStory(w,op,{panelWitness=false}={}){
  assertShape(op,['type','eventId','action','optionId']);need(op.type==='story','operation');const e=w.events.find(e=>e.id===op.eventId),c=storyContent(w,op.eventId);need(e&&c,'registered admitted playable event');
  need(!formalSlot(w).slot.protected,'protected activity');
  const previous=storyState(w,e.id);need(!previous||previous.contentDigest===storyDigest(c),'content version changed in place; retain old resource or migrate explicitly');
  const state=previous?structuredClone(previous):{contentDigest:storyDigest(c),stage:c.entry,page:0,pending:null,mode:'reading',next:null,dueDate:null,basisFactId:null,panelDelta:Object.fromEntries(Object.keys(deriveWorldPanel(w.numeric.evolution.world)).map(k=>[k,0]))};
  const s=c.stages.find(s=>s.id===state.stage),operations=[],inputs=[];
- if(op.action==='confirm'&&s.choices.some(o=>o.outcome.duty))for(const holder of ['person','life','work','outlook']){const target={kind:'player-'+holder,id:w.identity.playerId};for(const [code,value] of Object.entries(targetRecord(w.numeric.evolution.world,target)))inputs.push({target,code,value});}
+ if(op.action==='confirm'&&(panelWitness||s.choices.some(o=>o.outcome.duty)))for(const holder of ['person','life','work','outlook']){const target={kind:'player-'+holder,id:w.identity.playerId};for(const [code,value] of Object.entries(targetRecord(w.numeric.evolution.world,target)))inputs.push({target,code,value});}
  if(['select','confirm'].includes(op.action))for(const option of s.choices)for(const condition of option.requires??[])if(condition.type==='numeric'){const target={kind:condition.role==='teacher'?`player-${condition.holder}`:'person',id:condition.role==='teacher'?w.identity.playerId:e.participantIds[condition.role==='companion'?1:0]};const value=targetRecord(w.numeric.evolution.world,target)[condition.code];need(Number.isFinite(value),'missing qualification field');inputs.push({target,code:condition.code,value});}
  need(op.action==='select'?typeof op.optionId==='string':op.optionId===null,'option only on select');
  if(op.action==='start'){need(!previous,'already started');
@@ -134,10 +134,12 @@ export function validateStoryHistory(w){
    const ae=atWorld.events.find(x=>x.id===e.id);ae.stageId=stageId(e,c,previous?.stage??c.entry);ae.choice=carrier(c,previous?.stage??c.entry);
    for(const input of h.data.inputs){need(Number.isFinite(input.value)&&input.value>=0&&input.value<=100,'invalid qualification witness');targetRecord(atWorld.numeric.evolution.world,input.target)[input.code]=input.value;}
    if(c.stages.some(s=>s.choices.some(o=>o.outcome.duty))){for(const a of atWorld.numeric.evolution.world.registry.assignments)if(a.until&&a.until>=h.at.date)a.until=null;atWorld.numeric.evolution.world.registry.assignments=atWorld.numeric.evolution.world.registry.assignments.filter(a=>!r(w).history.some(x=>x.type==='school'&&x.order>=h.order&&x.data.change.id===a.id));}
-   const compiled=compileStory(atWorld,op);need(same(compiled.inputs,h.data.inputs),'qualification witness differs');
+   need(!Object.hasOwn(h.data,'panelWitnessVersion')||h.data.panelWitnessVersion===1&&r(w).plan.validation==='fixed-calendar-v2'&&op.action==='confirm','unsupported panel observation witness');
+   const witnessed=h.data.panelWitnessVersion===1;
+   const compiled=compileStory(atWorld,op,{panelWitness:witnessed});need(same(compiled.inputs,h.data.inputs),'qualification witness differs');
    if(op.action==='confirm'){
     const effect=r(w).history.find(x=>x.operationId===h.operationId&&x.type==='effect'&&x.eventId===e.id);need(effect,'missing effect audit');
-    const before=structuredClone(c.stages.some(s=>s.choices.some(o=>o.outcome.duty))?atWorld.numeric.evolution.world:w.numeric.evolution.world),after=structuredClone(before);
+    const before=structuredClone(witnessed||c.stages.some(s=>s.choices.some(o=>o.outcome.duty))?atWorld.numeric.evolution.world:w.numeric.evolution.world),after=structuredClone(before);
     for(const x of effect.data.observed){const change=effect.data.changes.find(c=>same(c.target,x.target)&&c.code===x.code);need(change&&x.after===applyDelta(x.before,change.delta),'invalid numerical observation');targetRecord(before,x.target)[x.code]=x.before;targetRecord(after,x.target)[x.code]=x.after;}
     const a=deriveWorldPanel(before),b=deriveWorldPanel(after);compiled.state.panelDelta=Object.fromEntries(Object.keys(a).map(k=>[k,compiled.state.panelDelta[k]+(b[k]-a[k])]));
    }

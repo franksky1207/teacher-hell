@@ -149,12 +149,13 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player operates a story');
     if(op.action==='confirm')naturalAt(world,numericSession,world.position);
     syncNumeric(world,numericSession);
-    const compiled=compileStory(world,op);
+    const panelWitness=r.plan.validation==='fixed-calendar-v2'&&op.action==='confirm';
+    const compiled=compileStory(world,op,{panelWitness});
     const beforePanel=deriveWorldPanel(numericSession.world());
     for(const child of compiled.operations)numericSession=execute(world,command,child,numericSession,receipt,false,op.eventId);
     const panel=deriveWorldPanel(numericSession.world());
     compiled.state.panelDelta=Object.fromEntries(Object.keys(panel).map(k=>[k,compiled.state.panelDelta[k]+(op.action==='confirm'?panel[k]-beforePanel[k]:0)]));
-    history(world,command,'story',op.eventId,world.events.find(e=>e.id===op.eventId).stageId,[],{action:clone(op),state:compiled.state,operations:compiled.operations,inputs:compiled.inputs});
+    history(world,command,'story',op.eventId,world.events.find(e=>e.id===op.eventId).stageId,[],{action:clone(op),state:compiled.state,operations:compiled.operations,inputs:compiled.inputs,...(panelWitness?{panelWitnessVersion:1}:{})});
   } else if(op.type==='register-event-catalogue'){
     history(world,command,'event-catalogue',null,null,[],registerEventCatalogue(world,op));
   } else if(op.type==='draw-events'){

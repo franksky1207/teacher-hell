@@ -172,7 +172,7 @@ export async function s2Storage(testId,initialize,expected){
   check(careerResult(stored.payload.world).data.years===3,'Lost completion');
   const prior=JSON.parse(r.commits.at(-1).request);
   check(prepareWorldOperation(stored.payload.world,prior).duplicate,'Terminal replay was not deduplicated');
-  await rejects(()=>prepareWorldOperation(stored.payload.world,{...prior,id:id('operation','s2-after-complete')}),'CAREER_COMPLETE');
+  await rejects(()=>prepareWorldOperation(stored.payload.world,{...prior,id:id('operation','s2-after-complete'),expectedRevision:r.revision}),'CAREER_COMPLETE');
   if(initialize&&testId.endsWith('-faults')){
    metrics.realSourceFaults=[];
    for(const mode of ['abort','quota','stale']){

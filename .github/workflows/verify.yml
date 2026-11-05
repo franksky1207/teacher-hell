@@ -36,7 +36,7 @@ permissions:
   contents: read
   actions: read
 concurrency:
-  group: foundation-${{ github.event_name == 'workflow_dispatch' && inputs.three_year && github.run_id || github.event.pull_request.number || github.ref }}
+  group: foundation-${{ github.event_name == 'workflow_dispatch' && (inputs.three_year || inputs.s2_phase != '') && github.run_id || github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 jobs:
   quick:

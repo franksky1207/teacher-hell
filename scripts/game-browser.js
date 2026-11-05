@@ -84,6 +84,12 @@ try {
   await evaluate("document.querySelector('.notebook-person').click()");
   if(!await evaluate("!!document.querySelector('.notebook-person--active') && !!document.querySelector('.notebook-person-details h3')"))
     throw Error('Notebook selection did not render a person');
+  await click('notebook-tab:events');
+  if(!await evaluate("document.querySelector('.notebook [aria-selected=\"true\"]')?.dataset.action==='notebook-tab:events' && document.querySelectorAll('.notebook-history-item').length>=1"))
+    throw Error('Notebook history did not show teacher-known facts');
+  await click('notebook-event-kind:fact');
+  if(!await evaluate("!!document.querySelector('.notebook-history-kinds [aria-pressed=\"true\"][data-action=\"notebook-event-kind:fact\"]')"))
+    throw Error('Notebook history kind filter failed');
   await click('close');
   if(await evaluate("!!document.querySelector('.overlay')"))throw Error('Notebook overlay did not close');
   const notebookAfter=await evaluate(`(async()=>{

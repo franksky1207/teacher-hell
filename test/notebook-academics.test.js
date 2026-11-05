@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {projectNotebookAcademics,renderNotebookAcademics} from '../web/notebook-academics.js';
+import {projectNotebookAcademics,renderNotebookAcademics,isExamScorePublished,isSemesterResultPublished} from '../web/notebook-academics.js';
 import {createCareerOpening} from '../src/runtime/opening.js';
 import {academicWorld,completeAcademic,academicBaseline} from './support/academic-scenario.js';
 import {readSchoolRoster} from '../src/runtime/views.js';
@@ -44,33 +44,30 @@ test('14-D: render only public projection and escape names and subject text',()=
  assert.match(html,/data-action="notebook-academic-student:x:1"/);
 });
 
-test('14-D: three exam results appear only from the following calendar day',()=>{
- const complete=completeAcademic();
- const student=projectNotebookAcademics(complete).students[0];
+test('14-D: score publication begins the next calendar day for all three exam rounds',()=>{
  for(const [last,next,round] of [
   ['2026-10-06','2026-10-07',1],
   ['2026-12-01','2026-12-02',2],
-  ['2027-01-22','2027-01-23',3],
+  ['2027-01-22','2027-01-23',3]
  ]){
-  const finalDay=academicBaseline(complete,last);
-  const nextDay=academicBaseline(complete,next);
-  const before=projectNotebookAcademics(finalDay,student.id,'2026:autumn').transcript;
-  const after=projectNotebookAcademics(nextDay,student.id,'2026:autumn').transcript;
-  assert.equal(before.assessments.find(a=>a.round===round)?.marks,null,'round '+round+' must not leak on exam day');
-  assert.ok(Object.keys(after.assessments.find(a=>a.round===round)?.marks??{}).length>0,'round '+round+' must appear next day');
+  assert.equal(isExamScorePublished('2026:autumn',1,round,last),false);
+  assert.equal(isExamScorePublished('2026:autumn',1,round,next),true);
  }
+ assert.equal(isExamScorePublished('2026:spring',2,2,'2027-05-04'),false);
+ assert.equal(isExamScorePublished('2026:spring',2,2,'2027-05-05'),true);
+ assert.throws(()=>isExamScorePublished('2026:autumn',1,0,'2026-10-06'),RangeError);
 });
-test('14-D: no final exam inference through term results or earned credits before next day',()=>{
+test('14-D: term close on final day keeps third exam, term mark and credits undisclosed',()=>{
  const complete=completeAcademic(),student=projectNotebookAcademics(complete).students[0];
- const onFinal=projectNotebookAcademics(academicBaseline(complete,'2027-01-22'),student.id,'2026:autumn');
- const onNext=projectNotebookAcademics(academicBaseline(complete,'2027-01-23'),student.id,'2026:autumn');
+ const onFinal=projectNotebookAcademics(complete,student.id,'2026:autumn');
+ assert.equal(complete.position.date,'2027-01-22');
  assert.equal(onFinal.pendingPublication,true);
  assert.equal(onFinal.transcript.closed,false);
+ assert.equal(onFinal.transcript.assessments.find(a=>a.round===3)?.marks,null);
+ assert.ok(onFinal.transcript.assessments.find(a=>a.round===1)?.marks);
  assert.deepEqual(onFinal.transcript.courses,[]);
  assert.equal(onFinal.qualification,null);
  assert.match(renderNotebookAcademics(onFinal),/隔天開放查閱/);
- assert.equal(onNext.pendingPublication,false);
- assert.equal(onNext.transcript.closed,true);
- assert.ok(onNext.transcript.courses.length>0);
- assert.ok(onNext.qualification?.earned>=0);
+ assert.equal(isSemesterResultPublished('2026:autumn','2027-01-22'),false);
+ assert.equal(isSemesterResultPublished('2026:autumn','2027-01-23'),true);
 });

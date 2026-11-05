@@ -8,6 +8,16 @@ const finite=value=>typeof value==='number'&&Number.isFinite(value)?String(value
 const semesterLabel=id=>{const match=/^(\d{4}):(autumn|spring)$/.exec(id);return match?`${match[1]}學年${match[2]==='autumn'?'上':'下'}學期`:id;};
 const statusLabel={graduation:'符合畢業條件','completion-certificate':'符合修業證明條件',incomplete:'尚未符合畢業條件'};
 const reasonLabel={'study-period':'修業期間尚未完成','required-study-load':'修課學分不足','unattended-compulsory':'尚有未修必修課程','total-credits':'取得學分不足','required-credits':'必修學分不足','elective-credits':'選修學分不足',conduct:'獎懲條件未符合','chinese-study-load':'國文修課時數不足','foreign-language-study-load':'外語修課時數不足','practical-study-load':'實作課程時數不足'};
+/** Exact publication boundary: computed on exam day, shown from next calendar day. */
+export function isExamScorePublished(termId,grade,round,viewDate){
+ if(![1,2,3].includes(round))throw new RangeError('Invalid exam round');
+ const dates=semester(termId);
+ const period=round===2&&grade===2&&dates.grade2SecondExam?dates.grade2SecondExam:dates.exams[round-1];
+ return viewDate>=addDays(period.at(-1),1);
+}
+export function isSemesterResultPublished(termId,viewDate){
+ return viewDate>=addDays(semester(termId).exams[2].at(-1),1);
+}
 export function projectNotebookAcademics(world,studentId=null,termId=null){
  const roster=readSchoolRoster(world),academic=academicState(world);
  const students=(roster?.students??[]).map(({id,name})=>({id,name}));
@@ -20,15 +30,8 @@ export function projectNotebookAcademics(world,studentId=null,termId=null){
  if(selected&&termId!==null&&!terms.some(t=>t.id===termId))throw new RangeError('Unknown student term');
  const term=terms.find(t=>t.id===chosen)??null;
  const transcript=selected&&term?readGrades(world,selected.id,term.id):null;
- const examCalendar=term?semester(term.id):null;
- const finalExamDay=examCalendar?.exams[2].at(-1)??null;
- const finalReleased=!finalExamDay||world.position.date>=addDays(finalExamDay,1);
- const visibleRound=round=>{
-  if(round===0)return true;
-  const examDays=round===2&&academic.terms[term.id].grade===2&&examCalendar.grade2SecondExam
-   ?examCalendar.grade2SecondExam:examCalendar.exams[round-1];
-  return world.position.date>=addDays(examDays.at(-1),1);
- };
+ const finalReleased=!term?.closed||isSemesterResultPublished(term.id,world.position.date);
+ const visibleRound=round=>round===0||isExamScorePublished(term.id,academic.terms[term.id].grade,round,world.position.date);
  // The official graduation query is a projection, never a student status write.
  const qualification=selected?readAcademicQualification(world,selected.id,academic):null;
  return {students,selectedId:selected?.id??null,terms,selectedTerm:term?.id??null,

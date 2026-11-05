@@ -99,8 +99,16 @@ try {
   if(!await evaluate("document.querySelector('.notebook [aria-selected=\"true\"]')?.dataset.action==='notebook-tab:academics'&&document.querySelectorAll('.notebook-academic-student').length>=38"))
     throw Error('Notebook academic roster missing');
   await evaluate("document.querySelector('.notebook-academic-student').click()");
-  if(!await evaluate("!!document.querySelector('.notebook-academic-details h3') && document.querySelector('.notebook-academic-details')?.innerText.includes('尚未結算')"))
-    throw Error('Notebook academic opening must not fabricate grades');
+  await wait('.notebook-academic-details h3');
+  const academicCheck=await evaluate(`(()=>{
+    const text=document.querySelector('.notebook-academic-details')?.innerText??'';
+    const buttons=document.querySelectorAll('.notebook-academic-student[aria-pressed="true"]');
+    const hasGrades=document.querySelectorAll('.notebook-academic-table tbody tr').length>0;
+    return {selected:buttons.length===1,empty:text.includes('目前尚無正式學期成績紀錄'),
+      open:text.includes('尚未結算'),courses:hasGrades,detail:!!document.querySelector('.notebook-academic-details h3')};
+  })()`);
+  if(!academicCheck.selected||!academicCheck.detail||(!academicCheck.empty&&!academicCheck.open))
+    throw Error('Notebook academic opening must not fabricate grades '+JSON.stringify(academicCheck));
   await click('close');
   if(await evaluate("!!document.querySelector('.overlay')"))throw Error('Notebook overlay did not close');
   const notebookAfter=await evaluate(`(async()=>{

@@ -1,3 +1,4 @@
+import { aftercareOwnsSlot } from './aftercare-calendar.js';
 import { applyEntrance,publicEntrance } from '../academics/admissions.js';
 import { entranceInput } from './entrance.js';
 import { seniorRosterAt } from './academic-roster.js';
@@ -25,7 +26,7 @@ function termForInput(s,input){
  const courses=reviewedCourses(s).filter(c=>c.personId===input.personId&&supplementTermId(c)===input.termId);
  return courses.length?{termId:input.termId,year:courses[0].year,grade:courses[0].level,closed:true,closedAt:courses[0].date,results:[{id:input.personId,courses}]}:undefined;
 }
-// Only an exclusive, unpublished ordered-command draft may follow its journal.
+// Only an exclusive, unpublished transaction/ordered-command draft may follow its journal.
 // Import validation still independently replays every academic row below.
 const projections=new WeakMap();
 export function withAcademicProjection(w,work){
@@ -212,7 +213,7 @@ export function validateAcademicHistory(w){
   if(['release','complete-study','review'].includes(d.input.action))validateSeniorLifecycle({...w,position:{...w.position,...h.at},extensions:{...w.extensions,'teacher-hell/world':{...r,history:r.history.slice(0,h.order-1)}}},s,d.input);
   if(d.input.action==='support'&&Object.values(s.terms).some(t=>isSeniorTerm(t)&&h.at.date>=t.assessmentWindow.marksCloseDate)){need(equal(d.input.supportWindow,Object.values(s.terms).find(isSeniorTerm)?.assessmentWindow)&&d.input.studyAllowed===legalSeniorSupportDate(h.at.date,r.plan.calendarVersion),'support calendar evidence mismatch');}
 
-  const commit=r.commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId),request=JSON.parse(commit.request);need(request.operations.some(op=>equal(op,d.operation))||request.operations.some(op=>['story','finish-slot','school-action','campus','school','advance-time'].includes(op.type)),'academic journal ownership');
+  const commit=r.commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId),request=JSON.parse(commit.request);need(aftercareOwnsSlot(w,h)||request.operations.some(op=>equal(op,d.operation))||request.operations.some(op=>['story','finish-slot','school-action','campus','school','advance-time'].includes(op.type)),'academic journal ownership');
   if(random){const previous=r.history.slice(0,h.order-1).findLast(x=>x.type==='academic');if(previous?.attemptId===h.attemptId)need(equal(random,d.randomBefore),'academic RNG chain');}const rng=restoreRandom(d.randomBefore),result=applyAcademic(s,d.input,rng,d.version);need(equal(result,d.result)&&equal(rng.snapshot(),d.randomAfter),'academic deterministic replay mismatch');random=d.randomAfter;
   if(d.input.basisFactId){const f=r.facts.find(f=>f.id===d.input.basisFactId),i=d.input;need(f&&f.order<h.order&&f.order===i.sourceOrder&&f.subjectIds.includes(i.personId??w.identity.playerId),'academic causal source');
    if(['influence','participation'].includes(i.action))need(f.data.type===`academic-${i.action}`&&equal(f.data.change,{personId:i.personId,subject:i.subject,delta:i.delta}),'academic consequence changed its source');

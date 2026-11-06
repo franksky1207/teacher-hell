@@ -1,3 +1,4 @@
+import { runtimeCalendarDay,aftercareDefinition,retiredAftercareReservation } from './aftercare-calendar.js';
 import { entranceCondition,entranceAbsent } from './entrance.js';
 import { HOMEROOM_KEY,crisisContext } from './homeroom.js';
 import { crisisCandidateParameters } from '../assessment/crisis.js';
@@ -64,7 +65,7 @@ export function validateEventDefinitions(definitions){
 export function eventIndex(world){
  const r=runtime(world),selections=r.history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected),states=new Map();
  for(const h of r.history)if(h.type==='event-lifecycle')states.set(h.eventId,h.data.status);
- const records=selections.map(s=>({...s,status:states.get(s.eventId)??'reserved'}));
+ const records=selections.map(s=>({...s,status:retiredAftercareReservation(world,s.eventId)?'ended':states.get(s.eventId)??'reserved'}));
  const exposures=new Map(),seenExposure=new Set();for(const h of r.history)if(h.type==='event-exposure')for(const id of h.data.participantIds){const k=tuple(h.eventId,id);if(!seenExposure.has(k)){seenExposure.add(k);exposures.set(id,(exposures.get(id)??0)+1);}}
  const history=new Map();for(const f of r.facts)for(const code of f.categoryCodes)for(const person of f.subjectIds){const k=tuple(person,code),list=history.get(k)??[];if(!list.some(x=>x.eventId===f.eventId))list.push({eventId:f.eventId,status:states.get(f.eventId)??'active'});history.set(k,list);}
  const byTopicPerson=new Map(),byDefinition=new Map(),byExclusion=new Map();
@@ -118,7 +119,7 @@ export function candidateConflict(c,prior,date){
 /** Pure eligibility; neither numeric accumulation nor RNG is changed. */
 export function buildEventCandidates(world,definitions,{engineering=false}={}){
  validateEventDefinitions(definitions);const r=runtime(world);need(isFormal(r.plan),'Formal calendar required');
- const day=calendarDay(world.position.date,gradeAt(world.position.date,r.plan.startYear),r.plan.calendarVersion),index=eventIndex(world),candidates=[],rejected=[];
+ const day=runtimeCalendarDay(world),index=eventIndex(world),candidates=[],rejected=[];
  for(const d of definitions){
   need(!(index.byDefinition.get(d.id)??[]).some(s=>s.topicId!==d.topicId||s.type!==d.type),'Stable subtopic identity cannot change topic or type');
   if(d.content.status==='ready'||d.content.resourceId.startsWith('engineering:'))validateStoryReference(d);
@@ -143,6 +144,7 @@ export function buildEventCandidates(world,definitions,{engineering=false}={}){
    if(e.enrollment&&!enrollmentEligibility(world.numeric.evolution.world,{personId:person,...e.enrollment}).eligible)reason='enrollment';
    if(e.history.some(h=>(index.history.get(tuple(person,h.code))??[]).filter(x=>h.status==='any'||x.status===h.status).length<h.minimum))reason='history-threshold';
    try{if(e.numeric.some(n=>{const [v]=numericSources(world,person,[n.source],[n.code]);return v<n.min||v>n.max;}))reason='numeric-condition';}catch{reason='numeric-source-missing';}
+   if(day.kind==='aftercare'&&!aftercareDefinition(d))reason='students-left-school';
    if(!slots.length||day.quota?.kind==='protected-day')reason='no-legal-time';
    const participantIds=[person,...new Set((e.companions??[]).map(c=>c.personId).filter(id=>id!==person))],factIds=[...new Set([...e.facts.map(f=>f.id),...(e.companions??[]).map(c=>c.contactFactId)])].sort();
    const c={key:tuple(d.id,participantIds,factIds),definitionId:d.id,topicId:d.topicId,type:d.type,participantIds,factIds,date:day.date,slotIds:slots,content,cooldownDays:p.cooldownDays,exclusionGroups:groups,sameFact:p.sameFact,reason:p.reason};

@@ -1,3 +1,4 @@
+import { validateAftercareHistory } from './aftercare.js';
 import { validateCohortCompletions } from './cohort.js';
 import { validatePrehistoryOpening } from '../world/prehistory.js';
 import { validateCareerCompletion } from './career.js';
@@ -125,7 +126,7 @@ export function knowledgeReferences(world,event) {
 }
 export function validateWorldState(world) {
   validateFoundationEnvelope(world);
-  validateInstitutionHistory(world);validateAcademicHistory(world);validateCampusHistory(world);
+  validateInstitutionHistory(world);validateAcademicHistory(world);validateCampusHistory(world);validateAftercareHistory(world);
   const r=runtimeOf(world),school=world.numeric.evolution.world.registry;
   if(school){
     for(const record of [...school.enrollments,...school.assignments])ensure(record.from<=world.position.date&&(record.until===null||record.until<=world.position.date),'TIME','School history extends into the future');

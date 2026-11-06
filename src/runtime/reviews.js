@@ -1,3 +1,4 @@
+import { aftercareOwnsSlot } from './aftercare-calendar.js';
 /** Saved semester reports. History is the authority; viewing never samples or settles. */
 import { ABILITY_NAMES, assertShape } from '../player/panel.js';
 import { deriveWorldPanel } from '../social/reputation.js';
@@ -96,7 +97,7 @@ export function validateSemesterReviews(world){
  const seen=new Set();let previous=null;
  for(const h of reports(world)){
   const owner=r.commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId);
-  need(JSON.parse(owner.request).operations.some(op=>['finish-slot','school-action'].includes(op.type)),'Report lacks a slot-completion command');
+  need(aftercareOwnsSlot(world,h)||JSON.parse(owner.request).operations.some(op=>['finish-slot','school-action'].includes(op.type)),'Report lacks a slot-completion command');
   const d=h.data;assertShape(d,['version','periodId','from','fromOrder','untilOrder','start','end','delta','events','summary']);
   for(const field of ['start','end','delta'])assertShape(d[field],ABILITY_NAMES);
   const day=calendarDay(h.at.date,gradeAt(h.at.date,r.plan.startYear),r.plan.calendarVersion);

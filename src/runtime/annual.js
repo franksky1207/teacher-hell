@@ -1,3 +1,4 @@
+import { runtimeSlot } from './aftercare-calendar.js';
 import { compileCohortCompletion,beforeCohortCompletion } from './cohort.js';
 import { failureResult } from './homeroom.js';
 /** Annual observations are projections of the world journal, never writable scores.
@@ -85,7 +86,7 @@ export function annualEvidence(w,{end=snapshot(w,'end'),endRelations=relations(w
   let position=baseline.at,required=0;
   const occupied=new Set(history.filter(h=>h.eventId&&w.events.some(e=>e.id===h.eventId&&!/^(procedure:|activity:)/.test(e.definitionId))).map(h=>`${h.at.date}/${h.at.slotId}`));
   for(;;){const day=calendarDay(position.date,gradeAt(position.date,r(w).plan.startYear),r(w).plan.calendarVersion),table=r(w).plan.tables.find(t=>t.semesterId===day.courseSemesterId);
-   if(table&&slotOccupancy(position.date,day.grade,position.slotId,table,r(w).plan.calendarVersion).teachingAutomatic&&!occupied.has(`${position.date}/${position.slotId}`))required++;
+   if(table&&runtimeSlot(w,position.date,position.slotId,slotOccupancy(position.date,day.grade,position.slotId,table,r(w).plan.calendarVersion)).teachingAutomatic&&!occupied.has(`${position.date}/${position.slotId}`))required++;
    if(position.date===w.position.date&&position.slotId===w.position.slotId)break;position=nextPosition(position,r(w).plan.startYear,planMode(r(w).plan),r(w).plan.calendarVersion);
   }
   const delivery=100*complete.length/Math.max(required,complete.length);

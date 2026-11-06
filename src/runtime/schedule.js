@@ -1,3 +1,4 @@
+import { runtimeCalendarDay,runtimeSlot,aftercareActive,retiredAftercareReservation } from './aftercare-calendar.js';
 import { permitsStoryFollowup } from './story-content.js';
 /** Calendar boundary used by runtime/model and transactions; never imports runtime authority. */
 import { createId } from '../contracts/foundation.js';
@@ -37,7 +38,7 @@ export function validateFormalPlan(plan){
  return plan;
 }
 export function planPosition(plan,cursor=plan.cursor){return isFormal(plan)?positionAt(cursor,plan.startYear,planMode(plan),plan.calendarVersion):plan.positions[cursor];}
-export function formalSlot(world){const plan=world.extensions['teacher-hell/world'].plan,grade=gradeAt(world.position.date,plan.startYear),day=calendarDay(world.position.date,grade,plan.calendarVersion),table=plan.tables.find(t=>t.semesterId===day.courseSemesterId);return {day,slot:slotOccupancy(world.position.date,grade,world.position.slotId,table??null,plan.calendarVersion)};}
+export function formalSlot(world){const plan=world.extensions['teacher-hell/world'].plan,grade=gradeAt(world.position.date,plan.startYear),day=runtimeCalendarDay(world),table=plan.tables.find(t=>t.semesterId===day.courseSemesterId);return {day,slot:runtimeSlot(world,world.position.date,world.position.slotId,slotOccupancy(world.position.date,grade,world.position.slotId,table??null,plan.calendarVersion))};}
 export function createCalendarBaseline(foundation,{startYear,subject,classes,homeClassId,seed,career=null}){
  const f=structuredClone(foundation),existing=f.extensions['teacher-hell/world'];
  need(!f.events.length&&!f.numeric.receipts.length&&f.numeric.evolution.clock.lastNaturalDate===null&&(!existing||existing.version===1&&existing.revision===0&&!existing.history.length&&!existing.commits.length),'MIGRATION','Only an untouched initial baseline can adopt a formal calendar; existing unverified history remains unverified');
@@ -62,9 +63,11 @@ export function prepareSemester(world,op){
 export function guardCalendarOperation(world,command,op){
  const plan=world.extensions['teacher-hell/world'].plan;if(!isFormal(plan))return;
  const {slot}=formalSlot(world),context=command.calendarContext??{kind:'formal-event'};
+ if(aftercareActive(world)&&['school-action','campus','finish-slot','advance-time'].includes(op.type))need(command.operations.some(o=>o.type==='aftercare-week')||op.type==='finish-slot'&&command.operations.length===1&&command.operations[0].type==='story'&&command.operations[0].action==='finish','AFTERCARE','Use the weekly aftercare operation; original slots are internal coverage only');
  assertShape(context,context.kind==='activity'?['kind','activityId']:['kind']);
  need(['formal-event','activity','procedure','routine'].includes(context.kind),'CALENDAR_CONTEXT','Unknown calendar result channel');
- need(op.type==='transition-school-year'||op.type==='settle-school-year'||op.type==='read-semester-review'||op.type==='advance-time'||op.type==='prepare-semester'||!world.extensions['teacher-hell/world'].history.some(h=>h.type==='slot-complete'&&h.cursor===plan.cursor),'TIME_BARRIER','Completed slot is closed to further work; advance before starting another action');
+ if(aftercareActive(world)&&op.type==='open-event'&&context.kind==='formal-event')need(world.extensions['teacher-hell/world'].history.some(h=>h.type==='event-selection'&&h.data.selected.some(s=>s.eventId===op.event.id))&&!retiredAftercareReservation(world,op.event.id),'AFTERCARE','Aftercare formal events require a qualified registered reservation');
+ need(op.type==='transition-school-year'||op.type==='settle-school-year'||op.type==='read-semester-review'||op.type==='advance-time'||op.type==='prepare-semester'||op.type==='aftercare-week'||!world.extensions['teacher-hell/world'].history.some(h=>h.type==='slot-complete'&&h.cursor===plan.cursor),'TIME_BARRIER','Completed slot is closed to further work; advance before starting another action');
  if(['academic','campus','school-action','institution'].includes(op.type))need(context.kind==='routine'||context.kind==='procedure','CALENDAR_CONTEXT','School operations require routine/procedure context');
  if(['advance-time','finish-slot','prepare-semester','plan-vacation'].includes(op.type))return;
  const domain=['story','draw-events','admit-event','event-lifecycle','event-exposure','school','open-event','fact','link-fact','claim','learn','belief','reveal','result','confirm-choice','stage','enrollment-reference','role'].includes(op.type);
@@ -86,7 +89,7 @@ export function guardCalendarOperation(world,command,op){
 export function finishCalendarSlot(world,op){
  assertShape(op,['type','completedActivityIds']);const r=world.extensions['teacher-hell/world'];need(isFormal(r.plan),'CALENDAR','Formal slot completion requires calendar');
  const {slot}=formalSlot(world);need(Array.isArray(op.completedActivityIds)&&new Set(op.completedActivityIds).size===op.completedActivityIds.length&&JSON.stringify([...op.completedActivityIds].sort())===JSON.stringify([...slot.activityIds].sort()),'TIME_BARRIER','Must acknowledge exactly the occupied activities');
- need(!r.history.some(h=>h.type==='event-selection'&&h.data.selected.some(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!world.events.some(e=>e.id===s.eventId))),'TIME_BARRIER','Admit the locked event before leaving its slot');
+ need(!r.history.some(h=>h.type==='event-selection'&&h.data.selected.some(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!retiredAftercareReservation(world,s.eventId)&&!world.events.some(e=>e.id===s.eventId))),'TIME_BARRIER','Admit the locked event before leaving its slot');
  need(!world.events.some(e=>e.choice&&e.choice.confirmedOptionId===null),'TIME_BARRIER','Unresolved player decision blocks time');
  need(!r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor),'DUPLICATE','Slot already completed');
 }
@@ -136,7 +139,7 @@ export function nextVacationOperation(world){
  const plan=world.extensions['teacher-hell/world'].plan,task=plan.vacation;if(!isFormal(plan)||!task)return {status:'idle'};
  const state=world.extensions['teacher-hell/world'];
  if(state.history.some(h=>h.type==='academic')){
-  const reserved=state.history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!world.events.some(e=>e.id===s.eventId));
+  const reserved=state.history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!retiredAftercareReservation(world,s.eventId)&&!world.events.some(e=>e.id===s.eventId));
   if(reserved)return {status:'admission-required',eventId:reserved.eventId};
   if(!state.history.some(h=>h.type==='event-selection'&&h.at.date===world.position.date))return {status:'event-draw-required',catalogueId:state.history.findLast(h=>h.type==='event-catalogue')?.data.catalogueId??null,direction:task.direction,endDate:task.endDate};
  }

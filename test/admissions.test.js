@@ -1,3 +1,4 @@
+import {nextAftercareOperation} from '../src/runtime/aftercare.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -81,10 +82,13 @@ test('H3 formal calendar stages use real five-semester academic history and repl
   if(event.exam){w=at(w,date,'private');w=apply(w,[{type:'academic',action:'assess',termId:'2028:autumn',round:event.exam},...(event.exam===3?[{type:'academic',action:'assess',termId:'2028:autumn',round:0},{type:'academic',action:'close',termId:'2028:autumn'}]:[])],'h3-senior-exam');continue;}
   if(event.node.kind.startsWith('mock-')){
    w=at(w,date,'morning');w=prepareWorldSequence(w,c=>{if(c.slotComplete&&c.position.slotId==='private')return null;const current=calendarDay(date,3,SENIOR_CALENDAR_VERSION).slots.find(s=>s.id===c.position.slotId),ops=c.position.slotId==='private'?[{type:'campus',activity:'rest'},{type:'finish-slot',completedActivityIds:current.activityIds}]:[{type:'school-action',activity:'automatic'}];return {...request({identity:c.identity,extensions:{'teacher-hell/world':{revision:c.revision}}},'h3-mock-phase-'+c.revision,ops),calendarContext:{kind:'routine'}};}).world;
+  }else if(date>'2029-06-01'){
+   if(w.position.date<'2029-06-02')w=at(w,'2029-06-02','morning');
+   while(!readAdmissions(w).completed.some(n=>n.id===event.node.id)){const next=nextAftercareOperation(w);assert.equal(next.status,'advance');w=apply(w,next.request.operations,'h3-aftercare-week');}
   }else {w=at(w,date,day.slots.at(-1).id);w=apply(w,[{type:'campus',activity:day.slots.at(-1).protected?'automatic':'rest'},{type:'finish-slot',completedActivityIds:day.slots.at(-1).activityIds}],'h3-node-'+event.node.id);}
   const review=pendingSemesterReview(w);if(review)w=apply(w,[{type:'read-semester-review',reviewId:review.id}],'h3-review-read');
   process.stderr.write(`H3 verified phase: ${event.node.id} at ${date}\n`);
-  await new Promise(resolve=>setImmediate(resolve));const p=readAdmissions(w);assert.ok(p.completed.some(n=>n.id===event.node.id),event.node.id);if(event.node.id==='gsat-exam')for(const student of Object.values(p.students))assert.equal(student.gsat?.score,undefined);
+  await new Promise(resolve=>setImmediate(resolve));const p=readAdmissions(w);assert.ok(p.completed.some(n=>n.id===event.node.id),event.node.id);assert.equal(p.completed.find(n=>n.id===event.node.id).date,date);if(event.node.id==='gsat-exam')for(const student of Object.values(p.students))assert.equal(student.gsat?.score,undefined);
  }
  const s=academicState(w),e=readAdmissions(w);assert.equal(e.completed.length,nodes.length);assert.equal(e.ranking[0].termIds.length,5);assert.equal(Object.keys(e.students).length,40);assert.ok(Object.values(e.students).some(p=>p.gsat?.published));assert.ok(Object.values(e.students).some(p=>p.applications.length));assert.ok(Object.values(e.students).every(p=>p.subject?.officialScore==null&&p.subject?.distribution==null));assert.equal(runtimeOf(w).history.filter(h=>h.type==='career-completion').length,0);assert.deepEqual(restoreSave(encodeSave(createSave(w))).world,w);assert.equal(s.terms['2028:autumn'].assessments.length,4);
 });

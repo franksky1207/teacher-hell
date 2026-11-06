@@ -1,3 +1,6 @@
+import { adoptionData,activeAftercareWeek,weekStartData,weekSummary } from './aftercare.js';
+import { aftercareActive,aftercareAdoption,runtimeCalendarDay } from './aftercare-calendar.js';
+import { pendingSchoolEvent } from './campus.js';
 import { entranceCalendarEnabled,nextEntranceOperations } from './entrance.js';
 import { compileCohortCompletion,validateCohortArchive } from './cohort.js';
 import { initializePrehistory } from '../world/prehistory.js';
@@ -65,6 +68,7 @@ function preconditions(world,conditions) {
 }
 function execute(world,command,op,numericSession,receipt,selectedAdmission=false,storyInternal=false,npcInternal=false) {
   const r=runtimeOf(world);
+  if(!aftercareAdoption(world)){const adoption=adoptionData(world);if(adoption)history(world,command,'aftercare-adoption',null,null,[],adoption);}
   ensure(storyInternal||npcInternal||['story','institution-tick'].includes(op.type)||!r.history.some(h=>h.type==='homeroom-result'&&h.data.effectiveAt),'YEAR_FAILED','No ordinary actions after effective interruption');
   ensure(!pendingSemesterReview(world)||['read-semester-review','institution-tick'].includes(op.type),'REVIEW_PENDING','Read the saved semester review before continuing');
   if(op.type==='institution-tick'){
@@ -287,10 +291,41 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     ensure(event.choice===null||event.choice.confirmedOptionId!==null,'CHOICE','Cannot abandon an unresolved decision');
     ensure(!r.stages.some(s=>s.id===op.stageId),'DUPLICATE','Stage ID already used');event.stageId=op.stageId;event.choice=clone(op.choice);
     const h=history(world,command,'stage',event.id,event.stageId,[],{previousStageId:op.fromStageId});r.stages.push({id:op.stageId,eventId:event.id,order:h.order});
+  } else if(op.type==='aftercare-week') {
+    assertShape(op,['type']);ensure(command.operations.length===1&&command.calendarContext?.kind==='routine','AFTERCARE','Advance one week in its own routine transaction');
+    ensure(aftercareActive(world),'AFTERCARE','Not in senior aftercare');
+    let task=activeAftercareWeek(world)?.data;
+    if(!task){task=weekStartData(world);history(world,command,'aftercare-week-start',null,null,[],task);}
+    for(let count=0;count<160;count++){
+      syncNumeric(world,numericSession);
+      if(world.extensions[HOMEROOM_KEY]&&!r.history.some(h=>h.type==='crisis-observation'&&h.at.date===world.position.date)&&!annualResult(world))history(world,command,'crisis-observation',null,null,[],crisisObservation(world));
+      if(pendingSchoolEvent(world))break;
+      if(!r.history.some(h=>h.type==='event-selection'&&h.at.date===world.position.date)){
+        const catalogue=r.history.findLast(h=>h.type==='event-catalogue');
+        const draw=catalogue?{type:'draw-events',catalogueId:catalogue.data.catalogueId}:{type:'draw-events',definitions:[],bindings:[],engineering:true};
+        // Selection keeps its original formal channel; the weekly driver owns no story decisions.
+        numericSession=execute(world,{...command,calendarContext:{kind:'formal-event'}},draw,numericSession,receipt);
+        if(pendingSchoolEvent(world))break;
+      }
+      const complete=r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor);
+      if(!complete){
+        const day=runtimeCalendarDay(world);
+        if(day.slots.at(-1).id===world.position.slotId&&!r.history.some(h=>h.type==='campus'&&h.cursor===r.plan.cursor)&&!schoolEventOccupied(world))numericSession=execute(world,command,{type:'campus',activity:world.position.date===task.startDate?'aftercare-admin':'rest'},numericSession,receipt);
+        numericSession=execute(world,command,{type:'finish-slot',completedActivityIds:[]},numericSession,receipt);
+      }
+      if(world.position.date===task.endDate&&runtimeCalendarDay(world).slots.at(-1).id===world.position.slotId){
+        syncNumeric(world,numericSession);history(world,command,'aftercare-week-summary',null,null,[],weekSummary(world,task));
+        if(world.position.date!==aftercareAdoption(world).data.endDate&&!pendingSemesterReview(world))numericSession=execute(world,command,{type:'advance-time',planId:r.plan.id,steps:1},numericSession,receipt);
+        break;
+      }
+      if(pendingSemesterReview(world)||pendingSchoolEvent(world))break;
+      numericSession=execute(world,command,{type:'advance-time',planId:r.plan.id,steps:1},numericSession,receipt);
+      ensure(count<159,'AFTERCARE','Week exceeded bounded original slots');
+    }
   } else if(op.type==='plan-vacation') {
     const panel=deriveWorldPanel(numericSession.world());planVacation(world,op,Object.fromEntries(STATE_NAMES.map(k=>[k,panel[k]])));history(world,command,'vacation-plan',null,null,[],{id:op.id,direction:op.direction,weeks:op.weeks});
   } else if(op.type==='finish-slot') {
-    if(schoolEnabled(world)&&!schoolEventOccupied(world)&&!r.history.some(h=>h.type==='campus'&&h.cursor===r.plan.cursor)){
+    if(schoolEnabled(world)&&!aftercareActive(world)&&!schoolEventOccupied(world)&&!r.history.some(h=>h.type==='campus'&&h.cursor===r.plan.cursor)){
       const activity=r.plan.vacation?.direction??(schoolActions(world).includes('automatic')?'automatic':null);
       ensure(activity,'SCHOOL_ACTION','Choose the legal routine activity before completing this slot');
       numericSession=execute(world,command,{type:'campus',activity},numericSession,receipt);
@@ -397,7 +432,10 @@ function prepareDraft(world,request,ownedNumeric=null) {
     const command=clone(request),offset=r.history.length;
     const receipt={id:command.id,attemptId:command.attemptId,revision:r.revision+1,request:encoded,historyIds:[],numericReceiptIds:[],draws:[]};
     let numerical=ownedNumeric??createSettlementSession(world.numeric);
-    for(const operation of command.operations)numerical=execute(world,command,operation,numerical,receipt);
+    const perform=()=>{for(const operation of command.operations)numerical=execute(world,command,operation,numerical,receipt);};
+    // A bounded week owns the same journal-following projection as ordered sequences.
+    // Import validation still replays independently after this detached cache is released.
+    if(command.operations[0].type==='aftercare-week'&&!ownedNumeric)withAcademicProjection(world,perform);else perform();
     const readingOnly=['read-semester-review','settle-school-year','transition-school-year','settle-career'].includes(command.operations[0].type);
     if(!readingOnly)numerical=execute(world,command,{type:'institution-tick'},numerical,receipt);
     const arrangement=readingOnly?null:arrangeReplenishment(world,command,numerical);

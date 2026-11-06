@@ -351,7 +351,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
       if(!saved.studyCompletedAt)numericSession=execute(world,command,{type:'academic',action:'complete-study',termId:term.id},numericSession,receipt,false,false,true);
       numericSession=execute(world,command,{type:'academic',action:'review',termId:term.id},numericSession,receipt,false,false,true);
     }}
-    if(schoolEnabled(world)&&entranceCalendarEnabled(world))for(const entrance of nextEntranceOperations(world,academicState(world)))numericSession=execute(world,command,entrance,numericSession,receipt,false,false,true);
+    if(schoolEnabled(world)&&entranceCalendarEnabled(world)&&formalSlot(world).day.slots.at(-1).id===world.position.slotId)for(const entrance of nextEntranceOperations(world,academicState(world)))numericSession=execute(world,command,entrance,numericSession,receipt,false,false,true);
     const review=semesterReviewData(world);if(review)history(world,command,'semester-review',null,null,[],review);
   } else if(op.type==='prepare-semester') {
     prepareSemester(world,op);history(world,command,'timetable',null,null,[],{semesterId:op.semesterId});

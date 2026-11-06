@@ -60,7 +60,7 @@ try {
   await call('Page.setInterceptFileChooserDialog',{enabled:true},sessionId);
   await call('Page.addScriptToEvaluateOnNewDocument',{source:`window.confirm = x => { (window.confirmPrompts ??= []).push(x); return window.confirmAnswers?.length ? window.confirmAnswers.shift() : true; }; window.alert = x => { window.lastAlert=x; }; const NativeDate=Date; window.Date=class extends NativeDate { constructor(...args){super(...(args.length?args:['2026-11-05T12:00:00Z']));} static now(){return NativeDate.parse('2026-11-05T12:00:00Z');} };`},sessionId);
   const wait=async selector=>{for(let i=0;i<9000;i++){if(await evaluate(`!!document.querySelector(${JSON.stringify(selector)})`))return;await new Promise(r=>setTimeout(r,100));}throw Error('Missing '+selector+' '+await evaluate('document.body.innerText')+' ALERT '+await evaluate('window.lastAlert'));};
-  const click=async action=>{for(let i=0;i<9000&&await evaluate(`!!document.querySelector('.operation-status')`);i++)await new Promise(r=>setTimeout(r,100));await wait(`[data-action="${action}"]`);await evaluate(`document.querySelector(${JSON.stringify(`[data-action="${action}"]`)}).click()`);for(let i=0;i<9000;i++){if(!await evaluate(`!!document.querySelector('.operation-status')`))return;await new Promise(r=>setTimeout(r,100));}throw Error('Operation did not finish: '+action);};
+  const click=async action=>{for(let i=0;i<9000&&await evaluate(`!!document.querySelector('.operation-status')`);i++)await new Promise(r=>setTimeout(r,100));const selector=await evaluate(`'[data-action="'+CSS.escape(${JSON.stringify(action)})+'"]'`);await wait(selector);await evaluate(`document.querySelector(${JSON.stringify(selector)}).click()`);for(let i=0;i<9000;i++){if(!await evaluate(`!!document.querySelector('.operation-status')`))return;await new Promise(r=>setTimeout(r,100));}throw Error('Operation did not finish: '+action);};
   const includes=async text=>{if(!await evaluate(`document.body.innerText.includes(${JSON.stringify(text)})`))throw Error('Missing text '+text);};
 
   // Date-isolated legacy saves verify UI compatibility only. The separate
@@ -87,6 +87,10 @@ try {
       assert.deepEqual(layout,{documentScroll:false,withinX:true,withinY:true});checks++;
     }
     await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true},sessionId);
+    if(extra&&['2028-07-24','2028-12-01'].includes(payload.world.position.date)){
+      await includes('學測模考・上午（不計入學期成績）');checks++;
+      await click('timetable');assert.equal(await evaluate(`document.querySelectorAll('.table button').length`),40);await includes('學測模考');await click('close');checks++;
+    }
     if(extra&&!completed&&payload.world.position.date==='2029-06-29'){
       // The source is an actual continuous save before the original report gate.
       const pending=await evaluate(`document.querySelector('[data-action^="review-ack:"]')?.dataset.action??null`);
@@ -102,15 +106,15 @@ try {
       await click('notebook-tab:people');await wait('.notebook-person');assert.ok(await evaluate(`document.querySelectorAll('.notebook-person').length>=38`));checks++;
       await click('notebook-tab:academics');await wait('.notebook-academic-student');
       assert.ok(await evaluate(`document.querySelectorAll('.notebook-academic-student').length>=38`));checks++;
-      await evaluate(`document.querySelector('.notebook-academic-student').click()`);await includes('40％／30％／30％');await includes('畢業考');
+      await evaluate(`document.querySelector('.notebook-academic-student').click()`);await wait('.notebook-academic-details h3');await includes('40％／30％／30％');await includes('畢業考');
       assert.equal(await evaluate(`document.querySelectorAll('.notebook-academic-terms button').length`),6);checks++;
       assert.equal(await evaluate(`Array.from(document.querySelectorAll('.notebook-academic-table th')).some(x=>x.textContent==='三段')`),false);checks++;
       await click('close');
       completedHeap=await call('Runtime.getHeapUsage',{},sessionId);
       const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false},sessionId);await writeFile(resolve(root,'work/h5/completed-mobile.png'),Buffer.from(shot.data,'base64'));
-      await click('menu');await click('slots');const exportAt=performance.now();await click('export:1');
+      await click('menu');await click('slots');await evaluate(`window.h5Loop={ticks:0,maxGapMs:0,last:performance.now()};window.h5LoopTimer=setInterval(()=>{const now=performance.now();h5Loop.maxGapMs=Math.max(h5Loop.maxGapMs,now-h5Loop.last);h5Loop.last=now;h5Loop.ticks++;},20)`);const exportAt=performance.now();await click('export:1');
       let exported;for(let i=0;i<900;i++){exported=(await readdir(temporary)).find(n=>n.endsWith('.json'));if(exported)break;await new Promise(r=>setTimeout(r,100));}
-      assert.ok(exported);timings.exportUiMs=performance.now()-exportAt;const exportedPath=join(temporary,exported),backup=await readFile(exportedPath),expected=gunzipSync(await readFile(extra));
+      assert.ok(exported);timings.exportUiMs=performance.now()-exportAt;timings.exportMainLoop=await evaluate('clearInterval(h5LoopTimer);h5Loop');assert.ok(timings.exportMainLoop.ticks>1);checks++;const exportedPath=join(temporary,exported),backup=await readFile(exportedPath),expected=gunzipSync(await readFile(extra));
       const sha=b=>createHash('sha256').update(b).digest('hex');assert.equal(sha(backup),sha(expected));checks++;
       const opened=new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('Completed import file chooser timeout')),10000),listener=e=>{const m=JSON.parse(e.data);if(m.method==='Page.fileChooserOpened'){clearTimeout(timer);socket.removeEventListener('message',listener);resolve(m.params.backendNodeId);}};socket.addEventListener('message',listener);});
       await click('import:2');const importAt=performance.now();await call('DOM.setFileInputFiles',{files:[exportedPath],backendNodeId:await opened},sessionId);

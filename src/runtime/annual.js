@@ -82,10 +82,13 @@ export function annualEvidence(w,{end=snapshot(w,'end'),endRelations=relations(w
  }
  const campus=history.filter(h=>h.type==='campus'),lessons=campus.filter(h=>h.data.slot.teachingAutomatic);
  if(lessons.length){
-  const complete=lessons.filter(h=>h.data.operations.some(o=>o.type==='result'&&w.events.some(e=>e.id===o.eventId&&e.results.some(x=>x.id===o.id))));
+  // Same membership checks and receipts, indexed only for this evidence query.
+  const resultsByEvent=new Map(),ordinaryEventIds=new Set();
+  for(const e of w.events){if(!resultsByEvent.has(e.id))resultsByEvent.set(e.id,new Set());for(const result of e.results)resultsByEvent.get(e.id).add(result.id);if(!/^(procedure:|activity:)/.test(e.definitionId))ordinaryEventIds.add(e.id);}
+  const complete=lessons.filter(h=>h.data.operations.some(o=>o.type==='result'&&resultsByEvent.get(o.eventId)?.has(o.id)));
   // This measures delivery of actual assigned lessons, not educational excellence.
   let position=baseline.at,required=0;
-  const occupied=new Set(history.filter(h=>h.eventId&&w.events.some(e=>e.id===h.eventId&&!/^(procedure:|activity:)/.test(e.definitionId))).map(h=>`${h.at.date}/${h.at.slotId}`));
+  const occupied=new Set(history.filter(h=>h.eventId&&ordinaryEventIds.has(h.eventId)).map(h=>`${h.at.date}/${h.at.slotId}`));
   for(;;){const day=calendarDay(position.date,gradeAt(position.date,r(w).plan.startYear),r(w).plan.calendarVersion),table=r(w).plan.tables.find(t=>t.semesterId===day.courseSemesterId);
    if(table&&runtimeSlot(w,position.date,position.slotId,slotOccupancy(position.date,day.grade,position.slotId,table,r(w).plan.calendarVersion)).teachingAutomatic&&!occupied.has(`${position.date}/${position.slotId}`))required++;
    if(position.date===w.position.date&&position.slotId===w.position.slotId)break;position=nextPosition(position,r(w).plan.startYear,planMode(r(w).plan),r(w).plan.calendarVersion);

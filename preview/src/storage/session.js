@@ -50,8 +50,14 @@ export async function createStoredSession(storage,slot,{afterPersist}={}) {
     snapshot(){ready();return copyStored(current);},
     recover:()=>serial(async()=>{current=await storage.read(slot);recoveryRequired=false;await archive();return copyStored(current);}),
     initialize:(world)=>serial(async()=>{ready();ensure(current.payload===null,'OVERWRITE','Slot occupied; use reviewed import');return publish(createSave(world,world),null);}),
-    execute:(request,{captureOpening=false}={})=>serial(async()=>{
-      ready();ensure(current.payload,'EMPTY','Slot is empty');const disk=await storage.read(slot);ensure(disk.payload,'STALE','Slot was deleted');
+    execute:(request,{captureOpening=false,expectedToken}={})=>serial(async()=>{
+      ready();ensure(current.payload,'EMPTY','Slot is empty');
+      // A short-lived worker must still fence the token originally shown by its
+      // caller. Exact committed retries remain eligible for normal replay below.
+      if(expectedToken!==undefined&&!sameToken(current.token,expectedToken)){
+        ensure(expectedToken?.careerId===current.token?.careerId&&runtimeOf(current.payload.world).commits.some(c=>c.id===request.id&&c.attemptId===request.attemptId),'STALE','Displayed slot changed; reload before continuing');
+      }
+      const disk=await storage.read(slot);ensure(disk.payload,'STALE','Slot was deleted');
       if(!sameToken(disk.token,current.token)){
         ensure(disk.token.careerId===current.token.careerId,'STALE','Slot now belongs to another career; do not replay an old career request');
         const prior=runtimeOf(disk.payload.world).commits.find(c=>c.id===request.id&&c.attemptId===request.attemptId);

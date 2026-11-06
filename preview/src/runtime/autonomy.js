@@ -1,3 +1,4 @@
+import { aftercareOwnsSlot,aftercareActive } from './aftercare-calendar.js';
 /** Background social actions compiled into the existing world transaction ledger.
  * No clock, second numeric state, formal admissions, or per-school daily agents. */
 import { createId } from '../contracts/foundation.js';
@@ -25,7 +26,7 @@ function contacts(w){
  const seeds=[...new Set(r.knowledge.map(k=>k.actorId).concat(r.facts.filter(f=>f.categoryCodes.some(c=>['H01-1','H01-2','H09-1'].includes(c))).flatMap(f=>f.subjectIds)))].filter(id=>n.people[id]&&(students.includes(id)||currentCaregivers.has(id)||n.people[id].kind==='other'));
  for(const actorId of seeds.slice(0,40)){
   let peers=[];
-  if(['early','lunch'].includes(slot)&&active.has(actorId))peers=students.filter(id=>id!==actorId);
+  if(day.kind!=='aftercare'&&['early','lunch'].includes(slot)&&active.has(actorId))peers=students.filter(id=>id!==actorId);
   if(['private','evening','vacation-day','festival-day'].includes(slot)||['morning','afternoon'].includes(slot)&&['weekend','holiday'].includes(day.kind))peers=n.careLinks.filter(l=>l.studentId===actorId||l.caregiverId===actorId).map(l=>l.studentId===actorId?l.caregiverId:l.studentId);
   for(const toId of peers.slice(0,2))if(n.relationships[directedKey(actorId,toId)]&&!result.some(f=>f.subjectIds.includes(actorId)&&f.subjectIds.includes(toId)))result.push({id:id('fact',w,'contact',actorId,toId),subjectIds:[actorId,toId],witnessIds:[actorId,toId],data:{type:'contact'},causeIds:r.facts.filter(f=>f.subjectIds.includes(actorId)&&f.subjectIds.includes(toId)&&f.categoryCodes.some(c=>['H01-1','H01-2','H09-1'].includes(c))).slice(-1).map(f=>f.id),natural:true});
  }
@@ -33,6 +34,7 @@ function contacts(w){
 }
 function formerAt(w,person){
  const r=runtime(w),registry=w.numeric.evolution.world.registry;if(person.kind!=='student'||!registry)return false;
+ if(aftercareActive(w)&&registry.enrollments.some(e=>e.personId===person.id&&e.classId===registry.homeClassId))return true;
  const change=r.history.findLast(h=>h.type==='school'&&(h.data.change.personId===person.id||h.data.change.personIds?.includes(person.id)));
  if(change&&['school-leave','school-graduate'].includes(change.data.change.type))return true;
  return !registry.enrollments.some(e=>e.personId===person.id&&e.from<=w.position.date&&(e.until===null||e.until>=w.position.date));
@@ -189,7 +191,7 @@ export function validateNpcHistory(w){
  const r=runtime(w),seen=new Set(),randomByAttempt=new Map();
  for(const h of r.history.filter(h=>h.type==='npc-update')){
   const request=JSON.parse(r.commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId).request);
-  need(request.operations.some(o=>o.type==='npc-update'||o.type==='finish-slot'||o.type==='story'&&o.action==='finish'||o.type==='school-action'&&r.history.some(c=>c.type==='campus'&&c.operationId===h.operationId&&c.cursor===h.cursor)&&r.history.some(c=>c.type==='slot-complete'&&c.operationId===h.operationId&&c.cursor===h.cursor)),'unowned autonomy update');
+  need(aftercareOwnsSlot(w,h)||request.operations.some(o=>o.type==='npc-update'||o.type==='finish-slot'||o.type==='story'&&o.action==='finish'||o.type==='school-action'&&r.history.some(c=>c.type==='campus'&&c.operationId===h.operationId&&c.cursor===h.cursor)&&r.history.some(c=>c.type==='slot-complete'&&c.operationId===h.operationId&&c.cursor===h.cursor)),'unowned autonomy update');
   const d=h.data;assertShape(d,['version','classroom','inputs','decisions','operations','randomBefore','randomAfter','duplicate','beforeOrder']);need(d.version===AUTONOMY_VERSION,'unsupported action version');
   need(!seen.has(h.cursor),'duplicate update at one slot');seen.add(h.cursor);
   if(randomByAttempt.has(h.attemptId))need(same(d.randomBefore,randomByAttempt.get(h.attemptId)),'random chain mismatch');randomByAttempt.set(h.attemptId,d.randomAfter);

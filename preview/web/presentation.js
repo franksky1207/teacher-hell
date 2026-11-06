@@ -1,3 +1,4 @@
+import {aftercareActive,aftercareWindow,runtimeSlot,continuesAftercareTeaching} from '../src/runtime/aftercare-calendar.js';
 /** Display-only projections; never alter or round persisted world values. */
 import {calendarDay,semester,yearData} from '../src/calendar/calendar.js';
 import {addDays,dayNumber,weekMonday} from '../src/calendar/civil.js';
@@ -9,12 +10,27 @@ export function periodLabel(date,day){
  return day.kind==='spring-festival'?'春節':day.kind==='long-vacation'?'長假':day.holiday.length?day.holiday.map(h=>h.name).join('、'):'假期';
 }
 /** Actual week plus nearest opposite-parity full week in the same formal semester. */
-export function comparableWeeks(date,grade){
- const day=calendarDay(date,grade),actual=weekMonday(date),result={actual,odd:null,even:null};
+export function comparableWeeks(date,grade,version){
+ const day=calendarDay(date,grade,version),actual=weekMonday(date),result={actual,odd:null,even:null};
  if(day.week===null||day.term?.camp)return result;
  const key=day.week%2?'odd':'even',other=day.week%2?'even':'odd';result[key]=actual;
  const term=semester(day.term.id);
- for(const delta of [7,-7]){const candidate=addDays(actual,delta),last=addDays(candidate,4);if(candidate<term.start||last>term.end)continue;const d=calendarDay(candidate,grade);if(d.week!==null&&d.week%2!==day.week%2&&d.courseSemesterId===term.id){result[other]=candidate;break;}}
+ for(const delta of [7,-7]){const candidate=addDays(actual,delta),last=addDays(candidate,4);if(candidate<term.start||last>term.end)continue;const d=calendarDay(candidate,grade,version);if(d.week!==null&&d.week%2!==day.week%2&&d.courseSemesterId===term.id){result[other]=candidate;break;}}
  return result;
 }
 export function classLabel(table,registry,classId){const c=registry.classes[classId];if(!c)throw new RangeError('Unknown class');const grade=table.academicYear-c.cohortStart+1;if(grade<1||grade>3)throw new RangeError('Invalid class or academic year');return `高${'一二三'[grade-1]}${c.name}`;}
+
+/** A pending adoption affects upcoming cells; saved pre-adoption slots keep history. */
+export function aftercareCellIsEmpty(w,date,slot,ordinary){
+ if(aftercareActive(w,date))return !slot||runtimeSlot(w,date,slot.id,ordinary)?.kind==='aftercare';
+ const bounds=aftercareWindow(w,date);
+ return !!bounds&&date>=w.position.date&&date>=bounds.startDate&&(!slot||!continuesAftercareTeaching(w,ordinary?.lesson));
+}
+
+/** Current saved-calendar phase only; contains no marks or route guesses. */
+export function scheduledPhase(day,slotId){
+ const slot=day.slots.find(s=>s.id===slotId);if(!slot)return null;
+ if(slot.kind==='exam')return slot.examKind==='graduation-exam'?'畢業考':`第${['一','二','三'][slot.examRound-1]}次段考`;
+ const mock=day.activities.find(a=>a.kind.startsWith('mock-')&&slot.activityIds.includes(a.id));
+ return mock?`${mock.family==='gsat'?'學測':'分科'}模考・${slotId==='morning'?'上午':'下午'}（不計入學期成績）`:null;
+}

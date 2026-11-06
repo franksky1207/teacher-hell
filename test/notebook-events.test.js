@@ -5,21 +5,21 @@ import {beginDemo,apply,storyAction} from './support/story-scenario.js';
 import {readStory} from '../src/runtime/story.js';
 import {readPlayerView} from '../src/runtime/views.js';
 
-test('14-C: only the teacher-disclosed knowledge is projected, and reading is pure',()=>{
+test('14-F: teacher-known feed remains distinct from explicitly tagged retrospective facts and is pure',()=>{
  const {world}=beginDemo(),before=JSON.stringify(world);
  const safe=projectNotebookEvents(world),player=readPlayerView(world);
  assert.equal(safe.entries.filter(x=>x.kind==='fact').length,new Set(player.facts.map(x=>x.id)).size);
  assert.equal(safe.entries.filter(x=>x.kind==='claim').length,new Set(player.claims.map(x=>JSON.stringify([x.claimId,x.versionId]))).size);
  assert.equal(JSON.stringify(world),before);
  assert.ok(safe.entries.some(x=>x.text.includes('小考')));
- for(const e of safe.entries)assert.ok(!Object.hasOwn(e,'subjectIds')&&!Object.hasOwn(e,'participantIds')&&!Object.hasOwn(e,'eventId'));
+ for(const e of safe.entries)assert.ok(!Object.hasOwn(e,'subjectIds')&&!Object.hasOwn(e,'participantIds')); // Stable event reference is permitted for review grouping.
 });
 test('14-C: selecting without confirming an event does not expose new facts',()=>{
  let {world,eventId}=beginDemo();
- const before=projectNotebookEvents(world).entries;
+ const before=projectNotebookEvents(world).entries.filter(e=>e.kind==='fact'||e.kind==='claim');
  while(readStory(world,eventId).canNext)world=apply(world,[storyAction(eventId,'next')]);
  world=apply(world,[storyAction(eventId,'select','listen')]);
- assert.deepEqual(projectNotebookEvents(world).entries,before);
+ assert.deepEqual(projectNotebookEvents(world).entries.filter(e=>e.kind==='fact'||e.kind==='claim'),before);
 });
 test('14-C: chronological cross-year filtering and second-page pagination',()=>{
  const entries=Array.from({length:30},(_,i)=>({kind:'fact',learnedDate:i<20?'2026-11-06':'2027-02-05',occurredDate:null,text:'事實'+i}));

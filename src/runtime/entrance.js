@@ -7,7 +7,8 @@ import { need } from '../academics/rules.js';
 import { assertShape } from '../player/panel.js';
 function mockEvidence(r,id,date){return ['morning','afternoon'].every(phase=>r.facts.some(f=>f.order<=r.history.length&&f.occurredAt.date===date&&f.data.mockSummary?.nodeId===id&&f.data.mockSummary.phase===phase)&&r.history.some(h=>h.type==='slot-complete'&&h.at.date===date&&h.at.slotId===phase));}
 const runtime=w=>w.extensions['teacher-hell/world'];
-export function entranceCompatible(w,s){const p=runtime(w).plan,registry=w.numeric.evolution.world.registry;return s.version===2&&p.calendarVersion===SENIOR_CALENDAR_VERSION&&planMode(p)===THREE_YEAR&&registry.academicYear-registry.cohortStart===2&&!s.admissions.some(a=>a.year===registry.cohortStart+2);}
+export function entranceCalendarEnabled(w){const p=runtime(w).plan,registry=w.numeric.evolution.world.registry;return p.calendarVersion===SENIOR_CALENDAR_VERSION&&planMode(p)===THREE_YEAR&&registry.academicYear-registry.cohortStart===2;}
+export function entranceCompatible(w,s){const registry=w.numeric.evolution.world.registry;return entranceCalendarEnabled(w)&&s.version===2&&!s.admissions.some(a=>a.year===registry.cohortStart+2);}
 export function entranceInput(w,op,s){
  assertShape(op,['type','action','node',...['nodeId','personId','delta','decision','groups','basisFactId'].filter(k=>Object.hasOwn(op,k))]);
  need(op.action==='entrance'&&entranceCompatible(w,s),'incompatible admissions/calendar/academic policy');

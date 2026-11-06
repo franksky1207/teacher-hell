@@ -6,12 +6,13 @@
  */
 const counts=Object.freeze({
  '陳':16,'林':8,'黃':12,'張':11,'李':7,'王':4,'吳':7,'劉':15,'蔡':17,'楊':13,
+ '尤':4,'大':3,'小':3,'志':7,'明':8,'華':12,
  '宇':6,'庭':10,'雅':12,'安':6,'承':8,'涵':11,'文':4,'哲':10,
  '怡':8,'宏':7,'欣':8,'瑋':13,'思':9,'恩':10,'家':10,'軒':10
 });
 // For equal surname stroke counts compare radical, outside-radical strokes,
 // then standard character code point (a stable tie-breaker, never a name interleave).
-const radicals=Object.freeze({'陳':[3,13],'林':[4,4],'黃':[12,0],'張':[3,8],
+const radicals=Object.freeze({'尤':[3,1],'陳':[3,13],'林':[4,4],'黃':[12,0],'張':[3,8],
  '李':[4,3],'王':[4,0],'吳':[3,4],'劉':[2,13],'蔡':[6,11],'楊':[4,9]});
 const cmp=(a,b)=>a<b?-1:a>b?1:0;
 function compareCharacter(a,b){
@@ -29,8 +30,13 @@ function compareSurname(a,b){
 }
 function compareGiven(a,b){
  const x=[...a].slice(1),y=[...b].slice(1),n=Math.max(x.length,y.length);
+ // Compare *all* given-name stroke totals first. A same-stroke first
+ // character must not interrupt comparison of a later character's strokes.
  for(let i=0;i<n;i++){
   if(!x[i]||!y[i])return cmp(x.length,y.length);
+  const c=cmp(counts[x[i]]??999,counts[y[i]]??999);if(c)return c;
+ }
+ for(let i=0;i<n;i++){
   const c=compareCharacter(x[i],y[i]);if(c)return c;
  }
  return 0;

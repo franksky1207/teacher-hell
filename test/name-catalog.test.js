@@ -24,6 +24,8 @@ test('New school creates 40 distinct student given names, with family-aware pare
  assert.deepEqual(roster.students.map(s=>s.seatNo),Array.from({length:40},(_,i)=>i+1));
  assert.equal(roster.students.filter(s=>s.gender==='male').length,20);
  assert.equal(roster.students.filter(s=>s.gender==='female').length,20);
+ const allNames=Object.values(reg.profiles).map(p=>p.displayName.slice(surnameOf(p.displayName).length));
+ assert.equal(new Set(allNames).size,allNames.length,'Parent, student and school staff given names must not collide');
  const given=roster.students.map(s=>s.name.slice(surnameOf(s.name).length));
  assert.equal(new Set(given).size,40);
  for(const student of roster.students){

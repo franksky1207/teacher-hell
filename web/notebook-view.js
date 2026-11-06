@@ -11,7 +11,7 @@ export const NOTEBOOK_TABS=Object.freeze([
  {id:'tasks',label:'待辦事項',description:'尚未完成的正式責任'}
 ]);
 const HISTORY_SECTIONS=Object.freeze([{id:'events',label:'時間／事件'},{id:'academics',label:'學業成績'},{id:'semesters',label:'學期與學年'},{id:'career',label:'生涯結局'}]);
-export function renderNotebookView({date,grade,readonly=false,tab='people',people=null,selectedPersonId=null,personSearch='',events=null,eventYear='all',eventKind='all',eventPage=1,eventSearch='',eventView='time',academics=null,reviews=null,selectedReview=null,career=null,tasks=null}){
+export function renderNotebookView({date,grade,readonly=false,tab='people',people=null,selectedPersonId=null,personSearch='',events=null,eventYear='all',eventKind='all',eventPage=1,eventSearch='',eventView='time',eventTerm=null,academics=null,reviews=null,selectedReview=null,career=null,tasks=null}){
  if(typeof date!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(date)||![1,2,3].includes(grade))throw new TypeError('Invalid notebook public context');
  const chosen=NOTEBOOK_TABS.find(x=>x.id===tab)||HISTORY_SECTIONS.find(x=>x.id===tab);
  if(!chosen)throw new RangeError('Unknown notebook tab');
@@ -20,7 +20,7 @@ export function renderNotebookView({date,grade,readonly=false,tab='people',peopl
  const innerTabs=section==='events'?'<nav class="notebook-subtabs" aria-label="歷史分類">'+HISTORY_SECTIONS.map(t=>`<button type="button" data-action="notebook-tab:${t.id}" aria-pressed="${tab===t.id}">${esc(t.label)}</button>`).join('')+'</nav>':'';
  const body=tab==='people'&&people?renderNotebookPeople(people,selectedPersonId,personSearch)
   :tab==='tasks'&&tasks?renderNotebookTasks(tasks)
-  :tab==='events'&&events?renderNotebookEvents(events,{year:eventYear,kind:eventKind,page:eventPage,search:eventSearch,mode:eventView})
+  :tab==='events'&&events?renderNotebookEvents(events,{year:eventYear,kind:eventKind,page:eventPage,search:eventSearch,mode:eventView,term:eventTerm})
   :tab==='academics'&&academics?renderNotebookAcademics(academics)
   :tab==='semesters'&&reviews?renderNotebookReviews(reviews,selectedReview)
   :tab==='career'&&career?renderNotebookCareer(career)

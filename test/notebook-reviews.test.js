@@ -38,6 +38,7 @@ test('14-E: finished read-only record is escaped and does not add slots',()=>{
  assert.match(html,/符合畢業資格 36 人/);
  assert.match(html,/&lt;script&gt;說法&lt;\/script&gt;/);
  assert.doesNotMatch(html,/<script>|data-story-action/);
+ const original=renderNotebookCareer({completed:true,serviceYear:30,date:'2056-06-29',grade:'A',score:75,ending:'原保存結局',cohorts:[]});assert.match(original,/30年生涯完成紀錄/);assert.doesNotMatch(original,/三年生涯完成紀錄/);
 });
 test('14-E: all six notebook tabs include both formal summary views',()=>{
  const a=renderNotebookView({date:'2027-01-22',grade:1,tab:'semesters',reviews:{semesters:[],years:[],pendingId:null}});

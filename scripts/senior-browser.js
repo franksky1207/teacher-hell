@@ -5,7 +5,7 @@ import {calendarDay,SENIOR_CALENDAR_VERSION,THREE_YEAR,yearData} from '../src/ca
 import {aftercareCatalogue} from '../src/runtime/story-content.js';
 import {createCandidate} from '../src/player/creation.js';
 import {createCareerOpening} from '../src/runtime/opening.js';
-import {createSave} from '../src/storage/format.js';
+import {createSave,restoreSave} from '../src/storage/format.js';
 /** Optional local Chromium/CDP smoke. No downloads, persistent profiles or player data. */
 import {readFile} from 'node:fs/promises';
 import {gunzipSync} from 'node:zlib';
@@ -70,7 +70,9 @@ try {
   const opening=createCareerOpening({candidate:createCandidate({seed:74,playerId:'teacher',schoolId:'school'}),seed:75,taipeiDate:'2026-11-06',difficulty:'normal',subject:'國文',careerKey:'h5-browser'});
   const review=academicApply(academicAt(opening,yearData(2027).winterFinal,'private'),[{type:'finish-slot',completedActivityIds:[]}]);
   const contactDate='2029-06-02';let contact=academicAt(eventWorld(74,contactDate,calendarDay(contactDate,3,SENIOR_CALENDAR_VERSION).slots[0].id,{version:1,mode:THREE_YEAR,difficulty:'hard'}),contactDate);contact=academicApply(contact,[{type:'academic',action:'open'}]);contact=academicApply(contact,[aftercareCatalogue()]);
-  const scenarios=extra?[[extra,JSON.parse(gunzipSync(await readFile(extra)))]]:[['opening',createSave(opening,opening)],['review',createSave(review,opening)],['before',fixtures.before],['after',fixtures.after],['terminal',fixtures.terminal],['reserved',fixtures.reserved],['contact',createSave(contact)]];
+  function mockFixture(date){let w=eventWorld(74,null,null,{version:1,mode:THREE_YEAR,difficulty:'hard'});for(const d of ['2027-02-22','2027-07-26','2028-02-21','2028-07-24',...(date.startsWith('2029')?['2029-02-19']:[])])w=academicAt(w,d);return createSave(academicApply(academicAt(w,date,'morning'),[{type:'academic',action:'open'}]));}
+  const ceremony=academicApply(academicAt(restoreSave(fixtures.before).world,'2029-06-01','morning'),[{type:'school-action',activity:'automatic'}]);
+  const scenarios=extra?[[extra,JSON.parse(gunzipSync(await readFile(extra)))]]:[['opening',createSave(opening,opening)],['review',createSave(review,opening)],['mock-gsat',mockFixture('2028-12-01')],['mock-subject',mockFixture('2029-03-01')],['ceremony',createSave(ceremony)],['before',fixtures.before],['after',fixtures.after],['terminal',fixtures.terminal],['reserved',fixtures.reserved],['contact',createSave(contact)]];
   let checks=0,completedHeap=null,storedSizes=null;const timings={};
   await call('Page.navigate',{url},sessionId);await wait('[data-action="slots"]');
   const install=async payload=>{
@@ -95,6 +97,18 @@ try {
       await click(pending);await wait('[data-action="progress"]');assert.equal(await evaluate(`document.querySelector('[data-action^="review-ack:"]')===null`),true);await includes(payload.world.position.date);assert.equal(await evaluate('window.lastAlert??null'),null);checks++;
       console.log('PASS H5 Chromium review');continue;
     }
+    if(name==='mock-gsat'||name==='mock-subject'){
+      const family=name==='mock-gsat'?'學測':'分科';await includes(family+'模考・上午（不計入學期成績）');checks++;
+      await click('timetable');assert.equal(await evaluate(`document.querySelectorAll('.table button').length`),40);await includes(family+'模考');await click('close');checks++;
+      console.log('PASS H5 Chromium '+name);continue;
+    }
+    if(name==='ceremony'){
+      const revision=await evaluate(`document.querySelector('.game').dataset.revision`),first=await evaluate(`document.querySelector('.story').textContent`);
+      await includes('1／4');await click('ceremony-page:1');await includes('2／4');assert.notEqual(await evaluate(`document.querySelector('.story').textContent`),first);checks++;
+      assert.equal(await evaluate(`document.querySelector('.game').dataset.revision`),revision);await click('menu');await click('slots');await click('load:1');await wait('.game');await includes('1／4');checks++;
+      assert.equal(await evaluate(`document.querySelector('.game').dataset.revision`),revision);assert.equal(await evaluate('window.lastAlert??null'),null);checks++;
+      console.log('PASS H5 Chromium ceremony');continue;
+    }
     if(extra&&['2028-07-24','2028-12-01'].includes(payload.world.position.date)){
       await includes('學測模考・上午（不計入學期成績）');checks++;
       await click('timetable');assert.equal(await evaluate(`document.querySelectorAll('.table button').length`),40);await includes('學測模考');await click('close');checks++;
@@ -113,6 +127,7 @@ try {
       assert.equal(storedSizes.codec,'gzip');assert.ok(storedSizes.payloadPageBytes<storedSizes.rawBytes);checks++;
       assert.equal(await evaluate(`document.querySelector('[data-action="progress"]')===null`),true);checks++;
       await click('completion-details');await includes('三年生涯完成紀錄');await includes('畢典與六月紀錄');checks++;
+      const savedCeremony=payload.world.extensions['teacher-hell/world'].facts.findLast(f=>f.data.graduationSummary).data.graduationSummary;assert.equal(await evaluate(`document.querySelector('.notebook-career').textContent.includes(${JSON.stringify(savedCeremony.description)})`),true);await includes('2029-06-01');checks++;
       await click('notebook-tab:people');await wait('.notebook-person');assert.ok(await evaluate(`document.querySelectorAll('.notebook-person').length>=38`));checks++;
       await click('notebook-tab:academics');await wait('.notebook-academic-student');
       assert.ok(await evaluate(`document.querySelectorAll('.notebook-academic-student').length>=38`));checks++;

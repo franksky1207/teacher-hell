@@ -98,3 +98,13 @@ test('H5 current phase names follow formal mock/exam calendar without leaking re
 test('H5 June projection stays disabled for the original 30-year career',()=>{
  const w=eventWorld(74),before=JSON.stringify(w);assert.equal(w.extensions['teacher-hell/world'].plan.validation,'fixed-calendar-v1');assert.equal(projectSeniorSummary(w),null);assert.equal(JSON.stringify(w),before);
 });
+
+import {CAREER_30,careerRange} from '../src/calendar/calendar.js';
+test('H5 original 30-year boundary uses its existing career entry only after annual settlement',()=>{
+ const c=progressionContext(eventWorld(74)),end=careerRange(c.plan.startYear,CAREER_30).end,day=calendarDay(end,3,c.plan.calendarVersion);
+ // Pure planner context only; no fabricated completed world or natural30 claim.
+ const at={...c,position:positionFor(end,day.slots.at(-1).id,c.plan.startYear,CAREER_30,c.plan.calendarVersion),slotComplete:true,schoolEnabled:true,annualSettled:false};
+ assert.equal(at.position.serviceYear,30);assert.deepEqual(planProgression(at).request.operations,[{type:'settle-school-year'}]);
+ const next=planProgression({...at,annualSettled:true});assert.deepEqual(next.request.operations,[{type:'settle-career'}]);assert.equal(next.settlement,true);
+ assert.equal(planProgression({...at,annualSettled:true,pendingReview:'pending'}).status,'review-required');assert.equal(planProgression({...at,completed:true}).status,'completed');
+});

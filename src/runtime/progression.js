@@ -1,7 +1,7 @@
 import {isCampOpeningPosition} from './schedule.js';
 /** One read-only controller over existing transactions; no clock, scores or results. */
 import { createId } from '../contracts/foundation.js';
-import { calendarDay,gradeAt,nextPosition,teachingTerm,yearData,planMode } from '../calendar/calendar.js';
+import { calendarDay,gradeAt,nextPosition,teachingTerm,yearData,planMode,careerYears } from '../calendar/calendar.js';
 import { schoolCatalogue } from '../world/registry.js';
 import { SUBJECT_LOAD } from '../calendar/timetable.js';
 import { schoolActions,schoolEnabled } from './campus.js';
@@ -30,6 +30,7 @@ export function planProgression(c,{activity=null}={}){
  if(c.aftercare&&!c.aftercare.adopted&&c.aftercare.status!=='boundary'&&!c.slotComplete&&!c.catalogueIds.includes('aftercare:representatives-v1'))return {...request([aftercareCatalogue()]),label:'接續六月善後'};
  if(c.reserved.length)return {...request([{type:'admit-event',eventId:c.reserved[0].eventId}],'formal-event'),label:'處理待辦事件'};
  if(!c.annualSettled&&day.annualBoundary&&day.slots.at(-1).id===c.position.slotId&&c.slotComplete)return {...request([{type:'settle-school-year'}]),label:planMode(c.plan)==='three-year'&&c.position.serviceYear===3?'完成三年任期結算':'完成本學年結算',settlement:true};
+ if(c.annualSettled&&planMode(c.plan)!=='three-year'&&c.position.serviceYear===careerYears(planMode(c.plan))&&day.annualBoundary&&day.slots.at(-1).id===c.position.slotId&&c.slotComplete)return {...request([{type:'settle-career'}]),label:'完成生涯結算',settlement:true};
  if(!c.schoolEnabled)return {...request([{type:'academic',action:'open'}]),label:'開始今日校務'};
  if(c.aftercare){
   if(c.aftercare.status==='boundary')return {status:'boundary',label:'等待六月結算'};

@@ -26,5 +26,5 @@ export function renderNotebookReviews(d,selected=null,ack=false){
 export function renderNotebookCareer(d){
  if(!d||typeof d.completed!=='boolean')throw new TypeError('Invalid career projection');
  if(!d.completed)return `<section class="notebook-career" aria-label="教師職涯"><h3>生涯進行中</h3><p>遊玩第 ${fmt(d.serviceYear)} 學年。正式結局尚未產生。</p>${d.senior?renderSeniorSummary(d.senior):''}</section>`;
- return `<section class="notebook-career" aria-label="教師職涯"><h3>三年生涯完成紀錄</h3><p>完成日期：${esc(d.date??'未標示')}</p><p>正式評等：${esc(d.grade??'未標示')}・總分：${fmt(d.score)}</p><div class="notebook-ending">${esc(d.ending??'')}</div><h4>結屆班級</h4>${d.cohorts.map(c=>`<p>遊玩第 ${c.years.map(fmt).join('、')} 年：學生 ${fmt(c.students)} 人${c.graduated===null?'':'，符合畢業資格 '+fmt(c.graduated)+' 人'}</p>`).join('')}${d.senior?renderSeniorSummary(d.senior):''}<p>完成存檔維持原有三槽，提供唯讀查閱。</p></section>`;
+ return `<section class="notebook-career" aria-label="教師職涯"><h3>${d.serviceYear===3?'三年':fmt(d.serviceYear)+'年'}生涯完成紀錄</h3><p>完成日期：${esc(d.date??'未標示')}</p><p>正式評等：${esc(d.grade??'未標示')}・總分：${fmt(d.score)}</p><div class="notebook-ending">${esc(d.ending??'')}</div><h4>結屆班級</h4>${d.cohorts.map(c=>`<p>遊玩第 ${c.years.map(fmt).join('、')} 年：學生 ${fmt(c.students)} 人${c.graduated===null?'':'，符合畢業資格 '+fmt(c.graduated)+' 人'}</p>`).join('')}${d.senior?renderSeniorSummary(d.senior):''}<p>完成存檔維持原有三槽，提供唯讀查閱。</p></section>`;
 }

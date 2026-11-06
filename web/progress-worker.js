@@ -4,11 +4,12 @@ import {createStoredSession} from '../src/storage/session.js';
 import {sameToken,createSave,encodeSave} from '../src/storage/format.js';
 import {teacherTenure} from '../src/runtime/schedule.js';
 import {careerResult} from '../src/runtime/career.js';
-import {gradeAt} from '../src/calendar/calendar.js';
+import {gradeAt,careerYears,planMode} from '../src/calendar/calendar.js';
 import {projectNotebookAcademics} from './notebook-academics.js';
 import {projectNotebookPeople} from './notebook-people.js';
 import {projectNotebookEvents} from './notebook-events.js';
 import {projectNotebookReviews,projectNotebookCareer} from './notebook-reviews.js';
+async function inputText(input){if(typeof input==='string')return input;if(input instanceof Blob)return input.text();throw new TypeError('Expected a JSON string or immutable file');}
 self.onmessage=async({data})=>{
  let storage;
  try{
@@ -19,10 +20,10 @@ self.onmessage=async({data})=>{
   if(data.initialize)await session.initialize(data.initialize);
   if(data.restart)await session.restart(data.restart,{expectedToken:data.expectedToken,confirmed:data.confirmed});
   if(data.replaceOpening)await session.import(encodeSave(createSave(data.replaceOpening,data.replaceOpening)),{expectedToken:data.expectedToken,confirmed:data.confirmed});
-  if(Object.hasOwn(data,'import')){await session.import(data.import,{expectedToken:data.expectedToken,confirmed:data.confirmed});self.postMessage({ok:true});return;}
+  if(Object.hasOwn(data,'import')){await session.import(await inputText(data.import),{expectedToken:data.expectedToken,confirmed:data.confirmed});self.postMessage({ok:true});return;}
   if(data.delete){await session.delete({expectedToken:data.expectedToken,confirmed:data.confirmed});self.postMessage({ok:true});return;}
-  if(data.export){self.postMessage({ok:true,text:await session.export()});return;}
-  if(Object.hasOwn(data,'reviewImport')){self.postMessage({ok:true,review:await session.reviewImport(data.reviewImport)});return;}
+  if(data.export){self.postMessage({ok:true,blob:new Blob([await session.export()],{type:'application/json'})});return;}
+  if(Object.hasOwn(data,'reviewImport')){self.postMessage({ok:true,review:await session.reviewImport(await inputText(data.reviewImport))});return;}
 
   const snap=session.snapshot(),w=snap.payload?.world;
   if(data.view){
@@ -32,7 +33,7 @@ self.onmessage=async({data})=>{
    self.postMessage({ok:true,projection:projections[data.view]()});
   }else if(data.summary){
    const plan=w?.extensions['teacher-hell/world'].plan;
-   self.postMessage({ok:true,token:snap.token,summary:w?{completed:!!careerResult(w),subject:plan.subject,date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),serviceYear:w.position.serviceYear,tenure:teacherTenure(w)}:null});
+   self.postMessage({ok:true,token:snap.token,summary:w?{completed:!!careerResult(w),maxYears:careerYears(planMode(plan)),subject:plan.subject,date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),serviceYear:w.position.serviceYear,tenure:teacherTenure(w)}:null});
   }else self.postMessage({ok:true,record:{payload:w?{world:w}:null,token:snap.token}});
  }catch(error){self.postMessage({ok:false,message:error.message,code:error.code});}
  finally{await storage?.close();}

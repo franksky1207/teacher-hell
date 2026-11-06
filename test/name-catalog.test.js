@@ -7,7 +7,8 @@ import {readSchoolRoster} from '../src/runtime/views.js';
 
 test('Extensive offline surname and given-name sources, with no unbounded retries',()=>{
  assert.ok(NAME_CATALOG_COUNTS.surnames>=200);
- assert.ok(NAME_CATALOG_COUNTS.male>=2000&&NAME_CATALOG_COUNTS.female>=2000);
+ assert.ok(NAME_CATALOG_COUNTS.male>=2500&&NAME_CATALOG_COUNTS.female>=2500);
+ assert.equal(GIVEN_NAME_CATALOG.male.filter(name=>GIVEN_NAME_CATALOG.female.includes(name)).length,0,'No name belongs to both male and female pools');
  const rng={integer:(a,b)=>a};
  const used=new Set();
  assert.equal(chooseGivenName(rng,'male',used),GIVEN_NAME_CATALOG.male[0]);

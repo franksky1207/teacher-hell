@@ -24,11 +24,12 @@ const w=payload.world,r=runtimeOf(w),academics=await timed('academicReplay',()=>
 assert.equal(Object.keys(academics.terms).length,6);assert.equal(r.history.filter(h=>h.type==='semester-review').length,6);metrics.checks++;
 for(const t of Object.values(academics.terms)){assert.deepEqual(t.assessments.map(a=>a.round).sort(),t.grade===3&&t.termId.endsWith(':spring')?[0,1,2]:[0,1,2,3]);assert.ok(t.closed);}metrics.checks++;
 assert.deepEqual(admissions.completed.map(n=>n.id),admissionCalendar(2026,r.plan.calendarVersion).map(n=>n.id));metrics.checks++;
+assert.ok(admissions.ranking.every(row=>row.termIds.length===5));const senior=academics.terms['2029:spring'];assert.equal(senior.closedAt,'2029-05-08');assert.equal(senior.publishedAt,'2029-05-09');assert.equal(senior.studyCompletedAt,'2029-05-31');assert.equal(senior.review.date,'2029-05-31');metrics.checks++;
 assert.ok(Object.values(admissions.students).every(p=>p.subject?.officialScore==null&&p.subject?.distribution==null));metrics.checks++;
 metrics.formalRequests=r.commits.length-1;metrics.revision=r.revision;metrics.historyEntries=r.history.length;
 const archived=r.history.find(h=>h.type==='cohort-completion');assert.ok(archived);assert.equal(r.history.filter(h=>h.type==='career-completion').length,1);assert.equal(r.history.filter(h=>h.type==='annual-success').length,3);assert.equal(w.position.date,'2029-06-29');assert.equal(nextProgression(w).status,'completed');metrics.checks++;
 const academic=projectNotebookAcademics(w);assert.ok(academic.students.length>=38);const student=projectNotebookAcademics(w,academic.students[0].id);assert.equal(student.terms.length,6);assert.deepEqual(student.transcript.weights,[40,30,30]);metrics.checks++;
-const career=projectNotebookCareer(w);assert.equal(career.senior.weeks.length,4);assert.ok(career.senior.ceremony);assert.match(renderNotebookCareer(career),/畢典與六月紀錄/);metrics.checks++;
+const career=projectNotebookCareer(w);assert.equal(career.senior.weeks.length,4);assert.deepEqual(career.senior.weeks.map(q=>[q.startDate,q.endDate]),[['2029-06-02','2029-06-08'],['2029-06-09','2029-06-15'],['2029-06-16','2029-06-22'],['2029-06-23','2029-06-29']]);assert.ok(career.senior.ceremony);assert.deepEqual(career.senior.ceremony.students.map(p=>p.qualification),career.senior.ceremony.students.map(p=>senior.review.outcomes.find(o=>o.personId===p.personId).qualification));assert.match(renderNotebookCareer(career),/畢典與六月紀錄/);metrics.checks++;
 metrics.qualifications=Object.fromEntries(['graduation','completion-certificate','incomplete'].map(status=>[status,archived.data.outcomes.filter(o=>o.qualification.status===status).length]));
 return {request:JSON.parse(r.commits.at(-1).request),worldHash:hash(JSON.stringify(w))};
 }

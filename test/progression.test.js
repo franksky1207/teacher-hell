@@ -4,7 +4,7 @@ import {isCampOpeningPosition} from '../src/runtime/schedule.js';
 import {eventWorld} from './support/event-fixtures.js';
 import {academicAt} from './support/senior-academic.js';
 import {THREE_YEAR,positionFor,CALENDAR_VERSION,calendarDay} from '../src/calendar/calendar.js';
-import {aftercareCellIsEmpty} from '../web/presentation.js';
+import {aftercareCellIsEmpty,scheduledPhase} from '../web/presentation.js';
 import {slotOccupancy} from '../src/calendar/calendar.js';
 import {fiveTerms} from './support/senior-academic.js';
 import {projectNotebookAcademics} from '../web/notebook-academics.js';
@@ -81,4 +81,16 @@ test('H5 validation reference indexes release after success and failure without 
  let w=opening();for(let i=0;i<4;i++)w=prepareWorldOperation(w,nextProgression(w).request).world;const r=w.extensions['teacher-hell/world'],f=r.facts[0],saved=JSON.stringify(w),id=f.id,causes=f.causeIds;
  assert.deepEqual(restoreWorldState(w),w);f.causeIds=[createId('fact',['missing-index-cause'])];assert.throws(()=>restoreWorldState(w),/Unknown fact/);f.causeIds=causes;
  f.id=createId('fact',['changed-live-id']);assert.throws(()=>findFact(w,id),/Unknown fact/);f.id=id;assert.equal(findFact(w,id),f);assert.equal(JSON.stringify(w),saved);assert.deepEqual(restoreWorldState(w),w);
+});
+
+test('H5 missing versioned admissions remain unknown, never fabricated zero confirmations',()=>{
+ const html=renderSeniorSummary({date:'2029-06-29',ceremony:null,weeks:[],outcomes:[{id:'x',name:'學生',status:'incomplete'}],admissionsKnown:false,legacyAdmissionsCount:1,knownOffers:0,confirmed:0,pending:0});
+ assert.match(html,/原保存政策的升學階段紀錄/);assert.match(html,/不推定新制錄取或確認/);assert.doesNotMatch(html,/確認錄取 0 人|仍有待辦 0 人/);
+});
+
+import {SENIOR_CALENDAR_VERSION,examSchedule} from '../src/calendar/calendar.js';
+test('H5 current phase names follow formal mock/exam calendar without leaking results into free slots',()=>{
+ for(const [date,name] of [['2028-07-24','學測'],['2029-03-01','分科']]){const d=calendarDay(date,3,SENIOR_CALENDAR_VERSION);assert.equal(scheduledPhase(d,'morning'),name+'模考・上午（不計入學期成績）');assert.equal(scheduledPhase(d,'afternoon'),name+'模考・下午（不計入學期成績）');assert.equal(scheduledPhase(d,'private'),null);}
+ for(const exam of examSchedule('2029:spring',3,SENIOR_CALENDAR_VERSION)){const d=calendarDay(exam.dates[0],3,SENIOR_CALENDAR_VERSION);assert.equal(scheduledPhase(d,'p1'),exam.round===1?'第一次段考':'畢業考');assert.equal(scheduledPhase(d,'noon'),null);}
+ assert.equal(scheduledPhase(calendarDay('2029-06-04',3,SENIOR_CALENDAR_VERSION),'p1'),null);
 });

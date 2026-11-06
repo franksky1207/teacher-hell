@@ -15,7 +15,7 @@ self.onmessage=async({data})=>{
   storage=createIndexedDBStorage({factory:indexedDB,namespace:'development'});
   const session=await createStoredSession(storage,data.slot);
   if(['request','initialize','restart','replaceOpening','import','delete'].filter(k=>Object.hasOwn(data,k)).length>1)throw Error('One stored operation per worker request');
-  if(data.request)await session.execute(data.request);
+  if(data.request)await session.execute(data.request,{expectedToken:data.expectedToken});
   if(data.initialize)await session.initialize(data.initialize);
   if(data.restart)await session.restart(data.restart,{expectedToken:data.expectedToken,confirmed:data.confirmed});
   if(data.replaceOpening)await session.import(encodeSave(createSave(data.replaceOpening,data.replaceOpening)),{expectedToken:data.expectedToken,confirmed:data.confirmed});

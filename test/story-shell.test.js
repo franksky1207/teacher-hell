@@ -14,7 +14,8 @@ test('13-G: real transaction route and style entry are connected',async()=>{
  assert.match(game,/worker\.postMessage\(data\)/);
  assert.match(game,/new Worker\(new URL\('\.\/progress-worker\.js',import\.meta\.url\),\{type:'module'\}\)/);
  assert.match(worker,/createStoredSession\(storage,data\.slot\)/);
- assert.match(worker,/await session\.execute\(data\.request\)/);
+ assert.match(worker,/await session\.execute\(data\.request,\{expectedToken:data\.expectedToken\}\)/);
+ assert.match(game,/workerRead\(\{slot,request,expectedToken:displayedToken\}\)/);
  assert.match(game,/!document\.querySelector\('\.overlay'\)/);
  assert.match(html,/story-view\.css/);
 });

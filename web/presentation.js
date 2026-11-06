@@ -26,3 +26,11 @@ export function aftercareCellIsEmpty(w,date,slot,ordinary){
  const bounds=aftercareWindow(w,date);
  return !!bounds&&date>=w.position.date&&date>=bounds.startDate&&(!slot||!continuesAftercareTeaching(w,ordinary?.lesson));
 }
+
+/** Current saved-calendar phase only; contains no marks or route guesses. */
+export function scheduledPhase(day,slotId){
+ const slot=day.slots.find(s=>s.id===slotId);if(!slot)return null;
+ if(slot.kind==='exam')return slot.examKind==='graduation-exam'?'畢業考':`第${['一','二','三'][slot.examRound-1]}次段考`;
+ const mock=day.activities.find(a=>a.kind.startsWith('mock-')&&slot.activityIds.includes(a.id));
+ return mock?`${mock.family==='gsat'?'學測':'分科'}模考・${slotId==='morning'?'上午':'下午'}（不計入學期成績）`:null;
+}

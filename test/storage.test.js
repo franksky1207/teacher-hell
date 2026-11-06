@@ -231,3 +231,15 @@ test('T5: formal openings use academic v2 and slot deletion and replacement stay
  assert.deepEqual((await db.read(2)).payload,original[0].payload);
  assert.deepEqual(await db.read(1),original[0]);assert.deepEqual(await db.read(3),original[2]);
 });
+
+test('H5 storage: fresh workers fence the displayed token even at the same revision, preserving exact retry',async()=>{
+ const db=memory(),a=await createStoredSession(db,1),w=runtimeScenario();await a.initialize(w);const shown=a.snapshot(),q=sample(w,'worker-token');
+ await a.import(shown.payload,{expectedToken:shown.token,confirmed:true});
+ const fresh=await createStoredSession(db,1),changed=fresh.snapshot();assert.notDeepEqual(changed.token,shown.token);assert.deepEqual(changed.payload,shown.payload);
+ await assert.rejects(fresh.execute(q,{expectedToken:shown.token}),{code:'STALE'});assert.deepEqual(await db.read(1),changed);
+ await fresh.execute(q,{expectedToken:changed.token});const written=fresh.snapshot(),again=await createStoredSession(db,1);
+ assert.equal((await again.execute(q,{expectedToken:changed.token})).duplicate,true);assert.deepEqual(again.snapshot(),written);
+ await assert.rejects(again.execute({...q,operations:[{type:'bad'}]},{expectedToken:changed.token}),{code:'CONFLICT'});
+ await assert.rejects(again.execute(sample(w,'new-stale-click'),{expectedToken:shown.token}),{code:'STALE'});
+ assert.deepEqual(await db.read(1),written);
+});

@@ -44,6 +44,7 @@ test('14-D: render only public projection and escape names and subject text',()=
  assert.match(html,/&lt;script&gt;|&lt;img&gt;/);
  assert.doesNotMatch(html,/<script|<img|data-story-action/);
  assert.match(html,/尚在學或修業程序未完成/);
+ const final=renderNotebookAcademics({...data,qualification:{...data.qualification,reviewed:true,reasons:['unattended-compulsory']}});assert.match(final,/尚未符合畢業條件/);assert.match(final,/尚有未修必修課程/);assert.doesNotMatch(final,/非最終畢業判定/);
  assert.match(html,/data-action="notebook-academic-student:x:1"/);
 });
 
@@ -73,4 +74,17 @@ test('14-D: term close on final day keeps third exam, term mark and credits undi
  assert.match(renderNotebookAcademics(onFinal),/尚未完成正式公布/);
  assert.equal(isSemesterResultPublished('2026:autumn','2027-01-22'),false);
  assert.equal(isSemesterResultPublished('2026:autumn','2027-01-23'),true);
+});
+
+// Real H1 payload: display the missing policy honestly until its normal H2 adoption.
+import {readFileSync} from 'node:fs';
+import {gunzipSync} from 'node:zlib';
+import {restoreSave} from '../src/storage/format.js';
+test('H5 legacy H1 transcript does not invent a policy before formal adoption',()=>{
+ const fixture=JSON.parse(gunzipSync(readFileSync(new URL('./fixtures/h2-pre-061bf63.json.gz',import.meta.url))));
+ const w=restoreSave(fixture.h1).world,before=JSON.stringify(w),roster=projectNotebookAcademics(w);
+ const d=projectNotebookAcademics(w,roster.students[0].id,'2029:spring');
+ assert.equal(d.transcript.weights,null);assert.deepEqual(d.transcript.examColumns.map(c=>c.round),[1,2]);
+ const html=renderNotebookAcademics(d);assert.match(html,/評量政策待正式校務接續/);assert.doesNotMatch(html,/40％／20％／20％／20％|<th>三段<\/th>/);
+ assert.equal(JSON.stringify(w),before);
 });

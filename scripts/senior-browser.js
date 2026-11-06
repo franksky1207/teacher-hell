@@ -70,13 +70,13 @@ try {
   const opening=createCareerOpening({candidate:createCandidate({seed:74,playerId:'teacher',schoolId:'school'}),seed:75,taipeiDate:'2026-11-06',difficulty:'normal',subject:'國文',careerKey:'h5-browser'});
   const contactDate='2029-06-02';let contact=academicAt(eventWorld(74,contactDate,calendarDay(contactDate,3,SENIOR_CALENDAR_VERSION).slots[0].id,{version:1,mode:THREE_YEAR,difficulty:'hard'}),contactDate);contact=academicApply(contact,[{type:'academic',action:'open'}]);contact=academicApply(contact,[aftercareCatalogue()]);
   const scenarios=extra?[[extra,JSON.parse(gunzipSync(await readFile(extra)))]]:[['opening',createSave(opening,opening)],['before',fixtures.before],['after',fixtures.after],['terminal',fixtures.terminal],['reserved',fixtures.reserved],['contact',createSave(contact)]];
-  let checks=0,completedHeap=null;
+  let checks=0,completedHeap=null;const timings={};
   await call('Page.navigate',{url},sessionId);await wait('[data-action="slots"]');
   const install=async payload=>{
     // Import uses the real save boundary, never arbitrary IndexedDB records.
     const path=join(temporary,'site','teacher-hell','h5-fixture.json');await writeFile(path,JSON.stringify(payload));
     await evaluate(`(async()=>{const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js'),{createStoredSession}=await import('./src/storage/session.js');const db=createIndexedDBStorage({factory:indexedDB,namespace:'development'}),s=await createStoredSession(db,1),snap=s.snapshot();await s.import(await(await fetch('./h5-fixture.json')).text(),{expectedToken:snap.token,confirmed:true});await db.close();})()`);
-    await call('Page.reload',{},sessionId);await wait('[data-action="slots"]');await click('slots');await click('load:1');await wait('.game');
+    await call('Page.reload',{},sessionId);await wait('[data-action="slots"]');await click('slots');const loadAt=performance.now();await click('load:1');await wait('.game');timings.loadMs=performance.now()-loadAt;
   };
   for(const [name,payload] of scenarios){
     await install(payload);
@@ -91,7 +91,7 @@ try {
       // The source is an actual continuous save before the original report gate.
       const pending=await evaluate(`document.querySelector('[data-action^="review-ack:"]')?.dataset.action??null`);
       if(pending){await click('close');assert.ok(await evaluate(`!!document.querySelector('[data-action^="review-ack:"]')`));checks++;await click(pending);await wait('[data-action="progress"]');checks++;}
-      await includes('完成三年任期結算');await click('progress');await includes('三年任期完成');checks++;
+      await includes('完成三年任期結算');const t4At=performance.now();await click('progress');await includes('三年任期完成');timings.t4UiMs=performance.now()-t4At;checks++;
       assert.equal(await evaluate(`document.querySelector('[data-action="progress"]')===null`),true);checks++;
       await call('Page.reload',{},sessionId);await wait('[data-action="slots"]');await click('slots');await click('load:1');await wait('.game');await includes('三年任期完成');checks++;
       await click('completion-details');await includes('三年生涯完成紀錄');await includes('畢典與六月紀錄');await click('close');checks++;
@@ -108,14 +108,14 @@ try {
       await click('close');
       completedHeap=await call('Runtime.getHeapUsage',{},sessionId);
       const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false},sessionId);await writeFile(resolve(root,'work/h5/completed-mobile.png'),Buffer.from(shot.data,'base64'));
-      await click('menu');await click('slots');await click('export:1');
+      await click('menu');await click('slots');const exportAt=performance.now();await click('export:1');
       let exported;for(let i=0;i<900;i++){exported=(await readdir(temporary)).find(n=>n.endsWith('.json'));if(exported)break;await new Promise(r=>setTimeout(r,100));}
-      assert.ok(exported);const exportedPath=join(temporary,exported),backup=await readFile(exportedPath),expected=gunzipSync(await readFile(extra));
+      assert.ok(exported);timings.exportUiMs=performance.now()-exportAt;const exportedPath=join(temporary,exported),backup=await readFile(exportedPath),expected=gunzipSync(await readFile(extra));
       const sha=b=>createHash('sha256').update(b).digest('hex');assert.equal(sha(backup),sha(expected));checks++;
       const opened=new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('Completed import file chooser timeout')),10000),listener=e=>{const m=JSON.parse(e.data);if(m.method==='Page.fileChooserOpened'){clearTimeout(timer);socket.removeEventListener('message',listener);resolve(m.params.backendNodeId);}};socket.addEventListener('message',listener);});
-      await click('import:2');await call('DOM.setFileInputFiles',{files:[exportedPath],backendNodeId:await opened},sessionId);
+      await click('import:2');const importAt=performance.now();await call('DOM.setFileInputFiles',{files:[exportedPath],backendNodeId:await opened},sessionId);
       for(let i=0;i<9000&&await evaluate(`!!document.querySelector('.operation-status')`);i++)await new Promise(r=>setTimeout(r,100));
-      await click('load:2');await wait('.game');await includes('三年任期完成');assert.equal(await evaluate(`document.querySelector('[data-action="progress"]')===null`),true);checks++;
+      await wait('[data-action="load:2"]');timings.importUiMs=performance.now()-importAt;await click('load:2');await wait('.game');await includes('三年任期完成');assert.equal(await evaluate(`document.querySelector('[data-action="progress"]')===null`),true);checks++;
       await click('menu');await click('slots');await click('new:2');await click('difficulty:hard');await click('teacher');await click('subjects');await click('review');
       await evaluate('window.confirmPrompts=[];window.confirmAnswers=[false]');await click('create');assert.equal(await evaluate('window.confirmPrompts.length'),1);await wait('[data-action="create"]');checks++;
       await evaluate('window.confirmPrompts=[];window.confirmAnswers=[true,false]');await click('create');assert.equal(await evaluate('window.confirmPrompts.length'),2);await wait('[data-action="create"]');checks++;
@@ -129,6 +129,13 @@ try {
           for(let i=0;i<9000;i++){if(await evaluate(`document.querySelector('.game').dataset.revision!==${JSON.stringify(rev)}`))break;await new Promise(r=>setTimeout(r,100));}
           assert.notEqual(await evaluate(`document.querySelector('.game').dataset.revision`),rev);assert.equal(await evaluate('window.lastAlert??null'),null);checks++;
         }
+        // Another tab can replace an identical world without changing revision.
+        // The stale rendered token must still reject its next request.
+        const changed=await evaluate(`(async()=>{const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js'),{createStoredSession}=await import('./src/storage/session.js'),db=createIndexedDBStorage({factory:indexedDB,namespace:'development'}),s=await createStoredSession(db,1),before=s.snapshot();await s.import(before.payload,{expectedToken:before.token,confirmed:true});const token=s.snapshot().token;await db.close();return token;})()`);
+        const rev=await evaluate(`document.querySelector('.game').dataset.revision`);await click('progress');assert.match(await evaluate('window.lastAlert'),/Displayed slot changed/);checks++;
+        assert.equal(await evaluate(`document.querySelector('.game').dataset.revision`),rev);
+        const actual=await evaluate(`(async()=>{const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js'),db=createIndexedDBStorage({factory:indexedDB,namespace:'development'}),token=(await db.inspect(1)).token;await db.close();return token;})()`);assert.deepEqual(actual,changed);checks++;
+        await evaluate('window.lastAlert=null');await click('progress');assert.notEqual(await evaluate(`document.querySelector('.game').dataset.revision`),rev);assert.equal(await evaluate('window.lastAlert??null'),null);checks++;
       }
       if(name==='contact'){
         await click('progress');await wait('[data-action="progress"]');await includes('處理待辦事件');checks++;
@@ -170,7 +177,7 @@ try {
     }
     console.log('PASS H5 Chromium '+name);
   }
-  console.log(JSON.stringify({browser:'Chromium headless/CDP',viewports:['390x844','360x640','1280x800'],checks,scenarios:scenarios.length,physicalSafari:false,completedHeap,browserVersion:await call('Browser.getVersion'),heap:await call('Runtime.getHeapUsage',{},sessionId)}));
+  console.log(JSON.stringify({browser:'Chromium headless/CDP',viewports:['390x844','360x640','1280x800'],checks,scenarios:scenarios.length,physicalSafari:false,completedHeap,timings,browserVersion:await call('Browser.getVersion'),heap:await call('Runtime.getHeapUsage',{},sessionId)}));
   await call('Browser.close');
 } finally {
   socket?.close();

@@ -58,7 +58,7 @@ export function compileCampus(w,activity){
  // A rotating learner in the taught homeroom receives a tiny, persistent subject update.
  if(slot.lesson?.classId===n.classroom.id&&students.length){
   const personId=students[state.plan.cursor%students.length],academics=academicState(w),s=academics.students[personId];let subject=slot.lesson.subject??state.plan.subject;if(subject==='數學'){const current=Object.values(academics.terms).at(-1)?.rows.find(row=>row.id===personId);subject=current?.courses.find(c=>['數學','數學A','數學B'].includes(c.subject))?.subject??subject;}
-  if(s?.subjects[subject]){const f=make('fact','learning'),change={personId,subject,delta:sign*.1};operations.push({type:'fact',id:f,eventId,stageId,subjectIds:[personId],witnessIds:[w.identity.playerId,personId],description:'當次授課的概括學習成果。',data:{type:'academic-influence',change},categoryCodes:[],causeIds:[factId]},{type:'academic',action:'influence',...change,basisFactId:f});}
+  if(s?.subjects[subject]&&!Object.values(academics.terms).some(t=>t.review?.outcomes.some(o=>o.personId===personId))){const f=make('fact','learning'),change={personId,subject,delta:sign*.1};operations.push({type:'fact',id:f,eventId,stageId,subjectIds:[personId],witnessIds:[w.identity.playerId,personId],description:'當次授課的概括學習成果。',data:{type:'academic-influence',change},categoryCodes:[],causeIds:[factId]},{type:'academic',action:'influence',...change,basisFactId:f});}
  }
  return {version:1,inputs,activity,day:day.date,slot:structuredClone(slot),randomBefore,randomAfter:rng.snapshot(),operations};
 }

@@ -1,3 +1,6 @@
+import { seniorRosterAt } from './academic-roster.js';
+import { SENIOR_ASSESSMENT_POLICY,isSeniorTerm,assessmentPolicy } from '../academics/policy.js';
+import { datesBetween,weekday } from '../calendar/civil.js';
 import { SUBJECT_LOAD } from '../calendar/timetable.js';
 /** Academic adapter: journal is the sole authority; reads rebuild detached projections. */
 import { assertShape } from '../player/panel.js';
@@ -36,7 +39,7 @@ function termAt(w){return teachingTerm(w.position.date)??latestPreparedSemester(
 export function academicInput(w,op){
  const r=runtime(w),registry=w.numeric.evolution.world.registry;need(registry,'formal school identities required');
  assertShape(op,['type','action',...['termId','round','personId','subject','basisFactId','delta','status','node','track','aspiration','offered','classSizes','attendance','records','course','netMajorDemerits'].filter(k=>Object.hasOwn(op,k))]);
- const action=op.action;need(['support','supplement-plan','supplement','conduct','recognize','attendance','retake-plan','publish','sync','open','assess','close','influence','makeup','retake','annual-credit','direction','admission','standard','participation','size'].includes(action),'unknown academic operation');
+ const action=op.action;need(['adopt-senior-policy','release','complete-study','review','support','supplement-plan','supplement','conduct','recognize','attendance','retake-plan','publish','sync','open','assess','close','influence','makeup','retake','annual-credit','direction','admission','standard','participation','size'].includes(action),'unknown academic operation');
  const state=academicState(w),termId=op.termId??termAt(w).id,t=termForInput(state,{...op,termId}),meta=semester(termId);
  const input={action,date:w.position.date,termId,...Object.fromEntries(Object.entries(op).filter(([k])=>!['type','action','termId'].includes(k)))};
  if(action==='open'||action==='sync'){
@@ -45,18 +48,20 @@ export function academicInput(w,op){
   const roster=registry.enrollments.filter(e=>e.until===null&&(e.classId===registry.homeClassId||action==='sync'&&tracked.has(e.personId)&&registry.classes[e.classId].cohortStart===home.cohortStart));
   if(action==='sync')input.lightWithdrawals=roster.filter(e=>!tracked.has(e.personId)).flatMap(e=>{const previous=registry.enrollments.filter(old=>old.personId===e.personId&&old.id!==e.id&&old.until!==null).at(-1);return previous&&previous.classId!==registry.homeClassId&&registry.classes[previous.classId].cohortStart===home.cohortStart?[{personId:e.personId,classId:previous.classId}]:[];});
   const grade=registry.academicYear-registry.classes[registry.homeClassId].cohortStart+1;
-  input.year=meta.academicYear;input.grade=grade;input.roster=roster.map(e=>({id:e.id,personId:e.personId,classId:e.classId}));
+  input.year=meta.academicYear;input.grade=grade;
+  if(action==='open'){const policy=assessmentCalendar(termId,grade,r.plan.calendarVersion);if(policy.assessmentPolicy){input.assessmentPolicy=policy.assessmentPolicy;input.assessmentWindow=policy;}}input.roster=roster.map(e=>({id:e.id,personId:e.personId,classId:e.classId}));
   input.classes=Object.values(registry.classes).filter(c=>c.cohortStart===registry.classes[registry.homeClassId].cohortStart).map(c=>({id:c.id,size:state.sizes?.[c.id]??40}));
   input.offered=op.offered??null;input.teaching=r.plan.subject?{subject:r.plan.subject,periods:SUBJECT_LOAD[r.plan.subject][1]}:null;
   if(op.offered){const source=r.facts.find(f=>f.id===op.basisFactId);need(source?.data.type==='school-offerings'&&source.subjectIds.includes(w.identity.playerId)&&equal(source.data.offered,op.offered),'nondefault offerings require school authority');input.sourceOrder=source.order;}
  }
+ if(action==='adopt-senior-policy'){need(t&&!t.closed&&!t.assessmentPolicy,'unversioned open senior term required');const policy=assessmentCalendar(termId,t.grade,r.plan.calendarVersion);need(policy.assessmentPolicy&&!t.assessments.some(a=>[0,3].includes(a.round)),'incompatible legacy assessments');input.assessmentPolicy=policy.assessmentPolicy;input.assessmentWindow=policy;}
  if(['assess','close'].includes(action)){
   need(t,'open academic term first');input.activeIds=registry.enrollments.filter(e=>e.until===null&&t.rows.some(row=>row.id===e.personId&&row.enrollmentId===e.id)).map(e=>e.personId);
   if(action==='assess'){
    const policy=assessmentCalendar(termId,t.grade,r.plan.calendarVersion),dates=op.round===0?policy.ordinaryAssessmentDates:policy.exams.find(e=>e.round===op.round)?.dates;
-   need(dates,'assessment round unavailable in calendar policy');
+   need(dates&&(!policy.assessmentPolicy||isSeniorTerm(t)),'assessment round unavailable in calendar policy');
    need(w.position.date===dates.at(-1)&&['p8','dinner','study1','study2','study3','private'].includes(w.position.slotId),'assessment must run after the last exam session on its actual final day');
-  }else {need(assessmentCalendar(termId,t.grade,r.plan.calendarVersion).closurePolicy==='standard','H2 senior closing policy pending');need(w.position.date>=meta.end,'semester not ended');}
+  }else {const policy=assessmentCalendar(termId,t.grade,r.plan.calendarVersion);need(!policy.assessmentPolicy||isSeniorTerm(t),'senior assessment policy must be journaled');need(w.position.date>=(isSeniorTerm(t)?policy.marksCloseDate:meta.end),'semester not ended');}
  }
  if(['conduct','supplement-plan','recognize','attendance','influence','standard','direction','participation','size'].includes(action)){
   const f=r.facts.find(f=>f.id===op.basisFactId);need(f&&(op.personId?f.subjectIds.includes(op.personId):f.subjectIds.includes(w.identity.playerId)),'objective causal source required');
@@ -70,15 +75,24 @@ export function academicInput(w,op){
   if(action==='participation')need(f.data.type==='academic-participation'&&equal(f.data.change,{personId:op.personId,subject:op.subject,delta:op.delta}),'participation source mismatch');
   if(action==='size')need(f.data.type==='school-sizes'&&equal(f.data.classSizes,op.classSizes)&&op.classSizes.every(c=>registry.classes[c.id]),'class population needs an actual school source');
  }
- if(action==='support')input.activeIds=registry.enrollments.filter(e=>e.until===null&&state.students[e.personId]).map(e=>e.personId);
+ if(action==='support'){input.activeIds=academicSupportActiveIds(w,state);const senior=Object.values(state.terms).find(isSeniorTerm);if(senior&&w.position.date>=senior.assessmentWindow.marksCloseDate){input.supportWindow=senior.assessmentWindow;input.studyAllowed=legalSeniorSupportDate(w.position.date,r.plan.calendarVersion);}}
  if(op.personId&&academicVersion(w)===2&&['makeup','retake-plan','retake','supplement-plan','supplement'].includes(action))need(registry.enrollments.some(e=>e.personId===op.personId&&e.until===null),'remedial study requires current enrollment');
  if(action==='support')need(w.position.slotId===calendarDay(w.position.date,gradeAt(w.position.date,r.plan.startYear),r.plan.calendarVersion).slots.at(-1).id,'academic support settles at the actual day end');
  if(['support','supplement-plan','supplement','conduct'].includes(action))need(academicVersion(w)===2,'v2 academic policy required');
- if(['makeup','retake-plan','retake','annual-credit'].includes(action))need(t?.closed&&w.position.date>=meta.end,'closed marks required');
- if(action==='makeup'&&academicVersion(w)===2)need(w.position.date>=addDays(meta.end,2),'makeup requires its scheduled later date');
- if(action==='makeup')need(w.position.date<=new Date(Date.parse(meta.end+'T00:00:00Z')+30*86400000).toISOString().slice(0,10),'makeup window ended');
+ const closeDate=isSeniorTerm(t)?t.closedAt:meta.end;
+ if(['makeup','retake-plan','retake','annual-credit'].includes(action))need(t?.closed&&w.position.date>=closeDate&&(!isSeniorTerm(t)||t.publishedAt),'closed marks required');
+ if(action==='makeup'&&academicVersion(w)===2)need(w.position.date>=addDays(closeDate,2),'makeup requires its scheduled later date');
+ if(action==='makeup')need(w.position.date<=addDays(closeDate,30),'makeup window ended');
  if(action==='supplement-plan'){const now=semester(termAt(w).id),grade=registry.academicYear-registry.cohortStart+1,c=op.course;need(c&&c.level<=grade&&(c.level<grade||c.half==='autumn'&&now.id.endsWith('spring')),'supplement requires a past missing course');}
- if(action==='retake')need(w.position.date>meta.end,'retake requires later study time');
+ if(action==='retake')need(w.position.date>closeDate,'retake requires later study time');
+ if(['makeup','retake-plan','retake','annual-credit'].includes(action)&&isSeniorTerm(t))need(legalSeniorSupportDate(w.position.date,r.plan.calendarVersion)&&w.position.date<=t.assessmentWindow.makeupUntil,'outside senior remedial window');
+ if(['release','complete-study','review'].includes(action)){need(isSeniorTerm(t)&&t.closed,'closed senior term required');input.activeIds=registry.enrollments.filter(e=>e.until===null&&e.classId===registry.homeClassId).map(e=>e.personId);
+  if(action==='complete-study')input.studyEvidence=seniorStudyEvidence(w,t);
+  if(action==='review'){input.people=seniorRosterAt(w,w.position.date).people;input.sourceOrders=r.history.filter(h=>h.type==='academic').map(h=>h.order);}
+ }
+ const frozen=new Set(Object.values(state.terms).flatMap(t=>t.review?.outcomes.map(o=>o.personId)??[]));
+ if(op.personId&&!['admission','direction','influence','participation'].includes(action))need(!frozen.has(op.personId),'reviewed student academic record is frozen');
+ if(['release','complete-study','review'].includes(action))validateSeniorLifecycle(w,state,input);
  if(action==='admission'){
   need(t?.grade===3,'admission requires senior record');const month=w.position.date.slice(5,7),windows={gsat:['01','02'],stars:['03'],application:['03','04','05','06'],subject:['07'],other:['07','08','09']};need(windows[op.node]?.includes(month),'admission node calendar window');
  }
@@ -88,7 +102,28 @@ export function academicInput(w,op){
 export function applyAcademic(s,input,rng,version=versionOf(s)){
  need(version===versionOf(s),'academic policy cannot change during replay');
  const {action,termId,personId,subject}=input,t=termForInput(s,input),learner=s.students[personId];
+ const frozen=new Set(Object.values(s.terms).flatMap(t=>t.review?.outcomes.map(o=>o.personId)??[]));if(personId&&!['admission','direction','influence','participation'].includes(action))need(!frozen.has(personId),'reviewed student academic record is frozen');if(action==='support')need(!input.activeIds?.some(id=>frozen.has(id)),'reviewed students cannot receive academic support');
  if(action==='open')return openTerm(s,input,rng);
+ if(action==='adopt-senior-policy'){need(t&&!t.closed&&!t.assessmentPolicy&&input.assessmentPolicy===SENIOR_ASSESSMENT_POLICY&&!t.assessments.some(a=>[0,3].includes(a.round)),'invalid senior policy adoption');t.assessmentPolicy=input.assessmentPolicy;t.assessmentWindow=structuredClone(input.assessmentWindow);return {assessmentPolicy:t.assessmentPolicy};}
+ if(action==='release'){need(isSeniorTerm(t)&&t.closed&&!t.publishedAt&&input.date>=t.assessmentWindow.publicationDate,'publication before computation or duplicate');t.publishedAt=input.date;return {termId,publishedAt:input.date};}
+ if(action==='complete-study'){
+  need(isSeniorTerm(t)&&t.publishedAt&&!t.studyCompletedAt&&input.date===t.assessmentWindow.studyCompletionDate&&input.studyEvidence?.slotCount>0,'actual senior study completion required');
+  const adjusted=[],annual=[];
+  for(const row of t.results)if(input.activeIds.includes(row.id))for(const c of row.courses){
+   const absence=s.students[row.id]?.subjects[c.subject]?.absence;
+   if(absence&&(absence.unexcused+absence.personal-absence.exemptPersonal)*3>=absence.totalPeriods){
+    c.assessedMark=c.originalMark??c.mark;c.originalMark=c.mark=c.registered=0;c.makeupEligible=false;c.attendanceBlocked=true;
+    c.earned=c.method==='retake'&&c.earned===c.credits&&c.retake?c.credits:0;c.method=c.earned?'retake':'unearned';adjusted.push({personId:row.id,subject:c.subject,absence:structuredClone(absence)});
+   }
+   c.completed=true;
+  }
+  t.studyCompletedAt=input.date;t.studyEvidence=structuredClone(input.studyEvidence);
+  for(const row of t.results)if(input.activeIds.includes(row.id)){
+   refreshRow(row);for(const c of row.courses)if(!c.attendanceBlocked&&s.terms[`${t.year}:autumn`]?.results?.find(r=>r.id===row.id)?.courses.some(a=>a.subject===c.subject))annual.push({personId:row.id,subject:c.subject,...applyAcademic(s,{action:'annual-credit',termId,personId:row.id,subject:c.subject,date:input.date},rng)});
+  }
+  return {date:input.date,evidence:structuredClone(input.studyEvidence),attendanceAdjustments:adjusted,annual};
+ }
+ if(action==='review'){need(isSeniorTerm(t)&&t.studyCompletedAt&&!t.review&&input.date===t.studyCompletedAt,'study completion before unique review required');const outcomes=input.people.map(({id,cohort,entryYears})=>({personId:id,qualification:qualificationAt(s,id,cohort,input.date,entryYears),pendingRemedies:pendingRemedies(s,id)}));t.review={version:1,termId,date:input.date,sourceOrders:[...input.sourceOrders],outcomes};return structuredClone(t.review);}
  if(action==='sync'){
   need(t&&!t.closed,'open term required for roster sync');
   const added=[];for(const e of input.roster){let row=t.rows.find(r=>r.id===e.personId);if(row){row.enrollmentId=e.id;row.classId=e.classId;continue;}
@@ -125,7 +160,7 @@ export function applyAcademic(s,input,rng,version=versionOf(s)){
   const rawScore=academicMark(learner,subject,0,rng),mark=Math.round(rawScore),pass=standard(rulesFor(2026,2),learner.status,c.level).pass;c.rawScore=rawScore;c.originalMark=mark;c.mark=c.registered=mark;c.earned=mark>=pass?c.credits:0;c.completed=true;c.method=c.earned?'supplement':'unearned';c.date=input.date;return {...c};
  }
  const row=t?.results?.find(r=>r.id===personId),course=[row?.courses.find(c=>c.subject===subject),...reviewedCourses(s).filter(c=>c.personId===personId&&c.subject===subject&&supplementTermId(c)===termId)].filter(Boolean).sort((a,b)=>b.earned-a.earned)[0];
- if(action==='publish'){need(row&&t.closed,'closed transcript required');s.published??=[];const key=JSON.stringify([termId,personId]);need(!s.published.includes(key),'transcript already published');s.published.push(key);return {termId,personId,average:row.average,courses:row.courses.map(c=>({subject:c.subject,mark:c.mark,earned:c.earned})),ruleId:t.ruleId};}
+ if(action==='publish'){need(row&&t.closed,'closed transcript required');need(!isSeniorTerm(t)||t.publishedAt,'senior transcript not published');s.published??=[];const key=JSON.stringify([termId,personId]);need(!s.published.includes(key),'transcript already published');s.published.push(key);return {termId,personId,average:row.average,courses:row.courses.map(c=>({subject:c.subject,mark:c.mark,earned:c.completed===false?null:c.earned,...(c.completed===false?{creditPending:true}:{})})),ruleId:t.ruleId};}
  if(action==='direction'){
   need(['undecided','humanities','science','vocational'].includes(input.track)&&['university','technical','work','retake'].includes(input.aspiration),'direction');const natural=['humanities','science','vocational'],means=[['國文','歷史','公民'],['數學','物理','化學'],['生活科技','專題選修']].map(subjects=>subjects.reduce((n,s)=>n+learner.subjects[s].baseline,0)/subjects.length);learner.track=natural[rng.weightedIndex(means.map((v,i)=>1+v/20+(natural[i]===input.track?1:0)))];learner.aspiration=['university','technical','work','retake'][rng.weightedIndex([2+Math.max(...means)/30,2,1,1].map((v,i)=>v+(['university','technical','work','retake'][i]===input.aspiration?1:0)))];return {track:learner.track,aspiration:learner.aspiration};
  }
@@ -144,7 +179,7 @@ export function applyAcademic(s,input,rng,version=versionOf(s)){
   if(version===2&&action==='retake')course.retakePlan.completed=true;course[action]={mark,date:input.date,...version===2?{rawScore}:{},...version===2&&action==='retake'?{termSequence:Object.keys(s.terms).length}:{},registered:mark>=pass?pass:Math.round(Math.max(mark,course.mark))};if(mark>=pass){course.earned=course.credits;course.method=action;}if(version===2){course.mark=course.registered=course[action].registered;if(row)refreshRow(row);}return {...course};
  }
  if(action==='annual-credit'){
-  need(course&&termId.endsWith('spring'),'spring course required');const autumn=s.terms[`${t.year}:autumn`]?.results?.find(r=>r.id===personId)?.courses.find(c=>c.subject===subject);
+  need(course&&termId.endsWith('spring')&&(!isSeniorTerm(t)||t.studyCompletedAt&&!course.attendanceBlocked),'spring course required');const autumn=s.terms[`${t.year}:autumn`]?.results?.find(r=>r.id===personId)?.courses.find(c=>c.subject===subject);
   need(autumn&&(version===2||autumn.credits===course.credits),'matching autumn/spring credits required');const pass=standard(rulesFor(t.year,version),learner.status,t.grade).pass,average=annualAverage(autumn,course,pass,version);
   need(!course.annual||version===2&&average>course.annual.average,'annual result unchanged/already awarded');if(course.annual){course.annualHistory??=[];course.annualHistory.push({...course.annual});}course.annual={average,date:input.date};if(average>=pass)for(const c of [autumn,course])if(c.earned===0){c.earned=c.credits;c.method='annual-average';}return {average,earned:course.earned,autumnEarned:autumn.earned};
  }
@@ -164,7 +199,12 @@ export function validateAcademicHistory(w){
  for(const h of r.history)if(h.type==='academic'){
   const d=h.data;assertShape(d,['version','operation','input','result','randomBefore','randomAfter']);need(Object.entries(d.operation).filter(([k])=>k!=='type').every(([k,v])=>equal(d.input[k],v)),'academic operation/input differs');need([1,2].includes(d.version)&&d.version===academicVersion(w)&&d.input.action===d.operation.action&&d.input.date===h.at.date,'academic version/action/date');
   if(d.input.action==='assess'){const t=s.terms[d.input.termId],policy=assessmentCalendar(d.input.termId,t?.grade,r.plan.calendarVersion),dates=d.input.round===0?policy.ordinaryAssessmentDates:policy.exams.find(e=>e.round===d.input.round)?.dates;need(dates&&h.at.date===dates.at(-1),'academic exam calendar mismatch');}
-  if(d.input.action==='close')need(assessmentCalendar(d.input.termId,s.terms[d.input.termId]?.grade,r.plan.calendarVersion).closurePolicy==='standard','H2 senior closing policy pending');
+  if(['open','adopt-senior-policy'].includes(d.input.action)){const policy=assessmentCalendar(d.input.termId,d.input.grade??s.terms[d.input.termId]?.grade,r.plan.calendarVersion);if(d.input.assessmentPolicy)need(policy.assessmentPolicy===d.input.assessmentPolicy&&equal(policy,d.input.assessmentWindow),'academic term policy/calendar mismatch');}
+  if(d.input.action==='close'){const t=s.terms[d.input.termId],policy=assessmentCalendar(d.input.termId,t?.grade,r.plan.calendarVersion);need(h.at.date>=(isSeniorTerm(t)?policy.marksCloseDate:semester(d.input.termId).end)&&(!policy.assessmentPolicy||isSeniorTerm(t)),'academic close calendar mismatch');}
+  if(['makeup','retake','retake-plan','annual-credit','publish'].includes(d.input.action)&&isSeniorTerm(s.terms[d.input.termId])){const t=s.terms[d.input.termId];need(t.publishedAt&&h.at.date>=t.publishedAt,'senior remedial/publication order');if(d.input.action!=='publish')need(h.at.date<=t.assessmentWindow.makeupUntil&&legalSeniorSupportDate(h.at.date,r.plan.calendarVersion),'senior remedial calendar mismatch');}
+  if(['release','complete-study','review'].includes(d.input.action))validateSeniorLifecycle({...w,position:{...w.position,...h.at},extensions:{...w.extensions,'teacher-hell/world':{...r,history:r.history.slice(0,h.order-1)}}},s,d.input);
+  if(d.input.action==='support'&&Object.values(s.terms).some(t=>isSeniorTerm(t)&&h.at.date>=t.assessmentWindow.marksCloseDate)){need(equal(d.input.supportWindow,Object.values(s.terms).find(isSeniorTerm)?.assessmentWindow)&&d.input.studyAllowed===legalSeniorSupportDate(h.at.date,r.plan.calendarVersion),'support calendar evidence mismatch');}
+
   const commit=r.commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId),request=JSON.parse(commit.request);need(request.operations.some(op=>equal(op,d.operation))||request.operations.some(op=>['story','finish-slot','school-action','campus','school','advance-time'].includes(op.type)),'academic journal ownership');
   if(random){const previous=r.history.slice(0,h.order-1).findLast(x=>x.type==='academic');if(previous?.attemptId===h.attemptId)need(equal(random,d.randomBefore),'academic RNG chain');}const rng=restoreRandom(d.randomBefore),result=applyAcademic(s,d.input,rng,d.version);need(equal(result,d.result)&&equal(rng.snapshot(),d.randomAfter),'academic deterministic replay mismatch');random=d.randomAfter;
   if(d.input.basisFactId){const f=r.facts.find(f=>f.id===d.input.basisFactId),i=d.input;need(f&&f.order<h.order&&f.order===i.sourceOrder&&f.subjectIds.includes(i.personId??w.identity.playerId),'academic causal source');
@@ -183,15 +223,45 @@ export function validateAcademicHistory(w){
  if(random&&r.history.findLast(h=>h.type==='academic')?.attemptId===w.identity.attemptId)need(equal(random,w.random.academics),'academic random head');
 }
 export function readGrades(w,personId,termId){const t=academicState(w).terms[termId];if(!t)return null;const row=t.rows.find(r=>r.id===personId);need(row,'only full homeroom transcript available');return structuredClone({termId,personId,courses:row.courses,assessments:t.assessments.map(a=>({round:a.round,marks:a.marks.find(m=>m.id===personId)?.marks??null})),semester:t.results?.find(r=>r.id===personId)??null});}
-export function readRankings(w,termId,round='semester',{population='recorded'}={}){const t=academicState(w).terms[termId];need(t&&['recorded','current'].includes(population),'term/population');const active=population==='current'?w.numeric.evolution.world.registry.enrollments.filter(e=>e.until===null&&t.rows.some(row=>row.id===e.personId&&row.enrollmentId===e.id)).map(e=>e.personId):null;return ranking(t,round,active);}
+export function readRankings(w,termId,round='semester',{population='recorded'}={}){const t=academicState(w).terms[termId];need(t&&['recorded','current'].includes(population),'term/population');if(isSeniorTerm(t)){const released=round==='semester'||round===0?!!t.publishedAt:w.position.date>=addDays(t.assessmentWindow.exams.find(e=>e.round===round)?.dates.at(-1)??'9999-12-30',1);if(!released)return [];}const active=population==='current'?w.numeric.evolution.world.registry.enrollments.filter(e=>e.until===null&&t.rows.some(row=>row.id===e.personId&&row.enrollmentId===e.id)).map(e=>e.personId):null;return ranking(t,round,active);}
 export function readAcademicQualification(w,personId,projection=null){
- const s=projection??academicState(w),version=versionOf(s),registry=w.numeric.evolution.world.registry,enrollments=registry.enrollments.filter(e=>e.personId===personId),cohort=registry.classes[enrollments.at(-1)?.classId]?.cohortStart;
- const records=Object.values(s.terms).flatMap(t=>(t.results?.find(r=>r.id===personId)?.courses??[]).map(c=>({...c,year:t.year,level:t.grade,half:t.termId.endsWith('spring')?'spring':'autumn'})));
+ const s=projection??academicState(w),registry=w.numeric.evolution.world.registry,enrollments=registry.enrollments.filter(e=>e.personId===personId),cohort=registry.classes[enrollments.at(-1)?.classId]?.cohortStart;
+ const saved=Object.values(s.terms).flatMap(t=>t.review?.outcomes??[]).find(o=>o.personId===personId);if(saved)return structuredClone(saved.qualification);
+ return qualificationAt(s,personId,cohort,w.position.date,enrollments.map(e=>registry.classes[e.classId].cohortStart));
+}
+function qualificationAt(s,personId,cohort,date,entryYears=[cohort]){
+ const version=versionOf(s),records=Object.values(s.terms).flatMap(t=>(t.results?.find(r=>r.id===personId)?.courses??[]).filter(c=>c.completed!==false).map(c=>({...c,year:t.year,level:t.grade,half:t.termId.endsWith('spring')?'spring':'autumn'})));
  for(const r of [...(s.recognized??[]),...(s.supplements??[])].filter(r=>r.personId===personId))records.push(version===2?{...r,year:r.year??cohort+r.level-1}:r);
- const entryYears=enrollments.map(e=>registry.classes[e.classId].cohortStart),rule=rulesFor(Math.max(2026,Math.min(...entryYears,Number(w.position.date.slice(0,4)))),version);
- const studyPeriodComplete=version===1||Number.isInteger(cohort)&&w.position.date>=semester(`${cohort+3}:spring`).end;
+ const rule=rulesFor(Math.max(2026,Math.min(...entryYears,Number(date.slice(0,4)))),version),senior=s.terms[`${cohort+3}:spring`];
+ const studyPeriodComplete=isSeniorTerm(senior)?!!senior.studyCompletedAt:version===1||Number.isInteger(cohort)&&date>=semester(`${cohort+3}:spring`).end;
  const result=graduation(records,rule,{netMajorDemerits:s.conduct?.[personId]?.netMajorDemerits??0,studyPeriodComplete}),latest=Math.max(0,...records.map(r=>r.year??0)),current=records.filter(r=>r.year===latest);
  result.repeatEligible=new Set(current.map(r=>r.half)).size===2&&graduation(current,rule).repeatEligible;return result;
+}
+function pendingRemedies(s,id){return [...Object.values(s.terms).flatMap(t=>(t.results?.find(r=>r.id===id)?.courses??[]).filter(c=>!c.earned&&(c.makeupDue&&!c.makeup||c.retakePlan&&!c.retakePlan.completed)).map(c=>({termId:t.termId,subject:c.subject,kind:c.retakePlan?'retake':'makeup',studiedPeriods:c.retakePlan?.studiedPeriods??0,requiredPeriods:c.retakePlan?.requiredPeriods??0}))),...(s.supplements??[]).filter(c=>c.personId===id&&!c.completed).map(c=>({subject:c.subject,kind:'supplement',studiedPeriods:c.plan.studiedPeriods,requiredPeriods:c.plan.requiredPeriods}))];}
+export function academicSupportActiveIds(w,s=academicState(w)){
+ const frozen=new Set(Object.values(s.terms).flatMap(t=>t.review?.outcomes.map(o=>o.personId)??[]));return w.numeric.evolution.world.registry.enrollments.filter(e=>e.until===null&&s.students[e.personId]&&!frozen.has(e.personId)).map(e=>e.personId);
+}
+export function academicTermClosed(w,t){
+ if(!t?.closed)return false;const policy=assessmentCalendar(t.termId,t.grade,runtime(w).plan.calendarVersion);
+ const rounds=assessmentPolicy(t.assessmentPolicy??null).rounds;
+ return t.assessments.length===rounds.length&&rounds.every(round=>t.assessments.some(a=>a.round===round))&&(!policy.assessmentPolicy||isSeniorTerm(t)&&!!t.review);
+}
+export function readSeniorAcademicReview(w,termId){const review=academicState(w).terms[termId]?.review;return review?structuredClone(review):null;}
+function legalSeniorSupportDate(date,version){const d=calendarDay(date,3,version);return weekday(date)<=5&&!d.holiday.length&&d.kind==='school'&&!d.activities.length&&!d.exam;}
+/** Only already completed real calendar slots count. No elapsed-day multiplication. */
+function seniorStudyEvidence(w,t){
+ const academicWindow=t.assessmentWindow,history=runtime(w).history,completed=new Map(history.filter(h=>h.type==='slot-complete').map(h=>[`${h.at.date}/${h.at.slotId}`,h.order])),orders=[];
+ for(const date of datesBetween(addDays(academicWindow.marksCloseDate,1),academicWindow.studyCompletionDate)){const d=calendarDay(date,3,runtime(w).plan.calendarVersion);if(weekday(date)>5||d.holiday.length)continue;for(const slot of d.slots.filter(s=>s.period||s.protected)){const order=completed.get(`${date}/${slot.id}`);need(order,'uncompleted senior instruction slot');orders.push(order);}}
+ return {from:addDays(academicWindow.marksCloseDate,1),through:academicWindow.studyCompletionDate,slotCount:orders.length,historyOrders:orders};
+}
+function validateSeniorLifecycle(w,s,input){
+ const t=s.terms[input.termId],academicWindow=t?.assessmentWindow;need(isSeniorTerm(t)&&t.closed&&!t.review,'open senior academic lifecycle required');
+ const roster=seniorRosterAt(w,input.date),activeIds=roster.enrollments.map(e=>e.personId);need(equal(input.activeIds,activeIds),'senior lifecycle active roster differs');
+ if(input.action==='release')need(input.date>=academicWindow.publicationDate&&!t.publishedAt,'senior publication order');
+ if(['complete-study','review'].includes(input.action)){need(t.publishedAt&&input.date===academicWindow.studyCompletionDate&&w.position.slotId===calendarDay(input.date,3,runtime(w).plan.calendarVersion).slots.at(-1).id,'senior study/review date and day end');
+  if(input.action==='complete-study')need(!t.studyCompletedAt&&equal(input.studyEvidence,seniorStudyEvidence(w,t)),'study evidence changed');
+  if(input.action==='review'){need(t.studyCompletedAt&&!t.review,'unique completed study review');const people=roster.people;need(equal(input.people,people)&&equal(input.sourceOrders,runtime(w).history.filter(h=>h.type==='academic').map(h=>h.order)),'review roster/source evidence mismatch');}
+ }
 }
 export function academicEligible(w,personId,condition,projection=null){const s=projection??academicState(w),t=s.terms[condition.termId],row=t?.results?.find(r=>r.id===personId);if(condition.kind==='makeup')return s.version===2?fullCourses(s).some(x=>x.t.termId===condition.termId&&x.row.id===personId&&x.course.makeupEligible&&x.course.earned===0):!!row?.courses.some(c=>c.makeupEligible&&c.earned===0);if(condition.kind==='credit-deficit')return s.version===2?fullCourses(s).some(x=>x.t.termId===condition.termId&&x.row.id===personId&&x.course.earned===0):!!row?.courses.some(c=>c.earned===0);if(condition.kind==='admission')return s.admissions.some(a=>a.personId===personId&&a.node===condition.node&&a.accepted===condition.accepted);if(condition.kind==='change'){const a=t?.assessments.find(a=>a.round===condition.from)?.marks.find(m=>m.id===personId),b=t?.assessments.find(a=>a.round===condition.to)?.marks.find(m=>m.id===personId);return !!a&&!!b&&b.marks[condition.subject]-a.marks[condition.subject]<=condition.maximum;}return false;}
 
@@ -202,14 +272,14 @@ function refreshRow(row){
 const scoreTotal=(courses,fn)=>Math.round(courses.reduce((n,c)=>n+fn(c),0)*10)/10;
 const retakeRequestDue=(s,c)=>!c.earned&&c.supportDecisionTermCount!==Object.keys(s.terms).length&&(!c.makeupEligible||c.makeup||c.makeupExpired)&&(!c.retakePlan||c.retakePlan.completed);
 const fullCourses=s=>{
- const rows=[...Object.values(s.terms).filter(t=>t.closed).flatMap(t=>(t.results??[]).filter(r=>s.students[r.id]).flatMap(row=>row.courses.map(course=>({t,row,course})))),...reviewedCourses(s).map(course=>({t:{termId:supplementTermId(course),year:course.year,grade:course.level,closed:true,closedAt:course.date},row:{id:course.personId,courses:[course]},course}))],unique=new Map();
- for(const x of rows){const key=x.row.id+'/'+creditIdentity({...x.course,level:x.t.grade,half:x.t.termId.endsWith('spring')?'spring':'autumn'}),old=unique.get(key);if(!old||x.course.earned>old.course.earned)unique.set(key,x);}return [...unique.values()];
+ const rows=[...Object.values(s.terms).filter(t=>t.closed&&(!isSeniorTerm(t)||t.publishedAt)).flatMap(t=>(t.results??[]).filter(r=>s.students[r.id]).flatMap(row=>row.courses.map(course=>({t,row,course})))),...reviewedCourses(s).map(course=>({t:{termId:supplementTermId(course),year:course.year,grade:course.level,closed:true,closedAt:course.date},row:{id:course.personId,courses:[course]},course}))],unique=new Map();
+ for(const x of rows){const key=x.row.id+'/'+creditIdentity({...x.course,level:x.t.grade,half:x.t.termId.endsWith('spring')?'spring':'autumn'}),old=unique.get(key);if(!old||x.course.earned>old.course.earned)unique.set(key,x);}const frozen=new Set(Object.values(s.terms).flatMap(t=>t.review?.outcomes.map(o=>o.personId)??[]));return [...unique.values()].filter(x=>!frozen.has(x.row.id));
 };
-function annualReviews(s,active){const pending=[];for(const t of Object.values(s.terms).filter(t=>t.closed&&t.termId.endsWith('spring')))for(const row of t.results.filter(r=>active(r.id)&&s.students[r.id]))for(const c of row.courses){const autumn=s.terms[`${t.year}:autumn`]?.results?.find(r=>r.id===row.id)?.courses.find(a=>a.subject===c.subject),pass=standard(rulesFor(t.year,2),s.students[row.id].status,t.grade).pass;if(autumn&&(!c.annual||annualAverage(autumn,c,pass,2)>c.annual.average))pending.push({t,row,c});}return pending;}
+function annualReviews(s,active){const pending=[];for(const t of Object.values(s.terms).filter(t=>t.closed&&t.termId.endsWith('spring')&&(!isSeniorTerm(t)||t.publishedAt&&t.studyCompletedAt&&!t.review)))for(const row of t.results.filter(r=>active(r.id)&&s.students[r.id]))for(const c of row.courses){const autumn=s.terms[`${t.year}:autumn`]?.results?.find(r=>r.id===row.id)?.courses.find(a=>a.subject===c.subject),pass=standard(rulesFor(t.year,2),s.students[row.id].status,t.grade).pass;if(autumn&&(!c.annual||annualAverage(autumn,c,pass,2)>c.annual.average))pending.push({t,row,c});}return pending;}
 export function academicSupportDue(s,date,activeIds=null){
  const active=id=>activeIds===null||activeIds.includes(id);
  if(s.version!==2||s.supportDates?.includes(date))return false;
- return annualReviews(s,active).length>0||Object.values(s.terms).some(t=>t.closed&&!t.supportPrepared)||fullCourses(s).some(({row,course:c})=>active(row.id)&&c.earned===0&&(retakeRequestDue(s,c)||c.makeupDue&&date>=c.makeupDue&&!c.makeup||c.retakePlan&&!c.retakePlan.completed&&date>c.retakePlan.from))||(s.supplements??[]).some(c=>active(c.personId)&&!c.completed&&date>c.plan.from);
+ return annualReviews(s,active).length>0||Object.values(s.terms).some(t=>t.closed&&!t.supportPrepared&&(!isSeniorTerm(t)||t.publishedAt&&date>=t.assessmentWindow.publicationDate))||fullCourses(s).some(({row,course:c})=>active(row.id)&&c.earned===0&&(retakeRequestDue(s,c)||c.makeupDue&&date>=c.makeupDue&&!c.makeup||c.retakePlan&&!c.retakePlan.completed&&date>c.retakePlan.from))||(s.supplements??[]).some(c=>active(c.personId)&&!c.completed&&date>c.plan.from);
 }
 /** School support is an academic journal operation at an actually visited date.
  * Two face-to-face study periods per student/day, shared across all pending
@@ -227,12 +297,12 @@ export function academicSupport(s,input,rng){
   if(c.retakePlan){c.retakePlans??=[];c.retakePlans.push(structuredClone(c.retakePlan));c.retakeAttempts??=[];c.retakeAttempts.push(structuredClone(c.retake));delete c.retake;}
   c.retakePlan={from:input.date,requiredPeriods:c.credits*3,periodsPerDay:2,mode:'individual',studiedPeriods:0,lastStudyDate:null};out.plans.push({personId:row.id,termId:t.termId,subject:c.subject,mode:'individual'});
  };
- for(const t of Object.values(s.terms))if(t.closed&&!t.supportPrepared){
+ for(const t of Object.values(s.terms))if(t.closed&&!t.supportPrepared&&(!isSeniorTerm(t)||t.publishedAt&&input.date>=t.assessmentWindow.publicationDate)){
   t.supportPrepared=true;out.prepared.push(t.termId);
-  if(t.termId.endsWith('spring'))for(const row of t.results.filter(r=>s.students[r.id]&&active(r.id)))for(const c of row.courses){const a=s.terms[`${t.year}:autumn`]?.results?.find(r=>r.id===row.id)?.courses.find(a=>a.subject===c.subject);if(a&&!c.annual)out.annual.push({personId:row.id,subject:c.subject,...applyAcademic(s,{action:'annual-credit',termId:t.termId,personId:row.id,subject:c.subject,date:input.date},rng)});}
+  if(t.termId.endsWith('spring')&&(!isSeniorTerm(t)||t.studyCompletedAt))for(const row of t.results.filter(r=>s.students[r.id]&&active(r.id)))for(const c of row.courses){const a=s.terms[`${t.year}:autumn`]?.results?.find(r=>r.id===row.id)?.courses.find(a=>a.subject===c.subject);if(a&&!c.annual)out.annual.push({personId:row.id,subject:c.subject,...applyAcademic(s,{action:'annual-credit',termId:t.termId,personId:row.id,subject:c.subject,date:input.date},rng)});}
   for(const item of courses().filter(item=>item.t===t)){const c=item.course;if(!c.earned&&c.makeupEligible)c.makeupDue=addDays(t.closedAt,2);else if(!c.earned)plan(item);}
  }
- for(const item of courses()){const {t,row,course:c}=item;if(!c.earned&&c.makeupDue&&input.date>=c.makeupDue&&!c.makeup){
+ for(const item of courses()){const {t,row,course:c}=item;if(!c.earned&&c.makeupDue&&input.date>=c.makeupDue&&!c.makeup&&input.studyAllowed!==false&&(!isSeniorTerm(t)||input.studyAllowed&&input.date<=t.assessmentWindow.makeupUntil)){
   if(input.date>addDays(t.closedAt,30)){c.makeupExpired=true;delete c.makeupDue;plan(item);out.expired.push({personId:row.id,subject:c.subject});continue;}
   out.makeups.push({personId:row.id,termId:t.termId,subject:c.subject,...applyAcademic(s,{action:'makeup',termId:t.termId,personId:row.id,subject:c.subject,date:input.date},rng)});if(!c.earned)plan(item);
  }}
@@ -242,7 +312,7 @@ export function academicSupport(s,input,rng){
  // Group only actual same-day applicants, not everybody with an insufficient mark.
  for(const p of out.plans){const applicants=out.plans.filter(q=>q.termId===p.termId&&q.subject===p.subject);if(applicants.length>=15){const c=courses().find(x=>x.t.termId===p.termId&&x.row.id===p.personId&&x.course.subject===p.subject).course;c.retakePlan.mode=p.mode='class';c.retakePlan.requiredPeriods=c.credits*6;}}
  const weekday=new Date(input.date+'T00:00:00Z').getUTCDay();
- if(weekday!==0&&weekday!==6)for(const [personId,learner] of Object.entries(s.students)){
+ if(weekday!==0&&weekday!==6&&input.studyAllowed!==false)for(const [personId,learner] of Object.entries(s.students)){
   if(!active(personId))continue;let budget=2;const tasks=[...courses().filter(x=>x.row.id===personId&&!x.course.earned&&x.course.retakePlan&&!x.course.retakePlan.completed).map(x=>({...x,plan:x.course.retakePlan,kind:'retake'})),...(s.supplements??[]).filter(c=>c.personId===personId&&!c.completed).map(c=>({course:c,plan:c.plan,kind:'supplement'}))];
   for(const task of tasks){const {course:c,plan:p}=task;if(!budget||input.date<=p.from)continue;const periods=Math.min(budget,p.requiredPeriods-p.studiedPeriods);if(periods<=0)continue;
    p.studiedPeriods+=periods;p.lastStudyDate=input.date;budget-=periods;const subject=learner.subjects[c.subject];subject.mastery=score(subject.mastery+(100-subject.mastery)*.012*periods*(subject.state/100)*(subject.participation/100));out.study.push({personId,subject:c.subject,periods});

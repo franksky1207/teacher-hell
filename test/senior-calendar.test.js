@@ -62,15 +62,15 @@ test('H1-B: two legal graduation-exam days, first exam retained, no third, all o
  for(const t of CALENDAR.years.flatMap(y=>y.terms))for(const g of [1,2,3]){if(g===3&&t.kind==='spring')continue;assert.deepEqual(examSchedule(t.id,g,V),examSchedule(t.id,g));}
 });
 
-test('H1-B: finish-slot automatically records rounds 1/2; rejects third/ordinary and defers H2 close',()=>{
+test('H1-B: finish-slot automatically records rounds 1/2; rejects phantom rounds and retains the June teacher boundary',()=>{
  for(const round of [1,2]){
   let w=baseline(examSchedule('2029:spring',3,V)[round-1].dates.at(-1),'p8',true);w=run(w,[{type:'academic',action:'open'}]);w=step(w);
-  const t=academicState(w).terms['2029:spring'];assert.deepEqual(t.assessments.map(a=>a.round),[round]);assert.equal(t.closed,false);assert.equal(calendarMilestones(w).annualSettlementReady,false);assert.deepEqual(restoreWorldState(JSON.stringify(w)),w);
+  const t=academicState(w).terms['2029:spring'];assert.deepEqual(t.assessments.map(a=>a.round),round===2?[2,0]:[1]);assert.equal(t.closed,false);assert.equal(calendarMilestones(w).annualSettlementReady,false);assert.deepEqual(restoreWorldState(JSON.stringify(w)),w);
  }
  let w=baseline('2029-06-29','p8',true);w=run(w,[{type:'academic',action:'open'}]);
- for(const round of [0,3])assert.throws(()=>run(w,[{type:'academic',action:'assess',round}]),/round unavailable/);
- assert.throws(()=>run(w,[{type:'academic',action:'close'}]),/H2 senior closing/);w=step(w);assert.deepEqual(academicState(w).terms['2029:spring'].assessments,[]);
- const contract=assessmentCalendar('2029:spring',3,V);assert.equal(contract.teacherTermEnd,'2029-06-29');assert.equal(contract.ordinaryAssessmentDates,null);
+ assert.throws(()=>run(w,[{type:'academic',action:'assess',round:3}]),/round unavailable/);assert.throws(()=>run(w,[{type:'academic',action:'assess',round:0}]),/actual final day/);
+ assert.throws(()=>run(w,[{type:'academic',action:'close'}]),/exact term policy assessments/);w=step(w);assert.deepEqual(academicState(w).terms['2029:spring'].assessments,[]);
+ const contract=assessmentCalendar('2029:spring',3,V);assert.equal(contract.teacherTermEnd,'2029-06-29');assert.deepEqual(contract.ordinaryAssessmentDates,semester('2029:spring').exams[1]);assert.equal(contract.closurePolicy,'senior-spring-h2-v1');
 });
 
 test('H1-B: after graduation exams normal lessons/nights continue through ceremony eve',()=>{

@@ -18,7 +18,9 @@ for(const y of CALENDAR.years)for(const a of y.activities){const list=activities
 /** H1 exposes dates/rounds, and explicitly leaves the new academic closing policy to H2. */
 export function assessmentCalendar(termId,grade,version=CALENDAR_VERSION){
  const exams=examSchedule(termId,grade,version),senior=exams.length===2;
- return {version,termId,grade,exams,ordinaryAssessmentDates:senior?null:exams.at(-1).dates,closurePolicy:senior?'h2-senior-spring-pending':'standard',teacherTermEnd:semester(termId).end};
+ const lastExam=exams.at(-1).dates.at(-1);let studyCompletionDate=null,ceremonyDate=null;
+ if(senior){ceremonyDate=CALENDAR.years.flatMap(y=>y.activities).find(a=>a.kind==='graduation'&&a.date>=semester(termId).start&&a.date<=semester(termId).end)?.date;need(ceremonyDate,'CALENDAR','Missing graduation ceremony');studyCompletionDate=addDays(ceremonyDate,-1);while(weekday(studyCompletionDate)>5||(holidays.get(studyCompletionDate)??[]).some(h=>!h.grades||h.grades.includes(3)))studyCompletionDate=addDays(studyCompletionDate,-1);}
+ return {version,termId,grade,exams,ordinaryAssessmentDates:exams.at(-1).dates,closurePolicy:senior?'senior-spring-h2-v1':'standard',teacherTermEnd:semester(termId).end,...(senior?{assessmentPolicy:'senior-spring-403030-v1',marksCloseDate:lastExam,publicationDate:addDays(lastExam,1),makeupFrom:addDays(lastExam,2),makeupUntil:[addDays(lastExam,30),studyCompletionDate].sort()[0],studyCompletionDate,ceremonyDate}:{})};
 }
 export function requireDate(date){dayNumber(date);need(date>=CALENDAR.range[0]&&date<=CALENDAR.range[1],'RANGE','Calendar supports only 2026-01-01 through 2065-12-31');return date;}
 export function yearData(year){need(years.has(year),'RANGE',`Unsupported calendar year ${year}`);return years.get(year);}

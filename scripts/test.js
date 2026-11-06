@@ -3,14 +3,14 @@ import { spawnSync } from 'node:child_process';
 
 const legacy = ['assessment','changes','core','evolution','evolution-stress','integration','player','random','social','world'];
 export const suites = Object.freeze({
-  academic: ['academics','cohort','contracts','architecture','tooling'],
+  academic: ['academic-roster','senior-academics','senior-calendar','academics','cohort','contracts','architecture','tooling'],
   unit: ['core','random'],
   contract: ['contracts'],
-  integration: ['senior-calendar','launch','three-year','cohort','completion','failure','annual','reviews','procedures','academics','autonomy','story','story-view','story-controller','story-shell','story-test-runner','notebook-view','notebook-people','notebook-events','notebook-events-view','notebook-academics','notebook-academics-view','notebook-reviews','events','school','calendar-integration','integration','runtime','storage'],
+  integration: ['academic-roster','senior-academics','senior-calendar','launch','three-year','cohort','completion','failure','annual','reviews','procedures','academics','autonomy','story','story-view','story-controller','story-shell','story-test-runner','notebook-view','notebook-people','notebook-events','notebook-events-view','notebook-academics','notebook-academics-view','notebook-reviews','events','school','calendar-integration','integration','runtime','storage'],
   scenario: ['scenario'],
   tooling: ['architecture','tooling'],
-  quick: ['senior-calendar','launch','three-year','cohort','completion','failure','annual','reviews','procedures','academics','autonomy','story','story-view','story-controller','story-shell','story-test-runner','notebook-view','notebook-people','notebook-events','notebook-events-view','notebook-academics','notebook-academics-view','notebook-reviews','events','school','calendar','calendar-integration','storage','runtime','core','random','contracts','scenario','architecture','tooling'],
-  regression: ['senior-calendar','launch','three-year','cohort','completion','failure','annual','reviews','procedures','academics','autonomy','story','story-view','story-controller','story-shell','story-test-runner','notebook-view','notebook-people','notebook-events','notebook-events-view','notebook-academics','notebook-academics-view','notebook-reviews','events','school','calendar','calendar-integration','storage',...legacy,'runtime','runtime-stress','contracts','scenario','architecture','tooling'],
+  quick: ['academic-roster','senior-academics','senior-calendar','launch','three-year','cohort','completion','failure','annual','reviews','procedures','academics','autonomy','story','story-view','story-controller','story-shell','story-test-runner','notebook-view','notebook-people','notebook-events','notebook-events-view','notebook-academics','notebook-academics-view','notebook-reviews','events','school','calendar','calendar-integration','storage','runtime','core','random','contracts','scenario','architecture','tooling'],
+  regression: ['academic-roster','senior-academics','senior-calendar','launch','three-year','cohort','completion','failure','annual','reviews','procedures','academics','autonomy','story','story-view','story-controller','story-shell','story-test-runner','notebook-view','notebook-people','notebook-events','notebook-events-view','notebook-academics','notebook-academics-view','notebook-reviews','events','school','calendar','calendar-integration','storage',...legacy,'runtime','runtime-stress','contracts','scenario','architecture','tooling'],
 });
 export function testSelection(args) {
   const [selection = 'regression', ...rest] = args;

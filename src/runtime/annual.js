@@ -8,7 +8,7 @@ import { development,mean } from '../assessment/grading.js';
 import { canonicalData } from '../changes/settlement.js';
 import { assertShape,ABILITY_NAMES,STATE_NAMES } from '../player/panel.js';
 import { planMode,careerRange,positionFor,nextPosition,calendarDay,gradeAt,slotOccupancy,cursorFor,yearData } from '../calendar/calendar.js';
-import { academicState,readAcademicQualification } from './academics.js';
+import { academicTermClosed,academicState,readAcademicQualification } from './academics.js';
 import { pendingSemesterReview,REVIEW_KEY } from './reviews.js';
 
 export const ANNUAL_KEY='teacher-hell/annual-observations';
@@ -102,7 +102,7 @@ export function annualEvidence(w,{end=snapshot(w,'end'),endRelations=relations(w
  }
  const atWorld={...w,extensions:{...w.extensions,'teacher-hell/world':{...r(w),history:r(w).history.slice(0,untilOrder)}}},a=academicState(atWorld);
  for(const id of students){
-  const closed=Object.values(a.terms).filter(t=>t.closed&&t.year===r(w).plan.startYear+year-1),rows=closed.flatMap(t=>t.results?.filter(row=>row.id===id)??[]),courses=rows.flatMap(row=>row.courses??[]);
+  const closed=Object.values(a.terms).filter(t=>t.closed&&t.year===r(w).plan.startYear+year-1),rows=closed.flatMap(t=>t.results?.filter(row=>row.id===id)??[]),courses=rows.flatMap(row=>row.courses??[]).filter(c=>c.completed!==false);
   if(!rows.length||!courses.length)continue;
   const learner=a.students[id],attendance=mean([...new Set(courses.map(c=>c.subject))].map(s=>learner.subjects[s].attendance));
   observe('student',id,id,mean(rows.map(row=>row.average)),100*courses.reduce((s,c)=>s+c.earned,0)/courses.reduce((s,c)=>s+c.credits,0),attendance,{criterion:'recorded-academic-marks-credits-attendance',historyIds:history.filter(h=>h.type==='academic'&&(!h.data.input.personId||h.data.input.personId===id)).map(h=>h.id),eventIds:[],factIds:[]});
@@ -137,7 +137,7 @@ function eligibility(w){
  need(r(w).history.some(h=>h.type==='slot-complete'&&h.cursor===r(w).plan.cursor),'complete final slot first');
  const reviews=r(w).history.filter(h=>h.type==='semester-review'&&positionFor(h.at.date,h.at.slotId,r(w).plan.startYear,planMode(r(w).plan),r(w).plan.calendarVersion).serviceYear===w.position.serviceYear);need(reviews.length===2&&reviews.every(h=>r(w).history.some(a=>a.type==='semester-review-read'&&a.data.reviewId===h.id)),'both semester reports must be read');
  const coverage=annualCoverage(w);need(!coverage.missing.length&&!coverage.undrawnDates.length,'incomplete legal slots or daily event draws');
- const academics=academicState(w),y=r(w).plan.startYear+w.position.serviceYear-1;need([`${y}:autumn`,`${y+1}:spring`].every(id=>academics.terms[id]?.closed&&academics.terms[id].assessments.length===4),'both academic semesters must be formally closed');
+ const academics=academicState(w),y=r(w).plan.startYear+w.position.serviceYear-1;need([`${y}:autumn`,`${y+1}:spring`].every(id=>academicTermClosed(w,academics.terms[id])),'both academic semesters must be formally closed');
  return {coverage,reviews};
 }
 export function compileAnnualSuccess(w){

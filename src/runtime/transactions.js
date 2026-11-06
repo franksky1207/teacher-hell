@@ -5,7 +5,7 @@ import { HOMEROOM_KEY,initializeHomeroom,failureResult,compileFailure,crisisObse
 import { initializeSemesterReviews, pendingSemesterReview, semesterReviewData, acknowledgeSemesterReview } from './reviews.js';
 import { initializeAnnualObservations,compileAnnualSuccess,compileThreeYearCohortCompletion,annualResult,ANNUAL_KEY,openAnnualObservations } from './annual.js';
 import { compileInstitution,tickOperation } from './procedures.js';
-import { compileAcademic,academicState,withAcademicProjection,academicSupportDue,academicVersion } from './academics.js';
+import { compileAcademic,academicState,academicSupportActiveIds,withAcademicProjection,academicSupportDue,academicVersion } from './academics.js';
 import { compileCampus,schoolEnabled,schoolActions,schoolEventOccupied } from './campus.js';
 import { formalSlot,calendarMilestones,teacherTenureAt } from './schedule.js';
 import { assessmentCalendar,planMode,THREE_YEAR,newThreeYearStart,semester,teachingTerm,yearData,nextPosition } from '../calendar/calendar.js';
@@ -296,17 +296,22 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     }
     if(schoolEnabled(world)){
       const term=teachingTerm(world.position.date);
-      if(term){const savedTerm=academicState(world).terms[term.id];if(!savedTerm)numericSession=execute(world,command,{type:'academic',action:'open',termId:term.id},numericSession,receipt,false,false,true);}
+      if(term){const savedTerm=academicState(world).terms[term.id];if(!savedTerm)numericSession=execute(world,command,{type:'academic',action:'open',termId:term.id},numericSession,receipt,false,false,true);else if(assessmentCalendar(term.id,savedTerm.grade,r.plan.calendarVersion).assessmentPolicy&&!savedTerm.assessmentPolicy)numericSession=execute(world,command,{type:'academic',action:'adopt-senior-policy',termId:term.id},numericSession,receipt,false,false,true);}
       if(term&&!term.camp){const policy=assessmentCalendar(term.id,formalSlot(world).day.grade,r.plan.calendarVersion),rounds=[...policy.exams,...(policy.ordinaryAssessmentDates?[{round:0,dates:policy.ordinaryAssessmentDates}]:[])];
         for(const {round,dates} of rounds)if(['p8','dinner','study1','study2','study3','private'].includes(world.position.slotId)&&world.position.date===dates.at(-1)&&!r.history.some(h=>h.type==='academic'&&h.data.input.termId===term.id&&h.data.input.action==='assess'&&h.data.input.round===round))numericSession=execute(world,command,{type:'academic',action:'assess',termId:term.id,round},numericSession,receipt,false,false,true);
       }
     }
-    if(schoolEnabled(world)){const term=teachingTerm(world.position.date),day=formalSlot(world).day;if(term&&!term.camp&&assessmentCalendar(term.id,day.grade,r.plan.calendarVersion).closurePolicy==='standard'&&world.position.date===semester(term.id).end&&day.slots.at(-1).id===world.position.slotId&&!academicState(world).terms[term.id]?.closed)numericSession=execute(world,command,{type:'academic',action:'close',termId:term.id},numericSession,receipt,false,false,true);}
-    if(schoolEnabled(world)&&formalSlot(world).day.slots.at(-1).id===world.position.slotId&&academicSupportDue(academicState(world),world.position.date,numericSession.world().registry.enrollments.filter(e=>e.until===null).map(e=>e.personId)))numericSession=execute(world,command,{type:'academic',action:'support'},numericSession,receipt,false,false,true);
+    if(schoolEnabled(world)){const term=teachingTerm(world.position.date),day=formalSlot(world).day;if(term&&!term.camp&&world.position.date===(assessmentCalendar(term.id,day.grade,r.plan.calendarVersion).marksCloseDate??semester(term.id).end)&&day.slots.at(-1).id===world.position.slotId&&!academicState(world).terms[term.id]?.closed)numericSession=execute(world,command,{type:'academic',action:'close',termId:term.id},numericSession,receipt,false,false,true);}
+    if(schoolEnabled(world)){const term=teachingTerm(world.position.date),saved=term&&academicState(world).terms[term.id];if(saved?.assessmentPolicy&&saved.closed&&!saved.publishedAt&&world.position.date>=saved.assessmentWindow.publicationDate)numericSession=execute(world,command,{type:'academic',action:'release',termId:term.id},numericSession,receipt,false,false,true);}
+    if(schoolEnabled(world)&&formalSlot(world).day.slots.at(-1).id===world.position.slotId&&academicSupportDue(academicState(world),world.position.date,academicSupportActiveIds(world)))numericSession=execute(world,command,{type:'academic',action:'support'},numericSession,receipt,false,false,true);
     numericSession=execute(world,command,{type:'institution-tick'},numericSession,receipt);
     numericSession=execute(world,command,{type:'npc-update'},numericSession,receipt);
     finishCalendarSlot(world,op);naturalAt(world,numericSession,world.position);history(world,command,'slot-complete',null,null,[],{activityIds:op.completedActivityIds});
     syncNumeric(world,numericSession);
+    if(schoolEnabled(world)){const term=teachingTerm(world.position.date),saved=term&&academicState(world).terms[term.id];if(saved?.assessmentPolicy&&saved.closed&&world.position.date===saved.assessmentWindow.studyCompletionDate&&formalSlot(world).day.slots.at(-1).id===world.position.slotId&&!saved.review){
+      if(!saved.studyCompletedAt)numericSession=execute(world,command,{type:'academic',action:'complete-study',termId:term.id},numericSession,receipt,false,false,true);
+      numericSession=execute(world,command,{type:'academic',action:'review',termId:term.id},numericSession,receipt,false,false,true);
+    }}
     const review=semesterReviewData(world);if(review)history(world,command,'semester-review',null,null,[],review);
   } else if(op.type==='prepare-semester') {
     prepareSemester(world,op);history(world,command,'timetable',null,null,[],{semesterId:op.semesterId});

@@ -3,8 +3,7 @@ import {renderNotebookAcademics} from './notebook-academics.js';
 import {renderNotebookEvents} from './notebook-events.js';
 import {renderNotebookPeople} from './notebook-people.js';
 import {renderNotebookTasks} from './notebook-tasks.js';
-/** Phase 14-A notebook shell. Data tabs are deliberately unimplemented until 14-B–E.
- * Only passed-in public UI context may appear here. Never inspect world numeric/history. */
+/** Read-only notebook composition; only prevalidated public projections enter this view. */
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const NOTEBOOK_TABS=Object.freeze([
  {id:'people',label:'人物',description:'人物與已知關係'},
@@ -27,5 +26,5 @@ export function renderNotebookView({date,grade,readonly=false,tab='people',peopl
   :tab==='career'&&career?renderNotebookCareer(career)
   :`<div class="notebook-empty"><h3>${esc(chosen.label)}</h3><p>${esc(chosen.description)}</p><p>正在查閱正式保存紀錄。</p></div>`;
 
- return `<div class="notebook" aria-label="筆記本"><nav class="notebook-tabs" role="tablist" aria-label="筆記本分類">${tabs}</nav><section class="notebook-content" id="notebook-content" role="tabpanel" aria-labelledby="notebook-tab-${tab}">${innerTabs}${body}</section></div>`;
+ return `<div class="notebook" aria-label="筆記本"><nav class="notebook-tabs" role="tablist" aria-label="筆記本分類">${tabs}</nav><section class="notebook-content" id="notebook-content" role="tabpanel" aria-labelledby="notebook-tab-${section}">${innerTabs}${body}</section></div>`;
 }

@@ -165,7 +165,11 @@ if(['notebook-tab','notebook-person','notebook-person-category','notebook-event-
   if(cmd==='notebook-person'){
   if(notebookTab!=='people')return;
   const available=await notebookData('people');
-  if(!available.people.some(p=>p.id===arg))throw new RangeError('Unknown notebook person');
+  const target=available.people.find(p=>p.id===arg);
+  if(!target)throw new RangeError('Unknown notebook person');
+  // A relation link may point outside the current category or search results.
+  notebookPersonCategory=target.kind;
+  notebookPersonSearch='';
   notebookPersonId=arg;
  }
  if(cmd==='notebook-event-year'||cmd==='notebook-event-kind'||cmd==='notebook-event-page'||cmd==='notebook-event-view'||cmd==='notebook-event-term'){

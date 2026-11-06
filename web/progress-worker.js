@@ -18,12 +18,12 @@ self.onmessage=async({data})=>{
  try{
   storage=createIndexedDBStorage({factory:indexedDB,namespace:'development'});
   const session=await createStoredSession(storage,data.slot);
-  const before=data.request?new Set(generatedGivenNames(session.snapshot().payload?.world)):null;
+  const before=data.request?new Set(session.savedGivenNames()):null;
   let nameMemoryWarning=false;
   async function rememberCommitted(names){try{await rememberNames({factory:indexedDB,namespace:'development',names});}catch(error){nameMemoryWarning=true;console.warn('Name history could not be updated',error);}}
   if(['request','initialize','restart','replaceOpening','import','delete'].filter(k=>Object.hasOwn(data,k)).length>1)throw Error('One stored operation per worker request');
   if(data.request){await session.execute(data.request,{expectedToken:data.expectedToken});
-   const after=generatedGivenNames(session.snapshot().payload?.world);const fresh=after.filter(name=>!before.has(name));
+   const after=session.savedGivenNames();const fresh=after.filter(name=>!before.has(name));
    if(fresh.length)await rememberCommitted(fresh);
   }
   if(data.initialize){await session.initialize(data.initialize);await rememberCommitted(generatedGivenNames(session.snapshot().payload?.world));}

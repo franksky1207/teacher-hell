@@ -19,7 +19,8 @@ export function runtimeCalendarDay(w,date=w.position.date,cursor=null,order=null
 export function runtimeSlot(w,date=w.position.date,slotId=w.position.slotId,ordinary=null){
  if(!aftercareActive(w,date))return ordinary;
  const day=runtimeCalendarDay(w,date),index=day.slots.findIndex(s=>s.id===slotId);if(date===aftercareAdoption(w).data.startDate&&index<aftercareAdoption(w).data.startCursor%32)return ordinary;
- const slot=day.slots.find(s=>s.id===slotId);return {...slot,lesson:null,teachingAutomatic:false};
+ const slot=day.slots.find(s=>s.id===slotId),registry=w.numeric.evolution.world.registry,assigned=ordinary?.lesson&&registry?.classes[ordinary.lesson.classId],continues=assigned&&[1,2].includes(registry.academicYear-assigned.cohortStart+1);
+ return {...slot,kind:continues?'aftercare-teaching':slot.kind,lesson:continues?ordinary.lesson:null,teachingAutomatic:!!continues};
 }
 /** Explicitly qualified remote/administrative interactions only. */
 export function aftercareDefinition(d){return d.eligibility.dayKinds.includes('aftercare')||['crisis','support','social'].includes(d.eligibility.homeroom);}

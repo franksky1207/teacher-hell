@@ -69,7 +69,7 @@ test('H1-B: finish-slot automatically records rounds 1/2; rejects phantom rounds
  }
  let w=baseline('2029-06-29','p8',true);w=run(w,[{type:'academic',action:'open'}]);
  assert.throws(()=>run(w,[{type:'academic',action:'assess',round:3}]),/round unavailable/);assert.throws(()=>run(w,[{type:'academic',action:'assess',round:0}]),/actual final day/);
- assert.throws(()=>run(w,[{type:'academic',action:'close'}]),/exact term policy assessments/);w=step(w);assert.deepEqual(academicState(w).terms['2029:spring'].assessments,[]);
+ assert.throws(()=>run(w,[{type:'academic',action:'close'}]),/exact term policy assessments/);w=run(w,[{type:'aftercare-week'}]);assert.deepEqual(academicState(w).terms['2029:spring'].assessments,[]);assert.equal(w.position.date,'2029-06-29');assert.equal(w.position.slotId,'private');assert.equal(calendarMilestones(w).annualSettlementReady,true);assert.ok(!runtimeOf(w).history.some(h=>['annual-success','career-completion'].includes(h.type)));
  const contract=assessmentCalendar('2029:spring',3,V);assert.equal(contract.teacherTermEnd,'2029-06-29');assert.deepEqual(contract.ordinaryAssessmentDates,semester('2029:spring').exams[1]);assert.equal(contract.closurePolicy,'senior-spring-h2-v1');
 });
 

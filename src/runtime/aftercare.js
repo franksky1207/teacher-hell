@@ -11,14 +11,14 @@ function retiredReservations(w){
  for(const h of state.history.filter(h=>h.type==='event-selection')){
   const catalogue=h.data.catalogueId?state.history.find(c=>c.type==='event-catalogue'&&c.data.catalogueId===h.data.catalogueId)?.data:JSON.parse(state.commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId).request).operations.find(o=>o.type==='draw-events');
   for(const s of h.data.selected){const d=catalogue?.definitions.find(d=>d.id===s.definitionId),e=d?.eligibility;
-   if(s.date>=w.position.date&&!w.events.some(e=>e.id===s.eventId)&&d&&!aftercareDefinition(d)&&!e.entrance&&!e.academic&&!e.procedure)retired.push(s.eventId);
+   if(s.date>=w.position.date&&!state.history.some(open=>open.type==='stage'&&open.eventId===s.eventId&&open.data.definitionId)&&d&&!aftercareDefinition(d)&&!e.entrance&&!e.academic&&!e.procedure)retired.push(s.eventId);
   }
  }
  return retired;
 }
 export function adoptionData(w){
  const bounds=aftercareWindow(w);if(!bounds||w.position.date<bounds.startDate||aftercareAdoption(w))return null;
- const ceremony=r(w).facts.find(f=>f.data.type==='campus-outcome'&&f.data.graduationSummary);
+ const ceremony=r(w).facts.find(f=>f.order<=r(w).history.length&&f.data.type==='campus-outcome'&&f.data.graduationSummary);
  return {version:1,...bounds,startDate:w.position.date,startCursor:r(w).plan.cursor,mode:ceremony?'after-ceremony':'late-adoption',ceremonyFactId:ceremony?.id??null,retiredReservationIds:retiredReservations(w),notice:ceremony?'畢典已結束，原班學生離校；教師轉入六月善後。':'由目前日期接續善後；不補演已錯過的畢典，也不改寫先前上課與招生歷史。'};
 }
 export function activeAftercareWeek(w){const h=r(w).history.findLast(h=>h.type==='aftercare-week-start');return h&&!r(w).history.some(s=>s.type==='aftercare-week-summary'&&s.data.weekId===h.data.weekId)?h:null;}

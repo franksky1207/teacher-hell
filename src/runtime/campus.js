@@ -18,7 +18,7 @@ export function readSchoolTodos(w){return w.events.filter(e=>e.type==='cumulativ
 export function schoolEventOccupied(w){return r(w).history.some(h=>h.cursor===r(w).plan.cursor&&h.eventId&&w.events.some(e=>e.id===h.eventId&&!/^(procedure:|activity:)/.test(e.definitionId)));}
 export function schoolActions(w){
  need(isFormal(r(w).plan),'formal calendar required');const {day,slot}=formalSlot(w),id=w.position.slotId;
- if(aftercareActive(w))return pendingSchoolEvent(w)?[]:['aftercare-admin','rest','private-life','todo'];
+ if(aftercareActive(w))return pendingSchoolEvent(w)?[]:slot.teachingAutomatic?['automatic']:['aftercare-admin','rest','private-life','todo'];
  if(!slot.protected&&(pendingSchoolEvent(w)||schoolEventOccupied(w)))return [];
  if(slot.protected||slot.teachingAutomatic||['exam','assembly','class-meeting'].includes(slot.kind)||['lunch','noon','dinner'].includes(id))return ['automatic'];
  if(pendingSchoolEvent(w))return [];
@@ -45,7 +45,7 @@ export function compileCampus(w,activity){
  if(participant)subjects.push(participant);
  if(graduation)for(const p of graduation.representatives)if(!subjects.includes(p.personId))subjects.push(p.personId);
  const event={schemaVersion:1,id:eventId,definitionId:'procedure:campus',contentVersion:'school-v1',type:'direct',participantIds:subjects,stageId,facts:[],knowledge:[],results:[],choice:null};
- operations.push({type:'open-event',event},{type:'fact',id:factId,eventId,stageId,subjectIds:subjects,witnessIds:subjects,description:graduation?graduation.description:mock?`${mock.family==='gsat'?'學測':'分科'}模考${w.position.slotId==='morning'?'上午':'下午'}階段已完成；本次模考不計入校內學期成績。`:protectedActivity?'校園活動依當日進展留下正常成果。':slot.teachingAutomatic?'依固定課表完成授課。':activity==='aftercare-admin'?'依既有紀錄整理班級資料、行政交接與個別學生待辦。':'依當前合法時段完成日常活動。',data:{type:'campus-outcome',activity,activityIds:slot.activityIds,lesson:slot.lesson,...(mock?{mockSummary:mock}:{}),...(graduation?{graduationSummary:graduation}:{})},categoryCodes:[],causeIds:[]});
+ operations.push({type:'open-event',event},{type:'fact',id:factId,eventId,stageId,subjectIds:subjects,witnessIds:subjects,description:graduation?graduation.description:mock?`${mock.family==='gsat'?'學測':'分科'}模考${w.position.slotId==='morning'?'上午':'下午'}階段已完成；本次模考不計入校內學期成績。`:protectedActivity?'校園活動依當日進展留下正常成果。':slot.teachingAutomatic?(aftercareActive(w)?'依原課表完成未畢業年級的教學／考務責任。':'依固定課表完成授課。'):activity==='aftercare-admin'?'依既有紀錄整理班級資料、行政交接與個別學生待辦。':'依當前合法時段完成日常活動。',data:{type:'campus-outcome',activity,activityIds:slot.activityIds,lesson:slot.lesson,...(mock?{mockSummary:mock}:{}),...(graduation?{graduationSummary:graduation}:{})},categoryCodes:[],causeIds:[]});
  let operation;
  if(['rest','private-life'].includes(activity)){
   const long=['vacation-day','festival-day'].includes(w.position.slotId),index=day.slots.findIndex(s=>s.id===w.position.slotId),startHour=long?0:w.position.slotId==='private'||w.position.slotId==='evening'?19:w.position.slotId==='morning'?8:w.position.slotId==='afternoon'?13:6+index*.6;

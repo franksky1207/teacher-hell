@@ -310,6 +310,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
       const complete=r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor);
       if(!complete){
         const day=runtimeCalendarDay(world);
+        if(formalSlot(world).slot.teachingAutomatic&&!r.history.some(h=>h.type==='campus'&&h.cursor===r.plan.cursor)&&!schoolEventOccupied(world))numericSession=execute(world,command,{type:'campus',activity:'automatic'},numericSession,receipt);
         if(day.slots.at(-1).id===world.position.slotId&&!r.history.some(h=>h.type==='campus'&&h.cursor===r.plan.cursor)&&!schoolEventOccupied(world))numericSession=execute(world,command,{type:'campus',activity:world.position.date===task.startDate?'aftercare-admin':'rest'},numericSession,receipt);
         numericSession=execute(world,command,{type:'finish-slot',completedActivityIds:[]},numericSession,receipt);
       }

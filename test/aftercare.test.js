@@ -12,7 +12,7 @@ import {prepareWorldOperation,prepareWorldSequence} from '../src/runtime/transac
 import {runtimeOf,restoreWorldState} from '../src/runtime/model.js';
 import {formalSlot} from '../src/runtime/schedule.js';
 import {aftercareActive} from '../src/runtime/aftercare-calendar.js';
-import {readAftercare,nextAftercareOperation} from '../src/runtime/aftercare.js';
+import {readAftercare,nextAftercareOperation,adoptionData} from '../src/runtime/aftercare.js';
 import {graduationSummary} from '../src/runtime/graduation.js';
 import {readSeniorAcademicReview,academicState,readAdmissions} from '../src/runtime/academics.js';
 import {calendarDay,THREE_YEAR,SENIOR_CALENDAR_VERSION} from '../src/calendar/calendar.js';
@@ -20,6 +20,8 @@ import {buildEventCandidates,eventIndex} from '../src/runtime/event-candidates.j
 import {homeroomCatalogue,aftercareCatalogue} from '../src/runtime/story-content.js';
 const r=runtimeOf;
 function base(date='2029-06-02') {let w=academicAt(eventWorld(74,date,calendarDay(date,3,SENIOR_CALENDAR_VERSION).slots[0].id,{version:1,mode:THREE_YEAR,difficulty:'hard'}),date);return academicApply(w,[{type:'academic',action:'open'}]);}
+/** Date-isolated registry/timetable fixture with genuine continuing lower-grade classes. */
+function mixedBase(){let w=eventWorld(74,null,null,{version:1,mode:THREE_YEAR,difficulty:'hard'});for(const date of ['2027-02-19','2027-09-01','2028-02-21','2028-09-01','2029-06-02'])w=academicAt(w,date);return academicApply(w,[{type:'academic',action:'open'}]);}
 function week(w){const q=nextAftercareOperation(w);assert.equal(q.status,'advance');return prepareWorldOperation(w,q.request).world;}
 
 test('H4 preserves pre-ceremony lessons and uses the formal protected ceremony date',()=>{
@@ -37,9 +39,9 @@ test('H4 late adoption is additive and removes all original classroom uses',()=>
  const original=homeroomCatalogue().definitions.find(d=>d.eligibility.homeroom==='ordinary');assert.equal(buildEventCandidates(w,[original]).candidates.length,0);
 });
 test('H4 one weekly operation traverses original slots and emits one summary, with replay and retry',()=>{
- const w=base(),q=nextAftercareOperation(w).request,next=prepareWorldOperation(w,q).world;
+ const w=mixedBase(),q=nextAftercareOperation(w).request,next=prepareWorldOperation(w,q).world;
  assert.equal(next.position.date,'2029-06-09');assert.equal(readAftercare(next).weeks.length,1);assert.equal(readAftercare(next).weeks[0].startDate,'2029-06-02');assert.equal(readAftercare(next).weeks[0].endDate,'2029-06-08');
- assert.equal(r(next).history.filter(h=>h.type==='event-selection').length,7);assert.equal(r(next).history.filter(h=>h.type==='campus').length,7);
+ assert.equal(r(next).history.filter(h=>h.type==='event-selection').length,7);const campus=r(next).history.filter(h=>h.type==='campus'),table=r(next).plan.tables.at(-1),registry=next.numeric.evolution.world.registry,continues=table.lessons.filter(l=>registry.academicYear-registry.classes[l.classId].cohortStart+1<3);assert.ok(continues.length>0);assert.deepEqual(r(next).plan.tables,r(w).plan.tables);assert.equal(next.numeric.evolution.world.classroom.studentIds.length,40);assert.equal(campus.filter(h=>!h.data.slot.teachingAutomatic).length,7);assert.equal(campus.filter(h=>h.data.slot.teachingAutomatic).length,continues.length);assert.ok(campus.every(h=>!h.data.slot.lesson||registry.academicYear-registry.classes[h.data.slot.lesson.classId].cohortStart+1<3));
  assert.deepEqual(restoreWorldState(JSON.stringify(next)),next);assert.equal(prepareWorldOperation(next,q).duplicate,true);
  let supplied=false;const sequenced=prepareWorldSequence(w,()=>{if(supplied)return null;supplied=true;return q;});assert.deepEqual(sequenced.world,next);assert.deepEqual(sequenced.receipts[0],r(next).commits.at(-1));
  const bad=structuredClone(next);r(bad).history.find(h=>h.type==='aftercare-week-summary').data.endDate='2029-06-09';assert.throws(()=>restoreWorldState(bad),/summary|interval/);
@@ -112,8 +114,11 @@ test('H4 actual pre-H4 saves preserve old history and adopt explicitly from thei
 test('H4 legacy unadmitted classroom reservations retire additively without replaying a class event',()=>{
  const old=JSON.parse(gunzipSync(readFileSync(new URL('./fixtures/h4-pre-5c21854.json.gz',import.meta.url))));let w=restoreSave(old.reserved).world;
  const history=structuredClone(r(w).history),selected=history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected);assert.ok(selected.length>0);
+ // A later event projection is not evidence of admission in the adoption prefix.
+ const future=structuredClone(w);future.events.push({id:selected[0].eventId});assert.deepEqual(adoptionData(future).retiredReservationIds,adoptionData(w).retiredReservationIds);
  w=prepareWorldOperation(w,nextAftercareOperation(w).request).world;assert.deepEqual(r(w).history.slice(0,history.length),history);
  assert.deepEqual(readAftercare(w).adoption.retiredReservationIds,selected.map(s=>s.eventId));assert.equal(readAftercare(w).weeks.length,1);
+ const bad=structuredClone(w);r(bad).history.find(h=>h.type==='aftercare-adoption').data.retiredReservationIds=[];assert.throws(()=>restoreWorldState(bad),/adoption differs/);
  for(const s of selected){assert.equal(eventIndex(w).records.find(e=>e.eventId===s.eventId).status,'ended');assert.ok(!w.events.some(e=>e.id===s.eventId));assert.throws(()=>formal(w,[{type:'admit-event',eventId:s.eventId}]),/retired/);}
  assert.deepEqual(restoreSave(encodeSave(createSave(w))).world,w);
 });

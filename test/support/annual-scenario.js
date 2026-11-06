@@ -1,3 +1,4 @@
+import {isCampOpeningPosition} from '../../src/runtime/schedule.js';
 /** Engineering orchestration only; every date/slot/draw/decision runs normal core.
  * No date baselines, skipped routines, injected grades or alternate simulation. */
 import { foundationScenario } from './scenarios.js';
@@ -8,7 +9,7 @@ import { startAnnualSchoolCareer,startFailureSchoolCareer,startThreeYearSchoolCa
 import { runtimeOf } from '../../src/runtime/model.js';
 import { createRandom } from '../../src/numeric/random.js';
 import { createId } from '../../src/contracts/foundation.js';
-import { calendarDay,gradeAt,nextPosition,teachingTerm,yearData } from '../../src/calendar/calendar.js';
+import { calendarDay,gradeAt,nextPosition,planMode,teachingTerm,yearData } from '../../src/calendar/calendar.js';
 
 export function annualOpening({seed=74,events=true,continuity=false,difficulty=null,onOpening=()=>{}}={}){
  const f=foundationScenario(seed);f.events=[];f.enrollments=[];f.random.events=createRandom(1).snapshot();
@@ -29,7 +30,7 @@ export function runAnnual(w,{option='listen',stopDate=null,stopBeforeSettlement=
   if(lastDate!==c.position.date){lastDate=c.position.date;onDate(lastDate,c.revision);}
   const request=(operations,kind='routine')=>{const q={id:createId('operation',[c.identity.attemptId,'annual-driver',String(c.revision)]),attemptId:c.identity.attemptId,expectedRevision:c.revision,actorId:c.identity.playerId,preconditions:[],operations,calendarContext:{kind}};onRequest(q);return q;};
   if(c.pendingReview)return stopAtReview?null:request([{type:'read-semester-review',reviewId:c.pendingReview}]);
-  const day=calendarDay(c.position.date,gradeAt(c.position.date,c.plan.startYear));
+  const day=calendarDay(c.position.date,gradeAt(c.position.date,c.plan.startYear),c.plan.calendarVersion);
   if(!c.annualSettled&&day.annualBoundary&&day.slots.at(-1).id===c.position.slotId&&c.slotComplete)return stopBeforeSettlement?null:request([{type:'settle-school-year'}]);
   if(!c.dayDrawn)return request([{type:'draw-events',catalogueId}],'formal-event');
   if(c.reserved.length)return request([{type:'admit-event',eventId:c.reserved[0].eventId}],'formal-event');
@@ -38,9 +39,9 @@ export function runAnnual(w,{option='listen',stopDate=null,stopBeforeSettlement=
    if(story.canResume)action='resume';else if(story.canNext)action='next';else if(story.confirmation)action='confirm';else if(story.choices.length){action='select';optionId=(story.choices.find(o=>o.id===option)??story.choices[0]).id;}else if(story.canFinish)action='finish';else throw Error('Unknown story attention');
    return request([{type:'story',eventId:story.eventId,action,optionId}],'formal-event');
   }
-  const next=nextPosition(c.position,c.plan.startYear),term=teachingTerm(next.date);
+  const next=nextPosition(c.position,c.plan.startYear,planMode(c.plan),c.plan.calendarVersion),term=teachingTerm(next.date);
   if(stopBeforeOpening&&next.serviceYear>c.position.serviceYear){if(stopBeforeOpening==='uncompleted')return null;if(c.slotComplete)return null;return request([{type:'campus',activity:'rest'},{type:'finish-slot',completedActivityIds:[]}]);}
-  if(next.date===yearData(Number(next.date.slice(0,4))).summerCamp&&next.slotId==='early'&&c.academicYear<Number(next.date.slice(0,4))){if(!c.slotComplete)return request([{type:'campus',activity:'rest'},{type:'finish-slot',completedActivityIds:[]}]);if(stopBeforeTransition)return null;return request([{type:'transition-school-year'}]);}
+  if(next.date===yearData(Number(next.date.slice(0,4))).summerCamp&&isCampOpeningPosition(c.plan,next)&&c.academicYear<Number(next.date.slice(0,4))){if(!c.slotComplete)return request([{type:'campus',activity:'rest'},{type:'finish-slot',completedActivityIds:[]}]);if(stopBeforeTransition)return null;return request([{type:'transition-school-year'}]);}
   if(term&&!c.plan.tables.some(t=>t.semesterId===term.id))return request([{type:'prepare-semester',semesterId:term.id,classes:c.classes,homeClassId:c.homeClassId}]);
   if(c.slotComplete)return request([{type:'advance-time',planId:c.plan.id,steps:1}]);
   const activity=['automatic','class-talk','prepare','supervise','rest','routine'].find(a=>c.actions.includes(a));

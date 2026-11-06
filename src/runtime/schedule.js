@@ -1,13 +1,16 @@
+import { runtimeCalendarDay,runtimeSlot,aftercareActive,retiredAftercareReservation } from './aftercare-calendar.js';
 import { permitsStoryFollowup } from './story-content.js';
 /** Calendar boundary used by runtime/model and transactions; never imports runtime authority. */
 import { createId } from '../contracts/foundation.js';
 import { assertShape,STATE_NAMES } from '../player/panel.js';
 import { createRandom,restoreRandom } from '../numeric/random.js';
-import { planMode,careerYears,THREE_YEAR,DIFFICULTY_TENURE,CALENDAR_VERSION,careerRange,calendarDay,gradeAt,positionFor,positionAt,cursorFor,nextPosition,teachingTerm,latestPreparedSemester,yearData,slotOccupancy } from '../calendar/calendar.js';
+import { planMode,careerYears,THREE_YEAR,DIFFICULTY_TENURE,CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,requireCalendarVersion,careerRange,calendarDay,gradeAt,positionFor,positionAt,cursorFor,nextPosition,teachingTerm,latestPreparedSemester,yearData,slotOccupancy } from '../calendar/calendar.js';
 import { generateTimetable,validateTimetable } from '../calendar/timetable.js';
 import { requireCalendar as need } from '../calendar/civil.js';
+/** Frozen calendars may start camp with a mock's morning, rather than early study. */
+export function isCampOpeningPosition(plan,p){const y=yearData(Number(p.date.slice(0,4)));return [y.summerCamp,y.winterCamp].includes(p.date)&&p.slotId===calendarDay(p.date,gradeAt(p.date,plan.startYear),plan.calendarVersion).slots[0].id;}
 export const isFormal=plan=>['fixed-calendar-v1','fixed-calendar-v2'].includes(plan.validation);
-export const calendarPlanId=plan=>`calendar:${CALENDAR_VERSION}:${plan.startYear}`+(planMode(plan)===THREE_YEAR?`:three-year:${plan.career.difficulty}`+(plan.career.version===2?`:background-v1:${plan.career.backgroundSeed}`:''):'');
+export const calendarPlanId=plan=>`calendar:${plan.calendarVersion}:${plan.startYear}`+(planMode(plan)===THREE_YEAR?`:three-year:${plan.career.difficulty}`+(plan.career.version===2?`:background-v1:${plan.career.backgroundSeed}`:''):'');
 /** The difficulty is the only persisted tenure authority; no cached year or fictitious experience. */
 export function teacherTenure(world){
  const plan=world.extensions['teacher-hell/world'].plan;validateFormalPlan(plan);
@@ -18,25 +21,26 @@ export function teacherTenure(world){
 /** Explicit target position during a legal autumn transition, before numeric year catches up. */
 export function teacherTenureAt(world,position){
  const plan=world.extensions['teacher-hell/world'].plan,mode=planMode(plan);
- const expected=positionFor(position.date,position.slotId,plan.startYear,mode);
+ const expected=positionFor(position.date,position.slotId,plan.startYear,mode,plan.calendarVersion);
  need(Object.keys(expected).every(k=>position[k]===expected[k]),'TIME','Tenure target differs from fixed calendar');
  return (mode===THREE_YEAR?DIFFICULTY_TENURE[plan.career.difficulty]:1)+position.serviceYear-1;
 }
 export function validateFormalPlan(plan){
  assertShape(plan,['id','validation','calendarVersion','startYear','subject','tables','cursor','vacation',...(plan.validation==='fixed-calendar-v2'?['career']:[])]);
- need(isFormal(plan)&&plan.calendarVersion===CALENDAR_VERSION&&plan.id===calendarPlanId(plan),'CALENDAR_VERSION','Unknown or forged fixed calendar');
+ need(isFormal(plan)&&requireCalendarVersion(plan.calendarVersion)&&plan.id===calendarPlanId(plan),'CALENDAR_VERSION','Unknown or forged fixed calendar');
+ need(plan.calendarVersion!==SENIOR_CALENDAR_VERSION||planMode(plan)===THREE_YEAR,'MODE','Senior projection requires three-year mode');
  careerRange(plan.startYear,planMode(plan));need(Array.isArray(plan.tables)&&plan.tables.length>0,'TIMETABLE','Missing persisted timetable');const ids=new Set();
  for(const [index,table] of plan.tables.entries()){validateTimetable(table);
   const expectedId=`${plan.startYear+Math.ceil(index/2)}:${index%2?'spring':'autumn'}`;need(table.semesterId===expectedId&&index<careerYears(planMode(plan))*2,'TIMETABLE','Semester history must begin at first summer and remain consecutive');need(table.subject===plan.subject&&!ids.has(table.semesterId),'TIMETABLE','Duplicate semester or changed subject');ids.add(table.semesterId);const y=Number(table.semesterId.split(':')[0]);need(table.semesterId===`${y}:autumn`&&table.academicYear===y||table.semesterId===`${y}:spring`&&table.academicYear===y-1,'TIMETABLE','Timetable academic year mismatch');need(y>=plan.startYear&&y<=plan.startYear+careerYears(planMode(plan)),'TIMETABLE','Timetable outside career');}
  need(plan.vacation===null||typeof plan.vacation==='object'&&!Array.isArray(plan.vacation),'VACATION','Expected a persisted vacation task or null');
- if(plan.vacation){const task=plan.vacation;assertShape(task.before,STATE_NAMES);need(STATE_NAMES.every(k=>Number.isFinite(task.before[k])&&task.before[k]>=0&&task.before[k]<=100),'VACATION','Invalid baseline panel');assertShape(task,['id','direction','startDate','endDate','before']);need(typeof task.id==='string'&&task.id.length>0&&['rest','private-life'].includes(task.direction)&&task.startDate<=task.endDate,'VACATION','Invalid fast-forward task');for(const date of [task.startDate,task.endDate])need(calendarDay(date,gradeAt(date,plan.startYear)).kind==='long-vacation','VACATION','Fast-forward cannot contain camps or festival');need(calendarDay(task.startDate,gradeAt(task.startDate,plan.startYear)).segment.continuousEnd>=task.endDate,'VACATION','Fast-forward crosses protected boundary');}
- const position=positionAt(plan.cursor,plan.startYear,planMode(plan));if(plan.vacation)need(position.date>=plan.vacation.startDate&&position.date<=plan.vacation.endDate,'VACATION','Task cursor outside saved vacation');const latest=latestPreparedSemester(position.date),count=(latest.academicYear-plan.startYear)*2+(latest.id.endsWith(':spring')?2:1);
+ if(plan.vacation){const task=plan.vacation;assertShape(task.before,STATE_NAMES);need(STATE_NAMES.every(k=>Number.isFinite(task.before[k])&&task.before[k]>=0&&task.before[k]<=100),'VACATION','Invalid baseline panel');assertShape(task,['id','direction','startDate','endDate','before']);need(typeof task.id==='string'&&task.id.length>0&&['rest','private-life'].includes(task.direction)&&task.startDate<=task.endDate,'VACATION','Invalid fast-forward task');for(const date of [task.startDate,task.endDate])need(calendarDay(date,gradeAt(date,plan.startYear),plan.calendarVersion).kind==='long-vacation','VACATION','Fast-forward cannot contain camps or festival');need(calendarDay(task.startDate,gradeAt(task.startDate,plan.startYear),plan.calendarVersion).segment.continuousEnd>=task.endDate,'VACATION','Fast-forward crosses protected boundary');}
+ const position=positionAt(plan.cursor,plan.startYear,planMode(plan),plan.calendarVersion);if(plan.vacation)need(position.date>=plan.vacation.startDate&&position.date<=plan.vacation.endDate,'VACATION','Task cursor outside saved vacation');const latest=latestPreparedSemester(position.date),count=(latest.academicYear-plan.startYear)*2+(latest.id.endsWith(':spring')?2:1);
  need(ids.has(latest.id),'TIMETABLE','Past/current semester timetable is missing during vacation');
- if(plan.tables.length!==count){const next=nextPosition(position,plan.startYear,planMode(plan)),meta=yearData(Number(next.date.slice(0,4)));need(plan.tables.length===count+1&&next.slotId==='early'&&[meta.winterCamp,meta.summerCamp].includes(next.date)&&teachingTerm(next.date)?.id===plan.tables.at(-1).semesterId,'TIMETABLE','A future semester can be prepared only at its next camp boundary');}
+ if(plan.tables.length!==count){const next=nextPosition(position,plan.startYear,planMode(plan),plan.calendarVersion),meta=yearData(Number(next.date.slice(0,4)));need(plan.tables.length===count+1&&isCampOpeningPosition(plan,next)&&teachingTerm(next.date)?.id===plan.tables.at(-1).semesterId,'TIMETABLE','A future semester can be prepared only at its next camp boundary');}
  return plan;
 }
-export function planPosition(plan,cursor=plan.cursor){return isFormal(plan)?positionAt(cursor,plan.startYear,planMode(plan)):plan.positions[cursor];}
-export function formalSlot(world){const plan=world.extensions['teacher-hell/world'].plan,grade=gradeAt(world.position.date,plan.startYear),day=calendarDay(world.position.date,grade),table=plan.tables.find(t=>t.semesterId===day.courseSemesterId);return {day,slot:slotOccupancy(world.position.date,grade,world.position.slotId,table??null)};}
+export function planPosition(plan,cursor=plan.cursor){return isFormal(plan)?positionAt(cursor,plan.startYear,planMode(plan),plan.calendarVersion):plan.positions[cursor];}
+export function formalSlot(world){const plan=world.extensions['teacher-hell/world'].plan,grade=gradeAt(world.position.date,plan.startYear),day=runtimeCalendarDay(world),table=plan.tables.find(t=>t.semesterId===day.courseSemesterId);return {day,slot:runtimeSlot(world,world.position.date,world.position.slotId,slotOccupancy(world.position.date,grade,world.position.slotId,table??null,plan.calendarVersion))};}
 export function createCalendarBaseline(foundation,{startYear,subject,classes,homeClassId,seed,career=null}){
  const f=structuredClone(foundation),existing=f.extensions['teacher-hell/world'];
  need(!f.events.length&&!f.numeric.receipts.length&&f.numeric.evolution.clock.lastNaturalDate===null&&(!existing||existing.version===1&&existing.revision===0&&!existing.history.length&&!existing.commits.length),'MIGRATION','Only an untouched initial baseline can adopt a formal calendar; existing unverified history remains unverified');
@@ -45,13 +49,13 @@ export function createCalendarBaseline(foundation,{startYear,subject,classes,hom
  delete f.extensions['teacher-hell/world'];const range=careerRange(startYear,mode),p=positionFor(range.start,'early',startYear,mode),rng=createRandom(seed);
  const generated=generateTimetable({subject,semesterId:`${startYear}:autumn`,academicYear:startYear,classes,homeClassId,random:rng.snapshot()});
  f.position=p;Object.assign(f.numeric.evolution.clock,{date:p.date,lastNaturalDate:null,schoolYearId:p.schoolYearId,openingId:p.openingId});f.random.schedule=generated.random;
- const plan={id:`calendar:${CALENDAR_VERSION}:${startYear}`,...identity,calendarVersion:CALENDAR_VERSION,startYear,subject,tables:[generated.table],vacation:null,cursor:cursorFor(p.date,p.slotId,startYear)};
+ const plan={id:`calendar:${CALENDAR_VERSION}:${startYear}`,...identity,calendarVersion:mode===THREE_YEAR?SENIOR_CALENDAR_VERSION:CALENDAR_VERSION,startYear,subject,tables:[generated.table],vacation:null,cursor:cursorFor(p.date,p.slotId,startYear)};
  plan.id=calendarPlanId(plan);validateFormalPlan(plan);return {foundation:f,plan};
 }
 export function prepareSemester(world,op){
  assertShape(op,['type','semesterId','classes','homeClassId']);const plan=world.extensions['teacher-hell/world'].plan;need(isFormal(plan),'CALENDAR','Formal calendar required');
- const next=nextPosition(world.position,plan.startYear,planMode(plan)),target=teachingTerm(next.date),y=yearData(Number(next.date.slice(0,4)));
- need(next.slotId==='early'&&(next.date===y.summerCamp||next.date===y.winterCamp)&&target?.id===op.semesterId,'TIMETABLE','Prepare semester only at the next camp opening boundary');
+ const next=nextPosition(world.position,plan.startYear,planMode(plan),plan.calendarVersion),target=teachingTerm(next.date),y=yearData(Number(next.date.slice(0,4)));
+ need(isCampOpeningPosition(plan,next)&&target?.id===op.semesterId,'TIMETABLE','Prepare semester only at the next camp opening boundary');
  need(!plan.tables.some(t=>t.semesterId===op.semesterId),'DUPLICATE','Semester timetable already fixed');
  const registry=world.numeric.evolution.world.registry;
  if(registry){need(op.homeClassId===registry.homeClassId&&op.classes.every(c=>registry.classes[c.id]?.cohortStart===c.cohortStart&&[0,1,2].includes(registry.academicYear-c.cohortStart)),'TIMETABLE','Timetable catalogue must match authoritative school affiliations');}
@@ -61,9 +65,11 @@ export function prepareSemester(world,op){
 export function guardCalendarOperation(world,command,op){
  const plan=world.extensions['teacher-hell/world'].plan;if(!isFormal(plan))return;
  const {slot}=formalSlot(world),context=command.calendarContext??{kind:'formal-event'};
+ if(aftercareActive(world)&&['school-action','campus','finish-slot','advance-time'].includes(op.type))need(command.operations.some(o=>o.type==='aftercare-week')||op.type==='finish-slot'&&command.operations.length===1&&command.operations[0].type==='story'&&command.operations[0].action==='finish','AFTERCARE','Use the weekly aftercare operation; original slots are internal coverage only');
  assertShape(context,context.kind==='activity'?['kind','activityId']:['kind']);
  need(['formal-event','activity','procedure','routine'].includes(context.kind),'CALENDAR_CONTEXT','Unknown calendar result channel');
- need(op.type==='transition-school-year'||op.type==='settle-school-year'||op.type==='read-semester-review'||op.type==='advance-time'||op.type==='prepare-semester'||!world.extensions['teacher-hell/world'].history.some(h=>h.type==='slot-complete'&&h.cursor===plan.cursor),'TIME_BARRIER','Completed slot is closed to further work; advance before starting another action');
+ if(aftercareActive(world)&&op.type==='open-event'&&context.kind==='formal-event')need(world.extensions['teacher-hell/world'].history.some(h=>h.type==='event-selection'&&h.data.selected.some(s=>s.eventId===op.event.id))&&!retiredAftercareReservation(world,op.event.id),'AFTERCARE','Aftercare formal events require a qualified registered reservation');
+ need(op.type==='transition-school-year'||op.type==='settle-school-year'||op.type==='read-semester-review'||op.type==='advance-time'||op.type==='prepare-semester'||op.type==='aftercare-week'||!world.extensions['teacher-hell/world'].history.some(h=>h.type==='slot-complete'&&h.cursor===plan.cursor),'TIME_BARRIER','Completed slot is closed to further work; advance before starting another action');
  if(['academic','campus','school-action','institution'].includes(op.type))need(context.kind==='routine'||context.kind==='procedure','CALENDAR_CONTEXT','School operations require routine/procedure context');
  if(['advance-time','finish-slot','prepare-semester','plan-vacation'].includes(op.type))return;
  const domain=['story','draw-events','admit-event','event-lifecycle','event-exposure','school','open-event','fact','link-fact','claim','learn','belief','reveal','result','confirm-choice','stage','enrollment-reference','role'].includes(op.type);
@@ -85,7 +91,7 @@ export function guardCalendarOperation(world,command,op){
 export function finishCalendarSlot(world,op){
  assertShape(op,['type','completedActivityIds']);const r=world.extensions['teacher-hell/world'];need(isFormal(r.plan),'CALENDAR','Formal slot completion requires calendar');
  const {slot}=formalSlot(world);need(Array.isArray(op.completedActivityIds)&&new Set(op.completedActivityIds).size===op.completedActivityIds.length&&JSON.stringify([...op.completedActivityIds].sort())===JSON.stringify([...slot.activityIds].sort()),'TIME_BARRIER','Must acknowledge exactly the occupied activities');
- need(!r.history.some(h=>h.type==='event-selection'&&h.data.selected.some(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!world.events.some(e=>e.id===s.eventId))),'TIME_BARRIER','Admit the locked event before leaving its slot');
+ need(!r.history.some(h=>h.type==='event-selection'&&h.data.selected.some(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!retiredAftercareReservation(world,s.eventId)&&!world.events.some(e=>e.id===s.eventId))),'TIME_BARRIER','Admit the locked event before leaving its slot');
  need(!world.events.some(e=>e.choice&&e.choice.confirmedOptionId===null),'TIME_BARRIER','Unresolved player decision blocks time');
  need(!r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor),'DUPLICATE','Slot already completed');
 }
@@ -93,8 +99,8 @@ export function advanceFormalSlot(world,op){
  const r=world.extensions['teacher-hell/world'];need(op.steps===1,'TIME_BARRIER','Formal time advances exactly one legal slot; vacation drivers must stop at each required operation');
  need(r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor),'TIME_BARRIER','Complete current slot before advancing');
  need(!world.events.some(e=>e.choice&&e.choice.confirmedOptionId===null),'TIME_BARRIER','Unresolved player decision blocks time');
- const next=nextPosition(world.position,r.plan.startYear,planMode(r.plan)),term=teachingTerm(next.date);need(!term||r.plan.tables.some(t=>t.semesterId===term.id),'TIMETABLE','Prepare the new semester before crossing camp opening');
- world.position=next;r.plan.cursor=cursorFor(next.date,next.slotId,r.plan.startYear);
+ const next=nextPosition(world.position,r.plan.startYear,planMode(r.plan),r.plan.calendarVersion),term=teachingTerm(next.date);need(!term||r.plan.tables.some(t=>t.semesterId===term.id),'TIMETABLE','Prepare the new semester before crossing camp opening');
+ world.position=next;r.plan.cursor=cursorFor(next.date,next.slotId,r.plan.startYear,r.plan.calendarVersion);
 }
 export function validateOpeningSnapshot(world){
  const plan=world.extensions['teacher-hell/world'].plan;if(!isFormal(plan))return;
@@ -135,7 +141,7 @@ export function nextVacationOperation(world){
  const plan=world.extensions['teacher-hell/world'].plan,task=plan.vacation;if(!isFormal(plan)||!task)return {status:'idle'};
  const state=world.extensions['teacher-hell/world'];
  if(state.history.some(h=>h.type==='academic')){
-  const reserved=state.history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!world.events.some(e=>e.id===s.eventId));
+  const reserved=state.history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!retiredAftercareReservation(world,s.eventId)&&!world.events.some(e=>e.id===s.eventId));
   if(reserved)return {status:'admission-required',eventId:reserved.eventId};
   if(!state.history.some(h=>h.type==='event-selection'&&h.at.date===world.position.date))return {status:'event-draw-required',catalogueId:state.history.findLast(h=>h.type==='event-catalogue')?.data.catalogueId??null,direction:task.direction,endDate:task.endDate};
  }

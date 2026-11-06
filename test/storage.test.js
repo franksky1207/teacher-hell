@@ -145,8 +145,8 @@ test('storage T1: all three slots retain mode, difficulty, locked year and tenur
   const stale=await createStoredSession(db,slot);await session.execute(sample(w,'three-year-'+difficulty));
   await assert.rejects(stale.execute(sample(w,'stale-three-year-'+difficulty)),{code:'STALE'});
   const saved=session.snapshot(),backup=await session.export();assert.equal(restoreSave(backup).world.position.serviceYear,1);
-  // A future real-world date selects a different new opening; it cannot change this save's 2062 start.
-  assert.equal(runtimeOf(restoreSave(backup).world).plan.startYear,2062);
+  // Even a future creation date starts in 2026; later real-world dates cannot change the locked save.
+  assert.equal(runtimeOf(restoreSave(backup).world).plan.startYear,2026);
   for(const instant of ['2062-12-31T15:59:59Z','2062-12-31T16:00:00Z','2063-07-01T00:00:00Z']){
    t.mock.method(Date,'now',()=>Date.parse(instant));assert.deepEqual(restoreSave(backup),saved.payload);t.mock.restoreAll();
   }
@@ -230,4 +230,16 @@ test('T5: formal openings use academic v2 and slot deletion and replacement stay
  await sessions[1].import(await sessions[0].export(),{expectedToken:null});
  assert.deepEqual((await db.read(2)).payload,original[0].payload);
  assert.deepEqual(await db.read(1),original[0]);assert.deepEqual(await db.read(3),original[2]);
+});
+
+test('H5 storage: fresh workers fence the displayed token even at the same revision, preserving exact retry',async()=>{
+ const db=memory(),a=await createStoredSession(db,1),w=runtimeScenario();await a.initialize(w);const shown=a.snapshot(),q=sample(w,'worker-token');
+ await a.import(shown.payload,{expectedToken:shown.token,confirmed:true});
+ const fresh=await createStoredSession(db,1),changed=fresh.snapshot();assert.notDeepEqual(changed.token,shown.token);assert.deepEqual(changed.payload,shown.payload);
+ await assert.rejects(fresh.execute(q,{expectedToken:shown.token}),{code:'STALE'});assert.deepEqual(await db.read(1),changed);
+ await fresh.execute(q,{expectedToken:changed.token});const written=fresh.snapshot(),again=await createStoredSession(db,1);
+ assert.equal((await again.execute(q,{expectedToken:changed.token})).duplicate,true);assert.deepEqual(again.snapshot(),written);
+ await assert.rejects(again.execute({...q,operations:[{type:'bad'}]},{expectedToken:changed.token}),{code:'CONFLICT'});
+ await assert.rejects(again.execute(sample(w,'new-stale-click'),{expectedToken:shown.token}),{code:'STALE'});
+ assert.deepEqual(await db.read(1),written);
 });

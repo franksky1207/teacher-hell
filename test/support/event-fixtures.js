@@ -6,9 +6,9 @@ import { generateTimetable } from '../../src/calendar/timetable.js';
 import { positionFor,cursorFor,latestPreparedSemester } from '../../src/calendar/calendar.js';
 import { startEvolution } from '../../src/evolution/time.js';
 import { startSettlement } from '../../src/changes/settlement.js';
-export function eventWorld(seed=74,date=null,slot=null){
+export function eventWorld(seed=74,date=null,slot=null,career=null){
  const f=foundationScenario(seed);f.events=[];f.enrollments=[];
- const w=startSchoolCareer(f,{startYear:2026,subject:'國文',seed:75});
+ const w=startSchoolCareer(f,{startYear:2026,subject:'國文',seed:75,career});
  if(date){
  const plan=runtimeOf(w).plan,latest=latestPreparedSemester(date),last=(latest.academicYear-2026)*2+(latest.id.endsWith(':spring')?1:0);
  for(let i=1;i<=last;i++){
@@ -17,7 +17,7 @@ export function eventWorld(seed=74,date=null,slot=null){
   const generated=generateTimetable({subject:'國文',academicYear,semesterId,classes,homeClassId:w.numeric.evolution.world.registry.homeClassId,previous:plan.tables.at(-1),random:w.random.schedule});
   plan.tables.push(generated.table);w.random.schedule=generated.random;
  }
- const p=positionFor(date,slot??'early',2026);w.position=p;runtimeOf(w).plan.cursor=cursorFor(date,p.slotId,2026);
+ const p=positionFor(date,slot??'early',2026,undefined,plan.calendarVersion);w.position=p;runtimeOf(w).plan.cursor=cursorFor(date,p.slotId,2026,plan.calendarVersion);
  const n=w.numeric.evolution.world;n.player.year=p.serviceYear;w.numeric=startSettlement(startEvolution(n,{seed:44,date,schoolYearId:p.schoolYearId,openingId:p.openingId}),{seed:45,attemptId:w.identity.attemptId});}
  return restoreWorldState(w);
 }

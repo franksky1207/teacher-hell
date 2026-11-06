@@ -1,3 +1,5 @@
+import { runtimeCalendarDay,aftercareDefinition,retiredAftercareReservation } from './aftercare-calendar.js';
+import { entranceCondition,entranceAbsent } from './entrance.js';
 import { HOMEROOM_KEY,crisisContext } from './homeroom.js';
 import { crisisCandidateParameters } from '../assessment/crisis.js';
 import { institutionState,procedureEligible } from './procedures.js';
@@ -35,11 +37,12 @@ export function validateEventDefinitions(definitions){
   const core=tuple(d.coreCodes);need(!coreByTopic.has(d.topicId)||coreByTopic.get(d.topicId)===core,'Topic core must be shared');coreByTopic.set(d.topicId,core);
   need(d.weights.length===6&&d.weights.every(x=>Number.isFinite(x)&&x>=0)&&Math.abs(d.weights.reduce((a,b)=>a+b,0)-1)<1e-12,'Six weights must sum to one');
   need(d.directions.length===6&&d.directions.every(x=>[1,-1].includes(x)),'Explicit six directions');
-  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['companions','roleIds','affiliation','knowledge','groups','academic','procedure','homeroom'].filter(k=>Object.hasOwn(e,k))]);
+  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['companions','roleIds','affiliation','knowledge','groups','academic','entrance','procedure','homeroom'].filter(k=>Object.hasOwn(e,k))]);
   need(e.people.length>0&&e.people.every(x=>['player','student','caregiver','staff','reunion','contact'].includes(x)),'Participant scopes');
   for(const k of ['dayKinds','slotIds','facts','history','numeric'])need(Array.isArray(e[k]),`Eligibility ${k} array`);
   if(e.homeroom)need(['ordinary','social','crisis','support','placement'].includes(e.homeroom),'Homeroom qualification');
   if(e.procedure){need(Array.isArray(e.procedure),'Procedure qualifications');for(const p of e.procedure){assertShape(p,['kind','status']);identifier(p.kind);identifier(p.status);}}
+  if(e.entrance){need(Array.isArray(e.entrance),'entrance predicates');for(const c of e.entrance){assertShape(c,['kind',...(Object.hasOwn(c,'value')?['value']:[])]);need(['active','route','gsat-published','confirmed','subject-preparing'].includes(c.kind),'entrance predicate');if(c.kind==='route')need(typeof c.value==='string','entrance route');}}
   if(e.academic){need(Array.isArray(e.academic),'Academic qualifications');for(const a of e.academic){need(['makeup','credit-deficit','change','admission'].includes(a.kind)&&typeof a.termId==='string','academic condition');}}
   if(e.roleIds)need(Array.isArray(e.roleIds)&&e.roleIds.every(id=>Number.isInteger(id)&&id>=1&&id<=35),'Role eligibility IDs');
   if(e.affiliation){assertShape(e.affiliation,['classId','status']);identifier(e.affiliation.classId);need(['active','former'].includes(e.affiliation.status),'Affiliation status');}
@@ -62,7 +65,7 @@ export function validateEventDefinitions(definitions){
 export function eventIndex(world){
  const r=runtime(world),selections=r.history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected),states=new Map();
  for(const h of r.history)if(h.type==='event-lifecycle')states.set(h.eventId,h.data.status);
- const records=selections.map(s=>({...s,status:states.get(s.eventId)??'reserved'}));
+ const records=selections.map(s=>({...s,status:retiredAftercareReservation(world,s.eventId)?'ended':states.get(s.eventId)??'reserved'}));
  const exposures=new Map(),seenExposure=new Set();for(const h of r.history)if(h.type==='event-exposure')for(const id of h.data.participantIds){const k=tuple(h.eventId,id);if(!seenExposure.has(k)){seenExposure.add(k);exposures.set(id,(exposures.get(id)??0)+1);}}
  const history=new Map();for(const f of r.facts)for(const code of f.categoryCodes)for(const person of f.subjectIds){const k=tuple(person,code),list=history.get(k)??[];if(!list.some(x=>x.eventId===f.eventId))list.push({eventId:f.eventId,status:states.get(f.eventId)??'active'});history.set(k,list);}
  const byTopicPerson=new Map(),byDefinition=new Map(),byExclusion=new Map();
@@ -116,7 +119,7 @@ export function candidateConflict(c,prior,date){
 /** Pure eligibility; neither numeric accumulation nor RNG is changed. */
 export function buildEventCandidates(world,definitions,{engineering=false}={}){
  validateEventDefinitions(definitions);const r=runtime(world);need(isFormal(r.plan),'Formal calendar required');
- const day=calendarDay(world.position.date,gradeAt(world.position.date,r.plan.startYear)),index=eventIndex(world),candidates=[],rejected=[];
+ const day=runtimeCalendarDay(world),index=eventIndex(world),candidates=[],rejected=[];
  for(const d of definitions){
   need(!(index.byDefinition.get(d.id)??[]).some(s=>s.topicId!==d.topicId||s.type!==d.type),'Stable subtopic identity cannot change topic or type');
   if(d.content.status==='ready'||d.content.resourceId.startsWith('engineering:'))validateStoryReference(d);
@@ -134,11 +137,14 @@ export function buildEventCandidates(world,definitions,{engineering=false}={}){
    if(e.affiliation&&!world.numeric.evolution.world.registry.enrollments.some(a=>a.personId===person&&a.classId===e.affiliation.classId&&(e.affiliation.status==='active'?a.until===null:a.until!==null)))reason='affiliation-condition';
    if(e.knowledge&&!e.knowledge.every(k=>r.knowledge.some(x=>x.actorId===(k.actorId==='participant'?person:k.actorId)&&x.claimId===k.claimId&&x.versionId===k.versionId&&(k.belief==='any'||x.belief===k.belief))))reason='knowledge-condition';
    if(e.groups&&!e.groups.every(g=>npcGroups(world).some(x=>x.id===g.groupId&&!x.ended&&x.memberIds.includes(person))))reason='group-condition';
+   if(entranceAbsent(world,index.academics,person))reason='personal-admissions-activity';
+   if(e.entrance&&!e.entrance.every(c=>entranceCondition(index.academics,person,c)))reason='entrance-condition';
    if(e.academic&&!e.academic.every(a=>academicEligible(world,person,a,index.academics)))reason='academic-condition';
    if(e.procedure&&!e.procedure.every(p=>procedureEligible(world,person,p,index.institution)))reason='procedure-condition';
    if(e.enrollment&&!enrollmentEligibility(world.numeric.evolution.world,{personId:person,...e.enrollment}).eligible)reason='enrollment';
    if(e.history.some(h=>(index.history.get(tuple(person,h.code))??[]).filter(x=>h.status==='any'||x.status===h.status).length<h.minimum))reason='history-threshold';
    try{if(e.numeric.some(n=>{const [v]=numericSources(world,person,[n.source],[n.code]);return v<n.min||v>n.max;}))reason='numeric-condition';}catch{reason='numeric-source-missing';}
+   if(day.kind==='aftercare'&&!aftercareDefinition(d))reason='students-left-school';
    if(!slots.length||day.quota?.kind==='protected-day')reason='no-legal-time';
    const participantIds=[person,...new Set((e.companions??[]).map(c=>c.personId).filter(id=>id!==person))],factIds=[...new Set([...e.facts.map(f=>f.id),...(e.companions??[]).map(c=>c.contactFactId)])].sort();
    const c={key:tuple(d.id,participantIds,factIds),definitionId:d.id,topicId:d.topicId,type:d.type,participantIds,factIds,date:day.date,slotIds:slots,content,cooldownDays:p.cooldownDays,exclusionGroups:groups,sameFact:p.sameFact,reason:p.reason};

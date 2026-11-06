@@ -12,7 +12,7 @@ export const DUTY_RESPONSIBILITIES=Object.freeze({
 });
 for(const list of Object.values(DUTY_RESPONSIBILITIES))Object.freeze(list);
 export function backgroundStaff(world,seed){
- const rng=createRandom(seed^0x54425032),r=world.registry;
+ const rng=createRandom((seed^0x54425032)>>>0),r=world.registry;
  need(r,'Background requires the current school registry');
  const teachers=r.assignments.filter(a=>a.personId!==world.player.current.playerId&&a.roleId===8&&a.id.startsWith('appointment:')&&a.from===r.assignments[0].from).map(a=>a.personId).sort();
  const offices=r.assignments.filter(a=>[2,3,4].includes(a.roleId)&&a.id.startsWith('appointment:')&&a.from===r.assignments[0].from).map(a=>a.personId).sort();

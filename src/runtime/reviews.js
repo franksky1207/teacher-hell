@@ -1,3 +1,4 @@
+import { aftercareOwnsSlot } from './aftercare-calendar.js';
 /** Saved semester reports. History is the authority; viewing never samples or settles. */
 import { ABILITY_NAMES, assertShape } from '../player/panel.js';
 import { deriveWorldPanel } from '../social/reputation.js';
@@ -40,11 +41,17 @@ export function representativeEvents(world,fromOrder,untilOrder){
   if(!['choice','result','fact','effect','stage'].includes(h.type))continue;
   const group=groups.get(h.eventId)??[];group.push(h);groups.set(h.eventId,group);
  }
+ // Ephemeral indexes preserve first-event and original fact order. They do not
+ // change the reporting window, visibility, importance rubric or tie handling.
+ const events=new Map(),factsByEvent=new Map(),disclosed=new Set();
+ for(const e of world.events)if(!events.has(e.id))events.set(e.id,e);
+ for(const f of r.facts){if(!factsByEvent.has(f.eventId))factsByEvent.set(f.eventId,[]);factsByEvent.get(f.eventId).push(f);}
+ for(const d of r.disclosures)if(d.actorId===world.identity.playerId&&d.order<=untilOrder)disclosed.add(d.factId);
  const candidates=[];
  for(const [eventId,entries] of groups){
-  const event=world.events.find(e=>e.id===eventId);
-  const facts=r.facts.filter(f=>f.eventId===eventId&&entries.some(h=>h.factIds.includes(f.id)));
-  const known=facts.filter(f=>f.witnessIds.includes(world.identity.playerId)||r.disclosures.some(d=>d.factId===f.id&&d.actorId===world.identity.playerId&&d.order<=untilOrder));
+  const event=events.get(eventId),referenced=new Set(entries.flatMap(h=>h.factIds));
+  const facts=(factsByEvent.get(eventId)??[]).filter(f=>referenced.has(f.id));
+  const known=facts.filter(f=>f.witnessIds.includes(world.identity.playerId)||disclosed.has(f.id));
   if(!known.length)continue;
   const choice=entries.some(h=>h.type==='choice'),result=entries.some(h=>h.type==='result');
   const affected=new Set(known.flatMap(f=>f.subjectIds));
@@ -61,7 +68,7 @@ export function representativeEvents(world,fromOrder,untilOrder){
 /** Called after finish-slot and all legal consequences, before publication. */
 export function semesterReviewData(world){
  const baseline=world.extensions[REVIEW_KEY];if(!baseline)return null;
- const r=runtime(world),day=calendarDay(world.position.date,gradeAt(world.position.date,r.plan.startYear));
+ const r=runtime(world),day=calendarDay(world.position.date,gradeAt(world.position.date,r.plan.startYear),r.plan.calendarVersion);
  if(!day.finalReview||day.slots.at(-1).id!==world.position.slotId||!r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor))return null;
  const previous=reports(world).at(-1),periodId=world.position.statisticsPeriodId;
  if(reports(world).some(h=>h.data.periodId===periodId))return null;
@@ -83,7 +90,7 @@ export function acknowledgeSemesterReview(world,op){
 export function validateSemesterReviews(world){
  const initial=world.extensions[REVIEW_KEY],r=runtime(world);if(!initial){need(!r.history.some(h=>['semester-review','semester-review-read'].includes(h.type)),'Report baseline missing');return;}
  assertShape(initial,['version','at','cursor','abilities']);assertShape(initial.abilities,ABILITY_NAMES);
- need(initial.version===1&&['fixed-calendar-v1','fixed-calendar-v2'].includes(r.plan.validation)&&initial.at.date===careerRange(r.plan.startYear,planMode(r.plan)).start&&initial.at.slotId==='early'&&initial.cursor===cursorFor(initial.at.date,initial.at.slotId,r.plan.startYear),'Invalid semester baseline');
+ need(initial.version===1&&['fixed-calendar-v1','fixed-calendar-v2'].includes(r.plan.validation)&&initial.at.date===careerRange(r.plan.startYear,planMode(r.plan)).start&&initial.at.slotId==='early'&&initial.cursor===cursorFor(initial.at.date,initial.at.slotId,r.plan.startYear,r.plan.calendarVersion),'Invalid semester baseline');
  need(Object.values(initial.abilities).every(n=>Number.isFinite(n)&&n>=0&&n<=100),'Invalid initial abilities');
  // Observed effects must refer to the same N6 fields and reproduce actual clamps.
  for(const h of r.history.filter(h=>h.type==='effect')){
@@ -96,11 +103,11 @@ export function validateSemesterReviews(world){
  const seen=new Set();let previous=null;
  for(const h of reports(world)){
   const owner=r.commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId);
-  need(JSON.parse(owner.request).operations.some(op=>['finish-slot','school-action'].includes(op.type)),'Report lacks a slot-completion command');
+  need(aftercareOwnsSlot(world,h)||JSON.parse(owner.request).operations.some(op=>['finish-slot','school-action'].includes(op.type)),'Report lacks a slot-completion command');
   const d=h.data;assertShape(d,['version','periodId','from','fromOrder','untilOrder','start','end','delta','events','summary']);
   for(const field of ['start','end','delta'])assertShape(d[field],ABILITY_NAMES);
-  const day=calendarDay(h.at.date,gradeAt(h.at.date,r.plan.startYear));
-  need(d.periodId===positionFor(h.at.date,h.at.slotId,r.plan.startYear,planMode(r.plan)).statisticsPeriodId,'Report statistics period differs from calendar');
+  const day=calendarDay(h.at.date,gradeAt(h.at.date,r.plan.startYear),r.plan.calendarVersion);
+  need(d.periodId===positionFor(h.at.date,h.at.slotId,r.plan.startYear,planMode(r.plan),r.plan.calendarVersion).statisticsPeriodId,'Report statistics period differs from calendar');
   need(d.version===1&&!seen.has(d.periodId)&&day.finalReview&&h.at.slotId===day.slots.at(-1).id,'Repeated or misplaced semester report');seen.add(d.periodId);
   need(r.history[h.order-2]?.type==='slot-complete'&&r.history[h.order-2].cursor===h.cursor&&d.untilOrder===h.order-1,'Report must immediately follow slot completion');
   need(d.fromOrder===(previous?.order??1)&&equal(d.from,previous?.at??initial.at)&&equal(d.start,previous?.data.end??initial.abilities),'Broken semester comparison chain');

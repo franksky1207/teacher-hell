@@ -103,28 +103,19 @@ test('calendar: confirmed holiday exceptions keep parents on Saturday and June f
  for(const year of [2050,2061]){assert.equal(yearData(year).springFinal,`${year}-06-24`);const lunar=ASTRONOMY.find(a=>a.year===year),eve=addDays(lunar.dragon,-1),grade=gradeAt(eve,2035),slots=calendarDay(eve,grade).slots,p=positionFor(eve,slots.at(-1).id,2035),next=nextPosition(p,2035);assert.equal(next.date,lunar.dragon);assert.equal(calendarDay(next.date,gradeAt(next.date,2035)).kind,'holiday');}
 });
 
-test('calendar T1: June settlement inclusive selects the previous summer; next Taiwan civil day switches',async()=>{
+test('calendar T1: new three-year careers start in 2026 independently of creation date',async()=>{
  const {newThreeYearStart,THREE_YEAR}=await import('../src/calendar/calendar.js');
- for(const y of [2027,2028,2040,2062]){
-  const final=yearData(y).springFinal;
-  for(const date of [addDays(final,-1),final])assert.equal(newThreeYearStart(date).startYear,y-1);
-  const range=newThreeYearStart(addDays(final,1));assert.equal(range.startYear,y);assert.equal(range.start,yearData(y).summerCamp);assert.equal(range.end,yearData(y+3).springFinal);
+ for(const date of ['2026-01-01','2026-11-05','2027-06-30','2028-11-01','2065-12-31','2066-01-01']){
+  const range=newThreeYearStart(date);assert.equal(range.startYear,2026);assert.equal(range.start,yearData(2026).summerCamp);assert.equal(range.end,yearData(2029).springFinal);
  }
- for(const date of ['2026-11-05','2026-12-31','2027-01-01','2027-03-01'])assert.equal(newThreeYearStart(date).startYear,2026);
- assert.equal(newThreeYearStart(addDays(yearData(2026).springFinal,1)).startYear,2026);
- assert.equal(newThreeYearStart(yearData(2063).springFinal).startYear,2062);
- for(const date of ['2026-01-01',yearData(2026).springFinal,addDays(yearData(2063).springFinal,1),'2066-01-01','2027-02-29','2027-06-30T00:00:00+08:00'])assert.throws(()=>newThreeYearStart(date));
+ for(const date of ['2027-02-29','2027-06-30T00:00:00+08:00'])assert.throws(()=>newThreeYearStart(date));
  assert.equal(careerRange(2062,THREE_YEAR).end,yearData(2065).springFinal);
  assert.throws(()=>careerRange(2063,THREE_YEAR));assert.throws(()=>careerRange(2036));assert.equal(careerRange(2035).end,yearData(2065).springFinal);
- // Formal selection switches before summer camp; the retained core still selects latest begun camp.
- const between=addDays(yearData(2027).springFinal,1);assert.equal(newCareerStart(between).startYear,2026);assert.equal(newThreeYearStart(between).startYear,2027);
+ assert.equal(newCareerStart(yearData(2027).summerCamp).startYear,2027);
 });
 
-test('calendar T1: explicit Taiwan dates ignore host timezone and midnight is the caller boundary',async()=>{
+test('calendar T1: fixed start does not depend on host timezone',async()=>{
  const {execFileSync}=await import('node:child_process');
- const script=`import {newThreeYearStart,yearData} from './src/calendar/calendar.js';
- const boundary=Date.parse(yearData(2027).springFinal+'T16:00:00Z');
- const local=ms=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(ms));
- console.log(JSON.stringify([boundary-1,boundary].map(ms=>newThreeYearStart(local(ms)).startYear)));`;
- for(const TZ of ['UTC','Asia/Taipei','America/Los_Angeles'])assert.equal(execFileSync(process.execPath,['--input-type=module','-e',script],{encoding:'utf8',env:{...process.env,TZ}}).trim(),'[2026,2027]');
+ const script=`import {newThreeYearStart} from './src/calendar/calendar.js'; console.log(newThreeYearStart('2028-12-01').startYear);`;
+ for(const TZ of ['UTC','Asia/Taipei','America/Los_Angeles'])assert.equal(execFileSync(process.execPath,['--input-type=module','-e',script],{encoding:'utf8',env:{...process.env,TZ}}).trim(),'2026');
 });

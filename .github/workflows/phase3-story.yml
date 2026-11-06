@@ -1,0 +1,32 @@
+name: Phase 3 story integration
+on:
+  push:
+    branches:
+      - integrate/phase3-web-20261105
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase3-story-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  story-acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Validate syntax and architecture
+        run: npm run check
+      - name: Run formal story and phase 13 UI regression
+        run: npm run test:module -- module=story,story-view,story-controller,story-shell,story-test-runner,notebook-view,notebook-people,notebook-events,notebook-events-view,notebook-academics,notebook-academics-view,notebook-reviews
+      - name: Build preview assets without publishing
+        run: npm run build
+      - name: Chromium game and mobile browser regression
+        env:
+          CHROMIUM_BIN: google-chrome
+        run: node scripts/game-browser.js

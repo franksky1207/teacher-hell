@@ -15,7 +15,7 @@ const allowed = {
   calendar: ['calendar','numeric'],
   runtime: ['assessment','academics','calendar','runtime','contracts','changes','evolution','social','world','player','numeric'],
   storage: ['storage','runtime','contracts','changes'],
-  web: ['web','contracts'],
+  web: ['web','contracts','runtime','storage','player','social','calendar'],
 };
 function layer(path) {
   const [root, area] = path.split('/');

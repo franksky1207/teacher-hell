@@ -12,6 +12,17 @@ export function projectNotebookTasks(world){
    items.push({id:c.id+':'+o.id,label:labels[o.id]??'案件待處理事項',due:o.due??null,overdue:!!o.overdueAt||!!o.due&&o.due<world.position.date,context:'校務程序',unit:o.unit});
   }
  }
+ // Continued narrative events are pending only after their story has begun.
+ // A due date describes the teacher's known follow-up, never the hidden outcome.
+ const storyIds=new Set(world.events.map(e=>e.id)),seen=new Set();
+ for(const h of [...world.extensions['teacher-hell/world'].history].reverse()){
+  if(h.type!=='story'||!storyIds.has(h.eventId)||seen.has(h.eventId))continue;
+  seen.add(h.eventId);
+  const status=h.data?.state;
+  if(!status||status.mode==='ended')continue;
+  items.push({id:'story:'+h.eventId,label:status.dueDate?'已發生事件的後續安排':'尚待完成的事件互動',due:status.dueDate??null,
+   overdue:!!status.dueDate&&status.dueDate<world.position.date,context:'事件後續'});
+ }
  for(const duty of state.duties){
   if(duty.endedAt||duty.holderId!==player||!duty.history.some(h=>known.has(h.basisFactId)))continue;
   if(duty.status==='offered'||duty.status==='pending-resolution')items.push({id:'duty:'+duty.id,label:'校務兼任或職責待確認',due:duty.until??null,overdue:false,context:'校務工作'});

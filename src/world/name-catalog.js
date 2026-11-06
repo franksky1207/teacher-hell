@@ -11,7 +11,7 @@ export const GIVEN_NAME_CATALOG=Object.freeze({
 export const NAME_CATALOG_COUNTS=Object.freeze({surnames:new Set(Object.values(SURNAME_GROUPS).flat()).size,male:GIVEN_NAME_CATALOG.male.length,female:GIVEN_NAME_CATALOG.female.length});
 export function chooseSurname(rng){
  const tier=rng.integer(0,999);
- const group=tier<560?SURNAME_GROUPS.common:tier<920?SURNAME_GROUPS.secondary:tier<990?SURNAME_GROUPS.uncommon:SURNAME_GROUPS.compound;
+ const group=tier<530?SURNAME_GROUPS.common.slice(0,10):tier<790?SURNAME_GROUPS.common:tier<935?SURNAME_GROUPS.secondary:tier<995?SURNAME_GROUPS.uncommon:SURNAME_GROUPS.compound;
  return group[rng.integer(0,group.length-1)];
 }
 export function chooseGivenName(rng,gender,used=new Set()){

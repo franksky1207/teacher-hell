@@ -1,0 +1,245 @@
+{
+  "status": "closed-with-validation-reservations",
+  "closedAt": "2026-11-06T22:06:32.204131+08:00",
+  "branch": "integrate/phase3-web-20261105",
+  "runtimeCommit": "d3359436050e4ce0c9ea90089a14c967b11b85fa",
+  "baseline": "bb1a598a6245c28336d10fdb51f470521f316504",
+  "integration": {
+    "status": "passed",
+    "method": "Formal opening and production transactions across six terms; genuine complete checkpoints resumed. No date/mark/ending injection.",
+    "sourceCommit": "fd3dd3d4e52b8b5374bcc6f846265a32722f76c3",
+    "driverSha256": "465d79a4aef11972c0d945adb89bb7fc5782360ea26f1d15b45fa6abae364df8",
+    "endingGrade": "B",
+    "endingScore": 77.19680861491567,
+    "completed": {
+      "jsonBytes": 258776144,
+      "gzipBytes": 11451445,
+      "sha256": "d485be96d7e4c6c072d6c772312ec7d2e36ad8bdd633489514aaf20c44aadb4d",
+      "encodeGzipWriteMs": 337573.08715399913
+    },
+    "oldBareT4Ms": 1497644.296073,
+    "stages": {
+      "2028-07-24": {
+        "date": "2028-07-24",
+        "revision": 7492
+      },
+      "2028-12-01": {
+        "date": "2028-12-01",
+        "revision": 9256
+      },
+      "2029-05-09": {
+        "date": "2029-05-09",
+        "revision": 11205
+      },
+      "2029-05-31": {
+        "date": "2029-05-31",
+        "revision": 11512
+      },
+      "2029-06-01": {
+        "date": "2029-06-01",
+        "revision": 11529
+      },
+      "2029-06-02": {
+        "date": "2029-06-02",
+        "revision": 11533
+      },
+      "2029-06-23": {
+        "date": "2029-06-23",
+        "revision": 11555
+      },
+      "awaiting-final-review": {
+        "date": "2029-06-29",
+        "revision": 11562
+      }
+    },
+    "weeklyOperations": [
+      {
+        "started": 5452776.872076,
+        "from": "2029-06-02",
+        "revision": 11535,
+        "to": "2029-06-02",
+        "ms": 8375.90489399992,
+        "interrupted": true
+      },
+      {
+        "started": 5463621.283624,
+        "from": "2029-06-02",
+        "revision": 11541,
+        "to": "2029-06-09",
+        "ms": 66460.5227020001,
+        "interrupted": false
+      },
+      {
+        "started": 5530081.862931,
+        "from": "2029-06-09",
+        "revision": 11542,
+        "to": "2029-06-09",
+        "ms": 2322.908037999645,
+        "interrupted": true
+      },
+      {
+        "started": 5537730.468584,
+        "from": "2029-06-09",
+        "revision": 11548,
+        "to": "2029-06-16",
+        "ms": 67865.19840800017,
+        "interrupted": false
+      },
+      {
+        "started": 5605595.725807,
+        "from": "2029-06-16",
+        "revision": 11549,
+        "to": "2029-06-16",
+        "ms": 2001.8396270005032,
+        "interrupted": true
+      },
+      {
+        "started": 5611697.665278,
+        "from": "2029-06-16",
+        "revision": 11555,
+        "to": "2029-06-23",
+        "ms": 77938.9233950004,
+        "interrupted": false
+      },
+      {
+        "started": 6165762.434696,
+        "from": "2029-06-23",
+        "revision": 11556,
+        "to": "2029-06-23",
+        "ms": 12851.727970000356,
+        "interrupted": true
+      },
+      {
+        "started": 6181725.910445,
+        "from": "2029-06-23",
+        "revision": 11562,
+        "to": "2029-06-29",
+        "ms": 98260.86626499984,
+        "interrupted": false
+      }
+    ]
+  },
+  "tests": {
+    "fullRegression": {
+      "tests": 552,
+      "pass": 552,
+      "fail": 0,
+      "skipped": 0
+    },
+    "seniorRegression": {
+      "tests": 66,
+      "pass": 66,
+      "fail": 0,
+      "skipped": 0
+    },
+    "controllerNotebook": {
+      "tests": 19,
+      "pass": 19,
+      "fail": 0,
+      "skipped": 0
+    },
+    "finalAftercare": {
+      "tests": 13,
+      "pass": 13,
+      "fail": 0,
+      "skipped": 0
+    },
+    "finalT4": {
+      "tests": 44,
+      "pass": 44,
+      "fail": 0,
+      "skipped": 0
+    },
+    "storageShell": {
+      "tests": 24,
+      "pass": 24,
+      "fail": 0,
+      "skipped": 0
+    }
+  },
+  "testCountPolicy": "Per-run overlapping counts, do not sum. Full 552 preceded final projection/query optimizations, covered by final targets.",
+  "browser": {
+    "fixtureChecks": 62,
+    "fixtureScenarios": 10,
+    "genericGame": "passed, including raw File/Blob export/import SHA, three slots, confirmations, notebook, timetable and responsive story UI",
+    "engine": "Chromium154.0.8037.57/CDP",
+    "viewports": [
+      "390x844",
+      "360x640",
+      "1280x800"
+    ],
+    "actualLargeUnreadSource": "not executed",
+    "actualLargeCompletedSource": "not executed",
+    "physicalPhoneSafari": false
+  },
+  "saveVerification": {
+    "status": "interrupted; not counted as passed",
+    "completedPhaseMs": {
+      "importRestore": 241172.765327,
+      "exportEncode": 187114.573779,
+      "roundtripRestore": 175129.053372,
+      "academicReplay": 7779.258093999932,
+      "admissionsReplay": 7408.199315999984
+    },
+    "completedChecks": "Completed-source roundtrip/hash, six terms, 27 admission nodes, May review, unique ending, archived notebook and four weeks reached before standalone weekly benchmark.",
+    "notCompleted": [
+      "standalone weekly benchmark",
+      "full-size latest T4/CAS/fault/publication recovery matrix"
+    ],
+    "CASAndFaultRegression": "Separate storage and H4 regressions passed."
+  },
+  "sources": {
+    "opening": {
+      "path": "simulation/sources/h5-opening.json.gz",
+      "gzipBytes": 183575,
+      "gzipSha256": "ac3b664a715a8936bd934b6946b00efafd7d4a4653ee2502be1ffa6f3121a146",
+      "jsonBytes": 738562,
+      "jsonSha256": "7a8c7ce215d24c85b850823f6bb0db878d17158db7113b6622604cbb4b652408"
+    },
+    "before-completion": {
+      "path": "simulation/sources/h5-before-completion.json.gz",
+      "gzipBytes": 11394352,
+      "gzipSha256": "6339b9d1b69309216227e1731a9ebf6a2a92fcd5d414e5910b210f2f8779059f",
+      "jsonBytes": 257028833,
+      "jsonSha256": "c0ec87b6554b42adc78c6f22d224201ab3aaaa827c16d78f8eaaab4748d90598"
+    },
+    "completed": {
+      "path": "simulation/sources/h5-completed.json.gz",
+      "gzipBytes": 11451445,
+      "gzipSha256": "194ac1a1ff7d54cdd82c2311b61cd9c101aa378cd799dfe839c62737d10a3086",
+      "jsonBytes": 258776144,
+      "jsonSha256": "d485be96d7e4c6c072d6c772312ec7d2e36ad8bdd633489514aaf20c44aadb4d"
+    }
+  },
+  "sourceArtifactCommit": "89cc8baa7c2d971e9c8d6f1b3b7dc2af1ae3e94b",
+  "immutableRemoteSourceHashesVerified": true,
+  "build": {
+    "status": "passed",
+    "syntaxFiles": 204,
+    "runtimeModules": 89,
+    "distFilesWithoutManifest": 95,
+    "calendar": "fixed and senior passed"
+  },
+  "environment": {
+    "node": "24.19.0",
+    "cpuQuota": 2,
+    "memoryLimitBytes": 8589934592
+  },
+  "reservations": [
+    "Latest T4 private projection passed44 regressions; its full-size exact-world stored replay was interrupted. Original full three-year terminal run passed.",
+    "Two additional genuine large-source browser scenarios not run; existing mobile viewport and generic browser tests passed.",
+    "Full-size fault matrix interrupted to stop further cost; no assertion deleted/relaxed and no interrupted run counted as passed.",
+    "Native large-source IndexedDB bytes, browser/phone peak memory and latest stored/UI T4 time not measured.",
+    "Natural30-year and physical iPhone/Safari not run. Regression compatibility passed.",
+    "Raw JSON/gzip sizes differ from memory. Cloud timing under CPU contention is not phone timing."
+  ],
+  "closure": "H5 development closed. Reservations are handed to later performance/platform acceptance and do not require reopening H5 or rerunning three years to continue development. Not phase3 release acceptance.",
+  "nextOrder": [
+    "Remaining14-F interface/failure/retry/relations/todos and large-save responsiveness",
+    "15 licensed artwork/music",
+    "16 performance, physical Safari/mobile and release acceptance"
+  ],
+  "mainMerged": false,
+  "pagesDeployed": false,
+  "nextPhaseStarted": false
+}

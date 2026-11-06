@@ -49,7 +49,7 @@ try {
   await call('Page.setInterceptFileChooserDialog',{enabled:true},sessionId);
   await call('Page.addScriptToEvaluateOnNewDocument',{source:`window.confirm = x => { (window.confirmPrompts ??= []).push(x); return window.confirmAnswers?.length ? window.confirmAnswers.shift() : true; }; window.alert = x => { window.lastAlert=x; }; const NativeDate=Date; window.Date=class extends NativeDate { constructor(...args){super(...(args.length?args:['2026-11-05T12:00:00Z']));} static now(){return NativeDate.parse('2026-11-05T12:00:00Z');} };`},sessionId);
   const wait=async selector=>{for(let i=0;i<400;i++){if(await evaluate(`!!document.querySelector(${JSON.stringify(selector)})`))return;await new Promise(r=>setTimeout(r,100));}throw Error('Missing '+selector+' '+await evaluate('document.body.innerText')+' ALERT '+await evaluate('window.lastAlert'));};
-  const click=async action=>{await wait(`[data-action="${action}"]`);await evaluate(`document.querySelector(${JSON.stringify(`[data-action="${action}"]`)}).click()`);};
+  const click=async action=>{await wait(`[data-action="${action}"]`);await evaluate(`document.querySelector(${JSON.stringify(`[data-action="${action}"]`)}).click()`);for(let i=0;i<1800;i++){if(!await evaluate(`!!document.querySelector('.operation-status')`))return;await new Promise(r=>setTimeout(r,100));}throw Error('Operation did not finish: '+action);};
   const includes=async text=>{if(!await evaluate(`document.body.innerText.includes(${JSON.stringify(text)})`))throw Error('Missing text '+text);};
   await call('Page.navigate',{url},sessionId);await wait('[data-action="slots"]');
   await click('slots');await wait('[data-action="new:1"]');
@@ -81,7 +81,7 @@ try {
   })`);
   if(rosterCheck.active!=='notebook-tab:people'||rosterCheck.count<38)
     throw Error('Notebook official class roster missing '+JSON.stringify(rosterCheck));
-  await evaluate("document.querySelector('.notebook-person').click()");
+  await evaluate("document.querySelector('.notebook-person').click()");await wait('.notebook-person--active');
   if(!await evaluate("!!document.querySelector('.notebook-person--active') && !!document.querySelector('.notebook-person-details h3')"))
     throw Error('Notebook selection did not render a person');
   await click('notebook-tab:events');

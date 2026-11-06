@@ -4,13 +4,17 @@ import {readFile} from 'node:fs/promises';
 const read=path=>readFile(new URL('../'+path,import.meta.url),'utf8');
 test('13-G: story main and header are valid HTML openings',async()=>{
  const src=await read('web/game.js');
- assert.ok(src.includes('<main class="game'+"\${"+'activeStory'));
+ assert.match(src,/<main class="game game--story" data-revision="\$\{w\.extensions\['teacher-hell\/world'\]\.revision\}">/);
  assert.ok(src.includes('<div class="top">'+"\${"+'w.position.date}'));
  assert.ok(!src.includes('<div class="top"'+"\${"+'w.position.date}'));
 });
 test('13-G: real transaction route and style entry are connected',async()=>{
- const [game,html]=await Promise.all([read('web/game.js'),read('web/index.html')]);
- assert.match(game,/await current\.execute\(request\)/);
+ const [game,html,worker]=await Promise.all([read('web/game.js'),read('web/index.html'),read('web/progress-worker.js')]);
+ assert.match(game,/await executeProgress\(request\)/);
+ assert.match(game,/worker\.postMessage\(data\)/);
+ assert.match(game,/new Worker\(new URL\('\.\/progress-worker\.js',import\.meta\.url\),\{type:'module'\}\)/);
+ assert.match(worker,/createStoredSession\(storage,data\.slot\)/);
+ assert.match(worker,/await session\.execute\(data\.request\)/);
  assert.match(game,/!document\.querySelector\('\.overlay'\)/);
  assert.match(html,/story-view\.css/);
 });

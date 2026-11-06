@@ -31,7 +31,7 @@ test('14-D: closed academic semester remains computed but release is deferred in
  assert.equal(data.transcript.assessments.length,4);
  assert.deepEqual(data.transcript.courses,[]);
  assert.equal(data.qualification,null);
- assert.match(renderNotebookAcademics(data),/隔天開放查閱/);
+ assert.match(renderNotebookAcademics(data),/尚未完成正式公布/);
 });
 test('14-D: invalid student or term rejected, no other class roster listed',()=>{
  const world=academicWorld(),roster=projectNotebookAcademics(world);
@@ -70,7 +70,7 @@ test('14-D: term close on final day keeps third exam, term mark and credits undi
  assert.ok(onFinal.transcript.assessments.find(a=>a.round===1)?.marks);
  assert.deepEqual(onFinal.transcript.courses,[]);
  assert.equal(onFinal.qualification,null);
- assert.match(renderNotebookAcademics(onFinal),/隔天開放查閱/);
+ assert.match(renderNotebookAcademics(onFinal),/尚未完成正式公布/);
  assert.equal(isSemesterResultPublished('2026:autumn','2027-01-22'),false);
  assert.equal(isSemesterResultPublished('2026:autumn','2027-01-23'),true);
 });

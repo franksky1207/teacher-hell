@@ -1,14 +1,15 @@
 /** Phase 14-B: official roster + teacher-disclosed knowledge only. No private NPC state. */
-import {readSchoolRoster,readPlayerView} from '../src/runtime/views.js';
+import {notebookRoster} from './notebook-roster.js';
+import {readPlayerView} from '../src/runtime/views.js';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const beliefs={believed:'目前相信',uncertain:'尚待確認',rejected:'目前不採信'};
 export function projectNotebookPeople(world){
- const roster=readSchoolRoster(world);
+ const roster=notebookRoster(world);
  const known=readPlayerView(world);
  if(!roster)return {className:'導師班',people:[],facts:[],claims:[]};
  const map=new Map();
  for(const student of roster.students){
-  map.set(student.id,{id:student.id,name:student.name,kind:'student',relation:'導師班學生'});
+  map.set(student.id,{id:student.id,name:student.name,kind:'student',relation:roster.archived?'原導師班學生（依封存紀錄查閱）':'導師班學生'});
   for(const carer of student.caregivers??[]){
    const existing=map.get(carer.id);
    if(existing){if(!existing.relatedTo.includes(student.name))existing.relatedTo.push(student.name);}

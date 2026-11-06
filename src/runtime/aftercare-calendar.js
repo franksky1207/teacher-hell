@@ -16,10 +16,12 @@ export function runtimeCalendarDay(w,date=w.position.date,cursor=null,order=null
  const a=aftercareAdoption(w).data,bucket=Math.floor((dayNumber(date)-dayNumber(a.startDate))/7),start=addDays(a.startDate,bucket*7),end=[addDays(start,6),a.endDate].sort()[0];
  return {...day,kind:'aftercare',activities:[],exam:false,quota:{kind:'aftercare',min:0,max:1},segment:{id:`aftercare:${a.startDate}:${bucket}`,start,end,quota:1},slots:day.slots.map(s=>({...s,period:null,kind:'aftercare',activityIds:[],protected:false}))};
 }
+/** Shared lesson qualification for pending adoption and saved aftercare views. */
+export function continuesAftercareTeaching(w,lesson){const registry=w.numeric.evolution.world.registry,assigned=lesson&&registry?.classes[lesson.classId];return !!assigned&&[1,2].includes(registry.academicYear-assigned.cohortStart+1);}
 export function runtimeSlot(w,date=w.position.date,slotId=w.position.slotId,ordinary=null){
  if(!aftercareActive(w,date))return ordinary;
  const day=runtimeCalendarDay(w,date),index=day.slots.findIndex(s=>s.id===slotId);if(date===aftercareAdoption(w).data.startDate&&index<aftercareAdoption(w).data.startCursor%32)return ordinary;
- const slot=day.slots.find(s=>s.id===slotId),registry=w.numeric.evolution.world.registry,assigned=ordinary?.lesson&&registry?.classes[ordinary.lesson.classId],continues=assigned&&[1,2].includes(registry.academicYear-assigned.cohortStart+1);
+ const slot=day.slots.find(s=>s.id===slotId),continues=continuesAftercareTeaching(w,ordinary?.lesson);
  return {...slot,kind:continues?'aftercare-teaching':slot.kind,lesson:continues?ordinary.lesson:null,teachingAutomatic:!!continues};
 }
 /** Explicitly qualified remote/administrative interactions only. */

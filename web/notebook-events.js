@@ -1,12 +1,13 @@
 /** Phase 14-C: the teacher's disclosed knowledge, never an omniscient event log. */
-import {readPlayerView,readSchoolRoster} from '../src/runtime/views.js';
+import {notebookRoster} from './notebook-roster.js';
+import {readPlayerView} from '../src/runtime/views.js';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dateOf=moment=>typeof moment?.date==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(moment.date)?moment.date:null;
 const yearOf=date=>date?date.slice(0,4):'unknown';
 const attitudes={believed:'紀錄中採信',uncertain:'尚待確認',rejected:'紀錄中未採信'};
 export const EVENT_PAGE_SIZE=12;
 export function projectNotebookEvents(world){
- const view=readPlayerView(world),roster=readSchoolRoster(world);
+ const view=readPlayerView(world),roster=notebookRoster(world);
  const names=new Map();
  for(const student of roster?.students??[]){
   names.set(student.id,student.name);

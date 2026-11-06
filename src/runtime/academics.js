@@ -33,10 +33,16 @@ export function withAcademicProjection(w,work){
  need(!projections.has(w),'academic projection already owned');projections.set(w,{state:emptyAcademics(academicVersion(w)),cursor:0});
  try{return work();}finally{projections.delete(w);}
 }
-export function academicState(w){
+function academicProjection(w){
  const owned=projections.get(w),s=owned?.state??emptyAcademics(academicVersion(w)),history=runtime(w).history;
  for(let i=owned?.cursor??0;i<history.length;i++){const h=history[i];if(h.type==='academic')applyAcademic(s,structuredClone(h.data.input),restoreRandom(h.data.randomBefore),h.data.version);}
- if(owned){owned.cursor=history.length;return structuredClone(s);}return s;
+ if(owned)owned.cursor=history.length;return s;
+}
+export function academicState(w){const s=academicProjection(w);return projections.has(w)?structuredClone(s):s;}
+/** Narrow detached lifecycle read: slot checks do not copy six full transcripts. */
+export function academicTermStatus(w,termId){
+ const t=academicProjection(w).terms[termId];if(!t)return null;
+ return structuredClone({grade:t.grade,closed:t.closed,assessmentPolicy:t.assessmentPolicy,publishedAt:t.publishedAt,assessmentWindow:t.assessmentWindow,studyCompletedAt:t.studyCompletedAt,review:!!t.review,rows:t.rows.map(r=>({id:r.id,enrollmentId:r.enrollmentId}))});
 }
 function termAt(w){return teachingTerm(w.position.date)??latestPreparedSemester(w.position.date);}
 export function academicInput(w,op){
@@ -333,3 +339,6 @@ export const qualificationDisposition=q=>q.version===2?(q.eligible?'graduated':q
 
 /** Public results are release-gated; academic grades and graduation remain separate. */
 export function readAdmissions(w,personId=null,projection=null){const e=publicEntrance((projection??academicState(w)).entrance);return personId?e?.students[personId]??null:e;}
+
+/** Detached policy metadata for display; no academic calculation. */
+export const readAssessmentWeights=id=>assessmentPolicy(id??null).weights.map(n=>n*10);

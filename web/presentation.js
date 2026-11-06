@@ -1,3 +1,4 @@
+import {aftercareActive,aftercareWindow,runtimeSlot,continuesAftercareTeaching} from '../src/runtime/aftercare-calendar.js';
 /** Display-only projections; never alter or round persisted world values. */
 import {calendarDay,semester,yearData} from '../src/calendar/calendar.js';
 import {addDays,dayNumber,weekMonday} from '../src/calendar/civil.js';
@@ -18,3 +19,10 @@ export function comparableWeeks(date,grade,version){
  return result;
 }
 export function classLabel(table,registry,classId){const c=registry.classes[classId];if(!c)throw new RangeError('Unknown class');const grade=table.academicYear-c.cohortStart+1;if(grade<1||grade>3)throw new RangeError('Invalid class or academic year');return `高${'一二三'[grade-1]}${c.name}`;}
+
+/** A pending adoption affects upcoming cells; saved pre-adoption slots keep history. */
+export function aftercareCellIsEmpty(w,date,slot,ordinary){
+ if(aftercareActive(w,date))return !slot||runtimeSlot(w,date,slot.id,ordinary)?.kind==='aftercare';
+ const bounds=aftercareWindow(w,date);
+ return !!bounds&&date>=w.position.date&&date>=bounds.startDate&&(!slot||!continuesAftercareTeaching(w,ordinary?.lesson));
+}

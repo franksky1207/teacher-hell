@@ -27,6 +27,7 @@ function classesAt(w,academicYear){
 const MALE_GIVEN=Object.freeze(['宇軒','承宇','文哲','家宏','宇安','承恩','家瑋','思哲','宏宇','哲宇','文軒','宇哲','承哲','家恩','安哲','宇涵','宏哲','承軒','思宇','家宇','文宏','宇瑋','宏恩','承安']);
 const FEMALE_GIVEN=Object.freeze(['雅涵','怡安','欣怡','思涵','雅庭','欣雅','思雅','文雅','雅欣','怡涵','安雅','家怡','思庭','庭安','雅安','怡庭','欣涵','安涵','思怡','雅恩','欣庭','文涵','家涵','宇涵']);
 const NEUTRAL_GIVEN=Object.freeze(['文安','思恩','家宇','承恩','雅安','宇庭','怡安','宇涵','文涵','安哲','承宇','欣宇']);
+export const STUDENT_GIVEN_NAMES=Object.freeze({male:MALE_GIVEN,female:FEMALE_GIVEN});
 function profile(w,id,rng,initialGender=null){
  if(!own(w.registry.profiles,id)){
   const surnames=[...'陳林黃張李王吳劉蔡楊'];

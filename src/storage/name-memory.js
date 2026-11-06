@@ -2,7 +2,6 @@
  * The whole bounded LRU is one IndexedDB record, atomically replaced per write.
  * Never writes game data or attempts to revive deleted slots.
  */
-import {surnameOf} from '../world/name-catalog.js';
 export const NAME_MEMORY_LIMIT=4096;
 const DB_VERSION=1,STORE='history',KEY='recent';
 const dbName=namespace=>`teacher-hell:${namespace}:names:v1`;
@@ -49,8 +48,4 @@ export async function rememberNames({factory,namespace='development',names}){
   const next=mergeNameHistory(rows,incoming);
   store.put(next,KEY);return next.length;
  });}finally{db.close();}
-}
-export function generatedGivenNames(world){
- const profiles=world?.numeric?.evolution?.world?.registry?.profiles??{};
- return Object.values(profiles).map(p=>p.displayName.slice(surnameOf(p.displayName).length));
 }

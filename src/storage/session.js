@@ -1,5 +1,5 @@
 import { retainMemorial } from './memorial.js';
-import {generatedGivenNames} from './name-memory.js';
+import {generatedGivenNames} from '../runtime/opening-name-memory.js';
 import { careerResult } from '../runtime/career.js';
 import { authorizeRetry } from '../runtime/homeroom.js';
 /** Application boundary: serialize prepare → disk CAS → memory publication per session.

@@ -18,5 +18,5 @@ export function seniorRosterAt(w,date){
   }
  }
  const enrollments=registry.enrollments.filter(e=>e.classId===registry.homeClassId&&active.get(e.personId)?.id===e.id);
- return {enrollments,people:enrollments.map(e=>({id:e.personId,cohort:registry.classes[e.classId].cohortStart,entryYears:registry.enrollments.filter(old=>old.personId===e.personId&&known.has(old.id)).map(old=>registry.classes[old.classId].cohortStart)}))};
+ return {enrollments,knownEnrollmentIds:[...known],people:enrollments.map(e=>({id:e.personId,cohort:registry.classes[e.classId].cohortStart,entryYears:registry.enrollments.filter(old=>old.personId===e.personId&&known.has(old.id)).map(old=>registry.classes[old.classId].cohortStart)}))};
 }

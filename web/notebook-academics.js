@@ -1,6 +1,6 @@
 /** Phase 14-D: display-only projection of official homeroom transcripts and qualification. */
 import {readSchoolRoster} from '../src/runtime/views.js';
-import {academicState,readGrades,readAcademicQualification} from '../src/runtime/academics.js';
+import {academicState,readGrades,readAcademicQualification,readAdmissions} from '../src/runtime/academics.js';
 import {semester,assessmentCalendar,examSchedule} from '../src/calendar/calendar.js';
 import {addDays} from '../src/calendar/civil.js';
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -36,7 +36,7 @@ export function projectNotebookAcademics(world,studentId=null,termId=null){
  const visibleRound=round=>round===0?finalReleased:isExamScorePublished(term.id,academic.terms[term.id].grade,round,world.position.date,calendarVersion);
  // The official graduation query is a projection, never a student status write.
  const qualification=selected?readAcademicQualification(world,selected.id,academic):null;
- return {students,selectedId:selected?.id??null,terms,selectedTerm:term?.id??null,
+ return {students,entrance:selected?readAdmissions(world,selected.id,academic):null,selectedId:selected?.id??null,terms,selectedTerm:term?.id??null,
   pendingPublication:!!term&&!!term.closed&&!finalReleased,
   transcript:transcript?{
    closed:!!term.closed&&finalReleased,
@@ -62,13 +62,17 @@ export function renderNotebookAcademics(data){
   const student=data.students.find(s=>s.id===data.selectedId);
   const q=data.qualification;
   const credit=q?`<section class="notebook-academic-credits" aria-label="學分與資格"><h4>累積學分及修業狀態</h4><p>已取得學分：${finite(q.earned)}・必修：${finite(q.requiredEarned)}・選修：${finite(q.electiveEarned)}</p><p>${q.complete?esc(statusLabel[q.status]??'學業資格未標示'):'尚在學或修業程序未完成，非最終畢業判定'}</p>${q.complete&&!q.eligible&&q.reasons.length?`<p>待完成條件：${q.reasons.map(r=>esc(reasonLabel[r]??'其他正式審查條件')).join('、')}</p>`:''}</section>`:'';
+  const p=data.entrance;
+  const routeLabels={special:'特殊選才',stars:'繁星推薦',stars8:'繁星第八類',application:'申請入學',technical:'四技申請','technical-application':'四技申請準備','subject-preparing':'分科準備',work:'就業',exploring:'探索中',planning:'規劃中','vocational-or-other':'技職或其他',other:'其他出路',allocated:'待確認',reconsidering:'重新規劃','retake-planning':'重考規劃'};
+  const entranceStatus={registered:'已報名',screened:'通過一階',reviewed:'二階已完成',regular:'正取',waitlist:'備取',rejected:'未錄取',allocated:'分發待確認',confirmed:'已確認',declined:'放棄或不列入志願',withdrawn:'已依法放棄'};
+  const entrance=p?`<section aria-label="升學已知狀態"><h4>升學進度</h4><p>${esc(routeLabels[p.route]??p.route)}${p.confirmed?'・已有確認錄取；高中畢業資格另行判定':''}</p><p>學測表現指標（0–100）：${p.gsat?.published?finite(p.gsat.score):'尚無已公布成績'}・英聽：${esc(p.listening?.published?p.listening.level:'尚無已公布成績')}</p><p>模考紀錄：${p.mocks.map(m=>`${esc(m.date)} ${m.family==='gsat'?'學測':'分科'} ${finite(m.score)}`).join('、')||'無'}（不計入學期成績）</p>${p.applications.length?'<p>申請：'+p.applications.map(a=>esc(a.programmeLabel)+'・'+esc(entranceStatus[a.status]??a.status)).join('；')+'</p>':''}${p.offers.length?'<p>已公布結果：'+p.offers.map(o=>esc(o.programmeLabel)+'・'+esc(entranceStatus[o.publishedStatus])+'（'+esc(entranceStatus[o.status])+'）').join('；')+'</p>':''}${p.pending.length?'<p>待辦：'+p.pending.map(x=>esc(({'july-subject-exam':'七月分科測驗，尚未應試','august-distribution':'八月分發，結果未知','employment-counselling':'就業輔導','next-year-exam-planning':'明年度考試規劃，尚無結果','alternative-route-counselling':'其他出路輔導','subject-registration':'分科報名'})[x]??x)).join('、')+'</p>':''}</section>`:'';
   const t=data.transcript;
   const examColumns=t?.examColumns??[1,2,3].map(round=>({round,label:({1:'一段',2:'二段',3:'三段'})[round]}));
   const rounds=examColumns.map(e=>t?.assessments.find(a=>a.round===e.round)?.marks??null);
   const regular=t?.assessments.find(a=>a.round===0)?.marks??null;
   const courses=t?.closed?t.courses:t?.planned??[];
   const rows=courses.map(c=>`<tr><th scope="row">${esc(c.subject)}</th><td>${finite(regular?.[c.subject])}</td>${rounds.map(r=>`<td>${finite(r?.[c.subject])}</td>`).join('')}<td>${t?.closed?finite(c.mark):'—'}</td><td>${t?.closed?(c.creditPending?'待修習完成':finite(c.earned)):'—'}／${finite(c.credits)}</td></tr>`).join('');
-  content=`<h3>${esc(student?.name??'學生')}</h3>${data.pendingPublication?'<p class="notebook-hint">本期成績已計算，隔天開放查閱。</p>':''}${credit}<div class="notebook-academic-terms" aria-label="選擇學期">${termButtons}</div>${t?`<p class="notebook-hint">${t.closed?(t.studyComplete===false?'學期成績已確認；學分仍待實際修習完成及資格審查。':'正式學期成績與已取得學分'):'本學期尚未結算，未提供最終成績或學分判定。'}</p><div class="notebook-academic-table-wrap"><table class="notebook-academic-table"><thead><tr><th>科目</th><th>平時</th>${examColumns.map(e=>`<th>${esc(e.label)}</th>`).join('')}<th>學期</th><th>學分</th></tr></thead><tbody>${rows||'<tr><td colspan="7">尚無已建立課程</td></tr>'}</tbody></table></div>`:'<p>目前尚無正式學期成績紀錄。</p>'}`;
+  content=`<h3>${esc(student?.name??'學生')}</h3>${data.pendingPublication?'<p class="notebook-hint">本期成績已計算，隔天開放查閱。</p>':''}${credit}${entrance}<div class="notebook-academic-terms" aria-label="選擇學期">${termButtons}</div>${t?`<p class="notebook-hint">${t.closed?(t.studyComplete===false?'學期成績已確認；學分仍待實際修習完成及資格審查。':'正式學期成績與已取得學分'):'本學期尚未結算，未提供最終成績或學分判定。'}</p><div class="notebook-academic-table-wrap"><table class="notebook-academic-table"><thead><tr><th>科目</th><th>平時</th>${examColumns.map(e=>`<th>${esc(e.label)}</th>`).join('')}<th>學期</th><th>學分</th></tr></thead><tbody>${rows||'<tr><td colspan="7">尚無已建立課程</td></tr>'}</tbody></table></div>`:'<p>目前尚無正式學期成績紀錄。</p>'}`;
  }
  return `<section class="notebook-academics" aria-label="學業成績與學分"><p class="notebook-hint">資料來源為學校正式學業紀錄；查閱不產生段考、學分或畢業結算。</p><div class="notebook-academic-layout"><div class="notebook-academic-list" aria-label="導師班學生名單">${roster||'<p>尚無可查閱學生。</p>'}</div><div class="notebook-academic-details">${content}</div></div></section>`;
 }

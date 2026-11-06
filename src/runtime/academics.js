@@ -1,3 +1,5 @@
+import { applyEntrance,publicEntrance } from '../academics/admissions.js';
+import { entranceInput } from './entrance.js';
 import { seniorRosterAt } from './academic-roster.js';
 import { SENIOR_ASSESSMENT_POLICY,isSeniorTerm,assessmentPolicy } from '../academics/policy.js';
 import { datesBetween,weekday } from '../calendar/civil.js';
@@ -38,6 +40,7 @@ export function academicState(w){
 function termAt(w){return teachingTerm(w.position.date)??latestPreparedSemester(w.position.date);}
 export function academicInput(w,op){
  const r=runtime(w),registry=w.numeric.evolution.world.registry;need(registry,'formal school identities required');
+ if(op.action==='entrance')return entranceInput(w,op,academicState(w));
  assertShape(op,['type','action',...['termId','round','personId','subject','basisFactId','delta','status','node','track','aspiration','offered','classSizes','attendance','records','course','netMajorDemerits'].filter(k=>Object.hasOwn(op,k))]);
  const action=op.action;need(['adopt-senior-policy','release','complete-study','review','support','supplement-plan','supplement','conduct','recognize','attendance','retake-plan','publish','sync','open','assess','close','influence','makeup','retake','annual-credit','direction','admission','standard','participation','size'].includes(action),'unknown academic operation');
  const state=academicState(w),termId=op.termId??termAt(w).id,t=termForInput(state,{...op,termId}),meta=semester(termId);
@@ -94,6 +97,7 @@ export function academicInput(w,op){
  if(op.personId&&!['admission','direction','influence','participation'].includes(action))need(!frozen.has(op.personId),'reviewed student academic record is frozen');
  if(['release','complete-study','review'].includes(action))validateSeniorLifecycle(w,state,input);
  if(action==='admission'){
+  need(!state.entrance,'versioned admissions must use formal entrance nodes');
   need(t?.grade===3,'admission requires senior record');const month=w.position.date.slice(5,7),windows={gsat:['01','02'],stars:['03'],application:['03','04','05','06'],subject:['07'],other:['07','08','09']};need(windows[op.node]?.includes(month),'admission node calendar window');
  }
  if(op.personId)need(w.numeric.evolution.world.people[op.personId]?.kind==='student','student identity');
@@ -101,6 +105,7 @@ export function academicInput(w,op){
 }
 export function applyAcademic(s,input,rng,version=versionOf(s)){
  need(version===versionOf(s),'academic policy cannot change during replay');
+ if(input.action==='entrance')return applyEntrance(s,input);
  const {action,termId,personId,subject}=input,t=termForInput(s,input),learner=s.students[personId];
  const frozen=new Set(Object.values(s.terms).flatMap(t=>t.review?.outcomes.map(o=>o.personId)??[]));if(personId&&!['admission','direction','influence','participation'].includes(action))need(!frozen.has(personId),'reviewed student academic record is frozen');if(action==='support')need(!input.activeIds?.some(id=>frozen.has(id)),'reviewed students cannot receive academic support');
  if(action==='open')return openTerm(s,input,rng);
@@ -184,6 +189,7 @@ export function applyAcademic(s,input,rng,version=versionOf(s)){
   need(!course.annual||version===2&&average>course.annual.average,'annual result unchanged/already awarded');if(course.annual){course.annualHistory??=[];course.annualHistory.push({...course.annual});}course.annual={average,date:input.date};if(average>=pass)for(const c of [autumn,course])if(c.earned===0){c.earned=c.credits;c.method='annual-average';}return {average,earned:course.earned,autumnEarned:autumn.earned};
  }
  if(action==='admission'){
+  need(!s.entrance,'versioned admissions must use formal entrance nodes');
   need(!s.admissions.some(a=>a.personId===personId&&a.year===t.year&&a.node===input.node),'node already resolved');
   const marks=(t.results?.find(r=>r.id===personId)??Object.values(s.terms).findLast(term=>term.results?.some(r=>r.id===personId))?.results?.find(r=>r.id===personId))?.courses??Object.values(learner.subjects).map(x=>({mark:x.baseline})),average=marks.reduce((n,c)=>n+c.mark,0)/marks.length;
   if(['stars','application','subject'].includes(input.node))need(s.admissions.some(a=>a.personId===personId&&a.year===t.year&&a.node==='gsat'),'entrance exam node required');
@@ -198,6 +204,7 @@ export function validateAcademicHistory(w){
  for(const h of r.history.filter(h=>h.type==='retry'&&h.data.academicPolicy!==undefined)){const owner=r.commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId);need([1,2].includes(h.data.academicPolicy)&&h.data.academicPolicy===academicVersion(w)&&JSON.parse(owner.request).academicPolicy===h.data.academicPolicy,'retry academic policy differs from its receipt');}
  for(const h of r.history)if(h.type==='academic'){
   const d=h.data;assertShape(d,['version','operation','input','result','randomBefore','randomAfter']);need(Object.entries(d.operation).filter(([k])=>k!=='type').every(([k,v])=>equal(d.input[k],v)),'academic operation/input differs');need([1,2].includes(d.version)&&d.version===academicVersion(w)&&d.input.action===d.operation.action&&d.input.date===h.at.date,'academic version/action/date');
+  if(d.input.action==='entrance'){const past={...w,position:{...w.position,...h.at},extensions:{...w.extensions,'teacher-hell/world':{...r,history:r.history.slice(0,h.order-1)}}};need(equal(entranceInput(past,d.operation,s),d.input),'entrance source/calendar changed');}
   if(d.input.action==='assess'){const t=s.terms[d.input.termId],policy=assessmentCalendar(d.input.termId,t?.grade,r.plan.calendarVersion),dates=d.input.round===0?policy.ordinaryAssessmentDates:policy.exams.find(e=>e.round===d.input.round)?.dates;need(dates&&h.at.date===dates.at(-1),'academic exam calendar mismatch');}
   if(['open','adopt-senior-policy'].includes(d.input.action)){const policy=assessmentCalendar(d.input.termId,d.input.grade??s.terms[d.input.termId]?.grade,r.plan.calendarVersion);if(d.input.assessmentPolicy)need(policy.assessmentPolicy===d.input.assessmentPolicy&&equal(policy,d.input.assessmentWindow),'academic term policy/calendar mismatch');}
   if(d.input.action==='close'){const t=s.terms[d.input.termId],policy=assessmentCalendar(d.input.termId,t?.grade,r.plan.calendarVersion);need(h.at.date>=(isSeniorTerm(t)?policy.marksCloseDate:semester(d.input.termId).end)&&(!policy.assessmentPolicy||isSeniorTerm(t)),'academic close calendar mismatch');}
@@ -322,3 +329,6 @@ export function academicSupport(s,input,rng){
  return out;
 }
 export const qualificationDisposition=q=>q.version===2?(q.eligible?'graduated':q.certificateEligible?'course-completed':'incomplete'):(q.eligible?'graduated':'delayed');
+
+/** Public results are release-gated; academic grades and graduation remain separate. */
+export function readAdmissions(w,personId=null,projection=null){const e=publicEntrance((projection??academicState(w)).entrance);return personId?e?.students[personId]??null:e;}

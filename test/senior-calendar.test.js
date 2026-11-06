@@ -95,11 +95,11 @@ test('H1-C: every generated mock avoids holidays, exams and existing senior acti
 
 test('H1-C: production summary stages, event protection, no marks or invented admissions',()=>{
  for(const family of ['gsat','subject']){
-  const node=nodes.find(n=>n.family===family);let w=baseline(node.date,'morning',true);w=run(w,[{type:'academic',action:'open'}]);const before=academicState(w);
+  const node=nodes.find(n=>n.family===family);let w=baseline(node.date,'morning',true);w=run(w,[{type:'academic',action:'open'}]);const before=academicState(w),academicRandom=structuredClone(w.random.academics);
   w=run(w,[draw([definition()])],'protected-draw','formal-event');assert.deepEqual(runtimeOf(w).history.findLast(h=>h.type==='event-selection').data.selected,[]);
   for(const next of ['afternoon','private']){w=step(w,'automatic');assert.equal(w.position.slotId,next);}
   const summaries=runtimeOf(w).facts.filter(f=>f.data.mockSummary).map(f=>f.data.mockSummary);assert.equal(summaries.length,2);assert.deepEqual(summaries.map(s=>s.phase),['morning','afternoon']);assert.ok(summaries.every(s=>s.nodeId===node.id&&s.individualResults===null&&s.countsTowardSemester===false));
-  const saved=w;w=step(w,'rest');assert.equal(runtimeOf(w).facts.filter(f=>f.data.mockSummary).length,2);assert.deepEqual(academicState(w),before);assert.deepEqual(restoreSave(encodeSave(createSave(w))).world,w);const bad=structuredClone(saved);const campus=runtimeOf(bad).history.find(h=>h.type==='campus');campus.data.operations.find(o=>o.type==='fact').data.mockSummary.individualResults=[{score:99}];assert.throws(()=>restoreWorldState(bad),/mock summary/);
+  const saved=w;w=step(w,'rest');assert.equal(runtimeOf(w).facts.filter(f=>f.data.mockSummary).length,2);const after=academicState(w),{entrance,...school}=after;assert.deepEqual(school,before);assert.deepEqual(w.random.academics,academicRandom);assert.equal(entrance.policy,'tw-senior-admissions-h3-v1');assert.deepEqual(entrance.completed.map(n=>({id:n.id,kind:n.kind,date:n.date})),[{id:node.id,kind:node.kind,date:node.date}]);for(const p of Object.values(entrance.students)){assert.equal(p.mocks.length,family==='gsat'?1:0);assert.ok(p.mocks.every(m=>m.nodeId===node.id&&m.countsTowardSemester===false&&m.score>=0&&m.score<=100));assert.equal(p.gsat,undefined);assert.deepEqual(p.offers,[]);}assert.deepEqual(restoreSave(encodeSave(createSave(w))).world,w);const bad=structuredClone(saved);const campus=runtimeOf(bad).history.find(h=>h.type==='campus');campus.data.operations.find(o=>o.type==='fact').data.mockSummary.individualResults=[{score:99}];assert.throws(()=>restoreWorldState(bad),/mock summary/);
  }
 });
 

@@ -4,7 +4,7 @@ import {readPlayerView} from '../src/runtime/views.js';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dateOf=moment=>typeof moment?.date==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(moment.date)?moment.date:null;
 const yearOf=date=>date?date.slice(0,4):'unknown';
-const termOf=date=>{if(!date)return 'unknown';const [y,m]=date.split('-').map(Number);return (m>=8?y:y-1)+':'+(m>=8?'autumn':'spring');};
+const termOf=date=>{if(!date)return 'unknown';const [y,m]=date.split('-').map(Number);return (m>=7?y:y-1)+':'+(m>=7?'autumn':'spring');};
 const termLabel=id=>id==='unknown'?'日期未標示':id.replace(/^(\d{4}):(autumn|spring)$/,(_,year,season)=>year+'學年度'+(season==='autumn'?'上':'下')+'學期');
 const attitudes={believed:'紀錄中採信',uncertain:'尚待確認',rejected:'紀錄中未採信'};
 export const EVENT_PAGE_SIZE=12;

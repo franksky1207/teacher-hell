@@ -94,3 +94,7 @@ test('H5 current phase names follow formal mock/exam calendar without leaking re
  for(const exam of examSchedule('2029:spring',3,SENIOR_CALENDAR_VERSION)){const d=calendarDay(exam.dates[0],3,SENIOR_CALENDAR_VERSION);assert.equal(scheduledPhase(d,'p1'),exam.round===1?'第一次段考':'畢業考');assert.equal(scheduledPhase(d,'noon'),null);}
  assert.equal(scheduledPhase(calendarDay('2029-06-04',3,SENIOR_CALENDAR_VERSION),'p1'),null);
 });
+
+test('H5 June projection stays disabled for the original 30-year career',()=>{
+ const w=eventWorld(74),before=JSON.stringify(w);assert.equal(w.extensions['teacher-hell/world'].plan.validation,'fixed-calendar-v1');assert.equal(projectSeniorSummary(w),null);assert.equal(JSON.stringify(w),before);
+});

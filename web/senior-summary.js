@@ -2,7 +2,8 @@
 import {readAdmissions,academicState} from '../src/runtime/academics.js';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function projectSeniorSummary(w){
- const r=w.extensions['teacher-hell/world'],ceremonyFact=r.facts.findLast(f=>f.data.graduationSummary),ceremony=ceremonyFact?.data.graduationSummary??null;
+ const r=w.extensions['teacher-hell/world'];if(r.plan.validation!=='fixed-calendar-v2')return null;
+ const ceremonyFact=r.facts.findLast(f=>f.data.graduationSummary),ceremony=ceremonyFact?.data.graduationSummary??null;
  const weeks=r.history.filter(h=>h.type==='aftercare-week-summary').map(h=>({startDate:h.data.startDate,endDate:h.data.endDate,summary:h.data.summary}));
  const outcomes=r.history.filter(h=>h.type==='cohort-completion').flatMap(h=>h.data.outcomes).map(o=>({id:o.personId,name:w.numeric.evolution.world.registry.profiles[o.personId].displayName,status:o.qualification.eligible?'graduation':o.qualification.certificateEligible?'completion-certificate':'incomplete'}));
  const academic=academicState(w),admissions=readAdmissions(w,null,academic),students=Object.values(admissions?.students??{});

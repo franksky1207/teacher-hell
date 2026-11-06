@@ -83,11 +83,18 @@ const remindedTaskIds=new Set();
 let taskReminderRevision=null;
 async function remindKnownDeadlines(){
  if(!current||screen!=='game'||storyBusy||document.querySelector('.overlay'))return;
- const world=gameData(),key=JSON.stringify(displayedToken);
- if(taskReminderRevision===key)return;
+ const world=gameData();
+ if(careerResult(world))return;
+ const history=world.extensions['teacher-hell/world'].history,latest=history.at(-1);
+ // Ordinary timetable progression is checked once per game day; a newly committed
+ // story/institution action may create a same-day responsibility.
+ const trigger=latest&&['story','institution'].includes(latest.type)?latest.id:null;
+ const checkpoint=JSON.stringify([world.identity.attemptId,world.position.date,trigger]);
+ if(taskReminderRevision===checkpoint)return;
+ const key=JSON.stringify(displayedToken);
  const {items}=await notebookData('tasks');
  if(!current||screen!=='game'||JSON.stringify(displayedToken)!==key||document.querySelector('.overlay'))return;
- taskReminderRevision=key;
+ taskReminderRevision=checkpoint;
  const today=world.position.date;
  const tomorrow=addDays(today,1);
  const eligible=items.filter(t=>t.due&&t.due<=tomorrow&&!remindedTaskIds.has(JSON.stringify([world.identity.attemptId,t.id,t.due])));

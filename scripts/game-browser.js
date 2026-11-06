@@ -87,6 +87,9 @@ try {
   })`);
   if(rosterCheck.active!=='notebook-tab:people'||rosterCheck.count<38)
     throw Error('Notebook official class roster missing '+JSON.stringify(rosterCheck));
+  const seatLabels=await evaluate(`Array.from(document.querySelectorAll('.notebook-person'),e=>e.textContent.trim().match(/^(\\d+)號/)?.[1]??null)`);
+  if(seatLabels.some((seat,index)=>Number(seat)!==index+1))
+    throw Error('Notebook seats must be shown in permanent numeric order '+JSON.stringify(seatLabels));
   await evaluate("document.querySelector('.notebook-person').click()");await wait('.notebook-person--active');
   if(!await evaluate("!!document.querySelector('.notebook-person--active') && !!document.querySelector('.notebook-person-details h3')"))
     throw Error('Notebook selection did not render a person');

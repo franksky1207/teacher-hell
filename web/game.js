@@ -89,10 +89,11 @@ async function remindKnownDeadlines(){
  if(!current||screen!=='game'||JSON.stringify(displayedToken)!==key||document.querySelector('.overlay'))return;
  taskReminderRevision=key;
  const today=world.position.date;
- const eligible=items.filter(t=>t.due&&t.due<=today&&!remindedTaskIds.has(JSON.stringify([world.identity.attemptId,t.id,t.due])));
+ const tomorrow=addDays(today,1);
+ const eligible=items.filter(t=>t.due&&t.due<=tomorrow&&!remindedTaskIds.has(JSON.stringify([world.identity.attemptId,t.id,t.due])));
  if(!eligible.length)return;
  for(const t of eligible)remindedTaskIds.add(JSON.stringify([world.identity.attemptId,t.id,t.due]));
- const rows=eligible.slice(0,5).map(t=>`<li>${esc(t.label)}（${esc(t.due)}${t.overdue?'，期限已過':'，今日到期'}）</li>`).join('');
+ const rows=eligible.slice(0,5).map(t=>`<li>${esc(t.label)}（${esc(t.due)}${t.overdue?'，期限已過':t.due===today?'，今日到期':'，明日到期'}）</li>`).join('');
  dialog('校務待辦提醒',`<p>以下事項仍須依正式校務或事件流程處理，提醒不等於失敗，也不改變存檔。</p><ul>${rows}</ul>${eligible.length>5?'<p>其他項目請至筆記本待辦事項查閱。</p>':''}`);
 }
 function forgetCurrentView(){current=null;displayedSession=null;displayedWorld=null;displayedToken=null;notebookCache.clear();notebookOwner=null;}
@@ -111,7 +112,7 @@ async function executeProgress(request){
  try{
   const {record}=await workerRead({slot,request,expectedToken:displayedToken});current={snapshot:()=>record};showGame();
  }catch(error){try{const {record}=await workerRead({slot});current=record.payload?{snapshot:()=>record}:null;}catch{}if(current)showGame();else showHome();throw error;}
- finally{unlock();storyBusy=false;}
+ finally{unlock();storyBusy=false;if(screen==='game')void remindKnownDeadlines().catch(error=>console.error('待辦提醒查閱失敗',error));}
 }
 function showPendingReview(){
  if(!current||document.querySelector('.overlay'))return;

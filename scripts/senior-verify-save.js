@@ -15,7 +15,7 @@ import {projectNotebookAcademics} from '../web/notebook-academics.js';
 import {projectNotebookCareer,renderNotebookCareer} from '../web/notebook-reviews.js';
 import {nextProgression} from '../src/runtime/progression.js';
 import {readAftercare} from '../src/runtime/aftercare.js';
-const root='work/h5',hash=t=>createHash('sha256').update(t).digest('hex'),metrics={checks:0,status:'running',node:process.version,sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),driverSha256:hash(await readFile('scripts/senior-verify-save.js')),aftercareSha256:hash(await readFile('src/runtime/aftercare.js'))};
+const root='work/h5',hash=t=>createHash('sha256').update(t).digest('hex'),metrics={checks:0,status:'running',node:process.version,sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),driverSha256:hash(await readFile('scripts/senior-verify-save.js')),aftercareSha256:hash(await readFile('src/runtime/aftercare.js')),transactionsSha256:hash(await readFile('src/runtime/transactions.js'))};
 const timed=async(name,fn)=>{console.log('BEGIN '+name);const at=performance.now(),result=await fn();metrics[name+'Ms']=performance.now()-at;console.log(JSON.stringify({phase:name,ms:metrics[name+'Ms']}));return result;};
 try {
 async function verifyCompleted(){

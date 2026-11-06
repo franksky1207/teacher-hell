@@ -436,9 +436,10 @@ function prepareDraft(world,request,ownedNumeric=null) {
     const receipt={id:command.id,attemptId:command.attemptId,revision:r.revision+1,request:encoded,historyIds:[],numericReceiptIds:[],draws:[]};
     let numerical=ownedNumeric??createSettlementSession(world.numeric);
     const perform=()=>{for(const operation of command.operations)numerical=execute(world,command,operation,numerical,receipt);};
-    // A bounded week owns the same journal-following projection as ordered sequences.
-    // Import validation still replays independently after this detached cache is released.
-    if(command.operations[0].type==='aftercare-week'&&!ownedNumeric)withAcademicProjection(world,perform);else perform();
+    // A bounded week and the final three-year T4 own the same private projection
+    // as ordered sequences. Input/output validation still replays independently.
+    const academicOwner=command.operations[0].type==='aftercare-week'||command.operations[0].type==='settle-school-year'&&planMode(r.plan)===THREE_YEAR&&world.position.serviceYear===3;
+    if(academicOwner&&!ownedNumeric)withAcademicProjection(world,perform);else perform();
     const readingOnly=['read-semester-review','settle-school-year','transition-school-year','settle-career'].includes(command.operations[0].type);
     if(!readingOnly)numerical=execute(world,command,{type:'institution-tick'},numerical,receipt);
     const arrangement=readingOnly?null:arrangeReplenishment(world,command,numerical);

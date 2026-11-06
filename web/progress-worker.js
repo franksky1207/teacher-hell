@@ -7,6 +7,7 @@ import {careerResult} from '../src/runtime/career.js';
 import {gradeAt,careerYears,planMode} from '../src/calendar/calendar.js';
 import {projectNotebookAcademics} from './notebook-academics.js';
 import {projectNotebookPeople} from './notebook-people.js';
+import {projectNotebookTasks} from './notebook-tasks.js';
 import {projectNotebookEvents} from './notebook-events.js';
 import {projectNotebookReviews,projectNotebookCareer} from './notebook-reviews.js';
 async function inputText(input){if(typeof input==='string')return input;if(input instanceof Blob)return input.text();throw new TypeError('Expected a JSON string or immutable file');}
@@ -28,7 +29,7 @@ self.onmessage=async({data})=>{
   const snap=session.snapshot(),w=snap.payload?.world;
   if(data.view){
    if(!sameToken(data.token,snap.token))throw Object.assign(Error('存檔已在其他頁面更新，請重新讀取'),{code:'STALE'});
-   const projections={academics:()=>projectNotebookAcademics(w,data.studentId??null,data.termId??null),people:()=>projectNotebookPeople(w),events:()=>projectNotebookEvents(w),reviews:()=>projectNotebookReviews(w),career:()=>projectNotebookCareer(w)};
+   const projections={academics:()=>projectNotebookAcademics(w,data.studentId??null,data.termId??null),people:()=>projectNotebookPeople(w),events:()=>projectNotebookEvents(w),tasks:()=>projectNotebookTasks(w),reviews:()=>projectNotebookReviews(w),career:()=>projectNotebookCareer(w)};
    if(!Object.hasOwn(projections,data.view))throw Error('Unknown notebook projection');
    self.postMessage({ok:true,projection:projections[data.view]()});
   }else if(data.summary){

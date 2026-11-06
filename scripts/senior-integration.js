@@ -1,6 +1,6 @@
 /** Continuous H5 acceptance: formal opening + checked transactions only. */
 import assert from 'node:assert/strict';
-import {mkdir,writeFile,readFile,rename} from 'node:fs/promises';
+import {mkdir,writeFile,readFile,rename,copyFile} from 'node:fs/promises';
 import {gzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
@@ -48,8 +48,12 @@ try{
   metrics.batches.push({from,to:w.position.date,revision:runtimeOf(w).revision,requests:result.receipts.length,ms:performance.now()-start,rss:process.memoryUsage().rss});
   metrics.last={date:w.position.date,revision:runtimeOf(w).revision};await report();
   console.log(JSON.stringify(metrics.batches.at(-1)));
-  if(stage){metrics.stages[stage]={date:w.position.date,revision:runtimeOf(w).revision};await persist('stage-'+stage,{kind:SAVE_KIND,version:1,world:w,opening});}
-  await persist(stopBoundary?'before-completion':'checkpoint',{kind:SAVE_KIND,version:1,world:w,opening});
+  if(stage){
+   metrics.stages[stage]={date:w.position.date,revision:runtimeOf(w).revision};await persist('stage-'+stage,{kind:SAVE_KIND,version:1,world:w,opening});
+   // Identical artifact bytes already passed the official encode/validation above.
+   // Publishing that same checkpoint needs no second three-year replay.
+   const at=performance.now();await copyFile(`${root}/stage-${stage}.json.gz`,`${root}/checkpoint.json.gz.partial`);await rename(`${root}/checkpoint.json.gz.partial`,`${root}/checkpoint.json.gz`);metrics.checkpoint={...metrics['stage-'+stage],copyOf:'stage-'+stage,copyWriteMs:performance.now()-at};await report();
+  }else await persist(stopBoundary?'before-completion':'checkpoint',{kind:SAVE_KIND,version:1,world:w,opening});
   if(stopBoundary){
    const before=academicState(w),r=runtimeOf(w),request={id:`operation:${JSON.stringify([w.identity.attemptId,'h5-terminal'])}`,attemptId:w.identity.attemptId,expectedRevision:r.revision,actorId:w.identity.playerId,preconditions:[],calendarContext:{kind:'routine'},operations:[{type:'settle-school-year'}]},t=performance.now();
    const completed=prepareWorldOperation(w,request);w=completed.world;metrics.t4Ms=performance.now()-t;

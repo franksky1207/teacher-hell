@@ -33,11 +33,18 @@ export function projectNotebookAcademics(world,studentId=null,termId=null){
  const calendarVersion=world.extensions['teacher-hell/world'].plan.calendarVersion;
  const released=t=>!t.closed||(t.assessmentPolicy?!!t.publishedAt:isSemesterResultPublished(t.termId,world.position.date,t.grade,calendarVersion));
  const actual=term&&academic.terms[term.id],finalReleased=!actual||released(actual);
+ const releasedTerms=Object.values(academic.terms).filter(t=>t.closed&&t.results&&released(t)).sort((a,b)=>semester(a.termId).start.localeCompare(semester(b.termId).start));
+ const classTerm=releasedTerms.at(-1)??null;
+ const classSubjects=classTerm?[...new Set(classTerm.results.flatMap(r=>r.courses.map(c=>c.subject)))]:[];
+ const classTable=classTerm?{label:semesterLabel(classTerm.termId),subjects:classSubjects,students:(roster?.students??[]).map(s=>{
+  const result=classTerm.results.find(r=>r.id===s.id);
+  return {id:s.id,name:s.name,marks:Object.fromEntries((result?.courses??[]).filter(c=>typeof c.mark==='number').map(c=>[c.subject,c.mark]))};
+ })}:null;
  const pendingAny=Object.values(academic.terms).some(t=>t.rows.some(r=>r.id===studentId)&&!released(t));
  const visibleRound=round=>round===0?finalReleased:isExamScorePublished(term.id,academic.terms[term.id].grade,round,world.position.date,calendarVersion);
  // The official graduation query is a projection, never a student status write.
  const qualification=selected?readAcademicQualification(world,selected.id,academic):null,reviewed=selected?Object.values(academic.terms).flatMap(t=>t.review?.outcomes??[]).find(o=>o.personId===selected.id):null;
- return {students,legacyEntrance:selected?(academic.admissions??[]).filter(a=>a.personId===selected.id&&a.date<=world.position.date).map(a=>({date:a.date,node:a.node,accepted:a.accepted})):[],entrance:selected?readAdmissions(world,selected.id,academic):null,selectedId:selected?.id??null,terms,selectedTerm:term?.id??null,
+ return {students,classTable,legacyEntrance:selected?(academic.admissions??[]).filter(a=>a.personId===selected.id&&a.date<=world.position.date).map(a=>({date:a.date,node:a.node,accepted:a.accepted})):[],entrance:selected?readAdmissions(world,selected.id,academic):null,selectedId:selected?.id??null,terms,selectedTerm:term?.id??null,
   pendingPublication:!!term&&!!term.closed&&!finalReleased,
   transcript:transcript?{
    closed:!!term.closed&&finalReleased,
@@ -58,9 +65,11 @@ export function projectNotebookAcademics(world,studentId=null,termId=null){
 }
 export function renderNotebookAcademics(data){
  if(!data||!Array.isArray(data.students)||!Array.isArray(data.terms))throw new TypeError('Invalid academic notebook data');
+ const table=data.classTable;
+ const classTable=table?`<section class="notebook-class-summary" aria-label="已公布班級成績總表"><h4>${esc(table.label)}・班級學期成績總表</h4><p class="notebook-hint">僅列出已公布的正式成績；尚無資料以破折號顯示，不補造排名。</p><div class="notebook-academic-table-wrap"><table class="notebook-academic-table"><thead><tr><th>學生</th>${table.subjects.map(s=>`<th>${esc(s)}</th>`).join('')}</tr></thead><tbody>${table.students.map(st=>`<tr><th scope="row">${esc(st.name)}</th>${table.subjects.map(subject=>`<td>${finite(st.marks[subject])}</td>`).join('')}</tr>`).join('')}</tbody></table></div></section>`:'<p>目前沒有已公布的完整學期班級成績。</p>';
  const roster=data.students.map(s=>`<button type="button" data-action="notebook-academic-student:${esc(s.id)}" class="notebook-academic-student${data.selectedId===s.id?' notebook-academic-active':''}" aria-pressed="${data.selectedId===s.id}">${esc(s.name)}</button>`).join('');
  const termButtons=data.selectedId?data.terms.map(t=>`<button type="button" data-action="notebook-academic-term:${esc(t.id)}" class="notebook-academic-term${data.selectedTerm===t.id?' notebook-academic-active':''}" aria-pressed="${data.selectedTerm===t.id}">${esc(t.label)}${t.closed?'':'（未結算）'}</button>`).join(''):'';
- let content='<p>請選擇學生查閱學業紀錄。</p>';
+ let content='<p>請選擇學生查閱個人成績與學分。</p>';
  if(data.selectedId){
   const student=data.students.find(s=>s.id===data.selectedId);
   const q=data.qualification;
@@ -77,5 +86,5 @@ export function renderNotebookAcademics(data){
   const rows=courses.map(c=>`<tr><th scope="row">${esc(c.subject)}</th><td>${finite(regular?.[c.subject])}</td>${rounds.map(r=>`<td>${finite(r?.[c.subject])}</td>`).join('')}<td>${t?.closed?finite(c.mark):'—'}</td><td>${t?.closed?(c.creditPending?'待修習完成':finite(c.earned)):'—'}／${finite(c.credits)}</td></tr>`).join('');
   content=`<h3>${esc(student?.name??'學生')}</h3>${data.pendingPublication?'<p class="notebook-hint">本期成績已計算，尚未完成正式公布。</p>':''}${credit}${data.pendingRemedies?.length?'<p>學業後續：'+data.pendingRemedies.map(r=>esc(r.subject)+'・'+esc(({retake:'重修',makeup:'補考',supplement:'補修'})[r.kind]??r.kind)+' '+finite(r.studiedPeriods)+'／'+finite(r.requiredPeriods)+' 節').join('、')+'</p>':''}${entrance}${data.legacyEntrance?.length?'<section aria-label="原保存升學階段"><h4>原保存政策的升學階段紀錄</h4>'+data.legacyEntrance.map(a=>'<p>'+esc(a.date)+'・'+esc(({gsat:'學測',stars:'繁星',application:'申請',subject:'分科',other:'其他出路'})[a.node]??'其他階段')+'：原階段判定'+(a.accepted?'達成':'未達成')+'</p>').join('')+'<p>不推定新制錄取或確認。</p></section>':''}<div class="notebook-academic-terms" aria-label="選擇學期">${termButtons}</div>${t?`<p>${t.weights===null?'評量政策待正式校務接續':'正式權重：'+(t.weights??[40,20,20,20]).map(n=>n+'％').join('／')+'（平時／正式考試依序）'}</p><p class="notebook-hint">${t.closed?(t.studyComplete===false?'學期成績已確認；學分仍待實際修習完成及資格審查。':'正式學期成績與已取得學分'):'本學期尚未結算，未提供最終成績或學分判定。'}</p><div class="notebook-academic-table-wrap"><table class="notebook-academic-table"><thead><tr><th>科目</th><th>平時</th>${examColumns.map(e=>`<th>${esc(e.label)}</th>`).join('')}<th>學期</th><th>學分</th></tr></thead><tbody>${rows||'<tr><td colspan="${examColumns.length+4}">尚無已建立課程</td></tr>'}</tbody></table></div>`:'<p>目前尚無正式學期成績紀錄。</p>'}`;
  }
- return `<section class="notebook-academics" aria-label="學業成績與學分"><p class="notebook-hint">資料來源為學校正式學業紀錄；查閱不產生段考、學分或畢業結算。</p><div class="notebook-academic-layout"><div class="notebook-academic-list" aria-label="導師班學生名單">${roster||'<p>尚無可查閱學生。</p>'}</div><div class="notebook-academic-details">${content}</div></div></section>`;
+ return `<section class="notebook-academics" aria-label="學業成績與學分"><p class="notebook-hint">資料來源為學校正式學業紀錄；查閱不產生段考、學分或畢業結算。</p>${classTable}<div class="notebook-academic-layout"><div class="notebook-academic-list" aria-label="導師班學生名單">${roster||'<p>尚無可查閱學生。</p>'}</div><div class="notebook-academic-details">${content}</div></div></section>`;
 }

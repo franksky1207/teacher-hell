@@ -16,7 +16,7 @@ test('seat order: male before female; equal-surname pupils remain consecutive; g
  const seats=seatNumbers(registry,'class1');
  assert.deepEqual([...seats.entries()].sort((a,b)=>a[1]-b[1]).map(([id])=>id),['m1','m2','m3','f1','f2']);
  assert.equal(compareSeatCandidates(entry('a','王大華','male'),entry('b','王志華','male'))<0,true);
- assert.equal(compareSeatCandidates(entry('a','王小宇','male'),entry('b','王大明','male'))<0,true,'second given-name stroke decides when first given-name strokes tie');
+ assert.equal(compareSeatCandidates(entry('a','王大明','male'),entry('b','王小宇','male'))<0,true,'same-stroke given-name characters use fixed traditional Chinese stroke collation');
  assert.equal(compareSeatCandidates(entry('a','吳小華','male'),entry('b','李小華','male'))<0,true);
 });
 test('seat number remains stable after transfer out and re-entry; arrival goes after original 40',()=>{

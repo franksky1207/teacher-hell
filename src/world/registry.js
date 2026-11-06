@@ -3,6 +3,7 @@ import { assertShape, identifier } from '../player/panel.js';
 import { restoreRandom } from '../numeric/random.js';
 import { createPerson, sampleRecord, withFamilyContext, FAMILY_CODES, GROUP_CODES } from './people.js';
 import { validateRoles } from './roles.js';
+import {chooseSurname,chooseGivenName,surnameOf,GIVEN_NAME_CATALOG} from './name-catalog.js';
 
 export const SCHOOL_SUBJECTS=Object.freeze(['國文','英文','數學','地理','歷史','物理','化學','公民','生物']);
 export const CLASS_NAMES=Object.freeze([... '忠孝仁愛信義和平勤樸']);
@@ -22,11 +23,46 @@ function classesAt(w,academicYear){
   if(!own(r.classes,id))r.classes[id]={id,cohortId:schoolCohortId(w.school.id,start),cohortStart:start,index,name:CLASS_NAMES[index-1],placement:null,values:null};
  }
 }
-function profile(w,id,rng){
- if(!own(w.registry.profiles,id)){
-  const surnames=[...'陳林黃張李王吳劉蔡楊'],given=[...'宇庭雅安承涵文哲怡宏欣瑋思恩家軒'];
-  w.registry.profiles[id]={displayName:surnames[rng.integer(0,surnames.length-1)]+given[rng.integer(0,given.length-1)]+given[rng.integer(0,given.length-1)],appearance:{variant:rng.integer(0,65535)}};
+// Student names are chosen only after sex is determined, independent of the
+// child's appearance/personality. The class-wide given-name set is deduplicated.
+// Family surname follows a durable child profile and explicit parent roles.
+export const STUDENT_GIVEN_NAMES=GIVEN_NAME_CATALOG;
+function profile(w,id,rng,initialGender=null){
+ if(own(w.registry.profiles,id))return;
+ const person=w.people[id],student=person?.kind==='student';
+ const variant=rng.integer(0,65535);
+ const gender=student?(initialGender??(variant%2===0?'male':'female')):null;
+ const linked=w.careLinks.find(l=>l.caregiverId===id)?.studentId;
+ const referenceStudent=linked?w.registry.profiles[linked]:null;
+ const sibling=student?Object.entries(w.registry.profiles).find(([other,p])=>other!==id&&w.people[other]?.kind==='student'&&w.people[other].familyId===person.familyId):null;
+ const familySurname=referenceStudent?surnameOf(referenceStudent.displayName):sibling?surnameOf(sibling[1].displayName):null;
+ let surname=familySurname??chooseSurname(rng),familyRole=null,primaryContact=false;
+ if(person?.kind==='caregiver'&&linked){
+  // Household roles come from the whole linked caregiver group, not name spelling.
+  // A sole contact is usually the mother; two contacts are father and mother;
+  // three may include a grandparent/other guardian. Contact priority is separate.
+  const links=[...new Set(w.careLinks.filter(l=>l.studentId===linked).map(l=>l.caregiverId))];
+  const familySeed=referenceStudent.appearance.variant;
+  const maternal=familySeed%16===0;
+  const position=links.indexOf(id);
+  const soloRole=familySeed%20<15?'mother':familySeed%20<19?'father':'guardian';
+  const role=links.length===1?soloRole:position===0?'father':position===1?'mother':'guardian';
+  familyRole=role;
+  const preference=Math.floor(familySeed/16)%100;
+  const contactIndex=links.length===1?0:preference<80?1:preference<95?0:links.length>2?2:1;
+  primaryContact=position===contactIndex;
+  if(role==='father')surname=maternal?chooseSurname(rng):familySurname;
+  else if(role==='mother')surname=maternal?familySurname:chooseSurname(rng);
+  else surname=chooseSurname(rng);
  }
+ // Prefer distinct *given names* across all known school people, not only
+ // within one gender, family, or currently enrolled class. This prevents a
+ // parent and a student (or two parents) from sharing the same given name.
+ const used=new Set(Object.values(w.registry.profiles)
+  .map(p=>p.displayName.slice(surnameOf(p.displayName).length)));
+ const given=chooseGivenName(rng,gender??(familyRole==='father'?'male':familyRole==='mother'?'female':'neutral'),used);
+ w.registry.profiles[id]={displayName:surname+given,appearance:{variant},
+  ...(student?{gender}:{}),...(familyRole?{familyRole,primaryContact}:{})};
 }
 function register(w,personId,classId,at,reason){
  const r=w.registry,c=r.classes[classId];need(c,'Unknown class');
@@ -40,7 +76,8 @@ export function initializeRegistry(w,{academicYear,date:at}){
  const choice=restoreRandom(w.random.structure);r.homeIndex=choice.integer(1,10);w.random.structure=choice.snapshot();
  classesAt(w,academicYear);r.cohorts.push({id:schoolCohortId(w.school.id,academicYear),startYear:academicYear,classId:w.classroom.id,initialStudentIds:[...w.classroom.studentIds]});
  const rng=restoreRandom(w.random.structure);
- for(const id of Object.keys(w.people))profile(w,id,rng);
+ const openingGender=new Map(w.classroom.studentIds.map((id,index)=>[id,index<20?'male':'female']));
+ for(const id of Object.keys(w.people))profile(w,id,rng,openingGender.get(id)??null);
  for(const id of w.classroom.studentIds)register(w,id,w.classroom.id,at,'initial');
  r.assignments.push({id:'school-assignment:initial',personId:w.player.current.playerId,roleId:9,classId:w.classroom.id,from:at,until:null});
  w.random.structure=rng.snapshot();
@@ -58,7 +95,8 @@ function newStudent(w,classId,at,source){
  const student=withFamilyContext(createPerson(root,'student',source==='initial'?[11]:[11,17],people),family),care=withFamilyContext(createPerson(`${root}:guardian`,'caregiver',[19],people),family);
  need(!own(w.people,root)&&!own(w.people,care.id)&&!own(w.families,family.id),'Natural person identity collision');
  w.families[family.id]=family;w.people[root]=student;w.people[care.id]=care;w.careLinks.push({studentId:root,caregiverId:care.id});
- profile(w,root,structure);profile(w,care.id,structure);
+ const initialIndex=source==='initial'?r.enrollments.filter(e=>e.classId===classId&&e.reason==='initial').length:null;
+ profile(w,root,structure,initialIndex===null?null:initialIndex<20?'male':'female');profile(w,care.id,structure);
  w.random.people=people.snapshot();w.random.environment=environment.snapshot();w.random.structure=structure.snapshot();register(w,root,classId,at,source);return root;
 }
 export function enrollmentEligibility(w,{personId=null,classId,action}){
@@ -208,14 +246,25 @@ export function validateRegistry(w){
  }
  const home=r.enrollments.filter(e=>e.classId===r.homeClassId&&e.until===null).map(e=>e.personId);need(JSON.stringify(home)===JSON.stringify(w.classroom.studentIds)&&home.length<=42,'Current homeroom differs from affiliations');
  const originalStudents=new Set();unique(list(r.cohorts).map(c=>c.id));need(r.cohorts.length>=1&&r.cohorts.length<=10,'Career supports ten generated homeroom cohorts');for(const [index,c] of r.cohorts.entries()){assertShape(c,['id','startYear','classId','initialStudentIds']);need(c.startYear===r.startYear+index*3&&r.classes[c.classId]?.cohortStart===c.startYear&&r.classes[c.classId]?.cohortId===c.id&&c.initialStudentIds.length===40,'Invalid initial cohort');unique(c.initialStudentIds);for(const id of c.initialStudentIds){need(!originalStudents.has(id),'Initial natural person recycled into another generated cohort');originalStudents.add(id);need(r.enrollments.some(e=>e.personId===id&&e.classId===c.classId&&e.reason==='initial'),'Missing original cohort enrollment');}}
- need(r.cohorts.at(-1).startYear===r.cohortStart,'Current cohort differs from generated history');
+ // A newly generated class has a fixed balanced opening. Legacy imported
+  // classes lack explicit genders and must remain valid without migration.
+  for(const c of r.cohorts){
+   const profiles=c.initialStudentIds.map(id=>r.profiles[id]);
+   if(profiles.every(p=>p&&Object.hasOwn(p,'gender'))){
+    need(profiles.filter(p=>p.gender==='male').length===20&&profiles.filter(p=>p.gender==='female').length===20,
+      'Generated cohort must open with 20 male and 20 female students');
+   }
+  }
+  need(r.cohorts.at(-1).startYear===r.cohortStart,'Current cohort differs from generated history');
  unique(list(r.assignments).map(a=>a.id));for(const a of r.assignments){assertShape(a,['id','personId','roleId','classId','from','until']);identifier(a.id);ref(w,a.personId);validateRoles([a.roleId]);need(a.classId===null||own(r.classes,a.classId),'Unknown historical teaching class');date(a.from);if(a.until!==null){date(a.until);need(a.until>=a.from,'Assignment reversed');}}
  if(own(r,'responsibilities')){
   unique(list(r.responsibilities).map(a=>a.id));need(r.responsibilities.length<=1&&w.background,'Bounded background responsibility required');
   for(const a of r.responsibilities){assertShape(a,['id','personId','appointedBy','title','scope','subject','sourceId','from','until','authority','responsibilities']);ref(w,a.personId);ref(w,a.appointedBy);date(a.from);need(r.assignments.some(issuer=>issuer.personId===a.appointedBy&&issuer.roleId===1&&issuer.from<=a.from&&(issuer.until===null||issuer.until>=a.from)),'Initial responsibility requires a school-level appointing authority');need(a.personId===w.player.current.playerId&&a.scope===w.school.id&&a.from===r.assignments[0].from&&a.until===null&&a.authority==='coordination-only','Invalid initial school responsibility');}
  }
  unique(list(r.transfers).map(t=>t.id));for(const t of r.transfers){assertShape(t,['type','id','classId','personId','dueDate','source','status','createdAt','completedAt']);need(t.type==='school-transfer-plan'&&own(r.classes,t.classId),'Invalid transfer plan');identifier(t.id);identifier(t.source);date(t.createdAt);date(t.dueDate);need(t.dueDate>t.createdAt,'Transfer must be arranged in advance');need(['scheduled','completed'].includes(t.status),'Invalid transfer status');if(t.personId!==null)need(w.people[t.personId]?.kind==='student','Unknown transfer student');if(t.status==='completed'){date(t.completedAt);need(t.completedAt>=t.dueDate&&r.enrollments.some(e=>e.personId===t.personId&&e.classId===t.classId&&e.from===t.completedAt),'Transfer result missing');}else need(t.completedAt===null,'Pending transfer already completed');}
- for(const [id,p] of Object.entries(r.profiles)){ref(w,id);assertShape(p,['displayName','appearance']);identifier(p.displayName);assertShape(p.appearance,['variant']);need(Number.isInteger(p.appearance.variant)&&p.appearance.variant>=0&&p.appearance.variant<=65535,'Invalid durable appearance');}
+ for(const [id,p] of Object.entries(r.profiles)){ref(w,id);assertShape(p,['displayName','appearance',...(Object.hasOwn(p,'gender')?['gender']:[]),...(Object.hasOwn(p,'familyRole')?['familyRole','primaryContact']:[])]);identifier(p.displayName);
+   if(Object.hasOwn(p,'gender'))need(w.people[id]?.kind==='student'&&['male','female'].includes(p.gender),'Invalid durable student gender');
+   if(Object.hasOwn(p,'familyRole'))need(w.people[id]?.kind==='caregiver'&&['father','mother','guardian'].includes(p.familyRole)&&typeof p.primaryContact==='boolean','Invalid caregiver role/contact');assertShape(p.appearance,['variant']);need(Number.isInteger(p.appearance.variant)&&p.appearance.variant>=0&&p.appearance.variant<=65535,'Invalid durable appearance');}
  need(r.classes[r.homeClassId].index===r.homeIndex,'Random homeroom selection mismatch');
  need(Object.keys(r.profiles).length===Object.keys(w.people).length,'Missing persistent profile');
  return r;

@@ -1,4 +1,5 @@
 import { retainMemorial } from './memorial.js';
+import {generatedGivenNames} from '../runtime/opening-name-memory.js';
 import { careerResult } from '../runtime/career.js';
 import { authorizeRetry } from '../runtime/homeroom.js';
 /** Application boundary: serialize prepare → disk CAS → memory publication per session.
@@ -48,6 +49,9 @@ export async function createStoredSession(storage,slot,{afterPersist}={}) {
       return publish(fresh,expectedToken);
     }),
     snapshot(){ready();return copyStored(current);},
+    // Tiny name-only projection prevents cloning the entire three-year save
+    // merely to detect newly generated people for the independent LRU ledger.
+    savedGivenNames(){ready();return generatedGivenNames(current.payload?.world);},
     recover:()=>serial(async()=>{current=await storage.read(slot);recoveryRequired=false;await archive();return copyStored(current);}),
     initialize:(world)=>serial(async()=>{ready();ensure(current.payload===null,'OVERWRITE','Slot occupied; use reviewed import');return publish(createSave(world,world),null);}),
     execute:(request,{captureOpening=false,expectedToken}={})=>serial(async()=>{

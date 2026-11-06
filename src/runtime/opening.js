@@ -1,4 +1,5 @@
 /** Build a detached, reproducible formal three-year opening. Persistence belongs to storage/session. */
+import {makeTeacherProfile,TEACHER_PROFILE_KEY} from './teacher-profile.js';
 import { confirmCandidate, restoreCreation } from '../player/creation.js';
 import { createWorld } from '../world/world.js';
 import { startEvolution } from '../evolution/time.js';
@@ -8,7 +9,7 @@ import { createId, restoreFoundationEnvelope } from '../contracts/foundation.js'
 import { newThreeYearStart } from '../calendar/calendar.js';
 import { startThreeYearSchoolCareer } from '../runtime/transactions.js';
 
-export function createCareerOpening({candidate, seed, taipeiDate, difficulty, subject, careerKey}) {
+export function createCareerOpening({candidate, seed, taipeiDate, difficulty, subject, careerKey, teacherName=null}) {
   const draft=restoreCreation(candidate);
   if(draft.phase!=='candidate') throw new RangeError('A candidate awaiting confirmation is required');
   if(typeof careerKey!=='string'||!careerKey) throw new TypeError('A unique career key is required');
@@ -22,7 +23,7 @@ export function createCareerOpening({candidate, seed, taipeiDate, difficulty, su
     versions:{world:1,save:1,rules:'n1-n8-v1',content:'opening-v1',assets:'none'},
     identity:{careerId:id('career','1'),attemptId,playerId:player.current.playerId,schoolId:player.current.schoolId},
     position:{date,slotId:'early',schoolYearId,openingId,serviceYear:1,statisticsPeriodId:'opening:1'},
-    numeric,random:{events:createRandom(seed).snapshot()},enrollments:[],events:[],extensions:{},
+    numeric,random:{events:createRandom(seed).snapshot()},enrollments:[],events:[],extensions:teacherName?{[TEACHER_PROFILE_KEY]:makeTeacherProfile(teacherName.surname,teacherName.givenName)}:{},
   });
   return startThreeYearSchoolCareer(foundation,{taipeiDate,difficulty,subject,seed});
 }

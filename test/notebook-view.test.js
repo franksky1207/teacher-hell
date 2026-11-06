@@ -76,3 +76,24 @@ test('14-B: escaping names, malicious identifiers and disclosed strings',async()
  assert.doesNotMatch(html,/<script>|<img|onclick="bad"/);
  assert.match(html,/&lt;script&gt;/);assert.match(html,/&lt;img/);
 });
+
+test('relationship nodes link only disclosed NPCs, not the teacher, and escape identifiers',async()=>{
+ const {renderNotebookPeople}=await import('../web/notebook-people.js');
+ const personId='guardian:" onclick="bad';
+ const data={
+  className:'智班',
+  teacher:{id:'teacher',name:'馮老師'},
+  people:[
+   {id:'student',name:'林同學',kind:'student',relation:'導師班學生',seatNo:1},
+   {id:personId,name:'林家長',kind:'caregiver',relation:'學生母親',relatedTo:['林同學']}
+  ],
+  facts:[],claims:[],
+  relations:[{a:'teacher',b:'student',label:'導師班'},{a:'student',b:personId,label:'家長與學生'}]
+ };
+ const html=renderNotebookPeople(data,'student');
+ assert.match(html,/data-action="notebook-person:student"/);
+ assert.match(html,/data-action="notebook-person:guardian:&quot; onclick=&quot;bad"/);
+ assert.doesNotMatch(html,/data-action="notebook-person:teacher"/);
+ assert.match(html,/<span class="notebook-relation-node">馮老師<\/span>/);
+ assert.doesNotMatch(html,/data-action="notebook-person:guardian:" onclick="bad"/);
+});

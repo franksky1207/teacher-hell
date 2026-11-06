@@ -63,6 +63,20 @@ try {
   const before=await evaluate('document.querySelector(".bars").innerText');await click('reroll');await wait('[data-action="reroll"]');
   const after=await evaluate('document.querySelector(".bars").innerText');if(before===after)throw Error('Reroll did not change abilities');
   await click('subjects');await click('subject:英文');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes('任教第 1 年');await includes('暑輔第 1 週');
+  const firstNames=await evaluate(`(async()=>{
+   const {readNameMemory}=await import('./src/storage/name-memory.js');
+   const {surnameOf}=await import('./src/world/name-catalog.js');
+   const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js');
+   const st=createIndexedDBStorage({factory:indexedDB,namespace:'development'});
+   const w=(await st.read(1)).payload.world;
+   await st.close();
+   const full=Object.values(w.numeric.evolution.world.registry.profiles).map(p=>p.displayName);
+   const names=full.map(n=>n.slice(surnameOf(n).length));
+   const history=await readNameMemory({factory:indexedDB,namespace:'development'});
+   if(!names.every(n=>history.includes(n)))throw Error('Committed name history missing first career');
+   if(new Set(names).size!==names.length)throw Error('Name duplication within opening');
+   return names;
+  })()`);
   if(!await evaluate(`Array.from(document.querySelectorAll('.states button')).every(b=>/ [0-9]+$/.test(b.textContent))`))throw Error('States must display integers');
   await click('opening-next');await click('opening-next');
   // Phase 14-A: check actual modal navigation without mutating the saved world.
@@ -161,9 +175,20 @@ try {
   const bad=join(temporary,'invalid.txt');await writeFile(bad,'{broken');await choose('import:2',bad);await new Promise(r=>setTimeout(r,300));if(await digest(2)!==sourceDigest)throw Error('Invalid import changed target');if(!await evaluate(`window.lastAlert?.includes('匯入失敗')`))throw Error('Invalid file error not shown');
   const isolation=await evaluate(`(async()=>{const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js');const s=createIndexedDBStorage({factory:indexedDB,namespace:'player'});const x=await s.read(1);await s.close();return x.payload===null;})()`);if(!isolation)throw Error('Player namespace not isolated');
   await click('delete:2');for(let i=0;i<200&&!await evaluate(`!document.querySelector('[data-action="load:2"]')`);i++)await new Promise(r=>setTimeout(r,100));
+  const rememberedAfterDeletion=await evaluate(`(async()=>{const {readNameMemory}=await import('./src/storage/name-memory.js');return (await readNameMemory({factory:indexedDB,namespace:'development'})).length;})()`);
+  if(rememberedAfterDeletion<firstNames.length)throw Error('Deleting a slot cleared shared name memory');
 
   for(const [number,mode,year] of [[2,'easy','20'],[3,'normal','10']]){
-    await click(`new:${number}`);await click(`difficulty:${mode}`);await enterTeacherName();await click('teacher');await wait('[data-action="subjects"]');await click('subjects');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes(`任教第 ${year} 年`);await click('menu');await click('slots');await wait('[data-action="new:1"]');
+    await click(`new:${number}`);await click(`difficulty:${mode}`);await enterTeacherName();await click('teacher');await wait('[data-action="subjects"]');await click('subjects');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes(`任教第 ${year} 年`);
+    const laterNames=await evaluate(`(async()=>{
+      const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js');
+      const {surnameOf}=await import('./src/world/name-catalog.js');
+      const st=createIndexedDBStorage({factory:indexedDB,namespace:'development'});
+      const w=(await st.read(${number})).payload.world;await st.close();
+      return Object.values(w.numeric.evolution.world.registry.profiles).map(p=>p.displayName.slice(surnameOf(p.displayName).length));
+    })()`);
+    if(laterNames.some(n=>firstNames.includes(n)))throw Error('New career reused names from deleted or other slots');
+    await click('menu');await click('slots');await wait('[data-action="new:1"]');
   }
   await includes('任教第 1 年');await includes('任教第 20 年');await includes('任教第 10 年');
   await click('new:2');await click('difficulty:hard');await enterTeacherName();await click('teacher');await wait('[data-action="subjects"]');await click('subjects');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes('任教第 1 年');

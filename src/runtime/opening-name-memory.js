@@ -38,3 +38,9 @@ export function preferUnusedOpeningNames(opening,recentNames){
  }
  return {people:Object.keys(profiles).length,replaced:candidates.length,historyCount:recentNames.length};
 }
+
+/** Lightweight name projection for committed new NPCs, including compound surnames. */
+export function generatedGivenNames(world){
+ const profiles=world?.numeric?.evolution?.world?.registry?.profiles??{};
+ return Object.values(profiles).map(p=>p.displayName.slice(surnameOf(p.displayName).length));
+}

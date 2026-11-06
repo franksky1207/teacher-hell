@@ -6,7 +6,7 @@ const NEUTRAL=Object.freeze(['宇涵','文安','思恩','家宇','承恩','宇�
 export const GIVEN_NAME_CATALOG=Object.freeze({
  male:Object.freeze([...new Set([...MALE_FIRST.flatMap(a=>MALE_LAST.filter(b=>a!==b).map(b=>a+b)),...NEUTRAL])]),
  female:Object.freeze([...new Set([...FEMALE_FIRST.flatMap(a=>FEMALE_LAST.filter(b=>a!==b).map(b=>a+b)),...NEUTRAL])]),
- neutral:NEUTRAL
+ neutral:Object.freeze([...new Set([...NEUTRAL,...MALE_FIRST.flatMap(a=>MALE_LAST.filter(b=>a!==b).map(b=>a+b)),...FEMALE_FIRST.flatMap(a=>FEMALE_LAST.filter(b=>a!==b).map(b=>a+b))])])
 });
 export const NAME_CATALOG_COUNTS=Object.freeze({surnames:new Set(Object.values(SURNAME_GROUPS).flat()).size,male:GIVEN_NAME_CATALOG.male.length,female:GIVEN_NAME_CATALOG.female.length});
 export function chooseSurname(rng){

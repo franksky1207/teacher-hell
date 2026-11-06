@@ -14,7 +14,7 @@ export function projectNotebookPeople(world){
   for(const carer of student.caregivers??[]){
    const existing=map.get(carer.id);
    if(existing){if(!existing.relatedTo.includes(student.name))existing.relatedTo.push(student.name);}
-   else map.set(carer.id,{id:carer.id,name:carer.name,kind:'caregiver',relation:'學生家長',relatedTo:[student.name]});
+   else map.set(carer.id,{id:carer.id,name:carer.name,kind:'caregiver',relation:carer.role==='father'?'學生父親':carer.role==='mother'?'學生母親':'學生家長',relatedTo:[student.name]});
   }
  }
  // Extra people enter the notebook only after a teacher-visible disclosure.

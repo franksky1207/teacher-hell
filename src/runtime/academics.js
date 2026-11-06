@@ -3,7 +3,7 @@ import { SUBJECT_LOAD } from '../calendar/timetable.js';
 import { assertShape } from '../player/panel.js';
 import { restoreRandom } from '../numeric/random.js';
 import { canonicalData } from '../changes/settlement.js';
-import { semester,teachingTerm,latestPreparedSemester,calendarDay,gradeAt } from '../calendar/calendar.js';
+import { assessmentCalendar,semester,teachingTerm,latestPreparedSemester,calendarDay,gradeAt } from '../calendar/calendar.js';
 import { need,score,rulesFor,standard,graduation,creditIdentity,curriculum } from '../academics/rules.js';
 import { emptyAcademics,openTerm,assess,closeTerm,ranking,academicMark,createLearner } from '../academics/learning.js';
 const runtime=w=>w.extensions['teacher-hell/world'];
@@ -53,9 +53,10 @@ export function academicInput(w,op){
  if(['assess','close'].includes(action)){
   need(t,'open academic term first');input.activeIds=registry.enrollments.filter(e=>e.until===null&&t.rows.some(row=>row.id===e.personId&&row.enrollmentId===e.id)).map(e=>e.personId);
   if(action==='assess'){
-   need([0,1,2,3].includes(op.round),'round');const dates=op.round===0?meta.exams[2]:(op.round===2&&t.grade===2&&meta.grade2SecondExam?meta.grade2SecondExam:meta.exams[op.round-1]);
+   const policy=assessmentCalendar(termId,t.grade,r.plan.calendarVersion),dates=op.round===0?policy.ordinaryAssessmentDates:policy.exams.find(e=>e.round===op.round)?.dates;
+   need(dates,'assessment round unavailable in calendar policy');
    need(w.position.date===dates.at(-1)&&['p8','dinner','study1','study2','study3','private'].includes(w.position.slotId),'assessment must run after the last exam session on its actual final day');
-  }else need(w.position.date>=meta.end,'semester not ended');
+  }else {need(assessmentCalendar(termId,t.grade,r.plan.calendarVersion).closurePolicy==='standard','H2 senior closing policy pending');need(w.position.date>=meta.end,'semester not ended');}
  }
  if(['conduct','supplement-plan','recognize','attendance','influence','standard','direction','participation','size'].includes(action)){
   const f=r.facts.find(f=>f.id===op.basisFactId);need(f&&(op.personId?f.subjectIds.includes(op.personId):f.subjectIds.includes(w.identity.playerId)),'objective causal source required');
@@ -71,7 +72,7 @@ export function academicInput(w,op){
  }
  if(action==='support')input.activeIds=registry.enrollments.filter(e=>e.until===null&&state.students[e.personId]).map(e=>e.personId);
  if(op.personId&&academicVersion(w)===2&&['makeup','retake-plan','retake','supplement-plan','supplement'].includes(action))need(registry.enrollments.some(e=>e.personId===op.personId&&e.until===null),'remedial study requires current enrollment');
- if(action==='support')need(w.position.slotId===calendarDay(w.position.date,gradeAt(w.position.date,r.plan.startYear)).slots.at(-1).id,'academic support settles at the actual day end');
+ if(action==='support')need(w.position.slotId===calendarDay(w.position.date,gradeAt(w.position.date,r.plan.startYear),r.plan.calendarVersion).slots.at(-1).id,'academic support settles at the actual day end');
  if(['support','supplement-plan','supplement','conduct'].includes(action))need(academicVersion(w)===2,'v2 academic policy required');
  if(['makeup','retake-plan','retake','annual-credit'].includes(action))need(t?.closed&&w.position.date>=meta.end,'closed marks required');
  if(action==='makeup'&&academicVersion(w)===2)need(w.position.date>=addDays(meta.end,2),'makeup requires its scheduled later date');
@@ -162,6 +163,8 @@ export function validateAcademicHistory(w){
  for(const h of r.history.filter(h=>h.type==='retry'&&h.data.academicPolicy!==undefined)){const owner=r.commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId);need([1,2].includes(h.data.academicPolicy)&&h.data.academicPolicy===academicVersion(w)&&JSON.parse(owner.request).academicPolicy===h.data.academicPolicy,'retry academic policy differs from its receipt');}
  for(const h of r.history)if(h.type==='academic'){
   const d=h.data;assertShape(d,['version','operation','input','result','randomBefore','randomAfter']);need(Object.entries(d.operation).filter(([k])=>k!=='type').every(([k,v])=>equal(d.input[k],v)),'academic operation/input differs');need([1,2].includes(d.version)&&d.version===academicVersion(w)&&d.input.action===d.operation.action&&d.input.date===h.at.date,'academic version/action/date');
+  if(d.input.action==='assess'){const t=s.terms[d.input.termId],policy=assessmentCalendar(d.input.termId,t?.grade,r.plan.calendarVersion),dates=d.input.round===0?policy.ordinaryAssessmentDates:policy.exams.find(e=>e.round===d.input.round)?.dates;need(dates&&h.at.date===dates.at(-1),'academic exam calendar mismatch');}
+  if(d.input.action==='close')need(assessmentCalendar(d.input.termId,s.terms[d.input.termId]?.grade,r.plan.calendarVersion).closurePolicy==='standard','H2 senior closing policy pending');
   const commit=r.commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId),request=JSON.parse(commit.request);need(request.operations.some(op=>equal(op,d.operation))||request.operations.some(op=>['story','finish-slot','school-action','campus','school','advance-time'].includes(op.type)),'academic journal ownership');
   if(random){const previous=r.history.slice(0,h.order-1).findLast(x=>x.type==='academic');if(previous?.attemptId===h.attemptId)need(equal(random,d.randomBefore),'academic RNG chain');}const rng=restoreRandom(d.randomBefore),result=applyAcademic(s,d.input,rng,d.version);need(equal(result,d.result)&&equal(rng.snapshot(),d.randomAfter),'academic deterministic replay mismatch');random=d.randomAfter;
   if(d.input.basisFactId){const f=r.facts.find(f=>f.id===d.input.basisFactId),i=d.input;need(f&&f.order<h.order&&f.order===i.sourceOrder&&f.subjectIds.includes(i.personId??w.identity.playerId),'academic causal source');

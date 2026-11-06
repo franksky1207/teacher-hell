@@ -8,7 +8,7 @@ import { compileInstitution,tickOperation } from './procedures.js';
 import { compileAcademic,academicState,withAcademicProjection,academicSupportDue,academicVersion } from './academics.js';
 import { compileCampus,schoolEnabled,schoolActions,schoolEventOccupied } from './campus.js';
 import { formalSlot,calendarMilestones,teacherTenureAt } from './schedule.js';
-import { planMode,THREE_YEAR,newThreeYearStart,semester,teachingTerm,yearData,nextPosition } from '../calendar/calendar.js';
+import { assessmentCalendar,planMode,THREE_YEAR,newThreeYearStart,semester,teachingTerm,yearData,nextPosition } from '../calendar/calendar.js';
 import { createRelationship, createReputation, directedKey, contactKey } from '../world/relationships.js';
 import { compileNpcUpdate, checkNpcGroup, compileNpcClarification } from './autonomy.js';
 import { compileStory, guardStoryOperation, storyContent,readStory } from './story.js';
@@ -78,7 +78,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     ensure(storyInternal&&op.eventId===storyInternal,'DUTY_SOURCE','Duty results require a confirmed registered story');history(world,command,'homeroom-result',op.eventId,findEvent(world,op.eventId).stageId,[op.basisFactId],op.data);
   } else if(op.type==='transition-school-year'){
     assertShape(op,['type']);ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player continues a year');
-    syncNumeric(world,numericSession);const n=numericSession.world(),target=n.registry.academicYear+1,y=yearData(target),next=nextPosition(world.position,r.plan.startYear,planMode(r.plan));
+    syncNumeric(world,numericSession);const n=numericSession.world(),target=n.registry.academicYear+1,y=yearData(target),next=nextPosition(world.position,r.plan.startYear,planMode(r.plan),r.plan.calendarVersion);
     ensure(world.extensions[ANNUAL_KEY]&&annualResult(world),'ANNUAL_PENDING','A verified annual success is required');
     ensure(next.date===y.summerCamp&&next.slotId==='early'&&r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor),'TIME','Transition immediately before the next summer camp');
     if(n.registry.enrollments.some(e=>e.until===null&&target-n.registry.classes[e.classId].cohortStart>2)){
@@ -297,11 +297,11 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     if(schoolEnabled(world)){
       const term=teachingTerm(world.position.date);
       if(term){const savedTerm=academicState(world).terms[term.id];if(!savedTerm)numericSession=execute(world,command,{type:'academic',action:'open',termId:term.id},numericSession,receipt,false,false,true);}
-      if(term&&!term.camp){const meta=semester(term.id),grade=formalSlot(world).day.grade,exams=grade===2&&meta.grade2SecondExam?[meta.exams[0],meta.grade2SecondExam,meta.exams[2]]:meta.exams;
-        for(const round of [1,2,3,0])if(['p8','dinner','study1','study2','study3','private'].includes(world.position.slotId)&&world.position.date===exams[round===0?2:round-1].at(-1)&&!r.history.some(h=>h.type==='academic'&&h.data.input.termId===term.id&&h.data.input.action==='assess'&&h.data.input.round===round))numericSession=execute(world,command,{type:'academic',action:'assess',termId:term.id,round},numericSession,receipt,false,false,true);
+      if(term&&!term.camp){const policy=assessmentCalendar(term.id,formalSlot(world).day.grade,r.plan.calendarVersion),rounds=[...policy.exams,...(policy.ordinaryAssessmentDates?[{round:0,dates:policy.ordinaryAssessmentDates}]:[])];
+        for(const {round,dates} of rounds)if(['p8','dinner','study1','study2','study3','private'].includes(world.position.slotId)&&world.position.date===dates.at(-1)&&!r.history.some(h=>h.type==='academic'&&h.data.input.termId===term.id&&h.data.input.action==='assess'&&h.data.input.round===round))numericSession=execute(world,command,{type:'academic',action:'assess',termId:term.id,round},numericSession,receipt,false,false,true);
       }
     }
-    if(schoolEnabled(world)){const term=teachingTerm(world.position.date),day=formalSlot(world).day;if(term&&!term.camp&&world.position.date===semester(term.id).end&&day.slots.at(-1).id===world.position.slotId&&!academicState(world).terms[term.id]?.closed)numericSession=execute(world,command,{type:'academic',action:'close',termId:term.id},numericSession,receipt,false,false,true);}
+    if(schoolEnabled(world)){const term=teachingTerm(world.position.date),day=formalSlot(world).day;if(term&&!term.camp&&assessmentCalendar(term.id,day.grade,r.plan.calendarVersion).closurePolicy==='standard'&&world.position.date===semester(term.id).end&&day.slots.at(-1).id===world.position.slotId&&!academicState(world).terms[term.id]?.closed)numericSession=execute(world,command,{type:'academic',action:'close',termId:term.id},numericSession,receipt,false,false,true);}
     if(schoolEnabled(world)&&formalSlot(world).day.slots.at(-1).id===world.position.slotId&&academicSupportDue(academicState(world),world.position.date,numericSession.world().registry.enrollments.filter(e=>e.until===null).map(e=>e.personId)))numericSession=execute(world,command,{type:'academic',action:'support'},numericSession,receipt,false,false,true);
     numericSession=execute(world,command,{type:'institution-tick'},numericSession,receipt);
     numericSession=execute(world,command,{type:'npc-update'},numericSession,receipt);
@@ -315,7 +315,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     if(world.extensions[ANNUAL_KEY]&&calendarMilestones(world).annualSettlementReady)ensure(annualResult(world),'ANNUAL_PENDING','Settle the academic year before continuing');
     assertShape(op,['type','planId','steps']);ensure(op.planId===r.plan.id&&Number.isInteger(op.steps)&&op.steps>0,'TIME','Invalid time progression');
     if(isFormal(r.plan)){
-      const next=nextPosition(world.position,r.plan.startYear,planMode(r.plan));if(world.extensions[ANNUAL_KEY]&&next.serviceYear>world.position.serviceYear){ensure(annualResult(world)&&numericSession.world().registry.academicYear===r.plan.startYear+next.serviceYear-1,'ANNUAL_PENDING','Complete annual affiliations before autumn opening');const single=command.operations.length===1&&['advance-time','school-action'].includes(command.operations[0].type),vacationEnd=command.operations.length===2&&command.operations[0].type==='finish-slot'&&command.operations[1].type==='advance-time';ensure(single||vacationEnd,'SNAPSHOT','Autumn entry must finish its atomic command before further work');}
+      const next=nextPosition(world.position,r.plan.startYear,planMode(r.plan),r.plan.calendarVersion);if(world.extensions[ANNUAL_KEY]&&next.serviceYear>world.position.serviceYear){ensure(annualResult(world)&&numericSession.world().registry.academicYear===r.plan.startYear+next.serviceYear-1,'ANNUAL_PENDING','Complete annual affiliations before autumn opening');const single=command.operations.length===1&&['advance-time','school-action'].includes(command.operations[0].type),vacationEnd=command.operations.length===2&&command.operations[0].type==='finish-slot'&&command.operations[1].type==='advance-time';ensure(single||vacationEnd,'SNAPSHOT','Autumn entry must finish its atomic command before further work');}
       naturalAt(world,numericSession,world.position);
       if(r.plan.vacation&&world.position.date===r.plan.vacation.endDate){const task=r.plan.vacation,panel=deriveWorldPanel(numericSession.world()),after=Object.fromEntries(STATE_NAMES.map(k=>[k,panel[k]]));history(world,command,'vacation-summary',null,null,[],{...task,after,delta:Object.fromEntries(STATE_NAMES.map(k=>[k,after[k]-task.before[k]]))});r.plan.vacation=null;}
       advanceFormalSlot(world,op);naturalAt(world,numericSession,world.position);

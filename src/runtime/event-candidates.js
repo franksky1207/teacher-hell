@@ -116,7 +116,7 @@ export function candidateConflict(c,prior,date){
 /** Pure eligibility; neither numeric accumulation nor RNG is changed. */
 export function buildEventCandidates(world,definitions,{engineering=false}={}){
  validateEventDefinitions(definitions);const r=runtime(world);need(isFormal(r.plan),'Formal calendar required');
- const day=calendarDay(world.position.date,gradeAt(world.position.date,r.plan.startYear)),index=eventIndex(world),candidates=[],rejected=[];
+ const day=calendarDay(world.position.date,gradeAt(world.position.date,r.plan.startYear),r.plan.calendarVersion),index=eventIndex(world),candidates=[],rejected=[];
  for(const d of definitions){
   need(!(index.byDefinition.get(d.id)??[]).some(s=>s.topicId!==d.topicId||s.type!==d.type),'Stable subtopic identity cannot change topic or type');
   if(d.content.status==='ready'||d.content.resourceId.startsWith('engineering:'))validateStoryReference(d);

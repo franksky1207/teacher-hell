@@ -145,8 +145,8 @@ test('storage T1: all three slots retain mode, difficulty, locked year and tenur
   const stale=await createStoredSession(db,slot);await session.execute(sample(w,'three-year-'+difficulty));
   await assert.rejects(stale.execute(sample(w,'stale-three-year-'+difficulty)),{code:'STALE'});
   const saved=session.snapshot(),backup=await session.export();assert.equal(restoreSave(backup).world.position.serviceYear,1);
-  // A future real-world date selects a different new opening; it cannot change this save's 2062 start.
-  assert.equal(runtimeOf(restoreSave(backup).world).plan.startYear,2062);
+  // Even a future creation date starts in 2026; later real-world dates cannot change the locked save.
+  assert.equal(runtimeOf(restoreSave(backup).world).plan.startYear,2026);
   for(const instant of ['2062-12-31T15:59:59Z','2062-12-31T16:00:00Z','2063-07-01T00:00:00Z']){
    t.mock.method(Date,'now',()=>Date.parse(instant));assert.deepEqual(restoreSave(backup),saved.payload);t.mock.restoreAll();
   }

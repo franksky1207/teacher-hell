@@ -1,3 +1,4 @@
+import { mockPhaseSummary,gradeAt } from '../calendar/calendar.js';
 import { permitsStoryFollowup } from './story-content.js';
 import { directedKey } from '../world/relationships.js';
 /** Slot actions compile to existing objective facts/results and N6; no event draws. */
@@ -29,6 +30,7 @@ export function compileCampus(w,activity){
  need(schoolActions(w).includes(activity)&&activity!=='todo','choose a legal free action; real todos use their story continuation');
  // Teaching/activity still occurs when a formal event occupies this slot; no free benefit.
  if(pendingSchoolEvent(w))need(activity==='automatic','formal event has priority');
+ const mock=mockPhaseSummary(w.position.date,day.grade,w.position.slotId,state.plan.calendarVersion);
  const n=w.numeric.evolution.world,teacher=n.player.current.person,cohesion=n.classroom.values['6-3'];
  const inputs={communication:teacher['3-1'],fatigue:teacher['2-3'],cohesion};
  const favorable=Math.max(.2,Math.min(.85,.5+inputs.communication/500+inputs.cohesion/600-inputs.fatigue/800));
@@ -38,7 +40,7 @@ export function compileCampus(w,activity){
  const protectedActivity=slot.activityIds.length>0,students=n.classroom.studentIds,participant=(protectedActivity&&!day.activities.every(a=>a.kind==='parents')||activity==='class-talk')?students[state.plan.cursor%students.length]:null;
  if(participant)subjects.push(participant);
  const event={schemaVersion:1,id:eventId,definitionId:'procedure:campus',contentVersion:'school-v1',type:'direct',participantIds:subjects,stageId,facts:[],knowledge:[],results:[],choice:null};
- operations.push({type:'open-event',event},{type:'fact',id:factId,eventId,stageId,subjectIds:subjects,witnessIds:subjects,description:protectedActivity?'校園活動依當日進展留下正常成果。':slot.teachingAutomatic?'依固定課表完成授課。':'依當前合法時段完成日常活動。',data:{type:'campus-outcome',activity,activityIds:slot.activityIds,lesson:slot.lesson},categoryCodes:[],causeIds:[]});
+ operations.push({type:'open-event',event},{type:'fact',id:factId,eventId,stageId,subjectIds:subjects,witnessIds:subjects,description:mock?`${mock.family==='gsat'?'學測':'分科'}模考${w.position.slotId==='morning'?'上午':'下午'}階段已完成；本次模考不計入校內學期成績。`:protectedActivity?'校園活動依當日進展留下正常成果。':slot.teachingAutomatic?'依固定課表完成授課。':'依當前合法時段完成日常活動。',data:{type:'campus-outcome',activity,activityIds:slot.activityIds,lesson:slot.lesson,...(mock?{mockSummary:mock}:{})},categoryCodes:[],causeIds:[]});
  let operation;
  if(['rest','private-life'].includes(activity)){
   const long=['vacation-day','festival-day'].includes(w.position.slotId),index=day.slots.findIndex(s=>s.id===w.position.slotId),startHour=long?0:w.position.slotId==='private'||w.position.slotId==='evening'?19:w.position.slotId==='morning'?8:w.position.slotId==='afternoon'?13:6+index*.6;
@@ -73,7 +75,7 @@ export function validateCampusHistory(w){
   if(canonicalData(rng.snapshot())!==canonicalData(d.randomAfter))rng.next();need(canonicalData(rng.snapshot())===canonicalData(d.randomAfter),'campus random witness');random=d.randomAfter;previousAttempt=h.attemptId;
   const commit=commits.get(JSON.stringify([h.attemptId,h.operationId]));need(JSON.parse(commit.request).operations.some(op=>['campus','school-action','finish-slot'].includes(op.type)),'campus transaction ownership');
   for(const op of d.operations){
-   if(op.type==='fact'){const f=facts.get(op.id);need(f&&f.description===op.description&&canonicalData(f.data)===canonicalData(op.data),'missing campus fact');}
+   if(op.type==='fact'){const f=facts.get(op.id);if(op.data.type==='campus-outcome'){const summary=mockPhaseSummary(h.at.date,gradeAt(h.at.date,state.plan.startYear),h.at.slotId,state.plan.calendarVersion);need(canonicalData(op.data.mockSummary??null)===canonicalData(summary),'mock summary differs from frozen calendar phase');}need(f&&f.description===op.description&&canonicalData(f.data)===canonicalData(op.data),'missing campus fact');}
    if(op.type==='result'){
     need((results.get(op.id)??[]).some(x=>x.effectIds.every(id=>effects.has(id))),'missing campus result');
     for(const effect of op.effects){const numeric=receipts.get(effect.id);need(numeric&&canonicalData(JSON.parse(numeric.request).operation)===canonicalData(effect.operation),'campus N6 receipt differs');}

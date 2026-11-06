@@ -123,14 +123,14 @@ test('calendar-integration T1: year two/three tenure derives from legal autumn o
  }
 });
 
-test('calendar-integration T1: later and last three-year starts preserve fixed timetable/slot checks',()=>{
+test('calendar-integration T1: creation dates keep the fixed 2026 opening and timetable/slot checks',()=>{
  for(const startYear of [2026,2040,2062]){
-  const w=t1World('normal',`${startYear}-11-05`),p=runtimeOf(w).plan;assert.equal(p.startYear,startYear);assert.equal(w.position.date,yearData(startYear).summerCamp);assert.equal(teacherTenure(w),10);
+  const w=t1World('normal',`${startYear}-11-05`),p=runtimeOf(w).plan;assert.equal(p.startYear,2026);assert.equal(w.position.date,yearData(2026).summerCamp);assert.equal(teacherTenure(w),10);
   assert.deepEqual(restoreSave(JSON.stringify(createSave(w,w))).world,w);
   assert.equal(prepareWorldOperation(w,advanceRequest(w,'late-'+startYear)).world.position.slotId,'p1');
-  for(const mutate of [p=>p.tables[0].lessons.pop(),p=>p.cursor++,p=>p.tables[0].semesterId=`${startYear}:spring`]){const bad=structuredClone(w);mutate(runtimeOf(bad).plan);assert.throws(()=>restoreWorldState(bad));}
+  for(const mutate of [p=>p.tables[0].lessons.pop(),p=>p.cursor++,p=>p.tables[0].semesterId='2026:spring']){const bad=structuredClone(w);mutate(runtimeOf(bad).plan);assert.throws(()=>restoreWorldState(bad));}
  }
- assert.throws(()=>t1World('easy','2063-11-05'));assert.throws(()=>t1World('unknown'));assert.throws(()=>t1World('toString'));
+ assert.equal(runtimeOf(t1World('easy','2063-11-05')).plan.startYear,2026);assert.throws(()=>t1World('unknown'));assert.throws(()=>t1World('toString'));
  const end=careerRange(2062,THREE_YEAR).end;assert.equal(positionFor(end,calendarDay(end,3).slots.at(-1).id,2062,THREE_YEAR).serviceYear,3);assert.throws(()=>positionFor(addDays(end,1),'vacation-day',2062,THREE_YEAR));
 });
 

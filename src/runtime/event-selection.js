@@ -28,7 +28,7 @@ export function selectWorldEvents(world,operation,command,receipt){
  else need(operation.engineering===true,'Formal draws must reference a registered catalogue');
  assertShape(op,['type','definitions','bindings','engineering']);need(typeof op.engineering==='boolean','Explicit engineering flag');
  // Lock the existing day budget/count before constructing or weighting candidates.
- const day=calendarDay(world.position.date,gradeAt(world.position.date,runtime(world).plan.startYear)),r=runtime(world),index=eventIndex(world);
+ const day=calendarDay(world.position.date,gradeAt(world.position.date,runtime(world).plan.startYear),runtime(world).plan.calendarVersion),r=runtime(world),index=eventIndex(world);
  need(!r.history.some(h=>h.type==='event-selection'&&h.at.date===day.date),'Day already decided; never reroll');
  need(Array.isArray(op.bindings)&&op.bindings.length===op.definitions.length&&new Set(op.bindings.map(b=>b.definitionId)).size===op.bindings.length,'One weight binding per definition');
  const defs=new Map(op.definitions.map(d=>[d.id,d])),bindings=new Map(op.bindings.map(b=>[b.definitionId,b]));
@@ -88,7 +88,7 @@ export function validateEventSelectionHistory(world){
    need(request.operations.some(o=>o.type==='register-event-catalogue'&&canonicalData(o)===canonicalData(op)),'Catalogue differs from registered command');
   }else if(h.type==='event-selection'){
    const d=h.data;assertShape(d,['version','catalogueId','poolSize','groupId','requested','selected','rejected','excluded','randomBefore','randomAfter','operationId']);
-   const day=calendarDay(h.at.date,gradeAt(h.at.date,r.plan.startYear)),groupId=day.segment?.id??`day:${day.date}`,limit=day.quota?.kind==='protected-day'?0:day.segment?.quota??(day.quota?.kind==='saturday'?2:day.quota?.max??0);
+   const day=calendarDay(h.at.date,gradeAt(h.at.date,r.plan.startYear),r.plan.calendarVersion),groupId=day.segment?.id??`day:${day.date}`,limit=day.quota?.kind==='protected-day'?0:day.segment?.quota??(day.quota?.kind==='saturday'?2:day.quota?.max??0);
    need(d.groupId===groupId&&d.requested<=limit,'Calendar count/group differs');
    need((quotas.get(groupId)??0)+d.selected.length<=limit,'Saved segment/day quota exceeded');quotas.set(groupId,(quotas.get(groupId)??0)+d.selected.length);
    need(Number.isInteger(d.poolSize)&&d.poolSize>=d.selected.length,'Invalid candidate pool size');
@@ -144,7 +144,7 @@ export function validateEventSelectionHistory(world){
 
 /** Batch 07 reads continuing identities; these are never new-event candidates/counts. */
 export function readEventContinuations(world){
- const plan=runtime(world).plan,day=calendarDay(world.position.date,gradeAt(world.position.date,plan.startYear));
+ const plan=runtime(world).plan,day=calendarDay(world.position.date,gradeAt(world.position.date,plan.startYear),plan.calendarVersion);
  if(day.slots.find(s=>s.id===world.position.slotId)?.protected)return [];
  return eventIndex(world).records.filter(s=>['active','waiting'].includes(s.status)).map(s=>{
   const e=world.events.find(e=>e.id===s.eventId);return {eventId:e.id,definitionId:e.definitionId,stageId:e.stageId,status:s.status,participantIds:[...e.participantIds]};

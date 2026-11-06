@@ -37,12 +37,26 @@ test('14-B: people tab renders only supplied public roster and no internal state
  const {renderNotebookPeople}=await import('../web/notebook-people.js');
  const data={className:'智班',people:[{id:'s1',name:'陳同學',kind:'student',relation:'導師班學生'},{id:'p1',name:'林家長',kind:'caregiver',relation:'學生家長',relatedTo:['陳同學']}],facts:[],claims:[]};
  const html=renderNotebookView({date:'2026-11-05',grade:2,tab:'people',people:data});
- assert.match(html,/陳同學/);assert.match(html,/林家長/);
+ assert.match(html,/陳同學/);assert.doesNotMatch(html,/data-action="notebook-person:p1"/);
+ const guardians=renderNotebookPeople(data,null,'','caregiver');assert.match(guardians,/林家長/);assert.doesNotMatch(guardians,/data-action="notebook-person:s1"/);
  assert.match(html,/學生 1 人・家長 1 人/);
  assert.doesNotMatch(html,/隱藏|data-story-action|data-action="advance-time"/);
- const p=renderNotebookPeople(data,'p1');
+ const p=renderNotebookPeople(data,'p1','','caregiver');
  assert.match(p,/相關學生：陳同學/);
  assert.throws(()=>renderNotebookPeople(data,'not-a-person'),RangeError);
+});
+test('person categories default to students and offer three exclusive switches',async()=>{
+ const {renderNotebookPeople}=await import('../web/notebook-people.js');
+ const data={className:'智班',people:[{id:'s',name:'學生甲',kind:'student',relation:'學生'},{id:'p',name:'家長乙',kind:'caregiver',relation:'家長'},{id:'o',name:'老師丙',kind:'other',relation:'同事'}],facts:[],claims:[]};
+ const students=renderNotebookPeople(data);
+ assert.match(students,/data-action="notebook-person-category:student"/);
+ assert.match(students,/data-action="notebook-person:s"/);
+ assert.doesNotMatch(students,/data-action="notebook-person:p"/);
+ assert.doesNotMatch(students,/data-action="notebook-person:o"/);
+ const other=renderNotebookPeople(data,null,'','other');
+ assert.match(other,/data-action="notebook-person:o"/);
+ assert.doesNotMatch(other,/data-action="notebook-person:s"/);
+ assert.throws(()=>renderNotebookPeople(data,null,'','unknown'),RangeError);
 });
 test('14-B: only disclosed facts tied to subject and claims tied to source display',async()=>{
  const {renderNotebookPeople}=await import('../web/notebook-people.js');

@@ -70,10 +70,10 @@ try {
   const notebookStart=await evaluate(`({
     tabs:document.querySelectorAll('.notebook [role="tab"]').length,
     active:document.querySelector('.notebook [aria-selected="true"]')?.dataset.action,
-    date:document.querySelector('.notebook-content')?.innerText.includes('紀錄日期')
+    date:!!document.querySelector('.notebook-content')
   })`);
-  if(notebookStart.tabs!==6||notebookStart.active!=='notebook-tab:overview'||!notebookStart.date)
-    throw Error('Notebook overview or six categories missing '+JSON.stringify(notebookStart));
+  if(notebookStart.tabs!==3||notebookStart.active!=='notebook-tab:people'||!notebookStart.date)
+    throw Error('Notebook three primary sections missing '+JSON.stringify(notebookStart));
   await click('notebook-tab:people');
   const rosterCheck=await evaluate(`({
     active:document.querySelector('.notebook [aria-selected="true"]')?.dataset.action,
@@ -96,7 +96,7 @@ try {
   if(!await evaluate("!!document.querySelector('.notebook-history-kinds [aria-pressed=\"true\"][data-action=\"notebook-event-kind:fact\"]')"))
     throw Error('Notebook history kind filter failed');
   await click('notebook-tab:academics');
-  if(!await evaluate("document.querySelector('.notebook [aria-selected=\"true\"]')?.dataset.action==='notebook-tab:academics'&&document.querySelectorAll('.notebook-academic-student').length>=38"))
+  if(!await evaluate("document.querySelector('.notebook-subtabs [aria-pressed=\"true\"]')?.dataset.action==='notebook-tab:academics'&&document.querySelectorAll('.notebook-academic-student').length>=38"))
     throw Error('Notebook academic roster missing');
   await evaluate("document.querySelector('.notebook-academic-student').click()");
   await wait('.notebook-academic-details h3');
@@ -124,7 +124,7 @@ try {
     return JSON.stringify(entry.payload.world);
   })()`);
   if(notebookBefore!==notebookAfter)throw Error('Notebook browsing unexpectedly changed save world');
-  console.log('PASS Phase 14-A notebook browser open, six tabs, category navigation, close, read-only save');
+  console.log('PASS Phase 14-F notebook browser open, three sections, category navigation, close, read-only save');
   await click('timetable');await wait('.table');
   if(await evaluate('document.querySelectorAll(".table button").length')!==40)throw Error('Expected 40 cells');
   const expected=await evaluate(`(async()=>{const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js');const s=createIndexedDBStorage({factory:indexedDB,namespace:'development'});const w=(await s.read(1)).payload.world;const p=w.extensions['teacher-hell/world'].plan,t=p.tables[0],reg=w.numeric.evolution.world.registry;await s.close();return t.classes.map(c=>'高'+'一二三'[t.academicYear-c.cohortStart]+reg.classes[c.id].name);})()`);

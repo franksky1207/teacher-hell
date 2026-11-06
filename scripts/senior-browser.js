@@ -147,7 +147,11 @@ try {
       console.log('BEGIN completed import');await click('import:2');const importAt=performance.now();await call('DOM.setFileInputFiles',{files:[exportedPath],backendNodeId:await opened},sessionId);
       for(let i=0;i<9000&&await evaluate(`!!document.querySelector('.operation-status')`);i++)await new Promise(r=>setTimeout(r,100));
       await wait('[data-action="load:2"]');timings.importUiMs=performance.now()-importAt;await click('load:2');await wait('.game');await includes('三年任期完成');assert.equal(await evaluate(`document.querySelector('[data-action="progress"]')===null`),true);checks++;
-      await click('menu');await click('slots');await click('new:2');await click('difficulty:hard');await click('teacher');await click('subjects');await click('review');
+      await click('menu');await click('slots');await click('new:2');await click('difficulty:hard');await evaluate(`(()=>{
+ const a=document.querySelector('[name="teacher-surname"]'),b=document.querySelector('[name="teacher-given-name"]');
+ for(const [field,value] of [[a,'王'],[b,'明德']]){field.value=value;field.dispatchEvent(new Event('input',{bubbles:true}));}
+ return true;
+})()`);await click('teacher');await click('subjects');await click('review');
       await evaluate('window.confirmPrompts=[];window.confirmAnswers=[false]');await click('create');assert.equal(await evaluate('window.confirmPrompts.length'),1);await wait('[data-action="create"]');checks++;
       await evaluate('window.confirmPrompts=[];window.confirmAnswers=[true,false]');await click('create');assert.equal(await evaluate('window.confirmPrompts.length'),2);await wait('[data-action="create"]');checks++;
       await evaluate('window.confirmPrompts=[];window.confirmAnswers=[true,true]');await click('create');await wait('.game');await includes('2026-07-20');await includes('任教第 1 年');assert.equal(await evaluate('window.confirmPrompts.length'),2);checks++;

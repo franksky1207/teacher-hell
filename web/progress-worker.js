@@ -1,4 +1,5 @@
 /** Existing saved-session operations and read projections off the rendering thread. */
+import {teacherDisplayName} from '../src/runtime/teacher-profile.js';
 import {createIndexedDBStorage} from '../src/storage/indexeddb.js';
 import {createStoredSession} from '../src/storage/session.js';
 import {sameToken,createSave,encodeSave} from '../src/storage/format.js';
@@ -34,7 +35,7 @@ self.onmessage=async({data})=>{
    self.postMessage({ok:true,projection:projections[data.view]()});
   }else if(data.summary){
    const plan=w?.extensions['teacher-hell/world'].plan;
-   self.postMessage({ok:true,token:snap.token,summary:w?{completed:!!careerResult(w),maxYears:careerYears(planMode(plan)),subject:plan.subject,date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),serviceYear:w.position.serviceYear,tenure:teacherTenure(w)}:null});
+   self.postMessage({ok:true,token:snap.token,summary:w?{completed:!!careerResult(w),maxYears:careerYears(planMode(plan)),subject:plan.subject,date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),serviceYear:w.position.serviceYear,tenure:teacherTenure(w),teacherName:teacherDisplayName(w)}:null});
   }else self.postMessage({ok:true,record:{payload:w?{world:w}:null,token:snap.token}});
  }catch(error){self.postMessage({ok:false,message:error.message,code:error.code});}
  finally{await storage?.close();}

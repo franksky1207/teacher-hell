@@ -47,9 +47,11 @@ function profile(w,id,rng,initialGender=null){
   else if(role==='mother')surname=maternal?familySurname:chooseSurname(rng);
   else surname=chooseSurname(rng);
  }
- const used=student?new Set(Object.entries(w.registry.profiles)
-  .filter(([personId])=>w.people[personId]?.kind==='student')
-  .map(([,p])=>p.displayName.slice(surnameOf(p.displayName).length))):new Set();
+ // Prefer distinct *given names* across all known school people, not only
+ // within one gender, family, or currently enrolled class. This prevents a
+ // parent and a student (or two parents) from sharing the same given name.
+ const used=new Set(Object.values(w.registry.profiles)
+  .map(p=>p.displayName.slice(surnameOf(p.displayName).length)));
  const given=chooseGivenName(rng,gender??(familyRole==='father'?'male':familyRole==='mother'?'female':'neutral'),used);
  w.registry.profiles[id]={displayName:surname+given,appearance:{variant},
   ...(student?{gender}:{}),...(familyRole?{familyRole}:{})};

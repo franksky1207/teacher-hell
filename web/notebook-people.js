@@ -16,6 +16,13 @@ export function projectNotebookPeople(world){
    else map.set(carer.id,{id:carer.id,name:carer.name,kind:'caregiver',relation:'學生家長',relatedTo:[student.name]});
   }
  }
+ // Extra people enter the notebook only after a teacher-visible disclosure.
+ const profiles=world.numeric.evolution.world.registry?.profiles??{};
+ const knownIds=new Set([...known.facts.flatMap(f=>f.subjectIds??[]),...known.claims.map(c=>c.sourceId)]);
+ for(const id of knownIds){
+  if(id===world.identity.playerId||map.has(id)||!profiles[id])continue;
+  map.set(id,{id,name:profiles[id].displayName,kind:'other',relation:'已知校內相關人物'});
+ }
  // Only teacher-visible disclosures. A source is not treated as the subject of a claim.
  return {className:roster.className,people:[...map.values()],
   facts:known.facts.map(f=>({description:f.description,subjectIds:f.subjectIds,occurredAt:f.occurredAt})),
@@ -28,8 +35,9 @@ export function renderNotebookPeople(data,selectedId=null,search=''){
  if(typeof search!=='string')throw new TypeError('Invalid person search');
  const studentCount=data.people.filter(p=>p.kind==='student').length;
  const parentCount=data.people.filter(p=>p.kind==='caregiver').length;
+ const otherCount=data.people.filter(p=>p.kind==='other').length;
  const filtered=data.people.filter(p=>p.name.includes(search)||p.relation.includes(search)||(p.relatedTo??[]).some(name=>name.includes(search)));
- const roster=filtered.map(p=>`<button type="button" class="notebook-person${selected?.id===p.id?' notebook-person--active':''}" data-action="notebook-person:${esc(p.id)}" aria-pressed="${selected?.id===p.id}"><span>${esc(p.name)}</span><small>${p.kind==='student'?'學生':'家長'}</small></button>`).join('');
+ const roster=filtered.map(p=>`<button type="button" class="notebook-person${selected?.id===p.id?' notebook-person--active':''}" data-action="notebook-person:${esc(p.id)}" aria-pressed="${selected?.id===p.id}"><span>${esc(p.name)}</span><small>${p.kind==='student'?'學生':p.kind==='caregiver'?'家長':'其他'}</small></button>`).join('');
  let details='<p>請選擇人物查看教師目前已知的紀錄。</p>';
  if(selected){
   const facts=data.facts.filter(f=>Array.isArray(f.subjectIds)&&f.subjectIds.includes(selected.id));
@@ -39,5 +47,5 @@ export function renderNotebookPeople(data,selectedId=null,search=''){
   const claimList=claims.length?`<ul>${claims.map(c=>`<li>${esc(c.statement)}（${beliefs[c.belief]??'待確認'}）</li>`).join('')}</ul>`:'<p>目前沒有由此人物提供且已知的說法。</p>';
   details=`<h3>${esc(selected.name)}</h3><p>${esc(selected.relation)}</p>${relation}<h4>已知事實</h4>${factList}<h4>此人物提供的說法</h4>${claimList}`;
  }
- return `<section class="notebook-people" aria-label="人物紀錄"><p class="notebook-people-summary">${esc(data.className)}・學生 ${studentCount} 人・家長 ${parentCount} 人</p><label class="notebook-search-label">搜尋人物 <input type="search" data-notebook-search="people" aria-label="搜尋人物姓名" value="${esc(search)}" placeholder="姓名或身分"></label><div class="notebook-people-layout"><div class="notebook-person-list" aria-label="人物名單">${roster||'<p>目前沒有可查閱的人物。</p>'}</div><div class="notebook-person-details" aria-live="polite">${details}</div></div></section>`;
+ return `<section class="notebook-people" aria-label="人物紀錄"><p class="notebook-people-summary">${esc(data.className)}・學生 ${studentCount} 人・家長 ${parentCount} 人・其他 ${otherCount} 人</p><label class="notebook-search-label">搜尋人物 <input type="search" data-notebook-search="people" aria-label="搜尋人物姓名" value="${esc(search)}" placeholder="姓名或身分"></label><div class="notebook-people-layout"><div class="notebook-person-list" aria-label="人物名單">${roster||'<p>目前沒有可查閱的人物。</p>'}</div><div class="notebook-person-details" aria-live="polite">${details}<section class="notebook-relations" aria-label="目前已知關係"><h4>已知家庭連結</h4><div class="notebook-relation-links">${data.people.filter(p=>p.kind==='caregiver').flatMap(p=>(p.relatedTo??[]).map(name=>`<p>${esc(p.name)} ↔ ${esc(name)}（家長與學生）</p>`)).join('')||'<p>目前沒有可查閱的家庭連結。</p>'}</div><p class="notebook-hint">只列出正式已知的身分關係，不以隱藏數值推定人際親疏。</p></section></div></div></section>`;
 }

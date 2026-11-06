@@ -63,7 +63,7 @@ async function load(i){slot=i;set('<main class="screen"><p role="status">正在�
 let displayedSession=null,displayedWorld=null,displayedToken=null;
 function gameData(){if(displayedSession!==current){displayedSession=current;const snap=current.snapshot();displayedWorld=snap.payload.world;displayedToken=snap.token;notebookCache.clear();notebookOwner=null;}return displayedWorld;}
 function showGame(){screen='game';const w=gameData(),activeStory=currentStory(w),plan=w.extensions['teacher-hell/world'].plan,n=w.numeric.evolution.world,day=runtimeCalendarDay(w),panel=deriveWorldPanel(n),done=!!careerResult(w),grade=gradeAt(w.position.date,plan.startYear),period=periodLabel(w.position.date,day),aftercarePhase=!!aftercareWindow(w)&&w.position.date>=aftercareWindow(w).startDate,slotText=({early:'早自習',lunch:'午餐',noon:'午休',private:'私人時間',morning:'上午',afternoon:'下午',evening:'晚間',dinner:'晚餐','vacation-day':'假期','festival-day':'春節'})[w.position.slotId]??(w.position.slotId.startsWith('p')?`第 ${w.position.slotId.slice(1)} 節`:w.position.slotId);let place='';const occ=formalSlot(w);if(occ.slot.lesson&&(!aftercarePhase||continuesAftercareTeaching(w,occ.slot.lesson))){const table=plan.tables.find(t=>t.semesterId===occ.day.courseSemesterId);place=`・${classLabel(table,n.registry,occ.slot.lesson.classId)}`;}
-set(`<main class="game game--story" data-revision="${w.extensions['teacher-hell/world'].revision}"><div class="top">${w.position.date} 星期${'一二三四五六日'[weekday(w.position.date)-1]}・任教第 ${teacherTenure(w)} 年・導師班高${'一二三'[grade-1]}<br>遊玩第 ${w.position.serviceYear} 學年・${aftercarePhase?'六月教師善後':period}・${aftercarePhase?'週進度':slotText}${place}</div><nav class="game-nav">${button('課表','timetable')}${button('筆記本','notebook')}${button('選單','menu')}</nav><div class="states">${STATE_NAMES.map(k=>button(`${k} ${value(panel[k])}`,'panel')).join('')}</div>${activeStory&&!done&&!openingPage?renderStoryView(activeStory):`<div class="story">${done?completionCard(w):openingPage===1?'【開場 1／2】暑輔的第一天，你站在校門前。新的三年，從這裡開始。':openingPage===2?'【開場 2／2】走進校園，準備迎接你的導師班。接下來依校曆與班級近況展開。':aftercareWindow(w)&&w.position.date>=aftercareWindow(w).startDate?'學生已離校，導師繼續處理六月善後。':aftercareWindow(w)&&w.position.date===aftercareWindow(w).ceremonyDate?'畢業典禮依正式校曆進行。':'依正式校曆處理課程、校務及事件。'}${!done&&!openingPage?(scheduledPhase(day,w.position.slotId)?'<p>'+esc(scheduledPhase(day,w.position.slotId))+'</p>':'')+h4Controls(w)+progressionControls(w):''}${openingPage?`<p>${button(openingPage===1?'下一頁':'結束開場','opening-next')}</p>`:''}</div>`}</main>`);showPendingReview();}
+set(`<main class="game game--story" data-revision="${w.extensions['teacher-hell/world'].revision}"><div class="top">${w.position.date} 星期${'一二三四五六日'[weekday(w.position.date)-1]}・任教第 ${teacherTenure(w)} 年・導師班高${'一二三'[grade-1]}<br>遊玩第 ${w.position.serviceYear} 學年・${aftercarePhase?'六月教師善後':period}・${aftercarePhase?'週進度':slotText}${place}</div><nav class="game-nav">${button('課表','timetable')}${button('筆記本','notebook')}${button('選單','menu')}</nav><div class="states">${STATE_NAMES.map(k=>button(`${k} ${value(panel[k])}`,'panel')).join('')}</div>${activeStory&&!done&&!openingPage?renderStoryView(activeStory):`<div class="story">${done?completionCard(w):openingPage===1?'【開場 1／2】暑輔的第一天，你站在校門前。新的三年，從這裡開始。':openingPage===2?'【開場 2／2】走進校園，準備迎接你的導師班。接下來依校曆與班級近況展開。':aftercareWindow(w)&&w.position.date>=aftercareWindow(w).startDate?'學生已離校，導師繼續處理六月善後。':aftercareWindow(w)&&w.position.date===aftercareWindow(w).ceremonyDate?'畢業典禮依正式校曆進行。':'依正式校曆處理課程、校務及事件。'}${!done&&!openingPage?(scheduledPhase(day,w.position.slotId)?'<p>'+esc(scheduledPhase(day,w.position.slotId))+'</p>':'')+h4Controls(w)+progressionControls(w):''}${openingPage?`<p>${button(openingPage===1?'下一頁':'結束開場','opening-next')}</p>`:''}</div>`}</main>`);showPendingReview();void remindKnownDeadlines().catch(error=>console.error('待辦提醒查閱失敗',error));}
 function h4Controls(w){
  const bounds=aftercareWindow(w);if(!bounds)return '';
  const fact=w.extensions['teacher-hell/world'].facts.findLast(f=>f.data.graduationSummary);
@@ -78,6 +78,23 @@ function h4Controls(w){
 }
 function completionCard(w){const d=careerResult(w).data,years=d.years===3?'三年':`${d.years}年`;return `<h3>${years}任期完成</h3><p>${esc(d.rating.grade)}・${value(d.rating.score)}</p><p>完成於 ${esc(w.position.date)}。此槽為唯讀。</p><p>${button('結局與任期成果','completion-details')}</p>`;}
 function progressionControls(w){const next=nextProgression(w);if(next.status==='review-required')return `<p>${button('閱讀學期報告','review-open')}</p>`;return next.status==='action'?`<p>${button(next.label,'progress')}</p>`:`<p role="status">${esc(next.label??({ 'review-required':'請先閱讀學期報告','attention-required':'請先處理事件','failed':'本次任期已結束',boundary:'已到結算邊界' }[next.status]??''))}</p>`;}
+// UI-only reminders. No new game transaction, no browser notification permission, no deadline judgment changes.
+const remindedTaskIds=new Set();
+let taskReminderRevision=null;
+async function remindKnownDeadlines(){
+ if(!current||screen!=='game'||storyBusy||document.querySelector('.overlay'))return;
+ const world=gameData(),key=JSON.stringify(displayedToken);
+ if(taskReminderRevision===key)return;
+ const {items}=await notebookData('tasks');
+ if(!current||screen!=='game'||JSON.stringify(displayedToken)!==key||document.querySelector('.overlay'))return;
+ taskReminderRevision=key;
+ const today=world.position.date;
+ const eligible=items.filter(t=>t.due&&t.due<=today&&!remindedTaskIds.has(JSON.stringify([world.identity.attemptId,t.id,t.due])));
+ if(!eligible.length)return;
+ for(const t of eligible)remindedTaskIds.add(JSON.stringify([world.identity.attemptId,t.id,t.due]));
+ const rows=eligible.slice(0,5).map(t=>`<li>${esc(t.label)}（${esc(t.due)}${t.overdue?'，期限已過':'，今日到期'}）</li>`).join('');
+ dialog('校務待辦提醒',`<p>以下事項仍須依正式校務或事件流程處理，提醒不等於失敗，也不改變存檔。</p><ul>${rows}</ul>${eligible.length>5?'<p>其他項目請至筆記本待辦事項查閱。</p>':''}`);
+}
 function forgetCurrentView(){current=null;displayedSession=null;displayedWorld=null;displayedToken=null;notebookCache.clear();notebookOwner=null;}
 function workerRead(data){return new Promise((resolve,reject)=>{const worker=new Worker(new URL('./progress-worker.js',import.meta.url),{type:'module'});worker.onmessage=({data})=>{worker.terminate();data.ok?resolve(data):reject(Object.assign(Error(data.message),{code:data.code}));};worker.onerror=e=>{worker.terminate();reject(Error(e.message));};worker.postMessage(data);});}
 let notebookOwner=null,notebookCache=new Map();

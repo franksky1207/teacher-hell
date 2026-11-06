@@ -41,11 +41,17 @@ export function representativeEvents(world,fromOrder,untilOrder){
   if(!['choice','result','fact','effect','stage'].includes(h.type))continue;
   const group=groups.get(h.eventId)??[];group.push(h);groups.set(h.eventId,group);
  }
+ // Ephemeral indexes preserve first-event and original fact order. They do not
+ // change the reporting window, visibility, importance rubric or tie handling.
+ const events=new Map(),factsByEvent=new Map(),disclosed=new Set();
+ for(const e of world.events)if(!events.has(e.id))events.set(e.id,e);
+ for(const f of r.facts){if(!factsByEvent.has(f.eventId))factsByEvent.set(f.eventId,[]);factsByEvent.get(f.eventId).push(f);}
+ for(const d of r.disclosures)if(d.actorId===world.identity.playerId&&d.order<=untilOrder)disclosed.add(d.factId);
  const candidates=[];
  for(const [eventId,entries] of groups){
-  const event=world.events.find(e=>e.id===eventId);
-  const facts=r.facts.filter(f=>f.eventId===eventId&&entries.some(h=>h.factIds.includes(f.id)));
-  const known=facts.filter(f=>f.witnessIds.includes(world.identity.playerId)||r.disclosures.some(d=>d.factId===f.id&&d.actorId===world.identity.playerId&&d.order<=untilOrder));
+  const event=events.get(eventId),referenced=new Set(entries.flatMap(h=>h.factIds));
+  const facts=(factsByEvent.get(eventId)??[]).filter(f=>referenced.has(f.id));
+  const known=facts.filter(f=>f.witnessIds.includes(world.identity.playerId)||disclosed.has(f.id));
   if(!known.length)continue;
   const choice=entries.some(h=>h.type==='choice'),result=entries.some(h=>h.type==='result');
   const affected=new Set(known.flatMap(f=>f.subjectIds));

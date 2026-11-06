@@ -7,9 +7,10 @@ import { createSave, encodeSave, restoreSave } from '../src/storage/format.js';
 
 test('formal launch preserves rerolled candidate and round trips all three difficulties',()=>{
  const candidate=rerollCandidate(createCandidate({seed:12,playerId:'teacher',schoolId:'school'}));
- for(const [difficulty,tenure] of [['easy',20],['normal',10],['hard',1]]){
-  const w=createCareerOpening({candidate,seed:18,taipeiDate:'2026-11-05',difficulty,subject:'國文',careerKey:difficulty});
+ for(const [difficulty,tenure] of [['easy',20],['normal',10],['hard',1]])for(const taipeiDate of ['2026-11-05','2027-12-01','2028-12-01']){
+  const w=createCareerOpening({candidate,seed:18,taipeiDate,difficulty,subject:'國文',careerKey:`${difficulty}-${taipeiDate}`});
   assert.equal(teacherTenure(w),tenure); assert.equal(w.position.serviceYear,1);
+  assert.equal(w.extensions['teacher-hell/world'].plan.startYear,2026);
   assert.equal(w.extensions['teacher-hell/world'].plan.subject,'國文');
   assert.equal(w.numeric.evolution.world.player.version,difficulty==='hard'?1:2);
   const restored=restoreSave(encodeSave(createSave(w,w)));

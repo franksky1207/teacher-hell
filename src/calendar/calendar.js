@@ -83,8 +83,8 @@ export function planMode(plan){
  return THREE_YEAR;
 }
 export function careerYears(mode=CAREER_30){need([CAREER_30,THREE_YEAR].includes(mode),'MODE','Unknown career mode');return mode===THREE_YEAR?3:30;}
-/** Caller supplies an already determined Asia/Taipei civil date. Never reads the device clock. */
-export function newThreeYearStart(taipeiDate){requireDate(taipeiDate);const y=Number(taipeiDate.slice(0,4));return careerRange(taipeiDate<=yearData(y).springFinal?y-1:y,THREE_YEAR);}
+/** New three-year careers share the 2026 cohort; saved plans retain their own start year. */
+export function newThreeYearStart(taipeiDate){dayNumber(taipeiDate);return careerRange(2026,THREE_YEAR);}
 export function careerRange(startYear,mode=CAREER_30){
  const first=yearData(startYear),last=yearData(startYear+careerYears(mode)); // Year 1 ends the following June.
  need(CALENDAR.conflicts.length===0,'COLLISION','Fixed calendar has unresolved scheduling constraints');

@@ -19,6 +19,15 @@ fi
 rm -rf "$preview_tmp/site/preview"
 mkdir -p "$preview_tmp/site/preview"
 cp -R dist/. "$preview_tmp/site/preview/"
+# Each publication gets one self-contained module graph. A cached prior JS module
+# cannot silently mix with freshly deployed notebook/CSS after a Pages release.
+version=$(git rev-parse --short=12 HEAD)
+mkdir -p "$preview_tmp/site/preview/assets/$version"
+cp -R dist/src dist/web "$preview_tmp/site/preview/assets/$version/"
+sed "s#\\./web/#./assets/$version/web/#g" dist/index.html > "$preview_tmp/site/preview/index.html"
+test -f "$preview_tmp/site/preview/assets/$version/web/game.js"
+test -f "$preview_tmp/site/preview/assets/$version/web/notebook-view.js"
+test -f "$preview_tmp/site/preview/assets/$version/src/runtime/views.js"
 touch "$preview_tmp/site/.nojekyll"
 git -C "$preview_tmp/site" add -A
 if ! git -C "$preview_tmp/site" diff --cached --quiet; then

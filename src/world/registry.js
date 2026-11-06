@@ -25,7 +25,8 @@ function classesAt(w,academicYear){
 function profile(w,id,rng){
  if(!own(w.registry.profiles,id)){
   const surnames=[...'陳林黃張李王吳劉蔡楊'],given=[...'宇庭雅安承涵文哲怡宏欣瑋思恩家軒'];
-  w.registry.profiles[id]={displayName:surnames[rng.integer(0,surnames.length-1)]+given[rng.integer(0,given.length-1)]+given[rng.integer(0,given.length-1)],appearance:{variant:rng.integer(0,65535)}};
+  const name=surnames[rng.integer(0,surnames.length-1)]+given[rng.integer(0,given.length-1)]+given[rng.integer(0,given.length-1)],variant=rng.integer(0,65535);
+  w.registry.profiles[id]={displayName:name,appearance:{variant},...(w.people[id]?.kind==='student'?{gender:variant%2===0?'male':'female'}:{})};
  }
 }
 function register(w,personId,classId,at,reason){
@@ -215,7 +216,8 @@ export function validateRegistry(w){
   for(const a of r.responsibilities){assertShape(a,['id','personId','appointedBy','title','scope','subject','sourceId','from','until','authority','responsibilities']);ref(w,a.personId);ref(w,a.appointedBy);date(a.from);need(r.assignments.some(issuer=>issuer.personId===a.appointedBy&&issuer.roleId===1&&issuer.from<=a.from&&(issuer.until===null||issuer.until>=a.from)),'Initial responsibility requires a school-level appointing authority');need(a.personId===w.player.current.playerId&&a.scope===w.school.id&&a.from===r.assignments[0].from&&a.until===null&&a.authority==='coordination-only','Invalid initial school responsibility');}
  }
  unique(list(r.transfers).map(t=>t.id));for(const t of r.transfers){assertShape(t,['type','id','classId','personId','dueDate','source','status','createdAt','completedAt']);need(t.type==='school-transfer-plan'&&own(r.classes,t.classId),'Invalid transfer plan');identifier(t.id);identifier(t.source);date(t.createdAt);date(t.dueDate);need(t.dueDate>t.createdAt,'Transfer must be arranged in advance');need(['scheduled','completed'].includes(t.status),'Invalid transfer status');if(t.personId!==null)need(w.people[t.personId]?.kind==='student','Unknown transfer student');if(t.status==='completed'){date(t.completedAt);need(t.completedAt>=t.dueDate&&r.enrollments.some(e=>e.personId===t.personId&&e.classId===t.classId&&e.from===t.completedAt),'Transfer result missing');}else need(t.completedAt===null,'Pending transfer already completed');}
- for(const [id,p] of Object.entries(r.profiles)){ref(w,id);assertShape(p,['displayName','appearance']);identifier(p.displayName);assertShape(p.appearance,['variant']);need(Number.isInteger(p.appearance.variant)&&p.appearance.variant>=0&&p.appearance.variant<=65535,'Invalid durable appearance');}
+ for(const [id,p] of Object.entries(r.profiles)){ref(w,id);assertShape(p,['displayName','appearance',...(Object.hasOwn(p,'gender')?['gender']:[])]);identifier(p.displayName);
+   if(Object.hasOwn(p,'gender'))need(w.people[id]?.kind==='student'&&['male','female'].includes(p.gender)&&p.gender===(p.appearance.variant%2===0?'male':'female'),'Student sex marker differs from durable profile seed');assertShape(p.appearance,['variant']);need(Number.isInteger(p.appearance.variant)&&p.appearance.variant>=0&&p.appearance.variant<=65535,'Invalid durable appearance');}
  need(r.classes[r.homeClassId].index===r.homeIndex,'Random homeroom selection mismatch');
  need(Object.keys(r.profiles).length===Object.keys(w.people).length,'Missing persistent profile');
  return r;

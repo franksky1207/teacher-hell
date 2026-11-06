@@ -2,29 +2,30 @@ import {renderNotebookReviews,renderNotebookCareer} from './notebook-reviews.js'
 import {renderNotebookAcademics} from './notebook-academics.js';
 import {renderNotebookEvents} from './notebook-events.js';
 import {renderNotebookPeople} from './notebook-people.js';
+import {renderNotebookTasks} from './notebook-tasks.js';
 /** Phase 14-A notebook shell. Data tabs are deliberately unimplemented until 14-B–E.
  * Only passed-in public UI context may appear here. Never inspect world numeric/history. */
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const NOTEBOOK_TABS=Object.freeze([
- {id:'overview',label:'總覽',description:'目前的導師工作紀錄'},
- {id:'people',label:'人物',description:'認識的人物與已知互動'},
- {id:'events',label:'事件歷史',description:'已發生且可查閱的事件'},
- {id:'academics',label:'學業成績',description:'班級成績與學分資訊'},
- {id:'semesters',label:'學期回顧',description:'歷年學期與學年結算'},
- {id:'career',label:'職涯紀錄',description:'教師生涯與過往班級'}
+ {id:'people',label:'人物',description:'人物與已知關係'},
+ {id:'events',label:'歷史紀錄',description:'時間及事件回顧'},
+ {id:'tasks',label:'待辦事項',description:'尚未完成的正式責任'}
 ]);
-export function renderNotebookView({date,grade,readonly=false,tab='overview',people=null,selectedPersonId=null,events=null,eventYear='all',eventKind='all',eventPage=1,academics=null,reviews=null,selectedReview=null,career=null}){
+const HISTORY_SECTIONS=Object.freeze([{id:'events',label:'時間／事件'},{id:'academics',label:'學業成績'},{id:'semesters',label:'學期與學年'},{id:'career',label:'生涯結局'}]);
+export function renderNotebookView({date,grade,readonly=false,tab='people',people=null,selectedPersonId=null,personSearch='',events=null,eventYear='all',eventKind='all',eventPage=1,eventSearch='',eventView='time',academics=null,reviews=null,selectedReview=null,career=null,tasks=null}){
  if(typeof date!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(date)||![1,2,3].includes(grade))throw new TypeError('Invalid notebook public context');
- const chosen=NOTEBOOK_TABS.find(x=>x.id===tab);
+ const chosen=NOTEBOOK_TABS.find(x=>x.id===tab)||HISTORY_SECTIONS.find(x=>x.id===tab);
  if(!chosen)throw new RangeError('Unknown notebook tab');
- const tabs=NOTEBOOK_TABS.map(item=>`<button type="button" role="tab" id="notebook-tab-${item.id}" aria-controls="notebook-content" aria-selected="${item.id===tab}" data-action="notebook-tab:${item.id}" class="notebook-tab${item.id===tab?' notebook-tab--active':''}">${esc(item.label)}</button>`).join('');
- const body=tab==='overview'
-  ?`<div class="notebook-summary"><p><strong>紀錄日期</strong> ${esc(date)}</p><p><strong>導師班</strong> 高${'一二三'[grade-1]}</p><p><strong>紀錄模式</strong> ${readonly?'已完成生涯・唯讀':'目前生涯・唯讀查閱'}</p></div><p class="notebook-hint">筆記本只提供查閱，不會推進時間或變更存檔。各分類只會顯示已保存的正式紀錄。</p>`
-  :tab==='people'&&people?renderNotebookPeople(people,selectedPersonId)
-  :tab==='events'&&events?renderNotebookEvents(events,{year:eventYear,kind:eventKind,page:eventPage})
+ const section=tab==='people'?'people':tab==='tasks'?'tasks':'events';
+ const tabs=NOTEBOOK_TABS.map(item=>`<button type="button" role="tab" id="notebook-tab-${item.id}" aria-controls="notebook-content" aria-selected="${item.id===section}" data-action="notebook-tab:${item.id}" class="notebook-tab${item.id===section?' notebook-tab--active':''}">${esc(item.label)}</button>`).join('');
+ const innerTabs=section==='events'?'<nav class="notebook-subtabs" aria-label="歷史分類">'+HISTORY_SECTIONS.map(t=>`<button type="button" data-action="notebook-tab:${t.id}" aria-pressed="${tab===t.id}">${esc(t.label)}</button>`).join('')+'</nav>':'';
+ const body=tab==='people'&&people?renderNotebookPeople(people,selectedPersonId,personSearch)
+  :tab==='tasks'&&tasks?renderNotebookTasks(tasks)
+  :tab==='events'&&events?renderNotebookEvents(events,{year:eventYear,kind:eventKind,page:eventPage,search:eventSearch,mode:eventView})
   :tab==='academics'&&academics?renderNotebookAcademics(academics)
   :tab==='semesters'&&reviews?renderNotebookReviews(reviews,selectedReview)
   :tab==='career'&&career?renderNotebookCareer(career)
-  :`<div class="notebook-empty"><h3>${esc(chosen.label)}</h3><p>${esc(chosen.description)}</p><p>此分類內容尚未接入，將於第14批後續開發提供。</p></div>`;
- return `<div class="notebook" aria-label="筆記本"><nav class="notebook-tabs" role="tablist" aria-label="筆記本分類">${tabs}</nav><section class="notebook-content" id="notebook-content" role="tabpanel" aria-labelledby="notebook-tab-${tab}">${body}</section></div>`;
+  :`<div class="notebook-empty"><h3>${esc(chosen.label)}</h3><p>${esc(chosen.description)}</p><p>正在查閱正式保存紀錄。</p></div>`;
+
+ return `<div class="notebook" aria-label="筆記本"><nav class="notebook-tabs" role="tablist" aria-label="筆記本分類">${tabs}</nav><section class="notebook-content" id="notebook-content" role="tabpanel" aria-labelledby="notebook-tab-${tab}">${innerTabs}${body}</section></div>`;
 }

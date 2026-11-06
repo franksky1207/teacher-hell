@@ -39,7 +39,8 @@ export function projectNotebookEvents(world){
  for(const f of runtime.facts){
   if(knownIds.has(f.id)||!f.occurredAt?.date||f.occurredAt.date>world.position.date)continue;
   entries.push({kind:'objective',learnedDate:dateOf(f.occurredAt),occurredDate:dateOf(f.occurredAt),
-   text:f.description,eventId:f.eventId,subjectNames:(f.subjectIds??[]).map(id=>names.get(id)).filter(Boolean),retrospective:true});
+   text:f.description,eventId:f.eventId,subjectNames:(f.subjectIds??[]).map(id=>names.get(id)).filter(Boolean),
+   causes:(f.causeIds??[]).map(id=>runtime.facts.find(previous=>previous.id===id)?.description).filter(Boolean),retrospective:true});
  }
  for(const c of view.choices??[]){
   entries.push({kind:'choice',learnedDate:dateOf(c.at),occurredDate:dateOf(c.at),eventId:c.eventId,
@@ -71,14 +72,14 @@ export function renderNotebookEvents(data,{year='all',kind='all',page=1,search='
  const visible=filtered.slice((actualPage-1)*EVENT_PAGE_SIZE,actualPage*EVENT_PAGE_SIZE);
  const choose=(label,action,active)=>`<button type="button" data-action="${action}" class="${active?'notebook-history-active':''}" aria-pressed="${active}">${esc(label)}</button>`;
  const yearOptions=['all',...years].map(y=>choose(y==='all'?'全部年份':y==='unknown'?'日期未標示':y+' 年','notebook-event-year:'+y,year===y)).join('');
- const kinds=[['all','全部'],['fact','已知事實'],['claim','人物說法'],['objective','歷史客觀事實'],['choice','教師決策']].map(([id,label])=>choose(label,'notebook-event-kind:'+id,kind===id)).join('');
+ const kinds=[['all','全部'],['fact','已知事實'],['claim','已知說法'],['objective','歷史客觀事實'],['choice','教師決策']].map(([id,label])=>choose(label,'notebook-event-kind:'+id,kind===id)).join('');
  const termOptions=['all',...terms].map(t=>choose(t==='all'?'全部學期':termLabel(t),'notebook-event-term:'+t,selectedTerm===t)).join('');
  const cards=visible.map(e=>{
   const date=e.learnedDate??'日期未標示';
   const summary=['fact','objective','choice'].includes(e.kind)
    ?(e.occurredDate&&e.occurredDate!==e.learnedDate?`<span>事情發生：${esc(e.occurredDate)}</span>`:'')
    :`<span>來源：${esc(e.sourceName??'來源未標示')}</span><span>${esc(e.belief??'紀錄中態度未標示')}</span>`;
-  return `<article class="notebook-history-item"><div class="notebook-history-meta"><span>${esc(date)} 得知</span>${e.subjectNames?.length?`<span>相關人物：${esc(e.subjectNames.join('、'))}</span>`:''}<strong>${({fact:'已知事實',claim:'人物說法',objective:'歷史客觀事實（當時未公開）',choice:'教師決策'})[e.kind]??'歷史紀錄'}</strong>${summary}</div><p>${esc(e.text)}</p></article>`;
+  return `<article class="notebook-history-item"><div class="notebook-history-meta"><span>${esc(date)} 得知</span>${e.subjectNames?.length?`<span>相關人物：${esc(e.subjectNames.join('、'))}</span>`:''}<strong>${({fact:'已知事實',claim:'已知說法',objective:'歷史客觀事實（當時未公開）',choice:'教師決策'})[e.kind]??'歷史紀錄'}</strong>${summary}</div><p>${esc(e.text)}</p>${e.causes?.length?`<p>已發生的前因：${esc(e.causes.join('；'))}</p>`:''}</article>`;
  }).join('');
  const pagination=`<nav class="notebook-history-pagination" aria-label="事件紀錄分頁"><button type="button" data-action="notebook-event-page:${actualPage-1}" ${actualPage===1?'disabled':''}>上一頁</button><span>${actualPage}／${pages}</span><button type="button" data-action="notebook-event-page:${actualPage+1}" ${actualPage===pages?'disabled':''}>下一頁</button></nav>`;
  return `<section class="notebook-history" aria-label="已知事件歷史"><p class="notebook-hint">依日期查看已知發展及分層歷史回顧；客觀幕後紀錄不等於教師當時知情，人物說法不等於事實。重要事件回顧於學期回顧分類呈現。</p><div class="notebook-history-kinds"><button type="button" data-action="notebook-event-view:time" aria-pressed="${mode==='time'}">依時間</button><button type="button" data-action="notebook-event-view:event" aria-pressed="${mode==='event'}">依事件內容</button></div><label class="notebook-search-label">搜尋紀錄 <input type="search" data-notebook-search="events" aria-label="搜尋歷史紀錄" value="${esc(search)}" placeholder="摘要、說法、來源"></label><div class="notebook-history-years" aria-label="選擇學期">${termOptions}</div><div class="notebook-history-years" aria-label="選擇年份">${yearOptions}</div><div class="notebook-history-kinds" aria-label="紀錄類型">${kinds}</div><p class="notebook-history-count">符合條件：${filtered.length} 筆</p><div class="notebook-history-items">${cards||'<p>目前沒有符合條件的已知紀錄。</p>'}</div>${pagination}</section>`;

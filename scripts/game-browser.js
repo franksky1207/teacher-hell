@@ -50,10 +50,16 @@ try {
   await call('Page.addScriptToEvaluateOnNewDocument',{source:`window.confirm = x => { (window.confirmPrompts ??= []).push(x); return window.confirmAnswers?.length ? window.confirmAnswers.shift() : true; }; window.alert = x => { window.lastAlert=x; }; const NativeDate=Date; window.Date=class extends NativeDate { constructor(...args){super(...(args.length?args:['2026-11-05T12:00:00Z']));} static now(){return NativeDate.parse('2026-11-05T12:00:00Z');} };`},sessionId);
   const wait=async selector=>{for(let i=0;i<400;i++){if(await evaluate(`!!document.querySelector(${JSON.stringify(selector)})`))return;await new Promise(r=>setTimeout(r,100));}throw Error('Missing '+selector+' '+await evaluate('document.body.innerText')+' ALERT '+await evaluate('window.lastAlert'));};
   const click=async action=>{for(let i=0;i<1800&&await evaluate(`!!document.querySelector('.operation-status')`);i++)await new Promise(r=>setTimeout(r,100));await wait(`[data-action="${action}"]`);await evaluate(`document.querySelector(${JSON.stringify(`[data-action="${action}"]`)}).click()`);for(let i=0;i<1800;i++){if(!await evaluate(`!!document.querySelector('.operation-status')`))return;await new Promise(r=>setTimeout(r,100));}throw Error('Operation did not finish: '+action);};
+  const enterTeacherName=async()=>evaluate(`(()=>{
+   const surname=document.querySelector('[name="teacher-surname"]'),given=document.querySelector('[name="teacher-given-name"]');
+   if(!surname||!given)throw Error('Teacher name fields missing');
+   for(const [field,value] of [[surname,'陳'],[given,'明德']]){field.value=value;field.dispatchEvent(new Event('input',{bubbles:true}));}
+   return true;
+  })()`);
   const includes=async text=>{if(!await evaluate(`document.body.innerText.includes(${JSON.stringify(text)})`))throw Error('Missing text '+text);};
   await call('Page.navigate',{url},sessionId);await wait('[data-action="slots"]');
   await click('slots');await wait('[data-action="new:1"]');
-  await click('new:1');await click('difficulty:hard');await click('teacher');await wait('[data-action="reroll"]');
+  await click('new:1');await click('difficulty:hard');await enterTeacherName();await click('teacher');await wait('[data-action="reroll"]');
   const before=await evaluate('document.querySelector(".bars").innerText');await click('reroll');await wait('[data-action="reroll"]');
   const after=await evaluate('document.querySelector(".bars").innerText');if(before===after)throw Error('Reroll did not change abilities');
   await click('subjects');await click('subject:英文');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes('任教第 1 年');await includes('暑輔第 1 週');
@@ -154,10 +160,10 @@ try {
   await click('delete:2');for(let i=0;i<200&&!await evaluate(`!document.querySelector('[data-action="load:2"]')`);i++)await new Promise(r=>setTimeout(r,100));
 
   for(const [number,mode,year] of [[2,'easy','20'],[3,'normal','10']]){
-    await click(`new:${number}`);await click(`difficulty:${mode}`);await click('teacher');await wait('[data-action="subjects"]');await click('subjects');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes(`任教第 ${year} 年`);await click('menu');await click('slots');await wait('[data-action="new:1"]');
+    await click(`new:${number}`);await click(`difficulty:${mode}`);await enterTeacherName();await click('teacher');await wait('[data-action="subjects"]');await click('subjects');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes(`任教第 ${year} 年`);await click('menu');await click('slots');await wait('[data-action="new:1"]');
   }
   await includes('任教第 1 年');await includes('任教第 20 年');await includes('任教第 10 年');
-  await click('new:2');await click('difficulty:hard');await click('teacher');await wait('[data-action="subjects"]');await click('subjects');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes('任教第 1 年');
+  await click('new:2');await click('difficulty:hard');await enterTeacherName();await click('teacher');await wait('[data-action="subjects"]');await click('subjects');await click('review');await wait('[data-action="create"]');await click('create');await wait('[data-action="timetable"]');await includes('任教第 1 年');
   await click('menu');await click('slots');await wait('[data-action="delete:3"]');await includes('任教第 10 年');
   await click('delete:3');for(let i=0;i<200&&!await evaluate('document.body.innerText.includes("空存檔")');i++)await new Promise(r=>setTimeout(r,100));await includes('空存檔');await click('load:1');await wait('[data-action="timetable"]');await includes('任教第 1 年');
   // Phase 13-G: disposable DOM only; never persist a test event in a player slot.

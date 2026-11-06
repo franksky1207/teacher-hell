@@ -112,3 +112,14 @@
 /* Main viewport stays fixed; long saved narratives use the allocated reader. */
 .game--story > .story{position:static;inset:auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:.8rem;align-self:stretch;margin:0}
 .operation-status{position:fixed;inset:auto .5rem .5rem;z-index:10;margin:0;padding:.5rem;background:#18263b;border:1px solid #d6c8aa;text-align:center;pointer-events:none}
+
+/* 14-F: three main notebook sections and compact nested history controls. */
+.notebook-subtabs{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.7rem}
+.notebook-subtabs button[aria-pressed="true"],.notebook-history-kinds button[aria-pressed="true"]{background:#715b59;border-color:#f5d390}
+.notebook-search-label{display:block;margin:.45rem 0;color:#ded6c5}
+.notebook-search-label input{display:block;width:100%;max-width:24rem;margin-top:.3rem;padding:.5rem;background:#13243b;color:#fff;border:1px solid #8196a0;border-radius:.35rem}
+.notebook-relations{border-top:1px solid #61758a;margin-top:.7rem;padding-top:.4rem}
+.notebook-relation-links{max-height:12rem;overflow:auto}
+.notebook-class-summary{margin-bottom:.8rem}
+.notebook-tasks{display:grid;gap:.6rem}
+@media(max-width:650px){.notebook-subtabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.notebook-search-label input{max-width:100%}}

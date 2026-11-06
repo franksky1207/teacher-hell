@@ -1,4 +1,4 @@
-name: Publish phase 13 verified preview
+name: Publish verified development preview
 on:
   workflow_dispatch:
   push:
@@ -24,7 +24,7 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --ignore-scripts
-      - name: Verify phase 13 source before publication
+      - name: Verify preview source before publication
         run: |
           npm run check
           npm run test:module -- module=story,story-view,story-controller,story-shell,story-test-runner

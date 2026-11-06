@@ -129,3 +129,11 @@
 .notebook-relation-edge{color:#f5d390;font-size:.78rem}
 
 .notebook-person-categories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.4rem;margin:.55rem 0}.notebook-person-categories button{padding:.5rem .25rem;font-size:.86rem}.notebook-person-categories button[aria-pressed="true"]{background:#715b59;border-color:#f5d390}
+
+/* Teacher display identity is a small creation-time form, not a second save editor. */
+.teacher-name-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;border:1px solid #8196a0;border-radius:.4rem;padding:.7rem}
+.teacher-name-fields legend{color:#f5d390;padding:0 .3rem}
+.teacher-name-fields label{display:grid;gap:.25rem}
+.teacher-name-fields input{width:100%;min-width:0;padding:.55rem;color:#fff;background:#13243b;border:1px solid #8196a0;border-radius:.35rem}
+.teacher-name-fields p{grid-column:1/-1;margin:0;font-size:.84rem}
+@media(max-width:420px){.teacher-name-fields{grid-template-columns:1fr}}

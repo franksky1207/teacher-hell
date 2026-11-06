@@ -13,6 +13,7 @@ import {createId} from '../src/contracts/foundation.js';
 import {projectNotebookAcademics} from '../web/notebook-academics.js';
 import {projectNotebookCareer,renderNotebookCareer} from '../web/notebook-reviews.js';
 import {nextProgression} from '../src/runtime/progression.js';
+import {readAftercare} from '../src/runtime/aftercare.js';
 const root='work/h5',metrics={checks:0,status:'running',node:process.version},hash=t=>createHash('sha256').update(t).digest('hex');
 const timed=async(name,fn)=>{const at=performance.now(),result=await fn();metrics[name+'Ms']=performance.now()-at;return result;};
 try {
@@ -34,6 +35,21 @@ metrics.qualifications=Object.fromEntries(['graduation','completion-certificate'
 return {request:JSON.parse(r.commits.at(-1).request),worldHash:hash(JSON.stringify(w))};
 }
 const source=await verifyCompleted();globalThis.gc?.();
+async function verifyActualWeek(){
+ for(const file of ['stage-2029-06-23','stage-2029-06-02']){
+  let w=restoreSave(gunzipSync(await readFile(`${root}/${file}.json.gz`)).toString()).world,next=nextProgression(w),setupRequests=0;
+  // Only normal, already-needed catalogue adoption may precede the measurement.
+  while(!next.weekly&&next.request?.operations.every(o=>o.type==='register-event-catalogue')&&setupRequests<2){w=prepareWorldOperation(w,next.request).world;setupRequests++;next=nextProgression(w);}
+  if(!next.weekly)continue;
+  const before=academicState(w).terms['2029:spring'],history=runtimeOf(w).history,from=w.position.date;
+  const out=await timed('standaloneAftercareWeek',()=>prepareWorldOperation(w,next.request));
+  assert.deepEqual(academicState(out.world).terms['2029:spring'],before);assert.deepEqual(runtimeOf(out.world).history.slice(0,history.length),history);
+  assert.ok(out.world.position.date>=from&&out.world.position.date<='2029-06-29');assert.equal(nextProgression(out.world).status==='completed',false);
+  const after=readAftercare(out.world);metrics.actualWeek={source:file,setupRequests,from,to:out.world.position.date,interrupted:after.next.status==='attention-required',summaries:after.weeks.length};metrics.checks++;return;
+ }
+ throw Error('No saved continuous aftercare stage offers a legal weekly operation');
+}
+await verifyActualWeek();globalThis.gc?.();
 // Strict in-memory disk adapter for CAS/fault contracts. Browser verification
 // separately exercises real IndexedDB/Gzip; these are not phone memory figures.
 function disk(initial){let record={payload:initial,token:saveToken({payload:initial,generation:1})},generation=1,failure=false;return {fail(){failure=true;},async read(){return structuredClone(record);},async write(slot,p,expected){assert.ok([1,2,3].includes(slot));if(!sameToken(record.token,expected))throw new WorldError('STALE','disk changed');if(failure){failure=false;throw Error('injected disk failure');}record={payload:restoreSave(p),token:saveToken({payload:p,generation:++generation})};return structuredClone(record);}};}

@@ -1,7 +1,7 @@
 import {createHash} from 'node:crypto';
 import {eventWorld} from '../test/support/event-fixtures.js';
 import {academicAt,academicApply} from '../test/support/senior-academic.js';
-import {calendarDay,SENIOR_CALENDAR_VERSION,THREE_YEAR} from '../src/calendar/calendar.js';
+import {calendarDay,SENIOR_CALENDAR_VERSION,THREE_YEAR,yearData} from '../src/calendar/calendar.js';
 import {aftercareCatalogue} from '../src/runtime/story-content.js';
 import {createCandidate} from '../src/player/creation.js';
 import {createCareerOpening} from '../src/runtime/opening.js';
@@ -68,9 +68,10 @@ try {
   const fixtures=JSON.parse(gunzipSync(await readFile(resolve(root,'test/fixtures/h4-pre-5c21854.json.gz'))));
   const extra=process.argv.find(a=>a.startsWith('--save='))?.slice(7);
   const opening=createCareerOpening({candidate:createCandidate({seed:74,playerId:'teacher',schoolId:'school'}),seed:75,taipeiDate:'2026-11-06',difficulty:'normal',subject:'國文',careerKey:'h5-browser'});
+  const review=academicApply(academicAt(opening,yearData(2027).winterFinal,'private'),[{type:'finish-slot',completedActivityIds:[]}]);
   const contactDate='2029-06-02';let contact=academicAt(eventWorld(74,contactDate,calendarDay(contactDate,3,SENIOR_CALENDAR_VERSION).slots[0].id,{version:1,mode:THREE_YEAR,difficulty:'hard'}),contactDate);contact=academicApply(contact,[{type:'academic',action:'open'}]);contact=academicApply(contact,[aftercareCatalogue()]);
-  const scenarios=extra?[[extra,JSON.parse(gunzipSync(await readFile(extra)))]]:[['opening',createSave(opening,opening)],['before',fixtures.before],['after',fixtures.after],['terminal',fixtures.terminal],['reserved',fixtures.reserved],['contact',createSave(contact)]];
-  let checks=0,completedHeap=null;const timings={};
+  const scenarios=extra?[[extra,JSON.parse(gunzipSync(await readFile(extra)))]]:[['opening',createSave(opening,opening)],['review',createSave(review,opening)],['before',fixtures.before],['after',fixtures.after],['terminal',fixtures.terminal],['reserved',fixtures.reserved],['contact',createSave(contact)]];
+  let checks=0,completedHeap=null,storedSizes=null;const timings={};
   await call('Page.navigate',{url},sessionId);await wait('[data-action="slots"]');
   const install=async payload=>{
     // Import uses the real save boundary, never arbitrary IndexedDB records.
@@ -87,6 +88,13 @@ try {
       assert.deepEqual(layout,{documentScroll:false,withinX:true,withinY:true});checks++;
     }
     await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true},sessionId);
+    if(name==='review'){
+      const pending=await evaluate(`document.querySelector('[data-action^="review-ack:"]').dataset.action`);
+      await click('close');assert.equal(await evaluate(`document.querySelector('[data-action^="review-ack:"]').dataset.action`),pending);checks++;
+      await click('menu');await click('review-open');assert.equal(await evaluate(`document.querySelectorAll('.overlay').length`),1);assert.equal(await evaluate(`document.querySelector('[data-action^="review-ack:"]').dataset.action`),pending);checks++;
+      await click(pending);await wait('[data-action="progress"]');assert.equal(await evaluate(`document.querySelector('[data-action^="review-ack:"]')===null`),true);await includes(payload.world.position.date);assert.equal(await evaluate('window.lastAlert??null'),null);checks++;
+      console.log('PASS H5 Chromium review');continue;
+    }
     if(extra&&['2028-07-24','2028-12-01'].includes(payload.world.position.date)){
       await includes('學測模考・上午（不計入學期成績）');checks++;
       await click('timetable');assert.equal(await evaluate(`document.querySelectorAll('.table button').length`),40);await includes('學測模考');await click('close');checks++;
@@ -101,6 +109,8 @@ try {
       await click('completion-details');await includes('三年生涯完成紀錄');await includes('畢典與六月紀錄');await click('close');checks++;
     }
     if(completed){
+      storedSizes=await evaluate(`(async()=>{const db=await new Promise((resolve,reject)=>{const q=indexedDB.open('teacher-hell:development:v1:slot1',1);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error);});try{return await new Promise((resolve,reject)=>{const tx=db.transaction(['state','pages'],'readonly'),head=tx.objectStore('state').get('save'),pages=tx.objectStore('pages').getAll();tx.oncomplete=()=>resolve({format:head.result.format,codec:head.result.codec,rawBytes:head.result.rawBytes,chunkCount:head.result.chunkCount,payloadPageBytes:pages.result.reduce((n,p)=>n+p.byteLength,0)});tx.onabort=()=>reject(tx.error);});}finally{db.close();}})()`);
+      assert.equal(storedSizes.codec,'gzip');assert.ok(storedSizes.payloadPageBytes<storedSizes.rawBytes);checks++;
       assert.equal(await evaluate(`document.querySelector('[data-action="progress"]')===null`),true);checks++;
       await click('completion-details');await includes('三年生涯完成紀錄');await includes('畢典與六月紀錄');checks++;
       await click('notebook-tab:people');await wait('.notebook-person');assert.ok(await evaluate(`document.querySelectorAll('.notebook-person').length>=38`));checks++;
@@ -109,6 +119,8 @@ try {
       await evaluate(`document.querySelector('.notebook-academic-student').click()`);await wait('.notebook-academic-details h3');await includes('40％／30％／30％');await includes('畢業考');
       assert.equal(await evaluate(`document.querySelectorAll('.notebook-academic-terms button').length`),6);checks++;
       assert.equal(await evaluate(`Array.from(document.querySelectorAll('.notebook-academic-table th')).some(x=>x.textContent==='三段')`),false);checks++;
+      await click('notebook-academic-term:2026:autumn');await includes('40％／20％／20％／20％');assert.equal(await evaluate(`Array.from(document.querySelectorAll('.notebook-academic-table th')).some(x=>x.textContent==='三段')`),true);checks++;
+      await click('notebook-academic-term:2029:spring');await includes('40％／30％／30％');await includes('畢業考');assert.equal(await evaluate(`Array.from(document.querySelectorAll('.notebook-academic-table th')).some(x=>x.textContent==='三段')`),false);checks++;
       await click('close');
       completedHeap=await call('Runtime.getHeapUsage',{},sessionId);
       const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false},sessionId);await writeFile(resolve(root,'work/h5/completed-mobile.png'),Buffer.from(shot.data,'base64'));
@@ -181,7 +193,7 @@ try {
     }
     console.log('PASS H5 Chromium '+name);
   }
-  console.log(JSON.stringify({browser:'Chromium headless/CDP',viewports:['390x844','360x640','1280x800'],checks,scenarios:scenarios.length,physicalSafari:false,completedHeap,timings,browserVersion:await call('Browser.getVersion'),heap:await call('Runtime.getHeapUsage',{},sessionId)}));
+  console.log(JSON.stringify({browser:'Chromium headless/CDP',viewports:['390x844','360x640','1280x800'],checks,scenarios:scenarios.length,physicalSafari:false,completedHeap,storedSizes,timings,browserVersion:await call('Browser.getVersion'),heap:await call('Runtime.getHeapUsage',{},sessionId)}));
   await call('Browser.close');
 } finally {
   socket?.close();

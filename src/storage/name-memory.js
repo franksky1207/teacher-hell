@@ -32,13 +32,21 @@ export async function readNameMemory({factory,namespace='development'}){
  try{return await transaction(db,'readonly',(_store,rows)=>rows.filter(name=>typeof name==='string'&&name.length>0).slice(-NAME_MEMORY_LIMIT));}
  finally{db.close();}
 }
+/** Pure deterministic LRU merge, tested without a browser or disk I/O. */
+export function mergeNameHistory(previous,incoming,limit=NAME_MEMORY_LIMIT){
+ if(!Array.isArray(previous)||!Array.isArray(incoming)||!Number.isSafeInteger(limit)||limit<1)throw new TypeError('Invalid name-memory merge');
+ const fresh=[...new Set(incoming.filter(name=>typeof name==='string'&&name.length>0))];
+ const selected=new Set(fresh);
+ const old=[...new Set(previous.filter(name=>typeof name==='string'&&name.length>0))].filter(name=>!selected.has(name));
+ return old.concat(fresh).slice(-limit);
+}
 export async function rememberNames({factory,namespace='development',names}){
  if(!Array.isArray(names))throw new TypeError('Name list required');
  const incoming=[...new Set(names.filter(name=>typeof name==='string'&&name.length>0))];
  if(!incoming.length)return 0;
  const db=await database(factory,namespace);
  try{return await transaction(db,'readwrite',(store,rows)=>{
-  const added=new Set(incoming),next=rows.filter(name=>!added.has(name)).concat(incoming).slice(-NAME_MEMORY_LIMIT);
+  const next=mergeNameHistory(rows,incoming);
   store.put(next,KEY);return next.length;
  });}finally{db.close();}
 }

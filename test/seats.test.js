@@ -5,6 +5,7 @@ import {createCandidate} from '../src/player/creation.js';
 import {createCareerOpening} from '../src/runtime/opening.js';
 import {readSchoolRoster} from '../src/runtime/views.js';
 import {STUDENT_GIVEN_NAMES} from '../src/world/registry.js';
+import {surnameOf} from '../src/world/name-catalog.js';
 
 const profile=(name,gender)=>({displayName:name,appearance:{variant:gender==='male'?2:3},gender});
 const entry=(id,name,gender)=>({id,name,gender});
@@ -43,8 +44,8 @@ test('formal initial roster has 40 fixed, unique, sorted seat numbers without al
  assert.equal(roster.students.every(x=>['male','female'].includes(x.gender)),true);
  assert.equal(roster.students.filter(x=>x.gender==='male').length,20,'Opening homeroom must have exactly 20 boys');
  assert.equal(roster.students.filter(x=>x.gender==='female').length,20,'Opening homeroom must have exactly 20 girls');
- assert.equal(roster.students.every(x=>STUDENT_GIVEN_NAMES[x.gender].includes([...x.name].slice(1).join(''))),true,'Gender-appropriate complete given names');
- assert.equal(STUDENT_GIVEN_NAMES.male.some(name=>STUDENT_GIVEN_NAMES.female.includes(name)),true,'Gender-neutral name overlap should remain possible');
+ assert.equal(roster.students.every(x=>STUDENT_GIVEN_NAMES[x.gender].includes(x.name.slice(surnameOf(x.name).length))),true,'Gender-appropriate complete given names');
+ assert.equal(STUDENT_GIVEN_NAMES.male.some(name=>STUDENT_GIVEN_NAMES.female.includes(name)),false,'Male and female given-name pools must be disjoint');
  assert.equal(JSON.stringify(world),before);
  const firstGirl=roster.students.findIndex(x=>x.gender==='female');
  if(firstGirl>=0)assert.equal(roster.students.slice(firstGirl).every(x=>x.gender==='female'),true);

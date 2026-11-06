@@ -1,4 +1,5 @@
 /** Phase 14-B: official roster + teacher-disclosed knowledge only. No private NPC state. */
+import {teacherDisplayName} from '../src/runtime/teacher-profile.js';
 import {notebookRoster} from './notebook-roster.js';
 import {readPlayerView} from '../src/runtime/views.js';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -40,7 +41,7 @@ export function projectNotebookPeople(world){
   for(let i=0;i<subjects.length;i++)for(let j=i+1;j<subjects.length;j++)add(subjects[i],subjects[j],'共同已知事件');
  }
  // Only teacher-visible disclosures. A source is not treated as the subject of a claim.
- return {className:roster.className,people:[...map.values()],relations,teacher:{id:teacherId,name:'導師'},
+ return {className:roster.className,people:[...map.values()],relations,teacher:{id:teacherId,name:teacherDisplayName(world)},
   facts:known.facts.map(f=>({description:f.description,subjectIds:f.subjectIds,occurredAt:f.occurredAt})),
   claims:known.claims.map(c=>({statement:c.statement,sourceId:c.sourceId,belief:c.belief}))};
 }

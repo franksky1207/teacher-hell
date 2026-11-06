@@ -71,6 +71,12 @@ jobs:
             npm run verify:quick
           fi
 
+      - name: Focused name and family browser acceptance (one run only)
+        if: github.event_name == 'pull_request' && github.head_ref == 'fix/person-categories-teacher-name-20261106'
+        env:
+          CHROMIUM_BIN: google-chrome
+        run: node scripts/game-browser.js
+
   three-year:
     if: github.event_name == 'workflow_dispatch' && inputs.three_year
     runs-on: ubuntu-latest

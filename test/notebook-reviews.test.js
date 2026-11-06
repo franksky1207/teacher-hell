@@ -40,11 +40,11 @@ test('14-E: finished read-only record is escaped and does not add slots',()=>{
  assert.doesNotMatch(html,/<script>|data-story-action/);
  const original=renderNotebookCareer({completed:true,serviceYear:30,date:'2056-06-29',grade:'A',score:75,ending:'原保存結局',cohorts:[]});assert.match(original,/30年生涯完成紀錄/);assert.doesNotMatch(original,/三年生涯完成紀錄/);
 });
-test('14-E: all six notebook tabs include both formal summary views',()=>{
+test('14-E: three primary notebook sections include both formal summary views',()=>{
  const a=renderNotebookView({date:'2027-01-22',grade:1,tab:'semesters',reviews:{semesters:[],years:[],pendingId:null}});
  const b=renderNotebookView({date:'2027-01-22',grade:1,tab:'career',career:{completed:false,serviceYear:1}});
  assert.match(a,/學期及學年回顧/);assert.match(b,/教師職涯/);
- assert.equal((a.match(/role="tab"/g)||[]).length,6);
+ assert.equal((a.match(/role="tab"/g)||[]).length,3);
 });
 
 test('14-E: real pending-review acknowledgment is timeless, persisted and cannot repeat',()=>{

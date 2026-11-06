@@ -39,8 +39,9 @@ export function readHistoricalReview(saved) {
 export function readSchoolRoster(saved){
  const w=restoreWorldState(saved),numeric=w.numeric.evolution.world,r=numeric.registry;
  if(!r)return null;
+ const seats=seatNumbers(r,r.homeClassId);
  return {classId:r.homeClassId,className:r.classes[r.homeClassId].name,grade:r.academicYear-r.cohortStart+1,
-  students:numeric.classroom.studentIds.map(id=>({id,name:r.profiles[id].displayName,seatNo:seatNumbers(r,r.homeClassId).get(id),gender:schoolGender(r.profiles[id]),
+  students:[...numeric.classroom.studentIds].sort((a,b)=>(seats.get(a)??Infinity)-(seats.get(b)??Infinity)).map(id=>({id,name:r.profiles[id].displayName,seatNo:seats.get(id),gender:schoolGender(r.profiles[id]),
    caregivers:numeric.careLinks.filter(l=>l.studentId===id).map(l=>({id:l.caregiverId,name:r.profiles[l.caregiverId].displayName}))}))};
 }
 

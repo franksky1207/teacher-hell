@@ -20,3 +20,8 @@ export function chooseGivenName(rng,gender,used=new Set()){
  for(let n=0;n<pool.length;n++){const name=pool[(start+n)%pool.length];if(!used.has(name)){used.add(name);return name;}}
  throw new RangeError('Given-name catalogue exhausted; cannot guarantee unique names');
 }
+
+export function surnameOf(fullName){
+ for(const compound of SURNAME_GROUPS.compound)if(fullName.startsWith(compound))return compound;
+ return [...fullName][0]??'';
+}

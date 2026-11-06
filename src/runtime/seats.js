@@ -41,9 +41,10 @@ function compareGiven(a,b){
  }
  return 0;
 }
-/** Fixed binary sex marker for this game's generated pupils.
- * New profiles retain this value; legacy profiles derive the identical value
- * from their already-persisted random appearance seed, without migration.
+/** Student sex group used by this fictional school's seat arrangement.
+ * A newly generated homeroom explicitly balances its opening 20/20, while
+ * transfers use the persisted random appearance draw. Older saves without
+ * gender derive a stable grouping from their original saved appearance variant.
  */
 export function schoolGender(profile){
  if(profile?.gender==='male'||profile?.gender==='female')return profile.gender;

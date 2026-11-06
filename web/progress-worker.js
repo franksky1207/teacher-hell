@@ -1,7 +1,8 @@
 /** Existing saved-session operations and read projections off the rendering thread. */
 import {teacherDisplayName} from '../src/runtime/teacher-profile.js';
 import {createIndexedDBStorage} from '../src/storage/indexeddb.js';
-import {rememberNames,generatedGivenNames} from '../src/storage/name-memory.js';
+import {rememberNames,readNameMemory} from '../src/storage/name-memory.js';
+import {preferUnusedOpeningNames} from '../src/runtime/opening-name-memory.js';
 import {createStoredSession} from '../src/storage/session.js';
 import {sameToken,createSave,encodeSave} from '../src/storage/format.js';
 import {teacherTenure} from '../src/runtime/schedule.js';
@@ -21,6 +22,19 @@ self.onmessage=async({data})=>{
   const before=data.request?new Set(session.savedGivenNames()):null;
   let nameMemoryWarning=false;
   async function rememberCommitted(names){try{await rememberNames({factory:indexedDB,namespace:'development',names});}catch(error){nameMemoryWarning=true;console.warn('Name history could not be updated',error);}}
+  async function saveNewCareer(opening,persist){
+   // Serialize competing new-career operations across tabs when Web Locks
+   // exists; do not require Web Locks on browsers without the API.
+   const work=async()=>{
+    try{
+     const names=await readNameMemory({factory:indexedDB,namespace:'development'});
+     preferUnusedOpeningNames(opening,names);
+    }catch(error){nameMemoryWarning=true;console.warn('Name history unavailable during opening',error);}
+    await persist();
+    await rememberCommitted(session.savedGivenNames()); // Only AFTER a committed save
+   };
+   return self.navigator?.locks?.request?self.navigator.locks.request('teacher-hell:development:career-names',work):work();
+  }
   if(['request','initialize','restart','replaceOpening','import','delete'].filter(k=>Object.hasOwn(data,k)).length>1)throw Error('One stored operation per worker request');
   if(data.request){await session.execute(data.request,{expectedToken:data.expectedToken});
    const after=session.savedGivenNames();const fresh=after.filter(name=>!before.has(name));

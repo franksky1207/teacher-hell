@@ -56,7 +56,7 @@ export function renderNotebookEvents(data,{year='all',kind='all',page=1,search='
  const years=[...new Set(data.entries.map(e=>yearOf(e.learnedDate)))].sort((a,b)=>b.localeCompare(a));
  if(year!=='all'&&!years.includes(year))throw new RangeError('Unknown event history year');
  const terms=[...new Set(data.entries.map(e=>termOf(e.learnedDate)))].sort((a,b)=>b.localeCompare(a));
- const selectedTerm=term??data.currentTerm??'all';
+ const selectedTerm=term??(terms.includes(data.currentTerm)?data.currentTerm:'all');
  if(selectedTerm!=='all'&&!terms.includes(selectedTerm)&&selectedTerm!=='unknown')throw new RangeError('Unknown term');
  const periodMatches=e=>selectedTerm==='all'||termOf(e.learnedDate)===selectedTerm;
  const matches=e=>(kind==='all'||e.kind===kind)&&(year==='all'||yearOf(e.learnedDate)===year)&&periodMatches(e)&&[e.text,e.sourceName,e.belief,...(e.subjectNames??[])].some(v=>String(v??'').includes(search));

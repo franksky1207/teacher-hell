@@ -40,10 +40,10 @@ self.onmessage=async({data})=>{
    const after=session.savedGivenNames();const fresh=after.filter(name=>!before.has(name));
    if(fresh.length)await rememberCommitted(fresh);
   }
-  if(data.initialize){await session.initialize(data.initialize);await rememberCommitted(generatedGivenNames(session.snapshot().payload?.world));}
-  if(data.restart){await session.restart(data.restart,{expectedToken:data.expectedToken,confirmed:data.confirmed});await rememberCommitted(generatedGivenNames(session.snapshot().payload?.world));}
-  if(data.replaceOpening){await session.import(encodeSave(createSave(data.replaceOpening,data.replaceOpening)),{expectedToken:data.expectedToken,confirmed:data.confirmed});await rememberCommitted(generatedGivenNames(session.snapshot().payload?.world));}
-  if(Object.hasOwn(data,'import')){await session.import(await inputText(data.import),{expectedToken:data.expectedToken,confirmed:data.confirmed});await rememberCommitted(generatedGivenNames(session.snapshot().payload?.world));self.postMessage({ok:true,nameMemoryWarning});return;}
+  if(data.initialize)await saveNewCareer(data.initialize,()=>session.initialize(data.initialize));
+  if(data.restart)await saveNewCareer(data.restart,()=>session.restart(data.restart,{expectedToken:data.expectedToken,confirmed:data.confirmed}));
+  if(data.replaceOpening)await saveNewCareer(data.replaceOpening,()=>session.import(encodeSave(createSave(data.replaceOpening,data.replaceOpening)),{expectedToken:data.expectedToken,confirmed:data.confirmed}));
+  if(Object.hasOwn(data,'import')){await session.import(await inputText(data.import),{expectedToken:data.expectedToken,confirmed:data.confirmed});await rememberCommitted(session.savedGivenNames());self.postMessage({ok:true,nameMemoryWarning});return;}
   if(data.delete){await session.delete({expectedToken:data.expectedToken,confirmed:data.confirmed});self.postMessage({ok:true});return;}
   if(data.export){self.postMessage({ok:true,blob:new Blob([await session.export()],{type:'application/json'})});return;}
   if(Object.hasOwn(data,'reviewImport')){self.postMessage({ok:true,review:await session.reviewImport(await inputText(data.reviewImport))});return;}

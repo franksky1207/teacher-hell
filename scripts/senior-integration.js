@@ -56,7 +56,7 @@ try{
   }else await persist(stopBoundary?'before-completion':'checkpoint',{kind:SAVE_KIND,version:1,world:w,opening});
   if(stopBoundary){
    const before=academicState(w),r=runtimeOf(w),request={id:`operation:${JSON.stringify([w.identity.attemptId,'h5-terminal'])}`,attemptId:w.identity.attemptId,expectedRevision:r.revision,actorId:w.identity.playerId,preconditions:[],calendarContext:{kind:'routine'},operations:[{type:'settle-school-year'}]},t=performance.now();
-   const completed=prepareWorldOperation(w,request);w=completed.world;metrics.t4Ms=performance.now()-t;
+   const completed=prepareWorldOperation(w,request);w=completed.world;metrics.t4Ms=performance.now()-t;await report();console.log(JSON.stringify({phase:'T4 returned; consistency checks pending',ms:metrics.t4Ms}));
    assert.deepEqual(academicState(w),before);assert.equal(prepareWorldOperation(w,request).duplicate,true);
    assert.throws(()=>prepareWorldOperation(w,{...request,id:`operation:${JSON.stringify([w.identity.attemptId,'h5-terminal-again'])}`,expectedRevision:runtimeOf(w).revision}),{code:'CAREER_COMPLETE'});
    assert.equal(w.position.date,'2029-06-29');assert.equal(runtimeOf(w).history.filter(h=>h.type==='career-completion').length,1);assert.equal(w.numeric.evolution.world.classroom.studentIds.length,0);

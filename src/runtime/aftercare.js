@@ -1,6 +1,6 @@
 /** Graduation/weekly aftercare contracts over the existing transaction journal. */
 import { aftercareWindow,aftercareAdoption,aftercareActive,runtimeCalendarDay,aftercareDefinition } from './aftercare-calendar.js';
-import { readSeniorAcademicReview,readAdmissions } from './academics.js';
+import { readSeniorAcademicReview,readAdmissions,withAcademicProjection } from './academics.js';
 import { createId } from '../contracts/foundation.js';
 import { canonicalData } from '../changes/settlement.js';
 import { pendingSchoolEvent } from './campus.js';
@@ -48,6 +48,10 @@ export function validateAftercareHistory(w){
  const state=r(w),adoptions=state.history.filter(h=>h.type==='aftercare-adoption');need(adoptions.length<=1,'duplicate adoption');if(!adoptions.length){need(!state.history.some(h=>h.type.startsWith('aftercare-')),'missing adoption');return;}
  const a=adoptions[0],prefix={...w,position:{...w.position,...a.at},extensions:{...w.extensions,'teacher-hell/world':{...state,plan:{...state.plan,cursor:a.cursor},history:state.history.slice(0,a.order-1)}}};
  need(canonicalData(a.data)===canonicalData(adoptionData(prefix)),'adoption differs from source');
+ // One private, forward-only academic replay across the original summary prefixes.
+ // Independent validateAcademicHistory still verifies every academic receipt first.
+ const projected={...prefix};
+ return withAcademicProjection(projected,()=>{
  let task=null;const weeks=new Set();
  for(const h of state.history){
   if(['aftercare-week-start','aftercare-week-summary'].includes(h.type)){const owner=state.commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId),ops=JSON.parse(owner.request).operations;need(ops.length===1&&ops[0].type==='aftercare-week','unowned weekly history');}
@@ -61,7 +65,10 @@ export function validateAftercareHistory(w){
    const expected=[];for(let date=task.startDate;date<=task.endDate;date=new Date(Date.parse(date+'T00:00:00Z')+86400000).toISOString().slice(0,10))for(const [index,slot] of runtimeCalendarDay(w,date).slots.entries()){const cursor=Math.floor(Date.parse(date+'T00:00:00Z')/86400000)*32+index;if(cursor>=task.startCursor)expected.push(`${date}/${slot.id}`);}
    need(expected.every(key=>slots.some(x=>`${x.at.date}/${x.at.slotId}`===key)),'summary skips required slots');
    const before={...w,position:{...w.position,...h.at},extensions:{...w.extensions,'teacher-hell/world':{...state,history:state.history.slice(0,h.order-1)}}};
-   need(canonicalData(h.data)===canonicalData(weekSummary(before,task)),'summary differs from journal');weeks.add(task.weekId);task=null;
+   need(r(before).history.length>=r(projected).history.length,'summary prefixes must advance');
+   projected.position=before.position;projected.extensions=before.extensions;
+   need(canonicalData(h.data)===canonicalData(weekSummary(projected,task)),'summary differs from journal');weeks.add(task.weekId);task=null;
   }
  }
+ });
 }

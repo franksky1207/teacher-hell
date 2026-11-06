@@ -12,7 +12,7 @@ import {prepareWorldOperation,prepareWorldSequence} from '../src/runtime/transac
 import {runtimeOf,restoreWorldState} from '../src/runtime/model.js';
 import {formalSlot} from '../src/runtime/schedule.js';
 import {aftercareActive} from '../src/runtime/aftercare-calendar.js';
-import {readAftercare,nextAftercareOperation,adoptionData} from '../src/runtime/aftercare.js';
+import {readAftercare,nextAftercareOperation,adoptionData,validateAftercareHistory,weekSummary} from '../src/runtime/aftercare.js';
 import {graduationSummary} from '../src/runtime/graduation.js';
 import {readSeniorAcademicReview,academicState,readAdmissions} from '../src/runtime/academics.js';
 import {calendarDay,THREE_YEAR,SENIOR_CALENDAR_VERSION} from '../src/calendar/calendar.js';
@@ -54,6 +54,11 @@ test('H4 final partial week stops at June boundary without settling or entering 
 test('H4 June due admissions nodes are processed and July/August remain pending',()=>{
  let w=base();while(nextAftercareOperation(w).status==='advance')w=week(w);
  const e=readAdmissions(w),nodes=e.completed.map(n=>n.kind);for(const kind of ['stars8-result','application-allocation','application-confirm','subject-register'])assert.ok(nodes.includes(kind),kind);
+ const summaries=r(w).history.filter(h=>h.type==='aftercare-week-summary');assert.equal(summaries.length,4);const original=JSON.stringify(w);
+ for(const h of summaries){const state=r(w),task=state.history.find(x=>x.type==='aftercare-week-start'&&x.data.weekId===h.data.weekId).data,prefix={...w,position:{...w.position,...h.at},extensions:{...w.extensions,'teacher-hell/world':{...state,history:state.history.slice(0,h.order-1)}}};assert.deepEqual(h.data,weekSummary(prefix,task));assert.ok(h.data.admissionsNodes.every(n=>n.date<=h.at.date));}
+ validateAftercareHistory(w);assert.equal(JSON.stringify(w),original);
+ const corrupt=structuredClone(w);r(corrupt).history.find(h=>h.type==='aftercare-week-summary').data.admissionsNodes=structuredClone(summaries.at(-1).data.admissionsNodes);assert.throws(()=>validateAftercareHistory(corrupt),/summary differs/);
+ validateAftercareHistory(w);assert.equal(JSON.stringify(w),original);
  for(const p of Object.values(e.students)){assert.equal(p.subject?.officialScore??null,null);assert.equal(p.subject?.distribution??null,null);}
  assert.ok(!r(w).history.some(h=>h.type==='academic'&&h.data.input.action==='assess'));
 });

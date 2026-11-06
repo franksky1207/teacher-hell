@@ -82,7 +82,7 @@ try {
     await call('Page.reload',{},sessionId);await wait('[data-action="slots"]');await click('slots');const loadAt=performance.now();await click('load:1');await wait('.game');timings.loadMs=performance.now()-loadAt;
   };
   for(const [name,payload] of scenarios){
-    await install(payload);
+    console.log('BEGIN H5 Chromium '+name);await install(payload);console.log('LOADED H5 Chromium '+name);
     const completed=payload.world.extensions['teacher-hell/world'].history.some(h=>h.type==='career-completion');
     for(const [width,height] of [[390,844],[360,640],[1280,800]]){
       await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<600},sessionId);
@@ -126,7 +126,7 @@ try {
       storedSizes=await evaluate(`(async()=>{const db=await new Promise((resolve,reject)=>{const q=indexedDB.open('teacher-hell:development:v1:slot1',1);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error);});try{return await new Promise((resolve,reject)=>{const tx=db.transaction(['state','pages'],'readonly'),head=tx.objectStore('state').get('save'),pages=tx.objectStore('pages').getAll();tx.oncomplete=()=>resolve({format:head.result.format,codec:head.result.codec,rawBytes:head.result.rawBytes,chunkCount:head.result.chunkCount,payloadPageBytes:pages.result.reduce((n,p)=>n+p.byteLength,0)});tx.onabort=()=>reject(tx.error);});}finally{db.close();}})()`);
       assert.equal(storedSizes.codec,'gzip');assert.ok(storedSizes.payloadPageBytes<storedSizes.rawBytes);checks++;
       assert.equal(await evaluate(`document.querySelector('[data-action="progress"]')===null`),true);checks++;
-      await click('completion-details');await includes('三年生涯完成紀錄');await includes('畢典與六月紀錄');checks++;
+      console.log('BEGIN completed notebook');await click('completion-details');await includes('三年生涯完成紀錄');await includes('畢典與六月紀錄');checks++;
       const savedCeremony=payload.world.extensions['teacher-hell/world'].facts.findLast(f=>f.data.graduationSummary).data.graduationSummary;assert.equal(await evaluate(`document.querySelector('.notebook-career').textContent.includes(${JSON.stringify(savedCeremony.description)})`),true);await includes('2029-06-01');checks++;
       await click('notebook-tab:people');await wait('.notebook-person');assert.ok(await evaluate(`document.querySelectorAll('.notebook-person').length>=38`));checks++;
       await click('notebook-tab:academics');await wait('.notebook-academic-student');
@@ -139,12 +139,12 @@ try {
       await click('close');
       completedHeap=await call('Runtime.getHeapUsage',{},sessionId);
       const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false},sessionId);await writeFile(resolve(root,'work/h5/completed-mobile.png'),Buffer.from(shot.data,'base64'));
-      await click('menu');await click('slots');await evaluate(`window.h5Loop={ticks:0,maxGapMs:0,last:performance.now()};window.h5LoopTimer=setInterval(()=>{const now=performance.now();h5Loop.maxGapMs=Math.max(h5Loop.maxGapMs,now-h5Loop.last);h5Loop.last=now;h5Loop.ticks++;},20)`);const exportAt=performance.now();await click('export:1');
+      await click('menu');await click('slots');await evaluate(`window.h5Loop={ticks:0,maxGapMs:0,last:performance.now()};window.h5LoopTimer=setInterval(()=>{const now=performance.now();h5Loop.maxGapMs=Math.max(h5Loop.maxGapMs,now-h5Loop.last);h5Loop.last=now;h5Loop.ticks++;},20)`);const exportAt=performance.now();console.log('BEGIN completed export');await click('export:1');
       let exported;for(let i=0;i<900;i++){exported=(await readdir(temporary)).find(n=>n.endsWith('.json'));if(exported)break;await new Promise(r=>setTimeout(r,100));}
       assert.ok(exported);timings.exportUiMs=performance.now()-exportAt;timings.exportMainLoop=await evaluate('clearInterval(h5LoopTimer);h5Loop');assert.ok(timings.exportMainLoop.ticks>1);checks++;const exportedPath=join(temporary,exported),backup=await readFile(exportedPath),expected=gunzipSync(await readFile(extra));
       const sha=b=>createHash('sha256').update(b).digest('hex');assert.equal(sha(backup),sha(expected));checks++;
       const opened=new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('Completed import file chooser timeout')),10000),listener=e=>{const m=JSON.parse(e.data);if(m.method==='Page.fileChooserOpened'){clearTimeout(timer);socket.removeEventListener('message',listener);resolve(m.params.backendNodeId);}};socket.addEventListener('message',listener);});
-      await click('import:2');const importAt=performance.now();await call('DOM.setFileInputFiles',{files:[exportedPath],backendNodeId:await opened},sessionId);
+      console.log('BEGIN completed import');await click('import:2');const importAt=performance.now();await call('DOM.setFileInputFiles',{files:[exportedPath],backendNodeId:await opened},sessionId);
       for(let i=0;i<9000&&await evaluate(`!!document.querySelector('.operation-status')`);i++)await new Promise(r=>setTimeout(r,100));
       await wait('[data-action="load:2"]');timings.importUiMs=performance.now()-importAt;await click('load:2');await wait('.game');await includes('三年任期完成');assert.equal(await evaluate(`document.querySelector('[data-action="progress"]')===null`),true);checks++;
       await click('menu');await click('slots');await click('new:2');await click('difficulty:hard');await click('teacher');await click('subjects');await click('review');

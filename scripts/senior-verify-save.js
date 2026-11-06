@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile,writeFile} from 'node:fs/promises';
 import {gunzipSync,gzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
 import {restoreSave,encodeSave,saveToken,sameToken} from '../src/storage/format.js';
 import {createStoredSession} from '../src/storage/session.js';
 import {runtimeOf,WorldError} from '../src/runtime/model.js';
@@ -14,8 +15,8 @@ import {projectNotebookAcademics} from '../web/notebook-academics.js';
 import {projectNotebookCareer,renderNotebookCareer} from '../web/notebook-reviews.js';
 import {nextProgression} from '../src/runtime/progression.js';
 import {readAftercare} from '../src/runtime/aftercare.js';
-const root='work/h5',metrics={checks:0,status:'running',node:process.version},hash=t=>createHash('sha256').update(t).digest('hex');
-const timed=async(name,fn)=>{const at=performance.now(),result=await fn();metrics[name+'Ms']=performance.now()-at;return result;};
+const root='work/h5',hash=t=>createHash('sha256').update(t).digest('hex'),metrics={checks:0,status:'running',node:process.version,sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),driverSha256:hash(await readFile('scripts/senior-verify-save.js')),aftercareSha256:hash(await readFile('src/runtime/aftercare.js'))};
+const timed=async(name,fn)=>{console.log('BEGIN '+name);const at=performance.now(),result=await fn();metrics[name+'Ms']=performance.now()-at;console.log(JSON.stringify({phase:name,ms:metrics[name+'Ms']}));return result;};
 try {
 async function verifyCompleted(){
 let payload=await timed('importRestore',async()=>restoreSave(gunzipSync(await readFile(`${root}/completed.json.gz`)).toString()));

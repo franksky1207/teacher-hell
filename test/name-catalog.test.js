@@ -30,11 +30,16 @@ test('New school creates 40 distinct student given names, with family-aware pare
  const given=roster.students.map(s=>s.name.slice(surnameOf(s.name).length));
  assert.equal(new Set(given).size,40);
  for(const student of roster.students){
-  const surname=surnameOf(student.name),p=reg.profiles[student.id];
+  const surname=surnameOf(student.name);
+  const knownContacts=student.caregivers.filter(c=>reg.profiles[c.id]?.primaryContact===true);
+  assert.equal(knownContacts.length,1,'Each generated household has one primary contact');
   for(const carer of student.caregivers){
-   const c=reg.profiles[carer.id];
-   if(c.familyRole==='father'&&p.appearance.variant%16!==0)assert.equal(surnameOf(c.displayName),surname);
-   if(c.familyRole==='mother'&&p.appearance.variant%16===0)assert.equal(surnameOf(c.displayName),surname);
+   const c=reg.profiles[carer.id],firstStudent=w.numeric.evolution.world.careLinks.find(link=>link.caregiverId===carer.id)?.studentId;
+   const first=reg.profiles[firstStudent],maternal=first?.appearance.variant%16===0;
+   assert.ok(['father','mother','guardian'].includes(c.familyRole),'Persisted family role');
+   assert.equal(typeof c.primaryContact,'boolean','Separate primary contact flag');
+   if(c.familyRole==='father'&&!maternal)assert.equal(surnameOf(c.displayName),surname);
+   if(c.familyRole==='mother'&&maternal)assert.equal(surnameOf(c.displayName),surname);
   }
  }
 });

@@ -23,7 +23,7 @@ const app=document.querySelector('#app');
 const storage=createIndexedDBStorage({factory:indexedDB,namespace:'development'});
 let current=null,slot=0,draft=null,proposal=null,viewedWeek=null,screen='home',openingPage=0,storyBusy=false;
 let ceremonyPage=0;
-let notebookTab='people',notebookPersonId=null,notebookPersonSearch='',notebookEventSearch='',notebookEventView='time';
+let notebookTab='people',notebookPersonId=null,notebookPersonSearch='',notebookEventSearch='',notebookEventView='time',notebookEventTerm=null;
 let notebookEventYear='all',notebookEventKind='all',notebookEventPage=1;
 let notebookAcademicStudent=null,notebookAcademicTerm=null,notebookReviewId=null;
 const activityNames={clubs:'社團活動',parents:'親師活動',sports:'運動會',fair:'校慶園遊會','graduation-trip-1':'畢業旅行','graduation-trip-2':'畢業旅行','graduation-trip-3':'畢業旅行',graduation:'畢業典禮','university-fair':'大學博覽會','japan-visit':'日本交流','field-trip':'校外教學','teachers-day':'教師節活動',halloween:'萬聖節活動',christmas:'聖誕節活動'};
@@ -113,12 +113,12 @@ const first=calendarDay(base,grade,plan.calendarVersion),weeks=comparableWeeks(w
 function close(){if(current&&pendingSemesterReview(gameData())&&document.querySelector('.overlay .notebook-reviews'))return;document.querySelector('.overlay')?.remove();}
 async function act(action,el){if(action==='outside'){if(el.classList.contains('overlay'))close();return;}if(action==='close'){close();return;}if(action==='home'){showHome();return;}if(action==='slots'){await showSlots();return;}if(action==='continue'){for(let i=1;i<=3;i++){const s=await workerRead({slot:i,summary:true});if(s.summary){await load(i);return;}}await showSlots();return;}if(action==='help'){dialog('遊戲說明','<p>從「選擇存檔」建立教師。六項長期能力可重抽；確認後建立三年生涯。主畫面的課表、筆記本及選單不會推進時間。</p><p>使用進度按鈕接續正式課程及校務；事件優先處理，畢典後改按週善後。六月先閱讀報告，再執行任期結算；完成槽可唯讀查閱結局與歷史。</p>');return;}if(action==='settings'){dialog('設定','<p>開發預覽版。正式音樂與素材尚未加入。</p>');return;}
 const [cmd,...argParts]=action.split(':');const arg=argParts.join(':');if(cmd==='new'){draftStart(Number(arg));return;}if(cmd==='load'){await load(Number(arg));return;}if(cmd==='difficulty'){if(arg){draft.difficulty=arg;proposal=null;showDifficulty();}else showDifficulty();return;}if(cmd==='teacher'){await showTeacher();return;}if(cmd==='reroll'){draft.candidate=rerollCandidate(draft.candidate);proposal=null;await showTeacher();return;}if(cmd==='subjects'){showSubjects();return;}if(cmd==='subject'){draft.subject=arg;proposal=null;showSubjects();return;}if(cmd==='review'){await showReview();return;}if(cmd==='create'){await create();return;}if(cmd==='opening-next'){openingPage=openingPage===1?2:0;showGame();return;}if(cmd==='ceremony-page'){ceremonyPage=Math.max(0,ceremonyPage+Number(arg));showGame();return;}if(cmd==='progress'){const next=nextProgression(gameData());if(next.status==='action')await executeProgress(next.request);else showGame();return;}if(cmd==='completion-details'){await act('notebook');await act('notebook-tab:career');return;}if(cmd==='panel'){const p=deriveWorldPanel(gameData().numeric.evolution.world);dialog('教師狀態',`<h3>長期能力</h3>${panelBars(p,ABILITY_NAMES)}<h3>當前狀態</h3>${panelBars(p,STATE_NAMES)}`);return;}if(cmd==='timetable'){viewedWeek=null;showTimetable();return;}if(cmd==='week'){const w=gameData(),p=w.extensions['teacher-hell/world'].plan,weeks=comparableWeeks(w.position.date,gradeAt(w.position.date,p.startYear),p.calendarVersion);if(weeks[arg])viewedWeek=weeks[arg];close();showTimetable();return;}if(cmd==='cell'){alert(el.dataset.detail);return;}if(cmd==='review-open'){document.querySelectorAll('.overlay').forEach(node=>node.remove());showPendingReview();return;}if(cmd==='review-ack'){await acknowledgeReview(arg);return;}
-if(cmd==='notebook'){notebookTab='people';notebookPersonId=null;notebookPersonSearch='';notebookEventSearch='';notebookEventView='time';notebookEventYear='all';notebookEventKind='all';notebookEventPage=1;notebookAcademicStudent=null;notebookAcademicTerm=null;notebookReviewId=null;const w=gameData(),plan=w.extensions['teacher-hell/world'].plan;const people=await notebookData('people');dialog('筆記本',renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:'people',people}));return;}
-if(['notebook-tab','notebook-person','notebook-event-year','notebook-event-kind','notebook-event-page','notebook-event-view','notebook-academic-student','notebook-academic-term','notebook-review'].includes(cmd)){
+if(cmd==='notebook'){notebookTab='people';notebookPersonId=null;notebookPersonSearch='';notebookEventSearch='';notebookEventView='time';notebookEventTerm=null;notebookEventYear='all';notebookEventKind='all';notebookEventPage=1;notebookAcademicStudent=null;notebookAcademicTerm=null;notebookReviewId=null;const w=gameData(),plan=w.extensions['teacher-hell/world'].plan;const people=await notebookData('people');dialog('筆記本',renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:'people',people}));return;}
+if(['notebook-tab','notebook-person','notebook-event-year','notebook-event-kind','notebook-event-page','notebook-event-view','notebook-event-term','notebook-academic-student','notebook-academic-term','notebook-review'].includes(cmd)){
  if(!current||!document.querySelector('.overlay .notebook'))return;
  const w=gameData(),plan=w.extensions['teacher-hell/world'].plan;
  if(cmd==='notebook-tab'){
-  notebookTab=arg;notebookPersonId=null;notebookPersonSearch='';notebookEventSearch='';notebookEventView='time';notebookEventYear='all';notebookEventKind='all';notebookEventPage=1;notebookAcademicStudent=null;notebookAcademicTerm=null;notebookReviewId=null;
+  notebookTab=arg;notebookPersonId=null;notebookPersonSearch='';notebookEventSearch='';notebookEventView='time';notebookEventTerm=null;notebookEventYear='all';notebookEventKind='all';notebookEventPage=1;notebookAcademicStudent=null;notebookAcademicTerm=null;notebookReviewId=null;
  }
  if(cmd==='notebook-person'){
   if(notebookTab!=='people')return;
@@ -126,12 +126,13 @@ if(['notebook-tab','notebook-person','notebook-event-year','notebook-event-kind'
   if(!available.people.some(p=>p.id===arg))throw new RangeError('Unknown notebook person');
   notebookPersonId=arg;
  }
- if(cmd==='notebook-event-year'||cmd==='notebook-event-kind'||cmd==='notebook-event-page'||cmd==='notebook-event-view'){
+ if(cmd==='notebook-event-year'||cmd==='notebook-event-kind'||cmd==='notebook-event-page'||cmd==='notebook-event-view'||cmd==='notebook-event-term'){
   if(notebookTab!=='events')return;
   if(cmd==='notebook-event-year'){notebookEventYear=arg;notebookEventPage=1;}
   if(cmd==='notebook-event-kind'){notebookEventKind=arg;notebookEventPage=1;}
   if(cmd==='notebook-event-page'){notebookEventPage=Number(arg);}
    if(cmd==='notebook-event-view'){notebookEventView=arg;notebookEventPage=1;}
+   if(cmd==='notebook-event-term'){notebookEventTerm=arg;notebookEventPage=1;}
  }
  if(cmd==='notebook-academic-student'||cmd==='notebook-academic-term'){
   if(notebookTab!=='academics')return;
@@ -156,7 +157,7 @@ if(['notebook-tab','notebook-person','notebook-event-year','notebook-event-kind'
  const people=notebookTab==='people'?await notebookData('people'):null;
  const events=notebookTab==='events'?await notebookData('events'):null;
   const tasks=notebookTab==='tasks'?await notebookData('tasks'):null;
- const html=renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:notebookTab,people,selectedPersonId:notebookPersonId,personSearch:notebookPersonSearch,events,eventSearch:notebookEventSearch,eventView:notebookEventView,tasks,eventYear:notebookEventYear,eventKind:notebookEventKind,eventPage:notebookEventPage,academics,reviews,selectedReview:notebookReviewId,career});
+ const html=renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:notebookTab,people,selectedPersonId:notebookPersonId,personSearch:notebookPersonSearch,events,eventSearch:notebookEventSearch,eventView:notebookEventView,eventTerm:notebookEventTerm,tasks,eventYear:notebookEventYear,eventKind:notebookEventKind,eventPage:notebookEventPage,academics,reviews,selectedReview:notebookReviewId,career});
  document.querySelector('.overlay .notebook').outerHTML=html;return;}if(cmd==='menu'){dialog('選單',`<p>存檔管理及返回首頁</p>${button('選擇存檔','slots')} ${button('返回首頁','home')}`);return;}if(cmd==='delete'){await storageAction('正在檢查存檔…',async()=>{const {summary,token}=await workerRead({slot:Number(arg),summary:true});if(!summary)return;if(confirm('確定刪除此存檔？建議先匯出備份。')&&confirm('再次確認：刪除後無法復原。')){await workerRead({slot:Number(arg),delete:true,expectedToken:token,confirmed:true});await showSlots();}});return;}
 if(cmd==='export'){await storageAction('正在驗證並匯出完整存檔…',async()=>{const {blob}=await workerRead({slot:Number(arg),export:true}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`teacher-hell-slot-${arg}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});return;}
 if(cmd==='import'){const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.onchange=async()=>{try{if(!input.files.length)return;await storageAction('正在驗證匯入存檔…',async()=>{const incoming=input.files[0],{review}=await workerRead({slot:Number(arg),reviewImport:incoming});if(!confirm(`匯入生涯 ${review.incoming.identity.careerId}？${review.replacing?'此槽已有存檔，將被覆蓋。':''}`))return;if(review.replacing&&!confirm('再次確認覆蓋原存檔？'))return;await workerRead({slot:Number(arg),import:incoming,expectedToken:review.token,confirmed:true});await showSlots();});}catch(e){alert(`匯入失敗：${e.message}`);}};input.click();}}
@@ -169,7 +170,7 @@ app.addEventListener('change',async event=>{
  else return;
  try{
   const w=gameData(),plan=w.extensions['teacher-hell/world'].plan,people=kind==='people'?await notebookData('people'):null,events=kind==='events'?await notebookData('events'):null;
-  document.querySelector('.overlay .notebook').outerHTML=renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:notebookTab,people,selectedPersonId:notebookPersonId,personSearch:notebookPersonSearch,events,eventYear:notebookEventYear,eventKind:notebookEventKind,eventPage:notebookEventPage,eventSearch:notebookEventSearch,eventView:notebookEventView});
+  document.querySelector('.overlay .notebook').outerHTML=renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:notebookTab,people,selectedPersonId:notebookPersonId,personSearch:notebookPersonSearch,events,eventYear:notebookEventYear,eventKind:notebookEventKind,eventPage:notebookEventPage,eventSearch:notebookEventSearch,eventView:notebookEventView,eventTerm:notebookEventTerm});
  }catch(error){alert('查詢失敗：'+error.message);}
 });
 app.addEventListener('click',async event=>{

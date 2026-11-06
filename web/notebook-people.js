@@ -18,7 +18,7 @@ export function projectNotebookPeople(world){
  }
  // Extra people enter the notebook only after a teacher-visible disclosure.
  const profiles=world.numeric.evolution.world.registry?.profiles??{};
- const knownIds=new Set([...known.facts.flatMap(f=>f.subjectIds??[]),...known.claims.map(c=>c.sourceId)]);
+ const knownIds=new Set(known.claims.map(c=>c.sourceId));
  for(const id of knownIds){
   if(id===world.identity.playerId||map.has(id)||!profiles[id])continue;
   map.set(id,{id,name:profiles[id].displayName,kind:'other',relation:'已知校內相關人物'});

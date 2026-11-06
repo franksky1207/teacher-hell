@@ -1,3 +1,4 @@
+import {seatNumbers,schoolGender} from './seats.js';
 import { readCareerCompletion } from './career.js';
 import { readFailure } from './homeroom.js';
 import { readSemesterReviews } from './reviews.js';
@@ -38,9 +39,10 @@ export function readHistoricalReview(saved) {
 export function readSchoolRoster(saved){
  const w=restoreWorldState(saved),numeric=w.numeric.evolution.world,r=numeric.registry;
  if(!r)return null;
+ const seats=seatNumbers(r,r.homeClassId);
  return {classId:r.homeClassId,className:r.classes[r.homeClassId].name,grade:r.academicYear-r.cohortStart+1,
-  students:numeric.classroom.studentIds.map(id=>({id,name:r.profiles[id].displayName,
-   caregivers:numeric.careLinks.filter(l=>l.studentId===id).map(l=>({id:l.caregiverId,name:r.profiles[l.caregiverId].displayName}))}))};
+  students:[...numeric.classroom.studentIds].sort((a,b)=>(seats.get(a)??Infinity)-(seats.get(b)??Infinity)).map(id=>({id,name:r.profiles[id].displayName,seatNo:seats.get(id),gender:schoolGender(r.profiles[id]),
+   caregivers:numeric.careLinks.filter(l=>l.studentId===id).map(l=>({id:l.caregiverId,name:r.profiles[l.caregiverId].displayName,role:r.profiles[l.caregiverId].familyRole??null,primaryContact:r.profiles[l.caregiverId].primaryContact===true}))}))};
 }
 
 /** Saved, player-visible reports only. No importance scores, current states or replay. */

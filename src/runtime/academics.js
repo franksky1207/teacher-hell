@@ -323,11 +323,17 @@ export function academicSupport(s,input,rng){
  // A later spring makeup may improve the annual average even if it still fails.
  for(const {t,row,c} of annualReviews(s,active))out.annual.push({personId:row.id,subject:c.subject,...applyAcademic(s,{action:'annual-credit',termId:t.termId,personId:row.id,subject:c.subject,date:input.date},rng)});
  for(const item of courses())if(retakeRequestDue(s,item.course))plan(item);
+ // Rebuild after makeup/annual decisions: earned credits may change deduplication.
+ // From here, grouping changes only modes; a student's study cannot change another
+ // student's course identity/order. Keep the original first match and iteration order.
+ const scheduled=courses(),byCourse=new Map(),byPerson=new Map(),applicants=new Map(),courseKey=(term,id,subject)=>JSON.stringify([term,id,subject]),groupKey=(term,subject)=>JSON.stringify([term,subject]);
+ for(const x of scheduled){const key=courseKey(x.t.termId,x.row.id,x.course.subject);if(!byCourse.has(key))byCourse.set(key,x);if(!byPerson.has(x.row.id))byPerson.set(x.row.id,[]);byPerson.get(x.row.id).push(x);}
+ for(const p of out.plans){const key=groupKey(p.termId,p.subject);applicants.set(key,(applicants.get(key)??0)+1);}
  // Group only actual same-day applicants, not everybody with an insufficient mark.
- for(const p of out.plans){const applicants=out.plans.filter(q=>q.termId===p.termId&&q.subject===p.subject);if(applicants.length>=15){const c=courses().find(x=>x.t.termId===p.termId&&x.row.id===p.personId&&x.course.subject===p.subject).course;c.retakePlan.mode=p.mode='class';c.retakePlan.requiredPeriods=c.credits*6;}}
+ for(const p of out.plans)if(applicants.get(groupKey(p.termId,p.subject))>=15){const c=byCourse.get(courseKey(p.termId,p.personId,p.subject)).course;c.retakePlan.mode=p.mode='class';c.retakePlan.requiredPeriods=c.credits*6;}
  const weekday=new Date(input.date+'T00:00:00Z').getUTCDay();
  if(weekday!==0&&weekday!==6&&input.studyAllowed!==false)for(const [personId,learner] of Object.entries(s.students)){
-  if(!active(personId))continue;let budget=2;const tasks=[...courses().filter(x=>x.row.id===personId&&!x.course.earned&&x.course.retakePlan&&!x.course.retakePlan.completed).map(x=>({...x,plan:x.course.retakePlan,kind:'retake'})),...(s.supplements??[]).filter(c=>c.personId===personId&&!c.completed).map(c=>({course:c,plan:c.plan,kind:'supplement'}))];
+  if(!active(personId))continue;let budget=2;const tasks=[...(byPerson.get(personId)??[]).filter(x=>!x.course.earned&&x.course.retakePlan&&!x.course.retakePlan.completed).map(x=>({...x,plan:x.course.retakePlan,kind:'retake'})),...(s.supplements??[]).filter(c=>c.personId===personId&&!c.completed).map(c=>({course:c,plan:c.plan,kind:'supplement'}))];
   for(const task of tasks){const {course:c,plan:p}=task;if(!budget||input.date<=p.from)continue;const periods=Math.min(budget,p.requiredPeriods-p.studiedPeriods);if(periods<=0)continue;
    p.studiedPeriods+=periods;p.lastStudyDate=input.date;budget-=periods;const subject=learner.subjects[c.subject];subject.mastery=score(subject.mastery+(100-subject.mastery)*.012*periods*(subject.state/100)*(subject.participation/100));out.study.push({personId,subject:c.subject,periods});
    if(p.studiedPeriods===p.requiredPeriods){const result=applyAcademic(s,{action:task.kind,termId:task.t?.termId??input.termId,personId,subject:c.subject,date:input.date},rng);out[task.kind==='retake'?'retakes':'supplements'].push({personId,subject:c.subject,...result});}

@@ -54,11 +54,12 @@ export function actorExists(world,id) {
   identifier(id); return id===world.identity.playerId || Object.hasOwn(world.numeric.evolution.world.people,id);
 }
 export function knownActor(world,id) { ensure(actorExists(world,id),'REFERENCE',`Unknown actor ${id}`); }
+const validationReferences=new WeakMap();
 export function findEvent(world,id) {
-  const value=world.events.find(event=>event.id===id);ensure(value,'REFERENCE',`Unknown event ${id}`);return value;
+  const value=validationReferences.get(world)?.events.get(id)??world.events.find(event=>event.id===id);ensure(value,'REFERENCE',`Unknown event ${id}`);return value;
 }
 export function findFact(world,id) {
-  const value=runtimeOf(world).facts.find(fact=>fact.id===id);ensure(value,'REFERENCE',`Unknown fact ${id}`);return value;
+  const value=validationReferences.get(world)?.facts.get(id)??runtimeOf(world).facts.find(fact=>fact.id===id);ensure(value,'REFERENCE',`Unknown fact ${id}`);return value;
 }
 export function findClaim(world,id,version) {
   const value=runtimeOf(world).claims.find(c=>c.id===id&&c.versionId===version);
@@ -157,6 +158,11 @@ export function validateWorldState(world) {
   unique(r.knowledge,k=>key(k.actorId,k.claimId,k.versionId),'knowledge keys');unique(r.disclosures,d=>key(d.actorId,d.factId),'disclosures');
   unique(r.history,h=>h.id,'history IDs');unique(r.effects,e=>e.id,'effect IDs');unique(r.stages,s=>s.id,'stage IDs');
   unique(r.numericArchives,a=>a.attemptId,'numeric archives');
+  // This synchronous validation owns immutable input references. Keep every row
+  // audit, while avoiding repeated linear searches through a three-year journal.
+  const firstIds=rows=>{const map=new Map();for(const row of rows)if(!map.has(row.id))map.set(row.id,row);return map;},priorReferences=validationReferences.get(world);
+  validationReferences.set(world,{events:firstIds(world.events),facts:firstIds(r.facts)});
+  try {
   const history=new Map(r.history.map(h=>[h.id,h]));
   // Temporary first-match indexes only: every source row is still audited below.
   const stages=new Map(r.stages.map(s=>[s.id,s])),effects=new Map(r.effects.map(e=>[e.id,e])),effectReceipts=new Set(r.effects.map(e=>key(e.attemptId,e.numericReceiptId))),results=new Map(),resultHistory=new Map();
@@ -267,6 +273,7 @@ export function validateWorldState(world) {
   validateNpcHistory(world);
   validateHomeroom(world);
   return world;
+  }finally{if(priorReferences)validationReferences.set(world,priorReferences);else validationReferences.delete(world);}
 }
 export function restoreWorldState(saved) {
   const world=typeof saved==='string'?JSON.parse(saved):saved;

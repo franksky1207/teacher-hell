@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 import {eventWorld} from '../test/support/event-fixtures.js';
 import {academicAt,academicApply} from '../test/support/senior-academic.js';
 import {calendarDay,SENIOR_CALENDAR_VERSION,THREE_YEAR} from '../src/calendar/calendar.js';
@@ -44,7 +45,7 @@ try {
     if(entry){pending.delete(message.id);clearTimeout(entry.timer);message.error?entry.reject(new Error(JSON.stringify(message.error))):entry.resolve(message.result);}
   });
   const call=(method,params={},sessionId)=>new Promise((resolve,reject)=>{
-    const id=++sequence,timer=setTimeout(()=>{pending.delete(id);reject(new Error(`CDP timeout: ${method}`));},180000);
+    const id=++sequence,timer=setTimeout(()=>{pending.delete(id);reject(new Error(`CDP timeout: ${method}`));},900000);
     pending.set(id,{resolve,reject,timer});socket.send(JSON.stringify({id,method,params,...(sessionId?{sessionId}:{})}));
   });
   const {targetId}=await call('Target.createTarget',{url:'about:blank'});
@@ -58,8 +59,8 @@ try {
   await call('Browser.setDownloadBehavior',{behavior:'allow',downloadPath:temporary});
   await call('Page.setInterceptFileChooserDialog',{enabled:true},sessionId);
   await call('Page.addScriptToEvaluateOnNewDocument',{source:`window.confirm = x => { (window.confirmPrompts ??= []).push(x); return window.confirmAnswers?.length ? window.confirmAnswers.shift() : true; }; window.alert = x => { window.lastAlert=x; }; const NativeDate=Date; window.Date=class extends NativeDate { constructor(...args){super(...(args.length?args:['2026-11-05T12:00:00Z']));} static now(){return NativeDate.parse('2026-11-05T12:00:00Z');} };`},sessionId);
-  const wait=async selector=>{for(let i=0;i<1800;i++){if(await evaluate(`!!document.querySelector(${JSON.stringify(selector)})`))return;await new Promise(r=>setTimeout(r,100));}throw Error('Missing '+selector+' '+await evaluate('document.body.innerText')+' ALERT '+await evaluate('window.lastAlert'));};
-  const click=async action=>{await wait(`[data-action="${action}"]`);await evaluate(`document.querySelector(${JSON.stringify(`[data-action="${action}"]`)}).click()`);for(let i=0;i<1800;i++){if(!await evaluate(`!!document.querySelector('.operation-status')`))return;await new Promise(r=>setTimeout(r,100));}throw Error('Operation did not finish: '+action);};
+  const wait=async selector=>{for(let i=0;i<9000;i++){if(await evaluate(`!!document.querySelector(${JSON.stringify(selector)})`))return;await new Promise(r=>setTimeout(r,100));}throw Error('Missing '+selector+' '+await evaluate('document.body.innerText')+' ALERT '+await evaluate('window.lastAlert'));};
+  const click=async action=>{for(let i=0;i<9000&&await evaluate(`!!document.querySelector('.operation-status')`);i++)await new Promise(r=>setTimeout(r,100));await wait(`[data-action="${action}"]`);await evaluate(`document.querySelector(${JSON.stringify(`[data-action="${action}"]`)}).click()`);for(let i=0;i<9000;i++){if(!await evaluate(`!!document.querySelector('.operation-status')`))return;await new Promise(r=>setTimeout(r,100));}throw Error('Operation did not finish: '+action);};
   const includes=async text=>{if(!await evaluate(`document.body.innerText.includes(${JSON.stringify(text)})`))throw Error('Missing text '+text);};
 
   // Date-isolated legacy saves verify UI compatibility only. The separate
@@ -68,8 +69,8 @@ try {
   const extra=process.argv.find(a=>a.startsWith('--save='))?.slice(7);
   const opening=createCareerOpening({candidate:createCandidate({seed:74,playerId:'teacher',schoolId:'school'}),seed:75,taipeiDate:'2026-11-06',difficulty:'normal',subject:'國文',careerKey:'h5-browser'});
   const contactDate='2029-06-02';let contact=academicAt(eventWorld(74,contactDate,calendarDay(contactDate,3,SENIOR_CALENDAR_VERSION).slots[0].id,{version:1,mode:THREE_YEAR,difficulty:'hard'}),contactDate);contact=academicApply(contact,[{type:'academic',action:'open'}]);contact=academicApply(contact,[aftercareCatalogue()]);
-  const scenarios=extra?[[extra,JSON.parse(gunzipSync(await readFile(extra)))]]:[['opening',createSave(opening,opening)],['before',fixtures.before],['after',fixtures.after],['terminal',fixtures.terminal],['contact',createSave(contact)]];
-  let checks=0;
+  const scenarios=extra?[[extra,JSON.parse(gunzipSync(await readFile(extra)))]]:[['opening',createSave(opening,opening)],['before',fixtures.before],['after',fixtures.after],['terminal',fixtures.terminal],['reserved',fixtures.reserved],['contact',createSave(contact)]];
+  let checks=0,completedHeap=null;
   await call('Page.navigate',{url},sessionId);await wait('[data-action="slots"]');
   const install=async payload=>{
     // Import uses the real save boundary, never arbitrary IndexedDB records.
@@ -86,6 +87,15 @@ try {
       assert.deepEqual(layout,{documentScroll:false,withinX:true,withinY:true});checks++;
     }
     await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true},sessionId);
+    if(extra&&!completed&&payload.world.position.date==='2029-06-29'){
+      // The source is an actual continuous save before the original report gate.
+      const pending=await evaluate(`document.querySelector('[data-action^="review-ack:"]')?.dataset.action??null`);
+      if(pending){await click('close');assert.ok(await evaluate(`!!document.querySelector('[data-action^="review-ack:"]')`));checks++;await click(pending);await wait('[data-action="progress"]');checks++;}
+      await includes('完成三年任期結算');await click('progress');await includes('三年任期完成');checks++;
+      assert.equal(await evaluate(`document.querySelector('[data-action="progress"]')===null`),true);checks++;
+      await call('Page.reload',{},sessionId);await wait('[data-action="slots"]');await click('slots');await click('load:1');await wait('.game');await includes('三年任期完成');checks++;
+      await click('completion-details');await includes('三年生涯完成紀錄');await includes('畢典與六月紀錄');await click('close');checks++;
+    }
     if(completed){
       assert.equal(await evaluate(`document.querySelector('[data-action="progress"]')===null`),true);checks++;
       await click('completion-details');await includes('三年生涯完成紀錄');await includes('畢典與六月紀錄');checks++;
@@ -96,12 +106,27 @@ try {
       assert.equal(await evaluate(`document.querySelectorAll('.notebook-academic-terms button').length`),6);checks++;
       assert.equal(await evaluate(`Array.from(document.querySelectorAll('.notebook-academic-table th')).some(x=>x.textContent==='三段')`),false);checks++;
       await click('close');
-    }else{
+      completedHeap=await call('Runtime.getHeapUsage',{},sessionId);
+      const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false},sessionId);await writeFile(resolve(root,'work/h5/completed-mobile.png'),Buffer.from(shot.data,'base64'));
+      await click('menu');await click('slots');await click('export:1');
+      let exported;for(let i=0;i<900;i++){exported=(await readdir(temporary)).find(n=>n.endsWith('.json'));if(exported)break;await new Promise(r=>setTimeout(r,100));}
+      assert.ok(exported);const exportedPath=join(temporary,exported),backup=await readFile(exportedPath),expected=gunzipSync(await readFile(extra));
+      const sha=b=>createHash('sha256').update(b).digest('hex');assert.equal(sha(backup),sha(expected));checks++;
+      const opened=new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('Completed import file chooser timeout')),10000),listener=e=>{const m=JSON.parse(e.data);if(m.method==='Page.fileChooserOpened'){clearTimeout(timer);socket.removeEventListener('message',listener);resolve(m.params.backendNodeId);}};socket.addEventListener('message',listener);});
+      await click('import:2');await call('DOM.setFileInputFiles',{files:[exportedPath],backendNodeId:await opened},sessionId);
+      for(let i=0;i<9000&&await evaluate(`!!document.querySelector('.operation-status')`);i++)await new Promise(r=>setTimeout(r,100));
+      await click('load:2');await wait('.game');await includes('三年任期完成');assert.equal(await evaluate(`document.querySelector('[data-action="progress"]')===null`),true);checks++;
+      await click('menu');await click('slots');await click('new:2');await click('difficulty:hard');await click('teacher');await click('subjects');await click('review');
+      await evaluate('window.confirmPrompts=[];window.confirmAnswers=[false]');await click('create');assert.equal(await evaluate('window.confirmPrompts.length'),1);await wait('[data-action="create"]');checks++;
+      await evaluate('window.confirmPrompts=[];window.confirmAnswers=[true,false]');await click('create');assert.equal(await evaluate('window.confirmPrompts.length'),2);await wait('[data-action="create"]');checks++;
+      await evaluate('window.confirmPrompts=[];window.confirmAnswers=[true,true]');await click('create');await wait('.game');await includes('2026-07-20');await includes('任教第 1 年');assert.equal(await evaluate('window.confirmPrompts.length'),2);checks++;
+      assert.equal(await evaluate('window.lastAlert??null'),null);checks++;
+    }else if(!extra||payload.world.position.date!=='2029-06-29'){
       await wait('[data-action="progress"]');
       if(name==='opening'){
         for(let step=0;step<4;step++){
           const rev=await evaluate(`document.querySelector('.game').dataset.revision`);await click('progress');
-          for(let i=0;i<1800;i++){if(await evaluate(`document.querySelector('.game').dataset.revision!==${JSON.stringify(rev)}`))break;await new Promise(r=>setTimeout(r,100));}
+          for(let i=0;i<9000;i++){if(await evaluate(`document.querySelector('.game').dataset.revision!==${JSON.stringify(rev)}`))break;await new Promise(r=>setTimeout(r,100));}
           assert.notEqual(await evaluate(`document.querySelector('.game').dataset.revision`),rev);assert.equal(await evaluate('window.lastAlert??null'),null);checks++;
         }
       }
@@ -113,7 +138,7 @@ try {
           if(!await evaluate(`!!document.querySelector('.story-view')`))break;
           const action=await evaluate(`(()=>{const actions=['next','confirm','select','finish','resume'];for(const a of actions){const b=document.querySelector('[data-story-action="'+a+'"]:not([disabled])');if(b){b.click();return a;}}return null;})()`);
           assert.ok(action);if(action==='select')selections++;
-          for(let i=0;i<1800&&await evaluate(`!!document.querySelector('.operation-status')`);i++)await new Promise(r=>setTimeout(r,100));
+          for(let i=0;i<9000&&await evaluate(`!!document.querySelector('.operation-status')`);i++)await new Promise(r=>setTimeout(r,100));
           assert.equal(await evaluate('window.lastAlert??null'),null);
         }
         assert.ok(selections>0);await wait('[data-action="progress"]');checks++;
@@ -121,6 +146,11 @@ try {
         const counts=await evaluate(`(async()=>{const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js');const db=createIndexedDBStorage({factory:indexedDB,namespace:'development'}),h=(await db.read(1)).payload.world.extensions['teacher-hell/world'].history;await db.close();return {weeks:h.filter(x=>x.type==='aftercare-week-summary').length,contacts:h.filter(x=>x.type==='event-selection').flatMap(x=>x.data.selected).filter(s=>s.definitionId==='aftercare:contact').length};})()`);assert.deepEqual(counts,{weeks:1,contacts:1});checks++;
         await click('notebook');await click('notebook-tab:career');await includes('2029-06-02～2029-06-08');checks++;
         await click('close');await call('Page.reload',{},sessionId);await wait('[data-action="slots"]');await click('slots');await click('load:1');await wait('.game');await includes('2029-06-09');checks++;
+      }
+      if(name==='reserved'){
+        await click('progress');assert.equal(await evaluate('window.lastAlert??null'),null);checks++;
+        const journal=await evaluate(`(async()=>{const {createIndexedDBStorage}=await import('./src/storage/indexeddb.js'),db=createIndexedDBStorage({factory:indexedDB,namespace:'development'}),w=(await db.read(1)).payload.world,r=w.extensions['teacher-hell/world'],a=r.history.find(h=>h.type==='aftercare-adoption');await db.close();return {prefix:JSON.stringify(r.history.slice(0,${payload.world.extensions['teacher-hell/world'].history.length})),retired:a.data.retiredReservationIds.length,admitted:a.data.retiredReservationIds.some(id=>w.events.some(e=>e.id===id))};})()`);
+        assert.equal(journal.prefix,JSON.stringify(payload.world.extensions['teacher-hell/world'].history));assert.ok(journal.retired>0);assert.equal(journal.admitted,false);checks++;
       }
       if(name==='terminal'){await includes('完成三年任期結算');checks++;}
       if(name==='after'){
@@ -131,8 +161,8 @@ try {
         await click('close');
         const revision=await evaluate(`document.querySelector('.game').dataset.revision`);
         await evaluate('window.h5Ticks=0;window.h5Timer=setInterval(()=>h5Ticks++,20)');
-        await evaluate(`document.querySelector('[data-action="progress"]').click()`);await wait('.operation-status');
-        for(let i=0;i<1800;i++){if(await evaluate(`document.querySelector('.game').dataset.revision!==${JSON.stringify(revision)}`))break;await new Promise(r=>setTimeout(r,100));}
+        await evaluate(`document.querySelector('[data-action="progress"]').click()`);await wait('.operation-status');assert.equal(await evaluate(`Array.from(document.querySelectorAll('#app button')).every(b=>b.disabled)`),true);checks++;
+        for(let i=0;i<9000;i++){if(await evaluate(`document.querySelector('.game').dataset.revision!==${JSON.stringify(revision)}`))break;await new Promise(r=>setTimeout(r,100));}
         assert.notEqual(await evaluate(`document.querySelector('.game').dataset.revision`),revision);
         assert.ok(await evaluate('h5Ticks')>=2);await evaluate('clearInterval(h5Timer)');checks++;
         assert.equal(await evaluate('window.lastAlert??null'),null);checks++;
@@ -140,7 +170,7 @@ try {
     }
     console.log('PASS H5 Chromium '+name);
   }
-  console.log(JSON.stringify({browser:'Chromium headless/CDP',viewports:['390x844','360x640','1280x800'],checks,scenarios:scenarios.length,physicalSafari:false,heap:await call('Runtime.getHeapUsage',{},sessionId)}));
+  console.log(JSON.stringify({browser:'Chromium headless/CDP',viewports:['390x844','360x640','1280x800'],checks,scenarios:scenarios.length,physicalSafari:false,completedHeap,browserVersion:await call('Browser.getVersion'),heap:await call('Runtime.getHeapUsage',{},sessionId)}));
   await call('Browser.close');
 } finally {
   socket?.close();

@@ -1,3 +1,9 @@
+import {restoreWorldState,findFact} from '../src/runtime/model.js';
+import {createId} from '../src/contracts/foundation.js';
+import {isCampOpeningPosition} from '../src/runtime/schedule.js';
+import {eventWorld} from './support/event-fixtures.js';
+import {academicAt} from './support/senior-academic.js';
+import {THREE_YEAR,positionFor,CALENDAR_VERSION,calendarDay} from '../src/calendar/calendar.js';
 import {aftercareCellIsEmpty} from '../web/presentation.js';
 import {slotOccupancy} from '../src/calendar/calendar.js';
 import {fiveTerms} from './support/senior-academic.js';
@@ -30,6 +36,7 @@ test('H5 real old June terminal selects the unique annual entry, never another w
  const w=restoreSave(fixtures.terminal).world,c=progressionContext(w),next=planProgression(c);
  assert.equal(w.position.date,'2029-06-29');assert.equal(next.status,'action');assert.deepEqual(next.request.operations,[{type:'settle-school-year'}]);
  const reserved=restoreSave(fixtures.reserved).world,before=JSON.stringify(reserved),view=progressionContext(reserved);assert.ok(view.reserved.length);view.reserved[0].date='2099-01-01';assert.equal(JSON.stringify(reserved),before);
+ const adoption=nextProgression(reserved);assert.equal(adoption.request.operations[0].type,'register-event-catalogue');const retired=prepareWorldOperation(reserved,adoption.request).world;assert.ok(retired.extensions['teacher-hell/world'].history.find(h=>h.type==='aftercare-adoption').data.retiredReservationIds.length);assert.equal(progressionContext(retired).reserved.length,0);assert.deepEqual(retired.extensions['teacher-hell/world'].history.slice(0,reserved.extensions['teacher-hell/world'].history.length),reserved.extensions['teacher-hell/world'].history);
  const oldAfter=restoreSave(fixtures.after).world,adopted=prepareWorldOperation(oldAfter,nextProgression(oldAfter).request).world,p=adopted.extensions['teacher-hell/world'].plan,table=p.tables.at(-1);
  const early=slotOccupancy(adopted.position.date,3,'early',table,p.calendarVersion);assert.equal(aftercareCellIsEmpty(adopted,adopted.position.date,early,early),false);
  const late=slotOccupancy(adopted.position.date,3,'p8',table,p.calendarVersion);assert.equal(aftercareCellIsEmpty(adopted,adopted.position.date,late,late),true);
@@ -60,4 +67,18 @@ test('H5 ordered formal controller requests replay identically to individual tra
 test('H5 notebook lists semesters chronologically and defaults to senior autumn, with formal academic-year labels',()=>{
  const w=fiveTerms(),base=projectNotebookAcademics(w),d=projectNotebookAcademics(w,base.students[0].id);
  assert.deepEqual(d.terms.map(t=>t.id),['2026:autumn','2027:spring','2027:autumn','2028:spring','2028:autumn']);assert.equal(d.selectedTerm,'2028:autumn');assert.equal(d.terms[1].label,'2026學年度下學期');assert.equal(d.terms.at(-1).label,'2028學年度上學期');
+});
+
+test('H5 frozen senior summer mock is a legal first-slot transition and future timetable boundary',()=>{
+ let w=eventWorld(74,null,null,{version:1,mode:THREE_YEAR,difficulty:'hard'});for(const date of ['2027-02-19','2027-09-01','2028-02-21'])w=academicAt(w,date);w=academicAt(w,'2028-07-24','morning');w=academicAt(w,'2028-07-23',calendarDay('2028-07-23',2,w.extensions['teacher-hell/world'].plan.calendarVersion).slots.at(-1).id);const c=progressionContext(w),p=c.plan;
+ assert.equal(isCampOpeningPosition(p,{date:'2028-07-24',slotId:'morning'}),true);assert.equal(isCampOpeningPosition(p,{date:'2028-07-24',slotId:'early'}),false);assert.equal(isCampOpeningPosition(p,{date:'2028-07-24',slotId:'afternoon'}),false);
+ assert.equal(isCampOpeningPosition({...p,calendarVersion:CALENDAR_VERSION},{date:'2028-07-24',slotId:'early'}),true);
+ assert.equal(p.tables.length,5);assert.throws(()=>academicAt(w,'2028-07-22'),/future semester|TIMETABLE/);
+ const ready={...c,schoolEnabled:true,annualSettled:true,academicYear:2027,dayDrawn:true,slotComplete:true,catalogueIds:['entrance:guidance-v1']};assert.equal(planProgression(ready).request.operations[0].type,'transition-school-year');
+});
+
+test('H5 validation reference indexes release after success and failure without hiding live mutations',()=>{
+ let w=opening();for(let i=0;i<4;i++)w=prepareWorldOperation(w,nextProgression(w).request).world;const r=w.extensions['teacher-hell/world'],f=r.facts[0],saved=JSON.stringify(w),id=f.id,causes=f.causeIds;
+ assert.deepEqual(restoreWorldState(w),w);f.causeIds=[createId('fact',['missing-index-cause'])];assert.throws(()=>restoreWorldState(w),/Unknown fact/);f.causeIds=causes;
+ f.id=createId('fact',['changed-live-id']);assert.throws(()=>findFact(w,id),/Unknown fact/);f.id=id;assert.equal(findFact(w,id),f);assert.equal(JSON.stringify(w),saved);assert.deepEqual(restoreWorldState(w),w);
 });

@@ -18,12 +18,14 @@ const metrics={kind:'H5-continuous-formal-three-year',sourceCommit:execFileSync(
 const report=()=>writeFile(`${root}/integration.json`,JSON.stringify(metrics,null,2));
 const persist=async(name,payload)=>{const start=performance.now(),text=encodeSave(payload),z=gzipSync(text);await writeFile(`${root}/${name}.json.gz.partial`,z);await rename(`${root}/${name}.json.gz.partial`,`${root}/${name}.json.gz`);metrics[name]={jsonBytes:Buffer.byteLength(text),gzipBytes:z.length,sha256:hash(text),encodeGzipWriteMs:performance.now()-start};await report();};
 let opening,w;const began=performance.now(),resume=process.argv.find(a=>a.startsWith('--resume='))?.slice(9);
-if(resume){const {gunzipSync}=await import('node:zlib');const p=restoreSave(gunzipSync(await readFile(resume)).toString());opening=p.opening;w=p.world;metrics.resumedFrom=resume;try{const prior=JSON.parse(await readFile(`${root}/integration.json`));metrics.previousRun=prior;metrics.steps=runtimeOf(w).revision-1;metrics.stages=prior.stages??{};}catch{}}
+if(resume){const {gunzipSync}=await import('node:zlib');const p=restoreSave(gunzipSync(await readFile(resume)).toString());opening=p.opening;w=p.world;metrics.resumedFrom=resume;try{const prior=JSON.parse(await readFile(`${root}/integration.json`));metrics.previousRun=prior;metrics.steps=runtimeOf(w).revision-1;metrics.stages=structuredClone(prior.stages??{});metrics.weeklyOperations=structuredClone(prior.weeklyOperations??[]);}catch{}}
 else{opening=createCareerOpening({candidate:createCandidate({seed:74,playerId:'teacher',schoolId:'school'}),seed:75,taipeiDate:'2026-11-06',difficulty:'normal',subject:'國文',careerKey:'h5-continuous-20261106'});w=opening;await persist('opening',createSave(w,opening));}
+let pendingWeekly=null;metrics.weeklyOperations??=[];
 try{
  while(!careerResult(w)){
   const start=performance.now(),from=w.position.date,year=w.position.serviceYear;let count=0,openingChanged=false,lastDate=from,stopBoundary=false,stage=null;metrics.stages??={};
   const result=prepareWorldSequence(w,c=>{
+   if(pendingWeekly){metrics.weeklyOperations.push({...pendingWeekly,to:c.position.date,revision:c.revision,ms:performance.now()-pendingWeekly.started,interrupted:c.reserved.length>0||c.stories.some(s=>!s.waiting||s.canResume)});pendingWeekly=null;}
    if(c.completed)return null;
    if(c.failed)throw Error('Formal career failed at '+c.position.date);
    if(c.position.date!==lastDate){lastDate=c.position.date;if(c.position.date.endsWith('-01'))console.log(JSON.stringify({date:c.position.date,revision:c.revision,elapsedMs:performance.now()-began,rss:process.memoryUsage().rss}));}
@@ -31,12 +33,14 @@ try{
    if(count>=batchSize)return null;
    const target=['2028-07-24','2028-12-01','2029-05-09','2029-05-31','2029-06-01','2029-06-02','2029-06-23'].find(d=>c.position.date===d&&!metrics.stages[d]);if(target){stage=target;return null;}
    const q=(operations,kind='routine')=>({id:`operation:${JSON.stringify([c.identity.attemptId,'h5-driver',String(c.revision)])}`,attemptId:c.identity.attemptId,expectedRevision:c.revision,actorId:c.identity.playerId,preconditions:[],calendarContext:{kind},operations});
+   if(c.pendingReview&&year===3&&c.position.date==='2029-06-29'&&!metrics.stages['awaiting-final-review']){stage='awaiting-final-review';return null;}
    if(c.pendingReview){count++;return q([{type:'read-semester-review',reviewId:c.pendingReview}]);}
    const story=c.stories.find(s=>!s.waiting||s.canResume);
    if(story){let action,optionId=null;if(story.canResume)action='resume';else if(story.canNext)action='next';else if(story.confirmation)action='confirm';else if(story.choices.length){action='select';optionId=['review','check','refer','help','listen','support','accept'].find(id=>story.choices.some(o=>o.id===id))??story.choices[0].id;}else if(story.canFinish)action='finish';else throw Error('Unrecognized story state');count++;return q([{type:'story',eventId:story.eventId,action,optionId}],'formal-event');}
    const next=planProgression(c);
    assert.equal(next.status,'action',JSON.stringify(next));
    if(next.settlement&&year===3){stopBoundary=true;return null;}
+   if(next.weekly)pendingWeekly={started:performance.now(),from:c.position.date,revision:c.revision};
    count++;return next.request;
   },{limit:10000});
   w=result.world;metrics.steps=runtimeOf(w).revision-1;

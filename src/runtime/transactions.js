@@ -25,7 +25,7 @@ import { SUBJECT_LOAD } from '../calendar/timetable.js';
 import { executeSchool, arrangeReplenishment, dueTransfers } from './school.js';
 import { deriveWorldPanel } from '../social/reputation.js';
 import { STATE_NAMES } from '../player/panel.js';
-import { isFormal, planPosition, planVacation, createCalendarBaseline, guardCalendarOperation, calendarAdmission, finishCalendarSlot, advanceFormalSlot, prepareSemester } from './schedule.js';
+import { isCampOpeningPosition,isFormal, planPosition, planVacation, createCalendarBaseline, guardCalendarOperation, calendarAdmission, finishCalendarSlot, advanceFormalSlot, prepareSemester } from './schedule.js';
 import { createId, validateId, validateEventEnvelope, restoreFoundationEnvelope, schoolEnrollmentReferences } from '../contracts/foundation.js';
 import { canonicalData, createSettlementSession, startSettlement } from '../changes/settlement.js';
 import { targetRecord } from '../changes/targets.js';
@@ -87,7 +87,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     assertShape(op,['type']);ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player continues a year');
     syncNumeric(world,numericSession);const n=numericSession.world(),target=n.registry.academicYear+1,y=yearData(target),next=nextPosition(world.position,r.plan.startYear,planMode(r.plan),r.plan.calendarVersion);
     ensure(world.extensions[ANNUAL_KEY]&&annualResult(world),'ANNUAL_PENDING','A verified annual success is required');
-    ensure(next.date===y.summerCamp&&next.slotId==='early'&&r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor),'TIME','Transition immediately before the next summer camp');
+    ensure(next.date===y.summerCamp&&isCampOpeningPosition(r.plan,next)&&r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor),'TIME','Transition immediately before the next summer camp');
     if(n.registry.enrollments.some(e=>e.until===null&&target-n.registry.classes[e.classId].cohortStart>2)){
       const completion=compileCohortCompletion(world,command.id);
       for(const child of completion.operations)numericSession=execute(world,command,child,numericSession,receipt,false,false,true);

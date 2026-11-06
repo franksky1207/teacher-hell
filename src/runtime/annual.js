@@ -1,3 +1,4 @@
+import {isCampOpeningPosition} from './schedule.js';
 import { runtimeSlot } from './aftercare-calendar.js';
 import { compileCohortCompletion,beforeCohortCompletion } from './cohort.js';
 import { failureResult } from './homeroom.js';
@@ -175,7 +176,7 @@ export function validateAnnualObservations(w){
  need(requestedTransitions.length===transitions.length,'missing annual affiliation transaction');
  for(const [i,h] of transitions.entries()){
   assertShape(h.data,['academicYear','previousClassId','classId','successId']);const target=r(w).plan.startYear+i+1,next=nextPosition(positionFor(h.at.date,h.at.slotId,r(w).plan.startYear,planMode(r(w).plan),r(w).plan.calendarVersion),r(w).plan.startYear,planMode(r(w).plan),r(w).plan.calendarVersion),success=reports.find(s=>s.id===h.data.successId),owner=r(w).commits.find(c=>c.id===h.operationId&&c.attemptId===h.attemptId),request=JSON.parse(owner.request);
-  need(h.data.academicYear===target&&next.date===yearData(target).summerCamp&&next.slotId==='early'&&success?.data.year===i+1&&success.order<h.order,'annual affiliations lack a legal prior success or camp boundary');
+  need(h.data.academicYear===target&&next.date===yearData(target).summerCamp&&isCampOpeningPosition(r(w).plan,next)&&success?.data.year===i+1&&success.order<h.order,'annual affiliations lack a legal prior success or camp boundary');
   need(request.operations.length===1&&request.operations[0].type==='transition-school-year','annual affiliations require an isolated request');
   const rows=r(w).history.filter(s=>s.operationId===h.operationId&&s.type==='school'),yearRow=rows.filter(s=>s.data.change.type==='school-year'),cohorts=rows.filter(s=>s.data.change.type==='school-cohort');
   need(yearRow.length===1&&yearRow[0].data.change.academicYear===target&&cohorts.length===((i+1)%3===0?1:0),'annual school operations differ');

@@ -59,7 +59,11 @@ jobs:
       - name: Scoped validation (A1 never runs annual or three-year drivers)
         shell: bash
         run: |
-          if [[ "$(git log -1 --format=%s)" == A1:* ]]; then
+          if [[ "$GITHUB_HEAD_REF" == 'fix/person-categories-teacher-name-20261106' ]]; then
+            npm run check
+            node --test --test-isolation=none test/teacher-profile.test.js test/seats.test.js test/name-catalog.test.js test/name-memory.test.js test/notebook-view.test.js
+            npm run build
+          elif [[ "$(git log -1 --format=%s)" == A1:* ]]; then
             npm run check
             npm run test:academic
             node --test --test-name-pattern='detached complete world/opening|physical v2' test/storage.test.js

@@ -130,7 +130,11 @@ export function validateStoryHistory(w){
    const commit=r(w).commits.find(q=>q.id===h.operationId),request=JSON.parse(commit.request);let op=request.operations.find(o=>o.type==='story'&&o.eventId===e.id);
    if(!op&&request.operations.some(o=>o.type==='admit-event'&&o.eventId===e.id))op={type:'story',eventId:e.id,action:'start',optionId:null};
    need(op&&same(op,h.data.action),'history action differs');
-   const atWorld=structuredClone(w);atWorld.identity.attemptId=h.attemptId;atWorld.position=planPosition(r(w).plan,h.cursor);if(w.extensions[HOMEROOM_KEY])atWorld.extensions[HOMEROOM_KEY]=structuredClone(homeroomBaseline({...w,position:atWorld.position}));r(atWorld).plan.cursor=h.cursor;
+   // The compiler writes only this event, witness holders and duty assignments.
+   // Isolate those plus the cursor/history containers; the large immutable
+   // journals remain readable without cloning the entire career per story row.
+   const atWorld={...w,identity:{...w.identity,attemptId:h.attemptId},position:planPosition(r(w).plan,h.cursor),events:w.events.map(x=>x===e?structuredClone(x):x),numeric:{...w.numeric,evolution:{...w.numeric.evolution,world:structuredClone(w.numeric.evolution.world)}},extensions:{...w.extensions,'teacher-hell/world':{...r(w),plan:{...r(w).plan,cursor:h.cursor}}}};
+   if(w.extensions[HOMEROOM_KEY])atWorld.extensions[HOMEROOM_KEY]=structuredClone(homeroomBaseline({...w,position:atWorld.position}));
    r(atWorld).history=r(w).history.filter(x=>x.order<h.order&&!(x.operationId===h.operationId&&(x.eventId===e.id||['institution','homeroom-result','school'].includes(x.type)&&h.data.operations.some(o=>o.type==='homeroom-result'&&same(o.data,x.data)||o.type==='school'&&same(o.change,x.data.change)||same(o,x.data.operation??null)))));
    const ae=atWorld.events.find(x=>x.id===e.id);ae.stageId=stageId(e,c,previous?.stage??c.entry);ae.choice=carrier(c,previous?.stage??c.entry);
    for(const input of h.data.inputs){need(Number.isFinite(input.value)&&input.value>=0&&input.value<=100,'invalid qualification witness');targetRecord(atWorld.numeric.evolution.world,input.target)[input.code]=input.value;}

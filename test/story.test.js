@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { DEMO_STORY,validateStory,validateStoryReference } from '../src/runtime/story-content.js';
-import { readStory,storyState } from '../src/runtime/story.js';
+import { readStory,storyState,validateStoryHistory } from '../src/runtime/story.js';
 import { runtimeOf,restoreWorldState } from '../src/runtime/model.js';
 import { readPlayerView } from '../src/runtime/views.js';
 import { prepareWorldOperation } from '../src/runtime/transactions.js';
@@ -41,4 +41,12 @@ test('13-E: three document presentation kinds satisfy validated content contract
  const invalidDocument=structuredClone(DEMO_STORY);
  invalidDocument.stages[0].pages[0].presentation='unsupported-document';
  assert.throws(()=>validateStory(invalidDocument));
+});
+
+test('H5 story history auditing isolates witnesses and event changes on success and rejection',()=>{
+ const freeze=v=>{if(v&&typeof v==='object'&&!Object.isFrozen(v)){Object.freeze(v);for(const child of Object.values(v))freeze(child);}return v;};
+ for(const option of ['listen','angry']){
+  const {world}=completeRoute(option),before=JSON.stringify(world);freeze(world);assert.doesNotThrow(()=>validateStoryHistory(world));assert.equal(JSON.stringify(world),before);
+  const bad=structuredClone(world),entry=runtimeOf(bad).history.find(h=>h.type==='story'&&h.data.action.action==='confirm');entry.data.state.panelDelta[Object.keys(entry.data.state.panelDelta)[0]]+=1;const corrupted=JSON.stringify(bad);freeze(bad);assert.throws(()=>validateStoryHistory(bad),/illegal story transition/);assert.equal(JSON.stringify(bad),corrupted);
+ }
 });

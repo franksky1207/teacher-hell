@@ -40,7 +40,12 @@ export function renderNotebookEvents(data,{year='all',kind='all',page=1,search='
  if(!['all','fact','claim'].includes(kind)||typeof year!=='string'||!Number.isSafeInteger(page)||page<1)throw new RangeError('Invalid event history filter');
  const years=[...new Set(data.entries.map(e=>yearOf(e.learnedDate)))].sort((a,b)=>b.localeCompare(a));
  if(year!=='all'&&!years.includes(year))throw new RangeError('Unknown event history year');
- const filtered=data.entries.filter(e=>(kind==='all'||e.kind===kind)&&(year==='all'||yearOf(e.learnedDate)===year)&&[e.text,e.sourceName,e.belief,...(e.subjectNames??[])].some(v=>String(v??'').includes(search)));
+ const matches=e=>(kind==='all'||e.kind===kind)&&(year==='all'||yearOf(e.learnedDate)===year)&&[e.text,e.sourceName,e.belief,...(e.subjectNames??[])].some(v=>String(v??'').includes(search));
+ const matched=data.entries.filter(matches);
+ // In event mode, a matching stage reveals the full already-disclosed development
+ // of that same event across terms, without surfacing undisclosed backstage facts.
+ const relevantIds=new Set(mode==='event'?matched.map(e=>e.eventId).filter(Boolean):[]);
+ const filtered=mode==='event'?data.entries.filter(e=>matches(e)||e.eventId&&relevantIds.has(e.eventId)):matched;
  if(mode==='event')filtered.sort((a,b)=>String(a.eventId??a.text).localeCompare(String(b.eventId??b.text),'zh-Hant')||(a.learnedDate??'').localeCompare(b.learnedDate??''));
  const pages=Math.max(1,Math.ceil(filtered.length/EVENT_PAGE_SIZE));
  const actualPage=Math.min(page,pages);

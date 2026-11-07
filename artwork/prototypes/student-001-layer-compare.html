@@ -84,16 +84,16 @@ const load=url=>new Promise((resolve,reject)=>{
 let desired='calm',current='calm',generation=0,frameId=0,sourcePatch=null,bodyImg=null;
 const patches=new Map();
 let ready=false;
-function mixPixel(a,b,ratio){
- const aa=a[3]/255,ab=b[3]/255,out=aa*(1-ratio)+ab*ratio;
- if(out===0)return [0,0,0,0];
- return [0,1,2].map(i=>Math.round((a[i]*aa*(1-ratio)+b[i]*ab*ratio)/out)).concat(Math.round(out*255));
-}
 function mixData(from,to,t){
  const out=new ImageData(FACE.w,FACE.h);
- for(let i=0;i<out.data.length;i+=4){
-  const px=mixPixel(from.data.subarray(i,i+4),to.data.subarray(i,i+4),t);
-  out.data.set(px,i);
+ const a=from.data,b=to.data,d=out.data,q=1-t;
+ for(let i=0;i<d.length;i+=4){
+  const av=a[i+3]*q,bv=b[i+3]*t,alpha=av+bv;
+  if(alpha===0){d[i]=d[i+1]=d[i+2]=d[i+3]=0;continue;}
+  d[i]=Math.round((a[i]*av+b[i]*bv)/alpha);
+  d[i+1]=Math.round((a[i+1]*av+b[i+1]*bv)/alpha);
+  d[i+2]=Math.round((a[i+2]*av+b[i+2]*bv)/alpha);
+  d[i+3]=Math.round(alpha);
  }
  return out;
 }

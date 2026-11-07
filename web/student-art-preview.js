@@ -63,23 +63,22 @@ export function mountStudentArtPrototype(root){
   const wearLabel=STUDENT_ART_OUTFITS.find(([key])=>key===wear)?.[1]??wear;
   current='calm';base=null;sheet=null;metadata=null;enable(false);
   ctx?.clearRect(0,0,canvas.width,canvas.height);
-  if(available==='missing'){
-   canvas.hidden=true;empty.hidden=false;empty.textContent=`${id.replace('student-','學生 ')}・${wearLabel}尚未製作`;
-   say('此組合尚無平靜母圖與六表情圖。');return;
-  }
-  canvas.hidden=false;empty.hidden=true;say('正在載入美術素材…');
+  // Do not gate previews solely on a hardcoded catalogue: GitHub assets may
+  // already be deployed while the list or a cached JS module is outdated.
+  // The actual base PNG + JSON + sheet determine whether a combination exists.
+  canvas.hidden=false;empty.hidden=true;say('正在檢查並載入美術素材…');
   const dir=new URL(`./assets/characters/students/${id}/`,import.meta.url);
   try{
    const baseName=`${id}-base-${wear}.png`;
    const loadedBase=await loadImage(new URL(baseName,dir).href);
    if(token!==request||!root.isConnected)return;
    base=loadedBase;
-   if(available==='base'){
-    draw();say('目前僅有平靜母圖，六表情尚待製作。');return;
-   }
    const metaName=`${id}-face-sheet-${wear}.json`;
-   const response=await fetch(new URL(metaName,dir));
-   if(!response.ok)throw new Error('定位 JSON 無法讀取');
+   const response=await fetch(new URL(metaName,dir),{cache:'no-cache'});
+   if(response.status===404){
+    draw();enable(false);say('目前僅有平靜母圖，六表情尚未上架。');return;
+   }
+   if(!response.ok)throw new Error('定位 JSON 無法讀取（HTTP '+response.status+'）');
    const loadedMeta=await response.json();
    const loadedSheet=await loadImage(new URL(`${id}-face-sheet-${wear}.png`,dir).href);
    if(token!==request||!root.isConnected)return;
@@ -96,8 +95,12 @@ export function mountStudentArtPrototype(root){
    say(`${id.replace('student-','學生 ')}・${wearLabel}｜平靜（${wear==='sports-summer'?'夏季運動服候選，待預覽驗收':'既有制服已驗收'}；六表情可切換）`);
   }catch(error){
    if(token!==request||!root.isConnected)return;
-   sheet=null;metadata=null;draw();enable(false);
-   say('素材載入或定位失敗：'+error.message);
+   sheet=null;metadata=null;enable(false);
+   if(!base){
+    canvas.hidden=true;empty.hidden=false;empty.textContent=`${id.replace('student-','學生 ')}・${wearLabel}尚無可讀取的平靜母圖`;
+    say('此組合目前未有可讀取的母圖。');return;
+   }
+   draw();say('六表情圖集載入或定位失敗：'+error.message);
   }
  }
  root.querySelector('[data-art-student]').value='student-001';

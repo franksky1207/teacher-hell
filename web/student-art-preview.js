@@ -36,7 +36,7 @@ export function renderStudentArtPrototype(){
   <div class="student-art-stage"><canvas data-art-canvas width="1024" height="1536" role="img" aria-label="學生平靜母圖及臉部表情覆蓋"></canvas><p class="student-art-empty" data-art-empty hidden></p></div>
   <div class="student-art-buttons" role="group" aria-label="六種表情">${STUDENT_ART_EXPRESSIONS.map(([key,label])=>`<button type="button" data-art-expression="${key}" aria-pressed="${key==='calm'}">${label}</button>`).join('')}</div>
   <p class="student-art-status" data-art-status role="status">選擇學生與服裝，查看素材狀態。</p>
-  <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。冬季六格以同一套母圖膚色校正後即時切換；這是預覽驗收，不代表正式劇情已接線。</p>
+  <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。夏季六表情為剛從夏季平靜母圖重製的候選素材，冬季則沿用已驗收的共同陰影校正；兩者均不代表正式劇情已接線。</p>
  </section>`;
 }
 function loadImage(url){
@@ -90,7 +90,7 @@ export function mountStudentArtPrototype(root){
    const normalized=(wear==='uniform-summer') ? {canvas:loadedSheet} : normalizeSixExpressionCanvas(loadedBase,loadedSheet,loadedMeta);
    if(token!==request||!root.isConnected)return;
    sheet=normalized.canvas;metadata=loadedMeta;draw();enable(true);
-   say(`${id.replace('student-','學生 ')}・${wearLabel}｜平靜（已套用六格共同臉頰校正，可切換表情）`);
+   say(`${id.replace('student-','學生 ')}・${wearLabel}｜平靜（${wear==='uniform-summer'?'夏季候選，待實機驗收':'冬季已驗收校正版'}；六表情可切換）`);
   }catch(error){
    if(token!==request||!root.isConnected)return;
    sheet=null;metadata=null;draw();enable(false);
@@ -105,7 +105,7 @@ export function mountStudentArtPrototype(root){
   if(!b||b.disabled||!sheet||!metadata)return;
   current=b.dataset.artExpression;draw();
   const name=STUDENT_ART_EXPRESSIONS.find(([key])=>key===current)?.[1]??current;
-  say(`${student.value.replace('student-','學生 ')}・${STUDENT_ART_OUTFITS.find(([id])=>id===outfit.value)?.[1]}｜${name}（共同陰影校正版）`);
+  say(`${student.value.replace('student-','學生 ')}・${STUDENT_ART_OUTFITS.find(([id])=>id===outfit.value)?.[1]}｜${name}（${outfit.value==='uniform-summer'?'夏季候選，待實機驗收':'冬季校正版'}）`);
  });
  void update();
 }

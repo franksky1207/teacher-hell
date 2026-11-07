@@ -7,7 +7,7 @@ test('forty student identities and eight Chinese outfit choices',()=>{
  assert.equal(STUDENT_ART_OUTFITS.length,8);
  assert.equal(STUDENT_ART_EXPRESSIONS.length,6);
  assert.equal(studentArtAvailability('student-001','uniform-winter'),'full');
- assert.equal(studentArtAvailability('student-001','uniform-summer'),'base');
+ assert.equal(studentArtAvailability('student-001','uniform-summer'),'full');
  assert.equal(studentArtAvailability('student-002','uniform-winter'),'missing');
  const html=renderStudentArtPrototype();
  assert.match(html,/學生 001/);assert.match(html,/學生 040/);

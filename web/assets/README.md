@@ -30,7 +30,7 @@
 
 ## 2026-11-07：student-001 最小顯示接入（更新）
 
-已將 `student-001-base.png` 與五張完整人物表情 PNG 放入 `web/assets/characters/students/`，提供正式網頁模組載入。遊戲首頁與遊戲畫面增加「立繪預覽」入口，透過 `web/student-art-preview.js` 展示約 180 毫秒原地交叉淡化，不依賴劇情、事件或存檔。
+已將 `student-001-base-uniform-summer.png` 與五張完整人物表情 PNG 放入 `web/assets/characters/students/`，提供正式網頁模組載入。遊戲首頁與遊戲畫面增加「立繪預覽」入口，透過 `web/student-art-preview.js` 展示約 180 毫秒原地交叉淡化，不依賴劇情、事件或存檔。
 
 **注意：這是已獲使用者接受的美術候選圖進入遊戲預覽的展示接線；不是正式分層素材、也沒有將 student-001 指派給現有任何 NPC。** `page.cast` 自動表情映射、角色身分與衣服的正式組合及正式事件切換尚待後續整合，不能從首頁按鈕推定已完成。
 

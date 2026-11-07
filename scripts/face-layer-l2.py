@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 HTML = ROOT / "artwork/prototypes/student-001-layer-compare.html"
 L1 = ROOT / "artwork/prototypes/l1-face-layers"
 OUT = ROOT / "artwork/prototypes/l2-layer-compare"
-CALM = ROOT / "artwork/masters/students/student-001-base.png"
+CALM = ROOT / "artwork/masters/students/student-001-base-uniform-summer.png"
 ORIG = ROOT / "artwork/prototypes"
 KEYS = ("calm", "happy", "surprised", "angry", "sad", "embarrassed")
 

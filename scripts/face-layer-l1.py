@@ -11,7 +11,7 @@ from PIL import Image, ImageChops
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "artwork/prototypes/l1-face-layers"
 INPUT = ROOT / "artwork/prototypes"
-BASE = ROOT / "artwork/masters/students/student-001-base.png"
+BASE = ROOT / "artwork/masters/students/student-001-base-uniform-summer.png"
 EXPRESSIONS = ("calm", "happy", "surprised", "angry", "sad", "embarrassed")
 PADDING = 14
 

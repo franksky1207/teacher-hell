@@ -37,7 +37,7 @@ button:focus-visible{outline:3px solid #f3d89c;outline-offset:2px}
 <div class="panels">
   <section class="panel"><h2>A｜完整人物 PNG</h2>
     <div class="frame"><div class="art" id="art-a" aria-label="完整立繪">
-      <img class="baseline" src="../masters/students/student-001-base.png" alt="" decoding="async">
+      <img class="baseline" src="../masters/students/student-001-base-uniform-summer.png" alt="" decoding="async">
       <img class="overlay" data-full="happy" src="student-001-expression-happy.png" alt="" decoding="async">
       <img class="overlay" data-full="surprised" src="student-001-expression-surprised.png" alt="" decoding="async">
       <img class="overlay" data-full="angry" src="student-001-expression-angry.png" alt="" decoding="async">
@@ -75,7 +75,7 @@ const controls=document.querySelector('#controls');
 const fullLayers=[...document.querySelectorAll('[data-full]')];
 const canvas=document.querySelector('#face-canvas');
 const ctx=canvas.getContext('2d',{alpha:true,willReadFrequently:true});
-const imageURL=key=>key==='calm'?'../masters/students/student-001-base.png':'student-001-expression-'+key+'.png';
+const imageURL=key=>key==='calm'?'../masters/students/student-001-base-uniform-summer.png':'student-001-expression-'+key+'.png';
 const patchURL=key=>'l1-face-layers/student-001-face-'+key+'.png';
 const bodyURL='l1-face-layers/student-001-body-face-window.png';
 const load=url=>new Promise((resolve,reject)=>{

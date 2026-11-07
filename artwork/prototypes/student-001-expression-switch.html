@@ -26,9 +26,9 @@ main{max-width:800px;margin:auto;padding:16px}h1{font-size:1.2rem;margin:0 0 8px
 <p>僅驗證兩張 PNG 原地疊放與表情更換；不接正式人物 ID、事件、存檔或顯示層。</p>
 <div class="stage" aria-label="人物表情原型">
   <div class="figure">
-    <img id="fixed-base" class="base-img" src="../masters/students/student-001-base.png" alt="" decoding="async">
-    <img id="layer-0" src="../masters/students/student-001-base.png" alt="" decoding="async">
-    <img id="layer-1" src="../masters/students/student-001-base.png" alt="" decoding="async">
+    <img id="fixed-base" class="base-img" src="../masters/students/student-001-base-uniform-summer.png" alt="" decoding="async">
+    <img id="layer-0" src="../masters/students/student-001-base-uniform-summer.png" alt="" decoding="async">
+    <img id="layer-1" src="../masters/students/student-001-base-uniform-summer.png" alt="" decoding="async">
   </div>
   <div class="caption" id="caption">平靜｜人物保持固定位置</div>
 </div>
@@ -45,7 +45,7 @@ main{max-width:800px;margin:auto;padding:16px}h1{font-size:1.2rem;margin:0 0 8px
 <script>
 (()=>{'use strict';
 const names={calm:'平靜',happy:'開心',surprised:'驚訝',angry:'生氣',sad:'難過',embarrassed:'尷尬'};
-const pathFor=key=>key==='calm'?'../masters/students/student-001-base.png':`student-001-expression-${key}.png`;
+const pathFor=key=>key==='calm'?'../masters/students/student-001-base-uniform-summer.png':`student-001-expression-${key}.png`;
 const layers=[document.querySelector('#layer-0'),document.querySelector('#layer-1')];
 const caption=document.querySelector('#caption'),status=document.querySelector('#status');
 let current='calm',front=0,generation=0;

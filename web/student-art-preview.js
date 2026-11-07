@@ -2,7 +2,7 @@
 export const STUDENT_001_EXPRESSIONS=Object.freeze({calm:'平靜',happy:'開心',surprised:'驚訝',angry:'生氣',sad:'難過',embarrassed:'尷尬'});
 export function studentArtUrl(expression){
  if(!Object.hasOwn(STUDENT_001_EXPRESSIONS,expression))throw new RangeError('Unknown prototype expression');
- const name=expression==='calm'?'student-001-base.png':`student-001-expression-${expression}.png`;
+ const name=expression==='calm'?'student-001-base-uniform-summer.png':`student-001-expression-${expression}.png`;
  return new URL(`./assets/characters/students/${expression==='calm'?'base':'expressions'}/${name}`,import.meta.url).href;
 }
 export function renderStudentArtPrototype(){

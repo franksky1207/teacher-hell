@@ -70,3 +70,18 @@
 .story-view .story-reader{scrollbar-gutter:stable}
 .story-view .story-chat,.story-view .story-document{max-height:none}
 @media(max-width:650px){.story-view .story-choice-grid button{min-height:2.75rem}}
+
+/* Phase 15-B: isolated student art review inside the real preview shell. */
+.student-art-preview{display:grid;gap:.6rem;min-width:0}
+.student-art-preview>p{margin:.15rem 0;color:#dce4ee;font-size:.85rem}
+.student-art-stage{position:relative;width:100%;height:min(53dvh,490px);min-height:220px;overflow:hidden;border-radius:.65rem;background:linear-gradient(#5f7f86,#253047);isolation:isolate}
+.student-art-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;pointer-events:none}
+.student-art-fixed{opacity:1}
+.student-art-fade{opacity:0;transition:opacity 180ms ease-in-out}
+.student-art-fade--visible{opacity:1}
+.student-art-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.4rem}
+.student-art-buttons button{padding:.45rem .2rem;min-height:2.4rem;border-radius:.4rem;cursor:pointer}
+.student-art-buttons button[aria-pressed=true]{outline:2px solid #e9c777;outline-offset:-2px}
+.student-art-status{min-height:1.4rem}
+@media(max-width:650px){.student-art-stage{height:min(42dvh,400px);min-height:180px}}
+@media(prefers-reduced-motion:reduce){.student-art-fade{transition-duration:0ms}}

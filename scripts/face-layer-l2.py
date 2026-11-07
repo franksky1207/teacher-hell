@@ -96,7 +96,8 @@ def compare():
             errors.append(f"invalid face patch dimensions: {key}")
         assembled=body.copy()
         assembled.alpha_composite(patch,(roi[0],roi[1]))
-        if (ImageChops.difference(assembled.convert("RGB"),expected.convert("RGB")).getbbox() is not None\n                or ImageChops.difference(assembled.getchannel("A"),expected.getchannel("A")).getbbox() is not None):
+        if (ImageChops.difference(assembled.convert("RGB"),expected.convert("RGB")).getbbox() is not None
+                or ImageChops.difference(assembled.getchannel("A"),expected.getchannel("A")).getbbox() is not None):
             errors.append(f"lossless reconstruction failed: {key}")
         if key != "calm":
             difference=ImageChops.difference(base.convert("RGB"),expected.convert("RGB"))

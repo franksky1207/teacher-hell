@@ -32,7 +32,7 @@ def inspect():
             report["expressions"][expression] = item
             continue
         alpha_equal = ImageChops.difference(base.getchannel("A"), target.getchannel("A")).getbbox() is None
-        diff = ImageChops.difference(base, target)
+        diff = ImageChops.difference(base.convert('RGB'), target.convert('RGB'))
         bbox = diff.getbbox()
         item["alpha_equal"] = alpha_equal
         item["difference_bbox"] = list(bbox) if bbox else None

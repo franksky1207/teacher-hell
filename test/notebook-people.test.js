@@ -30,3 +30,37 @@ test('14-B: colon-delimited IDs render as one encoded action',()=>{
  const html=renderNotebookPeople(data,id);
  assert.match(html,/data-action="notebook-person:student:cohort:123"/);
 });
+
+test('14-F3: class summary counts only disclosed student facts without extrapolating to whole class',()=>{
+ const {world}=beginDemo(),data=projectNotebookPeople(world);
+ assert.equal(data.classSummary.enrollment,data.people.filter(p=>p.kind==='student').length);
+ const studentIds=new Set(data.people.filter(p=>p.kind==='student').map(p=>p.id));
+ const facts=data.facts.filter(f=>f.subjectIds.some(id=>studentIds.has(id)));
+ const covered=new Set(facts.flatMap(f=>f.subjectIds.filter(id=>studentIds.has(id))));
+ assert.equal(data.classSummary.studentsWithKnownRecords,covered.size);
+ assert.equal(data.classSummary.knownStudentFacts,facts.length);
+ const html=renderNotebookPeople(data);
+ assert.match(html,/班級已知概況/);
+ assert.match(html,/不能代表全班的整體表現/);
+ assert.doesNotMatch(html,/全班都|所有學生都/);
+});
+test('14-F3: individual observations disclose only the selected student facts, never other classmates',()=>{
+ const data={className:'智班',classSummary:{enrollment:2,studentsWithKnownRecords:1,knownStudentFacts:1,archived:false},
+ people:[{id:'s1',name:'甲同學',kind:'student',relation:'導師班學生'},{id:'s2',name:'乙同學',kind:'student',relation:'導師班學生'}],
+ facts:[{id:'f1',description:'甲已公開的班級活動',subjectIds:['s1'],occurredAt:{date:'2026-11-07'}},{id:'f2',description:'乙未選取的私事',subjectIds:['s2'],occurredAt:{date:'2026-11-07'}}],claims:[]};
+ const selected=renderNotebookPeople(data,'s1');
+ assert.match(selected,/導師目前掌握的觀察/);
+ assert.match(selected,/最近已知紀錄（2026-11-07）：甲已公開的班級活動/);
+ assert.doesNotMatch(selected,/乙未選取的私事/);
+ const empty=renderNotebookPeople(data,'s2');
+ assert.doesNotMatch(empty,/甲已公開的班級活動/);
+});
+test('14-F3: incomplete observations are explicitly unknown, with HTML escaping',()=>{
+ const data={className:'<智班>',classSummary:{enrollment:1,studentsWithKnownRecords:0,knownStudentFacts:0,archived:true},
+ people:[{id:'s',name:'<同學>',kind:'student',relation:'導師班學生'}],facts:[],claims:[]};
+ const html=renderNotebookPeople(data,'s');
+ assert.match(html,/封存班級紀錄/);
+ assert.match(html,/不能據此判定學生的個性或表現/);
+ assert.match(html,/&lt;同學&gt;/);
+ assert.doesNotMatch(html,/<同學>/);
+});

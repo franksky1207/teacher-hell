@@ -1,0 +1,37 @@
+name: 15-B-L3 synthetic appearance assignment
+on:
+  push:
+    branches: [feat/phase15-l3-appearance-catalog-20261107]
+    paths:
+      - .github/workflows/phase15-l3-appearance.yml
+      - scripts/appearance-l3.js
+      - scripts/appearance-l3-report.js
+      - test/appearance-l3.test.js
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: phase15-l3-appearance
+  cancel-in-progress: false
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Scoped deterministic 40-student and three-save assertions
+        run: node --test test/appearance-l3.test.js
+      - name: Generate capacity, similarity and stability report (no game simulation)
+        run: node scripts/appearance-l3-report.js
+      - name: Commit only L3 reports to development branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add artwork/prototypes/l3-appearance-simulation/
+          if ! git diff --cached --quiet; then
+            git commit -m "test(15-B-L3): retain exact appearance-capacity simulation results"
+            git push origin HEAD:refs/heads/feat/phase15-l3-appearance-catalog-20261107
+          fi

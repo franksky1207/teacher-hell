@@ -50,14 +50,16 @@ def paint(kind):
         d.ellipse(tuple(round(z*S) for z in box),fill=fill,outline=outline,width=max(1,round(width*S)))
     def polygon(points,color):
         d.polygon([(round(x*S),round(y*S)) for x,y in points],fill=color)
+    # The smile is intentionally modest (about 35x16 pixels), not the previous broad laughing mouth.
     if kind=='happy':
-        top=bezier((506,375),(518,369),(540,371),(558,375))
-        bottom=bezier((558,375),(552,406),(520,408),(506,375))
-        polygon([(x/S,y/S) for x,y in top+bottom],(105,52,59,255))
-        line(top,(75,40,42,255),1.7)
-        line(bottom,(99,51,54,255),1.4)
-        line(bezier((512,377),(524,382),(541,382),(550,377)),(254,233,223,255),2.8)
-        ellipse((523,392,548,403),fill=(216,113,122,255))
+        # Natural cheerful smile: slightly open, softly upturned corners.
+        # Keep the original eyes and all other face geometry unchanged.
+        top=bezier((514,376),(526,381),(538,379),(549,374))
+        bottom=bezier((549,374),(543,390),(520,390),(514,376))
+        polygon([(x/S,y/S) for x,y in top+bottom],(134,72,77,255))
+        line(top,(112,57,62,255),1.3)
+        line(bottom,(161,87,87,255),1.0)
+        line(bezier((518,378),(527,383),(539,382),(545,376)),(249,227,219,255),1.7)
     elif kind=='angry':
         line(bezier((424,285),(441,284),(468,289),(487,301)),(77,47,43,255),2.3)
         line(bezier((558,299),(570,286),(607,281),(622,282)),(70,43,39,255),2.2)

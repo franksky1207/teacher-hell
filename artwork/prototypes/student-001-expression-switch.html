@@ -10,7 +10,7 @@ main{max-width:800px;margin:auto;padding:16px}h1{font-size:1.2rem;margin:0 0 8px
 .stage{position:relative;height:min(62vh,650px);min-height:340px;overflow:hidden;border-radius:12px;background:linear-gradient(#6a8791,#242e46);isolation:isolate}
 .figure{position:absolute;inset:0;display:grid;place-items:end center;pointer-events:none}
 .figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;opacity:0;transition:opacity 180ms ease-in-out;will-change:opacity}
-.figure img.is-visible{opacity:1}
+.figure img.is-visible{opacity:1}.figure img.base-img{opacity:1;transition:none;will-change:auto}
 .caption{position:absolute;bottom:0;left:0;right:0;background:#10182ddc;padding:10px 16px;color:white;z-index:1}
 .controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.controls button{font:inherit;padding:7px 12px;cursor:pointer;color:white;border:1px solid #c5c6d0;background:#2b3a56;border-radius:8px}
 .controls button[aria-pressed=true]{background:#536b89;border-color:white}
@@ -26,7 +26,8 @@ main{max-width:800px;margin:auto;padding:16px}h1{font-size:1.2rem;margin:0 0 8px
 <p>僅驗證兩張 PNG 原地疊放與表情更換；不接正式人物 ID、事件、存檔或顯示層。</p>
 <div class="stage" aria-label="人物表情原型">
   <div class="figure">
-    <img id="layer-0" class="is-visible" src="../masters/students/student-001-base.png" alt="" decoding="async">
+    <img id="fixed-base" class="base-img" src="../masters/students/student-001-base.png" alt="" decoding="async">
+    <img id="layer-0" src="../masters/students/student-001-base.png" alt="" decoding="async">
     <img id="layer-1" src="../masters/students/student-001-base.png" alt="" decoding="async">
   </div>
   <div class="caption" id="caption">平靜｜人物保持固定位置</div>
@@ -59,15 +60,17 @@ async function switchTo(key){
  if(own!==generation)return;
  // Rapid clicks coalesce into the latest state. Keep one persistent figure container.
  const incoming=1-front,outgoing=front;
- for(const layer of layers)layer.classList.remove('is-visible');
+ // Fixed calm base never fades: identical hair, body and uniform remain visually solid.
  layers[outgoing].src=pathFor(current);
- layers[outgoing].style.transition='none';layers[outgoing].classList.add('is-visible');
+ layers[outgoing].style.transition='none';
+ layers[outgoing].classList.toggle('is-visible',current!=='calm');
  layers[incoming].src=pathFor(key);
  layers[incoming].style.transition='none';
+ layers[incoming].classList.remove('is-visible');
  void layers[incoming].offsetWidth;
  layers[outgoing].style.transition='';
  layers[incoming].style.transition='';
- layers[incoming].classList.add('is-visible');
+ layers[incoming].classList.toggle('is-visible',key!=='calm');
  layers[outgoing].classList.remove('is-visible');
  current=key;front=incoming;
  caption.textContent=names[key]+'｜人物保持固定位置';

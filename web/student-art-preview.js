@@ -36,7 +36,7 @@ export function renderStudentArtPrototype(){
   <div class="student-art-stage"><canvas data-art-canvas width="1024" height="1536" role="img" aria-label="學生平靜母圖及臉部表情覆蓋"></canvas><p class="student-art-empty" data-art-empty hidden></p></div>
   <div class="student-art-buttons" role="group" aria-label="六種表情">${STUDENT_ART_EXPRESSIONS.map(([key,label])=>`<button type="button" data-art-expression="${key}" aria-pressed="${key==='calm'}">${label}</button>`).join('')}</div>
   <p class="student-art-status" data-art-status role="status">選擇學生與服裝，查看素材狀態。</p>
-  <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。夏季六表情為剛從夏季平靜母圖重製的候選素材，冬季則沿用已驗收的共同陰影校正；兩者均不代表正式劇情已接線。</p>
+  <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。夏季開心已改為自然微笑，六表情仍是待驗收候選；冬季沿用已驗收的陰影校正。此預覽不代表正式劇情已接線。</p>
  </section>`;
 }
 function loadImage(url){

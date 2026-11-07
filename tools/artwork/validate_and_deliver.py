@@ -113,8 +113,10 @@ def verify_sheet(sheet: Image.Image, info: dict, base: Image.Image, student: str
         sx = (index % 3) * w
         sy = (index // 3) * h
         crop = sheet.crop((sx, sy, sx + w, sy + h))
-        if crop.getchannel("A").getextrema()[1] == 0:
+        if crop.getchannel("A").getextrema()[1] == 0 and emotion != "calm":
             fail(f"{emotion} 貼片完全透明")
+        # calm may be an intentional no-op: the approved base already has the calm face.
+        # This is preferable to a translucent duplicate that changes base alpha or adds artifacts.
         test = base.copy()
         test.alpha_composite(crop, dest=(x, y))
         if test.size != base.size:

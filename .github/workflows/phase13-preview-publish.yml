@@ -1,4 +1,4 @@
-name: Publish verified notebook navigation preview
+name: Publish verified phase 14-F preview
 on:
   workflow_dispatch:
   push:
@@ -27,7 +27,7 @@ jobs:
       - name: Verify preview source before publication
         run: |
           npm run check
-          node --test --test-isolation=none test/notebook-view.test.js
+          node --test --test-isolation=none test/year-result.test.js test/notebook-tasks.test.js test/notebook-view.test.js test/notebook-people.test.js
       - name: Configure automated publication identity
         run: |
           git config user.name "github-actions[bot]"

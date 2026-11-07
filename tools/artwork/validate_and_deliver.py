@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""15-B artwork validation and delivery. Local-only; no ZIP, GitHub writes or CI.
+"""15-B two-stage artwork validation and handoff. No ZIP, GitHub writes or deployment.
 
 Requires Pillow: python -m pip install Pillow
 Example:
@@ -125,7 +125,7 @@ def verify_sheet(sheet: Image.Image, info: dict, base: Image.Image, student: str
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="15-B 美術驗收與交付（不產 ZIP、不上傳 GitHub）")
+    parser = argparse.ArgumentParser(description="15-B 素材檢查及使用者手動上傳前交付；不產 ZIP、不上傳、不部署")
     parser.add_argument("--student", required=True, help="001～040 或 student-001")
     parser.add_argument("--outfit", choices=OUTFITS, required=True)
     parser.add_argument("--base", required=True, type=Path)
@@ -145,10 +145,20 @@ def main() -> int:
     base_name = f"{student}-base-{args.outfit}.png"
     sheet_name = f"{student}-face-sheet-{args.outfit}.png"
     json_name = f"{student}-face-sheet-{args.outfit}.json"
+    stage = "six_expressions" if args.sheet else "calm_base"
     report = {
-        "status": "FAIL", "student": student, "outfit": args.outfit,
+        "status": "FAIL", "stage": stage, "student": student, "outfit": args.outfit,
         "github_folder_url": f"{REPOSITORY}/tree/main/{folder}",
         "github_target_folder": folder, "files": [],
+        "handoff": {
+            "upload_actor": "user",
+            "upload_state": "NOT_UPLOADED_BY_THIS_TOOL",
+            "preview_state": "NOT_CONNECTED_BY_THIS_TOOL",
+            "requires_explicit_preview_request": True,
+            "next_step": ("交付母圖 PNG 和 GitHub 資料夾網址；使用者確認母圖後再製作六表情"
+                          if stage == "calm_base" else
+                          "交付六表情 PNG、定位 JSON 與 GitHub 資料夾網址；使用者自行上傳並另行下達接入預覽站指令"),
+        },
         "visual_review": {
             "status": "REVIEW",
             "requirements": [
@@ -165,7 +175,7 @@ def main() -> int:
         if base.size != args.canvas:
             fail(f"母圖尺寸 {base.size} 不等於預期 {args.canvas}")
         report["base_alpha"] = check_transparency(base, "母圖")
-        entries = [(args.base, base_name)]
+        entries = [(args.base, base_name)] if stage == "calm_base" else []
         if args.sheet:
             sheet = load_png(args.sheet)
             report["sheet_alpha"] = check_transparency(sheet, "Sprite Sheet")
@@ -175,7 +185,8 @@ def main() -> int:
                 sheet_name, args.base.read_bytes()
             )
             entries.extend([(args.sheet, sheet_name), (args.json_file, json_name)])
-        # Build in a flat student folder; reject overwrites, including existing reports.
+        # Only deliver files for this stage. Never upload, edit Pages, or mark visual approval.
+        # Flat student folder only; reject overwrites.
         target = args.delivery_dir / folder
         if any((target / name).exists() for _, name in entries):
             fail(f"交付資料夾已有同名檔案：{target}；請先人工確認，程式不覆寫")
@@ -186,7 +197,8 @@ def main() -> int:
                 fail(f"複製驗證失敗：{name}")
             report["files"].append({"filename": name, "local_path": str(target / name),
                                     "sha256": hashlib.sha256(source.read_bytes()).hexdigest()})
-        report["status"] = "REVIEW"  # Technical checks passed; user approval is separate.
+        report["status"] = "REVIEW"  # Technical checks passed; user upload and visual approval are separate.
+        report["handoff"]["download_files"] = [item["local_path"] for item in report["files"]]
         report["technical_checks"] = "PASS"
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         report["error"] = str(exc)

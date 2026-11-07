@@ -12,7 +12,7 @@ export const STUDENT_ART_EXPRESSIONS=Object.freeze([
  ['calm','平靜'],['happy','開心'],['angry','生氣'],
  ['sad','難過'],['surprised','驚訝'],['embarrassed','害羞']
 ]);
-export const STUDENT_ART_READY=Object.freeze({'student-001':Object.freeze({'uniform-winter':'full','uniform-summer':'full'})});
+export const STUDENT_ART_READY=Object.freeze({'student-001':Object.freeze({'uniform-winter':'full','uniform-summer':'full','sports-summer':'full'})});
 export function studentArtAvailability(studentId,outfit){
  if(!STUDENT_ART_IDS.includes(studentId)||!STUDENT_ART_OUTFITS.some(([id])=>id===outfit))return 'missing';
  return STUDENT_ART_READY[studentId]?.[outfit]??'missing';
@@ -36,7 +36,7 @@ export function renderStudentArtPrototype(){
   <div class="student-art-stage"><canvas data-art-canvas width="1024" height="1536" role="img" aria-label="學生平靜母圖及臉部表情覆蓋"></canvas><p class="student-art-empty" data-art-empty hidden></p></div>
   <div class="student-art-buttons" role="group" aria-label="六種表情">${STUDENT_ART_EXPRESSIONS.map(([key,label])=>`<button type="button" data-art-expression="${key}" aria-pressed="${key==='calm'}">${label}</button>`).join('')}</div>
   <p class="student-art-status" data-art-status role="status">選擇學生與服裝，查看素材狀態。</p>
-  <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。夏季開心已改為自然微笑，六表情仍是待驗收候選；冬季沿用已驗收的陰影校正。此預覽不代表正式劇情已接線。</p>
+  <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。夏季與冬季制服已通過預覽驗收；夏季運動服六表情目前待使用者預覽驗收。此預覽不代表正式劇情已接線。此預覽不代表正式劇情已接線。</p>
  </section>`;
 }
 function loadImage(url){
@@ -75,7 +75,7 @@ export function mountStudentArtPrototype(root){
    if(token!==request||!root.isConnected)return;
    base=loadedBase;
    if(available==='base'){
-    draw();say('夏季制服目前僅有平靜母圖，六表情尚待依 SOP 重製。');return;
+    draw();say('目前僅有平靜母圖，六表情尚待製作。');return;
    }
    const metaName=`${id}-face-sheet-${wear}.json`;
    const response=await fetch(new URL(metaName,dir));
@@ -87,10 +87,13 @@ export function mountStudentArtPrototype(root){
    if(loadedBase.naturalWidth!==loadedMeta.canvas.width||loadedBase.naturalHeight!==loadedMeta.canvas.height)throw new Error('平靜母圖尺寸與 JSON 不符');
    if(loadedSheet.naturalWidth!==loadedMeta.face.width*3||loadedSheet.naturalHeight!==loadedMeta.face.height*2)throw new Error('六表情圖集尺寸與 JSON 不符');
    STUDENT_ART_EXPRESSIONS.forEach(([key])=>studentArtSheetCell(loadedMeta,key));
-   const normalized=(wear==='uniform-summer') ? {canvas:loadedSheet} : normalizeSixExpressionCanvas(loadedBase,loadedSheet,loadedMeta);
+   // Summer uniform and summer sports sheets are already calibrated to their own base.
+   // The winter-only correction expects a distinct, common alpha mask and must not run on them.
+   const directSheet=(wear==='uniform-summer'||wear==='sports-summer');
+   const normalized=directSheet ? {canvas:loadedSheet} : normalizeSixExpressionCanvas(loadedBase,loadedSheet,loadedMeta);
    if(token!==request||!root.isConnected)return;
    sheet=normalized.canvas;metadata=loadedMeta;draw();enable(true);
-   say(`${id.replace('student-','學生 ')}・${wearLabel}｜平靜（${wear==='uniform-summer'?'夏季候選，待實機驗收':'冬季已驗收校正版'}；六表情可切換）`);
+   say(`${id.replace('student-','學生 ')}・${wearLabel}｜平靜（${wear==='sports-summer'?'夏季運動服候選，待預覽驗收':'既有制服已驗收'}；六表情可切換）`);
   }catch(error){
    if(token!==request||!root.isConnected)return;
    sheet=null;metadata=null;draw();enable(false);
@@ -105,7 +108,7 @@ export function mountStudentArtPrototype(root){
   if(!b||b.disabled||!sheet||!metadata)return;
   current=b.dataset.artExpression;draw();
   const name=STUDENT_ART_EXPRESSIONS.find(([key])=>key===current)?.[1]??current;
-  say(`${student.value.replace('student-','學生 ')}・${STUDENT_ART_OUTFITS.find(([id])=>id===outfit.value)?.[1]}｜${name}（${outfit.value==='uniform-summer'?'夏季候選，待實機驗收':'冬季校正版'}）`);
+  say(`${student.value.replace('student-','學生 ')}・${STUDENT_ART_OUTFITS.find(([id])=>id===outfit.value)?.[1]}｜${name}（${outfit.value==='sports-summer'?'夏季運動服候選，待預覽驗收':'既有制服已驗收'}）`);
  });
  void update();
 }

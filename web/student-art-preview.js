@@ -1,5 +1,6 @@
 // Student art preview: one calm base + a six-expression 3x2 face sheet per outfit.
 // Student IDs are artwork IDs, never class numbers or saved NPC identifiers.
+import {normalizeSixExpressionCanvas} from './face-sheet-normalize.js';
 export const STUDENT_ART_IDS=Object.freeze(Array.from({length:40},(_,i)=>'student-'+String(i+1).padStart(3,'0')));
 export const STUDENT_ART_OUTFITS=Object.freeze([
  ['uniform-summer','夏季制服'],['uniform-winter','冬季制服'],
@@ -35,7 +36,7 @@ export function renderStudentArtPrototype(){
   <div class="student-art-stage"><canvas data-art-canvas width="1024" height="1536" role="img" aria-label="學生平靜母圖及臉部表情覆蓋"></canvas><p class="student-art-empty" data-art-empty hidden></p></div>
   <div class="student-art-buttons" role="group" aria-label="六種表情">${STUDENT_ART_EXPRESSIONS.map(([key,label])=>`<button type="button" data-art-expression="${key}" aria-pressed="${key==='calm'}">${label}</button>`).join('')}</div>
   <p class="student-art-status" data-art-status role="status">選擇學生與服裝，查看素材狀態。</p>
-  <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。表情從雙圖素材直接切格疊回，尚不代表正式劇情已接線。</p>
+  <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。冬季六格以同一套母圖膚色校正後即時切換；這是預覽驗收，不代表正式劇情已接線。</p>
  </section>`;
 }
 function loadImage(url){
@@ -86,8 +87,10 @@ export function mountStudentArtPrototype(root){
    if(loadedBase.naturalWidth!==loadedMeta.canvas.width||loadedBase.naturalHeight!==loadedMeta.canvas.height)throw new Error('平靜母圖尺寸與 JSON 不符');
    if(loadedSheet.naturalWidth!==loadedMeta.face.width*3||loadedSheet.naturalHeight!==loadedMeta.face.height*2)throw new Error('六表情圖集尺寸與 JSON 不符');
    STUDENT_ART_EXPRESSIONS.forEach(([key])=>studentArtSheetCell(loadedMeta,key));
-   sheet=loadedSheet;metadata=loadedMeta;draw();enable(true);
-   say(`${id.replace('student-','學生 ')}・${wearLabel}｜平靜（六表情可切換）`);
+   const normalized=normalizeSixExpressionCanvas(loadedBase,loadedSheet,loadedMeta);
+   if(token!==request||!root.isConnected)return;
+   sheet=normalized.canvas;metadata=loadedMeta;draw();enable(true);
+   say(`${id.replace('student-','學生 ')}・${wearLabel}｜平靜（已套用六格共同臉頰校正，可切換表情）`);
   }catch(error){
    if(token!==request||!root.isConnected)return;
    sheet=null;metadata=null;draw();enable(false);
@@ -102,7 +105,7 @@ export function mountStudentArtPrototype(root){
   if(!b||b.disabled||!sheet||!metadata)return;
   current=b.dataset.artExpression;draw();
   const name=STUDENT_ART_EXPRESSIONS.find(([key])=>key===current)?.[1]??current;
-  say(`${student.value.replace('student-','學生 ')}・${STUDENT_ART_OUTFITS.find(([id])=>id===outfit.value)?.[1]}｜${name}`);
+  say(`${student.value.replace('student-','學生 ')}・${STUDENT_ART_OUTFITS.find(([id])=>id===outfit.value)?.[1]}｜${name}（共同陰影校正版）`);
  });
  void update();
 }

@@ -197,6 +197,16 @@ if(cmd==='year-result-page'){
  yearResultPage=page;document.querySelector('.overlay .year-result').outerHTML=renderYearResult(result,page);return;
 }
 if(cmd==='year-retry'){if(!document.querySelector('.overlay .year-result'))return;await retryFailedYear();return;}
+if(cmd==='notebook-task-story'){
+ if(notebookTab!=='tasks'||!document.querySelector('.overlay .notebook-tasks'))return;
+ const world=gameData(),task=(await notebookData('tasks')).items.find(item=>item.id==='story:'+arg);
+ // The saved current world is the authority, never the HTML button alone.
+ if(!task||task.navigation!=='story'||task.availability!=='ready'||currentStory(world)?.eventId!==arg)
+  throw new RangeError('這件事件目前無法直接接續，請重新查閱待辦事項');
+ close();document.querySelector('.story-view')?.setAttribute('tabindex','-1');
+ document.querySelector('.story-view')?.focus();
+ return;
+}
 if(cmd==='notebook'){notebookTab='people';notebookPersonId=null;notebookPersonCategory='student';notebookPersonSearch='';notebookEventSearch='';notebookEventView='time';notebookEventTerm=null;notebookEventYear='all';notebookEventKind='all';notebookEventPage=1;notebookAcademicStudent=null;notebookAcademicTerm=null;notebookReviewId=null;const w=gameData(),plan=w.extensions['teacher-hell/world'].plan;const people=await notebookData('people');dialog('筆記本',renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:'people',people,personCategory:'student'}));return;}
 if(['notebook-tab','notebook-person','notebook-person-category','notebook-event-year','notebook-event-kind','notebook-event-page','notebook-event-view','notebook-event-term','notebook-academic-student','notebook-academic-term','notebook-review'].includes(cmd)){
  if(!current||!document.querySelector('.overlay .notebook'))return;

@@ -12,7 +12,7 @@ export const STUDENT_ART_EXPRESSIONS=Object.freeze([
  ['calm','平靜'],['happy','開心'],['angry','生氣'],
  ['sad','難過'],['surprised','驚訝'],['embarrassed','害羞']
 ]);
-export const STUDENT_ART_READY=Object.freeze({'student-001':Object.freeze({'uniform-winter':'full','uniform-summer':'base'})});
+export const STUDENT_ART_READY=Object.freeze({'student-001':Object.freeze({'uniform-winter':'full','uniform-summer':'full'})});
 export function studentArtAvailability(studentId,outfit){
  if(!STUDENT_ART_IDS.includes(studentId)||!STUDENT_ART_OUTFITS.some(([id])=>id===outfit))return 'missing';
  return STUDENT_ART_READY[studentId]?.[outfit]??'missing';
@@ -87,7 +87,7 @@ export function mountStudentArtPrototype(root){
    if(loadedBase.naturalWidth!==loadedMeta.canvas.width||loadedBase.naturalHeight!==loadedMeta.canvas.height)throw new Error('平靜母圖尺寸與 JSON 不符');
    if(loadedSheet.naturalWidth!==loadedMeta.face.width*3||loadedSheet.naturalHeight!==loadedMeta.face.height*2)throw new Error('六表情圖集尺寸與 JSON 不符');
    STUDENT_ART_EXPRESSIONS.forEach(([key])=>studentArtSheetCell(loadedMeta,key));
-   const normalized=normalizeSixExpressionCanvas(loadedBase,loadedSheet,loadedMeta);
+   const normalized=(wear==='uniform-summer') ? {canvas:loadedSheet} : normalizeSixExpressionCanvas(loadedBase,loadedSheet,loadedMeta);
    if(token!==request||!root.isConnected)return;
    sheet=normalized.canvas;metadata=loadedMeta;draw();enable(true);
    say(`${id.replace('student-','學生 ')}・${wearLabel}｜平靜（已套用六格共同臉頰校正，可切換表情）`);

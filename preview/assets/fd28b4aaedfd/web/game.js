@@ -4,6 +4,8 @@ import { readAftercare } from '../src/runtime/aftercare.js';
 import { runtimeCalendarDay,aftercareWindow,continuesAftercareTeaching } from '../src/runtime/aftercare-calendar.js';
 import {projectNotebookReviews,renderNotebookReviews} from './notebook-reviews.js';
 import {pendingSemesterReview} from '../src/runtime/reviews.js';
+import {failureResult} from '../src/runtime/homeroom.js';
+import {projectYearResult,renderYearResult} from './year-result.js';
 import {createId} from '../src/contracts/foundation.js';
 import {renderNotebookView} from './notebook-view.js';
 import {displayPanelValue,periodLabel,comparableWeeks,classLabel,aftercareCellIsEmpty,scheduledPhase} from './presentation.js';
@@ -26,6 +28,7 @@ const app=document.querySelector('#app');
 const storage=createIndexedDBStorage({factory:indexedDB,namespace:'development'});
 let current=null,slot=0,draft=null,proposal=null,viewedWeek=null,screen='home',openingPage=0,storyBusy=false;
 let ceremonyPage=0;
+let yearResultPage=0;
 let notebookTab='people',notebookPersonId=null,notebookPersonCategory='student',notebookPersonSearch='',notebookEventSearch='',notebookEventView='time',notebookEventTerm=null;
 let notebookEventYear='all',notebookEventKind='all',notebookEventPage=1;
 let notebookAcademicStudent=null,notebookAcademicTerm=null,notebookReviewId=null;
@@ -75,8 +78,8 @@ async function load(i){slot=i;set('<main class="screen"><p role="status">正在�
 // Widgets share one detached read-only snapshot; every transaction replaces current.
 let displayedSession=null,displayedWorld=null,displayedToken=null;
 function gameData(){if(displayedSession!==current){displayedSession=current;const snap=current.snapshot();displayedWorld=snap.payload.world;displayedToken=snap.token;notebookCache.clear();notebookOwner=null;}return displayedWorld;}
-function showGame(){screen='game';const w=gameData(),activeStory=currentStory(w),plan=w.extensions['teacher-hell/world'].plan,n=w.numeric.evolution.world,day=runtimeCalendarDay(w),panel=deriveWorldPanel(n),done=!!careerResult(w),grade=gradeAt(w.position.date,plan.startYear),period=periodLabel(w.position.date,day),aftercarePhase=!!aftercareWindow(w)&&w.position.date>=aftercareWindow(w).startDate,slotText=({early:'早自習',lunch:'午餐',noon:'午休',private:'私人時間',morning:'上午',afternoon:'下午',evening:'晚間',dinner:'晚餐','vacation-day':'假期','festival-day':'春節'})[w.position.slotId]??(w.position.slotId.startsWith('p')?`第 ${w.position.slotId.slice(1)} 節`:w.position.slotId);let place='';const occ=formalSlot(w);if(occ.slot.lesson&&(!aftercarePhase||continuesAftercareTeaching(w,occ.slot.lesson))){const table=plan.tables.find(t=>t.semesterId===occ.day.courseSemesterId);place=`・${classLabel(table,n.registry,occ.slot.lesson.classId)}`;}
-set(`<main class="game game--story" data-revision="${w.extensions['teacher-hell/world'].revision}"><div class="top">${w.position.date} 星期${'一二三四五六日'[weekday(w.position.date)-1]}・任教第 ${teacherTenure(w)} 年・導師 ${esc(teacherDisplayName(w))}・高${'一二三'[grade-1]}<br>遊玩第 ${w.position.serviceYear} 學年・${aftercarePhase?'六月教師善後':period}・${aftercarePhase?'週進度':slotText}${place}</div><nav class="game-nav">${button('課表','timetable')}${button('筆記本','notebook')}${button('選單','menu')}</nav><div class="states">${STATE_NAMES.map(k=>button(`${k} ${value(panel[k])}`,'panel')).join('')}</div>${activeStory&&!done&&!openingPage?renderStoryView(activeStory):`<div class="story">${done?completionCard(w):openingPage===1?'【開場 1／2】暑輔的第一天，你站在校門前。新的三年，從這裡開始。':openingPage===2?'【開場 2／2】走進校園，準備迎接你的導師班。接下來依校曆與班級近況展開。':aftercareWindow(w)&&w.position.date>=aftercareWindow(w).startDate?'學生已離校，導師繼續處理六月善後。':aftercareWindow(w)&&w.position.date===aftercareWindow(w).ceremonyDate?'畢業典禮依正式校曆進行。':'依正式校曆處理課程、校務及事件。'}${!done&&!openingPage?(scheduledPhase(day,w.position.slotId)?'<p>'+esc(scheduledPhase(day,w.position.slotId))+'</p>':'')+h4Controls(w)+progressionControls(w):''}${openingPage?`<p>${button(openingPage===1?'下一頁':'結束開場','opening-next')}</p>`:''}</div>`}</main>`);showPendingReview();void remindKnownDeadlines().catch(error=>console.error('待辦提醒查閱失敗',error));}
+function showGame(){screen='game';const w=gameData(),failed=!!failureResult(w),activeStory=currentStory(w),plan=w.extensions['teacher-hell/world'].plan,n=w.numeric.evolution.world,day=runtimeCalendarDay(w),panel=deriveWorldPanel(n),done=!!careerResult(w),grade=gradeAt(w.position.date,plan.startYear),period=periodLabel(w.position.date,day),aftercarePhase=!!aftercareWindow(w)&&w.position.date>=aftercareWindow(w).startDate,slotText=({early:'早自習',lunch:'午餐',noon:'午休',private:'私人時間',morning:'上午',afternoon:'下午',evening:'晚間',dinner:'晚餐','vacation-day':'假期','festival-day':'春節'})[w.position.slotId]??(w.position.slotId.startsWith('p')?`第 ${w.position.slotId.slice(1)} 節`:w.position.slotId);let place='';const occ=formalSlot(w);if(occ.slot.lesson&&(!aftercarePhase||continuesAftercareTeaching(w,occ.slot.lesson))){const table=plan.tables.find(t=>t.semesterId===occ.day.courseSemesterId);place=`・${classLabel(table,n.registry,occ.slot.lesson.classId)}`;}
+set(`<main class="game game--story" data-revision="${w.extensions['teacher-hell/world'].revision}"><div class="top">${w.position.date} 星期${'一二三四五六日'[weekday(w.position.date)-1]}・任教第 ${teacherTenure(w)} 年・導師 ${esc(teacherDisplayName(w))}・高${'一二三'[grade-1]}<br>遊玩第 ${w.position.serviceYear} 學年・${aftercarePhase?'六月教師善後':period}・${aftercarePhase?'週進度':slotText}${place}</div><nav class="game-nav">${button('課表','timetable')}${button('筆記本','notebook')}${button('選單','menu')}</nav><div class="states">${STATE_NAMES.map(k=>button(`${k} ${value(panel[k])}`,'panel')).join('')}</div>${activeStory&&!done&&!failed&&!openingPage?renderStoryView(activeStory):`<div class="story">${done?completionCard(w):failed?failureCard(w):openingPage===1?'【開場 1／2】暑輔的第一天，你站在校門前。新的三年，從這裡開始。':openingPage===2?'【開場 2／2】走進校園，準備迎接你的導師班。接下來依校曆與班級近況展開。':aftercareWindow(w)&&w.position.date>=aftercareWindow(w).startDate?'學生已離校，導師繼續處理六月善後。':aftercareWindow(w)&&w.position.date===aftercareWindow(w).ceremonyDate?'畢業典禮依正式校曆進行。':'依正式校曆處理課程、校務及事件。'}${!done&&!failed&&!openingPage?(scheduledPhase(day,w.position.slotId)?'<p>'+esc(scheduledPhase(day,w.position.slotId))+'</p>':'')+h4Controls(w)+progressionControls(w):''}${openingPage?`<p>${button(openingPage===1?'下一頁':'結束開場','opening-next')}</p>`:''}</div>`}</main>`);showPendingReview();void remindKnownDeadlines().catch(error=>console.error('待辦提醒查閱失敗',error));}
 function h4Controls(w){
  const bounds=aftercareWindow(w);if(!bounds)return '';
  const fact=w.extensions['teacher-hell/world'].facts.findLast(f=>f.data.graduationSummary);
@@ -89,6 +92,7 @@ function h4Controls(w){
  const state=readAftercare(w),last=state.weeks.at(-1);
  return `<p>${esc(state.adoption?.notice??'從目前日期接續六月教師善後，保留先前歷史。')}</p>${last?`<p>${last.startDate}～${last.endDate}：${esc(last.summary)}</p>`:''}${state.next.status==='boundary'?'<p>已到六月教師結算邊界。</p>':''}`;
 }
+function failureCard(w){const result=failureResult(w);return `<h3>本學年導師職務中斷</h3><p>${esc(result?.data?.summary??'本學年已依正式事件紀錄結束。')}</p><p>${button('閱讀失敗結果與重試安排','year-result')}</p>`;}
 function completionCard(w){const d=careerResult(w).data,years=d.years===3?'三年':`${d.years}年`;return `<h3>${years}任期完成</h3><p>${esc(d.rating.grade)}・${value(d.rating.score)}</p><p>完成於 ${esc(w.position.date)}。此槽為唯讀。</p><p>${button('結局與任期成果','completion-details')}</p>`;}
 function progressionControls(w){const next=nextProgression(w);if(next.status==='review-required')return `<p>${button('閱讀學期報告','review-open')}</p>`;return next.status==='action'?`<p>${button(next.label,'progress')}</p>`:`<p role="status">${esc(next.label??({ 'review-required':'請先閱讀學期報告','attention-required':'請先處理事件','failed':'本次任期已結束',boundary:'已到結算邊界' }[next.status]??''))}</p>`;}
 // UI-only reminders. No new game transaction, no browser notification permission, no deadline judgment changes.
@@ -126,16 +130,50 @@ async function notebookData(kind,studentId=null,termId=null){
  const reading=workerRead({slot,view:kind,studentId,termId,token:displayedToken}).then(r=>r.projection);notebookCache.set(key,reading);
  try{return await reading;}catch(error){notebookCache.delete(key);throw error;}finally{note.remove();unlock();storyBusy=false;}
 }
+function showYearResult(){
+ const result=projectYearResult(gameData());
+ if(!result)throw new RangeError('尚無正式保存的學年結果');
+ yearResultPage=0;
+ dialog('學年結算與重試',renderYearResult(result,yearResultPage));
+}
+async function retryFailedYear(){
+ const w=gameData(),result=projectYearResult(w);
+ if(!result?.retryEligible||!failureResult(w))throw new RangeError('只有已保存的當學年失敗可重新挑戰');
+ if(!confirm('確定重新挑戰本學年？失敗嘗試將與新嘗試隔離，先前通過的學年保留。建議先匯出備份。'))return;
+ const options={
+  attemptId:createId('attempt',[w.identity.careerId,'retry',crypto.randomUUID()]),
+  seeds:{settlement:seed(),streams:Object.fromEntries(Object.keys(w.random).map(key=>[key,seed()]))},
+  failureId:result.failureId,failedAttemptId:w.identity.attemptId,schoolYearId:w.position.schoolYearId,
+  expectedRevision:w.extensions['teacher-hell/world'].revision
+ };
+ const token=displayedToken;
+ try{
+  const {record}=await workerRead({slot,retry:options,expectedToken:token});
+  document.querySelector('.overlay')?.remove();
+  current={snapshot:()=>record};openingPage=0;ceremonyPage=0;
+  showGame();
+ }catch(error){
+  // A write may have succeeded before the response was lost. Reload the real
+  // slot instead of pretending the failed attempt still exists.
+  try{const {record}=await workerRead({slot});current=record.payload?{snapshot:()=>record}:null;}catch{}
+  document.querySelector('.overlay')?.remove();
+  if(current)showGame();else showHome();
+  throw error;
+ }
+}
 async function executeProgress(request){
+ const previous=gameData().extensions['teacher-hell/world'].history.findLast(h=>h.type==='annual-success'||h.type==='annual-failure')?.id??null;
  storyBusy=true;const unlock=lockControls(),note=document.createElement('p');note.setAttribute('role','status');note.textContent='正在處理並保存，請稍候…';note.className='operation-status';document.querySelector('.game')?.append(note);
  document.querySelectorAll('[data-action="progress"]').forEach(b=>b.disabled=true);
  try{
   const {record}=await workerRead({slot,request,expectedToken:displayedToken});current={snapshot:()=>record};showGame();
+  const latest=gameData().extensions['teacher-hell/world'].history.findLast(h=>h.type==='annual-success'||h.type==='annual-failure')?.id??null;
+  if(latest&&latest!==previous&&!document.querySelector('.overlay'))showYearResult();
  }catch(error){try{const {record}=await workerRead({slot});current=record.payload?{snapshot:()=>record}:null;}catch{}if(current)showGame();else showHome();throw error;}
  finally{unlock();storyBusy=false;if(screen==='game')void remindKnownDeadlines().catch(error=>console.error('待辦提醒查閱失敗',error));}
 }
 function showPendingReview(){
- if(!current||document.querySelector('.overlay'))return;
+ if(!current||document.querySelector('.overlay')||failureResult(gameData())||careerResult(gameData()))return;
  const d=projectNotebookReviews(gameData());if(!d.pendingId)return;
  dialog('學期總結｜必須閱讀後才能繼續',renderNotebookReviews(d,d.pendingId,true));
 }
@@ -148,9 +186,27 @@ async function acknowledgeReview(id){
 }
 function showTimetable(){const w=gameData(),plan=w.extensions['teacher-hell/world'].plan,n=w.numeric.evolution.world,base=viewedWeek??weekMonday(w.position.date),grade=gradeAt(w.position.date,plan.startYear);let cells='<div></div>'+['一','二','三','四','五'].map(x=>`<div class="head">週${x}</div>`).join('');for(let period=1;period<=8;period++){cells+=`<div class="period">${period}</div>`;for(let d=0;d<5;d++){const date=addDays(base,d),day=calendarDay(date,grade,plan.calendarVersion),table=plan.tables.find(t=>t.semesterId===day.courseSemesterId),s=day.slots.find(x=>x.id===`p${period}`);let label='',detail=`${date} 第 ${period} 節：空堂`;if(aftercareCellIsEmpty(w,date,s,table&&s?slotOccupancy(date,grade,s.id,table,plan.calendarVersion):null)){label='';detail=`${date}：原班已離校，使用週善後流程`;}else if(!s){label=day.holiday[0]?.name??((day.activities[0]?activityName(day.activities[0]):'休假'));detail=`${date}：${label}`;}else if(s.kind==='activity'){label='活動';detail=`${date} 第 ${period} 節：${day.activities.filter(a=>s.activityIds.includes(a.id)).map(activityName).join('、')}`;}else if(s.kind==='exam'){label=scheduledPhase(day,s.id)??'考試';detail=`${date} 第 ${period} 節：${label}`;}else if(s.kind==='assembly'||s.kind==='class-meeting'){label=s.kind==='assembly'?'週會':'班會';detail=`${date} 第 ${period} 節：${label}`;}else if(!table){label='未排定';detail=`${date} 第 ${period} 節：此學期課表尚未建立`;}else if(table){const o=slotOccupancy(date,grade,`p${period}`,table,plan.calendarVersion),c=o.lesson&&n.registry.classes[o.lesson.classId];if(c){label=classLabel(table,n.registry,c.id);detail=`${date} 第 ${period} 節：${label}・${table.subject}`;}}cells+=button(esc(label),'cell',`data-detail="${esc(detail)}" aria-label="${esc(label||'空堂')}"`);}}
 const first=calendarDay(base,grade,plan.calendarVersion),weeks=comparableWeeks(w.position.date,grade,plan.calendarVersion),actual=base===weeks.actual;dialog('完整週課表',`<p>${base} 起・${first.week?`第 ${first.week} 週（${first.week%2?'單':'雙'}週）`:periodLabel(base,first)}・${actual?'實際當週':'比較週，非實際當週'}</p><div class="row">${button('單週','week:odd',weeks.odd?'':'disabled')}${button('雙週','week:even',weeks.even?'':'disabled')}${button('回到實際當週','week:actual')}</div><p class="muted">${weeks.odd&&weeks.even?'切換只供查閱，不會改變遊戲時間。':'目前沒有可比較的同學期單雙週；顯示實際當週。'} 點格子查看資訊。</p><div class="table">${cells}</div>`);}
-function close(){if(current&&pendingSemesterReview(gameData())&&document.querySelector('.overlay .notebook-reviews'))return;document.querySelector('.overlay')?.remove();}
+function close(){if(current&&!failureResult(gameData())&&!careerResult(gameData())&&pendingSemesterReview(gameData())&&document.querySelector('.overlay .notebook-reviews'))return;document.querySelector('.overlay')?.remove();}
 async function act(action,el){if(action==='outside'){if(el.classList.contains('overlay'))close();return;}if(action==='close'){close();return;}if(action==='home'){showHome();return;}if(action==='slots'){await showSlots();return;}if(action==='continue'){for(let i=1;i<=3;i++){const s=await workerRead({slot:i,summary:true});if(s.summary){await load(i);return;}}await showSlots();return;}if(action==='help'){dialog('遊戲說明','<p>從「選擇存檔」建立教師。六項長期能力可重抽；確認後建立三年生涯。主畫面的課表、筆記本及選單不會推進時間。</p><p>使用進度按鈕接續正式課程及校務；事件優先處理，畢典後改按週善後。六月先閱讀報告，再執行任期結算；完成槽可唯讀查閱結局與歷史。</p>');return;}if(action==='settings'){dialog('設定','<p>開發預覽版。正式音樂與素材尚未加入。</p>');return;}
 const [cmd,...argParts]=action.split(':');const arg=argParts.join(':');if(cmd==='new'){draftStart(Number(arg));return;}if(cmd==='load'){await load(Number(arg));return;}if(cmd==='difficulty'){if(arg){draft.difficulty=arg;proposal=null;showDifficulty();}else showDifficulty();return;}if(cmd==='teacher'){try{makeTeacherProfile(draft.surname,draft.givenName);}catch(e){alert(e.message);return;}await showTeacher();return;}if(cmd==='reroll'){draft.candidate=rerollCandidate(draft.candidate);proposal=null;await showTeacher();return;}if(cmd==='subjects'){showSubjects();return;}if(cmd==='subject'){draft.subject=arg;proposal=null;showSubjects();return;}if(cmd==='review'){await showReview();return;}if(cmd==='create'){await create();return;}if(cmd==='opening-next'){openingPage=openingPage===1?2:0;showGame();return;}if(cmd==='ceremony-page'){ceremonyPage=Math.max(0,ceremonyPage+Number(arg));showGame();return;}if(cmd==='progress'){const next=nextProgression(gameData());if(next.status==='action')await executeProgress(next.request);else showGame();return;}if(cmd==='completion-details'){await act('notebook');await act('notebook-tab:career');return;}if(cmd==='panel'){const p=deriveWorldPanel(gameData().numeric.evolution.world);dialog('教師狀態',`<h3>長期能力</h3>${panelBars(p,ABILITY_NAMES)}<h3>當前狀態</h3>${panelBars(p,STATE_NAMES)}`);return;}if(cmd==='timetable'){viewedWeek=null;showTimetable();return;}if(cmd==='week'){const w=gameData(),p=w.extensions['teacher-hell/world'].plan,weeks=comparableWeeks(w.position.date,gradeAt(w.position.date,p.startYear),p.calendarVersion);if(weeks[arg])viewedWeek=weeks[arg];close();showTimetable();return;}if(cmd==='cell'){alert(el.dataset.detail);return;}if(cmd==='review-open'){document.querySelectorAll('.overlay').forEach(node=>node.remove());showPendingReview();return;}if(cmd==='review-ack'){await acknowledgeReview(arg);return;}
+if(cmd==='year-result'){document.querySelector('.overlay')?.remove();showYearResult();return;}
+if(cmd==='year-result-page'){
+ if(!document.querySelector('.overlay .year-result'))return;
+ const page=Number(arg);if(!Number.isInteger(page)||page<0||page>3)return;
+ const result=projectYearResult(gameData());if(!result)return;
+ yearResultPage=page;document.querySelector('.overlay .year-result').outerHTML=renderYearResult(result,page);return;
+}
+if(cmd==='year-retry'){if(!document.querySelector('.overlay .year-result'))return;await retryFailedYear();return;}
+if(cmd==='notebook-task-story'){
+ if(notebookTab!=='tasks'||!document.querySelector('.overlay .notebook-tasks'))return;
+ const world=gameData(),task=(await notebookData('tasks')).items.find(item=>item.id==='story:'+arg);
+ // The saved current world is the authority, never the HTML button alone.
+ if(!task||task.navigation!=='story'||task.availability!=='ready'||currentStory(world)?.eventId!==arg)
+  throw new RangeError('這件事件目前無法直接接續，請重新查閱待辦事項');
+ close();document.querySelector('.story-view')?.setAttribute('tabindex','-1');
+ document.querySelector('.story-view')?.focus();
+ return;
+}
 if(cmd==='notebook'){notebookTab='people';notebookPersonId=null;notebookPersonCategory='student';notebookPersonSearch='';notebookEventSearch='';notebookEventView='time';notebookEventTerm=null;notebookEventYear='all';notebookEventKind='all';notebookEventPage=1;notebookAcademicStudent=null;notebookAcademicTerm=null;notebookReviewId=null;const w=gameData(),plan=w.extensions['teacher-hell/world'].plan;const people=await notebookData('people');dialog('筆記本',renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:'people',people,personCategory:'student'}));return;}
 if(['notebook-tab','notebook-person','notebook-person-category','notebook-event-year','notebook-event-kind','notebook-event-page','notebook-event-view','notebook-event-term','notebook-academic-student','notebook-academic-term','notebook-review'].includes(cmd)){
  if(!current||!document.querySelector('.overlay .notebook'))return;
@@ -204,7 +260,7 @@ if(['notebook-tab','notebook-person','notebook-person-category','notebook-event-
  const events=notebookTab==='events'?await notebookData('events'):null;
   const tasks=notebookTab==='tasks'?await notebookData('tasks'):null;
  const html=renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:notebookTab,people,selectedPersonId:notebookPersonId,personCategory:notebookPersonCategory,personSearch:notebookPersonSearch,events,eventSearch:notebookEventSearch,eventView:notebookEventView,eventTerm:notebookEventTerm,tasks,eventYear:notebookEventYear,eventKind:notebookEventKind,eventPage:notebookEventPage,academics,reviews,selectedReview:notebookReviewId,career});
- document.querySelector('.overlay .notebook').outerHTML=html;return;}if(cmd==='menu'){dialog('選單',`<p>存檔管理及返回首頁</p>${button('選擇存檔','slots')} ${button('返回首頁','home')}`);return;}if(cmd==='delete'){await storageAction('正在檢查存檔…',async()=>{const {summary,token}=await workerRead({slot:Number(arg),summary:true});if(!summary)return;if(confirm('確定刪除此存檔？建議先匯出備份。')&&confirm('再次確認：刪除後無法復原。')){await workerRead({slot:Number(arg),delete:true,expectedToken:token,confirmed:true});await showSlots();}});return;}
+ document.querySelector('.overlay .notebook').outerHTML=html;return;}if(cmd==='menu'){const hasYearResult=gameData().extensions['teacher-hell/world'].history.some(h=>h.type==='annual-success'||h.type==='annual-failure');dialog('選單',`<p>存檔管理、學年回顧及返回首頁</p>${hasYearResult?button('學年結果','year-result'):''} ${button('選擇存檔','slots')} ${button('返回首頁','home')}`);return;}if(cmd==='delete'){await storageAction('正在檢查存檔…',async()=>{const {summary,token}=await workerRead({slot:Number(arg),summary:true});if(!summary)return;if(confirm('確定刪除此存檔？建議先匯出備份。')&&confirm('再次確認：刪除後無法復原。')){await workerRead({slot:Number(arg),delete:true,expectedToken:token,confirmed:true});await showSlots();}});return;}
 if(cmd==='export'){await storageAction('正在驗證並匯出完整存檔…',async()=>{const {blob}=await workerRead({slot:Number(arg),export:true}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`teacher-hell-slot-${arg}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});return;}
 if(cmd==='import'){const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.onchange=async()=>{try{if(!input.files.length)return;await storageAction('正在驗證匯入存檔…',async()=>{const incoming=input.files[0],{review}=await workerRead({slot:Number(arg),reviewImport:incoming});if(!confirm(`匯入生涯 ${review.incoming.identity.careerId}？${review.replacing?'此槽已有存檔，將被覆蓋。':''}`))return;if(review.replacing&&!confirm('再次確認覆蓋原存檔？'))return;await workerRead({slot:Number(arg),import:incoming,expectedToken:review.token,confirmed:true});await showSlots();});}catch(e){alert(`匯入失敗：${e.message}`);}};input.click();}}
 

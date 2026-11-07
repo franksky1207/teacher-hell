@@ -35,10 +35,17 @@ self.onmessage=async({data})=>{
    };
    return self.navigator?.locks?.request?self.navigator.locks.request('teacher-hell:development:career-names',work):work();
   }
-  if(['request','initialize','restart','replaceOpening','import','delete'].filter(k=>Object.hasOwn(data,k)).length>1)throw Error('One stored operation per worker request');
+  if(['request','initialize','restart','replaceOpening','import','delete','retry'].filter(k=>Object.hasOwn(data,k)).length>1)throw Error('One stored operation per worker request');
   if(data.request){await session.execute(data.request,{expectedToken:data.expectedToken});
    const after=session.savedGivenNames();const fresh=after.filter(name=>!before.has(name));
    if(fresh.length)await rememberCommitted(fresh);
+  }
+  if(data.retry){
+   // Fence the exact slot revision the player saw before authorizing a retry.
+   const checked=session.snapshot();
+   if(!sameToken(data.expectedToken,checked.token))throw Object.assign(Error('存檔已更新，請重新讀取失敗結果再重試'),{code:'STALE'});
+   await session.retry(data.retry);
+   // Retry restores saved people; no new names enter the cross-slot ledger.
   }
   if(data.initialize)await saveNewCareer(data.initialize,()=>session.initialize(data.initialize));
   if(data.restart)await saveNewCareer(data.restart,()=>session.restart(data.restart,{expectedToken:data.expectedToken,confirmed:data.confirmed}));

@@ -24,6 +24,12 @@ export function projectNotebookPeople(world){
   if(id===world.identity.playerId||map.has(id)||!profiles[id])continue;
   map.set(id,{id,name:profiles[id].displayName,kind:'other',relation:'已知校內相關人物'});
  }
+ // Class summary is a known-record coverage description, never a judgement
+ // of the whole class based on a few observed students.
+ const studentIds=new Set(roster.students.map(student=>student.id));
+ const classFacts=known.facts.filter(f=>(f.subjectIds??[]).some(id=>studentIds.has(id)));
+ const observedStudents=new Set(classFacts.flatMap(f=>(f.subjectIds??[]).filter(id=>studentIds.has(id))));
+ const classSummary={enrollment:roster.students.length,studentsWithKnownRecords:observedStudents.size,knownStudentFacts:new Set(classFacts.map(f=>f.id)).size,archived:!!roster.archived};
  // Do not derive friendship from hidden numeric relationship vectors.
  const relations=[],edgeIds=new Set(),teacherId=world.identity.playerId;
  const add=(a,b,label)=>{
@@ -41,7 +47,7 @@ export function projectNotebookPeople(world){
   for(let i=0;i<subjects.length;i++)for(let j=i+1;j<subjects.length;j++)add(subjects[i],subjects[j],'共同已知事件');
  }
  // Only teacher-visible disclosures. A source is not treated as the subject of a claim.
- return {className:roster.className,people:[...map.values()],relations,teacher:{id:teacherId,name:teacherDisplayName(world)},
+ return {className:roster.className,classSummary,people:[...map.values()],relations,teacher:{id:teacherId,name:teacherDisplayName(world)},
   facts:known.facts.map(f=>({description:f.description,subjectIds:f.subjectIds,occurredAt:f.occurredAt})),
   claims:known.claims.map(c=>({statement:c.statement,sourceId:c.sourceId,belief:c.belief}))};
 }
@@ -63,8 +69,16 @@ export function renderNotebookPeople(data,selectedId=null,search='',category='st
   const claims=data.claims.filter(c=>c.sourceId===selected.id);
   const relation=selected.kind==='caregiver'? `<p>相關學生：${esc((selected.relatedTo??[]).join('、'))}</p>`:'';
   const factList=facts.length?`<ul>${facts.map(f=>`<li>${esc(f.description)}</li>`).join('')}</ul>`:'<p>目前沒有已揭露的相關事件資訊。</p>';
+  // A teacher observation is explicitly the latest disclosed fact about this
+  // person, not a synthetic character assessment or hidden NPC relationship.
+  const latestFact=facts.at(-1);
+  const observation=selected.kind==='student'?'<h4>導師目前掌握的觀察</h4>'+(latestFact?
+   '<p>最近已知紀錄'+(latestFact.occurredAt?.date?'（'+esc(latestFact.occurredAt.date)+'）':'')+'：'+esc(latestFact.description)+'</p>':
+   '<p>目前尚無個別事件紀錄，不能據此判定學生的個性或表現。</p>'):'';
   const claimList=claims.length?`<ul>${claims.map(c=>`<li>${esc(c.statement)}（${beliefs[c.belief]??'待確認'}）</li>`).join('')}</ul>`:'<p>目前沒有由此人物提供且已知的說法。</p>';
-  details=`<h3>${selected.kind==='student'&&Number.isInteger(selected.seatNo)?String(selected.seatNo).padStart(2,'0')+'號　':''}${esc(selected.name)}</h3><p>${esc(selected.relation)}</p>${relation}<h4>已知事實</h4>${factList}<h4>此人物提供的說法</h4>${claimList}`;
+  details=`<h3>${selected.kind==='student'&&Number.isInteger(selected.seatNo)?String(selected.seatNo).padStart(2,'0')+'號　':''}${esc(selected.name)}</h3><p>${esc(selected.relation)}</p>${relation}${observation}<h4>已知事實</h4>${factList}<h4>此人物提供的說法</h4>${claimList}`;
  }
- return `<section class="notebook-people" aria-label="人物紀錄"><p class="notebook-people-summary">${esc(data.className)}・學生 ${studentCount} 人・家長 ${parentCount} 人・其他 ${otherCount} 人</p><nav class="notebook-person-categories" aria-label="人物身分類別">${categories}</nav><label class="notebook-search-label">搜尋人物 <input type="search" data-notebook-search="people" aria-label="搜尋人物姓名" value="${esc(search)}" placeholder="姓名或身分"></label><div class="notebook-people-layout"><div class="notebook-person-list" aria-label="人物名單">${roster||'<p>目前沒有可查閱的人物。</p>'}</div><div class="notebook-person-details" aria-live="polite">${details}<section class="notebook-relations" aria-label="目前已知關係"><h4>已知人物關係圖</h4><div class="notebook-relation-links">${(data.relations??[]).filter(edge=>!selected||edge.a===selected.id||edge.b===selected.id).slice(0,100).map(edge=>{const a=data.people.find(p=>p.id===edge.a)??(data.teacher?.id===edge.a?data.teacher:null),b=data.people.find(p=>p.id===edge.b)??(data.teacher?.id===edge.b?data.teacher:null);const node=(person)=>person&&person.id!==data.teacher?.id&&data.people.some(p=>p.id===person.id)?`<button type="button" class="notebook-relation-node notebook-relation-node--link" data-action="notebook-person:${esc(person.id)}" aria-label="查看${esc(person.name)}的人物紀錄">${esc(person.name)}</button>`:`<span class="notebook-relation-node">${esc(person?.name??'人物')}</span>`;return `<div class="notebook-relation-pair">${node(a)}<span class="notebook-relation-edge">${esc(edge.label)}</span>${node(b)}</div>`;}).join('')||'<p>目前沒有可確認的已知連結。</p>'}</div><p class="notebook-hint">家庭與共同事件只代表已知關聯，不能推定感情、信任或立場；選擇人物可縮小顯示範圍。</p></section></div></div></section>`;
+ const overview=data.classSummary;
+ const overviewHtml=overview?`<aside class="notebook-class-summary" aria-label="已知班級概況"><h4>${overview.archived?'封存班級紀錄':'班級已知概況'}</h4><p>名冊學生 ${esc(overview.enrollment)} 人；其中 ${esc(overview.studentsWithKnownRecords)} 人有已揭露的個別事件紀錄，共 ${esc(overview.knownStudentFacts)} 筆相關事實。</p><p class="notebook-hint">這只是導師目前已知紀錄的涵蓋情形，不能代表全班的整體表現、氣氛或人際關係。</p></aside>`:'';
+ return `<section class="notebook-people" aria-label="人物紀錄"><p class="notebook-people-summary">${esc(data.className)}・學生 ${studentCount} 人・家長 ${parentCount} 人・其他 ${otherCount} 人</p>${overviewHtml}<nav class="notebook-person-categories" aria-label="人物身分類別">${categories}</nav><label class="notebook-search-label">搜尋人物 <input type="search" data-notebook-search="people" aria-label="搜尋人物姓名" value="${esc(search)}" placeholder="姓名或身分"></label><div class="notebook-people-layout"><div class="notebook-person-list" aria-label="人物名單">${roster||'<p>目前沒有可查閱的人物。</p>'}</div><div class="notebook-person-details" aria-live="polite">${details}<section class="notebook-relations" aria-label="目前已知關係"><h4>已知人物關係圖</h4><div class="notebook-relation-links">${(data.relations??[]).filter(edge=>!selected||edge.a===selected.id||edge.b===selected.id).slice(0,100).map(edge=>{const a=data.people.find(p=>p.id===edge.a)??(data.teacher?.id===edge.a?data.teacher:null),b=data.people.find(p=>p.id===edge.b)??(data.teacher?.id===edge.b?data.teacher:null);const node=(person)=>person&&person.id!==data.teacher?.id&&data.people.some(p=>p.id===person.id)?`<button type="button" class="notebook-relation-node notebook-relation-node--link" data-action="notebook-person:${esc(person.id)}" aria-label="查看${esc(person.name)}的人物紀錄">${esc(person.name)}</button>`:`<span class="notebook-relation-node">${esc(person?.name??'人物')}</span>`;return `<div class="notebook-relation-pair">${node(a)}<span class="notebook-relation-edge">${esc(edge.label)}</span>${node(b)}</div>`;}).join('')||'<p>目前沒有可確認的已知連結。</p>'}</div><p class="notebook-hint">家庭與共同事件只代表已知關聯，不能推定感情、信任或立場；選擇人物可縮小顯示範圍。</p></section></div></div></section>`;
 }

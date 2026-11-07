@@ -6,6 +6,11 @@ on:
       - main
     paths:
       - .github/workflows/phase13-preview-publish.yml
+      - web/student-art-preview.js
+      - web/game.js
+      - web/story-view.css
+      - web/assets/characters/students/**
+      - test/student-art-preview.test.js
 permissions:
   contents: write
 concurrency:
@@ -27,7 +32,7 @@ jobs:
       - name: Verify preview source before publication
         run: |
           npm run check
-          node --test --test-isolation=none test/year-result.test.js test/notebook-tasks.test.js test/notebook-view.test.js test/notebook-people.test.js
+          node --test --test-isolation=none test/year-result.test.js test/notebook-tasks.test.js test/notebook-view.test.js test/notebook-people.test.js test/student-art-preview.test.js
       - name: Configure automated publication identity
         run: |
           git config user.name "github-actions[bot]"

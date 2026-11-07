@@ -65,7 +65,7 @@ def main():
                 patch = loaded[key].crop(roi)
                 rebuilt = body.copy()
                 rebuilt.alpha_composite(patch,(x0,y0))
-                exact = ImageChops.difference(rebuilt,loaded[key]).getbbox() is None
+                exact = (ImageChops.difference(rebuilt.convert("RGB"),loaded[key].convert("RGB")).getbbox() is None\n                         and ImageChops.difference(rebuilt.getchannel("A"),loaded[key].getchannel("A")).getbbox() is None)
                 path = OUTPUT/f"student-001-face-{key}.png"
                 if exact:
                     patch.save(path,optimize=True)

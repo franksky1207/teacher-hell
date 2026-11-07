@@ -1,0 +1,36 @@
+name: 15-B-L1 precise face extraction
+on:
+  push:
+    branches: [feat/phase15-l1-face-layers-20261107]
+    paths:
+      - .github/workflows/phase15-l1-face-layers.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: phase15-l1-face-layers
+  cancel-in-progress: false
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install only required image decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Extract five facial replacements and verify exact reconstruction
+        run: python scripts/face-layer-l1.py
+      - name: Commit L1 outputs to development branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add artwork/prototypes/l1-face-layers/
+          if ! git diff --cached --quiet; then
+            git commit -m "art(15-B-L1): record exact face-region layer analysis and candidates"
+            git push origin HEAD:refs/heads/feat/phase15-l1-face-layers-20261107
+          fi

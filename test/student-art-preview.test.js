@@ -22,7 +22,7 @@ test('winter sheet geometry matches 223x184 tiles in row-major order',()=>{
  assert.throws(()=>studentArtSheetCell({...m,face:{...m.face,x:990}},'happy'),/超出母圖/);
 });
 
-import {normalizeSixExpressionPixels} from '../web/face-sheet-normalize.js';
+import {normalizeSixExpressionPixels,repairAngryWinterCheekPixels} from '../web/face-sheet-normalize.js';
 test('six-expression normalization preserves every alpha and does not alter calm',()=>{
  const w=32,h=32,pixelCount=w*h,base=new Uint8ClampedArray(pixelCount*4),sheet=new Uint8ClampedArray(pixelCount*6*4);
  for(let i=0;i<pixelCount;i++){base.set([221,163,145,255],i*4);}
@@ -47,4 +47,22 @@ test('rejects inconsistent six tile alpha masks instead of hiding misalignment',
  const w=24,h=24,b=new Uint8ClampedArray(w*h*4),s=new Uint8ClampedArray(w*h*6*4);
  s[3]=255;
  assert.throws(()=>normalizeSixExpressionPixels(b,s,w,h,['calm','happy','angry','sad','surprised','embarrassed']),/Alpha 遮罩不一致/);
+});
+
+test('winter angry jaw repair removes neutral-face shadow and calm mouth remnant without changing silhouette or other expressions',()=>{
+ const w=223,h=184,stride=w*3,base=new Uint8ClampedArray(w*h*4);
+ const sheet=new Uint8ClampedArray(w*h*6*4);
+ for(let i=0;i<w*h;i++)base.set([240,202,186,253],i*4);
+ for(let i=0;i<w*h*6;i++)sheet.set([240,202,186,255],i*4);
+ const pos=(x,y)=>(y*stride+2*w+x)*4;
+ for(let y=142;y<164;y++)for(let x=145;x<175;x++)sheet.set([83,64,61,255],pos(x,y));
+ sheet.set([51,50,49,255],pos(124,144));
+ // The angry mouth is to the left and must remain exactly the same.
+ sheet.set([70,40,40,255],pos(90,140));
+ const fixed=repairAngryWinterCheekPixels(base,sheet,w,h);
+ assert.ok(fixed[pos(160,154)]>sheet[pos(160,154)],'shadow must lighten');
+ assert.ok(fixed[pos(124,144)]>sheet[pos(124,144)],'old calm mouth trace must heal');
+ assert.deepEqual([...fixed.slice(pos(90,140),pos(90,140)+4)],[...sheet.slice(pos(90,140),pos(90,140)+4)]);
+ for(let i=0;i<sheet.length;i+=4)assert.equal(fixed[i+3],sheet[i+3],'alpha unchanged');
+ assert.deepEqual([...fixed.slice(0,w*h*4)],[...sheet.slice(0,w*h*4)],'calm tile must be untouched');
 });

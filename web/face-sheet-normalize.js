@@ -65,6 +65,37 @@ export function normalizeSixExpressionPixels(basePixels,sheetPixels,w,h,order){
  }
  return {pixels:out,changed};
 }
+// Preview-stage repair for a *measured* garment/face combination.
+// The root issue here is not only cheek shading: a fragment of the calm mouth
+// survives to the right of the angry mouth. Restoring calm pixels alone would
+// restore that old mouth stroke, so the final small area needs skin healing.
+// Keep the mouth and the ORIGINAL outer jaw outline; do not shift either.
+export function repairAngryWinterCheekPixels(basePixels,sheetPixels,w,h){
+ if(w!==223||h!==184)throw new Error('校正區域需依服裝重新定位');
+ const width=w*3, result=new Uint8ClampedArray(sheetPixels), angryX=w*2;
+ // Stage 1: replace the non-expression inner right cheek with its calm baseline,
+ // feathering away from the *new* angry mouth. Original outline is untouched.
+ for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+  const boundary=133-Math.max(0,Math.min(50,y-125))*.85;
+  const mx=clamp((x-boundary)/6),my=clamp((y-121)/8);
+  const weight=(mx*mx*(3-2*mx))*(my*my*(3-2*my));
+  if(weight<=0)continue;
+  const src=(y*w+x)*4,dst=(y*width+angryX+x)*4;
+  for(let k=0;k<3;k++)result[dst+k]=Math.round(result[dst+k]*(1-weight)+basePixels[src+k]*weight);
+ }
+ // Stage 2: the remaining *calm mouth* remnant is at the right of angry's mouth.
+ // Heal it from clean nearby baseline skin; never touch the angry mouth.
+ for(let y=134;y<=152;y++)for(let x=116;x<=138;x++){
+  const r=((x-124)/13)**2+((y-144)/8)**2;
+  if(r>1)continue;
+  const weight=clamp((1-r)*5);
+  const src=((y-15)*w+Math.min(w-1,x+13))*4;
+  const dst=(y*width+angryX+x)*4;
+  for(let k=0;k<3;k++)result[dst+k]=Math.round(result[dst+k]*(1-weight)+basePixels[src+k]*weight);
+ }
+ return result;
+}
+
 export function normalizeSixExpressionCanvas(base,sheet,metadata){
  const {face,canvas,sheetLayout}=metadata;
  const w=face.width,h=face.height;
@@ -74,7 +105,11 @@ export function normalizeSixExpressionCanvas(base,sheet,metadata){
  const a=document.createElement('canvas');a.width=w*3;a.height=h*2;
  const ac=a.getContext('2d',{willReadFrequently:true});ac.drawImage(sheet,0,0);
  const original=ac.getImageData(0,0,a.width,a.height);
- const result=normalizeSixExpressionPixels(bc.getImageData(0,0,w,h).data,original.data,w,h,sheetLayout.order);
- original.data.set(result.pixels);ac.putImageData(original,0,0);
+ const basePixels=bc.getImageData(0,0,w,h).data;
+ const result=normalizeSixExpressionPixels(basePixels,original.data,w,h,sheetLayout.order);
+ // Outfit-specific calibration, not a fixed rule for other students' faces.
+ const calibrated=(metadata.studentId==='student-001'&&metadata.outfit==='uniform-winter')
+  ?repairAngryWinterCheekPixels(basePixels,result.pixels,w,h):result.pixels;
+ original.data.set(calibrated);ac.putImageData(original,0,0);
  return {canvas:a,changed:result.changed};
 }

@@ -38,7 +38,7 @@ test('14-F3: class summary counts only disclosed student facts without extrapola
  const facts=data.facts.filter(f=>f.subjectIds.some(id=>studentIds.has(id)));
  const covered=new Set(facts.flatMap(f=>f.subjectIds.filter(id=>studentIds.has(id))));
  assert.equal(data.classSummary.studentsWithKnownRecords,covered.size);
- assert.equal(data.classSummary.knownStudentFacts,new Set(facts.map(f=>f.description+'|'+JSON.stringify(f.occurredAt))).size===facts.length?facts.length:new Set(facts.map(f=>f.description+'|'+JSON.stringify(f.occurredAt))).size); 
+ assert.equal(data.classSummary.knownStudentFacts,facts.length);
  const html=renderNotebookPeople(data);
  assert.match(html,/班級已知概況/);
  assert.match(html,/不能代表全班的整體表現/);

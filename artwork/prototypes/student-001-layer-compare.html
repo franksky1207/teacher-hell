@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>15-B-L2｜完整立繪與局部臉部切換比較</title>
+<style>
+:root{color-scheme:dark;--bg:#16243a;--panel:#253651;--text:#f1f4f8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,"Noto Sans TC",sans-serif}
+main{width:min(100% - 24px,1050px);margin:16px auto 32px}
+h1{font-size:1.2rem;margin:0 0 8px}h2{font-size:1rem;margin:0 0 6px}
+p{margin:4px 0 12px;color:#d4deeb;font-size:.9rem}
+.panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.panel{min-width:0;padding:10px;background:var(--panel);border:1px solid #526b85;border-radius:12px}
+.frame{height:min(57dvh,570px);min-height:220px;display:flex;align-items:flex-end;justify-content:center;background:linear-gradient(#7f9d9c,#35415d);border-radius:8px;overflow:hidden}
+.art{height:100%;max-width:100%;aspect-ratio:2/3;position:relative;overflow:hidden}
+.art img,.art canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block}
+.art .baseline{opacity:1}
+.art .overlay{opacity:0;transition:opacity 180ms ease-in-out}
+.art .overlay.active{opacity:1}
+.note{min-height:2.4em;font-size:.8rem;margin:8px 0 0}
+.controls{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin:14px 0 10px}
+button{font:inherit;padding:8px 2px;cursor:pointer;background:#344a67;color:white;border:1px solid #9babbd;border-radius:7px;touch-action:manipulation}
+button[aria-pressed="true"]{background:#617e9b;border-color:white}
+button:focus-visible{outline:3px solid #f3d89c;outline-offset:2px}
+.status{margin:8px 0;min-height:1.6em}
+.small{font-size:.8rem;color:#bbc8dc}
+@media(max-width:680px){main{width:calc(100% - 12px);margin-top:8px}.panels{gap:6px}.panel{padding:5px}.frame{height:min(47dvh,430px);min-height:170px}.controls{grid-template-columns:repeat(3,minmax(0,1fr))}h2{font-size:.83rem}p{font-size:.82rem}}
+@media(prefers-reduced-motion:reduce){.art .overlay{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<h1>15-B-L2｜student-001 六表情切換比較</h1>
+<p>兩邊同步切換；左邊沿用已核准的完整人物 PNG，右邊是 L1 拆出的局部臉部替換。僅供開發比較，未接事件、存檔或正式人物映射。</p>
+<div class="panels">
+  <section class="panel"><h2>A｜完整人物 PNG</h2>
+    <div class="frame"><div class="art" id="art-a" aria-label="完整立繪">
+      <img class="baseline" src="../masters/students/student-001-base.png" alt="" decoding="async">
+      <img class="overlay" data-full="happy" src="student-001-expression-happy.png" alt="" decoding="async">
+      <img class="overlay" data-full="surprised" src="student-001-expression-surprised.png" alt="" decoding="async">
+      <img class="overlay" data-full="angry" src="student-001-expression-angry.png" alt="" decoding="async">
+      <img class="overlay" data-full="sad" src="student-001-expression-sad.png" alt="" decoding="async">
+      <img class="overlay" data-full="embarrassed" src="student-001-expression-embarrassed.png" alt="" decoding="async">
+    </div></div><p class="note">原始方案：完整 PNG 交叉淡化 180 ms。</p>
+  </section>
+  <section class="panel"><h2>B｜固定身體＋臉部區域</h2>
+    <div class="frame"><div class="art" id="art-b" aria-label="局部臉部替換">
+      <canvas id="face-canvas" width="1024" height="1536" role="img" aria-label="student-001 局部表情重組"></canvas>
+    </div></div><p class="note">新方案：只更新臉部 308×241 像素區域，其餘保持固定。</p>
+  </section>
+</div>
+<div class="controls" id="controls" role="group" aria-label="同步切換兩種方案">
+<button data-expression="calm" aria-pressed="true">平靜</button>
+<button data-expression="happy" aria-pressed="false">開心</button>
+<button data-expression="surprised" aria-pressed="false">驚訝</button>
+<button data-expression="angry" aria-pressed="false">生氣</button>
+<button data-expression="sad" aria-pressed="false">難過</button>
+<button data-expression="embarrassed" aria-pressed="false">尷尬</button>
+</div>
+<p class="status" id="status" role="status">正在預載分層素材…</p>
+<p class="small">測試順序：六種表情依序切換 → 快速連點 → 小螢幕直式／電腦橫式。已通過 L1 原圖逐像素還原，不表示動畫觀感已驗收。沒有外部網路依賴。</p>
+</main>
+<script>
+(()=>{
+'use strict';
+const labels=Object.freeze({calm:'平靜',happy:'開心',surprised:'驚訝',angry:'生氣',sad:'難過',embarrassed:'尷尬'});
+const KEYS=Object.keys(labels);
+const FACE={x:372,y:208,w:308,h:241};
+const DURATION=180;
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+const status=document.querySelector('#status');
+const controls=document.querySelector('#controls');
+const fullLayers=[...document.querySelectorAll('[data-full]')];
+const canvas=document.querySelector('#face-canvas');
+const ctx=canvas.getContext('2d',{alpha:true,willReadFrequently:true});
+const imageURL=key=>key==='calm'?'../masters/students/student-001-base.png':'student-001-expression-'+key+'.png';
+const patchURL=key=>'l1-face-layers/student-001-face-'+key+'.png';
+const bodyURL='l1-face-layers/student-001-body-face-window.png';
+const load=url=>new Promise((resolve,reject)=>{
+ const img=new Image();img.decoding='async';img.onload=()=>resolve(img);img.onerror=()=>reject(new Error('載入失敗：'+url));img.src=url;
+});
+let desired='calm',current='calm',generation=0,frameId=0,sourcePatch=null,bodyImg=null;
+const patches=new Map();
+let ready=false;
+function mixPixel(a,b,ratio){
+ const aa=a[3]/255,ab=b[3]/255,out=aa*(1-ratio)+ab*ratio;
+ if(out===0)return [0,0,0,0];
+ return [0,1,2].map(i=>Math.round((a[i]*aa*(1-ratio)+b[i]*ab*ratio)/out)).concat(Math.round(out*255));
+}
+function mixData(from,to,t){
+ const out=new ImageData(FACE.w,FACE.h);
+ for(let i=0;i<out.data.length;i+=4){
+  const px=mixPixel(from.data.subarray(i,i+4),to.data.subarray(i,i+4),t);
+  out.data.set(px,i);
+ }
+ return out;
+}
+function drawFace(data){
+ ctx.clearRect(FACE.x,FACE.y,FACE.w,FACE.h);
+ ctx.putImageData(data,FACE.x,FACE.y);
+}
+function choose(key){
+ if(!ready||!Object.hasOwn(labels,key))return;
+ desired=key;
+ controls.querySelectorAll('button').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.expression===key)));
+ for(const layer of fullLayers)layer.classList.toggle('active',layer.dataset.full===key);
+ // On rapid input, start a fresh 180ms transition from the currently visible
+ // pixel buffer; there is no queue and no switch-back flicker.
+ cancelAnimationFrame(frameId);
+ const target=patches.get(key),from=sourcePatch;
+ if(reduced.matches||key===current){sourcePatch=target;drawFace(sourcePatch);current=key;status.textContent='目前：'+labels[key]+'（減少動態或相同表情）';return;}
+ const id=++generation,start=performance.now();
+ const tick=now=>{
+  if(id!==generation)return;
+  const t=Math.min(1,(now-start)/DURATION);
+  sourcePatch=t===1?target:mixData(from,target,t);
+  drawFace(sourcePatch);
+  if(t<1)frameId=requestAnimationFrame(tick);
+  else{current=key;status.textContent='目前：'+labels[key]+'｜同步比較完成';}
+ };
+ status.textContent='正在切換：'+labels[key];
+ frameId=requestAnimationFrame(tick);
+}
+controls.addEventListener('click',event=>{
+ const b=event.target.closest('button[data-expression]');
+ if(b&&controls.contains(b))choose(b.dataset.expression);
+});
+async function setup(){
+ try{
+  if(!ctx)throw new Error('無法建立 Canvas 2D');
+  // Fetch existing images once, not a new image for each click.
+  const images=await Promise.all([load(bodyURL),...KEYS.map(k=>load(patchURL(k))),...KEYS.map(k=>load(imageURL(k)))]);
+  bodyImg=images[0];
+  const temp=document.createElement('canvas');temp.width=FACE.w;temp.height=FACE.h;
+  const tctx=temp.getContext('2d',{willReadFrequently:true});
+  if(!tctx)throw new Error('無法讀取表情圖像資料');
+  for(let i=0;i<KEYS.length;i++){
+   const patch=images[1+i];
+   if(patch.naturalWidth!==FACE.w||patch.naturalHeight!==FACE.h)throw new Error('臉部圖層尺寸錯誤：'+KEYS[i]);
+   tctx.clearRect(0,0,FACE.w,FACE.h);
+   tctx.drawImage(patch,0,0);
+   patches.set(KEYS[i],tctx.getImageData(0,0,FACE.w,FACE.h));
+  }
+  if(bodyImg.naturalWidth!==1024||bodyImg.naturalHeight!==1536)throw new Error('身體底圖尺寸不正確');
+  ctx.drawImage(bodyImg,0,0);sourcePatch=patches.get('calm');drawFace(sourcePatch);
+  ready=true;status.textContent='六表情素材已就緒，可以同步比較 A／B。';
+ }catch(error){status.textContent='初始化失敗：'+error.message;}
+}
+void setup();
+})();
+</script>
+</body>
+</html>

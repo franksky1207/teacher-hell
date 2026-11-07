@@ -1,18 +1,17 @@
-# 15-B-L1｜student-001 臉部局部覆蓋實驗結果
+# 15-B-L1｜student-001 精準局部覆蓋驗證
 
-本結果由 `scripts/face-layer-l1.py` 對現有六張 PNG 自動分析產生；不重新製圖。
-**注意：此方法是單一臉部區域的不透明替換圖，並非可以自由編輯眉眼嘴、任意換臉／髮型的完整分層。**
-只要局部未完全不透明、超出臉部或不等於原圖，就拒絕輸出，不宣稱分層成功。
+**這是利用現有六張完整 PNG 自動裁切的局部替換，非新生圖，也不等於任意髮型／服裝的真分層。**
+方法：固定身體 PNG 在臉部區域透明挖空，再用同一共用座標疊回 calm＋五表情局部 PNG；透明髮絲也保留原像素。
+畫布：1024×1536；共用局部：[372, 208, 680, 449]；精準重建 **6/6**。
 
-- 畫布：1024×1536；成功精準重建：**0/5**。
+| 表情 | 原圖 RGB 差異範圍 | 逐像素重建 | 圖片輸出 |
+|---|---|---|---|
+| calm | calm 底圖 | PASS | artwork/prototypes/l1-face-layers/student-001-face-calm.png |
+| happy | [411, 243, 645, 422] | PASS | artwork/prototypes/l1-face-layers/student-001-face-happy.png |
+| surprised | [395, 232, 657, 435] | PASS | artwork/prototypes/l1-face-layers/student-001-face-surprised.png |
+| angry | [386, 222, 666, 433] | PASS | artwork/prototypes/l1-face-layers/student-001-face-angry.png |
+| sad | [389, 227, 658, 415] | PASS | artwork/prototypes/l1-face-layers/student-001-face-sad.png |
+| embarrassed | [392, 231, 652, 432] | PASS | artwork/prototypes/l1-face-layers/student-001-face-embarrassed.png |
 
-| 表情 | 判定 | 原變動範圍 | 替換矩形 | 原圖重建 |
-|---|---|---|---|---|
-| happy | REJECT | [411, 243, 645, 422] | [397, 229, 659, 436] | — |
-| surprised | REJECT | [395, 232, 657, 435] | [381, 218, 671, 449] | — |
-| angry | REJECT | [386, 222, 666, 433] | [372, 208, 680, 447] | — |
-| sad | REJECT | [389, 227, 658, 415] | [375, 213, 672, 429] | — |
-| embarrassed | REJECT | [392, 231, 652, 432] | [378, 217, 666, 446] | — |
-
-正式 180ms 全身淡化仍是核准基準；L2 再做原地完整圖 vs 局部替換動畫比較。
-本批不做 40 人組合模擬、不替換遊戲正式圖片、不修改存檔或事件。
+精準還原是檔案檢驗，不代表交叉淡化必然比已核准的完整 PNG 更自然；此點留待 L2 目視測試。
+L1 不修改正式預覽畫面、人物映射、事件或存檔。

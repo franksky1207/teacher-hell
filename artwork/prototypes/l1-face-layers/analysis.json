@@ -1,11 +1,9 @@
 {
-  "method": "exact opaque rectangular ROI overlay (not independently editable eyes/mouth)",
-  "base": "artwork/masters/students/student-001-base.png",
+  "method": "shared transparent facial window + 6 aligned RGBA patches (lossless reconstruction)",
   "size": [
     1024,
     1536
   ],
-  "padding": 14,
   "expressions": {
     "happy": {
       "source": "artwork/prototypes/student-001-expression-happy.png",
@@ -20,16 +18,14 @@
         645,
         422
       ],
-      "roi": [
-        397,
-        229,
-        659,
-        436
+      "status": "PASS",
+      "reconstruction_exact": true,
+      "patch_size": [
+        308,
+        241
       ],
-      "facial_region": true,
-      "fully_opaque_roi": false,
-      "status": "REJECT",
-      "reason": "changed region not confined to fully opaque face; do not generate misleading overlay"
+      "patch_file": "artwork/prototypes/l1-face-layers/student-001-face-happy.png",
+      "patch_bytes": 128389
     },
     "surprised": {
       "source": "artwork/prototypes/student-001-expression-surprised.png",
@@ -44,16 +40,14 @@
         657,
         435
       ],
-      "roi": [
-        381,
-        218,
-        671,
-        449
+      "status": "PASS",
+      "reconstruction_exact": true,
+      "patch_size": [
+        308,
+        241
       ],
-      "facial_region": true,
-      "fully_opaque_roi": false,
-      "status": "REJECT",
-      "reason": "changed region not confined to fully opaque face; do not generate misleading overlay"
+      "patch_file": "artwork/prototypes/l1-face-layers/student-001-face-surprised.png",
+      "patch_bytes": 131684
     },
     "angry": {
       "source": "artwork/prototypes/student-001-expression-angry.png",
@@ -68,16 +62,14 @@
         666,
         433
       ],
-      "roi": [
-        372,
-        208,
-        680,
-        447
+      "status": "PASS",
+      "reconstruction_exact": true,
+      "patch_size": [
+        308,
+        241
       ],
-      "facial_region": true,
-      "fully_opaque_roi": false,
-      "status": "REJECT",
-      "reason": "changed region not confined to fully opaque face; do not generate misleading overlay"
+      "patch_file": "artwork/prototypes/l1-face-layers/student-001-face-angry.png",
+      "patch_bytes": 129221
     },
     "sad": {
       "source": "artwork/prototypes/student-001-expression-sad.png",
@@ -92,16 +84,14 @@
         658,
         415
       ],
-      "roi": [
-        375,
-        213,
-        672,
-        429
+      "status": "PASS",
+      "reconstruction_exact": true,
+      "patch_size": [
+        308,
+        241
       ],
-      "facial_region": true,
-      "fully_opaque_roi": false,
-      "status": "REJECT",
-      "reason": "changed region not confined to fully opaque face; do not generate misleading overlay"
+      "patch_file": "artwork/prototypes/l1-face-layers/student-001-face-sad.png",
+      "patch_bytes": 126841
     },
     "embarrassed": {
       "source": "artwork/prototypes/student-001-expression-embarrassed.png",
@@ -116,17 +106,41 @@
         652,
         432
       ],
-      "roi": [
-        378,
-        217,
-        666,
-        446
+      "status": "PASS",
+      "reconstruction_exact": true,
+      "patch_size": [
+        308,
+        241
       ],
-      "facial_region": true,
-      "fully_opaque_roi": false,
-      "status": "REJECT",
-      "reason": "changed region not confined to fully opaque face; do not generate misleading overlay"
+      "patch_file": "artwork/prototypes/l1-face-layers/student-001-face-embarrassed.png",
+      "patch_bytes": 131884
+    },
+    "calm": {
+      "source": "artwork/masters/students/student-001-base.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "status": "PASS",
+      "reconstruction_exact": true,
+      "patch_size": [
+        308,
+        241
+      ],
+      "patch_file": "artwork/prototypes/l1-face-layers/student-001-face-calm.png",
+      "patch_bytes": 130462
     }
   },
-  "accepted_count": 0
+  "padding": 14,
+  "accepted_count": 6,
+  "note": "The underlying body image has a transparent rectangle; every expression including calm provides the same region. Not free-form eyes, hair or clothing layers.",
+  "common_roi": [
+    372,
+    208,
+    680,
+    449
+  ],
+  "facial_region": true,
+  "body_file": "artwork/prototypes/l1-face-layers/student-001-body-face-window.png",
+  "body_bytes": 1444092
 }

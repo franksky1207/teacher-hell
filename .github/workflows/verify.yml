@@ -61,7 +61,7 @@ jobs:
         run: |
           if [[ "$GITHUB_HEAD_REF" == 'feat/phase14-f1-results-retry-20261107' ]]; then
             npm run check
-            node --test --test-isolation=none test/year-result.test.js test/notebook-tasks.test.js test/notebook-view.test.js
+            node --test --test-isolation=none test/year-result.test.js test/notebook-tasks.test.js test/notebook-view.test.js test/notebook-people.test.js
             npm run build
           elif [[ "$GITHUB_HEAD_REF" == 'fix/notebook-relation-navigation-20261107' ]]; then
             npm run check

@@ -1,4 +1,4 @@
-import {PORTRAIT_STAGE,PORTRAIT_PREVIEW_STAGE,portraitDestination} from '../web/student-portrait-layout.js';
+import {PORTRAIT_STAGE,PORTRAIT_PREVIEW_STAGE,portraitExpressionScales,portraitDestination} from '../web/student-portrait-layout.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {STUDENT_ART_IDS,STUDENT_ART_OUTFITS,FULL_SHEET_EXPRESSIONS,FULL_SHEET_CELL,fullSheetCrop,fullSheetAssetUrl,renderFullSheetPreview} from '../web/full-sheet-preview.js';
@@ -54,4 +54,37 @@ test('square preview stage expands horizontal room without changing sprite cells
  const dest=portraitDestination(layout,0);
  assert.ok(dest.dx>0);
  assert.ok(dest.dx+dest.dw<PORTRAIT_PREVIEW_STAGE.width);
+});
+
+test('one student has equal visible heights for all six expressions without stretching or clipping',()=>{
+ const bounds=[
+  {x:40,y:40,width:360,height:1080},{x:50,y:40,width:400,height:1080},
+  {x:35,y:180,width:390,height:914},{x:40,y:50,width:360,height:1080},
+  {x:20,y:130,width:460,height:958},{x:45,y:50,width:380,height:1080}
+ ];
+ const scales=portraitExpressionScales(bounds,PORTRAIT_PREVIEW_STAGE);
+ const layout={stage:PORTRAIT_PREVIEW_STAGE,bounds,scales,sourceWidth:512,sourceHeight:1152};
+ const target=bounds[0].height*scales[0];
+ for(let i=0;i<6;i++){
+  const d=portraitDestination(layout,i);
+  assert.ok(Math.abs(d.dh*1/1152*bounds[i].height-target)<1e-8);
+  assert.ok(bounds[i].width*scales[i]<=PORTRAIT_PREVIEW_STAGE.maxBodyWidth+1e-8);
+  assert.ok(Math.abs((d.dx+bounds[i].x*scales[i]+bounds[i].width*scales[i]/2)-PORTRAIT_PREVIEW_STAGE.width/2)<1e-8);
+  assert.ok(Math.abs(d.dy+(bounds[i].y+bounds[i].height)*scales[i]-(PORTRAIT_PREVIEW_STAGE.height-PORTRAIT_PREVIEW_STAGE.bottom))<1e-8);
+ }
+});
+test('different students retain distinct source-relative display heights',()=>{
+ const tall=Array.from({length:6},()=>({x:30,y:30,width:400,height:1080}));
+ const short=Array.from({length:6},()=>({x:30,y:150,width:380,height:840}));
+ const t=portraitExpressionScales(tall,PORTRAIT_PREVIEW_STAGE);
+ const s=portraitExpressionScales(short,PORTRAIT_PREVIEW_STAGE);
+ assert.ok(t[0]*1080>s[0]*840);
+ assert.equal(t[0]*1080,1000);
+ assert.equal(s[0]*840,840);
+});
+test('wide gestures reduce the shared student height instead of clipping an expression',()=>{
+ const bounds=[{x:0,y:0,width:500,height:600},...Array.from({length:5},()=>({x:100,y:0,width:300,height:900}))];
+ const scales=portraitExpressionScales(bounds,PORTRAIT_STAGE);
+ assert.ok(scales[0]*500<=PORTRAIT_STAGE.maxBodyWidth);
+ assert.ok(Math.abs(scales[0]*600-scales[1]*900)<1e-8);
 });

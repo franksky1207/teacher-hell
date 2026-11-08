@@ -1,6 +1,6 @@
 # 《教師荒謬地獄》正式網頁美術與音效素材
 
-此目錄是**唯一現行正式素材來源**；建置與正式預覽從 `web/assets/` 讀取，不再維護獨立的 `artwork/` 母圖區。
+此目錄是**正式網頁素材來源**；建置與預覽從 `web/assets/` 讀取。
 
 ## 分類
 - `characters/students/student-001/` ～ `student-040/`：40 位學生各一個專屬資料夾，依 [完整六圖 SOP](../../docs/15-B-完整六圖優先製作SOP.md) 製作八套服裝；每套僅一張真正透明 RGBA PNG（1536×2304、3×2 六表情）。
@@ -8,15 +8,13 @@
 - `characters/graduates/`：畢業生角色素材預留區。
 - `backgrounds/desktop/`、`backgrounds/mobile/`：桌機、手機場景素材。
 - `audio/`：音效與背景音樂。
-- `manifests/`：必要時供正式資源清單使用，不存人物貼片定位 JSON。
 
 ## 學生正式檔案
 - 格序：上排 `calm`、`happy`、`angry`；下排 `sad`、`surprised`、`embarrassed`。
 - 命名：`characters/students/student-XXX/student-XXX-full-sheet-{outfit}.png`。
 - 服裝識別：`uniform-summer`、`uniform-winter`、`sports-summer`、`sports-winter`、`casual-summer-01`、`casual-summer-02`、`casual-winter-01`、`casual-winter-02`。
-- 制服款式直接依 [完整六圖 SOP](../../docs/15-B-完整六圖優先製作SOP.md) 與核准學生圖，不另設制服款式母圖資料夾。
+- 制服款式依 [完整六圖 SOP](../../docs/15-B-完整六圖優先製作SOP.md) 與核准學生圖。
 - 第一階段先完成 40 人夏季制服並逐人核准；第二階段以各人的核准夏季制服圖為唯一外貌基準補其餘七套。
-- 不採用舊 `base-*`、`face-sheet-*`、局部貼片、雙圖或定位 JSON 方案；歷史檔案可由 Git 紀錄追溯。
 
 **現行製作驗收：** [完整六圖 SOP](../../docs/15-B-完整六圖優先製作SOP.md) · [美術進度簿](../../docs/15-B-美術素材命名與製作進度簿.md)。
 

@@ -12,7 +12,7 @@ test('full sheet is the only student preview, with 40 ids and 8 outfits',()=>{
  assert.equal((html.match(/<option value="student-/g)||[]).length,40);
  assert.equal((html.match(/<option value="(?:uniform-|sports-|casual-)/g)||[]).length,8);
  assert.doesNotMatch(html,/data-art-expression=/);
- assert.match(html,/data-full-sheet-canvas width="1536" height="900"/);
+ assert.match(html,/data-full-sheet-canvas width="1152" height="1152"/);
  assert.match(html,/學生 040/);
 });
 test('six expressions crop 1536 x 2304 in row-major order',()=>{
@@ -36,10 +36,10 @@ test('portrait presentation preserves anatomy and shares a stable scaling factor
  assert.equal(portraitDestination(layout,2),null);
 });
 
-test('wide preview stage is landscape without changing original sprite cells',()=>{
- assert.equal(PORTRAIT_PREVIEW_STAGE.width,1536);
- assert.equal(PORTRAIT_PREVIEW_STAGE.height,900);
- assert.ok(PORTRAIT_PREVIEW_STAGE.width/PORTRAIT_PREVIEW_STAGE.height>1.6);
+test('square preview stage expands horizontal room without changing sprite cells',()=>{
+ assert.equal(PORTRAIT_PREVIEW_STAGE.width,1152);
+ assert.equal(PORTRAIT_PREVIEW_STAGE.height,1152);
+ assert.equal(PORTRAIT_PREVIEW_STAGE.width,PORTRAIT_PREVIEW_STAGE.height);
  const layout={stage:PORTRAIT_PREVIEW_STAGE,scale:1,sourceWidth:512,sourceHeight:1152,bounds:[{x:10,y:50,width:492,height:1000}]};
  const dest=portraitDestination(layout,0);
  assert.ok(dest.dx>0);

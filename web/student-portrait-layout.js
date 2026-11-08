@@ -28,18 +28,30 @@ export function analyzePortraitSheet(image,stage=PORTRAIT_STAGE){
  }
  const sizes=bounds.filter(Boolean);
  if(!sizes.length)throw new Error('圖片沒有可見人物');
- // One scale for all expressions: no jumps in perceived size on expression changes.
+ // The six expressions of THIS student share one visible target height.
+ // Different students keep their own reference height; never normalize all 40 to 1000px.
+ const scales=portraitExpressionScales(bounds,stage);
+ return {bounds,scales,sourceWidth:cw,sourceHeight:ch,stage};
+}
+// Match visible height within one student while preserving proportions and safe margins.
+// The median visible height is this sheet's own reference, NOT a class-wide constant.
+export function portraitExpressionScales(bounds,stage=PORTRAIT_STAGE){
+ const sizes=bounds.filter(b=>b&&b.height>0&&b.width>0);
+ if(!sizes.length)return bounds.map(()=>null);
  const heights=sizes.map(b=>b.height).sort((a,b)=>a-b);
  const referenceHeight=heights[Math.floor(heights.length/2)];
- const widest=Math.max(...sizes.map(b=>b.width));
- const tallest=Math.max(...sizes.map(b=>b.height));
- const scale=Math.min(stage.bodyHeight/referenceHeight,stage.maxBodyWidth/widest,(stage.height-stage.bottom-12)/tallest);
- return {bounds,scale,sourceWidth:cw,sourceHeight:ch,stage};
+ const safeHeight=Math.max(1,stage.height-stage.bottom-12);
+ // Wide gestures set a shared upper limit so all six expressions stay equally tall.
+ const targetHeight=Math.min(referenceHeight,stage.bodyHeight,safeHeight,
+  ...sizes.map(b=>stage.maxBodyWidth*b.height/b.width));
+ return bounds.map(b=>b&&b.height>0?targetHeight/b.height:null);
 }
 export function portraitDestination(layout,index){
  const b=layout.bounds[index];
  if(!b)return null;
- const {scale,stage}=layout;
+ const {stage}=layout;
+ const scale=layout.scales?.[index]??layout.scale;
+ if(!Number.isFinite(scale)||scale<=0)return null;
  return {
   dx:(stage.width-b.width*scale)/2-b.x*scale,
   dy:stage.height-stage.bottom-(b.y+b.height)*scale,

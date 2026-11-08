@@ -51,7 +51,7 @@
 
 ## 5. 檔案、預覽與核准界線
 
-- 目錄沿用 `web/assets/characters/students/student-XXX/`；檔名固定 `student-XXX-full-sheet-{outfit}.png`（例如 `student-001-full-sheet-uniform-summer.png`）。**只採 `full-sheet-*` 圖集；不再建立或保留舊母圖／貼片／JSON。**
+- 目錄沿用 `web/assets/characters/students/student-XXX/`；檔名固定 `student-XXX-full-sheet-{outfit}.png`（例如 `student-001-full-sheet-uniform-summer.png`）。 **修正或重製同一素材也必須沿用相同正式檔名，直接覆蓋舊版；禁止加上 `-corrected`、`-v2`、日期等後綴。****只採 `full-sheet-*` 圖集；不再建立或保留舊母圖／貼片／JSON。**
 - 核對 PNG 已存在 GitHub，再確認實際內容。**上傳不等於准許接入預覽**；只有使用者明確下令，才修改或部署既有網站。
 - **唯一給使用者的預覽網址**：https://franksky1207.github.io/teacher-hell/preview/ 。使用原站「完整六圖測試」入口、學生 001～040 與八套服裝下拉選單、六個表情按鈕；缺圖顯示未製作。**不得提供版本參數、追蹤參數、另開測試網址**；部署時確認 `gh-pages:preview/index.html` 真正載入對應新模組與素材。
 - 六格是**劇情觸發的瞬間表情／姿勢切換**，不是連續動畫；**不交叉淡化**，避免重影。維持角色出場位置、尺度合理。

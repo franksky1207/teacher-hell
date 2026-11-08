@@ -1,7 +1,7 @@
 import {PORTRAIT_STAGE,PORTRAIT_PREVIEW_STAGE,portraitDestination} from '../web/student-portrait-layout.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {STUDENT_ART_IDS,STUDENT_ART_OUTFITS,FULL_SHEET_EXPRESSIONS,FULL_SHEET_CELL,fullSheetCrop,renderFullSheetPreview} from '../web/full-sheet-preview.js';
+import {STUDENT_ART_IDS,STUDENT_ART_OUTFITS,FULL_SHEET_EXPRESSIONS,FULL_SHEET_CELL,fullSheetCrop,fullSheetAssetUrl,renderFullSheetPreview} from '../web/full-sheet-preview.js';
 test('full sheet is the only student preview, with 40 ids and 8 outfits',()=>{
  assert.equal(STUDENT_ART_IDS.length,40);
  assert.equal(new Set(STUDENT_ART_IDS).size,40);
@@ -15,6 +15,16 @@ test('full sheet is the only student preview, with 40 ids and 8 outfits',()=>{
  assert.match(html,/data-full-sheet-canvas width="1152" height="1152"/);
  assert.match(html,/學生 040/);
 });
+test('overwritten character PNG uses the live preview asset directory and an uncached request',()=>{
+ const base='https://franksky1207.github.io/teacher-hell/preview/';
+ const first=fullSheetAssetUrl('student-010','uniform-summer',base,'first');
+ const second=fullSheetAssetUrl('student-010','uniform-summer',base,'second');
+ assert.match(first,/\/preview\/web\/assets\/characters\/students\/student-010\/student-010-full-sheet-uniform-summer\.png\?refresh=first$/);
+ assert.notEqual(first,second);
+ assert.doesNotMatch(first,/\/assets\/[a-f0-9]{12}\/web\/assets\//);
+ assert.match(renderFullSheetPreview(),/data-full-sheet-version/);
+});
+
 test('six expressions crop 1536 x 2304 in row-major order',()=>{
  assert.deepEqual(FULL_SHEET_EXPRESSIONS.map(([id])=>fullSheetCrop(id)),[
   {sx:0,sy:0,sw:512,sh:1152},{sx:512,sy:0,sw:512,sh:1152},

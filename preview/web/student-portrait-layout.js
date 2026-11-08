@@ -1,6 +1,8 @@
 // Shared transparent-bounds portrait layout for preview and future game dialogue sprites.
 // Source cell stays 512×1152; the display canvas is wider to preserve broad shoulders.
 export const PORTRAIT_STAGE=Object.freeze({width:768,height:1152,bodyHeight:1000,maxBodyWidth:690,bottom:18});
+// Preview is landscape: use the full wide display instead of letterboxing a tall canvas.
+export const PORTRAIT_PREVIEW_STAGE=Object.freeze({width:1536,height:900,bodyHeight:820,maxBodyWidth:1250,bottom:14});
 const EXPRESSIONS=6;
 export function analyzePortraitSheet(image,stage=PORTRAIT_STAGE){
  const w=image.naturalWidth||image.width,h=image.naturalHeight||image.height;

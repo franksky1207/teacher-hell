@@ -1,12 +1,17 @@
-// Experimental full-body 3x2 sprite sheet viewer.
-// This does not alter the approved calm+face-sheet rendering path.
-import {STUDENT_ART_IDS,STUDENT_ART_OUTFITS} from './student-art-preview.js';
+// Current complete six-expression student portrait preview.
+export const STUDENT_ART_IDS=Object.freeze(Array.from({length:40},(_,i)=>'student-'+String(i+1).padStart(3,'0')));
+export const STUDENT_ART_OUTFITS=Object.freeze([
+ ['uniform-summer','夏季制服'],['uniform-winter','冬季制服'],
+ ['sports-summer','夏季運動服'],['sports-winter','冬季運動服'],
+ ['casual-summer-01','夏季便服 A'],['casual-summer-02','夏季便服 B'],
+ ['casual-winter-01','冬季便服 A'],['casual-winter-02','冬季便服 B']
+]);
 export const FULL_SHEET_EXPRESSIONS=Object.freeze([
  ['calm','平靜'],['happy','開心'],['angry','生氣'],
  ['sad','難過'],['surprised','驚訝'],['embarrassed','害羞']
 ]);
-export const FULL_SHEET_CELL=Object.freeze({columns:3,rows:2,width:342,height:768});
-export function fullSheetCrop(expression,width=1026,height=1536){
+export const FULL_SHEET_CELL=Object.freeze({columns:3,rows:2,width:512,height:1152});
+export function fullSheetCrop(expression,width=1536,height=2304){
  const index=FULL_SHEET_EXPRESSIONS.findIndex(([id])=>id===expression);
  if(index<0)throw new Error('未知的完整六圖表情');
  if(width%3||height%2||width<=0||height<=0)throw new Error('完整六圖的 3×2 尺寸不正確');
@@ -20,8 +25,8 @@ export function renderFullSheetPreview(){
    <label>學生 <select data-full-sheet-student aria-label="選擇學生">${STUDENT_ART_IDS.map((id,i)=>option(id,'學生 '+String(i+1).padStart(3,'0'))).join('')}</select></label>
    <label>服裝 <select data-full-sheet-outfit aria-label="選擇服裝">${STUDENT_ART_OUTFITS.map(([id,name])=>option(id,name)).join('')}</select></label>
   </div>
-  <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。這裡僅測試完整人物 3×2 六表情圖集；已驗收的雙圖預覽保持不變。</p>
-  <div class="student-art-stage"><canvas data-full-sheet-canvas width="342" height="768" role="img" aria-label="完整人物六表情立繪"></canvas><p class="student-art-empty" data-full-sheet-error hidden></p></div>
+  <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。這裡僅測試完整人物 3×2 六表情圖集；現只使用完整六圖素材。</p>
+  <div class="student-art-stage"><canvas data-full-sheet-canvas width="512" height="1152" role="img" aria-label="完整人物六表情立繪"></canvas><p class="student-art-empty" data-full-sheet-error hidden></p></div>
   <div class="student-art-buttons" role="group" aria-label="切換完整六圖表情">${FULL_SHEET_EXPRESSIONS.map(([id,label])=>`<button type="button" data-full-sheet-expression="${id}" aria-pressed="${id==='calm'}" disabled>${label}</button>`).join('')}</div>
   <p class="student-art-status" data-full-sheet-status role="status">正在載入完整六圖測試素材…</p>
  </section>`;
@@ -48,7 +53,7 @@ export function mountFullSheetPreview(root){
   ctx.clearRect(0,0,c.sw,c.sh);
   ctx.drawImage(image,c.sx,c.sy,c.sw,c.sh,0,0,c.sw,c.sh);
   setEnabled(true);
-  status.textContent=`${student.value.replace('student-','學生 ')}・${label()}｜${FULL_SHEET_EXPRESSIONS.find(([id])=>id===current)?.[1]}（完整六圖測試，尚未驗收）`;
+  status.textContent=`${student.value.replace('student-','學生 ')}・${label()}｜${FULL_SHEET_EXPRESSIONS.find(([id])=>id===current)?.[1]}（完整六圖）`;
  };
  function update(){
   const token=++request,id=student.value,wear=outfit.value;
@@ -72,7 +77,7 @@ export function mountFullSheetPreview(root){
    if(token!==request||!root.isConnected)return;
    canvas.hidden=true;error.hidden=false;
    error.textContent=`${id.replace('student-','學生 ')}・${label()} 尚無完整六圖測試素材`;
-   status.textContent='此組合尚未製作完整六圖（不影響原雙圖素材）';
+   status.textContent='此組合尚未製作完整六圖';
   };
   img.src=new URL(`./assets/characters/students/${id}/${id}-full-sheet-${wear}.png`,import.meta.url).href;
  }

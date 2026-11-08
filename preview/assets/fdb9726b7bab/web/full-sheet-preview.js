@@ -78,7 +78,7 @@ export function mountFullSheetPreview(root){
    try{
     if(!ctx)throw new Error('Canvas 無法使用');
     fullSheetCrop('calm',img.naturalWidth,img.naturalHeight);
-    layout=analyzePortraitSheet(img,PORTRAIT_PREVIEW_STAGE);
+    layout=analyzePortraitSheet(img,PORTRAIT_PREVIEW_STAGE,id);
     image=img;paint();
    }catch(e){
     canvas.hidden=true;error.hidden=false;error.textContent=e.message;

@@ -1,4 +1,4 @@
-import {PORTRAIT_STAGE,PORTRAIT_PREVIEW_STAGE,portraitExpressionScales,portraitDestination} from '../web/student-portrait-layout.js';
+import {PORTRAIT_STAGE,PORTRAIT_PREVIEW_STAGE,studentPortraitHeightRatio,portraitExpressionScales,portraitDestination} from '../web/student-portrait-layout.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {STUDENT_ART_IDS,STUDENT_ART_OUTFITS,FULL_SHEET_EXPRESSIONS,FULL_SHEET_CELL,fullSheetCrop,fullSheetAssetUrl,renderFullSheetPreview} from '../web/full-sheet-preview.js';
@@ -87,4 +87,38 @@ test('wide gestures reduce the shared student height instead of clipping an expr
  const scales=portraitExpressionScales(bounds,PORTRAIT_STAGE);
  assert.ok(scales[0]*500<=PORTRAIT_STAGE.maxBodyWidth);
  assert.ok(Math.abs(scales[0]*600-scales[1]*900)<1e-8);
+});
+
+// Stature is derived from the approved character design, never each PNG's crop.
+test('male 001–020 use a stable relative height reference, 015 tallest',()=>{
+ const ratios=Array.from({length:20},(_,i)=>studentPortraitHeightRatio('student-'+String(i+1).padStart(3,'0')));
+ assert.equal(ratios.length,20);
+ assert.equal(ratios[14],1);
+ assert.equal(ratios[11],0.83);
+ assert.equal(ratios[1],0.99);
+ assert.equal(ratios[19],0.94);
+ assert.equal(new Set(ratios).has(null),false);
+ assert.equal(Math.max(...ratios),1);
+ assert.equal(studentPortraitHeightRatio('student-021'),null);
+ assert.equal(studentPortraitHeightRatio('student-invalid'),null);
+});
+test('male stature is identical regardless of PNG crop, while six expressions remain equally tall',()=>{
+ const heights=[540,650,720,800,960,1100];
+ const targets=[];
+ for(const [id,ratio] of [['student-002',0.99],['student-015',1],['student-012',0.83]]){
+  for(const h of heights){
+   const bounds=Array.from({length:6},(_,i)=>({x:20,y:40+i,width:Math.min(430,h/2),height:h}));
+   const scales=portraitExpressionScales(bounds,PORTRAIT_PREVIEW_STAGE,studentPortraitHeightRatio(id));
+   const visible=bounds.map((b,i)=>b.height*scales[i]);
+   for(const v of visible)assert.ok(Math.abs(v-PORTRAIT_PREVIEW_STAGE.bodyHeight*ratio)<1e-8);
+   targets.push({id,h,visible:visible[0]});
+  }
+ }
+ assert.ok(targets.find(x=>x.id==='student-015').visible>targets.find(x=>x.id==='student-012').visible);
+});
+test('wide gestures cap male stature uniformly rather than crop or stretch',()=>{
+ const bounds=[{x:0,y:0,width:500,height:450},...Array.from({length:5},()=>({x:80,y:0,width:320,height:800}))];
+ const scales=portraitExpressionScales(bounds,PORTRAIT_PREVIEW_STAGE,studentPortraitHeightRatio('student-015'));
+ assert.ok(bounds[0].width*scales[0]<=PORTRAIT_PREVIEW_STAGE.maxBodyWidth+1e-8);
+ for(let i=1;i<6;i++)assert.ok(Math.abs(bounds[i].height*scales[i]-bounds[0].height*scales[0])<1e-8);
 });

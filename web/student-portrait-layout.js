@@ -3,8 +3,20 @@
 export const PORTRAIT_STAGE=Object.freeze({width:768,height:1152,bodyHeight:1000,maxBodyWidth:690,bottom:18});
 // Square preview stage: wider room for gestures, responsive on phones without changing PNGs.
 export const PORTRAIT_PREVIEW_STAGE=Object.freeze({width:1152,height:1152,bodyHeight:1000,maxBodyWidth:1000,bottom:18});
+// Approved male student relative heights (015 = 100%), independent of PNG crop.
+// These are presentation proportions, not estimated body heights in centimeters.
+const MALE_HEIGHT_RATIOS=Object.freeze([
+  0.91,0.99,0.85,0.96,0.93,0.90,0.89,0.93,0.90,0.87,
+  0.97,0.83,0.98,0.90,1.00,0.94,0.91,0.86,0.93,0.94
+]);
+export function studentPortraitHeightRatio(id){
+ const match=/^student-(\d{3})$/.exec(String(id));
+ if(!match)return null;
+ const number=Number(match[1]);
+ return number>=1&&number<=20?MALE_HEIGHT_RATIOS[number-1]:null;
+}
 const EXPRESSIONS=6;
-export function analyzePortraitSheet(image,stage=PORTRAIT_STAGE){
+export function analyzePortraitSheet(image,stage=PORTRAIT_STAGE,studentId=null){
  const w=image.naturalWidth||image.width,h=image.naturalHeight||image.height;
  if(!w||!h||w%3||h%2)throw new Error('人物六圖尺寸不正確');
  const cw=w/3,ch=h/2;
@@ -28,21 +40,23 @@ export function analyzePortraitSheet(image,stage=PORTRAIT_STAGE){
  }
  const sizes=bounds.filter(Boolean);
  if(!sizes.length)throw new Error('圖片沒有可見人物');
- // The six expressions of THIS student share one visible target height.
- // Different students keep their own reference height; never normalize all 40 to 1000px.
- const scales=portraitExpressionScales(bounds,stage);
+ // Six expressions share a target height. Approved male profiles use their intended
+ // relative stature; all other students retain their original source-relative scale.
+ const scales=portraitExpressionScales(bounds,stage,studentPortraitHeightRatio(studentId));
  return {bounds,scales,sourceWidth:cw,sourceHeight:ch,stage};
 }
-// Match visible height within one student while preserving proportions and safe margins.
-// The median visible height is this sheet's own reference, NOT a class-wide constant.
-export function portraitExpressionScales(bounds,stage=PORTRAIT_STAGE){
+// Match visible height within each student while preserving aspect ratio and margins.
+// An explicit height ratio overrides source-crop height only for approved male profiles.
+export function portraitExpressionScales(bounds,stage=PORTRAIT_STAGE,heightRatio=null){
  const sizes=bounds.filter(b=>b&&b.height>0&&b.width>0);
  if(!sizes.length)return bounds.map(()=>null);
  const heights=sizes.map(b=>b.height).sort((a,b)=>a-b);
  const referenceHeight=heights[Math.floor(heights.length/2)];
+ const requestedHeight=(Number.isFinite(heightRatio)&&heightRatio>0&&heightRatio<=1)
+  ?stage.bodyHeight*heightRatio:referenceHeight;
  const safeHeight=Math.max(1,stage.height-stage.bottom-12);
  // Wide gestures set a shared upper limit so all six expressions stay equally tall.
- const targetHeight=Math.min(referenceHeight,stage.bodyHeight,safeHeight,
+ const targetHeight=Math.min(requestedHeight,stage.bodyHeight,safeHeight,
   ...sizes.map(b=>stage.maxBodyWidth*b.height/b.width));
  return bounds.map(b=>b&&b.height>0?targetHeight/b.height:null);
 }

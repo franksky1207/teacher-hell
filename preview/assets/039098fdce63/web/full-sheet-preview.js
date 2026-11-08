@@ -20,6 +20,13 @@ export function fullSheetCrop(expression,width=1536,height=2304){
  return {sx:(index%3)*sw,sy:Math.floor(index/3)*sh,sw,sh};
 }
 const option=(value,label)=>`<option value="${value}">${label}</option>`;
+// Always load the current published PNG directory, not a snapshot under a versioned JS module.
+export function fullSheetAssetUrl(id,wear,baseUrl,nonce){
+ const url=new URL(`./web/assets/characters/students/${id}/${id}-full-sheet-${wear}.png`,baseUrl);
+ url.searchParams.set('refresh',String(nonce));
+ return url.href;
+}
+export const FULL_SHEET_PREVIEW_VERSION=import.meta.url.match(/\/assets\/([a-f0-9]{12})\/web\//)?.[1]??'本機開發版';
 export function renderFullSheetPreview(){
  return `<section class="student-art-preview full-sheet-preview" aria-label="完整人物六表情圖集測試">
   <div class="student-art-selectors">
@@ -29,7 +36,7 @@ export function renderFullSheetPreview(){
   <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。這裡僅測試完整人物 3×2 六表情圖集；現只使用完整六圖素材。</p>
   <div class="student-art-stage"><canvas data-full-sheet-canvas width="1152" height="1152" role="img" aria-label="完整人物六表情立繪"></canvas><p class="student-art-empty" data-full-sheet-error hidden></p></div>
   <div class="student-art-buttons" role="group" aria-label="切換完整六圖表情">${FULL_SHEET_EXPRESSIONS.map(([id,label])=>`<button type="button" data-full-sheet-expression="${id}" aria-pressed="${id==='calm'}" disabled>${label}</button>`).join('')}</div>
-  <p class="student-art-status" data-full-sheet-status role="status">正在載入完整六圖測試素材…</p>
+  <p class="student-art-status" data-full-sheet-status role="status">正在載入完整六圖測試素材…</p>\n  <p class="student-art-caption" data-full-sheet-version>預覽程式版本：${FULL_SHEET_PREVIEW_VERSION}｜學生圖片每次切換皆重新讀取目前發布的檔案</p>
  </section>`;
 }
 export function mountFullSheetPreview(root){
@@ -83,7 +90,7 @@ export function mountFullSheetPreview(root){
    error.textContent=`${id.replace('student-','學生 ')}・${label()} 尚無完整六圖測試素材`;
    status.textContent='此組合尚未製作完整六圖';
   };
-  img.src=new URL(`./assets/characters/students/${id}/${id}-full-sheet-${wear}.png`,import.meta.url).href;
+  img.src=fullSheetAssetUrl(id,wear,document.baseURI,`${Date.now()}-${token}`);
  }
  student.value='student-001';outfit.value='uniform-summer';
  student.addEventListener('change',update);

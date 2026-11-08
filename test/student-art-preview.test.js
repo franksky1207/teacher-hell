@@ -66,3 +66,20 @@ test('winter angry jaw repair removes neutral-face shadow and calm mouth remnant
  for(let i=0;i<sheet.length;i+=4)assert.equal(fixed[i+3],sheet[i+3],'alpha unchanged');
  assert.deepEqual([...fixed.slice(0,w*h*4)],[...sheet.slice(0,w*h*4)],'calm tile must be untouched');
 });
+
+import {FULL_SHEET_EXPRESSIONS,FULL_SHEET_CELL,fullSheetCrop,renderFullSheetPreview} from '../web/full-sheet-preview.js';
+test('full-body six-expression trial uses separate 3x2 crop without face overlay',()=>{
+ assert.equal(FULL_SHEET_EXPRESSIONS.length,6);
+ assert.deepEqual(FULL_SHEET_CELL,{columns:3,rows:2,width:342,height:768});
+ assert.deepEqual(FULL_SHEET_EXPRESSIONS.map(([id])=>fullSheetCrop(id)),[
+  {sx:0,sy:0,sw:342,sh:768},{sx:342,sy:0,sw:342,sh:768},
+  {sx:684,sy:0,sw:342,sh:768},{sx:0,sy:768,sw:342,sh:768},
+  {sx:342,sy:768,sw:342,sh:768},{sx:684,sy:768,sw:342,sh:768}
+ ]);
+ assert.throws(()=>fullSheetCrop('missing'),/未知/);
+ assert.throws(()=>fullSheetCrop('happy',1025,1536),/3×2/);
+ const html=renderFullSheetPreview();
+ assert.equal((html.match(/data-full-sheet-expression=/g)||[]).length,6);
+ assert.match(html,/完整六圖測試/);
+ assert.doesNotMatch(html,/data-art-expression=/);
+});

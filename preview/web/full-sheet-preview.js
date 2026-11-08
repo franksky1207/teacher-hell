@@ -36,7 +36,8 @@ export function renderFullSheetPreview(){
   <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。這裡僅測試完整人物 3×2 六表情圖集；現只使用完整六圖素材。</p>
   <div class="student-art-stage"><canvas data-full-sheet-canvas width="1152" height="1152" role="img" aria-label="完整人物六表情立繪"></canvas><p class="student-art-empty" data-full-sheet-error hidden></p></div>
   <div class="student-art-buttons" role="group" aria-label="切換完整六圖表情">${FULL_SHEET_EXPRESSIONS.map(([id,label])=>`<button type="button" data-full-sheet-expression="${id}" aria-pressed="${id==='calm'}" disabled>${label}</button>`).join('')}</div>
-  <p class="student-art-status" data-full-sheet-status role="status">正在載入完整六圖測試素材…</p>\n  <p class="student-art-caption" data-full-sheet-version>預覽程式版本：${FULL_SHEET_PREVIEW_VERSION}｜學生圖片每次切換皆重新讀取目前發布的檔案</p>
+  <p class="student-art-status" data-full-sheet-status role="status">正在載入完整六圖測試素材…</p>
+  <p class="student-art-caption" data-full-sheet-version>預覽程式版本：${FULL_SHEET_PREVIEW_VERSION}｜學生圖片每次切換皆重新讀取目前發布的檔案</p>
  </section>`;
 }
 export function mountFullSheetPreview(root){

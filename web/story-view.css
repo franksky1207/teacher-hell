@@ -78,6 +78,9 @@
 .student-art-selectors select{width:100%;min-width:0;background:#263750;color:#fff;border:1px solid #b9bdc6;border-radius:.4rem;padding:.5rem .4rem}
 .student-art-stage{display:grid;place-items:center;position:relative;height:min(54dvh,510px);min-height:220px;overflow:hidden;border-radius:.65rem;background:linear-gradient(#5f7f86,#253047)}
 .student-art-stage canvas{display:block;max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain}
+/* Full-sheet sprites use tall thigh-up cells; size the whole canvas inside the stage instead of letting grid intrinsic sizing clip its lower half. */
+.full-sheet-preview .student-art-stage{display:flex;align-items:center;justify-content:center}
+.full-sheet-preview .student-art-stage canvas{display:block;box-sizing:border-box;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;min-width:0;min-height:0;flex:0 1 auto}
 .student-art-stage [hidden]{display:none!important}
 .student-art-empty{max-width:90%;text-align:center;color:#f1e4c9}
 .student-art-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.4rem}

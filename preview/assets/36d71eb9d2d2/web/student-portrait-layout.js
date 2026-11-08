@@ -30,7 +30,8 @@ export function analyzePortraitSheet(image,stage=PORTRAIT_STAGE){
  const heights=sizes.map(b=>b.height).sort((a,b)=>a-b);
  const referenceHeight=heights[Math.floor(heights.length/2)];
  const widest=Math.max(...sizes.map(b=>b.width));
- const scale=Math.min(stage.bodyHeight/referenceHeight,stage.maxBodyWidth/widest);
+ const tallest=Math.max(...sizes.map(b=>b.height));
+ const scale=Math.min(stage.bodyHeight/referenceHeight,stage.maxBodyWidth/widest,(stage.height-stage.bottom-12)/tallest);
  return {bounds,scale,sourceWidth:cw,sourceHeight:ch,stage};
 }
 export function portraitDestination(layout,index){

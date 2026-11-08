@@ -1,4 +1,4 @@
-import {PORTRAIT_STAGE,analyzePortraitSheet,portraitDestination} from './student-portrait-layout.js';
+import {PORTRAIT_PREVIEW_STAGE,analyzePortraitSheet,portraitDestination} from './student-portrait-layout.js';
 // Current complete six-expression student portrait preview.
 export const STUDENT_ART_IDS=Object.freeze(Array.from({length:40},(_,i)=>'student-'+String(i+1).padStart(3,'0')));
 export const STUDENT_ART_OUTFITS=Object.freeze([
@@ -27,7 +27,7 @@ export function renderFullSheetPreview(){
    <label>服裝 <select data-full-sheet-outfit aria-label="選擇服裝">${STUDENT_ART_OUTFITS.map(([id,name])=>option(id,name)).join('')}</select></label>
   </div>
   <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。這裡僅測試完整人物 3×2 六表情圖集；現只使用完整六圖素材。</p>
-  <div class="student-art-stage"><canvas data-full-sheet-canvas width="768" height="1152" role="img" aria-label="完整人物六表情立繪"></canvas><p class="student-art-empty" data-full-sheet-error hidden></p></div>
+  <div class="student-art-stage"><canvas data-full-sheet-canvas width="1536" height="900" role="img" aria-label="完整人物六表情立繪"></canvas><p class="student-art-empty" data-full-sheet-error hidden></p></div>
   <div class="student-art-buttons" role="group" aria-label="切換完整六圖表情">${FULL_SHEET_EXPRESSIONS.map(([id,label])=>`<button type="button" data-full-sheet-expression="${id}" aria-pressed="${id==='calm'}" disabled>${label}</button>`).join('')}</div>
   <p class="student-art-status" data-full-sheet-status role="status">正在載入完整六圖測試素材…</p>
  </section>`;
@@ -50,7 +50,7 @@ export function mountFullSheetPreview(root){
  const paint=()=>{
   if(!ctx||!image)return;
   const c=fullSheetCrop(current,image.naturalWidth,image.naturalHeight);
-  canvas.width=PORTRAIT_STAGE.width;canvas.height=PORTRAIT_STAGE.height;
+  canvas.width=PORTRAIT_PREVIEW_STAGE.width;canvas.height=PORTRAIT_PREVIEW_STAGE.height;
   ctx.clearRect(0,0,canvas.width,canvas.height);
   const index=FULL_SHEET_EXPRESSIONS.findIndex(([id])=>id===current);
   const dest=portraitDestination(layout,index);
@@ -70,7 +70,7 @@ export function mountFullSheetPreview(root){
    try{
     if(!ctx)throw new Error('Canvas 無法使用');
     fullSheetCrop('calm',img.naturalWidth,img.naturalHeight);
-    layout=analyzePortraitSheet(img);
+    layout=analyzePortraitSheet(img,PORTRAIT_PREVIEW_STAGE);
     image=img;paint();
    }catch(e){
     canvas.hidden=true;error.hidden=false;error.textContent=e.message;

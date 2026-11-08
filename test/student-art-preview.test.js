@@ -82,4 +82,11 @@ test('full-body six-expression trial uses separate 3x2 crop without face overlay
  assert.equal((html.match(/data-full-sheet-expression=/g)||[]).length,6);
  assert.match(html,/完整六圖測試/);
  assert.doesNotMatch(html,/data-art-expression=/);
+ assert.equal((html.match(/data-full-sheet-student/g)||[]).length,1);
+ assert.equal((html.match(/data-full-sheet-outfit/g)||[]).length,1);
+ assert.equal((html.match(/<option value="student-/g)||[]).length,40);
+ assert.equal((html.match(/<option value="(?:uniform-|sports-|casual-)/g)||[]).length,8);
+ assert.match(html,/學生編號為美術素材編號，與班級座號無關/);
+ assert.match(html,/學生 040/);
+ assert.match(html,/冬季便服 B/);
 });

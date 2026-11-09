@@ -1,16 +1,17 @@
 import {PORTRAIT_STAGE,PORTRAIT_PREVIEW_STAGE,studentPortraitHeightRatio,portraitExpressionScales,portraitDestination} from '../web/student-portrait-layout.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {STUDENT_ART_IDS,STUDENT_ART_OUTFITS,FULL_SHEET_EXPRESSIONS,FULL_SHEET_CELL,fullSheetCrop,fullSheetAssetUrl,renderFullSheetPreview} from '../web/full-sheet-preview.js';
-test('full sheet is the only student preview, with 40 ids and 8 outfits',()=>{
+import {STUDENT_ART_IDS,STUDENT_ART_OUTFITS,FULL_SHEET_EXPRESSIONS,FULL_SHEET_CASUAL_SCENES,FULL_SHEET_CELL,fullSheetChoices,fullSheetCrop,fullSheetAssetUrl,renderFullSheetPreview} from '../web/full-sheet-preview.js';
+test('full sheet is the only student preview, with 40 ids and 5 outfit categories',()=>{
  assert.equal(STUDENT_ART_IDS.length,40);
  assert.equal(new Set(STUDENT_ART_IDS).size,40);
- assert.equal(STUDENT_ART_OUTFITS.length,8);
+ assert.equal(STUDENT_ART_OUTFITS.length,5);
+ assert.deepEqual(STUDENT_ART_OUTFITS.map(([id])=>id),['uniform-summer','uniform-winter','sports-summer','sports-winter','casual']);
  assert.deepEqual(FULL_SHEET_CELL,{columns:3,rows:2,width:512,height:1152});
  const html=renderFullSheetPreview();
  assert.equal((html.match(/data-full-sheet-expression=/g)||[]).length,6);
  assert.equal((html.match(/<option value="student-/g)||[]).length,40);
- assert.equal((html.match(/<option value="(?:uniform-|sports-|casual-)/g)||[]).length,8);
+ assert.equal((html.match(/<option value="(?:uniform-|sports-|casual)/g)||[]).length,5);
  assert.doesNotMatch(html,/data-art-expression=/);
  assert.match(html,/data-full-sheet-canvas width="1152" height="1152"/);
  assert.match(html,/學生 040/);
@@ -33,6 +34,22 @@ test('six expressions crop 1536 x 2304 in row-major order',()=>{
  ]);
  assert.throws(()=>fullSheetCrop('invalid'),/未知/);
  assert.throws(()=>fullSheetCrop('happy',1025,1536),/3×2/);
+});
+
+test('casual is one six-cell sheet, each scene has its own outfit and positive pose',()=>{
+ assert.equal(FULL_SHEET_CASUAL_SCENES.length,6);
+ assert.deepEqual(FULL_SHEET_CASUAL_SCENES.map(([id])=>id),[
+  'grade1-autumn-trip','grade2-autumn-trip','grade1-spring-trip',
+  'graduation-trip-1','graduation-trip-2','graduation-trip-3'
+ ]);
+ assert.deepEqual(fullSheetChoices('casual'),FULL_SHEET_CASUAL_SCENES);
+ assert.deepEqual(fullSheetChoices('uniform-summer'),FULL_SHEET_EXPRESSIONS);
+ assert.deepEqual(FULL_SHEET_CASUAL_SCENES.map(([id])=>fullSheetCrop(id)),FULL_SHEET_EXPRESSIONS.map(([id])=>fullSheetCrop(id)));
+ const url=fullSheetAssetUrl('student-001','casual','https://franksky1207.github.io/teacher-hell/preview/','sample');
+ assert.ok(url.endsWith('/student-001-full-sheet-casual.png?refresh=sample'));
+ const html=renderFullSheetPreview();
+ assert.match(html,/便服為六種開心活動情境/);
+ assert.doesNotMatch(html,/casual-summer-01|casual-summer-02|casual-winter-01|casual-winter-02/);
 });
 
 test('portrait presentation preserves anatomy and shares a stable scaling factor',()=>{

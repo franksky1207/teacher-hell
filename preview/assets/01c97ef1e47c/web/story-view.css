@@ -92,3 +92,10 @@
 .student-art-status{min-height:1.4rem;margin:0;font-size:.87rem;color:#f2dfb7}
 .student-art-caption{margin:0;color:#c6d3e1;font-size:.77rem;line-height:1.55}
 @media(max-width:650px){.student-art-stage{height:min(43dvh,410px);min-height:180px}.student-art-selectors{gap:.4rem}.student-art-selectors select{font-size:.85rem}}
+
+/* 15-B-4: formal dialogue uses the same square, already calibrated portrait as preview.
+   CSS may uniformly size the square stage, never stretch an individual NPC. */
+.story-actor--illustrated{max-width:14rem}
+.story-portrait-canvas{position:absolute;bottom:0;left:50%;width:min(100%,13rem);height:auto;aspect-ratio:1;transform:translateX(-50%);z-index:1;pointer-events:none}
+.story-actor--art-ready .story-actor-shape{visibility:hidden}
+@media(max-width:650px){.story-actor--illustrated{max-width:10rem}.story-portrait-canvas{width:100%}}

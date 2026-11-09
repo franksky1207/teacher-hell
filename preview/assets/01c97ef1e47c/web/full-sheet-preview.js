@@ -1,4 +1,5 @@
 import {PORTRAIT_PREVIEW_STAGE,analyzePortraitSheet,portraitDestination} from './student-portrait-layout.js';
+import {loadPortraitCalibration,calibrationEntry,calibratedPortraitLayout} from './student-portrait-calibration.js';
 // Complete student six-cell preview: four six-expression uniforms/sportswear and one six-scene casual sheet.
 export const STUDENT_ART_IDS=Object.freeze(Array.from({length:40},(_,i)=>'student-'+String(i+1).padStart(3,'0')));
 export const STUDENT_ART_OUTFITS=Object.freeze([
@@ -59,6 +60,7 @@ export function mountFullSheetPreview(root){
  const ctx=canvas.getContext('2d');
  let current='calm',image=null,layout=null,request=0;
  const choices=()=>fullSheetChoices(outfit.value);
+ const awaitCalibration=()=>loadPortraitCalibration();
  const syncChoices=()=>{
   const selected=choices();
   buttons.forEach((button,index)=>{
@@ -109,12 +111,14 @@ export function mountFullSheetPreview(root){
   canvas.hidden=false;error.hidden=true;error.textContent='';
   status.textContent=`${id.replace('student-','學生 ')}・${label()}｜正在載入完整六格…`;
   const img=new Image();
-  img.onload=()=>{
+  img.onload=async()=>{
    if(token!==request||!root.isConnected)return;
    try{
     if(!ctx)throw new Error('Canvas 無法使用');
     fullSheetCrop(current,img.naturalWidth,img.naturalHeight);
-    layout=analyzePortraitSheet(img,PORTRAIT_PREVIEW_STAGE,id);
+    const manifest=awaitCalibration();
+    if(token!==request||!root.isConnected)return;
+    layout=calibratedPortraitLayout(img,calibrationEntry(manifest,id,wear))??analyzePortraitSheet(img,PORTRAIT_PREVIEW_STAGE,id);
     image=img;paint();
    }catch(e){
     canvas.hidden=true;error.hidden=false;error.textContent=e.message;

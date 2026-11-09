@@ -1,3 +1,4 @@
+import {calibrationEntry,calibratedPortraitLayout,portraitCalibrationUrl} from '../web/student-portrait-calibration.js';
 import {PORTRAIT_STAGE,PORTRAIT_PREVIEW_STAGE,studentPortraitHeightRatio,portraitExpressionScales,portraitDestination} from '../web/student-portrait-layout.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -173,4 +174,17 @@ test('student and outfit selectors have bounded previous/next navigation',()=>{
   assert.match(html,new RegExp('data-full-sheet-prev="'+kind+'"[^>]*disabled'));
  }
  assert.equal((html.match(/data-full-sheet-(?:prev|next)=/g)||[]).length,4);
+});
+
+test('precomputed final calibration yields exact 015-relative heights without scanning PNG at runtime',()=>{
+ const image={naturalWidth:1536,naturalHeight:2304};
+ for(const [id,ratio] of [['student-015',1],['student-016',.94],['student-036',.95],['student-023',.79]]){
+  const h=[620,700,850,920,1000,1100];
+  const entry={width:1536,height:2304,bounds:h.map((height,i)=>[20,35,300+i,height]),scales:h.map(height=>1000*ratio/height)};
+  const data={version:1,stage:{bodyHeight:1000},sheets:{[`${id}/uniform-summer`]:entry}};
+  const layout=calibratedPortraitLayout(image,calibrationEntry(data,id,'uniform-summer'));
+  for(let i=0;i<6;i++)assert.ok(Math.abs(layout.bounds[i].height*layout.scales[i]-1000*ratio)<1e-8);
+ }
+ assert.match(portraitCalibrationUrl('https://franksky1207.github.io/teacher-hell/preview/'),/\/preview\/web\/portrait-calibration.json$/);
+ assert.equal(calibratedPortraitLayout(image,{width:1,height:1,bounds:[],scales:[]}),null);
 });

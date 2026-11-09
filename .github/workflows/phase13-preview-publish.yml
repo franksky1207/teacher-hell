@@ -7,7 +7,11 @@ on:
     paths:
       - .github/workflows/phase13-preview-publish.yml
       - web/full-sheet-preview.js
+      - web/student-portrait-calibration.js
+      - web/story-portraits.js
+      - scripts/portrait-calibration.py
       - web/student-portrait-layout.js
+      - web/story-scene.js
       - web/game.js
       - web/story-view.css
       - web/assets/characters/students/**
@@ -30,10 +34,14 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --ignore-scripts
+      - name: Generate shared final portrait calibration from the approved PNG pixels
+        run: |
+          python -m pip install --quiet Pillow numpy
+          python scripts/portrait-calibration.py
       - name: Verify preview source before publication
         run: |
           npm run check
-          node --test --test-isolation=none test/year-result.test.js test/notebook-tasks.test.js test/notebook-view.test.js test/notebook-people.test.js test/student-art-preview.test.js
+          node --test --test-isolation=none test/year-result.test.js test/notebook-tasks.test.js test/notebook-view.test.js test/notebook-people.test.js test/student-art-preview.test.js test/story-view.test.js
       - name: Configure automated publication identity
         run: |
           git config user.name "github-actions[bot]"

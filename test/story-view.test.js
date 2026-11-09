@@ -1,5 +1,5 @@
 import {renderSpecialStoryBody} from '../web/story-formats.js';
-import {projectStoryScene,renderStoryScene} from '../web/story-scene.js';
+import {projectStoryScene,renderStoryScene,studentArtForActor} from '../web/story-scene.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {renderStoryView} from '../web/story-view.js';
@@ -156,4 +156,19 @@ test('13-G: caller name is disclosed only from the current page cast',()=>{
  const html=renderStoryView({page,pageIndex:0,pageCount:1,canFinish:true,sceneView:projected});
  assert.match(html,/張家長/);
  assert.doesNotMatch(html,/秘密人物|story-actor--adult/);
+});
+
+test('formal story assigns immutable art identities from initial cohort, never seat or variant',()=>{
+ const ids=Array.from({length:40},(_,i)=>'person-'+i);
+ const registry={homeClassId:'class-A',cohorts:[{classId:'class-A',initialStudentIds:ids}]};
+ assert.equal(studentArtForActor(registry,ids[0]),'student-001');
+ assert.equal(studentArtForActor(registry,ids[20]),'student-021');
+ assert.equal(studentArtForActor(registry,ids[39]),'student-040');
+ assert.equal(studentArtForActor(registry,'new-arrival'),null);
+ const world={identity:{playerId:'teacher'},numeric:{evolution:{world:{people:{[ids[20]]:{kind:'student'}},registry:{...registry,profiles:{[ids[20]]:{displayName:'女學生',appearance:{variant:11}}}}}}}};
+ const page={scene:'school:counselling-corner',presentation:'dialogue',text:'你好',speaker:ids[20],cast:[{actorId:ids[20],position:'center',expression:'happy'}]};
+ const html=renderStoryScene(projectStoryScene(world,{page}));
+ assert.match(html,/data-story-portrait="student-021"/);
+ assert.match(html,/data-expression="happy"/);
+ assert.doesNotMatch(html,/data-story-portrait="student-011"/);
 });

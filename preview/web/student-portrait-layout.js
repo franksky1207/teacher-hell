@@ -3,17 +3,24 @@
 export const PORTRAIT_STAGE=Object.freeze({width:768,height:1152,bodyHeight:1000,maxBodyWidth:690,bottom:18});
 // Square preview stage: wider room for gestures, responsive on phones without changing PNGs.
 export const PORTRAIT_PREVIEW_STAGE=Object.freeze({width:1152,height:1152,bodyHeight:1000,maxBodyWidth:1000,bottom:18});
-// Approved male student relative heights (015 = 100%), independent of PNG crop.
-// These are presentation proportions, not estimated body heights in centimeters.
+// Approved 40-student relative heights (015 = 100%), independent of PNG crop.
+// Both genders share a single presentation scale, not actual heights in centimeters.
 const MALE_HEIGHT_RATIOS=Object.freeze([
   0.91,0.99,0.85,0.96,0.93,0.90,0.89,0.93,0.90,0.87,
   0.97,0.83,0.98,0.90,1.00,0.94,0.91,0.86,0.93,0.94
+]);
+// Female students 021–040 follow the same 015 = 100% reference.
+const FEMALE_HEIGHT_RATIOS=Object.freeze([
+  0.87,0.94,0.79,0.90,0.84,0.88,0.93,0.91,0.90,0.87,
+  0.82,0.94,0.86,0.90,0.84,0.95,0.86,0.89,0.80,0.89
 ]);
 export function studentPortraitHeightRatio(id){
  const match=/^student-(\d{3})$/.exec(String(id));
  if(!match)return null;
  const number=Number(match[1]);
- return number>=1&&number<=20?MALE_HEIGHT_RATIOS[number-1]:null;
+ if(number>=1&&number<=20)return MALE_HEIGHT_RATIOS[number-1];
+ if(number>=21&&number<=40)return FEMALE_HEIGHT_RATIOS[number-21];
+ return null;
 }
 const EXPRESSIONS=6;
 export function analyzePortraitSheet(image,stage=PORTRAIT_STAGE,studentId=null){
@@ -40,13 +47,12 @@ export function analyzePortraitSheet(image,stage=PORTRAIT_STAGE,studentId=null){
  }
  const sizes=bounds.filter(Boolean);
  if(!sizes.length)throw new Error('圖片沒有可見人物');
- // Six expressions share a target height. Approved male profiles use their intended
- // relative stature; all other students retain their original source-relative scale.
+ // All 40 approved profiles share a fixed height target relative to student-015.
  const scales=portraitExpressionScales(bounds,stage,studentPortraitHeightRatio(studentId));
  return {bounds,scales,sourceWidth:cw,sourceHeight:ch,stage};
 }
 // Match visible height within each student while preserving aspect ratio and margins.
-// An explicit height ratio overrides source-crop height only for approved male profiles.
+// An explicit height ratio overrides source-crop height for all 40 approved students.
 export function portraitExpressionScales(bounds,stage=PORTRAIT_STAGE,heightRatio=null){
  const sizes=bounds.filter(b=>b&&b.height>0&&b.width>0);
  if(!sizes.length)return bounds.map(()=>null);

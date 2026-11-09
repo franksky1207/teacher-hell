@@ -41,7 +41,8 @@ test('calendar: all required activities survive, obey priority, holiday backward
    const list=CALENDAR.years.flatMap(y=>y.activities).filter(a=>a.id.startsWith(term.id+':'));
    const common=['parents','field-trip'],specific=term.kind==='autumn'?['anniversary','class-song','english-song']:['sports','fair','graduation-trip-1','graduation-trip-2','graduation-trip-3','graduation','university-fair','japan-visit'];
    for(const kind of [...common,...specific,...(term.truncated?[]:['clubs'])])assert.ok(list.some(a=>a.kind===kind),`${term.id} missing ${kind}`);
-   for(const grade of [1,2])assert.ok(list.some(a=>a.kind==='field-trip'&&a.grades.includes(grade)));
+   assert.ok(list.some(a=>a.kind==='field-trip'&&a.grades.includes(1)));
+   assert.equal(list.some(a=>a.kind==='field-trip'&&a.grades.includes(2)),term.kind==='autumn',`${term.id} grade 2 field-trip policy`);
   }
   for(const kind of ['teachers-day','halloween','christmas'])assert.ok(year.activities.some(a=>a.kind===kind),`${year.year} missing ${kind}`);
  }

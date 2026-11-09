@@ -30,8 +30,8 @@ export const FULL_SHEET_PREVIEW_VERSION=import.meta.url.match(/\/assets\/([a-f0-
 export function renderFullSheetPreview(){
  return `<section class="student-art-preview full-sheet-preview" aria-label="完整人物六表情圖集測試">
   <div class="student-art-selectors">
-   <label>學生 <select data-full-sheet-student aria-label="選擇學生">${STUDENT_ART_IDS.map((id,i)=>option(id,'學生 '+String(i+1).padStart(3,'0'))).join('')}</select></label>
-   <label>服裝 <select data-full-sheet-outfit aria-label="選擇服裝">${STUDENT_ART_OUTFITS.map(([id,name])=>option(id,name)).join('')}</select></label>
+   <label>學生 <span class="student-art-stepper"><button type="button" data-full-sheet-prev="student" aria-label="上一位學生" disabled>‹</button><select data-full-sheet-student aria-label="選擇學生">${STUDENT_ART_IDS.map((id,i)=>option(id,'學生 '+String(i+1).padStart(3,'0'))).join('')}</select><button type="button" data-full-sheet-next="student" aria-label="下一位學生">›</button></span></label>
+   <label>服裝 <span class="student-art-stepper"><button type="button" data-full-sheet-prev="outfit" aria-label="上一套服裝" disabled>‹</button><select data-full-sheet-outfit aria-label="選擇服裝">${STUDENT_ART_OUTFITS.map(([id,name])=>option(id,name)).join('')}</select><button type="button" data-full-sheet-next="outfit" aria-label="下一套服裝">›</button></span></label>
   </div>
   <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。這裡僅測試完整人物 3×2 六表情圖集；現只使用完整六圖素材。</p>
   <div class="student-art-stage"><canvas data-full-sheet-canvas width="1152" height="1152" role="img" aria-label="完整人物六表情立繪"></canvas><p class="student-art-empty" data-full-sheet-error hidden></p></div>
@@ -44,6 +44,7 @@ export function mountFullSheetPreview(root){
  if(!root)return;
  const student=root.querySelector('[data-full-sheet-student]');
  const outfit=root.querySelector('[data-full-sheet-outfit]');
+ const navigators=[...root.querySelectorAll('[data-full-sheet-prev],[data-full-sheet-next]')];
  const canvas=root.querySelector('[data-full-sheet-canvas]');
  const status=root.querySelector('[data-full-sheet-status]');
  const error=root.querySelector('[data-full-sheet-error]');
@@ -55,6 +56,23 @@ export function mountFullSheetPreview(root){
   button.setAttribute('aria-pressed',String(enabled&&button.dataset.fullSheetExpression===current));
  });
  const label=()=>STUDENT_ART_OUTFITS.find(([id])=>id===outfit.value)?.[1]??outfit.value;
+ const syncNavigators=()=>{
+  for(const button of navigators){
+   const values=button.dataset.fullSheetPrev==='student'||button.dataset.fullSheetNext==='student'
+    ?STUDENT_ART_IDS:STUDENT_ART_OUTFITS.map(([id])=>id);
+   const selected=button.dataset.fullSheetPrev==='student'||button.dataset.fullSheetNext==='student'?student:outfit;
+   const index=values.indexOf(selected.value);
+   button.disabled=index<0||(button.hasAttribute('data-full-sheet-prev')?index===0:index===values.length-1);
+  }
+ };
+ const step=(kind,direction)=>{
+  const values=kind==='student'?STUDENT_ART_IDS:STUDENT_ART_OUTFITS.map(([id])=>id);
+  const select=kind==='student'?student:outfit;
+  const next=values.indexOf(select.value)+direction;
+  if(next<0||next>=values.length)return;
+  select.value=values[next];
+  update();
+ };
  const paint=()=>{
   if(!ctx||!image)return;
   const c=fullSheetCrop(current,image.naturalWidth,image.naturalHeight);
@@ -67,6 +85,7 @@ export function mountFullSheetPreview(root){
   status.textContent=`${student.value.replace('student-','學生 ')}・${label()}｜${FULL_SHEET_EXPRESSIONS.find(([id])=>id===current)?.[1]}（完整六圖）`;
  };
  function update(){
+  syncNavigators();
   const token=++request,id=student.value,wear=outfit.value;
   current='calm';image=null;layout=null;setEnabled(false);
   ctx?.clearRect(0,0,canvas.width,canvas.height);
@@ -96,6 +115,10 @@ export function mountFullSheetPreview(root){
  student.value='student-001';outfit.value='uniform-summer';
  student.addEventListener('change',update);
  outfit.addEventListener('change',update);
+ for(const button of navigators)button.addEventListener('click',()=>{
+  if(button.disabled)return;
+  step(button.dataset.fullSheetPrev??button.dataset.fullSheetNext,button.hasAttribute('data-full-sheet-prev')?-1:1);
+ });
  root.addEventListener('click',event=>{
   const button=event.target.closest('[data-full-sheet-expression]');
   if(!button||button.disabled||!image)return;

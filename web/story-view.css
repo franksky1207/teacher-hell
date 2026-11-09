@@ -76,6 +76,9 @@
 .student-art-selectors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
 .student-art-selectors label{display:grid;gap:.3rem;color:#f2dfb7;font-size:.9rem}
 .student-art-selectors select{width:100%;min-width:0;background:#263750;color:#fff;border:1px solid #b9bdc6;border-radius:.4rem;padding:.5rem .4rem}
+.student-art-stepper{display:grid;grid-template-columns:2.4rem minmax(0,1fr) 2.4rem;align-items:stretch;gap:.3rem;min-width:0}
+.student-art-stepper button{min-width:0;min-height:2.5rem;padding:0;background:#263750;color:#fff;border:1px solid #b9bdc6;border-radius:.4rem;font-size:1.6rem;line-height:1;cursor:pointer}
+.student-art-stepper button:disabled{color:#8290a0;background:#202a3c;border-color:#556175;opacity:.5;cursor:not-allowed}
 .student-art-stage{display:grid;place-items:center;position:relative;height:min(54dvh,510px);min-height:220px;overflow:hidden;border-radius:.65rem;background:linear-gradient(#5f7f86,#253047)}
 .student-art-stage canvas{display:block;max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain}
 /* Full-sheet sprites use tall thigh-up cells; size the whole canvas inside the stage instead of letting grid intrinsic sizing clip its lower half. */

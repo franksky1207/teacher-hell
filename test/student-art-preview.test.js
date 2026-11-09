@@ -122,3 +122,13 @@ test('wide gestures cap male stature uniformly rather than crop or stretch',()=>
  assert.ok(bounds[0].width*scales[0]<=PORTRAIT_PREVIEW_STAGE.maxBodyWidth+1e-8);
  for(let i=1;i<6;i++)assert.ok(Math.abs(bounds[i].height*scales[i]-bounds[0].height*scales[0])<1e-8);
 });
+
+test('student and outfit selectors have bounded previous/next navigation',()=>{
+ const html=renderFullSheetPreview();
+ for(const kind of ['student','outfit']){
+  assert.match(html,new RegExp('data-full-sheet-prev="'+kind+'"'));
+  assert.match(html,new RegExp('data-full-sheet-next="'+kind+'"'));
+  assert.match(html,new RegExp('data-full-sheet-prev="'+kind+'"[^>]*disabled'));
+ }
+ assert.equal((html.match(/data-full-sheet-(?:prev|next)=/g)||[]).length,4);
+});

@@ -119,7 +119,8 @@ export function compileCalendar(){
     const japan=choose(datesBetween(addDays(firstWeek,7),addDays(firstWeek,11)),[1],['all']);
     if(japan)addActivity(year,term,'japan-visit',[1],japan,['all'],'first-exam-next-week-variable-weekday');else conflicts.push({code:'JAPAN_VISIT',term:term.id});
    }
-   for(const g of [1,2]){
+   // Grade 2 spring graduation trip replaces the semester's ordinary field trip.
+   for(const g of (term.kind==='spring'?[1]:[1,2])){
     const choices=datesBetween(addDays(secondWeek,7),addDays(term.end,-7)).filter(d=>weekday(d)===5);
     const travel=choose(choices,[g],['all']);if(travel)addActivity(year,term,'field-trip',[g],travel,['all'],'after-second-exam-friday');else conflicts.push({code:'FIELD_TRIP',term:term.id,grade:g});
    }

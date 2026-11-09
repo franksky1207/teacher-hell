@@ -107,7 +107,7 @@ test('wide gestures reduce the shared student height instead of clipping an expr
 });
 
 // Stature is derived from the approved character design, never each PNG's crop.
-test('male 001–020 use a stable relative height reference, 015 tallest',()=>{
+test('all 40 students use one approved height reference, 015 tallest',()=>{
  const ratios=Array.from({length:20},(_,i)=>studentPortraitHeightRatio('student-'+String(i+1).padStart(3,'0')));
  assert.equal(ratios.length,20);
  assert.equal(ratios[14],1);
@@ -116,7 +116,14 @@ test('male 001–020 use a stable relative height reference, 015 tallest',()=>{
  assert.equal(ratios[19],0.94);
  assert.equal(new Set(ratios).has(null),false);
  assert.equal(Math.max(...ratios),1);
- assert.equal(studentPortraitHeightRatio('student-021'),null);
+ const female=[0.87,0.94,0.79,0.90,0.84,0.88,0.93,0.91,0.90,0.87,0.82,0.94,0.86,0.90,0.84,0.95,0.86,0.89,0.80,0.89];
+ const actual=Array.from({length:20},(_,i)=>studentPortraitHeightRatio('student-'+String(i+21).padStart(3,'0')));
+ assert.deepEqual(actual,female);
+ assert.equal(studentPortraitHeightRatio('student-036'),0.95);
+ assert.equal(studentPortraitHeightRatio('student-023'),0.79);
+ assert.equal(Math.max(...ratios,...actual),1);
+ assert.equal(studentPortraitHeightRatio('student-040'),0.89);
+ assert.equal(studentPortraitHeightRatio('student-041'),null);
  assert.equal(studentPortraitHeightRatio('student-invalid'),null);
 });
 test('male stature is identical regardless of PNG crop, while six expressions remain equally tall',()=>{
@@ -133,6 +140,24 @@ test('male stature is identical regardless of PNG crop, while six expressions re
  }
  assert.ok(targets.find(x=>x.id==='student-015').visible>targets.find(x=>x.id==='student-012').visible);
 });
+test('two-step height formula enlarges small female crops and shrinks large ones relative to student-015',()=>{
+ const H=PORTRAIT_PREVIEW_STAGE.bodyHeight;
+ for(const [id,p] of [['student-015',1],['student-022',0.94],['student-023',0.79],['student-036',0.95],['student-040',0.89]]){
+  assert.equal(studentPortraitHeightRatio(id),p);
+  for(const h of [400,600,800,1000,1100]){
+   // Six different raw crop heights, all narrow enough to avoid width clipping.
+   const bounds=Array.from({length:6},(_,i)=>({x:40,y:10,width:140+i*5,height:h-i*15}));
+   const scales=portraitExpressionScales(bounds,PORTRAIT_PREVIEW_STAGE,p);
+   for(let i=0;i<6;i++){
+    const expected=(H/bounds[i].height)*p;
+    assert.ok(Math.abs(scales[i]-expected)<1e-10,`${id}, ${h}, cell ${i}: two-step multiplication`);
+    assert.ok(Math.abs(bounds[i].height*scales[i]-H*p)<1e-8);
+   }
+   if(h===400)assert.ok(scales[0]>1,'a small source image must be enlarged');
+  }
+ }
+});
+
 test('wide gestures cap male stature uniformly rather than crop or stretch',()=>{
  const bounds=[{x:0,y:0,width:500,height:450},...Array.from({length:5},()=>({x:80,y:0,width:320,height:800}))];
  const scales=portraitExpressionScales(bounds,PORTRAIT_PREVIEW_STAGE,studentPortraitHeightRatio('student-015'));

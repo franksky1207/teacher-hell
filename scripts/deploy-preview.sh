@@ -24,6 +24,13 @@ cp -R dist/. "$preview_tmp/site/preview/"
 version=$(git rev-parse --short=12 HEAD)
 mkdir -p "$preview_tmp/site/preview/assets/$version"
 cp -R dist/src dist/web "$preview_tmp/site/preview/assets/$version/"
+# The preview loads portrait PNGs and calibration from /preview/web/.
+# Version only the module graph: do not publish a second 500 MiB student art tree.
+student_art="$preview_tmp/site/preview/web/assets/characters/students"
+versioned_art="$preview_tmp/site/preview/assets/$version/web/assets/characters/students"
+test -f "$student_art/student-001/student-001-full-sheet-uniform-summer.png"
+rm -rf "$versioned_art"
+test ! -e "$versioned_art"
 sed "s#\\./web/#./assets/$version/web/#g" dist/index.html > "$preview_tmp/site/preview/index.html"
 test -f "$preview_tmp/site/preview/assets/$version/web/game.js"
 test -f "$preview_tmp/site/preview/assets/$version/web/notebook-view.js"

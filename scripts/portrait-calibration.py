@@ -16,17 +16,18 @@ RATIOS = (
  .91,.99,.85,.96,.93,.90,.89,.93,.90,.87,
  .97,.83,.98,.90,1,.94,.91,.86,.93,.94,
  .87,.94,.79,.90,.84,.88,.93,.91,.90,.87,
- .82,.94,.86,.90,.84,.95,.86,.89,.80,.89
+ .82,.94,.86,.90,.84,.95,.86,.89,.80,.89,
+ .95,.93,.91,.85
 )
 STAGE = {'width': 1152, 'height': 1152, 'bodyHeight': 1000, 'maxBodyWidth': 1000, 'bottom': 18}
-assert len(RATIOS) == 40 and RATIOS[14] == 1
+assert len(RATIOS) == 44 and RATIOS[14] == 1
 sheets = {}
-for n in range(1, 41):
+for n in range(1, 45):
     student = f'student-{n:03d}'
     for outfit in OUTFITS:
         path = BASE / student / f'{student}-full-sheet-{outfit}.png'
         if not path.exists():
-            if outfit == 'uniform-summer':
+            if outfit == 'uniform-summer' and n <= 40:
                 raise SystemExit(f'Missing approved summer uniform: {path}')
             continue
         with Image.open(path) as source:

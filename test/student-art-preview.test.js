@@ -133,7 +133,8 @@ test('all 40 students use one approved height reference, 015 tallest',()=>{
  assert.equal(studentPortraitHeightRatio('student-023'),0.79);
  assert.equal(Math.max(...ratios,...actual),1);
  assert.equal(studentPortraitHeightRatio('student-040'),0.89);
- assert.equal(studentPortraitHeightRatio('student-041'),null);
+ assert.deepEqual([41,42,43,44].map(n=>studentPortraitHeightRatio('student-'+String(n).padStart(3,'0'))),[.95,.93,.91,.85]);
+ assert.equal(studentPortraitHeightRatio('student-045'),null);
  assert.equal(studentPortraitHeightRatio('student-invalid'),null);
 });
 test('male stature is identical regardless of PNG crop, while six expressions remain equally tall',()=>{
@@ -221,4 +222,13 @@ test('NPC preview follows eighteen SOP silhouettes with fixed six poses and real
  assert.match(html,/尚未提交時會顯示缺圖提示/);
  const url=npcSilhouetteAssetUrl('adult-male-02','https://franksky1207.github.io/teacher-hell/preview/','x');
  assert.match(url,/\/preview\/web\/assets\/characters\/adults\/adult-male-02\.png\?refresh=x$/);
+});
+
+test('transfer students share student-015 height baseline and consistent six-pose scales',()=>{
+ for(const [id,ratio] of [['student-041',.95],['student-042',.93],['student-043',.91],['student-044',.85]]){
+  const bounds=Array.from({length:6},(_,i)=>({x:40,y:35,width:250+i*5,height:900-i*25}));
+  const scales=portraitExpressionScales(bounds,PORTRAIT_PREVIEW_STAGE,studentPortraitHeightRatio(id));
+  assert.equal(scales.length,6);
+  for(let i=0;i<6;i++)assert.ok(Math.abs(bounds[i].height*scales[i]-1000*ratio)<1e-8);
+ }
 });

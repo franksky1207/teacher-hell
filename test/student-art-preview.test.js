@@ -3,19 +3,26 @@ import {PORTRAIT_STAGE,PORTRAIT_PREVIEW_STAGE,studentPortraitHeightRatio,portrai
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {STUDENT_ART_IDS,STUDENT_ART_OUTFITS,FULL_SHEET_EXPRESSIONS,FULL_SHEET_CASUAL_SCENES,FULL_SHEET_CELL,fullSheetChoices,fullSheetCrop,fullSheetAssetUrl,renderFullSheetPreview} from '../web/full-sheet-preview.js';
-test('full sheet is the only student preview, with 40 ids and 5 outfit categories',()=>{
- assert.equal(STUDENT_ART_IDS.length,40);
- assert.equal(new Set(STUDENT_ART_IDS).size,40);
+test('full sheet is the only student preview, with 44 ids and 5 outfit categories',()=>{
+ assert.equal(STUDENT_ART_IDS.length,44);
+ assert.equal(new Set(STUDENT_ART_IDS).size,44);
  assert.equal(STUDENT_ART_OUTFITS.length,5);
  assert.deepEqual(STUDENT_ART_OUTFITS.map(([id])=>id),['uniform-summer','uniform-winter','sports-summer','sports-winter','casual']);
  assert.deepEqual(FULL_SHEET_CELL,{columns:3,rows:2,width:512,height:1152});
  const html=renderFullSheetPreview();
  assert.equal((html.match(/data-full-sheet-expression=/g)||[]).length,6);
- assert.equal((html.match(/<option value="student-/g)||[]).length,40);
+ assert.equal((html.match(/<option value="student-/g)||[]).length,44);
  assert.equal((html.match(/<option value="(?:uniform-|sports-|casual)/g)||[]).length,5);
  assert.doesNotMatch(html,/data-art-expression=/);
  assert.match(html,/data-full-sheet-canvas width="1152" height="1152"/);
  assert.match(html,/學生 040/);
+ for(let number=41;number<=44;number++){
+  const id='student-'+String(number).padStart(3,'0');
+  assert.ok(STUDENT_ART_IDS.includes(id));
+  assert.match(html,new RegExp('value="'+id+'">備用轉入生 '+String(number).padStart(3,'0')));
+ }
+ assert.equal(STUDENT_ART_IDS[40],'student-041');
+ assert.equal(STUDENT_ART_IDS.at(-1),'student-044');
 });
 test('overwritten character PNG uses the live preview asset directory and an uncached request',()=>{
  const base='https://franksky1207.github.io/teacher-hell/preview/';

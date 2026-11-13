@@ -1,7 +1,7 @@
 import {PORTRAIT_PREVIEW_STAGE,analyzePortraitSheet,portraitDestination} from './student-portrait-layout.js';
 import {loadPortraitCalibration,calibrationEntry,calibratedPortraitLayout} from './student-portrait-calibration.js';
 // Complete student six-cell preview: four six-expression uniforms/sportswear and one six-scene casual sheet.
-export const STUDENT_ART_IDS=Object.freeze(Array.from({length:40},(_,i)=>'student-'+String(i+1).padStart(3,'0')));
+export const STUDENT_ART_IDS=Object.freeze(Array.from({length:44},(_,i)=>'student-'+String(i+1).padStart(3,'0')));
 export const STUDENT_ART_OUTFITS=Object.freeze([
  ['uniform-summer','夏季制服'],['uniform-winter','冬季制服'],
  ['sports-summer','夏季運動服'],['sports-winter','冬季運動服'],
@@ -38,7 +38,7 @@ export const FULL_SHEET_PREVIEW_VERSION=import.meta.url.match(/\/assets\/([a-f0-
 export function renderFullSheetPreview(){
  return `<section class="student-art-preview full-sheet-preview" aria-label="完整人物六格圖集測試">
   <div class="student-art-selectors">
-   <label>學生 <span class="student-art-stepper"><button type="button" data-full-sheet-prev="student" aria-label="上一位學生" disabled>‹</button><select data-full-sheet-student aria-label="選擇學生">${STUDENT_ART_IDS.map((id,i)=>option(id,'學生 '+String(i+1).padStart(3,'0'))).join('')}</select><button type="button" data-full-sheet-next="student" aria-label="下一位學生">›</button></span></label>
+   <label>學生 <span class="student-art-stepper"><button type="button" data-full-sheet-prev="student" aria-label="上一位學生" disabled>‹</button><select data-full-sheet-student aria-label="選擇學生">${STUDENT_ART_IDS.map((id,i)=>option(id,(i>=40?'備用轉入生 ':'學生 ')+String(i+1).padStart(3,'0'))).join('')}</select><button type="button" data-full-sheet-next="student" aria-label="下一位學生">›</button></span></label>
    <label>服裝 <span class="student-art-stepper"><button type="button" data-full-sheet-prev="outfit" aria-label="上一套服裝" disabled>‹</button><select data-full-sheet-outfit aria-label="選擇服裝">${STUDENT_ART_OUTFITS.map(([id,name])=>option(id,name)).join('')}</select><button type="button" data-full-sheet-next="outfit" aria-label="下一套服裝">›</button></span></label>
   </div>
   <p class="student-art-caption">學生編號為美術素材編號，與班級座號無關。這裡測試完整人物 3×2 六格圖集：制服／運動服為六表情，便服為六種開心活動情境。</p>

@@ -9,6 +9,8 @@
 - `backgrounds/desktop/`、`backgrounds/mobile/`：桌機、手機場景素材。
 - `audio/`：音效與背景音樂。
 
+- `characters/students/student-041/` ～ `student-044/`：四位備用轉入生美術原型（男 041～042、女 043～044）；目前僅預建空資料夾，尚未製作圖集。預覽頁選單可以選取，圖片缺少時正常顯示「尚無完整六格測試素材」，不回退使用其他學生圖片。單局最多兩名新轉入生，不代表開局 44 人；外貌設計見 [學生名冊](../../docs/15-B-40位學生外貌設計名冊.md)。
+
 ## 學生正式檔案
 - 格序：上排 `calm`、`happy`、`angry`；下排 `sad`、`surprised`、`embarrassed`。
 - 命名：`characters/students/student-XXX/student-XXX-full-sheet-{outfit}.png`。

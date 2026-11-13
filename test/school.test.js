@@ -42,7 +42,7 @@ test('school: 42 stops admissions; invalid sub-38 and a failed mixed transaction
  assert.equal(enrollmentEligibility(n(w),{personId:null,classId:home,action:'transfer-in'}).eligible,false);
  const before=structuredClone(w);assert.throws(()=>change(w,'overcapacity',[enter(home)]),/Ineligible/);assert.deepEqual(w,before);
  w=initial();const c=cause(w,'failed');const q=request(c.world,'bad-half',[school(enter(n(w).classroom.id),c.id),{type:'unknown'}]);assert.throws(()=>prepareWorldOperation(c.world,q));assert.deepEqual(n(c.world).classroom.studentIds,n(w).classroom.studentIds);
- assert.throws(()=>change(w,'three-leave',n(w).classroom.studentIds.slice(0,3).map(id=>leave(id))),/Sub-38/);
+ assert.throws(()=>change(w,'three-leave',n(w).classroom.studentIds.slice(0,3).map(id=>leave(id))),/Sub-38|departure limit/);
 });
 
 test('school: same-school class changes, return, guardians, historical basis and tamper rejection',()=>{
@@ -162,4 +162,15 @@ test('school: two pending transfers exhaust quota for a third reservation',()=>{
  assert.equal(n(w).registry.transfers.filter(t=>t.status==='scheduled').length,2);
  const c2=cause(w,'third-queue');
  assert.throws(()=>commit(c2.world,'third-reserved',[school({type:'school-transfer-plan',id:'queue-c',classId:home,personId:null,dueDate:'2026-08-04',source:c2.id},c2.id)]),/scheduled arrival limit/);
+});
+
+test('school: used movement quotas persist across academic-year promotion',()=>{
+ let w=longPlan(initial()),home=n(w).classroom.id,ids=[...n(w).classroom.studentIds];
+ w=change(w,'two-first-year-leavers',[leave(ids[0]),leave(ids[1])]);
+ w=change(w,'two-first-year-arrivals',[enter(home),enter(home)]);
+ assert.equal(homeroomMovementBudget(n(w)).left,2);assert.equal(homeroomMovementBudget(n(w)).joined,2);
+ w=year(w,2027);
+ assert.equal(homeroomMovementBudget(n(w)).left,2);assert.equal(homeroomMovementBudget(n(w)).joined,2);
+ assert.throws(()=>change(w,'year-two-third-leaver',[leave(ids[2])]),/departure limit/);
+ assert.throws(()=>change(w,'year-two-third-arrival',[enter(home)]),/Ineligible/);
 });

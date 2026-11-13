@@ -106,7 +106,7 @@ export function homeroomMovementBudget(w){
  const originals=new Set(cohort.initialStudentIds),left=new Set(),joined=new Set();
  for(const e of r.enrollments)if(e.classId===cohort.classId){
   if(!originals.has(e.personId))joined.add(e.personId);
-  else if(e.until!==null&&!['graduated','course-completed','incomplete'].includes(e.status))left.add(e.personId);
+  else if(e.until!==null&&!['graduated','course-completed','incomplete','delayed'].includes(e.status))left.add(e.personId);
  }
  return {left:left.size,joined:joined.size,leftIds:[...left],joinedIds:[...joined],originals};
 }
@@ -180,7 +180,7 @@ export function applySchoolOperation(w,op,at){
   assertShape(op,['type','personId','status','reason']);identifier(op.reason);need(['transferred-out','suspended','delayed','graduated','course-completed','incomplete'].includes(op.status),'Unknown leaving status');
   const e=r.enrollments.find(e=>e.personId===op.personId&&e.until===null);need(e,'No active enrollment');
   if(op.status==='graduated')need(r.academicYear-r.classes[e.classId].cohortStart>=2&&Number(at.slice(0,4))>=r.classes[e.classId].cohortStart+3,'Cannot graduate before grade three');
-   if(e.classId===r.homeClassId&&!['graduated','course-completed','incomplete'].includes(op.status)){
+   if(e.classId===r.homeClassId&&!['graduated','course-completed','incomplete','delayed'].includes(op.status)){
     const b=homeroomMovementBudget(w);
     need(!b.originals.has(op.personId)||b.leftIds.includes(op.personId)||b.left<2,'Three-year original student departure limit');
    }
@@ -279,7 +279,7 @@ export function validateRegistry(w){
   const original=new Set(cohort.initialStudentIds),left=new Set(),joined=new Set();
   for(const e of r.enrollments)if(e.classId===cohort.classId){
    if(!original.has(e.personId))joined.add(e.personId);
-   else if(e.until!==null&&!['graduated','course-completed','incomplete'].includes(e.status))left.add(e.personId);
+   else if(e.until!==null&&!['graduated','course-completed','incomplete','delayed'].includes(e.status))left.add(e.personId);
   }
   need(left.size<=2&&joined.size<=2,'Three-year homeroom movement history exceeds two distinct students each way');
  }

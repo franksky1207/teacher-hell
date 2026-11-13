@@ -30,6 +30,9 @@ student_art="$preview_tmp/site/preview/web/assets/characters/students"
 versioned_art="$preview_tmp/site/preview/assets/$version/web/assets/characters/students"
 test -f "$student_art/student-001/student-001-full-sheet-uniform-summer.png"
 rm -rf "$versioned_art"
+# Backgrounds are also loaded from the stable unversioned preview/web/assets directory.
+# Do not duplicate the same 82 large background files in the versioned JS module tree.
+rm -rf "$preview_tmp/site/preview/assets/$version/web/assets/backgrounds"
 test ! -e "$versioned_art"
 sed "s#\\./web/#./assets/$version/web/#g" dist/index.html > "$preview_tmp/site/preview/index.html"
 test -f "$preview_tmp/site/preview/assets/$version/web/game.js"

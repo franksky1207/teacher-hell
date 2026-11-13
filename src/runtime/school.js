@@ -1,7 +1,7 @@
 import { readAcademicQualification } from './academics.js';
 /** School domain adapter for the existing atomic world transaction. */
 import { assertShape } from '../player/panel.js';
-import { applySchoolOperation, enrollmentEligibility } from '../world/registry.js';
+import { applySchoolOperation, enrollmentEligibility, homeroomMovementBudget } from '../world/registry.js';
 import { ensureRelationships } from '../world/world.js';
 import { yearData } from '../calendar/calendar.js';
 import { ensure, runtimeOf, findFact } from './model.js';
@@ -55,7 +55,7 @@ export function executeSchool(world,op,numericSession){
 /** A08 replenishment is an arrangement first; execution rechecks the actual roster. */
 export function arrangeReplenishment(world,command,numericSession){
  const numeric=numericSession.world(),r=numeric.registry;
- if(!r||r.academicYear-r.cohortStart>2||numeric.classroom.studentIds.length!==38||r.transfers.some(t=>t.classId===r.homeClassId&&t.status==='scheduled'))return null;
+ if(!r||r.academicYear-r.cohortStart>2||numeric.classroom.studentIds.length!==38||homeroomMovementBudget(numeric).joined>=2||r.transfers.some(t=>t.classId===r.homeClassId&&t.status==='scheduled'))return null;
  const cause=[...runtimeOf(world).history].reverse().find(h=>h.type==='school'&&h.factIds.length)?.factIds[0];
  ensure(cause,'REFERENCE','A depleted roster requires an established cause');
  const dueDate=new Date(Date.parse(`${world.position.date}T00:00:00Z`)+7*86400000).toISOString().slice(0,10);

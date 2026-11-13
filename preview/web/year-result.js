@@ -44,9 +44,9 @@ export function renderYearResult(result,page=0){
    (events.length?'<h4>學期回顧的重要事件</h4><ul>'+events.map(e=>'<li>'+esc(e)+'</li>').join('')+'</ul>':'<p>沒有可引用的已保存重要事件摘要。</p>')+
    (result.pending===null?'':'<p>目前筆記本列有 '+result.pending+' 項未完成的已知待辦，詳情仍以原本筆記本為準。</p>'),
   '<h3>'+esc(failed?'後續安排':'學年成果已保存')+'</h3>'+(failed?
-   '<p>可以從這個學年的正式起點重新挑戰。已完成的前幾個學年保留，失敗嘗試不會寫回重新開始的學年。</p><p>重試需再次確認；不會刪除其他存檔。</p>':
+   '<p>可以從當前學期的檢查點重新挑戰：上學期從暑輔第一天開始，下學期從上學期期末結算完成後接續。先前學期及學年的成果保留，本次失敗嘗試的變化會撤銷。</p><p>重試需再次確認；不會刪除其他存檔。</p>':
    '<p>本學年的正式結果已保存。接續遊戲仍依原本校曆與事件流程進行。</p>')+
-   (result.retryEligible?'<p><button type="button" data-action="year-retry">確認重試本學年</button></p>':'')
+   (result.retryEligible?'<p><button type="button" data-action="year-retry">確認重試本學期</button></p>':'')
  ];
  return '<section class="year-result" aria-label="'+esc(title)+'">'+head+contents[page]+'<nav class="year-result-nav" aria-label="學年結果分頁">'+
   '<button type="button" data-action="year-result-page:'+(page-1)+'" '+(page===0?'disabled':'')+'>上一頁</button>'+

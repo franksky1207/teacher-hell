@@ -1,3 +1,4 @@
+import { validateRetryPair } from './retry-checkpoint.js';
 import {academicTermStatus} from './academics.js';
 import { progressionContext } from './progression.js';
 import { adoptionData,activeAftercareWeek,weekStartData,weekSummary } from './aftercare.js';
@@ -360,7 +361,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     if(world.extensions[ANNUAL_KEY]&&calendarMilestones(world).annualSettlementReady)ensure(annualResult(world),'ANNUAL_PENDING','Settle the academic year before continuing');
     assertShape(op,['type','planId','steps']);ensure(op.planId===r.plan.id&&Number.isInteger(op.steps)&&op.steps>0,'TIME','Invalid time progression');
     if(isFormal(r.plan)){
-      const next=nextPosition(world.position,r.plan.startYear,planMode(r.plan),r.plan.calendarVersion);if(world.extensions[ANNUAL_KEY]&&next.serviceYear>world.position.serviceYear){ensure(annualResult(world)&&numericSession.world().registry.academicYear===r.plan.startYear+next.serviceYear-1,'ANNUAL_PENDING','Complete annual affiliations before autumn opening');const single=command.operations.length===1&&['advance-time','school-action'].includes(command.operations[0].type),vacationEnd=command.operations.length===2&&command.operations[0].type==='finish-slot'&&command.operations[1].type==='advance-time';ensure(single||vacationEnd,'SNAPSHOT','Autumn entry must finish its atomic command before further work');}
+      const next=nextPosition(world.position,r.plan.startYear,planMode(r.plan),r.plan.calendarVersion);if(planMode(r.plan)===THREE_YEAR&&next.date===yearData(Number(next.date.slice(0,4))).summerCamp&&next.date!==world.position.date){const single=command.operations.length===1&&['advance-time','school-action'].includes(command.operations[0].type),vacationEnd=command.operations.length===2&&command.operations[0].type==='finish-slot'&&command.operations[1].type==='advance-time';ensure(single||vacationEnd,'SNAPSHOT','Summer entry must end its atomic command before further work');}if(world.extensions[ANNUAL_KEY]&&next.serviceYear>world.position.serviceYear){ensure(annualResult(world)&&numericSession.world().registry.academicYear===r.plan.startYear+next.serviceYear-1,'ANNUAL_PENDING','Complete annual affiliations before autumn opening');const single=command.operations.length===1&&['advance-time','school-action'].includes(command.operations[0].type),vacationEnd=command.operations.length===2&&command.operations[0].type==='finish-slot'&&command.operations[1].type==='advance-time';ensure(single||vacationEnd,'SNAPSHOT','Autumn entry must finish its atomic command before further work');}
       naturalAt(world,numericSession,world.position);
       if(r.plan.vacation&&world.position.date===r.plan.vacation.endDate){const task=r.plan.vacation,panel=deriveWorldPanel(numericSession.world()),after=Object.fromEntries(STATE_NAMES.map(k=>[k,panel[k]]));history(world,command,'vacation-summary',null,null,[],{...task,after,delta:Object.fromEntries(STATE_NAMES.map(k=>[k,after[k]-task.before[k]]))});r.plan.vacation=null;}
       advanceFormalSlot(world,op);naturalAt(world,numericSession,world.position);
@@ -515,7 +516,8 @@ export function forkWorldAttempt(openingSnapshot,options,abandonedSnapshot=openi
   const previous=runtimeOf(abandoned);
   ensure(r.plan.validation===previous.plan.validation&&r.plan.id===previous.plan.id&&same(r.plan.career??null,previous.plan.career??null),'SNAPSHOT','Retry career mode or difficulty differs');
   const authorization=world.extensions[ANNUAL_KEY]||abandoned.extensions[ANNUAL_KEY]?authorizeRetry(abandoned,options):null;
-  ensure(['careerId','playerId','schoolId'].every(k=>world.identity[k]===abandoned.identity[k])&&world.position.openingId===abandoned.position.openingId&&world.position.schoolYearId===abandoned.position.schoolYearId,'SNAPSHOT','Abandoned attempt belongs to another career or opening');
+  ensure(['careerId','playerId','schoolId'].every(k=>world.identity[k]===abandoned.identity[k]),'SNAPSHOT','Abandoned attempt belongs to another career or opening');
+  validateRetryPair(world,abandoned);
   ensure(['commits','history'].every(field=>r[field].every((entry,index)=>same(entry,previous[field][index]))),'SNAPSHOT','Opening must precede the abandoned attempt');
   const used=[...new Set([...worldAttemptIds(world),...worldAttemptIds(abandoned)])];
   ensure(!used.includes(attemptId),'ATTEMPT','Attempt ID must never have been used in this career');

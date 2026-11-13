@@ -1,4 +1,6 @@
 import {ART_PREVIEW_CATEGORIES,renderArtPreview} from '../web/art-preview.js';
+import {BACKGROUND_GROUPS,BACKGROUND_ENTRIES,backgroundUrl} from '../web/background-scenes.js';
+import {renderBackgroundPreview} from '../web/background-preview.js';
 import {NPC_SILHOUETTE_IDS,NPC_SILHOUETTE_POSES,npcSilhouetteAssetUrl,renderNpcSilhouettePreview} from '../web/npc-silhouette-preview.js';
 import {calibrationEntry,calibratedPortraitLayout,portraitCalibrationUrl} from '../web/student-portrait-calibration.js';
 import {PORTRAIT_STAGE,PORTRAIT_PREVIEW_STAGE,studentPortraitHeightRatio,portraitExpressionScales,portraitDestination} from '../web/student-portrait-layout.js';
@@ -199,13 +201,13 @@ test('precomputed final calibration yields exact 015-relative heights without sc
  assert.equal(calibratedPortraitLayout(image,{width:1,height:1,bounds:[],scales:[]}),null);
 });
 
-test('art preview has student and silhouette categories with future backgrounds disabled',()=>{
- assert.deepEqual(ART_PREVIEW_CATEGORIES.map(([id])=>id),['students','silhouettes']);
+test('art preview keeps student and silhouette previews and enables backgrounds',()=>{
+ assert.deepEqual(ART_PREVIEW_CATEGORIES.map(([id])=>id),['students','silhouettes','backgrounds']);
  const html=renderArtPreview();
  assert.match(html,/美術素材預覽/);
  assert.match(html,/學生立繪/);
  assert.match(html,/NPC 剪影/);
- assert.match(html,/<option value="backgrounds" disabled>/);
+ assert.match(html,/<option value="backgrounds">背景圖<\/option>/);
 });
 test('NPC preview follows eighteen SOP silhouettes with fixed six poses and real source paths',()=>{
  assert.equal(NPC_SILHOUETTE_IDS.length,18);
@@ -231,4 +233,19 @@ test('transfer students share student-015 height baseline and consistent six-pos
   assert.equal(scales.length,6);
   for(let i=0;i<6;i++)assert.ok(Math.abs(bounds[i].height*scales[i]-1000*ratio)<1e-8);
  }
+});
+
+test('15-C backgrounds have 41 unique paired 16:9/9:16 preview entries',()=>{
+ assert.equal(BACKGROUND_GROUPS.length,5);
+ assert.equal(BACKGROUND_ENTRIES.length,41);
+ assert.equal(new Set(BACKGROUND_ENTRIES.map(e=>e.filename)).size,41);
+ assert.deepEqual(BACKGROUND_GROUPS.map(g=>BACKGROUND_ENTRIES.filter(e=>e.group===g.id).length),[23,4,5,3,6]);
+ const base='https://franksky1207.github.io/teacher-hell/preview/';
+ for(const e of BACKGROUND_ENTRIES){
+  assert.equal(backgroundUrl(e,'desktop',base),base+'web/assets/backgrounds/desktop/'+e.filename);
+  assert.equal(backgroundUrl(e,'mobile',base),base+'web/assets/backgrounds/mobile/'+e.filename);
+ }
+ const html=renderBackgroundPreview();
+ for(const key of ['data-bg-nav','data-bg-direction="desktop"','data-bg-direction="mobile"','data-bg-variants','data-bg-prev','data-bg-next','data-bg-expand','data-bg-cast-choice','data-bg-toggle'])assert.ok(html.includes(key),key);
+ assert.doesNotMatch(html,/backgrounds.*disabled/);
 });

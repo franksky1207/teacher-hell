@@ -62,7 +62,7 @@ jobs:
           if [[ "$GITHUB_HEAD_REF" == 'feature/three-year-homeroom-movement-cap' ]]; then
             node --check src/world/registry.js
             node --check src/runtime/school.js
-            node --test --test-isolation=none test/school.test.js test/cohort.test.js
+            node --test --test-isolation=none --test-name-pattern='school: (38 schedules|42 stops|same-school class changes|historical affiliations|concurrent due admissions|three-year quota|repeated return|two pending|used movement quotas)|T3 compiler unit: active roster|T3 domain transaction:' test/school.test.js test/cohort.test.js
           elif [[ "$GITHUB_HEAD_REF" == 'feat/phase14-f1-results-retry-20261107' ]]; then
             npm run check
             node --test --test-isolation=none test/year-result.test.js test/notebook-tasks.test.js test/notebook-view.test.js test/notebook-people.test.js

@@ -99,6 +99,17 @@ function newStudent(w,classId,at,source){
  profile(w,root,structure,initialIndex===null?null:initialIndex<20?'male':'female');profile(w,care.id,structure);
  w.random.people=people.snapshot();w.random.environment=environment.snapshot();w.random.structure=structure.snapshot();register(w,root,classId,at,source);return root;
 }
+/** Receipt-derived per-cohort distinct-student limits, with no extra counters. */
+export function homeroomMovementBudget(w){
+ const r=w.registry;need(r,'School registry required');
+ const cohort=r.cohorts.find(c=>c.classId===r.homeClassId);need(cohort,'Home cohort missing');
+ const originals=new Set(cohort.initialStudentIds),left=new Set(),joined=new Set();
+ for(const e of r.enrollments)if(e.classId===cohort.classId){
+  if(!originals.has(e.personId))joined.add(e.personId);
+  else if(e.until!==null&&!['graduated','course-completed','incomplete'].includes(e.status))left.add(e.personId);
+ }
+ return {left:left.size,joined:joined.size,leftIds:[...left],joinedIds:[...joined],originals};
+}
 export function enrollmentEligibility(w,{personId=null,classId,action}){
  need(w.registry,'School registry required');const r=w.registry,c=r.classes[classId];
  if(!c||r.academicYear-c.cohortStart<0||r.academicYear-c.cohortStart>2)return {eligible:false,reason:'inactive-class'};
@@ -106,6 +117,10 @@ export function enrollmentEligibility(w,{personId=null,classId,action}){
  const active=r.enrollments.find(e=>e.personId===personId&&e.until===null);
  const count=r.enrollments.filter(e=>e.classId===classId&&e.until===null).length;
  if(['transfer-in','change-class','repeat','return'].includes(action)&&classId===r.homeClassId&&count>=42)return {eligible:false,reason:'capacity'};
+ if(classId===r.homeClassId&&['transfer-in','change-class','repeat','return'].includes(action)){
+  const b=homeroomMovementBudget(w);
+  if((personId===null||!b.originals.has(personId))&&!b.joinedIds.includes(personId)&&b.joined>=2)return {eligible:false,reason:'three-year-arrival-limit'};
+ }
  if(action==='return'&&(!personId||active||!r.enrollments.some(e=>e.personId===personId)))return {eligible:false,reason:'not-returning'};
  if(action==='change-class'&&active&&r.classes[active.classId].cohortId!==c.cohortId)return {eligible:false,reason:'different-cohort'};
  if(action==='repeat'&&active&&c.cohortStart!==r.classes[active.classId].cohortStart+1)return {eligible:false,reason:'not-repeating-one-grade'};
@@ -145,6 +160,11 @@ export function applySchoolOperation(w,op,at){
   r.assignments.push({id:`school-assignment:cohort:${r.academicYear}`,personId:w.player.current.playerId,roleId:9,classId:r.homeClassId,from:at,until:null});
  }else if(op.type==='school-enroll'){
   assertShape(op,['type','personId','classId','action','source']);identifier(op.source);
+   const prior=r.enrollments.find(e=>e.personId===op.personId&&e.until===null);
+   if(prior&&prior.classId===r.homeClassId&&op.classId!==r.homeClassId){
+    const b=homeroomMovementBudget(w);
+    need(!b.originals.has(op.personId)||b.leftIds.includes(op.personId)||b.left<2,'Three-year original student departure limit');
+   }
   need(['transfer-in','change-class','repeat','return'].includes(op.action),'Unknown enrollment action');
   need(enrollmentEligibility(w,op).eligible,'Ineligible enrollment');
   if(op.personId===null){need(op.action==='transfer-in','Only a sourced transfer creates a new person');newStudent(w,op.classId,at,op.source);}
@@ -160,6 +180,10 @@ export function applySchoolOperation(w,op,at){
   assertShape(op,['type','personId','status','reason']);identifier(op.reason);need(['transferred-out','suspended','delayed','graduated','course-completed','incomplete'].includes(op.status),'Unknown leaving status');
   const e=r.enrollments.find(e=>e.personId===op.personId&&e.until===null);need(e,'No active enrollment');
   if(op.status==='graduated')need(r.academicYear-r.classes[e.classId].cohortStart>=2&&Number(at.slice(0,4))>=r.classes[e.classId].cohortStart+3,'Cannot graduate before grade three');
+   if(e.classId===r.homeClassId&&!['graduated','course-completed','incomplete'].includes(op.status)){
+    const b=homeroomMovementBudget(w);
+    need(!b.originals.has(op.personId)||b.leftIds.includes(op.personId)||b.left<2,'Three-year original student departure limit');
+   }
   e.until=at;e.status=op.status;
  }else if(op.type==='school-end-homeroom'){
   assertShape(op,['type','classId','reason']);identifier(op.reason);
@@ -170,6 +194,12 @@ export function applySchoolOperation(w,op,at){
   assertShape(op,['type','id','classId','personId','dueDate','source']);identifier(op.id);identifier(op.source);date(op.dueDate);
   need(!r.transfers.some(t=>t.id===op.id)&&op.dueDate>at,'Transfer must be a distinct future arrangement');
   need(enrollmentEligibility(w,{...op,action:'transfer-in'}).eligible,'Ineligible transfer plan');
+   if(op.classId===r.homeClassId){
+    const b=homeroomMovementBudget(w);
+    const reserved=new Set(r.transfers.filter(t=>t.status==='scheduled'&&t.classId===r.homeClassId&&(t.personId===null||!b.originals.has(t.personId))&&!b.joinedIds.includes(t.personId)).map(t=>t.personId??t.id));
+    const isNew=op.personId===null||!b.originals.has(op.personId);
+    if(isNew&&!b.joinedIds.includes(op.personId)&&!reserved.has(op.personId??op.id))need(b.joined+reserved.size<2,'Three-year scheduled arrival limit');
+   }
   r.transfers.push({...op,status:'scheduled',createdAt:at,completedAt:null});
  }else if(op.type==='school-transfer-complete'){
   assertShape(op,['type','id']);const t=r.transfers.find(t=>t.id===op.id);need(t?.status==='scheduled'&&at>=t.dueDate,'Transfer is absent, completed or not due');
@@ -197,7 +227,8 @@ export function applySchoolOperation(w,op,at){
 }
 export function readSchoolCandidates(w){
  const r=w.registry;need(r,'School registry required');const count=w.classroom.studentIds.length,active=new Set(w.classroom.studentIds),homeClasses=new Set(r.cohorts.map(c=>c.classId)),former=new Set(r.enrollments.filter(e=>homeClasses.has(e.classId)&&!active.has(e.personId)).map(e=>e.personId));
- return {academicYear:r.academicYear,cohortId:r.classes[r.homeClassId].cohortId,classId:r.homeClassId,studentIds:[...w.classroom.studentIds],reunionIds:[...former],transfer:{eligible:count>0&&count<42,needsRecentArrival:count===38,pending:r.transfers.filter(t=>t.classId===r.homeClassId&&t.status==='scheduled').map(t=>t.id)}};
+ const b=homeroomMovementBudget(w),allowed=b.joined<2;
+ return {academicYear:r.academicYear,cohortId:r.classes[r.homeClassId].cohortId,classId:r.homeClassId,studentIds:[...w.classroom.studentIds],reunionIds:[...former],transfer:{eligible:count>0&&count<42&&allowed,needsRecentArrival:count===38&&allowed,pending:r.transfers.filter(t=>t.classId===r.homeClassId&&t.status==='scheduled').map(t=>t.id)}};
 }
 export function schoolCatalogue(w,subjects){need(w.registry,'School registry required');return Object.values(w.registry.classes).filter(c=>[0,1,2].includes(w.registry.academicYear-c.cohortStart)).map(c=>({id:c.id,cohortStart:c.cohortStart,subjects:[...subjects]}));}
 
@@ -243,6 +274,14 @@ export function validateRegistry(w){
   const e=currentEnrollment.get(p.id),c=e?r.classes[e.classId]:null;
   const expected=!c?18:e.classId===r.homeClassId?11:c.cohortStart===r.cohortStart?12:13;
   need(p.roleIds.includes(expected)&&p.roleIds.filter(id=>[11,12,13,18].includes(id)).length===1,'Student role differs from current affiliation');
+ }
+ for(const cohort of r.cohorts){
+  const original=new Set(cohort.initialStudentIds),left=new Set(),joined=new Set();
+  for(const e of r.enrollments)if(e.classId===cohort.classId){
+   if(!original.has(e.personId))joined.add(e.personId);
+   else if(e.until!==null&&!['graduated','course-completed','incomplete'].includes(e.status))left.add(e.personId);
+  }
+  need(left.size<=2&&joined.size<=2,'Three-year homeroom movement history exceeds two distinct students each way');
  }
  const home=r.enrollments.filter(e=>e.classId===r.homeClassId&&e.until===null).map(e=>e.personId);need(JSON.stringify(home)===JSON.stringify(w.classroom.studentIds)&&home.length<=42,'Current homeroom differs from affiliations');
  const originalStudents=new Set();unique(list(r.cohorts).map(c=>c.id));need(r.cohorts.length>=1&&r.cohorts.length<=10,'Career supports ten generated homeroom cohorts');for(const [index,c] of r.cohorts.entries()){assertShape(c,['id','startYear','classId','initialStudentIds']);need(c.startYear===r.startYear+index*3&&r.classes[c.classId]?.cohortStart===c.startYear&&r.classes[c.classId]?.cohortId===c.id&&c.initialStudentIds.length===40,'Invalid initial cohort');unique(c.initialStudentIds);for(const id of c.initialStudentIds){need(!originalStudents.has(id),'Initial natural person recycled into another generated cohort');originalStudents.add(id);need(r.enrollments.some(e=>e.personId===id&&e.classId===c.classId&&e.reason==='initial'),'Missing original cohort enrollment');}}

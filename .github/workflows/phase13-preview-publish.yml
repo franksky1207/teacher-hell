@@ -10,6 +10,7 @@ on:
       - web/student-portrait-calibration.js
       - web/story-portraits.js
       - scripts/portrait-calibration.py
+      - scripts/deploy-preview.sh
       - web/student-portrait-layout.js
       - web/story-scene.js
       - web/game.js
@@ -57,4 +58,8 @@ jobs:
           test "$(git ls-tree FETCH_HEAD preview | wc -l)" -eq 1
           test "$(git ls-tree FETCH_HEAD:preview index.html | wc -l)" -eq 1
           test "$(git ls-tree FETCH_HEAD:preview web/game.js | wc -l)" -eq 1
-          echo "PASS: preview publication and Pages root preservation"
+          version="$(git rev-parse --short=12 HEAD)"
+          git cat-file -e "FETCH_HEAD:preview/web/assets/characters/students/student-001/student-001-full-sheet-uniform-summer.png"
+          git cat-file -e "FETCH_HEAD:preview/assets/$version/web/game.js"
+          test -z "$(git ls-tree -r --name-only FETCH_HEAD "preview/assets/$version/web/assets/characters/students")"
+          echo "PASS: shared original PNGs intact; versioned module graph contains no duplicate student PNGs"

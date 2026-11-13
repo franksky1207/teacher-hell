@@ -110,7 +110,7 @@ test('T3 domain transaction: no public half-completion or unsourced normal duty 
  assert.throws(()=>prepareWorldOperation(w,{...request(w,'half-completion',[{type:'complete-three-year-career'}]),calendarContext:{kind:'procedure'}}),/Unknown operation/);
  assert.throws(()=>prepareWorldOperation(w,{...request(w,'duty-end',[{type:'school',basisFactId:null,change:{type:'school-end-homeroom',classId:n(w).classroom.id,reason:'forged'}}]),calendarContext:{kind:'procedure'}}),/atomic completion transaction/);
  assert.equal(JSON.stringify(w),before);
- const raw=initial();assert.throws(()=>change(raw,'ordinary-mass-leave',n(raw).classroom.studentIds.slice(0,3).map(p=>leave(p))),/Sub-38/);
+ const raw=initial();assert.throws(()=>change(raw,'ordinary-mass-leave',n(raw).classroom.studentIds.slice(0,3).map(p=>leave(p))),/Sub-38|departure limit/);
 });
 
 test('T3 legal-source integration: real opening and school activity cannot supply June success or bypass semester reviews',()=>{

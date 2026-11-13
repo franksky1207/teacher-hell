@@ -6,7 +6,7 @@ import { prepareWorldOperation } from '../src/runtime/transactions.js';
 import { restoreWorldState,runtimeOf } from '../src/runtime/model.js';
 import { readPlayerView } from '../src/runtime/views.js';
 import { createSave,encodeSave,restoreSave } from '../src/storage/format.js';
-import { CLASS_NAMES,schoolClassId,readSchoolCandidates,enrollmentEligibility,schoolCatalogue,dailySchoolPeople } from '../src/world/registry.js';
+import { CLASS_NAMES,schoolClassId,readSchoolCandidates,enrollmentEligibility,homeroomMovementBudget,schoolCatalogue,dailySchoolPeople } from '../src/world/registry.js';
 import { createRandom } from '../src/numeric/random.js';
 import { generateTimetable,SUBJECT_LOAD } from '../src/calendar/timetable.js';
 import { validateWorld } from '../src/world/validation.js';
@@ -42,7 +42,7 @@ test('school: 42 stops admissions; invalid sub-38 and a failed mixed transaction
  assert.equal(enrollmentEligibility(n(w),{personId:null,classId:home,action:'transfer-in'}).eligible,false);
  const before=structuredClone(w);assert.throws(()=>change(w,'overcapacity',[enter(home)]),/Ineligible/);assert.deepEqual(w,before);
  w=initial();const c=cause(w,'failed');const q=request(c.world,'bad-half',[school(enter(n(w).classroom.id),c.id),{type:'unknown'}]);assert.throws(()=>prepareWorldOperation(c.world,q));assert.deepEqual(n(c.world).classroom.studentIds,n(w).classroom.studentIds);
- assert.throws(()=>change(w,'three-leave',n(w).classroom.studentIds.slice(0,3).map(id=>leave(id))),/Sub-38/);
+ assert.throws(()=>change(w,'three-leave',n(w).classroom.studentIds.slice(0,3).map(id=>leave(id))),/Sub-38|departure limit/);
 });
 
 test('school: same-school class changes, return, guardians, historical basis and tamper rejection',()=>{
@@ -123,9 +123,54 @@ test('school: historical affiliations cannot authorize fictitious relationships 
 
 
 test('school: concurrent due admissions recheck capacity after each completion without blocking time',()=>{
- let w=initial(),home=n(w).classroom.id;w=change(w,'forty-one',[enter(home)]);
+ let w=initial(),home=n(w).classroom.id;
  const c=cause(w,'two-arrangements');w=commit(c.world,'queue-both',['first','second'].map(id=>school({type:'school-transfer-plan',id,classId:home,personId:null,dueDate:'2026-08-04',source:c.id},c.id)));
  const q=request(w,'capacity-recheck',[{type:'advance-time',planId:runtimeOf(w).plan.id,steps:8}]);w=prepareWorldOperation(w,q).world;
- assert.equal(n(w).classroom.studentIds.length,42);assert.equal(n(w).registry.transfers.filter(t=>t.status==='completed').length,1);assert.equal(n(w).registry.transfers.filter(t=>t.status==='scheduled').length,1);
+ assert.equal(n(w).classroom.studentIds.length,42);assert.equal(n(w).registry.transfers.filter(t=>t.status==='completed').length,2);assert.equal(n(w).registry.transfers.filter(t=>t.status==='scheduled').length,0);
  assert.equal(prepareWorldOperation(w,q).duplicate,true);
+});
+
+test('school: three-year quota rejects third distinct original departure and third arrival',()=>{
+ let w=initial(),home=n(w).classroom.id,ids=[...n(w).classroom.studentIds];
+ w=change(w,'leave-one',[leave(ids[0])]);w=change(w,'leave-two',[leave(ids[1])]);
+ assert.equal(homeroomMovementBudget(n(w)).left,2);
+ assert.throws(()=>change(w,'leave-three',[leave(ids[2])]),/departure limit/);
+ w=change(w,'arrival-one',[enter(home)]);w=change(w,'arrival-two',[enter(home)]);
+ assert.equal(homeroomMovementBudget(n(w)).joined,2);
+ assert.equal(n(w).classroom.studentIds.length,40);
+ assert.equal(readSchoolCandidates(n(w)).transfer.eligible,false);
+ assert.throws(()=>change(w,'arrival-three',[enter(home)]),/Ineligible/);
+ const newcomer=n(w).registry.enrollments.at(-1).personId;
+ w=change(w,'newcomer-left',[leave(newcomer)]);
+ w=change(w,'newcomer-back',[enter(home,newcomer,'return')]);
+ assert.equal(homeroomMovementBudget(n(w)).joined,2);
+ assert.deepEqual(restoreSave(encodeSave(createSave(w))).world,w);
+});
+test('school: repeated return and departure of an original costs only one slot',()=>{
+ let w=initial(),home=n(w).classroom.id,ids=[...n(w).classroom.studentIds];
+ w=change(w,'first-leave',[leave(ids[0])]);
+ w=change(w,'first-return',[enter(home,ids[0],'return')]);
+ w=change(w,'first-leave-again',[leave(ids[0])]);
+ assert.equal(homeroomMovementBudget(n(w)).left,1);
+ w=change(w,'second-leave',[leave(ids[1])]);
+ assert.throws(()=>change(w,'third-leave',[leave(ids[2])]),/departure limit/);
+});
+test('school: two pending transfers exhaust quota for a third reservation',()=>{
+ let w=initial(),home=n(w).classroom.id;
+ const c=cause(w,'two-queue');
+ w=commit(c.world,'two-reserved',['queue-a','queue-b'].map(id=>school({type:'school-transfer-plan',id,classId:home,personId:null,dueDate:'2026-08-04',source:c.id},c.id)));
+ assert.equal(n(w).registry.transfers.filter(t=>t.status==='scheduled').length,2);
+ const c2=cause(w,'third-queue');
+ assert.throws(()=>commit(c2.world,'third-reserved',[school({type:'school-transfer-plan',id:'queue-c',classId:home,personId:null,dueDate:'2026-08-04',source:c2.id},c2.id)]),/scheduled arrival limit/);
+});
+
+test('school: used movement quotas persist across academic-year promotion',()=>{
+ let w=longPlan(initial()),home=n(w).classroom.id,ids=[...n(w).classroom.studentIds];
+ w=change(w,'two-first-year-leavers',[leave(ids[0]),leave(ids[1])]);
+ w=change(w,'two-first-year-arrivals',[enter(home),enter(home)]);
+ assert.equal(homeroomMovementBudget(n(w)).left,2);assert.equal(homeroomMovementBudget(n(w)).joined,2);
+ w=year(w,2027);
+ assert.equal(homeroomMovementBudget(n(w)).left,2);assert.equal(homeroomMovementBudget(n(w)).joined,2);
+ assert.throws(()=>change(w,'year-two-third-leaver',[leave(ids[2])]),/departure limit/);
+ assert.throws(()=>change(w,'year-two-third-arrival',[enter(home)]),/Ineligible/);
 });

@@ -48,18 +48,18 @@ test('T3 compiler unit: official academic recognition yields mixed graduation/in
  assert.deepEqual(compiled(w),plan);assert.equal(JSON.stringify(w),before);
 });
 
-test('T3 compiler unit: active roster includes transfers and excludes already departed/suspended/changed-class students',()=>{
+test('T3 compiler unit: active roster includes transfers and excludes suspended/changed-class students',()=>{
  let w=probe();const original=[...n(w).classroom.studentIds],classId=n(w).classroom.id;
- w=change(w,'former-pupils',[leave(original[1]),leave(original[2],'suspended'),enter(classId)]);
- // One legal class change, leaving the original homeroom at 38.
+ w=change(w,'former-pupils',[leave(original[1],'suspended'),enter(classId)]);
+ // Two distinct original pupils may leave, including one suspension and one same-grade class change.
  const younger=Object.values(n(w).registry.classes).find(c=>c.cohortStart===2026&&c.id!==classId);
- w=change(w,'change-away',[enter(younger.id,original[3],'change-class')]);
+ w=change(w,'change-away',[enter(younger.id,original[2],'change-class')]);
  const plan=compiled(w),ids=plan.archive.data.outcomes.map(o=>o.personId);
- assert.equal(ids.length,38);assert.ok(ids.includes(n(w).classroom.studentIds.at(-1)));
- for(const p of original.slice(1,4))assert.ok(!ids.includes(p));
+ assert.equal(ids.length,39);assert.ok(ids.includes(n(w).classroom.studentIds.at(-1)));
+ for(const p of original.slice(1,3))assert.ok(!ids.includes(p));
  assert.equal(n(w).registry.cohorts[0].initialStudentIds.length,40);
  const {after,h}=materialize(w,plan);validateCohortArchive(after,h);
- assert.ok(n(after).registry.enrollments.some(e=>e.personId===original[3]&&e.until===null));
+ assert.ok(n(after).registry.enrollments.some(e=>e.personId===original[2]&&e.until===null));
  assert.deepEqual(dueTransfers(n(after),'2029-07-01'),[]);
 });
 

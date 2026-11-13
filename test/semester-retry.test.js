@@ -17,6 +17,7 @@ import { createStoredSession } from '../src/storage/session.js';
 import { packStoredText,unpackStoredText,createIndexedDBStorage } from '../src/storage/indexeddb.js';
 import { validateRetryCheckpoint,validateRetryPair,captureRetryCheckpoint,retrySemester } from '../src/runtime/retry-checkpoint.js';
 import { readFileSync } from 'node:fs';
+import { gunzipSync } from 'node:zlib';
 const career={version:1,mode:'three-year',difficulty:'hard'},clone=structuredClone;
 const apply=(w,ops,tag='boundary')=>prepareWorldOperation(w,{...request(w,tag+'-'+runtimeOf(w).revision,ops),calendarContext:{kind:'routine'}}).world;
 function relocate(w,date,slot){
@@ -116,4 +117,22 @@ test('group 5: v2 roundtrip, gzip, three slots, CAS/failed-write atomicity and s
  t.diagnostic(JSON.stringify({representative:'2027-01-22 final confirmation',before:{json:Buffer.byteLength(oldText),gzip:oldPacked.pages.reduce((n,p)=>n+p.byteLength,0)},after:{json:Buffer.byteLength(text),gzip:packed.pages.reduce((n,p)=>n+p.byteLength,0)}}));
  // Completion read-only remains enforced by the unchanged transaction barrier.
  assert.match(readFileSync(new URL('../src/runtime/transactions.js',import.meta.url),'utf8'),/ensure\(!careerResult\(world\),'CAREER_COMPLETE'/);
+});
+
+
+// Supplemental group only: do not report a date-only fixture as annual handoff
+// acceptance. This prerequisite gate records both blocked scenarios explicitly.
+test('supplemental: summer cross-year handoff prerequisites (pending legal fixtures)',async t=>{
+ const source=JSON.parse(gunzipSync(readFileSync(new URL('../simulation/sources/h5-before-completion.json.gz',import.meta.url))));
+ const initial=JSON.parse(gunzipSync(readFileSync(new URL('../simulation/sources/h5-opening.json.gz',import.meta.url))));
+ const candidates=[initial.world,initial.opening,source.opening,source.world];
+ t.diagnostic('Existing full-world source positions: '+[...new Set(candidates.map(w=>w.position.date))].join(', '));
+ for(const [label,summerDate,autumnDate] of [
+  ['A: grade 2','2027-07-19','2027-08-23'],
+  ['B: grade 3','2028-07-24','2028-08-28']
+ ]){
+  const checkpoint=candidates.find(w=>w.position.date===summerDate&&w.extensions['teacher-hell/annual-observations']&&runtimeOf(w).history.some(h=>h.type==='annual-success'));
+  assert.equal(checkpoint,undefined,'A suitable source is now available: replace this pending gate with official opening/failure/retry transactions before claiming acceptance');
+  await t.test(label+' '+summerDate+' -> '+autumnDate,{skip:'Missing a complete legal summer checkpoint with retained prior annual success; no official opening or retry was executed'},()=>{});
+ }
 });

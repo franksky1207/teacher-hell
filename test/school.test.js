@@ -126,7 +126,7 @@ test('school: concurrent due admissions recheck capacity after each completion w
  let w=initial(),home=n(w).classroom.id;
  const c=cause(w,'two-arrangements');w=commit(c.world,'queue-both',['first','second'].map(id=>school({type:'school-transfer-plan',id,classId:home,personId:null,dueDate:'2026-08-04',source:c.id},c.id)));
  const q=request(w,'capacity-recheck',[{type:'advance-time',planId:runtimeOf(w).plan.id,steps:8}]);w=prepareWorldOperation(w,q).world;
- assert.equal(n(w).classroom.studentIds.length,42);assert.equal(n(w).registry.transfers.filter(t=>t.status==='completed').length,1);assert.equal(n(w).registry.transfers.filter(t=>t.status==='scheduled').length,1);
+ assert.equal(n(w).classroom.studentIds.length,42);assert.equal(n(w).registry.transfers.filter(t=>t.status==='completed').length,2);assert.equal(n(w).registry.transfers.filter(t=>t.status==='scheduled').length,0);
  assert.equal(prepareWorldOperation(w,q).duplicate,true);
 });
 

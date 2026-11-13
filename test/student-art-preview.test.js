@@ -1,3 +1,5 @@
+import {ART_PREVIEW_CATEGORIES,renderArtPreview} from '../web/art-preview.js';
+import {NPC_SILHOUETTE_IDS,NPC_SILHOUETTE_POSES,npcSilhouetteAssetUrl,renderNpcSilhouettePreview} from '../web/npc-silhouette-preview.js';
 import {calibrationEntry,calibratedPortraitLayout,portraitCalibrationUrl} from '../web/student-portrait-calibration.js';
 import {PORTRAIT_STAGE,PORTRAIT_PREVIEW_STAGE,studentPortraitHeightRatio,portraitExpressionScales,portraitDestination} from '../web/student-portrait-layout.js';
 import test from 'node:test';
@@ -194,4 +196,29 @@ test('precomputed final calibration yields exact 015-relative heights without sc
  }
  assert.match(portraitCalibrationUrl('https://franksky1207.github.io/teacher-hell/preview/'),/\/preview\/web\/portrait-calibration.json$/);
  assert.equal(calibratedPortraitLayout(image,{width:1,height:1,bounds:[],scales:[]}),null);
+});
+
+test('art preview has student and silhouette categories with future backgrounds disabled',()=>{
+ assert.deepEqual(ART_PREVIEW_CATEGORIES.map(([id])=>id),['students','silhouettes']);
+ const html=renderArtPreview();
+ assert.match(html,/美術素材預覽/);
+ assert.match(html,/學生立繪/);
+ assert.match(html,/NPC 剪影/);
+ assert.match(html,/<option value="backgrounds" disabled>/);
+});
+test('NPC preview follows eighteen SOP silhouettes with fixed six poses and real source paths',()=>{
+ assert.equal(NPC_SILHOUETTE_IDS.length,18);
+ assert.equal(new Set(NPC_SILHOUETTE_IDS.map(x=>x.id)).size,18);
+ assert.equal(NPC_SILHOUETTE_IDS[0].id,'adult-young-male-01');
+ assert.equal(NPC_SILHOUETTE_IDS.at(-1).id,'adult-senior-female-03');
+ assert.equal(NPC_SILHOUETTE_IDS[0].ratio,.96);
+ assert.equal(NPC_SILHOUETTE_IDS.at(-1).ratio,.88);
+ assert.deepEqual(NPC_SILHOUETTE_POSES.map(([id])=>id),['neutral','side','hand-on-hip','arms-open','gesture','weight-shift']);
+ const html=renderNpcSilhouettePreview();
+ assert.equal((html.match(/<option value="adult-/g)||[]).length,18);
+ assert.equal((html.match(/data-npc-pose=/g)||[]).length,6);
+ assert.match(html,/data-npc-background/);
+ assert.match(html,/尚未提交時會顯示缺圖提示/);
+ const url=npcSilhouetteAssetUrl('adult-male-02','https://franksky1207.github.io/teacher-hell/preview/','x');
+ assert.match(url,/\/preview\/web\/assets\/characters\/adults\/adult-male-02\.png\?refresh=x$/);
 });

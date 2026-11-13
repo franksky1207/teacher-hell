@@ -7,6 +7,8 @@ on:
     paths:
       - .github/workflows/phase13-preview-publish.yml
       - web/full-sheet-preview.js
+      - web/art-preview.js
+      - web/npc-silhouette-preview.js
       - web/student-portrait-calibration.js
       - web/story-portraits.js
       - scripts/portrait-calibration.py
@@ -16,6 +18,7 @@ on:
       - web/game.js
       - web/story-view.css
       - web/assets/characters/students/**
+      - web/assets/characters/adults/**
       - test/student-art-preview.test.js
 permissions:
   contents: write

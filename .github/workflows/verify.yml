@@ -59,7 +59,11 @@ jobs:
       - name: Scoped validation (A1 never runs annual or three-year drivers)
         shell: bash
         run: |
-          if [[ "$GITHUB_HEAD_REF" == 'feat/phase14-f1-results-retry-20261107' ]]; then
+          if [[ "$GITHUB_HEAD_REF" == 'feature/three-year-homeroom-movement-cap' ]]; then
+            node --check src/world/registry.js
+            node --check src/runtime/school.js
+            node --test --test-isolation=none test/school.test.js test/cohort.test.js
+          elif [[ "$GITHUB_HEAD_REF" == 'feat/phase14-f1-results-retry-20261107' ]]; then
             npm run check
             node --test --test-isolation=none test/year-result.test.js test/notebook-tasks.test.js test/notebook-view.test.js test/notebook-people.test.js
             npm run build

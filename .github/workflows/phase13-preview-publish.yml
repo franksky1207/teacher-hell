@@ -1,4 +1,4 @@
-name: Publish verified phase 14-F preview
+name: Publish verified 15-C art preview
 on:
   workflow_dispatch:
   push:
@@ -8,6 +8,9 @@ on:
       - .github/workflows/phase13-preview-publish.yml
       - web/full-sheet-preview.js
       - web/art-preview.js
+      - web/background-preview.js
+      - web/background-scenes.js
+      - web/assets/backgrounds/**
       - web/npc-silhouette-preview.js
       - web/student-portrait-calibration.js
       - web/story-portraits.js
@@ -17,6 +20,7 @@ on:
       - web/story-scene.js
       - web/game.js
       - web/story-view.css
+      - docs/15-C-背景圖SOP.md
       - web/assets/characters/students/**
       - web/assets/characters/adults/**
       - test/student-art-preview.test.js

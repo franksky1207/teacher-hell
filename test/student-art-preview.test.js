@@ -19,7 +19,7 @@ test('full sheet is the only student preview, with 44 ids and 5 outfit categorie
  for(let number=41;number<=44;number++){
   const id='student-'+String(number).padStart(3,'0');
   assert.ok(STUDENT_ART_IDS.includes(id));
-  assert.match(html,new RegExp('value="'+id+'">備用轉入生 '+String(number).padStart(3,'0')));
+  assert.match(html,new RegExp('value="'+id+'">轉入生 '+String(number-40)));
  }
  assert.equal(STUDENT_ART_IDS[40],'student-041');
  assert.equal(STUDENT_ART_IDS.at(-1),'student-044');

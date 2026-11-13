@@ -3,7 +3,7 @@
 export const PORTRAIT_STAGE=Object.freeze({width:768,height:1152,bodyHeight:1000,maxBodyWidth:690,bottom:18});
 // Square preview stage: wider room for gestures, responsive on phones without changing PNGs.
 export const PORTRAIT_PREVIEW_STAGE=Object.freeze({width:1152,height:1152,bodyHeight:1000,maxBodyWidth:1000,bottom:18});
-// Approved 40-student relative heights (015 = 100%), independent of PNG crop.
+// Approved 44-student relative heights (015 = 100%), independent of PNG crop.
 // Both genders share a single presentation scale, not actual heights in centimeters.
 const MALE_HEIGHT_RATIOS=Object.freeze([
   0.91,0.99,0.85,0.96,0.93,0.90,0.89,0.93,0.90,0.87,
@@ -14,12 +14,15 @@ const FEMALE_HEIGHT_RATIOS=Object.freeze([
   0.87,0.94,0.79,0.90,0.84,0.88,0.93,0.91,0.90,0.87,
   0.82,0.94,0.86,0.90,0.84,0.95,0.86,0.89,0.80,0.89
 ]);
+// Transfer reserves 041–044 use the same highest-student reference; no new baseline.
+const TRANSFER_HEIGHT_RATIOS=Object.freeze([0.95,0.93,0.91,0.85]);
 export function studentPortraitHeightRatio(id){
  const match=/^student-(\d{3})$/.exec(String(id));
  if(!match)return null;
  const number=Number(match[1]);
  if(number>=1&&number<=20)return MALE_HEIGHT_RATIOS[number-1];
  if(number>=21&&number<=40)return FEMALE_HEIGHT_RATIOS[number-21];
+ if(number>=41&&number<=44)return TRANSFER_HEIGHT_RATIOS[number-41];
  return null;
 }
 const EXPRESSIONS=6;
@@ -47,7 +50,7 @@ export function analyzePortraitSheet(image,stage=PORTRAIT_STAGE,studentId=null){
  }
  const sizes=bounds.filter(Boolean);
  if(!sizes.length)throw new Error('圖片沒有可見人物');
- // All 40 approved profiles share a fixed height target relative to student-015.
+ // All 44 art profiles share a fixed height target relative to student-015.
  const scales=portraitExpressionScales(bounds,stage,studentPortraitHeightRatio(studentId));
  return {bounds,scales,sourceWidth:cw,sourceHeight:ch,stage};
 }

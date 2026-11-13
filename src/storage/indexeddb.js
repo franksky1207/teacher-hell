@@ -4,8 +4,8 @@ import { canonicalData } from '../changes/settlement.js';
  * A permanent generation record survives deletion to prevent stale-token ABA writes. */
 import { restoreSave, saveToken, sameToken } from './format.js';
 import { ensure, WorldError } from '../runtime/model.js';
-// Physical storage v2 wraps the unchanged complete v1 save. Compression and
-// verification run outside IDB transactions. Export/import remain portable v1 JSON.
+// Physical storage v2 wraps the complete logical v2 save. Compression and
+// verification run outside IDB transactions. Export/import remain portable JSON.
 const PAGE_BYTES=262144;
 async function pageDigest(pages){
   const bytes=await new Blob(pages).arrayBuffer();

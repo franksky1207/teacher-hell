@@ -141,10 +141,10 @@ function showYearResult(){
 async function retryFailedYear(){
  const w=gameData(),result=projectYearResult(w);
  if(!result?.retryEligible||!failureResult(w))throw new RangeError('只有已保存的當學年失敗可重新挑戰');
- if(!confirm('確定重新挑戰本學年？失敗嘗試將與新嘗試隔離，先前通過的學年保留。建議先匯出備份。'))return;
+ if(!confirm('確定重新開始當前學期？上學期從暑輔第一天開始，下學期從上學期期末結算完成後接續。先前學期與學年的成果保留，本次失敗嘗試的變化將撤銷。建議先匯出備份。'))return;
  const options={
   attemptId:createId('attempt',[w.identity.careerId,'retry',crypto.randomUUID()]),
-  seeds:{settlement:seed(),streams:Object.fromEntries(Object.keys(w.random).map(key=>[key,seed()]))},
+  seeds:{settlement:seed(),streams:Object.fromEntries(current.snapshot().retryStreams.map(key=>[key,seed()]))},
   failureId:result.failureId,failedAttemptId:w.identity.attemptId,schoolYearId:w.position.schoolYearId,
   expectedRevision:w.extensions['teacher-hell/world'].revision
  };

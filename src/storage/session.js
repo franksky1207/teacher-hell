@@ -1,3 +1,4 @@
+import { semesterRetry,captureRetryCheckpoint,validateRetryCheckpoint } from '../runtime/retry-checkpoint.js';
 import { retainMemorial } from './memorial.js';
 import {generatedGivenNames} from '../runtime/opening-name-memory.js';
 import { careerResult } from '../runtime/career.js';
@@ -71,9 +72,9 @@ export async function createStoredSession(storage,slot,{afterPersist}={}) {
       }
       const next=prepareWorldOperation(current.payload.world,request);
       if(next.duplicate){await archive();return {committed:true,recoveryRequired:false,receipt:next.receipt,duplicate:true,token:structuredClone(current.token),memorial:structuredClone(memorialStatus)};}
-      return publish(createSave(next.world,captureOpening||next.world.position.openingId!==current.payload.world.position.openingId?next.world:current.payload.opening),current.token,next.receipt);
+      return publish(createSave(next.world,(semesterRetry(next.world)?captureRetryCheckpoint(current.payload.world,next.world,current.payload.opening):captureOpening||captureRetryCheckpoint(current.payload.world,next.world,current.payload.opening))?next.world:current.payload.opening),current.token,next.receipt);
     }),
-    captureOpening:()=>serial(async()=>{ready();ensure(current.payload,'EMPTY','Slot is empty');return publish(createSave(current.payload.world,current.payload.world),current.token);}),
+    captureOpening:()=>serial(async()=>{ready();ensure(current.payload,'EMPTY','Slot is empty');validateRetryCheckpoint(current.payload.world);if(semesterRetry(current.payload.world))return {committed:true,duplicate:true,token:structuredClone(current.token)};return publish(createSave(current.payload.world,current.payload.world),current.token);}),
     retry:options=>serial(async()=>{ready();ensure(current.payload?.opening,'SNAPSHOT','No opening snapshot');
       let disk=await storage.read(slot);ensure(sameToken(disk.token,current.token),'STALE','Retry target changed; recover first');disk=null;
       const prior=runtimeOf(current.payload.world).commits.find(c=>c.id===createId('operation',[options.attemptId,'initialize-retry'])&&c.attemptId===options.attemptId);

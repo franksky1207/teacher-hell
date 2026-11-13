@@ -64,7 +64,7 @@ self.onmessage=async({data})=>{
   }else if(data.summary){
    const plan=w?.extensions['teacher-hell/world'].plan;
    self.postMessage({ok:true,token:snap.token,summary:w?{completed:!!careerResult(w),maxYears:careerYears(planMode(plan)),subject:plan.subject,date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),serviceYear:w.position.serviceYear,tenure:teacherTenure(w),teacherName:teacherDisplayName(w)}:null});
-  }else self.postMessage({ok:true,record:{payload:w?{world:w}:null,token:snap.token},nameMemoryWarning});
+  }else self.postMessage({ok:true,record:{payload:w?{world:w}:null,token:snap.token,retryStreams:Object.keys(snap.payload?.opening?.random??{})},nameMemoryWarning});
  }catch(error){self.postMessage({ok:false,message:error.message,code:error.code});}
  finally{await storage?.close();}
 };

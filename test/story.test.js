@@ -80,3 +80,22 @@ test('H5 story history auditing isolates witnesses and event changes on success 
 
 test('17-B: choice ordering is stable through save restore and all stages expose four options',()=>{let {w,eventId}=last();const initial=readStory(w,eventId).choices.map(o=>o.id);assert.equal(initial.length,4);assert.deepEqual(initial,storyState(w,eventId).choiceOrder);const restored=restoreWorldState(JSON.stringify(w));assert.deepEqual(readStory(restored,eventId).choices.map(o=>o.id),initial);assert.equal(new Set(initial).size,4);});
 test('17-B: same choice supports multiple weighted outcomes with one persisted causal result',()=>{let {w,eventId}=last();w=decide(w,eventId,'listen');w=apply(w,[storyAction(eventId,'finish')]);while(!readStory(w,eventId).canResume)w=advanceDemo(w);w=apply(w,[storyAction(eventId,'resume')]);while(readStory(w,eventId).canNext)w=apply(w,[storyAction(eventId,'next')]);assert.equal(readStory(w,eventId).choices.length,4);w=decide(w,eventId,'agency');const variant=storyState(w,eventId).chosenVariantId;assert.ok(['progress','hesitation'].includes(variant));const after=restoreWorldState(JSON.stringify(w));assert.equal(storyState(after,eventId).chosenVariantId,variant);assert.ok(runtimeOf(after).facts.some(f=>f.data?.variantId===variant));assert.throws(()=>apply(after,[storyAction(eventId,'confirm')]));});
+
+test('17-E: replacement or base slot confirmation text resolves the actual locked option, survives cancel and restore',()=>{
+ let {w,eventId}=last();const visible=readStory(w,eventId).choices;
+ const chosen=visible.find(c=>c.id==='guided-support'||c.id==='support');
+ assert.ok(chosen,'exactly one legal support slot is visible');
+ const hidden=chosen.id==='guided-support'?'support':'guided-support';
+ assert.ok(!visible.some(c=>c.id===hidden));
+ w=apply(w,[storyAction(eventId,'select',chosen.id)]);
+ assert.deepEqual(readStory(w,eventId).confirmation,{optionId:chosen.id,text:chosen.text});
+ const reloaded=restoreWorldState(JSON.stringify(w));
+ assert.deepEqual(readStory(reloaded,eventId).confirmation,{optionId:chosen.id,text:chosen.text});
+ w=apply(reloaded,[storyAction(eventId,'cancel')]);
+ assert.equal(readStory(w,eventId).choices.length,4);
+ assert.throws(()=>apply(w,[storyAction(eventId,'select',hidden)]));
+ w=apply(w,[storyAction(eventId,'select',chosen.id)]);
+ w=apply(w,[storyAction(eventId,'confirm')]);
+ assert.equal(runtimeOf(w).history.findLast(h=>h.type==='choice')?.data.optionId,chosen.id);
+ assert.equal(restoreWorldState(JSON.stringify(w)).events[0].choice.confirmedOptionId,chosen.id);
+});

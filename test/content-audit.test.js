@@ -134,3 +134,35 @@ test('18-B: old-old similarities are excluded from this batch report',()=>{
  assert.equal(report.duplicates.length,0);
  assert.equal(report.referenceRecordsCompared,2);
 });
+
+test('18-B pilot: 20 isolated T10-03 event definitions satisfy formal contracts without publishing',async()=>{
+ const {PILOT_18B_T10_03_RECORDS:records}=await import('./fixtures/18b-t10-03-pilot.js');
+ assert.equal(records.length,20);
+ assert.equal(new Set(records.map(x=>x.editorial.cause)).size,20);
+ assert.match(records[0].story.premise.description,/無法確認/,'do not assert an unverified swapped label');
+ assert.match(records[14].story.premise.description,/還沒確認內容/,'receipt identity must remain unknown at discovery');
+ assert.doesNotMatch(records[9].story.premise.description,/誤拿/,'do not assert neighbouring class was at fault');
+ assert.ok(records.every(x=>x.story.status==='engineering-test'&&x.story.resourceId.startsWith('engineering:')));
+ assert.ok(records.every(x=>x.story.stages[0].choices.length===4));
+ assert.ok(records.every(x=>x.story.stages[0].choices.some(o=>o.emotional)));
+ assert.ok(records.every(x=>x.story.stages[0].choices.filter(c=>c.variants?.length===2).length===1));
+ assert.ok(records.some(x=>x.story.stages[0].choices[1].variants?.length===2),'uncertain outcomes are not always attached to the first option');
+ assert.equal(records.filter(x=>x.story.stages.length===2).length,5,'meaningful subset has next-day consequences');
+ assert.equal(records.filter(x=>x.story.stages[0].choices.length===4 && x.story.stages[0].choices.some(c=>c.replacement)).length,5,'qualified replacements exist');
+ assert.ok(new Set(records.map(x=>x.story.stages[0].pages[0].scene)).size>=3,'not every situation occurs in one location');
+ assert.ok(records.some(x=>x.story.stages[0].choices.some(c=>c.outcome.changes.length)),'not all choices are text-only');
+ assert.ok(records.every(x=>x.story.stages.every(s=>s.choices.length===4)));
+ assert.ok(records.filter(x=>x.story.stages.length===2).every(x=>x.story.stages[0].choices.every(c=>[c,...(c.replacement?[c.replacement]:[])].every(o=>
+   [o.outcome,...(o.variants??[]).map(v=>v.outcome)].every(r=>r.next.stage==='followup'&&r.next.afterDays===1)))));
+ assert.ok(records.every(x=>x.story.stages[0].choices.find(c=>c.variants).variants[0].modifiers?.length===1));
+ const report=auditContent(records);
+ assert.equal(report.structurallyValid,20,JSON.stringify(report.items.filter(x=>x.errors.length)));
+ assert.equal(report.authored,20);
+ assert.equal(report.items.length,20,'each trial story receives an independent structural result');
+ assert.equal(report.semanticReviewed,0,'independent editorial review has not been performed');
+ assert.equal(report.byTopic['T10-03'].authored,20);
+ assert.equal(report.resolverReady,0,'engineering pilot remains outside official resolver');
+ assert.equal(report.catalogueReady,0);
+ assert.equal(report.publishedInNewCareers,'not-assessed');
+ assert.equal(report.duplicates.length,0,'inspect meaningful duplicates separately');
+});

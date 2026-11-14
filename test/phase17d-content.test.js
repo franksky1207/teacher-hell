@@ -6,7 +6,6 @@ import {beginDemo,apply,storyAction,advanceDemo} from './support/story-scenario.
 import {readStory,storyState} from '../src/runtime/story.js';
 import {runtimeOf,restoreWorldState} from '../src/runtime/model.js';
 import {eventWorld} from './support/event-fixtures.js';
-import {apply} from './support/story-scenario.js';
 
 const atChoices=(world,eventId)=>{
  let w=world;

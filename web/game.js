@@ -90,8 +90,8 @@ async function showSlots(){
     continue;
    }
    const finished=w.completed,grade=w.grade,validGrade=[1,2,3].includes(grade)?'高'+'一二三'[grade-1]:'年級未確認';
-   const status=finished?'三年完成・唯讀':'生涯進行中';
    const totalYears=w.maxYears===30?'30年':'三年';
+   const status=finished?`${totalYears}完成・唯讀`:'生涯進行中';
    rows.push(`<article class="panel slot ui4-slot-card"><header class="ui4-slot-card__top"><span class="ui4-slot-card__number">SLOT ${i}</span><span class="ui4-slot-card__status ${finished?'ui4-slot-card__status--done':''}">${status}</span></header><div class="ui4-slot-card__identity"><h2>${esc(w.teacherName)}</h2><p>${esc(w.subject)}教師 <span aria-hidden="true">・</span> 任教第 ${w.tenure} 年</p></div><div class="ui4-slot-card__meta"><div><span>遊戲日期</span><strong>${esc(w.date)}</strong></div><div><span>班級年級</span><strong>${validGrade}</strong></div><div><span>生涯進度</span><strong>第 ${w.serviceYear} 年／${totalYears}</strong></div></div><div class="ui4-slot-card__actions">${button(finished?'唯讀查閱':'繼續遊戲',`load:${i}`,'class="ui4-slot-card__primary"')}<details class="ui4-slot-card__more"><summary>存檔管理</summary><div class="ui4-slot-card__more-actions">${button('匯出備份',`export:${i}`)}${button('覆蓋建立新生涯',`new:${i}`)}${button('匯入覆蓋',`import:${i}`)}${button('刪除存檔',`delete:${i}`,'class="ui4-slot-card__danger"')}</div></details></div></article>`);
   }catch(e){rows.push(`<article class="panel slot ui4-slot-card"><header class="ui4-slot-card__top"><span class="ui4-slot-card__number">SLOT ${i}</span></header><p class="error">無法讀取：${esc(e.message)}</p></article>`);}
  }

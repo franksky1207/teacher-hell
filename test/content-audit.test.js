@@ -138,6 +138,12 @@ test('18-B: old-old similarities are excluded from this batch report',()=>{
 test('18-B pilot: 20 isolated T10-03 event definitions satisfy formal contracts without publishing',async()=>{
  const {PILOT_18B_T10_03_RECORDS:records}=await import('./fixtures/18b-t10-03-pilot.js');
  assert.equal(records.length,20);
+ const slots=records.map(r=>r.definition.eligibility.slotIds[0]);
+ assert.equal(slots.length,20);
+ assert.ok(records.every(r=>r.definition.eligibility.dayKinds.length===1&&r.definition.eligibility.dayKinds[0]==='school'),'do not assume summer or winter camp cleaning/meal routines');
+ assert.deepEqual([slots[2],slots[6],slots[10],slots[12],slots[18]],['lunch','early','noon','noon','lunch'],'meal/pre-class/rest slots must match situation');
+ assert.ok(slots.every(x=>['lunch','early','noon'].includes(x)));
+
  assert.equal(new Set(records.map(x=>x.editorial.cause)).size,20);
  assert.match(records[0].story.premise.description,/無法確認/,'do not assert an unverified swapped label');
  assert.match(records[14].story.premise.description,/還沒確認內容/,'receipt identity must remain unknown at discovery');

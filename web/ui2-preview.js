@@ -50,7 +50,7 @@ export function renderUi2Preview(state){
   <nav class="ui2-preview-tools" aria-label="劇情預覽控制">
    <label>情境 <select data-ui2-case>${UI2_CASES.map(([id,label])=>`<option value="${id}" ${state.caseId===id?'selected':''}>${escape(label)}</option>`).join('')}</select></label>
    <label>左邊表情 <select data-ui2-left-expression>${expressions.map((x,i)=>`<option value="${i}" ${state.leftExpression===i?'selected':''}>${labels[i]}</option>`).join('')}</select></label><label>右邊表情 <select data-ui2-right-expression>${expressions.map((x,i)=>`<option value="${i}" ${state.rightExpression===i?'selected':''}>${labels[i]}</option>`).join('')}</select></label>
-   <button type="button" data-action="home">返回首頁</button>
+   <button type="button" data-action="dev-center">返回測試中心</button>
   </nav>
   ${renderStoryView(ui2PreviewProjection(state))}
   <p class="ui2-preview-caption" role="status">${state.confirmed?'已示範確認，沒有實際寫入任何遊戲資料。':'場景、人物、選項均為展示資料；選項點擊只模擬呈現。'}　${escape(chosen?.[1]??'')}</p>

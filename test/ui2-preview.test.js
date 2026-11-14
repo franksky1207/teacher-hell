@@ -36,11 +36,24 @@ test('UI-2 rehearsal keeps cast stable while changing narrator and expression',(
  const state=makeUi2PreviewState();
  state.caseId='dual-left';
  const a=ui2PreviewProjection(state).sceneView.cast;
- state.caseId='dual-right';state.expression=4;
+ state.caseId='dual-right';state.leftExpression=4;state.rightExpression=2;
  const b=ui2PreviewProjection(state).sceneView.cast;
  assert.deepEqual(a.map(x=>[x.id,x.position]),b.map(x=>[x.id,x.position]));
  assert.equal(b[0].artId,'student-001');
  assert.equal(b[1].artId,'student-021');
  state.caseId='narration';
  assert.equal(ui2PreviewProjection(state).sceneView.cast.every(x=>!x.speaking),true);
+});
+
+test('UI-2: two expression selectors are independent of speaker and one another',()=>{
+ const state=makeUi2PreviewState();
+ state.caseId='dual-left';state.leftExpression=1;state.rightExpression=4;
+ let cast=ui2PreviewProjection(state).sceneView.cast;
+ assert.equal(cast[0].expression,'happy');assert.equal(cast[1].expression,'angry');
+ state.caseId='dual-right';cast=ui2PreviewProjection(state).sceneView.cast;
+ assert.equal(cast[0].expression,'happy');assert.equal(cast[1].expression,'angry');
+ state.leftExpression=5;cast=ui2PreviewProjection(state).sceneView.cast;
+ assert.equal(cast[0].expression,'sad');assert.equal(cast[1].expression,'angry');
+ state.rightExpression=0;cast=ui2PreviewProjection(state).sceneView.cast;
+ assert.equal(cast[0].expression,'sad');assert.equal(cast[1].expression,'calm');
 });

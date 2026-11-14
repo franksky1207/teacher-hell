@@ -31,10 +31,10 @@ export function ui2PreviewProjection(state){
   '兩位同學走到講桌旁，希望老師能先聽聽他們的想法。',
   '你留意到兩人說法有所不同，決定先把事情釐清。'
  ][page]:narrator?'午后的陽光穿過窗邊。兩位同學站在講桌前，等待老師回應。':id==='four'||id==='eight'||id==='long'?'兩位同學對剛剛發生的事情有不同說法。你打算怎麼處理？':'老師，我想先說明事情的經過。可以聽我們說完嗎？';
- const options=(id==='four'?sampleOptions.slice(0,4):id==='eight'?sampleOptions:id==='long'?longOptions:[]).map((text,i)=>({id:'option-'+i,text}));
+ const options=(state.confirmed?[]:id==='four'?sampleOptions.slice(0,4):id==='eight'?sampleOptions:id==='long'?longOptions:[]).map((text,i)=>({id:'option-'+i,text}));
  const chosen=options.find(x=>x.id===state.selected);
  const confirmation=chosen?{optionId:chosen.id,text:chosen.text}:null;
- const finish=total===1&&!options.length||id==='pages'&&page===total-1;
+ const finish=state.confirmed||total===1&&!options.length||id==='pages'&&page===total-1;
  return {page:{presentation:narrator?'narration':'dialogue',speaker:narrator?null:cast.find(a=>a.speaking)?.id??left.id,text,cast:[]},
   pageIndex:page,pageCount:total,canPrevious:page>0,canNext:page<total-1,
   choices:chosen?[]:options,confirmation,canFinish:finish&&!confirmation,

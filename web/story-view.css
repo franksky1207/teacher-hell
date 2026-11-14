@@ -261,3 +261,67 @@
  .ui2-preview-tools select{max-width:9rem;font-size:.77rem}
  .ui2-preview-caption{font-size:.67rem}
 }
+
+/* UI-2 corrected staging (iPhone visual review 2026-11-14):
+   Portraits belong to a stable stage, NOT the leftover flex height above choices.
+   The dialog grows upward over their lower bodies; faces, size and anchors stay fixed.
+   Always retain the pre-calibrated 1152px portrait canvas with uniform CSS scaling. */
+.game--story .story-view--avg{position:relative;display:block;isolation:isolate;overflow:hidden}
+.game--story .story-view--avg .story-scene{
+ position:absolute;inset:0;width:100%;height:100%;min-height:0;
+ display:block;overflow:hidden;z-index:0;pointer-events:none;
+}
+.game--story .story-view--avg .story-stage{
+ position:absolute;inset:0;width:100%;height:100%;min-height:0;
+ display:block;padding:0;overflow:hidden;
+}
+.game--story .story-view--avg .story-actor{
+ position:absolute;bottom:0;flex:none;max-width:none;
+ width:50%;height:100%;min-height:0;opacity:1;
+ filter:brightness(.84);
+ animation:none;transform:none;
+}
+.game--story .story-view--avg .story-actor--left{left:0;right:auto}
+.game--story .story-view--avg .story-actor--right{right:0;left:auto}
+.game--story .story-view--avg .story-actor--center{left:25%;right:auto}
+.game--story .story-view--avg .story-actor--illustrated{max-width:none}
+.game--story .story-view--avg .story-portrait-canvas{
+ position:absolute;left:50%;bottom:0;z-index:1;
+ width:clamp(25rem,43vw,39rem);max-width:none;max-height:none;
+ height:auto;aspect-ratio:1;transform:translateX(-50%);
+}
+.game--story .story-view--avg .story-actor-shape{
+ position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+ height:min(68dvh,31rem);width:min(80%,19rem);
+}
+.game--story .story-view--avg .story-bottom-frame{
+ position:absolute;bottom:0;left:0;right:0;
+ z-index:2;width:100%;max-height:min(77dvh,40rem);
+ overflow:visible;
+}
+/* Dialogue and its options never displace the stage or determine portrait scale. */
+.game--story .story-view--avg[data-story-state="choosing"] .story-bottom-frame,
+.game--story .story-view--avg[data-story-state="confirming"] .story-bottom-frame{
+ max-height:min(82dvh,42rem);
+}
+@media(max-width:650px){
+ .game--story .story-view--avg .story-actor{width:50%;flex:none;max-width:none;height:100%}
+ .game--story .story-view--avg .story-actor--illustrated{max-width:none}
+ .game--story .story-view--avg .story-actor--center{left:25%}
+ .game--story .story-view--avg .story-portrait-canvas{
+  width:clamp(22rem,115vw,31rem);max-width:none;max-height:none;height:auto;
+ }
+ .game--story .story-view--avg .story-actor-shape{
+  height:min(58dvh,24rem);width:min(95%,13rem);
+ }
+ .game--story .story-view--avg .story-bottom-frame{max-height:78dvh}
+}
+@media(max-height:650px){
+ .game--story .story-view--avg .story-portrait-canvas{
+  width:min(42vw,20rem);
+ }
+ .game--story .story-view--avg .story-bottom-frame{max-height:85dvh}
+}
+@media(max-width:650px) and (orientation:portrait){
+ .game--story .story-view--avg .story-portrait-canvas{width:clamp(22rem,115vw,31rem)}
+}

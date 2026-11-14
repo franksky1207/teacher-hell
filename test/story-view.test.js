@@ -9,6 +9,14 @@ test('13-A: legal next/previous navigation and no blank-area finish',()=>{
  const first=renderStoryView(read());assert.match(first,/data-story-advance="next"/);assert.match(first,/data-story-action="next"/);assert.doesNotMatch(first,/data-story-action="previous"|data-story-action="finish"/);
  const last=renderStoryView(read({pageIndex:2,canNext:false,canPrevious:true,canFinish:true}));assert.match(last,/data-story-action="previous"/);assert.match(last,/data-story-action="finish"/);assert.doesNotMatch(last,/data-story-advance|data-story-action="next"/);
 });
+test('UI-2: decision panels have no meaningless page counter, regular multi-page stories keep it',()=>{
+ const choice=renderStoryView(read({pageIndex:2,canNext:false,choices}));
+ assert.doesNotMatch(choice,/class="story-page-number"/);
+ const confirm=renderStoryView(read({pageIndex:2,canNext:false,confirmation:{optionId:'listen',text:choices[0].text}}));
+ assert.doesNotMatch(confirm,/class="story-page-number"/);
+ const regular=renderStoryView(read());
+ assert.match(regular,/class="story-page-number"/);
+});
 test('13-A: choices, cancellation, confirmation are distinct',()=>{
  const list=renderStoryView(read({pageIndex:2,canNext:false,choices}));assert.equal((list.match(/data-story-action="select"/g)||[]).length,3);assert.doesNotMatch(list,/data-story-action="confirm"|data-story-advance/);
  const confirmation=renderStoryView(read({pageIndex:2,canNext:false,confirmation:{optionId:'listen',text:choices[0].text}}));assert.match(confirmation,/data-story-action="cancel"/);assert.match(confirmation,/data-story-action="confirm"/);assert.doesNotMatch(confirmation,/data-story-action="select"|data-story-advance/);

@@ -56,7 +56,10 @@ async function paintStudent(canvas,manifest){
   canvas.width=PORTRAIT_PREVIEW_STAGE.width;canvas.height=PORTRAIT_PREVIEW_STAGE.height;
   ctx.clearRect(0,0,canvas.width,canvas.height);
   ctx.drawImage(image,crop.sx,crop.sy,crop.sw,crop.sh,dest.dx,dest.dy,dest.dw,dest.dh);
-  if(canvas.isConnected)canvas.closest('.story-actor')?.classList.add('story-actor--art-ready');
+  if(canvas.isConnected){
+   canvas.closest('.story-actor')?.classList.add('story-actor--art-ready');
+   canvas.closest('.notebook-student-portrait')?.classList.add('notebook-student-portrait--art-ready');
+  }
  }catch{ /* Keep existing neutral shape, never block game or saves. */ }
 }
 async function paintAdult(canvas){

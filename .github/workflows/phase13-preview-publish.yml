@@ -23,6 +23,9 @@ on:
       - web/student-portrait-layout.js
       - web/story-scene.js
       - web/game.js
+      - web/music-player.js
+      - web/assets/music/**
+      - test/music-player.test.js
       - web/story-view.css
       - web/ui2-preview.js
       - web/story-view.js
@@ -64,7 +67,7 @@ jobs:
       - name: Verify preview source before publication
         run: |
           npm run check
-          node --test --test-isolation=none test/scene-art-integration.test.js test/ui2-preview.test.js test/story-view.test.js test/notebook-view.test.js test/notebook-people.test.js test/student-art-preview.test.js
+          node --test --test-isolation=none test/music-player.test.js test/scene-art-integration.test.js test/ui2-preview.test.js test/story-view.test.js test/notebook-view.test.js test/notebook-people.test.js test/student-art-preview.test.js
       - name: Configure automated publication identity
         run: |
           git config user.name "github-actions[bot]"
@@ -84,4 +87,8 @@ jobs:
           git cat-file -e "FETCH_HEAD:preview/web/assets/characters/students/student-001/student-001-full-sheet-uniform-summer.png"
           git cat-file -e "FETCH_HEAD:preview/assets/$version/web/game.js"
           test -z "$(git ls-tree -r --name-only FETCH_HEAD "preview/assets/$version/web/assets/characters/students")"
+          for music in school conflict serious home playful touching absurd; do
+            git cat-file -e "FETCH_HEAD:preview/web/assets/music/$music.ogg"
+          done
+          test -z "$(git ls-tree -r --name-only FETCH_HEAD "preview/assets/$version/web/assets/music")"
           echo "PASS: shared original PNGs intact; versioned module graph contains no duplicate student PNGs"

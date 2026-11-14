@@ -684,7 +684,7 @@ button:active:not(:disabled){transform:translateY(0)}
  background-attachment:fixed;
 }
 @media(max-width:650px),(orientation:portrait){
- #app:has(> .game--story:not(.ui2-preview):not(.scene-preview))){
+ #app:has(> .game--story:not(.ui2-preview):not(.scene-preview)){
   background-image:linear-gradient(180deg,rgba(8,20,37,.35),rgba(8,20,37,.48)),var(--current-scene-mobile);
   background-attachment:scroll;
  }

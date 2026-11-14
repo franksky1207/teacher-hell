@@ -2,6 +2,27 @@
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const positions=new Set(['left','right','center']);
 const expressions=new Set(['calm','happy','angry','sad','surprised','embarrassed']);
+/** Reconstruct expressions from the current stage's visible pages only.
+ * Non-speakers retain their last known expression; narration changes neither.
+ * Pure page replay restores the same display after previous/next or a reload. */
+export function expressionsThroughPage(pages,index){
+ if(!Array.isArray(pages)||!Number.isInteger(index)||index<0||index>=pages.length)throw new RangeError('Invalid story page cursor');
+ const last=new Map();
+ for(let i=0;i<=index;i++){
+  const page=pages[i];
+  if(!page||!Array.isArray(page.cast))throw new TypeError('Invalid story page cast');
+  for(const entry of page.cast){
+   if(!entry||typeof entry.role!=='string')throw new TypeError('Invalid story actor');
+   if(!last.has(entry.role))last.set(entry.role,expressions.has(entry.expression)?entry.expression:'calm');
+  }
+  const speaker=page.speaker;
+  if(speaker!==null&&speaker!==undefined){
+   const active=page.cast.find(a=>a.role===speaker);
+   if(active)last.set(speaker,expressions.has(active.expression)?active.expression:'calm');
+  }
+ }
+ return last;
+}
 // Stable initial cohort order is gender-balanced and independent of the seat list or name.
 // New arrivals / other classes are not assigned arbitrary portrait identities.
 export function studentArtForActor(registry,id){
@@ -10,14 +31,14 @@ export function studentArtForActor(registry,id){
  const index=initial.indexOf(id);
  return index<0?null:'student-'+String(index+1).padStart(3,'0');
 }
-export function projectStoryScene(world,view){
+export function projectStoryScene(world,view,expressionHistory=null){
  const page=view?.page,worldData=world?.numeric?.evolution?.world;
  if(!page||typeof page.text!=='string'||!worldData?.registry||!worldData?.people)throw new TypeError('Invalid story scene');
  const cast=page.presentation==='phone'?[]:(page.cast??[]).slice(0,2).map(entry=>{
   const id=entry.actorId,student=worldData.people[id]?.kind==='student',profile=worldData.registry.profiles?.[id];
   return {name:typeof profile?.displayName==='string'&&profile.displayName.trim()?profile.displayName:student?'學生':'對話人物',
    kind:student?'student':'adult',position:positions.has(entry.position)?entry.position:'center',
-   expression:expressions.has(entry.expression)?entry.expression:'calm',
+   expression:expressionHistory instanceof Map&&expressionHistory.has(entry.role)?expressionHistory.get(entry.role):expressions.has(entry.expression)?entry.expression:'calm',
    tone:student&&Number.isSafeInteger(profile?.appearance?.variant)?profile.appearance.variant%6:0,
    artId:student?studentArtForActor(worldData.registry,id):null,
    speaking:id===page.speaker,id};

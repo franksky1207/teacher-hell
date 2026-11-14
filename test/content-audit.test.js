@@ -154,6 +154,7 @@ test('18-B pilot: 20 isolated T10-03 event definitions satisfy formal contracts 
  const report=auditContent(records);
  assert.equal(report.structurallyValid,20,JSON.stringify(report.items.filter(x=>x.errors.length)));
  assert.equal(report.authored,20);
+ assert.equal(report.items.length,20,'each trial story receives an independent structural result');
  assert.equal(report.semanticReviewed,0,'independent editorial review has not been performed');
  assert.equal(report.byTopic['T10-03'].authored,20);
  assert.equal(report.resolverReady,0,'engineering pilot remains outside official resolver');

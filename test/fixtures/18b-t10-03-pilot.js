@@ -363,20 +363,185 @@ const variantDetails=[
   "便條上的提醒仍可能透露個人情況，教師先收起便條待確認。"
  ]
 ];
-const page=(order,text,speaker=null,expression='calm')=>({order,text,speaker,scene:'school:classroom',cast:speaker==='participant'?[{role:'participant',position:'center',expression}]:[],presentation:speaker?'dialogue':'narration'});
-const consequence=fact=>({fact,claims:[],changes:[],historyCodes:[],next:{stage:null,afterDays:0}});
+
+// Editorially authored presentation variations: location, contextual detail and natural
+// observable reaction are selected per situation, not every case forced into 2 pages.
+const scenes=[
+ 'school:classroom','school:classroom','school:classroom','school:classroom','school:classroom',
+ 'school:corridor','school:corridor','school:corridor','school:classroom','school:corridor',
+ 'school:classroom','school:classroom','school:classroom','school:courtyard','school:classroom',
+ 'school:classroom','school:classroom','school:courtyard','school:classroom','school:classroom'
+];
+const extraPages=[
+ '分餐的同學先把湯勺放下，後面排隊的人也開始看向標籤。',
+ '其中一桌的學生發現洗手台旁還有沒收起來的餐具。',
+ '同學沒有要求特別待遇，只問能否確認自己登記的餐點。',
+ '兩邊都覺得自己的需求合理，還沒有人先提出可執行的方法。',
+ '餐務公告上列了菜名，卻沒有說清楚每一道配菜的成分。',
+ '回收區的新標示只貼在其中一個桶子上，舊標示尚未拆下。',
+ '打掃時間剩下不多，兩組學生都怕自己的區域來不及整理。',
+ '一名同學提醒大家附近有插座，其他人立刻退後。',
+ '兩人各自記得不同的輪值順序，爭執反而讓清理停了下來。',
+ '隔壁班的值日生也走過來，願意一起查看清掃工具的紀錄。',
+ '坐在內側的學生表示，窗簾全拉起來又會太悶。',
+ '學生不確定是設備音量異常，還是今天的廣播內容本來比較響亮。',
+ '一名學生說想給驚喜，另一名則擔心收卡的人會覺得尷尬。',
+ '才剛掃過的通道又被風帶來一片葉子，學生無奈地笑了。',
+ '收據翻面後似乎還有其他字，但撿到的人沒有拍照傳群組。',
+ '有人開始咳嗽，清潔工作也因此停了下來。',
+ '兩個便當盒的貼紙都磨掉一角，難怪大家一時分不清。',
+ '參與清掃的學生開始聊起各組分工時的小插曲。',
+ '一旁沒有加入的同學卻問：萬一噎到了怎麼辦？',
+ '原本只是想提醒交接事項，便條內容卻可能被其他同學看見。'
+];
+const moods=['surprised','embarrassed','sad','calm','embarrassed','surprised','embarrassed','surprised','angry','angry','sad','surprised','happy','embarrassed','calm','sad','surprised','happy','embarrassed','happy'];
+// The next day does not presume which first-stage option or weighted result happened.
+const followups={
+ 2:{
+  setting:'隔天午餐，學生再次向你詢問素食餐的領取方式。',
+  line:'昨天那個問題後來有回覆嗎？今天我想先確認。',
+  options:[
+   ['一起核對今天的登記與領取紀錄','教師與學生查對當天素食登記，沒有預設昨日的原因已查明。'],
+   ['再向供餐窗口詢問回覆方式','教師向供餐人員確認如何向學生提供清楚的後續說明。'],
+   ['記下今天實際到餐情形','導師保留今日訂餐與到餐的記錄，作為後續改善的依據。'],
+   ['昨天讓你等了那麼久，今天一起先確認','教師表達理解並陪學生核對，未保證所有供餐問題已解決。']
+  ]
+ },
+ 6:{
+  setting:'隔天打掃前，兩組學生再次遇到共用長柄刷的問題。',
+  line:'老師，我們昨天排的順序，今天還能用嗎？',
+  options:[
+   ['和兩組重新確認今天的清掃需求','教師重新釐清當天工作的先後，不直接沿用昨天未確認的安排。'],
+   ['請兩組提出能接受的輪用方法','兩組各提出一個安排，是否能共同接受還需協調。'],
+   ['先盤點是否已有新的備用工具','導師查對實際工具數量，不假設借用申請已成功。'],
+   ['你們會先想到協調，我覺得很好','教師肯定同學願意商量，再請大家定下可執行的順序。']
+  ]
+ },
+ 10:{
+  setting:'隔天午休前，靠窗同學又提到光線與通風的問題。',
+  line:'我昨天有試拉一半，可是每個人感覺都不一樣。',
+  options:[
+   ['分別聽取靠窗與內側座位的感受','教師核對不同位置的實際需求，避免以一人的感受代替全班。'],
+   ['讓同學試行小範圍遮光調整','學生試著調整局部窗簾，仍需觀察是否影響他人。'],
+   ['討論輪換午休座位是否合理','教師提出討論座位安排，沒有當場擅自重排全班。'],
+   ['原來這個角落比想像中難睡，我們慢慢調','教師表達理解，沒有嘲笑學生的睡眠困擾。']
+  ]
+ },
+ 12:{
+  setting:'隔天午休前，學生再次拿著生日卡片來詢問。',
+  line:'我們先問過本人了，但還想確認這樣會不會打擾別人。',
+  options:[
+   ['請他們依收卡者意願決定送卡方式','學生尊重當事人意願，不以全班起鬨當成同意。'],
+   ['協調不影響午休的安靜時段','教師協助尋找恰當時段，沒有強迫收卡者參與公開活動。'],
+   ['邀請學生自己決定是否只私下轉交','學生理解小規模祝福也是選項，不必一定公開慶祝。'],
+   ['想到別人的感受，這份卡片更有心意','教師肯定善意與界線，讓學生自行決定是否送出。']
+  ]
+ },
+ 19:{
+  setting:'隔天午餐交接前，值日生拿著修改過的便條來找你。',
+  line:'我把名字拿掉了，但還怕有人看得出來。',
+  options:[
+   ['逐項檢查哪些內容真的需要交接','教師幫助學生減少可辨識個人的不必要資訊。'],
+   ['請值日生用適當管道個別交代','教師說明不宜公開的提醒應由有權知悉的人接收。'],
+   ['把無法確認的資訊暫時移出便條','教師先避免散布不確定的個人資料，再尋求合宜處理。'],
+   ['你有想到保護同學，這點值得肯定','教師肯定細心，並提醒仍需確認交接內容是否合法。']
+  ]
+ }
+};
+const targetedReplacements={
+ 3:['若已熟悉協調流程，先協助學生列出雙方可接受的份量範圍','教師和學生整理可執行的分量區間，但仍須餐務窗口確認。'],
+ 8:['依已知值日紀錄，陪兩人逐項查對責任','教師協助辨識分工紀錄中的差異，仍未認定任何一方說謊。'],
+ 12:['在尊重收卡者意願下協調低調的祝福方式','教師和學生確認當事人意願，再討論合適且不擾人的方式。'],
+ 16:['先查明是否有食物接觸，再協調後續用餐','教師協助確認餐食是否被動用，避免不合衛生的交換方式。'],
+ 19:['先確認交接需求，再逐項去除可能識別學生的內容','教師和學生共同縮減便條內容，保留必要資訊而不公開私事。']
+};
+const page=(order,text,speaker=null,expression='calm',scene='school:classroom')=>({
+ order,text,speaker,scene,
+ cast:speaker==='participant'?[{role:'participant',position:'center',expression}]:[],
+ presentation:speaker?'dialogue':'narration'
+});
+const result=(fact,{nextStage=null,afterDays=0,changes=[],claims=[]}={})=>({
+ fact,claims,changes,historyCodes:[],next:{stage:nextStage,afterDays}
+});
+const numeric=(role,code,delta)=>({role,holder:'person',code,delta});
 export const PILOT_18B_T10_03_RECORDS=cases.map((c,i)=>{
  const [title,cause,opening,dialogue,...options]=c;
  const id='engineering:18b-t10-03-'+String(i+1).padStart(2,'0');
- const choices=Array.from({length:4},(_,j)=>({
-  id:'choice-'+(j+1),text:options[j*2],kind:j===1?'support':j===2?'defer':'action',emotional:j===3,
-  outcome:consequence(options[j*2+1]),
-  ...(j===0?{variants:[
-   {id:'clarified',weight:[3,2,2,2,3][i%5],outcome:consequence(variantDetails[i][0])},
-   {id:'unresolved',weight:[2,3,3,2,2][i%5],outcome:consequence(variantDetails[i][1])}
-  ]}:{}),
- }));
- const story={resourceId:id,definitionId:id,version:'1',topicId:'T10-03',status:'engineering-test',choiceContract:'four-v2',premise:{description:cause,data:{type:'pilot-unique-situation',pilotIndex:i+1,title}},entry:'opening',stages:[{id:'opening',pages:[page(1,opening),page(2,dialogue,'participant','embarrassed')],choices,next:null}]};
- const definition={id,topicId:'T10-03',type:'direct',content:{resourceId:id,version:'1',status:'engineering-test'},coreCodes:['1-2','1-3','1-4'],additionalCodes:['3-1','3-2','3-3'],weights:Array(6).fill(1/6),directions:[1,1,1,1,1,1],eligibility:{people:['student'],dayKinds:['school','summer-camp','winter-camp'],slotIds:['lunch'],from:null,until:null,facts:[],history:[],numeric:[],enrollment:null},repetition:{cooldownDays:30,exclusionGroups:[],sameFact:true,reason:'Standalone engineering pilot, no live catalogue registration'}};
- return {story,definition,editorial:{cause,teacherResponsibility:options[0],knowledgeSource:opening+' '+dialogue,distinctiveConsequence:options[1]},pilot:{title,topic:'T10-03',purpose:'test-only-not-for-publication'}};
+ const staged=Object.hasOwn(followups,i);
+ const toNext={nextStage:staged?'followup':null,afterDays:staged?1:0};
+ const choices=Array.from({length:4},(_,j)=>{
+  const eventChange=(i===2&&j===3)?[numeric('participant','1-3',0.3)]
+   :(i===17&&j===3)?[numeric('participant','1-3',0.5)]
+   :(i===15&&j===0)?[numeric('teacher','2-1',-0.2)]:[];
+  const base={
+   id:'choice-'+(j+1),text:options[j*2],
+   kind:j===1?'support':j===2?'defer':'action',emotional:j===3,
+   outcome:result(options[j*2+1],{...toNext,changes:eventChange}),
+  };
+  if(j===0){
+   base.variants=[
+    {id:'clarified',weight:[3,2,2,2,3][i%5],
+      modifiers:[{role:'teacher',holder:'person',code:'3-1',influence:0.3}],
+      outcome:result(variantDetails[i][0],toNext)},
+    {id:'unresolved',weight:[2,3,3,2,2][i%5],
+      modifiers:[{role:'teacher',holder:'person',code:'3-1',influence:-0.25}],
+      outcome:result(variantDetails[i][1],toNext)}
+   ];
+  }
+  if(j===1&&Object.hasOwn(targetedReplacements,i)){
+   const [text,fact]=targetedReplacements[i];
+   base.replacement={
+    id:'guided-'+i,text,kind:'support',emotional:false,
+    requires:[{type:'numeric',role:'teacher',holder:'person',code:'3-1',min:60,max:100}],
+    outcome:result(fact,toNext)
+   };
+  }
+  return base;
+ });
+ const scene=scenes[i];
+ const pages=[
+  page(1,opening,null,'calm',scene),
+  page(2,dialogue,'participant',moods[i],scene)
+ ];
+ // Some events need an extra observable clue before the first decision.
+ if([0,2,3,5,6,7,9,10,12,13,14,15,17,18,19].includes(i)){
+  pages.push(page(3,extraPages[i],null,'calm',scene));
+ }
+ const stages=[{id:'opening',pages,choices,next:null}];
+ if(staged){
+  const data=followups[i];
+  stages.push({
+   id:'followup',
+   pages:[page(1,data.setting,null,'calm',scene),
+          page(2,data.line,'participant',i===12?'happy':'calm',scene)],
+   choices:data.options.map(([text,fact],j)=>({
+    id:'followup-'+j,text,
+    kind:j===1?'support':j===2?'defer':'action',
+    emotional:j===3,outcome:result(fact)
+   })),
+   next:null
+  });
+ }
+ const story={
+  resourceId:id,definitionId:id,version:'1',topicId:'T10-03',
+  status:'engineering-test',choiceContract:'four-v2',
+  premise:{description:cause,data:{type:'pilot-unique-situation',pilotIndex:i+1,title}},
+  entry:'opening',stages
+ };
+ const definition={
+  id,topicId:'T10-03',type:'direct',
+  content:{resourceId:id,version:'1',status:'engineering-test'},
+  coreCodes:['1-2','1-3','1-4'],
+  additionalCodes:['3-1','3-2','3-3'],
+  weights:Array(6).fill(1/6),directions:[1,1,1,1,1,1],
+  eligibility:{people:['student'],dayKinds:['school','summer-camp','winter-camp'],
+   slotIds:['lunch'],from:null,until:null,facts:[],history:[],numeric:[],enrollment:null},
+  repetition:{cooldownDays:30,exclusionGroups:[],sameFact:true,
+   reason:'Standalone engineering pilot, no live catalogue registration'}
+ };
+ return {story,definition,
+  editorial:{cause,teacherResponsibility:options[0],
+   knowledgeSource:opening+' '+dialogue,distinctiveConsequence:options[1]},
+  pilot:{title,topic:'T10-03',purpose:'test-only-not-for-publication'}
+ };
 });

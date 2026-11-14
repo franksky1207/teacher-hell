@@ -41,7 +41,8 @@ export function renderStoryView(v){
  const sceneMarkup=isStandard&&v.sceneView?renderStoryScene(v.sceneView):'';
  const speakerMarkup=isStandard&&speaker!=='旁白'?`<div class="story-speaker story-speaker--floating">${esc(speaker)}</div>`:'';
  const reader=`<div class="story-reader" aria-label="劇情閱讀"${advance}>${!isStandard?`<div class="story-speaker">${esc(speaker)}</div>`:''}${renderSpecialStoryBody(format,p.text,speaker,v.chatMessages)}</div>`;
- const navigation=`<nav class="story-navigation" aria-label="劇情翻頁"><span class="story-page-number" aria-label="頁碼">${v.pageIndex+1}／${v.pageCount}</span>${previous?button('上一頁','previous'):''}${next?button('下一頁','next'):''}</nav>`;
+ const pageIndicator=choosing||confirming?'':`<span class="story-page-number" aria-label="頁碼">${v.pageIndex+1}／${v.pageCount}</span>`;
+ const navigation=`<nav class="story-navigation" aria-label="劇情翻頁">${pageIndicator}${previous?button('上一頁','previous'):''}${next?button('下一頁','next'):''}</nav>`;
  const result=finish&&v.resultConfirmed===true?renderConfirmedResult(v):'';
  return `<section class="story-view${isStandard?' story-view--avg':''}" aria-label="劇情" data-story-format="${format}" data-story-state="${state}">${sceneMarkup}<div class="story-bottom-frame">${speakerMarkup}${reader}${navigation}${result}${actions}</div></section>`;
 

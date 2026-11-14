@@ -145,8 +145,17 @@ test('18-B pilot: 20 isolated T10-03 event definitions satisfy formal contracts 
  assert.ok(records.every(x=>x.story.status==='engineering-test'&&x.story.resourceId.startsWith('engineering:')));
  assert.ok(records.every(x=>x.story.stages[0].choices.length===4));
  assert.ok(records.every(x=>x.story.stages[0].choices.some(o=>o.emotional)));
- assert.ok(records.every(x=>x.story.stages[0].choices.filter(c=>c.variants?.length===2).length===1));
+ assert.equal(records.filter(x=>x.story.stages[0].choices.some(c=>c.variants?.length===2)).length,14,'multi-result belongs only where uncertainty is plausible');
+ assert.equal(records.filter(x=>!x.story.stages[0].choices.some(c=>c.variants)).length,6,'simple daily stories need not invent a weighted result');
  assert.ok(records.some(x=>x.story.stages[0].choices[1].variants?.length===2),'uncertain outcomes are not always attached to the first option');
+ assert.ok(records.some(x=>x.story.stages[0].choices[0].emotional)&&records.some(x=>x.story.stages[0].choices[3].emotional),'emotional approach is not hard-coded to the fourth slot');
+ for(const index of [7,15,18]){
+  const pages=records[index].story.stages[0].pages;
+  assert.ok(pages.some(p=>p.text.includes(index===7?'停止靠近積水區':index===15?'停止這區的清潔劑使用':'制止比賽吃飯')),'mandatory safety response must precede every choice');
+ }
+ for(const [index,prohibited] of [[6,'昨天排的順序'],[10,'昨天有試拉一半'],[12,'先問過本人'],[19,'我把名字拿掉了']]){
+  assert.ok(records[index].story.stages[1].pages.every(p=>!p.text.includes(prohibited)),'followup cannot presume a prior option happened');
+ }
  assert.equal(records.filter(x=>x.story.stages.length===2).length,5,'meaningful subset has next-day consequences');
  assert.equal(records.filter(x=>x.story.stages[0].choices.length===4 && x.story.stages[0].choices.some(c=>c.replacement)).length,5,'qualified replacements exist');
  assert.ok(new Set(records.map(x=>x.story.stages[0].pages[0].scene)).size>=3,'not every situation occurs in one location');
@@ -154,7 +163,7 @@ test('18-B pilot: 20 isolated T10-03 event definitions satisfy formal contracts 
  assert.ok(records.every(x=>x.story.stages.every(s=>s.choices.length===4)));
  assert.ok(records.filter(x=>x.story.stages.length===2).every(x=>x.story.stages[0].choices.every(c=>[c,...(c.replacement?[c.replacement]:[])].every(o=>
    [o.outcome,...(o.variants??[]).map(v=>v.outcome)].every(r=>r.next.stage==='followup'&&r.next.afterDays===1)))));
- assert.ok(records.every(x=>x.story.stages[0].choices.find(c=>c.variants).variants[0].modifiers?.length===1));
+ assert.ok(records.filter(x=>x.story.stages[0].choices.some(c=>c.variants)).every(x=>x.story.stages[0].choices.find(c=>c.variants).variants[0].modifiers?.length===1));
  const report=auditContent(records);
  assert.equal(report.structurallyValid,20,JSON.stringify(report.items.filter(x=>x.errors.length)));
  assert.equal(report.authored,20);

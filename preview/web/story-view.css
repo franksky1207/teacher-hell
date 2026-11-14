@@ -369,3 +369,14 @@
   bottom:clamp(4rem,12dvh,9rem);
  }
 }
+
+/* UI-2 polish: dev label belongs to the control strip, not the rehearsal canvas. */
+#app:has(> .ui2-preview) > .badge{display:none}
+/* Speaker focus is a brightness effect only; no alpha change or size/anchor movement.
+   Narration restores full brightness to everyone. */
+.game--story .story-view--avg .story-actor--listening{filter:brightness(.72);opacity:1}
+.game--story .story-view--avg .story-actor--speaking,
+.game--story .story-view--avg .story-actor--narration{filter:brightness(1);opacity:1}
+/* Keep the standard dialog baseline even when the one-page choice has no pager. */
+.game--story .story-view--avg[data-story-state="choosing"] .story-navigation,
+.game--story .story-view--avg[data-story-state="confirming"] .story-navigation{min-height:.1rem}

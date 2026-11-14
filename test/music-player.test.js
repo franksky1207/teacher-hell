@@ -9,8 +9,8 @@ test('15-E seven CC0 tracks have unique production audio keys and provenance',()
  assert.ok(MUSIC_STORE_KEY.includes('music'));
 });
 test('15-E settings are clamped and tolerate blocked or broken local storage data',()=>{
- assert.deepEqual(parseMusicSettings(null),{enabled:true,volume:0.45});
- assert.deepEqual(parseMusicSettings('invalid'),{enabled:true,volume:0.45});
+ assert.deepEqual(parseMusicSettings(null),{enabled:true,volume:0.65});
+ assert.deepEqual(parseMusicSettings('invalid'),{enabled:true,volume:0.65});
  assert.deepEqual(parseMusicSettings('{"enabled":false,"volume":2}'),{enabled:false,volume:1});
  assert.deepEqual(parseMusicSettings('{"enabled":true,"volume":-1}'),{enabled:true,volume:0});
 });

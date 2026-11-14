@@ -107,3 +107,30 @@ test('18-A: editorial label alone cannot certify the content without written evi
  withReview.editorialReview.rationale='劇情起因、權責、不同選項後果、非換皮理由皆已分項核對，供後續跨批再審查';
  assert.equal(auditContent([withReview]).semanticReviewed,1);
 });
+
+
+test('18-B: comparison with previous batches flags cross-batch duplicate without counting baseline',()=>{
+ const previous=row(0);
+ const current=row(0);
+ current.story.resourceId='content:new-batch-001';
+ current.story.definitionId=current.story.resourceId;
+ current.definition.id=current.story.definitionId;
+ current.definition.content.resourceId=current.story.resourceId;
+ const report=auditContent([current],{referenceRecords:[previous]});
+ assert.equal(report.authored,1);
+ assert.equal(report.referenceRecordsCompared,1);
+ assert.equal(report.byTopic['T01-01'].authored,1);
+ assert.equal(report.duplicates.length,1);
+ assert.deepEqual(report.duplicates[0].ids,[previous.story.resourceId,current.story.resourceId]);
+ assert.ok(report.items[0].warnings.some(x=>x.includes('similarity')));
+ const unchanged=auditContent([current],{referenceRecords:[]});
+ assert.equal(unchanged.duplicates.length,0);
+});
+test('18-B: old-old similarities are excluded from this batch report',()=>{
+ const previous=row(0),other=row(0),current=row(1);
+ other.story.resourceId='content:prior-other';other.story.definitionId=other.story.resourceId;
+ other.definition.id=other.story.definitionId;other.definition.content.resourceId=other.story.resourceId;
+ const report=auditContent([current],{referenceRecords:[previous,other]});
+ assert.equal(report.duplicates.length,0);
+ assert.equal(report.referenceRecordsCompared,2);
+});

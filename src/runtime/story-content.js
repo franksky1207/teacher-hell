@@ -153,7 +153,11 @@ export function phase17dSampleCatalogue(){
   coreCodes:['1-2','1-3','1-4'],additionalCodes:['3-1','3-2','3-3'],
   weights:Array(6).fill(1/6),directions:[1,1,1,1,1,1],
   eligibility:{people:[c.topicId==='T14-01'?'staff':'student'],dayKinds:['school','summer-camp','winter-camp'],
-   slotIds:c.topicId==='T14-01'?['p4','p5','p6','p7','p8']:[],from:null,until:null,facts:[],history:[],numeric:[],enrollment:null},
+   // Authored dialogue states an actual time and staff identity. Do not let a
+   // generic eligible student or unrelated teacher become a fake administrator.
+   slotIds:c.topicId==='T01-01'?['early']:c.topicId==='T10-04'?['lunch']:['p4','p5','p6','p7','p8'],
+   from:null,until:null,facts:[],history:[],numeric:[],enrollment:null,
+   ...(c.topicId==='T14-01'?{roleIds:[2]}:{})},
   repetition:{cooldownDays:30,exclusionGroups:[],sameFact:true,
    reason:'Distinct authored encounter; follow-up consumes no separate new-event slot'}
  }));

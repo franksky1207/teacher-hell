@@ -155,6 +155,17 @@ test('18-B pilot: 20 isolated T10-03 event definitions satisfy formal contracts 
  assert.equal(records.filter(x=>!x.story.stages[0].choices.some(c=>c.variants)).length,6,'simple daily stories need not invent a weighted result');
  assert.ok(records.some(x=>x.story.stages[0].choices[1].variants?.length===2),'uncertain outcomes are not always attached to the first option');
  assert.ok(records.some(x=>x.story.stages[0].choices[0].emotional)&&records.some(x=>x.story.stages[0].choices[3].emotional),'emotional approach is not hard-coded to the fourth slot');
+ for(const index of [4,16,19]){
+  const pages=records[index].story.stages[0].pages;
+  assert.ok(pages.some(p=>p.text.includes(index===4?'不要求試吃':index===16?'暫停食用與交換餐點':'移離公開張貼處')),'food/privacy safeguard must precede the four choices');
+ }
+ for(const index of [2,4,5,9,16,19]){
+  const choices=records[index].story.stages[0].choices;
+  assert.equal(choices.length,4);
+  assert.equal(new Set(choices.map(c=>c.text)).size,4,'each repaired event needs four distinct authored options');
+  assert.equal(new Set(choices.map(c=>c.outcome.fact)).size,4,'repaired options must have distinct authored consequences');
+ }
+ assert.ok(records[19].story.stages[1].pages.some(p=>p.text.includes('交接草稿')),'next day followup cannot assume the first note was kept public');
  for(const index of [7,15,18]){
   const pages=records[index].story.stages[0].pages;
   assert.ok(pages.some(p=>p.text.includes(index===7?'停止靠近積水區':index===15?'停止這區的清潔劑使用':'制止比賽吃飯')),'mandatory safety response must precede every choice');

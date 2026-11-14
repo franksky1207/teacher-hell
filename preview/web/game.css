@@ -329,3 +329,25 @@ button:active:not(:disabled){transform:translateY(0)}
 @media(prefers-reduced-motion:reduce){
  .dialog:has(.ui3-timetable) button,.dialog:has(.notebook) button{transition:none}
 }
+
+/* Shared approved gate artwork on setup pages and the unmapped game fallback.
+   URLs come from document.baseURI, not the versioned CSS module location. */
+#app:has(> .screen),#app:has(> .game--story:not(.ui2-preview)){
+ min-height:100dvh;
+ background-image:linear-gradient(180deg,rgba(10,23,43,.42),rgba(10,23,43,.54)),var(--fallback-gate-desktop);
+ background-position:center;
+ background-size:cover;
+ background-repeat:no-repeat;
+ background-attachment:fixed;
+}
+#app:has(> .screen) > .screen{position:relative;z-index:1}
+#app:has(> .screen) .panel{background:rgba(19,33,55,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+@media(max-width:650px),(orientation:portrait){
+ #app:has(> .screen),#app:has(> .game--story:not(.ui2-preview)){
+  background-image:linear-gradient(180deg,rgba(10,23,43,.4),rgba(10,23,43,.54)),var(--fallback-gate-mobile);
+  background-attachment:scroll;
+ }
+}
+.help-guide{line-height:1.7}
+.help-guide h3{color:#f3d8a5;margin-top:1rem}
+.help-guide p{margin:.35rem 0 .8rem}

@@ -473,6 +473,18 @@ const result=(fact,{nextStage=null,afterDays=0,changes=[],claims=[]}={})=>({
  fact,claims,changes,historyCodes:[],next:{stage:nextStage,afterDays}
 });
 const numeric=(role,code,delta)=>({role,holder:'person',code,delta});
+// Calendar audit: only the authoritative fixed-calendar day-kind/slot identifiers.
+// The calendar has no dedicated "cleaning" slot; early is a plausible pre-class
+// encounter, NOT an assertion that all schools schedule cleaning at that time.
+// School days only in this pilot; do not assume camps share this routine.
+const pilotSlots=[
+ 'lunch','lunch','lunch','lunch','lunch','lunch',
+ 'early','early','early','early',
+ 'noon','noon','noon',
+ 'early','early','early',
+ 'lunch','lunch','lunch','lunch'
+];
+
 export const PILOT_18B_T10_03_RECORDS=cases.map((c,i)=>{
  const [title,cause,opening,dialogue,...options]=c;
  const id='engineering:18b-t10-03-'+String(i+1).padStart(2,'0');
@@ -551,8 +563,8 @@ export const PILOT_18B_T10_03_RECORDS=cases.map((c,i)=>{
   coreCodes:['1-2','1-3','1-4'],
   additionalCodes:['3-1','3-2','3-3'],
   weights:Array(6).fill(1/6),directions:[1,1,1,1,1,1],
-  eligibility:{people:['student'],dayKinds:['school','summer-camp','winter-camp'],
-   slotIds:['lunch'],from:null,until:null,facts:[],history:[],numeric:[],enrollment:null},
+  eligibility:{people:['student'],dayKinds:['school'],
+   slotIds:[pilotSlots[i]],from:null,until:null,facts:[],history:[],numeric:[],enrollment:null},
   repetition:{cooldownDays:30,exclusionGroups:[],sameFact:true,
    reason:'Standalone engineering pilot, no live catalogue registration'}
  };

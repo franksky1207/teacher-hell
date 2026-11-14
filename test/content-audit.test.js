@@ -134,3 +134,61 @@ test('18-B: old-old similarities are excluded from this batch report',()=>{
  assert.equal(report.duplicates.length,0);
  assert.equal(report.referenceRecordsCompared,2);
 });
+
+test('18-B pilot: 20 isolated T10-03 event definitions satisfy formal contracts without publishing',async()=>{
+ const {PILOT_18B_T10_03_RECORDS:records}=await import('./fixtures/18b-t10-03-pilot.js');
+ assert.equal(records.length,20);
+ const slots=records.map(r=>r.definition.eligibility.slotIds[0]);
+ assert.equal(slots.length,20);
+ assert.ok(records.every(r=>r.definition.eligibility.dayKinds.length===1&&r.definition.eligibility.dayKinds[0]==='school'),'do not assume summer or winter camp cleaning/meal routines');
+ assert.deepEqual([slots[2],slots[6],slots[10],slots[12],slots[18]],['lunch','early','noon','noon','lunch'],'meal/pre-class/rest slots must match situation');
+ assert.ok(slots.every(x=>['lunch','early','noon'].includes(x)));
+
+ assert.equal(new Set(records.map(x=>x.editorial.cause)).size,20);
+ assert.match(records[0].story.premise.description,/無法確認/,'do not assert an unverified swapped label');
+ assert.match(records[14].story.premise.description,/還沒確認內容/,'receipt identity must remain unknown at discovery');
+ assert.doesNotMatch(records[9].story.premise.description,/誤拿/,'do not assert neighbouring class was at fault');
+ assert.ok(records.every(x=>x.story.status==='engineering-test'&&x.story.resourceId.startsWith('engineering:')));
+ assert.ok(records.every(x=>x.story.stages[0].choices.length===4));
+ assert.ok(records.every(x=>x.story.stages[0].choices.some(o=>o.emotional)));
+ assert.equal(records.filter(x=>x.story.stages[0].choices.some(c=>c.variants?.length===2)).length,14,'multi-result belongs only where uncertainty is plausible');
+ assert.equal(records.filter(x=>!x.story.stages[0].choices.some(c=>c.variants)).length,6,'simple daily stories need not invent a weighted result');
+ assert.ok(records.some(x=>x.story.stages[0].choices[1].variants?.length===2),'uncertain outcomes are not always attached to the first option');
+ assert.ok(records.some(x=>x.story.stages[0].choices[0].emotional)&&records.some(x=>x.story.stages[0].choices[3].emotional),'emotional approach is not hard-coded to the fourth slot');
+ for(const index of [4,16,19]){
+  const pages=records[index].story.stages[0].pages;
+  assert.ok(pages.some(p=>p.text.includes(index===4?'不要求試吃':index===16?'暫停食用與交換餐點':'移離公開張貼處')),'food/privacy safeguard must precede the four choices');
+ }
+ for(const index of [2,4,5,9,16,19]){
+  const choices=records[index].story.stages[0].choices;
+  assert.equal(choices.length,4);
+  assert.equal(new Set(choices.map(c=>c.text)).size,4,'each repaired event needs four distinct authored options');
+  assert.equal(new Set(choices.map(c=>c.outcome.fact)).size,4,'repaired options must have distinct authored consequences');
+ }
+ assert.ok(records[19].story.stages[1].pages.some(p=>p.text.includes('交接草稿')),'next day followup cannot assume the first note was kept public');
+ for(const index of [7,15,18]){
+  const pages=records[index].story.stages[0].pages;
+  assert.ok(pages.some(p=>p.text.includes(index===7?'停止靠近積水區':index===15?'停止這區的清潔劑使用':'制止比賽吃飯')),'mandatory safety response must precede every choice');
+ }
+ for(const [index,prohibited] of [[6,'昨天排的順序'],[10,'昨天有試拉一半'],[12,'先問過本人'],[19,'我把名字拿掉了']]){
+  assert.ok(records[index].story.stages[1].pages.every(p=>!p.text.includes(prohibited)),'followup cannot presume a prior option happened');
+ }
+ assert.equal(records.filter(x=>x.story.stages.length===2).length,5,'meaningful subset has next-day consequences');
+ assert.equal(records.filter(x=>x.story.stages[0].choices.length===4 && x.story.stages[0].choices.some(c=>c.replacement)).length,5,'qualified replacements exist');
+ assert.ok(new Set(records.map(x=>x.story.stages[0].pages[0].scene)).size>=3,'not every situation occurs in one location');
+ assert.ok(records.some(x=>x.story.stages[0].choices.some(c=>c.outcome.changes.length)),'not all choices are text-only');
+ assert.ok(records.every(x=>x.story.stages.every(s=>s.choices.length===4)));
+ assert.ok(records.filter(x=>x.story.stages.length===2).every(x=>x.story.stages[0].choices.every(c=>[c,...(c.replacement?[c.replacement]:[])].every(o=>
+   [o.outcome,...(o.variants??[]).map(v=>v.outcome)].every(r=>r.next.stage==='followup'&&r.next.afterDays===1)))));
+ assert.ok(records.filter(x=>x.story.stages[0].choices.some(c=>c.variants)).every(x=>x.story.stages[0].choices.find(c=>c.variants).variants[0].modifiers?.length===1));
+ const report=auditContent(records);
+ assert.equal(report.structurallyValid,20,JSON.stringify(report.items.filter(x=>x.errors.length)));
+ assert.equal(report.authored,20);
+ assert.equal(report.items.length,20,'each trial story receives an independent structural result');
+ assert.equal(report.semanticReviewed,0,'independent editorial review has not been performed');
+ assert.equal(report.byTopic['T10-03'].authored,20);
+ assert.equal(report.resolverReady,0,'engineering pilot remains outside official resolver');
+ assert.equal(report.catalogueReady,0);
+ assert.equal(report.publishedInNewCareers,'not-assessed');
+ assert.equal(report.duplicates.length,0,'inspect meaningful duplicates separately');
+});

@@ -378,3 +378,37 @@ button:active:not(:disabled){transform:translateY(0)}
 
 /* The active dialogue owns the remaining stage; no empty state-meter grid row. */
 .game--story.game--active-dialogue{grid-template-rows:auto auto minmax(0,1fr)}
+
+/* UI-3 usability: six bars are passive readouts. The single compact
+   full-width action below opens the original twelve-value panel. */
+.game--story .states .state-meter{pointer-events:none;cursor:default}
+.game--story .states .state-detail-button{
+ grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:.45rem;
+ width:100%;min-width:0;min-height:2.25rem;line-height:1.2;
+ padding:.4rem .65rem;border:1px solid rgba(214,177,110,.85);border-radius:.65rem;
+ background:rgba(25,43,65,.88);color:#f3dfb8;
+ font-size:clamp(.77rem,1.25vw,.94rem);font-weight:650;letter-spacing:.03em;
+ box-shadow:0 2px 9px rgba(5,14,25,.19);
+}
+.game--story .states .state-detail-button:hover{background:rgba(49,70,96,.95);border-color:#f0d39a}
+.game--story .states .state-detail-button:focus-visible{outline:2px solid #f0d39a;outline-offset:2px}
+@media(max-width:650px){
+ /* The existing six bars occupied about two compact rows. Redistribute
+    exactly that footprint among three tightly spaced rows without
+    altering the main grid, hero scene or bottom dialogue frame. */
+ .game--story:not(.game--active-dialogue) .states{
+  height:5rem;min-height:5rem;max-height:5rem;
+  grid-template-rows:repeat(3,minmax(0,1fr));row-gap:.125rem;column-gap:.2rem;
+ }
+ .game--story .states .state-meter{
+  min-height:0;height:100%;padding:1px .3rem;gap:1px;
+  border-radius:.42rem;overflow:hidden;
+ }
+ .game--story .states .state-meter__head{font-size:.73rem;line-height:1.12}
+ .game--story .states .state-meter__name,.game--story .states .state-meter__value{font-size:inherit;line-height:inherit}
+ .game--story .states .state-meter progress{height:3px;min-height:3px}
+ .game--story .states .state-detail-button{
+  min-height:0;height:100%;padding:1px .4rem;
+  border-radius:.48rem;font-size:.77rem;line-height:1.1;
+ }
+}

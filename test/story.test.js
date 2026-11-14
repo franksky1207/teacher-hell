@@ -28,7 +28,34 @@ test('story: single-stage completion uses the same engine',async()=>{const {SHOR
 test('story: immediate stages merge without new admission or clock',async()=>{const {IMMEDIATE_STORY}=await import('../src/runtime/story-content.js');let {world:w,eventId}=beginDemo(1,IMMEDIATE_STORY);while(readStory(w,eventId).canNext)w=apply(w,[storyAction(eventId,'next')]);w=decide(w,eventId,'angry');const cursor=runtimeOf(w).plan.cursor;w=apply(w,[storyAction(eventId,'finish')]);assert.equal(storyState(w,eventId).stage,'listen');assert.equal(runtimeOf(w).plan.cursor,cursor);assert.equal(runtimeOf(w).history.filter(h=>h.type==='stage').length,2);assert.equal(runtimeOf(w).history.filter(h=>h.data.calendarAdmission).length,1);});
 test('story: immutable resource digest and transaction selection evidence reject save tampering',()=>{const {world:w}=beginDemo();let bad=clone(w);runtimeOf(bad).history.find(h=>h.type==='story').data.state.contentDigest='bad';assert.throws(()=>restoreWorldState(bad));bad=clone(w);const s=runtimeOf(bad).history.find(h=>h.type==='event-selection').data.selected[0];s.content.version='999';assert.throws(()=>restoreWorldState(bad));bad=clone(w);delete runtimeOf(bad).commits.find(c=>c.draws.some(d=>d.candidate)).draws.find(d=>d.candidate).candidate;assert.throws(()=>restoreWorldState(bad));});
 test('story: protected slots forbid both story execution and follow-up availability',async()=>{const {compileStory}=await import('../src/runtime/story.js'),{positionFor,cursorFor}=await import('../src/calendar/calendar.js');let {w,eventId}=last();w=decide(w,eventId,'listen');w=apply(w,[storyAction(eventId,'finish')]);w.position=positionFor('2026-11-20','p6',2026);runtimeOf(w).plan.cursor=cursorFor(w.position.date,w.position.slotId,2026);assert.equal(readStory(w,eventId).canResume,false);assert.throws(()=>compileStory(w,storyAction(eventId,'resume')),/protected/);});
-test('story: qualified extra options preserve three basic choices',async()=>{const {availableStoryChoices}=await import('../src/runtime/story.js');const {world:w,eventId}=beginDemo(),e=w.events.find(e=>e.id===eventId),stage=clone(DEMO_STORY.stages[0]);stage.choices[3].requires=[{type:'fact',id:'not-yet-observed'}];assert.equal(availableStoryChoices(w,e,stage).length,3);stage.choices[3].requires=[{type:'numeric',role:'teacher',holder:'person',code:'3-1',min:0,max:100}];assert.equal(availableStoryChoices(w,e,stage).length,4);stage.choices[3].requires[0].min=100;assert.equal(availableStoryChoices(w,e,stage).length,3);});
+test('17-B: qualified replacement preserves four visible slots with a legal fallback',async()=>{
+ const {availableStoryChoices}=await import('../src/runtime/story.js'),{world:w,eventId}=beginDemo(),e=w.events.find(e=>e.id===eventId),stage=clone(DEMO_STORY.stages[0]);
+ stage.choices[3].replacement.requires=[{type:'fact',id:'not-yet-observed'}];
+ assert.deepEqual(availableStoryChoices(w,e,stage).map(o=>o.id),['listen','angry','defer','support']);
+ stage.choices[3].replacement.requires=[{type:'numeric',role:'teacher',holder:'person',code:'3-1',min:0,max:100}];
+ assert.deepEqual(availableStoryChoices(w,e,stage).map(o=>o.id),['listen','angry','defer','guided-support']);
+ stage.choices[3].replacement.requires[0].min=100;
+ assert.equal(availableStoryChoices(w,e,stage).length,4);
+ assert.equal(availableStoryChoices(w,e,stage)[3].id,'support');
+});
+test('17-B: locked replacement cannot be selected when hidden, and survives restore',()=>{
+ const {w,eventId}=last(),visible=readStory(w,eventId).choices.map(o=>o.id);
+ assert.equal(visible.length,4);assert.equal(new Set(visible).size,4);
+ const hidden=visible.includes('support')?'guided-support':'support';
+ assert.throws(()=>apply(w,[storyAction(eventId,'select',hidden)]),/illegal or unavailable locked option/);
+ const restored=restoreWorldState(JSON.stringify(w));
+ assert.deepEqual(readStory(restored,eventId).choices.map(o=>o.id),visible);
+ const chosen=visible.includes('guided-support')?'guided-support':'support';
+ const committed=decide(restored,eventId,chosen);
+ assert.equal(runtimeOf(committed).history.findLast(x=>x.type==='choice').data.optionId,chosen);
+ assert.deepEqual(restoreWorldState(JSON.stringify(committed)).events[0].choice.confirmedOptionId,chosen);
+});
+test('17-B: invalid replacement schema is rejected',()=>{
+ invalid(c=>{c.stages[0].choices[3].replacement.requires=[];});
+ invalid(c=>{c.stages[0].choices[3].replacement.id='listen';});
+ invalid(c=>{c.stages[0].choices[3].replacement.emotional=true;});
+ invalid(c=>{c.stages[0].choices[3].replacement.replacement=clone(c.stages[0].choices[0]);});
+});
 test('story: vacation driver retains direction and resumes at consumed-slot boundary',async()=>{const {nextVacationOperation}=await import('../src/runtime/schedule.js');let {world:w,eventId}=beginDemo(1,DEMO_STORY,'2027-02-01');w=apply(w,[{type:'plan-vacation',id:'story-vacation',weeks:1,direction:'rest'}]);assert.equal(nextVacationOperation(w).status,'decision-required');while(readStory(w,eventId).canNext)w=apply(w,[storyAction(eventId,'next')]);w=decide(w,eventId,'listen');w=apply(w,[storyAction(eventId,'finish')]);const next=nextVacationOperation(w);assert.equal(next.direction,'rest');assert.deepEqual(next.request.operations.map(o=>o.type),['advance-time']);w=prepareWorldOperation(w,next.request).world;assert.equal(nextVacationOperation(w).status,'follow-up-required');w=apply(w,[storyAction(eventId,'resume')]);assert.equal(nextVacationOperation(w).status,'decision-required');assert.equal(runtimeOf(w).plan.vacation.direction,'rest');});
 
 test('13-E: three document presentation kinds satisfy validated content contract',()=>{

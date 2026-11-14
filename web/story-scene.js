@@ -1,5 +1,5 @@
 /** Phase 13-D: visual placeholders sourced from the current legal story page. */
-import {storyCostume,stableAdultArt,adultPoseForExpression} from './story-art-context.js';
+import {storyCostume,stableAdultArt,adultPoseForExpression,isMatureAlumnus} from './story-art-context.js';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const positions=new Set(['left','right','center']);
 const expressions=new Set(['calm','happy','angry','sad','surprised','embarrassed']);
@@ -44,12 +44,14 @@ export function projectStoryScene(world,view,expressionHistory=null){
  if(!page||typeof page.text!=='string'||!worldData?.registry||!worldData?.people)throw new TypeError('Invalid story scene');
  const clothes=storyCostume(world);
  const cast=page.presentation==='phone'?[]:(page.cast??[]).slice(0,2).map(entry=>{
-  const id=entry.actorId,student=worldData.people[id]?.kind==='student',profile=worldData.registry.profiles?.[id];
+  const id=entry.actorId,profile=worldData.registry.profiles?.[id];
+  const alumnus=worldData.people[id]?.kind==='student'&&isMatureAlumnus(world,id);
+  const student=worldData.people[id]?.kind==='student'&&!alumnus;
   return {name:typeof profile?.displayName==='string'&&profile.displayName.trim()?profile.displayName:student?'學生':'對話人物',
    kind:student?'student':'adult',position:positions.has(entry.position)?entry.position:'center',
    expression:expressionHistory instanceof Map&&expressionHistory.has(entry.role)?expressionHistory.get(entry.role):expressions.has(entry.expression)?entry.expression:'calm',
    tone:student&&Number.isSafeInteger(profile?.appearance?.variant)?profile.appearance.variant%6:0,
-   artId:student?studentArtForActor(worldData.registry,id):stableAdultArt(id,profile),
+   artId:student?studentArtForActor(worldData.registry,id):stableAdultArt(id,profile,alumnus?'young':'adult'),
    wear:student?clothes.wear:null,cell:student?clothes.cell:null,
    speaking:id===page.speaker,id};
  });

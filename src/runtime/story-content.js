@@ -4,6 +4,7 @@ import { canonicalData } from '../changes/settlement.js';
 import { assertShape, identifier } from '../player/panel.js';
 import { TOPIC_IDS } from './topics.js';
 import { STORY_SCENE_IDS } from './story-scenes.js';
+import {PHASE17D_STORIES} from './story-samples-17d.js';
 const need=(ok,code,message)=>{if(!ok)throw new RangeError(`CONTENT_${code}: ${message}`);};
 const roles=['teacher','participant','companion'];
 const expressions=['calm','happy','angry','sad','surprised','embarrassed'];
@@ -143,7 +144,25 @@ export function aftercareCatalogue(){
  const homeroom=homeroomCatalogue(),definitions=[definition,...homeroom.definitions];
  return {type:'register-event-catalogue',catalogueId:'aftercare:representatives-v1',definitions,bindings:[{definitionId:definition.id,sources:Array(6).fill('participant'),valence:'neutral'},...homeroom.bindings],engineering:false};
 }
-const assets=freeze([AFTERCARE_STORY,ENTRANCE_STORY,DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY]);
+/** Validated and frozen ready examples, not silently added to every new career. */
+export const PHASE17D_READY_STORIES=freeze(PHASE17D_STORIES.map(validateStory));
+export function phase17dSampleCatalogue(){
+ const definitions=PHASE17D_READY_STORIES.map(c=>({
+  id:c.definitionId,topicId:c.topicId,type:'direct',
+  content:{resourceId:c.resourceId,version:c.version,status:c.status},
+  coreCodes:['1-2','1-3','1-4'],additionalCodes:['3-1','3-2','3-3'],
+  weights:Array(6).fill(1/6),directions:[1,1,1,1,1,1],
+  eligibility:{people:[c.topicId==='T14-01'?'staff':'student'],dayKinds:['school','summer-camp','winter-camp'],
+   slotIds:c.topicId==='T14-01'?['p4','p5','p6','p7','p8']:[],from:null,until:null,facts:[],history:[],numeric:[],enrollment:null},
+  repetition:{cooldownDays:30,exclusionGroups:[],sameFact:true,
+   reason:'Distinct authored encounter; follow-up consumes no separate new-event slot'}
+ }));
+ const bindings=definitions.map(d=>({definitionId:d.id,sources:Array(6).fill('participant'),
+  valence:d.topicId==='T10-04'?'positive':'neutral'}));
+ return {type:'register-event-catalogue',catalogueId:'content:phase17d-samples-v1',
+  definitions,bindings,engineering:false};
+}
+const assets=freeze([AFTERCARE_STORY,ENTRANCE_STORY,DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY,...PHASE17D_READY_STORIES]);
 export function resolveStory(ref){const c=assets.find(c=>c.resourceId===ref.resourceId&&c.version===ref.version);need(c,'RESOURCE','missing immutable content version');return c;}
 export function validateStoryReference(d){const c=resolveStory(d.content);need(c.definitionId===d.id&&c.topicId===d.topicId&&c.status===d.content.status,'REFERENCE','definition/content identity');if(c.resourceId.startsWith('aftercare:'))need(canonicalData(d)===canonicalData(aftercareCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal aftercare qualification cannot be relabeled');if(c.resourceId.startsWith('entrance:'))need(canonicalData(d)===canonicalData(entranceCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal entrance qualification cannot be relabeled');if(c.resourceId.startsWith('homeroom:'))need(canonicalData(d)===canonicalData(homeroomCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal homeroom qualification/authority cannot be relabeled');return c;}
 

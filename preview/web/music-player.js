@@ -30,16 +30,6 @@ export function musicMoodForVisible({sceneName='',activities=[],text='',slotId='
  if(/^(home-|vacation-|outside-neutral)/.test(sceneName)||['private','vacation-day','festival-day'].includes(slotId))return 'home';
  return 'school';
 }
-export function musicSettingsHtml({compact=false}={}){
- return `<div class="music-settings" aria-label="音樂設定">
-  <div class="music-settings__line"><label><input type="checkbox" data-music-enabled> 播放背景音樂</label></div>
-  <label class="music-settings__volume">背景音樂音量 <input type="range" data-music-volume min="0" max="100" step="1" value="45"><output data-music-volume-label>45%</output></label>
-  ${compact?'':'<p class="music-settings__hint">開關與音量跨畫面及存檔共用，首次點擊畫面後才會開始播放。按畫面角落喇叭可立即靜音。</p>'}
- </div>`;
-}
-export function musicCreditsHtml(){
- return `<details class="music-credits"><summary>七首背景音樂來源與授權（CC0）</summary><ul>${MUSIC_TRACKS.map(t=>`<li>${t.label}：<a href="${t.source}" target="_blank" rel="noopener noreferrer">${t.title}</a> — ${t.author}（CC0，經音量標準化及轉檔）</li>`).join('')}</ul></details>`;
-}
 export class MusicPlayer {
  constructor({doc=document,store=globalThis.localStorage,AudioClass=globalThis.Audio,assetBase=new URL('./web/assets/music/',document.baseURI).href}={}){
   this.doc=doc;this.store=store;this.AudioClass=AudioClass;this.assetBase=assetBase;

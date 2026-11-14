@@ -675,3 +675,43 @@ button:active:not(:disabled){transform:translateY(0)}
   padding:.65rem
  }
 }
+
+/* 15-D: use the currently justified background, not a permanent school gate.
+   An unknown scene is a neutral gradient, never a misleading stock location. */
+#app:has(> .game--story:not(.ui2-preview):not(.scene-preview)){
+ background-image:linear-gradient(180deg,rgba(8,20,37,.35),rgba(8,20,37,.48)),var(--current-scene-desktop);
+ background-position:center;background-size:cover;background-repeat:no-repeat;
+ background-attachment:fixed;
+}
+@media(max-width:650px),(orientation:portrait){
+ #app:has(> .game--story:not(.ui2-preview):not(.scene-preview)){
+  background-image:linear-gradient(180deg,rgba(8,20,37,.35),rgba(8,20,37,.48)),var(--current-scene-mobile);
+  background-attachment:scroll;
+ }
+}
+.scene-preview{position:relative;
+ background-image:linear-gradient(180deg,rgba(7,18,35,.35),rgba(7,18,35,.2) 65%,rgba(7,18,35,.48)),var(--scene-preview-desktop,linear-gradient(135deg,#263a52,#111f32));
+ background-size:cover;background-position:center;background-repeat:no-repeat;
+ display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;
+ overflow:hidden;gap:.4rem;padding:clamp(.45rem,1.2vw,.85rem);
+}
+.scene-preview .top{border:1px solid rgba(226,193,138,.64);border-radius:9px;background:rgba(12,28,47,.78);padding:.5rem .7rem}
+.scene-preview__tools{z-index:5;display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;justify-content:center;
+ border:1px solid rgba(226,193,138,.65);border-radius:10px;background:rgba(13,29,50,.88);padding:.5rem .6rem}
+.scene-preview__tools label{display:flex;gap:.35rem;align-items:center;font-size:.81rem}
+.scene-preview__tools select{max-width:min(54vw,19rem);font-size:.82rem;padding:.34rem;background:#f6f1e4;color:#25354a;border-radius:6px}
+.scene-preview__tools button{font-size:.81rem;padding:.45rem .65rem}
+.scene-preview .story-view--avg{min-height:0;height:100%}
+.scene-preview__caption{z-index:3;margin:0;padding:.25rem .5rem;text-align:center;
+ background:rgba(11,26,45,.87);border-radius:7px;font-size:.72rem;line-height:1.4;color:#fff0d4}
+@media(max-width:650px),(orientation:portrait){
+ .scene-preview{
+  background-image:linear-gradient(180deg,rgba(7,18,35,.35),rgba(7,18,35,.2) 65%,rgba(7,18,35,.48)),var(--scene-preview-mobile,linear-gradient(180deg,#30445b,#111f32));
+  gap:.25rem;padding:.3rem;
+ }
+ .scene-preview__tools{gap:.3rem;padding:.35rem .25rem}
+ .scene-preview__tools label{font-size:.72rem}
+ .scene-preview__tools select{font-size:.73rem;max-width:48vw}
+ .scene-preview__tools button{font-size:.72rem}
+ .scene-preview__caption{font-size:.66rem}
+}

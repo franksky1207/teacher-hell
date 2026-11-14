@@ -139,6 +139,9 @@ test('18-B pilot: 20 isolated T10-03 event definitions satisfy formal contracts 
  const {PILOT_18B_T10_03_RECORDS:records}=await import('./fixtures/18b-t10-03-pilot.js');
  assert.equal(records.length,20);
  assert.equal(new Set(records.map(x=>x.editorial.cause)).size,20);
+ assert.match(records[0].story.premise.description,/無法確認/,'do not assert an unverified swapped label');
+ assert.match(records[14].story.premise.description,/還沒確認內容/,'receipt identity must remain unknown at discovery');
+ assert.doesNotMatch(records[9].story.premise.description,/誤拿/,'do not assert neighbouring class was at fault');
  assert.ok(records.every(x=>x.story.status==='engineering-test'&&x.story.resourceId.startsWith('engineering:')));
  assert.ok(records.every(x=>x.story.stages[0].choices.length===4));
  assert.ok(records.every(x=>x.story.stages[0].choices.some(o=>o.emotional)));

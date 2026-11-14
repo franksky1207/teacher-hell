@@ -46,7 +46,7 @@ export function compileStory(w,op,{panelWitness=false}={}){
  const s=c.stages.find(s=>s.id===state.stage),operations=[],inputs=[];
  if(!previous)state.choiceOrder=lockStageChoices(w,e,s,inputs);
  if(op.action==='confirm'&&(panelWitness||s.choices.some(o=>o.outcome.duty)))for(const holder of ['person','life','work','outlook']){const target={kind:'player-'+holder,id:w.identity.playerId};for(const [code,value] of Object.entries(targetRecord(w.numeric.evolution.world,target)))inputs.push({target,code,value});}
- if(op.action==='confirm'){const option=s.choices.find(o=>o.id===state.pending);for(const v of option?.variants??[])for(const modifier of v.modifiers??[]){const target={kind:modifier.role==='teacher'?`player-${modifier.holder}`:'person',id:modifier.role==='teacher'?w.identity.playerId:e.participantIds[modifier.role==='companion'?1:0]};const value=targetRecord(w.numeric.evolution.world,target)[modifier.code];need(Number.isFinite(value),'missing outcome weight input');inputs.push({target,code:modifier.code,value});}}
+ if(op.action==='confirm'){const option=optionsOf(s).find(o=>o.id===state.pending);for(const v of option?.variants??[])for(const modifier of v.modifiers??[]){const target={kind:modifier.role==='teacher'?`player-${modifier.holder}`:'person',id:modifier.role==='teacher'?w.identity.playerId:e.participantIds[modifier.role==='companion'?1:0]};const value=targetRecord(w.numeric.evolution.world,target)[modifier.code];need(Number.isFinite(value),'missing outcome weight input');inputs.push({target,code:modifier.code,value});}}
   need(op.action==='select'?typeof op.optionId==='string':op.optionId===null,'option only on select');
  if(op.action==='start'){need(!previous,'already started');
   for(const stage of c.stages)for(const option of optionsOf(stage))for(const result of [option.outcome,...(option.variants??[]).map(v=>v.outcome)])for(const change of result.changes){const target={kind:change.role==='teacher'?`player-${change.holder}`:'person',id:change.role==='teacher'?w.identity.playerId:e.participantIds[change.role==='companion'?1:0]};need(Object.hasOwn(targetRecord(w.numeric.evolution.world,target),change.code),'missing outcome field on bound actor');}
@@ -128,7 +128,7 @@ export function readStory(w,eventId){
  return {eventId,page:{...structuredClone(p),speaker:p.speaker===null?null:actor(p.speaker),cast:p.cast.map(a=>({...a,actorId:actor(a.role)}))},pageIndex:state.page,pageCount:s.pages.length,
  canPrevious:state.mode==='reading'&&state.page>0,canNext:state.mode==='reading'&&state.page<s.pages.length-1,
  choices:state.mode==='reading'&&state.page===s.pages.length-1?state.choiceOrder.map(id=>optionsOf(s).find(o=>o.id===id)).map(o=>({id:o.id,text:o.text})):[],
- confirmation:state.mode==='confirming'?{optionId:state.pending,text:s.choices.find(o=>o.id===state.pending).text}:null,
+ confirmation:state.mode==='confirming'?{optionId:state.pending,text:optionsOf(s).find(o=>o.id===state.pending).text}:null,
  canFinish:state.mode==='result'||state.mode==='reading'&&!s.choices.length&&state.page===s.pages.length-1,waiting:state.mode==='waiting',canResume:state.mode==='waiting'&&state.dueDate<=w.position.date&&permitsStoryFollowup(w,e)&&!formalSlot(w).slot.protected,ended:state.mode==='ended',teacherDelta:state.panelDelta,
  result:state.mode==='result'||state.mode==='ended'?r(w).disclosures.filter(d=>d.actorId===w.identity.playerId&&e.facts.some(f=>f.id===d.factId)).map(d=>r(w).facts.find(f=>f.id===d.factId).description):[]};
 }

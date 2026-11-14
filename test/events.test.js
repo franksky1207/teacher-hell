@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { performance } from 'node:perf_hooks';
-import { EVENT_TOPICS } from '../src/runtime/topics.js';
+import { EVENT_TOPICS,V2_EVENT_TOPICS,TOPIC_IDS } from '../src/runtime/topics.js';
 import { buildEventCandidates,validateEventDefinitions,eventIndex,weighEventCandidate,candidateConflict } from '../src/runtime/event-candidates.js';
 import { selectWorldEvents,readEventContinuations } from '../src/runtime/event-selection.js';
 import { prepareWorldOperation,createWorldSession,forkWorldAttempt } from '../src/runtime/transactions.js';
@@ -18,10 +18,20 @@ const run=(w,op=draw(),tag='draw')=>prepareWorldOperation(w,request(w,tag,[op]))
 const selection=w=>runtimeOf(w).history.find(h=>h.type==='event-selection').data;
 function positiveWorld(){const w=eventWorld();for(let seed=0;seed<100;seed++){w.random.events=createRandom(seed).snapshot();const next=run(w).world;if(selection(next).selected.length)return {w,next};}throw Error('No seed selected');}
 
-test('events: exact 96 topics, 12 categories, no fabricated playable content',()=>{
- const source=readFileSync(new URL('../docs/03-劇情與事件呈現.md',import.meta.url),'utf8');const rows=[...source.matchAll(/\| (E\d{2}-\d{2}) \| ([^|]+) \|/g)];
- assert.equal(EVENT_TOPICS.length,96);assert.deepEqual(EVENT_TOPICS.map(t=>[t.id,t.name]),rows.map(m=>[m[1],m[2].trim()]));
- assert.equal(new Set(EVENT_TOPICS.map(t=>t.categoryId)).size,12);assert.ok(EVENT_TOPICS.every(t=>t.status==='unwritten'));
+test('17-E: old 96 topics remain stable; new 128 themes are distinct, not 128 invented playable stories',()=>{
+ const source=readFileSync(new URL('../docs/03-劇情與事件呈現.md',import.meta.url),'utf8');
+ const legacy=[...source.matchAll(/\| (E\d{2}-\d{2}) \| ([^|]+) \|/g)];
+ const modern=[...source.matchAll(/\| (T\d{2}-\d{2}) \| ([^|]+) \|/g)];
+ const original=EVENT_TOPICS.filter(t=>t.id.startsWith('E'));
+ assert.equal(original.length,96);
+ assert.deepEqual(original.map(t=>[t.id,t.name]),legacy.map(m=>[m[1],m[2].trim()]));
+ assert.equal(new Set(original.map(t=>t.categoryId)).size,12);
+ assert.equal(V2_EVENT_TOPICS.length,128);
+ assert.equal(new Set(V2_EVENT_TOPICS.map(t=>t.categoryId)).size,16);
+ assert.deepEqual(V2_EVENT_TOPICS.map(t=>[t.id,t.name]),modern.map(m=>[m[1],m[2].trim()]));
+ assert.equal(EVENT_TOPICS.length,224);
+ assert.equal(TOPIC_IDS.length,new Set(TOPIC_IDS).size);
+ assert.ok(EVENT_TOPICS.every(t=>t.status==='unwritten'),'topic dictionary status is not a playable-story inventory');
 });
 test('events: contract rejects duplicate direct/cumulative, wrong core and malformed six weights',()=>{
  const d=definition();assert.throws(()=>validateEventDefinitions([d,{...d,type:'cumulative'}]));

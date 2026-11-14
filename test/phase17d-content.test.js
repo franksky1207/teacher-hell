@@ -29,9 +29,21 @@ test('17-D: three independently authored ready themes are legal, unique and enum
   assert.ok(s.stages.every(stage=>stage.choices.some(o=>o.variants?.length>=2)||s.topicId==='T01-01'));
  }
  assert.deepEqual(op.definitions.find(d=>d.topicId==='T14-01').eligibility.people,['staff']);
+ assert.deepEqual(op.definitions.find(d=>d.topicId==='T14-01').eligibility.roleIds,[2]);
+ assert.deepEqual(op.definitions.find(d=>d.topicId==='T01-01').eligibility.slotIds,['early']);
+ assert.deepEqual(op.definitions.find(d=>d.topicId==='T10-04').eligibility.slotIds,['lunch']);
  assert.deepEqual(op.bindings.map(b=>b.valence),['neutral','positive','neutral']);
  const w=eventWorld();
- assert.ok(buildEventCandidates(w,op.definitions,{engineering:false}).candidates.every(c=>!c.definitionId.startsWith('engineering:')));
+ const built=buildEventCandidates(w,op.definitions,{engineering:false});
+ assert.ok(built.candidates.every(c=>!c.definitionId.startsWith('engineering:')));
+ for(const c of built.candidates){
+  if(c.topicId==='T01-01')assert.deepEqual(c.slotIds,['early']);
+  if(c.topicId==='T10-04')assert.deepEqual(c.slotIds,['lunch']);
+  if(c.topicId==='T14-01'){
+   assert.ok(c.slotIds.every(id=>['p4','p5','p6','p7','p8'].includes(id)));
+   assert.ok(w.numeric.evolution.world.people[c.participantIds[0]].roleIds.includes(2));
+  }
+ }
 });
 
 test('17-D: three distinct events are executable through existing world transactions',()=>{

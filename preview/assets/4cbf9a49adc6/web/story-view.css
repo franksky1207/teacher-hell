@@ -333,3 +333,39 @@
  .game--story .story-view--avg .story-portrait-canvas{bottom:clamp(6rem,16dvh,10rem)}
  .game--story .story-view--avg .story-actor-shape{bottom:clamp(6rem,16dvh,10rem)}
 }
+
+/* UI-2 follow-up: a stable four-short-choice-height dialog for ordinary AVG pages.
+   Characters stay in one close-up layer across reading/choosing/confirming.
+   Longer exceptional content may expand the panel rather than being clipped. */
+.game--story .story-view--avg .story-bottom-frame{
+ min-height:clamp(11.5rem,23dvh,15rem);
+ height:auto;
+ max-height:none;
+ justify-content:flex-start;
+}
+.game--story .story-view--avg[data-story-state="choosing"] .story-bottom-frame,
+.game--story .story-view--avg[data-story-state="confirming"] .story-bottom-frame{
+ max-height:none;
+}
+/* Short dialogue gets a pleasant breathing area; navigation and choices sit
+   toward the lower edge instead of changing the panel's baseline. */
+.game--story .story-view--avg .story-reader{flex:0 0 auto;overflow:visible}
+.game--story .story-view--avg .story-navigation{margin-top:auto;flex-shrink:0}
+.game--story .story-view--avg .story-inline-choice{flex-shrink:0}
+/* Thigh-up framing: raise the same calibrated square stage, without enlarging
+   individual people or recalculating their relative heights. */
+@media(max-width:650px) and (orientation:portrait){
+ .game--story .story-view--avg .story-portrait-canvas,
+ .game--story .story-view--avg .story-actor-shape{
+  bottom:clamp(9rem,24dvh,14rem);
+ }
+ .game--story .story-view--avg .story-bottom-frame{
+  min-height:clamp(11.5rem,23dvh,14rem);
+ }
+}
+@media(min-width:651px){
+ .game--story .story-view--avg .story-portrait-canvas,
+ .game--story .story-view--avg .story-actor-shape{
+  bottom:clamp(4rem,12dvh,9rem);
+ }
+}

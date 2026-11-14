@@ -36,15 +36,14 @@ test('18-A: authoritative 17-D pilots validate without claiming auto-published c
 });
 
 test('18-A: catches malformed options, nonexistent topics and mismatched reference without altering world state',()=>{
- const invalid=row(0);
- invalid.story.stages[0].choices.pop();
- invalid.story.topicId='T99-01';
- invalid.definition.content.version='out-of-sync';
- const report=auditContent([invalid]);
+ const noFourth=row(0);noFourth.story.stages[0].choices.pop();
+ const unknownTopic=row(1);unknownTopic.story.topicId='T99-01';
+ const wrongVersion=row(2);wrongVersion.definition.content.version='out-of-sync';
+ const report=auditContent([noFourth,unknownTopic,wrongVersion]);
  assert.equal(report.structurallyValid,0);
  assert.match(report.items[0].errors.join(' / '),/CONTENT_CHOICE|CHOICE|four/i);
- assert.match(report.items[0].errors.join(' / '),/128 T-coded/);
- assert.match(report.items[0].errors.join(' / '),/identities/);
+ assert.match(report.items[1].errors.join(' / '),/128 T-coded/);
+ assert.match(report.items[2].errors.join(' / '),/identities/);
 });
 
 test('18-A: detects duplicate identities and exact or strong causal premise similarity, never silently deletes',()=>{

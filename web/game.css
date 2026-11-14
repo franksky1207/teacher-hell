@@ -435,3 +435,53 @@ button:active:not(:disabled){transform:translateY(0)}
  .dev-center__card h2{font-size:1.1rem}.dev-center__card p{font-size:.83rem}
  .dev-center__footer p{font-size:.73rem;margin:0}
 }
+
+/* UI-4: official save/setup UI and read-only presentation preview. */
+.ui4-slots-screen h1{font-size:clamp(1.8rem,4.5vw,2.8rem);margin:.4rem 0 .8rem}
+.ui4-slots-screen .slots{gap:.8rem}
+.ui4-slot-card{background:rgba(19,36,58,.85);border:1px solid rgba(223,191,137,.76);border-radius:16px;backdrop-filter:blur(9px);box-shadow:0 12px 28px rgba(8,18,32,.25)}
+.ui4-slot-card h3{font-size:1.07rem;line-height:1.35}
+.ui4-slot-card p{font-size:.87rem;line-height:1.55}
+.ui4-slot-card button{font-size:.87rem;padding:.55rem .55rem}
+.ui4-difficulty-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ui4-difficulty-cards button,.ui4-subject-cards button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;min-width:0;background:rgba(36,56,81,.78);border:1px solid rgba(225,195,144,.58);border-radius:12px;min-height:5.5rem}
+.ui4-difficulty-cards strong{font-size:1.15rem}
+.ui4-difficulty-cards span,.ui4-subject-cards span{font-size:.85rem}
+.ui4-difficulty-cards small{font-size:.75rem;color:#e3d5bd}
+.ui4-difficulty-cards button.selected,.ui4-subject-cards button.selected{background:rgba(110,87,67,.85);border-color:#f0d397;box-shadow:inset 0 0 0 1px #f0d397}
+.ui4-subject-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ui4-info-panel{color:#23344a;background:rgba(252,250,243,.93);border:1px solid rgba(198,164,107,.75);border-radius:14px;padding:1rem;line-height:1.65}
+.ui4-info-panel h3{color:#775627;font-size:1rem;margin:.4rem 0}
+.ui4-info-panel p{margin:.25rem 0 .75rem}
+.dialog:has(.ui4-info-panel){background:rgba(248,245,235,.95);color:#27374e;border-radius:16px}
+.dialog:has(.ui4-info-panel) header h2{color:#263951}
+.dialog:has(.ui4-info-panel) header button{background:#354b64;color:#fff}
+.ui4-preview{max-width:1020px;padding-top:1.3rem}
+.ui4-preview__shell{display:grid;gap:.85rem;width:100%;padding:1.1rem;border:1px solid rgba(223,191,138,.68);border-radius:18px;background:rgba(14,29,50,.91)}
+.ui4-preview__shell>header h1{font-size:clamp(1.5rem,4vw,2.4rem);margin:.2rem 0}
+.ui4-preview__shell>header p{font-size:.9rem}
+.ui4-preview__tabs{display:flex;flex-wrap:wrap;gap:.4rem}
+.ui4-preview__tabs button{font-size:.78rem;padding:.42rem .7rem;min-width:0}
+.ui4-preview__tabs button.selected{background:#785c45;border-color:#f0d397}
+.ui4-preview__stage{background:rgba(23,40,63,.93);border:1px solid rgba(216,185,131,.62);border-radius:12px;padding:1rem;min-height:17rem;overflow:auto;max-height:57dvh}
+.ui4-preview__stage>h2{font-size:1.17rem;margin:0 0 .7rem;color:#f0d397}
+.ui4-preview__stage .story-phone{border:1px solid #9cbaab;max-width:25rem;margin:auto;border-radius:18px}
+.ui4-preview__stage .story-document,.ui4-preview__stage .story-chat{max-height:none}
+.ui4-preview__stage .notebook-reviews,.ui4-preview__stage .year-result,.ui4-preview__stage .notebook-career{background:rgba(250,247,239,.97);color:#27374e;padding:1rem;border-radius:11px}
+.ui4-preview__stage .year-result-table-wrap{max-height:33dvh;overflow:auto}
+.ui4-warning-demo{border:2px solid #e1bb7e;border-radius:12px;background:#332b32;padding:1rem;line-height:1.65}
+.ui4-warning-demo h3{color:#f6d7a0}
+@media(max-width:650px){
+ .ui4-slots-screen .slots{grid-template-columns:1fr}
+ .ui4-slot-card{padding:.85rem;gap:.4rem}
+ .ui4-slot-card button{font-size:.8rem;padding:.45rem}
+ .ui4-difficulty-cards{grid-template-columns:1fr}
+ .ui4-difficulty-cards button{min-height:3.8rem}
+ .ui4-subject-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .ui4-preview{padding:.6rem .45rem 1rem}
+ .ui4-preview__shell{padding:.65rem;gap:.55rem}
+ .ui4-preview__tabs{gap:.25rem}
+ .ui4-preview__tabs button{font-size:.72rem;padding:.35rem .45rem}
+ .ui4-preview__stage{max-height:58dvh;padding:.65rem}
+ .ui4-preview__stage .notebook-reviews,.ui4-preview__stage .year-result,.ui4-preview__stage .notebook-career{padding:.65rem}
+}

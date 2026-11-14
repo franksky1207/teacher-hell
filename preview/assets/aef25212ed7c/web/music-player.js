@@ -15,8 +15,8 @@ export const MUSIC_STORE_KEY='teacher-hell:music:v1';
 export function parseMusicSettings(text){
  try {const data=JSON.parse(text);return {
   enabled:typeof data.enabled==='boolean'?data.enabled:true,
-  volume:Number.isFinite(data.volume)?Math.max(0,Math.min(1,data.volume)):0.45
- };} catch {return {enabled:true,volume:0.45};}
+  volume:Number.isFinite(data.volume)?Math.max(0,Math.min(1,data.volume)):0.65
+ };} catch {return {enabled:true,volume:0.65};}
 }
 /** Only disclosed scene, activity and current visible dialogue text; no hidden NPC values. */
 export function musicMoodForVisible({sceneName='',activities=[],text='',slotId='',moodKey=''}={}){
@@ -41,7 +41,7 @@ export class MusicPlayer {
  save(){try{this.store?.setItem(MUSIC_STORE_KEY,JSON.stringify(this.settings));}catch{}}
  mount(){
   const el=this.doc.createElement('aside');el.className='music-dock';el.setAttribute('aria-label','音樂快速控制');
-  el.innerHTML=`<button type="button" class="music-dock__toggle" data-music-toggle aria-label="關閉背景音樂" title="背景音樂開關">♪</button><button type="button" class="music-dock__expand" data-music-expand aria-expanded="false" aria-label="展開背景音量" title="調整音量">⌄</button><div class="music-dock__panel" data-music-panel hidden><label>音量 <input type="range" data-music-volume min="0" max="100" value="45"><output data-music-volume-label>45%</output></label></div>`;
+  el.innerHTML=`<button type="button" class="music-dock__toggle" data-music-toggle aria-label="關閉背景音樂" title="背景音樂開關">♪</button><button type="button" class="music-dock__expand" data-music-expand aria-expanded="false" aria-label="展開背景音量" title="調整音量">⌄</button><div class="music-dock__panel" data-music-panel hidden><label>音量 <input type="range" data-music-volume min="0" max="100" value="65"><output data-music-volume-label>45%</output></label></div>`;
   this.doc.body.append(el);this.dock=el;
   this.doc.addEventListener('click',e=>{
    if(e.target.closest('[data-music-toggle]')){e.stopPropagation();this.unlock();this.setEnabled(!this.settings.enabled);}

@@ -29,14 +29,21 @@ test('16-B: formal story page and unconfirmed option survive re-read without ext
  let {world}=beginDemo();
  const first=currentStory(world);
  world=prepareWorldOperation(world,makeStoryRequest(world,first.eventId,'next')).world;
- const saved=JSON.stringify(world);
- const restored=JSON.parse(saved);
- const page=currentStory(restored);
- assert.equal(page.pageIndex,1);
+ assert.equal(currentStory(JSON.parse(JSON.stringify(world))).pageIndex,1);
+ while(currentStory(world).canNext){
+  const view=currentStory(world);
+  world=prepareWorldOperation(world,makeStoryRequest(world,view.eventId,'next')).world;
+ }
+ const beforeChoice=structuredClone(world.numeric);
+ const view=currentStory(world);
+ world=prepareWorldOperation(world,makeStoryRequest(world,view.eventId,'select','listen')).world;
+ const saved=JSON.stringify(world),restored=JSON.parse(saved);
+ const selected=currentStory(restored);
+ assert.equal(selected.confirmation?.optionId,'listen');
  projectNotebookPeople(restored);
  projectNotebookEvents(restored);
  assert.equal(JSON.stringify(restored),saved);
- assert.deepEqual(currentStory(restored),page);
- // No new transaction or numeric update occurs from querying the same view.
- assert.deepEqual(restored.numeric,world.numeric);
+ assert.deepEqual(currentStory(restored),selected);
+ // Reading and selecting (without confirming) cannot settle numeric outcomes.
+ assert.deepEqual(restored.numeric,beforeChoice);
 });

@@ -167,3 +167,77 @@
  .background-controls{gap:.3rem}
  .background-directions button,.background-variants button{padding:.4rem .55rem}
 }
+
+
+/* UI-2 | Formal AVG story presentation; event decisions are unchanged. */
+.game--story:has(.story-view--avg) .states{display:none}
+.game--story:has(.story-view--avg){grid-template-rows:auto auto minmax(0,1fr)}
+.game--story .story-view--avg{display:flex;flex-direction:column;position:relative;min-height:0;
+ height:100%;overflow:hidden;gap:0;isolation:isolate}
+.game--story .story-view--avg .story-scene{display:block;flex:1 1 auto;min-height:0;
+ position:relative;overflow:visible;border:0;border-radius:0;background:transparent}
+.game--story .story-view--avg .story-scene-label{display:none}
+.game--story .story-view--avg .story-stage{min-height:0;height:100%;width:100%;
+ align-items:flex-end;justify-content:space-evenly;padding:0 clamp(.25rem,2vw,1rem)}
+.game--story .story-view--avg .story-actor{height:100%;min-height:0;max-width:clamp(9rem,24vw,22rem);
+ flex:0 1 45%;width:45%;filter:brightness(.84);opacity:1;
+ transition:filter .18s ease}
+.game--story .story-view--avg .story-actor--speaking,
+.game--story .story-view--avg .story-actor--narration{filter:brightness(1);opacity:1}
+.game--story .story-view--avg .story-actor--illustrated{max-width:clamp(9rem,27vw,22rem)}
+.game--story .story-view--avg .story-portrait-canvas{width:min(100%,22rem);max-height:100%;height:auto}
+.game--story .story-view--avg .story-actor-name{display:none}
+.game--story .story-view--avg .story-bottom-frame{position:relative;z-index:2;
+ flex:0 0 auto;min-width:0;max-height:min(64dvh,35rem);display:flex;flex-direction:column;
+ gap:.48rem;padding:clamp(.75rem,1.7vw,1.2rem);
+ background:rgba(13,29,52,.79);border:1px solid rgba(229,197,139,.7);
+ border-radius:16px;box-shadow:0 14px 45px rgba(4,12,27,.34);
+ backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+.game--story .story-view--avg .story-reader{background:transparent;border:0;box-shadow:none;
+ min-height:0;overflow:visible;scrollbar-gutter:auto;padding:.25rem .35rem;
+ flex:none;color:#fff}
+.game--story .story-view--avg .story-text{font-size:clamp(.95rem,1.65vw,1.1rem);
+ line-height:1.65}
+.game--story .story-view--avg .story-speaker--floating{position:absolute;left:1rem;
+ bottom:calc(100% - .34rem);padding:.34rem .95rem;font-size:.91rem;
+ margin:0;background:rgba(14,30,52,.94);border:1px solid rgba(229,197,139,.8);
+ border-radius:10px 10px 4px 4px;color:#f5dfb5;box-shadow:0 5px 17px #07162955}
+.game--story .story-view--avg .story-navigation{min-height:2.2rem;gap:.4rem}
+.game--story .story-view--avg .story-navigation button,
+.game--story .story-view--avg .story-decision-actions button,
+.game--story .story-view--avg .story-inline-choice button,
+.game--story .story-view--avg .story-finish button,
+.game--story .story-view--avg .story-resume button{
+ background:rgba(37,57,83,.75);border:1px solid rgba(231,207,161,.55);
+ border-radius:10px;color:#fff}
+.game--story .story-view--avg .story-inline-choice{display:grid;gap:.6rem;min-width:0}
+.game--story .story-view--avg .story-choice-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.48rem}
+.game--story .story-view--avg .story-choice-grid button{text-align:center;
+ min-width:0;min-height:2.7rem;padding:.55rem .45rem;line-height:1.35}
+.game--story .story-view--avg .story-inline-selected{margin:.15rem 0;color:#fff;line-height:1.6}
+.game--story .story-view--avg .story-inline-selected strong{color:#f5dfb5}
+.game--story .story-view--avg .story-decision-actions{justify-content:flex-end}
+.game--story .story-view--avg .story-finish,.game--story .story-view--avg .story-resume{
+ background:transparent;border:0;padding:0}
+.game--story .story-view--avg .story-result{background:rgba(20,41,64,.72);border-radius:10px;
+ max-height:min(24dvh,12rem);overflow:auto}
+@media(max-width:650px){
+ .game--story .story-view--avg .story-actor{max-width:none;width:48%;flex-basis:48%}
+ .game--story .story-view--avg .story-actor--illustrated{max-width:none}
+ .game--story .story-view--avg .story-portrait-canvas{width:100%}
+ .game--story .story-view--avg .story-bottom-frame{max-height:72dvh;padding:.75rem .55rem .55rem;
+ gap:.3rem;border-radius:13px}
+ .game--story .story-view--avg .story-speaker--floating{left:.6rem;font-size:.83rem}
+ .game--story .story-view--avg .story-reader{padding:.2rem .15rem}
+ .game--story .story-view--avg .story-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.35rem}
+ .game--story .story-view--avg .story-choice-grid button{padding:.4rem .35rem;min-height:2.55rem;font-size:.85rem}
+ .game--story .story-view--avg .story-text{font-size:.94rem;line-height:1.48}
+ .game--story .story-view--avg .story-navigation button{min-height:2.1rem}
+}
+@media(max-height:650px){
+ .game--story .story-view--avg .story-bottom-frame{max-height:82dvh}
+ .game--story .story-view--avg .story-actor{min-height:0}
+}
+@media(prefers-reduced-motion:reduce){
+ .game--story .story-view--avg .story-actor{transition:none}
+}

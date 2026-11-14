@@ -357,7 +357,8 @@
 @media(max-width:650px) and (orientation:portrait){
  .game--story .story-view--avg .story-portrait-canvas,
  .game--story .story-view--avg .story-actor-shape{
-  bottom:clamp(9rem,24dvh,14rem);
+  /* Anchor the artwork end behind the panel, never exactly at its top edge. */
+  bottom:clamp(5.5rem,calc(23dvh - 4.5rem),10.5rem);
  }
  .game--story .story-view--avg .story-bottom-frame{
   min-height:clamp(11.5rem,23dvh,14rem);
@@ -366,7 +367,8 @@
 @media(min-width:651px){
  .game--story .story-view--avg .story-portrait-canvas,
  .game--story .story-view--avg .story-actor-shape{
-  bottom:clamp(4rem,12dvh,9rem);
+  /* Match the foreground overlap while preserving each person's size. */
+  bottom:clamp(2rem,8dvh,5.5rem);
  }
 }
 

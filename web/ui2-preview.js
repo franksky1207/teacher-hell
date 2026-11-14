@@ -2,9 +2,11 @@
  * No event engine, save slots, world mutations, or fictional disclosures. */
 import {renderStoryView} from './story-view.js';
 import {mountStoryPortraits} from './story-portraits.js';
+import {FULL_SHEET_EXPRESSIONS} from './full-sheet-preview.js';
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
-const expressions=['calm','happy','surprised','embarrassed','angry','sad'];
-const labels=['平靜','開心','驚訝','尷尬','生氣','難過'];
+// Use the same six-cell source and order as the original student art preview.
+const expressions=FULL_SHEET_EXPRESSIONS.map(([id])=>id);
+const labels=FULL_SHEET_EXPRESSIONS.map(([,label])=>label);
 const sampleOptions=['分別了解經過','立即介入調停','尋求同事協助','我真的受夠了！'];
 export const UI2_CASES=Object.freeze([
  ['narration','旁白・雙人正常亮度'],['single','單人對話'],['dual-left','雙人・左側發言'],

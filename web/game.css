@@ -485,3 +485,107 @@ button:active:not(:disabled){transform:translateY(0)}
  .ui4-preview__stage{max-height:58dvh;padding:.65rem}
  .ui4-preview__stage .notebook-reviews,.ui4-preview__stage .year-result,.ui4-preview__stage .notebook-career{padding:.65rem}
 }
+
+/* UI-4 second pass: visual information hierarchy, not merely larger buttons. */
+.ui4-slots-screen{max-width:1180px;padding-top:clamp(1.2rem,4dvh,3rem)}
+.ui4-slots-screen__header{margin:0 auto 1.25rem;text-align:center;max-width:46rem}
+.ui4-slots-screen__header h1{font-size:clamp(2rem,4.5vw,3rem);margin:.2rem 0 .55rem}
+.ui4-slots-screen__header>p:last-child{line-height:1.5;color:#efe6d3}
+.ui4-slots-screen .slots{align-items:stretch;gap:clamp(.65rem,1.5vw,1rem)}
+.ui4-slot-card{display:flex;flex-direction:column;gap:.85rem;padding:clamp(.8rem,1.6vw,1.2rem);min-height:22rem;background:rgba(16,32,55,.91);border-color:rgba(222,186,123,.72);border-radius:16px}
+.ui4-slot-card__top{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;padding-bottom:.55rem;border-bottom:1px solid rgba(220,195,156,.28)}
+.ui4-slot-card__number{font-size:.78rem;letter-spacing:.13em;font-weight:750;color:#f1cf91}
+.ui4-slot-card__status{font-size:.72rem;padding:.25rem .55rem;border:1px solid #91a8bc;background:rgba(53,85,106,.42);border-radius:999px;color:#e9eef0}
+.ui4-slot-card__status--done{border-color:#d2bb8a;color:#f1dfbe;background:rgba(124,93,54,.35)}
+.ui4-slot-card__identity{min-height:5rem}
+.ui4-slot-card__identity h2{color:#fff1d2;font-size:clamp(1.25rem,1.8vw,1.6rem);letter-spacing:.04em;margin:0 0 .35rem}
+.ui4-slot-card__identity p{color:#d4dfeb;font-size:.9rem;margin:0;line-height:1.5}
+.ui4-slot-card__meta{display:grid;grid-template-columns:1fr;gap:0}
+.ui4-slot-card__meta>div{display:flex;justify-content:space-between;align-items:baseline;gap:.65rem;border-top:1px solid rgba(235,215,175,.14);padding:.48rem 0;min-width:0}
+.ui4-slot-card__meta span{font-size:.79rem;white-space:nowrap;color:#bbc9d9}
+.ui4-slot-card__meta strong{font-size:.91rem;text-align:right;font-weight:650;color:#f8f3e8;overflow-wrap:anywhere}
+.ui4-slot-card__actions{display:grid;gap:.65rem;margin-top:auto}
+.ui4-slot-card .ui4-slot-card__primary{width:100%;padding:.75rem .6rem;font-size:1.01rem;font-weight:750;border-radius:10px;background:#b18a50;color:#101f32;border:1px solid #f1d49d}
+.ui4-slot-card .ui4-slot-card__primary:hover,.ui4-slot-card .ui4-slot-card__primary:focus-visible{background:#f3d9a7;color:#101f32}
+.ui4-slot-card__more{border:1px solid rgba(209,191,161,.4);border-radius:9px;background:rgba(10,24,42,.46)}
+.ui4-slot-card__more summary{padding:.55rem .75rem;cursor:pointer;font-size:.85rem;color:#e5ddcf;text-align:center;list-style-position:inside}
+.ui4-slot-card__more summary:focus-visible{outline:2px solid #f3d9a7;outline-offset:2px}
+.ui4-slot-card__more-actions{padding:.55rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem;border-top:1px solid rgba(209,191,161,.23)}
+.ui4-slot-card__more-actions button{min-width:0;font-size:.77rem;padding:.48rem .25rem;line-height:1.4;white-space:normal}
+.ui4-slot-card__more-actions .ui4-slot-card__danger{border-color:#d49a8d;color:#ffdbd4;background:rgba(101,44,49,.5)}
+.ui4-slot-card--empty .ui4-slot-card__identity{min-height:5rem}
+.ui4-slots-screen__footer{text-align:center;margin-top:1.25rem}
+.ui4-setup{max-width:1100px;padding-top:clamp(1.25rem,4dvh,3rem)}
+.ui4-setup>.panel{background:rgba(16,32,55,.91);border-color:rgba(222,186,123,.72);border-radius:18px;padding:clamp(.9rem,2.6vw,1.8rem);gap:1.1rem}
+.ui4-setup__header{text-align:center}
+.ui4-setup__header h2{color:#fff1d2;font-size:clamp(1.5rem,3.4vw,2.15rem);margin:.25rem 0}
+.ui4-setup__header>p:last-child{color:#dce4ec;line-height:1.55}
+.ui4-setup__eyebrow{font-size:.76rem;letter-spacing:.13em;color:#ebc991;margin:.15rem 0 .5rem}
+.ui4-setup .ui4-difficulty-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.ui4-setup .ui4-difficulty-cards .ui4-difficulty-card{display:flex;justify-content:flex-start;gap:.6rem;min-height:16rem;padding:1.15rem .85rem;position:relative;border:1px solid rgba(202,183,150,.6);background:rgba(28,49,73,.79);border-radius:15px;text-align:center}
+.ui4-difficulty-card__level{display:block;border-radius:999px;padding:.28rem .95rem;background:rgba(225,193,144,.15);font-weight:750;color:#f2d7a6}
+.ui4-difficulty-cards .ui4-difficulty-card strong{font-size:clamp(1.2rem,2vw,1.55rem);color:#fff2da;line-height:1.25}
+.ui4-difficulty-card__tenure{font-size:1rem!important;color:#f1d09e;font-weight:700}
+.ui4-difficulty-cards .ui4-difficulty-card small{flex:1;font-size:.87rem;line-height:1.55;color:#e3e6e9}
+.ui4-card__selection{font-size:.78rem!important;letter-spacing:.05em;color:#b7c5d3}
+.ui4-setup .ui4-difficulty-card.selected,.ui4-setup .ui4-subject-card.selected{border:2px solid #edc887;background:rgba(98,75,54,.88);box-shadow:0 0 0 2px rgba(236,201,140,.15),inset 0 0 0 1px rgba(255,234,190,.12)}
+.ui4-setup .selected .ui4-card__selection{color:#ffe2ac;font-weight:750}
+.ui4-teacher-name{border:1px solid rgba(212,190,150,.53);background:rgba(9,23,42,.4);border-radius:12px;padding:.85rem 1rem}
+.ui4-setup__actions{justify-content:flex-end}
+.ui4-setup__actions .ui4-setup__next{background:#b18a50;color:#112037;border-color:#f3d9a7;font-weight:750}
+.ui4-setup__footnote{font-size:.87rem;color:#d2dfeb;line-height:1.5}
+.ui4-setup .ui4-subject-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.ui4-setup .ui4-subject-cards .ui4-subject-card{min-height:8.5rem;gap:.55rem;padding:.85rem .45rem;background:rgba(28,49,73,.79);border:1px solid rgba(202,183,150,.6);border-radius:13px}
+.ui4-subject-cards .ui4-subject-card strong{color:#fff2da;font-size:clamp(1.22rem,2vw,1.58rem)}
+.ui4-subject-card__detail{font-size:.84rem!important;color:#dbe3ee;line-height:1.4;text-align:center}
+.ui4-setup .ui4-subject-card.selected{border:2px solid #edc887;background:rgba(98,75,54,.88)}
+.ui4-slot-card__more-actions button:focus-visible,.ui4-setup button:focus-visible{outline:2px solid #ffe0a6;outline-offset:2px}
+@media(max-width:650px){
+ .ui4-slots-screen{padding-top:1.2rem}
+ .ui4-slot-card{min-height:0;padding:.85rem;gap:.5rem}
+ .ui4-slot-card__identity{min-height:0}
+ .ui4-slot-card__meta{grid-template-columns:repeat(2,minmax(0,1fr));gap:.15rem .7rem}
+ .ui4-slot-card__meta>div{display:block;padding:.3rem 0}
+ .ui4-slot-card__meta span{display:block;font-size:.75rem}
+ .ui4-slot-card__meta strong{display:block;text-align:left;font-size:.85rem;margin-top:.15rem}
+ .ui4-slot-card__meta>div:last-child{grid-column:1/-1}
+ .ui4-slot-card__actions{margin-top:.3rem}
+ .ui4-setup .ui4-difficulty-cards{grid-template-columns:1fr;gap:.55rem}
+ .ui4-setup .ui4-difficulty-cards .ui4-difficulty-card{min-height:0;padding:.7rem .8rem;gap:.25rem;align-items:flex-start;text-align:left}
+ .ui4-difficulty-card__level{font-size:.73rem}
+ .ui4-difficulty-cards .ui4-difficulty-card strong{font-size:1.2rem}
+ .ui4-difficulty-cards .ui4-difficulty-card small{flex:auto;font-size:.79rem}
+ .ui4-setup .ui4-subject-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+ .ui4-setup .ui4-subject-cards .ui4-subject-card{min-height:7.2rem;padding:.6rem .35rem;gap:.35rem}
+ .ui4-subject-card__detail{font-size:.77rem!important}
+ .ui4-setup__actions{justify-content:center}
+}
+@media(min-width:651px) and (max-width:830px){.ui4-setup .ui4-difficulty-cards{gap:.4rem}.ui4-setup .ui4-difficulty-cards .ui4-difficulty-card{padding:.85rem .5rem}.ui4-slot-card__more-actions{grid-template-columns:1fr}}
+
+/* Shared light review scheme: applies to real notebook / mandatory semester
+   popups AND the UI-4 viewer. This fixes dark text on dark inner cards. */
+.dialog:has(.notebook-reviews){background:rgba(247,244,235,.97);color:#25374d;border-color:#d1ac77}
+.dialog:has(.notebook-reviews) header h2{color:#283b50}
+.dialog:has(.notebook-reviews) header button{background:#30445c;color:#fff}
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-reviews,
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-career{color:#273a50}
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-hint{color:#516276;line-height:1.6}
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-review-details,
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-annual-card{background:rgba(255,255,255,.87);color:#26394e;border:1px solid rgba(178,151,106,.55);border-radius:12px;padding:.8rem}
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-review-details h3,
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-review-details h4,
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-career h3,
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-annual-card h4{color:#78572d}
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-review-details p,
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-review-details li,
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-review-scores p,
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-annual-card p{color:#26394e}
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-review-picker button{background:#334a64;color:#fff2dd;border:1px solid #c5ac80}
+:is(.dialog:has(.notebook-reviews),.ui4-preview__stage) .notebook-review-picker button[aria-pressed="true"]{background:#8a673e;color:#fff7e7}
+.ui4-preview__stage .year-result,.ui4-preview__stage .notebook-career{color:#26394e}
+.ui4-preview__stage .year-result h3,.ui4-preview__stage .notebook-career h3,.ui4-preview__stage .notebook-career h4{color:#78572d}
+.ui4-preview__stage .year-result p,.ui4-preview__stage .year-result li,.ui4-preview__stage .year-result th,.ui4-preview__stage .year-result td{color:#26394e}
+.ui4-preview__stage .year-result-table th,.ui4-preview__stage .year-result-table td{border-color:rgba(153,136,107,.45)}
+.ui4-preview__stage .year-result-nav button{background:#334a64;color:#fff2dd}
+.ui4-preview__stage .year-result-nav button:disabled{opacity:.45}
+.ui4-preview__stage .notebook-ending{color:#26394e;border-color:#b48a49}

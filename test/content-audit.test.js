@@ -27,9 +27,10 @@ test('18-A: authoritative 17-D pilots validate without claiming auto-published c
  assert.equal(report.catalogueReady,3);
  assert.equal(report.semanticReviewed,0);
  assert.equal(report.publishedInNewCareers,'not-assessed');
- assert.equal(report.byTopic['T01-01'].remainingToMinimum,19);
- assert.equal(report.byTopic['T10-04'].remainingToMinimum,19);
- assert.equal(report.byTopic['T14-01'].remainingToMinimum,19);
+ assert.equal(report.byTopic['T01-01'].remainingDraftToMinimum,19);
+ assert.equal(report.byTopic['T01-01'].remainingToMinimum,20,'unreviewed drafts cannot be counted as completed');
+ assert.equal(report.byTopic['T10-04'].remainingDraftToMinimum,19);
+ assert.equal(report.byTopic['T14-01'].remainingDraftToMinimum,19);
  assert.equal(report.byTopic['T01-02'].remainingToMinimum,20);
  assert.equal(report.maximumPerTopic,null,'20 is a floor not a production ceiling');
  assert.equal(report.duplicates.length,0);
@@ -90,7 +91,9 @@ test('18-A: 20 events is only the minimum; 21+ events have no enforced upper cap
  const report=auditContent(many);
  assert.equal(report.structurallyValid,21);
  assert.equal(report.byTopic['T01-01'].authored,21);
- assert.equal(report.byTopic['T01-01'].remainingToMinimum,0);
+ assert.equal(report.byTopic['T01-01'].remainingDraftToMinimum,0);
+ assert.equal(report.byTopic['T01-01'].remainingValidatedToMinimum,0);
+ assert.equal(report.byTopic['T01-01'].remainingReviewedToMinimum,20,'21 drafts without review are not a completed topic');
  assert.equal(report.maximumPerTopic,null);
  assert.equal(report.resolverReady,0,'new story must be explicitly wired to the immutable asset resolver');
 });

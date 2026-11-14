@@ -219,3 +219,113 @@ button:active:not(:disabled){transform:translateY(0)}
 
 /* UI-1: keep the developer label only beside its preview entry on the home page. */
 #app:has(> .home--avg) > .badge{display:none}
+
+/* UI-3 · Translucent warm-paper data surfaces, scoped strictly to timetable/notebook.
+   These views continue to read the exact existing calendar, people and grade sources. */
+.dialog:has(.ui3-timetable),.dialog:has(.notebook){
+ --ui3-ink:#243348;--ui3-muted:#536477;--ui3-accent:#a47a38;
+ --ui3-line:rgba(158,131,85,.46);
+ --ui3-paper:rgba(252,249,241,.91);
+ --ui3-soft:rgba(255,255,255,.66);
+ color:var(--ui3-ink);
+ background:rgba(246,242,231,.91);
+ border:1px solid rgba(217,188,132,.8);
+ border-radius:17px;
+ box-shadow:0 24px 65px rgba(6,20,38,.31);
+ backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+ width:min(96vw,1120px);
+}
+.dialog:has(.ui3-timetable) header,.dialog:has(.notebook) header{
+ border-bottom:1px solid var(--ui3-line);padding-bottom:.65rem;margin-bottom:.85rem}
+.dialog:has(.ui3-timetable) header h2,.dialog:has(.notebook) header h2{
+ color:#253b56;font-size:clamp(1.15rem,2vw,1.5rem);letter-spacing:.05em;text-shadow:none}
+.dialog:has(.ui3-timetable) button,.dialog:has(.notebook) button{
+ color:var(--ui3-ink);background:rgba(255,255,255,.66);
+ border:1px solid rgba(162,140,105,.6);border-radius:9px;box-shadow:none;
+ transition:background-color .16s,border-color .16s}
+.dialog:has(.ui3-timetable) button:hover:not(:disabled),
+.dialog:has(.notebook) button:hover:not(:disabled){
+ color:#1d3049;background:rgba(232,221,199,.9);border-color:#af8c52;transform:none}
+.dialog:has(.ui3-timetable) button:focus-visible,.dialog:has(.notebook) button:focus-visible{
+ outline:2px solid #b58c4b;outline-offset:1px}
+.dialog:has(.ui3-timetable) .muted,.dialog:has(.notebook) .muted,
+.dialog:has(.notebook) .notebook-hint,.dialog:has(.notebook) .notebook-people-summary,
+.dialog:has(.notebook) .notebook-history-count,.dialog:has(.notebook) .notebook-history-meta,
+.dialog:has(.notebook) .notebook-empty p{color:var(--ui3-muted)}
+.dialog:has(.ui3-timetable) .ui3-timetable{
+ background:var(--ui3-paper);border:1px solid var(--ui3-line);padding:clamp(.5rem,1.7vw,1rem);
+ border-radius:13px;line-height:1.55}
+.ui3-timetable>.row{display:flex;flex-wrap:wrap;gap:.45rem;margin:.65rem 0}
+.ui3-timetable>.row button{flex:0 1 auto;font-size:.87rem;padding:.4rem .65rem}
+.ui3-timetable .table{gap:2px;width:100%;min-width:0;border:1px solid var(--ui3-line);
+ background:rgba(190,178,155,.38);padding:2px;border-radius:8px}
+.ui3-timetable .table .head,.ui3-timetable .table .period{
+ color:#3d5268;background:rgba(238,234,222,.96);font-weight:700;border-radius:4px}
+.ui3-timetable .table button{font-size:clamp(.74rem,1.1vw,.93rem);min-height:3rem;
+ background:rgba(255,255,255,.92);border:1px solid rgba(173,166,148,.45);
+ padding:.35rem .1rem;line-height:1.35;overflow-wrap:anywhere;word-break:normal}
+.ui3-timetable .table button:not(:empty){background:rgba(226,234,230,.93)}
+.ui3-timetable .table button:disabled{opacity:.65}
+.dialog:has(.notebook) .notebook{gap:.85rem}
+.dialog:has(.notebook) .notebook-tabs{gap:.35rem}
+.dialog:has(.notebook) .notebook-tab{font-weight:650;min-height:2.75rem}
+.dialog:has(.notebook) .notebook-tab--active,
+.dialog:has(.notebook) .notebook-tab[aria-selected="true"],
+.dialog:has(.notebook) .notebook-person--active,
+.dialog:has(.notebook) .notebook-academic-active,
+.dialog:has(.notebook) .notebook-history-active,
+.dialog:has(.notebook) .notebook-subtabs button[aria-pressed="true"],
+.dialog:has(.notebook) .notebook-history-kinds button[aria-pressed="true"],
+.dialog:has(.notebook) .notebook-person-categories button[aria-pressed="true"]{
+ background:rgba(218,204,170,.73);color:#25344a;border-color:#b18f55;outline:1px solid rgba(182,146,83,.52)}
+.dialog:has(.notebook) .notebook-content{
+ background:var(--ui3-paper);border:1px solid var(--ui3-line);border-radius:13px;
+ padding:clamp(.6rem,2vw,1.2rem);color:var(--ui3-ink)}
+.dialog:has(.notebook) .notebook-content h3,
+.dialog:has(.notebook) .notebook-content h4,
+.dialog:has(.notebook) .notebook-history-meta strong,
+.dialog:has(.notebook) .notebook-relation-edge{color:#7b592a}
+.dialog:has(.notebook) .notebook-person-list,
+.dialog:has(.notebook) .notebook-academic-list{
+ background:rgba(221,220,210,.32);padding:.25rem;border-radius:9px}
+.dialog:has(.notebook) .notebook-person-details,
+.dialog:has(.notebook) .notebook-academic-details{
+ background:var(--ui3-soft);border:1px solid rgba(159,149,129,.32);
+ border-radius:10px;padding:.65rem}
+.dialog:has(.notebook) .notebook-history-item,
+.dialog:has(.notebook) .notebook-review-details,
+.dialog:has(.notebook) .notebook-annual-card,
+.dialog:has(.notebook) .notebook-academic-credits{
+ color:var(--ui3-ink);background:rgba(255,255,255,.71);
+ border:1px solid rgba(160,150,131,.46);border-radius:10px}
+.dialog:has(.notebook) .notebook-relation-node{
+ color:var(--ui3-ink);background:rgba(238,234,223,.85);
+ border:1px solid rgba(165,146,105,.55)}
+.dialog:has(.notebook) .notebook-relation-node--link:hover{
+ background:rgba(224,208,174,.9);border-color:#a98547}
+.dialog:has(.notebook) .notebook-relations{border-top-color:var(--ui3-line)}
+.dialog:has(.notebook) .notebook-academic-table th{
+ background:rgba(222,220,208,.8);color:#25344a}
+.dialog:has(.notebook) .notebook-academic-table td,
+.dialog:has(.notebook) .notebook-academic-table th{
+ border-bottom-color:rgba(160,150,130,.42)}
+.dialog:has(.notebook) .notebook-search-label{color:#44546a}
+.dialog:has(.notebook) .notebook-search-label input{
+ color:#23344a;background:rgba(255,255,255,.83);
+ border:1px solid rgba(146,133,107,.65);border-radius:9px}
+.dialog:has(.notebook) .notebook-ending{border-left-color:#b48a49}
+@media(max-width:650px){
+ .dialog:has(.ui3-timetable),.dialog:has(.notebook){
+  width:100%;max-height:none;height:100dvh;border-radius:0;
+  padding:max(.65rem,env(safe-area-inset-top)) .5rem max(.75rem,env(safe-area-inset-bottom))}
+ .ui3-timetable .table{grid-template-columns:1.25rem repeat(5,minmax(0,1fr));gap:1px}
+ .ui3-timetable .table button{font-size:clamp(.61rem,2.5vw,.78rem);padding:.28rem .05rem;min-height:3.1rem}
+ .ui3-timetable .table .head{font-size:.74rem}
+ .ui3-timetable .table .period{font-size:.74rem}
+ .dialog:has(.notebook) .notebook-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .dialog:has(.notebook) .notebook-person-list{max-height:22dvh}
+ .dialog:has(.notebook) .notebook-academic-list{max-height:18dvh}
+}
+@media(prefers-reduced-motion:reduce){
+ .dialog:has(.ui3-timetable) button,.dialog:has(.notebook) button{transition:none}
+}

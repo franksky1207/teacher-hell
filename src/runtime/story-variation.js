@@ -18,9 +18,9 @@ export function choicePermutation(attemptId,eventId,stageId,ids){
 }
 export function outcomeDraw(world,event,stageId,option,variants){
  need(Array.isArray(variants)&&variants.length>0,'no outcome candidates');
- const difficulty=world.extensions['teacher-hell/world'].plan.career?.difficulty??'normal';
- const tau={easy:0.93,normal:1,hard:1.07}[difficulty];
- need(tau!==undefined,'unknown difficulty');
+ // Candidate difficulty multipliers (0.93 / 1 / 1.07) remain unapproved;
+ // retain neutral dispersion until representative tests and phase 21 calibration.
+ const tau=1;
  const actors={teacher:world.identity.playerId,participant:event.participantIds[0],companion:event.participantIds[1]};
  const weights=variants.map(v=>{
   let score=Math.log(v.weight);

@@ -10,14 +10,14 @@ export const UI2_CASES=Object.freeze([
  ['narration','旁白・雙人正常亮度'],['single','單人對話'],['dual-left','雙人・左側發言'],
  ['dual-right','雙人・右側發言'],['four','固定四選項'],['pages','劇情翻頁']
 ]);
-export function makeUi2PreviewState(){return {caseId:'dual-left',expression:0,page:0,selected:null,confirmed:false};}
+export function makeUi2PreviewState(){return {caseId:'dual-left',leftExpression:0,rightExpression:0,page:0,selected:null,confirmed:false};}
 function actor(id,name,position,speaking,expression){
  return {id,name,kind:'student',position,speaking,expression,artId:id,tone:0};
 }
 export function ui2PreviewProjection(state){
  const id=UI2_CASES.some(x=>x[0]===state.caseId)?state.caseId:'dual-left';
- const left=actor('student-001','林同學',id==='single'?'center':'left',id==='single'||id==='dual-left',expressions[state.expression]??'calm');
- const right=actor('student-021','陳同學','right',id==='dual-right',expressions[(state.expression+1)%6]);
+ const left=actor('student-001','林同學',id==='single'?'center':'left',id==='single'||id==='dual-left',expressions[state.leftExpression]??'calm');
+ const right=actor('student-021','陳同學','right',id==='dual-right',expressions[state.rightExpression]??'calm');
  const cast=id==='single'?[left]:[left,right];
  const narrator=id==='narration';
  const speaker=narrator?'旁白':id==='dual-right'?'陳同學':'林同學';
@@ -47,7 +47,7 @@ export function renderUi2Preview(state){
   <div class="top">UI-2｜正式劇情畫面視覺驗收・示範資料，不會寫入遊戲</div>
   <nav class="ui2-preview-tools" aria-label="劇情預覽控制">
    <label>情境 <select data-ui2-case>${UI2_CASES.map(([id,label])=>`<option value="${id}" ${state.caseId===id?'selected':''}>${escape(label)}</option>`).join('')}</select></label>
-   <label>表情 <select data-ui2-expression>${expressions.map((x,i)=>`<option value="${i}" ${state.expression===i?'selected':''}>${labels[i]}</option>`).join('')}</select></label>
+   <label>左邊表情 <select data-ui2-left-expression>${expressions.map((x,i)=>`<option value="${i}" ${state.leftExpression===i?'selected':''}>${labels[i]}</option>`).join('')}</select></label><label>右邊表情 <select data-ui2-right-expression>${expressions.map((x,i)=>`<option value="${i}" ${state.rightExpression===i?'selected':''}>${labels[i]}</option>`).join('')}</select></label>
    <button type="button" data-action="home">返回首頁</button>
   </nav>
   ${renderStoryView(ui2PreviewProjection(state))}

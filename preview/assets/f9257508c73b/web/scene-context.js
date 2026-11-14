@@ -18,6 +18,7 @@ export const SCENE_CASES=Object.freeze([
  {id:'story',label:'已知校園談話角落',context:{slotId:'p3',sceneTag:'school:counselling-corner'}},
  {id:'aftercare',label:'六月善後・教師辦公室',context:{slotId:'p4',aftercare:true}},
  {id:'unknown',label:'未確認場所・中性降級',context:{slotId:'p4',sceneTag:'unknown:location'}},
+ {id:'missing',label:'素材載入失敗・中性降級',context:{slotId:'p2',hasLesson:true,simulateMissing:true}},
 ]);
 export function sceneEntry(scene,variant='day'){
  const candidate=catalog.get(scene+'/'+variant);
@@ -32,15 +33,14 @@ export function selectScene({opening=false,completed=false,failed=false,aftercar
  if(completed||failed)return null;
  // A call or a message takes place where the teacher currently IS.
  // Never place the teacher at the remote caller's location.
- const remote=['phone','chat','notice','email','news'].includes(presentation);
- if(!remote&&sceneTag!==null&&sceneTag!==undefined){
+ if(sceneTag!==null&&sceneTag!==undefined){
   const location=storyPlaces[sceneTag];
   return location?sceneEntry(location,light(slotId)):null;
  }
  if(aftercare)return sceneEntry('school-teachers-office','day');
  if(['early','lunch','noon','dinner'].includes(slotId))return sceneEntry('school-classroom',light(slotId));
  if(slotId==='private')return sceneEntry('home-living-room','night');
- if(/^p(?:9|10|11)$/.test(slotId??''))return sceneEntry('school-classroom','night');
+ if(slotId==='evening'||/^p(?:9|10|11)$/.test(slotId??''))return sceneEntry('school-classroom','night');
  if(hasLesson)return sceneEntry('school-classroom',light(slotId));
  if(/^p[1-8]$/.test(slotId??''))return sceneEntry('school-teachers-office',light(slotId));
  // Weekends, vacations, travel and unknown slots have no guaranteed location.

@@ -1,4 +1,4 @@
-import {projectStoryScene} from './story-scene.js';
+import {projectStoryScene,expressionsThroughPage} from './story-scene.js';
 /** Phase 13-B: legal readStory projections and persisted story operations. No event generation. */
 import {readStory,storyState,storyContent} from '../src/runtime/story.js';
 import {createId} from '../src/contracts/foundation.js';
@@ -29,7 +29,7 @@ export function currentStory(world){
   if(view.waiting&&!view.canResume)continue;
   const content=storyContent(world,event.id),stage=content.stages.find(s=>s.id===state.stage);
   const chatMessages=view.page.presentation==='chat'?readChatHistory(world,event,stage,view.pageIndex):[];
-  candidates.push({...view,resultConfirmed:state.mode==='result',sceneView:projectStoryScene(world,view),chatMessages});
+  candidates.push({...view,resultConfirmed:state.mode==='result',sceneView:projectStoryScene(world,view,expressionsThroughPage(stage.pages,view.pageIndex)),chatMessages});
  }
  return candidates[0]??null;
 }

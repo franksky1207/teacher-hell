@@ -1,5 +1,6 @@
 /** Phase 13-D: visual placeholders sourced from the current legal story page. */
 import {storyCostume,stableAdultArt,adultPoseForExpression,isMatureAlumnus} from './story-art-context.js';
+import {STORY_SCENE_LOCATIONS} from '../src/runtime/story-scenes.js';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const positions=new Set(['left','right','center']);
 const expressions=new Set(['calm','happy','angry','sad','surprised','embarrassed']);
@@ -59,7 +60,7 @@ export function projectStoryScene(world,view,expressionHistory=null){
  const knownProfile=castActor?worldData.registry.profiles?.[castActor.actorId]:null;
  const knownName=typeof knownProfile?.displayName==='string'&&knownProfile.displayName.trim()?knownProfile.displayName:null;
  const speaker=page.speaker===null?'旁白':page.speaker===world.identity.playerId?'老師':cast.find(a=>a.id===page.speaker)?.name??knownName??(page.presentation==='phone'?'通話':'對話');
- return {label:page.scene==='school:counselling-corner'?'校園談話角落':'目前場景',cast,speaker};
+ return {label:STORY_SCENE_LOCATIONS[page.scene]?.label??'目前場景',cast,speaker};
 }
 export function renderStoryScene(scene){
  if(!scene||!Array.isArray(scene.cast)||scene.cast.length>2)throw new TypeError('Invalid scene cast');

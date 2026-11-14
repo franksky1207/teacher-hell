@@ -3,10 +3,11 @@ import { entranceAbsentFromHistory } from './entrance.js';
 import { canonicalData } from '../changes/settlement.js';
 import { assertShape, identifier } from '../player/panel.js';
 import { TOPIC_IDS } from './topics.js';
+import { STORY_SCENE_IDS } from './story-scenes.js';
 const need=(ok,code,message)=>{if(!ok)throw new RangeError(`CONTENT_${code}: ${message}`);};
 const roles=['teacher','participant','companion'];
 const expressions=['calm','happy','angry','sad','surprised','embarrassed'];
-const scenes=['school:counselling-corner'];
+const scenes=STORY_SCENE_IDS;
 export function validateStory(c){
  canonicalData(c);assertShape(c,['resourceId','definitionId','version','topicId','status','entry','stages',...(Object.hasOwn(c,'premise')?['premise']:[]),...(Object.hasOwn(c,'choiceContract')?['choiceContract']:[])]);
  for(const k of ['resourceId','definitionId','version','entry'])identifier(c[k]);

@@ -1,0 +1,29 @@
+name: Phase 17-C focused exposure and scene contracts
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/runtime/student-exposure.js'
+      - 'src/runtime/story-scenes.js'
+      - 'src/runtime/story-content.js'
+      - 'web/scene-context.js'
+      - 'web/story-scene.js'
+      - 'test/phase17c-exposure-and-scenes.test.js'
+      - '.github/workflows/phase17c-focused.yml'
+permissions:
+  contents: read
+jobs:
+  exposure-scenes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Only 17-C read-only exposure and authored-scene checks
+        run: node --test --test-isolation=none test/phase17c-exposure-and-scenes.test.js

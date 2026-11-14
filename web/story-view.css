@@ -325,3 +325,11 @@
 @media(max-width:650px) and (orientation:portrait){
  .game--story .story-view--avg .story-portrait-canvas{width:clamp(22rem,115vw,31rem)}
 }
+
+/* UI-2: fixed four concise choices; leave room for close-up, thigh-up sprites. */
+.game--story .story-view--avg .story-choice-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:650px){
+ .game--story .story-view--avg .story-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .game--story .story-view--avg .story-portrait-canvas{bottom:clamp(6rem,16dvh,10rem)}
+ .game--story .story-view--avg .story-actor-shape{bottom:clamp(6rem,16dvh,10rem)}
+}

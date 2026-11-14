@@ -9,14 +9,14 @@ test('UI-2 visual fixtures render in the formal reader with no hidden world depe
   const html=renderStoryView(ui2PreviewProjection(state));
   assert.match(html,/class="story-bottom-frame"/);
   assert.match(html,/story-view--avg/);
-  if(id==='four'||id==='eight'||id==='long')
-   assert.equal((html.match(/data-story-action="select"/g)||[]).length,id==='four'?4:8);
+  if(id==='four')
+   assert.equal((html.match(/data-story-action="select"/g)||[]).length,4);
   if(id==='narration')assert.match(html,/story-actor--narration/g);
   if(id==='dual-left')assert.match(html,/story-actor--speaking/);
  }
 });
 test('UI-2 rehearsal selects, cancels and confirms without using the core',()=>{
- const state=makeUi2PreviewState();state.caseId='eight';
+ const state=makeUi2PreviewState();state.caseId='four';
  ui2PreviewAction(state,'select','option-3');
  assert.equal(state.selected,'option-3');
  let html=renderStoryView(ui2PreviewProjection(state));
@@ -25,7 +25,7 @@ test('UI-2 rehearsal selects, cancels and confirms without using the core',()=>{
  ui2PreviewAction(state,'cancel');
  assert.equal(state.selected,null);
  html=renderStoryView(ui2PreviewProjection(state));
- assert.equal((html.match(/data-story-action="select"/g)||[]).length,8);
+ assert.equal((html.match(/data-story-action="select"/g)||[]).length,4);
  ui2PreviewAction(state,'select','option-2');
  ui2PreviewAction(state,'confirm');
  assert.equal(state.confirmed,true);

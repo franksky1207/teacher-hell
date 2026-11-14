@@ -5,12 +5,10 @@ import {mountStoryPortraits} from './story-portraits.js';
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
 const expressions=['calm','happy','surprised','embarrassed','angry','sad'];
 const labels=['平靜','開心','驚訝','尷尬','生氣','難過'];
-const sampleOptions=['先聽學生說明','請雙方分別敘述','暫停爭論，確認事實','請相關人員協助','安排後續個別談話','向班級說明原則','先查閱已有紀錄','明確告知處理時間'];
-const longOptions=sampleOptions.map((x,i)=>x+'，並確認後續處理方式與需要留意的細節'+(i%2?'，讓彼此有充分表達的機會':''));
+const sampleOptions=['分別了解經過','立即介入調停','尋求同事協助','我真的受夠了！'];
 export const UI2_CASES=Object.freeze([
  ['narration','旁白・雙人正常亮度'],['single','單人對話'],['dual-left','雙人・左側發言'],
- ['dual-right','雙人・右側發言'],['four','四個選項'],['eight','八個選項'],
- ['long','八個長選項'],['pages','劇情翻頁']
+ ['dual-right','雙人・右側發言'],['four','固定四選項'],['pages','劇情翻頁']
 ]);
 export function makeUi2PreviewState(){return {caseId:'dual-left',expression:0,page:0,selected:null,confirmed:false};}
 function actor(id,name,position,speaking,expression){
@@ -30,8 +28,8 @@ export function ui2PreviewProjection(state){
   '早自習剛結束，教室裡仍有零星談話聲。',
   '兩位同學走到講桌旁，希望老師能先聽聽他們的想法。',
   '你留意到兩人說法有所不同，決定先把事情釐清。'
- ][page]:narrator?'午后的陽光穿過窗邊。兩位同學站在講桌前，等待老師回應。':id==='four'||id==='eight'||id==='long'?'兩位同學對剛剛發生的事情有不同說法。你打算怎麼處理？':'老師，我想先說明事情的經過。可以聽我們說完嗎？';
- const options=(state.confirmed?[]:id==='four'?sampleOptions.slice(0,4):id==='eight'?sampleOptions:id==='long'?longOptions:[]).map((text,i)=>({id:'option-'+i,text}));
+ ][page]:narrator?'午后的陽光穿過窗邊。兩位同學站在講桌前，等待老師回應。':id==='four'?'兩位同學對剛剛發生的事情有不同說法。你打算怎麼處理？':'老師，我想先說明事情的經過。可以聽我們說完嗎？';
+ const options=(state.confirmed?[]:id==='four'?sampleOptions:[]).map((text,i)=>({id:'option-'+i,text}));
  const chosen=options.find(x=>x.id===state.selected);
  const confirmation=chosen?{optionId:chosen.id,text:chosen.text}:null;
  const finish=state.confirmed||total===1&&!options.length||id==='pages'&&page===total-1;

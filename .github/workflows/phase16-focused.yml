@@ -1,0 +1,28 @@
+name: Phase 16 focused UI integration
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/phase16-focused.yml'
+      - 'test/phase16b-integration.test.js'
+      - 'web/game.js'
+      - 'web/story-controller.js'
+      - 'web/notebook-view.js'
+      - 'web/notebook-people.js'
+      - 'web/notebook-events.js'
+      - 'web/progress-worker.js'
+permissions:
+  contents: read
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Check only Phase 16 cross-view persistence (no build or simulation)
+        run: node --test --test-isolation=none test/phase16b-integration.test.js

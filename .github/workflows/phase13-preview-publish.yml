@@ -19,6 +19,7 @@ on:
       - web/scene-background.js
       - test/scene-art-integration.test.js
       - test/phase15f-integration.test.js
+      - test/phase16b-integration.test.js
       - scripts/portrait-calibration.py
       - scripts/deploy-preview.sh
       - web/student-portrait-layout.js
@@ -68,7 +69,7 @@ jobs:
       - name: Verify preview source before publication
         run: |
           npm run check
-          node --test --test-isolation=none test/phase15f-integration.test.js test/music-player.test.js test/scene-art-integration.test.js test/ui2-preview.test.js test/story-view.test.js test/notebook-view.test.js test/notebook-people.test.js test/student-art-preview.test.js
+          node --test --test-isolation=none test/phase15f-integration.test.js test/phase16b-integration.test.js test/music-player.test.js test/scene-art-integration.test.js test/ui2-preview.test.js test/story-view.test.js test/notebook-view.test.js test/notebook-people.test.js test/student-art-preview.test.js
       - name: Configure automated publication identity
         run: |
           git config user.name "github-actions[bot]"

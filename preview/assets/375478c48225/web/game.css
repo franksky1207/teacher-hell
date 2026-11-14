@@ -412,3 +412,26 @@ button:active:not(:disabled){transform:translateY(0)}
   border-radius:.48rem;font-size:.77rem;line-height:1.1;
  }
 }
+
+/* One developer entry on the home page; existing production preview elements
+   are reused rather than duplicated or reimplemented. */
+.dev-center{width:100%;max-width:960px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(1rem,3dvh,1.7rem);text-align:center}
+.dev-center__header{width:min(100%,43rem);padding:1.1rem 1rem;border:1px solid rgba(224,191,138,.5);border-radius:16px;background:rgba(11,27,49,.79);backdrop-filter:blur(9px)}
+.dev-center__header h1{font-size:clamp(1.65rem,4.8vw,2.7rem);letter-spacing:.08em}
+.dev-center__header p{line-height:1.55}
+.dev-center__eyebrow{font-size:.73rem;letter-spacing:.17em;color:#ebc994}
+.dev-center__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;width:min(100%,44rem)}
+.dev-center__card{display:flex;flex-direction:column;align-items:center;gap:.6rem;padding:1.15rem 1rem 1.3rem;border-radius:15px;border:1px solid rgba(218,187,133,.72);background:rgba(16,35,60,.9);box-shadow:0 9px 23px rgba(4,12,28,.23)}
+.dev-center__card h2{font-size:1.23rem;letter-spacing:.04em;margin:0}
+.dev-center__card p{font-size:.9rem;line-height:1.5;margin:0;flex:1;color:#e3dbd0}
+.dev-center__symbol{font-size:1.5rem;line-height:1;color:#e9c58b}
+.dev-center__card button{width:100%;max-width:16rem;background:rgba(40,61,88,.9);border-color:rgba(233,197,139,.8)}
+.dev-center__footer{display:flex;flex-direction:column;align-items:center;gap:.55rem}
+.dev-center__footer p{font-size:.78rem;line-height:1.5;color:#ded6c5}
+@media(max-width:650px){.dev-center{min-height:100dvh;justify-content:center;padding:1.3rem .8rem 1rem;gap:.75rem}
+ .dev-center__header{padding:.75rem .65rem}.dev-center__header h1{font-size:1.75rem}
+ .dev-center__grid{grid-template-columns:1fr;gap:.65rem}
+ .dev-center__card{gap:.4rem;padding:.75rem .9rem}
+ .dev-center__card h2{font-size:1.1rem}.dev-center__card p{font-size:.83rem}
+ .dev-center__footer p{font-size:.73rem;margin:0}
+}

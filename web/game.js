@@ -12,6 +12,8 @@ import {renderNotebookView} from './notebook-view.js';
 import {displayPanelValue,periodLabel,comparableWeeks,classLabel,aftercareCellIsEmpty,scheduledPhase} from './presentation.js';
 import {renderStoryView} from './story-view.js';
 import {selectScene,sceneImageUrls} from './scene-context.js';
+import {studentArtForActor} from './story-scene.js';
+import {storyCostume} from './story-art-context.js';
 import {renderScenePreview} from './scene-preview.js';
 import {mountSceneBackground} from './scene-background.js';
 import {renderSpecialStoryBody} from './story-formats.js';
@@ -52,6 +54,12 @@ let yearResultPage=0;
 let notebookTab='people',notebookPersonId=null,notebookPersonCategory='student',notebookPersonSearch='',notebookEventSearch='',notebookEventView='time',notebookEventTerm=null;
 let notebookEventYear='all',notebookEventKind='all',notebookEventPage=1;
 let notebookAcademicStudent=null,notebookAcademicTerm=null,notebookReviewId=null;
+function notebookStudentPortrait(world,people){
+ const person=people?.people?.find(p=>p.id===notebookPersonId);
+ if(person?.kind!=='student')return null;
+ const artId=studentArtForActor(world.numeric.evolution.world.registry,person.id);
+ return artId?{artId,...storyCostume(world)}:null;
+}
 const activityNames={clubs:'社團活動',parents:'親師活動',sports:'運動會',fair:'校慶園遊會','graduation-trip-1':'畢業旅行','graduation-trip-2':'畢業旅行','graduation-trip-3':'畢業旅行',graduation:'畢業典禮','university-fair':'大學博覽會','japan-visit':'日本交流','field-trip':'校外教學','teachers-day':'教師節活動',halloween:'萬聖節活動',christmas:'聖誕節活動'};
 const activityName=a=>activityNames[a.kind]??({'mock-gsat':'學測模考階段摘要','mock-subject':'分科模考階段摘要'})[a.kind]??a.kind;
 const labels={easy:'簡單',normal:'普通',hard:'困難'},tenures={easy:20,normal:10,hard:1};
@@ -282,6 +290,16 @@ if(cmd==='notebook-task-story'){
  return;
 }
 if(cmd==='notebook'){notebookTab='people';notebookPersonId=null;notebookPersonCategory='student';notebookPersonSearch='';notebookEventSearch='';notebookEventView='time';notebookEventTerm=null;notebookEventYear='all';notebookEventKind='all';notebookEventPage=1;notebookAcademicStudent=null;notebookAcademicTerm=null;notebookReviewId=null;const w=gameData(),plan=w.extensions['teacher-hell/world'].plan;const people=await notebookData('people');dialog('筆記本',renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:'people',people,personCategory:'student'}));return;}
+if(cmd==='notebook-portrait-toggle'){
+ const toggle=document.querySelector('.overlay .notebook-portrait-toggle');
+ const figure=document.querySelector('.overlay .notebook-student-portrait');
+ if(!toggle||!figure||notebookTab!=='people'||!notebookPersonId)return;
+ figure.hidden=!figure.hidden;
+ toggle.textContent=figure.hidden?'顯示人物立繪':'收起人物立繪';
+ toggle.setAttribute('aria-expanded',String(!figure.hidden));
+ if(!figure.hidden)void mountStoryPortraits(figure);
+ return;
+}
 if(['notebook-tab','notebook-person','notebook-person-category','notebook-event-year','notebook-event-kind','notebook-event-page','notebook-event-view','notebook-event-term','notebook-academic-student','notebook-academic-term','notebook-review'].includes(cmd)){
  if(!current||!document.querySelector('.overlay .notebook'))return;
  const w=gameData(),plan=w.extensions['teacher-hell/world'].plan;
@@ -333,7 +351,7 @@ if(['notebook-tab','notebook-person','notebook-person-category','notebook-event-
  const people=notebookTab==='people'?await notebookData('people'):null;
  const events=notebookTab==='events'?await notebookData('events'):null;
   const tasks=notebookTab==='tasks'?await notebookData('tasks'):null;
- const html=renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:notebookTab,people,selectedPersonId:notebookPersonId,personCategory:notebookPersonCategory,personSearch:notebookPersonSearch,events,eventSearch:notebookEventSearch,eventView:notebookEventView,eventTerm:notebookEventTerm,tasks,eventYear:notebookEventYear,eventKind:notebookEventKind,eventPage:notebookEventPage,academics,reviews,selectedReview:notebookReviewId,career});
+ const html=renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:notebookTab,people,selectedPersonId:notebookPersonId,personCategory:notebookPersonCategory,personSearch:notebookPersonSearch,portrait:notebookStudentPortrait(w,people),events,eventSearch:notebookEventSearch,eventView:notebookEventView,eventTerm:notebookEventTerm,tasks,eventYear:notebookEventYear,eventKind:notebookEventKind,eventPage:notebookEventPage,academics,reviews,selectedReview:notebookReviewId,career});
  document.querySelector('.overlay .notebook').outerHTML=html;return;}if(cmd==='menu'){const hasYearResult=gameData().extensions['teacher-hell/world'].history.some(h=>h.type==='annual-success'||h.type==='annual-failure');dialog('選單',`${hasYearResult?button('學年結果','year-result'):''} ${button('選擇存檔','slots')} ${button('遊戲說明','help')} ${button('返回首頁','home')}`);return;}if(cmd==='delete'){await storageAction('正在檢查存檔…',async()=>{const {summary,token}=await workerRead({slot:Number(arg),summary:true});if(!summary)return;if(confirm('確定刪除此存檔？建議先匯出備份。')&&confirm('再次確認：刪除後無法復原。')){await workerRead({slot:Number(arg),delete:true,expectedToken:token,confirmed:true});await showSlots();}});return;}
 if(cmd==='export'){await storageAction('正在驗證並匯出完整存檔…',async()=>{const {blob}=await workerRead({slot:Number(arg),export:true}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`teacher-hell-slot-${arg}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});return;}
 if(cmd==='import'){const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.onchange=async()=>{try{if(!input.files.length)return;await storageAction('正在驗證匯入存檔…',async()=>{const incoming=input.files[0],{review}=await workerRead({slot:Number(arg),reviewImport:incoming});if(!confirm(`匯入生涯 ${review.incoming.identity.careerId}？${review.replacing?'此槽已有存檔，將被覆蓋。':''}`))return;if(review.replacing&&!confirm('再次確認覆蓋原存檔？'))return;await workerRead({slot:Number(arg),import:incoming,expectedToken:review.token,confirmed:true});await showSlots();});}catch(e){alert(`匯入失敗：${e.message}`);}};input.click();}}
@@ -358,7 +376,7 @@ app.addEventListener('change',async event=>{
  else return;
  try{
   const w=gameData(),plan=w.extensions['teacher-hell/world'].plan,people=kind==='people'?await notebookData('people'):null,events=kind==='events'?await notebookData('events'):null;
-  document.querySelector('.overlay .notebook').outerHTML=renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:notebookTab,people,selectedPersonId:notebookPersonId,personCategory:notebookPersonCategory,personSearch:notebookPersonSearch,events,eventYear:notebookEventYear,eventKind:notebookEventKind,eventPage:notebookEventPage,eventSearch:notebookEventSearch,eventView:notebookEventView,eventTerm:notebookEventTerm});
+  document.querySelector('.overlay .notebook').outerHTML=renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:notebookTab,people,selectedPersonId:notebookPersonId,personCategory:notebookPersonCategory,personSearch:notebookPersonSearch,portrait:notebookStudentPortrait(w,people),events,eventYear:notebookEventYear,eventKind:notebookEventKind,eventPage:notebookEventPage,eventSearch:notebookEventSearch,eventView:notebookEventView,eventTerm:notebookEventTerm});
  }catch(error){alert('查詢失敗：'+error.message);}
 });
 app.addEventListener('change',event=>{

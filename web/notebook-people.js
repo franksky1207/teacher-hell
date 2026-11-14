@@ -51,7 +51,7 @@ export function projectNotebookPeople(world){
   facts:known.facts.map(f=>({description:f.description,subjectIds:f.subjectIds,occurredAt:f.occurredAt})),
   claims:known.claims.map(c=>({statement:c.statement,sourceId:c.sourceId,belief:c.belief}))};
 }
-export function renderNotebookPeople(data,selectedId=null,search='',category='student'){
+export function renderNotebookPeople(data,selectedId=null,search='',category='student',portrait=null){
  if(!data||!Array.isArray(data.people)||!Array.isArray(data.facts)||!Array.isArray(data.claims))throw new TypeError('Invalid notebook people projection');
  const selected=selectedId===null?null:data.people.find(p=>p.id===selectedId);
  if(selectedId!==null&&!selected)throw new RangeError('Unknown notebook person');
@@ -76,7 +76,14 @@ export function renderNotebookPeople(data,selectedId=null,search='',category='st
    '<p>最近已知紀錄'+(latestFact.occurredAt?.date?'（'+esc(latestFact.occurredAt.date)+'）':'')+'：'+esc(latestFact.description)+'</p>':
    '<p>目前尚無個別事件紀錄，不能據此判定學生的個性或表現。</p>'):'';
   const claimList=claims.length?`<ul>${claims.map(c=>`<li>${esc(c.statement)}（${beliefs[c.belief]??'待確認'}）</li>`).join('')}</ul>`:'<p>目前沒有由此人物提供且已知的說法。</p>';
-  details=`<h3>${selected.kind==='student'&&Number.isInteger(selected.seatNo)?String(selected.seatNo).padStart(2,'0')+'號　':''}${esc(selected.name)}</h3><p>${esc(selected.relation)}</p>${relation}${observation}<h4>已知事實</h4>${factList}<h4>此人物提供的說法</h4>${claimList}`;
+  // Student identification only; avoid downloading any portrait before the user expands it.
+  // Portrait ID comes from the approved initial class/transfer mapping, never from seat number.
+  const legalArt=selected.kind==='student'&&/^student-0(?:[0-3][0-9]|4[0-4])$/.test(portrait?.artId??'');
+  const clothes=new Set(['uniform-summer','uniform-winter','sports-summer','sports-winter','casual']);
+  const wear=clothes.has(portrait?.wear)?portrait.wear:'uniform-summer';
+  const cell=wear==='casual'&&['grade1-autumn-trip','grade2-autumn-trip','grade1-spring-trip','graduation-trip-1','graduation-trip-2','graduation-trip-3'].includes(portrait?.cell)?portrait.cell:'';
+  const image=legalArt&&!(wear==='casual'&&!cell)?`<button type="button" class="notebook-portrait-toggle" data-action="notebook-portrait-toggle" aria-expanded="false" aria-controls="notebook-student-portrait">顯示人物立繪</button><figure class="notebook-student-portrait" id="notebook-student-portrait" aria-label="${esc(selected.name)}的學生立繪" hidden><canvas data-story-portrait="${esc(portrait.artId)}" data-expression="happy" data-story-wear="${wear}" data-story-cell="${cell}" width="1152" height="1152" role="img" aria-label="${esc(selected.name)}・目前服裝的開心表情"></canvas><figcaption class="notebook-portrait-fallback">人物立繪載入中，若素材尚未完成仍可查看文字紀錄。</figcaption></figure>`:'';
+  details=`<h3>${selected.kind==='student'&&Number.isInteger(selected.seatNo)?String(selected.seatNo).padStart(2,'0')+'號　':''}${esc(selected.name)}</h3>${image}<p>${esc(selected.relation)}</p>${relation}${observation}<h4>已知事實</h4>${factList}<h4>此人物提供的說法</h4>${claimList}`;
  }
  const overview=data.classSummary;
  const overviewHtml=overview?`<aside class="notebook-class-summary" aria-label="已知班級概況"><h4>${overview.archived?'封存班級紀錄':'班級已知概況'}</h4><p>名冊學生 ${esc(overview.enrollment)} 人；其中 ${esc(overview.studentsWithKnownRecords)} 人有已揭露的個別事件紀錄，共 ${esc(overview.knownStudentFacts)} 筆相關事實。</p><p class="notebook-hint">這只是導師目前已知紀錄的涵蓋情形，不能代表全班的整體表現、氣氛或人際關係。</p></aside>`:'';

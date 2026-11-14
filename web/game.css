@@ -376,3 +376,6 @@ button:active:not(:disabled){transform:translateY(0)}
  .game--story .state-meter progress{height:.32rem}
  .game--story > .story--idle{height:clamp(11.5rem,23dvh,14rem)}
 }
+
+/* The active dialogue owns the remaining stage; no empty state-meter grid row. */
+.game--story.game--active-dialogue{grid-template-rows:auto auto minmax(0,1fr)}

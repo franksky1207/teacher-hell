@@ -478,28 +478,30 @@ export const PILOT_18B_T10_03_RECORDS=cases.map((c,i)=>{
  const id='engineering:18b-t10-03-'+String(i+1).padStart(2,'0');
  const staged=Object.hasOwn(followups,i);
  const toNext={nextStage:staged?'followup':null,afterDays:staged?1:0};
+ const displayOrder=[0,3,5,8,10,12,15,18].includes(i)?[3,0,1,2]:[0,1,2,3];
  const choices=Array.from({length:4},(_,j)=>{
-  const eventChange=(i===2&&j===3)?[numeric('participant','1-3',0.3)]
-   :(i===17&&j===3)?[numeric('participant','1-3',0.5)]
-   :(i===15&&j===0)?[numeric('teacher','2-1',-0.2)]:[];
+  const choiceIndex=displayOrder[j];
+  const eventChange=(i===2&&choiceIndex===3)?[numeric('participant','1-3',0.3)]
+   :(i===17&&choiceIndex===3)?[numeric('participant','1-3',0.5)]
+   :(i===15&&choiceIndex===0)?[numeric('teacher','2-1',-0.2)]:[];
   const base={
-   id:'choice-'+(j+1),text:options[j*2],
-   kind:j===1?'support':j===2?'defer':'action',emotional:j===3,
-   outcome:result(options[j*2+1],{...toNext,changes:eventChange}),
+   id:'choice-'+(j+1),text:options[choiceIndex*2],
+   kind:choiceIndex===1?'support':choiceIndex===2?'defer':'action',emotional:choiceIndex===3,
+   outcome:result(options[choiceIndex*2+1],{...toNext,changes:eventChange}),
   };
   // Put the uncertain outcome on the decision that actually drives the enquiry.
   // Information requests sometimes go through the student, sometimes via staff.
-  if(j===([0,2,4,7,11,19].includes(i)?1:0)){
+  if([0,1,2,4,6,7,9,10,11,12,15,16,18,19].includes(i)&&choiceIndex===([0,2,4,7,11,19].includes(i)?1:0)){
    base.variants=[
     {id:'clarified',weight:[3,2,2,2,3][i%5],
-      modifiers:[{role:'teacher',holder:'person',code:'3-1',influence:0.3}],
+      modifiers:[{role:[1,6,9,10,12,16,18].includes(i)?'participant':'teacher',holder:'person',code:[1,6,9,10,12,16,18].includes(i)?'1-3':'3-1',influence:0.3}],
       outcome:result(variantDetails[i][0],toNext)},
     {id:'unresolved',weight:[2,3,3,2,2][i%5],
-      modifiers:[{role:'teacher',holder:'person',code:'3-1',influence:-0.25}],
+      modifiers:[{role:[1,6,9,10,12,16,18].includes(i)?'participant':'teacher',holder:'person',code:[1,6,9,10,12,16,18].includes(i)?'1-3':'3-1',influence:-0.25}],
       outcome:result(variantDetails[i][1],toNext)}
    ];
   }
-  if(j===1&&Object.hasOwn(targetedReplacements,i)){
+  if(choiceIndex===1&&Object.hasOwn(targetedReplacements,i)){
    const [text,fact]=targetedReplacements[i];
    base.replacement={
     id:'guided-'+i,text,kind:'support',emotional:false,

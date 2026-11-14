@@ -478,7 +478,9 @@ export const PILOT_18B_T10_03_RECORDS=cases.map((c,i)=>{
    kind:j===1?'support':j===2?'defer':'action',emotional:j===3,
    outcome:result(options[j*2+1],{...toNext,changes:eventChange}),
   };
-  if(j===0){
+  // Put the uncertain outcome on the decision that actually drives the enquiry.
+  // Information requests sometimes go through the student, sometimes via staff.
+  if(j===([0,2,4,7,11,19].includes(i)?1:0)){
    base.variants=[
     {id:'clarified',weight:[3,2,2,2,3][i%5],
       modifiers:[{role:'teacher',holder:'person',code:'3-1',influence:0.3}],

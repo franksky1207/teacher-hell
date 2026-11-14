@@ -281,6 +281,88 @@ const cases=[
   "教師肯定學生的主動與謹慎。"
  ]
 ];
+const variantDetails=[
+ [
+  "餐務人員確認其中一桶屬於本班，學生等到對照紀錄後才開始分菜。",
+  "餐務資料與桶上標籤暫時不符，教師請供餐窗口再查，不讓學生冒然分食。"
+ ],
+ [
+  "兩人依時間順序找回洗淨的湯匙，確認不是有人故意拿走。",
+  "湯匙已被移到別處，仍無法確認誰拿走，雙方同意先不指控。"
+ ],
+ [
+  "名單顯示有登記素食，但餐點配送記錄尚未完成，教師請窗口補查。",
+  "登記紀錄出現不一致，學生暫時不知道午餐何時可領到。"
+ ],
+ [
+  "學生說出差異化需求，班上開始討論是否能在供餐規則內調整。",
+  "班上需求仍有衝突，導師整理雙方意見並請餐務窗口確認。"
+ ],
+ [
+  "供餐標示讓學生確認主要食材，能自行決定是否適合食用。",
+  "可取得的標示仍不完整，學生選擇暫不食用有疑慮的配菜。"
+ ],
+ [
+  "公告上有清楚分類例子，學生照新規則完成投放。",
+  "新公告未說明該項廢棄物，教師留下問題等待環保管理窗口答覆。"
+ ],
+ [
+  "兩組同意錯開使用長柄刷，先完成各自最急迫的區域。",
+  "另一組臨時需要更多時間，原定使用順序必須重新協調。"
+ ],
+ [
+  "行政人員確認有設備檢修需求，師生在封鎖區域外繼續其他工作。",
+  "積水來源尚未釐清，該區域持續停止打掃並等待專責人員處理。"
+ ],
+ [
+  "分工表確認當天值日責任，兩名學生同意依照表單處理粉筆灰。",
+  "分工紀錄不清楚，兩人仍有不同記憶，教師先協助完成必要清潔。"
+ ],
+ [
+  "編號紀錄找到原持有班級，兩班確認是拿錯而不是偷拿。",
+  "掃具編號磨損無法辨識，兩班同意先記錄問題再共同確認。"
+ ],
+ [
+  "學生試過局部遮光後表示舒服些，靠窗與內側座位都願意先觀察。",
+  "窗簾位置仍無法兼顧不同座位，教師記下需求再討論座位調整。"
+ ],
+ [
+  "廣播室收到音量回報並表示會檢查設備，午休先恢復安靜。",
+  "廣播室一時無法查明音量原因，導師保留發生時段供後續追查。"
+ ],
+ [
+  "學生和收卡者確認後，決定在不干擾午休的時段安靜送上祝福。",
+  "收卡者今天不想成為焦點，學生決定先保留卡片並尊重意願。"
+ ],
+ [
+  "學生選出通道及排水處優先清理，有限時間內排除明顯通行阻礙。",
+  "風持續吹落葉，師生先清理安全通道並留下其餘區域待續。"
+ ],
+ [
+  "導師確認收據包含姓名，採不公開內容的方式保管並通知承辦窗口。",
+  "收據缺少可辨識資訊，教師先保管並詢問失物處理程序。"
+ ],
+ [
+  "學生離開氣味較重的區域後表示舒服些，教師停止原用品的使用。",
+  "學生仍感覺不適，教師停止清潔並尋求校內適當協助。"
+ ],
+ [
+  "兩人比對盒蓋與貼紙後找回自己的便當，避免繼續互相拿錯。",
+  "外觀線索仍不足，雙方先停用並確認食物是否已有接觸。"
+ ],
+ [
+  "學生描述分組合作經驗，大家把功勞歸給實際參與的成員。",
+  "部分同學對分工貢獻有不同想法，教師不急著指定誰功勞最大。"
+ ],
+ [
+  "學生停止競速並恢復正常用餐，導師提醒不應再起鬨催促。",
+  "部分學生說只是玩笑，仍有人不放心，教師持續提醒風險。"
+ ],
+ [
+  "學生同意把涉及個人的細節改為私下交接，只留下必要公開提醒。",
+  "便條上的提醒仍可能透露個人情況，教師先收起便條待確認。"
+ ]
+];
 const page=(order,text,speaker=null,expression='calm')=>({order,text,speaker,scene:'school:classroom',cast:speaker==='participant'?[{role:'participant',position:'center',expression}]:[],presentation:speaker?'dialogue':'narration'});
 const consequence=fact=>({fact,claims:[],changes:[],historyCodes:[],next:{stage:null,afterDays:0}});
 export const PILOT_18B_T10_03_RECORDS=cases.map((c,i)=>{
@@ -290,8 +372,8 @@ export const PILOT_18B_T10_03_RECORDS=cases.map((c,i)=>{
   id:'choice-'+(j+1),text:options[j*2],kind:j===1?'support':j===2?'defer':'action',emotional:j===3,
   outcome:consequence(options[j*2+1]),
   ...(j===0?{variants:[
-   {id:'clear',weight:3,modifiers:[{role:'teacher',holder:'person',code:'3-1',influence:0.35}],outcome:consequence(options[1]+'相關人員願意先提供可核對的資訊，後續仍待落實。')},
-   {id:'pending',weight:2,modifiers:[{role:'teacher',holder:'person',code:'3-1',influence:-0.2}],outcome:consequence(options[1]+'目前仍缺少一項關鍵資訊，教師保留待查事項，沒有草率下結論。')}
+   {id:'clarified',weight:[3,2,2,2,3][i%5],outcome:consequence(variantDetails[i][0])},
+   {id:'unresolved',weight:[2,3,3,2,2][i%5],outcome:consequence(variantDetails[i][1])}
   ]}:{}),
  }));
  const story={resourceId:id,definitionId:id,version:'1',topicId:'T10-03',status:'engineering-test',choiceContract:'four-v2',premise:{description:cause,data:{type:'pilot-unique-situation',pilotIndex:i+1,title}},entry:'opening',stages:[{id:'opening',pages:[page(1,opening),page(2,dialogue,'participant','embarrassed')],choices,next:null}]};

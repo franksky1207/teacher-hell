@@ -18,6 +18,14 @@ export const SCENE_CASES=Object.freeze([
  {id:'story',label:'已知校園談話角落',context:{slotId:'p3',sceneTag:'school:counselling-corner'}},
  {id:'aftercare',label:'六月善後・教師辦公室',context:{slotId:'p4',aftercare:true}},
  {id:'unknown',label:'沒有明確地點・依當前校務時段推定',context:{slotId:'p4',dayKind:'school',sceneTag:'unknown:location'}},
+ {id:'weekend',label:'週末上午・家中日常',context:{slotId:'morning',dayKind:'weekend'}},
+ {id:'holiday',label:'國定假日・家中日常',context:{slotId:'afternoon',dayKind:'holiday'}},
+ {id:'vacation',label:'寒暑假・家中日常',context:{slotId:'vacation-day',dayKind:'long-vacation'}},
+ {id:'study',label:'留校晚自習・教室',context:{slotId:'study1',dayKind:'school'}},
+ {id:'fieldtrip',label:'高一上校外教學・博物館',context:{slotId:'morning',dayKind:'school',activityKinds:['field-trip'],grade:1,termId:'2026:autumn'}},
+ {id:'trip',label:'畢旅第二日・遊樂園',context:{slotId:'travel-day',dayKind:'school',activityKinds:['graduation-trip-2'],grade:2}},
+ {id:'sports',label:'運動會・操場',context:{slotId:'p3',dayKind:'school',activityKinds:['sports']}},
+ {id:'phone-weekend',label:'家長來電・週末家中',context:{slotId:'morning',dayKind:'weekend',presentation:'phone'}},
  {id:'missing',label:'素材載入失敗・中性降級',context:{slotId:'p2',hasLesson:true,simulateMissing:true}},
 ]);
 export function sceneEntry(scene,variant='day'){

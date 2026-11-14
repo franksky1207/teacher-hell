@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {stableAdultArt,adultPoseForExpression,storyCostume,isMatureAlumnus} from '../web/story-art-context.js';
 import {studentArtForActor,renderStoryScene} from '../web/story-scene.js';
+import {notebookPortraitCrop} from '../web/story-portraits.js';
 import {renderScenePreview} from '../web/scene-preview.js';
 import {FULL_SHEET_CASUAL_SCENES,fullSheetCrop} from '../web/full-sheet-preview.js';
 import {CALENDAR_VERSION} from '../src/calendar/calendar.js';
@@ -81,4 +82,17 @@ test('15-D: older alumnus silhouette is gated by recorded graduation and elapsed
  assert.equal(isMatureAlumnus(saved,'former'),true);
  assert.equal(isMatureAlumnus(saved,'active'),false);
  assert.equal(isMatureAlumnus({...saved,position:{date:'2030-05-01'}},'former'),false);
+});
+
+test('notebook: source alpha crop preserves portrait bounds and draws within high-resolution vertical canvas',()=>{
+ const entry={bounds:[[40,60,340,910],[22,105,380,820]]};
+ const crop=notebookPortraitCrop(entry,0,1536,2304);
+ assert.ok(crop);
+ assert.equal(crop.width,640);
+ assert.equal(crop.height,900);
+ assert.ok(crop.sx<=40&&crop.sy<=60);
+ assert.ok(crop.sx+crop.sw>=380&&crop.sy+crop.sh>=970);
+ assert.ok(crop.dx>=0&&crop.dy>=0);
+ assert.ok(crop.dx+crop.dw<=640&&crop.dy+crop.dh<=900);
+ assert.equal(notebookPortraitCrop(entry,3,1536,2304),null);
 });

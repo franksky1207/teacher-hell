@@ -1,11 +1,12 @@
 name: Phase 18-A focused content audit
 on:
   pull_request:
-    branches: [main]
+    branches: [main, feat/18a-content-audit-pilot]
     paths:
       - 'scripts/content-audit.js'
       - 'scripts/audit-content.mjs'
       - 'test/content-audit.test.js'
+      - 'test/fixtures/18b-t10-03-pilot.js'
       - '.github/workflows/phase18a-content-audit.yml'
       - 'package.json'
       - 'src/runtime/story-content.js'

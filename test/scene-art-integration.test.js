@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {stableAdultArt,adultPoseForExpression,storyCostume} from '../web/story-art-context.js';
+import {stableAdultArt,adultPoseForExpression,storyCostume,isMatureAlumnus} from '../web/story-art-context.js';
 import {studentArtForActor,renderStoryScene} from '../web/story-scene.js';
 import {renderScenePreview} from '../web/scene-preview.js';
 import {FULL_SHEET_CASUAL_SCENES,fullSheetCrop} from '../web/full-sheet-preview.js';
@@ -17,6 +17,7 @@ test('15-D: existing identity is reproducibly mapped and respects known family r
  assert.match(stableAdultArt('person-A',mother),/^adult-female-0[1-3]$/);
  assert.equal(stableAdultArt('person-A',father),stableAdultArt('person-A',structuredClone(father)));
  assert.equal(stableAdultArt('person-B',{appearance:{variant:3}}),stableAdultArt('person-B',{appearance:{variant:3}}));
+ assert.match(stableAdultArt('former-student',{gender:'female',appearance:{variant:12}},'young'),/^adult-young-female-0[1-3]$/);
  assert.equal(adultPoseForExpression('surprised'),'gesture');
  assert.equal(adultPoseForExpression('anything-unknown'),'neutral');
 });
@@ -70,4 +71,14 @@ test('15-D: preview uses production renderer for all special art states, no save
  const casual=renderScenePreview('fieldtrip','two','grade1-autumn-trip').html;
  assert.match(casual,/data-story-wear="casual"/);
  assert.match(casual,/data-story-cell="grade1-autumn-trip"/);
+});
+
+test('15-D: older alumnus silhouette is gated by recorded graduation and elapsed years',()=>{
+ const saved={position:{date:'2034-05-01'},numeric:{evolution:{world:{registry:{enrollments:[
+  {personId:'former',status:'graduated',until:'2029-06-10'},
+  {personId:'active',status:'active',until:null}
+ ]}}}}};
+ assert.equal(isMatureAlumnus(saved,'former'),true);
+ assert.equal(isMatureAlumnus(saved,'active'),false);
+ assert.equal(isMatureAlumnus({...saved,position:{date:'2030-05-01'}},'former'),false);
 });

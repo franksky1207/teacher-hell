@@ -30,7 +30,14 @@ export function studentArtForActor(registry,id){
  const initial=registry?.cohorts?.find(c=>c.classId===registry.homeClassId)?.initialStudentIds;
  if(!Array.isArray(initial)||initial.length!==40)return null;
  const index=initial.indexOf(id);
- return index<0?null:'student-'+String(index+1).padStart(3,'0');
+ if(index>=0)return 'student-'+String(index+1).padStart(3,'0');
+ // Dedicated transfer art 041–044: only the known home-class transfer cohort.
+ // Do not assign a random portrait to an unrelated class or unintroduced NPC.
+ const transferIds=(registry.enrollments??[]).filter(e=>e.classId===registry.homeClassId&&
+  !initial.includes(e.personId)).map(e=>e.personId);
+ const unique=[...new Set(transferIds)];
+ const transferIndex=unique.indexOf(id);
+ return transferIndex<0||transferIndex>=4?null:'student-'+String(transferIndex+41).padStart(3,'0');
 }
 export function projectStoryScene(world,view,expressionHistory=null){
  const page=view?.page,worldData=world?.numeric?.evolution?.world;

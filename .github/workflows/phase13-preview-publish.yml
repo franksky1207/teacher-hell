@@ -20,6 +20,17 @@ on:
       - web/story-scene.js
       - web/game.js
       - web/story-view.css
+      - web/ui2-preview.js
+      - web/story-view.js
+      - web/game.css
+      - web/notebook-view.js
+      - web/notebook-people.js
+      - web/notebook-academics.js
+      - web/notebook-events.js
+      - web/notebook-reviews.js
+      - web/notebook-tasks.js
+      - web/notebook-roster.js
+      - test/ui2-preview.test.js
       - docs/15-C-背景圖SOP.md
       - web/assets/characters/students/**
       - web/assets/characters/adults/**
@@ -49,7 +60,7 @@ jobs:
       - name: Verify preview source before publication
         run: |
           npm run check
-          node --test --test-isolation=none test/year-result.test.js test/notebook-tasks.test.js test/notebook-view.test.js test/notebook-people.test.js test/student-art-preview.test.js test/story-view.test.js
+          node --test --test-isolation=none test/ui2-preview.test.js test/story-view.test.js test/notebook-view.test.js test/notebook-people.test.js test/student-art-preview.test.js
       - name: Configure automated publication identity
         run: |
           git config user.name "github-actions[bot]"

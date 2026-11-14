@@ -351,3 +351,28 @@ button:active:not(:disabled){transform:translateY(0)}
 .help-guide{line-height:1.7}
 .help-guide h3{color:#f3d8a5;margin-top:1rem}
 .help-guide p{margin:.35rem 0 .8rem}
+
+/* Compact teacher-status meters: values come from the original panel. */
+.game--story .state-meter{display:grid;gap:.2rem;min-height:0;padding:.4rem .55rem;border-radius:.6rem;text-align:left;background:rgba(17,31,53,.8);border:1px solid rgba(220,192,141,.65)}
+.game--story .state-meter__head{display:flex;justify-content:space-between;align-items:baseline;gap:.25rem;line-height:1.2;min-width:0}
+.game--story .state-meter__name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.game--story .state-meter__value{font-variant-numeric:tabular-nums;flex:none;font-weight:700;color:#f2d49e}
+.game--story .state-meter progress{display:block;width:100%;height:.36rem;border:0;appearance:none;-webkit-appearance:none;border-radius:1rem;overflow:hidden;background:rgba(240,234,216,.25);accent-color:#d5aa70}
+.game--story .state-meter progress::-webkit-progress-bar{background:rgba(240,234,216,.25)}
+.game--story .state-meter progress::-webkit-progress-value{background:#d5aa70;border-radius:1rem}
+.game--story .state-meter progress::-moz-progress-bar{background:#d5aa70}
+.game--story.game--active-dialogue .states{display:none!important}
+/* The non-event daily text uses the same bottom-panel footprint as an AVG page. */
+.game--story > .story--idle{position:relative;inset:auto;align-self:end;width:100%;height:clamp(11.5rem,23dvh,15rem);min-height:0;max-height:82dvh;overflow-y:auto;overscroll-behavior:contain;margin:0;padding:clamp(.8rem,2vw,1.15rem);border-radius:1rem;background:rgba(15,29,51,.83);border:1px solid rgba(221,194,148,.75);box-shadow:0 12px 30px rgba(4,12,27,.22);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+@media(min-width:651px){
+ .game--story:not(.game--active-dialogue){grid-template-rows:auto auto minmax(0,1fr)}
+ .game--story:not(.game--active-dialogue) .states{position:absolute;top:clamp(10.5rem,23dvh,14rem);left:1rem;right:auto;width:clamp(12rem,18vw,17rem);z-index:2;grid-template-columns:minmax(0,1fr);gap:.35rem}
+}
+@media(max-width:650px){
+ .game--story:not(.game--active-dialogue){grid-template-rows:auto auto auto minmax(0,1fr)}
+ .game--story:not(.game--active-dialogue) .states{position:static;width:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.25rem}
+ .game--story .state-meter{padding:.3rem .35rem;border-radius:.5rem}
+ .game--story .state-meter__name,.game--story .state-meter__value{font-size:.76rem}
+ .game--story .state-meter progress{height:.32rem}
+ .game--story > .story--idle{height:clamp(11.5rem,23dvh,14rem)}
+}

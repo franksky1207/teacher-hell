@@ -1,0 +1,27 @@
+name: Phase 17-D focused authored content
+on:
+  pull_request:
+    branches: [main, feat/17c-exposure-scenes]
+    paths:
+      - 'src/runtime/story-samples-17d.js'
+      - 'src/runtime/story-content.js'
+      - 'test/phase17d-content.test.js'
+      - 'test/support/story-scenario.js'
+      - '.github/workflows/phase17d-focused.yml'
+permissions:
+  contents: read
+jobs:
+  authored-content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Authored events only; no full career simulation
+        run: node --test --test-isolation=none test/phase17d-content.test.js test/story.test.js

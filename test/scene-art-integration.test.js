@@ -39,7 +39,7 @@ test('15-D: six casual outfit cells are not six emotional expression cells',()=>
   const crop=fullSheetCrop(id);
   assert.ok(crop.sx>=0&&crop.sx<1536&&crop.sy>=0&&crop.sy<2304);
  }
- assert.notDeepEqual(fullSheetCrop('grade1-autumn-trip'),fullSheetCrop('calm'));
+ assert.notDeepEqual(fullSheetCrop('graduation-trip-3'),fullSheetCrop('calm'));
 });
 test('15-D: calendar controls uniform outfit with no current-time randomization',()=>{
  const a=storyCostume(world('2026-08-03','p2'));

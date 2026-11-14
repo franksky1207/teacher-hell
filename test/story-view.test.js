@@ -180,3 +180,23 @@ test('formal story assigns immutable art identities from initial cohort, never s
  assert.match(html,/data-expression="happy"/);
  assert.doesNotMatch(html,/data-story-portrait="student-011"/);
 });
+
+test('UI-2 formal expressions: only current speaker updates; narration and listeners hold their last expression',async()=>{
+ const {expressionsThroughPage}=await import('../web/story-scene.js');
+ const pages=[
+  {speaker:'participant',cast:[{role:'participant',expression:'happy'},{role:'companion',expression:'sad'}]},
+  {speaker:'companion',cast:[{role:'participant',expression:'angry'},{role:'companion',expression:'surprised'}]},
+  {speaker:null,cast:[{role:'participant',expression:'embarrassed'},{role:'companion',expression:'calm'}]},
+  {speaker:'participant',cast:[{role:'participant',expression:'embarrassed'},{role:'companion',expression:'happy'}]}
+ ];
+ const at0=expressionsThroughPage(pages,0);
+ assert.equal(at0.get('participant'),'happy');assert.equal(at0.get('companion'),'sad');
+ const at1=expressionsThroughPage(pages,1);
+ assert.equal(at1.get('participant'),'happy');assert.equal(at1.get('companion'),'surprised');
+ const at2=expressionsThroughPage(pages,2);
+ assert.equal(at2.get('participant'),'happy');assert.equal(at2.get('companion'),'surprised');
+ const at3=expressionsThroughPage(pages,3);
+ assert.equal(at3.get('participant'),'embarrassed');assert.equal(at3.get('companion'),'surprised');
+ assert.equal(expressionsThroughPage(pages,1).get('participant'),'happy');
+ assert.deepEqual([...expressionsThroughPage(pages,3)],[...at3]);
+});

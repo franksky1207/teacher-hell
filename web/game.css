@@ -725,3 +725,34 @@ button:active:not(:disabled){transform:translateY(0)}
  .scene-preview__tools select[data-scene-wear],.scene-preview__tools select[data-scene-cast]{max-width:70%;min-width:0}
  .scene-preview__tools button{flex:1 1 100%}
 }
+
+/* 15-E: persistent lightweight music controls, safe-area aware on iPhone. */
+.music-dock{position:fixed;z-index:10010;right:max(.65rem,env(safe-area-inset-right));top:max(.65rem,env(safe-area-inset-top));display:flex;align-items:flex-start;gap:.22rem;filter:drop-shadow(0 2px 8px #0007);font-family:system-ui,'Noto Sans TC',sans-serif}
+.music-dock button{border:1px solid #d6c7a7;background:#172d48ef;color:#fff5df;min-height:2.3rem;min-width:2.3rem;padding:.3rem .48rem;line-height:1.25;border-radius:.5rem;touch-action:manipulation}
+.music-dock__toggle{font-size:1.22rem;font-weight:700}
+.music-dock__expand{font-size:1.1rem}
+.music-dock__panel{position:absolute;right:0;top:2.7rem;width:min(14.5rem,80vw);padding:.6rem .8rem;border:1px solid #d6c7a7;border-radius:.55rem;background:#172d48f7;color:#fff5df}
+.music-dock__panel[hidden]{display:none}
+.music-dock__panel label{display:flex;align-items:center;gap:.55rem;white-space:nowrap;font-size:.88rem}
+.music-dock input[type=range],.music-settings input[type=range]{min-width:0;flex:1;accent-color:#e0b36b}
+.music-dock output{font-variant-numeric:tabular-nums;min-width:2.4rem;text-align:right}
+.music-settings{display:grid;gap:.8rem;margin:.6rem 0 1.1rem}
+.music-settings__line label{display:flex;align-items:center;gap:.5rem}
+.music-settings__volume{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.music-settings__volume input{min-width:5rem}
+.music-settings__volume output{min-width:2.7rem;font-variant-numeric:tabular-nums;text-align:right}
+.music-settings__hint{font-size:.83rem;line-height:1.6;opacity:.85;margin:0}
+.music-credits{margin:.8rem 0;font-size:.85rem;line-height:1.6;overflow-wrap:anywhere}
+.music-credits ul{padding-left:1.5rem}
+.music-credits a{color:inherit;text-decoration:underline}
+.music-preview{padding-top:4.6rem}
+.music-preview h1{font-size:clamp(1.5rem,4vw,2rem)}
+.music-preview__choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:.55rem;margin:1rem 0}
+.music-preview__choices button{text-align:left}
+.music-preview__choices .music-preview__active{border-color:#ffe6a9;background:#566681}
+@media(max-width:650px),(orientation:portrait){
+ .music-dock{top:max(.32rem,env(safe-area-inset-top));right:max(.35rem,env(safe-area-inset-right));gap:.16rem}
+ .music-dock button{min-width:2rem;min-height:2rem;padding:.2rem .38rem}
+ .music-dock__panel{top:2.4rem}
+ .music-preview{padding:3.5rem .65rem 1.5rem}
+}

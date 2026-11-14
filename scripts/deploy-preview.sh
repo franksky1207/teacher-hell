@@ -33,6 +33,11 @@ rm -rf "$versioned_art"
 # Backgrounds are also loaded from the stable unversioned preview/web/assets directory.
 # Do not duplicate the same 82 large background files in the versioned JS module tree.
 rm -rf "$preview_tmp/site/preview/assets/$version/web/assets/backgrounds"
+# Seven music files share one stable URL tree, never duplicate per JS revision.
+rm -rf "$preview_tmp/site/preview/assets/$version/web/assets/music"
+for music in school conflict serious home playful touching absurd; do
+  test -s "$preview_tmp/site/preview/web/assets/music/$music.ogg"
+done
 test ! -e "$versioned_art"
 sed "s#\\./web/#./assets/$version/web/#g" dist/index.html > "$preview_tmp/site/preview/index.html"
 test -f "$preview_tmp/site/preview/assets/$version/web/game.js"

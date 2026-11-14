@@ -216,3 +216,6 @@ button:active:not(:disabled){transform:translateY(0)}
  .home--avg .home__menu button{min-height:2.4rem;padding:.3rem}
 }
 @media(prefers-reduced-motion:reduce){button{transition:none}button:hover:not(:disabled){transform:none}}
+
+/* UI-1: keep the developer label only beside its preview entry on the home page. */
+#app:has(> .home--avg) > .badge{display:none}

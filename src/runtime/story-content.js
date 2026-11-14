@@ -25,7 +25,7 @@ export function validateStory(c){
    need(p.speaker===null?['narration','notice','email','news'].includes(p.presentation):roles.includes(p.speaker)&&(p.speaker==='teacher'||p.cast.some(a=>a.role===p.speaker)),'SPEAKER','speaker/cast');
   }
   need(Array.isArray(s.choices),'CHOICE','choices');
-  if(s.choices.length){need(s.next===null&&(c.choiceContract==='four-v2'?s.choices.length===4:s.choices.length>=3&&s.choices.length<=8),'CHOICE','valid number of choices');if(c.choiceContract==='four-v2')need(s.choices.every(o=>!o.requires?.length),'CHOICE','four-v2 needs four always-visible choices');need(s.choices.filter(o=>!o.requires?.length).length>=3&&s.choices.some(o=>o.emotional&&!o.requires?.length),'QUALIFICATION','three basic options and emotion stay available');const n=s.choices.filter(o=>o.emotional).length;need(n>=1&&n<=2,'EMOTION','1–2 emotional options');}
+  if(s.choices.length){need(s.next===null&&(s.choices.length===4),'CHOICE','valid number of choices');need(s.choices.every(o=>!o.requires?.length),'CHOICE','all four options must be available');need(s.choices.filter(o=>!o.requires?.length).length>=3&&s.choices.some(o=>o.emotional&&!o.requires?.length),'QUALIFICATION','three basic options and emotion stay available');const n=s.choices.filter(o=>o.emotional).length;need(n>=1&&n<=2,'EMOTION','1–2 emotional options');}
   else need(s.next!==null,'GRAPH','explicit successor');
   need(new Set(s.choices.map(o=>o.id)).size===s.choices.length,'CHOICE','duplicate option');
   for(const o of s.choices){assertShape(o,['id','text','emotional','kind','outcome',...(Object.hasOwn(o,'requires')?['requires']:[]),...(Object.hasOwn(o,'variants')?['variants']:[])]);
@@ -65,7 +65,8 @@ export const DEMO_STORY=validateStory({resourceId:'engineering:learning-conversa
  ...['listen','boundary'].map(id=>({id,pages:[page(1,id==='listen'?'隔天，學生帶來一張寫著作息的紙。':'隔天，學生帶著缺交清單回來。'),page(2,id==='listen'?'我晚上要幫忙顧店，但也有幾題真的不會。':'我列好了。家裡的事我還不想說。','participant')],choices:[
  choice('plan','和他一起排出可做到的一小段補交安排。',false,'action',outcome(id==='listen'?'雙方排出補交安排，學生自行陳述有顧店情形，原因未全查證。':'雙方依缺交清單排出安排，家庭原因仍未確認。',id==='listen'?-3:1,null)),
  choice('sigh','我真的很累，但這張清單我們一起刪一項吧。',true,'action',outcome('教師表達疲憊後協助完成一項，沒有保證其餘進度。',-1,null)),
- choice('refuse','今天不追加要求，保留紀錄，之後再觀察。',false,'refuse',outcome('教師暫不追加要求，保留未解問題與觀察紀錄。',0,null))],next:null}))
+ choice('refuse','今天不追加要求，保留紀錄，之後再觀察。',false,'refuse',outcome('教師暫不追加要求，保留未解問題與觀察紀錄。',0,null)),
+ choice('agency','請他自己選一件能先完成的事。',false,'support',outcome('學生提出一項自選的可行小目標，是否落實仍待後續觀察。',-2,null))],next:null}))
 ]});
 function freeze(x){if(x&&typeof x==='object'){Object.values(x).forEach(freeze);Object.freeze(x);}return x;}
 export const SHORT_STORY=validateStory({...structuredClone(DEMO_STORY),resourceId:'engineering:short-conversation',definitionId:'engineering:short-conversation',stages:[{...structuredClone(DEMO_STORY.stages[0]),choices:DEMO_STORY.stages[0].choices.map(o=>({...structuredClone(o),outcome:{...structuredClone(o.outcome),next:next()}}))}]});
@@ -89,11 +90,13 @@ const concurrentDeparture=dutyOutcome('resigned','求援沒有讓任教繼續；
 export const BURNOUT_STORY=dutyAsset('exhaustion-departure','E06-03','又一件普通工作衝突遇上長期耗竭，教師發現自己已無法繼續承擔原班。',[
  choice('help','試著向人說明現在的處境。',false,'support',concurrentDeparture),
  choice('explain','如實說明已無法繼續履行帶班責任。',false,'action',dutyOutcome('unable','重大身心事件使教師確定無法繼續帶原班。')),
- choice('cry','我已經撐不住了。',true,'action',dutyOutcome('resigned','長期耗竭在這一刻形成實際離職結果，不只是辭職念頭。'))]);
+ choice('cry','我已經撐不住了。',true,'action',dutyOutcome('resigned','長期耗竭在這一刻形成實際離職結果，不只是辭職念頭。')),
+ choice('handover','先把學生交接事項整理清楚。',false,'action',dutyOutcome('unable','教師著手整理必要交接，仍已確定無法繼續履行原班導師職務。'))]);
 export const RELIEF_STORY=dutyAsset('crisis-support','E06-03','困境尚未消失，但先前的互動與求援讓支持出現。',[
  choice('accept','接受這次具體的協助。',false,'support',dutyOutcome('relief','教師取得支持並繼續帶班；累積危機並未被抹除。',restoreChanges)),
  choice('leave','先請短假，安排暫時代理。',false,'action',dutyOutcome('temporary','短期代理已安排，原班導師職務保留。',restoreChanges)),
- choice('sigh','讓我先喘口氣，好嗎。',true,'action',dutyOutcome('relief','這次支持讓當前身心狀態改善。',restoreChanges))]);
+ choice('sigh','讓我先喘口氣，好嗎。',true,'action',dutyOutcome('relief','這次支持讓當前身心狀態改善。',restoreChanges)),
+ choice('scope','先確認這次支援可以做到哪一步。',false,'action',dutyOutcome('relief','教師與支援人員釐清協助範圍，保留尚未解決的困境。'))]);
 const executed={id:'execution',pages:dutyPage('校方已決定實際執行撤換；你仍保有任課，但不再擔任原班導師。'),choices:[
  choice('appeal','提出異議，要求保留爭議紀錄。',false,'action',dutyOutcome('replaced','撤換已實際執行；教師提出異議，合法性仍有爭議。')),
  choice('handover','保全資料，完成必要交接。',false,'action',dutyOutcome('replaced','原班導師已被實際撤換，教師仍任課。')),
@@ -109,7 +112,8 @@ export const REPLACEMENT_STORY=dutyAsset('unfair-replacement','E06-02','校長�
 export const PLACEMENT_STORY=dutyAsset('new-cohort-placement','E06-02','學校已分配下一屆導師班。這項安排未必公平；你可以表達立場，但不能自行挑班。',[
  choice('accept','接下任務，先保存安排的依據。',false,'action',{fact:'教師確認校方已確定的導師班安排，既有爭議仍保留。',claims:[],changes:[],historyCodes:[],next:next()}),
  choice('negotiate','提出異議，要求校方協商工作安排。',false,'support',{fact:'教師提出分班異議並要求協商；校方本次未同意更換班級，異議與原任職一起保存。',claims:[],changes:[],historyCodes:[],next:next()}),
- choice('refuse','這種安排我不能接受！',true,'refuse',{fact:'教師拒絕接受分班理由；校方仍維持已確定任職，拒絕不等於生效離職，爭議留待後續。',claims:[],changes:[],historyCodes:[],next:next()})]);
+ choice('refuse','這種安排我不能接受！',true,'refuse',{fact:'教師拒絕接受分班理由；校方仍維持已確定任職，拒絕不等於生效離職，爭議留待後續。',claims:[],changes:[],historyCodes:[],next:next()}),
+ choice('record','請校方提供書面安排與工作界線。',false,'action',{fact:'教師要求校方以書面確認已決定的導師班及工作責任，並未因此重新分班。',claims:[],changes:[],historyCodes:[],next:next()})]);
 export function homeroomCatalogue(){
  const definitions=[PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY].map(c=>({id:c.definitionId,topicId:c.topicId,type:c===BURNOUT_STORY||c===RELIEF_STORY?'cumulative':'direct',content:{resourceId:c.resourceId,version:c.version,status:c.status},coreCodes:['1-2','1-3','1-4'],additionalCodes:['3-1','3-2','3-3'],weights:Array(6).fill(1/6),directions:[1,1,1,1,1,1],eligibility:{people:[c===REPLACEMENT_STORY||c===PLACEMENT_STORY?'staff':c===PRESSURE_STORY?'student':'player'],dayKinds:[],slotIds:[],from:null,until:null,facts:[],history:c===BURNOUT_STORY||c===RELIEF_STORY?[{code:'H06-1',minimum:3,status:'any'}]:[],numeric:[],enrollment:null,homeroom:c===PLACEMENT_STORY?'placement':c===REPLACEMENT_STORY?'social':c===PRESSURE_STORY?'ordinary':c===BURNOUT_STORY?'crisis':'support'},repetition:{cooldownDays:0,exclusionGroups:['homeroom-interruption'],sameFact:true,reason:'Consequences retain a single source and respect the existing daily budget'}}));
  return {type:'register-event-catalogue',catalogueId:'homeroom:representatives-v1',definitions,bindings:definitions.map(d=>({definitionId:d.id,sources:Array(6).fill(d.id===REPLACEMENT_STORY.definitionId?'participant':'player-person'),valence:d.id===RELIEF_STORY.definitionId?'positive':'negative'})),engineering:false};
@@ -122,7 +126,8 @@ export function entranceCatalogue(){const definition={id:ENTRANCE_STORY.definiti
 export const AFTERCARE_STORY=validateStory({resourceId:'aftercare:contact',definitionId:'aftercare:contact',version:'1',topicId:'E01-05',status:'ready',entry:'opening',stages:[{id:'opening',pages:[page(1,'離校後，一名學生透過既有聯絡管道詢問自己的待辦。'),page(2,'你核對已公布的升學資料與五月資格紀錄，保留仍未完成的部分；這不是全班返校上課。')],choices:[
  choice('check','一起核對個別期限與所需文件。',false,'action',{fact:'導師協助核對個別後續文件，沒有改寫畢業資格或錄取結果。',claims:[],changes:[{role:'teacher',holder:'person',code:'2-3',delta:.2}],historyCodes:['H03-1'],next:next()}),
  choice('refer','轉介承辦人，保留後續聯繫方式。',false,'support',{fact:'導師將個別問題轉交承辦人，保留學生與家長後續聯繫管道。',claims:[],changes:[],historyCodes:['H03-1'],next:next()}),
- choice('tired','我也需要休息，先把可處理的部分寫清楚。',true,'defer',{fact:'導師說明目前工作與休息界線，未完成事項仍保留。',claims:[],changes:[{role:'teacher',holder:'person',code:'2-3',delta:-.2}],historyCodes:[],next:next()})
+ choice('tired','我也需要休息，先把可處理的部分寫清楚。',true,'defer',{fact:'導師說明目前工作與休息界線，未完成事項仍保留。',claims:[],changes:[{role:'teacher',holder:'person',code:'2-3',delta:-.2}],historyCodes:[],next:next()}),
+ choice('schedule','先確認承辦窗口，約定下一次答覆時間。',false,'support',{fact:'導師核對承辦聯繫窗口並告知預定回覆時間，不保證學生後續資格已完成。',claims:[],changes:[],historyCodes:['H03-1'],next:next()})
  ],next:null}]});
 export function aftercareCatalogue(){
  const definition={id:AFTERCARE_STORY.definitionId,topicId:AFTERCARE_STORY.topicId,type:'direct',content:{resourceId:AFTERCARE_STORY.resourceId,version:'1',status:'ready'},coreCodes:['1-2','1-3','1-4'],additionalCodes:['3-1','3-2','3-3'],weights:Array(6).fill(1/6),directions:Array(6).fill(1),eligibility:{people:['student'],dayKinds:['aftercare'],slotIds:[],from:null,until:null,facts:[],history:[],numeric:[],enrollment:null},repetition:{cooldownDays:7,exclusionGroups:['aftercare-contact'],sameFact:true,reason:'One individually qualified contact within the shared weekly aftercare budget'}};

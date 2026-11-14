@@ -44,7 +44,7 @@ function editorial(record){
  * Avoid rebuilding thousands of bigram sets for every pair in a 2560+ corpus.
  * This is candidate discovery, NOT a semantic equivalence decision.
  */
-function collisionCandidates(rows,{threshold=.86}={}){
+function collisionCandidates(rows,{threshold=.86,minNewIndex=0}={}){
  if(!(threshold>0&&threshold<=1))throw new RangeError('similarity threshold must be in (0,1]');
  const results=[],seen=new Map(),descriptions=[];
  for(let i=0;i<rows.length;i++){
@@ -57,7 +57,7 @@ function collisionCandidates(rows,{threshold=.86}={}){
    const older=descriptions[j];
    if(!older?.normalized)continue;
    const score=2*overlap/(tokens.size+older.tokens.size);
-   if(score<threshold)continue;
+   if(score<threshold||i<minNewIndex)continue;
    const other=rows[j],oldCause=older.normalized;
    const responsibilityA=record?.editorial?.teacherResponsibility;
    const responsibilityB=other?.editorial?.teacherResponsibility;
@@ -122,10 +122,16 @@ function checkEntry(record,i,available,seen){
  * catalogueDefinitions may include a known catalogue, but "available" means
  * registration CAN be requested; it never means every career already has it.
  */
-export function auditContent(records,{catalogueDefinitions=[],similarityThreshold=.86}={}){
+export function auditContent(records,{catalogueDefinitions=[],similarityThreshold=.86,referenceRecords=[]}={}){
  if(!Array.isArray(records))throw new TypeError('records must be an array');
+ if(!Array.isArray(referenceRecords))throw new TypeError('referenceRecords must be an array');
  const seen={resourceId:new Set(),definitionId:new Set()},items=records.map((x,i)=>checkEntry(x,i,catalogueDefinitions,seen));
- const duplicates=collisionCandidates(records,{threshold:similarityThreshold});
+ // Cross-batch comparison: references are read-only context, never counted as new output.
+ // New records are appended after reference rows; report only pairs where the later
+ // record is new. New records are also compared against each other.
+ const duplicates=collisionCandidates([...referenceRecords,...records],{
+  threshold:similarityThreshold,minNewIndex:referenceRecords.length
+ });
  const flagged=new Set(duplicates.flatMap(x=>x.ids));
  for(const item of items)if(flagged.has(item.id))item.warnings.push('similarity: inspect possible repeated causal premise');
  const byTopic=Object.fromEntries(V2_EVENT_TOPICS.map(t=>[t.id,{
@@ -148,6 +154,7 @@ export function auditContent(records,{catalogueDefinitions=[],similarityThreshol
   entry.remainingToMinimum=entry.remainingReviewedToMinimum;
  }
  return {version:1,scope:'offline-content-review-only',minimumPerTopic:20,maximumPerTopic:null,
+  referenceRecordsCompared:referenceRecords.length,
   topics:128,authored:records.length,structurallyValid:items.filter(x=>x.structuralPass).length,
   semanticReviewed:items.filter(x=>x.structuralPass&&x.semanticReview.reviewed).length,
   resolverReady:items.filter(x=>x.registeredResource).length,

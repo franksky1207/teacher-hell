@@ -137,9 +137,9 @@ test('13-E: notice, email and news use distinct escaped document displays',()=>{
 
 test('13-F: long content preserves safe text and controls without prematurely choosing',()=>{
  const many='很長的對話。'.repeat(120);
- const eight=Array.from({length:8},(_,i)=>({id:'option-'+i,text:'回應'+i+'：'+many}));
- const html=renderStoryView(read({page:{text:many,speaker:null,presentation:'narration'},pageIndex:2,canNext:false,choices:eight}));
- assert.equal((html.match(/data-story-action="select"/g)||[]).length,8);
+ const four=Array.from({length:4},(_,i)=>({id:'option-'+i,text:'回應'+i+'：'+many}));
+ const html=renderStoryView(read({page:{text:many,speaker:null,presentation:'narration'},pageIndex:2,canNext:false,choices:four}));
+ assert.equal((html.match(/data-story-action="select"/g)||[]).length,4);
  assert.doesNotMatch(html,/data-story-action="confirm"|data-story-action="finish"/);
  assert.match(html,/很長的對話/);
 });

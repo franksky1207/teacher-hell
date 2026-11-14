@@ -10,7 +10,7 @@ import {PHASE17D_READY_STORIES,phase17dSampleCatalogue} from '../src/runtime/sto
 const args=process.argv.slice(2);
 const option=name=>{const i=args.indexOf(name);return i===-1?null:args[i+1]??null;};
 if(args.includes('--help')){
- console.log('node scripts/audit-content.mjs [--input records.json] [--output report.json] [--strict]');
+ console.log('node scripts/audit-content.mjs [--input records.json] [--baseline previous-records.json] [--output report.json] [--strict]');
  console.log('records.json = {records:[{story,definition,editorial?,editorialReview?}]}');
  process.exit(0);
 }
@@ -26,11 +26,19 @@ if(option('--input')){
   definition:catalogue.definitions.find(d=>d.id===story.definitionId)
  }));
 }
-const report=auditContent(records,{catalogueDefinitions:catalogue.definitions});
+// Baseline supplies prior batches as comparison context only, not new production counts.
+let referenceRecords=[];
+if(option('--baseline')){
+ const parsed=JSON.parse(await readFile(resolve(option('--baseline')),'utf8'));
+ referenceRecords=Array.isArray(parsed)?parsed:parsed.records;
+ if(!Array.isArray(referenceRecords))throw new TypeError('baseline must be an array or {records:array}');
+}
+const report=auditContent(records,{catalogueDefinitions:catalogue.definitions,referenceRecords});
 const summary={
  scope:report.scope,
  topics:report.topics,
  authored:report.authored,
+ referenceRecordsCompared:report.referenceRecordsCompared,
  structurallyValid:report.structurallyValid,
  semanticReviewed:report.semanticReviewed,
  resolverReady:report.resolverReady,

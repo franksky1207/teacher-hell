@@ -134,3 +134,22 @@ test('18-B: old-old similarities are excluded from this batch report',()=>{
  assert.equal(report.duplicates.length,0);
  assert.equal(report.referenceRecordsCompared,2);
 });
+
+test('18-B pilot: 20 isolated T10-03 event definitions satisfy formal contracts without publishing',async()=>{
+ const {PILOT_18B_T10_03_RECORDS:records}=await import('./fixtures/18b-t10-03-pilot.js');
+ assert.equal(records.length,20);
+ assert.equal(new Set(records.map(x=>x.editorial.cause)).size,20);
+ assert.ok(records.every(x=>x.story.status==='engineering-test'&&x.story.resourceId.startsWith('engineering:')));
+ assert.ok(records.every(x=>x.story.stages[0].choices.length===4));
+ assert.ok(records.every(x=>x.story.stages[0].choices.some(o=>o.emotional)));
+ assert.ok(records.every(x=>x.story.stages[0].choices[0].variants.length===2));
+ const report=auditContent(records);
+ assert.equal(report.structurallyValid,20,JSON.stringify(report.items.filter(x=>x.errors.length)));
+ assert.equal(report.authored,20);
+ assert.equal(report.semanticReviewed,0,'independent editorial review has not been performed');
+ assert.equal(report.byTopic['T10-03'].authored,20);
+ assert.equal(report.resolverReady,0,'engineering pilot remains outside official resolver');
+ assert.equal(report.catalogueReady,0);
+ assert.equal(report.publishedInNewCareers,'not-assessed');
+ assert.equal(report.duplicates.length,0,'inspect meaningful duplicates separately');
+});

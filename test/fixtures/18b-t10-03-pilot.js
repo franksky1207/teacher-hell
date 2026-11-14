@@ -516,12 +516,13 @@ export const PILOT_18B_T10_03_RECORDS=cases.map((c,i)=>{
   page(1,opening,null,'calm',scene),
   page(2,dialogue,'participant',moods[i],scene)
  ];
- if(Object.hasOwn(safetyFirst,i)){
-  pages.push(page(3,safetyFirst[i],null,'calm',scene));
- }
- // Some events need an extra observable clue before the first decision.
+ // Observe the concrete clue first; mandatory safety response follows and
+ // always occurs before the four selectable approaches.
  if([0,2,3,5,6,7,9,10,12,13,14,15,17,18,19].includes(i)){
   pages.push(page(pages.length+1,extraPages[i],null,'calm',scene));
+ }
+ if(Object.hasOwn(safetyFirst,i)){
+  pages.push(page(pages.length+1,safetyFirst[i],null,'calm',scene));
  }
  const stages=[{id:'opening',pages,choices,next:null}];
  if(staged){

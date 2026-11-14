@@ -33,6 +33,26 @@ function indexFor(wear,expression,cell){
  if(wear==='casual')return FULL_SHEET_CASUAL_SCENES.findIndex(([key])=>key===cell);
  return expressionKeys.indexOf(expression);
 }
+/** Notebook portraits crop to the approved alpha bounds in one source-to-canvas pass.
+ * Unlike the wide 1152-square dialogue stage, a vertical identity portrait does
+ * not waste pixels on transparent stage margins and stays clear when displayed small.
+ */
+export function notebookPortraitCrop(entry,index,sourceWidth,sourceHeight){
+ const b=entry?.bounds?.[index];
+ if(!Array.isArray(b)||b.length!==4||b.some(v=>!Number.isFinite(v))||b[2]<=0||b[3]<=0)return null;
+ const cw=sourceWidth/3,ch=sourceHeight/2;
+ const padding=18;
+ const sx=Math.max(0,Math.floor(b[0]-padding));
+ const sy=Math.max(0,Math.floor(b[1]-padding));
+ const right=Math.min(cw,Math.ceil(b[0]+b[2]+padding));
+ const bottom=Math.min(ch,Math.ceil(b[1]+b[3]+padding));
+ if(right<=sx||bottom<=sy)return null;
+ const sw=right-sx,sh=bottom-sy;
+ const width=640,height=900,margin=20;
+ const scale=Math.min((width-2*margin)/sw,(height-2*margin)/sh);
+ return {sx,sy,sw,sh,dx:(width-sw*scale)/2,dy:height-margin-sh*scale,
+  dw:sw*scale,dh:sh*scale,width,height};
+}
 async function paintStudent(canvas,manifest){
  const id=canvas.dataset.storyPortrait;
  if(!isStudent(id))return;
@@ -50,12 +70,21 @@ async function paintStudent(canvas,manifest){
   if(!canvas.isConnected)return;
   const layout=calibratedPortraitLayout(image,entry);
   const crop=fullSheetCrop(wear==='casual'?cell:expression,image.naturalWidth,image.naturalHeight);
-  const dest=layout&&portraitDestination(layout,index);
+  const notebook=canvas.closest('.notebook-student-portrait');
+  const dest=notebook?notebookPortraitCrop(entry,index,image.naturalWidth,image.naturalHeight):
+   layout&&portraitDestination(layout,index);
   const ctx=canvas.getContext('2d');
   if(!ctx||!dest)return;
-  canvas.width=PORTRAIT_PREVIEW_STAGE.width;canvas.height=PORTRAIT_PREVIEW_STAGE.height;
+  canvas.width=notebook?dest.width:PORTRAIT_PREVIEW_STAGE.width;
+  canvas.height=notebook?dest.height:PORTRAIT_PREVIEW_STAGE.height;
   ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.drawImage(image,crop.sx,crop.sy,crop.sw,crop.sh,dest.dx,dest.dy,dest.dw,dest.dh);
+  ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+  if(notebook){
+   ctx.drawImage(image,crop.sx+dest.sx,crop.sy+dest.sy,dest.sw,dest.sh,
+    dest.dx,dest.dy,dest.dw,dest.dh);
+  }else{
+   ctx.drawImage(image,crop.sx,crop.sy,crop.sw,crop.sh,dest.dx,dest.dy,dest.dw,dest.dh);
+  }
   if(canvas.isConnected){
    canvas.closest('.story-actor')?.classList.add('story-actor--art-ready');
    canvas.closest('.notebook-student-portrait')?.classList.add('notebook-student-portrait--art-ready');

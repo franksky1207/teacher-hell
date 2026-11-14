@@ -759,9 +759,9 @@ button:active:not(:disabled){transform:translateY(0)}
 
 /* Notebook: optional student identity illustration, never added to the 40-person roster. */
 .notebook-portrait-toggle{display:inline-flex;align-items:center;justify-content:center;margin:.3rem 0 .65rem;padding:.45rem .75rem;font-size:.86rem}
-.notebook-student-portrait{width:min(100%,290px);max-width:100%;min-height:0;margin:.15rem auto .75rem;padding:.25rem;border:1px solid #c5b698;border-radius:.55rem;background:rgba(231,224,210,.35);text-align:center}
+.notebook-student-portrait{width:min(100%,290px);max-width:100%;min-height:0;margin:.15rem auto .75rem;padding:.25rem;border:1px solid #dedede;border-radius:.55rem;background:#fff;text-align:center}
 .notebook-student-portrait[hidden]{display:none!important}
-.notebook-student-portrait canvas{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.notebook-student-portrait canvas{display:block;width:100%;height:auto;aspect-ratio:32/45;object-fit:contain;background:#fff}
 .notebook-student-portrait figcaption{color:#586475;font-size:.76rem;line-height:1.5;padding:.25rem}
 .notebook-student-portrait--art-ready figcaption{display:none}
 @media(max-width:650px),(orientation:portrait){.notebook-student-portrait{width:min(100%,220px)}}

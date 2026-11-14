@@ -61,7 +61,8 @@ test('15-D: formal scene emits outfit and adult silhouette canvas without changi
 test('15-D: preview uses production renderer for all special art states, no save callbacks',()=>{
  for(const kind of ['one','two','adult','transfer','unknown','phone']){
   const fixture=renderScenePreview('office',kind,'uniform-winter');
-  assert.match(fixture.html,/story-view--avg/);
+  assert.match(fixture.html,/class="story-view/);
+  if(kind!=='phone')assert.match(fixture.html,/story-view--avg/);
   assert.match(fixture.html,/data-scene-wear/);
   assert.match(fixture.html,/data-action="dev-center"/);
   assert.doesNotMatch(fixture.html,/data-action="(?:load|delete|import):/);

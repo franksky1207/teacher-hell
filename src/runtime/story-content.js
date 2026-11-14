@@ -62,7 +62,9 @@ export const DEMO_STORY=validateStory({resourceId:'engineering:learning-conversa
  choice('listen','先聽他說最近一天是怎麼過的。',false,'action',outcome('教師與學生約定隔日再談生活與作業安排。',-2,'listen',1)),
  choice('angry','我也快撐不住了，今天先把沒交的說清楚。',true,'action',outcome('教師當面表達疲憊，學生交出缺交清單，約定隔日核對。',3,'boundary',1)),
  choice('defer','今天先不追問，明天帶著作業再談。',false,'defer',outcome('教師延後約談一天，沒有判定學生懶惰。',-1,'listen',1)),
- choice('support','請學生先找可信任的同學一起整理缺交項目。',false,'support',outcome('學生同意先自行邀請同儕整理，尚未保證有人協助。',1,'boundary',1))],next:null},
+ {...choice('support','請學生先找可信任的同學一起整理缺交項目。',false,'support',outcome('學生同意先自行邀請同儕整理，尚未保證有人協助。',1,'boundary',1)),
+  replacement:{...choice('guided-support','先陪他拆解作業，再讓他選一項能完成的。',false,'support',outcome('教師協助拆解作業，學生選出第一個練習目標；實際進度仍待觀察。',-1,'boundary',1)),
+   requires:[{type:'numeric',role:'teacher',holder:'person',code:'3-1',min:65,max:100}]}}],next:null},
  ...['listen','boundary'].map(id=>({id,pages:[page(1,id==='listen'?'隔天，學生帶來一張寫著作息的紙。':'隔天，學生帶著缺交清單回來。'),page(2,id==='listen'?'我晚上要幫忙顧店，但也有幾題真的不會。':'我列好了。家裡的事我還不想說。','participant')],choices:[
  choice('plan','和他一起排出可做到的一小段補交安排。',false,'action',outcome(id==='listen'?'雙方排出補交安排，學生自行陳述有顧店情形，原因未全查證。':'雙方依缺交清單排出安排，家庭原因仍未確認。',id==='listen'?-3:1,null)),
  choice('sigh','我真的很累，但這張清單我們一起刪一項吧。',true,'action',outcome('教師表達疲憊後協助完成一項，沒有保證其餘進度。',-1,null)),

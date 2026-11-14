@@ -5,6 +5,7 @@ import { targetRecord } from '../changes/targets.js';
 import { applyDelta } from '../numeric/math.js';
 /** Story transitions are compiled into existing world operations by transactions.js. */
 import { resolveStory,storyDigest } from './story-content.js';
+import { choicePermutation,outcomeDraw } from './story-variation.js';
 import { createId } from '../contracts/foundation.js';
 import { canonicalData } from '../changes/settlement.js';
 import { deriveWorldPanel } from '../social/reputation.js';
@@ -31,9 +32,10 @@ export function compileStory(w,op,{panelWitness=false}={}){
  assertShape(op,['type','eventId','action','optionId']);need(op.type==='story','operation');const e=w.events.find(e=>e.id===op.eventId),c=storyContent(w,op.eventId);need(e&&c,'registered admitted playable event');
  need(!formalSlot(w).slot.protected,'protected activity');
  const previous=storyState(w,e.id);need(!previous||previous.contentDigest===storyDigest(c),'content version changed in place; retain old resource or migrate explicitly');
- const state=previous?structuredClone(previous):{contentDigest:storyDigest(c),stage:c.entry,page:0,pending:null,mode:'reading',next:null,dueDate:null,basisFactId:null,panelDelta:Object.fromEntries(Object.keys(deriveWorldPanel(w.numeric.evolution.world)).map(k=>[k,0]))};
+ const state=previous?structuredClone(previous):{contentDigest:storyDigest(c),stage:c.entry,page:0,pending:null,choiceOrder:choicePermutation(w.identity.attemptId,e.id,c.entry,c.stages.find(t=>t.id===c.entry).choices.map(o=>o.id)),chosenVariantId:null,mode:'reading',next:null,dueDate:null,basisFactId:null,panelDelta:Object.fromEntries(Object.keys(deriveWorldPanel(w.numeric.evolution.world)).map(k=>[k,0]))};
  const s=c.stages.find(s=>s.id===state.stage),operations=[],inputs=[];
  if(op.action==='confirm'&&(panelWitness||s.choices.some(o=>o.outcome.duty)))for(const holder of ['person','life','work','outlook']){const target={kind:'player-'+holder,id:w.identity.playerId};for(const [code,value] of Object.entries(targetRecord(w.numeric.evolution.world,target)))inputs.push({target,code,value});}
+ if(op.action==='confirm'){const option=s.choices.find(o=>o.id===state.pending);for(const v of option?.variants??[])for(const modifier of v.modifiers??[]){const target={kind:modifier.role==='teacher'?`player-${modifier.holder}`:'person',id:modifier.role==='teacher'?w.identity.playerId:e.participantIds[modifier.role==='companion'?1:0]};const value=targetRecord(w.numeric.evolution.world,target)[modifier.code];need(Number.isFinite(value),'missing outcome weight input');inputs.push({target,code:modifier.code,value});}}
  if(['select','confirm'].includes(op.action))for(const option of s.choices)for(const condition of option.requires??[])if(condition.type==='numeric'){const target={kind:condition.role==='teacher'?`player-${condition.holder}`:'person',id:condition.role==='teacher'?w.identity.playerId:e.participantIds[condition.role==='companion'?1:0]};const value=targetRecord(w.numeric.evolution.world,target)[condition.code];need(Number.isFinite(value),'missing qualification field');inputs.push({target,code:condition.code,value});}
  need(op.action==='select'?typeof op.optionId==='string':op.optionId===null,'option only on select');
  if(op.action==='start'){need(!previous,'already started');
@@ -51,11 +53,11 @@ export function compileStory(w,op,{panelWitness=false}={}){
   }else if(op.action==='cancel'){
    need(state.mode==='confirming','no pending confirmation');state.pending=null;state.mode='reading';
   }else if(op.action==='confirm'){
-   need(state.mode==='confirming'&&state.pending!==null,'secondary confirmation required');need(availableStoryChoices(w,e,s).some(o=>o.id===state.pending),'option qualification changed');const o=s.choices.find(o=>o.id===state.pending),out=o.outcome;
+   need(state.mode==='confirming'&&state.pending!==null,'secondary confirmation required');need(availableStoryChoices(w,e,s).some(o=>o.id===state.pending),'option qualification changed');const o=s.choices.find(o=>o.id===state.pending),selection=o.variants?outcomeDraw(w,e,s.id,o,o.variants):null,out=selection?o.variants[selection.index].outcome:o.outcome;state.chosenVariantId=selection?.variantId??null;
    operations.push({type:'confirm-choice',eventId:e.id,stageId:e.stageId,optionId:o.id,optionText:o.text});
    const fid=createId('fact',[e.id,c.version,s.id,o.id]);const actors={teacher:w.identity.playerId,participant:e.participantIds[0],...(e.participantIds.length>1?{companion:e.participantIds[1]}:{})};
    const subjects=[...new Set(Object.values(actors))];
-   operations.push({type:'fact',id:fid,eventId:e.id,stageId:e.stageId,subjectIds:subjects,witnessIds:subjects,description:out.fact,data:{type:'story-action',optionId:o.id,contentVersion:c.version},categoryCodes:out.historyCodes,causeIds:state.basisFactId?[state.basisFactId]:[]});
+   operations.push({type:'fact',id:fid,eventId:e.id,stageId:e.stageId,subjectIds:subjects,witnessIds:subjects,description:out.fact,data:{type:'story-action',optionId:o.id,contentVersion:c.version,...(selection?{variantId:selection.variantId,variantWeights:selection.weights}:{})},categoryCodes:out.historyCodes,causeIds:state.basisFactId?[state.basisFactId]:[]});
    operations.push({type:'reveal',actorId:actors.teacher,factId:fid,source:{kind:'observation',actorId:actors.teacher,basisFactId:fid}});
    if(out.institution){
     const duty=institutionState(w).duties.find(d=>d.holderId===actors.teacher&&!d.endedAt&&d.status!=='active');need(duty,'a real pending duty offer is required');
@@ -94,7 +96,7 @@ export function compileStory(w,op,{panelWitness=false}={}){
    operations.push({type:'event-lifecycle',eventId:e.id,status:'active',basisFactId:state.basisFactId});enter();
   }else throw new RangeError('STORY: unknown action');
  }
- function enter(){state.stage=state.next;state.next=null;state.dueDate=null;state.page=0;state.mode='reading';operations.push({type:'stage',eventId:e.id,fromStageId:e.stageId,stageId:stageId(e,c,state.stage),choice:carrier(c,state.stage)});}
+ function enter(){state.stage=state.next;state.next=null;state.dueDate=null;state.page=0;state.mode='reading';state.chosenVariantId=null;state.choiceOrder=choicePermutation(w.identity.attemptId,e.id,state.stage,c.stages.find(t=>t.id===state.stage).choices.map(o=>o.id));operations.push({type:'stage',eventId:e.id,fromStageId:e.stageId,stageId:stageId(e,c,state.stage),choice:carrier(c,state.stage)});}
  return {state,operations,inputs};
 }
 export function guardStoryOperation(w,op,internal){
@@ -115,7 +117,7 @@ export function readStory(w,eventId){
  const p=s.pages[state.page];
  return {eventId,page:{...structuredClone(p),speaker:p.speaker===null?null:actor(p.speaker),cast:p.cast.map(a=>({...a,actorId:actor(a.role)}))},pageIndex:state.page,pageCount:s.pages.length,
  canPrevious:state.mode==='reading'&&state.page>0,canNext:state.mode==='reading'&&state.page<s.pages.length-1,
- choices:state.mode==='reading'&&state.page===s.pages.length-1?availableStoryChoices(w,e,s).map(o=>({id:o.id,text:o.text})):[],
+ choices:state.mode==='reading'&&state.page===s.pages.length-1?(state.choiceOrder??s.choices.map(o=>o.id)).map(id=>s.choices.find(o=>o.id===id)).filter(o=>o&&availableStoryChoices(w,e,s).some(x=>x.id===o.id)).map(o=>({id:o.id,text:o.text})):[],
  confirmation:state.mode==='confirming'?{optionId:state.pending,text:s.choices.find(o=>o.id===state.pending).text}:null,
  canFinish:state.mode==='result'||state.mode==='reading'&&!s.choices.length&&state.page===s.pages.length-1,waiting:state.mode==='waiting',canResume:state.mode==='waiting'&&state.dueDate<=w.position.date&&permitsStoryFollowup(w,e)&&!formalSlot(w).slot.protected,ended:state.mode==='ended',teacherDelta:state.panelDelta,
  result:state.mode==='result'||state.mode==='ended'?r(w).disclosures.filter(d=>d.actorId===w.identity.playerId&&e.facts.some(f=>f.id===d.factId)).map(d=>r(w).facts.find(f=>f.id===d.factId).description):[]};

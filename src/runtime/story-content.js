@@ -8,9 +8,9 @@ const roles=['teacher','participant','companion'];
 const expressions=['calm','happy','angry','sad','surprised','embarrassed'];
 const scenes=['school:counselling-corner'];
 export function validateStory(c){
- canonicalData(c);assertShape(c,['resourceId','definitionId','version','topicId','status','entry','stages',...(Object.hasOwn(c,'premise')?['premise']:[])]);
+ canonicalData(c);assertShape(c,['resourceId','definitionId','version','topicId','status','entry','stages',...(Object.hasOwn(c,'premise')?['premise']:[]),...(Object.hasOwn(c,'choiceContract')?['choiceContract']:[])]);
  for(const k of ['resourceId','definitionId','version','entry'])identifier(c[k]);
- need(TOPIC_IDS.includes(c.topicId),'REFERENCE','topic');need(['engineering-test','ready'].includes(c.status),'STATUS','status');
+ need(!c.choiceContract||c.choiceContract==='four-v2','CONTRACT','unsupported choice contract');need(TOPIC_IDS.includes(c.topicId),'REFERENCE','topic');need(['engineering-test','ready'].includes(c.status),'STATUS','status');
  need(c.status!=='ready'||!c.resourceId.startsWith('engineering:'),'PUBLICATION','engineering asset');
  if(c.premise){assertShape(c.premise,['description','data']);identifier(c.premise.description);canonicalData(c.premise.data);}
  need(Array.isArray(c.stages)&&c.stages.length>0,'EMPTY','stages');const ids=c.stages.map(s=>s.id);
@@ -25,16 +25,17 @@ export function validateStory(c){
    need(p.speaker===null?['narration','notice','email','news'].includes(p.presentation):roles.includes(p.speaker)&&(p.speaker==='teacher'||p.cast.some(a=>a.role===p.speaker)),'SPEAKER','speaker/cast');
   }
   need(Array.isArray(s.choices),'CHOICE','choices');
-  if(s.choices.length){need(s.next===null&&s.choices.length>=3&&s.choices.length<=8,'CHOICE','3–8 decisions');need(s.choices.filter(o=>!o.requires?.length).length>=3&&s.choices.some(o=>o.emotional&&!o.requires?.length),'QUALIFICATION','three basic options and emotion stay available');const n=s.choices.filter(o=>o.emotional).length;need(n>=1&&n<=2,'EMOTION','1–2 emotional options');}
+  if(s.choices.length){need(s.next===null&&(c.choiceContract==='four-v2'?s.choices.length===4:s.choices.length>=3&&s.choices.length<=8),'CHOICE','valid number of choices');if(c.choiceContract==='four-v2')need(s.choices.every(o=>!o.requires?.length),'CHOICE','four-v2 needs four always-visible choices');need(s.choices.filter(o=>!o.requires?.length).length>=3&&s.choices.some(o=>o.emotional&&!o.requires?.length),'QUALIFICATION','three basic options and emotion stay available');const n=s.choices.filter(o=>o.emotional).length;need(n>=1&&n<=2,'EMOTION','1–2 emotional options');}
   else need(s.next!==null,'GRAPH','explicit successor');
   need(new Set(s.choices.map(o=>o.id)).size===s.choices.length,'CHOICE','duplicate option');
-  for(const o of s.choices){assertShape(o,['id','text','emotional','kind','outcome',...(Object.hasOwn(o,'requires')?['requires']:[])]);
+  for(const o of s.choices){assertShape(o,['id','text','emotional','kind','outcome',...(Object.hasOwn(o,'requires')?['requires']:[]),...(Object.hasOwn(o,'variants')?['variants']:[])]);
    for(const condition of o.requires??[]){
     if(condition.type==='fact'){assertShape(condition,['type','id']);identifier(condition.id);}
     else if(condition.type==='numeric'){assertShape(condition,['type','role','holder','code','min','max']);need(roles.includes(condition.role)&&['person','life','work','outlook'].includes(condition.holder)&&/^(?:[1-9]|1[0-2])-[1-4]$/.test(condition.code)&&Number.isFinite(condition.min)&&Number.isFinite(condition.max)&&condition.min>=0&&condition.max<=100&&condition.min<=condition.max,'QUALIFICATION','numeric bounds');}
     else need(false,'QUALIFICATION','unknown condition');
    }identifier(o.id);identifier(o.text);need(typeof o.emotional==='boolean'&&['action','defer','refuse','support'].includes(o.kind),'CHOICE','option kind');
-   const r=o.outcome;assertShape(r,['fact','claims','changes','historyCodes','next',...['academic','entrance','institution','duty'].filter(k=>Object.hasOwn(r,k))]);
+   if(o.variants){need(c.choiceContract==='four-v2'&&Array.isArray(o.variants)&&o.variants.length>=2,'VARIANTS','only new contract allows multiple outcomes');need(new Set(o.variants.map(v=>v.id)).size===o.variants.length,'VARIANTS','unique variant IDs');for(const v of o.variants){assertShape(v,['id','weight','outcome',...(Object.hasOwn(v,'modifiers')?['modifiers']:[])]);identifier(v.id);need(Number.isFinite(v.weight)&&v.weight>0,'VARIANTS','positive base weights');for(const m of v.modifiers??[]){assertShape(m,['role','holder','code','influence']);need(roles.includes(m.role)&&['person','life','work','outlook'].includes(m.holder)&&/^(?:[1-9]|1[0-2])-[1-4]$/.test(m.code)&&Number.isFinite(m.influence)&&Math.abs(m.influence)<=5&&(m.role==='teacher'||m.holder==='person'),'VARIANTS','valid numeric modifier');}}}
+   for(const r of [o.outcome,...(o.variants??[]).map(v=>v.outcome)]){assertShape(r,['fact','claims','changes','historyCodes','next',...['academic','entrance','institution','duty'].filter(k=>Object.hasOwn(r,k))]);
    if(r.duty){assertShape(r.duty,['kind',...(Object.hasOwn(r.duty,'secondary')?['secondary']:[])]);if(r.duty.secondary)need(r.duty.kind==='resigned'&&r.duty.secondary==='unable','DUTY','compatible concurrent consequences');need(['pressure','relief','thought','resignation-pending','temporary','notice','resigned','replaced','unable','restored'].includes(r.duty.kind),'DUTY','supported objective consequence');}
    if(r.institution){assertShape(r.institution,['kind','response']);need(r.institution.kind==='duty-response'&&['accept','refuse','negotiate','protest','delay','seek-help'].includes(r.institution.response),'INSTITUTION','supported institutional consequence');}
    if(r.entrance){assertShape(r.entrance,['role','delta']);need(r.entrance.role==='participant'&&Number.isInteger(r.entrance.delta)&&Math.abs(r.entrance.delta)<=5,'ENTRANCE','bounded preparation guidance');}
@@ -43,12 +44,13 @@ export function validateStory(c){
    need(new Set(r.changes.map(e=>JSON.stringify([e.role,e.holder,e.code]))).size===r.changes.length,'RESULT','duplicate numeric target');
    for(const e of r.changes){assertShape(e,['role','holder','code','delta']);need(roles.includes(e.role)&&['person','life','work','outlook'].includes(e.holder)&&/^(?:[1-9]|1[0-2])-[1-4]$/.test(e.code)&&Number.isFinite(e.delta),'RESULT','numeric reference');need(e.role==='teacher'||e.holder==='person','RESULT','NPC holder');}
    need(r.historyCodes.every(x=>/^H(?:0[1-9]|10)-[1-6]$/.test(x)),'RESULT','history reference');
+   }
   }
-  for(const n of s.choices.length?s.choices.map(o=>o.outcome.next):[s.next]){
+  for(const n of s.choices.length?s.choices.flatMap(o=>[o.outcome.next,...(o.variants??[]).map(v=>v.outcome.next)]):[s.next]){
    assertShape(n,['stage','afterDays']);need(n.stage===null||ids.includes(n.stage),'GRAPH','unknown successor');need(Number.isSafeInteger(n.afterDays)&&n.afterDays>=0&&n.afterDays<=366&&(n.stage!==null||n.afterDays===0),'WAIT','wait condition');
   }
  }
- const seen=new Set(),active=new Set();function visit(id){need(!active.has(id),'CYCLE','cycles need a bounded domain design');if(seen.has(id))return;active.add(id);const s=c.stages.find(s=>s.id===id);for(const n of s.choices.length?s.choices.map(o=>o.outcome.next):[s.next])if(n.stage!==null)visit(n.stage);active.delete(id);seen.add(id);}visit(c.entry);need(seen.size===ids.length,'UNREACHABLE','unreachable stage');return c;
+ const seen=new Set(),active=new Set();function visit(id){need(!active.has(id),'CYCLE','cycles need a bounded domain design');if(seen.has(id))return;active.add(id);const s=c.stages.find(s=>s.id===id);for(const n of s.choices.length?s.choices.flatMap(o=>[o.outcome.next,...(o.variants??[]).map(v=>v.outcome.next)]):[s.next])if(n.stage!==null)visit(n.stage);active.delete(id);seen.add(id);}visit(c.entry);need(seen.size===ids.length,'UNREACHABLE','unreachable stage');return c;
 }
 const page=(order,text,speaker=null)=>({order,text,speaker,scene:'school:counselling-corner',cast:speaker?[{role:'participant',position:'center',expression:order===1?'embarrassed':'calm'}]:[],presentation:speaker?'dialogue':'narration'});
 const next=(stage=null,afterDays=0)=>({stage,afterDays});

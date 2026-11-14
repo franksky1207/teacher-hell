@@ -64,3 +64,30 @@ test('14-F3: incomplete observations are explicitly unknown, with HTML escaping'
  assert.match(html,/&lt;同學&gt;/);
  assert.doesNotMatch(html,/<同學>/);
 });
+
+test('15-F notebook: selected student portrait is opt-in, happy, and absent for caregivers',()=>{
+ const people=[
+  {id:'s',name:'學生肖像',kind:'student',seatNo:11,relation:'導師班學生'},
+  {id:'c',name:'家長',kind:'caregiver',relation:'學生家長',relatedTo:['學生肖像']}
+ ];
+ const data={className:'導師班',people,facts:[],claims:[]};
+ const portrait={artId:'student-001',wear:'uniform-winter',cell:null};
+ const normal=renderNotebookPeople(data,'s','', 'student',portrait);
+ assert.match(normal,/data-action="notebook-portrait-toggle"/);
+ assert.match(normal,/data-expression="happy"/);
+ assert.match(normal,/data-story-portrait="student-001"/);
+ assert.match(normal,/data-story-wear="uniform-winter"/);
+ assert.match(normal,/id="notebook-student-portrait"[^>]* hidden/);
+ assert.doesNotMatch(renderNotebookPeople(data,'s'),/notebook-portrait-toggle/);
+ const parent=renderNotebookPeople(data,'c','','caregiver',portrait);
+ assert.doesNotMatch(parent,/notebook-portrait-toggle|data-story-portrait/);
+});
+test('15-F notebook: casual scene cell is preserved, unapproved art stays hidden',()=>{
+ const data={className:'導師班',people:[{id:'s',name:'學生',kind:'student',relation:'導師班學生'}],facts:[],claims:[]};
+ const casual=renderNotebookPeople(data,'s','','student',{artId:'student-044',wear:'casual',cell:'graduation-trip-2'});
+ assert.match(casual,/data-story-portrait="student-044"/);
+ assert.match(casual,/data-expression="happy"/);
+ assert.match(casual,/data-story-wear="casual"/);
+ assert.match(casual,/data-story-cell="graduation-trip-2"/);
+ assert.doesNotMatch(renderNotebookPeople(data,'s','','student',{artId:'student-999',wear:'uniform-summer'}),/notebook-portrait-toggle/);
+});

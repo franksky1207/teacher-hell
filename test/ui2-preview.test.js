@@ -36,7 +36,7 @@ test('UI-2 rehearsal keeps cast stable while changing narrator and expression',(
  const state=makeUi2PreviewState();
  state.caseId='dual-left';
  const a=ui2PreviewProjection(state).sceneView.cast;
- state.caseId='dual-right';state.leftExpression=4;state.rightExpression=2;
+ state.caseId='dual-right';state.leftExpression=2;state.rightExpression=4;
  const b=ui2PreviewProjection(state).sceneView.cast;
  assert.deepEqual(a.map(x=>[x.id,x.position]),b.map(x=>[x.id,x.position]));
  assert.equal(b[0].artId,'student-001');
@@ -47,13 +47,29 @@ test('UI-2 rehearsal keeps cast stable while changing narrator and expression',(
 
 test('UI-2: two expression selectors are independent of speaker and one another',()=>{
  const state=makeUi2PreviewState();
- state.caseId='dual-left';state.leftExpression=1;state.rightExpression=4;
+ state.caseId='dual-left';state.leftExpression=1;state.rightExpression=2;
  let cast=ui2PreviewProjection(state).sceneView.cast;
  assert.equal(cast[0].expression,'happy');assert.equal(cast[1].expression,'angry');
  state.caseId='dual-right';cast=ui2PreviewProjection(state).sceneView.cast;
  assert.equal(cast[0].expression,'happy');assert.equal(cast[1].expression,'angry');
- state.leftExpression=5;cast=ui2PreviewProjection(state).sceneView.cast;
+ state.leftExpression=3;cast=ui2PreviewProjection(state).sceneView.cast;
  assert.equal(cast[0].expression,'sad');assert.equal(cast[1].expression,'angry');
  state.rightExpression=0;cast=ui2PreviewProjection(state).sceneView.cast;
  assert.equal(cast[0].expression,'sad');assert.equal(cast[1].expression,'calm');
+});
+
+
+test('UI-2 expression labels/order use official six-cell art names',async()=>{
+ const {FULL_SHEET_EXPRESSIONS}=await import('../web/full-sheet-preview.js');
+ assert.deepEqual(FULL_SHEET_EXPRESSIONS,[
+  ['calm','平靜'],['happy','開心'],['angry','生氣'],
+  ['sad','難過'],['surprised','驚訝'],['embarrassed','害羞']
+ ]);
+ for(let i=0;i<FULL_SHEET_EXPRESSIONS.length;i++){
+  const state=makeUi2PreviewState();
+  state.leftExpression=i;state.rightExpression=i;
+  const cast=ui2PreviewProjection(state).sceneView.cast;
+  assert.equal(cast[0].expression,FULL_SHEET_EXPRESSIONS[i][0]);
+  assert.equal(cast[1].expression,FULL_SHEET_EXPRESSIONS[i][0]);
+ }
 });

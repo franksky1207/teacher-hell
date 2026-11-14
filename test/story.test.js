@@ -18,7 +18,7 @@ test('story: low level stage/fact/choice/lifecycle injection rejected',()=>{cons
 test('story: illegal choice rejected without mutation',()=>{const {w,eventId}=last(),before=clone(w);assert.throws(()=>apply(w,[storyAction(eventId,'select','nonexistent')]));assert.deepEqual(w,before);});
 test('story: unreachable stage and cycles rejected',()=>{invalid(c=>c.stages.push({...clone(c.stages[1]),id:'orphan'}));invalid(c=>c.stages[1].choices[0].outcome.next.stage='opening');});
 test('story: all branches have valid successors and bounded waits',()=>{invalid(c=>c.stages[0].choices[0].outcome.next.stage='missing');invalid(c=>c.stages[0].choices[0].outcome.next.afterDays=-1);invalid(c=>c.stages[1].choices[0].outcome.next.afterDays=1);});
-test('story: 3–8 choices and 1–2 meaningful emotional markers',()=>{invalid(c=>c.stages[0].choices=c.stages[0].choices.slice(0,2));invalid(c=>c.stages[0].choices.forEach(o=>o.emotional=false));invalid(c=>c.stages[0].choices.forEach(o=>o.emotional=true));invalid(c=>c.stages[0].choices[1].id='listen');});
+test('17-B: exactly four choices and 1–2 meaningful emotional markers',()=>{invalid(c=>c.stages[0].choices=c.stages[0].choices.slice(0,2));invalid(c=>c.stages[0].choices=c.stages[0].choices.slice(0,3));invalid(c=>c.stages[0].choices.push(structuredClone(c.stages[0].choices[0])));invalid(c=>c.stages[0].choices.forEach(o=>o.emotional=false));invalid(c=>c.stages[0].choices.forEach(o=>o.emotional=true));invalid(c=>c.stages[0].choices[1].id='listen');});
 test('story: empty ready assets, missing versions and engineering publication rejected',()=>{invalid(c=>c.stages[0].pages=[]);invalid(c=>c.status='ready');assert.throws(()=>validateStoryReference({id:DEMO_STORY.definitionId,topicId:DEMO_STORY.topicId,content:{resourceId:DEMO_STORY.resourceId,version:'missing',status:'ready'}}));});
 test('story: speaker/cast/order/presentation and numeric/history references checked',()=>{invalid(c=>c.stages[0].pages[0].speaker='unknown');invalid(c=>c.stages[0].pages[1].cast.push(clone(c.stages[0].pages[1].cast[0])));invalid(c=>c.stages[0].pages[0].order=2);invalid(c=>c.stages[0].pages[0].presentation='video');invalid(c=>c.stages[0].choices[0].outcome.changes[0].code='99-1');invalid(c=>c.stages[0].choices[0].outcome.historyCodes=['bad']);});
 test('story: resources immutable and hidden output fields rejected',()=>{assert.throws(()=>{DEMO_STORY.version='changed';});invalid(c=>c.stages[0].pages[0].hidden={npc:100});});
@@ -28,7 +28,34 @@ test('story: single-stage completion uses the same engine',async()=>{const {SHOR
 test('story: immediate stages merge without new admission or clock',async()=>{const {IMMEDIATE_STORY}=await import('../src/runtime/story-content.js');let {world:w,eventId}=beginDemo(1,IMMEDIATE_STORY);while(readStory(w,eventId).canNext)w=apply(w,[storyAction(eventId,'next')]);w=decide(w,eventId,'angry');const cursor=runtimeOf(w).plan.cursor;w=apply(w,[storyAction(eventId,'finish')]);assert.equal(storyState(w,eventId).stage,'listen');assert.equal(runtimeOf(w).plan.cursor,cursor);assert.equal(runtimeOf(w).history.filter(h=>h.type==='stage').length,2);assert.equal(runtimeOf(w).history.filter(h=>h.data.calendarAdmission).length,1);});
 test('story: immutable resource digest and transaction selection evidence reject save tampering',()=>{const {world:w}=beginDemo();let bad=clone(w);runtimeOf(bad).history.find(h=>h.type==='story').data.state.contentDigest='bad';assert.throws(()=>restoreWorldState(bad));bad=clone(w);const s=runtimeOf(bad).history.find(h=>h.type==='event-selection').data.selected[0];s.content.version='999';assert.throws(()=>restoreWorldState(bad));bad=clone(w);delete runtimeOf(bad).commits.find(c=>c.draws.some(d=>d.candidate)).draws.find(d=>d.candidate).candidate;assert.throws(()=>restoreWorldState(bad));});
 test('story: protected slots forbid both story execution and follow-up availability',async()=>{const {compileStory}=await import('../src/runtime/story.js'),{positionFor,cursorFor}=await import('../src/calendar/calendar.js');let {w,eventId}=last();w=decide(w,eventId,'listen');w=apply(w,[storyAction(eventId,'finish')]);w.position=positionFor('2026-11-20','p6',2026);runtimeOf(w).plan.cursor=cursorFor(w.position.date,w.position.slotId,2026);assert.equal(readStory(w,eventId).canResume,false);assert.throws(()=>compileStory(w,storyAction(eventId,'resume')),/protected/);});
-test('story: qualified extra options preserve three basic choices',async()=>{const {availableStoryChoices}=await import('../src/runtime/story.js');const {world:w,eventId}=beginDemo(),e=w.events.find(e=>e.id===eventId),stage=clone(DEMO_STORY.stages[0]);stage.choices[3].requires=[{type:'fact',id:'not-yet-observed'}];assert.equal(availableStoryChoices(w,e,stage).length,3);stage.choices[3].requires=[{type:'numeric',role:'teacher',holder:'person',code:'3-1',min:0,max:100}];assert.equal(availableStoryChoices(w,e,stage).length,4);stage.choices[3].requires[0].min=100;assert.equal(availableStoryChoices(w,e,stage).length,3);});
+test('17-B: qualified replacement preserves four visible slots with a legal fallback',async()=>{
+ const {availableStoryChoices}=await import('../src/runtime/story.js'),{world:w,eventId}=beginDemo(),e=w.events.find(e=>e.id===eventId),stage=clone(DEMO_STORY.stages[0]);
+ stage.choices[3].replacement.requires=[{type:'fact',id:'not-yet-observed'}];
+ assert.deepEqual(availableStoryChoices(w,e,stage).map(o=>o.id),['listen','angry','defer','support']);
+ stage.choices[3].replacement.requires=[{type:'numeric',role:'teacher',holder:'person',code:'3-1',min:0,max:100}];
+ assert.deepEqual(availableStoryChoices(w,e,stage).map(o=>o.id),['listen','angry','defer','guided-support']);
+ stage.choices[3].replacement.requires[0].min=100;
+ assert.equal(availableStoryChoices(w,e,stage).length,4);
+ assert.equal(availableStoryChoices(w,e,stage)[3].id,'support');
+});
+test('17-B: locked replacement cannot be selected when hidden, and survives restore',()=>{
+ const {w,eventId}=last(),visible=readStory(w,eventId).choices.map(o=>o.id);
+ assert.equal(visible.length,4);assert.equal(new Set(visible).size,4);
+ const hidden=visible.includes('support')?'guided-support':'support';
+ assert.throws(()=>apply(w,[storyAction(eventId,'select',hidden)]),/illegal or unavailable locked option/);
+ const restored=restoreWorldState(JSON.stringify(w));
+ assert.deepEqual(readStory(restored,eventId).choices.map(o=>o.id),visible);
+ const chosen=visible.includes('guided-support')?'guided-support':'support';
+ const committed=decide(restored,eventId,chosen);
+ assert.equal(runtimeOf(committed).history.findLast(x=>x.type==='choice').data.optionId,chosen);
+ assert.deepEqual(restoreWorldState(JSON.stringify(committed)).events[0].choice.confirmedOptionId,chosen);
+});
+test('17-B: invalid replacement schema is rejected',()=>{
+ invalid(c=>{c.stages[0].choices[3].replacement.requires=[];});
+ invalid(c=>{c.stages[0].choices[3].replacement.id='listen';});
+ invalid(c=>{c.stages[0].choices[3].replacement.emotional=true;});
+ invalid(c=>{c.stages[0].choices[3].replacement.replacement=clone(c.stages[0].choices[0]);});
+});
 test('story: vacation driver retains direction and resumes at consumed-slot boundary',async()=>{const {nextVacationOperation}=await import('../src/runtime/schedule.js');let {world:w,eventId}=beginDemo(1,DEMO_STORY,'2027-02-01');w=apply(w,[{type:'plan-vacation',id:'story-vacation',weeks:1,direction:'rest'}]);assert.equal(nextVacationOperation(w).status,'decision-required');while(readStory(w,eventId).canNext)w=apply(w,[storyAction(eventId,'next')]);w=decide(w,eventId,'listen');w=apply(w,[storyAction(eventId,'finish')]);const next=nextVacationOperation(w);assert.equal(next.direction,'rest');assert.deepEqual(next.request.operations.map(o=>o.type),['advance-time']);w=prepareWorldOperation(w,next.request).world;assert.equal(nextVacationOperation(w).status,'follow-up-required');w=apply(w,[storyAction(eventId,'resume')]);assert.equal(nextVacationOperation(w).status,'decision-required');assert.equal(runtimeOf(w).plan.vacation.direction,'rest');});
 
 test('13-E: three document presentation kinds satisfy validated content contract',()=>{
@@ -50,3 +77,6 @@ test('H5 story history auditing isolates witnesses and event changes on success 
   const bad=structuredClone(world),entry=runtimeOf(bad).history.find(h=>h.type==='story'&&h.data.action.action==='confirm');entry.data.state.panelDelta[Object.keys(entry.data.state.panelDelta)[0]]+=1;const corrupted=JSON.stringify(bad);freeze(bad);assert.throws(()=>validateStoryHistory(bad),/illegal story transition/);assert.equal(JSON.stringify(bad),corrupted);
  }
 });
+
+test('17-B: choice ordering is stable through save restore and all stages expose four options',()=>{let {w,eventId}=last();const initial=readStory(w,eventId).choices.map(o=>o.id);assert.equal(initial.length,4);assert.deepEqual(initial,storyState(w,eventId).choiceOrder);const restored=restoreWorldState(JSON.stringify(w));assert.deepEqual(readStory(restored,eventId).choices.map(o=>o.id),initial);assert.equal(new Set(initial).size,4);});
+test('17-B: same choice supports multiple weighted outcomes with one persisted causal result',()=>{let {w,eventId}=last();w=decide(w,eventId,'listen');w=apply(w,[storyAction(eventId,'finish')]);while(!readStory(w,eventId).canResume)w=advanceDemo(w);w=apply(w,[storyAction(eventId,'resume')]);while(readStory(w,eventId).canNext)w=apply(w,[storyAction(eventId,'next')]);assert.equal(readStory(w,eventId).choices.length,4);w=decide(w,eventId,'agency');const variant=storyState(w,eventId).chosenVariantId;assert.ok(['progress','hesitation'].includes(variant));const after=restoreWorldState(JSON.stringify(w));assert.equal(storyState(after,eventId).chosenVariantId,variant);assert.ok(runtimeOf(after).facts.some(f=>f.data?.variantId===variant));assert.throws(()=>apply(after,[storyAction(eventId,'confirm')]));});

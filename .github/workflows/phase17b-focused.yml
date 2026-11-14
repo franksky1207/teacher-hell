@@ -1,0 +1,29 @@
+name: Phase 17-B focused story contract
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/runtime/story.js'
+      - 'src/runtime/story-content.js'
+      - 'src/runtime/story-variation.js'
+      - 'web/story-view.js'
+      - 'test/story.test.js'
+      - 'test/story-view.test.js'
+      - '.github/workflows/phase17b-focused.yml'
+permissions:
+  contents: read
+jobs:
+  story:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Check changed story contracts only (no simulation or build)
+        run: node --test --test-isolation=none test/story.test.js test/story-view.test.js

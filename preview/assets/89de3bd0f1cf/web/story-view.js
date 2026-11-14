@@ -26,7 +26,7 @@ export function renderStoryView(v){
  if(choices.some(o=>!o||typeof o.id!=='string'||typeof o.text!=='string'))throw new TypeError('Invalid choices');
  if(confirming&&(typeof v.confirmation.text!=='string'||typeof v.confirmation.optionId!=='string'))throw new TypeError('Invalid confirmation');
  const choosing=last&&!confirming&&!waiting&&!ended&&choices.length>0;
- if(choosing&&(choices.length<3||choices.length>8))throw new RangeError('Decisions require 3–8 choices');
+ if(choosing&&choices.length!==4)throw new RangeError('Decisions require exactly four choices');
  const finish=!!v.canFinish&&!choosing&&!confirming&&!waiting&&!ended,resume=!!v.canResume&&waiting;
  const speaker=typeof v.sceneView?.speaker==='string'?v.sceneView.speaker:p.speaker===null?'旁白':format==='phone'?'通話':format==='chat'?'訊息':'對話';
  // A surface click is only a next-page intent; finish/confirm/resume are button-only.

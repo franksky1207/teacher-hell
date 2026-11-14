@@ -172,7 +172,7 @@ button:active:not(:disabled){transform:translateY(0)}
 .panel{border-color:var(--avg-line);border-radius:var(--avg-radius);box-shadow:var(--avg-shadow)}
 /* The confirmed home art is the actual existing background, not a second copy. */
 .home--avg{position:relative;isolation:isolate;min-height:100dvh;gap:0;
- background-image:url('./assets/backgrounds/desktop/school-gate-day.webp');
+ background-image:var(--home-desktop-art);
  background-position:center;background-repeat:no-repeat;background-size:cover;
  padding:clamp(1.2rem,3vw,3rem);overflow:hidden}
 .home--avg .home__shade{position:absolute;inset:0;z-index:-1;pointer-events:none;
@@ -199,7 +199,7 @@ button:active:not(:disabled){transform:translateY(0)}
 .home__dev-tools button{font-size:.75rem;padding:.32rem .55rem}
 @media(max-width:650px){
  .home--avg{justify-content:normal;min-height:100dvh;padding:0 1rem;
- background-image:url('./assets/backgrounds/mobile/school-gate-day.webp');background-position:center}
+ background-image:var(--home-mobile-art);background-position:center}
  .home--avg .home__shade{background:linear-gradient(180deg,rgba(6,16,33,.57) 0%,rgba(6,16,33,.12) 43%,rgba(6,16,33,.61) 100%)}
  .home__layout{height:100dvh;min-height:0;justify-content:space-between;gap:1rem;
  padding:clamp(3.1rem,11dvh,6.2rem) 0 clamp(5.5rem,14dvh,8rem)}

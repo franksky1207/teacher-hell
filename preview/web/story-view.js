@@ -32,10 +32,17 @@ export function renderStoryView(v){
  // A surface click is only a next-page intent; finish/confirm/resume are button-only.
  const advance=next?' data-story-advance="next"':'';
  let actions='';
- if(confirming&&!waiting&&!ended)actions=`<section class="story-confirm"><p>已選擇：${esc(v.confirmation.text)}</p><div class="story-decision-actions">${button('返回選項','cancel')}${button('確認選擇','confirm')}</div></section>`;
- else if(choosing)actions=`<section class="story-choice-panel" aria-label="選擇回應"><div class="story-choice-grid">${choices.map(o=>button(o.text,'select',`data-option-id="${esc(o.id)}"`)).join('')}</div></section>`;
+ if(confirming&&!waiting&&!ended)actions=`<div class="story-inline-choice" aria-label="待確認選項"><p class="story-inline-selected">已選擇：<strong>${esc(v.confirmation.text)}</strong></p><div class="story-decision-actions">${button('返回選項','cancel')}${button('確認選擇','confirm')}</div></div>`;
+ else if(choosing)actions=`<div class="story-inline-choice" aria-label="選擇回應"><div class="story-choice-grid">${choices.map(o=>button(o.text,'select',`data-option-id="${esc(o.id)}"`)).join('')}</div></div>`;
  else if(finish)actions=`<div class="story-finish">${button('結束','finish')}</div>`;
  else if(resume)actions=`<div class="story-resume">${button('繼續','resume')}</div>`;
- const state=ended?'ended':waiting?'waiting':confirming?'confirming':finish?'finishing':'reading';
- return `<section class="story-view" aria-label="劇情" data-story-format="${format}" data-story-state="${state}">${['phone','chat','notice','email','news'].includes(format)?'':v.sceneView?renderStoryScene(v.sceneView):''}<div class="story-reader" aria-label="劇情閱讀"${advance}><div class="story-speaker">${esc(speaker)}</div>${renderSpecialStoryBody(format,p.text,speaker,v.chatMessages)}</div><nav class="story-navigation" aria-label="劇情翻頁"><span class="story-page-number" aria-label="頁碼">${v.pageIndex+1}／${v.pageCount}</span>${previous?button('上一頁','previous'):''}${next?button('下一頁','next'):''}</nav>${finish&&v.resultConfirmed===true?renderConfirmedResult(v):''}${actions}</section>`;
+ const state=ended?'ended':waiting?'waiting':confirming?'confirming':choosing?'choosing':finish?'finishing':'reading';
+ const isStandard=format==='dialogue'||format==='narration';
+ const sceneMarkup=isStandard&&v.sceneView?renderStoryScene(v.sceneView):'';
+ const speakerMarkup=isStandard&&speaker!=='旁白'?`<div class="story-speaker story-speaker--floating">${esc(speaker)}</div>`:'';
+ const reader=`<div class="story-reader" aria-label="劇情閱讀"${advance}>${!isStandard?`<div class="story-speaker">${esc(speaker)}</div>`:''}${renderSpecialStoryBody(format,p.text,speaker,v.chatMessages)}</div>`;
+ const navigation=`<nav class="story-navigation" aria-label="劇情翻頁"><span class="story-page-number" aria-label="頁碼">${v.pageIndex+1}／${v.pageCount}</span>${previous?button('上一頁','previous'):''}${next?button('下一頁','next'):''}</nav>`;
+ const result=finish&&v.resultConfirmed===true?renderConfirmedResult(v):'';
+ return `<section class="story-view${isStandard?' story-view--avg':''}" aria-label="劇情" data-story-format="${format}" data-story-state="${state}">${sceneMarkup}<div class="story-bottom-frame">${speakerMarkup}${reader}${navigation}${result}${actions}</div></section>`;
+
 }

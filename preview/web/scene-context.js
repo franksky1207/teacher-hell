@@ -2,8 +2,10 @@
  * No event topic, future stage, hidden state or arbitrary file-name interpolation.
  */
 import {BACKGROUND_ENTRIES,backgroundUrl} from './background-scenes.js';
+import {STORY_SCENE_LOCATIONS} from '../src/runtime/story-scenes.js';
 const catalog=new Map(BACKGROUND_ENTRIES.map(e=>[e.scene+'/'+e.variant,e]));
-const storyPlaces=Object.freeze({'school:counselling-corner':'school-courtyard'});
+// Only validated, explicitly authored locations override calendar context.
+// Unsupported scene tags fall back to the real slot/day (no invented scenery).
 export const SCENE_CASES=Object.freeze([
  {id:'opening',label:'暑輔開場・校門口',context:{opening:true,slotId:'early'}},
  {id:'early',label:'早自習・教室',context:{slotId:'early'}},
@@ -54,7 +56,10 @@ export function selectScene({opening=false,completed=false,failed=false,aftercar
  if(completed||failed)return sceneEntry('home-living-room','day');
  const variant=light(slotId);
  // Explicit supported location takes precedence even when a phone is ringing.
- if(sceneTag!=null&&storyPlaces[sceneTag])return sceneEntry(storyPlaces[sceneTag],variant);
+ if(sceneTag!=null&&Object.hasOwn(STORY_SCENE_LOCATIONS,sceneTag)){
+  const authored=sceneEntry(STORY_SCENE_LOCATIONS[sceneTag].scene,variant);
+  if(authored)return authored;
+ }
  const knownActivities=Array.isArray(activityKinds)?activityKinds:[];
  const activity=knownActivities.find(kind=>activityScene[kind]);
  if(activity){

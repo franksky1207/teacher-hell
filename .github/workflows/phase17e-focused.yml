@@ -1,0 +1,30 @@
+name: Phase 17-E focused integration
+on:
+  pull_request:
+    branches: [main, feat/17d-story-authoring-sop-samples]
+    paths:
+      - 'src/runtime/story.js'
+      - 'src/runtime/story-content.js'
+      - 'test/story.test.js'
+      - 'test/events.test.js'
+      - 'test/phase17d-content.test.js'
+      - '.github/workflows/phase17e-focused.yml'
+permissions:
+  contents: read
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Story and sample contracts, no multi-year sim
+        run: node --test --test-isolation=none test/story.test.js test/phase17d-content.test.js test/phase17c-exposure-and-scenes.test.js
+      - name: Modern 128-topic and legacy 96-topic migration only
+        run: node --test --test-name-pattern='17-E' test/events.test.js

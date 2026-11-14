@@ -715,3 +715,13 @@ button:active:not(:disabled){transform:translateY(0)}
  .scene-preview__tools button{font-size:.72rem}
  .scene-preview__caption{font-size:.66rem}
 }
+
+/* 15-D unified scene and wardrobe inspection, including phone portrait. */
+.scene-preview__tools label{min-width:0}
+.scene-preview__tools select[data-scene-wear]{max-width:min(37vw,15rem)}
+.scene-preview__tools select[data-scene-cast]{max-width:min(28vw,13rem)}
+@media(max-width:650px){
+ .scene-preview__tools label{flex:1 1 42%;justify-content:space-between}
+ .scene-preview__tools select[data-scene-wear],.scene-preview__tools select[data-scene-cast]{max-width:70%;min-width:0}
+ .scene-preview__tools button{flex:1 1 100%}
+}

@@ -37,21 +37,32 @@ function stableNumber(id,variant){
  for(const char of String(id)){n^=char.codePointAt(0);n=Math.imul(n,16777619);}
  return (n^(Number.isInteger(variant)?variant:0))>>>0;
 }
-export function stableAdultArt(id,profile={}){
+export function stableAdultArt(id,profile={},ageStage='adult'){
  if(!id)return null;
  const n=stableNumber(id,profile?.appearance?.variant);
  // Family role is explicit. Unspecified adult cast selection uses a stable
  // visual variant only; it does not assert a character's gender or age.
  let type;
- if(profile.familyRole==='mother')type='female';
- else if(profile.familyRole==='father')type='male';
+ if(profile.gender==='female'||profile.familyRole==='mother')type='female';
+ else if(profile.gender==='male'||profile.familyRole==='father')type='male';
  else if(profile.familyRole==='guardian')type=n%2?'female':'male';
  else type=n%2?'female':'male';
  const index=(Math.floor(n/2)%3)+1;
- const name='adult-'+type+'-0'+index;
+ const name='adult-'+(ageStage==='young'?'young-':'')+type+'-0'+index;
  return NPC_SILHOUETTE_IDS.some(entry=>entry.id===name)?name:null;
 }
 export const ADULT_POSES=Object.freeze(['neutral','side','hand-on-hip','arms-open','gesture','weight-shift']);
 export function adultPoseForExpression(expression){
  return ({calm:'neutral',happy:'arms-open',angry:'hand-on-hip',sad:'side',surprised:'gesture',embarrassed:'weight-shift'})[expression]??'neutral';
+}
+
+/** Only after a recorded graduation and a multi-year interval may a student's
+ * visual age advance. Never infer a reunion from hidden story themes. */
+export function isMatureAlumnus(world,id){
+ const registry=world?.numeric?.evolution?.world?.registry;
+ const date=world?.position?.date;
+ if(!registry||typeof date!=='string')return false;
+ return (registry.enrollments??[]).some(e=>e.personId===id&&
+  ['graduated','course-completed'].includes(e.status)&&typeof e.until==='string'&&
+  Number(date.slice(0,4))-Number(e.until.slice(0,4))>=3);
 }

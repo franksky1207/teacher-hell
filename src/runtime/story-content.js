@@ -25,10 +25,11 @@ export function validateStory(c){
    need(p.speaker===null?['narration','notice','email','news'].includes(p.presentation):roles.includes(p.speaker)&&(p.speaker==='teacher'||p.cast.some(a=>a.role===p.speaker)),'SPEAKER','speaker/cast');
   }
   need(Array.isArray(s.choices),'CHOICE','choices');
-  if(s.choices.length){need(s.next===null&&(s.choices.length===4),'CHOICE','valid number of choices');need(s.choices.every(o=>!o.requires?.length),'CHOICE','all four options must be available');need(s.choices.filter(o=>!o.requires?.length).length>=3&&s.choices.some(o=>o.emotional&&!o.requires?.length),'QUALIFICATION','three basic options and emotion stay available');const n=s.choices.filter(o=>o.emotional).length;need(n>=1&&n<=2,'EMOTION','1–2 emotional options');}
+  if(s.choices.length){need(s.next===null&&(s.choices.length===4),'CHOICE','valid number of choices');need(s.choices.every(o=>!o.requires?.length),'CHOICE','all four base options must be available');need(s.choices.filter(o=>!o.requires?.length).length>=3&&s.choices.some(o=>o.emotional&&!o.requires?.length),'QUALIFICATION','three basic options and emotion stay available');const n=s.choices.filter(o=>o.emotional).length;need(n>=1&&n<=2,'EMOTION','1–2 emotional options');}
   else need(s.next!==null,'GRAPH','explicit successor');
-  need(new Set(s.choices.map(o=>o.id)).size===s.choices.length,'CHOICE','duplicate option');
-  for(const o of s.choices){assertShape(o,['id','text','emotional','kind','outcome',...(Object.hasOwn(o,'requires')?['requires']:[]),...(Object.hasOwn(o,'variants')?['variants']:[])]);
+  const allOptions=s.choices.flatMap(o=>[o,...(o.replacement?[o.replacement]:[])]);need(new Set(allOptions.map(o=>o.id)).size===allOptions.length,'CHOICE','duplicate base or replacement ID');
+  for(const base of s.choices){if(base.replacement){need(!base.requires?.length,'QUALIFICATION','base always available');need(Array.isArray(base.replacement.requires)&&base.replacement.requires.length>0,'QUALIFICATION','replacement requires at least one condition');need(base.replacement.emotional===base.emotional,'EMOTION','replacement must keep its slot emotional classification');}}
+  for(const o of allOptions){assertShape(o,['id','text','emotional','kind','outcome',...(Object.hasOwn(o,'requires')?['requires']:[]),...(Object.hasOwn(o,'variants')?['variants']:[]),...(Object.hasOwn(o,'replacement')?['replacement']:[])]);need(!o.replacement||s.choices.includes(o),'CHOICE','nested replacement not allowed');
    for(const condition of o.requires??[]){
     if(condition.type==='fact'){assertShape(condition,['type','id']);identifier(condition.id);}
     else if(condition.type==='numeric'){assertShape(condition,['type','role','holder','code','min','max']);need(roles.includes(condition.role)&&['person','life','work','outlook'].includes(condition.holder)&&/^(?:[1-9]|1[0-2])-[1-4]$/.test(condition.code)&&Number.isFinite(condition.min)&&Number.isFinite(condition.max)&&condition.min>=0&&condition.max<=100&&condition.min<=condition.max,'QUALIFICATION','numeric bounds');}
@@ -46,11 +47,11 @@ export function validateStory(c){
    need(r.historyCodes.every(x=>/^H(?:0[1-9]|10)-[1-6]$/.test(x)),'RESULT','history reference');
    }
   }
-  for(const n of s.choices.length?s.choices.flatMap(o=>[o.outcome.next,...(o.variants??[]).map(v=>v.outcome.next)]):[s.next]){
+  for(const n of s.choices.length?s.choices.flatMap(o=>[o,...(o.replacement?[o.replacement]:[])].flatMap(v=>[v.outcome.next,...(v.variants??[]).map(x=>x.outcome.next)])):[s.next]){
    assertShape(n,['stage','afterDays']);need(n.stage===null||ids.includes(n.stage),'GRAPH','unknown successor');need(Number.isSafeInteger(n.afterDays)&&n.afterDays>=0&&n.afterDays<=366&&(n.stage!==null||n.afterDays===0),'WAIT','wait condition');
   }
  }
- const seen=new Set(),active=new Set();function visit(id){need(!active.has(id),'CYCLE','cycles need a bounded domain design');if(seen.has(id))return;active.add(id);const s=c.stages.find(s=>s.id===id);for(const n of s.choices.length?s.choices.flatMap(o=>[o.outcome.next,...(o.variants??[]).map(v=>v.outcome.next)]):[s.next])if(n.stage!==null)visit(n.stage);active.delete(id);seen.add(id);}visit(c.entry);need(seen.size===ids.length,'UNREACHABLE','unreachable stage');return c;
+ const seen=new Set(),active=new Set();function visit(id){need(!active.has(id),'CYCLE','cycles need a bounded domain design');if(seen.has(id))return;active.add(id);const s=c.stages.find(s=>s.id===id);for(const n of s.choices.length?s.choices.flatMap(o=>[o,...(o.replacement?[o.replacement]:[])].flatMap(v=>[v.outcome.next,...(v.variants??[]).map(x=>x.outcome.next)])):[s.next])if(n.stage!==null)visit(n.stage);active.delete(id);seen.add(id);}visit(c.entry);need(seen.size===ids.length,'UNREACHABLE','unreachable stage');return c;
 }
 const page=(order,text,speaker=null)=>({order,text,speaker,scene:'school:counselling-corner',cast:speaker?[{role:'participant',position:'center',expression:order===1?'embarrassed':'calm'}]:[],presentation:speaker?'dialogue':'narration'});
 const next=(stage=null,afterDays=0)=>({stage,afterDays});

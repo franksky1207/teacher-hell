@@ -382,3 +382,20 @@
 /* Keep the standard dialog baseline even when the one-page choice has no pager. */
 .game--story .story-view--avg[data-story-state="choosing"] .story-navigation,
 .game--story .story-view--avg[data-story-state="confirming"] .story-navigation{min-height:.1rem}
+
+/* UI-2 landscape framing: a distinct vertical anchor from phone portrait.
+   Keep character canvas scale and the dialogue frame unchanged.
+   On wide landscape screens lift the same sprites so thighs show above the
+   foreground dialogue; maintain one anchor for narration and all choice states. */
+@media (min-width:651px) and (orientation:landscape) and (min-height:701px){
+ .game--story .story-view--avg .story-portrait-canvas,
+ .game--story .story-view--avg .story-actor-shape{
+  bottom:clamp(8rem,20dvh,14rem);
+ }
+}
+@media (min-width:651px) and (orientation:landscape) and (max-height:700px){
+ .game--story .story-view--avg .story-portrait-canvas,
+ .game--story .story-view--avg .story-actor-shape{
+  bottom:clamp(3rem,9dvh,6rem);
+ }
+}

@@ -70,6 +70,20 @@ const seed=()=>crypto.getRandomValues(new Uint32Array(1))[0];
 const value=displayPanelValue;
 function panelBars(p,names){return `<div class="bars">${names.map(n=>`<div class="bar"><span>${n}</span><progress max="100" value="${p[n]}"></progress><span>${value(p[n])}</span></div>`).join('')}</div>`;}
 function set(html){app.innerHTML=html;music.sync();music.select(screen==='game'?gameMusicMood:screen==='music-preview'?musicPreviewMood:'school');}
+/** Retain the student's list scroll within an open notebook; a new notebook
+ * always starts at the top. Avoid scrollIntoView (which can move the modal).
+ */
+function replaceNotebookContent(html,{preservePersonScroll=false}={}){
+ const notebook=document.querySelector('.overlay .notebook');
+ if(!notebook)return;
+ const list=preservePersonScroll?notebook.querySelector('.notebook-person-list'):null;
+ const listPosition=list?.scrollTop??0;
+ notebook.outerHTML=html;
+ if(list){
+  const updated=document.querySelector('.overlay .notebook .notebook-person-list');
+  if(updated)updated.scrollTop=listPosition;
+ }
+}
 function dialog(title,body){app.insertAdjacentHTML('beforeend',`<div class="overlay" data-action="outside"><section class="dialog" role="dialog" aria-modal="true" aria-label="${esc(title)}"><header><h2>${esc(title)}</h2>${button('×','close','aria-label="關閉"')}</header>${body}</section></div>`);music.sync();}
 function showHome(){screen='home';forgetCurrentView();const desktopArt=gateDesktop,mobileArt=gateMobile;set(`<main class="home home--avg" style="--home-desktop-art:url('${desktopArt}');--home-mobile-art:url('${mobileArt}')"><div class="home__shade" aria-hidden="true"></div><div class="home__layout"><header class="home__title"><p class="home__eyebrow">一段教書生涯，一所充滿意外的學校。</p><h1>教師荒謬地獄</h1><p class="home__subtitle">三年導師生涯 · 一場荒謬的日常</p></header><nav class="home__menu" aria-label="主選單">${button('繼續遊戲','continue')}${button('選擇存檔','slots')}${button('遊戲說明','help')}${button('設定','settings')}</nav></div><aside class="home__dev-tools" aria-label="開發工具">${button('開發測試中心','dev-center')}</aside></main>`);}
 function showMusicPreview(){screen='music-preview';set(`<main class="screen music-preview"><section class="panel"><h1>背景音樂｜15-E 試聽</h1><p>七種情境皆使用正式 OGG 音檔。選曲僅切換音樂，不會推進時間或更動存檔。</p><div class="music-preview__choices">${MUSIC_TRACKS.map(t=>button(`${esc(t.label)}｜${esc(t.title)}`,`music-preview-track:${t.key}`,`class="${musicPreviewMood===t.key?'music-preview__active':''}"`)).join('')}</div><p>使用畫面右上角的小喇叭開關音樂；展開箭頭即可調整音量。</p><p>${button('返回開發測試中心','dev-center')}</p></section></main>`);}
@@ -352,7 +366,7 @@ if(['notebook-tab','notebook-person','notebook-person-category','notebook-event-
  const events=notebookTab==='events'?await notebookData('events'):null;
   const tasks=notebookTab==='tasks'?await notebookData('tasks'):null;
  const html=renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:notebookTab,people,selectedPersonId:notebookPersonId,personCategory:notebookPersonCategory,personSearch:notebookPersonSearch,portrait:notebookStudentPortrait(w,people),events,eventSearch:notebookEventSearch,eventView:notebookEventView,eventTerm:notebookEventTerm,tasks,eventYear:notebookEventYear,eventKind:notebookEventKind,eventPage:notebookEventPage,academics,reviews,selectedReview:notebookReviewId,career});
- document.querySelector('.overlay .notebook').outerHTML=html;return;}if(cmd==='menu'){const hasYearResult=gameData().extensions['teacher-hell/world'].history.some(h=>h.type==='annual-success'||h.type==='annual-failure');dialog('選單',`${hasYearResult?button('學年結果','year-result'):''} ${button('選擇存檔','slots')} ${button('遊戲說明','help')} ${button('返回首頁','home')}`);return;}if(cmd==='delete'){await storageAction('正在檢查存檔…',async()=>{const {summary,token}=await workerRead({slot:Number(arg),summary:true});if(!summary)return;if(confirm('確定刪除此存檔？建議先匯出備份。')&&confirm('再次確認：刪除後無法復原。')){await workerRead({slot:Number(arg),delete:true,expectedToken:token,confirmed:true});await showSlots();}});return;}
+ replaceNotebookContent(html,{preservePersonScroll:cmd==='notebook-person'});return;}if(cmd==='menu'){const hasYearResult=gameData().extensions['teacher-hell/world'].history.some(h=>h.type==='annual-success'||h.type==='annual-failure');dialog('選單',`${hasYearResult?button('學年結果','year-result'):''} ${button('選擇存檔','slots')} ${button('遊戲說明','help')} ${button('返回首頁','home')}`);return;}if(cmd==='delete'){await storageAction('正在檢查存檔…',async()=>{const {summary,token}=await workerRead({slot:Number(arg),summary:true});if(!summary)return;if(confirm('確定刪除此存檔？建議先匯出備份。')&&confirm('再次確認：刪除後無法復原。')){await workerRead({slot:Number(arg),delete:true,expectedToken:token,confirmed:true});await showSlots();}});return;}
 if(cmd==='export'){await storageAction('正在驗證並匯出完整存檔…',async()=>{const {blob}=await workerRead({slot:Number(arg),export:true}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`teacher-hell-slot-${arg}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});return;}
 if(cmd==='import'){const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.onchange=async()=>{try{if(!input.files.length)return;await storageAction('正在驗證匯入存檔…',async()=>{const incoming=input.files[0],{review}=await workerRead({slot:Number(arg),reviewImport:incoming});if(!confirm(`匯入生涯 ${review.incoming.identity.careerId}？${review.replacing?'此槽已有存檔，將被覆蓋。':''}`))return;if(review.replacing&&!confirm('再次確認覆蓋原存檔？'))return;await workerRead({slot:Number(arg),import:incoming,expectedToken:review.token,confirmed:true});await showSlots();});}catch(e){alert(`匯入失敗：${e.message}`);}};input.click();}}
 
@@ -376,7 +390,7 @@ app.addEventListener('change',async event=>{
  else return;
  try{
   const w=gameData(),plan=w.extensions['teacher-hell/world'].plan,people=kind==='people'?await notebookData('people'):null,events=kind==='events'?await notebookData('events'):null;
-  document.querySelector('.overlay .notebook').outerHTML=renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:notebookTab,people,selectedPersonId:notebookPersonId,personCategory:notebookPersonCategory,personSearch:notebookPersonSearch,portrait:notebookStudentPortrait(w,people),events,eventYear:notebookEventYear,eventKind:notebookEventKind,eventPage:notebookEventPage,eventSearch:notebookEventSearch,eventView:notebookEventView,eventTerm:notebookEventTerm});
+  replaceNotebookContent(renderNotebookView({date:w.position.date,grade:gradeAt(w.position.date,plan.startYear),readonly:!!careerResult(w),tab:notebookTab,people,selectedPersonId:notebookPersonId,personCategory:notebookPersonCategory,personSearch:notebookPersonSearch,portrait:notebookStudentPortrait(w,people),events,eventYear:notebookEventYear,eventKind:notebookEventKind,eventPage:notebookEventPage,eventSearch:notebookEventSearch,eventView:notebookEventView,eventTerm:notebookEventTerm}));
  }catch(error){alert('查詢失敗：'+error.message);}
 });
 app.addEventListener('change',event=>{

@@ -589,3 +589,89 @@ button:active:not(:disabled){transform:translateY(0)}
 .ui4-preview__stage .year-result-nav button{background:#334a64;color:#fff2dd}
 .ui4-preview__stage .year-result-nav button:disabled{opacity:.45}
 .ui4-preview__stage .notebook-ending{color:#26394e;border-color:#b48a49}
+
+/* UI-4 full ten-case audit. One explicit text/background pairing per surface.
+   Real result dialogs and the developer preview share the same reader palette. */
+:where(.ui4-preview__stage,.dialog:has(.notebook-reviews),.dialog:has(.year-result),.dialog:has(.notebook-career)){
+ --ui4-paper:#f7f4ec;--ui4-ink:#27384d;--ui4-muted:#526276;--ui4-gold:#79582e;
+ --ui4-line:rgba(171,143,99,.52);
+}
+.ui4-preview__stage[data-ui4-case]{color:#f9f2e6}
+.ui4-preview__stage[data-ui4-case] > h2{color:#f2d19b}
+:is(.ui4-preview__stage,.dialog:has(.year-result),.dialog:has(.notebook-career))
+ :is(.notebook-reviews,.year-result,.notebook-career){
+ background:rgba(247,244,236,.97);color:var(--ui4-ink);
+ border:1px solid var(--ui4-line);border-radius:12px;
+}
+:is(.ui4-preview__stage,.dialog:has(.notebook-reviews),.dialog:has(.year-result),.dialog:has(.notebook-career))
+ :is(.notebook-reviews,.year-result,.notebook-career) :is(p,li,th,td,span,strong){color:var(--ui4-ink)}
+:is(.ui4-preview__stage,.dialog:has(.notebook-reviews),.dialog:has(.year-result),.dialog:has(.notebook-career))
+ :is(.notebook-reviews,.year-result,.notebook-career) :is(h3,h4){color:var(--ui4-gold)}
+:is(.ui4-preview__stage,.dialog:has(.notebook-reviews),.dialog:has(.year-result),.dialog:has(.notebook-career))
+ :is(.notebook-hint,.notebook-review-details,.notebook-annual-card,.year-result-summary){line-height:1.6}
+:is(.ui4-preview__stage,.dialog:has(.notebook-reviews),.dialog:has(.year-result),.dialog:has(.notebook-career))
+ .notebook-hint{color:var(--ui4-muted)}
+:is(.ui4-preview__stage,.dialog:has(.notebook-reviews),.dialog:has(.year-result),.dialog:has(.notebook-career))
+ :is(.notebook-review-details,.notebook-annual-card){
+ background:rgba(255,255,255,.89);color:var(--ui4-ink);
+ border:1px solid var(--ui4-line);border-radius:11px;
+}
+:is(.ui4-preview__stage,.dialog:has(.notebook-reviews),.dialog:has(.year-result),.dialog:has(.notebook-career))
+ .year-result-table :is(th,td){border-color:var(--ui4-line);color:var(--ui4-ink)}
+:is(.ui4-preview__stage,.dialog:has(.notebook-reviews),.dialog:has(.year-result),.dialog:has(.notebook-career))
+ .notebook-ending{color:var(--ui4-ink);border-left-color:#b48a49}
+:is(.ui4-preview__stage,.dialog:has(.notebook-reviews),.dialog:has(.year-result),.dialog:has(.notebook-career))
+ :is(.notebook-review-picker,.year-result-nav) button{
+ background:#324760;color:#fff2dc;border:1px solid #b9a17a
+}
+:is(.ui4-preview__stage,.dialog:has(.notebook-reviews),.dialog:has(.year-result),.dialog:has(.notebook-career))
+ .notebook-review-picker button[aria-pressed="true"]{background:#85613a;color:#fff8e9}
+:is(.ui4-preview__stage,.dialog:has(.notebook-reviews),.dialog:has(.year-result),.dialog:has(.notebook-career))
+ :is(.notebook-review-picker,.year-result-nav) button:disabled{opacity:.55}
+.dialog:has(.year-result),.dialog:has(.notebook-career){
+ background:rgba(247,244,236,.97);color:var(--ui4-ink);
+ border:1px solid var(--ui4-line)
+}
+.dialog:has(.year-result) header h2,.dialog:has(.notebook-career) header h2{color:var(--ui4-ink)}
+.dialog:has(.year-result) header button,.dialog:has(.notebook-career) header button{background:#324760;color:#fff}
+.ui4-preview__stage[data-ui4-case="phone"] .story-phone{
+ background:#14283e;color:#fff3dd;border:1px solid #90ac9f
+}
+.ui4-preview__stage[data-ui4-case="phone"] .story-phone :is(p,span){color:#fff3dd}
+.ui4-preview__stage[data-ui4-case="phone"] .story-phone-status{color:#a2e7cd}
+.ui4-preview__stage[data-ui4-case="chat"] .story-chat{
+ background:#172b42;color:#fff3df;border:1px solid rgba(205,184,151,.5);
+ border-radius:12px;padding:.8rem
+}
+.ui4-preview__stage[data-ui4-case="chat"] .story-chat-person{color:#d7e1ed}
+.ui4-preview__stage[data-ui4-case="chat"] .story-chat-bubble{
+ background:#384f69;color:#fff4e5
+}
+.ui4-preview__stage[data-ui4-case="chat"] .story-chat-line--own .story-chat-bubble{
+ background:#426451;color:#fff8e8
+}
+.ui4-preview__stage[data-ui4-case="notice"] .story-document,
+.ui4-preview__stage[data-ui4-case="email"] .story-document,
+.ui4-preview__stage[data-ui4-case="news"] .story-document{
+ background:#f6f1e5;color:#25354a;border:1px solid rgba(164,139,98,.6);
+ padding:1rem;border-radius:11px;line-height:1.7
+}
+.ui4-preview__stage :is(.story-document h3,.story-document-content){color:#25354a}
+.ui4-preview__stage .story-document h3{color:#79582e}
+.ui4-preview__stage[data-ui4-case="warning"] .ui4-warning-demo{
+ background:#3a2930;color:#fff1e4;border:2px solid #e0b782;border-radius:12px
+}
+.ui4-preview__stage[data-ui4-case="warning"] .ui4-warning-demo :is(p,strong){color:#fff1e4}
+.ui4-preview__stage[data-ui4-case="warning"] .ui4-warning-demo h3{color:#ffe0a6}
+.ui4-preview__stage[data-ui4-case="career"] .ui4-career-demo{
+ background:#f7f4ec;color:#27384d
+}
+.ui4-preview__stage[data-ui4-case="career"] .ui4-career-demo :is(p,li,strong){color:#27384d}
+@media(max-width:650px){
+ .ui4-preview__stage[data-ui4-case] :is(.story-phone,.story-chat,.story-document){
+  max-width:100%;overflow-wrap:anywhere
+ }
+ .ui4-preview__stage[data-ui4-case] :is(.notebook-reviews,.year-result,.notebook-career){
+  padding:.65rem
+ }
+}

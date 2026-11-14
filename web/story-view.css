@@ -357,8 +357,8 @@
 @media(max-width:650px) and (orientation:portrait){
  .game--story .story-view--avg .story-portrait-canvas,
  .game--story .story-view--avg .story-actor-shape{
-  /* Anchor the artwork end behind the panel, never exactly at its top edge. */
-  bottom:clamp(5.5rem,calc(23dvh - 4.5rem),10.5rem);
+  /* Restore the approved thigh-up position, minus ~20px for a tiny overlap. */
+  bottom:clamp(7.75rem,calc(24dvh - 1.25rem),12.75rem);
  }
  .game--story .story-view--avg .story-bottom-frame{
   min-height:clamp(11.5rem,23dvh,14rem);

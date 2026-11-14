@@ -1,0 +1,31 @@
+name: Phase 18-A focused content audit
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/content-audit.js'
+      - 'scripts/audit-content.mjs'
+      - 'test/content-audit.test.js'
+      - '.github/workflows/phase18a-content-audit.yml'
+      - 'package.json'
+      - 'src/runtime/story-content.js'
+      - 'src/runtime/story-samples-17d.js'
+permissions:
+  contents: read
+jobs:
+  content-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Verify duplicate triage, 20-plus ceiling and multiple weighted outcomes
+        run: node --test --test-isolation=none test/content-audit.test.js
+      - name: Generate pilot report from three existing ready sample stories
+        run: npm run content:audit

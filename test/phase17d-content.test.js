@@ -6,6 +6,7 @@ import {beginDemo,apply,storyAction,advanceDemo} from './support/story-scenario.
 import {readStory,storyState} from '../src/runtime/story.js';
 import {runtimeOf,restoreWorldState} from '../src/runtime/model.js';
 import {eventWorld} from './support/event-fixtures.js';
+import {apply} from './support/story-scenario.js';
 
 const atChoices=(world,eventId)=>{
  let w=world;
@@ -70,4 +71,15 @@ test('17-D: unfinished learning plan has a causal next-day follow-up, not a fabr
  const facts=runtimeOf(w).facts.filter(f=>f.data?.type==='story-action');
  assert.equal(facts.length,2);
  assert.ok(facts[1].causeIds.includes(facts[0].id));
+});
+
+test('17-D: ready sample catalogue registers with the real event authority, not only a mock dictionary',()=>{
+ const w=eventWorld();
+ const op=phase17dSampleCatalogue();
+ const admitted=apply(w,[op]);
+ const catalogue=runtimeOf(admitted).history.find(h=>h.type==='event-catalogue'&&h.data.catalogueId===op.catalogueId);
+ assert.ok(catalogue);
+ assert.equal(catalogue.data.definitions.length,3);
+ assert.deepEqual(catalogue.data.definitions.map(d=>d.topicId),['T01-01','T10-04','T14-01']);
+ assert.equal(admitted.events.length,0,'registration alone must not spawn incidents');
 });

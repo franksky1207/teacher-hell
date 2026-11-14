@@ -289,7 +289,8 @@ app.addEventListener('change',async event=>{
 app.addEventListener('change',event=>{
  if(screen!=='ui2-preview')return;
  if(event.target.matches('[data-ui2-case]')){ui2PreviewState.caseId=event.target.value;ui2PreviewState.page=0;ui2PreviewState.selected=null;ui2PreviewState.confirmed=false;showUi2Preview();}
- if(event.target.matches('[data-ui2-expression]')){ui2PreviewState.expression=Number(event.target.value);showUi2Preview();}
+ if(event.target.matches('[data-ui2-left-expression]')){ui2PreviewState.leftExpression=Number(event.target.value);showUi2Preview();}
+ if(event.target.matches('[data-ui2-right-expression]')){ui2PreviewState.rightExpression=Number(event.target.value);showUi2Preview();}
 });
 app.addEventListener('click',async event=>{
  if(screen==='ui2-preview'){

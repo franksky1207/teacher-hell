@@ -1,0 +1,3634 @@
+{
+  "records": [
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-01",
+        "definitionId": "content:18b-t01-03-01",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生拿出已完成但留在書包裡的作業，表示昨天忘記繳交。",
+          "data": {
+            "type": "t01-03-case-1"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生拿出已完成但留在書包裡的作業，表示昨天忘記繳交。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我真的寫了，只是下課忘記拿出來。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "確認繳交規則與實際完成時間",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「忘記交作業卻已經寫完」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "建議學生依科任規定補交並說明",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「建議學生依科任規定補交並說明」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "請他下次使用固定的繳交檢查方法",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「忘記交作業卻已經寫完」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "寫好了忘記交，真的會很懊惱",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "忘記交作業卻已經寫完",
+        "cause": "學生拿出已完成但留在書包裡的作業，表示昨天忘記繳交。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "確認繳交規則與實際完成時間／建議學生依科任規定補交並說明／請他下次使用固定的繳交檢查方法／寫好了忘記交，真的會很懊惱",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-02",
+        "definitionId": "content:18b-t01-03-02",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生展示昨晚的上傳錯誤畫面，擔心系統故障造成遲交。",
+          "data": {
+            "type": "t01-03-case-2"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生展示昨晚的上傳錯誤畫面，擔心系統故障造成遲交。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我有按送出，可是一直轉圈圈。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "核對時間戳記與系統公告",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「線上作業平台無法上傳」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助依規定向科任反映上傳問題",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助依規定向科任反映上傳問題」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先保存截圖與原始檔案備查",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「線上作業平台無法上傳」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "系統當掉比作業不會寫更讓人急",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "線上作業平台無法上傳",
+        "cause": "學生展示昨晚的上傳錯誤畫面，擔心系統故障造成遲交。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "核對時間戳記與系統公告／協助依規定向科任反映上傳問題／先保存截圖與原始檔案備查／系統當掉比作業不會寫更讓人急",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-03",
+        "definitionId": "content:18b-t01-03-03",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生拿著複習清單，才發現明天小考範圍與自己準備的不一致。",
+          "data": {
+            "type": "t01-03-case-3"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生拿著複習清單，才發現明天小考範圍與自己準備的不一致。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我昨天都讀別章了，現在怎麼辦？",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "核對正式公布的小考範圍",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「小考前才發現範圍看錯」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助他重新安排剩餘時間而不熬夜",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助他重新安排剩餘時間而不熬夜」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "請他先向科任確認公告是否更動",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「小考前才發現範圍看錯」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "先弄清楚範圍，比互相怪罪有用",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "小考前才發現範圍看錯",
+        "cause": "學生拿著複習清單，才發現明天小考範圍與自己準備的不一致。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "核對正式公布的小考範圍／協助他重新安排剩餘時間而不熬夜／請他先向科任確認公告是否更動／先弄清楚範圍，比互相怪罪有用",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-04",
+        "definitionId": "content:18b-t01-03-04",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生的數學作業答案幾乎全對，口頭解釋解法時卻卡住，自己表示是照著範例做。",
+          "data": {
+            "type": "t01-03-case-4"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生的數學作業答案幾乎全對，口頭解釋解法時卻卡住，自己表示是照著範例做。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "步驟我會抄，可是換一題就不確定。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "請他說明第一步為什麼這樣做",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「數學作業全對但說不出算法」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "建議用相近但不同數字的題目練習",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「建議用相近但不同數字的題目練習」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先記下不理解的步驟再詢問科任",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「數學作業全對但說不出算法」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "能發現自己只是照做，也是一個起點",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "數學作業全對但說不出算法",
+        "cause": "學生的數學作業答案幾乎全對，口頭解釋解法時卻卡住，自己表示是照著範例做。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "請他說明第一步為什麼這樣做／建議用相近但不同數字的題目練習／先記下不理解的步驟再詢問科任／能發現自己只是照做，也是一個起點",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-05",
+        "definitionId": "content:18b-t01-03-05",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生表示朋友常拜託他幫忙寫完整答案，最近已影響自己的休息時間。",
+          "data": {
+            "type": "t01-03-case-5"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生表示朋友常拜託他幫忙寫完整答案，最近已影響自己的休息時間。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我不幫他，他就說我不夠朋友。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "釐清實際協助與代做的差別",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「代寫作業的界線」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "建議以講解代替交出整份答案",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「建議以講解代替交出整份答案」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "請他先說明界線並觀察對方反應",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「代寫作業的界線」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "願意幫忙不代表必須把別人的作業做完",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "代寫作業的界線",
+        "cause": "學生表示朋友常拜託他幫忙寫完整答案，最近已影響自己的休息時間。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "釐清實際協助與代做的差別／建議以講解代替交出整份答案／請他先說明界線並觀察對方反應／願意幫忙不代表必須把別人的作業做完",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-06",
+        "definitionId": "content:18b-t01-03-06",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生因正式請假錯過小考，返校後不清楚補測時間，害怕直接被記零分。",
+          "data": {
+            "type": "t01-03-case-6"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生因正式請假錯過小考，返校後不清楚補測時間，害怕直接被記零分。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我那天有請假，會不會就沒分數了？",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "核對請假紀錄與科任補測規定",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「小考漏考補測安排」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助聯絡科任確認可用補測時間",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助聯絡科任確認可用補測時間」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "提醒學生保留相關公告避免誤會",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「小考漏考補測安排」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "有正常請假，先別自己判死刑",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "小考漏考補測安排",
+        "cause": "學生因正式請假錯過小考，返校後不清楚補測時間，害怕直接被記零分。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "核對請假紀錄與科任補測規定／協助聯絡科任確認可用補測時間／提醒學生保留相關公告避免誤會／有正常請假，先別自己判死刑",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-07",
+        "definitionId": "content:18b-t01-03-07",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生把同一道題訂正三次，錯誤仍落在同個觀念，表示只看答案無法理解。",
+          "data": {
+            "type": "t01-03-case-7"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生把同一道題訂正三次，錯誤仍落在同個觀念，表示只看答案無法理解。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我抄了三遍還是錯。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "請他指出第一次看不懂的推理",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「重複訂正卻一直錯」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "建議用具體例子向科任詢問",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「建議用具體例子向科任詢問」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "暫停機械抄寫，整理疑問再追蹤",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「重複訂正卻一直錯」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "抄三遍還不懂真的讓人想翻桌",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "重複訂正卻一直錯",
+        "cause": "學生把同一道題訂正三次，錯誤仍落在同個觀念，表示只看答案無法理解。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "請他指出第一次看不懂的推理／建議用具體例子向科任詢問／暫停機械抄寫，整理疑問再追蹤／抄三遍還不懂真的讓人想翻桌",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-08",
+        "definitionId": "content:18b-t01-03-08",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生提前完成所有作業，表示題目過於簡單，開始在課堂上做其他練習。",
+          "data": {
+            "type": "t01-03-case-8"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生提前完成所有作業，表示題目過於簡單，開始在課堂上做其他練習。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我早寫完了，不能做難一點的嗎？",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "先確認課堂規範與學生實際需求",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「作業太簡單缺乏挑戰」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助向科任詢問適當的延伸題",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助向科任詢問適當的延伸題」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先觀察是否影響課堂秩序",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「作業太簡單缺乏挑戰」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "想挑戰自己很好，也要顧到課堂安排",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "作業太簡單缺乏挑戰",
+        "cause": "學生提前完成所有作業，表示題目過於簡單，開始在課堂上做其他練習。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "先確認課堂規範與學生實際需求／協助向科任詢問適當的延伸題／先觀察是否影響課堂秩序／想挑戰自己很好，也要顧到課堂安排",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-09",
+        "definitionId": "content:18b-t01-03-09",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生說老師講解後筆記還沒寫完，就必須交課堂練習，常留白。",
+          "data": {
+            "type": "t01-03-case-9"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生說老師講解後筆記還沒寫完，就必須交課堂練習，常留白。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我光抄完就下課了。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "確認哪些內容一定需要逐字記錄",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「抄黑板太慢來不及做題」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "建議向科任詢問講義或筆記方式",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「建議向科任詢問講義或筆記方式」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "請他記錄哪個環節最占時間",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「抄黑板太慢來不及做題」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "想跟上進度卻一直落後，確實很累",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "抄黑板太慢來不及做題",
+        "cause": "學生說老師講解後筆記還沒寫完，就必須交課堂練習，常留白。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "確認哪些內容一定需要逐字記錄／建議向科任詢問講義或筆記方式／請他記錄哪個環節最占時間／想跟上進度卻一直落後，確實很累",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-10",
+        "definitionId": "content:18b-t01-03-10",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生願意參加課後補救課程，卻發現與社團固定活動衝突。",
+          "data": {
+            "type": "t01-03-case-10"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生願意參加課後補救課程，卻發現與社團固定活動衝突。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "兩個都想去，時間就是撞到。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "先釐清補救課程是否有必要或替代時段",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「補救教學時間撞到社團」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助學生與承辦人確認選項",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助學生與承辦人確認選項」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "尊重學生決定，記錄後續安排",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「補救教學時間撞到社團」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "有意願補課卻撞時間，挺可惜的",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "補救教學時間撞到社團",
+        "cause": "學生願意參加課後補救課程，卻發現與社團固定活動衝突。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "先釐清補救課程是否有必要或替代時段／協助學生與承辦人確認選項／尊重學生決定，記錄後續安排／有意願補課卻撞時間，挺可惜的",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-11",
+        "definitionId": "content:18b-t01-03-11",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生發現小考卷一題少了一行條件，擔心全班不同作答方式造成失分。",
+          "data": {
+            "type": "t01-03-case-11"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生發現小考卷一題少了一行條件，擔心全班不同作答方式造成失分。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "這題是不是根本少印一行？",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "保留原卷並確認是否普遍缺漏",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「課堂小考題目印錯」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "請科任依正式程序核對命題印製",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「請科任依正式程序核對命題印製」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "在科任查明前不承諾補分",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「課堂小考題目印錯」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "發現印錯，先把證據留好",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "課堂小考題目印錯",
+        "cause": "學生發現小考卷一題少了一行條件，擔心全班不同作答方式造成失分。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "保留原卷並確認是否普遍缺漏／請科任依正式程序核對命題印製／在科任查明前不承諾補分／發現印錯，先把證據留好",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-12",
+        "definitionId": "content:18b-t01-03-12",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生同一天有數份不同科的大型作業要交，開始擔心無法全部完成。",
+          "data": {
+            "type": "t01-03-case-12"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生同一天有數份不同科的大型作業要交，開始擔心無法全部完成。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "明天每科都要交，我要先做誰的？",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "確認各項截止時間及真正必要內容",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「不同科作業同日到期」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助學生排定優先順序並主動溝通",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助學生排定優先順序並主動溝通」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "請他先查公告避免錯誤理解期限",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「不同科作業同日到期」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "這種撞期，光看行事曆就想頭痛",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "不同科作業同日到期",
+        "cause": "學生同一天有數份不同科的大型作業要交，開始擔心無法全部完成。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "確認各項截止時間及真正必要內容／協助學生排定優先順序並主動溝通／請他先查公告避免錯誤理解期限／這種撞期，光看行事曆就想頭痛",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-13",
+        "definitionId": "content:18b-t01-03-13",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生說自己交出的紙本作業可能被拿錯，手上有拍照存檔，但去向未確認。",
+          "data": {
+            "type": "t01-03-case-13"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生說自己交出的紙本作業可能被拿錯，手上有拍照存檔，但去向未確認。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我交了，現在卻找不到。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "確認繳交流程及已知接觸紀錄",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「作業被誤拿到別班」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "請科任核對收件與教室整理情況",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「請科任核對收件與教室整理情況」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先保存照片，不指控同學偷拿",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「作業被誤拿到別班」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "東西不見很急，但還不能說是誰拿的",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "作業被誤拿到別班",
+        "cause": "學生說自己交出的紙本作業可能被拿錯，手上有拍照存檔，但去向未確認。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "確認繳交流程及已知接觸紀錄／請科任核對收件與教室整理情況／先保存照片，不指控同學偷拿／東西不見很急，但還不能說是誰拿的",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-14",
+        "definitionId": "content:18b-t01-03-14",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生拿來一份完成度極高的手工作品，坦承主要由家長操作。",
+          "data": {
+            "type": "t01-03-case-14"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生拿來一份完成度極高的手工作品，坦承主要由家長操作。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我有幫忙，可是很多地方是爸爸做的。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "釐清學生參與的部分及課程要求",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「家長代為完成手工作業」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助向科任詢問如何補做自主部分",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助向科任詢問如何補做自主部分」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先留下製作過程紀錄供說明",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「家長代為完成手工作業」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "能誠實說出來，比硬說全是自己做的好",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "家長代為完成手工作業",
+        "cause": "學生拿來一份完成度極高的手工作品，坦承主要由家長操作。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "釐清學生參與的部分及課程要求／協助向科任詢問如何補做自主部分／先留下製作過程紀錄供說明／能誠實說出來，比硬說全是自己做的好",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-15",
+        "definitionId": "content:18b-t01-03-15",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生表示家裡近期沒有穩定網路，線上作業常無法在晚上完成。",
+          "data": {
+            "type": "t01-03-case-15"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生表示家裡近期沒有穩定網路，線上作業常無法在晚上完成。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我在學校能寫，回家就一直斷線。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "詢問課程是否提供離線或校內完成方式",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「沒有網路完成線上練習」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助連結校內設備與科任可行替代作法",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助連結校內設備與科任可行替代作法」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先記錄設備限制，避免公開家庭細節",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「沒有網路完成線上練習」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "這不是多努力就能讓網路變穩的事",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "沒有網路完成線上練習",
+        "cause": "學生表示家裡近期沒有穩定網路，線上作業常無法在晚上完成。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "詢問課程是否提供離線或校內完成方式／協助連結校內設備與科任可行替代作法／先記錄設備限制，避免公開家庭細節／這不是多努力就能讓網路變穩的事",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-16",
+        "definitionId": "content:18b-t01-03-16",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "幾名學生因這次平均分較低，推派一名同學詢問是否能全班重考。",
+          "data": {
+            "type": "t01-03-case-16"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "幾名學生因這次平均分較低，推派一名同學詢問是否能全班重考。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "大家都說太難，能不能再考？",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "先請學生提出具體範圍與題目問題",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「小考後集體要求再考一次」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "引導代表依規定與科任討論",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「引導代表依規定與科任討論」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先收集合理回饋，不替科任宣布重考",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「小考後集體要求再考一次」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "考不好會失望，但重考得照規則",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "小考後集體要求再考一次",
+        "cause": "幾名學生因這次平均分較低，推派一名同學詢問是否能全班重考。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "先請學生提出具體範圍與題目問題／引導代表依規定與科任討論／先收集合理回饋，不替科任宣布重考／考不好會失望，但重考得照規則",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-17",
+        "definitionId": "content:18b-t01-03-17",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生發現訂正繳交期限落在週日，詢問究竟須線上繳交還是週一交紙本。",
+          "data": {
+            "type": "t01-03-case-17"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生發現訂正繳交期限落在週日，詢問究竟須線上繳交還是週一交紙本。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "公告寫星期天，可是那天沒上課啊。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "核對科任公告與實際繳交媒介",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「訂正截止日是假日」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "請科任澄清是否接受下一個上課日",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「請科任澄清是否接受下一個上課日」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先保留公告截圖並提醒學生確認",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「訂正截止日是假日」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "期限寫得不清楚，難怪你會疑惑",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "訂正截止日是假日",
+        "cause": "學生發現訂正繳交期限落在週日，詢問究竟須線上繳交還是週一交紙本。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "核對科任公告與實際繳交媒介／請科任澄清是否接受下一個上課日／先保留公告截圖並提醒學生確認／期限寫得不清楚，難怪你會疑惑",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-18",
+        "definitionId": "content:18b-t01-03-18",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生表示小組實驗報告中自己負責資料整理，但不知道個人貢獻如何反映在作業。",
+          "data": {
+            "type": "t01-03-case-18"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生表示小組實驗報告中自己負責資料整理，但不知道個人貢獻如何反映在作業。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我做了很多，可是最後都寫同一組。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "了解作業原先公布的分工與評量方式",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「實驗報告分工難界定」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助學生提出具體工作紀錄給科任",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助學生提出具體工作紀錄給科任」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "尊重組員隱私，先不公開個別評價",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「實驗報告分工難界定」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "有付出就希望被看見，很合理",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "實驗報告分工難界定",
+        "cause": "學生表示小組實驗報告中自己負責資料整理，但不知道個人貢獻如何反映在作業。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "了解作業原先公布的分工與評量方式／協助學生提出具體工作紀錄給科任／尊重組員隱私，先不公開個別評價／有付出就希望被看見，很合理",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-19",
+        "definitionId": "content:18b-t01-03-19",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生因合法校車延誤剛進教室就遇上小考，未能完成全部題目。",
+          "data": {
+            "type": "t01-03-case-19"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生因合法校車延誤剛進教室就遇上小考，未能完成全部題目。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我搭同一班車，今天就是塞住了。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "確認出缺勤與小考補測規定分別處理",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「晨間隨堂測驗與遲到衝突」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "請科任判斷是否提供合法補測",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「請科任判斷是否提供合法補測」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "保留交通與到校時間資訊",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「晨間隨堂測驗與遲到衝突」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "遲到已經很急了，還遇到小考真慘",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "晨間隨堂測驗與遲到衝突",
+        "cause": "學生因合法校車延誤剛進教室就遇上小考，未能完成全部題目。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "確認出缺勤與小考補測規定分別處理／請科任判斷是否提供合法補測／保留交通與到校時間資訊／遲到已經很急了，還遇到小考真慘",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-20",
+        "definitionId": "content:18b-t01-03-20",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生報名某科補救課後接到可能不開班的通知，擔心失去學習資源。",
+          "data": {
+            "type": "t01-03-case-20"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生報名某科補救課後接到可能不開班的通知，擔心失去學習資源。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "好不容易願意補了，卻說人不夠。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "先查明通知是暫定還是正式決議",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「補救課開課人數不足」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助詢問個別輔導或其他合法資源",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助詢問個別輔導或其他合法資源」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先記錄需求，等待承辦人正式回覆",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「補救課開課人數不足」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "願意補強是好事，不應因訊息不明白跑",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "補救課開課人數不足",
+        "cause": "學生報名某科補救課後接到可能不開班的通知，擔心失去學習資源。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "先查明通知是暫定還是正式決議／協助詢問個別輔導或其他合法資源／先記錄需求，等待承辦人正式回覆／願意補強是好事，不應因訊息不明白跑",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-21",
+        "definitionId": "content:18b-t01-03-21",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生把沾濕的作業帶來，內容部分還看得見，表示意外打翻飲料。",
+          "data": {
+            "type": "t01-03-case-21"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生把沾濕的作業帶來，內容部分還看得見，表示意外打翻飲料。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我真的寫好了，現在全糊掉了。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "確認可辨識部分與作業繳交規定",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「紙本作業被飲料弄濕」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助詢問是否可依規補交或重印",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助詢問是否可依規補交或重印」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先保存殘頁，避免急著重做全部",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「紙本作業被飲料弄濕」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "寫完被飲料毀掉，太崩潰了",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "紙本作業被飲料弄濕",
+        "cause": "學生把沾濕的作業帶來，內容部分還看得見，表示意外打翻飲料。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "確認可辨識部分與作業繳交規定／協助詢問是否可依規補交或重印／先保存殘頁，避免急著重做全部／寫完被飲料毀掉，太崩潰了",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-22",
+        "definitionId": "content:18b-t01-03-22",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生平常理解課程內容，但這次小考大量考細節記憶，分數不理想。",
+          "data": {
+            "type": "t01-03-case-22"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生平常理解課程內容，但這次小考大量考細節記憶，分數不理想。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我懂意思，卻記不住那個名詞。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "了解評量目標與錯題細節",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「小考只考記憶題卻不熟」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助向科任請教適當的記憶練習",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助向科任請教適當的記憶練習」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先做短時段回想並記錄成效",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「小考只考記憶題卻不熟」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "懂內容卻卡在字詞也很常見",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "小考只考記憶題卻不熟",
+        "cause": "學生平常理解課程內容，但這次小考大量考細節記憶，分數不理想。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "了解評量目標與錯題細節／協助向科任請教適當的記憶練習／先做短時段回想並記錄成效／懂內容卻卡在字詞也很常見",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-23",
+        "definitionId": "content:18b-t01-03-23",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生作業訂正已完成，但家長出差不在，暫時無法取得簽名。",
+          "data": {
+            "type": "t01-03-case-23"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生作業訂正已完成，但家長出差不在，暫時無法取得簽名。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我都寫好了，爸媽今天不在。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "核對簽名目的及規定期限",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「老師要求家長簽名未完成」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助學生向科任說明可聯繫的監護人安排",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助學生向科任說明可聯繫的監護人安排」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先保存完成紀錄，不偽造簽名",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「老師要求家長簽名未完成」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "簽名還沒到，不代表你沒訂正",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "老師要求家長簽名未完成",
+        "cause": "學生作業訂正已完成，但家長出差不在，暫時無法取得簽名。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "核對簽名目的及規定期限／協助學生向科任說明可聯繫的監護人安排／先保存完成紀錄，不偽造簽名／簽名還沒到，不代表你沒訂正",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-24",
+        "definitionId": "content:18b-t01-03-24",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生請假返校後才看見先前貼出的補考通知，考試時段已過。",
+          "data": {
+            "type": "t01-03-case-24"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生請假返校後才看見先前貼出的補考通知，考試時段已過。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我沒來學校，根本不知道有這張。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "確認公告方式與學生請假期間",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「補考通知只貼在教室佈告欄」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助向科任說明資訊落差",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助向科任說明資訊落差」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先保留通知日期及出缺勤紀錄",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「補考通知只貼在教室佈告欄」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "公告看不到，不代表你故意不理",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "補考通知只貼在教室佈告欄",
+        "cause": "學生請假返校後才看見先前貼出的補考通知，考試時段已過。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "確認公告方式與學生請假期間／協助向科任說明資訊落差／先保留通知日期及出缺勤紀錄／公告看不到，不代表你故意不理",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-25",
+        "definitionId": "content:18b-t01-03-25",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生把幾張零分小考卷壓在書桌最底下，不願帶回訂正。",
+          "data": {
+            "type": "t01-03-case-25"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生把幾張零分小考卷壓在書桌最底下，不願帶回訂正。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "反正訂正也不會，我不想再看。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "先了解有哪些內容最難開始訂正",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「小考連續零分拒絕拿卷」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "請科任協助訂出可以完成的入門題",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「請科任協助訂出可以完成的入門題」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "尊重學生步調，安排下次短談",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「小考連續零分拒絕拿卷」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "一直看見零分真的很不好受",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "小考連續零分拒絕拿卷",
+        "cause": "學生把幾張零分小考卷壓在書桌最底下，不願帶回訂正。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "先了解有哪些內容最難開始訂正／請科任協助訂出可以完成的入門題／尊重學生步調，安排下次短談／一直看見零分真的很不好受",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-26",
+        "definitionId": "content:18b-t01-03-26",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生拿出小組共同紀錄，發現某幾人負擔過多，但大家未清楚約定如何分工。",
+          "data": {
+            "type": "t01-03-case-26"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生拿出小組共同紀錄，發現某幾人負擔過多，但大家未清楚約定如何分工。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "有人什麼都沒做，最後分數一樣。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "釐清實際工作分配與課程評量規定",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「不公平的分組作業量」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助向科任提出有證據的分工問題",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助向科任提出有證據的分工問題」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先請組內討論可行的未完成工作",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「不公平的分組作業量」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "不想讓付出被忽略，我能理解",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "不公平的分組作業量",
+        "cause": "學生拿出小組共同紀錄，發現某幾人負擔過多，但大家未清楚約定如何分工。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "釐清實際工作分配與課程評量規定／協助向科任提出有證據的分工問題／先請組內討論可行的未完成工作／不想讓付出被忽略，我能理解",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-27",
+        "definitionId": "content:18b-t01-03-27",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生參加補救課後拿到教材，發現前置知識仍有許多空缺，難以跟上。",
+          "data": {
+            "type": "t01-03-case-27"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生參加補救課後拿到教材，發現前置知識仍有許多空缺，難以跟上。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "明明是補救課，我還是看不懂。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "協助辨認缺少哪一項基礎概念",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「補救教材難度仍過高」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "請補救課老師判斷教材是否需要分層",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「請補救課老師判斷教材是否需要分層」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先記錄卡住的位置避免憑印象評價",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「補救教材難度仍過高」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "肯來補課還看不懂，真的會更挫折",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "補救教材難度仍過高",
+        "cause": "學生參加補救課後拿到教材，發現前置知識仍有許多空缺，難以跟上。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "協助辨認缺少哪一項基礎概念／請補救課老師判斷教材是否需要分層／先記錄卡住的位置避免憑印象評價／肯來補課還看不懂，真的會更挫折",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-28",
+        "definitionId": "content:18b-t01-03-28",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生原本要在下課前放入作業箱，卻發現箱子被提早收走，沒有人確定實際截止時間。",
+          "data": {
+            "type": "t01-03-case-28"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生原本要在下課前放入作業箱，卻發現箱子被提早收走，沒有人確定實際截止時間。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我想交的時候，箱子已經不見了。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "確認公告與收件實際時間",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「交作業箱被提前收走」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "請科任查明是否可依原規定補交",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「請科任查明是否可依原規定補交」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "保留當天說法，勿先認定他人過失",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「交作業箱被提前收走」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "想按時交卻沒有地方交，確實尷尬",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "交作業箱被提前收走",
+        "cause": "學生原本要在下課前放入作業箱，卻發現箱子被提早收走，沒有人確定實際截止時間。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "確認公告與收件實際時間／請科任查明是否可依原規定補交／保留當天說法，勿先認定他人過失／想按時交卻沒有地方交，確實尷尬",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-29",
+        "definitionId": "content:18b-t01-03-29",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生表示課程作業需使用特殊器材，家中沒有相應設備，擔心最後只剩繳交期限。",
+          "data": {
+            "type": "t01-03-case-29"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生表示課程作業需使用特殊器材，家中沒有相應設備，擔心最後只剩繳交期限。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我在家根本做不了那個步驟。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "確認是否真的必須使用指定設備",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「藝術實作無法在家完成」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助詢問校內開放時段或替代方式",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助詢問校內開放時段或替代方式」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "先整理缺少的器材，讓科任判斷",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「藝術實作無法在家完成」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "設備做不到，不等於你不努力",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "藝術實作無法在家完成",
+        "cause": "學生表示課程作業需使用特殊器材，家中沒有相應設備，擔心最後只剩繳交期限。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "確認是否真的必須使用指定設備／協助詢問校內開放時段或替代方式／先整理缺少的器材，讓科任判斷／設備做不到，不等於你不努力",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-03-30",
+        "definitionId": "content:18b-t01-03-30",
+        "version": "1",
+        "topicId": "T01-03",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生因校方核准的社團公假缺席小考，不清楚是否需要自行聯絡補考。",
+          "data": {
+            "type": "t01-03-case-30"
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生因校方核准的社團公假缺席小考，不清楚是否需要自行聯絡補考。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "有公假不就不用考了嗎？",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify",
+                "text": "說明公假不等於免除所有評量",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師確認「社團公假撞到小考」的目前可核對情況，沒有逕行改變作業或測驗紀錄。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "refer",
+                "text": "協助聯絡科任確認正式補測安排",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「協助聯絡科任確認正式補測安排」的處理方向，後續是否批准由適當科任或承辦人決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document",
+                "text": "請學生保留公假與考試通知",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生記錄「社團公假撞到小考」待核事項，不推定已有補救成果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "活動和課業兩邊都要安排，確實麻煩",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達理解，未擅自承諾作業或考試分數更動。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "社團公假撞到小考",
+        "cause": "學生因校方核准的社團公假缺席小考，不清楚是否需要自行聯絡補考。",
+        "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+        "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+        "distinctiveConsequence": "說明公假不等於免除所有評量／協助聯絡科任確認正式補測安排／請學生保留公假與考試通知／活動和課業兩邊都要安排，確實麻煩",
+        "editorialStatus": "author-self-check-only"
+      }
+    }
+  ]
+}

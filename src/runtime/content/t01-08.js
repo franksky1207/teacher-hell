@@ -1589,7 +1589,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，在校園談話角落，學生說今天課堂第一次主動用英語提問，希望導師別在全班特別宣布。",
+              "text": "午餐時，學生刻意避開教室人群，到校園談話角落告訴你：今天英文課，他第一次自己舉手用英語提問。",
               "speaker": null,
               "scene": "school:counselling-corner",
               "cast": [],
@@ -1597,7 +1597,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我會不好意思，下次可能又不敢。",
+              "text": "有一點開心啦。可是拜託不要在班上講，我下次會想躲起來。",
               "speaker": "participant",
               "scene": "school:counselling-corner",
               "cast": [
@@ -1608,16 +1608,24 @@ export default [
                 }
               ],
               "presentation": "dialogue"
+            },
+            {
+              "order": 3,
+              "text": "這是學生主動分享的一次突破，不代表他同意公開，也不能據此宣稱英語能力已完全改善。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
             }
           ],
           "choices": [
             {
               "id": "strategy-1",
-              "text": "私下確認想保留的紀錄",
+              "text": "問他要不要自己留下今天的私人紀錄",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "教師問學生是否願意自己記下一句，未要求公開重演。",
+                "fact": "學生自行決定是否把這次提問寫進自己的記錄；教師沒有安排公開表揚。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -1649,11 +1657,11 @@ export default [
             },
             {
               "id": "strategy-2",
-              "text": "討論下一次自選的小挑戰",
+              "text": "讓學生選下一步，也可以暫時不設定新目標",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生考慮再問一個真實問題，不被迫增加表現配額。",
+                "fact": "教師提供一個自行決定的下一步，學生可以接受或保留今天的成果，不被強迫每次都要超越。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -1687,7 +1695,7 @@ export default [
                   "id": "engages",
                   "weight": 3,
                   "outcome": {
-                    "fact": "學生選了一個未來課堂可能提出的英語疑問，但沒有承諾下次一定舉手。",
+                    "fact": "學生主動選出下一堂英文課可能提出的問題，但沒有保證屆時一定舉手。",
                     "claims": [],
                     "changes": [],
                     "historyCodes": [],
@@ -1721,7 +1729,7 @@ export default [
                   "id": "hesitates",
                   "weight": 2,
                   "outcome": {
-                    "fact": "學生說想先保留今天的突破，不願立刻設定第二個挑戰；教師尊重其意願。",
+                    "fact": "學生說自己現在還不想設定第二個挑戰，教師尊重他只想記得今天的成果。",
                     "claims": [],
                     "changes": [],
                     "historyCodes": [],
@@ -1755,11 +1763,11 @@ export default [
             },
             {
               "id": "strategy-3",
-              "text": "請他只對你用英語重述那個問題",
+              "text": "詢問要不要私下再說一次，婉拒也完全可以",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生只在私下向教師用英語重述自己曾問的問題，教師未判定語言完全正確，也未要求向全班重演。",
+                "fact": "教師提出自願的私下練習，尊重學生不在全班重演的界線。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -1791,11 +1799,11 @@ export default [
             },
             {
               "id": "strategy-4",
-              "text": "那就把掌聲留在這裡，我知道你跨了一步",
+              "text": "那就偷偷開心一下，我不替你放煙火",
               "kind": "action",
               "emotional": true,
               "outcome": {
-                "fact": "教師私下肯定，沒有對同學或家長傳達此事。",
+                "fact": "教師私下肯定學生的勇氣，不向家長或其他同學透露這次談話。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -1886,7 +1894,7 @@ export default [
         "cooldownDays": 30,
         "exclusionGroups": [],
         "sameFact": true,
-        "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
+        "reason": "在籍學生於指定合法非保護時段接觸導師；僅記錄已確認事實，不以同主題或日期推定相同問題。"
       }
     },
     "editorial": {

@@ -243,7 +243,7 @@ test('18-B causal witness B: persisted H03-1 event history unlocks cumulative ca
  assert.ok(before.rejected.some(c=>JSON.parse(c.key)[1].includes(person)&&c.reason==='history-threshold'));
  const chosen=choose(reachChoice(initial,eventId),eventId,'listen');
  const afterFact=runtimeOf(chosen).facts.find(f=>f.categoryCodes?.includes('H03-1')&&f.subjectIds?.includes(person));
- assert.ok(afterFact,'first day's confirmed outcome should be stored as participant-scoped H03-1');
+ assert.ok(afterFact,'the confirmed first-day outcome must be stored as participant-scoped H03-1');
  const after=buildEventCandidates(chosen,[d]);
  assert.ok(after.candidates.some(c=>c.participantIds[0]===person),'real runtime history index should admit the same student');
  const restored=restoreWorldState(JSON.stringify(chosen));

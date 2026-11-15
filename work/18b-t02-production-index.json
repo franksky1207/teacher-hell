@@ -26,7 +26,10 @@
     "originalAdmissionsGradeEligibilityBlockers": 78,
     "preGraduationSubjectReachabilityRepaired": 6,
     "postGraduationSubjectLocationHeld": 0,
-    "postCareerSubjectDistributionHeld": 2
+    "postCareerSubjectDistributionHeld": 2,
+    "gradeSpecificAuthorRepairReviewed": 20,
+    "gradeSpecificNewGates": 19,
+    "firstReleaseFutureHold": 5
   },
   "subtopics": [
     {
@@ -379,7 +382,8 @@
     "2026-11-16：發現畢典後不只subject-register，stars8-result、application-allocation、application-confirm也會因當日高三在籍名冊空而漏算原屆已畢業考生。延續資格已擴展四個日程節點並排除非畢業/轉出/其他屆者。GitHub Actions 43774849286正式26 pass /0 fail，其中5則改寫故事與候選定義已通過原validateStory及validateEventDefinitions；其餘203則未逐件結構驗證，獨立語意審稿及上架仍為0。",
     "2026-11-16：一次性完整T02結構驗證完成。Foundation run 43775137471：36 pass / 0 fail。八組×26＝208篇故事全部通過原始validateStory及每一則validateEventDefinitions，IDs/資源配對無錯；structurallyValidatedWithNode由5改208。語意獨立審查、候選實際可觸發與正式上架仍未完成，數量0；禁止重複無目的全批測試。",
     "2026-11-16：208篇全批原始驗證器已通過。另做一次唯讀編輯初篩：208個cause與832個option.fact沒有精確重複；832選項文本830獨立，僅兩組短語重複；時間字樣唯一疑點T02-01-18是早自習談未來午餐，非錯時。字面去重不等於獨立語意審稿，reviewed仍0。",
-    "2026-11-16：已建立docs/reviews/18b-t02-semantic-review-handoff.md，整合208件獨立語意審稿一次集中輸入、規則、已知時序例外及精準ID輸出格式；此為交接包，尚未進行獨立審稿，reviewed 0，published 0。"
+    "2026-11-16：已建立docs/reviews/18b-t02-semantic-review-handoff.md，整合208件獨立語意審稿一次集中輸入、規則、已知時序例外及精準ID輸出格式；此為交接包，尚未進行獨立審稿，reviewed 0，published 0。",
+    "2026-11-16：再次對照故事文字與資格，20件明示學年/選組/畢業事件精準審核，其中19件新加年級門檻，T02-03-28去除不存在的畢典彩排假時段改正常school午休。Node Foundation 43775511837：28 pass/0 fail（含20件專項及一次性208結構核對）；全批測試已退出日常CI，後續不重跑。T02-03-27、07-22/27/28、08-28共5件標首發三年制不可放行之後續章節阻斷。獨立審稿/上架仍0。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -905,11 +909,15 @@
   "postCareerContentHold": {
     "date": "2026-11-16",
     "ids": [
+      "T02-03-27",
       "T02-07-22",
-      "T02-07-27"
+      "T02-07-27",
+      "T02-07-28",
+      "T02-08-28"
     ],
-    "reason": "既有三年生涯於高三六月下旬結算，遊戲日程未建七八月分科正式考試、成績與志願分發；無從合法證明公告結果及畢業後校園場景",
-    "action": "保留工程隔離故事，不把其結果抽選進當前三年生涯；若日後另做畢業後劇情／跨年續篇，先實作合法世界資料與歷史資格再接線"
+    "reason": "T02-03-27延修生新學年返校、T02-07-22/27七八月分科考試/分發結果、T02-07-28/08-28畢業多年後重逢，均超出首發三年制至高三六月的可玩時間/程序；不能靠一般school/reunion候選冒稱有合法世界時序",
+    "action": "保留原獨立起因及engineering-test文字，不偷換成申請入學；未實作跨年續篇、畢業後世界資料、人物歷史前保持正式上架阻斷",
+    "count": 5
   },
   "lastFocusedContinuation": {
     "date": "2026-11-16",
@@ -993,5 +1001,24 @@
     "independentReviewPerformed": false,
     "scope": "8 subtopics × 26 = 208 original authored records",
     "instructions": "由不同審稿者一次集中處理世界可信、因果、數值、文字、資格；只提出真正阻斷ID，無阻斷不重查；不將208結構通過當語意審核"
+  },
+  "gradeSpecificFollowup": {
+    "date": "2026-11-16",
+    "reviewed": 20,
+    "newGates": 19,
+    "bySubtopic": {
+      "T02-01": 10,
+      "T02-03": 5,
+      "T02-04": 4,
+      "T02-08": 1
+    },
+    "logic": "明示高一選組、真正轉組後新學期、高三延修/畢業資格及校內推薦資料依實際年級限縮；沒有高三明示條件的其他一般事件不強綁年級",
+    "graduationCorrection": "T02-03-28 移除未排入校曆的畢典彩排，改為畢典前上課日的活動名單與畢業證書資格誤解",
+    "verification": {
+      "run": "https://github.com/franksky1207/teacher-hell/actions/runs/43775511837",
+      "result": "28 pass / 0 fail",
+      "focused": "20件指定年級與原validator驗證通過；同次亦有208一次性結構測試通過",
+      "noRepeat": "一次性208全批測試已從Foundation日常匯入移出，保留測試原稿供手動需要時使用；後續僅做定向修正"
+    }
   }
 }

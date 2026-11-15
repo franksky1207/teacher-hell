@@ -1314,6 +1314,333 @@
         "sceneNote": "本段為教師／學生遠距訊息，畫面不表示雙方實際同室。",
         "numericRationale": "成就動機高而自我認同不穩時更可能過度套用範本。；核心 3-3、1-1、4-1；附加 3-1、4-4、2-4。本為逐篇設計理由，尚未進行引擎精準驗證。"
       }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-02-15",
+        "definitionId": "content:18b-t02-02-15",
+        "version": "1",
+        "topicId": "T02-02",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生在行政辦公室攤開一張校外志工證明，姓氏正確，名字卻錯了一個字。",
+                "speaker": null,
+                "scene": "school:administration",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我有去服務，可是現在這張證明根本不像我的，會不會不能用了？",
+                "speaker": "participant",
+                "scene": "school:administration",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "先和學生核對原證明上的資訊",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生確認姓名誤植及活動日期，這不等於已取得更正證明。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我有去服務，可是現在這張證明根本不像我的，會不會不能用了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "action",
+                "text": "引導學生聯絡原核發單位更正",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生寫好需要核對的資料，主辦單位尚未回覆。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我有去服務，可是現在這張證明根本不像我的，會不會不能用了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "alternative",
+                "text": "討論是否先保存簽到或工作紀錄",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生找出自己的參與紀錄，未把它們冒充正式證明。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我有去服務，可是現在這張證明根本不像我的，會不會不能用了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "做了事卻卡在一個錯字，真的會很急",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師回應焦急，同時說明應以真實資料辦理，不幫忙改造文件。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我有去服務，可是現在這張證明根本不像我的，會不會不能用了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-02-15",
+        "topicId": "T02-02",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-02-15",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "3-3",
+          "1-1",
+          "4-1"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-3",
+          "2-2"
+        ],
+        "weights": [
+          0.25,
+          0.22,
+          0.19,
+          0.13,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "這是個別一次性的情境；需按人物學籍、情境時段與既有接觸條件抽選"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "志工證明把名字寫錯了",
+        "candidateId": "T02-02-C15",
+        "cause": "學生在行政辦公室攤開一張校外志工證明，姓氏正確，名字卻錯了一個字。",
+        "teacherResponsibility": "尊重學生自主，提供合法資訊與適當協助；導師不能替教務、升學或家長做出承諾。",
+        "knowledgeSource": "只知道本次實際對話、訊息及所見，其他人的想法、核准、回覆未經證實。",
+        "distinctiveConsequence": "學生確認姓名誤植及活動日期，這不等於已取得更正證明。／學生寫好需要核對的資料，主辦單位尚未回覆。／學生找出自己的參與紀錄，未把它們冒充正式證明。／導師回應焦急，同時說明應以真實資料辦理，不幫忙改造文件。",
+        "narrativeTime": "放學前的行政洽詢",
+        "scene": "school:administration",
+        "numericRationale": "主題三核心碼沿用3-3、1-1、4-1；附加3-1、4-3、2-2，依本次情境作候選初擬，待現有公式與合法持有者確認。",
+        "review": "author-draft-not-verified",
+        "qualificationWarning": null
+      }
     }
   ]
 }

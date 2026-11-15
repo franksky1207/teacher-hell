@@ -18,11 +18,12 @@
     "independentlyReviewed": 0,
     "published": 0,
     "optionsWithActualNumericChanges": 14,
-    "admissionsGradeEligibilityBlockers": 78,
+    "admissionsGradeEligibilityBlockers": 0,
     "targetedCausalRevisionsThisPass": 8,
     "grade3Gated": 78,
     "grade3EligibilityPending": 0,
-    "admissionsPhaseEligibilityPendingReview": 78
+    "admissionsPhaseEligibilityPendingReview": 78,
+    "originalAdmissionsGradeEligibilityBlockers": 78
   },
   "subtopics": [
     {
@@ -365,7 +366,8 @@
     "2026-11-16：再將T02-07中6則持續分科準備故事加入正式entrance.subject-preparing條件，加上原01共7則；05-01有gsat-published，總計8則實際升學狀態門檻。不對分發公告等未有合法條件者套用不實門檻。",
     "2026-11-16：已針對正式admissions state核對升學門檻的實際資料欄位（completed、applications、offers、stars），並增補年級3正向與milestone-completed正反回歸測試。分科分發/畢典彩排及面試確切日期尚缺合法時序接線，不能放行；不改208篇全文。",
     "2026-11-16：精準修正T02-05-28畢典彩排及T02-07-24放榜後校園兩個無保證時點；新增僅涵蓋T02年級/升學門檻的小型CI工作流程，尚未取得執行結果。Foundation 18/18通過與T02專項驗證分開記錄。",
-    "2026-11-16：修正reunion scope校友重逢事件因e.facts無靜態contact ID而永遠被拒的缺陷，新增從正式world facts搜尋同日導師/校友contact並綁定factIds；已增正反測試但未取得執行證據。T02-06-20/08-28校正時段與場景。"
+    "2026-11-16：修正reunion scope校友重逢事件因e.facts無靜態contact ID而永遠被拒的缺陷，新增從正式world facts搜尋同日導師/校友contact並綁定factIds；已增正反測試但未取得執行證據。T02-06-20/08-28校正時段與場景。",
+    "2026-11-16：已將T02的5項精準測試引入既有Foundation workflow，GitHub Actions 43773458115成功（23 pass / 0 fail）；不再誤稱『未跑Node』，但僅限5例並不等於208件初稿全數編譯或獨立審稿。多餘獨立workflow已移除。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -803,10 +805,10 @@
     ],
     "test": {
       "source": "test/18b-t02-grade-eligibility.test.js",
-      "workflow": ".github/workflows/18b-t02-focused.yml",
-      "trigger": "T02分支受影響檔案push精準CI",
-      "status": "工作流程已建立，尚未查得對應執行結果；不得當作測試成功",
-      "scope": "僅年級1/3與已完成升學里程碑正反案例，不跑生涯模擬"
+      "execution": "GitHub Actions Foundation checks run 43773458115，23/23通過，0失敗，其中T02精準5例全通過",
+      "url": "https://github.com/franksky1207/teacher-hell/actions/runs/43773458115",
+      "scope": "年級1/3門檻、無效年級、已完成升學里程碑、校友同日contact；不代表208則故事全體Node編譯或語意驗收",
+      "workflow": "已移除多餘獨立工作流程；直接沿用既有Foundation檢查，避免重複CI"
     },
     "foundationEvidence": {
       "run": "https://github.com/franksky1207/teacher-hell/actions/runs/43772211375",
@@ -820,8 +822,8 @@
     "source": "src/runtime/event-candidates.js",
     "function": "findReunionContact",
     "behavior": "reunion候選必須有世界紀錄中同日、同時包括該校友和玩家導師的type=contact證據；會以動態找到的該contact ID納入候選factIds，避免靜態e.facts為空造成永遠拒絕；無證據仍拒絕",
-    "regression": "test/18b-t02-grade-eligibility.test.js中新增同日有效、隔日無效、錯人無效等精準測試",
-    "status": "原始碼完成，尚未取得此專項測試通過結果"
+    "regression": "test/18b-t02-grade-eligibility.test.js，已由Foundation run 43773458115驗證通過",
+    "status": "正式候選邏輯修復且已由GitHub Foundation檢查中的精準案例驗證；非208則全批驗收"
   },
   "caseFixContinuation": {
     "date": "2026-11-16",
@@ -834,6 +836,6 @@
       "T02-07-27：分科分發結果公布後在高三教室，原制度時序不合法；不可上架",
       "T02-07-28及其他校友故事：當日contact判斷已修，但正式遊戲是否能取得真實contact資料及跨學年歷史角色仍要專項端對端證明"
     ],
-    "testing": "只做檔案/資料靜態核對及寫入小型Node測試；未自行跑Node，未宣稱CI成功"
+    "testing": "Foundation run 43773458115 含5項T02精準案例全部通過；208則故事仍未做個別Node編譯及獨立語意審查"
   }
 }

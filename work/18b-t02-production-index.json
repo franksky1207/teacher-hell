@@ -25,7 +25,8 @@
     "admissionsPhaseEligibilityPendingReview": 78,
     "originalAdmissionsGradeEligibilityBlockers": 78,
     "preGraduationSubjectReachabilityRepaired": 6,
-    "postGraduationSubjectLocationHeld": 1
+    "postGraduationSubjectLocationHeld": 0,
+    "postCareerSubjectDistributionHeld": 2
   },
   "subtopics": [
     {
@@ -371,7 +372,8 @@
     "2026-11-16：修正reunion scope校友重逢事件因e.facts無靜態contact ID而永遠被拒的缺陷，新增從正式world facts搜尋同日導師/校友contact並綁定factIds；已增正反測試但未取得執行證據。T02-06-20/08-28校正時段與場景。",
     "2026-11-16：已將T02的5項精準測試引入既有Foundation workflow，GitHub Actions 43773458115成功（23 pass / 0 fail）；不再誤稱『未跑Node』，但僅限5例並不等於208件初稿全數編譯或獨立審稿。多餘獨立workflow已移除。",
     "2026-11-16：將T02-03/05/06/07中78則高三事件的過時『年級資格未接線』審稿文字更正為『年級已完成、招生時序/在籍/客觀前因仍待審』，避免後續重複開工。",
-    "2026-11-16：發現正式高三畢典6/1早於分科報名6/18，原七則subject-preparing故事中的六則school晚自習／課堂版本會永不觸發。已將這六則用合法早期升學里程碑重接並同步調整文本，07-07考場地點則保留個別畢業後資格阻斷。Foundation run 43773838140：24 pass / 0 fail，含6項T02測試；全208逐篇編譯及獨立審稿仍未完成。"
+    "2026-11-16：發現正式高三畢典6/1早於分科報名6/18，原七則subject-preparing故事中的六則school晚自習／課堂版本會永不觸發。已將這六則用合法早期升學里程碑重接並同步調整文本，07-07考場地點則保留個別畢業後資格阻斷。Foundation run 43773838140：24 pass / 0 fail，含6項T02測試；全208逐篇編譯及獨立審稿仍未完成。",
+    "2026-11-16：定位aftercare升學真缺口：畢典後subject-register遇在籍名冊為空，無法更新真正已畢業的原屆考生。已最小修正至正式entranceInput讀取同屆graduated學生及原有升學紀錄，排除轉學/其他屆，並新增精準測試。T02-07-07改成aftercare校友訊息，仍要求同日contact；T02-07-22/27正式分發後故事標示不在首發三年六月結算範圍，保持隔離。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -862,7 +864,7 @@
     ],
     "strategy": "以原有gsat-published、active、stars-screen、application-result按情節取代過晚subject-preparing；必要文字從已經備考改成考慮分科，實質四選項與結果保留",
     "held": [
-      "T02-07-07：正式考場公告後的位置/交通故事仍需個別考試報名及畢業後接觸的資料，故保留原件不亂改"
+      "T02-07-07：已從原本無可觸發的在校生週末事件轉至aftercare畢業校友及正式subject-register；仍須個別端對端資格確認"
     ],
     "verifiedCalendar": {
       "graduation": "2029-06-01",
@@ -875,8 +877,27 @@
       "workflowRun": "https://github.com/franksky1207/teacher-hell/actions/runs/43773838140",
       "commit": "0ad2ec3811a8cbaa0f14d2209667504b6f75ef57",
       "result": "24 pass; 0 fail (6 T02 focused tests included)",
-      "scope": "node focused core/contracts+T02; 208 per-story compilation and independent content review still 0"
+      "scope": "node focused core/contracts+T02; 208 per-story compilation and independent content review still 0",
+      "newAftercareRegression": "七個T02精準測試：六項先前通過，新增已畢業名冊綁定測試待最新CI"
     },
-    "status": "六則年級/階段接線完成並有真實回歸測試；不等於全面放行"
+    "status": "六則畢業前分科故事已正式接線；一則畢業後考場故事已接上aftercare；全部仍工程隔離"
+  },
+  "postGraduationAdmissionsRepair": {
+    "date": "2026-11-16",
+    "issue": "三年制畢典後舊招生程序仍持續排程，但subject-register只取active在學名冊，畢業生在個人升學資料中不會實際完成報名",
+    "solution": "src/runtime/entrance.js僅在subject-register且aftercareActive時，從registry.enrollments的status=graduated、同屆cohort及原有entrance學生資料取回畢業生，維持既有continuous紀錄，不改在校成員或其他里程碑",
+    "guard": "轉學／未完成學業／不同屆／沒有原升學資料的人均不新增；沿用原applyEntrance與既有數值、抽選、存檔，不建立平行報名系統",
+    "story": "T02-07-07改採people=reunion、dayKinds=aftercare、slotIds=private、subject-register完成及subject-preparing個人資格，另要求當天導師/校友contact證據",
+    "test": "test/18b-t02-grade-eligibility.test.js新增畢業生/轉學/不同屆等正反案例；等待本次變更的Foundation run最終證據",
+    "warning": "僅是正式資料流程最小接線，尚未做全程畢業至aftercare的實機端對端；正式上架0"
+  },
+  "postCareerContentHold": {
+    "date": "2026-11-16",
+    "ids": [
+      "T02-07-22",
+      "T02-07-27"
+    ],
+    "reason": "既有三年生涯於高三六月下旬結算，遊戲日程未建七八月分科正式考試、成績與志願分發；無從合法證明公告結果及畢業後校園場景",
+    "action": "保留工程隔離故事，不把其結果抽選進當前三年生涯；若日後另做畢業後劇情／跨年續篇，先實作合法世界資料與歷史資格再接線"
   }
 }

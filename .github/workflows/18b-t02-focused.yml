@@ -1,0 +1,22 @@
+name: 18-B T02 focused eligibility
+on:
+  push:
+    branches: [feat/18b-t02-authoring]
+    paths:
+      - 'src/runtime/event-candidates.js'
+      - 'src/runtime/entrance.js'
+      - 'test/18b-t02-grade-eligibility.test.js'
+      - '.github/workflows/18b-t02-focused.yml'
+  workflow_dispatch:
+jobs:
+  eligibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts
+      - name: Only the new T02 eligibility regression (not the game suite)
+        run: node --test --test-isolation=none test/18b-t02-grade-eligibility.test.js

@@ -5267,7 +5267,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午休時，在教師辦公室，學生翻開日記，連續六天寫著「明天正式開始」，卻仍不確定拖延的原因。",
+                "text": "午休將近結束，一名學生在教師辦公室門口站了好一陣子，才攤開日記：連續六天寫著「明天開始」，旁邊卻沒有完成記號。",
                 "speaker": null,
                 "scene": "school:teachers-office",
                 "cast": [],
@@ -5275,27 +5275,35 @@
               },
               {
                 "order": 2,
-                "text": "我每天都覺得隔天會比較有精神。",
+                "text": "我不是不想讀。每次看到三科都落後，就覺得明天可能比較有精神。",
                 "speaker": "participant",
                 "scene": "school:teachers-office",
                 "cast": [
                   {
                     "role": "participant",
                     "position": "center",
-                    "expression": "calm"
+                    "expression": "embarrassed"
                   }
                 ],
                 "presentation": "dialogue"
+              },
+              {
+                "order": 3,
+                "text": "教師只看得出學生反覆延期，還不能因此斷定原因是懶惰。",
+                "speaker": null,
+                "scene": "school:teachers-office",
+                "cast": [],
+                "presentation": "narration"
               }
             ],
             "choices": [
               {
                 "id": "inquire",
-                "text": "詢問每天決定延後時遇到的具體事情",
+                "text": "先問昨天拿起書時發生了什麼",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生描述昨晚延後的那一刻，教師只記單次情境，不推出每天都同因。",
+                  "fact": "學生說昨天原本要看英文，想到其他兩科又改整理書桌；教師只確認這一次的情況。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -5327,11 +5335,11 @@
               },
               {
                 "id": "plan",
-                "text": "請他試一次不用等明天的五分鐘起步",
+                "text": "把下一步縮成現在能做的五分鐘",
                 "kind": "support",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生當面選一件五分鐘能開始的工作，教師未宣告開始即等於完成。",
+                  "fact": "學生面對一項眼前可開始的工作；願不願意動手仍由他自己決定。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -5365,7 +5373,7 @@
                     "id": "engages",
                     "weight": 3,
                     "outcome": {
-                      "fact": "學生當場在日記空白處寫下五分鐘起步的第一個動作，仍未證明會持續。",
+                      "fact": "學生自願寫下一個可在五分鐘內開始的動作，但目前仍未證明會執行。",
                       "claims": [],
                       "changes": [],
                       "historyCodes": [],
@@ -5399,7 +5407,7 @@
                     "id": "hesitates",
                     "weight": 2,
                     "outcome": {
-                      "fact": "學生說現在還不想當場試，先在日記寫下可以開始的第一步；教師沒有把準備當作完成。",
+                      "fact": "學生說現在不想當場動手，改為先選一件可能開始的小事；教師尊重他的決定。",
                       "claims": [],
                       "changes": [],
                       "historyCodes": [],
@@ -5433,11 +5441,113 @@
               },
               {
                 "id": "observe",
-                "text": "先觀察一次延後時的想法並記下來",
+                "text": "讓學生自行記下下一次卡住的瞬間",
                 "kind": "defer",
                 "emotional": false,
                 "outcome": {
-                  "fact": "教師示範記下延後時的念頭而不評分，學生自行決定是否做紀錄。",
+                  "fact": "學生留下可自行使用的觀察欄，尚未證明會每天填寫。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": "next-contact",
+                    "afterDays": 1
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": []
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "看著六個「明天」，我也替你覺得累",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師承認學生想開始又動不了的挫折，沒有把安慰當作完成學習。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": []
+                  }
+                }
+              }
+            ],
+            "next": null
+          },
+          {
+            "id": "next-contact",
+            "pages": [
+              {
+                "order": 1,
+                "text": "隔天午休，學生再次帶著日記來找導師。昨天約好可以留一欄觀察，但你還沒看見他是否填寫。",
+                "speaker": null,
+                "scene": "school:teachers-office",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我有把日記帶來。可是裡面那一格……我不確定要不要給你看。",
+                "speaker": "participant",
+                "scene": "school:teachers-office",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "follow-1",
+                "text": "只談學生願意分享的一個片刻",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師只依現在自願展示的內容討論一次卡住的時候，不把空白視為故意欺瞞。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -5468,12 +5578,84 @@
                 }
               },
               {
-                "id": "care",
-                "text": "你一直想重新開始，我聽得出來",
+                "id": "follow-2",
+                "text": "讓學生說今天最想處理的問題",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生自行選出一個眼前較迫切的問題；導師沒有替他排滿全部時間。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": []
+                  }
+                }
+              },
+              {
+                "id": "follow-3",
+                "text": "尊重不展示日記，改問是否仍想觀察",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師不要求查看私密紀錄，也沒有把未見內容當成客觀事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": []
+                  }
+                }
+              },
+              {
+                "id": "follow-4",
+                "text": "你願意再來談，就已經不是躲著不管",
                 "kind": "action",
                 "emotional": true,
                 "outcome": {
-                  "fact": "教師承認反覆想重啟的努力，未以這句鼓勵替代實際作業要求。",
+                  "fact": "教師肯定學生再次表達困難的行動，不宣稱拖延已經改善。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -5579,7 +5761,7 @@
           "cooldownDays": 30,
           "exclusionGroups": [],
           "sameFact": true,
-          "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+          "reason": "在籍學生於指定合法非保護時段提出本件情境；後續須保留原事件因果，不以相同分類碼推定為同件。"
         }
       }
     },

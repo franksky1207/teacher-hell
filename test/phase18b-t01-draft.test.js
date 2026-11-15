@@ -103,6 +103,9 @@ test('T01 eight editorial exemplars retain distinct tactics and real follow-up b
   assert.equal(new Set(entry.choices.map(c=>c.outcome.fact)).size,4,'choices must cause distinguishable recorded facts');
   assert.ok(entry.choices.every(c=>c.outcome.world),'every action has an explicit knowledge boundary');
   assert.equal(s.status,'engineering-test');
+  const d=definition(id);assert.equal(d.eligibility.slotIds.length,1);
+  const expected={early:'早自習時',noon:'午休時',lunch:'午餐時'}[d.eligibility.slotIds[0]];
+  assert.ok(s.stages[0].pages[0].text.startsWith(expected),'opening time must match slot '+id);
  }
  for(const id of ['01-22','03-01']){
   const s=records.find(r=>r.story.resourceId==='content:18b-t01-'+id).story;

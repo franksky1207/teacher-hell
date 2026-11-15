@@ -4,7 +4,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {eventWorld,definition} from './support/event-fixtures.js';
 import {buildEventCandidates,validateEventDefinitions,findReunionContact} from '../src/runtime/event-candidates.js';
-import {gradeAt} from '../src/calendar/calendar.js';
+import {gradeAt,assessmentCalendar,SENIOR_CALENDAR_VERSION} from '../src/calendar/calendar.js';
+import {admissionCalendar} from '../src/calendar/admissions.js';
 import {entranceCondition} from '../src/runtime/entrance.js';
 
 test('18-B T02: year-three-only story cannot enter year-one candidate pool',()=>{
@@ -66,7 +67,9 @@ test('18-B T02: pre-graduation subject stories use reachable recorded stages',()
  const byId=new Map(source.records.map(record=>[record.definition.id,record.definition]));
  const ids=['01','04','08','09','11','25'];
  assert.equal(gradeAt('2029-05-30',2026),3);
- // The formal game-school ceremony is June 1; subject registration is later in June.
+ const ceremony=assessmentCalendar('2029:spring',3,SENIOR_CALENDAR_VERSION).ceremonyDate;
+ const registration=admissionCalendar(2026,SENIOR_CALENDAR_VERSION).find(x=>x.kind==='subject-register').date;
+ assert.ok(ceremony<registration,'the game school graduation precedes subject registration');
  for(const id of ids){
   const definition=byId.get('content:18b-t02-07-'+id);
   assert.deepEqual(definition.eligibility.grades,[3]);

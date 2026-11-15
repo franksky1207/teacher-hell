@@ -71,7 +71,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生對照兩張卷，發現這次物理計算題多了圖表判讀，最弱的其實是讀懂座標；他不再認為整科忽然不會。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生比對後發現失分集中在原本熟悉的力學基本題，反而擔心自己的複習方式沒抓到盲點。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -203,7 +303,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生將兩張物理卷的單元標題並排，兩次範圍不同，不能只由分數判定能力下降。／教師協助把一題失分轉成可問的步驟，尚未得到物理科任的判讀。／學生在卷面副本圈出一類錯誤保留比較，沒有歸因成不用功。／教師承接突然下滑的難受，沒有承諾下次一定回升。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -396,7 +496,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生圈出兩題這次真正答對的題型，突然笑說原來進步真的寫在紙上，只是排名沒替他鼓掌。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生想找進步題型，才發現兩次題數和配分不同，坦言還不能單靠總分知道自己進步在哪裡。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -483,7 +683,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "雙方分列本人成績及全班排名，教師只說明兩種指標可不同方向，未取得同學個別分數。／學生找出卷上多得分的單元，教師只肯定可由本人卷面支持的表現。／教師提出下次比較相近題型，不把不同次測驗當等值量尺。／教師肯定已取得的分數，不將排名後退解讀為退步人格。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：coordinate有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -633,7 +833,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對國文錯題，發現三題都漏掉轉折詞，願意帶著這個具體疑問去問國文老師。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生比對後發現錯在不同層次的詞義與段落推論，原本打算一次解決的想法必須拆開。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -763,7 +1063,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生把失分閱讀題分成詞義與推論，分類仍可由國文科任確認。／學生選一題附上自己的理解供詢問，尚未取得專科回應。／教師陪學生在短文圈出一處不明指涉，未宣告已補足閱讀弱點。／教師承接科目落差的不安，不保證數理強項會自動帶動語文。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -956,7 +1256,119 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-3",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生在試題副本標出條件後，當場做對一題原本看漏限制的變式題，發現這個方法值得再試。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生雖畫出關鍵字，仍在新題選錯要套用的公式，確認失分不只因為看漏條件。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -1043,7 +1455,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生圈出兩題漏讀的條件，教師不把所有失分一律叫粗心。／教師示範在副本先標條件再作答，學生未因此保證考場能重現。／雙方保留本次卷面供自己比較，下一次失誤尚未發生。／教師回應會做卻漏條件的懊惱，未以自責換取成績承諾。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：coordinate有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -1236,7 +1648,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生查到有一份缺交的是尚可依公告補件的平時練習，決定先備妥資料，其他缺件仍要問科任。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對後發現幾項缺交已過公告期限，無法靠考卷高分直接補回；只能保留詢問合法補救途徑。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -1330,7 +1842,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "教師與學生整理需要詢問的評量組成，未替科任宣布平時成績比例。／學生列出尚缺項及已知補交規則，未保證全部仍可補交或恢復分數。／雙方查找學生可取得的公告，找不到的權重標為待確認。／教師接住不安並提醒先核對規則，沒有保證總成績一定及格。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：coordinate有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -1480,7 +1992,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生把兩份測驗範圍對照，發現補習班考的是熟悉的基礎題，校內段考卻要求混合應用，總算知道不能直接比。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生整理後發現兩份測驗連題型與配分都不同，暫時無法由任何一份單獨判定真正的弱點。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -1603,7 +2215,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "雙方並列兩份測驗的範圍與題數，不直接將補習班高分換算校內應得分。／學生挑出校內失分的題型供任課判讀，尚未得到弱點分析。／學生保留自己的兩張卷，不收集別人的補習成績作排名。／教師回應分數落差的困惑，未以任一測驗否定另一種學習。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -1753,7 +2365,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生翻出自己在考試當下寫的音量備註，至少能說明曾注意到異常，但尚不能證明設備確實故障。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對後發現當時沒有留下設備異常紀錄，只記得坐後排聽不清，教師保留說法待查證。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -1883,7 +2595,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "教師詢問學生當時可觀察的聲音狀況及有無反映，設備異常仍未證實。／學生把具體聽不清的時點整理成詢問，是否查核及評分由英文科任依程序處理。／教師陪學生寫出個人座位與自述影響，不把紀錄當成設備故障的證明。／教師承認值得反映的疑問，沒有承諾補考或改分。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -2047,7 +2759,135 @@
                       }
                     ]
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生發現兩班使用的是不同版本的平時測驗，先取消直接比較平均分的說法，仍可詢問共同規準。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "我們班是不是比較吃虧？",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對後發現卷子確實相同，但不知道各班樣本與計分範圍，公平問題仍未得到答案。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "我們班是不是比較吃虧？",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -2228,7 +3068,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生與教師分列目前知道的試卷及計分資訊，未知班級條件保留空白。／教師協助擬出只詢問共同標準的問題，未要求取得別班個別成績。／學生決定不再轉貼未查證的班級比較，教師未代為刪除他人訊息。／教師肯定重視公平，未認定別班得到不當優待。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -2815,7 +3655,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "4-3",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生回想當初喜歡化學是因實驗裡的顏色變化，說考不好不代表看見反應時不會興奮。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生說自己最喜歡的其實是考得好時被稱讚，這次失分讓他暫時分不清興趣與成就感。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -2947,7 +3887,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生說喜歡的是動手探究而非限時題，教師不以低分宣判興趣不真實。／教師協助挑出目前單元的具體卡點供科任回應，未決定退出活動。／學生暫不決定社團去留，教師未替家長或社團改變安排。／教師支持保留興趣與面對弱點可以並行，沒有保證分數不影響任何資格。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -3097,7 +4037,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生比對卷上時間，發現最慢的題目其實是多次重算同一式子，願意記下下一次的時間停損線。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生對照後發現回家能查筆記、考場不能，無法簡單把問題都歸咎於時間太短。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -3227,7 +4267,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生說訂正可慢慢查資料；雙方分開記下考場及訂正的條件，未推出唯一失分原因。／學生整理希望請教的限時取捨問題，尚未取得科任策略。／教師示範只記單題用時與卡點，不以速度替學習貼標籤。／教師肯定可在較多支持下做對，未當作正式原分數應更改的證據。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -3377,7 +4417,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生將幾何錯題分欄，發現自己不是完全不會圖形，而是卡在不知道怎麼補一條輔助線。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生整理後發現幾何基本題也有好幾題看錯圖意，才知道問題不只難題技巧。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -3500,7 +4640,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生把本人代數與幾何的錯題分欄，未用整科總分掩蓋差異。／學生選一題幾何圖形供專科詢問，教師不自行判定幾何能力不足。／雙方規劃記錄幾何練習時卡住的步驟，尚無一週觀察結果。／教師提醒總分不是所有單元的判決，未保證分欄就會改善成績。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -3657,7 +4797,119 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對正式成績計算方式後，發現先前把學分和平均分數混在一起算，決定先用正確欄位再評估。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生查完公開資料才發現仍缺一科平時成績組成，不能現在就算出完整學期結果。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -3794,7 +5046,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "教師協助查學生可取得的成績計算說明，未知學分處理仍待教務確認。／學生列出各科待詢問的評量項目，未把所有老師視為已同意補救。／教師陪學生停止用猜測數字反覆試算，保留正式資料更新後再看。／教師承接反覆計算的焦慮，未保證總平均或畢業資格安全。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -3980,7 +5232,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-1",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生從本人考卷挑出一題從錯到對的例子，願意自己決定要不要拿回家說明；家長尚未看過。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生挑完證據後又把紙收起，說怕家人只問名次、根本不願看題目；教師沒有替家長表態。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -4074,7 +5426,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生說希望被看見有多做練習，教師未推定家長只重視名次的動機。／學生從自己的資料選出可分享的前後差異，未提供他人分數。／教師先詢問是否需要協助及可分享範圍，沒有自動聯絡家長。／教師肯定已提供的學習證據，不承諾家長會改變評價。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。｜Flash複核：coordinate 原2個意願分流只有敘事差異，依SOP9.5取消形式分支，保留不預設學生意願或第三人反應的單一原始結果。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。｜Flash複核：coordinate 原2個意願分流只有敘事差異，依SOP9.5取消形式分支，保留不預設學生意願或第三人反應的單一原始結果。｜最高原則第一次精修：coordinate有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -4224,7 +5576,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生列出換座位同期也改成晚睡，願意先把兩個變項分開記錄，沒有直接要求把成績算在座位頭上。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對後覺得窗邊眩光確實干擾讀板書，但尚未能證明段考分數下降全由座位造成。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -4347,7 +5799,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生列出換位同期也有新單元及作息變化，教師不把座位與下降直接畫因果線。／教師詢問實際看不清或噪音情況，尚未決定換位或判定視力問題。／雙方提出短期記錄座位干擾的方式，不用未完成觀察推定根因。／教師表達願意查明不適，沒有保證換位後分數就回來。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -4497,7 +5949,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生比對講義與考卷，發現其中一題其實是把熟悉的觀念換了情境，決定具體問清新的條件。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生找到一題確實不曾在講義見過的複合題，仍不知道是否超出公告範圍，教師沒有擅自定論。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -4634,7 +6186,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生指出認為陌生的一題並說明與練習的差別，教師未以主觀覺得難判定超綱。／學生擬出對評量範圍的具體詢問，正式解釋仍待任課。／教師陪學生保留題目及疑問，不收集全班抱怨當命題不當的證據。／教師回應失望並支持提出可核對的問題，未替科任道歉或宣布重考。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -4784,7 +6336,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生用課表對照缺課日期，找到確實沒聽到的那堂核心講解，終於能提出明確補課需求。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對後發現自己缺的是後面延伸課，前段觀念也不熟，不能全把失分推給合法請假。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -4916,7 +6568,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "雙方依出缺課期間列出可能漏學單元，仍需課程資料確認實際缺口。／教師協助查可用教材與詢問管道，未將拿到資源當成已補完。／學生列出尚未取得的課程內容作待辦，不填成已完成。／教師承接追進度的不易，未把缺課等同不願學習或承諾減免評量。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -5102,7 +6754,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生回想這次確實有先練限時作答，願意把這個可能有幫助的步驟留下，而非宣布從此不會考差。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生想不起這次為何特別順，才發現只靠一次考好還無法找出可複製的方法。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -5189,7 +6941,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生將小考與段考題型並列，雙方不因一次翻身判定能力從此穩定。／學生說這次有做限時練習，教師將其保留為本人策略自述而非驗證因果。／教師建議保留本次卷供後續觀察，不保證未來分數相同。／教師與學生分享本次成功的喜悅，同時不追加連續高分要求。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：coordinate有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -5399,7 +7151,123 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-1",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生選擇先用書面方式準備詢問，說這樣不必再次在同學面前談自己的成績；科任是否方便還不知道。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [
+                        "H04-6"
+                      ],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生寫下想問的問題，卻擔心再被截圖或轉傳，暫時不願透過訊息送出；教師尊重保密界線。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [
+                        "H04-6"
+                      ],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -5493,7 +7361,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生描述分數被看見的途徑，教師只記本人所知，不再擴散；必要保護與正式反映不以選項決定。／教師協助擬出私下或書面提問的方式，尚未取得任課時間。／學生表示目前不想再公開談此事，教師尊重並說明必要處理的保密界線。／教師承接被比較的壓力，未宣稱其他同學已停止評論。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：coordinate有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -5679,7 +7547,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生先口述答案，再寫下自己的三個理由，發現有一個關鍵步驟原先只會說不會寫。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生雖然講得頭頭是道，一落筆仍不知道如何組成完整答題句，決定保留問題問科任。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -5766,7 +7734,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "雙方分開看學生提供的口頭參與及書面作答，不用其中一種代替全部理解。／學生用自己的話先口述再試寫一小段，教師未替科任判定得分。／學生整理想知道的書面要求，尚未獲任課說明。／教師肯定願意發言，沒有因此推定筆試低分必是評量不公。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：coordinate有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -5916,7 +7884,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生仔細比對兩題，才發現一次漏讀負號、一次錯在式子移項，終於不再把全部歸為同一種粗心。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生比對後發現兩次竟然都在同一個負號翻車，苦笑說好像這個符號跟他有私人恩怨。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -6039,7 +8107,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生對照兩題自己的推理，發現停點未必相同，教師不由題型相同推論錯因相同。／雙方在副本寫下辨認條件的提示，學生尚未驗證在新題有效。／學生保存兩次錯題及當時想法，不把第三次還沒發生的結果寫入歷史。／教師接住重犯的煩躁，提醒紀錄可以提供線索，未保證下次不再錯。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -6234,7 +8302,123 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生自己說出一科需要先寫再答、另一科適合當場討論，對不同科任的評語終於有較具體的理解。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [
+                        "H04-6"
+                      ],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生列完參與方式還是擔心安靜的那科會被誤認為沒準備，教師沒有替科任更改評語。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [
+                        "H04-6"
+                      ],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -6321,7 +8505,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生分別描述兩科情境，教師不把任一評語當成整體人格結論。／雙方列出不同科目可參與的方式，尚未代表兩位科任接受解釋。／教師先問學生願意如何使用評語，不轉述另一教師的話給缺席者。／教師承認人在不同課堂可有不同表現，未宣告任一評語失實。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：coordinate有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -6478,7 +8662,119 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生聽完區分後說至少知道重做一遍能代表學會了哪部分，不再把補練當作原考分數自動更改。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生知道正式成績不會因重做自動變更，仍覺得付出的補練好像沒被看見，教師不否定他的失落。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -6601,7 +8897,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "教師分開說明重做練習與原正式評量的目的，沒有自行更動原分。／學生擬出對合法補救途徑的詢問，尚未得到任課許可。／學生保留後來做對的卷面作個人紀錄，不把它當自動改分憑據。／教師肯定後來能完成的學習，未以鼓勵否定正式規則或保證補分。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -6751,7 +9047,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對影本才發現錯格位置其實只從中段開始，能具體指出查核需求，但未預先保證改分。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生看清整張答案卡後發現自己多處跳格，正式規則又未確認，懊惱之餘只能先保留證據。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -6883,7 +9279,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生與教師保留自己的答案卡影本及規則疑問，不把自述填錯當成設備錯誤。／教師協助整理可供查核的題號及時點，是否受理由權責單位決定。／學生在空白練習卡試用逐題對號檢查，未改動原卡或重寫歷史答案。／教師回應發現錯格的懊惱，沒有承諾以會寫就可補回分數。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -7471,7 +9867,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "4-3",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生自己決定保留社團練習，但把考前一週的練習時段寫成可與隊友討論的提案，尚未得到同意。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生一列出競賽與課業安排就說兩邊都不能少，還不想選擇優先次序；教師不替他退社。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "empathy",
@@ -7522,7 +10018,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生列出本人競賽與課業時段，教師不由同時變化推定社團是唯一滑落原因。／學生把具體課業缺口整理成可向任課詢問的內容，未取得減作業承諾。／教師讓學生先說想保留的活動及可調整處，不替他退出社團或承諾家長同意。／教師同時肯定得獎與提醒課業需求，未將兩者寫成只能二選一。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：observe有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -7672,7 +10168,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對公告後發現分數落差主要來自自己忘記計入實作權重，願意先重新看本人所有欄位。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生依公告重算仍對不上系統顯示，找到一項明確需要科任查核的欄位，教師不能自行更改。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -7802,7 +10398,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "雙方按學生持有的公告分列各項權重，尚未確認系統實際套用是否相同。／學生整理公告與成績欄位對不上之處供科任查核，教師不自行改登錄。／教師陪學生保留公告日期及本人欄位截圖，不擷取同學個資。／教師承接把數字落差誤認成退步的不安，未宣告一定只是公式問題。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -7952,7 +10548,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生比對新單元後意外發現原本熟悉的公式仍可用，只是多了一個先判斷情境的步驟。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生對照後才發現新題需要結合兩個單元，原本只換數字練習的方式確實不夠。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -8075,7 +10771,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生比較先前與目前單元題型要求，教師不把單元差異當成全部失分原因。／學生擬出對應用題的具體疑問，尚未得到科任回饋。／教師提出在一單元試記新方法與結果，沒有宣告新方法已有效。／教師肯定先前付出並容許調整，未把過去的方法全面判成錯誤。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -8225,7 +10921,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "specific-insight",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生回想小組分工，發現自己確實負責排版和資料呈現，個人筆試考的推論部分當時沒碰到。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "real-obstacle",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生說自己其實負責口頭講解，卻在個人作答時卡住，決定留下題目進一步查自己的理解。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "coordinate",
@@ -8348,7 +11144,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生自述自己在報告負責的部分，教師未由小組高分推定每人理解相同。／學生選一段報告改成個人短答，停在不懂處，未把練習算正式加分。／學生保留個人試答與問題供科任討論，未揭露其他組員表現。／教師肯定參與報告的價值，也承認個人理解仍需另看，不保證兩種分數一致。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜最高原則第一次精修：verify有兩種基於原事件資料的實際學習理解或障礙，不預設第三方已回覆。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"

@@ -46,7 +46,7 @@ export function validateEventDefinitions(definitions){
    if(Object.hasOwn(e,'issue'))validateIssueEligibility(e.issue);
   if(e.homeroom)need(['ordinary','social','crisis','support','placement'].includes(e.homeroom),'Homeroom qualification');
   if(e.procedure){need(Array.isArray(e.procedure),'Procedure qualifications');for(const p of e.procedure){assertShape(p,['kind','status']);identifier(p.kind);identifier(p.status);}}
-  if(e.entrance){need(Array.isArray(e.entrance),'entrance predicates');for(const c of e.entrance){assertShape(c,['kind',...(Object.hasOwn(c,'value')?['value']:[])]);need(['active','route','gsat-published','confirmed','subject-preparing'].includes(c.kind),'entrance predicate');if(c.kind==='route')need(typeof c.value==='string','entrance route');}}
+  if(e.entrance){need(Array.isArray(e.entrance),'entrance predicates');for(const c of e.entrance){assertShape(c,['kind',...(Object.hasOwn(c,'value')?['value']:[])]);need(['active','route','gsat-published','confirmed','subject-preparing','milestone-completed'].includes(c.kind),'entrance predicate');if(['route','milestone-completed'].includes(c.kind))need(typeof c.value==='string'&&c.value.length>0,'entrance predicate value');}}
   if(e.academic){need(Array.isArray(e.academic),'Academic qualifications');for(const a of e.academic){need(['makeup','credit-deficit','change','admission'].includes(a.kind)&&typeof a.termId==='string','academic condition');}}
   if(e.roleIds)need(Array.isArray(e.roleIds)&&e.roleIds.every(id=>Number.isInteger(id)&&id>=1&&id<=35),'Role eligibility IDs');
   if(e.affiliation){assertShape(e.affiliation,['classId','status']);identifier(e.affiliation.classId);need(['active','former'].includes(e.affiliation.status),'Affiliation status');}

@@ -13,10 +13,13 @@
     "authorRewrittenDistinctOutcomes": 150,
     "individuallyAuthoredOriginal": 58,
     "optionCount": 832,
-    "optionsWithEmptyNumericChanges": 824,
+    "optionsWithEmptyNumericChanges": 818,
     "structurallyValidatedWithNode": 0,
     "independentlyReviewed": 0,
-    "published": 0
+    "published": 0,
+    "optionsWithActualNumericChanges": 14,
+    "admissionsGradeEligibilityBlockers": 78,
+    "targetedCausalRevisionsThisPass": 8
   },
   "subtopics": [
     {
@@ -351,7 +354,9 @@
     "品質修正：依校曆修正40篇dayKinds與slotIds；24篇96個選項結果重寫；七篇特殊時點尚未解決。靜態欄位檢查不等於正式審稿。",
     "2026-11-16：已全部撰寫208個保留情境並清除152個候選中原有的機械化結果套句；依最後逐稿標籤統計150則改寫、58則原撰。靜態檢查208 ID、832選項、六碼/權重、角色、資訊傳遞、候選來源0錯誤；未執行Node驗證或獨立語意簽核。",
     "品質阻斷：832個選項中824個無數值changes；是否需要改變數值須依實際發生因果及正式數值語義判定，不能為消除空值而灌數。尚須檢查升學年級資格、校曆/校外時段和故事到正式候選的接線，未完成前不可發布。",
-    "實際修正包括 12 則人物範圍／角色定位及晚間、假日、放學候選時段；5+1件特殊長假／畢業接觸事件標阻斷，另有8則有證據的即時微幅數值變動；不為湊數替全部故事硬加效果。"
+    "實際修正包括 12 則人物範圍／角色定位及晚間、假日、放學候選時段；5+1件特殊長假／畢業接觸事件標阻斷，另有8則有證據的即時微幅數值變動；不為湊數替全部故事硬加效果。",
+    "後續T02品質處理：完成八則定向故事因果／參與者身分修正；T02-05～07共78則尚無高三學年度／升學階段eligibility，逐件標記放行阻斷，不假裝已接線。未修改原數值公式，不為減少空白changes填數。",
+    "2026-11-16輕量契約欄位檢查：208事件／832四選項／818空數值選項／78件高三放行阻斷，欄位形狀問題0。此檢查不代表Node已執行或獨立語意審稿已通過。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,

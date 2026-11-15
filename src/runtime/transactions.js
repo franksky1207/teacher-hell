@@ -1,3 +1,5 @@
+import { captureStoryNumeric } from './story-history-view.js';
+import { storyDigest } from './story-content.js';
 import { validateRetryPair } from './retry-checkpoint.js';
 import {academicTermStatus} from './academics.js';
 import { progressionContext } from './progression.js';
@@ -159,8 +161,9 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     syncNumeric(world,numericSession);
     const panelWitness=r.plan.validation==='fixed-calendar-v2'&&op.action==='confirm';
     const beforeOrder=r.history.length+1,compilerContract=storyContent(world,op.eventId)?.compilerContract??1;
-    const compiled=compileStory(world,op,{panelWitness,compilerContract});
-    const numericWitness=compilerContract===2?{version:1,attemptId:world.identity.attemptId,cursor:r.plan.cursor,world:clone(numericSession.world())}:null;
+    const numericContext=compilerContract===2?captureStoryNumeric(world,op,{operationId:command.id,beforeOrder,contentDigest:storyDigest(storyContent(world,op.eventId))}):null;
+    const compiled=compileStory(world,op,{panelWitness,compilerContract,numericContext});
+    const numericWitness=numericContext?.finish()??null;
     const beforePanel=deriveWorldPanel(numericSession.world());
     for(const child of compiled.operations)numericSession=execute(world,command,child,numericSession,receipt,false,op.eventId);
     const panel=deriveWorldPanel(numericSession.world());

@@ -39,10 +39,11 @@ export function validateEventDefinitions(definitions){
   const core=tuple(d.coreCodes);need(!coreByTopic.has(d.topicId)||coreByTopic.get(d.topicId)===core,'Topic core must be shared');coreByTopic.set(d.topicId,core);
   need(d.weights.length===6&&d.weights.every(x=>Number.isFinite(x)&&x>=0)&&Math.abs(d.weights.reduce((a,b)=>a+b,0)-1)<1e-12,'Six weights must sum to one');
   need(d.directions.length===6&&d.directions.every(x=>[1,-1].includes(x)),'Explicit six directions');
-  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['companions','roleIds','affiliation','knowledge','groups','academic','entrance','procedure','homeroom','issue'].filter(k=>Object.hasOwn(e,k))]);
+  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['grades','companions','roleIds','affiliation','knowledge','groups','academic','entrance','procedure','homeroom','issue'].filter(k=>Object.hasOwn(e,k))]);
   need(e.people.length>0&&e.people.every(x=>['player','student','caregiver','staff','reunion','contact'].includes(x)),'Participant scopes');
   for(const k of ['dayKinds','slotIds','facts','history','numeric'])need(Array.isArray(e[k]),`Eligibility ${k} array`);
-  if(Object.hasOwn(e,'issue'))validateIssueEligibility(e.issue);
+  if(e.grades)need(Array.isArray(e.grades)&&e.grades.length>0&&e.grades.every(g=>Number.isInteger(g)&&g>=1&&g<=3)&&new Set(e.grades).size===e.grades.length,'Grade eligibility must be distinct grades 1..3');
+   if(Object.hasOwn(e,'issue'))validateIssueEligibility(e.issue);
   if(e.homeroom)need(['ordinary','social','crisis','support','placement'].includes(e.homeroom),'Homeroom qualification');
   if(e.procedure){need(Array.isArray(e.procedure),'Procedure qualifications');for(const p of e.procedure){assertShape(p,['kind','status']);identifier(p.kind);identifier(p.status);}}
   if(e.entrance){need(Array.isArray(e.entrance),'entrance predicates');for(const c of e.entrance){assertShape(c,['kind',...(Object.hasOwn(c,'value')?['value']:[])]);need(['active','route','gsat-published','confirmed','subject-preparing'].includes(c.kind),'entrance predicate');if(c.kind==='route')need(typeof c.value==='string','entrance route');}}
@@ -146,6 +147,7 @@ export function buildEventCandidates(world,definitions,{engineering=false,ignore
    let reason=null;const facts=e.facts.map(f=>index.facts.get(f.id));
    if(e.homeroom)reason=homeroomRejection(world,e.homeroom,person,index);
    if(e.dayKinds.length&&!e.dayKinds.includes(day.kind)||e.from!==null&&day.date<e.from||e.until!==null&&day.date>e.until)reason='calendar-condition';
+    if(e.grades&&!e.grades.includes(gradeAt(day.date,world.numeric.evolution.world.registry.cohortStart)))reason='grade-condition';
    if(facts.some((f,i)=>!f||e.facts[i].participant&&!f.subjectIds.includes(person)))reason='objective-condition';
    if((e.companions??[]).some(c=>{const f=index.facts.get(c.contactFactId);return !f||f.data?.type!=='contact'||f.occurredAt.date!==day.date||!f.subjectIds.includes(person)||!f.subjectIds.includes(c.personId)||!world.numeric.evolution.world.people[c.personId]&&c.personId!==world.identity.playerId;}))reason='companion-contact-required';
    if(!e.issue&&e.people.includes('reunion')&&index.school.reunionIds.includes(person)&&!facts.some(f=>f?.data?.type==='contact'&&f.subjectIds.includes(person)&&f.subjectIds.includes(world.identity.playerId)&&f.occurredAt.date===day.date))reason='reunion-contact-required';

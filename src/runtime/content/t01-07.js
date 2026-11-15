@@ -17,9 +17,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生說小組討論經常由一人連續發言，自己準備的觀點沒有機會提出。",
+              "text": "午休時，在教師辦公室，學生說小組討論經常由一人連續發言，自己準備的觀點沒有機會提出。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
@@ -27,7 +27,7 @@ export default [
               "order": 2,
               "text": "我不是沒想，是插不進去。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -145,7 +145,77 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "engages",
+                  "weight": 3,
+                  "outcome": {
+                    "fact": "學生試說了一句請求加入討論的話，但沒有假定下次同組一定讓他發言。",
+                    "claims": [],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "hesitates",
+                  "weight": 2,
+                  "outcome": {
+                    "fact": "學生表示暫時不敢直接開口，改為寫下想在討論時提出的一個觀點；尚未傳給組員。",
+                    "claims": [],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "strategy-4",
@@ -231,7 +301,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "noon"
         ],
         "from": null,
         "until": null,
@@ -246,6 +316,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "討論課總是同人說話",
+      "cause": "午餐時，學生說小組討論經常由一人連續發言，自己準備的觀點沒有機會提出。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "學生把一個觀點寫在紙上，教師不替缺席組員判定霸占發言。／教師協助整理限時輪流的教學建議，是否採用仍由任課決定。／雙方試說請求發言的句子，未宣稱下次一定獲得空間。／教師表達理解，學生選擇暫不具名反映，內容未自動送給科任。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -264,9 +349,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生拿分組任務單，表示大家找了很多資料卻不知道最後要回答什麼。",
+              "text": "早自習時，在導師班教室裡，學生拿分組任務單，表示大家找了很多資料卻不知道最後要回答什麼。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -274,7 +359,7 @@ export default [
               "order": 2,
               "text": "資料越多，越不知道要交哪一種。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -478,7 +563,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -493,6 +578,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "分組探究不知道目標",
+      "cause": "午餐時，學生拿分組任務單，表示大家找了很多資料卻不知道最後要回答什麼。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "雙方圈出已寫明的產出格式及仍模糊的評量問題，不替任課新增規定。／教師協助擬出詢問示例的請求，未保證能取得可照抄的答案。／學生自選要帶回組內的問題，未代表全組已同意。／教師以幽默回應資訊堆積，沒有把探究教法判為無效。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -511,7 +611,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生說家中網路不穩，沒能載完課前影片，擔心上課被當沒準備。",
+              "text": "午餐時，在校園談話角落，學生說家中網路不穩，沒能載完課前影片，擔心上課被當沒準備。",
               "speaker": null,
               "scene": "school:counselling-corner",
               "cast": [],
@@ -740,6 +840,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "翻轉課程影片取得困難",
+      "cause": "午餐時，學生說家中網路不穩，沒能載完課前影片，擔心上課被當沒準備。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "教師協助查可用設備與時段，未要求揭露家庭細節或保證借用。／教師先詢問學生願意提供的必要資訊；尚未取得分享同意，因此沒有向任課或其他人揭露家庭狀況。／學生擬出不含私事的材料請求，尚未得到任課提供。／教師表達關切，提醒目前仍可提出需求，未宣稱課程已改制。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -758,9 +873,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生表示突然被點名就腦袋空白，但課後能寫出答案。",
+              "text": "早自習時，在導師班教室裡，學生表示突然被點名就腦袋空白，但課後能寫出答案。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -768,7 +883,7 @@ export default [
               "order": 2,
               "text": "老師叫名字那一下，我什麼都忘了。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -972,7 +1087,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -987,6 +1102,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "突然點名口答",
+      "cause": "午餐時，學生表示突然被點名就腦袋空白，但課後能寫出答案。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "學生提供一個例子，教師未以一次描述診斷焦慮或能力。／教師協助提出先停數秒的具體建議，未保證任課採納。／學生練習說出已知部分及需要時間，不背誦裝懂答案。／教師用比喻承接緊張，不認定任課故意羞辱。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -1005,9 +1135,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生拿實驗步驟單，說自己坐後排看不清教師手上的刻度。",
+              "text": "早自習時，在導師班教室裡，學生拿實驗步驟單，說自己坐後排看不清教師手上的刻度。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -1015,7 +1145,7 @@ export default [
               "order": 2,
               "text": "大家點頭了，我根本沒看到。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -1219,7 +1349,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -1234,6 +1364,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "實驗示範看不清",
+      "cause": "午餐時，學生拿實驗步驟單，說自己坐後排看不清教師手上的刻度。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "學生圈出讀刻度一段，教師未猜測其視力狀況。／教師協助列出安全可行的展示請求，不承諾座位或設備調整。／雙方用手邊教材討論需要看見的細節，不自行重做有風險實驗。／教師肯定回饋，學生知道可以提出可見性需求，未因此獲得分數調整。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -1252,7 +1397,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生表示科任的某句玩笑讓自己不舒服，並寫下記得的原句與時間。",
+              "text": "午餐時，在校園談話角落，學生表示科任的某句玩笑讓自己不舒服，並寫下記得的原句與時間。",
               "speaker": null,
               "scene": "school:counselling-corner",
               "cast": [],
@@ -1489,6 +1634,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "課堂笑話讓人不適",
+      "cause": "午餐時，學生表示科任的某句玩笑讓自己不舒服，並寫下記得的原句與時間。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "教師記下學生陳述並確認當下支持需求，不逕認整段脈絡已查證；若涉法定事項依程序處理。／教師說明可用校內管道及保密界線，沒有強迫與科任當面對質。／學生說明希望暫不公開身分，教師記下需求但不保證絕對匿名。／教師表達支持，未將玩笑已違法或學生太敏感寫成定論。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -1507,9 +1667,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生拿課程意見表，擔心寫具體例子會讓科任猜出是自己。",
+              "text": "午休時，在教師辦公室，學生拿課程意見表，擔心寫具體例子會讓科任猜出是自己。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
@@ -1517,7 +1677,7 @@ export default [
               "order": 2,
               "text": "不具體又好像只是抱怨。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -1721,7 +1881,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "noon"
         ],
         "from": null,
         "until": null,
@@ -1736,6 +1896,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "匿名回饋怕被辨認",
+      "cause": "午餐時，學生拿課程意見表，擔心寫具體例子會讓科任猜出是自己。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "雙方在副本刪去不必要的可辨識資訊，未保證無法被推測。／教師協助查看手邊說明，尚未確認系統真的匿名。／教師說明具名私下反映的方式與界線，由學生自行決定。／教師承認不確定性，學生可以暫不送表，不被視為放棄所有反映權利。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -1754,9 +1929,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生表示科任投影片字小且背景複雜，拿出自己合法取得的講義頁。",
+              "text": "早自習時，在導師班教室裡，學生表示科任投影片字小且背景複雜，拿出自己合法取得的講義頁。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -1764,7 +1939,7 @@ export default [
               "order": 2,
               "text": "那張花底看起來漂亮，可是字都混在一起。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -1968,7 +2143,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -1983,6 +2158,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "投影片沒有文字對比",
+      "cause": "午餐時，學生表示科任投影片字小且背景複雜，拿出自己合法取得的講義頁。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "學生在個人副本圈出對比不足處，不推論所有同學同樣困難。／學生在自己的副本用白底深字重排一小段，未修改、公開或替任課發送教材。／學生擬出文字版需求，科任是否能提供尚未確認。／教師以幽默回應，未公開嘲諷任課審美或強迫停用投影片。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -2001,7 +2191,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生說科任在抽問後讓沒答出的人站著，自己擔心下次仍不會。",
+              "text": "午餐時，在校園談話角落，學生說科任在抽問後讓沒答出的人站著，自己擔心下次仍不會。",
               "speaker": null,
               "scene": "school:counselling-corner",
               "cast": [],
@@ -2238,6 +2428,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "課前抽問與自尊",
+      "cause": "午餐時，學生說科任在抽問後讓沒答出的人站著，自己擔心下次仍不會。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "教師聽取具體情況並說明必要保護程序，不把學生自述當成全部事實。／教師提供校內窗口及可記錄的內容，不要求學生自行與科任衝突。／學生寫出需要預告範圍或思考時間的請求，未取代對不當處置的處理。／教師表達支持，沒有宣告調查結果，也不以提高成績交換尊重。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -2256,9 +2461,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生拿課文例題，說國外滑雪度假的情境讓他先卡在看不懂背景。",
+              "text": "早自習時，在導師班教室裡，學生拿課文例題，說國外滑雪度假的情境讓他先卡在看不懂背景。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -2266,7 +2471,7 @@ export default [
               "order": 2,
               "text": "還沒算，我先不知道這人在做什麼。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -2470,7 +2675,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -2485,6 +2690,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "課堂例子離生活太遠",
+      "cause": "午餐時，學生拿課文例題，說國外滑雪度假的情境讓他先卡在看不懂背景。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "雙方標出題目已知量，不必假裝熟悉滑雪經驗。／教師協助寫出以熟悉活動對照的建議，未要求全面換教材。／學生列出背景詞與學科詞供詢問，尚未得到解釋。／教師以幽默承接，沒有推定任課忽略特定家庭。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -2503,9 +2723,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生說同組同學每次都搶著操作，自己最後只負責擦桌。",
+              "text": "午餐時，在教學大樓走廊，學生說同組同學每次都搶著操作，自己最後只負責擦桌。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:corridor",
               "cast": [],
               "presentation": "narration"
             },
@@ -2513,7 +2733,7 @@ export default [
               "order": 2,
               "text": "我要被評實作，可是沒有摸過。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:corridor",
               "cast": [
                 {
                   "role": "participant",
@@ -2732,6 +2952,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "實作課分工只剩旁觀",
+      "cause": "午餐時，學生說同組同學每次都搶著操作，自己最後只負責擦桌。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "學生在個人表標記未練部分，不把組內說法當成已查清責任。／教師協助提出安全輪替需求，尚未取得安排或分數補償。／學生擬好具體想練的操作，不替其他成員答應讓位。／教師以溫和幽默回應，未貶低清潔責任或保證立刻補課。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -2750,9 +2985,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生自述某科每堂都有短測，覺得能提醒複習，也覺得訂正跟不上。",
+              "text": "午餐時，在教學大樓走廊，學生自述某科每堂都有短測，覺得能提醒複習，也覺得訂正跟不上。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:corridor",
               "cast": [],
               "presentation": "narration"
             },
@@ -2760,7 +2995,7 @@ export default [
               "order": 2,
               "text": "我不是要全部取消，只是來不及消化。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:corridor",
               "cast": [
                 {
                   "role": "participant",
@@ -2979,6 +3214,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "小考頻率的回饋",
+      "cause": "午餐時，學生自述某科每堂都有短測，覺得能提醒複習，也覺得訂正跟不上。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "學生在紙上列出兩種效果，不代全班表示贊成或反對。／教師整理預留訂正時間的詢問，頻率調整仍由任課決定。／學生挑出一題具體卡點，未宣稱所有壓力都來自考試。／教師表達理解，沒有把學生的折衷意見簡化成抗拒評量。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -2997,9 +3247,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生拿課堂影片筆記，記了很多畫面卻不知道和單元的關係。",
+              "text": "早自習時，在導師班教室裡，學生拿課堂影片筆記，記了很多畫面卻不知道和單元的關係。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -3007,7 +3257,7 @@ export default [
               "order": 2,
               "text": "我有看，可是不知道重點要寫哪裡。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -3211,7 +3461,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -3226,6 +3476,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "只播影片不知要看什麼",
+      "cause": "午餐時，學生拿課堂影片筆記，記了很多畫面卻不知道和單元的關係。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "雙方找出待釐清的連結，不憑印象替影片定義教學目的。／學生擬出希望先有提問引導的建議，未要求停播影片。／學生列出片段及疑問，供下次詢問，不將記憶當成可靠逐字紀錄。／教師回應困惑，未把任課定性為偷懶或課堂無效。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -3244,9 +3509,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生拿兩份標題不同的教材，不知道回家該複習課本還是補充講義。",
+              "text": "早自習時，在導師班教室裡，學生拿兩份標題不同的教材，不知道回家該複習課本還是補充講義。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -3254,7 +3519,7 @@ export default [
               "order": 2,
               "text": "公告寫一章，講義又跑到別處。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -3458,7 +3723,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -3473,6 +3738,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "課本進度與補充教材不同步",
+      "cause": "午餐時，學生拿兩份標題不同的教材，不知道回家該複習課本還是補充講義。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "雙方以已知標題列出可能對應處，未猜定尚未公告的考試範圍。／教師協助擬出具體範圍詢問，等候正式回覆。／學生在個人副本標記課堂提及段落，不代表完整考試範圍。／教師以比喻承接，沒有代替任課宣布新進度。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -3491,9 +3771,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生說課堂問題常被請留到課後，但課後任課又得趕下一班。",
+              "text": "午餐時，在教學大樓走廊，學生說課堂問題常被請留到課後，但課後任課又得趕下一班。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:corridor",
               "cast": [],
               "presentation": "narration"
             },
@@ -3501,7 +3781,7 @@ export default [
               "order": 2,
               "text": "我不想打斷，可是一直沒問到。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:corridor",
               "cast": [
                 {
                   "role": "participant",
@@ -3720,6 +4000,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "學生提問被留到課後",
+      "cause": "午餐時，學生說課堂問題常被請留到課後，但課後任課又得趕下一班。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "學生寫出最先不懂的步驟，未被要求把複雜疑問縮成是非題。／教師協助提出紙條、時間或線上管道的請求，未替任課承諾額外值班。／學生與教師核對已提供資料，找不到的部分仍保留疑問。／教師表達共感，未認定任課故意不回答或答應立即補救。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -3738,9 +4033,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生說自己想得慢但常答對，搶答活動總是在他想完前結束。",
+              "text": "早自習時，在導師班教室裡，學生說自己想得慢但常答對，搶答活動總是在他想完前結束。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -3748,7 +4043,7 @@ export default [
               "order": 2,
               "text": "我不是不會，只是按不贏。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -3952,7 +4247,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -3967,6 +4262,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "競賽式搶答的回饋",
+      "cause": "午餐時，學生說自己想得慢但常答對，搶答活動總是在他想完前結束。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "學生口述某題的思考過程，教師不以單例認定活動不公平。／教師協助整理可讓更多人思考的提案，未改變任課評分規則。／學生在紙上試記一題步驟，不被要求靠訓練速度適應所有教法。／教師肯定思考價值，沒有保證一定會被點名或加分。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -3985,7 +4295,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生拿自己寫的教法建議，擔心任課把它理解成全班要求。",
+              "text": "午餐時，在校園談話角落，學生拿自己寫的教法建議，擔心任課把它理解成全班要求。",
               "speaker": null,
               "scene": "school:counselling-corner",
               "cast": [],
@@ -4214,6 +4524,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "課程意見被當全班立場",
+      "cause": "午餐時，學生拿自己寫的教法建議，擔心任課把它理解成全班要求。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "學生在副本改用本人經驗，未刪掉具體不適應的例子。／教師擬好只說明此學生意見範圍的訊息，尚未替學生送出。／教師說明可選擇不再擴大表態，不替其他學生徵集附和。／教師承接不安，沒有憑學生擔心就判定任課已誤讀。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -4232,9 +4557,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生表示只聽音檔時抓不到段落，想有逐字或重點文字對照。",
+              "text": "早自習時，在導師班教室裡，學生表示只聽音檔時抓不到段落，想有逐字或重點文字對照。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -4242,7 +4567,7 @@ export default [
               "order": 2,
               "text": "我不是不想聽，是常不知道聽到哪裡。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -4446,7 +4771,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -4461,6 +4786,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "替代教學媒材需求",
+      "cause": "午餐時，學生表示只聽音檔時抓不到段落，想有逐字或重點文字對照。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "學生在音檔時間軸紙本標出卡點，不診斷聽覺或學習障礙。／教師協助提出重點稿需求，尚未取得提供承諾。／雙方比對手邊教材及段落，未私自上傳音檔到外部服務。／教師表達支持，未把替代媒材說成降低標準或必然有效。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -4479,9 +4819,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生說看科任示範操作覺得容易，自己做卻不知道第一個動作。",
+              "text": "早自習時，在導師班教室裡，學生說看科任示範操作覺得容易，自己做卻不知道第一個動作。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -4489,7 +4829,7 @@ export default [
               "order": 2,
               "text": "老師一氣呵成，我不知道中間哪裡換手。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -4693,7 +5033,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -4708,6 +5048,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "教師示範和學生嘗試落差",
+      "cause": "午餐時，學生說看科任示範操作覺得容易，自己做卻不知道第一個動作。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "學生用文字列出看見的順序，缺漏處保留問號，不自行冒險重做。／教師協助寫出具體慢示範需求，未承諾全班重上一次。／教師建議僅用紙上排序練習，危險設備仍待科任指導。／教師以比喻回應，不將示範者判成不會教。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -4726,9 +5081,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生說科任問問題後很快自己解答，自己還在想時討論已結束。",
+              "text": "早自習時，在導師班教室裡，學生說科任問問題後很快自己解答，自己還在想時討論已結束。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -4736,7 +5091,7 @@ export default [
               "order": 2,
               "text": "我抬頭準備說，他已經下一題了。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -4940,7 +5295,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -4955,6 +5310,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "課堂停頓被誤當沉默",
+      "cause": "午餐時，學生說科任問問題後很快自己解答，自己還在想時討論已結束。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "學生說明記得的例子，教師未以主觀估時當成精確秒數。／教師協助整理可試行的教法建議，是否採用待任課決定。／學生試說「我有想法，需要再整理一下」，不保證教師一定等候。／教師以幽默支持表達，不宣稱所有沉默都代表思考。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -4973,9 +5343,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生說自己在課堂互教時可能把觀念講錯，現在想知道如何更正。",
+              "text": "早自習時，在導師班教室裡，學生說自己在課堂互教時可能把觀念講錯，現在想知道如何更正。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -4983,7 +5353,7 @@ export default [
               "order": 2,
               "text": "他們都記了，我怕再說反而更亂。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -5187,7 +5557,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -5202,6 +5572,21 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "editorial": {
+      "title": "同學教同學的錯誤擴散",
+      "cause": "午餐時，學生說自己在課堂互教時可能把觀念講錯，現在想知道如何更正。",
+      "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
+      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
+      "distinctiveConsequence": "學生把原說法及不確定處整理在自己的紙上，尚未送交科任，目前未宣告錯誤已成立。／教師協助寫出暫勿沿用、待確認的文字，不代傳或揭露其他人的筆記。／學生當場說明推理，教師只指出需要專科確認的環節。／教師表達肯定，未把更正意願當成同學已收到正確資訊。",
+      "editorialStatus": "awaiting-separated-review",
+      "author": "Codex root authoring process",
+      "version": "1",
+      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
+      "causalClass": [
+        "L1"
+      ],
+      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   }
 ];

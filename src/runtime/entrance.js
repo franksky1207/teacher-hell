@@ -8,7 +8,7 @@ import { need } from '../academics/rules.js';
 import { assertShape } from '../player/panel.js';
 function mockEvidence(r,id,date){return ['morning','afternoon'].every(phase=>r.facts.some(f=>f.order<=r.history.length&&f.occurredAt.date===date&&f.data.mockSummary?.nodeId===id&&f.data.mockSummary.phase===phase)&&r.history.some(h=>h.type==='slot-complete'&&h.at.date===date&&h.at.slotId===phase));}
 const runtime=w=>w.extensions['teacher-hell/world'];
-/** Preserve the graduated cohort for the already-scheduled subject-registration phase.
+/** Preserve the graduated cohort for already-scheduled aftercare admissions phases.
  * Transferred-out, suspended and students of other cohorts are never inferred as graduates.
  */
 export function graduatedEntrantsForSubjectRegister(registry,entrance){
@@ -24,7 +24,8 @@ export function entranceInput(w,op,s){
  const r=runtime(w),registry=w.numeric.evolution.world.registry,date=w.position.date,cohort=registry.cohortStart;
  const input={action:'entrance',node:op.node,date,policy:ADMISSIONS_POLICY};
  const roster=seniorRosterAt(w,date),knownEnrollments=new Set(roster.knownEnrollmentIds);
- const graduates=op.node==='subject-register'&&aftercareActive(w)?graduatedEntrantsForSubjectRegister(registry,s.entrance):[];
+ const isScheduledPhase=!['init','guidance','withdraw','decision','eligibility'].includes(op.node);
+ const graduates=isScheduledPhase&&aftercareActive(w)?graduatedEntrantsForSubjectRegister(registry,s.entrance):[];
  const people=[...new Set([...roster.people.map(p=>p.id).filter(id=>s.students[id]),...graduates])].sort();
  const continuousIds=people.filter(id=>{if(graduates.includes(id))return s.entrance.students[id]?.continuous===true;const entries=registry.enrollments.filter(e=>e.personId===id&&knownEnrollments.has(e.id)).sort((a,b)=>a.from.localeCompare(b.from));return entries[0]?.from<=semester(`${cohort}:autumn`).start&&entries.every(e=>registry.classes[e.classId].cohortStart===cohort)&&entries.every((e,n)=>!e.until||e.until>=date||e.status==='change-class'&&entries[n+1]?.from<=e.until);});
  if(op.node==='init'){

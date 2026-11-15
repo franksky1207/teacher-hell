@@ -2,16 +2,38 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {PILOT_18B2_STORIES,validateStory} from '../src/runtime/story-content.js';
-import {beginDemo,apply,storyAction,advanceDemo} from './support/story-scenario.js';
+import {apply,storyAction,advanceDemo} from './support/story-scenario.js';
+import {eventWorld,definition,draw} from './support/event-fixtures.js';
 import {availableStoryChoices,readStory} from '../src/runtime/story.js';
 import {runtimeOf,restoreWorldState} from '../src/runtime/model.js';
 import {projectIssues} from '../src/runtime/issues.js';
 import {directedKey} from '../src/world/relationships.js';
 
+/** Draw at the normal opening, then admit at the actual lunch/noon reservation. */
+function beginPilot(content,slot){
+ let w=eventWorld(1);
+ const d=definition(content.definitionId,{topicId:content.topicId,content:{resourceId:content.resourceId,version:content.version,status:content.status}});
+ d.eligibility.slotIds=[slot];
+ w=apply(w,[draw([d])]);
+ const selection=runtimeOf(w).history.findLast(h=>h.type==='event-selection').data.selected[0];
+ assert.ok(selection,'seed must select this isolated story');
+ for(let i=0;i<16&&w.position.slotId!==selection.slotId;i++)w=advanceDemo(w);
+ assert.equal(w.position.slotId,selection.slotId,'reach reserved official calendar slot');
+ w=apply(w,[{type:'admit-event',eventId:selection.eventId}]);
+ return {world:w,eventId:selection.eventId};
+}
+function onLastPage(world,eventId){
+ let w=world;
+ for(let i=0;i<8&&readStory(w,eventId).canNext;i++)w=apply(w,[storyAction(eventId,'next')]);
+ assert.equal(readStory(w,eventId).canNext,false,'all pages consumed before choosing');
+ return w;
+}
+
 test('18-B2 03: contacting canteen opens a specific unresolved issue; other route does not',()=>{
  const s=PILOT_18B2_STORIES[0];
  assert.equal(validateStory(s),s);
- let {world:w,eventId}=beginDemo(1,s);
+ let {world:w,eventId}=beginPilot(s,'lunch');
+ w=onLastPage(w,eventId);
  w=apply(w,[storyAction(eventId,'select','contact')]);
  assert.equal(projectIssues(w).length,0);
  w=apply(w,[storyAction(eventId,'confirm')]);
@@ -24,21 +46,23 @@ test('18-B2 03: contacting canteen opens a specific unresolved issue; other rout
  for(let i=0;i<40&&!readStory(w,eventId).canResume;i++)w=advanceDemo(w);
  assert.ok(readStory(w,eventId).canResume,'bounded next-day story continuation');
  w=apply(w,[storyAction(eventId,'resume')]);
+ w=onLastPage(w,eventId);
  w=apply(w,[storyAction(eventId,'select','verified')]);
  w=apply(w,[storyAction(eventId,'confirm')]);
  const closed=projectIssues(w);
  assert.equal(closed.length,1);
  assert.equal(closed[0].id,opened[0].id);
  assert.equal(closed[0].state,'closed');
- const alternative=beginDemo(1,s);
- const other=apply(apply(alternative.world,[storyAction(alternative.eventId,'select','care')]),[storyAction(alternative.eventId,'confirm')]);
+ const alternative=beginPilot(s,'lunch');
+ const other=apply(apply(onLastPage(alternative.world,alternative.eventId),[storyAction(alternative.eventId,'select','care')]),[storyAction(alternative.eventId,'confirm')]);
  assert.equal(projectIssues(other).length,0);
 });
 
 test('18-B2 13: empathy replacement and student-to-teacher relationship stay directional',()=>{
  const story=PILOT_18B2_STORIES[1];
  assert.equal(validateStory(story),story);
- let {world:w,eventId}=beginDemo(1,story);
+ let {world:w,eventId}=beginPilot(story,'noon');
+ w=onLastPage(w,eventId);
  const e=w.events.find(x=>x.id===eventId);
  const student=e.participantIds[0],teacher=w.identity.playerId;
  // The numeric source is the existing student person record, not an authored trait flag.
@@ -60,7 +84,8 @@ test('18-B2 13: empathy replacement and student-to-teacher relationship stay dir
 test('18-B2 20: only explicit teacher-to-student communication discloses the selected fact',()=>{
  const story=PILOT_18B2_STORIES[2];
  assert.equal(validateStory(story),story);
- let {world:w,eventId}=beginDemo(1,story);
+ let {world:w,eventId}=beginPilot(story,'lunch');
+ w=onLastPage(w,eventId);
  const student=w.events.find(x=>x.id===eventId).participantIds[0],teacher=w.identity.playerId;
  w=apply(w,[storyAction(eventId,'select','separate')]);
  w=apply(w,[storyAction(eventId,'confirm')]);

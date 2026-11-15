@@ -16,7 +16,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午休時，在教師辦公室，學生出示報告草稿及AI修改紀錄，課程說明只寫「自行完成」。",
+                "text": "午休時，學生在教師辦公室攤開報告草稿和兩個AI修改版本。科任寫的規則只有「自行完成」，並沒有說明潤稿的範圍。",
                 "speaker": null,
                 "scene": "school:teachers-office",
                 "cast": [],
@@ -24,27 +24,35 @@
               },
               {
                 "order": 2,
-                "text": "我只叫它潤句子，這樣也不行嗎？",
+                "text": "我只叫它修句子，可是它順便替我補了一段理由。那一段還算我寫的嗎？",
                 "speaker": "participant",
                 "scene": "school:teachers-office",
                 "cast": [
                   {
                     "role": "participant",
                     "position": "center",
-                    "expression": "embarrassed"
+                    "expression": "calm"
                   }
                 ],
                 "presentation": "dialogue"
+              },
+              {
+                "order": 3,
+                "text": "你只能看見學生願意提供的紀錄；對這份作業的工具使用規則，科任目前尚未答覆。",
+                "speaker": null,
+                "scene": "school:teachers-office",
+                "cast": [],
+                "presentation": "narration"
               }
             ],
             "choices": [
               {
                 "id": "strategy-1",
-                "text": "對照原句與修改處",
+                "text": "把原句、潤稿與新增論點分開標示",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "雙方在學生自願出示的兩版中標出語句修改與新增論點，新增部分是否可用仍待科任解釋。",
+                  "fact": "學生把可辨認的語句調整及新增論點分別標出，導師沒有把任何一種情形直接判為違規。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -76,11 +84,11 @@
               },
               {
                 "id": "strategy-2",
-                "text": "整理工具使用揭露欄",
+                "text": "由學生決定是否寫工具使用說明",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "教師示範列出工具名稱、用途與採用段落，沒有替學生宣告符合課程要求。",
+                  "fact": "教師提供揭露用途的寫法，學生可保留或使用，並未被要求在規則未明時直接認罪。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -114,7 +122,7 @@
                     "id": "engages",
                     "weight": 3,
                     "outcome": {
-                      "fact": "學生自願將已知AI潤句範圍記入私人揭露草稿，尚未確認科任的允許界線。",
+                      "fact": "學生願意在私人草稿列出AI輔助的部分，但未自動提交給科任。",
                       "claims": [],
                       "changes": [],
                       "historyCodes": [],
@@ -148,7 +156,7 @@
                     "id": "hesitates",
                     "weight": 2,
                     "outcome": {
-                      "fact": "學生表示擔心揭露後受罰，先保存修改紀錄並整理待詢問題，尚未同意提交揭露欄。",
+                      "fact": "學生擔心揭露後被誤解，先保存兩個版本，暫未決定是否提交說明。",
                       "claims": [],
                       "changes": [],
                       "historyCodes": [],
@@ -182,11 +190,11 @@
               },
               {
                 "id": "strategy-3",
-                "text": "先向科任詢問允許範圍",
+                "text": "先整理問題向科任確認可使用的範圍",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "教師協助寫出不含他人資料的規則詢問，尚未取得科任答覆。",
+                  "fact": "教師協助整理不涉及其他學生資料的問題，正式規則仍待科任釐清。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -218,11 +226,11 @@
               },
               {
                 "id": "strategy-4",
-                "text": "規則這麼短，我也怕大家各猜各的",
+                "text": "規則只有四個字，叫人用猜的賭成績也太刺激",
                 "kind": "action",
                 "emotional": true,
                 "outcome": {
-                  "fact": "教師表達困惑並提供原創寫作的備用做法，學生未承諾重寫整份報告。",
+                  "fact": "教師承認學生難以判斷的困擾，建議保留原始版本與修改紀錄，不要求偷偷刪除證據。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -313,7 +321,7 @@
           "cooldownDays": 30,
           "exclusionGroups": [],
           "sameFact": true,
-          "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
+          "reason": "在籍學生於指定合法非保護時段接觸導師；僅記錄已確認事實，不以同主題或日期推定相同問題。"
         }
       },
       "editorial": {

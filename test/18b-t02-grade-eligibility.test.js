@@ -1,3 +1,4 @@
+import {readFileSync} from 'node:fs';
 /** Grade-only eligibility regression: no whole-career simulation or real draft publication. */
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -57,4 +58,25 @@ test('18-B T02: alumni reunion must be supported by a same-day contact with the 
  assert.equal(findReunionContact(facts,'graduate','teacher','2029-07-11')?.id,'valid');
  assert.equal(findReunionContact(facts,'graduate','teacher','2029-07-12'),null);
  assert.equal(findReunionContact(facts,'other','teacher','2029-07-11'),null);
+});
+
+
+test('18-B T02: pre-graduation subject stories use reachable recorded stages',()=>{
+ const source=JSON.parse(readFileSync(new URL('../work/18b-t02-07-authoring.json',import.meta.url),'utf8'));
+ const byId=new Map(source.records.map(record=>[record.definition.id,record.definition]));
+ const ids=['01','04','08','09','11','25'];
+ assert.equal(gradeAt('2029-05-30',2026),3);
+ // The formal game-school ceremony is June 1; subject registration is later in June.
+ for(const id of ids){
+  const definition=byId.get('content:18b-t02-07-'+id);
+  assert.deepEqual(definition.eligibility.grades,[3]);
+  assert.ok(definition.eligibility.entrance.length>0);
+  assert.ok(!definition.eligibility.entrance.some(g=>g.kind==='subject-preparing'),id+' may not depend on post-graduation subject registration');
+ }
+ for(const id of ['08','25']){
+  assert.ok(byId.get('content:18b-t02-07-'+id).eligibility.entrance.some(g=>g.kind==='milestone-completed'));
+ }
+ const laterCase=byId.get('content:18b-t02-07-07');
+ assert.ok(laterCase.eligibility.entrance.some(g=>g.kind==='subject-preparing'));
+ assert.ok(!laterCase.eligibility.dayKinds.includes('school'));
 });

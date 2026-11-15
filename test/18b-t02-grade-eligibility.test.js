@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {eventWorld,definition} from './support/event-fixtures.js';
-import {buildEventCandidates,validateEventDefinitions} from '../src/runtime/event-candidates.js';
+import {buildEventCandidates,validateEventDefinitions,findReunionContact} from '../src/runtime/event-candidates.js';
 import {gradeAt} from '../src/calendar/calendar.js';
 import {entranceCondition} from '../src/runtime/entrance.js';
 
@@ -45,4 +45,16 @@ test('18-B T02: admissions milestone requires a recorded phase, not a story date
  const completed={entrance:{...pending.entrance,completed:[{id:'application-screen'}]}};
  assert.equal(entranceCondition(completed,studentId,milestone),true);
  assert.equal(entranceCondition(completed,studentId,{kind:'subject-preparing'}),true);
+});
+
+
+test('18-B T02: alumni reunion must be supported by a same-day contact with the teacher',()=>{
+ const facts=new Map([
+  ['earlier',{id:'earlier',data:{type:'contact'},subjectIds:['graduate','teacher'],occurredAt:{date:'2029-07-10'}}],
+  ['no-teacher',{id:'no-teacher',data:{type:'contact'},subjectIds:['graduate','other'],occurredAt:{date:'2029-07-11'}}],
+  ['valid',{id:'valid',data:{type:'contact'},subjectIds:['graduate','teacher'],occurredAt:{date:'2029-07-11'}}]
+ ]);
+ assert.equal(findReunionContact(facts,'graduate','teacher','2029-07-11')?.id,'valid');
+ assert.equal(findReunionContact(facts,'graduate','teacher','2029-07-12'),null);
+ assert.equal(findReunionContact(facts,'other','teacher','2029-07-11'),null);
 });

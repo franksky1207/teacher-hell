@@ -15,7 +15,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午休時，在教師辦公室，學生比對各題得分後發現考卷上總分可能少加兩分，請導師協助。",
+                "text": "午休時，學生將考卷攤在教師辦公室桌上，每題得分旁多了一欄自己算的數字。逐題相加似乎比卷面總分多兩分。",
                 "speaker": null,
                 "scene": "school:teachers-office",
                 "cast": [],
@@ -23,27 +23,35 @@
               },
               {
                 "order": 2,
-                "text": "每題加起來不是這個數字。",
+                "text": "我算了三次都一樣。可是我去問，老師會不會覺得我在挑毛病？",
                 "speaker": "participant",
                 "scene": "school:teachers-office",
                 "cast": [
                   {
                     "role": "participant",
                     "position": "center",
-                    "expression": "calm"
+                    "expression": "embarrassed"
                   }
                 ],
                 "presentation": "dialogue"
+              },
+              {
+                "order": 3,
+                "text": "導師能協助整理可核對的疑點，但不能只看副本就修改科任登錄的成績。",
+                "speaker": null,
+                "scene": "school:teachers-office",
+                "cast": [],
+                "presentation": "narration"
               }
             ],
             "choices": [
               {
                 "id": "verify",
-                "text": "先與學生核對卷面各題得分",
+                "text": "和學生用原卷逐題核對加總",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生和教師以本人原卷副本重算可見得分，差異被列出但未認定正式成績應更改。",
+                  "fact": "雙方標出需要科任查核的題號及可能的加總差異，未認定正式登錄有誤。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -75,11 +83,11 @@
               },
               {
                 "id": "refer",
-                "text": "引導依校內規定向閱卷老師申請複核",
+                "text": "引導學生向科任提出具體的複核問題",
                 "kind": "support",
                 "emotional": false,
                 "outcome": {
-                  "fact": "教師協助寫出題號及加總疑問的複核申請，閱卷教師尚未答覆。",
+                  "fact": "學生依原卷整理查核請求，科任是否認定誤算仍未知。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -111,11 +119,11 @@
               },
               {
                 "id": "preserve",
-                "text": "保留原卷與照片，等待正式確認",
+                "text": "先保留原卷，不要塗改已有分數",
                 "kind": "defer",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生保留原卷與個人照片，不補筆或改寫分數，正式核對仍待進行。",
+                  "fact": "學生保存可合法使用的原始卷面資料，沒有直接認定會加回兩分。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -147,11 +155,11 @@
               },
               {
                 "id": "empathy",
-                "text": "如果真的算錯，當然值得查清楚",
+                "text": "問清楚不是找碴，但我們也不能先判人家算錯",
                 "kind": "action",
                 "emotional": true,
                 "outcome": {
-                  "fact": "教師肯定提出可核對疑問的權利，不保證一定算錯或一定補分。",
+                  "fact": "教師肯定學生提出疑問的權利，同時不替閱卷教師預先下判斷。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -257,7 +265,7 @@
           "cooldownDays": 30,
           "exclusionGroups": [],
           "sameFact": true,
-          "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+          "reason": "在籍學生於指定合法非保護時段提出本件情境；後續須保留原事件因果，不以相同分類碼推定為同件。"
         }
       }
     },

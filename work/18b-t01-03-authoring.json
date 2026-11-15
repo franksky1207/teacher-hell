@@ -15,7 +15,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "早自習時，在導師班教室裡，學生拿出已完成但留在書包裡的作業，表示昨天忘記繳交。",
+                "text": "早自習，學生從書包底部抽出一份寫好的作業。繳交期限是昨天，他說直到今早才發現紙還在。",
                 "speaker": null,
                 "scene": "school:classroom",
                 "cast": [],
@@ -23,27 +23,35 @@
               },
               {
                 "order": 2,
-                "text": "我真的寫了，只是下課忘記拿出來。",
+                "text": "我真的有寫，但現在拿去會不會像是在找藉口？",
                 "speaker": "participant",
                 "scene": "school:classroom",
                 "cast": [
                   {
                     "role": "participant",
                     "position": "center",
-                    "expression": "calm"
+                    "expression": "embarrassed"
                   }
                 ],
                 "presentation": "dialogue"
+              },
+              {
+                "order": 3,
+                "text": "已完成作業和按時交到科任手上是兩件事；科任是否接受補交尚未確認。",
+                "speaker": null,
+                "scene": "school:classroom",
+                "cast": [],
+                "presentation": "narration"
               }
             ],
             "choices": [
               {
                 "id": "verify",
-                "text": "確認繳交規則與實際完成時間",
+                "text": "確認手上作業與公開的繳交規則",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生出示已完成部分及記得的完成時間，教師未由完成就推定按時送達。",
+                  "fact": "教師與學生核對目前能出示的完成部分和期限，沒有因作業寫好就宣告準時繳交。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -75,17 +83,17 @@
               },
               {
                 "id": "refer",
-                "text": "建議學生依科任規定補交並說明",
+                "text": "讓學生自己向科任說明，導師協助準備",
                 "kind": "support",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生擬好依規補交的說明，是否受理由科任決定，未宣告已收件。",
+                  "fact": "學生整理忘記交件的經過與補交詢問，是否送出、是否採計仍未確定。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
-                    "stage": null,
-                    "afterDays": 0
+                    "stage": "next-contact",
+                    "afterDays": 1
                   },
                   "world": {
                     "subjects": [
@@ -113,13 +121,13 @@
                     "id": "engages",
                     "weight": 3,
                     "outcome": {
-                      "fact": "學生自己擬好向科任說明補交情況的訊息，表示願意詢問；尚未取得收件或採計結果。",
+                      "fact": "學生自願寫下一個可在五分鐘內開始的動作，但目前仍未證明會執行。",
                       "claims": [],
                       "changes": [],
                       "historyCodes": [],
                       "next": {
-                        "stage": null,
-                        "afterDays": 0
+                        "stage": "next-contact",
+                        "afterDays": 1
                       },
                       "world": {
                         "subjects": [
@@ -147,13 +155,13 @@
                     "id": "hesitates",
                     "weight": 2,
                     "outcome": {
-                      "fact": "學生擔心詢問科任會被責備，先和教師寫下要確認的規則，尚未提出補交要求。",
+                      "fact": "學生說現在不想當場動手，改為先選一件可能開始的小事；教師尊重他的決定。",
                       "claims": [],
                       "changes": [],
                       "historyCodes": [],
                       "next": {
-                        "stage": null,
-                        "afterDays": 0
+                        "stage": "next-contact",
+                        "afterDays": 1
                       },
                       "world": {
                         "subjects": [
@@ -181,11 +189,11 @@
               },
               {
                 "id": "document",
-                "text": "請他下次使用固定的繳交檢查方法",
+                "text": "先替下次設計一個學生自己做得到的提醒",
                 "kind": "defer",
                 "emotional": false,
                 "outcome": {
-                  "fact": "教師示範在書包放繳交檢核卡，學生尚未形成固定習慣。",
+                  "fact": "學生選擇一種繳交前的自我檢查方式，但不能用它抵銷昨天的缺交紀錄。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -217,11 +225,185 @@
               },
               {
                 "id": "empathy",
-                "text": "寫好了忘記交，真的會很懊惱",
+                "text": "寫了卻留在書包裡，換我也會很嘔",
                 "kind": "action",
                 "emotional": true,
                 "outcome": {
-                  "fact": "教師承接白寫般的懊惱，沒有保證不扣分或代交成功。",
+                  "fact": "教師理解學生的懊惱，也告知導師不能保證科任會補登成績。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": []
+                  }
+                }
+              }
+            ],
+            "next": null
+          },
+          {
+            "id": "next-contact",
+            "pages": [
+              {
+                "order": 1,
+                "text": "隔天早自習，學生又帶著作業和先前整理的說明來找導師。你目前還看不到科任的正式處理結果。",
+                "speaker": null,
+                "scene": "school:classroom",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我想問清楚，可是還沒看到老師的回覆。",
+                "speaker": "participant",
+                "scene": "school:classroom",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "follow-1",
+                "text": "核對他是否真的送出了說明",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師只核對學生能提出的實際送件證據，不將未送出的草稿當成已收件。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": []
+                  }
+                }
+              },
+              {
+                "id": "follow-2",
+                "text": "整理能向科任確認的補交規則",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生列出期限、收件與採計疑問，最終決定仍由科任依校規處理。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": []
+                  }
+                }
+              },
+              {
+                "id": "follow-3",
+                "text": "先保留未確認事項，暫不推論結果",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師記得仍待確認的部分，沒有因過了一晚就假定成功或失敗。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": []
+                  }
+                }
+              },
+              {
+                "id": "follow-4",
+                "text": "至少你沒有把這件事一路藏到學期末",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師肯定學生願意面對問題，不把勇氣直接換算成正式分數。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -327,7 +509,7 @@
           "cooldownDays": 30,
           "exclusionGroups": [],
           "sameFact": true,
-          "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+          "reason": "在籍學生於指定合法非保護時段提出本件情境；後續須保留原事件因果，不以相同分類碼推定為同件。"
         }
       }
     },

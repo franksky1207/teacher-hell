@@ -438,7 +438,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生重新口述替代解法，自己找到先前忽略的必要條件，決定如實標示疑點交科任判斷。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生重新逐步說明，能提出完整不同推理，仍須由科任依評分規準查核，導師不能自行補分。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -705,7 +805,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生翻出考卷附註，發現複選題扣分方式原來就有逐項列明，這次是自己誤讀。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生查看卷面與考前公告後仍找不到明確的部分給分公式，將缺漏列為待科任說明的疑問。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -963,7 +1163,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生提出原始公告和補充通知的時間戳，顯示補充規格只適用下一份作業，暫不應推定本次遭扣分。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生對照時間戳後發現補充說明確實在本次交件後發出，但是否回溯適用仍未取得科任答覆。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -1228,7 +1528,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "取得必要授權後，學生指出兩份作答其實相差一項關鍵假設，兩張看似一樣的答法不完全相同。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生尚未取得另一份卷面的合法使用同意，導師只記錄自己可查的部分，拒絕在班群攤開別人的成績。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -1486,7 +1886,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生找出開學時發下的評量說明，遲交扣分幅度已寫明，他承認先前沒有注意到那一列。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生比對公告後只找到『遲交酌扣』，沒有幅度或適用範圍，需待科任正式澄清。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -1753,7 +2253,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生把原始批註讀出來，才發現科任是在提醒計算前提，覺得自己可能把語氣想得太針對。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生重讀批註仍覺得用詞讓人受傷，但沒有證據能確認教師有嘲笑的動機，選擇保留原文詢問。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -2020,7 +2620,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生核對本人紙本卷與系統，明確找到同一項的兩組不同數字，能提出具體查核欄位，不涉及別人的個資。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生翻看系統才發現一欄是原始分、一欄是加權分，兩欄不同並不能證明分數登錯人。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -2285,7 +2985,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生找到課堂公告寫『參與計入平時表現』，發現不等於每次舉手都固定加兩分。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生只記得科任曾口頭說會加分，目前找不到可確認的項目或標準，不能拿記憶直接補分。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -2559,7 +3359,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生拿出核准公假與當次活動資料，能具體指出缺席的實作評量，值得依法規與校規詢問替代方式。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生核對發現那天雖為公假，缺的是形成性練習而非正式計分活動，不能只憑缺課推定少分。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -2839,7 +3739,119 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "在保密範圍內核對正式核定內容後，發現原安排有指定執行方式，本次實際座位與設備不同，需依既定程序查證。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "teacher",
+                        "holder": "work",
+                        "code": "11-2",
+                        "delta": -1
+                      },
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生手邊只有早期討論稿，未找到正式核定的最新版本，教師依最小必要資訊協助向權責單位確認，不能自行否認其支持需求。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "teacher",
+                        "holder": "work",
+                        "code": "11-2",
+                        "delta": -1
+                      },
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -3111,7 +4123,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生看清原卷後發現關鍵字本來就少了一筆，自己也不確定是否達到閱卷可辨識標準。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生保留原卷可辨識筆畫，指出不同讀法的爭議；兩種可能均待科任依規複核，不能由導師補字。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -3378,7 +4490,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生找到開學公布的報告時段安排，確認先後順序早有公告，不能把後報告直接視為違規受惠。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生對照排程才發現不同組實際準備時間因調整而有所變化，值得向科任詢問是否共用評分規準。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -3644,7 +4856,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生說對方只猜中大約的分數區間，沒有確切提及他給的個別分數；教師保護匿名資料，不據此認定外洩。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生能具體引述同儕逼問的話，已構成需要保護與進一步處理的壓力情境，但尚無證據能認定互評名單外洩。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -3918,7 +5230,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生查到原規準的確以完成作品為主，過程投入另有非計分回饋，理解不能事後直接追加努力分數。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生找到公告裡有歷程紀錄欄，但目前不知道是否漏看他的練習紀錄，需保留本人資料向科任詢問。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -4183,7 +5595,119 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生核對本人原卡，發現有數題塗記明顯偏淺，留下具體欄位供正式查核，不由導師重讀計分。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "teacher",
+                        "holder": "work",
+                        "code": "11-2",
+                        "delta": -1
+                      },
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生核對原卡後發現某幾題似有兩格痕跡，是否造成機器誤判仍須教務依程序處理。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "teacher",
+                        "holder": "work",
+                        "code": "11-2",
+                        "delta": -1
+                      },
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -4512,7 +6036,119 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生與教師確認張貼表格可對應姓名與成績，將隱私疑慮交權責者處理；是否撤除仍待查核。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "teacher",
+                        "holder": "work",
+                        "code": "11-2",
+                        "delta": -1
+                      },
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生原以為整班分數都被張貼，核對後發現公開的是未具名分布表，但仍有人以座號推測身分，須查明可識別風險。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "teacher",
+                        "holder": "work",
+                        "code": "11-2",
+                        "delta": -1
+                      },
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "preserve",
@@ -4741,7 +6377,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生找到正式規範的更新版日期，發現自己參照的是舊學年範例，這次規範應依正式新版為準。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生將範例與正式公告比對後發現同日版本標示相互矛盾，不能直接說哪份優先，需由科任澄清。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -5008,7 +6744,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生核對抽題與公布的評分規準，發現不同題目已事先列出各自達成條件，至少有可比較的依據。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生找不到任何題型難度差異的評分說明，決定只提出自己抽到的具體困難，而非代全班申訴。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -5273,7 +7109,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生核對公告，發現期限指今天下午五點的系統送出紀錄，現在仍有時間留下正式可追溯的申請。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生核對所有可取得公告，始終只有『今日截止』四字，未明確寫時間，必須保留時間戳向承辦確認。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -5552,7 +7488,119 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生確認兩班其實做不同類型的表現任務，不能直接拿同題配分相互推斷評分偏差。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "teacher",
+                        "holder": "work",
+                        "code": "11-2",
+                        "delta": -1
+                      },
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生核對後發現兩班確實使用共同卷面，卻沒有取得兩班詳細批改資訊，需由權責單位核對規準。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "teacher",
+                        "holder": "work",
+                        "code": "11-2",
+                        "delta": -1
+                      },
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -5810,7 +7858,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生找到期末加分傳言最早來自學長的上一年度消息，不能自動套用本學期規則。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生查到班群轉貼的片段提到本學期，但找不到原始公告與適用資格，決定先向正式承辦確認。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -6075,7 +8223,119 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生找到正式考場違規紀錄，發現監考只記錄攜入物品尚未作成成績裁定，知道仍有正式陳述程序。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "teacher",
+                        "holder": "work",
+                        "code": "11-2",
+                        "delta": -1
+                      },
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生手邊只有監考當下的口頭警告，是否送交試務單位仍不明，教師不直接判定零分或免責。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "teacher",
+                        "holder": "work",
+                        "code": "11-2",
+                        "delta": -1
+                      },
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -6333,7 +8593,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生保存現場器材顯示器失去連線的照片，但無法由照片判定故障原因，需由設備人員正式核查。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生回顧操作紀錄，發現當時也可能未完成設定步驟；教師不把自我懷疑直接判成器材沒壞。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -6600,7 +8960,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生找回課前公告，發現作答語言要求確實寫在題目附註，準備依該規準向科任詢問扣分幅度。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生核對後只有評分大綱未見作答語言比例，值得請科任具體說明，而非導師自行補回分數。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "refer",
@@ -6906,7 +9366,127 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "documented-lead",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生將同一份作業的收件疑問寫成清楚可送出的正式請求，決定先保留草稿與附件，尚未送出。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    },
+                    "issueOperations": [
+                      {
+                        "type": "progress",
+                        "source": {
+                          "binding": "receipt"
+                        },
+                        "assessment": "uncertain",
+                        "details": "學生已整理可送出之正式查核草稿，原收件仍待確認。"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "unsettled-fact",
+                  "weight": 2.3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生擬好請求後又擔心被當成質疑老師，把文字收回，只保留未確認收件的問題根，尚未提出申請。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    },
+                    "issueOperations": [
+                      {
+                        "type": "progress",
+                        "source": {
+                          "binding": "receipt"
+                        },
+                        "assessment": "uncertain",
+                        "details": "學生暫未提出正式請求，收件問題根持續待確認。"
+                      }
+                    ]
+                  }
+                }
+              ]
             },
             {
               "id": "future-check",

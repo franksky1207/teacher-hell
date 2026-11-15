@@ -178,13 +178,21 @@ test('18-B pilot: 20 isolated T10-03 event definitions satisfy formal contracts 
  for(const [index,prohibited] of [[6,'昨天排的順序'],[10,'昨天有試拉一半'],[12,'先問過本人'],[19,'我把名字拿掉了']]){
   assert.ok(records[index].story.stages[1].pages.every(p=>!p.text.includes(prohibited)),'followup cannot presume a prior option happened');
  }
- assert.equal(records.filter(x=>x.story.stages.length===2).length,5,'meaningful subset has next-day consequences');
+ assert.equal(records.filter(x=>x.story.stages.length>1).length,5,'meaningful subset has next-day consequences');
+ assert.equal(records[2].story.stages.length,3,'T10-03-03 has one conditional and one neutral next-day stage');
+ const canteen=records[2].story.stages[0].choices;
+ assert.equal(canteen.filter(c=>c.outcome.next.stage==='followup-canteen').length,1);
+ assert.ok(canteen.some(c=>c.outcome.next.stage==='followup-canteen'&&c.text.includes('補餐方案')));
+ assert.ok(canteen.filter(c=>c.outcome.next.stage==='followup').length===3);
+ assert.match(records[2].story.stages.find(s=>s.id==='followup-canteen').pages[0].text,/昨天已請供餐窗口/);
+ assert.ok(records[12].story.stages[0].choices.some(c=>c.replacement?.requires?.some(x=>x.role==='participant'&&x.code==='1-3')));
+
  assert.equal(records.filter(x=>x.story.stages[0].choices.length===4 && x.story.stages[0].choices.some(c=>c.replacement)).length,5,'qualified replacements exist');
  assert.ok(new Set(records.map(x=>x.story.stages[0].pages[0].scene)).size>=3,'not every situation occurs in one location');
  assert.ok(records.some(x=>x.story.stages[0].choices.some(c=>c.outcome.changes.length)),'not all choices are text-only');
  assert.ok(records.every(x=>x.story.stages.every(s=>s.choices.length===4)));
- assert.ok(records.filter(x=>x.story.stages.length===2).every(x=>x.story.stages[0].choices.every(c=>[c,...(c.replacement?[c.replacement]:[])].every(o=>
-   [o.outcome,...(o.variants??[]).map(v=>v.outcome)].every(r=>r.next.stage==='followup'&&r.next.afterDays===1)))));
+ assert.ok(records.filter(x=>x.story.stages.length>1).every(x=>x.story.stages[0].choices.every(c=>[c,...(c.replacement?[c.replacement]:[])].every(o=>
+   [o.outcome,...(o.variants??[]).map(v=>v.outcome)].every(r=>x.story.stages.some(stage=>stage.id===r.next.stage)&&r.next.afterDays===1)))));
  assert.ok(records.filter(x=>x.story.stages[0].choices.some(c=>c.variants)).every(x=>x.story.stages[0].choices.find(c=>c.variants).variants[0].modifiers?.length===1));
  const report=auditContent(records);
  assert.equal(report.structurallyValid,20,JSON.stringify(report.items.filter(x=>x.errors.length)));

@@ -710,8 +710,8 @@
                   "changes": [],
                   "historyCodes": [],
                   "next": {
-                    "stage": null,
-                    "afterDays": 0
+                    "stage": "followup",
+                    "afterDays": 1
                   }
                 }
               },
@@ -726,8 +726,8 @@
                   "changes": [],
                   "historyCodes": [],
                   "next": {
-                    "stage": null,
-                    "afterDays": 0
+                    "stage": "followup",
+                    "afterDays": 1
                   }
                 },
                 "variants": [
@@ -748,8 +748,8 @@
                       "changes": [],
                       "historyCodes": [],
                       "next": {
-                        "stage": null,
-                        "afterDays": 0
+                        "stage": "followup",
+                        "afterDays": 1
                       }
                     }
                   },
@@ -770,8 +770,8 @@
                       "changes": [],
                       "historyCodes": [],
                       "next": {
-                        "stage": null,
-                        "afterDays": 0
+                        "stage": "followup",
+                        "afterDays": 1
                       }
                     }
                   }
@@ -788,8 +788,8 @@
                   "changes": [],
                   "historyCodes": [],
                   "next": {
-                    "stage": null,
-                    "afterDays": 0
+                    "stage": "followup",
+                    "afterDays": 1
                   }
                 }
               },
@@ -800,6 +800,100 @@
                 "emotional": true,
                 "outcome": {
                   "fact": "針對「小考漏考補測安排」，教師對學生說出自己的感受並回應：「有正常請假，先別自己判死刑」；沒有擅自核准補交、補考或成績更改。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": "followup",
+                    "afterDays": 1
+                  }
+                }
+              }
+            ],
+            "next": null
+          },
+          {
+            "id": "followup",
+            "pages": [
+              {
+                "order": 1,
+                "text": "隔天，因合法請假漏考的學生再次到導師面前詢問補測安排，正式補測時間仍待權責科任確認。",
+                "speaker": null,
+                "scene": "school:classroom",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我已經準備好問老師了，但不知道有沒有通知。",
+                "speaker": "participant",
+                "scene": "school:classroom",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify-next",
+                "text": "一起核對是否已有正式補測通知",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生在追蹤時核對「小考漏考補測安排」已取得的資訊，仍不預判尚未發生的結果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "coordinate-next",
+                "text": "協助學生確認可以聯繫科任的管道",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出下一步可行的正式詢問方式，未冒稱科任已答覆或學生已改善。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document-next",
+                "text": "保留請假紀錄並等待權責人員答覆",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師保存本次追蹤情況，未把未完成事項當成已處理完畢。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care-next",
+                "text": "你願意主動確認，這比一直猜零分有幫助",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師表達對學生持續溝通的支持，沒有做出成績或權責保證。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -821,7 +915,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "核對請假紀錄與科任補測規定／協助聯絡科任確認可用補測時間／提醒學生保留相關公告避免誤會／有正常請假，先別自己判死刑",
         "editorialStatus": "author-self-check-only",
-        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。 此則補充學生願意／暫不接受建議的加權分歧，兩者都不預寫未來成果。"
+        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。 此則補充學生願意／暫不接受建議的加權分歧，兩者都不預寫未來成果。 第三輪補一日後續：後續頁只引用共同的前日資訊，不預設前日選項或科任已行動。"
       }
     },
     {

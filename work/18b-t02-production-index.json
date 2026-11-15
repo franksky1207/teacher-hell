@@ -19,7 +19,10 @@
     "published": 0,
     "optionsWithActualNumericChanges": 14,
     "admissionsGradeEligibilityBlockers": 78,
-    "targetedCausalRevisionsThisPass": 8
+    "targetedCausalRevisionsThisPass": 8,
+    "grade3Gated": 78,
+    "grade3EligibilityPending": 0,
+    "admissionsPhaseEligibilityPendingReview": 78
   },
   "subtopics": [
     {
@@ -356,7 +359,8 @@
     "品質阻斷：832個選項中824個無數值changes；是否需要改變數值須依實際發生因果及正式數值語義判定，不能為消除空值而灌數。尚須檢查升學年級資格、校曆/校外時段和故事到正式候選的接線，未完成前不可發布。",
     "實際修正包括 12 則人物範圍／角色定位及晚間、假日、放學候選時段；5+1件特殊長假／畢業接觸事件標阻斷，另有8則有證據的即時微幅數值變動；不為湊數替全部故事硬加效果。",
     "後續T02品質處理：完成八則定向故事因果／參與者身分修正；T02-05～07共78則尚無高三學年度／升學階段eligibility，逐件標記放行阻斷，不假裝已接線。未修改原數值公式，不為減少空白changes填數。",
-    "2026-11-16輕量契約欄位檢查：208事件／832四選項／818空數值選項／78件高三放行阻斷，欄位形狀問題0。此檢查不代表Node已執行或獨立語意審稿已通過。"
+    "2026-11-16輕量契約欄位檢查：208事件／832四選項／818空數值選項／78件高三放行阻斷，欄位形狀問題0。此檢查不代表Node已執行或獨立語意審稿已通過。",
+    "2026-11-16：新增現行引擎可驗證的grades可選資格，T02-03/05/06/07共78則已綁高三；2則用既有entrance狀態限縮；4則校曆slot精準修正。仍欠升學階段/畢業後合法抽選條件，不將年級門檻當全部放行。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -425,13 +429,14 @@
       "choices": 832,
       "nonemptyEffectStories": 14,
       "remoteWithoutPhysicalContact": 29,
-      "gradeGateMissing": 78,
+      "gradeGateMissing": 0,
       "lateContactMistakes": 0,
-      "caseErrors": []
+      "caseErrors": [],
+      "gradeGated": 78
     },
     "decision": "已把明確的日型／時段矛盾和遠距假見面接觸資料修到原作者檔；可觀察的少量情緒變化有因果才記錄，不對其餘事件灌數。高三78則缺少可合法保證年級／升學階段的引擎接線，繼續保持工程隔離；尚未進行Node編譯或獨立語意審查，不能發布。",
     "openBlockers": [
-      "高三年級與招生管道時間條件的正式資料／引擎資格接線缺口；T02-05～07不得正式入池",
+      "高三年級限制已接線78則；細分繁星、申請、分科、公告與畢業階段仍需依實際招生狀態核對，不可當成已全部放行",
       "校外與長假事件的接觸方式、節點時段與生活情境需精準對映",
       "候選六碼權重仍有批次預設，不可宣稱個別數值公式已完成校準",
       "仍有偏模板化的結尾敘述，需依四項核心集中語意審稿"
@@ -491,5 +496,34 @@
       }
     ],
     "release": "0件放行；PR維持Draft，未合併、未部署"
+  },
+  "engineEligibilityContinuation": {
+    "date": "2026-11-16",
+    "engine": "src/runtime/event-candidates.js",
+    "mechanism": "僅在eligibility明確提供grades時以既有gradeAt(date,registry.cohortStart)判斷；不更動無grades的既有事件",
+    "grade3Count": 78,
+    "byTopic": {
+      "T02-03": 1,
+      "T02-05": 26,
+      "T02-06": 26,
+      "T02-07": 25
+    },
+    "exceptions": [
+      "T02-07-28校友重逢不綁高三；仍需符合既有reunion當天contact事實與合法時段",
+      "T02-06-20面試日真實時間/學生狀態仍無合格門檻",
+      "T02-07-22/27分發結果及畢業後接觸仍有時段/學籍阻斷"
+    ],
+    "entranceGates": [
+      "T02-05-01: gsat-published",
+      "T02-07-01: subject-preparing"
+    ],
+    "slotRepairs": [
+      "T02-05-08:午餐→lunch",
+      "T02-05-13:晚自習第一節→study1",
+      "T02-07-08:晚自習→study1/2/3",
+      "T02-07-25:晚自習最後一節→study3"
+    ],
+    "status": "完成8份作者稿讀回靜態核對；78個grade3標記、0個ID/四選項形狀問題；尚未執行Node/CI、完整升學階段語意審稿，保持engineering-test、Draft、不上架",
+    "release": "正式上架0、不合併、不部署"
   }
 }

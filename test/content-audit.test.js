@@ -5,7 +5,8 @@ import {PHASE17D_READY_STORIES,phase17dSampleCatalogue,DEMO_STORY} from '../src/
 import {buildEventCandidates,validateEventDefinitions,eventIndex,numericSources} from '../src/runtime/event-candidates.js';
 import {eventWorld} from './support/event-fixtures.js';
 import {beginDemo,apply,storyAction,advanceDemo} from './support/story-scenario.js';
-import {readStory,storyState} from '../src/runtime/story.js';
+import {readStory,storyState,availableStoryChoices} from '../src/runtime/story.js';
+import {targetRecord} from '../src/changes/targets.js';
 import {runtimeOf,restoreWorldState} from '../src/runtime/model.js';
 
 const catalogue=phase17dSampleCatalogue();
@@ -281,4 +282,30 @@ test('18-B causal witness C: different actual first-day choices produce differen
  }
  assert.notEqual(outcomes[0].stage,outcomes[1].stage,'first-day options cause different resumed narrative stages');
  assert.notEqual(outcomes[0].page,outcomes[1].page,'resumed dialogue is genuinely different');
+});
+
+
+test('18-B actual T10-03-13 participant numeric state changes an authored birthday-card option',()=>{
+ const story=PILOT_18B_T10_03_RECORDS[12].story;
+ const stage=story.stages[0];
+ const replacement=stage.choices.find(c=>c.replacement);
+ assert.ok(replacement,'birthday card option must have a conditional alternative');
+ assert.equal(replacement.replacement.requires[0].role,'participant');
+ const source=eventWorld(74);
+ const candidates=buildEventCandidates(source,[phase17dSampleCatalogue().definitions[0]]).candidates;
+ assert.ok(candidates.length>0);
+ const participantId=candidates[0].participantIds[0];
+ const event={participantIds:[participantId]};
+ const low=structuredClone(source),high=structuredClone(source);
+ targetRecord(low.numeric.evolution.world,{kind:'person',id:participantId})['1-3']=40;
+ targetRecord(high.numeric.evolution.world,{kind:'person',id:participantId})['1-3']=80;
+ const before=availableStoryChoices(low,event,stage);
+ const after=availableStoryChoices(high,event,stage);
+ assert.equal(before.length,4);assert.equal(after.length,4);
+ assert.ok(before.some(c=>c.id===replacement.id),'low state preserves the baseline teacher response');
+ assert.ok(!before.some(c=>c.id===replacement.replacement.id));
+ assert.ok(after.some(c=>c.id===replacement.replacement.id),'high state unlocks a distinct teacher response');
+ assert.ok(!after.some(c=>c.id===replacement.id));
+ assert.notEqual(replacement.text,replacement.replacement.text);
+ assert.notEqual(replacement.outcome.fact,replacement.replacement.outcome.fact);
 });

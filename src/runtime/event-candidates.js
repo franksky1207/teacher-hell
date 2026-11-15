@@ -150,7 +150,8 @@ export function buildEventCandidates(world,definitions,{engineering=false,ignore
     if(e.grades&&!e.grades.includes(gradeAt(day.date,world.numeric.evolution.world.registry.cohortStart)))reason='grade-condition';
    if(facts.some((f,i)=>!f||e.facts[i].participant&&!f.subjectIds.includes(person)))reason='objective-condition';
    if((e.companions??[]).some(c=>{const f=index.facts.get(c.contactFactId);return !f||f.data?.type!=='contact'||f.occurredAt.date!==day.date||!f.subjectIds.includes(person)||!f.subjectIds.includes(c.personId)||!world.numeric.evolution.world.people[c.personId]&&c.personId!==world.identity.playerId;}))reason='companion-contact-required';
-   if(!e.issue&&e.people.includes('reunion')&&index.school.reunionIds.includes(person)&&!facts.some(f=>f?.data?.type==='contact'&&f.subjectIds.includes(person)&&f.subjectIds.includes(world.identity.playerId)&&f.occurredAt.date===day.date))reason='reunion-contact-required';
+   const reunionContact=!e.issue&&e.people.includes('reunion')?([...index.facts.values()].find(f=>f.data?.type==='contact'&&f.subjectIds.includes(person)&&f.subjectIds.includes(world.identity.playerId)&&f.occurredAt.date===day.date)??null):null;
+    if(!e.issue&&e.people.includes('reunion')&&!reunionContact)reason='reunion-contact-required';
    if(e.roleIds&&!e.roleIds.every(id=>(world.numeric.evolution.world.people[person]?.roleIds??[8,9]).includes(id)))reason='role-condition';
    if(e.affiliation&&!world.numeric.evolution.world.registry.enrollments.some(a=>a.personId===person&&a.classId===e.affiliation.classId&&(e.affiliation.status==='active'?a.until===null:a.until!==null)))reason='affiliation-condition';
    if(e.knowledge&&!e.knowledge.every(k=>r.knowledge.some(x=>x.actorId===(k.actorId==='participant'?person:k.actorId)&&x.claimId===k.claimId&&x.versionId===k.versionId&&(k.belief==='any'||x.belief===k.belief))))reason='knowledge-condition';
@@ -164,7 +165,7 @@ export function buildEventCandidates(world,definitions,{engineering=false,ignore
    try{if(e.numeric.some(n=>{const [v]=numericSources(world,person,[n.source],[n.code]);return v<n.min||v>n.max;}))reason='numeric-condition';}catch{reason='numeric-source-missing';}
    if(day.kind==='aftercare'&&!aftercareDefinition(d))reason='students-left-school';
    if(!slots.length||day.quota?.kind==='protected-day')reason='no-legal-time';
-   const participantIds=[person,...new Set((e.companions??[]).map(c=>c.personId).filter(id=>id!==person))],factIds=[...new Set([...e.facts.map(f=>f.id),...(e.companions??[]).map(c=>c.contactFactId)])].sort();
+   const participantIds=[person,...new Set((e.companions??[]).map(c=>c.personId).filter(id=>id!==person))],factIds=[...new Set([...e.facts.map(f=>f.id),...(e.companions??[]).map(c=>c.contactFactId),...(reunionContact?[reunionContact.id]:[])])].sort();
    const c={key:tuple(d.id,participantIds,factIds),definitionId:d.id,topicId:d.topicId,type:d.type,participantIds,factIds,date:day.date,slotIds:slots,content,cooldownDays:p.cooldownDays,exclusionGroups:groups,sameFact:p.sameFact,reason:p.reason};
    if(e.issue){
     c.bindingContract=1;c.issueScope=structuredClone(p.issueScope);

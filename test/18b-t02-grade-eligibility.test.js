@@ -102,3 +102,20 @@ test('18-B T02: post-ceremony subject registration retains graduated students, n
  assert.deepEqual(graduatedEntrantsForSubjectRegister(registry,entrance),['grad']);
  assert.deepEqual(graduatedEntrantsForSubjectRegister(registry,null),[]);
 });
+
+
+test('18-B T02: five targeted revised story/definition pairs compile under official validators',()=>{
+ const selected={"05":['28'],"06":['20'],"07":['01','07'],"08":['28']};
+ for(const [topic,ids] of Object.entries(selected)){
+  const file=JSON.parse(readFileSync(new URL('../work/18b-t02-'+topic+'-authoring.json',import.meta.url),'utf8'));
+  for(const id of ids){
+   const expectedId='content:18b-t02-'+topic+'-'+id;
+   const pair=file.records.find(x=>x.definition.id===expectedId);
+   assert.ok(pair,expectedId+' must exist');
+   assert.doesNotThrow(()=>validateStory(pair.story),expectedId+' story');
+   assert.doesNotThrow(()=>validateEventDefinitions([pair.definition]),expectedId+' definition');
+   assert.equal(pair.story.definitionId,pair.definition.id);
+   assert.equal(pair.story.status,'engineering-test');
+  }
+ }
+});

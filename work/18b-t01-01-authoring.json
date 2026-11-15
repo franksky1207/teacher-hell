@@ -54,8 +54,8 @@
                   "changes": [],
                   "historyCodes": [],
                   "next": {
-                    "stage": null,
-                    "afterDays": 0
+                    "stage": "followup",
+                    "afterDays": 1
                   }
                 }
               },
@@ -70,8 +70,8 @@
                   "changes": [],
                   "historyCodes": [],
                   "next": {
-                    "stage": null,
-                    "afterDays": 0
+                    "stage": "followup",
+                    "afterDays": 1
                   }
                 }
               },
@@ -86,8 +86,8 @@
                   "changes": [],
                   "historyCodes": [],
                   "next": {
-                    "stage": null,
-                    "afterDays": 0
+                    "stage": "followup",
+                    "afterDays": 1
                   }
                 }
               },
@@ -98,6 +98,100 @@
                 "emotional": true,
                 "outcome": {
                   "fact": "針對「晚間讀書表屢次重畫」，教師對學生說出自己的感受並回應：「我看你一直重畫，也有點替你累」；學生後續是否願意實作尚未確認。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": "followup",
+                    "afterDays": 1
+                  }
+                }
+              }
+            ],
+            "next": null
+          },
+          {
+            "id": "followup",
+            "pages": [
+              {
+                "order": 1,
+                "text": "隔天，學生帶著同一份讀書計畫回來，有些格子仍未填上實際完成紀錄。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我昨天有試著做一點，但不確定這樣算不算有開始。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify-next",
+                "text": "先確認他實際試做了哪一個步驟",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生在追蹤時核對「晚間讀書表屢次重畫」已取得的資訊，仍不預判尚未發生的結果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "coordinate-next",
+                "text": "比較原計畫與實際投入時間的差異",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出下一步可行的正式詢問方式，未冒稱科任已答覆或學生已改善。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document-next",
+                "text": "保留執行紀錄，不強迫立刻增加任務",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師保存本次追蹤情況，未把未完成事項當成已處理完畢。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care-next",
+                "text": "你願意再帶來討論，我滿替你高興的",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師表達對學生持續溝通的支持，沒有做出成績或權責保證。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -119,7 +213,7 @@
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "請他挑出今晚真正能完成的一小步／先確認放學後有哪些固定活動／把實際開始時間記一天再一起比較／我看你一直重畫，也有點替你累",
         "editorialStatus": "author-self-check-only",
-        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。"
+        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。 第三輪補一日後續：後續頁只引用共同的前日資訊，不預設前日選項或科任已行動。"
       }
     },
     {

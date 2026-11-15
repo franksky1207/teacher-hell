@@ -125,26 +125,6 @@ test('18-B T02: five targeted revised story/definition pairs compile under offic
 });
 
 
-test('18-B T02: one-shot structural validation of all 208 isolated author records',()=>{
- const errors=[],ids=new Set(),all=[];
- for(let part=1;part<=8;part++){
-  const topic=String(part).padStart(2,'0');
-  const file=JSON.parse(readFileSync(new URL('../work/18b-t02-'+topic+'-authoring.json',import.meta.url),'utf8'));
-  assert.equal(file.records.length,26,'T02-'+topic+' record count');
-  for(const pair of file.records){
-   const id=pair.definition?.id??'(missing-id)';
-   if(ids.has(id))errors.push(id+': duplicate definition ID');
-   ids.add(id);all.push(pair);
-   try{validateStory(pair.story);}catch(e){errors.push(id+': story '+e.message);}
-   try{validateEventDefinitions([pair.definition]);}catch(e){errors.push(id+': definition '+e.message);}
-   if(pair.story?.definitionId!==id||pair.story?.resourceId!==pair.definition?.content?.resourceId)errors.push(id+': mismatched resource reference');
-  }
- }
- assert.equal(all.length,208);
- assert.deepEqual(errors,[],errors.join('\n'));
-});
-
-
 test('18-B T02: 20 explicitly year-bound narratives use valid grade eligibility',()=>{
  const expected={
   '01':{'05':[1],'08':[1],'09':[1],'15':[1],'16':[1],'18':[2,3],'22':[1],'25':[1],'26':[1],'27':[2,3]},

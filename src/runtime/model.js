@@ -1,3 +1,4 @@
+import { projectIssues } from './issues.js';
 import { validateAftercareHistory } from './aftercare.js';
 import { validateCohortCompletions } from './cohort.js';
 import { validatePrehistoryOpening } from '../world/prehistory.js';
@@ -213,6 +214,7 @@ export function validateWorldState(world) {
     for(const id of f.causeIds)ensure(findFact(world,id).order<f.order,'CAUSALITY','Cause must predate consequence');
     ensure(event.facts.some(ref=>same(ref,{id:f.id,subjectIds:f.subjectIds,occurredAt:f.occurredAt})),'REFERENCE','Fact reference differs from authority');
   }
+  projectIssues(world);
   for(const c of r.claims){
     assertShape(c,['id','versionId','factId','statement','sourceId','at','cursor','order']);validateId(c.id,'claim');identifier(c.versionId);identifier(c.statement);knownActor(world,c.sourceId);stamp(world,c.at,c.cursor);
     ensure(findFact(world,c.factId).order<c.order,'CAUSALITY','Claim precedes fact');

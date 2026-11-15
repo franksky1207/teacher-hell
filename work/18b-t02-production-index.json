@@ -3,13 +3,17 @@
   "title": "課程選擇、學籍與升學",
   "branch": "feat/18b-t02-authoring",
   "authoritativeSOP": "docs/18B-正式事件量產與品質驗收SOP.md",
-  "status": "in-progress-not-reviewed",
+  "status": "author-drafted-all-retained-scenarios; numeric-causality-and-technical-review-pending",
   "counts": {
     "explored": 224,
     "retained": 208,
     "held": 16,
     "draftAuthoring": 208,
     "retainedNotYetAuthored": 0,
+    "authorRewrittenDistinctOutcomes": 150,
+    "individuallyAuthoredOriginal": 58,
+    "optionCount": 832,
+    "optionsWithEmptyNumericChanges": 824,
     "structurallyValidatedWithNode": 0,
     "independentlyReviewed": 0,
     "published": 0
@@ -344,7 +348,9 @@
     "2026-11-16續作：每小主題新增兩則、共16則，全部8小主題各7則。已做資料形狀、四選項、六碼、權重、原候選引用的即時靜態檢查；非Node編譯/語意核准。",
     "2026-11-16全8小主題各26初稿，208條候選皆對應一個故事ID，初稿的四選項對白與初始結果已建立。未按每篇反應、影響、數值、時間與真實程序完成逐篇語意精修，不可計正式出版。",
     "重要風險：後續76+篇採集中產出，部分結果描述仍呈現相似的結尾句型，且候選六碼方向／權重沿用預設，不得當作通過『文字有生命』或『數值有據』的獨立審查；先保留為工程隔離，不開啟全面重審循環。",
-    "品質修正：依校曆修正40篇dayKinds與slotIds；24篇96個選項結果重寫；七篇特殊時點尚未解決。靜態欄位檢查不等於正式審稿。"
+    "品質修正：依校曆修正40篇dayKinds與slotIds；24篇96個選項結果重寫；七篇特殊時點尚未解決。靜態欄位檢查不等於正式審稿。",
+    "2026-11-16：已全部撰寫208個保留情境並清除152個候選中原有的機械化結果套句；依最後逐稿標籤統計150則改寫、58則原撰。靜態檢查208 ID、832選項、六碼/權重、角色、資訊傳遞、候選來源0錯誤；未執行Node驗證或獨立語意簽核。",
+    "品質阻斷：832個選項中824個無數值changes；是否需要改變數值須依實際發生因果及正式數值語義判定，不能為消除空值而灌數。尚須檢查升學年級資格、校曆/校外時段和故事到正式候選的接線，未完成前不可發布。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,

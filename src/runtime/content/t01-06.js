@@ -541,7 +541,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "早自習時，在導師班教室裡，學生展示複習卡程式，今天排出六百張到期卡片。",
+              "text": "早自習時，學生把手機複習卡畫面遞給導師：今天到期的卡片六百張，還有一疊今天必須交的作業。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -549,27 +549,35 @@ export default [
             },
             {
               "order": 2,
-              "text": "全部點完就沒時間做新作業。",
+              "text": "我如果先清完卡片，就沒有時間寫作業；可是那個六百一直提醒我沒做完。",
               "speaker": "participant",
               "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "surprised"
+                  "expression": "calm"
                 }
               ],
               "presentation": "dialogue"
+            },
+            {
+              "order": 3,
+              "text": "這是軟體的到期筆數，不等於學生今天必須背完的數量，也不能據此判斷已學會幾張。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
             }
           ],
           "choices": [
             {
               "id": "strategy-1",
-              "text": "先分當週與遠期內容",
+              "text": "先區分本週必須用到的卡與較遠期內容",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生在清單標出近期課程相關卡片，沒有把未讀卡一律判成已會。",
+                "fact": "學生把與近期課程直接相關的卡片標出，其他未讀卡仍維持未讀，不假裝清空進度。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -601,11 +609,11 @@ export default [
             },
             {
               "id": "strategy-2",
-              "text": "下調每天新增卡上限",
+              "text": "讓學生自行選擇是否降低每天新增卡片量",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "教師說明減少新卡的影響，由學生自行設定，不保證積欠立刻消失。",
+                "fact": "教師解釋新卡與舊卡的不同，是否更動個人設定由學生決定，不保證積欠立即消失。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -639,7 +647,7 @@ export default [
                   "id": "engages",
                   "weight": 3,
                   "outcome": {
-                    "fact": "學生在自己裝置的設定頁把每日新增卡片上限調低，舊卡仍留待分次處理。",
+                    "fact": "學生自行把每天新增卡的上限降低，六百張舊卡仍保留在清單中。",
                     "claims": [],
                     "changes": [],
                     "historyCodes": [],
@@ -673,7 +681,7 @@ export default [
                   "id": "hesitates",
                   "weight": 2,
                   "outcome": {
-                    "fact": "學生聽完設定方式後表示想先比較兩天的負擔，未更動目前卡片上限。",
+                    "fact": "學生決定先觀察兩天，暫時沒有更動設定；教師未替他改動手機內容。",
                     "claims": [],
                     "changes": [],
                     "historyCodes": [],
@@ -707,11 +715,11 @@ export default [
             },
             {
               "id": "strategy-3",
-              "text": "用紙本抽測一小組",
+              "text": "只抽五張實際回想，停止用總數猜程度",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生抽取五張檢查是否能回想，結果只代表本次抽樣。",
+                "fact": "學生進行五張短抽測，結果只能代表這次抽樣，不能推算其餘五百多張都會或都不會。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -743,11 +751,11 @@ export default [
             },
             {
               "id": "strategy-4",
-              "text": "卡片不是來催債的，今天不用清空世界",
+              "text": "六百張像催債單，但我們不拿睡眠抵債",
               "kind": "action",
               "emotional": true,
               "outcome": {
-                "fact": "教師以幽默減輕壓力並允許保留未完成項，未宣稱可以忽略課程。",
+                "fact": "教師以幽默承認壓力，提醒學生照顧作息及原有課業，未自行刪除學生的複習資料。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -838,7 +846,7 @@ export default [
         "cooldownDays": 30,
         "exclusionGroups": [],
         "sameFact": true,
-        "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
+        "reason": "在籍學生於指定合法非保護時段接觸導師；僅記錄已確認事實，不以同主題或日期推定相同問題。"
       }
     },
     "editorial": {

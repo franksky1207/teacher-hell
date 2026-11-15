@@ -93,6 +93,7 @@ test('runtime group 3: full isolated catalogue registration/draw/admission/save;
 });
 
 
+// Focused story examples: editorial hashes are not approval evidence.
 test('T01 eight editorial exemplars retain distinct tactics and real follow-up boundaries',()=>{
  const exemplars=['01-22','02-09','03-01','04-01','05-01','06-03','07-02','08-07'];
  for(const id of exemplars){

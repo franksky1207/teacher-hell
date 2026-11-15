@@ -2103,7 +2103,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "早自習時，在導師班教室裡，學生某科從不及格進步到七十分，卻因未達自己設定的八十分而沮喪。",
+                "text": "早自習時，學生帶著考卷走向導師，這次從不及格進步到七十分，卻一直看著自己原本畫圈的八十分目標。",
                 "speaker": null,
                 "scene": "school:classroom",
                 "cast": [],
@@ -2111,27 +2111,35 @@
               },
               {
                 "order": 2,
-                "text": "我還是沒達標，所以根本不算進步。",
+                "text": "我知道有進步。可是還差十分，回家不知道要怎麼講。",
                 "speaker": "participant",
                 "scene": "school:classroom",
                 "cast": [
                   {
                     "role": "participant",
                     "position": "center",
-                    "expression": "calm"
+                    "expression": "sad"
                   }
                 ],
                 "presentation": "dialogue"
+              },
+              {
+                "order": 3,
+                "text": "卷面能證明分數上升，卻不能替學生決定應該開心或失望，更無法預測家人反應。",
+                "speaker": null,
+                "scene": "school:classroom",
+                "cast": [],
+                "presentation": "narration"
               }
             ],
             "choices": [
               {
                 "id": "verify",
-                "text": "分別討論成長與尚未達成的目標",
+                "text": "讓學生說出進步和失望各是什麼",
                 "emotional": false,
                 "kind": "action",
                 "outcome": {
-                  "fact": "雙方把已成長部分與未達目標分開，教師不強迫學生只能高興。",
+                  "fact": "學生承認自己有進步，也仍然不滿意差了十分；教師不要求只保留一種情緒。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -2163,11 +2171,11 @@
               },
               {
                 "id": "coordinate",
-                "text": "協助找出進步最明顯的題型",
+                "text": "對照兩份考卷，找出真正改善的題型",
                 "emotional": false,
                 "kind": "support",
                 "outcome": {
-                  "fact": "學生在本人卷面指出進步較多的題型，未以單次測驗宣告長期能力。",
+                  "fact": "學生指出一種本次較能掌握的題型，並保留仍不懂的部分，沒有宣稱整科能力已穩定。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -2199,11 +2207,11 @@
               },
               {
                 "id": "observe",
-                "text": "保留這次策略，下一次再核對成果",
+                "text": "讓學生自己決定如何向家人談這次分數",
                 "emotional": false,
                 "kind": "defer",
                 "outcome": {
-                  "fact": "學生記下本次可回想的準備方式供後續比較，沒有把相關性當因果。",
+                  "fact": "學生整理本次分數變化與接下來想做的事；要不要向家人說仍由學生決定。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -2235,11 +2243,11 @@
               },
               {
                 "id": "empathy",
-                "text": "這次的改善值得被看到，也可以仍有不滿意",
+                "text": "七十分不是被那句「差十分」吃掉就不算數",
                 "emotional": true,
                 "kind": "action",
                 "outcome": {
-                  "fact": "教師肯定這次有證據的改善，也容許仍有失望，未承諾下次達標。",
+                  "fact": "教師肯定已確定的成長，也允許學生此刻仍然感到不甘心。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -2273,7 +2281,7 @@
                     "id": "engages",
                     "weight": 3,
                     "outcome": {
-                      "fact": "學生聽見肯定後說自己也看到七十分的進步，但仍希望之後繼續練習；教師未保證下次達標。",
+                      "fact": "學生開始接受自己這次有進步，但仍想再找一題練習；教師沒有保證下次會更高。",
                       "claims": [],
                       "changes": [],
                       "historyCodes": [],
@@ -2307,7 +2315,7 @@
                     "id": "hesitates",
                     "weight": 2,
                     "outcome": {
-                      "fact": "學生明確表示此刻仍難以為七十分高興，教師容許失望並保留已確認的進步事實。",
+                      "fact": "學生表示此刻仍很失望；教師尊重他的情緒，已發生的進步並未因此被抹掉。",
                       "claims": [],
                       "changes": [],
                       "historyCodes": [],
@@ -2415,7 +2423,7 @@
           "cooldownDays": 30,
           "exclusionGroups": [],
           "sameFact": true,
-          "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+          "reason": "在籍學生於指定合法非保護時段提出本件情境；後續須保留原事件因果，不以相同分類碼推定為同件。"
         }
       }
     },

@@ -16,9 +16,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生拿出已完成但留在書包裡的作業，表示昨天忘記繳交。",
+              "text": "早自習時，在導師班教室裡，學生拿出已完成但留在書包裡的作業，表示昨天忘記繳交。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -26,7 +26,7 @@ export default [
               "order": 2,
               "text": "我真的寫了，只是下課忘記拿出來。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -108,7 +108,77 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "engages",
+                  "weight": 3,
+                  "outcome": {
+                    "fact": "學生自己擬好向科任說明補交情況的訊息，表示願意詢問；尚未取得收件或採計結果。",
+                    "claims": [],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "hesitates",
+                  "weight": 2,
+                  "outcome": {
+                    "fact": "學生擔心詢問科任會被責備，先和教師寫下要確認的規則，尚未提出補交要求。",
+                    "claims": [],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "document",
@@ -188,6 +258,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "忘記交作業卻已經寫完",
+      "cause": "午餐談話時，學生拿出已完成但留在書包裡的作業，表示昨天忘記繳交。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生出示已完成部分及記得的完成時間，教師未由完成就推定按時送達。／學生擬好依規補交的說明，是否受理由科任決定，未宣告已收件。／教師示範在書包放繳交檢核卡，學生尚未形成固定習慣。／教師承接白寫般的懊惱，沒有保證不扣分或代交成功。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-01",
       "topicId": "T01-03",
@@ -231,7 +315,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -263,9 +347,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生展示昨晚的上傳錯誤畫面，擔心系統故障造成遲交。",
+              "text": "午休時，在教師辦公室，學生展示昨晚的上傳錯誤畫面，擔心系統故障造成遲交。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
@@ -273,7 +357,7 @@ export default [
               "order": 2,
               "text": "我有按送出，可是一直轉圈圈。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -435,6 +519,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "線上作業平台無法上傳",
+      "cause": "午餐談話時，學生展示昨晚的上傳錯誤畫面，擔心系統故障造成遲交。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "教師陪學生查看正式公告入口；目前未見可對應本次上傳時點的異常說明，仍不能判定平台故障或學生已準時送件。／教師協助寫出上傳問題及附檔方式的詢問，未替科任認定平台故障。／學生在本機保留原檔及截圖，不覆蓋檔案時間來製造準時證據。／教師承接上傳卡住的著急，未把學生說法定成平台已當機。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-02",
       "topicId": "T01-03",
@@ -478,7 +576,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "noon"
         ],
         "from": null,
         "until": null,
@@ -510,9 +608,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生拿著複習清單，才發現明天小考範圍與自己準備的不一致。",
+              "text": "早自習時，在導師班教室裡，學生拿著複習清單，才發現明天小考範圍與自己準備的不一致。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -520,7 +618,7 @@ export default [
               "order": 2,
               "text": "我昨天都讀別章了，現在怎麼辦？",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -682,6 +780,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "小考前才發現範圍看錯",
+      "cause": "午餐談話時，學生拿著複習清單，才發現明天小考範圍與自己準備的不一致。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "雙方核對學生可取得的正式公告，未以群組轉述取代範圍依據。／學生按已確認部分排出短期準備順序，未獲延期或被要求犧牲睡眠。／教師協助寫出公告是否更動的詢問，尚未收到科任回覆。／教師回應看錯範圍的懊惱，未指控任何同學誤導。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-03",
       "topicId": "T01-03",
@@ -725,7 +837,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -757,9 +869,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生的數學作業答案幾乎全對，口頭解釋解法時卻卡住，自己表示是照著範例做。",
+              "text": "早自習時，在導師班教室裡，學生的數學作業答案幾乎全對，口頭解釋解法時卻卡住，自己表示是照著範例做。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -767,7 +879,7 @@ export default [
               "order": 2,
               "text": "步驟我會抄，可是換一題就不確定。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -929,6 +1041,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "數學作業全對但說不出算法",
+      "cause": "午餐談話時，學生的數學作業答案幾乎全對，口頭解釋解法時卻卡住，自己表示是照著範例做。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生嘗試說第一步卻停住，教師只確認本次說明不足，不推定作弊。／教師提議用合法教材中的相近題自練，學生尚未完成或證明獨立掌握。／學生將不明步驟標成可詢問的問題，未抄一份新解答冒充理解。／教師肯定能說出照做與理解的落差，沒有把坦白當成已學會。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-04",
       "topicId": "T01-03",
@@ -972,7 +1098,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -1004,9 +1130,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生表示朋友常拜託他幫忙寫完整答案，最近已影響自己的休息時間。",
+              "text": "午餐時，在教學大樓走廊，學生表示朋友常拜託他幫忙寫完整答案，最近已影響自己的休息時間。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:corridor",
               "cast": [],
               "presentation": "narration"
             },
@@ -1014,7 +1140,7 @@ export default [
               "order": 2,
               "text": "我不幫他，他就說我不夠朋友。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:corridor",
               "cast": [
                 {
                   "role": "participant",
@@ -1176,6 +1302,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "代寫作業的界線",
+      "cause": "午餐談話時，學生表示朋友常拜託他幫忙寫完整答案，最近已影響自己的休息時間。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生描述自己曾給的是整頁答案，教師記為本人自述，未替缺席同學判違規。／雙方練習只說明思路不交成品的回覆，尚未得到同學接受。／學生擬好協助界線的訊息，未被要求試探或蒐集同學私人對話。／教師支持拒絕代做，不把幫忙意願轉成必須承擔他人作業的責任。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-05",
       "topicId": "T01-03",
@@ -1251,9 +1391,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生因正式請假錯過小考，返校後不清楚補測時間，害怕直接被記零分。",
+              "text": "午餐時，在教師辦公室，學生因正式請假錯過小考，返校後不清楚補測時間，害怕直接被記零分。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
@@ -1261,7 +1401,7 @@ export default [
               "order": 2,
               "text": "我那天有請假，會不會就沒分數了？",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -1423,6 +1563,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "小考漏考補測安排",
+      "cause": "午餐談話時，學生因正式請假錯過小考，返校後不清楚補測時間，害怕直接被記零分。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "雙方分列請假是否核准與補測規則是否已知，不將合法請假自動等同獲准補測。／教師陪學生整理可聯絡的科任及空檔，尚未排定正式補測。／學生保留自己的公告與請假資料，不公開病情供同學證明。／教師承接漏考的害怕，不保證一定及格或免除評量。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-06",
       "topicId": "T01-03",
@@ -1498,9 +1652,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生把同一道題訂正三次，錯誤仍落在同個觀念，表示只看答案無法理解。",
+              "text": "早自習時，在導師班教室裡，學生把同一道題訂正三次，錯誤仍落在同個觀念，表示只看答案無法理解。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -1508,7 +1662,7 @@ export default [
               "order": 2,
               "text": "我抄了三遍還是錯。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -1670,6 +1824,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "重複訂正卻一直錯",
+      "cause": "午餐談話時，學生把同一道題訂正三次，錯誤仍落在同個觀念，表示只看答案無法理解。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生在推理旁指出第一個不理解的跳步，教師未以反覆錯誤判定不努力。／學生整理例題與疑問等待科任解釋，尚未獲得解答。／學生在副本遮住解答重做第一步，停在不確定的推理，教師沒有代解或把這次嘗試當訂正已完成。／教師承接抄很多遍仍不懂的挫折，不鼓勵破壞作業或直接拒交。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-07",
       "topicId": "T01-03",
@@ -1713,7 +1881,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -1745,9 +1913,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生提前完成所有作業，表示題目過於簡單，開始在課堂上做其他練習。",
+              "text": "午休時，在教師辦公室，學生提前完成所有作業，表示題目過於簡單，開始在課堂上做其他練習。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
@@ -1755,7 +1923,7 @@ export default [
               "order": 2,
               "text": "我早寫完了，不能做難一點的嗎？",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -1917,6 +2085,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "作業太簡單缺乏挑戰",
+      "cause": "午餐談話時，學生提前完成所有作業，表示題目過於簡單，開始在課堂上做其他練習。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "雙方把正式作業要求與學生想增加的挑戰分開，未認定基本練習無價值。／教師協助提出延伸題需求，科任是否提供及是否可替代仍未決定。／學生選擇先完成原有課堂工作並保留需求，沒有被當成已同意永遠不調整。／教師肯定想挑戰的意願，不以給更多題目作獎勵或強迫加量。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-08",
       "topicId": "T01-03",
@@ -1960,7 +2142,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "noon"
         ],
         "from": null,
         "until": null,
@@ -1992,9 +2174,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生願意參加課後補救課程，卻發現與社團固定活動衝突。",
+              "text": "早自習時，在導師班教室裡，學生願意參加課後補救課程，卻發現與社團固定活動衝突。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -2002,7 +2184,7 @@ export default [
               "order": 2,
               "text": "兩個都想去，時間就是撞到。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -2164,6 +2346,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "補救教學時間撞到社團",
+      "cause": "午餐談話時，學生願意參加課後補救課程，卻發現與社團固定活動衝突。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "教師與學生確認手邊通知是否說明必要參與及替代時段，未知部分留待承辦。／學生擬出兩個衝突時段的詢問，教師未直接取消社團或補救課。／學生列出目前偏好的選擇及須確認規則，未將個人偏好當正式核准。／教師承接想補課卻撞期的可惜，不替兩方承諾改時段。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-10",
       "topicId": "T01-03",
@@ -2207,7 +2403,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -2239,7 +2435,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生發現小考卷一題少了一行條件，擔心全班不同作答方式造成失分。",
+              "text": "午餐時，在校園談話角落，學生發現小考卷一題少了一行條件，擔心全班不同作答方式造成失分。",
               "speaker": null,
               "scene": "school:counselling-corner",
               "cast": [],
@@ -2411,6 +2607,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "課堂小考題目印錯",
+      "cause": "午餐談話時，學生發現小考卷一題少了一行條件，擔心全班不同作答方式造成失分。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生保留自己的原卷缺漏處，教師未由單張卷推論全班或命題有錯。／教師協助整理可向科任提出的查核點，尚未得到命題或監考紀錄。／學生把缺漏題號及當時反映情形記下，不把這份紀錄當應補幾分的裁定。／教師回應沒看到題目的著急，以疑似印製缺漏表述，未先判定印錯。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-11",
       "topicId": "T01-03",
@@ -2486,9 +2696,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生同一天有數份不同科的大型作業要交，開始擔心無法全部完成。",
+              "text": "午休時，在教師辦公室，學生同一天有數份不同科的大型作業要交，開始擔心無法全部完成。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
@@ -2496,7 +2706,7 @@ export default [
               "order": 2,
               "text": "明天每科都要交，我要先做誰的？",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -2658,6 +2868,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "不同科作業同日到期",
+      "cause": "午餐談話時，學生同一天有數份不同科的大型作業要交，開始擔心無法全部完成。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生在清單標明各科已知期限，未知媒介與細項不憑記憶補齊。／雙方排出可先做的項目並擬出詢問，不替科任同意延後。／學生整理需要回看的公告位置，未把同學口頭說法當共同期限。／教師表達撞期的無奈，沒有承諾將所有作業統一延期。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-12",
       "topicId": "T01-03",
@@ -2701,7 +2925,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "noon"
         ],
         "from": null,
         "until": null,
@@ -2733,9 +2957,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生說自己交出的紙本作業可能被拿錯，手上有拍照存檔，但去向未確認。",
+              "text": "午餐時，在教師辦公室，學生說自己交出的紙本作業可能被拿錯，手上有拍照存檔，但去向未確認。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
@@ -2743,7 +2967,7 @@ export default [
               "order": 2,
               "text": "我交了，現在卻找不到。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -2905,6 +3129,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "作業被誤拿到別班",
+      "cause": "午餐談話時，學生說自己交出的紙本作業可能被拿錯，手上有拍照存檔，但去向未確認。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生說最後一次看見作業的地點，教師記為單方記憶，不稱已查明誰移走。／教師協助擬出核對收件的請求，不索取別班學生私人物品。／學生保留自己作業照片與目前未尋獲狀態，未指控某人偷拿。／教師承接遺失焦急，沒有保證找到或宣布科任已收到。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-13",
       "topicId": "T01-03",
@@ -2980,7 +3218,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生拿來一份完成度極高的手工作品，坦承主要由家長操作。",
+              "text": "午餐時，在校園談話角落，學生拿來一份完成度極高的手工作品，坦承主要由家長操作。",
               "speaker": null,
               "scene": "school:counselling-corner",
               "cast": [],
@@ -3152,6 +3390,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "家長代為完成手工作業",
+      "cause": "午餐談話時，學生拿來一份完成度極高的手工作品，坦承主要由家長操作。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生分列本人設計與家人製作部分，教師不因主動坦承便裁定符合規則。／學生擬出揭露協助及補做的詢問，是否須重做由科任決定。／學生保留自有製作紀錄，未編造過程或要求家人代答查核。／教師肯定願意說清分工，沒有保證揭露後免責或加分。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-14",
       "topicId": "T01-03",
@@ -3227,9 +3479,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，幾名學生因這次平均分較低，推派一名同學詢問是否能全班重考。",
+              "text": "早自習時，在導師班教室裡，幾名學生因這次平均分較低，推派一名同學詢問是否能全班重考。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -3237,7 +3489,7 @@ export default [
               "order": 2,
               "text": "大家都說太難，能不能再考？",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -3399,6 +3651,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "小考後集體要求再考一次",
+      "cause": "午餐談話時，幾名學生因這次平均分較低，推派一名同學詢問是否能全班重考。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生提出具體認為未教到的題號，教師未用全班分數低推定命題違規。／教師說明可由自願代表提出問題，尚未獲科任同意重考。／學生整理不同意見但不附他人成績，教師未宣布多數決可取代評量程序。／教師承接考差失落，明確保留正式決定權，沒有拿鼓勵當重考承諾。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-16",
       "topicId": "T01-03",
@@ -3442,7 +3708,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -3474,9 +3740,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生發現訂正繳交期限落在週日，詢問究竟須線上繳交還是週一交紙本。",
+              "text": "午餐時，在教學大樓走廊，學生發現訂正繳交期限落在週日，詢問究竟須線上繳交還是週一交紙本。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:corridor",
               "cast": [],
               "presentation": "narration"
             },
@@ -3484,7 +3750,7 @@ export default [
               "order": 2,
               "text": "公告寫星期天，可是那天沒上課啊。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:corridor",
               "cast": [
                 {
                   "role": "participant",
@@ -3646,6 +3912,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "訂正截止日是假日",
+      "cause": "午餐談話時，學生發現訂正繳交期限落在週日，詢問究竟須線上繳交還是週一交紙本。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "雙方核對學生持有公告的日期與送件媒介，未由假日直接判定期限無效。／學生擬出是否可下個上課日繳交的詢問，尚未取得延期許可。／學生保留公告及自己的準備紀錄，不改截圖日期或假裝已送出。／教師承接期限不明的困惑，沒有宣告科任公告錯誤。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-17",
       "topicId": "T01-03",
@@ -3721,9 +4001,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生表示小組實驗報告中自己負責資料整理，但不知道個人貢獻如何反映在作業。",
+              "text": "早自習時，在導師班教室裡，學生表示小組實驗報告中自己負責資料整理，但不知道個人貢獻如何反映在作業。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -3731,7 +4011,7 @@ export default [
               "order": 2,
               "text": "我做了很多，可是最後都寫同一組。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -3893,6 +4173,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "實驗報告分工難界定",
+      "cause": "午餐談話時，學生表示小組實驗報告中自己負責資料整理，但不知道個人貢獻如何反映在作業。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生先說本人工作及所知分配，教師不把單方評價當成全組事實。／學生整理自有版本與分工紀錄供科任判讀，未取得改分或全組署名認可。／學生擬出對未完成工作的組內詢問，未強迫缺席成員接受新分工。／教師承接付出未被看見的感受，沒有替任何成員定性偷懶。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-18",
       "topicId": "T01-03",
@@ -3936,7 +4230,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -3968,7 +4262,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生因合法校車延誤剛進教室就遇上小考，未能完成全部題目。",
+              "text": "午餐時，在校園談話角落，學生因合法校車延誤剛進教室就遇上小考，未能完成全部題目。",
               "speaker": null,
               "scene": "school:counselling-corner",
               "cast": [],
@@ -4140,6 +4434,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "晨間隨堂測驗與遲到衝突",
+      "cause": "午餐談話時，學生因合法校車延誤剛進教室就遇上小考，未能完成全部題目。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "雙方分開列出到校與小考規則，教師不以遲到處理替代評量資格判斷。／學生擬出補測資格詢問，尚未取得科任同意。／學生保存自己的到校與交通資料，不推定每次遲到都同因。／教師承接兩件事撞在一起的壓力，未保證免除出缺勤或測驗責任。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-19",
       "topicId": "T01-03",
@@ -4215,9 +4523,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生報名某科補救課後接到可能不開班的通知，擔心失去學習資源。",
+              "text": "早自習時，在導師班教室裡，學生報名某科補救課後接到可能不開班的通知，擔心失去學習資源。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -4225,7 +4533,7 @@ export default [
               "order": 2,
               "text": "好不容易願意補了，卻說人不夠。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -4387,6 +4695,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "補救課開課人數不足",
+      "cause": "午餐談話時，學生報名某科補救課後接到可能不開班的通知，擔心失去學習資源。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生出示的通知被區分為暫定文字及待確認處，未把人數不足自動當正式停課。／教師協助列出可詢問的個別指導資源，未承諾教師額外開課。／學生在自己的需求單記下待覆事項，未把等待時間當成已取得補強。／教師肯定想補強的意願，不以行政可能取消就宣告沒有其他支持。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-20",
       "topicId": "T01-03",
@@ -4430,7 +4752,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "lunch"
+          "early"
         ],
         "from": null,
         "until": null,
@@ -4462,9 +4784,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生把沾濕的作業帶來，內容部分還看得見，表示意外打翻飲料。",
+              "text": "午餐時，在教師辦公室，學生把沾濕的作業帶來，內容部分還看得見，表示意外打翻飲料。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
@@ -4472,7 +4794,7 @@ export default [
               "order": 2,
               "text": "我真的寫好了，現在全糊掉了。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -4634,6 +4956,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "紙本作業被飲料弄濕",
+      "cause": "午餐談話時，學生把沾濕的作業帶來，內容部分還看得見，表示意外打翻飲料。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "雙方檢視學生帶來的可辨識頁面，教師不替科任認定所有內容可收。／學生擬出重印或補交的申請，未獲免責或延時承諾。／學生保留殘頁與原檔，不丟棄所有原始材料來重造完成時間。／教師回應成品受損的難受，沒有責怪同學或認定是他人弄濕。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-21",
       "topicId": "T01-03",
@@ -4709,9 +5045,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生說平常能理解課程內容，但這次小考大量考細節記憶，分數不理想。",
+              "text": "午餐時，在教師辦公室，學生說平常能理解課程內容，但這次小考大量考細節記憶，分數不理想。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
@@ -4719,7 +5055,7 @@ export default [
               "order": 2,
               "text": "我懂意思，卻記不住那個名詞。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -4881,6 +5217,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "小考只考記憶題卻不熟",
+      "cause": "午餐談話時，學生說平常能理解課程內容，但這次小考大量考細節記憶，分數不理想。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生指出忘記的是哪些詞，教師未將能理解整體與記憶用語視為同一件事。／學生整理想請科任示範的記憶練習，尚未得到專科回饋。／學生當場試短暫遮字回想並保留卡住處，不把一輪試做算成穩定改善。／教師接住懂意思卻說不出詞的挫折，未將它診斷為記憶障礙。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-22",
       "topicId": "T01-03",
@@ -4956,9 +5306,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生作業訂正已完成，但家長出差不在，暫時無法取得簽名。",
+              "text": "午餐時，在教學大樓走廊，學生作業訂正已完成，但家長出差不在，暫時無法取得簽名。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:corridor",
               "cast": [],
               "presentation": "narration"
             },
@@ -4966,7 +5316,7 @@ export default [
               "order": 2,
               "text": "我都寫好了，爸媽今天不在。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:corridor",
               "cast": [
                 {
                   "role": "participant",
@@ -5128,6 +5478,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "老師要求家長簽名未完成",
+      "cause": "午餐談話時，學生作業訂正已完成，但家長出差不在，暫時無法取得簽名。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "雙方查學生可取得的簽名目的與期限，未把無簽名直接等同未訂正。／教師協助擬出合法照顧者聯繫安排的說明，未替科任同意改簽名人。／學生保留已完成的訂正及待簽狀態，不偽造或代簽。／教師肯定可見的訂正工作，沒有因此自行取消簽名要求。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-23",
       "topicId": "T01-03",
@@ -5203,9 +5567,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生請假返校後才看見先前貼出的補考通知，考試時段已過。",
+              "text": "午餐時，在教師辦公室，學生請假返校後才看見先前貼出的補考通知，考試時段已過。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
@@ -5213,7 +5577,7 @@ export default [
               "order": 2,
               "text": "我沒來學校，根本不知道有這張。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -5375,6 +5739,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "補考通知只貼在教室佈告欄",
+      "cause": "午餐談話時，學生請假返校後才看見先前貼出的補考通知，考試時段已過。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生提供請假日期與所知公告時間，教師不由未看見就推定校方未公告。／學生擬出因請假未得知的說明，受理或補測仍由權責教師決定。／雙方保留本人可取得的通知與請假紀錄，不以回憶填成正式證明。／教師承接資訊落差的委屈，沒有宣布學生已獲補考或全無責任。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-24",
       "topicId": "T01-03",
@@ -5450,9 +5828,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生把幾張零分小考卷壓在書桌最底下，不願帶回訂正。",
+              "text": "午餐時，在教師辦公室，學生把幾張零分小考卷壓在書桌最底下，不願帶回訂正。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
@@ -5460,7 +5838,7 @@ export default [
               "order": 2,
               "text": "反正訂正也不會，我不想再看。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -5622,6 +6000,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "小考連續零分拒絕拿卷",
+      "cause": "午餐談話時，學生把幾張零分小考卷壓在書桌最底下，不願帶回訂正。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生願意先談一個看不懂的符號，教師不強迫當場攤開全部零分卷。／教師協助擬出需要入門題的請求，科任尚未提供分層教材。／學生選擇本次只短談，教師保留可再求助的方式，不把沉默當拒絕學習。／教師承接反覆零分的挫折，不承諾下一次一定拿分或診斷能力。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-25",
       "topicId": "T01-03",
@@ -5697,9 +6089,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生參加補救課後拿到教材，發現前置知識仍有許多空缺，難以跟上。",
+              "text": "午餐時，在教師辦公室，學生參加補救課後拿到教材，發現前置知識仍有許多空缺，難以跟上。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
@@ -5707,7 +6099,7 @@ export default [
               "order": 2,
               "text": "明明是補救課，我還是看不懂。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -5869,6 +6261,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "補救教材難度仍過高",
+      "cause": "午餐談話時，學生參加補救課後拿到教材，發現前置知識仍有許多空缺，難以跟上。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生標出連起始步驟都不懂的位置，教師把它留成待專科確認的基礎疑點。／學生擬出教材分層的詢問，尚未取得補救課老師調整承諾。／學生從自己合法取得的較基礎教材選一例試第一步，仍不確定之處留作提問，不宣稱已掌握或取代補救課要求。／教師肯定願意補強也承認挫折，未以出席當成已掌握基礎。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-27",
       "topicId": "T01-03",
@@ -5944,7 +6350,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐時，學生說自己在原以為可繳交的下課時段找不到作業箱；實際收箱時間及期限都尚未核實。",
+              "text": "午餐時，在校園談話角落，學生說自己在原以為可繳交的下課時段找不到作業箱；實際收箱時間及期限都尚未核實。",
               "speaker": null,
               "scene": "school:counselling-corner",
               "cast": [],
@@ -6409,6 +6815,21 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "繳交時找不到作業箱",
+      "cause": "午餐時，學生說自己在原以為可繳交的下課時段找不到作業箱；實際收箱時間及期限都尚未核實。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "雙方依學生提供的公告及自述分列期限與看到作業箱消失的時點，實際收件紀錄仍待查。／學生擬好補交詢問，尚未送出；雙方約下一個合法談話時段核對是否已有正式收件回覆。／學生保留自己當日說法，不把未見收件箱推定為他人失職。／教師承接想交卻無處交的困窘，未保證補交一定不扣分。／教師請學生出示可核對的回覆，目前尚未取得足夠完成證據。／學生整理本人作業名稱、原公告與待問事項，教師沒有代替科任回覆或視為已送出。／學生保留原檔與目前收件疑問，沒有重新製作時間戳或把未查證當成結案。／教師回應等待的不安，提醒可繼續使用原查核管道，尚未取得收件證據。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L3",
+        "L4"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-28",
       "topicId": "T01-03",
@@ -6484,9 +6905,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生表示課程作業需使用特殊器材，家中沒有相應設備，擔心最後只剩繳交期限。",
+              "text": "午餐時，在教師辦公室，學生表示課程作業需使用特殊器材，家中沒有相應設備，擔心最後只剩繳交期限。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
@@ -6494,7 +6915,7 @@ export default [
               "order": 2,
               "text": "我在家根本做不了那個步驟。",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -6656,6 +7077,20 @@ export default [
       ],
       "compilerContract": 2
     },
+    "editorial": {
+      "title": "藝術實作無法在家完成",
+      "cause": "午餐談話時，學生表示課程作業需使用特殊器材，家中沒有相應設備，擔心最後只剩繳交期限。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "學生指出哪項步驟需要指定設備，教師不假定所有部分都不能在家做。／教師協助查可詢問的校內開放安排及替代媒材，尚未取得使用許可。／學生列出缺少器材及可做部分給科任判斷，不要求家庭購買昂貴設備。／教師肯定限制不等於態度，未因此免除課程要求或保證改作業。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+    },
     "definition": {
       "id": "content:18b-t01-03-29",
       "topicId": "T01-03",
@@ -6731,9 +7166,9 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐談話時，學生因校方核准的社團公假缺席小考，不清楚是否需要自行聯絡補考。",
+              "text": "午餐時，在教師辦公室，學生因校方核准的社團公假缺席小考，不清楚是否需要自行聯絡補考。",
               "speaker": null,
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
@@ -6741,7 +7176,7 @@ export default [
               "order": 2,
               "text": "有公假不就不用考了嗎？",
               "speaker": "participant",
-              "scene": "school:counselling-corner",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -6902,6 +7337,20 @@ export default [
         }
       ],
       "compilerContract": 2
+    },
+    "editorial": {
+      "title": "社團公假撞到小考",
+      "cause": "午餐談話時，學生因校方核准的社團公假缺席小考，不清楚是否需要自行聯絡補考。",
+      "teacherResponsibility": "導師可核對與協調，但補交、重考及分數計算依法或校內規定交由權責科任處理。",
+      "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
+      "distinctiveConsequence": "教師分別說明公假與評量仍需安排，沒有把合法公假視為違規或自動免測。／學生擬出附正式公假資訊的補測詢問，尚未排定時間。／學生保留自己的活動及測驗通知，不公開其他同學行程。／教師承接活動與課業衝突的麻煩，未替社團或任課單方取消安排。",
+      "editorialStatus": "awaiting-separated-review",
+      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+      "author": "Codex root editing process",
+      "causalClass": [
+        "L1"
+      ],
+      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-03-30",

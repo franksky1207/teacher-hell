@@ -1,0 +1,2444 @@
+{
+  "records": [
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-01",
+        "definitionId": "content:18b-t01-01-01",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生把連續一週塗改的計畫表攤在桌上，格子寫得滿滿，完成欄卻幾乎空白。",
+          "data": {
+            "type": "t01-01-case-01",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生把連續一週塗改的計畫表攤在桌上，格子寫得滿滿，完成欄卻幾乎空白。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我每天都重新排，可是一回家就不知道先做哪個。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "請他挑出今晚真正能完成的一小步",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「晚間讀書表屢次重畫」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "先確認放學後有哪些固定活動",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「先確認放學後有哪些固定活動」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "把實際開始時間記一天再一起比較",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「把實際開始時間記一天再一起比較」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "我看你一直重畫，也有點替你累",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「晚間讀書表屢次重畫」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "晚間讀書表屢次重畫",
+        "cause": "學生把連續一週塗改的計畫表攤在桌上，格子寫得滿滿，完成欄卻幾乎空白。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "請他挑出今晚真正能完成的一小步／先確認放學後有哪些固定活動／把實際開始時間記一天再一起比較／我看你一直重畫，也有點替你累",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-02",
+        "definitionId": "content:18b-t01-01-02",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "早自習結束前，學生的書停在目錄頁，筆記卻寫了好幾個預計閱讀的章節。",
+          "data": {
+            "type": "t01-01-case-02",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "早自習結束前，學生的書停在目錄頁，筆記卻寫了好幾個預計閱讀的章節。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我不是不想讀，只是不知道哪一章最重要。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "請學生說出目前最想解決的疑問",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「自習時間只翻目錄」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "陪他圈定當天一段能閱讀的範圍",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「陪他圈定當天一段能閱讀的範圍」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "先記下卡住的章節，另約時間談",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「先記下卡住的章節，另約時間談」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "卡在開頭真的會讓人很煩，我懂",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「自習時間只翻目錄」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "自習時間只翻目錄",
+        "cause": "早自習結束前，學生的書停在目錄頁，筆記卻寫了好幾個預計閱讀的章節。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "請學生說出目前最想解決的疑問／陪他圈定當天一段能閱讀的範圍／先記下卡住的章節，另約時間談／卡在開頭真的會讓人很煩，我懂",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-03",
+        "definitionId": "content:18b-t01-01-03",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生拿出手機上密密麻麻的專注計時紀錄，表示每次中斷就把整段時間歸零。",
+          "data": {
+            "type": "t01-01-case-03",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生拿出手機上密密麻麻的專注計時紀錄，表示每次中斷就把整段時間歸零。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "少一分鐘我就覺得這次又失敗了。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "詢問他計時的目的和實際感受",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「讀書計時器變成負擔」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "建議以完成一項任務取代全程不間斷",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「建議以完成一項任務取代全程不間斷」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "先保留原紀錄，約下次看是否有改善",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「先保留原紀錄，約下次看是否有改善」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "你都已經很努力計時了，別急著否定自己",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「讀書計時器變成負擔」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "讀書計時器變成負擔",
+        "cause": "學生拿出手機上密密麻麻的專注計時紀錄，表示每次中斷就把整段時間歸零。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "詢問他計時的目的和實際感受／建議以完成一項任務取代全程不間斷／先保留原紀錄，約下次看是否有改善／你都已經很努力計時了，別急著否定自己",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-04",
+        "definitionId": "content:18b-t01-01-04",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生把週末待辦清單交來，上頭同時列著各科數十項工作。",
+          "data": {
+            "type": "t01-01-case-04",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生把週末待辦清單交來，上頭同時列著各科數十項工作。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我想週日全部補完，結果連第一項都沒動。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "請他指出哪些項目有明確期限",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「週末補進度越欠越多」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "一起區分本週必做與可以延後的事",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「一起區分本週必做與可以延後的事」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "請他回去核對各科公告再做安排",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「請他回去核對各科公告再做安排」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "看到這麼長的清單，我也會頭痛",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「週末補進度越欠越多」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "週末補進度越欠越多",
+        "cause": "學生把週末待辦清單交來，上頭同時列著各科數十項工作。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "請他指出哪些項目有明確期限／一起區分本週必做與可以延後的事／請他回去核對各科公告再做安排／看到這麼長的清單，我也會頭痛",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-05",
+        "definitionId": "content:18b-t01-01-05",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生說原本約定共同複習的朋友近期不再參加，留下兩人的進度表。",
+          "data": {
+            "type": "t01-01-case-05",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生說原本約定共同複習的朋友近期不再參加，留下兩人的進度表。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "他沒空以後，我自己就不太想開始。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "詢問他是否仍想維持原本的複習目標",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「讀書伙伴臨時退出」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "協助找不依賴固定伙伴的學習方式",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「協助找不依賴固定伙伴的學習方式」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "讓學生先想一晚是否需要改計畫",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「讓學生先想一晚是否需要改計畫」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "習慣有人陪著讀，突然剩自己確實難適應",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「讀書伙伴臨時退出」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "讀書伙伴臨時退出",
+        "cause": "學生說原本約定共同複習的朋友近期不再參加，留下兩人的進度表。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "詢問他是否仍想維持原本的複習目標／協助找不依賴固定伙伴的學習方式／讓學生先想一晚是否需要改計畫／習慣有人陪著讀，突然剩自己確實難適應",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-06",
+        "definitionId": "content:18b-t01-01-06",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生交出目標單，每科寫著一百分，卻不願說明最迫切想改善的問題。",
+          "data": {
+            "type": "t01-01-case-06",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生交出目標單，每科寫著一百分，卻不願說明最迫切想改善的問題。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "不寫一百分就好像我不認真。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "請他說明每科目標背後的期待",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「目標都寫成滿分」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "陪他將其中一科改成可觀察的練習目標",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「陪他將其中一科改成可觀察的練習目標」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "先保存目標單，等下次考後討論",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「先保存目標單，等下次考後討論」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "我在意的是你怎麼走，不是表格多漂亮",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「目標都寫成滿分」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "目標都寫成滿分",
+        "cause": "學生交出目標單，每科寫著一百分，卻不願說明最迫切想改善的問題。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "請他說明每科目標背後的期待／陪他將其中一科改成可觀察的練習目標／先保存目標單，等下次考後討論／我在意的是你怎麼走，不是表格多漂亮",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-07",
+        "definitionId": "content:18b-t01-01-07",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "午休前，學生在走廊來回背誦同一頁講義，說自己始終不敢翻下一頁。",
+          "data": {
+            "type": "t01-01-case-07",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "午休前，學生在走廊來回背誦同一頁講義，說自己始終不敢翻下一頁。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我怕一翻過去，剛剛背的就忘光了。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "請他試著用自己的話說出重點",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「午休前反覆背同一頁」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "建議用短暫回想檢查，而非一再重讀",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「建議用短暫回想檢查，而非一再重讀」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "讓他先休息，另約時間討論方法",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「讓他先休息，另約時間討論方法」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "你這樣一遍遍確認，難怪會很累",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「午休前反覆背同一頁」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "午休前反覆背同一頁",
+        "cause": "午休前，學生在走廊來回背誦同一頁講義，說自己始終不敢翻下一頁。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "請他試著用自己的話說出重點／建議用短暫回想檢查，而非一再重讀／讓他先休息，另約時間討論方法／你這樣一遍遍確認，難怪會很累",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-08",
+        "definitionId": "content:18b-t01-01-08",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生帶著寫滿問號的筆記前來，說每次到辦公室門口就轉身。",
+          "data": {
+            "type": "t01-01-case-08",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生帶著寫滿問號的筆記前來，說每次到辦公室門口就轉身。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "老師都很忙，我怕問的都是笨問題。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "請他先挑一個最想問的地方",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「主動求助卻不敢問」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "說明適合詢問科任老師的時間與方式",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「說明適合詢問科任老師的時間與方式」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "讓他先把問題整理好再決定是否詢問",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「讓他先把問題整理好再決定是否詢問」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "你願意把問題寫出來，已經不容易",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「主動求助卻不敢問」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "主動求助卻不敢問",
+        "cause": "學生帶著寫滿問號的筆記前來，說每次到辦公室門口就轉身。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "請他先挑一個最想問的地方／說明適合詢問科任老師的時間與方式／讓他先把問題整理好再決定是否詢問／你願意把問題寫出來，已經不容易",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-09",
+        "definitionId": "content:18b-t01-01-09",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生拿著同學分享的進度照片，憂心自己每天少讀兩個章節。",
+          "data": {
+            "type": "t01-01-case-09",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生拿著同學分享的進度照片，憂心自己每天少讀兩個章節。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "別人都念到後面了，我還在前面。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "問清照片是否真的反映對方完整進度",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「把別人的進度當基準」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "陪他把自己的進度對照近期課程需求",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「陪他把自己的進度對照近期課程需求」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "建議暫停比較一天並觀察感受",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「建議暫停比較一天並觀察感受」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "我知道很難不比較，但你不用照別人的表生活",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「把別人的進度當基準」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "把別人的進度當基準",
+        "cause": "學生拿著同學分享的進度照片，憂心自己每天少讀兩個章節。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "問清照片是否真的反映對方完整進度／陪他把自己的進度對照近期課程需求／建議暫停比較一天並觀察感受／我知道很難不比較，但你不用照別人的表生活",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-10",
+        "definitionId": "content:18b-t01-01-10",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生展示一整排複習提醒，說上課期間也不斷收到未完成通知。",
+          "data": {
+            "type": "t01-01-case-10",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生展示一整排複習提醒，說上課期間也不斷收到未完成通知。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "提醒越跳越多，我看到就想關掉。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "釐清哪些提醒真的與當週作業有關",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「學習app提醒過密」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "協助挑選較少且固定的提醒時段",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「協助挑選較少且固定的提醒時段」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "請他先記錄一天提醒頻率再決定",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「請他先記錄一天提醒頻率再決定」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "被通知追著跑，的確很難專心",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「學習app提醒過密」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "學習app提醒過密",
+        "cause": "學生展示一整排複習提醒，說上課期間也不斷收到未完成通知。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "釐清哪些提醒真的與當週作業有關／協助挑選較少且固定的提醒時段／請他先記錄一天提醒頻率再決定／被通知追著跑，的確很難專心",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-11",
+        "definitionId": "content:18b-t01-01-11",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生的鉛筆盒和筆記分隔非常整齊，但表示每到考前就反覆整理而不開始練習。",
+          "data": {
+            "type": "t01-01-case-11",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生的鉛筆盒和筆記分隔非常整齊，但表示每到考前就反覆整理而不開始練習。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "整理完會覺得安心，可是一下又沒時間了。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "詢問整理帶來的幫助與限制",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「考前先整理文具」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "約定整理結束後先做一題簡單練習",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「約定整理結束後先做一題簡單練習」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "保留這次觀察，下回考前再確認",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「保留這次觀察，下回考前再確認」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "你很會整理，只是題目好像等很久了",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「考前先整理文具」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "考前先整理文具",
+        "cause": "學生的鉛筆盒和筆記分隔非常整齊，但表示每到考前就反覆整理而不開始練習。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "詢問整理帶來的幫助與限制／約定整理結束後先做一題簡單練習／保留這次觀察，下回考前再確認／你很會整理，只是題目好像等很久了",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-12",
+        "definitionId": "content:18b-t01-01-12",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生展示清晨五點起床的規劃，卻說最近早上常打瞌睡。",
+          "data": {
+            "type": "t01-01-case-12",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生展示清晨五點起床的規劃，卻說最近早上常打瞌睡。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "晚上念不完，只好早上再早一點起床。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "先詢問實際睡眠時間與白天精神",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「連續熬夜補早起計畫」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "建議調整任務量並優先保留休息",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「建議調整任務量並優先保留休息」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "請他記錄幾天作息，必要時與家長討論",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「請他記錄幾天作息，必要時與家長討論」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "聽起來你把一天擠到快沒空氣了",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「連續熬夜補早起計畫」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "連續熬夜補早起計畫",
+        "cause": "學生展示清晨五點起床的規劃，卻說最近早上常打瞌睡。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "先詢問實際睡眠時間與白天精神／建議調整任務量並優先保留休息／請他記錄幾天作息，必要時與家長討論／聽起來你把一天擠到快沒空氣了",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-13",
+        "definitionId": "content:18b-t01-01-13",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生遞上厚厚的彩色筆記，卻表示複習時仍不知道哪些觀念要先練。",
+          "data": {
+            "type": "t01-01-case-13",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生遞上厚厚的彩色筆記，卻表示複習時仍不知道哪些觀念要先練。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我每一頁都抄了，可是還是不會。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "請他用一句話描述這單元的重點",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「筆記抄滿卻說不出重點」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "示範把一頁筆記轉成一個自我提問",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「示範把一頁筆記轉成一個自我提問」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "先保留筆記，請他挑出最困難的一頁",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「先保留筆記，請他挑出最困難的一頁」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "這些筆記花了不少心力，別急著說全沒用",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「筆記抄滿卻說不出重點」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "筆記抄滿卻說不出重點",
+        "cause": "學生遞上厚厚的彩色筆記，卻表示複習時仍不知道哪些觀念要先練。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "請他用一句話描述這單元的重點／示範把一頁筆記轉成一個自我提問／先保留筆記，請他挑出最困難的一頁／這些筆記花了不少心力，別急著說全沒用",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-14",
+        "definitionId": "content:18b-t01-01-14",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生說自己請朋友每天檢查進度，近來兩人因催促方式感到不自在。",
+          "data": {
+            "type": "t01-01-case-14",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生說自己請朋友每天檢查進度，近來兩人因催促方式感到不自在。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我叫他提醒我，但現在聽到提醒就煩。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "釐清當初雙方約定的提醒方式",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「請同學監督變成互相催促」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "建議由學生自己設定回報頻率與界線",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「建議由學生自己設定回報頻率與界線」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "請他先私下與同學確認是否續做",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「請他先私下與同學確認是否續做」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "想被幫忙又想保有空間，真的會拉扯",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「請同學監督變成互相催促」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "請同學監督變成互相催促",
+        "cause": "學生說自己請朋友每天檢查進度，近來兩人因催促方式感到不自在。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "釐清當初雙方約定的提醒方式／建議由學生自己設定回報頻率與界線／請他先私下與同學確認是否續做／想被幫忙又想保有空間，真的會拉扯",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-15",
+        "definitionId": "content:18b-t01-01-15",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生表示假日都在圖書館待到關門，卻不清楚實際完成哪些任務。",
+          "data": {
+            "type": "t01-01-case-15",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生表示假日都在圖書館待到關門，卻不清楚實際完成哪些任務。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我坐很久，可是回家想不起來念了什麼。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "請他回想當天完成的一件具體事情",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「假日圖書館坐滿整天」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "建議進出圖書館時各記一次任務與成果",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「建議進出圖書館時各記一次任務與成果」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "先保留這週紀錄，下週再比較",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「先保留這週紀錄，下週再比較」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "坐那麼久卻沒感覺，難免很挫折",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「假日圖書館坐滿整天」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "假日圖書館坐滿整天",
+        "cause": "學生表示假日都在圖書館待到關門，卻不清楚實際完成哪些任務。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "請他回想當天完成的一件具體事情／建議進出圖書館時各記一次任務與成果／先保留這週紀錄，下週再比較／坐那麼久卻沒感覺，難免很挫折",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-16",
+        "definitionId": "content:18b-t01-01-16",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生說段考後原想休息兩天，結果休息了整週，現在害怕重新翻書。",
+          "data": {
+            "type": "t01-01-case-16",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生說段考後原想休息兩天，結果休息了整週，現在害怕重新翻書。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "越晚開始，就越覺得來不及。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "詢問停下來後最難重新開始的環節",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「考完放鬆後不敢重啟」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "一起設定不以考試成績為目標的重啟任務",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「一起設定不以考試成績為目標的重啟任務」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "先讓他整理本週課堂進度再安排",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「先讓他整理本週課堂進度再安排」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "考完想喘口氣很正常，不必一次補回全部",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「考完放鬆後不敢重啟」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "考完放鬆後不敢重啟",
+        "cause": "學生說段考後原想休息兩天，結果休息了整週，現在害怕重新翻書。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "詢問停下來後最難重新開始的環節／一起設定不以考試成績為目標的重啟任務／先讓他整理本週課堂進度再安排／考完想喘口氣很正常，不必一次補回全部",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-17",
+        "definitionId": "content:18b-t01-01-17",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生把完成項目全劃掉，卻因新增任務比劃掉的還多而沮喪。",
+          "data": {
+            "type": "t01-01-case-17",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生把完成項目全劃掉，卻因新增任務比劃掉的還多而沮喪。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我明明有做事，怎麼清單還越來越長？",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "確認新增任務是何時、由誰要求",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「學習清單越勾越焦躁」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "協助把已完成事項與未來待辦分開列",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「協助把已完成事項與未來待辦分開列」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "請他隔天帶來更新後清單再核對",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「請他隔天帶來更新後清單再核對」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "你確實有完成一些事，別讓清單抹掉它",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「學習清單越勾越焦躁」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "學習清單越勾越焦躁",
+        "cause": "學生把完成項目全劃掉，卻因新增任務比劃掉的還多而沮喪。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "確認新增任務是何時、由誰要求／協助把已完成事項與未來待辦分開列／請他隔天帶來更新後清單再核對／你確實有完成一些事，別讓清單抹掉它",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-18",
+        "definitionId": "content:18b-t01-01-18",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生反映自發讀書會常由一人講解，其他人越來越少準備。",
+          "data": {
+            "type": "t01-01-case-18",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生反映自發讀書會常由一人講解，其他人越來越少準備。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "本來想一起讀，現在好像都在等他教。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "了解各人對讀書會的期待是否一致",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「小組讀書會只有一人發言」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "建議試一次輪流提出問題的形式",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「建議試一次輪流提出問題的形式」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "尊重學生自行協調，觀察下一次情形",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「尊重學生自行協調，觀察下一次情形」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "原本是互相幫忙，變成單方面付出也難受",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「小組讀書會只有一人發言」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "小組讀書會只有一人發言",
+        "cause": "學生反映自發讀書會常由一人講解，其他人越來越少準備。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "了解各人對讀書會的期待是否一致／建議試一次輪流提出問題的形式／尊重學生自行協調，觀察下一次情形／原本是互相幫忙，變成單方面付出也難受",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-19",
+        "definitionId": "content:18b-t01-01-19",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生能清楚講出社團練習時間，卻說課業安排總是記不住。",
+          "data": {
+            "type": "t01-01-case-19",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生能清楚講出社團練習時間，卻說課業安排總是記不住。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "練習我都知道幾點開始，念書就一直忘。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "詢問兩種行程在提醒方式上的差別",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「忘記計畫表卻記得興趣行程」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "嘗試把一小段複習接在既有固定行程後",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「嘗試把一小段複習接在既有固定行程後」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "請他先記錄下週實際空檔再討論",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「請他先記錄下週實際空檔再討論」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "你不是完全不會安排，只是讀書還沒找到節奏",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「忘記計畫表卻記得興趣行程」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "忘記計畫表卻記得興趣行程",
+        "cause": "學生能清楚講出社團練習時間，卻說課業安排總是記不住。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "詢問兩種行程在提醒方式上的差別／嘗試把一小段複習接在既有固定行程後／請他先記錄下週實際空檔再討論／你不是完全不會安排，只是讀書還沒找到節奏",
+        "editorialStatus": "author-self-check-only"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t01-01-20",
+        "definitionId": "content:18b-t01-01-20",
+        "version": "1",
+        "topicId": "T01-01",
+        "status": "engineering-test",
+        "choiceContract": "four-v2",
+        "premise": {
+          "description": "學生難得按時完成個人讀書目標，卻擔心下週維持不了，不願告訴家人。",
+          "data": {
+            "type": "t01-01-case-20",
+            "confirmed": true
+          }
+        },
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生難得按時完成個人讀書目標，卻擔心下週維持不了，不願告訴家人。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "這次做到了，要是下次做不到怎麼辦？",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "請他說出這次確實做對的一件事",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生釐清「完成一次後怕下次退步」的當前情況，沒有將尚未確認的原因當成事實。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "建議保留可重複的步驟而非追求連勝",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師向學生提出「建議保留可重複的步驟而非追求連勝」的可行做法；學生尚未承諾必然執行。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "observe",
+                "text": "讓學生自行決定是否與家人分享",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出「讓學生自行決定是否與家人分享」的後續觀察方式；後續結果仍未發生。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "你這次做到了，就值得好好高興一下",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師向學生表達對「完成一次後怕下次退步」的關注與感受，沒有擅自替學生作決定。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "editorial": {
+        "title": "完成一次後怕下次退步",
+        "cause": "學生難得按時完成個人讀書目標，卻擔心下週維持不了，不願告訴家人。",
+        "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
+        "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
+        "distinctiveConsequence": "請他說出這次確實做對的一件事／建議保留可重複的步驟而非追求連勝／讓學生自行決定是否與家人分享／你這次做到了，就值得好好高興一下",
+        "editorialStatus": "author-self-check-only"
+      }
+    }
+  ]
+}

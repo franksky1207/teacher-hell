@@ -17,7 +17,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午休時，在教師辦公室，學生說小組討論經常由一人連續發言，自己準備的觀點沒有機會提出。",
+              "text": "午休時，學生在教師辦公室談起昨天的小組討論。他說有人一直接話，自己準備的觀點直到下課都沒輪到發表。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -25,7 +25,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我不是沒想，是插不進去。",
+              "text": "我有準備啊，可是我開口前他就又講了。我也不想變成去告狀的人。",
               "speaker": "participant",
               "scene": "school:teachers-office",
               "cast": [
@@ -36,16 +36,24 @@ export default [
                 }
               ],
               "presentation": "dialogue"
+            },
+            {
+              "order": 3,
+              "text": "導師並未親眼看見昨天的討論，也還沒有學生同意公開反映的範圍，不能先認定組員故意排擠。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
             }
           ],
           "choices": [
             {
               "id": "strategy-1",
-              "text": "先整理未說出的觀點",
+              "text": "先看沒有說出口的觀點，聽他真正想表達什麼",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生把一個觀點寫在紙上，教師不替缺席組員判定霸占發言。",
+                "fact": "學生從準備稿挑出一個完整論點，教師沒有對其他組員的動機下結論。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -77,11 +85,11 @@ export default [
             },
             {
               "id": "strategy-2",
-              "text": "向任課提議輪流短說",
+              "text": "先談清楚可否向科任反映，以及要不要具名",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "教師協助整理限時輪流的教學建議，是否採用仍由任課決定。",
+                "fact": "師生釐清可以反映的流程問題與身分界線，未經同意不直接傳給科任。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -113,11 +121,11 @@ export default [
             },
             {
               "id": "strategy-3",
-              "text": "練習禮貌加入討論",
+              "text": "在私下練習如何加入討論，保留拒絕的空間",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "雙方試說請求發言的句子，未宣稱下次一定獲得空間。",
+                "fact": "教師與學生模擬一句合適的加入方式，不假定下一次組員就一定配合。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -151,7 +159,7 @@ export default [
                   "id": "engages",
                   "weight": 3,
                   "outcome": {
-                    "fact": "學生試說了一句請求加入討論的話，但沒有假定下次同組一定讓他發言。",
+                    "fact": "學生私下練習了一句請求發言的話，實際課堂是否用得上仍未確定。",
                     "claims": [],
                     "changes": [],
                     "historyCodes": [],
@@ -185,7 +193,7 @@ export default [
                   "id": "hesitates",
                   "weight": 2,
                   "outcome": {
-                    "fact": "學生表示暫時不敢直接開口，改為寫下想在討論時提出的一個觀點；尚未傳給組員。",
+                    "fact": "學生還不敢練說，改成把想法寫下來，沒有因此被視為不合作。",
                     "claims": [],
                     "changes": [],
                     "historyCodes": [],
@@ -219,11 +227,11 @@ export default [
             },
             {
               "id": "strategy-4",
-              "text": "準備了卻像站在門外，確實悶",
+              "text": "一直被蓋過去真的很悶；我不會自動把你說的傳出去",
               "kind": "action",
               "emotional": true,
               "outcome": {
-                "fact": "教師表達理解，學生選擇暫不具名反映，內容未自動送給科任。",
+                "fact": "教師表達理解，尊重學生暫不具名反映的意願，沒有代替全組認定責任。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -314,7 +322,7 @@ export default [
         "cooldownDays": 30,
         "exclusionGroups": [],
         "sameFact": true,
-        "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
+        "reason": "在籍學生於指定合法非保護時段接觸導師；僅記錄已確認事實，不以同主題或日期推定相同問題。"
       }
     },
     "editorial": {

@@ -359,7 +359,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "高三畢業後、分科測驗完成報名的某個平日晚間，校友傳訊息給導師，附上準考資訊與交通地圖，說正式考場在外縣市，讓他有點不知所措。",
+                "text": "高三畢業後、分科測驗完成報名的某個平日晚間，校友傳來同學群組流傳的交通地圖，擔心考場可能在外縣市，但目前還沒有查到正式分配資訊。",
                 "speaker": null,
                 "scene": "home:living-room",
                 "cast": [],
@@ -367,7 +367,7 @@
               },
               {
                 "order": 2,
-                "text": "我以前都在熟悉的學校考，這次考場在外縣市，我真的不知道怎麼去才保險。",
+                "text": "我以前都在熟悉的學校考，現在群組傳說考場可能在外縣市，可是我還沒看到正式通知，該怎麼準備交通？",
                 "speaker": "participant",
                 "scene": "home:living-room",
                 "cast": [
@@ -383,11 +383,11 @@
             "choices": [
               {
                 "id": "clarify",
-                "text": "先核對正式考場與報到資訊",
+                "text": "先找正式考場公告與准考資訊",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生確認需要依准考資訊查地址，未自行假定考場已更改。",
+                  "fact": "學生列出應查詢的正式通知與准考資訊，不把群組傳聞當成確定的考場位置。",
                   "claims": [
                     {
                       "role": "participant",
@@ -432,7 +432,7 @@
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生列出可行路線及出發時間，仍需自行確認交通營運。",
+                  "fact": "學生依可能的考區先比較幾種交通與住宿備案，尚未預訂或視為正式考場。",
                   "claims": [
                     {
                       "role": "participant",
@@ -651,10 +651,10 @@
       "editorial": {
         "title": "學生週末傳來一張交通地圖，才知道正式考場",
         "candidateId": "T02-07-C07",
-        "cause": "高三畢業生完成分科報名並收到正式考場資訊後，主動就外縣市交通路線詢問導師。",
+        "cause": "分科報名後學生收到未經查證的跨縣市考場傳聞，擔心交通安排，向昔日導師求助。",
         "teacherResponsibility": "導師可協助核對資訊與提出諮詢方向，不替學生決定升學、不代管他人資料或擔保錄取。",
-        "knowledgeSource": "僅學生當面或遠距訊息及本次實際接觸；家長與第三方行為仍是未核實說法。",
-        "distinctiveConsequence": "學生確認需要依准考資訊查地址，未自行假定考場已更改。／學生列出可行路線及出發時間，仍需自行確認交通營運。／學生知道要討論的安排，未擅自推定家長同意。／導師回應焦慮，沒有保證交通必然順利。",
+        "knowledgeSource": "群組流傳的地圖僅是學生轉述，尚非官方考場公告；導師不得把傳聞寫為已確認考場位置。",
+        "distinctiveConsequence": "學生列出應查詢的正式通知與准考資訊，不把群組傳聞當成確定的考場位置。／學生依可能的考區先比較幾種交通與住宿備案，尚未預訂或視為正式考場。／學生知道要討論的安排，未擅自推定家長同意。／導師回應焦慮，沒有保證交通必然順利。",
         "narrativeTime": "高三畢典後、分科報名完成且教師仍在aftercare階段的平日晚間",
         "scene": "home:living-room",
         "qualificationsNeeded": "T02-05至07高三專屬升學制度須依實際校曆、當年度招生日程、個人路徑與候選API完成資格接線，現僅工程隔離初稿。",
@@ -662,7 +662,7 @@
         "review": "author-draft-not-verified",
         "timeEligibilityNote": "aftercare/private，並需校友與導師同日已有合法contact紀錄",
         "communicationMode": "remote-not-physical-contact",
-        "gradeEligibilityBlocker": "已改用正式高三aftercare、分科報名里程碑、個人分科準備狀態與當日校友接觸證據；精準Node端對端及逐篇審稿仍待確認，上架0。"
+        "gradeEligibilityBlocker": "已具高三aftercare、分科報名與校友同日聯絡門檻，仍須確認來源fact真能在實機產生；不能由subject-register直接推論正式考場位置已公告。維持engineering-test與未審稿。"
       }
     },
     {

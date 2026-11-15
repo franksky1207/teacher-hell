@@ -44,7 +44,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生在目錄旁圈出一個最困惑的章名，尚未找到章節重點。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我不是不想讀，只是不知道哪一章最重要。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -69,7 +76,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -80,7 +94,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生在副本選定一小段閱讀，不因圈出範圍就算已讀完。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我不是不想讀，只是不知道哪一章最重要。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -105,7 +126,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -116,7 +144,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "教師把未解章名記在學生自己的紙上，是否再約由雙方可用時間決定。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我不是不想讀，只是不知道哪一章最重要。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -141,7 +176,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -152,7 +194,14 @@
                 "emotional": true,
                 "outcome": {
                   "fact": "教師承認卡在起點的煩躁，學生暫時合上書聽完，未被保證馬上能讀。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我不是不想讀，只是不知道哪一章最重要。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -177,7 +226,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               }
@@ -193,13 +249,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生在目錄旁圈出一個最困惑的章名，尚未找到章節重點。／學生在副本選定一小段閱讀，不因圈出範圍就算已讀完。／教師把未解章名記在學生自己的紙上，是否再約由雙方可用時間決定。／教師承認卡在起點的煩躁，學生暫時合上書聽完，未被保證馬上能讀。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「自習時間只翻目錄」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3+ 自主需求；11-2− 導師時間餘裕；3-3− 執行與完成；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-02",
@@ -216,25 +273,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "11-2",
+          "3-3",
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.175,
+          0.157,
+          0.216,
+          0.216,
+          0.118,
+          0.118
         ],
         "directions": [
+          -1,
           1,
           1,
-          1,
-          1,
-          1,
-          1
+          -1,
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -265,7 +322,7 @@
           "participant",
           "participant",
           "participant",
-          "participant",
+          "player-work",
           "participant",
           "participant"
         ],
@@ -317,7 +374,14 @@
                 "outcome": {
                   "fact": "學生說歸零是自己訂的規則；教師只確認這是他的說法，不判定計時有害。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -353,7 +417,14 @@
                 "outcome": {
                   "fact": "雙方用一題練習示範任務計量，學生尚未決定停用計時器。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -465,13 +536,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生說歸零是自己訂的規則；教師只確認這是他的說法，不判定計時有害。／雙方用一題練習示範任務計量，學生尚未決定停用計時器。／教師提醒保留未歸零的原始紀錄，尚無下一次改善資料。／教師肯定已投入的時間，沒有把中斷視為整段無效或宣告努力必有分數。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「讀書計時器變成負擔」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；7-2+ 家庭負擔；3-3− 執行與完成；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-03",
@@ -488,25 +560,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "7-2",
+          "3-3",
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.24,
+          0.16,
+          0.16,
+          0.2,
+          0.12,
+          0.12
         ],
         "directions": [
+          -1,
           1,
+          -1,
           1,
-          1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -541,7 +613,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "negative"
       }
     },
     {
@@ -737,13 +809,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生在清單旁標出自己知道的兩個期限，其他項目仍註記待查。／雙方把有正式期限與自訂加碼分欄，未替科任延後任何期限。／學生整理需要回看哪幾則公告，教師未以學生記憶當正式規則。／教師表達對清單過長的無奈，讓學生先停止加列項目，沒有刪除實際待辦。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「週末補進度越欠越多」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；3-3− 執行與完成；3-4− 學習適應；2-3+ 身心疲勞。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-04",
@@ -760,24 +833,24 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "3-3",
+          "3-4",
+          "2-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.17,
+          0.17,
+          0.17,
+          0.234,
+          0.128,
+          0.128
         ],
         "directions": [
+          -1,
           1,
-          1,
-          1,
-          1,
-          1,
+          -1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -813,7 +886,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "negative"
       }
     },
     {
@@ -897,7 +970,14 @@
                 "outcome": {
                   "fact": "教師提出以個人短練習取代共同打卡的方式，未替學生邀請新伙伴。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -969,7 +1049,14 @@
                 "outcome": {
                   "fact": "教師回應失去固定陪伴的不適應，沒有推定朋友故意拋下他。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -1009,13 +1096,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生表示想保留原本複習目標，但還不確定願不願獨自進行。／教師提出以個人短練習取代共同打卡的方式，未替學生邀請新伙伴。／學生選擇帶回自己的計畫再想，教師沒有把延後決定記成已退出讀書會。／教師回應失去固定陪伴的不適應，沒有推定朋友故意拋下他。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「讀書伙伴臨時退出」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3+ 自主需求；6-1+ 群體影響力；7-4− 生活穩定度；9-3+ 校園歸屬。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-05",
@@ -1032,24 +1120,24 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "6-1",
+          "7-4",
+          "9-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.208,
+          0.138,
+          0.138,
+          0.172,
+          0.172,
+          0.172
         ],
         "directions": [
+          -1,
           1,
           1,
           1,
-          1,
-          1,
+          -1,
           1
         ],
         "eligibility": {
@@ -1281,13 +1369,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生說滿分是怕被誤會不努力而寫；此說法只來自本人，家長想法未確認。／學生在副本選一科寫下可觀察的練習行為，原成績目標未被導師改成正式承諾。／教師尊重暫不改表，提醒考後可帶實際作答來談，不預排必然出現的後續。／教師把談話重點放回學生自己的期待，沒有以漂亮表格判定意願真偽。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「目標都寫成滿分」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；4-1+ 成就動機；3-3− 執行與完成；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-06",
@@ -1304,25 +1393,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "4-1",
+          "3-3",
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.245,
+          0.151,
+          0.151,
+          0.208,
+          0.132,
+          0.113
         ],
         "directions": [
+          -1,
           1,
+          -1,
           1,
-          1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -1404,8 +1493,22 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生用自己的話說一小段後停住，雙方記下不確定的位置，未當成全頁背熟。",
-                  "claims": [],
-                  "changes": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我怕一翻過去，剛剛背的就忘光了。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -1429,7 +1532,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -1440,8 +1550,28 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "教師示範先合上講義再看記得哪些詞，學生尚未決定長期採用。",
-                  "claims": [],
-                  "changes": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我怕一翻過去，剛剛背的就忘光了。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -1
+                    },
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -1465,7 +1595,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -1476,7 +1613,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生先收起講義休息，本次不另加背誦任務，未承諾下次一定再談。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我怕一翻過去，剛剛背的就忘光了。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -1501,7 +1645,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -1512,8 +1663,22 @@
                 "emotional": true,
                 "outcome": {
                   "fact": "教師說出反覆確認可能很累的感受，沒有把謹慎診斷為心理疾病。",
-                  "claims": [],
-                  "changes": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我怕一翻過去，剛剛背的就忘光了。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -1537,7 +1702,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               }
@@ -1553,13 +1725,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生用自己的話說一小段後停住，雙方記下不確定的位置，未當成全頁背熟。／教師示範先合上講義再看記得哪些詞，學生尚未決定長期採用。／學生先收起講義休息，本次不另加背誦任務，未承諾下次一定再談。／教師說出反覆確認可能很累的感受，沒有把謹慎診斷為心理疾病。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「午休前反覆背同一頁」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；3-3− 執行與完成；3-4− 學習適應；2-3+ 身心疲勞。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-07",
@@ -1576,24 +1749,24 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "3-3",
+          "3-4",
+          "2-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.226,
+          0.245,
+          0.163,
+          0.122,
+          0.122,
+          0.122
         ],
         "directions": [
+          -1,
           1,
-          1,
-          1,
-          1,
-          1,
+          -1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -1629,7 +1802,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "negative"
       }
     },
     {
@@ -1676,7 +1849,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生從問號中選一個具體題號，教師沒有擅自代答專科內容。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "老師都很忙，我怕問的都是笨問題。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -1701,7 +1881,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -1712,8 +1899,28 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "教師與學生查手邊可用聯絡方式，尚未確認科任何時有空。",
-                  "claims": [],
-                  "changes": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "老師都很忙，我怕問的都是笨問題。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -1
+                    },
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -1737,7 +1944,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -1748,7 +1962,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生把最先不懂的步驟寫在紙上，是否送問仍由本人決定。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "老師都很忙，我怕問的都是笨問題。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -1773,7 +1994,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -1784,7 +2012,14 @@
                 "emotional": true,
                 "outcome": {
                   "fact": "教師肯定願意帶問題來談，學生未因此答應立即去辦公室。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "老師都很忙，我怕問的都是笨問題。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -1809,7 +2044,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               }
@@ -1825,13 +2067,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生從問號中選一個具體題號，教師沒有擅自代答專科內容。／教師與學生查手邊可用聯絡方式，尚未確認科任何時有空。／學生把最先不懂的步驟寫在紙上，是否送問仍由本人決定。／教師肯定願意帶問題來談，學生未因此答應立即去辦公室。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「主動求助卻不敢問」的具體情況配權：1-1+ 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；3-1+ 口語表達與溝通；3-3− 執行與完成；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-08",
@@ -1849,24 +2092,24 @@
         ],
         "additionalCodes": [
           "3-1",
-          "3-2",
-          "3-3"
+          "3-3",
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.212,
+          0.263,
+          0.14,
+          0.175,
+          0.105,
+          0.105
         ],
         "directions": [
           1,
           1,
+          -1,
           1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -1949,7 +2192,14 @@
                 "outcome": {
                   "fact": "學生說照片只截到幾行；教師確認比較資料不完整，沒有要求查同學私訊。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -1985,7 +2235,14 @@
                 "outcome": {
                   "fact": "學生以已公告課程範圍標記自己的待讀部分，不再用照片推算落後章數。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -2
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -2097,13 +2354,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生說照片只截到幾行；教師確認比較資料不完整，沒有要求查同學私訊。／學生以已公告課程範圍標記自己的待讀部分，不再用照片推算落後章數。／教師提出暫不看進度訊息的短期觀察，未替學生退群或封鎖他人。／教師肯定學生自己已開始的工作，未把別人的較快進度說成不實。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「把別人的進度當基準」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；3-3− 執行與完成；3-4− 學習適應；2-3+ 身心疲勞。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-09",
@@ -2120,24 +2378,24 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "3-3",
+          "3-4",
+          "2-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.17,
+          0.17,
+          0.17,
+          0.234,
+          0.128,
+          0.128
         ],
         "directions": [
+          -1,
           1,
-          1,
-          1,
-          1,
-          1,
+          -1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -2369,13 +2627,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生在提醒列表指出哪些是自訂加碼，教師未把所有通知當成科任作業。／雙方在紙上先擬兩個可試的提醒窗口，學生尚未修改手機設定。／學生選擇記下通知出現時點，不交出手機密碼或讓教師查看其他訊息。／教師承接被通知追趕的煩躁，不把關掉通知視為拒絕學習。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「學習app提醒過密」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；3-3− 執行與完成；3-4− 學習適應；2-3+ 身心疲勞。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-10",
@@ -2392,24 +2651,24 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "3-3",
+          "3-4",
+          "2-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.205,
+          0.182,
+          0.182,
+          0.159,
+          0.136,
+          0.136
         ],
         "directions": [
+          -1,
           1,
-          1,
-          1,
-          1,
-          1,
+          -1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -2493,7 +2752,14 @@
                 "outcome": {
                   "fact": "學生說整理會安心也會吃掉時間；教師保留兩種效果，不將它認定為唯一拖延原因。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -2
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -2601,7 +2867,14 @@
                 "outcome": {
                   "fact": "教師以幽默指出整理與做題的落差，未要求把整齊文具丟掉或貶低學生。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -2641,13 +2914,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生說整理會安心也會吃掉時間；教師保留兩種效果，不將它認定為唯一拖延原因。／學生選一題作為整理後的起步，完成與否仍未發生。／教師把本次自述記在學生自己的規劃紙，不宣稱下次考前一定重逢。／教師以幽默指出整理與做題的落差，未要求把整齊文具丟掉或貶低學生。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「考前先整理文具」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；3-3− 執行與完成；4-1+ 成就動機；11-2− 導師時間餘裕。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-11",
@@ -2664,25 +2938,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "3-3",
+          "4-1",
+          "11-2"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.153,
+          0.136,
+          0.136,
+          0.22,
+          0.186,
+          0.169
         ],
         "directions": [
+          -1,
           1,
+          -1,
+          -1,
           1,
-          1,
-          1,
-          1,
-          1
+          -1
         ],
         "eligibility": {
           "people": [
@@ -2715,7 +2989,7 @@
           "participant",
           "participant",
           "participant",
-          "participant"
+          "player-work"
         ],
         "valence": "neutral"
       }
@@ -2773,7 +3047,14 @@
                 "outcome": {
                   "fact": "學生只願說昨夜就寢很晚；教師確認當前精神與安全需求，不逼問家庭隱私。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -2921,13 +3202,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生只願說昨夜就寢很晚；教師確認當前精神與安全需求，不逼問家庭隱私。／雙方刪去規劃中的額外清晨加碼，正式作業責任仍需另與科任討論。／教師建議學生保留簡短作息紀錄，必要聯繫只分享最小資訊，未將家長視為已同意。／教師表達對休息不足的擔心，不把少睡當努力勳章，也未診斷病因。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「連續熬夜補早起計畫」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；2-3+ 身心疲勞；3-3− 執行與完成；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-12",
@@ -2944,25 +3226,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "2-3",
+          "3-3",
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.219,
+          0.145,
+          0.145,
+          0.2,
+          0.182,
+          0.109
         ],
         "directions": [
+          -1,
           1,
+          -1,
           1,
-          1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -3081,8 +3363,17 @@
                 "outcome": {
                   "fact": "教師用學生選的一段示範改寫成提問，學生未答應重做整本筆記。",
                   "claims": [],
-                  "changes": [],
-                  "historyCodes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
+                  "historyCodes": [
+                    "H04-6"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -3193,13 +3484,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生嘗試用一句話概括一單元，仍分不清的兩詞留作疑問，未被當場判成全不會。／教師用學生選的一段示範改寫成提問，學生未答應重做整本筆記。／學生自選最困難的一頁留下問題標記，原筆記保留，不直接宣布方法無效。／教師肯定抄寫的投入並允許調整用途，沒有保證只靠筆記就能改善分數。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「筆記抄滿卻說不出重點」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；1-4+ 原則與倫理界線；3-3− 執行與完成；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-13",
@@ -3216,25 +3508,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "1-4",
+          "3-3",
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.165,
+          0.163,
+          0.163,
+          0.265,
+          0.122,
+          0.122
         ],
         "directions": [
+          -1,
           1,
+          -1,
           1,
-          1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -3317,7 +3609,14 @@
                 "outcome": {
                   "fact": "學生說兩人未約好催促頻率；教師只記此自述，不代替朋友說明原意。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -3389,7 +3688,14 @@
                 "outcome": {
                   "fact": "教師陪學生寫出是否願意繼續互相提醒的問句，尚未傳達給朋友。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -3432,7 +3738,14 @@
                       "visible": false
                     }
                   ],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -2
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -3488,14 +3801,15 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生說兩人未約好催促頻率；教師只記此自述，不代替朋友說明原意。／學生草擬希望每週而非每天回報的界線，朋友是否同意仍待詢問。／教師陪學生寫出是否願意繼續互相提醒的問句，尚未傳達給朋友。／教師回應需要幫忙又想有空間的矛盾，未判定任何一方不值得信任。學生並當面表示這次被聽見讓自己比較安心；此為本人感受而非朋友已改變。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L2",
           "L5"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「請同學監督變成互相催促」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；4-4+ 認同需求；6-1+ 群體影響力；9-3+ 校園歸屬。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-14",
@@ -3512,22 +3826,22 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "4-4",
+          "6-1",
+          "9-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.149,
+          0.148,
+          0.148,
+          0.185,
+          0.185,
+          0.185
         ],
         "directions": [
+          -1,
           1,
-          1,
-          1,
+          -1,
           1,
           1,
           1
@@ -3613,7 +3927,14 @@
                 "outcome": {
                   "fact": "學生回想起一題實際做過的練習，教師只確認此口述，不把整日坐館當成完成量。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -3649,7 +3970,14 @@
                 "outcome": {
                   "fact": "教師示範進館前寫目標、離館時寫實做內容的兩欄紀錄，學生尚未採行。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -3761,13 +4089,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生回想起一題實際做過的練習，教師只確認此口述，不把整日坐館當成完成量。／教師示範進館前寫目標、離館時寫實做內容的兩欄紀錄，學生尚未採行。／學生保留本週資料供自己比較，教師未預告下一週必然進步。／教師接住長時間卻沒把握的挫折，未把在館時數換算成學習能力。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「假日圖書館坐滿整天」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；2-3+ 身心疲勞；3-3− 執行與完成；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-15",
@@ -3784,25 +4113,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "2-3",
+          "3-3",
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.187,
+          0.167,
+          0.167,
+          0.208,
+          0.146,
+          0.125
         ],
         "directions": [
+          -1,
           1,
+          -1,
           1,
-          1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -4033,13 +4362,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生說最怕看到未補進度；教師未把這個說法認定為懶惰或唯一原因。／學生提出先讀一小段新課的起步目標，未被要求一次追回整週。／學生把目前各科已知進度列在自己的紙上，未知處留待公告確認。／教師同意休息有需要，並提醒仍可從小處重啟，沒有將休息改寫成所有待辦已取消。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「考完放鬆後不敢重啟」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；4-1+ 成就動機；3-4− 學習適應；3-3− 執行與完成。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-16",
@@ -4056,25 +4386,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
+          "4-1",
+          "3-4",
           "3-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.143,
+          0.232,
+          0.143,
+          0.196,
+          0.179,
+          0.107
         ],
         "directions": [
+          -1,
           1,
+          -1,
           1,
-          1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -4109,7 +4439,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "negative"
       }
     },
     {
@@ -4229,7 +4559,14 @@
                 "outcome": {
                   "fact": "學生願意帶更新清單再核對，教師記下的是待核對邀請，不是已完成任務。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -4305,13 +4642,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生指出新增清單有幾項是自己加的，教師把正式交辦與自訂工作分開，未知期限留空。／雙方另列已完成紀錄，未因清單還長便抹掉確有做過的事。／學生願意帶更新清單再核對，教師記下的是待核對邀請，不是已完成任務。／教師說出對已完成部分的肯定，學生把紙上的一個實做項圈起，未被保證焦慮消失。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「學習清單越勾越焦躁」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；3-3− 執行與完成；3-4− 學習適應；2-3+ 身心疲勞。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-17",
@@ -4328,24 +4666,24 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "3-3",
+          "3-4",
+          "2-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.176,
+          0.176,
+          0.157,
+          0.255,
+          0.118,
+          0.118
         ],
         "directions": [
+          -1,
           1,
-          1,
-          1,
-          1,
-          1,
+          -1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -4465,7 +4803,14 @@
                 "outcome": {
                   "fact": "教師示範每人帶一個疑問的讀書會提案，成員尚未同意更換形式。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -4577,13 +4922,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生自述想互問而非聽講；教師沒有代缺席成員認定他們有同一期待。／教師示範每人帶一個疑問的讀書會提案，成員尚未同意更換形式。／學生擬出詢問成員是否願意輪流的訊息，未將下一次聚會寫成已改善。／教師承接單向付出的感受，未判定發言者蓄意佔用或無能。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「小組讀書會只有一人發言」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；3-1− 口語表達與溝通；6-1+ 群體影響力；9-3+ 校園歸屬。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-18",
@@ -4601,22 +4947,22 @@
         ],
         "additionalCodes": [
           "3-1",
-          "3-2",
-          "3-3"
+          "6-1",
+          "9-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.217,
+          0.133,
+          0.133,
+          0.183,
+          0.167,
+          0.167
         ],
         "directions": [
+          -1,
           1,
-          1,
-          1,
-          1,
+          -1,
+          -1,
           1,
           1
         ],
@@ -4849,13 +5195,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生說興趣活動會設固定提醒，讀書則只靠記住；教師不推論兩者價值高低。／雙方在副本將短複習接在固定作息後，學生尚未實際執行。／學生決定先記一週可用空檔，未以預估空檔當可保證完成的時數。／教師指出學生已有安排某些活動的經驗，不把這次遺忘當人格缺陷。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「忘記計畫表卻記得興趣行程」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；3-3− 執行與完成；3-4− 學習適應；2-3+ 身心疲勞。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-19",
@@ -4872,24 +5219,24 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "3-3",
+          "3-4",
+          "2-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.259,
+          0.138,
+          0.155,
+          0.224,
+          0.121,
+          0.103
         ],
         "directions": [
+          -1,
           1,
-          1,
-          1,
-          1,
-          1,
+          -1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -4925,7 +5272,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "negative"
       }
     },
     {
@@ -5009,7 +5356,14 @@
                 "outcome": {
                   "fact": "雙方記下可試著重複的起步步驟，下一次結果仍不確定。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -5121,13 +5475,14 @@
         "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生指出這次先關閉通知再開始，教師只記本次自述，不宣稱這是成功唯一原因。／雙方記下可試著重複的起步步驟，下一次結果仍不確定。／教師問學生是否想分享及分享什麼，未主動聯繫家人或轉述私事。／教師當面祝賀這次確有完成的工作，沒有追加永遠不退步的要求。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「完成一次後怕下次退步」的具體情況配權：1-1+ 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；2-4+ 正向感受；3-3− 執行與完成；4-2+ 安全需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-20",
@@ -5144,24 +5499,24 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "2-4",
+          "3-3",
+          "4-2"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.191,
+          0.191,
+          0.132,
+          0.162,
+          0.162,
+          0.162
         ],
         "directions": [
           1,
           1,
+          -1,
           1,
-          1,
-          1,
+          -1,
           1
         ],
         "eligibility": {
@@ -5244,7 +5599,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生把不認同的目標留白，教師不把表格推論成家長已施壓的證據。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -5269,7 +5631,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -5280,7 +5649,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生提出一個本人願意嘗試的小目標，尚未執行，也不替家長放棄原期待。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -5305,7 +5681,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -5316,7 +5699,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "教師尊重學生暫不修改，表格仍由學生保留，沒有代簽或代填意願。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -5341,7 +5731,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -5352,7 +5749,14 @@
                 "emotional": true,
                 "outcome": {
                   "fact": "教師表達想聽本人聲音，學生知道可不同意表內目標，未被保證家長會接受。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -5377,7 +5781,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               }
@@ -5393,13 +5804,14 @@
         "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
         "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
         "distinctiveConsequence": "學生把不認同的目標留白，教師不把表格推論成家長已施壓的證據。／學生提出一個本人願意嘗試的小目標，尚未執行，也不替家長放棄原期待。／教師尊重學生暫不修改，表格仍由學生保留，沒有代簽或代填意願。／教師表達想聽本人聲音，學生知道可不同意表內目標，未被保證家長會接受。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「學習目標是替家長寫的」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3+ 自主需求；4-1+ 成就動機；7-1− 家庭支持；3-3− 執行與完成。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-21",
@@ -5416,25 +5828,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
+          "4-1",
+          "7-1",
           "3-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.21,
+          0.129,
+          0.21,
+          0.177,
+          0.177,
+          0.097
         ],
         "directions": [
+          -1,
           1,
           1,
           1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -6476,13 +6888,14 @@
         "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
         "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
         "distinctiveConsequence": "學生說擔心成為拖累，教師不把缺席同學想法寫成已知。／學生選一題能帶去討論的問題，尚未接受邀請或取得同伴協助。／教師尊重尚未決定參加，未替他回覆邀請或安排同學輪流帶讀。／教師承接害怕跟不上的壓力，未稱同學一定不在意或保證聚會順利。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「同學邀請解題卻拒絕」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3+ 自主需求；4-4+ 認同需求；6-1+ 群體影響力；9-3+ 校園歸屬。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-23",
@@ -6499,20 +6912,20 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "4-4",
+          "6-1",
+          "9-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.137,
+          0.155,
+          0.138,
+          0.19,
+          0.19,
+          0.19
         ],
         "directions": [
-          1,
+          -1,
           1,
           1,
           1,
@@ -6599,7 +7012,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生列出自己能用的兩個空間及限制，教師未擅自要求家人更改作息。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我不是不想讀，可是旁邊一直有人講話。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -6624,7 +7044,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -6635,7 +7062,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "雙方在副本討論降低噪音的可行方式，學生尚未取得家人同意。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我不是不想讀，可是旁邊一直有人講話。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -6660,7 +7094,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -6671,7 +7112,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生選擇先記被打斷的時點，不錄下家人私下談話作證。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我不是不想讀，可是旁邊一直有人講話。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -6696,7 +7144,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -6707,7 +7162,14 @@
                 "emotional": true,
                 "outcome": {
                   "fact": "教師表達被打斷的不易，沒有把家人定性為阻礙學生學習。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我不是不想讀，可是旁邊一直有人講話。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -6732,7 +7194,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               }
@@ -6748,13 +7217,14 @@
         "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
         "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
         "distinctiveConsequence": "學生列出自己能用的兩個空間及限制，教師未擅自要求家人更改作息。／雙方在副本討論降低噪音的可行方式，學生尚未取得家人同意。／學生選擇先記被打斷的時點，不錄下家人私下談話作證。／教師表達被打斷的不易，沒有把家人定性為阻礙學生學習。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「改讀書地點後分心」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3+ 自主需求；3-3− 執行與完成；3-4− 學習適應；2-3+ 身心疲勞。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-24",
@@ -6771,24 +7241,24 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "3-3",
+          "3-4",
+          "2-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.254,
+          0.157,
+          0.216,
+          0.118,
+          0.137,
+          0.118
         ],
         "directions": [
+          -1,
           1,
           1,
-          1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -6872,7 +7342,14 @@
                 "outcome": {
                   "fact": "學生說把全對才算完成；教師將此自訂標準與正式繳交要求分開。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -7020,13 +7497,14 @@
         "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
         "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
         "distinctiveConsequence": "學生說把全對才算完成；教師將此自訂標準與正式繳交要求分開。／學生在紙上另設已練與待訂正兩欄，未把未懂的題目勾成掌握。／教師尊重先沿用表格觀察的決定，提醒可記下勾選時的感受，不評價人格。／教師肯定確實動手練習，未把未訂正工作宣布完成或免除。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「訂下進度卻不敢畫完成」的具體情況配權：1-1+ 責任與行動持續；2-2− 焦慮與擔心；4-3− 自主需求；2-4+ 正向感受；3-3− 執行與完成；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-25",
@@ -7043,25 +7521,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "2-4",
+          "3-3",
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.214,
+          0.197,
+          0.131,
+          0.18,
+          0.18,
+          0.098
         ],
         "directions": [
           1,
+          -1,
+          -1,
           1,
-          1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -7143,7 +7621,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生回顧上次長假第一週投入過多的時數；教師不將回顧當作本週已放假。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我一開始很有幹勁，後來整個不想碰書。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -7168,7 +7653,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -7179,8 +7671,22 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "雙方以假設規劃示範留休息的節奏，沒有要求上課日照假日計畫執行。",
-                  "claims": [],
-                  "changes": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我一開始很有幹勁，後來整個不想碰書。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -7204,7 +7710,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -7215,8 +7728,22 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "教師建議觀察目前精神，不以兩天自記診斷原因；持續不適可尋求校內協助。",
-                  "claims": [],
-                  "changes": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我一開始很有幹勁，後來整個不想碰書。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -7240,7 +7767,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -7251,7 +7785,14 @@
                 "emotional": true,
                 "outcome": {
                   "fact": "教師回應過度衝刺的疲憊，未把停頓稱為懶惰或保證恢復速度。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我一開始很有幹勁，後來整個不想碰書。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -7276,7 +7817,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               }
@@ -7292,13 +7840,14 @@
         "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
         "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
         "distinctiveConsequence": "學生回顧上次長假第一週投入過多的時數；教師不將回顧當作本週已放假。／雙方以假設規劃示範留休息的節奏，沒有要求上課日照假日計畫執行。／教師建議觀察目前精神，不以兩天自記診斷原因；持續不適可尋求校內協助。／教師回應過度衝刺的疲憊，未把停頓稱為懶惰或保證恢復速度。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「長假第一週過度衝刺」的具體情況配權：1-1+ 責任與行動持續；2-2+ 焦慮與擔心；4-3+ 自主需求；3-3− 執行與完成；3-4− 學習適應；2-3+ 身心疲勞。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-26",
@@ -7315,24 +7864,24 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "3-3",
+          "3-4",
+          "2-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.187,
+          0.167,
+          0.229,
+          0.146,
+          0.125,
+          0.146
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -7564,13 +8113,14 @@
         "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
         "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
         "distinctiveConsequence": "學生說希望每天有不被打擾的短時段，教師未要求同學立刻配合。／學生草擬可提問與暫不接問的時段公告，未把它發到班群。／教師建議先記詢問頻率而不收集同學個別困難或排名。／教師肯定幫忙並支持保留自己時間，未將能力變成固定服務義務。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「幫同學講解反而沒複習」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；4-4+ 認同需求；6-1+ 群體影響力；9-3+ 校園歸屬。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-27",
@@ -7587,22 +8137,22 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "4-4",
+          "6-1",
+          "9-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.141,
+          0.14,
+          0.14,
+          0.193,
+          0.193,
+          0.193
         ],
         "directions": [
+          -1,
           1,
-          1,
-          1,
+          -1,
           1,
           1,
           1
@@ -7687,7 +8237,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生挑一個目前未懂的觀念，教師不替影片內容保證正確。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "每個人講法都不同，我怕少看一個就漏掉重點。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -7712,7 +8269,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -7723,8 +8287,22 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生在紙上選一份資源與一題對應練習，尚未完成或決定永久固定。",
-                  "claims": [],
-                  "changes": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "每個人講法都不同，我怕少看一個就漏掉重點。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -7748,7 +8326,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -7759,7 +8344,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "教師建議只記切換的觸發點，不索取完整瀏覽歷史。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "每個人講法都不同，我怕少看一個就漏掉重點。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -7784,7 +8376,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -7795,7 +8394,14 @@
                 "emotional": true,
                 "outcome": {
                   "fact": "教師承接資源過多的不易，未把選擇困難判成沒有毅力。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "每個人講法都不同，我怕少看一個就漏掉重點。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -7820,7 +8426,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               }
@@ -7836,13 +8449,14 @@
         "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
         "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
         "distinctiveConsequence": "學生挑一個目前未懂的觀念，教師不替影片內容保證正確。／學生在紙上選一份資源與一題對應練習，尚未完成或決定永久固定。／教師建議只記切換的觸發點，不索取完整瀏覽歷史。／教師承接資源過多的不易，未把選擇困難判成沒有毅力。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「從影片學習卻一直換頻道」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；3-4− 學習適應；8-3+ 訊息採信；11-4− 學校工作資源。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-28",
@@ -7859,25 +8473,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "3-4",
+          "8-3",
+          "11-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.125,
+          0.175,
+          0.175,
+          0.175,
+          0.175,
+          0.175
         ],
         "directions": [
+          -1,
           1,
+          -1,
+          -1,
           1,
-          1,
-          1,
-          1,
-          1
+          -1
         ],
         "eligibility": {
           "people": [
@@ -7910,9 +8524,9 @@
           "participant",
           "participant",
           "participant",
-          "participant"
+          "school"
         ],
-        "valence": "neutral"
+        "valence": "negative"
       }
     },
     {
@@ -7959,7 +8573,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生只願透露固定照顧時段，教師尊重不問被照顧者的私人病情。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我有排時間，但家裡有事就得先做。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -7984,7 +8605,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -7995,7 +8623,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "雙方在規劃副本找不衝突的短空檔，不假定照顧責任可以直接移交。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我有排時間，但家裡有事就得先做。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -8020,7 +8655,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -8031,7 +8673,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "教師先詢問希望連結哪種校內支持及可分享內容，未當場傳出家庭細節。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我有排時間，但家裡有事就得先做。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -8056,7 +8705,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -8067,8 +8723,22 @@
                 "emotional": true,
                 "outcome": {
                   "fact": "教師表達關切並確認眼前負荷，未保證家人會改變或校方一定減作業。",
-                  "claims": [],
-                  "changes": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我有排時間，但家裡有事就得先做。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -8092,7 +8762,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               }
@@ -8108,13 +8785,14 @@
         "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
         "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
         "distinctiveConsequence": "學生只願透露固定照顧時段，教師尊重不問被照顧者的私人病情。／雙方在規劃副本找不衝突的短空檔，不假定照顧責任可以直接移交。／教師先詢問希望連結哪種校內支持及可分享內容，未當場傳出家庭細節。／教師表達關切並確認眼前負荷，未保證家人會改變或校方一定減作業。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「讀書計畫被臨時家務打亂」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；7-4− 生活穩定度；7-1− 家庭支持；3-3− 執行與完成。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-29",
@@ -8131,25 +8809,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
+          "7-4",
+          "7-1",
           "3-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.194,
+          0.129,
+          0.129,
+          0.21,
+          0.177,
+          0.161
         ],
         "directions": [
+          -1,
           1,
-          1,
-          1,
-          1,
-          1,
-          1
+          -1,
+          -1,
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -8380,13 +9058,14 @@
         "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
         "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
         "distinctiveConsequence": "雙方指出兩次任務範圍不同，教師不把一次成功的做法推成萬用規則。／學生選擇保留起步方法並調整工作量，尚未執行新的計畫。／學生決定再試並記實況，教師未將再試意願寫成已獲相同效果。／教師肯定找到有效經驗並允許改法，不把調整說成背叛先前努力。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「計畫被一次成功綁住」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；2-4+ 正向感受；3-3− 執行與完成；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-30",
@@ -8403,25 +9082,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "2-4",
+          "3-3",
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.22,
+          0.136,
+          0.136,
+          0.186,
+          0.169,
+          0.153
         ],
         "directions": [
+          -1,
           1,
+          -1,
           1,
-          1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -8456,7 +9135,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "positive"
       }
     },
     {
@@ -8540,7 +9219,14 @@
                 "outcome": {
                   "fact": "教師示範只記做了什麼及感受的回顧，不以新獎懲替代舊獎勵。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -8652,13 +9338,14 @@
         "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
         "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
         "distinctiveConsequence": "學生說原本希望靠獎勵開始，後來更在意是否拿得到；教師保留為本人說法。／教師示範只記做了什麼及感受的回顧，不以新獎懲替代舊獎勵。／教師提出短期停用獎勵的選項，未替家長取消約定或宣稱已更輕鬆。／教師以幽默承接獎勵失去樂趣，沒有要求靠內在動機立刻撐過所有工作。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「想用獎勵督促卻失去效果」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；4-1+ 成就動機；3-3− 執行與完成；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-32",
@@ -8675,25 +9362,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "4-1",
+          "3-3",
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.176,
+          0.157,
+          0.157,
+          0.255,
+          0.137,
+          0.118
         ],
         "directions": [
+          -1,
           1,
+          -1,
           1,
-          1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -8812,7 +9499,14 @@
                 "outcome": {
                   "fact": "教師陪學生寫出希望哪一種回饋的詢問，科任尚未答應增加評量。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -8848,7 +9542,14 @@
                 "outcome": {
                   "fact": "學生選擇蒐集本週實際練習紀錄，不把預定練習量填成已完成。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-4",
+                      "delta": 1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -8884,7 +9585,14 @@
                 "outcome": {
                   "fact": "教師承接努力卻無法確認變化的不安，未用空泛保證代替證據。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -8924,13 +9632,14 @@
         "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
         "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
         "distinctiveConsequence": "學生發現保留的資料不足以比較，教師不以感覺宣布進步或退步。／教師陪學生寫出希望哪一種回饋的詢問，科任尚未答應增加評量。／學生選擇蒐集本週實際練習紀錄，不把預定練習量填成已完成。／教師承接努力卻無法確認變化的不安，未用空泛保證代替證據。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「缺乏回饋不知道有沒有進步」的具體情況配權：1-1+ 責任與行動持續；2-2− 焦慮與擔心；4-3− 自主需求；2-4+ 正向感受；4-1+ 成就動機；3-1− 口語表達與溝通。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-33",
@@ -8947,25 +9656,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "2-4",
+          "4-1",
+          "3-1"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.159,
+          0.14,
+          0.14,
+          0.193,
+          0.193,
+          0.175
         ],
         "directions": [
           1,
+          -1,
+          -1,
           1,
           1,
-          1,
-          1,
-          1
+          -1
         ],
         "eligibility": {
           "people": [
@@ -9048,7 +9757,14 @@
                 "outcome": {
                   "fact": "學生自述末班車時間，教師先記為待確認限制，不要求冒險晚歸。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -9084,8 +9800,17 @@
                 "outcome": {
                   "fact": "教師協助擬出午間自願短談的邀請，未替其他同學或科任排定時段。",
                   "claims": [],
-                  "changes": [],
-                  "historyCodes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
+                  "historyCodes": [
+                    "H04-6"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -9196,13 +9921,14 @@
         "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
         "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
         "distinctiveConsequence": "學生自述末班車時間，教師先記為待確認限制，不要求冒險晚歸。／教師協助擬出午間自願短談的邀請，未替其他同學或科任排定時段。／學生暫不參加放學共學，教師保留其他支援詢問，未視為拒絕學習。／教師承認交通限制的差異，沒有向全班揭露學生住處或責怪家庭。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「放學太晚無法參加共學」的具體情況配權：1-1− 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；9-3+ 校園歸屬；9-2− 班級合作氣氛；3-3− 執行與完成。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-34",
@@ -9219,25 +9945,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
+          "9-3",
+          "9-2",
           "3-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.169,
+          0.151,
+          0.151,
+          0.208,
+          0.208,
+          0.113
         ],
         "directions": [
+          -1,
           1,
+          -1,
           1,
-          1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -9269,7 +9995,7 @@
           "participant",
           "participant",
           "participant",
-          "participant",
+          "classroom",
           "participant"
         ],
         "valence": "neutral"
@@ -9319,8 +10045,22 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生列出今日確實完成的項目，教師只核對所提供紀錄，不宣告所有功課都已結束。",
-                  "claims": [],
-                  "changes": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我知道做完了，但現在休息會很不安。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -9344,7 +10084,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -9355,7 +10102,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "雙方在個人規劃設定停止自訂加碼的時間，正式期限仍需履行。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我知道做完了，但現在休息會很不安。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -9380,7 +10134,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -9391,7 +10152,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "教師提議簡記休息前後精神，未將休息當成需證明有效才被允許。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我知道做完了，但現在休息會很不安。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -9416,7 +10184,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -9427,7 +10202,14 @@
                 "emotional": true,
                 "outcome": {
                   "fact": "教師承接做完仍不敢停的辛苦，不把擔憂診斷為疾病或保證一句話能解除。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我知道做完了，但現在休息會很不安。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -9452,7 +10234,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               }
@@ -9468,13 +10257,14 @@
         "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
         "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
         "distinctiveConsequence": "學生列出今日確實完成的項目，教師只核對所提供紀錄，不宣告所有功課都已結束。／雙方在個人規劃設定停止自訂加碼的時間，正式期限仍需履行。／教師提議簡記休息前後精神，未將休息當成需證明有效才被允許。／教師承接做完仍不敢停的辛苦，不把擔憂診斷為疾病或保證一句話能解除。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「完成學習後仍不敢休息」的具體情況配權：1-1+ 責任與行動持續；2-2+ 焦慮與擔心；4-3− 自主需求；2-3+ 身心疲勞；7-4− 生活穩定度；3-3− 執行與完成。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-01-35",
@@ -9491,25 +10281,25 @@
           "4-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
+          "2-3",
+          "7-4",
           "3-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.166,
+          0.208,
+          0.111,
+          0.181,
+          0.181,
+          0.153
         ],
         "directions": [
           1,
           1,
+          -1,
           1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [

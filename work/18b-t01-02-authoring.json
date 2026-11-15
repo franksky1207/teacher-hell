@@ -81,8 +81,17 @@
                 "outcome": {
                   "fact": "教師協助把一題失分轉成可問的步驟，尚未得到物理科任的判讀。",
                   "claims": [],
-                  "changes": [],
-                  "historyCodes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
+                  "historyCodes": [
+                    "H04-6"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -193,13 +202,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生將兩張物理卷的單元標題並排，兩次範圍不同，不能只由分數判定能力下降。／教師協助把一題失分轉成可問的步驟，尚未得到物理科任的判讀。／學生在卷面副本圈出一類錯誤保留比較，沒有歸因成不用功。／教師承接突然下滑的難受，沒有承諾下次一定回升。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「段考單科突然下滑」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-2− 判斷與分析；3-4− 學習適應；2-4+ 正向感受。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-01",
@@ -216,24 +226,24 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
           "3-2",
-          "3-3"
+          "3-4",
+          "2-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.276,
+          0.17,
+          0.17,
+          0.128,
+          0.128,
+          0.128
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -269,7 +279,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "negative"
       }
     },
     {
@@ -317,7 +327,14 @@
                 "outcome": {
                   "fact": "雙方分列本人成績及全班排名，教師只說明兩種指標可不同方向，未取得同學個別分數。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -465,13 +482,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "雙方分列本人成績及全班排名，教師只說明兩種指標可不同方向，未取得同學個別分數。／學生找出卷上多得分的單元，教師只肯定可由本人卷面支持的表現。／教師提出下次比較相近題型，不把不同次測驗當等值量尺。／教師肯定已取得的分數，不將排名後退解讀為退步人格。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「總分進步名次卻後退」的具體情況配權：4-1+ 成就動機；2-2− 焦慮與擔心；4-4+ 認同需求；2-4+ 正向感受；3-2− 判斷與分析；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-02",
@@ -488,25 +506,25 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
+          "2-4",
           "3-2",
-          "3-3"
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.264,
+          0.14,
+          0.211,
+          0.175,
+          0.105,
+          0.105
         ],
         "directions": [
           1,
+          -1,
           1,
           1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -541,7 +559,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "positive"
       }
     },
     {
@@ -661,7 +679,14 @@
                 "outcome": {
                   "fact": "教師陪學生在短文圈出一處不明指涉，未宣告已補足閱讀弱點。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -737,13 +762,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生把失分閱讀題分成詞義與推論，分類仍可由國文科任確認。／學生選一題附上自己的理解供詢問，尚未取得專科回應。／教師陪學生在短文圈出一處不明指涉，未宣告已補足閱讀弱點。／教師承接科目落差的不安，不保證數理強項會自動帶動語文。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「數理優勢掩蓋語文弱點」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-2− 判斷與分析；3-4− 學習適應；2-4+ 正向感受。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-03",
@@ -760,24 +786,24 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
           "3-2",
-          "3-3"
+          "3-4",
+          "2-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.271,
+          0.187,
+          0.167,
+          0.125,
+          0.125,
+          0.125
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -897,7 +923,14 @@
                 "outcome": {
                   "fact": "教師示範在副本先標條件再作答，學生未因此保證考場能重現。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -1009,13 +1042,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生圈出兩題漏讀的條件，教師不把所有失分一律叫粗心。／教師示範在副本先標條件再作答，學生未因此保證考場能重現。／雙方保留本次卷面供自己比較，下一次失誤尚未發生。／教師回應會做卻漏條件的懊惱，未以自責換取成績承諾。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「平時會寫段考看漏條件」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-2− 判斷與分析；3-4− 學習適應；2-4+ 正向感受。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-04",
@@ -1032,24 +1066,24 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
           "3-2",
-          "3-3"
+          "3-4",
+          "2-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.278,
+          0.148,
+          0.148,
+          0.204,
+          0.111,
+          0.111
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -1133,7 +1167,14 @@
                 "outcome": {
                   "fact": "教師與學生整理需要詢問的評量組成，未替科任宣布平時成績比例。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -1241,7 +1282,14 @@
                 "outcome": {
                   "fact": "教師接住不安並提醒先核對規則，沒有保證總成績一定及格。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -1281,13 +1329,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "教師與學生整理需要詢問的評量組成，未替科任宣布平時成績比例。／學生列出尚缺項及已知補交規則，未保證全部仍可補交或恢復分數。／雙方查找學生可取得的公告，找不到的權重標為待確認。／教師接住不安並提醒先核對規則，沒有保證總成績一定及格。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「段考高分卻缺交作業」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；1-1− 責任與行動持續；3-2− 判斷與分析；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-05",
@@ -1304,25 +1353,25 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
+          "1-1",
           "3-2",
-          "3-3"
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.273,
+          0.164,
+          0.145,
+          0.2,
+          0.109,
+          0.109
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
-          1
+          -1,
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -1357,7 +1406,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "negative"
       }
     },
     {
@@ -1553,13 +1602,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "雙方並列兩份測驗的範圍與題數，不直接將補習班高分換算校內應得分。／學生挑出校內失分的題型供任課判讀，尚未得到弱點分析。／學生保留自己的兩張卷，不收集別人的補習成績作排名。／教師回應分數落差的困惑，未以任一測驗否定另一種學習。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「補習測驗與校內評量落差」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-2− 判斷與分析；3-4− 學習適應；2-4+ 正向感受。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-06",
@@ -1576,24 +1626,24 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
           "3-2",
-          "3-3"
+          "3-4",
+          "2-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.191,
+          0.17,
+          0.17,
+          0.213,
+          0.128,
+          0.128
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -1749,7 +1799,14 @@
                 "outcome": {
                   "fact": "教師陪學生寫出個人座位與自述影響，不把紀錄當成設備故障的證明。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -1825,13 +1882,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "教師詢問學生當時可觀察的聲音狀況及有無反映，設備異常仍未證實。／學生把具體聽不清的時點整理成詢問，是否查核及評分由英文科任依程序處理。／教師陪學生寫出個人座位與自述影響，不把紀錄當成設備故障的證明。／教師承認值得反映的疑問，沒有承諾補考或改分。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「英聽突然大幅失分」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-2− 判斷與分析；3-4− 學習適應；2-4+ 正向感受。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-07",
@@ -1848,24 +1906,24 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
           "3-2",
-          "3-3"
+          "3-4",
+          "2-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.196,
+          0.174,
+          0.174,
+          0.196,
+          0.13,
+          0.13
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -1901,7 +1959,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "negative"
       }
     },
     {
@@ -1948,7 +2006,14 @@
                 "kind": "action",
                 "outcome": {
                   "fact": "學生與教師分列目前知道的試卷及計分資訊，未知班級條件保留空白。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我們班是不是比較吃虧？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -1973,7 +2038,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -1984,9 +2056,25 @@
                 "kind": "support",
                 "outcome": {
                   "fact": "教師協助擬出只詢問共同標準的問題，未要求取得別班個別成績。",
-                  "claims": [],
-                  "changes": [],
-                  "historyCodes": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我們班是不是比較吃虧？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
+                  "historyCodes": [
+                    "H04-6"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -2009,7 +2097,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -2020,8 +2115,22 @@
                 "kind": "defer",
                 "outcome": {
                   "fact": "學生決定不再轉貼未查證的班級比較，教師未代為刪除他人訊息。",
-                  "claims": [],
-                  "changes": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我們班是不是比較吃虧？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -2
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -2045,7 +2154,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -2056,7 +2172,14 @@
                 "kind": "action",
                 "outcome": {
                   "fact": "教師肯定重視公平，未認定別班得到不當優待。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我們班是不是比較吃虧？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -2081,7 +2204,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               }
@@ -2097,13 +2227,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生與教師分列目前知道的試卷及計分資訊，未知班級條件保留空白。／教師協助擬出只詢問共同標準的問題，未要求取得別班個別成績。／學生決定不再轉貼未查證的班級比較，教師未代為刪除他人訊息。／教師肯定重視公平，未認定別班得到不當優待。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「不同班平均分差距大」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-2− 判斷與分析；3-4− 學習適應；2-4+ 正向感受。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-08",
@@ -2120,24 +2251,24 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
           "3-2",
-          "3-3"
+          "3-4",
+          "2-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.226,
+          0.163,
+          0.163,
+          0.204,
+          0.122,
+          0.122
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -2694,8 +2825,17 @@
                 "outcome": {
                   "fact": "教師協助挑出目前單元的具體卡點供科任回應，未決定退出活動。",
                   "claims": [],
-                  "changes": [],
-                  "historyCodes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
+                  "historyCodes": [
+                    "H04-6"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -2806,13 +2946,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生說喜歡的是動手探究而非限時題，教師不以低分宣判興趣不真實。／教師協助挑出目前單元的具體卡點供科任回應，未決定退出活動。／學生暫不決定社團去留，教師未替家長或社團改變安排。／教師支持保留興趣與面對弱點可以並行，沒有保證分數不影響任何資格。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「熱門科目變成最弱項」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；2-4+ 正向感受；3-2− 判斷與分析；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-10",
@@ -2829,25 +2970,25 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
+          "2-4",
           "3-2",
-          "3-3"
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.24,
+          0.16,
+          0.16,
+          0.2,
+          0.12,
+          0.12
         ],
         "directions": [
           1,
           1,
           1,
           1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -3002,7 +3143,14 @@
                 "outcome": {
                   "fact": "教師示範只記單題用時與卡點，不以速度替學習貼標籤。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -3078,13 +3226,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生說訂正可慢慢查資料；雙方分開記下考場及訂正的條件，未推出唯一失分原因。／學生整理希望請教的限時取捨問題，尚未取得科任策略。／教師示範只記單題用時與卡點，不以速度替學習貼標籤。／教師肯定可在較多支持下做對，未當作正式原分數應更改的證據。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「考後訂正得滿分卻段考低」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；11-2− 導師時間餘裕；3-2− 判斷與分析；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-11",
@@ -3101,25 +3250,25 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
+          "11-2",
           "3-2",
-          "3-3"
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.283,
+          0.151,
+          0.151,
+          0.189,
+          0.113,
+          0.113
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
-          1
+          -1,
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -3150,7 +3299,7 @@
           "participant",
           "participant",
           "participant",
-          "participant",
+          "player-work",
           "participant",
           "participant"
         ],
@@ -3350,13 +3499,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生把本人代數與幾何的錯題分欄，未用整科總分掩蓋差異。／學生選一題幾何圖形供專科詢問，教師不自行判定幾何能力不足。／雙方規劃記錄幾何練習時卡住的步驟，尚無一週觀察結果。／教師提醒總分不是所有單元的判決，未保證分欄就會改善成績。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「同科不同單元兩極化」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-2− 判斷與分析；3-4− 學習適應；2-4+ 正向感受。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-12",
@@ -3373,24 +3523,24 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
           "3-2",
-          "3-3"
+          "3-4",
+          "2-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.191,
+          0.19,
+          0.19,
+          0.143,
+          0.143,
+          0.143
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -3474,7 +3624,14 @@
                 "outcome": {
                   "fact": "教師協助查學生可取得的成績計算說明，未知學分處理仍待教務確認。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -3510,7 +3667,14 @@
                 "outcome": {
                   "fact": "學生列出各科待詢問的評量項目，未把所有老師視為已同意補救。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -3546,7 +3710,14 @@
                 "outcome": {
                   "fact": "教師陪學生停止用猜測數字反覆試算，保留正式資料更新後再看。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -3622,13 +3793,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "教師協助查學生可取得的成績計算說明，未知學分處理仍待教務確認。／學生列出各科待詢問的評量項目，未把所有老師視為已同意補救。／教師陪學生停止用猜測數字反覆試算，保留正式資料更新後再看。／教師承接反覆計算的焦慮，未保證總平均或畢業資格安全。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「擔心平均被一科拖垮」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；4-2+ 安全需求；3-2− 判斷與分析；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-13",
@@ -3645,25 +3817,25 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
+          "4-2",
           "3-2",
-          "3-3"
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.16,
+          0.24,
+          0.16,
+          0.2,
+          0.12,
+          0.12
         ],
         "directions": [
           1,
           1,
           1,
           1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -3698,7 +3870,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "negative"
       }
     },
     {
@@ -3818,7 +3990,14 @@
                 "outcome": {
                   "fact": "教師先詢問是否需要協助及可分享範圍，沒有自動聯絡家長。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -3894,13 +4073,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生說希望被看見有多做練習，教師未推定家長只重視名次的動機。／學生從自己的資料選出可分享的前後差異，未提供他人分數。／教師先詢問是否需要協助及可分享範圍，沒有自動聯絡家長。／教師肯定已提供的學習證據，不承諾家長會改變評價。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「家長只問全班名次」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；4-3+ 自主需求；7-1− 家庭支持；6-1+ 群體影響力。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-14",
@@ -3917,24 +4097,24 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "4-3",
+          "7-1",
+          "6-1"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.196,
+          0.121,
+          0.197,
+          0.167,
+          0.167,
+          0.152
         ],
         "directions": [
           1,
           1,
           1,
           1,
-          1,
+          -1,
           1
         ],
         "eligibility": {
@@ -4166,13 +4346,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生列出換位同期也有新單元及作息變化，教師不把座位與下降直接畫因果線。／教師詢問實際看不清或噪音情況，尚未決定換位或判定視力問題。／雙方提出短期記錄座位干擾的方式，不用未完成觀察推定根因。／教師表達願意查明不適，沒有保證換位後分數就回來。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「交換座位後成績下降」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-4− 學習適應；3-2− 判斷與分析；2-4+ 正向感受。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-15",
@@ -4189,24 +4370,24 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
+          "3-4",
           "3-2",
-          "3-3"
+          "2-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.278,
+          0.148,
+          0.148,
+          0.204,
+          0.111,
+          0.111
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -4362,7 +4543,14 @@
                 "outcome": {
                   "fact": "教師陪學生保留題目及疑問，不收集全班抱怨當命題不當的證據。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -4398,7 +4586,14 @@
                 "outcome": {
                   "fact": "教師回應失望並支持提出可核對的問題，未替科任道歉或宣布重考。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -4438,13 +4633,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生指出認為陌生的一題並說明與練習的差別，教師未以主觀覺得難判定超綱。／學生擬出對評量範圍的具體詢問，正式解釋仍待任課。／教師陪學生保留題目及疑問，不收集全班抱怨當命題不當的證據。／教師回應失望並支持提出可核對的問題，未替科任道歉或宣布重考。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「認為老師出的題目太難」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；11-2− 導師時間餘裕；3-2− 判斷與分析；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-16",
@@ -4461,25 +4657,25 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
+          "11-2",
           "3-2",
-          "3-3"
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.191,
+          0.17,
+          0.17,
+          0.213,
+          0.128,
+          0.128
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
-          1
+          -1,
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -4510,7 +4706,7 @@
           "participant",
           "participant",
           "participant",
-          "participant",
+          "player-work",
           "participant",
           "participant"
         ],
@@ -4598,8 +4794,17 @@
                 "outcome": {
                   "fact": "教師協助查可用教材與詢問管道，未將拿到資源當成已補完。",
                   "claims": [],
-                  "changes": [],
-                  "historyCodes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
+                  "historyCodes": [
+                    "H04-6"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -4710,13 +4915,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "雙方依出缺課期間列出可能漏學單元，仍需課程資料確認實際缺口。／教師協助查可用教材與詢問管道，未將拿到資源當成已補完。／學生列出尚未取得的課程內容作待辦，不填成已完成。／教師承接追進度的不易，未把缺課等同不願學習或承諾減免評量。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「某次缺課後成績滑落」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-2− 判斷與分析；3-4− 學習適應；2-4+ 正向感受。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-17",
@@ -4733,24 +4939,24 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
           "3-2",
-          "3-3"
+          "3-4",
+          "2-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.276,
+          0.17,
+          0.17,
+          0.128,
+          0.128,
+          0.128
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -4786,7 +4992,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "negative"
       }
     },
     {
@@ -4982,13 +5188,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生將小考與段考題型並列，雙方不因一次翻身判定能力從此穩定。／學生說這次有做限時練習，教師將其保留為本人策略自述而非驗證因果。／教師建議保留本次卷供後續觀察，不保證未來分數相同。／教師與學生分享本次成功的喜悅，同時不追加連續高分要求。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「小考很差段考卻翻身」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；2-4+ 正向感受；3-2− 判斷與分析；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-18",
@@ -5005,25 +5212,25 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
+          "2-4",
           "3-2",
-          "3-3"
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.278,
+          0.148,
+          0.148,
+          0.185,
+          0.13,
+          0.111
         ],
         "directions": [
           1,
           1,
           1,
           1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -5058,7 +5265,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "positive"
       }
     },
     {
@@ -5114,7 +5321,14 @@
                 "outcome": {
                   "fact": "學生描述分數被看見的途徑，教師只記本人所知，不再擴散；必要保護與正式反映不以選項決定。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -2
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -5150,8 +5364,17 @@
                 "outcome": {
                   "fact": "教師協助擬出私下或書面提問的方式，尚未取得任課時間。",
                   "claims": [],
-                  "changes": [],
-                  "historyCodes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
+                  "historyCodes": [
+                    "H04-6"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -5186,7 +5409,14 @@
                 "outcome": {
                   "fact": "學生表示目前不想再公開談此事，教師尊重並說明必要處理的保密界線。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -5262,13 +5492,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生描述分數被看見的途徑，教師只記本人所知，不再擴散；必要保護與正式反映不以選項決定。／教師協助擬出私下或書面提問的方式，尚未取得任課時間。／學生表示目前不想再公開談此事，教師尊重並說明必要處理的保密界線。／教師承接被比較的壓力，未宣稱其他同學已停止評論。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「成績公開後不敢問問題」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-1− 口語表達與溝通；8-4+ 資訊傳播；3-2− 判斷與分析。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-19",
@@ -5286,24 +5517,24 @@
         ],
         "additionalCodes": [
           "3-1",
-          "3-2",
-          "3-3"
+          "8-4",
+          "3-2"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.21,
+          0.21,
+          0.145,
+          0.177,
+          0.161,
+          0.097
         ],
         "directions": [
           1,
           1,
           1,
+          -1,
           1,
-          1,
-          1
+          -1
         ],
         "eligibility": {
           "people": [
@@ -5338,7 +5569,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "negative"
       }
     },
     {
@@ -5534,13 +5765,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "雙方分開看學生提供的口頭參與及書面作答，不用其中一種代替全部理解。／學生用自己的話先口述再試寫一小段，教師未替科任判定得分。／學生整理想知道的書面要求，尚未獲任課說明。／教師肯定願意發言，沒有因此推定筆試低分必是評量不公。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「課堂發言多卻考不好」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-1− 口語表達與溝通；6-1+ 群體影響力；3-2− 判斷與分析。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-20",
@@ -5558,24 +5790,24 @@
         ],
         "additionalCodes": [
           "3-1",
-          "3-2",
-          "3-3"
+          "6-1",
+          "3-2"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.251,
+          0.133,
+          0.133,
+          0.183,
+          0.183,
+          0.117
         ],
         "directions": [
           1,
           1,
           1,
+          -1,
           1,
-          1,
-          1
+          -1
         ],
         "eligibility": {
           "people": [
@@ -5806,13 +6038,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生對照兩題自己的推理，發現停點未必相同，教師不由題型相同推論錯因相同。／雙方在副本寫下辨認條件的提示，學生尚未驗證在新題有效。／學生保存兩次錯題及當時想法，不把第三次還沒發生的結果寫入歷史。／教師接住重犯的煩躁，提醒紀錄可以提供線索，未保證下次不再錯。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「連續兩次錯同一類題」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-2− 判斷與分析；3-4− 學習適應；2-4+ 正向感受。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-21",
@@ -5829,24 +6062,24 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
           "3-2",
-          "3-3"
+          "3-4",
+          "2-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.185,
+          0.209,
+          0.186,
+          0.14,
+          0.14,
+          0.14
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -6078,13 +6311,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生分別描述兩科情境，教師不把任一評語當成整體人格結論。／雙方列出不同科目可參與的方式，尚未代表兩位科任接受解釋。／教師先問學生願意如何使用評語，不轉述另一教師的話給缺席者。／教師承認人在不同課堂可有不同表現，未宣告任一評語失實。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「不同科老師的評語衝突」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；11-2− 導師時間餘裕；3-2− 判斷與分析；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-22",
@@ -6101,25 +6335,25 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
+          "11-2",
           "3-2",
-          "3-3"
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.175,
+          0.174,
+          0.174,
+          0.217,
+          0.13,
+          0.13
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
-          1
+          -1,
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -6150,7 +6384,7 @@
           "participant",
           "participant",
           "participant",
-          "participant",
+          "player-work",
           "participant",
           "participant"
         ],
@@ -6202,7 +6436,14 @@
                 "outcome": {
                   "fact": "教師分開說明重做練習與原正式評量的目的，沒有自行更動原分。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -6350,13 +6591,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "教師分開說明重做練習與原正式評量的目的，沒有自行更動原分。／學生擬出對合法補救途徑的詢問，尚未得到任課許可。／學生保留後來做對的卷面作個人紀錄，不把它當自動改分憑據。／教師肯定後來能完成的學習，未以鼓勵否定正式規則或保證補分。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「補做練習與原分數的疑問」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-3− 執行與完成；3-2− 判斷與分析；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-24",
@@ -6373,25 +6615,25 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
+          "3-3",
           "3-2",
-          "3-3"
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.245,
+          0.151,
+          0.151,
+          0.208,
+          0.113,
+          0.132
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
-          1
+          -1,
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -6510,8 +6752,17 @@
                 "outcome": {
                   "fact": "教師協助整理可供查核的題號及時點，是否受理由權責單位決定。",
                   "claims": [],
-                  "changes": [],
-                  "historyCodes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
+                  "historyCodes": [
+                    "H04-6"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -6622,13 +6873,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生與教師保留自己的答案卡影本及規則疑問，不把自述填錯當成設備錯誤。／教師協助整理可供查核的題號及時點，是否受理由權責單位決定。／學生在空白練習卡試用逐題對號檢查，未改動原卡或重寫歷史答案。／教師回應發現錯格的懊惱，沒有承諾以會寫就可補回分數。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「考後發現答案卡填錯格」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-2− 判斷與分析；3-4− 學習適應；2-4+ 正向感受。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-25",
@@ -6645,24 +6897,24 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
           "3-2",
-          "3-3"
+          "3-4",
+          "2-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.255,
+          0.17,
+          0.17,
+          0.149,
+          0.128,
+          0.128
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -6894,13 +7146,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生說願意談距及格還差哪些題，教師不把58分說成已及格。／學生挑一個目前可練的題型，教師未保證再練一定跨過及格線。／教師詢問被取笑的情況與支持需求，依實際程序處理言語問題，不以分數裁定是否應受尊重。／教師承認距門檻很近仍會失落，不把距及格兩分誤說成這次只進步兩分。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「進步到58分卻被取笑未及格」的具體情況配權：4-1+ 成就動機；2-2− 焦慮與擔心；4-4+ 認同需求；2-4+ 正向感受；3-2− 判斷與分析；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-26",
@@ -6917,25 +7170,25 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
+          "2-4",
           "3-2",
-          "3-3"
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.245,
+          0.151,
+          0.17,
+          0.208,
+          0.113,
+          0.113
         ],
         "directions": [
           1,
+          -1,
           1,
           1,
-          1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -6970,7 +7223,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "positive"
       }
     },
     {
@@ -7166,13 +7419,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生列出本人競賽與課業時段，教師不由同時變化推定社團是唯一滑落原因。／學生把具體課業缺口整理成可向任課詢問的內容，未取得減作業承諾。／教師讓學生先說想保留的活動及可調整處，不替他退出社團或承諾家長同意。／教師同時肯定得獎與提醒課業需求，未將兩者寫成只能二選一。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「社團成果優秀學科卻滑落」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；2-4+ 正向感受；3-2− 判斷與分析；3-4− 學習適應。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-27",
@@ -7189,25 +7443,25 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
+          "2-4",
           "3-2",
-          "3-3"
+          "3-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.283,
+          0.151,
+          0.151,
+          0.189,
+          0.113,
+          0.113
         ],
         "directions": [
           1,
           1,
           1,
           1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -7362,7 +7616,14 @@
                 "outcome": {
                   "fact": "教師陪學生保留公告日期及本人欄位截圖，不擷取同學個資。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -7438,13 +7699,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "雙方按學生持有的公告分列各項權重，尚未確認系統實際套用是否相同。／學生整理公告與成績欄位對不上之處供科任查核，教師不自行改登錄。／教師陪學生保留公告日期及本人欄位截圖，不擷取同學個資。／教師承接把數字落差誤認成退步的不安，未宣告一定只是公式問題。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「成績變動源於計分方式」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-2− 判斷與分析；3-4− 學習適應；2-4+ 正向感受。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-28",
@@ -7461,24 +7723,24 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
           "3-2",
-          "3-3"
+          "3-4",
+          "2-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.27,
+          0.167,
+          0.167,
+          0.146,
+          0.125,
+          0.125
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -7710,13 +7972,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生比較先前與目前單元題型要求，教師不把單元差異當成全部失分原因。／學生擬出對應用題的具體疑問，尚未得到科任回饋。／教師提出在一單元試記新方法與結果，沒有宣告新方法已有效。／教師肯定先前付出並容許調整，未把過去的方法全面判成錯誤。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「整合單元讓原有方法卡住」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；3-4− 學習適應；3-2− 判斷與分析；2-4+ 正向感受。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-29",
@@ -7733,24 +7996,24 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
+          "3-4",
           "3-2",
-          "3-3"
+          "2-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.175,
+          0.174,
+          0.174,
+          0.217,
+          0.13,
+          0.13
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -7982,13 +8245,14 @@
         "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生自述自己在報告負責的部分，教師未由小組高分推定每人理解相同。／學生選一段報告改成個人短答，停在不懂處，未把練習算正式加分。／學生保留個人試答與問題供科任討論，未揭露其他組員表現。／教師肯定參與報告的價值，也承認個人理解仍需另看，不保證兩種分數一致。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-semantic-review",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
         ],
-        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
+        "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。",
+        "numericCausalityNote": "候選六碼依「分組報告高分個人筆試低」的具體情況配權：4-1+ 成就動機；2-2+ 焦慮與擔心；4-4+ 認同需求；4-3+ 自主需求；9-2− 班級合作氣氛；3-2− 判斷與分析。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。"
       },
       "definition": {
         "id": "content:18b-t01-02-30",
@@ -8005,25 +8269,25 @@
           "4-4"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "4-3",
+          "9-2",
+          "3-2"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.153,
+          0.154,
+          0.154,
+          0.212,
+          0.212,
+          0.115
         ],
         "directions": [
           1,
           1,
           1,
           1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -8055,7 +8319,7 @@
           "participant",
           "participant",
           "participant",
-          "participant",
+          "classroom",
           "participant"
         ],
         "valence": "neutral"

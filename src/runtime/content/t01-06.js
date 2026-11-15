@@ -83,7 +83,14 @@ export default [
               "outcome": {
                 "fact": "教師示範用題號及待確認觀念取代完整抄題，原題仍保留供查。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -155,7 +162,14 @@ export default [
               "outcome": {
                 "fact": "教師以幽默提醒整理成本，提議暫停美化，未否定既有努力。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -203,25 +217,25 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "1-4",
+        "3-3",
+        "11-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.16,
+        0.16,
+        0.16,
+        0.26,
+        0.12,
+        0.14
       ],
       "directions": [
+        -1,
         1,
         1,
         1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -254,7 +268,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant"
+        "player-work"
       ],
       "valence": "neutral"
     }
@@ -304,7 +318,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "雙方在紙本作息刪去車上閱讀，尚未改變真實交通安排。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我一下車就很不舒服，表上還寫讀兩章。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -329,7 +350,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -340,7 +368,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師提出不需操作螢幕的聽讀方案，提醒不適便停止，不保證適合學生。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我一下車就很不舒服，表上還寫讀兩章。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -365,7 +400,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -376,7 +418,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生把規劃表的車程標為休息，未因此增加其他時段任務。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我一下車就很不舒服，表上還寫讀兩章。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -401,7 +450,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -412,7 +468,14 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師表達心疼，提醒暈車不等於缺乏自律，未診斷身體狀況。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我一下車就很不舒服，表上還寫讀兩章。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -437,7 +500,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             }
@@ -461,24 +531,24 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "11-2",
+        "4-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.185,
+        0.186,
+        0.186,
+        0.14,
+        0.163,
+        0.14
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -511,10 +581,10 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "player-work",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "negative"
     }
   },
   {
@@ -1129,25 +1199,25 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
         "3-2",
-        "3-3"
+        "3-3",
+        "11-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.184,
+        0.163,
+        0.163,
+        0.204,
+        0.143,
+        0.143
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -1180,7 +1250,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant"
+        "player-work"
       ],
       "valence": "neutral"
     }
@@ -1267,7 +1337,14 @@ export default [
               "outcome": {
                 "fact": "教師示範先記猜法與信心再翻頁，學生尚未完成整組練習。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1387,24 +1464,24 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "11-2",
+        "4-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.182,
+        0.182,
+        0.182,
+        0.159,
+        0.159,
+        0.136
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -1437,7 +1514,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "player-work",
         "participant"
       ],
       "valence": "neutral"
@@ -1645,24 +1722,24 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "11-2",
+        "4-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.166,
+        0.167,
+        0.167,
+        0.229,
+        0.146,
+        0.125
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -1695,7 +1772,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "player-work",
         "participant"
       ],
       "valence": "neutral"
@@ -1903,24 +1980,24 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "11-2",
+        "4-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.175,
+        0.174,
+        0.239,
+        0.13,
+        0.152,
+        0.13
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -1953,7 +2030,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "player-work",
         "participant"
       ],
       "valence": "neutral"
@@ -2041,7 +2118,14 @@ export default [
               "outcome": {
                 "fact": "教師示範如何保留來源並挖空，學生尚未改完整副卡片。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2113,7 +2197,14 @@ export default [
               "outcome": {
                 "fact": "教師以幽默引導注意語境，沒有否定拼字練習的用途。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2161,24 +2252,24 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "11-2",
+        "4-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.185,
+        0.186,
+        0.186,
+        0.14,
+        0.163,
+        0.14
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -2211,7 +2302,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "player-work",
         "participant"
       ],
       "valence": "neutral"
@@ -2419,25 +2510,25 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "1-1",
+        "3-3",
+        "11-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.157,
+        0.157,
+        0.157,
+        0.196,
+        0.196,
+        0.137
       ],
       "directions": [
+        -1,
         1,
         1,
         1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -2470,7 +2561,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant"
+        "player-work"
       ],
       "valence": "neutral"
     }
@@ -2677,25 +2768,25 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
+        "8-3",
+        "11-4",
         "3-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.15,
+        0.151,
+        0.151,
+        0.208,
+        0.208,
+        0.132
       ],
       "directions": [
+        -1,
         1,
         1,
         1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -2727,7 +2818,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "school",
         "participant"
       ],
       "valence": "neutral"
@@ -2815,7 +2906,14 @@ export default [
               "outcome": {
                 "fact": "教師示範一輪的規則，不代替缺席成員承諾參加。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2935,20 +3033,20 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "1-1",
+        "6-1",
+        "9-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.146,
+        0.145,
+        0.145,
+        0.2,
+        0.182,
+        0.182
       ],
       "directions": [
-        1,
+        -1,
         1,
         1,
         1,
@@ -3193,24 +3291,24 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "11-2",
+        "4-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.205,
+        0.182,
+        0.182,
+        0.136,
+        0.159,
+        0.136
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -3243,7 +3341,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "player-work",
         "participant"
       ],
       "valence": "neutral"
@@ -3294,8 +3392,22 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師說明先下載文件再關閉非必要通知，由學生決定是否測試。",
-                "claims": [],
-                "changes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不想一刀切都不用手機。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3319,7 +3431,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -3330,7 +3449,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生在紙上列出待查字，尚未完成閱讀或查詢。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不想一刀切都不用手機。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -3355,7 +3481,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -3366,7 +3499,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "雙方擬定同長度的觀察方式，不將一次結果推廣為永久習慣。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不想一刀切都不用手機。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -3391,7 +3531,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -3402,7 +3549,14 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師以幽默表達理解，未要求交出密碼或檢查私訊。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不想一刀切都不用手機。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -3427,7 +3581,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             }
@@ -3451,25 +3612,25 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "7-3",
+        "3-3",
+        "11-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.16,
+        0.16,
+        0.16,
+        0.26,
+        0.12,
+        0.14
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -3502,7 +3663,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant"
+        "player-work"
       ],
       "valence": "neutral"
     }
@@ -3589,7 +3750,14 @@ export default [
               "outcome": {
                 "fact": "教師協助辨認期限，學生自行排順序，不替任課取消難題。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3709,24 +3877,24 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "11-2",
+        "4-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.191,
+        0.19,
+        0.19,
+        0.143,
+        0.143,
+        0.143
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -3759,7 +3927,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "player-work",
         "participant"
       ],
       "valence": "neutral"
@@ -3967,24 +4135,24 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "11-2",
+        "4-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.166,
+        0.167,
+        0.25,
+        0.146,
+        0.146,
+        0.125
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -4017,7 +4185,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "player-work",
         "participant"
       ],
       "valence": "neutral"
@@ -4225,24 +4393,24 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "11-2",
+        "4-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.191,
+        0.19,
+        0.19,
+        0.143,
+        0.143,
+        0.143
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -4275,7 +4443,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "player-work",
         "participant"
       ],
       "valence": "neutral"
@@ -4327,7 +4495,14 @@ export default [
               "outcome": {
                 "fact": "教師在空白紙示範留缺口及問號，不改任課要求。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -4483,25 +4658,25 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
+        "11-2",
+        "9-2",
         "3-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.196,
+        0.143,
+        0.143,
+        0.232,
+        0.179,
+        0.107
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -4532,8 +4707,8 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
-        "participant",
+        "player-work",
+        "classroom",
         "participant"
       ],
       "valence": "neutral"
@@ -4584,7 +4759,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生自選一題並指出看不懂的步驟，沒有被迫一次面對整份。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "一看到紅字就不想看。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -4609,7 +4791,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -4620,7 +4809,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生在副本遮住分數，教師未修改原始卷面或正式成績。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "一看到紅字就不想看。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -4645,7 +4841,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -4656,8 +4859,22 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師協助擬出詢問內容，尚未取得任課的時間承諾。",
-                "claims": [],
-                "changes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "一看到紅字就不想看。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -4681,7 +4898,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -4692,7 +4916,14 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師表達理解，讓學生可先停下，沒有宣告心理問題已消失。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "一看到紅字就不想看。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -4717,7 +4948,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             }
@@ -4741,24 +4979,24 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "11-2",
+        "4-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.169,
+        0.17,
+        0.277,
+        0.128,
+        0.128,
+        0.128
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -4791,7 +5029,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "player-work",
         "participant"
       ],
       "valence": "neutral"
@@ -4999,25 +5237,25 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "10-4",
+        "3-3",
+        "11-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.216,
+        0.157,
+        0.157,
+        0.196,
+        0.137,
+        0.137
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -5048,9 +5286,9 @@ export default [
         "participant",
         "participant",
         "participant",
+        "school",
         "participant",
-        "participant",
-        "participant"
+        "player-work"
       ],
       "valence": "neutral"
     }
@@ -5257,25 +5495,25 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "2-2",
+        "11-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.156,
+        0.157,
+        0.157,
+        0.216,
+        0.196,
+        0.118
       ],
       "directions": [
+        -1,
         1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1
+        -1
       ],
       "eligibility": {
         "people": [
@@ -5308,9 +5546,9 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant"
+        "player-work"
       ],
-      "valence": "neutral"
+      "valence": "negative"
     }
   },
   {
@@ -5515,25 +5753,25 @@ export default [
         "4-1"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "1-4",
+        "3-3",
+        "11-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.17,
+        0.17,
+        0.17,
+        0.213,
+        0.128,
+        0.149
       ],
       "directions": [
+        -1,
         1,
         1,
         1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -5566,7 +5804,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant"
+        "player-work"
       ],
       "valence": "neutral"
     }

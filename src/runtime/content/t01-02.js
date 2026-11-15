@@ -82,8 +82,17 @@ export default [
               "outcome": {
                 "fact": "教師協助把一題失分轉成可問的步驟，尚未得到物理科任的判讀。",
                 "claims": [],
-                "changes": [],
-                "historyCodes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
+                "historyCodes": [
+                  "H04-6"
+                ],
                 "next": {
                   "stage": null,
                   "afterDays": 0
@@ -203,24 +212,24 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
         "3-2",
-        "3-3"
+        "3-4",
+        "2-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.276,
+        0.17,
+        0.17,
+        0.128,
+        0.128,
+        0.128
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -256,7 +265,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "negative"
     }
   },
   {
@@ -304,7 +313,14 @@ export default [
               "outcome": {
                 "fact": "雙方分列本人成績及全班排名，教師只說明兩種指標可不同方向，未取得同學個別分數。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -461,25 +477,25 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
+        "2-4",
         "3-2",
-        "3-3"
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.264,
+        0.14,
+        0.211,
+        0.175,
+        0.105,
+        0.105
       ],
       "directions": [
         1,
+        -1,
         1,
         1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -514,7 +530,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "positive"
     }
   },
   {
@@ -634,7 +650,14 @@ export default [
               "outcome": {
                 "fact": "教師陪學生在短文圈出一處不明指涉，未宣告已補足閱讀弱點。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -719,24 +742,24 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
         "3-2",
-        "3-3"
+        "3-4",
+        "2-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.271,
+        0.187,
+        0.167,
+        0.125,
+        0.125,
+        0.125
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -856,7 +879,14 @@ export default [
               "outcome": {
                 "fact": "教師示範在副本先標條件再作答，學生未因此保證考場能重現。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -977,24 +1007,24 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
         "3-2",
-        "3-3"
+        "3-4",
+        "2-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.278,
+        0.148,
+        0.148,
+        0.204,
+        0.111,
+        0.111
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -1078,7 +1108,14 @@ export default [
               "outcome": {
                 "fact": "教師與學生整理需要詢問的評量組成，未替科任宣布平時成績比例。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1186,7 +1223,14 @@ export default [
               "outcome": {
                 "fact": "教師接住不安並提醒先核對規則，沒有保證總成績一定及格。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1235,25 +1279,25 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
+        "1-1",
         "3-2",
-        "3-3"
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.273,
+        0.164,
+        0.145,
+        0.2,
+        0.109,
+        0.109
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
-        1
+        -1,
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -1288,7 +1332,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "negative"
     }
   },
   {
@@ -1493,24 +1537,24 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
         "3-2",
-        "3-3"
+        "3-4",
+        "2-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.191,
+        0.17,
+        0.17,
+        0.213,
+        0.128,
+        0.128
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -1666,7 +1710,14 @@ export default [
               "outcome": {
                 "fact": "教師陪學生寫出個人座位與自述影響，不把紀錄當成設備故障的證明。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1751,24 +1802,24 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
         "3-2",
-        "3-3"
+        "3-4",
+        "2-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.196,
+        0.174,
+        0.174,
+        0.196,
+        0.13,
+        0.13
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -1804,7 +1855,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "negative"
     }
   },
   {
@@ -1851,7 +1902,14 @@ export default [
               "kind": "action",
               "outcome": {
                 "fact": "學生與教師分列目前知道的試卷及計分資訊，未知班級條件保留空白。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我們班是不是比較吃虧？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -1876,7 +1934,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -1887,9 +1952,25 @@ export default [
               "kind": "support",
               "outcome": {
                 "fact": "教師協助擬出只詢問共同標準的問題，未要求取得別班個別成績。",
-                "claims": [],
-                "changes": [],
-                "historyCodes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我們班是不是比較吃虧？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
+                "historyCodes": [
+                  "H04-6"
+                ],
                 "next": {
                   "stage": null,
                   "afterDays": 0
@@ -1912,7 +1993,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -1923,8 +2011,22 @@ export default [
               "kind": "defer",
               "outcome": {
                 "fact": "學生決定不再轉貼未查證的班級比較，教師未代為刪除他人訊息。",
-                "claims": [],
-                "changes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我們班是不是比較吃虧？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -2
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1948,7 +2050,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -1959,7 +2068,14 @@ export default [
               "kind": "action",
               "outcome": {
                 "fact": "教師肯定重視公平，未認定別班得到不當優待。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我們班是不是比較吃虧？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -1984,7 +2100,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             }
@@ -2009,24 +2132,24 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
         "3-2",
-        "3-3"
+        "3-4",
+        "2-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.226,
+        0.163,
+        0.163,
+        0.204,
+        0.122,
+        0.122
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -2568,8 +2691,17 @@ export default [
               "outcome": {
                 "fact": "教師協助挑出目前單元的具體卡點供科任回應，未決定退出活動。",
                 "claims": [],
-                "changes": [],
-                "historyCodes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
+                "historyCodes": [
+                  "H04-6"
+                ],
                 "next": {
                   "stage": null,
                   "afterDays": 0
@@ -2689,25 +2821,25 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
+        "2-4",
         "3-2",
-        "3-3"
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.24,
+        0.16,
+        0.16,
+        0.2,
+        0.12,
+        0.12
       ],
       "directions": [
         1,
         1,
         1,
         1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -2862,7 +2994,14 @@ export default [
               "outcome": {
                 "fact": "教師示範只記單題用時與卡點，不以速度替學習貼標籤。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2947,25 +3086,25 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
+        "11-2",
         "3-2",
-        "3-3"
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.283,
+        0.151,
+        0.151,
+        0.189,
+        0.113,
+        0.113
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
-        1
+        -1,
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -2996,7 +3135,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "player-work",
         "participant",
         "participant"
       ],
@@ -3205,24 +3344,24 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
         "3-2",
-        "3-3"
+        "3-4",
+        "2-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.191,
+        0.19,
+        0.19,
+        0.143,
+        0.143,
+        0.143
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -3306,7 +3445,14 @@ export default [
               "outcome": {
                 "fact": "教師協助查學生可取得的成績計算說明，未知學分處理仍待教務確認。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3342,7 +3488,14 @@ export default [
               "outcome": {
                 "fact": "學生列出各科待詢問的評量項目，未把所有老師視為已同意補救。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3378,7 +3531,14 @@ export default [
               "outcome": {
                 "fact": "教師陪學生停止用猜測數字反覆試算，保留正式資料更新後再看。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3463,25 +3623,25 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
+        "4-2",
         "3-2",
-        "3-3"
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.16,
+        0.24,
+        0.16,
+        0.2,
+        0.12,
+        0.12
       ],
       "directions": [
         1,
         1,
         1,
         1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -3516,7 +3676,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "negative"
     }
   },
   {
@@ -3636,7 +3796,14 @@ export default [
               "outcome": {
                 "fact": "教師先詢問是否需要協助及可分享範圍，沒有自動聯絡家長。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3721,24 +3888,24 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "4-3",
+        "7-1",
+        "6-1"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.196,
+        0.121,
+        0.197,
+        0.167,
+        0.167,
+        0.152
       ],
       "directions": [
         1,
         1,
         1,
         1,
-        1,
+        -1,
         1
       ],
       "eligibility": {
@@ -3979,24 +4146,24 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
+        "3-4",
         "3-2",
-        "3-3"
+        "2-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.278,
+        0.148,
+        0.148,
+        0.204,
+        0.111,
+        0.111
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -4152,7 +4319,14 @@ export default [
               "outcome": {
                 "fact": "教師陪學生保留題目及疑問，不收集全班抱怨當命題不當的證據。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -4188,7 +4362,14 @@ export default [
               "outcome": {
                 "fact": "教師回應失望並支持提出可核對的問題，未替科任道歉或宣布重考。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -4237,25 +4418,25 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
+        "11-2",
         "3-2",
-        "3-3"
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.191,
+        0.17,
+        0.17,
+        0.213,
+        0.128,
+        0.128
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
-        1
+        -1,
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -4286,7 +4467,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "player-work",
         "participant",
         "participant"
       ],
@@ -4374,8 +4555,17 @@ export default [
               "outcome": {
                 "fact": "教師協助查可用教材與詢問管道，未將拿到資源當成已補完。",
                 "claims": [],
-                "changes": [],
-                "historyCodes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
+                "historyCodes": [
+                  "H04-6"
+                ],
                 "next": {
                   "stage": null,
                   "afterDays": 0
@@ -4495,24 +4685,24 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
         "3-2",
-        "3-3"
+        "3-4",
+        "2-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.276,
+        0.17,
+        0.17,
+        0.128,
+        0.128,
+        0.128
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -4548,7 +4738,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "negative"
     }
   },
   {
@@ -4753,25 +4943,25 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
+        "2-4",
         "3-2",
-        "3-3"
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.278,
+        0.148,
+        0.148,
+        0.185,
+        0.13,
+        0.111
       ],
       "directions": [
         1,
         1,
         1,
         1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -4806,7 +4996,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "positive"
     }
   },
   {
@@ -4862,7 +5052,14 @@ export default [
               "outcome": {
                 "fact": "學生描述分數被看見的途徑，教師只記本人所知，不再擴散；必要保護與正式反映不以選項決定。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -2
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -4898,8 +5095,17 @@ export default [
               "outcome": {
                 "fact": "教師協助擬出私下或書面提問的方式，尚未取得任課時間。",
                 "claims": [],
-                "changes": [],
-                "historyCodes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
+                "historyCodes": [
+                  "H04-6"
+                ],
                 "next": {
                   "stage": null,
                   "afterDays": 0
@@ -4934,7 +5140,14 @@ export default [
               "outcome": {
                 "fact": "學生表示目前不想再公開談此事，教師尊重並說明必要處理的保密界線。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -5020,24 +5233,24 @@ export default [
       ],
       "additionalCodes": [
         "3-1",
-        "3-2",
-        "3-3"
+        "8-4",
+        "3-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.21,
+        0.21,
+        0.145,
+        0.177,
+        0.161,
+        0.097
       ],
       "directions": [
         1,
         1,
         1,
+        -1,
         1,
-        1,
-        1
+        -1
       ],
       "eligibility": {
         "people": [
@@ -5072,7 +5285,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "negative"
     }
   },
   {
@@ -5278,24 +5491,24 @@ export default [
       ],
       "additionalCodes": [
         "3-1",
-        "3-2",
-        "3-3"
+        "6-1",
+        "3-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.251,
+        0.133,
+        0.133,
+        0.183,
+        0.183,
+        0.117
       ],
       "directions": [
         1,
         1,
         1,
+        -1,
         1,
-        1,
-        1
+        -1
       ],
       "eligibility": {
         "people": [
@@ -5535,24 +5748,24 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
         "3-2",
-        "3-3"
+        "3-4",
+        "2-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.185,
+        0.209,
+        0.186,
+        0.14,
+        0.14,
+        0.14
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -5793,25 +6006,25 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
+        "11-2",
         "3-2",
-        "3-3"
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.175,
+        0.174,
+        0.174,
+        0.217,
+        0.13,
+        0.13
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
-        1
+        -1,
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -5842,7 +6055,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "player-work",
         "participant",
         "participant"
       ],
@@ -5894,7 +6107,14 @@ export default [
               "outcome": {
                 "fact": "教師分開說明重做練習與原正式評量的目的，沒有自行更動原分。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -6051,25 +6271,25 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
+        "3-3",
         "3-2",
-        "3-3"
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.245,
+        0.151,
+        0.151,
+        0.208,
+        0.113,
+        0.132
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
-        1
+        -1,
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -6188,8 +6408,17 @@ export default [
               "outcome": {
                 "fact": "教師協助整理可供查核的題號及時點，是否受理由權責單位決定。",
                 "claims": [],
-                "changes": [],
-                "historyCodes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
+                "historyCodes": [
+                  "H04-6"
+                ],
                 "next": {
                   "stage": null,
                   "afterDays": 0
@@ -6309,24 +6538,24 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
         "3-2",
-        "3-3"
+        "3-4",
+        "2-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.255,
+        0.17,
+        0.17,
+        0.149,
+        0.128,
+        0.128
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -6567,25 +6796,25 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
+        "2-4",
         "3-2",
-        "3-3"
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.245,
+        0.151,
+        0.17,
+        0.208,
+        0.113,
+        0.113
       ],
       "directions": [
         1,
+        -1,
         1,
         1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -6620,7 +6849,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "positive"
     }
   },
   {
@@ -6825,25 +7054,25 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
+        "2-4",
         "3-2",
-        "3-3"
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.283,
+        0.151,
+        0.151,
+        0.189,
+        0.113,
+        0.113
       ],
       "directions": [
         1,
         1,
         1,
         1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -6998,7 +7227,14 @@ export default [
               "outcome": {
                 "fact": "教師陪學生保留公告日期及本人欄位截圖，不擷取同學個資。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -7083,24 +7319,24 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
         "3-2",
-        "3-3"
+        "3-4",
+        "2-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.27,
+        0.167,
+        0.167,
+        0.146,
+        0.125,
+        0.125
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -7341,24 +7577,24 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
+        "3-4",
         "3-2",
-        "3-3"
+        "2-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.175,
+        0.174,
+        0.174,
+        0.217,
+        0.13,
+        0.13
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -7599,25 +7835,25 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "4-3",
+        "9-2",
+        "3-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.153,
+        0.154,
+        0.154,
+        0.212,
+        0.212,
+        0.115
       ],
       "directions": [
         1,
         1,
         1,
         1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -7649,7 +7885,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "classroom",
         "participant"
       ],
       "valence": "neutral"

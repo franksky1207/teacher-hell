@@ -82,7 +82,14 @@
                 "outcome": {
                   "fact": "學生把舊稿與新稿放在一起，不為展示而抹掉錯誤嘗試。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -154,7 +161,14 @@
                 "outcome": {
                   "fact": "教師肯定說明意願，未承諾分數或將內容公開給全班。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -203,16 +217,16 @@
         ],
         "additionalCodes": [
           "3-1",
-          "3-2",
-          "3-3"
+          "4-3",
+          "4-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.191,
+          0.19,
+          0.19,
+          0.143,
+          0.143,
+          0.143
         ],
         "directions": [
           1,
@@ -252,14 +266,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生說明第一段推理並指出一處仍不確定，教師未將自信當成全題正確。／學生把舊稿與新稿放在一起，不為展示而抹掉錯誤嘗試。／學生整理要請教的環節，尚未取得學科正確性的確認。／教師肯定說明意願，未承諾分數或將內容公開給全班。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「第一次說清解題理由」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；3-1+ 口語表達與溝通；4-3+ 自主需求；4-4+ 認同需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -270,7 +286,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "positive"
       }
     },
     {
@@ -318,7 +334,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "教師記下學生提供的界線，沒有將展出意願擴張成社群授權。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "作品可以放，我不想上學校粉專。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -343,7 +366,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -354,8 +384,22 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "教師協助列出須向承辦確認的事項，尚未保證現場完全不被拍到。",
-                  "claims": [],
-                  "changes": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "作品可以放，我不想上學校粉專。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -379,7 +423,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -390,7 +441,14 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生在草稿規劃只拍作品的角度，正式採用仍需承辦安排。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "作品可以放，我不想上學校粉專。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -415,7 +473,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -426,7 +491,14 @@
                 "emotional": true,
                 "outcome": {
                   "fact": "教師表達支持，不以公開露面作為肯定努力的條件。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "作品可以放，我不想上學校粉專。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
                   "historyCodes": [],
                   "next": {
@@ -451,7 +523,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               }
@@ -475,24 +554,24 @@
           "9-3"
         ],
         "additionalCodes": [
+          "4-3",
           "3-1",
-          "3-2",
-          "3-3"
+          "4-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.18,
+          0.16,
+          0.16,
+          0.26,
+          0.12,
+          0.12
         ],
         "directions": [
           1,
           1,
+          -1,
           1,
-          1,
-          1,
+          -1,
           1
         ],
         "eligibility": {
@@ -525,14 +604,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "教師記下學生提供的界線，沒有將展出意願擴張成社群授權。／教師協助列出須向承辦確認的事項，尚未保證現場完全不被拍到。／學生在草稿規劃只拍作品的角度，正式採用仍需承辦安排。／教師表達支持，不以公開露面作為肯定努力的條件。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「研究海報不想露臉」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3− 校園歸屬；4-3+ 自主需求；3-1− 口語表達與溝通；4-4+ 認同需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -748,24 +829,24 @@
           "9-3"
         ],
         "additionalCodes": [
+          "4-4",
           "3-1",
-          "3-2",
-          "3-3"
+          "4-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.25,
+          0.25,
+          0.133,
+          0.167,
+          0.1,
+          0.1
         ],
         "directions": [
           1,
           1,
           1,
           1,
-          1,
+          -1,
           1
         ],
         "eligibility": {
@@ -798,14 +879,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "雙方在稿上找到評語對應段落，只肯定有文字依據的改善。／學生選出最能表現努力的一段，未因教師提議就公開發表。／學生把未入選與本次收穫分開記錄，沒有改寫比賽結果。／教師表達欣慰，未承諾下次入選或否定評審。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「進步沒有拿名次」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；4-4+ 認同需求；3-1− 口語表達與溝通；4-3+ 自主需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -816,7 +899,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "positive"
       }
     },
     {
@@ -973,7 +1056,14 @@
                 "outcome": {
                   "fact": "教師陪學生整理感受，沒有宣告故障已修或全場觀眾理解。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -1021,24 +1111,24 @@
           "9-3"
         ],
         "additionalCodes": [
+          "7-4",
           "3-1",
-          "3-2",
-          "3-3"
+          "4-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.191,
+          0.17,
+          0.17,
+          0.213,
+          0.128,
+          0.128
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -1071,14 +1161,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生在教師旁重述觸發條件，尚未找到程式根因。／學生草擬已完成與未解部分的展示稿，未假裝程式全數可用。／教師提議用已保存的真實輸出展示，不剪接成當場成功。／教師陪學生整理感受，沒有宣告故障已修或全場觀眾理解。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「展示作品臨時出錯」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；7-4− 生活穩定度；3-1− 口語表達與溝通；4-3+ 自主需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -1089,7 +1181,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "negative"
       }
     },
     {
@@ -1294,24 +1386,24 @@
           "9-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "8-4",
+          "11-2",
+          "3-1"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.15,
+          0.151,
+          0.17,
+          0.208,
+          0.208,
+          0.113
         ],
         "directions": [
           1,
           1,
           1,
           1,
-          1,
+          -1,
           1
         ],
         "eligibility": {
@@ -1344,14 +1436,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "教師記下學生只願分享一頁的意願，未安排固定教學工作。／學生考慮提供提問架構，不交出整份個人紀錄或替同學保證效果。／雙方試寫保留偶爾交流的拒絕句，尚未收到同學回應。／教師以幽默肯定界線，沒有把能力轉成必須服務同儕的義務。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「願意分享但不當小老師」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；8-4+ 資訊傳播；11-2− 導師時間餘裕；3-1+ 口語表達與溝通。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -1359,7 +1453,7 @@
           "participant",
           "participant",
           "participant",
-          "participant",
+          "player-work",
           "participant"
         ],
         "valence": "neutral"
@@ -1411,8 +1505,17 @@
                 "outcome": {
                   "fact": "學生說明印象最深的段落，教師未把讀完等同完整理解。",
                   "claims": [],
-                  "changes": [],
-                  "historyCodes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
+                  "historyCodes": [
+                    "H04-1"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -1448,7 +1551,9 @@
                   "fact": "學生把問號整理在一張紙上，不必為展示假裝全懂。",
                   "claims": [],
                   "changes": [],
-                  "historyCodes": [],
+                  "historyCodes": [
+                    "H04-1"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -1483,8 +1588,17 @@
                 "outcome": {
                   "fact": "教師說明可以只供本人保存，學生尚未同意任何公開使用。",
                   "claims": [],
-                  "changes": [],
-                  "historyCodes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
+                  "historyCodes": [
+                    "H04-1"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -1520,7 +1634,9 @@
                   "fact": "教師肯定持續閱讀及誠實表達，沒有承諾因此提升國文分數。",
                   "claims": [],
                   "changes": [],
-                  "historyCodes": [],
+                  "historyCodes": [
+                    "H04-1"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -1567,25 +1683,25 @@
           "9-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "1-1",
+          "3-3",
+          "3-1"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.149,
+          0.222,
+          0.148,
+          0.185,
+          0.185,
+          0.111
         ],
         "directions": [
           1,
           1,
           1,
           1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -1617,14 +1733,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生說明印象最深的段落，教師未把讀完等同完整理解。／學生把問號整理在一張紙上，不必為展示假裝全懂。／教師說明可以只供本人保存，學生尚未同意任何公開使用。／教師肯定持續閱讀及誠實表達，沒有承諾因此提升國文分數。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「第一次完成長文閱讀」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；1-1+ 責任與行動持續；3-3− 執行與完成；3-1− 口語表達與溝通。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -1635,7 +1753,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "positive"
       }
     },
     {
@@ -2156,7 +2274,14 @@
                 "outcome": {
                   "fact": "教師整理貢獻註記需求，是否更改公開名牌由承辦及團隊確認。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -2276,17 +2401,17 @@
           "9-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "4-4",
+          "6-1",
+          "9-2"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.206,
+          0.127,
+          0.19,
+          0.159,
+          0.159,
+          0.159
         ],
         "directions": [
           1,
@@ -2294,7 +2419,7 @@
           1,
           1,
           1,
-          1
+          -1
         ],
         "eligibility": {
           "people": [
@@ -2326,14 +2451,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生提供自己完成的表格及紀錄，教師未判定其他人故意搶功。／教師整理貢獻註記需求，是否更改公開名牌由承辦及團隊確認。／學生在自己的紀錄寫出資料處理工作，不代表全組承認署名。／教師表達肯定，未把感受回應當成署名爭點已解決。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「小組成果只表揚一人」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；4-4+ 認同需求；6-1+ 群體影響力；9-2− 班級合作氣氛。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -2342,7 +2469,7 @@
           "participant",
           "participant",
           "participant",
-          "participant"
+          "classroom"
         ],
         "valence": "neutral"
       }
@@ -2465,7 +2592,14 @@
                 "outcome": {
                   "fact": "教師說明可保留個人學習用途，未承諾審查者喜好或錄取效果。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -2550,22 +2684,22 @@
         ],
         "additionalCodes": [
           "3-1",
-          "3-2",
-          "3-3"
+          "4-3",
+          "4-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.284,
+          0.226,
+          0.151,
+          0.113,
+          0.113,
+          0.113
         ],
         "directions": [
           1,
           1,
           1,
-          1,
+          -1,
           1,
           1
         ],
@@ -2599,14 +2733,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生挑出一次資料取捨，教師未代寫成誇大的能力宣言。／雙方分列訪查紀錄及未能查證處，不將受訪說法當成史實定論。／教師說明可保留個人學習用途，未承諾審查者喜好或錄取效果。／教師肯定探究工作，沒有保證這份成果比獎狀更有利。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「成果不符升學想像」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；3-1− 口語表達與溝通；4-3+ 自主需求；4-4+ 認同需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -2823,22 +2959,22 @@
         ],
         "additionalCodes": [
           "3-1",
-          "3-2",
-          "3-3"
+          "4-3",
+          "4-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.182,
+          0.205,
+          0.182,
+          0.159,
+          0.136,
+          0.136
         ],
         "directions": [
           1,
           1,
           1,
-          1,
+          -1,
           1,
           1
         ],
@@ -2872,14 +3008,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "教師記下目前只同意課內繳交，未替科任撤回或追加參賽。／學生擬出不參賽的說明，尚未收到任課回覆。／學生決定先留原檔及日期，未上傳到外部平台。／教師表達欣慰，不把拒賽當成缺乏企圖心或保證沒有課程要求。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「作品想保留不比賽」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；3-1− 口語表達與溝通；4-3+ 自主需求；4-4+ 認同需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -3011,7 +3149,14 @@
                 "outcome": {
                   "fact": "教師協助提出保留原始紀錄的詢問，未保證可重測或加分。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -3096,22 +3241,22 @@
         ],
         "additionalCodes": [
           "3-1",
-          "3-2",
-          "3-3"
+          "4-3",
+          "4-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.208,
+          0.186,
+          0.186,
+          0.14,
+          0.14,
+          0.14
         ],
         "directions": [
           1,
           1,
           1,
-          1,
+          -1,
           1,
           1
         ],
@@ -3145,14 +3290,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "雙方依學生提供的標籤照片記下可核對處，不推論所有異常只有這個原因。／學生在副本把原結論標為需修正，沒有事後改寫原始測量。／教師協助提出保留原始紀錄的詢問，未保證可重測或加分。／教師肯定查錯態度，不將找到一個可能原因宣告研究已成功。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「實驗失敗找到原因」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；3-1− 口語表達與溝通；4-3+ 自主需求；4-4+ 認同需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -3369,22 +3516,22 @@
         ],
         "additionalCodes": [
           "3-1",
-          "3-2",
-          "3-3"
+          "4-3",
+          "4-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.208,
+          0.186,
+          0.186,
+          0.14,
+          0.14,
+          0.14
         ],
         "directions": [
           1,
+          -1,
           1,
-          1,
-          1,
+          -1,
           1,
           1
         ],
@@ -3418,14 +3565,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "雙方針對學生願意出示的留言分類，未推測留言者身分或動機。／學生保留本機副本，是否下架由本人依平台及課程規定決定。／學生挑出可查核的技術疑問，沒有被迫接受羞辱語句。／教師表達支持，不號召同學圍攻或宣稱留言已構成違法。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「作品收到尖銳留言」的具體情況配權：4-1+ 成就動機；2-4− 正向感受；9-3+ 校園歸屬；3-1− 口語表達與溝通；4-3+ 自主需求；4-4+ 認同需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -3557,7 +3706,14 @@
                 "outcome": {
                   "fact": "教師協助查詢主辦聯絡說明，尚未取得提問者個資或送出答覆。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -3642,22 +3798,22 @@
         ],
         "additionalCodes": [
           "3-1",
-          "3-2",
-          "3-3"
+          "4-3",
+          "4-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.208,
+          0.186,
+          0.186,
+          0.14,
+          0.14,
+          0.14
         ],
         "directions": [
           1,
           1,
           1,
-          1,
+          -1,
           1,
           1
         ],
@@ -3691,14 +3847,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生記下記得的問法及目前資料不足處，不補造當時回答。／雙方練習說出研究範圍與待查方向，沒有背出無來源答案。／教師協助查詢主辦聯絡說明，尚未取得提問者個資或送出答覆。／教師肯定誠實，不保證評審已因此給予好評。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「展場問答說不知道」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；3-1− 口語表達與溝通；4-3+ 自主需求；4-4+ 認同需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -3794,7 +3952,14 @@
                 "outcome": {
                   "fact": "教師說明自己讀到的重點，學生自行決定是否採納。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -3915,16 +4080,16 @@
         ],
         "additionalCodes": [
           "3-1",
-          "3-2",
-          "3-3"
+          "4-3",
+          "4-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.191,
+          0.19,
+          0.19,
+          0.143,
+          0.143,
+          0.143
         ],
         "directions": [
           1,
@@ -3964,14 +4129,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生指出結尾改動及想呈現的效果，教師未代替讀者認定效果已達成。／教師說明自己讀到的重點，學生自行決定是否採納。／學生把版本日期記好，未將初稿當成應隱藏的失敗。／教師表達欣慰，未承諾公開推薦或額外加分。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「第一次自願交修訂版」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；3-1+ 口語表達與溝通；4-3+ 自主需求；4-4+ 認同需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -3982,7 +4149,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "positive"
       }
     },
     {
@@ -4188,22 +4355,22 @@
         ],
         "additionalCodes": [
           "3-1",
-          "3-2",
-          "3-3"
+          "4-3",
+          "4-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.22,
+          0.16,
+          0.26,
+          0.12,
+          0.12,
+          0.12
         ],
         "directions": [
           1,
           1,
           1,
-          1,
+          -1,
           1,
           1
         ],
@@ -4237,14 +4404,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生說明一段推理，正確性仍需學科核對，不用總分代替判斷。／教師提出依具體內容而非排名徵求分享的方案，尚未獲全班或任課同意。／學生整理步驟供詢問，不保證會被列入展示。／教師肯定提出內容的意願，沒有保證該解法正確或必獲採用。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「非最高分的班級展示」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；3-1− 口語表達與溝通；4-3+ 自主需求；4-4+ 認同需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -4304,7 +4473,14 @@
                 "outcome": {
                   "fact": "教師與學生確認不擴大使用的當前界線，未宣稱受訪者同意任何新用途。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -4460,24 +4636,24 @@
           "9-3"
         ],
         "additionalCodes": [
+          "1-4",
           "3-1",
-          "3-2",
-          "3-3"
+          "4-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.16,
+          0.18,
+          0.18,
+          0.22,
+          0.12,
+          0.14
         ],
         "directions": [
           1,
           1,
           1,
           1,
-          1,
+          -1,
           1
         ],
         "eligibility": {
@@ -4510,14 +4686,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "教師與學生確認不擴大使用的當前界線，未宣稱受訪者同意任何新用途。／學生標出可辨識及敏感內容，沒有當場聯絡缺席同學施壓同意。／教師提議以不含私事的內容展示，學生尚未完成新版或取得核准。／教師肯定對隱私的在意，不將藝術效果當成擴大公開的授權。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「作品包含他人私事」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；1-4+ 原則與倫理界線；3-1− 口語表達與溝通；4-3+ 自主需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -4613,7 +4791,14 @@
                 "outcome": {
                   "fact": "教師協助提出替代展示需求，承辦是否同意仍未知。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -4733,24 +4918,24 @@
           "9-3"
         ],
         "additionalCodes": [
+          "1-4",
           "3-1",
-          "3-2",
-          "3-3"
+          "4-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.234,
+          0.157,
+          0.157,
+          0.216,
+          0.118,
+          0.118
         ],
         "directions": [
           1,
           1,
           1,
           1,
-          1,
+          -1,
           1
         ],
         "eligibility": {
@@ -4783,14 +4968,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生寫出材質及易損處，教師未保證校方負全責或已投保。／教師協助提出替代展示需求，承辦是否同意仍未知。／學生保留作品並準備詢問保管紀錄，未因此被視為拒絕課程繳交。／教師回應兩難，沒有擅自決定學校展示規則。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「成果展借用原作」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；1-4+ 原則與倫理界線；3-1− 口語表達與溝通；4-3+ 自主需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -4849,9 +5036,18 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "教師記下學生不希望群組追加表揚的意願，未宣稱家人已停止比較。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我很開心，可是每次都變成誰比較強。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
-                  "historyCodes": [],
+                  "historyCodes": [
+                    "H04-1"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -4874,7 +5070,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -4885,9 +5088,18 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "學生擬出不涉及兄姊比較的成果描述，未自動發給家人。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我很開心，可是每次都變成誰比較強。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
-                  "historyCodes": [],
+                  "historyCodes": [
+                    "H04-1"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -4910,7 +5122,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -4921,9 +5140,25 @@
                 "emotional": false,
                 "outcome": {
                   "fact": "教師陪學生選擇個人紀錄，不要求公開喜悅來證明感謝。",
-                  "claims": [],
-                  "changes": [],
-                  "historyCodes": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我很開心，可是每次都變成誰比較強。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
+                  "historyCodes": [
+                    "H04-1"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -4946,7 +5181,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               },
@@ -4957,9 +5199,18 @@
                 "emotional": true,
                 "outcome": {
                   "fact": "教師表達支持，未替家人決定言行或推定家庭動機。",
-                  "claims": [],
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我很開心，可是每次都變成誰比較強。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
                   "changes": [],
-                  "historyCodes": [],
+                  "historyCodes": [
+                    "H04-1"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -4982,7 +5233,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                      }
+                    ]
                   }
                 }
               }
@@ -5006,23 +5264,23 @@
           "9-3"
         ],
         "additionalCodes": [
-          "3-1",
           "3-2",
-          "3-3"
+          "6-2",
+          "4-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.2,
+          0.2,
+          0.107,
+          0.173,
+          0.173,
+          0.147
         ],
         "directions": [
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1,
           1
         ],
@@ -5056,14 +5314,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "教師記下學生不希望群組追加表揚的意願，未宣稱家人已停止比較。／學生擬出不涉及兄姊比較的成果描述，未自動發給家人。／教師陪學生選擇個人紀錄，不要求公開喜悅來證明感謝。／教師表達支持，未替家人決定言行或推定家庭動機。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「獲獎後不想被比較」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3− 校園歸屬；3-2− 判斷與分析；6-2+ 從眾傾向；4-3+ 自主需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -5074,7 +5334,7 @@
           "participant",
           "participant"
         ],
-        "valence": "neutral"
+        "valence": "positive"
       }
     },
     {
@@ -5159,7 +5419,14 @@
                 "outcome": {
                   "fact": "教師協助擬定徵求意願方式，未指派缺席同學或保證有人接手。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -5195,7 +5462,14 @@
                 "outcome": {
                   "fact": "學生說明可做及不再承擔部分，教師記下界線但未冒稱交接完成。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -2
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -5279,25 +5553,25 @@
           "9-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "6-1",
+          "9-2",
+          "10-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.137,
+          0.136,
+          0.22,
+          0.169,
+          0.169,
+          0.169
         ],
         "directions": [
           1,
           1,
           1,
           1,
-          1,
-          1
+          -1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -5329,14 +5603,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生列出公開資料來源及步驟，不把個人帳密放進交接文件。／教師協助擬定徵求意願方式，未指派缺席同學或保證有人接手。／學生說明可做及不再承擔部分，教師記下界線但未冒稱交接完成。／教師以幽默肯定付出，不將休息視為破壞團隊。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「長期合作的交棒」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；6-1+ 群體影響力；9-2− 班級合作氣氛；10-4− 組織協作。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -5344,8 +5620,8 @@
           "participant",
           "participant",
           "participant",
-          "participant",
-          "participant"
+          "classroom",
+          "school"
         ],
         "valence": "neutral"
       }
@@ -5552,17 +5828,17 @@
           "9-3"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "4-4",
+          "6-1",
+          "3-1"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.158,
+          0.158,
+          0.211,
+          0.175,
+          0.175,
+          0.123
         ],
         "directions": [
           1,
@@ -5570,7 +5846,7 @@
           1,
           1,
           1,
-          1
+          -1
         ],
         "eligibility": {
           "people": [
@@ -5602,14 +5878,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生將資料與版面回饋分欄，未把沒被提及推定為不喜歡。／學生指出繪圖設計的選擇，教師只提供個人閱讀感受。／學生擬出不帶預設的回饋問題，尚未收到觀眾新回答。／教師表達欣慰，未替所有觀眾解釋沉默原因。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「同學看見不同優點」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；4-4+ 認同需求；6-1+ 群體影響力；3-1− 口語表達與溝通。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
@@ -5705,7 +5983,14 @@
                 "outcome": {
                   "fact": "教師示範正文與附件分工，是否符合發表規則仍待承辦確認。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -5825,24 +6110,24 @@
           "9-3"
         ],
         "additionalCodes": [
+          "11-2",
           "3-1",
-          "3-2",
-          "3-3"
+          "4-3"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.25,
+          0.154,
+          0.154,
+          0.212,
+          0.115,
+          0.115
         ],
         "directions": [
           1,
           1,
           1,
-          1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -5875,21 +6160,23 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生圈出最想讓聽眾帶走的結論，未抹去其他工作紀錄。／教師示範正文與附件分工，是否符合發表規則仍待承辦確認。／學生讀完前半段並記下時間，未加速剪接成看似三分鐘。／教師以幽默承接不捨，沒有承諾延長全場時間。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「成果發表時間太短」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；11-2− 導師時間餘裕；3-1− 口語表達與溝通；4-3+ 自主需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [
           "participant",
           "participant",
           "participant",
-          "participant",
+          "player-work",
           "participant",
           "participant"
         ],
@@ -5978,7 +6265,14 @@
                 "outcome": {
                   "fact": "教師協助擬出保留原題及補充發現的詢問，尚未取得改題許可。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -6099,22 +6393,22 @@
         ],
         "additionalCodes": [
           "3-1",
-          "3-2",
-          "3-3"
+          "4-3",
+          "4-4"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.308,
+          0.163,
+          0.163,
+          0.122,
+          0.122,
+          0.122
         ],
         "directions": [
           1,
           1,
           1,
-          1,
+          -1,
           1,
           1
         ],
@@ -6148,14 +6442,16 @@
         "teacherResponsibility": "回應學生已提供的成果與意願、區分作品授權及可核對表現；不保證獲獎、升學或未來表現。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生在副本分列原假設及新疑問，不把新疑問寫成已驗證結論。／教師協助擬出保留原題及補充發現的詢問，尚未取得改題許可。／學生先記下資料來源與待查項，不宣稱已完成第二份研究。／教師表達欣賞，不以意外發現自動豁免原作業要求。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-semantic-review",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "候選六碼依「意外成果偏離原題」的具體情況配權：4-1+ 成就動機；2-4+ 正向感受；9-3+ 校園歸屬；3-1− 口語表達與溝通；4-3+ 自主需求；4-4+ 認同需求。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
       },
       "binding": {
         "sources": [

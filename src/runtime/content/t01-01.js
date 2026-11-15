@@ -45,7 +45,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生在目錄旁圈出一個最困惑的章名，尚未找到章節重點。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是不想讀，只是不知道哪一章最重要。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -70,7 +77,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -81,7 +95,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生在副本選定一小段閱讀，不因圈出範圍就算已讀完。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是不想讀，只是不知道哪一章最重要。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -106,7 +127,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -117,7 +145,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師把未解章名記在學生自己的紙上，是否再約由雙方可用時間決定。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是不想讀，只是不知道哪一章最重要。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -142,7 +177,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -153,7 +195,14 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師承認卡在起點的煩躁，學生暫時合上書聽完，未被保證馬上能讀。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是不想讀，只是不知道哪一章最重要。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -178,7 +227,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             }
@@ -203,25 +259,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "11-2",
+        "3-3",
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.175,
+        0.157,
+        0.216,
+        0.216,
+        0.118,
+        0.118
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -252,7 +308,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "player-work",
         "participant",
         "participant"
       ],
@@ -304,7 +360,14 @@ export default [
               "outcome": {
                 "fact": "學生說歸零是自己訂的規則；教師只確認這是他的說法，不判定計時有害。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -340,7 +403,14 @@ export default [
               "outcome": {
                 "fact": "雙方用一題練習示範任務計量，學生尚未決定停用計時器。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -461,25 +531,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "7-2",
+        "3-3",
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.24,
+        0.16,
+        0.16,
+        0.2,
+        0.12,
+        0.12
       ],
       "directions": [
+        -1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -514,7 +584,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "negative"
     }
   },
   {
@@ -719,24 +789,24 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "3-4",
+        "2-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.17,
+        0.17,
+        0.17,
+        0.234,
+        0.128,
+        0.128
       ],
       "directions": [
+        -1,
         1,
-        1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -772,7 +842,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "negative"
     }
   },
   {
@@ -856,7 +926,14 @@ export default [
               "outcome": {
                 "fact": "教師提出以個人短練習取代共同打卡的方式，未替學生邀請新伙伴。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -928,7 +1005,14 @@ export default [
               "outcome": {
                 "fact": "教師回應失去固定陪伴的不適應，沒有推定朋友故意拋下他。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -977,24 +1061,24 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "6-1",
+        "7-4",
+        "9-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.208,
+        0.138,
+        0.138,
+        0.172,
+        0.172,
+        0.172
       ],
       "directions": [
+        -1,
         1,
         1,
         1,
-        1,
-        1,
+        -1,
         1
       ],
       "eligibility": {
@@ -1235,25 +1319,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "4-1",
+        "3-3",
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.245,
+        0.151,
+        0.151,
+        0.208,
+        0.132,
+        0.113
       ],
       "directions": [
+        -1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -1335,8 +1419,22 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生用自己的話說一小段後停住，雙方記下不確定的位置，未當成全頁背熟。",
-                "claims": [],
-                "changes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我怕一翻過去，剛剛背的就忘光了。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1360,7 +1458,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -1371,8 +1476,28 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師示範先合上講義再看記得哪些詞，學生尚未決定長期採用。",
-                "claims": [],
-                "changes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我怕一翻過去，剛剛背的就忘光了。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -1
+                  },
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1396,7 +1521,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -1407,7 +1539,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生先收起講義休息，本次不另加背誦任務，未承諾下次一定再談。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我怕一翻過去，剛剛背的就忘光了。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -1432,7 +1571,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -1443,8 +1589,22 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師說出反覆確認可能很累的感受，沒有把謹慎診斷為心理疾病。",
-                "claims": [],
-                "changes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我怕一翻過去，剛剛背的就忘光了。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1468,7 +1628,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             }
@@ -1493,24 +1660,24 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "3-4",
+        "2-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.226,
+        0.245,
+        0.163,
+        0.122,
+        0.122,
+        0.122
       ],
       "directions": [
+        -1,
         1,
-        1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -1546,7 +1713,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "negative"
     }
   },
   {
@@ -1593,7 +1760,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生從問號中選一個具體題號，教師沒有擅自代答專科內容。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師都很忙，我怕問的都是笨問題。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -1618,7 +1792,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -1629,8 +1810,28 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師與學生查手邊可用聯絡方式，尚未確認科任何時有空。",
-                "claims": [],
-                "changes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師都很忙，我怕問的都是笨問題。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -1
+                  },
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1654,7 +1855,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -1665,7 +1873,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生把最先不懂的步驟寫在紙上，是否送問仍由本人決定。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師都很忙，我怕問的都是笨問題。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -1690,7 +1905,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -1701,7 +1923,14 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師肯定願意帶問題來談，學生未因此答應立即去辦公室。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師都很忙，我怕問的都是笨問題。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -1726,7 +1955,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             }
@@ -1752,24 +1988,24 @@ export default [
       ],
       "additionalCodes": [
         "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.212,
+        0.263,
+        0.14,
+        0.175,
+        0.105,
+        0.105
       ],
       "directions": [
         1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -1852,7 +2088,14 @@ export default [
               "outcome": {
                 "fact": "學生說照片只截到幾行；教師確認比較資料不完整，沒有要求查同學私訊。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1888,7 +2131,14 @@ export default [
               "outcome": {
                 "fact": "學生以已公告課程範圍標記自己的待讀部分，不再用照片推算落後章數。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -2
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2009,24 +2259,24 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "3-4",
+        "2-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.17,
+        0.17,
+        0.17,
+        0.234,
+        0.128,
+        0.128
       ],
       "directions": [
+        -1,
         1,
-        1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -2267,24 +2517,24 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "3-4",
+        "2-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.205,
+        0.182,
+        0.182,
+        0.159,
+        0.136,
+        0.136
       ],
       "directions": [
+        -1,
         1,
-        1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -2368,7 +2618,14 @@ export default [
               "outcome": {
                 "fact": "學生說整理會安心也會吃掉時間；教師保留兩種效果，不將它認定為唯一拖延原因。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -2
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2476,7 +2733,14 @@ export default [
               "outcome": {
                 "fact": "教師以幽默指出整理與做題的落差，未要求把整齊文具丟掉或貶低學生。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2525,25 +2789,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "4-1",
+        "11-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.153,
+        0.136,
+        0.136,
+        0.22,
+        0.186,
+        0.169
       ],
       "directions": [
+        -1,
         1,
+        -1,
+        -1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1
       ],
       "eligibility": {
         "people": [
@@ -2576,7 +2840,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant"
+        "player-work"
       ],
       "valence": "neutral"
     }
@@ -2634,7 +2898,14 @@ export default [
               "outcome": {
                 "fact": "學生只願說昨夜就寢很晚；教師確認當前精神與安全需求，不逼問家庭隱私。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2791,25 +3062,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "2-3",
+        "3-3",
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.219,
+        0.145,
+        0.145,
+        0.2,
+        0.182,
+        0.109
       ],
       "directions": [
+        -1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -2928,8 +3199,17 @@ export default [
               "outcome": {
                 "fact": "教師用學生選的一段示範改寫成提問，學生未答應重做整本筆記。",
                 "claims": [],
-                "changes": [],
-                "historyCodes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
+                "historyCodes": [
+                  "H04-6"
+                ],
                 "next": {
                   "stage": null,
                   "afterDays": 0
@@ -3049,25 +3329,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "1-4",
+        "3-3",
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.165,
+        0.163,
+        0.163,
+        0.265,
+        0.122,
+        0.122
       ],
       "directions": [
+        -1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -3150,7 +3430,14 @@ export default [
               "outcome": {
                 "fact": "學生說兩人未約好催促頻率；教師只記此自述，不代替朋友說明原意。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3222,7 +3509,14 @@ export default [
               "outcome": {
                 "fact": "教師陪學生寫出是否願意繼續互相提醒的問句，尚未傳達給朋友。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3265,7 +3559,14 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -2
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3330,22 +3631,22 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "4-4",
+        "6-1",
+        "9-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.149,
+        0.148,
+        0.148,
+        0.185,
+        0.185,
+        0.185
       ],
       "directions": [
+        -1,
         1,
-        1,
-        1,
+        -1,
         1,
         1,
         1
@@ -3431,7 +3732,14 @@ export default [
               "outcome": {
                 "fact": "學生回想起一題實際做過的練習，教師只確認此口述，不把整日坐館當成完成量。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3467,7 +3775,14 @@ export default [
               "outcome": {
                 "fact": "教師示範進館前寫目標、離館時寫實做內容的兩欄紀錄，學生尚未採行。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3588,25 +3903,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "2-3",
+        "3-3",
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.187,
+        0.167,
+        0.167,
+        0.208,
+        0.146,
+        0.125
       ],
       "directions": [
+        -1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -3846,25 +4161,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
+        "4-1",
+        "3-4",
         "3-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.143,
+        0.232,
+        0.143,
+        0.196,
+        0.179,
+        0.107
       ],
       "directions": [
+        -1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -3899,7 +4214,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "negative"
     }
   },
   {
@@ -4019,7 +4334,14 @@ export default [
               "outcome": {
                 "fact": "學生願意帶更新清單再核對，教師記下的是待核對邀請，不是已完成任務。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -4104,24 +4426,24 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "3-4",
+        "2-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.176,
+        0.176,
+        0.157,
+        0.255,
+        0.118,
+        0.118
       ],
       "directions": [
+        -1,
         1,
-        1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -4241,7 +4563,14 @@ export default [
               "outcome": {
                 "fact": "教師示範每人帶一個疑問的讀書會提案，成員尚未同意更換形式。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -4363,22 +4692,22 @@ export default [
       ],
       "additionalCodes": [
         "3-1",
-        "3-2",
-        "3-3"
+        "6-1",
+        "9-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.217,
+        0.133,
+        0.133,
+        0.183,
+        0.167,
+        0.167
       ],
       "directions": [
+        -1,
         1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
         1,
         1
       ],
@@ -4620,24 +4949,24 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "3-4",
+        "2-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.259,
+        0.138,
+        0.155,
+        0.224,
+        0.121,
+        0.103
       ],
       "directions": [
+        -1,
         1,
-        1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -4673,7 +5002,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "negative"
     }
   },
   {
@@ -4757,7 +5086,14 @@ export default [
               "outcome": {
                 "fact": "雙方記下可試著重複的起步步驟，下一次結果仍不確定。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -4878,24 +5214,24 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "2-4",
+        "3-3",
+        "4-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.191,
+        0.191,
+        0.132,
+        0.162,
+        0.162,
+        0.162
       ],
       "directions": [
         1,
         1,
+        -1,
         1,
-        1,
-        1,
+        -1,
         1
       ],
       "eligibility": {
@@ -4978,7 +5314,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生把不認同的目標留白，教師不把表格推論成家長已施壓的證據。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -5003,7 +5346,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -5014,7 +5364,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生提出一個本人願意嘗試的小目標，尚未執行，也不替家長放棄原期待。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -5039,7 +5396,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -5050,7 +5414,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師尊重學生暫不修改，表格仍由學生保留，沒有代簽或代填意願。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -5075,7 +5446,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -5086,7 +5464,14 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師表達想聽本人聲音，學生知道可不同意表內目標，未被保證家長會接受。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -5111,7 +5496,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             }
@@ -5136,25 +5528,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
+        "4-1",
+        "7-1",
         "3-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.21,
+        0.129,
+        0.21,
+        0.177,
+        0.177,
+        0.097
       ],
       "directions": [
+        -1,
         1,
         1,
         1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -6190,20 +6582,20 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "4-4",
+        "6-1",
+        "9-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.137,
+        0.155,
+        0.138,
+        0.19,
+        0.19,
+        0.19
       ],
       "directions": [
-        1,
+        -1,
         1,
         1,
         1,
@@ -6290,7 +6682,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生列出自己能用的兩個空間及限制，教師未擅自要求家人更改作息。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是不想讀，可是旁邊一直有人講話。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -6315,7 +6714,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -6326,7 +6732,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "雙方在副本討論降低噪音的可行方式，學生尚未取得家人同意。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是不想讀，可是旁邊一直有人講話。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -6351,7 +6764,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -6362,7 +6782,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生選擇先記被打斷的時點，不錄下家人私下談話作證。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是不想讀，可是旁邊一直有人講話。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -6387,7 +6814,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -6398,7 +6832,14 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師表達被打斷的不易，沒有把家人定性為阻礙學生學習。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是不想讀，可是旁邊一直有人講話。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -6423,7 +6864,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             }
@@ -6448,24 +6896,24 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "3-4",
+        "2-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.254,
+        0.157,
+        0.216,
+        0.118,
+        0.137,
+        0.118
       ],
       "directions": [
+        -1,
         1,
         1,
-        1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -6549,7 +6997,14 @@ export default [
               "outcome": {
                 "fact": "學生說把全對才算完成；教師將此自訂標準與正式繳交要求分開。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -6706,25 +7161,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "2-4",
+        "3-3",
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.214,
+        0.197,
+        0.131,
+        0.18,
+        0.18,
+        0.098
       ],
       "directions": [
         1,
+        -1,
+        -1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -6806,7 +7261,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生回顧上次長假第一週投入過多的時數；教師不將回顧當作本週已放假。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我一開始很有幹勁，後來整個不想碰書。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -6831,7 +7293,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -6842,8 +7311,22 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "雙方以假設規劃示範留休息的節奏，沒有要求上課日照假日計畫執行。",
-                "claims": [],
-                "changes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我一開始很有幹勁，後來整個不想碰書。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -6867,7 +7350,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -6878,8 +7368,22 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師建議觀察目前精神，不以兩天自記診斷原因；持續不適可尋求校內協助。",
-                "claims": [],
-                "changes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我一開始很有幹勁，後來整個不想碰書。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -6903,7 +7407,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -6914,7 +7425,14 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師回應過度衝刺的疲憊，未把停頓稱為懶惰或保證恢復速度。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我一開始很有幹勁，後來整個不想碰書。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -6939,7 +7457,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             }
@@ -6964,24 +7489,24 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "3-4",
+        "2-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.187,
+        0.167,
+        0.229,
+        0.146,
+        0.125,
+        0.146
       ],
       "directions": [
         1,
         1,
         1,
-        1,
-        1,
+        -1,
+        -1,
         1
       ],
       "eligibility": {
@@ -7222,22 +7747,22 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "4-4",
+        "6-1",
+        "9-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.141,
+        0.14,
+        0.14,
+        0.193,
+        0.193,
+        0.193
       ],
       "directions": [
+        -1,
         1,
-        1,
-        1,
+        -1,
         1,
         1,
         1
@@ -7322,7 +7847,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生挑一個目前未懂的觀念，教師不替影片內容保證正確。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "每個人講法都不同，我怕少看一個就漏掉重點。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -7347,7 +7879,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -7358,8 +7897,22 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生在紙上選一份資源與一題對應練習，尚未完成或決定永久固定。",
-                "claims": [],
-                "changes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "每個人講法都不同，我怕少看一個就漏掉重點。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -7383,7 +7936,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -7394,7 +7954,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師建議只記切換的觸發點，不索取完整瀏覽歷史。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "每個人講法都不同，我怕少看一個就漏掉重點。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -7419,7 +7986,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -7430,7 +8004,14 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師承接資源過多的不易，未把選擇困難判成沒有毅力。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "每個人講法都不同，我怕少看一個就漏掉重點。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -7455,7 +8036,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             }
@@ -7480,25 +8068,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-4",
+        "8-3",
+        "11-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.125,
+        0.175,
+        0.175,
+        0.175,
+        0.175,
+        0.175
       ],
       "directions": [
+        -1,
         1,
+        -1,
+        -1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1
       ],
       "eligibility": {
         "people": [
@@ -7531,9 +8119,9 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant"
+        "school"
       ],
-      "valence": "neutral"
+      "valence": "negative"
     }
   },
   {
@@ -7580,7 +8168,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生只願透露固定照顧時段，教師尊重不問被照顧者的私人病情。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我有排時間，但家裡有事就得先做。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -7605,7 +8200,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -7616,7 +8218,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "雙方在規劃副本找不衝突的短空檔，不假定照顧責任可以直接移交。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我有排時間，但家裡有事就得先做。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -7641,7 +8250,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -7652,7 +8268,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師先詢問希望連結哪種校內支持及可分享內容，未當場傳出家庭細節。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我有排時間，但家裡有事就得先做。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -7677,7 +8300,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -7688,8 +8318,22 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師表達關切並確認眼前負荷，未保證家人會改變或校方一定減作業。",
-                "claims": [],
-                "changes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我有排時間，但家裡有事就得先做。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -7713,7 +8357,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             }
@@ -7738,25 +8389,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
+        "7-4",
+        "7-1",
         "3-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.194,
+        0.129,
+        0.129,
+        0.21,
+        0.177,
+        0.161
       ],
       "directions": [
+        -1,
         1,
-        1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -7996,25 +8647,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "2-4",
+        "3-3",
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.22,
+        0.136,
+        0.136,
+        0.186,
+        0.169,
+        0.153
       ],
       "directions": [
+        -1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -8049,7 +8700,7 @@ export default [
         "participant",
         "participant"
       ],
-      "valence": "neutral"
+      "valence": "positive"
     }
   },
   {
@@ -8133,7 +8784,14 @@ export default [
               "outcome": {
                 "fact": "教師示範只記做了什麼及感受的回顧，不以新獎懲替代舊獎勵。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -8254,25 +8912,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "4-1",
+        "3-3",
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.176,
+        0.157,
+        0.157,
+        0.255,
+        0.137,
+        0.118
       ],
       "directions": [
+        -1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -8391,7 +9049,14 @@ export default [
               "outcome": {
                 "fact": "教師陪學生寫出希望哪一種回饋的詢問，科任尚未答應增加評量。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -8427,7 +9092,14 @@ export default [
               "outcome": {
                 "fact": "學生選擇蒐集本週實際練習紀錄，不把預定練習量填成已完成。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-4",
+                    "delta": 1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -8463,7 +9135,14 @@ export default [
               "outcome": {
                 "fact": "教師承接努力卻無法確認變化的不安，未用空泛保證代替證據。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -8512,25 +9191,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "2-4",
+        "4-1",
+        "3-1"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.159,
+        0.14,
+        0.14,
+        0.193,
+        0.193,
+        0.175
       ],
       "directions": [
         1,
+        -1,
+        -1,
         1,
         1,
-        1,
-        1,
-        1
+        -1
       ],
       "eligibility": {
         "people": [
@@ -8613,7 +9292,14 @@ export default [
               "outcome": {
                 "fact": "學生自述末班車時間，教師先記為待確認限制，不要求冒險晚歸。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -8649,8 +9335,17 @@ export default [
               "outcome": {
                 "fact": "教師協助擬出午間自願短談的邀請，未替其他同學或科任排定時段。",
                 "claims": [],
-                "changes": [],
-                "historyCodes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
+                "historyCodes": [
+                  "H04-6"
+                ],
                 "next": {
                   "stage": null,
                   "afterDays": 0
@@ -8770,25 +9465,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
+        "9-3",
+        "9-2",
         "3-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.169,
+        0.151,
+        0.151,
+        0.208,
+        0.208,
+        0.113
       ],
       "directions": [
+        -1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [
@@ -8820,7 +9515,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "participant",
+        "classroom",
         "participant"
       ],
       "valence": "neutral"
@@ -8870,8 +9565,22 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生列出今日確實完成的項目，教師只核對所提供紀錄，不宣告所有功課都已結束。",
-                "claims": [],
-                "changes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道做完了，但現在休息會很不安。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -8895,7 +9604,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -8906,7 +9622,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "雙方在個人規劃設定停止自訂加碼的時間，正式期限仍需履行。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道做完了，但現在休息會很不安。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -8931,7 +9654,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -8942,7 +9672,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師提議簡記休息前後精神，未將休息當成需證明有效才被允許。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道做完了，但現在休息會很不安。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -8967,7 +9704,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             },
@@ -8978,7 +9722,14 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師承接做完仍不敢停的辛苦，不把擔憂診斷為疾病或保證一句話能解除。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道做完了，但現在休息會很不安。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -9003,7 +9754,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
                 }
               }
             }
@@ -9028,25 +9786,25 @@ export default [
         "4-3"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
+        "2-3",
+        "7-4",
         "3-3"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.166,
+        0.208,
+        0.111,
+        0.181,
+        0.181,
+        0.153
       ],
       "directions": [
         1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1
+        -1,
+        -1
       ],
       "eligibility": {
         "people": [

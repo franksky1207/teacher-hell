@@ -1314,6 +1314,333 @@
         "sceneNote": null,
         "numericRationale": "在意公平與自我志向的人可能排斥把名次當成唯一目標。；核心 1-4、2-2、8-3；附加 3-1、4-4、2-4。本為逐篇設計理由，尚未進行引擎精準驗證。"
       }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-15",
+        "definitionId": "content:18b-t02-04-15",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "一名科任教師在行政辦公室請導師提供學生的實際學習紀錄，旁邊放著尚未定案的推薦作業文件。",
+                "speaker": null,
+                "scene": "school:administration",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "這名學生的小組合作，你實際觀察過哪些部分？",
+                "speaker": "participant",
+                "scene": "school:administration",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "只提供自己確實見證的班級表現",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師整理可追溯的觀察，不把傳聞或好惡當成評分事實。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "這名學生的小組合作，你實際觀察過哪些部分？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "action",
+                "text": "請科任說明需要的是何種具體資料",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "雙方確認所需資料範圍，推薦順位仍由正式校內程序處理。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "這名學生的小組合作，你實際觀察過哪些部分？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "alternative",
+                "text": "先釐清資料使用範圍與收件方式",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師要求確認適當紀錄程序，未直接散布個別學生資料。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "這名學生的小組合作，你實際觀察過哪些部分？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "孩子的努力值得被看見，也得公平對待",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達公平原則，不以私下稱讚代替推薦委員會決議。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "這名學生的小組合作，你實際觀察過哪些部分？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-15",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-15",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-3",
+          "7-1"
+        ],
+        "weights": [
+          0.23,
+          0.2,
+          0.18,
+          0.16,
+          0.13,
+          0.1
+        ],
+        "directions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "這是個別一次性的情境；需按人物學籍、情境時段與既有接觸條件抽選"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "推薦委員會問的是表現，不是名次",
+        "candidateId": "T02-04-C15",
+        "cause": "一名科任教師在行政辦公室請導師提供學生的實際學習紀錄，旁邊放著尚未定案的推薦作業文件。",
+        "teacherResponsibility": "尊重學生自主，提供合法資訊與適當協助；導師不能替教務、升學或家長做出承諾。",
+        "knowledgeSource": "只知道本次實際對話、訊息及所見，其他人的想法、核准、回覆未經證實。",
+        "distinctiveConsequence": "導師整理可追溯的觀察，不把傳聞或好惡當成評分事實。／雙方確認所需資料範圍，推薦順位仍由正式校內程序處理。／導師要求確認適當紀錄程序，未直接散布個別學生資料。／導師表達公平原則，不以私下稱讚代替推薦委員會決議。",
+        "narrativeTime": "午休後的推薦會議前",
+        "scene": "school:administration",
+        "numericRationale": "主題三核心碼沿用1-4、2-2、8-3；附加3-1、4-3、7-1，依本次情境作候選初擬，待現有公式與合法持有者確認。",
+        "review": "author-draft-not-verified",
+        "qualificationWarning": null
+      }
     }
   ]
 }

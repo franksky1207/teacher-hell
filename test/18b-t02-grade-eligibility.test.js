@@ -6,7 +6,7 @@ import {eventWorld,definition} from './support/event-fixtures.js';
 import {buildEventCandidates,validateEventDefinitions,findReunionContact} from '../src/runtime/event-candidates.js';
 import {gradeAt,assessmentCalendar,SENIOR_CALENDAR_VERSION} from '../src/calendar/calendar.js';
 import {admissionCalendar} from '../src/calendar/admissions.js';
-import {entranceCondition,graduatedEntrantsForSubjectRegister} from '../src/runtime/entrance.js';
+import {entranceCondition,graduatedEntrantsForAftercarePhase} from '../src/runtime/entrance.js';
 
 test('18-B T02: year-three-only story cannot enter year-one candidate pool',()=>{
  const world=eventWorld(1,'2026-09-10','early'),currentGrade=gradeAt(world.position.date,world.numeric.evolution.world.registry.cohortStart);
@@ -99,8 +99,11 @@ test('18-B T02: post-ceremony subject registration retains graduated students, n
   {personId:'not-adopted',classId:'own',status:'graduated'}
  ]};
  const entrance={cohort:2026,students:{grad:{continuous:true},transfer:{},unfinished:{},older:{}}};
- assert.deepEqual(graduatedEntrantsForSubjectRegister(registry,entrance),['grad']);
- assert.deepEqual(graduatedEntrantsForSubjectRegister(registry,null),[]);
+ assert.deepEqual(graduatedEntrantsForAftercarePhase(registry,entrance,'subject-register',true),['grad']);
+ assert.deepEqual(graduatedEntrantsForAftercarePhase(registry,null,'subject-register',true),[]);
+ for(const phase of ['stars8-result','application-allocation','application-confirm','subject-register'])assert.deepEqual(graduatedEntrantsForAftercarePhase(registry,entrance,phase,true),['grad'],phase);
+ for(const phase of ['init','guidance','withdraw','decision','eligibility'])assert.deepEqual(graduatedEntrantsForAftercarePhase(registry,entrance,phase,true),[],phase);
+ assert.deepEqual(graduatedEntrantsForAftercarePhase(registry,entrance,'subject-register',false),[]);
 });
 
 

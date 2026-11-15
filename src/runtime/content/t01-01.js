@@ -6428,7 +6428,7 @@ export default [
               "order": 1,
               "text": "隔天早自習，學生把昨天說好更新的學習清單放在桌上。你還沒翻開，不知道工作究竟變多還是變少。",
               "speaker": null,
-              "scene": "school:homeroom-classroom",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -6436,7 +6436,7 @@ export default [
               "order": 2,
               "text": "老師，我有帶來，可是我不知道這張算比較好，還是比較慘。",
               "speaker": "participant",
-              "scene": "school:homeroom-classroom",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",

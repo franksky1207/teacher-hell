@@ -1,0 +1,218 @@
+draft-contracts	Set up job	﻿2026-11-15T05:56:27.7532923Z Current runner version: '2.338.2'
+draft-contracts	Set up job	2026-11-15T05:56:27.7550259Z ##[group]Runner Image Provisioner
+draft-contracts	Set up job	2026-11-15T05:56:27.7550832Z Hosted Compute Agent
+draft-contracts	Set up job	2026-11-15T05:56:27.7551280Z Version: 20261103.629
+draft-contracts	Set up job	2026-11-15T05:56:27.7551642Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+draft-contracts	Set up job	2026-11-15T05:56:27.7552079Z Build Date: 2026-11-03T17:26:59Z
+draft-contracts	Set up job	2026-11-15T05:56:27.7552514Z Worker ID: {e8e85a8b-5043-4573-99ad-4b1a37a4e66f}
+draft-contracts	Set up job	2026-11-15T05:56:27.7552909Z Region: centralus
+draft-contracts	Set up job	2026-11-15T05:56:27.7553244Z Cloud: Azure
+draft-contracts	Set up job	2026-11-15T05:56:27.7553564Z ##[endgroup]
+draft-contracts	Set up job	2026-11-15T05:56:27.7554299Z ##[group]Operating System
+draft-contracts	Set up job	2026-11-15T05:56:27.7554681Z Ubuntu
+draft-contracts	Set up job	2026-11-15T05:56:27.7554985Z 26.04.1
+draft-contracts	Set up job	2026-11-15T05:56:27.7555321Z LTS
+draft-contracts	Set up job	2026-11-15T05:56:27.7555629Z ##[endgroup]
+draft-contracts	Set up job	2026-11-15T05:56:27.7555974Z ##[group]Runner Image
+draft-contracts	Set up job	2026-11-15T05:56:27.7556341Z Image: ubuntu-26.04
+draft-contracts	Set up job	2026-11-15T05:56:27.7556965Z Version: 20261111.196.1
+draft-contracts	Set up job	2026-11-15T05:56:27.7557560Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261111.196/images/ubuntu/Ubuntu2604-Readme.md
+draft-contracts	Set up job	2026-11-15T05:56:27.7558594Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261111.196
+draft-contracts	Set up job	2026-11-15T05:56:27.7559152Z ##[endgroup]
+draft-contracts	Set up job	2026-11-15T05:56:27.7559793Z ##[group]GITHUB_TOKEN Permissions
+draft-contracts	Set up job	2026-11-15T05:56:27.7560963Z Contents: read
+draft-contracts	Set up job	2026-11-15T05:56:27.7561327Z Metadata: read
+draft-contracts	Set up job	2026-11-15T05:56:27.7561636Z ##[endgroup]
+draft-contracts	Set up job	2026-11-15T05:56:27.7562870Z Secret source: Actions
+draft-contracts	Set up job	2026-11-15T05:56:27.7563715Z Cache mode: write
+draft-contracts	Set up job	2026-11-15T05:56:27.7564137Z Prepare workflow directory
+draft-contracts	Set up job	2026-11-15T05:56:27.7781046Z Prepare all required actions
+draft-contracts	Set up job	2026-11-15T05:56:27.7820246Z Getting action download info
+draft-contracts	Set up job	2026-11-15T05:56:27.9791811Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+draft-contracts	Set up job	2026-11-15T05:56:28.0650829Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+draft-contracts	Set up job	2026-11-15T05:56:28.1919293Z Complete job name: draft-contracts
+draft-contracts	Run actions/checkout@v4	﻿2026-11-15T05:56:28.2484955Z ##[group]Run actions/checkout@v4
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2485806Z with:
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2486217Z   ref: f57123a9996439577bee4a5b8a02c3de0b144ee6
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2486894Z   repository: franksky1207/teacher-hell
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2490026Z   token: ***
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2490391Z   ssh-strict: true
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2490737Z   ssh-user: git
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2491088Z   persist-credentials: true
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2491492Z   clean: true
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2491872Z   sparse-checkout-cone-mode: true
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2492316Z   fetch-depth: 1
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2492679Z   fetch-tags: false
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2493052Z   show-progress: true
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2493430Z   lfs: false
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2493784Z   submodules: false
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2494172Z   set-safe-directory: true
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2494602Z   allow-unsafe-pr-checkout: false
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.2495162Z ##[endgroup]
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4635634Z Syncing repository: franksky1207/teacher-hell
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4637161Z ##[group]Getting Git version info
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4637659Z Working directory is '/home/runner/work/teacher-hell/teacher-hell'
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4638229Z [command]/usr/bin/git version
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4638496Z git version 2.56.1
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4648241Z ##[endgroup]
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4658548Z Temporarily overriding HOME='/home/runner/work/_temp/846d2e6f-825b-4ad2-8846-b9a37be5c13f' before making global git config changes
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4659802Z Adding repository directory to the temporary git global config as a safe directory
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4661789Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/teacher-hell/teacher-hell
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4715969Z Deleting the contents of '/home/runner/work/teacher-hell/teacher-hell'
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4718434Z ##[group]Initializing the repository
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4721418Z [command]/usr/bin/git init /home/runner/work/teacher-hell/teacher-hell
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4810506Z hint: Using 'master' as the name for the initial branch. This default branch name
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4811339Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4811821Z hint: to use in all of your new repositories, which will suppress this warning,
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4812718Z hint: call:
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4813048Z hint:
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4813458Z hint: 	git config --global init.defaultBranch <name>
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4813840Z hint:
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4814143Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4814621Z hint: 'development'. The just-created branch can be renamed via this command:
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4815002Z hint:
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4815225Z hint: 	git branch -m <name>
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4815602Z hint:
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4815936Z hint: Disable this message with "git config set advice.defaultBranchName false"
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4821687Z Initialized empty Git repository in /home/runner/work/teacher-hell/teacher-hell/.git/
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4830492Z [command]/usr/bin/git remote add origin https://github.com/franksky1207/teacher-hell
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4874549Z ##[endgroup]
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4874981Z ##[group]Disabling automatic garbage collection
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4877784Z [command]/usr/bin/git config --local gc.auto 0
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4905137Z ##[endgroup]
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4905540Z ##[group]Setting up auth
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4910744Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.4938021Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.5314038Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.5339549Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.5561212Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.5588178Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.5802419Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.5845710Z ##[endgroup]
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.5846413Z ##[group]Fetching the repository
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:28.5847800Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin f57123a9996439577bee4a5b8a02c3de0b144ee6
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:44.1791522Z From https://github.com/franksky1207/teacher-hell
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:44.1792342Z  * branch            f57123a9996439577bee4a5b8a02c3de0b144ee6 -> FETCH_HEAD
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:44.1795328Z ##[endgroup]
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:44.1795909Z ##[group]Determining the checkout info
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:44.1797616Z ##[endgroup]
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:44.1802715Z [command]/usr/bin/git sparse-checkout disable
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:44.1846141Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:44.1869246Z ##[group]Checking out the ref
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:44.1872074Z [command]/usr/bin/git checkout --progress --force f57123a9996439577bee4a5b8a02c3de0b144ee6
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1743419Z Note: switching to 'f57123a9996439577bee4a5b8a02c3de0b144ee6'.
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1745556Z 
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1745753Z You are in 'detached HEAD' state. You can look around, make experimental
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1746068Z changes and commit them, and you can discard any commits you make in this
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1746652Z state without impacting any branches by switching back to a branch.
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1746911Z 
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1747105Z If you want to create a new branch to retain commits you create, you may
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1747429Z do so (now or later) by using -c with the switch command. Example:
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1747993Z 
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1748118Z   git switch -c <new-branch-name>
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1748232Z 
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1748348Z Or undo this operation with:
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1748462Z 
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1748525Z   git switch -
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1748641Z 
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1748818Z Turn off this advice by setting config variable advice.detachedHead to false
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1748993Z 
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1749301Z HEAD is now at f57123a feat(18b): revise and audit T01 eight-topic isolated batch [skip ci]
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1840761Z ##[endgroup]
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1884683Z [command]/usr/bin/git log -1 --format=%H
+draft-contracts	Run actions/checkout@v4	2026-11-15T05:56:45.1904720Z f57123a9996439577bee4a5b8a02c3de0b144ee6
+draft-contracts	Run actions/setup-node@v4	﻿2026-11-15T05:56:45.2092099Z ##[group]Run actions/setup-node@v4
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:45.2092311Z with:
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:45.2092459Z   node-version-file: .nvmrc
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:45.2092623Z   cache: npm
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:45.2092763Z   always-auth: false
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:45.2092915Z   check-latest: false
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:45.2094248Z   token: ***
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:45.2094408Z ##[endgroup]
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:45.2954330Z Node version file is not JSON file
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:45.2955239Z Resolved .nvmrc as 24.19.0
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:45.2967505Z Attempting to download 24.19.0...
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:45.3074302Z (node:2185) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:45.3074827Z (Use `node --trace-deprecation ...` to show where the warning was created)
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:45.9838338Z Acquiring 24.19.0 - x64 from https://github.com/actions/node-versions/releases/download/24.19.0-30872449280/node-24.19.0-linux-x64.tar.gz
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:46.4037364Z Extracting ...
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:46.4178306Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/fc5d1c02-bc9b-4070-adf0-3ee0e88ccf5b -f /home/runner/work/_temp/fb39f699-84c0-4003-a0db-fd00d940f5ca
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:46.9650266Z Adding to the cache ...
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:48.6977208Z ##[group]Environment details
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:48.8530114Z node: v24.19.0
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:48.8530391Z npm: 11.17.0
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:48.8530546Z yarn: 1.22.22
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:48.8530924Z ##[endgroup]
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:48.8541878Z [command]/opt/hostedtoolcache/node/24.19.0/x64/bin/npm config get cache
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:48.9148268Z /home/runner/.npm
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:49.0600461Z Cache hit for: node-cache-Linux-x64-npm-35faf3d0ee4d959ff0c9e7ac6bc81cf30a082225dd0bc32d30b66c574c03ab8d
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:49.0674384Z (node:2185) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:49.3340912Z Received 133945 of 133945 (100.0%), 1.1 MBs/sec
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:49.3341338Z Cache Size: ~0 MB (133945 B)
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:49.3358165Z [command]/usr/bin/tar -xf /home/runner/work/_temp/b19fdc00-eeeb-42b2-9ea7-2b231a39a2e9/cache.tzst -P -C /home/runner/work/teacher-hell/teacher-hell --use-compress-program unzstd
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:49.3432178Z Cache restored successfully
+draft-contracts	Run actions/setup-node@v4	2026-11-15T05:56:49.3435322Z Cache restored from key: node-cache-Linux-x64-npm-35faf3d0ee4d959ff0c9e7ac6bc81cf30a082225dd0bc32d30b66c574c03ab8d
+draft-contracts	Run npm ci --ignore-scripts	﻿2026-11-15T05:56:49.3599133Z ##[group]Run npm ci --ignore-scripts
+draft-contracts	Run npm ci --ignore-scripts	2026-11-15T05:56:49.3599367Z [36;1mnpm ci --ignore-scripts[0m
+draft-contracts	Run npm ci --ignore-scripts	2026-11-15T05:56:49.3643091Z shell: /usr/bin/bash -e {0}
+draft-contracts	Run npm ci --ignore-scripts	2026-11-15T05:56:49.3643261Z ##[endgroup]
+draft-contracts	Run npm ci --ignore-scripts	2026-11-15T05:56:49.7100316Z 
+draft-contracts	Run npm ci --ignore-scripts	2026-11-15T05:56:49.7105107Z added 1 package, and audited 2 packages in 303ms
+draft-contracts	Run npm ci --ignore-scripts	2026-11-15T05:56:49.7105800Z 
+draft-contracts	Run npm ci --ignore-scripts	2026-11-15T05:56:49.7105956Z found 0 vulnerabilities
+draft-contracts	Run node scripts/sync-t01-drafts.mjs --check	﻿2026-11-15T05:56:49.7400558Z ##[group]Run node scripts/sync-t01-drafts.mjs --check
+draft-contracts	Run node scripts/sync-t01-drafts.mjs --check	2026-11-15T05:56:49.7400813Z [36;1mnode scripts/sync-t01-drafts.mjs --check[0m
+draft-contracts	Run node scripts/sync-t01-drafts.mjs --check	2026-11-15T05:56:49.7440721Z shell: /usr/bin/bash -e {0}
+draft-contracts	Run node scripts/sync-t01-drafts.mjs --check	2026-11-15T05:56:49.7440893Z ##[endgroup]
+draft-contracts	Run node scripts/audit-t01.mjs	﻿2026-11-15T05:56:49.7841657Z ##[group]Run node scripts/audit-t01.mjs
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.7842079Z [36;1mnode scripts/audit-t01.mjs[0m
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.7880401Z shell: /usr/bin/bash -e {0}
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.7880558Z ##[endgroup]
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.9745300Z {
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.9745832Z   "authored": 200,
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.9746102Z   "structurallyValid": 200,
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.9746405Z   "baseline": 10,
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.9746982Z   "hashMatchedAssessments": 200,
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.9747309Z   "sopReviewed": 0,
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.9747543Z   "engineeringResolverReady": 200,
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.9747888Z   "engineeringCatalogueReady": 200,
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.9748204Z   "formalQualified": 0,
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.9748483Z   "publishedInNewCareers": 0,
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.9748744Z   "possibleDuplicatePairs": []
+draft-contracts	Run node scripts/audit-t01.mjs	2026-11-15T05:56:49.9784488Z }
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	﻿2026-11-15T05:56:49.9900368Z ##[group]Run node --test --test-isolation=none test/phase18b-t01-draft.test.js
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:49.9900702Z [36;1mnode --test --test-isolation=none test/phase18b-t01-draft.test.js[0m
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:49.9940746Z shell: /usr/bin/bash -e {0}
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:49.9940901Z ##[endgroup]
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:54.1286140Z ✔ T01 whole-batch story, candidate, immutable reference and isolation contracts (64.447559ms)
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:54.1287174Z ✔ runtime group 1: same receipt root across days/topics, weighted evidence and save (2064.961099ms)
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:54.1287932Z ✔ runtime group 2: private claim transmission, directional relationship and save (775.355222ms)
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:54.1288769Z ✔ runtime group 3: full isolated catalogue registration/draw/admission/save; release remains closed (1095.94578ms)
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:54.1297726Z ℹ tests 4
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:54.1305298Z ℹ suites 0
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:54.1305746Z ℹ pass 4
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:54.1305897Z ℹ fail 0
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:54.1306150Z ℹ cancelled 0
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:54.1306451Z ℹ skipped 0
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:54.1306766Z ℹ todo 0
+draft-contracts	Run node --test --test-isolation=none test/phase18b-t01-draft.test.js	2026-11-15T05:56:54.1306987Z ℹ duration_ms 4110.620951
+draft-contracts	Post Run actions/setup-node@v4	﻿2026-11-15T05:56:54.1623596Z Post job cleanup.
+draft-contracts	Post Run actions/setup-node@v4	2026-11-15T05:56:54.2386971Z (node:2278) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+draft-contracts	Post Run actions/setup-node@v4	2026-11-15T05:56:54.2387484Z (Use `node --trace-deprecation ...` to show where the warning was created)
+draft-contracts	Post Run actions/setup-node@v4	2026-11-15T05:56:54.2388915Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-35faf3d0ee4d959ff0c9e7ac6bc81cf30a082225dd0bc32d30b66c574c03ab8d, not saving cache.
+draft-contracts	Post Run actions/checkout@v4	﻿2026-11-15T05:56:54.2499664Z Post job cleanup.
+draft-contracts	Post Run actions/checkout@v4	2026-11-15T05:56:54.3024694Z [command]/usr/bin/git version
+draft-contracts	Post Run actions/checkout@v4	2026-11-15T05:56:54.3047676Z git version 2.56.1
+draft-contracts	Post Run actions/checkout@v4	2026-11-15T05:56:54.3071679Z Temporarily overriding HOME='/home/runner/work/_temp/e7a38b12-22c8-46dd-bb06-2f7cd8bef7bc' before making global git config changes
+draft-contracts	Post Run actions/checkout@v4	2026-11-15T05:56:54.3072242Z Adding repository directory to the temporary git global config as a safe directory
+draft-contracts	Post Run actions/checkout@v4	2026-11-15T05:56:54.3074735Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/teacher-hell/teacher-hell
+draft-contracts	Post Run actions/checkout@v4	2026-11-15T05:56:54.3106931Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+draft-contracts	Post Run actions/checkout@v4	2026-11-15T05:56:54.3143654Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+draft-contracts	Post Run actions/checkout@v4	2026-11-15T05:56:54.3394129Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+draft-contracts	Post Run actions/checkout@v4	2026-11-15T05:56:54.3416882Z http.https://github.com/.extraheader
+draft-contracts	Post Run actions/checkout@v4	2026-11-15T05:56:54.3423557Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+draft-contracts	Post Run actions/checkout@v4	2026-11-15T05:56:54.3454268Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+draft-contracts	Post Run actions/checkout@v4	2026-11-15T05:56:54.3706678Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+draft-contracts	Post Run actions/checkout@v4	2026-11-15T05:56:54.3735155Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+draft-contracts	Complete job	﻿2026-11-15T05:56:54.4063914Z Cleaning up orphan processes
+draft-contracts	Complete job	2026-11-15T05:56:54.4306225Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

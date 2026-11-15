@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
 import {validateStory,validateStoryReference,resolveStory,T01_DRAFT_STORIES,t01DraftCatalogue} from '../src/runtime/story-content.js';
 import {validateEventDefinitions,buildEventCandidates} from '../src/runtime/event-candidates.js';
 import {auditContent} from '../scripts/content-audit.js';
@@ -167,4 +168,53 @@ test('T01 eight causal revisions: meaning, transmitted claims and single source 
  assert.ok(weights.size>=6,'event weights should reflect context');
  assert.ok(directions.size>=5,'semantic directions must differ');
  assert.ok(variantProfiles.size>=6,'variation weights should not be one macro');
+});
+
+
+test('T01 remaining 192 causal contracts and signed eight exemplar isolation',()=>{
+ const exemplarIds=new Set(['01-22','02-09','03-01','04-01','05-01','06-03','07-02','08-07']);
+ const rest=records.filter(r=>!exemplarIds.has(r.story.resourceId.slice(-5)));
+ assert.equal(rest.length,192);
+ const signoffs=JSON.parse(readFileSync('docs/reviews/18b-t01-eight-independent-approval.json','utf8')).records;
+ const hash=obj=>createHash('sha256').update(JSON.stringify(obj)).digest('hex');
+ for(const approval of signoffs){
+  const record=records.find(r=>r.story.resourceId===approval.eventId);
+  assert.ok(record);
+  assert.equal(hash(record.story),approval.editorialReview.storySha256,'signed story not modified');
+  assert.equal(hash(record.definition),approval.editorialReview.definitionSha256,'signed definition not modified');
+ }
+ let outcomesWithChanges=0,claimsWithDelivery=0,history=0,branchChoices=0;
+ const uniqueAdditional=new Set(),uniqueWeights=new Set();
+ for(const r of rest){
+  const d=r.definition,s=r.story,b=catalogue.bindings.find(x=>x.definitionId===d.id);
+  const codes=[...d.coreCodes,...d.additionalCodes];
+  assert.equal(codes.length,6);
+  assert.equal(new Set(codes).size,6,'numeric codes duplicated '+d.id);
+  assert.ok(d.directions.every(x=>x===-1||x===1));
+  assert.ok(Math.abs(d.weights.reduce((x,y)=>x+y,0)-1)<1e-8,'weights not normalized '+d.id);
+  assert.deepEqual(b,{definitionId:d.id,...r.binding});
+  assert.equal(b.sources.length,6);
+  assert.ok(typeof r.editorial.numericCausalityNote==='string'&&r.editorial.numericCausalityNote.length>20);
+  assert.equal(s.status,'engineering-test');
+  uniqueAdditional.add(d.additionalCodes.join(','));uniqueWeights.add(d.weights.join(','));
+  for(const stage of s.stages)for(const c of stage.choices){
+   if(c.variants?.length)branchChoices++;
+   for(const o of [c.outcome,...(c.variants??[]).map(v=>v.outcome)]){
+    if(o.changes?.length)outcomesWithChanges++;
+    history+=(o.historyCodes??[]).length;
+    assert.ok(!(o.historyCodes??[]).includes('H01-3'),'threat history code not appropriate in T01 study support');
+    for(let j=0;j<(o.claims??[]).length;j++){
+     if(o.claims[j].role!=='participant')continue;
+     assert.ok(o.world?.transmissions?.some(t=>t.fromRole==='participant'&&t.toRole==='teacher'&&t.claimIndex===j),'student disclosure has no source');
+     claimsWithDelivery++;
+    }
+   }
+  }
+ }
+ assert.ok(outcomesWithChanges>=100,'too few actual numeric consequences');
+ assert.ok(uniqueAdditional.size>=40,'additional codes not tailored to story');
+ assert.ok(uniqueWeights.size>=40,'event weights still use a single macro');
+ assert.ok(branchChoices>=16,'genuine NPC response alternatives missing');
+ assert.ok(claimsWithDelivery>=20,'student speech lacks transmission provenance');
+ assert.ok(history>=10,'confirmed history effects omitted');
 });

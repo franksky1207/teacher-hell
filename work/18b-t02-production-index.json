@@ -367,7 +367,8 @@
     "2026-11-16：已針對正式admissions state核對升學門檻的實際資料欄位（completed、applications、offers、stars），並增補年級3正向與milestone-completed正反回歸測試。分科分發/畢典彩排及面試確切日期尚缺合法時序接線，不能放行；不改208篇全文。",
     "2026-11-16：精準修正T02-05-28畢典彩排及T02-07-24放榜後校園兩個無保證時點；新增僅涵蓋T02年級/升學門檻的小型CI工作流程，尚未取得執行結果。Foundation 18/18通過與T02專項驗證分開記錄。",
     "2026-11-16：修正reunion scope校友重逢事件因e.facts無靜態contact ID而永遠被拒的缺陷，新增從正式world facts搜尋同日導師/校友contact並綁定factIds；已增正反測試但未取得執行證據。T02-06-20/08-28校正時段與場景。",
-    "2026-11-16：已將T02的5項精準測試引入既有Foundation workflow，GitHub Actions 43773458115成功（23 pass / 0 fail）；不再誤稱『未跑Node』，但僅限5例並不等於208件初稿全數編譯或獨立審稿。多餘獨立workflow已移除。"
+    "2026-11-16：已將T02的5項精準測試引入既有Foundation workflow，GitHub Actions 43773458115成功（23 pass / 0 fail）；不再誤稱『未跑Node』，但僅限5例並不等於208件初稿全數編譯或獨立審稿。多餘獨立workflow已移除。",
+    "2026-11-16：將T02-03/05/06/07中78則高三事件的過時『年級資格未接線』審稿文字更正為『年級已完成、招生時序/在籍/客觀前因仍待審』，避免後續重複開工。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -837,5 +838,12 @@
       "T02-07-28及其他校友故事：當日contact判斷已修，但正式遊戲是否能取得真實contact資料及跨學年歷史角色仍要專項端對端證明"
     ],
     "testing": "Foundation run 43773458115 含5項T02精準案例全部通過；208則故事仍未做個別Node編譯及獨立語意審查"
+  },
+  "gradeNoteReconciliation": {
+    "checked": "2026-11-16",
+    "updated": 78,
+    "scope": "T02-03/05/06/07作者檔中高三年級門檻的審稿註記",
+    "rule": "年級資格已接線，但不可混為升學階段、學分通知、合法日時或正式語意審核通過",
+    "remaining": "所有208工程隔離，reviewed/published仍0"
   }
 }

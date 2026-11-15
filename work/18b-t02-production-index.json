@@ -362,7 +362,8 @@
     "2026-11-16輕量契約欄位檢查：208事件／832四選項／818空數值選項／78件高三放行阻斷，欄位形狀問題0。此檢查不代表Node已執行或獨立語意審稿已通過。",
     "2026-11-16：新增現行引擎可驗證的grades可選資格，T02-03/05/06/07共78則已綁高三；2則用既有entrance狀態限縮；4則校曆slot精準修正。仍欠升學階段/畢業後合法抽選條件，不將年級門檻當全部放行。",
     "2026-11-16：新增專項年級資格回歸測試原始碼（未實際執行）。分發公布、畢典彩排、校友重逢等仍缺特定行事曆/學籍條件，列阻斷不冒稱已解決；保留零正式上架。",
-    "2026-11-16：再將T02-07中6則持續分科準備故事加入正式entrance.subject-preparing條件，加上原01共7則；05-01有gsat-published，總計8則實際升學狀態門檻。不對分發公告等未有合法條件者套用不實門檻。"
+    "2026-11-16：再將T02-07中6則持續分科準備故事加入正式entrance.subject-preparing條件，加上原01共7則；05-01有gsat-published，總計8則實際升學狀態門檻。不對分發公告等未有合法條件者套用不實門檻。",
+    "2026-11-16：已針對正式admissions state核對升學門檻的實際資料欄位（completed、applications、offers、stars），並增補年級3正向與milestone-completed正反回歸測試。分科分發/畢典彩排及面試確切日期尚缺合法時序接線，不能放行；不改208篇全文。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -551,5 +552,231 @@
         "issue": "畢典彩排：school/noon不足以限定真正畢典彩排日"
       }
     ]
+  },
+  "currentAdmissionsGateReview": {
+    "checked": "2026-11-16",
+    "codeSources": [
+      "src/calendar/admissions.js",
+      "src/academics/admissions.js",
+      "src/runtime/entrance.js",
+      "src/runtime/event-candidates.js"
+    ],
+    "confirmedDataContract": "既有entrance.completed包含{id,kind,date,sourceOrder}，applications使用registered/screened/reviewed/regular等階段，reviewedAt與offers皆為現有資料；不能自行假設分科放榜階段已實作。",
+    "activeGatedStories": [
+      {
+        "topic": "05",
+        "total": 3,
+        "entries": [
+          {
+            "id": "content:18b-t02-05-01",
+            "gates": [
+              {
+                "kind": "gsat-published"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-05-18",
+            "gates": [
+              {
+                "kind": "milestone-completed",
+                "value": "stars-nominate"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-05-17",
+            "gates": [
+              {
+                "kind": "stars-nominated"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "06",
+        "total": 8,
+        "entries": [
+          {
+            "id": "content:18b-t02-06-01",
+            "gates": [
+              {
+                "kind": "milestone-completed",
+                "value": "application-screen"
+              },
+              {
+                "kind": "application-screened"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-06-11",
+            "gates": [
+              {
+                "kind": "milestone-completed",
+                "value": "application-screen"
+              },
+              {
+                "kind": "application-screened"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-06-24",
+            "gates": [
+              {
+                "kind": "milestone-completed",
+                "value": "application-review"
+              },
+              {
+                "kind": "application-reviewed"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-06-17",
+            "gates": [
+              {
+                "kind": "milestone-completed",
+                "value": "application-review"
+              },
+              {
+                "kind": "application-reviewed"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-06-20",
+            "gates": [
+              {
+                "kind": "milestone-completed",
+                "value": "application-screen"
+              },
+              {
+                "kind": "application-screened"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-06-23",
+            "gates": [
+              {
+                "kind": "milestone-completed",
+                "value": "application-screen"
+              },
+              {
+                "kind": "application-screened"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-06-25",
+            "gates": [
+              {
+                "kind": "milestone-completed",
+                "value": "application-result"
+              },
+              {
+                "kind": "application-reviewed"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-06-28",
+            "gates": [
+              {
+                "kind": "milestone-completed",
+                "value": "application-result"
+              },
+              {
+                "kind": "application-accepted"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "07",
+        "total": 7,
+        "entries": [
+          {
+            "id": "content:18b-t02-07-01",
+            "gates": [
+              {
+                "kind": "subject-preparing"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-07-07",
+            "gates": [
+              {
+                "kind": "subject-preparing"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-07-04",
+            "gates": [
+              {
+                "kind": "subject-preparing"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-07-08",
+            "gates": [
+              {
+                "kind": "subject-preparing"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-07-09",
+            "gates": [
+              {
+                "kind": "subject-preparing"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-07-11",
+            "gates": [
+              {
+                "kind": "subject-preparing"
+              }
+            ]
+          },
+          {
+            "id": "content:18b-t02-07-25",
+            "gates": [
+              {
+                "kind": "subject-preparing"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "trackedRisks": [
+      {
+        "id": "T02-06-20",
+        "risk": "面試當日校外清晨訊息：application-screen只證明入圍，未綁面試確切日期，現有校曆活動日可能受保護",
+        "disposition": "保留工程隔離，待可核對面試當日與遠距事件合法時段後放行"
+      },
+      {
+        "id": "T02-07-22/24/27",
+        "risk": "分科考後分發公告與校友聯繫未有對應正式subject-result/distribution節點，school/教室敘事不能當歷史事件",
+        "disposition": "不以虛構里程碑或學期硬填，留校曆及結果接線阻斷"
+      },
+      {
+        "id": "T02-05-28",
+        "risk": "畢典彩排當日沒有現成可驗證候選里程碑",
+        "disposition": "不假設任意school午休都有彩排"
+      }
+    ],
+    "verification": "逐項比對現有正式升學資料結構與候選predicate原始碼；編寫精準回歸測試包含高三正反年級、升學里程碑正反狀態；尚未實際Node或CI執行",
+    "publication": 0
   }
 }

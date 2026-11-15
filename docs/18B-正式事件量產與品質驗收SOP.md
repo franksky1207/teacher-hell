@@ -498,7 +498,18 @@ Codex只做三組精準探查：
 - **保留限制**：未做全套角色範圍、所有資格葉節點、完整跨學年／retained attempt／IndexedDB／gzip或整體效能測試。工程包5才考量少量必要的存讀與效能量測；不能因工程包4結案就宣稱三年系統全面驗收。
 - **下一步**：工程包5（存讀整合、索引與少量實測），以PR #64最新HEAD為開發基準；保持PR #59～#64 Draft，未經授權不得合併、部署或擴大驗收。
 
-## 十九、目前試產狀態與下一步
+## 十九、工程包5精準審查與五包工程結案（2026-11-15；PR #65 Draft）
+
+- **PR及開發基準**：PR #65 `feat/18-package5-save-index-performance`，base 為 PR #64 `feat/18-package4-issue-candidates`，最新HEAD `09e2a6a6f2881444872783f3c7cdcf29b997eacb`；相比 base 僅超前1提交，新增`test/save-index-performance.test.js`與`docs/18-package5-save-index-performance.md`兩檔，**沒有修改 production程式**。維持Draft、未合併及未部署。
+- **審查結論**：依本批限定的工程整合、索引審查與少量量測範圍，**工程包5可有條件結案，工程包1～5均已完成指定範圍的程式審查**。此處「工程結案」**不等於**128主題事件語意審稿、T10-03二十則試產轉正、連續三年驗收、實機或全專案回歸完成。
+- **存讀與重玩證據**：新專用檔三組情境覆蓋 current/opening 與記憶體adapter的 session export/recover/import、原因事實／知情／定向關係／收據／鎖根／亂數一致、原子冪等、舊故事與非法資料拒絕。冬季採合法學期邊界的skipped-date fixture，實際執行review/read/checkpoint/fork，確保合法舊根保存、checkpoint後進展不帶入新attempt、原ledger封存及歷史beforeOrder不看未來；**未連續玩完整一學期，也未測高二／高三夏秋轉換或annual失敗完整授權**。
+- **查詢與索引**：檢查`projectIssues`、`storyHistoryView`、`eventIndex`、`buildEventCandidates`及完整世界驗證路徑，確認部分重複投影／查詢，然而既有短樣本不足以證明值得改造；未新增可跨attempt污染的持久索引、revision-only快取或第二權威。精準測試核對直接投影／歷史視圖、讀檔前後候選／index、共用／重建index權重以及相同抽選收據／RNG等價。
+- **唯一實測數據（不得外推）**：固定seed1、22 history、3 facts、3 issues、3 story rows、7 commits、1候選群組及1鎖根事件。Node v24.19.0單次計時：問題投影0.127ms、歷史視圖加三根查詢0.264ms、候選查詢1.085ms、完整世界驗證22.071ms、createSave＋encodeSave含驗證85.520ms。未壓縮Save JSON 754656 bytes，current 407947、opening 346649。無暖機／平均、無前後效能比較、無三年容量推估；不宣稱加速或已達效能門檻。
+- **測試紀錄**：Codex首次兩次三組均因fixture資料錯誤失敗，第三次1/3失敗（時間屏障），其餘第一及第三組通過；修正後針對第二組單獨執行兩次，最終1通過／0失敗；三組皆有通過紀錄，但**未宣稱最終一次指令三組齊跑通過**。本次Chat已閱讀PR內容、實際測試與工程文件，沒有額外執行Node／全專案／三年驗收。
+- **保留限制**：本批未做實際IndexedDB/Gzip、完整跨學期、所有retained attempt／witness v1組合、長歷史壓測、PR #60所有事件回歸或語意審查；工程包1 captured-input與部分歷史結構來源仍保有既定信任界線。後續如有真實資料或具體瓶頸再專案化處理，**不得因工程包5結案擅自開始大型驗收**。
+- **下一階段必須另行決策**：先盤點 PR #59～#65 的依賴鏈（PR #59規格／工具、PR #60隔離試產、PR #61→#65五包串接），再決定合併順序、是否需少量必要整合檢查與隔離事件銜接方式。所有Draft PR在使用者明確授權前均不合併或部署，T10-03的20則仍維持隔離，不自動視為正式上架。
+
+## 二十、目前試產狀態與下一步
 
 > **更新：第十輪已有兩個T10-03實際人物／跨日代表案例，相關專項CI #43660655609為13/13通過；這證明局部可行性，不能取代本次決定補強的三年長期因果規格。舊的「第七輪」紀錄僅為當時歷史快照，不是目前最新版本。**
 

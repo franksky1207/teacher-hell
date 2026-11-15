@@ -14,7 +14,7 @@
     "individuallyAuthoredOriginal": 58,
     "optionCount": 832,
     "optionsWithEmptyNumericChanges": 818,
-    "structurallyValidatedWithNode": 0,
+    "structurallyValidatedWithNode": 5,
     "independentlyReviewed": 0,
     "published": 0,
     "optionsWithActualNumericChanges": 14,
@@ -375,7 +375,8 @@
     "2026-11-16：發現正式高三畢典6/1早於分科報名6/18，原七則subject-preparing故事中的六則school晚自習／課堂版本會永不觸發。已將這六則用合法早期升學里程碑重接並同步調整文本，07-07考場地點則保留個別畢業後資格阻斷。Foundation run 43773838140：24 pass / 0 fail，含6項T02測試；全208逐篇編譯及獨立審稿仍未完成。",
     "2026-11-16：定位aftercare升學真缺口：畢典後subject-register遇在籍名冊為空，無法更新真正已畢業的原屆考生。已最小修正至正式entranceInput讀取同屆graduated學生及原有升學紀錄，排除轉學/其他屆，並新增精準測試。T02-07-07改成aftercare校友訊息，仍要求同日contact；T02-07-22/27正式分發後故事標示不在首發三年六月結算範圍，保持隔離。",
     "2026-11-16：Foundation 43774083544成功24/24（含新T02-07-07 aftercare／校友／分科報名條件之靜態Node回歸）；分科報名不等於考場分配已公布，將07-07劇情傳聞和知情來源修正，維持未確認狀態。T02-07-22/27分發放榜保留原情境並隔離，不能偷換申請入學以湊可用事件。",
-    "2026-11-16：正式Node Foundation run 43774354292完成，25 pass / 0 fail（含7項T02），已驗證畢業後升學名冊正反案例及前述六則分科年級/時序條件；仍保留208則engineering-test、逐篇Node全批0、獨立審稿0、上架0，不做無意義重跑。"
+    "2026-11-16：正式Node Foundation run 43774354292完成，25 pass / 0 fail（含7項T02），已驗證畢業後升學名冊正反案例及前述六則分科年級/時序條件；仍保留208則engineering-test、逐篇Node全批0、獨立審稿0、上架0，不做無意義重跑。",
+    "2026-11-16：發現畢典後不只subject-register，stars8-result、application-allocation、application-confirm也會因當日高三在籍名冊空而漏算原屆已畢業考生。延續資格已擴展四個日程節點並排除非畢業/轉出/其他屆者。GitHub Actions 43774849286正式26 pass /0 fail，其中5則改寫故事與候選定義已通過原validateStory及validateEventDefinitions；其餘203則未逐件結構驗證，獨立語意審稿及上架仍為0。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -891,7 +892,12 @@
     "guard": "轉學／未完成學業／不同屆／沒有原升學資料的人均不新增；沿用原applyEntrance與既有數值、抽選、存檔，不建立平行報名系統",
     "story": "T02-07-07改採people=reunion、dayKinds=aftercare、slotIds=private、subject-register完成及subject-preparing個人資格，另要求當天導師/校友contact證據",
     "test": "GitHub Actions Foundation run 43774354292：25 pass／0 fail，包含7項T02精準測試（畢業後升學名冊正反條件）；尚未執行畢業整段實機端對端，禁止視為完整驗收。",
-    "warning": "僅是正式資料流程最小接線，尚未做全程畢業至aftercare的實機端對端；正式上架0"
+    "warning": "僅是正式資料流程最小接線，尚未做全程畢業至aftercare的實機端對端；正式上架0",
+    "scope": "升學的四個畢典後正式階段stars8-result、application-allocation、application-confirm、subject-register都以原屆graduated且已有升學學籍紀錄者延續；轉出、其他屆、未進原入口的學生不得冒用",
+    "runtime": "src/runtime/entrance.js graduatedEntrantsForAftercarePhase",
+    "reason": "畢典後seniorRosterAt僅有當日仍在籍者，直接用它會使正式分發及確認等已排定升學流程不對已畢業生更新",
+    "testing": "test/18b-t02-grade-eligibility.test.js 驗證四個階段正向，以及init/guidance/withdraw/decision/eligibility、非aftercare及非畢業人選的排除；CI 43774849286 pass",
+    "limitations": "未跑三年流程端對端模擬；只有本批定點測試，不宣稱全208件完成"
   },
   "postCareerContentHold": {
     "date": "2026-11-16",
@@ -933,5 +939,22 @@
     "failed": 0,
     "focusedT02Tests": 7,
     "scope": "Node Foundation core/contracts + T02進階年級、升學及校友接觸、畢業後報名名冊；非208篇故事逐篇編譯或獨立語意簽核"
+  },
+  "latestEngineeringEvidence": {
+    "date": "2026-11-16",
+    "run": "https://github.com/franksky1207/teacher-hell/actions/runs/43774849286",
+    "commit": "9c0718260aa37f825155d375cabd7cedf6991ee1",
+    "result": "26 pass / 0 fail",
+    "validatedStoryDefinitionPairs": [
+      "content:18b-t02-05-28",
+      "content:18b-t02-06-20",
+      "content:18b-t02-07-01",
+      "content:18b-t02-07-07",
+      "content:18b-t02-08-28"
+    ],
+    "scope": "實際Node執行validateStory + validateEventDefinitions，各自對一組story/definition；另有高三年級、分科時序、校友contact、畢業後升學名冊正反測試。這不是正式事件目錄或實際遊戲抽選流程驗證",
+    "remainingStructurallyUnvalidated": 203,
+    "independentEditorialReviewed": 0,
+    "published": 0
   }
 }

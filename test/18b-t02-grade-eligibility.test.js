@@ -141,5 +141,5 @@ test('18-B T02: one-shot structural validation of all 208 isolated author record
   }
  }
  assert.equal(all.length,208);
- assert.deepEqual(errors,[],errors.join('\\n'));
+ assert.deepEqual(errors,[],errors.join('\n'));
 });

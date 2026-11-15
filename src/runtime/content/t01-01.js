@@ -2514,8 +2514,8 @@ export default [
                 ],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "teacher-contact-followup",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -2583,8 +2583,8 @@ export default [
                     ],
                     "historyCodes": [],
                     "next": {
-                      "stage": null,
-                      "afterDays": 0
+                      "stage": "teacher-contact-followup",
+                      "afterDays": 1
                     },
                     "world": {
                       "subjects": [
@@ -2652,8 +2652,8 @@ export default [
                     ],
                     "historyCodes": [],
                     "next": {
-                      "stage": null,
-                      "afterDays": 0
+                      "stage": "teacher-contact-followup",
+                      "afterDays": 1
                     },
                     "world": {
                       "subjects": [
@@ -2704,8 +2704,8 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "teacher-contact-followup",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -2743,6 +2743,371 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師肯定願意帶問題來談，學生未因此答應立即去辦公室。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師都很忙，我怕問的都是笨問題。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "teacher-contact-followup",
+          "pages": [
+            {
+              "order": 1,
+              "text": "隔日午休，學生帶著昨天寫下題號的小紙條回到教師辦公室。你還不知道他有沒有真的問到科任。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "老師，我有把那個問題帶著，可是後來發生的事……跟我想的不太一樣。",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "verify-contact",
+              "text": "核對學生自己拿到的回覆，或確認目前仍未問出口",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生是否真正接觸到科任，不能把想問當作已詢問。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師都很忙，我怕問的都是笨問題。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
+                }
+              },
+              "variants": [
+                {
+                  "id": "answered",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-1",
+                      "influence": 0.6
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生出示自己帶來的一張科任解題提示，導師確認這份提示確實回答了原本寫下的題號；尚不代表全部觀念已通。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "老師都很忙，我怕問的都是笨問題。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "not-yet",
+                  "weight": 2.1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.6
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生說昨天走到門口又轉身，沒有拿到回覆；他願意保留原題，教師不能把猶豫說成科任拒絕。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "老師都很忙，我怕問的都是笨問題。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "practice-asking",
+              "text": "和學生演練一段簡短、可自行選擇使用的提問",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師與學生演練如何只問一個明確題號；沒有保證科任明天能回覆。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師都很忙，我怕問的都是笨問題。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "keep-boundary",
+              "text": "保留問題紙，尊重學生暫時不想詢問",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師沒有替學生傳訊息或把未提問認定為不努力。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師都很忙，我怕問的都是笨問題。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "kind-response",
+              "text": "問問題不丟臉，老師忙也不代表你是麻煩",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "導師承認學生害怕打擾他人的感受，尚未替科任表態。",
                 "claims": [
                   {
                     "role": "participant",
@@ -6076,8 +6441,8 @@ export default [
                 ],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "list-followup",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -6108,6 +6473,266 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師說出對已完成部分的肯定，學生把紙上的一個實做項圈起，未被保證焦慮消失。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "list-followup",
+          "pages": [
+            {
+              "order": 1,
+              "text": "隔天早自習，學生把昨天說好更新的學習清單放在桌上。你還沒翻開，不知道工作究竟變多還是變少。",
+              "speaker": null,
+              "scene": "school:homeroom-classroom",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "老師，我有帶來，可是我不知道這張算比較好，還是比較慘。",
+              "speaker": "participant",
+              "scene": "school:homeroom-classroom",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "compare-lists",
+              "text": "一起對照兩張清單，先核對哪些是正式交辦",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師比對更新清單與舊表，避免把未確認公告當作新交辦。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "shorter",
+                  "weight": 2,
+                  "modifiers": [],
+                  "outcome": {
+                    "fact": "學生出示更新後清單，自己取消了兩項加碼目標，正式作業仍照原期限；他說至少看得見今天要先做什麼。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "longer",
+                  "weight": 2.4,
+                  "modifiers": [],
+                  "outcome": {
+                    "fact": "學生的更新清單又長了一截，核對後發現新增項目有些是自己訂的，仍不敢刪；導師未替科任更動規則。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "sort-official",
+              "text": "請學生先標出哪些要求有公告可查",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生先把正式公告與自己新增的事項分欄，仍保留期限未明部分。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "defer-again",
+              "text": "暫不追加更多檢查，讓學生自行保留紀錄",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師不再疊加額外要求，沒有把清單變長視為故意怠惰。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "gentle",
+              "text": "你的清單不是成績單，完成的事不會突然不算數",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師承認清單更新時可能又產生新的壓力，沒有保證工作立刻變少。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -7419,8 +8044,8 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "home-goal-followup",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -7482,8 +8107,8 @@ export default [
                     ],
                     "historyCodes": [],
                     "next": {
-                      "stage": null,
-                      "afterDays": 0
+                      "stage": "home-goal-followup",
+                      "afterDays": 1
                     },
                     "world": {
                       "subjects": [
@@ -7545,8 +8170,8 @@ export default [
                     ],
                     "historyCodes": [],
                     "next": {
-                      "stage": null,
-                      "afterDays": 0
+                      "stage": "home-goal-followup",
+                      "afterDays": 1
                     },
                     "world": {
                       "subjects": [
@@ -7636,6 +8261,357 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師表達想聽本人聲音，學生知道可不同意表內目標，未被保證家長會接受。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "home-goal-followup",
+          "pages": [
+            {
+              "order": 1,
+              "text": "下一次午餐談話，學生帶著那張原本由家長先寫好的目標表回來。導師無法從表格判斷家裡是否已經討論。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我有想到自己的那一欄要怎麼寫，但家裡那邊……我還不知道該怎麼說。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "ask-home-status",
+              "text": "先問學生是否真的提出自己的目標，尊重不願詳述的部分",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師只依學生願意說明的內容整理進度，沒有代替家長同意。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
+                }
+              },
+              "variants": [
+                {
+                  "id": "conversation-opened",
+                  "weight": 2,
+                  "modifiers": [],
+                  "outcome": {
+                    "fact": "學生向導師表示，自己曾把小目標拿給家長看，家長說願意先聽他說完；這是學生的轉述，尚未由家長確認。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我有跟家裡說，他們至少先聽我說完。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面向導師說明自己接觸到的訊息或目前想法。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "held-back",
+                  "weight": 2.4,
+                  "modifiers": [],
+                  "outcome": {
+                    "fact": "學生向導師坦言自己把目標表帶回家，最後還是沒拿出來；他說怕破壞家裡原本的安排。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我昨天還是不敢把自己的目標拿出來說。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面向導師說明自己接觸到的訊息或目前想法。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "draft-words",
+              "text": "陪學生擬一段能表達本人意願的說法",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師陪學生練習如何說明目標不同，沒有替他通知家長或保證對方接受。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "keep-private",
+              "text": "先保留目標表，不要求學生今天就與家長攤牌",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師讓學生自行決定談話時機，沒有把沉默等同於同意家長安排。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "validate",
+              "text": "自己的願望不必立刻跟家裡一模一樣",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師尊重學生與家長可能有不同期待，沒有替任何一方判定對錯。",
                 "claims": [
                   {
                     "role": "participant",

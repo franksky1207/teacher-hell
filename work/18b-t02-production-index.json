@@ -436,5 +436,60 @@
       "候選六碼權重仍有批次預設，不可宣稱個別數值公式已完成校準",
       "仍有偏模板化的結尾敘述，需依四項核心集中語意審稿"
     ]
+  },
+  "targetedContinuationReview": {
+    "date": "2026-11-16",
+    "method": "讀取T02-03/06/07/08作者原稿及definition對照；僅靜態語意檢查，未做Node/CI",
+    "decision": "維持隔離；先處理資格與時段接線，避免為填數值或文字潤飾反覆重寫208則",
+    "cases": [
+      {
+        "id": "content:18b-t02-03-02",
+        "issue": "寒假每週快轉中的電話事件；long-vacation/vacation-day是否能代表晚間接觸及補考日期待確認",
+        "action": "驗證快轉事件觸發及正式補考公告日期，不預設每天可抽"
+      },
+      {
+        "id": "content:18b-t02-03-11",
+        "issue": "高三下畢典前延修通知；school/private未限制高三下及正式畢業資格初審時點",
+        "action": "補合法學年與學籍狀態條件之前保持隔離"
+      },
+      {
+        "id": "content:18b-t02-03-26",
+        "issue": "寒假重修與打工衝突；long-vacation/vacation-day未限定重修實際可選期程",
+        "action": "依遊戲校曆和重修期程核對，不能假設寒假必有重修"
+      },
+      {
+        "id": "content:18b-t02-06-20",
+        "issue": "面試當日清晨校外訊息，但候選僅school/early；未限定高三面試日期",
+        "action": "對應升學面試事件日及適當遠距時段；不能直接在一般早自習抽選"
+      },
+      {
+        "id": "content:18b-t02-07-22",
+        "issue": "分發結果公布後校外咖啡店；未限定正式分發公告及當事人升學狀態",
+        "action": "加入可驗證結果公布與後續聯繫資格，不以一般school/weekend/holiday代替"
+      },
+      {
+        "id": "content:18b-t02-07-28",
+        "issue": "畢業多年後校友重逢，people=reunion但年限與歷史人物連結尚未工程驗證",
+        "action": "須核對歷史人物與重逢條件，不把目前候選設定當已通過"
+      },
+      {
+        "id": "content:18b-t02-08-28",
+        "issue": "畢業校友返校分享技職轉折，people=reunion且school:courtyard；dayKinds只weekend/holiday",
+        "action": "須確認假日返校場景、校友聯絡及歷史資格，避免校園無故開放或當成在校生"
+      }
+    ],
+    "crossCutting": [
+      {
+        "scope": "T02-05～07（78則）",
+        "issue": "高三招生/升學階段正式資格尚未接線",
+        "action": "對照現行引擎合法eligibility能力，只在能驗證時做最小接線；若不支援，列引擎缺口而非以對白冒充條件"
+      },
+      {
+        "scope": "數值與故事",
+        "issue": "數值效果稀少、部分結尾模板化",
+        "action": "有可觀察因果才加數值；集中獨立語意審稿時針對實質問題退修，避免全批重寫"
+      }
+    ],
+    "release": "0件放行；PR維持Draft，未合併、未部署"
   }
 }

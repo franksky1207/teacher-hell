@@ -151,3 +151,38 @@ test('18-B T02: 20 explicitly year-bound narratives use valid grade eligibility'
  assert.ok(graduation.story.stages[0].pages.every(p=>p.scene==='school:classroom'));
  assert.ok(!graduation.story.stages[0].pages.some(p=>p.text.includes('彩排')));
 });
+
+
+test('18-B T02: 23 repaired school-time and admissions-stage story records remain structurally legal',()=>{
+ const changed={
+  '05':['04','09','10','15','17','20','21','27'],
+  '06':['08','13','14','19','21','23','26','28'],
+  '07':['02','05','09','12','15','21','26']
+ };
+ const all=[],byId=new Map();
+ for(const [topic,ids] of Object.entries(changed)){
+  const file=JSON.parse(readFileSync(new URL('../work/18b-t02-'+topic+'-authoring.json',import.meta.url),'utf8'));
+  for(const id of ids){
+   const key='content:18b-t02-'+topic+'-'+id,record=file.records.find(r=>r.definition.id===key);
+   assert.ok(record,key+' must be present');
+   assert.doesNotThrow(()=>validateStory(record.story),key+' validateStory');
+   assert.equal(record.story.status,'engineering-test');
+   assert.equal(record.definition.content.status,'engineering-test');
+   all.push(record.definition);
+   byId.set(key,record);
+  }
+ }
+ assert.equal(all.length,23);
+ assert.doesNotThrow(()=>validateEventDefinitions(all));
+ const kinds=key=>(byId.get('content:18b-'+key).definition.eligibility.entrance??[]).map(e=>e.kind+':'+(e.value??''));
+ assert.ok(kinds('t02-06-08').includes('application-screened:'));
+ assert.ok(kinds('t02-06-21').includes('milestone-completed:application-register'));
+ assert.ok(kinds('t02-06-26').includes('milestone-completed:application-result'));
+ for(const id of ['12','15','26'])assert.ok(kinds('t02-07-'+id).includes('gsat-published:'));
+ for(const t of ['t02-07-12','t02-06-26']){
+  const pages=byId.get('content:18b-'+t).story.stages[0].pages;
+  const rec=byId.get('content:18b-'+t);
+  const spoken=pages.find(p=>p.speaker==='participant')?.text;
+  for(const c of rec.story.stages[0].choices)for(const claim of c.outcome.claims??[])if(claim.role==='participant')assert.equal(claim.statement,spoken,t);
+ }
+});

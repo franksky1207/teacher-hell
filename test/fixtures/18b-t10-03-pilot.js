@@ -460,6 +460,11 @@ const followups={
   ]
  }
 };
+
+// T10-03-03: only a teacher who actually contacted the canteen may later
+// describe a pending answer from that contact. All other choices retain a
+// neutral next-day follow-up, with no invented delivered meal or response.
+const conditionalNextStage=(index,choiceIndex)=>index===2&&choiceIndex===1?'followup-canteen':'followup';
 const targetedReplacements={
  3:['若已熟悉協調流程，先協助學生列出雙方可接受的份量範圍','教師和學生整理可執行的分量區間，但仍須餐務窗口確認。'],
  8:['依已知值日紀錄，陪兩人逐項查對責任','教師協助辨識分工紀錄中的差異，仍未認定任何一方說謊。'],
@@ -493,6 +498,7 @@ export const PILOT_18B_T10_03_RECORDS=cases.map((c,i)=>{
  const id='engineering:18b-t10-03-'+String(i+1).padStart(2,'0');
  const staged=Object.hasOwn(followups,i);
  const toNext={nextStage:staged?'followup':null,afterDays:staged?1:0};
+ const nextFor=(choiceIndex)=>({...toNext,nextStage:staged?conditionalNextStage(i,choiceIndex):null});
  const displayOrder=[0,3,5,8,10,12,15,18].includes(i)?[3,0,1,2]:[0,1,2,3];
  const choices=Array.from({length:4},(_,j)=>{
   const choiceIndex=displayOrder[j];
@@ -502,7 +508,7 @@ export const PILOT_18B_T10_03_RECORDS=cases.map((c,i)=>{
   const base={
    id:'choice-'+(j+1),text:options[choiceIndex*2],
    kind:choiceIndex===1?'support':choiceIndex===2?'defer':'action',emotional:choiceIndex===3,
-   outcome:result(options[choiceIndex*2+1],{...toNext,changes:eventChange}),
+   outcome:result(options[choiceIndex*2+1],{...nextFor(choiceIndex),changes:eventChange}),
   };
   // Put the uncertain outcome on the decision that actually drives the enquiry.
   // Information requests sometimes go through the student, sometimes via staff.
@@ -510,18 +516,18 @@ export const PILOT_18B_T10_03_RECORDS=cases.map((c,i)=>{
    base.variants=[
     {id:'clarified',weight:[3,2,2,2,3][i%5],
       modifiers:[{role:[1,6,9,10,12,16,18].includes(i)?'participant':'teacher',holder:'person',code:[1,6,9,10,12,16,18].includes(i)?'1-3':'3-1',influence:0.3}],
-      outcome:result(variantDetails[i][0],toNext)},
+      outcome:result(variantDetails[i][0],nextFor(choiceIndex))},
     {id:'unresolved',weight:[2,3,3,2,2][i%5],
       modifiers:[{role:[1,6,9,10,12,16,18].includes(i)?'participant':'teacher',holder:'person',code:[1,6,9,10,12,16,18].includes(i)?'1-3':'3-1',influence:-0.25}],
-      outcome:result(variantDetails[i][1],toNext)}
+      outcome:result(variantDetails[i][1],nextFor(choiceIndex))}
    ];
   }
   if(choiceIndex===1&&Object.hasOwn(targetedReplacements,i)){
    const [text,fact]=targetedReplacements[i];
    base.replacement={
     id:'guided-'+i,text,kind:'support',emotional:false,
-    requires:[{type:'numeric',role:'teacher',holder:'person',code:'3-1',min:60,max:100}],
-    outcome:result(fact,toNext)
+    requires:[i===12?{type:'numeric',role:'participant',holder:'person',code:'1-3',min:60,max:100}:{type:'numeric',role:'teacher',holder:'person',code:'3-1',min:60,max:100}],
+    outcome:result(fact,nextFor(choiceIndex))
    };
   }
   return base;
@@ -550,6 +556,26 @@ export const PILOT_18B_T10_03_RECORDS=cases.map((c,i)=>{
     id:'followup-'+j,text,
     kind:j===1?'support':j===2?'defer':'action',
     emotional:j===3,outcome:result(fact)
+   })),
+   next:null
+  });
+ }
+ // Only T10-03-03 has a distinct next-day conversation when a canteen
+ // contact really occurred; this stage does not claim a delivery succeeded.
+ if(i===2){
+  const contact=followups[2];
+  stages.push({
+   id:'followup-canteen',
+   pages:[
+    page(1,'隔天午餐，昨天已請供餐窗口查詢補餐方案的學生再次來找你。窗口是否給出正式回覆，今天仍須核對。',null,'calm',scene),
+    page(2,'昨天有幫我問餐務，可是我還不知道今天會怎麼安排。','participant','sad',scene)
+   ],
+   choices:contact.options.map(([text,fact],j)=>({
+    id:'contact-followup-'+j,
+    text:j===1?'追問餐務窗口昨天的查詢是否已有正式結果':text,
+    kind:j===1?'support':j===2?'defer':'action',
+    emotional:j===3,
+    outcome:result(j===1?'教師核對昨天確實提出的查詢與今天的正式回覆，不預設已收到餐點。':fact)
    })),
    next:null
   });

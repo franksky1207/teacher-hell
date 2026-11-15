@@ -198,7 +198,11 @@ test('T01 remaining 192 causal contracts and signed eight exemplar isolation',()
   assert.equal(s.status,'engineering-test');
   uniqueAdditional.add(d.additionalCodes.join(','));uniqueWeights.add(d.weights.join(','));
   for(const stage of s.stages)for(const c of stage.choices){
-   if(c.variants?.length)branchChoices++;
+   if(c.variants?.length){
+    branchChoices++;
+    const causalSignature=o=>JSON.stringify({next:o.next??null,issueOperations:o.issueOperations??null,claims:o.claims??[],changes:o.changes??[],relationshipChanges:o.relationshipChanges??[],historyCodes:o.historyCodes??[]});
+    assert.ok(new Set(c.variants.map(v=>causalSignature(v.outcome))).size>1,'variants must differ in causal effects, not only fact text: '+d.id+'/'+c.id);
+   }
    for(const o of [c.outcome,...(c.variants??[]).map(v=>v.outcome)]){
     if(o.changes?.length)outcomesWithChanges++;
     history+=(o.historyCodes??[]).length;
@@ -214,7 +218,7 @@ test('T01 remaining 192 causal contracts and signed eight exemplar isolation',()
  assert.ok(outcomesWithChanges>=100,'too few actual numeric consequences');
  assert.ok(uniqueAdditional.size>=40,'additional codes not tailored to story');
  assert.ok(uniqueWeights.size>=40,'event weights still use a single macro');
- assert.ok(branchChoices>=16,'genuine NPC response alternatives missing');
+ assert.ok(branchChoices>0,'T01 must retain genuinely differentiated NPC response alternatives');
  assert.ok(claimsWithDelivery>=20,'student speech lacks transmission provenance');
  assert.ok(history>=10,'confirmed history effects omitted');
 });

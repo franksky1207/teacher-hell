@@ -1314,6 +1314,333 @@
         "sceneNote": null,
         "numericRationale": "延修生有意繼續完成課程，焦慮與安全需求影響新學期適應。；核心 3-3、2-2、1-1；附加 3-1、4-2、7-1。本為逐篇設計理由，尚未進行引擎精準驗證。"
       }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-03-16",
+        "definitionId": "content:18b-t02-03-16",
+        "version": "1",
+        "topicId": "T02-03",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "晚自習時，學生翻著同學轉來的補考整理表，突然發現科任公告的章節名稱不同。",
+                "speaker": null,
+                "scene": "school:classroom",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我整晚都讀這份，現在才知道可能讀錯，明天就考了。",
+                "speaker": "participant",
+                "scene": "school:classroom",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "先核對正式的科任公告版本",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生辨認出兩份資料的差異，尚未據此改變考試範圍。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我整晚都讀這份，現在才知道可能讀錯，明天就考了。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "action",
+                "text": "請他先整理還來得及掌握的部分",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生選定一段能自行複習的內容，沒有被保證能及格。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我整晚都讀這份，現在才知道可能讀錯，明天就考了。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "alternative",
+                "text": "提醒他依公告聯繫科任釐清疑點",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生寫下需要詢問的題目，科任尚未回覆。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我整晚都讀這份，現在才知道可能讀錯，明天就考了。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "發現讀錯真的很慌，但先別亂掉",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師協助學生穩住情緒，沒有聲稱晚自習時間足以補完所有課程。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我整晚都讀這份，現在才知道可能讀錯，明天就考了。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-03-16",
+        "topicId": "T02-03",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-03-16",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "3-3",
+          "2-2",
+          "1-1"
+        ],
+        "additionalCodes": [
+          "3-4",
+          "4-2",
+          "7-1"
+        ],
+        "weights": [
+          0.22,
+          0.28,
+          0.19,
+          0.13,
+          0.1,
+          0.08
+        ],
+        "directions": [
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "study1"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "這是個別一次性的情境；需按人物學籍、情境時段與既有接觸條件抽選"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "晚自習讀錯補考範圍",
+        "candidateId": "T02-03-C16",
+        "cause": "晚自習時，學生翻著同學轉來的補考整理表，突然發現科任公告的章節名稱不同。",
+        "teacherResponsibility": "尊重學生自主，提供合法資訊與適當協助；導師不能替教務、升學或家長做出承諾。",
+        "knowledgeSource": "只知道本次實際對話、訊息及所見，其他人的想法、核准、回覆未經證實。",
+        "distinctiveConsequence": "學生辨認出兩份資料的差異，尚未據此改變考試範圍。／學生選定一段能自行複習的內容，沒有被保證能及格。／學生寫下需要詢問的題目，科任尚未回覆。／導師協助學生穩住情緒，沒有聲稱晚自習時間足以補完所有課程。",
+        "narrativeTime": "晚自習",
+        "scene": "school:classroom",
+        "numericRationale": "主題三核心碼沿用3-3、2-2、1-1；附加3-4、4-2、7-1，依本次情境作候選初擬，待現有公式與合法持有者確認。",
+        "review": "author-draft-not-verified",
+        "qualificationWarning": null
+      }
     }
   ]
 }

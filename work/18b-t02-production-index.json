@@ -29,7 +29,9 @@
     "postCareerSubjectDistributionHeld": 2,
     "gradeSpecificAuthorRepairReviewed": 20,
     "gradeSpecificNewGates": 19,
-    "firstReleaseFutureHold": 5
+    "firstReleaseFutureHold": 5,
+    "gradeGatedTotal": 98,
+    "admissionsStateGated": 25
   },
   "subtopics": [
     {
@@ -383,7 +385,8 @@
     "2026-11-16：一次性完整T02結構驗證完成。Foundation run 43775137471：36 pass / 0 fail。八組×26＝208篇故事全部通過原始validateStory及每一則validateEventDefinitions，IDs/資源配對無錯；structurallyValidatedWithNode由5改208。語意獨立審查、候選實際可觸發與正式上架仍未完成，數量0；禁止重複無目的全批測試。",
     "2026-11-16：208篇全批原始驗證器已通過。另做一次唯讀編輯初篩：208個cause與832個option.fact沒有精確重複；832選項文本830獨立，僅兩組短語重複；時間字樣唯一疑點T02-01-18是早自習談未來午餐，非錯時。字面去重不等於獨立語意審稿，reviewed仍0。",
     "2026-11-16：已建立docs/reviews/18b-t02-semantic-review-handoff.md，整合208件獨立語意審稿一次集中輸入、規則、已知時序例外及精準ID輸出格式；此為交接包，尚未進行獨立審稿，reviewed 0，published 0。",
-    "2026-11-16：再次對照故事文字與資格，20件明示學年/選組/畢業事件精準審核，其中19件新加年級門檻，T02-03-28去除不存在的畢典彩排假時段改正常school午休。Node Foundation 43775511837：28 pass/0 fail（含20件專項及一次性208結構核對）；全批測試已退出日常CI，後續不重跑。T02-03-27、07-22/27/28、08-28共5件標首發三年制不可放行之後續章節阻斷。獨立審稿/上架仍0。"
+    "2026-11-16：再次對照故事文字與資格，20件明示學年/選組/畢業事件精準審核，其中19件新加年級門檻，T02-03-28去除不存在的畢典彩排假時段改正常school午休。Node Foundation 43775511837：28 pass/0 fail（含20件專項及一次性208結構核對）；全批測試已退出日常CI，後續不重跑。T02-03-27、07-22/27/28、08-28共5件標首發三年制不可放行之後續章節阻斷。獨立審稿/上架仍0。",
+    "2026-11-16：作者再核對首發學年/時段/實際知情，T02-05/06/07共23件修正，Foundation 43776012527：28 pass /0 fail（含23件原結構驗證、claim來源）；總年級門檻98件、具明確升學狀態門檻25件。未重跑208件全量驗收。另將T02-03-27、07-22/27/28、08-28共5件歷史／分發後內容列首發不可放行（但仍保留208原稿），清理過時特殊阻斷描述。獨立語意核准0、正式上架0。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -781,22 +784,22 @@
     ],
     "trackedRisks": [
       {
-        "id": "T02-06-20",
-        "risk": "面試當日校外清晨訊息：application-screen只證明入圍，未綁面試確切日期，現有校曆活動日可能受保護",
-        "disposition": "保留工程隔離，待可核對面試當日與遠距事件合法時段後放行"
+        "id": "T02-07-22/27",
+        "risk": "正式分科分發公告及成績仍在首發六月結束後",
+        "disposition": "保留工程隔離，正式首發不入池"
       },
       {
-        "id": "T02-07-22/24/27",
-        "risk": "分科考後分發公告與校友聯繫未有對應正式subject-result/distribution節點，school/教室敘事不能當歷史事件",
-        "disposition": "不以虛構里程碑或學期硬填，留校曆及結果接線阻斷"
+        "id": "T02-07-28/T02-08-28",
+        "risk": "畢業多年後校友重逢超出首發三年生涯",
+        "disposition": "保留未來章節內容；不得把當天退學/轉出者誤當多年後畢業生"
       },
       {
-        "id": "T02-05-28",
-        "risk": "畢典彩排當日沒有現成可驗證候選里程碑",
-        "disposition": "不假設任意school午休都有彩排"
+        "id": "T02-03-27",
+        "risk": "延修生在下一學年度返校超出首發高三六月結算",
+        "disposition": "保留獨立情境但首發不入池"
       }
     ],
-    "verification": "逐項比對現有正式升學資料結構與候選predicate原始碼；編寫精準回歸測試包含高三正反年級、升學里程碑正反狀態；尚未實際Node或CI執行",
+    "verification": "現有28項CI通過含本輪23件定點驗證；208一次性結構驗證歷史證據仍為43775137471；獨立語意審稿為0",
     "publication": 0
   },
   "focusedFollowthrough": {
@@ -873,9 +876,7 @@
       "T02-07-25"
     ],
     "strategy": "以原有gsat-published、active、stars-screen、application-result按情節取代過晚subject-preparing；必要文字從已經備考改成考慮分科，實質四選項與結果保留",
-    "held": [
-      "T02-07-07：已從原本無可觸發的在校生週末事件轉至aftercare畢業校友及正式subject-register；仍須個別端對端資格確認"
-    ],
+    "held": [],
     "verifiedCalendar": {
       "graduation": "2029-06-01",
       "source": "src/calendar/fixed.js",
@@ -890,7 +891,10 @@
       "scope": "node focused core/contracts+T02; 208 per-story compilation and independent content review still 0",
       "newAftercareRegression": "Foundation run 43774354292：7項T02精準測試均成功；全Foundation 25 pass／0 fail"
     },
-    "status": "六則畢業前分科故事已正式接線；一則畢業後考場故事已接上aftercare；全部仍工程隔離"
+    "status": "七件分科準備時序修正已接線；僅保留獨立世界接觸與日期實機證明",
+    "resolvedLater": [
+      "T02-07-07已改後期aftercare校友傳訊，需完成subject-register並有同日真正contact；仍需端對端出現證據"
+    ]
   },
   "postGraduationAdmissionsRepair": {
     "date": "2026-11-16",
@@ -915,7 +919,7 @@
       "T02-07-28",
       "T02-08-28"
     ],
-    "reason": "T02-03-27延修生新學年返校、T02-07-22/27七八月分科考試/分發結果、T02-07-28/08-28畢業多年後重逢，均超出首發三年制至高三六月的可玩時間/程序；不能靠一般school/reunion候選冒稱有合法世界時序",
+    "reason": "延修新學年、分科正式分發及畢業多年後重逢皆超出三年生涯至高三六月的首發可玩時間或缺真正世界節點；不能用一般school日型或reunion池臆造歷史",
     "action": "保留原獨立起因及engineering-test文字，不偷換成申請入學；未實作跨年續篇、畢業後世界資料、人物歷史前保持正式上架阻斷",
     "count": 5
   },
@@ -1020,5 +1024,28 @@
       "focused": "20件指定年級與原validator驗證通過；同次亦有208一次性結構測試通過",
       "noRepeat": "一次性208全批測試已從Foundation日常匯入移出，保留測試原稿供手動需要時使用；後續僅做定向修正"
     }
+  },
+  "latestContentCausalityRepair": {
+    "date": "2026-11-16",
+    "storiesRevised": 23,
+    "bySubtopic": {
+      "T02-05": 8,
+      "T02-06": 8,
+      "T02-07": 7
+    },
+    "examples": [
+      "T02-05-04/09/21：校內推薦資料／家長意見來源由學生實際轉述，不再在一般午休憑空發生正式家長說明會",
+      "T02-05-10/15/17/20/27：修正學校午休與放學／週會／說明會／文件核對日的矛盾",
+      "T02-06-08/21/26：需要面試或申請提交結果的情節改用已完成且存在的申請里程碑",
+      "T02-06-13/14/19/23/28：一般上課日的面試練習、家長轉述與官方結果先後分清",
+      "T02-07-02/05/09：模考回顧及午休學校地點對齊",
+      "T02-07-12/15/21/26：將考後冷氣、正式志願選填、分科分數和考後空落調整為可在畢業前成立的學測經驗／志願草稿／模考資料／階段結束，無虛構七八月結果"
+    ],
+    "validation": {
+      "run": "https://github.com/franksky1207/teacher-hell/actions/runs/43776012527",
+      "result": "28 pass, 0 fail",
+      "proof": "23件定向故事經validateStory及validateEventDefinitions，再核對有改變的claim文字來源；未重跑208全批結構驗證"
+    },
+    "status": "作者定向修正；尚未獨立審稿及正式發布"
   }
 }

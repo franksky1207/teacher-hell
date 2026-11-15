@@ -1360,7 +1360,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "模擬面試散場後，學生站在走廊旁，聽見同學模仿自己剛才的說話口音。",
+                "text": "午休，學生剛和同學做完一次模擬面試練習，在走廊聽見有人模仿他說話的口音。",
                 "speaker": null,
                 "scene": "school:corridor",
                 "cast": [],
@@ -1667,12 +1667,13 @@
         "teacherResponsibility": "尊重學生自主，提供合法資訊與適當協助；導師不能替教務、升學或家長做出承諾。",
         "knowledgeSource": "只知道本次實際對話、訊息及所見，其他人的想法、核准、回覆未經證實。",
         "distinctiveConsequence": "學生說出自己聽到的內容，導師未把未核實的動機當成事實。／學生知道可選擇提出反映及獲得支持，沒有被迫當場與同學對質。／學生指出一個答得清楚的段落，不把口音視為能力缺陷。／導師明確表達尊重，未保證正式面試結果。",
-        "narrativeTime": "模擬面試後的課間",
+        "narrativeTime": "正常上課日午休，模擬面試練習之後",
         "scene": "school:corridor",
         "numericRationale": "主題三核心碼沿用3-1、2-2、3-3；附加4-4、3-4、1-3，依本次情境作候選初擬，待現有公式與合法持有者確認。",
         "review": "author-draft-not-verified",
         "qualificationWarning": "此升學事件須與高三行事曆及正式入學資格接線；未驗前不得進事件池。",
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
       }
     },
     {
@@ -3326,7 +3327,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "面試前夕，家中客廳。學生查到兩種交通路線，怕遲到。",
+                "text": "準備大學面試的一個晚間，學生查到兩種交通路線，擔心車程估算錯誤而遲到。",
                 "speaker": null,
                 "scene": "home:living-room",
                 "cast": [],
@@ -3610,6 +3611,15 @@
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "milestone-completed",
+              "value": "application-screen"
+            },
+            {
+              "kind": "application-screened"
+            }
           ]
         },
         "repetition": {
@@ -3637,13 +3647,14 @@
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
         "distinctiveConsequence": "學生將兩條交通路線的轉車時間排在一起，發現原估算少算了一段接駁。／學生重查考場報到時間與可行路線，還不能保證路況一定順利。／學生把前一晚住宿與當日早到的成本列給家長討論，沒有直接訂房。／導師理解陌生城市的移動壓力，提醒先處理能確認的資訊。",
-        "narrativeTime": "面試前夕",
+        "narrativeTime": "申請入學第一階段篩選通過後的準備期間",
         "scene": "home:living-room",
         "review": "author-rewritten-causal-outcomes-unreviewed",
         "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
         "timeEligibilityNote": "一般上課日晚間私人時段，校外訊息只作遠距接觸",
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
       }
     },
     {
@@ -4326,7 +4337,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "截止前晚間，家中臥室。學生突然想更換作品，卻不確定已送出版本。",
+                "text": "備審資料準備期間的一個上課日晚間，學生想更換一份作品，卻不確定前一版是否已經正式送出。",
                 "speaker": null,
                 "scene": "home:bedroom",
                 "cast": [],
@@ -4633,14 +4644,15 @@
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
         "distinctiveConsequence": "學生確認送出系統目前顯示的是舊版作品集，新版還只存在本機。／學生核對正式更換規則與期限，沒有把按下上傳當作已經覆蓋。／學生將兩版檔案分別存檔，留下修改前後的紀錄可供比對。／導師理解臨截止又想改善作品的焦躁，不催促學生盲目操作。",
-        "narrativeTime": "截止前晚間",
+        "narrativeTime": "上課日晚間備審資料準備",
         "scene": "home:bedroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
         "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
         "timeEligibilityNote": "一般上課日晚間私人時段，校外訊息只作遠距接觸",
         "contactMethod": "遠距通話／訊息，場景不能誤演為學生和導師實際同處家中。",
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
       }
     },
     {
@@ -5979,7 +5991,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "家長會後，校園中庭。家長要求買昂貴套裝，學生想穿整潔合適衣物。",
+                "text": "午休，校園中庭。學生向導師轉述家長希望購買昂貴面試套裝的意見，自己卻只想穿整潔合適的衣服。",
                 "speaker": null,
                 "scene": "school:courtyard",
                 "cast": [],
@@ -6286,12 +6298,13 @@
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
         "distinctiveConsequence": "學生與家長確認官方通知並未要求昂貴服裝，仍須穿著整潔合宜。／學生比較自己現有衣物與面試需求，沒有立即購買高價套裝。／學生整理和家長討論舒適及預算的理由，保留自己的穿著感受。／導師理解家長想讓孩子體面，也不把衣服價格當成面試分數。",
-        "narrativeTime": "家長會後",
+        "narrativeTime": "正常上課日午休",
         "scene": "school:courtyard",
         "review": "author-rewritten-causal-outcomes-unreviewed",
         "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
         "qualificationWarning": null,
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
       }
     },
     {
@@ -6651,7 +6664,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "繳交當天，家中臥室。學生發現檔案格式錯誤，尚不知是否可更換。",
+                "text": "準備申請入學備審資料的某個晚間，學生檢查已上傳的PDF時發現每頁方向都反了，不清楚還能否更換。",
                 "speaker": null,
                 "scene": "home:bedroom",
                 "cast": [],
@@ -6935,6 +6948,12 @@
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "milestone-completed",
+              "value": "application-register"
+            }
           ]
         },
         "repetition": {
@@ -6962,13 +6981,14 @@
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
         "distinctiveConsequence": "學生確認已送出的 PDF 橫直方向有誤，檔案內容仍須另行檢查。／學生核對校系是否允許期限內替換，未直接假設可以重傳。／學生保留正確方向的原始檔與送件紀錄，尚未獲得更新成功的回條。／導師理解最後一刻發現格式錯誤的焦躁，不代替校系承諾補件。",
-        "narrativeTime": "繳交當天",
+        "narrativeTime": "申請登記已啟動後的資料準備期間",
         "scene": "home:bedroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
         "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
         "timeEligibilityNote": "校內平日傍晚私人時段的遠距交流",
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
       }
     },
     {
@@ -6987,7 +7007,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "結果公告後，輔導室。學生入圍面試卻被旅費與自信困住。",
+                "text": "申請入學第一階段篩選結果公布後，輔導室。學生取得面試資格卻被旅費與自信困住。",
                 "speaker": null,
                 "scene": "school:counseling",
                 "cast": [],
@@ -7303,12 +7323,13 @@
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
         "distinctiveConsequence": "學生說明不敢面試既有緊張，也有外縣市交通費的負擔。／學生整理正式面試時間及可行交通方案，尚未確認費用能負擔。／學生願意先做小範圍問答練習，是否赴考仍由本人決定。／導師肯定已進入面試階段的努力，不用羞辱逼學生去考。",
-        "narrativeTime": "結果公告日",
+        "narrativeTime": "申請第一階段篩選結果公布後",
         "scene": "school:counseling",
         "review": "author-rewritten-causal-outcomes-unreviewed",
         "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
         "qualificationWarning": null,
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
       }
     },
     {
@@ -7667,7 +7688,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "下午課間，走廊。學生收到多個不同時程的備取消息，擔心搞錯確認程序。",
+                "text": "午休，走廊。學生收到不同校系的申請入學結果及後續通知，擔心弄錯備取與確認程序。",
                 "speaker": null,
                 "scene": "school:corridor",
                 "cast": [],
@@ -7675,7 +7696,7 @@
               },
               {
                 "order": 2,
-                "text": "備取通知一直響，我怕弄錯哪個要先確認。",
+                "text": "好幾個校系的消息混在一起，我怕弄錯哪個備取和確認要先處理。",
                 "speaker": "participant",
                 "scene": "school:corridor",
                 "cast": [
@@ -7699,7 +7720,7 @@
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "備取通知一直響，我怕弄錯哪個要先確認。",
+                      "statement": "好幾個校系的消息混在一起，我怕弄錯哪個備取和確認要先處理。",
                       "belief": "believed",
                       "visible": false
                     }
@@ -7749,7 +7770,7 @@
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "備取通知一直響，我怕弄錯哪個要先確認。",
+                      "statement": "好幾個校系的消息混在一起，我怕弄錯哪個備取和確認要先處理。",
                       "belief": "believed",
                       "visible": false
                     }
@@ -7799,7 +7820,7 @@
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "備取通知一直響，我怕弄錯哪個要先確認。",
+                      "statement": "好幾個校系的消息混在一起，我怕弄錯哪個備取和確認要先處理。",
                       "belief": "believed",
                       "visible": false
                     }
@@ -7849,7 +7870,7 @@
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "備取通知一直響，我怕弄錯哪個要先確認。",
+                      "statement": "好幾個校系的消息混在一起，我怕弄錯哪個備取和確認要先處理。",
                       "belief": "believed",
                       "visible": false
                     }
@@ -7947,6 +7968,12 @@
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "milestone-completed",
+              "value": "application-result"
+            }
           ]
         },
         "repetition": {
@@ -7970,17 +7997,18 @@
       "editorial": {
         "title": "備取通知連續響",
         "candidateId": "T02-06-C26",
-        "cause": "學生收到多個不同時程的備取消息，擔心搞錯確認程序",
+        "cause": "學生收到不同校系的結果與後續通知，擔心混淆備取及確認的期限",
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
         "distinctiveConsequence": "學生把不同校系的通知分開，發現有些是候補、有些是正式錄取資訊。／學生逐一核對各校正式回覆與確認期限，沒有將群組轉傳當官方通知。／學生保存已完成的操作收據，尚未由導師代替選擇保留哪個校系。／導師理解連續訊息令人慌亂，提醒重要的是核對而不是搶快亂按。",
-        "narrativeTime": "下午課間",
+        "narrativeTime": "申請結果公布後的正常上課日午休",
         "scene": "school:corridor",
         "review": "author-rewritten-causal-outcomes-unreviewed",
         "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
         "qualificationWarning": null,
         "semanticRepair": "四選項結果已按本事件的證據、實際行動、程序與情緒分別重寫；仍未獨立審稿。",
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
       }
     },
     {
@@ -8343,7 +8371,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "結果公布後某個晚上，家中客廳。學生對已錄取校系仍有猶疑，家人期待立刻決定。",
+                "text": "申請結果公布後某個上課日晚間，學生在家中對已取得錄取通知的校系仍有猶疑，家人期待立刻決定。",
                 "speaker": null,
                 "scene": "home:living-room",
                 "cast": [],
@@ -8659,14 +8687,15 @@
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
         "distinctiveConsequence": "學生說明自己對錄取校系的疑慮來自課程內容，而不是單純捨不得同學。／學生重新核對入學確認、放棄或備取的正式期限，尚未作出決定。／學生比較生活環境與學習目標，沒有以家人期待當唯一條件。／導師理解錄取後仍可能猶豫，不要求學生立刻表現得非常開心。",
-        "narrativeTime": "公布日晚上",
+        "narrativeTime": "申請結果公布後的上課日晚間",
         "scene": "home:living-room",
         "review": "author-rewritten-causal-outcomes-unreviewed",
         "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
         "timeEligibilityNote": "一般上課日晚間私人時段，校外訊息只作遠距接觸",
         "contactMethod": "遠距通話／訊息，場景不能誤演為學生和導師實際同處家中。",
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
       }
     }
   ]

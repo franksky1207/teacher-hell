@@ -105,12 +105,28 @@ test('T01 eight editorial exemplars retain distinct tactics and real follow-up b
   assert.ok(entry.choices.every(c=>c.outcome.world),'every action has an explicit knowledge boundary');
   assert.equal(s.status,'engineering-test');
   const d=definition(id);assert.equal(d.eligibility.slotIds.length,1);
-  const expected={early:'早自習時',noon:'午休時',lunch:'午餐時'}[d.eligibility.slotIds[0]];
+  const expected={early:'早自習',noon:'午休',lunch:'午餐'}[d.eligibility.slotIds[0]];
   assert.ok(s.stages[0].pages[0].text.startsWith(expected),'opening time must match slot '+id);
  }
  for(const id of ['01-22','03-01']){
   const s=records.find(r=>r.story.resourceId==='content:18b-t01-'+id).story;
   assert.equal(s.stages.length,2);assert.equal(s.stages[1].choices.length,4);
   assert.ok(s.stages[0].choices.some(c=>c.outcome.next.stage==='next-contact'&&c.outcome.next.afterDays===1));
+ }
+});
+
+
+test('T01 new representative next-day contacts resume without pre-claiming resolution',()=>{
+ for(const [id,option] of [['01-22','observe'],['03-01','refer']]){
+  let {w,eventId}=begin([definition(id)]);
+  w=confirm(w,eventId,option);
+  const selected=runtimeOf(w).facts.findLast(f=>f.eventId===eventId&&f.data.type==='story-action');
+  assert.ok(selected,'selected event must record its actual fact');
+  w=apply(w,[storyAction(eventId,'finish')]);
+  for(let i=0;i<40&&!readStory(w,eventId).canResume;i++)w=advanceDemo(w);
+  assert.ok(readStory(w,eventId).canResume,'next-day story should be resumable '+id);
+  w=apply(w,[storyAction(eventId,'resume')]);
+  w=confirm(w,eventId,'follow-1');
+  assert.deepEqual(restoreWorldState(JSON.stringify(w)),w);
  }
 });

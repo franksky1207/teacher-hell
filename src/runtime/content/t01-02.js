@@ -188,20 +188,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "段考單科突然下滑",
-      "cause": "午餐談話時，學生交出兩次段考單，僅物理明顯下滑，其他科接近原來水準。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生將兩張物理卷的單元標題並排，兩次範圍不同，不能只由分數判定能力下降。／教師協助把一題失分轉成可問的步驟，尚未得到物理科任的判讀。／學生在卷面副本圈出一類錯誤保留比較，沒有歸因成不用功。／教師承接突然下滑的難受，沒有承諾下次一定回升。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-01",
       "topicId": "T01-02",
@@ -448,20 +434,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "總分進步名次卻後退",
-      "cause": "午餐談話時，學生總分增加八分，排名卻後退兩名，把成績單摺起來。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "雙方分列本人成績及全班排名，教師只說明兩種指標可不同方向，未取得同學個別分數。／學生找出卷上多得分的單元，教師只肯定可由本人卷面支持的表現。／教師提出下次比較相近題型，不把不同次測驗當等值量尺。／教師肯定已取得的分數，不將排名後退解讀為退步人格。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-02-02",
@@ -710,20 +682,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "數理優勢掩蓋語文弱點",
-      "cause": "午餐談話時，學生數學成績穩定，國文閱讀題反覆失分，擔心別人說他偏科。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生把失分閱讀題分成詞義與推論，分類仍可由國文科任確認。／學生選一題附上自己的理解供詢問，尚未取得專科回應。／教師陪學生在短文圈出一處不明指涉，未宣告已補足閱讀弱點。／教師承接科目落差的不安，不保證數理強項會自動帶動語文。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-03",
       "topicId": "T01-02",
@@ -970,20 +928,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "平時會寫段考看漏條件",
-      "cause": "午餐談話時，學生平時課堂解題流暢，考試卻連續漏看題目的限制條件。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生圈出兩題漏讀的條件，教師不把所有失分一律叫粗心。／教師示範在副本先標條件再作答，學生未因此保證考場能重現。／雙方保留本次卷面供自己比較，下一次失誤尚未發生。／教師回應會做卻漏條件的懊惱，未以自責換取成績承諾。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-02-04",
@@ -1232,20 +1176,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "段考高分卻缺交作業",
-      "cause": "午餐談話時，學生段考拿高分，平時作業缺交多項，開始擔心學期分數。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "教師與學生整理需要詢問的評量組成，未替科任宣布平時成績比例。／學生列出尚缺項及已知補交規則，未保證全部仍可補交或恢復分數。／雙方查找學生可取得的公告，找不到的權重標為待確認。／教師接住不安並提醒先核對規則，沒有保證總成績一定及格。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-05",
       "topicId": "T01-02",
@@ -1492,20 +1422,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "補習測驗與校內評量落差",
-      "cause": "午餐談話時，學生拿著補習班測驗成績與學校段考單，兩者顯示的程度截然不同。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "雙方並列兩份測驗的範圍與題數，不直接將補習班高分換算校內應得分。／學生挑出校內失分的題型供任課判讀，尚未得到弱點分析。／學生保留自己的兩張卷，不收集別人的補習成績作排名。／教師回應分數落差的困惑，未以任一測驗否定另一種學習。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-02-06",
@@ -1754,20 +1670,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "英聽突然大幅失分",
-      "cause": "午餐談話時，學生閱讀成績持平，英聽卻突然下滑，回憶當天音量偏小。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "教師詢問學生當時可觀察的聲音狀況及有無反映，設備異常仍未證實。／學生把具體聽不清的時點整理成詢問，是否查核及評分由英文科任依程序處理。／教師陪學生寫出個人座位與自述影響，不把紀錄當成設備故障的證明。／教師承認值得反映的疑問，沒有承諾補考或改分。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-07",
       "topicId": "T01-02",
@@ -2014,20 +1916,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "不同班平均分差距大",
-      "cause": "午餐談話時，學生注意到同年級不同班的一科平均分落差，懷疑各班程度或評量不同。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生與教師分列目前知道的試卷及計分資訊，未知班級條件保留空白。／教師協助擬出只詢問共同標準的問題，未要求取得別班個別成績。／學生決定不再轉貼未查證的班級比較，教師未代為刪除他人訊息。／教師肯定重視公平，未認定別班得到不當優待。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-02-08",
@@ -2354,20 +2242,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "進步很多仍不滿意",
-      "cause": "午餐談話時，學生某科從不及格進步到七十分，卻因未達自己設定的八十分而沮喪。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "雙方把已成長部分與未達目標分開，教師不強迫學生只能高興。／學生在本人卷面指出進步較多的題型，未以單次測驗宣告長期能力。／學生記下本次可回想的準備方式供後續比較，沒有把相關性當因果。／教師肯定這次有證據的改善，也容許仍有失望，未承諾下次達標。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-09",
       "topicId": "T01-02",
@@ -2614,20 +2488,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "熱門科目變成最弱項",
-      "cause": "午餐談話時，學生原本最喜歡化學，這次段考卻考得最差，因此不再想參加相關社團。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生說喜歡的是動手探究而非限時題，教師不以低分宣判興趣不真實。／教師協助挑出目前單元的具體卡點供科任回應，未決定退出活動。／學生暫不決定社團去留，教師未替家長或社團改變安排。／教師支持保留興趣與面對弱點可以並行，沒有保證分數不影響任何資格。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-02-10",
@@ -2876,20 +2736,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "考後訂正得滿分卻段考低",
-      "cause": "午餐談話時，學生回家訂正能完整解題，考場卻做不完，兩種表現差很多。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生說訂正可慢慢查資料；雙方分開記下考場及訂正的條件，未推出唯一失分原因。／學生整理希望請教的限時取捨問題，尚未取得科任策略。／教師示範只記單題用時與卡點，不以速度替學習貼標籤。／教師肯定可在較多支持下做對，未當作正式原分數應更改的證據。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-11",
       "topicId": "T01-02",
@@ -3136,20 +2982,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "同科不同單元兩極化",
-      "cause": "午餐談話時，學生數學代數部分很好，幾何題卻大量空白，總分掩蓋了分布。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生把本人代數與幾何的錯題分欄，未用整科總分掩蓋差異。／學生選一題幾何圖形供專科詢問，教師不自行判定幾何能力不足。／雙方規劃記錄幾何練習時卡住的步驟，尚無一週觀察結果。／教師提醒總分不是所有單元的判決，未保證分欄就會改善成績。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-02-12",
@@ -3398,20 +3230,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "擔心平均被一科拖垮",
-      "cause": "午餐談話時，學生連續計算幾種學期平均分情境，認為一科低分會使其他努力沒有意義。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "教師協助查學生可取得的成績計算說明，未知學分處理仍待教務確認。／學生列出各科待詢問的評量項目，未把所有老師視為已同意補救。／教師陪學生停止用猜測數字反覆試算，保留正式資料更新後再看。／教師承接反覆計算的焦慮，未保證總平均或畢業資格安全。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-13",
       "topicId": "T01-02",
@@ -3658,20 +3476,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "家長只問全班名次",
-      "cause": "午餐談話時，學生說家長每次都問名次，不太看各科進步，自己因此忽略考卷內容。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生說希望被看見有多做練習，教師未推定家長只重視名次的動機。／學生從自己的資料選出可分享的前後差異，未提供他人分數。／教師先詢問是否需要協助及可分享範圍，沒有自動聯絡家長。／教師肯定已提供的學習證據，不承諾家長會改變評價。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-02-14",
@@ -3920,20 +3724,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "交換座位後成績下降",
-      "cause": "午餐談話時，學生認為換到窗邊座位後注意力變差，因此將這次成績下跌全部歸因於座位。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生列出換位同期也有新單元及作息變化，教師不把座位與下降直接畫因果線。／教師詢問實際看不清或噪音情況，尚未決定換位或判定視力問題。／雙方提出短期記錄座位干擾的方式，不用未完成觀察推定根因。／教師表達願意查明不適，沒有保證換位後分數就回來。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-15",
       "topicId": "T01-02",
@@ -4180,20 +3970,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "認為老師出的題目太難",
-      "cause": "午餐談話時，學生交來考卷，表示自己平時有複習，但題目比講義複雜很多。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生指出認為陌生的一題並說明與練習的差別，教師未以主觀覺得難判定超綱。／學生擬出對評量範圍的具體詢問，正式解釋仍待任課。／教師陪學生保留題目及疑問，不收集全班抱怨當命題不當的證據。／教師回應失望並支持提出可核對的問題，未替科任道歉或宣布重考。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-02-16",
@@ -4442,20 +4218,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "某次缺課後成績滑落",
-      "cause": "午餐談話時，學生因合法請假缺了幾堂課，這次考試剛好在相關單元失分。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "雙方依出缺課期間列出可能漏學單元，仍需課程資料確認實際缺口。／教師協助查可用教材與詢問管道，未將拿到資源當成已補完。／學生列出尚未取得的課程內容作待辦，不填成已完成。／教師承接追進度的不易，未把缺課等同不願學習或承諾減免評量。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-17",
       "topicId": "T01-02",
@@ -4702,20 +4464,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "小考很差段考卻翻身",
-      "cause": "午餐談話時，學生小考常不理想，段考卻明顯進步，不確定自己的學習策略是否真的有效。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生將小考與段考題型並列，雙方不因一次翻身判定能力從此穩定。／學生說這次有做限時練習，教師將其保留為本人策略自述而非驗證因果。／教師建議保留本次卷供後續觀察，不保證未來分數相同。／教師與學生分享本次成功的喜悅，同時不追加連續高分要求。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-02-18",
@@ -4972,20 +4720,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "成績公開後不敢問問題",
-      "cause": "午餐談話時，學生說自己的分數被同學知道後，很怕到辦公室詢問科任而被議論。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生描述分數被看見的途徑，教師只記本人所知，不再擴散；必要保護與正式反映不以選項決定。／教師協助擬出私下或書面提問的方式，尚未取得任課時間。／學生表示目前不想再公開談此事，教師尊重並說明必要處理的保密界線。／教師承接被比較的壓力，未宣稱其他同學已停止評論。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-19",
       "topicId": "T01-02",
@@ -5232,20 +4966,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "課堂發言多卻考不好",
-      "cause": "午餐談話時，學生常參與討論，評量分數卻不佳，因而懷疑參與課堂沒有價值。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "雙方分開看學生提供的口頭參與及書面作答，不用其中一種代替全部理解。／學生用自己的話先口述再試寫一小段，教師未替科任判定得分。／學生整理想知道的書面要求，尚未獲任課說明。／教師肯定願意發言，沒有因此推定筆試低分必是評量不公。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-02-20",
@@ -5494,20 +5214,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "連續兩次錯同一類題",
-      "cause": "午餐談話時，學生發現上次訂正過的公式應用題這次再次失分，非常失望。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生對照兩題自己的推理，發現停點未必相同，教師不由題型相同推論錯因相同。／雙方在副本寫下辨認條件的提示，學生尚未驗證在新題有效。／學生保存兩次錯題及當時想法，不把第三次還沒發生的結果寫入歷史。／教師接住重犯的煩躁，提醒紀錄可以提供線索，未保證下次不再錯。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-21",
       "topicId": "T01-02",
@@ -5754,20 +5460,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "不同科老師的評語衝突",
-      "cause": "午餐談話時，兩位科任對學生學習表現的描述不同，一位說積極，一位說安靜，學生感到困惑。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生分別描述兩科情境，教師不把任一評語當成整體人格結論。／雙方列出不同科目可參與的方式，尚未代表兩位科任接受解釋。／教師先問學生願意如何使用評語，不轉述另一教師的話給缺席者。／教師承認人在不同課堂可有不同表現，未宣告任一評語失實。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-02-22",
@@ -6016,20 +5708,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "補做練習與原分數的疑問",
-      "cause": "午餐談話時，學生補做一份同範圍練習後進步許多，要求直接替換原段考成績。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "教師分開說明重做練習與原正式評量的目的，沒有自行更動原分。／學生擬出對合法補救途徑的詢問，尚未得到任課許可。／學生保留後來做對的卷面作個人紀錄，不把它當自動改分憑據。／教師肯定後來能完成的學習，未以鼓勵否定正式規則或保證補分。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-24",
       "topicId": "T01-02",
@@ -6276,20 +5954,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "考後發現答案卡填錯格",
-      "cause": "午餐談話時，學生比對答案卡後發現疑似有一排劃錯位置，不清楚是否能補救。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生與教師保留自己的答案卡影本及規則疑問，不把自述填錯當成設備錯誤。／教師協助整理可供查核的題號及時點，是否受理由權責單位決定。／學生在空白練習卡試用逐題對號檢查，未改動原卡或重寫歷史答案。／教師回應發現錯格的懊惱，沒有承諾以會寫就可補回分數。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-02-25",
@@ -6538,20 +6202,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "進步到58分卻被取笑未及格",
-      "cause": "午餐時，學生出示本次58分的考卷，說自己比上次進步，卻因同學取笑仍未及格而難過。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生說願意談距及格還差哪些題，教師不把58分說成已及格。／學生挑一個目前可練的題型，教師未保證再練一定跨過及格線。／教師詢問被取笑的情況與支持需求，依實際程序處理言語問題，不以分數裁定是否應受尊重。／教師承認距門檻很近仍會失落，不把距及格兩分誤說成這次只進步兩分。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-26",
       "topicId": "T01-02",
@@ -6798,20 +6448,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "社團成果優秀學科卻滑落",
-      "cause": "午餐談話時，學生校外競賽獲獎，但幾門學科表現下降，正為兩種投入間的取捨煩惱。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生列出本人競賽與課業時段，教師不由同時變化推定社團是唯一滑落原因。／學生把具體課業缺口整理成可向任課詢問的內容，未取得減作業承諾。／教師讓學生先說想保留的活動及可調整處，不替他退出社團或承諾家長同意。／教師同時肯定得獎與提醒課業需求，未將兩者寫成只能二選一。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-02-27",
@@ -7060,20 +6696,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "成績變動源於計分方式",
-      "cause": "午餐談話時，學生以為自己退步，後來發現這次評量包含新的實作分數占比。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "雙方按學生持有的公告分列各項權重，尚未確認系統實際套用是否相同。／學生整理公告與成績欄位對不上之處供科任查核，教師不自行改登錄。／教師陪學生保留公告日期及本人欄位截圖，不擷取同學個資。／教師承接把數字落差誤認成退步的不安，未宣告一定只是公式問題。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-28",
       "topicId": "T01-02",
@@ -7321,20 +6943,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "整合單元讓原有方法卡住",
-      "cause": "午餐時，學生出示同一科先前與目前單元練習，說過去背重點有效，現在整合應用題卻常卡住。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生比較先前與目前單元題型要求，教師不把單元差異當成全部失分原因。／學生擬出對應用題的具體疑問，尚未得到科任回饋。／教師提出在一單元試記新方法與結果，沒有宣告新方法已有效。／教師肯定先前付出並容許調整，未把過去的方法全面判成錯誤。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-02-29",
       "topicId": "T01-02",
@@ -7581,20 +7189,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "分組報告高分個人筆試低",
-      "cause": "午餐談話時，學生小組報告常拿高分，但個人筆試落差大，對自己的實際理解產生疑問。",
-      "teacherResponsibility": "導師可核對資訊與協助聯繫科任，不得自行更改考卷、成績或核准申訴。",
-      "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
-      "distinctiveConsequence": "學生自述自己在報告負責的部分，教師未由小組高分推定每人理解相同。／學生選一段報告改成個人短答，停在不懂處，未把練習算正式加分。／學生保留個人試答與問題供科任討論，未揭露其他組員表現。／教師肯定參與報告的價值，也承認個人理解仍需另看，不保證兩種分數一致。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-02-30",

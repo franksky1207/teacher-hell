@@ -188,7 +188,7 @@ export function validateWorldState(world) {
       if(Object.hasOwn(draw,'poolSize')){
         assertShape(draw,['id','stream','index','poolSize','totalWeight','selectedKey','selectedWeight',...(Object.hasOwn(draw,'candidate')?['candidate']:[])]);identifier(draw.selectedKey);
         ensure(draw.stream==='events'&&Number.isSafeInteger(draw.poolSize)&&draw.poolSize>0&&Number.isInteger(draw.index)&&draw.index>=0&&draw.index<draw.poolSize&&Number.isFinite(draw.totalWeight)&&draw.totalWeight>0&&Number.isFinite(draw.selectedWeight)&&draw.selectedWeight>0&&draw.selectedWeight<=draw.totalWeight,'LEDGER','Invalid compact event draw');
-      }else{assertShape(draw,['id','stream','index','weights']);ensure(Array.isArray(draw.weights)&&draw.weights.length>0&&draw.weights.every(n=>Number.isFinite(n)&&n>=0)&&Number.isInteger(draw.index)&&draw.index>=0&&draw.index<draw.weights.length&&draw.weights[draw.index]>0,'LEDGER','Invalid recorded draw');}
+      }else{assertShape(draw,['id','stream','index','weights',...(Object.hasOwn(draw,'binding')?['binding','bindingContract','options']:[])]);if(Object.hasOwn(draw,'binding'))ensure(draw.stream==='events'&&draw.id.startsWith('event-root:')&&draw.bindingContract===1&&Array.isArray(draw.options)&&typeof draw.binding==='string','LEDGER','Invalid root draw binding');ensure(Array.isArray(draw.weights)&&draw.weights.length>0&&draw.weights.every(n=>Number.isFinite(n)&&n>=0)&&Number.isInteger(draw.index)&&draw.index>=0&&draw.index<draw.weights.length&&draw.weights[draw.index]>0,'LEDGER','Invalid recorded draw');}
     }
     for(const id of commit.historyIds)ensure(history.get(id)?.operationId===commit.id&&history.get(id)?.attemptId===commit.attemptId,'LEDGER','Missing commit history');
   });

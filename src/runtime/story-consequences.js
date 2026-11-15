@@ -1,3 +1,4 @@
+import {boundIssue} from './issue-candidates.js';
 import {assertShape,identifier} from '../player/panel.js';
 import {createId} from '../contracts/foundation.js';
 import {directedKey,RELATION_CODES} from '../world/relationships.js';
@@ -20,7 +21,7 @@ export function validateConsequences(out,c){
   need(['open','progress','close','invalidate'].includes(a.type),'issue operation');
   assertShape(a,a.type==='open'?['type','localKey','kind','roles','details']:a.type==='progress'?['type','source','assessment','details']:['type','source','reason']);
   if(a.type==='open'){[a.localKey,a.kind,a.details].forEach(identifier);need(unique(a.roles)&&a.roles.length>0&&a.roles.every(r=>x.subjects.includes(r)),'issue actors are subjects');}
-  else {assertShape(a.source,['eventId','stage','optionId','localKey']);Object.values(a.source).forEach(identifier);if(a.type==='progress'){need(['improved','worsened','changed','uncertain'].includes(a.assessment),'assessment');identifier(a.details);}else identifier(a.reason);}
+  else {if('binding' in a.source){assertShape(a.source,['binding']);identifier(a.source.binding);need(c.bindingContract===1,'binding-aware story required');}else{assertShape(a.source,['eventId','stage','optionId','localKey']);Object.values(a.source).forEach(identifier);}if(a.type==='progress'){need(['improved','worsened','changed','uncertain'].includes(a.assessment),'assessment');identifier(a.details);}else identifier(a.reason);}
  }
 }
 export function compileConsequences(w,e,c,out,actors,fid,view){
@@ -53,9 +54,15 @@ export function compileConsequences(w,e,c,out,actors,fid,view){
  });
  const issueOperations=(out.issueOperations??[]).map(a=>{
   if(a.type==='open')return {type:a.type,localKey:a.localKey,kind:a.kind,actors:ids(a.roles),details:a.details,evidenceFactIds:[fid]};
+  let issue;
+  if(a.source.binding){
+   const selected=view.entries().filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.eventId===e.id),binding=selected?.issueBindings?.find(b=>b.name===a.source.binding);
+   need(binding,'missing selected issue binding');issue=boundIssue(view,binding,e.id);need(issue.state==='open','terminal bound issue');
+  }else{
   const source=view.entries().findLast(h=>h.type==='story'&&h.eventId===(a.source.eventId==='self'?e.id:a.source.eventId)&&h.data.action.action==='confirm'&&h.data.state.stage===a.source.stage&&h.data.operations.some(o=>o.type==='confirm-choice'&&o.optionId===a.source.optionId));
   need(source,'missing confirmed issue source');const root=source.data.operations.find(o=>o.type==='fact'&&o.data.type==='story-action');need(root,'missing root action');
-  const issue=view.issue(issueId(root.id,a.source.localKey));need(issue&&issue.state==='open','missing or terminal issue');
+  issue=view.issue(issueId(root.id,a.source.localKey));need(issue&&issue.state==='open','missing or terminal issue');
+  }
   causes.push(issue.createdBy.factId,issue.latestOperation.factId);
   return {type:a.type,issueId:issue.id,expectedPreviousOperation:issue.latestOperation.id,...(a.type==='progress'?{assessment:a.assessment,details:a.details}:{reason:a.reason}),evidenceFactIds:[fid]};
  });

@@ -1,32 +1,105 @@
 {
-  "scope": "18-B T01 remaining 192 only; Chat author revision, NOT independent semantic approval",
-  "reviewedExemplars": 8,
-  "updated": 192,
+  "revisionCommit": "7baaaa4a2613851c4639273f2fff3c4ae6e63071",
+  "scope": "GPT revised 192; not independent reviewed",
   "totals": {
-    "numeric": 192,
-    "history": 31,
-    "claims": 92,
-    "relationship": 0,
-    "variants": 0
+    "stories": 192,
+    "changes": 208,
+    "histories": 33,
+    "claims": 103,
+    "variants": 18,
+    "unchanged": 48,
+    "uniqueAdditional": 112,
+    "uniqueDirections": 28,
+    "uniqueWeights": 117
   },
-  "uniqueDirections": 28,
-  "uniqueAdditionalCodeSets": 103,
-  "uniqueWeightSets": 117,
-  "zeroEffects": 54,
-  "noAutomaticReady": true,
+  "topics": [
+    {
+      "topic": "T01-01",
+      "count": 32,
+      "changes": 40,
+      "histories": 2,
+      "claims": 41,
+      "variants": 2,
+      "unchanged": 8
+    },
+    {
+      "topic": "T01-02",
+      "count": 28,
+      "changes": 25,
+      "histories": 6,
+      "claims": 4,
+      "variants": 2,
+      "unchanged": 10
+    },
+    {
+      "topic": "T01-03",
+      "count": 26,
+      "changes": 19,
+      "histories": 7,
+      "claims": 6,
+      "variants": 3,
+      "unchanged": 8
+    },
+    {
+      "topic": "T01-04",
+      "count": 25,
+      "changes": 31,
+      "histories": 10,
+      "claims": 0,
+      "variants": 2,
+      "unchanged": 5
+    },
+    {
+      "topic": "T01-05",
+      "count": 20,
+      "changes": 36,
+      "histories": 0,
+      "claims": 6,
+      "variants": 3,
+      "unchanged": 1
+    },
+    {
+      "topic": "T01-06",
+      "count": 20,
+      "changes": 11,
+      "histories": 0,
+      "claims": 12,
+      "variants": 2,
+      "unchanged": 10
+    },
+    {
+      "topic": "T01-07",
+      "count": 20,
+      "changes": 27,
+      "histories": 0,
+      "claims": 26,
+      "variants": 2,
+      "unchanged": 2
+    },
+    {
+      "topic": "T01-08",
+      "count": 21,
+      "changes": 19,
+      "histories": 8,
+      "claims": 8,
+      "variants": 2,
+      "unchanged": 4
+    }
+  ],
   "items": [
     {
-      "id": "content:18b-t01-01-02",
+      "id": "01-02",
       "title": "自習時間只翻目錄",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
-        "11-2",
+        "3-2",
         "3-3",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -46,26 +119,29 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-03",
+      "id": "01-03",
       "title": "讀書計時器變成負擔",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
-        "7-2",
+        "2-3",
         "3-3",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -89,14 +165,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "negative",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-04",
+      "id": "01-04",
       "title": "週末補進度越欠越多",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -104,7 +183,7 @@
         "3-4",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -128,22 +207,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "negative",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-05",
+      "id": "01-05",
       "title": "讀書伙伴臨時退出",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
         "6-1",
-        "7-4",
+        "9-2",
         "9-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -164,17 +246,20 @@
         "participant",
         "participant",
         "participant",
-        "participant",
+        "classroom",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-06",
+      "id": "01-06",
       "title": "目標都寫成滿分",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -182,7 +267,7 @@
         "3-3",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -206,14 +291,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-07",
+      "id": "01-07",
       "title": "午休前反覆背同一頁",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -221,7 +309,7 @@
         "3-4",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -245,14 +333,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 4,
+      "valence": "negative",
+      "numericEffects": 4,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-08",
+      "id": "01-08",
       "title": "主動求助卻不敢問",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -260,11 +351,11 @@
         "3-3",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         -1,
-        1,
+        -1,
         -1,
         -1
       ],
@@ -284,26 +375,29 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 6,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 6,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-01-09",
+      "id": "01-09",
       "title": "把別人的進度當基準",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
-        "3-3",
+        "6-2",
         "3-4",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
-        -1,
+        1,
         -1,
         1
       ],
@@ -323,26 +417,29 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-10",
+      "id": "01-10",
       "title": "學習app提醒過密",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
-        "3-3",
+        "8-3",
         "3-4",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
-        -1,
+        1,
         -1,
         1
       ],
@@ -362,22 +459,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-11",
+      "id": "01-11",
       "title": "考前先整理文具",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
         "3-3",
         "4-1",
-        "11-2"
+        "3-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -399,16 +499,19 @@
         "participant",
         "participant",
         "participant",
-        "player-work"
+        "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-12",
+      "id": "01-12",
       "title": "連續熬夜補早起計畫",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -416,7 +519,7 @@
         "3-3",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -440,26 +543,29 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-13",
+      "id": "01-13",
       "title": "筆記抄滿卻說不出重點",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
-        "1-4",
+        "3-2",
         "3-3",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
-        1,
+        -1,
         -1,
         -1
       ],
@@ -479,14 +585,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-14",
+      "id": "01-14",
       "title": "請同學監督變成互相催促",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -494,7 +603,7 @@
         "6-1",
         "9-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -518,14 +627,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 3,
+      "valence": "neutral",
+      "numericEffects": 3,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 1,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-15",
+      "id": "01-15",
       "title": "假日圖書館坐滿整天",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -533,7 +645,7 @@
         "3-3",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -557,14 +669,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-16",
+      "id": "01-16",
       "title": "考完放鬆後不敢重啟",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -572,7 +687,7 @@
         "3-4",
         "3-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -596,14 +711,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "negative",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-17",
+      "id": "01-17",
       "title": "學習清單越勾越焦躁",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -611,7 +729,7 @@
         "3-4",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -635,28 +753,31 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-18",
+      "id": "01-18",
       "title": "小組讀書會只有一人發言",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
         "3-1",
         "6-1",
-        "9-3"
+        "9-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
         -1,
         1,
-        1
+        -1
       ],
       "weights": [
         0.217,
@@ -672,16 +793,19 @@
         "participant",
         "participant",
         "participant",
-        "participant"
+        "classroom"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-19",
+      "id": "01-19",
       "title": "忘記計畫表卻記得興趣行程",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -689,7 +813,7 @@
         "3-4",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -713,14 +837,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "negative",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-20",
+      "id": "01-20",
       "title": "完成一次後怕下次退步",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -728,7 +855,7 @@
         "3-3",
         "4-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         -1,
@@ -752,14 +879,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-21",
+      "id": "01-21",
       "title": "學習目標是替家長寫的",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -767,7 +897,7 @@
         "7-1",
         "3-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -791,14 +921,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 6,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-01-23",
+      "id": "01-23",
       "title": "同學邀請解題卻拒絕",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -806,7 +939,7 @@
         "6-1",
         "9-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -830,22 +963,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-24",
+      "id": "01-24",
       "title": "改讀書地點後分心",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
-        "3-3",
+        "7-4",
         "3-4",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -869,14 +1005,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-25",
+      "id": "01-25",
       "title": "訂下進度卻不敢畫完成",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -884,9 +1023,9 @@
         "3-3",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
-        -1,
+        1,
         -1,
         1,
         -1,
@@ -908,14 +1047,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-26",
+      "id": "01-26",
       "title": "長假第一週過度衝刺",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -923,7 +1065,7 @@
         "3-4",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -947,14 +1089,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-27",
+      "id": "01-27",
       "title": "幫同學講解反而沒複習",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -962,7 +1107,7 @@
         "6-1",
         "9-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -986,22 +1131,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-28",
+      "id": "01-28",
       "title": "從影片學習卻一直換頻道",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
         "3-4",
         "8-3",
-        "11-4"
+        "3-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -1023,30 +1171,33 @@
         "participant",
         "participant",
         "participant",
-        "school"
+        "participant"
       ],
-      "numberEffects": 1,
+      "valence": "negative",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-29",
+      "id": "01-29",
       "title": "讀書計畫被臨時家務打亂",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
         "7-4",
         "7-1",
-        "3-3"
+        "7-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
         -1,
         -1,
-        -1
+        1
       ],
       "weights": [
         0.194,
@@ -1064,14 +1215,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-30",
+      "id": "01-30",
       "title": "計畫被一次成功綁住",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -1079,7 +1233,7 @@
         "3-3",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -1103,14 +1257,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "positive",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-32",
+      "id": "01-32",
       "title": "想用獎勵督促卻失去效果",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -1118,7 +1275,7 @@
         "3-3",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -1142,14 +1299,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-33",
+      "id": "01-33",
       "title": "缺乏回饋不知道有沒有進步",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -1157,9 +1317,9 @@
         "4-1",
         "3-1"
       ],
-      "directions": [
+      "dirs": [
         1,
-        -1,
+        1,
         -1,
         1,
         1,
@@ -1181,22 +1341,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 3,
+      "valence": "neutral",
+      "numericEffects": 3,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-34",
+      "id": "01-34",
       "title": "放學太晚無法參加共學",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
         "9-3",
         "9-2",
-        "3-3"
+        "7-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         -1,
@@ -1220,14 +1383,17 @@
         "classroom",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-01-35",
+      "id": "01-35",
       "title": "完成學習後仍不敢休息",
-      "code": [
+      "topic": "T01-01",
+      "codes": [
         "1-1",
         "2-2",
         "4-3",
@@ -1235,7 +1401,7 @@
         "7-4",
         "3-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         -1,
@@ -1259,14 +1425,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-01",
+      "id": "02-01",
       "title": "段考單科突然下滑",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1274,7 +1443,7 @@
         "3-4",
         "2-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1298,14 +1467,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "negative",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-02",
+      "id": "02-02",
       "title": "總分進步名次卻後退",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1313,9 +1485,9 @@
         "3-2",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
-        -1,
+        1,
         1,
         1,
         -1,
@@ -1337,14 +1509,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "positive",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-03",
+      "id": "02-03",
       "title": "數理優勢掩蓋語文弱點",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1352,7 +1527,7 @@
         "3-4",
         "2-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1376,14 +1551,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-04",
+      "id": "02-04",
       "title": "平時會寫段考看漏條件",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1391,7 +1569,7 @@
         "3-4",
         "2-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1415,14 +1593,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-05",
+      "id": "02-05",
       "title": "段考高分卻缺交作業",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1430,7 +1611,7 @@
         "3-2",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1454,14 +1635,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "negative",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-06",
+      "id": "02-06",
       "title": "補習測驗與校內評量落差",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1469,7 +1653,7 @@
         "3-4",
         "2-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1493,14 +1677,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-07",
+      "id": "02-07",
       "title": "英聽突然大幅失分",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1508,7 +1695,7 @@
         "3-4",
         "2-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1532,14 +1719,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "negative",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-08",
+      "id": "02-08",
       "title": "不同班平均分差距大",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1547,7 +1737,7 @@
         "3-4",
         "2-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1571,14 +1761,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 1,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-10",
+      "id": "02-10",
       "title": "熱門科目變成最弱項",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1586,7 +1779,7 @@
         "3-2",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1610,22 +1803,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-11",
+      "id": "02-11",
       "title": "考後訂正得滿分卻段考低",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
-        "11-2",
+        "3-3",
         "3-2",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1645,18 +1841,21 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-12",
+      "id": "02-12",
       "title": "同科不同單元兩極化",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1664,7 +1863,7 @@
         "3-4",
         "2-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1688,14 +1887,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-13",
+      "id": "02-13",
       "title": "擔心平均被一科拖垮",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1703,7 +1905,7 @@
         "3-2",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1727,14 +1929,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 3,
+      "valence": "negative",
+      "numericEffects": 3,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-14",
+      "id": "02-14",
       "title": "家長只問全班名次",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1742,7 +1947,7 @@
         "7-1",
         "6-1"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1766,14 +1971,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-02-15",
+      "id": "02-15",
       "title": "交換座位後成績下降",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1781,7 +1989,7 @@
         "3-2",
         "2-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1805,22 +2013,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-16",
+      "id": "02-16",
       "title": "認為老師出的題目太難",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
-        "11-2",
+        "10-4",
         "3-2",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1840,18 +2051,21 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "school",
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-17",
+      "id": "02-17",
       "title": "某次缺課後成績滑落",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1859,7 +2073,7 @@
         "3-4",
         "2-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1883,14 +2097,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "negative",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-18",
+      "id": "02-18",
       "title": "小考很差段考卻翻身",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1898,7 +2115,7 @@
         "3-2",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1922,14 +2139,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "positive",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-19",
+      "id": "02-19",
       "title": "成績公開後不敢問問題",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1937,7 +2157,7 @@
         "8-4",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -1961,14 +2181,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 3,
+      "valence": "negative",
+      "numericEffects": 3,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-20",
+      "id": "02-20",
       "title": "課堂發言多卻考不好",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -1976,7 +2199,7 @@
         "6-1",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2000,14 +2223,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-21",
+      "id": "02-21",
       "title": "連續兩次錯同一類題",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -2015,7 +2241,7 @@
         "3-4",
         "2-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2039,22 +2265,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-22",
+      "id": "02-22",
       "title": "不同科老師的評語衝突",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
-        "11-2",
+        "10-4",
         "3-2",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2074,18 +2303,21 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "school",
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-24",
+      "id": "02-24",
       "title": "補做練習與原分數的疑問",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -2093,7 +2325,7 @@
         "3-2",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2117,14 +2349,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-25",
+      "id": "02-25",
       "title": "考後發現答案卡填錯格",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -2132,7 +2367,7 @@
         "3-4",
         "2-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2156,14 +2391,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-26",
+      "id": "02-26",
       "title": "進步到58分卻被取笑未及格",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -2171,9 +2409,9 @@
         "3-2",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
-        -1,
+        1,
         1,
         1,
         -1,
@@ -2195,14 +2433,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "positive",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-02-27",
+      "id": "02-27",
       "title": "社團成果優秀學科卻滑落",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -2210,7 +2451,7 @@
         "3-2",
         "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2234,14 +2475,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-28",
+      "id": "02-28",
       "title": "成績變動源於計分方式",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -2249,7 +2493,7 @@
         "3-4",
         "2-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2273,14 +2517,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-29",
+      "id": "02-29",
       "title": "整合單元讓原有方法卡住",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -2288,7 +2535,7 @@
         "3-2",
         "2-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2312,14 +2559,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-02-30",
+      "id": "02-30",
       "title": "分組報告高分個人筆試低",
-      "code": [
+      "topic": "T01-02",
+      "codes": [
         "4-1",
         "2-2",
         "4-4",
@@ -2327,7 +2577,7 @@
         "9-2",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2351,27 +2601,30 @@
         "classroom",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-02",
+      "id": "03-02",
       "title": "線上作業平台無法上傳",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
         "3-4",
-        "8-4",
+        "11-4",
         "3-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
         -1,
-        1,
+        -1,
         -1
       ],
       "weights": [
@@ -2387,17 +2640,20 @@
         "participant",
         "participant",
         "participant",
-        "participant",
+        "school",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-03",
+      "id": "03-03",
       "title": "小考前才發現範圍看錯",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -2405,7 +2661,7 @@
         "3-3",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2429,14 +2685,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-04",
+      "id": "03-04",
       "title": "數學作業全對但說不出算法",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -2444,7 +2703,7 @@
         "3-3",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2468,27 +2727,30 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-05",
+      "id": "03-05",
       "title": "代寫作業的界線",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
         "4-3",
-        "3-3",
+        "1-4",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
         1,
-        -1,
+        1,
         -1
       ],
       "weights": [
@@ -2507,22 +2769,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-03-06",
+      "id": "03-06",
       "title": "小考漏考補測安排",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
         "4-1",
-        "11-2",
+        "10-3",
         "4-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2543,17 +2808,20 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "school",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-07",
+      "id": "03-07",
       "title": "重複訂正卻一直錯",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -2561,7 +2829,7 @@
         "3-2",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2585,14 +2853,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-08",
+      "id": "03-08",
       "title": "作業太簡單缺乏挑戰",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -2600,7 +2871,7 @@
         "3-2",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -2624,14 +2895,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "negative",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-10",
+      "id": "03-10",
       "title": "補救教學時間撞到社團",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -2639,7 +2913,7 @@
         "3-3",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2663,14 +2937,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-11",
+      "id": "03-11",
       "title": "課堂小考題目印錯",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -2678,7 +2955,7 @@
         "3-3",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2702,14 +2979,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-12",
+      "id": "03-12",
       "title": "不同科作業同日到期",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -2717,7 +2997,7 @@
         "3-2",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2741,14 +3021,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-13",
+      "id": "03-13",
       "title": "作業被誤拿到別班",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -2756,7 +3039,7 @@
         "3-2",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2780,25 +3063,28 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-14",
+      "id": "03-14",
       "title": "家長代為完成手工作業",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
-        "2-4",
+        "1-4",
         "3-3",
         "4-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
-        -1,
+        1,
         1,
         -1,
         1
@@ -2819,14 +3105,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "positive",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-16",
+      "id": "03-16",
       "title": "小考後集體要求再考一次",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -2834,7 +3123,7 @@
         "3-3",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -2858,14 +3147,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-17",
+      "id": "03-17",
       "title": "訂正截止日是假日",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -2873,7 +3165,7 @@
         "3-2",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2897,14 +3189,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-18",
+      "id": "03-18",
       "title": "實驗報告分工難界定",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -2912,7 +3207,7 @@
         "3-2",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2936,14 +3231,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-19",
+      "id": "03-19",
       "title": "晨間隨堂測驗與遲到衝突",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -2951,7 +3249,7 @@
         "3-2",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -2975,14 +3273,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-20",
+      "id": "03-20",
       "title": "補救課開課人數不足",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -2990,7 +3291,7 @@
         "3-2",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3014,14 +3315,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-21",
+      "id": "03-21",
       "title": "紙本作業被飲料弄濕",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -3029,7 +3333,7 @@
         "3-2",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3053,14 +3357,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-22",
+      "id": "03-22",
       "title": "小考只考記憶題卻不熟",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -3068,7 +3375,7 @@
         "3-3",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3092,26 +3399,29 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "negative",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-23",
+      "id": "03-23",
       "title": "老師要求家長簽名未完成",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
-        "2-4",
+        "7-1",
         "3-3",
         "4-3"
       ],
-      "directions": [
+      "dirs": [
+        1,
         1,
         1,
         -1,
-        1,
         -1,
         1
       ],
@@ -3131,14 +3441,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "positive",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-24",
+      "id": "03-24",
       "title": "補考通知只貼在教室佈告欄",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -3146,7 +3459,7 @@
         "11-4",
         "3-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3170,14 +3483,17 @@
         "school",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-25",
+      "id": "03-25",
       "title": "小考連續零分拒絕拿卷",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -3185,7 +3501,7 @@
         "3-3",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3209,14 +3525,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 6,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-03-27",
+      "id": "03-27",
       "title": "補救教材難度仍過高",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -3224,7 +3543,7 @@
         "3-3",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3248,14 +3567,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-28",
+      "id": "03-28",
       "title": "繳交時找不到作業箱",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -3263,7 +3585,7 @@
         "3-2",
         "2-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3287,22 +3609,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-03-29",
+      "id": "03-29",
       "title": "藝術實作無法在家完成",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
         "2-4",
-        "3-3",
+        "7-3",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3326,14 +3651,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "positive",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-03-30",
+      "id": "03-30",
       "title": "社團公假撞到小考",
-      "code": [
+      "topic": "T01-03",
+      "codes": [
         "1-1",
         "4-2",
         "2-2",
@@ -3341,7 +3669,7 @@
         "3-3",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3365,14 +3693,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-02",
+      "id": "04-02",
       "title": "答案有另一種合理解法",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -3380,7 +3711,7 @@
         "8-3",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3404,14 +3735,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-04",
+      "id": "04-04",
       "title": "複選題給分規則不清",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -3419,7 +3753,7 @@
         "8-3",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3443,22 +3777,25 @@
         "participant",
         "school"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-06",
+      "id": "04-06",
       "title": "評分標準臨時變動疑慮",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
-        "7-4",
+        "10-3",
         "3-2",
         "8-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3478,18 +3815,21 @@
         "participant",
         "participant",
         "participant",
-        "participant",
+        "school",
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-07",
+      "id": "04-07",
       "title": "同答法不同扣分",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -3497,7 +3837,7 @@
         "8-3",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3521,14 +3861,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-08",
+      "id": "04-08",
       "title": "遲交扣分的公告爭議",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -3536,7 +3879,7 @@
         "3-2",
         "8-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3560,22 +3903,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-09",
+      "id": "04-09",
       "title": "考卷評語被誤認為針對個人",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
-        "4-1",
+        "8-3",
         "4-3",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3599,14 +3945,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-10",
+      "id": "04-10",
       "title": "分數登錄錯學生",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -3614,7 +3963,7 @@
         "3-2",
         "8-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3638,14 +3987,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-11",
+      "id": "04-11",
       "title": "老師承諾加分學生記法不同",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -3653,7 +4005,7 @@
         "1-1",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3677,14 +4029,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-12",
+      "id": "04-12",
       "title": "競賽公假造成平時成績疑慮",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -3692,7 +4047,7 @@
         "3-2",
         "8-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3716,14 +4071,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-13",
+      "id": "04-13",
       "title": "評量特殊調整未被落實",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -3731,7 +4089,7 @@
         "3-4",
         "4-1"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3755,14 +4113,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 3,
+      "valence": "neutral",
+      "numericEffects": 3,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-14",
+      "id": "04-14",
       "title": "手寫字跡誤判內容",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -3770,7 +4131,7 @@
         "8-3",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3794,14 +4155,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-15",
+      "id": "04-15",
       "title": "口頭報告輪到不同時間",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -3809,7 +4173,7 @@
         "3-2",
         "8-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3833,22 +4197,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-16",
+      "id": "04-16",
       "title": "匿名互評疑似洩漏",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
         "3-2",
-        "8-3",
+        "8-4",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3872,14 +4239,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 2,
-      "historyEffects": 1,
-      "claims": 0
+      "valence": "neutral",
+      "numericEffects": 4,
+      "historyEffects": 3,
+      "claims": 0,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-04-17",
+      "id": "04-17",
       "title": "表現作業只重成果不重過程",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -3887,7 +4257,7 @@
         "3-2",
         "8-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3911,14 +4281,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-18",
+      "id": "04-18",
       "title": "選擇題答案卡讀取異常",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -3926,7 +4299,7 @@
         "4-3",
         "8-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3950,14 +4323,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-20",
+      "id": "04-20",
       "title": "評量分數公開張貼爭議",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -3965,7 +4341,7 @@
         "3-2",
         "8-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -3989,14 +4365,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 4,
+      "valence": "neutral",
+      "numericEffects": 4,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-21",
+      "id": "04-21",
       "title": "報告格式要求與實際範例矛盾",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -4004,7 +4383,7 @@
         "11-2",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4028,14 +4407,17 @@
         "player-work",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-23",
+      "id": "04-23",
       "title": "分組抽籤後題目難度不同",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -4043,7 +4425,7 @@
         "3-2",
         "8-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4067,14 +4449,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-24",
+      "id": "04-24",
       "title": "成績更正截止時間不清",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -4082,7 +4467,7 @@
         "4-1",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4106,14 +4491,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-25",
+      "id": "04-25",
       "title": "共同評量各班評分尺度差異",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -4121,7 +4509,7 @@
         "8-3",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4145,14 +4533,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-26",
+      "id": "04-26",
       "title": "期末加分傳聞",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -4160,7 +4551,7 @@
         "3-2",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4184,14 +4575,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-04-27",
+      "id": "04-27",
       "title": "考試違規與評分處置混淆",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -4199,7 +4593,7 @@
         "3-2",
         "8-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4223,26 +4617,29 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "negative",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-28",
+      "id": "04-28",
       "title": "實作器材故障影響完成度",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
-        "2-4",
+        "11-4",
         "1-1",
         "3-3"
       ],
-      "directions": [
+      "dirs": [
+        1,
+        1,
         1,
         -1,
-        1,
-        1,
         1,
         -1
       ],
@@ -4258,18 +4655,21 @@
         "participant",
         "participant",
         "participant",
-        "participant",
+        "school",
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "positive",
+      "numericEffects": 1,
       "historyEffects": 1,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-30",
+      "id": "04-30",
       "title": "作答語言與評分基準疑問",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -4277,7 +4677,7 @@
         "8-3",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4301,14 +4701,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-04-31",
+      "id": "04-31",
       "title": "收件未定時的遲交評分疑問",
-      "code": [
+      "topic": "T01-04",
+      "codes": [
         "4-2",
         "2-2",
         "1-4",
@@ -4316,7 +4719,7 @@
         "3-2",
         "8-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4340,14 +4743,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-02",
+      "id": "05-02",
       "title": "相同錯字的兩份作業",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -4355,7 +4761,7 @@
         "3-2",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4379,14 +4785,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-03",
+      "id": "05-03",
       "title": "引用忘了頁碼",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -4394,7 +4803,7 @@
         "8-4",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4418,14 +4827,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "negative",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-04",
+      "id": "05-04",
       "title": "讀書群出現考題照片",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -4433,7 +4845,7 @@
         "4-1",
         "8-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4457,14 +4869,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-05",
+      "id": "05-05",
       "title": "開書考的合作誤解",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -4472,7 +4887,7 @@
         "6-1",
         "9-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4496,14 +4911,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-06",
+      "id": "05-06",
       "title": "補習班解答整段貼上",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -4511,7 +4929,7 @@
         "3-2",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4535,14 +4953,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-08",
+      "id": "05-08",
       "title": "同儕索要整份報告",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -4550,7 +4971,7 @@
         "6-2",
         "8-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4574,14 +4995,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 2
     },
     {
-      "id": "content:18b-t01-05-09",
+      "id": "05-09",
       "title": "相似度百分比恐慌",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -4589,7 +5013,7 @@
         "3-2",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4613,22 +5037,25 @@
         "participant",
         "school"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-10",
+      "id": "05-10",
       "title": "網路圖片授權",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
         "7-3",
-        "11-4",
+        "3-2",
         "8-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4649,29 +5076,32 @@
         "participant",
         "participant",
         "participant",
-        "school",
+        "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-11",
+      "id": "05-11",
       "title": "程式碼沿用未註記",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
-        "8-4",
+        "1-1",
         "3-2",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
-        1,
+        -1,
         -1,
         -1
       ],
@@ -4691,14 +5121,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-12",
+      "id": "05-12",
       "title": "社團舊報告重交",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -4706,7 +5139,7 @@
         "3-2",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4730,14 +5163,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-13",
+      "id": "05-13",
       "title": "匿名檢舉只有截圖",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -4745,7 +5181,7 @@
         "3-2",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4769,26 +5205,29 @@
         "participant",
         "school"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-14",
+      "id": "05-14",
       "title": "實驗數據太漂亮",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
-        "8-4",
+        "1-1",
         "3-2",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
-        1,
+        -1,
         -1,
         -1
       ],
@@ -4808,14 +5247,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-15",
+      "id": "05-15",
       "title": "口頭提示的界線",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -4823,7 +5265,7 @@
         "8-4",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4847,14 +5289,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-16",
+      "id": "05-16",
       "title": "雲端共編作者爭議",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -4862,7 +5307,7 @@
         "3-2",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4886,14 +5331,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 2,
+      "valence": "negative",
+      "numericEffects": 4,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 6,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-05-17",
+      "id": "05-17",
       "title": "付費代寫廣告",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -4901,7 +5349,7 @@
         "3-2",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4925,14 +5373,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-18",
+      "id": "05-18",
       "title": "組內訪談來源疑慮",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -4940,7 +5391,7 @@
         "3-2",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -4964,14 +5415,17 @@
         "participant",
         "school"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-19",
+      "id": "05-19",
       "title": "參考答案誤傳班群",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -4979,7 +5433,7 @@
         "8-4",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -5003,14 +5457,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 4,
+      "valence": "neutral",
+      "numericEffects": 4,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-20",
+      "id": "05-20",
       "title": "口試練習被當代答",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
@@ -5018,7 +5475,7 @@
         "8-4",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -5042,22 +5499,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 3,
+      "valence": "neutral",
+      "numericEffects": 3,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-21",
+      "id": "05-21",
       "title": "生成書目查無資料的疑慮",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
-        "7-3",
+        "1-1",
         "8-4",
         "3-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -5081,26 +5541,29 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-05-22",
+      "id": "05-22",
       "title": "交稿後自行發現漏註引文",
-      "code": [
+      "topic": "T01-05",
+      "codes": [
         "1-4",
         "4-2",
         "8-3",
-        "8-4",
+        "1-1",
         "3-2",
         "10-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
-        1,
+        -1,
         -1,
         -1
       ],
@@ -5120,26 +5583,29 @@
         "participant",
         "school"
       ],
-      "numberEffects": 3,
+      "valence": "neutral",
+      "numericEffects": 3,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-01",
+      "id": "06-01",
       "title": "錯題本成了抄題本",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
-        "1-4",
+        "3-2",
         "3-3",
         "11-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
-        1,
+        -1,
         -1,
         -1
       ],
@@ -5159,22 +5625,25 @@
         "participant",
         "player-work"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-02",
+      "id": "06-02",
       "title": "通勤不能看字",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "3-3",
-        "11-2",
+        "7-3",
         "4-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5195,31 +5664,34 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "negative",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-04",
+      "id": "06-04",
       "title": "題型混練總做錯",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "3-2",
         "3-3",
-        "11-2"
+        "4-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
         -1,
         -1,
-        -1
+        1
       ],
       "weights": [
         0.184,
@@ -5235,24 +5707,27 @@
         "participant",
         "participant",
         "participant",
-        "player-work"
+        "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-05",
+      "id": "06-05",
       "title": "自我測驗偷看答案",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "3-3",
-        "11-2",
+        "3-2",
         "4-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5273,25 +5748,28 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-06",
+      "id": "06-06",
       "title": "計算練習沒有單位",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "3-3",
-        "11-2",
+        "3-2",
         "4-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5312,25 +5790,28 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-07",
+      "id": "06-07",
       "title": "長文先畫滿螢光",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "3-3",
-        "11-2",
+        "3-2",
         "4-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5351,25 +5832,28 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-08",
+      "id": "06-08",
       "title": "背單字只有拼字",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "3-3",
-        "11-2",
+        "3-2",
         "4-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5390,25 +5874,28 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-09",
+      "id": "06-09",
       "title": "週計畫沒有緩衝",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "1-1",
         "3-3",
-        "11-2"
+        "3-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5430,24 +5917,27 @@
         "participant",
         "participant",
         "participant",
-        "player-work"
+        "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-10",
+      "id": "06-10",
       "title": "複習影片越看越快",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "8-3",
-        "11-4",
+        "3-2",
         "3-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5468,29 +5958,32 @@
         "participant",
         "participant",
         "participant",
-        "school",
+        "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-11",
+      "id": "06-11",
       "title": "小組讀書變聊天",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
-        "1-1",
+        "9-2",
         "6-1",
         "9-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
-        1,
+        -1,
         1,
         1
       ],
@@ -5506,26 +5999,29 @@
         "participant",
         "participant",
         "participant",
-        "participant",
+        "classroom",
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-06-13",
+      "id": "06-13",
       "title": "口訣記得但概念不通",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "3-3",
-        "11-2",
+        "3-2",
         "4-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5546,25 +6042,28 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-14",
+      "id": "06-14",
       "title": "手機與紙本分心差異",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "7-3",
         "3-3",
-        "11-2"
+        "3-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5586,29 +6085,32 @@
         "participant",
         "participant",
         "participant",
-        "player-work"
+        "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-15",
+      "id": "06-15",
       "title": "難題佔滿整晚",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "3-3",
-        "11-2",
+        "2-2",
         "4-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
         -1,
-        -1,
+        1,
         1
       ],
       "weights": [
@@ -5624,25 +6126,28 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-16",
+      "id": "06-16",
       "title": "考前只做熟題",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "3-3",
-        "11-2",
+        "3-2",
         "4-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5663,25 +6168,28 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-17",
+      "id": "06-17",
       "title": "晨讀與晚讀效果不同",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "3-3",
-        "11-2",
+        "7-4",
         "4-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5702,25 +6210,28 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-18",
+      "id": "06-18",
       "title": "聽講與筆記互相搶時間",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
-        "11-2",
+        "3-2",
         "9-2",
         "3-3"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5740,26 +6251,29 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "classroom",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-19",
+      "id": "06-19",
       "title": "考後只看分數不看錯因",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "3-3",
-        "11-2",
+        "3-2",
         "4-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5780,25 +6294,28 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-20",
+      "id": "06-20",
       "title": "跨科共用一套筆記法",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
-        "10-4",
+        "3-2",
         "3-3",
         "11-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5818,26 +6335,29 @@
         "participant",
         "participant",
         "participant",
-        "school",
+        "participant",
         "participant",
         "player-work"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-06-21",
+      "id": "06-21",
       "title": "睡前回想變焦慮清單",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
         "3-3",
         "2-2",
-        "11-2"
+        "7-4"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -5859,28 +6379,31 @@
         "participant",
         "participant",
         "participant",
-        "player-work"
+        "participant"
       ],
-      "numberEffects": 0,
+      "valence": "negative",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-06-22",
+      "id": "06-22",
       "title": "概念圖連線全靠抄",
-      "code": [
+      "topic": "T01-06",
+      "codes": [
         "3-4",
         "2-3",
         "4-1",
-        "1-4",
+        "3-2",
         "3-3",
         "11-2"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
-        1,
+        -1,
         -1,
         -1
       ],
@@ -5900,14 +6423,17 @@
         "participant",
         "player-work"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-03",
+      "id": "07-03",
       "title": "分組探究不知道目標",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
@@ -5915,8 +6441,8 @@
         "1-1",
         "4-1"
       ],
-      "directions": [
-        1,
+      "dirs": [
+        -1,
         1,
         1,
         -1,
@@ -5939,26 +6465,29 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-04",
+      "id": "07-04",
       "title": "翻轉課程影片取得困難",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
-        "8-3",
+        "7-3",
         "11-4",
         "7-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
-        1,
+        -1,
         -1,
         -1
       ],
@@ -5978,14 +6507,17 @@
         "school",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "negative",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-05",
+      "id": "07-05",
       "title": "突然點名口答",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
@@ -5993,8 +6525,8 @@
         "11-2",
         "9-2"
       ],
-      "directions": [
-        1,
+      "dirs": [
+        -1,
         1,
         1,
         -1,
@@ -6017,14 +6549,17 @@
         "player-work",
         "classroom"
       ],
-      "numberEffects": 1,
+      "valence": "negative",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-06",
+      "id": "07-06",
       "title": "實驗示範看不清",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
@@ -6032,8 +6567,8 @@
         "3-1",
         "4-2"
       ],
-      "directions": [
-        1,
+      "dirs": [
+        -1,
         1,
         1,
         -1,
@@ -6056,14 +6591,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-07",
+      "id": "07-07",
       "title": "課堂笑話讓人不適",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
@@ -6071,8 +6609,8 @@
         "9-2",
         "3-1"
       ],
-      "directions": [
-        1,
+      "dirs": [
+        -1,
         1,
         1,
         -1,
@@ -6095,14 +6633,17 @@
         "classroom",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "negative",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 6,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-07-08",
+      "id": "07-08",
       "title": "匿名回饋怕被辨認",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
@@ -6110,8 +6651,8 @@
         "1-4",
         "3-1"
       ],
-      "directions": [
-        1,
+      "dirs": [
+        -1,
         1,
         1,
         1,
@@ -6134,22 +6675,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "negative",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-09",
+      "id": "07-09",
       "title": "投影片沒有文字對比",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
         "8-3",
         "11-4",
-        "9-2"
+        "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -6171,16 +6715,19 @@
         "participant",
         "participant",
         "school",
-        "classroom"
+        "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-10",
+      "id": "07-10",
       "title": "課前抽問與自尊",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
@@ -6188,8 +6735,8 @@
         "3-1",
         "4-2"
       ],
-      "directions": [
-        1,
+      "dirs": [
+        -1,
         1,
         1,
         -1,
@@ -6212,22 +6759,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-11",
+      "id": "07-11",
       "title": "課堂例子離生活太遠",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
-        "7-4",
+        "3-4",
         "9-2",
         "3-1"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -6251,14 +6801,17 @@
         "classroom",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-12",
+      "id": "07-12",
       "title": "實作課分工只剩旁觀",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
@@ -6266,8 +6819,8 @@
         "3-1",
         "4-2"
       ],
-      "directions": [
-        1,
+      "dirs": [
+        -1,
         1,
         1,
         -1,
@@ -6290,14 +6843,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-13",
+      "id": "07-13",
       "title": "小考頻率的回饋",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
@@ -6305,7 +6861,7 @@
         "4-1",
         "9-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -6329,22 +6885,25 @@
         "participant",
         "classroom"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-14",
+      "id": "07-14",
       "title": "只播影片不知要看什麼",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
         "8-3",
         "11-4",
-        "9-2"
+        "3-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -6366,16 +6925,19 @@
         "participant",
         "participant",
         "school",
-        "classroom"
+        "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-15",
+      "id": "07-15",
       "title": "課本進度與補充教材不同步",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
@@ -6383,7 +6945,7 @@
         "3-3",
         "9-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -6407,14 +6969,17 @@
         "participant",
         "classroom"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-16",
+      "id": "07-16",
       "title": "學生提問被留到課後",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
@@ -6422,8 +6987,8 @@
         "9-2",
         "4-2"
       ],
-      "directions": [
-        1,
+      "dirs": [
+        -1,
         1,
         1,
         -1,
@@ -6446,14 +7011,17 @@
         "classroom",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-17",
+      "id": "07-17",
       "title": "競賽式搶答的回饋",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
@@ -6461,7 +7029,7 @@
         "3-1",
         "4-1"
       ],
-      "directions": [
+      "dirs": [
         -1,
         1,
         1,
@@ -6485,14 +7053,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-18",
+      "id": "07-18",
       "title": "課程意見被當全班立場",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
@@ -6500,7 +7071,7 @@
         "3-1",
         "4-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -6524,23 +7095,26 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 5,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-07-19",
+      "id": "07-19",
       "title": "替代教學媒材需求",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
-        "9-2",
+        "3-4",
         "3-1",
         "4-2"
       ],
-      "directions": [
-        1,
+      "dirs": [
+        -1,
         1,
         1,
         -1,
@@ -6559,27 +7133,30 @@
         "participant",
         "participant",
         "participant",
-        "classroom",
+        "participant",
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-20",
+      "id": "07-20",
       "title": "教師示範和學生嘗試落差",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
-        "11-2",
+        "3-4",
         "9-2",
         "3-1"
       ],
-      "directions": [
-        1,
+      "dirs": [
+        -1,
         1,
         1,
         -1,
@@ -6598,18 +7175,21 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "classroom",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-21",
+      "id": "07-21",
       "title": "課堂停頓被誤當沉默",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
@@ -6617,8 +7197,8 @@
         "3-1",
         "4-2"
       ],
-      "directions": [
-        1,
+      "dirs": [
+        -1,
         1,
         1,
         -1,
@@ -6641,14 +7221,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-07-22",
+      "id": "07-22",
       "title": "同學教同學的錯誤擴散",
-      "code": [
+      "topic": "T01-07",
+      "codes": [
         "6-1",
         "4-4",
         "2-2",
@@ -6656,7 +7239,7 @@
         "9-2",
         "3-1"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -6680,14 +7263,17 @@
         "classroom",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "negative",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-01",
+      "id": "08-01",
       "title": "第一次說清解題理由",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
@@ -6695,7 +7281,7 @@
         "4-3",
         "4-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -6719,14 +7305,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "positive",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-02",
+      "id": "08-02",
       "title": "研究海報不想露臉",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
@@ -6734,7 +7323,7 @@
         "3-1",
         "4-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         -1,
@@ -6758,14 +7347,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-03",
+      "id": "08-03",
       "title": "進步沒有拿名次",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
@@ -6773,7 +7365,7 @@
         "3-1",
         "4-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -6797,22 +7389,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "positive",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-04",
+      "id": "08-04",
       "title": "展示作品臨時出錯",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
-        "7-4",
+        "11-4",
         "3-1",
         "4-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -6832,31 +7427,34 @@
         "participant",
         "participant",
         "participant",
-        "participant",
+        "school",
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "negative",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-05",
+      "id": "08-05",
       "title": "願意分享但不當小老師",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
         "8-4",
-        "11-2",
+        "6-2",
         "3-1"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
         1,
-        -1,
+        1,
         1
       ],
       "weights": [
@@ -6872,17 +7470,20 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-08-06",
+      "id": "08-06",
       "title": "第一次完成長文閱讀",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
@@ -6890,7 +7491,7 @@
         "3-3",
         "3-1"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -6914,14 +7515,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 2,
+      "valence": "positive",
+      "numericEffects": 2,
       "historyEffects": 4,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-08",
+      "id": "08-08",
       "title": "小組成果只表揚一人",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
@@ -6929,7 +7533,7 @@
         "6-1",
         "9-2"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -6953,26 +7557,29 @@
         "participant",
         "classroom"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-09",
+      "id": "08-09",
       "title": "成果不符升學想像",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
-        "3-1",
+        "4-2",
         "4-3",
         "4-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
-        -1,
+        1,
         1,
         1
       ],
@@ -6992,14 +7599,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-10",
+      "id": "08-10",
       "title": "作品想保留不比賽",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
@@ -7007,7 +7617,7 @@
         "4-3",
         "4-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -7031,14 +7641,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-11",
+      "id": "08-11",
       "title": "實驗失敗找到原因",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
@@ -7046,7 +7659,7 @@
         "4-3",
         "4-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -7070,14 +7683,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-12",
+      "id": "08-12",
       "title": "作品收到尖銳留言",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
@@ -7085,7 +7701,7 @@
         "4-3",
         "4-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         -1,
         1,
@@ -7109,14 +7725,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 1
     },
     {
-      "id": "content:18b-t01-08-13",
+      "id": "08-13",
       "title": "展場問答說不知道",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
@@ -7124,7 +7743,7 @@
         "4-3",
         "4-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -7148,26 +7767,29 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-14",
+      "id": "08-14",
       "title": "第一次自願交修訂版",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
-        "3-1",
+        "3-3",
         "4-3",
         "4-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
-        1,
+        -1,
         1,
         1
       ],
@@ -7187,14 +7809,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "positive",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-15",
+      "id": "08-15",
       "title": "非最高分的班級展示",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
@@ -7202,7 +7827,7 @@
         "4-3",
         "4-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -7226,27 +7851,30 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-16",
+      "id": "08-16",
       "title": "作品包含他人私事",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
         "1-4",
-        "3-1",
+        "8-4",
         "4-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
         1,
-        -1,
+        1,
         1
       ],
       "weights": [
@@ -7265,22 +7893,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-18",
+      "id": "08-18",
       "title": "成果展借用原作",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
-        "1-4",
+        "4-2",
         "3-1",
         "4-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -7304,14 +7935,17 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-19",
+      "id": "08-19",
       "title": "獲獎後不想被比較",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
@@ -7319,7 +7953,7 @@
         "6-2",
         "4-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         -1,
@@ -7343,28 +7977,31 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "positive",
+      "numericEffects": 1,
       "historyEffects": 4,
-      "claims": 4
+      "claims": 4,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-20",
+      "id": "08-20",
       "title": "長期合作的交棒",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
         "6-1",
         "9-2",
-        "10-4"
+        "4-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
         1,
         -1,
-        -1
+        1
       ],
       "weights": [
         0.137,
@@ -7380,16 +8017,19 @@
         "participant",
         "participant",
         "classroom",
-        "school"
+        "participant"
       ],
-      "numberEffects": 2,
+      "valence": "neutral",
+      "numericEffects": 2,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-21",
+      "id": "08-21",
       "title": "同學看見不同優點",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
@@ -7397,7 +8037,7 @@
         "6-1",
         "3-1"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -7421,22 +8061,25 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 0,
+      "valence": "neutral",
+      "numericEffects": 0,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-22",
+      "id": "08-22",
       "title": "成果發表時間太短",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
-        "11-2",
+        "3-3",
         "3-1",
         "4-3"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -7456,26 +8099,29 @@
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     },
     {
-      "id": "content:18b-t01-08-23",
+      "id": "08-23",
       "title": "意外成果偏離原題",
-      "code": [
+      "topic": "T01-08",
+      "codes": [
         "4-1",
         "2-4",
         "9-3",
-        "3-1",
+        "3-2",
         "4-3",
         "4-4"
       ],
-      "directions": [
+      "dirs": [
         1,
         1,
         1,
@@ -7499,9 +8145,11 @@
         "participant",
         "participant"
       ],
-      "numberEffects": 1,
+      "valence": "neutral",
+      "numericEffects": 1,
       "historyEffects": 0,
-      "claims": 0
+      "claims": 0,
+      "variants": 0
     }
   ]
 }

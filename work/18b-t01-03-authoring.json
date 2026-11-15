@@ -982,7 +982,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生找到原檔備份與系統錯誤時間一致的截圖，至少能提出可核對的資料，不必只靠口頭解釋。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對備份時發現截圖只顯示卡住畫面，沒有送出成功的回條；教師不把截圖當準時繳交證明。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "empathy",
@@ -1033,7 +1133,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "教師陪學生查看正式公告入口；目前未見可對應本次上傳時點的異常說明，仍不能判定平台故障或學生已準時送件。／教師協助寫出上傳問題及附檔方式的詢問，未替科任認定平台故障。／學生在本機保留原檔及截圖，不覆蓋檔案時間來製造準時證據。／教師承接上傳卡住的著急，未把學生說法定成平台已當機。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：document依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -1183,7 +1283,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生重新開啟正式公告後，發現是自己把兩個相鄰小考日期看錯，趕緊將範圍改回正確版本。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生比對公告時才看見前一晚公告確曾更新範圍，現在仍須依正式公告準備，不能怪罪傳話同學。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -1313,7 +1513,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "雙方核對學生可取得的正式公告，未以群組轉述取代範圍依據。／學生按已確認部分排出短期準備順序，未獲延期或被要求犧牲睡眠。／教師協助寫出公告是否更動的詢問，尚未收到科任回覆。／教師回應看錯範圍的懊惱，未指控任何同學誤導。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -1470,7 +1670,119 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生試著說明第一步，突然發現真正不懂的是為何要先移項，便把這一處具體標出。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生能講出移項原因，卻解釋不出下一步為何除以同一係數，原本全對的作業出現另一個理解缺口。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -1593,7 +1905,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生嘗試說第一步卻停住，教師只確認本次說明不足，不推定作弊。／教師提議用合法教材中的相近題自練，學生尚未完成或證明獨立掌握。／學生將不明步驟標成可詢問的問題，未抄一份新解答冒充理解。／教師肯定能說出照做與理解的落差，沒有把坦白當成已學會。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -1779,7 +2091,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生演練只說思路不交答案的說法，自己覺得終於有一種既能幫忙又不必代寫的方式。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生練習說明界線時仍很怕朋友生氣，承認現在還不敢真的拒絕把整頁答案交出去。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "document",
@@ -1866,7 +2278,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生描述自己曾給的是整頁答案，教師記為本人自述，未替缺席同學判違規。／雙方練習只說明思路不交成品的回覆，尚未得到同學接受。／學生擬好協助界線的訊息，未被要求試探或蒐集同學私人對話。／教師支持拒絕代做，不把幫忙意願轉成必須承擔他人作業的責任。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。｜Flash複核：refer 原2個意願分流只有敘事差異，依SOP9.5取消形式分支，保留不預設學生意願或第三人反應的單一原始結果。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。｜Flash複核：refer 原2個意願分流只有敘事差異，依SOP9.5取消形式分支，保留不預設學生意願或第三人反應的單一原始結果。｜18-B T01-03最高原則：refer依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -2016,7 +2428,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生從公告找到核准請假者可另與科任約定測驗時間的規則，至少知道能依程序提出詢問。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對後發現自己只找到出缺席規則，補測是否可行仍不明確，須向科任確認。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -2146,7 +2658,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "雙方分列請假是否核准與補測規則是否已知，不將合法請假自動等同獲准補測。／教師陪學生整理可聯絡的科任及空檔，尚未排定正式補測。／學生保留自己的公告與請假資料，不公開病情供同學證明。／教師承接漏考的害怕，不保證一定及格或免除評量。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -2368,7 +2880,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生遮住解答重做時竟自己找出第一次代錯的符號，明白原來不是每一步都不會。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生遮住解答後連第一步都無法開始，才發現抄三遍並沒有建立自己理解的起點。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "empathy",
@@ -2419,7 +3031,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生在推理旁指出第一個不理解的跳步，教師未以反覆錯誤判定不努力。／學生整理例題與疑問等待科任解釋，尚未獲得解答。／學生在副本遮住解答重做第一步，停在不確定的推理，教師沒有代解或把這次嘗試當訂正已完成。／教師承接抄很多遍仍不懂的挫折，不鼓勵破壞作業或直接拒交。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：document依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -2569,7 +3181,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生表示想要的是不同類型的挑戰，而不是再多二十題同樣的練習，自己把需求說得更清楚。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生說想要難題，卻又承認有幾個基本觀念仍會卡住，決定先釐清是否真的適合直接跳級。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -2701,7 +3413,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "雙方把正式作業要求與學生想增加的挑戰分開，未認定基本練習無價值。／教師協助提出延伸題需求，科任是否提供及是否可替代仍未決定。／學生選擇先完成原有課堂工作並保留需求，沒有被當成已同意永遠不調整。／教師肯定想挑戰的意願，不以給更多題目作獎勵或強迫加量。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -2858,7 +3570,119 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生查到補救教學通知寫有可向承辦詢問替代時段的管道，表示不必先把社團退出。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對通知後發現目前只公告一個固定時段，無法在沒有承辦回覆前假定可以換時間。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -2981,7 +3805,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "教師與學生確認手邊通知是否說明必要參與及替代時段，未知部分留待承辦。／學生擬出兩個衝突時段的詢問，教師未直接取消社團或補救課。／學生列出目前偏好的選擇及須確認規則，未將個人偏好當正式核准。／教師承接想補課卻撞期的可惜，不替兩方承諾改時段。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -3131,7 +3955,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生把原卷平攤，發現題目條件真的在自己影本少了一行，但還不能推定整班都有印製問題。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生把卷面翻到背面才發現被摺住的條件仍印在原紙上，尷尬承認自己當時沒看到。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -3263,7 +4187,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生保留自己的原卷缺漏處，教師未由單張卷推論全班或命題有錯。／教師協助整理可向科任提出的查核點，尚未得到命題或監考紀錄。／學生把缺漏題號及當時反映情形記下，不把這份紀錄當應補幾分的裁定。／教師回應沒看到題目的著急，以疑似印製缺漏表述，未先判定印錯。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -3413,7 +4337,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生對照三科正式公告後，發現其中一科其實下週才交，原先全部明天到期只是記錯。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對後發現三科的主要截止日確實相撞，擔心程度反而增加，但教師未擅自替任何一科延期。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -3545,7 +4569,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生在清單標明各科已知期限，未知媒介與細項不憑記憶補齊。／雙方排出可先做的項目並擬出詢問，不替科任同意延後。／學生整理需要回看的公告位置，未把同學口頭說法當共同期限。／教師表達撞期的無奈，沒有承諾將所有作業統一延期。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -3695,7 +4719,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生回憶繳交時點，找到自己拍下放入收件籃的照片，能向科任提出更具體的查找線索。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生查看照片後發現只拍到完成的作業，沒有交到何處的證據，必須繼續保留未尋獲狀態。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -3827,7 +4951,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生說最後一次看見作業的地點，教師記為單方記憶，不稱已查明誰移走。／教師協助擬出核對收件的請求，不索取別班學生私人物品。／學生保留自己作業照片與目前未尋獲狀態，未指控某人偷拿。／教師承接遺失焦急，沒有保證找到或宣布科任已收到。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -3977,7 +5101,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生能清楚指出自己親手完成的設計部分，決定如實向科任說明並詢問自主補做方式。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生比對製作流程後發現大部分關鍵步驟確實是家長代做，擔心要重做，但不願假稱自己完成。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -4100,7 +5324,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生分列本人設計與家人製作部分，教師不因主動坦承便裁定符合規則。／學生擬出揭露協助及補做的詢問，是否須重做由科任決定。／學生保留自有製作紀錄，未編造過程或要求家人代答查核。／教師肯定願意說清分工，沒有保證揭露後免責或加分。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -4250,7 +5474,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生代表拿出一題確實和公告範圍不同的疑問，教師確認值得依程序問科任，但尚不能宣布題目違規。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生代表試著列出具體超綱題目卻找不到，發現多數同學的抱怨其實只是難度很高。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -4380,7 +5704,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生提出具體認為未教到的題號，教師未用全班分數低推定命題違規。／教師說明可由自願代表提出問題，尚未獲科任同意重考。／學生整理不同意見但不附他人成績，教師未宣布多數決可取代評量程序。／教師承接考差失落，明確保留正式決定權，沒有拿鼓勵當重考承諾。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -4530,7 +5854,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生查看公告才發現要求週日晚上線上送出，星期天雖是假日，繳交媒介已寫清楚。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生查過公告仍找不到線上或紙本資訊，知道必須問科任而不能自行假定週一才交。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -4653,7 +6077,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "雙方核對學生持有公告的日期與送件媒介，未由假日直接判定期限無效。／學生擬出是否可下個上課日繳交的詢問，尚未取得延期許可。／學生保留公告及自己的準備紀錄，不改截圖日期或假裝已送出。／教師承接期限不明的困惑，沒有宣告科任公告錯誤。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -4803,7 +6227,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生能拿出自己整理的數據版本紀錄，至少能具體說明本人工作而不是單靠抱怨。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生試著找版本紀錄，才發現大多是在同一份共編文件上直接修改，難以只靠檔案證明誰做哪一步。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -4926,7 +6450,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生先說本人工作及所知分配，教師不把單方評價當成全組事實。／學生整理自有版本與分工紀錄供科任判讀，未取得改分或全組署名認可。／學生擬出對未完成工作的組內詢問，未強迫缺席成員接受新分工。／教師承接付出未被看見的感受，沒有替任何成員定性偷懶。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -5076,7 +6600,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對當天的到校紀錄與交通時間，發現有官方延誤公告可供後續程序查核。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對後發現沒有官方延誤紀錄，目前只能提出本人經過，仍須按出勤與測驗各自規定處理。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -5206,7 +6830,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "雙方分開列出到校與小考規則，教師不以遲到處理替代評量資格判斷。／學生擬出補測資格詢問，尚未取得科任同意。／學生保存自己的到校與交通資料，不推定每次遲到都同因。／教師承接兩件事撞在一起的壓力，未保證免除出缺勤或測驗責任。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -5356,7 +6980,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生重新看通知，確認只是『未達預定人數』而非正式停課，願意先詢問是否有替代資源。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生發現公告已明確寫出本期停開，原本打算等開班的方案不能繼續假設。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -5488,7 +7212,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生出示的通知被區分為暫定文字及待確認處，未把人數不足自動當正式停課。／教師協助列出可詢問的個別指導資源，未承諾教師額外開課。／學生在自己的需求單記下待覆事項，未把等待時間當成已取得補強。／教師肯定想補強的意願，不以行政可能取消就宣告沒有其他支持。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -5638,7 +7362,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生攤開受潮紙張，發現後半部分仍能清楚辨識，也找得到先前的電子草稿可供核對。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生仔細翻查後發現重要兩頁字跡已完全糊掉，原檔也沒有更新，得如實問科任是否可補做。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -5761,7 +7585,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "雙方檢視學生帶來的可辨識頁面，教師不替科任認定所有內容可收。／學生擬出重印或補交的申請，未獲免責或延時承諾。／學生保留殘頁與原檔，不丟棄所有原始材料來重造完成時間。／教師回應成品受損的難受，沒有責怪同學或認定是他人弄濕。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -5983,7 +7807,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生把詞彙遮起來後竟能自己說出兩個專有名詞，發現有一部分可以透過回想找回。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生遮字練習時仍答不出關鍵詞，終於說出自己只會認得字卻無法主動提取。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "empathy",
@@ -6034,7 +7958,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生指出忘記的是哪些詞，教師未將能理解整體與記憶用語視為同一件事。／學生整理想請科任示範的記憶練習，尚未得到專科回饋。／學生當場試短暫遮字回想並保留卡住處，不把一輪試做算成穩定改善。／教師接住懂意思卻說不出詞的挫折，未將它診斷為記憶障礙。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：document依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -6184,7 +8108,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生核對公告才發現簽名截止日還有兩天，自己不必今天在校內急著找人代簽。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生查到原公告確實要求明天交家長簽認，但監護人最近不在家，必須依規詢問替代聯繫方式。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -6316,7 +8340,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "雙方查學生可取得的簽名目的與期限，未把無簽名直接等同未訂正。／教師協助擬出合法照顧者聯繫安排的說明，未替科任同意改簽名人。／學生保留已完成的訂正及待簽狀態，不偽造或代簽。／教師肯定可見的訂正工作，沒有因此自行取消簽名要求。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -6466,7 +8490,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生比對請假期間與公告日期，發現確實是在自己請假那天貼出紙本通知，值得提出具體資訊落差。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生翻到班級公告紀錄，才發現同一天其實也有合法的線上通知，只是自己當時沒有查看。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -6589,7 +8713,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生提供請假日期與所知公告時間，教師不由未看見就推定校方未公告。／學生擬出因請假未得知的說明，受理或補測仍由權責教師決定。／雙方保留本人可取得的通知與請假紀錄，不以回憶填成正式證明。／教師承接資訊落差的委屈，沒有宣布學生已獲補考或全無責任。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -7275,7 +9399,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生試做較基礎例題時找到一個自己已經會的起始步驟，知道下一次可以從這個環節求助。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生看完基礎例題仍無法理解第一行如何得到，才發現需要更前一單元的銜接。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "empathy",
@@ -7326,7 +9550,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生標出連起始步驟都不懂的位置，教師把它留成待專科確認的基礎疑點。／學生擬出教材分層的詢問，尚未取得補救課老師調整承諾。／學生從自己合法取得的較基礎教材選一例試第一步，仍不確定之處留作提問，不宣稱已掌握或取代補救課要求。／教師肯定願意補強也承認挫折，未以出席當成已掌握基礎。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：document依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -8050,7 +10274,107 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生確認作業只有最後一個環節需要指定器材，前半部分仍能在家先完成，不必全部停擺。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生檢查作業規定後發現關鍵每一步都需使用校內設備，必須詢問開放時段或合法替代方式。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -8182,7 +10506,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生指出哪項步驟需要指定設備，教師不假定所有部分都不能在家做。／教師協助查可詢問的校內開放安排及替代媒材，尚未取得使用許可。／學生列出缺少器材及可做部分給科任判斷，不要求家庭購買昂貴設備。／教師肯定限制不等於態度，未因此免除課程要求或保證改作業。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -8339,7 +10663,119 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "evidence-found",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生出示核准公假單與小考通知，知道能依程序詢問補測，沒有把公假解讀為免測。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-4",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "evidence-complicated",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.55
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生查看資料後發現公假程序仍缺一份核准紀錄，必須先補齊文件再談正式補測安排。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -8462,7 +10898,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "教師分別說明公假與評量仍需安排，沒有把合法公假視為違規或自動免測。／學生擬出附正式公假資訊的補測詢問，尚未排定時間。／學生保留自己的活動及測驗通知，不公開其他同學行程。／教師承接活動與課業衝突的麻煩，未替社團或任課單方取消安排。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜18-B T01-03最高原則：verify依實際卷面／資料／人際自主結果分流，不把預備查證寫成已獲允許。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"

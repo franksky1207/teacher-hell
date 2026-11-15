@@ -1,3 +1,4 @@
+import { projectIssues, readIssue } from './issues.js';
 import { assertShape,identifier,derivePanel,PANEL_SOURCES } from '../player/panel.js';
 import { directedKey } from '../world/relationships.js';
 import { resolveWorldEvaluations } from '../world/evaluations.js';
@@ -30,6 +31,8 @@ export function storyHistoryView(world,{beforeOrder=world.extensions[key].histor
   need(rows.length>0&&rows.every(x=>Number.isFinite(x.value)&&x.value===rows[0].value),'missing or conflicting numeric witness');return rows[0].value;
  };
  return Object.freeze({beforeOrder,attemptId:world.identity.attemptId,
+  issues:()=>projectIssues(world,{beforeOrder}),
+  issue:id=>readIssue(world,id,{beforeOrder}),
   fact:id=>detach(facts.find(f=>f.id===id)),
   claim:(id,versionId)=>detach(claims.find(c=>c.id===id&&c.versionId===versionId)),
   knowledge:(actorId,claimId,versionId)=>detach(knowledge.find(k=>k.actorId===actorId&&k.claimId===claimId&&k.versionId===versionId)),

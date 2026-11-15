@@ -2291,6 +2291,6211 @@
         "review": "author-draft-not-verified",
         "gradeGateWarning": null
       }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-04",
+        "definitionId": "content:18b-t02-04-04",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "高三早自習，教室。學生以班排推估校內推薦順序，產生錯誤期待。",
+                "speaker": null,
+                "scene": "school:classroom",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我班排不差，全校推薦順位怎麼落那麼後面？",
+                "speaker": "participant",
+                "scene": "school:classroom",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "區分班排與校內排序母體",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先區分班排與校內排序母體；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我班排不差，全校推薦順位怎麼落那麼後面？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "核對推薦計算規則",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助核對推薦計算規則；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我班排不差，全校推薦順位怎麼落那麼後面？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "引導提出具體疑問",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出引導提出具體疑問的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我班排不差，全校推薦順位怎麼落那麼後面？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "理解預期落差",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「理解預期落差」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我班排不差，全校推薦順位怎麼落那麼後面？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-04",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-04",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "early"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "全校排名和班排不同",
+        "candidateId": "T02-04-C04",
+        "cause": "學生以班排推估校內推薦順序，產生錯誤期待",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "區分班排與校內排序母體／核對推薦計算規則／引導提出具體疑問／理解預期落差",
+        "narrativeTime": "高三早自習",
+        "scene": "school:classroom",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-05",
+        "definitionId": "content:18b-t02-04-05",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "午休，行政辦公室。學生擔心個人排名遭他人任意查閱。",
+                "speaker": null,
+                "scene": "school:administration",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我的名次是不是誰想看就看得到？",
+                "speaker": "participant",
+                "scene": "school:administration",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "確認名次的公布範圍",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先確認名次的公布範圍；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我的名次是不是誰想看就看得到？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "詢問合法使用權限",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助詢問合法使用權限；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我的名次是不是誰想看就看得到？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "協助表達隱私疑慮",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出協助表達隱私疑慮的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我的名次是不是誰想看就看得到？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "尊重不想被比較",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「尊重不想被比較」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我的名次是不是誰想看就看得到？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-05",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-05",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "誰能看到我的名次",
+        "candidateId": "T02-04-C05",
+        "cause": "學生擔心個人排名遭他人任意查閱",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "確認名次的公布範圍／詢問合法使用權限／協助表達隱私疑慮／尊重不想被比較",
+        "narrativeTime": "午休",
+        "scene": "school:administration",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-06",
+        "definitionId": "content:18b-t02-04-06",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "升學說明後，走廊。學生忽然發現校內規則可能納入較早學期成績。",
+                "speaker": null,
+                "scene": "school:corridor",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我高一考那麼差，現在還會被算進來嗎？",
+                "speaker": "participant",
+                "scene": "school:corridor",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "核對採計期間",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先核對採計期間；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我高一考那麼差，現在還會被算進來嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "比對校內排序辦法",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助比對校內排序辦法；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我高一考那麼差，現在還會被算進來嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "整理向教務處確認的問題",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出整理向教務處確認的問題的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我高一考那麼差，現在還會被算進來嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "承認回看舊成績壓力",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「承認回看舊成績壓力」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我高一考那麼差，現在還會被算進來嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-06",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-06",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "高一成績還算嗎",
+        "candidateId": "T02-04-C06",
+        "cause": "學生忽然發現校內規則可能納入較早學期成績",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "核對採計期間／比對校內排序辦法／整理向教務處確認的問題／承認回看舊成績壓力",
+        "narrativeTime": "升學說明後",
+        "scene": "school:corridor",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-08",
+        "definitionId": "content:18b-t02-04-08",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "開學課後，行政辦公室。家長要求確認重修與原成績是否納入排名。",
+                "speaker": null,
+                "scene": "school:administration",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "重修過的科目要算原分還是新分？",
+                "speaker": "participant",
+                "scene": "school:administration",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "核對學分更正與成績",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先核對學分更正與成績；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "重修過的科目要算原分還是新分？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "詢問正式排名採計",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助詢問正式排名採計；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "重修過的科目要算原分還是新分？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "保留書面依據",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出保留書面依據的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "重修過的科目要算原分還是新分？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "理解不同分數困惑",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「理解不同分數困惑」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "重修過的科目要算原分還是新分？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-08",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-08",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "重修分數怎麼列",
+        "candidateId": "T02-04-C08",
+        "cause": "家長要求確認重修與原成績是否納入排名",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "核對學分更正與成績／詢問正式排名採計／保留書面依據／理解不同分數困惑",
+        "narrativeTime": "開學課後",
+        "scene": "school:administration",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-09",
+        "definitionId": "content:18b-t02-04-09",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "家長會後，會議室。學生拿到兩份不同版本的推薦辦法。",
+                "speaker": null,
+                "scene": "school:meeting-room",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "簡報跟正式辦法寫的不一樣，要信哪一份？",
+                "speaker": "participant",
+                "scene": "school:meeting-room",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "核對文件公布日期",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先核對文件公布日期；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "簡報跟正式辦法寫的不一樣，要信哪一份？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "向承辦確認正式效力",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助向承辦確認正式效力；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "簡報跟正式辦法寫的不一樣，要信哪一份？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "整理相互矛盾的條文",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出整理相互矛盾的條文的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "簡報跟正式辦法寫的不一樣，要信哪一份？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "理解規則不一致",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「理解規則不一致」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "簡報跟正式辦法寫的不一樣，要信哪一份？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-09",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-09",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "校內辦法與簡報不一樣",
+        "candidateId": "T02-04-C09",
+        "cause": "學生拿到兩份不同版本的推薦辦法",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "核對文件公布日期／向承辦確認正式效力／整理相互矛盾的條文／理解規則不一致",
+        "narrativeTime": "家長會後",
+        "scene": "school:meeting-room",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-10",
+        "definitionId": "content:18b-t02-04-10",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "午餐，教室。學生想靠導師取得他人尚未公開名次。",
+                "speaker": null,
+                "scene": "school:classroom",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "朋友要我問你他的排名，你可以偷偷講嗎？",
+                "speaker": "participant",
+                "scene": "school:classroom",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "說明名次保密界線",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先說明名次保密界線；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "朋友要我問你他的排名，你可以偷偷講嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "改向合法公開資訊求證",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助改向合法公開資訊求證；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "朋友要我問你他的排名，你可以偷偷講嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "討論如何婉拒同學",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出討論如何婉拒同學的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "朋友要我問你他的排名，你可以偷偷講嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "理解同儕壓力但不洩露",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「理解同儕壓力但不洩露」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "朋友要我問你他的排名，你可以偷偷講嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-10",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-10",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "lunch"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "有同學要我幫他打聽",
+        "candidateId": "T02-04-C10",
+        "cause": "學生想靠導師取得他人尚未公開名次",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "說明名次保密界線／改向合法公開資訊求證／討論如何婉拒同學／理解同儕壓力但不洩露",
+        "narrativeTime": "午餐",
+        "scene": "school:classroom",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-11",
+        "definitionId": "content:18b-t02-04-11",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "班會後，教師辦公室。學生提出推薦計算爭議，希望學校收件。",
+                "speaker": null,
+                "scene": "school:teachers-office",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我們想提出排名算法意見，可以寫給學校嗎？",
+                "speaker": "participant",
+                "scene": "school:teachers-office",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "區分意見與未證實指控",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先區分意見與未證實指控；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我們想提出排名算法意見，可以寫給學校嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "介紹正式意見窗口",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助介紹正式意見窗口；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我們想提出排名算法意見，可以寫給學校嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "列出不明規則",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出列出不明規則的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我們想提出排名算法意見，可以寫給學校嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "肯定理性提問",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「肯定理性提問」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我們想提出排名算法意見，可以寫給學校嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-11",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-11",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "代表學生的意見書",
+        "candidateId": "T02-04-C11",
+        "cause": "學生提出推薦計算爭議，希望學校收件",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "區分意見與未證實指控／介紹正式意見窗口／列出不明規則／肯定理性提問",
+        "narrativeTime": "班會後",
+        "scene": "school:teachers-office",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-13",
+        "definitionId": "content:18b-t02-04-13",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "晚間電話，教師住處。家長要求先知道孩子是否有機會。",
+                "speaker": null,
+                "scene": "home:living-room",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "明天就公告了，可以先告訴我家長名額嗎？",
+                "speaker": "participant",
+                "scene": "home:living-room",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "chat"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "說明未公告資料權限",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先說明未公告資料權限；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "明天就公告了，可以先告訴我家長名額嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "提供公開時程",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助提供公開時程；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "明天就公告了，可以先告訴我家長名額嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "整理資格疑問",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出整理資格疑問的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "明天就公告了，可以先告訴我家長名額嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "理解等待焦慮",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「理解等待焦慮」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "明天就公告了，可以先告訴我家長名額嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-13",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-13",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [],
+          "slotIds": [],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "公布前一天的電話",
+        "candidateId": "T02-04-C13",
+        "cause": "家長要求先知道孩子是否有機會",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "說明未公告資料權限／提供公開時程／整理資格疑問／理解等待焦慮",
+        "narrativeTime": "晚間電話",
+        "scene": "home:living-room",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-14",
+        "definitionId": "content:18b-t02-04-14",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "下課，走廊。學生傳聞前面有人放棄，但本人未證實。",
+                "speaker": null,
+                "scene": "school:corridor",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "聽說前面有人放棄，我是不是就補上了？",
+                "speaker": "participant",
+                "scene": "school:corridor",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "詢問傳聞來源",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先詢問傳聞來源；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "聽說前面有人放棄，我是不是就補上了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "確認候補遞補流程",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助確認候補遞補流程；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "聽說前面有人放棄，我是不是就補上了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "不追問未公開的個人決定",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出不追問未公開的個人決定的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "聽說前面有人放棄，我是不是就補上了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "理解想抓住機會",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「理解想抓住機會」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "聽說前面有人放棄，我是不是就補上了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-14",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-14",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "自願放棄名額的傳聞",
+        "candidateId": "T02-04-C14",
+        "cause": "學生傳聞前面有人放棄，但本人未證實",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "詢問傳聞來源／確認候補遞補流程／不追問未公開的個人決定／理解想抓住機會",
+        "narrativeTime": "下課",
+        "scene": "school:corridor",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-16",
+        "definitionId": "content:18b-t02-04-16",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "選組說明會後，禮堂。學生質疑不同課程群組的計算方式。",
+                "speaker": null,
+                "scene": "school:auditorium",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "不同組採計科目不同，這樣到底公不公平？",
+                "speaker": "participant",
+                "scene": "school:auditorium",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "確認群組採計規則",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先確認群組採計規則；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "不同組採計科目不同，這樣到底公不公平？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "向承辦問制度依據",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助向承辦問制度依據；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "不同組採計科目不同，這樣到底公不公平？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "整理不合理的具體情形",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出整理不合理的具體情形的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "不同組採計科目不同，這樣到底公不公平？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "肯定思考公平",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「肯定思考公平」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "不同組採計科目不同，這樣到底公不公平？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-16",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-16",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "只有特定科目比較吃香",
+        "candidateId": "T02-04-C16",
+        "cause": "學生質疑不同課程群組的計算方式",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "確認群組採計規則／向承辦問制度依據／整理不合理的具體情形／肯定思考公平",
+        "narrativeTime": "選組說明會後",
+        "scene": "school:auditorium",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-17",
+        "definitionId": "content:18b-t02-04-17",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "公告欄前，走廊。學生發現榜單標示年度錯誤，大家仍在轉傳。",
+                "speaker": null,
+                "scene": "school:corridor",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "榜單年份錯了，大家卻還在轉。",
+                "speaker": "participant",
+                "scene": "school:corridor",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "確認錯誤標示",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先確認錯誤標示；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "榜單年份錯了，大家卻還在轉。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "通知張貼單位查核",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助通知張貼單位查核；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "榜單年份錯了，大家卻還在轉。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "提醒不擴散榜單",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出提醒不擴散榜單的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "榜單年份錯了，大家卻還在轉。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "理解資訊混亂",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「理解資訊混亂」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "榜單年份錯了，大家卻還在轉。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-17",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-17",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "一張錯置的榜單",
+        "candidateId": "T02-04-C17",
+        "cause": "學生發現榜單標示年度錯誤，大家仍在轉傳",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "確認錯誤標示／通知張貼單位查核／提醒不擴散榜單／理解資訊混亂",
+        "narrativeTime": "公告欄前",
+        "scene": "school:corridor",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-18",
+        "definitionId": "content:18b-t02-04-18",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "親師日，教室。家長希望老師在班會上公布所有名次，學生反對。",
+                "speaker": null,
+                "scene": "school:classroom",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "家長想公布全班名次，我不想被大家知道。",
+                "speaker": "participant",
+                "scene": "school:classroom",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "確認學生公開意願",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先確認學生公開意願；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "家長想公布全班名次，我不想被大家知道。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "說明個資界線",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助說明個資界線；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "家長想公布全班名次，我不想被大家知道。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "討論不公開名次的說明",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出討論不公開名次的說明的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "家長想公布全班名次，我不想被大家知道。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "支持學生隱私",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「支持學生隱私」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "家長想公布全班名次，我不想被大家知道。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-18",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-18",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "不想被公開比較",
+        "candidateId": "T02-04-C18",
+        "cause": "家長希望老師在班會上公布所有名次，學生反對",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "確認學生公開意願／說明個資界線／討論不公開名次的說明／支持學生隱私",
+        "narrativeTime": "親師日",
+        "scene": "school:classroom",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-19",
+        "definitionId": "content:18b-t02-04-19",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "午休，行政辦公室。學生不知道備取遞補和學校推薦規則。",
+                "speaker": null,
+                "scene": "school:administration",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "候補順位是不是前面放棄就一定輪到我？",
+                "speaker": "participant",
+                "scene": "school:administration",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "核對候補適用條件",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先核對候補適用條件；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "候補順位是不是前面放棄就一定輪到我？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "說明正式遞補程序",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助說明正式遞補程序；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "候補順位是不是前面放棄就一定輪到我？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "查明確認期限",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出查明確認期限的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "候補順位是不是前面放棄就一定輪到我？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "理解候補壓力",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「理解候補壓力」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "候補順位是不是前面放棄就一定輪到我？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-19",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-19",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "推薦名單的候補順位",
+        "candidateId": "T02-04-C19",
+        "cause": "學生不知道備取遞補和學校推薦規則",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "核對候補適用條件／說明正式遞補程序／查明確認期限／理解候補壓力",
+        "narrativeTime": "午休",
+        "scene": "school:administration",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-20",
+        "definitionId": "content:18b-t02-04-20",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "評量後，教師辦公室。學生發現成績疑點但擔心被認為搶別人的機會。",
+                "speaker": null,
+                "scene": "school:teachers-office",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "成績可能算錯，但又怕影響同學推薦。",
+                "speaker": "participant",
+                "scene": "school:teachers-office",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "核對評量疑點",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先核對評量疑點；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "成績可能算錯，但又怕影響同學推薦。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "介紹合法複核方式",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助介紹合法複核方式；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "成績可能算錯，但又怕影響同學推薦。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "討論公平處理權益",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出討論公平處理權益的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "成績可能算錯，但又怕影響同學推薦。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "肯定追求正確",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「肯定追求正確」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "成績可能算錯，但又怕影響同學推薦。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-20",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-20",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "改分申請會影響誰",
+        "candidateId": "T02-04-C20",
+        "cause": "學生發現成績疑點但擔心被認為搶別人的機會",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "核對評量疑點／介紹合法複核方式／討論公平處理權益／肯定追求正確",
+        "narrativeTime": "評量後",
+        "scene": "school:teachers-office",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-21",
+        "definitionId": "content:18b-t02-04-21",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "說明會散場，禮堂。家長追問尚未釐清的推薦資格細則。",
+                "speaker": null,
+                "scene": "school:auditorium",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "說明會都散了，還有好幾條我聽不懂。",
+                "speaker": "participant",
+                "scene": "school:auditorium",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "確認未釐清條款",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先確認未釐清條款；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "說明會都散了，還有好幾條我聽不懂。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "提供書面來源",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助提供書面來源；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "說明會都散了，還有好幾條我聽不懂。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "整理給承辦的問題",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出整理給承辦的問題的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "說明會都散了，還有好幾條我聽不懂。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "理解時間不夠",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「理解時間不夠」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "說明會都散了，還有好幾條我聽不懂。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-21",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-21",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "校內說明只剩五分鐘",
+        "candidateId": "T02-04-C21",
+        "cause": "家長追問尚未釐清的推薦資格細則",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "確認未釐清條款／提供書面來源／整理給承辦的問題／理解時間不夠",
+        "narrativeTime": "說明會散場",
+        "scene": "school:auditorium",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-23",
+        "definitionId": "content:18b-t02-04-23",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "週末晚間電話，家中客廳。家長引用多年前升學制度要求依舊辦。",
+                "speaker": null,
+                "scene": "home:living-room",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我當年升學不是這樣，學校怎麼能改？",
+                "speaker": "participant",
+                "scene": "home:living-room",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "chat"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "核對學生適用年度",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先核對學生適用年度；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我當年升學不是這樣，學校怎麼能改？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "區分舊制和現規",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助區分舊制和現規；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我當年升學不是這樣，學校怎麼能改？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "引導核實條文",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出引導核實條文的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我當年升學不是這樣，學校怎麼能改？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "理解制度變動",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「理解制度變動」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我當年升學不是這樣，學校怎麼能改？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-23",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-23",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [],
+          "slotIds": [],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "家長說以前都不是這樣",
+        "candidateId": "T02-04-C23",
+        "cause": "家長引用多年前升學制度要求依舊辦",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "核對學生適用年度／區分舊制和現規／引導核實條文／理解制度變動",
+        "narrativeTime": "週末晚間電話",
+        "scene": "home:living-room",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-24",
+        "definitionId": "content:18b-t02-04-24",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學期結算隔天，教室。學生看到榜單更新，先懷疑有人暗箱操作。",
+                "speaker": null,
+                "scene": "school:classroom",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "昨天還是這名次，今天為什麼變了？",
+                "speaker": "participant",
+                "scene": "school:classroom",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "核對公告版次",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先核對公告版次；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "昨天還是這名次，今天為什麼變了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "請承辦說明更正原因",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助請承辦說明更正原因；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "昨天還是這名次，今天為什麼變了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "保存差異不傳指控",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出保存差異不傳指控的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "昨天還是這名次，今天為什麼變了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "理解突然變動",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「理解突然變動」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "昨天還是這名次，今天為什麼變了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-24",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-24",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "同學的名次突然變了",
+        "candidateId": "T02-04-C24",
+        "cause": "學生看到榜單更新，先懷疑有人暗箱操作",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "核對公告版次／請承辦說明更正原因／保存差異不傳指控／理解突然變動",
+        "narrativeTime": "學期結算隔天",
+        "scene": "school:classroom",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-26",
+        "definitionId": "content:18b-t02-04-26",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "會議後，行政辦公室。導師被請提供學生紀錄，家長誤解導師能決定名單。",
+                "speaker": null,
+                "scene": "school:administration",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我提供學生資料，家長卻說推薦是我決定。",
+                "speaker": "participant",
+                "scene": "school:administration",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "澄清導師紀錄與審議不同",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先澄清導師紀錄與審議不同；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我提供學生資料，家長卻說推薦是我決定。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "向家長說明正式程序",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助向家長說明正式程序；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我提供學生資料，家長卻說推薦是我決定。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "保留實際資料交付範圍",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出保留實際資料交付範圍的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我提供學生資料，家長卻說推薦是我決定。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "理解權責被誤認",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「理解權責被誤認」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我提供學生資料，家長卻說推薦是我決定。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-26",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-26",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "提供資料不代表承諾",
+        "candidateId": "T02-04-C26",
+        "cause": "導師被請提供學生紀錄，家長誤解導師能決定名單",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "澄清導師紀錄與審議不同／向家長說明正式程序／保留實際資料交付範圍／理解權責被誤認",
+        "narrativeTime": "會議後",
+        "scene": "school:administration",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-28",
+        "definitionId": "content:18b-t02-04-28",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "週會，禮堂。行政主動澄清算法，卻有學生不敢當眾提問。",
+                "speaker": null,
+                "scene": "school:auditorium",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "學校已經說明排名，還是有人不敢問。",
+                "speaker": "participant",
+                "scene": "school:auditorium",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "詢問匿名提問管道",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師先詢問匿名提問管道；學生將問題釐清成可確認的具體項目，但未因此取得任何校方決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "學校已經說明排名，還是有人不敢問。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "check",
+                "text": "整理未回答的問題",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師協助整理未回答的問題；學生獲得可自行核對的下一步資訊，實際程序仍須由權責方確認。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "學校已經說明排名，還是有人不敢問。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "choice",
+                "text": "向承辦提補充說明",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出向承辦提補充說明的可能安排；學生保留自主選擇，尚未替其他人作承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "學校已經說明排名，還是有人不敢問。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "理解公開發問不自在",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師表達「理解公開發問不自在」的理解；學生能先說出自己的感受，未被保證事情立刻解決。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "學校已經說明排名，還是有人不敢問。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-28",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-28",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.22,
+          0.19,
+          0.14,
+          0.12,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "學校決定公開補充說明",
+        "candidateId": "T02-04-C28",
+        "cause": "行政主動澄清算法，卻有學生不敢當眾提問",
+        "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
+        "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
+        "distinctiveConsequence": "詢問匿名提問管道／整理未回答的問題／向承辦提補充說明／理解公開發問不自在",
+        "narrativeTime": "週會",
+        "scene": "school:auditorium",
+        "review": "author-draft-not-verified",
+        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "qualificationWarning": null
+      }
     }
   ]
 }

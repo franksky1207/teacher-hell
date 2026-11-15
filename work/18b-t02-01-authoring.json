@@ -1314,6 +1314,333 @@
         "sceneNote": null,
         "numericRationale": "轉組適應不良的事件與自主、學習適應及家庭支持不足較相關。；核心 4-3、3-2、2-2；附加 3-4、7-1、2-3。本為逐篇設計理由，尚未進行引擎精準驗證。"
       }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-01-17",
+        "definitionId": "content:18b-t02-01-17",
+        "version": "1",
+        "topicId": "T02-01",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "教務處外，學生握著選修意願調查表。想修的設計課因報名太少，開課名單裡沒有它。",
+                "speaker": null,
+                "scene": "school:administration",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我第一次真的想修一門課，結果連班都沒有，這算我選錯嗎？",
+                "speaker": "participant",
+                "scene": "school:administration",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "先確認這是暫定還是正式開課公告",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生明白調查意願與正式開課是不同階段，目前沒有替課程作出開班承諾。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我第一次真的想修一門課，結果連班都沒有，這算我選錯嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "action",
+                "text": "和他比較仍可選的課程內容",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生挑出一門有部分相同學習目標的替代課程，並未立刻更改選課。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我第一次真的想修一門課，結果連班都沒有，這算我選錯嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "alternative",
+                "text": "協助詢問校內跨班或自主學習規定",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生記下承辦窗口及需要確認的資格，校方是否核准仍未知。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我第一次真的想修一門課，結果連班都沒有，這算我選錯嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "好不容易找到興趣卻撲空，真的很掃興",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師接住失落，學生暫時不必把課程沒開成歸咎於自己。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我第一次真的想修一門課，結果連班都沒有，這算我選錯嗎？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-01-17",
+        "topicId": "T02-01",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-01-17",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "4-3",
+          "3-2",
+          "2-2"
+        ],
+        "additionalCodes": [
+          "3-4",
+          "4-1",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.21,
+          0.2,
+          0.15,
+          0.11,
+          0.09
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "這是個別一次性的情境；需按人物學籍、情境時段與既有接觸條件抽選"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "想選卻沒有開課",
+        "candidateId": "T02-01-C17",
+        "cause": "教務處外，學生握著選修意願調查表。想修的設計課因報名太少，開課名單裡沒有它。",
+        "teacherResponsibility": "尊重學生自主，提供合法資訊與適當協助；導師不能替教務、升學或家長做出承諾。",
+        "knowledgeSource": "只知道本次實際對話、訊息及所見，其他人的想法、核准、回覆未經證實。",
+        "distinctiveConsequence": "學生明白調查意願與正式開課是不同階段，目前沒有替課程作出開班承諾。／學生挑出一門有部分相同學習目標的替代課程，並未立刻更改選課。／學生記下承辦窗口及需要確認的資格，校方是否核准仍未知。／導師接住失落，學生暫時不必把課程沒開成歸咎於自己。",
+        "narrativeTime": "放學前的課程諮詢時段",
+        "scene": "school:administration",
+        "numericRationale": "主題三核心碼沿用4-3、3-2、2-2；附加3-4、4-1、2-4，依本次情境作候選初擬，待現有公式與合法持有者確認。",
+        "review": "author-draft-not-verified",
+        "qualificationWarning": null
+      }
     }
   ]
 }

@@ -1720,93 +1720,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "willing-to-act",
-                  "weight": 2.5,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 1.1
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "師生練好不交整份答案的回應，學生決定自己向朋友表達界線；還不知道朋友能否接受。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "not-yet-ready",
-                  "weight": 2.2,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 1.2
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "師生練好不交整份答案的回應，學生暫時仍擔心失去友誼，只保留回覆草稿。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "document",
@@ -3360,8 +3274,17 @@ export default [
               "outcome": {
                 "fact": "雙方排出可先做的項目並擬出詢問，不替科任同意延後。",
                 "claims": [],
-                "changes": [],
-                "historyCodes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
+                "historyCodes": [
+                  "H04-6"
+                ],
                 "next": {
                   "stage": null,
                   "afterDays": 0

@@ -3786,93 +3786,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "willing-to-act",
-                  "weight": 2,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "3-1",
-                      "influence": 0.8
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生整理了自己的進步證據，願意自行向家長分享其中一項，還沒有得到家長反應。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "not-yet-ready",
-                  "weight": 2.6,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "2-2",
-                      "influence": 1.1
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生已整理進步證據，卻仍不願向家長提出，先保留作為自己的紀錄。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "observe",
@@ -5971,8 +5885,17 @@ export default [
               "outcome": {
                 "fact": "雙方列出不同科目可參與的方式，尚未代表兩位科任接受解釋。",
                 "claims": [],
-                "changes": [],
-                "historyCodes": [],
+                "changes": [
+                  {
+                    "role": "teacher",
+                    "holder": "work",
+                    "code": "11-2",
+                    "delta": -1
+                  }
+                ],
+                "historyCodes": [
+                  "H04-6"
+                ],
                 "next": {
                   "stage": null,
                   "afterDays": 0

@@ -363,7 +363,8 @@
     "2026-11-16：新增現行引擎可驗證的grades可選資格，T02-03/05/06/07共78則已綁高三；2則用既有entrance狀態限縮；4則校曆slot精準修正。仍欠升學階段/畢業後合法抽選條件，不將年級門檻當全部放行。",
     "2026-11-16：新增專項年級資格回歸測試原始碼（未實際執行）。分發公布、畢典彩排、校友重逢等仍缺特定行事曆/學籍條件，列阻斷不冒稱已解決；保留零正式上架。",
     "2026-11-16：再將T02-07中6則持續分科準備故事加入正式entrance.subject-preparing條件，加上原01共7則；05-01有gsat-published，總計8則實際升學狀態門檻。不對分發公告等未有合法條件者套用不實門檻。",
-    "2026-11-16：已針對正式admissions state核對升學門檻的實際資料欄位（completed、applications、offers、stars），並增補年級3正向與milestone-completed正反回歸測試。分科分發/畢典彩排及面試確切日期尚缺合法時序接線，不能放行；不改208篇全文。"
+    "2026-11-16：已針對正式admissions state核對升學門檻的實際資料欄位（completed、applications、offers、stars），並增補年級3正向與milestone-completed正反回歸測試。分科分發/畢典彩排及面試確切日期尚缺合法時序接線，不能放行；不改208篇全文。",
+    "2026-11-16：精準修正T02-05-28畢典彩排及T02-07-24放榜後校園兩個無保證時點；新增僅涵蓋T02年級/升學門檻的小型CI工作流程，尚未取得執行結果。Foundation 18/18通過與T02專項驗證分開記錄。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -778,5 +779,39 @@
     ],
     "verification": "逐項比對現有正式升學資料結構與候選predicate原始碼；編寫精準回歸測試包含高三正反年級、升學里程碑正反狀態；尚未實際Node或CI執行",
     "publication": 0
+  },
+  "focusedFollowthrough": {
+    "date": "2026-11-16",
+    "changes": [
+      {
+        "id": "T02-05-28",
+        "done": "以畢典前正常上課日的教室回顧替換無正式資格的畢典彩排；採用既有stars-nominated個人資格"
+      },
+      {
+        "id": "T02-07-24",
+        "done": "改成升學諮詢期間收到學長重考建議，保留教師決策，不再假定分發放榜後仍在高三校園"
+      },
+      {
+        "id": "T02-07-27",
+        "blocked": "正式分發結果與校曆/畢業後場景仍未接線，不得上架"
+      },
+      {
+        "id": "T02-06-20",
+        "blocked": "當日面試與清晨校外訊息無精準日期/時段資格，不得上架"
+      }
+    ],
+    "test": {
+      "source": "test/18b-t02-grade-eligibility.test.js",
+      "workflow": ".github/workflows/18b-t02-focused.yml",
+      "trigger": "T02分支受影響檔案push精準CI",
+      "status": "工作流程已建立，尚未查得對應執行結果；不得當作測試成功",
+      "scope": "僅年級1/3與已完成升學里程碑正反案例，不跑生涯模擬"
+    },
+    "foundationEvidence": {
+      "run": "https://github.com/franksky1207/teacher-hell/actions/runs/43772211375",
+      "result": "success, 18 pass 0 fail",
+      "limitation": "這是core/contracts Foundation，不包含新T02專項測試"
+    },
+    "release": "PR #69保持Draft；仍208工程隔離、上架0"
   }
 }

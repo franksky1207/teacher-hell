@@ -198,7 +198,23 @@ export function issueReservationDefinition(world,s){
 export function validateIssueReservation(world,s,{admission=false}={}){
  if(s.bindingContract!==1)return;
  const {definition:d,engineering}=issueReservationDefinition(world,s),index=eventIndex(world);
- validateBoundSelection(world,s,d,{exact:admission,pool:scope=>participantPool(world,scope,index)});
+ validateBoundSelection(world,s,d,{exact:admission,continuation:!admission,pool:scope=>participantPool(world,scope,index)});
+ if(!admission){
+  // A continuation is not a new candidate. Keep the locked actors and current
+  // interaction restrictions; do not rerun opening progress/numeric thresholds.
+  const e=d.eligibility,person=s.participantIds[0],n=world.numeric.evolution.world,r=runtime(world),day=runtimeCalendarDay(world),slot=day.slots.find(x=>x.id===world.position.slotId);
+  need(world.events.some(e=>e.id===s.eventId),'continuation requires admitted event');
+  need(e.people.some(scope=>participantPool(world,scope,index).includes(person)),'participant outside legal pool');
+  need(!e.roleIds||e.roleIds.every(id=>(n.people[person]?.roleIds??[8,9]).includes(id)),'role-condition');
+  need(!e.affiliation||n.registry.enrollments.some(a=>a.personId===person&&a.classId===e.affiliation.classId&&(e.affiliation.status==='active'?a.until===null:a.until!==null)),'affiliation-condition');
+  need(!e.enrollment||enrollmentEligibility(n,{personId:person,...e.enrollment}).eligible,'enrollment');
+  need((e.companions??[]).every(c=>{const f=index.facts.get(c.contactFactId);return f?.data?.type==='contact'&&f.occurredAt.date===day.date&&f.subjectIds.includes(person)&&f.subjectIds.includes(c.personId)&&(c.personId===world.identity.playerId||!!n.people[c.personId]);}),'companion-contact-required');
+  need((e.knowledge??[]).every(k=>r.knowledge.some(x=>x.actorId===(k.actorId==='participant'?person:k.actorId)&&x.claimId===k.claimId&&x.versionId===k.versionId&&(k.belief==='any'||x.belief===k.belief))),'knowledge-condition');
+  need(!entranceAbsent(world,index.academics,person),'personal-admissions-activity');
+  need(slot&&!slot.protected&&(!e.slotIds.length||e.slotIds.includes(slot.id))&&(!e.dayKinds.length||e.dayKinds.includes(day.kind))&&(e.from===null||day.date>=e.from)&&(e.until===null||day.date<=e.until),'no-legal-continuation-time');
+  need(day.kind!=='aftercare'||aftercareDefinition(d),'students-left-school');
+  return;
+ }
  // All original calendar, enrollment, numeric and contact qualifications are rerun,
  // omitting only this reservation's own conflict record. No draw or settlement.
  const built=buildEventCandidates(world,[d],{engineering,ignoreEventId:s.eventId,lockedBinding:s.issueBindings[0]});

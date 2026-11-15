@@ -23,7 +23,7 @@ function meets(issue,c,fact){if(!c)return true;const [k,v]=Object.entries(c)[0];
 export function issueMatches(issue,q,roles,view){
  return !!issue&&issue.kind===q.kind&&q.states.includes(issue.state)&&q.actors.every(a=>issue.actors.includes(roles[a.role]))&&new Set(q.actors.map(a=>roles[a.role])).size===q.actors.length&&meets(issue,q.condition,view.fact(issue.createdBy.factId))&&q.knowledge.every(k=>view.disclosure(roles[k.role],k.source==='root'?issue.createdBy.factId:issue.latestOperation.factId));
 }
-export function issueView(world,beforeOrder=runtime(world).history.length+1){const r=runtime(world);return {fact:id=>r.facts.find(f=>f.id===id&&f.order<beforeOrder),disclosure:(actorId,factId)=>r.disclosures.find(d=>d.actorId===actorId&&d.factId===factId&&d.order<beforeOrder)};}
+export function issueView(world,beforeOrder=runtime(world).history.length+1){const r=runtime(world);return {entries:()=>r.history.filter(h=>h.order<beforeOrder),fact:id=>r.facts.find(f=>f.id===id&&f.order<beforeOrder),disclosure:(actorId,factId)=>r.disclosures.find(d=>d.actorId===actorId&&d.factId===factId&&d.order<beforeOrder)};}
 function contact(world,id){return runtime(world).facts.findLast(f=>f.data?.type==='contact'&&f.occurredAt.date===world.position.date&&f.subjectIds.includes(id)&&f.subjectIds.includes(world.identity.playerId)&&f.witnessIds.includes(world.identity.playerId));}
 /** Pure enumeration: each root/role tuple is unique; group weight is applied once. */
 export function issueOptions(world,q,participant,pool,issues=projectIssues(world)){
@@ -45,14 +45,19 @@ export function boundIssue(view,binding,eventId,{exact=false}={}){
  need(binding.evidenceFactIds.every(id=>issue.evidenceFactIds.includes(id)),'bound evidence missing');return issue;
 }
 export function boundRoles(selection){return selection?.issueBindings?.[0]?.roleBindings??{};}
-export function validateBoundSelection(world,s,definition,{pool=null,view=null,exact=false}={}){
+export function validateBoundSelection(world,s,definition,{pool=null,view=null,exact=false,continuation=false}={}){
  const q=definition.eligibility.issue;if(!q)return;
  need(s.bindingContract===1&&s.issueBindings?.length===1,'binding contract');const b=s.issueBindings[0];need(b.version===1&&b.name===q.binding,'binding name');assertShape(b,['version','name','issueId','rootFactId','latestOperationId','latestFactId','evidenceFactIds','roleBindings','informationSources','contactFactIds']);
  view??={...issueView(world),issue:id=>projectIssues(world).find(x=>x.id===id)};
  const issue=boundIssue(view,b,s.eventId,{exact});
  need(Object.keys(b.roleBindings).length===q.actors.length+1,'unexpected bound roles');
  if(exact){need(same(b.evidenceFactIds,issue.evidenceFactIds),'evidence differs');const sources=q.knowledge.map(k=>{const factId=k.source==='root'?issue.createdBy.factId:issue.latestOperation.factId,actorId=b.roleBindings[k.role];return {role:k.role,actorId,factId,disclosureOrder:view.disclosure(actorId,factId)?.order};});need(same(b.informationSources,sources),'information sources differ');}
- need(issueMatches(issue,q,b.roleBindings,view),'bound qualification failed');
+ // Opening predicates describe the bound operation, not the state after this
+ // story's own confirmed progress. boundIssue above still rejects every
+ // external operation, including termination, before this historical read.
+ if(continuation)need(view.entries().some(h=>h.type==='event-lifecycle'&&h.eventId===s.eventId&&h.data.previous==='reserved'&&h.data.status==='active'),'continuation requires legal admission');
+ const qualification=continuation?projectIssues(world,{beforeOrder:issue.operations.find(o=>o.id===b.latestOperationId).order+1}).find(i=>i.id===b.issueId):issue;
+ need(issueMatches(qualification,q,b.roleBindings,view),'bound qualification failed');
  const contactRoles=q.actors.filter(a=>a.role!=='participant'||!['student','staff'].includes(a.scope));
  need(b.contactFactIds.length===contactRoles.length&&b.contactFactIds.every((id,i)=>{const f=view.fact(id);return f?.data?.type==='contact'&&f.occurredAt.date===s.date&&f.subjectIds.includes(b.roleBindings[contactRoles[i].role])&&f.subjectIds.includes(world.identity.playerId)&&f.witnessIds.includes(world.identity.playerId);}),'bound contact evidence differs');
  need(b.roleBindings.participant===s.participantIds[0]&&b.roleBindings.teacher===world.identity.playerId,'bound participant changed');

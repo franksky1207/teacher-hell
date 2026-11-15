@@ -54,7 +54,7 @@ export function compileStory(w,op,{panelWitness=false,compilerContract=null,view
  const reservation=(view?view.entries():r(w).history).filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.eventId===e.id);
  if(c.bindingContract===1&&['start','select','confirm','resume'].includes(op.action)){
   need(reservation?.bindingContract===1,'missing locked issue binding');
-  validateBoundSelection(w,reservation,issueReservationDefinition(w,reservation).definition,{view,exact:op.action==='start'});
+  validateBoundSelection(w,reservation,issueReservationDefinition(w,reservation).definition,{view,exact:op.action==='start',continuation:op.action!=='start'});
   // Historical compilation uses only its prefix. Current registry checks run
   // during actual transactions, never against a later world's registry.
   if(!historyReplay)validateIssueReservation(w,reservation,{admission:op.action==='start'});

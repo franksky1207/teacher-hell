@@ -1,0 +1,263 @@
+{
+  "theme": "T02",
+  "subtopic": "T02-01",
+  "title": "高一選課、高二選組及轉組",
+  "phase": "open-exploration",
+  "authority": "src/runtime/topics.js; docs/18B-正式事件量產與品質驗收SOP.md",
+  "note": "先探索、後按因果獨立性篩選；每個候選不是正式獨立事件、尚未有遊戲JSON或驗證。時段是敘事設想，須映射合法日型與slotIds。",
+  "candidateCount": 28,
+  "scenarios": [
+    {
+      "candidateId": "T02-01-C01",
+      "title": "選課單的空白格",
+      "time": "早自習",
+      "place": "教室",
+      "premise": "高一學生只填共同課程，擔心選修會決定整個人生",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C02",
+      "title": "同桌把我的志願改了",
+      "time": "午休後",
+      "place": "走廊",
+      "premise": "學生發現紙本選課表被同桌開玩笑改填",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C03",
+      "title": "家長傳來另一張表",
+      "time": "夜間訊息",
+      "place": "家中客廳",
+      "premise": "學生說父親私下填了不同選課意向",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C04",
+      "title": "課程介紹會沒講到",
+      "time": "週會",
+      "place": "禮堂",
+      "premise": "學生追問說明會只介紹熱門課程未列其他選項",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C05",
+      "title": "老師說我不適合",
+      "time": "午餐",
+      "place": "教師辦公室",
+      "premise": "學生轉述科任評語並誤認是正式選組限制",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C06",
+      "title": "兩班選修同一節",
+      "time": "下課",
+      "place": "走廊",
+      "premise": "學生想修的兩門課因排課衝突只能擇一",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C07",
+      "title": "表單截止前一分鐘",
+      "time": "放學前",
+      "place": "行政辦公室",
+      "premise": "學生急著繳件但系統顯示尚未完成確認",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C08",
+      "title": "高二重選的價差",
+      "time": "晚自習前",
+      "place": "教室",
+      "premise": "學生擔心轉組後需另買整套教材",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C09",
+      "title": "自然組的社交壓力",
+      "time": "午餐",
+      "place": "校園中庭",
+      "premise": "學生因朋友都選自然組而跟填相同志願",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C10",
+      "title": "社會組不是放棄",
+      "time": "週末下午",
+      "place": "校外咖啡店",
+      "premise": "學生的興趣明確卻擔心被家人說沒有前途",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C11",
+      "title": "會考成績的陰影",
+      "time": "早自習",
+      "place": "教室",
+      "premise": "學生仍用國中成績衡量高中新課程適性",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C12",
+      "title": "問卷只有二選一",
+      "time": "課後",
+      "place": "行政辦公室",
+      "premise": "校內初步問卷與正式選課方案的用語不同",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C13",
+      "title": "選修作品突然被表揚",
+      "time": "午休",
+      "place": "教室",
+      "premise": "平常安靜的學生因作品獲肯定首次考慮跨領域選課",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C14",
+      "title": "資訊課名和想像不同",
+      "time": "第一節後",
+      "place": "走廊",
+      "premise": "學生以為資訊課都是寫程式，實際課綱偏資料素養",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C15",
+      "title": "母親要求同班",
+      "time": "晚間電話",
+      "place": "家中客廳",
+      "premise": "家長想以選組結果決定孩子的交友圈",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C16",
+      "title": "學長一句話",
+      "time": "午餐",
+      "place": "操場",
+      "premise": "學生聽信學長說某一組升學一定比較輕鬆",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C17",
+      "title": "想選卻沒有開課",
+      "time": "課後",
+      "place": "行政辦公室",
+      "premise": "小眾選修因選課人數不足可能無法開班",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C18",
+      "title": "轉組後同學都不熟",
+      "time": "開學早自習",
+      "place": "教室",
+      "premise": "剛轉組學生表面說沒事，午餐卻獨自坐著",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C19",
+      "title": "轉組理由被公開",
+      "time": "午休",
+      "place": "走廊",
+      "premise": "學生不願同學知道轉組與家庭考量有關",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C20",
+      "title": "錯過了試聽機會",
+      "time": "課後",
+      "place": "教師辦公室",
+      "premise": "學生請假當天未參加選修試聽，想補了解內容",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C21",
+      "title": "下學期才看清楚",
+      "time": "期末午餐",
+      "place": "校園談話角落",
+      "premise": "學生讀了一學期才察覺課程方向與自己不同",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C22",
+      "title": "小組成果讓他改變志向",
+      "time": "午休",
+      "place": "教室",
+      "premise": "原想選自然組的學生在歷史專題中發現熱情",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C23",
+      "title": "可不可以兩邊都要",
+      "time": "放學後",
+      "place": "圖書館外走廊",
+      "premise": "學生問能否跨組修課，校內排程未確認",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C24",
+      "title": "被朋友排除的選組群",
+      "time": "晚間訊息",
+      "place": "家中臥室",
+      "premise": "學生因拒絕跟朋友同組，被踢出討論群",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C25",
+      "title": "祖父母的職業期待",
+      "time": "週末晚上",
+      "place": "家中客廳",
+      "premise": "長輩用自身職業經驗強烈建議孩子選某組",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C26",
+      "title": "個性測驗不是命令",
+      "time": "午休",
+      "place": "輔導室",
+      "premise": "學生誤以為性向測驗結果具強制分組效力",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C27",
+      "title": "重新開始的第一堂",
+      "time": "新學期課間",
+      "place": "教室",
+      "premise": "轉組學生第一次上不同進度的課，仍缺前段筆記",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    },
+    {
+      "candidateId": "T02-01-C28",
+      "title": "同一張表的兩個簽名",
+      "time": "繳件日早自習",
+      "place": "教室",
+      "premise": "學生與家長簽名欄意見不一致，期限將近",
+      "screening": "待按不同起因、導師責任、資訊落差與因果結果確認，不以名稱換皮計件",
+      "status": "explored"
+    }
+  ]
+}

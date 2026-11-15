@@ -50,7 +50,9 @@
     "deploy:preview": "bash scripts/deploy-preview.sh",
     "test:senior:continuous": "node --max-old-space-size=4096 --expose-gc scripts/senior-integration.js",
     "test:senior:save": "node --max-old-space-size=4096 --expose-gc scripts/senior-verify-save.js",
-    "test:senior:browser": "npm run build && node scripts/senior-browser.js"
+    "test:senior:browser": "npm run build && node scripts/senior-browser.js",
+    "content:audit": "node scripts/audit-content.mjs",
+    "content:audit:strict": "node scripts/audit-content.mjs --strict"
   },
   "devDependencies": {
     "acorn": "8.15.0"

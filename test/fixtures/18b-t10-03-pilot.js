@@ -410,7 +410,7 @@ const safetyFirst={
 // The next day does not presume which first-stage option or weighted result happened.
 const followups={
  2:{
-  setting:'隔天午餐，昨天提出素食餐問題的學生再來詢問；前一天餐點是否送達仍不能從這段對話直接認定。',
+  setting:'隔天午餐，昨天詢問素食餐的學生再次走到你身旁，想先確認今天的領餐安排。',
   line:'昨天那份素食餐的事情，我還想知道今天會不會一樣。',
   options:[
    ['一起核對今天的登記與領取紀錄','教師與學生查對當天素食登記，沒有預設昨日的原因已查明。'],
@@ -567,7 +567,7 @@ export const PILOT_18B_T10_03_RECORDS=cases.map((c,i)=>{
   stages.push({
    id:'followup-canteen',
    pages:[
-    page(1,'隔天午餐，昨天已請供餐窗口查詢補餐方案的學生再次來找你。窗口是否給出正式回覆，今天仍須核對。',null,'calm',scene),
+    page(1,'隔天午餐，昨天請餐務窗口查詢補餐的學生又來找你。你還需要向窗口確認是否有新回覆。',null,'calm',scene),
     page(2,'昨天有幫我問餐務，可是我還不知道今天會怎麼安排。','participant','sad',scene)
    ],
    choices:contact.options.map(([text,fact],j)=>({

@@ -1641,6 +1641,656 @@
         "review": "author-draft-not-verified",
         "qualificationWarning": null
       }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-02",
+        "definitionId": "content:18b-t02-04-02",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "升學說明會一散場，學生發現最新簡報提到的校內推薦名額比先前班群通知少了一個。",
+                "speaker": null,
+                "scene": "school:auditorium",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "這樣是不是有人被偷偷拿掉了？",
+                "speaker": "participant",
+                "scene": "school:auditorium",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "先查明兩份資訊發布的日期與適用範圍",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生辨認出簡報和通知版本不同，尚未證實名額實際減少。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "這樣是不是有人被偷偷拿掉了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "act",
+                "text": "協助向正式承辦窗口確認名額來源",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生整理詢問內容，學校尚未提出書面說明。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "這樣是不是有人被偷偷拿掉了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "alternative",
+                "text": "提醒先保留兩版公告再提出具體疑問",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生保存可供比對的資料，未散播有人暗箱操作的說法。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "這樣是不是有人被偷偷拿掉了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "名額一變就會緊張，但先核實再判斷",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師理解不安，不以學生猜測認定程序違失。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "這樣是不是有人被偷偷拿掉了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-02",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-02",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.2,
+          0.18,
+          0.15,
+          0.13,
+          0.1
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "推薦名額來源與公告版本",
+        "candidateId": "T02-04-C02",
+        "cause": "升學說明會一散場，學生發現最新簡報提到的校內推薦名額比先前班群通知少了一個。",
+        "teacherResponsibility": "導師僅能就實際得知的情境提供合理協助與轉介，不擅自裁定他人意圖或升學結果。",
+        "knowledgeSource": "當事人本次陳述，其他人之行為及機構決策仍待查證。",
+        "distinctiveConsequence": "學生辨認出簡報和通知版本不同，尚未證實名額實際減少。／學生整理詢問內容，學校尚未提出書面說明。／學生保存可供比對的資料，未散播有人暗箱操作的說法。／導師理解不安，不以學生猜測認定程序違失。",
+        "numericRationale": "保留小主題核心碼；附加碼及方向權重為初稿，須於精準驗證時按個別前因確認，尚未核准。",
+        "review": "author-draft-not-verified",
+        "gradeGateWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-04-07",
+        "definitionId": "content:18b-t02-04-07",
+        "version": "1",
+        "topicId": "T02-04",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "午休在輔導室，轉學生攤開先前學校的成績資料，問為何系統只顯示部分學期排名。",
+                "speaker": null,
+                "scene": "school:counseling",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我以前也有認真讀，這些成績會不會直接不算？",
+                "speaker": "participant",
+                "scene": "school:counseling",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "先確認學生目前持有的正式成績文件",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生找出成績來源，尚未判定哪些學期符合校內排序規則。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我以前也有認真讀，這些成績會不會直接不算？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "act",
+                "text": "轉介教務處依適用年度規定說明",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生知道可以請承辦單位核算，導師未自行重算排名。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我以前也有認真讀，這些成績會不會直接不算？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "alternative",
+                "text": "陪他列出不同學校課程與學期差異",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生整理資料缺口，尚未替前校證明文件作結論。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我以前也有認真讀，這些成績會不會直接不算？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "換學校已經很不容易，又要擔心過去努力被忽略",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師理解失落，未保證每項成績都可直接採計。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我以前也有認真讀，這些成績會不會直接不算？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-04-07",
+        "topicId": "T02-04",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-04-07",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "1-4",
+          "2-2",
+          "8-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.2,
+          0.18,
+          0.15,
+          0.13,
+          0.1
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "轉學生排名與學籍銜接",
+        "candidateId": "T02-04-C07",
+        "cause": "午休在輔導室，轉學生攤開先前學校的成績資料，問為何系統只顯示部分學期排名。",
+        "teacherResponsibility": "導師僅能就實際得知的情境提供合理協助與轉介，不擅自裁定他人意圖或升學結果。",
+        "knowledgeSource": "當事人本次陳述，其他人之行為及機構決策仍待查證。",
+        "distinctiveConsequence": "學生找出成績來源，尚未判定哪些學期符合校內排序規則。／學生知道可以請承辦單位核算，導師未自行重算排名。／學生整理資料缺口，尚未替前校證明文件作結論。／導師理解失落，未保證每項成績都可直接採計。",
+        "numericRationale": "保留小主題核心碼；附加碼及方向權重為初稿，須於精準驗證時按個別前因確認，尚未核准。",
+        "review": "author-draft-not-verified",
+        "gradeGateWarning": null
+      }
     }
   ]
 }

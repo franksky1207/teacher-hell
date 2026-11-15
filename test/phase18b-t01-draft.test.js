@@ -31,8 +31,9 @@ test('T01 whole-batch story, candidate, immutable reference and isolation contra
 });
 
 function begin(definitions){
- let w=eventWorld(1,'2026-09-01','early');
- w=apply(w,[draw(definitions)]);
+ let w=eventWorld(1,'2026-09-01',definitions[0]?.eligibility.slotIds[0]??'early');
+ // Draw with the same calibrated source bindings used by the isolated catalogue.
+ w=apply(w,[{type:'draw-events',definitions,bindings:definitions.map(d=>catalogue.bindings.find(b=>b.definitionId===d.id)),engineering:true}]);
  const selected=runtimeOf(w).history.findLast(h=>h.type==='event-selection').data.selected[0];
  assert.ok(selected,'bounded fixed seed selects a legal T01 event');
  for(let i=0;i<16&&w.position.slotId!==selected.slotId;i++)w=advanceDemo(w);

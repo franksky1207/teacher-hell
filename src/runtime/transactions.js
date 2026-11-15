@@ -1,3 +1,5 @@
+import { captureStoryNumeric } from './story-history-view.js';
+import { storyDigest } from './story-content.js';
 import { validateRetryPair } from './retry-checkpoint.js';
 import {academicTermStatus} from './academics.js';
 import { progressionContext } from './progression.js';
@@ -158,12 +160,15 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     if(op.action==='confirm')naturalAt(world,numericSession,world.position);
     syncNumeric(world,numericSession);
     const panelWitness=r.plan.validation==='fixed-calendar-v2'&&op.action==='confirm';
-    const compiled=compileStory(world,op,{panelWitness});
+    const beforeOrder=r.history.length+1,compilerContract=storyContent(world,op.eventId)?.compilerContract??1;
+    const numericContext=compilerContract===2?captureStoryNumeric(world,op,{operationId:command.id,beforeOrder,contentDigest:storyDigest(storyContent(world,op.eventId))}):null;
+    const compiled=compileStory(world,op,{panelWitness,compilerContract,numericContext});
+    const numericWitness=numericContext?.finish()??null;
     const beforePanel=deriveWorldPanel(numericSession.world());
     for(const child of compiled.operations)numericSession=execute(world,command,child,numericSession,receipt,false,op.eventId);
     const panel=deriveWorldPanel(numericSession.world());
     compiled.state.panelDelta=Object.fromEntries(Object.keys(panel).map(k=>[k,compiled.state.panelDelta[k]+(op.action==='confirm'?panel[k]-beforePanel[k]:0)]));
-    history(world,command,'story',op.eventId,world.events.find(e=>e.id===op.eventId).stageId,[],{action:clone(op),state:compiled.state,operations:compiled.operations,inputs:compiled.inputs,...(panelWitness?{panelWitnessVersion:1}:{})});
+    history(world,command,'story',op.eventId,world.events.find(e=>e.id===op.eventId).stageId,[],{action:clone(op),state:compiled.state,operations:compiled.operations,inputs:compiled.inputs,...(compilerContract===2?{compilerContract:2,beforeOrder,numericWitness}:{}),...(panelWitness?{panelWitnessVersion:1}:{})});
   } else if(op.type==='register-event-catalogue'){
     history(world,command,'event-catalogue',null,null,[],registerEventCatalogue(world,op));
   } else if(op.type==='draw-events'){

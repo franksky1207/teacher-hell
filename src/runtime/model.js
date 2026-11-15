@@ -19,6 +19,9 @@ import { assertShape, identifier } from '../player/panel.js';
 import { nextGameDate } from '../evolution/time.js';
 import { probability } from '../numeric/math.js';
 
+/** Story queries use order boundaries, not revision-only world caches. */
+export { storyHistoryView } from './story-history-view.js';
+
 export const WORLD_KEY = 'teacher-hell/world';
 export const ATTEMPT_LINEAGE_KEY = 'teacher-hell/attempt-lineage';
 export const HISTORY_CODES = Object.freeze(Array.from({length:10},(_,i)=>Array.from({length:6},(_,j)=>`H${String(i+1).padStart(2,'0')}-${j+1}`)).flat());

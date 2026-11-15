@@ -378,7 +378,8 @@
     "2026-11-16：正式Node Foundation run 43774354292完成，25 pass / 0 fail（含7項T02），已驗證畢業後升學名冊正反案例及前述六則分科年級/時序條件；仍保留208則engineering-test、逐篇Node全批0、獨立審稿0、上架0，不做無意義重跑。",
     "2026-11-16：發現畢典後不只subject-register，stars8-result、application-allocation、application-confirm也會因當日高三在籍名冊空而漏算原屆已畢業考生。延續資格已擴展四個日程節點並排除非畢業/轉出/其他屆者。GitHub Actions 43774849286正式26 pass /0 fail，其中5則改寫故事與候選定義已通過原validateStory及validateEventDefinitions；其餘203則未逐件結構驗證，獨立語意審稿及上架仍為0。",
     "2026-11-16：一次性完整T02結構驗證完成。Foundation run 43775137471：36 pass / 0 fail。八組×26＝208篇故事全部通過原始validateStory及每一則validateEventDefinitions，IDs/資源配對無錯；structurallyValidatedWithNode由5改208。語意獨立審查、候選實際可觸發與正式上架仍未完成，數量0；禁止重複無目的全批測試。",
-    "2026-11-16：208篇全批原始驗證器已通過。另做一次唯讀編輯初篩：208個cause與832個option.fact沒有精確重複；832選項文本830獨立，僅兩組短語重複；時間字樣唯一疑點T02-01-18是早自習談未來午餐，非錯時。字面去重不等於獨立語意審稿，reviewed仍0。"
+    "2026-11-16：208篇全批原始驗證器已通過。另做一次唯讀編輯初篩：208個cause與832個option.fact沒有精確重複；832選項文本830獨立，僅兩組短語重複；時間字樣唯一疑點T02-01-18是早自習談未來午餐，非錯時。字面去重不等於獨立語意審稿，reviewed仍0。",
+    "2026-11-16：已建立docs/reviews/18b-t02-semantic-review-handoff.md，整合208件獨立語意審稿一次集中輸入、規則、已知時序例外及精準ID輸出格式；此為交接包，尚未進行獨立審稿，reviewed 0，published 0。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -984,5 +985,13 @@
     "sceneTimeHeuristic": "檢索早自習/午餐/午休/晚自習/假日/寒暑快轉/畢業校友字樣與正式dayKinds/slotIds；唯一被標記T02-01-18是早自習談論『將來午餐跟誰坐』，非當下午餐時段，屬文字誤報不修改",
     "limitations": "字面不重複≠因果有差異；候選實際可達性與獨立語意審稿均未證明；不會以字串分數自動宣告208件審核通過",
     "pending": "待不同審稿者一次集中核對因果、知情來源、主角行動、人物資格及跨學年路徑；僅退回實質有問題的ID"
+  },
+  "independentReviewHandoff": {
+    "date": "2026-11-16",
+    "file": "docs/reviews/18b-t02-semantic-review-handoff.md",
+    "prepared": true,
+    "independentReviewPerformed": false,
+    "scope": "8 subtopics × 26 = 208 original authored records",
+    "instructions": "由不同審稿者一次集中處理世界可信、因果、數值、文字、資格；只提出真正阻斷ID，無阻斷不重查；不將208結構通過當語意審核"
   }
 }

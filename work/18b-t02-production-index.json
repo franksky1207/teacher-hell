@@ -377,7 +377,8 @@
     "2026-11-16：Foundation 43774083544成功24/24（含新T02-07-07 aftercare／校友／分科報名條件之靜態Node回歸）；分科報名不等於考場分配已公布，將07-07劇情傳聞和知情來源修正，維持未確認狀態。T02-07-22/27分發放榜保留原情境並隔離，不能偷換申請入學以湊可用事件。",
     "2026-11-16：正式Node Foundation run 43774354292完成，25 pass / 0 fail（含7項T02），已驗證畢業後升學名冊正反案例及前述六則分科年級/時序條件；仍保留208則engineering-test、逐篇Node全批0、獨立審稿0、上架0，不做無意義重跑。",
     "2026-11-16：發現畢典後不只subject-register，stars8-result、application-allocation、application-confirm也會因當日高三在籍名冊空而漏算原屆已畢業考生。延續資格已擴展四個日程節點並排除非畢業/轉出/其他屆者。GitHub Actions 43774849286正式26 pass /0 fail，其中5則改寫故事與候選定義已通過原validateStory及validateEventDefinitions；其餘203則未逐件結構驗證，獨立語意審稿及上架仍為0。",
-    "2026-11-16：一次性完整T02結構驗證完成。Foundation run 43775137471：36 pass / 0 fail。八組×26＝208篇故事全部通過原始validateStory及每一則validateEventDefinitions，IDs/資源配對無錯；structurallyValidatedWithNode由5改208。語意獨立審查、候選實際可觸發與正式上架仍未完成，數量0；禁止重複無目的全批測試。"
+    "2026-11-16：一次性完整T02結構驗證完成。Foundation run 43775137471：36 pass / 0 fail。八組×26＝208篇故事全部通過原始validateStory及每一則validateEventDefinitions，IDs/資源配對無錯；structurallyValidatedWithNode由5改208。語意獨立審查、候選實際可觸發與正式上架仍未完成，數量0；禁止重複無目的全批測試。",
+    "2026-11-16：208篇全批原始驗證器已通過。另做一次唯讀編輯初篩：208個cause與832個option.fact沒有精確重複；832選項文本830獨立，僅兩組短語重複；時間字樣唯一疑點T02-01-18是早自習談未來午餐，非錯時。字面去重不等於獨立語意審稿，reviewed仍0。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -965,5 +966,23 @@
     "validated": "208/208 T02 records via official validateStory, validateEventDefinitions; 8 groups of 26, unique IDs and actual resource pair consistency",
     "exclusions": "不等於逐條事件因果語意合理、事件必能被抽到、現場互動可玩、獨立審稿簽核或正式發布",
     "workflow": "既有Foundation quick（包含T02精準測試），不跑三年/30年模擬"
+  },
+  "editorialTriageAfterStructural": {
+    "date": "2026-11-16",
+    "scope": "以八份完整T02工程隔離JSON共208則、832基本選項做一次跨主題字面重複及敘事時段靜態初篩",
+    "exactDuplicates": {
+      "editorialCauses": 0,
+      "optionOutcomeFacts": 0,
+      "participantSpeech": 0,
+      "optionLabelPairs": 2
+    },
+    "optionLabelRepeats": [
+      "尊重不願公開的心情：T02-02-14/T02-05-13",
+      "理解家長擔心：T02-03-14/T02-08-16"
+    ],
+    "interpretation": "選項短語偶爾相同可合理，兩組並不足以判定換皮；208件客觀起因與832件結果文本皆非精確重複，仍需要真人／獨立模型逐案判斷語意類同",
+    "sceneTimeHeuristic": "檢索早自習/午餐/午休/晚自習/假日/寒暑快轉/畢業校友字樣與正式dayKinds/slotIds；唯一被標記T02-01-18是早自習談論『將來午餐跟誰坐』，非當下午餐時段，屬文字誤報不修改",
+    "limitations": "字面不重複≠因果有差異；候選實際可達性與獨立語意審稿均未證明；不會以字串分數自動宣告208件審核通過",
+    "pending": "待不同審稿者一次集中核對因果、知情來源、主角行動、人物資格及跨學年路徑；僅退回實質有問題的ID"
   }
 }

@@ -34,9 +34,9 @@ function begin(definitions){
  let w=eventWorld(1,'2026-09-01','early');
  w=apply(w,[draw(definitions)]);
  const selected=runtimeOf(w).history.findLast(h=>h.type==='event-selection').data.selected[0];
- assert.ok(selected,'bounded fixed seed selects a legal lunch event');
+ assert.ok(selected,'bounded fixed seed selects a legal T01 event');
  for(let i=0;i<16&&w.position.slotId!==selected.slotId;i++)w=advanceDemo(w);
- assert.equal(w.position.slotId,'lunch');w=apply(w,[{type:'admit-event',eventId:selected.eventId}]);
+ assert.equal(w.position.slotId,selected.slotId);w=apply(w,[{type:'admit-event',eventId:selected.eventId}]);
  return {w,eventId:selected.eventId};
 }
 function lastPage(w,eventId){for(let i=0;i<8&&readStory(w,eventId).canNext;i++)w=apply(w,[storyAction(eventId,'next')]);assert.equal(readStory(w,eventId).canNext,false);return w;}
@@ -90,4 +90,23 @@ test('runtime group 3: full isolated catalogue registration/draw/admission/save;
  for(let i=0;i<16&&w.position.slotId!==selected.slotId;i++)w=advanceDemo(w);
  w=apply(w,[{type:'admit-event',eventId:selected.eventId}]);
  assert.ok(readStory(w,selected.eventId));assert.deepEqual(restoreWorldState(JSON.stringify(w)),w);
+});
+
+
+test('T01 eight editorial exemplars retain distinct tactics and real follow-up boundaries',()=>{
+ const exemplars=['01-22','02-09','03-01','04-01','05-01','06-03','07-02','08-07'];
+ for(const id of exemplars){
+  const s=records.find(r=>r.story.resourceId==='content:18b-t01-'+id)?.story;
+  assert.ok(s,'missing exemplar '+id);validateStory(s);
+  const entry=s.stages[0];assert.equal(entry.pages.length,3,'story includes a third context page');
+  assert.equal(entry.choices.length,4);assert.equal(new Set(entry.choices.map(c=>c.text)).size,4);
+  assert.equal(new Set(entry.choices.map(c=>c.outcome.fact)).size,4,'choices must cause distinguishable recorded facts');
+  assert.ok(entry.choices.every(c=>c.outcome.world),'every action has an explicit knowledge boundary');
+  assert.equal(s.status,'engineering-test');
+ }
+ for(const id of ['01-22','03-01']){
+  const s=records.find(r=>r.story.resourceId==='content:18b-t01-'+id).story;
+  assert.equal(s.stages.length,2);assert.equal(s.stages[1].choices.length,4);
+  assert.ok(s.stages[0].choices.some(c=>c.outcome.next.stage==='next-contact'&&c.outcome.next.afterDays===1));
+ }
 });

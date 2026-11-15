@@ -1,3 +1,4 @@
+import {validateConsequences} from './story-consequences.js';
 import { entranceAbsentFromHistory } from './entrance.js';
 /** Versioned, platform-free content assets. Save files contain references, never scripts. */
 import { canonicalData } from '../changes/settlement.js';
@@ -6,12 +7,14 @@ import { TOPIC_IDS } from './topics.js';
 import { STORY_SCENE_IDS } from './story-scenes.js';
 import {PHASE17D_STORIES} from './story-samples-17d.js';
 const need=(ok,code,message)=>{if(!ok)throw new RangeError(`CONTENT_${code}: ${message}`);};
-const roles=['teacher','participant','companion'];
+const baseRoles=['teacher','participant','companion'];
 const expressions=['calm','happy','angry','sad','surprised','embarrassed'];
 const scenes=STORY_SCENE_IDS;
 export function validateStory(c){
- canonicalData(c);assertShape(c,['resourceId','definitionId','version','topicId','status','entry','stages',...(Object.hasOwn(c,'compilerContract')?['compilerContract']:[]),...(Object.hasOwn(c,'premise')?['premise']:[]),...(Object.hasOwn(c,'choiceContract')?['choiceContract']:[])]);
+ const roles=[...baseRoles,...Object.keys(c.roleBindings??{})];
+ canonicalData(c);assertShape(c,['resourceId','definitionId','version','topicId','status','entry','stages',...(Object.hasOwn(c,'compilerContract')?['compilerContract']:[]),...(Object.hasOwn(c,'roleBindings')?['roleBindings']:[]),...(Object.hasOwn(c,'premise')?['premise']:[]),...(Object.hasOwn(c,'choiceContract')?['choiceContract']:[])]);
  need(!Object.hasOwn(c,'compilerContract')||c.compilerContract===2,'CONTRACT','unsupported compiler contract');
+ if(c.roleBindings){need(c.compilerContract===2,'CONTRACT','named roles require v2');for(const [name,b] of Object.entries(c.roleBindings)){identifier(name);need(!baseRoles.includes(name),'ROLE','reserved role');assertShape(b,['personId']);identifier(b.personId);}}
  for(const k of ['resourceId','definitionId','version','entry'])identifier(c[k]);
  need(!c.choiceContract||c.choiceContract==='four-v2','CONTRACT','unsupported choice contract');need(TOPIC_IDS.includes(c.topicId),'REFERENCE','topic');need(['engineering-test','ready'].includes(c.status),'STATUS','status');
  need(c.status!=='ready'||!c.resourceId.startsWith('engineering:'),'PUBLICATION','engineering asset');
@@ -39,7 +42,8 @@ export function validateStory(c){
     else need(false,'QUALIFICATION','unknown condition');
    }identifier(o.id);identifier(o.text);need(typeof o.emotional==='boolean'&&['action','defer','refuse','support'].includes(o.kind),'CHOICE','option kind');
    if(o.variants){need(c.choiceContract==='four-v2'&&Array.isArray(o.variants)&&o.variants.length>=2,'VARIANTS','only new contract allows multiple outcomes');need(new Set(o.variants.map(v=>v.id)).size===o.variants.length,'VARIANTS','unique variant IDs');for(const v of o.variants){assertShape(v,['id','weight','outcome',...(Object.hasOwn(v,'modifiers')?['modifiers']:[])]);identifier(v.id);need(Number.isFinite(v.weight)&&v.weight>0,'VARIANTS','positive base weights');for(const m of v.modifiers??[]){assertShape(m,['role','holder','code','influence']);need(roles.includes(m.role)&&['person','life','work','outlook'].includes(m.holder)&&/^(?:[1-9]|1[0-2])-[1-4]$/.test(m.code)&&Number.isFinite(m.influence)&&Math.abs(m.influence)<=5&&(m.role==='teacher'||m.holder==='person'),'VARIANTS','valid numeric modifier');}}}
-   for(const r of [o.outcome,...(o.variants??[]).map(v=>v.outcome)]){assertShape(r,['fact','claims','changes','historyCodes','next',...['academic','entrance','institution','duty'].filter(k=>Object.hasOwn(r,k))]);
+   for(const r of [o.outcome,...(o.variants??[]).map(v=>v.outcome)]){assertShape(r,['fact','claims','changes','historyCodes','next',...['world','relationshipChanges','issueOperations','academic','entrance','institution','duty'].filter(k=>Object.hasOwn(r,k))]);
+   validateConsequences(r,c);
    if(c.compilerContract===2)need(!r.duty&&!r.institution,'CONTRACT','compiler v2 duty/institution adapters require a historical structural contract');
    if(r.duty){assertShape(r.duty,['kind',...(Object.hasOwn(r.duty,'secondary')?['secondary']:[])]);if(r.duty.secondary)need(r.duty.kind==='resigned'&&r.duty.secondary==='unable','DUTY','compatible concurrent consequences');need(['pressure','relief','thought','resignation-pending','temporary','notice','resigned','replaced','unable','restored'].includes(r.duty.kind),'DUTY','supported objective consequence');}
    if(r.institution){assertShape(r.institution,['kind','response']);need(r.institution.kind==='duty-response'&&['accept','refuse','negotiate','protest','delay','seek-help'].includes(r.institution.response),'INSTITUTION','supported institutional consequence');}
@@ -170,7 +174,13 @@ export function phase17dSampleCatalogue(){
 }
 /** Isolated contract fixture; never registered in a public catalogue. */
 export const HISTORY_CONTRACT_STORY=freeze(validateStory({...structuredClone(DEMO_STORY),resourceId:'engineering:history-contract-v2',definitionId:'engineering:history-contract-v2',version:'1',compilerContract:2}));
-const assets=freeze([HISTORY_CONTRACT_STORY,AFTERCARE_STORY,ENTRANCE_STORY,DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY,...PHASE17D_READY_STORIES]);
+/** Package 3 isolated author-contract fixture; never added to a playable catalogue. */
+const package3Outcome=(close=false)=>({fact:close?'雙方確認安排已完成。':'學生向教師說明接送困難，雙方開始協調。',claims:close?[]:[{role:'participant',statement:'我覺得老師願意聽我說。',belief:'believed',visible:false}],changes:[],historyCodes:[],next:next(close?null:'resolution'),
+ world:{subjects:['teacher','participant','office'],witnesses:['teacher','participant'],affected:['participant','office'],contacts:[['participant','teacher']],transmissions:close?[]:[{fromRole:'teacher',toRole:'office',description:'教師本次向承辦人傳達待協調的安排。'},{fromRole:'participant',toRole:'teacher',description:'學生向教師表達自己的看法。',claimIndex:0}]},
+ relationshipChanges:close?[]:[{fromRole:'participant',toRole:'teacher',code:'5-1',delta:2,basis:'interaction'},{fromRole:'office',toRole:'teacher',code:'5-1',delta:1,basis:'information'}],
+ issueOperations:close?[{type:'close',source:{eventId:'self',stage:'opening',optionId:'listen',localKey:'transport'},reason:'安排已落實'}]:[{type:'open',localKey:'transport',kind:'transport-arrangement',roles:['participant'],details:'接送安排待協調'}]});
+export const PACKAGE3_STORY=freeze(validateStory({resourceId:'engineering:package3',definitionId:'engineering:package3',version:'1',compilerContract:2,roleBindings:{office:{personId:'staff:school:office:10:2'}},topicId:'E01-01',status:'engineering-test',entry:'opening',stages:['opening','resolution'].map((id,i)=>({id,pages:[page(1,'學生與教師核對本次安排。')],choices:['listen','b','c','d'].map((key,j)=>choice(key,'處理安排'+j,j===3,'action',j===0?package3Outcome(i===1):{fact:'教師保留紀錄。',claims:[],changes:[],historyCodes:[],next:next(),world:{subjects:['teacher'],witnesses:['teacher'],affected:[],contacts:[],transmissions:[]}})),next:null}))}));
+const assets=freeze([PACKAGE3_STORY,HISTORY_CONTRACT_STORY,AFTERCARE_STORY,ENTRANCE_STORY,DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY,...PHASE17D_READY_STORIES]);
 export function resolveStory(ref){const c=assets.find(c=>c.resourceId===ref.resourceId&&c.version===ref.version);need(c,'RESOURCE','missing immutable content version');return c;}
 export function validateStoryReference(d){const c=resolveStory(d.content);need(c.definitionId===d.id&&c.topicId===d.topicId&&c.status===d.content.status,'REFERENCE','definition/content identity');if(c.resourceId.startsWith('aftercare:'))need(canonicalData(d)===canonicalData(aftercareCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal aftercare qualification cannot be relabeled');if(c.resourceId.startsWith('entrance:'))need(canonicalData(d)===canonicalData(entranceCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal entrance qualification cannot be relabeled');if(c.resourceId.startsWith('homeroom:'))need(canonicalData(d)===canonicalData(homeroomCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal homeroom qualification/authority cannot be relabeled');return c;}
 

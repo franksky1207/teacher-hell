@@ -246,21 +246,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "錯題本成了抄題本",
-      "cause": "午餐時，學生拿來一本全是題目與解答的錯題本，說複習時仍不知自己錯在哪。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "學生當場重做第一個步驟，停在列式處，這次停點被記下，不推論全部錯因。／教師示範用題號及待確認觀念取代完整抄題，原題仍保留供查。／學生把卡住的列式寫成問句，尚未得到科任解說。／教師以幽默提醒整理成本，提議暫停美化，未否定既有努力。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -508,21 +493,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "通勤不能看字",
-      "cause": "午餐時，學生表示搭車閱讀會暈，卻把每天車程都排成閱讀時間。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "雙方在紙本作息刪去車上閱讀，尚未改變真實交通安排。／教師提出不需操作螢幕的聽讀方案，提醒不適便停止，不保證適合學生。／學生把規劃表的車程標為休息，未因此增加其他時段任務。／教師表達心疼，提醒暈車不等於缺乏自律，未診斷身體狀況。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -848,21 +818,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於指定合法非保護時段接觸導師；僅記錄已確認事實，不以同主題或日期推定相同問題。"
       }
-    },
-    "editorial": {
-      "title": "間隔複習排程擠爆",
-      "cause": "午餐時，學生展示複習卡程式，今天排出六百張到期卡片。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "學生在清單標出近期課程相關卡片，沒有把未讀卡一律判成已會。／教師說明減少新卡的影響，由學生自行設定，不保證積欠立刻消失。／學生抽取五張檢查是否能回想，結果只代表本次抽樣。／教師以幽默減輕壓力並允許保留未完成項，未宣稱可以忽略課程。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -1110,21 +1065,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "題型混練總做錯",
-      "cause": "午餐時，學生拿混合練習單，表示同類題分開做會，混在一起便選錯方法。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "學生當場為一題說明判斷線索，教師未代算也不斷言整類已掌握。／雙方圈出兩題的已知條件差異，表格留有待科任確認的部分。／學生整理兩題及自己的判斷供詢問，尚未得到診斷。／教師以比喻回應挫折，邀學生先練辨認不急著求快。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -1372,21 +1312,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "自我測驗偷看答案",
-      "cause": "午餐時，學生出示自習練習，承認每題都先瞄解答，所以不知道能否獨立解。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "學生選擇先遮一小段再口述，當下停頓被如實記錄，未被評成考試作弊。／教師示範先記猜法與信心再翻頁，學生尚未完成整組練習。／雙方在紙上區分可看解答的學習題及不看的自測題，不變更正式考規。／教師表達接納，學生知道可保留不會的空格，未獲保證成績會提高。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -1634,21 +1559,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "計算練習沒有單位",
-      "cause": "午餐時，學生拿物理練習，數值運算大致完成，但常在最後不知道答案的量綱。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "雙方用學生提供的題目逐步標記單位，教師未認定所有計算正確。／學生在草稿留出量綱檢核欄，是否持續使用仍未知。／學生整理不知道何時換算的步驟，教師不冒充物理科任裁定。／教師以幽默提醒過程標記，沒有將一次疏漏歸因粗心人格。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -1896,21 +1806,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "長文先畫滿螢光",
-      "cause": "午餐時，學生攤開整頁幾乎全黃的閱讀材料，找不到能快速回看的線索。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "學生用自己的話替一段下標，教師只討論這段是否貼題。／教師提出在副本試標的做法，不抹掉原稿，也未命令全科照用。／學生在紙上寫出一個還不懂的問題，尚未得到答案。／教師用幽默回應，提醒選擇重點需要練習，不責備已做的標記。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -2158,21 +2053,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "背單字只有拼字",
-      "cause": "午餐時，學生出示單字卡，表示拼字默寫會，放進句子卻不知怎麼用。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "學生圈出一個例句的搭配詞，教師未宣告所有語境已掌握。／教師示範如何保留來源並挖空，學生尚未改完整副卡片。／學生把兩句及困惑並列，等待英語科任回應。／教師以幽默引導注意語境，沒有否定拼字練習的用途。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -2420,21 +2300,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "週計畫沒有緩衝",
-      "cause": "午餐時，學生拿出連續排滿的週表，說一次臨時家務就讓整週順序失效。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "雙方在規劃副本保留一段緩衝，未承諾實際家務會減少。／學生標出課程期限及自訂練習，教師未替科任延後期限。／學生自選一項優先工作，其餘保留待辦而非刪成已完成。／教師表達共感並提醒規劃可修，沒有把彈性當作不必履責。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -2682,21 +2547,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "複習影片越看越快",
-      "cause": "午餐時，學生展示影片播放紀錄，說用兩倍速看完一整章，卻答不出練習。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "學生關掉字幕嘗試說明一個步驟，停點被指出，未推論整章都不會。／教師提議看完一段先做對應題，不保證影片本身品質。／雙方比對章節標題，未驗證影片的每個論點。／教師以幽默提醒主動回想，沒有將觀看速度與能力畫等號。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -2944,21 +2794,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "小組讀書變聊天",
-      "cause": "午餐時，學生說讀書會多半在聊天，想繼續見朋友又怕讀書沒進度。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "學生在提案列出先聊後各讀的時間，尚未取得朋友同意。／教師示範一輪的規則，不代替缺席成員承諾參加。／學生擬出本週先獨讀的訊息，尚未送出或獲回應。／教師回應兩難，學生未被要求證明朋友拖累自己。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -3206,21 +3041,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "口訣記得但概念不通",
-      "cause": "午餐時，學生背出地理口訣，遇到方向轉換的圖便無法判讀。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "學生在一張圖標記對應關係，教師未替科任判定概念正確。／學生嘗試描述圖上的方向，停在不確定處，未被要求猜成確定。／雙方寫出「轉向後哪個基準不變」的問題，等待專科解說。／教師以比喻回應，不要求學生丟掉所有記憶技巧。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -3468,21 +3288,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "手機與紙本分心差異",
-      "cause": "午餐時，學生自述用手機讀課文時常跳通知，紙本又不方便查字。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "教師說明先下載文件再關閉非必要通知，由學生決定是否測試。／學生在紙上列出待查字，尚未完成閱讀或查詢。／雙方擬定同長度的觀察方式，不將一次結果推廣為永久習慣。／教師以幽默表達理解，未要求交出密碼或檢查私訊。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -3730,21 +3535,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "難題佔滿整晚",
-      "cause": "午餐時，學生說昨夜卡在一題數學兩小時，其他已會的功課因此沒開始。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "學生在題旁寫下已試方法，未解出題目也未被視為失敗。／教師協助辨認期限，學生自行排順序，不替任課取消難題。／學生保留錯誤嘗試並寫出具體問點，尚未收到解答。／教師以幽默支持休息，未保證跳題就能拿高分。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -3992,21 +3782,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "考前只做熟題",
-      "cause": "午餐時，學生拿練習清單，發現勾選的都是熟悉題，陌生題從未開始。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "學生當場圈出已知及未知，未要求立刻解完。／教師提議保留熟題暖身並加入少量新題，學生尚未採行。／學生寫下希望練的觀念及卡點，未把所有陌生題視為超綱。／教師以溫和比喻回應焦慮，不貶低既有熟練。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -4254,21 +4029,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "晨讀與晚讀效果不同",
-      "cause": "午餐時，學生出示一週自記，早上回想較清楚，晚上則常在同頁停留。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "雙方發現比較條件尚未對齊，不把一週自記當成固定生理結論。／教師提出短期調整，仍尊重課表與睡眠，不要求更早起。／學生在試行表把晚間改列回顧，尚未執行或改善成績。／教師表達關切並提醒狀態可變，不診斷作息類型。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -4516,21 +4276,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "聽講與筆記互相搶時間",
-      "cause": "午餐時，學生說忙著抄投影片時常漏聽解釋，但不抄又怕沒資料。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "教師在空白紙示範留缺口及問號，不改任課要求。／學生擬出詢問課後講義或拍攝規則的問題，尚未獲准錄影。／學生選出一段需要補問的內容，未追認當時已理解。／教師以幽默承接壓力，不將未抄全當成不認真。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -4778,21 +4523,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "考後只看分數不看錯因",
-      "cause": "午餐時，學生出示自己的考卷，說每次收進抽屜後都不再翻，下一次又錯相似題。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "學生自選一題並指出看不懂的步驟，沒有被迫一次面對整份。／學生在副本遮住分數，教師未修改原始卷面或正式成績。／教師協助擬出詢問內容，尚未取得任課的時間承諾。／教師表達理解，讓學生可先停下，沒有宣告心理問題已消失。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -5040,21 +4770,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "跨科共用一套筆記法",
-      "cause": "午餐時，學生出示用同一種摘要表整理的歷史與數學，說數學步驟常被省掉。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "雙方指出摘要與推導步驟不同，未斷言某科只適合一種學法。／學生在一題副本補列自己的步驟，尚不代表解答正確。／學生整理目前有效及失效處，沒有把整套方法一律丟棄。／教師以比喻回應，提醒依任務調整而非追求萬用秘方。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -5302,21 +5017,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "睡前回想變焦慮清單",
-      "cause": "午餐時，學生自述睡前想回顧重點，結果一直列出沒讀完的事情而更晚睡。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "雙方在規劃副本把清單整理改到放學前，不要求犧牲睡眠。／教師提出簡短回顧並可停止的做法，不保證適用或治療睡眠問題。／學生考慮暫停，不被視為已改善；持續影響生活可再尋求校內協助。／教師以幽默表達擔心，未診斷失眠原因或替學生用藥。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   },
   {
@@ -5564,21 +5264,6 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
-    },
-    "editorial": {
-      "title": "概念圖連線全靠抄",
-      "cause": "午餐時，學生出示照網路範例畫的概念圖，卻說不出其中箭頭代表什麼。",
-      "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
-      "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
-      "distinctiveConsequence": "學生嘗試口述一條箭頭的意義，教師保留不確定標記。／學生在副本改用虛線與問號，不破壞原參考來源。／學生附上原圖來源及問題，尚未取得學科判讀。／教師以幽默提醒可解釋性，未將美觀視為沒有學習價值。",
-      "editorialStatus": "awaiting-separated-review",
-      "author": "Codex root authoring process",
-      "version": "1",
-      "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
-      "causalClass": [
-        "L1"
-      ],
-      "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
     }
   }
 ];

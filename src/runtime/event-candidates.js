@@ -95,6 +95,10 @@ function homeroomRejection(w,mode,person,index){
  }
  return null;
 }
+/** Reunion content needs an observed same-day contact, not a fabricated static fact ID. */
+export function findReunionContact(facts,alumnusId,teacherId,date){
+ return [...facts.values()].find(f=>f.data?.type==='contact'&&Array.isArray(f.subjectIds)&&f.subjectIds.includes(alumnusId)&&f.subjectIds.includes(teacherId)&&f.occurredAt?.date===date)??null;
+}
 export function participantPool(world,scope,index){
  const n=world.numeric.evolution.world,r=n.registry;
  if(scope==='player')return [world.identity.playerId];
@@ -150,7 +154,7 @@ export function buildEventCandidates(world,definitions,{engineering=false,ignore
     if(e.grades&&!e.grades.includes(gradeAt(day.date,world.numeric.evolution.world.registry.cohortStart)))reason='grade-condition';
    if(facts.some((f,i)=>!f||e.facts[i].participant&&!f.subjectIds.includes(person)))reason='objective-condition';
    if((e.companions??[]).some(c=>{const f=index.facts.get(c.contactFactId);return !f||f.data?.type!=='contact'||f.occurredAt.date!==day.date||!f.subjectIds.includes(person)||!f.subjectIds.includes(c.personId)||!world.numeric.evolution.world.people[c.personId]&&c.personId!==world.identity.playerId;}))reason='companion-contact-required';
-   const reunionContact=!e.issue&&e.people.includes('reunion')?([...index.facts.values()].find(f=>f.data?.type==='contact'&&f.subjectIds.includes(person)&&f.subjectIds.includes(world.identity.playerId)&&f.occurredAt.date===day.date)??null):null;
+   const reunionContact=!e.issue&&e.people.includes('reunion')?findReunionContact(index.facts,person,world.identity.playerId,day.date):null;
     if(!e.issue&&e.people.includes('reunion')&&!reunionContact)reason='reunion-contact-required';
    if(e.roleIds&&!e.roleIds.every(id=>(world.numeric.evolution.world.people[person]?.roleIds??[8,9]).includes(id)))reason='role-condition';
    if(e.affiliation&&!world.numeric.evolution.world.registry.enrollments.some(a=>a.personId===person&&a.classId===e.affiliation.classId&&(e.affiliation.status==='active'?a.until===null:a.until!==null)))reason='affiliation-condition';

@@ -560,8 +560,8 @@ export default [
                   "H04-6"
                 ],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -628,6 +628,280 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師肯定願意討論解法，不將談話本身當成另一解已被接受。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "隔日午餐，學生帶著原卷和替代解法的查核問題來到教師辦公室。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我整理出每一步了，但老師怎麼看我還不知道。",
+              "speaker": "participant",
+              "scene": "school:classroom",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生出示科任對原解法的書面回覆，確定有一部分推理符合既有給分規準；實際計分由科任依程序處理。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "科任回覆指出替代解法缺少一項必要前提，原評分暫不更動；這不代表學生故意辯解。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -918,8 +1192,8 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -986,6 +1260,280 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師承接規則看不懂的困惑，不宣告命題有錯或有權自訂計分。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "隔日午餐，學生帶著同一題複選題的計分疑問回來。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "到底是怎麼扣的？我不想每次靠猜。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "科任提供該題正式部分給分規則，學生可依原卷重算；沒有新增任何私人額外加分。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "科任表示仍須核對本次測驗採用的版本，尚無正式得分明細，教師不自行代算成績。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -1641,8 +2189,8 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -1709,6 +2257,280 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師承接看似不一致的疑惑，沒有宣告兩份解法相同或閱卷者偏心。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "隔日早自習，學生仍想知道兩份相似解法為何扣分不同。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我沒有要看別人的分數，只想知道我這份少了什麼。",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "科任對學生自己的卷面指出一個被漏看的必要步驟，表示將依規進行複核；不公開另一學生答卷。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "科任說明此卷缺少關鍵假設，該項扣分有據；學生仍可依正式管道詢問，不被指責故意挑戰權威。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -2733,8 +3555,8 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -2808,6 +3630,280 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師承接分數對不上的驚慌，不保證查後一定改為卷面分數。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生隔日帶著自己紙本卷面及系統欄位的差異再度詢問。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我只希望系統上是我自己的成績。",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生出示科任與教務針對本人欄位的查核通知，發現有一欄尚待更正；正式登錄由權責者辦理。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "查核確認兩欄分別是原始分與加權成績，並非把別人的分數登給學生；教師不揭露他人成績。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -3472,8 +4568,8 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -3549,6 +4645,280 @@ export default [
                     "delta": -1
                   }
                 ],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "隔日午休，學生持合法競賽公假證明詢問尚未完成的課堂評量。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我不是翹課，但這次沒做到的實作怎麼辦？",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "科任正式回覆依本次課程評量規則提供可行的替代完成方式，學生仍須親自完成才能取得成績。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "科任說明該次並非計分活動，無須補做評分；教師不把合法公假變成缺席扣分。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
+                "claims": [],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3871,8 +5241,8 @@ export default [
                 ],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -3946,6 +5316,280 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師承接未如安排的不安，提醒核定與實施需查明，不把支持當查核已完成。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生再次反映核定評量調整似乎沒有在考場落實。教師已依必要程序保護並轉介，且不因選項而停辦。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我只想知道，原本核定的安排為什麼這次沒做到。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "權責單位正式回覆已受理執行落差的查核，正依核定內容與監考紀錄處理；尚不預先承諾成績調整。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "權責單位仍在核對核定版本及考場執行情形，尚無正式結論；學生既有必要支持措施不能因此被取消。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -4978,8 +6622,8 @@ export default [
                   "H04-6"
                 ],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -5055,6 +6699,280 @@ export default [
                     "delta": -1
                   }
                 ],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "隔日午餐，學生仍擔心互評給分被猜出，導師已依必要安全與保密程序處理。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我沒有想找誰麻煩，只是他們一直問我給幾分。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生出示科任說明已改用不顯示個別給分的彙總回饋方式；是否曾有真正資料外洩仍須權責單位查核。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生表示仍被同儕追問，沒有取得科任完成處理的確認；導師須持續必要保護，不把沉默當成安全。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
+                "claims": [],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -5720,8 +7638,8 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -5797,6 +7715,280 @@ export default [
                     "delta": -1
                   }
                 ],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生帶著自己答案卡讀取異常的申請紀錄回到教師辦公室。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "機器真的可能讀錯？還是我的劃記有問題？",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生出示教務正式複核紀錄，原卡有可依規判讀的塗記，已進入權責單位的複核更正程序；不是導師自行補分。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "教務回覆需保留原卡繼續核對機器及筆跡，尚未判定是否應更正，不能用學生事後填寫取代原卡。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
+                "claims": [],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -6013,8 +8205,8 @@ export default [
                 ],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -6068,8 +8260,8 @@ export default [
                     ],
                     "historyCodes": [],
                     "next": {
-                      "stage": null,
-                      "afterDays": 0
+                      "stage": "next-contact",
+                      "afterDays": 1
                     },
                     "world": {
                       "subjects": [
@@ -6123,8 +8315,8 @@ export default [
                     ],
                     "historyCodes": [],
                     "next": {
-                      "stage": null,
-                      "afterDays": 0
+                      "stage": "next-contact",
+                      "afterDays": 1
                     },
                     "world": {
                       "subjects": [
@@ -6200,6 +8392,280 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師承接被看見分數的不適，提醒正式反映仍待權責處理，不把安慰當資料已收回。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "隔日午休，學生再來詢問被貼出的成績資料是否已依規處理。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我不希望明天進教室又看到自己的分數。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "權責教師回覆已將可辨識個別成績的張貼表撤除，並改以不公開個人成績的方式提供回饋；既有轉傳情形另待查證。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "權責單位尚在核對張貼及轉傳範圍，尚無撤除完成的確認；導師應持續最小必要保護與正式反映。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -7222,8 +9688,8 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -7306,6 +9772,280 @@ export default [
                     "delta": -1
                   }
                 ],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生帶著昨日期限未寫清楚的成績更正申請草稿回來。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我昨天真的有準備申請，可是找不到老師，這樣算不算逾期？",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生出示有時間戳的正式申請送件憑據，權責者已確認收件，尚未保證一定改分。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生昨晚只存了未送出的草稿，沒有正式收件憑據；導師應協助依既定規則詢問可用窗口，不能把草稿當送達。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
+                "claims": [],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -7971,8 +10711,8 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -8039,6 +10779,280 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師理解想問清楚的心情，未承諾替本班爭取傳聞中的好處。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生隔天帶著網路群組流傳的期末加分消息來詢問。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "別班說有加分，那我們到底有沒有？",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "承辦公開說明該訊息是去年其他科的補交安排，與本期共同加分無關，學生可停止以傳聞推斷待遇。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "承辦公告本期確有適用部分班級的共同活動計分辦法，但資格和程序須依正式公告，導師不能自行開放加分。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -8348,8 +11362,8 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -8416,6 +11430,280 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師承接被記錄的不安，沒有保證調查結果或代替權責單位裁決。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生帶著考場事件的正式詢問回來，仍在等待權責單位依程序回覆。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我到底會被怎麼處理？能不能先讓我說明？",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生出示正式通知，權責單位已安排陳述機會；如何認定違規、是否影響分數尚待依法及校規裁決。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生目前只有監考現場記錄，尚無正式處理通知；教師不預言零分，也不保證一定免責。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -8715,8 +12003,8 @@ export default [
                   "H04-6"
                 ],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -8783,6 +12071,280 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師承接測驗中受阻的煩躁，以學生當時感受表述，不把故障當定論。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生帶著實作器材當時不穩的影像和操作紀錄，再次向導師詢問。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我做不出來，真的只是我不會嗎？",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生取得設備人員的正式檢測紀錄，確認有接觸不良，科任依規評估後續評量安排；導師不直接宣告重測。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "設備紀錄顯示目前測試正常，但本次考試操作條件仍需回溯；不能據此直接責怪學生或否定其感受。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -9073,8 +12635,8 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -9141,6 +12703,280 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師承接規則不明的疑惑，不宣告只要概念對就不應扣任何語言分。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生隔日帶著原卷及本次要求的作答語言疑問再來。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我想知道是概念沒寫對，還是因為用了中文被扣？",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "科任正式說明本次評量事前公布的語言與概念給分項目，學生可確認自己實際被扣在哪一欄；未擅自改分。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "科任回覆本次給分規準尚需教學團隊核對，不宜由導師單憑答題語言判定扣分是否正確。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
                 "claims": [],
                 "changes": [],
                 "historyCodes": [],
@@ -9343,8 +13179,8 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
-                  "afterDays": 0
+                  "stage": "next-contact",
+                  "afterDays": 1
                 },
                 "world": {
                   "subjects": [
@@ -9392,8 +13228,8 @@ export default [
                     ],
                     "historyCodes": [],
                     "next": {
-                      "stage": null,
-                      "afterDays": 0
+                      "stage": "next-contact",
+                      "afterDays": 1
                     },
                     "world": {
                       "subjects": [
@@ -9451,8 +13287,8 @@ export default [
                     ],
                     "historyCodes": [],
                     "next": {
-                      "stage": null,
-                      "afterDays": 0
+                      "stage": "next-contact",
+                      "afterDays": 1
                     },
                     "world": {
                       "subjects": [
@@ -9547,6 +13383,299 @@ export default [
                     "delta": -1
                   }
                 ],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "next-contact",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生再次帶來先前已綁定的同一份作業收件疑問與遲交評分規則。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我想知道那份作業到底有沒有被收進去，才能問扣分。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "review-evidence",
+              "text": "依本人可取得的正式資料核對目前處理進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師先核對學生實際帶來的資料，未以傳聞替正式權責作成決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              },
+              "variants": [
+                {
+                  "id": "documented",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生出示權責教師正式收件紀錄，已核對為原問題綁定的同一份作業；本次收件查證結案，是否涉及遲交計分須另依正式規準辦理。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    },
+                    "issueOperations": [
+                      {
+                        "type": "close",
+                        "source": {
+                          "binding": "receipt"
+                        },
+                        "reason": "取得同一份作業的正式收件紀錄"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "still-pending",
+                  "weight": 2.4,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "目前只有學生自行保留的送件畫面，未取得該份作業正式收件確認，原問題仍待追查，不能直接判定遲交。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    },
+                    "issueOperations": [
+                      {
+                        "type": "progress",
+                        "source": {
+                          "binding": "receipt"
+                        },
+                        "assessment": "uncertain",
+                        "details": "仍未取得該份作業正式收件紀錄，維持同一問題根查核。"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "prepare-procedure",
+              "text": "整理下一個合法、必要的查核步驟",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助整理尚可向權責單位詢問的事實，不代替對方批准或宣告免責。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "preserve-record",
+              "text": "保留正式文件與未決狀態，不公開他人資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師尊重學生的資料與分享界線，必要的保護與程序並未因這格選項取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "結果還沒確定，先把已知事實和擔心分開",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應學生在等待中的焦慮，但不以安慰取代制度應進行的查核。",
+                "claims": [],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,

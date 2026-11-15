@@ -491,7 +491,7 @@ export default [
       ],
       "directions": [
         1,
-        -1,
+        1,
         1,
         1,
         -1,
@@ -3086,7 +3086,7 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "11-2",
+        "3-3",
         "3-2",
         "3-4"
       ],
@@ -3135,7 +3135,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "participant",
         "participant"
       ],
@@ -4418,7 +4418,7 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "11-2",
+        "10-4",
         "3-2",
         "3-4"
       ],
@@ -4467,7 +4467,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "school",
         "participant",
         "participant"
       ],
@@ -6006,7 +6006,7 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "11-2",
+        "10-4",
         "3-2",
         "3-4"
       ],
@@ -6055,7 +6055,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "school",
         "participant",
         "participant"
       ],
@@ -6810,7 +6810,7 @@ export default [
       ],
       "directions": [
         1,
-        -1,
+        1,
         1,
         1,
         -1,

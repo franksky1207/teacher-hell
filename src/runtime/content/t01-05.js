@@ -2597,7 +2597,7 @@ export default [
       ],
       "additionalCodes": [
         "7-3",
-        "11-4",
+        "3-2",
         "8-4"
       ],
       "weights": [
@@ -2646,7 +2646,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "school",
+        "participant",
         "participant"
       ],
       "valence": "neutral"
@@ -2868,7 +2868,7 @@ export default [
         "8-3"
       ],
       "additionalCodes": [
-        "8-4",
+        "1-1",
         "3-2",
         "10-3"
       ],
@@ -2884,7 +2884,7 @@ export default [
         1,
         1,
         1,
-        1,
+        -1,
         -1,
         -1
       ],
@@ -3670,7 +3670,7 @@ export default [
         "8-3"
       ],
       "additionalCodes": [
-        "8-4",
+        "1-1",
         "3-2",
         "10-3"
       ],
@@ -3686,7 +3686,7 @@ export default [
         1,
         1,
         1,
-        1,
+        -1,
         -1,
         -1
       ],
@@ -5623,7 +5623,7 @@ export default [
         "8-3"
       ],
       "additionalCodes": [
-        "7-3",
+        "1-1",
         "8-4",
         "3-2"
       ],
@@ -5902,7 +5902,7 @@ export default [
         "8-3"
       ],
       "additionalCodes": [
-        "8-4",
+        "1-1",
         "3-2",
         "10-3"
       ],
@@ -5918,7 +5918,7 @@ export default [
         1,
         1,
         1,
-        1,
+        -1,
         -1,
         -1
       ],

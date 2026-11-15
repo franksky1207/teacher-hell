@@ -654,7 +654,7 @@ export default [
         0.182
       ],
       "directions": [
-        1,
+        -1,
         1,
         1,
         -1,
@@ -962,7 +962,7 @@ export default [
         "2-2"
       ],
       "additionalCodes": [
-        "8-3",
+        "7-3",
         "11-4",
         "7-4"
       ],
@@ -978,7 +978,7 @@ export default [
         1,
         1,
         1,
-        1,
+        -1,
         -1,
         -1
       ],
@@ -1240,7 +1240,7 @@ export default [
         0.12
       ],
       "directions": [
-        1,
+        -1,
         1,
         1,
         -1,
@@ -1505,7 +1505,7 @@ export default [
         0.143
       ],
       "directions": [
-        1,
+        -1,
         1,
         1,
         -1,
@@ -1841,7 +1841,7 @@ export default [
         0.118
       ],
       "directions": [
-        1,
+        -1,
         1,
         1,
         -1,
@@ -2113,7 +2113,7 @@ export default [
         0.167
       ],
       "directions": [
-        1,
+        -1,
         1,
         1,
         1,
@@ -2360,7 +2360,7 @@ export default [
       "additionalCodes": [
         "8-3",
         "11-4",
-        "9-2"
+        "3-4"
       ],
       "weights": [
         0.153,
@@ -2409,7 +2409,7 @@ export default [
         "participant",
         "participant",
         "school",
-        "classroom"
+        "participant"
       ],
       "valence": "neutral"
     }
@@ -2700,7 +2700,7 @@ export default [
         0.159
       ],
       "directions": [
-        1,
+        -1,
         1,
         1,
         -1,
@@ -2952,7 +2952,7 @@ export default [
         "2-2"
       ],
       "additionalCodes": [
-        "7-4",
+        "3-4",
         "9-2",
         "3-1"
       ],
@@ -3230,7 +3230,7 @@ export default [
         0.133
       ],
       "directions": [
-        1,
+        -1,
         1,
         1,
         -1,
@@ -3742,7 +3742,7 @@ export default [
       "additionalCodes": [
         "8-3",
         "11-4",
-        "9-2"
+        "3-4"
       ],
       "weights": [
         0.153,
@@ -3791,7 +3791,7 @@ export default [
         "participant",
         "participant",
         "school",
-        "classroom"
+        "participant"
       ],
       "valence": "neutral"
     }
@@ -4346,7 +4346,7 @@ export default [
         0.13
       ],
       "directions": [
-        1,
+        -1,
         1,
         1,
         -1,
@@ -5191,7 +5191,7 @@ export default [
         "2-2"
       ],
       "additionalCodes": [
-        "9-2",
+        "3-4",
         "3-1",
         "4-2"
       ],
@@ -5204,7 +5204,7 @@ export default [
         0.143
       ],
       "directions": [
-        1,
+        -1,
         1,
         1,
         -1,
@@ -5240,7 +5240,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "classroom",
+        "participant",
         "participant",
         "participant"
       ],
@@ -5463,7 +5463,7 @@ export default [
         "2-2"
       ],
       "additionalCodes": [
-        "11-2",
+        "3-4",
         "9-2",
         "3-1"
       ],
@@ -5476,7 +5476,7 @@ export default [
         0.13
       ],
       "directions": [
-        1,
+        -1,
         1,
         1,
         -1,
@@ -5512,7 +5512,7 @@ export default [
         "participant",
         "participant",
         "participant",
-        "player-work",
+        "participant",
         "classroom",
         "participant"
       ],
@@ -5741,7 +5741,7 @@ export default [
         0.133
       ],
       "directions": [
-        1,
+        -1,
         1,
         1,
         -1,

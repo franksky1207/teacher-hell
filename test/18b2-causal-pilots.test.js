@@ -52,7 +52,10 @@ test('18-B2 03: contacting canteen opens a specific unresolved issue; other rout
  const closed=projectIssues(w);
  assert.equal(closed.length,1);
  assert.equal(closed[0].id,opened[0].id);
- assert.equal(closed[0].state,'closed');
+ const checked=runtimeOf(w).facts.findLast(f=>f.eventId===eventId&&f.data.type==='story-action');
+ assert.ok(['delivered','not-confirmed'].includes(checked.data.variantId),'one audited outcome variant');
+ assert.equal(closed[0].state,checked.data.variantId==='delivered'?'closed':'open');
+ assert.equal(closed[0].latestOperation.type,checked.data.variantId==='delivered'?'close':'progress');
  const alternative=beginPilot(s,'lunch');
  const other=apply(apply(onLastPage(alternative.world,alternative.eventId),[storyAction(alternative.eventId,'select','care')]),[storyAction(alternative.eventId,'confirm')]);
  assert.equal(projectIssues(other).length,0);

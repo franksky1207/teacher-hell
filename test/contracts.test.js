@@ -1,3 +1,4 @@
+import './18b-t02-batch-structure.test.js';
 import './18b-t02-grade-eligibility.test.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';

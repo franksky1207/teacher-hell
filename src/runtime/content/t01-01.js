@@ -4087,7 +4087,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "immediate-insight",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生看著一張把清晨額外加碼圈起來的表，自己決定先取消其中一段，承認這個安排終於像人能睡的時間；正式作業仍要照規定完成。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": -1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "immediate-resistance",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.65
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生反覆算時間後仍不敢刪清晨加碼，說只要晚起一點就覺得輸給別人；教師沒有把建議說成已執行。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "observe",
@@ -4309,7 +4409,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "immediate-insight",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生試著用一句話說明筆記頁面時，意外發現自己其實懂一個核心概念，並指出真正搞混的是兩個相近詞。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "immediate-resistance",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.65
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生把整段漂亮筆記念完卻講不出意思，自己發現裝飾清楚不等於觀念清楚；教師只留下待問概念。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "plan",
@@ -4619,7 +4819,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "immediate-insight",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生把原本『每天都要催』的想法改成可由自己決定的每週回報草稿，坦言這樣至少比較敢和朋友談；朋友尚未看到草稿。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": -1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "immediate-resistance",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.65
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生寫下回報界線又怕朋友以為自己忘恩負義，把草稿收回，決定暫不送出；教師沒有代替友人同意。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "observe",
@@ -4885,7 +5185,119 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "immediate-insight",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生回想一整天圖書館時光，竟能舉出幾道確實訂正完成的題目，發現自己不是毫無成果；其他時段仍未核實。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "teacher",
+                        "holder": "work",
+                        "code": "11-2",
+                        "delta": -1
+                      },
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "immediate-resistance",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.65
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生回憶時才發現大半時間花在找座位和換參考書，說出來有點挫折；教師沒有把一日結果推成長期能力差。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "teacher",
+                        "holder": "work",
+                        "code": "11-2",
+                        "delta": -1
+                      },
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "plan",
@@ -5186,7 +5598,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "immediate-insight",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生看著短短一段新課內容，表示這次目標沒有要補完整週，願意先從這段重新開始；目前只訂目標並未完成。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": -1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "immediate-resistance",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.65
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生明知新目標只有一小段，仍忍不住把整週缺口全部寫在旁邊，說這樣才覺得沒有逃避，暫時不願開始。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "observe",
@@ -5444,7 +5956,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "immediate-insight",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生把已完成項目獨立列成一欄後，看到原來真的完成不少工作，自己在其中一項畫圈表示有成就感；新增任務仍待釐清。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "immediate-resistance",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.65
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生將已完成與待辦分開後，卻只盯著待辦欄，說這樣看起來更長；教師沒有把已完成紀錄刪掉。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "observe",
@@ -5716,7 +6328,119 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "immediate-insight",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生試著為讀書會草擬每人帶一個問題的提案，突然想到自己也常只聽別人講，決定先寫出自己的第一題；未得到其他組員同意。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "teacher",
+                        "holder": "work",
+                        "code": "11-2",
+                        "delta": -1
+                      },
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "immediate-resistance",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.65
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生看了輪流提問草稿後擔心自己先被點名而答不出來，表示想先練習再提案；導師沒有代其他人做決定。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "teacher",
+                        "holder": "work",
+                        "code": "11-2",
+                        "delta": -1
+                      },
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "observe",
@@ -5974,7 +6698,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "immediate-insight",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生回想社團練習時間，自己找到一個可緊接著閱讀五分鐘的固定時點，說這次終於不必再靠腦袋記住所有行程；尚未真的執行。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "immediate-resistance",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.65
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生檢查固定行程後才發現社團結束緊接著通勤，根本沒有原先想像的空檔；雙方留下另外尋找時段的問題。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "observe",
@@ -6311,7 +7135,107 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "immediate-insight",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生聽到教師祝賀後真的笑了一下，承認自己這週完成目標的感覺值得高興，沒有因此保證下週一定成功。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                },
+                {
+                  "id": "immediate-resistance",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.65
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生聽完祝賀卻小聲說『不要先恭喜，萬一下週又做不到呢』；教師尊重他暫時無法享受成果的焦慮。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  }
+                }
+              ]
             }
           ],
           "next": null
@@ -6525,7 +7449,135 @@ export default [
                     }
                   ]
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "immediate-insight",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.55
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生在原本由家長填好的表格旁寫下一項自己真的想試的小目標，明確表示這部分要先由自己決定；尚未向家長談過。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "immediate-resistance",
+                  "weight": 2.2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.65
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生挑出自己的小目標後，又擔心和家長的期待不同而把那一欄蓋住，說想等比較有把握才提出；教師沒有代替他通知家長。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "observe",

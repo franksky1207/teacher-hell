@@ -46,9 +46,16 @@ const meal=story('03',[
   page(1,'隔天午餐，學生回來詢問昨天交由餐務窗口查詢的素食餐安排。'),
   page(2,'昨天有請窗口查，但我不知道今天的供餐安排確認了沒。','participant','sad')
  ],choices:[
-  choice('verified','向餐務窗口核對送達紀錄，再與學生確認已取得符合需求的餐點',result('教師取得窗口的正式送達確認，並向學生核對確實領到符合需求的餐點，本次待處理供餐問題因此結案。',{
-   issues:[{type:'close',source:{eventId:'self',stage:'opening',optionId:'contact',localKey:'meal-arrangement'},reason:'fulfilled'}]
-  })),
+  {...choice('verified','向餐務窗口核對送達紀錄，再確認學生是否實際領到餐點',result('教師開始查證是否送達；尚無足夠證據宣告這次補餐已完成。',{
+   issues:[{type:'progress',source:{eventId:'self',stage:'opening',optionId:'contact',localKey:'meal-arrangement'},assessment:'uncertain',details:'已請餐務窗口核對送達，但尚未確認學生實際取得餐點'}]
+  })),variants:[
+   {id:'delivered',weight:2,outcome:result('窗口提供可核對的送達紀錄；教師再向學生確認已取得符合需求的餐點，因此本次問題可以結案。',{
+    issues:[{type:'close',source:{eventId:'self',stage:'opening',optionId:'contact',localKey:'meal-arrangement'},reason:'fulfilled'}]
+   })},
+   {id:'not-confirmed',weight:3,outcome:result('窗口尚無可核對的完成紀錄，學生也未確認拿到餐點；教師保留此問題供後續追蹤。',{
+    issues:[{type:'progress',source:{eventId:'self',stage:'opening',optionId:'contact',localKey:'meal-arrangement'},assessment:'uncertain',details:'尚未獲得實際供餐完成證據'}]
+   })}
+  ]},
   choice('pending','核對窗口尚未完成的回覆與可行補餐時間',result('餐務窗口仍未確認可執行安排；教師留下新的核對紀錄，問題仍未解決。',{
    issues:[{type:'progress',source:{eventId:'self',stage:'opening',optionId:'contact',localKey:'meal-arrangement'},assessment:'uncertain',details:'已再次查詢餐務回覆，仍待確認實際供餐'}]
   })),

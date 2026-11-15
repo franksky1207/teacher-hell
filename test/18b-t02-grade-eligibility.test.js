@@ -143,3 +143,31 @@ test('18-B T02: one-shot structural validation of all 208 isolated author record
  assert.equal(all.length,208);
  assert.deepEqual(errors,[],errors.join('\n'));
 });
+
+
+test('18-B T02: 20 explicitly year-bound narratives use valid grade eligibility',()=>{
+ const expected={
+  '01':{'05':[1],'08':[1],'09':[1],'15':[1],'16':[1],'18':[2,3],'22':[1],'25':[1],'26':[1],'27':[2,3]},
+  '03':{'05':[3],'06':[3],'20':[3],'21':[3],'28':[3]},
+  '04':{'04':[3],'12':[1],'15':[3],'25':[3]},
+  '08':{'23':[3]}
+ };
+ const definitions=[];let checked=0;
+ for(const [topic,ids] of Object.entries(expected)){
+  const file=JSON.parse(readFileSync(new URL('../work/18b-t02-'+topic+'-authoring.json',import.meta.url),'utf8'));
+  for(const [id,grades] of Object.entries(ids)){
+   const pair=file.records.find(x=>x.definition.id==='content:18b-t02-'+topic+'-'+id);
+   assert.ok(pair,topic+'-'+id);
+   assert.deepEqual(pair.definition.eligibility.grades,grades,topic+'-'+id);
+   assert.doesNotThrow(()=>validateStory(pair.story));
+   definitions.push(pair.definition);checked++;
+  }
+ }
+ assert.equal(checked,20);
+ assert.doesNotThrow(()=>validateEventDefinitions(definitions));
+ const file=JSON.parse(readFileSync(new URL('../work/18b-t02-03-authoring.json',import.meta.url),'utf8'));
+ const graduation=file.records.find(x=>x.definition.id==='content:18b-t02-03-28');
+ assert.deepEqual(graduation.definition.eligibility.dayKinds,['school']);
+ assert.ok(graduation.story.stages[0].pages.every(p=>p.scene==='school:classroom'));
+ assert.ok(!graduation.story.stages[0].pages.some(p=>p.text.includes('彩排')));
+});

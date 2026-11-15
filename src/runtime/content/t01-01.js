@@ -188,20 +188,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "自習時間只翻目錄",
-      "cause": "午餐時，學生帶著停在目錄的書及列滿章名的筆記來談早自習沒能開始閱讀的情況。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生在目錄旁圈出一個最困惑的章名，尚未找到章節重點。／學生在副本選定一小段閱讀，不因圈出範圍就算已讀完。／教師把未解章名記在學生自己的紙上，是否再約由雙方可用時間決定。／教師承認卡在起點的煩躁，學生暫時合上書聽完，未被保證馬上能讀。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-02",
       "topicId": "T01-01",
@@ -448,20 +434,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "讀書計時器變成負擔",
-      "cause": "午餐談話時，學生拿出手機上密密麻麻的專注計時紀錄，表示每次中斷就把整段時間歸零。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生說歸零是自己訂的規則；教師只確認這是他的說法，不判定計時有害。／雙方用一題練習示範任務計量，學生尚未決定停用計時器。／教師提醒保留未歸零的原始紀錄，尚無下一次改善資料。／教師肯定已投入的時間，沒有把中斷視為整段無效或宣告努力必有分數。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-03",
@@ -710,20 +682,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "週末補進度越欠越多",
-      "cause": "午餐談話時，學生把週末待辦清單交來，上頭同時列著各科數十項工作。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生在清單旁標出自己知道的兩個期限，其他項目仍註記待查。／雙方把有正式期限與自訂加碼分欄，未替科任延後任何期限。／學生整理需要回看哪幾則公告，教師未以學生記憶當正式規則。／教師表達對清單過長的無奈，讓學生先停止加列項目，沒有刪除實際待辦。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-04",
       "topicId": "T01-01",
@@ -970,20 +928,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "讀書伙伴臨時退出",
-      "cause": "午餐談話時，學生說原本約定共同複習的朋友近期不再參加，留下兩人的進度表。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生表示想保留原本複習目標，但還不確定願不願獨自進行。／教師提出以個人短練習取代共同打卡的方式，未替學生邀請新伙伴。／學生選擇帶回自己的計畫再想，教師沒有把延後決定記成已退出讀書會。／教師回應失去固定陪伴的不適應，沒有推定朋友故意拋下他。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-05",
@@ -1232,20 +1176,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "目標都寫成滿分",
-      "cause": "午餐談話時，學生交出目標單，每科寫著一百分，卻不願說明最迫切想改善的問題。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生說滿分是怕被誤會不努力而寫；此說法只來自本人，家長想法未確認。／學生在副本選一科寫下可觀察的練習行為，原成績目標未被導師改成正式承諾。／教師尊重暫不改表，提醒考後可帶實際作答來談，不預排必然出現的後續。／教師把談話重點放回學生自己的期待，沒有以漂亮表格判定意願真偽。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-06",
       "topicId": "T01-01",
@@ -1492,20 +1422,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "午休前反覆背同一頁",
-      "cause": "午餐時，學生回顧今天午餐前在走廊反覆背同一頁的情形，說自己始終不敢翻下一頁。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生用自己的話說一小段後停住，雙方記下不確定的位置，未當成全頁背熟。／教師示範先合上講義再看記得哪些詞，學生尚未決定長期採用。／學生先收起講義休息，本次不另加背誦任務，未承諾下次一定再談。／教師說出反覆確認可能很累的感受，沒有把謹慎診斷為心理疾病。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-07",
@@ -1754,20 +1670,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "主動求助卻不敢問",
-      "cause": "午餐談話時，學生帶著寫滿問號的筆記前來，說每次到辦公室門口就轉身。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生從問號中選一個具體題號，教師沒有擅自代答專科內容。／教師與學生查手邊可用聯絡方式，尚未確認科任何時有空。／學生把最先不懂的步驟寫在紙上，是否送問仍由本人決定。／教師肯定願意帶問題來談，學生未因此答應立即去辦公室。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-08",
       "topicId": "T01-01",
@@ -2014,20 +1916,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "把別人的進度當基準",
-      "cause": "午餐談話時，學生拿著同學分享的進度照片，憂心自己每天少讀兩個章節。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生說照片只截到幾行；教師確認比較資料不完整，沒有要求查同學私訊。／學生以已公告課程範圍標記自己的待讀部分，不再用照片推算落後章數。／教師提出暫不看進度訊息的短期觀察，未替學生退群或封鎖他人。／教師肯定學生自己已開始的工作，未把別人的較快進度說成不實。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-09",
@@ -2276,20 +2164,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "學習app提醒過密",
-      "cause": "午餐談話時，學生展示一整排複習提醒，說上課期間也不斷收到未完成通知。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生在提醒列表指出哪些是自訂加碼，教師未把所有通知當成科任作業。／雙方在紙上先擬兩個可試的提醒窗口，學生尚未修改手機設定。／學生選擇記下通知出現時點，不交出手機密碼或讓教師查看其他訊息。／教師承接被通知追趕的煩躁，不把關掉通知視為拒絕學習。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-10",
       "topicId": "T01-01",
@@ -2536,20 +2410,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "考前先整理文具",
-      "cause": "午餐談話時，學生的鉛筆盒和筆記分隔非常整齊，但表示每到考前就反覆整理而不開始練習。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生說整理會安心也會吃掉時間；教師保留兩種效果，不將它認定為唯一拖延原因。／學生選一題作為整理後的起步，完成與否仍未發生。／教師把本次自述記在學生自己的規劃紙，不宣稱下次考前一定重逢。／教師以幽默指出整理與做題的落差，未要求把整齊文具丟掉或貶低學生。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-11",
@@ -2806,20 +2666,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "連續熬夜補早起計畫",
-      "cause": "午餐談話時，學生展示清晨五點起床的規劃，卻說最近早上常打瞌睡。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生只願說昨夜就寢很晚；教師確認當前精神與安全需求，不逼問家庭隱私。／雙方刪去規劃中的額外清晨加碼，正式作業責任仍需另與科任討論。／教師建議學生保留簡短作息紀錄，必要聯繫只分享最小資訊，未將家長視為已同意。／教師表達對休息不足的擔心，不把少睡當努力勳章，也未診斷病因。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-12",
       "topicId": "T01-01",
@@ -3066,20 +2912,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "筆記抄滿卻說不出重點",
-      "cause": "午餐談話時，學生遞上厚厚的彩色筆記，卻表示複習時仍不知道哪些觀念要先練。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生嘗試用一句話概括一單元，仍分不清的兩詞留作疑問，未被當場判成全不會。／教師用學生選的一段示範改寫成提問，學生未答應重做整本筆記。／學生自選最困難的一頁留下問題標記，原筆記保留，不直接宣布方法無效。／教師肯定抄寫的投入並允許調整用途，沒有保證只靠筆記就能改善分數。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-13",
@@ -3351,21 +3183,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "請同學監督變成互相催促",
-      "cause": "午餐談話時，學生說自己請朋友每天檢查進度，近來兩人因催促方式感到不自在。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生說兩人未約好催促頻率；教師只記此自述，不代替朋友說明原意。／學生草擬希望每週而非每天回報的界線，朋友是否同意仍待詢問。／教師陪學生寫出是否願意繼續互相提醒的問句，尚未傳達給朋友。／教師回應需要幫忙又想有空間的矛盾，未判定任何一方不值得信任。學生並當面表示這次被聽見讓自己比較安心；此為本人感受而非朋友已改變。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L2",
-        "L5"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-14",
       "topicId": "T01-01",
@@ -3612,20 +3429,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "假日圖書館坐滿整天",
-      "cause": "午餐談話時，學生表示假日都在圖書館待到關門，卻不清楚實際完成哪些任務。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生回想起一題實際做過的練習，教師只確認此口述，不把整日坐館當成完成量。／教師示範進館前寫目標、離館時寫實做內容的兩欄紀錄，學生尚未採行。／學生保留本週資料供自己比較，教師未預告下一週必然進步。／教師接住長時間卻沒把握的挫折，未把在館時數換算成學習能力。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-15",
@@ -3874,20 +3677,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "考完放鬆後不敢重啟",
-      "cause": "午餐談話時，學生說段考後原想休息兩天，結果休息了整週，現在害怕重新翻書。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生說最怕看到未補進度；教師未把這個說法認定為懶惰或唯一原因。／學生提出先讀一小段新課的起步目標，未被要求一次追回整週。／學生把目前各科已知進度列在自己的紙上，未知處留待公告確認。／教師同意休息有需要，並提醒仍可從小處重啟，沒有將休息改寫成所有待辦已取消。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-16",
       "topicId": "T01-01",
@@ -4134,20 +3923,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "學習清單越勾越焦躁",
-      "cause": "午餐談話時，學生把完成項目全劃掉，卻因新增任務比劃掉的還多而沮喪。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生指出新增清單有幾項是自己加的，教師把正式交辦與自訂工作分開，未知期限留空。／雙方另列已完成紀錄，未因清單還長便抹掉確有做過的事。／學生願意帶更新清單再核對，教師記下的是待核對邀請，不是已完成任務。／教師說出對已完成部分的肯定，學生把紙上的一個實做項圈起，未被保證焦慮消失。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-17",
@@ -4396,20 +4171,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "小組讀書會只有一人發言",
-      "cause": "午餐談話時，學生反映自發讀書會常由一人講解，其他人越來越少準備。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生自述想互問而非聽講；教師沒有代缺席成員認定他們有同一期待。／教師示範每人帶一個疑問的讀書會提案，成員尚未同意更換形式。／學生擬出詢問成員是否願意輪流的訊息，未將下一次聚會寫成已改善。／教師承接單向付出的感受，未判定發言者蓄意佔用或無能。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-18",
       "topicId": "T01-01",
@@ -4656,20 +4417,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "忘記計畫表卻記得興趣行程",
-      "cause": "午餐談話時，學生能清楚講出社團練習時間，卻說課業安排總是記不住。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生說興趣活動會設固定提醒，讀書則只靠記住；教師不推論兩者價值高低。／雙方在副本將短複習接在固定作息後，學生尚未實際執行。／學生決定先記一週可用空檔，未以預估空檔當可保證完成的時數。／教師指出學生已有安排某些活動的經驗，不把這次遺忘當人格缺陷。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-19",
@@ -4918,20 +4665,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "完成一次後怕下次退步",
-      "cause": "午餐談話時，學生難得按時完成個人讀書目標，卻擔心下週維持不了，不願告訴家人。",
-      "teacherResponsibility": "導師可釐清學習安排、協助學生選擇可執行策略，但不能保證學生完成或代替科任教師決定成績。",
-      "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
-      "distinctiveConsequence": "學生指出這次先關閉通知再開始，教師只記本次自述，不宣稱這是成功唯一原因。／雙方記下可試著重複的起步步驟，下一次結果仍不確定。／教師問學生是否想分享及分享什麼，未主動聯繫家人或轉述私事。／教師當面祝賀這次確有完成的工作，沒有追加永遠不退步的要求。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-20",
       "topicId": "T01-01",
@@ -5178,20 +4911,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "學習目標是替家長寫的",
-      "cause": "午餐談話時，學生拿來一份由家長先寫好目標的學習紀錄，自己的意見欄仍是空白。",
-      "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
-      "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
-      "distinctiveConsequence": "學生把不認同的目標留白，教師不把表格推論成家長已施壓的證據。／學生提出一個本人願意嘗試的小目標，尚未執行，也不替家長放棄原期待。／教師尊重學生暫不修改，表格仍由學生保留，沒有代簽或代填意願。／教師表達想聽本人聲音，學生知道可不同意表內目標，未被保證家長會接受。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-21",
@@ -5692,20 +5411,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "每天都說明天開始",
-      "cause": "午餐談話時，學生翻開日記，連續六天寫著「明天正式開始」，卻仍不確定拖延的原因。",
-      "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
-      "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
-      "distinctiveConsequence": "學生描述昨晚延後的那一刻，教師只記單次情境，不推出每天都同因。／學生當面選一件五分鐘能開始的工作，教師未宣告開始即等於完成。／教師示範記下延後時的念頭而不評分，學生自行決定是否做紀錄。／教師承認反覆想重啟的努力，未以這句鼓勵替代實際作業要求。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-22",
       "topicId": "T01-01",
@@ -5952,20 +5657,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "同學邀請解題卻拒絕",
-      "cause": "午餐談話時，學生收到同學邀請一起練習的紙條，但擔心拖慢對方而沒有回覆。",
-      "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
-      "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
-      "distinctiveConsequence": "學生說擔心成為拖累，教師不把缺席同學想法寫成已知。／學生選一題能帶去討論的問題，尚未接受邀請或取得同伴協助。／教師尊重尚未決定參加，未替他回覆邀請或安排同學輪流帶讀。／教師承接害怕跟不上的壓力，未稱同學一定不在意或保證聚會順利。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-23",
@@ -6214,20 +5905,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "改讀書地點後分心",
-      "cause": "午餐談話時，學生反映家中近期改用客廳當讀書場所，總被電視聲音打斷，但不確定能否更換。",
-      "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
-      "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
-      "distinctiveConsequence": "學生列出自己能用的兩個空間及限制，教師未擅自要求家人更改作息。／雙方在副本討論降低噪音的可行方式，學生尚未取得家人同意。／學生選擇先記被打斷的時點，不錄下家人私下談話作證。／教師表達被打斷的不易，沒有把家人定性為阻礙學生學習。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-24",
       "topicId": "T01-01",
@@ -6474,20 +6151,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "訂下進度卻不敢畫完成",
-      "cause": "午餐談話時，學生已做完幾題練習，卻堅持必須全對才可以在清單上勾選完成。",
-      "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
-      "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
-      "distinctiveConsequence": "學生說把全對才算完成；教師將此自訂標準與正式繳交要求分開。／學生在紙上另設已練與待訂正兩欄，未把未懂的題目勾成掌握。／教師尊重先沿用表格觀察的決定，提醒可記下勾選時的感受，不評價人格。／教師肯定確實動手練習，未把未訂正工作宣布完成或免除。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-25",
@@ -6736,20 +6399,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "長假第一週過度衝刺",
-      "cause": "午餐時，學生回顧上次長假，表示第一週把計畫排滿，第二週疲憊得無法繼續；現在想避免重演。",
-      "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
-      "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
-      "distinctiveConsequence": "學生回顧上次長假第一週投入過多的時數；教師不將回顧當作本週已放假。／雙方以假設規劃示範留休息的節奏，沒有要求上課日照假日計畫執行。／教師建議觀察目前精神，不以兩天自記診斷原因；持續不適可尋求校內協助。／教師回應過度衝刺的疲憊，未把停頓稱為懶惰或保證恢復速度。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-26",
       "topicId": "T01-01",
@@ -6996,20 +6645,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "幫同學講解反而沒複習",
-      "cause": "午餐談話時，學生最近常幫同學解題，卻發現自己原訂的複習內容一直擱置。",
-      "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
-      "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
-      "distinctiveConsequence": "學生說希望每天有不被打擾的短時段，教師未要求同學立刻配合。／學生草擬可提問與暫不接問的時段公告，未把它發到班群。／教師建議先記詢問頻率而不收集同學個別困難或排名。／教師肯定幫忙並支持保留自己時間，未將能力變成固定服務義務。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-27",
@@ -7258,20 +6893,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "從影片學習卻一直換頻道",
-      "cause": "午餐談話時，學生收藏了許多不同老師的教學影片，遇到一道題就換一個頻道重聽。",
-      "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
-      "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
-      "distinctiveConsequence": "學生挑一個目前未懂的觀念，教師不替影片內容保證正確。／學生在紙上選一份資源與一題對應練習，尚未完成或決定永久固定。／教師建議只記切換的觸發點，不索取完整瀏覽歷史。／教師承接資源過多的不易，未把選擇困難判成沒有毅力。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-28",
       "topicId": "T01-01",
@@ -7518,20 +7139,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "讀書計畫被臨時家務打亂",
-      "cause": "午餐談話時，學生原本排好晚間複習，卻因最近常須幫忙照看家人而無法維持。",
-      "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
-      "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
-      "distinctiveConsequence": "學生只願透露固定照顧時段，教師尊重不問被照顧者的私人病情。／雙方在規劃副本找不衝突的短空檔，不假定照顧責任可以直接移交。／教師先詢問希望連結哪種校內支持及可分享內容，未當場傳出家庭細節。／教師表達關切並確認眼前負荷，未保證家人會改變或校方一定減作業。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-29",
@@ -7780,20 +7387,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "計畫被一次成功綁住",
-      "cause": "午餐談話時，學生上週用某種方式成功準備小考，這週即使課業型態不同仍堅持照搬。",
-      "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
-      "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
-      "distinctiveConsequence": "雙方指出兩次任務範圍不同，教師不把一次成功的做法推成萬用規則。／學生選擇保留起步方法並調整工作量，尚未執行新的計畫。／學生決定再試並記實況，教師未將再試意願寫成已獲相同效果。／教師肯定找到有效經驗並允許改法，不把調整說成背叛先前努力。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-30",
       "topicId": "T01-01",
@@ -8040,20 +7633,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "想用獎勵督促卻失去效果",
-      "cause": "午餐談話時，學生原本每完成一章就給自己一點獎勵，最近卻覺得獎勵越來越難有吸引力。",
-      "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
-      "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
-      "distinctiveConsequence": "學生說原本希望靠獎勵開始，後來更在意是否拿得到；教師保留為本人說法。／教師示範只記做了什麼及感受的回顧，不以新獎懲替代舊獎勵。／教師提出短期停用獎勵的選項，未替家長取消約定或宣稱已更輕鬆。／教師以幽默承接獎勵失去樂趣，沒有要求靠內在動機立刻撐過所有工作。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-32",
@@ -8302,20 +7881,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "缺乏回饋不知道有沒有進步",
-      "cause": "午餐談話時，學生每天完成固定的英文閱讀練習，卻因沒有即時分數而懷疑是否值得持續。",
-      "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
-      "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
-      "distinctiveConsequence": "學生發現保留的資料不足以比較，教師不以感覺宣布進步或退步。／教師陪學生寫出希望哪一種回饋的詢問，科任尚未答應增加評量。／學生選擇蒐集本週實際練習紀錄，不把預定練習量填成已完成。／教師承接努力卻無法確認變化的不安，未用空泛保證代替證據。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-33",
       "topicId": "T01-01",
@@ -8563,20 +8128,6 @@ export default [
       ],
       "compilerContract": 2
     },
-    "editorial": {
-      "title": "放學太晚無法參加共學",
-      "cause": "午餐談話時，學生想參加同學的放學讀書討論，但固定交通班次使他無法留下。",
-      "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
-      "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
-      "distinctiveConsequence": "學生自述末班車時間，教師先記為待確認限制，不要求冒險晚歸。／教師協助擬出午間自願短談的邀請，未替其他同學或科任排定時段。／學生暫不參加放學共學，教師保留其他支援詢問，未視為拒絕學習。／教師承認交通限制的差異，沒有向全班揭露學生住處或責怪家庭。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
-    },
     "definition": {
       "id": "content:18b-t01-01-34",
       "topicId": "T01-01",
@@ -8823,20 +8374,6 @@ export default [
         }
       ],
       "compilerContract": 2
-    },
-    "editorial": {
-      "title": "完成學習後仍不敢休息",
-      "cause": "午餐談話時，學生表示今天的學習清單已經做完，卻怕一停下來就比其他同學少念。",
-      "teacherResponsibility": "導師釐清當前學習安排與限制、協助選擇可行策略，不保證學生完成。",
-      "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
-      "distinctiveConsequence": "學生列出今日確實完成的項目，教師只核對所提供紀錄，不宣告所有功課都已結束。／雙方在個人規劃設定停止自訂加碼的時間，正式期限仍需履行。／教師提議簡記休息前後精神，未將休息當成需證明有效才被允許。／教師承接做完仍不敢停的辛苦，不把擔憂診斷為疾病或保證一句話能解除。",
-      "editorialStatus": "awaiting-separated-review",
-      "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
-      "author": "Codex root editing process",
-      "causalClass": [
-        "L1"
-      ],
-      "sourceBasis": "虛構；制度邊界依17D/18B及現行程式，不聲稱完成外部制度查證。"
     },
     "definition": {
       "id": "content:18b-t01-01-35",

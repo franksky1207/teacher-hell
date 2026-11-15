@@ -190,10 +190,100 @@ export const PACKAGE4_STORIES=freeze(PACKAGE4_SAMPLES.map(validateStory));
 export const PILOT_18B2_STORIES=freeze(PILOT_18B2_CAUSAL_STORIES.map(validateStory));
 /** Explicit engineering opt-in only. Same-model editorial checks do not satisfy the SOP release gate. */
 export const T01_DRAFT_STORIES=freeze(T01_BATCH_RECORDS.map(r=>validateStory(r.story)));
+const T01_CAUSAL_BINDINGS={
+  "content:18b-t01-01-22": {
+    "sources": [
+      "participant",
+      "participant",
+      "participant",
+      "participant",
+      "participant",
+      "player-work"
+    ],
+    "valence": "negative"
+  },
+  "content:18b-t01-02-09": {
+    "sources": [
+      "participant",
+      "participant",
+      "participant",
+      "participant",
+      "participant",
+      "participant"
+    ],
+    "valence": "neutral"
+  },
+  "content:18b-t01-03-01": {
+    "sources": [
+      "participant",
+      "participant",
+      "participant",
+      "participant",
+      "participant",
+      "player-work"
+    ],
+    "valence": "negative"
+  },
+  "content:18b-t01-04-01": {
+    "sources": [
+      "participant",
+      "participant",
+      "participant",
+      "participant",
+      "player-person",
+      "school"
+    ],
+    "valence": "neutral"
+  },
+  "content:18b-t01-05-01": {
+    "sources": [
+      "participant",
+      "participant",
+      "participant",
+      "participant",
+      "participant",
+      "school"
+    ],
+    "valence": "neutral"
+  },
+  "content:18b-t01-06-03": {
+    "sources": [
+      "participant",
+      "participant",
+      "participant",
+      "participant",
+      "participant",
+      "player-work"
+    ],
+    "valence": "negative"
+  },
+  "content:18b-t01-07-02": {
+    "sources": [
+      "participant",
+      "participant",
+      "participant",
+      "participant",
+      "classroom",
+      "participant"
+    ],
+    "valence": "negative"
+  },
+  "content:18b-t01-08-07": {
+    "sources": [
+      "participant",
+      "participant",
+      "participant",
+      "participant",
+      "participant",
+      "participant"
+    ],
+    "valence": "positive"
+  }
+};
 export function t01DraftCatalogue(){
  const definitions=structuredClone(T01_BATCH_RECORDS.map(r=>r.definition));
  return {type:'register-event-catalogue',catalogueId:'engineering:18b-t01-v1',definitions,
-  bindings:definitions.map(d=>({definitionId:d.id,sources:Array(6).fill('participant'),valence:'neutral'})),engineering:true};
+  bindings:definitions.map(d=>({definitionId:d.id,...(T01_CAUSAL_BINDINGS[d.id]??{sources:Array(6).fill('participant'),valence:'neutral'})})),engineering:true};
 }
 const assets=freeze([...T01_DRAFT_STORIES,...PILOT_18B2_STORIES,...PACKAGE4_STORIES,PACKAGE3_STORY,HISTORY_CONTRACT_STORY,AFTERCARE_STORY,ENTRANCE_STORY,DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY,...PHASE17D_READY_STORIES]);
 export function resolveStory(ref){const c=assets.find(c=>c.resourceId===ref.resourceId&&c.version===ref.version);need(c,'RESOURCE','missing immutable content version');return c;}

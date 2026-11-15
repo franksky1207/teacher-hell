@@ -54,7 +54,14 @@ export default [
               "outcome": {
                 "fact": "教師與學生核對目前能出示的完成部分和期限，沒有因作業寫好就宣告準時繳交。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -90,7 +97,14 @@ export default [
               "outcome": {
                 "fact": "學生整理忘記交件的經過與補交詢問，是否送出、是否採計仍未確定。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -2
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": "next-contact",
@@ -122,9 +136,16 @@ export default [
                   "id": "engages",
                   "weight": 3,
                   "outcome": {
-                    "fact": "學生自願寫下一個可在五分鐘內開始的動作，但目前仍未證明會執行。",
+                    "fact": "學生寫好向科任說明忘記繳交的草稿，尚未送達或獲核准。",
                     "claims": [],
-                    "changes": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": -2
+                      }
+                    ],
                     "historyCodes": [],
                     "next": {
                       "stage": "next-contact",
@@ -150,15 +171,37 @@ export default [
                       ],
                       "transmissions": []
                     }
-                  }
+                  },
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "1-1",
+                      "influence": 1.3
+                    }
+                  ]
                 },
                 {
                   "id": "hesitates",
                   "weight": 2,
                   "outcome": {
-                    "fact": "學生說現在不想當場動手，改為先選一件可能開始的小事；教師尊重他的決定。",
-                    "claims": [],
-                    "changes": [],
+                    "fact": "學生暫時保留作業，未送出補交詢問。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我擔心科任覺得我在找藉口。",
+                        "belief": "uncertain",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
                     "historyCodes": [],
                     "next": {
                       "stage": "next-contact",
@@ -184,9 +227,70 @@ export default [
                       ],
                       "transmissions": []
                     }
-                  }
+                  },
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 1.25
+                    }
+                  ]
                 }
-              ]
+              ],
+              "replacement": {
+                "id": "refer-guided",
+                "text": "把期限與原稿整理成科任可核對的表",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "師生依具體資料形成可核對的行動方案，但尚未發生後續採行或科任核准。",
+                  "claims": [],
+                  "changes": [
+                    {
+                      "role": "teacher",
+                      "holder": "work",
+                      "code": "11-2",
+                      "delta": -2
+                    }
+                  ],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": "next-contact",
+                    "afterDays": 1
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": []
+                  }
+                },
+                "requires": [
+                  {
+                    "type": "numeric",
+                    "role": "teacher",
+                    "holder": "person",
+                    "code": "3-2",
+                    "min": 60,
+                    "max": 100
+                  }
+                ]
+              }
             },
             {
               "id": "document",
@@ -196,7 +300,14 @@ export default [
               "outcome": {
                 "fact": "學生選擇一種繳交前的自我檢查方式，但不能用它抵銷昨天的缺交紀錄。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "3-3",
+                    "delta": 0.5
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -232,7 +343,14 @@ export default [
               "outcome": {
                 "fact": "教師理解學生的懊惱，也告知導師不能保證科任會補登成績。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -2
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -257,7 +375,16 @@ export default [
                     ]
                   ],
                   "transmissions": []
-                }
+                },
+                "relationshipChanges": [
+                  {
+                    "fromRole": "participant",
+                    "toRole": "teacher",
+                    "code": "5-1",
+                    "delta": 1,
+                    "basis": "interaction"
+                  }
+                ]
               }
             }
           ],
@@ -297,7 +424,14 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師只核對學生能提出的實際送件證據，不將未送出的草稿當成已收件。",
-                "claims": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "還沒有收到科任正式回覆，因此不能宣稱補交已核准。",
+                    "belief": "uncertain",
+                    "visible": false
+                  }
+                ],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -450,30 +584,30 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "3-3",
+        "2-3",
+        "11-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.2,
+        0.19,
+        0.17,
+        0.16,
+        0.15,
+        0.13
       ],
       "directions": [
         1,
+        -1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1
+        -1
       ],
       "eligibility": {
         "people": [
@@ -697,9 +831,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -944,9 +1078,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -1191,9 +1325,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -1438,9 +1572,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -1685,9 +1819,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -1932,9 +2066,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -2179,9 +2313,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -2426,9 +2560,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -2673,9 +2807,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -2920,9 +3054,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -3167,9 +3301,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -3414,9 +3548,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -3661,9 +3795,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -3908,9 +4042,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -4155,9 +4289,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -4402,9 +4536,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -4649,9 +4783,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -4896,9 +5030,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -5143,9 +5277,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -5390,9 +5524,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -5637,9 +5771,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -5884,9 +6018,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -6131,9 +6265,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -6671,9 +6805,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -6918,9 +7052,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -7165,9 +7299,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "1-1",
+        "4-2",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",

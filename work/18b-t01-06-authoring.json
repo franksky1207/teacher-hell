@@ -197,9 +197,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -459,9 +459,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -578,8 +578,17 @@
                 "outcome": {
                   "fact": "學生把與近期課程直接相關的卡片標出，其他未讀卡仍維持未讀，不假裝清空進度。",
                   "claims": [],
-                  "changes": [],
-                  "historyCodes": [],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -1
+                    }
+                  ],
+                  "historyCodes": [
+                    "H01-3"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -614,7 +623,14 @@
                 "outcome": {
                   "fact": "教師解釋新卡與舊卡的不同，是否更動個人設定由學生決定，不保證積欠立即消失。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -2
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -646,9 +662,16 @@
                     "id": "engages",
                     "weight": 3,
                     "outcome": {
-                      "fact": "學生自行把每天新增卡的上限降低，六百張舊卡仍保留在清單中。",
+                      "fact": "學生親自調低每天新增卡的上限；原本六百張到期卡片仍存在。",
                       "claims": [],
-                      "changes": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": -2
+                        }
+                      ],
                       "historyCodes": [],
                       "next": {
                         "stage": null,
@@ -674,15 +697,37 @@
                         ],
                         "transmissions": []
                       }
-                    }
+                    },
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-3",
+                        "influence": 1.3
+                      }
+                    ]
                   },
                   {
                     "id": "hesitates",
                     "weight": 2,
                     "outcome": {
-                      "fact": "學生決定先觀察兩天，暫時沒有更動設定；教師未替他改動手機內容。",
-                      "claims": [],
-                      "changes": [],
+                      "fact": "學生決定先觀察兩天，尚未更動任何設定。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "我怕調整後漏掉考試範圍。",
+                          "belief": "uncertain",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": 1
+                        }
+                      ],
                       "historyCodes": [],
                       "next": {
                         "stage": null,
@@ -708,7 +753,15 @@
                         ],
                         "transmissions": []
                       }
-                    }
+                    },
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 1.25
+                      }
+                    ]
                   }
                 ]
               },
@@ -720,7 +773,14 @@
                 "outcome": {
                   "fact": "學生進行五張短抽測，結果只能代表這次抽樣，不能推算其餘五百多張都會或都不會。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-2",
+                      "delta": 0.5
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -756,7 +816,14 @@
                 "outcome": {
                   "fact": "教師以幽默承認壓力，提醒學生照顧作息及原有課業，未自行刪除學生的複習資料。",
                   "claims": [],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-4",
+                      "delta": 1
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -799,30 +866,30 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
-          "3-1",
-          "3-2",
-          "3-3"
+          "3-3",
+          "2-2",
+          "11-2"
         ],
         "weights": [
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666,
-          0.16666666666666666
+          0.2,
+          0.19,
+          0.17,
+          0.16,
+          0.15,
+          0.13
         ],
         "directions": [
           1,
+          -1,
           1,
+          -1,
           1,
-          1,
-          1,
-          1
+          -1
         ],
         "eligibility": {
           "people": [
@@ -850,7 +917,7 @@
       },
       "editorial": {
         "title": "間隔複習排程擠爆",
-        "cause": "午餐時，學生展示複習卡程式，今天排出六百張到期卡片。",
+        "cause": "早自習時，學生把手機複習卡畫面遞給導師：今天到期的卡片六百張，還有一疊今天必須交的作業。",
         "teacherResponsibility": "協助學生比較可行學習方式、保留實際嘗試與未知；不能保證採行、成績或診斷。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生在清單標出近期課程相關卡片，沒有把未讀卡一律判成已會。／教師說明減少新卡的影響，由學生自行設定，不保證積欠立刻消失。／學生抽取五張檢查是否能回想，結果只代表本次抽樣。／教師以幽默減輕壓力並允許保留未完成項，未宣稱可以忽略課程。",
@@ -861,7 +928,8 @@
         "causalClass": [
           "L1"
         ],
-        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+        "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
+        "numericCausalityNote": "八件校準：A來源、B加權、C替換及D合法變化均已填入可執行欄位；尚需逐件精準測試與獨立審查。"
       }
     },
     {
@@ -1061,9 +1129,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -1323,9 +1391,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -1585,9 +1653,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -1847,9 +1915,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -2109,9 +2177,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -2371,9 +2439,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -2633,9 +2701,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -2895,9 +2963,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -3157,9 +3225,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -3419,9 +3487,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -3681,9 +3749,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -3943,9 +4011,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -4205,9 +4273,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -4467,9 +4535,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -4729,9 +4797,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -4991,9 +5059,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -5253,9 +5321,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",
@@ -5515,9 +5583,9 @@
           "status": "engineering-test"
         },
         "coreCodes": [
-          "1-2",
-          "1-3",
-          "1-4"
+          "3-4",
+          "2-3",
+          "4-1"
         ],
         "additionalCodes": [
           "3-1",

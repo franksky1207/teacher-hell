@@ -54,8 +54,22 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "學生從準備稿挑出一個完整論點，教師沒有對其他組員的動機下結論。",
-                "claims": [],
-                "changes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不想讓其他組員知道這次談話。",
+                    "belief": "uncertain",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -91,7 +105,14 @@ export default [
               "outcome": {
                 "fact": "師生釐清可以反映的流程問題與身分界線，未經同意不直接傳給科任。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -127,7 +148,14 @@ export default [
               "outcome": {
                 "fact": "教師與學生模擬一句合適的加入方式，不假定下一次組員就一定配合。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "3-1",
+                    "delta": 0.5
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -159,9 +187,16 @@ export default [
                   "id": "engages",
                   "weight": 3,
                   "outcome": {
-                    "fact": "學生私下練習了一句請求發言的話，實際課堂是否用得上仍未確定。",
+                    "fact": "學生私下練習請求發言的一句話，但下堂課尚未驗證是否能用。",
                     "claims": [],
-                    "changes": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": -2
+                      }
+                    ],
                     "historyCodes": [],
                     "next": {
                       "stage": null,
@@ -187,15 +222,37 @@ export default [
                       ],
                       "transmissions": []
                     }
-                  }
+                  },
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-1",
+                      "influence": 1.3
+                    }
+                  ]
                 },
                 {
                   "id": "hesitates",
                   "weight": 2,
                   "outcome": {
-                    "fact": "學生還不敢練說，改成把想法寫下來，沒有因此被視為不合作。",
-                    "claims": [],
-                    "changes": [],
+                    "fact": "學生只把話寫下來，今天仍不願口頭練習。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我害怕下次又被打斷。",
+                        "belief": "uncertain",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
                     "historyCodes": [],
                     "next": {
                       "stage": null,
@@ -221,7 +278,15 @@ export default [
                       ],
                       "transmissions": []
                     }
-                  }
+                  },
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 1.25
+                    }
+                  ]
                 }
               ]
             },
@@ -233,7 +298,14 @@ export default [
               "outcome": {
                 "fact": "教師表達理解，尊重學生暫不具名反映的意願，沒有代替全組認定責任。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -2
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -276,30 +348,30 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "4-3",
+        "9-2",
+        "3-1"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.2,
+        0.19,
+        0.17,
+        0.16,
+        0.15,
+        0.13
       ],
       "directions": [
         1,
+        -1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1
+        -1
       ],
       "eligibility": {
         "people": [
@@ -523,9 +595,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -770,9 +842,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -1017,9 +1089,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -1264,9 +1336,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -1519,9 +1591,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -1766,9 +1838,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -2013,9 +2085,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -2268,9 +2340,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -2515,9 +2587,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -2762,9 +2834,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -3009,9 +3081,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -3256,9 +3328,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -3503,9 +3575,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -3750,9 +3822,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -3997,9 +4069,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -4244,9 +4316,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -4491,9 +4563,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -4738,9 +4810,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -4985,9 +5057,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",
@@ -5232,9 +5304,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "6-1",
+        "4-4",
+        "2-2"
       ],
       "additionalCodes": [
         "3-1",

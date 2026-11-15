@@ -198,9 +198,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -445,9 +445,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -692,9 +692,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -939,9 +939,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -1186,9 +1186,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -1433,9 +1433,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -1680,9 +1680,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -1927,9 +1927,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -2029,8 +2029,22 @@ export default [
               "kind": "action",
               "outcome": {
                 "fact": "學生承認自己有進步，也仍然不滿意差了十分；教師不要求只保留一種情緒。",
-                "claims": [],
-                "changes": [],
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我擔心家人只看見還差十分。",
+                    "belief": "uncertain",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2066,7 +2080,14 @@ export default [
               "outcome": {
                 "fact": "學生指出一種本次較能掌握的題型，並保留仍不懂的部分，沒有宣稱整科能力已穩定。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-4",
+                    "delta": 2
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2102,7 +2123,14 @@ export default [
               "outcome": {
                 "fact": "學生整理本次分數變化與接下來想做的事；要不要向家人說仍由學生決定。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "4-3",
+                    "delta": 1
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2138,7 +2166,14 @@ export default [
               "outcome": {
                 "fact": "教師肯定已確定的成長，也允許學生此刻仍然感到不甘心。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-4",
+                    "delta": 2
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2170,9 +2205,16 @@ export default [
                   "id": "engages",
                   "weight": 3,
                   "outcome": {
-                    "fact": "學生開始接受自己這次有進步，但仍想再找一題練習；教師沒有保證下次會更高。",
+                    "fact": "學生指出本次進步的具體題型，願意承認成績確實改善。",
                     "claims": [],
-                    "changes": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": -2
+                      }
+                    ],
                     "historyCodes": [],
                     "next": {
                       "stage": null,
@@ -2198,15 +2240,37 @@ export default [
                       ],
                       "transmissions": []
                     }
-                  }
+                  },
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-4",
+                      "influence": 1.3
+                    }
+                  ]
                 },
                 {
                   "id": "hesitates",
                   "weight": 2,
                   "outcome": {
-                    "fact": "學生表示此刻仍很失望；教師尊重他的情緒，已發生的進步並未因此被抹掉。",
-                    "claims": [],
-                    "changes": [],
+                    "fact": "學生仍不滿意沒有達到八十分，暫時不想向家人說明。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我怕家人只問為什麼還差十分。",
+                        "belief": "uncertain",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
                     "historyCodes": [],
                     "next": {
                       "stage": null,
@@ -2232,7 +2296,15 @@ export default [
                       ],
                       "transmissions": []
                     }
-                  }
+                  },
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 1.25
+                    }
+                  ]
                 }
               ]
             }
@@ -2252,30 +2324,30 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
-        "3-1",
-        "3-2",
-        "3-3"
+        "2-4",
+        "7-1",
+        "3-4"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.2,
+        0.19,
+        0.17,
+        0.16,
+        0.15,
+        0.13
       ],
       "directions": [
         1,
+        -1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1
+        -1
       ],
       "eligibility": {
         "people": [
@@ -2499,9 +2571,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -2746,9 +2818,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -2993,9 +3065,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -3240,9 +3312,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -3487,9 +3559,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -3734,9 +3806,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -3981,9 +4053,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -4228,9 +4300,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -4475,9 +4547,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -4730,9 +4802,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -4977,9 +5049,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -5224,9 +5296,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -5471,9 +5543,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -5718,9 +5790,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -5965,9 +6037,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -6212,9 +6284,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -6459,9 +6531,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -6706,9 +6778,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -6953,9 +7025,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",
@@ -7200,9 +7272,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-2",
+        "4-4"
       ],
       "additionalCodes": [
         "3-1",

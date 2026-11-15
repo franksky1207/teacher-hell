@@ -198,9 +198,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -445,9 +445,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -692,9 +692,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -939,9 +939,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -1186,9 +1186,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -1433,9 +1433,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -1537,8 +1537,17 @@ export default [
               "outcome": {
                 "fact": "學生自行決定是否把這次提問寫進自己的記錄；教師沒有安排公開表揚。",
                 "claims": [],
-                "changes": [],
-                "historyCodes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-4",
+                    "delta": 2
+                  }
+                ],
+                "historyCodes": [
+                  "H01-3"
+                ],
                 "next": {
                   "stage": null,
                   "afterDays": 0
@@ -1573,7 +1582,14 @@ export default [
               "outcome": {
                 "fact": "教師提供一個自行決定的下一步，學生可以接受或保留今天的成果，不被強迫每次都要超越。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "4-3",
+                    "delta": 0.5
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1605,9 +1621,16 @@ export default [
                   "id": "engages",
                   "weight": 3,
                   "outcome": {
-                    "fact": "學生主動選出下一堂英文課可能提出的問題，但沒有保證屆時一定舉手。",
+                    "fact": "學生選好下次英文課可能想問的一句話，不表示下次一定會舉手。",
                     "claims": [],
-                    "changes": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": -2
+                      }
+                    ],
                     "historyCodes": [],
                     "next": {
                       "stage": null,
@@ -1633,15 +1656,37 @@ export default [
                       ],
                       "transmissions": []
                     }
-                  }
+                  },
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "4-1",
+                      "influence": 1.3
+                    }
+                  ]
                 },
                 {
                   "id": "hesitates",
                   "weight": 2,
                   "outcome": {
-                    "fact": "學生說自己現在還不想設定第二個挑戰，教師尊重他只想記得今天的成果。",
-                    "claims": [],
-                    "changes": [],
+                    "fact": "學生暫時不設定下一次挑戰，只想保留今天的喜悅。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我不想變成每次都必須表現。",
+                        "belief": "uncertain",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
                     "historyCodes": [],
                     "next": {
                       "stage": null,
@@ -1667,7 +1712,15 @@ export default [
                       ],
                       "transmissions": []
                     }
-                  }
+                  },
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 1.25
+                    }
+                  ]
                 }
               ]
             },
@@ -1679,7 +1732,14 @@ export default [
               "outcome": {
                 "fact": "教師提出自願的私下練習，尊重學生不在全班重演的界線。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "3-1",
+                    "delta": 0.5
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1715,7 +1775,14 @@ export default [
               "outcome": {
                 "fact": "教師私下肯定學生的勇氣，不向家長或其他同學透露這次談話。",
                 "claims": [],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-4",
+                    "delta": 2
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1740,7 +1807,16 @@ export default [
                     ]
                   ],
                   "transmissions": []
-                }
+                },
+                "relationshipChanges": [
+                  {
+                    "fromRole": "participant",
+                    "toRole": "teacher",
+                    "code": "5-1",
+                    "delta": 1,
+                    "basis": "interaction"
+                  }
+                ]
               }
             }
           ],
@@ -1758,30 +1834,30 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
-        "3-2",
-        "3-3"
+        "4-3",
+        "2-2"
       ],
       "weights": [
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666,
-        0.16666666666666666
+        0.2,
+        0.19,
+        0.17,
+        0.16,
+        0.15,
+        0.13
       ],
       "directions": [
         1,
+        -1,
         1,
+        -1,
         1,
-        1,
-        1,
-        1
+        -1
       ],
       "eligibility": {
         "people": [
@@ -2005,9 +2081,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -2252,9 +2328,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -2499,9 +2575,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -2746,9 +2822,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -2993,9 +3069,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -3240,9 +3316,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -3487,9 +3563,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -3734,9 +3810,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -3981,9 +4057,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -4228,9 +4304,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -4475,9 +4551,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -4722,9 +4798,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -4969,9 +5045,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -5216,9 +5292,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",
@@ -5463,9 +5539,9 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "1-2",
-        "1-3",
-        "1-4"
+        "4-1",
+        "2-4",
+        "9-3"
       ],
       "additionalCodes": [
         "3-1",

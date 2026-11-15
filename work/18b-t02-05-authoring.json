@@ -1310,6 +1310,333 @@
         "numericRationale": "較高家庭支持與自主性可以並存，對朋友的體諒不表示自己不開心。；核心 4-3、2-2、7-1；附加 3-1、2-4、4-4。本為逐篇設計理由，尚未進行引擎精準驗證。",
         "review": "author-draft-not-verified"
       }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-05-14",
+        "definitionId": "content:18b-t02-05-14",
+        "version": "1",
+        "topicId": "T02-05",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "學生一早把校內繁星推薦確認表交給導師，才發現需要確認的簽名欄仍空白。",
+                "speaker": null,
+                "scene": "school:classroom",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "昨天家裡還在討論，我先拿來，是不是這樣就算交了？",
+                "speaker": "participant",
+                "scene": "school:classroom",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "先核對校內收件要件與截止方式",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生知道目前文件尚不完整，能否補正仍須以校內正式公告為準。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "昨天家裡還在討論，我先拿來，是不是這樣就算交了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "action",
+                "text": "協助聯繫正式收件窗口詢問補正",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生整理詢問內容，沒有取得導師口頭保證可補件。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "昨天家裡還在討論，我先拿來，是不是這樣就算交了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "alternative",
+                "text": "先釐清這是否是學生本人已決定的志願",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生說出自己的目前意向，未把缺少的簽名當作已獲家庭同意。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "昨天家裡還在討論，我先拿來，是不是這樣就算交了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "期限就在眼前，會緊張很正常",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師理解焦急，同時沒有擅自代簽或代選校系。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "昨天家裡還在討論，我先拿來，是不是這樣就算交了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-05-14",
+        "topicId": "T02-05",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-05-14",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "4-3",
+          "2-2",
+          "7-1"
+        ],
+        "additionalCodes": [
+          "3-3",
+          "1-1",
+          "4-4"
+        ],
+        "weights": [
+          0.22,
+          0.26,
+          0.17,
+          0.15,
+          0.11,
+          0.09
+        ],
+        "directions": [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "early"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "這是個別一次性的情境；需按人物學籍、情境時段與既有接觸條件抽選"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "negative"
+      },
+      "editorial": {
+        "title": "確認表少了一個簽名",
+        "candidateId": "T02-05-C14",
+        "cause": "學生一早把校內繁星推薦確認表交給導師，才發現需要確認的簽名欄仍空白。",
+        "teacherResponsibility": "尊重學生自主，提供合法資訊與適當協助；導師不能替教務、升學或家長做出承諾。",
+        "knowledgeSource": "只知道本次實際對話、訊息及所見，其他人的想法、核准、回覆未經證實。",
+        "distinctiveConsequence": "學生知道目前文件尚不完整，能否補正仍須以校內正式公告為準。／學生整理詢問內容，沒有取得導師口頭保證可補件。／學生說出自己的目前意向，未把缺少的簽名當作已獲家庭同意。／導師理解焦急，同時沒有擅自代簽或代選校系。",
+        "narrativeTime": "校內推薦確認期限前的早自習",
+        "scene": "school:classroom",
+        "numericRationale": "主題三核心碼沿用4-3、2-2、7-1；附加3-3、1-1、4-4，依本次情境作候選初擬，待現有公式與合法持有者確認。",
+        "review": "author-draft-not-verified",
+        "qualificationWarning": "此升學事件須與高三行事曆及正式入學資格接線；未驗前不得進事件池。"
+      }
     }
   ]
 }

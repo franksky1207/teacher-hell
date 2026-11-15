@@ -1,3 +1,4 @@
+import { storyHistoryView } from './story-history-view.js';
 import { permitsStoryFollowup } from './story-content.js';
 import { homeroomOperation,homeroomBaseline,HOMEROOM_KEY } from './homeroom.js';
 import { institutionState } from './procedures.js';
@@ -24,29 +25,31 @@ const stageId=(e,c,id)=>id===c.entry?createId('stage',[e.id,'initial']):createId
 function optionsOf(stage){return stage.choices.flatMap(option=>[option,...(option.replacement?[option.replacement]:[])]);}
 function carrier(c,id,orderedIds=null){const stage=c.stages.find(s=>s.id===id),opts=optionsOf(stage);return stage.choices.length?{nodeId:id,options:(orderedIds??stage.choices.map(o=>o.id)).map(optionId=>{const o=opts.find(x=>x.id===optionId);need(o,'locked choice is not in story content');return {id:o.id,emotional:o.emotional};}),confirmedOptionId:null}:null;}
 function due(date,days){return new Date(Date.parse(date+'T00:00:00Z')+days*86400000).toISOString().slice(0,10);}
-function meets(w,e,conditions){return conditions.every(condition=>{
- if(condition.type==='fact')return r(w).facts.some(f=>f.id===condition.id);
+function meets(w,e,conditions,view=null){return conditions.every(condition=>{
+ if(condition.type==='fact')return view?!!view.fact(condition.id):r(w).facts.some(f=>f.id===condition.id);
  const target={kind:condition.role==='teacher'?`player-${condition.holder}`:'person',id:condition.role==='teacher'?w.identity.playerId:e.participantIds[condition.role==='companion'?1:0]};
- try{const value=targetRecord(w.numeric.evolution.world,target)[condition.code];return Number.isFinite(value)&&value>=condition.min&&value<=condition.max;}catch{return false;}
+ try{const value=view?view.numeric(target,condition.code):targetRecord(w.numeric.evolution.world,target)[condition.code];return Number.isFinite(value)&&value>=condition.min&&value<=condition.max;}catch(error){if(view)throw error;return false;}
 });}
-export function availableStoryChoices(w,e,stage){return stage.choices.map(option=>option.replacement&&meets(w,e,option.replacement.requires)?option.replacement:option);}
-function lockStageChoices(w,e,stage,inputs){
+export function availableStoryChoices(w,e,stage,view=null){return stage.choices.map(option=>option.replacement&&meets(w,e,option.replacement.requires,view)?option.replacement:option);}
+function lockStageChoices(w,e,stage,inputs,view=null){
  for(const base of stage.choices)for(const condition of base.replacement?.requires??[])if(condition.type==='numeric'){
   const target={kind:condition.role==='teacher'?`player-${condition.holder}`:'person',id:condition.role==='teacher'?w.identity.playerId:e.participantIds[condition.role==='companion'?1:0]};
-  const value=targetRecord(w.numeric.evolution.world,target)[condition.code];
+  const value=view?view.numeric(target,condition.code):targetRecord(w.numeric.evolution.world,target)[condition.code];
   need(Number.isFinite(value),'missing replacement qualification field');inputs.push({target,code:condition.code,value});
  }
- return choicePermutation(w.identity.attemptId,e.id,stage.id,availableStoryChoices(w,e,stage).map(o=>o.id));
+ return choicePermutation(w.identity.attemptId,e.id,stage.id,availableStoryChoices(w,e,stage,view).map(o=>o.id));
 }
-export function compileStory(w,op,{panelWitness=false}={}){
+export function compileStory(w,op,{panelWitness=false,compilerContract=null,view=null}={}){
  assertShape(op,['type','eventId','action','optionId']);need(op.type==='story','operation');const e=w.events.find(e=>e.id===op.eventId),c=storyContent(w,op.eventId);need(e&&c,'registered admitted playable event');
+ const contract=c.compilerContract??1;need(compilerContract===null||compilerContract===contract,'compiler contract differs from immutable content');
+ if(contract===2)view??=storyHistoryView(w);else need(view===null,'legacy compiler cannot adopt new query semantics');
  need(!formalSlot(w).slot.protected,'protected activity');
  const previous=storyState(w,e.id);need(!previous||previous.contentDigest===storyDigest(c),'content version changed in place; retain old resource or migrate explicitly');
  const state=previous?structuredClone(previous):{contentDigest:storyDigest(c),stage:c.entry,page:0,pending:null,choiceOrder:[],chosenVariantId:null,mode:'reading',next:null,dueDate:null,basisFactId:null,panelDelta:Object.fromEntries(Object.keys(deriveWorldPanel(w.numeric.evolution.world)).map(k=>[k,0]))};
  const s=c.stages.find(s=>s.id===state.stage),operations=[],inputs=[];
- if(!previous)state.choiceOrder=lockStageChoices(w,e,s,inputs);
+ if(!previous)state.choiceOrder=lockStageChoices(w,e,s,inputs,view);
  if(op.action==='confirm'&&(panelWitness||s.choices.some(o=>o.outcome.duty)))for(const holder of ['person','life','work','outlook']){const target={kind:'player-'+holder,id:w.identity.playerId};for(const [code,value] of Object.entries(targetRecord(w.numeric.evolution.world,target)))inputs.push({target,code,value});}
- if(op.action==='confirm'){const option=optionsOf(s).find(o=>o.id===state.pending);for(const v of option?.variants??[])for(const modifier of v.modifiers??[]){const target={kind:modifier.role==='teacher'?`player-${modifier.holder}`:'person',id:modifier.role==='teacher'?w.identity.playerId:e.participantIds[modifier.role==='companion'?1:0]};const value=targetRecord(w.numeric.evolution.world,target)[modifier.code];need(Number.isFinite(value),'missing outcome weight input');inputs.push({target,code:modifier.code,value});}}
+ if(op.action==='confirm'){const option=optionsOf(s).find(o=>o.id===state.pending);for(const v of option?.variants??[])for(const modifier of v.modifiers??[]){const target={kind:modifier.role==='teacher'?`player-${modifier.holder}`:'person',id:modifier.role==='teacher'?w.identity.playerId:e.participantIds[modifier.role==='companion'?1:0]};const value=view?view.numeric(target,modifier.code):targetRecord(w.numeric.evolution.world,target)[modifier.code];need(Number.isFinite(value),'missing outcome weight input');inputs.push({target,code:modifier.code,value});}}
   need(op.action==='select'?typeof op.optionId==='string':op.optionId===null,'option only on select');
  if(op.action==='start'){need(!previous,'already started');
   for(const stage of c.stages)for(const option of optionsOf(stage))for(const result of [option.outcome,...(option.variants??[]).map(v=>v.outcome)])for(const change of result.changes){const target={kind:change.role==='teacher'?`player-${change.holder}`:'person',id:change.role==='teacher'?w.identity.playerId:e.participantIds[change.role==='companion'?1:0]};need(Object.hasOwn(targetRecord(w.numeric.evolution.world,target),change.code),'missing outcome field on bound actor');}
@@ -63,7 +66,7 @@ export function compileStory(w,op,{panelWitness=false}={}){
   }else if(op.action==='cancel'){
    need(state.mode==='confirming','no pending confirmation');state.pending=null;state.mode='reading';
   }else if(op.action==='confirm'){
-   need(state.mode==='confirming'&&state.pending!==null,'secondary confirmation required');need(state.choiceOrder.includes(state.pending),'illegal locked option');const o=optionsOf(s).find(o=>o.id===state.pending),selection=o.variants?outcomeDraw(w,e,s.id,o,o.variants):null,out=selection?o.variants[selection.index].outcome:o.outcome;state.chosenVariantId=selection?.variantId??null;
+   need(state.mode==='confirming'&&state.pending!==null,'secondary confirmation required');need(state.choiceOrder.includes(state.pending),'illegal locked option');const o=optionsOf(s).find(o=>o.id===state.pending),selection=o.variants?outcomeDraw(w,e,s.id,o,o.variants,view):null,out=selection?o.variants[selection.index].outcome:o.outcome;state.chosenVariantId=selection?.variantId??null;
    operations.push({type:'confirm-choice',eventId:e.id,stageId:e.stageId,optionId:o.id,optionText:o.text});
    const fid=createId('fact',[e.id,c.version,s.id,o.id]);const actors={teacher:w.identity.playerId,participant:e.participantIds[0],...(e.participantIds.length>1?{companion:e.participantIds[1]}:{})};
    const subjects=[...new Set(Object.values(actors))];
@@ -106,7 +109,7 @@ export function compileStory(w,op,{panelWitness=false}={}){
    operations.push({type:'event-lifecycle',eventId:e.id,status:'active',basisFactId:state.basisFactId});enter();
   }else throw new RangeError('STORY: unknown action');
  }
- function enter(){state.stage=state.next;state.next=null;state.dueDate=null;state.page=0;state.mode='reading';state.chosenVariantId=null;state.choiceOrder=lockStageChoices(w,e,c.stages.find(t=>t.id===state.stage),inputs);operations.push({type:'stage',eventId:e.id,fromStageId:e.stageId,stageId:stageId(e,c,state.stage),choice:carrier(c,state.stage,state.choiceOrder)});}
+ function enter(){state.stage=state.next;state.next=null;state.dueDate=null;state.page=0;state.mode='reading';state.chosenVariantId=null;state.choiceOrder=lockStageChoices(w,e,c.stages.find(t=>t.id===state.stage),inputs,view);operations.push({type:'stage',eventId:e.id,fromStageId:e.stageId,stageId:stageId(e,c,state.stage),choice:carrier(c,state.stage,state.choiceOrder)});}
  return {state,operations,inputs};
 }
 export function guardStoryOperation(w,op,internal){
@@ -146,18 +149,51 @@ export function validateStoryHistory(w){
    // Isolate those plus the cursor/history containers; the large immutable
    // journals remain readable without cloning the entire career per story row.
    const atWorld={...w,identity:{...w.identity,attemptId:h.attemptId},position:planPosition(r(w).plan,h.cursor),events:w.events.map(x=>x===e?structuredClone(x):x),numeric:{...w.numeric,evolution:{...w.numeric.evolution,world:structuredClone(w.numeric.evolution.world)}},extensions:{...w.extensions,'teacher-hell/world':{...r(w),plan:{...r(w).plan,cursor:h.cursor}}}};
-   if(w.extensions[HOMEROOM_KEY])atWorld.extensions[HOMEROOM_KEY]=structuredClone(homeroomBaseline({...w,position:atWorld.position}));
+   if(c.compilerContract!==2&&w.extensions[HOMEROOM_KEY])atWorld.extensions[HOMEROOM_KEY]=structuredClone(homeroomBaseline({...w,position:atWorld.position}));
    r(atWorld).history=r(w).history.filter(x=>x.order<h.order&&!(x.operationId===h.operationId&&(x.eventId===e.id||['institution','homeroom-result','school'].includes(x.type)&&h.data.operations.some(o=>o.type==='homeroom-result'&&same(o.data,x.data)||o.type==='school'&&same(o.change,x.data.change)||same(o,x.data.operation??null)))));
    const ae=atWorld.events.find(x=>x.id===e.id);ae.stageId=stageId(e,c,previous?.stage??c.entry);ae.choice=carrier(c,previous?.stage??c.entry,previous?.choiceOrder);
-   for(const input of h.data.inputs){need(Number.isFinite(input.value)&&input.value>=0&&input.value<=100,'invalid qualification witness');targetRecord(atWorld.numeric.evolution.world,input.target)[input.code]=input.value;}
+   for(const input of h.data.inputs){need(Number.isFinite(input.value)&&input.value>=0&&input.value<=100,'invalid qualification witness');if((c.compilerContract??1)===1)targetRecord(atWorld.numeric.evolution.world,input.target)[input.code]=input.value;}
    if(c.stages.some(s=>s.choices.some(o=>o.outcome.duty))){for(const a of atWorld.numeric.evolution.world.registry.assignments)if(a.until&&a.until>=h.at.date)a.until=null;atWorld.numeric.evolution.world.registry.assignments=atWorld.numeric.evolution.world.registry.assignments.filter(a=>!r(w).history.some(x=>x.type==='school'&&x.order>=h.order&&x.data.change.id===a.id));}
    need(!Object.hasOwn(h.data,'panelWitnessVersion')||h.data.panelWitnessVersion===1&&r(w).plan.validation==='fixed-calendar-v2'&&op.action==='confirm','unsupported panel observation witness');
+   const contract=c.compilerContract??1;need((h.data.compilerContract??1)===contract,'history compiler contract differs');
+   if(contract===2){need(Number.isSafeInteger(h.data.beforeOrder)&&h.data.beforeOrder>=1&&h.data.beforeOrder<=h.order,'invalid story boundary');const firstOp=h.data.operations[0],firstType={'confirm-choice':'choice','finish-slot':'slot-complete'}[firstOp?.type]??firstOp?.type;const first=r(w).history.find(x=>x.operationId===h.operationId&&x.order>=h.data.beforeOrder&&x.order<h.order&&x.type===firstType&&(x.eventId===e.id||firstType==='slot-complete'));need(h.data.beforeOrder===(first?.order??h.order),'story boundary differs from consequences');}
+   else need(!Object.hasOwn(h.data,'beforeOrder'),'legacy story cannot carry a new boundary');
+   if(contract===2){
+    const witness=h.data.numericWitness;
+    assertShape(witness,['version','attemptId','cursor','world']);
+    need(witness.version===1&&witness.attemptId===h.attemptId&&witness.cursor===h.cursor,'numeric witness belongs to another historical context');
+    need(witness.world.player.current.playerId===w.identity.playerId,'numeric witness belongs to another player');
+    for(const input of h.data.inputs)need(targetRecord(witness.world,input.target)[input.code]===input.value,'numeric witness differs from qualification');
+    deriveWorldPanel(witness.world); // Validate the complete read input, including directional holders.
+    atWorld.numeric.evolution.world=structuredClone(witness.world);
+    atWorld.extensions={'teacher-hell/world':r(atWorld)};
+    const view=storyHistoryView({...w,identity:{...w.identity,attemptId:h.attemptId}},{beforeOrder:h.data.beforeOrder,inputs:h.data.inputs});
+    r(atWorld).facts=r(w).facts.filter(f=>f.order<h.data.beforeOrder);
+    r(atWorld).claims=r(w).claims.filter(f=>f.order<h.data.beforeOrder);
+    r(atWorld).disclosures=r(w).disclosures.filter(f=>f.order<h.data.beforeOrder);
+    r(atWorld).knowledge=r(w).knowledge.filter(f=>f.order<h.data.beforeOrder).map(k=>view.knowledge(k.actorId,k.claimId,k.versionId));
+    r(atWorld).history=r(w).history.filter(x=>x.order<h.data.beforeOrder);
+    r(atWorld).stages=r(w).stages.filter(x=>x.order<h.data.beforeOrder);
+    r(atWorld).effects=r(w).effects.filter(x=>x.order<h.data.beforeOrder);
+    r(atWorld).commits=r(w).commits.filter(x=>x.historyIds.every(id=>r(atWorld).history.some(h=>h.id===id)));
+    r(atWorld).numericArchives=[];
+    // Event carriers are projections too: do not expose later facts/results or actors.
+    atWorld.events=atWorld.events.filter(event=>event.id===e.id&&r(atWorld).stages.some(s=>s.eventId===event.id&&s.order<h.data.beforeOrder)).map(event=>{
+     const value=structuredClone(event),facts=new Set(r(atWorld).facts.map(f=>f.id));
+     value.facts=value.facts.filter(f=>facts.has(f.id));value.results=value.results.filter(result=>r(atWorld).history.some(x=>x.type==='result'&&x.data.resultId===result.id));
+     value.knowledge=r(atWorld).knowledge.filter(k=>facts.has(k.factId)&&value.participantIds.includes(k.actorId)).map(k=>({actorId:k.actorId,factId:k.factId,claimId:k.claimId,versionId:k.versionId,sourceId:k.source.actorId,acquiredAt:k.acquiredAt,believed:k.belief==='believed'}));
+     const selection=r(atWorld).history.filter(x=>x.type==='event-selection').flatMap(x=>x.data.selected).find(x=>x.eventId===event.id);
+     if(selection)value.participantIds=[...new Set([...selection.participantIds,...r(atWorld).facts.filter(f=>f.eventId===event.id).flatMap(f=>[...f.subjectIds,...f.witnessIds])])];
+     return value;
+    });
+   }
+   else need(!Object.hasOwn(h.data,'numericWitness'),'legacy history cannot adopt a numeric checkpoint');
    const witnessed=h.data.panelWitnessVersion===1;
-   const compiled=compileStory(atWorld,op,{panelWitness:witnessed});need(same(compiled.inputs,h.data.inputs),'qualification witness differs');
+   const compiled=compileStory(atWorld,op,{panelWitness:witnessed,compilerContract:contract,view:contract===2?storyHistoryView({...w,identity:{...w.identity,attemptId:h.attemptId}},{beforeOrder:h.data.beforeOrder,inputs:h.data.inputs}):null});need(same(compiled.inputs,h.data.inputs),'qualification witness differs');
    if(op.action==='confirm'){
     const effect=r(w).history.find(x=>x.operationId===h.operationId&&x.type==='effect'&&x.eventId===e.id);need(effect,'missing effect audit');
-    const before=structuredClone(witnessed||c.stages.some(s=>s.choices.some(o=>o.outcome.duty))?atWorld.numeric.evolution.world:w.numeric.evolution.world),after=structuredClone(before);
-    for(const x of effect.data.observed){const change=effect.data.changes.find(c=>same(c.target,x.target)&&c.code===x.code);need(change&&x.after===applyDelta(x.before,change.delta),'invalid numerical observation');targetRecord(before,x.target)[x.code]=x.before;targetRecord(after,x.target)[x.code]=x.after;}
+    const before=structuredClone(contract===2||witnessed||c.stages.some(s=>s.choices.some(o=>o.outcome.duty))?atWorld.numeric.evolution.world:w.numeric.evolution.world),after=structuredClone(before);
+    for(const x of effect.data.observed){const change=effect.data.changes.find(c=>same(c.target,x.target)&&c.code===x.code);need(change&&x.after===applyDelta(x.before,change.delta),'invalid numerical observation');if(contract===2)need(targetRecord(before,x.target)[x.code]===x.before,'numeric checkpoint differs from effect observation');targetRecord(before,x.target)[x.code]=x.before;targetRecord(after,x.target)[x.code]=x.after;}
     const a=deriveWorldPanel(before),b=deriveWorldPanel(after);compiled.state.panelDelta=Object.fromEntries(Object.keys(a).map(k=>[k,compiled.state.panelDelta[k]+(b[k]-a[k])]));
    }
    need(same(compiled.state,h.data.state)&&same(compiled.operations,h.data.operations),'illegal story transition or consequences');

@@ -10,7 +10,8 @@ const roles=['teacher','participant','companion'];
 const expressions=['calm','happy','angry','sad','surprised','embarrassed'];
 const scenes=STORY_SCENE_IDS;
 export function validateStory(c){
- canonicalData(c);assertShape(c,['resourceId','definitionId','version','topicId','status','entry','stages',...(Object.hasOwn(c,'premise')?['premise']:[]),...(Object.hasOwn(c,'choiceContract')?['choiceContract']:[])]);
+ canonicalData(c);assertShape(c,['resourceId','definitionId','version','topicId','status','entry','stages',...(Object.hasOwn(c,'compilerContract')?['compilerContract']:[]),...(Object.hasOwn(c,'premise')?['premise']:[]),...(Object.hasOwn(c,'choiceContract')?['choiceContract']:[])]);
+ need(!Object.hasOwn(c,'compilerContract')||c.compilerContract===2,'CONTRACT','unsupported compiler contract');
  for(const k of ['resourceId','definitionId','version','entry'])identifier(c[k]);
  need(!c.choiceContract||c.choiceContract==='four-v2','CONTRACT','unsupported choice contract');need(TOPIC_IDS.includes(c.topicId),'REFERENCE','topic');need(['engineering-test','ready'].includes(c.status),'STATUS','status');
  need(c.status!=='ready'||!c.resourceId.startsWith('engineering:'),'PUBLICATION','engineering asset');
@@ -39,6 +40,7 @@ export function validateStory(c){
    }identifier(o.id);identifier(o.text);need(typeof o.emotional==='boolean'&&['action','defer','refuse','support'].includes(o.kind),'CHOICE','option kind');
    if(o.variants){need(c.choiceContract==='four-v2'&&Array.isArray(o.variants)&&o.variants.length>=2,'VARIANTS','only new contract allows multiple outcomes');need(new Set(o.variants.map(v=>v.id)).size===o.variants.length,'VARIANTS','unique variant IDs');for(const v of o.variants){assertShape(v,['id','weight','outcome',...(Object.hasOwn(v,'modifiers')?['modifiers']:[])]);identifier(v.id);need(Number.isFinite(v.weight)&&v.weight>0,'VARIANTS','positive base weights');for(const m of v.modifiers??[]){assertShape(m,['role','holder','code','influence']);need(roles.includes(m.role)&&['person','life','work','outlook'].includes(m.holder)&&/^(?:[1-9]|1[0-2])-[1-4]$/.test(m.code)&&Number.isFinite(m.influence)&&Math.abs(m.influence)<=5&&(m.role==='teacher'||m.holder==='person'),'VARIANTS','valid numeric modifier');}}}
    for(const r of [o.outcome,...(o.variants??[]).map(v=>v.outcome)]){assertShape(r,['fact','claims','changes','historyCodes','next',...['academic','entrance','institution','duty'].filter(k=>Object.hasOwn(r,k))]);
+   if(c.compilerContract===2)need(!r.duty&&!r.institution,'CONTRACT','compiler v2 duty/institution adapters require a historical structural contract');
    if(r.duty){assertShape(r.duty,['kind',...(Object.hasOwn(r.duty,'secondary')?['secondary']:[])]);if(r.duty.secondary)need(r.duty.kind==='resigned'&&r.duty.secondary==='unable','DUTY','compatible concurrent consequences');need(['pressure','relief','thought','resignation-pending','temporary','notice','resigned','replaced','unable','restored'].includes(r.duty.kind),'DUTY','supported objective consequence');}
    if(r.institution){assertShape(r.institution,['kind','response']);need(r.institution.kind==='duty-response'&&['accept','refuse','negotiate','protest','delay','seek-help'].includes(r.institution.response),'INSTITUTION','supported institutional consequence');}
    if(r.entrance){assertShape(r.entrance,['role','delta']);need(r.entrance.role==='participant'&&Number.isInteger(r.entrance.delta)&&Math.abs(r.entrance.delta)<=5,'ENTRANCE','bounded preparation guidance');}
@@ -166,7 +168,9 @@ export function phase17dSampleCatalogue(){
  return {type:'register-event-catalogue',catalogueId:'content:phase17d-samples-v1',
   definitions,bindings,engineering:false};
 }
-const assets=freeze([AFTERCARE_STORY,ENTRANCE_STORY,DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY,...PHASE17D_READY_STORIES]);
+/** Isolated contract fixture; never registered in a public catalogue. */
+export const HISTORY_CONTRACT_STORY=freeze(validateStory({...structuredClone(DEMO_STORY),resourceId:'engineering:history-contract-v2',definitionId:'engineering:history-contract-v2',version:'1',compilerContract:2}));
+const assets=freeze([HISTORY_CONTRACT_STORY,AFTERCARE_STORY,ENTRANCE_STORY,DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY,...PHASE17D_READY_STORIES]);
 export function resolveStory(ref){const c=assets.find(c=>c.resourceId===ref.resourceId&&c.version===ref.version);need(c,'RESOURCE','missing immutable content version');return c;}
 export function validateStoryReference(d){const c=resolveStory(d.content);need(c.definitionId===d.id&&c.topicId===d.topicId&&c.status===d.content.status,'REFERENCE','definition/content identity');if(c.resourceId.startsWith('aftercare:'))need(canonicalData(d)===canonicalData(aftercareCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal aftercare qualification cannot be relabeled');if(c.resourceId.startsWith('entrance:'))need(canonicalData(d)===canonicalData(entranceCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal entrance qualification cannot be relabeled');if(c.resourceId.startsWith('homeroom:'))need(canonicalData(d)===canonicalData(homeroomCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal homeroom qualification/authority cannot be relabeled');return c;}
 

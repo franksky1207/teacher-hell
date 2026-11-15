@@ -1,3 +1,5 @@
+import {validateIssueReservation,issueReservationDefinition,issueFollowupAllowed} from './event-candidates.js';
+import {boundRoles,validateBoundSelection} from './issue-candidates.js';
 import {compileConsequences} from './story-consequences.js';
 import { storyHistoryView,replayStoryNumeric,compactStoryPanelDelta,auditStoryNumericWitness } from './story-history-view.js';
 import { permitsStoryFollowup } from './story-content.js';
@@ -26,34 +28,47 @@ const stageId=(e,c,id)=>id===c.entry?createId('stage',[e.id,'initial']):createId
 function optionsOf(stage){return stage.choices.flatMap(option=>[option,...(option.replacement?[option.replacement]:[])]);}
 function carrier(c,id,orderedIds=null){const stage=c.stages.find(s=>s.id===id),opts=optionsOf(stage);return stage.choices.length?{nodeId:id,options:(orderedIds??stage.choices.map(o=>o.id)).map(optionId=>{const o=opts.find(x=>x.id===optionId);need(o,'locked choice is not in story content');return {id:o.id,emotional:o.emotional};}),confirmedOptionId:null}:null;}
 function due(date,days){return new Date(Date.parse(date+'T00:00:00Z')+days*86400000).toISOString().slice(0,10);}
+function roleActor(w,e,role){
+ const c=storyContent(w,e.id);if(c?.bindingContract===1&&c.roleBindings?.[role]){const b=c.roleBindings[role],s=r(w).history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.eventId===e.id);return b.candidateRole?boundRoles(s)[b.candidateRole]:b.personId;}
+ return role==='teacher'?w.identity.playerId:e.participantIds[role==='companion'?1:0];
+}
 function meets(w,e,conditions,view=null){return conditions.every(condition=>{
  if(condition.type==='fact')return view?!!view.fact(condition.id):r(w).facts.some(f=>f.id===condition.id);
- const target={kind:condition.role==='teacher'?`player-${condition.holder}`:'person',id:condition.role==='teacher'?w.identity.playerId:e.participantIds[condition.role==='companion'?1:0]};
+ const target={kind:condition.role==='teacher'?`player-${condition.holder}`:'person',id:condition.role==='teacher'?w.identity.playerId:roleActor(w,e,condition.role)};
  try{const value=view?view.numeric(target,condition.code):targetRecord(w.numeric.evolution.world,target)[condition.code];return Number.isFinite(value)&&value>=condition.min&&value<=condition.max;}catch(error){if(view)throw error;return false;}
 });}
 export function availableStoryChoices(w,e,stage,view=null){return stage.choices.map(option=>option.replacement&&meets(w,e,option.replacement.requires,view)?option.replacement:option);}
 function lockStageChoices(w,e,stage,inputs,view=null){
  for(const base of stage.choices)for(const condition of base.replacement?.requires??[])if(condition.type==='numeric'){
-  const target={kind:condition.role==='teacher'?`player-${condition.holder}`:'person',id:condition.role==='teacher'?w.identity.playerId:e.participantIds[condition.role==='companion'?1:0]};
+  const target={kind:condition.role==='teacher'?`player-${condition.holder}`:'person',id:condition.role==='teacher'?w.identity.playerId:roleActor(w,e,condition.role)};
   const value=view?view.numeric(target,condition.code):targetRecord(w.numeric.evolution.world,target)[condition.code];
   need(Number.isFinite(value),'missing replacement qualification field');inputs.push({target,code:condition.code,value});
  }
  return choicePermutation(w.identity.attemptId,e.id,stage.id,availableStoryChoices(w,e,stage,view).map(o=>o.id));
 }
-export function compileStory(w,op,{panelWitness=false,compilerContract=null,view=null,numericContext=null}={}){
+export function compileStory(w,op,{panelWitness=false,compilerContract=null,view=null,numericContext=null,historyReplay=false}={}){
  assertShape(op,['type','eventId','action','optionId']);need(op.type==='story','operation');const e=w.events.find(e=>e.id===op.eventId),c=storyContent(w,op.eventId);need(e&&c,'registered admitted playable event');
  const contract=c.compilerContract??1;need(compilerContract===null||compilerContract===contract,'compiler contract differs from immutable content');
  if(contract===2){view??=storyHistoryView(w);if(numericContext)view={...view,numeric:numericContext.read};}else need(view===null&&numericContext===null,'legacy compiler cannot adopt new query semantics');
  need(!formalSlot(w).slot.protected,'protected activity');
+ const reservation=(view?view.entries():r(w).history).filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.eventId===e.id);
+ if(c.bindingContract===1&&['start','select','confirm','resume'].includes(op.action)){
+  need(reservation?.bindingContract===1,'missing locked issue binding');
+  validateBoundSelection(w,reservation,issueReservationDefinition(w,reservation).definition,{view,exact:op.action==='start',continuation:op.action!=='start'});
+  // Historical compilation uses only its prefix. Current registry checks run
+  // during actual transactions, never against a later world's registry.
+  if(!historyReplay)validateIssueReservation(w,reservation,{admission:op.action==='start'});
+ }
+
  const previous=storyState(w,e.id);need(!previous||previous.contentDigest===storyDigest(c),'content version changed in place; retain old resource or migrate explicitly');
  const state=previous?structuredClone(previous):{contentDigest:storyDigest(c),stage:c.entry,page:0,pending:null,choiceOrder:[],chosenVariantId:null,mode:'reading',next:null,dueDate:null,basisFactId:null,panelDelta:Object.fromEntries(Object.keys(numericContext?PANEL_SOURCES:deriveWorldPanel(w.numeric.evolution.world)).map(k=>[k,0]))};
  const s=c.stages.find(s=>s.id===state.stage),operations=[],inputs=[];
  if(!previous)state.choiceOrder=lockStageChoices(w,e,s,inputs,view);
  if(!numericContext&&op.action==='confirm'&&(panelWitness||s.choices.some(o=>o.outcome.duty)))for(const holder of ['person','life','work','outlook']){const target={kind:'player-'+holder,id:w.identity.playerId};for(const [code,value] of Object.entries(targetRecord(w.numeric.evolution.world,target)))inputs.push({target,code,value});}
- if(op.action==='confirm'){const option=optionsOf(s).find(o=>o.id===state.pending);for(const v of option?.variants??[])for(const modifier of v.modifiers??[]){const target={kind:modifier.role==='teacher'?`player-${modifier.holder}`:'person',id:modifier.role==='teacher'?w.identity.playerId:e.participantIds[modifier.role==='companion'?1:0]};const value=view?view.numeric(target,modifier.code):targetRecord(w.numeric.evolution.world,target)[modifier.code];need(Number.isFinite(value),'missing outcome weight input');inputs.push({target,code:modifier.code,value});}}
+ if(op.action==='confirm'){const option=optionsOf(s).find(o=>o.id===state.pending);for(const v of option?.variants??[])for(const modifier of v.modifiers??[]){const target={kind:modifier.role==='teacher'?`player-${modifier.holder}`:'person',id:modifier.role==='teacher'?w.identity.playerId:roleActor(w,e,modifier.role)};const value=view?view.numeric(target,modifier.code):targetRecord(w.numeric.evolution.world,target)[modifier.code];need(Number.isFinite(value),'missing outcome weight input');inputs.push({target,code:modifier.code,value});}}
   need(op.action==='select'?typeof op.optionId==='string':op.optionId===null,'option only on select');
  if(op.action==='start'){need(!previous,'already started');
-  for(const stage of c.stages)for(const option of optionsOf(stage))for(const result of [option.outcome,...(option.variants??[]).map(v=>v.outcome)])for(const change of result.changes){const target={kind:change.role==='teacher'?`player-${change.holder}`:'person',id:change.role==='teacher'?w.identity.playerId:e.participantIds[change.role==='companion'?1:0]};need(numericContext?numericContext.has(target,change.code):Object.hasOwn(targetRecord(w.numeric.evolution.world,target),change.code),'missing outcome field on bound actor');}
+  for(const stage of c.stages)for(const option of optionsOf(stage))for(const result of [option.outcome,...(option.variants??[]).map(v=>v.outcome)])for(const change of result.changes){const target={kind:change.role==='teacher'?`player-${change.holder}`:'person',id:change.role==='teacher'?w.identity.playerId:roleActor(w,e,change.role)};need(numericContext?numericContext.has(target,change.code):Object.hasOwn(targetRecord(w.numeric.evolution.world,target),change.code),'missing outcome field on bound actor');}
   for(const stage of c.stages){for(const page of stage.pages)for(const actor of [...page.cast.map(a=>a.role),...(page.speaker?[page.speaker]:[])])need(actor!=='companion'||e.participantIds[1],'missing cast binding');for(const option of optionsOf(stage))for(const result of [option.outcome,...(option.variants??[]).map(v=>v.outcome)])for(const claim of result.claims)need(claim.role!=='companion'||e.participantIds[1],'missing claim actor');}
   e.choice=carrier(c,c.entry,state.choiceOrder);
   if(c.premise){const fid=createId('fact',[e.id,c.version,'premise']),subjects=[...new Set([...e.participantIds,w.identity.playerId])];operations.push({type:'fact',id:fid,eventId:e.id,stageId:e.stageId,subjectIds:subjects,witnessIds:subjects,description:c.premise.description,data:structuredClone(c.premise.data),categoryCodes:[],causeIds:[]},{type:'reveal',actorId:w.identity.playerId,factId:fid,source:{kind:'observation',actorId:w.identity.playerId,basisFactId:fid}});state.basisFactId=fid;}
@@ -67,10 +82,10 @@ export function compileStory(w,op,{panelWitness=false,compilerContract=null,view
   }else if(op.action==='cancel'){
    need(state.mode==='confirming','no pending confirmation');state.pending=null;state.mode='reading';
   }else if(op.action==='confirm'){
-   need(state.mode==='confirming'&&state.pending!==null,'secondary confirmation required');need(state.choiceOrder.includes(state.pending),'illegal locked option');const o=optionsOf(s).find(o=>o.id===state.pending),selection=o.variants?outcomeDraw(w,e,s.id,o,o.variants,view):null,out=selection?o.variants[selection.index].outcome:o.outcome;state.chosenVariantId=selection?.variantId??null;
+   need(state.mode==='confirming'&&state.pending!==null,'secondary confirmation required');need(state.choiceOrder.includes(state.pending),'illegal locked option');const o=optionsOf(s).find(o=>o.id===state.pending),selection=o.variants?outcomeDraw(w,e,s.id,o,o.variants,view,c.bindingContract===1?Object.fromEntries(['teacher','participant','companion',...Object.keys(c.roleBindings??{})].map(role=>[role,roleActor(w,e,role)])):null):null,out=selection?o.variants[selection.index].outcome:o.outcome;state.chosenVariantId=selection?.variantId??null;
    operations.push({type:'confirm-choice',eventId:e.id,stageId:e.stageId,optionId:o.id,optionText:o.text});
    const fid=createId('fact',[e.id,c.version,s.id,o.id]);const actors={teacher:w.identity.playerId,participant:e.participantIds[0],...(e.participantIds.length>1?{companion:e.participantIds[1]}:{})};
-   for(const [role,binding] of Object.entries(c.roleBindings??{})){actors[role]=binding.personId;}
+   for(const [role,binding] of Object.entries(c.roleBindings??{})){actors[role]=binding.candidateRole?boundRoles(reservation)[binding.candidateRole]:binding.personId;need(actors[role],'missing named role binding');}
    const extra=out.world?compileConsequences(w,e,c,out,actors,fid,view):null;
    const subjects=extra?.subjects??[...new Set(Object.values(actors))];
    operations.push({type:'fact',id:fid,eventId:e.id,stageId:e.stageId,subjectIds:subjects,witnessIds:extra?.witnesses??subjects,description:out.fact,data:{...(extra?.data??{}),type:'story-action',optionId:o.id,contentVersion:c.version,...(selection?{variantId:selection.variantId,variantWeights:selection.weights}:{})},categoryCodes:out.historyCodes,causeIds:[...new Set([...(state.basisFactId?[state.basisFactId]:[]),...(extra?.causes??[])])]});
@@ -123,7 +138,7 @@ export function guardStoryOperation(w,op,internal){
  if(internal&&!['finish-slot','advance-time'].includes(op.type))return;
  if(['finish-slot','advance-time'].includes(op.type)){
   const selected=new Set(r(w).history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected.map(s=>s.eventId))),states=new Map(r(w).history.filter(h=>h.type==='story').map(h=>[h.eventId,h.data.state]));
-  need(!w.events.some(e=>{if(e.id===internal||!selected.has(e.id))return false;const s=states.get(e.id);return storyContent(w,e.id)&&(!s||!['waiting','ended'].includes(s.mode)||s.mode==='waiting'&&s.dueDate<=w.position.date&&permitsStoryFollowup(w,e)&&!formalSlot(w).slot.protected);}), 'unfinished story or due follow-up blocks time');return;
+  need(!w.events.some(e=>{if(e.id===internal||!selected.has(e.id))return false;const s=states.get(e.id);return storyContent(w,e.id)&&(!s||!['waiting','ended'].includes(s.mode)||s.mode==='waiting'&&s.dueDate<=w.position.date&&permitsStoryFollowup(w,e)&&issueFollowupAllowed(w,e.id)&&!formalSlot(w).slot.protected);}), 'unfinished story or due follow-up blocks time');return;
  }
  let id=op.eventId;
  if(!id&&op.factId)id=r(w).facts.find(f=>f.id===op.factId)?.eventId;
@@ -132,13 +147,14 @@ export function guardStoryOperation(w,op,internal){
 }
 export function readStory(w,eventId){
  const c=storyContent(w,eventId),state=storyState(w,eventId);need(c&&state,'story not started');const s=c.stages.find(s=>s.id===state.stage),e=w.events.find(e=>e.id===eventId);
- const actor=role=>role==='teacher'?w.identity.playerId:e.participantIds[role==='companion'?1:0];
+ const selected=r(w).history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.eventId===eventId);
+ const actor=role=>role==='teacher'?w.identity.playerId:c.roleBindings?.[role]?(c.roleBindings[role].candidateRole?boundRoles(selected)[c.roleBindings[role].candidateRole]:c.roleBindings[role].personId):e.participantIds[role==='companion'?1:0];
  const p=s.pages[state.page];
  return {eventId,page:{...structuredClone(p),speaker:p.speaker===null?null:actor(p.speaker),cast:p.cast.map(a=>({...a,actorId:actor(a.role)}))},pageIndex:state.page,pageCount:s.pages.length,
  canPrevious:state.mode==='reading'&&state.page>0,canNext:state.mode==='reading'&&state.page<s.pages.length-1,
  choices:state.mode==='reading'&&state.page===s.pages.length-1?state.choiceOrder.map(id=>optionsOf(s).find(o=>o.id===id)).map(o=>({id:o.id,text:o.text})):[],
  confirmation:state.mode==='confirming'?{optionId:state.pending,text:optionsOf(s).find(o=>o.id===state.pending).text}:null,
- canFinish:state.mode==='result'||state.mode==='reading'&&!s.choices.length&&state.page===s.pages.length-1,waiting:state.mode==='waiting',canResume:state.mode==='waiting'&&state.dueDate<=w.position.date&&permitsStoryFollowup(w,e)&&!formalSlot(w).slot.protected,ended:state.mode==='ended',teacherDelta:state.panelDelta,
+ canFinish:state.mode==='result'||state.mode==='reading'&&!s.choices.length&&state.page===s.pages.length-1,waiting:state.mode==='waiting',canResume:state.mode==='waiting'&&state.dueDate<=w.position.date&&permitsStoryFollowup(w,e)&&issueFollowupAllowed(w,e.id)&&!formalSlot(w).slot.protected,ended:state.mode==='ended',teacherDelta:state.panelDelta,
  result:state.mode==='result'||state.mode==='ended'?r(w).disclosures.filter(d=>d.actorId===w.identity.playerId&&e.facts.some(f=>f.id===d.factId)).map(d=>r(w).facts.find(f=>f.id===d.factId).description):[]};
 }
 /** Audit action transitions and compiled consequences, never trust saved stage/page labels. */
@@ -210,7 +226,7 @@ export function validateStoryHistory(w){
    }
    else need(!Object.hasOwn(h.data,'numericWitness'),'legacy history cannot adopt a numeric checkpoint');
    const witnessed=h.data.panelWitnessVersion===1;
-   const compiled=compileStory(atWorld,op,{panelWitness:witnessed,compilerContract:contract,numericContext,view:contract===2?storyHistoryView({...w,identity:{...w.identity,attemptId:h.attemptId}},{beforeOrder:h.data.beforeOrder,inputs:h.data.inputs}):null});need(same(compiled.inputs,h.data.inputs),'qualification witness differs');numericContext?.assertConsumed();
+   const compiled=compileStory(atWorld,op,{panelWitness:witnessed,compilerContract:contract,numericContext,historyReplay:true,view:contract===2?storyHistoryView({...w,identity:{...w.identity,attemptId:h.attemptId}},{beforeOrder:h.data.beforeOrder,inputs:h.data.inputs}):null});need(same(compiled.inputs,h.data.inputs),'qualification witness differs');numericContext?.assertConsumed();
    if(op.action==='confirm'){
     const effect=r(w).history.find(x=>x.operationId===h.operationId&&x.type==='effect'&&x.eventId===e.id);need(effect,'missing effect audit');
     if(compact){

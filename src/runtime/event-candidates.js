@@ -1,3 +1,5 @@
+import {projectIssues} from './issues.js';
+import {validateIssueEligibility,issueOptions,validateBoundSelection,rejectedIssueReservation,boundParticipants} from './issue-candidates.js';
 import { runtimeCalendarDay,aftercareDefinition,retiredAftercareReservation } from './aftercare-calendar.js';
 import { entranceCondition,entranceAbsent } from './entrance.js';
 import { HOMEROOM_KEY,crisisContext } from './homeroom.js';
@@ -37,9 +39,10 @@ export function validateEventDefinitions(definitions){
   const core=tuple(d.coreCodes);need(!coreByTopic.has(d.topicId)||coreByTopic.get(d.topicId)===core,'Topic core must be shared');coreByTopic.set(d.topicId,core);
   need(d.weights.length===6&&d.weights.every(x=>Number.isFinite(x)&&x>=0)&&Math.abs(d.weights.reduce((a,b)=>a+b,0)-1)<1e-12,'Six weights must sum to one');
   need(d.directions.length===6&&d.directions.every(x=>[1,-1].includes(x)),'Explicit six directions');
-  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['companions','roleIds','affiliation','knowledge','groups','academic','entrance','procedure','homeroom'].filter(k=>Object.hasOwn(e,k))]);
+  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['companions','roleIds','affiliation','knowledge','groups','academic','entrance','procedure','homeroom','issue'].filter(k=>Object.hasOwn(e,k))]);
   need(e.people.length>0&&e.people.every(x=>['player','student','caregiver','staff','reunion','contact'].includes(x)),'Participant scopes');
   for(const k of ['dayKinds','slotIds','facts','history','numeric'])need(Array.isArray(e[k]),`Eligibility ${k} array`);
+  if(Object.hasOwn(e,'issue'))validateIssueEligibility(e.issue);
   if(e.homeroom)need(['ordinary','social','crisis','support','placement'].includes(e.homeroom),'Homeroom qualification');
   if(e.procedure){need(Array.isArray(e.procedure),'Procedure qualifications');for(const p of e.procedure){assertShape(p,['kind','status']);identifier(p.kind);identifier(p.status);}}
   if(e.entrance){need(Array.isArray(e.entrance),'entrance predicates');for(const c of e.entrance){assertShape(c,['kind',...(Object.hasOwn(c,'value')?['value']:[])]);need(['active','route','gsat-published','confirmed','subject-preparing'].includes(c.kind),'entrance predicate');if(c.kind==='route')need(typeof c.value==='string','entrance route');}}
@@ -56,16 +59,18 @@ export function validateEventDefinitions(definitions){
   need(e.from===null||/^\d{4}-\d{2}-\d{2}$/.test(e.from),'Date lower bound');need(e.until===null||/^\d{4}-\d{2}-\d{2}$/.test(e.until),'Date upper bound');
   if(e.from!==null)dayNumber(e.from);if(e.until!==null)dayNumber(e.until);need(e.from===null||e.until===null||e.from<=e.until,'Reversed eligibility interval');
   if(e.enrollment!==null){assertShape(e.enrollment,['action','classId']);identifier(e.enrollment.action);identifier(e.enrollment.classId);}
-  const p=d.repetition;assertShape(p,['cooldownDays','exclusionGroups','sameFact','reason']);
+  const p=d.repetition;assertShape(p,['cooldownDays','exclusionGroups','sameFact','reason',...('issueScope' in p?['issueScope']:[])]);
+  if(e.issue)need(p.issueScope?.version===1&&['issue','topic','person'].includes(p.issueScope.scope),'Explicit issue conflict scope required');
+  if(p.issueScope){assertShape(p.issueScope,['version','scope']);need(!!e.issue,'Issue scope requires issue eligibility');}
   need(Number.isSafeInteger(p.cooldownDays)&&p.cooldownDays>=0&&typeof p.sameFact==='boolean'&&Array.isArray(p.exclusionGroups),'Explicit repetition policy');p.exclusionGroups.forEach(identifier);identifier(p.reason);
  }
  return definitions;
 }
 /** One current-world index per query. No cache survives a revision or import. */
-export function eventIndex(world){
+export function eventIndex(world,{ignoreEventId=null}={}){
  const r=runtime(world),selections=r.history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected),states=new Map();
  for(const h of r.history)if(h.type==='event-lifecycle')states.set(h.eventId,h.data.status);
- const records=selections.map(s=>({...s,status:retiredAftercareReservation(world,s.eventId)?'ended':states.get(s.eventId)??'reserved'}));
+ const records=selections.filter(s=>s.eventId!==ignoreEventId).map(s=>({...s,status:(retiredAftercareReservation(world,s.eventId)||rejectedIssueReservation(world,s.eventId))?'ended':states.get(s.eventId)??'reserved'}));
  const exposures=new Map(),seenExposure=new Set();for(const h of r.history)if(h.type==='event-exposure')for(const id of h.data.participantIds){const k=tuple(h.eventId,id);if(!seenExposure.has(k)){seenExposure.add(k);exposures.set(id,(exposures.get(id)??0)+1);}}
  const history=new Map();for(const f of r.facts)for(const code of f.categoryCodes)for(const person of f.subjectIds){const k=tuple(person,code),list=history.get(k)??[];if(!list.some(x=>x.eventId===f.eventId))list.push({eventId:f.eventId,status:states.get(f.eventId)??'active'});history.set(k,list);}
  const byTopicPerson=new Map(),byDefinition=new Map(),byExclusion=new Map();
@@ -89,7 +94,7 @@ function homeroomRejection(w,mode,person,index){
  }
  return null;
 }
-function participantPool(world,scope,index){
+export function participantPool(world,scope,index){
  const n=world.numeric.evolution.world,r=n.registry;
  if(scope==='player')return [world.identity.playerId];
  if(scope==='student')return index.school.studentIds;
@@ -109,6 +114,16 @@ function sourceTarget(world,person,source){
 export function numericSources(world,person,sources,codes){return codes.map((code,i)=>requireValue(targetRecord(world.numeric.evolution.world,sourceTarget(world,person,sources[i])),code));}
 export function candidateConflict(c,prior,date){
  if(c.key===prior.key&&prior.date===date)return 'same-day-instance';
+ if(c.bindingContract===1&&prior.bindingContract===1){
+  const roots=x=>(x.issueBindings??x.issueOptions??[]).map(b=>b.issueId),a=roots(c),b=roots(prior),shared=a.some(id=>b.includes(id));
+  if(shared){if(prior.date===date)return 'same-day-issue';if(prior.status!=='ended')return 'active-issue';if(days(date,prior.date)<=Math.max(c.cooldownDays,prior.cooldownDays))return 'issue-cooldown';}
+  const scope=c.issueScope.scope,other=prior.issueScope.scope,active=prior.status!=='ended',cooling=days(date,prior.date)<=Math.max(c.cooldownDays,prior.cooldownDays);
+  const people=x=>[...new Set([...x.participantIds,...Object.entries(x.issueBindings?.[0]?.roleBindings??{}).filter(([role])=>role!=='teacher').map(([,id])=>id)])];
+  if((scope==='person'||other==='person')&&people(c).some(id=>people(prior).includes(id))&&(active||cooling))return 'person-cooldown';
+  if((scope==='topic'||other==='topic')&&c.topicId===prior.topicId&&c.participantIds[0]===prior.participantIds[0]&&(active||cooling))return 'issue-topic-cooldown';
+  return c.exclusionGroups.some(g=>prior.exclusionGroups.includes(g))&&(active||prior.date===date)?'explicit-exclusion':null;
+ }
+
  const samePeople=tuple([...c.participantIds].sort())===tuple([...prior.participantIds].sort());
  if(c.topicId===prior.topicId&&samePeople&&prior.status!=='ended')return 'active-topic-participants';
  if(c.topicId===prior.topicId&&samePeople&&days(date,prior.date)<=Math.max(c.cooldownDays,prior.cooldownDays))return 'topic-cooldown';
@@ -117,9 +132,9 @@ export function candidateConflict(c,prior,date){
  return null;
 }
 /** Pure eligibility; neither numeric accumulation nor RNG is changed. */
-export function buildEventCandidates(world,definitions,{engineering=false}={}){
+export function buildEventCandidates(world,definitions,{engineering=false,ignoreEventId=null,lockedBinding=null}={}){
  validateEventDefinitions(definitions);const r=runtime(world);need(isFormal(r.plan),'Formal calendar required');
- const day=runtimeCalendarDay(world),index=eventIndex(world),candidates=[],rejected=[];
+ const day=runtimeCalendarDay(world),index=eventIndex(world,{ignoreEventId}),candidates=[],rejected=[],issues=definitions.some(d=>d.eligibility.issue)?projectIssues(world).filter(i=>!lockedBinding||i.id===lockedBinding.issueId):[];
  for(const d of definitions){
   need(!(index.byDefinition.get(d.id)??[]).some(s=>s.topicId!==d.topicId||s.type!==d.type),'Stable subtopic identity cannot change topic or type');
   if(d.content.status==='ready'||d.content.resourceId.startsWith('engineering:'))validateStoryReference(d);
@@ -127,12 +142,13 @@ export function buildEventCandidates(world,definitions,{engineering=false}={}){
   const e=d.eligibility,p=d.repetition,content=Object.freeze(structuredClone(d.content)),groups=Object.freeze([...p.exclusionGroups]),people=[...new Set(e.people.flatMap(scope=>participantPool(world,scope,index)))].sort();
   const current=day.slots.findIndex(s=>s.id===world.position.slotId),slots=Object.freeze(day.slots.slice(current).filter(s=>!s.protected&&(!e.slotIds.length||e.slotIds.includes(s.id))).map(s=>s.id));
   for(const person of people){
+   if(lockedBinding&&person!==lockedBinding.roleBindings.participant)continue;
    let reason=null;const facts=e.facts.map(f=>index.facts.get(f.id));
    if(e.homeroom)reason=homeroomRejection(world,e.homeroom,person,index);
    if(e.dayKinds.length&&!e.dayKinds.includes(day.kind)||e.from!==null&&day.date<e.from||e.until!==null&&day.date>e.until)reason='calendar-condition';
    if(facts.some((f,i)=>!f||e.facts[i].participant&&!f.subjectIds.includes(person)))reason='objective-condition';
    if((e.companions??[]).some(c=>{const f=index.facts.get(c.contactFactId);return !f||f.data?.type!=='contact'||f.occurredAt.date!==day.date||!f.subjectIds.includes(person)||!f.subjectIds.includes(c.personId)||!world.numeric.evolution.world.people[c.personId]&&c.personId!==world.identity.playerId;}))reason='companion-contact-required';
-   if(e.people.includes('reunion')&&index.school.reunionIds.includes(person)&&!facts.some(f=>f?.data?.type==='contact'&&f.subjectIds.includes(person)&&f.subjectIds.includes(world.identity.playerId)&&f.occurredAt.date===day.date))reason='reunion-contact-required';
+   if(!e.issue&&e.people.includes('reunion')&&index.school.reunionIds.includes(person)&&!facts.some(f=>f?.data?.type==='contact'&&f.subjectIds.includes(person)&&f.subjectIds.includes(world.identity.playerId)&&f.occurredAt.date===day.date))reason='reunion-contact-required';
    if(e.roleIds&&!e.roleIds.every(id=>(world.numeric.evolution.world.people[person]?.roleIds??[8,9]).includes(id)))reason='role-condition';
    if(e.affiliation&&!world.numeric.evolution.world.registry.enrollments.some(a=>a.personId===person&&a.classId===e.affiliation.classId&&(e.affiliation.status==='active'?a.until===null:a.until!==null)))reason='affiliation-condition';
    if(e.knowledge&&!e.knowledge.every(k=>r.knowledge.some(x=>x.actorId===(k.actorId==='participant'?person:k.actorId)&&x.claimId===k.claimId&&x.versionId===k.versionId&&(k.belief==='any'||x.belief===k.belief))))reason='knowledge-condition';
@@ -148,8 +164,14 @@ export function buildEventCandidates(world,definitions,{engineering=false}={}){
    if(!slots.length||day.quota?.kind==='protected-day')reason='no-legal-time';
    const participantIds=[person,...new Set((e.companions??[]).map(c=>c.personId).filter(id=>id!==person))],factIds=[...new Set([...e.facts.map(f=>f.id),...(e.companions??[]).map(c=>c.contactFactId)])].sort();
    const c={key:tuple(d.id,participantIds,factIds),definitionId:d.id,topicId:d.topicId,type:d.type,participantIds,factIds,date:day.date,slotIds:slots,content,cooldownDays:p.cooldownDays,exclusionGroups:groups,sameFact:p.sameFact,reason:p.reason};
+   if(e.issue){
+    c.bindingContract=1;c.issueScope=structuredClone(p.issueScope);
+    c.issueOptions=issueOptions(world,e.issue,person,scope=>participantPool(world,scope,index),issues).filter(b=>!lockedBinding||canonicalData(b.roleBindings)===canonicalData(lockedBinding.roleBindings));
+    c.issueOptions=c.issueOptions.filter(b=>(!b.roleBindings.companion||!e.companions?.length||participantIds[1]===b.roleBindings.companion)&&!index.records.some(prior=>candidateConflict({...c,participantIds:boundParticipants(c,b),issueOptions:undefined,issueBindings:[b]},prior,day.date)));
+    if(!c.issueOptions.length)reason='no-legal-issue';
+   }
    const relevant=new Set([...(index.byTopicPerson.get(tuple(c.topicId,[...c.participantIds].sort()))??[]),...(c.sameFact&&c.factIds.length?index.byDefinition.get(c.definitionId)??[]:[]),...c.exclusionGroups.flatMap(g=>index.byExclusion.get(g)??[])]);
-   for(const prior of relevant){const conflict=candidateConflict(c,prior,day.date);if(conflict){reason=conflict;break;}}
+   for(const prior of e.issue?[]:relevant){const conflict=candidateConflict(c,prior,day.date);if(conflict){reason=conflict;break;}}
    if(reason)rejected.push({key:c.key,reason});else candidates.push(c);
   }
  }
@@ -166,3 +188,38 @@ export function weighEventCandidate(world,c,definition,binding,index){
  const riskFactor=definition.eligibility.homeroom==='crisis'?crisisCandidateParameters(world.numeric.evolution.world,[{id:'homeroom-crisis',eligible:true,channels:['composite',...STATE_CHANNELS]}])[0].multiplier*(1+Math.min(4,crisisContext(world).memory/10)):definition.eligibility.homeroom==='support'?1+Math.min(4,Object.values(world.numeric.evolution.world.relationships).filter(x=>x.toId===world.identity.playerId&&x.values['5-1']>60).length/5):1;
  return {...c,rawWeight,k,exposureFactor,...(definition.eligibility.homeroom?{riskFactor}:{}),effectiveWeight:rawWeight*k*exposureFactor*riskFactor};
 }
+
+/** Admission/continuation reuses the original definition and never enumerates a replacement root. */
+export function issueReservationDefinition(world,s){
+ const r=runtime(world),selection=r.history.find(h=>h.type==='event-selection'&&h.data.selected.some(x=>x.eventId===s.eventId));
+ const source=selection.data.catalogueId!==null?r.history.find(h=>h.type==='event-catalogue'&&h.data.catalogueId===selection.data.catalogueId).data:JSON.parse(r.commits.find(c=>c.id===selection.operationId).request).operations.find(o=>o.type==='draw-events');
+ return {definition:source.definitions.find(d=>d.id===s.definitionId),engineering:source.engineering};
+}
+export function validateIssueReservation(world,s,{admission=false}={}){
+ if(s.bindingContract!==1)return;
+ const {definition:d,engineering}=issueReservationDefinition(world,s),index=eventIndex(world);
+ validateBoundSelection(world,s,d,{exact:admission,continuation:!admission,pool:scope=>participantPool(world,scope,index)});
+ if(!admission){
+  // A continuation is not a new candidate. Keep the locked actors and current
+  // interaction restrictions; do not rerun opening progress/numeric thresholds.
+  const e=d.eligibility,person=s.participantIds[0],n=world.numeric.evolution.world,r=runtime(world),day=runtimeCalendarDay(world),slot=day.slots.find(x=>x.id===world.position.slotId);
+  need(world.events.some(e=>e.id===s.eventId),'continuation requires admitted event');
+  need(e.people.some(scope=>participantPool(world,scope,index).includes(person)),'participant outside legal pool');
+  need(!e.roleIds||e.roleIds.every(id=>(n.people[person]?.roleIds??[8,9]).includes(id)),'role-condition');
+  need(!e.affiliation||n.registry.enrollments.some(a=>a.personId===person&&a.classId===e.affiliation.classId&&(e.affiliation.status==='active'?a.until===null:a.until!==null)),'affiliation-condition');
+  need(!e.enrollment||enrollmentEligibility(n,{personId:person,...e.enrollment}).eligible,'enrollment');
+  need((e.companions??[]).every(c=>{const f=index.facts.get(c.contactFactId);return f?.data?.type==='contact'&&f.occurredAt.date===day.date&&f.subjectIds.includes(person)&&f.subjectIds.includes(c.personId)&&(c.personId===world.identity.playerId||!!n.people[c.personId]);}),'companion-contact-required');
+  need((e.knowledge??[]).every(k=>r.knowledge.some(x=>x.actorId===(k.actorId==='participant'?person:k.actorId)&&x.claimId===k.claimId&&x.versionId===k.versionId&&(k.belief==='any'||x.belief===k.belief))),'knowledge-condition');
+  need(!entranceAbsent(world,index.academics,person),'personal-admissions-activity');
+  need(slot&&!slot.protected&&(!e.slotIds.length||e.slotIds.includes(slot.id))&&(!e.dayKinds.length||e.dayKinds.includes(day.kind))&&(e.from===null||day.date>=e.from)&&(e.until===null||day.date<=e.until),'no-legal-continuation-time');
+  need(day.kind!=='aftercare'||aftercareDefinition(d),'students-left-school');
+  return;
+ }
+ // All original calendar, enrollment, numeric and contact qualifications are rerun,
+ // omitting only this reservation's own conflict record. No draw or settlement.
+ const built=buildEventCandidates(world,[d],{engineering,ignoreEventId:s.eventId,lockedBinding:s.issueBindings[0]});
+ need(built.candidates.some(c=>c.participantIds[0]===s.participantIds[0]&&c.issueOptions.some(b=>b.issueId===s.issueBindings[0].issueId&&canonicalData(b.roleBindings)===canonicalData(s.issueBindings[0].roleBindings))),'bound reservation no longer eligible');
+ if(admission)need(built.candidates.some(c=>c.slotIds.includes(s.slotId)),'locked slot no longer legal');
+}
+
+export function issueFollowupAllowed(world,eventId){const s=runtime(world).history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.eventId===eventId);try{if(s)validateIssueReservation(world,s);return true;}catch(error){if(!(error instanceof RangeError))throw error;return false;}}

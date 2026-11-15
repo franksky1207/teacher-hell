@@ -16,12 +16,12 @@ export function choicePermutation(attemptId,eventId,stageId,ids){
  for(let i=order.length-1;i>0;i--){const j=rng.integer(0,i);[order[i],order[j]]=[order[j],order[i]];}
  return order;
 }
-export function outcomeDraw(world,event,stageId,option,variants,view=null){
+export function outcomeDraw(world,event,stageId,option,variants,view=null,namedActors=null){
  need(Array.isArray(variants)&&variants.length>0,'no outcome candidates');
  // Candidate difficulty multipliers (0.93 / 1 / 1.07) remain unapproved;
  // retain neutral dispersion until representative tests and phase 21 calibration.
  const tau=1;
- const actors={teacher:world.identity.playerId,participant:event.participantIds[0],companion:event.participantIds[1]};
+ const actors=namedActors??{teacher:world.identity.playerId,participant:event.participantIds[0],companion:event.participantIds[1]};
  const weights=variants.map(v=>{
   let score=Math.log(v.weight);
   for(const m of v.modifiers??[]){

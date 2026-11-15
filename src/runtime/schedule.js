@@ -1,3 +1,4 @@
+import {rejectedIssueReservation} from './issue-candidates.js';
 import { runtimeCalendarDay,runtimeSlot,aftercareActive,retiredAftercareReservation } from './aftercare-calendar.js';
 import { permitsStoryFollowup } from './story-content.js';
 /** Calendar boundary used by runtime/model and transactions; never imports runtime authority. */
@@ -91,7 +92,7 @@ export function guardCalendarOperation(world,command,op){
 export function finishCalendarSlot(world,op){
  assertShape(op,['type','completedActivityIds']);const r=world.extensions['teacher-hell/world'];need(isFormal(r.plan),'CALENDAR','Formal slot completion requires calendar');
  const {slot}=formalSlot(world);need(Array.isArray(op.completedActivityIds)&&new Set(op.completedActivityIds).size===op.completedActivityIds.length&&JSON.stringify([...op.completedActivityIds].sort())===JSON.stringify([...slot.activityIds].sort()),'TIME_BARRIER','Must acknowledge exactly the occupied activities');
- need(!r.history.some(h=>h.type==='event-selection'&&h.data.selected.some(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!retiredAftercareReservation(world,s.eventId)&&!world.events.some(e=>e.id===s.eventId))),'TIME_BARRIER','Admit the locked event before leaving its slot');
+ need(!r.history.some(h=>h.type==='event-selection'&&h.data.selected.some(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!retiredAftercareReservation(world,s.eventId)&&!rejectedIssueReservation(world,s.eventId)&&!world.events.some(e=>e.id===s.eventId))),'TIME_BARRIER','Admit the locked event before leaving its slot');
  need(!world.events.some(e=>e.choice&&e.choice.confirmedOptionId===null),'TIME_BARRIER','Unresolved player decision blocks time');
  need(!r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor),'DUPLICATE','Slot already completed');
 }
@@ -141,7 +142,7 @@ export function nextVacationOperation(world){
  const plan=world.extensions['teacher-hell/world'].plan,task=plan.vacation;if(!isFormal(plan)||!task)return {status:'idle'};
  const state=world.extensions['teacher-hell/world'];
  if(state.history.some(h=>h.type==='academic')){
-  const reserved=state.history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!retiredAftercareReservation(world,s.eventId)&&!world.events.some(e=>e.id===s.eventId));
+  const reserved=state.history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.date===world.position.date&&s.slotId===world.position.slotId&&!retiredAftercareReservation(world,s.eventId)&&!rejectedIssueReservation(world,s.eventId)&&!world.events.some(e=>e.id===s.eventId));
   if(reserved)return {status:'admission-required',eventId:reserved.eventId};
   if(!state.history.some(h=>h.type==='event-selection'&&h.at.date===world.position.date))return {status:'event-draw-required',catalogueId:state.history.findLast(h=>h.type==='event-catalogue')?.data.catalogueId??null,direction:task.direction,endDate:task.endDate};
  }

@@ -1310,6 +1310,333 @@
         "numericRationale": "自主與支持影響工讀經驗被如何解讀，不能推斷長期就業選擇。；核心 4-3、3-4、7-1；附加 2-3、7-2、1-3。本為逐篇設計理由，尚未進行引擎精準驗證。｜疲勞偏高可能削弱學生分享工讀成果的意願。",
         "review": "author-draft-not-verified"
       }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-08-11",
+        "definitionId": "content:18b-t02-08-11",
+        "version": "1",
+        "topicId": "T02-08",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "家長在親師座談後提到希望孩子一畢業就回家經營店面，學生卻一直看著桌上的升學資料。",
+                "speaker": null,
+                "scene": "school:meeting-room",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "老師，其實我還想繼續讀書，可是家裡都說已經替我安排好了。",
+                "speaker": "participant",
+                "scene": "school:meeting-room",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "先讓學生獨立說明自己想讀的方向",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生表達一項具體學習意願，未由導師替他向家長宣告決定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "老師，其實我還想繼續讀書，可是家裡都說已經替我安排好了。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "action",
+                "text": "協助比較進修與家業安排的實際條件",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生列出費用與可行選項，家長是否接受仍需討論。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "老師，其實我還想繼續讀書，可是家裡都說已經替我安排好了。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "alternative",
+                "text": "徵詢雙方是否願意另約正式進路諮詢",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生知道可以尋求校內資源，未經同意不安排強制會談。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "老師，其實我還想繼續讀書，可是家裡都說已經替我安排好了。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "被安排好人生，連開口都會很難",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師肯定學生願意表達，不把家業或升學其中一條視為唯一正確。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "老師，其實我還想繼續讀書，可是家裡都說已經替我安排好了。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-08-11",
+        "topicId": "T02-08",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-08-11",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "4-3",
+          "3-4",
+          "7-1"
+        ],
+        "additionalCodes": [
+          "4-4",
+          "2-2",
+          "3-1"
+        ],
+        "weights": [
+          0.23,
+          0.19,
+          0.21,
+          0.15,
+          0.13,
+          0.09
+        ],
+        "directions": [
+          1,
+          1,
+          -1,
+          1,
+          1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "這是個別一次性的情境；需按人物學籍、情境時段與既有接觸條件抽選"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "negative"
+      },
+      "editorial": {
+        "title": "家業是安排，不是孩子的承諾",
+        "candidateId": "T02-08-C11",
+        "cause": "家長在親師座談後提到希望孩子一畢業就回家經營店面，學生卻一直看著桌上的升學資料。",
+        "teacherResponsibility": "尊重學生自主，提供合法資訊與適當協助；導師不能替教務、升學或家長做出承諾。",
+        "knowledgeSource": "只知道本次實際對話、訊息及所見，其他人的想法、核准、回覆未經證實。",
+        "distinctiveConsequence": "學生表達一項具體學習意願，未由導師替他向家長宣告決定。／學生列出費用與可行選項，家長是否接受仍需討論。／學生知道可以尋求校內資源，未經同意不安排強制會談。／導師肯定學生願意表達，不把家業或升學其中一條視為唯一正確。",
+        "narrativeTime": "親師座談結束後",
+        "scene": "school:meeting-room",
+        "numericRationale": "主題三核心碼沿用4-3、3-4、7-1；附加4-4、2-2、3-1，依本次情境作候選初擬，待現有公式與合法持有者確認。",
+        "review": "author-draft-not-verified",
+        "qualificationWarning": null
+      }
     }
   ]
 }

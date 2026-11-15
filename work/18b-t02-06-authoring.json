@@ -406,7 +406,7 @@
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生把自介縮短，尚未證明正式面試效果。",
+                  "fact": "學生當場重練一次精簡自介，終於能在時間內講完一段自己的經驗，緊張稍有緩和；正式面試結果仍未知。",
                   "claims": [
                     {
                       "role": "participant",
@@ -415,7 +415,14 @@
                       "visible": false
                     }
                   ],
-                  "changes": [],
+                  "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -0.3
+                    }
+                  ],
                   "historyCodes": [],
                   "next": {
                     "stage": null,
@@ -631,13 +638,14 @@
         "cause": "模擬面試輪到學生時，他把整串得獎名單念得飛快，時間卻快用完了。",
         "teacherResponsibility": "導師可協助核對資訊與提出諮詢方向，不替學生決定升學、不代管他人資料或擔保錄取。",
         "knowledgeSource": "僅學生當面或遠距訊息及本次實際接觸；家長與第三方行為仍是未核實說法。",
-        "distinctiveConsequence": "學生選出一段實際經驗，不再只是列舉獎項。／學生把自介縮短，尚未證明正式面試效果。／學生知道該查閱哪些官方資料，沒有得到標準答案。／導師肯定準備投入，學生願意試著重新組織敘述。",
+        "distinctiveConsequence": "學生選出一段實際經驗，不再只是列舉獎項。／學生當場重練一次精簡自介，終於能在時間內講完一段自己的經驗，緊張稍有緩和；正式面試結果仍未知。／學生知道該查閱哪些官方資料，沒有得到標準答案。／導師肯定準備投入，學生願意試著重新組織敘述。",
         "narrativeTime": "午休",
         "scene": "school:classroom",
         "qualificationsNeeded": "T02-05至07高三專屬升學制度須依實際校曆、當年度招生日程、個人路徑與候選API完成資格接線，現僅工程隔離初稿。",
         "numericRationale": "口語表達較弱與焦慮提高面試練習難度，仍有正向備戰動機。；核心 3-1、2-2、3-3；附加 1-4、3-2、4-2。本為逐篇設計理由，尚未進行引擎精準驗證。",
         "review": "author-draft-not-verified",
-        "gradeEligibilityBlocker": "正式入學資格／學年與校曆條件尚須由目前引擎支援的資料條件限制；不得進入正式事件池。"
+        "gradeEligibilityBlocker": "正式入學資格／學年與校曆條件尚須由目前引擎支援的資料條件限制；不得進入正式事件池。",
+        "numericCausalityNote": "僅act選項產生可觀察的短期情緒變化，依當場反應更新2-2 -0.3；其他分支不憑空更動長期能力，原候選六碼仍待校準。"
       }
     },
     {

@@ -73,93 +73,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生能獨立說明列式第一步，接著自己指出下一段還缺一個條件，決定把尚未解開的地方保留。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生發現這次仍在背誦以前看過的解法，願意回到原題條件重新想，不把流暢當成已理解。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-2",
@@ -502,135 +416,7 @@ export default [
                     }
                   ]
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生查到活動的拍攝告知包含公開宣傳用途，決定先明確表示自己僅同意展出作品，不同意肖像公開。",
-                    "claims": [
-                      {
-                        "role": "participant",
-                        "statement": "作品可以放，我不想上學校粉專。",
-                        "belief": "believed",
-                        "visible": false
-                      }
-                    ],
-                    "changes": [
-                      {
-                        "role": "teacher",
-                        "holder": "work",
-                        "code": "11-2",
-                        "delta": -1
-                      }
-                    ],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": [
-                        {
-                          "fromRole": "participant",
-                          "toRole": "teacher",
-                          "claimIndex": 0,
-                          "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
-                        }
-                      ]
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生找不到承辦實際拍攝與發布規則，選擇先保留作品及肖像授權的區別，不憑口頭說法保證避鏡。",
-                    "claims": [
-                      {
-                        "role": "participant",
-                        "statement": "作品可以放，我不想上學校粉專。",
-                        "belief": "believed",
-                        "visible": false
-                      }
-                    ],
-                    "changes": [
-                      {
-                        "role": "teacher",
-                        "holder": "work",
-                        "code": "11-2",
-                        "delta": -1
-                      }
-                    ],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": [
-                        {
-                          "fromRole": "participant",
-                          "toRole": "teacher",
-                          "claimIndex": 0,
-                          "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
-                        }
-                      ]
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-3",
@@ -777,14 +563,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "teacher",
-                    "holder": "work",
-                    "code": "11-2",
-                    "delta": -1
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -840,14 +619,7 @@ export default [
                         "visible": false
                       }
                     ],
-                    "changes": [
-                      {
-                        "role": "teacher",
-                        "holder": "work",
-                        "code": "11-2",
-                        "delta": -1
-                      }
-                    ],
+                    "changes": [],
                     "historyCodes": [],
                     "next": {
                       "stage": null,
@@ -903,14 +675,7 @@ export default [
                         "visible": false
                       }
                     ],
-                    "changes": [
-                      {
-                        "role": "teacher",
-                        "holder": "work",
-                        "code": "11-2",
-                        "delta": -1
-                      }
-                    ],
+                    "changes": [],
                     "historyCodes": [],
                     "next": {
                       "stage": null,
@@ -962,14 +727,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "teacher",
-                    "holder": "work",
-                    "code": "11-2",
-                    "delta": -1
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1019,14 +777,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "teacher",
-                    "holder": "work",
-                    "code": "11-2",
-                    "delta": -1
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1076,14 +827,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "teacher",
-                    "holder": "work",
-                    "code": "11-2",
-                    "delta": -1
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1281,7 +1025,14 @@ export default [
                   "outcome": {
                     "fact": "學生發現新版文章確實補上前版未回答的反例，願意將這個改進留在個人紀錄，即使沒有獲獎。",
                     "claims": [],
-                    "changes": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 1
+                      }
+                    ],
                     "historyCodes": [],
                     "next": {
                       "stage": null,
@@ -1609,93 +1360,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生重新操作安全的本機測試，找到可重現的輸入條件，將現場故障整理為可說明的限制。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生重跑時沒有再出現故障，便保留當天的紀錄和未知條件，不把這次正常當成問題已修好。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-2",
@@ -2291,93 +1956,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生想出能同時維持友情與個人讀書時間的婉拒說法，準備由自己回覆，不保證同儕接受。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生仍怕拒絕影響關係，先保留訊息草稿並決定只承諾目前可負擔的一次分享。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-4",
@@ -2572,111 +2151,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生從書中挑出一段與自身經驗相反的觀點，能說明為何想再讀，留下有意義的問號。",
-                    "claims": [],
-                    "changes": [
-                      {
-                        "role": "teacher",
-                        "holder": "work",
-                        "code": "11-2",
-                        "delta": -1
-                      }
-                    ],
-                    "historyCodes": [
-                      "H04-1"
-                    ],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生只能回憶大略情節，決定先翻回有標記的一頁，不為了證明讀完就強作解釋。",
-                    "claims": [],
-                    "changes": [
-                      {
-                        "role": "teacher",
-                        "holder": "work",
-                        "code": "11-2",
-                        "delta": -1
-                      }
-                    ],
-                    "historyCodes": [
-                      "H04-1"
-                    ],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-2",
@@ -3366,93 +2841,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生找到自己整理資料的修改紀錄與展板版本，能具體表述貢獻，但尚未取得團隊署名共識。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生發現工作多經口頭分配、少有存檔紀錄，決定寫下能親自確認的範圍，不推定缺席組員故意漏名。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-2",
@@ -3607,14 +2996,7 @@ export default [
               "outcome": {
                 "fact": "學生找到承辦提供的貢獻註記程序，整理自己的證據供確認；名牌是否調整仍待主辦及團隊核對。",
                 "claims": [],
-                "changes": [
-                  {
-                    "role": "teacher",
-                    "holder": "work",
-                    "code": "11-2",
-                    "delta": -1
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3656,14 +3038,7 @@ export default [
                   "outcome": {
                     "fact": "學生找到承辦提供的貢獻註記程序，整理自己的證據供確認；名牌是否調整仍待主辦及團隊核對。",
                     "claims": [],
-                    "changes": [
-                      {
-                        "role": "teacher",
-                        "holder": "work",
-                        "code": "11-2",
-                        "delta": -1
-                      }
-                    ],
+                    "changes": [],
                     "historyCodes": [],
                     "next": {
                       "stage": null,
@@ -3705,14 +3080,7 @@ export default [
                   "outcome": {
                     "fact": "學生尚未取得正式更正方式，先保留自己的工作與當日展出照片，不擅自修改團隊公開名牌。",
                     "claims": [],
-                    "changes": [
-                      {
-                        "role": "teacher",
-                        "holder": "work",
-                        "code": "11-2",
-                        "delta": -1
-                      }
-                    ],
+                    "changes": [],
                     "historyCodes": [],
                     "next": {
                       "stage": null,
@@ -3750,14 +3118,7 @@ export default [
               "outcome": {
                 "fact": "師生整理可由本人選擇提出的具體問題，不代替承辦、組員或權責人員作成承諾。",
                 "claims": [],
-                "changes": [
-                  {
-                    "role": "teacher",
-                    "holder": "work",
-                    "code": "11-2",
-                    "delta": -1
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3793,14 +3154,7 @@ export default [
               "outcome": {
                 "fact": "學生保留自己有權存取的原始成果及版本，未擅改別人資料，也沒有把未同意者當作已授權。",
                 "claims": [],
-                "changes": [
-                  {
-                    "role": "teacher",
-                    "holder": "work",
-                    "code": "11-2",
-                    "delta": -1
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3836,14 +3190,7 @@ export default [
               "outcome": {
                 "fact": "教師承接學生對展示與成果的在意，不要求以公開、得獎或他人的同意來證明自己的努力有價值。",
                 "claims": [],
-                "changes": [
-                  {
-                    "role": "teacher",
-                    "holder": "work",
-                    "code": "11-2",
-                    "delta": -1
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -4018,93 +3365,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生能說出地方史訪談中自己如何交叉比對兩份說法，保留未能核實的地方，不誇大升學效益。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生發現部分訪查只有單一口述來源，將侷限誠實標出，不因擔心普通就包裝成確證史實。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-2",
@@ -4369,93 +3630,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生找到課程公告只要求繳交作品，決定明確提出不希望延伸參賽的意願，未替科任宣布規定。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生發現公告提到可能選送但未寫明選擇方式，準備向科任詢問授權與參賽程序，不直接斷言可以退出。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-2",
@@ -4713,93 +3888,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生比對照片發現標籤確實貼反，將受影響的圖表與其他未確認因素分開列出。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生只能確認照片拍攝時標籤不同，仍不清楚測量當時的順序，決定不把推測當成唯一錯因。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-2",
@@ -5451,93 +4540,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生能用一句話說明原研究範圍與缺少的資料，決定保留『不知道』並提出後續查核方向。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生練習後發現有幾項回答其實只靠猜，決定刪掉沒有來源的補充，不假裝評審當時已接受。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-3",
@@ -5766,93 +4769,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生說明結尾改動是為了回應開頭埋下的問題，願意再向讀者確認效果，不要求加分。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生發現新增的結尾與前文語氣不一致，決定保留兩版再修改，不把多改一次就當成一定進步。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-2",
@@ -6117,93 +5034,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生講出不同解法的核心變換，發現有一處需特別驗證的條件，決定先請科任核對再考慮展示。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生推理到最後才發現用了原題沒有給的假設，願意記下錯誤來源，不因分數較低就被排除表達。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-2",
@@ -6504,93 +5335,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生在自己的剪輯稿中找到會透露家庭資訊的片段，決定先維持原有課內觀看界線，另行徵求當事人意見。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生發現光是消音仍能從畫面辨識受訪者，決定重新評估能否公開，不拿技術遮蔽取代同意。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-3",
@@ -6812,93 +5557,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生列出易碎連接處與運送需要的固定方式，準備要求承辦提出具體保管方案，不宣稱已有保險。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生整理後發現材質連一般搬動都可能受損，決定先詢問是否可改用照片展示，不冒然交出唯一原作。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-2",
@@ -7179,125 +5838,7 @@ export default [
                     }
                   ]
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生清楚說明只願在私人場合分享喜悅，導師記錄界線，沒有自動通知家長或班群。",
-                    "claims": [
-                      {
-                        "role": "participant",
-                        "statement": "我很開心，可是每次都變成誰比較強。",
-                        "belief": "believed",
-                        "visible": false
-                      }
-                    ],
-                    "changes": [],
-                    "historyCodes": [
-                      "H04-1"
-                    ],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": [
-                        {
-                          "fromRole": "participant",
-                          "toRole": "teacher",
-                          "claimIndex": 0,
-                          "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
-                        }
-                      ]
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生仍在考慮要不要和家人談比較的感受，決定先保留決定權，不把沉默當作已同意公告。",
-                    "claims": [
-                      {
-                        "role": "participant",
-                        "statement": "我很開心，可是每次都變成誰比較強。",
-                        "belief": "believed",
-                        "visible": false
-                      }
-                    ],
-                    "changes": [],
-                    "historyCodes": [
-                      "H04-1"
-                    ],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": [
-                        {
-                          "fromRole": "participant",
-                          "toRole": "teacher",
-                          "claimIndex": 0,
-                          "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
-                        }
-                      ]
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-2",
@@ -7610,93 +6151,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生整理出公開連結的更新步驟，發現內容可以用共同文件交接而不用交出私人帳密。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生發現部分資料連結其實綁定私人帳號，先標記不能交接的部分，等待合法的管理安排。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-2",
@@ -7858,14 +6313,7 @@ export default [
               "outcome": {
                 "fact": "學生得知有同學自願了解維護流程，但仍須確認對方意願及合法帳號權限，不寫成交接完成。",
                 "claims": [],
-                "changes": [
-                  {
-                    "role": "teacher",
-                    "holder": "work",
-                    "code": "11-2",
-                    "delta": -1
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -7907,14 +6355,7 @@ export default [
                   "outcome": {
                     "fact": "學生得知有同學自願了解維護流程，但仍須確認對方意願及合法帳號權限，不寫成交接完成。",
                     "claims": [],
-                    "changes": [
-                      {
-                        "role": "teacher",
-                        "holder": "work",
-                        "code": "11-2",
-                        "delta": -1
-                      }
-                    ],
+                    "changes": [],
                     "historyCodes": [],
                     "next": {
                       "stage": null,
@@ -7956,14 +6397,7 @@ export default [
                   "outcome": {
                     "fact": "目前仍無人自願接手，學生決定整理公開資料清單並保留自己可承擔的期限，不強迫其他人承接。",
                     "claims": [],
-                    "changes": [
-                      {
-                        "role": "teacher",
-                        "holder": "work",
-                        "code": "11-2",
-                        "delta": -1
-                      }
-                    ],
+                    "changes": [],
                     "historyCodes": [],
                     "next": {
                       "stage": null,
@@ -8001,14 +6435,7 @@ export default [
               "outcome": {
                 "fact": "師生整理可由本人選擇提出的具體問題，不代替承辦、組員或權責人員作成承諾。",
                 "claims": [],
-                "changes": [
-                  {
-                    "role": "teacher",
-                    "holder": "work",
-                    "code": "11-2",
-                    "delta": -1
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -8044,14 +6471,7 @@ export default [
               "outcome": {
                 "fact": "學生保留自己有權存取的原始成果及版本，未擅改別人資料，也沒有把未同意者當作已授權。",
                 "claims": [],
-                "changes": [
-                  {
-                    "role": "teacher",
-                    "holder": "work",
-                    "code": "11-2",
-                    "delta": -1
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -8087,14 +6507,7 @@ export default [
               "outcome": {
                 "fact": "教師承接學生對展示與成果的在意，不要求以公開、得獎或他人的同意來證明自己的努力有價值。",
                 "claims": [],
-                "changes": [
-                  {
-                    "role": "teacher",
-                    "holder": "work",
-                    "code": "11-2",
-                    "delta": -1
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -8269,93 +6682,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生重讀回饋卡，發現觀眾特別肯定資料圖的清楚呈現，願意保留自己喜歡的美編與外部回饋。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生發現卡片幾乎沒提版面，決定向願意回饋的人提出具體問題，不把沉默解讀為否定。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-2",
@@ -8692,93 +7019,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生誠實計時發現開場佔去一半，決定把補充工作留在附件，仍需再確認是否能在三分鐘說完。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生試讀仍超過時限，承認現在無法全部保留，準備聚焦一個結果而不要求主辦替他延長。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-4",
@@ -8964,93 +7205,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "specific-evidence",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "1-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生確認新問題確實來自原始資料中的意外趨勢，願意把它列為待驗證發現，不偷改原假設。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                },
-                {
-                  "id": "boundary-remains",
-                  "weight": 3,
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "4-4",
-                      "influence": 0.55
-                    }
-                  ],
-                  "outcome": {
-                    "fact": "學生發現新問題只有少數例子支持，決定在成果中標明推測性質，不把它寫成第二個研究結論。",
-                    "claims": [],
-                    "changes": [],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  }
-                }
-              ]
+              }
             },
             {
               "id": "strategy-2",

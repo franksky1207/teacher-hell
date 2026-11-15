@@ -2823,14 +2823,7 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "導師先核對學生是否真正接觸到科任，不能把想問當作已詢問。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "老師都很忙，我怕問的都是笨問題。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
+                "claims": [],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -2855,14 +2848,7 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
-                    }
-                  ]
+                  "transmissions": []
                 }
               },
               "variants": [
@@ -2879,14 +2865,7 @@ export default [
                   ],
                   "outcome": {
                     "fact": "學生出示自己帶來的一張科任解題提示，導師確認這份提示確實回答了原本寫下的題號；尚不代表全部觀念已通。",
-                    "claims": [
-                      {
-                        "role": "participant",
-                        "statement": "老師都很忙，我怕問的都是笨問題。",
-                        "belief": "believed",
-                        "visible": false
-                      }
-                    ],
+                    "claims": [],
                     "changes": [
                       {
                         "role": "participant",
@@ -2918,14 +2897,7 @@ export default [
                           "participant"
                         ]
                       ],
-                      "transmissions": [
-                        {
-                          "fromRole": "participant",
-                          "toRole": "teacher",
-                          "claimIndex": 0,
-                          "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
-                        }
-                      ]
+                      "transmissions": []
                     }
                   }
                 },
@@ -2942,14 +2914,7 @@ export default [
                   ],
                   "outcome": {
                     "fact": "學生說昨天走到門口又轉身，沒有拿到回覆；他願意保留原題，教師不能把猶豫說成科任拒絕。",
-                    "claims": [
-                      {
-                        "role": "participant",
-                        "statement": "老師都很忙，我怕問的都是笨問題。",
-                        "belief": "believed",
-                        "visible": false
-                      }
-                    ],
+                    "claims": [],
                     "changes": [
                       {
                         "role": "participant",
@@ -2981,14 +2946,7 @@ export default [
                           "participant"
                         ]
                       ],
-                      "transmissions": [
-                        {
-                          "fromRole": "participant",
-                          "toRole": "teacher",
-                          "claimIndex": 0,
-                          "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
-                        }
-                      ]
+                      "transmissions": []
                     }
                   }
                 }
@@ -3001,14 +2959,7 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "導師與學生演練如何只問一個明確題號；沒有保證科任明天能回覆。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "老師都很忙，我怕問的都是笨問題。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
+                "claims": [],
                 "changes": [
                   {
                     "role": "teacher",
@@ -3040,14 +2991,7 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
-                    }
-                  ]
+                  "transmissions": []
                 }
               }
             },
@@ -3058,14 +3002,7 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師沒有替學生傳訊息或把未提問認定為不努力。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "老師都很忙，我怕問的都是笨問題。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
+                "claims": [],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -3090,14 +3027,7 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
-                    }
-                  ]
+                  "transmissions": []
                 }
               }
             },
@@ -3108,14 +3038,7 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "導師承認學生害怕打擾他人的感受，尚未替科任表態。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "老師都很忙，我怕問的都是笨問題。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
+                "claims": [],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -3140,14 +3063,7 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
-                    }
-                  ]
+                  "transmissions": []
                 }
               }
             }
@@ -8341,14 +8257,7 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師只依學生願意說明的內容整理進度，沒有代替家長同意。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "這些都是家裡希望我做到的，我還沒想好。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
+                "claims": [],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -8373,14 +8282,7 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
-                    }
-                  ]
+                  "transmissions": []
                 }
               },
               "variants": [
@@ -8505,14 +8407,7 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師陪學生練習如何說明目標不同，沒有替他通知家長或保證對方接受。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "這些都是家裡希望我做到的，我還沒想好。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
+                "claims": [],
                 "changes": [
                   {
                     "role": "teacher",
@@ -8544,14 +8439,7 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
-                    }
-                  ]
+                  "transmissions": []
                 }
               }
             },
@@ -8562,14 +8450,7 @@ export default [
               "emotional": false,
               "outcome": {
                 "fact": "教師讓學生自行決定談話時機，沒有把沉默等同於同意家長安排。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "這些都是家裡希望我做到的，我還沒想好。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
+                "claims": [],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -8594,14 +8475,7 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
-                    }
-                  ]
+                  "transmissions": []
                 }
               }
             },
@@ -8612,14 +8486,7 @@ export default [
               "emotional": true,
               "outcome": {
                 "fact": "教師尊重學生與家長可能有不同期待，沒有替任何一方判定對錯。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "這些都是家裡希望我做到的，我還沒想好。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
+                "claims": [],
                 "changes": [],
                 "historyCodes": [],
                 "next": {
@@ -8644,14 +8511,7 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
-                    }
-                  ]
+                  "transmissions": []
                 }
               }
             }

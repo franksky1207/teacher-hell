@@ -42,8 +42,11 @@ test('18-B2 13: empathy replacement and student-to-teacher relationship stay dir
  const e=w.events.find(x=>x.id===eventId);
  const student=e.participantIds[0],teacher=w.identity.playerId;
  // The numeric source is the existing student person record, not an authored trait flag.
- const original=availableStoryChoices(w,e,story.stages[0]).map(x=>x.id);
- assert.ok(original.includes('private')||original.includes('empathetic'));
+ const low=structuredClone(w),high=structuredClone(w);
+ low.numeric.evolution.world.people[student].values['1-3']=40;
+ high.numeric.evolution.world.people[student].values['1-3']=80;
+ assert.ok(availableStoryChoices(low,e,story.stages[0]).some(x=>x.id==='private'));
+ assert.ok(availableStoryChoices(high,e,story.stages[0]).some(x=>x.id==='empathetic'));
  const before=w.numeric.evolution.world.relationships[directedKey(student,teacher)]?.values?.['5-1'];
  w=apply(w,[storyAction(eventId,'select','consent')]);
  w=apply(w,[storyAction(eventId,'confirm')]);

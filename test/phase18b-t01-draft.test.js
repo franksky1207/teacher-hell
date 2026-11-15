@@ -131,3 +131,33 @@ test('T01 new representative next-day contacts resume without pre-claiming resol
   assert.deepEqual(restoreWorldState(JSON.stringify(w)),w);
  }
 });
+
+
+test('T01 eight causal revisions: meaning, transmitted claims and single source bindings',()=>{
+ const exemplars=["01-22","02-09","03-01","04-01","05-01","06-03","07-02","08-07"];
+ const incorrect=['H01-3'];
+ const variantProfiles=new Set(),weights=new Set(),directions=new Set();
+ for(const id of exemplars){
+  const record=records.find(r=>r.story.resourceId==='content:18b-t01-'+id),s=record.story,d=record.definition;
+  const bind=catalogue.bindings.find(b=>b.definitionId===d.id);
+  assert.deepEqual(bind,{definitionId:d.id,...record.binding});
+  assert.equal(bind.sources.length,6);
+  assert.ok(Math.abs(d.weights.reduce((a,b)=>a+b,0)-1)<1e-10);
+  weights.add(d.weights.join(','));directions.add(d.directions.join(','));
+  for(const opt of s.stages.flatMap(stage=>stage.choices.flatMap(c=>[c,...(c.replacement?[c.replacement]:[])]))){
+   for(const out of [opt.outcome,...(opt.variants??[]).map(v=>v.outcome)]){
+    assert.ok(!(out.historyCodes??[]).some(h=>incorrect.includes(h)),'no academic threat code '+id);
+    (out.claims??[]).forEach((cl,i)=>{
+     if(cl.role==='participant'){
+      assert.equal(cl.belief,'believed');
+      assert.ok(out.world.transmissions.some(t=>t.claimIndex===i&&t.fromRole==='participant'&&t.toRole==='teacher'),'student speech reaches teacher '+id);
+     }
+    });
+   }
+   if(opt.variants){variantProfiles.add(opt.variants.map(v=>v.weight).join(','));}
+  }
+ }
+ assert.ok(weights.size>=6,'event weights should reflect context');
+ assert.ok(directions.size>=5,'semantic directions must differ');
+ assert.ok(variantProfiles.size>=6,'variation weights should not be one macro');
+});

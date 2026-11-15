@@ -63,7 +63,7 @@ export default [
                   }
                 ],
                 "historyCodes": [
-                  "H01-3"
+                  "H04-6"
                 ],
                 "next": {
                   "stage": null,
@@ -135,21 +135,29 @@ export default [
               },
               "replacement": {
                 "id": "refer-guided",
-                "text": "整理原卷逐題加總與待查疑點",
+                "text": "陪學生練習不帶指責的科任複核問法",
                 "kind": "support",
                 "emotional": false,
                 "outcome": {
-                  "fact": "師生依具體資料形成可核對的行動方案，但尚未發生後續採行或科任核准。",
+                  "fact": "導師引導學生把原卷題號與不帶指責的詢問句整理好，是否加分仍待科任親自查核。",
                   "claims": [],
                   "changes": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "delta": -3
+                    },
                     {
                       "role": "teacher",
                       "holder": "work",
                       "code": "11-2",
-                      "delta": -2
+                      "delta": -1
                     }
                   ],
-                  "historyCodes": [],
+                  "historyCodes": [
+                    "H04-6"
+                  ],
                   "next": {
                     "stage": null,
                     "afterDays": 0
@@ -173,14 +181,23 @@ export default [
                       ]
                     ],
                     "transmissions": []
-                  }
+                  },
+                  "relationshipChanges": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "code": "5-3",
+                      "delta": 1,
+                      "basis": "interaction"
+                    }
+                  ]
                 },
                 "requires": [
                   {
                     "type": "numeric",
                     "role": "teacher",
                     "holder": "person",
-                    "code": "3-2",
+                    "code": "3-1",
                     "min": 60,
                     "max": 100
                   }
@@ -299,18 +316,18 @@ export default [
         "10-4"
       ],
       "weights": [
-        0.2,
         0.19,
-        0.17,
-        0.16,
+        0.25,
+        0.1,
+        0.23,
         0.15,
-        0.13
+        0.08
       ],
       "directions": [
         1,
-        -1,
         1,
-        -1,
+        1,
+        1,
         1,
         -1
       ],
@@ -337,6 +354,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於指定合法非保護時段提出本件情境；後續須保留原事件因果，不以相同分類碼推定為同件。"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "player-person",
+        "school"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -584,6 +612,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -831,6 +870,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -1078,6 +1128,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -1325,6 +1386,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -1572,6 +1644,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -1819,6 +1902,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -2066,6 +2160,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -2313,6 +2418,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -2560,6 +2676,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -2815,6 +2942,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -3062,6 +3200,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -3309,6 +3458,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -3564,6 +3724,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -3811,6 +3982,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -4058,6 +4240,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -4313,6 +4506,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -4560,6 +4764,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -4807,6 +5022,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -5054,6 +5280,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -5301,6 +5538,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -5548,6 +5796,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -5795,6 +6054,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -6042,6 +6312,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -6289,6 +6570,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -6575,6 +6867,17 @@ export default [
           "scope": "issue"
         }
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   }
 ];

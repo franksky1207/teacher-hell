@@ -246,6 +246,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -493,6 +504,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -740,6 +762,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -987,6 +1020,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -1234,6 +1278,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -1481,6 +1536,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -1728,6 +1794,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -1975,6 +2052,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -2033,7 +2121,7 @@ export default [
                   {
                     "role": "participant",
                     "statement": "我擔心家人只看見還差十分。",
-                    "belief": "uncertain",
+                    "belief": "believed",
                     "visible": false
                   }
                 ],
@@ -2068,7 +2156,14 @@ export default [
                       "participant"
                     ]
                   ],
-                  "transmissions": []
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師說明自己目前的顧慮與想法。"
+                    }
+                  ]
                 }
               }
             },
@@ -2127,8 +2222,8 @@ export default [
                   {
                     "role": "participant",
                     "holder": "person",
-                    "code": "4-3",
-                    "delta": 1
+                    "code": "2-2",
+                    "delta": -1
                   }
                 ],
                 "historyCodes": [],
@@ -2156,7 +2251,121 @@ export default [
                   ],
                   "transmissions": []
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "engages",
+                  "weight": 2.1,
+                  "outcome": {
+                    "fact": "學生自行整理出一段能向家人說明進步與仍不滿意的話，但尚未實際告知家人。",
+                    "claims": [],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": -1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": []
+                    }
+                  },
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "4-1",
+                      "influence": 0.9
+                    }
+                  ]
+                },
+                {
+                  "id": "hesitates",
+                  "weight": 2.7,
+                  "outcome": {
+                    "fact": "學生決定暫不向家人主動談分數，先保留自己的失望與擔憂。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我怕家人只問為什麼還差十分。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": 1
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面向導師說明自己目前的顧慮與想法。"
+                        }
+                      ]
+                    }
+                  },
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 1.25
+                    }
+                  ]
+                }
+              ]
             },
             {
               "id": "empathy",
@@ -2199,114 +2408,7 @@ export default [
                   ],
                   "transmissions": []
                 }
-              },
-              "variants": [
-                {
-                  "id": "engages",
-                  "weight": 3,
-                  "outcome": {
-                    "fact": "學生指出本次進步的具體題型，願意承認成績確實改善。",
-                    "claims": [],
-                    "changes": [
-                      {
-                        "role": "participant",
-                        "holder": "person",
-                        "code": "2-2",
-                        "delta": -2
-                      }
-                    ],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  },
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "2-4",
-                      "influence": 1.3
-                    }
-                  ]
-                },
-                {
-                  "id": "hesitates",
-                  "weight": 2,
-                  "outcome": {
-                    "fact": "學生仍不滿意沒有達到八十分，暫時不想向家人說明。",
-                    "claims": [
-                      {
-                        "role": "participant",
-                        "statement": "我怕家人只問為什麼還差十分。",
-                        "belief": "uncertain",
-                        "visible": false
-                      }
-                    ],
-                    "changes": [
-                      {
-                        "role": "participant",
-                        "holder": "person",
-                        "code": "2-2",
-                        "delta": 1
-                      }
-                    ],
-                    "historyCodes": [],
-                    "next": {
-                      "stage": null,
-                      "afterDays": 0
-                    },
-                    "world": {
-                      "subjects": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "witnesses": [
-                        "teacher",
-                        "participant"
-                      ],
-                      "affected": [
-                        "participant"
-                      ],
-                      "contacts": [
-                        [
-                          "teacher",
-                          "participant"
-                        ]
-                      ],
-                      "transmissions": []
-                    }
-                  },
-                  "modifiers": [
-                    {
-                      "role": "participant",
-                      "holder": "person",
-                      "code": "2-2",
-                      "influence": 1.25
-                    }
-                  ]
-                }
-              ]
+              }
             }
           ],
           "next": null
@@ -2334,20 +2436,20 @@ export default [
         "3-4"
       ],
       "weights": [
-        0.2,
+        0.23,
+        0.23,
         0.19,
         0.17,
-        0.16,
-        0.15,
-        0.13
+        0.1,
+        0.08
       ],
       "directions": [
         1,
-        -1,
+        1,
+        1,
         1,
         -1,
-        1,
-        -1
+        1
       ],
       "eligibility": {
         "people": [
@@ -2372,6 +2474,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於指定合法非保護時段提出本件情境；後續須保留原事件因果，不以相同分類碼推定為同件。"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -2619,6 +2732,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -2866,6 +2990,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -3113,6 +3248,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -3360,6 +3506,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -3607,6 +3764,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -3854,6 +4022,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -4101,6 +4280,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -4348,6 +4538,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -4595,6 +4796,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -4850,6 +5062,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -5097,6 +5320,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -5344,6 +5578,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -5591,6 +5836,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -5838,6 +6094,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -6085,6 +6352,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -6332,6 +6610,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -6579,6 +6868,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -6826,6 +7126,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -7073,6 +7384,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -7320,6 +7642,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   }
 ];

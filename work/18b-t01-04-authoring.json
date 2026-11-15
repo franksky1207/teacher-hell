@@ -62,7 +62,7 @@
                     }
                   ],
                   "historyCodes": [
-                    "H01-3"
+                    "H04-6"
                   ],
                   "next": {
                     "stage": null,
@@ -134,21 +134,29 @@
                 },
                 "replacement": {
                   "id": "refer-guided",
-                  "text": "整理原卷逐題加總與待查疑點",
+                  "text": "陪學生練習不帶指責的科任複核問法",
                   "kind": "support",
                   "emotional": false,
                   "outcome": {
-                    "fact": "師生依具體資料形成可核對的行動方案，但尚未發生後續採行或科任核准。",
+                    "fact": "導師引導學生把原卷題號與不帶指責的詢問句整理好，是否加分仍待科任親自查核。",
                     "claims": [],
                     "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": -3
+                      },
                       {
                         "role": "teacher",
                         "holder": "work",
                         "code": "11-2",
-                        "delta": -2
+                        "delta": -1
                       }
                     ],
-                    "historyCodes": [],
+                    "historyCodes": [
+                      "H04-6"
+                    ],
                     "next": {
                       "stage": null,
                       "afterDays": 0
@@ -172,14 +180,23 @@
                         ]
                       ],
                       "transmissions": []
-                    }
+                    },
+                    "relationshipChanges": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "code": "5-3",
+                        "delta": 1,
+                        "basis": "interaction"
+                      }
+                    ]
                   },
                   "requires": [
                     {
                       "type": "numeric",
                       "role": "teacher",
                       "holder": "person",
-                      "code": "3-2",
+                      "code": "3-1",
                       "min": 60,
                       "max": 100
                     }
@@ -284,8 +301,8 @@
         "teacherResponsibility": "導師可協助查證、保存資料、聯繫科任與適當行政，但不得越權改分、定罪或保證裁定。",
         "knowledgeSource": "學生當面陳述及可取得的卷面、公告或紀錄；推測與傳聞須待查證。",
         "distinctiveConsequence": "學生和教師以本人原卷副本重算可見得分，差異被列出但未認定正式成績應更改。／教師協助寫出題號及加總疑問的複核申請，閱卷教師尚未答覆。／學生保留原卷與個人照片，不補筆或改寫分數，正式核對仍待進行。／教師肯定提出可核對疑問的權利，不保證一定算錯或一定補分。",
-        "editorialStatus": "awaiting-separated-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。",
+        "editorialStatus": "awaiting-independent-recheck",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜依 Gemini 審查修訂 H碼、方向權重、傳達、解鎖替換、七組變體與持久來源（本分支未放行）。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -313,18 +330,18 @@
           "10-4"
         ],
         "weights": [
-          0.2,
           0.19,
-          0.17,
-          0.16,
+          0.25,
+          0.1,
+          0.23,
           0.15,
-          0.13
+          0.08
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           -1
         ],
@@ -351,6 +368,17 @@
           "sameFact": true,
           "reason": "在籍學生於指定合法非保護時段提出本件情境；後續須保留原事件因果，不以相同分類碼推定為同件。"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "player-person",
+          "school"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -612,6 +640,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -873,6 +912,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -1134,6 +1184,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -1395,6 +1456,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -1656,6 +1728,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -1917,6 +2000,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -2178,6 +2272,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -2439,6 +2544,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -2700,6 +2816,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -2969,6 +3096,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -3230,6 +3368,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -3491,6 +3640,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -3760,6 +3920,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -4021,6 +4192,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -4282,6 +4464,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -4551,6 +4744,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -4812,6 +5016,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -5073,6 +5288,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -5334,6 +5560,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -5595,6 +5832,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -5856,6 +6104,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -6117,6 +6376,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -6378,6 +6648,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -6639,6 +6920,17 @@
           "sameFact": true,
           "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
         }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -6938,6 +7230,17 @@
         "author": "Codex root authoring process",
         "sourceBasis": "現行issue-candidates及17D/18B契約；虛構案例，未宣稱外部制度查證。",
         "editorialStatus": "awaiting-separated-review"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     }
   ]

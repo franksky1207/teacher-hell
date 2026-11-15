@@ -57,7 +57,7 @@
                     {
                       "role": "participant",
                       "statement": "我不想讓其他組員知道這次談話。",
-                      "belief": "uncertain",
+                      "belief": "believed",
                       "visible": false
                     }
                   ],
@@ -92,7 +92,14 @@
                         "participant"
                       ]
                     ],
-                    "transmissions": []
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生當面向導師說明自己目前的顧慮與想法。"
+                      }
+                    ]
                   }
                 }
               },
@@ -151,8 +158,8 @@
                     {
                       "role": "participant",
                       "holder": "person",
-                      "code": "3-1",
-                      "delta": 0.5
+                      "code": "2-2",
+                      "delta": -1
                     }
                   ],
                   "historyCodes": [],
@@ -184,7 +191,7 @@
                 "variants": [
                   {
                     "id": "engages",
-                    "weight": 3,
+                    "weight": 1.6,
                     "outcome": {
                       "fact": "學生私下練習請求發言的一句話，但下堂課尚未驗證是否能用。",
                       "claims": [],
@@ -233,14 +240,14 @@
                   },
                   {
                     "id": "hesitates",
-                    "weight": 2,
+                    "weight": 2.9,
                     "outcome": {
                       "fact": "學生只把話寫下來，今天仍不願口頭練習。",
                       "claims": [
                         {
                           "role": "participant",
                           "statement": "我害怕下次又被打斷。",
-                          "belief": "uncertain",
+                          "belief": "believed",
                           "visible": false
                         }
                       ],
@@ -275,7 +282,14 @@
                             "participant"
                           ]
                         ],
-                        "transmissions": []
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生當面向導師說明自己目前的顧慮與想法。"
+                          }
+                        ]
                       }
                     },
                     "modifiers": [
@@ -283,7 +297,7 @@
                         "role": "participant",
                         "holder": "person",
                         "code": "2-2",
-                        "influence": 1.25
+                        "influence": 1.3
                       }
                     ]
                   }
@@ -329,7 +343,16 @@
                       ]
                     ],
                     "transmissions": []
-                  }
+                  },
+                  "relationshipChanges": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "code": "5-1",
+                      "delta": 1,
+                      "basis": "interaction"
+                    }
+                  ]
                 }
               }
             ],
@@ -357,19 +380,19 @@
           "3-1"
         ],
         "weights": [
-          0.2,
-          0.19,
-          0.17,
-          0.16,
           0.15,
-          0.13
+          0.22,
+          0.21,
+          0.1,
+          0.21,
+          0.11
         ],
         "directions": [
-          1,
           -1,
           1,
-          -1,
           1,
+          1,
+          -1,
           -1
         ],
         "eligibility": {
@@ -402,7 +425,7 @@
         "teacherResponsibility": "承接個人教學回饋、確認可分享資訊與反映管道；科任有教學決定權，依法需處理事項不以選項取代。",
         "knowledgeSource": "午餐由在籍學生當面自願提供自己的資料或說法；教師只知本次接觸內容，缺席角色無自動知情。",
         "distinctiveConsequence": "學生把一個觀點寫在紙上，教師不替缺席組員判定霸占發言。／教師協助整理限時輪流的教學建議，是否採用仍由任課決定。／雙方試說請求發言的句子，未宣稱下次一定獲得空間。／教師表達理解，學生選擇暫不具名反映，內容未自動送給科任。",
-        "editorialStatus": "awaiting-separated-review",
+        "editorialStatus": "awaiting-independent-recheck",
         "author": "Codex root authoring process",
         "version": "1",
         "sourceBasis": "虛構情境；制度界線依現行17D、18B及03權責契約，不宣稱外部制度研究已完成。",
@@ -410,7 +433,19 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
-        "numericCausalityNote": "八件校準：A來源、B加權、C替換及D合法變化均已填入可執行欄位；尚需逐件精準測試與獨立審查。"
+        "numericCausalityNote": "八件校準：A來源、B加權、C替換及D合法變化均已填入可執行欄位；尚需逐件精準測試與獨立審查。",
+        "revisionNotes": "｜依 Gemini 審查修訂 H碼、方向權重、傳達、解鎖替換、七組變體與持久來源（本分支未放行）。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "classroom",
+          "participant"
+        ],
+        "valence": "negative"
       }
     },
     {
@@ -673,6 +708,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -935,6 +981,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -1197,6 +1254,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -1459,6 +1527,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -1729,6 +1808,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -1991,6 +2081,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -2253,6 +2354,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -2523,6 +2635,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -2785,6 +2908,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -3047,6 +3181,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -3309,6 +3454,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -3571,6 +3727,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -3833,6 +4000,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -4095,6 +4273,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -4357,6 +4546,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -4619,6 +4819,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -4881,6 +5092,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -5143,6 +5365,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -5405,6 +5638,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     },
     {
@@ -5667,6 +5911,17 @@
           "L1"
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。"
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
       }
     }
   ]

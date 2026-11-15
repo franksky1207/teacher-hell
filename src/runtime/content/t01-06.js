@@ -246,6 +246,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -493,6 +504,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -558,7 +580,7 @@ export default [
                   }
                 ],
                 "historyCodes": [
-                  "H01-3"
+                  "H04-6"
                 ],
                 "next": {
                   "stage": null,
@@ -631,9 +653,9 @@ export default [
               "variants": [
                 {
                   "id": "engages",
-                  "weight": 3,
+                  "weight": 2.8,
                   "outcome": {
-                    "fact": "學生親自調低每天新增卡的上限；原本六百張到期卡片仍存在。",
+                    "fact": "學生自己調低每日新卡上限並保留原有卡片，雖然較安心，六百張積欠仍待分批處理。",
                     "claims": [],
                     "changes": [
                       {
@@ -674,20 +696,20 @@ export default [
                       "role": "participant",
                       "holder": "person",
                       "code": "3-3",
-                      "influence": 1.3
+                      "influence": 0.8
                     }
                   ]
                 },
                 {
                   "id": "hesitates",
-                  "weight": 2,
+                  "weight": 1.5,
                   "outcome": {
                     "fact": "學生決定先觀察兩天，尚未更動任何設定。",
                     "claims": [
                       {
                         "role": "participant",
                         "statement": "我怕調整後漏掉考試範圍。",
-                        "belief": "uncertain",
+                        "belief": "believed",
                         "visible": false
                       }
                     ],
@@ -722,15 +744,22 @@ export default [
                           "participant"
                         ]
                       ],
-                      "transmissions": []
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面向導師說明自己目前的顧慮與想法。"
+                        }
+                      ]
                     }
                   },
                   "modifiers": [
                     {
                       "role": "participant",
                       "holder": "person",
-                      "code": "2-2",
-                      "influence": 1.25
+                      "code": "2-3",
+                      "influence": 1.4
                     }
                   ]
                 }
@@ -748,8 +777,8 @@ export default [
                   {
                     "role": "participant",
                     "holder": "person",
-                    "code": "3-2",
-                    "delta": 0.5
+                    "code": "2-2",
+                    "delta": -1
                   }
                 ],
                 "historyCodes": [],
@@ -847,16 +876,16 @@ export default [
         "11-2"
       ],
       "weights": [
-        0.2,
-        0.19,
+        0.24,
+        0.23,
         0.17,
+        0.13,
         0.16,
-        0.15,
-        0.13
+        0.07
       ],
       "directions": [
-        1,
         -1,
+        1,
         1,
         -1,
         1,
@@ -885,6 +914,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於指定合法非保護時段接觸導師；僅記錄已確認事實，不以同主題或日期推定相同問題。"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "player-work"
+      ],
+      "valence": "negative"
     }
   },
   {
@@ -1132,6 +1172,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -1379,6 +1430,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -1626,6 +1688,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -1873,6 +1946,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -2120,6 +2204,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -2367,6 +2462,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -2614,6 +2720,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -2861,6 +2978,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -3108,6 +3236,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -3355,6 +3494,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -3602,6 +3752,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -3849,6 +4010,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -4096,6 +4268,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -4343,6 +4526,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -4590,6 +4784,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -4837,6 +5042,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -5084,6 +5300,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   },
   {
@@ -5331,6 +5558,17 @@ export default [
         "sameFact": true,
         "reason": "在籍學生於午餐非保護時段主動提出本件具體情境；不含夏冬營及離班學生，不保證重現"
       }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
     }
   }
 ];

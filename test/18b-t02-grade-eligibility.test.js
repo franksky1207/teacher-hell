@@ -81,5 +81,10 @@ test('18-B T02: pre-graduation subject stories use reachable recorded stages',()
  }
  const laterCase=byId.get('content:18b-t02-07-07');
  assert.ok(laterCase.eligibility.entrance.some(g=>g.kind==='subject-preparing'));
+ assert.deepEqual(laterCase.eligibility.people,['reunion']);
+ assert.deepEqual(laterCase.eligibility.dayKinds,['aftercare']);
+ assert.deepEqual(laterCase.eligibility.slotIds,['private']);
+ assert.ok(laterCase.eligibility.entrance.some(g=>g.kind==='milestone-completed'&&g.value==='subject-register'));
  assert.ok(!laterCase.eligibility.dayKinds.includes('school'));
+ validateEventDefinitions([laterCase]);
 });

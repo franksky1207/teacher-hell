@@ -23,7 +23,9 @@
     "grade3Gated": 78,
     "grade3EligibilityPending": 0,
     "admissionsPhaseEligibilityPendingReview": 78,
-    "originalAdmissionsGradeEligibilityBlockers": 78
+    "originalAdmissionsGradeEligibilityBlockers": 78,
+    "preGraduationSubjectReachabilityRepaired": 6,
+    "postGraduationSubjectLocationHeld": 1
   },
   "subtopics": [
     {
@@ -368,7 +370,8 @@
     "2026-11-16：精準修正T02-05-28畢典彩排及T02-07-24放榜後校園兩個無保證時點；新增僅涵蓋T02年級/升學門檻的小型CI工作流程，尚未取得執行結果。Foundation 18/18通過與T02專項驗證分開記錄。",
     "2026-11-16：修正reunion scope校友重逢事件因e.facts無靜態contact ID而永遠被拒的缺陷，新增從正式world facts搜尋同日導師/校友contact並綁定factIds；已增正反測試但未取得執行證據。T02-06-20/08-28校正時段與場景。",
     "2026-11-16：已將T02的5項精準測試引入既有Foundation workflow，GitHub Actions 43773458115成功（23 pass / 0 fail）；不再誤稱『未跑Node』，但僅限5例並不等於208件初稿全數編譯或獨立審稿。多餘獨立workflow已移除。",
-    "2026-11-16：將T02-03/05/06/07中78則高三事件的過時『年級資格未接線』審稿文字更正為『年級已完成、招生時序/在籍/客觀前因仍待審』，避免後續重複開工。"
+    "2026-11-16：將T02-03/05/06/07中78則高三事件的過時『年級資格未接線』審稿文字更正為『年級已完成、招生時序/在籍/客觀前因仍待審』，避免後續重複開工。",
+    "2026-11-16：發現正式高三畢典6/1早於分科報名6/18，原七則subject-preparing故事中的六則school晚自習／課堂版本會永不觸發。已將這六則用合法早期升學里程碑重接並同步調整文本，07-07考場地點則保留個別畢業後資格阻斷。Foundation run 43773838140：24 pass / 0 fail，含6項T02測試；全208逐篇編譯及獨立審稿仍未完成。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -845,5 +848,35 @@
     "scope": "T02-03/05/06/07作者檔中高三年級門檻的審稿註記",
     "rule": "年級資格已接線，但不可混為升學階段、學分通知、合法日時或正式語意審核通過",
     "remaining": "所有208工程隔離，reviewed/published仍0"
+  },
+  "subjectTimingRepair": {
+    "date": "2026-11-16",
+    "cause": "正式2029高三畢典2029-06-01，subject-register里程碑在畢典之後，原本七則school時段分科故事都綁subject-preparing造成時序上不可能觸發",
+    "sixCorrected": [
+      "T02-07-01",
+      "T02-07-04",
+      "T02-07-08",
+      "T02-07-09",
+      "T02-07-11",
+      "T02-07-25"
+    ],
+    "strategy": "以原有gsat-published、active、stars-screen、application-result按情節取代過晚subject-preparing；必要文字從已經備考改成考慮分科，實質四選項與結果保留",
+    "held": [
+      "T02-07-07：正式考場公告後的位置/交通故事仍需個別考試報名及畢業後接觸的資料，故保留原件不亂改"
+    ],
+    "verifiedCalendar": {
+      "graduation": "2029-06-01",
+      "source": "src/calendar/fixed.js",
+      "subjectRegistration": "2029-06-18 (versioned calendar base; actual free-day adjusted dynamically)",
+      "sourceRegistration": "src/calendar/admissions.js"
+    },
+    "tests": {
+      "source": "test/18b-t02-grade-eligibility.test.js",
+      "workflowRun": "https://github.com/franksky1207/teacher-hell/actions/runs/43773838140",
+      "commit": "0ad2ec3811a8cbaa0f14d2209667504b6f75ef57",
+      "result": "24 pass; 0 fail (6 T02 focused tests included)",
+      "scope": "node focused core/contracts+T02; 208 per-story compilation and independent content review still 0"
+    },
+    "status": "六則年級/階段接線完成並有真實回歸測試；不等於全面放行"
   }
 }

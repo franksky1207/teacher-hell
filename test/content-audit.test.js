@@ -7,6 +7,7 @@ import {eventWorld} from './support/event-fixtures.js';
 import {beginDemo,apply,storyAction,advanceDemo} from './support/story-scenario.js';
 import {readStory,storyState,availableStoryChoices} from '../src/runtime/story.js';
 import {targetRecord} from '../src/changes/targets.js';
+import {PILOT_18B_T10_03_RECORDS} from './fixtures/18b-t10-03-pilot.js';
 import {runtimeOf,restoreWorldState} from '../src/runtime/model.js';
 
 const catalogue=phase17dSampleCatalogue();

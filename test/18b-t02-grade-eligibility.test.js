@@ -6,7 +6,7 @@ import {eventWorld,definition} from './support/event-fixtures.js';
 import {buildEventCandidates,validateEventDefinitions,findReunionContact} from '../src/runtime/event-candidates.js';
 import {gradeAt,assessmentCalendar,SENIOR_CALENDAR_VERSION} from '../src/calendar/calendar.js';
 import {admissionCalendar} from '../src/calendar/admissions.js';
-import {entranceCondition} from '../src/runtime/entrance.js';
+import {entranceCondition,graduatedEntrantsForSubjectRegister} from '../src/runtime/entrance.js';
 
 test('18-B T02: year-three-only story cannot enter year-one candidate pool',()=>{
  const world=eventWorld(1,'2026-09-10','early'),currentGrade=gradeAt(world.position.date,world.numeric.evolution.world.registry.cohortStart);
@@ -87,4 +87,18 @@ test('18-B T02: pre-graduation subject stories use reachable recorded stages',()
  assert.ok(laterCase.eligibility.entrance.some(g=>g.kind==='milestone-completed'&&g.value==='subject-register'));
  assert.ok(!laterCase.eligibility.dayKinds.includes('school'));
  validateEventDefinitions([laterCase]);
+});
+
+
+test('18-B T02: post-ceremony subject registration retains graduated students, not transfer-outs or other cohorts',()=>{
+ const registry={classes:{own:{cohortStart:2026},other:{cohortStart:2025}},enrollments:[
+  {personId:'grad',classId:'own',status:'graduated'},
+  {personId:'transfer',classId:'own',status:'transferred-out'},
+  {personId:'unfinished',classId:'own',status:'incomplete'},
+  {personId:'older',classId:'other',status:'graduated'},
+  {personId:'not-adopted',classId:'own',status:'graduated'}
+ ]};
+ const entrance={cohort:2026,students:{grad:{continuous:true},transfer:{},unfinished:{},older:{}}};
+ assert.deepEqual(graduatedEntrantsForSubjectRegister(registry,entrance),['grad']);
+ assert.deepEqual(graduatedEntrantsForSubjectRegister(registry,null),[]);
 });

@@ -1,7 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {auditContent} from '../scripts/content-audit.js';
-import {PHASE17D_READY_STORIES,phase17dSampleCatalogue} from '../src/runtime/story-content.js';
+import {PHASE17D_READY_STORIES,phase17dSampleCatalogue,DEMO_STORY} from '../src/runtime/story-content.js';
+import {buildEventCandidates,validateEventDefinitions,eventIndex,numericSources} from '../src/runtime/event-candidates.js';
+import {eventWorld} from './support/event-fixtures.js';
+import {beginDemo,apply,storyAction,advanceDemo} from './support/story-scenario.js';
+import {readStory} from '../src/runtime/story.js';
+import {runtimeOf,restoreWorldState} from '../src/runtime/model.js';
 
 const catalogue=phase17dSampleCatalogue();
 const row=(i=0)=>({
@@ -191,4 +196,81 @@ test('18-B pilot: 20 isolated T10-03 event definitions satisfy formal contracts 
  assert.equal(report.catalogueReady,0);
  assert.equal(report.publishedInNewCareers,'not-assessed');
  assert.equal(report.duplicates.length,0,'inspect meaningful duplicates separately');
+});
+
+
+/** 18-B causal authority tests: existing runtime engine, no official T10-03 registration.
+ * Separate engine capability proofs from editorial quality of the 20 trial stories.
+ */
+const reachChoice=(world,eventId)=>{
+ let w=world;
+ while(readStory(w,eventId).canNext)w=apply(w,[storyAction(eventId,'next')]);
+ return w;
+};
+const choose=(world,eventId,optionId)=>apply(
+ apply(world,[storyAction(eventId,'select',optionId)]),
+ [storyAction(eventId,'confirm')]
+);
+
+test('18-B causal witness A: existing participant numeric state changes legal candidate eligibility',()=>{
+ const world=eventWorld(74);
+ const d=structuredClone(phase17dSampleCatalogue().definitions.find(x=>x.topicId==='T01-01'));
+ d.eligibility.dayKinds=[];d.eligibility.slotIds=[];
+ const base=buildEventCandidates(world,[d]).candidates;
+ const people=[...new Set(base.map(c=>c.participantIds[0]))];
+ assert.ok(people.length>=2,'need at least two real eligible students');
+ const numbers=people.map(id=>({id,value:numericSources(world,id,['participant'],['1-3'])[0]})).sort((a,b)=>a.value-b.value);
+ const min=numbers[0],max=numbers.at(-1);
+ assert.ok(max.value>min.value,'need different actual student numeric inputs');
+ const threshold=(min.value+max.value)/2;
+ d.eligibility.numeric=[{source:'participant',code:'1-3',min:threshold,max:100}];
+ assert.doesNotThrow(()=>validateEventDefinitions([d]));
+ const filtered=buildEventCandidates(world,[d]);
+ assert.ok(filtered.candidates.some(c=>c.participantIds[0]===max.id),'higher participant score should meet threshold');
+ assert.ok(!filtered.candidates.some(c=>c.participantIds[0]===min.id),'lower participant score must not meet threshold');
+ assert.ok(filtered.rejected.some(c=>c.participantIds?.includes(min.id)&&c.reason==='numeric-condition'),'actual engine should report numeric-condition');
+});
+
+test('18-B causal witness B: persisted H03-1 event history unlocks cumulative candidate for the same student',()=>{
+ const {world:initial,eventId}=beginDemo(1,DEMO_STORY);
+ const person=runtimeOf(initial).history.find(h=>h.type==='event-selection').data.selected[0].participantIds[0];
+ const d=structuredClone(phase17dSampleCatalogue().definitions.find(x=>x.topicId==='T10-04'));
+ d.type='cumulative';d.eligibility.dayKinds=[];d.eligibility.slotIds=[];
+ d.eligibility.history=[{code:'H03-1',minimum:1,status:'any'}];
+ assert.doesNotThrow(()=>validateEventDefinitions([d]));
+ const before=buildEventCandidates(initial,[d]);
+ assert.ok(!before.candidates.some(c=>c.participantIds[0]===person));
+ assert.ok(before.rejected.some(c=>c.participantIds?.includes(person)&&c.reason==='history-threshold'));
+ const chosen=choose(reachChoice(initial,eventId),eventId,'listen');
+ const afterFact=runtimeOf(chosen).facts.find(f=>f.categoryCodes?.includes('H03-1')&&f.subjectIds?.includes(person));
+ assert.ok(afterFact,'first day's confirmed outcome should be stored as participant-scoped H03-1');
+ const after=buildEventCandidates(chosen,[d]);
+ assert.ok(after.candidates.some(c=>c.participantIds[0]===person),'real runtime history index should admit the same student');
+ const restored=restoreWorldState(JSON.stringify(chosen));
+ assert.ok(buildEventCandidates(restored,[d]).candidates.some(c=>c.participantIds[0]===person),'qualification must survive save/load');
+});
+
+test('18-B causal witness C: different actual first-day choices produce different resumed second-day stages',()=>{
+ const outcomes=[];
+ for(const firstChoice of ['listen','angry']){
+  const {world:initial,eventId}=beginDemo(1,DEMO_STORY);
+  let w=choose(reachChoice(initial,eventId),eventId,firstChoice);
+  const firstFact=runtimeOf(w).facts.findLast(f=>f.data?.type==='story-action');
+  assert.ok(firstFact);
+  w=apply(w,[storyAction(eventId,'finish')]);
+  const restored=restoreWorldState(JSON.stringify(w));
+  assert.deepEqual(readStory(w,eventId),readStory(restored,eventId));
+  w=restored;
+  let steps=0;
+  while(!readStory(w,eventId).canResume&&steps++<25)w=advanceDemo(w);
+  assert.ok(readStory(w,eventId).canResume);
+  w=apply(w,[storyAction(eventId,'resume')]);
+  const secondDay=readStory(w,eventId);
+  outcomes.push({firstChoice,stage:secondDay.stage,page:secondDay.page.text});
+  w=choose(reachChoice(w,eventId),eventId,'plan');
+  const lastFact=runtimeOf(w).facts.findLast(f=>f.data?.type==='story-action');
+  assert.ok(lastFact.causeIds.includes(firstFact.id),'second-day consequence links back to first-day result');
+ }
+ assert.notEqual(outcomes[0].stage,outcomes[1].stage,'first-day options cause different resumed narrative stages');
+ assert.notEqual(outcomes[0].page,outcomes[1].page,'resumed dialogue is genuinely different');
 });

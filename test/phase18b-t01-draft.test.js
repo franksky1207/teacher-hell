@@ -123,6 +123,13 @@ test('T01 new representative next-day contacts resume without pre-claiming resol
   w=confirm(w,eventId,option);
   const selected=runtimeOf(w).facts.findLast(f=>f.eventId===eventId&&f.data.type==='story-action');
   assert.ok(selected,'selected event must record its actual fact');
+  // The hesitant student has not sent a request; no next-day teacher reply is permitted.
+  if(id==='03-01'&&selected.data.variantId==='hesitates'){
+   w=apply(w,[storyAction(eventId,'finish')]);
+   for(let i=0;i<16;i++)w=advanceDemo(w);
+   assert.equal(readStory(w,eventId).canResume,false,'no invented follow-up if student deferred the request');
+   continue;
+  }
   w=apply(w,[storyAction(eventId,'finish')]);
   for(let i=0;i<40&&!readStory(w,eventId).canResume;i++)w=advanceDemo(w);
   assert.ok(readStory(w,eventId).canResume,'next-day story should be resumable '+id);

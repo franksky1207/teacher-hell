@@ -364,7 +364,8 @@
     "2026-11-16：新增專項年級資格回歸測試原始碼（未實際執行）。分發公布、畢典彩排、校友重逢等仍缺特定行事曆/學籍條件，列阻斷不冒稱已解決；保留零正式上架。",
     "2026-11-16：再將T02-07中6則持續分科準備故事加入正式entrance.subject-preparing條件，加上原01共7則；05-01有gsat-published，總計8則實際升學狀態門檻。不對分發公告等未有合法條件者套用不實門檻。",
     "2026-11-16：已針對正式admissions state核對升學門檻的實際資料欄位（completed、applications、offers、stars），並增補年級3正向與milestone-completed正反回歸測試。分科分發/畢典彩排及面試確切日期尚缺合法時序接線，不能放行；不改208篇全文。",
-    "2026-11-16：精準修正T02-05-28畢典彩排及T02-07-24放榜後校園兩個無保證時點；新增僅涵蓋T02年級/升學門檻的小型CI工作流程，尚未取得執行結果。Foundation 18/18通過與T02專項驗證分開記錄。"
+    "2026-11-16：精準修正T02-05-28畢典彩排及T02-07-24放榜後校園兩個無保證時點；新增僅涵蓋T02年級/升學門檻的小型CI工作流程，尚未取得執行結果。Foundation 18/18通過與T02專項驗證分開記錄。",
+    "2026-11-16：修正reunion scope校友重逢事件因e.facts無靜態contact ID而永遠被拒的缺陷，新增從正式world facts搜尋同日導師/校友contact並綁定factIds；已增正反測試但未取得執行證據。T02-06-20/08-28校正時段與場景。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -813,5 +814,26 @@
       "limitation": "這是core/contracts Foundation，不包含新T02專項測試"
     },
     "release": "PR #69保持Draft；仍208工程隔離、上架0"
+  },
+  "reunionEligibilityFix": {
+    "date": "2026-11-16",
+    "source": "src/runtime/event-candidates.js",
+    "function": "findReunionContact",
+    "behavior": "reunion候選必須有世界紀錄中同日、同時包括該校友和玩家導師的type=contact證據；會以動態找到的該contact ID納入候選factIds，避免靜態e.facts為空造成永遠拒絕；無證據仍拒絕",
+    "regression": "test/18b-t02-grade-eligibility.test.js中新增同日有效、隔日無效、錯人無效等精準測試",
+    "status": "原始碼完成，尚未取得此專項測試通過結果"
+  },
+  "caseFixContinuation": {
+    "date": "2026-11-16",
+    "corrected": [
+      "T02-06-20：改為申請篩選結果後上課日早自習談即將面試的焦慮；保留existing application-screened狀態門檻，不假裝面試當日有合法時段",
+      "T02-08-28：週末校友於校外咖啡店和導師碰面，且必須有同日真實contact事實，避免未確認可進入的校園中庭"
+    ],
+    "stillBlocked": [
+      "T02-07-22：分科分發結果公布後的校外聯絡，尚無正式分發節點及原生後續窗口接線",
+      "T02-07-27：分科分發結果公布後在高三教室，原制度時序不合法；不可上架",
+      "T02-07-28及其他校友故事：當日contact判斷已修，但正式遊戲是否能取得真實contact資料及跨學年歷史角色仍要專項端對端證明"
+    ],
+    "testing": "只做檔案/資料靜態核對及寫入小型Node測試；未自行跑Node，未宣稱CI成功"
   }
 }

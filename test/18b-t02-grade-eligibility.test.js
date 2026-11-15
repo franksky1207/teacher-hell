@@ -6,7 +6,7 @@ import {buildEventCandidates,validateEventDefinitions} from '../src/runtime/even
 import {gradeAt} from '../src/calendar/calendar.js';
 
 test('18-B T02: year-three-only story cannot enter year-one candidate pool',()=>{
- const world=eventWorld(1),currentGrade=gradeAt(world.position.date,world.numeric.evolution.world.registry.cohortStart);
+ const world=eventWorld(1,'2026-09-10','early'),currentGrade=gradeAt(world.position.date,world.numeric.evolution.world.registry.cohortStart);
  assert.equal(currentGrade,1);
  const eligible=definition('test:grade-one');
  eligible.eligibility.grades=[1];

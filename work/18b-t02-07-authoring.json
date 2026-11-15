@@ -359,7 +359,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "學生週末傳來一張交通地圖，才知道正式考場在外縣市。",
+                "text": "高三畢業後、分科測驗完成報名的某個平日晚間，校友傳訊息給導師，附上準考資訊與交通地圖，說正式考場在外縣市，讓他有點不知所措。",
                 "speaker": null,
                 "scene": "home:living-room",
                 "cast": [],
@@ -367,7 +367,7 @@
               },
               {
                 "order": 2,
-                "text": "我以前都在學校考，這次真的不知道怎麼去。",
+                "text": "我以前都在熟悉的學校考，這次考場在外縣市，我真的不知道怎麼去才保險。",
                 "speaker": "participant",
                 "scene": "home:living-room",
                 "cast": [
@@ -603,14 +603,13 @@
         ],
         "eligibility": {
           "people": [
-            "student"
+            "reunion"
           ],
           "dayKinds": [
-            "weekend",
-            "holiday"
+            "aftercare"
           ],
           "slotIds": [
-            "afternoon"
+            "private"
           ],
           "from": null,
           "until": null,
@@ -623,6 +622,10 @@
           ],
           "entrance": [
             {
+              "kind": "milestone-completed",
+              "value": "subject-register"
+            },
+            {
               "kind": "subject-preparing"
             }
           ]
@@ -631,7 +634,7 @@
           "cooldownDays": 45,
           "exclusionGroups": [],
           "sameFact": true,
-          "reason": "同一學生單次具體情境；尚未確定的高三與日期資格不可視為已完成"
+          "reason": "畢業後考場聯絡的單次情境，需正式報名與同日校友聯繫證據；不自動視為在校生或可每天抽選"
         }
       },
       "binding": {
@@ -648,18 +651,18 @@
       "editorial": {
         "title": "學生週末傳來一張交通地圖，才知道正式考場",
         "candidateId": "T02-07-C07",
-        "cause": "學生週末傳來一張交通地圖，才知道正式考場在外縣市。",
+        "cause": "高三畢業生完成分科報名並收到正式考場資訊後，主動就外縣市交通路線詢問導師。",
         "teacherResponsibility": "導師可協助核對資訊與提出諮詢方向，不替學生決定升學、不代管他人資料或擔保錄取。",
         "knowledgeSource": "僅學生當面或遠距訊息及本次實際接觸；家長與第三方行為仍是未核實說法。",
         "distinctiveConsequence": "學生確認需要依准考資訊查地址，未自行假定考場已更改。／學生列出可行路線及出發時間，仍需自行確認交通營運。／學生知道要討論的安排，未擅自推定家長同意。／導師回應焦慮，沒有保證交通必然順利。",
-        "narrativeTime": "考前週末",
+        "narrativeTime": "高三畢典後、分科報名完成且教師仍在aftercare階段的平日晚間",
         "scene": "home:living-room",
         "qualificationsNeeded": "T02-05至07高三專屬升學制度須依實際校曆、當年度招生日程、個人路徑與候選API完成資格接線，現僅工程隔離初稿。",
         "numericRationale": "陌生考場的不確定性造成焦慮，家庭負擔可能限制交通安排。；核心 3-2、2-2、4-1；附加 2-3、7-2、3-4。本為逐篇設計理由，尚未進行引擎精準驗證。",
         "review": "author-draft-not-verified",
-        "timeEligibilityNote": "週末下午時段",
+        "timeEligibilityNote": "aftercare/private，並需校友與導師同日已有合法contact紀錄",
         "communicationMode": "remote-not-physical-contact",
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已改用正式高三aftercare、分科報名里程碑、個人分科準備狀態與當日校友接觸證據；精準Node端對端及逐篇審稿仍待確認，上架0。"
       }
     },
     {

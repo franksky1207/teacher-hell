@@ -1,5 +1,6 @@
 import { canonicalData } from '../changes/settlement.js';
 import { seniorRosterAt } from './academic-roster.js';
+import { aftercareActive } from './aftercare-calendar.js';
 /** Authoritative bridge from existing calendar, identity and academic journal. */
 import { admissionCalendar,ADMISSIONS_POLICY } from '../calendar/admissions.js';
 import { calendarDay,semester,planMode,THREE_YEAR,SENIOR_CALENDAR_VERSION } from '../calendar/calendar.js';
@@ -7,6 +8,14 @@ import { need } from '../academics/rules.js';
 import { assertShape } from '../player/panel.js';
 function mockEvidence(r,id,date){return ['morning','afternoon'].every(phase=>r.facts.some(f=>f.order<=r.history.length&&f.occurredAt.date===date&&f.data.mockSummary?.nodeId===id&&f.data.mockSummary.phase===phase)&&r.history.some(h=>h.type==='slot-complete'&&h.at.date===date&&h.at.slotId===phase));}
 const runtime=w=>w.extensions['teacher-hell/world'];
+/** Preserve the graduated cohort for the already-scheduled subject-registration phase.
+ * Transferred-out, suspended and students of other cohorts are never inferred as graduates.
+ */
+export function graduatedEntrantsForSubjectRegister(registry,entrance){
+ if(!entrance?.students)return [];
+ return [...new Set(registry.enrollments.filter(e=>e.status==='graduated'&&registry.classes[e.classId]?.cohortStart===entrance.cohort&&Object.hasOwn(entrance.students,e.personId)).map(e=>e.personId))].sort();
+}
+
 export function entranceCalendarEnabled(w){const p=runtime(w).plan,registry=w.numeric.evolution.world.registry;return p.calendarVersion===SENIOR_CALENDAR_VERSION&&planMode(p)===THREE_YEAR&&registry.academicYear-registry.cohortStart===2;}
 export function entranceCompatible(w,s){const registry=w.numeric.evolution.world.registry;return entranceCalendarEnabled(w)&&s.version===2&&!s.admissions.some(a=>a.year===registry.cohortStart+2);}
 export function entranceInput(w,op,s){
@@ -15,8 +24,9 @@ export function entranceInput(w,op,s){
  const r=runtime(w),registry=w.numeric.evolution.world.registry,date=w.position.date,cohort=registry.cohortStart;
  const input={action:'entrance',node:op.node,date,policy:ADMISSIONS_POLICY};
  const roster=seniorRosterAt(w,date),knownEnrollments=new Set(roster.knownEnrollmentIds);
- const people=roster.people.map(p=>p.id).filter(id=>s.students[id]).sort();
- const continuousIds=people.filter(id=>{const entries=registry.enrollments.filter(e=>e.personId===id&&knownEnrollments.has(e.id)).sort((a,b)=>a.from.localeCompare(b.from));return entries[0]?.from<=semester(`${cohort}:autumn`).start&&entries.every(e=>registry.classes[e.classId].cohortStart===cohort)&&entries.every((e,n)=>!e.until||e.until>=date||e.status==='change-class'&&entries[n+1]?.from<=e.until);});
+ const graduates=op.node==='subject-register'&&aftercareActive(w)?graduatedEntrantsForSubjectRegister(registry,s.entrance):[];
+ const people=[...new Set([...roster.people.map(p=>p.id).filter(id=>s.students[id]),...graduates])].sort();
+ const continuousIds=people.filter(id=>{if(graduates.includes(id))return s.entrance.students[id]?.continuous===true;const entries=registry.enrollments.filter(e=>e.personId===id&&knownEnrollments.has(e.id)).sort((a,b)=>a.from.localeCompare(b.from));return entries[0]?.from<=semester(`${cohort}:autumn`).start&&entries.every(e=>registry.classes[e.classId].cohortStart===cohort)&&entries.every((e,n)=>!e.until||e.until>=date||e.status==='change-class'&&entries[n+1]?.from<=e.until);});
  if(op.node==='init'){
   return {...input,cohort,people,continuousIds,seed:`${w.identity.careerId}:${cohort}:${ADMISSIONS_POLICY}`};
  }

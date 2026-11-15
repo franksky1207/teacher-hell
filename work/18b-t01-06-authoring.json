@@ -3065,7 +3065,93 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "willing-to-act",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "4-3",
+                        "influence": 0.8
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生在提案列出聊天與共讀的分段時間，決定自行向朋友提議，但尚未取得朋友同意。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "not-yet-ready",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "4-4",
+                        "influence": 1
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生已寫出分段時間提案，卻決定暫不打擾朋友，先保留個人計畫。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "strategy-2",
@@ -3261,7 +3347,7 @@
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
         "numericCausalityNote": "修正誤用數值語意後的六項候選：3-4−、2-3+、4-1+、9-2−、6-1+、9-3+。只使用持有者合法欄位，權重以具體起因判定。",
-        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。"
       },
       "binding": {
         "sources": [
@@ -5759,7 +5845,100 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "willing-to-act",
+                    "weight": 1.7,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-3",
+                        "influence": 0.75
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生考慮暫停睡前清單，決定今晚先把待辦留到白天；實際睡眠改善尚待觀察。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": -1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "not-yet-ready",
+                    "weight": 2.9,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 1.2
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生尚未決定停用睡前清單，先觀察自己的負擔感受，不能當作睡眠問題已改善。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "strategy-4",
@@ -5876,7 +6055,7 @@
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
         "numericCausalityNote": "修正誤用數值語意後的六項候選：3-4−、2-3+、4-1+、3-3−、2-2+、7-4−。只使用持有者合法欄位，權重以具體起因判定。",
-        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。"
       },
       "binding": {
         "sources": [

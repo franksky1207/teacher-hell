@@ -3980,7 +3980,93 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "willing-to-act",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-1",
+                        "influence": 0.8
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生整理了自己的進步證據，願意自行向家長分享其中一項，還沒有得到家長反應。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "not-yet-ready",
+                    "weight": 2.6,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 1.1
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生已整理進步證據，卻仍不願向家長提出，先保留作為自己的紀錄。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -4074,7 +4160,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生說希望被看見有多做練習，教師未推定家長只重視名次的動機。／學生從自己的資料選出可分享的前後差異，未提供他人分數。／教師先詢問是否需要協助及可分享範圍，沒有自動聯絡家長。／教師肯定已提供的學習證據，不承諾家長會改變評價。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -7060,7 +7146,100 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "willing-to-act",
+                    "weight": 1.8,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "4-1",
+                        "influence": 0.9
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生選定一類可練的題型，願意先做一題再評估，仍不能宣稱下一次已及格。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": -1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "not-yet-ready",
+                    "weight": 2.8,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 1.2
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生先挑出一類可練的題型，但因被取笑的難受，今天不願意再做題。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -7147,7 +7326,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "學生說願意談距及格還差哪些題，教師不把58分說成已及格。／學生挑一個目前可練的題型，教師未保證再練一定跨過及格線。／教師詢問被取笑的情況與支持需求，依實際程序處理言語問題，不以分數裁定是否應受尊重。／教師承認距門檻很近仍會失落，不把距及格兩分誤說成這次只進步兩分。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"

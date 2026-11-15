@@ -2109,7 +2109,100 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "willing-to-act",
+                    "weight": 2.3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "1-4",
+                        "influence": 0.8
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生已擬好不交完整報告的說法，決定由自己向同學表達，教師沒有擅自代傳。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": -1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "not-yet-ready",
+                    "weight": 2.4,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "4-4",
+                        "influence": 1
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生已擬好不交完整報告的說法，仍怕被認為小氣，先保留回覆草稿。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "strategy-4",
@@ -2226,7 +2319,7 @@
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
         "numericCausalityNote": "候選六碼依「同儕索要整份報告」的具體情況配權：1-4+ 原則與倫理界線；4-2+ 安全需求；8-3+ 訊息採信；4-4+ 認同需求；6-2+ 從眾傾向；8-4+ 資訊傳播。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
-        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。"
       },
       "binding": {
         "sources": [
@@ -4371,7 +4464,135 @@
                       }
                     ]
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "willing-to-act",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-1",
+                        "influence": 0.8
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "教師協助列出可核對的作者貢獻，學生願意與組員逐項確認，但尚未取得他人同意署名。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "我怕加回去，交的人又刪掉。",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "not-yet-ready",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 1
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "教師協助列出可核對的作者貢獻，學生暫不願直接與組員對話，先保留有權存取的紀錄。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "我怕加回去，交的人又刪掉。",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "strategy-3",
@@ -4559,7 +4780,7 @@
         ],
         "qualification": "原班或合法在籍轉入學生；不限定年級、無特定課程必修或已受裁定的前提；只在school/lunch且非保護時段接觸。",
         "numericCausalityNote": "候選六碼依「雲端共編作者爭議」的具體情況配權：1-4+ 原則與倫理界線；4-2+ 安全需求；8-3+ 訊息採信；8-4+ 資訊傳播；3-2− 判斷與分析；10-3− 學校管理彈性。事件效果只在可觀察行動與知情成立時寫入；未經證實的後續不當成完成。",
-        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。"
+        "revisionNotes": "｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。"
       },
       "binding": {
         "sources": [

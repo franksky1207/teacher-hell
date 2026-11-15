@@ -3883,7 +3883,111 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "willing-to-act",
+                    "weight": 1.6,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "4-2",
+                        "influence": -0.7
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "教師說明保護資料和反映管道，學生願意先向窗口確認保密界線；必要保護不因其選擇中止。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        }
+                      ],
+                      "historyCodes": [
+                        "H04-6"
+                      ],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "not-yet-ready",
+                    "weight": 2.5,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 1.2
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "教師說明保護資料和反映管道，學生暫不願揭露更多身分；依法必要的保護程序仍須進行。",
+                      "claims": [],
+                      "changes": [
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        }
+                      ],
+                      "historyCodes": [
+                        "H04-6"
+                      ],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "preserve",
@@ -3977,7 +4081,7 @@
         "knowledgeSource": "學生當面陳述及可取得的卷面、公告或紀錄；推測與傳聞須待查證。",
         "distinctiveConsequence": "教師先記學生實際被問的話及其推測，未因猜中分數就判定匿名資料外洩。／教師協助整理需反映的資料保護疑問，尚未擅自調閱互評名單或傳達缺席者。／學生擬出不接受逼問的回覆，教師未以學生必須自保取代必要程序。／教師承接被追問的壓力，確認可用支持，不把猜測當成已查明的洩漏。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -6160,7 +6264,93 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "willing-to-act",
+                    "weight": 2.4,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-1",
+                        "influence": 0.7
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生已寫出共同加分規則的疑問，願意透過正式管道詢問，未聲稱加分政策存在。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "not-yet-ready",
+                    "weight": 1.7,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "4-2",
+                        "influence": 0.9
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生已寫出詢問內容，但決定暫不送出，避免以未證實的班級差異擴散傳聞。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "preserve",
@@ -6247,7 +6437,7 @@
         "knowledgeSource": "學生當面陳述及可取得的卷面、公告或紀錄；推測與傳聞須待查證。",
         "distinctiveConsequence": "學生指出消息來自同學轉述，教師未將它當成正式加分公告。／學生擬出是否有共同加分規則的詢問，尚未取得課程承辦答覆。／學生決定不把傳聞轉貼，教師不代替別班否認或證實待遇。／教師理解想問清楚的心情，未承諾替本班爭取傳聞中的好處。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"

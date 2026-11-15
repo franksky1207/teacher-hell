@@ -1953,7 +1953,147 @@
                       }
                     ]
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "willing-to-act",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-1",
+                        "influence": 1
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生和教師已查得可用的詢問方式，現在願意把一個題號寫成要向科任提出的問題，但尚未取得回覆。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "老師都很忙，我怕問的都是笨問題。",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "not-yet-ready",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 1.2
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生和教師已查得可用的詢問方式，卻仍擔心問題太簡單，先保留題號，不承諾立即詢問。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "老師都很忙，我怕問的都是笨問題。",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": -1
+                        },
+                        {
+                          "role": "teacher",
+                          "holder": "work",
+                          "code": "11-2",
+                          "delta": -1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -2068,7 +2208,7 @@
         "knowledgeSource": "學生當面出示的紀錄及本次口述；尚未核實的原因不視為共同事實。",
         "distinctiveConsequence": "學生從問號中選一個具體題號，教師沒有擅自代答專科內容。／教師與學生查手邊可用聯絡方式，尚未確認科任何時有空。／學生把最先不懂的步驟寫在紙上，是否送問仍由本人決定。／教師肯定願意帶問題來談，學生未因此答應立即去辦公室。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -5690,7 +5830,121 @@
                       }
                     ]
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "willing-to-act",
+                    "weight": 2.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "4-3",
+                        "influence": 1.3
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生已選出個人小目標，願意自己向家長說明這是他的嘗試方向，但今天尚未聯絡家長。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "not-yet-ready",
+                    "weight": 1.8,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "4-2",
+                        "influence": 1
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生已選出個人小目標，決定先私下保存，不希望導師代替他向家長宣布。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "這些都是家裡希望我做到的，我還沒想好。",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -5805,7 +6059,7 @@
         "knowledgeSource": "學生當面提供的紀錄及口述，未確認情節不當成事實。",
         "distinctiveConsequence": "學生把不認同的目標留白，教師不把表格推論成家長已施壓的證據。／學生提出一個本人願意嘗試的小目標，尚未執行，也不替家長放棄原期待。／教師尊重學生暫不修改，表格仍由學生保留，沒有代簽或代填意願。／教師表達想聽本人聲音，學生知道可不同意表內目標，未被保證家長會接受。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"

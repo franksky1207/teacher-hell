@@ -1779,7 +1779,93 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "willing-to-act",
+                    "weight": 2.5,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "1-4",
+                        "influence": 1.1
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "師生練好不交整份答案的回應，學生決定自己向朋友表達界線；還不知道朋友能否接受。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "not-yet-ready",
+                    "weight": 2.2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "4-4",
+                        "influence": 1.2
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "師生練好不交整份答案的回應，學生暫時仍擔心失去友誼，只保留回覆草稿。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "document",
@@ -1866,7 +1952,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生描述自己曾給的是整頁答案，教師記為本人自述，未替缺席同學判違規。／雙方練習只說明思路不交成品的回覆，尚未得到同學接受。／學生擬好協助界線的訊息，未被要求試探或蒐集同學私人對話。／教師支持拒絕代做，不把幫忙意願轉成必須承擔他人作業的責任。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"
@@ -6744,7 +6830,128 @@
                       }
                     ]
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "willing-to-act",
+                    "weight": 1.4,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "4-3",
+                        "influence": 0.7
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生願意先談一個不懂的符號，也開始在紙上寫下這個疑點，沒有被要求攤開全部考卷。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "反正訂正也不會，我不想再看。",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "2-2",
+                          "delta": -1
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "not-yet-ready",
+                    "weight": 3.1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 1.4
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生願意口頭談一個不懂的符號，但今天仍不願動筆，教師尊重而不判定他不肯學習。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "反正訂正也不會，我不想再看。",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生當面向導師表達本次談話中的個人顧慮或感受。"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "refer",
@@ -6916,7 +7123,7 @@
         "knowledgeSource": "學生當次出示資料及口述，尚未查證的公告與他人責任不當成客觀事實。",
         "distinctiveConsequence": "學生願意先談一個看不懂的符號，教師不強迫當場攤開全部零分卷。／教師協助擬出需要入門題的請求，科任尚未提供分層教材。／學生選擇本次只短談，教師保留可再求助的方式，不把沉默當拒絕學習。／教師承接反覆零分的挫折，不承諾下一次一定拿分或診斷能力。",
         "editorialStatus": "awaiting-independent-semantic-review",
-        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。",
+        "revisionNotes": "本次逐篇改寫四種實際結果；移除舊稿共用結果及不受前因約束的後續與variants；合法午餐資格與v2參與契約。｜18-B依定案SOP補齊個別候選因果與合法事件後果；作者自檢，未經Opus正式簽核。｜本事件依人物自主意願加入兩個有不同後果的NPC反應，未越權推定科任、同學或家長已採行。",
         "author": "Codex root editing process",
         "causalClass": [
           "L1"

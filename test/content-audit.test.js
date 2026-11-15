@@ -5,7 +5,7 @@ import {PHASE17D_READY_STORIES,phase17dSampleCatalogue,DEMO_STORY} from '../src/
 import {buildEventCandidates,validateEventDefinitions,eventIndex,numericSources} from '../src/runtime/event-candidates.js';
 import {eventWorld} from './support/event-fixtures.js';
 import {beginDemo,apply,storyAction,advanceDemo} from './support/story-scenario.js';
-import {readStory} from '../src/runtime/story.js';
+import {readStory,storyState} from '../src/runtime/story.js';
 import {runtimeOf,restoreWorldState} from '../src/runtime/model.js';
 
 const catalogue=phase17dSampleCatalogue();
@@ -228,7 +228,7 @@ test('18-B causal witness A: existing participant numeric state changes legal ca
  const filtered=buildEventCandidates(world,[d]);
  assert.ok(filtered.candidates.some(c=>c.participantIds[0]===max.id),'higher participant score should meet threshold');
  assert.ok(!filtered.candidates.some(c=>c.participantIds[0]===min.id),'lower participant score must not meet threshold');
- assert.ok(filtered.rejected.some(c=>c.participantIds?.includes(min.id)&&c.reason==='numeric-condition'),'actual engine should report numeric-condition');
+ assert.ok(filtered.rejected.some(c=>JSON.parse(c.key)[1].includes(min.id)&&c.reason==='numeric-condition'),'actual engine should report numeric-condition');
 });
 
 test('18-B causal witness B: persisted H03-1 event history unlocks cumulative candidate for the same student',()=>{
@@ -240,7 +240,7 @@ test('18-B causal witness B: persisted H03-1 event history unlocks cumulative ca
  assert.doesNotThrow(()=>validateEventDefinitions([d]));
  const before=buildEventCandidates(initial,[d]);
  assert.ok(!before.candidates.some(c=>c.participantIds[0]===person));
- assert.ok(before.rejected.some(c=>c.participantIds?.includes(person)&&c.reason==='history-threshold'));
+ assert.ok(before.rejected.some(c=>JSON.parse(c.key)[1].includes(person)&&c.reason==='history-threshold'));
  const chosen=choose(reachChoice(initial,eventId),eventId,'listen');
  const afterFact=runtimeOf(chosen).facts.find(f=>f.categoryCodes?.includes('H03-1')&&f.subjectIds?.includes(person));
  assert.ok(afterFact,'first day's confirmed outcome should be stored as participant-scoped H03-1');
@@ -266,7 +266,7 @@ test('18-B causal witness C: different actual first-day choices produce differen
   assert.ok(readStory(w,eventId).canResume);
   w=apply(w,[storyAction(eventId,'resume')]);
   const secondDay=readStory(w,eventId);
-  outcomes.push({firstChoice,stage:secondDay.stage,page:secondDay.page.text});
+  outcomes.push({firstChoice,stage:storyState(w,eventId).stage,page:secondDay.page.text});
   w=choose(reachChoice(w,eventId),eventId,'plan');
   const lastFact=runtimeOf(w).facts.findLast(f=>f.data?.type==='story-action');
   assert.ok(lastFact.causeIds.includes(firstFact.id),'second-day consequence links back to first-day result');

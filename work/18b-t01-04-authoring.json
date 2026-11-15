@@ -54,8 +54,8 @@
                   "changes": [],
                   "historyCodes": [],
                   "next": {
-                    "stage": null,
-                    "afterDays": 0
+                    "stage": "followup",
+                    "afterDays": 1
                   }
                 }
               },
@@ -70,8 +70,8 @@
                   "changes": [],
                   "historyCodes": [],
                   "next": {
-                    "stage": null,
-                    "afterDays": 0
+                    "stage": "followup",
+                    "afterDays": 1
                   }
                 }
               },
@@ -86,8 +86,8 @@
                   "changes": [],
                   "historyCodes": [],
                   "next": {
-                    "stage": null,
-                    "afterDays": 0
+                    "stage": "followup",
+                    "afterDays": 1
                   }
                 }
               },
@@ -98,6 +98,100 @@
                 "emotional": true,
                 "outcome": {
                   "fact": "針對「疑似加總錯誤」，教師對學生說出自己的感受並回應：「如果真的算錯，當然值得查清楚」；尚未由科任或教務核准任何成績更正。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": "followup",
+                    "afterDays": 1
+                  }
+                }
+              }
+            ],
+            "next": null
+          },
+          {
+            "id": "followup",
+            "pages": [
+              {
+                "order": 1,
+                "text": "隔天，學生帶著原考卷再來詢問加總疑義；尚無科任正式更正的確認資料。",
+                "speaker": null,
+                "scene": "school:counselling-corner",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我不想一直吵，可是加起來真的不一樣。",
+                "speaker": "participant",
+                "scene": "school:counselling-corner",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "verify-next",
+                "text": "再核對原卷總分的每一處計算",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師與學生在追蹤時核對「疑似加總錯誤」已取得的資訊，仍不預判尚未發生的結果。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "coordinate-next",
+                "text": "提醒學生依正式途徑確認科任回覆",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師提出下一步可行的正式詢問方式，未冒稱科任已答覆或學生已改善。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "document-next",
+                "text": "記錄查核進度，避免擅自宣稱已改分",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "教師保存本次追蹤情況，未把未完成事項當成已處理完畢。",
+                  "claims": [],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  }
+                }
+              },
+              {
+                "id": "care-next",
+                "text": "你可以有禮貌地追問，不需要覺得自己在找碴",
+                "kind": "action",
+                "emotional": true,
+                "outcome": {
+                  "fact": "教師表達對學生持續溝通的支持，沒有做出成績或權責保證。",
                   "claims": [],
                   "changes": [],
                   "historyCodes": [],
@@ -119,7 +213,7 @@
         "knowledgeSource": "學生當面陳述及可取得的卷面、公告或紀錄；推測與傳聞須待查證。",
         "distinctiveConsequence": "先與學生核對卷面各題得分／引導依校內規定向閱卷老師申請複核／保留原卷與照片，等待正式確認／如果真的算錯，當然值得查清楚",
         "editorialStatus": "author-self-check-only",
-        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。"
+        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。 第三輪補一日後續：後續頁只引用共同的前日資訊，不預設前日選項或科任已行動。"
       }
     },
     {

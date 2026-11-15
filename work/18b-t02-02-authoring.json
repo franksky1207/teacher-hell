@@ -1641,6 +1641,656 @@
         "review": "author-draft-not-verified",
         "qualificationWarning": null
       }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-02-03",
+        "definitionId": "content:18b-t02-02-03",
+        "version": "1",
+        "topicId": "T02-02",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "放學前，學生盯著學習歷程系統的送出紀錄，科任認證欄仍顯示等待審閱。",
+                "speaker": null,
+                "scene": "school:teachers-office",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我明明上傳了，是不是老師不想認證我的成果？",
+                "speaker": "participant",
+                "scene": "school:teachers-office",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "先區分學生已提交與教師已審閱的狀態",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生確認送出時間，尚不能由等待狀態推論科任意圖。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我明明上傳了，是不是老師不想認證我的成果？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "act",
+                "text": "建議向科任依正式管道詢問目前進度",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生整理確認問題，沒有假定科任必須立即回覆。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我明明上傳了，是不是老師不想認證我的成果？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "alternative",
+                "text": "一起核對是否遺漏必要的提交資料",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生重新檢查檔案與學期欄位，還不能宣稱已獲認證。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我明明上傳了，是不是老師不想認證我的成果？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "等了這麼久會焦慮，但先別替對方下結論",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師接住焦急，同時保留科任尚未說明的可能原因。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我明明上傳了，是不是老師不想認證我的成果？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-02-03",
+        "topicId": "T02-02",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-02-03",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "3-3",
+          "1-1",
+          "4-1"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.2,
+          0.18,
+          0.15,
+          0.13,
+          0.1
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "上傳與認證狀態分離",
+        "candidateId": "T02-02-C03",
+        "cause": "放學前，學生盯著學習歷程系統的送出紀錄，科任認證欄仍顯示等待審閱。",
+        "teacherResponsibility": "導師僅能就實際得知的情境提供合理協助與轉介，不擅自裁定他人意圖或升學結果。",
+        "knowledgeSource": "當事人本次陳述，其他人之行為及機構決策仍待查證。",
+        "distinctiveConsequence": "學生確認送出時間，尚不能由等待狀態推論科任意圖。／學生整理確認問題，沒有假定科任必須立即回覆。／學生重新檢查檔案與學期欄位，還不能宣稱已獲認證。／導師接住焦急，同時保留科任尚未說明的可能原因。",
+        "numericRationale": "保留小主題核心碼；附加碼及方向權重為初稿，須於精準驗證時按個別前因確認，尚未核准。",
+        "review": "author-draft-not-verified",
+        "gradeGateWarning": null
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-02-07",
+        "definitionId": "content:18b-t02-02-07",
+        "version": "1",
+        "topicId": "T02-02",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "小組報告發表後，兩名學生站在走廊，一份作品的封面卻只列其中一人的名字。",
+                "speaker": null,
+                "scene": "school:corridor",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我也做了資料，為什麼成品上只有他的名字？",
+                "speaker": "participant",
+                "scene": "school:corridor",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "先了解作品原先約定的分工與署名",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生提出工作紀錄，尚未認定另一人故意冒名。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我也做了資料，為什麼成品上只有他的名字？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "act",
+                "text": "請學生整理自己可證實的貢獻內容",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生把資料搜尋與編輯版本列出，暫不更動他人作品。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我也做了資料，為什麼成品上只有他的名字？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "alternative",
+                "text": "徵詢雙方意願後轉請科任確認作品規範",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生知道可由授課教師釐清署名要求，尚未取得裁定。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我也做了資料，為什麼成品上只有他的名字？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "自己的心血沒被寫進去，真的很難受",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師理解失落，不以單方說法直接判定剽竊。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我也做了資料，為什麼成品上只有他的名字？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "本次由當事人向導師傳達自己的感受；其他人不自動知情。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-02-07",
+        "topicId": "T02-02",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-02-07",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "3-3",
+          "1-1",
+          "4-1"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-4",
+          "2-4"
+        ],
+        "weights": [
+          0.24,
+          0.2,
+          0.18,
+          0.15,
+          0.13,
+          0.1
+        ],
+        "directions": [
+          1,
+          -1,
+          1,
+          1,
+          -1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "同一學生獨立情境；每次仍須符合時段、學籍與接觸資格"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "共同作品署名與公平",
+        "candidateId": "T02-02-C07",
+        "cause": "小組報告發表後，兩名學生站在走廊，一份作品的封面卻只列其中一人的名字。",
+        "teacherResponsibility": "導師僅能就實際得知的情境提供合理協助與轉介，不擅自裁定他人意圖或升學結果。",
+        "knowledgeSource": "當事人本次陳述，其他人之行為及機構決策仍待查證。",
+        "distinctiveConsequence": "學生提出工作紀錄，尚未認定另一人故意冒名。／學生把資料搜尋與編輯版本列出，暫不更動他人作品。／學生知道可由授課教師釐清署名要求，尚未取得裁定。／導師理解失落，不以單方說法直接判定剽竊。",
+        "numericRationale": "保留小主題核心碼；附加碼及方向權重為初稿，須於精準驗證時按個別前因確認，尚未核准。",
+        "review": "author-draft-not-verified",
+        "gradeGateWarning": null
+      }
     }
   ]
 }

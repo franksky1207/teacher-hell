@@ -6,6 +6,7 @@ import {eventWorld,definition} from './support/event-fixtures.js';
 import {buildEventCandidates,validateEventDefinitions,findReunionContact} from '../src/runtime/event-candidates.js';
 import {gradeAt,assessmentCalendar,SENIOR_CALENDAR_VERSION} from '../src/calendar/calendar.js';
 import {admissionCalendar} from '../src/calendar/admissions.js';
+import {validateStory} from '../src/runtime/story-content.js';
 import {entranceCondition,graduatedEntrantsForAftercarePhase} from '../src/runtime/entrance.js';
 
 test('18-B T02: year-three-only story cannot enter year-one candidate pool',()=>{

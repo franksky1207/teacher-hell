@@ -186,7 +186,7 @@ test('18-B pilot: 20 isolated T10-03 event definitions satisfy formal contracts 
  assert.equal(canteen.filter(c=>c.outcome.next.stage==='followup-canteen').length,1);
  assert.ok(canteen.some(c=>c.outcome.next.stage==='followup-canteen'&&c.text.includes('補餐方案')));
  assert.ok(canteen.filter(c=>c.outcome.next.stage==='followup').length===3);
- assert.match(records[2].story.stages.find(s=>s.id==='followup-canteen').pages[0].text,/昨天已請供餐窗口/);
+ assert.match(records[2].story.stages.find(s=>s.id==='followup-canteen').pages[0].text,/昨天請餐務窗口查詢/);
  assert.ok(records[12].story.stages[0].choices.some(c=>c.replacement?.requires?.some(x=>x.role==='participant'&&x.code==='1-3')));
 
  assert.equal(records.filter(x=>x.story.stages[0].choices.length===4 && x.story.stages[0].choices.some(c=>c.replacement)).length,5,'qualified replacements exist');

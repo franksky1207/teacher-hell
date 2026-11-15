@@ -1,3 +1,4 @@
+import {compileConsequences} from './story-consequences.js';
 import { storyHistoryView,replayStoryNumeric,compactStoryPanelDelta,auditStoryNumericWitness } from './story-history-view.js';
 import { permitsStoryFollowup } from './story-content.js';
 import { homeroomOperation,homeroomBaseline,HOMEROOM_KEY } from './homeroom.js';
@@ -69,9 +70,12 @@ export function compileStory(w,op,{panelWitness=false,compilerContract=null,view
    need(state.mode==='confirming'&&state.pending!==null,'secondary confirmation required');need(state.choiceOrder.includes(state.pending),'illegal locked option');const o=optionsOf(s).find(o=>o.id===state.pending),selection=o.variants?outcomeDraw(w,e,s.id,o,o.variants,view):null,out=selection?o.variants[selection.index].outcome:o.outcome;state.chosenVariantId=selection?.variantId??null;
    operations.push({type:'confirm-choice',eventId:e.id,stageId:e.stageId,optionId:o.id,optionText:o.text});
    const fid=createId('fact',[e.id,c.version,s.id,o.id]);const actors={teacher:w.identity.playerId,participant:e.participantIds[0],...(e.participantIds.length>1?{companion:e.participantIds[1]}:{})};
-   const subjects=[...new Set(Object.values(actors))];
-   operations.push({type:'fact',id:fid,eventId:e.id,stageId:e.stageId,subjectIds:subjects,witnessIds:subjects,description:out.fact,data:{type:'story-action',optionId:o.id,contentVersion:c.version,...(selection?{variantId:selection.variantId,variantWeights:selection.weights}:{})},categoryCodes:out.historyCodes,causeIds:state.basisFactId?[state.basisFactId]:[]});
-   operations.push({type:'reveal',actorId:actors.teacher,factId:fid,source:{kind:'observation',actorId:actors.teacher,basisFactId:fid}});
+   for(const [role,binding] of Object.entries(c.roleBindings??{})){actors[role]=binding.personId;}
+   const extra=out.world?compileConsequences(w,e,c,out,actors,fid,view):null;
+   const subjects=extra?.subjects??[...new Set(Object.values(actors))];
+   operations.push({type:'fact',id:fid,eventId:e.id,stageId:e.stageId,subjectIds:subjects,witnessIds:extra?.witnesses??subjects,description:out.fact,data:{...(extra?.data??{}),type:'story-action',optionId:o.id,contentVersion:c.version,...(selection?{variantId:selection.variantId,variantWeights:selection.weights}:{})},categoryCodes:out.historyCodes,causeIds:[...new Set([...(state.basisFactId?[state.basisFactId]:[]),...(extra?.causes??[])])]});
+   if(extra)operations.push(...extra.operations);
+   else operations.push({type:'reveal',actorId:actors.teacher,factId:fid,source:{kind:'observation',actorId:actors.teacher,basisFactId:fid}});
    if(out.institution){
     const duty=institutionState(w).duties.find(d=>d.holderId===actors.teacher&&!d.endedAt&&d.status!=='active');need(duty,'a real pending duty offer is required');
     const change={action:'duty-response',id:duty.id,response:out.institution.response},basisFactId=createId('fact',[fid,'institution']);
@@ -86,8 +90,10 @@ export function compileStory(w,op,{panelWitness=false,compilerContract=null,view
     operations.push({type:'learn',actorId,claimId:id,versionId:c.version,source:{kind:'observation',actorId,basisFactId:fid},belief:q.belief,confidence:.6});
     if(q.visible&&actorId!==actors.teacher){operations.push({type:'fact',id:createId('fact',[id,'contact']),eventId:e.id,stageId:e.stageId,subjectIds:subjects,witnessIds:subjects,description:'當事人向教師表達自己的看法。',data:{type:'contact'},categoryCodes:[],causeIds:[fid]});operations.push({type:'learn',actorId:actors.teacher,claimId:id,versionId:c.version,source:{kind:'communication',actorId,basisFactId:createId('fact',[id,'contact'])},belief:'uncertain',confidence:.5});}
    }
-   if(e.participantIds.some(id=>id!==actors.teacher)&&!r(w).history.some(h=>h.type==='event-exposure'&&h.eventId===e.id))operations.push({type:'event-exposure',eventId:e.id,participantIds:[...e.participantIds].filter(id=>id!==w.identity.playerId),basisFactId:fid});
-   const changes=out.changes.map(x=>({target:{kind:x.role==='teacher'?`player-${x.holder}`:'person',id:actors[x.role]},code:x.code,delta:x.delta}));
+   if(extra)operations.push(...extra.afterClaims);
+   const exposed=e.participantIds.filter(id=>id!==actors.teacher&&(!extra||extra.subjects.includes(id)));
+   if(exposed.length&&!r(w).history.some(h=>h.type==='event-exposure'&&h.eventId===e.id))operations.push({type:'event-exposure',eventId:e.id,participantIds:exposed,basisFactId:fid});
+   const changes=out.changes.map(x=>({target:{kind:x.role==='teacher'?`player-${x.holder}`:'person',id:actors[x.role]},code:x.code,delta:x.delta})).concat(extra?.changes??[]);
    operations.push({type:'result',id:createId('result',[fid]),eventId:e.id,stageId:e.stageId,factId:fid,subjectId:actors.teacher,facet:'confirmed-action',effects:[{id:createId('effect',[fid]),operation:{type:'direct',changes}}]});
    state.basisFactId=fid;state.pending=null;state.next=out.next.stage;state.dueDate=due(w.position.date,out.next.afterDays);state.mode='result';
   }else if(op.action==='finish'){
@@ -246,6 +252,6 @@ export function validateStoryHistory(w){
   need(e.stageId===stageId(e,c,previous.stage),'current stage changed');const expected=carrier(c,previous.stage,previous.choiceOrder);if(expected&&['result','waiting','ended'].includes(previous.mode)){const selected=entries.findLast(h=>h.data.action.action==='confirm'&&h.data.state.stage===previous.stage);expected.confirmedOptionId=selected?.data.operations.find(o=>o.type==='confirm-choice')?.optionId??null;}
   need(same(e.choice,expected),'choice differs');
   const original=r(w).history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.eventId===e.id);
-  need(same(e.participantIds,[...new Set([...original.participantIds,...(e.facts.length?[w.identity.playerId]:[])])]),'participants changed');
+  need(same(e.participantIds,[...new Set([...original.participantIds,...(c.roleBindings||c.stages.some(s=>s.choices.some(o=>o.outcome.world||o.variants?.some(v=>v.outcome.world)))?r(w).facts.filter(f=>f.eventId===e.id).flatMap(f=>[...f.subjectIds,...f.witnessIds]):e.facts.length?[w.identity.playerId]:[])])]),'participants changed');
  }
 }

@@ -114,6 +114,7 @@ export function validateSource(world,actor,factId,claimId,versionId,source,at,cu
   } else if(source.kind==='communication') {
     const sender=claimId===null ? runtimeOf(world).disclosures.find(d=>d.actorId===source.actorId&&d.factId===factId) : findKnowledge(world,source.actorId,claimId,versionId);
     ensure(sender&&sender.order<order&&sender.cursor<=cursor,'KNOWLEDGE','Sender does not possess this information');
+    if(basis.data.storySourceVersion===1)ensure(basis.cursor===cursor&&basis.occurredAt.date===at.date&&basis.data.transmission?.factId===factId&&basis.data.transmission?.fromId===source.actorId&&basis.data.transmission?.toId===actor&&(claimId===null?!basis.data.transmission.claimId:basis.data.transmission.claimId===claimId&&basis.data.transmission.versionId===versionId),'KNOWLEDGE','Explicit current transmission required');
     ensure(source.actorId!==actor&&basis.data.type==='contact'&&basis.subjectIds.includes(actor)&&basis.subjectIds.includes(source.actorId),'KNOWLEDGE','No established communication contact');
   } else if(source.kind==='document') {
     ensure(source.actorId===actor&&basis.data.type==='access'&&basis.subjectIds.includes(actor),'KNOWLEDGE','No document access');

@@ -1310,6 +1310,333 @@
         "numericRationale": "對面試反思的投入與焦慮並存，尚未能判定面試成果。；核心 3-1、2-2、3-3；附加 9-3、1-3、2-4。本為逐篇設計理由，尚未進行引擎精準驗證。",
         "review": "author-draft-not-verified"
       }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t02-06-13",
+        "definitionId": "content:18b-t02-06-13",
+        "version": "1",
+        "topicId": "T02-06",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "模擬面試散場後，學生站在走廊旁，聽見同學模仿自己剛才的說話口音。",
+                "speaker": null,
+                "scene": "school:corridor",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我講話真的那麼好笑嗎？是不是面試就輸一半了？",
+                "speaker": "participant",
+                "scene": "school:corridor",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "calm"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "先確認學生剛才聽見的具體言語",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生說出自己聽到的內容，導師未把未核實的動機當成事實。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我講話真的那麼好笑嗎？是不是面試就輸一半了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "action",
+                "text": "徵詢意願後討論如何處理不尊重的言語",
+                "kind": "support",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生知道可選擇提出反映及獲得支持，沒有被迫當場與同學對質。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我講話真的那麼好笑嗎？是不是面試就輸一半了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "alternative",
+                "text": "陪他回到面試內容本身評估表達",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生指出一個答得清楚的段落，不把口音視為能力缺陷。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我講話真的那麼好笑嗎？是不是面試就輸一半了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "care",
+                "text": "你的口音不是可以被嘲笑的理由",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "導師明確表達尊重，未保證正式面試結果。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我講話真的那麼好笑嗎？是不是面試就輸一半了？",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "角色以本次實際對話或訊息向導師表達看法，沒有傳給未在場者。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t02-06-13",
+        "topicId": "T02-06",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t02-06-13",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "3-1",
+          "2-2",
+          "3-3"
+        ],
+        "additionalCodes": [
+          "4-4",
+          "3-4",
+          "1-3"
+        ],
+        "weights": [
+          0.24,
+          0.27,
+          0.14,
+          0.13,
+          0.12,
+          0.1
+        ],
+        "directions": [
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "noon"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "這是個別一次性的情境；需按人物學籍、情境時段與既有接觸條件抽選"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "negative"
+      },
+      "editorial": {
+        "title": "被模仿的口音",
+        "candidateId": "T02-06-C13",
+        "cause": "模擬面試散場後，學生站在走廊旁，聽見同學模仿自己剛才的說話口音。",
+        "teacherResponsibility": "尊重學生自主，提供合法資訊與適當協助；導師不能替教務、升學或家長做出承諾。",
+        "knowledgeSource": "只知道本次實際對話、訊息及所見，其他人的想法、核准、回覆未經證實。",
+        "distinctiveConsequence": "學生說出自己聽到的內容，導師未把未核實的動機當成事實。／學生知道可選擇提出反映及獲得支持，沒有被迫當場與同學對質。／學生指出一個答得清楚的段落，不把口音視為能力缺陷。／導師明確表達尊重，未保證正式面試結果。",
+        "narrativeTime": "模擬面試後的課間",
+        "scene": "school:corridor",
+        "numericRationale": "主題三核心碼沿用3-1、2-2、3-3；附加4-4、3-4、1-3，依本次情境作候選初擬，待現有公式與合法持有者確認。",
+        "review": "author-draft-not-verified",
+        "qualificationWarning": "此升學事件須與高三行事曆及正式入學資格接線；未驗前不得進事件池。"
+      }
     }
   ]
 }

@@ -1,10 +1,16 @@
 name: Phase 18-B T01 draft structure
 on:
+  workflow_dispatch:
   pull_request:
     branches: [main]
     paths:
       - 'work/18b-t01-*-authoring.json'
       - 'test/phase18b-t01-draft.test.js'
+      - 'src/runtime/content/t01*.js'
+      - 'src/runtime/story-content.js'
+      - 'scripts/sync-t01-drafts.mjs'
+      - 'scripts/audit-t01.mjs'
+      - 'docs/reviews/18b-t01-*-rereview.json'
       - '.github/workflows/phase18b-t01-draft.yml'
 permissions:
   contents: read
@@ -15,10 +21,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --ignore-scripts
+      - run: node scripts/sync-t01-drafts.mjs --check
+      - run: node scripts/audit-t01.mjs
       - run: node --test --test-isolation=none test/phase18b-t01-draft.test.js

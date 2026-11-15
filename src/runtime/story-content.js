@@ -8,6 +8,7 @@ import { assertShape, identifier } from '../player/panel.js';
 import { TOPIC_IDS } from './topics.js';
 import { STORY_SCENE_IDS } from './story-scenes.js';
 import {PHASE17D_STORIES} from './story-samples-17d.js';
+import {T01_BATCH_RECORDS} from './content/t01.js';
 const need=(ok,code,message)=>{if(!ok)throw new RangeError(`CONTENT_${code}: ${message}`);};
 const baseRoles=['teacher','participant','companion'];
 const expressions=['calm','happy','angry','sad','surprised','embarrassed'];
@@ -187,7 +188,14 @@ export const PACKAGE3_STORY=freeze(validateStory({resourceId:'engineering:packag
 export const PACKAGE4_STORIES=freeze(PACKAGE4_SAMPLES.map(validateStory));
 /** Test-addressable but NEVER added to a formal event catalogue. */
 export const PILOT_18B2_STORIES=freeze(PILOT_18B2_CAUSAL_STORIES.map(validateStory));
-const assets=freeze([...PILOT_18B2_STORIES,...PACKAGE4_STORIES,PACKAGE3_STORY,HISTORY_CONTRACT_STORY,AFTERCARE_STORY,ENTRANCE_STORY,DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY,...PHASE17D_READY_STORIES]);
+/** Explicit engineering opt-in only. Same-model editorial checks do not satisfy the SOP release gate. */
+export const T01_DRAFT_STORIES=freeze(T01_BATCH_RECORDS.map(r=>validateStory(r.story)));
+export function t01DraftCatalogue(){
+ const definitions=structuredClone(T01_BATCH_RECORDS.map(r=>r.definition));
+ return {type:'register-event-catalogue',catalogueId:'engineering:18b-t01-v1',definitions,
+  bindings:definitions.map(d=>({definitionId:d.id,sources:Array(6).fill('participant'),valence:'neutral'})),engineering:true};
+}
+const assets=freeze([...T01_DRAFT_STORIES,...PILOT_18B2_STORIES,...PACKAGE4_STORIES,PACKAGE3_STORY,HISTORY_CONTRACT_STORY,AFTERCARE_STORY,ENTRANCE_STORY,DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY,...PHASE17D_READY_STORIES]);
 export function resolveStory(ref){const c=assets.find(c=>c.resourceId===ref.resourceId&&c.version===ref.version);need(c,'RESOURCE','missing immutable content version');return c;}
 export function validateStoryReference(d){const c=resolveStory(d.content);need(c.definitionId===d.id&&c.topicId===d.topicId&&c.status===d.content.status,'REFERENCE','definition/content identity');if(d.eligibility.issue){need(c.bindingContract===1,'REFERENCE','issue definition requires binding-aware story');for(const b of Object.values(c.roleBindings??{}))if(b.candidateRole)need(d.eligibility.issue.actors.some(a=>a.role===b.candidateRole),'REFERENCE','missing candidate role');for(const stage of c.stages)for(const option of stage.choices.flatMap(o=>[o,...(o.replacement?[o.replacement]:[])]))for(const out of [option.outcome,...(option.variants??[]).map(v=>v.outcome)])for(const op of out.issueOperations??[])if(op.source?.binding)need(op.source.binding===d.eligibility.issue.binding,'REFERENCE','unknown issue binding');}else need(!c.bindingContract,'REFERENCE','binding-aware story requires issue eligibility');if(c.resourceId.startsWith('aftercare:'))need(canonicalData(d)===canonicalData(aftercareCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal aftercare qualification cannot be relabeled');if(c.resourceId.startsWith('entrance:'))need(canonicalData(d)===canonicalData(entranceCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal entrance qualification cannot be relabeled');if(c.resourceId.startsWith('homeroom:'))need(canonicalData(d)===canonicalData(homeroomCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal homeroom qualification/authority cannot be relabeled');return c;}
 

@@ -1,0 +1,8186 @@
+// Version 1 isolated authoring assets. Not a production catalogue.
+// Authored text source and review provenance: work/18b-t01-01-authoring.json.
+export default [
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-02",
+      "definitionId": "content:18b-t01-01-02",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐時，學生帶著停在目錄的書及列滿章名的筆記來談早自習沒能開始閱讀的情況。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我不是不想讀，只是不知道哪一章最重要。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "請學生說出目前最想解決的疑問",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生在目錄旁圈出一個最困惑的章名，尚未找到章節重點。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "陪他圈定當天一段能閱讀的範圍",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生在副本選定一小段閱讀，不因圈出範圍就算已讀完。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "先記下卡住的章節，另約時間談",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師把未解章名記在學生自己的紙上，是否再約由雙方可用時間決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "卡在開頭真的會讓人很煩，我懂",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師承認卡在起點的煩躁，學生暫時合上書聽完，未被保證馬上能讀。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-02",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-02",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-03",
+      "definitionId": "content:18b-t01-01-03",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生拿出手機上密密麻麻的專注計時紀錄，表示每次中斷就把整段時間歸零。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "少一分鐘我就覺得這次又失敗了。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "詢問他計時的目的和實際感受",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說歸零是自己訂的規則；教師只確認這是他的說法，不判定計時有害。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "建議以完成一項任務取代全程不間斷",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "雙方用一題練習示範任務計量，學生尚未決定停用計時器。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "先保留原紀錄，約下次看是否有改善",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師提醒保留未歸零的原始紀錄，尚無下一次改善資料。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "你都已經很努力計時了，別急著否定自己",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師肯定已投入的時間，沒有把中斷視為整段無效或宣告努力必有分數。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-03",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-03",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-04",
+      "definitionId": "content:18b-t01-01-04",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生把週末待辦清單交來，上頭同時列著各科數十項工作。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我想週日全部補完，結果連第一項都沒動。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "請他指出哪些項目有明確期限",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生在清單旁標出自己知道的兩個期限，其他項目仍註記待查。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "一起區分本週必做與可以延後的事",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "雙方把有正式期限與自訂加碼分欄，未替科任延後任何期限。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "請他回去核對各科公告再做安排",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生整理需要回看哪幾則公告，教師未以學生記憶當正式規則。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "看到這麼長的清單，我也會頭痛",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師表達對清單過長的無奈，讓學生先停止加列項目，沒有刪除實際待辦。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-04",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-04",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-05",
+      "definitionId": "content:18b-t01-01-05",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生說原本約定共同複習的朋友近期不再參加，留下兩人的進度表。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "他沒空以後，我自己就不太想開始。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "詢問他是否仍想維持原本的複習目標",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生表示想保留原本複習目標，但還不確定願不願獨自進行。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助找不依賴固定伙伴的學習方式",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師提出以個人短練習取代共同打卡的方式，未替學生邀請新伙伴。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "讓學生先想一晚是否需要改計畫",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生選擇帶回自己的計畫再想，教師沒有把延後決定記成已退出讀書會。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "習慣有人陪著讀，突然剩自己確實難適應",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應失去固定陪伴的不適應，沒有推定朋友故意拋下他。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-05",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-05",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-06",
+      "definitionId": "content:18b-t01-01-06",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生交出目標單，每科寫著一百分，卻不願說明最迫切想改善的問題。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "不寫一百分就好像我不認真。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "請他說明每科目標背後的期待",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說滿分是怕被誤會不努力而寫；此說法只來自本人，家長想法未確認。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "陪他將其中一科改成可觀察的練習目標",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生在副本選一科寫下可觀察的練習行為，原成績目標未被導師改成正式承諾。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "先保存目標單，等下次考後討論",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師尊重暫不改表，提醒考後可帶實際作答來談，不預排必然出現的後續。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "我在意的是你怎麼走，不是表格多漂亮",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師把談話重點放回學生自己的期待，沒有以漂亮表格判定意願真偽。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-06",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-06",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-07",
+      "definitionId": "content:18b-t01-01-07",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐時，學生回顧今天午餐前在走廊反覆背同一頁的情形，說自己始終不敢翻下一頁。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我怕一翻過去，剛剛背的就忘光了。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "請他試著用自己的話說出重點",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生用自己的話說一小段後停住，雙方記下不確定的位置，未當成全頁背熟。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "建議用短暫回想檢查，而非一再重讀",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師示範先合上講義再看記得哪些詞，學生尚未決定長期採用。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "讓他先休息，另約時間討論方法",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生先收起講義休息，本次不另加背誦任務，未承諾下次一定再談。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "你這樣一遍遍確認，難怪會很累",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師說出反覆確認可能很累的感受，沒有把謹慎診斷為心理疾病。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-07",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-07",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-08",
+      "definitionId": "content:18b-t01-01-08",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生帶著寫滿問號的筆記前來，說每次到辦公室門口就轉身。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "老師都很忙，我怕問的都是笨問題。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "請他先挑一個最想問的地方",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生從問號中選一個具體題號，教師沒有擅自代答專科內容。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "說明適合詢問科任老師的時間與方式",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師與學生查手邊可用聯絡方式，尚未確認科任何時有空。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "讓他先把問題整理好再決定是否詢問",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生把最先不懂的步驟寫在紙上，是否送問仍由本人決定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "你願意把問題寫出來，已經不容易",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師肯定願意帶問題來談，學生未因此答應立即去辦公室。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-08",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-08",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-09",
+      "definitionId": "content:18b-t01-01-09",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生拿著同學分享的進度照片，憂心自己每天少讀兩個章節。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "別人都念到後面了，我還在前面。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "問清照片是否真的反映對方完整進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說照片只截到幾行；教師確認比較資料不完整，沒有要求查同學私訊。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "陪他把自己的進度對照近期課程需求",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生以已公告課程範圍標記自己的待讀部分，不再用照片推算落後章數。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "建議暫停比較一天並觀察感受",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師提出暫不看進度訊息的短期觀察，未替學生退群或封鎖他人。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "我知道很難不比較，但你不用照別人的表生活",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師肯定學生自己已開始的工作，未把別人的較快進度說成不實。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-09",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-09",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-10",
+      "definitionId": "content:18b-t01-01-10",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生展示一整排複習提醒，說上課期間也不斷收到未完成通知。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "提醒越跳越多，我看到就想關掉。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "釐清哪些提醒真的與當週作業有關",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生在提醒列表指出哪些是自訂加碼，教師未把所有通知當成科任作業。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助挑選較少且固定的提醒時段",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "雙方在紙上先擬兩個可試的提醒窗口，學生尚未修改手機設定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "請他先記錄一天提醒頻率再決定",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生選擇記下通知出現時點，不交出手機密碼或讓教師查看其他訊息。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "被通知追著跑，的確很難專心",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師承接被通知追趕的煩躁，不把關掉通知視為拒絕學習。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-10",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-10",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-11",
+      "definitionId": "content:18b-t01-01-11",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生的鉛筆盒和筆記分隔非常整齊，但表示每到考前就反覆整理而不開始練習。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "整理完會覺得安心，可是一下又沒時間了。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "詢問整理帶來的幫助與限制",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說整理會安心也會吃掉時間；教師保留兩種效果，不將它認定為唯一拖延原因。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "約定整理結束後先做一題簡單練習",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生選一題作為整理後的起步，完成與否仍未發生。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "保留這次觀察，下回考前再確認",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師把本次自述記在學生自己的規劃紙，不宣稱下次考前一定重逢。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "你很會整理，只是題目好像等很久了",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師以幽默指出整理與做題的落差，未要求把整齊文具丟掉或貶低學生。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-11",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-11",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-12",
+      "definitionId": "content:18b-t01-01-12",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生展示清晨五點起床的規劃，卻說最近早上常打瞌睡。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "晚上念不完，只好早上再早一點起床。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            },
+            {
+              "order": 3,
+              "text": "你先確認學生此刻是否不適或有安全需求；需要即時健康協助時先依校內程序處理，不以稍後選項決定是否提供必要協助。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "先詢問實際睡眠時間與白天精神",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生只願說昨夜就寢很晚；教師確認當前精神與安全需求，不逼問家庭隱私。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "建議調整任務量並優先保留休息",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "雙方刪去規劃中的額外清晨加碼，正式作業責任仍需另與科任討論。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "請他記錄幾天作息，必要時與家長討論",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師建議學生保留簡短作息紀錄，必要聯繫只分享最小資訊，未將家長視為已同意。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "聽起來你把一天擠到快沒空氣了",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師表達對休息不足的擔心，不把少睡當努力勳章，也未診斷病因。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-12",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-12",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-13",
+      "definitionId": "content:18b-t01-01-13",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生遞上厚厚的彩色筆記，卻表示複習時仍不知道哪些觀念要先練。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我每一頁都抄了，可是還是不會。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "請他用一句話描述這單元的重點",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生嘗試用一句話概括一單元，仍分不清的兩詞留作疑問，未被當場判成全不會。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "示範把一頁筆記轉成一個自我提問",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師用學生選的一段示範改寫成提問，學生未答應重做整本筆記。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "先保留筆記，請他挑出最困難的一頁",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生自選最困難的一頁留下問題標記，原筆記保留，不直接宣布方法無效。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "這些筆記花了不少心力，別急著說全沒用",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師肯定抄寫的投入並允許調整用途，沒有保證只靠筆記就能改善分數。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-13",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-13",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-14",
+      "definitionId": "content:18b-t01-01-14",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生說自己請朋友每天檢查進度，近來兩人因催促方式感到不自在。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我叫他提醒我，但現在聽到提醒就煩。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "釐清當初雙方約定的提醒方式",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說兩人未約好催促頻率；教師只記此自述，不代替朋友說明原意。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "建議由學生自己設定回報頻率與界線",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生草擬希望每週而非每天回報的界線，朋友是否同意仍待詢問。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "請他先私下與同學確認是否續做",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師陪學生寫出是否願意繼續互相提醒的問句，尚未傳達給朋友。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "想被幫忙又想保有空間，真的會拉扯",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應需要幫忙又想有空間的矛盾，未判定任何一方不值得信任。學生並當面表示這次被聽見讓自己比較安心；此為本人感受而非朋友已改變。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "有人願意聽我說提醒也會有壓力，我覺得比較安心。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生在私下談話向教師表達對本次支持的感受。"
+                    }
+                  ]
+                },
+                "relationshipChanges": [
+                  {
+                    "fromRole": "participant",
+                    "toRole": "teacher",
+                    "code": "5-1",
+                    "delta": 0.3,
+                    "basis": "interaction"
+                  }
+                ]
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-14",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-14",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-15",
+      "definitionId": "content:18b-t01-01-15",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生表示假日都在圖書館待到關門，卻不清楚實際完成哪些任務。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我坐很久，可是回家想不起來念了什麼。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "請他回想當天完成的一件具體事情",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生回想起一題實際做過的練習，教師只確認此口述，不把整日坐館當成完成量。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "建議進出圖書館時各記一次任務與成果",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師示範進館前寫目標、離館時寫實做內容的兩欄紀錄，學生尚未採行。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "先保留這週紀錄，下週再比較",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生保留本週資料供自己比較，教師未預告下一週必然進步。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "坐那麼久卻沒感覺，難免很挫折",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師接住長時間卻沒把握的挫折，未把在館時數換算成學習能力。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-15",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-15",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-16",
+      "definitionId": "content:18b-t01-01-16",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生說段考後原想休息兩天，結果休息了整週，現在害怕重新翻書。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "越晚開始，就越覺得來不及。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "詢問停下來後最難重新開始的環節",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說最怕看到未補進度；教師未把這個說法認定為懶惰或唯一原因。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "一起設定不以考試成績為目標的重啟任務",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生提出先讀一小段新課的起步目標，未被要求一次追回整週。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "先讓他整理本週課堂進度再安排",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生把目前各科已知進度列在自己的紙上，未知處留待公告確認。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "考完想喘口氣很正常，不必一次補回全部",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師同意休息有需要，並提醒仍可從小處重啟，沒有將休息改寫成所有待辦已取消。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-16",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-16",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-17",
+      "definitionId": "content:18b-t01-01-17",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生把完成項目全劃掉，卻因新增任務比劃掉的還多而沮喪。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我明明有做事，怎麼清單還越來越長？",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "確認新增任務是何時、由誰要求",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生指出新增清單有幾項是自己加的，教師把正式交辦與自訂工作分開，未知期限留空。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助把已完成事項與未來待辦分開列",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "雙方另列已完成紀錄，未因清單還長便抹掉確有做過的事。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "請他隔天帶來更新後清單再核對",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生願意帶更新清單再核對，教師記下的是待核對邀請，不是已完成任務。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "你確實有完成一些事，別讓清單抹掉它",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師說出對已完成部分的肯定，學生把紙上的一個實做項圈起，未被保證焦慮消失。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-17",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-17",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-18",
+      "definitionId": "content:18b-t01-01-18",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生反映自發讀書會常由一人講解，其他人越來越少準備。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "本來想一起讀，現在好像都在等他教。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "了解各人對讀書會的期待是否一致",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生自述想互問而非聽講；教師沒有代缺席成員認定他們有同一期待。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "建議試一次輪流提出問題的形式",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師示範每人帶一個疑問的讀書會提案，成員尚未同意更換形式。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "尊重學生自行協調，觀察下一次情形",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生擬出詢問成員是否願意輪流的訊息，未將下一次聚會寫成已改善。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "原本是互相幫忙，變成單方面付出也難受",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師承接單向付出的感受，未判定發言者蓄意佔用或無能。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-18",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-18",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-19",
+      "definitionId": "content:18b-t01-01-19",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生能清楚講出社團練習時間，卻說課業安排總是記不住。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "練習我都知道幾點開始，念書就一直忘。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "詢問兩種行程在提醒方式上的差別",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說興趣活動會設固定提醒，讀書則只靠記住；教師不推論兩者價值高低。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "嘗試把一小段複習接在既有固定行程後",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "雙方在副本將短複習接在固定作息後，學生尚未實際執行。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "請他先記錄下週實際空檔再討論",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生決定先記一週可用空檔，未以預估空檔當可保證完成的時數。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "你不是完全不會安排，只是讀書還沒找到節奏",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師指出學生已有安排某些活動的經驗，不把這次遺忘當人格缺陷。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-19",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-19",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-20",
+      "definitionId": "content:18b-t01-01-20",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生難得按時完成個人讀書目標，卻擔心下週維持不了，不願告訴家人。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "這次做到了，要是下次做不到怎麼辦？",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "請他說出這次確實做對的一件事",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生指出這次先關閉通知再開始，教師只記本次自述，不宣稱這是成功唯一原因。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "建議保留可重複的步驟而非追求連勝",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "雙方記下可試著重複的起步步驟，下一次結果仍不確定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "讓學生自行決定是否與家人分享",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師問學生是否想分享及分享什麼，未主動聯繫家人或轉述私事。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "你這次做到了，就值得好好高興一下",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師當面祝賀這次確有完成的工作，沒有追加永遠不退步的要求。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-20",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-20",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-21",
+      "definitionId": "content:18b-t01-01-21",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生拿來一份由家長先寫好目標的學習紀錄，自己的意見欄仍是空白。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "這些都是家裡希望我做到的，我還沒想好。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "先請學生說出自己認同與不認同的部分",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生把不認同的目標留白，教師不把表格推論成家長已施壓的證據。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "提供一個只由學生自己決定的小目標",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生提出一個本人願意嘗試的小目標，尚未執行，也不替家長放棄原期待。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "保留表格，等學生準備好再討論",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師尊重學生暫不修改，表格仍由學生保留，沒有代簽或代填意願。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "這份表很完整，但我更想知道你怎麼想",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師表達想聽本人聲音，學生知道可不同意表內目標，未被保證家長會接受。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-21",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-21",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-22",
+      "definitionId": "content:18b-t01-01-22",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生翻開日記，連續六天寫著「明天正式開始」，卻仍不確定拖延的原因。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我每天都覺得隔天會比較有精神。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "詢問每天決定延後時遇到的具體事情",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生描述昨晚延後的那一刻，教師只記單次情境，不推出每天都同因。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "請他試一次不用等明天的五分鐘起步",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生當面選一件五分鐘能開始的工作，教師未宣告開始即等於完成。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "先觀察一次延後時的想法並記下來",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師示範記下延後時的念頭而不評分，學生自行決定是否做紀錄。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "你一直想重新開始，我聽得出來",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師承認反覆想重啟的努力，未以這句鼓勵替代實際作業要求。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-22",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-22",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-23",
+      "definitionId": "content:18b-t01-01-23",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生收到同學邀請一起練習的紙條，但擔心拖慢對方而沒有回覆。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "他們都很會，我去大概只會坐著。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "確認學生對共同練習的期待",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說擔心成為拖累，教師不把缺席同學想法寫成已知。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助設計可以帶一題問題參與的方式",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生選一題能帶去討論的問題，尚未接受邀請或取得同伴協助。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "尊重學生是否接受邀請並約後續談",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師尊重尚未決定參加，未替他回覆邀請或安排同學輪流帶讀。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "擔心跟不上別人，確實會很有壓力",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師承接害怕跟不上的壓力，未稱同學一定不在意或保證聚會順利。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-23",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-23",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-24",
+      "definitionId": "content:18b-t01-01-24",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生反映家中近期改用客廳當讀書場所，總被電視聲音打斷，但不確定能否更換。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我不是不想讀，可是旁邊一直有人講話。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "詢問有哪些時段與場所可以選擇",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生列出自己能用的兩個空間及限制，教師未擅自要求家人更改作息。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助思考不影響家人的調整方案",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "雙方在副本討論降低噪音的可行方式，學生尚未取得家人同意。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "先記錄幾個受干擾的時段再判斷",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生選擇先記被打斷的時點，不錄下家人私下談話作證。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "一直被打斷，連我都會讀不下去",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師表達被打斷的不易，沒有把家人定性為阻礙學生學習。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-24",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-24",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-25",
+      "definitionId": "content:18b-t01-01-25",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生已做完幾題練習，卻堅持必須全對才可以在清單上勾選完成。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "錯一題就不算做完吧？",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "釐清「完成練習」和「全部答對」的定義",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說把全對才算完成；教師將此自訂標準與正式繳交要求分開。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "建議分開記錄練習完成與訂正完成",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生在紙上另設已練與待訂正兩欄，未把未懂的題目勾成掌握。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "先沿用紀錄，觀察勾選標準是否造成壓力",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師尊重先沿用表格觀察的決定，提醒可記下勾選時的感受，不評價人格。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "願意動手做題，本來就是一件值得記下的事",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師肯定確實動手練習，未把未訂正工作宣布完成或免除。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-25",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-25",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-26",
+      "definitionId": "content:18b-t01-01-26",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐時，學生回顧上次長假，表示第一週把計畫排滿，第二週疲憊得無法繼續；現在想避免重演。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我一開始很有幹勁，後來整個不想碰書。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "詢問第一週實際投入的時數與休息",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生回顧上次長假第一週投入過多的時數；教師不將回顧當作本週已放假。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "用上次經驗練排一份留休息的假日計畫",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "雙方以假設規劃示範留休息的節奏，沒有要求上課日照假日計畫執行。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "先觀察兩天精神狀況後再調整",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師建議觀察目前精神，不以兩天自記診斷原因；持續不適可尋求校內協助。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "一口氣衝太快，後面沒力也不奇怪",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師回應過度衝刺的疲憊，未把停頓稱為懶惰或保證恢復速度。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-26",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-26",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-27",
+      "definitionId": "content:18b-t01-01-27",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生最近常幫同學解題，卻發現自己原訂的複習內容一直擱置。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "別人問我，我總覺得不能不幫。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "確認他希望保留多少時間給自己",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說希望每天有不被打擾的短時段，教師未要求同學立刻配合。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "討論可供同學提問的明確時段界線",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生草擬可提問與暫不接問的時段公告，未把它發到班群。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "讓學生先觀察一週詢問頻率",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師建議先記詢問頻率而不收集同學個別困難或排名。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "會幫人很好，但你也需要自己的時間",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師肯定幫忙並支持保留自己時間，未將能力變成固定服務義務。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-27",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-27",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-28",
+      "definitionId": "content:18b-t01-01-28",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生收藏了許多不同老師的教學影片，遇到一道題就換一個頻道重聽。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "每個人講法都不同，我怕少看一個就漏掉重點。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "詢問目前最需要理解的觀念",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生挑一個目前未懂的觀念，教師不替影片內容保證正確。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "建議先固定一份資源並實作一道題",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生在紙上選一份資源與一題對應練習，尚未完成或決定永久固定。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "請他記錄切換影片的時機再討論",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師建議只記切換的觸發點，不索取完整瀏覽歷史。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "資源太多有時候反而讓人更難決定",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師承接資源過多的不易，未把選擇困難判成沒有毅力。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-28",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-28",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-29",
+      "definitionId": "content:18b-t01-01-29",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生原本排好晚間複習，卻因最近常須幫忙照看家人而無法維持。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我有排時間，但家裡有事就得先做。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "先了解有哪些安排是學生願意透露的",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生只願透露固定照顧時段，教師尊重不問被照顧者的私人病情。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助尋找不與照顧責任衝突的小時段",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "雙方在規劃副本找不衝突的短空檔，不假定照顧責任可以直接移交。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "必要時徵詢學生意願再連結校內支持",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師先詢問希望連結哪種校內支持及可分享內容，未當場傳出家庭細節。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "時間不是只有讀書一件事，你不用硬扛",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師表達關切並確認眼前負荷，未保證家人會改變或校方一定減作業。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-29",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-29",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-30",
+      "definitionId": "content:18b-t01-01-30",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生上週用某種方式成功準備小考，這週即使課業型態不同仍堅持照搬。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "上次這樣有用，換方法會不會反而退步？",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "陪他比較兩次學習任務的不同",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "雙方指出兩次任務範圍不同，教師不把一次成功的做法推成萬用規則。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "建議保留有效步驟並小幅調整其餘部分",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生選擇保留起步方法並調整工作量，尚未執行新的計畫。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "讓學生自行再試一次並記錄效果",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生決定再試並記實況，教師未將再試意願寫成已獲相同效果。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "找到有用的方法很好，也可以讓方法跟著你長大",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師肯定找到有效經驗並允許改法，不把調整說成背叛先前努力。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-30",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-30",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-32",
+      "definitionId": "content:18b-t01-01-32",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生原本每完成一章就給自己一點獎勵，最近卻覺得獎勵越來越難有吸引力。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我現在連獎勵都不太想要了。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "詢問原先設獎勵時希望培養什麼習慣",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說原本希望靠獎勵開始，後來更在意是否拿得到；教師保留為本人說法。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "試著改以完成紀錄回顧進步",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師示範只記做了什麼及感受的回顧，不以新獎懲替代舊獎勵。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "先停用獎勵一週觀察是否更輕鬆",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師提出短期停用獎勵的選項，未替家長取消約定或宣稱已更輕鬆。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "連獎勵都變成作業，的確會沒意思",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師以幽默承接獎勵失去樂趣，沒有要求靠內在動機立刻撐過所有工作。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-32",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-32",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-33",
+      "definitionId": "content:18b-t01-01-33",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生每天完成固定的英文閱讀練習，卻因沒有即時分數而懷疑是否值得持續。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "讀了半個月，我都不知道到底有沒有用。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "詢問目前練習是否留下可比較紀錄",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生發現保留的資料不足以比較，教師不以感覺宣布進步或退步。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "建議與科任確認合適的階段性回饋",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師陪學生寫出希望哪一種回饋的詢問，科任尚未答應增加評量。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "先蒐集一週具體練習紀錄再評估",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生選擇蒐集本週實際練習紀錄，不把預定練習量填成已完成。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "一直努力卻看不到變化，難免沒把握",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師承接努力卻無法確認變化的不安，未用空泛保證代替證據。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-33",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-33",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-34",
+      "definitionId": "content:18b-t01-01-34",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生想參加同學的放學讀書討論，但固定交通班次使他無法留下。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "他們放學都能留下，我得趕車。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "確認可行的交通與時間限制",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生自述末班車時間，教師先記為待確認限制，不要求冒險晚歸。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "提議由學生詢問是否有午間短討論",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師協助擬出午間自願短談的邀請，未替其他同學或科任排定時段。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "先尊重現有交通安排並觀察需求",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生暫不參加放學共學，教師保留其他支援詢問，未視為拒絕學習。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "不是每個人放學後都能留在學校",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師承認交通限制的差異，沒有向全班揭露學生住處或責怪家庭。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-34",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-34",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t01-01-35",
+      "definitionId": "content:18b-t01-01-35",
+      "version": "1",
+      "topicId": "T01-01",
+      "status": "engineering-test",
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐談話時，學生表示今天的學習清單已經做完，卻怕一停下來就比其他同學少念。",
+              "speaker": null,
+              "scene": "school:counselling-corner",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我知道做完了，但現在休息會很不安。",
+              "speaker": "participant",
+              "scene": "school:counselling-corner",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "請他回顧已完成的具體任務",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生列出今日確實完成的項目，教師只核對所提供紀錄，不宣告所有功課都已結束。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助設定明確的結束時間與休息界線",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "雙方在個人規劃設定停止自訂加碼的時間，正式期限仍需履行。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "observe",
+              "text": "建議記錄休息前後精神狀態再討論",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "教師提議簡記休息前後精神，未將休息當成需證明有效才被允許。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            },
+            {
+              "id": "care",
+              "text": "做完了還不敢休息，聽起來真的辛苦",
+              "kind": "action",
+              "emotional": true,
+              "outcome": {
+                "fact": "教師承接做完仍不敢停的辛苦，不把擔憂診斷為疾病或保證一句話能解除。",
+                "claims": [],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": []
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ],
+      "compilerContract": 2
+    },
+    "definition": {
+      "id": "content:18b-t01-01-35",
+      "topicId": "T01-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t01-01-35",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "1-2",
+        "1-3",
+        "1-4"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "3-2",
+        "3-3"
+      ],
+      "weights": [
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "lunch"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 30,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "在籍學生午餐於非保護時段提出本件具體問題；不以相似分類碼推定同因果"
+      }
+    }
+  }
+];

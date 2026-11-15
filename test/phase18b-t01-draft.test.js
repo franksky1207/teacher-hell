@@ -1,42 +1,93 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {validateStory} from '../src/runtime/story-content.js';
-import {validateEventDefinitions} from '../src/runtime/event-candidates.js';
+import {validateStory,validateStoryReference,resolveStory,T01_DRAFT_STORIES,t01DraftCatalogue} from '../src/runtime/story-content.js';
+import {validateEventDefinitions,buildEventCandidates} from '../src/runtime/event-candidates.js';
+import {auditContent} from '../scripts/content-audit.js';
+import {apply,storyAction,advanceDemo} from './support/story-scenario.js';
+import {eventWorld,draw} from './support/event-fixtures.js';
+import {readStory} from '../src/runtime/story.js';
+import {runtimeOf,restoreWorldState} from '../src/runtime/model.js';
+import {projectIssues} from '../src/runtime/issues.js';
+import {directedKey} from '../src/world/relationships.js';
+const records=Array.from({length:8},(_,i)=>JSON.parse(readFileSync(`work/18b-t01-0${i+1}-authoring.json`)).records).flat();
+const catalogue=t01DraftCatalogue();
+const definition=id=>catalogue.definitions.find(d=>d.id==='content:18b-t01-'+id);
 
-// These are editorial drafts, not the production catalogue. Never count as published.
-const topics=['T01-01','T01-02','T01-03','T01-04'];
-const drafts=topics.flatMap(topic=>{
- const f='work/18b-t01-'+topic.slice(-2)+'-authoring.json';
- const data=JSON.parse(readFileSync(f,'utf8'));
- return data.records.map(record=>({...record,_topic:topic}));
-});
-test('all first-round T01 draft story structures (no runtime publication)',()=>{
- assert.ok(drafts.length>80);
- const ids=new Set(),causes=new Set();
- for(const record of drafts){
-  const s=record.story;
-  assert.equal(s.topicId,record._topic);
-  assert.equal(s.status,'engineering-test');
-  assert.ok(!ids.has(s.definitionId)); ids.add(s.definitionId);
-  assert.ok(!causes.has(s.premise.description)); causes.add(s.premise.description);
-  assert.equal(s.stages[0].choices.length,4);
-  assert.equal(s.stages[0].choices.filter(x=>x.emotional).length,1);
-  validateStory(s);
+test('T01 whole-batch story, candidate, immutable reference and isolation contracts',()=>{
+ const ids=new Set();validateEventDefinitions(catalogue.definitions);
+ assert.equal(T01_DRAFT_STORIES.length,records.length);
+ for(const record of records){
+  const s=record.story;assert.ok(!ids.has(s.definitionId));ids.add(s.definitionId);
+  assert.equal(s.status,'engineering-test');validateStory(s);
+  assert.deepEqual(resolveStory(record.definition.content),s);validateStoryReference(record.definition);
+  assert.deepEqual(definition(s.definitionId.replace('content:18b-t01-','')),record.definition);
+  for(const stage of s.stages){assert.equal(stage.choices.length,4);assert.ok(stage.choices.filter(c=>c.emotional).length>=1);}
  }
- assert.equal(ids.size,drafts.length);
+ // Count semantic review independently; same-model subagent assessments never set approved.
+ const report=auditContent(records,{catalogueDefinitions:catalogue.definitions});
+ assert.equal(report.structurallyValid,records.length);assert.equal(report.semanticReviewed,0);
+ assert.equal(report.resolverReady,records.length);assert.equal(report.catalogueReady,records.length);
 });
-test('draft candidate metadata can meet six-axis contract without registering',()=>{
- const defs=drafts.map(record=>({
-  id:record.story.definitionId,
-  topicId:record.story.topicId,
-  type:'direct',
-  content:{resourceId:record.story.resourceId,version:'1',status:'engineering-test'},
-  coreCodes:['1-2','1-3','1-4'],additionalCodes:['3-1','3-2','3-3'],
-  weights:Array(6).fill(1/6),directions:[1,1,1,1,1,1],
-  eligibility:{people:['student'],dayKinds:['school'],slotIds:['early','p4','p5','p6','p7','p8','lunch'],from:null,until:null,facts:[],history:[],numeric:[],enrollment:null},
-  repetition:{cooldownDays:30,exclusionGroups:[],sameFact:true,reason:'Draft authoring placeholder, not yet licensed for publication'}
- }));
- validateEventDefinitions(defs);
- assert.equal(defs.length,drafts.length);
+
+function begin(definitions){
+ let w=eventWorld(1,'2026-09-01','early');
+ w=apply(w,[draw(definitions)]);
+ const selected=runtimeOf(w).history.findLast(h=>h.type==='event-selection').data.selected[0];
+ assert.ok(selected,'bounded fixed seed selects a legal lunch event');
+ for(let i=0;i<16&&w.position.slotId!==selected.slotId;i++)w=advanceDemo(w);
+ assert.equal(w.position.slotId,'lunch');w=apply(w,[{type:'admit-event',eventId:selected.eventId}]);
+ return {w,eventId:selected.eventId};
+}
+function lastPage(w,eventId){for(let i=0;i<8&&readStory(w,eventId).canNext;i++)w=apply(w,[storyAction(eventId,'next')]);assert.equal(readStory(w,eventId).canNext,false);return w;}
+function confirm(w,eventId,option){w=lastPage(w,eventId);w=apply(w,[storyAction(eventId,'select',option)]);return apply(w,[storyAction(eventId,'confirm')]);}
+
+test('runtime group 1: same receipt root across days/topics, weighted evidence and save',()=>{
+ let {w,eventId}=begin([definition('03-28')]);
+ assert.equal(buildEventCandidates(w,[definition('04-31')],{engineering:true}).candidates.length,0,'no root cannot invent a cross-topic continuation');
+ w=confirm(w,eventId,'refer');let issues=projectIssues(w);assert.equal(issues.length,1);assert.equal(issues[0].state,'open');
+ const root=issues[0].id;
+ const bound=buildEventCandidates(w,[definition('04-31')],{engineering:true}).candidates;
+ assert.ok(bound.some(c=>c.issueOptions.some(b=>b.issueId===root)),'cross-topic candidates bind the actual known root');
+ assert.deepEqual(projectIssues(restoreWorldState(JSON.stringify(w))),issues);
+ w=apply(w,[storyAction(eventId,'finish')]);
+ for(let i=0;i<40&&!readStory(w,eventId).canResume;i++)w=advanceDemo(w);
+ assert.ok(readStory(w,eventId).canResume);w=apply(w,[storyAction(eventId,'resume')]);
+ w=confirm(w,eventId,'check-receipt');
+ const fact=runtimeOf(w).facts.findLast(f=>f.eventId===eventId&&f.data.type==='story-action');
+ assert.ok(['documented','pending'].includes(fact.data.variantId));
+ issues=projectIssues(w);assert.equal(issues[0].id,root);assert.equal(issues[0].state,fact.data.variantId==='documented'?'closed':'open');
+ assert.deepEqual(restoreWorldState(JSON.stringify(w)),w);
+ const after=buildEventCandidates(w,[definition('04-31')],{engineering:true}).candidates;
+ assert.equal(after.some(c=>c.issueOptions.some(b=>b.issueId===root)),fact.data.variantId==='pending');
+});
+
+test('runtime group 2: private claim transmission, directional relationship and save',()=>{
+ let {w,eventId}=begin([definition('01-14')]);
+ const student=w.events.find(e=>e.id===eventId).participantIds[0],teacher=w.identity.playerId;
+ w=confirm(w,eventId,'care');
+ const r=runtimeOf(w),fact=r.facts.findLast(f=>f.eventId===eventId&&f.data.type==='story-action');
+ const claim=r.claims.find(c=>c.factId===fact.id);
+ assert.ok(claim,'authored subjective feeling becomes a sourced claim');
+ assert.ok(r.knowledge.some(k=>k.actorId===teacher&&k.claimId===claim.id));
+ const other=w.numeric.evolution.world.classroom.studentIds.find(id=>id!==student);
+ assert.ok(!r.knowledge.some(k=>k.actorId===other&&k.claimId===claim.id));
+ const effects=r.history.filter(h=>h.type==='effect').flatMap(h=>h.data.changes);
+ assert.ok(effects.some(e=>e.target.id===directedKey(student,teacher)&&e.code==='5-1'));
+ assert.ok(!effects.some(e=>e.target.id===directedKey(teacher,student)&&e.code==='5-1'));
+ assert.deepEqual(restoreWorldState(JSON.stringify(w)),w);
+});
+
+test('runtime group 3: full isolated catalogue registration/draw/admission/save; release remains closed',()=>{
+ let w=eventWorld(1,'2026-09-01','early');
+ assert.equal(buildEventCandidates(w,catalogue.definitions,{engineering:false}).candidates.length,0,'unreviewed content cannot enter a formal draw');
+ const built=buildEventCandidates(w,catalogue.definitions,{engineering:true});
+ const expected=catalogue.definitions.filter(d=>!d.eligibility.issue).map(d=>d.id);
+ assert.deepEqual([...new Set(built.candidates.map(c=>c.definitionId))].sort(),expected.sort(),'every direct draft qualifies; issue continuation correctly waits for a root');
+ w=apply(w,[catalogue]);w=restoreWorldState(JSON.stringify(w));
+ w=apply(w,[{type:'draw-events',catalogueId:catalogue.catalogueId}]);
+ const selected=runtimeOf(w).history.findLast(h=>h.type==='event-selection').data.selected[0];assert.ok(selected);
+ for(let i=0;i<16&&w.position.slotId!==selected.slotId;i++)w=advanceDemo(w);
+ w=apply(w,[{type:'admit-event',eventId:selected.eventId}]);
+ assert.ok(readStory(w,selected.eventId));assert.deepEqual(restoreWorldState(JSON.stringify(w)),w);
 });

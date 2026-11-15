@@ -16,9 +16,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生出示報告草稿及AI修改紀錄，課程說明只寫「自行完成」。",
+                "text": "午休時，在教師辦公室，學生出示報告草稿及AI修改紀錄，課程說明只寫「自行完成」。",
                 "speaker": null,
-                "scene": "school:counselling-corner",
+                "scene": "school:teachers-office",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -26,7 +26,7 @@
                 "order": 2,
                 "text": "我只叫它潤句子，這樣也不行嗎？",
                 "speaker": "participant",
-                "scene": "school:counselling-corner",
+                "scene": "school:teachers-office",
                 "cast": [
                   {
                     "role": "participant",
@@ -108,7 +108,77 @@
                     ],
                     "transmissions": []
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "engages",
+                    "weight": 3,
+                    "outcome": {
+                      "fact": "學生自願將已知AI潤句範圍記入私人揭露草稿，尚未確認科任的允許界線。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  },
+                  {
+                    "id": "hesitates",
+                    "weight": 2,
+                    "outcome": {
+                      "fact": "學生表示擔心揭露後受罰，先保存修改紀錄並整理待詢問題，尚未同意提交揭露欄。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": []
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "strategy-3",
@@ -230,7 +300,7 @@
             "school"
           ],
           "slotIds": [
-            "lunch"
+            "noon"
           ],
           "from": null,
           "until": null,
@@ -278,9 +348,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生拿自己的作業來，說另一份作業連特殊錯字都一樣；另一人並未到場。",
+                "text": "午餐時，在教師辦公室，學生拿自己的作業來，說另一份作業連特殊錯字都一樣；另一人並未到場。",
                 "speaker": null,
-                "scene": "school:counselling-corner",
+                "scene": "school:teachers-office",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -288,7 +358,7 @@
                 "order": 2,
                 "text": "那個錯字是我自己打的。",
                 "speaker": "participant",
-                "scene": "school:counselling-corner",
+                "scene": "school:teachers-office",
                 "cast": [
                   {
                     "role": "participant",
@@ -540,9 +610,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生出示尚未繳交的閱讀報告，數段引文只有書名，沒有頁碼。",
+                "text": "早自習時，在導師班教室裡，學生出示尚未繳交的閱讀報告，數段引文只有書名，沒有頁碼。",
                 "speaker": null,
-                "scene": "school:counselling-corner",
+                "scene": "school:classroom",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -550,7 +620,7 @@
                 "order": 2,
                 "text": "書已經還了，今天要交。",
                 "speaker": "participant",
-                "scene": "school:counselling-corner",
+                "scene": "school:classroom",
                 "cast": [
                   {
                     "role": "participant",
@@ -754,7 +824,7 @@
             "school"
           ],
           "slotIds": [
-            "lunch"
+            "early"
           ],
           "from": null,
           "until": null,
@@ -802,7 +872,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生向導師描述讀書群有人貼出疑似未考試卷照片；教師尚未看到檔案。",
+                "text": "午餐時，在校園談話角落，學生向導師描述讀書群有人貼出疑似未考試卷照片；教師尚未看到檔案。",
                 "speaker": null,
                 "scene": "school:counselling-corner",
                 "cast": [],
@@ -1072,9 +1142,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生出示開書測驗公告，問能否考試時互傳筆記；公告只允許攜帶紙本資料。",
+                "text": "午休時，在教師辦公室，學生出示開書測驗公告，問能否考試時互傳筆記；公告只允許攜帶紙本資料。",
                 "speaker": null,
-                "scene": "school:counselling-corner",
+                "scene": "school:teachers-office",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -1082,7 +1152,7 @@
                 "order": 2,
                 "text": "開書不是就可以一起找嗎？",
                 "speaker": "participant",
-                "scene": "school:counselling-corner",
+                "scene": "school:teachers-office",
                 "cast": [
                   {
                     "role": "participant",
@@ -1286,7 +1356,7 @@
             "school"
           ],
           "slotIds": [
-            "lunch"
+            "noon"
           ],
           "from": null,
           "until": null,
@@ -1334,7 +1404,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生承認在未繳交的練習報告貼入補習班解答，現在不知道如何補救。",
+                "text": "午餐時，在校園談話角落，學生承認在未繳交的練習報告貼入補習班解答，現在不知道如何補救。",
                 "speaker": null,
                 "scene": "school:counselling-corner",
                 "cast": [],
@@ -1596,9 +1666,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生說同學一直要可編輯的完整報告，稱只是參考；學生尚未提供。",
+                "text": "早自習時，在導師班教室裡，學生說同學一直要可編輯的完整報告，稱只是參考；學生尚未提供。",
                 "speaker": null,
-                "scene": "school:counselling-corner",
+                "scene": "school:classroom",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -1606,7 +1676,7 @@
                 "order": 2,
                 "text": "拒絕了好像很小氣。",
                 "speaker": "participant",
-                "scene": "school:counselling-corner",
+                "scene": "school:classroom",
                 "cast": [
                   {
                     "role": "participant",
@@ -1896,7 +1966,7 @@
             "school"
           ],
           "slotIds": [
-            "lunch"
+            "early"
           ],
           "from": null,
           "until": null,
@@ -1944,9 +2014,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生出示比對報告，參考文獻及題目也被標紅，便稱自己已被判抄襲。",
+                "text": "午餐時，在教學大樓走廊，學生出示比對報告，參考文獻及題目也被標紅，便稱自己已被判抄襲。",
                 "speaker": null,
-                "scene": "school:counselling-corner",
+                "scene": "school:corridor",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -1954,7 +2024,7 @@
                 "order": 2,
                 "text": "上面寫百分之四十，我完了。",
                 "speaker": "participant",
-                "scene": "school:counselling-corner",
+                "scene": "school:corridor",
                 "cast": [
                   {
                     "role": "participant",
@@ -2206,9 +2276,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生準備把網路照片放進研究海報，只在圖片下寫「取自網路」。",
+                "text": "午餐時，在教師辦公室，學生準備把網路照片放進研究海報，只在圖片下寫「取自網路」。",
                 "speaker": null,
-                "scene": "school:counselling-corner",
+                "scene": "school:teachers-office",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -2216,7 +2286,7 @@
                 "order": 2,
                 "text": "有標網路就可以吧？",
                 "speaker": "participant",
-                "scene": "school:counselling-corner",
+                "scene": "school:teachers-office",
                 "cast": [
                   {
                     "role": "participant",
@@ -2468,9 +2538,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生出示程式及參考教學，想知道改了變數名是否就算自行完成。",
+                "text": "早自習時，在導師班教室裡，學生出示程式及參考教學，想知道改了變數名是否就算自行完成。",
                 "speaker": null,
-                "scene": "school:counselling-corner",
+                "scene": "school:classroom",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -2478,7 +2548,7 @@
                 "order": 2,
                 "text": "主要邏輯還是照那篇的。",
                 "speaker": "participant",
-                "scene": "school:counselling-corner",
+                "scene": "school:classroom",
                 "cast": [
                   {
                     "role": "participant",
@@ -2682,7 +2752,7 @@
             "school"
           ],
           "slotIds": [
-            "lunch"
+            "early"
           ],
           "from": null,
           "until": null,
@@ -2730,9 +2800,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生問能否把去年社團研究原封交作本學期成果，尚未繳交。",
+                "text": "早自習時，在導師班教室裡，學生問能否把去年社團研究原封交作本學期成果，尚未繳交。",
                 "speaker": null,
-                "scene": "school:counselling-corner",
+                "scene": "school:classroom",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -2740,7 +2810,7 @@
                 "order": 2,
                 "text": "明明都是我寫的，為什麼還要問？",
                 "speaker": "participant",
-                "scene": "school:counselling-corner",
+                "scene": "school:classroom",
                 "cast": [
                   {
                     "role": "participant",
@@ -2944,7 +3014,7 @@
             "school"
           ],
           "slotIds": [
-            "lunch"
+            "early"
           ],
           "from": null,
           "until": null,
@@ -2992,7 +3062,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生向導師描述一張匿名截圖指控某人代寫，截圖未顯示完整對話。",
+                "text": "午餐時，在校園談話角落，學生向導師描述一張匿名截圖指控某人代寫，截圖未顯示完整對話。",
                 "speaker": null,
                 "scene": "school:counselling-corner",
                 "cast": [],
@@ -3254,9 +3324,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生拿原始測量表與報告，坦言把不合預期的三筆數值刪掉，尚未繳交。",
+                "text": "午休時，在教師辦公室，學生拿原始測量表與報告，坦言把不合預期的三筆數值刪掉，尚未繳交。",
                 "speaker": null,
-                "scene": "school:counselling-corner",
+                "scene": "school:teachers-office",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -3264,7 +3334,7 @@
                 "order": 2,
                 "text": "留下來圖就不好看了。",
                 "speaker": "participant",
-                "scene": "school:counselling-corner",
+                "scene": "school:teachers-office",
                 "cast": [
                   {
                     "role": "participant",
@@ -3468,7 +3538,7 @@
             "school"
           ],
           "slotIds": [
-            "lunch"
+            "noon"
           ],
           "from": null,
           "until": null,
@@ -3516,9 +3586,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生說練習小考時曾向鄰座問單字，問這是否也算「討論」。",
+                "text": "午餐時，在教師辦公室，學生說練習小考時曾向鄰座問單字，問這是否也算「討論」。",
                 "speaker": null,
-                "scene": "school:counselling-corner",
+                "scene": "school:teachers-office",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -3526,7 +3596,7 @@
                 "order": 2,
                 "text": "老師沒說不能問，我以為可以。",
                 "speaker": "participant",
-                "scene": "school:counselling-corner",
+                "scene": "school:teachers-office",
                 "cast": [
                   {
                     "role": "participant",
@@ -3778,9 +3848,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生出示自己有權存取的共編紀錄，發現最後署名漏了參與者。",
+                "text": "午餐時，在教學大樓走廊，學生出示自己有權存取的共編紀錄，發現最後署名漏了參與者。",
                 "speaker": null,
-                "scene": "school:counselling-corner",
+                "scene": "school:corridor",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -3788,7 +3858,7 @@
                 "order": 2,
                 "text": "我怕加回去，交的人又刪掉。",
                 "speaker": "participant",
-                "scene": "school:counselling-corner",
+                "scene": "school:corridor",
                 "cast": [
                   {
                     "role": "participant",
@@ -4040,7 +4110,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生拿手機上的代寫廣告詢問，表示還沒付款，廣告保證「原創不會抓」。",
+                "text": "午餐時，在校園談話角落，學生拿手機上的代寫廣告詢問，表示還沒付款，廣告保證「原創不會抓」。",
                 "speaker": null,
                 "scene": "school:counselling-corner",
                 "cast": [],
@@ -4302,7 +4372,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生說組內表格列了沒做過的訪談，自己不想照稿上台；導師未看見訪談來源。",
+                "text": "午餐時，在校園談話角落，學生說組內表格列了沒做過的訪談，自己不想照稿上台；導師未看見訪談來源。",
                 "speaker": null,
                 "scene": "school:counselling-corner",
                 "cast": [],
@@ -4564,7 +4634,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生說自己把科任私傳的練習解答貼進班群，後來才注意到「課後再看」。",
+                "text": "午餐時，在校園談話角落，學生說自己把科任私傳的練習解答貼進班群，後來才注意到「課後再看」。",
                 "speaker": null,
                 "scene": "school:counselling-corner",
                 "cast": [],
@@ -4826,9 +4896,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生出示自己寫的口試練習卡，擔心照著同學幫改的句子回答就是代答。",
+                "text": "早自習時，在導師班教室裡，學生出示自己寫的口試練習卡，擔心照著同學幫改的句子回答就是代答。",
                 "speaker": null,
-                "scene": "school:counselling-corner",
+                "scene": "school:classroom",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -4836,7 +4906,7 @@
                 "order": 2,
                 "text": "意思是我的，句子一起練過。",
                 "speaker": "participant",
-                "scene": "school:counselling-corner",
+                "scene": "school:classroom",
                 "cast": [
                   {
                     "role": "participant",
@@ -5040,7 +5110,7 @@
             "school"
           ],
           "slotIds": [
-            "lunch"
+            "early"
           ],
           "from": null,
           "until": null,
@@ -5088,7 +5158,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生查不到AI列出的兩篇期刊，出示查詢畫面及尚未繳交的書目。",
+                "text": "午餐時，在校園談話角落，學生查不到AI列出的兩篇期刊，出示查詢畫面及尚未繳交的書目。",
                 "speaker": null,
                 "scene": "school:counselling-corner",
                 "cast": [],
@@ -5350,7 +5420,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午餐時，學生翻閱已繳交報告的個人副本，指出一段直接引文漏了引號，想悄悄換檔。",
+                "text": "午餐時，在校園談話角落，學生翻閱已繳交報告的個人副本，指出一段直接引文漏了引號，想悄悄換檔。",
                 "speaker": null,
                 "scene": "school:counselling-corner",
                 "cast": [],

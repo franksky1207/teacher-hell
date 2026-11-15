@@ -1598,7 +1598,9 @@
             "student"
           ],
           "dayKinds": [
-            "school"
+            "school",
+            "summer-camp",
+            "winter-camp"
           ],
           "slotIds": [
             "study1"
@@ -2574,8 +2576,14 @@
           "people": [
             "student"
           ],
-          "dayKinds": [],
-          "slotIds": [],
+          "dayKinds": [
+            "school",
+            "summer-camp",
+            "winter-camp"
+          ],
+          "slotIds": [
+            "private"
+          ],
           "from": null,
           "until": null,
           "facts": [],
@@ -2612,7 +2620,8 @@
         "scene": "home:living-room",
         "review": "author-rewritten-causal-outcomes-unreviewed",
         "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
-        "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。"
+        "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
+        "contactMethod": "遠距通話／訊息，場景不能誤演為學生和導師實際同處家中。"
       }
     },
     {
@@ -3880,7 +3889,9 @@
             "student"
           ],
           "dayKinds": [
-            "school"
+            "school",
+            "summer-camp",
+            "winter-camp"
           ],
           "slotIds": [
             "private"
@@ -3923,7 +3934,8 @@
         "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
         "timeEligibilityNote": "一般上課日晚間私人時段，校外訊息只作遠距接觸",
-        "semanticRepair": "四選項結果已按本事件的證據、實際行動、程序與情緒分別重寫；仍未獨立審稿。"
+        "semanticRepair": "四選項結果已按本事件的證據、實際行動、程序與情緒分別重寫；仍未獨立審稿。",
+        "contactMethod": "遠距通話／訊息，場景不能誤演為學生和導師實際同處家中。"
       }
     },
     {
@@ -4248,10 +4260,11 @@
         "distinctiveConsequence": "學生確認教務處尚未公告最終開班結果，不能只憑報名三人推定取消。／學生查到需向重修承辦詢問班別與開班條件，仍等待正式安排。／學生保存繳費與報名資料，若調整課程有紀錄可以核對。／導師理解學生怕失去補修機會，沒有以猜測保證一定開班。",
         "narrativeTime": "暑輔上午",
         "scene": "school:classroom",
-        "review": "author-rewritten-causal-outcomes-unreviewed",
+        "review": "blocked-calendar-or-participant-contract",
         "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
         "qualificationWarning": null,
-        "timeEligibilityNote": "暑假上課情境採暑輔上午，避免非上課假期誤抽"
+        "timeEligibilityNote": "暑假上課情境採暑輔上午，避免非上課假期誤抽",
+        "blocker": "需完成合法學年/畢業後接觸/長假快轉的事件時段與選人資格接線，暫不允許入正式候選池。"
       }
     },
     {
@@ -4572,9 +4585,10 @@
         "distinctiveConsequence": "學生問清延修和退學的差異，知道自己的學籍狀態仍須依正式通知核對。／學生整理缺少的學分與應修課程，不再只盯著「延修」兩個字。／學生決定向教務處確認下學期返校安排，導師沒有替他變更學籍。／導師聽見學生害怕面對昔日同學，沒有將延修說成個人失敗。",
         "narrativeTime": "畢典後電話",
         "scene": "home:living-room",
-        "review": "author-rewritten-causal-outcomes-unreviewed",
+        "review": "blocked-calendar-or-participant-contract",
         "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
-        "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。"
+        "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
+        "blocker": "需完成合法學年/畢業後接觸/長假快轉的事件時段與選人資格接線，暫不允許入正式候選池。"
       }
     },
     {
@@ -4863,7 +4877,7 @@
             "school"
           ],
           "slotIds": [
-            "noon"
+            "private"
           ],
           "from": null,
           "until": null,
@@ -5184,7 +5198,7 @@
         ],
         "eligibility": {
           "people": [
-            "student"
+            "caregiver"
           ],
           "dayKinds": [
             "weekend",
@@ -5230,7 +5244,8 @@
         "review": "author-draft-not-verified",
         "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
-        "timeEligibilityNote": "週末下午時段"
+        "timeEligibilityNote": "週末下午時段",
+        "participantScopeCorrection": "家長為當事人，不能抽成學生口吻。"
       }
     },
     {
@@ -5516,10 +5531,10 @@
             "student"
           ],
           "dayKinds": [
-            "winter-camp"
+            "school"
           ],
           "slotIds": [
-            "noon"
+            "private"
           ],
           "from": null,
           "until": null,
@@ -6174,7 +6189,7 @@
             "school"
           ],
           "slotIds": [
-            "noon"
+            "private"
           ],
           "from": null,
           "until": null,
@@ -6496,13 +6511,13 @@
         ],
         "eligibility": {
           "people": [
-            "student"
+            "caregiver"
           ],
           "dayKinds": [
             "school"
           ],
           "slotIds": [
-            "noon"
+            "private"
           ],
           "from": null,
           "until": null,
@@ -6540,7 +6555,8 @@
         "scene": "school:meeting-room",
         "review": "author-draft-not-verified",
         "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
-        "qualificationWarning": null
+        "qualificationWarning": null,
+        "participantScopeCorrection": "家長為當事人，不能抽成學生口吻。"
       }
     },
     {
@@ -8171,9 +8187,10 @@
         "distinctiveConsequence": "確認補修意願與期限／整理重修和家庭收入需求／討論家庭協調方式／理解學業與家計拉扯",
         "narrativeTime": "寒假晚間電話",
         "scene": "home:living-room",
-        "review": "author-draft-not-verified",
+        "review": "blocked-calendar-or-participant-contract",
         "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
-        "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。"
+        "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
+        "blocker": "需完成合法學年/畢業後接觸/長假快轉的事件時段與選人資格接線，暫不允許入正式候選池。"
       }
     },
     {

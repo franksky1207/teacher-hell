@@ -163,8 +163,8 @@ export default [
                       {
                         "role": "participant",
                         "holder": "person",
-                        "code": "2-2",
-                        "delta": -1
+                        "code": "2-4",
+                        "delta": 1
                       }
                     ],
                     "historyCodes": [],
@@ -1325,8 +1325,8 @@ export default [
                       {
                         "role": "participant",
                         "holder": "person",
-                        "code": "2-2",
-                        "delta": -1
+                        "code": "2-4",
+                        "delta": 1
                       }
                     ],
                     "historyCodes": [],
@@ -1696,8 +1696,8 @@ export default [
                       {
                         "role": "participant",
                         "holder": "person",
-                        "code": "2-2",
-                        "delta": -1
+                        "code": "2-4",
+                        "delta": 1
                       }
                     ],
                     "historyCodes": [],
@@ -2046,8 +2046,8 @@ export default [
                       {
                         "role": "participant",
                         "holder": "person",
-                        "code": "2-2",
-                        "delta": -1
+                        "code": "2-4",
+                        "delta": 1
                       }
                     ],
                     "historyCodes": [],
@@ -3691,8 +3691,8 @@ export default [
                       {
                         "role": "participant",
                         "holder": "person",
-                        "code": "2-2",
-                        "delta": -1
+                        "code": "2-4",
+                        "delta": 1
                       }
                     ],
                     "historyCodes": [],

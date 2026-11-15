@@ -195,7 +195,53 @@
                     "stage": null,
                     "afterDays": 0
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "student-engages",
+                    "weight": 3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "1-3",
+                        "influence": 0.35
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "針對「總分進步名次卻後退」，教師提出「請他列出本次確實進步的單元」後，學生當面表示願意先試一個可負擔的小步驟；實際執行仍待觀察。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      }
+                    }
+                  },
+                  {
+                    "id": "student-hesitates",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "1-3",
+                        "influence": -0.25
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "針對「總分進步名次卻後退」，教師提出「請他列出本次確實進步的單元」後，學生表示目前仍難以決定是否嘗試；導師尊重猶豫，沒有把建議當成已接受的承諾。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -241,7 +287,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "協助分辨絕對分數與相對排名／請他列出本次確實進步的單元／下次再比較同類題型的答題情形／你多拿到的分數沒有憑空消失",
         "editorialStatus": "author-self-check-only",
-        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。"
+        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。 此則補充學生願意／暫不接受建議的加權分歧，兩者都不預寫未來成果。"
       }
     },
     {
@@ -683,7 +729,53 @@
                     "stage": null,
                     "afterDays": 0
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "student-engages",
+                    "weight": 3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "1-3",
+                        "influence": 0.35
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "針對「補習測驗與校內評量落差」，教師提出「請科任協助辨認實際弱項」後，學生當面表示願意先試一個可負擔的小步驟；實際執行仍待觀察。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      }
+                    }
+                  },
+                  {
+                    "id": "student-hesitates",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "1-3",
+                        "influence": -0.25
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "針對「補習測驗與校內評量落差」，教師提出「請科任協助辨認實際弱項」後，學生表示目前仍難以決定是否嘗試；導師尊重猶豫，沒有把建議當成已接受的承諾。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -729,7 +821,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "確認兩項測驗的範圍與難度／請科任協助辨認實際弱項／保留卷面錯題，不直接換算分數／兩份不同的考試不一定能硬比",
         "editorialStatus": "author-self-check-only",
-        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。"
+        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。 此則補充學生願意／暫不接受建議的加權分歧，兩者都不預寫未來成果。"
       }
     },
     {
@@ -1415,7 +1507,53 @@
                     "stage": null,
                     "afterDays": 0
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "student-engages",
+                    "weight": 3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "1-3",
+                        "influence": 0.35
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "針對「同科不同單元兩極化」，教師提出「請學生帶幾何錯題向科任請教」後，學生當面表示願意先試一個可負擔的小步驟；實際執行仍待觀察。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      }
+                    }
+                  },
+                  {
+                    "id": "student-hesitates",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "1-3",
+                        "influence": -0.25
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "針對「同科不同單元兩極化」，教師提出「請學生帶幾何錯題向科任請教」後，學生表示目前仍難以決定是否嘗試；導師尊重猶豫，沒有把建議當成已接受的承諾。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -1461,7 +1599,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "將代數與幾何的實際表現分開看／請學生帶幾何錯題向科任請教／先記錄一週幾何練習的障礙／不用用一個數字替整科下判決",
         "editorialStatus": "author-self-check-only",
-        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。"
+        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。 此則補充學生願意／暫不接受建議的加權分歧，兩者都不預寫未來成果。"
       }
     },
     {
@@ -2147,7 +2285,53 @@
                     "stage": null,
                     "afterDays": 0
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "student-engages",
+                    "weight": 3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "1-3",
+                        "influence": 0.35
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "針對「小考很差段考卻翻身」，教師提出「引導他說出本次使用的有效方法」後，學生當面表示願意先試一個可負擔的小步驟；實際執行仍待觀察。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      }
+                    }
+                  },
+                  {
+                    "id": "student-hesitates",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "1-3",
+                        "influence": -0.25
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "針對「小考很差段考卻翻身」，教師提出「引導他說出本次使用的有效方法」後，學生表示目前仍難以決定是否嘗試；導師尊重猶豫，沒有把建議當成已接受的承諾。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -2193,7 +2377,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "比較兩類測驗的題型與作答證據／引導他說出本次使用的有效方法／持續觀察後續評量，不先保證穩定／考得好可以高興，也可以繼續求證",
         "editorialStatus": "author-self-check-only",
-        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。"
+        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。 此則補充學生願意／暫不接受建議的加權分歧，兩者都不預寫未來成果。"
       }
     },
     {
@@ -2879,7 +3063,53 @@
                     "stage": null,
                     "afterDays": 0
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "student-engages",
+                    "weight": 3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "1-3",
+                        "influence": 0.35
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "針對「重考成績較好卻不能改原分」，教師提出「協助向科任了解校內合法補救機制」後，學生當面表示願意先試一個可負擔的小步驟；實際執行仍待觀察。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      }
+                    }
+                  },
+                  {
+                    "id": "student-hesitates",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "1-3",
+                        "influence": -0.25
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "針對「重考成績較好卻不能改原分」，教師提出「協助向科任了解校內合法補救機制」後，學生表示目前仍難以決定是否嘗試；導師尊重猶豫，沒有把建議當成已接受的承諾。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -2925,7 +3155,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "說明正式評量與練習用途有別／協助向科任了解校內合法補救機制／保留改善紀錄，不擅自答應改分／這次真的學會很重要，分數規則也得守",
         "editorialStatus": "author-self-check-only",
-        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。"
+        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。 此則補充學生願意／暫不接受建議的加權分歧，兩者都不預寫未來成果。"
       }
     },
     {
@@ -3611,7 +3841,53 @@
                     "stage": null,
                     "afterDays": 0
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "student-engages",
+                    "weight": 3,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "1-3",
+                        "influence": 0.35
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "針對「分組報告高分個人筆試低」，教師提出「建議將報告內容改寫成個人短答練習」後，學生當面表示願意先試一個可負擔的小步驟；實際執行仍待觀察。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      }
+                    }
+                  },
+                  {
+                    "id": "student-hesitates",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "1-3",
+                        "influence": -0.25
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "針對「分組報告高分個人筆試低」，教師提出「建議將報告內容改寫成個人短答練習」後，學生表示目前仍難以決定是否嘗試；導師尊重猶豫，沒有把建議當成已接受的承諾。",
+                      "claims": [],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "observe",
@@ -3657,7 +3933,7 @@
         "knowledgeSource": "學生提供資料及口述，尚未查證的計分與他人言論不當成事實。",
         "distinctiveConsequence": "釐清小組分工與個人理解的不同／建議將報告內容改寫成個人短答練習／保留個人練習紀錄，與科任討論／能完成報告有價值，也可以補上自己的理解",
         "editorialStatus": "author-self-check-only",
-        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。"
+        "revisionNotes": "第二輪：行動結果改成記錄實際採取的不同策略，後續成果未發生不預先斷言；場景與表情依人物互動調整。尚待獨立語意審稿。 此則補充學生願意／暫不接受建議的加權分歧，兩者都不預寫未來成果。"
       }
     }
   ]

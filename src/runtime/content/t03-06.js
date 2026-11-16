@@ -5281,7 +5281,128 @@ export default [
                     }
                   ]
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "student-organizes-next-step",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-2",
+                      "influence": 0.5
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生依通知列出自己已修課及仍不確定的必修科目，分清預警與正式畢業結算，尚未獲得教務認定。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "缺課就一定延修嗎？那張單子我根本看不懂。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": -0.3
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生在場向導師反映，未擅自對外公開缺課原因。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "student-remains-uncertain",
+                  "weight": 1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.4
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生發現部分科目的學分數與個人紀錄不一致，決定先向教務查詢，不認定一定延修或能畢業。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "缺課就一定延修嗎？那張單子我根本看不懂。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生在場向導師反映，未擅自對外公開缺課原因。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "empathy",

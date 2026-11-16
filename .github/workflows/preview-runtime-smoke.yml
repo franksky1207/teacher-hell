@@ -1,0 +1,57 @@
+name: Preview runtime smoke
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/preview-runtime-smoke.yml'
+      - 'web/game.js'
+      - 'src/runtime/story-content.js'
+      - 'src/runtime/progression.js'
+      - 'scripts/preview-runtime-smoke.mjs'
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Validate browser entry static import graph
+        shell: bash
+        run: |
+          node --input-type=module <<'EOF'
+          try {
+            await import('./web/game.js');
+            throw new Error('Browser entry unexpectedly evaluated without DOM');
+          } catch (error) {
+            if (error instanceof ReferenceError && /document is not defined/.test(error.message)) {
+              console.log('PASS browser entry imports linked (DOM unavailable under Node)');
+            } else {
+              console.error(error);
+              process.exitCode = 1;
+            }
+          }
+          EOF
+      - name: Open live preview with headless Chrome and verify homepage
+        shell: bash
+        run: |
+          set -euo pipefail
+          CHROME=$(command -v google-chrome || command -v chromium || true)
+          test -n "$CHROME"
+          "$CHROME" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --no-first-run --disable-extensions --virtual-time-budget=7000 --dump-dom https://franksky1207.github.io/teacher-hell/preview/ >/tmp/live-dom.html 2>/tmp/live-chrome.log || {
+            tail -80 /tmp/live-chrome.log
+            exit 1
+          }
+          if ! grep -q 'data-action="slots"' /tmp/live-dom.html; then
+            echo 'Preview did not initialize; HTML follows:'
+            head -c 3000 /tmp/live-dom.html
+            echo
+            echo 'Chrome stderr:'
+            tail -80 /tmp/live-chrome.log
+            exit 1
+          fi
+          echo 'PASS live preview initialized and exposes save slots navigation'

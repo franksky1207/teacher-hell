@@ -189,7 +189,128 @@
                       }
                     ]
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "student-can-organize",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-2",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生在一份練習答案旁清楚標記題號，能指出第一次錯位的位置，但正式評分仍不變。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "我明明會算，只是填在旁邊的格子。",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "3-4",
+                          "delta": 0.3
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生向導師口頭反映自己的觀察，未把說法傳給其他人。"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "student-needs-reframing",
+                    "weight": 1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.5
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生嘗試標記題號時發現自己仍會跳列，決定先請科任確認答題欄排列方式。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "我明明會算，只是填在旁邊的格子。",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生向導師口頭反映自己的觀察，未把說法傳給其他人。"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "empathy",
@@ -329,7 +450,7 @@
         "distinctiveConsequence": "學生找出第一個錯位題，其他題仍需分別核對。／導師轉請科任確認正式規定，未自行修改分數。／學生選擇先看題號再作答，尚未證實改善效果。／學生明白填答格式與概念理解是兩回事。",
         "candidateId": "T03-03-C01",
         "inProgress": "草稿已補必要故事 next/null、合法表情及子主題數值傾向；仍需正式工程、主控語意與學籍情境審查。",
-        "numericRationale": "本小主題使用正式六碼 3-4、3-2、2-2、3-3、4-1、2-4；只表達抽選傾向，情緒與支持不自動保證數值變化。"
+        "numericRationale": "僅在學生當場具體整理出可操作的內容時，以3-4小幅變化反映實際效果；多結果依學生既有3-2與焦慮傾向加權，尚待引擎精準驗證。"
       }
     },
     {

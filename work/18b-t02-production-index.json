@@ -3,7 +3,7 @@
   "title": "課程選擇、學籍與升學",
   "branch": "feat/18b-t02-authoring",
   "authoritativeSOP": "docs/18B-正式事件量產與品質驗收SOP.md",
-  "status": "hydrogen-concentrated-corrections-complete; blocked-records-isolated; engineering-test-only",
+  "status": "last24-focused-qualification-corrections-complete; 9-blocked-plus-8-held; engineering-test-only",
   "counts": {
     "explored": 224,
     "retained": 208,
@@ -34,7 +34,7 @@
     "admissionsStateGated": 25,
     "externalHydrogenReviewed": 208,
     "hydrogenReportIssueRecords": 185,
-    "hydrogenFindingsConfirmedAndFixed": 153
+    "hydrogenFindingsConfirmedAndFixed": 168
   },
   "subtopics": [
     {
@@ -1201,5 +1201,90 @@
       "status": "unavailable",
       "reason": "作者分支與審查分支沒有T02故事JS、T02資源註冊或同步工具；既有T02測試直接讀取作者JSON。未新建發布接線。"
     }
+  },
+  "hydrogenLast24Corrections": {
+    "date": "2026-11-16",
+    "base": "816836e2b370c55e96d5194e70d1630230332507",
+    "scopeIds": [
+      "03-01",
+      "03-03",
+      "03-04",
+      "03-07",
+      "03-08",
+      "03-09",
+      "03-10",
+      "03-11",
+      "03-12",
+      "03-14",
+      "03-16",
+      "03-17",
+      "03-18",
+      "03-22",
+      "03-24",
+      "03-25",
+      "04-08",
+      "05-25",
+      "06-03",
+      "06-26",
+      "06-27",
+      "07-17",
+      "07-25",
+      "08-07"
+    ],
+    "repairedIds": [
+      "03-01",
+      "03-04",
+      "03-07",
+      "03-08",
+      "03-12",
+      "03-14",
+      "03-16",
+      "03-22",
+      "03-24",
+      "03-25",
+      "05-25",
+      "06-03",
+      "06-26",
+      "06-27",
+      "07-25"
+    ],
+    "stillIsolated": {
+      "03-03": "有retakePlan，但沒有該生必修重修課表與社團表演的實際時段衝突證據。",
+      "03-09": "現有重修計畫即時決定個別／成班，沒有三人報名名單及尚未決定開班的公告證據。",
+      "03-10": "有成績不足也不能證明預警通知被放在公共桌面或已有人看見；缺通知及公開接觸證據。",
+      "03-11": "不能以成績不足推定已收到延修提醒；缺該生正式提醒／返校安排證據，且未公布成績不得推定畢業資格。",
+      "03-17": "重修計畫不能證明轉入新班及指定舊教材難以取得；沒有完整對應證據。",
+      "03-18": "原選項比較兩次補考；現有同科紀錄僅保存一次makeup，不能用原學期成績冒充另一次補考。",
+      "04-08": "可讀到原成績與retake，但沒有故事明示的正式學分更正通知；目前缺學分也不能代替曾重修及格。",
+      "08-07": "個人補考失敗不等於無畢業證書。正式review在學業結束才成立，無充分證據支持本篇在校午休的前提。",
+      "07-17": "原分科正式線上志願選填在七月底至八月、超出首發生涯與現有正式招生節點；保留原故事，不能偷換申請入學來放行。"
+    },
+    "counts": {
+      "input": 24,
+      "repaired": 15,
+      "stillIsolated": 9,
+      "academicRepaired": 10,
+      "entranceRepaired": 5
+    },
+    "remainingFindingsIncludingOriginalHeld": 17,
+    "resolvedFindings": 168,
+    "qualificationVersion": "record-v1",
+    "implementation": "src/runtime/record-qualifications.js",
+    "verification": {
+      "command": "node --test test/18b-t02-last24.test.js",
+      "groups": 3,
+      "executions": 1,
+      "passed": 3,
+      "failed": 0,
+      "durationMs": 764.971179,
+      "scope": "18則學業中的可查證資格、5則升學與家長資格、24則原故事/數值不變與候選契約；未重審其他184則"
+    },
+    "storiesAndNumericCalibrationUnchanged": true,
+    "retained": 208,
+    "formalCandidate": false,
+    "published": 0,
+    "release": "PR #69 Draft; no merge/deploy/ready",
+    "record": "work/18b-t02-hydrogen-corrections.json#last24Corrections",
+    "supersedes": "hydrogenConcentratedCorrections的32未解（含8 held）為816836e前輪歷史；本輪只處理其blocked 24，原8 held不動。"
   }
 }

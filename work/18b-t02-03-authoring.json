@@ -296,7 +296,14 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "academic": [
+            {
+              "kind": "record-v1",
+              "query": "required-credit-deficit",
+              "subject": "participant"
+            }
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -330,9 +337,14 @@
         "sceneNote": null,
         "numericRationale": "低責任感和低執行能力增加學分失落風險，焦慮推高求助，愉悅較高則減弱。；核心 3-3、2-2、1-1；附加 3-1、4-4、2-4。本為逐篇設計理由，尚未進行引擎精準驗證。",
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "現行academic須固定termId，沒有相對學期及所述個人補考／重修／畢業資格的完整條件；保留隔離，不以任一不及格科目冒充本篇事實。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "required-credit-deficit",
+            "subject": "participant"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },
@@ -629,7 +641,14 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "academic": [
+            {
+              "kind": "record-v1",
+              "query": "makeup-due-today",
+              "subject": "participant"
+            }
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -663,9 +682,14 @@
         "sceneNote": null,
         "numericRationale": "焦慮與欠缺預先安排提高補考當天緊張感，不能以分數保證校方准考。；核心 3-3、2-2、1-1；附加 3-2、4-3、2-4。本為逐篇設計理由，尚未進行引擎精準驗證。",
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "現行academic須固定termId，沒有相對學期及所述個人補考／重修／畢業資格的完整條件；保留隔離，不以任一不及格科目冒充本篇事實。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "makeup-due-today",
+            "subject": "participant"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },
@@ -962,7 +986,14 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "academic": [
+            {
+              "kind": "record-v1",
+              "query": "makeup-one-point-short",
+              "subject": "participant"
+            }
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -996,9 +1027,14 @@
         "sceneNote": null,
         "numericRationale": "差一分的補考結果可能伴隨高責任感與焦慮，並非預設學生不負責。；核心 3-3、2-2、1-1；附加 3-2、4-3、2-4。本為逐篇設計理由，尚未進行引擎精準驗證。",
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "現行academic須固定termId，沒有相對學期及所述個人補考／重修／畢業資格的完整條件；保留隔離，不以任一不及格科目冒充本篇事實。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "makeup-one-point-short",
+            "subject": "participant"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },
@@ -1625,7 +1661,14 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "academic": [
+            {
+              "kind": "record-v1",
+              "query": "makeup-due-tomorrow",
+              "subject": "participant"
+            }
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -1658,9 +1701,14 @@
         "review": "author-draft-not-verified",
         "qualificationWarning": null,
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "現行academic須固定termId，沒有相對學期及所述個人補考／重修／畢業資格的完整條件；保留隔離，不以任一不及格科目冒充本篇事實。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "makeup-due-tomorrow",
+            "subject": "participant"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },
@@ -2927,7 +2975,14 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "academic": [
+            {
+              "kind": "record-v1",
+              "query": "required-credit-deficit",
+              "subject": "participant"
+            }
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -2960,9 +3015,14 @@
         "numericRationale": "依本篇起因「午休，教室。學生把總學分與必修學分混為一談。」校準候選傾向：2-2 高（相對權重3）、1-1 高（相對權重2）、3-1 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "現行academic須固定termId，沒有相對學期及所述個人補考／重修／畢業資格的完整條件；保留隔離，不以任一不及格科目冒充本篇事實。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "required-credit-deficit",
+            "subject": "participant"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },
@@ -3902,7 +3962,14 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "academic": [
+            {
+              "kind": "record-v1",
+              "query": "makeup-due-tomorrow",
+              "subject": "participant"
+            }
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -3939,9 +4006,14 @@
         "contactMethod": "遠距通話／訊息，場景不能誤演為學生和導師實際同處家中。",
         "communicationMode": "remote-not-physical-contact",
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "現行academic須固定termId，沒有相對學期及所述個人補考／重修／畢業資格的完整條件；保留隔離，不以任一不及格科目冒充本篇事實。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "makeup-due-tomorrow",
+            "subject": "participant"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },
@@ -5202,7 +5274,14 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "academic": [
+            {
+              "kind": "record-v1",
+              "query": "credit-deficit",
+              "subject": "caregiver-student"
+            }
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -5240,9 +5319,14 @@
         "communicationMode": "remote-not-physical-contact",
         "hydrogenRevision": "2026-11-16：核實劇情與結果契約，修正遠距物理contact及/或家長通訊主詞；仍為工程隔離，獨立回審未通過。",
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "現行academic須固定termId，沒有相對學期及所述個人補考／重修／畢業資格的完整條件；保留隔離，不以任一不及格科目冒充本篇事實。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "credit-deficit",
+            "subject": "caregiver-student"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },
@@ -7194,7 +7278,14 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "academic": [
+            {
+              "kind": "record-v1",
+              "query": "required-credit-deficit",
+              "subject": "participant"
+            }
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -7229,9 +7320,14 @@
         "timeEligibilityNote": "週末下午時段",
         "semanticRepair": "四策略結果改為本案具體行動、真實資訊及尚未確定之事；未經獨立審稿。",
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "現行academic須固定termId，沒有相對學期及所述個人補考／重修／畢業資格的完整條件；保留隔離，不以任一不及格科目冒充本篇事實。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "required-credit-deficit",
+            "subject": "participant"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },
@@ -7528,7 +7624,14 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "academic": [
+            {
+              "kind": "record-v1",
+              "query": "makeup-failed",
+              "subject": "participant"
+            }
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -7562,9 +7665,14 @@
         "qualificationWarning": null,
         "semanticRepair": "四策略結果改為本案具體行動、真實資訊及尚未確定之事；未經獨立審稿。",
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "現行academic須固定termId，沒有相對學期及所述個人補考／重修／畢業資格的完整條件；保留隔離，不以任一不及格科目冒充本篇事實。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "makeup-failed",
+            "subject": "participant"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },
@@ -7861,7 +7969,14 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "academic": [
+            {
+              "kind": "record-v1",
+              "query": "remedial-credit-yesterday",
+              "subject": "participant"
+            }
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -7895,9 +8010,14 @@
         "qualificationWarning": null,
         "semanticRepair": "四策略結果改為本案具體行動、真實資訊及尚未確定之事；未經獨立審稿。",
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "現行academic須固定termId，沒有相對學期及所述個人補考／重修／畢業資格的完整條件；保留隔離，不以任一不及格科目冒充本篇事實。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "remedial-credit-yesterday",
+            "subject": "participant"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },

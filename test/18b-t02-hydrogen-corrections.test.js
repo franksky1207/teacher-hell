@@ -45,7 +45,7 @@ test('T02 correction: actual admission gates reject premature and unrelated stud
  const caregiver=byId.get('06-03');
  assert.equal(caregiver.definition.eligibility.people[0],'caregiver');
  assert.equal(!!entranceCondition(s,'caregiver',{kind:'application-screened'}),false);
- assert.ok(manifest.blocked['06-03'],'unsupported caregiver-to-student qualification must remain blocked');
+ assert.ok(manifest.last24Corrections.repaired['06-03'],'caregiver qualification is repaired by explicit record-v1 subject resolution');
 });
 
 test('T02 correction: remote conversations have no in-person contact or mismatched recorded claims',()=>{

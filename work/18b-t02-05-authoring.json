@@ -1309,6 +1309,11 @@
             },
             {
               "kind": "stars-nominated"
+            },
+            {
+              "kind": "record-v1",
+              "query": "stars-admitted",
+              "subject": "participant"
             }
           ]
         },
@@ -1345,9 +1350,14 @@
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
         "numericCausalityNote": "僅empathy選項產生可觀察的短期情緒變化，依當場反應更新2-4 +0.4；其他分支不憑空更動長期能力，原候選六碼仍待校準。",
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "現行predicate無stars-admitted，stars-nominated與全校stars-screen不能證實此生已取得繁星錄取結果；保留隔離。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "stars-admitted",
+            "subject": "participant"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },

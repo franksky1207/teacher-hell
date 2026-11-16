@@ -1,3 +1,4 @@
+import {validateRecordCondition,ACADEMIC_RECORD_QUERIES,ENTRANCE_RECORD_QUERIES} from './record-qualifications.js';
 import {projectIssues} from './issues.js';
 import {validateIssueEligibility,issueOptions,validateBoundSelection,rejectedIssueReservation,boundParticipants} from './issue-candidates.js';
 import { runtimeCalendarDay,aftercareDefinition,retiredAftercareReservation } from './aftercare-calendar.js';
@@ -46,8 +47,8 @@ export function validateEventDefinitions(definitions){
    if(Object.hasOwn(e,'issue'))validateIssueEligibility(e.issue);
   if(e.homeroom)need(['ordinary','social','crisis','support','placement'].includes(e.homeroom),'Homeroom qualification');
   if(e.procedure){need(Array.isArray(e.procedure),'Procedure qualifications');for(const p of e.procedure){assertShape(p,['kind','status']);identifier(p.kind);identifier(p.status);}}
-  if(e.entrance){need(Array.isArray(e.entrance),'entrance predicates');for(const c of e.entrance){assertShape(c,['kind',...(Object.hasOwn(c,'value')?['value']:[])]);need(['active','route','gsat-published','confirmed','subject-preparing','milestone-completed','stars-nominated','application-screened','application-reviewed','application-accepted'].includes(c.kind),'entrance predicate');if(['route','milestone-completed'].includes(c.kind))need(typeof c.value==='string'&&c.value.length>0,'entrance predicate value');}}
-  if(e.academic){need(Array.isArray(e.academic),'Academic qualifications');for(const a of e.academic){need(['makeup','credit-deficit','change','admission'].includes(a.kind)&&typeof a.termId==='string','academic condition');}}
+  if(e.entrance){need(Array.isArray(e.entrance),'entrance predicates');for(const c of e.entrance){if(c.kind==='record-v1'){validateRecordCondition(c,ENTRANCE_RECORD_QUERIES);continue;}assertShape(c,['kind',...(Object.hasOwn(c,'value')?['value']:[])]);need(['active','route','gsat-published','confirmed','subject-preparing','milestone-completed','stars-nominated','application-screened','application-reviewed','application-accepted'].includes(c.kind),'entrance predicate');if(['route','milestone-completed'].includes(c.kind))need(typeof c.value==='string'&&c.value.length>0,'entrance predicate value');}}
+  if(e.academic){need(Array.isArray(e.academic),'Academic qualifications');for(const a of e.academic){if(a.kind==='record-v1'){validateRecordCondition(a,ACADEMIC_RECORD_QUERIES);continue;}need(['makeup','credit-deficit','change','admission'].includes(a.kind)&&typeof a.termId==='string','academic condition');}}
   if(e.roleIds)need(Array.isArray(e.roleIds)&&e.roleIds.every(id=>Number.isInteger(id)&&id>=1&&id<=35),'Role eligibility IDs');
   if(e.affiliation){assertShape(e.affiliation,['classId','status']);identifier(e.affiliation.classId);need(['active','former'].includes(e.affiliation.status),'Affiliation status');}
   if(e.groups){need(Array.isArray(e.groups),'Group eligibility');for(const g of e.groups){assertShape(g,['groupId']);identifier(g.groupId);}}
@@ -161,7 +162,7 @@ export function buildEventCandidates(world,definitions,{engineering=false,ignore
    if(e.knowledge&&!e.knowledge.every(k=>r.knowledge.some(x=>x.actorId===(k.actorId==='participant'?person:k.actorId)&&x.claimId===k.claimId&&x.versionId===k.versionId&&(k.belief==='any'||x.belief===k.belief))))reason='knowledge-condition';
    if(e.groups&&!e.groups.every(g=>npcGroups(world).some(x=>x.id===g.groupId&&!x.ended&&x.memberIds.includes(person))))reason='group-condition';
    if(entranceAbsent(world,index.academics,person))reason='personal-admissions-activity';
-   if(e.entrance&&!e.entrance.every(c=>entranceCondition(index.academics,person,c)))reason='entrance-condition';
+   if(e.entrance&&!e.entrance.every(c=>entranceCondition(index.academics,person,c,world)))reason='entrance-condition';
    if(e.academic&&!e.academic.every(a=>academicEligible(world,person,a,index.academics)))reason='academic-condition';
    if(e.procedure&&!e.procedure.every(p=>procedureEligible(world,person,p,index.institution)))reason='procedure-condition';
    if(e.enrollment&&!enrollmentEligibility(world.numeric.evolution.world,{personId:person,...e.enrollment}).eligible)reason='enrollment';

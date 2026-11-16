@@ -2654,11 +2654,9 @@
           ],
           "entrance": [
             {
-              "kind": "milestone-completed",
-              "value": "application-screen"
-            },
-            {
-              "kind": "application-screened"
+              "kind": "record-v1",
+              "query": "application-screened",
+              "subject": "caregiver-student"
             }
           ]
         },
@@ -2697,9 +2695,14 @@
         "communicationMode": "remote-not-physical-contact",
         "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。",
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "家長通話主體已修正，但現行entranceCondition直接以participant ID查學生資料，不能由caregiver自動找到孩子；保留隔離，不讓錯誤的家長升學資格假裝可抽。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "application-screened",
+            "subject": "caregiver-student"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },
@@ -8037,6 +8040,11 @@
             },
             {
               "kind": "application-reviewed"
+            },
+            {
+              "kind": "record-v1",
+              "query": "application-mixed-offers",
+              "subject": "participant"
             }
           ]
         },
@@ -8074,9 +8082,14 @@
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
         "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。",
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "現行predicate無單一學生多校系結果／備取組合，application-reviewed僅證實參與二階，不能證明本篇多份通知均存在。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "application-mixed-offers",
+            "subject": "participant"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },
@@ -8375,6 +8388,11 @@
             },
             {
               "kind": "application-reviewed"
+            },
+            {
+              "kind": "record-v1",
+              "query": "application-interview-rejected",
+              "subject": "participant"
             }
           ]
         },
@@ -8414,9 +8432,14 @@
         "hydrogenRevision": "2026-11-16：核實劇情與結果契約，修正遠距物理contact及/或家長通訊主詞；仍為工程隔離，獨立回審未通過。",
         "qualificationsNeeded": "必須完成正式申請入學結果公告，並有參與二階審查的個人資料；未確認落選狀態前，不能把部分校系未錄取等同全部落榜，需後續精準審稿。",
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "現行predicate無個人落選判定；application-reviewed不等於未錄取，保留原落選回顧故事並隔離。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "application-interview-rejected",
+            "subject": "participant"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },

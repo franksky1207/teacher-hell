@@ -7989,6 +7989,11 @@
             },
             {
               "kind": "gsat-published"
+            },
+            {
+              "kind": "record-v1",
+              "query": "application-all-rejected",
+              "subject": "participant"
             }
           ]
         },
@@ -8025,9 +8030,14 @@
         "semanticRepair": "四選項結果已按本事件的證據、實際行動、程序與情緒分別重寫；仍未獨立審稿。",
         "gradeEligibilityBlocker": "高三資格已有正式grades門檻；本篇已改用實際存在的入學進度條件，但獨立語意與正式上架驗收尚未完成。",
         "hydrogenDisposition": {
-          "status": "blocked",
-          "reason": "active與application-result不能證明此生申請全部未錄取，既有故事保留隔離。",
-          "formalCandidate": false
+          "status": "qualification-repaired",
+          "query": {
+            "kind": "record-v1",
+            "query": "application-all-rejected",
+            "subject": "participant"
+          },
+          "formalCandidate": false,
+          "note": "僅修復既有阻斷清單的資格缺口；工程隔離及發布狀態不變。"
         }
       }
     },

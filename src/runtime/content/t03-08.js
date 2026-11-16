@@ -6093,7 +6093,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "一名同學熱心替朋友報名了校內支持活動，當事人卻在報名確認信寄來後表示自己不願參加。",
+              "text": "學生拿著同學替他填好的校內支持活動報名草稿來找你，說對方雖然出於好意，卻未先徵求他的同意；報名尚未送出。",
               "speaker": null,
               "scene": "school:corridor",
               "cast": [],
@@ -6117,11 +6117,11 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "先確認報名資料與學生本人意願",
+              "text": "確認草稿內容及學生是否同意提交",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生明確表示未同意報名，導師尚未認定報名效力。",
+                "fact": "學生表達未授權提交草稿，導師不替學生認定正式報名成立。",
                 "claims": [
                   {
                     "role": "participant",
@@ -6167,11 +6167,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "協助向承辦單位詢問撤回或更正程序",
+              "text": "先確認正式報名規則與撤回方式",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師協助詢問撤回流程，未擅自刪除正式紀錄。",
+                "fact": "導師核對活動報名程序，尚未替任何人送出或撤回申請。",
                 "claims": [
                   {
                     "role": "participant",
@@ -6217,11 +6217,11 @@ export default [
             },
             {
               "id": "plan",
-              "text": "和熱心同學討論先詢問再協助的界線",
+              "text": "請學生決定是否需要向同學說明協助界線",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "相關同學將釐清協助界線，尚未正式完成對話。",
+                "fact": "學生選擇要不要回應同學，導師未擅自揭露個人支持需求。",
                 "claims": [
                   {
                     "role": "participant",
@@ -7035,7 +7035,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生連續三週向不同單位詢問同一件教材支援問題，得到三個不同承辦人的聯絡方式，至今不知誰負責回覆。",
+              "text": "學生拿著自己整理的詢問紀錄來找你：不同窗口的回覆寫著不同的承辦單位，他還沒有得到確定的聯絡方式，想請導師確認正式窗口。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],

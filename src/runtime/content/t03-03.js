@@ -683,7 +683,7 @@ export default [
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生標出所求量，尚未算出完整答案。",
+                "fact": "學生在文字題中圈出要計算的花費，卻還沒弄清楚全部條件；導師邀請他繼續檢查數據。",
                 "claims": [
                   {
                     "role": "participant",
@@ -695,7 +695,7 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
+                  "stage": "identify-conditions",
                   "afterDays": 0
                 },
                 "world": {
@@ -872,6 +872,379 @@ export default [
                       "toRole": "teacher",
                       "claimIndex": 0,
                       "description": "學生向導師口頭反映自己的觀察，未把說法傳給其他人。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "identify-conditions",
+          "pages": [
+            {
+              "order": 1,
+              "text": "你把題目裡的條件分開寫在白紙上：「文具店三本筆記本四十五元」、「班級活動需要十二本」；旁邊另寫著「全班四十人」。學生看著三個數字皺眉。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "老師，題目寫全班有四十個人，可是我們只要買十二本筆記本，四十要乘進去嗎？",
+              "speaker": "participant",
+              "scene": "school:classroom",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            },
+            {
+              "order": 3,
+              "text": "這題要算的，是十二本筆記本需要多少錢。你可以直接示範，也可以讓學生自己整理條件。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            }
+          ],
+          "choices": [
+            {
+              "id": "group",
+              "text": "把三本四十五元畫成一組，陪他數出十二本有幾組",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生自己數出十二本是四組，每組四十五元，寫出總價一百八十元，並能說明四十人與題目無關。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師，題目寫全班有四十個人，可是我們只要買十二本筆記本，四十要乘進去嗎？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "3-4",
+                    "delta": 0.5
+                  }
+                ],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生在場向導師詢問解題條件，尚未對其他人宣布自己的理解。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "irrelevant",
+              "text": "請他解釋「四十個人」和買十二本有沒有必然關係",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生指出購買數量已固定為十二本，四十人只是背景資訊；價格仍待自行算出。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師，題目寫全班有四十個人，可是我們只要買十二本筆記本，四十要乘進去嗎？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生在場向導師詢問解題條件，尚未對其他人宣布自己的理解。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "try",
+              "text": "先不提示計算方法，讓他畫出自己的比例對應",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生試著畫比例圖，導師保留核對機會，尚未確認他畫得正確。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師，題目寫全班有四十個人，可是我們只要買十二本筆記本，四十要乘進去嗎？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生在場向導師詢問解題條件，尚未對其他人宣布自己的理解。"
+                    }
+                  ]
+                }
+              },
+              "variants": [
+                {
+                  "id": "self-discovery",
+                  "weight": 3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-2",
+                      "influence": 0.4
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生畫出三本與十二本的對應四組，發現四十人不必列入；他寫下四組但還沒做最後的乘法。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "老師，題目寫全班有四十個人，可是我們只要買十二本筆記本，四十要乘進去嗎？",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "delta": 0.25
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生在場向導師詢問解題條件，尚未對其他人宣布自己的理解。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "needs-recheck",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-2",
+                      "influence": -0.2
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生把四十人也畫成一組，察覺線條越畫越複雜，決定回頭確認題目真正要求的購買數量。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "老師，題目寫全班有四十個人，可是我們只要買十二本筆記本，四十要乘進去嗎？",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生在場向導師詢問解題條件，尚未對其他人宣布自己的理解。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "humor",
+              "text": "「四十人是這題的臨時演員，不是每個人都要進算式啦」",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生笑出聲，將四十人圈到題外，重新閱讀三本四十五元與十二本的關係；尚未算出總價。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師，題目寫全班有四十個人，可是我們只要買十二本筆記本，四十要乘進去嗎？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -0.25
+                  }
+                ],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生在場向導師詢問解題條件，尚未對其他人宣布自己的理解。"
                     }
                   ]
                 }

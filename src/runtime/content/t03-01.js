@@ -32,7 +32,7 @@ export default [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "worried"
+                  "expression": "sad"
                 }
               ],
               "presentation": "dialogue"
@@ -204,14 +204,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -261,29 +254,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -524,14 +517,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -581,29 +567,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -844,14 +830,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -901,29 +880,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -992,7 +971,7 @@ export default [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "worried"
+                  "expression": "sad"
                 }
               ],
               "presentation": "dialogue"
@@ -1164,14 +1143,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1221,29 +1193,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -1484,14 +1456,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1541,29 +1506,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -1804,14 +1769,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -1861,29 +1819,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -1952,7 +1910,7 @@ export default [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "worried"
+                  "expression": "sad"
                 }
               ],
               "presentation": "dialogue"
@@ -2124,14 +2082,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2181,29 +2132,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -2444,14 +2395,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2501,29 +2445,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -2764,14 +2708,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -2821,29 +2758,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -2912,7 +2849,7 @@ export default [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "worried"
+                  "expression": "sad"
                 }
               ],
               "presentation": "dialogue"
@@ -3084,14 +3021,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3141,29 +3071,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -3404,14 +3334,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3461,29 +3384,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -3493,7 +3416,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "early"
+          "lunch"
         ],
         "from": null,
         "until": null,
@@ -3724,14 +3647,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -3781,29 +3697,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -3872,7 +3788,7 @@ export default [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "worried"
+                  "expression": "sad"
                 }
               ],
               "presentation": "dialogue"
@@ -4044,14 +3960,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -4101,29 +4010,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -4364,14 +4273,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -4421,29 +4323,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -4684,14 +4586,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -4741,29 +4636,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -4832,7 +4727,7 @@ export default [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "worried"
+                  "expression": "sad"
                 }
               ],
               "presentation": "dialogue"
@@ -5004,14 +4899,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -5061,29 +4949,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -5324,14 +5212,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -5381,29 +5262,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -5644,14 +5525,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -5701,29 +5575,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -5792,7 +5666,7 @@ export default [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "worried"
+                  "expression": "sad"
                 }
               ],
               "presentation": "dialogue"
@@ -5964,14 +5838,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -6021,29 +5888,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [
@@ -6284,14 +6151,7 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [
-                  {
-                    "role": "participant",
-                    "holder": "person",
-                    "code": "2-4",
-                    "delta": 0.5
-                  }
-                ],
+                "changes": [],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -6341,29 +6201,29 @@ export default [
       },
       "coreCodes": [
         "4-3",
-        "3-2",
-        "2-2"
+        "4-2",
+        "3-4"
       ],
       "additionalCodes": [
+        "1-3",
         "3-1",
-        "4-4",
-        "2-4"
+        "2-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
         -1,
-        1,
         -1,
-        1,
-        -1
+        -1,
+        -1,
+        1
       ],
       "eligibility": {
         "people": [

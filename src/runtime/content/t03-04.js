@@ -4015,7 +4015,128 @@ export default [
                     }
                   ]
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "student-can-organize",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-1",
+                      "influence": 0.6
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生將公開選拔條件與自己尚不清楚的評分項目分成兩欄，提出能具體詢問的問題。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我不怕選不上，但至少要知道是怎麼選的。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-1",
+                        "delta": 0.4
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "student-needs-reframing",
+                  "weight": 1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.5
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生發現選拔條件沒有完整公告，決定先保留疑問清單，不對競爭者作不實指控。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我不怕選不上，但至少要知道是怎麼選的。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "empathy",

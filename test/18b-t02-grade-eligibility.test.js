@@ -186,3 +186,24 @@ test('18-B T02: 23 repaired school-time and admissions-stage story records remai
   for(const c of rec.story.stages[0].choices)for(const claim of c.outcome.claims??[])if(claim.role==='participant')assert.equal(claim.statement,spoken,t);
  }
 });
+
+
+test('18-B T02 Hydrogen: remote chat must not fabricate physical contact; caregiver phone has proper provenance',()=>{
+ const physicallyRemote=new Set(['01-25','02-12','06-08','06-12','06-14','06-20','06-21','06-27','06-28','07-12','07-20','07-26']);
+ const caregiverPhone=new Set(['02-08','02-22','03-14','04-13','04-23']);
+ const ids=new Set([...physicallyRemote,...caregiverPhone]);
+ for(const [topic] of [...new Set([...ids].map(x=>x.slice(0,2)))].map(x=>[x])){
+  const records=JSON.parse(readFileSync(new URL('../work/18b-t02-'+topic+'-authoring.json',import.meta.url),'utf8')).records;
+  for(const shortId of [...ids].filter(x=>x.startsWith(topic+'-'))){
+   const pair=records.find(x=>x.definition.id==='content:18b-t02-'+shortId);
+   assert.ok(pair,'missing '+shortId);
+   const stage=pair.story.stages[0];
+   if(physicallyRemote.has(shortId))for(const c of stage.choices)assert.deepEqual(c.outcome.world.contacts,[],shortId+' must not record in-person encounter');
+   if(caregiverPhone.has(shortId)){
+    assert.equal(stage.pages[1].presentation,'phone',shortId);
+    for(const c of stage.choices)for(const t of c.outcome.world.transmissions)assert.ok(!t.description.startsWith('學生以遠距通訊'),shortId);
+   }
+   assert.doesNotThrow(()=>validateStory(pair.story),shortId);
+  }
+ }
+});

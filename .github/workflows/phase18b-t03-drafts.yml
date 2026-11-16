@@ -1,0 +1,35 @@
+name: 18-B T03 isolated draft focused verification
+on:
+  push:
+    branches:
+      - feat/18b-t03-content-production-20261116
+    paths:
+      - 'work/18b-t03-*-authoring.json'
+      - 'work/18b-t03-*-exploration.json'
+      - 'work/18b-t03-*-screening.json'
+      - 'src/runtime/content/t03*.js'
+      - 'scripts/sync-t03-drafts.mjs'
+      - 'test/18b-t03-isolated-authoring.test.js'
+      - '.github/workflows/phase18b-t03-drafts.yml'
+  pull_request:
+    paths:
+      - 'work/18b-t03-*-authoring.json'
+      - 'src/runtime/content/t03*.js'
+      - 'scripts/sync-t03-drafts.mjs'
+      - 'test/18b-t03-isolated-authoring.test.js'
+permissions:
+  contents: read
+jobs:
+  t03-drafts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Source-to-JS serialization check
+        run: node scripts/sync-t03-drafts.mjs --check
+      - name: T03 isolated story contract and exploration boundary
+        run: node --test --test-isolation=none test/18b-t03-isolated-authoring.test.js

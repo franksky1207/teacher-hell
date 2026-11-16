@@ -299,7 +299,10 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "roleIds": [
+          17
+        ]
       },
       "repetition": {
         "cooldownDays": 45,
@@ -618,7 +621,10 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "roleIds": [
+          17
+        ]
       },
       "repetition": {
         "cooldownDays": 45,
@@ -937,7 +943,10 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "roleIds": [
+          17
+        ]
       },
       "repetition": {
         "cooldownDays": 45,
@@ -1256,7 +1265,10 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "roleIds": [
+          17
+        ]
       },
       "repetition": {
         "cooldownDays": 45,
@@ -1575,7 +1587,10 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "roleIds": [
+          17
+        ]
       },
       "repetition": {
         "cooldownDays": 45,
@@ -3170,7 +3185,10 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "roleIds": [
+          17
+        ]
       },
       "repetition": {
         "cooldownDays": 45,
@@ -3808,7 +3826,10 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "roleIds": [
+          17
+        ]
       },
       "repetition": {
         "cooldownDays": 45,
@@ -4122,7 +4143,10 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "roleIds": [
+          17
+        ]
       },
       "repetition": {
         "cooldownDays": 45,
@@ -4441,7 +4465,10 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "roleIds": [
+          17
+        ]
       },
       "repetition": {
         "cooldownDays": 45,
@@ -5398,7 +5425,10 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "roleIds": [
+          17
+        ]
       },
       "repetition": {
         "cooldownDays": 45,
@@ -6674,7 +6704,10 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "roleIds": [
+          17
+        ]
       },
       "repetition": {
         "cooldownDays": 45,
@@ -6993,7 +7026,10 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "roleIds": [
+          17
+        ]
       },
       "repetition": {
         "cooldownDays": 45,
@@ -7631,7 +7667,10 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "roleIds": [
+          17
+        ]
       },
       "repetition": {
         "cooldownDays": 45,
@@ -7950,7 +7989,10 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "roleIds": [
+          17
+        ]
       },
       "repetition": {
         "cooldownDays": 45,

@@ -187,7 +187,128 @@ export default [
                     }
                   ]
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "student-can-organize",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-4",
+                      "influence": 0.6
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生和導師確認投影中最難辨認的兩個符號，選出願意試看的位置，尚未證明已能讀清。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我知道大家都看得到，但那些負號和等號對我真的太像了。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": -0.4
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面告知導師自己的需求或擔憂；不向未在場者自動傳播。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "student-needs-reframing",
+                  "weight": 1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.5
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生說換座位可能妨礙通行，先保留現位並請求檢視畫面對比，調整尚未實施。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我知道大家都看得到，但那些負號和等號對我真的太像了。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面告知導師自己的需求或擔憂；不向未在場者自動傳播。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "empathy",

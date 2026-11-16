@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "scope": "18-B T01–T16",
+  "snapshotDate": "2026-11-16",
+  "sourceCommits": {
+    "T01": "764757cc1492fd173da4a8a04527b3a8419ee351",
+    "T02": "6648eb3d42e8520b874679e5e95bf8b2d590e7b3"
+  },
+  "definitions": {
+    "blocked": "確有阻斷，尚缺必要的真實世界證據或功能",
+    "held": "超出當前時間軸／生命週期等，原稿保留待未來能力支援",
+    "reviewPending": "外部審查有紀錄，但無現行版本的完整放行裁決；不是逐件已證實的阻斷",
+    "engineeringIsolated": "尚未發布的工程草稿，並非個別缺陷"
+  },
+  "t01": {
+    "authorCount": 200,
+    "engineeringIsolated": 200,
+    "independentSignedExemplars": 8,
+    "remainingVersionQualifiedIndependentSignoff": 192,
+    "confirmedIndividualBlockedIds": [],
+    "confirmedIndividualHeldIds": [],
+    "reviewEvidence": [
+      {
+        "branch": "review/18b-t01-flash-audit",
+        "path": "docs/reviews/18b-t01-flash-basic-audit.json",
+        "sourceCommit": "8be2e49017b77bcb13a3469763a522f7e2e3071e",
+        "findingCount": 117
+      },
+      {
+        "branch": "review/18b-t01-flash-recheck",
+        "path": "docs/reviews/18b-t01-flash-recheck.json",
+        "sourceCommit": "cd9bf0e41823975396d2ba526806cb319ea34600",
+        "contentItemsVerifiedFixed": 117,
+        "historicalTestFailure": "phase18b-t01-draft.test.js:217 舊斷言；需用最新SHA精準驗收，不直接套舊FAIL"
+      },
+      {
+        "branch": "review/18b-t01-argon-deep-audit",
+        "path": "docs/reviews/18b-t01-argon-deep-audit.json",
+        "sourceCommit": "31fa22190b6ad9afba3be1cf5a1679666068b823",
+        "eventLevelReviewed": 200,
+        "gradesAreHistorical": true,
+        "fullChoiceNineFieldSignoff": false
+      }
+    ],
+    "currentAuthorCloseout": {
+      "branch": "feat/18b-t01-first-four-authoring",
+      "path": "docs/reviews/18b-t01-final-single-pass-closure.md",
+      "authoringClosed": true,
+      "doNotReopenBulkRevision": true
+    },
+    "recheckWhen": "發布前比對目前故事版本與歷史審查差異、8件SHA、最新精準測試與敏感校務制度；僅將有實證的個別缺口轉成blocked／held"
+  },
+  "t02": {
+    "authorCount": 208,
+    "engineeringIsolated": 208,
+    "hydrogenFindings": 185,
+    "resolved": 168,
+    "blocked": 9,
+    "held": 9,
+    "entries": [
+      {
+        "id": "content:18b-t02-03-03",
+        "topic": "T02-03",
+        "status": "blocked",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-03-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "academic-schedule",
+        "recheckWhen": "真實重修課表與社團表演時段衝突可查證",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-03-09",
+        "topic": "T02-03",
+        "status": "blocked",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-03-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "academic-retake",
+        "recheckWhen": "重修三人報名名單及尚未決定開班的公告可查證",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-03-10",
+        "topic": "T02-03",
+        "status": "blocked",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-03-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "notification-knowledge",
+        "recheckWhen": "預警通知的公開狀態及實際接觸範圍可查證",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-03-11",
+        "topic": "T02-03",
+        "status": "blocked",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-03-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "academic-notice",
+        "recheckWhen": "個人延修提醒、返校安排及已公布資格可查證",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-03-17",
+        "topic": "T02-03",
+        "status": "blocked",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-03-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "academic-transfer",
+        "recheckWhen": "重修轉班與教材領取困難的既有證據可查證",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-03-18",
+        "topic": "T02-03",
+        "status": "blocked",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-03-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "academic-makeup-history",
+        "recheckWhen": "同科兩次補考有可驗的獨立歷史紀錄",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-04-08",
+        "topic": "T02-04",
+        "status": "blocked",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-04-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "academic-notice",
+        "recheckWhen": "完成重修後正式學分更正通知與收件者有紀錄",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-08-07",
+        "topic": "T02-08",
+        "status": "blocked",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-08-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "graduation-eligibility",
+        "recheckWhen": "可在合法日曆時段取得個人正式不核發畢業證書證據",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-07-17",
+        "topic": "T02-07",
+        "status": "blocked",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-07-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "post-graduation-calendar",
+        "recheckWhen": "生涯支援七至八月分科志願填寫與合法當事人接觸",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-03-02",
+        "topic": "T02-03",
+        "status": "held",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-03-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "vacation-academic-calendar",
+        "recheckWhen": "長假補考日期及實際個人資格可查證",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-03-26",
+        "topic": "T02-03",
+        "status": "held",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-03-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "vacation-academic-calendar",
+        "recheckWhen": "寒假重修專班存在、校曆與個人資格可查證",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-03-27",
+        "topic": "T02-03",
+        "status": "held",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-03-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "post-career-lifecycle",
+        "recheckWhen": "第四年延修生身分與合法教師接觸納入可玩生涯",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-07-07",
+        "topic": "T02-07",
+        "status": "held",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-07-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "reunion-contact",
+        "recheckWhen": "aftercare同日校友接觸具可達性證據且遠距傳訊合法",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-07-22",
+        "topic": "T02-07",
+        "status": "held",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-07-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "post-graduation-admissions",
+        "recheckWhen": "八月分科分發結果及畢業後時段、身分支援",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-07-27",
+        "topic": "T02-07",
+        "status": "held",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-07-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "post-graduation-admissions",
+        "recheckWhen": "八月分發放榜後合法場景與畢業後時段支援",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-07-28",
+        "topic": "T02-07",
+        "status": "held",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-07-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "post-career-lifecycle",
+        "recheckWhen": "畢業一年後重考與聯絡時段支援",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-08-28",
+        "topic": "T02-08",
+        "status": "held",
+        "sourceBranch": "feat/18b-t02-authoring",
+        "sourcePath": "work/18b-t02-08-authoring.json",
+        "evidence": "work/18b-t02-hydrogen-corrections.json",
+        "dependency": "post-career-lifecycle",
+        "recheckWhen": "畢業多年後返校及校友生命週期支援",
+        "approval": "none",
+        "published": false
+      },
+      {
+        "id": "content:18b-t02-05-23",
+        "topic": "T02-05",
+        "status": "held",
+        "sourceBranch": "feat/18b-c-t01-t02-integration",
+        "sourcePath": "work/18b-t02-05-authoring.json",
+        "evidence": "work/18b-t01-t02-release-gates.json",
+        "dependency": "stars-ranking-correction-evidence",
+        "recheckWhen": "校方已公告繁星順位更正且明確影響這一位學生的世界紀錄可由候選資格驗證，或只修改本事件前提為未核實消息並精準複驗",
+        "approval": "controller-release-hold",
+        "published": false
+      }
+    ],
+    "originalHydrogenIsolated": 17,
+    "additionalControllerHoldIds": [
+      "content:18b-t02-05-23"
+    ]
+  },
+  "futureTopics": {
+    "T03toT16": "尚未進入本次盤點，不可預填阻斷件數"
+  },
+  "releaseRules": {
+    "automaticActivation": false,
+    "required": [
+      "原稿及條件重新核對",
+      "實際可達性／候選資格精準驗證",
+      "如改動原稿需對該版本補必要獨立審查",
+      "經人員明確授權後才可提升放行狀態"
+    ],
+    "prohibited": [
+      "依期限自動解封",
+      "以所有工程隔離草稿冒充個別問題",
+      "為解封虛構世界證據",
+      "未授權合併／部署"
+    ]
+  }
+}

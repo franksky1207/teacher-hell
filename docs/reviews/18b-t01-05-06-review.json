@@ -1,0 +1,988 @@
+{
+  "reviewer": {
+    "agent": "/root/review_01_02",
+    "role": "separate AI semantic review process",
+    "authoredTheseStories": false,
+    "modelClaim": "Same inherited model family; not a different-model or human review"
+  },
+  "scope": {
+    "topics": [
+      "T01-05",
+      "T01-06"
+    ],
+    "count": 44,
+    "baseline": "origin/main 1bb5770c38f608311220bc5191ee3981fe2af642: inspected registered resource list and PHASE17D_STORIES plus engineering reference contexts; no exact accepted-main duplicate identified for these 44",
+    "crossTopicComparison": "All current T01-01 through04 and07/08 premises/titles compared; 01/02 full text previously reviewed. Not a full semantic sign-off on 03/04/07/08.",
+    "externalInstitutionResearch": "not performed; authors sourceBasis explicitly says fictional/internal SOP basis. No claim of external legal, school-rule or policy verification."
+  },
+  "sources": [
+    {
+      "path": "work/18b-t01-05-authoring.json",
+      "sha256": "dfb7299ba7d1e136134d78daeb73534180bebd42fa8901cb5967a504345d9cb2"
+    },
+    {
+      "path": "work/18b-t01-06-authoring.json",
+      "sha256": "b39779bd45610d7f7eb99ad488bf2504f5ab903122b3612614e0b72ede63070c"
+    }
+  ],
+  "method": "逐件檢查頁面、四策略及結果全文，再對照candidate與compiler2 world。沒有將engineering-test隔離或未上架本身列故事缺陷。acceptable只代表本snapshot的語意判斷，正式計件仍須結構、版本、去重處置、解析/候選與新生涯證據。",
+  "commonFindings": [
+    {
+      "severity": "blocking-structure",
+      "detail": "本snapshot全部故事同時有premise及outcome.world。src/runtime/story-consequences.js validateConsequences 要求compilerContract===2 && !premise && world，故需由作者改用合法v2資料來源/起因寫法。此為共通結構缺陷，與下列逐件語意verdict分開，不可將acceptable列為structurallyValid。"
+    },
+    {
+      "severity": "editorial-correction",
+      "detail": "全部稿件causalClass標L1/L5，但大部分只有教師學生互動，並無多人物傳達/資訊差的L5內容；宜依實際內容改L1，不可統計為44件L5成果。"
+    },
+    {
+      "severity": "evidence-limit",
+      "detail": "作者已記author/version/sourceBasis及知情/資格，但sourceBasis只列內部SOP與03，未做外部制度研究。不能聲稱完成臺灣高中外部制度查證；涉及具體規則仍交科任/權責程序。"
+    },
+    {
+      "severity": "candidate-observation",
+      "detail": "所有candidate明定school/lunch，不以早自習/午休或夏冬營混抽。現行buildEventCandidates依student pool與protected slots過濾；本審查只讀程式/定義，未執行情境抽選。"
+    },
+    {
+      "severity": "content-observation",
+      "detail": "44件均為可自然結束的L1、無variants/跨日/問題根/定向關係效果；這些功能不是每件必需，不因此退件，也不得虛報已有相關代表成果。"
+    }
+  ],
+  "records": [
+    {
+      "eventId": "content:18b-t01-05-01",
+      "version": "1",
+      "storySha256": "30e8b0b7a4b3cafc2fb96583836fa63a10b18e2c05d5ab80730919beeea45ed3",
+      "recordSha256": "ae4f2ce57ad018abd07543af6ff2e40e3d3cf2548876fdc5896fd3dda1fa21f8",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "兩版比對、工具揭露、規則詢問及原創備案分別處理內容、透明度、授權與退路；新增論點只在對照後發現，未由潤稿請求定罪。",
+      "comparisonIds": [],
+      "recommendation": "可改進：說明原創備用做法的具體第一步；任何外部規定尚未查證。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-02",
+      "version": "1",
+      "storySha256": "72d0f23f0c732507a94751b7b7405e85985c2f145797ed238c4b5e652e46b897",
+      "recordSha256": "74baf62a22414e287395a3cb4826039277341e434245b5e5d043570a9da3a2ff",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "相同錯字保留為學生單方指控；保存本件位置、程序說明、自己權限保護及不公開點名有不同目的，未讓缺席另一人知情或被定罪。",
+      "comparisonIds": [],
+      "recommendation": "可改進：開場補目前檔案為共用可編輯狀態，以免關閉公開編輯的結果突然出現前提。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-03",
+      "version": "1",
+      "storySha256": "9846bde494e6202c7d563661b3a5a938dbf06c5cb757112167a165eb3895cdea",
+      "recordSha256": "918d6c9a54345ef8e211d83deecab5383d88d22c9ee946b929185ec4cbfa5bcb",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "合法館藏入口、轉述練習、向科任說明缺項及拒絕編造頁碼可區分；沒有承諾找得到頁碼。轉述仍寫標來源而非宣稱免引註。",
+      "comparisonIds": [],
+      "recommendation": "建議明說轉述仍須依科任格式回查，勿讓玩家誤以為改句即可免頁碼。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-04",
+      "version": "1",
+      "storySha256": "86b6b1d47bae1a83c330c7a0e6be4ac33b03ad6bff6b233a22e3e13387b2eca1",
+      "recordSha256": "bc89f0c259b64e2375272aa9016222313cc094a449708bffcee5b316f59ddc5a",
+      "verdict": "must-fix",
+      "priority": "P0",
+      "rationale": "下午疑似試題外流具時效；必要保密與依校內權責反映僅在某格出現。strategy-2已『通報』但world沒有接受者/傳達。",
+      "comparisonIds": [],
+      "recommendation": "將共同保密及必要反映放前頁（不可虛構已通報）；若沒有合法綁定窗口，將分支改成擬具待提交資料並明確後續責任，不以已傳達敘述配空transmissions。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "已敘述外部傳達卻沒有正式接受者/傳達紀錄，需修正。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-05",
+      "version": "1",
+      "storySha256": "216c739f477d60e60d473803cbe6beecaf6b4c15c724e1cebd8c22cb93b988b6",
+      "recordSha256": "f8355d86055c7a24e6115b850aa4548db0f8225c469f7f88783c9567bb044e2d",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "開書資料不等於即時合作，文字判讀、任課問規則、個人索引、肯定事前詢問互有實質差別；沒有替任課授權互傳。",
+      "comparisonIds": [],
+      "recommendation": "無必修語意問題；內部規定界線保留待任課答覆。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-06",
+      "version": "1",
+      "storySha256": "1435ef3d94e60177ac5cb2ba30add2095de9baac1bc0c95a8a2963d2f5da4808",
+      "recordSha256": "d9584b0f85d8ed9d0992f8473b1756fa1974fea5619c270771bb30afe4a9777e",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "學生自述借用現成答案但尚未繳交；口述嘗試、來源標示、說明詢問及停止複製態度有差別，沒有將一次口述當全文原創。",
+      "comparisonIds": [
+        "content:18b-t01-05-11"
+      ],
+      "recommendation": "與程式沿用題皆談來源，但本件為現成解答取代個人論述，11有程式輸入輸出理解及區段沿用，現可區分。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-07",
+      "version": "1",
+      "storySha256": "23a1837f92d12865943a4ee4c45d22aa1621d534ddc613a2541b9b0b097181d7",
+      "recordSha256": "456c048d4491aede4e385b1bf2a7d9deab5fd8672bc5cfa47e49dfda730bd60a",
+      "verdict": "must-fix",
+      "priority": "P0",
+      "rationale": "與既有03-14家長操作手工作品是同一客觀根由；僅換模型照片及設計/製作分工，尚不足證明獨立計件。",
+      "comparisonIds": [
+        "content:18b-t01-03-14"
+      ],
+      "recommendation": "優先合併03-14；或改成明確允許協作但需要共同作者授權、非代作責任，具體重寫四策略後再審。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-08",
+      "version": "1",
+      "storySha256": "6f9f1d78782b6f9370765213e399e1966f807285c8a326d3d468f9299b556d33",
+      "recordSha256": "bb1e8718dc784944634379507616b365ec546d86832f36591e77d340b9685244",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "對尚未提供完整報告的請求，提供架構、示範唯讀、擬拒絕及支持界線有不同實際資訊風險；未將索取判定已抄襲。",
+      "comparisonIds": [
+        "content:18b-t01-03-05"
+      ],
+      "recommendation": "03-05為要求替他寫且影響休息；本件為已有成果存取控制、學生未提供，可以獨立。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-09",
+      "version": "1",
+      "storySha256": "ca15694f51d67835241a7746fcfe0a4891c3c895fbd5e1a354945c63f6a757c1",
+      "recordSha256": "106496bf786ea68a50d74c8bfde3cf044d530d1721418a0f3a77da9bf258b3f1",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "題目/文獻標紅與正文分開、保版本、請教判讀及暫停災難推論策略可區分；相似率不冒充裁決。",
+      "comparisonIds": [],
+      "recommendation": "無必修語意問題。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-10",
+      "version": "1",
+      "storySha256": "cab1028bc6c99dc70c3a3bd3684df87e2804df87beb8b5e6e621291223d984ff",
+      "recordSha256": "2cfed9cf15c2bb2e5a436dd008da85655c66d746c533f472f3c601d8a7af1463",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "授權來源、自己替代素材、取消圖片改文字及提醒引用不等於授權皆有不同後果；未宣稱一律禁止網路圖片。",
+      "comparisonIds": [],
+      "recommendation": "未做外部著作權法查證，不可把本審查寫成法律結論。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-11",
+      "version": "1",
+      "storySha256": "d5ff49d982f091124233da5a06b4a4ccdb0ef2216d38d8cd1f8d090038499ef9",
+      "recordSha256": "56fe509631d03d7dd6d83116a2ec87f5fafbdb6b7756d524f23ffc0fe3bdbd79",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "標來源區段、解釋函式、問引用規則及肯定查找的分支有不同目的；變數改名不被視為獨立創作，未保證分數。",
+      "comparisonIds": [
+        "content:18b-t01-05-06"
+      ],
+      "recommendation": "若保留本件，維持程式沿用/授權與可解釋性差別，不改成泛用抄解答故事。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-12",
+      "version": "1",
+      "storySha256": "6f722f695582281ed2260a710e4fb2ae946124c103565104b13e5772a32629d5",
+      "recordSha256": "c2d9a47f47ce46e313ff1ec446984586533e9fcff3c0ae01d629d977f9f5edd3",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "舊作時間/範圍、增量分析與取得同意的區別具體；既有作品是學生自己創作仍未一律認定作弊。",
+      "comparisonIds": [],
+      "recommendation": "去年社團作業不要求特定高中年級，可能國中作品；但可補明當時作品不是本學期課程作業。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-13",
+      "version": "1",
+      "storySha256": "d1d940435968c328e3db13026c6879c0fe341cd7e509e8221794fbf7752c1889",
+      "recordSha256": "bd5caea2b3bd06712d21682c139149324fbe1beac8b2e93cf7c5c9752bb22766",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "截圖缺脈絡、正式管道、停止轉傳及避免裁切圖定罪有不同程序層次；導師只聽描述，沒有擅補對話或缺席人物知情。",
+      "comparisonIds": [],
+      "recommendation": "不預設檢舉必為真；目前是私下求助並非導師已確認正在公開霸凌，未憑本稿推論法定事件成立。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-14",
+      "version": "1",
+      "storySha256": "8af4536e5f8670c2a1474ac7b981e8b41138b3a6143901a5fa8bf5059aee657c",
+      "recordSha256": "1a078a904f05bcedeffc2b4dbdb4a524c66e663c093b19451148e8a01dae341f",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "有原表及刪數自述，恢復原值、揭露取捨、問重測及保留不漂亮資料四路可區分；不虛構儀器故障，不保證重測。",
+      "comparisonIds": [],
+      "recommendation": "教師可協助方法透明，結果仍交科任判讀。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-15",
+      "version": "1",
+      "storySha256": "101c8a63ebab28e90be574d3d2ec7187a6ebd538ed86f77b208ed74e1a4e9bc3",
+      "recordSha256": "3cda536482196e690e06b7636d874cf0e20a43a9f32d924ea604830e96c66ab9",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "過去問鄰座內容為自述，規則可能不清但不倒推許可；現況整理、正式說明、未來規則確認及關切分別有意義。",
+      "comparisonIds": [],
+      "recommendation": "無必修語意問題；目前沒有既成違規定罪。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-16",
+      "version": "1",
+      "storySha256": "3ee6480d6435a9b2c17cb916295103f734db0ebc2b103be5e589cfa7cac418b1",
+      "recordSha256": "1d2ee8909c96deb888c604f8f3aa2b44dc21b4c581a363acc6fdee75c0b9dbd4",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "合法共編紀錄、貢獻表、待確認署名詢問與支持保證據可區分；不代替組員同意姓名公開，也沒認定惡意。",
+      "comparisonIds": [
+        "content:18b-t01-03-18",
+        "content:18b-t01-08-08"
+      ],
+      "recommendation": "03-18為作業分工如何評分，08-08為展示表揚漏名，本件是正式作者身份與共編證據，不只換名。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-17",
+      "version": "1",
+      "storySha256": "73f6ff1b6580d056f7ee788672a752afd6f1e982f112da6aede3efd1c83347bd",
+      "recordSha256": "203526f23aca3333efd0401ceabbae929faf99addb7564513be07a85bd94cbd6",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "未付款前求問，原創/本人完成的區分、自己起步、讀課程規則及防個資風險有獨立效果；未把廣告當法律授權或學生已購買。",
+      "comparisonIds": [],
+      "recommendation": "沒有外部服務操作或查證，不可宣稱查過代寫平台。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-18",
+      "version": "1",
+      "storySha256": "7aca563a43251ea4f7109f7e853adf340d0bb827e57068d02a704480f6007909",
+      "recordSha256": "2cdb0f52af7f168751aa80bf21fda6a7b08e8f85546c38ef43d74a5e82b3a473",
+      "verdict": "must-fix",
+      "priority": "P0",
+      "rationale": "正文保留組內訪談真假未知，但editorial.title『同組使用偽造訪談』已將疑慮定案；其他分支尊重學生只說本人工作。",
+      "comparisonIds": [],
+      "recommendation": "標題改『組內訪談真實性疑慮』或『不願替未確認訪談背書』，保留四結果及未看見來源界線。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-19",
+      "version": "1",
+      "storySha256": "89c136be1296a1a56b709e160c8a46f315b2b2657f391283cf191818fb256a0a",
+      "recordSha256": "d3fd3f68dc6a43160977ceeed168afc33556c358ae8f180177add897a748f1d2",
+      "verdict": "must-fix",
+      "priority": "P0",
+      "rationale": "strategy-2事實寫教師已『傳達』科任，而world只有教師學生且transmissions為空，知情來源未被正式紀錄。",
+      "comparisonIds": [],
+      "recommendation": "改為擬具給科任的誤傳範圍說明且尚未發出，或依法綁定接受者與合法傳達；任何必要停止擴散/保存原訊息放共同前提。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "已敘述外部傳達卻沒有正式接受者/傳達紀錄，需修正。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-20",
+      "version": "1",
+      "storySha256": "7affcc5b2fcc4bdc970f0a3bcf6aa4325f4f499aa312f66a0498b645bfbc2f96",
+      "recordSha256": "a7bf46bc56015f5f53d75b8b6a8d56d0e5e02c064d78367b7b4549e55286f772",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "準備協助與當場代答區分、離卡口述、可帶資料規則詢問、互助肯定互有實際意義；不推論可照讀或所有共同練習作弊。",
+      "comparisonIds": [],
+      "recommendation": "無必修語意問題。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-21",
+      "version": "1",
+      "storySha256": "10010adf86807cca81ab1963ba5a5ee67f4ad6bcfe55ede4150e85b9b67b0702",
+      "recordSha256": "d29149cf8e219a0d9db917db1756751e9631a06d63cf09b4df2b6103381d11b4",
+      "verdict": "must-fix",
+      "priority": "P0",
+      "rationale": "結果正確保留『未查得不等於不存在』，但題名『生成引用不存在』已客觀斷言不存在，與尚未查明的正文矛盾。",
+      "comparisonIds": [],
+      "recommendation": "題名改『生成引用查無結果』或『生成書目待查核』，不須改成保證查到或全部否定AI。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-05-22",
+      "version": "1",
+      "storySha256": "07e8e66ba367bda05ba1b5b6d2a5a9b8215394e8f585c0dab88b911454b42a4b",
+      "recordSha256": "133bf484b0c1adff11a3f2e34beab17096dbf3b43c7d99cd271c7bd71da819bc",
+      "verdict": "must-fix",
+      "priority": "P0",
+      "rationale": "結果明說未斷定漏註原因，但editorial.title『事後發現無意漏註』直接確定無意；已交稿更正程序處理本身合理。",
+      "comparisonIds": [],
+      "recommendation": "題名去掉『無意』，或寫學生自稱漏註，保留原版、申請、來源及支持四路。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-01",
+      "version": "1",
+      "storySha256": "b922163752fe7df1cea1f202972dfe49271748f0bcab1f379a53869747edc307",
+      "recordSha256": "652f2432a119eea5a1cf2fd60abe7a7f4718949c937c9a66a47a2af012d77110",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "自願呈交錯題本後，當場試作、縮為錯因索引、具體問題求助與減少美化成本互異；只確認本次卡點。",
+      "comparisonIds": [
+        "content:18b-t01-01-13",
+        "content:18b-t01-03-07"
+      ],
+      "recommendation": "01-13為一般抄筆記失去重點、03-07同題反覆訂正，本件聚焦錯題本資訊結構和抄題成本，可獨立。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-02",
+      "version": "1",
+      "storySha256": "fe4b90e4e4a4545959d48d0ce8755070372ddb3a18df00e1ced921b8416d8003",
+      "recordSha256": "920cb5749f2a566d6eacef5f5d88d18d0ec336b86dd836a781592c2d5c112e0a",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "暈車自述得到尊重，移走閱讀、可停止的聽讀、留作休息及心疼不診斷具差別；不要求交通改變。",
+      "comparisonIds": [],
+      "recommendation": "沒有急性症狀在場，非忽略當下健康處置；聽讀已明說不適便停止。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-03",
+      "version": "1",
+      "storySha256": "6a208caea99955c75a26e78d66533c0c6735d02d6ac88f7376ca673610ad7c7c",
+      "recordSha256": "c973d56838ea55501eb9f957ccd51e3dd844ae71514bcb046548fefb58d54bd5",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "六百到期卡造成排程壓力，分近期、減新卡、紙本抽測、允許不清空不同於單純催促提醒；不把未讀卡判已會。",
+      "comparisonIds": [
+        "content:18b-t01-01-10"
+      ],
+      "recommendation": "01-10的通知過密與本件排程內容/新增卡累積不同，四處理也非僅換app名稱。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-04",
+      "version": "1",
+      "storySha256": "559fb83f0dac9a5ba7367be9c29a5c627055cdfac0bcce5b21beb2a8c56b2ee4",
+      "recordSha256": "63c88003621d93c31de019d656f9c1199cee28b9452c67ce20d84f6d6fc67241",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "混合題難在選法，說線索、對照條件、帶題求教、先練辨認形成實質差異；不由導師直接判已掌握。",
+      "comparisonIds": [
+        "content:18b-t01-02-21"
+      ],
+      "recommendation": "02-21為重犯錯後信心與錯因，本件為交錯練習的選法學習，可分。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-05",
+      "version": "1",
+      "storySha256": "d4d766a19fe0f1c54f506c3fcb0285e644c68d6836b46312418ffaef5d68f221",
+      "recordSha256": "fc1d7b63ce3bcad6b2a815eaaf0ef2b81de8adee328345c752bd2afd99d4aa84",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "明定自習不是正式測驗；遮少量、延後看答、分學習/測驗、允許留空各有作用，未把偷看自習答案當作弊。",
+      "comparisonIds": [
+        "content:18b-t01-03-04"
+      ],
+      "recommendation": "03-04作業全對但說不出算法為教師理解觀察，本件學生自覺不敢獨立自測，責任不同。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-06",
+      "version": "1",
+      "storySha256": "8a2bca34bb70b09fd9f45e2e3520696a09e9c9a9f213b506692aecc45cb0e03f",
+      "recordSha256": "86967c02949c7b87ea001eea09111c22026cf703131eab590ae982bff2f79ea9",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "追蹤單位過程、末端檢核、概念求教及幽默提醒分開；物理僅手邊練習範例，不預設特定年級必修。",
+      "comparisonIds": [],
+      "recommendation": "導師可協助記錄，不裁定學科正確性，沒有憑空能力加分。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-07",
+      "version": "1",
+      "storySha256": "65e5805fd79aa1189c6c4523ab6991aced0d96f0855bea3db10a79bca311c83e",
+      "recordSha256": "b490dd1be26ad3fcf2244bb33b6f9eefc13a576584daa4daa1dfc024b551a9a1",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "下小標、限標核心、讀後問題及幽默減少全頁高亮的資訊困擾；無強迫全科通用或改原稿。",
+      "comparisonIds": [
+        "content:18b-t01-01-13"
+      ],
+      "recommendation": "與厚筆記同為資訊組織但此件特定選擇性標記失效且策略具體不同，可保留。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-08",
+      "version": "1",
+      "storySha256": "371a9c7fbe9bd2fca5b5f19098b0c31ec30f4e36ec07f19ac7df4c6d6835f222",
+      "recordSha256": "0bb5032fae16559df534538fb9ebf4d1cbf585c0e2deff3351527535792d4ba1",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "拼字與語境差異、例句搭配、挖空卡、問兩句混淆及肯定單字用途具不同處理；不保證整句理解。",
+      "comparisonIds": [],
+      "recommendation": "可改進：『整完整副卡片』字詞小修，不構成必修語意矛盾。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-09",
+      "version": "1",
+      "storySha256": "c72f24af3b162ac48e0e9a8625c11c6713838ff69645eadb94795c1054660a18",
+      "recordSha256": "97f864ac45b7d91636c2bafa02118b2140339513e3371e29e492cefb52875341",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "無緩衝週表的剛性與家務不可控分開，留空格、固定/可移動、一天最小必做及共感各有意義，不改科任期限。",
+      "comparisonIds": [
+        "content:18b-t01-01-04",
+        "content:18b-t01-01-29"
+      ],
+      "recommendation": "01-29著重照顧責任及支持資源，本件計畫設計本身缺容錯；保留差別須維持這個焦點。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-10",
+      "version": "1",
+      "storySha256": "09b2e0c44123b81e2c37c78bbcb38d2c2b04106b39724f0f18455ba82b54929b",
+      "recordSha256": "937194a5a23d6195419509fae118e743174e297b0cf1eda8f104c53e08defcc9",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "倍速看完未能提取與不停換頻道不同；口述、停播做題、核對範圍及速度比喻互異，不把一次空白推整章不會。",
+      "comparisonIds": [
+        "content:18b-t01-01-28"
+      ],
+      "recommendation": "與01-28資源選擇焦慮的教師責任/因果可區分。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-11",
+      "version": "1",
+      "storySha256": "307280189ac0440f612d74265e3ed189637b473fac455e4fc0116941ac8e7651",
+      "recordSha256": "8d8b0facf9987915f7dbf9c0b525848b1c35c279fc4d9bc8e1a848512caa26da",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "聊天社交需求與01-18單向教學失衡不同；分時、輪解題、自讀訊息、承接兩難不替朋友答應。",
+      "comparisonIds": [
+        "content:18b-t01-01-18"
+      ],
+      "recommendation": "維持朋友社交/共讀邊界的獨立情境，不再改成一人教所有人。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-12",
+      "version": "1",
+      "storySha256": "42c19b652989cac3e50b5d6b6e1d8d320dd99800fa48b09c45c796f24cfee09c",
+      "recordSha256": "e025b85a5eaf37366e3877d3524f2685bf397159585ab31505136fe6671b8e7c",
+      "verdict": "must-fix",
+      "priority": "P0",
+      "rationale": "與01-28每遇困難就換教學資源、固定一份再實作的起因和策略高度同構，書/影片表面媒介不足分件。",
+      "comparisonIds": [
+        "content:18b-t01-01-28"
+      ],
+      "recommendation": "合併或加入真正不同責任如購書成本/課程版本對不上且改四策略；不能僅以三本書對多頻道差異放行。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-13",
+      "version": "1",
+      "storySha256": "2149de2f00a632fe47d1a3af38170380ed97ca80da2e44c1e4787c3fa97c61f3",
+      "recordSha256": "b1442c93ba2316068a0936a37b685cbab29fb6d658d32c2bb0cb66245c2b5e95",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "口訣與轉向圖的映射問題具體，連回圖示、改圖描述、問基準與不否定記憶技巧互異；不冒充地理教師裁定。",
+      "comparisonIds": [],
+      "recommendation": "無特定校曆或年級前提，午餐可討論手邊題。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-14",
+      "version": "1",
+      "storySha256": "c51b996fa8d2dafb19fa73fcd96c655531cc51f1a9cb701e64e129d8a5b232e4",
+      "recordSha256": "4a2f384869ff61d70801cf7efec428ab6233e49b0407a5f6dace55e26e3338d1",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "通知干擾與紙本查字取捨是裝置使用選擇，不只是01-10提醒頻率；離線、查字清單、條件對照、尊重密碼界線各異。",
+      "comparisonIds": [
+        "content:18b-t01-01-10"
+      ],
+      "recommendation": "未檢查私訊，與缺席者沒有非法知情或關係變動。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-15",
+      "version": "1",
+      "storySha256": "479470f63887674769eb3cf7671011de7e3b3278a426f6bfbf759a8f0ab26257",
+      "recordSha256": "fa9ee727621eb69c078d27036088d63f8e993065b68504f2068407a0bd76e909",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "卡題當作認輸的心理與期限取捨具體；留嘗試記號、先有限期工作、問推理、支持休息各有差別，未擅取消任務。",
+      "comparisonIds": [],
+      "recommendation": "無保證跳題高分、無教師診斷，當日可自然收束。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-16",
+      "version": "1",
+      "storySha256": "a2262fe81e40ad59a521bc38724557ffd13c2329d83ec612e21711426139b398",
+      "recordSha256": "8f2fda4cff5843480ae6b134ca713bfd8cc6c70085ccb4b25356880be472d552",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "只挑熟題的安全感有別於一般拖延；只讀陌生條件、配置新熟量、請科任挑難度、承接安全感有不同做法。",
+      "comparisonIds": [],
+      "recommendation": "第三格結果是整理待請教資料而非科任已挑好難度，未越權。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-17",
+      "version": "1",
+      "storySha256": "95a32201f7eb91362c4891c87eed6c7e3e55104a56d013ae48d3e602c912d497",
+      "recordSha256": "5d08f63e4d4c8f3d0afc7795827f4abb4aefed1cc0df4a8517733ae393351799",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "一週晨晚比較未對齊不被當生理結論；檢查條件、新內容移時、晚間輕回顧、關切能力歸因具差別，不強迫早起。",
+      "comparisonIds": [
+        "content:18b-t01-01-12"
+      ],
+      "recommendation": "01-12睡眠不足，本件資料可比性及任務配置，未以同一健康問題重複計件。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-18",
+      "version": "1",
+      "storySha256": "934ef63d20b4b0e897c0e9d09594ea70df2e571d951e3deba156c7458a6b065d",
+      "recordSha256": "35ddaf780cfaf3d276dc55ad6d355dbbd7cf2482703f91bf9eef6f7f2111ad63",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "抄投影片/漏聽的注意力成本、關鍵詞、合法教材取得、補一疑問及幽默承接有差別；不擅自授權錄影。",
+      "comparisonIds": [
+        "content:18b-t01-03-09",
+        "content:18b-t01-07-01"
+      ],
+      "recommendation": "03-09為立即交課堂練習的制度壓力、07-01板書擦除速度的教師回饋，本件處理學習過程雙工策略，現可分但避免後續互改成同稿。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-19",
+      "version": "1",
+      "storySha256": "4bcd310b8220ac9a1570c421e72f298559f2f1a980817939d3950939ba597385",
+      "recordSha256": "a58b15f966fd03592edb03fa3d658a63432185d9d23961e06a05808f8fcd2692",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "自述看到紅字不願翻卷是情緒阻礙，選一可承受題、遮總分副本、求科任時間、允許暫停實際不同；不修改正式成績。",
+      "comparisonIds": [
+        "content:18b-t01-03-25"
+      ],
+      "recommendation": "03-25連續零分拒領卷屬補救流程，本件願帶卷但不回顧，可保留自主檢討方式。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-20",
+      "version": "1",
+      "storySha256": "5e4ca6b9c7dd6c5c435c17a26e046e7d9fd694f812ac34bd4f90b723aed4e56b",
+      "recordSha256": "a1b309070d1cce0a07d0480ce115fd1c3ae36ed4540d17e47b196def426502a3",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "同摘要法省掉數學推導有具體跨科資訊差，對照、補步驟、保有效處、工具比喻互異；未說一科只配一學法。",
+      "comparisonIds": [
+        "content:18b-t01-01-30",
+        "content:18b-t01-02-29"
+      ],
+      "recommendation": "前兩件為照搬成功/升年級後失效，本件為跨科筆記內容保留與可回推性，暫無必須合併。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-21",
+      "version": "1",
+      "storySha256": "50df8f09fcd3d65daa9ae8af36c17e6903f81c345df69369f91f9a4fd98be569",
+      "recordSha256": "931d465743f7592c9ee2756810a7c4297b35e5e3a402675db4d1f3a883012a9b",
+      "verdict": "acceptable",
+      "priority": "none",
+      "rationale": "睡前回想變欠帳清單具特定觸發；移待辦、少量回顧、暫停觀察、幽默支持休息互異，不診斷/用藥或保證改善。",
+      "comparisonIds": [
+        "content:18b-t01-01-12",
+        "content:18b-t01-01-35"
+      ],
+      "recommendation": "本件聚焦睡前複習方法的反效果，不是追加早起或做完不敢休息。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    },
+    {
+      "eventId": "content:18b-t01-06-22",
+      "version": "1",
+      "storySha256": "e9f2e4b7e3d9d0015727e0a85fbcb51e6c145ff39c779fae2d635e453c4bf2af",
+      "recordSha256": "aa843da64a100b0a64b57894ec6dbccddddef3db723a8f801a75bfbf2e87cd27",
+      "verdict": "must-fix",
+      "priority": "P0",
+      "rationale": "strategy-2明寫『刪去』但結果『改虛線與問號』，玩家所選實際行為未被履行，且此差別正是處理不確定資料的重點。",
+      "comparisonIds": [],
+      "recommendation": "將選項改『把未能解釋的連線改為待確認』，或結果依選項刪副本連線；不破壞原參考圖。",
+      "candidateReview": "明定student/school/lunch；無年級進程、個別核假、特定學籍等需另限資格的敘事。由現行participantPool及protected slot filter處理；未執行runtime候選/存讀測試。",
+      "knowledgeReview": "參與者與教師實際接觸；缺席科任/組員的答覆與決定均未預寫。無方向關係效果，沒有自動對稱變化。",
+      "reviewedContent": {
+        "stages": [
+          "opening"
+        ],
+        "choices": 4,
+        "variants": 0
+      }
+    }
+  ],
+  "summary": {
+    "read": 44,
+    "semanticAcceptable": 36,
+    "semanticMustFix": 8,
+    "structuralStatus": "not passed; shared premise/world contract conflict",
+    "formalQualified": 0,
+    "publication": "isolated; not assessed"
+  },
+  "reReview": "Only changed event content and directly affected duplicate comparators need follow-up; do not automatically extend these verdicts to later story hashes."
+}

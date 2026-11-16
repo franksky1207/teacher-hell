@@ -1,0 +1,37 @@
+name: 18-B C focused verification
+on:
+  push:
+    branches:
+      - feat/18b-c-t01-t02-integration
+    paths:
+      - '.github/workflows/phase18b-c-focused.yml'
+      - 'src/runtime/**'
+      - 'scripts/sync-t01-drafts.mjs'
+      - 'scripts/sync-t02-drafts.mjs'
+      - 'test/18b-c-t01-t02-integration.test.js'
+      - 'test/18b-t02-isolated-assets.test.js'
+      - 'test/18b-t02-last24.test.js'
+      - 'test/phase18b-t01-draft.test.js'
+      - 'work/18b-**'
+permissions:
+  contents: read
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # T02 original-source comparison needs historical 816836e commit
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Check T01 and T02 JSON-to-JS synchronization
+        run: |
+          node scripts/sync-t01-drafts.mjs --check
+          node scripts/sync-t02-drafts.mjs --check
+      - name: Fetch only T02 historical comparison commit (avoid full history)
+        run: git fetch --no-tags --depth=1 origin 816836e2b370c55e96d5194e70d1630230332507
+      - name: Focused integration and eligibility contracts only
+        run: node --test --test-isolation=none test/18b-c-t01-t02-integration.test.js test/18b-t02-isolated-assets.test.js test/18b-t02-last24.test.js test/phase18b-t01-draft.test.js

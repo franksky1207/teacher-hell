@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-16",
+  "kind": "publication-preflight-evidence-triage-not-independent-editorial-approval",
+  "source": "feat/18b-c-t01-t02-integration",
+  "previousEngineTest": {
+    "sha": "0aa89eafa3aa885b2fbc6839228f8453cd5ee42e",
+    "run": "https://github.com/franksky1207/teacher-hell/actions/runs/43788668671",
+    "passed": 17,
+    "failed": 0
+  },
+  "summary": {
+    "totalDrafts": 408,
+    "t01Drafts": 200,
+    "t02Drafts": 208,
+    "formalReady": 0,
+    "formalPublished": 0,
+    "t01SignedEight": "historically independent signed exemplars retained, current integrated hash comparison test passed",
+    "t01Other192": "主控已依現行原稿、歷史審查、修訂及精準工程驗收核可內容，不需外部再簽",
+    "t02Review": "主控已核可190則；T02原17則隔離及05-23另1則前提待確認，非外部AI審稿門檻",
+    "t02CandidateEngineering": 190,
+    "t02HeldAndBlocked": 18,
+    "selectedInstitutionalPreflight": 23,
+    "controllerReviewedAccepted": 390,
+    "controllerHeld": 18,
+    "t01ControllerAccepted": 200,
+    "t02ControllerAccepted": 190,
+    "controllerContentAccepted": 390,
+    "isolatedOrHeld": 18
+  },
+  "distinctGates": [
+    {
+      "gate": "engineering",
+      "status": "passed",
+      "basis": "17 focused tests, current JS sync, resolver and isolation"
+    },
+    {
+      "gate": "content-controller-review",
+      "status": "passed-with-18-held",
+      "basis": "source-backed controller T01 200 and T02 190 accepted; T02 18 remain held; independent model optional"
+    },
+    {
+      "gate": "institutional-procedure",
+      "status": "targeted-checked-with-held-exceptions",
+      "basis": "23 targeted situations reviewed; no blanket legal certification; keep 18 demonstrated holds and their recheck triggers"
+    },
+    {
+      "gate": "promotion",
+      "status": "blocked",
+      "basis": "408 stories remain engineering-test; user authorization required"
+    }
+  ],
+  "officialSources": [
+    {
+      "id": "student-assessment",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0060060",
+      "scope": "學分補考重修與畢業資格，第10、11、12、14及19條等"
+    },
+    {
+      "id": "admissions-distribution",
+      "url": "https://www.uac.edu.tw/flow.htm",
+      "scope": "分發入學當學年度考試、登記志願與放榜節點；實際遊戲年度必重新核對"
+    },
+    {
+      "id": "admissions-selection",
+      "url": "https://www.cac.edu.tw/",
+      "scope": "繁星與申請入學各學年度簡章、推薦、上傳、放榜與確認規則"
+    },
+    {
+      "id": "privacy",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=I0050021",
+      "scope": "個人資料處理、利用、公開與學生權益；注意分階段施行條文"
+    },
+    {
+      "id": "gender",
+      "url": "https://edu.law.moe.gov.tw/LawContent.aspx?id=FL030508",
+      "scope": "校園疑似性別事件之通報及調查權責"
+    },
+    {
+      "id": "gender-rules",
+      "url": "https://edu.law.moe.gov.tw/LawContent.aspx?id=FL034837",
+      "scope": "校園性別事件防治準則及保密、受理程序"
+    }
+  ],
+  "prioritySampleRecords": [
+    {
+      "id": "content:18b-t01-04-20",
+      "issue": "成績公開張貼",
+      "category": "privacy",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t01-04-13",
+      "issue": "正式核定評量調整",
+      "category": "assessment",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t01-04-27",
+      "issue": "考試違規與成績處置",
+      "category": "assessment",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t01-04-24",
+      "issue": "成績更正截止",
+      "category": "assessment",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t01-05-01",
+      "issue": "AI潤稿界線",
+      "category": "integrity",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t01-05-04",
+      "issue": "疑似試題照片",
+      "category": "integrity",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t01-05-10",
+      "issue": "網路圖片授權",
+      "category": "privacy",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t01-05-13",
+      "issue": "匿名檢舉截圖",
+      "category": "privacy",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t01-07-07",
+      "issue": "課堂言語不適",
+      "category": "safety",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t01-07-10",
+      "issue": "疑似不當管教",
+      "category": "safety",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t02-03-09",
+      "issue": "三人重修班尚未確認",
+      "category": "credits",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t02-03-18",
+      "issue": "多次補考歷史",
+      "category": "credits",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t02-03-28",
+      "issue": "畢典名冊與資格混淆",
+      "category": "credits",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t02-05-07",
+      "issue": "繁星校內推薦程序",
+      "category": "admissions",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t02-05-23",
+      "issue": "繁星順位更正",
+      "category": "admissions",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t02-05-26",
+      "issue": "繁星放棄程序",
+      "category": "admissions",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t02-06-04",
+      "issue": "作品集歸屬授權",
+      "category": "privacy",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t02-06-14",
+      "issue": "備審替換與上傳狀態",
+      "category": "admissions",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t02-06-26",
+      "issue": "備取、錄取與確認",
+      "category": "admissions",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t02-07-17",
+      "issue": "分科正式志願送出時程",
+      "category": "admissions",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t02-07-22",
+      "issue": "畢業後分發結果",
+      "category": "admissions",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t02-08-07",
+      "issue": "畢業資格未確定",
+      "category": "credits",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    },
+    {
+      "id": "content:18b-t02-08-18",
+      "issue": "未成年工讀條件",
+      "category": "employment",
+      "assessment": "targeted-check-needed",
+      "confirmedDefect": false,
+      "disposition": "no-auto-release",
+      "reason": "重要制度／證據邊界；尚未逐件完成現行稿制度專審，非既定違規裁決"
+    }
+  ],
+  "releasePolicy": {
+    "neverAssumePassingFromEngine": true,
+    "neverAssumeOldReviewEqualsNew": true,
+    "doNotReReviewWholeBody": true,
+    "changeSensitiveIdsOnly": true,
+    "doNotPromoteReadyAutomatically": true,
+    "noMergeNoDeploy": true,
+    "externalIndependentReviewRequired": false,
+    "contentControllerCanPass": true,
+    "onlyConcreteBlockersHold": true
+  },
+  "currentVersionHashEvidence": {
+    "checkedDate": "2026-11-16",
+    "sourceSha": "860e0bde49a7ea1386436156b3f579dca8f970b5",
+    "workflow": "https://github.com/franksky1207/teacher-hell/actions/runs/43790120412",
+    "tests": 4,
+    "passed": 4,
+    "failed": 0,
+    "t01IndependentApprovedUnchanged": 8,
+    "t02HydrogenPassedUnchanged": 23,
+    "t02HeldUnchangedAndPreserved": 8,
+    "t02BlockedPlusHeldStillExcluded": 17,
+    "otherLatestIndependentApprovalsInferred": 0,
+    "scopeNote": "Only confirms original review evidence still matches exact current source bytes; it does not create new independent semantic approval."
+  },
+  "premiseVerification": [
+    {
+      "id": "content:18b-t01-04-13",
+      "status": "event-claim-not-established-historical-fact",
+      "missing": "person-specific official assessment accommodation approval; no qualification linking student to approved record",
+      "resolution": "prove an existing authorization fact or revise only this story to clearly distinguish student claim from confirmed approval",
+      "releaseHold": false,
+      "evidence": "當前第一頁明寫「學生表示自己已有正式核定」；故事選項區分學生陳述、正式文件及權責單位查核，未把口述當校方核定完畢。",
+      "condition": "獨立語意審查須確認後續變體不跳過正式查核。",
+      "reviewDate": "2026-11-16"
+    },
+    {
+      "id": "content:18b-t01-04-20",
+      "status": "event-originating-new-campus-incident",
+      "missing": "posted identifiable score sheet as objective campus fact and its actual audience",
+      "resolution": "establish this incident as a new grounded event with recorded source and knowledge scope or make it a report pending verification",
+      "releaseHold": false,
+      "evidence": "本故事第一頁以「學生發現可辨識成績張貼」作為新事件起點；選項保留確認張貼方式、限制轉傳與正式反映，未假設事前已記錄在全域歷史。",
+      "condition": "須核對當次事件選項確實依合法世界狀態處理知情及撤除結果；不可把這個新起因誤當既有事件追蹤。",
+      "reviewDate": "2026-11-16"
+    },
+    {
+      "id": "content:18b-t02-05-23",
+      "status": "unverified-past-official-correction",
+      "missing": "actual published stars nomination ranking correction affecting this student, beyond general milestone predicates",
+      "resolution": "add verifiable correction/history predicate only if authorized world facts exist; otherwise keep story held",
+      "releaseHold": true,
+      "evidence": "故事明確寫「校方因資料錯誤更正順位」，候選只有繁星作業完成與學測公布，無法證明校方確曾發布順位更正、當事人受到影響。",
+      "condition": "在世界提供可驗的校務更正紀錄或改為待查證的學生消息前，保持個別正式放行暫緩。",
+      "reviewDate": "2026-11-16"
+    }
+  ],
+  "pendingExternalReview": {
+    "manifest": "work/18b-t01-t02-independent-review-handoff.json",
+    "count": 360,
+    "t01": 192,
+    "t02": 168,
+    "previouslyApprovedUnchanged": 31,
+    "t02OriginalIsolated": 17,
+    "mandatory": false,
+    "status": "optional-only-no-release-blocker",
+    "meaning": "Optional historical checklist, not a release blocker"
+  },
+  "currentReleaseHolds": [
+    "content:18b-t02-05-23"
+  ],
+  "note": "Two T01 events need no missing pre-existing history because one reports a student's claim and the other begins a new on-scene incident; both still await independent content verdict. The third is an asserted prior official correction, so remains held for release.",
+  "reviewPolicy": {
+    "externalIndependentReview": "optional-user-initiated-only",
+    "reviewedMeaning": "ChatGPT main-controller story/quality acceptance permitted",
+    "blockers": [
+      "confirmed source or rules or world contradiction",
+      "game contract/runtime/candidate failures",
+      "unresolved per-event necessary world prerequisites"
+    ],
+    "notBlocker": "lack of Gemini or other independent AI signoff"
+  },
+  "controllerDecision": {
+    "file": "work/18b-t01-t02-controller-content-disposition.json",
+    "counts": {
+      "reviewedAccepted": 390,
+      "held": 18,
+      "controllerNewAccepted": 359,
+      "previousIndependentUnchanged": 31,
+      "preExistingT02Isolated": 17,
+      "additionalWorldPrerequisiteHold": 1
+    },
+    "externalReview": "optional-only-if-user-requests",
+    "meaning": "Content review accepted for 390 relying on previous reviews, corrections, code acceptance and controller judgment; not yet formally ready or published."
+  },
+  "controllerEvidence": [
+    "work/18b-t01-controller-content.json",
+    "work/18b-t02-controller-content.json"
+  ]
+}

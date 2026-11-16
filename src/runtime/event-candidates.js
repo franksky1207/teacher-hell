@@ -1,3 +1,4 @@
+import {validateRecordCondition,ACADEMIC_RECORD_QUERIES,ENTRANCE_RECORD_QUERIES} from './record-qualifications.js';
 import {projectIssues} from './issues.js';
 import {validateIssueEligibility,issueOptions,validateBoundSelection,rejectedIssueReservation,boundParticipants} from './issue-candidates.js';
 import { runtimeCalendarDay,aftercareDefinition,retiredAftercareReservation } from './aftercare-calendar.js';
@@ -39,14 +40,15 @@ export function validateEventDefinitions(definitions){
   const core=tuple(d.coreCodes);need(!coreByTopic.has(d.topicId)||coreByTopic.get(d.topicId)===core,'Topic core must be shared');coreByTopic.set(d.topicId,core);
   need(d.weights.length===6&&d.weights.every(x=>Number.isFinite(x)&&x>=0)&&Math.abs(d.weights.reduce((a,b)=>a+b,0)-1)<1e-12,'Six weights must sum to one');
   need(d.directions.length===6&&d.directions.every(x=>[1,-1].includes(x)),'Explicit six directions');
-  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['companions','roleIds','affiliation','knowledge','groups','academic','entrance','procedure','homeroom','issue'].filter(k=>Object.hasOwn(e,k))]);
+  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['grades','companions','roleIds','affiliation','knowledge','groups','academic','entrance','procedure','homeroom','issue'].filter(k=>Object.hasOwn(e,k))]);
   need(e.people.length>0&&e.people.every(x=>['player','student','caregiver','staff','reunion','contact'].includes(x)),'Participant scopes');
   for(const k of ['dayKinds','slotIds','facts','history','numeric'])need(Array.isArray(e[k]),`Eligibility ${k} array`);
-  if(Object.hasOwn(e,'issue'))validateIssueEligibility(e.issue);
+  if(e.grades)need(Array.isArray(e.grades)&&e.grades.length>0&&e.grades.every(g=>Number.isInteger(g)&&g>=1&&g<=3)&&new Set(e.grades).size===e.grades.length,'Grade eligibility must be distinct grades 1..3');
+   if(Object.hasOwn(e,'issue'))validateIssueEligibility(e.issue);
   if(e.homeroom)need(['ordinary','social','crisis','support','placement'].includes(e.homeroom),'Homeroom qualification');
   if(e.procedure){need(Array.isArray(e.procedure),'Procedure qualifications');for(const p of e.procedure){assertShape(p,['kind','status']);identifier(p.kind);identifier(p.status);}}
-  if(e.entrance){need(Array.isArray(e.entrance),'entrance predicates');for(const c of e.entrance){assertShape(c,['kind',...(Object.hasOwn(c,'value')?['value']:[])]);need(['active','route','gsat-published','confirmed','subject-preparing'].includes(c.kind),'entrance predicate');if(c.kind==='route')need(typeof c.value==='string','entrance route');}}
-  if(e.academic){need(Array.isArray(e.academic),'Academic qualifications');for(const a of e.academic){need(['makeup','credit-deficit','change','admission'].includes(a.kind)&&typeof a.termId==='string','academic condition');}}
+  if(e.entrance){need(Array.isArray(e.entrance),'entrance predicates');for(const c of e.entrance){if(c.kind==='record-v1'){validateRecordCondition(c,ENTRANCE_RECORD_QUERIES);continue;}assertShape(c,['kind',...(Object.hasOwn(c,'value')?['value']:[])]);need(['active','route','gsat-published','confirmed','subject-preparing','milestone-completed','stars-nominated','application-screened','application-reviewed','application-accepted'].includes(c.kind),'entrance predicate');if(['route','milestone-completed'].includes(c.kind))need(typeof c.value==='string'&&c.value.length>0,'entrance predicate value');}}
+  if(e.academic){need(Array.isArray(e.academic),'Academic qualifications');for(const a of e.academic){if(a.kind==='record-v1'){validateRecordCondition(a,ACADEMIC_RECORD_QUERIES);continue;}need(['makeup','credit-deficit','change','admission'].includes(a.kind)&&typeof a.termId==='string','academic condition');}}
   if(e.roleIds)need(Array.isArray(e.roleIds)&&e.roleIds.every(id=>Number.isInteger(id)&&id>=1&&id<=35),'Role eligibility IDs');
   if(e.affiliation){assertShape(e.affiliation,['classId','status']);identifier(e.affiliation.classId);need(['active','former'].includes(e.affiliation.status),'Affiliation status');}
   if(e.groups){need(Array.isArray(e.groups),'Group eligibility');for(const g of e.groups){assertShape(g,['groupId']);identifier(g.groupId);}}
@@ -93,6 +95,10 @@ function homeroomRejection(w,mode,person,index){
   if(!registry.assignments.some(a=>origins.has(a.id)&&a.until===null&&a.personId===person))return 'principal-required';
  }
  return null;
+}
+/** Reunion content needs an observed same-day contact, not a fabricated static fact ID. */
+export function findReunionContact(facts,alumnusId,teacherId,date){
+ return [...facts.values()].find(f=>f.data?.type==='contact'&&Array.isArray(f.subjectIds)&&f.subjectIds.includes(alumnusId)&&f.subjectIds.includes(teacherId)&&f.occurredAt?.date===date)??null;
 }
 export function participantPool(world,scope,index){
  const n=world.numeric.evolution.world,r=n.registry;
@@ -146,15 +152,17 @@ export function buildEventCandidates(world,definitions,{engineering=false,ignore
    let reason=null;const facts=e.facts.map(f=>index.facts.get(f.id));
    if(e.homeroom)reason=homeroomRejection(world,e.homeroom,person,index);
    if(e.dayKinds.length&&!e.dayKinds.includes(day.kind)||e.from!==null&&day.date<e.from||e.until!==null&&day.date>e.until)reason='calendar-condition';
+    if(e.grades&&!e.grades.includes(gradeAt(day.date,world.numeric.evolution.world.registry.cohortStart)))reason='grade-condition';
    if(facts.some((f,i)=>!f||e.facts[i].participant&&!f.subjectIds.includes(person)))reason='objective-condition';
    if((e.companions??[]).some(c=>{const f=index.facts.get(c.contactFactId);return !f||f.data?.type!=='contact'||f.occurredAt.date!==day.date||!f.subjectIds.includes(person)||!f.subjectIds.includes(c.personId)||!world.numeric.evolution.world.people[c.personId]&&c.personId!==world.identity.playerId;}))reason='companion-contact-required';
-   if(!e.issue&&e.people.includes('reunion')&&index.school.reunionIds.includes(person)&&!facts.some(f=>f?.data?.type==='contact'&&f.subjectIds.includes(person)&&f.subjectIds.includes(world.identity.playerId)&&f.occurredAt.date===day.date))reason='reunion-contact-required';
+   const reunionContact=!e.issue&&e.people.includes('reunion')?findReunionContact(index.facts,person,world.identity.playerId,day.date):null;
+    if(!e.issue&&e.people.includes('reunion')&&!reunionContact)reason='reunion-contact-required';
    if(e.roleIds&&!e.roleIds.every(id=>(world.numeric.evolution.world.people[person]?.roleIds??[8,9]).includes(id)))reason='role-condition';
    if(e.affiliation&&!world.numeric.evolution.world.registry.enrollments.some(a=>a.personId===person&&a.classId===e.affiliation.classId&&(e.affiliation.status==='active'?a.until===null:a.until!==null)))reason='affiliation-condition';
    if(e.knowledge&&!e.knowledge.every(k=>r.knowledge.some(x=>x.actorId===(k.actorId==='participant'?person:k.actorId)&&x.claimId===k.claimId&&x.versionId===k.versionId&&(k.belief==='any'||x.belief===k.belief))))reason='knowledge-condition';
    if(e.groups&&!e.groups.every(g=>npcGroups(world).some(x=>x.id===g.groupId&&!x.ended&&x.memberIds.includes(person))))reason='group-condition';
    if(entranceAbsent(world,index.academics,person))reason='personal-admissions-activity';
-   if(e.entrance&&!e.entrance.every(c=>entranceCondition(index.academics,person,c)))reason='entrance-condition';
+   if(e.entrance&&!e.entrance.every(c=>entranceCondition(index.academics,person,c,world)))reason='entrance-condition';
    if(e.academic&&!e.academic.every(a=>academicEligible(world,person,a,index.academics)))reason='academic-condition';
    if(e.procedure&&!e.procedure.every(p=>procedureEligible(world,person,p,index.institution)))reason='procedure-condition';
    if(e.enrollment&&!enrollmentEligibility(world.numeric.evolution.world,{personId:person,...e.enrollment}).eligible)reason='enrollment';
@@ -162,7 +170,7 @@ export function buildEventCandidates(world,definitions,{engineering=false,ignore
    try{if(e.numeric.some(n=>{const [v]=numericSources(world,person,[n.source],[n.code]);return v<n.min||v>n.max;}))reason='numeric-condition';}catch{reason='numeric-source-missing';}
    if(day.kind==='aftercare'&&!aftercareDefinition(d))reason='students-left-school';
    if(!slots.length||day.quota?.kind==='protected-day')reason='no-legal-time';
-   const participantIds=[person,...new Set((e.companions??[]).map(c=>c.personId).filter(id=>id!==person))],factIds=[...new Set([...e.facts.map(f=>f.id),...(e.companions??[]).map(c=>c.contactFactId)])].sort();
+   const participantIds=[person,...new Set((e.companions??[]).map(c=>c.personId).filter(id=>id!==person))],factIds=[...new Set([...e.facts.map(f=>f.id),...(e.companions??[]).map(c=>c.contactFactId),...(reunionContact?[reunionContact.id]:[])])].sort();
    const c={key:tuple(d.id,participantIds,factIds),definitionId:d.id,topicId:d.topicId,type:d.type,participantIds,factIds,date:day.date,slotIds:slots,content,cooldownDays:p.cooldownDays,exclusionGroups:groups,sameFact:p.sameFact,reason:p.reason};
    if(e.issue){
     c.bindingContract=1;c.issueScope=structuredClone(p.issueScope);

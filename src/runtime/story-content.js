@@ -1,5 +1,8 @@
 import {PACKAGE4_SAMPLES} from './story-samples-package4.js';
 import {PILOT_18B2_CAUSAL_STORIES} from './story-samples-18b2.js';
+import {T01_BATCH_RECORDS} from './content/t01.js';
+import {T02_BATCH_RECORDS} from './content/t02.js';
+import {T02_ISOLATED_IDS} from './content/t02-isolation.js';
 import {validateConsequences} from './story-consequences.js';
 import { entranceAbsentFromHistory } from './entrance.js';
 /** Versioned, platform-free content assets. Save files contain references, never scripts. */
@@ -187,7 +190,45 @@ export const PACKAGE3_STORY=freeze(validateStory({resourceId:'engineering:packag
 export const PACKAGE4_STORIES=freeze(PACKAGE4_SAMPLES.map(validateStory));
 /** Test-addressable but NEVER added to a formal event catalogue. */
 export const PILOT_18B2_STORIES=freeze(PILOT_18B2_CAUSAL_STORIES.map(validateStory));
-const assets=freeze([...PILOT_18B2_STORIES,...PACKAGE4_STORIES,PACKAGE3_STORY,HISTORY_CONTRACT_STORY,AFTERCARE_STORY,ENTRANCE_STORY,DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY,...PHASE17D_READY_STORIES]);
+/** T01 author-final 200 are engineering-only; preserve eight external approvals separately. */
+export const T01_DRAFT_STORIES=freeze(T01_BATCH_RECORDS.map(r=>{try{return validateStory(r.story);}catch(e){throw new Error('T01 draft '+r.story.resourceId+': '+e.message,{cause:e});}}));
+export function t01DraftCatalogue(){
+ const definitions=structuredClone(T01_BATCH_RECORDS.map(r=>r.definition));
+ return {type:'register-event-catalogue',catalogueId:'engineering:18b-t01-v1',definitions,
+  bindings:T01_BATCH_RECORDS.map(r=>({definitionId:r.definition.id,...r.binding})),engineering:true};
+}
+/** All 208 T02 stories are resolve-only engineering resources; none are public. */
+export const T02_DRAFT_STORIES=freeze(T02_BATCH_RECORDS.map(r=>validateStory(r.story)));
+/** 18 known holds/blockers remain addressable but are never offered even to the isolated catalogue. */
+export function t02DraftCatalogue(){
+ const held=new Set(T02_ISOLATED_IDS);
+ const records=T02_BATCH_RECORDS.filter(r=>!held.has(r.definition.id));
+ return {type:'register-event-catalogue',catalogueId:'engineering:18b-t02-reviewed-source-v1',
+  definitions:structuredClone(records.map(r=>r.definition)),
+  bindings:records.map(r=>({definitionId:r.definition.id,...r.binding})),engineering:true};
+}
+/** Controller-accepted 18-B publication: preserve original v1 engineering assets forever.
+ * Published v2 is a separate immutable identity, never an in-place draft mutation.
+ * The 18 named T02 holds remain resolve-only at v1 and cannot appear in this catalogue. */
+const T01_T02_PUBLISHED_RECORDS=Object.freeze([
+ ...T01_BATCH_RECORDS,
+ ...T02_BATCH_RECORDS.filter(r=>!T02_ISOLATED_IDS.includes(r.definition.id))
+]);
+export const T01_T02_PUBLISHED_STORIES=freeze(T01_T02_PUBLISHED_RECORDS.map(r=>
+ validateStory({...structuredClone(r.story),version:'2',status:'ready'})
+));
+export function t01T02PublishedCatalogue(){
+ const records=T01_T02_PUBLISHED_RECORDS;
+ const definitions=records.map(r=>({...structuredClone(r.definition),
+  content:{...structuredClone(r.definition.content),version:'2',status:'ready'}}));
+ const bindings=records.map(r=>({definitionId:r.definition.id,...structuredClone(r.binding)}));
+ // Preserve the existing school guidance event while broadening new-career stories.
+ const guidance=entranceCatalogue();
+ return {type:'register-event-catalogue',catalogueId:'content:18b-t01-t02-reviewed-v2',
+  definitions:[...definitions,...guidance.definitions],
+  bindings:[...bindings,...guidance.bindings],engineering:false};
+}
+const assets=freeze([...T01_DRAFT_STORIES,...T02_DRAFT_STORIES,...T01_T02_PUBLISHED_STORIES,...PILOT_18B2_STORIES,...PACKAGE4_STORIES,PACKAGE3_STORY,HISTORY_CONTRACT_STORY,AFTERCARE_STORY,ENTRANCE_STORY,DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY,...PHASE17D_READY_STORIES]);
 export function resolveStory(ref){const c=assets.find(c=>c.resourceId===ref.resourceId&&c.version===ref.version);need(c,'RESOURCE','missing immutable content version');return c;}
 export function validateStoryReference(d){const c=resolveStory(d.content);need(c.definitionId===d.id&&c.topicId===d.topicId&&c.status===d.content.status,'REFERENCE','definition/content identity');if(d.eligibility.issue){need(c.bindingContract===1,'REFERENCE','issue definition requires binding-aware story');for(const b of Object.values(c.roleBindings??{}))if(b.candidateRole)need(d.eligibility.issue.actors.some(a=>a.role===b.candidateRole),'REFERENCE','missing candidate role');for(const stage of c.stages)for(const option of stage.choices.flatMap(o=>[o,...(o.replacement?[o.replacement]:[])]))for(const out of [option.outcome,...(option.variants??[]).map(v=>v.outcome)])for(const op of out.issueOperations??[])if(op.source?.binding)need(op.source.binding===d.eligibility.issue.binding,'REFERENCE','unknown issue binding');}else need(!c.bindingContract,'REFERENCE','binding-aware story requires issue eligibility');if(c.resourceId.startsWith('aftercare:'))need(canonicalData(d)===canonicalData(aftercareCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal aftercare qualification cannot be relabeled');if(c.resourceId.startsWith('entrance:'))need(canonicalData(d)===canonicalData(entranceCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal entrance qualification cannot be relabeled');if(c.resourceId.startsWith('homeroom:'))need(canonicalData(d)===canonicalData(homeroomCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal homeroom qualification/authority cannot be relabeled');return c;}
 

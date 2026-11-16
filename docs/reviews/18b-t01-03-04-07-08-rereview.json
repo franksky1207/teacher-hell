@@ -1,0 +1,1688 @@
+{
+  "schemaVersion": 1,
+  "reviewer": {
+    "id": "codex-child-review_03_04",
+    "process": "相同模型、不同子代理上下文的撰稿分離複審；此子代理未修改故事。不是不同模型或獨立人類審核。",
+    "sopGate": "可提供可追溯分離編輯審查紀錄；現行SOP另明定同一模型自行複查只能自檢，故本報告不單獨宣稱已滿足更嚴格的不同模型獨立審稿門檻，不自動提升runtime ready或正式reviewed計件。"
+  },
+  "reviewedAt": "2026-11-15",
+  "inputs": [
+    {
+      "path": "work/18b-t01-03-authoring.json",
+      "sha256": "a1b6a0885ea8012f0c0357e74dc48ccb65afa694f847d1e6c790cc34dfa8f26a",
+      "count": 27
+    },
+    {
+      "path": "work/18b-t01-04-authoring.json",
+      "sha256": "a01334195fdf4d565ebc6829ab94cde9a54144d5b68309ae029e96f023cc236b",
+      "count": 26
+    },
+    {
+      "path": "work/18b-t01-07-authoring.json",
+      "sha256": "0b9b6b7fcd57bbe7c4fd526dfb8c7698202d955b1f886a6b538517c26df62d1f",
+      "count": 21
+    },
+    {
+      "path": "work/18b-t01-08-authoring.json",
+      "sha256": "fa2242782debc52f842a8bdaaa0b1b0664ee680fc75d3957d8b94f8bf9129941",
+      "count": 22
+    }
+  ],
+  "priorReports": [
+    "docs/reviews/18b-t01-03-04-review.json",
+    "docs/reviews/18b-t01-07-08-review.json"
+  ],
+  "merges": {
+    "path": "work/18b-t01-merges.json",
+    "sha256": "dacf31dd69ca4de45137b5966c6d554b472a4ff0d36ae4eb97c6cf9b0ea36b53",
+    "disposition": "已比對合併來源未在受審稿重複保留，ID不回收；04-22若新增合併，依合併登記停止本次計件。"
+  },
+  "baseline": {
+    "main": "origin/main@1bb5770c38f608311220bc5191ee3981fe2af642",
+    "scope": "main ready十資源（含17D三件）既讀全文；本輪01/02/05/06所有保留稿最新起因與四策略比較。未對其他四題所有結果作全文簽核。",
+    "retainedSimilarity": "03-04照例題難獨立/03-07反覆訂正、03-06漏考安排/03-24漏看既有補考公告/03-30公假免測誤解、04-12活動平時評量缺項各責任不同。07-17速度競爭/07-21任課等待時間、08-03獎項/08-09升學呈現/08-21回饋優點不同，保留但需後續遊玩回饋觀察同質化。"
+  },
+  "sourceLimits": "只依17D/18B/03及現行契約、虛構合理性審查。沒有外部制度/法規研究，不聲稱必要程序法律專審完成。無跑新測試；主代理稱200件結構驗證通過屬其證據，不替其擴大宣稱。",
+  "summary": {
+    "examined": 96,
+    "acceptable": 96,
+    "mustFix": 0,
+    "formalReviewedUnderStrictSameModelRule": 0,
+    "formalPublicationApproved": 0
+  },
+  "records": [
+    {
+      "id": "content:18b-t01-03-01",
+      "version": "1",
+      "storySha256": "66767a325ced001abd06707a766177a2cf70b6632b3a302bb5765531d65ef81b",
+      "definitionSha256": "685d46d43de09fd65d1d7b6a95c4893c52f75478ec265cadf53d0a469833db79",
+      "verdict": "acceptable",
+      "rationale": "已將可見完成部分與記得的完成時間分開；補交說明、繳交檢核卡示範與懊惱承接有不同作用，不推定按時送達或補交已受理。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-02",
+      "version": "1",
+      "storySha256": "59ba631c2e8c79c454dbb8fe191ff4ee8b23465416ebcad598fdfc8260017f5c",
+      "definitionSha256": "8c403ad7cc0c71beb45abe25f62367e506287a9d98bb76d2b016fbcae39b64ea",
+      "verdict": "acceptable",
+      "rationale": "已精準修正verify為查看正式公告入口且未見對應異常說明，和原檔/截圖保全不同；另有待科任的附檔詢問與承接著急，沒有將平台故障當已證實。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-03",
+      "version": "1",
+      "storySha256": "0e26106c3d0b6a70c67ffd4fbf307c6a6c88098c2f686acdadf14b2bedb682c5",
+      "definitionSha256": "45f48b6d41e0507183bd1dc73250611438cc883b84ca1225849bea1b64c2963f",
+      "verdict": "acceptable",
+      "rationale": "直接核對公告、排剩餘準備、擬是否更動公告詢問及承接懊惱有不同用途；沒有科任已回覆或准延期。情緒選項語句偏理性，屬可改善而非額外保證成功。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-04",
+      "version": "1",
+      "storySha256": "eac0df5569ef72688d4923d2b41dda804ced07f754cc1f6eeca90e86215c46c4",
+      "definitionSha256": "d6ed455a2200a187f4b84a8ba8082489e03d33f23d34c4b67b7a80a03515ecec",
+      "verdict": "acceptable",
+      "rationale": "當場口述停住、提議相近題、標不懂步驟與肯定坦承有不同作用，沒有把照範例定為作弊或宣告掌握；與03-07反覆被要求訂正的責任情境不同。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-05",
+      "version": "1",
+      "storySha256": "e6655970357280f07973d297dc73e54e9c95b119d062fcc45a72d70db75af76a",
+      "definitionSha256": "718e5fac4631d3593215bec9bc53cc6ed0673ee2ea5d9563edab07cdf9a84526",
+      "verdict": "acceptable",
+      "rationale": "本人曾給整頁答案保留為自述，講解替成品、協助界線訊息及支持拒代做不同；缺席同學不自動認違規或接受界線。與05-08尚未提供報告的檔案權限預防不同。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-06",
+      "version": "1",
+      "storySha256": "94e9ada475e76d96733702fab902ff111f8dfe67fad6dd4d3adfba3798d1ca6a",
+      "definitionSha256": "5255c760fe4c67249805b2374d281fa58fbd781f2c4b9a92314b175ee82d17b1",
+      "verdict": "acceptable",
+      "rationale": "分開准假與補測資格，整理可聯絡空檔、保留本人物件及承接害怕；未擅排補測或以合法請假推免測，原無條件跨日及通用variants已移除。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-07",
+      "version": "1",
+      "storySha256": "dfe4fbf61b8f0a7dc9ee2730e3a1cf80cc54a44aa07f157adaf952008aa49b6d",
+      "definitionSha256": "888a41a428813a096bdfaf7bb30e8fad25c42e9ea31a13f72f1ab3a1c5513ecd",
+      "verdict": "acceptable",
+      "rationale": "局部複驗確認第三格已改副本遮解答試第一步，和第一格辨認跳步、第二格整理專科問題不同；保留卡住結果，不免除訂正要求。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-08",
+      "version": "1",
+      "storySha256": "940fd3258b398afb33a7eb21a7b57c552be33b5a2044cda336312e10ec8c76d9",
+      "definitionSha256": "644261dcd9a78e36f60a5ee98f81d2fa35c996e640500b4a4d923eb6c6bd95ca",
+      "verdict": "acceptable",
+      "rationale": "區分正式作業與額外挑戰，延伸題申請、先完成原工作與肯定挑戰意願不等價，沒有准許科任課堂自行改做其他工作。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-10",
+      "version": "1",
+      "storySha256": "051dc2d7e30c216ed3f99cd62bbfb96551fb456a0d503343e15615a9f9fce402",
+      "definitionSha256": "aa2c491a40d5c1508935b76a0a2c5ae4d5dcf8a8e252794922fa3aa88e06ff25",
+      "verdict": "acceptable",
+      "rationale": "手邊通知資格、向承辦詢問衝突、學生偏好與待核規則、回應可惜各有不同範圍；沒有取消任一活動或把偏好當許可。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-11",
+      "version": "1",
+      "storySha256": "6c196de4411281f42522dbd2ef03ff923396204aa9ba2a6c3a7d91ce427f4ceb",
+      "definitionSha256": "4173b95c70879d89e21bc22367ac71fb0a44a976b97f493952e835e5334fead5",
+      "verdict": "acceptable",
+      "rationale": "04-03已合併而不再重複計件；原卷保全、查核點、題號及當時反映紀錄、承接疑似缺漏分開，未由一卷斷全班印錯或自行補分。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-12",
+      "version": "1",
+      "storySha256": "29f753452aed2e452c90c0fca10f1fe1d0385946ccd452b6d73ec599b6dcf09d",
+      "definitionSha256": "8c2517b5c5d7b16588664779fa218370eebe60abdc9b52336080a2d8d1b8a0cb",
+      "verdict": "acceptable",
+      "rationale": "多科正式期限、可先做順序及溝通、待回看公告與撞期情緒各有不同作用；與01-04個人週末清單失控不同，本件有多科送件責任而非只欠進度。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-13",
+      "version": "1",
+      "storySha256": "8bbbb751b07697f9c761d56c9cb87793d1767d78afb39c29450da54d4df6f48a",
+      "definitionSha256": "cf7bc7f85fa9c7b7908d4518ad834edc2f997cb2ee0060a10c84a8aab78c8b6f",
+      "verdict": "acceptable",
+      "rationale": "本人最後看見地點保留為記憶，收件詢問、照片保全、承接遺失焦急不會推定被誰移走；尚未查出別班或科任已收件。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-14",
+      "version": "1",
+      "storySha256": "ab3ae54e519424496d3edb2a4aea1ee97e3436dd3aa43d3ca9a7480839dc3f07",
+      "definitionSha256": "877899b2345354f643cee00ce7b977c1cb13091107acd23c55112648fad4b5a8",
+      "verdict": "acceptable",
+      "rationale": "05-07家庭代做模型已合併，停止雙計；分列本人/家人參與、揭露及補做詢問、保留自有紀錄、肯定坦誠不等於免責。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-16",
+      "version": "1",
+      "storySha256": "94985b1985991d70f124bb7d0d075c1c1e71f1390aaf04baef27a7cc015b401f",
+      "definitionSha256": "7c6621a6c166bde7a03a0b711d30a9036773a42599acba3bb67317b8718e6502",
+      "verdict": "acceptable",
+      "rationale": "具體疑問題號、依規代表詢問、整理不同意見及失落承接，不由平均低判命題有錯或用多數決取代任課評量權。代表為起因提供的敘事設定，非自動全班知情。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-17",
+      "version": "1",
+      "storySha256": "d6bc997e1ab685bd4db0fa5460fc11b8941e9e51fd73f3be3b1943c37bdae698",
+      "definitionSha256": "5d21a3e5f9546453705ef259272be1f7bb227261d3681d18267daaf87de03cc2",
+      "verdict": "acceptable",
+      "rationale": "已知媒介/期限核對、詢問下一上課日、保存公告及承接困惑，未假定週日期限必錯或已獲准順延。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-18",
+      "version": "1",
+      "storySha256": "72d1caeae39a7361e09da44cf9baecd1f28407dc50cc23d48fe6fa7aa9191547",
+      "definitionSha256": "1232f54c9da52f829e18d98285f1df64df81446fad2ba498a8f90bff84029ae6",
+      "verdict": "acceptable",
+      "rationale": "03-26與04-05已合併；本人工作口述、自有版本供科任判讀、組內分工詢問與承接付出感受各不同，不替缺席成員認零貢獻或接受重分工。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-19",
+      "version": "1",
+      "storySha256": "058ad24181f38260b978c011edffef69b53491194f8b28d8f2b50c70f491e118",
+      "definitionSha256": "44a8635e61fb6cc0c8eb8813aa0e3a7c5bfe5c9388b9acc44323a9db1cb1d189",
+      "verdict": "acceptable",
+      "rationale": "到校與評量規則分列、補測資格詢問、本人交通資料保全及壓力承接，未拿遲到處理直接裁補測；和正式請假缺整場測驗不同，已到校但可用測驗時間不足。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-20",
+      "version": "1",
+      "storySha256": "a40a8d22066eb0cfd5086f8e12c23d497c6e48672dc05931ebfae05b2e13119c",
+      "definitionSha256": "91631860df0ca2117eb54fba2e773fa0bdd9bc18051905eee188113f8b96d423",
+      "verdict": "acceptable",
+      "rationale": "通知暫定狀態、個別資源可詢問處、需求待覆單及肯定補強意願，沒有保證額外開課或以等待視為已補強。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-21",
+      "version": "1",
+      "storySha256": "a0abd12ebca926372518f1f409f235e0fc5f7d9b9144909f19015344dfac98bb",
+      "definitionSha256": "8e34ea410ba5eaad3b35718a1e260662e18cd4b02b1d7745ea09d6441f6eecea",
+      "verdict": "acceptable",
+      "rationale": "可辨頁檢視、重印/補交草稿、殘頁及自有原檔保存、承接成品損失有不同作用；不由受損就認准時完成或准許免責。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-22",
+      "version": "1",
+      "storySha256": "bcd8c56d33b65e346dce87b5a08b3f9eed7e1f40899ceed1aef2dced43907014",
+      "definitionSha256": "ed344b66795d6f0e705ed7aef24c87f33cc9e8ec630c51c1bc3b4cd3f16c7b44",
+      "verdict": "acceptable",
+      "rationale": "起因已改學生說能理解，避免作者斷言；詞彙定位、專科練習問題、現場遮字回想及挫折回應，未診斷或把試一輪推為長期改善。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-23",
+      "version": "1",
+      "storySha256": "da80169248e52b46223da6217065d20f98cb1cbc9d1fd8e502b221b8149e9d64",
+      "definitionSha256": "bd781f60a28e1a58272cebd75c7bdd2427ab2cf4c79c774618b4364f432a72c9",
+      "verdict": "acceptable",
+      "rationale": "簽名目的/期限、合法照顧者聯繫說明、保留訂正待簽狀態、肯定可見工作，未代簽或取消任課要求。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-24",
+      "version": "1",
+      "storySha256": "02d1d28d9547b91c1f0163d13921ed0e8d01ac856866c9edb6d35c37e534e2f2",
+      "definitionSha256": "f7a4acedce0976e8cdaa998354b7154ca7ee6ba73c94e6f34ac79c48b77ffdf9",
+      "verdict": "acceptable",
+      "rationale": "核心是請假期間只貼校內公告造成錯過已排補考，和03-06首次漏考未知安排有不同資訊責任；日期與記憶分開、不宣告未公告或已獲補考。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-25",
+      "version": "1",
+      "storySha256": "44fabd2e10cad5bad9069c97e33ae73e12950a8a4ade37b609149e24050bdd66",
+      "definitionSha256": "8dadff60e76bbc8b97a94b7c05fe474379287d11a22e98798d07fd3e6cf00f82",
+      "verdict": "acceptable",
+      "rationale": "當場只談一符號、擬入門題需求、本人只短談及承接反覆零分挫折，保留求助機會，不強迫攤卷或把不拿卷診斷能力。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-27",
+      "version": "1",
+      "storySha256": "264e4bcbc877fb52a3af498ce5a9b2d065b5a7f4cb8fe2bcfd4e0544e95a6291",
+      "definitionSha256": "f3bdcff1af6e681383e9f7a123e8205ba9d4a1415a09a8fc7956520bba74a90b",
+      "verdict": "acceptable",
+      "rationale": "第三格已改用合法已得的基礎例題試一小步，與定位基礎疑點、分層詢問及肯定補強意願不同；沒有宣告掌握或擅代專科診斷。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-28",
+      "version": "1",
+      "storySha256": "08f3096a6806776ef39b5e360fd971a81203e8a2fb54ee145836c074c75a66e1",
+      "definitionSha256": "33e1d578c9150d3920bf2e0020e3bc3937c630c7aa1d8fbc8e3f99252d2027bb",
+      "verdict": "acceptable",
+      "rationale": "只有refer擬查詢並約後續，當次具體收件疑問開同根；次一合法午餐不假定已送件。核對回覆有2/3正權重：只有本人正式收件紀錄可close，無資料僅progress；其餘保留未決，不認時間經過等收件、收件等已評分。",
+      "reviewedScope": {
+        "stages": [
+          "opening",
+          "receipt-followup"
+        ],
+        "choiceCount": 8,
+        "variants": 2
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-29",
+      "version": "1",
+      "storySha256": "b8274fa65394f5a970ce12de11b193a12b14c2a5b36dfc194165b9fa1108db46",
+      "definitionSha256": "ff167f4d720dca2f483bd2140d2a4df0872e6296e4ed3803ff2f6b64761f8daa",
+      "verdict": "acceptable",
+      "rationale": "設備步驟定位、校內開放/替代查詢、缺器材及可做部分清單、肯定非態度問題，未要求家庭購買或保證使用許可；03-15一般網路問題已另合併至07-04。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-03-30",
+      "version": "1",
+      "storySha256": "237223fe69b3c049a65bde9dc9f43058d35e8b8e57f31c51cfe7569dc8e76447",
+      "definitionSha256": "ae074b841666de1e5e96ba0b5c39c82cafb41dcaff23bd35835c9b0794439352",
+      "verdict": "acceptable",
+      "rationale": "學生公假即免考的錯誤期待為特定資訊起因，和03-06怕零分不同；分權責說明、附公假詢問、本人通知保存及衝突情緒未自動免評量或排定補測。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-01",
+      "version": "1",
+      "storySha256": "a184f1f2181f71ce692e1f8560d929d1bf438bd670a4ea655f9dbbf0cecc54ed",
+      "definitionSha256": "71a7c1c084fc1d861f668d267f9624f016e9d7ea2149d7da32ea26016cf2576a",
+      "verdict": "acceptable",
+      "rationale": "重算原卷可見得分留下差異、具題號複核、原卷保全與肯定查核權不同；未自行改分，舊無條件再查一次續篇已移除。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-02",
+      "version": "1",
+      "storySha256": "06730378a2086121a43968db713fc674947318df96364884ad59aec61e205902",
+      "definitionSha256": "441bb0649e2d5a492456dcee511c4ad6a4e9356e796a89d9875252a53ca0eb0a",
+      "verdict": "acceptable",
+      "rationale": "逐步口述、完整步驟整理供複核、保留原作不添考後步驟、肯定討論，未由學生認為完整推解法已被接受或科任已判讀。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-04",
+      "version": "1",
+      "storySha256": "66c9e0d25c2438a97f808006a6737ddc2a3b4b76992763069dcda91d9d2e84a8",
+      "definitionSha256": "6251adfe0c0f00c8e1eccd0291a7d5f697b2ab763ad6a06b669560143a6d2922",
+      "verdict": "acceptable",
+      "rationale": "第三格已改明文規則下自訂例試算，與查公告及正式計分詢問不同；不明處停下，不把練習回填正式分。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-06",
+      "version": "1",
+      "storySha256": "ea1004aaf8fb98e319230044d185f108cd2bfddafd1bd6b32c2ca31c7756b855",
+      "definitionSha256": "fbba89e8f99218ab6a5c46a7e68cc103e31f072cc9bc2ec94f33b12d9bec15c3",
+      "verdict": "acceptable",
+      "rationale": "通知時序、適用範圍問題、原通知/繳交證據保全與承接新訊息不安不同；未因事後補訊直接判規準違法或科任違規。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-07",
+      "version": "1",
+      "storySha256": "b26a3f7621bdc19c9e7c0dad7d79390139aa760bcb83f02295160b11ba1c3a69",
+      "definitionSha256": "7e7c8d42247b2baa413122dcfa3f2d9181d10b50f51bed35db0789758558ef8f",
+      "verdict": "acceptable",
+      "rationale": "比較他卷有授權才查必要片段，未取得授權先不調閱；本人複核、去個資與承接疑惑不會宣告解法相同或閱卷偏心，場上仍一NPC。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-08",
+      "version": "1",
+      "storySha256": "33279d3e8cc538928a90ed6d741cf5527e3ef5bf44dc52ce6a20fb8b3e2ca9fc",
+      "definitionSha256": "e8d67e95cc2456fc23bf120fee37b07276b5ae7964fd97ea88471f678fdd8190",
+      "verdict": "acceptable",
+      "rationale": "公告/口述分列、標準詢問、本人送件時間證據、支持問規則，未用傳聞認差別待遇或保證恢復原分。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-09",
+      "version": "1",
+      "storySha256": "92fa2fd21ad866a501239807e85cf953bff279170d5d435ed1ec0cb83e7aad3c",
+      "definitionSha256": "a2c83c466f3993099d29001ea56fb1ee444de3c92a87a1c2cee538b479d51532",
+      "verdict": "acceptable",
+      "rationale": "批註內容與學生推測分開、改善問題草稿、暫不對外傳述、承接不舒服，沒有任課惡意已成立。仍缺具體原句是內容可深化點；現版無新法律定性或秘密傳達。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-10",
+      "version": "1",
+      "storySha256": "427c56a82f657c12dfa7dcb75e3ef2a366568a479ab69f2d230ba3c7553de86f",
+      "definitionSha256": "1c2b680b495c7b5692f750915b0197c1f7ede2acf79602ae3e6f7ef1a4d61c32",
+      "verdict": "acceptable",
+      "rationale": "只核本人成績與系統、正式欄位查核、遮他人資料保存及承接驚慌，未知道另誰的分數；標題偏確定，但實際劇情保留似乎不一致不定哪人。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-11",
+      "version": "1",
+      "storySha256": "ff364c7c958452579869040bee01f8fa57b89513323fdfc16aa7f73222845f69",
+      "definitionSha256": "21aee580a26ae385c1ebef892e6d6e0aa1672559785a531f5d3719c20d9e6c79",
+      "verdict": "acceptable",
+      "rationale": "04-19已合併；口頭加分記憶與公告分開、條件/紀錄詢問、保留未決及不安回應不會把教師承諾或欠分當確認事實。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-12",
+      "version": "1",
+      "storySha256": "a52af3e24105d3034a9a7f98985325a4e2b5b36291dddb406d8f4c1fe98a9b55",
+      "definitionSha256": "7e68e57422cda48cfd4e13d36d0e36d9067837ffaa3e7f25ab5a8854872a5bd1",
+      "verdict": "acceptable",
+      "rationale": "公假與活動評量缺項分列、替代資格詢問、本人核准資料保存、權責疑惑回應，未自動及格或判公假違規；不同於03-30已知小考免測誤解。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-13",
+      "version": "1",
+      "storySha256": "8137f9324b7e603b5c2fc95b46ce4ddc0778af22a883dbb8990f345a03eea894",
+      "definitionSha256": "ad1b12e331679aae4c1f62588d81097c97b97ce758e8f2d818a085a2b8385811",
+      "verdict": "acceptable",
+      "rationale": "共通保密確認即時支持及必要權責查核已補，保護不依選項取消；核定文件/執行落差/事實保全/承接不安不同，不公開診斷、不定執行者故意或補救已准。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-14",
+      "version": "1",
+      "storySha256": "a0e447abc15f5c2572fdde64929831d3da008b0c1fba7f456da00258b52d2854",
+      "definitionSha256": "628a490b4e8e2f8f4b2701f0a9ebfb1bec79b24d62a7a6615d932f56f9fd1b0e",
+      "verdict": "acceptable",
+      "rationale": "原可辨筆畫、依規複核、原卷不描粗、承接被誤看懊惱，未由考後說法補成當時答案或宣告應得分；原答案正確仍是學生認為的主張。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-15",
+      "version": "1",
+      "storySha256": "c9a15270744c382f5a341111a26824da57580cae7a6c7a0c1f251ef5694fa64b",
+      "definitionSha256": "c1fa31778c78028428fffccdefde36bba078aa1c77730f98fde26068bd46117e",
+      "verdict": "acceptable",
+      "rationale": "手邊排程與記憶差異分開、共同規準詢問、具體準備影響、承接排序在意，未由後排必有利推不公平或補分。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-16",
+      "version": "1",
+      "storySha256": "ace41b50e090955ef09fa4d7c44d02f31e2bc99b8aacc484f1888cef3d70b382",
+      "definitionSha256": "e664a5f3d100987e33628637ca5e866b800535ba5aa522ba7d81c3b8d9fa02d2",
+      "verdict": "acceptable",
+      "rationale": "共同確認逼問/威脅、停止擴散及保密支持程序已補，非選項特有；實際被問話/推測、資料保護問題、拒逼問句及壓力回應不宣告洩漏成立。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-17",
+      "version": "1",
+      "storySha256": "1b2beab5a01e177377fae634f6c35b1ead4f4c667331a93777d8d4af8c8ac961",
+      "definitionSha256": "37a3c381716be2fa9c7852213b854541e882fbb740cd846d6bf5166fac364b89",
+      "verdict": "acceptable",
+      "rationale": "查說明、歷程回饋詢問、選下次實作環節、承接付出落空不同；未臨時把時數加正式分，個人改善不取消規準疑義。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-18",
+      "version": "1",
+      "storySha256": "ec5696ccf7b69766619aebc26780e42de1f4bbcb43ecf991b5544ac87b0af63f",
+      "definitionSha256": "7ebec576d0c24553acc3ff55a0f26e07167135beddc8a80a00e03c118f7aba2d",
+      "verdict": "acceptable",
+      "rationale": "需查原卡位置、權責設備判讀請求、空白卡練塗記與承接疑惑分開，未憑空取得讀卡紀錄或將練習補填原卡。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-20",
+      "version": "1",
+      "storySha256": "c3badb8a4bf5a69e39a1e5dcbaebd8ab098e6637ecec7ca41df9438c9a475a01",
+      "definitionSha256": "cb3dcf5bd25ac236444ed4f9db3f9246ed084896cfe8bdd40307770c1000a5b4",
+      "verdict": "acceptable",
+      "rationale": "共通不再擴散可辨資料及正式支持已補；查目前範圍、最小反映內容、無成績照的詢問、承接不適不宣告張貼者違法或成績已收回。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-21",
+      "version": "1",
+      "storySha256": "4a659625d5e66ff3bf5108dd60a3579edead9b6f249acbdadb229be5c1825457",
+      "definitionSha256": "61949a060ba98f474fee3ab5d3ae51f1aacd14b02ff41c4fff8ca8fea5b7a8f7",
+      "verdict": "acceptable",
+      "rationale": "範例/要求日期對照、具體格式複核、原作副本保留及承接困惑，未推範例必優於規準或事後改稿冒原交；不同於04-06事後新增要求。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-23",
+      "version": "1",
+      "storySha256": "2ee7475f9201bba5504025f2e285b69e2c39c251acb8a3205c3f416b967bd697",
+      "definitionSha256": "b6492babf1264142085c4786b4ed20229a09fcdfc7c10720c378bedaaf192cf9",
+      "verdict": "acceptable",
+      "rationale": "本人題目規準、額外資料/設備需求、共同規則說明詢問與公平感受有不同層次；無缺席各組知情或題目難度已被確認。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-24",
+      "version": "1",
+      "storySha256": "3885bedd75dda98065697930fadf29e4f8dcb47c079e15bd1530f7fbb6f563c1",
+      "definitionSha256": "4c5d545cde86cbbb275f57bccf264c3c2d9d166ecce401e3e65f2361de1a9e52",
+      "verdict": "acceptable",
+      "rationale": "夜間辦公室矛盾已改合法午餐截止前；查公告、尚未送出的可追溯草稿、逾期正式窗口、保全證據及承接焦慮，未視草稿為受理或答應延時。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-25",
+      "version": "1",
+      "storySha256": "5e2c2cce0e617cc9db3752004e18bf15be89c3c3cb043355396b3e048162c94a",
+      "definitionSha256": "f8aeb36a0bd38ec75b05a7c6cf7f32fd5a7a379bd6899d6264a9ae20b3560938",
+      "verdict": "acceptable",
+      "rationale": "共同評量資格、正式尺度詢問、本人作業資料而非他班全成績、承接公平焦慮，未由同課名斷應相同或越權判何班有錯。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-26",
+      "version": "1",
+      "storySha256": "66dccd56bdee059117ec2183eba6b1393ac300c1834f34c309f7799a27152f3f",
+      "definitionSha256": "520170273200d19ac43e25cddb8d0173574f93d5d86ccde1311f3c210a5c8464",
+      "verdict": "acceptable",
+      "rationale": "傳聞來源只為同學轉述、共同規則草稿、停止轉貼與理解想問清楚不同；未把傳聞當已證待遇或承諾本班加分。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-27",
+      "version": "1",
+      "storySha256": "be612989ee79cbdfe28ef75d57bbc3cac012996e45c2c93762e7f08a8ea7bca6",
+      "definitionSha256": "7f377af708258a90091a0c52bd6a55ebfed303a1c819c885736a930d5ea85a4d",
+      "verdict": "acceptable",
+      "rationale": "區分現場紀錄、陳述及正式處置，程序詢問、本人紀錄保全及不安回應不由被記錄判作弊或保證免責。沒有讓導師代裁決。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-28",
+      "version": "1",
+      "storySha256": "b8c5083d9c816d4ab14d738af834bb17f6c1497f3b5a0a63b306b1d56ab54d6d",
+      "definitionSha256": "11a45d8829bb56d82b7f1dcac77ceb9af629d30079f247d21e504e5576c5fd34",
+      "verdict": "acceptable",
+      "rationale": "第三格已改成品及紀錄原貌保留、不為查故障重操作，和本人現象敘述/正式檢查詢問不同；未擅取監考資料或確認故障。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-30",
+      "version": "1",
+      "storySha256": "bd8f5682f324d310f6c2ccf4cf41c13ad4584275101935d1855b256b5e2bfc57",
+      "definitionSha256": "29a14977af641860fcfbbc4bfb7fc98585da0d42b8a33f225fd69df68ad33143",
+      "verdict": "acceptable",
+      "rationale": "語言要求查閱、概念/語言權重詢問、原題原答保留、承接規則不明，未宣告概念必全對或導師可重判分。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-04-31",
+      "version": "1",
+      "storySha256": "cba95014c68b4a6421e888dfea28c544b3d0d3133c598621a2e78cd68642c70d",
+      "definitionSha256": "899ef65b0657d8522f2de49ff919ba223ba3fb1c19b50ce675a7799a3cd59e45",
+      "verdict": "acceptable",
+      "rationale": "新增跨題稿全文審查：bindingContract1的receipt候選僅綁open的assignment-receipt-check及原當事student，師生皆須已知root；issue範圍冷卻不換根。四格為查公告、擬同作業說明請求、空白例練取得憑據、承接擔心；規則與收件事實分開，沒有已扣分/已受理/改分。只有rule對綁根作uncertain progress、不close，其他選擇不假結案。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "另有bindingContract1：receipt的kind=assignment-receipt-check、states=[open]、participant/student、師生root知情，issueScope=issue；已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-02",
+      "version": "1",
+      "storySha256": "e70366c28cc78a876ee931753325875048dd551be2dfb3341c88d862897a21e6",
+      "definitionSha256": "7b58dfb87ee7d69e13db8f1a95ac8ea4f106be11cc5aa3b8ab6ce33ba174b36f",
+      "verdict": "acceptable",
+      "rationale": "四格分別留下未說觀點、擬輪流制度、練加入句、保留暫不具名的意願；未判定缺席組員惡意，教師不自行改教法。 與01-18自發讀書會的參與準備問題不同，本件是正式課堂發言機會，可保留。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-03",
+      "version": "1",
+      "storySha256": "31b4b814dc0282c6be4fc6e7f276d5e5e25c8c3cea34926792180113be902589",
+      "definitionSha256": "93464909d6372cd260aab32b78b63c75e403f0c56b26637aff921805046a5a67",
+      "verdict": "acceptable",
+      "rationale": "產出格式辨識、示例請求、本人帶回組內的疑問與幽默回應有不同目的；沒有替全組同意或把教師請求變成任課採納。 任務單所載格式可於後續編輯補更具體例子，但目前不構成放行阻斷。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-04",
+      "version": "1",
+      "storySha256": "a77ba48e9d081cb923d07f3daa8ee45036e5b92ac3aec9d8c1c1e66c900be3e4",
+      "definitionSha256": "bb9d1f0b716e15cece95de15b7a8b71a82cf308fa186442c08c3afec3f5bff3f",
+      "verdict": "acceptable",
+      "rationale": "03-15已合併；在校設備、私下必要資訊授權、文字替代請求、關切存取障礙各有差異，不使家庭細節或任課知情憑空產生。雙未錯字已修。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-05",
+      "version": "1",
+      "storySha256": "165095fa9514b385822961951ab6ac28ffc83fe346b563e8eb535e5602a96608",
+      "definitionSha256": "5a7739db81b757a2f3e8a85d2ae49966b1bbef3d0d94f10846606cf7b349ed59",
+      "verdict": "acceptable",
+      "rationale": "區分自述當下/課後、等待時間提案、練不懂時的句子、承接緊張；未診斷焦慮或認定教師羞辱。 與07-10差在本件無站立處置；保持普通學習支持，不把相似表達自動當違規。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-06",
+      "version": "1",
+      "storySha256": "8162652723ac4dc36619b5f9cf8e2452bb658d4f7c9291b08ce5de485fe4dd05",
+      "definitionSha256": "aa25ec9c560b80c9f3e4d800d318f3ea520d1bdcdcfaab2b4dcfb085036dfa90",
+      "verdict": "acceptable",
+      "rationale": "步驟可見性、近看或投影請求、圖示讀值與肯定回饋，和07-20的操作動作順序有實質差別；未自行操作危險設備。 原單元無具體科別但讀刻度為普通高中常見實作，不需假定特定年級或完成檢查。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-07",
+      "version": "1",
+      "storySha256": "d495eb3dd07ed210521e3a88a8599b6c66503020d2401ae34116655909f7d6c2",
+      "definitionSha256": "7390d9e9060078dc071852e00f499a9b8136756953394c7f0e993e13dacda2a9",
+      "verdict": "acceptable",
+      "rationale": "共通即時身心/安全支持、保密及必要校內程序已補，不以選項換保護；原句/影響、窗口、可承受接觸、支持不宣告已違法；尚未外部查證特定程序，不聲稱完成法規專審。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-08",
+      "version": "1",
+      "storySha256": "ff424b211372c61b2585de403dcc8c04ae34622ab4c50324866098b7a0f84a42",
+      "definitionSha256": "d5dd27ce007b62573a681650f77319f15c36899af4b0b63417feb3b7d2e87278",
+      "verdict": "acceptable",
+      "rationale": "副本去識別、查匿名存取說明、私下具名管道、暫不交表，四策略有真實風險差異；未保證絕對匿名，未對外傳表。 與04-16既發互評疑似外洩不同，本件是尚未提交教學意見表的預先風險判斷。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-09",
+      "version": "1",
+      "storySha256": "229388f8c1c2671b33f1f180b203449492e9c90dfa4cd1a57c4ee6589b363370",
+      "definitionSha256": "0100aa7b8c3132cbfe22ebe4f911b69807a441ecc1794b39f7e98edbbce7a627",
+      "verdict": "acceptable",
+      "rationale": "第二格已改本人合法副本高對比重排試驗，和圈區域、擬文字版需求、幽默回應不同，未替任課改或公開教材。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-10",
+      "version": "1",
+      "storySha256": "6add4d2cd2b3b23771a0aaaaf0b03dd53e3f203e73dae8b9e5fafe504605cff6",
+      "definitionSha256": "a19ffc95071dd8ece8c44453bc57df73c151ce3fb93c01ae71a7d7fdeb8f1d5d",
+      "verdict": "acceptable",
+      "rationale": "共同身心安全、必要程序與不自行對質責任已補，四格只選資訊/反映/學習支持/感受重點，不以學習更好取代不當處置查核；尚無調查結論。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-11",
+      "version": "1",
+      "storySha256": "ec222c6a1014e821378172e2b4154debe30cc300247d2605da4ea1ffe0d356e2",
+      "definitionSha256": "a69291adb276bf29892db1f07527bad9e40c013e9f0bc48084b839e42623b153",
+      "verdict": "acceptable",
+      "rationale": "拆運算資訊、本地對照提案、背景詞/學科詞清單、幽默承接對應不同學習阻礙；未推定家庭或要求科任全面換教材。 比喻帶階級距離感但沒有揭露個人家庭，現版可保留。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-12",
+      "version": "1",
+      "storySha256": "1417207e16f9f21aba226f450bd7da4226811ffe93ef19f10113845568f7dcee",
+      "definitionSha256": "cd6a5ef76a1936eb670152722e10ebd53cd56a45826f191f1f4081d567609edc",
+      "verdict": "acceptable",
+      "rationale": "未練步驟表、正式安全輪替請求、與組員溝通草稿、承接被旁觀的感受有不同作用；沒有替他人答應輪替或補分。 和03-18/26、04-05的貢獻計分爭點不同，本件核心是尚未取得操作學習機會。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-13",
+      "version": "1",
+      "storySha256": "2e04e7fbbf188887aa458559d5ccafeaf90e8895c5e8a89a6c67dc7b9147906c",
+      "definitionSha256": "8ae82099febd3c4e1fc7b240bc5faeae4c5535f7c092f478a68dd58fbcfccb31",
+      "verdict": "acceptable",
+      "rationale": "分列短測效果、擬訂正節奏建議、挑單題請教及回應兩難，未代全班或強迫取消測驗；權責明確。 與03-16低平均要求全班重考不同，屬對持續頻率的折衷回饋。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-14",
+      "version": "1",
+      "storySha256": "7f8027a8ceec832740aaa19639d3c7c2c12cd24460b2e4d01397ef907b01dd21",
+      "definitionSha256": "95957315f3fe32df37c528390d1065d3cbc55d3fa202273e8150cadb1449590f",
+      "verdict": "acceptable",
+      "rationale": "課本連結、要求觀看提問、整理片段、承接無方向感，各有具體不同產物，未判教師偷懶或影片無效。 與01-28/06-10個人切換或倍速策略不同，本件為課堂影片缺引導的回饋。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-15",
+      "version": "1",
+      "storySha256": "ae1321aa03f2a41498abf12f081fc02772494269b9d7388274814af56c3d58d0",
+      "definitionSha256": "4f78bdc8518372001dfc73ebbd41c628190ae2813f51e0912c480295ca2ce381",
+      "verdict": "acceptable",
+      "rationale": "教材對照、正式範圍詢問、先標本人記得教過部分與幽默回應有不同責任；沒有自行宣布考試範圍。 與03-03準備錯章的小考急迫處理不同，本件尚在教材同步與複習資訊階段。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-16",
+      "version": "1",
+      "storySha256": "474cfc4d24923b74a49b5e82f4c5a0b93cb075bee4c49af244cf356493ba0cd2",
+      "definitionSha256": "a8abad0f79cdf50dbc96e909baa39727e59d22587fe8968dc0c6596218f6d9ac",
+      "verdict": "acceptable",
+      "rationale": "濃縮問題、擬固定提問管道、查已發教材及承接久候，未替科任承諾值班；學生說法未變成教師故意不回答。 與01-08學生怕問的心理門檻不同，已提出但無可用接觸時間。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-17",
+      "version": "1",
+      "storySha256": "fb799a5f902dd11e49c5c5a73efdae7a78546c945b3883fa4517b98e52a0dbfa",
+      "definitionSha256": "3ef9d7ea99a56c01dfa1c1f7e3f30ec8d722112a743bf623520edc6637152847",
+      "verdict": "acceptable",
+      "rationale": "口述思路、提議先寫後答、練步驟及肯定慢思考，沒有以單例定不公平或改分；競賽速度構成獨立阻礙。 與07-21有相似節奏策略，保留差異：搶答的速度/計分競爭與任課等待時間不同；後續不要再抄成同一回饋流程。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-18",
+      "version": "1",
+      "storySha256": "17b03435d42f414f36fe877b128d54717d2aefed728f4354bd4a17c2ccc6e021",
+      "definitionSha256": "a2df90f2542dbca993fcaddd17fa59dc17fc0082e83d2b08da36af8a52902b15",
+      "verdict": "acceptable",
+      "rationale": "改個人經驗副本、澄清代表範圍草稿、是否再參與正式回饋、承接壓力有不同作用；沒有替全班附和，沒有認定任課真誤讀。 因起因僅擔心任課誤讀，正文已避免把誤讀列客觀事實，符合知情界線。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-19",
+      "version": "1",
+      "storySha256": "94ad9601eac4cbd5df08a95e7d90d5ffb09a9566f90ecae856409f06e97dc5e0",
+      "definitionSha256": "a85cc9cec8bee667b0479c6d069594b8e0958043a06b0d89e0251effd46a00b7",
+      "verdict": "acceptable",
+      "rationale": "定位時間軸、文字需求、現有合法教材對照、支持替代入口；未診斷障礙或把檔案上外部服務。 與07-09視覺版面可近性不同，聽取音檔段落對照可保留，但兩者後續不應都只剩擬文字需求。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-20",
+      "version": "1",
+      "storySha256": "8a2cab96761122b35d8652477c95eeaf8c9c5c7cb153a7025eef098806688354",
+      "definitionSha256": "551469c42acb78a3d20a8e162595746b04a3cd17ea342d8042b3394e8307f4bd",
+      "verdict": "acceptable",
+      "rationale": "動作分解、慢示範請求、無風險紙上排序、承接初學者感受，沒有自行操作設備或宣告重教；具體問題不同於看不見刻度。 第三格選項說預備動作、結果明定紙上排序，安全但可改選項更精確為紙上排動作。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-21",
+      "version": "1",
+      "storySha256": "1c387517b3a2d7e75389ed1880b64f650f0671ac3568f0d143fb2f5d63e7e81a",
+      "definitionSha256": "a3faef55970745549ba75af7fd632c76ef01664914c1bb7649dbc7e14fa5a787",
+      "verdict": "acceptable",
+      "rationale": "回憶等待時點、先寫後發言建議、練先示意、承接沉默中的思考，未將主觀估時當秒數或代任課決策。 與07-17搶答活動相近，但此件責任在教師自行解答太快而非學生競賽，現有原因差異足保留，建議補不同回饋產物避免後續同質化。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-07-22",
+      "version": "1",
+      "storySha256": "604b470fa3930db85c5fedb8f77974fac7f4a619ef16b4b9ef1b87d312e8808d",
+      "definitionSha256": "fba6c3999201f6c21a22e6b336b7ad60d6fe7d35fb2977ffd96d6d3a0bff9d84",
+      "verdict": "acceptable",
+      "rationale": "第一格已明確只是本人紙上待查疑點、未送科任；與暫勿沿用提醒草稿、口述推理、肯定回頭更正不同，缺席同學或科任都不因提到名字知情。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-01",
+      "version": "1",
+      "storySha256": "cdf14a486658d0f9b61cad69196f69257d97dca43e8744f74a0b89194354f391",
+      "definitionSha256": "777925db238f1221b75384579ef80e96f8b4aec9a9a24e709184c2402a2ff466",
+      "verdict": "acceptable",
+      "rationale": "起因已明示同題早先嘗試及目前解答，保留版本不再憑空取得舊稿；口述、版本保全、專科確認問題、私下肯定不同，不宣告全題正確。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-02",
+      "version": "1",
+      "storySha256": "25996a6b7f52db2a79ba629e5c9564b22a1cd7063acf13c3a1ea3ae1f4e61bc3",
+      "definitionSha256": "2a10896f2742fc9d9a1b5eb669ea1d9f1e5d7fdcc00d460244957b7ef073c0be",
+      "verdict": "acceptable",
+      "rationale": "用途/肖像界線、查拍攝安排、只作品角度草稿、私下支持有不同功能；未保證不被攝到或把展出同意擴為粉專。 與17d-student-artwork只有草稿使用意願不同，新增肖像與成果展多用途授權責任，有獨立價值。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-03",
+      "version": "1",
+      "storySha256": "2692ff5c080a75e7e733f77948b8376149ccacafb7585543686746689884ade1",
+      "definitionSha256": "b979557d9fd130621ca7dc6aabc1480b1d3de62f6abc9e09a9677abdd2668c83",
+      "verdict": "acceptable",
+      "rationale": "現有前後稿與科任評語支持可觀察改善；選段、分欄學習紀錄、欣慰回應均不承諾入選或否定評審。 與02-09分數進步未達目標相似正向價值，但本件有作品可核對與比賽採選門檻差異，保留。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-04",
+      "version": "1",
+      "storySha256": "25bd04c7ac9b841034069cd0ef97259f76403c686e9ae578cd787fdff62de639",
+      "definitionSha256": "6562273605453641797ea05be8625faadc541a6d200995dbfda6fa6b793d4ec7",
+      "verdict": "acceptable",
+      "rationale": "重現失敗紀錄、限制說明、真實靜態備案、承接失敗，四種處理清楚；未宣告找到根因或將靜態剪接冒充即時成功。 「已保存輸出」在結果中是教師提議可用來源，未說現已展示，可接受。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-05",
+      "version": "1",
+      "storySha256": "7348704bcbf772856bc46ba2bd1cb74881725f81ed8263c706248c67a8440ac5",
+      "definitionSha256": "6b0307ef5b3cbf93f9304c6de95b7edb3756b8cffdbe50d4d8acb2e7519237b0",
+      "verdict": "acceptable",
+      "rationale": "分享範圍、提問架構、練婉拒每日帶讀、幽默承接義務化壓力，有實質不同界線；未替同學答應。 與01-27已發幫人導致自身進度落後不同，此件是在成果分享邀請時決定是否承擔教學義務，尚可獨立。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-06",
+      "version": "1",
+      "storySha256": "c78bf5426a011835fe5922d8e0855379bec02ad706f2c4024cf4d5305f20ee23",
+      "definitionSha256": "6e5717201dac061ad2c14e814e9e2b32594e60b6cf141c5f46ef9402c250411a",
+      "verdict": "acceptable",
+      "rationale": "選段談理解、整理不懂處、私人閱讀紀錄與欣慰，未把讀完推為全部理解或加分；只有師生知道自述。 開頭讀完由本人表示，老師只就願談段落與誠實回應，無偷改歷史。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-07",
+      "version": "1",
+      "storySha256": "acf2c7afa11b8696db7350ce28c21fd6ef66f664ce4e33458b04fa8b97268984",
+      "definitionSha256": "a0f07210d7ba30c9897cc05e72ee8aec78759b529d48c9997ad4a904bae81edf",
+      "verdict": "acceptable",
+      "rationale": "第三格已改本人對導師重述英語提問，和私人紀錄意願、下一次自選挑戰、私下祝賀不同；不評定語言全對、不公開重演或保證下次表現。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-08",
+      "version": "1",
+      "storySha256": "70bcec9d648fcfbc6f88cba17449bbc13e4e276006069ead3a9f961de72b80a3",
+      "definitionSha256": "b6c2d7960c7e9cd904953307c0da6fc33df8d2d5b1fa7b14837d383b4c545de8",
+      "verdict": "acceptable",
+      "rationale": "本人證據、承辦名牌補充需求、私人歷程紀錄、肯定台下工作各有不同範圍；未認定報告者搶功或保證署名已改。 與03-18/26/04-05的成績分配、05-16作者署名不同，本件是成果展公開表揚名牌，可保留但勿拿作已完成署名裁定。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-09",
+      "version": "1",
+      "storySha256": "a48fc82d6c52c130123aade539791ba03a41ba9f9a942505c0f13bb573af5bef",
+      "definitionSha256": "46e70d24760a134d69f72f4bd40bf8772bc79a9fb6e4b1eca21fc464f7f803d5",
+      "verdict": "acceptable",
+      "rationale": "取捨決定、資料/限制分列、是否收錄、肯定普通題目，未代寫能力或保證升學；受訪主張不當史實。 與08-03未入選想法接近，但本件為學習歷程呈現與訪查證據，責任及結果不同。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-10",
+      "version": "1",
+      "storySha256": "05dcc94d5a254585fdbdf768fafeca47ac38f9d9aa7e9aa30b725e47316f79cb",
+      "definitionSha256": "0d0ec8b8afdb9f7a1be017ace75b4100cfce7156b69068b7d0f5c3486a51b7eb",
+      "verdict": "acceptable",
+      "rationale": "記課內用途界線、拒賽說明、個人原檔保存、肯定完成，未自行撤回課程要求或替科任同意。 與08-02肖像分離不同，此件拒絕作品參賽；與17d-artwork同意意願有關但拒賽責任可獨立。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-11",
+      "version": "1",
+      "storySha256": "ba1f1d0fe9e7e65fdcb4bd1c8d906d961c4a781982ef8abf8129f28bcde36e66",
+      "definitionSha256": "232ad3d48031b52397c94b9c3ac332b9968d966456e8a4b33aeaef5b57a368cb",
+      "verdict": "acceptable",
+      "rationale": "照片支持有限核對、修正結論副本、向科任問重測、肯定查錯，各有不同實務；未改原始值或宣告唯一根因。 與05-14故意刪數值不同，本件正向發現標籤疑義並修正研究邊界，保留。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-12",
+      "version": "1",
+      "storySha256": "6fc0ac3d8f489198652f7efcd54f8e740a7ca2aecef010ffea76c96ea687a3a7",
+      "definitionSha256": "0bfec58ab62c9679b1c784c63d4c8237f2ef023e6c2e81181d76d5e4557d922b",
+      "verdict": "acceptable",
+      "rationale": "評論分類、暫離及備份、技術點整理、支持感受，未猜留言者或號召反攻；提供的一句尖銳批評未顯示法定危機。 若日後加入威脅/歧視/持續霸凌內容，必須重審最低程序，不能沿用此普通評論結束。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-13",
+      "version": "1",
+      "storySha256": "9a07572ef79d4afd9ec35e1a620473ab4a5ad128bbb7c3ae7fd9ab36f39a72d9",
+      "definitionSha256": "4f627c73c6ac60465e405484b74fb01cffc192b3fcf33135c5f4c42b359f76f4",
+      "verdict": "acceptable",
+      "rationale": "記研究邊界、練誠實回應、查正式後續窗口、肯定不知道，沒有補造當時答案或取提問者個資。 與08-23偏離假設不同，此件為成果展現場問答後的誠實呈現責任。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-14",
+      "version": "1",
+      "storySha256": "b05e668e0f8c28f6eff2776c0fadaad5bf475c9d4284730796f99a335c4d96ee",
+      "definitionSha256": "a6d438c7300eeb283d1aaeaf295cf09cad9fc50b9a3d4ff03983959a6ab5f789",
+      "verdict": "acceptable",
+      "rationale": "前後稿在起因已提供，改動理由/讀者個人回饋/版本保存/欣慰具差異，未承諾加分或代讀者認效果。 與08-03有前後稿但核心為自發修訂而非獎項落選，保留。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-15",
+      "version": "1",
+      "storySha256": "80263cbeb08bb4f907a9c226cabeb6833b8a8e06e75e49b79367dc64f4083683",
+      "definitionSha256": "4a7f1c198757bc44ddf4ff714216cc2e6a0f8233e697153a6f80a39ed9bd898a",
+      "verdict": "acceptable",
+      "rationale": "聽推理、徵求展示規則、專科核對、肯定內容機會，不用總分定解法或保證被採用。 與04-02另解法申訴不同，本件自願分享資格；與08-01個人首次說明不同，本件班級徵求規則有獨立教師責任。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-16",
+      "version": "1",
+      "storySha256": "f237cfe8e4660e0ce89c347198dd00788f3fbb5e1ca9fa7cdab01733e8122eb3",
+      "definitionSha256": "de7fe956364b95450ff34a639517f643be5c39fa1a379eb3608ca4c2bfb7bff1",
+      "verdict": "acceptable",
+      "rationale": "原用途邊界已是起因已知同意書，四格無任何實際外傳；保留用途/標敏感段/提議刪減/肯定隱私為不同處理。 建議在共通敘事明確寫此刻不播放不外傳，避免將第一格誤讀成只有第一格保護；現有其餘結果均無擴大使用，不構成已洩漏。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-18",
+      "version": "1",
+      "storySha256": "8b9cd99b97cf445d14f8c9b5f6b2392e21682807a40527a447a5c35181830e76",
+      "definitionSha256": "ec7ba5d9c323915c63c0a465c863e1f6963838a476fdb6d8e82c8b0607066154",
+      "verdict": "acceptable",
+      "rationale": "材質/易損處、照片替代需求、條件待明先留原作、承接兩難不同；情緒用語已不增加尚無證據的遴選結果，不擅自承諾保險或學校責任。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-19",
+      "version": "1",
+      "storySha256": "a9744346c9db1be5b1449c1fd5a796e790f7b3b6bf209d1a445e33d3f088e11e",
+      "definitionSha256": "1cad4767dad3d0e6ca0f437122255bc5b0f1280d518e737a4bb50b2f7a04d503",
+      "verdict": "acceptable",
+      "rationale": "起因已補本人得獎證書而非參賽證書，與題名相符；傳達界線、本人過程、私人慶祝、支持不替家人行為或群組新知情做決定。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-20",
+      "version": "1",
+      "storySha256": "7f8313b82bd5284b6bf61f4b41b21e1a177dbb7a2c0f7a458a5c9d0bba07a1bb",
+      "definitionSha256": "2ab6dd43cb769202e2ce891c566b638d64d493a958ebce92029c105e1278b714",
+      "verdict": "acceptable",
+      "rationale": "起因明確班級學科公開資料索引與課程公告連結，確與學習成果服務相關，非不明行政資料；交接步驟、自願徵求、縮範圍、幽默肯定不交帳密或保證交接成功。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-21",
+      "version": "1",
+      "storySha256": "2cdc4ab862f60d665907aac60c752fa6b2ffc1e2bc696d416515ee04d7d13fa9",
+      "definitionSha256": "c699ef2107d4534a0cb846e29a8cac00981e0ded08ea725a322cf487011c8fec",
+      "verdict": "acceptable",
+      "rationale": "資料/版面回饋分欄、本人設計選擇、無預設追問、欣慰，不推定未稱讚就是反對，缺席觀眾無新增知情。 與08-03獎項未入選不同，本件多種優點與自己期待不一致，保留。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-22",
+      "version": "1",
+      "storySha256": "2ce7b5402fee2840267d554f5fab76561b0b5255191fefe2b46bb34b3f199e12",
+      "definitionSha256": "8e9a7f0525ad8a15ac03756bb504848f337b4552f55339c678d9f33a5d61dabe",
+      "verdict": "acceptable",
+      "rationale": "核心訊息、附件規則待查、誠實計時、承接不捨四項不同作用；未偽裝三分鐘、承諾延時。 普通當日可結束，不必為彩排硬造問題根。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    },
+    {
+      "id": "content:18b-t01-08-23",
+      "version": "1",
+      "storySha256": "79f37e9b138349e751d87b1e433992a21830f489b4f10c6d9b7e03ef1316b641",
+      "definitionSha256": "8b9c668e675c2aa11fb33ebaea0ea3381a35273344834035c50cf1ca535e0b5d",
+      "verdict": "acceptable",
+      "rationale": "分原假設/新疑問、問任務範圍、留未來研究筆記、欣賞誠實，未宣稱新發現已驗證或改題已核准。 與08-11標籤錯誤不同，本件原假設未支持但產生旁支問題；結果無誇大第二份成果。",
+      "reviewedScope": {
+        "stages": [
+          "opening"
+        ],
+        "choiceCount": 4,
+        "variants": 0
+      },
+      "qualificationAssessment": "已核對對應definition：在籍student／school／lunch，無僅限高年級或特定裁定的資格；非保護時段與學籍仍由正式引擎判定，不從engineering-test推上架。",
+      "knowledgeAssessment": "逐一檢視world，師生同場接觸；沒有缺席角色transmission或自動對稱關係，文字中主張/未決保留。"
+    }
+  ]
+}

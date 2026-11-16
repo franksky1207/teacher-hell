@@ -1,3 +1,4 @@
+import './18b-t02-grade-eligibility.test.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createId, validateId, validateMoment, validateEventEnvelope, validateFoundationEnvelope, restoreFoundationEnvelope } from '../src/contracts/foundation.js';

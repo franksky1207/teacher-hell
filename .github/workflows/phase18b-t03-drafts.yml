@@ -1,5 +1,10 @@
 name: 18-B T03 isolated draft focused verification
 on:
+  push:
+    branches:
+      - feat/18b-t03-additional-verified-stories
+    paths:
+      - '.github/workflows/phase18b-t03-drafts.yml'
   workflow_dispatch:
   pull_request:
     paths:

@@ -5,6 +5,7 @@ import {T03_BATCH_RECORDS} from '../src/runtime/content/t03.js';
 import {validateStory} from '../src/runtime/story-content.js';
 import {validateEventDefinitions,buildEventCandidates} from '../src/runtime/event-candidates.js';
 import {eventWorld} from './support/event-fixtures.js';
+import {applySchoolOperation} from '../src/world/registry.js';
 import {canonicalData} from '../src/changes/settlement.js';
 
 const source=sub=>JSON.parse(readFileSync(new URL('../work/18b-t03-'+sub+'-authoring.json',import.meta.url),'utf8'));
@@ -55,4 +56,25 @@ test('Newcomer narratives cannot be assigned to the original 40 students',()=>{
  assert.ok(roster.every(id=>!w.numeric.evolution.world.people[id].roleIds.includes(17)));
  const candidates=buildEventCandidates(w,definitions.filter(d=>gated.has(d.id)),{engineering:true});
  assert.equal(candidates.candidates.length,0,'Opening-class students must not be mistaken for new transfers');
+});
+
+test('T03 genuine enrollment history produces legitimate candidates while initial roster is excluded',()=>{
+ const newcomer=source('05').records.find(r=>r.definition.id==='content:18b-t03-05-01').definition;
+ const returning=source('06').records.find(r=>r.definition.id==='content:18b-t03-06-05').definition;
+ const w=eventWorld(74,'2027-03-11','early');
+ const n=w.numeric.evolution.world;
+ const first=n.classroom.studentIds[0],home=n.registry.homeClassId;
+ const old=buildEventCandidates(w,[newcomer,returning],{engineering:true});
+ assert.equal(old.candidates.length,0,'No original student may masquerade as a newcomer or recent returnee');
+ applySchoolOperation(n,{type:'school-leave',personId:first,status:'suspended',reason:'test:documented-leave'},'2027-02-01');
+ applySchoolOperation(n,{type:'school-enroll',personId:first,classId:home,action:'return',source:'test:documented-return'},'2027-03-01');
+ const before=new Set(Object.keys(n.people));
+ applySchoolOperation(n,{type:'school-enroll',personId:null,classId:home,action:'transfer-in',source:'test:transfer'},'2027-03-08');
+ const entrant=Object.keys(n.people).find(id=>!before.has(id)&&n.people[id].kind==='student');
+ assert.ok(entrant,'real transfer generated a student');
+ assert.ok(n.people[entrant].roleIds.includes(17),'newcomer role comes from registry');
+ const chosen=buildEventCandidates(w,[newcomer,returning],{engineering:true}).candidates;
+ assert.ok(chosen.some(c=>c.definitionId===newcomer.id&&c.participantIds[0]===entrant),'newcomer is actually eligible');
+ assert.ok(chosen.some(c=>c.definitionId===returning.id&&c.participantIds[0]===first),'returned student is eligible');
+ assert.ok(!chosen.some(c=>c.definitionId===newcomer.id&&c.participantIds[0]===first),'returnee is not masquerading as transfer newcomer');
 });

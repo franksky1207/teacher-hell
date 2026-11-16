@@ -1,0 +1,278 @@
+{
+  "date": "2026-11-16",
+  "scope": "T03-01",
+  "reviewer": "ChatGPT controller",
+  "reviewType": "semantic-and-world-preconditions-not-engineering",
+  "sourcePath": "work/18b-t03-01-authoring.json",
+  "sourceBlobSha": "9ad8cb1c4b2474f38ede682a5b190f1596e59455",
+  "counts": {
+    "reviewed": 30,
+    "accepted": 22,
+    "held": 8,
+    "published": 0
+  },
+  "note": "歷史說明（本輪最終數量以counts及逐件結論為準）：十三則原先因『任意學生被指派未記錄障礙身分』保留的劇情，已實際修改為現場可觀察的教材、系統、公共場地或當事人首次提出的合理調整需求，逐則重新判斷教師權責與結果。其餘十則仍需真實特定輔具、考場或個人身分前提，不得自動放行。此為主控內容核可，工程候選／實際人物匹配及發布仍須另驗。",
+  "records": [
+    {
+      "id": "content:18b-t03-01-01",
+      "title": "投影字太淡",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "改以當場可核對的投影片低對比及負號／等號難辨作為公共教材問題，不將視覺障礙身分指派給任一學生；導師僅協調清晰資料和位置。",
+      "sourceBlobSha": "9ad8cb1c4b2474f38ede682a5b190f1596e59455"
+    },
+    {
+      "id": "content:18b-t03-01-02",
+      "title": "樓梯口的第三節",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "本人提出路線計時筆記，沒有替學生設定障礙或正式遲到史；核對路線、預備詢問、提早收拾構想與去標籤支持不同。",
+      "sourceBlobSha": "74ba5878c4b92897d9e5359c93c709cb84a24d14",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "98cfdaa8db914c3ef739a577f3d7fc12f7987e3027520517e399d95a9b2d8918"
+    },
+    {
+      "id": "content:18b-t03-01-03",
+      "title": "講義只有影本",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "學生當場示範手機內建朗讀掃描講義的格式障礙，未預設既有鑑定、輔具資格或指定設備；四策略分別查檔案、向科任索取文字、暫時學習路徑及支持。",
+      "sourceBlobSha": "9ad8cb1c4b2474f38ede682a5b190f1596e59455"
+    },
+    {
+      "id": "content:18b-t03-01-04",
+      "title": "體育課觀摩名單",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "眼前學生帶來的分組草案不是已生效觀摩名單；不設定疾病或活動資格，導師先問意願、擬詢問與討論替代活動，正式安全評估仍由權責決定。",
+      "sourceBlobSha": "74ba5878c4b92897d9e5359c93c709cb84a24d14",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "360d0321f3bd18e7b4162b811dc316252798928d5fce0cd58c77f53aac92ef59"
+    },
+    {
+      "id": "content:18b-t03-01-05",
+      "title": "口頭宣布的作業",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "此情境可由一般校園活動及學生自述引入，尚未擅自認定特定醫療診斷、法定資格、學籍或既成重大事實；技術抽選與正式放行仍須另驗。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7"
+    },
+    {
+      "id": "content:18b-t03-01-06",
+      "title": "集合位置的坡道",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "班級學生檢視活動預告與場地圖缺少無障礙路線，需求為公共空間共同參與的資訊查證，而非擅自指派特定輪椅使用者；活動實際配置由承辦認定。",
+      "sourceBlobSha": "9ad8cb1c4b2474f38ede682a5b190f1596e59455"
+    },
+    {
+      "id": "content:18b-t03-01-07",
+      "title": "考場桌椅尺寸",
+      "contentVerdict": "hold-world-precondition",
+      "reason": "核心衝突需要本人實際輔具、考場桌下空間及段考場地；一般student且無考試資格不能建立。改成泛用桌椅意見會失去考試合理調整責任，保留原稿待真實角色及考場依據。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "666c1a91ea93ac388adc19cf2ef46cb03abc06e61f7bb0f205761bc08757bdb3"
+    },
+    {
+      "id": "content:18b-t03-01-08",
+      "title": "緊急疏散分工",
+      "contentVerdict": "hold-world-precondition",
+      "reason": "防災演練公告與特定學生搬運需求均未被資格支持；且四選項可只談感受而不更正不安全搬運分工。需真實演練／需求來源並重整所有分支必要安全處置，本輪不把安全程序變成可選項。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "4d9b60d296c7a4f8f67403d59f6eeaebb8b19d68cfcc653f914de5467933c33c"
+    },
+    {
+      "id": "content:18b-t03-01-09",
+      "title": "影片沒有字幕",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "此情境可由一般校園活動及學生自述引入，尚未擅自認定特定醫療診斷、法定資格、學籍或既成重大事實；技術抽選與正式放行仍須另驗。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7"
+    },
+    {
+      "id": "content:18b-t03-01-10",
+      "title": "點名的站立要求",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "學生當天腿不舒服且現場提出能否坐著答話，屬首次短期狀況，不假定固定身心障礙身分；導師不自行豁免主持單位規定。",
+      "sourceBlobSha": "9ad8cb1c4b2474f38ede682a5b190f1596e59455"
+    },
+    {
+      "id": "content:18b-t03-01-11",
+      "title": "午餐隊伍的空間",
+      "contentVerdict": "hold-world-precondition",
+      "reason": "午餐時段正確，但轉角與特定輔具難以轉彎仍依賴人物設備前提；一般student不能證明。改成普通排隊擁擠會抹去原本可及性衝突，不作換皮放行。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "8d3fa1f4920dda709448f596eb8dc55c988322c621bd11bce7e3c2ad81834f8d"
+    },
+    {
+      "id": "content:18b-t03-01-12",
+      "title": "補課錄音的界線",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "此情境可由一般校園活動及學生自述引入，尚未擅自認定特定醫療診斷、法定資格、學籍或既成重大事實；技術抽選與正式放行仍須另驗。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7"
+    },
+    {
+      "id": "content:18b-t03-01-13",
+      "title": "社團報名格式",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "當場鍵盤操作社團表單焦點錯亂是可觀察的資訊系統問題，不要求學生先持特教資格；報名是否成功仍由承辦核對。",
+      "sourceBlobSha": "9ad8cb1c4b2474f38ede682a5b190f1596e59455"
+    },
+    {
+      "id": "content:18b-t03-01-14",
+      "title": "班級座位投票",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "幹部提出下次班會的座位提案，學生用當場照片指出板書反光，未假定正式班規通過或有特定診斷；與普通選位不同是班級規則要兼顧可及性。",
+      "sourceBlobSha": "9ad8cb1c4b2474f38ede682a5b190f1596e59455"
+    },
+    {
+      "id": "content:18b-t03-01-15",
+      "title": "活動場地臨時更動",
+      "contentVerdict": "hold-world-precondition",
+      "reason": "成果發表前一天、已練習兩週、作品入選及舊館無電梯均無校曆／參與與場地證據。僅改成想參加會消掉臨時換場的損失，需實際活動與動線前提。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "d41de306a0fff3fe928bdd7d85678f84c37bc792034a05f4fc1cd22a23a2e5db"
+    },
+    {
+      "id": "content:18b-t03-01-16",
+      "title": "教室音量的誤判",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "此情境可由一般校園活動及學生自述引入，尚未擅自認定特定醫療診斷、法定資格、學籍或既成重大事實；技術抽選與正式放行仍須另驗。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7"
+    },
+    {
+      "id": "content:18b-t03-01-17",
+      "title": "評量延長時間傳聞",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "此情境可由一般校園活動及學生自述引入，尚未擅自認定特定醫療診斷、法定資格、學籍或既成重大事實；技術抽選與正式放行仍須另驗。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7"
+    },
+    {
+      "id": "content:18b-t03-01-18",
+      "title": "學生自己選協助",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "此情境可由一般校園活動及學生自述引入，尚未擅自認定特定醫療診斷、法定資格、學籍或既成重大事實；技術抽選與正式放行仍須另驗。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7"
+    },
+    {
+      "id": "content:18b-t03-01-19",
+      "title": "家長要全面豁免",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "家長今天才提出全面退出班級活動要求，學生本人立即表達想試一小段；無既定身心診斷或已批准安排，導師只協調本人意願和校內程序。",
+      "sourceBlobSha": "9ad8cb1c4b2474f38ede682a5b190f1596e59455"
+    },
+    {
+      "id": "content:18b-t03-01-20",
+      "title": "輔具電量耗盡",
+      "contentVerdict": "hold-world-precondition",
+      "reason": "閱讀輔助設備與當天電子題目是必要人物及課務前提；沒有現存設備使用資格。故障與替代教材的故事值得保留，但不能把任意學生指派為輔具使用者。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "d0dfdeae5e44cb735b917c0e54d5da15904b7675396f1892166f2e7610e02931"
+    },
+    {
+      "id": "content:18b-t03-01-21",
+      "title": "冷氣出風口正下方",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "學生當場指出冷氣出風口帶來不適，這是當下環境需求而不是暗中賦予醫療身分；提供調整方向不等於一定有病。",
+      "sourceBlobSha": "9ad8cb1c4b2474f38ede682a5b190f1596e59455"
+    },
+    {
+      "id": "content:18b-t03-01-22",
+      "title": "班級公告只有圖片",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "學生用自己手機現場測試圖片公告無法被讀出，公共訊息的文字可及性可當場查核，不預設固定輔具或身心障礙資料。",
+      "sourceBlobSha": "9ad8cb1c4b2474f38ede682a5b190f1596e59455"
+    },
+    {
+      "id": "content:18b-t03-01-23",
+      "title": "校外教學的交通工具",
+      "contentVerdict": "hold-world-precondition",
+      "reason": "既有輔具乘車條件、校外課程及採購詢價資料未有資格。改成一般交通詢問不足以保留安全與可及採購責任；需真實活動及需求再處理。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "7edb8e76a4cd369b26d149293912c6f4ef0b573a81ac5590739247921cee3797"
+    },
+    {
+      "id": "content:18b-t03-01-24",
+      "title": "授課速度的協議",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "此情境可由一般校園活動及學生自述引入，尚未擅自認定特定醫療診斷、法定資格、學籍或既成重大事實；技術抽選與正式放行仍須另驗。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7"
+    },
+    {
+      "id": "content:18b-t03-01-25",
+      "title": "走廊臨時堆滿展板",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "展板堵住公共標示安全通道是全班可確認的現場動線，而非特定學生才會有的移動困難；教師不擅自代替安全人員決定特殊動線。",
+      "sourceBlobSha": "9ad8cb1c4b2474f38ede682a5b190f1596e59455"
+    },
+    {
+      "id": "content:18b-t03-01-26",
+      "title": "舞臺後方的窄門",
+      "contentVerdict": "hold-world-precondition",
+      "reason": "輔具、戲劇角色、已練台詞與後臺窄門均需實際依據；改成尚未演出的泛用討論會與其他場地協助事件重疊。保留原稿，不創造場館動線或演出資格。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "8856586dd69fbffe0fe9a5245bc3cad2120d34ea4eba0ae0d0e32fd3ba2a3efa"
+    },
+    {
+      "id": "content:18b-t03-01-27",
+      "title": "小組實驗器材高度",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "實驗臺高度對現場學生讀刻度不合適，屬當次可見的人體工學及操作安全需求，教師只協助讓科任評估合法操作。",
+      "sourceBlobSha": "9ad8cb1c4b2474f38ede682a5b190f1596e59455"
+    },
+    {
+      "id": "content:18b-t03-01-28",
+      "title": "家長會上的需求轉述",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "家長當日想分享孩子近期需求，學生明確不同意當眾揭露，重點是保護學生意願而非假定某一種已成立的鑑定身分。",
+      "sourceBlobSha": "9ad8cb1c4b2474f38ede682a5b190f1596e59455"
+    },
+    {
+      "id": "content:18b-t03-01-29",
+      "title": "讀題軟體與網路限制",
+      "contentVerdict": "hold-world-precondition",
+      "reason": "指定閱讀軟體、校內電腦測驗及網路權限限制未有設備／考場前提；不能把一般student等同需此軟體者，亦不能自行放寬考試權限。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "43a24d8ac8087386a4dbe195e570aa471b42b036c936ac61fea5edb6c51e67dd"
+    },
+    {
+      "id": "content:18b-t03-01-30",
+      "title": "班級遊戲的分隊規則",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "班級尚在討論接力團康企劃，學生提出新增計分與戰術的實質參與角色以兼容差異；不宣稱本人具特定身心障礙，也未自行更改已核准活動。",
+      "sourceBlobSha": "9ad8cb1c4b2474f38ede682a5b190f1596e59455"
+    }
+  ],
+  "latestReviewNote": "本輪只重審原暫緩事件及PR76新候選；未改動之已核可故事沿用原結論。逐件原問題、修稿、來源與驗證見reconciliation處置紀錄。"
+}

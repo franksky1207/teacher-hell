@@ -1,0 +1,464 @@
+{
+  "source": "PR #76",
+  "sourceCommit": "4385f90591959e52a74efc0614b7ccf7c4cae68f",
+  "comparedTo": "PR #75",
+  "baseCommit": "5a1e4ae38b711b0f666d6a23e0a7369b67c615e2",
+  "topicId": "T03-02",
+  "disclaimer": "ARCHIVE ONLY; not authored count, not accepted, not ready, no runtime import",
+  "modifiedIds": [
+    "content:18b-t03-02-01"
+  ],
+  "onlyInPr76Ids": [],
+  "records": [
+    {
+      "story": {
+        "resourceId": "content:18b-t03-02-01",
+        "definitionId": "content:18b-t03-02-01",
+        "version": "1",
+        "topicId": "T03-02",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "鐘聲剛響，學生還在拿課本，科任已經把第一項任務交代完。",
+                "speaker": null,
+                "scene": "school:classroom",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我有聽到鐘聲，可是還不知道第一步該做什麼。",
+                "speaker": "participant",
+                "scene": "school:classroom",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "sad"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "inquire",
+                "text": "確認學生最容易漏聽的轉換指令",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生指出最常漏掉開課第一句指令，尚未確認原因。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我有聽到鐘聲，可是還不知道第一步該做什麼。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生直接向導師反映自己的觀察；不自動傳給第三人。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "coordinate",
+                "text": "與科任討論固定的開課提示",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師提出書面開課提示需求，尚待科任討論。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我有聽到鐘聲，可是還不知道第一步該做什麼。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生直接向導師反映自己的觀察；不自動傳給第三人。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "陪學生設計上課前的兩步核對卡",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生寫下準備課本和查看任務兩步，尚待試行。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我有聽到鐘聲，可是還不知道第一步該做什麼。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生直接向導師反映自己的觀察；不自動傳給第三人。"
+                      }
+                    ]
+                  }
+                },
+                "variants": [
+                  {
+                    "id": "student-can-organize",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-3",
+                        "influence": 0.6
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生主動寫出兩項上課前檢查點，並示範如何在課本首頁找到它們；未宣稱隔天已改善。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "我有聽到鐘聲，可是還不知道第一步該做什麼。",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "3-4",
+                          "delta": 0.4
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生直接向導師反映自己的觀察；不自動傳給第三人。"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "student-needs-reframing",
+                    "weight": 1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.5
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生覺得兩項提醒仍太多，先選擇只記『看黑板任務』一項，暫待試用。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "我有聽到鐘聲，可是還不知道第一步該做什麼。",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生直接向導師反映自己的觀察；不自動傳給第三人。"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "empathy",
+                "text": "沒跟上第一句不代表你沒準備好",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "學生知道可以詢問轉換提示，不必被當成故意發呆。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我有聽到鐘聲，可是還不知道第一步該做什麼。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生直接向導師反映自己的觀察；不自動傳給第三人。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t03-02-01",
+        "topicId": "T03-02",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t03-02-01",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "3-4",
+          "2-2",
+          "3-3"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-2",
+          "2-3"
+        ],
+        "weights": [
+          0.19,
+          0.22,
+          0.24,
+          0.13,
+          0.12,
+          0.1
+        ],
+        "directions": [
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "early",
+            "p4",
+            "p5",
+            "p6",
+            "p7",
+            "p8"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "個別學生情境依正式學籍、時段與冷卻資格抽選"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "鐘聲後的起始指令",
+        "cause": "鐘聲剛響，學生還在拿課本，科任已經把第一項任務交代完。",
+        "knowledgeSource": "學生在場口述，其他人想法未確認；不得預設診斷。",
+        "teacherResponsibility": "導師釐清與協助溝通，不逕自修改科任成績或正式支持安排。",
+        "distinctiveConsequence": "學生指出最常漏掉開課第一句指令，尚未確認原因。／導師提出書面開課提示需求，尚待科任討論。／學生寫下準備課本和查看任務兩步，尚待試行。／學生知道可以詢問轉換提示，不必被當成故意發呆。",
+        "candidateId": "T03-02-C01",
+        "inProgress": "草稿已補必要故事 next/null、合法表情及子主題數值傾向；仍需正式工程、主控語意與學籍情境審查。",
+        "numericRationale": "僅在學生當場具體整理出可操作的內容時，以3-4小幅變化反映實際效果；多結果依學生既有3-3與焦慮傾向加權，尚待引擎精準驗證。"
+      }
+    }
+  ]
+}

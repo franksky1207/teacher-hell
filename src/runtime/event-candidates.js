@@ -40,10 +40,18 @@ export function validateEventDefinitions(definitions){
   const core=tuple(d.coreCodes);need(!coreByTopic.has(d.topicId)||coreByTopic.get(d.topicId)===core,'Topic core must be shared');coreByTopic.set(d.topicId,core);
   need(d.weights.length===6&&d.weights.every(x=>Number.isFinite(x)&&x>=0)&&Math.abs(d.weights.reduce((a,b)=>a+b,0)-1)<1e-12,'Six weights must sum to one');
   need(d.directions.length===6&&d.directions.every(x=>[1,-1].includes(x)),'Explicit six directions');
-  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['grades','companions','roleIds','affiliation','knowledge','groups','academic','entrance','procedure','homeroom','issue'].filter(k=>Object.hasOwn(e,k))]);
+  const e=d.eligibility;assertShape(e,['people','dayKinds','slotIds','from','until','facts','history','numeric','enrollment',...['grades','companions','roleIds','affiliation','knowledge','groups','academic','entrance','procedure','homeroom','issue','enrollmentContext'].filter(k=>Object.hasOwn(e,k))]);
   need(e.people.length>0&&e.people.every(x=>['player','student','caregiver','staff','reunion','contact'].includes(x)),'Participant scopes');
   for(const k of ['dayKinds','slotIds','facts','history','numeric'])need(Array.isArray(e[k]),`Eligibility ${k} array`);
   if(e.grades)need(Array.isArray(e.grades)&&e.grades.length>0&&e.grades.every(g=>Number.isInteger(g)&&g>=1&&g<=3)&&new Set(e.grades).size===e.grades.length,'Grade eligibility must be distinct grades 1..3');
+  // T03: optional read-only enrollment history; no new durable state or role assignment.
+  if(e.enrollmentContext){
+   const c=e.enrollmentContext;assertShape(c,['minDays','maxDays',...['priorStatus','minDaysAway'].filter(k=>Object.hasOwn(c,k))]);
+   need(Number.isSafeInteger(c.minDays)&&Number.isSafeInteger(c.maxDays)&&c.minDays>=0&&c.maxDays>=c.minDays&&c.maxDays<=366,'Enrollment context day range');
+   if(Object.hasOwn(c,'priorStatus'))need(['suspended','transferred-out','delayed'].includes(c.priorStatus),'Enrollment context prior status');
+   if(Object.hasOwn(c,'minDaysAway'))need(c.priorStatus&&Number.isSafeInteger(c.minDaysAway)&&c.minDaysAway>=0&&c.minDaysAway<=366,'Enrollment context absence duration');
+  }
+
    if(Object.hasOwn(e,'issue'))validateIssueEligibility(e.issue);
   if(e.homeroom)need(['ordinary','social','crisis','support','placement'].includes(e.homeroom),'Homeroom qualification');
   if(e.procedure){need(Array.isArray(e.procedure),'Procedure qualifications');for(const p of e.procedure){assertShape(p,['kind','status']);identifier(p.kind);identifier(p.status);}}
@@ -166,6 +174,16 @@ export function buildEventCandidates(world,definitions,{engineering=false,ignore
    if(e.academic&&!e.academic.every(a=>academicEligible(world,person,a,index.academics)))reason='academic-condition';
    if(e.procedure&&!e.procedure.every(p=>procedureEligible(world,person,p,index.institution)))reason='procedure-condition';
    if(e.enrollment&&!enrollmentEligibility(world.numeric.evolution.world,{personId:person,...e.enrollment}).eligible)reason='enrollment';
+   if(e.enrollmentContext){
+    const {registry}=world.numeric.evolution.world,c=e.enrollmentContext;
+    const active=registry.enrollments.find(row=>row.personId===person&&row.classId===registry.homeClassId&&row.until===null);
+    const elapsed=active?days(day.date,active.from):null;
+    if(elapsed===null||elapsed<c.minDays||elapsed>c.maxDays)reason='enrollment-context-date';
+    if(c.priorStatus){
+     const prior=active?registry.enrollments.filter(row=>row.personId===person&&row.until!==null&&row.until<=active.from&&row.status===c.priorStatus).sort((a,b)=>b.until.localeCompare(a.until))[0]:null;
+     if(!prior||c.minDaysAway!==undefined&&days(active.from,prior.until)<c.minDaysAway)reason='enrollment-context-prior';
+    }
+   }
    if(e.history.some(h=>(index.history.get(tuple(person,h.code))??[]).filter(x=>h.status==='any'||x.status===h.status).length<h.minimum))reason='history-threshold';
    try{if(e.numeric.some(n=>{const [v]=numericSources(world,person,[n.source],[n.code]);return v<n.min||v>n.max;}))reason='numeric-condition';}catch{reason='numeric-source-missing';}
    if(day.kind==='aftercare'&&!aftercareDefinition(d))reason='students-left-school';

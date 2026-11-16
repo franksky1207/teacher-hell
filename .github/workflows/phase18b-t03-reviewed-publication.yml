@@ -1,0 +1,28 @@
+name: 18-B T03 reviewed publication focused verification
+on:
+  push:
+    branches:
+      - feat/18b-t03-reviewed-publication-20261116
+    paths:
+      - 'src/runtime/story-content.js'
+      - 'src/runtime/progression.js'
+      - 'src/runtime/content/t03.js'
+      - 'src/runtime/content/t03-isolation.js'
+      - 'test/18b-t03-reviewed-publication.test.js'
+      - 'test/18b-reviewed-publication.test.js'
+      - '.github/workflows/phase18b-t03-reviewed-publication.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  publication-focused:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Only T03 publication and existing T01/T02 publication regressions
+        run: node --test --test-isolation=none test/18b-t03-reviewed-publication.test.js test/18b-reviewed-publication.test.js

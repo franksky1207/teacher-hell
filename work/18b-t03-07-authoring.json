@@ -5087,7 +5087,128 @@
                       }
                     ]
                   }
-                }
+                },
+                "variants": [
+                  {
+                    "id": "student-organizes-next-step",
+                    "weight": 2,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-1",
+                        "influence": 0.5
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生將一段學科說明改寫成自己的話，能指出待確認的專業用語，尚須科任確認原意。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "平常聊天跟看這張題目不一樣啊，這裡一堆詞我沒看過。",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [
+                        {
+                          "role": "participant",
+                          "holder": "person",
+                          "code": "3-4",
+                          "delta": 0.3
+                        }
+                      ],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "student-remains-uncertain",
+                    "weight": 1,
+                    "modifiers": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "influence": 0.4
+                      }
+                    ],
+                    "outcome": {
+                      "fact": "學生改寫後仍對其中一個專業詞有兩種理解，決定先提出具體問題，未把猜測當答案。",
+                      "claims": [
+                        {
+                          "role": "participant",
+                          "statement": "平常聊天跟看這張題目不一樣啊，這裡一堆詞我沒看過。",
+                          "belief": "believed",
+                          "visible": false
+                        }
+                      ],
+                      "changes": [],
+                      "historyCodes": [],
+                      "next": {
+                        "stage": null,
+                        "afterDays": 0
+                      },
+                      "world": {
+                        "subjects": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "witnesses": [
+                          "teacher",
+                          "participant"
+                        ],
+                        "affected": [
+                          "participant"
+                        ],
+                        "contacts": [
+                          [
+                            "teacher",
+                            "participant"
+                          ]
+                        ],
+                        "transmissions": [
+                          {
+                            "fromRole": "participant",
+                            "toRole": "teacher",
+                            "claimIndex": 0,
+                            "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "id": "empathy",
@@ -5223,7 +5344,8 @@
         "candidateId": "T03-07-C16",
         "narrativeTime": "p6",
         "scene": "school:teachers-office",
-        "inProgress": "取代原同題重複故事；隔離待審"
+        "inProgress": "取代原同題重複故事；隔離待審",
+        "numericRationale": "僅在學生立即完成可核對的整理或表達時，以3-4小幅調整；另一路保留仍不確定狀態。權重依既有3-1與2-2傾向，不保證成功。"
       }
     },
     {

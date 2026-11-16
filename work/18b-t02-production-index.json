@@ -390,7 +390,8 @@
     "2026-11-16：已建立docs/reviews/18b-t02-semantic-review-handoff.md，整合208件獨立語意審稿一次集中輸入、規則、已知時序例外及精準ID輸出格式；此為交接包，尚未進行獨立審稿，reviewed 0，published 0。",
     "2026-11-16：再次對照故事文字與資格，20件明示學年/選組/畢業事件精準審核，其中19件新加年級門檻，T02-03-28去除不存在的畢典彩排假時段改正常school午休。Node Foundation 43775511837：28 pass/0 fail（含20件專項及一次性208結構核對）；全批測試已退出日常CI，後續不重跑。T02-03-27、07-22/27/28、08-28共5件標首發三年制不可放行之後續章節阻斷。獨立審稿/上架仍0。",
     "2026-11-16：作者再核對首發學年/時段/實際知情，T02-05/06/07共23件修正，Foundation 43776012527：28 pass /0 fail（含23件原結構驗證、claim來源）；總年級門檻98件、具明確升學狀態門檻25件。未重跑208件全量驗收。另將T02-03-27、07-22/27/28、08-28共5件歷史／分發後內容列首發不可放行（但仍保留208原稿），清理過時特殊阻斷描述。獨立語意核准0、正式上架0。",
-    "2026-11-16：Hydrogen獨立語意審稿回報208/208，23通過、68微調、109需修、8暫緩；185項問題ID唯一。已設原始分支review/18b-t02-hydrogen-audit保留報告，未合併；逐條裁決尚未完成。首批確認四件P2與outcome.claims.statement不一致並已更新各故事（03-26／05-28／06-20／07-07）；因報告部分引用舊原稿及不存在的entrance.stage，未將剩餘181項冒稱全部確診。"
+    "2026-11-16：Hydrogen獨立語意審稿回報208/208，23通過、68微調、109需修、8暫緩；185項問題ID唯一。已設原始分支review/18b-t02-hydrogen-audit保留報告，未合併；逐條裁決尚未完成。首批確認四件P2與outcome.claims.statement不一致並已更新各故事（03-26／05-28／06-20／07-07）；因報告部分引用舊原稿及不存在的entrance.stage，未將剩餘181項冒稱全部確診。",
+    "2026-11-16：Hydrogen外部審稿暫存分支交付208件、185筆非通過問題，經原稿交叉驗證發現多項過時/虛構機制敘述，不能照單全修；已精準修9則角色/單人敘事/寒暑輔/面試/遠距時段錯置，詳docs/reviews/18b-t02-hydrogen-triage.md。未擅自更改獨立審稿已通過件數或正式上架0。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -1079,5 +1080,36 @@
       "world.contacts與transmissions的真正contact契約不可簡化為人員實體同處",
       "部分描述沿用原稿修正前台詞"
     ]
+  },
+  "hydrogenReview": {
+    "date": "2026-11-16",
+    "readFrom": "review/18b-t02-hydrogen-audit",
+    "report": "docs/reviews/18b-t02-hydrogen-review.md",
+    "findings": "work/18b-t02-hydrogen-review-findings.json",
+    "hydrogenReported": {
+      "reviewed": 208,
+      "passed": 23,
+      "minor": 68,
+      "revisionRequired": 109,
+      "held": 8,
+      "findings": 185
+    },
+    "verifiedAgainstCurrentSource": false,
+    "reviewStatus": "外部Hydrogen報告已取得，但存在過時引述及不符合現行引擎的結論，不能全部視為已確認缺陷",
+    "triageDoc": "docs/reviews/18b-t02-hydrogen-triage.md",
+    "confirmedFixed": [
+      "T02-01-18",
+      "T02-02-07",
+      "T02-02-20",
+      "T02-03-09",
+      "T02-03-17",
+      "T02-04-08",
+      "T02-04-21",
+      "T02-06-20",
+      "T02-07-11"
+    ],
+    "notVerified": "其餘Hydrogen標記需按原始208件現行資料與runtime分別審核，尤其eligibility.academic要求termId，遠距contacts多數已為[]",
+    "newReviewCount": null,
+    "published": 0
   }
 }

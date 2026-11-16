@@ -22,7 +22,7 @@ test('C: both authoring catalogues preserve 408 immutable engineering stories',(
   assert.equal(validateStoryReference(r.definition).resourceId,r.story.resourceId);
  }
 });
-test('C: T02 registry keeps 17 blocked/held recoverable but excluded; T01 lacks invented per-ID holds',()=>{
+test('C: T02 registry keeps 18 blocked/held recoverable but excluded; T01 lacks invented per-ID holds',()=>{
  const register=read('work/18b-global-event-isolation.json');
  assert.equal(register.t01.authorCount,200);
  assert.deepEqual(register.t01.confirmedIndividualBlockedIds,[]);
@@ -30,9 +30,9 @@ test('C: T02 registry keeps 17 blocked/held recoverable but excluded; T01 lacks 
  const ids=register.t02.entries.map(r=>r.id).sort();
  assert.deepEqual([...T02_ISOLATED_IDS],ids);
  assert.equal(register.t02.entries.filter(e=>e.status==='blocked').length,9);
- assert.equal(register.t02.entries.filter(e=>e.status==='held').length,8);
+ assert.equal(register.t02.entries.filter(e=>e.status==='held').length,9);
  const catalogue=t02DraftCatalogue(),chosen=new Set(catalogue.definitions.map(d=>d.id));
- assert.equal(catalogue.definitions.length,191);
+ assert.equal(catalogue.definitions.length,190);
  for(const id of ids){
   assert.equal(chosen.has(id),false);
   assert.equal(T02_BATCH_RECORDS.some(r=>r.definition.id===id),true);
@@ -41,9 +41,9 @@ test('C: T02 registry keeps 17 blocked/held recoverable but excluded; T01 lacks 
 test('C: no T01/T02 records can enter the formal pool; both catalogues require engineering opt-in',()=>{
  const a=t01DraftCatalogue(),b=t02DraftCatalogue();
  assert.equal(a.engineering,true);assert.equal(b.engineering,true);
- assert.equal(a.definitions.length,200);assert.equal(b.definitions.length,191);
+ assert.equal(a.definitions.length,200);assert.equal(b.definitions.length,190);
  validateEventDefinitions(a.definitions);validateEventDefinitions(b.definitions);
- assert.equal(a.bindings.length,200);assert.equal(b.bindings.length,191);
+ assert.equal(a.bindings.length,200);assert.equal(b.bindings.length,190);
  const w=eventWorld(1,'2028-09-11','early');
  assert.equal(buildEventCandidates(w,a.definitions,{engineering:false}).candidates.length,0);
  assert.equal(buildEventCandidates(w,b.definitions,{engineering:false}).candidates.length,0);

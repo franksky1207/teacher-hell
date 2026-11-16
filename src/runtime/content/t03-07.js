@@ -2346,7 +2346,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生拿來家長寫的聯絡簿回條，內容與老師原先交代的選填項目不一致；學生說自己翻譯時把『擇一』說成『全部』。",
+              "text": "學生拿著一張科任發的『三項擇一』作業說明來找你，說自己向家人轉述時誤講成『三項都要』，擔心家人白忙一場；目前家裡實際準備了什麼仍未查證。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -2354,7 +2354,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "結果家人準備了三樣東西，我也不知道怎麼說我翻錯了。",
+              "text": "我好像跟家人講錯了，怕他們把三樣都準備好。",
               "speaker": "participant",
               "scene": "school:teachers-office",
               "cast": [
@@ -2378,7 +2378,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "結果家人準備了三樣東西，我也不知道怎麼說我翻錯了。",
+                    "statement": "我好像跟家人講錯了，怕他們把三樣都準備好。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -2428,7 +2428,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "結果家人準備了三樣東西，我也不知道怎麼說我翻錯了。",
+                    "statement": "我好像跟家人講錯了，怕他們把三樣都準備好。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -2478,7 +2478,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "結果家人準備了三樣東西，我也不知道怎麼說我翻錯了。",
+                    "statement": "我好像跟家人講錯了，怕他們把三樣都準備好。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -2528,7 +2528,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "結果家人準備了三樣東西，我也不知道怎麼說我翻錯了。",
+                    "statement": "我好像跟家人講錯了，怕他們把三樣都準備好。",
                     "belief": "believed",
                     "visible": false
                   }

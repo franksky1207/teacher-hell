@@ -992,7 +992,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生返校第一天連續補課到傍晚，隔天卻由家長來訊表示暫時無法到校。",
+              "text": "學生昨天正式返校，今天拿著補課時程來找你。他表示昨晚補完課後非常疲憊，擔心明天又無法到校，但目前仍未提出新的請假申請。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -1000,7 +1000,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "昨天真的太累了，今天根本起不來。",
+              "text": "昨天補課後真的太累了，我怕明天又撐不住。",
               "speaker": "participant",
               "scene": "school:classroom",
               "cast": [
@@ -1020,11 +1020,11 @@ export default [
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師了解再次缺席的情況，未自行推斷醫療原因。",
+                "fact": "導師確認學生今天仍在校並聽取疲憊感受，未把對明日缺席的擔心當成已請假。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "昨天真的太累了，今天根本起不來。",
+                    "statement": "昨天補課後真的太累了，我怕明天又撐不住。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1070,11 +1070,11 @@ export default [
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師提出檢視返校步調，正式請假程序仍需處理。",
+                "fact": "導師提出與家長及校內人員檢視負荷的安排，尚未核准任何新請假或調課。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "昨天真的太累了，今天根本起不來。",
+                    "statement": "昨天補課後真的太累了，我怕明天又撐不住。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1120,11 +1120,11 @@ export default [
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "導師整理課務清單，未擅自免除或替學生作業。",
+                "fact": "學生和導師先列出需要確認的補課時程，尚未自行變更正式課表。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "昨天真的太累了，今天根本起不來。",
+                    "statement": "昨天補課後真的太累了，我怕明天又撐不住。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1174,7 +1174,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "昨天真的太累了，今天根本起不來。",
+                    "statement": "昨天補課後真的太累了，我怕明天又撐不住。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5207,7 +5207,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "返校學生拿著學分表，發現缺課期間有幾門課的評量尚未完成，問你是不是注定無法畢業。",
+              "text": "正式返校的學生拿著自己整理的科目清單，說不確定缺課期間的評量應如何補救，擔心這會影響日後的畢業門檻，想請導師幫忙查清楚。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],

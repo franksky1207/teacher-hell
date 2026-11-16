@@ -4174,7 +4174,7 @@ export default [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "worried"
+                  "expression": "embarrassed"
                 }
               ],
               "presentation": "dialogue"
@@ -5116,7 +5116,7 @@ export default [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "worried"
+                  "expression": "embarrassed"
                 }
               ],
               "presentation": "dialogue"
@@ -6058,7 +6058,7 @@ export default [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "worried"
+                  "expression": "embarrassed"
                 }
               ],
               "presentation": "dialogue"

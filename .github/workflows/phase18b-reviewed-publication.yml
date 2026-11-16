@@ -23,4 +23,6 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - name: Official 390-event publication, isolation and progression
-        run: node --test --test-isolation=none test/18b-reviewed-publication.test.js test/18b-controller-content-disposition.test.js test/18b-c-t01-t02-integration.test.js test/progression.test.js
+        run: node --test --test-isolation=none test/18b-reviewed-publication.test.js test/18b-controller-content-disposition.test.js test/18b-c-t01-t02-integration.test.js
+      - name: School-year boundary and progression-only regression
+        run: node --test --test-isolation=none --test-name-pattern='H5 (controller|frozen senior summer|ordered formal controller)' test/progression.test.js

@@ -31,3 +31,12 @@ node --test --test-isolation=none test/18b-c-t01-t02-integration.test.js test/18
 ## 發布與PR決議
 
 C批以獨立Draft PR對B批開立，保留A #70、T01 #68、T02 #69與B #71原始證據。尚未將408件併入 `main`，未部署，正式發行0。未來要合併需先完成精準CI、逐版本簽核、制度確認與整合差異核對，再經使用者明確同意。不得因測試綠燈自動把所有 `engineering-test` 提升成 `ready`。
+
+## 2026-11-16｜C批最新精準 Node 驗收（取代上方「待實跑」描述）
+
+- 驗證提交：`0aa89eafa3aa885b2fbc6839228f8453cd5ee42e`。
+- GitHub Actions：<https://github.com/franksky1207/teacher-hell/actions/runs/43788668671>，`18-B C focused verification`，**success**。
+- `node scripts/sync-t01-drafts.mjs --check`、`node scripts/sync-t02-drafts.mjs --check` 均通過。
+- 4份精準測試檔案共 **17 passed／0 failed**：`test/18b-c-t01-t02-integration.test.js`、`test/18b-t02-isolated-assets.test.js`、`test/18b-t02-last24.test.js`、`test/phase18b-t01-draft.test.js`。
+- 前幾次失敗原因已局部排除：T01部分後續階段缺必要`next`欄位；T02舊版本比對所需的Git歷史提交未於預設淺層checkout取得。修復未改動 T02 原始事件內容，也沒有做三年／30年模擬。
+- 此為**工程整合與隔離的測試通過**，不是408則的最新版本正式獨立語意簽核或校務制度專審。全部仍為`engineering-test`、正式上架0；PR #72保留Draft，未合併、未部署。

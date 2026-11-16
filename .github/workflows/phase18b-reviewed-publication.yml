@@ -1,0 +1,26 @@
+name: 18-B 390 reviewed publication focused verification
+on:
+  push:
+    branches:
+      - feat/18b-release-390-reviewed
+  pull_request:
+    paths:
+      - 'src/runtime/story-content.js'
+      - 'src/runtime/progression.js'
+      - 'test/18b-reviewed-publication.test.js'
+permissions:
+  contents: read
+jobs:
+  review390:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Official 390-event publication, isolation and progression
+        run: node --test --test-isolation=none test/18b-reviewed-publication.test.js test/18b-controller-content-disposition.test.js

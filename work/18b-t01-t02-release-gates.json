@@ -310,21 +310,45 @@
   "premiseVerification": [
     {
       "id": "content:18b-t01-04-13",
-      "status": "unresolved-precondition-release-hold",
+      "status": "event-claim-not-established-historical-fact",
       "missing": "person-specific official assessment accommodation approval; no qualification linking student to approved record",
-      "resolution": "prove an existing authorization fact or revise only this story to clearly distinguish student claim from confirmed approval"
+      "resolution": "prove an existing authorization fact or revise only this story to clearly distinguish student claim from confirmed approval",
+      "releaseHold": false,
+      "evidence": "當前第一頁明寫「學生表示自己已有正式核定」；故事選項區分學生陳述、正式文件及權責單位查核，未把口述當校方核定完畢。",
+      "condition": "獨立語意審查須確認後續變體不跳過正式查核。",
+      "reviewDate": "2026-11-16"
     },
     {
       "id": "content:18b-t01-04-20",
-      "status": "unresolved-precondition-release-hold",
+      "status": "event-originating-new-campus-incident",
       "missing": "posted identifiable score sheet as objective campus fact and its actual audience",
-      "resolution": "establish this incident as a new grounded event with recorded source and knowledge scope or make it a report pending verification"
+      "resolution": "establish this incident as a new grounded event with recorded source and knowledge scope or make it a report pending verification",
+      "releaseHold": false,
+      "evidence": "本故事第一頁以「學生發現可辨識成績張貼」作為新事件起點；選項保留確認張貼方式、限制轉傳與正式反映，未假設事前已記錄在全域歷史。",
+      "condition": "須核對當次事件選項確實依合法世界狀態處理知情及撤除結果；不可把這個新起因誤當既有事件追蹤。",
+      "reviewDate": "2026-11-16"
     },
     {
       "id": "content:18b-t02-05-23",
-      "status": "unresolved-precondition-release-hold",
+      "status": "unverified-past-official-correction",
       "missing": "actual published stars nomination ranking correction affecting this student, beyond general milestone predicates",
-      "resolution": "add verifiable correction/history predicate only if authorized world facts exist; otherwise keep story held"
+      "resolution": "add verifiable correction/history predicate only if authorized world facts exist; otherwise keep story held",
+      "releaseHold": true,
+      "evidence": "故事明確寫「校方因資料錯誤更正順位」，候選只有繁星作業完成與學測公布，無法證明校方確曾發布順位更正、當事人受到影響。",
+      "condition": "在世界提供可驗的校務更正紀錄或改為待查證的學生消息前，保持個別正式放行暫緩。",
+      "reviewDate": "2026-11-16"
     }
-  ]
+  ],
+  "pendingExternalReview": {
+    "manifest": "work/18b-t01-t02-independent-review-handoff.json",
+    "count": 360,
+    "t01": 192,
+    "t02": 168,
+    "previouslyApprovedUnchanged": 31,
+    "t02OriginalIsolated": 17
+  },
+  "currentReleaseHolds": [
+    "content:18b-t02-05-23"
+  ],
+  "note": "Two T01 events need no missing pre-existing history because one reports a student's claim and the other begins a new on-scene incident; both still await independent content verdict. The third is an asserted prior official correction, so remains held for release."
 }

@@ -1,0 +1,33 @@
+name: 18-B C focused verification
+on:
+  push:
+    branches:
+      - feat/18b-c-t01-t02-integration
+    paths:
+      - '.github/workflows/phase18b-c-focused.yml'
+      - 'src/runtime/**'
+      - 'scripts/sync-t01-drafts.mjs'
+      - 'scripts/sync-t02-drafts.mjs'
+      - 'test/18b-c-t01-t02-integration.test.js'
+      - 'test/18b-t02-isolated-assets.test.js'
+      - 'test/18b-t02-last24.test.js'
+      - 'test/phase18b-t01-draft.test.js'
+      - 'work/18b-**'
+permissions:
+  contents: read
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Check T01 and T02 JSON-to-JS synchronization
+        run: |
+          node scripts/sync-t01-drafts.mjs --check
+          node scripts/sync-t02-drafts.mjs --check
+      - name: Focused integration and eligibility contracts only
+        run: node --test --test-isolation=none test/18b-c-t01-t02-integration.test.js test/18b-t02-isolated-assets.test.js test/18b-t02-last24.test.js test/phase18b-t01-draft.test.js

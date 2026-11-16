@@ -145,7 +145,7 @@ export default [
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生練習說明次序，仍待真正會談。",
+                "fact": "學生決定先在教師辦公室練習一次，自己準備開口說需求；真正向科任提出的時間尚未決定。",
                 "claims": [
                   {
                     "role": "participant",
@@ -157,7 +157,7 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
+                  "stage": "rehearsal",
                   "afterDays": 0
                 },
                 "world": {
@@ -487,6 +487,250 @@ export default [
                   }
                 }
               ]
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "rehearsal",
+          "pages": [
+            {
+              "order": 1,
+              "text": "你把辦公室的椅子轉向學生，請他不用把自己想成在接受考試，只要把第一句話說給一個願意聽的人。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我想先練習，但如果講不好，你不要直接幫我說完，好嗎？",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "self-intro",
+              "text": "由學生扮演自己，導師只扮演傾聽的科任",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生自己講出兩項需求，雖然有幾次停頓，仍完成一段可由本人向科任說明的開場；正式會談尚未發生。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我想先練習，但如果講不好，你不要直接幫我說完，好嗎？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -0.5
+                  }
+                ],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人對導師說明需求，未對其他人自動揭露資訊。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "write-note",
+              "text": "讓學生把要說的話改寫成可以自己送出的訊息",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生選擇先將內容寫成一段短訊，準備向科任詢問方便談話的時間，尚未送出。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我想先練習，但如果講不好，你不要直接幫我說完，好嗎？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人對導師說明需求，未對其他人自動揭露資訊。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "pause",
+              "text": "先整理兩個重點，尊重學生暫停練習",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生只留下兩個重點，表示今天先不練習；導師沒有違反意願代為聯絡。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我想先練習，但如果講不好，你不要直接幫我說完，好嗎？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人對導師說明需求，未對其他人自動揭露資訊。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "reassure",
+              "text": "今天你是主角，我只負責幫你守住練習場",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生練習一半笑出聲，說『我這樣講應該比較像我自己』；仍由本人決定是否繼續。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我想先練習，但如果講不好，你不要直接幫我說完，好嗎？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-4",
+                    "delta": 0.5
+                  }
+                ],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人對導師說明需求，未對其他人自動揭露資訊。"
+                    }
+                  ]
+                }
+              }
             }
           ],
           "next": null

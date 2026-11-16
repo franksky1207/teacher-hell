@@ -371,7 +371,8 @@ export default [
                 }
               }
             }
-          ]
+          ],
+          "next": null
         }
       ]
     },
@@ -2930,7 +2931,8 @@ export default [
                 }
               }
             }
-          ]
+          ],
+          "next": null
         }
       ]
     },
@@ -3626,7 +3628,8 @@ export default [
                 }
               }
             }
-          ]
+          ],
+          "next": null
         }
       ]
     },
@@ -4643,7 +4646,8 @@ export default [
                 }
               }
             }
-          ]
+          ],
+          "next": null
         }
       ]
     },
@@ -5974,7 +5978,8 @@ export default [
                 }
               }
             }
-          ]
+          ],
+          "next": null
         }
       ]
     },

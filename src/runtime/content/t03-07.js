@@ -4753,22 +4753,22 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "短期在班的交換學生拿著當日課表，因不熟悉打掃和午休規定，把所有空白時段都當成自由時間。",
+              "text": "學生平時和同學用中文聊天很流暢，但地理課的文字說明有很多專業術語，他拿著題目說完全看不懂，同學卻說『你國文不是很好？』。",
               "speaker": null,
-              "scene": "school:classroom",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
             {
               "order": 2,
-              "text": "我沒有故意不掃地，我真的不知道這段是什麼。",
+              "text": "平常聊天跟看這張題目不一樣啊，這裡一堆詞我沒看過。",
               "speaker": "participant",
-              "scene": "school:classroom",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "sad"
+                  "expression": "embarrassed"
                 }
               ],
               "presentation": "dialogue"
@@ -4776,16 +4776,16 @@ export default [
           ],
           "choices": [
             {
-              "id": "inquire",
-              "text": "先確認他已收到哪些正式校園資訊",
+              "id": "clarify",
+              "text": "先請學生指出真正不理解的專業用語",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師指出未理解的時段，未認定學生故意違規。",
+                "fact": "學生指出四個陌生詞彙，尚未完成題目解答。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我沒有故意不掃地，我真的不知道這段是什麼。",
+                    "statement": "平常聊天跟看這張題目不一樣啊，這裡一堆詞我沒看過。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4819,7 +4819,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生向導師私下反映，尚未向其他人物洩漏其個人資訊。"
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
                     }
                   ]
                 }
@@ -4827,15 +4827,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "請班級幹部解釋打掃及休息的實際流程",
+              "text": "請科任說明課堂學科語言及例子",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "幹部將說明班級分工，仍須確認是否理解。",
+                "fact": "導師向科任反映學科語言的學習需求，尚待回覆。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我沒有故意不掃地，我真的不知道這段是什麼。",
+                    "statement": "平常聊天跟看這張題目不一樣啊，這裡一堆詞我沒看過。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4869,7 +4869,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生向導師私下反映，尚未向其他人物洩漏其個人資訊。"
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
                     }
                   ]
                 }
@@ -4877,15 +4877,15 @@ export default [
             },
             {
               "id": "plan",
-              "text": "協助學生製作符合學校規範的日程小卡",
+              "text": "陪學生把題目要求改寫成自己能理解的話",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生做出自己的日程表，尚待核對正式規定。",
+                "fact": "學生試著改寫題意，仍需和科任核對原意。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我沒有故意不掃地，我真的不知道這段是什麼。",
+                    "statement": "平常聊天跟看這張題目不一樣啊，這裡一堆詞我沒看過。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4919,7 +4919,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生向導師私下反映，尚未向其他人物洩漏其個人資訊。"
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
                     }
                   ]
                 }
@@ -4927,15 +4927,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "每天多一張新規則，先讓人看得懂",
+              "text": "口語很流利，也不表示每科術語都不用學",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道詢問作息不代表不尊重校規。",
+                "fact": "學生知道提出語言理解需求並不否認他原本的能力。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我沒有故意不掃地，我真的不知道這段是什麼。",
+                    "statement": "平常聊天跟看這張題目不一樣啊，這裡一堆詞我沒看過。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4969,7 +4969,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生向導師私下反映，尚未向其他人物洩漏其個人資訊。"
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
                     }
                   ]
                 }
@@ -5023,7 +5023,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "p5"
+          "p6"
         ],
         "from": null,
         "until": null,
@@ -5067,7 +5067,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "班級邀請學生參加晚間聯誼，有人因家庭宗教或文化安排無法出席，怕被同學說不合群。",
+              "text": "家長座談即將開始，學生原本找同學協助翻譯通知，卻擔心座談內容涉及家庭隱私而不願讓同學知道。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -5075,7 +5075,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我不是不想跟大家一起，只是那個時間家裡有安排。",
+              "text": "通知可以幫我翻，但家裡的事情我不想全班都知道。",
               "speaker": "participant",
               "scene": "school:teachers-office",
               "cast": [
@@ -5090,16 +5090,16 @@ export default [
           ],
           "choices": [
             {
-              "id": "inquire",
-              "text": "先確認活動是否為正式必到及可請假性質",
+              "id": "clarify",
+              "text": "先確認家庭能接受的溝通方式與保密需求",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師核對活動性質，尚未保證缺席不影響正式出席。",
+                "fact": "學生表達座談隱私需求，導師未向同學透露家庭內容。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是不想跟大家一起，只是那個時間家裡有安排。",
+                    "statement": "通知可以幫我翻，但家裡的事情我不想全班都知道。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5133,7 +5133,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生向導師私下反映，尚未向其他人物洩漏其個人資訊。"
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
                     }
                   ]
                 }
@@ -5141,15 +5141,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "向主辦詢問合法的替代參與方式",
+              "text": "向校方詢問正式可用的語言協助管道",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師向主辦詢問可替代形式，尚無正式答覆。",
+                "fact": "校方被請求確認合適語言支持，尚未完成安排。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是不想跟大家一起，只是那個時間家裡有安排。",
+                    "statement": "通知可以幫我翻，但家裡的事情我不想全班都知道。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5183,7 +5183,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生向導師私下反映，尚未向其他人物洩漏其個人資訊。"
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
                     }
                   ]
                 }
@@ -5191,15 +5191,15 @@ export default [
             },
             {
               "id": "plan",
-              "text": "讓學生選擇願意公開的說明程度",
+              "text": "協助學生區分一般通知與私密會談資訊",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生選擇只說時間衝突，未公開家庭信仰。",
+                "fact": "學生將一般公告與私人座談資訊分開處理，仍需正式協調。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是不想跟大家一起，只是那個時間家裡有安排。",
+                    "statement": "通知可以幫我翻，但家裡的事情我不想全班都知道。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5233,7 +5233,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生向導師私下反映，尚未向其他人物洩漏其個人資訊。"
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
                     }
                   ]
                 }
@@ -5241,15 +5241,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "一起玩很重要，但不是要拿家事換入場券",
+              "text": "有人幫翻譯很好，私人內容不能順便變成公開消息",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道拒絕額外活動不等於拒絕整個班級。",
+                "fact": "學生知道自己可要求保密，而不必拒絕所有溝通。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是不想跟大家一起，只是那個時間家裡有安排。",
+                    "statement": "通知可以幫我翻，但家裡的事情我不想全班都知道。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5283,7 +5283,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生向導師私下反映，尚未向其他人物洩漏其個人資訊。"
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
                     }
                   ]
                 }

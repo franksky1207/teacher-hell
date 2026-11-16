@@ -8187,7 +8187,7 @@ export default [
             },
             {
               "id": "refer",
-              "text": "請學生整理關鍵問題交給數學科任核對",
+              "text": "請學生先整理兩條想向數學科任請教的問題",
               "kind": "defer",
               "emotional": false,
               "outcome": {
@@ -8622,7 +8622,7 @@ export default [
             },
             {
               "id": "refer",
-              "text": "向音樂科任詢問如何循序學習記譜",
+              "text": "先列出想向音樂科任請教的兩個記譜問題",
               "kind": "defer",
               "emotional": false,
               "outcome": {

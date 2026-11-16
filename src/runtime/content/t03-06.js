@@ -4237,7 +4237,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生說希望先回校試著跟一堂課，不敢一下就承諾整週都到校。",
+              "text": "已完成正式復學的學生今天回到教室，說希望先從跟上一堂課開始適應，還不敢承諾能完整跟上接下來所有課程。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -4245,7 +4245,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我想回來，可是不知道自己能不能撐一整天。",
+              "text": "我今天先回來試試，但還不確定自己能不能跟上一整天。",
               "speaker": "participant",
               "scene": "school:teachers-office",
               "cast": [
@@ -4269,7 +4269,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我想回來，可是不知道自己能不能撐一整天。",
+                    "statement": "我今天先回來試試，但還不確定自己能不能跟上一整天。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4319,7 +4319,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我想回來，可是不知道自己能不能撐一整天。",
+                    "statement": "我今天先回來試試，但還不確定自己能不能跟上一整天。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4369,7 +4369,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我想回來，可是不知道自己能不能撐一整天。",
+                    "statement": "我今天先回來試試，但還不確定自己能不能跟上一整天。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4419,7 +4419,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我想回來，可是不知道自己能不能撐一整天。",
+                    "statement": "我今天先回來試試，但還不確定自己能不能跟上一整天。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4887,7 +4887,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生因故缺課一段時間後返校，才發現防災演練的集合地點從舊操場換到新館前，他手上仍是舊圖。",
+              "text": "學生缺課一段時間後返校，拿著以前印的防災路線圖來問，因為新貼出的演練公告卻把集合點標在另一個位置。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -5527,7 +5527,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生缺課時同學好意把一份線上作業以他的名義送出，返校後他發現內容其實是那位同學自己寫的。",
+              "text": "學生返校後拿出線上作業紀錄，說自己缺課時疑似有同學用他的帳號交了一份自己沒有寫過的內容，現在擔心被當成抄襲。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -6487,7 +6487,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "缺課學生返校後，小組報告已在他不在時完成。原組員說分數要平均，另有人說他沒做就不該算。",
+              "text": "缺課學生返校後，組員拿出已繳交的小組報告，對是否計入缺席者的分工與成績看法不一。學生本人想知道還能補做什麼。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -6815,7 +6815,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生重返學校後，五科老師都想儘快替他補課，一張安排表把放學和午休排得滿滿。",
+              "text": "學生剛返校，五科任課教師分別提出補課建議時段，學生把這些尚未核准的建議抄在一張紙上，發現午休與放學時間幾乎被重複排滿。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],

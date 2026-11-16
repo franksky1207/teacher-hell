@@ -21,4 +21,4 @@ jobs:
       - name: Source-to-JS serialization check
         run: node scripts/sync-t03-drafts.mjs --check
       - name: T03 isolated story contract and exploration boundary
-        run: node --test --test-isolation=none test/18b-t03-isolated-authoring.test.js test/18b-t03-draft-contract.test.js
+        run: node --test --test-isolation=none test/18b-t03-isolated-authoring.test.js test/18b-t03-draft-contract.test.js test/18b-t03-content-disposition.test.js

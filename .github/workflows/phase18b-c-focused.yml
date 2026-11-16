@@ -20,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # T02 original-source comparison needs historical 816836e commit
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc

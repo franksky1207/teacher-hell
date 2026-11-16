@@ -302,7 +302,11 @@ export default [
         "enrollment": null,
         "roleIds": [
           17
-        ]
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 7
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -624,7 +628,11 @@ export default [
         "enrollment": null,
         "roleIds": [
           17
-        ]
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 60
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -946,7 +954,11 @@ export default [
         "enrollment": null,
         "roleIds": [
           17
-        ]
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 7
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -1268,7 +1280,11 @@ export default [
         "enrollment": null,
         "roleIds": [
           17
-        ]
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -1590,7 +1606,11 @@ export default [
         "enrollment": null,
         "roleIds": [
           17
-        ]
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 7
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -2547,7 +2567,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 30,
+          "priorStatus": "suspended",
+          "minDaysAway": 7
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -3188,7 +3214,11 @@ export default [
         "enrollment": null,
         "roleIds": [
           17
-        ]
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -3829,7 +3859,11 @@ export default [
         "enrollment": null,
         "roleIds": [
           17
-        ]
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -4146,7 +4180,11 @@ export default [
         "enrollment": null,
         "roleIds": [
           17
-        ]
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 7
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -4468,7 +4506,11 @@ export default [
         "enrollment": null,
         "roleIds": [
           17
-        ]
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 30
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -5106,7 +5148,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 7
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -5428,7 +5476,11 @@ export default [
         "enrollment": null,
         "roleIds": [
           17
-        ]
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 60
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -6066,7 +6118,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 30,
+          "priorStatus": "suspended",
+          "minDaysAway": 7
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -6707,7 +6765,11 @@ export default [
         "enrollment": null,
         "roleIds": [
           17
-        ]
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 7
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -7029,7 +7091,11 @@ export default [
         "enrollment": null,
         "roleIds": [
           17
-        ]
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 60
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -7670,7 +7736,11 @@ export default [
         "enrollment": null,
         "roleIds": [
           17
-        ]
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 60
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -7992,7 +8062,11 @@ export default [
         "enrollment": null,
         "roleIds": [
           17
-        ]
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45
+        }
       },
       "repetition": {
         "cooldownDays": 45,

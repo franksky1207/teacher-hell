@@ -187,7 +187,128 @@ export default [
                     }
                   ]
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "student-can-organize",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-2",
+                      "influence": 0.6
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生在一份練習答案旁清楚標記題號，能指出第一次錯位的位置，但正式評分仍不變。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我明明會算，只是填在旁邊的格子。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "delta": 0.3
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生向導師口頭反映自己的觀察，未把說法傳給其他人。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "student-needs-reframing",
+                  "weight": 1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.5
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生嘗試標記題號時發現自己仍會跳列，決定先請科任確認答題欄排列方式。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我明明會算，只是填在旁邊的格子。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生向導師口頭反映自己的觀察，未把說法傳給其他人。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "empathy",

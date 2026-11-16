@@ -1,3 +1,5 @@
+import { captureStoryNumeric } from './story-history-view.js';
+import { storyDigest } from './story-content.js';
 import { validateRetryPair } from './retry-checkpoint.js';
 import {academicTermStatus} from './academics.js';
 import { progressionContext } from './progression.js';
@@ -19,7 +21,7 @@ import { assessmentCalendar,planMode,THREE_YEAR,newThreeYearStart,semester,teach
 import { createRelationship, createReputation, directedKey, contactKey } from '../world/relationships.js';
 import { compileNpcUpdate, checkNpcGroup, compileNpcClarification } from './autonomy.js';
 import { compileStory, guardStoryOperation, storyContent } from './story.js';
-import { registerEventCatalogue, selectWorldEvents, admissionEvent, lifecycleChange, eventExposure, guardSelectedProgress } from './event-selection.js';
+import { registerEventCatalogue, selectWorldEvents, admissionEvent, lifecycleChange, eventExposure, guardSelectedProgress, selectedEvent } from './event-selection.js';
 import { initializeRegistry, schoolCatalogue } from '../world/registry.js';
 import { careerRange } from '../calendar/calendar.js';
 import { SUBJECT_LOAD } from '../calendar/timetable.js';
@@ -158,12 +160,15 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     if(op.action==='confirm')naturalAt(world,numericSession,world.position);
     syncNumeric(world,numericSession);
     const panelWitness=r.plan.validation==='fixed-calendar-v2'&&op.action==='confirm';
-    const compiled=compileStory(world,op,{panelWitness});
+    const beforeOrder=r.history.length+1,compilerContract=storyContent(world,op.eventId)?.compilerContract??1;
+    const numericContext=compilerContract===2?captureStoryNumeric(world,op,{operationId:command.id,beforeOrder,contentDigest:storyDigest(storyContent(world,op.eventId))}):null;
+    const compiled=compileStory(world,op,{panelWitness,compilerContract,numericContext});
+    const numericWitness=numericContext?.finish()??null;
     const beforePanel=deriveWorldPanel(numericSession.world());
     for(const child of compiled.operations)numericSession=execute(world,command,child,numericSession,receipt,false,op.eventId);
     const panel=deriveWorldPanel(numericSession.world());
     compiled.state.panelDelta=Object.fromEntries(Object.keys(panel).map(k=>[k,compiled.state.panelDelta[k]+(op.action==='confirm'?panel[k]-beforePanel[k]:0)]));
-    history(world,command,'story',op.eventId,world.events.find(e=>e.id===op.eventId).stageId,[],{action:clone(op),state:compiled.state,operations:compiled.operations,inputs:compiled.inputs,...(panelWitness?{panelWitnessVersion:1}:{})});
+    history(world,command,'story',op.eventId,world.events.find(e=>e.id===op.eventId).stageId,[],{action:clone(op),state:compiled.state,operations:compiled.operations,inputs:compiled.inputs,...(compilerContract===2?{compilerContract:2,beforeOrder,numericWitness}:{}),...(panelWitness?{panelWitnessVersion:1}:{})});
   } else if(op.type==='register-event-catalogue'){
     history(world,command,'event-catalogue',null,null,[],registerEventCatalogue(world,op));
   } else if(op.type==='draw-events'){
@@ -171,7 +176,13 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     const data=selectWorldEvents(world,op,command,receipt);
     history(world,command,'event-selection',null,null,[],data);
   } else if(op.type==='admit-event'){
-    const event=admissionEvent(world,op);
+    let event;
+    try{event=admissionEvent(world,op);}catch(error){
+      if(error.code!=='ISSUE_ADMISSION_REJECTED')throw error;
+      const s=selectedEvent(world,op.eventId);
+      history(world,command,'event-admission-rejection',null,null,[],{bindingContract:1,eventId:s.eventId,issueIds:s.issueBindings.map(b=>b.issueId),reason:error.message});return numericSession;
+    }
+
     numericSession=execute(world,command,{type:'open-event',event},numericSession,receipt,true);
     history(world,command,'event-lifecycle',event.id,event.stageId,[],{previous:'reserved',status:'active',basisFactId:null});
     if(storyContent(world,event.id))numericSession=execute(world,command,{type:'story',eventId:event.id,action:'start',optionId:null},numericSession,receipt);

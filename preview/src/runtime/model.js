@@ -1,3 +1,4 @@
+import { projectIssues } from './issues.js';
 import { validateAftercareHistory } from './aftercare.js';
 import { validateCohortCompletions } from './cohort.js';
 import { validatePrehistoryOpening } from '../world/prehistory.js';
@@ -18,6 +19,9 @@ import { canonicalData, validateSettlement } from '../changes/settlement.js';
 import { assertShape, identifier } from '../player/panel.js';
 import { nextGameDate } from '../evolution/time.js';
 import { probability } from '../numeric/math.js';
+
+/** Story queries use order boundaries, not revision-only world caches. */
+export { storyHistoryView } from './story-history-view.js';
 
 export const WORLD_KEY = 'teacher-hell/world';
 export const ATTEMPT_LINEAGE_KEY = 'teacher-hell/attempt-lineage';
@@ -110,6 +114,7 @@ export function validateSource(world,actor,factId,claimId,versionId,source,at,cu
   } else if(source.kind==='communication') {
     const sender=claimId===null ? runtimeOf(world).disclosures.find(d=>d.actorId===source.actorId&&d.factId===factId) : findKnowledge(world,source.actorId,claimId,versionId);
     ensure(sender&&sender.order<order&&sender.cursor<=cursor,'KNOWLEDGE','Sender does not possess this information');
+    if(basis.data.storySourceVersion===1)ensure(basis.cursor===cursor&&basis.occurredAt.date===at.date&&basis.data.transmission?.factId===factId&&basis.data.transmission?.fromId===source.actorId&&basis.data.transmission?.toId===actor&&(claimId===null?!basis.data.transmission.claimId:basis.data.transmission.claimId===claimId&&basis.data.transmission.versionId===versionId),'KNOWLEDGE','Explicit current transmission required');
     ensure(source.actorId!==actor&&basis.data.type==='contact'&&basis.subjectIds.includes(actor)&&basis.subjectIds.includes(source.actorId),'KNOWLEDGE','No established communication contact');
   } else if(source.kind==='document') {
     ensure(source.actorId===actor&&basis.data.type==='access'&&basis.subjectIds.includes(actor),'KNOWLEDGE','No document access');
@@ -183,7 +188,7 @@ export function validateWorldState(world) {
       if(Object.hasOwn(draw,'poolSize')){
         assertShape(draw,['id','stream','index','poolSize','totalWeight','selectedKey','selectedWeight',...(Object.hasOwn(draw,'candidate')?['candidate']:[])]);identifier(draw.selectedKey);
         ensure(draw.stream==='events'&&Number.isSafeInteger(draw.poolSize)&&draw.poolSize>0&&Number.isInteger(draw.index)&&draw.index>=0&&draw.index<draw.poolSize&&Number.isFinite(draw.totalWeight)&&draw.totalWeight>0&&Number.isFinite(draw.selectedWeight)&&draw.selectedWeight>0&&draw.selectedWeight<=draw.totalWeight,'LEDGER','Invalid compact event draw');
-      }else{assertShape(draw,['id','stream','index','weights']);ensure(Array.isArray(draw.weights)&&draw.weights.length>0&&draw.weights.every(n=>Number.isFinite(n)&&n>=0)&&Number.isInteger(draw.index)&&draw.index>=0&&draw.index<draw.weights.length&&draw.weights[draw.index]>0,'LEDGER','Invalid recorded draw');}
+      }else{assertShape(draw,['id','stream','index','weights',...(Object.hasOwn(draw,'binding')?['binding','bindingContract','options']:[])]);if(Object.hasOwn(draw,'binding'))ensure(draw.stream==='events'&&draw.id.startsWith('event-root:')&&draw.bindingContract===1&&Array.isArray(draw.options)&&typeof draw.binding==='string','LEDGER','Invalid root draw binding');ensure(Array.isArray(draw.weights)&&draw.weights.length>0&&draw.weights.every(n=>Number.isFinite(n)&&n>=0)&&Number.isInteger(draw.index)&&draw.index>=0&&draw.index<draw.weights.length&&draw.weights[draw.index]>0,'LEDGER','Invalid recorded draw');}
     }
     for(const id of commit.historyIds)ensure(history.get(id)?.operationId===commit.id&&history.get(id)?.attemptId===commit.attemptId,'LEDGER','Missing commit history');
   });
@@ -210,6 +215,7 @@ export function validateWorldState(world) {
     for(const id of f.causeIds)ensure(findFact(world,id).order<f.order,'CAUSALITY','Cause must predate consequence');
     ensure(event.facts.some(ref=>same(ref,{id:f.id,subjectIds:f.subjectIds,occurredAt:f.occurredAt})),'REFERENCE','Fact reference differs from authority');
   }
+  projectIssues(world);
   for(const c of r.claims){
     assertShape(c,['id','versionId','factId','statement','sourceId','at','cursor','order']);validateId(c.id,'claim');identifier(c.versionId);identifier(c.statement);knownActor(world,c.sourceId);stamp(world,c.at,c.cursor);
     ensure(findFact(world,c.factId).order<c.order,'CAUSALITY','Claim precedes fact');

@@ -237,7 +237,128 @@ export default [
                     }
                   ]
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "willing-step",
+                  "weight": 3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "4-2",
+                      "influence": 0.45
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生把照片放大後指出最難辨認的負號，低聲說『這樣講清楚，我沒有剛才那麼緊張了』；投影仍待實際改善。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我知道大家都看得到，但那些負號和等號對我真的太像了。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": -0.5
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面告知導師自己的需求或擔憂；不向未在場者自動傳播。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "needs-time",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "4-2",
+                      "influence": -0.35
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生說出困難後仍擔心科任會誤解，表示希望先不要通知其他人；導師尊重其界線，問題尚未處理。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我知道大家都看得到，但那些負號和等號對我真的太像了。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面告知導師自己的需求或擔憂；不向未在場者自動傳播。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             }
           ],
           "next": null

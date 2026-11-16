@@ -207,3 +207,23 @@ test('18-B T02 Hydrogen: remote chat must not fabricate physical contact; caregi
   }
  }
 });
+
+
+test('18-B T02: Hydrogen triage keeps corrected people, phases and remote evidence coherent',()=>{
+ const groups={};for(const group of ['01','02','03','04','06','07'])groups[group]=new Map(JSON.parse(readFileSync(new URL('../work/18b-t02-'+group+'-authoring.json',import.meta.url),'utf8')).records.map(r=>[r.definition.id,r]));
+ const get=(topic,n)=>groups[topic].get('content:18b-t02-'+topic+'-'+n);
+ const text=(topic,n)=>get(topic,n).story.stages[0].pages[0].text;
+ assert.ok(!text('01','18').includes('第一週'));
+ assert.ok(!text('03','09').includes('暑期'));
+ assert.ok(!text('03','17').includes('寒輔'));
+ assert.ok(!text('02','07').includes('兩名學生站'));
+ assert.ok(!text('02','20').includes('兩位學生共同完成'));
+ for(const n of ['08','21']){
+  const r=get('04',n),actor=n==='08'?'學生':'家長';
+  assert.equal(r.definition.eligibility.people[0],n==='08'?'student':'caregiver');
+  for(const choice of r.story.stages[0].choices){assert.ok(choice.outcome.world.transmissions.every(t=>t.description.includes(actor)));assert.ok(!choice.outcome.fact.startsWith(actor==='學生'?'家長':'學生'));}
+ }
+ const interview=get('06','20');assert.ok(interview.story.stages[0].choices.slice(1,3).every(c=>/面試|當日/.test(c.text)));
+ const remote=get('07','11');assert.equal(remote.story.stages[0].pages[1].presentation,'chat');
+ for(const choice of remote.story.stages[0].choices){assert.deepEqual(choice.outcome.world.contacts,[]);assert.equal(choice.outcome.claims[0].statement,remote.story.stages[0].pages[1].text);}
+});

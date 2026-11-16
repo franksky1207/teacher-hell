@@ -305,7 +305,7 @@ export default [
         ],
         "enrollmentContext": {
           "minDays": 0,
-          "maxDays": 7
+          "maxDays": 1
         }
       },
       "repetition": {
@@ -1608,8 +1608,8 @@ export default [
           17
         ],
         "enrollmentContext": {
-          "minDays": 0,
-          "maxDays": 7
+          "minDays": 2,
+          "maxDays": 5
         }
       },
       "repetition": {
@@ -2570,7 +2570,7 @@ export default [
         "enrollment": null,
         "enrollmentContext": {
           "minDays": 0,
-          "maxDays": 30,
+          "maxDays": 3,
           "priorStatus": "suspended",
           "minDaysAway": 7
         }
@@ -4183,7 +4183,7 @@ export default [
         ],
         "enrollmentContext": {
           "minDays": 0,
-          "maxDays": 7
+          "maxDays": 2
         }
       },
       "repetition": {

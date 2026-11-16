@@ -6360,5 +6360,1298 @@ export default [
       ],
       "valence": "neutral"
     }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-03-21",
+      "definitionId": "content:18b-t03-03-21",
+      "version": "1",
+      "topicId": "T03-03",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "國文作文發回後，學生指著被圈紅的字說：相同讀音的字，自己在口頭報告時明明知道意思，寫下來卻常選錯。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我講出來分得清，但一寫就選到另一個字。",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            },
+            {
+              "order": 3,
+              "text": "你先把已確認的作業情況記下，沒有替科任或家長預設下一步結果。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "請學生說出兩個詞在語意上的不同",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生口頭解釋其中兩個詞的差別，尚未改善書寫錯字。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我講出來分得清，但一寫就選到另一個字。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "向國文科任詢問適合的辨義練習",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師向國文科任提出學習策略需求，科任尚未回覆。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我講出來分得清，但一寫就選到另一個字。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "practice",
+              "text": "請學生挑三組常混淆的字做對照卡",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生選出三組同音字製作辨義卡，效果待後續觀察。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我講出來分得清，但一寫就選到另一個字。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "口頭能說清楚就是一個起點，不必只盯著紅字",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道自己有可運用的語意能力，不把錯字直接認定為不用心。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我講出來分得清，但一寫就選到另一個字。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-03-21",
+      "topicId": "T03-03",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-03-21",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "3-2",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-3",
+        "4-1",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p4",
+          "p5",
+          "p6"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "獨立學生情境按既有資格與冷卻判斷"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-03-22",
+      "definitionId": "content:18b-t03-03-22",
+      "version": "1",
+      "topicId": "T03-03",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生把地理課的彩色地圖攤在桌上。他能說明等高線與地形的關係，卻總在擁擠的圖例中看錯符號。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "老師問的概念我懂，但這些小小的符號擠在一起，我真的認錯。",
+              "speaker": "participant",
+              "scene": "school:classroom",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            },
+            {
+              "order": 3,
+              "text": "你先把已確認的作業情況記下，沒有替科任或家長預設下一步結果。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "先確認學生混淆的是哪兩種符號",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生指出兩種易混淆符號，尚未確認原圖是否有印刷問題。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師問的概念我懂，但這些小小的符號擠在一起，我真的認錯。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "和地理科任討論較清楚的圖例呈現方式",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師向地理科任提出可讀性問題，未自行調整正式考題。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師問的概念我懂，但這些小小的符號擠在一起，我真的認錯。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "practice",
+              "text": "陪學生把兩個圖例和地圖位置逐一對照",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生完成兩個圖例的對照，尚待其他地圖驗證。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師問的概念我懂，但這些小小的符號擠在一起，我真的認錯。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "理解地形不等於一定能一眼看懂縮小的圖例",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道能就教材呈現提出問題，不必否認自己已懂的概念。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師問的概念我懂，但這些小小的符號擠在一起，我真的認錯。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-03-22",
+      "topicId": "T03-03",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-03-22",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "3-2",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-3",
+        "4-1",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "early",
+          "p5"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "獨立學生情境按既有資格與冷卻判斷"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-03-23",
+      "definitionId": "content:18b-t03-03-23",
+      "version": "1",
+      "topicId": "T03-03",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生能流暢背出等差數列公式，換成購票折扣題時卻直接把不相關的數字代入。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我知道公式長什麼樣子，可是不知道什麼時候該用它。",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            },
+            {
+              "order": 3,
+              "text": "你先把已確認的作業情況記下，沒有替科任或家長預設下一步結果。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "請學生用自己的話說出公式適用條件",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說出公式用到固定差量的前提，尚未完成應用題。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道公式長什麼樣子，可是不知道什麼時候該用它。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "與數學科任討論變化題的判斷示範",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師向數學科任反映概念遷移困難，課務安排仍待科任處理。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道公式長什麼樣子，可是不知道什麼時候該用它。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "practice",
+              "text": "請學生先列出題目中的固定差量是否成立",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生檢查實際題目中的差量，並發現部分數值不符原本假設。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道公式長什麼樣子，可是不知道什麼時候該用它。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "背得出來已經不錯，接下來要弄懂它何時有用",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生開始區分記憶與應用，不以一次代錯數字推論能力不足。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道公式長什麼樣子，可是不知道什麼時候該用它。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-03-23",
+      "topicId": "T03-03",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-03-23",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "3-2",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-3",
+        "4-1",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p6",
+          "p7"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "獨立學生情境按既有資格與冷卻判斷"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-03-24",
+      "definitionId": "content:18b-t03-03-24",
+      "version": "1",
+      "topicId": "T03-03",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生作文寫得很投入，交卷後才發現題目指定要寫一封信，自己卻寫成心得散文。",
+              "speaker": null,
+              "scene": "school:corridor",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我明明看過題目，為什麼就沒看到『書信格式』那幾個字？",
+              "speaker": "participant",
+              "scene": "school:corridor",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            },
+            {
+              "order": 3,
+              "text": "你先把已確認的作業情況記下，沒有替科任或家長預設下一步結果。",
+              "speaker": null,
+              "scene": "school:corridor",
+              "cast": [],
+              "presentation": "narration"
+            }
+          ],
+          "choices": [
+            {
+              "id": "inquire",
+              "text": "帶學生核對原題與漏看的指定文體",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生指出題目中要求書信格式的部分，未改動既有成績。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我明明看過題目，為什麼就沒看到『書信格式』那幾個字？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "請國文科任確認評分依據及可提供的回饋",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師向科任詢問評分標準，未自行要求加分。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我明明看過題目，為什麼就沒看到『書信格式』那幾個字？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "practice",
+              "text": "協助學生練習先標出題目的形式限制",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生擬定寫作前先標記文體的檢查步驟，尚待實作。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我明明看過題目，為什麼就沒看到『書信格式』那幾個字？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "文章有想法值得肯定，格式漏看也要找到方法",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生理解內容與符合題意是兩項不同能力，不必因格式失誤否定全部寫作。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我明明看過題目，為什麼就沒看到『書信格式』那幾個字？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面描述困難，尚未將情況告訴第三人。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-03-24",
+      "topicId": "T03-03",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-03-24",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "3-2",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-3",
+        "4-1",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p4",
+          "p5"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "獨立學生情境按既有資格與冷卻判斷"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
   }
 ];

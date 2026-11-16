@@ -16,13 +16,17 @@
     "formalReady": 0,
     "formalPublished": 0,
     "t01SignedEight": "historically independent signed exemplars retained, current integrated hash comparison test passed",
-    "t01Other192": "prior independent reviewer coverage exists; no new external signoff required",
-    "t02Review": "prior Hydrogen reviewed 208; author corrected issues; no further external approval mandatory",
-    "t02CandidateEngineering": 191,
-    "t02HeldAndBlocked": 17,
+    "t01Other192": "主控已依現行原稿、歷史審查、修訂及精準工程驗收核可內容，不需外部再簽",
+    "t02Review": "主控已核可190則；T02原17則隔離及05-23另1則前提待確認，非外部AI審稿門檻",
+    "t02CandidateEngineering": 190,
+    "t02HeldAndBlocked": 18,
     "selectedInstitutionalPreflight": 23,
     "controllerReviewedAccepted": 390,
-    "controllerHeld": 18
+    "controllerHeld": 18,
+    "t01ControllerAccepted": 200,
+    "t02ControllerAccepted": 190,
+    "controllerContentAccepted": 390,
+    "isolatedOrHeld": 18
   },
   "distinctGates": [
     {
@@ -32,13 +36,13 @@
     },
     {
       "gate": "content-controller-review",
-      "status": "passed-with-exclusions",
-      "basis": "390 accepted; 17 original T02 holds + 05-23 factual prerequisite held; independent AI optional"
+      "status": "passed-with-18-held",
+      "basis": "source-backed controller T01 200 and T02 190 accepted; T02 18 remain held; independent model optional"
     },
     {
       "gate": "institutional-procedure",
-      "status": "unclosed",
-      "basis": "representative issues and official sources catalogued; no complete story-by-story legal signoff"
+      "status": "targeted-checked-with-held-exceptions",
+      "basis": "23 targeted situations reviewed; no blanket legal certification; keep 18 demonstrated holds and their recheck triggers"
     },
     {
       "gate": "promotion",
@@ -293,7 +297,10 @@
     "doNotReReviewWholeBody": true,
     "changeSensitiveIdsOnly": true,
     "doNotPromoteReadyAutomatically": true,
-    "noMergeNoDeploy": true
+    "noMergeNoDeploy": true,
+    "externalIndependentReviewRequired": false,
+    "contentControllerCanPass": true,
+    "onlyConcreteBlockersHold": true
   },
   "currentVersionHashEvidence": {
     "checkedDate": "2026-11-16",
@@ -349,7 +356,7 @@
     "previouslyApprovedUnchanged": 31,
     "t02OriginalIsolated": 17,
     "mandatory": false,
-    "status": "optional-reference-not-publication-gate",
+    "status": "optional-only-no-release-blocker",
     "meaning": "Optional historical checklist, not a release blocker"
   },
   "currentReleaseHolds": [
@@ -378,5 +385,9 @@
     },
     "externalReview": "optional-only-if-user-requests",
     "meaning": "Content review accepted for 390 relying on previous reviews, corrections, code acceptance and controller judgment; not yet formally ready or published."
-  }
+  },
+  "controllerEvidence": [
+    "work/18b-t01-controller-content.json",
+    "work/18b-t02-controller-content.json"
+  ]
 }

@@ -17,7 +17,8 @@ async function inputText(input){if(typeof input==='string')return input;if(input
 self.onmessage=async({data})=>{
  let storage;
  try{
-  storage=createIndexedDBStorage({factory:indexedDB,namespace:'development'});
+  // New eventless preview saves do not overwrite older development careers.
+  storage=createIndexedDBStorage({factory:indexedDB,namespace:'development-no-t01-t03'});
   const session=await createStoredSession(storage,data.slot);
   const before=data.request?new Set(session.savedGivenNames()):null;
   let nameMemoryWarning=false;

@@ -187,7 +187,128 @@ export default [
                     }
                   ]
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "spoken-practice",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-1",
+                      "influence": 0.6
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生按整理好的順序練習說出兩項需求，仍待在正式會談時親自提出。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我想自己說，只是怕講到一半忘記重點。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-1",
+                        "delta": 0.3
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生本人對導師說明需求，未對其他人自動揭露資訊。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "written-support",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.3
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生練習時仍會卡在第二項，改把順序寫成小卡，準備會談時以卡片協助表達；會談尚未發生。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我想自己說，只是怕講到一半忘記重點。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生本人對導師說明需求，未對其他人自動揭露資訊。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "empathy",
@@ -195,7 +316,7 @@ export default [
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道自己可以是主要發言者。",
+                "fact": "學生聽到導師願意在旁協助後鬆了一口氣，仍希望由自己向科任說明需求。",
                 "claims": [
                   {
                     "role": "participant",
@@ -204,7 +325,14 @@ export default [
                     "visible": false
                   }
                 ],
-                "changes": [],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-2",
+                    "delta": -0.6
+                  }
+                ],
                 "historyCodes": [],
                 "next": {
                   "stage": null,
@@ -237,7 +365,128 @@ export default [
                     }
                   ]
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "willing-step",
+                  "weight": 3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-1",
+                      "influence": 0.45
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生自己唸出準備好的第一句話，笑了一下說『這樣我應該可以先講』；正式會談尚未發生。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我想自己說，只是怕講到一半忘記重點。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 0.5
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生本人對導師說明需求，未對其他人自動揭露資訊。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "needs-time",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-1",
+                      "influence": -0.35
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生仍反覆看著清單，不確定第一句怎麼說；導師沒有代他發言，約好由本人選擇何時再練。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我想自己說，只是怕講到一半忘記重點。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生本人對導師說明需求，未對其他人自動揭露資訊。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             }
           ],
           "next": null
@@ -364,7 +613,7 @@ export default [
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師記下通道問題，尚未認定是否需實際施工。",
+                "fact": "導師決定先查看教室通道的實際配置，不追查匿名建議者；現場尚待查核。",
                 "claims": [
                   {
                     "role": "participant",
@@ -376,7 +625,7 @@ export default [
                 "changes": [],
                 "historyCodes": [],
                 "next": {
-                  "stage": null,
+                  "stage": "verify-walkway",
                   "afterDays": 0
                 },
                 "world": {
@@ -519,6 +768,236 @@ export default [
                   {
                     "role": "participant",
                     "statement": "問題就在通道啊，為什麼大家都在猜誰寫的？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人對導師說明需求，未對其他人自動揭露資訊。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        },
+        {
+          "id": "verify-walkway",
+          "pages": [
+            {
+              "order": 1,
+              "text": "你帶著學生走到教室門旁查看，兩張課桌比上週更靠近門邊；這能說明通行變窄，卻還不能自行宣稱違反無障礙標準。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "這裡桌腳離門口真的很近，但我不知道是不是違規。",
+              "speaker": "participant",
+              "scene": "school:classroom",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "record",
+              "text": "記下桌椅目前的位置與實際通行情況",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師記錄桌椅與通行現況，尚未作出正式場地安全判定。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這裡桌腳離門口真的很近，但我不知道是不是違規。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人對導師說明需求，未對其他人自動揭露資訊。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "report",
+              "text": "向總務及相關人員提出通道確認需求",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師把可查通行情況通報權責單位，仍待現場專業確認。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這裡桌腳離門口真的很近，但我不知道是不是違規。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人對導師說明需求，未對其他人自動揭露資訊。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "adjust",
+              "text": "協調班級暫將可移動的桌椅恢復原位",
+              "kind": "support",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師邀請當事同學在安全範圍內調整可移動桌椅，正式場地問題仍須確認。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這裡桌腳離門口真的很近，但我不知道是不是違規。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人對導師說明需求，未對其他人自動揭露資訊。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "privacy",
+              "text": "不用猜誰寫的，先把大家走路的地方照顧好",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生理解匿名建議重點是改善通行，不再把尋找作者當成優先任務。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這裡桌腳離門口真的很近，但我不知道是不是違規。",
                     "belief": "believed",
                     "visible": false
                   }

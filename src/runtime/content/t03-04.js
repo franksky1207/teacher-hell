@@ -3845,17 +3845,17 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生物理競賽成績出色，卻因英文閱讀進度落後而被同學說『天才怎麼可能看不懂』。",
+              "text": "競賽代表名單只剩一個名額，兩位學生都有資格，社團公告卻只寫『由老師決定』，有人開始懷疑偏袒。",
               "speaker": null,
-              "scene": "school:classroom",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
             {
               "order": 2,
-              "text": "我就是這科比較擅長，其他科也會不會啊。",
+              "text": "我不怕選不上，但至少要知道是怎麼選的。",
               "speaker": "participant",
-              "scene": "school:classroom",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -3869,15 +3869,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "先確認學生真正需要的學習支持",
+              "text": "先查正式選拔條件與公告日期",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生指出英文閱讀需求，導師沒有將競賽成績當萬能證明。",
+                "fact": "學生確認自己想了解的是選拔程序，尚未認定結果不公。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我就是這科比較擅長，其他科也會不會啊。",
+                    "statement": "我不怕選不上，但至少要知道是怎麼選的。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -3911,7 +3911,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -3919,15 +3919,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "提醒同學不同領域表現不能互相抵銷",
+              "text": "請指導教師釐清評量指標及申訴管道",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師提醒不要以單一表現嘲笑其他困難，尚未保證同學改觀。",
+                "fact": "導師向指導教師提出透明程序需求，不自行改名單。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我就是這科比較擅長，其他科也會不會啊。",
+                    "statement": "我不怕選不上，但至少要知道是怎麼選的。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -3961,7 +3961,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -3969,15 +3969,15 @@ export default [
             },
             {
               "id": "plan",
-              "text": "協助學生向相關科任提出具體問題",
+              "text": "讓學生整理想詢問的具體程序問題",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生提出英文課的問題，需再向科任確認支持方式。",
+                "fact": "學生整理出選拔依據的問題，正式回覆尚未取得。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我就是這科比較擅長，其他科也會不會啊。",
+                    "statement": "我不怕選不上，但至少要知道是怎麼選的。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4011,7 +4011,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -4019,15 +4019,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "會一科不是自動附贈全科滿分",
+              "text": "輸贏可以接受，規則總得看得見",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道可以同時擁有強項與需要幫忙的地方。",
+                "fact": "學生知道可詢問公平性，不必指控競爭對手。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我就是這科比較擅長，其他科也會不會啊。",
+                    "statement": "我不怕選不上，但至少要知道是怎麼選的。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4061,7 +4061,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -4115,7 +4115,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "p5"
+          "p6"
         ],
         "from": null,
         "until": null,
@@ -4159,7 +4159,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "班上同學把所有數學不會的題目都拿給競賽選手解，有人連作業都直接請他代寫。",
+              "text": "學生的自主探究需要特殊測量器材，校內現有設備卻不夠精確；有人叫他自己花錢買。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -4167,7 +4167,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "一開始我很願意教，現在我都沒時間做自己的事。",
+              "text": "不是不想做，是那台儀器根本測不到我要的數據。",
               "speaker": "participant",
               "scene": "school:teachers-office",
               "cast": [
@@ -4183,15 +4183,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "先聽學生分辨自願教學與被要求代寫",
+              "text": "先釐清研究所需量測範圍",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生釐清自己願意教的部分，未判定所有同學都在利用他。",
+                "fact": "學生指出量測精度不足，尚未確認設備真的無法替代。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "一開始我很願意教，現在我都沒時間做自己的事。",
+                    "statement": "不是不想做，是那台儀器根本測不到我要的數據。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4225,7 +4225,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -4233,15 +4233,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "提醒班級互助應有時間和作業界線",
+              "text": "向實驗室與指導教師詢問合法借用資源",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師提出互助與代寫界線，未替所有人完成安排。",
+                "fact": "導師向權責人員詢問器材及安全規範，尚未取得設備。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "一開始我很願意教，現在我都沒時間做自己的事。",
+                    "statement": "不是不想做，是那台儀器根本測不到我要的數據。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4275,7 +4275,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -4283,15 +4283,15 @@ export default [
             },
             {
               "id": "plan",
-              "text": "協助學生提出可以拒絕的說法",
+              "text": "討論是否能改用等效、安全的方法回答問題",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生準備拒絕代寫的表達方式，尚待實際運用。",
+                "fact": "學生提出另一種測量方案，仍待指導教師評估。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "一開始我很願意教，現在我都沒時間做自己的事。",
+                    "statement": "不是不想做，是那台儀器根本測不到我要的數據。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4325,7 +4325,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -4333,15 +4333,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "幫忙不是班上的無限次解題機",
+              "text": "科展不是比誰的荷包比較厚",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道有權拒絕過量請求，不代表不友善。",
+                "fact": "學生知道資源限制可以討論，不必自行購置昂貴器材。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "一開始我很願意教，現在我都沒時間做自己的事。",
+                    "statement": "不是不想做，是那台儀器根本測不到我要的數據。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4375,7 +4375,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -4473,22 +4473,22 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生聽朋友說只要競賽得獎就能直接跳過高中某些課程，拿著報名表問導師。",
+              "text": "學生連續幾週備賽，白天仍拿高分，卻在午餐時說自己晚上總醒來想還有哪題沒解。",
               "speaker": null,
-              "scene": "school:teachers-office",
+              "scene": "school:courtyard",
               "cast": [],
               "presentation": "narration"
             },
             {
               "order": 2,
-              "text": "他們都說拿獎牌就能免修，是不是真的？",
+              "text": "考得好大家就覺得我沒事，可是我真的好累。",
               "speaker": "participant",
-              "scene": "school:teachers-office",
+              "scene": "school:courtyard",
               "cast": [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "worried"
+                  "expression": "calm"
                 }
               ],
               "presentation": "dialogue"
@@ -4497,15 +4497,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "先辨別網路傳言與正式校內規定",
+              "text": "先了解學生目前休息、負荷與安全需求",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師查明學生看到的是轉述，尚未證實可免修。",
+                "fact": "學生說出近期疲勞與睡眠困擾，導師不自行診斷。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "他們都說拿獎牌就能免修，是不是真的？",
+                    "statement": "考得好大家就覺得我沒事，可是我真的好累。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4539,7 +4539,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -4547,15 +4547,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "向教務與輔導權責詢問適用程序",
+              "text": "依學生狀況評估是否需要輔導或醫療資源",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師向權責單位詢問，尚未承諾跳級或抵免。",
+                "fact": "導師提出適當資源與關懷方式，轉介須依實際需求與程序。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "他們都說拿獎牌就能免修，是不是真的？",
+                    "statement": "考得好大家就覺得我沒事，可是我真的好累。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4589,7 +4589,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -4597,15 +4597,15 @@ export default [
             },
             {
               "id": "plan",
-              "text": "協助學生列出升學和課程安排疑問",
+              "text": "和學生討論可調整的備賽與作息安排",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生整理欲了解的正式程序，尚未提出申請。",
+                "fact": "學生列出一項希望減少的備賽負擔，尚未與相關教師談妥。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "他們都說拿獎牌就能免修，是不是真的？",
+                    "statement": "考得好大家就覺得我沒事，可是我真的好累。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4639,7 +4639,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -4647,15 +4647,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "獎牌不是打開所有制度的萬用鑰匙",
+              "text": "分數漂亮也不能拿來抵睡眠",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道可以查資料，不必靠同學說法作決定。",
+                "fact": "學生知道表達疲累不是否定努力，也不保證狀況立即改善。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "他們都說拿獎牌就能免修，是不是真的？",
+                    "statement": "考得好大家就覺得我沒事，可是我真的好累。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4689,7 +4689,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -4706,320 +4706,6 @@ export default [
       "type": "direct",
       "content": {
         "resourceId": "content:18b-t03-04-15",
-        "version": "1",
-        "status": "engineering-test"
-      },
-      "coreCodes": [
-        "4-1",
-        "3-4",
-        "2-2"
-      ],
-      "additionalCodes": [
-        "3-2",
-        "4-4",
-        "2-3"
-      ],
-      "weights": [
-        0.19,
-        0.22,
-        0.24,
-        0.13,
-        0.12,
-        0.1
-      ],
-      "directions": [
-        -1,
-        -1,
-        1,
-        -1,
-        -1,
-        1
-      ],
-      "eligibility": {
-        "people": [
-          "student"
-        ],
-        "dayKinds": [
-          "school"
-        ],
-        "slotIds": [
-          "p6"
-        ],
-        "from": null,
-        "until": null,
-        "facts": [],
-        "history": [],
-        "numeric": [],
-        "enrollment": null
-      },
-      "repetition": {
-        "cooldownDays": 45,
-        "exclusionGroups": [],
-        "sameFact": true,
-        "reason": "依引擎合法學籍、日程及冷卻篩選"
-      }
-    },
-    "binding": {
-      "sources": [
-        "participant",
-        "participant",
-        "participant",
-        "participant",
-        "participant",
-        "participant"
-      ],
-      "valence": "neutral"
-    }
-  },
-  {
-    "story": {
-      "resourceId": "content:18b-t03-04-16",
-      "definitionId": "content:18b-t03-04-16",
-      "version": "1",
-      "topicId": "T03-04",
-      "status": "engineering-test",
-      "compilerContract": 2,
-      "choiceContract": "four-v2",
-      "entry": "opening",
-      "stages": [
-        {
-          "id": "opening",
-          "pages": [
-            {
-              "order": 1,
-              "text": "學生展示自己寫的程式，投影滿是專有名詞；班上同學反應冷淡，他以為別人在看不起作品。",
-              "speaker": null,
-              "scene": "school:classroom",
-              "cast": [],
-              "presentation": "narration"
-            },
-            {
-              "order": 2,
-              "text": "我花了好久做這個，結果大家像在等它結束。",
-              "speaker": "participant",
-              "scene": "school:classroom",
-              "cast": [
-                {
-                  "role": "participant",
-                  "position": "center",
-                  "expression": "embarrassed"
-                }
-              ],
-              "presentation": "dialogue"
-            }
-          ],
-          "choices": [
-            {
-              "id": "clarify",
-              "text": "先聽學生說明希望觀眾理解什麼",
-              "kind": "action",
-              "emotional": false,
-              "outcome": {
-                "fact": "學生說清楚想展示的功能，尚未認定同學故意冷淡。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "我花了好久做這個，結果大家像在等它結束。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
-                "changes": [],
-                "historyCodes": [],
-                "next": {
-                  "stage": null,
-                  "afterDays": 0
-                },
-                "world": {
-                  "subjects": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "witnesses": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "affected": [
-                    "participant"
-                  ],
-                  "contacts": [
-                    [
-                      "teacher",
-                      "participant"
-                    ]
-                  ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "id": "coordinate",
-              "text": "協助討論如何把技術成果轉成可理解的例子",
-              "kind": "action",
-              "emotional": false,
-              "outcome": {
-                "fact": "學生準備以生活情境示範，不代表作品內容已改寫。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "我花了好久做這個，結果大家像在等它結束。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
-                "changes": [],
-                "historyCodes": [],
-                "next": {
-                  "stage": null,
-                  "afterDays": 0
-                },
-                "world": {
-                  "subjects": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "witnesses": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "affected": [
-                    "participant"
-                  ],
-                  "contacts": [
-                    [
-                      "teacher",
-                      "participant"
-                    ]
-                  ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "id": "plan",
-              "text": "安排同學提問而非只評價作品難易",
-              "kind": "defer",
-              "emotional": false,
-              "outcome": {
-                "fact": "班上可提出針對功能的問題，活動尚待安排。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "我花了好久做這個，結果大家像在等它結束。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
-                "changes": [],
-                "historyCodes": [],
-                "next": {
-                  "stage": null,
-                  "afterDays": 0
-                },
-                "world": {
-                  "subjects": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "witnesses": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "affected": [
-                    "participant"
-                  ],
-                  "contacts": [
-                    [
-                      "teacher",
-                      "participant"
-                    ]
-                  ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "id": "empathy",
-              "text": "作品很好也需要一座讓別人走進來的橋",
-              "kind": "support",
-              "emotional": true,
-              "outcome": {
-                "fact": "學生理解溝通難度並非否定自己的創作。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "我花了好久做這個，結果大家像在等它結束。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
-                "changes": [],
-                "historyCodes": [],
-                "next": {
-                  "stage": null,
-                  "afterDays": 0
-                },
-                "world": {
-                  "subjects": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "witnesses": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "affected": [
-                    "participant"
-                  ],
-                  "contacts": [
-                    [
-                      "teacher",
-                      "participant"
-                    ]
-                  ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
-                    }
-                  ]
-                }
-              }
-            }
-          ],
-          "next": null
-        }
-      ]
-    },
-    "definition": {
-      "id": "content:18b-t03-04-16",
-      "topicId": "T03-04",
-      "type": "direct",
-      "content": {
-        "resourceId": "content:18b-t03-04-16",
         "version": "1",
         "status": "engineering-test"
       },
@@ -5087,8 +4773,8 @@ export default [
   },
   {
     "story": {
-      "resourceId": "content:18b-t03-04-17",
-      "definitionId": "content:18b-t03-04-17",
+      "resourceId": "content:18b-t03-04-16",
+      "definitionId": "content:18b-t03-04-16",
       "version": "1",
       "topicId": "T03-04",
       "status": "engineering-test",
@@ -5101,17 +4787,17 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "科任當眾說學生是『本班小天才，這次一定第一』，學生回座後卻說下次根本不敢考。",
+              "text": "科任拿一份優秀作品當範例，作者尷尬地縮在座位，另一名同學則被說『你就學他』而低下頭。",
               "speaker": null,
-              "scene": "school:corridor",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
             {
               "order": 2,
-              "text": "如果我沒第一，大家會不會覺得我退步了？",
+              "text": "那是我花時間做的，可是我不想變成大家的壓力。",
               "speaker": "participant",
-              "scene": "school:corridor",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
@@ -5125,15 +4811,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "先了解學生對稱讚的真實感受",
+              "text": "先釐清作品展示是否已徵得作者同意",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生說明名次壓力，沒有因一次擔憂就判定危機。",
+                "fact": "導師確認兩名學生不同感受，尚未推定科任刻意施壓。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "如果我沒第一，大家會不會覺得我退步了？",
+                    "statement": "那是我花時間做的，可是我不想變成大家的壓力。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5167,7 +4853,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -5175,15 +4861,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "和科任討論鼓勵方式不預設下一次成績",
+              "text": "與科任討論示範作品的學習重點而非人身比較",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師準備和科任溝通，尚未改變其日常鼓勵方式。",
+                "fact": "導師向科任建議降低個人比較，展示方式仍待協調。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "如果我沒第一，大家會不會覺得我退步了？",
+                    "statement": "那是我花時間做的，可是我不想變成大家的壓力。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5217,7 +4903,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -5225,15 +4911,15 @@ export default [
             },
             {
               "id": "plan",
-              "text": "陪學生寫下不是名次的學習目標",
+              "text": "邀請學生自己說明哪些過程值得學習",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生提出一項可自行檢驗的學習目標，尚待執行。",
+                "fact": "學生願意分享方法而非名次，尚未完成公開說明。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "如果我沒第一，大家會不會覺得我退步了？",
+                    "statement": "那是我花時間做的，可是我不想變成大家的壓力。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5267,7 +4953,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -5275,15 +4961,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "你可以有考壞的權利，沒有人的能力會被一次考試抹掉",
+              "text": "好作品可以當教材，但不該變成別人的尺",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道肯定不是必須永遠第一的契約。",
+                "fact": "學生知道不必為別人的學習負責，也可保有成就感。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "如果我沒第一，大家會不會覺得我退步了？",
+                    "statement": "那是我花時間做的，可是我不想變成大家的壓力。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5317,7 +5003,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -5329,11 +5015,11 @@ export default [
       ]
     },
     "definition": {
-      "id": "content:18b-t03-04-17",
+      "id": "content:18b-t03-04-16",
       "topicId": "T03-04",
       "type": "direct",
       "content": {
-        "resourceId": "content:18b-t03-04-17",
+        "resourceId": "content:18b-t03-04-16",
         "version": "1",
         "status": "engineering-test"
       },
@@ -5401,8 +5087,8 @@ export default [
   },
   {
     "story": {
-      "resourceId": "content:18b-t03-04-18",
-      "definitionId": "content:18b-t03-04-18",
+      "resourceId": "content:18b-t03-04-17",
+      "definitionId": "content:18b-t03-04-17",
       "version": "1",
       "topicId": "T03-04",
       "status": "engineering-test",
@@ -5415,7 +5101,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生收到一位校外指導者的私訊，邀請他每週固定到陌生場地練習，訊息裡卻沒寫清楚主辦單位。",
+              "text": "學生研究同時涉及物理與地理，兩科老師對報告格式的要求不同，最後一週才發現可能少了評分欄位。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -5423,7 +5109,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "他說看過我的作品，可是我不知道這是不是正式活動。",
+              "text": "明明是同一份專題，為什麼兩個老師說的格式不一樣？",
               "speaker": "participant",
               "scene": "school:teachers-office",
               "cast": [
@@ -5439,15 +5125,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "先確認邀約主辦與聯絡資訊來源",
+              "text": "先核對兩科公布的評分規準",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師記下邀約內容，尚未證實活動真實或安全。",
+                "fact": "學生整理出兩份評分規準差異，未假設任一版本無效。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "他說看過我的作品，可是我不知道這是不是正式活動。",
+                    "statement": "明明是同一份專題，為什麼兩個老師說的格式不一樣？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5481,7 +5167,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -5489,15 +5175,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "依學校與家長適用程序核對校外活動",
+              "text": "邀請指導教師協調共通與各科獨立要求",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師提出向合法權責確認的需求，未擅自核准參加。",
+                "fact": "導師向相關科任反映疑義，正式評分仍待確認。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "他說看過我的作品，可是我不知道這是不是正式活動。",
+                    "statement": "明明是同一份專題，為什麼兩個老師說的格式不一樣？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5531,7 +5217,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -5539,15 +5225,15 @@ export default [
             },
             {
               "id": "plan",
-              "text": "協助學生列出交通、安全與時間問題",
+              "text": "協助學生整理交件前需確認的欄位",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生列出需查證的活動條件，尚未答應邀約。",
+                "fact": "學生列出待查欄位，尚未代替教師決定分數。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "他說看過我的作品，可是我不知道這是不是正式活動。",
+                    "statement": "明明是同一份專題，為什麼兩個老師說的格式不一樣？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5581,7 +5267,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -5589,15 +5275,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "受邀很開心，但資訊要先看清楚",
+              "text": "跨科不等於讓你一人扛兩套暗號",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道謹慎求證不等於否定自己的才華。",
+                "fact": "學生知道提出格式問題是正當準備，不必被認為找藉口。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "他說看過我的作品，可是我不知道這是不是正式活動。",
+                    "statement": "明明是同一份專題，為什麼兩個老師說的格式不一樣？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5631,7 +5317,321 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-04-17",
+      "topicId": "T03-04",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-04-17",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-1",
+        "3-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-2",
+        "4-4",
+        "2-3"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p6"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "依引擎合法學籍、日程及冷卻篩選"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-04-18",
+      "definitionId": "content:18b-t03-04-18",
+      "version": "1",
+      "topicId": "T03-04",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生作品在網路被大量分享，學校公告卻寫成『獲國際競賽首獎』，當事人拿著截圖來求助。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我真的沒有拿獎，大家這樣寫我反而很害怕。",
+              "speaker": "participant",
+              "scene": "school:classroom",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先核對作品傳播與正式獎項來源",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師辨別網路觀看與正式獲獎不同，尚未對外宣稱更正完成。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我真的沒有拿獎，大家這樣寫我反而很害怕。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "請公告單位查證並依程序更正錯誤資訊",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師請公告單位查證，是否修正需由權責處理。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我真的沒有拿獎，大家這樣寫我反而很害怕。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "與學生討論如何回應外界詢問",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生準備說明作品真實經歷，未公開更多私人資料。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我真的沒有拿獎，大家這樣寫我反而很害怕。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "被很多人喜歡已經很好，不必額外長出獎盃",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生感到有權拒絕不實光環，而非必須迎合讚美。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我真的沒有拿獎，大家這樣寫我反而很害怕。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -5685,7 +5685,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "p7"
+          "p5"
         ],
         "from": null,
         "until": null,
@@ -5729,7 +5729,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "田徑校隊的學生收到密集訓練表，發現與兩門課的補充教學同一時間。",
+              "text": "學生原本主動參加競賽代表隊，最近卻想退出；他擔心教練和家長會說自己沒有責任感。",
               "speaker": null,
               "scene": "school:corridor",
               "cast": [],
@@ -5737,7 +5737,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我不想兩邊都被說不認真。",
+              "text": "我知道當初是自己要參加的，可是現在真的不想再比了。",
               "speaker": "participant",
               "scene": "school:corridor",
               "cast": [
@@ -5753,15 +5753,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "先核對正式校隊與課務時段",
+              "text": "先問清楚不想繼續的實際原因與時間點",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師核對時間衝突，沒有自行核准免課。",
+                "fact": "學生釐清近期意願，未宣稱已正式退隊。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不想兩邊都被說不認真。",
+                    "statement": "我知道當初是自己要參加的，可是現在真的不想再比了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5795,7 +5795,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -5803,15 +5803,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "請教務與教練共同確認可行安排",
+              "text": "向指導教師確認退出與替補的正式規定",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師提出跨單位協調，尚待權責安排。",
+                "fact": "導師協助詢問隊伍程序，尚未替學生通知退出成功。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不想兩邊都被說不認真。",
+                    "statement": "我知道當初是自己要參加的，可是現在真的不想再比了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5845,7 +5845,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -5853,15 +5853,15 @@ export default [
             },
             {
               "id": "plan",
-              "text": "陪學生整理優先要銜接的學習內容",
+              "text": "協助學生準備尊重他人安排的溝通方式",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生整理學習缺口，未因此免除學業要求。",
+                "fact": "學生列出可能影響與需要告知的人，仍待本人決定。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不想兩邊都被說不認真。",
+                    "statement": "我知道當初是自己要參加的，可是現在真的不想再比了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5895,7 +5895,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -5903,15 +5903,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "訓練和課業都需要分工，不該全部壓給你猜",
+              "text": "有責任感也包括知道自己還能不能承擔",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道可以提出衝突，不必假裝自己能同時出現在兩間教室。",
+                "fact": "學生知道可以討論退出，不必等到崩潰才開口。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不想兩邊都被說不認真。",
+                    "statement": "我知道當初是自己要參加的，可是現在真的不想再比了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5945,7 +5945,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -5999,7 +5999,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "p6"
+          "p5"
         ],
         "from": null,
         "until": null,
@@ -6043,17 +6043,17 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生在班會連續追問規則的理由，同學說他像在辯論比賽，導師也感覺討論被拖長。",
+              "text": "學生能解高難度推理題，卻在題目的長篇閱讀說明上卡住，科任認為讓他做基礎題可能會太簡單。",
               "speaker": null,
-              "scene": "school:classroom",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
             {
               "order": 2,
-              "text": "我只是想知道為什麼不能這樣做，不是故意找麻煩。",
+              "text": "我想做難題，但題目有些字真的讀得很慢。",
               "speaker": "participant",
-              "scene": "school:classroom",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -6067,15 +6067,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "先分辨規則內容與提問方式問題",
+              "text": "先拆開推理能力與閱讀理解需要",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師確認學生有具體規則疑問，並未一概認定頂嘴。",
+                "fact": "導師記下兩種表現，未以單一測驗判定所有能力。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我只是想知道為什麼不能這樣做，不是故意找麻煩。",
+                    "statement": "我想做難題，但題目有些字真的讀得很慢。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -6109,7 +6109,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -6117,15 +6117,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "提醒班會建立每人發言與追問時間",
+              "text": "向科任討論不同面向的練習支持",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "班會提出發言秩序討論，尚未形成新規則。",
+                "fact": "導師提出分面向支持需求，課程安排仍由科任決定。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我只是想知道為什麼不能這樣做，不是故意找麻煩。",
+                    "statement": "我想做難題，但題目有些字真的讀得很慢。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -6159,7 +6159,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -6167,15 +6167,15 @@ export default [
             },
             {
               "id": "plan",
-              "text": "協助學生把重要疑問整理成可回答的一題",
+              "text": "讓學生自己挑選需要補強的具體環節",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生整理一項核心問題，仍需得到正式答覆。",
+                "fact": "學生指出長題閱讀為優先需求，尚未決定正式教法。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我只是想知道為什麼不能這樣做，不是故意找麻煩。",
+                    "statement": "我想做難題，但題目有些字真的讀得很慢。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -6209,7 +6209,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -6217,15 +6217,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "會辯論也可以練習讓別人有機會說",
+              "text": "你可以同時很會想，也需要有人幫你讀清楚題目",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道表達能力和聆聽他人都同樣重要。",
+                "fact": "學生知道進階與基礎需求可以並存，不必被硬分類。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我只是想知道為什麼不能這樣做，不是故意找麻煩。",
+                    "statement": "我想做難題，但題目有些字真的讀得很慢。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -6259,7 +6259,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，其他人是否知悉需依實際行動確認。"
+                      "description": "學生當面向導師表達感受，尚未對其他人自動傳播。"
                     }
                   ]
                 }
@@ -6313,7 +6313,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "p6"
+          "p7"
         ],
         "from": null,
         "until": null,

@@ -108,3 +108,18 @@ test('H5 original 30-year boundary uses its existing career entry only after ann
  const next=planProgression({...at,annualSettled:true});assert.deepEqual(next.request.operations,[{type:'settle-career'}]);assert.equal(next.settlement,true);
  assert.equal(planProgression({...at,annualSettled:true,pendingReview:'pending'}).status,'review-required');assert.equal(planProgression({...at,completed:true}).status,'completed');
 });
+
+test('preview without T01–T03 keeps routine progression and never registers or draws the story catalogue',()=>{
+ const original=progressionContext(opening());
+ const c={...original,schoolEnabled:true,catalogueIds:[],dayDrawn:false,slotComplete:false};
+ const normal=planProgression(c);
+ assert.equal(normal.request.operations[0].type,'register-event-catalogue');
+ const preview=planProgression(c,{previewWithoutEvents:true});
+ assert.equal(preview.status,'action');
+ assert.ok(preview.request.operations.every(op=>!['register-event-catalogue','draw-events','admit-event'].includes(op.type)));
+ const ready={...c,catalogueIds:['content:18b-t01-t02-t03-reviewed-v2']};
+ assert.equal(planProgression(ready).request.operations[0].type,'draw-events');
+ const previewAgain=planProgression(ready,{previewWithoutEvents:true});
+ assert.ok(previewAgain.request.operations.every(op=>op.type!=='draw-events'));
+ assert.deepEqual(c.catalogueIds,[]); // read-only planning, no saved data mutation
+});

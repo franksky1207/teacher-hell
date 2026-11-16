@@ -6028,7 +6028,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "下午一堂實作課突然取消，學生早已帶齊工具；別的同學很開心，他卻一直追問接下來要去哪個教室。",
+              "text": "下午實作課前，班級群組有人轉傳『這堂課好像取消了』的訊息；學生已帶齊工具，卻找不到正式通知，不知道應該去哪個教室。",
               "speaker": null,
               "scene": "school:corridor",
               "cast": [],
@@ -6036,7 +6036,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我不是討厭放空，只是現在到底要做什麼？",
+              "text": "我不是怕課程變動，只是不知道那個消息到底算不算數。",
               "speaker": "participant",
               "scene": "school:corridor",
               "cast": [
@@ -6060,7 +6060,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是討厭放空，只是現在到底要做什麼？",
+                    "statement": "我不是怕課程變動，只是不知道那個消息到底算不算數。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -6102,15 +6102,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "向教務確認取消課程後的合法替代活動",
+              "text": "向教務或科任確認是否真的異動",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師向教務確認正式安排，學生仍須等候公告。",
+                "fact": "導師詢問正式課務安排，尚未收到授權單位的確認。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是討厭放空，只是現在到底要做什麼？",
+                    "statement": "我不是怕課程變動，只是不知道那個消息到底算不算數。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -6156,11 +6156,11 @@ export default [
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生知道下一節課位置，空堂用途仍待權責說明。",
+                "fact": "學生先保留原定課程和教室資訊，等待正式異動通知。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是討厭放空，只是現在到底要做什麼？",
+                    "statement": "我不是怕課程變動，只是不知道那個消息到底算不算數。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -6206,11 +6206,11 @@ export default [
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生的困惑得到回應，沒被當成刻意找麻煩。",
+                "fact": "學生知道可以要求明確通知，不必照未證實的群組消息行動。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是討厭放空，只是現在到底要做什麼？",
+                    "statement": "我不是怕課程變動，只是不知道那個消息到底算不算數。",
                     "belief": "believed",
                     "visible": false
                   }

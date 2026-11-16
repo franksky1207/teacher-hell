@@ -31,7 +31,10 @@
     "gradeSpecificNewGates": 19,
     "firstReleaseFutureHold": 5,
     "gradeGatedTotal": 98,
-    "admissionsStateGated": 25
+    "admissionsStateGated": 25,
+    "externalHydrogenReviewed": 208,
+    "hydrogenReportIssueRecords": 185,
+    "hydrogenFindingsConfirmedAndFixed": 4
   },
   "subtopics": [
     {
@@ -386,7 +389,8 @@
     "2026-11-16：208篇全批原始驗證器已通過。另做一次唯讀編輯初篩：208個cause與832個option.fact沒有精確重複；832選項文本830獨立，僅兩組短語重複；時間字樣唯一疑點T02-01-18是早自習談未來午餐，非錯時。字面去重不等於獨立語意審稿，reviewed仍0。",
     "2026-11-16：已建立docs/reviews/18b-t02-semantic-review-handoff.md，整合208件獨立語意審稿一次集中輸入、規則、已知時序例外及精準ID輸出格式；此為交接包，尚未進行獨立審稿，reviewed 0，published 0。",
     "2026-11-16：再次對照故事文字與資格，20件明示學年/選組/畢業事件精準審核，其中19件新加年級門檻，T02-03-28去除不存在的畢典彩排假時段改正常school午休。Node Foundation 43775511837：28 pass/0 fail（含20件專項及一次性208結構核對）；全批測試已退出日常CI，後續不重跑。T02-03-27、07-22/27/28、08-28共5件標首發三年制不可放行之後續章節阻斷。獨立審稿/上架仍0。",
-    "2026-11-16：作者再核對首發學年/時段/實際知情，T02-05/06/07共23件修正，Foundation 43776012527：28 pass /0 fail（含23件原結構驗證、claim來源）；總年級門檻98件、具明確升學狀態門檻25件。未重跑208件全量驗收。另將T02-03-27、07-22/27/28、08-28共5件歷史／分發後內容列首發不可放行（但仍保留208原稿），清理過時特殊阻斷描述。獨立語意核准0、正式上架0。"
+    "2026-11-16：作者再核對首發學年/時段/實際知情，T02-05/06/07共23件修正，Foundation 43776012527：28 pass /0 fail（含23件原結構驗證、claim來源）；總年級門檻98件、具明確升學狀態門檻25件。未重跑208件全量驗收。另將T02-03-27、07-22/27/28、08-28共5件歷史／分發後內容列首發不可放行（但仍保留208原稿），清理過時特殊阻斷描述。獨立語意核准0、正式上架0。",
+    "2026-11-16：Hydrogen獨立語意審稿回報208/208，23通過、68微調、109需修、8暫緩；185項問題ID唯一。已設原始分支review/18b-t02-hydrogen-audit保留報告，未合併；逐條裁決尚未完成。首批確認四件P2與outcome.claims.statement不一致並已更新各故事（03-26／05-28／06-20／07-07）；因報告部分引用舊原稿及不存在的entrance.stage，未將剩餘181項冒稱全部確診。"
   ],
   "qualityStatus": {
     "calendarEligibilityCorrected": 40,
@@ -1047,5 +1051,33 @@
       "proof": "23件定向故事經validateStory及validateEventDefinitions，再核對有改變的claim文字來源；未重跑208全批結構驗證"
     },
     "status": "作者定向修正；尚未獨立審稿及正式發布"
+  },
+  "hydrogenIndependentReview": {
+    "received": "2026-11-16",
+    "reportBranch": "review/18b-t02-hydrogen-audit",
+    "reportPath": "docs/reviews/18b-t02-hydrogen-review.md",
+    "findingsPath": "work/18b-t02-hydrogen-review-findings.json",
+    "claims": {
+      "reviewed": 208,
+      "passed": 23,
+      "minor": 68,
+      "revisionRequired": 109,
+      "held": 8,
+      "issueRecords": 185,
+      "uniqueIssueIds": 185
+    },
+    "status": "外部語意審稿報告已接收（需按正式引擎逐條裁決；不能將報告109筆全直接判定程式錯）",
+    "reviewTriagePath": "docs/reviews/18b-t02-hydrogen-findings-triage.md",
+    "confirmedFixed": [
+      "content:18b-t02-03-26",
+      "content:18b-t02-05-28",
+      "content:18b-t02-06-20",
+      "content:18b-t02-07-07"
+    ],
+    "knownCaveats": [
+      "報告使用現行程式不存在的entrance.stage等欄位",
+      "world.contacts與transmissions的真正contact契約不可簡化為人員實體同處",
+      "部分描述沿用原稿修正前台詞"
+    ]
   }
 }

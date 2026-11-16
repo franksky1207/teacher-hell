@@ -20,7 +20,9 @@
     "t02Review": "prior Hydrogen reviewed 208; author corrected issues; no further external approval mandatory",
     "t02CandidateEngineering": 191,
     "t02HeldAndBlocked": 17,
-    "selectedInstitutionalPreflight": 23
+    "selectedInstitutionalPreflight": 23,
+    "controllerReviewedAccepted": 390,
+    "controllerHeld": 18
   },
   "distinctGates": [
     {
@@ -30,8 +32,8 @@
     },
     {
       "gate": "content-controller-review",
-      "status": "in-progress",
-      "basis": "ChatGPT reviews actual source and historical findings; no mandatory second AI reviewer"
+      "status": "passed-with-exclusions",
+      "basis": "390 accepted; 17 original T02 holds + 05-23 factual prerequisite held; independent AI optional"
     },
     {
       "gate": "institutional-procedure",
@@ -347,7 +349,8 @@
     "previouslyApprovedUnchanged": 31,
     "t02OriginalIsolated": 17,
     "mandatory": false,
-    "status": "optional-reference-not-publication-gate"
+    "status": "optional-reference-not-publication-gate",
+    "meaning": "Optional historical checklist, not a release blocker"
   },
   "currentReleaseHolds": [
     "content:18b-t02-05-23"
@@ -362,5 +365,18 @@
       "unresolved per-event necessary world prerequisites"
     ],
     "notBlocker": "lack of Gemini or other independent AI signoff"
+  },
+  "controllerDecision": {
+    "file": "work/18b-t01-t02-controller-content-disposition.json",
+    "counts": {
+      "reviewedAccepted": 390,
+      "held": 18,
+      "controllerNewAccepted": 359,
+      "previousIndependentUnchanged": 31,
+      "preExistingT02Isolated": 17,
+      "additionalWorldPrerequisiteHold": 1
+    },
+    "externalReview": "optional-only-if-user-requests",
+    "meaning": "Content review accepted for 390 relying on previous reviews, corrections, code acceptance and controller judgment; not yet formally ready or published."
   }
 }

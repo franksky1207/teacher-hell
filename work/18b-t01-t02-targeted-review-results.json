@@ -4,27 +4,27 @@
   "source": "work/18b-t01-t02-release-gates.json",
   "counts": {
     "existing": 5,
-    "needPreconditionEvidence": 3,
-    "prelimClear": 15
+    "needPreconditionEvidence": 1,
+    "prelimClear": 17
   },
   "records": [
     {
       "id": "content:18b-t01-04-20",
       "issue": "成績公開張貼",
       "category": "privacy",
-      "assessment": "precondition-review-needed",
+      "assessment": "procedure-text-prelim-clear",
       "confirmedDefect": false,
-      "disposition": "hold-release-pending-qualification-review",
-      "reason": "故事開頭宣稱教室張貼可辨識的全班個別成績，候選沒有對應公告／張貼事實；需判斷事件能否合法生成這一客觀前提及保留資料來源"
+      "disposition": "no-identified-procedure-blocker",
+      "reason": "故事以學生於現場發現張貼作為這次新事件起點，不需要事前已有獨立事件記錄；後續需保留證據和知情邊界。"
     },
     {
       "id": "content:18b-t01-04-13",
       "issue": "正式核定評量調整",
       "category": "assessment",
-      "assessment": "precondition-review-needed",
+      "assessment": "procedure-text-prelim-clear",
       "confirmedDefect": false,
-      "disposition": "hold-release-pending-qualification-review",
-      "reason": "故事開頭宣稱已有正式核定的評量調整，但候選資格未綁定核定紀錄；需確認此為可在事件當下成立的真實前提，或降為待查證說法"
+      "disposition": "no-identified-procedure-blocker",
+      "reason": "學生明確表示自己已有核定，並非敘述者宣稱查證完成；處置仍保留權責單位核對。為新事件中的口述，未自動認定歷史已查證。"
     },
     {
       "id": "content:18b-t01-04-27",
@@ -141,7 +141,7 @@
       "assessment": "precondition-review-needed",
       "confirmedDefect": false,
       "disposition": "hold-release-pending-qualification-review",
-      "reason": "已公布且更正的繁星校內推薦順位是具體校務歷史，但 eligibility 只有 stars-nominate 與 gsat-published；缺本生涯正式順位更正公告及當事人相關性"
+      "reason": "開頭說校方已更正校內繁星順位，但資格只有升學節點，沒有實際更正公告及該生受影響的校務紀錄。"
     },
     {
       "id": "content:18b-t02-05-26",
@@ -215,5 +215,10 @@
       "disposition": "no-identified-procedure-blocker",
       "reason": "逐篇檢視題述及選項，未見導師逕自改分、替他人授權、替權責單位作正式認定或使必要程序可任意取消；此為定向制度初審而非獨立語意簽核"
     }
-  ]
+  ],
+  "reviewRevision": {
+    "date": "2026-11-16",
+    "reason": "Explicitly distinguish originating incident or student claim from asserted pre-existing official correction; no story edit.",
+    "supersedesPriorCounts": true
+  }
 }

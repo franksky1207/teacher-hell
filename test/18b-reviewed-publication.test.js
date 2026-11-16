@@ -61,9 +61,9 @@ test('18-B: school progression registers v2 once and then draws from it',()=>{
  const init=planProgression(c);
  assert.equal(init.status,'action');
  assert.equal(init.request.operations[0].type,'register-event-catalogue');
- assert.equal(init.request.operations[0].catalogueId,'content:18b-t01-t02-reviewed-v2');
- c.catalogueIds=['content:18b-t01-t02-reviewed-v2'];
+ assert.equal(init.request.operations[0].catalogueId,'content:18b-t01-t02-t03-reviewed-v2');
+ c.catalogueIds=['content:18b-t01-t02-t03-reviewed-v2'];
  const draw=planProgression(c);
  assert.equal(draw.request.operations[0].type,'draw-events');
- assert.equal(draw.request.operations[0].catalogueId,'content:18b-t01-t02-reviewed-v2');
+ assert.equal(draw.request.operations[0].catalogueId,'content:18b-t01-t02-t03-reviewed-v2');
 });

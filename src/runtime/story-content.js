@@ -3,6 +3,8 @@ import {PILOT_18B2_CAUSAL_STORIES} from './story-samples-18b2.js';
 import {T01_BATCH_RECORDS} from './content/t01.js';
 import {T02_BATCH_RECORDS} from './content/t02.js';
 import {T02_ISOLATED_IDS} from './content/t02-isolation.js';
+import {T03_BATCH_RECORDS} from './content/t03.js';
+import {T03_ISOLATED_IDS} from './content/t03-isolation.js';
 import {validateConsequences} from './story-consequences.js';
 import { entranceAbsentFromHistory } from './entrance.js';
 /** Versioned, platform-free content assets. Save files contain references, never scripts. */
@@ -228,7 +230,27 @@ export function t01T02PublishedCatalogue(){
   definitions:[...definitions,...guidance.definitions],
   bindings:[...bindings,...guidance.bindings],engineering:false};
 }
-const assets=freeze([...T01_DRAFT_STORIES,...T02_DRAFT_STORIES,...T01_T02_PUBLISHED_STORIES,...PILOT_18B2_STORIES,...PACKAGE4_STORIES,PACKAGE3_STORY,HISTORY_CONTRACT_STORY,AFTERCARE_STORY,ENTRANCE_STORY,DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY,...PHASE17D_READY_STORIES]);
+/** T03 source v1 remains resolvable but never joins a formal catalogue. */
+export const T03_DRAFT_STORIES=freeze(T03_BATCH_RECORDS.map(r=>validateStory(r.story)));
+/** Official T01/T02/T03 catalogue is a new immutable ID; older catalogue IDs stay resolvable in saves. */
+const T01_T02_T03_PUBLISHED_RECORDS=Object.freeze([
+ ...T01_T02_PUBLISHED_RECORDS,
+ ...T03_BATCH_RECORDS.filter(r=>!T03_ISOLATED_IDS.includes(r.definition.id))
+]);
+export const T01_T02_T03_PUBLISHED_STORIES=freeze(T03_BATCH_RECORDS.filter(r=>!T03_ISOLATED_IDS.includes(r.definition.id)).map(r=>
+ validateStory({...structuredClone(r.story),version:'2',status:'ready'})
+));
+export function t01T02T03PublishedCatalogue(){
+ const records=T01_T02_T03_PUBLISHED_RECORDS;
+ const definitions=records.map(r=>({...structuredClone(r.definition),
+  content:{...structuredClone(r.definition.content),version:'2',status:'ready'}}));
+ const bindings=records.map(r=>({definitionId:r.definition.id,...structuredClone(r.binding)}));
+ const guidance=entranceCatalogue();
+ return {type:'register-event-catalogue',catalogueId:'content:18b-t01-t02-t03-reviewed-v2',
+  definitions:[...definitions,...guidance.definitions],
+  bindings:[...bindings,...guidance.bindings],engineering:false};
+}
+const assets=freeze([...T03_DRAFT_STORIES,...T01_T02_T03_PUBLISHED_STORIES,...T01_DRAFT_STORIES,...T02_DRAFT_STORIES,...T01_T02_PUBLISHED_STORIES,...PILOT_18B2_STORIES,...PACKAGE4_STORIES,PACKAGE3_STORY,HISTORY_CONTRACT_STORY,AFTERCARE_STORY,ENTRANCE_STORY,DEMO_STORY,SHORT_STORY,IMMEDIATE_STORY,ACADEMIC_STORY,DUTY_STORY,PRESSURE_STORY,BURNOUT_STORY,RELIEF_STORY,REPLACEMENT_STORY,PLACEMENT_STORY,...PHASE17D_READY_STORIES]);
 export function resolveStory(ref){const c=assets.find(c=>c.resourceId===ref.resourceId&&c.version===ref.version);need(c,'RESOURCE','missing immutable content version');return c;}
 export function validateStoryReference(d){const c=resolveStory(d.content);need(c.definitionId===d.id&&c.topicId===d.topicId&&c.status===d.content.status,'REFERENCE','definition/content identity');if(d.eligibility.issue){need(c.bindingContract===1,'REFERENCE','issue definition requires binding-aware story');for(const b of Object.values(c.roleBindings??{}))if(b.candidateRole)need(d.eligibility.issue.actors.some(a=>a.role===b.candidateRole),'REFERENCE','missing candidate role');for(const stage of c.stages)for(const option of stage.choices.flatMap(o=>[o,...(o.replacement?[o.replacement]:[])]))for(const out of [option.outcome,...(option.variants??[]).map(v=>v.outcome)])for(const op of out.issueOperations??[])if(op.source?.binding)need(op.source.binding===d.eligibility.issue.binding,'REFERENCE','unknown issue binding');}else need(!c.bindingContract,'REFERENCE','binding-aware story requires issue eligibility');if(c.resourceId.startsWith('aftercare:'))need(canonicalData(d)===canonicalData(aftercareCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal aftercare qualification cannot be relabeled');if(c.resourceId.startsWith('entrance:'))need(canonicalData(d)===canonicalData(entranceCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal entrance qualification cannot be relabeled');if(c.resourceId.startsWith('homeroom:'))need(canonicalData(d)===canonicalData(homeroomCatalogue().definitions.find(x=>x.id===d.id)),'REFERENCE','formal homeroom qualification/authority cannot be relabeled');return c;}
 

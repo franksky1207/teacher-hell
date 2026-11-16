@@ -6,5 +6,5 @@ import t5 from './t03-05.js';
 import t6 from './t03-06.js';
 import t7 from './t03-07.js';
 import t8 from './t03-08.js';
-/** Engineering-isolated v1 T03 draft records; deliberately not registered in gameplay. */
+// All T03 v1 authoring records remain immutable engineering resources.
 export const T03_BATCH_RECORDS=[...t1,...t2,...t3,...t4,...t5,...t6,...t7,...t8];

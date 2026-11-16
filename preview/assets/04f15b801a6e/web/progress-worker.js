@@ -18,7 +18,7 @@ self.onmessage=async({data})=>{
  let storage;
  try{
   // Separate clean preview saves do not overwrite older development careers.
-  storage=createIndexedDBStorage({factory:indexedDB,namespace:'development-no-t01-t03'});
+  storage=createIndexedDBStorage({factory:indexedDB,namespace:'test',testId:'preview-no-events'});
   const session=await createStoredSession(storage,data.slot);
   const before=data.request?new Set(session.savedGivenNames()):null;
   let nameMemoryWarning=false;

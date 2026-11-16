@@ -44,7 +44,7 @@ app.style.setProperty('--fallback-gate-desktop',`url("${gateDesktop}")`);
 app.style.setProperty('--fallback-gate-mobile',`url("${gateMobile}")`);
 // Keep former preview careers intact; the clean eventless preview uses
 // its existing separate development IndexedDB namespace.
-const storage=createIndexedDBStorage({factory:indexedDB,namespace:'development-no-t01-t03'});
+const storage=createIndexedDBStorage({factory:indexedDB,namespace:'test',testId:'preview-no-events'});
 let current=null,slot=0,draft=null,proposal=null,viewedWeek=null,screen='home',openingPage=0,storyBusy=false;
 let ceremonyPage=0;
 let ui2PreviewState=makeUi2PreviewState();

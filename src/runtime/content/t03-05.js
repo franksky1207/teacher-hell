@@ -8086,5 +8086,1268 @@ export default [
       ],
       "valence": "neutral"
     }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-05-26",
+      "definitionId": "content:18b-t03-05-26",
+      "version": "1",
+      "topicId": "T03-05",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生帶著兩份公開的轉學申請說明來找你，一份寫要提供在學證明，另一份寫成績單；他尚未送件，不知道哪一份才適用。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我只是想先問清楚，總不能申請了才知道少一張紙。",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先核對兩份公告發布學校與日期",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生發現兩份公告適用對象及日期可能不同，尚未認定哪份有效。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我只是想先問清楚，總不能申請了才知道少一張紙。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "請學生向受理學校正式窗口確認清單",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生取得應向受理學校詢問的正式窗口，尚未提出轉學申請。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我只是想先問清楚，總不能申請了才知道少一張紙。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助學生列出需要準備但未取得的資料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生整理文件查核清單，任何文件是否必備仍待正式確認。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我只是想先問清楚，總不能申請了才知道少一張紙。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "申請前先問對窗口，比繳錯再補件可靠",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道可以先查證程序，不用先承諾會轉學。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我只是想先問清楚，總不能申請了才知道少一張紙。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-05-26",
+      "topicId": "T03-05",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-05-26",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "4-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-2",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p7"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "學生與學籍資格仍須由正式日程判定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-05-27",
+      "definitionId": "content:18b-t03-05-27",
+      "version": "1",
+      "topicId": "T03-05",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生說家裡正在討論搬到較遠的住處，拿出兩條公車路線，擔心之後每天都會趕不上早自習；目前還沒有轉學決定。",
+              "speaker": null,
+              "scene": "school:corridor",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "如果住得遠，是不是就只能轉學？我其實想留在原班。",
+              "speaker": "participant",
+              "scene": "school:corridor",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先核對兩條通學路線的實際時間",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生列出兩條通學路線，未認定未來一定遲到。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "如果住得遠，是不是就只能轉學？我其實想留在原班。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "向學務確認交通與到校的既定規範",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師提供校內到校規範查詢方向，不代替家長決定住處。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "如果住得遠，是不是就只能轉學？我其實想留在原班。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "讓學生與家庭比較不同可行方案",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生把通勤與留在原班的考量整理成兩欄，尚未選擇。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "如果住得遠，是不是就只能轉學？我其實想留在原班。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "還沒搬就先決定離班，實在太快了",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生理解可以先蒐集資料，不必把轉學當成唯一答案。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "如果住得遠，是不是就只能轉學？我其實想留在原班。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-05-27",
+      "topicId": "T03-05",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-05-27",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "4-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-2",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p4"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "學生與學籍資格仍須由正式日程判定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-05-28",
+      "definitionId": "content:18b-t03-05-28",
+      "version": "1",
+      "topicId": "T03-05",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生拿著學校公開的休學說明來問：假如自己未來真的暫時離校，之後重新就學該讀哪個年級，原先學分又怎麼算。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我還沒申請，只是想知道回來會不會全部重來。",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先分清現在只是詢問、沒有正式休學",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生確認目前仍在學，尚無已核准的休學或復學事實。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我還沒申請，只是想知道回來會不會全部重來。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "請教務提供當前適用的復學及學分規定",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "教務收到程序諮詢需求，正式學籍、年級與學分仍由權責認定。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我還沒申請，只是想知道回來會不會全部重來。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "陪學生列出真正影響決定的課業疑問",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生列出對年級及學分的疑問，未因此決定離校。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我還沒申請，只是想知道回來會不會全部重來。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "沒確定的事先弄懂，總比靠傳言自己嚇自己",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道可先查正式資料，不用將假設性結果當成既成事實。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我還沒申請，只是想知道回來會不會全部重來。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-05-28",
+      "topicId": "T03-05",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-05-28",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "4-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-2",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p6"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "學生與學籍資格仍須由正式日程判定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-05-29",
+      "definitionId": "content:18b-t03-05-29",
+      "version": "1",
+      "topicId": "T03-05",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "剛正式轉入班上的學生來領自然科實作材料，發現公用器材領取清單沒有他的學號；下一節課就要開始分組。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我有來報到，也有上課，可是這份名單上真的沒有我。",
+              "speaker": "participant",
+              "scene": "school:classroom",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先查明這份領取清單的版本與用途",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師查出清單尚未列出學生資料，尚不推定承辦疏失。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我有來報到，也有上課，可是這份名單上真的沒有我。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "請材料管理者按正式在籍紀錄核對發放",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "材料管理者收到在籍名單核對需求，未直接保證發放。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我有來報到，也有上課，可是這份名單上真的沒有我。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助學生確認當節課可合法使用的共用材料",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生知道可先詢問任課教師共用材料安排，仍未取得個人器材。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我有來報到，也有上課，可是這份名單上真的沒有我。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "剛來還沒被列進清單，不是你的錯",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生理解可以正當提出需求，無須向同組同學借用不明來源器材。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我有來報到，也有上課，可是這份名單上真的沒有我。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生現場向導師說明；第三人及行政單位尚未因而自動得知。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-05-29",
+      "topicId": "T03-05",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-05-29",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "4-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-2",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p5"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null,
+        "roleIds": [
+          17
+        ],
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 7
+        }
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "學生與學籍資格仍須由正式日程判定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
   }
 ];

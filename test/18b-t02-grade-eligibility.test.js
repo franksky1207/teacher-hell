@@ -227,3 +227,18 @@ test('18-B T02: Hydrogen triage keeps corrected people, phases and remote eviden
  const remote=get('07','11');assert.equal(remote.story.stages[0].pages[1].presentation,'chat');
  for(const choice of remote.story.stages[0].choices){assert.deepEqual(choice.outcome.world.contacts,[]);assert.equal(choice.outcome.claims[0].statement,remote.story.stages[0].pages[1].text);}
 });
+
+
+test('18-B T02: post-result stories cannot appear before recorded stars and application phases',()=>{
+ for(const [topic,id,kind,value] of [
+  ['05','12','stars-nominated',null],
+  ['05','23','milestone-completed','stars-nominate'],
+  ['06','27','milestone-completed','application-result']
+ ]){
+  const source=JSON.parse(readFileSync(new URL('../work/18b-t02-'+topic+'-authoring.json',import.meta.url),'utf8'));
+  const r=source.records.find(x=>x.definition.id==='content:18b-t02-'+topic+'-'+id);
+  assert.ok(r);
+  assert.ok(r.definition.eligibility.entrance.some(x=>x.kind===kind&&(value===null||x.value===value)),r.definition.id);
+  validateEventDefinitions([r.definition]);validateStory(r.story);
+ }
+});

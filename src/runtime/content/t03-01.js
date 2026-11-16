@@ -6369,5 +6369,3195 @@ export default [
       ],
       "valence": "neutral"
     }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-01-21",
+      "definitionId": "content:18b-t03-01-21",
+      "version": "1",
+      "topicId": "T03-01",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "教室冷氣正對著學生的座位，他說長時間吹風會造成不適，卻怕被說成要求特權。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我不是要全班遷就，只是那個風口真的受不了。",
+              "speaker": "participant",
+              "scene": "school:classroom",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "sad"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "確認不適的實際時段與座位",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師記下學生的座位需求，未推定其診斷原因。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是要全班遷就，只是那個風口真的受不了。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "與班級討論不揭露私事的座位調整",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師提出不涉及個人隱私的調整方案，尚待安排。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是要全班遷就，只是那個風口真的受不了。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "先陪學生比較其他位置是否能看清板書",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生比較替代座位，尚未確認可長期使用。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是要全班遷就，只是那個風口真的受不了。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "坐在冷氣下被吹到發抖，也沒必要硬撐",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道可以反映環境不適，不必公開醫療資訊。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是要全班遷就，只是那個風口真的受不了。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-01-21",
+      "topicId": "T03-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-01-21",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-2",
+        "3-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-3",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "同一學生的獨立接觸情境；依正式抽選、學籍、時段與冷卻資格決定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-01-22",
+      "definitionId": "content:18b-t03-01-22",
+      "version": "1",
+      "topicId": "T03-01",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "幹部把重要公告截圖傳到班群，學生使用的文字讀取工具卻只念得出檔名。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "明明是大家都要看的公告，我卻看不到裡面寫什麼。",
+              "speaker": "participant",
+              "scene": "school:classroom",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "查清哪幾項公告需要文字內容",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生指出無法讀取的公告項目，尚未補齊內容。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "明明是大家都要看的公告，我卻看不到裡面寫什麼。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "請幹部補上可讀取的文字說明",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "幹部願意補文字，正式訊息須再核對一致性。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "明明是大家都要看的公告，我卻看不到裡面寫什麼。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "確認校內正式公告是否有原始文字版本",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師找到需詢問的正式來源，尚未取得版本。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "明明是大家都要看的公告，我卻看不到裡面寫什麼。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "公告不能只有一種看得見的形式",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道需求可由資訊格式改善，而非自責。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "明明是大家都要看的公告，我卻看不到裡面寫什麼。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-01-22",
+      "topicId": "T03-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-01-22",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-2",
+        "3-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-3",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "同一學生的獨立接觸情境；依正式抽選、學籍、時段與冷卻資格決定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-01-23",
+      "definitionId": "content:18b-t03-01-23",
+      "version": "1",
+      "topicId": "T03-01",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "校外課程公布車輛安排，學生發現自己常用輔具的乘車條件未列入詢價資料。",
+              "speaker": null,
+              "scene": "school:corridor",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我不想最後一天才被說不能上車。",
+              "speaker": "participant",
+              "scene": "school:corridor",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "sad"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先核對學生本人的乘車需求",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師釐清乘車條件，尚未確定車輛不合格。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不想最後一天才被說不能上車。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "向承辦單位反映車輛及上下車條件",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "承辦單位收到需求，仍須由正式採購與安全程序確認。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不想最後一天才被說不能上車。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助學生列出可接受的交通替代方案",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生列出條件，尚不代表任何方案已可使用。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不想最後一天才被說不能上車。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "參加活動不能等到上車才賭運氣",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道能事先提出需求，而非被迫臨時放棄。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不想最後一天才被說不能上車。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-01-23",
+      "topicId": "T03-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-01-23",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-2",
+        "3-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-3",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "同一學生的獨立接觸情境；依正式抽選、學籍、時段與冷卻資格決定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-01-24",
+      "definitionId": "content:18b-t03-01-24",
+      "version": "1",
+      "topicId": "T03-01",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生說科任每講完一個步驟就立刻擦掉板書，自己還沒整理好前面的符號。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我不是要求大家慢下來，只想能看到上一行。",
+              "speaker": "participant",
+              "scene": "school:classroom",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先請學生指出最常遺失的推導步驟",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生指出常漏掉的推導段落，尚未確認其他同學狀況。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是要求大家慢下來，只想能看到上一行。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "與科任討論保留重點板書的方式",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師轉達保留板書的建議，仍尊重科任授課安排。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是要求大家慢下來，只想能看到上一行。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助學生提出取得推導摘要的需求",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生提出取得摘要的方案，是否能提供仍待討論。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是要求大家慢下來，只想能看到上一行。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "數學不是比誰眼睛追得快",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道可以提出資訊取得困難，不必把它當成能力不足。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是要求大家慢下來，只想能看到上一行。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-01-24",
+      "topicId": "T03-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-01-24",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-2",
+        "3-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-3",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "同一學生的獨立接觸情境；依正式抽選、學籍、時段與冷卻資格決定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-01-25",
+      "definitionId": "content:18b-t03-01-25",
+      "version": "1",
+      "topicId": "T03-01",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "校慶布置將展板堆在通道中間，學生說他平常使用的行走路線被擋住。",
+              "speaker": null,
+              "scene": "school:corridor",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我不是不想繞路，是另一邊根本過不去。",
+              "speaker": "participant",
+              "scene": "school:corridor",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "sad"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "立即核對通道是否有安全阻礙",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師確認通道可能有風險，並不讓學生自行冒險通行。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是不想繞路，是另一邊根本過不去。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "通知活動管理人員處理動線障礙",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "相關人員收到障礙通報，尚未確認已清除。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是不想繞路，是另一邊根本過不去。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "在安全前提下協調臨時可通行路線",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生知道可暫走哪條經確認的路線，原障礙仍待處理。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是不想繞路，是另一邊根本過不去。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "安全通道不是裝飾，這得先處理",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道安全需求應被認真回應，而非被視為麻煩。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我不是不想繞路，是另一邊根本過不去。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-01-25",
+      "topicId": "T03-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-01-25",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-2",
+        "3-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-3",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "同一學生的獨立接觸情境；依正式抽選、學籍、時段與冷卻資格決定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-01-26",
+      "definitionId": "content:18b-t03-01-26",
+      "version": "1",
+      "topicId": "T03-01",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "班級戲劇排練時，學生使用的輔具進不了後臺窄門，班長說乾脆由別人代演。",
+              "speaker": null,
+              "scene": "school:auditorium",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我都練好台詞了，怎麼變成別人替我演？",
+              "speaker": "participant",
+              "scene": "school:auditorium",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先實際核對可用的進出路線",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師確認門寬問題，未讓同學自行搬運輔具。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我都練好台詞了，怎麼變成別人替我演？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "與活動負責人討論場地及走位調整",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師提出調整後臺動線的需求，主辦尚未核可。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我都練好台詞了，怎麼變成別人替我演？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "詢問學生本人希望採用的登場方式",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生提出希望親自上臺的替代走位，仍待安全評估。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我都練好台詞了，怎麼變成別人替我演？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "演出是你的，不應先替你宣布退出",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生的演出意願被尊重，未假裝問題已解決。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我都練好台詞了，怎麼變成別人替我演？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-01-26",
+      "topicId": "T03-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-01-26",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-2",
+        "3-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-3",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "同一學生的獨立接觸情境；依正式抽選、學籍、時段與冷卻資格決定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-01-27",
+      "definitionId": "content:18b-t03-01-27",
+      "version": "1",
+      "topicId": "T03-01",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "實驗室工作臺對學生而言太高，他只能看同組同學操作，無法自己讀取刻度。",
+              "speaker": null,
+              "scene": "school:science-lab",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我可以做實驗，不想每次都只負責拿筆記。",
+              "speaker": "participant",
+              "scene": "school:science-lab",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "sad"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "確認學生想操作哪個實驗步驟",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生指出想操作的步驟，尚未確認安全資格。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我可以做實驗，不想每次都只負責拿筆記。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "請實驗教師評估安全的器材與桌面安排",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師請教師評估設備條件，未擅動實驗器材。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我可以做實驗，不想每次都只負責拿筆記。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "與學生討論可親自完成的合法分工",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生提出可自行完成的分工，仍待教師核准。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我可以做實驗，不想每次都只負責拿筆記。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "做實驗不是只能站在旁邊當觀眾",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道能提出參與需求，不必接受被動旁觀。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我可以做實驗，不想每次都只負責拿筆記。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-01-27",
+      "topicId": "T03-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-01-27",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-2",
+        "3-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-3",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "同一學生的獨立接觸情境；依正式抽選、學籍、時段與冷卻資格決定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-01-28",
+      "definitionId": "content:18b-t03-01-28",
+      "version": "1",
+      "topicId": "T03-01",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "家長問導師可否在家長座談時公開說明孩子的支持需求，學生卻私下表示不願被當成例子。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "這是我的事情，為什麼要讓其他家長知道？",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先確認學生本人願意分享的界線",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師確認學生不願公開個人資訊，尚未向外傳達。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這是我的事情，為什麼要讓其他家長知道？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "與家長溝通公共說明與私人資訊的差別",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師準備向家長說明隱私界線，並未替學生同意公開。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這是我的事情，為什麼要讓其他家長知道？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "建議改以不涉及個人的一般支持原則說明",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師提出一般制度介紹方式，尚未定案座談內容。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這是我的事情，為什麼要讓其他家長知道？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "這不是你欠大家的一場分享",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道隱私不必為了宣導而犧牲。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "這是我的事情，為什麼要讓其他家長知道？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-01-28",
+      "topicId": "T03-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-01-28",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-2",
+        "3-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-3",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "同一學生的獨立接觸情境；依正式抽選、學籍、時段與冷卻資格決定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-01-29",
+      "definitionId": "content:18b-t03-01-29",
+      "version": "1",
+      "topicId": "T03-01",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生發現校內電腦測驗的網路權限阻擋他平常使用的閱讀輔助程式。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "如果當天才發現不能開，我根本沒辦法看題目。",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "sad"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先確認軟體及測驗設備的實際限制",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師確認軟體使用問題，未自行開放考試網路權限。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "如果當天才發現不能開，我根本沒辦法看題目。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "向評量權責人員提出事前合法測試需求",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "評量單位收到測試需求，考場安排仍待正式程序。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "如果當天才發現不能開，我根本沒辦法看題目。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "與學生列出不含試題的設備檢查清單",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生列出檢查項目，未取得實際題目或額外時間。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "如果當天才發現不能開，我根本沒辦法看題目。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "這個不能考到一半才靠運氣處理",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道可提前提出需求，而不是臨場承擔風險。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "如果當天才發現不能開，我根本沒辦法看題目。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-01-29",
+      "topicId": "T03-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-01-29",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-2",
+        "3-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-3",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "同一學生的獨立接觸情境；依正式抽選、學籍、時段與冷卻資格決定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-01-30",
+      "definitionId": "content:18b-t03-01-30",
+      "version": "1",
+      "topicId": "T03-01",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "班級團康要求每人跑完接力，學生希望參與策畫卻不願只被分成象徵性的加油員。",
+              "speaker": null,
+              "scene": "school:courtyard",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我可以出力，不一定只能在旁邊喊加油。",
+              "speaker": "participant",
+              "scene": "school:courtyard",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先詢問學生想參與哪種實際任務",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說明願意承擔的角色，活動規則尚未改變。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我可以出力，不一定只能在旁邊喊加油。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "和全班討論兼容不同能力的遊戲規則",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "班級開始討論更具包容性的玩法，仍待全體確認。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我可以出力，不一定只能在旁邊喊加油。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助學生提出不降低參與感的分工",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生提出計分與策略工作，未被強迫接受。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我可以出力，不一定只能在旁邊喊加油。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "團康是一起玩，不是把某些人排在場外",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道自己的參與意願被尊重，沒有被視為裝飾。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我可以出力，不一定只能在旁邊喊加油。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師提出可行性或參與需求，並未自動告知第三者。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-01-30",
+      "topicId": "T03-01",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-01-30",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-2",
+        "3-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-3",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "同一學生的獨立接觸情境；依正式抽選、學籍、時段與冷卻資格決定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
   }
 ];

@@ -199,7 +199,7 @@ export function t01DraftCatalogue(){
 }
 /** All 208 T02 stories are resolve-only engineering resources; none are public. */
 export const T02_DRAFT_STORIES=freeze(T02_BATCH_RECORDS.map(r=>validateStory(r.story)));
-/** 17 known blockers remain addressable but are never offered even to the isolated catalogue. */
+/** 18 known holds/blockers remain addressable but are never offered even to the isolated catalogue. */
 export function t02DraftCatalogue(){
  const held=new Set(T02_ISOLATED_IDS);
  const records=T02_BATCH_RECORDS.filter(r=>!held.has(r.definition.id));

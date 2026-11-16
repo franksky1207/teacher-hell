@@ -56,7 +56,7 @@
     "hydrogenFindings": 185,
     "resolved": 168,
     "blocked": 9,
-    "held": 8,
+    "held": 9,
     "entries": [
       {
         "id": "content:18b-t02-03-03",
@@ -261,7 +261,23 @@
         "recheckWhen": "畢業多年後返校及校友生命週期支援",
         "approval": "none",
         "published": false
+      },
+      {
+        "id": "content:18b-t02-05-23",
+        "topic": "T02-05",
+        "status": "held",
+        "sourceBranch": "feat/18b-c-t01-t02-integration",
+        "sourcePath": "work/18b-t02-05-authoring.json",
+        "evidence": "work/18b-t01-t02-release-gates.json",
+        "dependency": "stars-ranking-correction-evidence",
+        "recheckWhen": "校方已公告繁星順位更正且明確影響這一位學生的世界紀錄可由候選資格驗證，或只修改本事件前提為未核實消息並精準複驗",
+        "approval": "controller-release-hold",
+        "published": false
       }
+    ],
+    "originalHydrogenIsolated": 17,
+    "additionalControllerHoldIds": [
+      "content:18b-t02-05-23"
     ]
   },
   "futureTopics": {

@@ -299,7 +299,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 3,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -618,7 +624,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -937,7 +949,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -1256,7 +1274,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 1,
+          "maxDays": 2,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -1575,7 +1599,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -1894,7 +1924,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -2213,7 +2249,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -2532,7 +2574,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -2851,7 +2899,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -3170,7 +3224,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -3489,7 +3549,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -3808,7 +3874,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -4122,7 +4194,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -4441,7 +4519,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -4760,7 +4844,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -5074,7 +5164,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -5388,7 +5484,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -5702,7 +5804,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -6016,7 +6124,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 1,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -6330,7 +6444,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 7,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -6652,7 +6772,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 21,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -6974,7 +7100,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -7296,7 +7428,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,
@@ -7618,7 +7756,13 @@ export default [
         "facts": [],
         "history": [],
         "numeric": [],
-        "enrollment": null
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
       },
       "repetition": {
         "cooldownDays": 45,

@@ -180,7 +180,7 @@ export function buildEventCandidates(world,definitions,{engineering=false,ignore
     const elapsed=active?days(day.date,active.from):null;
     if(elapsed===null||elapsed<c.minDays||elapsed>c.maxDays)reason='enrollment-context-date';
     if(c.priorStatus){
-     const prior=registry.enrollments.filter(row=>row.personId===person&&row.until!==null&&row.until<=active?.from&&row.status===c.priorStatus).sort((a,b)=>b.until.localeCompare(a.until))[0];
+     const prior=active?registry.enrollments.filter(row=>row.personId===person&&row.until!==null&&row.until<=active.from&&row.status===c.priorStatus).sort((a,b)=>b.until.localeCompare(a.until))[0]:null;
      if(!prior||c.minDaysAway!==undefined&&days(active.from,prior.until)<c.minDaysAway)reason='enrollment-context-prior';
     }
    }

@@ -992,7 +992,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生昨天正式返校，今天拿著補課時程來找你。他表示昨晚補完課後非常疲憊，擔心明天又無法到校，但目前仍未提出新的請假申請。",
+              "text": "學生近日正式返校，今天拿著補課時程來找你。他表示昨天補完課後非常疲憊，擔心明天又無法到校，但目前仍未提出新的請假申請。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -5215,7 +5215,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我一直算還差幾分，越算越覺得沒希望。",
+              "text": "我不知道缺課那段的評量怎麼算，越想越怕影響畢業。",
               "speaker": "participant",
               "scene": "school:teachers-office",
               "cast": [
@@ -5239,7 +5239,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我一直算還差幾分，越算越覺得沒希望。",
+                    "statement": "我不知道缺課那段的評量怎麼算，越想越怕影響畢業。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5289,7 +5289,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我一直算還差幾分，越算越覺得沒希望。",
+                    "statement": "我不知道缺課那段的評量怎麼算，越想越怕影響畢業。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5339,7 +5339,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我一直算還差幾分，越算越覺得沒希望。",
+                    "statement": "我不知道缺課那段的評量怎麼算，越想越怕影響畢業。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5389,7 +5389,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我一直算還差幾分，越算越覺得沒希望。",
+                    "statement": "我不知道缺課那段的評量怎麼算，越想越怕影響畢業。",
                     "belief": "believed",
                     "visible": false
                   }

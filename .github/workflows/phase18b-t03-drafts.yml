@@ -4,8 +4,11 @@ on:
   push:
     branches:
       - feat/18b-t03-content-production-20261116
+      - feat/18b-t03-lossless-integration-20261116
     paths:
       - 'work/18b-t03-verification-trigger.md'
+      - 'test/18b-t03-isolated-authoring.test.js'
+      - '.github/workflows/phase18b-t03-drafts.yml'
 permissions:
   contents: read
 jobs:

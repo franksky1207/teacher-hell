@@ -2953,7 +2953,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生從輔導室領回三頁資源清單，每頁有不同單位、電話與申請條件，他看了半天依然不知道該問誰。",
+              "text": "學生拿著學校公開的三頁資源資訊列印稿來找你，上面列出不同單位、電話與詢問方式；他第一次看到這份資料，不知道該從哪個窗口問起。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -2961,7 +2961,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "你們給我那麼多名字，我連第一個要打給誰都不知道。",
+              "text": "這份資料有好多名字，我不知道第一個該問誰。",
               "speaker": "participant",
               "scene": "school:teachers-office",
               "cast": [
@@ -2985,7 +2985,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "你們給我那麼多名字，我連第一個要打給誰都不知道。",
+                    "statement": "這份資料有好多名字，我不知道第一個該問誰。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -3035,7 +3035,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "你們給我那麼多名字，我連第一個要打給誰都不知道。",
+                    "statement": "這份資料有好多名字，我不知道第一個該問誰。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -3085,7 +3085,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "你們給我那麼多名字，我連第一個要打給誰都不知道。",
+                    "statement": "這份資料有好多名字，我不知道第一個該問誰。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -3135,7 +3135,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "你們給我那麼多名字，我連第一個要打給誰都不知道。",
+                    "statement": "這份資料有好多名字，我不知道第一個該問誰。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4523,7 +4523,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生和科任私下約定用小紙條提醒任務切換，但每次課堂進行時科任都忘了使用，學生不敢再提。",
+              "text": "學生在下課後來找你，說科任課堂上任務切換時常跟不上，想詢問可否使用不必當眾舉手的小紙條提醒方式；雙方尚未約定任何支持方案。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -4531,7 +4531,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我不想每次站起來提醒老師，這樣全班都會看我。",
+              "text": "我不想每次都站起來問老師，可不可以先討論別的提醒方式？",
               "speaker": "participant",
               "scene": "school:teachers-office",
               "cast": [
@@ -4547,15 +4547,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "先確認約定內容與實際漏掉的時機",
+              "text": "先確認學生在課堂切換時實際遇到的困難",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師釐清學生所述的提醒問題，尚未向科任核實。",
+                "fact": "導師了解學生對任務切換的描述，尚未擅自判定學習診斷。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不想每次站起來提醒老師，這樣全班都會看我。",
+                    "statement": "我不想每次都站起來問老師，可不可以先討論別的提醒方式？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4597,15 +4597,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "和科任討論較容易持續的提醒方式",
+              "text": "詢問科任是否可討論私下提醒方式",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師將提出更新提醒方式，未假設科任故意不配合。",
+                "fact": "導師提出協調需求，科任是否同意尚待確認。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不想每次站起來提醒老師，這樣全班都會看我。",
+                    "statement": "我不想每次都站起來問老師，可不可以先討論別的提醒方式？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4647,15 +4647,15 @@ export default [
             },
             {
               "id": "plan",
-              "text": "協助學生提出可接受的替代訊號",
+              "text": "和學生先整理想嘗試的提醒方式",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生提出另一個不需公開說明的訊號，仍待協議。",
+                "fact": "學生提出想嘗試的小紙條方式，尚未形成正式約定。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不想每次站起來提醒老師，這樣全班都會看我。",
+                    "statement": "我不想每次都站起來問老師，可不可以先討論別的提醒方式？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4701,11 +4701,11 @@ export default [
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道可以要求檢視方法，並未被視為挑戰教師權威。",
+                "fact": "學生知道可以提出課堂資訊需求，不必把求助當成挑戰教師。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不想每次站起來提醒老師，這樣全班都會看我。",
+                    "statement": "我不想每次都站起來問老師，可不可以先討論別的提醒方式？",
                     "belief": "believed",
                     "visible": false
                   }

@@ -8096,5 +8096,761 @@ export default [
       ],
       "valence": "neutral"
     }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-04-31",
+      "definitionId": "content:18b-t03-04-31",
+      "version": "1",
+      "topicId": "T03-04",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "第五節下課，學生拿來一張幾何題的手稿：課本從一條線出發，他卻畫了另一條輔助線，旁邊還寫了大大的問號。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "老師，我想走另一條路，但怕中間偷偷用到還沒證明的東西。",
+              "speaker": "participant",
+              "scene": "school:classroom",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "一起逐步核對哪一行需要補上理由",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生圈出尚未證明的關鍵等式，沒有把整份手稿當作已成立的證明。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師，我想走另一條路，但怕中間偷偷用到還沒證明的東西。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師說明其作品與疑問，科任與同學尚未自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "refer",
+              "text": "請學生整理關鍵問題交給數學科任核對",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生整理兩條待核對的推理問題，尚未取得科任的正式評價。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師，我想走另一條路，但怕中間偷偷用到還沒證明的東西。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師說明其作品與疑問，科任與同學尚未自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "demonstrate",
+              "text": "讓學生用白板向你講清楚輔助線的用途",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生在白板上說明輔助線的用途，仍需核對後續推理。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師，我想走另一條路，但怕中間偷偷用到還沒證明的東西。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師說明其作品與疑問，科任與同學尚未自動得知。"
+                    }
+                  ]
+                }
+              },
+              "variants": [
+                {
+                  "id": "catches-gap",
+                  "weight": 3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-2",
+                      "influence": 0.45
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生說明時自己發現一個原本遺漏的角度條件，立刻把它標在手稿上，笑說『原來這裡才是關鍵』；整題仍待完整證明。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "老師，我想走另一條路，但怕中間偷偷用到還沒證明的東西。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 0.5
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面向導師說明其作品與疑問，科任與同學尚未自動得知。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "still-working",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-2",
+                      "influence": -0.3
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生把輔助線用途說清楚，卻還沒看出如何銜接下一步；導師請他保留問題，沒有直接宣布答案錯誤。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "老師，我想走另一條路，但怕中間偷偷用到還沒證明的東西。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面向導師說明其作品與疑問，科任與同學尚未自動得知。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "encourage",
+              "text": "想出別的路很棒，但每一步都要站得住腳",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道好奇與查證可以並存，不因暫時卡住否定自己的想法。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "老師，我想走另一條路，但怕中間偷偷用到還沒證明的東西。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師說明其作品與疑問，科任與同學尚未自動得知。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-04-31",
+      "topicId": "T03-04",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-04-31",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-1",
+        "3-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-2",
+        "4-4",
+        "2-3"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p5"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "依引擎合法學籍、日程及冷卻篩選"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-04-32",
+      "definitionId": "content:18b-t03-04-32",
+      "version": "1",
+      "topicId": "T03-04",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐後，學生在中庭用手機錄了一小段自己哼出的旋律，卻說想和朋友一起演奏時，連第一小節的拍子都寫不出來。",
+              "speaker": null,
+              "scene": "school:courtyard",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我知道它聽起來是什麼樣子，可是變成譜就像另一種語言。",
+              "speaker": "participant",
+              "scene": "school:courtyard",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先聽學生自己打出的節拍，區分速度與拍點",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生拍出一段可重複的節奏，尚未把旋律完整記譜。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道它聽起來是什麼樣子，可是變成譜就像另一種語言。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師說明其作品與疑問，科任與同學尚未自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "refer",
+              "text": "向音樂科任詢問如何循序學習記譜",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生列出要向音樂科任請教的兩個疑問，並未冒充已取得指導。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道它聽起來是什麼樣子，可是變成譜就像另一種語言。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師說明其作品與疑問，科任與同學尚未自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "demonstrate",
+              "text": "陪學生把錄音切成短段，再選一段嘗試寫下節奏",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生選定錄音開頭幾秒為練習範圍，並未擅自使用他人作品。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道它聽起來是什麼樣子，可是變成譜就像另一種語言。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師說明其作品與疑問，科任與同學尚未自動得知。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "encourage",
+              "text": "先能唱出來已經很珍貴，譜可以慢慢學",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生握著自己原創的錄音微笑，願意先從短段落開始；不代表記譜困難已解決。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道它聽起來是什麼樣子，可是變成譜就像另一種語言。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [
+                  {
+                    "role": "participant",
+                    "holder": "person",
+                    "code": "2-4",
+                    "delta": 0.5
+                  }
+                ],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面向導師說明其作品與疑問，科任與同學尚未自動得知。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-04-32",
+      "topicId": "T03-04",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-04-32",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-1",
+        "3-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-2",
+        "4-4",
+        "2-3"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p5"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "依引擎合法學籍、日程及冷卻篩選"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
   }
 ];

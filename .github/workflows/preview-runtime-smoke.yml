@@ -36,22 +36,5 @@ jobs:
             }
           }
           EOF
-      - name: Open live preview with headless Chrome and verify homepage
-        shell: bash
-        run: |
-          set -euo pipefail
-          CHROME=$(command -v google-chrome || command -v chromium || true)
-          test -n "$CHROME"
-          "$CHROME" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --no-first-run --disable-extensions --virtual-time-budget=7000 --dump-dom https://franksky1207.github.io/teacher-hell/preview/ >/tmp/live-dom.html 2>/tmp/live-chrome.log || {
-            tail -80 /tmp/live-chrome.log
-            exit 1
-          }
-          if ! grep -q 'data-action="slots"' /tmp/live-dom.html; then
-            echo 'Preview did not initialize; HTML follows:'
-            head -c 3000 /tmp/live-dom.html
-            echo
-            echo 'Chrome stderr:'
-            tail -80 /tmp/live-chrome.log
-            exit 1
-          fi
-          echo 'PASS live preview initialized and exposes save slots navigation'
+      - name: Open live preview with Chrome and capture startup errors
+        run: node scripts/preview-runtime-smoke.mjs

@@ -69,7 +69,8 @@ test('T03 genuine enrollment history produces legitimate candidates while initia
  applySchoolOperation(n,{type:'school-leave',personId:first,status:'suspended',reason:'test:documented-leave'},'2027-02-01');
  applySchoolOperation(n,{type:'school-enroll',personId:first,classId:home,action:'return',source:'test:documented-return'},'2027-03-01');
  const before=new Set(Object.keys(n.people));
- applySchoolOperation(n,{type:'school-enroll',personId:null,classId:home,action:'transfer-in',source:'test:transfer'},'2027-03-08');
+ // This new arrival must be within the story's 0–1 day enrollmentContext window on 2027-03-11.
+ applySchoolOperation(n,{type:'school-enroll',personId:null,classId:home,action:'transfer-in',source:'test:transfer'},'2027-03-10');
  const entrant=Object.keys(n.people).find(id=>!before.has(id)&&n.people[id].kind==='student');
  assert.ok(entrant,'real transfer generated a student');
  assert.ok(n.people[entrant].roleIds.includes(17),'newcomer role comes from registry');

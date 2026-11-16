@@ -17,7 +17,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "數學課後，學生拿著拍下的投影片來找你，說坐第一排仍分不清幾個細線符號。",
+              "text": "數學課後，學生把投影畫面拍下來給你看：畫面對比太淡，照片裡的負號和等號都幾乎連在一起。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -25,7 +25,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我知道大家都看得到，但那些負號和等號對我真的太像了。",
+              "text": "我坐第一排還是分不清，這張投影片真的太淡了。",
               "speaker": "participant",
               "scene": "school:classroom",
               "cast": [
@@ -49,7 +49,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我知道大家都看得到，但那些負號和等號對我真的太像了。",
+                    "statement": "我坐第一排還是分不清，這張投影片真的太淡了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -99,7 +99,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我知道大家都看得到，但那些負號和等號對我真的太像了。",
+                    "statement": "我坐第一排還是分不清，這張投影片真的太淡了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -149,7 +149,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我知道大家都看得到，但那些負號和等號對我真的太像了。",
+                    "statement": "我坐第一排還是分不清，這張投影片真的太淡了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -195,11 +195,11 @@ export default [
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生說清楚自己的視覺困難，導師沒有要求他當眾解釋。",
+                "fact": "學生指出畫面辨識的具體問題，導師沒有要求他當眾解釋個人視力。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我知道大家都看得到，但那些負號和等號對我真的太像了。",
+                    "statement": "我坐第一排還是分不清，這張投影片真的太淡了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -776,7 +776,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生把一疊掃描講義放上桌，說使用的閱讀輔助工具只能念出頁碼，無法讀出內文。",
+              "text": "學生把掃描講義放上桌，當場用手機內建的文字朗讀功能測試，卻只聽到頁碼，沒有辦法讀出正文。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -784,7 +784,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我不是不要讀這份講義，是它對我的工具來說像一張照片。",
+              "text": "我想用手機朗讀複習，可是這張掃描檔只有圖片，工具根本找不到文字。",
               "speaker": "participant",
               "scene": "school:teachers-office",
               "cast": [
@@ -808,7 +808,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是不要讀這份講義，是它對我的工具來說像一張照片。",
+                    "statement": "我想用手機朗讀複習，可是這張掃描檔只有圖片，工具根本找不到文字。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -858,7 +858,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是不要讀這份講義，是它對我的工具來說像一張照片。",
+                    "statement": "我想用手機朗讀複習，可是這張掃描檔只有圖片，工具根本找不到文字。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -908,7 +908,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是不要讀這份講義，是它對我的工具來說像一張照片。",
+                    "statement": "我想用手機朗讀複習，可是這張掃描檔只有圖片，工具根本找不到文字。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -954,11 +954,11 @@ export default [
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道自己的需求被記下，未因此被要求公開輔具資訊。",
+                "fact": "學生知道教材檔案格式可以討論改善，不必公開個人閱讀習慣。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是不要讀這份講義，是它對我的工具來說像一張照片。",
+                    "statement": "我想用手機朗讀複習，可是這張掃描檔只有圖片，工具根本找不到文字。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1728,7 +1728,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "班級活動宣布在看臺上集合，學生指著場地圖問能不能和大家待在同一區，而非被安排在遠處。",
+              "text": "班級活動預告在看臺上集合，學生拿著場地圖指出通道只有階梯，擔心臨時需要輪椅或行動協助的參與者被分到遠處。",
               "speaker": null,
               "scene": "school:courtyard",
               "cast": [],
@@ -1736,7 +1736,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我想跟同學一起看，不是自己在下面聽聲音。",
+              "text": "我們說全班一起看，場地卻沒有把所有人要怎麼到座位寫清楚。",
               "speaker": "participant",
               "scene": "school:courtyard",
               "cast": [
@@ -1752,15 +1752,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "確認集合場地的實際無障礙路線",
+              "text": "核對場地圖是否標出實際無障礙動線",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師記下學生希望共同參與的位置，尚未確認場地可及性。",
+                "fact": "導師發現場地圖沒有標明可核對的無障礙通道，尚未認定實際場地違規。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我想跟同學一起看，不是自己在下面聽聲音。",
+                    "statement": "我們說全班一起看，場地卻沒有把所有人要怎麼到座位寫清楚。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1802,15 +1802,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "請活動負責單位評估共同參與位置",
+              "text": "請活動單位確認能讓所有人共同參與的配置",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師向活動負責單位提出位置需求，沒有自行更改管制配置。",
+                "fact": "導師向活動承辦提出共同參與的路線需求，正式配置尚待確認。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我想跟同學一起看，不是自己在下面聽聲音。",
+                    "statement": "我們說全班一起看，場地卻沒有把所有人要怎麼到座位寫清楚。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1852,15 +1852,15 @@ export default [
             },
             {
               "id": "plan",
-              "text": "與學生討論可接受的替代觀賞方式",
+              "text": "讓班級整理尚未說明的通行需求",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生提出偏好的替代位置，仍以現場安全與其同意為前提。",
+                "fact": "班級列出通行問題清單，沒有擅自替任何學生決定專用座位。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我想跟同學一起看，不是自己在下面聽聲音。",
+                    "statement": "我們說全班一起看，場地卻沒有把所有人要怎麼到座位寫清楚。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1902,15 +1902,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "你本來就是班上的一員，位置不能隨便決定",
+              "text": "團體活動應先把路弄清楚，不是出事再補救",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生表達不想被隔離的感受，導師承諾先查場地而非保證結果。",
+                "fact": "學生知道公共場地規劃可以預先提出，不必等到有人被隔離才處理。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我想跟同學一起看，不是自己在下面聽聲音。",
+                    "statement": "我們說全班一起看，場地卻沒有把所有人要怎麼到座位寫清楚。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -3003,7 +3003,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "晨會宣導要求學生起立回應，學生事後詢問自己坐著回答是否會被記為不配合。",
+              "text": "晨會宣導時主持人要求全體起立回應，學生事後說自己今天腿不舒服，剛才坐著答話時擔心被當成不配合。",
               "speaker": null,
               "scene": "school:auditorium",
               "cast": [],
@@ -3011,7 +3011,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我可以清楚回答，但站起來真的不方便。",
+              "text": "我可以清楚回答，但今天站起來真的不方便。",
               "speaker": "participant",
               "scene": "school:auditorium",
               "cast": [
@@ -3035,7 +3035,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以清楚回答，但站起來真的不方便。",
+                    "statement": "我可以清楚回答，但今天站起來真的不方便。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -3085,7 +3085,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以清楚回答，但站起來真的不方便。",
+                    "statement": "我可以清楚回答，但今天站起來真的不方便。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -3135,7 +3135,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以清楚回答，但站起來真的不方便。",
+                    "statement": "我可以清楚回答，但今天站起來真的不方便。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -3185,7 +3185,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以清楚回答，但站起來真的不方便。",
+                    "statement": "我可以清楚回答，但今天站起來真的不方便。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -3955,7 +3955,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生說社團表單用鍵盤操作時焦點一直跳掉，最後送出了空白資料。",
+              "text": "學生當場示範用鍵盤填寫社團線上報名表，畫面焦點不斷跳開，結果送出後只有空白資料。",
               "speaker": null,
               "scene": "school:administration",
               "cast": [],
@@ -3963,7 +3963,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "它一直說我沒填，可是我根本選不到那一欄。",
+              "text": "我只是用鍵盤填表，為什麼選不到那一欄？",
               "speaker": "participant",
               "scene": "school:administration",
               "cast": [
@@ -3987,7 +3987,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "它一直說我沒填，可是我根本選不到那一欄。",
+                    "statement": "我只是用鍵盤填表，為什麼選不到那一欄？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4037,7 +4037,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "它一直說我沒填，可是我根本選不到那一欄。",
+                    "statement": "我只是用鍵盤填表，為什麼選不到那一欄？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4087,7 +4087,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "它一直說我沒填，可是我根本選不到那一欄。",
+                    "statement": "我只是用鍵盤填表，為什麼選不到那一欄？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4133,11 +4133,11 @@ export default [
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生不再被要求自行向全班解釋輔助科技使用方式。",
+                "fact": "學生知道可以向承辦反映表單問題，不用向全班說明自己的設備選擇。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "它一直說我沒填，可是我根本選不到那一欄。",
+                    "statement": "我只是用鍵盤填表，為什麼選不到那一欄？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4274,7 +4274,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "班會討論是否每週抽籤換座位，學生私下說自己需要特定視線和通道，但不想成為反對票。",
+              "text": "班級幹部拿著下次班會想討論的座位抽籤提案來問你，學生私下指著靠窗反光的黑板照片，擔心新規則沒考慮視線。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -4282,7 +4282,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我不反對大家換座位，只希望我的位置先能用。",
+              "text": "我不反對換座位，只希望先確認每個位置真的看得到板書。",
               "speaker": "participant",
               "scene": "school:classroom",
               "cast": [
@@ -4302,11 +4302,11 @@ export default [
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師確認學生希望保留的座位條件，尚未修改班規。",
+                "fact": "導師記下黑板反光及座位視線問題，尚未修改班規。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不反對大家換座位，只希望我的位置先能用。",
+                    "statement": "我不反對換座位，只希望先確認每個位置真的看得到板書。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4356,7 +4356,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不反對大家換座位，只希望我的位置先能用。",
+                    "statement": "我不反對換座位，只希望先確認每個位置真的看得到板書。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4402,11 +4402,11 @@ export default [
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生選擇暫不公開說明個人需求，導師尊重其界線。",
+                "fact": "學生提出先檢查視線的建議，是否公開討論仍由本人選擇。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不反對大家換座位，只希望我的位置先能用。",
+                    "statement": "我不反對換座位，只希望先確認每個位置真的看得到板書。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4456,7 +4456,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不反對大家換座位，只希望我的位置先能用。",
+                    "statement": "我不反對換座位，只希望先確認每個位置真的看得到板書。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5869,7 +5869,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "家長傳訊希望孩子不必參加任何班級活動，學生卻私下問能否先嘗試較短的活動段落。",
+              "text": "今天家長才傳訊問導師，孩子是否可以先不參加近期班級活動；當事學生聽到後私下說自己其實想試著參與短一點的段落。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -6507,7 +6507,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "教室冷氣正對著學生的座位，他說長時間吹風會造成不適，卻怕被說成要求特權。",
+              "text": "學生當場指著教室冷氣出風口，說坐在正下方會被一直吹到不舒服，擔心反映後被同學認為要求特權。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -6826,7 +6826,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "幹部把重要公告截圖傳到班群，學生使用的文字讀取工具卻只念得出檔名。",
+              "text": "幹部把重要公告截圖傳到班群，學生拿出手機現場啟動朗讀功能，畫面卻只唸出檔名，讀不到圖片裡的文字。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -6834,7 +6834,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "明明是大家都要看的公告，我卻看不到裡面寫什麼。",
+              "text": "這是大家都要看的公告，為什麼不能順便提供可以讀的文字？",
               "speaker": "participant",
               "scene": "school:classroom",
               "cast": [
@@ -6858,7 +6858,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "明明是大家都要看的公告，我卻看不到裡面寫什麼。",
+                    "statement": "這是大家都要看的公告，為什麼不能順便提供可以讀的文字？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -6908,7 +6908,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "明明是大家都要看的公告，我卻看不到裡面寫什麼。",
+                    "statement": "這是大家都要看的公告，為什麼不能順便提供可以讀的文字？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -6958,7 +6958,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "明明是大家都要看的公告，我卻看不到裡面寫什麼。",
+                    "statement": "這是大家都要看的公告，為什麼不能順便提供可以讀的文字？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -7008,7 +7008,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "明明是大家都要看的公告，我卻看不到裡面寫什麼。",
+                    "statement": "這是大家都要看的公告，為什麼不能順便提供可以讀的文字？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -7783,7 +7783,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "校慶布置將展板堆在通道中間，學生說他平常使用的行走路線被擋住。",
+              "text": "校慶布置把好幾張展板堆在標示為安全通行的走廊中間，學生指出原本正常通行的動線已被堵住。",
               "speaker": null,
               "scene": "school:corridor",
               "cast": [],
@@ -7791,7 +7791,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我不是不想繞路，是另一邊根本過不去。",
+              "text": "我不是不想繞路，是這裡平常大家要走的通道真的被擋住了。",
               "speaker": "participant",
               "scene": "school:corridor",
               "cast": [
@@ -7815,7 +7815,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是不想繞路，是另一邊根本過不去。",
+                    "statement": "我不是不想繞路，是這裡平常大家要走的通道真的被擋住了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -7865,7 +7865,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是不想繞路，是另一邊根本過不去。",
+                    "statement": "我不是不想繞路，是這裡平常大家要走的通道真的被擋住了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -7915,7 +7915,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是不想繞路，是另一邊根本過不去。",
+                    "statement": "我不是不想繞路，是這裡平常大家要走的通道真的被擋住了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -7965,7 +7965,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不是不想繞路，是另一邊根本過不去。",
+                    "statement": "我不是不想繞路，是這裡平常大家要走的通道真的被擋住了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -8421,7 +8421,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "實驗室工作臺對學生而言太高，他只能看同組同學操作，無法自己讀取刻度。",
+              "text": "自然科實驗分組時，一名身材較矮的學生發現固定工作臺太高，看刻度得踮腳，旁邊同學只好代為操作。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -8429,7 +8429,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我可以做實驗，不想每次都只負責拿筆記。",
+              "text": "我可以做實驗，不想每次都只能站在旁邊當記錄員。",
               "speaker": "participant",
               "scene": "school:classroom",
               "cast": [
@@ -8453,7 +8453,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以做實驗，不想每次都只負責拿筆記。",
+                    "statement": "我可以做實驗，不想每次都只能站在旁邊當記錄員。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -8503,7 +8503,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以做實驗，不想每次都只負責拿筆記。",
+                    "statement": "我可以做實驗，不想每次都只能站在旁邊當記錄員。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -8553,7 +8553,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以做實驗，不想每次都只負責拿筆記。",
+                    "statement": "我可以做實驗，不想每次都只能站在旁邊當記錄員。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -8603,7 +8603,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以做實驗，不想每次都只負責拿筆記。",
+                    "statement": "我可以做實驗，不想每次都只能站在旁邊當記錄員。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -8740,7 +8740,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "家長問導師可否在家長座談時公開說明孩子的支持需求，學生卻私下表示不願被當成例子。",
+              "text": "家長傳訊詢問導師，能不能在家長座談時拿孩子近期提出的課堂協助需求當作示例；學生私下說自己不想被公開討論。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -8748,7 +8748,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "這是我的事情，為什麼要讓其他家長知道？",
+              "text": "我只是想找到上課的方法，為什麼其他家長要知道？",
               "speaker": "participant",
               "scene": "school:teachers-office",
               "cast": [
@@ -8772,7 +8772,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "這是我的事情，為什麼要讓其他家長知道？",
+                    "statement": "我只是想找到上課的方法，為什麼其他家長要知道？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -8822,7 +8822,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "這是我的事情，為什麼要讓其他家長知道？",
+                    "statement": "我只是想找到上課的方法，為什麼其他家長要知道？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -8872,7 +8872,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "這是我的事情，為什麼要讓其他家長知道？",
+                    "statement": "我只是想找到上課的方法，為什麼其他家長要知道？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -8922,7 +8922,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "這是我的事情，為什麼要讓其他家長知道？",
+                    "statement": "我只是想找到上課的方法，為什麼其他家長要知道？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -9378,7 +9378,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "班級團康要求每人跑完接力，學生希望參與策畫卻不願只被分成象徵性的加油員。",
+              "text": "班級團康企劃草案規定每個人都要跑接力，一名學生提議把計分、路線與戰術分工設計進規則，好讓不同能力的人都能實際參與。",
               "speaker": null,
               "scene": "school:courtyard",
               "cast": [],
@@ -9386,7 +9386,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我可以出力，不一定只能在旁邊喊加油。",
+              "text": "我可以出力，不一定只有在旁邊喊加油這個選項。",
               "speaker": "participant",
               "scene": "school:courtyard",
               "cast": [
@@ -9410,7 +9410,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以出力，不一定只能在旁邊喊加油。",
+                    "statement": "我可以出力，不一定只有在旁邊喊加油這個選項。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -9460,7 +9460,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以出力，不一定只能在旁邊喊加油。",
+                    "statement": "我可以出力，不一定只有在旁邊喊加油這個選項。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -9510,7 +9510,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以出力，不一定只能在旁邊喊加油。",
+                    "statement": "我可以出力，不一定只有在旁邊喊加油這個選項。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -9560,7 +9560,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以出力，不一定只能在旁邊喊加油。",
+                    "statement": "我可以出力，不一定只有在旁邊喊加油這個選項。",
                     "belief": "believed",
                     "visible": false
                   }

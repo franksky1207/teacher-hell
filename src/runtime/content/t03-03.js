@@ -3899,7 +3899,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生說補救講義前兩頁像國中複習，第三頁卻突然變成完全看不懂的題型。",
+              "text": "學生拿來今天課堂發下的練習講義，指出前兩頁還能理解，第三頁卻有新的題型接不上；他請你一起看看是不是少了中間的示範步驟。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],

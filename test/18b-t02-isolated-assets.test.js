@@ -21,19 +21,19 @@ test('B: 208 assets preserve source JSON and validate immutable references',()=>
   assert.equal(resolveStory(asset.definition.content).definitionId,src.definition.id);
  }
 });
-test('B: 17 blocked/held never enter the T02 opt-in engineering catalogue',()=>{
+test('B: 18 blocked/held never enter the T02 opt-in engineering catalogue',()=>{
  const registry=read('work/18b-global-event-isolation.json');
  const expected=registry.t02.entries.map(e=>e.id).sort();
  assert.deepEqual([...T02_ISOLATED_IDS],expected);
  assert.equal(registry.t02.entries.filter(x=>x.status==='blocked').length,9);
- assert.equal(registry.t02.entries.filter(x=>x.status==='held').length,8);
+ assert.equal(registry.t02.entries.filter(x=>x.status==='held').length,9);
  const catalogue=t02DraftCatalogue(),ids=new Set(catalogue.definitions.map(d=>d.id));
  assert.equal(catalogue.engineering,true);
- assert.equal(catalogue.definitions.length,191);
- assert.equal(catalogue.bindings.length,191);
+ assert.equal(catalogue.definitions.length,190);
+ assert.equal(catalogue.bindings.length,190);
  validateEventDefinitions(catalogue.definitions);
  for(const id of expected){assert.equal(ids.has(id),false,id);assert.ok(T02_BATCH_RECORDS.some(r=>r.definition.id===id),'original source must stay retrievable');}
- assert.equal(new Set(catalogue.bindings.map(x=>x.definitionId)).size,191);
+ assert.equal(new Set(catalogue.bindings.map(x=>x.definitionId)).size,190);
 });
 test('B: formal candidate pool stays closed even when isolated catalogue is supplied',()=>{
  const catalogue=t02DraftCatalogue();

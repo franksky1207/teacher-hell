@@ -1404,7 +1404,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生在走廊跟你說，幾位同學不斷模仿他說話的尾音，第一次他跟著笑，第三次卻只想保持沉默。",
+              "text": "學生在走廊找你，說剛剛有同學模仿他的說話尾音，旁人跟著笑。他覺得不舒服，但目前只知道學生本人這次的說法，尚未查明其他同學的意圖。",
               "speaker": null,
               "scene": "school:corridor",
               "cast": [],
@@ -1412,7 +1412,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "他們說在學我講話，但我每次都變成笑點。",
+              "text": "剛才他們學我講話，我覺得不舒服，卻不知道怎麼說。",
               "speaker": "participant",
               "scene": "school:corridor",
               "cast": [
@@ -1428,15 +1428,15 @@ export default [
           "choices": [
             {
               "id": "inquire",
-              "text": "先問清楚發生次數與當事人感受",
+              "text": "先確認這次互動和學生自己的感受",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生說清楚三次互動的不同感受，尚未認定全部同學動機。",
+                "fact": "學生說明今天實際聽見的模仿與感受，未推定他人動機或先前反覆事件。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "他們說在學我講話，但我每次都變成笑點。",
+                    "statement": "剛才他們學我講話，我覺得不舒服，卻不知道怎麼說。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1486,7 +1486,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "他們說在學我講話，但我每次都變成笑點。",
+                    "statement": "剛才他們學我講話，我覺得不舒服，卻不知道怎麼說。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1536,7 +1536,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "他們說在學我講話，但我每次都變成笑點。",
+                    "statement": "剛才他們學我講話，我覺得不舒服，卻不知道怎麼說。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1582,11 +1582,11 @@ export default [
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道不必為了融入就一直配合被模仿。",
+                "fact": "學生知道可以明確表達不舒服，不需要勉強配合別人的玩笑。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "他們說在學我講話，但我每次都變成笑點。",
+                    "statement": "剛才他們學我講話，我覺得不舒服，卻不知道怎麼說。",
                     "belief": "believed",
                     "visible": false
                   }

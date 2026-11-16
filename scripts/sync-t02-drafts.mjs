@@ -15,10 +15,10 @@ for(let i=1;i<=8;i++){
 }
 if(all.length!==208||new Set(all.map(r=>r.definition.id)).size!==208)throw new Error('T02 expected 208 distinct records');
 const entries=read('work/18b-global-event-isolation.json').t02.entries;
-if(entries.length!==17||entries.filter(e=>e.status==='blocked').length!==9||entries.filter(e=>e.status==='held').length!==8)throw new Error('Unexpected registry counts');
+if(entries.length!==18||entries.filter(e=>e.status==='blocked').length!==9||entries.filter(e=>e.status==='held').length!==9)throw new Error('Unexpected registry counts');
 const ids=entries.map(e=>e.id).sort();
-if(new Set(ids).size!==17||ids.some(id=>!all.some(r=>r.definition.id===id)))throw new Error('Unknown excluded event');
+if(new Set(ids).size!==18||ids.some(id=>!all.some(r=>r.definition.id===id)))throw new Error('Unknown excluded event');
 write('src/runtime/content/t02-isolation.js',['// Generated from work/18b-global-event-isolation.json; not an auto-unlock switch.','export const T02_ISOLATED_IDS = Object.freeze('+JSON.stringify(ids,null,2)+');',''].join(nl));
 write('src/runtime/content/t02.js',[...Array.from({length:8},(_,i)=>'import t'+(i+1)+" from './t02-0"+(i+1)+".js';"),'export const T02_BATCH_RECORDS=['+Array.from({length:8},(_,i)=>'...t'+(i+1)).join(',')+'];',''].join(nl));
 if(stale)process.exitCode=1;
-else console.log('T02 sync '+(check?'check ':'')+'OK; 208 stories / 17 isolated / 191 engineering records');
+else console.log('T02 sync '+(check?'check ':'')+'OK; 208 stories / 18 isolated / 190 engineering records');

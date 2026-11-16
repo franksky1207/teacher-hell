@@ -1,8 +1,7 @@
 name: 18-B T03 isolated draft focused verification
 on:
-  push:
-    branches:
-      - feat/18b-t03-content-production-20261116
+  workflow_dispatch:
+  pull_request:
     paths:
       - 'work/18b-t03-*-authoring.json'
       - 'work/18b-t03-*-exploration.json'
@@ -11,12 +10,6 @@ on:
       - 'scripts/sync-t03-drafts.mjs'
       - 'test/18b-t03-isolated-authoring.test.js'
       - '.github/workflows/phase18b-t03-drafts.yml'
-  pull_request:
-    paths:
-      - 'work/18b-t03-*-authoring.json'
-      - 'src/runtime/content/t03*.js'
-      - 'scripts/sync-t03-drafts.mjs'
-      - 'test/18b-t03-isolated-authoring.test.js'
 permissions:
   contents: read
 jobs:

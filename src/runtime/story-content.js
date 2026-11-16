@@ -191,7 +191,7 @@ export const PACKAGE4_STORIES=freeze(PACKAGE4_SAMPLES.map(validateStory));
 /** Test-addressable but NEVER added to a formal event catalogue. */
 export const PILOT_18B2_STORIES=freeze(PILOT_18B2_CAUSAL_STORIES.map(validateStory));
 /** T01 author-final 200 are engineering-only; preserve eight external approvals separately. */
-export const T01_DRAFT_STORIES=freeze(T01_BATCH_RECORDS.map(r=>validateStory(r.story)));
+export const T01_DRAFT_STORIES=freeze(T01_BATCH_RECORDS.map(r=>{try{return validateStory(r.story);}catch(e){throw new Error('T01 draft '+r.story.resourceId+': '+e.message,{cause:e});}}));
 export function t01DraftCatalogue(){
  const definitions=structuredClone(T01_BATCH_RECORDS.map(r=>r.definition));
  return {type:'register-event-catalogue',catalogueId:'engineering:18b-t01-v1',definitions,

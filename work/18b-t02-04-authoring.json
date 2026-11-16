@@ -1918,20 +1918,20 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.2,
-          0.18,
-          0.15,
-          0.13,
-          0.1
+          0.18181818181818182,
+          0.36363636363636365,
+          0.2727272727272727,
+          0.09090909090909091,
+          0.0,
+          0.09090909090909091
         ],
         "directions": [
           1,
-          -1,
           1,
           1,
-          -1,
-          1
+          1,
+          1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -1975,7 +1975,7 @@
         "teacherResponsibility": "導師僅能就實際得知的情境提供合理協助與轉介，不擅自裁定他人意圖或升學結果。",
         "knowledgeSource": "當事人本次陳述，其他人之行為及機構決策仍待查證。",
         "distinctiveConsequence": "學生辨認出簡報和通知版本不同，尚未證實名額實際減少。／學生整理詢問內容，學校尚未提出書面說明。／學生保存可供比對的資料，未散播有人暗箱操作的說法。／導師理解不安，不以學生猜測認定程序違失。",
-        "numericRationale": "保留小主題核心碼；附加碼及方向權重為初稿，須於精準驗證時按個別前因確認，尚未核准。",
+        "numericRationale": "依本篇起因「升學說明會一散場，學生發現最新簡報提到的校內推薦名額比先前班群通知少了一個。」校準候選傾向：1-4 高（相對權重2）、2-2 高（相對權重4）、8-3 高（相對權重3）、3-1 高（相對權重1）、2-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "review": "author-draft-not-verified",
         "gradeGateWarning": null
       }
@@ -2243,20 +2243,20 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.2,
-          0.18,
-          0.15,
-          0.13,
-          0.1
+          0.2222222222222222,
+          0.4444444444444444,
+          0.0,
+          0.2222222222222222,
+          0.0,
+          0.1111111111111111
         ],
         "directions": [
           1,
-          -1,
           1,
           1,
-          -1,
-          1
+          1,
+          1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -2273,7 +2273,11 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            2,
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -2300,7 +2304,7 @@
         "teacherResponsibility": "導師僅能就實際得知的情境提供合理協助與轉介，不擅自裁定他人意圖或升學結果。",
         "knowledgeSource": "當事人本次陳述，其他人之行為及機構決策仍待查證。",
         "distinctiveConsequence": "學生找出成績來源，尚未判定哪些學期符合校內排序規則。／學生知道可以請承辦單位核算，導師未自行重算排名。／學生整理資料缺口，尚未替前校證明文件作結論。／導師理解失落，未保證每項成績都可直接採計。",
-        "numericRationale": "保留小主題核心碼；附加碼及方向權重為初稿，須於精準驗證時按個別前因確認，尚未核准。",
+        "numericRationale": "依本篇起因「午休在輔導室，轉學生攤開先前學校的成績資料，問為何系統只顯示部分學期排名。」校準候選傾向：1-4 高（相對權重2）、2-2 高（相對權重4）、3-1 高（相對權重2）、2-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "review": "author-draft-not-verified",
         "gradeGateWarning": null
       }
@@ -2321,7 +2325,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "高三早自習，教室。學生以班排推估校內推薦順序，產生錯誤期待。",
+                "text": "高三早自習，學生把自己的各科成績乘上相同權重，算出的學期平均卻與正式成績單不同，擔心校內推薦比序也跟著算錯。",
                 "speaker": null,
                 "scene": "school:classroom",
                 "cast": [],
@@ -2329,7 +2333,7 @@
               },
               {
                 "order": 2,
-                "text": "我班排不差，全校推薦順位怎麼落那麼後面？",
+                "text": "我每科都除一樣的數，為什麼平均不一樣？推薦的成績是不是也算錯了？",
                 "speaker": "participant",
                 "scene": "school:classroom",
                 "cast": [
@@ -2345,15 +2349,15 @@
             "choices": [
               {
                 "id": "clarify",
-                "text": "區分班排與校內排序母體",
+                "text": "先核對各科學分與成績單的計算欄位",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生對照班排與校內推薦排序，發現兩者使用的比較範圍可能不同。",
+                  "fact": "學生發現自己的試算未依正式欄位加權，尚不能據此宣稱學校算錯。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "我班排不差，全校推薦順位怎麼落那麼後面？",
+                      "statement": "我每科都除一樣的數，為什麼平均不一樣？推薦的成績是不是也算錯了？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -2387,7 +2391,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -2395,15 +2399,15 @@
               },
               {
                 "id": "check",
-                "text": "核對推薦計算規則",
+                "text": "區分學期平均與推薦比序使用的資料",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生找到需核對的採計學期與群組資料，沒有把順位落差直接當成錯誤。",
+                  "fact": "學生列出兩種計算需查的規定，不再把自己的單一平均直接當推薦順位。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "我班排不差，全校推薦順位怎麼落那麼後面？",
+                      "statement": "我每科都除一樣的數，為什麼平均不一樣？推薦的成績是不是也算錯了？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -2437,7 +2441,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -2445,15 +2449,15 @@
               },
               {
                 "id": "choice",
-                "text": "引導提出具體疑問",
+                "text": "整理具體差額向教務窗口查詢",
                 "kind": "defer",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生把想問的分母與計算規則列出，決定先向承辦取得說明。",
+                  "fact": "學生準備提交可重現的計算式與原始成績，尚未造成任何人的順位變更。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "我班排不差，全校推薦順位怎麼落那麼後面？",
+                      "statement": "我每科都除一樣的數，為什麼平均不一樣？推薦的成績是不是也算錯了？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -2487,7 +2491,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -2495,15 +2499,15 @@
               },
               {
                 "id": "care",
-                "text": "理解預期落差",
+                "text": "看到數字對不上，先擔心很正常",
                 "kind": "support",
                 "emotional": true,
                 "outcome": {
-                  "fact": "學生承認自己原以為班排名次足夠，導師沒有以個人猜測預告推薦結果。",
+                  "fact": "導師回應不安，將問題留在可核對的計算差異，不討論其他學生的私人名次。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "我班排不差，全校推薦順位怎麼落那麼後面？",
+                      "statement": "我每科都除一樣的數，為什麼平均不一樣？推薦的成績是不是也算錯了？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -2537,7 +2541,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -2568,18 +2572,18 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.08333333333333333,
+          0.25,
+          0.4166666666666667,
+          0.08333333333333333,
+          0.16666666666666666,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -2601,6 +2605,11 @@
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -2624,14 +2633,14 @@
       "editorial": {
         "title": "全校排名和班排不同",
         "candidateId": "T02-04-C04",
-        "cause": "學生以班排推估校內推薦順序，產生錯誤期待",
+        "cause": "高三早自習，學生把自己的各科成績乘上相同權重，算出的學期平均卻與正式成績單不同，擔心校內推薦比序也跟著算錯。",
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
-        "distinctiveConsequence": "學生對照班排與校內推薦排序，發現兩者使用的比較範圍可能不同。／學生找到需核對的採計學期與群組資料，沒有把順位落差直接當成錯誤。／學生把想問的分母與計算規則列出，決定先向承辦取得說明。／學生承認自己原以為班排名次足夠，導師沒有以個人猜測預告推薦結果。",
+        "distinctiveConsequence": "學生發現自己的試算未依正式欄位加權，尚不能據此宣稱學校算錯。／學生列出兩種計算需查的規定，不再把自己的單一平均直接當推薦順位。／學生準備提交可重現的計算式與原始成績，尚未造成任何人的順位變更。／導師回應不安，將問題留在可核對的計算差異，不討論其他學生的私人名次。",
         "narrativeTime": "高三早自習",
         "scene": "school:classroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「高三早自習，學生把自己的各科成績乘上相同權重，算出的學期平均卻與正式成績單不同，擔心校內推薦比序也跟著算錯。」校準候選傾向：1-4 高（相對權重1）、2-2 高（相對權重3）、8-3 高（相對權重5）、3-1 高（相對權重1）、4-4 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "gradeQualificationNote": "按故事中明確學年／選組／轉組情境限制年級為3；這是候選條件，非確定發生日期。"
       }
@@ -2899,20 +2908,20 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.3333333333333333,
+          0.4444444444444444,
+          0.0,
+          0.1111111111111111,
+          0.0,
+          0.1111111111111111
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
           1,
-          1
+          1,
+          1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -2959,7 +2968,7 @@
         "narrativeTime": "午休",
         "scene": "school:administration",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，行政辦公室。學生擔心個人排名遭他人任意查閱。」校準候選傾向：1-4 高（相對權重3）、2-2 高（相對權重4）、3-1 高（相對權重1）、2-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "semanticRepair": "四選項結果已按本事件的證據、實際行動、程序與情緒分別重寫；仍未獨立審稿。"
       }
@@ -3227,20 +3236,20 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.09090909090909091,
+          0.45454545454545453,
+          0.2727272727272727,
+          0.09090909090909091,
+          0.0,
+          0.09090909090909091
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
           1,
-          1
+          1,
+          1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -3257,7 +3266,11 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            2,
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -3287,7 +3300,7 @@
         "narrativeTime": "升學說明後",
         "scene": "school:corridor",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「升學說明後，走廊。學生忽然發現校內規則可能納入較早學期成績。」校準候選傾向：1-4 高（相對權重1）、2-2 高（相對權重5）、8-3 高（相對權重3）、3-1 高（相對權重1）、2-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null
       }
     },
@@ -3554,18 +3567,18 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.2222222222222222,
+          0.4444444444444444,
+          0.2222222222222222,
+          0.1111111111111111,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -3584,7 +3597,11 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            2,
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -3614,8 +3631,13 @@
         "narrativeTime": "開學課後",
         "scene": "school:administration",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
-        "qualificationWarning": null
+        "numericRationale": "依本篇起因「開學課後，學生在行政辦公室向導師轉述家長的疑惑：重修與原成績究竟如何納入校內排名？」校準候選傾向：1-4 高（相對權重2）、2-2 高（相對權重4）、8-3 高（相對權重2）、3-1 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
+        "qualificationWarning": null,
+        "hydrogenDisposition": {
+          "status": "blocked",
+          "reason": "原故事需要本人歷史重修成績及更正通知；現行academic credit-deficit只能查未取得學分，會錯誤排除已重修及格者，不能照抄該建議。仍隔離待歷史證據資格。",
+          "formalCandidate": false
+        }
       }
     },
     {
@@ -3881,18 +3903,18 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.3333333333333333,
+          0.3333333333333333,
+          0.2222222222222222,
+          0.1111111111111111,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -3911,7 +3933,10 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -3941,7 +3966,7 @@
         "narrativeTime": "家長會後",
         "scene": "school:meeting-room",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「家長會後，會議室。學生拿到兩份不同版本的推薦辦法。」校準候選傾向：1-4 高（相對權重3）、2-2 高（相對權重3）、8-3 高（相對權重2）、3-1 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null
       }
     },
@@ -4208,18 +4233,18 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.23076923076923078,
+          0.15384615384615385,
+          0.23076923076923078,
+          0.15384615384615385,
+          0.23076923076923078,
+          0.0
         ],
         "directions": [
-          1,
           -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -4268,7 +4293,7 @@
         "narrativeTime": "午餐",
         "scene": "school:classroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午餐，教室。學生想靠導師取得他人尚未公開名次。」校準候選傾向：1-4 低（相對權重3）、2-2 高（相對權重2）、8-3 高（相對權重3）、3-1 高（相對權重2）、4-4 高（相對權重3）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "semanticRepair": "四選項結果已按本事件的證據、實際行動、程序與情緒分別重寫；仍未獨立審稿。"
       }
@@ -4543,18 +4568,18 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.4,
+          0.2,
+          0.0,
+          0.3,
+          0.1,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -4603,7 +4628,7 @@
         "narrativeTime": "班會後",
         "scene": "school:teachers-office",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「班會後，教師辦公室。學生提出推薦計算爭議，希望學校收件。」校準候選傾向：1-4 高（相對權重4）、2-2 高（相對權重2）、3-1 高（相對權重3）、4-4 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "numericEffectBasis": "學生把沒有證據的指控改為可核對的具體疑問，稍減當下焦慮。"
       }
@@ -4632,7 +4657,7 @@
               },
               {
                 "order": 2,
-                "text": "明天就公告了，可以先告訴我家長名額嗎？",
+                "text": "推薦名單還沒公告，可以先告訴我孩子有沒有名額嗎？",
                 "speaker": "participant",
                 "scene": "home:living-room",
                 "cast": [
@@ -4656,7 +4681,7 @@
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "明天就公告了，可以先告訴我家長名額嗎？",
+                      "statement": "推薦名單還沒公告，可以先告訴我孩子有沒有名額嗎？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -4701,7 +4726,7 @@
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "明天就公告了，可以先告訴我家長名額嗎？",
+                      "statement": "推薦名單還沒公告，可以先告訴我孩子有沒有名額嗎？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -4746,7 +4771,7 @@
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "明天就公告了，可以先告訴我家長名額嗎？",
+                      "statement": "推薦名單還沒公告，可以先告訴我孩子有沒有名額嗎？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -4791,7 +4816,7 @@
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "明天就公告了，可以先告訴我家長名額嗎？",
+                      "statement": "推薦名單還沒公告，可以先告訴我孩子有沒有名額嗎？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -4851,18 +4876,18 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.1111111111111111,
+          0.5555555555555556,
+          0.2222222222222222,
+          0.1111111111111111,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -4881,7 +4906,10 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -4911,7 +4939,7 @@
         "narrativeTime": "晚間電話",
         "scene": "home:living-room",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「晚間電話，教師住處。家長要求先知道孩子是否有機會。」校準候選傾向：1-4 高（相對權重1）、2-2 高（相對權重5）、8-3 高（相對權重2）、3-1 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
         "timeEligibilityNote": "一般上課日晚間私人時段，校外訊息只作遠距接觸",
         "participantScopeCorrection": "家長為當事人，不能抽成學生口吻。",
@@ -5183,18 +5211,18 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.0,
+          0.3,
+          0.5,
+          0.1,
+          0.1,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -5213,7 +5241,10 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -5243,7 +5274,7 @@
         "narrativeTime": "下課",
         "scene": "school:corridor",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「下課，走廊。學生傳聞前面有人放棄，但本人未證實。」校準候選傾向：2-2 高（相對權重3）、8-3 高（相對權重5）、3-1 高（相對權重1）、4-4 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "semanticRepair": "四策略結果改為本案具體行動、真實資訊及尚未確定之事；未經獨立審稿。"
       }
@@ -5511,18 +5542,18 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.4,
+          0.2,
+          0.2,
+          0.2,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -5571,7 +5602,7 @@
         "narrativeTime": "選組說明會後",
         "scene": "school:auditorium",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「選組說明會後，禮堂。學生質疑不同課程群組的計算方式。」校準候選傾向：1-4 高（相對權重4）、2-2 高（相對權重2）、8-3 高（相對權重2）、3-1 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "semanticRepair": "四策略結果改為本案具體行動、真實資訊及尚未確定之事；未經獨立審稿。"
       }
@@ -5839,20 +5870,20 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.2,
+          0.2,
+          0.4,
+          0.1,
+          0.0,
+          0.1
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
           1,
-          1
+          1,
+          1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -5899,7 +5930,7 @@
         "narrativeTime": "公告欄前",
         "scene": "school:corridor",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「公告欄前，走廊。學生發現榜單標示年度錯誤，大家仍在轉傳。」校準候選傾向：1-4 高（相對權重2）、2-2 高（相對權重2）、8-3 高（相對權重4）、3-1 高（相對權重1）、2-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "semanticRepair": "四策略結果改為本案具體行動、真實資訊及尚未確定之事；未經獨立審稿。"
       }
@@ -6167,20 +6198,20 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.3,
+          0.3,
+          0.1,
+          0.2,
+          0.0,
+          0.1
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
           1,
-          1
+          1,
+          1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -6227,7 +6258,7 @@
         "narrativeTime": "親師日",
         "scene": "school:classroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「親師日，教室。家長希望老師在班會上公布所有名次，學生反對。」校準候選傾向：1-4 高（相對權重3）、2-2 高（相對權重3）、8-3 高（相對權重1）、3-1 高（相對權重2）、2-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "semanticRepair": "四策略結果改為本案具體行動、真實資訊及尚未確定之事；未經獨立審稿。"
       }
@@ -6248,7 +6279,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "午休，行政辦公室。學生不知道備取遞補和學校推薦規則。",
+                "text": "午休，學生拿著校內推薦作業通知到行政辦公室，發現回覆期限快到，想知道等候其他人回覆時自己是否還要交件。",
                 "speaker": null,
                 "scene": "school:administration",
                 "cast": [],
@@ -6256,7 +6287,7 @@
               },
               {
                 "order": 2,
-                "text": "候補順位是不是前面放棄就一定輪到我？",
+                "text": "我還在等推薦順位，通知卻要先回覆，現在不交是不是就算放棄？",
                 "speaker": "participant",
                 "scene": "school:administration",
                 "cast": [
@@ -6272,15 +6303,15 @@
             "choices": [
               {
                 "id": "clarify",
-                "text": "核對候補適用條件",
+                "text": "先逐項核對這張通知要求回覆什麼",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生確認自己的候補身分仍取決於正式順位及資格，不能只看別人口頭放棄。",
+                  "fact": "學生分清目前是校內意願確認還是正式推薦，不把等待順位當作免交文件。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "候補順位是不是前面放棄就一定輪到我？",
+                      "statement": "我還在等推薦順位，通知卻要先回覆，現在不交是不是就算放棄？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -6314,7 +6345,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -6322,15 +6353,15 @@
               },
               {
                 "id": "check",
-                "text": "說明正式遞補程序",
+                "text": "確認期限及未回覆的正式處理規則",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生核對遞補規定及權責窗口，尚未取得校內推薦。",
+                  "fact": "學生找到承辦窗口，尚未由導師口頭保證逾期仍能保留資格。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "候補順位是不是前面放棄就一定輪到我？",
+                      "statement": "我還在等推薦順位，通知卻要先回覆，現在不交是不是就算放棄？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -6364,7 +6395,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -6372,15 +6403,15 @@
               },
               {
                 "id": "choice",
-                "text": "查明確認期限",
+                "text": "協助整理要向承辦詢問的具體問題",
                 "kind": "defer",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生將應注意的確認時限寫下，沒有要求他人透露個人決定。",
+                  "fact": "學生把現有順位與通知日期寫清楚，準備在期限內確認程序。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "候補順位是不是前面放棄就一定輪到我？",
+                      "statement": "我還在等推薦順位，通知卻要先回覆，現在不交是不是就算放棄？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -6414,7 +6445,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -6422,15 +6453,15 @@
               },
               {
                 "id": "care",
-                "text": "理解候補壓力",
+                "text": "一邊等消息一邊怕錯過期限，確實難熬",
                 "kind": "support",
                 "emotional": true,
                 "outcome": {
-                  "fact": "學生知道等待有壓力，但導師不以好消息傳聞作保證。",
+                  "fact": "導師理解等待壓力，同時提醒可先查證自己應完成的程序。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "候補順位是不是前面放棄就一定輪到我？",
+                      "statement": "我還在等推薦順位，通知卻要先回覆，現在不交是不是就算放棄？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -6464,7 +6495,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -6495,18 +6526,18 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.2,
+          0.4,
+          0.2,
+          0.2,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -6525,7 +6556,15 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -6548,14 +6587,14 @@
       "editorial": {
         "title": "推薦名單的候補順位",
         "candidateId": "T02-04-C19",
-        "cause": "學生不知道備取遞補和學校推薦規則",
+        "cause": "午休，學生拿著校內推薦作業通知到行政辦公室，發現回覆期限快到，想知道等候其他人回覆時自己是否還要交件。",
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
-        "distinctiveConsequence": "學生確認自己的候補身分仍取決於正式順位及資格，不能只看別人口頭放棄。／學生核對遞補規定及權責窗口，尚未取得校內推薦。／學生將應注意的確認時限寫下，沒有要求他人透露個人決定。／學生知道等待有壓力，但導師不以好消息傳聞作保證。",
+        "distinctiveConsequence": "學生分清目前是校內意願確認還是正式推薦，不把等待順位當作免交文件。／學生找到承辦窗口，尚未由導師口頭保證逾期仍能保留資格。／學生把現有順位與通知日期寫清楚，準備在期限內確認程序。／導師理解等待壓力，同時提醒可先查證自己應完成的程序。",
         "narrativeTime": "午休",
         "scene": "school:administration",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，學生拿著校內推薦作業通知到行政辦公室，發現回覆期限快到，想知道等候其他人回覆時自己是否還要交件。」校準候選傾向：1-4 高（相對權重2）、2-2 高（相對權重4）、8-3 高（相對權重2）、3-1 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "semanticRepair": "四策略結果改為本案具體行動、真實資訊及尚未確定之事；未經獨立審稿。"
       }
@@ -6830,20 +6869,20 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.3076923076923077,
+          0.38461538461538464,
+          0.0,
+          0.07692307692307693,
+          0.15384615384615385,
+          0.07692307692307693
         ],
         "directions": [
           1,
-          -1,
+          1,
           1,
           -1,
           1,
-          1
+          -1
         ],
         "eligibility": {
           "people": [
@@ -6860,7 +6899,10 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -6890,7 +6932,7 @@
         "narrativeTime": "評量後",
         "scene": "school:teachers-office",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「評量後，教師辦公室。學生發現成績疑點但擔心被認為搶別人的機會。」校準候選傾向：1-4 高（相對權重4）、2-2 高（相對權重5）、3-1 低（相對權重1）、4-4 高（相對權重2）、2-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "semanticRepair": "四策略結果改為本案具體行動、真實資訊及尚未確定之事；未經獨立審稿。",
         "numericCausalityNote": "僅care選項產生可觀察的短期情緒變化，依當場反應更新2-2 -0.4；其他分支不憑空更動長期能力，原候選六碼仍待校準。"
@@ -6912,7 +6954,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "說明會散場，禮堂。家長追問尚未釐清的推薦資格細則。",
+                "text": "午休，家長在校內向導師出示先前說明會資料，追問尚未釐清的推薦資格細則。",
                 "speaker": null,
                 "scene": "school:auditorium",
                 "cast": [],
@@ -7159,18 +7201,18 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.3,
+          0.3,
+          0.2,
+          0.2,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -7189,7 +7231,10 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -7212,14 +7257,14 @@
       "editorial": {
         "title": "校內說明只剩五分鐘",
         "candidateId": "T02-04-C21",
-        "cause": "說明會結束後，家長本人向導師詢問推薦資格細則，仍需由正式承辦單位確認。",
+        "cause": "午休，家長在校內向導師出示先前說明會資料，追問尚未釐清的推薦資格細則。",
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
         "distinctiveConsequence": "學生將說明會沒聽懂的兩條條文圈出來，沒有假裝已理解。／學生找到可查詢的正式書面辦法，仍有幾項細節待確認。／學生準備向承辦提出具體問句，尚未得到官方解答。／學生說出時間不夠導致的急躁，導師沒有用簡化口號敷衍。",
         "narrativeTime": "說明會散場",
         "scene": "school:auditorium",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，家長在校內向導師出示先前說明會資料，追問尚未釐清的推薦資格細則。」校準候選傾向：1-4 高（相對權重3）、2-2 高（相對權重3）、8-3 高（相對權重2）、3-1 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "participantScopeCorrection": "家長為當事人，不能抽成學生口吻。",
         "semanticRepair": "四策略結果改為本案具體行動、真實資訊及尚未確定之事；未經獨立審稿。"
@@ -7241,7 +7286,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "週末晚間電話，家中客廳。家長引用多年前升學制度要求依舊辦。",
+                "text": "週末晚間，家長來電拿出多年前校內推薦比序表，要求沿用舊表上的同分處理方式，尚未核對今年公告。",
                 "speaker": null,
                 "scene": "home:living-room",
                 "cast": [],
@@ -7249,7 +7294,7 @@
               },
               {
                 "order": 2,
-                "text": "我當年升學不是這樣，學校怎麼能改？",
+                "text": "以前校內同分就是這樣排，今年怎麼不能照舊表算？",
                 "speaker": "participant",
                 "scene": "home:living-room",
                 "cast": [
@@ -7265,15 +7310,15 @@
             "choices": [
               {
                 "id": "clarify",
-                "text": "核對學生適用年度",
+                "text": "先確認舊表的年度與適用範圍",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "家長確認自己當年升學的規則不一定適用本屆學生。",
+                  "fact": "家長核對文件年份，知道舊校內比序表不等於今年正式規定。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "我當年升學不是這樣，學校怎麼能改？",
+                      "statement": "以前校內同分就是這樣排，今年怎麼不能照舊表算？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -7302,7 +7347,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "家長以遠距通訊向導師說明其個人感受；此接觸不代表雙方實際同處一室。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -7310,15 +7355,15 @@
               },
               {
                 "id": "check",
-                "text": "區分舊制和現規",
+                "text": "查找當年度校內同分比序公告",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "家長看見不同年度公告存在差異，尚未確定影響孩子哪些資格。",
+                  "fact": "家長記下官方查詢來源，尚未據舊文件要求變更任何學生順位。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "我當年升學不是這樣，學校怎麼能改？",
+                      "statement": "以前校內同分就是這樣排，今年怎麼不能照舊表算？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -7347,7 +7392,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "家長以遠距通訊向導師說明其個人感受；此接觸不代表雙方實際同處一室。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -7355,15 +7400,15 @@
               },
               {
                 "id": "choice",
-                "text": "引導核實條文",
+                "text": "將規則疑義整理給校內承辦窗口",
                 "kind": "defer",
                 "emotional": false,
                 "outcome": {
-                  "fact": "家長決定先向承辦核對本年度正式辦法，不以舊經驗要求更改名單。",
+                  "fact": "家長列出新舊條文的具體差別，導師未代替委員會承諾修改規則。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "我當年升學不是這樣，學校怎麼能改？",
+                      "statement": "以前校內同分就是這樣排，今年怎麼不能照舊表算？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -7392,7 +7437,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "家長以遠距通訊向導師說明其個人感受；此接觸不代表雙方實際同處一室。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -7400,15 +7445,15 @@
               },
               {
                 "id": "care",
-                "text": "理解制度變動",
+                "text": "規則變了卻找不到說明，確實會不安",
                 "kind": "support",
                 "emotional": true,
                 "outcome": {
-                  "fact": "家長坦承怕孩子吃虧，導師承認制度變動讓人難以適應。",
+                  "fact": "導師理解需要清楚解釋的心情，沒有附和未經查證的偏袒指控。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "我當年升學不是這樣，學校怎麼能改？",
+                      "statement": "以前校內同分就是這樣排，今年怎麼不能照舊表算？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -7437,7 +7482,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "家長以遠距通訊向導師說明其個人感受；此接觸不代表雙方實際同處一室。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -7468,18 +7513,18 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.36363636363636365,
+          0.18181818181818182,
+          0.36363636363636365,
+          0.09090909090909091,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -7522,14 +7567,14 @@
       "editorial": {
         "title": "家長說以前都不是這樣",
         "candidateId": "T02-04-C23",
-        "cause": "家長引用多年前升學制度要求依舊辦",
+        "cause": "週末晚間，家長來電拿出多年前校內推薦比序表，要求沿用舊表上的同分處理方式，尚未核對今年公告。",
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
-        "distinctiveConsequence": "家長確認自己當年升學的規則不一定適用本屆學生。／家長看見不同年度公告存在差異，尚未確定影響孩子哪些資格。／家長決定先向承辦核對本年度正式辦法，不以舊經驗要求更改名單。／家長坦承怕孩子吃虧，導師承認制度變動讓人難以適應。",
+        "distinctiveConsequence": "家長核對文件年份，知道舊校內比序表不等於今年正式規定。／家長記下官方查詢來源，尚未據舊文件要求變更任何學生順位。／家長列出新舊條文的具體差別，導師未代替委員會承諾修改規則。／導師理解需要清楚解釋的心情，沒有附和未經查證的偏袒指控。",
         "narrativeTime": "週末晚間電話",
         "scene": "home:living-room",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「週末晚間，家長來電拿出多年前校內推薦比序表，要求沿用舊表上的同分處理方式，尚未核對今年公告。」校準候選傾向：1-4 高（相對權重4）、2-2 高（相對權重2）、8-3 高（相對權重4）、3-1 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
         "timeEligibilityNote": "週末夜間私人時段",
         "participantScopeCorrection": "家長為當事人，不能抽成學生口吻。",
@@ -7801,20 +7846,20 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.13333333333333333,
+          0.26666666666666666,
+          0.3333333333333333,
+          0.06666666666666667,
+          0.06666666666666667,
+          0.13333333333333333
         ],
         "directions": [
           1,
-          -1,
+          1,
           1,
           -1,
           1,
-          1
+          -1
         ],
         "eligibility": {
           "people": [
@@ -7861,7 +7906,7 @@
         "narrativeTime": "學期結算隔天",
         "scene": "school:classroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「學期結算隔天，教室。學生看到榜單更新，先懷疑有人暗箱操作。」校準候選傾向：1-4 高（相對權重2）、2-2 高（相對權重4）、8-3 高（相對權重5）、3-1 低（相對權重1）、4-4 高（相對權重1）、2-4 低（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "semanticRepair": "四選項結果已按本事件的證據、實際行動、程序與情緒分別重寫；仍未獨立審稿。"
       }
@@ -7882,7 +7927,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "推薦會議散場，一名家長在行政辦公室外攔住導師，手上拿著學生的觀察紀錄摘要。",
+                "text": "午休，一名家長在行政辦公室外詢問導師，手上拿著學生觀察紀錄摘要，想知道導師能否直接決定推薦名單。",
                 "speaker": null,
                 "scene": "school:administration",
                 "cast": [],
@@ -7948,7 +7993,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                        "description": "本次由家長直接向導師表達個人的看法，未讓第三人自動知情。"
                       }
                     ]
                   }
@@ -7998,7 +8043,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                        "description": "本次由家長直接向導師表達個人的看法，未讓第三人自動知情。"
                       }
                     ]
                   }
@@ -8048,7 +8093,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                        "description": "本次由家長直接向導師表達個人的看法，未讓第三人自動知情。"
                       }
                     ]
                   }
@@ -8098,7 +8143,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生直接向導師表達個人的看法，未讓第三人自動知情。"
+                        "description": "本次由家長直接向導師表達個人的看法，未讓第三人自動知情。"
                       }
                     ]
                   }
@@ -8129,18 +8174,18 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.2727272727272727,
+          0.2727272727272727,
+          0.09090909090909091,
+          0.18181818181818182,
+          0.18181818181818182,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -8159,7 +8204,10 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -8182,14 +8230,14 @@
       "editorial": {
         "title": "提供資料不代表承諾",
         "candidateId": "T02-04-C26",
-        "cause": "推薦會議散場，一名家長在行政辦公室外攔住導師，手上拿著學生的觀察紀錄摘要。",
+        "cause": "午休，一名家長在行政辦公室外詢問導師，手上拿著學生觀察紀錄摘要，想知道導師能否直接決定推薦名單。",
         "knowledgeSource": "只採計人物在場、直接訊息及確實持有的證據；未經查證的校務結果、他人意願不得當既定事實。",
         "teacherResponsibility": "導師只提交權責內的事實紀錄；推薦順位及名額依校內正式程序審議。",
         "distinctiveConsequence": "家長知道導師提供的是實際觀察紀錄，並非替校內推薦作業投下決定票。／家長取得正式推薦審議權責的查詢方式；校內審議結果不因此變動。／導師釐清自己實際提交的資料範圍，沒有向家長透露其他學生的評估內容。／導師理解家長的焦慮，同時守住推薦權責與學生資料的界線。",
         "narrativeTime": "會議後",
         "scene": "school:administration",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，一名家長在行政辦公室外詢問導師，手上拿著學生觀察紀錄摘要，想知道導師能否直接決定推薦名單。」校準候選傾向：1-4 高（相對權重3）、2-2 高（相對權重3）、8-3 高（相對權重1）、3-1 高（相對權重2）、4-4 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "participantScopeCorrection": "家長提問，教師為玩家而非學生NPC。",
         "semanticRepair": "四策略結果改為本案具體行動、真實資訊及尚未確定之事；未經獨立審稿。",
@@ -8459,20 +8507,20 @@
           "2-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.15384615384615385,
+          0.38461538461538464,
+          0.0,
+          0.23076923076923078,
+          0.15384615384615385,
+          0.07692307692307693
         ],
         "directions": [
           1,
-          -1,
+          1,
           1,
           -1,
           1,
-          1
+          -1
         ],
         "eligibility": {
           "people": [
@@ -8519,7 +8567,7 @@
         "narrativeTime": "週會",
         "scene": "school:auditorium",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「週會，禮堂。行政主動澄清算法，卻有學生不敢當眾提問。」校準候選傾向：1-4 高（相對權重2）、2-2 高（相對權重5）、3-1 低（相對權重3）、4-4 高（相對權重2）、2-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "semanticRepair": "四策略結果改為本案具體行動、真實資訊及尚未確定之事；未經獨立審稿。"
       }

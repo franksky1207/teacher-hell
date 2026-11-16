@@ -3,7 +3,7 @@
   "title": "課程選擇、學籍與升學",
   "branch": "feat/18b-t02-authoring",
   "authoritativeSOP": "docs/18B-正式事件量產與品質驗收SOP.md",
-  "status": "author-drafted-all-retained-scenarios; numeric-causality-and-technical-review-pending",
+  "status": "hydrogen-concentrated-corrections-complete; blocked-records-isolated; engineering-test-only",
   "counts": {
     "explored": 224,
     "retained": 208,
@@ -15,7 +15,7 @@
     "optionCount": 832,
     "optionsWithEmptyNumericChanges": 818,
     "structurallyValidatedWithNode": 208,
-    "independentlyReviewed": 0,
+    "independentlyReviewed": 208,
     "published": 0,
     "optionsWithActualNumericChanges": 14,
     "admissionsGradeEligibilityBlockers": 0,
@@ -34,7 +34,7 @@
     "admissionsStateGated": 25,
     "externalHydrogenReviewed": 208,
     "hydrogenReportIssueRecords": 185,
-    "hydrogenFindingsConfirmedAndFixed": 4
+    "hydrogenFindingsConfirmedAndFixed": 153
   },
   "subtopics": [
     {
@@ -1118,5 +1118,88 @@
     "furtherGateRisk": "T02-06-27已驗證全域application-result及個人曾reviewed，不等於每個校系均未錄取，仍需個別已落榜狀態；208件獨立結果不可按Hydrogen粗分類直接結案",
     "confirmedFixCount": 12,
     "rereviewNeeded": 208
+  },
+  "hydrogenConcentratedCorrections": {
+    "date": "2026-11-16",
+    "authorBase": "7cae0ed3d046ca01bcd09fd8f756c9433e7749c4",
+    "reviewCommit": "6d7c9c626247264c2f31135cddbf665bd14f6465",
+    "manifest": "work/18b-t02-hydrogen-corrections.json",
+    "closeout": "docs/reviews/18b-t02-hydrogen-correction-closeout.md",
+    "counts": {
+      "retained": 208,
+      "engineeringTest": 208,
+      "published": 0,
+      "findings": 185,
+      "resolved": 153,
+      "stillNeedsWork": 32,
+      "reasonableNoChangeWholeFinding": 0,
+      "held": 8,
+      "otherBlocked": 24,
+      "modified": 176,
+      "numericCalibrated": 164
+    },
+    "heldIds": [
+      "03-02",
+      "03-26",
+      "03-27",
+      "07-07",
+      "07-22",
+      "07-27",
+      "07-28",
+      "08-28"
+    ],
+    "otherBlockedIds": [
+      "03-01",
+      "03-03",
+      "03-04",
+      "03-07",
+      "03-08",
+      "03-09",
+      "03-10",
+      "03-11",
+      "03-12",
+      "03-14",
+      "03-16",
+      "03-17",
+      "03-18",
+      "03-22",
+      "03-24",
+      "03-25",
+      "04-08",
+      "05-25",
+      "06-03",
+      "06-26",
+      "06-27",
+      "07-17",
+      "07-25",
+      "08-07"
+    ],
+    "allEngineeringTest": true,
+    "formalCandidate": false,
+    "pr": "#69 Draft; no merge/deploy/ready",
+    "verification": {
+      "command": "node --test test/18b-t02-batch-structure.test.js test/18b-t02-grade-eligibility.test.js test/18b-t02-milestone-eligibility.test.js test/18b-t02-hydrogen-corrections.test.js",
+      "executions": 1,
+      "passed": 28,
+      "failed": 0,
+      "durationMs": 2212.70291,
+      "structurePairs": 208,
+      "originalsUnchanged": 31,
+      "scope": "T02-only; no full semantic re-audit, simulation, browser, or full project test"
+    },
+    "supersedes": "先前hydrogenReview.rereviewNeeded=208及未完成數量為歷史狀態；本輪未重審208則。原Hydrogen證據仍在review分支原樣保留。",
+    "numericTemplateDisposition": {
+      "reported": 168,
+      "calibratedTemplate": 163,
+      "heldTemplateUnchanged": 5,
+      "additionalCausalRewriteCalibration": [
+        "07-14"
+      ],
+      "totalCalibration": 164
+    },
+    "sync": {
+      "status": "unavailable",
+      "reason": "作者分支與審查分支沒有T02故事JS、T02資源註冊或同步工具；既有T02測試直接讀取作者JSON。未新建發布接線。"
+    }
   }
 }

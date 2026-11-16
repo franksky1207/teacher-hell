@@ -296,7 +296,10 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -1292,7 +1295,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "家長在親師座談後提到希望孩子一畢業就回家經營店面，學生卻一直看著桌上的升學資料。",
+                "text": "午休，學生向導師轉述家長希望自己畢業後回家經營店面的想法，卻又忍不住翻看升學資料。",
                 "speaker": null,
                 "scene": "school:meeting-room",
                 "cast": [],
@@ -1416,7 +1419,7 @@
               },
               {
                 "id": "alternative",
-                "text": "徵詢雙方是否願意另約正式進路諮詢",
+                "text": "詢問學生是否願意邀家長另約正式進路諮詢",
                 "kind": "defer",
                 "emotional": false,
                 "outcome": {
@@ -1569,7 +1572,10 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -1592,7 +1598,7 @@
       "editorial": {
         "title": "家業是安排，不是孩子的承諾",
         "candidateId": "T02-08-C11",
-        "cause": "家長在親師座談後提到希望孩子一畢業就回家經營店面，學生卻一直看著桌上的升學資料。",
+        "cause": "午休，學生向導師轉述家長希望自己畢業後回家經營店面的想法，卻又忍不住翻看升學資料。",
         "teacherResponsibility": "尊重學生自主，提供合法資訊與適當協助；導師不能替教務、升學或家長做出承諾。",
         "knowledgeSource": "只知道本次實際對話、訊息及所見，其他人的想法、核准、回覆未經證實。",
         "distinctiveConsequence": "學生表達一項具體學習意願，未由導師替他向家長宣告決定。／學生列出費用與可行選項，家長是否接受仍需討論。／學生知道可以尋求校內資源，未經同意不安排強制會談。／導師肯定學生願意表達，不把家業或升學其中一條視為唯一正確。",
@@ -1619,9 +1625,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "週末午後，學生在咖啡店端著打工後的飲料，說自己打算先工作幫家裡分擔開銷。",
+                "text": "週末午後，學生打工後傳來訊息，說自己打算先工作幫家裡分擔開銷。",
                 "speaker": null,
-                "scene": "outside:cafe",
+                "scene": "home:living-room",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -1629,7 +1635,7 @@
                 "order": 2,
                 "text": "我想先賺錢，可是怕一開始工作就再也不會回學校。",
                 "speaker": "participant",
-                "scene": "outside:cafe",
+                "scene": "home:living-room",
                 "cast": [
                   {
                     "role": "participant",
@@ -1674,12 +1680,7 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
@@ -1724,12 +1725,7 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
@@ -1774,12 +1770,7 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
@@ -1824,12 +1815,7 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
@@ -1866,17 +1852,17 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.2,
-          0.18,
-          0.15,
-          0.13,
-          0.1
+          0.36363636363636365,
+          0.09090909090909091,
+          0.2727272727272727,
+          0.18181818181818182,
+          0.09090909090909091,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
+          -1,
           1,
           -1,
           1
@@ -1886,13 +1872,10 @@
             "student"
           ],
           "dayKinds": [
-            "school",
             "weekend",
             "holiday"
           ],
           "slotIds": [
-            "private",
-            "evening",
             "afternoon"
           ],
           "from": null,
@@ -1923,13 +1906,14 @@
       "editorial": {
         "title": "家計壓力與進修路徑",
         "candidateId": "T02-08-C04",
-        "cause": "週末午後，學生在咖啡店端著打工後的飲料，說自己打算先工作幫家裡分擔開銷。",
+        "cause": "週末午後，學生打工後傳來訊息，說自己打算先工作幫家裡分擔開銷。",
         "teacherResponsibility": "導師僅能就實際得知的情境提供合理協助與轉介，不擅自裁定他人意圖或升學結果。",
         "knowledgeSource": "當事人本次陳述，其他人之行為及機構決策仍待查證。",
         "distinctiveConsequence": "學生區分短期收入與長期目標，尚未作出休學決定。／學生列出可再查證的途徑，未假定每種方式都符合其個別資格。／學生知道需確認時薪、工時與交通成本，未把招募說法當承諾。／導師尊重現實壓力，不替學生決定去留。",
-        "numericRationale": "保留小主題核心碼；附加碼及方向權重為初稿，須於精準驗證時按個別前因確認，尚未核准。",
+        "numericRationale": "依本篇起因「週末午後，學生打工後傳來訊息，說自己打算先工作幫家裡分擔開銷。」校準候選傾向：4-3 高（相對權重4）、3-4 高（相對權重1）、7-1 低（相對權重3）、3-1 高（相對權重2）、2-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "review": "author-draft-not-verified",
-        "gradeGateWarning": null
+        "gradeGateWarning": null,
+        "scene": "home:living-room"
       }
     },
     {
@@ -2202,18 +2186,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.2,
-          0.18,
-          0.15,
-          0.13,
-          0.1
+          0.35714285714285715,
+          0.14285714285714285,
+          0.07142857142857142,
+          0.07142857142857142,
+          0.14285714285714285,
+          0.21428571428571427
         ],
         "directions": [
           1,
+          1,
           -1,
-          1,
-          1,
+          -1,
           -1,
           1
         ],
@@ -2259,7 +2243,7 @@
         "teacherResponsibility": "導師僅能就實際得知的情境提供合理協助與轉介，不擅自裁定他人意圖或升學結果。",
         "knowledgeSource": "當事人本次陳述，其他人之行為及機構決策仍待查證。",
         "distinctiveConsequence": "學生說出一項實際想學的技術，不把同儕嘲笑當成專業判斷。／學生找到科系實際課程資訊，尚未確定未來工作。／學生知道可以反映困擾，沒有被迫立即與同學對質。／學生聽見導師明確反對以職業嘲笑他人，肩膀稍微放鬆，仍保留要不要追究同學言語的決定權。",
-        "numericRationale": "保留小主題核心碼；附加碼及方向權重為初稿，須於精準驗證時按個別前因確認，尚未核准。",
+        "numericRationale": "依本篇起因「下課後，學生拿著汽車維修相關科系介紹從走廊走過，背後有人笑他以後只會修車。」校準候選傾向：4-3 高（相對權重5）、3-4 高（相對權重2）、7-1 低（相對權重1）、3-1 低（相對權重1）、2-4 低（相對權重2）、4-4 高（相對權重3）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "review": "author-draft-not-verified",
         "gradeGateWarning": null,
         "numericCausalityNote": "僅empathy選項產生可觀察的短期情緒變化，依當場反應更新2-2 -0.3；其他分支不憑空更動長期能力，原候選六碼仍待校準。"
@@ -2528,18 +2512,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.35714285714285715,
+          0.21428571428571427,
+          0.0,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -2576,7 +2560,7 @@
           "participant",
           "participant"
         ],
-        "valence": "negative"
+        "valence": "neutral"
       },
       "editorial": {
         "title": "美術比學科更能說話",
@@ -2588,7 +2572,7 @@
         "narrativeTime": "社團結束",
         "scene": "school:courtyard",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「社團結束，校園中庭。學生帶來作品集，想問有哪些不同進修路徑。」校準候選傾向：4-3 高（相對權重5）、3-4 高（相對權重3）、3-1 高（相對權重2）、2-4 高（相對權重2）、4-4 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null
       }
     },
@@ -2855,18 +2839,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.4444444444444444,
+          0.2222222222222222,
+          0.1111111111111111,
+          0.2222222222222222,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -2903,7 +2887,7 @@
           "participant",
           "participant"
         ],
-        "valence": "negative"
+        "valence": "neutral"
       },
       "editorial": {
         "title": "家裡的餐廳需要人",
@@ -2915,7 +2899,7 @@
         "narrativeTime": "午餐",
         "scene": "school:classroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午餐，教室。學生想接手家業又擔心缺乏管理知識。」校準候選傾向：4-3 高（相對權重4）、3-4 高（相對權重2）、7-1 高（相對權重1）、3-1 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null
       }
     },
@@ -3182,19 +3166,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.2222222222222222,
+          0.1111111111111111,
+          0.1111111111111111,
+          0.2222222222222222,
+          0.3333333333333333,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
           -1,
           1,
+          -1,
           1
         ],
         "eligibility": {
@@ -3212,7 +3196,10 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -3242,9 +3229,14 @@
         "narrativeTime": "補考後",
         "scene": "school:counseling",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「補考後，輔導室。學生不確定目前學籍與不同路徑的入學資格。」校準候選傾向：4-3 高（相對權重2）、3-4 高（相對權重1）、7-1 低（相對權重1）、3-1 高（相對權重2）、2-4 低（相對權重3）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
-        "semanticRepair": "四選項結果已按本事件的證據、實際行動、程序與情緒分別重寫；仍未獨立審稿。"
+        "semanticRepair": "四選項結果已按本事件的證據、實際行動、程序與情緒分別重寫；仍未獨立審稿。",
+        "hydrogenDisposition": {
+          "status": "blocked",
+          "reason": "現行academic須固定termId，沒有相對學期及所述個人補考／重修／畢業資格的完整條件；保留隔離，不以任一不及格科目冒充本篇事實。",
+          "formalCandidate": false
+        }
       }
     },
     {
@@ -3510,18 +3502,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.5555555555555556,
+          0.1111111111111111,
+          0.0,
+          0.2222222222222222,
+          0.1111111111111111,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -3540,7 +3532,10 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -3570,7 +3565,7 @@
         "narrativeTime": "校外活動後",
         "scene": "school:courtyard",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「校外活動後，校園中庭。學生想投入公益，但對生活收入沒有規劃。」校準候選傾向：4-3 高（相對權重5）、3-4 高（相對權重1）、3-1 高（相對權重2）、2-4 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null
       }
     },
@@ -3837,19 +3832,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.35714285714285715,
+          0.07142857142857142,
+          0.2857142857142857,
+          0.07142857142857142,
+          0.14285714285714285,
+          0.07142857142857142
         ],
         "directions": [
           1,
-          -1,
           1,
           -1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -3867,7 +3862,10 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -3897,7 +3895,7 @@
         "narrativeTime": "期末午休",
         "scene": "school:counseling",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「期末午休，輔導室。學生想規劃間隔年，家長認為是在浪費時間。」校準候選傾向：4-3 高（相對權重5）、3-4 高（相對權重1）、7-1 低（相對權重4）、3-1 低（相對權重1）、2-4 低（相對權重2）、4-4 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null
       }
     },
@@ -3917,7 +3915,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "選校期間，輔導室。學生把系名直接等同職務，忽略課程差異。",
+                "text": "午休，學生帶來技職科系的課程及實習資格說明，發現有些職務還須另外取得證照，不是讀完系就能直接執業。",
                 "speaker": null,
                 "scene": "school:counseling",
                 "cast": [],
@@ -3925,7 +3923,7 @@
               },
               {
                 "order": 2,
-                "text": "科系名稱像我想做的工作，裡面課程卻不一樣。",
+                "text": "科系名稱就是我想做的工作，為什麼畢業還要另外符合證照資格？",
                 "speaker": "participant",
                 "scene": "school:counseling",
                 "cast": [
@@ -3941,15 +3939,15 @@
             "choices": [
               {
                 "id": "clarify",
-                "text": "核對正式課程大綱",
+                "text": "先區分學位與職業執業資格",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生翻看系所課程，發現同名領域的實作內容與想像不同。",
+                  "fact": "學生分開標出畢業條件與職業資格，未再把系名當成執照。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "科系名稱像我想做的工作，裡面課程卻不一樣。",
+                      "statement": "科系名稱就是我想做的工作，為什麼畢業還要另外符合證照資格？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -3983,7 +3981,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -3991,15 +3989,15 @@
               },
               {
                 "id": "check",
-                "text": "詢問實作比例和資格要求",
+                "text": "核對主管機關的報考與實習規定",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生寫下想向校系詢問的實習比例與畢業條件，尚未獲得答覆。",
+                  "fact": "學生找到正式查詢來源，尚未確認自己一定符合全部資格。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "科系名稱像我想做的工作，裡面課程卻不一樣。",
+                      "statement": "科系名稱就是我想做的工作，為什麼畢業還要另外符合證照資格？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -4033,7 +4031,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -4041,15 +4039,15 @@
               },
               {
                 "id": "choice",
-                "text": "比較相關職涯實際需求",
+                "text": "比較取得資格需要的時間與成本",
                 "kind": "defer",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生將工作所需技能與課程逐項比較，不再只憑系名作選擇。",
+                  "fact": "學生列出另需查證的實習時數與考試安排，不把招生文宣當成保證。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "科系名稱像我想做的工作，裡面課程卻不一樣。",
+                      "statement": "科系名稱就是我想做的工作，為什麼畢業還要另外符合證照資格？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -4083,7 +4081,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -4091,15 +4089,15 @@
               },
               {
                 "id": "care",
-                "text": "理解名稱造成誤會",
+                "text": "喜歡這份工作，也值得先看清楚入口",
                 "kind": "support",
                 "emotional": true,
                 "outcome": {
-                  "fact": "導師理解名字造成的誤會，沒有以職業稱呼預告畢業後工作。",
+                  "fact": "導師支持探索志向，不因需要證照就直接否定技職路徑。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "科系名稱像我想做的工作，裡面課程卻不一樣。",
+                      "statement": "科系名稱就是我想做的工作，為什麼畢業還要另外符合證照資格？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -4133,7 +4131,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -4164,18 +4162,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.4444444444444444,
+          0.3333333333333333,
+          0.0,
+          0.2222222222222222,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
           -1,
           1,
-          -1,
+          1,
           1,
           1
         ],
@@ -4194,7 +4192,10 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -4212,19 +4213,19 @@
           "participant",
           "participant"
         ],
-        "valence": "negative"
+        "valence": "neutral"
       },
       "editorial": {
         "title": "技職科系和職業名稱不同",
         "candidateId": "T02-08-C12",
-        "cause": "學生把系名直接等同職務，忽略課程差異",
+        "cause": "午休，學生帶來技職科系的課程及實習資格說明，發現有些職務還須另外取得證照，不是讀完系就能直接執業。",
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
-        "distinctiveConsequence": "學生翻看系所課程，發現同名領域的實作內容與想像不同。／學生寫下想向校系詢問的實習比例與畢業條件，尚未獲得答覆。／學生將工作所需技能與課程逐項比較，不再只憑系名作選擇。／導師理解名字造成的誤會，沒有以職業稱呼預告畢業後工作。",
+        "distinctiveConsequence": "學生分開標出畢業條件與職業資格，未再把系名當成執照。／學生找到正式查詢來源，尚未確認自己一定符合全部資格。／學生列出另需查證的實習時數與考試安排，不把招生文宣當成保證。／導師支持探索志向，不因需要證照就直接否定技職路徑。",
         "narrativeTime": "選校期間",
         "scene": "school:counseling",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，學生帶來技職科系的課程及實習資格說明，發現有些職務還須另外取得證照，不是讀完系就能直接執業。」校準候選傾向：4-3 高（相對權重4）、3-4 低（相對權重3）、3-1 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null
       }
     },
@@ -4491,18 +4492,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.38461538461538464,
+          0.15384615384615385,
+          0.07692307692307693,
+          0.15384615384615385,
+          0.15384615384615385,
+          0.07692307692307693
         ],
         "directions": [
           1,
-          -1,
           1,
           -1,
+          1,
           1,
           1
         ],
@@ -4539,7 +4540,7 @@
           "participant",
           "participant"
         ],
-        "valence": "negative"
+        "valence": "neutral"
       },
       "editorial": {
         "title": "我只是想做甜點",
@@ -4551,7 +4552,7 @@
         "narrativeTime": "社團成果日",
         "scene": "school:classroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「社團成果日，教室。學生熱愛烘焙，尚不了解工作型態與基本安全。」校準候選傾向：4-3 高（相對權重5）、3-4 高（相對權重2）、7-1 低（相對權重1）、3-1 高（相對權重2）、2-4 高（相對權重2）、4-4 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null
       }
     },
@@ -4571,7 +4572,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "晚上訊息，家中臥室。學生收到招生廣告保證工作，想請導師看內容。",
+                "text": "晚間，學生傳來一份標榜就業的培訓契約，注意到提早離開要付高額費用，卻找不到課程提供者對實習安排的明確承諾。",
                 "speaker": null,
                 "scene": "home:bedroom",
                 "cast": [],
@@ -4579,7 +4580,7 @@
               },
               {
                 "order": 2,
-                "text": "招生廣告寫考證照就保證就業，是真的嗎？",
+                "text": "還沒開始上課就要簽退訓賠款，實習又只寫協助安排，我可以先簽嗎？",
                 "speaker": "participant",
                 "scene": "home:bedroom",
                 "cast": [
@@ -4595,15 +4596,15 @@
             "choices": [
               {
                 "id": "clarify",
-                "text": "確認廣告有無列出實際條件",
+                "text": "先找出費用、退訓與承諾的具體條款",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生發現廣告只寫『輔導就業』卻沒有說明保證的實際條件。",
+                  "fact": "學生圈出需釐清的契約文字，尚未簽署或支付費用。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "招生廣告寫考證照就保證就業，是真的嗎？",
+                      "statement": "還沒開始上課就要簽退訓賠款，實習又只寫協助安排，我可以先簽嗎？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -4632,7 +4633,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "學生以遠距通訊向導師說明其個人感受；此接觸不代表雙方實際同處一室。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -4640,15 +4641,15 @@
               },
               {
                 "id": "check",
-                "text": "查詢機構及合法認證資料",
+                "text": "查核辦訓單位及可諮詢的正式窗口",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生準備查核課程機構與證照認可方式，還不能確認宣稱真偽。",
+                  "fact": "學生記下主管機關與消費爭議諮詢管道，導師未自行判定契約一定違法。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "招生廣告寫考證照就保證就業，是真的嗎？",
+                      "statement": "還沒開始上課就要簽退訓賠款，實習又只寫協助安排，我可以先簽嗎？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -4677,7 +4678,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "學生以遠距通訊向導師說明其個人感受；此接觸不代表雙方實際同處一室。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -4685,15 +4686,15 @@
               },
               {
                 "id": "choice",
-                "text": "比較學費和可能風險",
+                "text": "要求書面說明後再與可信任成人討論",
                 "kind": "defer",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生把學費、課程時數及就業宣稱分開列出，不先繳費。",
+                  "fact": "學生準備索取完整條件，不因口頭催促就先付錢或交出證件。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "招生廣告寫考證照就保證就業，是真的嗎？",
+                      "statement": "還沒開始上課就要簽退訓賠款，實習又只寫協助安排，我可以先簽嗎？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -4722,7 +4723,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "學生以遠距通訊向導師說明其個人感受；此接觸不代表雙方實際同處一室。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -4730,15 +4731,15 @@
               },
               {
                 "id": "care",
-                "text": "理解對穩定工作的期待",
+                "text": "想趕快有工作，也可以先讓自己看懂合約",
                 "kind": "support",
                 "emotional": true,
                 "outcome": {
-                  "fact": "學生說出對穩定收入的期待，導師不替招生廣告作保證。",
+                  "fact": "導師理解急迫感，同時支持學生暫緩簽署尚未理解的條件。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "招生廣告寫考證照就保證就業，是真的嗎？",
+                      "statement": "還沒開始上課就要簽退訓賠款，實習又只寫協助安排，我可以先簽嗎？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -4767,7 +4768,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "學生以遠距通訊向導師說明其個人感受；此接觸不代表雙方實際同處一室。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -4798,18 +4799,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.42857142857142855,
+          0.2857142857142857,
+          0.0,
+          0.2857142857142857,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
           -1,
           1,
-          -1,
+          1,
           1,
           1
         ],
@@ -4851,14 +4852,14 @@
       "editorial": {
         "title": "證照班的保證就業",
         "candidateId": "T02-08-C14",
-        "cause": "學生收到招生廣告保證工作，想請導師看內容",
+        "cause": "晚間，學生傳來一份標榜就業的培訓契約，注意到提早離開要付高額費用，卻找不到課程提供者對實習安排的明確承諾。",
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
-        "distinctiveConsequence": "學生發現廣告只寫『輔導就業』卻沒有說明保證的實際條件。／學生準備查核課程機構與證照認可方式，還不能確認宣稱真偽。／學生把學費、課程時數及就業宣稱分開列出，不先繳費。／學生說出對穩定收入的期待，導師不替招生廣告作保證。",
+        "distinctiveConsequence": "學生圈出需釐清的契約文字，尚未簽署或支付費用。／學生記下主管機關與消費爭議諮詢管道，導師未自行判定契約一定違法。／學生準備索取完整條件，不因口頭催促就先付錢或交出證件。／導師理解急迫感，同時支持學生暫緩簽署尚未理解的條件。",
         "narrativeTime": "晚上訊息",
         "scene": "home:bedroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「晚間，學生傳來一份標榜就業的培訓契約，注意到提早離開要付高額費用，卻找不到課程提供者對實習安排的明確承諾。」校準候選傾向：4-3 高（相對權重3）、3-4 低（相對權重2）、3-1 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
         "timeEligibilityNote": "一般上課日晚間私人時段，校外訊息只作遠距接觸",
         "semanticRepair": "四選項結果已按本事件的證據、實際行動、程序與情緒分別重寫；仍未獨立審稿。",
@@ -4882,7 +4883,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "週末電話，家中客廳。家長對孩子想去外地實習的費用與安全擔憂。",
+                "text": "週末下午，學生傳訊轉述家人對外縣市實習住宿費用與安全的擔憂，想先找出可核對的資料。",
                 "speaker": null,
                 "scene": "home:living-room",
                 "cast": [],
@@ -4910,7 +4911,7 @@
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "家長提出實習住宿距離與安全上的具體顧慮，學生聽見的不只是反對。",
+                  "fact": "學生整理自己聽到的住宿距離與安全顧慮，導師未把轉述當作家長已確認的完整立場。",
                   "claims": [
                     {
                       "role": "participant",
@@ -5000,7 +5001,7 @@
                 "kind": "defer",
                 "emotional": false,
                 "outcome": {
-                  "fact": "親子整理交通、聯絡及費用備案，尚未簽署任何實習契約。",
+                  "fact": "學生列出交通、聯絡及費用備案，準備帶回與家人討論，尚未取得家長同意或簽署契約。",
                   "claims": [
                     {
                       "role": "participant",
@@ -5109,19 +5110,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.3333333333333333,
+          0.2222222222222222,
+          0.1111111111111111,
+          0.2222222222222222,
+          0.1111111111111111,
+          0.0
         ],
         "directions": [
           1,
-          -1,
+          1,
+          1,
           1,
           -1,
-          1,
           1
         ],
         "eligibility": {
@@ -5140,7 +5141,10 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -5163,14 +5167,14 @@
       "editorial": {
         "title": "外地實習的住宿問題",
         "candidateId": "T02-08-C16",
-        "cause": "家長對孩子想去外地實習的費用與安全擔憂",
+        "cause": "週末下午，學生傳訊轉述家人對外縣市實習住宿費用與安全的擔憂，想先找出可核對的資料。",
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
         "distinctiveConsequence": "家長提出實習住宿距離與安全上的具體顧慮，學生聽見的不只是反對。／學生核對實習場所與住宿的正式資訊，還沒有得到安全保證。／親子整理交通、聯絡及費用備案，尚未簽署任何實習契約。／導師理解家長擔心外地生活，也尊重學生想學實務的志向。",
         "narrativeTime": "週末電話",
         "scene": "home:living-room",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「週末下午，學生傳訊轉述家人對外縣市實習住宿費用與安全的擔憂，想先找出可核對的資料。」校準候選傾向：4-3 高（相對權重3）、3-4 高（相對權重2）、7-1 高（相對權重1）、3-1 高（相對權重2）、2-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
         "timeEligibilityNote": "週末下午時段",
         "communicationMode": "remote-not-physical-contact"
@@ -5439,18 +5443,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.35714285714285715,
+          0.2857142857142857,
+          0.0,
+          0.14285714285714285,
+          0.07142857142857142,
+          0.14285714285714285
         ],
         "directions": [
           1,
           -1,
           1,
-          -1,
+          1,
           1,
           1
         ],
@@ -5499,7 +5503,7 @@
         "narrativeTime": "校友分享會",
         "scene": "school:auditorium",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「校友分享會，禮堂。學生只看到成功案例，忽略投入成本和失敗可能。」校準候選傾向：4-3 高（相對權重5）、3-4 低（相對權重4）、3-1 高（相對權重2）、2-4 高（相對權重1）、4-4 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null
       }
     },
@@ -5766,18 +5770,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.2727272727272727,
+          0.36363636363636365,
+          0.18181818181818182,
+          0.18181818181818182,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
           -1,
-          1,
           -1,
+          1,
           1,
           1
         ],
@@ -5826,7 +5830,7 @@
         "narrativeTime": "放學後",
         "scene": "school:gate",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「放學後，校門口。學生獲得口頭打工邀請，不清楚勞動條件。」校準候選傾向：4-3 高（相對權重3）、3-4 低（相對權重4）、7-1 低（相對權重2）、3-1 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "semanticRepair": "四選項結果已按本事件的證據、實際行動、程序與情緒分別重寫；仍未獨立審稿。"
       }
@@ -6094,18 +6098,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.5,
+          0.25,
+          0.0,
+          0.25,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -6142,7 +6146,7 @@
           "participant",
           "participant"
         ],
-        "valence": "negative"
+        "valence": "neutral"
       },
       "editorial": {
         "title": "我想考別的教育體系",
@@ -6154,7 +6158,7 @@
         "narrativeTime": "午休",
         "scene": "school:counseling",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，輔導室。學生在蒐集國內其他學制資訊，擔心資格不符。」校準候選傾向：4-3 高（相對權重4）、3-4 高（相對權重2）、3-1 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null
       }
     },
@@ -6401,18 +6405,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.38461538461538464,
+          0.23076923076923078,
+          0.15384615384615385,
+          0.15384615384615385,
+          0.0,
+          0.07692307692307693
         ],
         "directions": [
           1,
-          -1,
           1,
           -1,
+          1,
           1,
           1
         ],
@@ -6449,7 +6453,7 @@
           "participant",
           "participant"
         ],
-        "valence": "negative"
+        "valence": "neutral"
       },
       "editorial": {
         "title": "做音樂不等於不讀書",
@@ -6461,7 +6465,7 @@
         "narrativeTime": "晚上訊息",
         "scene": "home:living-room",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「晚上訊息，教師住處。學生想兼顧音樂訓練與學歷，不願被逼二選一。」校準候選傾向：4-3 高（相對權重5）、3-4 高（相對權重3）、7-1 低（相對權重2）、3-1 高（相對權重2）、4-4 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
         "timeEligibilityNote": "一般上課日晚間私人時段，校外訊息只作遠距接觸",
         "contactMethod": "遠距通話／訊息，場景不能誤演為學生和導師實際同處家中。",
@@ -6484,9 +6488,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "假日午後，校外街道。學生首次賣出作品，很興奮但不知成本。",
+                "text": "假日午後，學生從市集傳來第一次售出作品的照片與收據，興奮地說材料可能花了不少錢。",
                 "speaker": null,
-                "scene": "outside:street",
+                "scene": "home:living-room",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -6494,7 +6498,7 @@
                 "order": 2,
                 "text": "我在市集賣出第一件作品！但材料好像就花很多錢。",
                 "speaker": "participant",
-                "scene": "outside:street",
+                "scene": "home:living-room",
                 "cast": [
                   {
                     "role": "participant",
@@ -6512,7 +6516,7 @@
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生拿出原始收據逐一說明材料、包裝和攤位費，第一次發現成交額不是全部利潤。",
+                  "fact": "學生傳來原始收據照片逐一說明材料、包裝和攤位費，第一次發現成交額不是全部利潤。",
                   "claims": [
                     {
                       "role": "participant",
@@ -6539,12 +6543,7 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
@@ -6562,7 +6561,7 @@
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生在紙上把售價與材料支出分列，算出自己仍需確認其他成本，沒有把收入當淨利。",
+                  "fact": "學生在自己的帳本上把售價與材料支出分列，算出自己仍需確認其他成本，沒有把收入當淨利。",
                   "claims": [
                     {
                       "role": "participant",
@@ -6589,12 +6588,7 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
@@ -6639,12 +6633,7 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
@@ -6696,12 +6685,7 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
@@ -6738,18 +6722,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.23076923076923078,
+          0.23076923076923078,
+          0.0,
+          0.15384615384615385,
+          0.38461538461538464,
+          0.0
         ],
         "directions": [
           1,
           -1,
           1,
-          -1,
+          1,
           1,
           1
         ],
@@ -6787,19 +6771,19 @@
           "participant",
           "participant"
         ],
-        "valence": "negative"
+        "valence": "positive"
       },
       "editorial": {
         "title": "手作市集賣出第一件",
         "candidateId": "T02-08-C21",
-        "cause": "學生首次賣出作品，很興奮但不知成本",
+        "cause": "假日午後，學生從市集傳來第一次售出作品的照片與收據，興奮地說材料可能花了不少錢。",
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
         "distinctiveConsequence": "學生拿出原始收據逐一說明材料、包裝和攤位費，第一次發現成交額不是全部利潤。／學生在紙上把售價與材料支出分列，算出自己仍需確認其他成本，沒有把收入當淨利。／學生決定先記錄下一次要準備的時間與成本，沒有當場決定擴大販售。／學生笑著把第一筆成交記在筆記本上，導師替他高興，也提醒獲利尚未算清楚。",
         "narrativeTime": "假日午後",
-        "scene": "outside:street",
+        "scene": "home:living-room",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「假日午後，學生從市集傳來第一次售出作品的照片與收據，興奮地說材料可能花了不少錢。」校準候選傾向：4-3 高（相對權重3）、3-4 低（相對權重3）、3-1 高（相對權重2）、2-4 高（相對權重5）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
         "timeEligibilityNote": "週末下午時段",
         "numericEffectBasis": "學生因第一次成交明顯開心，僅調整當下愉悅，非永久技能。"
@@ -6821,7 +6805,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "親師日，教室。家長問導師選技職多久能賺回學費，想要確定答案。",
+                "text": "午休，家長到校向導師詢問選技職多久能賺回學費，希望得到保證。",
                 "speaker": null,
                 "scene": "school:classroom",
                 "cast": [],
@@ -6887,7 +6871,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "本次由家長向導師表達個人看法；其他人未自動知情。"
                       }
                     ]
                   }
@@ -6937,7 +6921,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "本次由家長向導師表達個人看法；其他人未自動知情。"
                       }
                     ]
                   }
@@ -6987,7 +6971,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "本次由家長向導師表達個人看法；其他人未自動知情。"
                       }
                     ]
                   }
@@ -7037,7 +7021,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "本次由家長向導師表達個人看法；其他人未自動知情。"
                       }
                     ]
                   }
@@ -7068,18 +7052,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.0,
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
           -1,
           1,
-          -1,
+          1,
           1,
           1
         ],
@@ -7121,14 +7105,14 @@
       "editorial": {
         "title": "家長要求保證收入",
         "candidateId": "T02-08-C22",
-        "cause": "家長問導師選技職多久能賺回學費，想要確定答案",
+        "cause": "午休，家長到校向導師詢問選技職多久能賺回學費，希望得到保證。",
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
         "distinctiveConsequence": "家長說出擔心的是學費回收與孩子未來收入，而不是單純不喜歡技職。／導師提供可查的學費與職涯資訊，明確拒絕保證何時回本。／家長開始考慮孩子的興趣與就業風險，沒有把單一薪資數字當答案。／導師理解家長希望孩子穩定，不拿不實的高薪承諾安撫。",
         "narrativeTime": "親師日",
         "scene": "school:classroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，家長到校向導師詢問選技職多久能賺回學費，希望得到保證。」校準候選傾向：3-4 低（相對權重2）、7-1 高（相對權重2）、3-1 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "participantScopeCorrection": "家長為當事人，不能抽成學生口吻。"
       }
@@ -7396,19 +7380,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.45454545454545453,
+          0.09090909090909091,
+          0.0,
+          0.18181818181818182,
+          0.18181818181818182,
+          0.09090909090909091
         ],
         "directions": [
           1,
-          -1,
+          1,
           1,
           -1,
-          1,
+          -1,
           1
         ],
         "eligibility": {
@@ -7459,7 +7443,7 @@
         "narrativeTime": "高三班會",
         "scene": "school:classroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「高三班會，教室。學生不想參加一般升學比較，卻被要求公開志願。」校準候選傾向：4-3 高（相對權重5）、3-4 高（相對權重1）、3-1 低（相對權重2）、2-4 低（相對權重2）、4-4 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "gradeQualificationNote": "按故事中明確學年／選組／轉組情境限制年級為3；這是候選條件，非確定發生日期。"
       }
@@ -7727,19 +7711,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.4,
+          0.3,
+          0.0,
+          0.2,
+          0.1,
+          0.0
         ],
         "directions": [
           1,
-          -1,
+          1,
+          1,
           1,
           -1,
-          1,
           1
         ],
         "eligibility": {
@@ -7775,7 +7759,7 @@
           "participant",
           "participant"
         ],
-        "valence": "negative"
+        "valence": "neutral"
       },
       "editorial": {
         "title": "一場免費參訪改變想法",
@@ -7787,7 +7771,7 @@
         "narrativeTime": "校外參訪後",
         "scene": "school:gate",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「校外參訪後，校門口。學生看到真實工作現場，原先理想產生改變。」校準候選傾向：4-3 高（相對權重4）、3-4 高（相對權重3）、3-1 高（相對權重2）、2-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null
       }
     },
@@ -7807,9 +7791,9 @@
             "pages": [
               {
                 "order": 1,
-                "text": "週末下午，校外咖啡店。學生面對不同招生要求，不確定自己適用哪種。",
+                "text": "週末下午，學生傳來兩份不同招生簡章，不確定作品與證照要求各適用哪一種管道。",
                 "speaker": null,
-                "scene": "outside:cafe",
+                "scene": "home:living-room",
                 "cast": [],
                 "presentation": "narration"
               },
@@ -7817,7 +7801,7 @@
                 "order": 2,
                 "text": "有的招生說看作品，有的說要證照，到底哪一種？",
                 "speaker": "participant",
-                "scene": "outside:cafe",
+                "scene": "home:living-room",
                 "cast": [
                   {
                     "role": "participant",
@@ -7862,12 +7846,7 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
@@ -7912,12 +7891,7 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
@@ -7962,12 +7936,7 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
@@ -8012,12 +7981,7 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
@@ -8054,18 +8018,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.42857142857142855,
+          0.2857142857142857,
+          0.0,
+          0.2857142857142857,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -8085,7 +8049,10 @@
           "facts": [],
           "history": [],
           "numeric": [],
-          "enrollment": null
+          "enrollment": null,
+          "grades": [
+            3
+          ]
         },
         "repetition": {
           "cooldownDays": 45,
@@ -8103,19 +8070,19 @@
           "participant",
           "participant"
         ],
-        "valence": "negative"
+        "valence": "neutral"
       },
       "editorial": {
         "title": "面試要作品還是證照",
         "candidateId": "T02-08-C25",
-        "cause": "學生面對不同招生要求，不確定自己適用哪種",
+        "cause": "週末下午，學生傳來兩份不同招生簡章，不確定作品與證照要求各適用哪一種管道。",
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
         "distinctiveConsequence": "學生發現兩份招生簡章分屬不同管道，因此作品與證照要求不一致。／學生核對自己要申請的正式學校及項目，沒有將他校要求直接套用。／學生把現有作品與證照分別整理，準備補查不足的資格。／導師理解招生資訊太多容易搞混，不代替招生單位保證合格。",
         "narrativeTime": "週末下午",
-        "scene": "outside:cafe",
+        "scene": "home:living-room",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「週末下午，學生傳來兩份不同招生簡章，不確定作品與證照要求各適用哪一種管道。」校準候選傾向：4-3 高（相對權重3）、3-4 高（相對權重2）、3-1 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
         "timeEligibilityNote": "週末下午時段"
       }

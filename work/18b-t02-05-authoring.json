@@ -608,13 +608,18 @@
             "private"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -649,7 +654,8 @@
         "review": "author-draft-not-verified",
         "contactMethod": "遠距通話／訊息，場景不能誤演為學生和導師實際同處家中。",
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
-        "communicationMode": "remote-not-physical-contact"
+        "communicationMode": "remote-not-physical-contact",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -1292,6 +1298,18 @@
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            },
+            {
+              "kind": "milestone-completed",
+              "value": "stars-screen"
+            },
+            {
+              "kind": "stars-nominated"
+            }
           ]
         },
         "repetition": {
@@ -1325,7 +1343,12 @@
         "numericRationale": "較高家庭支持與自主性可以並存，對朋友的體諒不表示自己不開心。；核心 4-3、2-2、7-1；附加 3-1、2-4、4-4。本為逐篇設計理由，尚未進行引擎精準驗證。",
         "review": "author-draft-not-verified",
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
-        "numericCausalityNote": "僅empathy選項產生可觀察的短期情緒變化，依當場反應更新2-4 +0.4；其他分支不憑空更動長期能力，原候選六碼仍待校準。"
+        "numericCausalityNote": "僅empathy選項產生可觀察的短期情緒變化，依當場反應更新2-4 +0.4；其他分支不憑空更動長期能力，原候選六碼仍待校準。",
+        "hydrogenDisposition": {
+          "status": "blocked",
+          "reason": "現行predicate無stars-admitted，stars-nominated與全校stars-screen不能證實此生已取得繁星錄取結果；保留隔離。",
+          "formalCandidate": false
+        }
       }
     },
     {
@@ -1617,13 +1640,18 @@
             "early"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -1656,7 +1684,8 @@
         "numericRationale": "主題三核心碼沿用4-3、2-2、7-1；附加3-3、1-1、4-4，依本次情境作候選初擬，待現有公式與合法持有者確認。",
         "review": "author-draft-not-verified",
         "qualificationWarning": "此升學事件須與高三行事曆及正式入學資格接線；未驗前不得進事件池。",
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -1922,19 +1951,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.2,
-          0.18,
-          0.15,
-          0.13,
-          0.1
+          0.4444444444444444,
+          0.3333333333333333,
+          0.0,
+          0.2222222222222222,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
           1,
-          -1,
+          1,
+          1,
           1
         ],
         "eligibility": {
@@ -1948,13 +1977,18 @@
             "noon"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -1982,10 +2016,11 @@
         "teacherResponsibility": "導師僅能就實際得知的情境提供合理協助與轉介，不擅自裁定他人意圖或升學結果。",
         "knowledgeSource": "當事人本次陳述，其他人之行為及機構決策仍待查證。",
         "distinctiveConsequence": "學生分辨口頭說法與正式校內程序，尚未獲得更改資格。／學生知道需查哪份公告，不由導師承諾一定能反悔。／學生說出一個重新考慮的原因，仍需自己作出選擇。／導師理解猶疑，沒有代替學生送交志願。",
-        "numericRationale": "保留小主題核心碼；附加碼及方向權重為初稿，須於精準驗證時按個別前因確認，尚未核准。",
+        "numericRationale": "依本篇起因「校內推薦作業開始前，學生走到教務處外，說自己昨天才告訴同學不參加繁星。」校準候選傾向：4-3 高（相對權重4）、2-2 高（相對權重3）、3-1 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "review": "author-draft-not-verified",
         "gradeGateWarning": "高中三年級與該入學管道的正式資格尚未編譯接線，不得上架。",
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -2251,17 +2286,17 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.2,
-          0.18,
-          0.15,
-          0.13,
-          0.1
+          0.25,
+          0.3333333333333333,
+          0.25,
+          0.08333333333333333,
+          0.08333333333333333,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
+          -1,
           1,
           -1,
           1
@@ -2284,6 +2319,11 @@
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -2311,7 +2351,7 @@
         "teacherResponsibility": "導師僅能就實際得知的情境提供合理協助與轉介，不擅自裁定他人意圖或升學結果。",
         "knowledgeSource": "當事人本次陳述，其他人之行為及機構決策仍待查證。",
         "distinctiveConsequence": "學生分開列出喜好與費用負擔，尚未排除任何校系。／學生記下查證途徑，未被保證一定取得補助。／學生開始整理支出清單，沒有假定家長能負擔。／導師接納現實壓力，不把學生的猶豫判作膽小。",
-        "numericRationale": "保留小主題核心碼；附加碼及方向權重為初稿，須於精準驗證時按個別前因確認，尚未核准。",
+        "numericRationale": "依本篇起因「午餐時間，學生拿著一張外縣市校系資料，頁角寫滿租屋與交通費。」校準候選傾向：4-3 高（相對權重3）、2-2 高（相對權重4）、7-1 低（相對權重3）、3-1 高（相對權重1）、2-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "review": "author-draft-not-verified",
         "gradeGateWarning": "高中三年級與該入學管道的正式資格尚未編譯接線，不得上架。",
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
@@ -2580,19 +2620,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.1111111111111111,
+          0.4444444444444444,
+          0.0,
+          0.2222222222222222,
+          0.1111111111111111,
+          0.1111111111111111
         ],
         "directions": [
           1,
-          -1,
+          1,
+          1,
           1,
           -1,
-          1,
           1
         ],
         "eligibility": {
@@ -2606,13 +2646,21 @@
             "noon"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            },
+            {
+              "kind": "stars-nominated"
+            }
           ]
         },
         "repetition": {
@@ -2643,10 +2691,11 @@
         "narrativeTime": "正常上課日午休",
         "scene": "school:classroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，教室。學生拿著校內繁星推薦資料，誤把學校的推薦程序當成大學正式錄取公告。」校準候選傾向：4-3 高（相對權重1）、2-2 高（相對權重4）、3-1 高（相對權重2）、2-4 低（相對權重1）、4-4 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
-        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -2912,20 +2961,20 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.4444444444444444,
+          0.3333333333333333,
+          0.0,
+          0.1111111111111111,
+          0.0,
+          0.1111111111111111
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
           1,
-          1
+          1,
+          1,
+          -1
         ],
         "eligibility": {
           "people": [
@@ -2938,13 +2987,18 @@
             "noon"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -2975,9 +3029,10 @@
         "narrativeTime": "午休",
         "scene": "school:counselling-corner",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，校園談話角落。學生要求不要公開自己參與繁星的意向。」校準候選傾向：4-3 高（相對權重4）、2-2 高（相對權重3）、3-1 高（相對權重1）、4-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -3243,18 +3298,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.2857142857142857,
+          0.42857142857142855,
+          0.0,
+          0.2857142857142857,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -3269,13 +3324,18 @@
             "noon"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -3306,10 +3366,11 @@
         "narrativeTime": "校內作業當天",
         "scene": "school:administration",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「校內作業當天，行政辦公室。學生對校內排序流程及輪次有疑問。」校準候選傾向：4-3 高（相對權重2）、2-2 高（相對權重3）、3-1 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "semanticRepair": "四選項結果已按本事件的證據、實際行動、程序與情緒分別重寫；仍未獨立審稿。",
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -3575,19 +3636,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.25,
+          0.25,
+          0.16666666666666666,
+          0.16666666666666666,
+          0.08333333333333333,
+          0.08333333333333333
         ],
         "directions": [
           1,
-          -1,
           1,
           -1,
           1,
+          -1,
           1
         ],
         "eligibility": {
@@ -3601,13 +3662,18 @@
             "noon"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -3638,10 +3704,11 @@
         "narrativeTime": "正常上課日午休",
         "scene": "school:meeting-room",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，學生在學校會議室向導師轉述：家長引用去年繁星簡章，要求今年校內推薦程序照舊辦理。」校準候選傾向：4-3 高（相對權重3）、2-2 高（相對權重3）、7-1 低（相對權重2）、3-1 高（相對權重2）、2-4 低（相對權重1）、4-4 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
-        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -3907,19 +3974,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.2857142857142857,
+          0.2857142857142857,
+          0.07142857142857142,
+          0.07142857142857142,
+          0.07142857142857142,
+          0.21428571428571427
         ],
         "directions": [
           1,
-          -1,
           1,
           -1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -3933,13 +4000,18 @@
             "noon"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -3970,11 +4042,12 @@
         "narrativeTime": "正常上課日午休",
         "scene": "school:corridor",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，走廊。學生擔心自己的推薦決定會影響手足期待。」校準候選傾向：4-3 高（相對權重4）、2-2 高（相對權重4）、7-1 低（相對權重1）、3-1 低（相對權重1）、2-4 低（相對權重1）、4-4 高（相對權重3）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "calendarRationale": "放學後談話不能在午休抽選。",
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
-        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -4220,19 +4293,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.29411764705882354,
+          0.23529411764705882,
+          0.23529411764705882,
+          0.11764705882352941,
+          0.058823529411764705,
+          0.058823529411764705
         ],
         "directions": [
           1,
-          -1,
           1,
           -1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -4246,13 +4319,18 @@
             "private"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -4283,14 +4361,15 @@
         "narrativeTime": "晚上訊息",
         "scene": "home:living-room",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「晚間，家長傳來已填好的繁星意向截圖，要求導師直接代孩子送出；學生稍後私訊說自己還沒決定。」校準候選傾向：4-3 高（相對權重5）、2-2 高（相對權重4）、7-1 低（相對權重4）、3-1 低（相對權重2）、2-4 低（相對權重1）、4-4 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
         "timeEligibilityNote": "一般上課日晚間私人時段，校外訊息只作遠距接觸",
         "semanticRepair": "四選項結果已按本事件的證據、實際行動、程序與情緒分別重寫；仍未獨立審稿。",
         "contactMethod": "遠距通話／訊息，場景不能誤演為學生和導師實際同處家中。",
         "communicationMode": "remote-not-physical-contact",
         "revisionNotes": "18B T02定向精修：角色身分、結果因果、公開與保密界線及舞台合理性；仍待正式編譯與獨立語意審查。",
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -4556,19 +4635,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.21428571428571427,
+          0.2857142857142857,
+          0.0,
+          0.07142857142857142,
+          0.14285714285714285,
+          0.2857142857142857
         ],
         "directions": [
           1,
-          -1,
+          1,
           1,
           -1,
-          1,
+          -1,
           1
         ],
         "eligibility": {
@@ -4593,6 +4672,9 @@
           "entrance": [
             {
               "kind": "stars-nominated"
+            },
+            {
+              "kind": "gsat-published"
             }
           ]
         },
@@ -4624,7 +4706,7 @@
         "narrativeTime": "午休",
         "scene": "school:classroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，教室。學生因符合資格而被同學以不實說法責怪。」校準候選傾向：4-3 高（相對權重3）、2-2 高（相對權重4）、3-1 低（相對權重1）、2-4 低（相對權重2）、4-4 高（相對權重4）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
         "qualificationsNeeded": "需該學生確有已建立之校內繁星推薦紀錄，不能僅依高三年級推定被同儕指控搶推薦名額。"
@@ -4893,19 +4975,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.2857142857142857,
+          0.2857142857142857,
+          0.0,
+          0.07142857142857142,
+          0.21428571428571427,
+          0.14285714285714285
         ],
         "directions": [
           1,
-          -1,
+          1,
           1,
           -1,
-          1,
+          -1,
           1
         ],
         "eligibility": {
@@ -4919,13 +5001,18 @@
             "study1"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -4956,9 +5043,10 @@
         "narrativeTime": "晚自習前",
         "scene": "school:classroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「晚自習第一節，教室。尚未公布的個人意向被群組轉傳。」校準候選傾向：4-3 高（相對權重4）、2-2 高（相對權重4）、3-1 低（相對權重1）、2-4 低（相對權重3）、4-4 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -5224,18 +5312,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.5,
+          0.3,
+          0.0,
+          0.2,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -5250,13 +5338,18 @@
             "noon"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -5287,10 +5380,11 @@
         "narrativeTime": "正常上課日午休",
         "scene": "school:counseling",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，輔導室。學生想比較不同入學管道的限制與時程。」校準候選傾向：4-3 高（相對權重5）、2-2 高（相對權重3）、3-1 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
-        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -5563,18 +5657,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.07692307692307693,
+          0.15384615384615385,
+          0.15384615384615385,
+          0.23076923076923078,
+          0.23076923076923078,
+          0.15384615384615385
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -5600,6 +5694,9 @@
           "entrance": [
             {
               "kind": "stars-nominated"
+            },
+            {
+              "kind": "gsat-published"
             }
           ]
         },
@@ -5619,7 +5716,7 @@
           "participant",
           "participant"
         ],
-        "valence": "negative"
+        "valence": "positive"
       },
       "editorial": {
         "title": "體育館旁的道謝",
@@ -5631,7 +5728,7 @@
         "narrativeTime": "校內推薦已確定後的正常上課日午休",
         "scene": "school:courtyard",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，校園中庭。獲得校內繁星推薦機會的學生想感謝曾陪伴自己的同學。」校準候選傾向：4-3 高（相對權重1）、2-2 高（相對權重2）、7-1 高（相對權重2）、3-1 高（相對權重3）、2-4 高（相對權重3）、4-4 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "numericEffectBasis": "學生當場笑著承認有人陪伴的幸運，愉悅微幅上升。",
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
@@ -5654,17 +5751,17 @@
             "pages": [
               {
                 "order": 1,
-                "text": "週末下午，校外咖啡店。學生想先了解住宿生活費而不是只看校系分數。",
+                "text": "週末下午，已獲繁星推薦的學生傳來宿舍繳費與獎助金說明：家裡不是完全付不起，但補助尚未審定，繳費期限可能先到。",
                 "speaker": null,
-                "scene": "outside:cafe",
+                "scene": "home:living-room",
                 "cast": [],
                 "presentation": "narration"
               },
               {
                 "order": 2,
-                "text": "有推薦機會，可是到外縣市生活真的很貴。",
+                "text": "如果補助還沒下來就要先付住宿費，這段空檔怎麼辦？",
                 "speaker": "participant",
-                "scene": "outside:cafe",
+                "scene": "home:living-room",
                 "cast": [
                   {
                     "role": "participant",
@@ -5678,15 +5775,15 @@
             "choices": [
               {
                 "id": "clarify",
-                "text": "先確認實際生活費估算",
+                "text": "先把費用到期與補助審核時間分開",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生列出外縣市住宿與交通的預估支出，發現學費並不是唯一負擔。",
+                  "fact": "學生畫出兩條時間線，發現有資格申請不等於能在繳費前拿到錢。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "有推薦機會，可是到外縣市生活真的很貴。",
+                      "statement": "如果補助還沒下來就要先付住宿費，這段空檔怎麼辦？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -5709,18 +5806,13 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -5728,15 +5820,15 @@
               },
               {
                 "id": "check",
-                "text": "查詢官方住宿與補助資訊",
+                "text": "查詢校方是否有合法分期或急難窗口",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生查詢官方住宿及獎助資訊，沒有假定自己一定拿得到補助。",
+                  "fact": "學生記下可詢問的正式窗口，尚未獲准延期或補助。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "有推薦機會，可是到外縣市生活真的很貴。",
+                      "statement": "如果補助還沒下來就要先付住宿費，這段空檔怎麼辦？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -5759,18 +5851,13 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -5778,15 +5865,15 @@
               },
               {
                 "id": "choice",
-                "text": "討論與家庭財務相關的選擇",
+                "text": "和學生整理可帶回家庭討論的短期方案",
                 "kind": "defer",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生準備和家人討論可負擔的範圍，尚未因此放棄喜歡的校系。",
+                  "fact": "學生列出暫住、分期詢問及其他安排，未由導師替家庭承諾借款。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "有推薦機會，可是到外縣市生活真的很貴。",
+                      "statement": "如果補助還沒下來就要先付住宿費，這段空檔怎麼辦？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -5809,18 +5896,13 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -5828,15 +5910,15 @@
               },
               {
                 "id": "care",
-                "text": "理解夢想和預算拉扯",
+                "text": "總費用算得出，時間差仍可能讓人卡住",
                 "kind": "support",
                 "emotional": true,
                 "outcome": {
-                  "fact": "導師理解家庭預算限制夢想的難受，不把選擇留在家鄉視為失敗。",
+                  "fact": "導師理解短期周轉的壓力，不把焦慮解讀成學生沒有就讀意願。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "有推薦機會，可是到外縣市生活真的很貴。",
+                      "statement": "如果補助還沒下來就要先付住宿費，這段空檔怎麼辦？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -5859,18 +5941,13 @@
                     "affected": [
                       "participant"
                     ],
-                    "contacts": [
-                      [
-                        "teacher",
-                        "participant"
-                      ]
-                    ],
+                    "contacts": [],
                     "transmissions": [
                       {
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -5901,19 +5978,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.18181818181818182,
+          0.36363636363636365,
+          0.18181818181818182,
+          0.18181818181818182,
+          0.09090909090909091,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
           -1,
           1,
+          -1,
           1
         ],
         "eligibility": {
@@ -5935,6 +6012,14 @@
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            },
+            {
+              "kind": "stars-nominated"
+            }
           ]
         },
         "repetition": {
@@ -5958,14 +6043,14 @@
       "editorial": {
         "title": "家庭財務比排名重要",
         "candidateId": "T02-05-C19",
-        "cause": "學生想先了解住宿生活費而不是只看校系分數",
+        "cause": "週末下午，已獲繁星推薦的學生傳來宿舍繳費與獎助金說明：家裡不是完全付不起，但補助尚未審定，繳費期限可能先到。",
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
-        "distinctiveConsequence": "學生列出外縣市住宿與交通的預估支出，發現學費並不是唯一負擔。／學生查詢官方住宿及獎助資訊，沒有假定自己一定拿得到補助。／學生準備和家人討論可負擔的範圍，尚未因此放棄喜歡的校系。／導師理解家庭預算限制夢想的難受，不把選擇留在家鄉視為失敗。",
+        "distinctiveConsequence": "學生畫出兩條時間線，發現有資格申請不等於能在繳費前拿到錢。／學生記下可詢問的正式窗口，尚未獲准延期或補助。／學生列出暫住、分期詢問及其他安排，未由導師替家庭承諾借款。／導師理解短期周轉的壓力，不把焦慮解讀成學生沒有就讀意願。",
         "narrativeTime": "週末下午",
-        "scene": "outside:cafe",
+        "scene": "home:living-room",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「週末下午，已獲繁星推薦的學生傳來宿舍繳費與獎助金說明：家裡不是完全付不起，但補助尚未審定，繳費期限可能先到。」校準候選傾向：4-3 高（相對權重2）、2-2 高（相對權重4）、7-1 低（相對權重2）、3-1 高（相對權重2）、2-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": "校外／私人場景須再核對實際校曆、接觸及合格時段。",
         "timeEligibilityNote": "週末下午時段",
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
@@ -6234,18 +6319,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.5,
+          0.25,
+          0.0,
+          0.25,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -6260,13 +6345,18 @@
             "noon"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -6297,10 +6387,11 @@
         "narrativeTime": "正常上課日午休",
         "scene": "school:classroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，教室。學生看著兩份名稱相近的校系介紹，發現課程內容卻有明顯差異。」校準候選傾向：4-3 高（相對權重4）、2-2 高（相對權重2）、3-1 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
-        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -6566,18 +6657,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.2727272727272727,
+          0.36363636363636365,
+          0.09090909090909091,
+          0.18181818181818182,
+          0.0,
+          0.09090909090909091
         ],
         "directions": [
           1,
-          -1,
           1,
           -1,
+          1,
           1,
           1
         ],
@@ -6592,13 +6683,18 @@
             "noon"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -6629,10 +6725,11 @@
         "narrativeTime": "正常上課日午休",
         "scene": "school:administration",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，行政辦公室。學生轉述家長對校內推薦程序的疑慮，想知道能向誰取得正式說明。」校準候選傾向：4-3 高（相對權重3）、2-2 高（相對權重4）、7-1 低（相對權重1）、3-1 高（相對權重2）、4-4 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
-        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -6898,19 +6995,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.29411764705882354,
+          0.23529411764705882,
+          0.17647058823529413,
+          0.11764705882352941,
+          0.058823529411764705,
+          0.11764705882352941
         ],
         "directions": [
           1,
-          -1,
           1,
           -1,
-          1,
+          -1,
+          -1,
           1
         ],
         "eligibility": {
@@ -6924,13 +7021,18 @@
             "noon"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -6961,9 +7063,10 @@
         "narrativeTime": "午休",
         "scene": "school:counseling",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，輔導室。學生要導師陪同練習如何向家長表達不參加意願。」校準候選傾向：4-3 高（相對權重5）、2-2 高（相對權重4）、7-1 低（相對權重3）、3-1 低（相對權重2）、2-4 低（相對權重1）、4-4 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -7229,19 +7332,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.18181818181818182,
+          0.36363636363636365,
+          0.0,
+          0.18181818181818182,
+          0.09090909090909091,
+          0.18181818181818182
         ],
         "directions": [
           1,
-          -1,
+          1,
+          1,
           1,
           -1,
-          1,
           1
         ],
         "eligibility": {
@@ -7255,7 +7358,7 @@
             "noon"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
@@ -7267,6 +7370,9 @@
             {
               "kind": "milestone-completed",
               "value": "stars-nominate"
+            },
+            {
+              "kind": "gsat-published"
             }
           ]
         },
@@ -7298,9 +7404,10 @@
         "narrativeTime": "校務通知後",
         "scene": "school:teachers-office",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「校內繁星推薦程序啟動並公告初步順位後，校方因資料錯誤更正順位，學生到教師辦公室詢問，情緒複雜。」校準候選傾向：4-3 高（相對權重2）、2-2 高（相對權重4）、3-1 高（相對權重2）、2-4 低（相對權重1）、4-4 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -7566,19 +7673,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.2857142857142857,
+          0.2857142857142857,
+          0.0,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285
         ],
         "directions": [
           1,
-          -1,
+          1,
+          1,
           1,
           -1,
-          1,
           1
         ],
         "eligibility": {
@@ -7592,13 +7699,18 @@
             "early"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -7629,10 +7741,11 @@
         "narrativeTime": "早自習",
         "scene": "school:classroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「早自習，教室。學生發現同儕宣稱自己已放棄，並非本人表態。」校準候選傾向：4-3 高（相對權重4）、2-2 高（相對權重4）、3-1 高（相對權重2）、2-4 低（相對權重2）、4-4 高（相對權重2）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "semanticRepair": "四選項結果已按本事件的證據、實際行動、程序與情緒分別重寫；仍未獨立審稿。",
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -7651,7 +7764,7 @@
             "pages": [
               {
                 "order": 1,
-                "text": "截止日前，輔導室。學生比較自身能力與志趣後想退出繁星作業。",
+                "text": "校內繁星推薦確認作業尚未截止，學生已決定改走其他管道，卻以為從群組退出就等於辦妥正式放棄。",
                 "speaker": null,
                 "scene": "school:counseling",
                 "cast": [],
@@ -7659,7 +7772,7 @@
               },
               {
                 "order": 2,
-                "text": "我比較想走另一個管道，現在退出還來得及嗎？",
+                "text": "我已經退出討論群，也跟同學說不參加了，這樣算正式放棄嗎？",
                 "speaker": "participant",
                 "scene": "school:counseling",
                 "cast": [
@@ -7675,15 +7788,15 @@
             "choices": [
               {
                 "id": "clarify",
-                "text": "核對正式確認和退出時點",
+                "text": "先確認目前已簽署或送出的文件",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生說出想改走申請管道的原因，發現自己還未核對退出繁星的正式時點。",
+                  "fact": "學生列出自己已完成的程序，知道退群不能代替正式文件。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "我比較想走另一個管道，現在退出還來得及嗎？",
+                      "statement": "我已經退出討論群，也跟同學說不參加了，這樣算正式放棄嗎？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -7717,7 +7830,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -7725,15 +7838,15 @@
               },
               {
                 "id": "check",
-                "text": "比較其他管道所需準備",
+                "text": "核對當年度放棄程序及管道限制",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生確認應向校內承辦詢問的資格與期限，不由導師代辦退出。",
+                  "fact": "學生記下應向承辦查詢的期限，不把導師口頭回覆當成已恢復其他入學資格。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "我比較想走另一個管道，現在退出還來得及嗎？",
+                      "statement": "我已經退出討論群，也跟同學說不參加了，這樣算正式放棄嗎？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -7767,7 +7880,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -7775,15 +7888,15 @@
               },
               {
                 "id": "choice",
-                "text": "向承辦確認變更程序",
+                "text": "由學生本人向承辦確認收件紀錄",
                 "kind": "defer",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生開始比較各管道後續準備量，仍未作出最終決定。",
+                  "fact": "學生準備確認是否需書面撤回，尚未聲稱已完成放棄或影響他人名額。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "我比較想走另一個管道，現在退出還來得及嗎？",
+                      "statement": "我已經退出討論群，也跟同學說不參加了，這樣算正式放棄嗎？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -7817,7 +7930,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -7825,15 +7938,15 @@
               },
               {
                 "id": "care",
-                "text": "接納改變想法的緊張",
+                "text": "已經決定方向，程序仍要一步一步完成",
                 "kind": "support",
                 "emotional": true,
                 "outcome": {
-                  "fact": "導師理解改變方向的緊張，沒有把先前的繁星意願當成不能更改的承諾。",
+                  "fact": "導師支持學生自己確認決定，也提醒正式狀態須以承辦紀錄為準。",
                   "claims": [
                     {
                       "role": "participant",
-                      "statement": "我比較想走另一個管道，現在退出還來得及嗎？",
+                      "statement": "我已經退出討論群，也跟同學說不參加了，這樣算正式放棄嗎？",
                       "belief": "believed",
                       "visible": false
                     }
@@ -7867,7 +7980,7 @@
                         "fromRole": "participant",
                         "toRole": "teacher",
                         "claimIndex": 0,
-                        "description": "本次由學生向導師表達個人看法；其他人未自動知情。"
+                        "description": "當事人直接向導師說明本次情況；導師僅知悉其陳述與本次處理。"
                       }
                     ]
                   }
@@ -7898,18 +8011,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.45454545454545453,
+          0.2727272727272727,
+          0.0,
+          0.2727272727272727,
+          0.0,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -7924,13 +8037,18 @@
             "noon"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            }
           ]
         },
         "repetition": {
@@ -7954,16 +8072,17 @@
       "editorial": {
         "title": "學生想改用其他管道",
         "candidateId": "T02-05-C26",
-        "cause": "學生比較自身能力與志趣後想退出繁星作業",
+        "cause": "校內繁星推薦確認作業尚未截止，學生已決定改走其他管道，卻以為從群組退出就等於辦妥正式放棄。",
         "knowledgeSource": "來自本次學生口述及眼前資料。未在場人的意願、承辦決議或未查證傳聞不能當作事實。",
         "teacherResponsibility": "導師可釐清、支持及提供正式管道，但不能替學生、家長或校方作最終決定。",
-        "distinctiveConsequence": "學生說出想改走申請管道的原因，發現自己還未核對退出繁星的正式時點。／學生確認應向校內承辦詢問的資格與期限，不由導師代辦退出。／學生開始比較各管道後續準備量，仍未作出最終決定。／導師理解改變方向的緊張，沒有把先前的繁星意願當成不能更改的承諾。",
+        "distinctiveConsequence": "學生列出自己已完成的程序，知道退群不能代替正式文件。／學生記下應向承辦查詢的期限，不把導師口頭回覆當成已恢復其他入學資格。／學生準備確認是否需書面撤回，尚未聲稱已完成放棄或影響他人名額。／導師支持學生自己確認決定，也提醒正式狀態須以承辦紀錄為準。",
         "narrativeTime": "截止日前",
         "scene": "school:counseling",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「校內繁星推薦確認作業尚未截止，學生已決定改走其他管道，卻以為從群組退出就等於辦妥正式放棄。」校準候選傾向：4-3 高（相對權重5）、2-2 高（相對權重3）、3-1 高（相對權重3）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
-        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
+        "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -8229,19 +8348,19 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.2222222222222222,
+          0.4444444444444444,
+          0.0,
+          0.2222222222222222,
+          0.1111111111111111,
+          0.0
         ],
         "directions": [
           1,
-          -1,
+          1,
+          1,
           1,
           -1,
-          1,
           1
         ],
         "eligibility": {
@@ -8255,13 +8374,21 @@
             "noon"
           ],
           "from": null,
-          "until": null,
+          "until": "2029-03-18",
           "facts": [],
           "history": [],
           "numeric": [],
           "enrollment": null,
           "grades": [
             3
+          ],
+          "entrance": [
+            {
+              "kind": "gsat-published"
+            },
+            {
+              "kind": "stars-nominated"
+            }
           ]
         },
         "repetition": {
@@ -8292,10 +8419,11 @@
         "narrativeTime": "正常上課日午休",
         "scene": "school:administration",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「午休，行政辦公室。學生核對校內推薦文件時發現身分資料誤植，需要查詢正式更正程序。」校準候選傾向：4-3 高（相對權重2）、2-2 高（相對權重4）、3-1 高（相對權重2）、2-4 低（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": null,
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。",
-        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。"
+        "timeOrStageRepair": "已對應故事文字的角色說話來源、正式上課時段及已存在的升學里程碑；維持作者工程隔離，未經獨立審稿。",
+        "hydrogenWindow": "僅限首發2026屆、既有校曆tw-school-2026-2065-senior-h1-v1；依stars-screen 2029-03-19或application-review 2029-05-15前一日關閉尚未完成作業／練習窗口，不改校曆。其他屆需重新核對。"
       }
     },
     {
@@ -8561,18 +8689,18 @@
           "4-4"
         ],
         "weights": [
-          0.24,
-          0.22,
-          0.19,
-          0.14,
-          0.12,
-          0.09
+          0.3333333333333333,
+          0.3333333333333333,
+          0.0,
+          0.2222222222222222,
+          0.1111111111111111,
+          0.0
         ],
         "directions": [
           1,
-          -1,
           1,
-          -1,
+          1,
+          1,
           1,
           1
         ],
@@ -8598,6 +8726,13 @@
           "entrance": [
             {
               "kind": "stars-nominated"
+            },
+            {
+              "kind": "gsat-published"
+            },
+            {
+              "kind": "milestone-completed",
+              "value": "application-result"
             }
           ]
         },
@@ -8629,7 +8764,7 @@
         "narrativeTime": "高三畢業典禮前的正常上課日",
         "scene": "school:classroom",
         "review": "author-rewritten-causal-outcomes-unreviewed",
-        "numericRationale": "沿用本小主題核心六碼候選；數值方向與加權仍須逐篇依實際情境調整，尚未取得正式驗證。",
+        "numericRationale": "依本篇起因「高三畢業典禮前的某個上課日，學生在教室收拾自己的資料，談起當初繁星的決定是否值得。」校準候選傾向：4-3 高（相對權重3）、2-2 高（相對權重3）、3-1 高（相對權重2）、2-4 高（相對權重1）。未見直接因果者權重0；能力／人格僅影響機率，非既定行為；不新增選項changes。",
         "qualificationWarning": "須是當年有實際繁星提名紀錄的高三在校生；保留工程隔離，未驗證畢業前上課時段。",
         "gradeEligibilityBlocker": "已透過正式eligibility.grades=[3]完成高三年級候選限制；但升學階段、個別路線、在籍與特殊時點仍待語意及工程精準查核。工程隔離，禁止改ready或正式抽選。"
       }

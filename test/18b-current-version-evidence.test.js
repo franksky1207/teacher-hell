@@ -35,7 +35,7 @@ test('Eight held T02 sources retain exact hashes and all 18 remain isolated',()=
   const r=by02.get(id);assert.ok(r,id);assert.equal(stableSha(r),hold.sha256,id);
  }
  const actual=register.t02.entries.map(x=>x.id).sort();
- const expected=[...Object.keys(corrections.held),...Object.keys(corrections.blocked),'05-23'].map(x=>'content:18b-t02-'+x).sort();
+ const expected=[...new Set([...Object.keys(corrections.held),...Object.keys(corrections.blocked),'05-23'])].map(x=>'content:18b-t02-'+x).sort();
  assert.deepEqual(actual,expected);
 });
 test('Remaining review and release gaps are recorded, not silently promoted',()=>{

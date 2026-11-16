@@ -11,10 +11,15 @@ test('T03 engineering drafts stay isolated and synchronized with authoring sourc
  assert.equal(T03_BATCH_RECORDS.length,src.reduce((n,x)=>n+x.records.length,0));
  assert.ok(T03_BATCH_RECORDS.length>=45);
  const ids=new Set();
+ const titleByTopic=new Map();
  for(const batch of src){
   assert.ok(batch.records.length,'missing subtopic authoring records');
   for(const record of batch.records){
    assert.ok(!ids.has(record.definition.id),'duplicate '+record.definition.id);
+   const topic=record.definition.topicId;
+   const key=topic+' / '+record.editorial.title.trim();
+   assert.ok(!titleByTopic.has(key),'duplicate plot premise '+key);
+   titleByTopic.set(key,record.definition.id);
    ids.add(record.definition.id);
    assert.equal(record.story.status,'engineering-test');
    assert.equal(record.definition.content.status,'engineering-test');

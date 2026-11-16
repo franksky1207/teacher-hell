@@ -48,3 +48,23 @@ test('Remaining review and release gaps are recorded, not silently promoted',()=
   assert.equal(r.definition.content.status,'engineering-test',r.definition.id);
  }
 });
+
+
+test('Review handoff covers exactly unresolved 192 T01 and 168 T02 without false approval',()=>{
+ const handoff=load('work/18b-t01-t02-independent-review-handoff.json');
+ const gates=load('work/18b-t01-t02-release-gates.json');
+ assert.equal(handoff.entries.length,360);
+ assert.equal(handoff.summary.t01Pending,192);
+ assert.equal(handoff.summary.t02Pending,168);
+ const expected=[...t01.filter(r=>!approval.records.some(a=>a.eventId===r.definition.id)).map(r=>r.definition.id),
+   ...corrections.resolvedIds.map(id=>'content:18b-t02-'+id)].sort();
+ assert.deepEqual(handoff.entries.map(x=>x.id).sort(),expected);
+ for(const row of handoff.entries){
+  assert.equal(row.verdict,null,row.id);
+  assert.equal(row.reviewer,null,row.id);
+  assert.equal(row.reviewedDigest,null,row.id);
+ }
+ assert.deepEqual(gates.currentReleaseHolds,['content:18b-t02-05-23']);
+ assert.ok(!register.t02.entries.some(e=>e.id==='content:18b-t02-05-23'));
+ assert.equal(gates.premiseVerification.filter(x=>x.releaseHold===true).length,1);
+});

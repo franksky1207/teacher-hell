@@ -556,7 +556,128 @@ export default [
                     }
                   ]
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "willing-step",
+                  "weight": 3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "4-4",
+                      "influence": 0.45
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生鬆開緊握的筆，說自己可以慢慢問不懂的玩笑，不必再假裝跟著笑；仍待同學相互熟悉。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我沒有討厭他們，是真的沒聽懂。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-2",
+                        "delta": -0.5
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生與導師私下反映，未自動告知其他人物。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "needs-time",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "4-4",
+                      "influence": -0.35
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生仍不太敢當面問其他同學，表示想先觀察；導師沒有要求他立刻加入笑鬧。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我沒有討厭他們，是真的沒聽懂。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生與導師私下反映，未自動告知其他人物。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             }
           ],
           "next": null

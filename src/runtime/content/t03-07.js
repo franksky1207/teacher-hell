@@ -32,7 +32,7 @@ export default [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "worried"
+                  "expression": "sad"
                 }
               ],
               "presentation": "dialogue"
@@ -253,22 +253,22 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "4-3",
-        "3-2",
-        "2-2"
+        "4-4",
+        "3-1",
+        "6-2"
       ],
       "additionalCodes": [
-        "3-1",
-        "4-4",
-        "2-4"
+        "1-3",
+        "2-2",
+        "3-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
@@ -345,7 +345,7 @@ export default [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "worried"
+                  "expression": "embarrassed"
                 }
               ],
               "presentation": "dialogue"
@@ -566,22 +566,22 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "4-3",
-        "3-2",
-        "2-2"
+        "4-4",
+        "3-1",
+        "6-2"
       ],
       "additionalCodes": [
-        "3-1",
-        "4-4",
-        "2-4"
+        "1-3",
+        "2-2",
+        "3-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
@@ -658,7 +658,7 @@ export default [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "worried"
+                  "expression": "sad"
                 }
               ],
               "presentation": "dialogue"
@@ -879,22 +879,22 @@ export default [
         "status": "engineering-test"
       },
       "coreCodes": [
-        "4-3",
-        "3-2",
-        "2-2"
+        "4-4",
+        "3-1",
+        "6-2"
       ],
       "additionalCodes": [
-        "3-1",
-        "4-4",
-        "2-4"
+        "1-3",
+        "2-2",
+        "3-2"
       ],
       "weights": [
         0.22,
+        0.21,
         0.19,
-        0.26,
+        0.15,
         0.13,
-        0.12,
-        0.08
+        0.1
       ],
       "directions": [
         -1,
@@ -912,7 +912,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "early"
+          "lunch"
         ],
         "from": null,
         "until": null,

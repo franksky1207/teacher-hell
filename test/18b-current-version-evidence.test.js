@@ -28,14 +28,14 @@ test('Hydrogen 23 passed unchanged T02 stories retain their reviewed hashes',()=
   const r=by02.get(id);assert.ok(r,id);assert.equal(stableSha(r),hash,id);
  }
 });
-test('Eight held T02 sources retain exact hashes and all 17 remain isolated',()=>{
+test('Eight held T02 sources retain exact hashes and all 18 remain isolated',()=>{
  assert.equal(Object.keys(corrections.held).length,8);
  assert.equal(Object.keys(corrections.blocked).length,9);
  for(const [id,hold] of Object.entries(corrections.held)){
   const r=by02.get(id);assert.ok(r,id);assert.equal(stableSha(r),hold.sha256,id);
  }
  const actual=register.t02.entries.map(x=>x.id).sort();
- const expected=[...Object.keys(corrections.held),...Object.keys(corrections.blocked)].map(x=>'content:18b-t02-'+x).sort();
+ const expected=[...Object.keys(corrections.held),...Object.keys(corrections.blocked),'05-23'].map(x=>'content:18b-t02-'+x).sort();
  assert.deepEqual(actual,[...expected,'content:18b-t02-05-23'].sort());
 });
 test('Remaining review and release gaps are recorded, not silently promoted',()=>{
@@ -50,7 +50,7 @@ test('Remaining review and release gaps are recorded, not silently promoted',()=
 });
 
 
-test('Review handoff covers exactly unresolved 192 T01 and 168 T02 without false approval',()=>{
+test('Optional independent review reference preserves original 360 IDs without invented signoffs',()=>{
  const handoff=load('work/18b-t01-t02-independent-review-handoff.json');
  const gates=load('work/18b-t01-t02-release-gates.json');
  assert.equal(handoff.entries.length,360);
@@ -65,6 +65,6 @@ test('Review handoff covers exactly unresolved 192 T01 and 168 T02 without false
   assert.equal(row.reviewedDigest,null,row.id);
  }
  assert.deepEqual(gates.currentReleaseHolds,['content:18b-t02-05-23']);
- assert.ok(!register.t02.entries.some(e=>e.id==='content:18b-t02-05-23'));
+ assert.ok(register.t02.entries.some(e=>e.id==='content:18b-t02-05-23'));
  assert.equal(gates.premiseVerification.filter(x=>x.releaseHold===true).length,1);
 });

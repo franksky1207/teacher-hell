@@ -12,7 +12,7 @@ test('Controller content decisions cover exactly 408 original events, with 390 p
  assert.equal(records.filter(x=>x.contentVerdict==='controller-accepted').length,359);
  assert.equal(records.filter(x=>x.contentVerdict==='previous-review-accepted').length,31);
  assert.equal(holds.filter(x=>x.contentVerdict==='isolated').length,17);
- assert.deepEqual(holds.map(x=>x.id).sort(),[...registry.t02.entries.map(x=>x.id),'content:18b-t02-05-23'].sort());
+ assert.deepEqual(holds.map(x=>x.id).sort(),registry.t02.entries.map(x=>x.id).sort());
 });
 test('Every accepted event exists in unchanged engineering authoring sources and cannot be a published record',()=>{
  const all=['t01','t02'].flatMap(t=>Array.from({length:8},(_,i)=>read('work/18b-'+t+'-'+String(i+1).padStart(2,'0')+'-authoring.json').records).flat());

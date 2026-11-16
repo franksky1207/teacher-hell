@@ -6130,7 +6130,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "p5"
+          "lunch"
         ],
         "from": null,
         "until": null,

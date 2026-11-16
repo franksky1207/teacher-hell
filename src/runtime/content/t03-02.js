@@ -6202,7 +6202,7 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "放假一節也要有確定去哪裡的資訊",
+              "text": "課程究竟有沒有異動，不能只靠猜的",
               "kind": "support",
               "emotional": true,
               "outcome": {

@@ -1578,7 +1578,7 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "笑話一直落在同一個人身上，就不好笑了",
+              "text": "模仿別人的說話方式，不一定人人覺得好笑",
               "kind": "support",
               "emotional": true,
               "outcome": {
@@ -2520,7 +2520,7 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "翻譯一個字弄反，會害整家忙翻天",
+              "text": "擇一和全部差很多，現在說清楚還來得及",
               "kind": "support",
               "emotional": true,
               "outcome": {

@@ -28,7 +28,7 @@ jobs:
             await import('./web/game.js');
             throw new Error('Browser entry unexpectedly evaluated without DOM');
           } catch (error) {
-            if (error instanceof ReferenceError && /document is not defined/.test(error.message)) {
+            if (error instanceof ReferenceError && /(?:document|window) is not defined/.test(error.message)) {
               console.log('PASS browser entry imports linked (DOM unavailable under Node)');
             } else {
               console.error(error);

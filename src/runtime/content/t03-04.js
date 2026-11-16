@@ -187,7 +187,128 @@ export default [
                     }
                   ]
                 }
-              }
+              },
+              "variants": [
+                {
+                  "id": "willing-step",
+                  "weight": 3,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "4-1",
+                      "influence": 0.45
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生自己選了一個延伸探究問題，笑著在筆記上畫出第一個構想；這份自選探究並未取代正式作業。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我不是不想學，只是同一題一直抄也不會變難。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "2-4",
+                        "delta": 0.5
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面告知導師，其他人是否得知仍須由實際聯絡決定。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "needs-time",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "4-1",
+                      "influence": -0.35
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生想了片刻仍未決定要研究哪個問題，說需要先看一些例子；尚未建立新任務。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "我不是不想學，只是同一題一直抄也不會變難。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生當面告知導師，其他人是否得知仍須由實際聯絡決定。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             },
             {
               "id": "empathy",

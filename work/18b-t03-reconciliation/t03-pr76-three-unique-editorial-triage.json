@@ -4,53 +4,98 @@
     "pr75": "5a1e4ae38b711b0f666d6a23e0a7369b67c615e2",
     "pr76": "4385f90591959e52a74efc0614b7ccf7c4cae68f"
   },
-  "status": "editorial-triage-not-published",
-  "notes": "這三則已逐一閱讀原稿並對照PR75既有事件；不是直接退稿也不是自動併入已核可224則。原稿保存在各pr76-alternatives.json；PR75及PR76原資料均不更動。",
+  "status": "individual-review-complete-adapted-to-isolated-candidates",
+  "notes": "三份PR76保全原稿逐件去重、修稿與核可，以新ID加入主稿和隔離JS；原檔及PR75歷史同ID保留稿未覆寫，不自動發布。",
   "records": [
     {
       "id": "content:18b-t03-06-22",
       "title": "健康狀態的公開問候",
-      "verdict": "retain-isolated-requires-world-eligibility",
+      "verdict": "controller-content-accepted-as-new-isolated-id",
       "isDistinctFrom": [
         "content:18b-t03-06-02",
         "content:18b-t03-06-13"
       ],
       "reason": "本件是科任公開詢問健康狀況及導師與科任的保密界線，與02的同儕猜測及13的同學反覆問候在權責、行為者及處理方式不同；值得保留。",
-      "requiredFix": "補足可核實的返校／長期缺課後回歸資格，避免隨機普通學生直接出現『返校時』敘事；確認科任實際公開問候是本事件當下可觀察而非未建立的歷史。",
-      "next": "精準修正eligibility、來源同步JS、實際契約測試後再正式內容核可"
+      "next": "維持工程隔離，等待正式整合決策；本輪內容處置已完成。",
+      "priorVerdict": "retain-isolated-requires-world-eligibility",
+      "adaptedId": "content:18b-t03-06-28",
+      "candidateId": "T03-06-C22",
+      "finalReason": "正式休學至少14天後45天內返校；科任問候只是學生此次轉述。與06-02同儕猜測、06-13反覆問候不同，責任是教師公開健康詢問及科任保密界線。",
+      "finalDisposition": "accepted",
+      "sourcePath": "work/18b-t03-06-authoring.json",
+      "preservedSourcePath": "work/18b-t03-reconciliation/t03-06-pr76-alternatives.json",
+      "reviewedRecordSha256": "ec1c5c94a15adde34d81b118c67a5487b07d8d717b4bc0a5bd33444a42166b97",
+      "sourceVersion": "1",
+      "sourceSync": "exact-scoped-check-pending",
+      "engineeringVerification": "pending-one-combined-scoped-run",
+      "remainingWork": [],
+      "originalRequiredFix": "補足可核實的返校／長期缺課後回歸資格，避免隨機普通學生直接出現『返校時』敘事；確認科任實際公開問候是本事件當下可觀察而非未建立的歷史。",
+      "completedFix": "正式休學至少14天後45天內返校；科任問候只是學生此次轉述。與06-02同儕猜測、06-13反覆問候不同，責任是教師公開健康詢問及科任保密界線。",
+      "isolationStatus": "engineering-test-not-registered-not-published"
     },
     {
       "id": "content:18b-t03-07-16",
       "title": "口語流利不等於讀懂",
-      "verdict": "retain-isolated-content-candidate",
+      "verdict": "controller-content-accepted-as-new-isolated-id",
       "isDistinctFrom": [
         "content:18b-t03-07-02",
         "content:18b-t03-07-19",
         "content:18b-t03-07-28"
       ],
       "reason": "從口語流暢與學科書面術語理解落差切入，與雙關語、社團海報、閱讀生活背景的起因不同；亦非原先被隔離的『交換學生時間表』內容，應當成新版本重新審查。",
-      "requiredFix": "檢查語文能力並非依家庭身分臆測；確定當下題目、口語與科任協調的觀察來源；評估四選項結果的差異與數值作用，並檢查T03-03跨題重複。",
-      "next": "做完整主控內容審查及精準契約測試，通過才可升入主計件"
+      "next": "維持工程隔離，等待正式整合決策；本輪內容處置已完成。",
+      "priorVerdict": "retain-isolated-content-candidate",
+      "adaptedId": "content:18b-t03-07-32",
+      "candidateId": "T03-07-C34",
+      "finalReason": "口語聊天與書面學科術語落差，由當場題紙與學生轉述建立，不依國籍或家庭語言推定。對照03-02閱讀找答案、03-03文字題選條件、03-06默寫及07-28文化背景，本件需區分術語表與一般溝通能力，具有獨立學科語言支持價值。",
+      "finalDisposition": "accepted",
+      "sourcePath": "work/18b-t03-07-authoring.json",
+      "preservedSourcePath": "work/18b-t03-reconciliation/t03-07-pr76-alternatives.json",
+      "reviewedRecordSha256": "9cffddeb18447e744a8c9c2c16648110039b87e92cffcfaa65155f32ffad58f6",
+      "sourceVersion": "1",
+      "sourceSync": "exact-scoped-check-pending",
+      "engineeringVerification": "pending-one-combined-scoped-run",
+      "remainingWork": [],
+      "originalRequiredFix": "檢查語文能力並非依家庭身分臆測；確定當下題目、口語與科任協調的觀察來源；評估四選項結果的差異與數值作用，並檢查T03-03跨題重複。",
+      "completedFix": "口語聊天與書面學科術語落差，由當場題紙與學生轉述建立，不依國籍或家庭語言推定。對照03-02閱讀找答案、03-03文字題選條件、03-06默寫及07-28文化背景，本件需區分術語表與一般溝通能力，具有獨立學科語言支持價值。",
+      "isolationStatus": "engineering-test-not-registered-not-published"
     },
     {
       "id": "content:18b-t03-07-17",
       "title": "家長座談的翻譯",
-      "verdict": "retain-isolated-requires-calendar-and-privacy-check",
+      "verdict": "controller-content-accepted-as-new-isolated-id",
       "isDistinctFrom": [
         "content:18b-t03-07-04",
         "content:18b-t03-07-08"
       ],
       "reason": "本件重點為學生擔心找同學協助翻譯將洩漏座談隱私，與04回條誤解和08選填聯絡簿誤譯的主因不同；亦非原先被隔離的『無法參加晚間活動』。",
-      "requiredFix": "證實當日或近期確有可達的家長座談／通知，或改成當下提供的假設性求助、不憑空斷言校曆；守住本人與家長隱私及正式語言協助權責。",
-      "next": "補足活動資格及隱私邊界後才做主控核可與專項測試"
+      "next": "維持工程隔離，等待正式整合決策；本輪內容處置已完成。",
+      "priorVerdict": "retain-isolated-requires-calendar-and-privacy-check",
+      "adaptedId": "content:18b-t03-07-33",
+      "candidateId": "T03-07-C35",
+      "finalReason": "語言協助的同儕保密界線與07-04回條誤讀、07-08家庭轉述擇一不同；改為當下拿來的諮詢草稿，不創造即將開始的校曆活動或校方已提供翻譯。",
+      "finalDisposition": "accepted",
+      "sourcePath": "work/18b-t03-07-authoring.json",
+      "preservedSourcePath": "work/18b-t03-reconciliation/t03-07-pr76-alternatives.json",
+      "reviewedRecordSha256": "5648166738b1b0f9af92fe3a87005d8f7614bad7296b7c1b19fdc71957ab71c8",
+      "sourceVersion": "1",
+      "sourceSync": "exact-scoped-check-pending",
+      "engineeringVerification": "pending-one-combined-scoped-run",
+      "remainingWork": [],
+      "originalRequiredFix": "證實當日或近期確有可達的家長座談／通知，或改成當下提供的假設性求助、不憑空斷言校曆；守住本人與家長隱私及正式語言協助權責。",
+      "completedFix": "語言協助的同儕保密界線與07-04回條誤讀、07-08家庭轉述擇一不同；改為當下拿來的諮詢草稿，不創造即將開始的校曆活動或校方已提供翻譯。",
+      "isolationStatus": "engineering-test-not-registered-not-published"
     }
   ],
   "counts": {
-    "pr75PrimaryAuthored": 224,
-    "pr75Accepted": 168,
-    "pr75Held": 56,
+    "originalPrimaryAuthored": 224,
+    "originalAccepted": 168,
+    "originalHeld": 56,
     "pr76UniquePreserved": 3,
-    "pr76UniquePromoted": 0,
+    "pr76UniqueAdaptedAndAccepted": 3,
+    "currentPrimaryAuthored": 227,
+    "currentAccepted": 202,
+    "currentHeld": 25,
     "formalPublished": 0
   }
 }

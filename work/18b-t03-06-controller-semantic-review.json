@@ -6,12 +6,12 @@
   "sourcePath": "work/18b-t03-06-authoring.json",
   "sourceBlobSha": "e4aca5a2c9a6bfbd64a3b9c00624b75906f00855",
   "counts": {
-    "reviewed": 24,
-    "accepted": 22,
-    "held": 2,
+    "reviewed": 25,
+    "accepted": 25,
+    "held": 0,
     "published": 0
   },
-  "note": "主控依目前完整劇情逐件重審此前『完全沒有長期缺課史資格』這項阻斷。現在存在只讀 enrollmentContext：實際 prior suspended >=14 天、正式回校新在籍且在限定天數內，獨立的角色資格測試已通過先前精準 CI。場上看見的資料與學生主張只當本次遇見，不代替行政決定。內容核可22；第二天缺席與尚無正式學分前提2件保留。這是內容核可，不代表實際三年玩法可用率、程序資料完整或正式發布。",
+  "note": "歷史說明（本輪最終數量以counts及逐件結論為準）：主控依目前完整劇情逐件重審此前『完全沒有長期缺課史資格』這項阻斷。現在存在只讀 enrollmentContext：實際 prior suspended >=14 天、正式回校新在籍且在限定天數內，獨立的角色資格測試已通過先前精準 CI。場上看見的資料與學生主張只當本次遇見，不代替行政決定。內容核可22；第二天缺席與尚無正式學分前提2件保留。這是內容核可，不代表實際三年玩法可用率、程序資料完整或正式發布。",
   "records": [
     {
       "id": "content:18b-t03-06-01",
@@ -37,9 +37,14 @@
     {
       "id": "content:18b-t03-06-04",
       "title": "第二天又請假",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "故事當事人第二天又無法到校，卻以普通到校學生在場對話和當日候選方式呈現；此時人物出席資格需另行確認，現版本不放行。",
-      "sourceBlobSha": "e4aca5a2c9a6bfbd64a3b9c00624b75906f00855"
+      "contentVerdict": "controller-content-accepted",
+      "reason": "保留既有正式休學至少14天及回校1至2天資格；今天在場、疲憊與昨日補課由本人陳述，不把明日擔心當已請假，負荷討論不等於核准調課。",
+      "sourceBlobSha": "2f259db08fb238eacb905c18a1cb22bb6735ff56",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "故事當事人第二天又無法到校，卻以普通到校學生在場對話和當日候選方式呈現；此時人物出席資格需另行確認，現版本不放行。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "04ab9fc2aea795629257cb630c980f8ed087343e6951774da25013769dff9226"
     },
     {
       "id": "content:18b-t03-06-05",
@@ -128,9 +133,14 @@
     {
       "id": "content:18b-t03-06-17",
       "title": "畢業門檻的疑問",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "故事斷言學生已有多科未完成的正式評量或學分疑慮，但現行學業紀錄未有該生當期缺考／待結算資料資格，不能僅因復學史便假定學分缺漏。",
-      "sourceBlobSha": "e4aca5a2c9a6bfbd64a3b9c00624b75906f00855"
+      "contentVerdict": "controller-content-accepted",
+      "reason": "既有正式返校資格只支持缺課史；科目清單是學生自整理疑問，查證清單、詢問草稿及支持焦慮不憑空建立欠學分或延修決定。",
+      "sourceBlobSha": "2f259db08fb238eacb905c18a1cb22bb6735ff56",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "故事斷言學生已有多科未完成的正式評量或學分疑慮，但現行學業紀錄未有該生當期缺考／待結算資料資格，不能僅因復學史便假定學分缺漏。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "41b9a12f246109573d30a62d261b6035c74153727ee7ab8a62b83de7dc60cb70"
     },
     {
       "id": "content:18b-t03-06-18",
@@ -180,6 +190,19 @@
       "contentVerdict": "controller-content-accepted",
       "reason": "正式學籍留校中斷至少14天後的復學紀錄作為可驗角色前提；事件本身以學生當場可觀察教材、學習需求或說法呈現，不憑空宣布已補考、畢業或得到權責核准。四個教師選項處理方向及已確認結果不同。",
       "sourceBlobSha": "e4aca5a2c9a6bfbd64a3b9c00624b75906f00855"
+    },
+    {
+      "id": "content:18b-t03-06-28",
+      "title": "健康狀態的公開問候",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "正式休學至少14天後45天內返校；科任問候只是學生此次轉述。與06-02同儕猜測、06-13反覆問候不同，責任是教師公開健康詢問及科任保密界線。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "ec1c5c94a15adde34d81b118c67a5487b07d8d717b4bc0a5bd33444a42166b97",
+      "sourceBlobSha": "2f259db08fb238eacb905c18a1cb22bb6735ff56",
+      "priorVerdict": "controller-content-accepted",
+      "priorReason": "正式休學至少14天後45天內返校；科任問候只是學生此次轉述。與06-02同儕猜測、06-13反覆問候不同，責任是教師公開健康詢問及科任保密界線。"
     }
-  ]
+  ],
+  "latestReviewNote": "本輪只重審原暫緩事件及PR76新候選；未改動之已核可故事沿用原結論。逐件原問題、修稿、來源與驗證見reconciliation處置紀錄。"
 }

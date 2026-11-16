@@ -776,7 +776,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生準備半年數學競賽，報名通知卻顯示比賽與學校月考撞期。",
+              "text": "學生拿著數學競賽簡章和自己抄下的考試日期來問，兩張資料似乎撞期；他說有意報名，卻尚未核對學校本期段考公告或送出申請。",
               "speaker": null,
               "scene": "school:corridor",
               "cast": [],
@@ -784,7 +784,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我已經練半年了，可是段考也不是可以隨便不去。",
+              "text": "我想試試這個比賽，可是如果撞到段考，總不能自己決定不去考吧。",
               "speaker": "participant",
               "scene": "school:corridor",
               "cast": [
@@ -808,7 +808,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我已經練半年了，可是段考也不是可以隨便不去。",
+                    "statement": "我想試試這個比賽，可是如果撞到段考，總不能自己決定不去考吧。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -850,15 +850,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "向教務與競賽承辦確認合法程序",
+              "text": "整理向教務與競賽承辦查詢程序的問題",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師向權責人員詢問，不自行核准補考。",
+                "fact": "導師和學生列出待查日期與請假、評量程序，尚未聯繫權責人員或取得補考許可。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我已經練半年了，可是段考也不是可以隨便不去。",
+                    "statement": "我想試試這個比賽，可是如果撞到段考，總不能自己決定不去考吧。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -908,7 +908,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我已經練半年了，可是段考也不是可以隨便不去。",
+                    "statement": "我想試試這個比賽，可是如果撞到段考，總不能自己決定不去考吧。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -950,15 +950,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "花半年準備的事，不該用猜規則決定",
+              "text": "想認真準備的事，先別用猜的日期決定",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生感受到支持，但競賽與考試衝突仍未解決。",
+                "fact": "學生感受到參賽意願被重視，日期與程序仍待查證。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我已經練半年了，可是段考也不是可以隨便不去。",
+                    "statement": "我想試試這個比賽，可是如果撞到段考，總不能自己決定不去考吧。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1414,7 +1414,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生拿著今天的數學練習和還沒完成的國文報告來找你，說自己解數學題比較順手，報告卻不知道怎麼開場；旁邊同學隨口笑說他只會算題目。",
+              "text": "學生拿著今天的數學練習和還沒完成的國文報告來找你，說解數學題比較順手，報告卻不知道怎麼開場；他轉述剛才有同學笑他只會算題目，導師尚未核實那段互動。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -1488,11 +1488,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "與國文科任討論可行的報告練習",
+              "text": "整理向國文科任詢問報告練習的草稿",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師詢問國文科任支持方式，不代為評分。",
+                "fact": "導師和學生列出報告開場的具體困難，尚未聯絡國文科任或取得評分調整。",
                 "claims": [
                   {
                     "role": "participant",
@@ -2371,7 +2371,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生的科展作品用了很多專業術語，班級成果展觀眾路過卻看不懂他在研究什麼。",
+              "text": "學生拿著自己整理的研究展板草稿來找你，想練習三十秒介紹。他一口氣念出好幾個術語，停下來問你是否聽得懂；尚未報名任何科展或成果展。",
               "speaker": null,
               "scene": "school:auditorium",
               "cast": [],
@@ -2379,7 +2379,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我講的都是真的，但他們聽三句就走了。",
+              "text": "我每個詞都想講清楚，可是念完自己都忘了重點在哪。",
               "speaker": "participant",
               "scene": "school:auditorium",
               "cast": [
@@ -2403,7 +2403,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我講的都是真的，但他們聽三句就走了。",
+                    "statement": "我每個詞都想講清楚，可是念完自己都忘了重點在哪。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -2445,15 +2445,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "與指導教師討論展板可讀性",
+              "text": "整理要請相關科任協助核對的術語與例子",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "指導教師被詢問展板呈現方式，尚待確認。",
+                "fact": "導師和學生列出需要專業核對的展板用語，尚未聯繫科任或取得參展資格。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我講的都是真的，但他們聽三句就走了。",
+                    "statement": "我每個詞都想講清楚，可是念完自己都忘了重點在哪。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -2499,11 +2499,11 @@ export default [
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生試講短版導覽，仍需在真實展場觀察。",
+                "fact": "學生完成一次三十秒短版試講，哪些說法更易理解仍可再比較。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我講的都是真的，但他們聽三句就走了。",
+                    "statement": "我每個詞都想講清楚，可是念完自己都忘了重點在哪。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -2553,7 +2553,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我講的都是真的，但他們聽三句就走了。",
+                    "statement": "我每個詞都想講清楚，可是念完自己都忘了重點在哪。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5561,7 +5561,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生拍的科學短片在網路爆紅，有人傳成他已拿到國際競賽金牌。",
+              "text": "學生拿手機出示一段自己製作的科學短片及一則轉傳截圖，留言把作者寫成「國際競賽金牌」。他說自己沒參加那個比賽；導師尚未查明截圖來源或實際觀看人數。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -5635,11 +5635,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "提醒同學轉傳前核對獎項來源",
+              "text": "和學生擬好提醒轉傳者核對獎項來源的文字",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "班級獲提醒勿亂傳，網路傳言是否停止仍待觀察。",
+                "fact": "學生完成一段待確認後可使用的澄清草稿，尚未發布或通知其他同學。",
                 "claims": [
                   {
                     "role": "participant",

@@ -4213,11 +4213,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "請幹部整理待討論提案與現行規定",
+              "text": "整理待向幹部核對的提案與現行規定",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "幹部彙整提案與現行規定，未把討論結果當成已生效的公告。",
+                "fact": "導師和學生列出三項提案的待確認欄位，尚未通知幹部或發布新規定。",
                 "claims": [
                   {
                     "role": "participant",
@@ -6102,11 +6102,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "向教務或科任確認是否真的異動",
+              "text": "整理向教務或科任查詢課務的問題",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師詢問正式課務安排，尚未收到授權單位的確認。",
+                "fact": "導師和學生寫下需向教務或科任確認的課程與教室問題，尚未取得聯繫或正式異動通知。",
                 "claims": [
                   {
                     "role": "participant",

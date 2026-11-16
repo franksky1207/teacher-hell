@@ -6,11 +6,11 @@
   "sourceBlobSha": "0fd584d62b64007422ca850af52a3e48692c3b68",
   "counts": {
     "reviewed": 24,
-    "accepted": 22,
-    "held": 2,
+    "accepted": 24,
+    "held": 0,
     "published": 0
   },
-  "note": "此項僅是主控內容語意審查，不是外部AI簽核、遊戲正式註冊或主題完整結案。兩則因班會決議／課表變動世界前提隔離。其他主題尚待審。",
+  "note": "歷史說明（本輪最終數量以counts及逐件結論為準）：此項僅是主控內容語意審查，不是外部AI簽核、遊戲正式註冊或主題完整結案。兩則因班會決議／課表變動世界前提隔離。其他主題尚待審。",
   "records": [
     {
       "id": "content:18b-t03-02-01",
@@ -106,9 +106,14 @@
     {
       "id": "content:18b-t03-02-14",
       "title": "班會一次改三規則",
-      "sourceBlobSha": "0fd584d62b64007422ca850af52a3e48692c3b68",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "已完成班會改三項規則缺乏正式世界決議前提；應加可證明的前因或改為討論提案。"
+      "sourceBlobSha": "65f6b981f4c7472d021d3b43380ae6e4b493803a",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "三項仍是班會提案；查證決議、準備向幹部核對、列出明日第一步與支持澄清具有不同產物，不憑空成立新規則或幹部知情。",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "已完成班會改三項規則缺乏正式世界決議前提；應加可證明的前因或改為討論提案。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "b80cc598fcd669d6380eba1bd50ec3a6f5b1f47d9917800fbfc3c20a4bab0053"
     },
     {
       "id": "content:18b-t03-02-15",
@@ -148,9 +153,14 @@
     {
       "id": "content:18b-t03-02-20",
       "title": "臨時課程取消",
-      "sourceBlobSha": "0fd584d62b64007422ca850af52a3e48692c3b68",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "正式實作課臨時取消未對應已知課表異動，必須有合法課務變更前提。"
+      "sourceBlobSha": "65f6b981f4c7472d021d3b43380ae6e4b493803a",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "群組取消消息是未證實說法；保留原課程資訊、公告查核與擬定課務詢問互有差異，未擅自取消課程或聲稱教務已知情。",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "正式實作課臨時取消未對應已知課表異動，必須有合法課務變更前提。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "66200613b2a025a5e3079d9e6752d9a73d106d010d719d019ea98ef6a5728083"
     },
     {
       "id": "content:18b-t03-02-21",
@@ -180,5 +190,6 @@
       "contentVerdict": "controller-content-accepted",
       "reason": "確認具體起因、可得資訊、教師權責、不同選擇與後果；未發現需要阻斷的語意矛盾。工程資格另驗。"
     }
-  ]
+  ],
+  "latestReviewNote": "本輪只重審原暫緩事件及PR76新候選；未改動之已核可故事沿用原結論。逐件原問題、修稿、來源與驗證見reconciliation處置紀錄。"
 }

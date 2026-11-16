@@ -1666,7 +1666,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生帶來補救課通知，時間剛好跟他負責的社團練習重疊。",
+              "text": "學生拿著一張補救課時段資料和自己抄的社團練習時間來問：若兩邊都報名，似乎會撞期。他還沒決定參加，也不確定資料是否為本期正式安排。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -1674,7 +1674,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我想把功課補起來，也不想臨時丟下社團。",
+              "text": "我想把功課補起來，也想參加社團，可是這兩張時間看起來撞在一起。",
               "speaker": "participant",
               "scene": "school:classroom",
               "cast": [
@@ -1690,15 +1690,15 @@ export default [
           "choices": [
             {
               "id": "inquire",
-              "text": "核對兩項活動的正式時段",
+              "text": "核對兩份資料的日期與適用學期",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師確認兩項活動確實撞期，尚未改動任何安排。",
+                "fact": "導師和學生發現兩份資料標示相同時段，但是否為本期正式活動仍待查證。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我想把功課補起來，也不想臨時丟下社團。",
+                    "statement": "我想把功課補起來，也想參加社團，可是這兩張時間看起來撞在一起。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1740,15 +1740,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "向授課與社團承辦詢問調整空間",
+              "text": "整理向授課與社團承辦詢問的時段問題",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "承辦人收到協調需求，正式出席規範待確認。",
+                "fact": "導師和學生寫下時段與出席規範的查詢草稿，尚未聯繫承辦或完成報名。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我想把功課補起來，也不想臨時丟下社團。",
+                    "statement": "我想把功課補起來，也想參加社團，可是這兩張時間看起來撞在一起。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1798,7 +1798,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我想把功課補起來，也不想臨時丟下社團。",
+                    "statement": "我想把功課補起來，也想參加社團，可是這兩張時間看起來撞在一起。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1848,7 +1848,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我想把功課補起來，也不想臨時丟下社團。",
+                    "statement": "我想把功課補起來，也想參加社團，可是這兩張時間看起來撞在一起。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -2942,7 +2942,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "補考結束後，學生發現科任要求列出每一步，但題目旁的作答欄沒有寫清楚。",
+              "text": "學生拿來一張標示「補考練習範例」的題紙，旁邊的示範解答列了每一步，作答欄卻沒寫要展開到哪裡。他想先弄清楚要求，不是在申訴已發生的扣分。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -3016,11 +3016,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "詢問科任批改與格式規則",
+              "text": "整理向科任確認作答格式的問題",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "科任收到詢問，正式評分仍待其回覆。",
+                "fact": "導師和學生把示範解答與作答欄的差異寫成問題，尚未聯繫科任或取得正式評分規則。",
                 "claims": [
                   {
                     "role": "participant",
@@ -3116,7 +3116,7 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "先弄懂規則，比吵有沒有扣分重要",
+              "text": "先把步驟問清楚，別跟空白作答欄猜拳",
               "kind": "support",
               "emotional": true,
               "outcome": {
@@ -3973,11 +3973,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "向授課教師反映中間練習缺口",
+              "text": "與學生整理要向授課教師反映的練習缺口",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "教師收到教材程度落差需求，是否調整待討論。",
+                "fact": "導師和學生標出講義斷層並整理詢問草稿，尚未傳給授課教師或取得教材調整。",
                 "claims": [
                   {
                     "role": "participant",
@@ -5882,11 +5882,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "向科任詢問接下來最適合練習的步驟",
+              "text": "整理要向科任確認的下一步練習問題",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師與科任將討論下個練習目標，尚未安排正式補救。",
+                "fact": "導師和學生寫下下一個練習目標的疑問，尚未與科任聯繫或安排正式補救。",
                 "claims": [
                   {
                     "role": "participant",

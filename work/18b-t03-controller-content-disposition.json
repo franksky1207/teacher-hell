@@ -4,11 +4,11 @@
   "theme": "T03",
   "kind": "controller-content-disposition-not-engineering-release",
   "sourceBranch": "feat/18b-t03-content-production-20261116",
-  "notes": "八小主題各至少20件獨立內容獲主控語意核可，其餘明確隔離。此處內容核可不代表實際遊戲候選可達、完全工程驗收或已正式發布。若更新原稿，僅重新審查修改事件及其相依結果，不全批重跑。",
+  "notes": "原168件未重審；原56暫緩＋PR76三篇逐件處置。內容核可與工程驗證分開；全部仍工程隔離，正式發布0。原問題及版本來源保留於逐件紀錄。",
   "totals": {
-    "authored": 224,
-    "accepted": 168,
-    "held": 56,
+    "authored": 227,
+    "accepted": 202,
+    "held": 25,
     "published": 0
   },
   "byTopic": [
@@ -16,57 +16,57 @@
       "topicId": "T03-01",
       "authored": 30,
       "reviewed": 30,
-      "accepted": 20,
-      "held": 10
+      "accepted": 22,
+      "held": 8
     },
     {
       "topicId": "T03-02",
       "authored": 24,
       "reviewed": 24,
-      "accepted": 22,
-      "held": 2
+      "accepted": 24,
+      "held": 0
     },
     {
       "topicId": "T03-03",
       "authored": 26,
       "reviewed": 26,
-      "accepted": 21,
-      "held": 5
+      "accepted": 26,
+      "held": 0
     },
     {
       "topicId": "T03-04",
       "authored": 27,
       "reviewed": 27,
-      "accepted": 20,
-      "held": 7
+      "accepted": 24,
+      "held": 3
     },
     {
       "topicId": "T03-05",
       "authored": 29,
       "reviewed": 29,
-      "accepted": 22,
-      "held": 7
+      "accepted": 24,
+      "held": 5
     },
     {
       "topicId": "T03-06",
-      "authored": 24,
-      "reviewed": 24,
-      "accepted": 22,
-      "held": 2
+      "authored": 25,
+      "reviewed": 25,
+      "accepted": 25,
+      "held": 0
     },
     {
       "topicId": "T03-07",
-      "authored": 29,
-      "reviewed": 29,
-      "accepted": 20,
-      "held": 9
+      "authored": 31,
+      "reviewed": 31,
+      "accepted": 28,
+      "held": 3
     },
     {
       "topicId": "T03-08",
       "authored": 35,
       "reviewed": 35,
-      "accepted": 21,
-      "held": 14
+      "accepted": 29,
+      "held": 6
     }
   ],
   "records": [
@@ -84,11 +84,17 @@
       "id": "content:18b-t03-01-02",
       "topicId": "T03-01",
       "title": "樓梯口的第三節",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "本人提出路線計時筆記，沒有替學生設定障礙或正式遲到史；核對路線、預備詢問、提早收拾構想與去標籤支持不同。",
       "authoringSource": "work/18b-t03-01-authoring.json",
       "reviewSource": "work/18b-t03-01-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "sourceBlobSha": "74ba5878c4b92897d9e5359c93c709cb84a24d14",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "98cfdaa8db914c3ef739a577f3d7fc12f7987e3027520517e399d95a9b2d8918"
     },
     {
       "id": "content:18b-t03-01-03",
@@ -104,11 +110,17 @@
       "id": "content:18b-t03-01-04",
       "topicId": "T03-01",
       "title": "體育課觀摩名單",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "眼前學生帶來的分組草案不是已生效觀摩名單；不設定疾病或活動資格，導師先問意願、擬詢問與討論替代活動，正式安全評估仍由權責決定。",
       "authoringSource": "work/18b-t03-01-authoring.json",
       "reviewSource": "work/18b-t03-01-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "sourceBlobSha": "74ba5878c4b92897d9e5359c93c709cb84a24d14",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "360d0321f3bd18e7b4162b811dc316252798928d5fce0cd58c77f53aac92ef59"
     },
     {
       "id": "content:18b-t03-01-05",
@@ -135,20 +147,32 @@
       "topicId": "T03-01",
       "title": "考場桌椅尺寸",
       "contentVerdict": "hold-world-precondition",
-      "reason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reason": "核心衝突需要本人實際輔具、考場桌下空間及段考場地；一般student且無考試資格不能建立。改成泛用桌椅意見會失去考試合理調整責任，保留原稿待真實角色及考場依據。",
       "authoringSource": "work/18b-t03-01-authoring.json",
       "reviewSource": "work/18b-t03-01-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "666c1a91ea93ac388adc19cf2ef46cb03abc06e61f7bb0f205761bc08757bdb3"
     },
     {
       "id": "content:18b-t03-01-08",
       "topicId": "T03-01",
       "title": "緊急疏散分工",
       "contentVerdict": "hold-world-precondition",
-      "reason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reason": "防災演練公告與特定學生搬運需求均未被資格支持；且四選項可只談感受而不更正不安全搬運分工。需真實演練／需求來源並重整所有分支必要安全處置，本輪不把安全程序變成可選項。",
       "authoringSource": "work/18b-t03-01-authoring.json",
       "reviewSource": "work/18b-t03-01-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "4d9b60d296c7a4f8f67403d59f6eeaebb8b19d68cfcc653f914de5467933c33c"
     },
     {
       "id": "content:18b-t03-01-09",
@@ -175,10 +199,16 @@
       "topicId": "T03-01",
       "title": "午餐隊伍的空間",
       "contentVerdict": "hold-world-precondition",
-      "reason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reason": "午餐時段正確，但轉角與特定輔具難以轉彎仍依賴人物設備前提；一般student不能證明。改成普通排隊擁擠會抹去原本可及性衝突，不作換皮放行。",
       "authoringSource": "work/18b-t03-01-authoring.json",
       "reviewSource": "work/18b-t03-01-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "8d3fa1f4920dda709448f596eb8dc55c988322c621bd11bce7e3c2ad81834f8d"
     },
     {
       "id": "content:18b-t03-01-12",
@@ -215,10 +245,16 @@
       "topicId": "T03-01",
       "title": "活動場地臨時更動",
       "contentVerdict": "hold-world-precondition",
-      "reason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reason": "成果發表前一天、已練習兩週、作品入選及舊館無電梯均無校曆／參與與場地證據。僅改成想參加會消掉臨時換場的損失，需實際活動與動線前提。",
       "authoringSource": "work/18b-t03-01-authoring.json",
       "reviewSource": "work/18b-t03-01-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "d41de306a0fff3fe928bdd7d85678f84c37bc792034a05f4fc1cd22a23a2e5db"
     },
     {
       "id": "content:18b-t03-01-16",
@@ -265,10 +301,16 @@
       "topicId": "T03-01",
       "title": "輔具電量耗盡",
       "contentVerdict": "hold-world-precondition",
-      "reason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reason": "閱讀輔助設備與當天電子題目是必要人物及課務前提；沒有現存設備使用資格。故障與替代教材的故事值得保留，但不能把任意學生指派為輔具使用者。",
       "authoringSource": "work/18b-t03-01-authoring.json",
       "reviewSource": "work/18b-t03-01-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "d0dfdeae5e44cb735b917c0e54d5da15904b7675396f1892166f2e7610e02931"
     },
     {
       "id": "content:18b-t03-01-21",
@@ -295,10 +337,16 @@
       "topicId": "T03-01",
       "title": "校外教學的交通工具",
       "contentVerdict": "hold-world-precondition",
-      "reason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reason": "既有輔具乘車條件、校外課程及採購詢價資料未有資格。改成一般交通詢問不足以保留安全與可及採購責任；需真實活動及需求再處理。",
       "authoringSource": "work/18b-t03-01-authoring.json",
       "reviewSource": "work/18b-t03-01-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "7edb8e76a4cd369b26d149293912c6f4ef0b573a81ac5590739247921cee3797"
     },
     {
       "id": "content:18b-t03-01-24",
@@ -325,10 +373,16 @@
       "topicId": "T03-01",
       "title": "舞臺後方的窄門",
       "contentVerdict": "hold-world-precondition",
-      "reason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reason": "輔具、戲劇角色、已練台詞與後臺窄門均需實際依據；改成尚未演出的泛用討論會與其他場地協助事件重疊。保留原稿，不創造場館動線或演出資格。",
       "authoringSource": "work/18b-t03-01-authoring.json",
       "reviewSource": "work/18b-t03-01-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "8856586dd69fbffe0fe9a5245bc3cad2120d34ea4eba0ae0d0e32fd3ba2a3efa"
     },
     {
       "id": "content:18b-t03-01-27",
@@ -355,10 +409,16 @@
       "topicId": "T03-01",
       "title": "讀題軟體與網路限制",
       "contentVerdict": "hold-world-precondition",
-      "reason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "reason": "指定閱讀軟體、校內電腦測驗及網路權限限制未有設備／考場前提；不能把一般student等同需此軟體者，亦不能自行放寬考試權限。",
       "authoringSource": "work/18b-t03-01-authoring.json",
       "reviewSource": "work/18b-t03-01-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生的個別可及性／輔具／活動需求及當時場景需要真實人物狀態或客觀已發生事件支援；目前一般 student 參與資格不足以辨識此人是否具有該前提。原稿的導師權責與四選項可保留，待明確前提後放行。",
+      "sourceBlobSha": "d30a1dbcbf06d16603582213fe87894871e677c7",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "43a24d8ac8087386a4dbe195e570aa471b42b036c936ac61fea5edb6c51e67dd"
     },
     {
       "id": "content:18b-t03-01-30",
@@ -504,11 +564,17 @@
       "id": "content:18b-t03-02-14",
       "topicId": "T03-02",
       "title": "班會一次改三規則",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "已完成班會改三項規則缺乏正式世界決議前提；應加可證明的前因或改為討論提案。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "三項仍是班會提案；查證決議、準備向幹部核對、列出明日第一步與支持澄清具有不同產物，不憑空成立新規則或幹部知情。",
       "authoringSource": "work/18b-t03-02-authoring.json",
       "reviewSource": "work/18b-t03-02-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "已完成班會改三項規則缺乏正式世界決議前提；應加可證明的前因或改為討論提案。",
+      "sourceBlobSha": "65f6b981f4c7472d021d3b43380ae6e4b493803a",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "b80cc598fcd669d6380eba1bd50ec3a6f5b1f47d9917800fbfc3c20a4bab0053"
     },
     {
       "id": "content:18b-t03-02-15",
@@ -564,11 +630,17 @@
       "id": "content:18b-t03-02-20",
       "topicId": "T03-02",
       "title": "臨時課程取消",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "正式實作課臨時取消未對應已知課表異動，必須有合法課務變更前提。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "群組取消消息是未證實說法；保留原課程資訊、公告查核與擬定課務詢問互有差異，未擅自取消課程或聲稱教務已知情。",
       "authoringSource": "work/18b-t03-02-authoring.json",
       "reviewSource": "work/18b-t03-02-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "正式實作課臨時取消未對應已知課表異動，必須有合法課務變更前提。",
+      "sourceBlobSha": "65f6b981f4c7472d021d3b43380ae6e4b493803a",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "66200613b2a025a5e3079d9e6752d9a73d106d010d719d019ea98ef6a5728083"
     },
     {
       "id": "content:18b-t03-02-21",
@@ -654,11 +726,17 @@
       "id": "content:18b-t03-03-05",
       "topicId": "T03-03",
       "title": "補救課撞社團",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "需先有實際補救教學與社團排程衝突，不可從普通學生抽選後創造既有報名事實。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "學生拿兩張擬參加的時段資料來問，未虛構報名或社團職務；核對日期、準備查詢及承諾排序仍保留學習與社團衝突。",
       "authoringSource": "work/18b-t03-03-authoring.json",
       "reviewSource": "work/18b-t03-03-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "需先有實際補救教學與社團排程衝突，不可從普通學生抽選後創造既有報名事實。",
+      "sourceBlobSha": "946cb478b82ce55be179ec961da45d222c91b0cc",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "d8480e28976948f909ec0fb0446998e4a75656fa08f73db5bda8d52bb422f414"
     },
     {
       "id": "content:18b-t03-03-06",
@@ -684,21 +762,33 @@
       "id": "content:18b-t03-03-08",
       "topicId": "T03-03",
       "title": "家長只看排名",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "敘事已假設補救教學參與與家長反覆追問，需核對人物前史，否則只可作為尚待查證的主張。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "當下練習紙與學生對家庭談話的轉述分開；確認進步、討論家長溝通目標、整理證據及支持努力各有用途，不推定正式補救參與或家長已收訊。",
       "authoringSource": "work/18b-t03-03-authoring.json",
       "reviewSource": "work/18b-t03-03-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "敘事已假設補救教學參與與家長反覆追問，需核對人物前史，否則只可作為尚待查證的主張。",
+      "sourceBlobSha": "946cb478b82ce55be179ec961da45d222c91b0cc",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "d865efed0ad770808c837de9ef64a5c64c8defd111e103a9d29a1ff92b7ec383"
     },
     {
       "id": "content:18b-t03-03-09",
       "topicId": "T03-03",
       "title": "補考作答格式不符",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "已參加補考並被扣分需合法補考及成績紀錄，不可由日常抽選直接設定。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "改為學生當下帶來的補考練習範例，沒有正式補考或扣分史；題面規則核對、科任查詢、步驟示範與查證支持保留格式衝突。",
       "authoringSource": "work/18b-t03-03-authoring.json",
       "reviewSource": "work/18b-t03-03-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "已參加補考並被扣分需合法補考及成績紀錄，不可由日常抽選直接設定。",
+      "sourceBlobSha": "946cb478b82ce55be179ec961da45d222c91b0cc",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "7b7a71d9a6856820b3633a1a173bc92dabae33f37b58bb5b68758280b5593bb6"
     },
     {
       "id": "content:18b-t03-03-10",
@@ -724,11 +814,17 @@
       "id": "content:18b-t03-03-12",
       "topicId": "T03-03",
       "title": "補救教材程度落差",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "已有特定補救教材與補救授課進度，需可查實際參與紀錄。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "練習講義是當場可見資料，概念斷層不等於已有補救史；將科任已收到改為和學生準備問題，保留概念定位與基礎步驟兩種實作。",
       "authoringSource": "work/18b-t03-03-authoring.json",
       "reviewSource": "work/18b-t03-03-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "已有特定補救教材與補救授課進度，需可查實際參與紀錄。",
+      "sourceBlobSha": "946cb478b82ce55be179ec961da45d222c91b0cc",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "b686c619192297b0ec027793ca8393e86ed8f21325a47d688d35939e42398a73"
     },
     {
       "id": "content:18b-t03-03-13",
@@ -784,11 +880,17 @@
       "id": "content:18b-t03-03-18",
       "topicId": "T03-03",
       "title": "補救後的微小進步",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "補救後有前後練習紙、具體學習進度，需有經歷與材料來源支持。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "兩張當日練習呈現起步差異，不假設正式補救史；比對已寫內容、整理科任詢問與選下一步目標有區別，不宣稱整科改善。",
       "authoringSource": "work/18b-t03-03-authoring.json",
       "reviewSource": "work/18b-t03-03-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "補救後有前後練習紙、具體學習進度，需有經歷與材料來源支持。",
+      "sourceBlobSha": "946cb478b82ce55be179ec961da45d222c91b0cc",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "71a2a25282ffaf3f5e927d9e28d4ae1e6dced556b4d8e1a57d9ee952c9181188"
     },
     {
       "id": "content:18b-t03-03-19",
@@ -894,11 +996,17 @@
       "id": "content:18b-t03-04-03",
       "topicId": "T03-04",
       "title": "數學競賽和月考",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "需已有真正競賽報名和當期月考日程衝突，不能無條件創造半年競賽史。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "學生有意參賽並帶資料比對，不預設半年準備、報名或當期段考日期；保留競賽與評量程序兩難但不自行核准補考。",
       "authoringSource": "work/18b-t03-04-authoring.json",
       "reviewSource": "work/18b-t03-04-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "需已有真正競賽報名和當期月考日程衝突，不能無條件創造半年競賽史。",
+      "sourceBlobSha": "f57008efff9a21d7695ab7bfec421654512f8f15",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "dcc4529b1f7c9bf4d3a4ccd8409ad40e2e3af1363c2e9bd4ebd40b257b382545"
     },
     {
       "id": "content:18b-t03-04-04",
@@ -914,11 +1022,17 @@
       "id": "content:18b-t03-04-05",
       "topicId": "T03-04",
       "title": "只會這一科的誤解",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "「數學特別好」需人物已顯示實際相關能力或成績；不能把抽到的學生自動設定數學強。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "學生拿出的兩科作業及本人偏好是依據，不設定抽中者數學天賦；同學言語只保留本人轉述，不定罪，並區分報告練習與科任詢問。",
       "authoringSource": "work/18b-t03-04-authoring.json",
       "reviewSource": "work/18b-t03-04-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "「數學特別好」需人物已顯示實際相關能力或成績；不能把抽到的學生自動設定數學強。",
+      "sourceBlobSha": "f57008efff9a21d7695ab7bfec421654512f8f15",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "60a80f1b8d9aee242d1a07a918876b5c8783a7f047158f0e3ab93f46838a7cc7"
     },
     {
       "id": "content:18b-t03-04-06",
@@ -944,11 +1058,17 @@
       "id": "content:18b-t03-04-08",
       "topicId": "T03-04",
       "title": "作品太難讓人看懂",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "需要學生已參與科展與成果展、已實際完成作品等前史或可驗證校曆活動。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "當下自行完成的研究展板草稿與試講可見，不設定科展資格或成果展校曆；將專業正確性與向非專業讀者說明分開，保留可讀性衝突。",
       "authoringSource": "work/18b-t03-04-authoring.json",
       "reviewSource": "work/18b-t03-04-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "需要學生已參與科展與成果展、已實際完成作品等前史或可驗證校曆活動。",
+      "sourceBlobSha": "f57008efff9a21d7695ab7bfec421654512f8f15",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "6c14bacb72f36285b583928a9380b57b29c7f26640e5247511db4ac2437e21bc"
     },
     {
       "id": "content:18b-t03-04-09",
@@ -975,10 +1095,16 @@
       "topicId": "T03-04",
       "title": "短跑選手的課業安排",
       "contentVerdict": "hold-world-precondition",
-      "reason": "需要校隊身分、合法出賽集訓時程與小考衝突。",
+      "reason": "role與eligibility沒有短跑校隊身分或集訓通知；小考撞期也未核對。改成一般參賽日期詢問會與04-03重疊，保留校隊課業銜接題材待實際資格。",
       "authoringSource": "work/18b-t03-04-authoring.json",
       "reviewSource": "work/18b-t03-04-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "需要校隊身分、合法出賽集訓時程與小考衝突。",
+      "sourceBlobSha": "d179595bbae25fb6c039cd509cf04890d50a0d6d",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "4f0390c4697ba3facf14dc875d8f1e6b6ce6e3e511c458ab4b592c57f5dc86a2"
     },
     {
       "id": "content:18b-t03-04-12",
@@ -1044,21 +1170,33 @@
       "id": "content:18b-t03-04-18",
       "topicId": "T03-04",
       "title": "網路人氣和實際能力",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "聲稱影片爆紅且有國際金牌謠言，需具體作品、網路傳播或傳聞證據。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "學生當場出示影片及獲獎留言截圖，只知截圖有該說法，不斷言爆紅或有國際獎項；查核來源、擬澄清與作品分享維持人氣和真實成果的衝突。",
       "authoringSource": "work/18b-t03-04-authoring.json",
       "reviewSource": "work/18b-t03-04-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "聲稱影片爆紅且有國際金牌謠言，需具體作品、網路傳播或傳聞證據。",
+      "sourceBlobSha": "f57008efff9a21d7695ab7bfec421654512f8f15",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "0de827a3e894f8cd0a37f7dbbf007344b2c360364a15cc9e19a1f942e9e26c53"
     },
     {
       "id": "content:18b-t03-04-19",
       "topicId": "T03-04",
       "title": "想退出代表隊",
       "contentVerdict": "hold-world-precondition",
-      "reason": "需要確實已入選代表隊的記錄；普通學生不應無條件出現退出代表隊敘事。",
+      "reason": "退出的必要前因是本人已正式入隊，現有普通student資格不足。只改成想加入或不加入會失去退出既有承諾的衝突；保留隔離待真實隊籍。",
       "authoringSource": "work/18b-t03-04-authoring.json",
       "reviewSource": "work/18b-t03-04-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "需要確實已入選代表隊的記錄；普通學生不應無條件出現退出代表隊敘事。",
+      "sourceBlobSha": "d179595bbae25fb6c039cd509cf04890d50a0d6d",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "2e58ad9e4de837c9464128404732d90b64c08ea07a7e5531de04b0a5bc11a9d5"
     },
     {
       "id": "content:18b-t03-04-20",
@@ -1075,10 +1213,16 @@
       "topicId": "T03-04",
       "title": "校隊請假的課表",
       "contentVerdict": "hold-world-precondition",
-      "reason": "已出賽且公假文件延遲與缺席紀錄不一致，必須建立真實時段與紀錄前提。",
+      "reason": "公假證明、出賽日及缺席登錄須是真實對應紀錄；不能從一般學生建立錯誤缺席或自行更正。需正式學務／出賽證據後續接線，原稿不放行。",
       "authoringSource": "work/18b-t03-04-authoring.json",
       "reviewSource": "work/18b-t03-04-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "已出賽且公假文件延遲與缺席紀錄不一致，必須建立真實時段與紀錄前提。",
+      "sourceBlobSha": "d179595bbae25fb6c039cd509cf04890d50a0d6d",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "9eac707a4904de8ef61e65543fe6a26b0228db1d744d2bf4c50039f59be26ad5"
     },
     {
       "id": "content:18b-t03-04-22",
@@ -1195,10 +1339,16 @@
       "topicId": "T03-05",
       "title": "原班送別卡片",
       "contentVerdict": "hold-world-precondition",
-      "reason": "故事宣稱當事人已確定即將正式轉出，但沒有目前存在的已核准轉出及計畫日期資格；需另接正式計畫歷史。",
+      "reason": "故事需要已核定未來轉出及本人意願，當前無對應計畫日期資格；不把傳聞升為正式轉出。若只談假設卡片，會弱化送別衝突，保留待真實轉出計畫。",
       "authoringSource": "work/18b-t03-05-authoring.json",
       "reviewSource": "work/18b-t03-05-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "故事宣稱當事人已確定即將正式轉出，但沒有目前存在的已核准轉出及計畫日期資格；需另接正式計畫歷史。",
+      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "4ee80ee8f74b4c6e632b3b139a78460ae42389031a0de1faabf1b5fc5bfb36b9"
     },
     {
       "id": "content:18b-t03-05-07",
@@ -1225,10 +1375,16 @@
       "topicId": "T03-05",
       "title": "座位標籤留下來",
       "contentVerdict": "hold-world-precondition",
-      "reason": "事件依目前在班學生抽選，卻敘述當事人已正式轉出；離班學生不屬於一般導師班候選。需要另處理仍在校的實際發現者與遺留物品。",
+      "reason": "普通在班參與者不等於已離班物品所有人；需要可識別的離班人物、遺留物與仍在班的發現者，現稿單一participant無法同時表達。保留原稿待重設角色，不造新轉出史。",
       "authoringSource": "work/18b-t03-05-authoring.json",
       "reviewSource": "work/18b-t03-05-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "事件依目前在班學生抽選，卻敘述當事人已正式轉出；離班學生不屬於一般導師班候選。需要另處理仍在校的實際發現者與遺留物品。",
+      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "fcdfd46a52308d7b5f1901bcdd8b44974f2a680d47a29c7649c6df1789897c23"
     },
     {
       "id": "content:18b-t03-05-10",
@@ -1245,10 +1401,16 @@
       "topicId": "T03-05",
       "title": "班級幹部空缺",
       "contentVerdict": "hold-world-precondition",
-      "reason": "總務將正式轉出的既定前提未接現有轉學計畫，且正式幹部身分也未經當前人物核實。",
+      "reason": "當前無總務幹部身分及即將轉出的計畫，班費帳本責任不能隨機賦予。需真實職務及轉出前提，不將它縮成泛用交接清單。",
       "authoringSource": "work/18b-t03-05-authoring.json",
       "reviewSource": "work/18b-t03-05-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "總務將正式轉出的既定前提未接現有轉學計畫，且正式幹部身分也未經當前人物核實。",
+      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "b7af28cf99e82306f300f155ea3c78869056c85f34b35104529525554d4e7497"
     },
     {
       "id": "content:18b-t03-05-12",
@@ -1274,11 +1436,17 @@
       "id": "content:18b-t03-05-14",
       "topicId": "T03-05",
       "title": "轉入生戶外活動報名",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "下週校外教學及已截止報名名單是需核對的校曆與活動資料，不能單憑最近轉入就認定此事成立。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "沿用真實新轉入角色及30天內資格；當場舊通知的截止日期不等於下週校外教學，保留新生面對資訊截止的焦慮與保險程序，不創造活動。",
       "authoringSource": "work/18b-t03-05-authoring.json",
       "reviewSource": "work/18b-t03-05-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "下週校外教學及已截止報名名單是需核對的校曆與活動資料，不能單憑最近轉入就認定此事成立。",
+      "sourceBlobSha": "4b2ec38c2eaa2f5fc05ce638f788866792970a85",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "4ab76568ac244a151b5325ba379dff493202e9221ea47403ae8fe8b5dd5ec54b"
     },
     {
       "id": "content:18b-t03-05-15",
@@ -1304,11 +1472,17 @@
       "id": "content:18b-t03-05-17",
       "topicId": "T03-05",
       "title": "班級合照名單",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "班級紀念照已拍及當事人確實錯過的日期，沒有對應班級活動歷史資格，僅靠轉入日期不足。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "沿用新轉入資格；當下舊合照引發被排除擔憂，不斷言畢冊進度或錯過拍攝日期；與05-24已拍兩週的歷史前提不同，先確認參與意願與可用呈現。",
       "authoringSource": "work/18b-t03-05-authoring.json",
       "reviewSource": "work/18b-t03-05-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "班級紀念照已拍及當事人確實錯過的日期，沒有對應班級活動歷史資格，僅靠轉入日期不足。",
+      "sourceBlobSha": "4b2ec38c2eaa2f5fc05ce638f788866792970a85",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "c9c15113310633e84afa4eff4545de4a0f20311702b7d16981e972f1bd1170f9"
     },
     {
       "id": "content:18b-t03-05-18",
@@ -1365,20 +1539,32 @@
       "topicId": "T03-05",
       "title": "轉出前的教室鑰匙",
       "contentVerdict": "hold-world-precondition",
-      "reason": "學生確定要轉出、尚保管班級鑰匙及交接清單缺項均沒有已成立的正式前提。",
+      "reason": "鑰匙保管登記、待轉出及交接清單缺項皆未有現存依據；不憑故事創造學生持有實體鑰匙。保留物品權責衝突，待真實交接狀態。",
       "authoringSource": "work/18b-t03-05-authoring.json",
       "reviewSource": "work/18b-t03-05-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生確定要轉出、尚保管班級鑰匙及交接清單缺項均沒有已成立的正式前提。",
+      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "cc45d5598d0c1ece51beb920a8acaabcf08ab991454d14990ac4c71c118d7944"
     },
     {
       "id": "content:18b-t03-05-24",
       "topicId": "T03-05",
       "title": "畢業紀念冊的照片日期",
       "contentVerdict": "hold-world-precondition",
-      "reason": "畢冊拍攝日已經過兩週與轉入日的先後關係，尚未由正式校曆或既有史實證實。",
+      "reason": "拍攝已過兩週與轉入的先後無正式活動史；若改成舊照片引發歸屬疑慮，會與本輪修正05-17起因及策略重疊。保持原稿隔離，不因照片版本再計件。",
       "authoringSource": "work/18b-t03-05-authoring.json",
       "reviewSource": "work/18b-t03-05-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "畢冊拍攝日已經過兩週與轉入日的先後關係，尚未由正式校曆或既有史實證實。",
+      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "f0b23966583f356bb9b2fdf25d9411d726fce48d67b08ca3975afe6b5aaeb6cd"
     },
     {
       "id": "content:18b-t03-05-25",
@@ -1464,11 +1650,17 @@
       "id": "content:18b-t03-06-04",
       "topicId": "T03-06",
       "title": "第二天又請假",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "故事當事人第二天又無法到校，卻以普通到校學生在場對話和當日候選方式呈現；此時人物出席資格需另行確認，現版本不放行。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "保留既有正式休學至少14天及回校1至2天資格；今天在場、疲憊與昨日補課由本人陳述，不把明日擔心當已請假，負荷討論不等於核准調課。",
       "authoringSource": "work/18b-t03-06-authoring.json",
       "reviewSource": "work/18b-t03-06-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "故事當事人第二天又無法到校，卻以普通到校學生在場對話和當日候選方式呈現；此時人物出席資格需另行確認，現版本不放行。",
+      "sourceBlobSha": "2f259db08fb238eacb905c18a1cb22bb6735ff56",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "04ab9fc2aea795629257cb630c980f8ed087343e6951774da25013769dff9226"
     },
     {
       "id": "content:18b-t03-06-05",
@@ -1594,11 +1786,17 @@
       "id": "content:18b-t03-06-17",
       "topicId": "T03-06",
       "title": "畢業門檻的疑問",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "故事斷言學生已有多科未完成的正式評量或學分疑慮，但現行學業紀錄未有該生當期缺考／待結算資料資格，不能僅因復學史便假定學分缺漏。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "既有正式返校資格只支持缺課史；科目清單是學生自整理疑問，查證清單、詢問草稿及支持焦慮不憑空建立欠學分或延修決定。",
       "authoringSource": "work/18b-t03-06-authoring.json",
       "reviewSource": "work/18b-t03-06-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "故事斷言學生已有多科未完成的正式評量或學分疑慮，但現行學業紀錄未有該生當期缺考／待結算資料資格，不能僅因復學史便假定學分缺漏。",
+      "sourceBlobSha": "2f259db08fb238eacb905c18a1cb22bb6735ff56",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "41b9a12f246109573d30a62d261b6035c74153727ee7ab8a62b83de7dc60cb70"
     },
     {
       "id": "content:18b-t03-06-18",
@@ -1674,11 +1872,17 @@
       "id": "content:18b-t03-07-01",
       "topicId": "T03-07",
       "title": "名字拼法的兩個版本",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "正式與慣用姓名拼法差異需有本人身分或資料來源，不能憑一般學生池創造。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "學生出示自己的填表草稿並說證件拼法不同，不改世界姓名或創造正式報到紀錄；比對欄位與慣用稱呼，與07-07被別人取綽號不同，是文件拼寫與日常稱呼的界線。",
       "authoringSource": "work/18b-t03-07-authoring.json",
       "reviewSource": "work/18b-t03-07-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "正式與慣用姓名拼法差異需有本人身分或資料來源，不能憑一般學生池創造。",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "6780bbe659e4f43a13910ba58ad47c6cdc598938b19a2c39147a2f6a78bf5b7d"
     },
     {
       "id": "content:18b-t03-07-02",
@@ -1714,21 +1918,33 @@
       "id": "content:18b-t03-07-05",
       "topicId": "T03-07",
       "title": "新來的口音",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "學生持續遭嘲弄的口音與多次經歷需存在可查人物／歷史條件。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "僅是這次模仿尾音的本人陳述，不預設口音身分、多次嘲弄或對方動機；保留查證、準備介入、本人選擇與情緒支持。",
       "authoringSource": "work/18b-t03-07-authoring.json",
       "reviewSource": "work/18b-t03-07-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生持續遭嘲弄的口音與多次經歷需存在可查人物／歷史條件。",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "0bb49a713089cd4511bec0ec02c01c1679134a4b1df86f3b005cd03fb8d8daa4"
     },
     {
       "id": "content:18b-t03-07-06",
       "topicId": "T03-07",
       "title": "節慶介紹的壓力",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "科任要求學生代表某文化群體，需有已知文化差異及實際課程語境。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "科任指派文化代表是學生此次轉述，未把族群或習俗寫進人物背景；確認個人經驗、準備自願分享詢問及拒絕代表全體皆可成立。",
       "authoringSource": "work/18b-t03-07-authoring.json",
       "reviewSource": "work/18b-t03-07-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "科任要求學生代表某文化群體，需有已知文化差異及實際課程語境。",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "582a708731358ca177d77d0a746bd01c099f9551f1b0b4349eb36348c0365e9b"
     },
     {
       "id": "content:18b-t03-07-07",
@@ -1744,11 +1960,17 @@
       "id": "content:18b-t03-07-08",
       "topicId": "T03-07",
       "title": "回家作業的家庭語言",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "學生為家庭翻譯選填項目需先有家庭語言與已發出的通知。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "當場三項擇一作業說明與本人誤傳的擔憂，不臆測家庭語言或準備結果；與07-04回條勾選不同，本件需由學生整理對家庭的更正說明。",
       "authoringSource": "work/18b-t03-07-authoring.json",
       "reviewSource": "work/18b-t03-07-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生為家庭翻譯選填項目需先有家庭語言與已發出的通知。",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "975e179607fad88a138ff2d196616c2adf0bfaed064bb10350fe335ffdf4ecfa"
     },
     {
       "id": "content:18b-t03-07-09",
@@ -1765,20 +1987,32 @@
       "topicId": "T03-07",
       "title": "傳統服飾被拍照",
       "contentVerdict": "hold-world-precondition",
-      "reason": "照片傳群組、家族服飾活動與隱私事件需在場景和已知來源成立。",
+      "reason": "活動日、服飾來源與照片散布未核實；四選項存在只談感受而不先制止不當散布的路徑。需現場或可核實證據及共同必要保護處置，不能只改一句說法就核可。",
       "authoringSource": "work/18b-t03-07-authoring.json",
       "reviewSource": "work/18b-t03-07-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "照片傳群組、家族服飾活動與隱私事件需在場景和已知來源成立。",
+      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "8dbfaa13d8542c1f2cfcd7d859802cc14b6be0629b4e49f3272c1b67912f17ab"
     },
     {
       "id": "content:18b-t03-07-11",
       "topicId": "T03-07",
       "title": "交換學生的時間表",
       "contentVerdict": "hold-world-precondition",
-      "reason": "短期交流生不是固定40人原班學生，須有合法交流學籍及當天參與資格。",
+      "reason": "短期交流生不是一般正式班學生，現有role／學籍資格不能識別交流訪客與合法行程；換成一般轉入會與T03-05生活適應題材重疊。保留原稿待交流角色支援。",
       "authoringSource": "work/18b-t03-07-authoring.json",
       "reviewSource": "work/18b-t03-07-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "短期交流生不是固定40人原班學生，須有合法交流學籍及當天參與資格。",
+      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "5b2d8c1db9522d3325f74f71a099fd96893aebe0744518fb5cabcfb475bf77c8"
     },
     {
       "id": "content:18b-t03-07-12",
@@ -1794,11 +2028,17 @@
       "id": "content:18b-t03-07-13",
       "topicId": "T03-07",
       "title": "分組只按語言分",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "「固定因語言分組」須具現行分組紀錄及人物背景，不可隨機偽造長期模式。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "改為學生帶來語言分組建議草案，不創造家庭語言分布或反覆分組史；保留效率與自主合作衝突，班級規則只是學生擬案，沒通知全班。",
       "authoringSource": "work/18b-t03-07-authoring.json",
       "reviewSource": "work/18b-t03-07-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "「固定因語言分組」須具現行分組紀錄及人物背景，不可隨機偽造長期模式。",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "7da84513a0f543e5e9fbca0c6c404fc020ac10a05d12fabdc9df06dbcb11e6cb"
     },
     {
       "id": "content:18b-t03-07-14",
@@ -1814,11 +2054,17 @@
       "id": "content:18b-t03-07-15",
       "topicId": "T03-07",
       "title": "年節假期的缺席",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "特定年節日程與班級活動撞期需有真實行事曆依據。",
+      "contentVerdict": "hold-duplicate-premise",
+      "reason": "與已核可07-12同為家庭重要活動撞班級活動，四策略同是查流程、詢問替代、整理參與需求、支持不公開家庭細節；節慶名稱不足增加獨立因果。新判定維持隔離並標出重複，不靠家庭文化灌數。",
       "authoringSource": "work/18b-t03-07-authoring.json",
       "reviewSource": "work/18b-t03-07-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "特定年節日程與班級活動撞期需有真實行事曆依據。",
+      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "316a986f1a13cecb1c2d658c184b31394ec9765ae11c03c8abaa4086f589fab3"
     },
     {
       "id": "content:18b-t03-07-18",
@@ -1874,11 +2120,17 @@
       "id": "content:18b-t03-07-23",
       "topicId": "T03-07",
       "title": "多語校刊投稿",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "學生提交多語校刊作品及編輯回應需有校刊投稿程序與語言資料。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "眼前散文草稿與本人轉述編輯意見分開，不創造已送件或退稿；原文語感、讀者註解與編輯詢問保留多語創作價值，非閱讀理解事件。",
       "authoringSource": "work/18b-t03-07-authoring.json",
       "reviewSource": "work/18b-t03-07-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生提交多語校刊作品及編輯回應需有校刊投稿程序與語言資料。",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "bb3c7a6e9868769f3a00a80343454c0ff17a6f15aeae4d3c3dbb45ec4431dfb0"
     },
     {
       "id": "content:18b-t03-07-24",
@@ -1994,11 +2246,17 @@
       "id": "content:18b-t03-08-04",
       "topicId": "T03-08",
       "title": "尋求支持被說特權",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "原先已申請特定支持且被同儕議論，需有實際申請／言語事件來源。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "支持申請尚在草稿階段，酸言是本人轉述，不創造核定支持；與03-19對資源教室標籤的內在擔憂不同，本件面對同儕把需求說成特權。",
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "原先已申請特定支持且被同儕議論，需有實際申請／言語事件來源。",
+      "sourceBlobSha": "5f5e6525275e99e20a386de7440511b632cb3e79",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "c0cd0e54fe4cb828ccb6181c4c19492839a1d345fde7761983434e2ad7c4dff6"
     },
     {
       "id": "content:18b-t03-08-05",
@@ -2034,11 +2292,17 @@
       "id": "content:18b-t03-08-08",
       "topicId": "T03-08",
       "title": "資源清單太長",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "已從輔導室領回完整資源單需有實際諮詢及文件紀錄。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "公開資訊列印稿可在當下閱讀，不假定先前接受輔導；優先需求、核對窗口的草稿與文件分類產物不同，未承諾可受理。",
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "已從輔導室領回完整資源單需有實際諮詢及文件紀錄。",
+      "sourceBlobSha": "5f5e6525275e99e20a386de7440511b632cb3e79",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "2daddfe071fba8b56ff5b74dcb3d7784411ca3118b6480537510bdf2bedceb3f"
     },
     {
       "id": "content:18b-t03-08-09",
@@ -2074,51 +2338,81 @@
       "id": "content:18b-t03-08-12",
       "topicId": "T03-08",
       "title": "同伴離校後怎麼辦",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "原協助同學因病請假及長期協助歷史須有對應人物、時段事實。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "今天缺資料的筆記表與本人求助可見，不設同學因病缺席或長期正式協助史；關鍵是資料來源單點失效，與08-03共筆會否變答案群不同。",
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "原協助同學因病請假及長期協助歷史須有對應人物、時段事實。",
+      "sourceBlobSha": "5f5e6525275e99e20a386de7440511b632cb3e79",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "48239bb808aded67d28427780228ae0e47c573c27052aa6c6d0d8b0d7ebeb84a"
     },
     {
       "id": "content:18b-t03-08-13",
       "topicId": "T03-08",
       "title": "課堂手勢提醒",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "此前曾與科任約定提醒方式，必須先存在約定。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "首次提出私下提醒請求，不設定既有協議或診斷；修正有約定的矛盾，四選項分為困難定位、科任詢問草稿、方式提案與支持求助。",
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "此前曾與科任約定提醒方式，必須先存在約定。",
+      "sourceBlobSha": "5f5e6525275e99e20a386de7440511b632cb3e79",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "33c135b38394dcd0e811ca417d2f842eb7f452e861e6a9ef9ddc7e6f11f29ef6"
     },
     {
       "id": "content:18b-t03-08-14",
       "topicId": "T03-08",
       "title": "家長代言與本人意願",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "家長已提出全面免除小組活動，需有真實家長要求來源而非臆測。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "家長意願只是學生出示訊息及本人的說法，未假設導師收到家長正式要求；確認本人、擬家長查詢及科任提案三方不自動知情。",
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "家長已提出全面免除小組活動，需有真實家長要求來源而非臆測。",
+      "sourceBlobSha": "5f5e6525275e99e20a386de7440511b632cb3e79",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "f53f22388e51658c9847fba0fe8587c4b4c6dad1c9a06e7b13f10a64b0797829"
     },
     {
       "id": "content:18b-t03-08-15",
       "topicId": "T03-08",
       "title": "資訊無法傳到代課老師",
       "contentVerdict": "hold-world-precondition",
-      "reason": "先前與固定科任達成的提醒安排以及代課情境必須有歷史／課表資格。",
+      "reason": "固定科任請假、代課資格及已有文字提示協議都無真實課表／知情交接；改成首次請求會與08-13重疊。保留真正跨教師交接題材，待有原協議和代課依據。",
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "先前與固定科任達成的提醒安排以及代課情境必須有歷史／課表資格。",
+      "sourceBlobSha": "d14de41540ff6f8d89c523c412d7b723273cf3cb",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "09fa12dfdadc0737db4a7659dcfa61c99fadc7cfe87d8b74b86729d4cc4fc724"
     },
     {
       "id": "content:18b-t03-08-16",
       "topicId": "T03-08",
       "title": "支持方案的期中檢視",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "學期初既有正式支持方案及中期紀錄需存在，不可憑空當作已核定。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "眼前自我試用紀錄不是學期初正式支持協議；新單元使原方法不合用的衝突仍在，釐清變化、準備諮詢與試行建議不改評量。",
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學期初既有正式支持方案及中期紀錄需存在，不可憑空當作已核定。",
+      "sourceBlobSha": "5f5e6525275e99e20a386de7440511b632cb3e79",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "c0dc87c32a276e6b67c9697b7f0067281fce64dd87bc4996d8b6755fbbb0d2ea"
     },
     {
       "id": "content:18b-t03-08-17",
@@ -2134,11 +2428,17 @@
       "id": "content:18b-t03-08-18",
       "topicId": "T03-08",
       "title": "當事人的不同意",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "他人已代填支持活動報名，需有真正事件／資料來源支撐。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "未送出的草稿和本人未授權是眼前問題，不創造正式報名；與08-07代做工作不同，本件處理申請同意與提交界線，四選項未外傳需求。",
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "他人已代填支持活動報名，需有真正事件／資料來源支撐。",
+      "sourceBlobSha": "5f5e6525275e99e20a386de7440511b632cb3e79",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "b1d0388d7b70a9cc04d5ac500bf5e3386700391ba10eb8ba0b9b305497623adf"
     },
     {
       "id": "content:18b-t03-08-19",
@@ -2164,31 +2464,49 @@
       "id": "content:18b-t03-08-21",
       "topicId": "T03-08",
       "title": "資源窗口一直換人",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "三週重複轉介與三名承辦人是歷史前提，需有可查的轉介紀錄。",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "自整理詢問紀錄可見，但未認定承辦失職或正式轉介三週；與08-08首次選窗口不同，本件處理回覆互相指向的責任斷點。",
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "三週重複轉介與三名承辦人是歷史前提，需有可查的轉介紀錄。",
+      "sourceBlobSha": "5f5e6525275e99e20a386de7440511b632cb3e79",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "79aafd465366be550cead02c7e3ad1df2f413229223f63f978edbdb692352f25"
     },
     {
       "id": "content:18b-t03-08-22",
       "topicId": "T03-08",
       "title": "支持方案被貼公告",
       "contentVerdict": "hold-world-precondition",
-      "reason": "公告公開敏感支持資料必須有實際公告／個資事件，且須走必要保護程序。",
+      "reason": "正式支持文件被公開需可核實文件與來源；四選項中僅一支要求權責處理，其他支可能讓敏感資料繼續展示。需所有分支共同的即時保護與必要程序，不能以一般安慰替代。",
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "公告公開敏感支持資料必須有實際公告／個資事件，且須走必要保護程序。",
+      "sourceBlobSha": "d14de41540ff6f8d89c523c412d7b723273cf3cb",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "d09df4be1f64259e55e95f4632b13af98164cfb41671239fc20acd963f27e8ee"
     },
     {
       "id": "content:18b-t03-08-23",
       "topicId": "T03-08",
       "title": "同儕協助遇考試",
       "contentVerdict": "hold-world-precondition",
-      "reason": "同儕長期協助與該同學段考時程需與實際歷史、校曆一致。",
+      "reason": "長期筆記協助及段考日期未建立；若只改成同學今天沒空，與08-12資料來源單點失效及08-25協助者休息界線高度重疊。保留原稿，不因缺席原因換成考試另計事件。",
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "同儕長期協助與該同學段考時程需與實際歷史、校曆一致。",
+      "sourceBlobSha": "d14de41540ff6f8d89c523c412d7b723273cf3cb",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "427a3fd46a991a729746a6bcfd62cf31603edc18793e56fd12e99a2758d09234"
     },
     {
       "id": "content:18b-t03-08-24",
@@ -2245,10 +2563,16 @@
       "topicId": "T03-08",
       "title": "友善地圖的實測",
       "contentVerdict": "hold-world-precondition",
-      "reason": "故事預設已發生施工和被使用的友善地圖，且涉及現場可通行性；若現行世界缺實際施工與地圖前提，抽選會憑空製造校務事實，先隔離待資格或首次發現改稿。",
+      "reason": "施工通道、實際使用的友善地圖及通行安全均無現場／正式資料；只把施工改成想像會消掉錯誤指引的責任。保留待實測或真實校務條件，不能自行建立校園施工。",
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "故事預設已發生施工和被使用的友善地圖，且涉及現場可通行性；若現行世界缺實際施工與地圖前提，抽選會憑空製造校務事實，先隔離待資格或首次發現改稿。",
+      "sourceBlobSha": "4467b94efb8a1343533d301ecc045c2060816c95",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "69b145700ca70d28602a1bf6d40c809943939c35d8899ad45af65ab27f35fa23"
     },
     {
       "id": "content:18b-t03-08-30",
@@ -2265,20 +2589,32 @@
       "topicId": "T03-08",
       "title": "小組先問再幫",
       "contentVerdict": "hold-duplicate-premise",
-      "reason": "與T03-08-07志工協助界線、T03-01-18學生自己選協助客觀起因、策略及後果過度相似；雖換成小組，不足以增加獨立計件。",
+      "reason": "維持原重複判定：與08-07代做、01-18本人選擇協助的客觀起因與策略等價；小組作品不足增加獨立因果，不換標題放行。",
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-duplicate-premise",
+      "priorReason": "與T03-08-07志工協助界線、T03-01-18學生自己選協助客觀起因、策略及後果過度相似；雖換成小組，不足以增加獨立計件。",
+      "sourceBlobSha": "4467b94efb8a1343533d301ecc045c2060816c95",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "5163cef629d622642aef7ca422a8c31987c8b0db5e2763e30f7a635292d8caf8"
     },
     {
       "id": "content:18b-t03-08-32",
       "topicId": "T03-08",
       "title": "我的需求我來寫",
       "contentVerdict": "hold-duplicate-premise",
-      "reason": "與T03-08-01學生自己整理需求、T03-08-24學生想自己聯絡科任重疊：都是本人不願被代言、寫出需求與直接聯絡，缺少新的客觀原因或不同後果。",
+      "reason": "維持原重複判定：與08-01需求清單、08-24本人向科任開口重疊，都是本人不願被代言；紙條形式沒有新增責任或後果，不另計件。",
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
-      "storyVersion": "1"
+      "storyVersion": "1",
+      "priorVerdict": "hold-duplicate-premise",
+      "priorReason": "與T03-08-01學生自己整理需求、T03-08-24學生想自己聯絡科任重疊：都是本人不願被代言、寫出需求與直接聯絡，缺少新的客觀原因或不同後果。",
+      "sourceBlobSha": "4467b94efb8a1343533d301ecc045c2060816c95",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "6acc8ad5c6aefe529dc58720832ab769e0caed0c0d4155c094c33405de45f3b9"
     },
     {
       "id": "content:18b-t03-08-33",
@@ -2309,6 +2645,46 @@
       "authoringSource": "work/18b-t03-08-authoring.json",
       "reviewSource": "work/18b-t03-08-controller-semantic-review.json",
       "storyVersion": "1"
+    },
+    {
+      "id": "content:18b-t03-06-28",
+      "title": "健康狀態的公開問候",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "正式休學至少14天後45天內返校；科任問候只是學生此次轉述。與06-02同儕猜測、06-13反覆問候不同，責任是教師公開健康詢問及科任保密界線。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "ec1c5c94a15adde34d81b118c67a5487b07d8d717b4bc0a5bd33444a42166b97",
+      "sourceBlobSha": "2f259db08fb238eacb905c18a1cb22bb6735ff56",
+      "topicId": "T03-06",
+      "priorVerdict": "controller-content-accepted",
+      "priorReason": "正式休學至少14天後45天內返校；科任問候只是學生此次轉述。與06-02同儕猜測、06-13反覆問候不同，責任是教師公開健康詢問及科任保密界線。"
+    },
+    {
+      "id": "content:18b-t03-07-32",
+      "title": "口語流利不等於讀懂",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "口語聊天與書面學科術語落差，由當場題紙與學生轉述建立，不依國籍或家庭語言推定。對照03-02閱讀找答案、03-03文字題選條件、03-06默寫及07-28文化背景，本件需區分術語表與一般溝通能力，具有獨立學科語言支持價值。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "9cffddeb18447e744a8c9c2c16648110039b87e92cffcfaa65155f32ffad58f6",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "topicId": "T03-07",
+      "priorVerdict": "controller-content-accepted",
+      "priorReason": "口語聊天與書面學科術語落差，由當場題紙與學生轉述建立，不依國籍或家庭語言推定。對照03-02閱讀找答案、03-03文字題選條件、03-06默寫及07-28文化背景，本件需區分術語表與一般溝通能力，具有獨立學科語言支持價值。"
+    },
+    {
+      "id": "content:18b-t03-07-33",
+      "title": "家長座談的翻譯",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "語言協助的同儕保密界線與07-04回條誤讀、07-08家庭轉述擇一不同；改為當下拿來的諮詢草稿，不創造即將開始的校曆活動或校方已提供翻譯。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "5648166738b1b0f9af92fe3a87005d8f7614bad7296b7c1b19fdc71957ab71c8",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "topicId": "T03-07",
+      "priorVerdict": "controller-content-accepted",
+      "priorReason": "語言協助的同儕保密界線與07-04回條誤讀、07-08家庭轉述擇一不同；改為當下拿來的諮詢草稿，不創造即將開始的校曆活動或校方已提供翻譯。"
     }
-  ]
+  ],
+  "latestReviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca"
 }

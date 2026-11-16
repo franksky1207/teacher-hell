@@ -6,19 +6,24 @@
   "sourcePath": "work/18b-t03-07-authoring.json",
   "sourceBlobSha": "a1e054a606376f1264ce304f1f9ca862b184fce3",
   "counts": {
-    "reviewed": 29,
-    "accepted": 20,
-    "held": 9,
+    "reviewed": 31,
+    "accepted": 28,
+    "held": 3,
     "published": 0
   },
-  "note": "前史、人物文化身分、資源支持與法規前提未有正式世界事實時不得升 ready；未標世界前提保留者只通過內容語意判斷，工程可抽仍另驗。；新增T03-07-24～31已主控單篇比對與T03-07-02／05／07等相鄰題材的起因及因果差別；舊21件故事內容未修改，沿用原判斷，不為新增事件重審。內容核可非發布授權。",
+  "note": "歷史說明（本輪最終數量以counts及逐件結論為準）：前史、人物文化身分、資源支持與法規前提未有正式世界事實時不得升 ready；未標世界前提保留者只通過內容語意判斷，工程可抽仍另驗。；新增T03-07-24～31已主控單篇比對與T03-07-02／05／07等相鄰題材的起因及因果差別；舊21件故事內容未修改，沿用原判斷，不為新增事件重審。內容核可非發布授權。",
   "records": [
     {
       "id": "content:18b-t03-07-01",
       "title": "名字拼法的兩個版本",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "正式與慣用姓名拼法差異需有本人身分或資料來源，不能憑一般學生池創造。",
-      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e"
+      "contentVerdict": "controller-content-accepted",
+      "reason": "學生出示自己的填表草稿並說證件拼法不同，不改世界姓名或創造正式報到紀錄；比對欄位與慣用稱呼，與07-07被別人取綽號不同，是文件拼寫與日常稱呼的界線。",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "正式與慣用姓名拼法差異需有本人身分或資料來源，不能憑一般學生池創造。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "6780bbe659e4f43a13910ba58ad47c6cdc598938b19a2c39147a2f6a78bf5b7d"
     },
     {
       "id": "content:18b-t03-07-02",
@@ -44,16 +49,26 @@
     {
       "id": "content:18b-t03-07-05",
       "title": "新來的口音",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "學生持續遭嘲弄的口音與多次經歷需存在可查人物／歷史條件。",
-      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e"
+      "contentVerdict": "controller-content-accepted",
+      "reason": "僅是這次模仿尾音的本人陳述，不預設口音身分、多次嘲弄或對方動機；保留查證、準備介入、本人選擇與情緒支持。",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生持續遭嘲弄的口音與多次經歷需存在可查人物／歷史條件。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "0bb49a713089cd4511bec0ec02c01c1679134a4b1df86f3b005cd03fb8d8daa4"
     },
     {
       "id": "content:18b-t03-07-06",
       "title": "節慶介紹的壓力",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "科任要求學生代表某文化群體，需有已知文化差異及實際課程語境。",
-      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e"
+      "contentVerdict": "controller-content-accepted",
+      "reason": "科任指派文化代表是學生此次轉述，未把族群或習俗寫進人物背景；確認個人經驗、準備自願分享詢問及拒絕代表全體皆可成立。",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "科任要求學生代表某文化群體，需有已知文化差異及實際課程語境。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "582a708731358ca177d77d0a746bd01c099f9551f1b0b4349eb36348c0365e9b"
     },
     {
       "id": "content:18b-t03-07-07",
@@ -65,9 +80,14 @@
     {
       "id": "content:18b-t03-07-08",
       "title": "回家作業的家庭語言",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "學生為家庭翻譯選填項目需先有家庭語言與已發出的通知。",
-      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e"
+      "contentVerdict": "controller-content-accepted",
+      "reason": "當場三項擇一作業說明與本人誤傳的擔憂，不臆測家庭語言或準備結果；與07-04回條勾選不同，本件需由學生整理對家庭的更正說明。",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生為家庭翻譯選填項目需先有家庭語言與已發出的通知。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "975e179607fad88a138ff2d196616c2adf0bfaed064bb10350fe335ffdf4ecfa"
     },
     {
       "id": "content:18b-t03-07-09",
@@ -80,15 +100,25 @@
       "id": "content:18b-t03-07-10",
       "title": "傳統服飾被拍照",
       "contentVerdict": "hold-world-precondition",
-      "reason": "照片傳群組、家族服飾活動與隱私事件需在場景和已知來源成立。",
-      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e"
+      "reason": "活動日、服飾來源與照片散布未核實；四選項存在只談感受而不先制止不當散布的路徑。需現場或可核實證據及共同必要保護處置，不能只改一句說法就核可。",
+      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "照片傳群組、家族服飾活動與隱私事件需在場景和已知來源成立。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "8dbfaa13d8542c1f2cfcd7d859802cc14b6be0629b4e49f3272c1b67912f17ab"
     },
     {
       "id": "content:18b-t03-07-11",
       "title": "交換學生的時間表",
       "contentVerdict": "hold-world-precondition",
-      "reason": "短期交流生不是固定40人原班學生，須有合法交流學籍及當天參與資格。",
-      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e"
+      "reason": "短期交流生不是一般正式班學生，現有role／學籍資格不能識別交流訪客與合法行程；換成一般轉入會與T03-05生活適應題材重疊。保留原稿待交流角色支援。",
+      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "短期交流生不是固定40人原班學生，須有合法交流學籍及當天參與資格。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "5b2d8c1db9522d3325f74f71a099fd96893aebe0744518fb5cabcfb475bf77c8"
     },
     {
       "id": "content:18b-t03-07-12",
@@ -100,9 +130,14 @@
     {
       "id": "content:18b-t03-07-13",
       "title": "分組只按語言分",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "「固定因語言分組」須具現行分組紀錄及人物背景，不可隨機偽造長期模式。",
-      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e"
+      "contentVerdict": "controller-content-accepted",
+      "reason": "改為學生帶來語言分組建議草案，不創造家庭語言分布或反覆分組史；保留效率與自主合作衝突，班級規則只是學生擬案，沒通知全班。",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "「固定因語言分組」須具現行分組紀錄及人物背景，不可隨機偽造長期模式。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "7da84513a0f543e5e9fbca0c6c404fc020ac10a05d12fabdc9df06dbcb11e6cb"
     },
     {
       "id": "content:18b-t03-07-14",
@@ -114,9 +149,14 @@
     {
       "id": "content:18b-t03-07-15",
       "title": "年節假期的缺席",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "特定年節日程與班級活動撞期需有真實行事曆依據。",
-      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e"
+      "contentVerdict": "hold-duplicate-premise",
+      "reason": "與已核可07-12同為家庭重要活動撞班級活動，四策略同是查流程、詢問替代、整理參與需求、支持不公開家庭細節；節慶名稱不足增加獨立因果。新判定維持隔離並標出重複，不靠家庭文化灌數。",
+      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "特定年節日程與班級活動撞期需有真實行事曆依據。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "316a986f1a13cecb1c2d658c184b31394ec9765ae11c03c8abaa4086f589fab3"
     },
     {
       "id": "content:18b-t03-07-18",
@@ -156,9 +196,14 @@
     {
       "id": "content:18b-t03-07-23",
       "title": "多語校刊投稿",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "學生提交多語校刊作品及編輯回應需有校刊投稿程序與語言資料。",
-      "sourceBlobSha": "5ef229f2bff36e8972b46fa0ece1dbbddc07db4e"
+      "contentVerdict": "controller-content-accepted",
+      "reason": "眼前散文草稿與本人轉述編輯意見分開，不創造已送件或退稿；原文語感、讀者註解與編輯詢問保留多語創作價值，非閱讀理解事件。",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生提交多語校刊作品及編輯回應需有校刊投稿程序與語言資料。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "bb3c7a6e9868769f3a00a80343454c0ff17a6f15aeae4d3c3dbb45ec4431dfb0"
     },
     {
       "id": "content:18b-t03-07-24",
@@ -215,6 +260,31 @@
       "contentVerdict": "controller-content-accepted",
       "reason": "不同日期格式使同一範例通知有兩個解讀，導師查核公告而非替承辦決定活動日期，未假設既定校曆或實際出國安排。",
       "sourceBlobSha": "a1e054a606376f1264ce304f1f9ca862b184fce3"
+    },
+    {
+      "id": "content:18b-t03-07-32",
+      "title": "口語流利不等於讀懂",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "口語聊天與書面學科術語落差，由當場題紙與學生轉述建立，不依國籍或家庭語言推定。對照03-02閱讀找答案、03-03文字題選條件、03-06默寫及07-28文化背景，本件需區分術語表與一般溝通能力，具有獨立學科語言支持價值。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "9cffddeb18447e744a8c9c2c16648110039b87e92cffcfaa65155f32ffad58f6",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "priorVerdict": "controller-content-accepted",
+      "priorReason": "口語聊天與書面學科術語落差，由當場題紙與學生轉述建立，不依國籍或家庭語言推定。對照03-02閱讀找答案、03-03文字題選條件、03-06默寫及07-28文化背景，本件需區分術語表與一般溝通能力，具有獨立學科語言支持價值。"
+    },
+    {
+      "id": "content:18b-t03-07-33",
+      "title": "家長座談的翻譯",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "語言協助的同儕保密界線與07-04回條誤讀、07-08家庭轉述擇一不同；改為當下拿來的諮詢草稿，不創造即將開始的校曆活動或校方已提供翻譯。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "5648166738b1b0f9af92fe3a87005d8f7614bad7296b7c1b19fdc71957ab71c8",
+      "sourceBlobSha": "5812aec6319965bf09fef54d2d78e340982a6008",
+      "priorVerdict": "controller-content-accepted",
+      "priorReason": "語言協助的同儕保密界線與07-04回條誤讀、07-08家庭轉述擇一不同；改為當下拿來的諮詢草稿，不創造即將開始的校曆活動或校方已提供翻譯。"
     }
-  ]
+  ],
+  "latestReviewNote": "本輪只重審原暫緩事件及PR76新候選；未改動之已核可故事沿用原結論。逐件原問題、修稿、來源與驗證見reconciliation處置紀錄。"
 }

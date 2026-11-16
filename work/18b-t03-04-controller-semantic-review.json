@@ -7,11 +7,11 @@
   "sourceBlobSha": "d179595bbae25fb6c039cd509cf04890d50a0d6d",
   "counts": {
     "reviewed": 27,
-    "accepted": 20,
-    "held": 7,
+    "accepted": 24,
+    "held": 3,
     "published": 0
   },
-  "note": "已按前提、學生與導師權責、四選項及後果審查。需已具備的競賽與成績等前史不能由一次普通隨機事件直接創造。接受僅是內容語意放行，不是 ready 或上架。；新增稿按實際故事文本逐件審核；重複原因與無已知前史明確隔離，不自動升ready。此前未改動故事不重新主控審查。",
+  "note": "歷史說明（本輪最終數量以counts及逐件結論為準）：已按前提、學生與導師權責、四選項及後果審查。需已具備的競賽與成績等前史不能由一次普通隨機事件直接創造。接受僅是內容語意放行，不是 ready 或上架。；新增稿按實際故事文本逐件審核；重複原因與無已知前史明確隔離，不自動升ready。此前未改動故事不重新主控審查。",
   "records": [
     {
       "id": "content:18b-t03-04-01",
@@ -30,9 +30,14 @@
     {
       "id": "content:18b-t03-04-03",
       "title": "數學競賽和月考",
-      "sourceBlobSha": "d179595bbae25fb6c039cd509cf04890d50a0d6d",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "需已有真正競賽報名和當期月考日程衝突，不能無條件創造半年競賽史。"
+      "sourceBlobSha": "f57008efff9a21d7695ab7bfec421654512f8f15",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "學生有意參賽並帶資料比對，不預設半年準備、報名或當期段考日期；保留競賽與評量程序兩難但不自行核准補考。",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "需已有真正競賽報名和當期月考日程衝突，不能無條件創造半年競賽史。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "dcc4529b1f7c9bf4d3a4ccd8409ad40e2e3af1363c2e9bd4ebd40b257b382545"
     },
     {
       "id": "content:18b-t03-04-04",
@@ -44,9 +49,14 @@
     {
       "id": "content:18b-t03-04-05",
       "title": "只會這一科的誤解",
-      "sourceBlobSha": "d179595bbae25fb6c039cd509cf04890d50a0d6d",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "「數學特別好」需人物已顯示實際相關能力或成績；不能把抽到的學生自動設定數學強。"
+      "sourceBlobSha": "f57008efff9a21d7695ab7bfec421654512f8f15",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "學生拿出的兩科作業及本人偏好是依據，不設定抽中者數學天賦；同學言語只保留本人轉述，不定罪，並區分報告練習與科任詢問。",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "「數學特別好」需人物已顯示實際相關能力或成績；不能把抽到的學生自動設定數學強。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "60a80f1b8d9aee242d1a07a918876b5c8783a7f047158f0e3ab93f46838a7cc7"
     },
     {
       "id": "content:18b-t03-04-06",
@@ -65,9 +75,14 @@
     {
       "id": "content:18b-t03-04-08",
       "title": "作品太難讓人看懂",
-      "sourceBlobSha": "d179595bbae25fb6c039cd509cf04890d50a0d6d",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "需要學生已參與科展與成果展、已實際完成作品等前史或可驗證校曆活動。"
+      "sourceBlobSha": "f57008efff9a21d7695ab7bfec421654512f8f15",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "當下自行完成的研究展板草稿與試講可見，不設定科展資格或成果展校曆；將專業正確性與向非專業讀者說明分開，保留可讀性衝突。",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "需要學生已參與科展與成果展、已實際完成作品等前史或可驗證校曆活動。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "6c14bacb72f36285b583928a9380b57b29c7f26640e5247511db4ac2437e21bc"
     },
     {
       "id": "content:18b-t03-04-09",
@@ -88,7 +103,12 @@
       "title": "短跑選手的課業安排",
       "sourceBlobSha": "d179595bbae25fb6c039cd509cf04890d50a0d6d",
       "contentVerdict": "hold-world-precondition",
-      "reason": "需要校隊身分、合法出賽集訓時程與小考衝突。"
+      "reason": "role與eligibility沒有短跑校隊身分或集訓通知；小考撞期也未核對。改成一般參賽日期詢問會與04-03重疊，保留校隊課業銜接題材待實際資格。",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "需要校隊身分、合法出賽集訓時程與小考衝突。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "4f0390c4697ba3facf14dc875d8f1e6b6ce6e3e511c458ab4b592c57f5dc86a2"
     },
     {
       "id": "content:18b-t03-04-12",
@@ -135,16 +155,26 @@
     {
       "id": "content:18b-t03-04-18",
       "title": "網路人氣和實際能力",
-      "sourceBlobSha": "d179595bbae25fb6c039cd509cf04890d50a0d6d",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "聲稱影片爆紅且有國際金牌謠言，需具體作品、網路傳播或傳聞證據。"
+      "sourceBlobSha": "f57008efff9a21d7695ab7bfec421654512f8f15",
+      "contentVerdict": "controller-content-accepted",
+      "reason": "學生當場出示影片及獲獎留言截圖，只知截圖有該說法，不斷言爆紅或有國際獎項；查核來源、擬澄清與作品分享維持人氣和真實成果的衝突。",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "聲稱影片爆紅且有國際金牌謠言，需具體作品、網路傳播或傳聞證據。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "0de827a3e894f8cd0a37f7dbbf007344b2c360364a15cc9e19a1f942e9e26c53"
     },
     {
       "id": "content:18b-t03-04-19",
       "title": "想退出代表隊",
       "sourceBlobSha": "d179595bbae25fb6c039cd509cf04890d50a0d6d",
       "contentVerdict": "hold-world-precondition",
-      "reason": "需要確實已入選代表隊的記錄；普通學生不應無條件出現退出代表隊敘事。"
+      "reason": "退出的必要前因是本人已正式入隊，現有普通student資格不足。只改成想加入或不加入會失去退出既有承諾的衝突；保留隔離待真實隊籍。",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "需要確實已入選代表隊的記錄；普通學生不應無條件出現退出代表隊敘事。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "2e58ad9e4de837c9464128404732d90b64c08ea07a7e5531de04b0a5bc11a9d5"
     },
     {
       "id": "content:18b-t03-04-20",
@@ -158,7 +188,12 @@
       "title": "校隊請假的課表",
       "sourceBlobSha": "d179595bbae25fb6c039cd509cf04890d50a0d6d",
       "contentVerdict": "hold-world-precondition",
-      "reason": "已出賽且公假文件延遲與缺席紀錄不一致，必須建立真實時段與紀錄前提。"
+      "reason": "公假證明、出賽日及缺席登錄須是真實對應紀錄；不能從一般學生建立錯誤缺席或自行更正。需正式學務／出賽證據後續接線，原稿不放行。",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "已出賽且公假文件延遲與缺席紀錄不一致，必須建立真實時段與紀錄前提。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "9eac707a4904de8ef61e65543fe6a26b0228db1d744d2bf4c50039f59be26ad5"
     },
     {
       "id": "content:18b-t03-04-22",
@@ -202,5 +237,6 @@
       "reason": "以學生當場自錄旋律與無法記譜的落差為起因，不等於T03-04-24的樂理筆試評價；多種策略不代替正式作品評分。",
       "sourceBlobSha": "f4dbe606802afcea248935ce9a34edff3a916224"
     }
-  ]
+  ],
+  "latestReviewNote": "本輪只重審原暫緩事件及PR76新候選；未改動之已核可故事沿用原結論。逐件原問題、修稿、來源與驗證見reconciliation處置紀錄。"
 }

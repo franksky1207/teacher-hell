@@ -1343,7 +1343,7 @@
         "distinctiveConsequence": "導師確認學生今天仍在校並聽取疲憊感受，未把對明日缺席的擔心當成已請假。／導師提出與家長及校內人員檢視負荷的安排，尚未核准任何新請假或調課。／學生和導師先列出需要確認的補課時程，尚未自行變更正式課表。／學生知道可表達負荷，不被認為不夠努力。",
         "candidateId": "T03-06-C04",
         "eligibilityHold": "已改為學生當日仍在校、對明日可能請假表達擔心；正式返校資格與精準測試仍待確認。",
-        "inProgress": "工程隔離草稿，不可直接進正式候選",
+        "inProgress": "主控逐件內容重審通過；維持 engineering-test 隔離，不代表正式註冊或發布。",
         "qualificationNote": "僅於正式世界有該生先前至少14天暫停在校、且已完成復學註冊的紀錄時可抽；其他未正式休學的長期請假者仍須更完整出缺勤史，不能虛構。"
       }
     },
@@ -5408,11 +5408,11 @@
             "choices": [
               {
                 "id": "clarify",
-                "text": "先分清已經登錄與尚未結算的學分",
+                "text": "分開列出清單中的已知資料與待查事項",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "學生了解哪些項目尚未確定，導師未自行判定延修。",
+                  "fact": "導師和學生把本人清單的疑問與需查教務紀錄的項目分開，尚未判定學分缺漏或延修。",
                   "claims": [
                     {
                       "role": "participant",
@@ -5458,11 +5458,11 @@
               },
               {
                 "id": "coordinate",
-                "text": "請教務確認補救評量及畢業門檻的正式規則",
+                "text": "整理向教務確認補救評量及畢業門檻的問題",
                 "kind": "action",
                 "emotional": false,
                 "outcome": {
-                  "fact": "導師向教務提出正式學分與評量疑問，尚未取得決定。",
+                  "fact": "導師和學生完成學分與評量的詢問草稿，尚未聯繫教務或取得正式決定。",
                   "claims": [
                     {
                       "role": "participant",
@@ -5558,7 +5558,7 @@
               },
               {
                 "id": "empathy",
-                "text": "還沒結算的事，不等於你已經沒希望",
+                "text": "還沒查清的事，先別當成已經沒希望",
                 "kind": "support",
                 "emotional": true,
                 "outcome": {
@@ -5692,9 +5692,9 @@
         "cause": "正式返校的學生拿著自己整理的科目清單，說不確定缺課期間的評量應如何補救，擔心這會影響日後的畢業門檻，想請導師幫忙查清楚。",
         "knowledgeSource": "學生口述與學校已有缺課紀錄須分別查證；不預設所有在籍學生都長期缺課。",
         "teacherResponsibility": "導師協調銜接、保護隱私，補評量及學籍處理依權責規定，沒有有效缺課歷史資格前不得升為ready。",
-        "distinctiveConsequence": "學生了解哪些項目尚未確定，導師未自行判定延修。／導師向教務提出正式學分與評量疑問，尚未取得決定。／學生整理待確認科目及資料，不自行變更成績。／學生知道可以依據實際紀錄討論，不必先認定最壞結果。",
+        "distinctiveConsequence": "導師和學生把本人清單的疑問與需查教務紀錄的項目分開，尚未判定學分缺漏或延修。／導師和學生完成學分與評量的詢問草稿，尚未聯繫教務或取得正式決定。／學生整理待確認科目及資料，不自行變更成績。／學生知道可以依據實際紀錄討論，不必先認定最壞結果。",
         "candidateId": "T03-06-C17",
-        "inProgress": "已改為本人當下主動詢問，避免虛構多科未完成正式評量；仍工程隔離待精準驗收",
+        "inProgress": "主控逐件內容重審通過；維持 engineering-test 隔離，不代表正式註冊或發布。",
         "qualificationNote": "僅於正式世界有該生先前至少14天暫停在校、且已完成復學註冊的紀錄時可抽；其他未正式休學的長期請假者仍須更完整出缺勤史，不能虛構。"
       }
     },
@@ -8047,6 +8047,343 @@
         "scene": "school:classroom",
         "inProgress": "未放行之工程隔離草稿",
         "qualificationNote": "僅於正式世界有該生先前至少14天暫停在校、且已完成復學註冊的紀錄時可抽；其他未正式休學的長期請假者仍須更完整出缺勤史，不能虛構。"
+      }
+    },
+    {
+      "story": {
+        "resourceId": "content:18b-t03-06-28",
+        "definitionId": "content:18b-t03-06-28",
+        "version": "1",
+        "topicId": "T03-06",
+        "status": "engineering-test",
+        "compilerContract": 2,
+        "choiceContract": "four-v2",
+        "entry": "opening",
+        "stages": [
+          {
+            "id": "opening",
+            "pages": [
+              {
+                "order": 1,
+                "text": "正式返校的學生下課來找你，轉述剛才科任在全班面前問「你身體好了嗎？之前到底怎麼了？」。他不想當眾回答；導師尚未核對課堂對話，也不推定缺課原因或診療資訊。",
+                "speaker": null,
+                "scene": "school:corridor",
+                "cast": [],
+                "presentation": "narration"
+              },
+              {
+                "order": 2,
+                "text": "我知道老師是關心，但全班都在看我。",
+                "speaker": "participant",
+                "scene": "school:corridor",
+                "cast": [
+                  {
+                    "role": "participant",
+                    "position": "center",
+                    "expression": "embarrassed"
+                  }
+                ],
+                "presentation": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "id": "clarify",
+                "text": "先確認學生對公開詢問的感受與意願",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師理解學生感到困擾，未認定科任存心傷害。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我知道老師是關心，但全班都在看我。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生在場向導師反映，未擅自對外公開缺課原因。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "coordinate",
+                "text": "和學生準備向科任提醒保密界線的說明",
+                "kind": "action",
+                "emotional": false,
+                "outcome": {
+                  "fact": "導師和學生擬好私下提醒科任的文字，尚未聯繫科任或公開診療資訊。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我知道老師是關心，但全班都在看我。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生在場向導師反映，未擅自對外公開缺課原因。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "plan",
+                "text": "協助學生想出不揭露細節的回應",
+                "kind": "defer",
+                "emotional": false,
+                "outcome": {
+                  "fact": "學生提出『謝謝關心，我想先上課』的回應方式。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我知道老師是關心，但全班都在看我。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生在場向導師反映，未擅自對外公開缺課原因。"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "empathy",
+                "text": "關心可以小聲一點，不用變成全班聽診",
+                "kind": "support",
+                "emotional": true,
+                "outcome": {
+                  "fact": "學生知道能接受關心也能保留自己的隱私。",
+                  "claims": [
+                    {
+                      "role": "participant",
+                      "statement": "我知道老師是關心，但全班都在看我。",
+                      "belief": "believed",
+                      "visible": false
+                    }
+                  ],
+                  "changes": [],
+                  "historyCodes": [],
+                  "next": {
+                    "stage": null,
+                    "afterDays": 0
+                  },
+                  "world": {
+                    "subjects": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "witnesses": [
+                      "teacher",
+                      "participant"
+                    ],
+                    "affected": [
+                      "participant"
+                    ],
+                    "contacts": [
+                      [
+                        "teacher",
+                        "participant"
+                      ]
+                    ],
+                    "transmissions": [
+                      {
+                        "fromRole": "participant",
+                        "toRole": "teacher",
+                        "claimIndex": 0,
+                        "description": "學生在場向導師反映，未擅自對外公開缺課原因。"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "next": null
+          }
+        ]
+      },
+      "definition": {
+        "id": "content:18b-t03-06-28",
+        "topicId": "T03-06",
+        "type": "direct",
+        "content": {
+          "resourceId": "content:18b-t03-06-28",
+          "version": "1",
+          "status": "engineering-test"
+        },
+        "coreCodes": [
+          "3-4",
+          "2-3",
+          "2-2"
+        ],
+        "additionalCodes": [
+          "3-1",
+          "4-2",
+          "4-4"
+        ],
+        "weights": [
+          0.19,
+          0.22,
+          0.24,
+          0.13,
+          0.12,
+          0.1
+        ],
+        "directions": [
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        "eligibility": {
+          "people": [
+            "student"
+          ],
+          "dayKinds": [
+            "school"
+          ],
+          "slotIds": [
+            "p4"
+          ],
+          "from": null,
+          "until": null,
+          "facts": [],
+          "history": [],
+          "numeric": [],
+          "enrollment": null,
+          "enrollmentContext": {
+            "minDays": 0,
+            "maxDays": 45,
+            "priorStatus": "suspended",
+            "minDaysAway": 14
+          }
+        },
+        "repetition": {
+          "cooldownDays": 45,
+          "exclusionGroups": [],
+          "sameFact": true,
+          "reason": "返校情境依正式世界學籍與時段資格確認；此稿尚未完成資格審查"
+        }
+      },
+      "binding": {
+        "sources": [
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant",
+          "participant"
+        ],
+        "valence": "neutral"
+      },
+      "editorial": {
+        "title": "健康狀態的公開問候",
+        "cause": "正式返校的學生下課來找你，轉述剛才科任在全班面前問「你身體好了嗎？之前到底怎麼了？」。他不想當眾回答；導師尚未核對課堂對話，也不推定缺課原因或診療資訊。",
+        "knowledgeSource": "請假、學業、健康與缺課資訊依已核實資料區分，不能推定學生已正式休學或復學。",
+        "teacherResponsibility": "導師協助跨科銜接並保護隱私；正式評分、請假及安全依權責辦理。",
+        "distinctiveConsequence": "導師理解學生感到困擾，未認定科任存心傷害。／導師和學生擬好私下提醒科任的文字，尚未聯繫科任或公開診療資訊。／學生提出『謝謝關心，我想先上課』的回應方式。／學生知道能接受關心也能保留自己的隱私。",
+        "candidateId": "T03-06-C22",
+        "narrativeTime": "p4",
+        "scene": "school:corridor",
+        "inProgress": "主控逐件內容重審通過；維持 engineering-test 隔離，不代表正式註冊或發布。",
+        "preservedSource": {
+          "path": "work/18b-t03-reconciliation/t03-06-pr76-alternatives.json",
+          "sourceCommit": "4385f90591959e52a74efc0614b7ccf7c4cae68f",
+          "originalId": "content:18b-t03-06-22",
+          "reasonForNewId": "避免與PR75歷史同ID隔離稿混淆；保全原稿不變。"
+        }
       }
     }
   ]

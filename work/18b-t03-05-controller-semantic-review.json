@@ -7,11 +7,11 @@
   "sourceBlobSha": "e945f451170d251e9514c57f368669476154a65e",
   "counts": {
     "reviewed": 29,
-    "accepted": 22,
-    "held": 7,
+    "accepted": 24,
+    "held": 5,
     "published": 0
   },
-  "note": "本輪對同一版25則內容，結合已上線候選器的角色17與實際 enrollmentContext 新進／暫停返校日期重新審核；將當場首次出示的文件或主張與必須預存的世界史實分開。正式轉出計畫、班級重要照片與活動歷史尚無合法門檻者保持隔離。內容通過不等於學籍來源實際觸發過、所有玩家皆可抽到、已發布或可升ready。；新增四件首次查詢學籍程序或真實新生教材取得問題已逐件對照既有主題與角色資格；未提交正式申請的學生不被預設已離班。",
+  "note": "歷史說明（本輪最終數量以counts及逐件結論為準）：本輪對同一版25則內容，結合已上線候選器的角色17與實際 enrollmentContext 新進／暫停返校日期重新審核；將當場首次出示的文件或主張與必須預存的世界史實分開。正式轉出計畫、班級重要照片與活動歷史尚無合法門檻者保持隔離。內容通過不等於學籍來源實際觸發過、所有玩家皆可抽到、已發布或可升ready。；新增四件首次查詢學籍程序或真實新生教材取得問題已逐件對照既有主題與角色資格；未提交正式申請的學生不被預設已離班。",
   "records": [
     {
       "id": "content:18b-t03-05-01",
@@ -52,8 +52,13 @@
       "id": "content:18b-t03-05-06",
       "title": "原班送別卡片",
       "contentVerdict": "hold-world-precondition",
-      "reason": "故事宣稱當事人已確定即將正式轉出，但沒有目前存在的已核准轉出及計畫日期資格；需另接正式計畫歷史。",
-      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e"
+      "reason": "故事需要已核定未來轉出及本人意願，當前無對應計畫日期資格；不把傳聞升為正式轉出。若只談假設卡片，會弱化送別衝突，保留待真實轉出計畫。",
+      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "故事宣稱當事人已確定即將正式轉出，但沒有目前存在的已核准轉出及計畫日期資格；需另接正式計畫歷史。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "4ee80ee8f74b4c6e632b3b139a78460ae42389031a0de1faabf1b5fc5bfb36b9"
     },
     {
       "id": "content:18b-t03-05-07",
@@ -73,8 +78,13 @@
       "id": "content:18b-t03-05-09",
       "title": "座位標籤留下來",
       "contentVerdict": "hold-world-precondition",
-      "reason": "事件依目前在班學生抽選，卻敘述當事人已正式轉出；離班學生不屬於一般導師班候選。需要另處理仍在校的實際發現者與遺留物品。",
-      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e"
+      "reason": "普通在班參與者不等於已離班物品所有人；需要可識別的離班人物、遺留物與仍在班的發現者，現稿單一participant無法同時表達。保留原稿待重設角色，不造新轉出史。",
+      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "事件依目前在班學生抽選，卻敘述當事人已正式轉出；離班學生不屬於一般導師班候選。需要另處理仍在校的實際發現者與遺留物品。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "fcdfd46a52308d7b5f1901bcdd8b44974f2a680d47a29c7649c6df1789897c23"
     },
     {
       "id": "content:18b-t03-05-10",
@@ -87,8 +97,13 @@
       "id": "content:18b-t03-05-11",
       "title": "班級幹部空缺",
       "contentVerdict": "hold-world-precondition",
-      "reason": "總務將正式轉出的既定前提未接現有轉學計畫，且正式幹部身分也未經當前人物核實。",
-      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e"
+      "reason": "當前無總務幹部身分及即將轉出的計畫，班費帳本責任不能隨機賦予。需真實職務及轉出前提，不將它縮成泛用交接清單。",
+      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "總務將正式轉出的既定前提未接現有轉學計畫，且正式幹部身分也未經當前人物核實。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "b7af28cf99e82306f300f155ea3c78869056c85f34b35104529525554d4e7497"
     },
     {
       "id": "content:18b-t03-05-12",
@@ -107,9 +122,14 @@
     {
       "id": "content:18b-t03-05-14",
       "title": "轉入生戶外活動報名",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "下週校外教學及已截止報名名單是需核對的校曆與活動資料，不能單憑最近轉入就認定此事成立。",
-      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e"
+      "contentVerdict": "controller-content-accepted",
+      "reason": "沿用真實新轉入角色及30天內資格；當場舊通知的截止日期不等於下週校外教學，保留新生面對資訊截止的焦慮與保險程序，不創造活動。",
+      "sourceBlobSha": "4b2ec38c2eaa2f5fc05ce638f788866792970a85",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "下週校外教學及已截止報名名單是需核對的校曆與活動資料，不能單憑最近轉入就認定此事成立。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "4ab76568ac244a151b5325ba379dff493202e9221ea47403ae8fe8b5dd5ec54b"
     },
     {
       "id": "content:18b-t03-05-15",
@@ -128,9 +148,14 @@
     {
       "id": "content:18b-t03-05-17",
       "title": "班級合照名單",
-      "contentVerdict": "hold-world-precondition",
-      "reason": "班級紀念照已拍及當事人確實錯過的日期，沒有對應班級活動歷史資格，僅靠轉入日期不足。",
-      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e"
+      "contentVerdict": "controller-content-accepted",
+      "reason": "沿用新轉入資格；當下舊合照引發被排除擔憂，不斷言畢冊進度或錯過拍攝日期；與05-24已拍兩週的歷史前提不同，先確認參與意願與可用呈現。",
+      "sourceBlobSha": "4b2ec38c2eaa2f5fc05ce638f788866792970a85",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "班級紀念照已拍及當事人確實錯過的日期，沒有對應班級活動歷史資格，僅靠轉入日期不足。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "c9c15113310633e84afa4eff4545de4a0f20311702b7d16981e972f1bd1170f9"
     },
     {
       "id": "content:18b-t03-05-18",
@@ -171,15 +196,25 @@
       "id": "content:18b-t03-05-23",
       "title": "轉出前的教室鑰匙",
       "contentVerdict": "hold-world-precondition",
-      "reason": "學生確定要轉出、尚保管班級鑰匙及交接清單缺項均沒有已成立的正式前提。",
-      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e"
+      "reason": "鑰匙保管登記、待轉出及交接清單缺項皆未有現存依據；不憑故事創造學生持有實體鑰匙。保留物品權責衝突，待真實交接狀態。",
+      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "學生確定要轉出、尚保管班級鑰匙及交接清單缺項均沒有已成立的正式前提。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "cc45d5598d0c1ece51beb920a8acaabcf08ab991454d14990ac4c71c118d7944"
     },
     {
       "id": "content:18b-t03-05-24",
       "title": "畢業紀念冊的照片日期",
       "contentVerdict": "hold-world-precondition",
-      "reason": "畢冊拍攝日已經過兩週與轉入日的先後關係，尚未由正式校曆或既有史實證實。",
-      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e"
+      "reason": "拍攝已過兩週與轉入的先後無正式活動史；若改成舊照片引發歸屬疑慮，會與本輪修正05-17起因及策略重疊。保持原稿隔離，不因照片版本再計件。",
+      "sourceBlobSha": "3c5700a8f261c273ac905d5f555365503c83d35e",
+      "priorVerdict": "hold-world-precondition",
+      "priorReason": "畢冊拍攝日已經過兩週與轉入日的先後關係，尚未由正式校曆或既有史實證實。",
+      "reviewBaseCommit": "bf9df6c38db233f63b6935625699257ad951d4ca",
+      "sourceVersion": "1",
+      "reviewedRecordSha256": "f0b23966583f356bb9b2fdf25d9411d726fce48d67b08ca3975afe6b5aaeb6cd"
     },
     {
       "id": "content:18b-t03-05-25",
@@ -216,5 +251,6 @@
       "contentVerdict": "controller-content-accepted",
       "reason": "當事人是已正式入班且入學7天內的角色17，公用實作材料領取清單為現場可核對的物品，不臆斷教務或總務疏失。與缺班群帳號、開學課表和餐飲訂購不同。"
     }
-  ]
+  ],
+  "latestReviewNote": "本輪只重審原暫緩事件及PR76新候選；未改動之已核可故事沿用原結論。逐件原問題、修稿、來源與驗證見reconciliation處置紀錄。"
 }

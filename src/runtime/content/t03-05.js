@@ -4221,7 +4221,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "轉入生才報到就發現下週校外教學已截止報名，班級卻還把他算進當天行程。",
+              "text": "剛轉入的學生帶著同學給的校外教學通知影本來問，報名截止日期看起來已過，卻沒看見年份。他想參加，但尚未確認影本是否為本期活動，班級也未替他報名。",
               "speaker": null,
               "scene": "school:corridor",
               "cast": [],
@@ -4229,7 +4229,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我也想去，但名單早就送出去了吧？",
+              "text": "如果這真的是現在的活動，我是不是已經來不及報名？",
               "speaker": "participant",
               "scene": "school:corridor",
               "cast": [
@@ -4245,15 +4245,15 @@ export default [
           "choices": [
             {
               "id": "inquire",
-              "text": "先核對活動名冊與學生合法在籍日期",
+              "text": "核對通知年份與學生正式入班日期",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師確認名冊與報到時點，尚未認定能直接參加。",
+                "fact": "導師和學生列出通知缺少的年份及需要比對的入班時點，尚未認定有本期活動或報名資格。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我也想去，但名單早就送出去了吧？",
+                    "statement": "如果這真的是現在的活動，我是不是已經來不及報名？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4295,15 +4295,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "向承辦詢問逾期報名和保險處理程序",
+              "text": "整理向承辦確認本期活動與保險程序的問題",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "承辦收到詢問，保險與人數限制仍待核對。",
+                "fact": "導師和學生寫下通知適用期與報名、保險的查詢草稿，尚未聯繫承辦或完成報名。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我也想去，但名單早就送出去了吧？",
+                    "statement": "如果這真的是現在的活動，我是不是已經來不及報名？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4353,7 +4353,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我也想去，但名單早就送出去了吧？",
+                    "statement": "如果這真的是現在的活動，我是不是已經來不及報名？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4403,7 +4403,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我也想去，但名單早就送出去了吧？",
+                    "statement": "如果這真的是現在的活動，我是不是已經來不及報名？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5191,7 +5191,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "新轉入生剛好錯過班級紀念照，有同學說乾脆不用把他的名字放進畢冊。",
+              "text": "剛轉入的學生看到同學分享的舊班級合照，發現沒有自己，擔心將來若做紀念冊也會漏掉。他拿照片來問，但班級是否已開始製作紀念冊尚未確認。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -5215,11 +5215,11 @@ export default [
           "choices": [
             {
               "id": "inquire",
-              "text": "先確認照片與紀念冊的正式製作階段",
+              "text": "列出需先確認的照片日期與紀念冊進度",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師核對製作進度，未保證一定能補拍。",
+                "fact": "導師和學生區分眼前舊照片與尚待確認的紀念冊計畫，未保證可補拍。",
                 "claims": [
                   {
                     "role": "participant",
@@ -5265,11 +5265,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "與畢冊負責人討論補拍或其他呈現方式",
+              "text": "整理若有紀念冊計畫要向負責人詢問的呈現方式",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "畢冊承辦收到替代呈現需求，尚未定案。",
+                "fact": "導師和學生列出補拍或其他呈現方式的詢問草稿，尚未聯繫負責人或確定製作計畫。",
                 "claims": [
                   {
                     "role": "participant",
@@ -5365,7 +5365,7 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "照片晚拍不代表你不是這個班的一員",
+              "text": "一張舊照片沒有你，不代表現在的班級沒有你",
               "kind": "support",
               "emotional": true,
               "outcome": {

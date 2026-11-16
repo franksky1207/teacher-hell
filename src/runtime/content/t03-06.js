@@ -5231,11 +5231,11 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "先分清已經登錄與尚未結算的學分",
+              "text": "分開列出清單中的已知資料與待查事項",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生了解哪些項目尚未確定，導師未自行判定延修。",
+                "fact": "導師和學生把本人清單的疑問與需查教務紀錄的項目分開，尚未判定學分缺漏或延修。",
                 "claims": [
                   {
                     "role": "participant",
@@ -5281,11 +5281,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "請教務確認補救評量及畢業門檻的正式規則",
+              "text": "整理向教務確認補救評量及畢業門檻的問題",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師向教務提出正式學分與評量疑問，尚未取得決定。",
+                "fact": "導師和學生完成學分與評量的詢問草稿，尚未聯繫教務或取得正式決定。",
                 "claims": [
                   {
                     "role": "participant",
@@ -5381,7 +5381,7 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "還沒結算的事，不等於你已經沒希望",
+              "text": "還沒查清的事，先別當成已經沒希望",
               "kind": "support",
               "emotional": true,
               "outcome": {
@@ -7750,6 +7750,326 @@ export default [
         ],
         "slotIds": [
           "p5"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null,
+        "enrollmentContext": {
+          "minDays": 0,
+          "maxDays": 45,
+          "priorStatus": "suspended",
+          "minDaysAway": 14
+        }
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "返校情境依正式世界學籍與時段資格確認；此稿尚未完成資格審查"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-06-28",
+      "definitionId": "content:18b-t03-06-28",
+      "version": "1",
+      "topicId": "T03-06",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "正式返校的學生下課來找你，轉述剛才科任在全班面前問「你身體好了嗎？之前到底怎麼了？」。他不想當眾回答；導師尚未核對課堂對話，也不推定缺課原因或診療資訊。",
+              "speaker": null,
+              "scene": "school:corridor",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我知道老師是關心，但全班都在看我。",
+              "speaker": "participant",
+              "scene": "school:corridor",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先確認學生對公開詢問的感受與意願",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師理解學生感到困擾，未認定科任存心傷害。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道老師是關心，但全班都在看我。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生在場向導師反映，未擅自對外公開缺課原因。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "和學生準備向科任提醒保密界線的說明",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師和學生擬好私下提醒科任的文字，尚未聯繫科任或公開診療資訊。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道老師是關心，但全班都在看我。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生在場向導師反映，未擅自對外公開缺課原因。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助學生想出不揭露細節的回應",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生提出『謝謝關心，我想先上課』的回應方式。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道老師是關心，但全班都在看我。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生在場向導師反映，未擅自對外公開缺課原因。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "關心可以小聲一點，不用變成全班聽診",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道能接受關心也能保留自己的隱私。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道老師是關心，但全班都在看我。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生在場向導師反映，未擅自對外公開缺課原因。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-06-28",
+      "topicId": "T03-06",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-06-28",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "2-3",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-2",
+        "4-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p4"
         ],
         "from": null,
         "until": null,

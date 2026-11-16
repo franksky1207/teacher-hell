@@ -457,7 +457,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "兩棟教室之間只有短短十分鐘，學生到第三節總是慢幾分鐘，拿出了自己記下的路線時間。",
+              "text": "學生拿著自己記下的教室轉場計時來找你，說第三節前若走這條路就可能晚到，另一條路又繞得更遠；導師尚未查證課表或認定有正式遲到紀錄。",
               "speaker": null,
               "scene": "school:corridor",
               "cast": [],
@@ -485,7 +485,7 @@ export default [
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師核對學生所述的移動路線，尚未認定每次遲到原因相同。",
+                "fact": "導師和學生核對筆記中的移動路線，尚未確認正式課表、通行時間或遲到事實。",
                 "claims": [
                   {
                     "role": "participant",
@@ -1095,7 +1095,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生發現體育老師預先把自己列進觀摩組，但他原本想試試適合自己的活動。",
+              "text": "學生拿來一張尚未確認的體育課分組草案，上面自己的名字旁寫著「觀摩」。他說沒有人先問過自己的意願，想知道這是不是已經決定；導師尚未核實草案來源。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -1103,7 +1103,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我還沒說不能做，怎麼就幫我決定了？",
+              "text": "我還沒說想不想試，草案怎麼就先寫觀摩？",
               "speaker": "participant",
               "scene": "school:classroom",
               "cast": [
@@ -1127,7 +1127,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我還沒說不能做，怎麼就幫我決定了？",
+                    "statement": "我還沒說想不想試，草案怎麼就先寫觀摩？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1177,7 +1177,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我還沒說不能做，怎麼就幫我決定了？",
+                    "statement": "我還沒說想不想試，草案怎麼就先寫觀摩？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1227,7 +1227,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我還沒說不能做，怎麼就幫我決定了？",
+                    "statement": "我還沒說想不想試，草案怎麼就先寫觀摩？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1277,7 +1277,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我還沒說不能做，怎麼就幫我決定了？",
+                    "statement": "我還沒說想不想試，草案怎麼就先寫觀摩？",
                     "belief": "believed",
                     "visible": false
                   }

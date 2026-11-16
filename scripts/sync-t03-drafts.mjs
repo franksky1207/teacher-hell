@@ -2,6 +2,26 @@
 /** Source-preserving T03 JSON -> isolated JS modules. Not a release or content-review step. */
 import fs from 'node:fs';
 const root=new URL('../',import.meta.url),check=process.argv.includes('--check'),nl=String.fromCharCode(10);
+// Review repairs can verify just their changed payloads without rechecking the batch.
+const idsArg=process.argv.indexOf('--ids');
+if(idsArg!==-1){
+ if(!check)throw Error('--ids is a check-only mode; generation uses the authoring sources');
+ const ids=new Set((process.argv[idsArg+1]??'').split(',').filter(Boolean));
+ if(!ids.size)throw Error('Explicit nonempty event IDs required');
+ for(const id of ids){
+  const match=/^content:18b-t03-(0[1-8])-\d+$/.exec(id);
+  if(!match)throw Error('Invalid T03 event ID: '+id);
+  const sub=match[1];
+  const source=JSON.parse(fs.readFileSync(new URL('work/18b-t03-'+sub+'-authoring.json',root),'utf8')).records;
+  const built=(await import(new URL('src/runtime/content/t03-'+sub+'.js',root))).default;
+  const authored=source.filter(r=>r.definition.id===id),generated=built.filter(r=>r.definition.id===id);
+  if(authored.length!==1||generated.length!==1)throw Error('Missing or duplicated event: '+id);
+  const {story,definition,binding}=authored[0];
+  if(JSON.stringify({story,definition,binding})!==JSON.stringify(generated[0]))throw Error('STALE '+id);
+ }
+ console.log('T03 scoped sync check OK; '+ids.size+' explicit events');
+ process.exit(0);
+}
 let stale=false;
 const write=(path,content)=>{const file=new URL(path,root);if(check){if(!fs.existsSync(file)||fs.readFileSync(file,'utf8')!==content){console.error('STALE '+path);stale=true;}}else fs.writeFileSync(file,content);};
 const all=[];

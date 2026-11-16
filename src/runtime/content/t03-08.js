@@ -1697,7 +1697,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生說申請課堂支持後，有人酸他『是不是什麼都能特別處理』，他把原本準備的申請資料重新塞回書包。",
+              "text": "學生拿著還沒送出的課堂支持申請草稿來找你，說有人看到後酸他「是不是什麼都能特別處理」，便把紙塞回書包。導師尚未核實對方說法，也沒有已核定的支持安排。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -1771,11 +1771,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "不揭露個別安排，向班級說明公平與支持原則",
+              "text": "和學生擬定不揭露個資的一般公平原則說明",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "班級將聽到一般公平原則，導師不公開任何特定資格。",
+                "fact": "學生與導師整理一般公平及支持原則的說明草稿，尚未對全班發言或公開特定資格。",
                 "claims": [
                   {
                     "role": "participant",
@@ -3027,11 +3027,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "向相關承辦確認最適合的第一個諮詢窗口",
+              "text": "整理向承辦核對第一個窗口的問題",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師協助核對第一個窗口，是否能受理仍待確認。",
+                "fact": "導師和學生從資訊稿選出待確認窗口並擬好詢問，尚未聯繫承辦或取得服務承諾。",
                 "claims": [
                   {
                     "role": "participant",
@@ -4209,7 +4209,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "長期協助整理筆記的同學因病請假，接受協助的學生這週突然收不到課堂重點，卻不願再麻煩其他人。",
+              "text": "學生拿著今天尚未補齊的課堂重點表來找你，說原本想請教的同學表示今天無法幫忙，他就不知道還能去哪裡找資料。導師尚未核對對方的情況，也不認定曾有正式協助安排。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -4217,7 +4217,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我一直靠他幫我，但他也有自己的事情啊。",
+              "text": "我原本只想到問他，可是他今天沒空，我就不知道怎麼辦了。",
               "speaker": "participant",
               "scene": "school:classroom",
               "cast": [
@@ -4237,11 +4237,11 @@ export default [
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生指出本週缺少兩份課堂重點，尚未補齊。",
+                "fact": "導師和學生圈出表上仍空白的兩項課堂重點，尚未補齊資料。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我一直靠他幫我，但他也有自己的事情啊。",
+                    "statement": "我原本只想到問他，可是他今天沒空，我就不知道怎麼辦了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4283,15 +4283,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "與科任討論不依賴單一同學的資料取得",
+              "text": "整理向科任詢問穩定教材來源的問題",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師提出固定資料來源需求，仍待科任討論。",
+                "fact": "導師和學生擬好教材取得方式的詢問草稿，尚未聯繫科任或建立固定支持。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我一直靠他幫我，但他也有自己的事情啊。",
+                    "statement": "我原本只想到問他，可是他今天沒空，我就不知道怎麼辦了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4341,7 +4341,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我一直靠他幫我，但他也有自己的事情啊。",
+                    "statement": "我原本只想到問他，可是他今天沒空，我就不知道怎麼辦了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4391,7 +4391,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我一直靠他幫我，但他也有自己的事情啊。",
+                    "statement": "我原本只想到問他，可是他今天沒空，我就不知道怎麼辦了。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4597,11 +4597,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "詢問科任是否可討論私下提醒方式",
+              "text": "準備向科任詢問私下提醒方式的提案",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師提出協調需求，科任是否同意尚待確認。",
+                "fact": "導師和學生整理私下提醒的詢問草稿，尚未聯繫科任或形成約定。",
                 "claims": [
                   {
                     "role": "participant",
@@ -4697,7 +4697,7 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "有約定就需要能用，不該都靠你提醒",
+              "text": "提醒方式可以先談，不必每次都硬撐著猜",
               "kind": "support",
               "emotional": true,
               "outcome": {
@@ -4837,7 +4837,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "家長傳訊希望導師替學生全面免除小組活動，但學生私下說自己只想先從比較短的分工開始。",
+              "text": "學生出示一段手機訊息，說是家人希望他完全不參加小組活動，但自己想先試短一點的分工。導師尚未核實發訊者或家長正式要求，也沒有核准免除活動。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -4911,11 +4911,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "分別與家長確認其具體擔憂",
+              "text": "與學生整理需向家長確認的具體擔憂",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師整理家長擔憂與學生意願，未將兩者混成同一看法。",
+                "fact": "導師和學生分開列出本人意願及待向家長查詢的問題，尚未聯繫家長或認定訊息為正式要求。",
                 "claims": [
                   {
                     "role": "participant",
@@ -4961,11 +4961,11 @@ export default [
             },
             {
               "id": "plan",
-              "text": "向科任討論合法且適合的參與方式",
+              "text": "與學生擬定要向科任詢問的短分工方案",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "導師提出調整參與方式的諮詢需求，尚需學生及權責人員確認。",
+                "fact": "學生提出想先嘗試的短分工提案，尚未聯繫科任或變更活動。",
                 "claims": [
                   {
                     "role": "participant",
@@ -5465,7 +5465,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生在學期中拿來一張自己記錄的表，說開學時約定的課堂安排現在反而讓他跟不上新單元。",
+              "text": "學生拿來自己試用的課堂筆記方法紀錄，說同一種格式整理上一個單元很順，換了新題型後卻越寫越亂；這是個人試用，尚未與科任約定正式支持方案。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -5473,7 +5473,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "以前那個方法真的有用，可是現在換章節後就不太適合。",
+              "text": "我之前用這個方法真的比較懂，怎麼換個單元就卡住了？",
               "speaker": "participant",
               "scene": "school:teachers-office",
               "cast": [
@@ -5489,15 +5489,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "請學生用具體例子說明原安排的變化",
+              "text": "請學生用紀錄指出新舊單元的差異",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生指出需求變化，導師不宣稱原支持已失效於所有課程。",
+                "fact": "學生在自己的紀錄上指出兩種題型需要不同欄位，未宣稱正式支持方案失效。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "以前那個方法真的有用，可是現在換章節後就不太適合。",
+                    "statement": "我之前用這個方法真的比較懂，怎麼換個單元就卡住了？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5539,15 +5539,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "與相關科任及支持窗口檢視原措施",
+              "text": "整理向科任或支持窗口諮詢筆記方法的問題",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師提出依正式程序檢視支持措施，尚未擅自修改安排。",
+                "fact": "導師和學生擬好方法銜接的詢問草稿，尚未聯繫他人或更動正式安排。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "以前那個方法真的有用，可是現在換章節後就不太適合。",
+                    "statement": "我之前用這個方法真的比較懂，怎麼換個單元就卡住了？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5597,7 +5597,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "以前那個方法真的有用，可是現在換章節後就不太適合。",
+                    "statement": "我之前用這個方法真的比較懂，怎麼換個單元就卡住了？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5643,11 +5643,11 @@ export default [
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道可以提出更新需求，不需因曾同意而永遠忍受。",
+                "fact": "學生知道可以調整個人方法，不因上一個單元有效就必須一直照用。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "以前那個方法真的有用，可是現在換章節後就不太適合。",
+                    "statement": "我之前用這個方法真的比較懂，怎麼換個單元就卡住了？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -7109,11 +7109,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "協助向相關單位確認單一正式聯絡窗口",
+              "text": "整理請權責單位指明正式窗口的詢問稿",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師請權責單位指明正式窗口，尚未獲得答覆。",
+                "fact": "導師和學生將相互指向的回覆整理成查詢草稿，尚未聯繫權責單位或取得答覆。",
                 "claims": [
                   {
                     "role": "participant",

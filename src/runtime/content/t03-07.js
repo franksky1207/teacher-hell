@@ -17,7 +17,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生報到資料上的名字拼法與自己平常使用的不同，同學開始詢問是不是填錯身分。",
+              "text": "學生拿著自己填的一張資料草稿來找你，同一個名字有兩種羅馬字拼法。他說其中一種與證件相同，另一種是日常慣用寫法，擔心被當成填錯身分；導師尚未核對證件或正式學籍。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -25,7 +25,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "證件上是那樣，但我一直都用這個名字。",
+              "text": "我說證件上用這個拼法，可是平常署名一直用另一個，這張表到底要填哪個？",
               "speaker": "participant",
               "scene": "school:classroom",
               "cast": [
@@ -49,7 +49,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "證件上是那樣，但我一直都用這個名字。",
+                    "statement": "我說證件上用這個拼法，可是平常署名一直用另一個，這張表到底要填哪個？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -91,15 +91,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "請註冊單位核對正式學籍記載",
+              "text": "整理需向註冊單位核對的正式姓名欄位",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師向註冊單位詢問，學籍資料仍待確認。",
+                "fact": "導師和學生圈出草稿上的姓名欄及用途，尚未聯繫註冊單位或更動正式資料。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "證件上是那樣，但我一直都用這個名字。",
+                    "statement": "我說證件上用這個拼法，可是平常署名一直用另一個，這張表到底要填哪個？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -141,15 +141,15 @@ export default [
             },
             {
               "id": "plan",
-              "text": "提醒班級尊重學生選擇的稱呼",
+              "text": "陪學生分開寫下正式資料待查與日常稱呼偏好",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "班級獲提醒尊重稱呼，不需公開當事人證件。",
+                "fact": "學生列出日常稱呼偏好與需核對的正式拼法，未公開證件或通知全班。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "證件上是那樣，但我一直都用這個名字。",
+                    "statement": "我說證件上用這個拼法，可是平常署名一直用另一個，這張表到底要填哪個？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -191,7 +191,7 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "名字不是讓全班推理身分的謎題",
+              "text": "兩種拼法可以先釐清，不用急著把自己當成填錯的人",
               "kind": "support",
               "emotional": true,
               "outcome": {
@@ -199,7 +199,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "證件上是那樣，但我一直都用這個名字。",
+                    "statement": "我說證件上用這個拼法，可是平常署名一直用另一個，這張表到底要填哪個？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -1718,7 +1718,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "一堂課討論節慶時，科任突然請一名學生介紹「你們文化的傳統」，學生回座位後說自己其實也沒有參與過那項習俗。",
+              "text": "學生下課來找你，轉述剛才科任討論節慶時請他介紹「你們文化的傳統」，但自己沒有參與過那項習俗。導師尚未核對課堂對話，也不據此認定他的族群或家庭背景。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -2420,11 +2420,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "向科任核對是否能提供更清楚的版本",
+              "text": "整理向科任核對作業說明的問題",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師向科任提出文字澄清需求，尚待回覆。",
+                "fact": "導師和學生圈出容易誤讀的擇一條文並寫下查詢問題，尚未聯繫科任。",
                 "claims": [
                   {
                     "role": "participant",
@@ -3916,7 +3916,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "小組名單公布後，幾位會同樣家庭語言的學生總被分成一組；有人說這樣比較省事，卻沒問過他們。",
+              "text": "學生拿來一張尚未送交科任的分組建議草稿，上面寫著「會同一種家庭語言的人分一組比較省事」。他擔心這條規則限制合作對象，草稿尚未列出任何人的家庭語言。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -3924,7 +3924,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "我也想跟別的同學合作，為什麼每次都是同一組？",
+              "text": "就算有人會講一樣的話，也不表示只能跟彼此合作吧？",
               "speaker": "participant",
               "scene": "school:classroom",
               "cast": [
@@ -3948,7 +3948,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我也想跟別的同學合作，為什麼每次都是同一組？",
+                    "statement": "就算有人會講一樣的話，也不表示只能跟彼此合作吧？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -3990,15 +3990,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "與科任討論按任務與興趣分組的可能",
+              "text": "整理向科任詢問任務與興趣分組的草稿",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師向科任提出分組方式疑問，尚未擅改成績分組。",
+                "fact": "導師和學生寫下語言分組提案的疑問與替代原則，尚未聯繫科任或更改分組。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我也想跟別的同學合作，為什麼每次都是同一組？",
+                    "statement": "就算有人會講一樣的話，也不表示只能跟彼此合作吧？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4040,15 +4040,15 @@ export default [
             },
             {
               "id": "plan",
-              "text": "請全班提出能兼顧合作與自由選擇的規則",
+              "text": "陪學生擬一條兼顧合作與選擇的分組建議",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "班級提出新分組原則的討論方向，尚未形成決議。",
+                "fact": "學生提出按任務與意願分組的建議文字，尚未向全班提出或形成決議。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我也想跟別的同學合作，為什麼每次都是同一組？",
+                    "statement": "就算有人會講一樣的話，也不表示只能跟彼此合作吧？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4098,7 +4098,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我也想跟別的同學合作，為什麼每次都是同一組？",
+                    "statement": "就算有人會講一樣的話，也不表示只能跟彼此合作吧？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -6444,7 +6444,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生投稿校刊的散文保留兩句家庭常用語，編輯說讀者看不懂，要求全部改成中文。",
+              "text": "學生拿來準備投校刊的散文草稿，保留了兩句自己說在家常用的話。他轉述有人自稱編輯，建議全部改成中文，但尚未核對正式投稿規定或送出作品。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -6518,11 +6518,11 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "與校刊編輯討論註解及原文並列的可能",
+              "text": "整理向校刊正式編輯確認原文與註解規則的問題",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師協助與編輯協調，投稿結果尚未決定。",
+                "fact": "導師和學生把原文、註解與投稿規定寫成詢問草稿，尚未聯繫正式編輯或送件。",
                 "claims": [
                   {
                     "role": "participant",
@@ -9253,6 +9253,755 @@ export default [
       "type": "direct",
       "content": {
         "resourceId": "content:18b-t03-07-31",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-4",
+        "2-2",
+        "3-1"
+      ],
+      "additionalCodes": [
+        "3-4",
+        "4-2",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p7"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "依學生資格與正式時段規則處理"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-07-32",
+      "definitionId": "content:18b-t03-07-32",
+      "version": "1",
+      "topicId": "T03-07",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生拿著一張地理題紙來找你，當面用流暢中文說明自己卡在四個專業術語，又轉述同學說「你國文不是很好？」。導師尚未核對那段對話，也不據此推定家庭語言或學科能力。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "平常聊天跟看這張題目不一樣啊，這裡一堆詞我沒看過。",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先請學生指出真正不理解的專業用語",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生指出四個陌生詞彙，尚未完成題目解答。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "平常聊天跟看這張題目不一樣啊，這裡一堆詞我沒看過。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "整理要請科任說明的學科用語與例子",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師和學生圈出四個術語並列出詢問例子的草稿，尚未聯繫科任或取得補充教材。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "平常聊天跟看這張題目不一樣啊，這裡一堆詞我沒看過。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "陪學生把題目要求改寫成自己能理解的話",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生試著改寫題意，仍需和科任核對原意。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "平常聊天跟看這張題目不一樣啊，這裡一堆詞我沒看過。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
+                    }
+                  ]
+                }
+              },
+              "variants": [
+                {
+                  "id": "student-organizes-next-step",
+                  "weight": 2,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "3-1",
+                      "influence": 0.5
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生將一段學科說明改寫成自己的話，能指出待確認的專業用語，尚須科任確認原意。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "平常聊天跟看這張題目不一樣啊，這裡一堆詞我沒看過。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [
+                      {
+                        "role": "participant",
+                        "holder": "person",
+                        "code": "3-4",
+                        "delta": 0.3
+                      }
+                    ],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "student-remains-uncertain",
+                  "weight": 1,
+                  "modifiers": [
+                    {
+                      "role": "participant",
+                      "holder": "person",
+                      "code": "2-2",
+                      "influence": 0.4
+                    }
+                  ],
+                  "outcome": {
+                    "fact": "學生改寫後仍對其中一個專業詞有兩種理解，決定先提出具體問題，未把猜測當答案。",
+                    "claims": [
+                      {
+                        "role": "participant",
+                        "statement": "平常聊天跟看這張題目不一樣啊，這裡一堆詞我沒看過。",
+                        "belief": "believed",
+                        "visible": false
+                      }
+                    ],
+                    "changes": [],
+                    "historyCodes": [],
+                    "next": {
+                      "stage": null,
+                      "afterDays": 0
+                    },
+                    "world": {
+                      "subjects": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "witnesses": [
+                        "teacher",
+                        "participant"
+                      ],
+                      "affected": [
+                        "participant"
+                      ],
+                      "contacts": [
+                        [
+                          "teacher",
+                          "participant"
+                        ]
+                      ],
+                      "transmissions": [
+                        {
+                          "fromRole": "participant",
+                          "toRole": "teacher",
+                          "claimIndex": 0,
+                          "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "empathy",
+              "text": "口語很流利，也不表示每科術語都不用學",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道提出語言理解需求並不否認他原本的能力。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "平常聊天跟看這張題目不一樣啊，這裡一堆詞我沒看過。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-07-32",
+      "topicId": "T03-07",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-07-32",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "4-4",
+        "2-2",
+        "3-1"
+      ],
+      "additionalCodes": [
+        "3-4",
+        "4-2",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p6"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "依學生資格與正式時段規則處理"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-07-33",
+      "definitionId": "content:18b-t03-07-33",
+      "version": "1",
+      "topicId": "T03-07",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生拿來自己寫的家長座談語言協助詢問草稿，說有同學願意幫忙翻譯一般通知，但他擔心若談到家裡的事情也讓同學翻，就會失去隱私。目前沒有已確認的座談日期或翻譯安排，他想先弄清楚可以問誰。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "通知可以幫我翻，但家裡的事情我不想全班都知道。",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先了解學生希望採取的溝通方式與保密需求",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生表達座談隱私需求，導師未向同學透露家庭內容。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "通知可以幫我翻，但家裡的事情我不想全班都知道。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "整理向校方詢問正式語言協助與保密方式的問題",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師和學生完成語言協助及保密方式的詢問草稿，尚未聯繫校方或安排翻譯。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "通知可以幫我翻，但家裡的事情我不想全班都知道。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助學生區分一般通知與私密會談資訊",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生將一般公告與私人座談資訊分開處理，仍需正式協調。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "通知可以幫我翻，但家裡的事情我不想全班都知道。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "有人幫翻譯很好，私人內容不能順便變成公開消息",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道自己可要求保密，而不必拒絕所有溝通。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "通知可以幫我翻，但家裡的事情我不想全班都知道。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生本人表達資訊需求，沒有將家庭私密資料公開給第三人。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-07-33",
+      "topicId": "T03-07",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-07-33",
         "version": "1",
         "status": "engineering-test"
       },

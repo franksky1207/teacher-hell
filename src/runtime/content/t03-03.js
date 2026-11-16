@@ -5104,5 +5104,1261 @@ export default [
       ],
       "valence": "neutral"
     }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-03-17",
+      "definitionId": "content:18b-t03-03-17",
+      "version": "1",
+      "topicId": "T03-03",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "地理課學習單的表格有六欄、欄線又很淡，學生把氣溫數據整排填到降雨量欄，被同學說根本沒看題。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我知道兩個資料不一樣，但格子擠在一起我就看錯。",
+              "speaker": "participant",
+              "scene": "school:classroom",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "sad"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先確定出錯的是哪些表格位置",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生指出混淆的兩欄，尚未訂正全部數據。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道兩個資料不一樣，但格子擠在一起我就看錯。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "向科任詢問能否提供清晰欄線版本",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師向科任提出欄位可讀性問題，尚未取得新版。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道兩個資料不一樣，但格子擠在一起我就看錯。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助學生利用尺或色標辨認欄位",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生試著沿欄線逐項檢查，效果仍待觀察。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道兩個資料不一樣，但格子擠在一起我就看錯。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "看錯欄位和不懂知識不是同一回事",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道可以討論教材呈現方式，不必接受不用功的評價。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道兩個資料不一樣，但格子擠在一起我就看錯。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-03-17",
+      "topicId": "T03-03",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-03-17",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "3-2",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-3",
+        "4-1",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p5"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "獨立學生情境按既有資格與冷卻判斷"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-03-18",
+      "definitionId": "content:18b-t03-03-18",
+      "version": "1",
+      "topicId": "T03-03",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "午餐後學生拿著兩張數學練習紙，第一張空白，第二張終於能寫出題目的第一個算式；他卻說這樣根本不算進步。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我只是會寫第一步，後面還是都不會。",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "calm"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "陪學生比較兩次確實增加的理解",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生確認自己能獨立寫出第一步，並未完成整題。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我只是會寫第一步，後面還是都不會。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "向科任詢問接下來最適合練習的步驟",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師與科任將討論下個練習目標，尚未安排正式補救。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我只是會寫第一步，後面還是都不會。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "讓學生說出自己下一次要嘗試的目標",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生選出下一步要練習的題型，仍待實際執行。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我只是會寫第一步，後面還是都不會。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "能開始第一步，就已經不是原地踏步",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生看見具體小進展，未將它誤認成所有學科已改善。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我只是會寫第一步，後面還是都不會。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-03-18",
+      "topicId": "T03-03",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-03-18",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "3-2",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-3",
+        "4-1",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p5"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "獨立學生情境按既有資格與冷卻判斷"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-03-19",
+      "definitionId": "content:18b-t03-03-19",
+      "version": "1",
+      "topicId": "T03-03",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生在公布欄看到資源教室介紹，卻悄悄問你：只要去諮詢，是否就會被貼上某種標籤。",
+              "speaker": null,
+              "scene": "school:corridor",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我只是想知道可以怎麼學，不想全班都猜我有什麼問題。",
+              "speaker": "participant",
+              "scene": "school:corridor",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先了解學生想取得哪一類學習支持資訊",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說出需要學習資源資訊，尚未表示願意接受特定服務。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我只是想知道可以怎麼學，不想全班都猜我有什麼問題。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "請權責人員說明正式資源使用與保密原則",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師向資源單位詢問服務流程與個資保護，不自行認定資格。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我只是想知道可以怎麼學，不想全班都猜我有什麼問題。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助學生選擇自己願意詢問的方式",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生選擇先私下詢問服務內容，尚未完成申請。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我只是想知道可以怎麼學，不想全班都猜我有什麼問題。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "去問問題又不等於貼了什麼標籤",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道諮詢與診斷不能混為一談，隱私仍受尊重。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我只是想知道可以怎麼學，不想全班都猜我有什麼問題。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-03-19",
+      "topicId": "T03-03",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-03-19",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "3-2",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-3",
+        "4-1",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p7"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "獨立學生情境按既有資格與冷卻判斷"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-03-20",
+      "definitionId": "content:18b-t03-03-20",
+      "version": "1",
+      "topicId": "T03-03",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "自然科下課後學生來說自己問了一句基本概念，後排有人笑『這也不會』，從此不敢再舉手。",
+              "speaker": null,
+              "scene": "school:corridor",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我知道問題很簡單，可是我就是那邊聽不懂。",
+              "speaker": "participant",
+              "scene": "school:corridor",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "sad"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先確認學生真正不懂的關鍵概念",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說出實際不理解的概念，導師尚未解答所有疑問。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道問題很簡單，可是我就是那邊聽不懂。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "與科任討論讓學生安心提問的課堂方式",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師向科任反映嘲笑造成的學習阻礙，尚未判定其他學生動機。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道問題很簡單，可是我就是那邊聽不懂。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助學生把問題寫成不需公開姓名的紙條",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生選擇先用匿名問題紙條詢問，效果仍待觀察。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道問題很簡單，可是我就是那邊聽不懂。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "題目簡不簡單，不是旁邊的人說了算",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道提問本身合理，班級氣氛仍需慢慢改善。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我知道問題很簡單，可是我就是那邊聽不懂。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生向導師表達當事需求，未自動通知其他角色。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-03-20",
+      "topicId": "T03-03",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-03-20",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "3-2",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-3",
+        "4-1",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p4"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "獨立學生情境按既有資格與冷卻判斷"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
   }
 ];

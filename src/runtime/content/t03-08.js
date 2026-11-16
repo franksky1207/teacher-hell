@@ -239,7 +239,8 @@ export default [
                 }
               }
             }
-          ]
+          ],
+          "next": null
         }
       ]
     },
@@ -258,16 +259,16 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "1-3",
+        "3-4",
         "2-2",
-        "3-2"
+        "1-3"
       ],
       "weights": [
-        0.22,
-        0.21,
         0.19,
-        0.15,
+        0.22,
+        0.24,
         0.13,
+        0.12,
         0.1
       ],
       "directions": [
@@ -286,7 +287,12 @@ export default [
           "school"
         ],
         "slotIds": [
-          "early"
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
         ],
         "from": null,
         "until": null,
@@ -552,7 +558,8 @@ export default [
                 }
               }
             }
-          ]
+          ],
+          "next": null
         }
       ]
     },
@@ -571,16 +578,16 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "1-3",
+        "3-4",
         "2-2",
-        "3-2"
+        "1-3"
       ],
       "weights": [
-        0.22,
-        0.21,
         0.19,
-        0.15,
+        0.22,
+        0.24,
         0.13,
+        0.12,
         0.1
       ],
       "directions": [
@@ -599,7 +606,12 @@ export default [
           "school"
         ],
         "slotIds": [
-          "early"
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
         ],
         "from": null,
         "until": null,
@@ -865,7 +877,8 @@ export default [
                 }
               }
             }
-          ]
+          ],
+          "next": null
         }
       ]
     },
@@ -884,16 +897,16 @@ export default [
         "4-4"
       ],
       "additionalCodes": [
-        "1-3",
+        "3-4",
         "2-2",
-        "3-2"
+        "1-3"
       ],
       "weights": [
-        0.22,
-        0.21,
         0.19,
-        0.15,
+        0.22,
+        0.24,
         0.13,
+        0.12,
         0.1
       ],
       "directions": [
@@ -912,7 +925,12 @@ export default [
           "school"
         ],
         "slotIds": [
-          "early"
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
         ],
         "from": null,
         "until": null,

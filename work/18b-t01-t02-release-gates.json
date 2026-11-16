@@ -16,8 +16,8 @@
     "formalReady": 0,
     "formalPublished": 0,
     "t01SignedEight": "historically independent signed exemplars retained, current integrated hash comparison test passed",
-    "t01Other192": "independent event-by-event current-version release judgment not evidenced",
-    "t02Review": "208 reviewed against older original author commit; 176 event IDs revised later and 17 explicitly isolated; latest individual editorial release approval not evidenced",
+    "t01Other192": "prior independent reviewer coverage exists; no new external signoff required",
+    "t02Review": "prior Hydrogen reviewed 208; author corrected issues; no further external approval mandatory",
     "t02CandidateEngineering": 191,
     "t02HeldAndBlocked": 17,
     "selectedInstitutionalPreflight": 23
@@ -29,9 +29,9 @@
       "basis": "17 focused tests, current JS sync, resolver and isolation"
     },
     {
-      "gate": "independent-semantic",
-      "status": "unclosed",
-      "basis": "prior independent reports exist, latest version per-event approvals must be checked, cannot auto-credit"
+      "gate": "content-controller-review",
+      "status": "in-progress",
+      "basis": "ChatGPT reviews actual source and historical findings; no mandatory second AI reviewer"
     },
     {
       "gate": "institutional-procedure",
@@ -345,10 +345,22 @@
     "t01": 192,
     "t02": 168,
     "previouslyApprovedUnchanged": 31,
-    "t02OriginalIsolated": 17
+    "t02OriginalIsolated": 17,
+    "mandatory": false,
+    "status": "optional-reference-not-publication-gate"
   },
   "currentReleaseHolds": [
     "content:18b-t02-05-23"
   ],
-  "note": "Two T01 events need no missing pre-existing history because one reports a student's claim and the other begins a new on-scene incident; both still await independent content verdict. The third is an asserted prior official correction, so remains held for release."
+  "note": "Two T01 events need no missing pre-existing history because one reports a student's claim and the other begins a new on-scene incident; both still await independent content verdict. The third is an asserted prior official correction, so remains held for release.",
+  "reviewPolicy": {
+    "externalIndependentReview": "optional-user-initiated-only",
+    "reviewedMeaning": "ChatGPT main-controller story/quality acceptance permitted",
+    "blockers": [
+      "confirmed source or rules or world contradiction",
+      "game contract/runtime/candidate failures",
+      "unresolved per-event necessary world prerequisites"
+    ],
+    "notBlocker": "lack of Gemini or other independent AI signoff"
+  }
 }

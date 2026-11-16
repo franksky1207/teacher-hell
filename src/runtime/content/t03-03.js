@@ -2623,7 +2623,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "學生說補救教學後終於敢回答問題，家長卻只問為何排名沒升。",
+              "text": "學生把最近自行練習的一張數學題目拿給你看，說自己終於敢在課堂舉手回答，但家長今天只問名次有沒有上升；目前沒有補救教學參與紀錄。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],
@@ -5808,7 +5808,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "午餐後學生拿著兩張數學練習紙，第一張空白，第二張終於能寫出題目的第一個算式；他卻說這樣根本不算進步。",
+              "text": "午餐後學生拿著今天課堂練習的兩張數學紙來找你：一張他當場寫不出式子，另一張他剛剛試著寫出第一個算式；他卻說這樣不算進步。",
               "speaker": null,
               "scene": "school:teachers-office",
               "cast": [],

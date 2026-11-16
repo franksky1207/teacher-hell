@@ -8302,7 +8302,7 @@ export default [
               "order": 1,
               "text": "實驗室工作臺對學生而言太高，他只能看同組同學操作，無法自己讀取刻度。",
               "speaker": null,
-              "scene": "school:science-lab",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
@@ -8310,7 +8310,7 @@ export default [
               "order": 2,
               "text": "我可以做實驗，不想每次都只負責拿筆記。",
               "speaker": "participant",
-              "scene": "school:science-lab",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",

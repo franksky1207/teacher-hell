@@ -13,7 +13,7 @@ import { careerResult } from './career.js';
 import { readStory,storyContent } from './story.js';
 import { nextAftercareOperation,activeAftercareWeek } from './aftercare.js';
 import { aftercareWindow,aftercareAdoption,retiredAftercareReservation } from './aftercare-calendar.js';
-import { entranceCatalogue,aftercareCatalogue } from './story-content.js';
+import { aftercareCatalogue,t01T02PublishedCatalogue } from './story-content.js';
 export function progressionContext(w){
  const r=w.extensions['teacher-hell/world'],n=w.numeric.evolution.world,selected=r.history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected),selectedIds=new Set(selected.map(s=>s.eventId)),states=new Map(r.history.filter(h=>h.type==='story').map(h=>[h.eventId,h.data.state]));
  return {identity:{...w.identity},position:{...w.position},revision:r.revision,plan:structuredClone(r.plan),actions:schoolActions(w),pendingReview:pendingSemesterReview(w)?.id??null,failed:!!failureResult(w),completed:!!careerResult(w),annualSettled:!!annualResult(w),schoolEnabled:schoolEnabled(w),academicYear:n.registry?.academicYear??null,homeClassId:n.registry?.homeClassId??null,classes:n.registry?schoolCatalogue(n,Object.keys(SUBJECT_LOAD)):[],catalogueIds:r.history.filter(h=>h.type==='event-catalogue').map(h=>h.data.catalogueId),
@@ -39,8 +39,8 @@ export function planProgression(c,{activity=null}={}){
   if(c.aftercare.status==='advance')return {status:'action',request:c.aftercare.request,label:c.aftercare.activeWeek?'繼續本週善後':'推進一週善後',weekly:true};
   return {status:'attention-required',label:'請先處理待辦事件'};
  }
- if(!c.catalogueIds.includes('entrance:guidance-v1'))return {...request([entranceCatalogue()]),label:'接續校園日常'};
- if(!c.dayDrawn)return {...request([{type:'draw-events',catalogueId:'entrance:guidance-v1'}],'formal-event'),label:'查看今日進展'};
+ if(!c.catalogueIds.includes('content:18b-t01-t02-reviewed-v2'))return {...request([t01T02PublishedCatalogue()]),label:'接續校園日常'};
+ if(!c.dayDrawn)return {...request([{type:'draw-events',catalogueId:'content:18b-t01-t02-reviewed-v2'}],'formal-event'),label:'查看今日進展'};
  const next=nextPosition(c.position,c.plan.startYear,planMode(c.plan),c.plan.calendarVersion),term=teachingTerm(next.date);
  if(next.date===yearData(Number(next.date.slice(0,4))).summerCamp&&isCampOpeningPosition(c.plan,next)&&c.academicYear<Number(next.date.slice(0,4))){
   if(!c.slotComplete)return {...request([{type:'campus',activity:'rest'},{type:'finish-slot',completedActivityIds:[]}]),label:'完成今日活動'};

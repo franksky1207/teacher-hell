@@ -12,7 +12,9 @@ test('T03 engineering drafts stay isolated and synchronized with authoring sourc
  assert.ok(T03_BATCH_RECORDS.length>=45);
  const ids=new Set();
  const titleByTopic=new Map();
- for(const batch of src){
+ for(const [index,batch] of src.entries()){
+  const candidates=read('work/18b-t03-'+String(index+1).padStart(2,'0')+'-exploration.json').scenarios;
+  const byTitle=new Map(candidates.map(c=>[c.title,c.candidateId]));
   assert.ok(batch.records.length,'missing subtopic authoring records');
   for(const record of batch.records){
    assert.ok(!ids.has(record.definition.id),'duplicate '+record.definition.id);
@@ -20,6 +22,7 @@ test('T03 engineering drafts stay isolated and synchronized with authoring sourc
    const key=topic+' / '+record.editorial.title.trim();
    assert.ok(!titleByTopic.has(key),'duplicate plot premise '+key);
    titleByTopic.set(key,record.definition.id);
+   assert.equal(record.editorial.candidateId,byTitle.get(record.editorial.title),'unmatched exploration provenance '+key);
    ids.add(record.definition.id);
    assert.equal(record.story.status,'engineering-test');
    assert.equal(record.definition.content.status,'engineering-test');

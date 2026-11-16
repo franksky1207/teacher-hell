@@ -10,6 +10,7 @@ export const T02_ISOLATED_IDS = Object.freeze([
   "content:18b-t02-03-26",
   "content:18b-t02-03-27",
   "content:18b-t02-04-08",
+  "content:18b-t02-05-23",
   "content:18b-t02-07-07",
   "content:18b-t02-07-17",
   "content:18b-t02-07-22",

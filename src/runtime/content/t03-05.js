@@ -4159,22 +4159,22 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "班級群組出現『某同學下週要轉學』的說法，但導師尚未收到正式異動通知。",
+              "text": "新轉入學生聽說全班下週要參加校外課程，卻發現正式報名截止日是在他報到之前。",
               "speaker": null,
-              "scene": "school:corridor",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
             {
               "order": 2,
-              "text": "我只跟一個人說我在考慮，怎麼大家都當我走定了？",
+              "text": "我明明到校才三天，怎麼活動已經不能報了？",
               "speaker": "participant",
-              "scene": "school:corridor",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "embarrassed"
+                  "expression": "worried"
                 }
               ],
               "presentation": "dialogue"
@@ -4183,15 +4183,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "先確認學生本人目前知道的程序狀況",
+              "text": "先確認學生正式在籍與活動日期",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生確認目前僅表達考慮，導師未宣稱轉學完成。",
+                "fact": "導師核對學生報到與截止日，尚未判定能補報。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我只跟一個人說我在考慮，怎麼大家都當我走定了？",
+                    "statement": "我明明到校才三天，怎麼活動已經不能報了？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4225,7 +4225,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -4233,15 +4233,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "要求同學勿把尚未證實的消息當事實傳播",
+              "text": "向活動承辦詢問有無合法補報程序",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師提醒班級停止傳述，流言消退情況仍待觀察。",
+                "fact": "導師向承辦詢問正式程序，未擅自把學生加入名冊。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我只跟一個人說我在考慮，怎麼大家都當我走定了？",
+                    "statement": "我明明到校才三天，怎麼活動已經不能報了？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4275,23 +4275,23 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
               }
             },
             {
-              "id": "agency",
-              "text": "提醒學生可向註冊單位確認正式作業",
+              "id": "plan",
+              "text": "協助學生備妥必要資料及確認時限",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生知道應核對正式轉學程序，尚未提出申請。",
+                "fact": "學生知道可能需要的資料，還沒完成活動報名。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我只跟一個人說我在考慮，怎麼大家都當我走定了？",
+                    "statement": "我明明到校才三天，怎麼活動已經不能報了？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4325,7 +4325,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -4333,15 +4333,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "還沒決定的事，不該被群組替你決定",
+              "text": "新生不是故意錯過一場在他來之前就關閉的報名",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道自己的生涯選擇不該被他人擅作結論。",
+                "fact": "學生知道可詢問參與機會，不必被責怪不積極。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我只跟一個人說我在考慮，怎麼大家都當我走定了？",
+                    "statement": "我明明到校才三天，怎麼活動已經不能報了？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4375,7 +4375,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -4392,6 +4392,320 @@ export default [
       "type": "direct",
       "content": {
         "resourceId": "content:18b-t03-05-14",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "4-4",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-2",
+        "2-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p7"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "學生與學籍資格仍須由正式日程判定"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-05-15",
+      "definitionId": "content:18b-t03-05-15",
+      "version": "1",
+      "topicId": "T03-05",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生在走廊說『下週就先休學』，接著問導師能不能幫他把名字從點名表刪掉；目前尚無正式申請紀錄。",
+              "speaker": null,
+              "scene": "school:corridor",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我跟家人講好了，是不是跟老師說一聲就好？",
+              "speaker": "participant",
+              "scene": "school:corridor",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "embarrassed"
+                }
+              ],
+              "presentation": "dialogue"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先確認學生目前的意願與是否有急迫需求",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師確認學生說的是考慮或意願，尚未發生正式休學。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我跟家人講好了，是不是跟老師說一聲就好？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "說明需向註冊及相關單位辦理正式程序",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生得知應循正式程序，導師未更動在籍狀態。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我跟家人講好了，是不是跟老師說一聲就好？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助學生和家長整理想詢問的學籍事項",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生準備向權責單位詢問，尚未確定是否申請。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我跟家人講好了，是不是跟老師說一聲就好？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "你可以先說想休息，但學籍不是一句話就改掉",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道可以先談困難，不用立即做不可逆的決定。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我跟家人講好了，是不是跟老師說一聲就好？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-05-15",
+      "topicId": "T03-05",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-05-15",
         "version": "1",
         "status": "engineering-test"
       },
@@ -4459,320 +4773,6 @@ export default [
   },
   {
     "story": {
-      "resourceId": "content:18b-t03-05-15",
-      "definitionId": "content:18b-t03-05-15",
-      "version": "1",
-      "topicId": "T03-05",
-      "status": "engineering-test",
-      "compilerContract": 2,
-      "choiceContract": "four-v2",
-      "entry": "opening",
-      "stages": [
-        {
-          "id": "opening",
-          "pages": [
-            {
-              "order": 1,
-              "text": "復學返校的學生看著現在的課表，發現原先熟悉的科任與教室都變了，遲疑著沒進教室。",
-              "speaker": null,
-              "scene": "school:classroom",
-              "cast": [],
-              "presentation": "narration"
-            },
-            {
-              "order": 2,
-              "text": "我以前知道每節在哪裡上，現在像進了一所新學校。",
-              "speaker": "participant",
-              "scene": "school:classroom",
-              "cast": [
-                {
-                  "role": "participant",
-                  "position": "center",
-                  "expression": "embarrassed"
-                }
-              ],
-              "presentation": "dialogue"
-            }
-          ],
-          "choices": [
-            {
-              "id": "clarify",
-              "text": "確認正式復學年級班級與當日課表",
-              "kind": "action",
-              "emotional": false,
-              "outcome": {
-                "fact": "導師核對學生已完成的正式復學資料，未擅改學籍。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "我以前知道每節在哪裡上，現在像進了一所新學校。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
-                "changes": [],
-                "historyCodes": [],
-                "next": {
-                  "stage": null,
-                  "afterDays": 0
-                },
-                "world": {
-                  "subjects": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "witnesses": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "affected": [
-                    "participant"
-                  ],
-                  "contacts": [
-                    [
-                      "teacher",
-                      "participant"
-                    ]
-                  ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "id": "coordinate",
-              "text": "請班級幹部說明目前的課堂與生活流程",
-              "kind": "action",
-              "emotional": false,
-              "outcome": {
-                "fact": "幹部準備介紹課室和公告方式，適應仍需時間。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "我以前知道每節在哪裡上，現在像進了一所新學校。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
-                "changes": [],
-                "historyCodes": [],
-                "next": {
-                  "stage": null,
-                  "afterDays": 0
-                },
-                "world": {
-                  "subjects": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "witnesses": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "affected": [
-                    "participant"
-                  ],
-                  "contacts": [
-                    [
-                      "teacher",
-                      "participant"
-                    ]
-                  ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "id": "agency",
-              "text": "讓學生先挑最需要釐清的三件事",
-              "kind": "defer",
-              "emotional": false,
-              "outcome": {
-                "fact": "學生列出教室、午餐、交作業等疑問，還沒全部解決。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "我以前知道每節在哪裡上，現在像進了一所新學校。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
-                "changes": [],
-                "historyCodes": [],
-                "next": {
-                  "stage": null,
-                  "afterDays": 0
-                },
-                "world": {
-                  "subjects": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "witnesses": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "affected": [
-                    "participant"
-                  ],
-                  "contacts": [
-                    [
-                      "teacher",
-                      "participant"
-                    ]
-                  ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "id": "empathy",
-              "text": "熟悉的地方變陌生，不代表你不能重新開始",
-              "kind": "support",
-              "emotional": true,
-              "outcome": {
-                "fact": "學生願意逐步適應，沒被要求立即恢復過去的人際關係。",
-                "claims": [
-                  {
-                    "role": "participant",
-                    "statement": "我以前知道每節在哪裡上，現在像進了一所新學校。",
-                    "belief": "believed",
-                    "visible": false
-                  }
-                ],
-                "changes": [],
-                "historyCodes": [],
-                "next": {
-                  "stage": null,
-                  "afterDays": 0
-                },
-                "world": {
-                  "subjects": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "witnesses": [
-                    "teacher",
-                    "participant"
-                  ],
-                  "affected": [
-                    "participant"
-                  ],
-                  "contacts": [
-                    [
-                      "teacher",
-                      "participant"
-                    ]
-                  ],
-                  "transmissions": [
-                    {
-                      "fromRole": "participant",
-                      "toRole": "teacher",
-                      "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
-                    }
-                  ]
-                }
-              }
-            }
-          ],
-          "next": null
-        }
-      ]
-    },
-    "definition": {
-      "id": "content:18b-t03-05-15",
-      "topicId": "T03-05",
-      "type": "direct",
-      "content": {
-        "resourceId": "content:18b-t03-05-15",
-        "version": "1",
-        "status": "engineering-test"
-      },
-      "coreCodes": [
-        "3-4",
-        "4-4",
-        "2-2"
-      ],
-      "additionalCodes": [
-        "3-1",
-        "4-2",
-        "2-4"
-      ],
-      "weights": [
-        0.19,
-        0.22,
-        0.24,
-        0.13,
-        0.12,
-        0.1
-      ],
-      "directions": [
-        -1,
-        -1,
-        1,
-        -1,
-        -1,
-        -1
-      ],
-      "eligibility": {
-        "people": [
-          "student"
-        ],
-        "dayKinds": [
-          "school"
-        ],
-        "slotIds": [
-          "early"
-        ],
-        "from": null,
-        "until": null,
-        "facts": [],
-        "history": [],
-        "numeric": [],
-        "enrollment": null
-      },
-      "repetition": {
-        "cooldownDays": 45,
-        "exclusionGroups": [],
-        "sameFact": true,
-        "reason": "學生與學籍資格仍須由正式日程判定"
-      }
-    },
-    "binding": {
-      "sources": [
-        "participant",
-        "participant",
-        "participant",
-        "participant",
-        "participant",
-        "participant"
-      ],
-      "valence": "neutral"
-    }
-  },
-  {
-    "story": {
       "resourceId": "content:18b-t03-05-16",
       "definitionId": "content:18b-t03-05-16",
       "version": "1",
@@ -4787,7 +4787,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "已完成轉出的學生座位上仍貼著姓名標籤，抽屜裡還有未領走的水壺與講義。",
+              "text": "復學後學生帶著去年同一科的舊版課本，發現現在學校改用不同版本，內容順序差得很遠。",
               "speaker": null,
               "scene": "school:classroom",
               "cast": [],
@@ -4795,14 +4795,14 @@ export default [
             },
             {
               "order": 2,
-              "text": "那個位子一直空著，我們是要留到什麼時候？",
+              "text": "我整本都有畫重點，現在卻不知道哪幾章還能用。",
               "speaker": "participant",
               "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "embarrassed"
+                  "expression": "calm"
                 }
               ],
               "presentation": "dialogue"
@@ -4811,15 +4811,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "先核對學生正式轉出與物品保管狀態",
+              "text": "核對舊教材和現行單元的實質差異",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師確認正式資料與物品狀態，未將未領物品擅自丟棄。",
+                "fact": "學生找出章節差異，尚未判定去年所學內容全無效。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "那個位子一直空著，我們是要留到什麼時候？",
+                    "statement": "我整本都有畫重點，現在卻不知道哪幾章還能用。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4853,7 +4853,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -4861,15 +4861,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "請班級幹部依校方程序整理公共座位",
+              "text": "請科任協助指出必要銜接內容",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "班級幹部得知應依規定整理，私人用品仍待合法交還。",
+                "fact": "導師向科任詢問銜接順序，仍待授課安排。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "那個位子一直空著，我們是要留到什麼時候？",
+                    "statement": "我整本都有畫重點，現在卻不知道哪幾章還能用。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4903,23 +4903,23 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
               }
             },
             {
-              "id": "agency",
-              "text": "與同學討論如何保留合適的班級紀念",
+              "id": "plan",
+              "text": "讓學生整理仍可沿用的學習資源",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生提出保留照片紀錄的建議，不影響座位安排。",
+                "fact": "學生整理能使用的舊筆記，尚需確認新單元要求。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "那個位子一直空著，我們是要留到什麼時候？",
+                    "statement": "我整本都有畫重點，現在卻不知道哪幾章還能用。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4953,7 +4953,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -4961,15 +4961,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "留下回憶，不一定要留下整個抽屜",
+              "text": "舊課本不是廢紙，只是導航要重新設定",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "同學知道整理座位不等於否認曾經的友誼。",
+                "fact": "學生知道可保留既有努力，不必從零開始。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "那個位子一直空著，我們是要留到什麼時候？",
+                    "statement": "我整本都有畫重點，現在卻不知道哪幾章還能用。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5003,7 +5003,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -5101,22 +5101,22 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "轉學生拿出前校課本的目錄，發現現在這班已教到不同章節，說自己連練習頁碼都對不起來。",
+              "text": "班級正在挑選紀念冊照片，剛轉入的學生擔心自己沒出現在任何一張合照，已轉出的同學又希望被保留。",
               "speaker": null,
-              "scene": "school:teachers-office",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
             {
               "order": 2,
-              "text": "老師說做第六章，可是我的第六章跟大家完全不一樣。",
+              "text": "我知道我來得晚，可是畢業時能有一張跟大家的照片嗎？",
               "speaker": "participant",
-              "scene": "school:teachers-office",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "embarrassed"
+                  "expression": "worried"
                 }
               ],
               "presentation": "dialogue"
@@ -5125,15 +5125,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "請學生對照兩校教材真正的學習單元",
+              "text": "先了解相關學生對照片與署名的意願",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生指出兩套教材章節差異，尚未判斷學習落差大小。",
+                "fact": "導師記下不同學生意願，尚未替任何人公開影像。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "老師說做第六章，可是我的第六章跟大家完全不一樣。",
+                    "statement": "我知道我來得晚，可是畢業時能有一張跟大家的照片嗎？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5167,7 +5167,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -5175,15 +5175,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "與科任核對應補內容而非只看頁碼",
+              "text": "向畢業紀念冊承辦核對補拍及編輯方式",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師向科任詢問銜接內容，沒有自行改課程進度。",
+                "fact": "導師向承辦詢問編排與授權規範，未承諾補拍完成。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "老師說做第六章，可是我的第六章跟大家完全不一樣。",
+                    "statement": "我知道我來得晚，可是畢業時能有一張跟大家的照片嗎？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5217,23 +5217,23 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
               }
             },
             {
-              "id": "agency",
-              "text": "協助學生列出跨版本尚缺的概念",
+              "id": "plan",
+              "text": "讓班級提出尊重歷史又包含新同學的方案",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生列出兩項待補概念，仍需核對實際程度。",
+                "fact": "學生提出共同合照的構想，實際編輯仍待協調。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "老師說做第六章，可是我的第六章跟大家完全不一樣。",
+                    "statement": "我知道我來得晚，可是畢業時能有一張跟大家的照片嗎？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5267,7 +5267,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -5275,15 +5275,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "課本版本不同，不表示你前面都白學",
+              "text": "一張照片不是只有按快門當天在場的人才算同學",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道可以逐項銜接，不用整冊從頭重來。",
+                "fact": "學生知道可提出歸屬感需求，不必否認已轉出的同學。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "老師說做第六章，可是我的第六章跟大家完全不一樣。",
+                    "statement": "我知道我來得晚，可是畢業時能有一張跟大家的照片嗎？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5317,7 +5317,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -5371,7 +5371,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "p7"
+          "p6"
         ],
         "from": null,
         "until": null,
@@ -5415,17 +5415,17 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "一名正式轉出的學生原是班級總務股長，新的收支表無人交接，已有同學說乾脆讓最熟的人直接接手。",
+              "text": "學生說自己想換到另一班，拿著網路傳的範本請導師直接簽名，卻不清楚學校正式轉班理由與程序。",
               "speaker": null,
-              "scene": "school:classroom",
+              "scene": "school:teachers-office",
               "cast": [],
               "presentation": "narration"
             },
             {
               "order": 2,
-              "text": "可是班上原本不是說幹部要選嗎？",
+              "text": "他們說導師簽了就會過，我只想知道是不是這樣。",
               "speaker": "participant",
-              "scene": "school:classroom",
+              "scene": "school:teachers-office",
               "cast": [
                 {
                   "role": "participant",
@@ -5439,15 +5439,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "核對原職務與已完成交接的資料",
+              "text": "先詢問學生希望轉班的具體困難與安全需求",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師整理原幹部留下的交接項目，尚未任命新幹部。",
+                "fact": "導師了解學生轉班意願，沒有當作已核准異動。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "可是班上原本不是說幹部要選嗎？",
+                    "statement": "他們說導師簽了就會過，我只想知道是不是這樣。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5481,7 +5481,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -5489,15 +5489,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "依班級既定程序安排補選與臨時代理",
+              "text": "向學籍承辦核對正式申請資格與程序",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師提出依既定程序補選，代理權責仍須公告。",
+                "fact": "導師轉介正式學籍程序，尚未取得申請結果。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "可是班上原本不是說幹部要選嗎？",
+                    "statement": "他們說導師簽了就會過，我只想知道是不是這樣。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5531,23 +5531,23 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
               }
             },
             {
-              "id": "agency",
-              "text": "請同學提出透明的帳務交接方式",
+              "id": "plan",
+              "text": "協助學生整理問題而不預判核准",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生提出帳務清冊及見證方式，待班級確認。",
+                "fact": "學生列出要釐清的事項，不等於已完成轉班。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "可是班上原本不是說幹部要選嗎？",
+                    "statement": "他們說導師簽了就會過，我只想知道是不是這樣。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5581,7 +5581,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -5589,15 +5589,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "總務不是誰離錢近誰就自動當選",
+              "text": "導師的簽名不是瞬間移動到另一班的魔法",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "同學理解公開程序的重要性，不把熱心等同當然任命。",
+                "fact": "學生知道可以討論困難，但流程不能靠傳言保證。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "可是班上原本不是說幹部要選嗎？",
+                    "statement": "他們說導師簽了就會過，我只想知道是不是這樣。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5631,7 +5631,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -5729,22 +5729,22 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "轉學生想加入攝影社，卻在社團公告上看到名額已滿；同學熱心說導師可以幫他直接插隊。",
+              "text": "復學學生沿用記憶中的舊班級交件方式，班長卻說現在已改成線上提交，兩人都覺得對方不講理。",
               "speaker": null,
-              "scene": "school:corridor",
+              "scene": "school:classroom",
               "cast": [],
               "presentation": "narration"
             },
             {
               "order": 2,
-              "text": "我不想搶別人的名額，但也不想整學期都沒辦法參加。",
+              "text": "以前是放講桌，怎麼我一回來就說那樣不行？",
               "speaker": "participant",
-              "scene": "school:corridor",
+              "scene": "school:classroom",
               "cast": [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "embarrassed"
+                  "expression": "calm"
                 }
               ],
               "presentation": "dialogue"
@@ -5753,15 +5753,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "先核對社團正式招生與候補資訊",
+              "text": "先核對現行班規何時通過並公告",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生知道名額資訊需要核對，不認定已有參加資格。",
+                "fact": "導師確認現行規範，未推定學生故意不配合。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不想搶別人的名額，但也不想整學期都沒辦法參加。",
+                    "statement": "以前是放講桌，怎麼我一回來就說那樣不行？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5795,7 +5795,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -5803,15 +5803,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "向社團承辦詢問轉入生的合法處理方式",
+              "text": "請班幹部說明目前的正式交件管道",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師向承辦確認候補程序，尚未取得入社許可。",
+                "fact": "幹部協助說明新交件方式，未改掉已生效規則。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不想搶別人的名額，但也不想整學期都沒辦法參加。",
+                    "statement": "以前是放講桌，怎麼我一回來就說那樣不行？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5845,23 +5845,23 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
               }
             },
             {
-              "id": "agency",
-              "text": "請學生比較其他仍有名額的相關活動",
+              "id": "plan",
+              "text": "協助學生記下變更及需要確認的期限",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生看過其他活動選項，但尚未做出選擇。",
+                "fact": "學生整理新舊差異，實際作業仍須依科任要求完成。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不想搶別人的名額，但也不想整學期都沒辦法參加。",
+                    "statement": "以前是放講桌，怎麼我一回來就說那樣不行？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5895,7 +5895,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -5903,15 +5903,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "想參加很正常，但不必靠特例硬擠",
+              "text": "規則改了要讓人知道，不是靠猜",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道自己的參與需求可正當提出，不用搶別人位置。",
+                "fact": "學生知道可以詢問，不必以為全班故意排除自己。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我不想搶別人的名額，但也不想整學期都沒辦法參加。",
+                    "statement": "以前是放講桌，怎麼我一回來就說那樣不行？",
                     "belief": "believed",
                     "visible": false
                   }
@@ -5945,7 +5945,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -5999,7 +5999,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "p4"
+          "p5"
         ],
         "from": null,
         "until": null,
@@ -6043,22 +6043,22 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "新同學自我介紹還沒結束，班上就有人接連追問『你為什麼轉來？是不是原校出事？』，他僵在臺前。",
+              "text": "學生把社群上的插班考資訊拿給導師，貼文寫著『任何年級隨到隨考』，卻沒標示學校或公告日期。",
               "speaker": null,
-              "scene": "school:classroom",
+              "scene": "school:corridor",
               "cast": [],
               "presentation": "narration"
             },
             {
               "order": 2,
-              "text": "我可以說我喜歡什麼，但不想講原來學校的事。",
+              "text": "朋友說只要填表就能轉，我想先知道有沒有這回事。",
               "speaker": "participant",
-              "scene": "school:classroom",
+              "scene": "school:corridor",
               "cast": [
                 {
                   "role": "participant",
                   "position": "center",
-                  "expression": "embarrassed"
+                  "expression": "worried"
                 }
               ],
               "presentation": "dialogue"
@@ -6067,15 +6067,15 @@ export default [
           "choices": [
             {
               "id": "clarify",
-              "text": "先確認學生願意分享的介紹內容",
+              "text": "查明貼文與正式學校公告的來源",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "學生界定願意分享的內容，導師未追問原校理由。",
+                "fact": "學生知道貼文未必是正式公告，導師不宣稱可轉學。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以說我喜歡什麼，但不想講原來學校的事。",
+                    "statement": "朋友說只要填表就能轉，我想先知道有沒有這回事。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -6109,7 +6109,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -6117,15 +6117,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "當場提醒提問不得逼問私人轉學原因",
+              "text": "提醒學生轉學入學須依適用法規與學校程序",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "導師提醒停止私人盤問，班級氣氛仍待修復。",
+                "fact": "導師說明應核對適用年級、時程及法定例外，尚無准駁。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以說我喜歡什麼，但不想講原來學校的事。",
+                    "statement": "朋友說只要填表就能轉，我想先知道有沒有這回事。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -6159,23 +6159,23 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
               }
             },
             {
-              "id": "agency",
-              "text": "換成全班都能回答的興趣交流題",
+              "id": "plan",
+              "text": "協助列出向承辦詢問的學籍資格",
               "kind": "defer",
               "emotional": false,
               "outcome": {
-                "fact": "學生有機會談興趣而不是轉學原因，活動尚待安排。",
+                "fact": "學生整理資格問題，正式申請仍需權責審查。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以說我喜歡什麼，但不想講原來學校的事。",
+                    "statement": "朋友說只要填表就能轉，我想先知道有沒有這回事。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -6209,7 +6209,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -6217,15 +6217,15 @@ export default [
             },
             {
               "id": "empathy",
-              "text": "新同學自介不是轉學原因調查會",
+              "text": "網路貼文不能替註冊組蓋章",
               "kind": "support",
               "emotional": true,
               "outcome": {
-                "fact": "學生知道有權保留私人經歷，不必迎合全班好奇心。",
+                "fact": "學生知道慎重核實不代表否定他的轉學想法。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "我可以說我喜歡什麼，但不想講原來學校的事。",
+                    "statement": "朋友說只要填表就能轉，我想先知道有沒有這回事。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -6259,7 +6259,7 @@ export default [
                       "fromRole": "participant",
                       "toRole": "teacher",
                       "claimIndex": 0,
-                      "description": "學生在場告知導師，未將私人說法傳播給其他人。"
+                      "description": "學生與導師當面交流；未正式轉達給行政或其他同學。"
                     }
                   ]
                 }
@@ -6313,7 +6313,7 @@ export default [
           "school"
         ],
         "slotIds": [
-          "p5"
+          "p4"
         ],
         "from": null,
         "until": null,

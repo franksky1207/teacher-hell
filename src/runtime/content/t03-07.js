@@ -239,7 +239,8 @@ export default [
                 }
               }
             }
-          ]
+          ],
+          "next": null
         }
       ]
     },
@@ -254,28 +255,28 @@ export default [
       },
       "coreCodes": [
         "4-4",
-        "3-1",
-        "6-2"
+        "2-2",
+        "3-1"
       ],
       "additionalCodes": [
-        "1-3",
-        "2-2",
-        "3-2"
+        "3-4",
+        "4-2",
+        "2-4"
       ],
       "weights": [
-        0.22,
-        0.21,
         0.19,
-        0.15,
+        0.22,
+        0.24,
         0.13,
+        0.12,
         0.1
       ],
       "directions": [
         -1,
-        -1,
         1,
         -1,
-        1,
+        -1,
+        -1,
         -1
       ],
       "eligibility": {
@@ -286,7 +287,12 @@ export default [
           "school"
         ],
         "slotIds": [
-          "early"
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
         ],
         "from": null,
         "until": null,
@@ -552,7 +558,8 @@ export default [
                 }
               }
             }
-          ]
+          ],
+          "next": null
         }
       ]
     },
@@ -567,28 +574,28 @@ export default [
       },
       "coreCodes": [
         "4-4",
-        "3-1",
-        "6-2"
+        "2-2",
+        "3-1"
       ],
       "additionalCodes": [
-        "1-3",
-        "2-2",
-        "3-2"
+        "3-4",
+        "4-2",
+        "2-4"
       ],
       "weights": [
-        0.22,
-        0.21,
         0.19,
-        0.15,
+        0.22,
+        0.24,
         0.13,
+        0.12,
         0.1
       ],
       "directions": [
         -1,
-        -1,
         1,
         -1,
-        1,
+        -1,
+        -1,
         -1
       ],
       "eligibility": {
@@ -599,7 +606,12 @@ export default [
           "school"
         ],
         "slotIds": [
-          "early"
+          "early",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
         ],
         "from": null,
         "until": null,
@@ -865,7 +877,8 @@ export default [
                 }
               }
             }
-          ]
+          ],
+          "next": null
         }
       ]
     },
@@ -880,28 +893,28 @@ export default [
       },
       "coreCodes": [
         "4-4",
-        "3-1",
-        "6-2"
+        "2-2",
+        "3-1"
       ],
       "additionalCodes": [
-        "1-3",
-        "2-2",
-        "3-2"
+        "3-4",
+        "4-2",
+        "2-4"
       ],
       "weights": [
-        0.22,
-        0.21,
         0.19,
-        0.15,
+        0.22,
+        0.24,
         0.13,
+        0.12,
         0.1
       ],
       "directions": [
         -1,
-        -1,
         1,
         -1,
-        1,
+        -1,
+        -1,
         -1
       ],
       "eligibility": {

@@ -5,6 +5,8 @@ on:
     paths:
       - '.github/workflows/phase18b-evidence-hashes.yml'
       - 'test/18b-current-version-evidence.test.js'
+      - 'test/18b-controller-content-disposition.test.js'
+      - 'work/18b-t01-t02-controller-content-disposition.json'
       - 'docs/reviews/18b-t01-eight-independent-approval.json'
       - 'work/18b-t01-**'
       - 'work/18b-t02-**'
@@ -20,4 +22,4 @@ jobs:
         with:
           node-version-file: .nvmrc
       - name: Verify only existing independent approval, reviewed-unchanged and isolation hashes
-        run: node --test test/18b-current-version-evidence.test.js
+        run: node --test test/18b-current-version-evidence.test.js test/18b-controller-content-disposition.test.js

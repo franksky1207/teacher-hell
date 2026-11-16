@@ -109,17 +109,14 @@ test('H5 original 30-year boundary uses its existing career entry only after ann
  assert.equal(planProgression({...at,annualSettled:true,pendingReview:'pending'}).status,'review-required');assert.equal(planProgression({...at,completed:true}).status,'completed');
 });
 
-test('preview without T01–T03 keeps routine progression and never registers or draws the story catalogue',()=>{
- const original=progressionContext(opening());
- const c={...original,schoolEnabled:true,catalogueIds:[],dayDrawn:false,slotComplete:false};
- const normal=planProgression(c);
- assert.equal(normal.request.operations[0].type,'register-event-catalogue');
- const preview=planProgression(c,{previewWithoutEvents:true});
- assert.equal(preview.status,'action');
- assert.ok(preview.request.operations.every(op=>!['register-event-catalogue','draw-events','admit-event'].includes(op.type)));
- const ready={...c,catalogueIds:['content:18b-t01-t02-t03-reviewed-v2']};
- assert.equal(planProgression(ready).request.operations[0].type,'draw-events');
- const previewAgain=planProgression(ready,{previewWithoutEvents:true});
- assert.ok(previewAgain.request.operations.every(op=>op.type!=='draw-events'));
- assert.deepEqual(c.catalogueIds,[]); // read-only planning, no saved data mutation
+test('clean career progression runs normally without registering old story catalogues or drawing events',()=>{
+ const c={...progressionContext(opening()),schoolEnabled:true,catalogueIds:[],dayDrawn:false,slotComplete:false};
+ const next=planProgression(c);
+ assert.equal(next.status,'action');
+ assert.ok(next.request.operations.length>0);
+ assert.ok(next.request.operations.every(op=>!['register-event-catalogue','draw-events','admit-event'].includes(op.type)));
+ const alreadyDrawn=planProgression({...c,dayDrawn:true});
+ assert.deepEqual(alreadyDrawn.request.operations,next.request.operations);
+ const oldCatalogue=planProgression({...c,catalogueIds:['content:18b-t01-t02-t03-reviewed-v2']});
+ assert.deepEqual(oldCatalogue.request.operations,next.request.operations);
 });

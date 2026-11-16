@@ -13,13 +13,13 @@ import { careerResult } from './career.js';
 import { readStory,storyContent } from './story.js';
 import { nextAftercareOperation,activeAftercareWeek } from './aftercare.js';
 import { aftercareWindow,aftercareAdoption,retiredAftercareReservation } from './aftercare-calendar.js';
-import { aftercareCatalogue,t01T02T03PublishedCatalogue } from './story-content.js';
+import { aftercareCatalogue } from './story-content.js';
 export function progressionContext(w){
  const r=w.extensions['teacher-hell/world'],n=w.numeric.evolution.world,selected=r.history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected),selectedIds=new Set(selected.map(s=>s.eventId)),states=new Map(r.history.filter(h=>h.type==='story').map(h=>[h.eventId,h.data.state]));
  return {identity:{...w.identity},position:{...w.position},revision:r.revision,plan:structuredClone(r.plan),actions:schoolActions(w),pendingReview:pendingSemesterReview(w)?.id??null,failed:!!failureResult(w),completed:!!careerResult(w),annualSettled:!!annualResult(w),schoolEnabled:schoolEnabled(w),academicYear:n.registry?.academicYear??null,homeClassId:n.registry?.homeClassId??null,classes:n.registry?schoolCatalogue(n,Object.keys(SUBJECT_LOAD)):[],catalogueIds:r.history.filter(h=>h.type==='event-catalogue').map(h=>h.data.catalogueId),
  dayDrawn:r.history.some(h=>h.type==='event-selection'&&h.at.date===w.position.date),slotComplete:r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor),reserved:selected.filter(s=>s.date===w.position.date&&s.slotId===w.position.slotId&&!retiredAftercareReservation(w,s.eventId)&&!rejectedIssueReservation(w,s.eventId)&&!w.events.some(e=>e.id===s.eventId)).map(s=>structuredClone(s)),stories:w.events.filter(e=>selectedIds.has(e.id)&&storyContent(w,e.id)&&states.get(e.id)?.mode!=='ended').map(e=>structuredClone(readStory(w,e.id))),aftercare:aftercareWindow(w)&&w.position.date>=aftercareWindow(w).startDate?{...nextAftercareOperation(w),activeWeek:!!activeAftercareWeek(w),adopted:!!aftercareAdoption(w)}:null};
 }
-export function planProgression(c,{activity=null,previewWithoutEvents=false}={}){
+export function planProgression(c,{activity=null}={}){
  const request=(operations,kind='routine')=>({status:'action',request:{id:createId('operation',[c.identity.attemptId,'progression',String(c.revision)]),attemptId:c.identity.attemptId,expectedRevision:c.revision,actorId:c.identity.playerId,preconditions:[],calendarContext:{kind},operations}});
  if(c.completed)return {status:'completed'};
  if(c.failed)return {status:'failed'};
@@ -43,12 +43,6 @@ export function planProgression(c,{activity=null,previewWithoutEvents=false}={})
  if(next.date===yearData(Number(next.date.slice(0,4))).summerCamp&&isCampOpeningPosition(c.plan,next)&&c.academicYear<Number(next.date.slice(0,4))){
   if(!c.slotComplete)return {...request([{type:'campus',activity:'rest'},{type:'finish-slot',completedActivityIds:[]}]),label:'完成今日活動'};
   return {...request([{type:'transition-school-year'}]),label:'接續下一學年'};
- }
- // Preview-only switch: keep the full authored catalogues available for later
- // production; do not register or draw T01–T03 stories during art/UI testing.
- if(!previewWithoutEvents){
-  if(!c.catalogueIds.includes('content:18b-t01-t02-t03-reviewed-v2'))return {...request([t01T02T03PublishedCatalogue()]),label:'接續校園日常'};
-  if(!c.dayDrawn)return {...request([{type:'draw-events',catalogueId:'content:18b-t01-t02-t03-reviewed-v2'}],'formal-event'),label:'查看今日進展'};
  }
  if(term&&!c.plan.tables.some(t=>t.semesterId===term.id))return {...request([{type:'prepare-semester',semesterId:term.id,classes:c.classes,homeClassId:c.homeClassId}]),label:'確認新學期課表'};
  if(c.slotComplete)return {...request([{type:'advance-time',planId:c.plan.id,steps:1}]),label:'繼續日程'};

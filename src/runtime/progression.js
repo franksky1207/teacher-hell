@@ -39,13 +39,13 @@ export function planProgression(c,{activity=null}={}){
   if(c.aftercare.status==='advance')return {status:'action',request:c.aftercare.request,label:c.aftercare.activeWeek?'繼續本週善後':'推進一週善後',weekly:true};
   return {status:'attention-required',label:'請先處理待辦事件'};
  }
- if(!c.catalogueIds.includes('content:18b-t01-t02-reviewed-v2'))return {...request([t01T02PublishedCatalogue()]),label:'接續校園日常'};
- if(!c.dayDrawn)return {...request([{type:'draw-events',catalogueId:'content:18b-t01-t02-reviewed-v2'}],'formal-event'),label:'查看今日進展'};
  const next=nextPosition(c.position,c.plan.startYear,planMode(c.plan),c.plan.calendarVersion),term=teachingTerm(next.date);
  if(next.date===yearData(Number(next.date.slice(0,4))).summerCamp&&isCampOpeningPosition(c.plan,next)&&c.academicYear<Number(next.date.slice(0,4))){
   if(!c.slotComplete)return {...request([{type:'campus',activity:'rest'},{type:'finish-slot',completedActivityIds:[]}]),label:'完成今日活動'};
   return {...request([{type:'transition-school-year'}]),label:'接續下一學年'};
  }
+ if(!c.catalogueIds.includes('content:18b-t01-t02-reviewed-v2'))return {...request([t01T02PublishedCatalogue()]),label:'接續校園日常'};
+ if(!c.dayDrawn)return {...request([{type:'draw-events',catalogueId:'content:18b-t01-t02-reviewed-v2'}],'formal-event'),label:'查看今日進展'};
  if(term&&!c.plan.tables.some(t=>t.semesterId===term.id))return {...request([{type:'prepare-semester',semesterId:term.id,classes:c.classes,homeClassId:c.homeClassId}]),label:'確認新學期課表'};
  if(c.slotComplete)return {...request([{type:'advance-time',planId:c.plan.id,steps:1}]),label:'繼續日程'};
  if(activity!==null&&!c.actions.includes(activity))throw new RangeError('Unavailable routine activity');

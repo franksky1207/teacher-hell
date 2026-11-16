@@ -4139,7 +4139,7 @@ export default [
           "pages": [
             {
               "order": 1,
-              "text": "班會同時修改作業、座位和打掃規則，學生反覆確認舊規定何時失效。",
+              "text": "班會中有同學提議同時調整作業、座位和打掃規則，三項仍在討論，學生擔心自己把提案當成隔天就要遵守的新規定。",
               "speaker": null,
               "scene": "school:corridor",
               "cast": [],
@@ -4147,7 +4147,7 @@ export default [
             },
             {
               "order": 2,
-              "text": "一次改三個，我不知道明天哪個算數。",
+              "text": "一次討論三項，我不知道明天到底照舊還是照新提案。",
               "speaker": "participant",
               "scene": "school:corridor",
               "cast": [
@@ -4171,7 +4171,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "一次改三個，我不知道明天哪個算數。",
+                    "statement": "一次討論三項，我不知道明天到底照舊還是照新提案。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4213,15 +4213,15 @@ export default [
             },
             {
               "id": "coordinate",
-              "text": "請幹部公告新舊規則與日期",
+              "text": "請幹部整理待討論提案與現行規定",
               "kind": "action",
               "emotional": false,
               "outcome": {
-                "fact": "幹部整理公告中，學生仍待收到訊息。",
+                "fact": "幹部彙整提案與現行規定，未把討論結果當成已生效的公告。",
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "一次改三個，我不知道明天哪個算數。",
+                    "statement": "一次討論三項，我不知道明天到底照舊還是照新提案。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4271,7 +4271,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "一次改三個，我不知道明天哪個算數。",
+                    "statement": "一次討論三項，我不知道明天到底照舊還是照新提案。",
                     "belief": "believed",
                     "visible": false
                   }
@@ -4321,7 +4321,7 @@ export default [
                 "claims": [
                   {
                     "role": "participant",
-                    "statement": "一次改三個，我不知道明天哪個算數。",
+                    "statement": "一次討論三項，我不知道明天到底照舊還是照新提案。",
                     "belief": "believed",
                     "visible": false
                   }

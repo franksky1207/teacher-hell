@@ -6350,5 +6350,1293 @@ export default [
       ],
       "valence": "neutral"
     }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-06-21",
+      "definitionId": "content:18b-t03-06-21",
+      "version": "1",
+      "topicId": "T03-06",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "缺課學生返校後，小組報告已在他不在時完成。原組員說分數要平均，另有人說他沒做就不該算。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我缺席那陣子也想幫忙，但報告已經交出去了。",
+              "speaker": "participant",
+              "scene": "school:classroom",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "worried"
+                }
+              ],
+              "presentation": "dialogue"
+            },
+            {
+              "order": 3,
+              "text": "你先確認已經發生的事，沒有把補課、請假或評量的處理結果當成既定事實。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "核對小組原分工與學生請假期間可取得的資訊",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師記錄小組各人的實際參與說法，尚未評定成績。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我缺席那陣子也想幫忙，但報告已經交出去了。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "向科任確認個別評量與缺課處理方式",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "科任收到個別評量問題，正式處理尚未決定。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我缺席那陣子也想幫忙，但報告已經交出去了。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "讓學生提出自己能補做的學習任務",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生提出可補做的學習項目，是否採計須依科任規定。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我缺席那陣子也想幫忙，但報告已經交出去了。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "缺席不是放棄，但參與也不能靠嘴巴補成已完成",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道能提出需求，也理解不能假裝已完成未參與工作。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我缺席那陣子也想幫忙，但報告已經交出去了。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-06-21",
+      "topicId": "T03-06",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-06-21",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "2-3",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-2",
+        "4-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p5"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "返校情境依正式世界學籍與時段資格確認；此稿尚未完成資格審查"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-06-23",
+      "definitionId": "content:18b-t03-06-23",
+      "version": "1",
+      "topicId": "T03-06",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生重返學校後，五科老師都想儘快替他補課，一張安排表把放學和午休排得滿滿。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "大家都是好意，可是我連吃飯的時間都快沒有。",
+              "speaker": "participant",
+              "scene": "school:teachers-office",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "worried"
+                }
+              ],
+              "presentation": "dialogue"
+            },
+            {
+              "order": 3,
+              "text": "你先確認已經發生的事，沒有把補課、請假或評量的處理結果當成既定事實。",
+              "speaker": null,
+              "scene": "school:teachers-office",
+              "cast": [],
+              "presentation": "narration"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "先核對各項補課的必要性與已定時段",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生列出實際過度密集的時段，尚未確認所有科任安排是否正式。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "大家都是好意，可是我連吃飯的時間都快沒有。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "與科任及相關權責人員協調避免過度集中",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師向相關教師反映需要協調節奏，尚未擅自取消課務。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "大家都是好意，可是我連吃飯的時間都快沒有。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "請學生指出最難負荷的兩個時段",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生說出兩個不堪負荷的時段，仍待正式調整。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "大家都是好意，可是我連吃飯的時間都快沒有。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "補課是為了學回來，不是要把人排到沒電",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生願意表達負荷限制，不必把所有協助都視為不能拒絕。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "大家都是好意，可是我連吃飯的時間都快沒有。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-06-23",
+      "topicId": "T03-06",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-06-23",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "2-3",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-2",
+        "4-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p6"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "返校情境依正式世界學籍與時段資格確認；此稿尚未完成資格審查"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-06-24",
+      "definitionId": "content:18b-t03-06-24",
+      "version": "1",
+      "topicId": "T03-06",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "長期請假回來的學生發現自然科做了兩次實驗，實驗紀錄上自己的欄位完全空白。",
+              "speaker": null,
+              "scene": "school:corridor",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "我沒有碰過器材，總不能照同學的數據抄一份吧？",
+              "speaker": "participant",
+              "scene": "school:corridor",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "worried"
+                }
+              ],
+              "presentation": "dialogue"
+            },
+            {
+              "order": 3,
+              "text": "你先確認已經發生的事，沒有把補課、請假或評量的處理結果當成既定事實。",
+              "speaker": null,
+              "scene": "school:corridor",
+              "cast": [],
+              "presentation": "narration"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "核對原實驗內容與安全及出席規定",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生確認自己未參加原實驗，未冒用同學的操作紀錄。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我沒有碰過器材，總不能照同學的數據抄一份吧？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "請科任確認合法補做或替代學習的方式",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "科任獲詢問補作程序，尚未核准實際操作安排。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我沒有碰過器材，總不能照同學的數據抄一份吧？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "陪學生整理未接觸過的操作環節",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生列出缺漏的器材與步驟，仍需專業指導。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我沒有碰過器材，總不能照同學的數據抄一份吧？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "沒親手做過就承認沒有做，這樣才對",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生理解不抄數據是負責任的選擇，成績仍待正式處理。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "我沒有碰過器材，總不能照同學的數據抄一份吧？",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-06-24",
+      "topicId": "T03-06",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-06-24",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "2-3",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-2",
+        "4-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p4"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "返校情境依正式世界學籍與時段資格確認；此稿尚未完成資格審查"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
+  },
+  {
+    "story": {
+      "resourceId": "content:18b-t03-06-27",
+      "definitionId": "content:18b-t03-06-27",
+      "version": "1",
+      "topicId": "T03-06",
+      "status": "engineering-test",
+      "compilerContract": 2,
+      "choiceContract": "four-v2",
+      "entry": "opening",
+      "stages": [
+        {
+          "id": "opening",
+          "pages": [
+            {
+              "order": 1,
+              "text": "學生缺課期間問同學課程進度，群組裡有人說已考完，有人說要下週才考，三個版本完全對不起來。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            },
+            {
+              "order": 2,
+              "text": "每個人都想幫我，可是我現在不知道哪個才是真的。",
+              "speaker": "participant",
+              "scene": "school:classroom",
+              "cast": [
+                {
+                  "role": "participant",
+                  "position": "center",
+                  "expression": "worried"
+                }
+              ],
+              "presentation": "dialogue"
+            },
+            {
+              "order": 3,
+              "text": "你先確認已經發生的事，沒有把補課、請假或評量的處理結果當成既定事實。",
+              "speaker": null,
+              "scene": "school:classroom",
+              "cast": [],
+              "presentation": "narration"
+            }
+          ],
+          "choices": [
+            {
+              "id": "clarify",
+              "text": "把群組說法整理成可核對的具體問題",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生辨識出三個不同版本，尚未確認正式考試日期。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "每個人都想幫我，可是我現在不知道哪個才是真的。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "coordinate",
+              "text": "請科任或班級正式公告確認進度",
+              "kind": "action",
+              "emotional": false,
+              "outcome": {
+                "fact": "導師向科任查證正式進度，不把聊天說法視為公告。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "每個人都想幫我，可是我現在不知道哪個才是真的。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "plan",
+              "text": "協助學生分開記錄已確認與傳聞事項",
+              "kind": "defer",
+              "emotional": false,
+              "outcome": {
+                "fact": "學生建立已確認與待查兩欄，仍需補全資訊。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "每個人都想幫我，可是我現在不知道哪個才是真的。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "empathy",
+              "text": "熱心的消息如果互相打架，還是得找原始公告",
+              "kind": "support",
+              "emotional": true,
+              "outcome": {
+                "fact": "學生知道問不清楚不代表自己笨，消息來源本身可能不同。",
+                "claims": [
+                  {
+                    "role": "participant",
+                    "statement": "每個人都想幫我，可是我現在不知道哪個才是真的。",
+                    "belief": "believed",
+                    "visible": false
+                  }
+                ],
+                "changes": [],
+                "historyCodes": [],
+                "next": {
+                  "stage": null,
+                  "afterDays": 0
+                },
+                "world": {
+                  "subjects": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "witnesses": [
+                    "teacher",
+                    "participant"
+                  ],
+                  "affected": [
+                    "participant"
+                  ],
+                  "contacts": [
+                    [
+                      "teacher",
+                      "participant"
+                    ]
+                  ],
+                  "transmissions": [
+                    {
+                      "fromRole": "participant",
+                      "toRole": "teacher",
+                      "claimIndex": 0,
+                      "description": "學生當面反映自己的疑問，未對其他人公開私人情況。"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    "definition": {
+      "id": "content:18b-t03-06-27",
+      "topicId": "T03-06",
+      "type": "direct",
+      "content": {
+        "resourceId": "content:18b-t03-06-27",
+        "version": "1",
+        "status": "engineering-test"
+      },
+      "coreCodes": [
+        "3-4",
+        "2-3",
+        "2-2"
+      ],
+      "additionalCodes": [
+        "3-1",
+        "4-2",
+        "4-4"
+      ],
+      "weights": [
+        0.19,
+        0.22,
+        0.24,
+        0.13,
+        0.12,
+        0.1
+      ],
+      "directions": [
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "eligibility": {
+        "people": [
+          "student"
+        ],
+        "dayKinds": [
+          "school"
+        ],
+        "slotIds": [
+          "p5"
+        ],
+        "from": null,
+        "until": null,
+        "facts": [],
+        "history": [],
+        "numeric": [],
+        "enrollment": null
+      },
+      "repetition": {
+        "cooldownDays": 45,
+        "exclusionGroups": [],
+        "sameFact": true,
+        "reason": "返校情境依正式世界學籍與時段資格確認；此稿尚未完成資格審查"
+      }
+    },
+    "binding": {
+      "sources": [
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant",
+        "participant"
+      ],
+      "valence": "neutral"
+    }
   }
 ];

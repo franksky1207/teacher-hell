@@ -80,13 +80,13 @@ export function careerEvidence(w,{years:span=3}={}){
   records.set(summary.id,{...summary,evidenceRefs:[...summary.evidenceRefs,id]});sources.push({id,factId,annualId:h.id,...source});
  }
  // Sustained assigned teaching is a single career-scale responsibility outcome,
- // not thirty major incidents. Reuse its measured N7 quality, never volume or tenure.
+ // not a count of separate incidents. Reuse its measured N7 quality, never volume or tenure.
  // Committee findings stay independent; annual significance/grades are untouched.
  if(reports.length===span){
   const deliverySources=[...new Map(sources.filter(s=>s.criterion==='assigned-lessons-with-confirmed-domain-results').map(s=>[s.id,s])).values()],delivery=deliverySources.map(s=>records.get(s.id));
   const reader=sourceReader({provenance:'formal',resolve:id=>records.get(id)});yearRefs.forEach(ref=>loadYear(reader,ref));
   if(delivery.length===span&&new Set(delivery.map(row=>row.year)).size===span&&delivery.every(row=>row.kind==='handling')&&!reader.missing.length){
-   observe(reports[span-1],'handling','sustained-teaching',outcomeScore(delivery),{criterion:span===30?'thirty-year-confirmed-teaching-responsibility':'three-year-confirmed-teaching-responsibility',outcomeRefs:delivery.map(row=>row.id)} ,true);
+   observe(reports[span-1],'handling','sustained-teaching',outcomeScore(delivery),{criterion:'three-year-confirmed-teaching-responsibility',outcomeRefs:delivery.map(row=>row.id)} ,true);
    const routineIds=new Set(delivery.map(row=>row.id));
    for(const ref of yearRefs){const summary=records.get(ref);records.set(ref,{...summary,evidenceRefs:summary.evidenceRefs.filter(id=>!routineIds.has(id))});}
   }

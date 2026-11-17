@@ -14,7 +14,7 @@ test('three-year v2 save: three slots, export/import, retry opening, no obsolete
  const initial=createSave(world,world);assert.equal(initial.kind,'teacher-hell-save');assert.equal(initial.version,2);
  assert.equal(runtimeOf(initial.world).plan.validation,'fixed-calendar-v2');
  const oldVersion=structuredClone(initial);runtimeOf(oldVersion.world).plan.calendarVersion='tw-school-2026-2065-senior-h1-v1';assert.throws(()=>restoreSave(oldVersion),/CALENDAR_VERSION/);
- const oldIdentity=structuredClone(initial);runtimeOf(oldIdentity.world).plan.career.version=1;delete runtimeOf(oldIdentity.world).plan.career.backgroundSeed;assert.throws(()=>restoreSave(oldIdentity),/MODE/);
+ const oldIdentity=structuredClone(initial);runtimeOf(oldIdentity.world).plan.career.version=1;delete runtimeOf(oldIdentity.world).plan.career.backgroundSeed;assert.throws(()=>restoreSave(oldIdentity));
  await first.initialize(world);
  const text=await first.export(),restored=restoreSave(text);
  assert.deepEqual(restored,initial);

@@ -56,7 +56,7 @@ export function latestPreparedSemester(date){
 }
 function basicDay(date,grade,version=CALENDAR_VERSION){
  requireDate(date);need([1,2,3].includes(grade),'CALENDAR','Grade must be 1, 2 or 3');
- const y=yearData(Number(date.slice(0,4)),version),dow=weekday(date),originalTerm=teachingTerm(date,version),term=version===SENIOR_CALENDAR_VERSION&&grade===3&&originalTerm?.camp==='winter'&&date>='2027-01-01'&&date<='2029-12-31'?null:originalTerm,newYear=inRange(date,addDays(y.cny,-1),addDays(y.cny,4));
+ const y=yearData(Number(date.slice(0,4)),version),dow=weekday(date),originalTerm=teachingTerm(date,version),term=version===SENIOR_CALENDAR_VERSION&&grade===3&&((originalTerm?.camp==='winter'&&date>='2029-01-22')||date>'2029-06-01')?null:originalTerm,newYear=inRange(date,addDays(y.cny,-1),addDays(y.cny,4));
  const holiday=(holidaysFor(version).get(date)??[]).filter(h=>!h.grades||h.grades.includes(grade));
  let kind;
  if(newYear)kind='spring-festival';

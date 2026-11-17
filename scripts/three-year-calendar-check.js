@@ -1,10 +1,19 @@
 /** Bounded calendar-only assertions; never starts an NPC, event, or three-year simulation. */
 import assert from 'node:assert/strict';
-import {calendarDay,examSchedule,assessmentCalendar,CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION} from '../src/calendar/calendar.js';
+import {calendarDay,examSchedule,assessmentCalendar,THREE_YEAR_CALENDAR,seniorCalendar,CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION} from '../src/calendar/calendar.js';
 import {addDays,weekday} from '../src/calendar/civil.js';
 import {admissionCalendar} from '../src/calendar/admissions.js';
 const V=SENIOR_CALENDAR_VERSION, OLD=LEGACY_SENIOR_CALENDAR_VERSION;
 let checks=0, scanned=0;
+checkSourceIntegrity();
+function checkSourceIntegrity(){
+ assert.deepEqual(THREE_YEAR_CALENDAR.range,['2026-07-20','2029-06-29']);
+ assert.equal(THREE_YEAR_CALENDAR.years.length,4);
+ assert.equal(THREE_YEAR_CALENDAR.years.flatMap(y=>y.terms).length,6);
+ assert.ok(THREE_YEAR_CALENDAR.years.flatMap(y=>y.activities).every(a=>a.date>=THREE_YEAR_CALENDAR.range[0]&&a.date<=THREE_YEAR_CALENDAR.range[1]));
+ assert.ok(seniorCalendar.nodes.every(n=>n.date>='2028-07-20'&&n.date<='2029-06-29'));
+}
+
 function check(ok,msg){assert.ok(ok,msg);checks++;}
 const day=(date,grade)=>calendarDay(date,grade,V);
 const has=(date,grade,kind)=>day(date,grade).activities.some(a=>a.kind===kind);
@@ -36,8 +45,12 @@ check(day('2028-10-25',3).kind==='holiday'&&!has('2028-10-25',3,'mock-gsat'),'Th
 check(day('2029-01-19',3).kind==='holiday'&&day('2029-01-19',3).finalReview,'Senior Jan19 preparation leave / semester review');
 check(day('2029-01-19',1).kind==='school','First-years still attend Jan19');
 check(day('2029-01-22',3).kind!=='winter-camp'&&day('2029-01-22',1).kind==='winter-camp','Senior is exempt from winter camp');
+check(day('2027-01-25',3).kind==='winter-camp'&&day('2028-02-07',3).kind==='winter-camp','Only final-year winter camp is exempt');
+check(day('2029-06-02',3).kind==='long-vacation'&&day('2029-06-02',1).kind!=='long-vacation','Graduates have no regular classes after June 1');
 for(const date of ['2029-01-20','2029-01-21','2029-01-22'])
  check(has(date,3,'formal-gsat'),'Formal GSAT protected '+date);
+check(has('2028-10-21',3,'formal-gsat')===false,'English listening is an admissions milestone, not GSAT');
+check(admissionCalendar(2026,V).some(n=>n.kind==='listening-exam-second'&&n.date==='2028-12-16'),'Second English listening exam');
 check(!has('2028-12-29',3,'clubs')&&has('2028-12-29',1,'clubs'),'Grade 3 does not attend club performance');
 check(assessmentCalendar('2028:spring',2,V).examPublications[1].date==='2028-05-15','Grade2 grades publish after trip');
 check(assessmentCalendar('2029:spring',3,V).marksCloseDate==='2029-05-10','Grade3 graduation assessment synchronized with grade1');

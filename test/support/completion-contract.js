@@ -1,8 +1,8 @@
-/** EXPLICIT CONTRACT DOUBLE: 30 N7 annual evidence collections and a tiny journal.
- * Not a valid runtime world/save, never passed off as natural 30-year gameplay.
+/** EXPLICIT CONTRACT DOUBLE: N7 evidence and a tiny journal, bounded to a three-year classroom.
+ * Not a valid runtime world/save; never passed off as natural gameplay.
  * Uses simulation/fixtures N7 schema. Production restore MUST reject this object. */
 import { fixture } from '../../simulation/fixtures.js';
-export function completionContract({years=30,quality=80,before=40,after=80}={}){
+export function completionContract({years=3,quality=80,before=40,after=80}={}){
  const f=fixture(years,quality,before,after),history=[],cohorts=[],enrollments=[],profiles={},facts=[];
  for(let c=0;c<Math.ceil(years/3);c++){
   const cohort=f.records.get(`cohort:${c}`);cohorts.push({id:cohort.id,classId:`class:${cohort.id}`,startYear:2026+c*3});
@@ -20,5 +20,5 @@ export function completionContract({years=30,quality=80,before=40,after=80}={}){
   const end=records.find(r=>r.id===summary.endRef);
   history.push({id:`annual:${y}`,type:'annual-success',order:history.length+1,at,attemptId:`attempt:${y}`,data:{version:1,year:y,attemptId:`attempt:${y}`,status:'success',at:{...at,serviceYear:y},end,evidence:{summaryRef:summary.id,records,sources},coverage:{slots:100,completed:100}}});
  }
- return {contractOnly:true,identity:{careerId:'contract-career',playerId:'teacher',schoolId:'school',attemptId:`attempt:${years}`},position:{serviceYear:years,date:'2056-06-30',slotId:'private'},numeric:{evolution:{world:{registry:{cohorts,enrollments,profiles}}}},extensions:{'teacher-hell/world':{plan:{startYear:2026},history,facts,claims:[],knowledge:[],disclosures:[],commits:[]}}};
+ return {contractOnly:true,identity:{careerId:'contract-career',playerId:'teacher',schoolId:'school',attemptId:`attempt:${years}`},position:{serviceYear:years,date:'2029-06-29',slotId:'private'},numeric:{evolution:{world:{registry:{cohorts,enrollments,profiles}}}},extensions:{'teacher-hell/world':{plan:{startYear:2026},history,facts,claims:[],knowledge:[],disclosures:[],commits:[]}}};
 }

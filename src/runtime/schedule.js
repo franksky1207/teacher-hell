@@ -10,8 +10,8 @@ import { generateTimetable,validateTimetable } from '../calendar/timetable.js';
 import { requireCalendar as need } from '../calendar/civil.js';
 /** Frozen calendars may start camp with a mock's morning, rather than early study. */
 export function isCampOpeningPosition(plan,p){const y=yearData(Number(p.date.slice(0,4)));return [y.summerCamp,y.winterCamp].includes(p.date)&&p.slotId===calendarDay(p.date,gradeAt(p.date,plan.startYear),plan.calendarVersion).slots[0].id;}
-export const isFormal=plan=>['fixed-calendar-v1','fixed-calendar-v2'].includes(plan.validation);
-export const calendarPlanId=plan=>`calendar:${plan.calendarVersion}:${plan.startYear}`+(planMode(plan)===THREE_YEAR?`:three-year:${plan.career.difficulty}`+(plan.career.version===2?`:background-v1:${plan.career.backgroundSeed}`:''):'');
+export const isFormal=plan=>plan.validation==='fixed-calendar-v2';
+export const calendarPlanId=plan=>`calendar:${plan.calendarVersion}:${plan.startYear}:three-year:${plan.career.difficulty}`+(plan.career.version===2?`:background-v1:${plan.career.backgroundSeed}`:'');
 /** The difficulty is the only persisted tenure authority; no cached year or fictitious experience. */
 export function teacherTenure(world){
  const plan=world.extensions['teacher-hell/world'].plan;validateFormalPlan(plan);
@@ -24,12 +24,12 @@ export function teacherTenureAt(world,position){
  const plan=world.extensions['teacher-hell/world'].plan,mode=planMode(plan);
  const expected=positionFor(position.date,position.slotId,plan.startYear,mode,plan.calendarVersion);
  need(Object.keys(expected).every(k=>position[k]===expected[k]),'TIME','Tenure target differs from fixed calendar');
- return (mode===THREE_YEAR?DIFFICULTY_TENURE[plan.career.difficulty]:1)+position.serviceYear-1;
+ return DIFFICULTY_TENURE[plan.career.difficulty]+position.serviceYear-1;
 }
 export function validateFormalPlan(plan){
- assertShape(plan,['id','validation','calendarVersion','startYear','subject','tables','cursor','vacation',...(plan.validation==='fixed-calendar-v2'?['career']:[])]);
+ assertShape(plan,['id','validation','calendarVersion','startYear','subject','tables','cursor','vacation','career']);
  need(isFormal(plan)&&requireCalendarVersion(plan.calendarVersion)&&plan.id===calendarPlanId(plan),'CALENDAR_VERSION','Unknown or forged fixed calendar');
- need(![SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION].includes(plan.calendarVersion)||planMode(plan)===THREE_YEAR,'MODE','Senior projection requires three-year mode');
+ need([SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION].includes(plan.calendarVersion)&&plan.startYear===2026&&planMode(plan)===THREE_YEAR,'MODE','Only the fixed three-year cohort is playable');
  careerRange(plan.startYear,planMode(plan));need(Array.isArray(plan.tables)&&plan.tables.length>0,'TIMETABLE','Missing persisted timetable');const ids=new Set();
  for(const [index,table] of plan.tables.entries()){validateTimetable(table);
   const expectedId=`${plan.startYear+Math.ceil(index/2)}:${index%2?'spring':'autumn'}`;need(table.semesterId===expectedId&&index<careerYears(planMode(plan))*2,'TIMETABLE','Semester history must begin at first summer and remain consecutive');need(table.subject===plan.subject&&!ids.has(table.semesterId),'TIMETABLE','Duplicate semester or changed subject');ids.add(table.semesterId);const y=Number(table.semesterId.split(':')[0]);need(table.semesterId===`${y}:autumn`&&table.academicYear===y||table.semesterId===`${y}:spring`&&table.academicYear===y-1,'TIMETABLE','Timetable academic year mismatch');need(y>=plan.startYear&&y<=plan.startYear+careerYears(planMode(plan)),'TIMETABLE','Timetable outside career');}
@@ -46,11 +46,12 @@ export function createCalendarBaseline(foundation,{startYear,subject,classes,hom
  const f=structuredClone(foundation),existing=f.extensions['teacher-hell/world'];
  need(!f.events.length&&!f.numeric.receipts.length&&f.numeric.evolution.clock.lastNaturalDate===null&&(!existing||existing.version===1&&existing.revision===0&&!existing.history.length&&!existing.commits.length),'MIGRATION','Only an untouched initial baseline can adopt a formal calendar; existing unverified history remains unverified');
  need(f.numeric.evolution.world.player.year===1&&homeClassId===f.numeric.evolution.world.classroom.id,'TIMETABLE','Initial formal homeroom must match existing N3 classroom');
- const identity={validation:career===null?'fixed-calendar-v1':'fixed-calendar-v2',...(career===null?{}:{career})},mode=planMode(identity);
+ need(career!==null,'MODE','A three-year career identity is required');
+ const identity={validation:'fixed-calendar-v2',career},mode=planMode(identity);
  delete f.extensions['teacher-hell/world'];const range=careerRange(startYear,mode),p=positionFor(range.start,'early',startYear,mode),rng=createRandom(seed);
  const generated=generateTimetable({subject,semesterId:`${startYear}:autumn`,academicYear:startYear,classes,homeClassId,random:rng.snapshot()});
  f.position=p;Object.assign(f.numeric.evolution.clock,{date:p.date,lastNaturalDate:null,schoolYearId:p.schoolYearId,openingId:p.openingId});f.random.schedule=generated.random;
- const plan={id:`calendar:${CALENDAR_VERSION}:${startYear}`,...identity,calendarVersion:mode===THREE_YEAR?SENIOR_CALENDAR_VERSION:CALENDAR_VERSION,startYear,subject,tables:[generated.table],vacation:null,cursor:cursorFor(p.date,p.slotId,startYear)};
+ const plan={id:`calendar:${CALENDAR_VERSION}:${startYear}`,...identity,calendarVersion:SENIOR_CALENDAR_VERSION,startYear,subject,tables:[generated.table],vacation:null,cursor:cursorFor(p.date,p.slotId,startYear)};
  plan.id=calendarPlanId(plan);validateFormalPlan(plan);return {foundation:f,plan};
 }
 export function prepareSemester(world,op){

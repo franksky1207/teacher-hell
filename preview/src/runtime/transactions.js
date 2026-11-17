@@ -7,9 +7,9 @@ import { adoptionData,activeAftercareWeek,weekStartData,weekSummary } from './af
 import { aftercareActive,aftercareAdoption,runtimeCalendarDay } from './aftercare-calendar.js';
 import { pendingSchoolEvent } from './campus.js';
 import { entranceCalendarEnabled,nextEntranceOperations } from './entrance.js';
-import { compileCohortCompletion,validateCohortArchive } from './cohort.js';
+import { validateCohortArchive } from './cohort.js';
 import { initializePrehistory } from '../world/prehistory.js';
-import { careerResult,compileCareerCompletion,compileThreeYearCareerCompletion } from './career.js';
+import { careerResult,compileThreeYearCareerCompletion } from './career.js';
 import { HOMEROOM_KEY,initializeHomeroom,failureResult,compileFailure,crisisObservation,authorizeRetry } from './homeroom.js';
 import { initializeSemesterReviews, pendingSemesterReview, semesterReviewData, acknowledgeSemesterReview } from './reviews.js';
 import { initializeAnnualObservations,compileAnnualSuccess,compileThreeYearCohortCompletion,annualResult,ANNUAL_KEY,openAnnualObservations } from './annual.js';
@@ -91,13 +91,8 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     syncNumeric(world,numericSession);const n=numericSession.world(),target=n.registry.academicYear+1,y=yearData(target),next=nextPosition(world.position,r.plan.startYear,planMode(r.plan),r.plan.calendarVersion);
     ensure(world.extensions[ANNUAL_KEY]&&annualResult(world),'ANNUAL_PENDING','A verified annual success is required');
     ensure(next.date===y.summerCamp&&isCampOpeningPosition(r.plan,next)&&r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor),'TIME','Transition immediately before the next summer camp');
-    if(n.registry.enrollments.some(e=>e.until===null&&target-n.registry.classes[e.classId].cohortStart>2)){
-      const completion=compileCohortCompletion(world,command.id);
-      for(const child of completion.operations)numericSession=execute(world,command,child,numericSession,receipt,false,false,true);
-      const a=completion.archive;history(world,command,'cohort-completion',a.eventId,a.stageId,a.factIds,a.data);
-    }
+    ensure(world.position.serviceYear<3,'ANNUAL','The original cohort ends after its third year; no new cohort opens');
     numericSession=execute(world,command,{type:'school',basisFactId:null,change:{type:'school-year',academicYear:target}},numericSession,receipt,false,false,true);
-    if(target===n.registry.cohortStart+3)numericSession=execute(world,command,{type:'school',basisFactId:null,change:{type:'school-cohort'}},numericSession,receipt,false,false,true);
     history(world,command,'year-transition',null,null,[],{academicYear:target,previousClassId:n.registry.homeClassId,classId:numericSession.world().registry.homeClassId,successId:annualResult(world).id});
     return numericSession;
   } else if(op.type==='settle-school-year'){
@@ -109,10 +104,7 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
       const a=completion.archive;const archive=history(world,command,'cohort-completion',a.eventId,a.stageId,a.factIds,a.data);
       syncNumeric(world,numericSession);validateCohortArchive(world,archive);
       history(world,command,'career-completion',null,null,[],compileThreeYearCareerCompletion(world));
-    }else if(world.position.serviceYear===30)history(world,command,'career-completion',null,null,[],compileCareerCompletion(world));
-  } else if(op.type==='settle-career'){
-    assertShape(op,['type']);ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player settles a career');
-    syncNumeric(world,numericSession);history(world,command,'career-completion',null,null,[],compileCareerCompletion(world));
+    }
   } else if(op.type==='read-semester-review'){
     ensure(command.actorId===world.identity.playerId,'ACTOR','Only the player can acknowledge a report');
     history(world,command,'semester-review-read',null,null,[],acknowledgeSemesterReview(world,op));
@@ -440,7 +432,7 @@ function prepareDraft(world,request,ownedNumeric=null) {
     ensure(Array.isArray(request.operations)&&request.operations.length>0,'SCHEMA','Nonempty operations required');
     if(request.operations.some(op=>op.type==='read-semester-review'))ensure(request.operations.length===1,'REVIEW_READ','Acknowledge a report in its own timeless transaction');
     if(request.operations.some(op=>op.type==='transition-school-year'))ensure(request.operations.length===1,'ANNUAL','Transition a year in its own transaction');
-    if(request.operations.some(op=>op.type==='settle-career'))ensure(request.operations.length===1,'CAREER','Settle a career in its own timeless transaction');
+    ensure(!request.operations.some(op=>op.type==='settle-career'),'CAREER','Retired 30-year settlement is not supported');
     if(request.operations.some(op=>op.type==='settle-school-year'))ensure(request.operations.length===1,'ANNUAL','Settle a year in its own timeless transaction');
     const storyIds=request.operations.filter(o=>o.type==='story'||o.type==='admit-event').map(o=>o.eventId);
     ensure(new Set(storyIds).size===storyIds.length,'STORY','One story action per event per transaction');
@@ -452,7 +444,7 @@ function prepareDraft(world,request,ownedNumeric=null) {
     // as ordered sequences. Input/output validation still replays independently.
     const academicOwner=command.operations[0].type==='aftercare-week'||command.operations[0].type==='settle-school-year'&&planMode(r.plan)===THREE_YEAR&&world.position.serviceYear===3;
     if(academicOwner&&!ownedNumeric)withAcademicProjection(world,perform);else perform();
-    const readingOnly=['read-semester-review','settle-school-year','transition-school-year','settle-career'].includes(command.operations[0].type);
+    const readingOnly=['read-semester-review','settle-school-year','transition-school-year'].includes(command.operations[0].type);
     if(!readingOnly)numerical=execute(world,command,{type:'institution-tick'},numerical,receipt);
     const arrangement=readingOnly?null:arrangeReplenishment(world,command,numerical);
     if(arrangement){history(world,command,'school',null,null,[arrangement.data.basisFactId],arrangement.data);numerical=createSettlementSession(arrangement.snapshot);}
@@ -553,10 +545,11 @@ export function startCalendarWorld(foundation,options){const adopted=createCalen
  */
 export function startSchoolCareer(foundation,{startYear,subject,seed,career=null}){
  ensure(foundation.enrollments.length===0,'MIGRATION','Reference-only affiliations need explicit migration');
- const preview=clone(foundation.numeric.evolution.world),mode=planMode({validation:career===null?'fixed-calendar-v1':'fixed-calendar-v2',...(career===null?{}:{career})});
+ ensure(career!==null,'MODE','A three-year career identity is required');
+ const preview=clone(foundation.numeric.evolution.world),mode=planMode({validation:'fixed-calendar-v2',career});
  initializeRegistry(preview,{academicYear:startYear,date:careerRange(startYear,mode).start});
  const baseline=startCalendarWorld(foundation,{startYear,subject,seed,career,classes:schoolCatalogue(preview,Object.keys(SUBJECT_LOAD)),homeClassId:preview.classroom.id});
- return prepareWorldOperation(baseline,{id:createId('operation',career===null?[baseline.identity.careerId,'initialize-school']:[baseline.identity.careerId,'initialize-three-year-school',String(startYear),career.difficulty,...(career.version===2?['background-v1',String(career.backgroundSeed)]:[])]),attemptId:baseline.identity.attemptId,expectedRevision:0,actorId:baseline.identity.playerId,preconditions:[],calendarContext:{kind:'procedure'},operations:[{type:'school',basisFactId:null,change:{type:'school-initialize',academicYear:startYear}}]}).world;
+ return prepareWorldOperation(baseline,{id:createId('operation',[baseline.identity.careerId,'initialize-three-year-school',String(startYear),career.difficulty,...(career.version===2?['background-v1',String(career.backgroundSeed)]:[])]),attemptId:baseline.identity.attemptId,expectedRevision:0,actorId:baseline.identity.playerId,preconditions:[],calendarContext:{kind:'procedure'},operations:[{type:'school',basisFactId:null,change:{type:'school-initialize',academicYear:startYear}}]}).world;
 }
 
 /** New formal semester-report lifecycle; no date baselines or synthesized reports. */

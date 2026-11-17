@@ -4,10 +4,10 @@ import { sourceReader, idList, insufficient, uniqueOutcomes, cohortEnrollments }
 import { loadYear, developmentMetrics, growthMetric, stateMetric } from './annual.js';
 import { CAREER_LIMITS, outcomeScore, scoredResult } from './grading.js';
 
-export const rateCareer=(input,source)=>rateSpan(input,source,30);
 /** Same N7 mathematics; explicit three-year/one-cohort source cardinalities. */
-export const rateThreeYearCareer=(input,source)=>rateSpan(input,source,3);
-function rateSpan(input,source,span) {
+export const rateThreeYearCareer=(input,source)=>rateSpan(input,source);
+function rateSpan(input,source) {
+  const span=3;
   assertShape(input,['yearRefs','cohortRefs']);
   const {yearRefs,cohortRefs}=input;
   const reader=sourceReader(source),years=idList(yearRefs,{empty:true}).map(ref=>loadYear(reader,ref)).filter(Boolean).sort((a,b)=>a.summary.year-b.summary.year);

@@ -1,5 +1,4 @@
 import { semesterRetry,captureRetryCheckpoint,validateRetryCheckpoint } from '../runtime/retry-checkpoint.js';
-import { retainMemorial } from './memorial.js';
 import {generatedGivenNames} from '../runtime/opening-name-memory.js';
 import { careerResult } from '../runtime/career.js';
 import { authorizeRetry } from '../runtime/homeroom.js';
@@ -20,40 +19,28 @@ function copyStored(record){
 export async function createStoredSession(storage,slot,{afterPersist}={}) {
   let current=await storage.read(slot),recoveryRequired=false,tail=Promise.resolve();
   const serial=fn=>{const result=tail.then(fn);tail=result.catch(()=>{});return result;};
-  let memorialStatus={status:'not-completed'};
-  async function archive(){
-    if(!current.payload){memorialStatus={status:'not-completed'};return memorialStatus;}
-    try{memorialStatus=await retainMemorial(storage,current.payload.world);}catch(error){memorialStatus={status:'pending',code:error.code??'MEMORIAL',message:error.message};}
-    return structuredClone(memorialStatus);
-  }
-  await archive();
   const ready=()=>ensure(!recoveryRequired,'RECOVERY_REQUIRED','Disk committed; recover before continuing');
   async function publish(payload,expectedToken,receipt=null,duplicate=false){
     const writing=storage.write(slot,payload,expectedToken);payload=null;
     const saved=await writing; // The adapter's detached result owns the proposal.
     try{afterPersist?.();current=copyStored(saved);}
     catch{recoveryRequired=true;return {committed:true,recoveryRequired:true,receipt:structuredClone(receipt),duplicate,token:saved.token};}
-    await archive();
-    return {committed:true,recoveryRequired:false,receipt:structuredClone(receipt),duplicate,token:structuredClone(saved.token),memorial:structuredClone(memorialStatus)};
+    return {committed:true,recoveryRequired:false,receipt:structuredClone(receipt),duplicate,token:structuredClone(saved.token)};
   }
   return Object.freeze({
-    memorialStatus:()=>structuredClone(memorialStatus),
-    retainMemorial:()=>serial(async()=>{ready();return archive();}),
-    listMemorials:()=>storage.listMemorials(),
     restart:(world,{expectedToken,confirmed=false}={})=>serial(async()=>{
       ready();ensure(confirmed===true,'CONFIRM','Review and confirm replacement of the completed career');
       ensure(current.payload&&careerResult(current.payload.world),'CAREER','Only a completed career can restart');
       const disk=await (storage.inspect?storage.inspect(slot):storage.read(slot));ensure(sameToken(disk.token,expectedToken)&&sameToken(current.token,expectedToken),'STALE','Restart target changed');
       const fresh=createSave(world,world),r=runtimeOf(fresh.world);
       ensure(fresh.world.identity.careerId!==current.payload.world.identity.careerId&&fresh.world.position.serviceYear===1&&r.revision===1&&r.history.length===1&&fresh.world.extensions[ANNUAL_KEY],'CAREER','Supply an untouched new formal career');
-      ensure(current.payload.world.extensions['teacher-hell/world'].plan.career?.mode==='three-year'||(await archive()).status==='retained','MEMORIAL','Retain the completed memorial before restarting');
       return publish(fresh,expectedToken);
     }),
     snapshot(){ready();return copyStored(current);},
     // Tiny name-only projection prevents cloning the entire three-year save
     // merely to detect newly generated people for the independent LRU ledger.
     savedGivenNames(){ready();return generatedGivenNames(current.payload?.world);},
-    recover:()=>serial(async()=>{current=await storage.read(slot);recoveryRequired=false;await archive();return copyStored(current);}),
+    recover:()=>serial(async()=>{current=await storage.read(slot);recoveryRequired=false;return copyStored(current);}),
     initialize:(world)=>serial(async()=>{ready();ensure(current.payload===null,'OVERWRITE','Slot occupied; use reviewed import');return publish(createSave(world,world),null);}),
     execute:(request,{captureOpening=false,expectedToken}={})=>serial(async()=>{
       ready();ensure(current.payload,'EMPTY','Slot is empty');
@@ -68,10 +55,10 @@ export async function createStoredSession(storage,slot,{afterPersist}={}) {
         const prior=runtimeOf(disk.payload.world).commits.find(c=>c.id===request.id&&c.attemptId===request.attemptId);
         ensure(prior,'STALE','Slot changed; recover first');
         const repeated=prepareWorldOperation(disk.payload.world,request);
-        current=disk;await archive();return {committed:true,recoveryRequired:false,receipt:repeated.receipt,duplicate:true,token:structuredClone(disk.token)};
+        current=disk;return {committed:true,recoveryRequired:false,receipt:repeated.receipt,duplicate:true,token:structuredClone(disk.token)};
       }
       const next=prepareWorldOperation(current.payload.world,request);
-      if(next.duplicate){await archive();return {committed:true,recoveryRequired:false,receipt:next.receipt,duplicate:true,token:structuredClone(current.token),memorial:structuredClone(memorialStatus)};}
+      if(next.duplicate)return {committed:true,recoveryRequired:false,receipt:next.receipt,duplicate:true,token:structuredClone(current.token)};
       return publish(createSave(next.world,(semesterRetry(next.world)?captureRetryCheckpoint(current.payload.world,next.world,current.payload.opening):captureOpening||captureRetryCheckpoint(current.payload.world,next.world,current.payload.opening))?next.world:current.payload.opening),current.token,next.receipt);
     }),
     captureOpening:()=>serial(async()=>{ready();ensure(current.payload,'EMPTY','Slot is empty');validateRetryCheckpoint(current.payload.world);if(semesterRetry(current.payload.world))return {committed:true,duplicate:true,token:structuredClone(current.token)};return publish(createSave(current.payload.world,current.payload.world),current.token);}),
@@ -88,9 +75,8 @@ export async function createStoredSession(storage,slot,{afterPersist}={}) {
     reviewImport:input=>serial(async()=>{ready();const incoming=restoreSave(input),disk=await storage.read(slot);return {incoming:{identity:structuredClone(incoming.world.identity),position:structuredClone(incoming.world.position)},replacing:disk.payload?{identity:structuredClone(disk.payload.world.identity),position:structuredClone(disk.payload.world.position)}:null,token:disk.token};}),
     import:(input,{expectedToken,confirmed=false}={})=>serial(async()=>{ready();let incoming=restoreSave(input);input=null;let disk=await storage.read(slot);
       ensure(sameToken(disk.token,expectedToken),'STALE','Import target changed');ensure(!disk.payload||confirmed===true,'CONFIRM','Review existing career and confirm overwrite');
-      if(disk.payload&&careerResult(disk.payload.world))await retainMemorial(storage,disk.payload.world);
       disk=null;const publishing=publish(incoming,expectedToken);incoming=null;return publishing;}),
-    delete:({expectedToken,confirmed=false}={})=>serial(async()=>{ready();ensure(confirmed===true,'CONFIRM','Deletion requires confirmation');ensure(sameToken(current.token,expectedToken),'STALE','Recover the reviewed deletion target first');if(current.payload&&careerResult(current.payload.world))ensure(current.payload.world.extensions['teacher-hell/world'].plan.career?.mode==='three-year'||(await archive()).status==='retained','MEMORIAL','Retain the completed memorial before deletion');return publish(null,expectedToken);}),
+    delete:({expectedToken,confirmed=false}={})=>serial(async()=>{ready();ensure(confirmed===true,'CONFIRM','Deletion requires confirmation');ensure(sameToken(current.token,expectedToken),'STALE','Recover the reviewed deletion target first');return publish(null,expectedToken);}),
   });
 }
 

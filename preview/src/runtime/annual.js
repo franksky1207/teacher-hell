@@ -182,14 +182,9 @@ export function validateAnnualObservations(w){
   need(h.data.academicYear===target&&next.date===yearData(target).summerCamp&&isCampOpeningPosition(r(w).plan,next)&&success?.data.year===i+1&&success.order<h.order,'annual affiliations lack a legal prior success or camp boundary');
   need(request.operations.length===1&&request.operations[0].type==='transition-school-year','annual affiliations require an isolated request');
   const rows=r(w).history.filter(s=>s.operationId===h.operationId&&s.type==='school'),yearRow=rows.filter(s=>s.data.change.type==='school-year'),cohorts=rows.filter(s=>s.data.change.type==='school-cohort');
-  need(yearRow.length===1&&yearRow[0].data.change.academicYear===target&&cohorts.length===((i+1)%3===0?1:0),'annual school operations differ');
-  need((h.data.classId===h.data.previousClassId)===!cohorts.length,'illegal homeroom change during a cohort');
-  const completion=r(w).history.find(s=>s.operationId===h.operationId&&s.type==='cohort-completion');
-  if(cohorts.length){need(completion&&completion.data.classId===h.data.previousClassId,'cohort completion archive missing');const at={...w,position:positionFor(h.at.date,h.at.slotId,r(w).plan.startYear,planMode(r(w).plan),r(w).plan.calendarVersion),extensions:{...w.extensions,'teacher-hell/world':{...r(w),history:r(w).history.slice(0,completion.order-1)}}},academics=academicState(at),outcomes=completion.data.outcomes;
-   need(new Set(outcomes.map(o=>o.personId)).size===outcomes.length,'duplicate cohort qualification');
-   for(const o of outcomes){need(same(o.qualification,readAcademicQualification(at,o.personId,academics)),'cohort qualification changed');need(rows.some(s=>s.data.change.type==='school-leave'&&s.data.change.personId===o.personId&&s.data.change.status===(o.qualification.eligible?'graduated':'delayed')&&s.data.basisFactId===completion.factIds[0]),'individual graduation or extension was not executed');}
-   const cohort=w.numeric.evolution.world.registry.cohorts.find(c=>c.startYear===target);need(cohort&&cohort.classId===h.data.classId&&cohort.initialStudentIds.length===40,'new cohort must have forty durable identities');
-  }else need(!completion,'unexpected graduation archive');
+  need(i<2&&yearRow.length===1&&yearRow[0].data.change.academicYear===target&&cohorts.length===0,'three-year transitions cannot generate a replacement cohort');
+  need(h.data.classId===h.data.previousClassId,'original homeroom must persist through the three-year course');
+  need(!r(w).history.some(s=>s.operationId===h.operationId&&s.type==='cohort-completion'),'cohort is archived at the final third-year settlement, not the year transition');
  }
  const latest=openings.at(-1);if(latest)need(same(latest.data.annual,baseline),'annual opening differs from entry transaction');
  need(new Set(reports.map(h=>h.data.year)).size===reports.length&&settlements.length===reports.length,'duplicate or missing annual result');

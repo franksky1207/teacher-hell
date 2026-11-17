@@ -1,6 +1,6 @@
 /** Offline H1 projection. Dates are school-world assumptions, never official admissions dates. */
 import { weekday,datesBetween,requireCalendar as need } from './civil.js';
-export const SENIOR_CALENDAR_VERSION='tw-school-2026-2065-senior-h1-v1';
+export const SENIOR_CALENDAR_VERSION='tw-school-2026-2065-senior-h1-v2';
 export function compileSeniorCalendar(base){
  const holidays=new Map(base.holidays),nodes=[];
  for(const y of base.years){

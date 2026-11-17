@@ -68,7 +68,7 @@ test('T4 B: genuine three-mode openings preserve tenure and reject early complet
  * fixture-produced annual success is ever used as continuous acceptance. */
 function threeYearContract(options={}){
  const w=completionContract({years:3,...options}),r=runtimeOf(w),n=w.numeric.evolution.world;
- r.plan={startYear:2026,validation:'fixed-calendar-v2',career:{version:1,mode:'three-year',difficulty:'hard'}};
+ r.plan={startYear:2026,validation:'fixed-calendar-v2',career:{version:2,mode:'three-year',difficulty:'hard',backgroundSeed:123}};
  w.position={date:'2029-06-29',slotId:'private',serviceYear:3};
  n.classroom={id:n.registry.cohorts[0].classId,studentIds:[]};n.registry.academicYear=2028;
  n.registry.assignments=[{personId:w.identity.playerId,roleId:9,classId:n.classroom.id,until:w.position.date}];

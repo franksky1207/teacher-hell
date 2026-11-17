@@ -147,17 +147,6 @@ export function applySchoolOperation(w,op,at){
   assertShape(op,['type','academicYear']);year(op.academicYear);need(op.academicYear===r.academicYear+1,'School years must advance once in order');
   need(r.enrollments.filter(e=>e.until===null).every(e=>op.academicYear-r.classes[e.classId].cohortStart<=2),'Resolve graduation, repeat or delayed enrollment before promotion beyond grade three');
   r.academicYear=op.academicYear;classesAt(w,r.academicYear);
- }else if(op.type==='school-cohort'){
-  assertShape(op,['type']);need(r.academicYear===r.cohortStart+3,'Next homeroom requires three academic years');
-  need(!r.enrollments.some(e=>e.classId===r.homeClassId&&e.until===null),'Resolve graduating or delayed students before changing homeroom');
-  for(const a of r.assignments)if(a.personId===w.player.current.playerId&&a.classId===r.homeClassId&&a.until===null)a.until=at;
-  const choice=restoreRandom(w.random.structure);r.homeIndex=choice.integer(1,10);w.random.structure=choice.snapshot();
-  r.cohortStart=r.academicYear;r.homeClassId=schoolClassId(w.school.id,r.academicYear,r.homeIndex);
-  r.classes[w.classroom.id].values={...w.classroom.values};
-  const rng=restoreRandom(w.random.environment);w.classroom={...w.classroom,id:r.homeClassId,studentIds:[],values:sampleRecord(GROUP_CODES,rng)};w.random.environment=rng.snapshot();
-  const ids=Array.from({length:40},()=>newStudent(w,r.homeClassId,at,'initial'));
-  r.cohorts.push({id:schoolCohortId(w.school.id,r.academicYear),startYear:r.academicYear,classId:r.homeClassId,initialStudentIds:ids});
-  r.assignments.push({id:`school-assignment:cohort:${r.academicYear}`,personId:w.player.current.playerId,roleId:9,classId:r.homeClassId,from:at,until:null});
  }else if(op.type==='school-enroll'){
   assertShape(op,['type','personId','classId','action','source']);identifier(op.source);
    const prior=r.enrollments.find(e=>e.personId===op.personId&&e.until===null);

@@ -8,9 +8,9 @@ import { academicState,readAcademicQualification } from './academics.js';
 /** Read-only N7 bridge. The validated world journal remains the sole authority.
  * No saved parallel world, fabricated annual successes, or implicit host clock. */
 import { rateThreeYearCareer } from '../assessment/career.js';
-import { mean,development,outcomeScore,gradeForScore,CAREER_LIMITS } from '../assessment/grading.js';
+import { mean,development,outcomeScore,CAREER_LIMITS } from '../assessment/grading.js';
 import { canonicalData } from '../changes/settlement.js';
-import { ABILITY_NAMES,STATE_NAMES,assertShape } from '../player/panel.js';
+import { ABILITY_NAMES } from '../player/panel.js';
 
 const runtime=w=>w.extensions['teacher-hell/world'];
 const need=(ok,message)=>{if(!ok)throw new RangeError(`CAREER: ${message}`);};
@@ -220,18 +220,4 @@ function cohortQualification(w,studentIds,archive,academic,lastAnnualId){
  if(!studentIds.every(id=>recorded.has(id)))return {status:'unavailable',eligible:null,notYetEligible:null,sourceRef:lastAnnualId};
  const rows=studentIds.map(id=>readAcademicQualification(w,id,academic));
  return {status:'current-qualification',eligible:rows.filter(q=>q.eligible).length,notYetEligible:rows.filter(q=>!q.eligible).length,sourceRef:lastAnnualId};
-}
-
-/** Semantic validation for the compact transport, reusing N7's grading contract. */
-export function validateCareerSummary(d){
- need(Number.isFinite(d.score)&&d.score>=0&&d.score<=100&&d.grade===gradeForScore(d.score),'invalid compact N7 score/grade');
- assertShape(d.parts,Object.keys(CAREER_LIMITS));
- need(Object.entries(d.parts).every(([k,v])=>Number.isFinite(v)&&v>=0&&v<=CAREER_LIMITS[k])&&Math.abs(Object.values(d.parts).reduce((a,b)=>a+b,0)-d.score)<1e-10,'compact N7 parts differ');
- assertShape(d.abilities,ABILITY_NAMES);assertShape(d.states,STATE_NAMES);
- for(const row of Object.values(d.abilities)){assertShape(row,['start','end','delta']);need([row.start,row.end].every(v=>Number.isFinite(v)&&v>=0&&v<=100)&&row.delta===row.end-row.start,'invalid compact ability comparison');}
- need(Object.values(d.states).every(v=>Number.isFinite(v)&&v>=0&&v<=100),'invalid compact state');
- need(d.completedAt?.serviceYear===30&&typeof d.completedAt.date==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d.completedAt.date)&&typeof d.completedAt.slotId==='string','invalid completion moment');
- need(Array.isArray(d.cohorts)&&d.cohorts.length===10&&new Set(d.cohorts.map(c=>c.id)).size===10,'ten distinct compact cohorts required');
- for(const [i,c] of d.cohorts.entries())need(Array.isArray(c.years)&&c.years.length===3&&c.years.every((y,j)=>y===i*3+j+1)&&Number.isInteger(c.students)&&c.students>0,'invalid compact cohort');
- return d;
 }

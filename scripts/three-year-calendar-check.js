@@ -15,10 +15,10 @@ function checkSourceIntegrity(){
 }
 
 function check(ok,msg){assert.ok(ok,msg);checks++;}
-check(planMode({validation:'fixed-calendar-v2',career:{version:1,mode:THREE_YEAR,difficulty:'easy'}})===THREE_YEAR,'Three-year mode accepted');
+check(planMode({validation:'fixed-calendar-v2',career:{version:2,mode:THREE_YEAR,difficulty:'easy',backgroundSeed:123}})===THREE_YEAR,'Three-year mode accepted');
 check(careerYears(THREE_YEAR)===3,'Three playable years');
 check(careerRange(2026,THREE_YEAR).start==='2026-07-20'&&careerRange(2026,THREE_YEAR).end==='2029-06-29','Fixed three-year start/end');
-for(const invalid of [{validation:'fixed-calendar-v1'},{validation:'fixed-calendar-v2',career:{version:1,mode:'career-30',difficulty:'hard'}}])check((()=>{try{planMode(invalid);return false;}catch{return true;}})(),'Retired mode must be rejected');
+for(const invalid of [{validation:'fixed-calendar-v1'},{validation:'fixed-calendar-v2',career:{version:1,mode:THREE_YEAR,difficulty:'hard'}},{validation:'fixed-calendar-v2',career:{version:1,mode:'career-30',difficulty:'hard'}}])check((()=>{try{planMode(invalid);return false;}catch{return true;}})(),'Retired mode must be rejected');
 check((()=>{try{careerRange(2027,THREE_YEAR);return false;}catch{return true;}})(),'Non-2026 cohort is not playable');
 check((()=>{try{careerRange(2026,'career-30');return false;}catch{return true;}})(),'30-year range is not playable');
 const day=(date,grade)=>calendarDay(date,grade,V);

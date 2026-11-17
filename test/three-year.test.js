@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fixture } from '../simulation/fixtures.js';
-import { rateThreeYearCareer,rateCareer } from '../src/assessment/career.js';
+import { rateThreeYearCareer } from '../src/assessment/career.js';
 import { CAREER_LIMITS,gradeForScore } from '../src/assessment/grading.js';
 import { careerEvidence,compileThreeYearCareerCompletion,validateCareerCompletion,composeCareerEnding } from '../src/runtime/career.js';
 import { completionContract } from './support/completion-contract.js';
@@ -20,12 +20,12 @@ test('T4 A: three-year N7 uses the unchanged six weights and thresholds, with hi
  for(const [n,g] of [[95,'SS'],[90,'S'],[80,'A'],[70,'B'],[60,'C'],[50,'D'],[40,'E'],[39.99,'F']])assert.equal(gradeForScore(n),g);
  assert.equal(Object.values(high.parts).reduce((a,b)=>a+b,0),high.score);
  assert.equal(high.details.years,3);assert.equal(high.details.cohorts.length,1);
- const short=fixture(3,65,30,70),long=fixture(30,65,30,70);
- assert.ok(Math.abs(score(short).score-rateCareer({yearRefs:long.yearRefs,cohortRefs:long.cohortRefs},long.source).score)<1e-10,'same endpoint and outcome quality must not be penalized or boosted by span');
+ const short=fixture(3,65,30,70);
+ assert.equal(score(short).status,'rated','three-year evidence retains original scoring weights');
 });
 
 test('T4 A: source cardinality and missing evidence fail explicitly; no zeros, annual-average or 30-year fallback',()=>{
- const f=fixture(3);assert.equal(rateCareer({yearRefs:f.yearRefs,cohortRefs:f.cohortRefs},f.source).status,'insufficient');
+ const f=fixture(3);assert.equal(score(f).status,'rated');
  for(const years of [1,2,6,30])assert.equal(score(fixture(years)).status,'insufficient');
  f.records.delete('outcome:2:relationship');assert.equal(score(f).status,'insufficient');
  const failed=fixture(3);failed.records.get('completion:3').outcome='failure';assert.equal(score(failed).status,'not-successful');

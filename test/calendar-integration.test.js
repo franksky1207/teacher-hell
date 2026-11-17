@@ -94,7 +94,7 @@ function t1Foundation(){const f=foundationScenario(74);f.events=[];f.enrollments
 function t1World(difficulty='easy',taipeiDate='2026-11-05'){const {startYear}=newThreeYearStart(taipeiDate);return startFailureSchoolCareer(t1Foundation(),{startYear,subject:'國文',seed:75,career:{version:1,mode:THREE_YEAR,difficulty}});}
 
 test('calendar-integration T1: all difficulties create play year one with no veteran awards, histories or relations',()=>{
- const old=startFailureSchoolCareer(t1Foundation(),{startYear:2026,subject:'國文',seed:75});
+ const old=t1World('hard');
  for(const [difficulty,tenure] of Object.entries(DIFFICULTY_TENURE)){
   const w=t1World(difficulty),r=runtimeOf(w);assert.equal(planMode(r.plan),THREE_YEAR);assert.equal(w.position.serviceYear,1);assert.equal(w.numeric.evolution.world.player.year,1);assert.equal(teacherTenure(w),tenure);
   assert.deepEqual(w.numeric,old.numeric);assert.deepEqual(w.enrollments,old.enrollments);assert.deepEqual(w.events,[]);assert.equal(r.history.length,1);assert.equal(r.commits.length,1);assert.equal(w.numeric.receipts.length,0);assert.equal(w.numeric.evolution.clock.lastNaturalDate,null);
@@ -131,7 +131,7 @@ test('calendar-integration T1: creation dates keep the fixed 2026 opening and ti
   for(const mutate of [p=>p.tables[0].lessons.pop(),p=>p.cursor++,p=>p.tables[0].semesterId='2026:spring']){const bad=structuredClone(w);mutate(runtimeOf(bad).plan);assert.throws(()=>restoreWorldState(bad));}
  }
  assert.equal(runtimeOf(t1World('easy','2063-11-05')).plan.startYear,2026);assert.throws(()=>t1World('unknown'));assert.throws(()=>t1World('toString'));
- const end=careerRange(2062,THREE_YEAR).end;assert.equal(positionFor(end,calendarDay(end,3).slots.at(-1).id,2062,THREE_YEAR).serviceYear,3);assert.throws(()=>positionFor(addDays(end,1),'vacation-day',2062,THREE_YEAR));
+ const end=careerRange(2026,THREE_YEAR).end;assert.equal(positionFor(end,calendarDay(end,3).slots.at(-1).id,2026,THREE_YEAR).serviceYear,3);assert.throws(()=>positionFor(addDays(end,1),'vacation-day',2026,THREE_YEAR));assert.throws(()=>careerRange(2062,THREE_YEAR));
 });
 
 test('calendar-integration T1: forged difficulty, tenure, mode and twentieth play year are rejected',()=>{
@@ -145,8 +145,7 @@ test('calendar-integration T1: forged difficulty, tenure, mode and twentieth pla
   w=>runtimeOf(w).plan.startYear=2027,w=>runtimeOf(w).plan.calendarVersion='future',
  ]){const w=t1World();mutate(w);assert.throws(()=>restoreWorldState(w));}
  const save=createSave(t1World(),t1World());save.world= t1World('normal');assert.throws(()=>restoreSave(save),/SNAPSHOT/);
- const old=calendarWorld();assert.equal(planMode(runtimeOf(old).plan),'career-30');assert.equal(teacherTenure(old),1);assert.equal(Object.hasOwn(runtimeOf(old).plan,'career'),false);
- assert.deepEqual(restoreSave(JSON.stringify(createSave(old,old))).world,old);
+ const old=calendarWorld();assert.throws(()=>planMode(runtimeOf(old).plan));assert.throws(()=>restoreWorldState(old));
 });
 
 import { experiencedOpening } from './support/calendar.js';
@@ -157,7 +156,7 @@ import { schoolResponsibilities } from '../src/world/registry.js';
 import { validateWorld } from '../src/world/validation.js';
 test('calendar-integration T2: real seeded openings preserve novice contracts, streams, roster and teaching load',()=>{
  const hard=experiencedOpening('hard'),ordinary=hard.numeric.evolution.world;
- const legacy=startFailureSchoolCareer(t1Foundation(),{startYear:2026,subject:'國文',seed:75});assert.deepEqual(hard.numeric,legacy.numeric);
+ const baseline=t1World('hard');assert.deepEqual(hard.numeric,baseline.numeric);
  for(const [difficulty,tenure] of [['easy',20],['normal',10],['hard',1]]){
   const w=experiencedOpening(difficulty),n=w.numeric.evolution.world,p=deriveWorldPanel(n),r=runtimeOf(w);
   assert.deepEqual(experiencedOpening(difficulty),w);assert.equal(teacherTenure(w),tenure);assert.equal(w.position.serviceYear,1);assert.equal(n.player.year,1);

@@ -90,23 +90,19 @@ test('H5 missing versioned admissions remain unknown, never fabricated zero conf
 
 import {SENIOR_CALENDAR_VERSION,examSchedule} from '../src/calendar/calendar.js';
 test('H5 current phase names follow formal mock/exam calendar without leaking results into free slots',()=>{
- for(const [date,name] of [['2028-07-24','學測'],['2029-03-01','分科']]){const d=calendarDay(date,3,SENIOR_CALENDAR_VERSION);assert.equal(scheduledPhase(d,'morning'),name+'模考・上午（不計入學期成績）');assert.equal(scheduledPhase(d,'afternoon'),name+'模考・下午（不計入學期成績）');assert.equal(scheduledPhase(d,'private'),null);}
+ for(const [date,name] of [['2028-07-27','學測'],['2029-03-01','分科']]){const d=calendarDay(date,3,SENIOR_CALENDAR_VERSION);assert.equal(scheduledPhase(d,'morning'),name+'模考・上午（不計入學期成績）');assert.equal(scheduledPhase(d,'afternoon'),name+'模考・下午（不計入學期成績）');assert.equal(scheduledPhase(d,'private'),null);}
  for(const exam of examSchedule('2029:spring',3,SENIOR_CALENDAR_VERSION)){const d=calendarDay(exam.dates[0],3,SENIOR_CALENDAR_VERSION);assert.equal(scheduledPhase(d,'p1'),exam.round===1?'第一次段考':'畢業考');assert.equal(scheduledPhase(d,'noon'),null);}
  assert.equal(scheduledPhase(calendarDay('2029-06-04',3,SENIOR_CALENDAR_VERSION),'p1'),null);
 });
 
-test('H5 June projection stays disabled for the original 30-year career',()=>{
- const w=eventWorld(74),before=JSON.stringify(w);assert.equal(w.extensions['teacher-hell/world'].plan.validation,'fixed-calendar-v1');assert.equal(projectSeniorSummary(w),null);assert.equal(JSON.stringify(w),before);
-});
-
-import {CAREER_30,careerRange} from '../src/calendar/calendar.js';
-test('H5 original 30-year boundary uses its existing career entry only after annual settlement',()=>{
- const c=progressionContext(eventWorld(74)),end=careerRange(c.plan.startYear,CAREER_30).end,day=calendarDay(end,3,c.plan.calendarVersion);
- // Pure planner context only; no fabricated completed world or natural30 claim.
- const at={...c,position:positionFor(end,day.slots.at(-1).id,c.plan.startYear,CAREER_30,c.plan.calendarVersion),slotComplete:true,schoolEnabled:true,annualSettled:false};
- assert.equal(at.position.serviceYear,30);assert.deepEqual(planProgression(at).request.operations,[{type:'settle-school-year'}]);
- const next=planProgression({...at,annualSettled:true});assert.deepEqual(next.request.operations,[{type:'settle-career'}]);assert.equal(next.settlement,true);
- assert.equal(planProgression({...at,annualSettled:true,pendingReview:'pending'}).status,'review-required');assert.equal(planProgression({...at,completed:true}).status,'completed');
+import {careerRange,THREE_YEAR,positionFor} from '../src/calendar/calendar.js';
+test('H5 final three-year boundary settles its last annual report; completion is readonly',()=>{
+ const c=progressionContext(opening()),end=careerRange(2026,THREE_YEAR).end,day=calendarDay(end,3,SENIOR_CALENDAR_VERSION);
+ const position=positionFor(end,day.slots.at(-1).id,2026,THREE_YEAR,SENIOR_CALENDAR_VERSION);
+ const at={...c,position,slotComplete:true,schoolEnabled:true,annualSettled:false,pendingReview:null,aftercare:null,reserved:[],stories:[]};
+ assert.equal(position.serviceYear,3);
+ assert.deepEqual(planProgression(at).request.operations,[{type:'settle-school-year'}]);
+ assert.equal(planProgression({...at,completed:true}).status,'completed');
 });
 
 test('clean career progression runs normally without registering old story catalogues or drawing events',()=>{

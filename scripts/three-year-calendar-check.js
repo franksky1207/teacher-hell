@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import {calendarDay,examSchedule,assessmentCalendar,CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION} from '../src/calendar/calendar.js';
 import {addDays,weekday} from '../src/calendar/civil.js';
+import {admissionCalendar} from '../src/calendar/admissions.js';
 const V=SENIOR_CALENDAR_VERSION, OLD=LEGACY_SENIOR_CALENDAR_VERSION;
 let checks=0, scanned=0;
 function check(ok,msg){assert.ok(ok,msg);checks++;}
@@ -40,6 +41,19 @@ for(const date of ['2029-01-20','2029-01-21','2029-01-22'])
 check(!has('2028-12-29',3,'clubs')&&has('2028-12-29',1,'clubs'),'Grade 3 does not attend club performance');
 check(assessmentCalendar('2028:spring',2,V).examPublications[1].date==='2028-05-15','Grade2 grades publish after trip');
 check(assessmentCalendar('2029:spring',3,V).marksCloseDate==='2029-05-10','Grade3 graduation assessment synchronized with grade1');
+
+check(assessmentCalendar('2028:autumn',3,V).marksCloseDate==='2028-12-27','Senior autumn marks close Dec27 while semester continues');
+check(assessmentCalendar('2028:autumn',3,V).publicationDate==='2028-12-28','Senior autumn results may publish Dec28');
+const admissions=admissionCalendar(2026,V),legacyAdmissions=admissionCalendar(2026,OLD);
+for(const [stage,date] of [
+ ['gsat-exam','2029-01-22'],['gsat-release','2029-02-26'],
+ ['stars-nominate','2029-03-09'],['stars-screen','2029-03-21'],
+ ['application-register','2029-03-23'],['application-screen','2029-03-30'],
+ ['application-result','2029-05-31'],['application-allocation','2029-06-12'],
+ ['subject-register','2029-06-19']
+])check(admissions.find(n=>n.kind===stage)?.date===date,'H3 admissions phase mismatched '+stage);
+check(legacyAdmissions.find(n=>n.kind==='gsat-exam')?.date==='2029-01-29','Existing senior H1 v1 GSAT milestones preserved');
+
 check(day('2029-06-19',3).admissions.some(a=>a.kind==='subject-registration'),'Subject registration deadline June19');
 check(LEGACY_SENIOR_CALENDAR_VERSION!==V,'Versioned cohort projection');
 check(examSchedule('2028:autumn',3,OLD)[2].dates.at(-1)==='2029-01-19','Legacy senior dates preserved');

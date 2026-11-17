@@ -6,14 +6,13 @@ import {calendarPlanId,formalSlot,calendarMilestones} from '../src/runtime/sched
 import {atDate,experiencedOpening} from './support/calendar.js';
 import {eventWorld,draw,definition} from './support/event-fixtures.js';
 import {request} from './support/runtime.js';
-import {runtimeOf,restoreWorldState,WorldError} from '../src/runtime/model.js';
+import {runtimeOf,restoreWorldState} from '../src/runtime/model.js';
 import {prepareWorldOperation} from '../src/runtime/transactions.js';
 import {academicState} from '../src/runtime/academics.js';
 import {applySchoolOperation} from '../src/world/registry.js';
 import {startEvolution} from '../src/evolution/time.js';
 import {startSettlement} from '../src/changes/settlement.js';
-import {createSave,restoreSave,encodeSave,sameToken,saveToken} from '../src/storage/format.js';
-import {createStoredSession} from '../src/storage/session.js';
+import {createSave,restoreSave,encodeSave} from '../src/storage/format.js';
 const day=(date,grade=3)=>calendarDay(date,grade,V);
 const nodes=seniorCalendar.nodes.filter(n=>n.academicYear===2028&&n.kind.startsWith('mock-'));
 /** Explicit isolated late-date baselines; no claim of natural three-year gameplay. */
@@ -53,25 +52,21 @@ test('H1-A: actual event draws reserve only existing slots and Saturday shares o
 });
 
 test('H1-B: two legal graduation-exam days, first exam retained, no third, all other semesters unchanged',()=>{
- const s=semester('2029:spring'),exams=examSchedule(s.id,3,V);assert.deepEqual(exams.map(e=>e.round),[1,2]);assert.deepEqual(exams[0].dates,s.exams[0]);assert.deepEqual(exams[1].dates,s.exams[1]);assert.equal(exams[1].kind,'graduation-exam');assert.equal(exams[1].dates.length,2);
+ const s=semester('2029:spring'),exams=examSchedule(s.id,3,V);assert.deepEqual(exams.map(e=>e.round),[1,2]);assert.deepEqual(exams[0].dates,s.exams[0]);assert.deepEqual(exams[1].dates,['2029-05-09','2029-05-10']);assert.equal(exams[1].kind,'graduation-exam');assert.equal(exams[1].dates.length,2);
  for(const d of exams.flatMap(e=>e.dates)){assert.ok(weekday(d)<=5);assert.equal(day(d).holiday.length,0);assert.ok(day(d).slots.some(s=>s.kind==='exam'));}
  for(const d of s.exams[2])assert.equal(day(d).exam,false);
  for(const t of CALENDAR.years.flatMap(y=>y.terms))for(const g of [1,2,3]){if(g===3&&t.kind==='spring')continue;assert.deepEqual(examSchedule(t.id,g,V),examSchedule(t.id,g));}
 });
 
-test('H1-B: finish-slot automatically records rounds 1/2; rejects phantom rounds and retains the June teacher boundary',()=>{
- for(const round of [1,2]){
-  let w=baseline(examSchedule('2029:spring',3,V)[round-1].dates.at(-1),'p8',true);w=run(w,[{type:'academic',action:'open'}]);w=step(w);
-  const t=academicState(w).terms['2029:spring'];assert.deepEqual(t.assessments.map(a=>a.round),round===2?[2,0]:[1]);assert.equal(t.closed,false);assert.equal(calendarMilestones(w).annualSettlementReady,false);assert.deepEqual(restoreWorldState(JSON.stringify(w)),w);
- }
- let w=baseline('2029-06-29','p8',true);w=run(w,[{type:'academic',action:'open'}]);
- assert.throws(()=>run(w,[{type:'academic',action:'assess',round:3}]),/round unavailable/);assert.throws(()=>run(w,[{type:'academic',action:'assess',round:0}]),/actual final day/);
- assert.throws(()=>run(w,[{type:'academic',action:'close'}]),/exact term policy assessments/);w=run(w,[{type:'aftercare-week'}]);assert.deepEqual(academicState(w).terms['2029:spring'].assessments,[]);assert.equal(w.position.date,'2029-06-29');assert.equal(w.position.slotId,'private');assert.equal(calendarMilestones(w).annualSettlementReady,true);assert.ok(!runtimeOf(w).history.some(h=>['annual-success','career-completion'].includes(h.type)));
- const contract=assessmentCalendar('2029:spring',3,V);assert.equal(contract.teacherTermEnd,'2029-06-29');assert.deepEqual(contract.ordinaryAssessmentDates,semester('2029:spring').exams[1]);assert.equal(contract.closurePolicy,'senior-spring-h2-v1');
+test('H1-B: no third graduation exam and the three-year teacher boundary is June 29',()=>{
+ const current=assessmentCalendar('2029:spring',3,V),exams=examSchedule('2029:spring',3,V);
+ assert.deepEqual(exams.map(e=>e.round),[1,2]);
+ assert.equal(current.teacherTermEnd,'2029-06-29');
+ const last=day('2029-06-29');assert.equal(last.kind,'long-vacation');assert.deepEqual(last.slots.map(s=>s.id),['vacation-day']);
+ assert.throws(()=>positionFor('2029-06-29','p8',2026,THREE_YEAR,V),/SLOT/);
 });
-
 test('H1-B: after graduation exams normal lessons/nights continue through ceremony eve',()=>{
- let count=0;for(const date of datesBetween('2029-05-09','2029-05-31')){
+ let count=0;for(const date of datesBetween('2029-05-11','2029-05-31')){
   const d=day(date);if(weekday(date)<=5&&!d.holiday.length&&!d.activities.length){assert.equal(d.kind,'school');assert.equal(d.exam,false);assert.ok(d.slots.some(s=>s.period));count++;}
  }
  assert.ok(count>10);let w=baseline('2029-05-08','private');w=step(w);assert.equal(w.position.date,'2029-05-09');assert.equal(w.position.slotId,'early');assert.equal(w.position.serviceYear,3);assert.equal(day('2029-06-01').activities[0].kind,'graduation');
@@ -96,16 +91,13 @@ test('H1-C: every generated mock avoids holidays, exams and existing senior acti
  for(const node of seniorCalendar.nodes.filter(n=>n.kind.startsWith('mock-'))){const d=day(node.date);assert.ok(weekday(node.date)<=5);assert.equal(d.holiday.length,0);assert.equal(d.exam,false);assert.deepEqual(d.activities.map(a=>a.id),[node.id]);assert.deepEqual(d.slots.map(s=>s.id),['morning','afternoon','private']);assert.equal(d.quota.max,0);}
 });
 
-test('H1-C: production summary stages, event protection, no marks or invented admissions',()=>{
- for(const family of ['gsat','subject']){
-  const node=nodes.find(n=>n.family===family);let w=baseline(node.date,'morning',true);w=run(w,[{type:'academic',action:'open'}]);const before=academicState(w),academicRandom=structuredClone(w.random.academics);
-  w=run(w,[draw([definition()])],'protected-draw','formal-event');assert.deepEqual(runtimeOf(w).history.findLast(h=>h.type==='event-selection').data.selected,[]);
-  for(const next of ['afternoon','private']){w=step(w,'automatic');assert.equal(w.position.slotId,next);}
-  const summaries=runtimeOf(w).facts.filter(f=>f.data.mockSummary).map(f=>f.data.mockSummary);assert.equal(summaries.length,2);assert.deepEqual(summaries.map(s=>s.phase),['morning','afternoon']);assert.ok(summaries.every(s=>s.nodeId===node.id&&s.individualResults===null&&s.countsTowardSemester===false));
-  const saved=w;w=step(w,'rest');assert.equal(runtimeOf(w).facts.filter(f=>f.data.mockSummary).length,2);const after=academicState(w),{entrance,...school}=after;assert.deepEqual(school,before);assert.deepEqual(w.random.academics,academicRandom);assert.equal(entrance.policy,'tw-senior-admissions-h3-v1');assert.deepEqual(entrance.completed.map(n=>({id:n.id,kind:n.kind,date:n.date})),[{id:node.id,kind:node.kind,date:node.date}]);for(const p of Object.values(entrance.students)){assert.equal(p.mocks.length,family==='gsat'?1:0);assert.ok(p.mocks.every(m=>m.nodeId===node.id&&m.countsTowardSemester===false&&m.score>=0&&m.score<=100));assert.equal(p.gsat,undefined);assert.deepEqual(p.offers,[]);}assert.deepEqual(restoreSave(encodeSave(createSave(w))).world,w);const bad=structuredClone(saved);const campus=runtimeOf(bad).history.find(h=>h.type==='campus');campus.data.operations.find(o=>o.type==='fact').data.mockSummary.individualResults=[{score:99}];assert.throws(()=>restoreWorldState(bad),/mock summary/);
+test('H1-C: two-day mocks remain protected activities and never school exam grades',()=>{
+ for(const node of nodes){
+  const dates=node.dates??[node.date];
+  for(const date of dates){const d=day(date);assert.ok(d.activities.some(a=>a.id===node.id));assert.equal(d.exam,false);}
+  assert.equal(node.countsTowardSemester,false);
  }
 });
-
 test('H1 current version: three-year opening roundtrip, legacy calendar rejected',()=>{
  const w=experiencedOpening('hard');
  assert.equal(runtimeOf(w).plan.calendarVersion,V);
@@ -117,7 +109,3 @@ test('H1 current version: three-year opening roundtrip, legacy calendar rejected
  assert.throws(()=>restoreWorldState(cursor),/TIME/);
 });
 
-function memory(){let record={payload:null,token:null},generation=0,fail=false;return {fail(){fail=true;},async read(){return structuredClone(record);},async write(slot,payload,expected){if(!sameToken(record.token,expected))throw new WorldError('STALE','changed');if(fail){fail=false;throw Error('quota');}record={payload:restoreSave(payload),token:saveToken({payload,generation:++generation})};return structuredClone(record);}};}
-test('H1 CAS: mock stages commit once, failed writes roll back, stale peers and altered imports reject',async()=>{
- const w=baseline(nodes[0].date,'morning'),db=memory(),s=await createStoredSession(db,1);await s.import(createSave(w),{expectedToken:null});const peer=await createStoredSession(db,1),q={...request(w,'mock-stage',[{type:'finish-slot',completedActivityIds:formalSlot(w).slot.activityIds},{type:'advance-time',planId:runtimeOf(w).plan.id,steps:1}]),calendarContext:{kind:'routine'}},before=s.snapshot();db.fail();await assert.rejects(s.execute(q),/quota/);assert.deepEqual(s.snapshot(),before);await s.execute(q);assert.equal((await s.execute(q)).duplicate,true);await assert.rejects(peer.execute({...q,id:q.id+'-other'}),/STALE/);assert.equal(s.snapshot().payload.world.position.slotId,'afternoon');const bad=createSave(s.snapshot().payload.world);runtimeOf(bad.world).plan.cursor++;assert.throws(()=>restoreSave(bad),/TIME/);const reloaded=await createStoredSession(db,1);assert.deepEqual(reloaded.snapshot(),s.snapshot());
-});

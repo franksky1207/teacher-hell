@@ -5,10 +5,11 @@
  */
 import {validateStory,validateStoryReference,resolveStory} from '../src/runtime/story-content.js';
 import {validateEventDefinitions} from '../src/runtime/event-candidates.js';
-import {V2_EVENT_TOPICS} from '../src/runtime/topics.js';
+import {eventCategoryOf} from '../src/runtime/topics.js';
 
 const REQUIRED_EDITORIAL=['cause','teacherResponsibility','knowledgeSource','distinctiveConsequence'];
-const validTopics=new Map(V2_EVENT_TOPICS.map(t=>[t.id,t.name]));
+const CONTENT_GROUPS=Object.freeze(['T1','T2','T3','T4','T5','T6','G']);
+const groupOf=id=>id?.startsWith('G-')?'G':/^T[1-6]-/.test(id)?id.slice(0,2):null;
 const trim=v=>typeof v==='string'?v.trim():'';
 const normalize=v=>trim(v).normalize('NFKC').toLowerCase().replace(/[\s\p{P}\p{S}]+/gu,'');
 function bigrams(value){
@@ -41,7 +42,7 @@ function editorial(record){
 /** Only cross-story editorial causes are compared; never mistake multiple
  * legitimate outcomes of ONE option for duplicate content entries. */
 /** Inverted bigram index: compare only pairs sharing cause fragments.
- * Avoid rebuilding thousands of bigram sets for every pair in a 2560+ corpus.
+ * Avoid rebuilding thousands of bigram sets for every pair in a 2400-story corpus.
  * This is candidate discovery, NOT a semantic equivalence decision.
  */
 function collisionCandidates(rows,{threshold=.86,minNewIndex=0}={}){
@@ -82,7 +83,7 @@ function checkEntry(record,i,available,seen){
  if(!story||typeof story!=='object')return {id,topicId:null,structuralPass:false,registeredResource:false,alreadyInCatalogue:false,semanticReview:editorial(record),errors:['missing story'],warnings:[]};
  const fail=(stage,e)=>errors.push(stage+': '+(e?.message??String(e)));
  try{validateStory(story);}catch(e){fail('story',e);}
- if(!validTopics.has(story.topicId))errors.push('topic: must be one of the new 128 T-coded themes');
+ if(!['T','G'].includes(eventCategoryOf(story.topicId)))errors.push('category: new selectable content must use T1..T6 or G, not retired T01..T16 or P');
  for(const field of ['resourceId','definitionId']){
   if(seen[field].has(story[field]))errors.push(field+': duplicate immutable identity '+story[field]);
   seen[field].add(story[field]);
@@ -134,33 +135,27 @@ export function auditContent(records,{catalogueDefinitions=[],similarityThreshol
  });
  const flagged=new Set(duplicates.flatMap(x=>x.ids));
  for(const item of items)if(flagged.has(item.id))item.warnings.push('similarity: inspect possible repeated causal premise');
- const byTopic=Object.fromEntries(V2_EVENT_TOPICS.map(t=>[t.id,{
-  name:t.name,minimum:20,authored:0,structurallyValid:0,reviewed:0,
-  resolverReady:0,catalogueReady:0,remainingToMinimum:20,remainingDraftToMinimum:20,remainingValidatedToMinimum:20,remainingReviewedToMinimum:20
+ const byGroup=Object.fromEntries(CONTENT_GROUPS.map(key=>[key,{
+  authored:0,structurallyValid:0,reviewed:0,resolverReady:0,catalogueReady:0
  }]));
  for(const item of items){
-  const entry=byTopic[item.topicId];if(!entry)continue;
+  const group=groupOf(item.topicId);
+  if(!group)continue;
+  const entry=byGroup[group];
   entry.authored++;
   if(item.structuralPass)entry.structurallyValid++;
   if(item.structuralPass&&item.semanticReview.reviewed)entry.reviewed++;
   if(item.registeredResource)entry.resolverReady++;
   if(item.alreadyInCatalogue)entry.catalogueReady++;
  }
- for(const entry of Object.values(byTopic)){
-  entry.remainingDraftToMinimum=Math.max(0,entry.minimum-entry.authored);
-  entry.remainingValidatedToMinimum=Math.max(0,entry.minimum-entry.structurallyValid);
-  entry.remainingReviewedToMinimum=Math.max(0,entry.minimum-entry.reviewed);
-  // Formal completed count may include only individually reviewed, valid stories.
-  entry.remainingToMinimum=entry.remainingReviewedToMinimum;
- }
- return {version:1,scope:'offline-content-review-only',minimumPerTopic:20,maximumPerTopic:null,
+ return {version:2,scope:'offline-content-review-only',plannedSelectableSeedCount:2400,
   referenceRecordsCompared:referenceRecords.length,
-  topics:128,authored:records.length,structurallyValid:items.filter(x=>x.structuralPass).length,
+  categories:CONTENT_GROUPS.length,authored:records.length,structurallyValid:items.filter(x=>x.structuralPass).length,
   semanticReviewed:items.filter(x=>x.structuralPass&&x.semanticReview.reviewed).length,
   resolverReady:items.filter(x=>x.registeredResource).length,
   catalogueReady:items.filter(x=>x.alreadyInCatalogue).length,
   // These figures MUST NOT be mistaken for already live in game campaigns.
   publishedInNewCareers:'not-assessed',
-  duplicates,items,byTopic,
+  duplicates,items,byGroup,
   note:'Multiple genuinely different outcomes under the same event and option are allowed and encouraged. Semantic review and real campaign publication require separate evidence.'};
 }

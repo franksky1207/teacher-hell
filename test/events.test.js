@@ -1,8 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
 import { performance } from 'node:perf_hooks';
-import { EVENT_TOPICS,V2_EVENT_TOPICS,TOPIC_IDS } from '../src/runtime/topics.js';
+import { EVENT_TOPICS,TOPIC_IDS,eventCategoryOf,isSelectableEventTopicId,TIME_SEMESTERS } from '../src/runtime/topics.js';
 import { buildEventCandidates,validateEventDefinitions,eventIndex,weighEventCandidate,candidateConflict } from '../src/runtime/event-candidates.js';
 import { selectWorldEvents,readEventContinuations } from '../src/runtime/event-selection.js';
 import { prepareWorldOperation,createWorldSession,forkWorldAttempt } from '../src/runtime/transactions.js';
@@ -18,20 +17,19 @@ const run=(w,op=draw(),tag='draw')=>prepareWorldOperation(w,request(w,tag,[op]))
 const selection=w=>runtimeOf(w).history.find(h=>h.type==='event-selection').data;
 function positiveWorld(){const w=eventWorld();for(let seed=0;seed<100;seed++){w.random.events=createRandom(seed).snapshot();const next=run(w).world;if(selection(next).selected.length)return {w,next};}throw Error('No seed selected');}
 
-test('17-E: old 96 topics remain stable; new 128 themes are distinct, not 128 invented playable stories',()=>{
- const source=readFileSync(new URL('../docs/03-劇情與事件呈現.md',import.meta.url),'utf8');
- const legacy=[...source.matchAll(/\| (E\d{2}-\d{2}) \| ([^|]+) \|/g)];
- const modern=[...source.matchAll(/\| (T\d{2}-\d{2}) \| ([^|]+) \|/g)];
- const original=EVENT_TOPICS.filter(t=>t.id.startsWith('E'));
- assert.equal(original.length,96);
- assert.deepEqual(original.map(t=>[t.id,t.name]),legacy.map(m=>[m[1],m[2].trim()]));
- assert.equal(new Set(original.map(t=>t.categoryId)).size,12);
- assert.equal(V2_EVENT_TOPICS.length,128);
- assert.equal(new Set(V2_EVENT_TOPICS.map(t=>t.categoryId)).size,16);
- assert.deepEqual(V2_EVENT_TOPICS.map(t=>[t.id,t.name]),modern.map(m=>[m[1],m[2].trim()]));
- assert.equal(EVENT_TOPICS.length,224);
+test('events: T/G/P new authoring IDs have separate meanings; old E only keeps internal compatibility',()=>{
+ assert.equal(EVENT_TOPICS.length,96);
  assert.equal(TOPIC_IDS.length,new Set(TOPIC_IDS).size);
- assert.ok(EVENT_TOPICS.every(t=>t.status==='unwritten'),'topic dictionary status is not a playable-story inventory');
+ assert.deepEqual(TIME_SEMESTERS,['高一上','高一下','高二上','高二下','高三上','高三下']);
+ for(const code of ['T1-001','T6-2400']){assert.equal(eventCategoryOf(code),'T');assert.equal(isSelectableEventTopicId(code),true);}
+ assert.equal(eventCategoryOf('G-0001'),'G');
+ assert.equal(eventCategoryOf('P-0001'),'P');
+ assert.equal(isSelectableEventTopicId('G-0001'),true);
+ assert.equal(isSelectableEventTopicId('P-0001'),false);
+ assert.equal(eventCategoryOf('T01-01'),null);
+ assert.equal(isSelectableEventTopicId('T01-01'),false);
+ assert.equal(isSelectableEventTopicId('E01-01'),true);
+ assert.equal(isSelectableEventTopicId('T7-001'),false);
 });
 test('events: contract rejects duplicate direct/cumulative, wrong core and malformed six weights',()=>{
  const d=definition();assert.throws(()=>validateEventDefinitions([d,{...d,type:'cumulative'}]));

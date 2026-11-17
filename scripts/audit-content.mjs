@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** Phase 18-A read-only content audit.
- * Default pilots the three existing 17-D stories, not a fabricated 2560 set.
+ * Default pilots the three existing 17-D stories, not a fabricated 2400-story set.
  * External JSON accepts a record array or {records:[...]} without executing it.
  */
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
@@ -36,7 +36,7 @@ if(option('--baseline')){
 const report=auditContent(records,{catalogueDefinitions:catalogue.definitions,referenceRecords});
 const summary={
  scope:report.scope,
- topics:report.topics,
+ categories:report.categories,
  authored:report.authored,
  referenceRecordsCompared:report.referenceRecordsCompared,
  structurallyValid:report.structurallyValid,
@@ -44,8 +44,8 @@ const summary={
  resolverReady:report.resolverReady,
  catalogueReady:report.catalogueReady,
  publishedInNewCareers:report.publishedInNewCareers,
- minimumPerTopic:report.minimumPerTopic,
- maximumPerTopic:report.maximumPerTopic,
+ plannedSelectableSeedCount:report.plannedSelectableSeedCount,
+ byGroup:report.byGroup,
  possibleDuplicatePairs:report.duplicates.length,
  invalid:report.items.filter(x=>!x.structuralPass).map(x=>({id:x.id,errors:x.errors})),
  itemsNeedingSemanticReview:report.items.filter(x=>x.semanticReview.reviewRequired).length

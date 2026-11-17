@@ -1,5 +1,5 @@
-/** 18-B2: three opt-in, isolated T10-03 causal story pilots. NOT in a live event catalogue.
- * Editorial basis: PR #60 T10-03 items 03, 13 and 20; original twenty remain unchanged.
+/** 18-B2: three opt-in, isolated G-0004 causal story pilots. NOT in a live event catalogue.
+ * Editorial basis: PR #60 G-0004 items 03, 13 and 20; original twenty remain unchanged.
  */
 const scene='school:counselling-corner';
 const page=(order,text,speaker=null,expression='calm')=>({
@@ -21,7 +21,7 @@ const result=(fact,{stage=null,afterDays=0,witnesses,transmissions=[],issues=[],
 const choice=(id,text,outcome,emotional=false,kind='action')=>({id,text,emotional,kind,outcome});
 const story=(num,stages)=>({
  resourceId:`engineering:18b2-t10-03-${num}`,definitionId:`engineering:18b2-t10-03-${num}`,
- version:'1',compilerContract:2,choiceContract:'four-v2',topicId:'T10-03',
+ version:'1',compilerContract:2,choiceContract:'four-v2',topicId:'G-0004',
  status:'engineering-test',entry:'opening',stages
 });
 const interactionTrust=(delta)=>[{fromRole:'participant',toRole:'teacher',code:'5-1',delta,basis:'interaction'}];

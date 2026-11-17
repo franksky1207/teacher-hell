@@ -15,7 +15,7 @@ const atChoices=(world,eventId)=>{
 const confirm=(w,eventId,id)=>apply(apply(w,[storyAction(eventId,'select',id)]),[storyAction(eventId,'confirm')]);
 
 test('17-D: three independently authored ready themes are legal, unique and enumerable',()=>{
- assert.deepEqual(PHASE17D_READY_STORIES.map(s=>s.topicId),['T01-01','T10-04','T14-01']);
+ assert.deepEqual(PHASE17D_READY_STORIES.map(s=>s.topicId),['G-0001','G-0002','G-0003']);
  const op=phase17dSampleCatalogue();
  assert.equal(op.engineering,false);assert.equal(op.definitions.length,3);
  assert.equal(op.bindings.length,3);
@@ -26,20 +26,20 @@ test('17-D: three independently authored ready themes are legal, unique and enum
   assert.equal(validateStoryReference(d),s);
   assert.ok(s.stages.every(stage=>stage.choices.length===4));
   assert.ok(s.stages.every(stage=>stage.choices.some(o=>o.emotional)));
-  assert.ok(s.stages.every(stage=>stage.choices.some(o=>o.variants?.length>=2)||s.topicId==='T01-01'));
+  assert.ok(s.stages.every(stage=>stage.choices.some(o=>o.variants?.length>=2)||s.topicId==='G-0001'));
  }
- assert.deepEqual(op.definitions.find(d=>d.topicId==='T14-01').eligibility.people,['staff']);
- assert.deepEqual(op.definitions.find(d=>d.topicId==='T14-01').eligibility.roleIds,[2]);
- assert.deepEqual(op.definitions.find(d=>d.topicId==='T01-01').eligibility.slotIds,['early']);
- assert.deepEqual(op.definitions.find(d=>d.topicId==='T10-04').eligibility.slotIds,['lunch']);
+ assert.deepEqual(op.definitions.find(d=>d.topicId==='G-0003').eligibility.people,['staff']);
+ assert.deepEqual(op.definitions.find(d=>d.topicId==='G-0003').eligibility.roleIds,[2]);
+ assert.deepEqual(op.definitions.find(d=>d.topicId==='G-0001').eligibility.slotIds,['early']);
+ assert.deepEqual(op.definitions.find(d=>d.topicId==='G-0002').eligibility.slotIds,['lunch']);
  assert.deepEqual(op.bindings.map(b=>b.valence),['neutral','positive','neutral']);
  const w=eventWorld();
  const built=buildEventCandidates(w,op.definitions,{engineering:false});
  assert.ok(built.candidates.every(c=>!c.definitionId.startsWith('engineering:')));
  for(const c of built.candidates){
-  if(c.topicId==='T01-01')assert.deepEqual(c.slotIds,['early']);
-  if(c.topicId==='T10-04')assert.deepEqual(c.slotIds,['lunch']);
-  if(c.topicId==='T14-01'){
+  if(c.topicId==='G-0001')assert.deepEqual(c.slotIds,['early']);
+  if(c.topicId==='G-0002')assert.deepEqual(c.slotIds,['lunch']);
+  if(c.topicId==='G-0003'){
    assert.ok(c.slotIds.every(id=>['p4','p5','p6','p7','p8'].includes(id)));
    assert.ok(w.numeric.evolution.world.people[c.participantIds[0]].roleIds.includes(2));
   }
@@ -52,7 +52,7 @@ test('17-D: three distinct events are executable through existing world transact
   const options=readStory(w,eventId).choices;
   assert.equal(options.length,4);
   assert.equal(new Set(options.map(x=>x.id)).size,4);
-  const selected=story.topicId==='T01-01'?'micro':story.topicId==='T10-04'?'team':'handoff';
+  const selected=story.topicId==='G-0001'?'micro':story.topicId==='G-0002'?'team':'handoff';
   const done=confirm(w,eventId,selected),saved=restoreWorldState(JSON.stringify(done));
   assert.deepEqual(readStory(done,eventId),readStory(saved,eventId));
   assert.equal(runtimeOf(done).history.findLast(h=>h.type==='choice')?.data.optionId,selected);
@@ -91,6 +91,6 @@ test('17-D: ready sample catalogue registers with the real event authority, not 
  const catalogue=runtimeOf(admitted).history.find(h=>h.type==='event-catalogue'&&h.data.catalogueId===op.catalogueId);
  assert.ok(catalogue);
  assert.equal(catalogue.data.definitions.length,3);
- assert.deepEqual(catalogue.data.definitions.map(d=>d.topicId),['T01-01','T10-04','T14-01']);
+ assert.deepEqual(catalogue.data.definitions.map(d=>d.topicId),['G-0001','G-0002','G-0003']);
  assert.equal(admitted.events.length,0,'registration alone must not spawn incidents');
 });

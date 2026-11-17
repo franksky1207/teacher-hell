@@ -5,7 +5,7 @@ import { entranceAbsentFromHistory } from './entrance.js';
 /** Versioned, platform-free content assets. Save files contain references, never scripts. */
 import { canonicalData } from '../changes/settlement.js';
 import { assertShape, identifier } from '../player/panel.js';
-import { TOPIC_IDS } from './topics.js';
+import { isSelectableEventTopicId } from './topics.js';
 import { STORY_SCENE_IDS } from './story-scenes.js';
 import {PHASE17D_STORIES} from './story-samples-17d.js';
 const need=(ok,code,message)=>{if(!ok)throw new RangeError(`CONTENT_${code}: ${message}`);};
@@ -19,7 +19,7 @@ export function validateStory(c){
  if(c.roleBindings){need(c.compilerContract===2,'CONTRACT','named roles require v2');for(const [name,b] of Object.entries(c.roleBindings)){identifier(name);need(!baseRoles.includes(name),'ROLE','reserved role');if('candidateRole' in b){assertShape(b,['candidateRole']);need(c.bindingContract===1,'ROLE','dynamic role requires binding contract');identifier(b.candidateRole);}else{assertShape(b,['personId']);identifier(b.personId);}}}
  if('bindingContract' in c)need(c.bindingContract===1&&c.compilerContract===2&&!c.premise,'CONTRACT','binding contract requires explicit v2 consequences');
  for(const k of ['resourceId','definitionId','version','entry'])identifier(c[k]);
- need(!c.choiceContract||c.choiceContract==='four-v2','CONTRACT','unsupported choice contract');need(TOPIC_IDS.includes(c.topicId),'REFERENCE','topic');need(['engineering-test','ready'].includes(c.status),'STATUS','status');
+ need(!c.choiceContract||c.choiceContract==='four-v2','CONTRACT','unsupported choice contract');need(isSelectableEventTopicId(c.topicId),'REFERENCE','topic');need(['engineering-test','ready'].includes(c.status),'STATUS','status');
  need(c.status!=='ready'||!c.resourceId.startsWith('engineering:'),'PUBLICATION','engineering asset');
  if(c.premise){assertShape(c.premise,['description','data']);identifier(c.premise.description);canonicalData(c.premise.data);}
  need(Array.isArray(c.stages)&&c.stages.length>0,'EMPTY','stages');const ids=c.stages.map(s=>s.id);
@@ -162,17 +162,17 @@ export function phase17dSampleCatalogue(){
   content:{resourceId:c.resourceId,version:c.version,status:c.status},
   coreCodes:['1-2','1-3','1-4'],additionalCodes:['3-1','3-2','3-3'],
   weights:Array(6).fill(1/6),directions:[1,1,1,1,1,1],
-  eligibility:{people:[c.topicId==='T14-01'?'staff':'student'],dayKinds:['school','summer-camp','winter-camp'],
+  eligibility:{people:[c.topicId==='G-0003'?'staff':'student'],dayKinds:['school','summer-camp','winter-camp'],
    // Authored dialogue states an actual time and staff identity. Do not let a
    // generic eligible student or unrelated teacher become a fake administrator.
-   slotIds:c.topicId==='T01-01'?['early']:c.topicId==='T10-04'?['lunch']:['p4','p5','p6','p7','p8'],
+   slotIds:c.topicId==='G-0001'?['early']:c.topicId==='G-0002'?['lunch']:['p4','p5','p6','p7','p8'],
    from:null,until:null,facts:[],history:[],numeric:[],enrollment:null,
-   ...(c.topicId==='T14-01'?{roleIds:[2]}:{})},
+   ...(c.topicId==='G-0003'?{roleIds:[2]}:{})},
   repetition:{cooldownDays:30,exclusionGroups:[],sameFact:true,
    reason:'Distinct authored encounter; follow-up consumes no separate new-event slot'}
  }));
  const bindings=definitions.map(d=>({definitionId:d.id,sources:Array(6).fill('participant'),
-  valence:d.topicId==='T10-04'?'positive':'neutral'}));
+  valence:d.topicId==='G-0002'?'positive':'neutral'}));
  return {type:'register-event-catalogue',catalogueId:'content:phase17d-samples-v1',
   definitions,bindings,engineering:false};
 }

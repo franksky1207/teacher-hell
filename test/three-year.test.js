@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fixture } from '../simulation/fixtures.js';
-import { rateThreeYearCareer,rateCareer } from '../src/assessment/career.js';
+import { rateThreeYearCareer } from '../src/assessment/career.js';
 import { CAREER_LIMITS,gradeForScore } from '../src/assessment/grading.js';
 import { careerEvidence,compileThreeYearCareerCompletion,validateCareerCompletion,composeCareerEnding } from '../src/runtime/career.js';
 import { completionContract } from './support/completion-contract.js';
@@ -10,7 +10,6 @@ import { prepareWorldOperation } from '../src/runtime/transactions.js';
 import { runtimeOf,restoreWorldState } from '../src/runtime/model.js';
 import { request } from './support/runtime.js';
 import { teacherTenure } from '../src/runtime/schedule.js';
-import { memorialFromWorld } from '../src/storage/memorial.js';
 const score=f=>rateThreeYearCareer({yearRefs:f.yearRefs,cohortRefs:f.cohortRefs},f.source);
 
 test('T4 A: three-year N7 uses the unchanged six weights and thresholds, with high, low and F results',()=>{
@@ -20,12 +19,12 @@ test('T4 A: three-year N7 uses the unchanged six weights and thresholds, with hi
  for(const [n,g] of [[95,'SS'],[90,'S'],[80,'A'],[70,'B'],[60,'C'],[50,'D'],[40,'E'],[39.99,'F']])assert.equal(gradeForScore(n),g);
  assert.equal(Object.values(high.parts).reduce((a,b)=>a+b,0),high.score);
  assert.equal(high.details.years,3);assert.equal(high.details.cohorts.length,1);
- const short=fixture(3,65,30,70),long=fixture(30,65,30,70);
- assert.ok(Math.abs(score(short).score-rateCareer({yearRefs:long.yearRefs,cohortRefs:long.cohortRefs},long.source).score)<1e-10,'same endpoint and outcome quality must not be penalized or boosted by span');
+ const short=fixture(3,65,30,70);
+ assert.equal(score(short).status,'synthetic','three-year evidence retains original scoring weights');
 });
 
 test('T4 A: source cardinality and missing evidence fail explicitly; no zeros, annual-average or 30-year fallback',()=>{
- const f=fixture(3);assert.equal(rateCareer({yearRefs:f.yearRefs,cohortRefs:f.cohortRefs},f.source).status,'insufficient');
+ const f=fixture(3);assert.equal(score(f).status,'synthetic');
  for(const years of [1,2,6,30])assert.equal(score(fixture(years)).status,'insufficient');
  f.records.delete('outcome:2:relationship');assert.equal(score(f).status,'insufficient');
  const failed=fixture(3);failed.records.get('completion:3').outcome='failure';assert.equal(score(failed).status,'not-successful');
@@ -41,7 +40,7 @@ test('T4 A: world projection scales actual teaching to three sources and quality
  const e=careerEvidence(w,{years:3}),s=e.sources.find(s=>s.criterion==='three-year-confirmed-teaching-responsibility');
  assert.equal(s.outcomeRefs.length,3);assert.equal(e.sources.filter(s=>s.criterion==='historical-six-state-endpoint').length,2);
  const rate=x=>{const e=careerEvidence(x,{years:3});return rateThreeYearCareer({yearRefs:e.yearRefs,cohortRefs:e.cohortRefs},e.source);};
- const before=rate(w);assert.equal(before.status,'rated');
+ const before=rate(w);assert.equal(before.status,'synthetic');
  w.numeric.evolution.world.background={inventedPastAnnualGrades:Array(19).fill('SS')};
  for(const h of runtimeOf(w).history.filter(h=>h.type==='annual-success'))h.data.evidence.rating={score:0,grade:'F'};
  assert.deepEqual(rate(w),before);assert.throws(()=>restoreWorldState(w)); // Explicit contract double, never a production source.
@@ -61,7 +60,7 @@ test('T4 B: genuine three-mode openings preserve tenure and reject early complet
   assert.equal(teacherTenure(w),({easy:20,normal:10,hard:1})[difficulty]);assert.equal(w.position.serviceYear,1);
   assert.throws(()=>prepareWorldOperation(w,{...request(w,'early-T4',[{type:'settle-school-year'}]),calendarContext:{kind:'routine'}}),/June final/);
   assert.throws(()=>compileThreeYearCareerCompletion(w),/three legal successful/);
-  assert.equal(JSON.stringify(w),before);assert.equal(memorialFromWorld(w),null);
+  assert.equal(JSON.stringify(w),before);
  }
 });
 
@@ -69,7 +68,7 @@ test('T4 B: genuine three-mode openings preserve tenure and reject early complet
  * fixture-produced annual success is ever used as continuous acceptance. */
 function threeYearContract(options={}){
  const w=completionContract({years:3,...options}),r=runtimeOf(w),n=w.numeric.evolution.world;
- r.plan={startYear:2026,validation:'fixed-calendar-v2',career:{version:1,mode:'three-year',difficulty:'hard'}};
+ r.plan={startYear:2026,validation:'fixed-calendar-v2',career:{version:2,mode:'three-year',difficulty:'hard',backgroundSeed:123}};
  w.position={date:'2029-06-29',slotId:'private',serviceYear:3};
  n.classroom={id:n.registry.cohorts[0].classId,studentIds:[]};n.registry.academicYear=2028;
  n.registry.assignments=[{personId:w.identity.playerId,roleId:9,classId:n.classroom.id,until:w.position.date}];
@@ -79,7 +78,7 @@ function threeYearContract(options={}){
  return w;
 }
 
-test('T4 A: three-year ending and qualification summaries have actual source references and never create a memorial',()=>{
+test('T4 A: three-year ending and qualification summaries have actual source references',()=>{
  const w=threeYearContract(),d=compileThreeYearCareerCompletion(w);
  assert.equal(d.mode,'three-year');assert.equal(d.years,3);assert.equal(d.cohorts.length,1);
  assert.deepEqual(d.rating.details.scale.weights,CAREER_LIMITS);assert.deepEqual(d.annualIds,['annual:1','annual:2','annual:3']);
@@ -90,7 +89,7 @@ test('T4 A: three-year ending and qualification summaries have actual source ref
  assert.equal(high.rating.grade,'SS');assert.equal(low.rating.grade,'F');assert.match(low.ending.text,/正式總評為F/);
  for(const difficulty of ['easy','normal','hard']){const same=threeYearContract();runtimeOf(same).plan.career.difficulty=difficulty;assert.deepEqual(compileThreeYearCareerCompletion(same).rating,d.rating);}
 
- runtimeOf(w).history.push({type:'career-completion',data:d});assert.equal(memorialFromWorld(w),null);
+ runtimeOf(w).history.push({type:'career-completion',data:d});
  assert.throws(()=>restoreWorldState(w));
 });
 

@@ -18,7 +18,7 @@ const reads=w=>runtime(w).history.filter(h=>h.type==='semester-review-read');
  * engineering date baselines must not be presented as completed semester play. */
 export function initializeSemesterReviews(world){
  const r=runtime(world),range=careerRange(r.plan.startYear,planMode(r.plan));
- need(!world.extensions[REVIEW_KEY]&&['fixed-calendar-v1','fixed-calendar-v2'].includes(r.plan.validation),'Formal initial calendar required');
+ need(!world.extensions[REVIEW_KEY]&&r.plan.validation==='fixed-calendar-v2','Formal initial calendar required');
  need(world.position.date===range.start&&world.position.slotId==='early'&&r.revision===1&&r.history.length===1&&r.history[0].type==='school'&&r.history[0].data.change.type==='school-initialize','Initialize reviews before the first world action');
  world.extensions[REVIEW_KEY]={version:1,at:{date:world.position.date,slotId:world.position.slotId},cursor:r.plan.cursor,abilities:abilities(world)};
  return world;
@@ -90,7 +90,7 @@ export function acknowledgeSemesterReview(world,op){
 export function validateSemesterReviews(world){
  const initial=world.extensions[REVIEW_KEY],r=runtime(world);if(!initial){need(!r.history.some(h=>['semester-review','semester-review-read'].includes(h.type)),'Report baseline missing');return;}
  assertShape(initial,['version','at','cursor','abilities']);assertShape(initial.abilities,ABILITY_NAMES);
- need(initial.version===1&&['fixed-calendar-v1','fixed-calendar-v2'].includes(r.plan.validation)&&initial.at.date===careerRange(r.plan.startYear,planMode(r.plan)).start&&initial.at.slotId==='early'&&initial.cursor===cursorFor(initial.at.date,initial.at.slotId,r.plan.startYear,r.plan.calendarVersion),'Invalid semester baseline');
+ need(initial.version===1&&r.plan.validation==='fixed-calendar-v2'&&initial.at.date===careerRange(r.plan.startYear,planMode(r.plan)).start&&initial.at.slotId==='early'&&initial.cursor===cursorFor(initial.at.date,initial.at.slotId,r.plan.startYear,r.plan.calendarVersion),'Invalid semester baseline');
  need(Object.values(initial.abilities).every(n=>Number.isFinite(n)&&n>=0&&n<=100),'Invalid initial abilities');
  // Observed effects must refer to the same N6 fields and reproduce actual clamps.
  for(const h of r.history.filter(h=>h.type==='effect')){

@@ -1,5 +1,29 @@
 # teacher-hell
 
+## 現行正式規格（2026-11-17；三年制清理整合分支）
+
+**《教師荒謬地獄》唯一可遊玩的生涯是固定三年、同一屆導師班**：2026-07-20 暑輔開局，經過 `2026:autumn`、`2027:spring`、`2027:autumn`、`2028:spring`、`2028:autumn`、`2029:spring` 六學期，**2029-06-29 為唯一結束日**。難度僅影響初始任教年資：簡單 20 年、普通 10 年、困難 1 年；不開放 30 年、十屆輪換或依現實日期另起年度。導師班為 40 人，三年原班升級、轉出入、學業與升學、第三年同交易年度結算／封存／結局均保留。
+
+高三下採平時 40%＋第一次段考 30%＋畢業考 30%；畢業考在 2029-05-09～10，與高一第二次段考同日，高二因畢旅改在 05-07～08。畢業典禮 06-01 後不再照一般高三課表上課，教師進入精簡善後直至 06-29。升學只顯示 06-29 當時已知結果；**七月分科測驗與七／八月未公布的結果不屬於三年可玩期間**。2028～2029 的校曆日期屬固定遊戲世界設定，不宣稱為官方未來公告。
+
+唯一校曆來源：`src/calendar/three-year-calendar.js` 與 `src/calendar/three-year-senior.js`；正式讀取器 `src/calendar/calendar.js`。舊 40 年底稿、H1 v1、30 年結局與獨立紀念庫已在五批清理分支移除。**目前沒有需沿用的舊玩家存檔**；現行存檔格式為 `teacher-hell-save` `version: 2`、三槽、匯入匯出、完成槽唯讀，且保留授權重試。
+
+現行必要工具：
+```sh
+npm run calendar:cohort-check    # 限界校曆定點驗證
+npm run test:module -- module=calendar,senior-calendar,admissions,completion,storage
+npm run check                    # JS語法／正式執行模組相依檢查
+npm run build                    # 本機建置，不部署
+```
+執行費用較高的 `npm test`、`test:coverage`、`simulate:*`、三年整局、Chromium／Safari 等，不是五批清理的預設驗收。完整清理、尚未驗證範圍及分批提交見 [30 年制遺留系統清理計畫與驗收記錄](docs/30年制遺留系統清理計畫-五批.md)；日期優先序見 [三年制正式校曆章節](docs/07-課表與校曆規劃.md#2026-年開局三年制專用固定校曆覆蓋2026-11-17-已確認決議)。
+
+---
+
+## 歷史開發與驗收紀錄（以下均為當時狀態，不是現行指令或玩法）
+
+下方早期 N1～N8、01～11／H1～H5 開發日誌保留歷史數據及決策脈絡；其中「30 年生涯、40 年校曆、十屆、獨立紀念庫」和已刪除的 npm 指令，**全部不得視為現行正式功能或有效驗收入口**。請先以上方現行規格為準。
+
+
 > 第11批已完成11-A學期回顧及11-B第一學年正式通關；11-C已形成正式事件、客觀原班職務中斷、失敗結算、存讀與授權重試的第一學年閉環；身心／社會代表事件及驗收紀錄見docs/05文末。11-D已完成三年同屆、正常結屆及跨年／跨屆重試核心閉環；11-E已接上N7生涯結算、歷史導向結局及獨立紀念庫，驗證區分真實短期世界與30年契約邊界；11-F未開始，第二階段尚未具備合併條件。`npm run demo:annual`可重建完整第一學年；`demo:reviews`仍是明標跳過日期的期末邊界示範。
 教師荒謬地獄
 
@@ -44,7 +68,7 @@ npm run preview
 
 | 指令 | 實際範圍 |
 |---|---|
-| `npm run calendar:build`／`calendar:check` | 有限40年固定排程重建／保存內容重現性檢查；衝突不偷改規則 |
+| `npm run calendar:cohort-check` | 2026～2029 三年限界校曆與高三差異定點驗證；不執行三年整局 |
 | `npm run check` | 全部JS語法、執行模組的分層依賴與無環檢查 |
 | `npm run test:unit` | 核心數學、record、PRNG單元套件（core／random） |
 | `npm run test:contract` | 新外層資料格式、錯誤輸入、N1～N8相容契約 |
@@ -1574,7 +1598,7 @@ npm run demo:career:report
 紀念獨立於三個遊玩槽，完成後自動保存，失敗可補存；`listMemorials`可查閱，`restart`只接受經原核心驗證的全新第一年opening。
 
 ```sh
-npm run demo:completion                     # 明標30年契約輸入，絕非自然世界通關
+（歷史退役指令：demo:completion，已移除；請勿執行）
 npm run test:module -- module=completion,assessment,storage
 npm run test:completion:browser             # 真正IndexedDB、三槽與實際導航
 # 以下先以demo:career重建實際11-D checkpoint；每檔獨立處理，限制RAM峰值

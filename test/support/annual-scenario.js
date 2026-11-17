@@ -13,7 +13,8 @@ import { calendarDay,gradeAt,nextPosition,planMode,teachingTerm,yearData } from 
 
 export function annualOpening({seed=74,events=true,continuity=false,difficulty=null,onOpening=()=>{}}={}){
  const f=foundationScenario(seed);f.events=[];f.enrollments=[];f.random.events=createRandom(1).snapshot();
- let w=difficulty===null?(continuity?startFailureSchoolCareer:startAnnualSchoolCareer)(f,{startYear:2026,subject:'國文',seed:75}):startThreeYearSchoolCareer(f,{taipeiDate:'2026-11-05',difficulty,subject:'國文',seed:75});
+ const engineeringCareer={version:2,mode:'three-year',difficulty:'normal',backgroundSeed:(75^0x54325032)>>>0};
+ let w=difficulty===null?(continuity?startFailureSchoolCareer:startAnnualSchoolCareer)(f,{startYear:2026,subject:'國文',seed:75,career:engineeringCareer}):startThreeYearSchoolCareer(f,{taipeiDate:'2026-11-05',difficulty,subject:'國文',seed:75});
  onOpening(w);
  const apply=(operations,kind)=>{w=prepareWorldOperation(w,{id:createId('operation',[w.identity.attemptId,'annual-setup',String(runtimeOf(w).revision)]),attemptId:w.identity.attemptId,expectedRevision:runtimeOf(w).revision,actorId:w.identity.playerId,preconditions:[],operations,calendarContext:{kind}}).world;};
  apply([{type:'academic',action:'open',termId:'2026:autumn'}],'routine');

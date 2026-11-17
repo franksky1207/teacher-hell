@@ -5,7 +5,7 @@ import { validateWorld } from '../src/world/validation.js';
 const states=n=>Object.fromEntries(STATE_NAMES.map(name=>[name,n]));
 const abilities=n=>Object.fromEntries(ABILITY_NAMES.map(name=>[name,n]));
 /** Synthetic assessment evidence only; never real gameplay outcomes. */
-export function fixture(years=30,quality=80,before=40,after=80) {
+export function fixture(years=3,quality=80,before=40,after=80) {
   const records=new Map(),yearRefs=[],cohortRefs=[];
   const put=r=>{records.set(r.id,r);return r.id;};
   for(let c=0;c<Math.ceil(years/3);c++) {

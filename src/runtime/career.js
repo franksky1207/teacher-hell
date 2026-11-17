@@ -7,10 +7,10 @@ import { relationshipMetric } from './annual.js';
 import { academicState,readAcademicQualification } from './academics.js';
 /** Read-only N7 bridge. The validated world journal remains the sole authority.
  * No saved parallel world, fabricated annual successes, or implicit host clock. */
-import { rateCareer,rateThreeYearCareer } from '../assessment/career.js';
-import { mean,development,outcomeScore,gradeForScore,CAREER_LIMITS } from '../assessment/grading.js';
+import { rateThreeYearCareer } from '../assessment/career.js';
+import { mean,development,outcomeScore,CAREER_LIMITS } from '../assessment/grading.js';
 import { canonicalData } from '../changes/settlement.js';
-import { ABILITY_NAMES,STATE_NAMES,assertShape } from '../player/panel.js';
+import { ABILITY_NAMES } from '../player/panel.js';
 
 const runtime=w=>w.extensions['teacher-hell/world'];
 const need=(ok,message)=>{if(!ok)throw new RangeError(`CAREER: ${message}`);};
@@ -19,8 +19,8 @@ export const careerResult=w=>runtime(w).history.find(h=>h.type==='career-complet
 
 /** Only reports already checked by validateAnnualObservations enter this adapter.
  * Shared records are referenced; just cohort headers and remapped rows are small projections. */
-export function careerEvidence(w,{years:span=30}={}){
- need([3,30].includes(span),'unsupported source span');
+export function careerEvidence(w,{years:span=3}={}){
+ need(span===3,'only three-year source evidence is supported');
  const r=runtime(w),reports=r.history.filter(h=>h.type==='annual-success').sort((a,b)=>a.data.year-b.data.year),records=new Map(),yearRefs=[],cohortRefs=[],sources=[];
  const n=w.numeric.evolution.world,registry=n.registry;
  const affiliationYear=date=>{const y=Number(date.slice(0,4));return Math.max(1,Math.min(span,y-r.plan.startYear+(date>=yearData(y).summerCamp?1:0)));};
@@ -80,13 +80,13 @@ export function careerEvidence(w,{years:span=30}={}){
   records.set(summary.id,{...summary,evidenceRefs:[...summary.evidenceRefs,id]});sources.push({id,factId,annualId:h.id,...source});
  }
  // Sustained assigned teaching is a single career-scale responsibility outcome,
- // not thirty major incidents. Reuse its measured N7 quality, never volume or tenure.
+ // not a count of separate incidents. Reuse its measured N7 quality, never volume or tenure.
  // Committee findings stay independent; annual significance/grades are untouched.
  if(reports.length===span){
   const deliverySources=[...new Map(sources.filter(s=>s.criterion==='assigned-lessons-with-confirmed-domain-results').map(s=>[s.id,s])).values()],delivery=deliverySources.map(s=>records.get(s.id));
   const reader=sourceReader({provenance:'formal',resolve:id=>records.get(id)});yearRefs.forEach(ref=>loadYear(reader,ref));
   if(delivery.length===span&&new Set(delivery.map(row=>row.year)).size===span&&delivery.every(row=>row.kind==='handling')&&!reader.missing.length){
-   observe(reports[span-1],'handling','sustained-teaching',outcomeScore(delivery),{criterion:span===30?'thirty-year-confirmed-teaching-responsibility':'three-year-confirmed-teaching-responsibility',outcomeRefs:delivery.map(row=>row.id)} ,true);
+   observe(reports[span-1],'handling','sustained-teaching',outcomeScore(delivery),{criterion:'three-year-confirmed-teaching-responsibility',outcomeRefs:delivery.map(row=>row.id)} ,true);
    const routineIds=new Set(delivery.map(row=>row.id));
    for(const ref of yearRefs){const summary=records.get(ref);records.set(ref,{...summary,evidenceRefs:summary.evidenceRefs.filter(id=>!routineIds.has(id))});}
   }
@@ -128,8 +128,8 @@ export function careerEvidence(w,{years:span=30}={}){
 }
 
 /** Fixed prose fragments compose only already-established observations. Not an event engine. */
-export function composeCareerEnding({rating,start,end,events=[],opinions=[],relationships=[],unresolved=[],years=30}){
- const fragments=[{layer:'objective',text:years===3?'三個學年的正式紀錄在這裡合攏；未結的事情沒有因此消失。':'三十個學年的正式紀錄在這裡合攏；未結的事情沒有因此消失。',refs:years===3?[start.id,end.id]:[]}];
+export function composeCareerEnding({rating,start,end,events=[],opinions=[],relationships=[],unresolved=[],years=3}){
+ const fragments=[{layer:'objective',text:'三個學年的正式紀錄在這裡合攏；未結的事情沒有因此消失。',refs:[start.id,end.id]}];
  const growing=ABILITY_NAMES.filter(n=>end.abilities[n]>start.abilities[n]);
  if(growing.length)fragments.push({layer:'objective',text:`與生涯起點相比，${growing.join('、')}有所成長。`,refs:[start.id,end.id]});
  if(end.states.精神<35||end.states.體力<30)fragments.push({layer:'objective',text:'最後留下的體力與精神紀錄，也記下了這段工作的消耗。',refs:[end.id]});
@@ -141,15 +141,15 @@ export function composeCareerEnding({rating,start,end,events=[],opinions=[],rela
  return {version:1,fragments,text:fragments.map(f=>f.text).join('\n'),grade:rating.grade};
 }
 
-export const compileCareerCompletion=w=>compileCompletion(w,30);
-export const compileThreeYearCareerCompletion=w=>compileCompletion(w,3);
-function compileCompletion(w,span){
+export const compileThreeYearCareerCompletion=w=>compileCompletion(w);
+function compileCompletion(w){
+ const span=3;
  const r=runtime(w);need(!careerResult(w),'already completed');
  const reports=r.history.filter(h=>h.type==='annual-success').sort((a,b)=>a.data.year-b.data.year);
- need(w.position.serviceYear===span&&reports.length===span&&reports.every((h,i)=>h.data.year===i+1&&h.data.status==='success'),span===30?'thirty legal successful years required':'three legal successful years required');
- if(span===3)need(planMode(r.plan)===THREE_YEAR,'three-year career mode required');
+ need(w.position.serviceYear===span&&reports.length===span&&reports.every((h,i)=>h.data.year===i+1&&h.data.status==='success'),'three legal successful years required');
+ need(planMode(r.plan)===THREE_YEAR,'three-year career mode required');
  need(!r.history.some(h=>h.type==='annual-failure'&&h.data.year===span),'failed final year');
- const evidence=careerEvidence(w,{years:span}),rating=(span===3?rateThreeYearCareer:rateCareer)({yearRefs:evidence.yearRefs,cohortRefs:evidence.cohortRefs},evidence.source);
+ const evidence=careerEvidence(w),rating=rateThreeYearCareer({yearRefs:evidence.yearRefs,cohortRefs:evidence.cohortRefs},evidence.source);
  need(rating.status==='rated','formal N7 evidence is insufficient');
  const first=reports[0].data.evidence.records.find(x=>x.id===evidence.records.get(evidence.yearRefs[0]).startRef),end=reports[span-1].data.end;
  const known=new Set(r.disclosures.filter(d=>d.actorId===w.identity.playerId).map(d=>d.factId));
@@ -196,12 +196,12 @@ function compileCompletion(w,span){
   people:selected.map(({quality,...p})=>p),events,opinions,unresolved,ending};
 }
 export function validateCareerCompletion(w){
- const r=runtime(w),entries=r.history.filter(h=>h.type==='career-completion'),requests=r.commits.filter(c=>JSON.parse(c.request).operations?.some(o=>o.type==='settle-career'||o.type==='settle-school-year'&&r.history.some(h=>h.type==='annual-success'&&h.data.year===(r.plan.career?.mode===THREE_YEAR?3:30)&&h.operationId===c.id)));
+ const r=runtime(w),entries=r.history.filter(h=>h.type==='career-completion'),requests=r.commits.filter(c=>JSON.parse(c.request).operations?.some(o=>o.type==='settle-school-year'&&r.history.some(h=>h.type==='annual-success'&&h.data.year===3&&h.operationId===c.id)));
  need(entries.length<=1&&entries.length===requests.length,'missing or repeated completion');
  if(!entries.length)return;
  const h=entries[0],owner=requests[0],request=JSON.parse(owner.request);
  need(owner.id===h.operationId&&owner.attemptId===h.attemptId&&request.operations.length===1&&request.actorId===w.identity.playerId,'completion ownership differs');
- if(r.plan.career?.mode===THREE_YEAR){
+ { // Every accepted completion belongs to the same final three-year settlement.
   const own=r.history.filter(s=>s.operationId===h.operationId&&s.attemptId===h.attemptId),annual=own.filter(s=>s.type==='annual-success'),archives=own.filter(s=>s.type==='cohort-completion');
   need(request.operations[0].type==='settle-school-year'&&annual.length===1&&annual[0].data.year===3&&archives.length===1&&annual[0].order<archives[0].order&&archives[0].order<h.order&&own.at(-1)===h,'three-year terminal must be the same ordered annual/cohort/completion transaction');
   need(own[0]===annual[0]&&equal(h.at,annual[0].at)&&equal(h.at,archives[0].at),'three-year completion changed its boundary');
@@ -209,7 +209,7 @@ export function validateCareerCompletion(w){
  }
 
  const before={...w,extensions:{...w.extensions,'teacher-hell/world':{...r,history:r.history.slice(0,h.order-1)}}};
- need(equal((r.plan.career?.mode===THREE_YEAR?compileThreeYearCareerCompletion:compileCareerCompletion)(before),h.data),'saved N7 completion or ending changed');
+ need(equal(compileThreeYearCareerCompletion(before),h.data),'saved N7 completion or ending changed');
  need(!r.history.some(e=>e.order>h.order),'completed career is frozen');
 }
 export function readCareerCompletion(w){const h=careerResult(w);if(!h)return null;const {details,...rating}=h.data.rating;return {id:h.id,...structuredClone({...h.data,rating})};}
@@ -220,18 +220,4 @@ function cohortQualification(w,studentIds,archive,academic,lastAnnualId){
  if(!studentIds.every(id=>recorded.has(id)))return {status:'unavailable',eligible:null,notYetEligible:null,sourceRef:lastAnnualId};
  const rows=studentIds.map(id=>readAcademicQualification(w,id,academic));
  return {status:'current-qualification',eligible:rows.filter(q=>q.eligible).length,notYetEligible:rows.filter(q=>!q.eligible).length,sourceRef:lastAnnualId};
-}
-
-/** Semantic validation for the compact transport, reusing N7's grading contract. */
-export function validateCareerSummary(d){
- need(Number.isFinite(d.score)&&d.score>=0&&d.score<=100&&d.grade===gradeForScore(d.score),'invalid compact N7 score/grade');
- assertShape(d.parts,Object.keys(CAREER_LIMITS));
- need(Object.entries(d.parts).every(([k,v])=>Number.isFinite(v)&&v>=0&&v<=CAREER_LIMITS[k])&&Math.abs(Object.values(d.parts).reduce((a,b)=>a+b,0)-d.score)<1e-10,'compact N7 parts differ');
- assertShape(d.abilities,ABILITY_NAMES);assertShape(d.states,STATE_NAMES);
- for(const row of Object.values(d.abilities)){assertShape(row,['start','end','delta']);need([row.start,row.end].every(v=>Number.isFinite(v)&&v>=0&&v<=100)&&row.delta===row.end-row.start,'invalid compact ability comparison');}
- need(Object.values(d.states).every(v=>Number.isFinite(v)&&v>=0&&v<=100),'invalid compact state');
- need(d.completedAt?.serviceYear===30&&typeof d.completedAt.date==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d.completedAt.date)&&typeof d.completedAt.slotId==='string','invalid completion moment');
- need(Array.isArray(d.cohorts)&&d.cohorts.length===10&&new Set(d.cohorts.map(c=>c.id)).size===10,'ten distinct compact cohorts required');
- for(const [i,c] of d.cohorts.entries())need(Array.isArray(c.years)&&c.years.length===3&&c.years.every((y,j)=>y===i*3+j+1)&&Number.isInteger(c.students)&&c.students>0,'invalid compact cohort');
- return d;
 }

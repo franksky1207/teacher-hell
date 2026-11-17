@@ -12,7 +12,6 @@ import { teacherTenure } from '../src/runtime/schedule.js';
 import { request } from '../test/support/runtime.js';
 import { encodeSave,restoreSave,SAVE_KIND } from '../src/storage/format.js';
 import { sourceFact } from '../test/support/procedure-scenario.js';
-import { memorialFromWorld } from '../src/storage/memorial.js';
 const difficulty=process.argv.find(a=>a.startsWith('--difficulty='))?.split('=')[1]??'normal';
 assert.ok(['easy','normal','hard'].includes(difficulty));
 const shellQuote=value=>"'"+value.replaceAll("'","'\\''")+"'";
@@ -43,7 +42,7 @@ try{
   const year=w.position.serviceYear;
   assert.equal(teacherTenure(w),({easy:20,normal:10,hard:1})[difficulty]+year-1);
   w=runAnnual(w,{stopBeforeSettlement:true,onDate}).world;
-  if(year===3)await persist('before-completion.json',encodeSave({kind:SAVE_KIND,version:1,world:w,opening}));
+  if(year===3)await persist('before-completion.json',encodeSave({kind:SAVE_KIND,version:2,world:w,opening}));
   const q={...request(w,`T4-complete-${year}`,[{type:'settle-school-year'}]),calendarContext:{kind:'routine'}};
   const result=prepareWorldOperation(w,q);w=result.world;
   const annual=runtimeOf(w).history.find(h=>h.type==='annual-success'&&h.data.year===year);assert.ok(annual);
@@ -51,9 +50,9 @@ try{
   if(year===3){
    const completion=careerResult(w),archive=runtimeOf(w).history.find(h=>h.type==='cohort-completion');
    assert.equal(completion.data.years,3);assert.equal(completion.operationId,annual.operationId);assert.equal(archive.operationId,annual.operationId);assert.ok(annual.order<archive.order&&archive.order<completion.order);
-   assert.equal(w.numeric.evolution.world.classroom.studentIds.length,0);assert.equal(w.numeric.evolution.world.registry.cohorts.length,1);assert.equal(memorialFromWorld(w),null);
-   const payload=encodeSave({kind:SAVE_KIND,version:1,world:w,opening});await persist('completed.json',payload);
-   // Write the original raw subdocument bytes as well as the complete v1 envelope.
+   assert.equal(w.numeric.evolution.world.classroom.studentIds.length,0);assert.equal(w.numeric.evolution.world.registry.cohorts.length,1);
+   const payload=encodeSave({kind:SAVE_KIND,version:2,world:w,opening});await persist('completed.json',payload);
+   // Write the original raw subdocument bytes as well as the complete v2 envelope.
    await persist('world.json',JSON.stringify(w));await persist('opening.json',JSON.stringify(opening));
    const restored=restoreSave(payload);assert.deepEqual(careerResult(restored.world),completion);
    assert.equal(prepareWorldOperation(w,q).duplicate,true);
@@ -63,7 +62,7 @@ try{
   assert.equal(careerResult(w),null);
   w=runAnnual(w,{continueAfterSuccess:true,stopAtOpening:true,onDate}).world;opening=w;
   assert.equal(w.position.serviceYear,year+1);
-  await persist('latest-opening.json',encodeSave({kind:SAVE_KIND,version:1,world:w,opening}));
+  await persist('latest-opening.json',encodeSave({kind:SAVE_KIND,version:2,world:w,opening}));
  }
  manifest.status='passed';manifest.elapsedMs=performance.now()-started;await saveManifest();console.log(JSON.stringify(manifest));
 }catch(error){manifest.status='failed';manifest.error={message:error.message,stack:error.stack};manifest.elapsedMs=performance.now()-started;await saveManifest();throw error;}

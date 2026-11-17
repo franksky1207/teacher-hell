@@ -1,11 +1,26 @@
 /** Bounded calendar-only assertions; never starts an NPC, event, or three-year simulation. */
 import assert from 'node:assert/strict';
-import {calendarDay,examSchedule,assessmentCalendar,CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION} from '../src/calendar/calendar.js';
+import {calendarDay,examSchedule,assessmentCalendar,THREE_YEAR_CALENDAR,seniorCalendar,CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,planMode,careerYears,careerRange,THREE_YEAR} from '../src/calendar/calendar.js';
 import {addDays,weekday} from '../src/calendar/civil.js';
 import {admissionCalendar} from '../src/calendar/admissions.js';
-const V=SENIOR_CALENDAR_VERSION, OLD=LEGACY_SENIOR_CALENDAR_VERSION;
+const V=SENIOR_CALENDAR_VERSION;
 let checks=0, scanned=0;
+checkSourceIntegrity();
+function checkSourceIntegrity(){
+ assert.deepEqual(THREE_YEAR_CALENDAR.range,['2026-07-20','2029-06-29']);
+ assert.equal(THREE_YEAR_CALENDAR.years.length,4);
+ assert.equal(THREE_YEAR_CALENDAR.years.flatMap(y=>y.terms).length,6);
+ assert.ok(THREE_YEAR_CALENDAR.years.flatMap(y=>y.activities).every(a=>a.date>=THREE_YEAR_CALENDAR.range[0]&&a.date<=THREE_YEAR_CALENDAR.range[1]));
+ assert.ok(seniorCalendar.nodes.every(n=>n.date>='2028-07-20'&&n.date<='2029-06-29'));
+}
+
 function check(ok,msg){assert.ok(ok,msg);checks++;}
+check(planMode({validation:'fixed-calendar-v2',career:{version:2,mode:THREE_YEAR,difficulty:'easy',backgroundSeed:123}})===THREE_YEAR,'Three-year mode accepted');
+check(careerYears(THREE_YEAR)===3,'Three playable years');
+check(careerRange(2026,THREE_YEAR).start==='2026-07-20'&&careerRange(2026,THREE_YEAR).end==='2029-06-29','Fixed three-year start/end');
+for(const invalid of [{validation:'fixed-calendar-v1'},{validation:'fixed-calendar-v2',career:{version:1,mode:THREE_YEAR,difficulty:'hard'}},{validation:'fixed-calendar-v2',career:{version:1,mode:'career-30',difficulty:'hard'}}])check((()=>{try{planMode(invalid);return false;}catch{return true;}})(),'Retired mode must be rejected');
+check((()=>{try{careerRange(2027,THREE_YEAR);return false;}catch{return true;}})(),'Non-2026 cohort is not playable');
+check((()=>{try{careerRange(2026,'career-30');return false;}catch{return true;}})(),'30-year range is not playable');
 const day=(date,grade)=>calendarDay(date,grade,V);
 const has=(date,grade,kind)=>day(date,grade).activities.some(a=>a.kind===kind);
 const exam=(term,grade,round)=>examSchedule(term,grade,V)[round-1].dates.join(',');
@@ -36,15 +51,19 @@ check(day('2028-10-25',3).kind==='holiday'&&!has('2028-10-25',3,'mock-gsat'),'Th
 check(day('2029-01-19',3).kind==='holiday'&&day('2029-01-19',3).finalReview,'Senior Jan19 preparation leave / semester review');
 check(day('2029-01-19',1).kind==='school','First-years still attend Jan19');
 check(day('2029-01-22',3).kind!=='winter-camp'&&day('2029-01-22',1).kind==='winter-camp','Senior is exempt from winter camp');
+check(day('2027-01-25',3).kind==='winter-camp'&&day('2028-02-07',3).kind==='winter-camp','Only final-year winter camp is exempt');
+check(day('2029-06-02',3).kind==='long-vacation'&&day('2029-06-02',1).kind!=='long-vacation','Graduates have no regular classes after June 1');
 for(const date of ['2029-01-20','2029-01-21','2029-01-22'])
  check(has(date,3,'formal-gsat'),'Formal GSAT protected '+date);
+check(has('2028-10-21',3,'formal-gsat')===false,'English listening is an admissions milestone, not GSAT');
+check(admissionCalendar(2026,V).some(n=>n.kind==='listening-exam-second'&&n.date==='2028-12-16'),'Second English listening exam');
 check(!has('2028-12-29',3,'clubs')&&has('2028-12-29',1,'clubs'),'Grade 3 does not attend club performance');
 check(assessmentCalendar('2028:spring',2,V).examPublications[1].date==='2028-05-15','Grade2 grades publish after trip');
 check(assessmentCalendar('2029:spring',3,V).marksCloseDate==='2029-05-10','Grade3 graduation assessment synchronized with grade1');
 
 check(assessmentCalendar('2028:autumn',3,V).marksCloseDate==='2028-12-27','Senior autumn marks close Dec27 while semester continues');
 check(assessmentCalendar('2028:autumn',3,V).publicationDate==='2028-12-28','Senior autumn results may publish Dec28');
-const admissions=admissionCalendar(2026,V),legacyAdmissions=admissionCalendar(2026,OLD);
+const admissions=admissionCalendar(2026,V);
 for(const [stage,date] of [
  ['gsat-exam','2029-01-22'],['gsat-release','2029-02-26'],
  ['stars-nominate','2029-03-09'],['stars-screen','2029-03-21'],
@@ -52,13 +71,10 @@ for(const [stage,date] of [
  ['application-result','2029-05-31'],['application-allocation','2029-06-12'],
  ['subject-register','2029-06-19']
 ])check(admissions.find(n=>n.kind===stage)?.date===date,'H3 admissions phase mismatched '+stage);
-check(legacyAdmissions.find(n=>n.kind==='gsat-exam')?.date==='2029-01-29','Existing senior H1 v1 GSAT milestones preserved');
-
 check(day('2029-06-19',3).admissions.some(a=>a.kind==='subject-registration'),'Subject registration deadline June19');
-check(LEGACY_SENIOR_CALENDAR_VERSION!==V,'Versioned cohort projection');
-check(examSchedule('2028:autumn',3,OLD)[2].dates.at(-1)==='2029-01-19','Legacy senior dates preserved');
-check(!calendarDay('2029-01-20',3,OLD).activities.some(a=>a.kind==='formal-gsat'),'Legacy saved projections do not inherit new GSAT');
-check(examSchedule('2028:autumn',3,CALENDAR_VERSION)[2].dates.at(-1)==='2029-01-19','Legacy 40-year fixed calendar unchanged');
+check(CALENDAR_VERSION===V,'One calendar version for all runtime lookups');
+check(admissionCalendar(2027,V).length===0,'No future cohort admissions');
+check((()=>{try{calendarDay('2028-10-02',3,'tw-school-2026-2065-senior-h1-v1');return false;}catch{return true;}})(),'Old H1 v1 must be rejected');
 // Calendar-data scan only. No stories, players, NPCs, RNG, or game advancement.
 for(let date='2026-07-20';date<='2029-06-29';date=addDays(date,1)){
  for(const grade of [1,2,3]){
@@ -74,4 +90,4 @@ for(let date='2026-07-20';date<='2029-06-29';date=addDays(date,1)){
   }
  }
 }
-console.log('PASS three-year calendar precision: '+checks+' assertions; '+scanned+' date-by-grade rows; legacy version intact');
+console.log('PASS three-year calendar precision: '+checks+' assertions; '+scanned+' date-by-grade rows; single three-year version');

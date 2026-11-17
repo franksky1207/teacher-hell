@@ -15,7 +15,7 @@ import { CRISIS_WEIGHTS,CRISIS_THRESHOLDS,crisisBand,crisisFromStates,worldCrisi
 import { ANNUAL_LIMITS,CAREER_LIMITS,gradeForScore,development,outcomeScore } from '../src/assessment/grading.js';
 import { captureAssessment } from '../src/assessment/evidence.js';
 import { rateAnnual } from '../src/assessment/annual.js';
-import { rateCareer } from '../src/assessment/career.js';
+import { rateThreeYearCareer } from '../src/assessment/career.js';
 
 const copy=x=>structuredClone(x);
 const states=n=>Object.fromEntries(STATE_NAMES.map(name=>[name,n]));
@@ -23,7 +23,7 @@ const player=confirmCandidate(createCandidate({seed:3,playerId:'teacher',schoolI
 const make=()=>createWorld({seed:9,player});
 /** Synthetic evidence authority only. No fixture claims real events or game outcomes. */
 
-const career=f=>rateCareer({yearRefs:f.yearRefs,cohortRefs:f.cohortRefs},f.source);
+const career=f=>rateThreeYearCareer({yearRefs:f.yearRefs,cohortRefs:f.cohortRefs},f.source);
 
 test('crisis fixed weights, exact bands, parallel single thresholds and external reputation semantics',()=>{
   assert.deepEqual(Object.values(CRISIS_WEIGHTS),[20,25,20,5,15,15]);assert.equal(Object.values(CRISIS_WEIGHTS).reduce((a,b)=>a+b),100);
@@ -134,39 +134,16 @@ test('annual evidence number is normalized, responsibility matters, and reused p
   assert.throws(()=>{f.records.get('end:1').states.聲望=NaN;rateAnnual('year:1',f.source);});
 });
 
-test('career independently scores 30 summaries and ten cohorts; year ratings are never averaged',()=>{
-  const f=fixture(),before=JSON.stringify([...f.records]),out=career(f);
-  assert.equal(out.status,'synthetic');assert.equal(out.details.cohorts.length,10);assert.equal(out.details.years,30);
-  for(const [key,limit] of Object.entries(CAREER_LIMITS))assert.ok(out.parts[key]>=0&&out.parts[key]<=limit);
-  const annualAverage=f.yearRefs.reduce((sum,id)=>sum+rateAnnual(id,f.source).score,0)/30;assert.notEqual(out.score,annualAverage);
-  assert.equal(JSON.stringify([...f.records]),before);
-  const duplicate=copy(f.records.get('year:1').evidenceRefs);f.records.get('year:1').evidenceRefs.push(...duplicate);assert.deepEqual(career(f),out);
-  const low=fixture(30,0,100,0);assert.equal(career(low).score,0);
-  const max=fixture(30,100,0,100);assert.equal(career(max).score,100);
-  const noContribution=fixture();for(const r of noContribution.records.values())if(['continuity','contribution'].includes(r.kind))r.quality=r.completion=r.accountability=0;
-  assert.equal(career(noContribution).parts.contribution,0);
-  const weak=fixture();for(const r of weak.records.values())if(r.kind==='cohort'&&r.id==='cohort:0')r.importance=.1;
-  weak.records.get('end:3').classroom.order=0;assert.notEqual(career(weak).parts.cohorts,out.parts.cohorts);
-});
-
-test('career requires complete evidence and rejects recycled students, wrong attempts and conflicting facts',()=>{
-  const short=fixture(29);assert.equal(career(short).status,'insufficient');assert.equal(career(fixture(3)).grade,null);
-  const mutations=[
-    f=>{f.records.get('cohort:1').studentIds[0]=f.records.get('cohort:0').studentIds[0];},
-    f=>{f.records.get('completion:2').attemptId='failed-retry';},
-    f=>{f.records.get('year:2').year=1;},
-    f=>{f.records.get('year:2').schoolId='other';},
-    f=>{f.records.get('cohort:1').years=[4,5,7];},
-    f=>{f.records.get('fact:2:handling').subjectIds=['stranger'];},
-    f=>{f.records.get('outcome:2:handling').factId='fact:1:handling';},
-    f=>{f.records.get('end:2').year=1;},
-    f=>{f.records.get('end:2').attemptId='discarded-attempt';},
-  ];
-  for(const mutate of mutations){const f=fixture();mutate(f);assert.throws(()=>career(f));}
-  const failure=fixture();failure.records.get('completion:30').outcome='failure';assert.equal(career(failure).status,'not-successful');
-  const missing=fixture();missing.records.delete('outcome:10:student');assert.equal(career(missing).status,'insufficient');
-  const none=fixture();for(const row of none.records.values())if(row.kind==='handling')row.significant=false;assert.equal(career(none).status,'insufficient');
-  const noQuality=fixture();for(const summary of noQuality.records.values())if(summary.kind==='year-summary')summary.evidenceRefs=summary.evidenceRefs.filter(id=>!id.endsWith(':quality'));assert.equal(career(noQuality).status,'insufficient');
+test('career N7 requires three legal years and one cohort; the six score budgets remain intact',()=>{
+ const f=fixture(3),before=JSON.stringify([...f.records]),out=career(f);
+ assert.equal(out.status,'synthetic');assert.equal(out.details.cohorts.length,1);assert.equal(out.details.years,3);
+ for(const [key,limit] of Object.entries(CAREER_LIMITS))assert.ok(out.parts[key]>=0&&out.parts[key]<=limit);
+ assert.equal(JSON.stringify([...f.records]),before);
+ assert.equal(career(fixture(3,0,100,0)).score,0);
+ assert.equal(career(fixture(3,100,0,100)).score,100);
+ for(const years of [1,2,30])assert.equal(career(fixture(years)).status,'insufficient');
+ const failed=fixture(3);failed.records.get('completion:3').outcome='failure';assert.equal(career(failed).status,'not-successful');
+ const missing=fixture(3);missing.records.delete('outcome:2:student');assert.equal(career(missing).status,'insufficient');
 });
 
 test('100,000 seeded state vectors are monotone, bounded, repeatable and preserve independent threshold signals',t=>{
@@ -183,7 +160,7 @@ test('100,000 seeded state vectors are monotone, bounded, repeatable and preserv
   t.diagnostic(JSON.stringify({stateVectors:100000,mean:sum/100000,min,max,bands,normalCompositeButSingleHit:parallel,elapsedMs:performance.now()-began}));
 });
 
-test('2,000 annual and 300 career synthetic samples retain score diversity, sensitivity, JSON replay and bounded memory',t=>{
+test('2,000 annual and 300 three-year career synthetic samples retain score diversity, sensitivity, JSON replay and bounded memory',t=>{
   const rng=createRandom(99),began=performance.now(),scores=[],careerScores=[];let bytes=0;
   for(let i=0;i<2000;i++) {
     const f=fixture(1,rng.uniform(0,100),rng.uniform(0,100),rng.uniform(0,100));
@@ -191,15 +168,15 @@ test('2,000 annual and 300 career synthetic samples retain score diversity, sens
     if(i%100===0){const data=JSON.parse(JSON.stringify([...f.records]));const records=new Map(data);assert.deepEqual(rateAnnual('year:1',{provenance:'synthetic',resolve:id=>records.get(id)}),out);}
   }
   for(let i=0;i<300;i++) {
-    const f=fixture(30,rng.uniform(0,100),rng.uniform(0,100),rng.uniform(0,100));const out=career(f);
+    const f=fixture(3,rng.uniform(0,100),rng.uniform(0,100),rng.uniform(0,100));const out=career(f);
     assert.ok(out.score>=0&&out.score<=100);careerScores.push(out.score);
-    if(i%30===0){const records=new Map(JSON.parse(JSON.stringify([...f.records])));assert.deepEqual(rateCareer({yearRefs:f.yearRefs,cohortRefs:f.cohortRefs},{provenance:'synthetic',resolve:id=>records.get(id)}),out);bytes=Buffer.byteLength(JSON.stringify([...f.records]));}
+    if(i%30===0){const records=new Map(JSON.parse(JSON.stringify([...f.records])));assert.deepEqual(rateThreeYearCareer({yearRefs:f.yearRefs,cohortRefs:f.cohortRefs},{provenance:'synthetic',resolve:id=>records.get(id)}),out);bytes=Buffer.byteLength(JSON.stringify([...f.records]));}
   }
   const stats=values=>({min:Math.min(...values),max:Math.max(...values),mean:values.reduce((a,b)=>a+b)/values.length});
   assert.ok(stats(scores).max-stats(scores).min>70);assert.ok(stats(careerScores).max-stats(careerScores).min>70);
   let retainedHeapDelta=null,retainedHeapSamples=null;
   if(typeof global.gc==='function') {
-    const f=fixture();
+    const f=fixture(3);
     for(let i=0;i<100;i++)career(f); // Warm the stable source shape before measuring.
     global.gc();const before=process.memoryUsage().heapUsed;retainedHeapSamples=[];
     for(let batch=0;batch<4;batch++){
@@ -267,14 +244,4 @@ test('assessment: explicit causal enrollment evidence permits a mid-year pupil a
  f.records.get('fact:short').subjectIds=['someone-else'];assert.throws(()=>rateAnnual('year:1',f.source));
 });
 
-test('assessment: cross-cohort identity requires a proven chronological enrollment chain',()=>{
- const f=fixture(),first=f.records.get('cohort:0'),next=f.records.get('cohort:1'),person=first.studentIds[0];next.studentIds.push(person);
- for(const [cohort,id,fromYear,untilYear,reason,previousEnrollmentId] of [[first,'old-enrollment',1,3,'initial',null],[next,'repeat-enrollment',4,6,'repeat','old-enrollment']]){
-  cohort.enrollmentRefs=[id];const factId='cause:'+id;
-  f.records.set(factId,{id:factId,kind:'fact',provenance:'synthetic',playerId:'teacher',schoolId:'school',year:fromYear,attemptId:'attempt:'+fromYear,confirmed:true,subjectIds:[person]});
-  f.records.set(id,{id,kind:'enrollment',provenance:'synthetic',playerId:'teacher',schoolId:'school',personId:person,cohortId:cohort.id,fromYear,untilYear,basisFactId:factId,reason,previousEnrollmentId});
- }
- assert.equal(career(f).status,'synthetic');
- f.records.get('repeat-enrollment').previousEnrollmentId='unrelated';assert.throws(()=>career(f),/enrollment chain/);
- f.records.get('repeat-enrollment').previousEnrollmentId='old-enrollment';f.records.get('old-enrollment').untilYear=5;assert.throws(()=>career(f),/enrollment chain/);
-});
+

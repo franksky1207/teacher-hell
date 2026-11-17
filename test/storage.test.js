@@ -9,6 +9,29 @@ import { forkWorldAttempt } from '../src/runtime/transactions.js';
 const clone=structuredClone;
 function memory(){const slots=new Map(),counts=new Map();let fail=false;return {fail(){fail=true;},async read(n){return clone(slots.get(n)??{payload:null,token:null});},async write(n,payload,expected){const old=await this.read(n);if(!sameToken(old.token,expected))throw new WorldError('STALE','changed');if(fail){fail=false;throw new Error('quota');}const generation=(counts.get(n)??0)+1;counts.set(n,generation);const saved={payload:clone(payload),token:payload?saveToken({payload,generation}):null};slots.set(n,saved);return clone(saved);}};}
 const sample=(world,tag)=>request(world,tag,[{type:'sample',stream:'events',id:tag,weights:[1,2,3]}]);
+test('three-year v2 save: three slots, export/import, retry opening, no obsolete memorial side effects',async()=>{
+ let opening;const db=memory(),world=annualOpening({difficulty:'normal',events:false,onOpening:value=>opening=value}),first=await createStoredSession(db,1);
+ const initial=createSave(world,opening);assert.equal(initial.kind,'teacher-hell-save');assert.equal(initial.version,2);
+ assert.equal(runtimeOf(initial.world).plan.validation,'fixed-calendar-v2');
+ const oldVersion=structuredClone(initial);runtimeOf(oldVersion.world).plan.calendarVersion='tw-school-2026-2065-senior-h1-v1';assert.throws(()=>restoreSave(oldVersion),/CALENDAR_VERSION/);
+ const oldIdentity=structuredClone(initial);runtimeOf(oldIdentity.world).plan.career.version=1;delete runtimeOf(oldIdentity.world).plan.career.backgroundSeed;assert.throws(()=>restoreSave(oldIdentity));
+ await first.initialize(opening);
+ await first.import(initial,{expectedToken:first.snapshot().token,confirmed:true});
+ const text=await first.export(),restored=restoreSave(text);
+ assert.deepEqual(restored,initial);
+ const second=await createStoredSession(db,2);
+ await second.import(text,{expectedToken:null});
+ assert.deepEqual(second.snapshot().payload,initial);
+ const third=await createStoredSession(db,3);assert.equal(third.snapshot().payload,null);
+ assert.equal(typeof first.listMemorials,'undefined');
+ assert.equal(typeof first.retainMemorial,'undefined');
+ assert.equal(first.snapshot().payload.opening.position.date,'2026-07-20');
+ await assert.rejects(first.delete({expectedToken:first.snapshot().token}),{code:'CONFIRM'});
+ await first.delete({expectedToken:first.snapshot().token,confirmed:true});
+ assert.equal(first.snapshot().payload,null);
+ assert.deepEqual(second.snapshot().payload,initial);
+});
+
 test('storage: formal annual play cannot use engineering retry before failure, after reload or across slots',async()=>{
  let opening;const w=annualOpening({events:false,onOpening:value=>opening=value}),db=memory(),s=await createStoredSession(db,1);
  await s.initialize(opening);const stale=await createStoredSession(db,1);
@@ -29,7 +52,7 @@ test('storage: formal annual play cannot use engineering retry before failure, a
 });
 test('storage: version rejection and detached complete world/opening roundtrip',()=>{
   const w=runtimeScenario(),p=createSave(w,w);assert.deepEqual(restoreSave(JSON.stringify(p)),p);p.world.random.events.state=0;assert.deepEqual(w,runtimeScenario());
-  for(const mutate of [p=>p.version=2,p=>p.world.extensions['teacher-hell/world'].version=2,p=>p.world.schemaVersion=8,p=>p.extra=true]){const bad=createSave(w,w);mutate(bad);assert.throws(()=>restoreSave(bad));}
+  for(const mutate of [p=>p.version=3,p=>p.world.extensions['teacher-hell/world'].version=2,p=>p.world.schemaVersion=8,p=>p.extra=true]){const bad=createSave(w,w);mutate(bad);assert.throws(()=>restoreSave(bad));}
 });
 test('storage: failed write preserves world/random, retry and lost response settle exactly once',async()=>{
  const db=memory(),s=await createStoredSession(db,1),w=runtimeScenario();await s.initialize(w);const before=s.snapshot(),q=sample(w,'once');db.fail();await assert.rejects(s.execute(q),/quota/);assert.deepEqual(s.snapshot(),before);assert.deepEqual(await db.read(1),before);

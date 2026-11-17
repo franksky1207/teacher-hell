@@ -4,7 +4,7 @@ import { startReviewedSchoolCareer, prepareWorldOperation } from '../src/runtime
 import { restoreWorldState, runtimeOf } from '../src/runtime/model.js';
 import { REVIEW_KEY, readSemesterReviews, initializeSemesterReviews, representativeEvents } from '../src/runtime/reviews.js';
 import { createSave, encodeSave, restoreSave } from '../src/storage/format.js';
-import { yearData, nextPosition, semester } from '../src/calendar/calendar.js';
+import { yearData, nextPosition, semester, examSchedule } from '../src/calendar/calendar.js';
 import { foundationScenario } from './support/scenarios.js';
 import { academicBaseline } from './support/academic-scenario.js';
 import { request } from './support/runtime.js';
@@ -41,8 +41,8 @@ test('reviews: no report before final slot, single generation and forged summary
 });
 test('reviews: school action stops at unread report instead of silently advancing',()=>{
  let w=initial();w=apply(w,'open',[{type:'academic',action:'open',termId:'2026:autumn'}]);
- const meta=semester('2026:autumn');
- for(const round of [1,2,3,0]){w=academicBaseline(w,meta.exams[round===0?2:round-1].at(-1));w=apply(w,'assess-'+round,[{type:'academic',action:'assess',termId:meta.id,round}]);}
+ const meta=semester('2026:autumn'),rounds=examSchedule(meta.id,1);
+ for(const round of [1,2,3,0]){w=academicBaseline(w,rounds[round===0?2:round-1].dates.at(-1));w=apply(w,'assess-'+round,[{type:'academic',action:'assess',termId:meta.id,round}]);}
  const at=structuredClone(w.position);
  w=apply(w,'school-action-final',[{type:'school-action',activity:'rest'}]);
  assert.deepEqual(w.position,at);assert.equal(readSemesterReviews(w)[0].status,'unread');

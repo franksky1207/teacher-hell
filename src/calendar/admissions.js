@@ -37,6 +37,6 @@ export function admissionCalendar(cohort,version){
   const examDates=game2029?['2029-01-20','2029-01-21','2029-01-22']:[`${spring}-01-27`,`${spring}-01-28`,`${spring}-01-29`];
   return {id,date:actualDate,kind:id,...(id==='gsat-exam'?{dates:examDates}:{}),...(game2029&&cohortWindows[id]?{window:cohortWindows[id]}:{}),policy:ADMISSIONS_POLICY,provenance:'versioned-game-school-date; not official future announcement',countsTowardSemester:false};
  });
- for(const node of (version===LEGACY_SENIOR_CALENDAR_VERSION?LEGACY_SENIOR_CALENDAR:seniorCalendar).nodes.filter(n=>n.academicYear===fall&&n.kind.startsWith('mock-')))nodes.push({id:node.id,date:node.date,kind:node.kind,sequence:node.sequence,policy:ADMISSIONS_POLICY,provenance:node.provenance,countsTowardSemester:false});
+ for(const node of (version===LEGACY_SENIOR_CALENDAR_VERSION?LEGACY_SENIOR_CALENDAR:seniorCalendar).nodes.filter(n=>n.academicYear===fall&&n.kind.startsWith('mock-')))nodes.push({id:node.id,date:node.dates?.at(-1)??node.date,kind:node.kind,sequence:node.sequence,policy:ADMISSIONS_POLICY,provenance:node.provenance,countsTowardSemester:false});
  const result=freezeData(nodes.sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id)));cache.set(cacheKey,result);return result;
 }

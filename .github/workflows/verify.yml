@@ -82,6 +82,9 @@ jobs:
         run: |
           npm run check
           node --test --test-isolation=none test/core.test.js test/contracts.test.js
+      - name: Cleanup branch only - five bounded three-year contract modules
+        if: github.event_name == 'pull_request' && github.head_ref == 'cleanup/three-year-only-five-batches'
+        run: node --test --test-isolation=none test/calendar.test.js test/senior-calendar.test.js test/admissions.test.js test/completion.test.js test/storage.test.js
 
   three-year:
     if: github.event_name == 'workflow_dispatch' && inputs.three_year

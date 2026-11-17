@@ -9,7 +9,7 @@ import { foundationScenario } from './support/scenarios.js';
 import { academicBaseline } from './support/academic-scenario.js';
 import { request } from './support/runtime.js';
 
-function initial(seed=74){const f=foundationScenario(seed);f.events=[];f.enrollments=[];return startReviewedSchoolCareer(f,{startYear:2026,subject:'國文',seed:75});}
+function initial(seed=74){const f=foundationScenario(seed);f.events=[];f.enrollments=[];return startReviewedSchoolCareer(f,{startYear:2026,subject:'國文',seed:75,career:{version:2,mode:'three-year',difficulty:'hard',backgroundSeed:(75^0x54325032)>>>0}});}
 // Boundary tests only. This explicit skipped-date baseline is not an academic year run.
 const atFinal=(w,date=yearData(2027).winterFinal)=>academicBaseline(w,date,'private');
 const apply=(w,tag,ops)=>prepareWorldOperation(w,{...request(w,tag,ops),calendarContext:{kind:'routine'}}).world;

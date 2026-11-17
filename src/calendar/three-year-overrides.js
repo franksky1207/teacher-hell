@@ -18,15 +18,13 @@ export function applyThreeYearCalendar(base){
   ['2029:spring',[1,3],['2029-05-09','2029-05-10']]
  ])for(const grade of grades)setExam(id,grade,2,dates);
  setExam('2028:autumn',3,3,['2028-12-26','2028-12-27']);
- const update=(yearNum,kind,oldDate,newDate,grade=null)=>{
-  const a=year(yearNum).activities.find(a=>a.kind===kind&&a.date===oldDate&&(grade===null||a.grades.includes(grade)));
-  if(!a)throw Error('Missing cohort activity '+yearNum+' '+kind+' '+oldDate);
-  a.date=newDate;a.rule='three-year-cohort-2026-v1';return a;
- };
- const remove=(yearNum,kind)=>{year(yearNum).activities=year(yearNum).activities.filter(a=>a.kind!==kind);};
+ const findActivity=(kind,date)=>data.years.flatMap(y=>y.activities).find(a=>a.kind===kind&&a.date===date);
+ const removeTermActivity=(termId,kind)=>{for(const y of data.years)y.activities=y.activities.filter(a=>!(a.kind===kind&&a.id.startsWith(termId+':')));};
  const add=(yearNum,termId,kind,grades,date,slots,rule='three-year-cohort-2026-v1')=>{
   year(yearNum).activities.push({id:termId+':'+kind+':'+grades.join(''),kind,grades,date,slots,rule,originalDate:date});
  };
+ // Remove obsolete spring sports BEFORE adding autumn sports with the same kind.
+ for(const y of [2027,2028,2029])removeTermActivity(y+':spring','sports');
  // Autumn annual sports meet, Saturday anniversary and Monday makeup day.
  for(const [y,sport,anniversary,makeup] of [
   [2026,'2026-12-11','2026-12-12','2026-12-14'],
@@ -34,20 +32,19 @@ export function applyThreeYearCalendar(base){
   [2028,'2028-12-08','2028-12-09','2028-12-11']
  ]){
   add(y,y+':autumn','sports',[1,2,3],sport,['all']);
-  const anniversaryNode=year(y).activities.find(a=>a.kind==='anniversary'&&a.date===anniversary);
+  const anniversaryNode=findActivity('anniversary',anniversary);
   if(!anniversaryNode)throw Error('Missing school anniversary '+y);
   anniversaryNode.grades=[1,2,3];
   const holiday=data.holidays.find(([d])=>d===makeup);
   if(!holiday)throw Error('Missing school makeup holiday '+makeup);
   for(const h of holiday[1])if(h.name==='校慶補假')h.grades=[1,2,3];
  }
- for(const y of [2027,2028,2029])remove(y,'sports');
  // First-years sing their class-song in spring, not autumn.
- for(const y of [2026,2027,2028])remove(y,'class-song');
+ for(const y of [2026,2027,2028])removeTermActivity(y+':autumn','class-song');
  for(const [y,d] of [[2027,'2027-04-09'],[2028,'2028-04-07'],[2029,'2029-04-13']])
   add(y,y+':spring','class-song',[1],d,['p6','p7']);
  // Japanese visit is in autumn, not spring. 2026 is the explicitly fixed date.
- for(const y of [2027,2028,2029])remove(y,'japan-visit');
+ for(const y of [2027,2028,2029])removeTermActivity(y+':spring','japan-visit');
  add(2026,'2026:autumn','japan-visit',[1],'2026-11-11',['all']);
  add(2027,'2027:autumn','japan-visit',[1],'2027-11-11',['all']);
  add(2028,'2028:autumn','japan-visit',[1],'2028-11-10',['all']);
@@ -60,7 +57,7 @@ export function applyThreeYearCalendar(base){
   [2028,'2028-12-08','2028-12-01'],
   [2029,'2029-05-25','2029-05-11']
  ]){
-  for(const a of year(y).activities.filter(a=>a.kind==='field-trip'&&a.date===oldDate)){
+  for(const a of data.years.flatMap(y=>y.activities).filter(a=>a.kind==='field-trip'&&a.date===oldDate)){
    a.date=newDate;a.rule='second-exam-wed-thu-field-trip-friday';
   }
  }

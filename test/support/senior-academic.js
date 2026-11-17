@@ -5,7 +5,7 @@ import {request} from './runtime.js';
 import {runtimeOf,restoreWorldState} from '../../src/runtime/model.js';
 import {prepareWorldOperation,prepareWorldSequence} from '../../src/runtime/transactions.js';
 import {academicState} from '../../src/runtime/academics.js';
-import {calendarDay,gradeAt,positionFor,cursorFor,latestPreparedSemester,semester,THREE_YEAR} from '../../src/calendar/calendar.js';
+import {calendarDay,gradeAt,positionFor,cursorFor,latestPreparedSemester,semester,examSchedule,THREE_YEAR} from '../../src/calendar/calendar.js';
 import {generateTimetable} from '../../src/calendar/timetable.js';
 import {schoolCatalogue,applySchoolOperation} from '../../src/world/registry.js';
 export function academicApply(w,ops,tag='h2'){return prepareWorldOperation(w,{...request(w,tag+'-'+runtimeOf(w).revision,ops),calendarContext:{kind:'routine'}}).world;}
@@ -23,7 +23,8 @@ export function fiveTerms(){
  let w=eventWorld(74,null,null,{version:1,mode:THREE_YEAR,difficulty:'hard'});
  for(const termId of ['2026:autumn','2027:spring','2027:autumn','2028:spring','2028:autumn']){
   const meta=semester(termId);w=academicAt(w,meta.start);w=academicApply(w,[{type:'academic',action:'open',termId}]);
-  for(const round of [1,2,3,0]){w=academicAt(w,meta.exams[round===0?2:round-1].at(-1),'private');w=academicApply(w,[{type:'academic',action:'assess',termId,round}]);}
+  const currentExams=examSchedule(termId,gradeAt(meta.start,2026));
+  for(const round of [1,2,3,0]){const assessment=currentExams.find(x=>x.round===(round===0?3:round));w=academicAt(w,assessment.dates.at(-1),'private');w=academicApply(w,[{type:'academic',action:'assess',termId,round}]);}
   w=academicApply(w,[{type:'academic',action:'close',termId}]);
  }
  cached=w;return structuredClone(w);

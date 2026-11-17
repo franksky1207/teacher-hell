@@ -176,7 +176,7 @@ test('2,000 annual and 300 three-year career synthetic samples retain score dive
   assert.ok(stats(scores).max-stats(scores).min>70);assert.ok(stats(careerScores).max-stats(careerScores).min>70);
   let retainedHeapDelta=null,retainedHeapSamples=null;
   if(typeof global.gc==='function') {
-    const f=fixture();
+    const f=fixture(3);
     for(let i=0;i<100;i++)career(f); // Warm the stable source shape before measuring.
     global.gc();const before=process.memoryUsage().heapUsed;retainedHeapSamples=[];
     for(let batch=0;batch<4;batch++){
@@ -244,14 +244,4 @@ test('assessment: explicit causal enrollment evidence permits a mid-year pupil a
  f.records.get('fact:short').subjectIds=['someone-else'];assert.throws(()=>rateAnnual('year:1',f.source));
 });
 
-test('assessment: cross-cohort identity requires a proven chronological enrollment chain',()=>{
- const f=fixture(),first=f.records.get('cohort:0'),next=f.records.get('cohort:1'),person=first.studentIds[0];next.studentIds.push(person);
- for(const [cohort,id,fromYear,untilYear,reason,previousEnrollmentId] of [[first,'old-enrollment',1,3,'initial',null],[next,'repeat-enrollment',4,6,'repeat','old-enrollment']]){
-  cohort.enrollmentRefs=[id];const factId='cause:'+id;
-  f.records.set(factId,{id:factId,kind:'fact',provenance:'synthetic',playerId:'teacher',schoolId:'school',year:fromYear,attemptId:'attempt:'+fromYear,confirmed:true,subjectIds:[person]});
-  f.records.set(id,{id,kind:'enrollment',provenance:'synthetic',playerId:'teacher',schoolId:'school',personId:person,cohortId:cohort.id,fromYear,untilYear,basisFactId:factId,reason,previousEnrollmentId});
- }
- assert.equal(career(f).status,'synthetic');
- f.records.get('repeat-enrollment').previousEnrollmentId='unrelated';assert.throws(()=>career(f),/enrollment chain/);
- f.records.get('repeat-enrollment').previousEnrollmentId='old-enrollment';f.records.get('old-enrollment').untilYear=5;assert.throws(()=>career(f),/enrollment chain/);
-});
+

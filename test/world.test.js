@@ -23,14 +23,12 @@ function playerIntact(world) {
   assert.deepEqual(Object.fromEntries(STATE_NAMES.map(name=>[name,panel[name]])),INITIAL_STATES);
 }
 
-test('all 35 functional roles exactly match formal names/references and cover 48 fields',()=>{
+test('35 functional roles retain stable identities without preferred numeric references',()=>{
   const source=readFileSync(new URL('../docs/01-世界角色與記憶.md',import.meta.url),'utf8');
-  const expected=[...source.matchAll(/^\| (\d+) \| ([^|]+) \| (.*) \| (\d+) \|$/gm)].map(([,id,name,refs])=>({id:Number(id),name:name.trim(),references:[...refs.matchAll(/`(\d+-\d)`/g)].map(m=>m[1])}));
+  const body=source.split('## 現行定案：35 類人物身分標籤')[1].split('## 未定案')[0];
+  const expected=[...body.matchAll(/^\| (\d+) \| ([^|]+) \|$/gm)].map(([,id,name])=>({id:Number(id),name:name.trim()}));
   assert.equal(expected.length,35);assert.deepEqual(ROLES,expected);
-  const union=new Set(ROLES.flatMap(role=>role.references));
-  assert.equal(union.size,48);assert.deepEqual([...union].sort(),FIELDS.map(f=>f.code).sort());
-  for(const role of ROLES) {assert.ok(role.references.length>=4&&role.references.length<=6);assert.equal(roleDefinition(role.id),role);}
-  assert.throws(()=>{ROLES[0].references.push('1-1');});
+  for(const role of ROLES) {assert.deepEqual(Object.keys(role),['id','name']);assert.equal(roleDefinition(role.id),role);assert.ok(Object.isFrozen(role));}
   for(const roles of [[],[1,1],[0],[36],['1'],null]) assert.throws(()=>validateRoles(roles));
   const base=['1-1','1-2','1-3','1-4','2-1','2-2','2-3','2-4','3-1','3-2','3-3','3-4','4-1','4-2','4-3','4-4','6-1','6-2','8-3','8-4','7-1','7-2','7-3','7-4'];
   assert.deepEqual(CAREGIVER_CODES,base);assert.equal(CAREGIVER_CODES.length,24);

@@ -8,6 +8,9 @@ on:
     branches: [main]
     paths:
       - 'src/**'
+      - 'test/calendar.test.js'
+      - 'test/semester-retry.test.js'
+      - 'test/reviews.test.js'
       - 'simulation/**'
       - 'scripts/architecture.js'
       - 'scripts/project.js'
@@ -82,6 +85,8 @@ jobs:
         run: |
           npm run check
           node --test --test-isolation=none test/core.test.js test/contracts.test.js
+      - name: Focused senior semester review and retry boundary (no game-year simulation)
+        run: node --test --test-isolation=none test/calendar.test.js test/semester-retry.test.js test/reviews.test.js
 
   three-year:
     if: github.event_name == 'workflow_dispatch' && inputs.three_year

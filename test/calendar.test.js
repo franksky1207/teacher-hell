@@ -37,6 +37,39 @@ test('calendar: legal dates, protected activities and grade-specific exams',()=>
  assert.ok(calendarDay('2028-07-27',3).activities.some(a=>a.kind==='mock-gsat'));
  assert.ok(calendarDay('2029-01-20',3).activities.some(a=>a.kind==='formal-gsat'));
 });
+test('2029-01-19: senior GSAT study leave, review day, adjacent school days and national exam',()=>{
+ const before=calendarDay('2029-01-18',3),leave=calendarDay('2029-01-19',3),junior=calendarDay('2029-01-19',1),middle=calendarDay('2029-01-19',2);
+ assert.equal(before.kind,'school');
+ assert.equal(before.finalReview,false);
+ assert.ok(before.slots.some(slot=>slot.period!==null),'senior students still attend Jan 18');
+ assert.equal(leave.kind,'holiday');
+ assert.deepEqual(leave.holiday.map(h=>h.name),['高三學測考前放假']);
+ assert.equal(leave.courseSemesterId,'2028:autumn');
+ assert.equal(leave.finalReview,true);
+ assert.equal(leave.annualBoundary,false);
+ assert.equal(leave.quota.kind,'holiday');
+ assert.deepEqual(leave.slots.map(slot=>slot.id),['morning','afternoon','evening']);
+ assert.ok(leave.slots.every(slot=>slot.period===null));
+ for(const other of [junior,middle]){
+  assert.equal(other.kind,'school');
+  assert.equal(other.holiday.length,0);
+  assert.ok(other.slots.some(slot=>slot.period!==null));
+ }
+ const last=leave.slots.at(-1).id,pos=positionFor('2029-01-19',last,2026);
+ assert.equal(pos.statisticsPeriodId,'2028:autumn');
+ const next=nextPosition(pos,2026);
+ assert.deepEqual([next.date,next.slotId],['2029-01-20','morning']);
+ for(const date of ['2029-01-20','2029-01-21','2029-01-22']){
+  const exam=calendarDay(date,3);
+  assert.ok(exam.activities.some(a=>a.kind==='formal-gsat'));
+  assert.ok(exam.slots.filter(s=>s.id!=='private').every(s=>s.protected));
+  assert.equal(exam.quota.max,0,'GSAT day must not draw regular events');
+ }
+ assert.equal(calendarDay('2029-01-22',3).kind,'long-vacation','seniors do not attend winter camp');
+ assert.equal(calendarDay('2029-01-22',1).kind,'winter-camp');
+ assert.equal(calendarDay('2029-01-22',2).kind,'winter-camp');
+});
+
 test('calendar: daily slots and vacations do not create phantom school periods',()=>{
  const y=yearData(2026),school=calendarDay(y.autumnStart,1);
  assert.equal(school.quota.max,5);

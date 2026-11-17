@@ -38,7 +38,7 @@ function summer(year){
 }
 function winter(year){
  const cp=summer(year-1),date=yearData(year).winterFinal;
- const before=relocate(cp,date,'private');const finished=apply(before,[{type:'finish-slot',completedActivityIds:[]}]);
+ const before=relocate(cp,date,calendarDay(date,gradeAt(date,2026)).slots.at(-1).id);const finished=apply(before,[{type:'finish-slot',completedActivityIds:[]}]);
  const report=pendingSemesterReview(finished);assert.ok(report);
  const read=request(finished,'read-'+year,[{type:'read-semester-review',reviewId:report.id}]);
  return {upper:cp,before,finished,read,checkpoint:prepareWorldOperation(finished,read).world};
@@ -58,11 +58,20 @@ test('group 1: three summer entries, immutable capture, cross-autumn restoration
 test('group 2: three winter confirmations, atomic capture, next original slot and no second day-end',async()=>{
  for(const year of [2027,2028,2029]){
   const {upper,finished,read,checkpoint:cp}=winter(year);assert.throws(()=>validateRetryCheckpoint(finished));validateRetryCheckpoint(cp);
+   if(year===2029){
+    const holiday=calendarDay('2029-01-19',3);
+    assert.equal(holiday.kind,'holiday');
+    assert.equal(holiday.finalReview,true);
+    assert.equal(finished.position.slotId,holiday.slots.at(-1).id);
+    assert.equal(finished.position.statisticsPeriodId,'2028:autumn');
+    assert.ok(pendingSemesterReview(finished));
+   }
   const db=memory();await db.write(1,createSave(finished,upper),null);const session=await createStoredSession(db,1);
   const before=clone(finished.numeric);await session.execute(read);assert.deepEqual(session.snapshot().payload.opening,cp);assert.deepEqual(cp.numeric,before);
   const saved=session.snapshot();await session.execute(read);assert.deepEqual(session.snapshot(),saved);await session.recover();assert.deepEqual(session.snapshot(),saved);
   const next=apply(cp,[{type:'advance-time',planId:runtimeOf(cp).plan.id,steps:1}]);assert.deepEqual(next.position,nextPosition(cp.position,2026,'three-year',runtimeOf(cp).plan.calendarVersion));
-  let prepared=relocate(next,new Date(Date.parse(yearData(year).winterCamp)-86400000).toISOString().slice(0,10),'vacation-day');
+  const beforeCamp=new Date(Date.parse(yearData(year).winterCamp)-86400000).toISOString().slice(0,10);
+   let prepared=relocate(next,beforeCamp,calendarDay(beforeCamp,gradeAt(beforeCamp,2026)).slots.at(-1).id);
   prepared=apply(prepared,[{type:'prepare-semester',semesterId:`${year}:spring`,classes:schoolCatalogue(prepared.numeric.evolution.world,['國文']),homeClassId:prepared.numeric.evolution.world.registry.homeClassId}]);
   const spring=relocate(prepared,yearData(year).springStart,'early');const retry=forkWorldAttempt(cp,options(spring,'winter-'+year),spring);assert.deepEqual(retry.position,cp.position);
   const resumed=apply(retry,[{type:'advance-time',planId:runtimeOf(retry).plan.id,steps:1}]);assert.deepEqual(resumed.position,next.position);
@@ -99,7 +108,7 @@ test('group 4: prior semester evidence retained, no extra annual or career settl
  target.extensions['teacher-hell/annual-observations']={proof:'new annual'};
  runtimeOf(target).history.push({type:'academic-opening',data:{previousAnnual:baseline,previousHomeroom:duty}});
  validateRetryPair(source,target);runtimeOf(target).history.at(-1).data.previousAnnual={wrong:true};assert.throws(()=>validateRetryPair(source,target),/baseline/);
- for(const file of ['src/runtime/annual.js','src/runtime/career.js','src/runtime/homeroom.js','src/calendar/fixed.js'])assert.ok(readFileSync(new URL('../'+file,import.meta.url)).length);
+ for(const file of ['src/runtime/annual.js','src/runtime/career.js','src/runtime/homeroom.js','src/calendar/three-year-calendar.js'])assert.ok(readFileSync(new URL('../'+file,import.meta.url)).length);
 });
 
 test('group 5: v2 roundtrip, gzip, three slots, CAS/failed-write atomicity and single save capacity',async t=>{

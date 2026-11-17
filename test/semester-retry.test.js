@@ -108,7 +108,7 @@ test('group 4: prior semester evidence retained, no extra annual or career settl
  target.extensions['teacher-hell/annual-observations']={proof:'new annual'};
  runtimeOf(target).history.push({type:'academic-opening',data:{previousAnnual:baseline,previousHomeroom:duty}});
  validateRetryPair(source,target);runtimeOf(target).history.at(-1).data.previousAnnual={wrong:true};assert.throws(()=>validateRetryPair(source,target),/baseline/);
- for(const file of ['src/runtime/annual.js','src/runtime/career.js','src/runtime/homeroom.js','src/calendar/fixed.js'])assert.ok(readFileSync(new URL('../'+file,import.meta.url)).length);
+ for(const file of ['src/runtime/annual.js','src/runtime/career.js','src/runtime/homeroom.js','src/calendar/three-year-calendar.js'])assert.ok(readFileSync(new URL('../'+file,import.meta.url)).length);
 });
 
 test('group 5: v2 roundtrip, gzip, three slots, CAS/failed-write atomicity and single save capacity',async t=>{

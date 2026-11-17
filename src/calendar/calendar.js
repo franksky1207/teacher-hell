@@ -1,34 +1,30 @@
 /** Runtime lookup of one finite, versioned, precompiled calendar; no host calendar/lunar APIs. */
 import { THREE_YEAR_SENIOR_CALENDAR as SENIOR_CALENDAR } from './three-year-senior.js';
-import { LEGACY_SENIOR_CALENDAR } from './senior-fixed-v1.js';
-import { FIXED_CALENDAR } from './fixed.js';
 import { THREE_YEAR_FIXED_CALENDAR } from './three-year-calendar.js';
 import { addDays,dayNumber,weekday,weekMonday,requireCalendar as need,freezeData } from './civil.js';
 import { validateTimetable } from './timetable.js';
-export const CALENDAR=freezeData(FIXED_CALENDAR);
-/** Cohort-only projection: the retained 40-year calendar remains unmodified. */
-export const THREE_YEAR_CALENDAR=freezeData(THREE_YEAR_FIXED_CALENDAR);
-const calendarFor=version=>version===SENIOR_CALENDAR_VERSION?THREE_YEAR_CALENDAR:CALENDAR;
-export const CALENDAR_VERSION=CALENDAR.version;
-export const SENIOR_CALENDAR_VERSION=SENIOR_CALENDAR.version;
-export const LEGACY_SENIOR_CALENDAR_VERSION=LEGACY_SENIOR_CALENDAR.version;
-const isSeniorVersion=version=>version===SENIOR_CALENDAR_VERSION||version===LEGACY_SENIOR_CALENDAR_VERSION;
+export const CALENDAR=freezeData(THREE_YEAR_FIXED_CALENDAR);
+export const THREE_YEAR_CALENDAR=CALENDAR;
 export const seniorCalendar=freezeData(SENIOR_CALENDAR);
-export const legacySeniorCalendar=freezeData(LEGACY_SENIOR_CALENDAR);
-export function requireCalendarVersion(version){need([CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION].includes(version),'CALENDAR_VERSION','Unknown calendar projection');return version;}
+export const SENIOR_CALENDAR_VERSION=seniorCalendar.version;
+/** One authoritative gameplay calendar. Old H1 and 40-year versions are unsupported. */
+export const CALENDAR_VERSION=SENIOR_CALENDAR_VERSION;
+const calendarFor=version=>{requireCalendarVersion(version);return CALENDAR;};
+const isSeniorVersion=version=>version===SENIOR_CALENDAR_VERSION;
+export function requireCalendarVersion(version){need(version===SENIOR_CALENDAR_VERSION,'CALENDAR_VERSION','Unsupported three-year calendar version');return version;}
 /** Stable H2 contract: formal rounds only; ordinary/closure policy belongs to H2. */
 export function examSchedule(termId,grade,version=CALENDAR_VERSION){
  requireCalendarVersion(version);const t=semester(termId,version),senior=isSeniorVersion(version)&&grade===3&&t.kind==='spring';
  const dates=senior?t.exams.slice(0,2):grade===2&&t.grade2SecondExam?[t.exams[0],t.grade2SecondExam,t.exams[2]]:t.exams;
  return dates.map((original,i)=>({round:i+1,kind:senior&&i===1?'graduation-exam':'term-exam',dates:[...(t.gradeExamOverrides?.[grade]?.[i+1]??original)],countsTowardSemester:true}));
 }
-const years=new Map(CALENDAR.years.map(y=>[y.year,y])),holidays=new Map(CALENDAR.holidays),activities=new Map(),terms=CALENDAR.years.flatMap(y=>y.terms);
-const cohortYears=new Map(THREE_YEAR_CALENDAR.years.map(y=>[y.year,y])),cohortHolidays=new Map(THREE_YEAR_CALENDAR.holidays),cohortActivities=new Map(),cohortTerms=THREE_YEAR_CALENDAR.years.flatMap(y=>y.terms);
-const yearsFor=version=>version===SENIOR_CALENDAR_VERSION?cohortYears:years;
-const holidaysFor=version=>version===SENIOR_CALENDAR_VERSION?cohortHolidays:holidays;
-const activitiesFor=version=>version===SENIOR_CALENDAR_VERSION?cohortActivities:activities;
-const termsFor=version=>version===SENIOR_CALENDAR_VERSION?cohortTerms:terms;
-for(const [data,map] of [[CALENDAR,activities],[THREE_YEAR_CALENDAR,cohortActivities]])for(const y of data.years)for(const a of y.activities){const list=map.get(a.date)??[];need(!list.some(old=>old.id===a.id),'CALENDAR','Duplicate activity ID');list.push(a);map.set(a.date,list);}
+const years=new Map(CALENDAR.years.map(y=>[y.year,y]));
+const holidays=new Map(CALENDAR.holidays),activities=new Map(),terms=CALENDAR.years.flatMap(y=>y.terms);
+const yearsFor=version=>{requireCalendarVersion(version);return years;};
+const holidaysFor=version=>{requireCalendarVersion(version);return holidays;};
+const activitiesFor=version=>{requireCalendarVersion(version);return activities;};
+const termsFor=version=>{requireCalendarVersion(version);return terms;};
+for(const y of CALENDAR.years)for(const a of y.activities){const list=activities.get(a.date)??[];need(!list.some(old=>old.id===a.id),'CALENDAR','Duplicate activity ID');list.push(a);activities.set(a.date,list);}
 /** H1 exposes dates/rounds, and explicitly leaves the new academic closing policy to H2. */
 export function assessmentCalendar(termId,grade,version=CALENDAR_VERSION){
  const exams=examSchedule(termId,grade,version),senior=exams.length===2;
@@ -36,7 +32,7 @@ export function assessmentCalendar(termId,grade,version=CALENDAR_VERSION){
  if(senior){ceremonyDate=calendarFor(version).years.flatMap(y=>y.activities).find(a=>a.kind==='graduation'&&a.date>=semester(termId,version).start&&a.date<=semester(termId,version).end)?.date;need(ceremonyDate,'CALENDAR','Missing graduation ceremony');studyCompletionDate=addDays(ceremonyDate,-1);while(weekday(studyCompletionDate)>5||(holidaysFor(version).get(studyCompletionDate)??[]).some(h=>!h.grades||h.grades.includes(3)))studyCompletionDate=addDays(studyCompletionDate,-1);}
  const publicationOverrides={'2026:autumn:1:2':'2026-12-07','2026:autumn:2:2':'2026-12-07','2027:spring:1:2':'2027-05-10','2027:autumn:1:2':'2027-12-06','2027:autumn:2:2':'2027-12-06','2028:spring:1:2':'2028-05-15','2028:spring:2:2':'2028-05-15','2028:autumn:1:2':'2028-12-04','2028:autumn:2:2':'2028-12-04','2029:spring:1:2':'2029-05-14','2029:spring:2:2':'2029-05-14'};
  const publicationFor=round=>publicationOverrides[termId+':'+grade+':'+round.round]??addDays(round.dates.at(-1),1);
- return {version,termId,grade,exams,examPublications:exams.map(round=>({round:round.round,date:version===SENIOR_CALENDAR_VERSION?publicationFor(round):addDays(round.dates.at(-1),1)})),ordinaryAssessmentDates:exams.at(-1).dates,closurePolicy:senior?'senior-spring-h2-v1':'standard',teacherTermEnd:semester(termId,version).end,...(earlySeniorAutumnClose?{marksCloseDate:lastExam,publicationDate:addDays(lastExam,1)}:{}),...(senior?{assessmentPolicy:'senior-spring-403030-v1',marksCloseDate:lastExam,publicationDate:addDays(lastExam,1),makeupFrom:addDays(lastExam,2),makeupUntil:[addDays(lastExam,30),studyCompletionDate].sort()[0],studyCompletionDate,ceremonyDate}:{})};
+ return {version,termId,grade,exams,examPublications:exams.map(round=>({round:round.round,date:publicationFor(round)})),ordinaryAssessmentDates:exams.at(-1).dates,closurePolicy:senior?'senior-spring-h2-v1':'standard',teacherTermEnd:semester(termId,version).end,...(earlySeniorAutumnClose?{marksCloseDate:lastExam,publicationDate:addDays(lastExam,1)}:{}),...(senior?{assessmentPolicy:'senior-spring-403030-v1',marksCloseDate:lastExam,publicationDate:addDays(lastExam,1),makeupFrom:addDays(lastExam,2),makeupUntil:[addDays(lastExam,30),studyCompletionDate].sort()[0],studyCompletionDate,ceremonyDate}:{})};
 }
 export function requireDate(date){dayNumber(date);need(date>=CALENDAR.range[0]&&date<=CALENDAR.range[1],'RANGE','Calendar date outside supported range');return date;}
 export function yearData(year,version=CALENDAR_VERSION){const rows=yearsFor(version);need(rows.has(year),'RANGE',`Unsupported calendar year ${year}`);return rows.get(year);}
@@ -56,7 +52,7 @@ export function latestPreparedSemester(date){
 }
 function basicDay(date,grade,version=CALENDAR_VERSION){
  requireDate(date);need([1,2,3].includes(grade),'CALENDAR','Grade must be 1, 2 or 3');
- const y=yearData(Number(date.slice(0,4)),version),dow=weekday(date),originalTerm=teachingTerm(date,version),term=version===SENIOR_CALENDAR_VERSION&&grade===3&&((originalTerm?.camp==='winter'&&date>='2029-01-22')||date>'2029-06-01')?null:originalTerm,newYear=inRange(date,addDays(y.cny,-1),addDays(y.cny,4));
+ const y=yearData(Number(date.slice(0,4)),version),dow=weekday(date),originalTerm=teachingTerm(date,version),term=grade===3&&((originalTerm?.camp==='winter'&&date>='2029-01-22')||date>'2029-06-01')?null:originalTerm,newYear=inRange(date,addDays(y.cny,-1),addDays(y.cny,4));
  const holiday=(holidaysFor(version).get(date)??[]).filter(h=>!h.grades||h.grades.includes(grade));
  let kind;
  if(newYear)kind='spring-festival';
@@ -69,9 +65,9 @@ function basicDay(date,grade,version=CALENDAR_VERSION){
 }
 const dayCache=new Map();
 export function calendarDay(date,grade,version=CALENDAR_VERSION){
- requireCalendarVersion(version);if(version===SENIOR_CALENDAR_VERSION)need(date>=THREE_YEAR_CALENDAR.range[0]&&date<=THREE_YEAR_CALENDAR.range[1],'RANGE','Outside three-year cohort calendar');
+ requireCalendarVersion(version);need(date>=CALENDAR.range[0]&&date<=CALENDAR.range[1],'RANGE','Outside three-year cohort calendar');
  const cacheKey=`${version}:${date}:${grade}`;if(dayCache.has(cacheKey))return dayCache.get(cacheKey);
- const base=basicDay(date,grade,version),y=yearData(Number(date.slice(0,4)),version),acts=[...(activitiesFor(version).get(date)??[]),...(isSeniorVersion(version)?(version===LEGACY_SENIOR_CALENDAR_VERSION?LEGACY_SENIOR_CALENDAR.nodes:SENIOR_CALENDAR.nodes).filter(n=>n.date===date||n.dates?.includes(date)):[])].filter(a=>a.grades.includes(grade));
+ const base=basicDay(date,grade,version),y=yearData(Number(date.slice(0,4)),version),acts=[...(activitiesFor(version).get(date)??[]),...SENIOR_CALENDAR.nodes.filter(n=>n.date===date||n.dates?.includes(date))].filter(a=>a.grades.includes(grade));
  const school=['school','summer-camp','winter-camp'].includes(base.kind);
  let slotIds=school?['early','p1','p2','p3','p4','lunch','noon','p5','p6','p7','p8']:base.kind==='spring-festival'?['festival-day']:base.kind==='long-vacation'?['vacation-day']:['morning','afternoon'];
  if(school&&(isSeniorVersion(version)&&grade===3&&base.term.id.endsWith(':spring')&&!base.term.camp?[1,4]:({1:[2,4],2:[1,4,5],3:[1,2,4,5]})[grade]).includes(base.weekday))slotIds.push('dinner','study1','study2','study3');

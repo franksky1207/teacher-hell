@@ -72,7 +72,7 @@ test('calendar-integration T1: forged difficulty, tenure, mode and twentieth pla
   w=>runtimeOf(w).plan.startYear=2027,w=>runtimeOf(w).plan.calendarVersion='future',
  ]){const w=t1World();mutate(w);assert.throws(()=>restoreWorldState(w));}
  const save=createSave(t1World(),t1World());save.world= t1World('normal');assert.throws(()=>restoreSave(save),/SNAPSHOT/);
- const old=calendarWorld();assert.throws(()=>planMode(runtimeOf(old).plan));assert.throws(()=>restoreWorldState(old));
+ assert.throws(()=>startFailureSchoolCareer(t1Foundation(),{startYear:2026,subject:'國文',seed:75}),/MODE/,'Legacy mode without three-year identity is forbidden');
 });
 
 import { experiencedOpening } from './support/calendar.js';

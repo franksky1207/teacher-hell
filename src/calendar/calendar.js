@@ -14,6 +14,7 @@ export const SENIOR_CALENDAR_VERSION=SENIOR_CALENDAR.version;
 export const LEGACY_SENIOR_CALENDAR_VERSION=LEGACY_SENIOR_CALENDAR.version;
 const isSeniorVersion=version=>version===SENIOR_CALENDAR_VERSION||version===LEGACY_SENIOR_CALENDAR_VERSION;
 export const seniorCalendar=freezeData(SENIOR_CALENDAR);
+export const legacySeniorCalendar=freezeData(LEGACY_SENIOR_CALENDAR);
 export function requireCalendarVersion(version){need([CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION].includes(version),'CALENDAR_VERSION','Unknown calendar projection');return version;}
 /** Stable H2 contract: formal rounds only; ordinary/closure policy belongs to H2. */
 export function examSchedule(termId,grade,version=CALENDAR_VERSION){

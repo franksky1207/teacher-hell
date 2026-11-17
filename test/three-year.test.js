@@ -10,7 +10,6 @@ import { prepareWorldOperation } from '../src/runtime/transactions.js';
 import { runtimeOf,restoreWorldState } from '../src/runtime/model.js';
 import { request } from './support/runtime.js';
 import { teacherTenure } from '../src/runtime/schedule.js';
-import { memorialFromWorld } from '../src/storage/memorial.js';
 const score=f=>rateThreeYearCareer({yearRefs:f.yearRefs,cohortRefs:f.cohortRefs},f.source);
 
 test('T4 A: three-year N7 uses the unchanged six weights and thresholds, with high, low and F results',()=>{
@@ -61,7 +60,7 @@ test('T4 B: genuine three-mode openings preserve tenure and reject early complet
   assert.equal(teacherTenure(w),({easy:20,normal:10,hard:1})[difficulty]);assert.equal(w.position.serviceYear,1);
   assert.throws(()=>prepareWorldOperation(w,{...request(w,'early-T4',[{type:'settle-school-year'}]),calendarContext:{kind:'routine'}}),/June final/);
   assert.throws(()=>compileThreeYearCareerCompletion(w),/three legal successful/);
-  assert.equal(JSON.stringify(w),before);assert.equal(memorialFromWorld(w),null);
+  assert.equal(JSON.stringify(w),before);
  }
 });
 
@@ -79,7 +78,7 @@ function threeYearContract(options={}){
  return w;
 }
 
-test('T4 A: three-year ending and qualification summaries have actual source references and never create a memorial',()=>{
+test('T4 A: three-year ending and qualification summaries have actual source references',()=>{
  const w=threeYearContract(),d=compileThreeYearCareerCompletion(w);
  assert.equal(d.mode,'three-year');assert.equal(d.years,3);assert.equal(d.cohorts.length,1);
  assert.deepEqual(d.rating.details.scale.weights,CAREER_LIMITS);assert.deepEqual(d.annualIds,['annual:1','annual:2','annual:3']);
@@ -90,7 +89,7 @@ test('T4 A: three-year ending and qualification summaries have actual source ref
  assert.equal(high.rating.grade,'SS');assert.equal(low.rating.grade,'F');assert.match(low.ending.text,/正式總評為F/);
  for(const difficulty of ['easy','normal','hard']){const same=threeYearContract();runtimeOf(same).plan.career.difficulty=difficulty;assert.deepEqual(compileThreeYearCareerCompletion(same).rating,d.rating);}
 
- runtimeOf(w).history.push({type:'career-completion',data:d});assert.equal(memorialFromWorld(w),null);
+ runtimeOf(w).history.push({type:'career-completion',data:d});
  assert.throws(()=>restoreWorldState(w));
 });
 

@@ -2,12 +2,12 @@
 import { SENIOR_CALENDAR } from './senior-fixed.js';
 import { LEGACY_SENIOR_CALENDAR } from './senior-fixed-v1.js';
 import { FIXED_CALENDAR } from './fixed.js';
-import { applyThreeYearCalendar } from './three-year-overrides.js';
+import { THREE_YEAR_FIXED_CALENDAR } from './three-year-calendar.js';
 import { addDays,dayNumber,weekday,weekMonday,requireCalendar as need,freezeData } from './civil.js';
 import { validateTimetable } from './timetable.js';
 export const CALENDAR=freezeData(FIXED_CALENDAR);
 /** Cohort-only projection: the retained 40-year calendar remains unmodified. */
-export const THREE_YEAR_CALENDAR=freezeData(applyThreeYearCalendar(FIXED_CALENDAR));
+export const THREE_YEAR_CALENDAR=freezeData(THREE_YEAR_FIXED_CALENDAR);
 const calendarFor=version=>version===SENIOR_CALENDAR_VERSION?THREE_YEAR_CALENDAR:CALENDAR;
 export const CALENDAR_VERSION=CALENDAR.version;
 export const SENIOR_CALENDAR_VERSION=SENIOR_CALENDAR.version;
@@ -38,7 +38,7 @@ export function assessmentCalendar(termId,grade,version=CALENDAR_VERSION){
  const publicationFor=round=>publicationOverrides[termId+':'+grade+':'+round.round]??addDays(round.dates.at(-1),1);
  return {version,termId,grade,exams,examPublications:exams.map(round=>({round:round.round,date:version===SENIOR_CALENDAR_VERSION?publicationFor(round):addDays(round.dates.at(-1),1)})),ordinaryAssessmentDates:exams.at(-1).dates,closurePolicy:senior?'senior-spring-h2-v1':'standard',teacherTermEnd:semester(termId,version).end,...(earlySeniorAutumnClose?{marksCloseDate:lastExam,publicationDate:addDays(lastExam,1)}:{}),...(senior?{assessmentPolicy:'senior-spring-403030-v1',marksCloseDate:lastExam,publicationDate:addDays(lastExam,1),makeupFrom:addDays(lastExam,2),makeupUntil:[addDays(lastExam,30),studyCompletionDate].sort()[0],studyCompletionDate,ceremonyDate}:{})};
 }
-export function requireDate(date){dayNumber(date);need(date>=CALENDAR.range[0]&&date<=CALENDAR.range[1],'RANGE','Calendar supports only 2026-01-01 through 2065-12-31');return date;}
+export function requireDate(date){dayNumber(date);need(date>=CALENDAR.range[0]&&date<=CALENDAR.range[1],'RANGE','Calendar date outside supported range');return date;}
 export function yearData(year,version=CALENDAR_VERSION){const rows=yearsFor(version);need(rows.has(year),'RANGE',`Unsupported calendar year ${year}`);return rows.get(year);}
 export function semester(id,version=CALENDAR_VERSION){const value=termsFor(version).find(t=>t.id===id);need(value,'CALENDAR',`Unknown semester ${id}`);return value;}
 const inRange=(d,a,b)=>d>=a&&d<=b;

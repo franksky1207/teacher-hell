@@ -21,11 +21,11 @@ test('T4 A: three-year N7 uses the unchanged six weights and thresholds, with hi
  assert.equal(Object.values(high.parts).reduce((a,b)=>a+b,0),high.score);
  assert.equal(high.details.years,3);assert.equal(high.details.cohorts.length,1);
  const short=fixture(3,65,30,70);
- assert.equal(score(short).status,'rated','three-year evidence retains original scoring weights');
+ assert.equal(score(short).status,'synthetic','three-year evidence retains original scoring weights');
 });
 
 test('T4 A: source cardinality and missing evidence fail explicitly; no zeros, annual-average or 30-year fallback',()=>{
- const f=fixture(3);assert.equal(score(f).status,'rated');
+ const f=fixture(3);assert.equal(score(f).status,'synthetic');
  for(const years of [1,2,6,30])assert.equal(score(fixture(years)).status,'insufficient');
  f.records.delete('outcome:2:relationship');assert.equal(score(f).status,'insufficient');
  const failed=fixture(3);failed.records.get('completion:3').outcome='failure';assert.equal(score(failed).status,'not-successful');
@@ -41,7 +41,7 @@ test('T4 A: world projection scales actual teaching to three sources and quality
  const e=careerEvidence(w,{years:3}),s=e.sources.find(s=>s.criterion==='three-year-confirmed-teaching-responsibility');
  assert.equal(s.outcomeRefs.length,3);assert.equal(e.sources.filter(s=>s.criterion==='historical-six-state-endpoint').length,2);
  const rate=x=>{const e=careerEvidence(x,{years:3});return rateThreeYearCareer({yearRefs:e.yearRefs,cohortRefs:e.cohortRefs},e.source);};
- const before=rate(w);assert.equal(before.status,'rated');
+ const before=rate(w);assert.equal(before.status,'synthetic');
  w.numeric.evolution.world.background={inventedPastAnnualGrades:Array(19).fill('SS')};
  for(const h of runtimeOf(w).history.filter(h=>h.type==='annual-success'))h.data.evidence.rating={score:0,grade:'F'};
  assert.deepEqual(rate(w),before);assert.throws(()=>restoreWorldState(w)); // Explicit contract double, never a production source.

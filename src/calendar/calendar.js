@@ -69,7 +69,7 @@ function basicDay(date,grade,version=CALENDAR_VERSION){
 }
 const dayCache=new Map();
 export function calendarDay(date,grade,version=CALENDAR_VERSION){
- requireCalendarVersion(version);
+ requireCalendarVersion(version);if(version===SENIOR_CALENDAR_VERSION)need(date>=THREE_YEAR_CALENDAR.range[0]&&date<=THREE_YEAR_CALENDAR.range[1],'RANGE','Outside three-year cohort calendar');
  const cacheKey=`${version}:${date}:${grade}`;if(dayCache.has(cacheKey))return dayCache.get(cacheKey);
  const base=basicDay(date,grade,version),y=yearData(Number(date.slice(0,4)),version),acts=[...(activitiesFor(version).get(date)??[]),...(isSeniorVersion(version)?(version===LEGACY_SENIOR_CALENDAR_VERSION?LEGACY_SENIOR_CALENDAR.nodes:SENIOR_CALENDAR.nodes).filter(n=>n.date===date||n.dates?.includes(date)):[])].filter(a=>a.grades.includes(grade));
  const school=['school','summer-camp','winter-camp'].includes(base.kind);
@@ -125,8 +125,9 @@ export function careerYears(mode=CAREER_30){need([CAREER_30,THREE_YEAR].includes
 /** New three-year careers share the 2026 cohort; saved plans retain their own start year. */
 export function newThreeYearStart(taipeiDate){dayNumber(taipeiDate);return careerRange(2026,THREE_YEAR);}
 export function careerRange(startYear,mode=CAREER_30){
- const first=yearData(startYear),last=yearData(startYear+careerYears(mode)); // Year 1 ends the following June.
- need(CALENDAR.conflicts.length===0,'COLLISION','Fixed calendar has unresolved scheduling constraints');
+ const version=mode===THREE_YEAR?SENIOR_CALENDAR_VERSION:CALENDAR_VERSION;
+ const first=yearData(startYear,version),last=yearData(startYear+careerYears(mode),version); // Year 1 ends the following June.
+ need(calendarFor(version).conflicts.length===0,'COLLISION','Fixed calendar has unresolved scheduling constraints');
  return {start:first.summerCamp,end:last.springFinal,startYear};
 }
 export function newCareerStart(realDate){requireDate(realDate);let y=Number(realDate.slice(0,4));if(realDate<yearData(y).summerCamp)y--;return careerRange(y);}
@@ -139,5 +140,5 @@ export function positionFor(date,slotId,startYear,mode=CAREER_30,version=CALENDA
  return {date,slotId,schoolYearId:`challenge:${startYear}:${serviceYear}`,openingId:`opening:${openingDate}`,serviceYear,statisticsPeriodId:stats};
 }
 export const cursorFor=(date,slotId,startYear,version=CALENDAR_VERSION)=>{const slots=calendarDay(date,gradeAt(date,startYear),version).slots,index=slots.findIndex(s=>s.id===slotId);need(index>=0,'SLOT','Unknown slot');return dayNumber(date)*32+index;};
-export function positionAt(cursor,startYear,mode=CAREER_30,version=CALENDAR_VERSION){need(Number.isSafeInteger(cursor)&&cursor>=dayNumber(CALENDAR.range[0])*32&&cursor<=(dayNumber(CALENDAR.range[1])+1)*32-1,'TIME','Calendar cursor outside supported civil dates');const date=new Date(Math.floor(cursor/32)*86400000).toISOString().slice(0,10),slot=calendarDay(date,gradeAt(date,startYear),version).slots[cursor%32];need(slot,'SLOT','Calendar cursor points into nonexistent slot');return positionFor(date,slot.id,startYear,mode,version);}
+export function positionAt(cursor,startYear,mode=CAREER_30,version=CALENDAR_VERSION){const range=calendarFor(version).range;need(Number.isSafeInteger(cursor)&&cursor>=dayNumber(range[0])*32&&cursor<=(dayNumber(range[1])+1)*32-1,'TIME','Calendar cursor outside supported civil dates');const date=new Date(Math.floor(cursor/32)*86400000).toISOString().slice(0,10),slot=calendarDay(date,gradeAt(date,startYear),version).slots[cursor%32];need(slot,'SLOT','Calendar cursor points into nonexistent slot');return positionFor(date,slot.id,startYear,mode,version);}
 export function nextPosition(position,startYear,mode=CAREER_30,version=CALENDAR_VERSION){const slots=calendarDay(position.date,gradeAt(position.date,startYear),version).slots,index=slots.findIndex(s=>s.id===position.slotId);need(index>=0,'SLOT','Unknown current slot');const date=index+1<slots.length?position.date:addDays(position.date,1),id=index+1<slots.length?slots[index+1].id:calendarDay(date,gradeAt(date,startYear),version).slots[0].id;return positionFor(date,id,startYear,mode,version);}

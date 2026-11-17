@@ -13,6 +13,8 @@ test('three-year v2 save: three slots, export/import, retry opening, no obsolete
  const db=memory(),world=annualOpening({difficulty:'normal',events:false}),first=await createStoredSession(db,1);
  const initial=createSave(world,world);assert.equal(initial.kind,'teacher-hell-save');assert.equal(initial.version,2);
  assert.equal(runtimeOf(initial.world).plan.validation,'fixed-calendar-v2');
+ const oldVersion=structuredClone(initial);runtimeOf(oldVersion.world).plan.calendarVersion='tw-school-2026-2065-senior-h1-v1';assert.throws(()=>restoreSave(oldVersion),/CALENDAR_VERSION/);
+ const oldIdentity=structuredClone(initial);runtimeOf(oldIdentity.world).plan.career.version=1;delete runtimeOf(oldIdentity.world).plan.career.backgroundSeed;assert.throws(()=>restoreSave(oldIdentity),/MODE/);
  await first.initialize(world);
  const text=await first.export(),restored=restoreSave(text);
  assert.deepEqual(restored,initial);
@@ -49,7 +51,7 @@ test('storage: formal annual play cannot use engineering retry before failure, a
 });
 test('storage: version rejection and detached complete world/opening roundtrip',()=>{
   const w=runtimeScenario(),p=createSave(w,w);assert.deepEqual(restoreSave(JSON.stringify(p)),p);p.world.random.events.state=0;assert.deepEqual(w,runtimeScenario());
-  for(const mutate of [p=>p.version=2,p=>p.world.extensions['teacher-hell/world'].version=2,p=>p.world.schemaVersion=8,p=>p.extra=true]){const bad=createSave(w,w);mutate(bad);assert.throws(()=>restoreSave(bad));}
+  for(const mutate of [p=>p.version=3,p=>p.world.extensions['teacher-hell/world'].version=2,p=>p.world.schemaVersion=8,p=>p.extra=true]){const bad=createSave(w,w);mutate(bad);assert.throws(()=>restoreSave(bad));}
 });
 test('storage: failed write preserves world/random, retry and lost response settle exactly once',async()=>{
  const db=memory(),s=await createStoredSession(db,1),w=runtimeScenario();await s.initialize(w);const before=s.snapshot(),q=sample(w,'once');db.fail();await assert.rejects(s.execute(q),/quota/);assert.deepEqual(s.snapshot(),before);assert.deepEqual(await db.read(1),before);

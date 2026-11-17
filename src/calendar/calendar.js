@@ -1,5 +1,5 @@
 /** Runtime lookup of one finite, versioned, precompiled calendar; no host calendar/lunar APIs. */
-import { SENIOR_CALENDAR } from './senior-fixed.js';
+import { THREE_YEAR_SENIOR_CALENDAR as SENIOR_CALENDAR } from './three-year-senior.js';
 import { LEGACY_SENIOR_CALENDAR } from './senior-fixed-v1.js';
 import { FIXED_CALENDAR } from './fixed.js';
 import { THREE_YEAR_FIXED_CALENDAR } from './three-year-calendar.js';

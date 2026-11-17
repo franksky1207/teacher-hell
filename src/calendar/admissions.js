@@ -27,9 +27,9 @@ export function admissionCalendar(cohort,version){
   'stars8-interview':'2029-05-20','stars8-result':'2029-06-04'
  };
  for(const [milestone,kind] of Object.entries(milestoneToAdmission)){
-  const window=fixedAdmissionWindows.get(kind);
-  if(!window)throw Error('Missing authoritative admission window '+kind);
-  cohort2029[milestone]=window[1];
+  const admissionInterval=fixedAdmissionWindows.get(kind);
+  if(!admissionInterval)throw Error('Missing authoritative admission window '+kind);
+  cohort2029[milestone]=admissionInterval[1];
  }
  const cohortWindows={
   'stars-nominate':fixedAdmissionWindows.get('stars-school-selection'),

@@ -1,6 +1,7 @@
 /** Versioned school-world dates, NOT announced official future examination dates.
  * Personal examinations do not insert/remove teacher calendar slots. */
 import { calendarDay,SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION,seniorCalendar } from './calendar.js';
+import { LEGACY_SENIOR_CALENDAR } from './senior-fixed-v1.js';
 import { addDays,freezeData } from './civil.js';
 export const ADMISSIONS_POLICY='tw-senior-admissions-h3-v1';
 const cache=new Map();
@@ -36,6 +37,6 @@ export function admissionCalendar(cohort,version){
   const examDates=game2029?['2029-01-20','2029-01-21','2029-01-22']:[`${spring}-01-27`,`${spring}-01-28`,`${spring}-01-29`];
   return {id,date:actualDate,kind:id,...(id==='gsat-exam'?{dates:examDates}:{}),...(game2029&&cohortWindows[id]?{window:cohortWindows[id]}:{}),policy:ADMISSIONS_POLICY,provenance:'versioned-game-school-date; not official future announcement',countsTowardSemester:false};
  });
- for(const node of seniorCalendar.nodes.filter(n=>n.academicYear===fall&&n.kind.startsWith('mock-')))nodes.push({id:node.id,date:node.date,kind:node.kind,sequence:node.sequence,policy:ADMISSIONS_POLICY,provenance:node.provenance,countsTowardSemester:false});
+ for(const node of (version===LEGACY_SENIOR_CALENDAR_VERSION?LEGACY_SENIOR_CALENDAR:seniorCalendar).nodes.filter(n=>n.academicYear===fall&&n.kind.startsWith('mock-')))nodes.push({id:node.id,date:node.date,kind:node.kind,sequence:node.sequence,policy:ADMISSIONS_POLICY,provenance:node.provenance,countsTowardSemester:false});
  const result=freezeData(nodes.sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id)));cache.set(cacheKey,result);return result;
 }

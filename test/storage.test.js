@@ -10,12 +10,13 @@ const clone=structuredClone;
 function memory(){const slots=new Map(),counts=new Map();let fail=false;return {fail(){fail=true;},async read(n){return clone(slots.get(n)??{payload:null,token:null});},async write(n,payload,expected){const old=await this.read(n);if(!sameToken(old.token,expected))throw new WorldError('STALE','changed');if(fail){fail=false;throw new Error('quota');}const generation=(counts.get(n)??0)+1;counts.set(n,generation);const saved={payload:clone(payload),token:payload?saveToken({payload,generation}):null};slots.set(n,saved);return clone(saved);}};}
 const sample=(world,tag)=>request(world,tag,[{type:'sample',stream:'events',id:tag,weights:[1,2,3]}]);
 test('three-year v2 save: three slots, export/import, retry opening, no obsolete memorial side effects',async()=>{
- const db=memory(),world=annualOpening({difficulty:'normal',events:false}),first=await createStoredSession(db,1);
- const initial=createSave(world,world);assert.equal(initial.kind,'teacher-hell-save');assert.equal(initial.version,2);
+ let opening;const db=memory(),world=annualOpening({difficulty:'normal',events:false,onOpening:value=>opening=value}),first=await createStoredSession(db,1);
+ const initial=createSave(world,opening);assert.equal(initial.kind,'teacher-hell-save');assert.equal(initial.version,2);
  assert.equal(runtimeOf(initial.world).plan.validation,'fixed-calendar-v2');
  const oldVersion=structuredClone(initial);runtimeOf(oldVersion.world).plan.calendarVersion='tw-school-2026-2065-senior-h1-v1';assert.throws(()=>restoreSave(oldVersion),/CALENDAR_VERSION/);
  const oldIdentity=structuredClone(initial);runtimeOf(oldIdentity.world).plan.career.version=1;delete runtimeOf(oldIdentity.world).plan.career.backgroundSeed;assert.throws(()=>restoreSave(oldIdentity));
- await first.initialize(world);
+ await first.initialize(opening);
+ await first.import(initial,{expectedToken:first.snapshot().token,confirmed:true});
  const text=await first.export(),restored=restoreSave(text);
  assert.deepEqual(restored,initial);
  const second=await createStoredSession(db,2);

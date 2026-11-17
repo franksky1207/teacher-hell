@@ -1,6 +1,6 @@
 /** Bounded calendar-only assertions; never starts an NPC, event, or three-year simulation. */
 import assert from 'node:assert/strict';
-import {calendarDay,examSchedule,assessmentCalendar,THREE_YEAR_CALENDAR,seniorCalendar,CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION} from '../src/calendar/calendar.js';
+import {calendarDay,examSchedule,assessmentCalendar,THREE_YEAR_CALENDAR,seniorCalendar,CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION,planMode,careerYears,careerRange,THREE_YEAR} from '../src/calendar/calendar.js';
 import {addDays,weekday} from '../src/calendar/civil.js';
 import {admissionCalendar} from '../src/calendar/admissions.js';
 const V=SENIOR_CALENDAR_VERSION, OLD=LEGACY_SENIOR_CALENDAR_VERSION;
@@ -15,6 +15,12 @@ function checkSourceIntegrity(){
 }
 
 function check(ok,msg){assert.ok(ok,msg);checks++;}
+check(planMode({validation:'fixed-calendar-v2',career:{version:1,mode:THREE_YEAR,difficulty:'easy'}})===THREE_YEAR,'Three-year mode accepted');
+check(careerYears(THREE_YEAR)===3,'Three playable years');
+check(careerRange(2026,THREE_YEAR).start==='2026-07-20'&&careerRange(2026,THREE_YEAR).end==='2029-06-29','Fixed three-year start/end');
+for(const invalid of [{validation:'fixed-calendar-v1'},{validation:'fixed-calendar-v2',career:{version:1,mode:'career-30',difficulty:'hard'}}])check((()=>{try{planMode(invalid);return false;}catch{return true;}})(),'Retired mode must be rejected');
+check((()=>{try{careerRange(2027,THREE_YEAR);return false;}catch{return true;}})(),'Non-2026 cohort is not playable');
+check((()=>{try{careerRange(2026,'career-30');return false;}catch{return true;}})(),'30-year range is not playable');
 const day=(date,grade)=>calendarDay(date,grade,V);
 const has=(date,grade,kind)=>day(date,grade).activities.some(a=>a.kind===kind);
 const exam=(term,grade,round)=>examSchedule(term,grade,V)[round-1].dates.join(',');

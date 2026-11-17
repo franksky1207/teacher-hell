@@ -5,7 +5,7 @@ import { permitsStoryFollowup } from './story-content.js';
 import { createId } from '../contracts/foundation.js';
 import { assertShape,STATE_NAMES } from '../player/panel.js';
 import { createRandom,restoreRandom } from '../numeric/random.js';
-import { planMode,careerYears,THREE_YEAR,DIFFICULTY_TENURE,CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,requireCalendarVersion,careerRange,calendarDay,gradeAt,positionFor,positionAt,cursorFor,nextPosition,teachingTerm,latestPreparedSemester,yearData,slotOccupancy } from '../calendar/calendar.js';
+import { planMode,careerYears,THREE_YEAR,DIFFICULTY_TENURE,CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION,requireCalendarVersion,careerRange,calendarDay,gradeAt,positionFor,positionAt,cursorFor,nextPosition,teachingTerm,latestPreparedSemester,yearData,slotOccupancy } from '../calendar/calendar.js';
 import { generateTimetable,validateTimetable } from '../calendar/timetable.js';
 import { requireCalendar as need } from '../calendar/civil.js';
 /** Frozen calendars may start camp with a mock's morning, rather than early study. */
@@ -29,7 +29,7 @@ export function teacherTenureAt(world,position){
 export function validateFormalPlan(plan){
  assertShape(plan,['id','validation','calendarVersion','startYear','subject','tables','cursor','vacation',...(plan.validation==='fixed-calendar-v2'?['career']:[])]);
  need(isFormal(plan)&&requireCalendarVersion(plan.calendarVersion)&&plan.id===calendarPlanId(plan),'CALENDAR_VERSION','Unknown or forged fixed calendar');
- need(plan.calendarVersion!==SENIOR_CALENDAR_VERSION||planMode(plan)===THREE_YEAR,'MODE','Senior projection requires three-year mode');
+ need(![SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION].includes(plan.calendarVersion)||planMode(plan)===THREE_YEAR,'MODE','Senior projection requires three-year mode');
  careerRange(plan.startYear,planMode(plan));need(Array.isArray(plan.tables)&&plan.tables.length>0,'TIMETABLE','Missing persisted timetable');const ids=new Set();
  for(const [index,table] of plan.tables.entries()){validateTimetable(table);
   const expectedId=`${plan.startYear+Math.ceil(index/2)}:${index%2?'spring':'autumn'}`;need(table.semesterId===expectedId&&index<careerYears(planMode(plan))*2,'TIMETABLE','Semester history must begin at first summer and remain consecutive');need(table.subject===plan.subject&&!ids.has(table.semesterId),'TIMETABLE','Duplicate semester or changed subject');ids.add(table.semesterId);const y=Number(table.semesterId.split(':')[0]);need(table.semesterId===`${y}:autumn`&&table.academicYear===y||table.semesterId===`${y}:spring`&&table.academicYear===y-1,'TIMETABLE','Timetable academic year mismatch');need(y>=plan.startYear&&y<=plan.startYear+careerYears(planMode(plan)),'TIMETABLE','Timetable outside career');}

@@ -7,7 +7,7 @@ import { adoptionData,activeAftercareWeek,weekStartData,weekSummary } from './af
 import { aftercareActive,aftercareAdoption,runtimeCalendarDay } from './aftercare-calendar.js';
 import { pendingSchoolEvent } from './campus.js';
 import { entranceCalendarEnabled,nextEntranceOperations } from './entrance.js';
-import { compileCohortCompletion,validateCohortArchive } from './cohort.js';
+import { validateCohortArchive } from './cohort.js';
 import { initializePrehistory } from '../world/prehistory.js';
 import { careerResult,compileThreeYearCareerCompletion } from './career.js';
 import { HOMEROOM_KEY,initializeHomeroom,failureResult,compileFailure,crisisObservation,authorizeRetry } from './homeroom.js';
@@ -91,13 +91,8 @@ function execute(world,command,op,numericSession,receipt,selectedAdmission=false
     syncNumeric(world,numericSession);const n=numericSession.world(),target=n.registry.academicYear+1,y=yearData(target),next=nextPosition(world.position,r.plan.startYear,planMode(r.plan),r.plan.calendarVersion);
     ensure(world.extensions[ANNUAL_KEY]&&annualResult(world),'ANNUAL_PENDING','A verified annual success is required');
     ensure(next.date===y.summerCamp&&isCampOpeningPosition(r.plan,next)&&r.history.some(h=>h.type==='slot-complete'&&h.cursor===r.plan.cursor),'TIME','Transition immediately before the next summer camp');
-    if(n.registry.enrollments.some(e=>e.until===null&&target-n.registry.classes[e.classId].cohortStart>2)){
-      const completion=compileCohortCompletion(world,command.id);
-      for(const child of completion.operations)numericSession=execute(world,command,child,numericSession,receipt,false,false,true);
-      const a=completion.archive;history(world,command,'cohort-completion',a.eventId,a.stageId,a.factIds,a.data);
-    }
+    ensure(world.position.serviceYear<3,'ANNUAL','The original cohort ends after its third year; no new cohort opens');
     numericSession=execute(world,command,{type:'school',basisFactId:null,change:{type:'school-year',academicYear:target}},numericSession,receipt,false,false,true);
-    if(target===n.registry.cohortStart+3)numericSession=execute(world,command,{type:'school',basisFactId:null,change:{type:'school-cohort'}},numericSession,receipt,false,false,true);
     history(world,command,'year-transition',null,null,[],{academicYear:target,previousClassId:n.registry.homeClassId,classId:numericSession.world().registry.homeClassId,successId:annualResult(world).id});
     return numericSession;
   } else if(op.type==='settle-school-year'){

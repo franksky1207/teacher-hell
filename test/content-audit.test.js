@@ -20,19 +20,18 @@ const edited=(r,metadata={})=>({...r,editorial:{
 test('18-A: authoritative 17-D pilots validate without claiming auto-published campaigns or automatic semantic approval',()=>{
  const records=[row(0),row(1),row(2)];
  const report=auditContent(records,{catalogueDefinitions:catalogue.definitions});
- assert.equal(report.topics,128);
+ assert.equal(report.categories,7);
  assert.equal(report.authored,3);
  assert.equal(report.structurallyValid,3);
  assert.equal(report.resolverReady,3);
  assert.equal(report.catalogueReady,3);
  assert.equal(report.semanticReviewed,0);
  assert.equal(report.publishedInNewCareers,'not-assessed');
- assert.equal(report.byTopic['T01-01'].remainingDraftToMinimum,19);
- assert.equal(report.byTopic['T01-01'].remainingToMinimum,20,'unreviewed drafts cannot be counted as completed');
- assert.equal(report.byTopic['T10-04'].remainingDraftToMinimum,19);
- assert.equal(report.byTopic['T14-01'].remainingDraftToMinimum,19);
- assert.equal(report.byTopic['T01-02'].remainingToMinimum,20);
- assert.equal(report.maximumPerTopic,null,'20 is a floor not a production ceiling');
+ assert.equal(report.byGroup.G.authored,3);
+ assert.equal(report.byGroup.G.structurallyValid,3);
+ assert.equal(report.byGroup.G.reviewed,0);
+ assert.equal(report.byGroup.T1.authored,0);
+ assert.equal(report.plannedSelectableSeedCount,2400);
  assert.equal(report.duplicates.length,0);
 });
 
@@ -43,7 +42,7 @@ test('18-A: catches malformed options, nonexistent topics and mismatched referen
  const report=auditContent([noFourth,unknownTopic,wrongVersion]);
  assert.equal(report.structurallyValid,0);
  assert.match(report.items[0].errors.join(' / '),/CONTENT_CHOICE|CHOICE|four/i);
- assert.match(report.items[1].errors.join(' / '),/128 T-coded/);
+ assert.match(report.items[1].errors.join(' / '),/T1\.\.T6 or G/);
  assert.match(report.items[2].errors.join(' / '),/identities/);
 });
 
@@ -78,26 +77,22 @@ test('18-A: event + same choice can have multiple weighted outcomes without bein
  assert.ok(flagged.items[0].warnings.some(x=>x.includes('identical actual consequences')));
 });
 
-test('18-A: 20 events is only the minimum; 21+ events have no enforced upper cap',()=>{
+test('18-A: an unconstrained batch of 21 events has no retired per-topic quotas',()=>{
  const many=Array.from({length:21},(_,i)=>{
   const r=row(0);
   r.story.resourceId='content:bulk-'+i;
   r.story.definitionId=r.story.resourceId;
   r.definition.id=r.story.definitionId;
   r.definition.content.resourceId=r.story.resourceId;
-  r.story.premise.description='不同主題練習記錄'+i;
+  r.story.premise.description='不同題材練習記錄'+i;
   return r;
  });
  const report=auditContent(many);
  assert.equal(report.structurallyValid,21);
- assert.equal(report.byTopic['T01-01'].authored,21);
- assert.equal(report.byTopic['T01-01'].remainingDraftToMinimum,0);
- assert.equal(report.byTopic['T01-01'].remainingValidatedToMinimum,0);
- assert.equal(report.byTopic['T01-01'].remainingReviewedToMinimum,20,'21 drafts without review are not a completed topic');
- assert.equal(report.maximumPerTopic,null);
- assert.equal(report.resolverReady,0,'new story must be explicitly wired to the immutable asset resolver');
+ assert.equal(report.byGroup.G.authored,21);
+ assert.equal(report.byGroup.G.reviewed,0);
+ assert.equal(report.resolverReady,0,'drafts must be explicitly wired');
 });
-
 test('18-A: editorial label alone cannot certify the content without written evidence',()=>{
  const plain=row(0);
  const withReview=edited(row(0));
@@ -119,7 +114,7 @@ test('18-B: comparison with previous batches flags cross-batch duplicate without
  const report=auditContent([current],{referenceRecords:[previous]});
  assert.equal(report.authored,1);
  assert.equal(report.referenceRecordsCompared,1);
- assert.equal(report.byTopic['T01-01'].authored,1);
+ assert.equal(report.byGroup.G.authored,1);
  assert.equal(report.duplicates.length,1);
  assert.deepEqual(report.duplicates[0].ids,[previous.story.resourceId,current.story.resourceId]);
  assert.ok(report.items[0].warnings.some(x=>x.includes('similarity')));

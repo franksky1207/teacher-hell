@@ -3,12 +3,13 @@ import { foundationScenario } from './scenarios.js';
 import { startSchoolCareer } from '../../src/runtime/transactions.js';
 import { runtimeOf, restoreWorldState } from '../../src/runtime/model.js';
 import { generateTimetable } from '../../src/calendar/timetable.js';
-import { positionFor,cursorFor,latestPreparedSemester } from '../../src/calendar/calendar.js';
+import { positionFor,cursorFor,latestPreparedSemester,THREE_YEAR } from '../../src/calendar/calendar.js';
 import { startEvolution } from '../../src/evolution/time.js';
 import { startSettlement } from '../../src/changes/settlement.js';
 export function eventWorld(seed=74,date=null,slot=null,career=null){
  const f=foundationScenario(seed);f.events=[];f.enrollments=[];
- const w=startSchoolCareer(f,{startYear:2026,subject:'國文',seed:75,career});
+ const validCareer=career??{version:2,mode:THREE_YEAR,difficulty:'normal',backgroundSeed:(75^0x54325032)>>>0};
+ const w=startSchoolCareer(f,{startYear:2026,subject:'國文',seed:75,career:validCareer});
  if(date){
  const plan=runtimeOf(w).plan,latest=latestPreparedSemester(date),last=(latest.academicYear-2026)*2+(latest.id.endsWith(':spring')?1:0);
  for(let i=1;i<=last;i++){

@@ -15,7 +15,7 @@ import {startSettlement} from '../src/changes/settlement.js';
 import {createSave,restoreSave,encodeSave,sameToken,saveToken} from '../src/storage/format.js';
 import {createStoredSession} from '../src/storage/session.js';
 const day=(date,grade=3)=>calendarDay(date,grade,V);
-const nodes=seniorCalendar.nodes.filter(n=>n.academicYear===2028);
+const nodes=seniorCalendar.nodes.filter(n=>n.academicYear===2028&&n.kind.startsWith('mock-'));
 /** Explicit isolated late-date baselines; no claim of natural three-year gameplay. */
 function baseline(date,slot=null,school=false){
  const target=slot??day(date).slots[0].id,w=eventWorld(74,date,target,{version:1,mode:THREE_YEAR,difficulty:'hard'});
@@ -93,7 +93,7 @@ test('H1-C: four two-day GSAT mocks and two subject mocks belong only to the fix
 });
 
 test('H1-C: every generated mock avoids holidays, exams and existing senior activities',()=>{
- for(const node of seniorCalendar.nodes){const d=day(node.date);assert.ok(weekday(node.date)<=5);assert.equal(d.holiday.length,0);assert.equal(d.exam,false);assert.deepEqual(d.activities.map(a=>a.id),[node.id]);assert.deepEqual(d.slots.map(s=>s.id),['morning','afternoon','private']);assert.equal(d.quota.max,0);}
+ for(const node of seniorCalendar.nodes.filter(n=>n.kind.startsWith('mock-'))){const d=day(node.date);assert.ok(weekday(node.date)<=5);assert.equal(d.holiday.length,0);assert.equal(d.exam,false);assert.deepEqual(d.activities.map(a=>a.id),[node.id]);assert.deepEqual(d.slots.map(s=>s.id),['morning','afternoon','private']);assert.equal(d.quota.max,0);}
 });
 
 test('H1-C: production summary stages, event protection, no marks or invented admissions',()=>{

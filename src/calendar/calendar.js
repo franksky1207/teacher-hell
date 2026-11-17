@@ -30,7 +30,9 @@ export function assessmentCalendar(termId,grade,version=CALENDAR_VERSION){
  const exams=examSchedule(termId,grade,version),senior=exams.length===2;
  const lastExam=exams.at(-1).dates.at(-1);let studyCompletionDate=null,ceremonyDate=null;
  if(senior){ceremonyDate=calendarFor(version).years.flatMap(y=>y.activities).find(a=>a.kind==='graduation'&&a.date>=semester(termId,version).start&&a.date<=semester(termId,version).end)?.date;need(ceremonyDate,'CALENDAR','Missing graduation ceremony');studyCompletionDate=addDays(ceremonyDate,-1);while(weekday(studyCompletionDate)>5||(holidaysFor(version).get(studyCompletionDate)??[]).some(h=>!h.grades||h.grades.includes(3)))studyCompletionDate=addDays(studyCompletionDate,-1);}
- return {version,termId,grade,exams,ordinaryAssessmentDates:exams.at(-1).dates,closurePolicy:senior?'senior-spring-h2-v1':'standard',teacherTermEnd:semester(termId,version).end,...(senior?{assessmentPolicy:'senior-spring-403030-v1',marksCloseDate:lastExam,publicationDate:addDays(lastExam,1),makeupFrom:addDays(lastExam,2),makeupUntil:[addDays(lastExam,30),studyCompletionDate].sort()[0],studyCompletionDate,ceremonyDate}:{})};
+ const publicationOverrides={'2026:autumn:1:2':'2026-12-07','2027:spring:1:2':'2027-05-10','2027:autumn:2:2':'2027-12-06','2028:spring:2:2':'2028-05-15','2029:spring:1:2':'2029-05-14','2029:spring:2:2':'2029-05-14'};
+ const publicationFor=round=>publicationOverrides[termId+':'+grade+':'+round.round]??addDays(round.dates.at(-1),1);
+ return {version,termId,grade,exams,examPublications:exams.map(round=>({round:round.round,date:version===SENIOR_CALENDAR_VERSION?publicationFor(round):addDays(round.dates.at(-1),1)})),ordinaryAssessmentDates:exams.at(-1).dates,closurePolicy:senior?'senior-spring-h2-v1':'standard',teacherTermEnd:semester(termId,version).end,...(senior?{assessmentPolicy:'senior-spring-403030-v1',marksCloseDate:lastExam,publicationDate:addDays(lastExam,1),makeupFrom:addDays(lastExam,2),makeupUntil:[addDays(lastExam,30),studyCompletionDate].sort()[0],studyCompletionDate,ceremonyDate}:{})};
 }
 export function requireDate(date){dayNumber(date);need(date>=CALENDAR.range[0]&&date<=CALENDAR.range[1],'RANGE','Calendar supports only 2026-01-01 through 2065-12-31');return date;}
 export function yearData(year,version=CALENDAR_VERSION){const rows=yearsFor(version);need(rows.has(year),'RANGE',`Unsupported calendar year ${year}`);return rows.get(year);}
@@ -65,7 +67,7 @@ const dayCache=new Map();
 export function calendarDay(date,grade,version=CALENDAR_VERSION){
  requireCalendarVersion(version);
  const cacheKey=`${version}:${date}:${grade}`;if(dayCache.has(cacheKey))return dayCache.get(cacheKey);
- const base=basicDay(date,grade,version),y=yearData(Number(date.slice(0,4)),version),acts=[...(activitiesFor(version).get(date)??[]),...(version===SENIOR_CALENDAR_VERSION?SENIOR_CALENDAR.nodes.filter(n=>n.date===date):[])].filter(a=>a.grades.includes(grade));
+ const base=basicDay(date,grade,version),y=yearData(Number(date.slice(0,4)),version),acts=[...(activitiesFor(version).get(date)??[]),...(version===SENIOR_CALENDAR_VERSION?SENIOR_CALENDAR.nodes.filter(n=>n.date===date||n.dates?.includes(date)):[])].filter(a=>a.grades.includes(grade));
  const school=['school','summer-camp','winter-camp'].includes(base.kind);
  let slotIds=school?['early','p1','p2','p3','p4','lunch','noon','p5','p6','p7','p8']:base.kind==='spring-festival'?['festival-day']:base.kind==='long-vacation'?['vacation-day']:['morning','afternoon'];
  if(school&&(version===SENIOR_CALENDAR_VERSION&&grade===3&&base.term.id.endsWith(':spring')&&!base.term.camp?[1,4]:({1:[2,4],2:[1,4,5],3:[1,2,4,5]})[grade]).includes(base.weekday))slotIds.push('dinner','study1','study2','study3');

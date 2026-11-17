@@ -1,5 +1,6 @@
 /** Runtime lookup of one finite, versioned, precompiled calendar; no host calendar/lunar APIs. */
 import { SENIOR_CALENDAR } from './senior-fixed.js';
+import { LEGACY_SENIOR_CALENDAR } from './senior-fixed-v1.js';
 import { FIXED_CALENDAR } from './fixed.js';
 import { applyThreeYearCalendar } from './three-year-overrides.js';
 import { addDays,dayNumber,weekday,weekMonday,requireCalendar as need,freezeData } from './civil.js';
@@ -10,11 +11,13 @@ export const THREE_YEAR_CALENDAR=freezeData(applyThreeYearCalendar(FIXED_CALENDA
 const calendarFor=version=>version===SENIOR_CALENDAR_VERSION?THREE_YEAR_CALENDAR:CALENDAR;
 export const CALENDAR_VERSION=CALENDAR.version;
 export const SENIOR_CALENDAR_VERSION=SENIOR_CALENDAR.version;
+export const LEGACY_SENIOR_CALENDAR_VERSION=LEGACY_SENIOR_CALENDAR.version;
+const isSeniorVersion=version=>version===SENIOR_CALENDAR_VERSION||version===LEGACY_SENIOR_CALENDAR_VERSION;
 export const seniorCalendar=freezeData(SENIOR_CALENDAR);
-export function requireCalendarVersion(version){need([CALENDAR_VERSION,SENIOR_CALENDAR_VERSION].includes(version),'CALENDAR_VERSION','Unknown calendar projection');return version;}
+export function requireCalendarVersion(version){need([CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION].includes(version),'CALENDAR_VERSION','Unknown calendar projection');return version;}
 /** Stable H2 contract: formal rounds only; ordinary/closure policy belongs to H2. */
 export function examSchedule(termId,grade,version=CALENDAR_VERSION){
- requireCalendarVersion(version);const t=semester(termId,version),senior=version===SENIOR_CALENDAR_VERSION&&grade===3&&t.kind==='spring';
+ requireCalendarVersion(version);const t=semester(termId,version),senior=isSeniorVersion(version)&&grade===3&&t.kind==='spring';
  const dates=senior?t.exams.slice(0,2):grade===2&&t.grade2SecondExam?[t.exams[0],t.grade2SecondExam,t.exams[2]]:t.exams;
  return dates.map((original,i)=>({round:i+1,kind:senior&&i===1?'graduation-exam':'term-exam',dates:[...(t.gradeExamOverrides?.[grade]?.[i+1]??original)],countsTowardSemester:true}));
 }
@@ -58,7 +61,7 @@ function basicDay(date,grade,version=CALENDAR_VERSION){
  if(newYear)kind='spring-festival';
  else if(!term)kind='long-vacation';
  else if(holiday.length)kind='holiday';
- else if(dow===7||dow===6&&(grade!==3||version===SENIOR_CALENDAR_VERSION&&term.id.endsWith(':spring')&&!term.camp))kind='weekend';
+ else if(dow===7||dow===6&&(grade!==3||isSeniorVersion(version)&&term.id.endsWith(':spring')&&!term.camp))kind='weekend';
  else if(dow===6)kind='grade3-saturday';
  else kind=term.camp?term.camp+'-camp':'school';
  return {date,grade,weekday:dow,kind,holiday,term};
@@ -67,10 +70,10 @@ const dayCache=new Map();
 export function calendarDay(date,grade,version=CALENDAR_VERSION){
  requireCalendarVersion(version);
  const cacheKey=`${version}:${date}:${grade}`;if(dayCache.has(cacheKey))return dayCache.get(cacheKey);
- const base=basicDay(date,grade,version),y=yearData(Number(date.slice(0,4)),version),acts=[...(activitiesFor(version).get(date)??[]),...(version===SENIOR_CALENDAR_VERSION?SENIOR_CALENDAR.nodes.filter(n=>n.date===date||n.dates?.includes(date)):[])].filter(a=>a.grades.includes(grade));
+ const base=basicDay(date,grade,version),y=yearData(Number(date.slice(0,4)),version),acts=[...(activitiesFor(version).get(date)??[]),...(isSeniorVersion(version)?(version===LEGACY_SENIOR_CALENDAR_VERSION?LEGACY_SENIOR_CALENDAR.nodes:SENIOR_CALENDAR.nodes).filter(n=>n.date===date||n.dates?.includes(date)):[])].filter(a=>a.grades.includes(grade));
  const school=['school','summer-camp','winter-camp'].includes(base.kind);
  let slotIds=school?['early','p1','p2','p3','p4','lunch','noon','p5','p6','p7','p8']:base.kind==='spring-festival'?['festival-day']:base.kind==='long-vacation'?['vacation-day']:['morning','afternoon'];
- if(school&&(version===SENIOR_CALENDAR_VERSION&&grade===3&&base.term.id.endsWith(':spring')&&!base.term.camp?[1,4]:({1:[2,4],2:[1,4,5],3:[1,2,4,5]})[grade]).includes(base.weekday))slotIds.push('dinner','study1','study2','study3');
+ if(school&&(isSeniorVersion(version)&&grade===3&&base.term.id.endsWith(':spring')&&!base.term.camp?[1,4]:({1:[2,4],2:[1,4,5],3:[1,2,4,5]})[grade]).includes(base.weekday))slotIds.push('dinner','study1','study2','study3');
  if(!['spring-festival','long-vacation'].includes(base.kind))slotIds.push(school||base.kind==='grade3-saturday'?'private':'evening');
  const full=acts.find(a=>a.slots.includes('all'));
  if(full)slotIds=full.kind.startsWith('graduation-trip')?['travel-day']:['morning','afternoon','private'];
@@ -80,7 +83,7 @@ export function calendarDay(date,grade,version=CALENDAR_VERSION){
   const occupying=acts.filter(a=>a.slots.includes(id)||a.slots.includes('morning')&&['early','p1','p2','p3','p4'].includes(id)||a.slots.includes('afternoon')&&['p5','p6','p7','p8'].includes(id)||a.slots.includes('all')&&id!=='private');
   const period=/^p[1-8]$/.test(id)?Number(id.slice(1)):null;
   const fixed=base.weekday===5&&[6,7].includes(period)&&week!==null&&week%2===0?(period===6?'assembly':'class-meeting'):null;
-  return {id,period,kind:occupying.length?'activity':exam&&period?'exam':fixed??(period?'period':id),activityIds:occupying.map(a=>a.id),protected:occupying.length>0,...(version===SENIOR_CALENDAR_VERSION&&grade===3&&exam&&period?{examRound:examNode.round,examKind:examNode.kind}:{})};
+  return {id,period,kind:occupying.length?'activity':exam&&period?'exam':fixed??(period?'period':id),activityIds:occupying.map(a=>a.id),protected:occupying.length>0,...(isSeniorVersion(version)&&grade===3&&exam&&period?{examRound:examNode.round,examKind:examNode.kind}:{})};
  });
  let quota=school?{kind:'school-day',min:0,max:5,nightStudyMax:1}:base.kind==='grade3-saturday'?{kind:'saturday',morningMax:1,afternoonMax:1,privateMax:0}:['weekend','holiday'].includes(base.kind)?{kind:'holiday',min:0,max:1}:null;
  let segment=null;

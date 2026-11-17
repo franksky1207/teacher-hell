@@ -45,7 +45,7 @@ let cached;const base=()=>structuredClone(cached??=seniorWorld());
 test('H3 formal mock requires both actual phases; init does not touch academic RNG',()=>{let w=at(base(),nodes.find(n=>n.id==='mock:gsat:2028:1').date);const before=structuredClone(w.random.academics);w=apply(w,[{type:'academic',action:'entrance',node:'init'}],'h3-init');assert.deepEqual(w.random.academics,before);assert.throws(()=>apply(w,[{type:'academic',action:'entrance',node:'mock-gsat',nodeId:nodes[0].id}]),/both actual mock stages/);assert.equal(readAdmissions(w).completed.length,0);});
 test('H3 fixed 2028 first GSAT mock is two protected days; recording remains separate from grades',()=>{
  const mock=nodes.find(n=>n.id==='mock:gsat:2028:1');
- assert.ok(mock);assert.deepEqual(['2028-07-27','2028-07-28'],['2028-07-27','2028-07-28']);
+ assert.ok(mock);assert.equal(mock.date,'2028-07-28');assert.equal(mock.kind,'mock-gsat');
  for(const date of ['2028-07-27','2028-07-28']){const d=calendarDay(date,3,SENIOR_CALENDAR_VERSION);assert.ok(d.activities.some(a=>a.id===mock.id));assert.equal(d.exam,false);}
  assert.equal(mock.countsTowardSemester,false);
 });

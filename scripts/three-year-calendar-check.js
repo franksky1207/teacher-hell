@@ -1,9 +1,9 @@
 /** Bounded calendar-only assertions; never starts an NPC, event, or three-year simulation. */
 import assert from 'node:assert/strict';
-import {calendarDay,examSchedule,assessmentCalendar,THREE_YEAR_CALENDAR,seniorCalendar,CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION,planMode,careerYears,careerRange,THREE_YEAR} from '../src/calendar/calendar.js';
+import {calendarDay,examSchedule,assessmentCalendar,THREE_YEAR_CALENDAR,seniorCalendar,CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,planMode,careerYears,careerRange,THREE_YEAR} from '../src/calendar/calendar.js';
 import {addDays,weekday} from '../src/calendar/civil.js';
 import {admissionCalendar} from '../src/calendar/admissions.js';
-const V=SENIOR_CALENDAR_VERSION, OLD=LEGACY_SENIOR_CALENDAR_VERSION;
+const V=SENIOR_CALENDAR_VERSION;
 let checks=0, scanned=0;
 checkSourceIntegrity();
 function checkSourceIntegrity(){
@@ -63,7 +63,7 @@ check(assessmentCalendar('2029:spring',3,V).marksCloseDate==='2029-05-10','Grade
 
 check(assessmentCalendar('2028:autumn',3,V).marksCloseDate==='2028-12-27','Senior autumn marks close Dec27 while semester continues');
 check(assessmentCalendar('2028:autumn',3,V).publicationDate==='2028-12-28','Senior autumn results may publish Dec28');
-const admissions=admissionCalendar(2026,V),legacyAdmissions=admissionCalendar(2026,OLD);
+const admissions=admissionCalendar(2026,V);
 for(const [stage,date] of [
  ['gsat-exam','2029-01-22'],['gsat-release','2029-02-26'],
  ['stars-nominate','2029-03-09'],['stars-screen','2029-03-21'],
@@ -71,13 +71,10 @@ for(const [stage,date] of [
  ['application-result','2029-05-31'],['application-allocation','2029-06-12'],
  ['subject-register','2029-06-19']
 ])check(admissions.find(n=>n.kind===stage)?.date===date,'H3 admissions phase mismatched '+stage);
-check(legacyAdmissions.find(n=>n.kind==='gsat-exam')?.date==='2029-01-29','Existing senior H1 v1 GSAT milestones preserved');
-
 check(day('2029-06-19',3).admissions.some(a=>a.kind==='subject-registration'),'Subject registration deadline June19');
-check(LEGACY_SENIOR_CALENDAR_VERSION!==V,'Versioned cohort projection');
-check(examSchedule('2028:autumn',3,OLD)[2].dates.at(-1)==='2029-01-19','Legacy senior dates preserved');
-check(!calendarDay('2029-01-20',3,OLD).activities.some(a=>a.kind==='formal-gsat'),'Legacy saved projections do not inherit new GSAT');
-check(examSchedule('2028:autumn',3,CALENDAR_VERSION)[2].dates.at(-1)==='2029-01-19','Legacy 40-year fixed calendar unchanged');
+check(CALENDAR_VERSION===V,'One calendar version for all runtime lookups');
+check(admissionCalendar(2027,V).length===0,'No future cohort admissions');
+check((()=>{try{calendarDay('2028-10-02',3,'tw-school-2026-2065-senior-h1-v1');return false;}catch{return true;}})(),'Old H1 v1 must be rejected');
 // Calendar-data scan only. No stories, players, NPCs, RNG, or game advancement.
 for(let date='2026-07-20';date<='2029-06-29';date=addDays(date,1)){
  for(const grade of [1,2,3]){
@@ -93,4 +90,4 @@ for(let date='2026-07-20';date<='2029-06-29';date=addDays(date,1)){
   }
  }
 }
-console.log('PASS three-year calendar precision: '+checks+' assertions; '+scanned+' date-by-grade rows; legacy version intact');
+console.log('PASS three-year calendar precision: '+checks+' assertions; '+scanned+' date-by-grade rows; single three-year version');

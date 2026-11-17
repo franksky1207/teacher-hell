@@ -4,7 +4,7 @@ import { seniorRosterAt } from './academic-roster.js';
 import { aftercareActive } from './aftercare-calendar.js';
 /** Authoritative bridge from existing calendar, identity and academic journal. */
 import { admissionCalendar,ADMISSIONS_POLICY } from '../calendar/admissions.js';
-import { calendarDay,semester,planMode,THREE_YEAR,SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION } from '../calendar/calendar.js';
+import { calendarDay,semester,planMode,THREE_YEAR,SENIOR_CALENDAR_VERSION } from '../calendar/calendar.js';
 import { need } from '../academics/rules.js';
 import { assertShape } from '../player/panel.js';
 function mockEvidence(r,id,date){return ['morning','afternoon'].every(phase=>r.facts.some(f=>f.order<=r.history.length&&f.occurredAt.date===date&&f.data.mockSummary?.nodeId===id&&f.data.mockSummary.phase===phase)&&r.history.some(h=>h.type==='slot-complete'&&h.at.date===date&&h.at.slotId===phase));}
@@ -17,7 +17,7 @@ export function graduatedEntrantsForAftercarePhase(registry,entrance,node,isAfte
  return [...new Set(registry.enrollments.filter(e=>e.status==='graduated'&&registry.classes[e.classId]?.cohortStart===entrance.cohort&&Object.hasOwn(entrance.students,e.personId)).map(e=>e.personId))].sort();
 }
 
-export function entranceCalendarEnabled(w){const p=runtime(w).plan,registry=w.numeric.evolution.world.registry;return [SENIOR_CALENDAR_VERSION,LEGACY_SENIOR_CALENDAR_VERSION].includes(p.calendarVersion)&&planMode(p)===THREE_YEAR&&registry.academicYear-registry.cohortStart===2;}
+export function entranceCalendarEnabled(w){const p=runtime(w).plan,registry=w.numeric.evolution.world.registry;return p.calendarVersion===SENIOR_CALENDAR_VERSION&&planMode(p)===THREE_YEAR&&registry.academicYear-registry.cohortStart===2;}
 export function entranceCompatible(w,s){const registry=w.numeric.evolution.world.registry;return entranceCalendarEnabled(w)&&s.version===2&&!s.admissions.some(a=>a.year===registry.cohortStart+2);}
 export function entranceInput(w,op,s){
  assertShape(op,['type','action','node',...['nodeId','personId','delta','decision','groups','basisFactId'].filter(k=>Object.hasOwn(op,k))]);

@@ -201,7 +201,7 @@ export function validateCareerCompletion(w){
  if(!entries.length)return;
  const h=entries[0],owner=requests[0],request=JSON.parse(owner.request);
  need(owner.id===h.operationId&&owner.attemptId===h.attemptId&&request.operations.length===1&&request.actorId===w.identity.playerId,'completion ownership differs');
- if(r.plan.career?.mode===THREE_YEAR){
+ { // Every accepted completion belongs to the same final three-year settlement.
   const own=r.history.filter(s=>s.operationId===h.operationId&&s.attemptId===h.attemptId),annual=own.filter(s=>s.type==='annual-success'),archives=own.filter(s=>s.type==='cohort-completion');
   need(request.operations[0].type==='settle-school-year'&&annual.length===1&&annual[0].data.year===3&&archives.length===1&&annual[0].order<archives[0].order&&archives[0].order<h.order&&own.at(-1)===h,'three-year terminal must be the same ordered annual/cohort/completion transaction');
   need(own[0]===annual[0]&&equal(h.at,annual[0].at)&&equal(h.at,archives[0].at),'three-year completion changed its boundary');

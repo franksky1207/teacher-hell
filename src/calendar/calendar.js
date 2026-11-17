@@ -90,7 +90,7 @@ export function calendarDay(date,grade,version=CALENDAR_VERSION){
  let segment=null;
  if(base.kind==='spring-festival')segment={id:`festival:${y.year}`,start:addDays(y.cny,-1),end:addDays(y.cny,4),quota:1};
  if(base.kind==='long-vacation'){
-  let start=date,end=date;while(start>calendarFor(version).range[0]&&basicDay(addDays(start,-1),grade,version).kind==='long-vacation'start=addDays(start,-1);while(end<calendarFor(version).range[1]&&basicDay(addDays(end,1),grade,version).kind==='long-vacation'end=addDays(end,1);
+  let start=date,end=date;while(start>calendarFor(version).range[0]&&basicDay(addDays(start,-1),grade,version).kind==='long-vacation')start=addDays(start,-1);while(end<calendarFor(version).range[1]&&basicDay(addDays(end,1),grade,version).kind==='long-vacation')end=addDays(end,1);
   const bucket=Math.floor((dayNumber(date)-dayNumber(start))/7),bucketStart=addDays(start,bucket*7),bucketEnd=[addDays(bucketStart,6),end].sort()[0];
   segment={id:`vacation:${start}:${end}:${bucket}`,start:bucketStart,end:bucketEnd,continuousStart:start,continuousEnd:end,quota:1};
  }

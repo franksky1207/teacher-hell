@@ -95,7 +95,7 @@ test('H5 current phase names follow formal mock/exam calendar without leaking re
  assert.equal(scheduledPhase(calendarDay('2029-06-04',3,SENIOR_CALENDAR_VERSION),'p1'),null);
 });
 
-import {careerRange,THREE_YEAR,positionFor} from '../src/calendar/calendar.js';
+import {careerRange} from '../src/calendar/calendar.js';
 test('H5 final three-year boundary settles its last annual report; completion is readonly',()=>{
  const c=progressionContext(opening()),end=careerRange(2026,THREE_YEAR).end,day=calendarDay(end,3,SENIOR_CALENDAR_VERSION);
  const position=positionFor(end,day.slots.at(-1).id,2026,THREE_YEAR,SENIOR_CALENDAR_VERSION);

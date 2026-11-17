@@ -5,6 +5,8 @@ on:
     paths:
       - 'src/runtime/story.js'
       - 'src/runtime/story-content.js'
+      - 'src/runtime/topics.js'
+      - 'src/runtime/event-candidates.js'
       - 'test/story.test.js'
       - 'test/events.test.js'
       - 'test/phase17d-content.test.js'
@@ -26,5 +28,5 @@ jobs:
       - run: npm ci --ignore-scripts
       - name: Story and sample contracts, no multi-year sim
         run: node --test --test-isolation=none test/story.test.js test/phase17d-content.test.js test/phase17c-exposure-and-scenes.test.js
-      - name: Modern 128-topic and legacy 96-topic migration only
-        run: node --test --test-name-pattern='17-E' test/events.test.js
+      - name: T/G/P category validation and internal E-code compatibility
+        run: node --test --test-name-pattern='T/G/P' test/events.test.js

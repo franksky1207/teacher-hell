@@ -1,10 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
-import {gunzipSync} from 'node:zlib';
 import {CALENDAR,CALENDAR_VERSION,SENIOR_CALENDAR_VERSION as V,seniorCalendar,calendarDay,examSchedule,assessmentCalendar,semester,yearData,positionFor,positionAt,cursorFor,nextPosition,THREE_YEAR,gradeAt} from '../src/calendar/calendar.js';
 import {addDays,weekday,datesBetween} from '../src/calendar/civil.js';
-import {compileSeniorCalendar} from '../src/calendar/senior-rules.js';
 import {calendarPlanId,formalSlot,calendarMilestones} from '../src/runtime/schedule.js';
 import {atDate,experiencedOpening} from './support/calendar.js';
 import {eventWorld,draw,definition} from './support/event-fixtures.js';
@@ -84,9 +81,15 @@ test('H1-B: after graduation exams normal lessons/nights continue through ceremo
  w=step(baseline('2029-05-31','private'));assert.equal(w.position.date,'2029-06-01');assert.equal(w.position.slotId,'morning');assert.ok(formalSlot(w).slot.protected);
 });
 
-test('H1-C: exactly four GSAT and two subject nodes in the 2028 cohort, deterministic sources',()=>{
- assert.deepEqual(compileSeniorCalendar(CALENDAR),seniorCalendar);assert.equal(nodes.length,6);assert.deepEqual(nodes.filter(n=>n.family==='gsat').map(n=>n.date.slice(5,7)),['07','09','10','12']);assert.equal(nodes.filter(n=>n.family==='subject').length,2);
- for(const node of nodes){assert.equal(day(node.date).courseSemesterId,node.semesterId);assert.equal(node.countsTowardSemester,false);assert.equal(node.provenance,'school-world-h1-v1');if(node.family==='subject'){assert.equal(node.resultScope,'eligible-route-students');assert.equal(node.eligibilityContract,'h3-subject-route-v1');}}
+test('H1-C: four two-day GSAT mocks and two subject mocks belong only to the fixed cohort',()=>{
+ assert.equal(nodes.length,6);
+ assert.deepEqual(nodes.filter(n=>n.family==='gsat').map(n=>n.date.slice(5,7)),['07','09','10','12']);
+ assert.equal(nodes.filter(n=>n.family==='subject').length,2);
+ for(const node of nodes){
+  assert.equal(day(node.date).courseSemesterId,node.semesterId);
+  assert.equal(node.countsTowardSemester,false);
+  if(node.family==='subject'){assert.equal(node.resultScope,'eligible-route-students');assert.equal(node.eligibilityContract,'h3-subject-route-v1');}
+ }
 });
 
 test('H1-C: every generated mock avoids holidays, exams and existing senior activities',()=>{
@@ -103,23 +106,15 @@ test('H1-C: production summary stages, event protection, no marks or invented ad
  }
 });
 
-test('H1 compatibility: pre-change serialized three-year saves retain exact dates, cursors, years and frozen version',()=>{
- const saves=JSON.parse(gunzipSync(readFileSync(new URL('./fixtures/h1-pre-a8cb5ec.json.gz',import.meta.url))));
- for(const original of saves){const loaded=restoreSave(original);assert.deepEqual(loaded,original);assert.deepEqual(restoreSave(encodeSave(loaded)),original);const w=loaded.world,p=runtimeOf(w).plan;assert.equal(p.calendarVersion,CALENDAR_VERSION);assert.equal(p.startYear,runtimeOf(original.world).plan.startYear);assert.deepEqual(positionAt(p.cursor,p.startYear,THREE_YEAR,p.calendarVersion),w.position);assert.deepEqual(restoreWorldState(step(w)),step(w));}
- assert.equal(runtimeOf(saves[3].world).plan.startYear,2030);
- const old=saves[0].world;assert.equal(old.position.slotId,'p8');assert.equal(day(old.position.date).activities[0].kind,'mock-gsat');assert.equal(formalSlot(old).slot.id,'p8');assert.equal(saves[1].world.position.slotId,'study2');
-});
-
-test('H1 compatibility: both versions cross semester opening without moving saved cursor or start year',()=>{
- for(const version of [CALENDAR_VERSION,V]){
-  let w=baseline('2029-02-18','vacation-day'),p=runtimeOf(w).plan;p.calendarVersion=version;p.id=calendarPlanId(p);w=restoreWorldState(w);const saved=restoreSave(encodeSave(createSave(w)));assert.equal(saved.world.position.date,'2029-02-18');w=step(saved.world);assert.equal(w.position.date,'2029-02-19');assert.equal(w.position.slotId,'early');assert.equal(runtimeOf(w).plan.startYear,2026);assert.deepEqual(restoreWorldState(w),w);
- }
-});
-
-test('H1 compatibility: new opening roundtrip and 30-year original fixed data/slots remain intact',()=>{
- const w=experiencedOpening('hard');assert.equal(runtimeOf(w).plan.calendarVersion,V);assert.equal(runtimeOf(w).plan.startYear,2026);assert.deepEqual(restoreSave(encodeSave(createSave(w,w))).world,w);
- const old=atDate('2029-03-06','study2');assert.equal(runtimeOf(old).plan.validation,'fixed-calendar-v1');assert.equal(formalSlot(old).slot.id,'study2');assert.equal(calendarDay('2029-03-17',3).kind,'grade3-saturday');assert.equal(examSchedule('2029:spring',3).length,3);assert.deepEqual(restoreSave(encodeSave(createSave(old))).world,old);
- const bad=structuredClone(w);runtimeOf(bad).plan.calendarVersion='unknown';assert.throws(()=>restoreWorldState(bad),/CALENDAR_VERSION/);const cursor=structuredClone(w);runtimeOf(cursor).plan.cursor++;assert.throws(()=>restoreWorldState(cursor),/TIME/);
+test('H1 current version: three-year opening roundtrip, legacy calendar rejected',()=>{
+ const w=experiencedOpening('hard');
+ assert.equal(runtimeOf(w).plan.calendarVersion,V);
+ assert.equal(runtimeOf(w).plan.startYear,2026);
+ assert.deepEqual(restoreSave(encodeSave(createSave(w,w))).world,w);
+ const bad=structuredClone(w);runtimeOf(bad).plan.calendarVersion='tw-school-2026-2065-senior-h1-v1';
+ assert.throws(()=>restoreWorldState(bad),/CALENDAR_VERSION/);
+ const cursor=structuredClone(w);runtimeOf(cursor).plan.cursor++;
+ assert.throws(()=>restoreWorldState(cursor),/TIME/);
 });
 
 function memory(){let record={payload:null,token:null},generation=0,fail=false;return {fail(){fail=true;},async read(){return structuredClone(record);},async write(slot,payload,expected){if(!sameToken(record.token,expected))throw new WorldError('STALE','changed');if(fail){fail=false;throw Error('quota');}record={payload:restoreSave(payload),token:saveToken({payload,generation:++generation})};return structuredClone(record);}};}

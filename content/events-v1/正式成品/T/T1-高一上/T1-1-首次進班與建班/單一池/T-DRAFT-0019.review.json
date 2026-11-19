@@ -1,0 +1,276 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "入學報到晚間輪班剛停止且正式新班第一份答覆說明仍未發，家庭自然以輪班預期詢問。教師能承諾自己的時段，無權替處室包辦或承諾繼續輪班。",
+  "fourCodes": "S1066四碼由現任家庭聯絡人合法持有。R1信任教師日後會處理，R3追問進度，R4要求已定事項的責任說明。R2與R7只結算教師11-2，分別因原待機取消和原可自用時間被占。",
+  "fourChoices": "shuf抽1、5、4。A公布教師固定答覆時段，B核對家長閱讀時間，C詢問處室業務和時間，D在草稿直接撤同日答覆並向一戶說明。未中選為電話預約、分開系統提示與示範晚間非急件。",
+  "eightResults": "八項結果依序為家長安心等候、教師時間重獲、督促定稿、詢問責任、閱讀需求、處室具體例子、教師縮減自主時間及說明送達狀態。開場已確立臨時待機可能，R5只留補充筆記不否定A已發通知。四底層合計2、2、1、2，玩家四狀態總量0、−2、2、0。",
+  "causal32": "causalMatrix附32項證據。A發布的是可用時段，R8補答收件狀態。C只詢問範圍，R6實際收到單件回覆。D刪的是未發草稿，R2才取回開場預留的半小時，沒有暗示晚間輪班重新出現。",
+  "timeAndLaw": "限高一初班首次確定答覆期望，報到輪班已終止。是非急件，沒有以班級訊息代替即時求助；未知處室服務不作保證。家庭時間資訊只按本人自願提供內容處理。",
+  "duplicates": "摘要與全文比對T1-001至T1-018。近似T1-007但沒有跨班舊群紀錄、舊問題遺漏或截圖轉交，R2與R7直接結算教師可用時間。本稿探討首份可履行的答覆承諾。T1-015著重簽署資格，與發送和讀取時段無關。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "先公布白天與下一個上課日的固定答覆時段，接受家庭按自己的時間發送"
+      },
+      {
+        "id": 2,
+        "action": "提出首次可預約的短電話時段，避免把晚間即時回覆當成唯一選項"
+      },
+      {
+        "id": 3,
+        "action": "請承辦提供校務入口的收件提示範本，把送達與有人回覆分開"
+      },
+      {
+        "id": 4,
+        "action": "先向學校查明仍可由處室受理的事，擬出教師與處室各自負責的時間"
+      },
+      {
+        "id": 5,
+        "action": "邀家長先提供方便讀回覆的時段，導師只以現有工作安排確認可重疊的窗口"
+      },
+      {
+        "id": 6,
+        "action": "在首份班級通知示範晚間送出的非急件會如何排入下一個工作時段"
+      }
+    ],
+    "selectedIds": [
+      1,
+      5,
+      4
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 5,
+      "C": 4,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "reason": "公布非急件固定時段後，家長對下個上課日有預期，直接減少重複電話。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "reason": "A的固定時段不決定臨時資料領取，承辦仍可另外取消待機。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 1,
+      "reason": "已有新說明可讀，只有不確定的細節可能讓家長再追問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "reason": "固定答覆時間未必交代逾時責任，家長仍可要求解釋。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "reason": "定時答覆不妨礙家庭回報實際能讀取的時段。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "reason": "已發班級時段不會覆蓋處室的既有服務時間。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "reason": "無即時回覆的預期能降低重問，教師仍可能發現已送達的重複訊息。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "reason": "允許任何時段送件必須區別系統收到與按時查看，最直接引發澄清。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "reason": "在等待可讀時段結果時，家庭仍可相信暫時的既有口徑。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 1,
+      "reason": "詢問閱讀時間與校方晚間臨時待機是不同問題，仍可能取消。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "reason": "B尚須找重疊窗口，家長最可能問何時定稿。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "reason": "開放回報不等於有制度承諾，家庭仍會問最後的責任人。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 4,
+      "reason": "B直接問家長何時方便讀，最容易發現它不同於發送。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "reason": "蒐集閱讀時段可以和處室提供服務例子並存。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "reason": "多一輪家長來訊容易出現同件拆兩則，教師需用時間查對。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "reason": "可讀時段調查不會讓系統代答，必要時仍可說明收件提示。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "reason": "轉分工前家長仍可把非急件託教師確認，不會假設處室已答。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "reason": "C向處室核實範圍，最直接找出臨時資料待機已不需要。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "reason": "完整說明等處室回覆，由此容易出現家長督促何時完成。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "reason": "不同處室範圍還沒全部確認，家長可問原有班級收件決定的理由。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "reason": "查服務時段可能讓人提出閱讀限制，但這不是詢問原目的。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "reason": "C主動問有權窗口，最容易取得一件仍由原處室辦理的事。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "reason": "即使處室和導師分開，人可能重送而需要確認同件。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "reason": "家長可能把保留收件誤理解為已答，教師仍可另說明。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "reason": "刪除不能履行的承諾並明說輪班終止，最能使家長接受等候。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "reason": "原承諾被移除後同事可回問承辦，確認教師不必續留臨時待機。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "reason": "只說可收未說何時完整定案，家庭仍能追問下一步。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "reason": "改首份草稿後責任尚不完整，最可能引來家長要求解釋。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "reason": "向家長說明非即時後，家庭仍可回報自己的閱讀時間。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "reason": "輪班已停止和處室白天仍有服務可同時成立。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 1,
+      "reason": "已阻止無條件當日回覆，較少因此搶時間，但仍可能需核對重複訊息。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "reason": "教師已解釋能送件，家長仍可能進一步追問已送達是否算已答。",
+      "actionPreserved": true
+    }
+  ]
+}

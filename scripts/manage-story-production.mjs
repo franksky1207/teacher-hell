@@ -35,6 +35,7 @@ const usage=[
  'node scripts/manage-story-production.mjs reserve --ref REF --owner AI --seed S0001 --reason "..." [--apply --expect-revision N]',
  'node scripts/manage-story-production.mjs revise --ref REF --owner AI --file STORY.md [--reason "..."] [--apply --expect-revision N]',
  'node scripts/manage-story-production.mjs release|reject --ref REF --owner AI --reason "..." [--apply --expect-revision N]',
+ 'node scripts/manage-story-production.mjs revoke --ref REF --owner AI --reason "..." [--apply --expect-revision N]',
  'node scripts/manage-story-production.mjs lock --ref REF --owner AI --file STORY.md --review REVIEW.json [--apply --expect-revision N]',
  'note: G proposals/locks require T648 locked; SAMPLE drafts never enter production.'
 ].join('\n');
@@ -46,7 +47,7 @@ else{
   const topicText=await readFile(join(root,'docs','T1-T6-特定故事20主題與觸發日期.md'),'utf8');
   const seeds=seedCodesFromMarkdown(seedText),windows=readTopicWindows(topicText),topics=topicIdsFromMarkdown(topicText);
   if(seeds.size!==2400||windows.topics.size!==20||windows.days.size!==108)throw Error('來源資料數量異常，停止操作');
-  const mutating=['propose','reserve','revise','release','reject','lock'].includes(cmd);
+  const mutating=['propose','reserve','revise','release','reject','lock','revoke'].includes(cmd);
   const report=option('--json');
   if(has('--json')&&(!report||!['audit','duplicates'].includes(cmd)))throw Error('--json 只支援 audit／duplicates 的獨立報告檔');
   if(report&&[ledgerPath,lockPath,resolve(root,'data/story-production-ledger.json')].includes(resolve(report)))throw Error('報告不得覆寫帳本或鎖檔');
@@ -69,7 +70,7 @@ else{
    response.progress=ledgerProgress(ledger,{seeds,windows});
   }else if(cmd==='audit'){
    const problems=[];
-   for(const row of Object.values(ledger.candidates).filter(x=>x.status==='locked')){
+   for(const row of Object.values(ledger.candidates).filter(x=>['locked','revoked'].includes(x.status))){
     if(!row.manuscriptPath){problems.push({ref:row.draftRef,reason:'已鎖作品未記錄來源路徑'});continue}
     for(const [label,path,hash,extension] of [
      ['完整稿',row.manuscriptPath,row.manuscriptDigest,'.md'],
@@ -87,16 +88,16 @@ else{
      }catch(e){problems.push({ref:row.draftRef,reason:label+'無法稽核：'+e.message})}
     }
    }
-   response.audit={pass:problems.length===0,lockedFilesChecked:Object.values(ledger.candidates).filter(x=>x.status==='locked').length,problems};
+   response.audit={pass:problems.length===0,lockedFilesChecked:Object.values(ledger.candidates).filter(x=>['locked','revoked'].includes(x.status)).length,problems};
    if(problems.length)process.exitCode=1;
   }else if(cmd==='available'){
-   const taken=new Set(Object.values(ledger.candidates).map(r=>r.seedId).filter(Boolean));
+   const taken=new Set(Object.values(ledger.candidates).filter(r=>['reserved','locked'].includes(r.status)).map(r=>r.seedId).filter(Boolean));
    const wanted=option('--seed');
    if(wanted){
     if(!seeds.has(wanted))throw Error('未知種子 '+wanted);
     response.seedId=wanted;response.codes=seeds.get(wanted);
     response.status=taken.has(wanted)?'occupied':'available';
-    response.holder=Object.values(ledger.candidates).find(r=>r.seedId===wanted)?.draftRef||null;
+    response.holder=Object.values(ledger.candidates).find(r=>['reserved','locked'].includes(r.status)&&r.seedId===wanted)?.draftRef||null;
    }else{
     response.available=seeds.size-taken.size;
     response.note='未指定種子時只回傳數量；請依故事四碼因果自行挑選，不自動占用或指派易寫的種子';

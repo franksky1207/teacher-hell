@@ -1,0 +1,276 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "高一新班第一次互認正在發生，招生要求拿它回答未報到者的問題，教師要同時保有初次信任建立與如實告知。承辦解說既有窗口，沒有學生代表全班或授權招生。",
+  "fourCodes": "S2112由在場現任學生持有。R1自願私下給導師實況，R3支持先互認的立場，R4已寫並練習自述，R5要求教師解釋已做安排的範圍。",
+  "fourChoices": "shuf實抽4、3、5。A自願另約，B交不具名流程並照常互認，C改用已核實開班資訊。D暫掩門並拒絕當場點人，沒有代其他人同意發言。另三普通候選分別由教師到門外、先彙集問題及提供空白單。",
+  "eightResults": "八個結果分別是私下知悉、承辦答正式入口、學生支持、準備自述、追問範圍、同桌續做、改說明稿及留問題。四碼總量各2，玩家狀態總量0、−3、3、2。沒有人在本次回合取得實際公開同意。",
+  "causal32": "causalMatrix附32格。C本次排除現場見證，R4只為未來做本人自願準備。B已交門外流程，R7調整承辦解說措辭並不撤回書面步驟。D暫掩門，R8由成人轉問，沒有訪客入班。",
+  "timeAndLaw": "T1-1首週且新班互認未完成、招生訪客尚在教室之外。任一行動不令學生代表全班、不保證入學、不提供班級個人資料。學生的人際進度只由本人表述並限定使用。",
+  "duplicates": "摘要與全文比對T1-001至T1-017。T1-003也是首次認姓名但處理誰可替本人發音；本稿處理對外現場見證的真實性。T1-005涉及招生但以圖像、公開頁與個人同意為核心；此篇未拍攝、未交件，行動在成人能如何據實回答期待及學生能否自述。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "由導師到門外說明新班目前做到哪裡，請承辦自行照顧來訪家庭"
+      },
+      {
+        "id": 2,
+        "action": "請承辦在走廊先收家長問題，互認結束後再按問題轉達可說的部分"
+      },
+      {
+        "id": 3,
+        "action": "在門外放一張只寫今天互認步驟的說明，教室裡照原本節奏走"
+      },
+      {
+        "id": 4,
+        "action": "先問願意自述過程的學生，另約短時且不代表全班的說明"
+      },
+      {
+        "id": 5,
+        "action": "請今天的招生示例改用既已確認的開班資訊，不借用本班作現場見證"
+      },
+      {
+        "id": 6,
+        "action": "讓來訪家庭先看空白活動單，由承辦解說活動目的而不觀看學生"
+      }
+    ],
+    "selectedIds": [
+      4,
+      3,
+      5
+    ],
+    "finalChoiceMap": {
+      "A": 4,
+      "B": 3,
+      "C": 5,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "reason": "A開自願管道，學生容易先說自己準備到哪裡，仍可拒絕公開。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "reason": "A未邀家庭進班，承辦可轉而介紹既有管道。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "reason": "自願說明另約，學生仍可支持先維持同學互認。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "reason": "允許自述但不派任，最容易促使本人用空紙試念。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "reason": "提及自願登記可能被誤會為日後有輪值，學生可當面追問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "reason": "自願登記不撤掉互認，同桌可繼續確認名字。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "reason": "承辦暫未得到見證，仍可詢問導師是否能用準確的進度說法。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "reason": "現場不安排個別發言，承辦還能將問題轉給成人。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "reason": "B呈現活動不暴露名字，學生仍可私下補說自己進度。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "reason": "承辦收到步驟後仍可用正式支持管道回答家長疑問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "reason": "續做班上活動容易獲得認可，也可不另外公開表態。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 1,
+      "reason": "門外已取得流程資訊，當下自行準備見證的理由較少。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "reason": "交步驟給承辦或被誤認是固定做法，學生能問是否只限一次。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "reason": "教師明示照原活動，最容易接續同桌讀名牌。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "reason": "承辦見到可核實步驟，最容易想在原說明稿更新用語。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "reason": "已有門外的成人解說渠道，訪客所問可由承辦單題轉交。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "reason": "不借新班作見證使本人私下提供實況依然可行。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "reason": "招生被引導改用已確認訊息，最可能直接說既有校內入口。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "reason": "當事人會因明確卸下現場見證而支持留下班內空間。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 1,
+      "reason": "C這次排除本班見證，學生仍可練未來私人稿但不會送出。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "reason": "眼前見證取消，學生仍可能想知道之後有無要求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "reason": "C不需要學生對外說明，同桌仍可繼續活動。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "reason": "改採已核實內容直接把未完成的進度帶回準確措辭。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "reason": "成人仍可向導師問支持入口，無須找學生回答。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "reason": "D隔開注視後，學生較願意靠近說所知名字而不公開。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "reason": "暫掩門不影響承辦在走廊回答既有求助入口。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "reason": "D立即保住互認，學生最容易明說支持這項處理。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 1,
+      "reason": "眼下不點人回答降低準備對外說明的誘因，仍可自願留私稿。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "reason": "未先說明未來尺度，直接拒點代表容易引起詢問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "reason": "D當場請續做互認，讓同桌能直接把名牌轉回。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "reason": "當場先關注學生，之後承辦仍可問文字說法但不是直接處理。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "reason": "家庭仍可託承辦留一個問題，門沒再開也不用學生出面。",
+      "actionPreserved": true
+    }
+  ]
+}

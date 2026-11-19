@@ -139,7 +139,7 @@ export function validateLedger(ledger,{seeds,windows}){
    if(!seeds.has(r.seedId))throw Error('帳本出現未知種子：'+key);
    if(seedOwners.has(r.seedId))throw Error('種子重複占用：'+r.seedId);
    seedOwners.set(r.seedId,key);
-  }else if(r.seedId!==null)throw Error('未暫用項目卻持有種子：'+key);
+  }else if(r.status!=='revoked'&&r.seedId!==null)throw Error('未暫用項目卻持有種子：'+key);
   if(r.type==='G'&&!['rejected','revoked'].includes(r.status))GEntries++;
   if(!['locked','revoked'].includes(r.status)&&r.storyId!=null)throw Error('未鎖定候選不得持有正式故事ID：'+key);
   if(['locked','revoked'].includes(r.status)){

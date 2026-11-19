@@ -1,0 +1,276 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "報到家長提出額外材料時尚未成班，首次開班物資混送使基本領用與待核贈物被誤認成同一件。學生怕必須先簽名，家長想知道有無使用，導師只管班級領用及向有權窗口查證。",
+  "fourCodes": "S0149由在場事件中的已核對家長完整持有。R2明確對導師處理反感，R1調整原有期待，R4要求教師解釋已做決定及責任。R3只結算教師本人的11-1新增查核任務。",
+  "fourChoices": "shuf實抽4、3、6。A確認家長對卡的用意，B找承辦定位暫存，C調查當日需求以向校方取得基本品。D立即取下卡，三個普通項則沒有撤卡動作。另三普通候選是就原清單發放並交回箱、物件按來源分區、請承辦現場示範核對。",
+  "eightResults": "八個R分別改變家長期待、表達對教師不滿、增加教師核對工作、說明責任、啟動基本品領用、保留個人致謝、確認暫存、取得較低的當日用量。四底層各總量2，四狀態總量0、−3、3、2。",
+  "causal32": "causalMatrix保存32格。B索紀錄不等於箱已移走，R7才取得正式暫存去向。C按清單找基本品，R5可開始已核實部分，R8可下修需求。D拿下空白卡，R6個別口頭謝意不會復原署名要求。",
+  "timeAndLaw": "限T1-1首週第一次領開班材料且報到的額外箱仍待校方查受贈。全班的基本領用不經家長贈品換取，未擅自核捐、拆封、發給個人或代學生簽署。",
+  "duplicates": "摘要、全文比對前二十九篇。T1-009是個別選購意願被誤認為全班下單，不涉及校方正式受贈。T1-020署名壓力源於限制求助的班級共同承諾，本稿重點是基本用品與好意不能混作領取條件。T1-022的記錄追損傷基線，本稿確認物資來源與既有權利。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "照開班清單發基本材料，額外箱原封交回承辦確認"
+      },
+      {
+        "id": 2,
+        "action": "先在講桌按來源分區，向全班逐項說明何者可領"
+      },
+      {
+        "id": 3,
+        "action": "請承辦給待核贈物的暫存記錄，再向家長交代目前進度"
+      },
+      {
+        "id": 4,
+        "action": "先問家長空白卡原本用途，說明收件與學生署名分別處理"
+      },
+      {
+        "id": 5,
+        "action": "請承辦當場示範核對清單，教師記下尚未驗明的差額"
+      },
+      {
+        "id": 6,
+        "action": "先確認學生原先要在什麼時候用工具，再請校方安排基本供應"
+      }
+    ],
+    "selectedIds": [
+      4,
+      3,
+      6
+    ],
+    "finalChoiceMap": {
+      "A": 4,
+      "B": 3,
+      "C": 6,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "reason": "私下直接問卡的用途，家長最容易調整成等學校的正式回覆。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "reason": "解釋不代署時若只聽成暫不發，家長可能對教師回應不滿。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "reason": "私下詢問不分清單，但承辦仍可翻到未列明品項的資料。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "reason": "A直接把家長與署名引入對話，最可能被問責任去向。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "reason": "班上本可按基本清單走，A詢問家長不阻止先領。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "reason": "已拆開收件和署名，最容易有人說自己另想謝搬運。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "reason": "額外箱未發，承辦仍可另確認存放地點。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 1,
+      "reason": "討論卡的用途與課堂所需不同，學生仍可主動說明但誘因低。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "reason": "收到暫不發放狀態後，家長仍可放下手寫回應的期待。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "reason": "回報僅限狀態，家長可能感覺沒有理解其用意。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "reason": "向承辦索取紀錄直接暴露原清冊箱數與品項缺漏。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "reason": "暫存和核准是兩個責任，B的回覆很容易引起追問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "reason": "B先處理額外箱，基本清單仍可被核對和使用。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 1,
+      "reason": "查暫存不直接觸及謝意，仍可能有學生解釋想感謝搬運。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "reason": "明確索取暫存紀錄最容易得到指定去向。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "reason": "未優先盤點使用順序，但學生仍可另提今天哪些品不急。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "reason": "先問校方供應不代家長答謝，家長仍可自己改成等校方回覆。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "reason": "基本供應優先可能被理解為教師拒絕好意，仍可出現不滿。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "reason": "按當日需求查開班清單，很容易查到只記箱數而須補列的地方。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "reason": "C依原清單安排，家長仍可另詢問額外箱不發的依據。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "reason": "C已向校方請基本品，最利於承辦和導師先核實後領用。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "reason": "先問基本材料不妨礙一位學生口頭致謝。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "reason": "不挪用額外箱時承辦仍可指定暫存位置。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "reason": "先問實際要用哪一項，最容易得知紙張即可完成當前任務。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "reason": "取下謝卡讓家長有理由重新釐清並調整回應期待。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "reason": "D確實撤下卡，家長容易把教師只說暫不發解讀成拒絕好意。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "reason": "叫停簽卡不會解決清單缺欄，教師可另新增查對工作。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "reason": "教師當場決定不把卡當步驟，家長最容易要求說明這項決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "reason": "拿掉簽卡先決後，學生能立即詢問如何按原清單領用。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "reason": "D特別處理署名，學生也最容易澄清想謝的是搬運的人。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "reason": "保留箱子原封不妨礙校方另確認如何暫存。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "reason": "D先止住簽名，不直接核對用量，但同學仍可說工具不急。",
+      "actionPreserved": true
+    }
+  ]
+}

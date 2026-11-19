@@ -1,0 +1,276 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "新班首次互認時，成班影像被招生端拿來對外表示新生到齊，學生剛依報到說明認識校內紀錄用途。導師可調整教室動員與班內活動，公開頁面是否換版由承辦決定，任何選項都沒有代學生同意。",
+  "fourCodes": "S0417 四碼均由在場現任學生持有。R7肯定導師接納不入鏡的原則，R4實際用教師提供的互認方式，R1與R6提供或保留可用班牌素材，R3要求說明已進行的決定。",
+  "fourChoices": "六候選分別提物件版、分列兩用途、轉文字紀念、私下收偏好、交付非個資替代圖、詢問延期。用 shuf 抽得3、6、2。D撤下現場告示並肯定歸屬，A另開文字紀念，B保持原互認，C提出用途說明，四行動各有不同完成事實。",
+  "eightResults": "八個結果留下匿名素材、排除本班公開版位、完成說明、實作互認、收兩種需求、保留素材、肯定原則與版位待定八種不同事實。四碼總量2、2、1、2，四狀態總量0、−3、3、3。R4補上導師示意座位互認，直接支持安排配合結算。",
+  "causal32": "causalMatrix逐格核對。A當日沒有集合拍照，R5只提出另留影需求。B提出延後，R2承辦可拒絕等待並換版。C請說明用途，R6學生仍可保留圖。D撤告示後R8承辦標待確認是內部作業，沒有恢復教室動員。",
+  "timeAndLaw": "T1-1首週且首次成班互認，招生要求與報到用途僅按當面已知材料表述。使用目的分列，未滿足同意前不拍學生或上傳，也無強迫參加。R1僅以本人自願提供的無姓名新圖作班內素材。",
+  "duplicates": "摘要及全文比對已鎖四篇。T1-002字面命中0.078，該篇爭點是班籍清單與另一班尋人，此篇爭點是對外圖像與團體歸屬。T1-003也有學生可決定公開資訊，但處理同儕當面稱呼，沒有招生公播、媒介替代與交件承辦。T1-004是代表送件授權，與個人影像無關。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "先備一張只拍物件的替代構圖，請招生端確認能否採用"
+      },
+      {
+        "id": 2,
+        "action": "把班級紀念與公開介紹分別寫成欄位，交給招生端逐一說明用途"
+      },
+      {
+        "id": 3,
+        "action": "改用匿名文字記下全班成立，今天不集合拍照"
+      },
+      {
+        "id": 4,
+        "action": "先私下收集同學想怎樣留下紀念，暫不拍攝或上傳"
+      },
+      {
+        "id": 5,
+        "action": "提供不含學生資訊的教室局部構圖作公開版，班級影像另處理"
+      },
+      {
+        "id": 6,
+        "action": "先請招生端決定是否延後交件，教室繼續進行互認"
+      }
+    ],
+    "selectedIds": [
+      3,
+      6,
+      2
+    ],
+    "finalChoiceMap": {
+      "A": 3,
+      "B": 6,
+      "C": 2,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "reason": "老師已準備不署名的紀念紙，學生容易用另畫版提供只在班內使用的素材。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "reason": "承辦可在沒有新班合照時自行調整本次版位，匿名紙仍可保留。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "reason": "改成紙本剛改動同學原本的期待，當事人可問依據，但焦點是現成替代。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "reason": "回座後仍可開始彼此認名字，只是匿名紙是剛建立的主要活動。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "reason": "單用文字會讓想留下合照的人提出班內照片的不同需求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "reason": "有人願意用匿名紙，也有人會保留原稿，這項安排沒有要任何人交圖。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "reason": "重新回座讓人看出參與班級不必站進畫面，當事人可能肯定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 1,
+      "reason": "當日已取消集合，承辦仍可標原企畫待確認，但等待比換頁更少用途。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "reason": "繼續互認留住班內合作，學生可在過程中另留匿名班牌，並不等於處理了交件。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "reason": "承辦收到延期要求，也能決定不等這個班，原互認節奏不受影響。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 1,
+      "reason": "延期查詢把焦點移向交件時間，學生仍可問老師這樣決定的意義。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "reason": "教師已恢復互認，最容易讓學生在座位上實際完成問候。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 1,
+      "reason": "現場先繼續自介，想留影的人仍可之後提需求，時點較不直接。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "reason": "尚未決定如何紀念讓學生可以繼續保留手上的圖。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "reason": "未被召去合照讓同學能留座，學生可肯定教師先顧班內活動。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "reason": "延期本來就要承辦確認，留原期限並打電話是最直接的回應。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "reason": "用途分開後，學生可以把一份去姓名的稿只交班內，沒有開始拍攝。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "reason": "公開用途被單獨列出，承辦可從公開頁撤掉本班，教師書寫仍然成立。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "reason": "說明請求直接使學生注意老師實際決定了什麼，容易追問依據。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 1,
+      "reason": "教室先停在用途說明，仍可示意兩人互認，但該活動暫時不是重心。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "reason": "列出兩欄直接讓同學表達兩種不同的留下需求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "reason": "知道有公開欄位但詳細說明還沒到，學生更容易先收起原稿。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "reason": "暫停拍攝給退出時間，以下仍可由留座的學生肯定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "reason": "承辦可先確認交件規則再答用途，仍可能把班級項目標待確認。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "reason": "撤告示解除了外在動員，另交一張只在班內用的圖不會恢復告示。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "reason": "原動員告示已撤，承辦最有理由就當天改用其他版位素材。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "reason": "公開撤告示容易讓學生追問是否影響新班成立。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "reason": "撤告示後教室可以回到同桌互認，教師沒有把原互認排程當此行動的主事實。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "reason": "其他同學仍可主張班內自留的需求，撤告示只處理眼前這次拍攝。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "reason": "公開宣布退出自由後，學生可以保有素材，尚未有不同的交稿規則。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "reason": "當眾說明班籍歸屬與照片無關，最可能獲得學生對原則的肯定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 1,
+      "reason": "招生端仍可在未取得任何影像時內部標待確認，但撤下原告示降低等待動員的必要。",
+      "actionPreserved": true
+    }
+  ]
+}

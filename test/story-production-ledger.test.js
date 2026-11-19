@@ -713,3 +713,24 @@ test('T1-1 replacement 0031: all three mechanical stages and editorial review ar
  assert.equal(out.change.status,'locked');
  console.log('REPLACEMENT_SHA256',createHash('sha256').update(manuscript).digest('hex'),createHash('sha256').update(reviewText).digest('hex'));
 });
+
+test('formal T1-1 post-replacement ledger: 30 active, one revoked, SHA audit includes both',()=>{
+ const current=JSON.parse(file('../data/story-production-ledger.json'));
+ const summary=ledgerProgress(current,context),rows=Object.values(current.candidates);
+ assert.equal(current.revision,94);
+ assert.equal(summary.locked.T,30);assert.equal(summary.stats.revoked,1);
+ assert.equal(summary.seedStatus.unused,2370);
+ assert.equal(new Set(rows.filter(r=>r.status==='locked').map(r=>r.seedId)).size,30);
+ assert.equal(rows.filter(r=>r.status==='locked'&&r.date==='2026-07-20').length,6);
+ assert.equal(current.candidates['T-DRAFT-0001'].storyId,'T1-001');
+ assert.equal(current.candidates['T-DRAFT-0001'].status,'revoked');
+ assert.equal(current.candidates['T-DRAFT-0031'].storyId,'T1-031');
+ assert.equal(current.candidates['T-DRAFT-0031'].seedId,'S1392');
+ const result=spawnSync(process.execPath,['scripts/manage-story-production.mjs','audit'],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
+ assert.equal(result.status,0,result.stderr+' '+result.stdout);
+ const audit=JSON.parse(result.stdout).audit;
+ assert.equal(audit.pass,true);assert.equal(audit.lockedFilesChecked,31);
+ const seedStatus=spawnSync(process.execPath,['scripts/manage-story-production.mjs','available','--seed','S1392'],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
+ assert.equal(seedStatus.status,0,seedStatus.stderr);
+ assert.equal(JSON.parse(seedStatus.stdout).holder,'T-DRAFT-0031');
+});

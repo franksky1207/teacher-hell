@@ -1,0 +1,276 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "入學報到接待結束才第一次見正式導師，班牌沒變造成學生以為接待仍是導師。任命已確定，教師只決定如何表達並承接互動責任，不替接待同事再排時段。",
+  "fourCodes": "S0377由在場本人持有。R1主動改向導師約談，R2接受分流而調整原期待，R4要求將交接時點早列。R3增加查一份文件的工作，僅結算教師本人合法的11-1。",
+  "fourChoices": "shuf抽6、4、5。A給迎新一次收尾問答，B接受限於未決事項的私下查詢，C公布新入口且讓同事照原時段離開。D實際掛牌與當面承接班務，未答應替處室核定資料。",
+  "eightResults": "八項進展為改找新導師、接受分流、教師新增追查、早標交接、私人致謝、澄清牌義、同桌先互認、確認無回訪約定。R8改報到時，不暗示昨日必有報到。四項底層總量各2，四狀態合計0、−2、4、2。",
+  "causal32": "causalMatrix附32格。A一次舊問答不成立日後再到班的約；C同事可以離開，R5只容許學生日後自行致謝；D掛牌後R6補說明不撤銷正式交接，R3也不改原窗口核定權。",
+  "timeAndLaw": "限T1-1首週迎新接待教師首次將本班移交正式導師。兩人就眼前已知事實說明，不當眾攤開個別報到文件，不冒稱舊教師承諾再回班。",
+  "duplicates": "摘要全文比對前二十七篇。T1-004也是迎新角色止於新班成立，但爭點是學生有否班級代表權；此篇正式任命已存在，著重學生在兩位教師之間建立信任。T1-007處理資料遷移，這裡不搬舊群，只交接當面班務。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "請迎新教師用一句話說明他先前的臨時任務，由正式導師接過班務問答"
+      },
+      {
+        "id": 2,
+        "action": "先向班上說明自己可處理的事，再讓學生用一個具體例子確認問誰"
+      },
+      {
+        "id": 3,
+        "action": "把報到與班務分成兩欄，現場標明已確定的交接界線"
+      },
+      {
+        "id": 4,
+        "action": "請學生把原先口頭約好的未決事項私下交給新導師確認，不接管已結束的小事"
+      },
+      {
+        "id": 5,
+        "action": "自己先介紹之後固定能找到的地方與方式，迎新教師照原時間離開"
+      },
+      {
+        "id": 6,
+        "action": "讓學生先問迎新教師最後一個報到問題，結束後由新導師開始第一輪互認"
+      }
+    ],
+    "selectedIds": [
+      6,
+      4,
+      5
+    ],
+    "finalChoiceMap": {
+      "A": 6,
+      "B": 4,
+      "C": 5,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "reason": "從迎新最後一問轉入新導師時，學生最自然改向新導師約談。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "reason": "有一次舊問題再切換，讓學生清楚比較自己可接受的分工。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "reason": "允許問報到末題可能揭露未結文件，導師可另行追查。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "reason": "最後一問示範了轉換時點，學生仍可建議日後先標。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "reason": "留有結束問答的空間，學生最容易想到道謝而非留同事。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "reason": "互認開始後仍可指出班牌不是帶班者身分。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "reason": "A明定結束後開始互認，直接使同桌重接話題。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "reason": "末題之外未約再次進班，學生仍可問先前的意向。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "reason": "私下接受未決事項降低靠近新導師的負擔。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "reason": "B將待查與已結清事務分開，學生最能接受各自處理。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "reason": "B實際開放未決收件，最能產生需要查的文件。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "reason": "新增私下收件未交代何時轉換，學生可另提標註。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "reason": "未決事項不是致謝，仍可後續在課堂留一句。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "reason": "原班牌與成人責任需要分辨，教師仍可補上說法。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "reason": "先整理未決事項不影響學生找到機會向同桌自介。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "reason": "B未重開已結束事項，最易釐清原來回訪不是約好。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "reason": "說明找老師方式後仍可由學生實際約談。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "reason": "聯繫方式明確、同事按時離開，最容易接受雙入口。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 1,
+      "reason": "先把班務聯絡定好，仍可補未決文件但未直接收件。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "reason": "接待者要退出的時點被突顯，學生容易建議以後提早標註。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "reason": "同事即將離開，最容易出現學生想改用短致謝表達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "reason": "公布正式聯絡方式時，直接有機會把它放在班牌旁。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "reason": "同事離開不妨礙同桌互認，但C未指定活動轉折。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "reason": "請照原時間離開，最容易促使學生查問會不會再來。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "reason": "教師把眼前問題接到自己身上，最易讓學生願意下課靠近。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "reason": "班牌已由新導師接手，仍可說明報到文件由原窗口辦。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "reason": "教師承接班務後，仍可自己再查未果的報到單。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "reason": "以同一班牌當場換人，學生最容易提議下次先寫時點。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "reason": "接過班務不拒絕致謝，但此時注意重心已移開同事。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "reason": "掛班牌引出同牌不同職務的解釋，可另添正式聯絡方式。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "reason": "停止等另一個成人回座，使學生可回到已開始的同儕互認。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "reason": "掛牌明定老師身分但未定他人是否會回來，仍可求證。",
+      "actionPreserved": true
+    }
+  ]
+}

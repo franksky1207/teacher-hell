@@ -1,0 +1,276 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "新班由報到暫編切到正式班籍且兩班尚未認全人，才有同一名高一新生被兩邊當成首次點名對象。導師僅紀錄親見在場並聯絡同事，正式班籍由教務查證，承辦只能留待更正資料。",
+  "fourCodes": "S1897 四碼由現任學生完整持有。R1及R3是對導師能否妥善處理單據的信任，R5主動協助新班核對屬班務參與，R4接受分步辦理屬協商彈性，R6與R8各提出不同程序要求。",
+  "fourChoices": "六候選各處理教務通報、暫停車務轉送、隔壁查證、確立本班紀錄、本人界定資料、當面清點。shuf抽出3、4、6。情緒項當面停止學生往返並使本人留在講桌旁，可能降低猜疑也可能引來同學注意。",
+  "eightResults": "八項事實分別為交付單據、另一班停止尋人、保留單據、接受分別辦理、全班釐清用途、建議註記版次、取得回報單及要求師長往返。按種子碼總和依序1、2、2、3，玩家四狀態總和0、−2、2、0。R5已改為口頭說明教務名冊用途，避免同儕翻閱。",
+  "causal32": "causalMatrix保留所有32格。C交回的是承辦的暫編表，R1交出的是學生自己的乘車單，兩件事可並存。D中止當下跨班往返，R4保留學生自願另赴車務的可能，R8完成的是日後聯絡分工。",
+  "timeAndLaw": "窗口為暑輔第一週的新班首次到班核對，帳本07/20為配額。學生依正式編班在場，導師只記當下到班與名冊用法，跨班只向有核對責任的教師確認單筆差異，不把資料對全班公開，不替教務決定班籍。",
+  "duplicates": "摘要及全文均對照T-DRAFT-0001。檢索疑似分數0.113來自新班及首次核對等詞。前稿核實誰可證明公物件數，本稿處理暫編與正式班籍並行時的歸屬、知情及跨班通知。對照新池中姓名讀音與家長聯絡構想，本稿沒有命名或聯絡資格的爭議，R2及R7分別改變隔壁尋人與車務受理狀態。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "在教務名冊上註記目視到班，送單筆差異給教務查證"
+      },
+      {
+        "id": 2,
+        "action": "向校車端出示班別錯置的欄位，請它暫停轉送舊班資訊"
+      },
+      {
+        "id": 3,
+        "action": "請隔壁導師先確認有無收到自己的同名待核資料，自己保留本班觀察紀錄"
+      },
+      {
+        "id": 4,
+        "action": "在本班名冊封面寫明出勤只採正式名冊，另保存學生出示的乘車單有版本差異的事實"
+      },
+      {
+        "id": 5,
+        "action": "請本人私下比對乘車單，寫下願意交由教務查證的欄位"
+      },
+      {
+        "id": 6,
+        "action": "先在班上用座位逐一自報核對到班，再把暫編表收起交回原送件人"
+      }
+    ],
+    "selectedIds": [
+      3,
+      4,
+      6
+    ],
+    "finalChoiceMap": {
+      "A": 3,
+      "B": 4,
+      "C": 6,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "reason": "找隔壁釐清用途會讓乘車單成為可查證的補充，交單仍由學生決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "reason": "隔壁導師受到直接通知，有理由立即核對並撤下找人的便條。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 1,
+      "reason": "訊息只給隔壁導師，較少產生同儕議論，仍可能有人追問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "reason": "兩班確認正在進行，學生仍可提議先留班、另外問車務。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 1,
+      "reason": "大部分處理私下進行，同學較少注意兩張表，但剛才在門邊的對話能引發疑問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 1,
+      "reason": "跨班訊息說明版本有別，學生可能提出標日期，但兩表未在班前並列。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "reason": "隔壁收到通知後仍要把差異交回車務，送件人可直接留更正單。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "reason": "師長已主動聯絡，學生仍可能要求往後不要再叫自己兩頭跑。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "reason": "留下差異紀錄讓本人知道原件可能有用，私人交單仍可能發生。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 1,
+      "reason": "名冊註記先留本班，隔壁需自行查表後才會撤回找人。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 1,
+      "reason": "註記不需要學生公開說明，前排聽見開場仍可能追問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "reason": "到班與乘車差異分列，直接給學生把兩件事拆開的路徑。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "reason": "明定正式名冊用途能引出沒搭車者的疑問，但未組織全班自報。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "reason": "既有兩筆紀錄並列，版次缺失最容易被學生注意。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "reason": "車務承辦仍可依已記的單筆差異提供表單。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 1,
+      "reason": "教師已把兩事分開，學生仍可補要求師長接手，但暫時無須往返。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 1,
+      "reason": "先完成全班自報，個別單據比較少成為即刻焦點，仍可在點完後交付。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 1,
+      "reason": "教室內點名不會通知隔壁，另一班仍可能自己查出兩版差異。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "reason": "逐一自報較容易讓前排重新問版本，學生可選擇保留單據。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "reason": "已核對到班有利於分開辦理，但點名方式未特別處理車務。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "reason": "逐一自報讓未搭校車者立刻想到自己是否上榜。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "reason": "自報暴露清單用途差異，學生可能進一步提出標日期。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "reason": "承辦拿回原表時最有機會直接給一張單筆更正單。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "reason": "完成本班核對後仍有外部聯絡待辦，學生可表達不再往返的需要。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "reason": "導師阻止往返並讓本人靠近，提供保護和直接交單的機會。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "reason": "隔壁可能因等不到人而自行來查，核對仍需隔壁看自己的表。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "reason": "請本人到講桌使同儕注意力集中，可能讓學生收回單據。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "reason": "中止眼下往返不排除學生自選中午去車務查詢，班籍確認仍在本班。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 1,
+      "reason": "現場直接處理個人去留，較少機會讓全班逐一討論名冊用途。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "reason": "人在講桌旁可遞便條，但當下更關注歸屬與避免往返。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 1,
+      "reason": "車務仍在門邊可放表，導師先處理學生使立即交接的機率較低。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "reason": "導師已中止此次往返，使本人更能提出日後也由師長聯絡的要求。",
+      "actionPreserved": true
+    }
+  ]
+}

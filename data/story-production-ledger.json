@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 3,
+  "revision": 6,
   "candidates": {
     "T-DRAFT-0001": {
       "draftRef": "T-DRAFT-0001",
@@ -33,6 +33,38 @@
         "digest": "2c7293efed1fc42f4212b219e1344d0c24c5a9562ac22265c3dcf8fb4d18f333",
         "possibleDuplicateCount": 0
       }
+    },
+    "T-DRAFT-0002": {
+      "draftRef": "T-DRAFT-0002",
+      "owner": "ChatGPT",
+      "status": "locked",
+      "type": "T",
+      "topicId": "T1-1",
+      "poolId": "T1-1:single",
+      "date": "2026-07-20",
+      "tags": [
+        "G02",
+        "G08"
+      ],
+      "summary": {
+        "事件起因": "高一新班第一次用教務處的正式名冊核對到班。校車端帶來的報到暫編名單在班別上少了同一名學生，學生則拿著仍印舊班別的乘車單坐在新班。",
+        "核心衝突": "教師得讓學生知道自己確實屬於本班，又須把校車清單的錯置交給有權核對的人。首次建立出勤基準時，匆忙勾選可能會讓另一班繼續等人。",
+        "導師困境": "在兩種用途的清單第一次交會時，導師要決定怎樣記錄親見到班，以及誰先拿到足夠資料查證。",
+        "故事獨特性": "誤差來自迎新暫編名單切換為正式班籍，且兩班尚未完成第一次認人。責任在對帳和通知，不是學生遲到、誤搭車或物品交接。"
+      },
+      "seedId": "S1897",
+      "storyId": "T1-002",
+      "manuscriptDigest": "4e86f32a487c6bf1440a56cf5973a7cc71c873f21ecd154a7f0cafab980c0164",
+      "attempts": 1,
+      "reason": "內容及機械驗收後鎖定",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0002.md",
+      "review": {
+        "reviewer": "ChatGPT",
+        "verdict": "approved",
+        "filePath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0002.review.json",
+        "digest": "2c26f8653175daf4ddeb9a6d424adfacaa2b308b70924400088765a36faa7232",
+        "possibleDuplicateCount": 1
+      }
     }
   },
   "history": [
@@ -61,6 +93,33 @@
       "owner": "ChatGPT",
       "seedId": "S1392",
       "storyId": "T1-001",
+      "reason": null
+    },
+    {
+      "revision": 4,
+      "action": "propose",
+      "ref": "T-DRAFT-0002",
+      "owner": "ChatGPT",
+      "seedId": null,
+      "storyId": null,
+      "reason": null
+    },
+    {
+      "revision": 5,
+      "action": "reserve",
+      "ref": "T-DRAFT-0002",
+      "owner": "ChatGPT",
+      "seedId": "S1897",
+      "storyId": null,
+      "reason": "名冊錯置時，學生能否信任導師、投入新班核對、接受協商和提出程序調整直接影響查證結果"
+    },
+    {
+      "revision": 6,
+      "action": "lock",
+      "ref": "T-DRAFT-0002",
+      "owner": "ChatGPT",
+      "seedId": "S1897",
+      "storyId": "T1-002",
       "reason": null
     }
   ]

@@ -1,0 +1,276 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "初接教室時正式保管責任正要移轉，迎新承辦又尚未結清學生臨時持有。導師可接收正式鑰匙、暫停轉交與洽詢，總務有權查領用，舊協助者沒有現任保管權。",
+  "fourCodes": "S1627由在場現任學生持有。R4是針對教師處理的反感，R3判斷通道阻塞，R2支持不再轉交和另談早到，R1要求新增歸還憑據程序。",
+  "fourChoices": "shuf抽1、4、6。普通項各處理分開登錄、先問等候容量及由導師實際承担開門。情緒項擋下轉交並暫留簽收單，沒有代辦總務回收。C補明臨時鑰匙不轉交，使R2支持有共同前提。",
+  "eightResults": "八個R各是回條請求、立場支持、通道改善、學生不滿、找到原領用、實到時間、位置排除及承認貢獻。任何結果都不判定臨時鑰匙已繳回。四碼總量各2，四狀態總量0、−3、3、1。",
+  "causal32": "causalMatrix附32格。D暫留未簽正式單，R5僅找到臨時紀錄而未代簽。C承擔本週開門，R7仍可查比教師更早到者的位置。B即使取得早到人數，R6補到校時間仍有新增資訊。",
+  "timeAndLaw": "T1-1首週首次接教室，學生只知道本人拿到鑰匙的經過，教師未擅自給通行權或承諾任何未知等候區。A及C正式點收有現場總務確認；其餘可先處理安全需求及責任釐清。",
+  "duplicates": "摘要與全文比對T1-001至T1-010。T1-004同有迎新臨時身分，該篇處理代全班簽署與行政排序，此篇處理校舍進入、交付點收與早到安全。T1-001需追物品件數，本篇無遺失推定，原領用紀錄與實體通行有獨立影響。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "把臨時鑰匙的歸還和正式鑰匙點收分成兩筆，請總務當場查臨時紀錄"
+      },
+      {
+        "id": 2,
+        "action": "邀總務和舊委託學生當面交接，讓學生能親眼確認誰今天收件"
+      },
+      {
+        "id": 3,
+        "action": "先表明早到者到既有值勤室前等候，請校方確認正式開門時段"
+      },
+      {
+        "id": 4,
+        "action": "從班上收集可能較早到的人數，請值勤人員先就等候容量提供方案"
+      },
+      {
+        "id": 5,
+        "action": "先向迎新承辦取得舊託付的用途和期限，再把憑據送總務查核"
+      },
+      {
+        "id": 6,
+        "action": "自己接收正式鑰匙並宣布本週僅由教師開門，另請總務聯絡學生收回臨時鑰匙"
+      }
+    ],
+    "selectedIds": [
+      1,
+      4,
+      6
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 4,
+      "C": 6,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "reason": "另立待查紀錄會讓學生知道歸還還需正式留痕，容易要求回條。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "reason": "暫不轉學生讓本人可以支持界線，但早到還沒有明確方案。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 1,
+      "reason": "登記工作主要在桌邊，仍可能有同學自行移去看門口但不是焦點。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "reason": "分立待查可保護學生，但若仍對本人問很多次，仍可能生氣。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "reason": "請總務專查臨時項，最直接促成翻看迎新領用單。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "reason": "還未討論早到，人數與到校時間可在等待查核時補上。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 1,
+      "reason": "值勤未直接收到請求，若早到疑問當場轉達仍可能回覆。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "reason": "點收不抹去舊協助，教師仍可另外向全班表達謝意。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "reason": "先安排等候不會排除後續本人要求歸還留痕。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "reason": "說明鑰匙不轉交並先照顧需求，學生可能支持區分兩件事。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "reason": "問早到人數容易讓同學去確認可能站的位置，直接產生通行觀察。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 1,
+      "reason": "焦點放在使用者與場地，當事人仍可能覺得教師追問，但機率較低。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 1,
+      "reason": "總務在場可自行翻迎新資料，B沒有直接請查號。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "reason": "早到人數彙整時，個別實到時間容易浮現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "reason": "正式向值勤請安排，直接可能得到原長凳不適合的回覆。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "reason": "原協助者未被要求繼續開門，老師仍可向他道謝。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "reason": "回收請求直接交總務，本人仍可主動要求收件人的回條。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "reason": "教師接下開門責任且不讓學生接持，最容易得到明確支持。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "reason": "仍有人要等上班時間，學生可提醒門口通道。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "reason": "接了正式鑰匙仍有待問的舊過程，本人可對老師的詢問表達不滿。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "reason": "總務受請回收後可在查資料時找出原領用單位。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "reason": "教師要知道何時到校開門，最容易聽到兩班車的實際差距。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "reason": "教師負責開門仍不保證早到全有位置，值勤可補這項限制。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "reason": "新責任轉給教師後，仍可以向原協助者致謝。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "reason": "未簽收停在桌上，學生最容易要求至少給自身歸還的紀錄。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "reason": "停轉可被學生支持，即使他對是否立即正式點收沒有意見。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 1,
+      "reason": "眼下注意簽收，仍有人可移去門口觀察，但直接誘因較低。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "reason": "公開等待舊託付的解釋可能讓學生覺得矛頭對著自己。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "reason": "明確要求說清舊委託，總務最有動機先找迎新工作單。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 1,
+      "reason": "簽收暫停較少立即討論車班，學生仍可能自己提早到需求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 1,
+      "reason": "值勤未直接被請求，但可能因班上轉問而說明場地問題。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "reason": "叫停接力容易被誤解為否定先前勞動，促使教師當面區分。",
+      "actionPreserved": true
+    }
+  ]
+}

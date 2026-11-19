@@ -1,0 +1,276 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "高一新班首次用班級名義展示文字，原示例在班尚未成立前就印好，這時才有誰為第一句代表文字負責的問題。導師能管提交、學生能決定自己的文字，承辦管理收件而非代同意。",
+  "fourCodes": "S1376四碼由在場現任學生持有。R1敬重不代辦表態原則，R2質疑看板能否明白表示代表範圍，R3認可經作者認可才用，R4實際完成和交出草稿給導師核對。",
+  "fourChoices": "shuf抽6、1、2。A設多目標版位和逐句許可流程，B班級宣言留白並限定個人草稿留班，C將客觀版樣送請承辦。D實際遮住舊宣言並暫停用原版送件，沒有要求任何人寫一句替代。",
+  "eightResults": "八個R為敬重原則、展示疑慮、承認作者選擇、實際投入草稿、保留原目標的個人立場、回覆收件、客觀資料提案與保障未投稿者。四碼各總量2，四狀態總量0、−2、4、2。",
+  "causal32": "causalMatrix保存32格。C請承辦收客觀版樣，R4只交紙給教師而未作對外展示。B留全班欄空著，R7只提出事實版而沒改稿。D遮原句，R5本人私下表態不恢復全班宣言。",
+  "timeAndLaw": "T1-1首週首次交校內介紹牌前。原話未公開，任何個人文本留在班內核對，作者可退出，匿名與署名均不代願意公開。未將個人的目標當成行政既有要求。",
+  "duplicates": "摘要與全文比對前二十六篇。T1-020也是預印文字，但處理求助權及已簽名者的保管，此篇是公開作品的作者及其代表範圍。T1-018重點是訪客在門口等現場答覆，未涉及編輯或版位。T1-005是公開影像與歸屬，沒有文字作者責任。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "將固定全班欄先暫留空白，另外開放學生自選署名的個人句子"
+      },
+      {
+        "id": 2,
+        "action": "請承辦接受只寫班級客觀資料的版面，不用一句話概括意願"
+      },
+      {
+        "id": 3,
+        "action": "提供當場看得見的不同文案，請學生逐條標記願意署名的部分"
+      },
+      {
+        "id": 4,
+        "action": "把原句標作承辦示例、附在可查的資料夾，展示牌改用學生自己寫的文字"
+      },
+      {
+        "id": 5,
+        "action": "創作與展示分成兩步，先在班上完成自願草稿，下次逐人確認使用許可"
+      },
+      {
+        "id": 6,
+        "action": "把不同目標分成不同欄位，請各欄只採用作者同意公開的一句"
+      }
+    ],
+    "selectedIds": [
+      6,
+      1,
+      2
+    ],
+    "finalChoiceMap": {
+      "A": 6,
+      "B": 1,
+      "C": 2,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "reason": "按不同目標分欄直接讓學生看見作品不由全班代言。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "reason": "每欄都會出現在有班名的牌上，更容易引起代表範圍的疑慮。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 4,
+      "reason": "逐句確認正是學生可明確接受的原則。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "reason": "實際有收件管道使學生願意先交可核對而不准展示的草稿。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "reason": "分欄容許有人把原句的目標用自己的名義留下。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "reason": "已開收件但稿件未定，承辦仍可追詢第一批。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 1,
+      "reason": "A正在按個人目標分欄，仍可提出事實標題，但不是直接需求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "reason": "收稿設同意條件，仍可由沒投稿者問是否必須參與。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "reason": "全班欄留白而另寫個別稿，最容易顯出對不同意願的重視。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "reason": "個人草稿尚不交，但將來若放上有班名的牌依然可能被誤讀。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "reason": "要求個人以自己名義寫，容易得到本人確認的認可。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "reason": "B專開班內草稿，學生可實際寫下限制後交教師查對。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "reason": "本班欄空著不妨礙喜歡原句意義的人另署名提供個人文字。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "reason": "首批未必有足夠文字，承辦最有理由直接追交件。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "reason": "即使留白，學生仍可建議先寫班級名稱及週次。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "reason": "公開可自己選署名的同時，未寫的人容易問可不可以不交。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "reason": "先交事實版不會讓學生被當成有共同目標，仍可能獲得肯定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "reason": "C將班名作版面主體，直接讓學生注意作者身分是否還會混淆。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "reason": "客觀版不收個人句，但學生仍能接受其他日後作品應先確認。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 1,
+      "reason": "已選客觀版降低當下交文意願，仍可為未來先寫私稿。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "reason": "暫時排除學生目標，喜歡原句者仍可自行說出個人理由。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "reason": "客觀版只請求收件，承辦最有理由確認是否能先收及交期。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "reason": "從版面事實切入，最自然收到一筆可查的客觀資訊提案。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "reason": "客觀版不要求參加，學生仍可向導師求證能否不交。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "reason": "D撤原宣言直接守住沒有經過同意不可代言的原則。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "reason": "原句遮住後，學生仍可問下一版怎樣清楚標示作者範圍。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "reason": "已知原文不足以代表全班，教師可補說由本人確認。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "reason": "D沒有開收稿，學生仍可自願另寫供教師看。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "reason": "原句被擋下使喜歡者更想說明目標確是本人所想。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "reason": "遮掉原先內容未提供新成品，最可能立即被承辦問交哪一張。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "reason": "停交宣言仍可收到只用事實之提案。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "reason": "D直接否決替人表態，沒有稿件的人也可因此問是否可以不交。",
+      "actionPreserved": true
+    }
+  ]
+}

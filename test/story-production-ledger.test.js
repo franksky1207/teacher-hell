@@ -690,3 +690,26 @@ test('post-lock revocation keeps historical ID and SHA, restores quota and seed 
  const broken=structuredClone(next);broken.candidates['T-DRAFT-001'].revocation=null;
  assert.throws(()=>validateLedger(broken,context),/撤銷作品缺少/);
 });
+
+test('T1-1 replacement 0031: all three mechanical stages and editorial review are lockable',()=>{
+ const storyPath='../content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0031.md';
+ const reviewPath='../content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0031.review.json';
+ const manuscript=file(storyPath),reviewText=file(reviewPath),review=JSON.parse(reviewText);
+ for(const stage of ['summary','choices','full']){
+  const result=validate(manuscript,stage);
+  assert.equal(result.mechanicalPass,true,stage+' '+JSON.stringify(result.errors));
+ }
+ assert.equal(review.causalMatrix.length,32);
+ const ref='T-DRAFT-0031';
+ const proposed=prop(initialProductionLedger(),manuscript,ref).ledger;
+ const reserved=reserve(proposed,ref,'S1392').ledger;
+ const out=act(reserved,'lock',ref,{
+  markdown:manuscript,review,
+  reviewFile:'content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0031.review.json',
+  reviewDigest:createHash('sha256').update(reviewText).digest('hex'),
+  manuscriptPath:'content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0031.md',
+  manuscriptDigest:createHash('sha256').update(manuscript).digest('hex')
+ });
+ assert.equal(out.change.status,'locked');
+ console.log('REPLACEMENT_SHA256',createHash('sha256').update(manuscript).digest('hex'),createHash('sha256').update(reviewText).digest('hex'));
+});

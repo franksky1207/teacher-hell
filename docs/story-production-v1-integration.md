@@ -63,3 +63,12 @@
 - 對照main與本分支的PR差異，確認只含白名單。以Node 24.19.0執行兩份定向測試，核對CI觸發分支及工具、資料、測試路徑。
 - `package.json`已列入既有 `verify.yml` 的 main PR 路徑，建立PR時會觸發其既有 Foundation checks。定向量產工作流程的觸發調整及驗證留第14批。
 - 第13批僅執行靜態驗收，保留既有驗收的172項結果供歷史追溯。 [第12批固定版紀錄](https://github.com/franksky1207/teacher-hell/blob/a850d7009dece4d019fbf3b7fc8ff02b7b5b7be8/docs/PLAN-故事量產V1-15批收斂整合計畫-20261119.md)
+
+## 第14批正式CI與差異驗收
+
+- 基準 `main` 為 `5293a9f2b6bfec8a4774630d78baa97a9fffae8c`。本批從 `6ecdf6be8a32a62ef5b411c1b28de93d41ef7da8` 開始，正式CI驗收提交為 `27bf54f352468fac1291cdedfde9fca818eadf6e`。驗收紀錄另以僅修改本檔的提交留存。
+- 最終三點差異為18新增、3修改、0刪除，21檔均在白名單。第14批新增專用workflow，為舊17D加轉接註記，並把06的CLI說明改指本分支。未修改工具、測試、遊戲引擎、介面、校曆、存檔或部署設定。既有 Foundation checks 與舊 content:audit 保留。
+- 核對82處相對連結與錨點、2,400個種子的ID／四碼／順序、48碼各200次及兩層配對分布。T20保留20主題、119主題日期配對、108日及26池。正式帳本前後為同一Git blob `08112447768f4927222206a2e3e15bb121ef6c8b`，schemaVersion 1、revision 0、候選及歷史均空，T 0／648、G 0／1752、全庫0／2400。
+- **Story production V1 focused checks** 由整合分支push自動觸發。查核日誌中的實際checkout SHA與Node 24.19.0，工作結論為 **success**。執行 `node --test --test-isolation=none test/story-draft-validator.test.js test/story-production-ledger.test.js`，共172項，通過172、失敗0、跳過0、取消0，正式帳本差異檢查通過。 [GitHub Actions run 44541266407](https://github.com/franksky1207/teacher-hell/actions/runs/44541266407)
+- 專用流程已設定整合分支push、針對main的PR與手動觸發。本批實驗證push。GitHub要求手動觸發的workflow先存在於預設分支，現階段可從已完成run手動重跑。未建立PR。
+- 第15批先核對main與整合分支的最新SHA，確認CI驗收提交至當前分支HEAD僅有本檔紀錄差異，再依授權建立PR並核對PR事件檢查。P2保底、抽篇配置、三年平衡、選角極性映射、遊戲接線與實際故事品質仍屬各自後續工作。

@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "revision": 90,
+  "revision": 91,
   "candidates": {
     "T-DRAFT-0001": {
       "draftRef": "T-DRAFT-0001",
       "owner": "ChatGPT",
-      "status": "locked",
+      "status": "revoked",
       "type": "T",
       "topicId": "T1-1",
       "poolId": "T1-1:single",
@@ -32,6 +32,10 @@
         "filePath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0001.review.json",
         "digest": "2c7293efed1fc42f4212b219e1344d0c24c5a9562ac22265c3dcf8fb4d18f333",
         "possibleDuplicateCount": 0
+      },
+      "revocation": {
+        "revision": 91,
+        "reason": "核心衝突是共用物品交接責任與簽收爭議；移至其他學期首次實施交接時仍成立，不符合T1-1首次進班不可替代的時間資格"
       }
     },
     "T-DRAFT-0002": {
@@ -1799,6 +1803,15 @@
       "seedId": "S0149",
       "storyId": "T1-030",
       "reason": null
+    },
+    {
+      "revision": 91,
+      "action": "revoke",
+      "ref": "T-DRAFT-0001",
+      "owner": "ChatGPT",
+      "seedId": "S1392",
+      "storyId": "T1-001",
+      "reason": "核心衝突是共用物品交接責任與簽收爭議；移至其他學期首次實施交接時仍成立，不符合T1-1首次進班不可替代的時間資格"
     }
   ]
 }

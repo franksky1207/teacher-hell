@@ -1,0 +1,276 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "高一新班從報到時可各自辦理轉入第一段共同活動，舊紙仍可見，學生是照過時指示行動。導師有本班去向確認責任，不判定私人理由，也沒替任課教師同意。",
+  "fourCodes": "S0061由本班學生完整持有；R1表現信任、R2接受通則、R3共同釐清訊號。11-1在R5只結算教師本人新增待整理和轉達的任務負荷，未給教師NPC關係碼。",
+  "fourChoices": "shuf抽6、3、1。普通項分別為跨教師協調兼當天私下處理、門口確認位置、手勢與私下核對。情緒項撤下舊告示，止住眼前離開。備選另有並列規則、必要文字及原座舉手。",
+  "eightResults": "八個R各增私下說明、原則認可、協作示範、釐清另一張紙、教師新增任務、學生自願回座、後排提醒障礙及文件先查。修清R5新增工作內容。四底層欄各總量2，四狀態總量0、−3、3、0。",
+  "causal32": "causalMatrix含32格。C已示範注意手勢，R3確認注意不同於許可。D撤的是門口紙，R4保留同學簡章的存在。A已送邀請，R5實際新增要整理的內容而非再次寄邀請。",
+  "timeAndLaw": "僅在T1-1首週且報到指引第一次明確切換成共同活動已知規則時發生。無緊急醫療所致離席。去向僅由教師按必要範圍確認，並避免要求口頭公開私人理由。",
+  "duplicates": "摘要與全文比對T1-001至T1-015。T1-008處理整班走班的搭配與路段，T1-011處理鑰匙保管、何人能開門；本篇是活動進行時確認個別離席與返回口徑，沒有班級帶路或移交鑰匙。T1-015字面命中只因初始責任分立。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "設兩種手勢並約定離席去向只在桌邊小聲確認"
+      },
+      {
+        "id": 2,
+        "action": "先把報到指示和上課時段的通則並列說明，再請學生演一次"
+      },
+      {
+        "id": 3,
+        "action": "在教室門口畫出等老師確認的位置，讓已走到門邊的人有辦法先接話"
+      },
+      {
+        "id": 4,
+        "action": "設一張可交到講桌的空白小紙，讓不方便開口的人寫必要去向"
+      },
+      {
+        "id": 5,
+        "action": "只先示範原座舉手，拒絕口頭說明原因也可私下確認去向"
+      },
+      {
+        "id": 6,
+        "action": "請任課教師一同試行同一個離席確認流程，先對齊必要的資訊範圍"
+      }
+    ],
+    "selectedIds": [
+      6,
+      3,
+      1
+    ],
+    "finalChoiceMap": {
+      "A": 6,
+      "B": 3,
+      "C": 1,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "reason": "A先提供私下確認，學生可依已開放的辦法說明必要地點。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "reason": "明示私下確認給人可遵守的課堂原則，學生可當面接受。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "reason": "先對齊任課教師的共同方式留有討論教師何時算已確認的空間。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "reason": "私下規定與舊簡章並存時，同學仍可能找到另外一張紙。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "reason": "A剛開始跨課協調，同學追問使新的整理及轉達工作最自然。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "reason": "教室內已有詢問入口，門邊的人也可選擇回原位下課再問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "reason": "要求到桌邊前仍須使教師注意，後排可提出如何先開口。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "reason": "A已提供私下入口，最利於學生先出示文件而不先離開。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "reason": "門邊停下由教師低聲核對，學生容易採用相同行動提供必要地點。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "reason": "設定停留位置後可認可教師先確認去向的規範。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "reason": "門邊位置本身不代表許可，最直接引起師生試出兩種狀態。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "reason": "B指定新位置未撤報到簡章，同學仍可提出原紙疑問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "reason": "B只處理現場確認，換教師時仍可顯出新協調工作。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "reason": "攔住已到門口的學生，最有機會讓本人先評估是否等下課。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "reason": "規則著重門邊，後排的人更需要問能否先讓老師注意。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "reason": "有停等位置可在出門前用一份紙問清楚要不要去。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 4,
+      "reason": "低聲確認配合手勢，當事人容易放心說明必要地點。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "reason": "手勢加上教師確認把規範立即說清楚，學生可認可。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "reason": "不同手勢需要共同理解，最直接促使學生提議試演。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 1,
+      "reason": "C已給新出入方法，仍可能有人主動提別的報到紙，但較不直接。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "reason": "手勢換課時也需說明，問到不同教師會新增整理工作。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "reason": "即使會示意，門邊學生仍可選自己回到原座。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "reason": "後排看不見或表示不易被看見，最易在手勢方案被察覺。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "reason": "手勢沒有阻止學生先查非急文件，後續可改到下課。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "reason": "撤舊紙並未指定資料要全班聽，學生仍可私下向教師說明。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "reason": "舊規則被當場收起，最能讓學生釐清不再自由通行的原因。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "reason": "阻止當下離開後，師生仍能追加示範確認步驟。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "reason": "紙條當場撤除，其他學生最容易想起自己持有相同舊簡章。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 1,
+      "reason": "教師先處理眼前的門口，較少立即談下一節任課共用流程。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "reason": "原先以為可離開的學生收到明確更正，最易自行決定下課再去。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 1,
+      "reason": "眼下重心在門邊和舊紙，後排仍可提出提示問題但不是直接誘因。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "reason": "D中止直接依報到流程出去，其他人還可拿文件讓老師看。",
+      "actionPreserved": true
+    }
+  ]
+}

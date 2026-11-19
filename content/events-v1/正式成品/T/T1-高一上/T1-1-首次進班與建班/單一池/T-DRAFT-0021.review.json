@@ -1,0 +1,276 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "高一新班從報到當天容許暫放轉為首次正式配置，在容量不足、實物尚留原位時最有必要及時處理。學生只期待原物被保留，教師可安排班內使用但無權動別班櫃。",
+  "fourCodes": "S1728四碼由在場現任學生合法持有。R1主動約私下談，R2實際採用暫放，R3取消原要為分配留校的時間增加餘裕，R4要求新設補登程序。",
+  "fourChoices": "shuf抽6、1、4。A查可用範圍，B匿名統計尺寸與用量，C讓物主自行確認與拿取後數空格。D撤掉額滿紙條並否決先占的效力，但原物留原位。其餘普通案為暫用區、輪用表及不同需求分流。",
+  "eightResults": "八個R分別是約談、實際暫存、避免等待、補登建議、原物線索、尺寸限制、自願拿取及排除別班櫃。將R3改為不必等下課後登記，與R2取得單次寄放有實質差異。四碼各總量2，四狀態總量0、−2、3、1。",
+  "causal32": "causalMatrix有32筆。C只讓本人取物，R5不由同學開袋。D撤掉滿格告示而保留原物，R7是本人自行取物。A未承諾固定位置，R2僅先使用確認過的空格。",
+  "timeAndLaw": "在T1-1首週初次配置的必要條件下，原暫放不作為長期資格。未開啟他人物品、未移往未核准公共區，也不公開學生通勤資料。承辦只核對可用容量。",
+  "duplicates": "摘要和全文比對T1-001至T1-020。T1-006同有初始分配，但以光線、座次及報到號碼誤解為主。此篇已有實物與不足的有限跨日容量，重點是取回權、需求用量和是否把暫放固化。T1-001為公物件數作證，沒有私物寄放安排。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "先問需要持續寄放的人數，用無記名的尺寸統計規劃容量"
+      },
+      {
+        "id": 2,
+        "action": "先從空格留出一小區作當日輪用，原暫放物等待本人處理"
+      },
+      {
+        "id": 3,
+        "action": "依物件取用頻率提供隔日輪用表，開放本人查是否符合自己的需要"
+      },
+      {
+        "id": 4,
+        "action": "讓已有物件的學生從原格自取，先確切點出空格再做首批分配"
+      },
+      {
+        "id": 5,
+        "action": "把通勤寄放與上課臨時使用分成兩種申請，先收自願申請不當場分配"
+      },
+      {
+        "id": 6,
+        "action": "與校務承辦查教室有無其他核准的共用收納，再決定本班能承諾多少"
+      }
+    ],
+    "selectedIds": [
+      6,
+      1,
+      4
+    ],
+    "finalChoiceMap": {
+      "A": 6,
+      "B": 1,
+      "C": 4,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "reason": "向承辦查容量未問個人背景，當事人仍可私下談拿取需要。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "reason": "外部容量未定，不妨礙用眼前確定空的一格單次暫放。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 1,
+      "reason": "尋找額外格仍有等候，教師可以明說放學後不開登記，但眼下重點在查空間。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "reason": "既然沒承諾一人一格，學生仍可爭取另一個登記機會。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "reason": "等待處室時可另收到認領線索，不代表容量已增加。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "reason": "查新增容量不影響同學先測現有格深。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "reason": "校方還未確認新空間，物主仍可自願縮減暫放。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "reason": "A明確向承辦查核，最直接獲知走廊櫃已由別班使用。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "reason": "匿名統計沒有追問家況，較能促使本人私下補說。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "reason": "統計與一次性借放可以各自執行，借用不決定固定權利。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 1,
+      "reason": "B仍蒐集資料，教師可明定不在下課後分配，但原行動未處理日程。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "reason": "不記名的一次統計容易讓學生想起缺席者還沒填。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "reason": "統計不記名，旁人若認得原物仍可叫本人拿。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "reason": "使用頻率與尺寸資料直接使人測量格子能不能容納。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "reason": "量了需求仍可由物主取走今天不需要的東西。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "reason": "只查本班尺寸不妨礙承辦另外提醒櫃子不是本班的。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "reason": "公開點數不需要說個人經歷，學生可另約私談。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "reason": "C當場清點確定空格最容易啟動實際暫放。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "reason": "點收讓人看見容量還不足，最有理由清楚結束當日登記。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "reason": "清出空格並未決定固定使用者，學生仍能要求補登。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "reason": "原物由本人取走的程序直接使旁人想起未到的可能物主。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "reason": "現場查數時最容易發現長件不能直立，需加一道尺寸判斷。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "reason": "邀物主拿取促使他們先取不需繼續放的私物。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "reason": "本班格數不足可再聽承辦說走廊櫃不可列入。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "reason": "D移掉被拒絕的印象，讓通勤者較能主動靠近導師。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "reason": "原物留原處不排除用已確定空的一格短暫寄放。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 1,
+      "reason": "撤下紙條沒有安排分配時點，教師仍可稍後宣布不必留下等。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "reason": "不因先來取得優先正鼓勵提出缺席及晚到者的補登。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "reason": "D保留原物使同學可從原位看見袋子，轉請本人認領。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "reason": "否決滿格不是測量行為，現場仍可補核可用尺寸。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "reason": "拒絕先到優先同時不翻動原物，物主較能接受自己拿走一件。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 1,
+      "reason": "D先處理有無優先，非向處室提容量查詢，仍可聽到承辦提醒。",
+      "actionPreserved": true
+    }
+  ]
+}

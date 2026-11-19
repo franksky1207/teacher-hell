@@ -262,18 +262,18 @@ const windowDraft=(topicId,poolId,id='T-DRAFT-001')=>draft(id).replace('T主題I
 const windowStory=(topicId,phase)=>{const pool=windows.pools.get(topicId+':'+phase);return {type:'T',topicId,poolId:pool.poolId,date:[...pool.dates][0]}};
 const query=(story,date,extra={})=>queryTWindowEligibility(story,{date,topicId:story.topicId,phase:windows.pools.get(story.poolId).phase,grade:Math.ceil(Number(story.topicId[1])/2),...extra},windows);
 test('batch10 all T20 pool partitions preserve 119 pairs / 108 days and phase distinctions',()=>{
- assert.equal(windows.pools.size,26);assert.equal(windows.topicPools.size,20);
+ assert.equal(windows.pools.size,28);assert.equal(windows.topicPools.size,20);
  for(const [topicId,dates] of windows.topics){
   const poolDates=windows.topicPools.get(topicId).flatMap(id=>[...windows.pools.get(id).dates]);
   assert.deepEqual(new Set(poolDates),dates,topicId);assert.equal(poolDates.length,dates.size,topicId+' disjoint phases');
  }
- for(const [topicId,before,after] of [['T1-3',2,2],['T1-4',5,2],['T2-1',5,2],['T3-1',5,2],['T4-1',2,2],['T5-1',1,1]]){
+ for(const [topicId,before,after] of [['T1-3',2,2],['T1-4',5,2],['T1-5',4,4],['T2-1',5,2],['T3-1',5,2],['T3-2',4,4],['T4-1',2,2],['T5-1',1,1]]){
   assert.equal(windows.pools.get(topicId+':before').dates.size,before);
   assert.equal(windows.pools.get(topicId+':after').dates.size,after);
  }
  assert.equal(windows.pools.get('T5-5:before').dates.size,15);
  assert.equal(windows.pools.get('T1-1:single').dates.size,5);
- for(const topic of ['T1-5','T3-2','T6-3']){
+ for(const topic of ['T6-3']){
   const pool=windows.pools.get(topic+':single');assert.equal(pool.phaseConfirmed,false);assert.deepEqual(pool.dates,windows.topics.get(topic));
  }
  assert.equal([...windows.pools.values()].reduce((n,p)=>n+p.dates.size,0),119);
@@ -287,7 +287,7 @@ test('batch10 parser refuses missing, duplicated, unknown and incomplete pool me
  assert.throws(()=>readTopicWindows(row+'\n'+row),/重複T主題/);
 });
 test('batch10 before/after pools share all their own days but never cross phases',()=>{
- for(const topic of ['T1-4','T4-1','T5-1'])for(const phase of ['before','after']){
+ for(const topic of ['T1-4','T1-5','T3-2','T4-1','T5-1'])for(const phase of ['before','after']){
   const story=windowStory(topic,phase),pool=storyPlaybackWindow(story,windows);
   for(const day of pool.dates)assert.equal(query(story,day).windowEligible,true,topic+' '+phase+' '+day);
   const other=windows.pools.get(topic+':'+(phase==='before'?'after':'before'));
@@ -325,7 +325,12 @@ test('batch10 published-and-known prerequisites remain unresolved by a valid dat
   assert.ok(r.requiredChecks.includes('results-published'));assert.ok(r.requiredChecks.includes('participant-informed'));
   assert.ok(r.requiredChecks.includes('story-not-yet-triggered'));assert.ok(r.requiredChecks.includes('roles-present-and-authorized'));
  }
- const s=windowStory('T1-5','single');assert.ok(query(s,s.date).requiredChecks.includes('phase-boundary-review'));
+ const s=windowStory('T6-3','single');assert.ok(query(s,s.date).requiredChecks.includes('phase-boundary-review'));
+ for(const topic of ['T1-5','T3-2'])for(const phase of ['before','after']){
+  const x=windowStory(topic,phase);
+  assert.equal(query(x,x.date).requiredChecks.includes('phase-boundary-review'),false);
+  assert.equal(storyPlaybackWindow(x,windows).phase,phase);
+ }
 });
 test('batch10 proposal, revise and lock keep the pool immutable and failures isolated',()=>{
  const s=windowDraft('T1-4','T1-4:before'),empty=initialProductionLedger(),snapshot=structuredClone(empty);
@@ -733,4 +738,25 @@ test('formal T1-1 post-replacement ledger: 30 active, one revoked, SHA audit inc
  const seedStatus=spawnSync(process.execPath,['scripts/manage-story-production.mjs','available','--seed','S1392'],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
  assert.equal(seedStatus.status,0,seedStatus.stderr);
  assert.equal(JSON.parse(seedStatus.stdout).holder,'T-DRAFT-0031');
+});
+
+
+test('校慶T1-5／T3-2各為前4日、後4日，配額和跨池排除不變',()=>{
+ for(const [topic,before,after] of [
+  ['T1-5',['2026-12-07','2026-12-08','2026-12-09','2026-12-10'],['2026-12-15','2026-12-16','2026-12-17','2026-12-18']],
+  ['T3-2',['2027-12-06','2027-12-07','2027-12-08','2027-12-09'],['2027-12-14','2027-12-15','2027-12-16','2027-12-17']]
+ ]){
+  const a=windowStory(topic,'before'),b=windowStory(topic,'after');
+  assert.deepEqual(storyPlaybackWindow(a,windows).dates,before);
+  assert.deepEqual(storyPlaybackWindow(b,windows).dates,after);
+  assert.equal(query(a,b.date).windowEligible,false);
+  assert.equal(query(b,a.date).windowEligible,false);
+  assert.ok(!query(a,a.date).requiredChecks.includes('phase-boundary-review'));
+  assert.ok(!query(b,b.date).requiredChecks.includes('phase-boundary-review'));
+  assert.throws(()=>storyPlaybackWindow({...a,poolId:topic+':single'},windows),/不符/);
+  assert.throws(()=>storyPlaybackWindow({...a,date:after[0]},windows),/不屬於/);
+ }
+ assert.equal(windows.pools.size,28);
+ assert.equal(windows.days.size,108);
+ assert.equal([...windows.pools.values()].reduce((sum,p)=>sum+p.dates.size,0),119);
 });

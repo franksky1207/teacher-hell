@@ -1,0 +1,73 @@
+name: Story production V1 focused checks
+on:
+  push:
+    branches: [integration/story-production-v1]
+    paths:
+      - '.github/workflows/story-production-v1-focused.yml'
+      - '.nvmrc'
+      - 'package.json'
+      - 'scripts/check-story-draft.mjs'
+      - 'scripts/manage-story-production.mjs'
+      - 'scripts/story-draft-validator.js'
+      - 'scripts/story-production-ledger.js'
+      - 'test/story-draft-validator.test.js'
+      - 'test/story-production-ledger.test.js'
+      - 'test/fixtures/17d-draft-sample-s0451.md'
+      - 'data/story-production-ledger.json'
+      - 'docs/事件四數值三層平衡種子2400組.md'
+      - 'docs/T1-T6-特定故事20主題與觸發日期.md'
+      - 'src/calendar/calendar.js'
+      - 'src/calendar/civil.js'
+      - 'src/calendar/timetable.js'
+      - 'src/calendar/three-year-calendar.js'
+      - 'src/calendar/three-year-senior.js'
+      - 'src/numeric/random.js'
+      - 'src/numeric/math.js'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/story-production-v1-focused.yml'
+      - '.nvmrc'
+      - 'package.json'
+      - 'scripts/check-story-draft.mjs'
+      - 'scripts/manage-story-production.mjs'
+      - 'scripts/story-draft-validator.js'
+      - 'scripts/story-production-ledger.js'
+      - 'test/story-draft-validator.test.js'
+      - 'test/story-production-ledger.test.js'
+      - 'test/fixtures/17d-draft-sample-s0451.md'
+      - 'data/story-production-ledger.json'
+      - 'docs/事件四數值三層平衡種子2400組.md'
+      - 'docs/T1-T6-特定故事20主題與觸發日期.md'
+      - 'src/calendar/calendar.js'
+      - 'src/calendar/civil.js'
+      - 'src/calendar/timetable.js'
+      - 'src/calendar/three-year-calendar.js'
+      - 'src/calendar/three-year-senior.js'
+      - 'src/numeric/random.js'
+      - 'src/numeric/math.js'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  story-production-v1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Verify story production V1
+        run: |
+          git rev-parse HEAD
+          node --version
+          node --test --test-isolation=none test/story-draft-validator.test.js test/story-production-ledger.test.js
+      - name: Confirm the formal ledger was preserved
+        if: always()
+        run: git diff --exit-code HEAD -- data/story-production-ledger.json

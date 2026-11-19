@@ -43,7 +43,11 @@
     "test:senior:save": "node --max-old-space-size=4096 --expose-gc scripts/senior-verify-save.js",
     "test:senior:browser": "npm run build && node scripts/senior-browser.js",
     "content:audit": "node scripts/audit-content.mjs",
-    "content:audit:strict": "node scripts/audit-content.mjs --strict"
+    "content:audit:strict": "node scripts/audit-content.mjs --strict",
+    "content:draft-check": "node scripts/check-story-draft.mjs",
+    "content:production": "node scripts/manage-story-production.mjs",
+    "test:story-draft": "node --test test/story-draft-validator.test.js",
+    "test:production-ledger": "node --test test/story-production-ledger.test.js"
   },
   "devDependencies": {
     "acorn": "8.15.0"

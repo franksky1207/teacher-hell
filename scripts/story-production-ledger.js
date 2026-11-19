@@ -115,7 +115,7 @@ const fields=['事件起因','核心衝突','導師困境'];
 export function duplicateCandidates(summary,ledger,exclude=null){
  const result=[];
  for(const record of Object.values(ledger.candidates)){
-  if(record.draftRef===exclude||record.status==='rejected')continue;
+  if(record.draftRef===exclude||['rejected','revoked'].includes(record.status))continue;
   const exact=fields.every(k=>normalize(summary[k])===normalize(record.summary[k]));
   const scores=fields.map(k=>dice(summary[k],record.summary[k]));
   const score=Number(((scores[0]+scores[1]+scores[2])/3).toFixed(3));
@@ -131,7 +131,7 @@ export function validateLedger(ledger,{seeds,windows}){
  const seedOwners=new Map(),storyIds=new Set(),dates=new Map();
  let T=0,G=0,GEntries=0;
  for(const [key,r] of Object.entries(ledger.candidates)){
-  if(!draftIdPattern.test(key)||otherIdPattern.test(key)||/^(?:SAMPLE|TEST)[-_]/i.test(key)||key!==r.draftRef||!['proposed','reserved','locked','rejected'].includes(r.status)||!['T','G'].includes(r.type)||
+  if(!draftIdPattern.test(key)||otherIdPattern.test(key)||/^(?:SAMPLE|TEST)[-_]/i.test(key)||key!==r.draftRef||!['proposed','reserved','locked','rejected','revoked'].includes(r.status)||!['T','G'].includes(r.type)||
   !Array.isArray(r.tags)||!r.tags.length||r.tags.some(t=>!TAGS.includes(t)))throw Error('帳本候選資料錯誤：'+key);
   if(r.type==='T'){try{storyPlaybackWindow(r,windows)}catch(e){throw Error('帳本T窗口不合法：'+key+' '+e.message)}}
   if(r.type==='G'&&(r.topicId!==null||r.date!==null||r.poolId!=null))throw Error('G不應有T日期：'+key);
@@ -140,14 +140,17 @@ export function validateLedger(ledger,{seeds,windows}){
    if(seedOwners.has(r.seedId))throw Error('種子重複占用：'+r.seedId);
    seedOwners.set(r.seedId,key);
   }else if(r.seedId!==null)throw Error('未暫用項目卻持有種子：'+key);
-  if(r.type==='G'&&r.status!=='rejected')GEntries++;
-  if(r.status!=='locked'&&r.storyId!=null)throw Error('未鎖定候選不得持有正式故事ID：'+key);
-  if(r.status==='locked'){
+  if(r.type==='G'&&!['rejected','revoked'].includes(r.status))GEntries++;
+  if(!['locked','revoked'].includes(r.status)&&r.storyId!=null)throw Error('未鎖定候選不得持有正式故事ID：'+key);
+  if(['locked','revoked'].includes(r.status)){
+   if(r.status==='revoked'&&(!r.revocation||!Number.isSafeInteger(r.revocation.revision)||r.revocation.revision<1||trim(r.revocation.reason).length<12||!seeds.has(r.seedId)))throw Error('撤銷作品缺少原因、原種子或修訂紀錄：'+key);
    if(!r.storyId||storyIds.has(r.storyId)||!/^[a-f0-9]{64}$/.test(r.manuscriptDigest??'')||!trim(r.manuscriptPath)||!r.review||!/^[a-f0-9]{64}$/.test(r.review.digest??'')||!trim(r.review.filePath))throw Error('正式故事缺ID、稿件或審查檔案的路徑／SHA256：'+key);
    if(!new RegExp(r.type==='G'?'^G-\\d{4,}$':'^'+r.topicId.split('-')[0]+'-\\d{3,}$').test(r.storyId))throw Error('正式故事ID類型錯誤：'+key);
    storyIds.add(r.storyId);
-   if(r.type==='T'){T++;dates.set(r.date,(dates.get(r.date)||0)+1)}
-   else G++;
+   if(r.status==='locked'){
+    if(r.type==='T'){T++;dates.set(r.date,(dates.get(r.date)||0)+1)}
+    else G++;
+   }
   }
  }
  if(T>MAX_T||G>MAX_G||[...dates.values()].some(n=>n>6))throw Error('T／G或T單日超出配額');
@@ -157,7 +160,7 @@ export function validateLedger(ledger,{seeds,windows}){
 export function ledgerProgress(ledger,{seeds,windows}){
  const {T,G,usedSeeds}=validateLedger(ledger,{seeds,windows});
  const byTag=Object.fromEntries(TAGS.map(t=>[t,0]));
- const stats={proposed:0,reserved:0,rejected:0,locked:0};
+ const stats={proposed:0,reserved:0,rejected:0,locked:0,revoked:0};
  const unused=seeds.size-usedSeeds;
  for(const r of Object.values(ledger.candidates)){
   stats[r.status]++;
@@ -190,14 +193,14 @@ function reviewEvidence(review,choiceFlags){
 }
 function storyIdFor(type,ledger,topicId){
  const prefix=type==='G'?'G':topicId.split('-')[0],pattern=new RegExp('^'+prefix+'-(\\d+)$');
- const used=Object.values(ledger.candidates).filter(r=>r.status==='locked').map(r=>r.storyId).filter(Boolean);
+ const used=Object.values(ledger.candidates).filter(r=>['locked','revoked'].includes(r.status)).map(r=>r.storyId).filter(Boolean);
  let top=0;for(const id of used){const m=id.match(pattern);if(m)top=Math.max(top,+m[1])}
  return prefix+'-'+String(top+1).padStart(type==='G'?4:3,'0');
 }
 export function changeProductionLedger(ledger,request,{seeds,windows,validateDraft,readReview}){
  const before=validateLedger(ledger,{seeds,windows}),next=JSON.parse(JSON.stringify(ledger));
  const {action,ref,owner}=request;
- if(!['propose','reserve','release','revise','reject','lock'].includes(action))throw Error('不支援的管理動作');
+ if(!['propose','reserve','release','revise','reject','lock','revoke'].includes(action))throw Error('不支援的管理動作');
  if(!draftIdPattern.test(ref??''))throw Error('候選ID格式錯誤');
  if(action==='propose'&&/^(SAMPLE|TEST)[-_]/i.test(ref))throw Error('試作草稿不得進正式量產帳本');
  if(otherIdPattern.test(ref))throw Error('候選ID不得使用種子、T主題或正式故事ID');
@@ -225,12 +228,18 @@ export function changeProductionLedger(ledger,request,{seeds,windows,validateDra
  }else{
   if(!prior)throw Error('找不到草稿ID：'+ref);
   if(prior.owner!==expectedOwner)throw Error('只能由原登記負責者操作，跨AI需先交接');
-  if(prior.status==='locked')throw Error('已鎖定作品不可退還、改寫或重新占用');
+  if(action==='revoke'){
+   if(prior.status!=='locked')throw Error('只有已鎖定作品可以撤銷');
+   if(trim(request.reason).length<12)throw Error('撤銷須附具體事實及審查原因');
+   prior.status='revoked';
+   prior.revocation={revision:next.revision+1,reason:trim(request.reason)};
+  }else if(prior.status==='locked')throw Error('已鎖定作品不可退還、改寫或重新占用');
   if(prior.status==='rejected')throw Error('已退件候選不可再修改，須使用新draft_ref');
+  if(prior.status==='revoked'&&action!=='revoke')throw Error('已撤銷作品不可再修改或重新鎖定');
   if(action==='reserve'){
    if(prior.status!=='proposed')throw Error('只能對尚未暫用的候選領取種子');
    if(!seeds.has(request.seedId))throw Error('種子不在固定2400組');
-   if(Object.values(next.candidates).some(r=>r.seedId===request.seedId))throw Error('種子已被暫用或鎖定');
+   if(Object.values(next.candidates).some(r=>['reserved','locked'].includes(r.status)&&r.seedId===request.seedId))throw Error('種子已被暫用或鎖定');
    if(trim(request.reason).length<12)throw Error('暫用種子須附故事四碼相容性理由');
    prior.seedId=request.seedId;prior.status='reserved';prior.attempts++;prior.reason=request.reason;
   }else if(action==='release'||action==='reject'){

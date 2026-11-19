@@ -1,0 +1,276 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "班級首次由自願迎新補位轉正式分工，才會有舊鉛筆名字被直接抄入的新義務。抄表者想保住容易交接的方法，沒有代人接受輪值的權力，導師可先安排工作、確認意願。",
+  "fourCodes": "S0408由現任學生持有。R1敬重教師將致謝與義務分開，R2追問排班進度，R3實際做有限交接，R4要求設置登錄前確認意願的程序。",
+  "fourChoices": "shuf抽5、3、6。A開新人可退出的試做，B問可負擔時段，C分列舊工作及新任務，D當眾刪除抄來的人名。另三案是私下核對致謝、從小步教新手及教師暫代。",
+  "eightResults": "八項分別為承認貢獻、排班進度、實際示範、程序建議、確認抄名原因、另一筆舊工、一次試做意願、追回成人待辦。四碼各總量2，四狀態總量0、−3、4、1。沒有正式核發時數或排未知班。",
+  "causal32": "causalMatrix有32格。C分表沒有定人，R6只補一筆待查舊工。B匿名只收時段，R7另有本人自願的一次意願。D停止照舊名排班，R3有限協助不恢復後續職務。",
+  "timeAndLaw": "限T1-1首週開班首次設輪值。班內處理的是無個資的空白說明單，不讓學生代辦印製、催件與官方工時核認，學生可拒絕延續協助。",
+  "duplicates": "摘要與全文比對前二十四篇。T1-004處理名牌附帶的代表及署名權，本稿沒有替全班送件、排序或代簽。T1-014處理兩班空間責任，本稿著重先前實付工作如何被承認與避免反覆落在同一人；R3、R6、R8分別確認三種不同勞務事實。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "先私下核對已做的工作，讓曾補位者決定是否把名字留在致謝欄"
+      },
+      {
+        "id": 2,
+        "action": "把待做工作拆成一次可說完的小任務，從沒做過的人開始教"
+      },
+      {
+        "id": 3,
+        "action": "以匿名方式收日常能負擔的時段，之後才按工作量排第一次輪班"
+      },
+      {
+        "id": 4,
+        "action": "用教師暫代一回，對新班說清舊幫忙不等於同意未來排班"
+      },
+      {
+        "id": 5,
+        "action": "這次先開可退出的短班試做，由新手自願選一項並結伴學"
+      },
+      {
+        "id": 6,
+        "action": "把舊工作和新輪值拆成兩張表，首輪只記目前人人可確認的任務"
+      }
+    ],
+    "selectedIds": [
+      5,
+      3,
+      6
+    ],
+    "finalChoiceMap": {
+      "A": 5,
+      "B": 3,
+      "C": 6,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "reason": "開新手試做不忽略舊人，仍可由教師另向全班致謝。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "reason": "短班試做和正式輪值不同，學生仍可問排到哪一步。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 4,
+      "reason": "有人已願學一項，舊協助者最容易自願示範一疊。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "reason": "可退出的短試方式可使人提出未來正式班也先問本人。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "reason": "原抄表者發現有人可以學，容易說出自己真正卡住的工作。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 1,
+      "reason": "新手試做聚焦當下，過渡貢獻仍可能有人提但誘因較低。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "reason": "A直接邀新手選短班，所以最容易收到只肯一次的意願。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "reason": "試做時若辨認出成人工作，教師仍可立即收回責任。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "reason": "匿名時段保護選擇，仍可另向班上不具名肯定舊勞務。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "reason": "首輪時段正在徵詢，最容易被問完成時間。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 1,
+      "reason": "此方案尚在詢時段，現在主動示範有可能但非直接效果。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "reason": "按工作量再問本人，引出正式登錄前須確認的程序建議。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "reason": "匿名徵詢可與抄表的人私下解釋困難並存。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "reason": "徵新班時段時還可能有人提起一件之前漏記的工作。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "reason": "可負擔時間可先試一次，不會從匿名填報直接定長期。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "reason": "各時段可能不合乎辦公室補印工作，教師仍可認出這點。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 4,
+      "reason": "分開舊功勞和新任務，有了直接獨立致謝的機會。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "reason": "新表只有事項，學生最可能追問何時開始填人。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "reason": "首輪不沿舊名，但舊人仍可自願提供一次操作經驗。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "reason": "分成兩表使前期經驗不能直接填到新表，容易再要求確認本人。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "reason": "看清已知任務後，抄表者仍可提出自己做不來哪一項。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "reason": "另列舊工作本身直接促成找出漏記的協助。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "reason": "C只列工作，這時仍可收到一次試做，但未誘導。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "reason": "C直接核對工作清單，最易認出追補印屬於教師。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "reason": "D公開拒絕用排班道謝，最容易接續真正承認舊付出。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "reason": "抄名被叫停後仍可追問何時另排，但尚未開始徵詢。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "reason": "D沒有要求再做，學生仍可自願短時間說明一疊。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "reason": "刪名後學生最可能明說以後請先問再登錄。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "reason": "抄表者被公開打斷，更有誘因說他是在求做法。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "reason": "否決舊名字轉用，並不遮住另有沒被記名的幫忙。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "reason": "即使D沒開試班，另一學生仍可先主動提出一次意願。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 1,
+      "reason": "D的當下重點是刪名，仍可整理任務角色但不是直接處理。",
+      "actionPreserved": true
+    }
+  ]
+}

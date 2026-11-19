@@ -1,0 +1,276 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "唯一事件節點是高一班級首次接收跨班招生群遺留的待答案件，舊群即將停用，導師只能管理本班入口，家長是現任學生經核對的主要聯絡人。",
+  "fourCodes": "S1360 由本班家長持有。R1因信任而同意導師代問，R3家長主動補材料，R4實際用正式入口，R5要求導師解釋其已採行決定，各有不同可觀察行為。",
+  "fourChoices": "shuf 抽中1、2、6。分別以限本班索引、家長自填回覆與延長舊群唯讀處理遺留題。其他候選為入口分流、原承辦完成本案、限時接聽。情緒項否決整串截圖並先對一戶回覆收到，沒有擅自修改舊群。",
+  "eightResults": "八個分支分別更新素材授權、收件狀態、家長主動補充、入口測試、問責解釋、原時程、改用電話及改公告草案。R3改正稱呼，R5用正式管道說明，與遠距聯繫一致。四碼各總增量2，四狀態總量0、−3、4、2。",
+  "causal32": "causalMatrix附32格。C提出而未獲准延長，R6可保留原時程；D否決轉貼但不妨礙R2合法查單案；A索引請求不能替代B家長自行填寫但各可有R1。R8承辦修訂草案並不撤回導師已發的通知。",
+  "timeAndLaw": "T1-1 首週且新班首次接親師通知，舊群即將停用及家長待答均在開場已知。只有本人資料按必要範圍經正式管道交換，沒有讀取旁戶紀錄或要求學生傳話，群組權限與行政回覆由承辦維持。",
+  "duplicates": "摘要與全文比對前六篇；字面最接近T1-004報到待答移交，但該篇焦點是志工到期與代表權。此篇全部教師行動圍繞家長個案連續性、舊群讀取和正式管道，R2、R6、R8皆涉及承辦權限與資訊出口，沒有班代簽署。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "請招生端只按已核身的本班個案回送待答索引，不取群內全文"
+      },
+      {
+        "id": 2,
+        "action": "從正式班級管道寄一張可回覆案件主旨的通知，請家長只填能轉交的內容"
+      },
+      {
+        "id": 3,
+        "action": "與承辦定出各類問題該找哪個窗口，請對方把分工放進最後公告"
+      },
+      {
+        "id": 4,
+        "action": "把手上這件待答問題交還原承辦並請他保留答覆責任，自己只發班級新入口"
+      },
+      {
+        "id": 5,
+        "action": "由導師用校務管道開放一段接聽時間，先讓有待答問題的家長核身後口述"
+      },
+      {
+        "id": 6,
+        "action": "請舊群延長唯讀時間供家長自行找原通知，之後仍以新管道收件"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      6
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": 6,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "reason": "只詢問必要索引讓家長有理由相信導師不會要他人對話，因而願補單案資訊。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "reason": "索引請求直接讓承辦核對本班收件狀態。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "reason": "只取索引仍缺過程，家長可自願補兩句。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "reason": "索引由承辦提供不妨礙導師另用正式入口確認回覆功能。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "reason": "家長未必知道索引對應的負責者，因此可能要求解釋。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "reason": "查表時可能重提關群時刻，教師仍可保留本班入口。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 1,
+      "reason": "只取索引降低家長重述需要，仍可能自行選擇用電話詢問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "reason": "索引與公開告知是不同任務，承辦仍可用新入口改寫公告。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "reason": "通知允許只填自選資訊，家長可用它簡述而不分享截圖。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "reason": "家長提供本人案件索引後承辦仍可另核對，教師的通知仍有效。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "reason": "可回覆主旨直接給家長補抄兩句話的途徑。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "reason": "通知已有回覆功能，使家長最容易完成本班入口測試。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "reason": "可回覆通知說明可轉交內容，但未說最後負責者，家長可追問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 1,
+      "reason": "讓家長送回主旨不依賴舊群存續，較少立即討論延長。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "reason": "有些家長收到文字入口仍不便打字，可明確改用電話。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "reason": "新通知已有可採用的文字，承辦可用於修正舊群公告。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "reason": "即使群組暫存待決，家長仍可自願從本班入口補日期。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "reason": "保留找原訊息的時間仍不妨礙承辦先查單案日期。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "reason": "唯讀請求可提醒家長查看自己曾提問的內容，仍以新入口補充。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "reason": "本班入口已保留收件方式，測試回覆可後續進行。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "reason": "兩個入口若短暫並存，家長最可能要導師說明誰會答覆。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "reason": "延長請求直接需要承辦核對自身權限及原時刻。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "reason": "舊群不能再問，即使可查，家長仍可能選用電話。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "reason": "承辦可在等待延長答覆期間先改公告用字，沒有宣告群已關閉。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "reason": "家長即時收到回應且不需上傳截圖，更可能願意提供單案日期。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "reason": "拒絕整串截圖仍容許承辦自行比對單筆收件日期。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "reason": "確認已收會吸引家長主動補有關自己的兩句，情緒項沒有要求整串。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "reason": "先回覆單一疑問仍可再發簡短入口測試。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "reason": "知道已收到不等於知道誰會回覆，家長仍可要求解釋。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 1,
+      "reason": "導師否決截圖但未提留群，承辦仍可提起時刻，直接誘因較低。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "reason": "一對一已確認收到，家長可在此時清楚說要改用電話。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "reason": "當場拒絕截圖直接促使承辦把公告草案改為各班入口。",
+      "actionPreserved": true
+    }
+  ]
+}

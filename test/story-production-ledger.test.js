@@ -195,7 +195,7 @@ test('simulated 648 T locks allow first G (never actual content inventory)',()=>
  }
  const progress=ledgerProgress(mixed,context);
  assert.deepEqual(progress.locked,{T:648,G:1,total:649});
- assert.deepEqual(progress.stats,{proposed:1,reserved:1,rejected:1,locked:649});
+ assert.deepEqual(progress.stats,{proposed:1,reserved:1,rejected:1,locked:649,revoked:0});
  assert.deepEqual(progress.seedStatus,{total:2400,unused:1750,reserved:1,locked:649});
  assert.equal(progress.remainingT,0);assert.equal(progress.remainingG,1751);
  assert.equal(progress.tagOccurrences,651);
@@ -662,4 +662,31 @@ test('batch12 isolated T CLI lifecycle, failures and evidence audit',t=>{
  }
  for(const action of ['revise','release','lock'])refuseWrite(/已鎖定/,action,main,...lockFiles,...releaseReason);
  assert.equal(ok(manage('audit')).audit.pass,true);
+});
+
+test('post-lock revocation keeps historical ID and SHA, restores quota and seed availability',()=>{
+ const first=draft(),second=draft('T-DRAFT-002','S0001');
+ const locked=lock(reserve(prop(initialProductionLedger(),first).ledger).ledger,first).ledger;
+ const original=structuredClone(locked.candidates['T-DRAFT-001']);
+ assert.throws(()=>act(locked,'revoke','T-DRAFT-001',{reason:'太短'}),/撤銷須附/);
+ const changed=act(locked,'revoke','T-DRAFT-001',{reason:'首次進班不是公物交接責任爭議的必要成立條件'}).ledger;
+ assert.equal(locked.candidates['T-DRAFT-001'].status,'locked');
+ const old=changed.candidates['T-DRAFT-001'];
+ assert.equal(old.status,'revoked');assert.equal(old.seedId,'S0001');assert.equal(old.storyId,'T1-001');
+ assert.equal(old.manuscriptDigest,original.manuscriptDigest);assert.deepEqual(old.review,original.review);
+ assert.equal(old.revocation.revision,4);assert.equal(changed.history.at(-1).action,'revoke');
+ assert.equal(ledgerProgress(changed,context).locked.T,0);
+ assert.equal(ledgerProgress(changed,context).seedStatus.unused,2400);
+ assert.equal(ledgerProgress(changed,context).stats.revoked,1);
+ assert.equal(validateLedger(changed,context).days.size,0);
+ for(const action of ['revoke','revise','release','reject','reserve','lock'])
+  assert.throws(()=>act(changed,action,'T-DRAFT-001',{reason:'不許重複處理歷史資料'}));
+ const next=lock(reserve(prop(changed,second,'T-DRAFT-002').ledger,'T-DRAFT-002','S0001').ledger,second,'T-DRAFT-002').ledger;
+ assert.equal(next.candidates['T-DRAFT-002'].storyId,'T1-002');
+ assert.equal(validateLedger(next,context).usedSeeds,1);
+ assert.equal(validateLedger(next,context).days.get('2026-07-20'),1);
+ const collision=structuredClone(next);collision.candidates['T-DRAFT-001'].storyId='T1-002';
+ assert.throws(()=>validateLedger(collision,context),/正式故事缺ID/);
+ const broken=structuredClone(next);broken.candidates['T-DRAFT-001'].revocation=null;
+ assert.throws(()=>validateLedger(broken,context),/撤銷作品缺少/);
 });

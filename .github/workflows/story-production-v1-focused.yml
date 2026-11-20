@@ -10,8 +10,10 @@ on:
       - 'scripts/manage-story-production.mjs'
       - 'scripts/story-draft-validator.js'
       - 'scripts/story-production-ledger.js'
+      - 'scripts/story-state-revision.js'
       - 'test/story-draft-validator.test.js'
       - 'test/story-production-ledger.test.js'
+      - 'test/story-state-revision.test.js'
       - 'test/fixtures/17d-draft-sample-s0451.md'
       - 'data/story-production-ledger.json'
       - 'docs/事件四數值三層平衡種子2400組.md'
@@ -33,8 +35,10 @@ on:
       - 'scripts/manage-story-production.mjs'
       - 'scripts/story-draft-validator.js'
       - 'scripts/story-production-ledger.js'
+      - 'scripts/story-state-revision.js'
       - 'test/story-draft-validator.test.js'
       - 'test/story-production-ledger.test.js'
+      - 'test/story-state-revision.test.js'
       - 'test/fixtures/17d-draft-sample-s0451.md'
       - 'data/story-production-ledger.json'
       - 'docs/事件四數值三層平衡種子2400組.md'
@@ -67,7 +71,7 @@ jobs:
         run: |
           git rev-parse HEAD
           node --version
-          node --test --test-isolation=none test/story-draft-validator.test.js test/story-production-ledger.test.js
+          node --test --test-isolation=none test/story-draft-validator.test.js test/story-production-ledger.test.js test/story-state-revision.test.js
       - name: Confirm the formal ledger was preserved
         if: always()
         run: git diff --exit-code HEAD -- data/story-production-ledger.json

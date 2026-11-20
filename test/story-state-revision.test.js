@@ -61,11 +61,16 @@ test('all 30 reviewed stories: 14 V2 revisions, 16 explicit blockers, original b
  assert.equal(report.approved,14);assert.equal(blockers.length,16);assert.equal(ledger.revision,108);
  assert.equal(Object.values(ledger.candidates).filter(r=>r.status==='locked').length,30);
  assert.equal(ledger.candidates['T-DRAFT-0001'].status,'revoked');
- const baseline=JSON.parse(spawnSync('git',['show',report.baselineCommit+':data/story-production-ledger.json'],{cwd:root,encoding:'utf8'}).stdout);
- assert.deepEqual(ledger.candidates['T-DRAFT-0001'],baseline.candidates['T-DRAFT-0001']);
+ assert.equal(sha(JSON.stringify(ledger.candidates['T-DRAFT-0001'])),report.revokedEntryDigest);
+ assert.equal(sha(JSON.stringify(ledger.history.slice(0,report.originalHistoryLength))),report.originalHistoryDigest);
  let approved=0;
  for(const item of report.stories){
-  const row=ledger.candidates[item.storyId.replace('T1-','T-DRAFT-0')],old=baseline.candidates[row.draftRef];
+  const row=ledger.candidates[item.storyId.replace('T1-','T-DRAFT-0')],old=structuredClone(row);
+  if(row.manuscriptVersions?.length){
+   const first=row.manuscriptVersions[0];old.manuscriptPath=first.manuscriptPath;old.manuscriptDigest=first.manuscriptDigest;old.review=first.review;
+   for(const key of ['stateRulesVersion','manuscriptVersions','manuscriptVersion','stateRevision'])delete old[key];
+  }
+  assert.equal(sha(JSON.stringify(old)),item.originalEntryDigest);
   for(const key of ['storyId','seedId','date','tags','summary','poolId','topicId','status'])assert.deepEqual(row[key],old[key]);
   const original=read(item.originalManuscriptPath),latest=read(row.manuscriptPath);
   assert.equal(sha(original),old.manuscriptDigest);assert.equal(sha(read(item.originalReviewPath)),old.review.digest);

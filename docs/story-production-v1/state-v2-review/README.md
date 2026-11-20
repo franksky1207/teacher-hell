@@ -100,3 +100,11 @@
 - 與可信基準比較，31份原稿及31份原審查SHA全部相同；帳本原history完整保留，T1-001整筆資料完全不變。新增14次正式修訂，沒有重複製作篇數。
 - 閱讀器沿既有獨立發布流程更新最新locked指標，保留16篇未完成的原版；發布與線上首／中／末及實際更新篇的數值核對結果於後續驗收紀錄補記，不能將尚未核對的部署寫為成功。
 - 通用修訂管理器尚未同步main；如需同步，應獨立處理 `scripts/story-state-revision.js`、`scripts/story-production-ledger.js`、`scripts/manage-story-production.mjs`、相關隔離測試與06操作契約，不能合併整條量產分支或故事資料。
+
+### 已發布與線上核對
+
+- 獨立閱讀器發布 [44672447137](https://github.com/franksky1207/teacher-hell/actions/runs/44672447137) 與 Pages 部署 [44672519144](https://github.com/franksky1207/teacher-hell/actions/runs/44672519144) 均成功。`stories/release.json` 為來源 `d7c678d8f64e8ef32c2241a4a51a59a152a93161`、revision108、30篇。
+- gh-pages提交 `58a877b60c58df24baa3875c092053b20574154c` 與父提交比較，`stories/` 以外路徑零差異；沒有修改 `/preview/`、測試中心或遊戲main。
+- 正式網址 Chromium headless/CDP 實際展開「因果、數值與原始稿」，核對 T1-002（首）、T1-016（中）、T1-031（末）及 V2 的 T1-009、T1-022、T1-030，六篇各八組顯示數值完全等於現行原稿；公開單篇JSON與完整 `sourceMarkdown` 也一致。前三篇是保留的V1，未冒稱已升級。
+- 390×844手機尺寸無水平溢出；沒有宣稱實體手機或Safari驗收。逐組顯示值見[browser-check.json](./browser-check.json)。最初Node直連受環境網路限制，改用既有代理後完成正式網址核對，沒有改站台網路或程式。
+- 定向CI已加入新修訂模組與隔離測試的監聽及執行；回歸核對使用可信基準的原紀錄與原history摘要SHA，不依賴Actions淺層checkout未提供的舊commit物件。

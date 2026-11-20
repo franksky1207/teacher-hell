@@ -117,11 +117,23 @@ else{
     }
     if(current.manuscriptVersions?.length){
      try{
-      const chain=[...current.manuscriptVersions,{...current,version:current.manuscriptVersion}];
+      // Legacy state-rule migration evidence must compare against the manuscript
+      // as it existed before the first general content edit, not the current edit.
+      const firstEdit=current.contentHistory?.[0];
+      const migrationLast=firstEdit?{
+       ...current,version:current.manuscriptVersion,manuscriptPath:firstEdit.manuscriptPath,
+       manuscriptDigest:firstEdit.manuscriptDigest,
+       review:{...current.review,filePath:firstEdit.reviewPath,digest:firstEdit.reviewDigest},
+       sourceCommit:firstEdit.sourceCommit
+      }:{...current,version:current.manuscriptVersion};
+      const chain=[...current.manuscriptVersions,migrationLast];
+      const migrationText=async (v,path,ext)=>v.sourceCommit?
+       execFileSync('git',['show',v.sourceCommit+':'+path],{cwd:root,encoding:'utf8',timeout:30000,maxBuffer:8*1024*1024}):
+       readFile(await evidencePath(path,ext),'utf8');
       for(let i=1;i<chain.length;i++){
        const original=chain[i-1],latest=chain[i];
-       const originalMarkdown=await readFile(await evidencePath(original.manuscriptPath,'.md'),'utf8'),originalReviewText=await readFile(await evidencePath(original.review.filePath,'.json'),'utf8');
-       const markdown=await readFile(await evidencePath(latest.manuscriptPath,'.md'),'utf8'),reviewText=await readFile(await evidencePath(latest.review.filePath,'.json'),'utf8');
+       const originalMarkdown=await migrationText(original,original.manuscriptPath,'.md'),originalReviewText=await migrationText(original,original.review.filePath,'.json');
+       const markdown=await migrationText(latest,latest.manuscriptPath,'.md'),reviewText=await migrationText(latest,latest.review.filePath,'.json');
        validateStateRevision({...current,...original,status:'locked',manuscriptVersions:i>1?chain.slice(0,i-1):undefined}, {targetStateRulesVersion:latest.stateRulesVersion,originalMarkdown,originalReviewText,markdown,reviewText,manuscriptDigest:latest.manuscriptDigest,reviewDigest:latest.review.digest,expectedManuscriptDigest:original.manuscriptDigest,expectedReviewDigest:original.review.digest,manuscriptPath:latest.manuscriptPath,reviewFile:latest.review.filePath},(s,stage)=>validateStoryDraft(s,{stage,stateRulesVersion:latest.stateRulesVersion,seeds,topics,windows}));
       }
      }catch(e){problems.push({ref:current.draftRef,reason:'修訂鏈無法稽核：'+e.message})}

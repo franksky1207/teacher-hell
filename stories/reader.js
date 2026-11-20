@@ -1,7 +1,7 @@
 import {
- filterStories, selectOptions, neighboringIds, sanitizeReaderPreferences,
+ filterStories, selectOptions, neighboringIds, sanitizeReaderPreferences, topicDisplayName, poolDisplayName,
  safeDetailPath, validateReaderIndex, validateReaderDetail
-} from './reader-core.js?v=210638e88e9b043402ac2b66d99e5d72b6520efd';
+} from './reader-core.js?v=4e1860b494e3f516f0b275b9d7823c6352eeaa11';
 
 const $=id=>document.getElementById(id);
 const state={all:[],filtered:[],selected:null,detail:null,request:0,cache:new Map(),
@@ -173,13 +173,13 @@ function syncFilters(){
  const topics=selectOptions(state.all,'topicId',story=>
   !state.filters.semester||(state.filters.semester==='G'?
     story.type==='G':story.topicId?.split('-')[0]===state.filters.semester));
- updateSelect('topic',topics);
+ updateSelect('topic',topics,topicDisplayName);
  state.filters.topic=$('topic').value;
  const pools=selectOptions(state.all,'poolId',story=>
   (!state.filters.semester||(state.filters.semester==='G'?
     story.type==='G':story.topicId?.split('-')[0]===state.filters.semester))&&
   (!state.filters.topic||story.topicId===state.filters.topic));
- updateSelect('pool',pools);
+ updateSelect('pool',pools,poolDisplayName);
  state.filters.pool=$('pool').value;
  state.filtered=filterStories(state.all,state.filters);
  drawList();

@@ -1,4 +1,25 @@
 /* Pure helpers: no DOM, storage, network or game dependencies. */
+/* Only human-readable labels; official topic/pool IDs remain the filter values. */
+const TOPIC_TITLES=Object.freeze({
+ 'T1-1':'首次進班與建班','T1-2':'高中新生適應',
+ 'T1-3':'高一上家長日','T1-4':'日本學校參訪前後','T1-5':'首次校慶擺攤',
+ 'T2-1':'班呼／校歌比賽前後',
+ 'T3-1':'英文歌曲比賽前後','T3-2':'高二校慶擺攤',
+ 'T4-1':'第二次升學輔導與大學博覽會','T4-2':'畢業旅行行前安排',
+ 'T5-1':'高三教師節活動','T5-2':'最後一次運動會',
+ 'T5-3':'最後一次校慶（高三不擺攤）','T5-4':'最後一次聖誕晚會',
+ 'T5-5':'學測前最後階段特殊安排',
+ 'T6-1':'學測成績公布後的學生心情','T6-2':'申請入學第一階段篩選',
+ 'T6-3':'申請入學第二階段面試安排','T6-4':'最後一次園遊會',
+ 'T6-5':'畢業典禮前的特殊師生請求'
+});
+export function topicDisplayName(id){return TOPIC_TITLES[id]??id;}
+export function poolDisplayName(id){
+ const m=String(id??'').match(/^(T[1-6]-\d+):(before|after|single)$/);
+ if(!m)return id;
+ const phase={before:'活動前',after:'活動後',single:''}[m[2]];
+ return topicDisplayName(m[1])+(phase?'（'+phase+'）':'');
+}
 export const semesters=['T1','T2','T3','T4','T5','T6','G'];
 export function matchesStory(story,filters={}){
  const q=String(filters.query??'').trim().toLocaleLowerCase('zh-Hant');

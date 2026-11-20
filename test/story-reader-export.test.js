@@ -36,3 +36,17 @@ test('only valid locked manuscripts are exported, with full story text and optio
 test('parser rejects incomplete five-part manuscripts',()=>{
  assert.throws(()=>parseReaderStory('# 假故事\n## 1｜不足', {draftRef:'X'}),/五個正式區塊/);
 });
+
+test('reader accepts official template metadata keys enclosed in backticks',async()=>{
+ const ledger=JSON.parse(await readFile('data/story-production-ledger.json','utf8'));
+ const item=Object.values(ledger.candidates).find(c=>c.status==='locked'&&c.draftRef==='T-DRAFT-0001');
+ assert.ok(item,'T1-001 must exist as a locked regression specimen');
+ const markdown=await readFile(item.manuscriptPath,'utf8');
+ assert.match(markdown,/\| `draft_ref`｜/);
+ const story=parseReaderStory(markdown,item);
+ assert.equal(story.storyId,'T1-001');
+ assert.equal(story.draftRef,'T-DRAFT-0001');
+ assert.equal(story.poolId,'T1-1:single');
+ assert.equal(story.options.length,4);
+ assert.equal(story.results.length,8);
+});

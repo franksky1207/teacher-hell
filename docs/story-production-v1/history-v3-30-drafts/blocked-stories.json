@@ -1,0 +1,2366 @@
+{
+  "task": "V3第二批30篇正式故事數值轉換",
+  "batchStatus": "blocked-not-complete",
+  "baseCommit": "e20f513e7c55ad13b5a36cd6ce8e87d329a9baad",
+  "baseLedgerRevision": 108,
+  "baseLedgerDigest": "4cb6dcc3432a3fa8619fc12e82c2dfbd21d7c065bd4ad8b98452d0a465dfad0c",
+  "reviewer": "Codex（本次完整敘事人工語意審查；非程式自動判定因果）",
+  "reviewBoundary": "非負判斷是本次語意審查，不要求正文必須明寫教師心理；接受由互信、教學實效、程序合作合理推論。普通記錄、合理問責、保留自主、未定案本身不足以在沒有進一步因果時推成熱忱損失。沒有設定新的正式規則或強制非負R配額。",
+  "mathematicalObservation": "既有A/E各四負、C/D各五負、B六負，因此所有組最多四個非負。此為現行多重集合的必要條件，非另加驗收門檻。",
+  "ciEvidence": {
+    "runId": 44696990693,
+    "url": "https://github.com/franksky1207/teacher-hell/actions/runs/44696990693",
+    "headSha": "41ac74048a432a92ec847a523588a21d2a986e05",
+    "conclusion": "success",
+    "tests": 195,
+    "pass": 195,
+    "fail": 0,
+    "skip": 0,
+    "latestBaseAfterCI": "e20f513僅新增相容驗收文件，執行規格及工具與成功CI相同"
+  },
+  "reviewed": 30,
+  "upgraded": 0,
+  "blocked": 30,
+  "v3AcceptedStateConfigurations": 0,
+  "blockedStateConfigurations": 120,
+  "groupUseCounts": {
+    "A": 0,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "E": 0
+  },
+  "groupCountsScope": "僅計本批核准的V3配置，分母0；120個目標配置均未完成，不能宣稱已分配120組。",
+  "synchronizedV3Results": {
+    "resultCount": 0,
+    "allFourExactlyEqual": 0,
+    "allFourSameSign": 0,
+    "scope": "0個V3結果，比例不適用；不把V1/V2的舊欄序當V3統計。"
+  },
+  "ledgerMutations": 0,
+  "stories": [
+    {
+      "storyId": "T1-002",
+      "draftRef": "T-DRAFT-0002",
+      "title": "我在哪一班",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S1897",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0002.md",
+      "manuscriptDigest": "4e86f32a487c6bf1440a56cf5973a7cc71c873f21ecd154a7f0cafab980c0164",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0002.review.json",
+      "reviewDigest": "2c26f8653175daf4ddeb9a6d424adfacaa2b308b70924400088765a36faa7232",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1有資料可核，R2減少跨班尋人；R3撤回交單使核對費心；R4至R8仍有說明、記錄及聯絡，不能把這些認知工作等同熱忱下降。",
+        "熱忱": "R1/R4/R5提供信任及合作回饋；R2/R6/R7/R8為釐清或建議，未呈現投入意願受損；R3的防衛反應才可能使教師感到挫折。",
+        "情緒": "R1/R4/R5可有安心；R3被反覆追問造成學生防衛，可令教師擔心；R2/R6/R7/R8不自動形成負面情緒。",
+        "掌控": "R1取得原件、R2停止另一班尋人、R4分開處理、R5釐清用途都有局面進展；R3缺原件較難查，R6/R7/R8尚待改版或外部更正，不能寫成已結案。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "背面那個章",
+            "objectiveConsequenceQuote": "導師取得學生自願交付的本人乘車單及報到日章戳供核對。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生自願交單，師生信任得到回應；沒有動機受損的發展。"
+          },
+          {
+            "result": "R2",
+            "title": "只等新版班別",
+            "objectiveConsequenceQuote": "隔壁班停止依暫編清單尋人，正式班籍與車務資料尚無變動。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "隔壁停止無效尋人，沒有新增教師受挫情節。"
+          },
+          {
+            "result": "R4",
+            "title": "把午前問題拆開",
+            "objectiveConsequenceQuote": "學生接受把到班和車務分開處理，取得車務查詢位置。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生接受分步處理，呈現教育引導可行而非意願下降。"
+          },
+          {
+            "result": "R5",
+            "title": "還有沒搭車的人",
+            "objectiveConsequenceQuote": "導師向班上澄清兩份清單的用途，學生協助釐清同學的疑問。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生協助解釋用途，具體參與班級資訊釐清。"
+          },
+          {
+            "result": "R6",
+            "title": "需要一個版次",
+            "objectiveConsequenceQuote": "收到學生要求標注表單版次的建議，流程尚未變更。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "提出版次改善建議，並非否定教師投入意義。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-003",
+      "draftRef": "T-DRAFT-0003",
+      "title": "名冊上沒有注音",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S0378",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0003.md",
+      "manuscriptDigest": "2a4d71713297f882abeda386b8c69369f663023906c86061a78a2e0f1945b110",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0003.review.json",
+      "reviewDigest": "c415d2c3dc626a0731225448313cbcc49da3d56ccab0347bf78f07ca67e8000d",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1/R2取得讀音、R3僅同桌聽見，教師掌握程度不同；R4/R5釐清用途；R6新增程序建議；R7制止模仿需留意班級；R8同儕願意續談。",
+        "熱忱": "R1/R4/R5/R8呈現教學回饋，R2/R3保留自願仍可維持投入；R6是建議，R7嘲笑與撤回才有較直接的挫折來源。",
+        "情緒": "R7學生撤回公開意願可引發擔心；R1/R5/R8有欣慰線索，R2/R3/R4/R6不能因公開範圍較小就視為教師受辱。",
+        "掌控": "R1有共用讀音，R2只有限用提示、R3只有同桌知情；R4/R5建立界線，R6尚未採行；R7秩序受干擾，R8互認繼續，不等於對學生加強權威。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "大家跟讀一次",
+            "objectiveConsequenceQuote": "本人自願示範，全班有一次可跟讀的正確讀音。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "本人示範並獲同儕跟讀，是互認活動的具體成效。"
+          },
+          {
+            "result": "R2",
+            "title": "一張反過來的便條",
+            "objectiveConsequenceQuote": "導師取得本人限私下使用的讀音提示。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "私下提供讀音仍建立教師可用的信任，不是教學拒絕。"
+          },
+          {
+            "result": "R4",
+            "title": "國中的玩笑先停在這裡",
+            "objectiveConsequenceQuote": "兩人確認舊簡稱在熟人私下可用，未取得公開代答的同意。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "熟人說清公開與私下稱呼界線，形成理解。"
+          },
+          {
+            "result": "R5",
+            "title": "把讀法與身分分開",
+            "objectiveConsequenceQuote": "導師公開區分出勤辨識與公開稱呼，未更改正式姓名。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生肯定把辨識與稱呼分開的引導方式。"
+          },
+          {
+            "result": "R8",
+            "title": "輪到下一個人",
+            "objectiveConsequenceQuote": "另一名同學自行提出公開稱呼，當事人得到同儕互認的先例。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "另一名學生願意自我介紹，互認出現可延續的參與。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-004",
+      "draftRef": "T-DRAFT-0004",
+      "title": "小隊長的名牌",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S0218",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0004.md",
+      "manuscriptDigest": "96ae640788787dc80db53c695bc99cb799c5577f2101ea33899983779b5e01c2",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0004.review.json",
+      "reviewDigest": "fa1e9085c3c6b0e56105a42fdf4c54e9e6cc2b31a230230d40a3c84a5857353d",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1來源可辨、R2辨認急件；R3志工退出可能增加教師整理需求；R4排序建議及R5受理疑問需處理；R6協助補核、R7建立管道、R8同學更正。",
+        "熱忱": "R1/R5/R6/R7/R8有界線學習、合作或求助的價值；R2急件、R4爭取排序是工作需求；R3停止協助可失落，但不能把其餘需求一概判成厭倦教師工作。",
+        "情緒": "R3撤回協助可能失落；R6/R7有被信任感；R1/R2/R4/R5/R8多是釐清，不自帶強烈好壞感受。",
+        "掌控": "R1/R8防止未授權署名；R2辨急件、R5找到受理問題、R6補核增加線索；R3支援減少、R4未改排序、R7只建立管道，均不等於所有問題已解決。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "誰整理誰簽這欄",
+            "objectiveConsequenceQuote": "學生在原始資料上註明整理者，未以班代身分簽署。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "整理者與代表身分分清，學生願意遵守合理界線。"
+          },
+          {
+            "result": "R5",
+            "title": "只是想問有沒有人看到",
+            "objectiveConsequenceQuote": "確認一項學生以為尚無人受理的問題，釐清先前遞單的用意。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "釐清遞單者其實希望有人受理，沒有否定教師工作的發展。"
+          },
+          {
+            "result": "R6",
+            "title": "分不清哪些已經答過",
+            "objectiveConsequenceQuote": "學生自願補核一題的既有答覆，實際開始聯絡原提問人。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生自願實際聯絡原提問人，投入得到合作回應。"
+          },
+          {
+            "result": "R7",
+            "title": "下一次想當面說",
+            "objectiveConsequenceQuote": "學生主動建立與導師私下詢問的管道。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生主動建立私下詢問管道，屬師生連結。"
+          },
+          {
+            "result": "R8",
+            "title": "有人把兩段工作混寫了",
+            "objectiveConsequenceQuote": "同學自行更正便條上對迎新志工權限的描述。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "同學自行更正權限誤寫，班級學到分辨臨時協助與代表。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-005",
+      "draftRef": "T-DRAFT-0005",
+      "title": "新生全班到齊",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S0417",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0005.md",
+      "manuscriptDigest": "0908ea75d5f79483435addad7e429da06adcc17a5b55a473d0960bcda12e8f04",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0005.review.json",
+      "reviewDigest": "bd20437e7fbcbefbcb68c9fc60cb066e3500dbb7db2462af511070200d1ecb6b",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1需記用途、R2免本次上稿、R3再說明成班依據；R4互認續行；R5記兩項需求；R6原替代稿皆未提供；R7肯定；R8仍需等延期回覆。",
+        "熱忱": "R1/R4/R7有參與和原則回饋；R2免交影像、R5需求分清，沒有動機受損；R3/R8待確認與R6暫不提供作品不宜一概當成教師不想教。",
+        "情緒": "R7有欣慰、R6可能失落；R8時間未變可有壓力；R1/R2/R3/R4/R5沒有足夠文本把所有教師感受判負。",
+        "掌控": "R2解除本次交件、R4恢復互認；R1僅限班內、R3說清成立依據、R5需求尚未同意、R6無稿、R7肯定但不改行政、R8仍受時限，需分辨進展層次。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "紙上的班牌",
+            "objectiveConsequenceQuote": "學生另提供一份無姓名且限班內使用的班牌圖，未同意公開。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生另給班內可用圖稿，仍參與班級活動。"
+          },
+          {
+            "result": "R2",
+            "title": "招生端換頁",
+            "objectiveConsequenceQuote": "承辦決定本次公開頁面不使用本班影像。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "承辦撤出本次影像需求，沒有教師被懲處或教學意義遭否定。"
+          },
+          {
+            "result": "R4",
+            "title": "互認名牌還是照走",
+            "objectiveConsequenceQuote": "學生實際採用現場可做的互認方式，沒有提供影像。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生採用互認方式，活動得到實際參與。"
+          },
+          {
+            "result": "R5",
+            "title": "想留影的人還想留",
+            "objectiveConsequenceQuote": "教師得到班內紀念與公開介紹的兩項不同需求，尚未取得影像使用同意。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生分辨私人紀念與公開用途，表達需要不代表否定教師投入。"
+          },
+          {
+            "result": "R7",
+            "title": "沒排進畫面也算一個",
+            "objectiveConsequenceQuote": "學生肯定導師尊重退出與班級歸屬的處理原則。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生直接肯定尊重退出的原則，為教職投入提供回饋。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-006",
+      "draftRef": "T-DRAFT-0006",
+      "title": "桌上的報到號碼",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S1996",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0006.md",
+      "manuscriptDigest": "a7bd9e6d699a7403d243f7b351a92e7891d203188008836bde35b1a3cfd0c1b1",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0006.review.json",
+      "reviewDigest": "657a017631a933944e83c26b021b929a69e802788ca7a32981b57d038b5d3725",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1/R2增加可用資訊、R3要考慮備用椅；R4試坐成功；R5多一項偏好；R6示範；R7新增資訊未交；R8有改圖建議，處理量與教學動機分開。",
+        "熱忱": "R1/R2/R4/R6/R8有信任、可用資訊或學習回饋；R3/R5是可討論需求；R7遭同儕猜測造成退縮才有失落可能。",
+        "情緒": "R4/R6可欣慰，R7學生被猜測可擔心；R1/R2/R3/R5/R8不能僅以還要處理就一律不悅。",
+        "掌控": "R4得到可用暫位；R1/R2/R6增進對局面的理解；R3/R5/R8尚為請求或建議；R7缺少新觀察，不能用教師能否壓過質問來算掌控。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "只告訴你這個角度",
+            "objectiveConsequenceQuote": "導師接獲可私下用於座次安排的光線示意，未公開來源。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生提供私下可用的光線線索，信任仍在。"
+          },
+          {
+            "result": "R2",
+            "title": "原來是交件圖",
+            "objectiveConsequenceQuote": "學生查明門口貼圖的原用途，現行座次不因報到圖取得效力。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "原圖用途查明，有助建立可解釋的初始安排。"
+          },
+          {
+            "result": "R4",
+            "title": "字看到了",
+            "objectiveConsequenceQuote": "學生試坐後採用一個暫用位置，沒有因此公布其私下需求。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生實際找到能讀字的位置，支持學習的目標有成果。"
+          },
+          {
+            "result": "R6",
+            "title": "沒人問他為什麼",
+            "objectiveConsequenceQuote": "老師示範依可辨識程度檢查座位，學生具體肯定教師安排方法。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生具體肯定依可辨識程度排位的方法。"
+          },
+          {
+            "result": "R8",
+            "title": "貼紙不再拿來指路",
+            "objectiveConsequenceQuote": "提出更換引導方式的建議，門口圖未當場撤下。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生提更清楚的地標方式，是共同改善而非退出班級學習。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-007",
+      "draftRef": "T-DRAFT-0007",
+      "title": "報到群最後一則訊息",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S1360",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0007.md",
+      "manuscriptDigest": "0c82c2ef30d27b8e4d4afc8514ebc160a4565f7723df37e3ba36ac6a72b476f6",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0007.review.json",
+      "reviewDigest": "399c99f0bc77badeb58b563981c7c756c4d7ecff8d105bade9c82cf00f93375c",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1/R3取得查案資訊；R2建立追查、R5要說分工；R4入口測試有效；R6關閉時間未改；R7改電話時段；R8要核文字，均有不同注意力需求。",
+        "熱忱": "R1/R3/R4/R8有合作；R5為合理問責並非動機否定；R2/R6待查與R7改用電話，不能沒有進一步情節便強判四次以上厭倦。",
+        "情緒": "R1/R4可安心；R6時限仍在可能緊張；R7暫停文字需尊重，不應直接判為教師受冒犯；R2/R3/R5/R8多是案件澄清。",
+        "掌控": "R4入口已可用、R8草案改善；R1/R2/R3補足單案線索但非結案；R5說清分工，R6不能延期，R7待電話，不把可聯絡誤作已查完。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "不用貼整串",
+            "objectiveConsequenceQuote": "導師取得家長自願提供的單案查證資訊與委託，未取得舊群全文。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "家長自願給限案資訊及委託，親師合作成立。"
+          },
+          {
+            "result": "R3",
+            "title": "原來卡在最後一格",
+            "objectiveConsequenceQuote": "家長另補了兩句與本人案件有關的過程，無他戶資料。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "家長主動補兩句本人案件經過，並未拒絕教師協作。"
+          },
+          {
+            "result": "R4",
+            "title": "收到測試碼",
+            "objectiveConsequenceQuote": "家長完成使用正式班級入口的回覆測試。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "正式入口測試成功，家庭願意持續使用。"
+          },
+          {
+            "result": "R5",
+            "title": "能不能告訴我由誰負責",
+            "objectiveConsequenceQuote": "家長要求說明已採行決定的責任範圍，教師說明現況。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "詢問責任邊界並得到說明，是正常責任釐清，未演成羞辱或衝突。"
+          },
+          {
+            "result": "R8",
+            "title": "最後公告只留入口",
+            "objectiveConsequenceQuote": "招生端更改公告草案，未宣稱公告已發送。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "承辦修改截圖要求，原則取得行政協作。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-008",
+      "draftRef": "T-DRAFT-0008",
+      "title": "帶路那張紙",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S1610",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0008.md",
+      "manuscriptDigest": "bd770bf98b9c0548fdad5d4bb980d390e04da421984eede5e0f8fcad080e569a",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0008.review.json",
+      "reviewDigest": "f2093d2d615c26097e2bc54bd5f6748e9f78b2ce241ba4f31c570c2f9cc62cdd",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1讓車通行；R2提案待確認、R3共同核圖；R4聽個別顧慮；R5回覆進度；R6向全班說明；R7停等查路與R8再指集合點需額外專注。",
+        "熱忱": "R1/R2/R3/R4有安全、參與和信任回饋；R6承認貢獻不應判成消磨投入；R5/R7/R8尚有解說或確認，不能直接等同教職動機下降。",
+        "情緒": "R1/R3/R4可欣慰；R7迷路風險可緊張；R6是安頓舊幫手感受，R2/R5/R8沒有必然負面情緒。",
+        "掌控": "R1改善通行、R3共同核圖；R7後段路線先停再確認、R8確保集合訊息，屬節奏修復；R2/R4/R5/R6不直接完成所有搭配決定。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "讓出門邊一條線",
+            "objectiveConsequenceQuote": "書車通過，學生實際辨識並避開走道阻塞。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生辨識並避開阻塞，安全互助有實際效果。"
+          },
+          {
+            "result": "R2",
+            "title": "黑板上多了一個箭頭",
+            "objectiveConsequenceQuote": "教師收到學生提供路段說明的提案，未授予帶隊權。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生願提供熟悉路段資訊，是參與學習與班級協作。"
+          },
+          {
+            "result": "R3",
+            "title": "熟手把圖翻過來",
+            "objectiveConsequenceQuote": "原引導者以同伴身分和同學核對標示，未重新固定配對。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "原熟手改以同伴身分共同核圖，互助關係改善。"
+          },
+          {
+            "result": "R4",
+            "title": "鞋尖停在講桌旁",
+            "objectiveConsequenceQuote": "學生主動向導師說明想自主也想保有求助空間。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生願對導師說出自主與求助的顧慮，信任加深。"
+          },
+          {
+            "result": "R6",
+            "title": "名字還留在黑板上",
+            "objectiveConsequenceQuote": "教師公開確認先前協助的價值，沒有把過往付出換成新班權限。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "教師承認舊協助價值而未延長權限，沒有否定教師工作的後果。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-009",
+      "draftRef": "T-DRAFT-0009",
+      "title": "單子上的「全班」",
+      "status": "blocked",
+      "activeStateRulesVersion": 2,
+      "activeManuscriptVersion": 2,
+      "seedId": "S1954",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0009.states-v2.md",
+      "manuscriptDigest": "d576a7eb5f13002f5ce6c6ab769121975c39a163546493c8edad8518832d02c5",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0009.review.states-v2.json",
+      "reviewDigest": "ebe1cb7d3312422a7a109dd2c25fdd163bd654223e4239d153f2f2af2e1a8f8f",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1有查證材料；R2核狀態需記錄；R3專業被質疑須重看；R4被追進度、R5記個案；R6需調整應對；R7核用語、R8記偏好，耗神程度可不同。",
+        "熱忱": "R3質疑與R6明確不滿可支持受挫；R4進度壓力也可再討論；R1/R2/R5/R7/R8沒有足夠的教職投入下降依據，最多三個其餘R仍不足五組。",
+        "情緒": "R3/R6可有挫折或不悅；R4可能緊張；R1合作可安心；R2/R5/R7/R8正常查核與改善不必然負面。",
+        "掌控": "R1證據、R2查得狀態、R7用語改進各有進展；R3須重讀、R6應對失當較失去節奏；R4/R5/R8只釐清進度或需求，不冒稱訂單已停。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "只傳留空那格",
+            "objectiveConsequenceQuote": "家長提供限單筆查證使用的填報證據，未確認另有訂單。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "家長自願提供必要證據，仍支持限定用途的協作。"
+          },
+          {
+            "result": "R2",
+            "title": "採購端查不到單號",
+            "objectiveConsequenceQuote": "導師取得現有單號狀態，沒有修改正式訂購紀錄。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "得到單號狀態並謹慎記錄，沒有新增動機挫傷；查不到不等於被拒絕或撤單失敗。"
+          },
+          {
+            "result": "R5",
+            "title": "有人其實想訂",
+            "objectiveConsequenceQuote": "確認另有家庭希望保留個別選購便利，未新增訂單。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "另一戶表達購物需求是正常服務訊息，未形成教師被逼迫或否定。"
+          },
+          {
+            "result": "R7",
+            "title": "封面換一句",
+            "objectiveConsequenceQuote": "承辦提出封面更名，導師補提用語需求，新版尚未發送。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "承辦提出正確封面名稱，願意改善資訊來源表述。"
+          },
+          {
+            "result": "R8",
+            "title": "不用帶舊表去找學生",
+            "objectiveConsequenceQuote": "教師登記該戶聯繫偏好，未要求學生代帶表單。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "家庭交代聯繫偏好而不讓學生代帶，沒有教職動機受損的情節。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-010",
+      "draftRef": "T-DRAFT-0010",
+      "title": "還沒教過這一題",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S0769",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0010.md",
+      "manuscriptDigest": "5f87f619874899d0b6d8c23407a8a715a7e1581733541ce6c25f2397b10ef14f",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0010.review.json",
+      "reviewDigest": "3aaa51c631fba98893493e6424cbc4c1a36b28573389642e825db5eb9403a229",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1拆題、R2原則被接受、R3轉建議；R4同儕互助；R5要解說、R6協調互助；R7感謝；R8記原答保存，不能把記錄工作全部映射成熱忱損失。",
+        "熱忱": "R1/R2/R4/R5/R7均具教學意義；R3學生積極提建議、R6同儕願幫、R8只暫緩收原題，沒有足夠四次負向動機發展。",
+        "情緒": "R1/R4/R5/R7有欣慰或被尊重線索，R2/R3/R6/R8是原則、提案與保存方式，不能臆造不悅。",
+        "掌控": "R1釐清障礙、R4實際互助、R5辨認原因；R2支持原則；R3/R6/R8尚有待處理事項；R7感謝本身不等於盤點已完。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "先圈出要問的句子",
+            "objectiveConsequenceQuote": "任課教師取得一項具體理解障礙並提供不填答案的提示。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "任課教師取得具體障礙並給提示，教育支援有成效。"
+          },
+          {
+            "result": "R2",
+            "title": "沒有寫不代表不會",
+            "objectiveConsequenceQuote": "學生表達接受分組不依據空白答案的原則。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生接受不以白卷標記能力的原則。"
+          },
+          {
+            "result": "R4",
+            "title": "兩張紙折在一起",
+            "objectiveConsequenceQuote": "兩名學生自發進行讀題互助，沒有成立能力分組。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生自發讀題互助，沒有強迫教師代辦的新責任。"
+          },
+          {
+            "result": "R5",
+            "title": "照著想的方式分開問",
+            "objectiveConsequenceQuote": "導師示範辨認障礙，學生肯定其引導方式。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生具體肯定導師辨認障礙的引導。"
+          },
+          {
+            "result": "R7",
+            "title": "我先把折痕壓平",
+            "objectiveConsequenceQuote": "學生對導師保留私人學習起點表達敬重。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生敬重保護學習起點的原則，為教職投入提供正向回饋。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-011",
+      "draftRef": "T-DRAFT-0011",
+      "title": "誰拿著教室鑰匙",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S1627",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0011.md",
+      "manuscriptDigest": "a9cf996ee7fa8b897c0bc183f5a6f86cd823ebd03978a84c309fddce13f804f4",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0011.review.json",
+      "reviewDigest": "d575eae030021295e408799c22d2ec4771d7a0c6008077cd7e64a2f8591b9982",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1記回條請求、R2支持、R3通道恢復；R4學生反感需調整責任；R5補核、R6記時間；R7替代位置未定；R8澄清貢獻，注意力負擔不同。",
+        "熱忱": "R4應對遭反感可挫折，R7位置受限可能失落，R5尚待查不過度定向；R1/R2/R3/R6/R8均不支持教職意願下降。",
+        "情緒": "R4可不悅或懊惱、R7可擔心；R2/R3/R8有安心或欣慰；R1/R5/R6不把合理查核當情緒攻擊。",
+        "掌控": "R3通道已恢復，R5取得索引、R6辨需求；R4查責方向曾偏離，R7替代場所未定；R1尚未回收、R2只是支持、R8承認貢獻不延長鑰匙權。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "我希望有一張回條",
+            "objectiveConsequenceQuote": "學生要求回收時出具回條，尚未取得或完成歸還。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生提出歸還憑據需求，是制度改進而非教師遭否定。"
+          },
+          {
+            "result": "R2",
+            "title": "不是要他繼續守門",
+            "objectiveConsequenceQuote": "學生明確支持不再將臨時鑰匙作班級交接使用。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生支持不再轉交臨時鑰匙的安排。"
+          },
+          {
+            "result": "R3",
+            "title": "書包先不要塞在這裡",
+            "objectiveConsequenceQuote": "學生辨識等候位置造成的通行問題，門口通道恢復。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生主動維護通行，班級安全教育有具體回應。"
+          },
+          {
+            "result": "R6",
+            "title": "到校時間沒有那麼早",
+            "objectiveConsequenceQuote": "導師取得兩個不同的實際等候需求，未委派學生開門。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "取得不同到校時間是需求辨認，未出現意願打擊。"
+          },
+          {
+            "result": "R8",
+            "title": "開過門的事也算數",
+            "objectiveConsequenceQuote": "教師和同學承認先前貢獻，沒有讓任何學生延續鑰匙保管權。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "教師與同學承認先前貢獻，沒有把教師投入變成無意義。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-012",
+      "draftRef": "T-DRAFT-0012",
+      "title": "袖口還在等貨",
+      "status": "blocked",
+      "activeStateRulesVersion": 2,
+      "activeManuscriptVersion": 2,
+      "seedId": "S1876",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0012.states-v2.md",
+      "manuscriptDigest": "791f97838ce79e64bb04710dbeb517c5fa298b27dfa1470846f7e7d1675190c6",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0012.review.states-v2.json",
+      "reviewDigest": "a2c0ff4c7e79285ad306462f7db0a845e2976d75e496b003bb3508ef3d4eb2bc",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1核單、R2查問失當需改；R3得窗口、R4分領建議；R5私下核對有效；R6重說範圍；R7日期仍待核、R8借用待確認，需各別評估耗神。",
+        "熱忱": "R2不滿、R7補貨不定可能令人受挫，R4家庭困難可引起關切；R1/R3/R5/R6/R8仍是合作或有限資訊，不能硬判四次以上消磨教職意願。",
+        "情緒": "R2可能懊惱；R4家庭輪洗衣物可擔心，R7日期不定可焦慮；R1/R5有合作安心、R3/R6/R8是查證與釐清，不全同向。",
+        "掌控": "R1取得憑據、R3知窗口、R5完成私核、R6排除誤登；R2問法需修、R4程序未改、R7時間未知、R8未批准借衣，不把控制服裝當掌控。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "這一聯只拿來核對",
+            "objectiveConsequenceQuote": "學生自願提供本人一聯供核對，資料未在班上傳閱。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生提供本人待領聯，仍願意配合查證。"
+          },
+          {
+            "result": "R3",
+            "title": "學務只確認找誰",
+            "objectiveConsequenceQuote": "教師收到可轉達的查詢去處，尚無補貨日期及正式服裝例外。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學務給出可查窗口，屬有限進展，不是拒絕教師工作。"
+          },
+          {
+            "result": "R5",
+            "title": "下課把事情問清楚",
+            "objectiveConsequenceQuote": "學生採用私下核對安排，未公開個人缺領資訊。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生實際採用私下核對並回到學習。"
+          },
+          {
+            "result": "R6",
+            "title": "他以為大家都要重新買",
+            "objectiveConsequenceQuote": "釐清已領者不必因本次查詢再次登記，未改動供貨。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "釐清已領者不用重登，沒有動機受損的後果。"
+          },
+          {
+            "result": "R8",
+            "title": "有人問要不要先借",
+            "objectiveConsequenceQuote": "同學提出資源，教師未允許或促成未確認的借用。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "同學願提供舊衣資源，教師審慎待核不代表投入熱情下降。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-013",
+      "draftRef": "T-DRAFT-0013",
+      "title": "這一欄是寫給誰的",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S1065",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0013.md",
+      "manuscriptDigest": "b3c506ef7a340772caa8d0b83b491a998b3267a55ffb7fc77eba8c4d89b61266",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0013.review.json",
+      "reviewDigest": "75ea065ac36610cdbe8604bd545957a185e7cf7423417de3d939d5b861a81fc0",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1需求有同伴回應、R2另約談話；R3需說舊卡責任；R4追加安排、R5示例；R6求助落空顧慮要跟進；R7互助自成、R8接受退出，心力需求不同。",
+        "熱忱": "R1/R2/R4/R5/R7有自主、信任及互助成果；R3是正常責任說明、R6擔心未成媒合、R8保留退出，不能把尚未參與全算教師受挫。",
+        "情緒": "R6可擔心、R8可略失落或中性；R1/R2/R4/R7可欣慰；R3/R5屬說明與示例，不預設額外情緒。",
+        "掌控": "R4媒合實行、R7同儕自助；R1新需要可理解、R2有約談；R3限用途、R5示例可用；R6沒有實際媒合結果，R8沒有新增聯繫資料。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "不用猜整件事",
+            "objectiveConsequenceQuote": "學生自行選擇並主動提出一項新需求，未引用報到卡。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生自行選擇新需求並找到願意看圖的同伴。"
+          },
+          {
+            "result": "R2",
+            "title": "下課我再來",
+            "objectiveConsequenceQuote": "學生主動尋求個別聯繫，未揭露要談的內容。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生願意找導師個別談，建立信任入口。"
+          },
+          {
+            "result": "R4",
+            "title": "先用地圖試一次",
+            "objectiveConsequenceQuote": "學生依教師的追加安排參與一次雙方同意的互助，無資料公開。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "雙方同意的互助實際發生，教師安排得到採用。"
+          },
+          {
+            "result": "R5",
+            "title": "海報先有一個問題",
+            "objectiveConsequenceQuote": "班上取得可共用的問法示例，未公示個別需求。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "取得不曝個資的共用問法示例，教學目標有可見成果。"
+          },
+          {
+            "result": "R7",
+            "title": "願意幫，也想有人幫",
+            "objectiveConsequenceQuote": "兩名學生自行約定互相協助，沒有固定誰是長期帶領者。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "兩名學生自行約定互助，符合培養同儕支持的投入意義。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-014",
+      "draftRef": "T-DRAFT-0014",
+      "title": "接縫那一條線",
+      "status": "blocked",
+      "activeStateRulesVersion": 2,
+      "activeManuscriptVersion": 2,
+      "seedId": "S2125",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0014.states-v2.md",
+      "manuscriptDigest": "ff7fdbda9faf3bc2ab435439488d76465d5f4d0fdc62f1ab82871e0aa48a571d",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0014.review.states-v2.json",
+      "reviewDigest": "aece7300a67f5f47b99d520173f194b535a446402d7ec7f17adfe07f1748846d",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1需記方案、R2有草圖；R3進度追問、R4應對反感；R5請求縮小、R6補門牌；R7器具移開、R8說明責任，精神費用不等同熱忱。",
+        "熱忱": "R4明確反感可造成受挫；R3催進度和R6行政核對可能有壓力；R1/R2/R5/R7/R8無足夠負向動機依據，仍至少五個不可任配負值。",
+        "情緒": "R4可懊惱，R3/R6可能有等待壓力；R2支持可安心；R1/R5/R7/R8主要為程序改善，不一律判負。",
+        "掌控": "R2圖資增加、R5需求縮小、R7恢復通行、R8責任說清；R1未改界、R3待回覆、R4指示曾有空白、R6未出新版，進展不等於永久分界定案。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "給今天單獨一格",
+            "objectiveConsequenceQuote": "學生要求為一次性協助另設紀錄，未更改正式分界。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生要求單次協助另記，是建構可用程序。"
+          },
+          {
+            "result": "R2",
+            "title": "圖上少一根柱子",
+            "objectiveConsequenceQuote": "學生主動提供本班任務核對用的現地草圖。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生主動補現地圖，班務合作有實際回饋。"
+          },
+          {
+            "result": "R5",
+            "title": "隔壁只需要靠門這頭",
+            "objectiveConsequenceQuote": "隔壁導師縮小本次請求，永久分界未改。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "隔壁縮小本次請求，並非否定教師投入。"
+          },
+          {
+            "result": "R7",
+            "title": "掃把先回原來的位置",
+            "objectiveConsequenceQuote": "等候接縫工作的器具已移離門邊，已明定的工作未撤銷。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "器具移離門邊且既定工作續行，沒有教師工作失去意義的發展。"
+          },
+          {
+            "result": "R8",
+            "title": "幫忙的人不寫成負責人",
+            "objectiveConsequenceQuote": "導師明確區別單次班級協助與個人長期責任，當下未新增永久任務。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "教師說清單次協助與長責任，屬可維持的教育原則。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-015",
+      "draftRef": "T-DRAFT-0015",
+      "title": "家裡收得到的人",
+      "status": "blocked",
+      "activeStateRulesVersion": 2,
+      "activeManuscriptVersion": 2,
+      "seedId": "S1597",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0015.states-v2.md",
+      "manuscriptDigest": "11d3abdacb7722e37c2c394c30c5f03030c34a74e5537ceaade56d0a4e9d05bc",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0015.review.states-v2.json",
+      "reviewDigest": "d362d613b696c8c3a69504597206b98ff6df3846384e419b489dc703bfa385c2",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1記轉述、R2核來源、R3加通知備註、R4分記；R5表格待改；R6附件失敗需補送；R7另存查驗、R8回文件識別，不把多一筆作業當厭倦。",
+        "熱忱": "R1/R2/R3/R4有信任、資訊與協作；R7保住合法來源；R5格式未改、R6補送、R8核文件不等於四次以上教職動機打擊。",
+        "情緒": "R6開不了附件可焦急，R5未有欄位可擔心；R1/R4有被信任與分流成功的安心；R2/R3/R7/R8不預設不悅。",
+        "掌控": "R4共識增加、R6補送成功、R7分開資料、R8辨識文件；R1/R2/R3僅提供資訊、R5系統未改，全篇不能把能聯絡當已取得簽署權。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "只轉這一句",
+            "objectiveConsequenceQuote": "取得當事人對必要聯絡資訊的限範圍轉述同意。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "當事人願意限範圍轉述，信任導師處理資訊。"
+          },
+          {
+            "result": "R2",
+            "title": "我有留登記聯",
+            "objectiveConsequenceQuote": "當事人提供有明確用途的聯絡來源憑據，未證明正式簽署權。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "提供來源憑據，親師協作持續。"
+          },
+          {
+            "result": "R3",
+            "title": "接送時間不是放學時間",
+            "objectiveConsequenceQuote": "導師取得一個具體的日常通知內容需求。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "主動說明接送資訊需要，有助提供合適通知。"
+          },
+          {
+            "result": "R4",
+            "title": "兩邊可以分開",
+            "objectiveConsequenceQuote": "當事人調整原先希望所有表單同一路徑的要求，簽署資格未定。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "接受日常通知與正式資格分流，合作有進展。"
+          },
+          {
+            "result": "R7",
+            "title": "先留在原資料",
+            "objectiveConsequenceQuote": "教師保留原聯絡來源並另存查驗事項，沒有擅自改回執對象。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "保留原資料而分開查驗，未產生否定教師投入的事件。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-016",
+      "draftRef": "T-DRAFT-0016",
+      "title": "把出門的話說完",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S0061",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0016.md",
+      "manuscriptDigest": "9e9c0a9a8e008388dad7cf3dd04d9ccaac16360789a478f575ef0b9046b092df",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0016.review.json",
+      "reviewDigest": "04757afb998e167c5cf63fab8af2263fd7c8439bd30f6e8784294af922ee099b",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1核去向、R2原則被理解、R3共同試演；R4需補說簡章；R5明確新增跨教師流程工作；R6可續課；R7後排提示障礙、R8核文件，負擔程度不同。",
+        "熱忱": "R1/R2/R3有信任、認同與協作；R6/R8教學節奏和查詢得到銜接；R4/R5/R7可能增工作但不能將體力或注意力耗損直接拷成熱忱負值。",
+        "情緒": "R1/R2/R3可安心，R7障礙可擔心；R4/R5需跟進、R6可能注意學生難堪、R8例行查詢，都需分開判斷而非整體好壞。",
+        "掌控": "R3確立確認過程、R6恢復課堂、R8確定課後窗口；R1/R2增加可預期性；R4舊資料仍流通、R5需對齊任課、R7後排方法未定，不是壓制離席。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "把地點說給你就好",
+            "objectiveConsequenceQuote": "學生自願私下說明所需去向，未向全班公開。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生願私下說去向，教師照顧與保密原則得到信任。"
+          },
+          {
+            "result": "R2",
+            "title": "原來是知道要去哪",
+            "objectiveConsequenceQuote": "學生認可取代報到通行方式的課堂去向確認原則。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生認同去向確認原則。"
+          },
+          {
+            "result": "R3",
+            "title": "看到和答應是兩件事",
+            "objectiveConsequenceQuote": "師生共同試出可區分注意和許可的確認過程，學生未取得管理權。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "師生共同試出注意與許可的區分，教學互動有實績。"
+          },
+          {
+            "result": "R6",
+            "title": "走回原位再說",
+            "objectiveConsequenceQuote": "學生自行把非急事延到下課，未被公開要求說明私人原因。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生自行把非急事延後，課堂續行，沒有拒絕教師教育工作。"
+          },
+          {
+            "result": "R8",
+            "title": "先確認要不要找老師",
+            "objectiveConsequenceQuote": "一件非急迫文件需求先由導師核對去處，未交學生代為處理。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "導師協助定位詢問窗口，未出現教職投入受損的後果。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-017",
+      "draftRef": "T-DRAFT-0017",
+      "title": "誰說今天不用交",
+      "status": "blocked",
+      "activeStateRulesVersion": 2,
+      "activeManuscriptVersion": 2,
+      "seedId": "S0342",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0017.states-v2.md",
+      "manuscriptDigest": "495b3aa226f3fcb29c46aa7c56a44723a47ea40dd377a0264a845ed3b9d8282e",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0017.review.states-v2.json",
+      "reviewDigest": "f29e9943c5997d711339c9c9347ed2cecb85052ae2c2aad3c6d5016481f406a9",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1有準備資訊；R2質疑來源查核、R4需回進度；R3入口被接受；R5提已完成進度、R6補附頁、R7同事接手、R8記界線，成本不能全套熱忱。",
+        "熱忱": "R2質疑、R4催問可能挫折或壓力，R5已寫者擔憂需照顧；R1/R3/R6/R7/R8有信任合作或降比較壓力，至少五個缺負向動機因果。",
+        "情緒": "R2可能挫折、R4時限壓力、R5同學怕白做可擔心；R1/R3/R7/R8可安心；R6只是新增證據，不必喜怒俱增。",
+        "掌控": "R3入口共識、R7同事承擔、R8同學停催有局面改善；R1/R6有材料但未定效力，R2/R4/R5仍需查核，不代任課教師定作業。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "只給您看這半頁",
+            "objectiveConsequenceQuote": "學生私下提供本人準備進度，未允許轉交原稿。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生願私下讓教師看準備進度，信任仍在。"
+          },
+          {
+            "result": "R3",
+            "title": "我等那一份統一說明",
+            "objectiveConsequenceQuote": "學生明確認可班上等候並查看正式課務說明的方式。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生接受統一正式說明入口。"
+          },
+          {
+            "result": "R6",
+            "title": "原來還有一張附頁",
+            "objectiveConsequenceQuote": "新增一項已見的查證材料，仍未判定原說明涵蓋哪一科。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "同學提供附頁且任課教師納入查證，合作擴充資料。"
+          },
+          {
+            "result": "R7",
+            "title": "任課老師自己出面",
+            "objectiveConsequenceQuote": "任課教師承擔更新作業說明，正式繳交決定仍未公布。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "任課教師承擔更新說明，沒有將導師投入否定掉。"
+          },
+          {
+            "result": "R8",
+            "title": "把已知與待確認分開",
+            "objectiveConsequenceQuote": "教師明確記錄待確認問題，同學暫停相互催促。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "釐清已知待查後，同學停止相互催促，是班務引導的成效。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-018",
+      "draftRef": "T-DRAFT-0018",
+      "title": "你們班已經很熟了吧",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S2112",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0018.md",
+      "manuscriptDigest": "6e7a29f5d4ee51d0fc4a90b039d7a1a83ab6138269d227d684590c5ea5794b0c",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0018.review.json",
+      "reviewDigest": "6075aa3aecdd2c39e68719a5655a337dc5c5d3fb83eadb2bd5273572f4d27f2f",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1聽個別進度、R2由承辦回家長、R3有支持；R4核個人稿、R5需解釋後續責任；R6活動續行、R7核文字、R8新增成人問題，專注需求不同。",
+        "熱忱": "R1/R3/R4/R6有信任參與、R2保住班內活動；R5/R7/R8為有限責任澄清，不應被用來湊足教職意願下降次數。",
+        "情緒": "R3/R6可欣慰，R5怕長期被代表可令教師關切；R1/R2/R4/R7/R8沒有教師被羞辱或極端情緒情節。",
+        "掌控": "R2外問交成人、R6互認續做、R7進度文字更準；R1/R3/R4建立班內信任，R5說清非長期、R8多一問未答，掌控不等於對外宣傳已圓滿。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "我只認得兩個",
+            "objectiveConsequenceQuote": "學生私下向導師說明本人互認進度，未公開或把內容代表全班。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生私下說實際互認進度，信任有回應。"
+          },
+          {
+            "result": "R2",
+            "title": "先看看學校有哪些安排",
+            "objectiveConsequenceQuote": "承辦回答既有求助入口，家庭未觀看本班活動。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "承辦用成人窗口回答家長，沒有破壞班內教學。"
+          },
+          {
+            "result": "R3",
+            "title": "我贊成先聽同學說",
+            "objectiveConsequenceQuote": "學生支持導師保留首次互認的班內空間。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生支持保留互認空間。"
+          },
+          {
+            "result": "R4",
+            "title": "先練一段我自己的話",
+            "objectiveConsequenceQuote": "學生實際投入準備一段個人自述，尚未同意公開或預約。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生實際準備個人自述，尚未公開不等於拒絕參與。"
+          },
+          {
+            "result": "R6",
+            "title": "有個人把名牌翻了回來",
+            "objectiveConsequenceQuote": "原互認活動完成一次同桌再確認，沒有來訪者參與。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "同桌重新互認，原本的教育活動得到續行。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-019",
+      "draftRef": "T-DRAFT-0019",
+      "title": "幾點以前算今天",
+      "status": "blocked",
+      "activeStateRulesVersion": 2,
+      "activeManuscriptVersion": 2,
+      "seedId": "S1066",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0019.states-v2.md",
+      "manuscriptDigest": "f65ac9e8a8771d461b85670d31cc9e780374eb8f3554d82e1bb71f802eff42a7",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0019.review.states-v2.json",
+      "reviewDigest": "31d0b7ffc868d783eca287d220af7715650b55995b0cc62199cd11ff81ca7084",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1減少重複聯絡、R2取得半小時；R3追進度、R4釐清責任、R5補筆記；R6分工明確；R7實際失去十分鐘、R8再釐清，精神不應與熱忱全同步。",
+        "熱忱": "R1互信、R2保有備課、R6合法分工可支持投入；R5/R8需求與訊息澄清沒有負向動機發展；R3/R4/R7其餘三個即使全判負仍不足四。",
+        "情緒": "R1/R2可安心放鬆、R7十分鐘被佔可煩躁；R3/R4可能受催促緊張；R5/R6/R8不能無由判成不悅。",
+        "掌控": "R1不重複聯絡、R6服務範圍確定、R8狀態釐清；R2只增時間不直接結案；R3/R4口徑未定、R5需求待整合、R7重複訊息需查，勿把待機取消當權威增加。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "放到下個上課日",
+            "objectiveConsequenceQuote": "家長相信導師會接續處理，明確不再為同一件非急事另打電話。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "家長願等並不重複打電話，親師互信得到回應。"
+          },
+          {
+            "result": "R2",
+            "title": "少留一次待機",
+            "objectiveConsequenceQuote": "導師確認一個原預留的待機時段取消，取得可支配的半小時。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "取消半小時待機、回歸備課，是時間餘裕改善，並非教職投入下降。"
+          },
+          {
+            "result": "R5",
+            "title": "晚上傳不等於晚上讀",
+            "objectiveConsequenceQuote": "導師辨認一項時間差需求，未把晚間讀取當作所有家庭的期待。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "辨認發送與閱讀時間不同，是需求釐清，沒有工作被否定。"
+          },
+          {
+            "result": "R6",
+            "title": "這一件窗口還在",
+            "objectiveConsequenceQuote": "確認一項由原處室於既有服務時段辦理的事項。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "原處室承擔已確認事項，職責分工可用。"
+          },
+          {
+            "result": "R8",
+            "title": "收到了還沒回答",
+            "objectiveConsequenceQuote": "澄清系統收件與教師實際回覆的差別。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "釐清系統收件與教師回覆，屬正常說明，未顯示意願遭打擊。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-020",
+      "draftRef": "T-DRAFT-0020",
+      "title": "簽名以前的那一句",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S2092",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0020.md",
+      "manuscriptDigest": "7855475b7d952766af7196a1f3922972e12a34c140d0f4f594848d37f84464f3",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0020.review.json",
+      "reviewDigest": "0ef472c01be02a709d989a5041134efe74574a682cd87510c398c4b7144f3ec0",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1需說保管、R2同學接受、R3新增傳閱查證、R4須停公開附議；R5聽動機、R6記提案、R7移版、R8說退出，認知負擔與動機各自判斷。",
+        "熱忱": "R3質疑與R4反感可受挫，R1也需責任說明；R2/R5/R6/R7/R8仍保有自主互助意義，不能補寫四次以上教職動機損害。",
+        "情緒": "R4可懊惱，R3可擔心草稿被誤用；R2有安心、R5善意可欣慰；R1/R6/R7/R8屬修正和釐清，未必負面。",
+        "掌控": "R2/R7/R8使參與規則更清楚；R1保管已交代、R5動機辨識、R6未成班約；R3傳閱範圍待查、R4問法曾造成誤解，不能用強迫全班簽字提升掌控。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R2",
+            "title": "我贊成先寫能做的事",
+            "objectiveConsequenceQuote": "學生明確接受不簽署、保留自由求助的安排。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生接受不簽且保留自由求助，教育原則得到理解。"
+          },
+          {
+            "result": "R5",
+            "title": "簽過是因為想讓人好開口",
+            "objectiveConsequenceQuote": "教師得知原簽名者的動機，未因此重新啟用簽名。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "先簽者說明想支持同學的動機，不是否定導師。"
+          },
+          {
+            "result": "R6",
+            "title": "把門打開也算幫忙",
+            "objectiveConsequenceQuote": "收到一項不限制求助對象的改寫建議，尚未成為班約。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "收到不限制求助的改寫提案，學生願意共同修正。"
+          },
+          {
+            "result": "R7",
+            "title": "兩種東西不要貼一起",
+            "objectiveConsequenceQuote": "班級版面區別既有管道與自訂承諾，未展示原稿。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "版面分開既有管道與自訂承諾，具體改善表述。"
+          },
+          {
+            "result": "R8",
+            "title": "先留一個不回答的位置",
+            "objectiveConsequenceQuote": "教師說明可退出當日表態，未把沉默當作同意。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "容許不表態且不把沉默算同意，未顯示教師投入意願降低。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-021",
+      "draftRef": "T-DRAFT-0021",
+      "title": "空的格子也有人用",
+      "status": "blocked",
+      "activeStateRulesVersion": 2,
+      "activeManuscriptVersion": 2,
+      "seedId": "S1728",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0021.states-v2.md",
+      "manuscriptDigest": "736e6a412736113d98092872ad3cc9ed05425b10424f17f8162f34f6c6f1d618",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0021.review.states-v2.json",
+      "reviewDigest": "370f95dea302ae17597b3ad2df3d959a62a6798617843cd434faacd25d9ad7a3",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1約談、R2暫放有序；R3學生省時不是教師精神恢復；R4記補登、R5查認領、R6發現尺寸限制、R7有物主整理、R8少一備選，工作成本分別考量。",
+        "熱忱": "R1/R2/R3照顧與合作有成效、R4學生提公平程序、R7自願減物；R5/R6/R8仍有查核或容量困難，不足以把至少五個非負結果全轉為意願減損。",
+        "情緒": "R6/R8容量限制可擔心；R1/R2/R3/R7可欣慰；R4/R5是提案與線索，不需要一律產生負面感受。",
+        "掌控": "R2只有暫放權、R3只是暫緩分配；R5有線索未認領；R6/R8可用空間較受限；R1/R4/R7提供溝通與整理進展，沒有固定分配已完成的假結論。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "趕車前我再來找您",
+            "objectiveConsequenceQuote": "學生主動與導師約個別談話，未公開通勤細節。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生主動約談，保留隱私的做法得到信任。"
+          },
+          {
+            "result": "R2",
+            "title": "先照這格放",
+            "objectiveConsequenceQuote": "學生實際採用教師的單次寄放方式，未取得固定使用權。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生實際採用單次寄放規則。"
+          },
+          {
+            "result": "R3",
+            "title": "不用留下來等",
+            "objectiveConsequenceQuote": "教師確定今日放學後不收登記，學生不用為等分配留校，保有原先打算挪出的時間。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生不用留校等結果，支持通勤學生的照顧目標有實際效果；不能把學生省時誤作教師省時。"
+          },
+          {
+            "result": "R4",
+            "title": "沒來到的人也有一輪",
+            "objectiveConsequenceQuote": "教師收到加入補登程序的提議，固定分配尚未決定。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生要求補登機會，是公平程序的參與。"
+          },
+          {
+            "result": "R7",
+            "title": "先把雨具帶回去",
+            "objectiveConsequenceQuote": "一位物主自行減少暫放物，未轉讓長期使用權。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "物主自行減少暫放物，班級協作有實際回應。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-022",
+      "draftRef": "T-DRAFT-0022",
+      "title": "交付單上的凹痕",
+      "status": "blocked",
+      "activeStateRulesVersion": 2,
+      "activeManuscriptVersion": 2,
+      "seedId": "S0482",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0022.states-v2.md",
+      "manuscriptDigest": "00de22189a98c9821d841b687b0e064c9c4eaa26baf5183c1c08efcc001ec8c3",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0022.review.states-v2.json",
+      "reviewDigest": "b14bb1ade3e0a0714353461ca6d9d23942dbb08dd93e8368ba0ed539680dbc18",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1有肯定、R2多線索、R3不需擴大學生檔案；R4要解釋責任；R5試機、R6發現舊圖不足、R7另拍、R8待複核，耗神與動機不可共用一列。",
+        "熱忱": "R1/R2/R3合作與公平有回饋，R5可用性進展、R7正式留痕可持續；R4/R6/R8的不確定性不能拿來製造足量動機損害。",
+        "情緒": "R1/R3可安心、R6舊圖缺角可失望；R4責任問答可能緊張；R2/R5/R7/R8屬資訊與流程，不全判喜或怒。",
+        "掌控": "R2辨識位置但不能定時間；R5只證明能開機、R7只記現在；R6仍查不明先後、R8未完簽收；R1/R3/R4讓界線更清楚，不把簽字權或歸責別人當掌控。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "懂為什麼要等一下",
+            "objectiveConsequenceQuote": "學生肯定導師只確認事實而不先歸責的原則。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生肯定不先歸責的原則，教師投入得到價值回饋。"
+          },
+          {
+            "result": "R2",
+            "title": "同一個角落有貼紙",
+            "objectiveConsequenceQuote": "學生主動指出有助於辨識位置的線索，未證明出現時間。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生主動指出貼紙線索，願意協助查明。"
+          },
+          {
+            "result": "R3",
+            "title": "不一定要用我那張",
+            "objectiveConsequenceQuote": "學生接受以當前見聞先留痕，無須擴大本人畫面的提供範圍。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生接受先記目視事實而不強迫用私人照片。"
+          },
+          {
+            "result": "R5",
+            "title": "開機正常但還有痕",
+            "objectiveConsequenceQuote": "確認可啟動，未對預填外觀欄做相反的承認。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "設備可啟動得到確認，實際教學可用性有進展。"
+          },
+          {
+            "result": "R7",
+            "title": "用當天的新照片記",
+            "objectiveConsequenceQuote": "取得只記本次外觀、由校方保存的影像，未存用學生原檔。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "校方另拍現況並保存，不以學生相簿代替正式查核。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-023",
+      "draftRef": "T-DRAFT-0023",
+      "title": "按錯那一格的時候",
+      "status": "blocked",
+      "activeStateRulesVersion": 2,
+      "activeManuscriptVersion": 2,
+      "seedId": "S0805",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0023.states-v2.md",
+      "manuscriptDigest": "069547be413e859a6048786e150dbf3fa694f2bb4b65f3a2e46c608910492846",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0023.review.states-v2.json",
+      "reviewDigest": "75a9cc1db9c46be7ed408b35875508c18bcef2904fd616ea2b02b87a6bac5094",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1約問、R2拆解、R3試提示；R4明確多兩份備課；R5熟手整理、R6調輪序、R7維持範例、R8記需求，R4可耗神而不必連熱忱一起扣。",
+        "熱忱": "R1/R2/R3學習與教法回饋、R5互助分工支持投入；R7合適範例正常延續；R4額外備課、R6暫觀察、R8需求未定最多其餘三個可另議，仍不足四負。",
+        "情緒": "R2/R3可欣慰；R4工作增加可有壓力；R6學生暫觀察可關切而非被拒絕；R1/R5/R7/R8不補寫挫敗。",
+        "掌控": "R3提示順序試成、R5不代按、R6輪序仍在、R7不曝私人畫面；R4暴露共通難點待備課、R8下段未排序、R1/R2提供教學線索，不能把熟手退讓當教師權威值。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "我想下課再問一次",
+            "objectiveConsequenceQuote": "學生主動和導師約個別詢問，未要求公開再示範。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生主動約個別學習，仍有求教意願。"
+          },
+          {
+            "result": "R2",
+            "title": "原來回去就有辦法",
+            "objectiveConsequenceQuote": "教師完成一次具體解釋，學生肯定辨認復原步驟的教法。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生肯定拆解復原步驟的教法。"
+          },
+          {
+            "result": "R3",
+            "title": "想要提示我會說",
+            "objectiveConsequenceQuote": "師生合作完成一次可由操作者發起的提示過程。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "師生實際完成由學生發起的提示協作。"
+          },
+          {
+            "result": "R5",
+            "title": "熟手退半步還是有事做",
+            "objectiveConsequenceQuote": "熟手自願改為準備教具，未接管他人操作。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "熟手自願整理教具而不代按，班級教學獲支持。"
+          },
+          {
+            "result": "R7",
+            "title": "螢幕上只有一張示範卡",
+            "objectiveConsequenceQuote": "本輪繼續使用公開範例，未出現另名學生的私人畫面。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "使用公開範例而不動私人照片，沒有教職意願受損情節。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-024",
+      "draftRef": "T-DRAFT-0024",
+      "title": "一張圖的兩邊",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S1852",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0024.md",
+      "manuscriptDigest": "059cb16c92a7d5c80158a679ec5740683a2f3a8fc21adfa130cc17c7e6e0465e",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0024.review.json",
+      "reviewDigest": "0a19686ce1dd98b819357f0884fd69c4a9b190c77c232c1c7f1c84402798c809",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1接問、R2記對照、R3有支持、R4多副本；R5確認一窗口、R6一箭頭待核、R7資訊尚未合線、R8聽原意，認知工作仍不等於熱忱耗損。",
+        "熱忱": "R1至R4呈現信任、資訊、認同、資源，R5有可用窗口；R6/R7/R8尚需核對，不能為固定負平均否定前五個的投入意義。",
+        "情緒": "R1/R3/R4可欣慰，R6錯路風險可擔心；R2/R5/R7/R8主要是查證狀態，沒足夠理由一律負向。",
+        "掌控": "R5有確定入口、R2/R4/R7有對照材料；R6尚未核實、R7不能合成路線、R8只是提案理由；R1/R3改善溝通，不代表全圖已定稿。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "我不知道這裡是哪裡",
+            "objectiveConsequenceQuote": "學生主動把未確認的地點疑問交給導師，不必先公開原入學組別。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生相信導師會核對並願意提出問題。"
+          },
+          {
+            "result": "R2",
+            "title": "同一件事有兩種寫法",
+            "objectiveConsequenceQuote": "學生主動提供名稱對照線索，教師尚未確認兩者相同。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生主動補名稱對照線索。"
+          },
+          {
+            "result": "R3",
+            "title": "我贊成用同一張",
+            "objectiveConsequenceQuote": "學生支持共用索引，不把習慣的查找方式綁成新生身分。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生支持共用索引及不同查找習慣。"
+          },
+          {
+            "result": "R4",
+            "title": "這張副本可以留下",
+            "objectiveConsequenceQuote": "學生自願提供一份無個人資料的副本，保留原件。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生自願給無個資副本供共同使用。"
+          },
+          {
+            "result": "R5",
+            "title": "樓名還在，窗口換了",
+            "objectiveConsequenceQuote": "查到一個已確認的現行窗口，保留其他尚有疑義的資料。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "查到現行窗口，是可用資訊增加而非教師投入被否定。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-025",
+      "draftRef": "T-DRAFT-0025",
+      "title": "鉛筆寫的那幾次",
+      "status": "blocked",
+      "activeStateRulesVersion": 2,
+      "activeManuscriptVersion": 2,
+      "seedId": "S0408",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0025.states-v2.md",
+      "manuscriptDigest": "8ac0e49c3886b44aca0fc5d4570769e03a714c634a7151453041f8a6f29415dc",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0025.review.states-v2.json",
+      "reviewDigest": "0c8c44f88bdbc94c55683ac29e1b4e25c69f7da7ab7b15a0b3560530ed61662f",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1有肯定、R2要回排班進度、R3交接完成；R4留建議、R5示例；R6要核舊工、R7記有限意願、R8成人待辦歸自己，心力成本不同。",
+        "熱忱": "R1/R3/R4/R5/R7有公平、交接或新手參與，不能因非永久支援就扣教師動機；R2/R6/R8待辦最多三個，不足五組所需四負。",
+        "情緒": "R1/R3/R7可欣慰；R6漏記貢獻可關切，R8多成人待辦可能壓力；R2/R4/R5沒有直接的負面情緒後果。",
+        "掌控": "R3有限交接完成、R5知道求助點、R8成人責任辨清；R2個人時間未定、R4程序未定、R6紀錄待核、R7只一次；R1肯定不是排班已成。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "記得我做過就好",
+            "objectiveConsequenceQuote": "教師公開肯定舊工作，學生明確敬重其未把感謝變成義務的原則。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生敬重承認貢獻但不加義務的原則。"
+          },
+          {
+            "result": "R3",
+            "title": "我可以只交接這一疊",
+            "objectiveConsequenceQuote": "學生自願完成一段有限的實際交接，未同意往後固定教人。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生自願完成有限交接，學習與互助實際發生。"
+          },
+          {
+            "result": "R4",
+            "title": "下次先問過再記",
+            "objectiveConsequenceQuote": "教師收到改用本人確認後才登錄的程序建議，尚未定案。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "提出本人確認再登錄的程序改善。"
+          },
+          {
+            "result": "R5",
+            "title": "抄的人也說明了一句",
+            "objectiveConsequenceQuote": "取得抄名者想求助的具體理由，班上有一份可用例子。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "抄名者說出困難且取得共用例子，有教學切入點。"
+          },
+          {
+            "result": "R7",
+            "title": "有人只肯試做一次",
+            "objectiveConsequenceQuote": "得到一件限定一次的試做意願，未擅排長期值勤。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "新手願試做一次，有參與意願，限期不等於教師被拒絕。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-026",
+      "draftRef": "T-DRAFT-0026",
+      "title": "只能勾一格嗎",
+      "status": "blocked",
+      "activeStateRulesVersion": 2,
+      "activeManuscriptVersion": 2,
+      "seedId": "S1287",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0026.states-v2.md",
+      "manuscriptDigest": "32b9a44d7b5bce91a528986edbbd1bca8f111e897e52bb929037618628dff647",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0026.review.states-v2.json",
+      "reviewDigest": "eef76f976c851411f127c1f89005c456a8a023e426211bb895d72b6f5b9796b1",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1肯定、R2被質疑需重核；R3有規則共識；R4追時段、R5新增統計、R6說紙本、R7確認窗口、R8分工，精神與教職投入不能同扣。",
+        "熱忱": "R2疑慮、R4追問可能受挫；R6需說明紙本仍可用；R1/R3/R5/R7/R8有原則認同或實際協作，至少五個無負向意願依據。",
+        "情緒": "R2可能挫折、R4等待可能緊張，R1/R3/R7可安心；R5/R6/R8是資訊與分工，不因作業未完就補不悅。",
+        "掌控": "R5回報欄位清楚、R7可用時段確定、R8未知責任留痕；R2/R4仍有疑義、R6不保永久雙軌；R1/R3是原則被接受，不是全員登入成功。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "不必跟大家說誰不會",
+            "objectiveConsequenceQuote": "學生肯定導師如實且不以姓名呈現進度的原則。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生肯定如實不點名的原則。"
+          },
+          {
+            "result": "R3",
+            "title": "還沒試也可以照實寫",
+            "objectiveConsequenceQuote": "學生明確接受依實際驗證狀態報告的規則。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生接受按實際驗證狀態回報。"
+          },
+          {
+            "result": "R5",
+            "title": "承辦想看分開的數量",
+            "objectiveConsequenceQuote": "取得窗口對補充回報的欄位指示，實際狀態仍待統計。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "承辦給出分欄要求，行政有合作而非否定教師投入。"
+          },
+          {
+            "result": "R7",
+            "title": "可以只抽時間看一下",
+            "objectiveConsequenceQuote": "承辦確認一段仍有效的協助時間，沒有宣告所有人已能登入。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "原有效協助時段仍可使用，保住學生求助機會。"
+          },
+          {
+            "result": "R8",
+            "title": "先別補一個猜的數字",
+            "objectiveConsequenceQuote": "兩位教師確立未知欄位及後續查證責任，沒有捏造完成資料。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "兩位教師共同確認未知及核對責任，是可信協作。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-027",
+      "draftRef": "T-DRAFT-0027",
+      "title": "這句是我們寫的嗎",
+      "status": "blocked",
+      "activeStateRulesVersion": 2,
+      "activeManuscriptVersion": 2,
+      "seedId": "S1376",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0027.states-v2.md",
+      "manuscriptDigest": "b72ec2d6b3399933f8533f262d271b14a5d4388ed4f59c6d827b10a8efdd3157",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0027.review.states-v2.json",
+      "reviewDigest": "17a2064a228d3d9cfc09e46643e0ab87a84a6e35b96fcc947359ec98c64df86d",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1有肯定、R2需核標示、R3原則被認可；R4收稿、R5保留個人意願、R6回承辦、R7查事實、R8說自願，各有注意力成本。",
+        "熱忱": "R1/R3/R4/R5/R7有多元、自主、投稿與替代方案的教育意義；R2質疑、R6交件壓力、R8不投稿最多其餘三R，不能硬扣前五個。",
+        "情緒": "R2可能緊張，R6交件催問有壓力；R1/R3/R4/R5可欣慰；R7/R8正常方案與退出，不把不投稿當教師受辱。",
+        "掌控": "R3確認規則、R4有稿但未同意公開、R5僅個人意願；R2標示待核、R6未延期、R7只是提案、R8自願明確；R1價值肯定不代表整牌已可交。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "教室裡有人想不同的事",
+            "objectiveConsequenceQuote": "學生肯定導師不代為表態的原則，未因此同意提交個人稿。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生肯定尊重不同個人目標的原則。"
+          },
+          {
+            "result": "R3",
+            "title": "可以先給我看過嗎",
+            "objectiveConsequenceQuote": "學生認可由作者確認的規則，尚未交付展示同意。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生接受作者先確認的規則。"
+          },
+          {
+            "result": "R4",
+            "title": "這是我先寫給自己的",
+            "objectiveConsequenceQuote": "學生實際準備並交付一份供導師核對的草稿，未承諾對外展示。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生實際交可核對的個人稿，參與具體發生。"
+          },
+          {
+            "result": "R5",
+            "title": "原句有人真的喜歡",
+            "objectiveConsequenceQuote": "同學表達願以本人名義保留目標，導師未代為提交。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "喜歡原句者願以本人署名表達，學會區分代表範圍。"
+          },
+          {
+            "result": "R7",
+            "title": "標題可以不是宣言",
+            "objectiveConsequenceQuote": "班上新增一項可供驗證的事實版面提案，未改寫任何人的文字。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "提出客觀班級資訊版面，是可行替代方案。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-028",
+      "draftRef": "T-DRAFT-0028",
+      "title": "原來到這裡才換人",
+      "status": "blocked",
+      "activeStateRulesVersion": 2,
+      "activeManuscriptVersion": 2,
+      "seedId": "S0377",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0028.states-v2.md",
+      "manuscriptDigest": "546a4679e57a3a77a6af16e92a43bc09c673b580cfefec981c7ce8f36316edfe",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0028.review.states-v2.json",
+      "reviewDigest": "5cdc2aeadf6db040da143b76e1f8564aaedf9c9ac29fe62b82016c5a9977f115",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1個別談話、R2說入口、R3明確新增文件查詢；R4記交接建議、R5安排致謝、R6補聯絡方式、R7互認、R8澄清未約，工作量與熱忱不同。",
+        "熱忱": "R1/R2信任與分流、R4改善提案、R5保住致謝、R7互認續行，都沒有意願受挫依據；R3/R6/R8最多其餘三項可討論，不能湊四負。",
+        "情緒": "R1/R2可安心、R3待查可壓力；R5對舊師感謝不應視為新導師吃醋；R4/R6/R7/R8多是理解及澄清，不臆造競爭情緒。",
+        "掌控": "R2/R6辨清正式身分、R7恢復活動、R8除去錯誤預約；R3待查不是核定、R4只是提案；R1/R5維持聯繫，不把學生只問自己當掌控。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "我認得您在哪裡了",
+            "objectiveConsequenceQuote": "學生主動與正式導師建立一項個別談話機會。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生主動與正式導師建立個別對話。"
+          },
+          {
+            "result": "R2",
+            "title": "兩邊分開問可以",
+            "objectiveConsequenceQuote": "學生調整原先只想等接待教師回答的要求，接受分流。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生接受報到與班務分流，不再要求全等原教師。"
+          },
+          {
+            "result": "R4",
+            "title": "可以先標出換人的那一刻嗎",
+            "objectiveConsequenceQuote": "學生提出在臨時接待資料上標明交接時點的要求。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生提出標交接時點的改善建議。"
+          },
+          {
+            "result": "R5",
+            "title": "本來只是想說謝謝",
+            "objectiveConsequenceQuote": "學生得到可另行致謝的機會，沒有要求接待教師留場。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生有合法而不佔接待時段的致謝方式，不是否定導師。"
+          },
+          {
+            "result": "R7",
+            "title": "第一個問題改問同桌",
+            "objectiveConsequenceQuote": "學生在班內重新開始彼此互認，沒有由同桌判定行政文件。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "同學重新互認，班內活動開始恢復。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-029",
+      "draftRef": "T-DRAFT-0029",
+      "title": "沒人附議的那張紙",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S0301",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0029.md",
+      "manuscriptDigest": "0ec30887107b00a7c559ab65e3eea723900cd747e96e12ab6458d4c324ab9935",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0029.review.json",
+      "reviewDigest": "4810408ce08cf54dc39742bdc97eb5539f493e79c1d0f6feb49396e77b64901e",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1得提案用意、R2需補方法解說、R3有整理；R4學生開始留意處置、R5核同題、R6重確認附議、R7新增查入口、R8整理考量，精神負擔各異。",
+        "熱忱": "R2明確質疑可挫折、R4被留意可能有壓力、R7多查詢；R1/R3/R5/R6/R8仍有信任、資訊與議程教育價值，不能四負。",
+        "情緒": "R2可能受挫，R4被觀察可緊張但不是已反感；R1/R3/R8可欣慰，R5/R6/R7不為符合數學補造不悅。",
+        "掌控": "R3題目清楚、R5範圍尚待核、R8有比較考量；R2方法未說明、R4等下次觀察、R6意向未定、R7只是查詢；R1信任不等於議程已核定。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "我想的是下次也找得到",
+            "objectiveConsequenceQuote": "學生因信任而私下讓導師知道提案用意，導師沒有公開來源。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生信任導師保留少人提案並私下說原意。"
+          },
+          {
+            "result": "R3",
+            "title": "把要查的先列出來",
+            "objectiveConsequenceQuote": "學生實際整理兩項班務查詢，未替全班決定答案。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生實際幫忙整理題目，有班務參與。"
+          },
+          {
+            "result": "R5",
+            "title": "兩張其實在問同件事",
+            "objectiveConsequenceQuote": "發現兩張可能同題的紙，仍須核對範圍才可合併。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "發現可能同題，為討論提供可比較資訊，未否定教師投入。"
+          },
+          {
+            "result": "R6",
+            "title": "附議也有人想收回",
+            "objectiveConsequenceQuote": "取得一項尚可改變的參與意向，未把投票結果確定。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "同學釐清參與意向並可改意見，屬自主議程學習而非失去教學意義。"
+          },
+          {
+            "result": "R8",
+            "title": "重要的意思不只一種",
+            "objectiveConsequenceQuote": "班級初步形成兩項可比較的考量，未核定正式門檻。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "班上辨認影響人數與程度兩項考量，討論能力有進展。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-030",
+      "draftRef": "T-DRAFT-0030",
+      "title": "謝卡要寫給誰",
+      "status": "blocked",
+      "activeStateRulesVersion": 2,
+      "activeManuscriptVersion": 2,
+      "seedId": "S0149",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0030.states-v2.md",
+      "manuscriptDigest": "ca9c012e1f941d4846ad17298701b9e977c2d3fb81096bd7282bcdb002bf71cb",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0030.review.states-v2.json",
+      "reviewDigest": "c0a32d30b97bfd52b1b4a3dc8b914fbc4788b8a167555acaf621c46283d0a3dd",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1轉述新期待、R2需修復親師應對、R3明確新增清冊；R4解釋依據、R5核清單、R6釐清謝意、R7記去向、R8調準備，不能全部映射成熱忱耗損。",
+        "熱忱": "R2家長不滿可受挫、R3額外查證可耗神、R4問責可能壓力；R1/R5/R6/R7/R8有合作、理解或可行教學，至少五項不能硬判負。",
+        "情緒": "R2可能懊惱、R3/R4可能緊張；R1/R5/R8可安心；R6/R7只是謝意與暫存釐清，不假造教師對贈物的喜惡。",
+        "掌控": "R5基本品開始發、R7暫存去向確定、R8活動可進行；R1不等於受贈同意、R2應對需調整、R3清冊待補、R4尚無核定、R6只是謝意來源說清。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "我原本不是要條件",
+            "objectiveConsequenceQuote": "家長調整原先的致謝期待，接受只等校方提供狀態。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "家長調整致謝期待並接受校方狀態，合作有進展。"
+          },
+          {
+            "result": "R5",
+            "title": "我的那包有名字嗎",
+            "objectiveConsequenceQuote": "已核實的基本品開始按原流程領用，與謝卡無關。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "基本材料開始正常領用，教學需求得到服務。"
+          },
+          {
+            "result": "R6",
+            "title": "有人只想說謝謝幫忙搬",
+            "objectiveConsequenceQuote": "學生區分搬運協助和待核贈物，不形成集體署名。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "學生分辨搬運協助與受贈謝意，是對原則的理解。"
+          },
+          {
+            "result": "R7",
+            "title": "箱子先留在行政處",
+            "objectiveConsequenceQuote": "校方確認未開封箱的暫存去向，未將暫存當受贈。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "校方提供可追溯暫存去處，不是拒絕教師工作。"
+          },
+          {
+            "result": "R8",
+            "title": "不急著用那一箱",
+            "objectiveConsequenceQuote": "確認今天的工作能用已列的紙張進行，額外箱不進入現有用量。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "確認今天可用既有紙張完成活動，教學仍能進行。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    },
+    {
+      "storyId": "T1-031",
+      "draftRef": "T-DRAFT-0031",
+      "title": "誰能替老師回答",
+      "status": "blocked",
+      "activeStateRulesVersion": 1,
+      "activeManuscriptVersion": 1,
+      "seedId": "S1392",
+      "poolId": "T1-1:single",
+      "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0031.md",
+      "manuscriptDigest": "7491cda44b93dcf046238cbd7b7e524f2650332ea295a5fb4bc571599fe16a30",
+      "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0031.review.json",
+      "reviewDigest": "0156e534b3ecd4bf811df4514ded610038f6154a0f73eba12657f7394f3fd817",
+      "readResults": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "stateAssessment": {
+        "精神": "R1/R2公開依據漸清、R3支援撤回可能增加解說；R4同儕帶路、R5分欄核對、R6匿名問答；R7新生停問需介入、R8互核，精神不等於權威。",
+        "熱忱": "R3退縮與R7熟人再次壓住新生可受挫；R6匿名問題仍願給導師；R1/R2/R4/R5/R8有合作與理解，不能為五組負平均扣掉這些動機回饋。",
+        "情緒": "R3可失落、R7可擔心或懊惱；R1/R2/R4/R5/R8可欣慰；R6匿名問題不應被當冒犯，四狀態不全複製同一好壞。",
+        "掌控": "R1/R2正式說明回到本人、R5/R8可共同核對、R6匿名入口確認；R3只撤支援不等於導師失去說明權，R7仍有理解落差；R4只協助位置不代教師規則。"
+      },
+      "blocker": {
+        "state": "熱忱",
+        "reason": "依完整結果敘事判斷，以下五R沒有合理的熱忱下降因果；其餘三R即使全部容許負值，也不足A～E任一組最少四個負值。",
+        "nonnegativeWitnessCount": 5,
+        "remainingResultsMaximumNegativeCount": 3,
+        "requiredMinimumNegativeCount": 4,
+        "evidence": [
+          {
+            "result": "R1",
+            "title": "你自己說比較準",
+            "objectiveConsequenceQuote": "熟識學生主動承認自己不能代導師發布本屆規定；新生改以教師的公開說明為依據。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "熟識學生交還規則說明給導師，新生願聽公開依據。"
+          },
+          {
+            "result": "R2",
+            "title": "以前可以，不代表現在一定要",
+            "objectiveConsequenceQuote": "熟識學生接受舊慣例不具本屆約束力，並協助澄清新生的選擇。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "舊生接受不具本屆約束力，且協助新生多種路徑。"
+          },
+          {
+            "result": "R4",
+            "title": "我可以帶你找門牌",
+            "objectiveConsequenceQuote": "熟識學生自願提供校內位置協助，沒有擅自代導師回答本屆規定。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "熟識學生自願提供位置協助而不代答，互助有實績。"
+          },
+          {
+            "result": "R5",
+            "title": "黑板上的兩種說法",
+            "objectiveConsequenceQuote": "舊生協助將既有經驗與本屆正式說明分欄，讓不同來源的訊息可以核對。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "同學分開舊經驗與正式規範，形成共同核對。"
+          },
+          {
+            "result": "R8",
+            "title": "我只說我知道的",
+            "objectiveConsequenceQuote": "熟識學生與新生形成一次實際的互相核對，未把單一經驗當成全班規定。",
+            "enthusiasmDirection": "nonnegative",
+            "judgment": "新舊同學實際願意互聽互問，是教育投入的具體回饋。"
+          }
+        ]
+      },
+      "v3CandidateCreated": false,
+      "v3MechanicalValidation": "not-run-no-causally-approved-candidate",
+      "revisionApplied": false
+    }
+  ],
+  "evidenceIntegrity": {
+    "matchedStoryIdentities": 30,
+    "matchedObjectiveConsequenceQuotes": 150,
+    "verifiedUniqueHistoricalAndCurrentFiles": 90,
+    "ledgerUnchanged": true,
+    "protectedSourceDiffUnchanged": true,
+    "audit": {
+      "versionsChecked": 45,
+      "lockedFilesChecked": 31,
+      "pass": true,
+      "problems": []
+    }
+  }
+}

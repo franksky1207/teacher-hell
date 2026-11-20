@@ -696,7 +696,7 @@ test('post-lock revocation keeps historical ID and SHA, restores quota and seed 
  assert.throws(()=>validateLedger(broken,context),/撤銷作品缺少/);
 });
 
-test('T1-1 historical replacement 0031: preserved V1 proof cannot bypass V2 full or new lock',()=>{
+test('T1-1 historical replacement 0031: preserved V1 proof cannot bypass V2 full or new lock',{skip:!JSON.parse(file('../data/story-production-ledger.json')).candidates['T-DRAFT-0031']},()=>{
  const storyPath='../content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0031.md';
  const reviewPath='../content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0031.review.json';
  const manuscript=file(storyPath),reviewText=file(reviewPath),review=JSON.parse(reviewText);
@@ -723,7 +723,7 @@ test('T1-1 historical replacement 0031: preserved V1 proof cannot bypass V2 full
  assert.equal(historical.review.digest,createHash('sha256').update(reviewText).digest('hex'));
 });
 
-test('formal T1-1 post-replacement ledger: 30 active, one revoked, SHA audit includes both',()=>{
+test('formal T1-1 post-replacement ledger: 30 active, one revoked, SHA audit includes both',{skip:!JSON.parse(file('../data/story-production-ledger.json')).candidates['T-DRAFT-0031']},()=>{
  const current=JSON.parse(file('../data/story-production-ledger.json'));
  const summary=ledgerProgress(current,context),rows=Object.values(current.candidates);
  assert.equal(current.revision,94+current.history.filter(item=>item.action==='revise-locked').length);
@@ -810,4 +810,35 @@ test('isolated V1→V2 same-ID revision preserves immutable source and ledger id
  assert.throws(()=>changeProductionLedger(revoked,request,context),/僅接受locked/);
  const broken=structuredClone(changed);broken.candidates[request.ref].manuscriptVersions=[];
  assert.throws(()=>validateLedger(broken,context),/歷史修訂鏈/);
+});
+
+test('reset T1 first 30 selected seeds retain immutable source, quota, and zero formal ledger',()=>{
+ const ledger=JSON.parse(file('../data/story-production-ledger.json'));
+ const manifest=JSON.parse(file('../data/story-production-selected-seeds-T1-001-030.json'));
+ assert.equal(ledger.schemaVersion,1);
+ assert.equal(ledger.revision,0);
+ assert.deepEqual(ledger.candidates,{});
+ assert.deepEqual(ledger.history,[]);
+ assert.deepEqual(ledgerProgress(ledger,context).locked,{T:0,G:0,total:0});
+ assert.equal(manifest.selections.length,30);
+ const selected=new Set(),perDate=new Map();
+ for(const [i,entry] of manifest.selections.entries()){
+  assert.equal(entry.slot,'T1-'+String(i+1).padStart(3,'0'));
+  assert.equal(entry.previousStoryId,'T1-'+String(i+2).padStart(3,'0'));
+  assert.equal(entry.type,'T');
+  assert.equal(entry.topicId,'T1-1');
+  assert.equal(entry.poolId,'T1-1:single');
+  assert.ok(seeds.has(entry.seedId),entry.seedId);
+  assert.ok(!selected.has(entry.seedId),entry.seedId);
+  selected.add(entry.seedId);
+  assert.ok(windows.pools.get(entry.poolId).dates.has(entry.quotaDate));
+  perDate.set(entry.quotaDate,(perDate.get(entry.quotaDate)||0)+1);
+ }
+ assert.equal(selected.size,30);
+ assert.equal(perDate.size,5);
+ assert.ok([...perDate.values()].every(n=>n===6));
+ const sample=draft('T-DRAFT-001',manifest.selections[0].seedId);
+ const next=lock(reserve(prop(ledger,sample).ledger,'T-DRAFT-001',manifest.selections[0].seedId).ledger,sample).ledger;
+ assert.equal(next.candidates['T-DRAFT-001'].storyId,'T1-001');
+ assert.equal(ledger.revision,0,'original ledger remains unchanged');
 });

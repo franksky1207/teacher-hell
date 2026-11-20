@@ -19,11 +19,12 @@ else{
    readFile(join(root,'docs','T1-T6-特定故事20主題與觸發日期.md'),'utf8')
   ]);
   const report=validateStoryDraft(story,{
+   stateRulesVersion:Number(param('--state-rules-version')||3),
    stage:param('--stage')||'full',
    seeds:seedCodesFromMarkdown(seedText),
    topics:topicIdsFromMarkdown(topicText),windows:readTopicWindows(topicText)
   });
-  console.log('17D草稿｜四狀態V2｜'+(report.mechanicalPass?'機械檢查通過':'機械檢查失敗')+'｜'+report.stage+'｜錯誤'+report.errors.length+'項');
+  console.log('17D草稿｜四狀態V'+report.details.stateRulesVersion+'｜'+(report.mechanicalPass?'機械檢查通過':'機械檢查失敗')+'｜'+report.stage+'｜錯誤'+report.errors.length+'項');
   for(const item of report.errors)console.log('✗ '+item.code+'：'+item.detail);
   for(const item of report.warnings)console.log('△ '+item);
   if(report.details.stateDistribution)console.log('四狀態分布：'+JSON.stringify(report.details.stateDistribution));

@@ -39,6 +39,7 @@ const usage=[
  'node scripts/manage-story-production.mjs release|reject --ref REF --owner AI --reason "..." [--apply --expect-revision N]',
  'node scripts/manage-story-production.mjs revoke --ref REF --owner AI --reason "..." [--apply --expect-revision N]',
  'node scripts/manage-story-production.mjs lock --ref REF --owner AI --file STORY.md --review REVIEW.json [--apply --expect-revision N]',
+ 'node scripts/manage-story-production.mjs edit-locked --ref REF --owner AI --file SAME.md --review SAME.json --reason "..." --expect-manuscript-sha SHA --expect-review-sha SHA --expect-ledger-sha SHA256 --expect-head HEAD [--apply --expect-revision N]',
  'node scripts/manage-story-production.mjs revise-locked --ref REF --owner AI --file NEW.md --review NEW.json --expect-manuscript-sha SHA --expect-review-sha SHA --expect-ledger-sha SHA256 --expect-head HEAD [--apply --expect-revision N]',
  'note: G proposals/locks require T648 locked; SAMPLE drafts never enter production.'
 ].join('\n');
@@ -50,8 +51,8 @@ else{
   const topicText=await readFile(join(root,'docs','T1-T6-特定故事20主題與觸發日期.md'),'utf8');
   const seeds=seedCodesFromMarkdown(seedText),windows=readTopicWindows(topicText),topics=topicIdsFromMarkdown(topicText);
   if(seeds.size!==2400||windows.topics.size!==20||windows.days.size!==108)throw Error('來源資料數量異常，停止操作');
-  const mutating=['propose','reserve','revise','release','reject','lock','revoke','revise-locked'].includes(cmd);
-  if(mutating&&['propose','revise','lock','revise-locked'].includes(cmd)&&ledgerPath===resolve(root,'data/story-production-ledger.json')&&Number(option('--state-rules-version')||3)!==3)throw Error('正式量產只接受V3；歷史版本參數僅供讀取或隔離驗收');
+  const mutating=['propose','reserve','revise','release','reject','lock','revoke','revise-locked','edit-locked'].includes(cmd);
+  if(mutating&&['propose','revise','lock','revise-locked','edit-locked'].includes(cmd)&&ledgerPath===resolve(root,'data/story-production-ledger.json')&&Number(option('--state-rules-version')||3)!==3)throw Error('正式量產只接受V3；歷史版本參數僅供讀取或隔離驗收');
   const report=option('--json');
   if(has('--json')&&(!report||!['audit','duplicates'].includes(cmd)))throw Error('--json 只支援 audit／duplicates 的獨立報告檔');
   if(report&&[ledgerPath,lockPath,resolve(root,'data/story-production-ledger.json')].includes(resolve(report)))throw Error('報告不得覆寫帳本或鎖檔');
@@ -64,7 +65,7 @@ else{
   try{ledger=JSON.parse(await readFile(ledgerPath,'utf8'))}
   catch(e){if(e.code==='ENOENT'&&ledgerPath===resolve(join(root,'data','story-production-ledger.json')))throw Error('缺少正式帳本，請確認分支及檔案');throw e}
   if(lockHandle&&Number(option('--expect-revision'))!==ledger.revision)throw Error('帳本修訂版已改變，請重新讀取預覽；禁止覆寫舊版');
-  if(cmd==='revise-locked'){
+  if(['revise-locked','edit-locked'].includes(cmd)){
    const expectedHead=option('--expect-head');
    if(!/^[a-f0-9]{40}$/.test(expectedHead??'')||execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8',timeout:30000}).trim()!==expectedHead||execFileSync('git',['ls-remote','origin','refs/heads/'+(option('--branch')||'content/events-production-v1')],{cwd:root,encoding:'utf8',timeout:30000}).split(/\s/)[0]!==expectedHead)throw Error('本機／遠端HEAD與預期不符');
    if(digest(await readFile(ledgerPath))!==option('--expect-ledger-sha'))throw Error('帳本SHA已改變');
@@ -101,6 +102,19 @@ else{
      }catch(e){problems.push({ref:row.draftRef,reason:label+'無法稽核：'+e.message})}
     }
    }
+    if(current.contentHistory?.length){
+     for(const historical of current.contentHistory){
+      try{
+       for(const [path,expected,label] of [
+         [historical.manuscriptPath,historical.manuscriptDigest,'故事稿'],
+         [historical.reviewPath,historical.reviewDigest,'審查JSON']]){
+        const bytes=execFileSync('git',['show',historical.sourceCommit+':'+path],{cwd:root,timeout:30000,maxBuffer:8*1024*1024});
+        if(digest(bytes)!==expected)problems.push({ref:current.draftRef,reason:'歷史內容'+label+' SHA不符'});
+       }
+       versionsChecked++;
+      }catch(e){problems.push({ref:current.draftRef,reason:'無法驗證歷史內容：'+e.message})}
+     }
+    }
     if(current.manuscriptVersions?.length){
      try{
       const chain=[...current.manuscriptVersions,{...current,version:current.manuscriptVersion}];
@@ -134,16 +148,28 @@ else{
   }else if(mutating){
    const file=option('--file');
    const manuscriptPath=file?relative(root,resolve(file)).replaceAll('\\','/'):null;
-   const markdownBytes=file?await readFile(['lock','revise-locked'].includes(cmd)?await evidencePath(manuscriptPath,'.md'):resolve(file)):null;
+   const markdownBytes=file?await readFile(['lock','revise-locked','edit-locked'].includes(cmd)?await evidencePath(manuscriptPath,'.md'):resolve(file)):null;
    const markdown=markdownBytes?.toString('utf8')??null;
    const reviewPath=option('--review')?relative(root,resolve(option('--review'))).replaceAll('\\','/'):null;
-   const reviewBytes=['lock','revise-locked'].includes(cmd)&&reviewPath?await readFile(await evidencePath(reviewPath,'.json')):null;
+   const reviewBytes=['lock','revise-locked','edit-locked'].includes(cmd)&&reviewPath?await readFile(await evidencePath(reviewPath,'.json')):null;
    const review=reviewBytes?JSON.parse(reviewBytes.toString('utf8')):null;
    const validateDraft=(s,stage)=>validateStoryDraft(s,{stage,stateRulesVersion:Number(option('--state-rules-version')||3),seeds,topics,windows});
    const request={action:cmd,ref:option('--ref'),owner:option('--owner'),seedId:option('--seed'),
     targetStateRulesVersion:Number(option('--state-rules-version')||3),reason:option('--reason'),date:option('--date'),markdown,review,
     reviewFile:reviewPath,reviewDigest:reviewBytes?digest(reviewBytes):null,
     manuscriptPath,manuscriptDigest:markdownBytes?digest(markdownBytes):null};
+   if(cmd==='edit-locked'){
+    const current=ledger.candidates[request.ref];if(!current||current.status!=='locked')throw Error('找不到已鎖定正式故事');
+    request.expectedManuscriptDigest=option('--expect-manuscript-sha');
+    request.expectedReviewDigest=option('--expect-review-sha');
+    request.sourceCommit=option('--expect-head');request.hash=digest;
+    if(request.manuscriptPath!==current.manuscriptPath||request.reviewFile!==current.review.filePath)
+      throw Error('新版須使用原正式稿與審查路徑');
+    const oldFromHead=path=>execFileSync('git',['show',request.sourceCommit+':'+path],{cwd:root,encoding:'utf8',timeout:30000});
+    request.originalMarkdown=oldFromHead(current.manuscriptPath);
+    request.originalReviewText=oldFromHead(current.review.filePath);
+    request.reviewText=reviewBytes?.toString('utf8');
+   }
    if(cmd==='revise-locked'){
     const current=ledger.candidates[request.ref];if(!current)throw Error('找不到原稿');
     request.originalMarkdown=await readFile(await evidencePath(current.manuscriptPath,'.md'),'utf8');

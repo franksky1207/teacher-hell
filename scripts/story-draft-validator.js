@@ -195,6 +195,11 @@ export function validateStoryDraft(md,{stage='full',stateRulesVersion=3,seeds=ne
    if(stateRulesVersion===2&&complete&&zeros>2)fail('state_zero_column',name+' 八結果最多兩個0，目前'+zeros+'個');
    if(stateRulesVersion<3&&complete&&Math.abs(states[i])>16)fail('state_mean',name+' 八R等權平均超出−2～+2');
   });
+  if(stateRulesVersion===3&&complete){
+   const selected=stateNames.map(name=>stateDistribution.byState[name].group);
+   if(selected.every(Boolean)&&new Set(selected).size!==4)
+    fail('state_group_duplicate','V3數值先行：精神／熱忱／情緒／掌控必須從A～E選取四組且不得重複');
+  }
   stateDistribution.identicalGroups=[...groups.values()].filter(ids=>ids.length>1);
   stateDistribution.identicalResultCount=stateDistribution.identicalGroups.reduce((sum,ids)=>sum+ids.length,0);
   if(complete&&stateDistribution.absoluteCounts[1]===32)warnings.push('四狀態32格全為±1，請審查幅度是否符合實際後果；此警示不影響通過。');

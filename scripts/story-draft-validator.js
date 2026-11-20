@@ -150,7 +150,8 @@ export function validateStoryDraft(md,{stage='full',stateRulesVersion=3,seeds=ne
    }
   }
   if(resultCount===8&&new Set(texts).size!==8)fail('result_same','八結果有完全相同文字');
-  // NPC per-code mean limit retired: every delta still obeys the single-R ±8 cap.
+  // NPC V3 mean cap retired; historical V1/V2 checks remain reproducible.
+  for(const [key,sum] of total)if(stateRulesVersion<3&&Math.abs(sum)>24)fail('delta_mean',key+' 八R等權平均超出−3～+3');
   const npcAudit={actorCount:slots.size,activeActorCount:0,byActor:{},warningIds:[]};
   for(const [slot,codes] of npcChanges){
    const byCode={},signature=[];

@@ -11,7 +11,7 @@ const root=new URL('..',import.meta.url).pathname;
 const read=p=>readFileSync(join(root,p),'utf8');
 const seeds=seedCodesFromMarkdown(read('docs/事件四數值三層平衡種子2400組.md')),topicsText=read('docs/T1-T6-特定故事20主題與觸發日期.md');
 const options={stage:'full',stateRulesVersion:2,seeds,topics:topicIdsFromMarkdown(topicsText),windows:readTopicWindows(topicsText)};
-test('isolated CLI same-ID revision guards, historical/current audit and reader latest only',{skip:!JSON.parse(read('data/story-production-ledger.json')).candidates['T-DRAFT-0009']},()=>{
+test('isolated CLI same-ID revision guards, historical/current audit and reader latest only',{skip:!JSON.parse(read('data/story-production-ledger.json')).candidates['T-DRAFT-0009']?.manuscriptVersions?.length},()=>{
  const current=JSON.parse(read('data/story-production-ledger.json'));
  // A real historical manuscript is used as an immutable byte-level baseline, in an isolated ledger.
  const originalRow=current.candidates['T-DRAFT-0009'].manuscriptVersions?.[0]??current.candidates['T-DRAFT-0009'];

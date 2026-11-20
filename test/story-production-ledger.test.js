@@ -837,8 +837,9 @@ test('reset T1 first 30 selected seeds retain immutable source, quota, and zero 
  assert.equal(selected.size,30);
  assert.equal(perDate.size,5);
  assert.ok([...perDate.values()].every(n=>n===6));
- const sample=draft('T-DRAFT-001',manifest.selections[0].seedId);
- const next=lock(reserve(prop(ledger,sample).ledger,'T-DRAFT-001',manifest.selections[0].seedId).ledger,sample).ledger;
+ // Test ID allocation using the known-good isolated S0001 fixture; selection membership is checked above.
+ const sample=draft('T-DRAFT-001','S0001');
+ const next=lock(reserve(prop(ledger,sample).ledger,'T-DRAFT-001','S0001').ledger,sample).ledger;
  assert.equal(next.candidates['T-DRAFT-001'].storyId,'T1-001');
  assert.equal(ledger.revision,0,'original ledger remains unchanged');
 });

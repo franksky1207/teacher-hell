@@ -812,14 +812,14 @@ test('isolated V1→V2 same-ID revision preserves immutable source and ledger id
  assert.throws(()=>validateLedger(broken,context),/歷史修訂鏈/);
 });
 
-test('reset T1 first 30 selected seeds retain immutable source, quota, and zero formal ledger',()=>{
+test('T1 first 30 selected seeds retain fixed source and quota, while live formal ledger remains intact',()=>{
  const ledger=JSON.parse(file('../data/story-production-ledger.json'));
  const manifest=JSON.parse(file('../data/story-production-selected-seeds-T1-001-030.json'));
  assert.equal(ledger.schemaVersion,1);
- assert.equal(ledger.revision,0);
- assert.deepEqual(ledger.candidates,{});
- assert.deepEqual(ledger.history,[]);
- assert.deepEqual(ledgerProgress(ledger,context).locked,{T:0,G:0,total:0});
+ const originalRevision=ledger.revision;
+ assert.ok(Number.isSafeInteger(originalRevision)&&originalRevision>=0);
+ const originalProgress=ledgerProgress(ledger,context).locked;
+ assert.ok(originalProgress.total>=0);
  assert.equal(manifest.selections.length,30);
  const selected=new Set(),perDate=new Map();
  for(const [i,entry] of manifest.selections.entries()){
@@ -839,9 +839,10 @@ test('reset T1 first 30 selected seeds retain immutable source, quota, and zero 
  assert.ok([...perDate.values()].every(n=>n===6));
  // Test ID allocation using the known-good isolated S0001 fixture; selection membership is checked above.
  const sample=draft('T-DRAFT-001','S0001');
- const next=lock(reserve(prop(ledger,sample).ledger,'T-DRAFT-001','S0001').ledger,sample).ledger;
+ const isolated=initialProductionLedger();
+ const next=lock(reserve(prop(isolated,sample).ledger,'T-DRAFT-001','S0001').ledger,sample).ledger;
  assert.equal(next.candidates['T-DRAFT-001'].storyId,'T1-001');
- assert.equal(ledger.revision,0,'original ledger remains unchanged');
+ assert.equal(ledger.revision,originalRevision,'正式帳本不受隔離配號測試影響');
 });
 
 test('V3 lock evidence guard rejects missing, unmatched and unresolved NPC warnings',()=>{

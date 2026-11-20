@@ -147,6 +147,12 @@ export function validateLedger(ledger,{seeds,windows}){
    if(r.status==='revoked'&&(!r.revocation||!Number.isSafeInteger(r.revocation.revision)||r.revocation.revision<1||trim(r.revocation.reason).length<12||!seeds.has(r.seedId)))throw Error('撤銷作品缺少原因、原種子或修訂紀錄：'+key);
    if(!r.storyId||storyIds.has(r.storyId)||!/^[a-f0-9]{64}$/.test(r.manuscriptDigest??'')||!trim(r.manuscriptPath)||!r.review||!/^[a-f0-9]{64}$/.test(r.review.digest??'')||!trim(r.review.filePath))throw Error('正式故事缺ID、稿件或審查檔案的路徑／SHA256：'+key);
    if(!new RegExp(r.type==='G'?'^G-\\d{4,}$':'^'+r.topicId.split('-')[0]+'-\\d{3,}$').test(r.storyId))throw Error('正式故事ID類型錯誤：'+key);
+   if(r.contentHistory!==undefined){
+    if(!Array.isArray(r.contentHistory)||!r.contentHistory.length||r.contentVersion!==r.contentHistory.length+1||
+      r.contentHistory.some((v,i)=>v.version!==i+1||!/^[a-f0-9]{40}$/.test(v.sourceCommit??'')||
+      !/^[a-f0-9]{64}$/.test(v.manuscriptDigest??'')||!/^[a-f0-9]{64}$/.test(v.reviewDigest??'')||
+      !trim(v.manuscriptPath)||!trim(v.reviewPath)))throw Error('正式內容修訂歷史無效：'+key);
+   }
    if(r.manuscriptVersions!==undefined){
     const versions=r.manuscriptVersions;
     const chain=[...versions,{version:r.manuscriptVersion,stateRulesVersion:r.stateRulesVersion,manuscriptPath:r.manuscriptPath,manuscriptDigest:r.manuscriptDigest,review:r.review}];
@@ -222,7 +228,7 @@ function storyIdFor(type,ledger,topicId){
 export function changeProductionLedger(ledger,request,{seeds,windows,validateDraft,readReview}){
  const before=validateLedger(ledger,{seeds,windows}),next=JSON.parse(JSON.stringify(ledger));
  const {action,ref,owner}=request;
- if(!['propose','reserve','release','revise','reject','lock','revoke','revise-locked'].includes(action))throw Error('不支援的管理動作');
+ if(!['propose','reserve','release','revise','reject','lock','revoke','revise-locked','edit-locked'].includes(action))throw Error('不支援的管理動作');
  if(!draftIdPattern.test(ref??''))throw Error('候選ID格式錯誤');
  if(action==='propose'&&/^(SAMPLE|TEST)[-_]/i.test(ref))throw Error('試作草稿不得進正式量產帳本');
  if(otherIdPattern.test(ref))throw Error('候選ID不得使用種子、T主題或正式故事ID');
@@ -255,6 +261,43 @@ export function changeProductionLedger(ledger,request,{seeds,windows,validateDra
    if(trim(request.reason).length<12)throw Error('撤銷須附具體事實及審查原因');
    prior.status='revoked';
    prior.revocation={revision:next.revision+1,reason:trim(request.reason)};
+   }else if(action==='edit-locked'){
+   if(prior.status!=='locked')throw Error('只能修改已鎖定的正式故事');
+   if(trim(request.reason).length<8)throw Error('正式修稿須附具體修改原因');
+   if(request.expectedManuscriptDigest!==prior.manuscriptDigest||request.expectedReviewDigest!==prior.review.digest)
+     throw Error('原稿／審查SHA已變動，須重新讀取後再修');
+   if(!request.originalMarkdown||!request.originalReviewText||
+      request.hash(request.originalMarkdown)!==prior.manuscriptDigest||
+      request.hash(request.originalReviewText)!==prior.review.digest)
+     throw Error('原版本證據不符，拒絕覆寫');
+   if(!request.markdown||!request.review||
+      request.hash(request.markdown)!==request.manuscriptDigest||
+      request.hash(request.reviewText)!==request.reviewDigest)
+     throw Error('新版稿件或審查檔SHA不符');
+   if(request.manuscriptPath!==prior.manuscriptPath||request.reviewFile!==prior.review.filePath)
+     throw Error('一般修稿只能更新原正式路徑；舊版由Git歷史保留');
+   const parsed=extractDraftSummary(request.markdown);
+   if(parsed.draftRef!==ref||parsed.type!==prior.type||parsed.topicId!==prior.topicId||
+      parsed.poolId!==prior.poolId||parsed.seedId!==prior.seedId||
+      parsed.storyId!==ID_PLACEHOLDER)
+     throw Error('修稿不得改故事識別、類型、T主題、故事池或種子');
+   const checked=validateDraft(request.markdown,'full');
+   if(!checked.mechanicalPass||checked.details?.stateRulesVersion!==3)
+     throw Error('新版V3完整稿檢查不通過：'+JSON.stringify(checked.errors));
+   reviewEvidence(request.review,checked.details?.choiceFlags,checked.details?.npcAudit,checked.details?.stateRulesVersion);
+   similar=duplicateCandidates(parsed.summary,next,ref);
+   if(similar.some(x=>x.exact))throw Error('正式修稿摘要與其他作品重複');
+   if(request.manuscriptDigest===prior.manuscriptDigest&&request.reviewDigest===prior.review.digest)
+     throw Error('正式稿與審查內容都沒有改變');
+   prior.contentHistory=[...(prior.contentHistory??[]),{
+     version:prior.contentVersion??1,sourceCommit:request.sourceCommit,
+     manuscriptPath:prior.manuscriptPath,manuscriptDigest:prior.manuscriptDigest,
+     reviewPath:prior.review.filePath,reviewDigest:prior.review.digest
+   }];
+   prior.contentVersion=(prior.contentVersion??1)+1;
+   prior.manuscriptDigest=request.manuscriptDigest;
+   prior.review={...prior.review,reviewer:request.review.reviewer,verdict:'approved',digest:request.reviewDigest,possibleDuplicateCount:similar.length};
+   prior.summary=parsed.summary;prior.tags=parsed.tags;prior.reason=trim(request.reason);
   }else if(action==='revise-locked'){
    validateStateRevision(prior,request,validateDraft);
    const usedPaths=new Set(Object.values(next.candidates).flatMap(r=>[r,...(r.manuscriptVersions??[])].flatMap(v=>[v.manuscriptPath,v.review?.filePath])));

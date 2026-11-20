@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {selectOptions,filterStories,neighboringIds,sanitizeReaderPreferences,safeDetailPath,validateReaderIndex,validateReaderDetail,topicDisplayName,poolDisplayName} from '../story-reader/reader-core.js';
+import {selectOptions,filterStories,neighboringIds,sanitizeReaderPreferences,safeDetailPath,validateReaderIndex,validateReaderDetail,topicDisplayName,poolDisplayName,readerTechnicalTables,READER_STATES} from '../story-reader/reader-core.js';
 
 const stories=[
  {storyId:'T1-002',draftRef:'T-DRAFT-0002',title:'我在哪一班',type:'T',topicId:'T1-1',poolId:'T1-1:single',summary:{事件起因:'首次點名'},detail:'stories/T1-002.json'},
@@ -50,4 +50,28 @@ test('topic and pool dropdown display official Chinese event titles, preserving 
  assert.equal(poolDisplayName('T1-5:after'),'首次校慶擺攤（活動後）');
  assert.equal(poolDisplayName('T1-1:single'),'首次進班與建班');
  assert.equal(poolDisplayName('G-0001'), 'G-0001');
+});
+
+test('technical tables split eight results into teacher states and independent NPC deltas',()=>{
+ const results=[
+  {id:'R1',playerStates:'1,2,-1,0',deltas:'student_a:5-1:+2; student_b:9-3:-3'},
+  {id:'R2',playerStates:'-2,0,1,2',deltas:'student_a:5-1:-1'},
+  {id:'R3',playerStates:'0,0,1,1',deltas:'無'}
+ ];
+ const parsed=readerTechnicalTables(results);
+ assert.deepEqual(READER_STATES,['精神','熱忱','情緒','掌控']);
+ assert.deepEqual(parsed.actors,['student_a','student_b']);
+ assert.deepEqual(parsed.codes,['5-1','9-3']);
+ assert.deepEqual(parsed.rows[0].stateValues,[1,2,-1,0]);
+ assert.equal(parsed.rows[0].deltaMap['student_a:5-1'],2);
+ assert.equal(parsed.rows[0].deltaMap['student_b:9-3'],-3);
+ assert.deepEqual(parsed.rows[1].stateValues,[-2,0,1,2]);
+ assert.equal(parsed.rows[1].deltaMap['student_b:9-3'],undefined);
+ assert.equal(parsed.rows[2].deltaValid,true);
+ assert.deepEqual(parsed.rows[2].deltaMap,{});
+});
+test('technical tables fail visibly for malformed values rather than inventing zeros',()=>{
+ const parsed=readerTechnicalTables([{id:'R8',deltas:'student_a:5-1:+x',playerStates:'1,2,3'}]);
+ assert.equal(parsed.rows[0].deltaValid,false);
+ assert.equal(parsed.rows[0].stateValues,null);
 });

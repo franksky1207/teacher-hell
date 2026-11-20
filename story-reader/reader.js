@@ -147,10 +147,7 @@ function addTechnical(detail){
  if(parsed.rows.some(x=>!x.deltaValid||!x.stateValues))
   root.append(make('p','technical-warning','部分數值格式未能解析，請展開原始稿檢查，系統未更動原始數值。'));
 
- const original=make('details','original-details');
- const summary=make('summary','','原始 Markdown（完整保留，點此展開）');
- original.append(summary,make('pre','',detail.sourceMarkdown||''));
- root.append(original);
+ // 原始 Markdown 僅供帳本追溯與資料完整性，不在閱讀介面顯示。
 }
 function setExpanded(button,expanded){
  const target=$(button.dataset.target);

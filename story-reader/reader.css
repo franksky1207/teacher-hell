@@ -106,3 +106,26 @@ select, input { border:1px solid var(--line); border-radius:10px; background:var
  .section-body { line-height:1.85; }
 }
 @media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; } }
+
+/* Technical inspection tables: preserve numeric alignment on desktop and mobile. */
+.technical-table { min-width:0; width:100%; font-variant-numeric:tabular-nums; font-size:.84em; }
+.technical-table th,.technical-table td { padding:10px 9px; border:1px solid var(--line); white-space:nowrap; }
+.technical-table tbody tr:nth-child(even) { background:var(--panel); }
+.technical-table tbody th { text-align:left; color:var(--accent); position:sticky; left:0; z-index:1; background:var(--surface); }
+.technical-table tbody tr:nth-child(even) th { background:var(--panel); }
+.delta-positive { color:#16754e; font-weight:650; }
+.delta-negative { color:#b24236; font-weight:650; }
+.delta-neutral { color:var(--muted); }
+body[data-theme="dark"] .delta-positive { color:#8fe0b0; }
+body[data-theme="dark"] .delta-negative { color:#ffaaa3; }
+.technical-hint { font-size:.77em; color:var(--muted); line-height:1.65; margin:4px 0 18px; }
+.technical-warning { font-size:.82em; color:#b24236; }
+.technical-actor { color:var(--accent); margin:22px 0 6px; font-size:.88em; }
+.original-details { border-top:1px solid var(--line); margin-top:26px; padding-top:16px; }
+.original-details > summary { cursor:pointer; font-size:.9em; font-weight:650; color:var(--accent); }
+.original-details > pre { margin-top:12px; }
+@media(max-width:650px) {
+ .technical-table { min-width:480px; font-size:.8em; }
+ .technical-table th,.technical-table td { padding:8px 9px; }
+ .technical-actor { margin-top:16px; }
+}

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Story library: read-only export for the eventual /stories/ reader.
- * Its one source of truth is the production ledger plus immutable manuscripts.
+ * Its one source of truth is the production ledger plus revision-controlled official manuscripts.
  * This does not change the ledger, story files, game runtime or Pages.
  */
 import {readFile, mkdir, writeFile, realpath, rm, rename} from 'node:fs/promises';

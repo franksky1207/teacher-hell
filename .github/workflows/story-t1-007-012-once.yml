@@ -1,0 +1,72 @@
+name: T1-007 to 012 one-time V3 batch acceptance
+on:
+  push:
+    branches: [content/events-production-v1]
+    paths:
+      - .github/workflows/story-t1-007-012-once.yml
+permissions:
+  contents: write
+concurrency:
+  group: t1-007-012-batch-lock
+  cancel-in-progress: false
+jobs:
+  six-stories:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Validate six full drafts, rehearse, then lock officially
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE='content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池'
+          ids=(0007 0008 0009 0010 0011 0012)
+          seeds=(S1610 S1954 S0769 S1627 S1876 S1065)
+          days=(2026-07-21 2026-07-21 2026-07-21 2026-07-21 2026-07-21 2026-07-22)
+          for id in "${ids[@]}"; do
+            story="$BASE/T-DRAFT-$id.md"
+            for stage in summary choices full; do
+              node scripts/check-story-draft.mjs --input "$story" --stage "$stage"
+            done
+          done
+          node --test test/story-reader-export.test.js test/story-reader-ui.test.js
+          node scripts/manage-story-production.mjs audit
+          cp data/story-production-ledger.json "$RUNNER_TEMP/story-007-012-isolated.json"
+          for phase in isolated formal; do
+            if [[ "$phase" == isolated ]]; then
+              extra=(--ledger "$RUNNER_TEMP/story-007-012-isolated.json")
+            else
+              extra=()
+            fi
+            rev=18
+            for i in 0 1 2 3 4 5; do
+              id="${ids[$i]}"
+              ref="T-DRAFT-$id"
+              story="$BASE/$ref.md"
+              review="$BASE/$ref.review.json"
+              seed="${seeds[$i]}"
+              day="${days[$i]}"
+              node scripts/manage-story-production.mjs propose --ref "$ref" --owner ChatGPT --file "$story" --date "$day" "${extra[@]}" --apply --expect-revision "$rev"
+              rev=$((rev+1))
+              node scripts/manage-story-production.mjs reserve --ref "$ref" --owner ChatGPT --seed "$seed" --reason "保留四碼與初次建班實際困境吻合，每個碼均有具體合法學生持有人及獨立反應" "${extra[@]}" --apply --expect-revision "$rev"
+              rev=$((rev+1))
+              node scripts/manage-story-production.mjs lock --ref "$ref" --owner ChatGPT --file "$story" --review "$review" "${extra[@]}"
+              node scripts/manage-story-production.mjs lock --ref "$ref" --owner ChatGPT --file "$story" --review "$review" "${extra[@]}" --apply --expect-revision "$rev"
+              rev=$((rev+1))
+            done
+            node scripts/manage-story-production.mjs audit "${extra[@]}"
+            node scripts/manage-story-production.mjs status "${extra[@]}"
+            [[ "$rev" -eq 36 ]]
+          done
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/story-production-ledger.json
+          git diff --cached --quiet && { echo 'FAIL: ledger unchanged'; exit 1; }
+          git commit -m 'Lock verified T1-007 through T1-012 V3 stories'
+          git push origin HEAD:content/events-production-v1

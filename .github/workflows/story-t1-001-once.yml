@@ -1,0 +1,51 @@
+name: T1-001 one-time formal story acceptance
+on:
+  push:
+    branches: [content/events-production-v1]
+    paths:
+      - .github/workflows/story-t1-001-once.yml
+permissions:
+  contents: write
+concurrency:
+  group: t1-001-formal-lock
+  cancel-in-progress: false
+jobs:
+  check-and-lock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Run one-story isolated and formal CLI acceptance
+        shell: bash
+        run: |
+          set -euo pipefail
+          STORY='content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0001.md'
+          REVIEW='content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0001.review.json'
+          node scripts/check-story-draft.mjs --input "$STORY" --stage summary
+          node scripts/check-story-draft.mjs --input "$STORY" --stage choices
+          node scripts/check-story-draft.mjs --input "$STORY" --stage full
+          cp data/story-production-ledger.json "$RUNNER_TEMP/t1-001-isolated.json"
+          for LEDGER in "$RUNNER_TEMP/t1-001-isolated.json" data/story-production-ledger.json; do
+            EXTRA=()
+            if [[ "$LEDGER" != data/story-production-ledger.json ]]; then
+              EXTRA=(--ledger "$LEDGER")
+            fi
+            node scripts/manage-story-production.mjs propose --ref T-DRAFT-0001 --owner ChatGPT --file "$STORY" --date 2026-07-20 "${EXTRA[@]}"
+            node scripts/manage-story-production.mjs propose --ref T-DRAFT-0001 --owner ChatGPT --file "$STORY" --date 2026-07-20 "${EXTRA[@]}" --apply --expect-revision 0
+            node scripts/manage-story-production.mjs reserve --ref T-DRAFT-0001 --owner ChatGPT --seed S1897 --reason '暑輔初次建班的臨時聯絡名單，自願與被推薦的界線使四碼各具獨立因果' "${EXTRA[@]}" --apply --expect-revision 1
+            node scripts/manage-story-production.mjs lock --ref T-DRAFT-0001 --owner ChatGPT --file "$STORY" --review "$REVIEW" "${EXTRA[@]}"
+            node scripts/manage-story-production.mjs lock --ref T-DRAFT-0001 --owner ChatGPT --file "$STORY" --review "$REVIEW" "${EXTRA[@]}" --apply --expect-revision 2
+            node scripts/manage-story-production.mjs audit "${EXTRA[@]}"
+          done
+          node scripts/manage-story-production.mjs status
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/story-production-ledger.json
+          git diff --cached --quiet && { echo 'FAIL: no formal ledger transition'; exit 1; }
+          git commit -m 'Lock verified T1-001 S1897 in formal story ledger'
+          git push origin HEAD:content/events-production-v1

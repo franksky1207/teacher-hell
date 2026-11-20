@@ -647,6 +647,7 @@ test('batch12 isolated T CLI lifecycle, failures and evidence audit',t=>{
  assert.equal(preview.change.storyId,null);
  assert.equal(readFileSync(ledger,'utf8'),ready);
  assert.equal(write('lock',main,...lockFiles).storyId,'T1-001');
+ assert.equal(ok(manage('status')).progress.locked.T,1);
  const status=ok(manage('status')).progress;
  assert.deepEqual(status.locked,{T:1,G:0,total:1});
  assert.deepEqual(status.seedStatus,{total:2400,unused:2399,reserved:0,locked:1});
@@ -662,4 +663,15 @@ test('batch12 isolated T CLI lifecycle, failures and evidence audit',t=>{
  }
  for(const action of ['revise','release','lock'])refuseWrite(/已鎖定/,action,main,...lockFiles,...releaseReason);
  assert.equal(ok(manage('audit')).audit.pass,true);
+});
+
+
+test('teacher four-state V2 is enforced for new locks and recorded in ledger',()=>{
+ const story=draft(),proposed=prop(initialProductionLedger(),story).ledger;
+ const reserved=reserve(proposed).ledger;
+ const locked=lock(reserved,story).ledger;
+ assert.equal(locked.candidates['T-DRAFT-001'].stateRulesVersion,2);
+ const bad=story.replace(/(\\*\\*玩家四狀態\\*\\*[^：\\n]*：)[^\\n]*/g,'$1'+'0,0,0,0');
+ assert.throws(()=>lock(reserved,bad),/完整稿機械驗收未通過.*state_zero_row/);
+ assert.equal(reserved.candidates['T-DRAFT-001'].status,'reserved');
 });

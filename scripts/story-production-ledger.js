@@ -265,6 +265,7 @@ export function changeProductionLedger(ledger,request,{seeds,windows,validateDra
     if(before.T>=MAX_T)throw Error('T648已滿');
     if((before.days.get(prior.date)||0)>=6)throw Error('T日期六篇配額已滿');
    }else if(before.T!==MAX_T||before.G>=MAX_G)throw Error('須完成T648後才鎖G，且G最多1752篇');
+   prior.stateRulesVersion=2;
    prior.status='locked';prior.storyId=storyIdFor(prior.type,next,prior.topicId);
    prior.manuscriptDigest=request.manuscriptDigest;
    prior.manuscriptPath=request.manuscriptPath||null;

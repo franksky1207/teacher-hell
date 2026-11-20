@@ -11,6 +11,9 @@ on:
       - scripts/deploy-story-reader.sh
       - test/story-reader-export.test.js
       - test/story-reader-ui.test.js
+      - test/story-locked-edit.test.js
+      - scripts/story-production-ledger.js
+      - scripts/manage-story-production.mjs
       - .github/workflows/story-reader-publish.yml
 permissions:
   contents: write
@@ -33,5 +36,35 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Verify locked-story edit regression
+        run: node --test test/story-locked-edit.test.js
       - name: Publish reader only, preserving all other Pages paths
         run: bash scripts/deploy-story-reader.sh
+      - name: Verify GitHub Pages shows this exact reader release
+        shell: bash
+        run: |
+          set -euo pipefail
+          revision=$(node -p "JSON.parse(require('fs').readFileSync('data/story-production-ledger.json')).revision")
+          source_sha=$(git rev-parse HEAD)
+          base="https://franksky1207.github.io/teacher-hell/stories"
+          for attempt in $(seq 1 30); do
+            release=$(curl --fail --silent --show-error --location --max-time 15 --header 'Cache-Control: no-cache' "$base/release.json?source=$source_sha&attempt=$attempt" || true)
+            index=$(curl --fail --silent --show-error --location --max-time 15 --header 'Cache-Control: no-cache' "$base/data/index.json?source=$source_sha&attempt=$attempt" || true)
+            if RELEASE_JSON="$release" INDEX_JSON="$index" SOURCE_SHA="$source_sha" REVISION="$revision" node -e '
+              try {
+                const r=JSON.parse(process.env.RELEASE_JSON),i=JSON.parse(process.env.INDEX_JSON);
+                if(r.sourceCommit===process.env.SOURCE_SHA &&
+                   r.ledgerRevision===Number(process.env.REVISION) &&
+                   i.ledgerRevision===Number(process.env.REVISION) &&
+                   i.count===r.count) process.exit(0);
+              } catch {}
+              process.exit(1);
+            '; then
+              echo "Verified story reader source $source_sha, ledger revision $revision"
+              exit 0
+            fi
+            echo "Pages not current yet (check $attempt/30)."
+            sleep 10
+          done
+          echo "Reader site did not publish the new revision." >&2
+          exit 1

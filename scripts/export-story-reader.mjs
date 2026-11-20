@@ -32,7 +32,8 @@ export function parseReaderStory(markdown,entry){
  const heading=markdown.match(/^# ([^\r\n]+)/m)?.[1];
  const info={};
  for(const row of tableRows(s1)){
-  const match=row[0]?.match(/^([a-z_]+)｜/);
+  // Formal Markdown template encloses metadata keys in backticks; normalize only the key.
+  const match=row[0]?.replaceAll('`','').match(/^([a-z_]+)｜/);
   if(match)info[match[1]]=row[1];
  }
  const title=requireValue(heading,'故事標題');

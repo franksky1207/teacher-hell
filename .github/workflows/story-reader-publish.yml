@@ -12,6 +12,9 @@ on:
       - test/story-reader-export.test.js
       - test/story-reader-ui.test.js
       - test/story-locked-edit.test.js
+      - test/story-state-matrix.test.js
+      - scripts/story-state-matrix.mjs
+      - scripts/story-draft-validator.js
       - scripts/story-production-ledger.js
       - scripts/manage-story-production.mjs
       - .github/workflows/story-reader-publish.yml
@@ -37,7 +40,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Verify locked-story edit regression
-        run: node --test test/story-locked-edit.test.js
+        run: node --test test/story-locked-edit.test.js test/story-state-matrix.test.js
       - name: Publish reader only, preserving all other Pages paths
         run: bash scripts/deploy-story-reader.sh
       - name: Verify GitHub Pages shows this exact reader release

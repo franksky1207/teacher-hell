@@ -1,0 +1,27 @@
+name: Story reader UI focused check
+on:
+  push:
+    branches: [content/events-production-v1]
+    paths:
+      - '.github/workflows/story-reader-ui-check.yml'
+      - 'story-reader/**'
+      - 'test/story-reader-ui.test.js'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reader-ui:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Verify reading UI modules and filters
+        run: |
+          node --check story-reader/reader.js
+          node --check story-reader/reader-core.js
+          node --test test/story-reader-ui.test.js

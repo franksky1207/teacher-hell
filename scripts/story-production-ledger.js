@@ -179,7 +179,7 @@ export function ledgerProgress(ledger,{seeds,windows}){
   tagOccurrences:totalHits,tagCounts:byTag,tagPercent:Object.fromEntries(TAGS.map(k=>[k,totalHits?Number((byTag[k]*100/totalHits).toFixed(3)):null])),
   remainingT:MAX_T-T,remainingG:MAX_G-G};
 }
-function reviewEvidence(review,choiceFlags,npcAudit,stateRulesVersion){
+export function reviewEvidence(review,choiceFlags,npcAudit,stateRulesVersion){
  if(!review||review.verdict!=='approved'||typeof review.reviewer!=='string'||!review.reviewer.trim())throw Error('缺少明確內容審查核准者');
  for(const name of ['storyAndRoles','fourCodes','fourChoices','eightResults','causal32','timeAndLaw','duplicates']){
   if(typeof review[name]!=='string'||trim(review[name]).length<16)throw Error('內容審查證據不足：'+name);

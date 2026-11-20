@@ -13,7 +13,7 @@ const definitions = {
   行政應對: [p('3-3',120),p('3-2',1),p('3-1',2),p('3-4',2),p('1-4',3)],
   危機處理: [p('3-2',120),p('3-3',2),p('3-4',2),p('1-2',1,true),p('3-1',1),p('1-3',2)],
   情緒調適: [p('3-4',120),p('3-2',1),p('1-2',2,true),p('1-3',2),p('1-4',3)],
-  體力: [p('2-3',4,true),w('11-1',4,true),w('11-2',2),l('7-4',2),l('7-2',2,true),w('11-3',2)],
+  掌控: [p('2-3',4,true),w('11-1',4,true),w('11-2',2),l('7-4',2),l('7-2',2,true),w('11-3',2)],
   精神: [p('2-3',2,true),p('2-2',2,true),p('2-1',2,true),l('7-4',4),w('11-1',2,true),w('11-2',2),l('7-2',2,true)],
   抗壓: [p('3-4',1),p('3-2',1),p('1-2',1,true),l('7-4',4),l('7-1',4),w('11-3',4),p('1-4',1)],
   聲望: [e('8-1',4),e('8-2',4,true),e('5-3',4),e('5-1',2),e('5-4',2,true)],
@@ -25,7 +25,9 @@ for (const entries of Object.values(definitions)) {
 }
 export const PANEL_SOURCES = Object.freeze(definitions);
 export const ABILITY_NAMES = Object.freeze(Object.keys(definitions).slice(0, 6));
-export const STATE_NAMES = Object.freeze(Object.keys(definitions).slice(6));
+// Historical assessment channels retain their formulas and weights.
+export const ASSESSMENT_NAMES = Object.freeze(Object.keys(definitions).slice(6));
+export const STATE_NAMES = Object.freeze(['精神','熱忱','情緒','掌控']);
 
 // Structural checks are confined to player JSON envelopes; numeric checks use N1.
 export function assertShape(value, keys) {

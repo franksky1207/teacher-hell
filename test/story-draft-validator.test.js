@@ -337,7 +337,7 @@ function draftV3(){
  let i=0;
  const cols=[STATE_GROUPS.A,STATE_GROUPS.B,STATE_GROUPS.C,STATE_GROUPS.D];
  return draft().replace('## 1｜故事基本資料與必要資格','## 1｜故事基本資料與必要資格\n| state_rules_version｜數值規則版本 | 3 |')
-  .replace(/- \\*\\*玩家四狀態\\*\\*（體力、精神、熱忱、情緒）：[^\\n]*/g,()=>'- **玩家四狀態**（精神、熱忱、情緒、掌控）：'+cols.map((arr,j)=>arr[(i+j*2)%8]).join(',')+(++i&&''));
+  .replace(/- \*\*玩家四狀態\*\*（體力、精神、熱忱、情緒）：[^\n]*/g,()=>'- **玩家四狀態**（精神、熱忱、情緒、掌控）：'+cols.map((arr,j)=>arr[(i+j*2)%8]).join(',')+(++i&&''));
 }
 test('V3 NPC averages beyond ±3 pass while single ±8 remains enforced',()=>{
  const s=draftV3().replaceAll('student_a:1-1:+2','student_a:1-1:+8');

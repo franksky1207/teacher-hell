@@ -179,12 +179,27 @@ export function ledgerProgress(ledger,{seeds,windows}){
   tagOccurrences:totalHits,tagCounts:byTag,tagPercent:Object.fromEntries(TAGS.map(k=>[k,totalHits?Number((byTag[k]*100/totalHits).toFixed(3)):null])),
   remainingT:MAX_T-T,remainingG:MAX_G-G};
 }
-function reviewEvidence(review,choiceFlags){
+function reviewEvidence(review,choiceFlags,npcAudit,stateRulesVersion){
  if(!review||review.verdict!=='approved'||typeof review.reviewer!=='string'||!review.reviewer.trim())throw Error('缺少明確內容審查核准者');
  for(const name of ['storyAndRoles','fourCodes','fourChoices','eightResults','causal32','timeAndLaw','duplicates']){
   if(typeof review[name]!=='string'||trim(review[name]).length<16)throw Error('內容審查證據不足：'+name);
  }
  if(review.isFixture===true||review.isTest===true)throw Error('試作不得鎖定');
+ if(stateRulesVersion===3){
+  if(typeof review.characterAudit!=='string'||trim(review.characterAudit).length<40)throw Error('缺少全文重要人物反向盤點與數值角色資格證據');
+  if(typeof review.npcDeltaAudit!=='string'||trim(review.npcDeltaAudit).length<40)throw Error('缺少逐NPC四碼變化與零值因果審查證據');
+  const warnings=npcAudit?.warningIds??[];
+  if(!Array.isArray(review.npcWarningReviews))throw Error('缺少NPC品質警示逐項複查清單');
+  const handled=new Set();
+  for(const item of review.npcWarningReviews){
+   if(!item||typeof item.id!=='string'||!warnings.includes(item.id)||handled.has(item.id))throw Error('NPC警示複查ID無效或重複');
+   if(!['retain','revise'].includes(item.decision)||typeof item.evidence!=='string'||trim(item.evidence).length<40)throw Error('NPC警示必須記錄具體處理決策與情節證據');
+   if(item.decision==='revise')throw Error('仍有待修正的NPC品質警示，須修改稿件後重新檢查');
+   handled.add(item.id);
+  }
+  for(const id of warnings)if(!handled.has(id))throw Error('NPC品質警示未完成複查：'+id);
+ }
+
  const selection=review.ordinaryChoiceSelection,fail=detail=>{throw Error('六選三審查紀錄：'+detail)};
  if(!selection||typeof selection!=='object'||Array.isArray(selection))fail('缺少ordinaryChoiceSelection');
  const {ordinaryCandidates:candidates,selectedIds:ids,finalChoiceMap:map}=selection;
@@ -284,7 +299,7 @@ export function changeProductionLedger(ledger,request,{seeds,windows,validateDra
    fields.some(k=>normalize(parsed.summary[k])!==normalize(prior.summary[k])))throw Error('稿件與登記內容不同，請先修訂摘要與標籤');
    const result=validateDraft(request.markdown,'full');
    if(!result.mechanicalPass)throw Error('完整稿機械驗收未通過：'+JSON.stringify(result.errors));
-   reviewEvidence(request.review,result.details?.choiceFlags);
+   reviewEvidence(request.review,result.details?.choiceFlags,result.details?.npcAudit,result.details?.stateRulesVersion);
    similar=duplicateCandidates(parsed.summary,next,ref);
    if(similar.some(x=>x.exact))throw Error('跨T/G既有摘要重複');
    if(prior.type==='T'){

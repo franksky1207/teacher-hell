@@ -13,7 +13,7 @@ const seeds=seedCodesFromMarkdown(file('../docs/事件四數值三層平衡種�
 const topics=topicIdsFromMarkdown(file('../docs/T1-T6-特定故事20主題與觸發日期.md'));
 const windows=readTopicWindows(file('../docs/T1-T6-特定故事20主題與觸發日期.md'));
 const base=file('./fixtures/17d-draft-sample-s0451.md');
-const validate=(s,stage)=>validateStoryDraft(s,{stage,seeds,topics,windows});
+const validate=(s,stage)=>validateStoryDraft(s,{stage,stateRulesVersion:2,seeds,topics,windows});
 const context={seeds,windows,validateDraft:validate};
 const act=(state,action,ref='T-DRAFT-001',extra={})=>changeProductionLedger(state,{action,ref,owner:'ChatGPT',...extra},context);
 const reason='這組四碼可從學生承擔的班務壓力與導師安排配合形成合理因果';
@@ -358,13 +358,13 @@ test('batch10 CLI reads source pools and previews proposals with an isolated led
  try{
   const ledgerPath=join(dir,'ledger.json'),draftPath=join(dir,'draft.md'),initial=JSON.stringify(initialProductionLedger());
   writeFileSync(ledgerPath,initial);writeFileSync(draftPath,windowDraft('T1-4','T1-4:before'));
-  const cli=(...args)=>spawnSync(process.execPath,['scripts/manage-story-production.mjs',...args,'--ledger',ledgerPath],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
+  const cli=(...args)=>spawnSync(process.execPath,['scripts/manage-story-production.mjs',...args,'--state-rules-version','2','--ledger',ledgerPath],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
   const lookup=cli('windows','--topic','T1-4');assert.equal(lookup.status,0,lookup.stderr);
   const pools=JSON.parse(lookup.stdout).pools;assert.deepEqual(pools.map(p=>[p.phase,p.dates.length]),[['before',5],['after',2]]);
   const preview=cli('propose','--ref','T-DRAFT-001','--owner','ChatGPT','--file',draftPath,'--date','2026-11-04');
   assert.equal(preview.status,0,preview.stderr);assert.equal(JSON.parse(preview.stdout).applied,false);
   const invalid=cli('propose','--ref','T-DRAFT-001','--owner','ChatGPT','--file',draftPath,'--date','2026-11-12');assert.equal(invalid.status,1);
-  const check=spawnSync(process.execPath,['scripts/check-story-draft.mjs','--input',draftPath,'--stage','summary'],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
+  const check=spawnSync(process.execPath,['scripts/check-story-draft.mjs','--state-rules-version','2','--input',draftPath,'--stage','summary'],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
   assert.equal(check.status,0,check.stderr);
   const proposed=prop(initialProductionLedger(),windowDraft('T1-4','T1-4:before'),'T-DRAFT-001','2026-11-04').ledger;
   writeFileSync(ledgerPath,JSON.stringify(proposed));
@@ -429,7 +429,7 @@ test('batch11 protected transitions preserve ledger, history and formal numberin
  assert.equal(rejected.history.at(-1).action,'reject');
 });
 
-const cli=(ledgerPath,...args)=>spawnSync(process.execPath,['scripts/manage-story-production.mjs',...args,'--ledger',ledgerPath],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
+const cli=(ledgerPath,...args)=>spawnSync(process.execPath,['scripts/manage-story-production.mjs',...args,'--state-rules-version','2','--ledger',ledgerPath],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
 const ok=result=>{assert.equal(result.status,0,result.stderr);return JSON.parse(result.stdout)};
 const fail=(result,pattern)=>{assert.equal(result.status,1,result.stdout);assert.match(result.stderr,pattern)};
 
@@ -575,7 +575,7 @@ test('batch12 isolated T CLI lifecycle, failures and evidence audit',t=>{
  };
  const refuseWrite=(pattern,action,ref,...extra)=>refused(pattern,...args(action,ref,...extra),'--apply','--expect-revision',String(read().revision));
  const check=(stage,path)=>{
-  const result=spawnSync(process.execPath,['scripts/check-story-draft.mjs','--stage',stage,'--input',path],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
+  const result=spawnSync(process.execPath,['scripts/check-story-draft.mjs','--state-rules-version','2','--stage',stage,'--input',path],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
   assert.equal(result.status,0,result.stdout+result.stderr);
  };
  const date=['--date','2026-07-20'],src=['--file',summaryPath,...date],hold=['--seed','S0001','--reason',reason];

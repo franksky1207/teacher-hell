@@ -101,7 +101,7 @@ export function validateStoryDraft(md,{stage='full',stateRulesVersion=3,seeds=ne
   const labels=[...choices.values()].map(r=>r[1].replace(/\s/g,''));if(new Set(labels).size!==labels.length)fail('choice_same','有完全重複的選項文字');
   for(const [,slot] of four.matchAll(/{{\s*([a-z][a-z0-9_]*)\.[a-z_]+\s*}}/g))if(slot!=='teacher'&&!slots.has(slot))fail('placeholder','未知人物槽位 '+slot);
  }
- let resultCount=0,matrix=null,stateDistribution=null;
+ let resultCount=0,matrix=null,stateDistribution=null,npcAudit=null;
  if(stage==='full'){
   const stateNames=stateRulesVersion===3?['精神','熱忱','情緒','掌控']:['體力','精神','熱忱','情緒'],stateRows=new Map();
   const npcChanges=new Map();
@@ -152,7 +152,7 @@ export function validateStoryDraft(md,{stage='full',stateRulesVersion=3,seeds=ne
   if(resultCount===8&&new Set(texts).size!==8)fail('result_same','八結果有完全相同文字');
   // NPC V3 mean cap retired; historical V1/V2 checks remain reproducible.
   for(const [key,sum] of total)if(stateRulesVersion<3&&Math.abs(sum)>24)fail('delta_mean',key+' 八R等權平均超出−3～+3');
-  const npcAudit={actorCount:slots.size,activeActorCount:0,byActor:{},warningIds:[]};
+  npcAudit={actorCount:slots.size,activeActorCount:0,byActor:{},warningIds:[]};
   for(const [slot,codes] of npcChanges){
    const byCode={},signature=[];
    let nonzero=0;

@@ -671,7 +671,7 @@ test('teacher four-state V2 is enforced for new locks and recorded in ledger',()
  const reserved=reserve(proposed).ledger;
  const locked=lock(reserved,story).ledger;
  assert.equal(locked.candidates['T-DRAFT-001'].stateRulesVersion,2);
- const bad=story.replace(/(\\*\\*玩家四狀態\\*\\*[^：\\n]*：)[^\\n]*/g,'$1'+'0,0,0,0');
+ const bad=story.replace(/(玩家四狀態[^\n]*：)[^\n]*/g,'$1'+'0,0,0,0');
  assert.throws(()=>lock(reserved,bad),/完整稿機械驗收未通過.*state_zero_row/);
  assert.equal(reserved.candidates['T-DRAFT-001'].status,'reserved');
 });

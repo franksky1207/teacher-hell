@@ -696,11 +696,11 @@ test('post-lock revocation keeps historical ID and SHA, restores quota and seed 
  assert.throws(()=>validateLedger(broken,context),/撤銷作品缺少/);
 });
 
-test('T1-1 replacement 0031: all three mechanical stages and editorial review are lockable',()=>{
+test('T1-1 historical replacement 0031: preserved V1 proof cannot bypass V2 full or new lock',()=>{
  const storyPath='../content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0031.md';
  const reviewPath='../content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0031.review.json';
  const manuscript=file(storyPath),reviewText=file(reviewPath),review=JSON.parse(reviewText);
- for(const stage of ['summary','choices','full']){
+ for(const stage of ['summary','choices']){
   const result=validate(manuscript,stage);
   assert.equal(result.mechanicalPass,true,stage+' '+JSON.stringify(result.errors));
  }
@@ -708,15 +708,19 @@ test('T1-1 replacement 0031: all three mechanical stages and editorial review ar
  const ref='T-DRAFT-0031';
  const proposed=prop(initialProductionLedger(),manuscript,ref).ledger;
  const reserved=reserve(proposed,ref,'S1392').ledger;
- const out=act(reserved,'lock',ref,{
-  markdown:manuscript,review,
+ assert.ok(validate(manuscript,'full').errors.some(e=>e.code==='state_zero_row'));
+ const unchanged=structuredClone(reserved);
+ assert.throws(()=>act(reserved,'lock',ref,{
+  markdown:manuscript,review:{...review,stateRulesVersion:1},stateRulesVersion:1,
   reviewFile:'content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0031.review.json',
   reviewDigest:createHash('sha256').update(reviewText).digest('hex'),
   manuscriptPath:'content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0031.md',
   manuscriptDigest:createHash('sha256').update(manuscript).digest('hex')
- });
- assert.equal(out.change.status,'locked');
- console.log('REPLACEMENT_SHA256',createHash('sha256').update(manuscript).digest('hex'),createHash('sha256').update(reviewText).digest('hex'));
+ }),/完整稿機械驗收未通過.*state_zero_row/);
+ assert.deepEqual(reserved,unchanged);
+ const historical=JSON.parse(file('../data/story-production-ledger.json')).candidates[ref];
+ assert.equal(historical.manuscriptDigest,createHash('sha256').update(manuscript).digest('hex'));
+ assert.equal(historical.review.digest,createHash('sha256').update(reviewText).digest('hex'));
 });
 
 test('formal T1-1 post-replacement ledger: 30 active, one revoked, SHA audit includes both',()=>{
@@ -759,4 +763,13 @@ test('校慶T1-5／T3-2各為前4日、後4日，配額和跨池排除不變',()
  assert.equal(windows.pools.size,28);
  assert.equal(windows.days.size,108);
  assert.equal([...windows.pools.values()].reduce((sum,p)=>sum+p.dates.size,0),119);
+});
+
+test('new locks record V2 while zero matrices fail atomically',()=>{
+ const story=draft(),reserved=reserve(prop(initialProductionLedger(),story).ledger).ledger;
+ const result=lock(reserved,story);assert.equal(result.ledger.candidates['T-DRAFT-001'].stateRulesVersion,2);
+ const bad=story.replace(/(\*\*玩家四狀態\*\*[^：\n]*：)[^\n]*/g,'$1'+'0,0,0,0');
+ const original=structuredClone(reserved);
+ assert.throws(()=>lock(reserved,bad),/完整稿機械驗收未通過.*state_zero_row/);
+ assert.deepEqual(reserved,original);
 });

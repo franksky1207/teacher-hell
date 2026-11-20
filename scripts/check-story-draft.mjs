@@ -23,9 +23,10 @@ else{
    seeds:seedCodesFromMarkdown(seedText),
    topics:topicIdsFromMarkdown(topicText),windows:readTopicWindows(topicText)
   });
-  console.log('17D草稿V1｜'+(report.mechanicalPass?'機械檢查通過':'機械檢查失敗')+'｜'+report.stage+'｜錯誤'+report.errors.length+'項');
+  console.log('17D草稿｜四狀態V2｜'+(report.mechanicalPass?'機械檢查通過':'機械檢查失敗')+'｜'+report.stage+'｜錯誤'+report.errors.length+'項');
   for(const item of report.errors)console.log('✗ '+item.code+'：'+item.detail);
   for(const item of report.warnings)console.log('△ '+item);
+  if(report.details.stateDistribution)console.log('四狀態分布：'+JSON.stringify(report.details.stateDistribution));
   if(param('--json')){const out=resolve(param('--json'));await mkdir(dirname(out),{recursive:true});await writeFile(out,JSON.stringify(report,null,2)+'\n','utf8');}
   if(!report.mechanicalPass)process.exitCode=1;
  }catch(error){console.error('檢查器錯誤：'+error.message);process.exitCode=2}

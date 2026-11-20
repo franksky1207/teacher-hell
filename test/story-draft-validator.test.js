@@ -13,7 +13,7 @@ function draft(){
   '- **玩家可見結果**：學生產生第'+(i+1)+'種不同的反應。',
   '- **客觀後果**：無',
   '- **合法底層增減**：student_a:1-1:+2',
-  '- **玩家四狀態**（體力、精神、熱忱、情緒）：0,0,0,0'
+  '- **玩家四狀態**（體力、精神、熱忱、情緒）：1,1,1,1'
  ].join('\n')).join('\n');
  return [
  '## 1｜故事基本資料與必要資格',
@@ -85,7 +85,7 @@ test('rejects role eligibility, invalid value changes and excessive eight-result
  assert.ok(audit(draft().replaceAll('student_a:1-1:+2','teacher:9-1:+2')).errors.some(x=>x.code==='delta_eligibility'));
  assert.ok(audit(draft().replace('student_a:1-1:+2','student_a:1-1:+9')).errors.some(x=>x.code==='delta_range'));
  assert.ok(audit(draft().replaceAll('student_a:1-1:+2','student_a:1-1:+4')).errors.some(x=>x.code==='delta_mean'));
- assert.ok(audit(draft().replaceAll('0,0,0,0','3,0,0,0')).errors.some(x=>x.code==='state_mean'));
+ assert.ok(audit(draft().replaceAll('1,1,1,1','3,0,0,0')).errors.some(x=>x.code==='state_mean'));
 });
 test('rejects malformed weights, zero limit, and missing impossible-link explanations',()=>{
  const a='| A | 4 | 2 | 1 | 4 | 2 | 1 | 4 | 2 |';
@@ -198,22 +198,22 @@ test('batch09 R IDs, result text, numeric limits and equal means',async t=>{
   ['same text',s=>s.replace('學生產生第2種不同的反應。','學生產生第1種不同的反應。'),'result_same'],
   ['positive delta overflow',s=>s.replace('student_a:1-1:+2','student_a:1-1:+9'),'delta_range'],
   ['negative delta overflow',s=>s.replace('student_a:1-1:+2','student_a:1-1:-9'),'delta_range'],
-  ['positive state overflow',s=>s.replace('0,0,0,0','7,0,0,0'),'state_range'],
-  ['negative state overflow',s=>s.replace('0,0,0,0','-7,0,0,0'),'state_range'],
-  ['state decimal',s=>s.replace('0,0,0,0','0.5,0,0,0'),'state_format'],
-  ['state missing',s=>s.replace('0,0,0,0','0,0,0'),'state_format'],
+  ['positive state overflow',s=>s.replace('1,1,1,1','7,0,0,0'),'state_range'],
+  ['negative state overflow',s=>s.replace('1,1,1,1','-7,0,0,0'),'state_range'],
+  ['state decimal',s=>s.replace('1,1,1,1','0.5,0,0,0'),'state_format'],
+  ['state missing',s=>s.replace('1,1,1,1','0,0,0'),'state_format'],
   ['positive mean',s=>s.replaceAll('student_a:1-1:+2','student_a:1-1:+4'),'delta_mean'],
   ['negative mean',s=>s.replaceAll('student_a:1-1:+2','student_a:1-1:-4'),'delta_mean'],
-  ['positive state mean',s=>s.replaceAll('0,0,0,0','3,0,0,0'),'state_mean'],
-  ['negative state mean',s=>s.replaceAll('0,0,0,0','-3,0,0,0'),'state_mean']
+  ['positive state mean',s=>s.replaceAll('1,1,1,1','3,0,0,0'),'state_mean'],
+  ['negative state mean',s=>s.replaceAll('1,1,1,1','-3,0,0,0'),'state_mean']
  ];
  for(const [name,mutate,code] of cases)await t.test(name,()=>rejected(mutate(draft()),code));
  // Values are independent of matrix weights; equal means at both boundaries pass.
  for(const sign of [1,-1]){
-  const s=draft().replaceAll('student_a:1-1:+2','student_a:1-1:'+sign*3).replaceAll('0,0,0,0',sign*2+',0,0,0');
+  const s=draft().replaceAll('student_a:1-1:+2','student_a:1-1:'+sign*3).replaceAll('1,1,1,1',sign*2+',1,1,1');
   assert.equal(audit(s).mechanicalPass,true);
  }
- let i=0;const balanced=draft().replaceAll('student_a:1-1:+2',()=> 'student_a:1-1:'+(i++%2?'-8':'+8')).replaceAll('0,0,0,0',()=> (i++%2?'-6':'6')+',0,0,0');
+ let i=0;const balanced=draft().replaceAll('student_a:1-1:+2',()=> 'student_a:1-1:'+(i++%2?'-8':'+8')).replaceAll('1,1,1,1',()=> (i++%2?'-6':'6')+',1,1,1');
  assert.equal(audit(balanced).mechanicalPass,true);
 });
 test('batch09 matrix dimensions, values, zeros and reachability',async t=>{
@@ -282,4 +282,52 @@ test('batch12 canonical stage sections and illegal numeric headings',async t=>{
   assert.ok(result.errors.some(error=>error.code===code),JSON.stringify(result.errors));
  });
  assert.equal(audit(full+'\n一般敘事段落提到第六節。').mechanicalPass,true);
+});
+
+const withStates=values=>{
+ let index=0;
+ return draft().replace(/(\*\*玩家四狀態\*\*[^：\n]*：)[^\n]*/g,(_,label)=>label+values[index++].join(','));
+};
+test('V2 row and column zero boundaries, distribution and nonbinding warnings',()=>{
+ const values=Array.from({length:8},(_,i)=>Array.from({length:4},(_,j)=>j===i%4?0:(i<4?j+1:-(j+1))));
+ const result=audit(withStates(values)),stats=result.details.stateDistribution;
+ assert.equal(result.mechanicalPass,true,JSON.stringify(result.errors));
+ assert.equal(stats.complete,true);assert.equal(stats.zeroTotal,8);
+ assert.deepEqual(stats.zeroByResult,Object.fromEntries(values.map((_,i)=>['R'+(i+1),1])));
+ assert.deepEqual(stats.absoluteCounts,{0:8,1:6,2:6,3:6,4:6,5:0,6:0});
+ for(const name of ['體力','精神','熱忱','情緒'])assert.deepEqual(stats.byState[name],{zeros:2,positive:3,negative:3,mean:0});
+ assert.equal(stats.identicalResultCount,0);
+ for(const count of [2,3,4]){
+  const bad=structuredClone(values);bad[0]=Array.from({length:4},(_,i)=>i<count?0:1);
+  const report=audit(withStates(bad));assert.equal(report.mechanicalPass,false);
+  assert.ok(report.errors.some(e=>e.code==='state_zero_row'&&e.detail.includes('R1')));
+ }
+ const bad=structuredClone(values);bad[1]=[0,1,1,1];
+ const report=audit(withStates(bad));assert.ok(report.errors.some(e=>e.code==='state_zero_column'&&e.detail.includes('體力')));
+ const noZeros=audit(withStates(Array(8).fill([1,-1,1,-1])));
+ assert.equal(noZeros.mechanicalPass,true);assert.equal(noZeros.details.stateDistribution.zeroTotal,0);
+ assert.equal(noZeros.details.stateDistribution.identicalResultCount,8);
+ assert.deepEqual(noZeros.details.stateDistribution.identicalGroups,[['R1','R2','R3','R4','R5','R6','R7','R8']]);
+ assert.ok(noZeros.warnings.some(w=>w.includes('全為±1')));
+});
+test('V2 full integer ranges and exact equal mean boundaries in every state',()=>{
+ for(const sign of [-1,1]){
+  const balanced=Array.from({length:8},(_,i)=>Array(4).fill((i%2?1:-1)*6));
+  assert.equal(audit(withStates(balanced)).mechanicalPass,true);
+  balanced[0][0]=sign*7;rejected(withStates(balanced),'state_range');
+  const boundary=Array.from({length:8},()=>Array(4).fill(sign*2));
+  assert.equal(audit(withStates(boundary)).mechanicalPass,true);
+  boundary[0]=Array(4).fill(sign*3);
+  assert.equal(audit(withStates(boundary)).errors.filter(e=>e.code==='state_mean').length,4);
+ }
+});
+test('V2 malformed results are excluded and do not produce misleading aggregate errors',()=>{
+ const broken=draft().replace('1,1,1,1','3.5,0,0,0');
+ const r=audit(broken);assert.equal(r.mechanicalPass,false);
+ assert.equal(r.details.stateDistribution.complete,false);
+ assert.equal(r.details.stateDistribution.resultsParsed,7);
+ assert.equal(r.details.stateDistribution.byState['體力'].mean,null);
+ assert.equal(r.errors.filter(e=>e.code.startsWith('state_')).length,1);
+ assert.equal(r.errors.find(e=>e.code==='state_format').detail.includes('R1'),true);
+ for(const stage of ['summary','choices'])assert.equal(audit(broken,stage).details.stateDistribution,null);
 });

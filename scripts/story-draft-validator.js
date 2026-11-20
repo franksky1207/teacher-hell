@@ -97,8 +97,9 @@ export function validateStoryDraft(md,{stage='full',seeds=new Map(),topics=new S
   const labels=[...choices.values()].map(r=>r[1].replace(/\s/g,''));if(new Set(labels).size!==labels.length)fail('choice_same','有完全重複的選項文字');
   for(const [,slot] of four.matchAll(/{{\s*([a-z][a-z0-9_]*)\.[a-z_]+\s*}}/g))if(slot!=='teacher'&&!slots.has(slot))fail('placeholder','未知人物槽位 '+slot);
  }
- let resultCount=0,matrix=null;
+ let resultCount=0,matrix=null,stateDistribution=null;
  if(stage==='full'){
+  const stateNames=['體力','精神','熱忱','情緒'],stateRows=new Map();
   const markers=[...five.matchAll(/^### R(\d+)｜([^\n]*)/gm)],results=new Map(),total=new Map(),states=[0,0,0,0],texts=[];
   if(markers.length!==8)fail('result_count','必須恰好八個結果');
   const matrixPos=five.indexOf('### 四選項對八共用結果的權重');
@@ -132,11 +133,36 @@ export function validateStoryDraft(md,{stage='full',seeds=new Map(),topics=new S
    }
    const q=rawStates.split(/[，,]/).map(clean);
    if(q.length!==4||q.some(v=>!/^[-+]?\d+$/.test(v)))fail('state_format','R'+n+' 必須填4個整數');
-   else q.forEach((v,i)=>{const d=+v;states[i]+=d;if(d<-6||d>6)fail('state_range','R'+n+' 第'+(i+1)+'項超出−6～+6')});
+   else {
+    const values=q.map(Number);
+    if(values.some(d=>!Number.isSafeInteger(d))){fail('state_format','R'+n+' 必須填4個安全整數');continue;}
+    stateRows.set('R'+n,values);
+    if(values.filter(d=>d===0).length>1)fail('state_zero_row','R'+n+' 四狀態最多一個0');
+    values.forEach((d,i)=>{states[i]+=d;if(d<-6||d>6)fail('state_range','R'+n+' '+stateNames[i]+' 超出−6～+6')});
+   }
   }
   if(resultCount===8&&new Set(texts).size!==8)fail('result_same','八結果有完全相同文字');
   for(const [k,sum] of total)if(Math.abs(sum)>24)fail('delta_mean',k+' 八R等權平均超出−3～+3');
-  states.forEach((v,i)=>{if(Math.abs(v)>16)fail('state_mean','玩家第'+(i+1)+'項八R平均超出−2～+2')});
+  const complete=stateRows.size===8;
+  stateDistribution={complete,resultsParsed:stateRows.size,zeroTotal:0,zeroByResult:{},byState:{},absoluteCounts:Object.fromEntries(Array.from({length:7},(_,i)=>[i,0])),identicalGroups:[],identicalResultCount:0};
+  const groups=new Map();
+  for(const [id,values] of stateRows){
+   const zeros=values.filter(d=>d===0).length;
+   stateDistribution.zeroByResult[id]=zeros;stateDistribution.zeroTotal+=zeros;
+   for(const d of values)if(Math.abs(d)<=6)stateDistribution.absoluteCounts[Math.abs(d)]++;
+   const key=values.join(',');if(!groups.has(key))groups.set(key,[]);groups.get(key).push(id);
+  }
+  stateNames.forEach((name,i)=>{
+   const values=[...stateRows.values()].map(row=>row[i]),zeros=values.filter(d=>d===0).length;
+   stateDistribution.byState[name]={zeros,positive:values.filter(d=>d>0).length,negative:values.filter(d=>d<0).length,mean:complete?states[i]/8:null};
+   // Incomplete matrices report partial counts, without derivative column/mean errors.
+   if(complete&&zeros>2)fail('state_zero_column',name+' 八結果最多兩個0，目前'+zeros+'個');
+   if(complete&&Math.abs(states[i])>16)fail('state_mean',name+' 八R等權平均超出−2～+2');
+  });
+  stateDistribution.identicalGroups=[...groups.values()].filter(ids=>ids.length>1);
+  stateDistribution.identicalResultCount=stateDistribution.identicalGroups.reduce((sum,ids)=>sum+ids.length,0);
+  if(complete&&stateDistribution.absoluteCounts[1]===32)warnings.push('四狀態32格全為±1，請審查幅度是否符合實際後果；此警示不影響通過。');
+  if(complete&&stateDistribution.identicalResultCount)warnings.push('四狀態有完全相同排列：'+stateDistribution.identicalGroups.map(ids=>ids.join('、')).join('；')+'；須審查因果，非硬性配額。');
   const mat=five.split('### 四選項對八共用結果的權重')[1]||'',table=rows(mat);
   if(!table.some(r=>r[0]==='選項／結果'&&r.slice(1).join()==='R1,R2,R3,R4,R5,R6,R7,R8'))fail('matrix_header','結果順序須R1～R8');
   matrix=new Map();
@@ -162,5 +188,5 @@ export function validateStoryDraft(md,{stage='full',seeds=new Map(),topics=new S
   if(!zeros.length&&unfilled(why))fail('zero_reason','沒有0時填「無」');
   warnings.push('程式不判斷32組真實敘事因果、角色知情與跨批重複；須由同一創作AI另行檢查並留下證據。');
  }
- return {stage,mechanicalPass:errors.length===0,errors,warnings,details:{choiceFlags,seedId:sid,resultsChecked:resultCount,matrix:matrix?Object.fromEntries(matrix):null}};
+ return {stage,mechanicalPass:errors.length===0,errors,warnings,details:{stateRulesVersion:2,stateDistribution,choiceFlags,seedId:sid,resultsChecked:resultCount,matrix:matrix?Object.fromEntries(matrix):null}};
 }

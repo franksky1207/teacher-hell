@@ -1,0 +1,587 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "高一新班初次說明暑輔服裝，但新生首次配發尚有缺碼。已領學生依通知準備，待領學生也依通知辦理。教師只可處理班上核對及向學務詢問，無法改校規或配發。",
+  "fourCodes": "S1876由現任本班學生完整持有。R2明寫不願由教師反覆要求證明，R5實際用私下安排，R1自願提供一聯，R4提議分品項領用以影響辦法。",
+  "fourChoices": "shuf實抽1、5、3。普通案分別確立可轉述口徑、設三類答疑及私下核對，另有配發查期、詢問合法借用與邀承辦說明。情緒項當面制止按外觀猜測並中止本班核對表，無服裝豁免。",
+  "eightResults": "八項是提供憑據、反感、取得窗口、建議分領、私下配合、說明已領範圍、時程未定及制止先借。R4補足家庭替換困難，讓分領對生活有具體影響；R7不主張未確認的尺寸交期。底層增量各2，四狀態總和0、−3、3、0。",
+  "causal32": "causalMatrix含32格。B先匿名分類，R1是本人另行提供單據；D中止班級核對，不撤銷任一個別詢問。A請求說明，R3只獲窗口；C已設私下時段，R2仍可能因重複查問而不滿。",
+  "timeAndLaw": "限T1-1首週且首次配發缺碼與首次服裝說明同步。所有作法只在需要範圍核對本人資料，不公開尺寸，不虛構到貨日、不要求私下借用、不改正式校規。",
+  "duplicates": "摘要及全文比對T1-001至T1-011。T1-009處理家庭選購意願遭改讀、尚無訂單，本篇是已有正式待領單但實物沒到，老師須解釋服裝要求何時適用。T1-005同有不公開個人資訊，但沒有供貨與學務分工，兩篇行動及結果各自獨立。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "向學務請一段可轉述的待領說明，先發已確認部分"
+      },
+      {
+        "id": 2,
+        "action": "請配發端核對缺碼及領用進度，約定如何通知補領"
+      },
+      {
+        "id": 3,
+        "action": "開一個私下查證的時間，由本人自願帶待領單來對"
+      },
+      {
+        "id": 4,
+        "action": "詢問承辦是否有經校方核准的臨時借用安排，只轉達選項不代登記"
+      },
+      {
+        "id": 5,
+        "action": "把班級答疑先按已領、待領及資料有誤三種問題分流"
+      },
+      {
+        "id": 6,
+        "action": "請學務承辦到班說明一次，導師收其他想問的匿名問題"
+      }
+    ],
+    "selectedIds": [
+      1,
+      5,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 5,
+      "C": 3,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "reason": "學務說明要有具體待領依據，學生可自願補一聯但沒有被要求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "reason": "教師已問學務，仍可能另私問學生日期，讓人覺得重複。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 4,
+      "reason": "直接向學務請求說明，最容易收到可轉達的核對入口。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "reason": "詢問待領處理時，學生的分品項建議可加入待查事項。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "reason": "學校口徑沒定仍可私下核對本人項目，查詢不等於豁免。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "reason": "公開已知缺碼事實可能使已領者誤會範圍，導師可澄清。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "reason": "向學務發出待領說明請求容易轉到配發端補查時程。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "reason": "等正式說法不阻止同學提議借用，但教師仍可請先等待。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "reason": "B設匿名分流並不禁止本人之後私交一聯。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "reason": "學生匿名填了待領類後仍可被私下問日期，可能不想重複。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "reason": "分類後待領與其他問題分開，學務可對該類指出窗口。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "reason": "待領類已有入口，最容易收到先發已到品項的意見。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "reason": "匿名分類後還有個別查證需求，仍可另設私下核對。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "reason": "三類文字直接引發已領者過問自己是否還要做什麼。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "reason": "分類會把時程問到配發端，尚未得知確切日期。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "reason": "匿名分流不處理同儕借用品，同學仍可另提出幫忙。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 4,
+      "reason": "導師開出私下查證時間，最容易讓學生自行帶待領聯。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "reason": "查證要求集中到本人，學生可能直接表達不願再證明。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "reason": "教師核對個案時仍可收到學務回覆，但不是本行動發出的請求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "reason": "本人有私下管道也可說明分品項能改善家中替換需求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "reason": "實際在下課用私下入口正是C明確開出的安排。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 1,
+      "reason": "C只對待領者說可核對，仍有人可能誤會，但比較少。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "reason": "即使本人提供文件，正式補貨日仍須配發端確認。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 1,
+      "reason": "沒有公開個別缺碼，只有聽見開場的人仍可能想到借用。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "reason": "停止公開核對以後，學生仍可下課自願留一聯。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "reason": "D避免當眾查問，教師仍可能私下重問日期而引出不滿。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "reason": "D等學校說清楚，學務可以先只答窗口而不重啟班表。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 1,
+      "reason": "焦點在擋推測而非調供貨，仍有機會私下提分品項但不直接。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "reason": "停止使用班級服裝表不妨礙向本人確認尚未領的貨。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "reason": "當眾合上整張表容易讓已領者誤以為連自己也要重登記。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "reason": "等校方說明時，配發端仍可回覆缺乏確切日期。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "reason": "取消眼下服裝核對會促使目睹情況的同學問能否另外提供衣物。",
+      "actionPreserved": true
+    }
+  ],
+  "stateRevision": {
+    "kind": "teacher-states-v1-to-v2",
+    "verdict": "approved",
+    "reviewer": "ChatGPT",
+    "version": 2,
+    "storyId": "T1-012",
+    "originalVersion": 1,
+    "originalSourceCommit": "79433b46a6199e8e56d680a8e03a0ec5a2b53fd0",
+    "originalLedgerRevision": 94,
+    "originalLedgerDigest": "5c29e54ee4ec662777dfac51b6e31eeb431675fd0f4580669eaa3cf78b20dca1",
+    "originalManuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0012.md",
+    "originalManuscriptDigest": "54ca34262456139176c8b0e1863840e2a9909c5ed90c8de81c1f609d4130b69f",
+    "originalReviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0012.review.json",
+    "originalReviewDigest": "117ef84717a49f5a135420fa00aa2bf0a0358270d66c7c79a0c7ffe342be438a",
+    "manuscriptDigest": "791f97838ce79e64bb04710dbeb517c5fa298b27dfa1470846f7e7d1675190c6",
+    "before": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "after": [
+      [
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        -2,
+        -1,
+        -2
+      ],
+      [
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        -1,
+        1,
+        -1
+      ],
+      [
+        -1,
+        1,
+        2,
+        1
+      ],
+      [
+        -1,
+        -1,
+        0,
+        -1
+      ],
+      [
+        -1,
+        -2,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        1,
+        1
+      ]
+    ],
+    "otherFieldsUnchanged": true,
+    "causality": [
+      {
+        "result": "R1",
+        "states": [
+          "體力（-1）：記品項與來源，新增短暫核對工作",
+          "精神（1）：有限憑據使查詢對象較清楚",
+          "熱忱（1）：學生願提供核對聯，合作動力略增",
+          "情緒（1）：得到自願資料而非公開逼問，稍安心"
+        ]
+      },
+      {
+        "result": "R2",
+        "states": [
+          "體力（-1）：另外詢問日期，花掉短暫答疑時間",
+          "精神（-2）：重複證明引起抗拒，須重想查詢方式",
+          "熱忱（-1）：協助反成重複負擔，帶班略受挫",
+          "情緒（-2）：當事人明說不願再證明，明顯難受"
+        ]
+      },
+      {
+        "result": "R3",
+        "states": [
+          "體力（-1）：把學務窗口寫入筆記，多一道記錄",
+          "精神（1）：知道先找配發端，查詢方向變清楚",
+          "熱忱（1）：能給待領者可用入口，略有進展感",
+          "情緒（1）：終於取得能轉達的資訊，稍寬心"
+        ]
+      },
+      {
+        "result": "R4",
+        "states": [
+          "體力（0）：僅收建議，未實施分領或新增教師作業",
+          "精神（-1）：家庭僅一件替換上衣使待領問題具體",
+          "熱忱（1）：學生提出可改善生活的方向，略添動力",
+          "情緒（-1）：聽到家庭輪洗困難，輕度擔憂"
+        ]
+      },
+      {
+        "result": "R5",
+        "states": [
+          "體力（-1）：下課實際核對姓名品項，耗工作時間",
+          "精神（1）：個別缺領狀況得到確認，少一層未知",
+          "熱忱（2）：私下途徑被實際採用，明確肯定做法",
+          "情緒（1）：學生核對後回到學習，稍感安定"
+        ]
+      },
+      {
+        "result": "R6",
+        "states": [
+          "體力（-1）：另向已領同學解釋範圍，增加答疑",
+          "精神（-1）：分類又被誤解，須補辨已領與待領",
+          "熱忱（0）：僅釐清範圍，尚無供貨改善成就",
+          "情緒（-1）：已領者也擔心重登，短暫費心"
+        ]
+      },
+      {
+        "result": "R7",
+        "states": [
+          "體力（-1）：修回覆草稿，移除未確認日期",
+          "精神（-2）：兩批交期不同且不能保證，認知負荷增",
+          "熱忱（-1）：還不能給明確領用期待，略受挫",
+          "情緒（-1）：到貨不定，保持輕度擔憂"
+        ]
+      },
+      {
+        "result": "R8",
+        "states": [
+          "體力（-1）：回應借衣建議並要求暫緩，耗時",
+          "精神（-1）：還須核對學務及需要，不能直接放行",
+          "熱忱（1）：同學願提出互助資源，略增帶班動力",
+          "情緒（1）：看到願幫忙的反應，稍感溫暖"
+        ]
+      }
+    ],
+    "mechanicalReport": {
+      "stage": "full",
+      "mechanicalPass": true,
+      "errors": [],
+      "warnings": [
+        "四狀態有完全相同排列：R1、R3；須審查因果，非硬性配額。",
+        "程式不判斷32組真實敘事因果、角色知情與跨批重複；須由同一創作AI另行檢查並留下證據。"
+      ],
+      "details": {
+        "stateRulesVersion": 2,
+        "stateDistribution": {
+          "complete": true,
+          "resultsParsed": 8,
+          "zeroTotal": 2,
+          "zeroByResult": {
+            "R1": 0,
+            "R2": 0,
+            "R3": 0,
+            "R4": 1,
+            "R5": 0,
+            "R6": 1,
+            "R7": 0,
+            "R8": 0
+          },
+          "byState": {
+            "體力": {
+              "zeros": 1,
+              "positive": 0,
+              "negative": 7,
+              "mean": -0.875
+            },
+            "精神": {
+              "zeros": 0,
+              "positive": 3,
+              "negative": 5,
+              "mean": -0.5
+            },
+            "熱忱": {
+              "zeros": 1,
+              "positive": 5,
+              "negative": 2,
+              "mean": 0.5
+            },
+            "情緒": {
+              "zeros": 0,
+              "positive": 4,
+              "negative": 4,
+              "mean": -0.125
+            }
+          },
+          "absoluteCounts": {
+            "0": 2,
+            "1": 26,
+            "2": 4,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0
+          },
+          "identicalGroups": [
+            [
+              "R1",
+              "R3"
+            ]
+          ],
+          "identicalResultCount": 2
+        },
+        "choiceFlags": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": true
+        },
+        "seedId": "S1876",
+        "resultsChecked": 8,
+        "matrix": {
+          "A": [
+            2,
+            2,
+            4,
+            2,
+            2,
+            2,
+            4,
+            2
+          ],
+          "B": [
+            2,
+            2,
+            4,
+            4,
+            2,
+            4,
+            2,
+            2
+          ],
+          "C": [
+            4,
+            4,
+            2,
+            2,
+            4,
+            1,
+            2,
+            1
+          ],
+          "D": [
+            2,
+            2,
+            2,
+            1,
+            2,
+            4,
+            2,
+            4
+          ]
+        }
+      }
+    },
+    "distributionReview": "逐結果依原文中的教師核對、記錄、說明、補送或具體待辦評估工作時間；僅收件、點頭或學生自行做事不推定教師體力增減。短暫作業多用−1，多步重送、實作或明確新增任務用−2；心理與情緒依合作、質疑、期限及解決程度分別判讀。未完成事項不當成已解決，不為平均製造反向效果。警示僅供因果複核，不以配額消除。完整跨篇比較另見本批審查總表。"
+  }
+}

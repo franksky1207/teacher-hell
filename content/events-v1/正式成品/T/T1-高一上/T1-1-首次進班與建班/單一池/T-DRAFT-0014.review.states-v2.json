@@ -1,0 +1,587 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "新班接室初次寫正式分工時尚無可用歷史，新版分界也未定，原圖沿用有責任落差。導師可管本班本次工作，隔壁導師只提出協助，行政才可回覆正式分界。",
+  "fourCodes": "S2125由在場現任學生持有。R4針對導師問法表示反感，R2實際為班務畫新分界線索，R3追問辦理進度，R1建議另設單次紀錄程序。",
+  "fourChoices": "shuf實抽4、3、6。A保留待確認並送圖疑義，B只啟動已知區域工作，C與隔壁商量各掃一側。D先擦已出現的每日標記與停止當下等待派工，四者未冒稱已定分界。",
+  "eightResults": "八個不同事實為提出另格、畫現況、追進度、表達對導師不滿、隔壁縮小請求、行政索門牌、收等候工具及釐清署名。補上開場勾記使D確有可擦標記，R4明寫觸發不滿的問話。四底層總量各2，四狀態總量0、−3、3、0。",
+  "causal32": "causalMatrix記32格。C只是先提出方案，R5可由隔壁改小需求。B既有區清掃不因R7收等候工具而撤銷。D僅撤每日標記，R1另建單次紀錄不會復原原承諾。",
+  "timeAndLaw": "限T1-1首週首次接管且正式邊界未確認。只清一般落葉及保持走道，教師不擅改校方分界，也不把臨時幫忙登成某學生永久責任。",
+  "duplicates": "摘要與全文比對T1-001至T1-013。T1-001是物品數量與保管責任，T1-011是實體鑰匙與出入權，均未涉及兩班行政分界或一次代掃形成原始分工。工具命中T1-010首次安排詞彙，其權責和結果為讀題及學習診斷。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "只安排本次掃落葉，在任務表註記日期及一次性協助"
+      },
+      {
+        "id": 2,
+        "action": "與隔壁導師到現場比對新教室門牌和舊圖，再交行政判定"
+      },
+      {
+        "id": 3,
+        "action": "今天只做已確定屬本班的區域，由教師請校方另派人照看接縫"
+      },
+      {
+        "id": 4,
+        "action": "向行政送舊圖疑義，要求首次正式任務表保留待確認欄"
+      },
+      {
+        "id": 5,
+        "action": "請本班志願者畫走廊的新邊界草圖，待確定後再填任務表"
+      },
+      {
+        "id": 6,
+        "action": "與隔壁老師商量各清一側，清完再各自記錄本次實作範圍"
+      }
+    ],
+    "selectedIds": [
+      4,
+      3,
+      6
+    ],
+    "finalChoiceMap": {
+      "A": 4,
+      "B": 3,
+      "C": 6,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "reason": "保留待確認欄使學生容易比較臨時和正式紀錄的差別。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "reason": "舊圖疑義需要能說明的新位置，學生可直接用草圖補。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 4,
+      "reason": "已送行政但未得到回覆，寫表者最可能追問何時可用。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "reason": "標待確認仍可引起導師詢問原筆記，有人可能覺得被指責。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "reason": "行政還沒定界不妨礙隔壁縮小眼前需求，兩者分開記。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "reason": "已向行政發出疑義，取得補門牌要求是直接回應。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "reason": "等行政回覆時學生仍可把空等的工具放回。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "reason": "已明定待確認有利於討論如何不給個人永久責任。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "reason": "今日先照既知範圍清掃，學生仍可提議另記未來臨時協助。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "reason": "保留接縫未分派，草圖仍可作校方安排的補件。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "reason": "請校方安排後，學生仍有理由問下一張分工表何時定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "reason": "有既定工作可做，寫表者仍可能不喜歡教師後補界線。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "reason": "隔壁臨時改小請求並未改變B已交給校方處理。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "reason": "承辦可向教師問新門牌以處理接縫的請求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "reason": "B不指派接縫，因此先收起等候該段的人所拿掃把很直接。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "reason": "既有區域先做，教師仍能釐清如有跨界協助要怎麼標記。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 4,
+      "reason": "商量各掃一側帶來暫時工作，最易需要一次性記錄欄。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "reason": "草圖可補兩班協調範圍，不表示將來也照此分。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "reason": "協調只處理當次，寫表者仍會想要正式進度。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 1,
+      "reason": "C與隔壁先私下協商，較少使原寫表者直接感到被公開指責。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "reason": "向隔壁提出分掃時，對方最有機會立即縮小原請求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "reason": "兩班協商不代替行政定界，後續仍可能被要求門牌。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "reason": "對方尚未接受分掃，等待學生可先收工具。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "reason": "已備妥本次紀錄，最易衍生記班級協助或個人責任的區別。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "reason": "擦每日欄使學生需要一處另記當日自願幫忙。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "reason": "擦欄改的是分工，學生還可另製現地草圖。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "reason": "永久標記被撤，仍可向教師問正式分界會何時確認。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "reason": "當眾擦除且隨後問原因，最容易讓初次寫表者感到不舒服。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "reason": "暫停本班分工時隔壁仍可改小請求，沒有要求本班執行。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 1,
+      "reason": "D未直接找承辦，承辦仍可能由隔壁轉知並查問門牌。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "reason": "放下等候中的掃把後歸回原位，是維持通道的後續動作。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "reason": "D先斷開單次與每日，最容易有人問臨時協助該怎麼署名。",
+      "actionPreserved": true
+    }
+  ],
+  "stateRevision": {
+    "kind": "teacher-states-v1-to-v2",
+    "verdict": "approved",
+    "reviewer": "ChatGPT",
+    "version": 2,
+    "storyId": "T1-014",
+    "originalVersion": 1,
+    "originalSourceCommit": "79433b46a6199e8e56d680a8e03a0ec5a2b53fd0",
+    "originalLedgerRevision": 94,
+    "originalLedgerDigest": "5c29e54ee4ec662777dfac51b6e31eeb431675fd0f4580669eaa3cf78b20dca1",
+    "originalManuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0014.md",
+    "originalManuscriptDigest": "4a3d861d648c0bfbbd9a2744731876f04a3d7af9f460b1ea5f175e5ba02cf69e",
+    "originalReviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0014.review.json",
+    "originalReviewDigest": "4aa9ce284dc4f7667aa262d783fd5e83e1154259895a0e4532d06637e02bbf0e",
+    "manuscriptDigest": "ff7fdbda9faf3bc2ab435439488d76465d5f4d0fdc62f1ab82871e0aa48a571d",
+    "before": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ]
+    ],
+    "after": [
+      [
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        2,
+        1,
+        1
+      ],
+      [
+        -1,
+        -1,
+        0,
+        -1
+      ],
+      [
+        -1,
+        -2,
+        -1,
+        -2
+      ],
+      [
+        -1,
+        2,
+        0,
+        1
+      ],
+      [
+        -1,
+        -1,
+        1,
+        0
+      ],
+      [
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        1,
+        2,
+        1
+      ]
+    ],
+    "otherFieldsUnchanged": true,
+    "causality": [
+      {
+        "result": "R1",
+        "states": [
+          "體力（-1）：記一次性紀錄建議，花短暫書寫時間",
+          "精神（1）：單次與每日有了具體區分方法",
+          "熱忱（1）：學生主動補程序，合作意願帶來動力",
+          "情緒（1）：收到可行的提醒，稍感欣慰"
+        ]
+      },
+      {
+        "result": "R2",
+        "states": [
+          "體力（0）：草圖由學生實地繪製，無教師額外動作",
+          "精神（2）：柱子與接縫補足舊圖缺漏，明確減疑",
+          "熱忱（1）：學生用觀察補班務，略感有助益",
+          "情緒（1）：有人願意釐清實況，稍寬慰"
+        ]
+      },
+      {
+        "result": "R3",
+        "states": [
+          "體力（-1）：說明既知區與待覆狀態，增加答疑",
+          "精神（-1）：正式邊界仍待答，持續分辨未知",
+          "熱忱（0）：只是報進度，不推定帶班動力改變",
+          "情緒（-1）：還不能回答明天安排，稍焦躁"
+        ]
+      },
+      {
+        "result": "R4",
+        "states": [
+          "體力（-1）：追問又重說自己指示，多一次溝通",
+          "精神（-2）：須承認指示空白並重新整理責任",
+          "熱忱（-1）：寫表者因問法不滿，合作略受挫",
+          "情緒（-2）：當事人直接說不舒服，明顯窘迫"
+        ]
+      },
+      {
+        "result": "R5",
+        "states": [
+          "體力（-1）：補記隔壁縮小的當次範圍，耗時",
+          "精神（2）：請求只到門邊，眼前範圍明確縮小",
+          "熱忱（0）：永久分界未定，不推定長期成就",
+          "情緒（1）：眼前要求變清楚，稍鬆一口氣"
+        ]
+      },
+      {
+        "result": "R6",
+        "states": [
+          "體力（-1）：回送本班門牌，新增短暫補件",
+          "精神（-1）：行政仍缺位置資料，需再核對",
+          "熱忱（1）：找到可推進查圖的具體一步",
+          "情緒（0）：中性補資料，不推定正負喜怒"
+        ]
+      },
+      {
+        "result": "R7",
+        "states": [
+          "體力（-1）：另指示等候者歸放工具，耗時",
+          "精神（1）：等待與已明定工作分開，現場較有序",
+          "熱忱（1）：能解除無效空等，略有帶班進展感",
+          "情緒（1）：門邊器具移開，當下稍安心"
+        ]
+      },
+      {
+        "result": "R8",
+        "states": [
+          "體力（-1）：向同學解釋班級與個人責任，耗時",
+          "精神（1）：署名不再暗含永久責任，減少疑義",
+          "熱忱（2）：守住一次協助的界線，明確進展",
+          "情緒（1）：不把同學寫成長期負責，稍寬慰"
+        ]
+      }
+    ],
+    "mechanicalReport": {
+      "stage": "full",
+      "mechanicalPass": true,
+      "errors": [],
+      "warnings": [
+        "四狀態有完全相同排列：R1、R7；須審查因果，非硬性配額。",
+        "程式不判斷32組真實敘事因果、角色知情與跨批重複；須由同一創作AI另行檢查並留下證據。"
+      ],
+      "details": {
+        "stateRulesVersion": 2,
+        "stateDistribution": {
+          "complete": true,
+          "resultsParsed": 8,
+          "zeroTotal": 4,
+          "zeroByResult": {
+            "R1": 0,
+            "R2": 1,
+            "R3": 1,
+            "R4": 0,
+            "R5": 1,
+            "R6": 1,
+            "R7": 0,
+            "R8": 0
+          },
+          "byState": {
+            "體力": {
+              "zeros": 1,
+              "positive": 0,
+              "negative": 7,
+              "mean": -0.875
+            },
+            "精神": {
+              "zeros": 0,
+              "positive": 5,
+              "negative": 3,
+              "mean": 0.375
+            },
+            "熱忱": {
+              "zeros": 2,
+              "positive": 5,
+              "negative": 1,
+              "mean": 0.625
+            },
+            "情緒": {
+              "zeros": 1,
+              "positive": 5,
+              "negative": 2,
+              "mean": 0.25
+            }
+          },
+          "absoluteCounts": {
+            "0": 4,
+            "1": 23,
+            "2": 5,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0
+          },
+          "identicalGroups": [
+            [
+              "R1",
+              "R7"
+            ]
+          ],
+          "identicalResultCount": 2
+        },
+        "choiceFlags": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": true
+        },
+        "seedId": "S2125",
+        "resultsChecked": 8,
+        "matrix": {
+          "A": [
+            4,
+            4,
+            4,
+            2,
+            2,
+            4,
+            2,
+            2
+          ],
+          "B": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            4,
+            2
+          ],
+          "C": [
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            4
+          ],
+          "D": [
+            4,
+            2,
+            2,
+            4,
+            2,
+            1,
+            4,
+            4
+          ]
+        }
+      }
+    },
+    "distributionReview": "逐結果依原文中的教師核對、記錄、說明、補送或具體待辦評估工作時間；僅收件、點頭或學生自行做事不推定教師體力增減。短暫作業多用−1，多步重送、實作或明確新增任務用−2；心理與情緒依合作、質疑、期限及解決程度分別判讀。未完成事項不當成已解決，不為平均製造反向效果。警示僅供因果複核，不以配額消除。完整跨篇比較另見本批審查總表。"
+  }
+}

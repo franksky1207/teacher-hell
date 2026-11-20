@@ -726,7 +726,7 @@ test('T1-1 historical replacement 0031: preserved V1 proof cannot bypass V2 full
 test('formal T1-1 post-replacement ledger: 30 active, one revoked, SHA audit includes both',()=>{
  const current=JSON.parse(file('../data/story-production-ledger.json'));
  const summary=ledgerProgress(current,context),rows=Object.values(current.candidates);
- assert.equal(current.revision,94);
+ assert.equal(current.revision,94+current.history.filter(item=>item.action==='revise-locked').length);
  assert.equal(summary.locked.T,30);assert.equal(summary.stats.revoked,1);
  assert.equal(summary.seedStatus.unused,2370);
  assert.equal(new Set(rows.filter(r=>r.status==='locked').map(r=>r.seedId)).size,30);

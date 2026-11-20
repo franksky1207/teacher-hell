@@ -1,0 +1,587 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "高一初接教室前未有本班設備現況紀錄，預填正常與看見凹痕互斥。總務要繼續點收，學生只願有限提供線索，導師可留下初始觀察或暫緩簽認但不能認定責任。",
+  "fourCodes": "S0482完整由現任學生持有。R1尊重教師不先歸責原則，R2主動補位置線索，R3從依個人相片定案調整為總務查紀錄，R4要求說明導師已採方案的責任範圍。",
+  "fourChoices": "shuf實抽6、1、4。A向承辦要附件並自記日期，B填原交付單備註分列外觀與待試用，C只目視同意的裁切片段且查舊資料。D確實停止簽認；另外三案為共同現場確認、僅查校方舊影像和分項暫緩。",
+  "eightResults": "八項依序為原則肯定、位置線索、同意不依個人照片、已採決定的責任詢問、確認可啟動、舊紀錄缺角度、取得當天校方近照及外觀待複核。B改明尚待實測，R5才確認可啟動。四碼各總量2，四狀態總量0、−2、4、2。",
+  "causal32": "causalMatrix保存32格。B分欄記錄，R5取得實測不代表簽成外觀正常。C已目視，R7另拍並未外傳學生原圖。D未簽認，R1只新增事實紀錄，R8保留待複核。",
+  "timeAndLaw": "限T1-1首週且仍在首次教室交付。導師只談眼前可觀察的初始樣貌，不能用校方舊索引或學生回憶推定責任。本人僅同意看特定片段，導師未拍照或轉發，R7使用校方設備拍攝無人的本次板面。",
+  "duplicates": "摘要與全文查前二十一篇。T1-001同有查責，但沒有正式首次接管和設備初始狀態，只查物品短缺。T1-011是出入權與保管，T1-005是宣傳影像同意；此篇R5到R8是不同的查驗資料與基線結論，不涉及招生使用。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "把可用性和外觀分欄，先據現場能確認的狀況填備註"
+      },
+      {
+        "id": 2,
+        "action": "請承辦一起看現場凹痕，當面取得兩人對眼前狀況的確認"
+      },
+      {
+        "id": 3,
+        "action": "向總務查是否有更早的校方點收照片，不先要求學生提供相片"
+      },
+      {
+        "id": 4,
+        "action": "只用學生自願提供的一小塊照片當線索，另請總務查記錄"
+      },
+      {
+        "id": 5,
+        "action": "把這一項交付留待複核，其他已確認的項目照原順序點收"
+      },
+      {
+        "id": 6,
+        "action": "請承辦為本班初次接管另開一張外觀附件，留存日期與設備位置"
+      }
+    ],
+    "selectedIds": [
+      6,
+      1,
+      4
+    ],
+    "finalChoiceMap": {
+      "A": 6,
+      "B": 1,
+      "C": 4,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "reason": "A留日期及位置，學生可在分開記下未知原因時肯定做法。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "reason": "附件須交代位置，學生能補校方貼紙線索。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "reason": "先記現場會讓當事人接受照片非唯一證據。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "reason": "預期新附件進正式紀錄，最容易使學生問責任效力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "reason": "即使另開外觀附件，總務仍有權現場示範可用。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "reason": "記接管當天不能追溯過往，承辦仍可回頭找原索引。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "reason": "該附件需要時間及位置，校方新近照最有機會補上。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "reason": "附件先提未核，對方可能讓外觀延到下次再確認。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "reason": "B直接分現況和可用，最能讓學生注意導師沒有誤寫原因。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "reason": "分列備註仍可能需要原照片中的位置線索。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "reason": "既有的分欄顯示不必由學生相片決定全部問題，便於協商。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "reason": "看到兩列仍可不確定責任，學生可以要求說明。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 4,
+      "reason": "B將可用性留待實測，最容易取得可啟動但仍有外傷的分列結果。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "reason": "正在填眼前狀況，仍可找既有照片但不能從現在倒推。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "reason": "分列外觀後可增一張校方當日照片，並非需要學生原檔。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "reason": "分欄並未簽認外觀，對方仍可允許待複核。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "reason": "看了有限資料仍可追加書寫凹痕位置與未知來源的區分。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "reason": "C正在比對局部位置，學生最容易想到共同編號。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "reason": "本人已同意有限目視，最容易接受不外送原圖並查校方資料。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "reason": "看過裁圖不表示定責，學生仍可詢問這一行動的後果。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 1,
+      "reason": "C重點是過去照片和現況來源，仍可現場啟動但不是直接處理。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "reason": "向總務請查既有紀錄直接促成找到索引但範圍不足的結果。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "reason": "既然學生只准目視，校方另取無人的新近照是直接替代。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "reason": "照片是否足夠仍然待查，承辦可允許保留待複核。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "reason": "明確拒簽預填正常並保留未知，最易引發對不先怪人的敬重。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "reason": "暫停簽認不影響學生指出原畫面共有的編號位置。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "reason": "拒簽只確立現況不能當正常，學生仍可同意先不用舊照片定案。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "reason": "延後正式簽認最容易引起學生問班級究竟承擔什麼。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "reason": "D暫停外觀欄，承辦仍可展示可用性，不成立反向承諾。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "reason": "待查可包含找既有照片，但D沒有直接提出索引請求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "reason": "暫停預填欄可由承辦另存現場影像來保留新證據。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "reason": "原簽認未完成，下一間教室在等時最容易保留待複核。",
+      "actionPreserved": true
+    }
+  ],
+  "stateRevision": {
+    "kind": "teacher-states-v1-to-v2",
+    "verdict": "approved",
+    "reviewer": "ChatGPT",
+    "version": 2,
+    "storyId": "T1-022",
+    "originalVersion": 1,
+    "originalSourceCommit": "79433b46a6199e8e56d680a8e03a0ec5a2b53fd0",
+    "originalLedgerRevision": 94,
+    "originalLedgerDigest": "5c29e54ee4ec662777dfac51b6e31eeb431675fd0f4580669eaa3cf78b20dca1",
+    "originalManuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0022.md",
+    "originalManuscriptDigest": "1dfda31cb6956ed6069fcab475d20b643923e8c9e43b8596bef27ce2543a2755",
+    "originalReviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0022.review.json",
+    "originalReviewDigest": "43156646e0f788ea04da0af27623d82ae7b340a871d2e7111328b69d41d1aecb",
+    "manuscriptDigest": "00de22189a98c9821d841b687b0e064c9c4eaa26baf5183c1c08efcc001ec8c3",
+    "before": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "after": [
+      [
+        -1,
+        1,
+        2,
+        1
+      ],
+      [
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        -2,
+        0,
+        -1
+      ],
+      [
+        -1,
+        2,
+        1,
+        1
+      ],
+      [
+        -1,
+        -2,
+        -1,
+        -1
+      ],
+      [
+        0,
+        2,
+        1,
+        1
+      ],
+      [
+        -1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "otherFieldsUnchanged": true,
+    "causality": [
+      {
+        "result": "R1",
+        "states": [
+          "體力（-1）：分寫凹痕與未知原因，耗紀錄時間",
+          "精神（1）：把看見與推測拆開，判讀較有序",
+          "熱忱（2）：事實原則被具體肯定，明確鼓舞",
+          "情緒（1）：學生理解不先怪人，稍感欣慰"
+        ]
+      },
+      {
+        "result": "R2",
+        "states": [
+          "體力（-1）：把貼紙位置寫入待查，多一道紀錄",
+          "精神（1）：有共同比對點，少一層位置疑問",
+          "熱忱（1）：學生主動補可查線索，略添動力",
+          "情緒（1）：事情有了可追方向，稍寬心"
+        ]
+      },
+      {
+        "result": "R3",
+        "states": [
+          "體力（0）：只有學生調整期待，無導師新增作業",
+          "精神（1）：不用靠個人照片單獨定責，路徑較清楚",
+          "熱忱（1）：學生接受先記事實，合作略增",
+          "情緒（1）：不用擴大私人影像範圍，稍安心"
+        ]
+      },
+      {
+        "result": "R4",
+        "states": [
+          "體力（-1）：分別解說可用與損傷責任，耗時",
+          "精神（-2）：需說清未查資訊與責任效力",
+          "熱忱（0）：只在說明範圍，尚無成就或挫折依據",
+          "情緒（-1）：學生擔心被迫修理，稍感掛心"
+        ]
+      },
+      {
+        "result": "R5",
+        "states": [
+          "體力（-1）：將啟動示範另記一行，耗紀錄時間",
+          "精神（2）：可啟動已有實測，少一項未知",
+          "熱忱（1）：交付可分項推進，略有工作進展",
+          "情緒（1）：至少可用性得確認，稍寬慰"
+        ]
+      },
+      {
+        "result": "R6",
+        "states": [
+          "體力（-1）：另列影像不足的參考，增加判讀記錄",
+          "精神（-2）：舊索引缺近拍，無法釐清先後",
+          "熱忱（-1）：追查未取得所需證明，略感挫折",
+          "情緒（-1）：責任仍不明，短暫失望"
+        ]
+      },
+      {
+        "result": "R7",
+        "states": [
+          "體力（0）：拍攝與填日期由總務完成，非教師勞務",
+          "精神（2）：有校方保存的當日近照，基線較明確",
+          "熱忱（1）：紀錄可避開私人原檔，略有進展感",
+          "情緒（1）：不用轉傳學生相簿，稍安心"
+        ]
+      },
+      {
+        "result": "R8",
+        "states": [
+          "體力（-1）：核對待補項確實留在交付紀錄，耗時",
+          "精神（1）：不用在催件下填未知，少即時壓力",
+          "熱忱（1）：保留複核程序仍能繼續處理，略添動力",
+          "情緒（1）：承辦不逼立刻填滿，稍鬆一口氣"
+        ]
+      }
+    ],
+    "mechanicalReport": {
+      "stage": "full",
+      "mechanicalPass": true,
+      "errors": [],
+      "warnings": [
+        "四狀態有完全相同排列：R2、R8；須審查因果，非硬性配額。",
+        "程式不判斷32組真實敘事因果、角色知情與跨批重複；須由同一創作AI另行檢查並留下證據。"
+      ],
+      "details": {
+        "stateRulesVersion": 2,
+        "stateDistribution": {
+          "complete": true,
+          "resultsParsed": 8,
+          "zeroTotal": 3,
+          "zeroByResult": {
+            "R1": 0,
+            "R2": 0,
+            "R3": 1,
+            "R4": 1,
+            "R5": 0,
+            "R6": 0,
+            "R7": 1,
+            "R8": 0
+          },
+          "byState": {
+            "體力": {
+              "zeros": 2,
+              "positive": 0,
+              "negative": 6,
+              "mean": -0.75
+            },
+            "精神": {
+              "zeros": 0,
+              "positive": 6,
+              "negative": 2,
+              "mean": 0.5
+            },
+            "熱忱": {
+              "zeros": 1,
+              "positive": 6,
+              "negative": 1,
+              "mean": 0.75
+            },
+            "情緒": {
+              "zeros": 0,
+              "positive": 6,
+              "negative": 2,
+              "mean": 0.5
+            }
+          },
+          "absoluteCounts": {
+            "0": 3,
+            "1": 24,
+            "2": 5,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0
+          },
+          "identicalGroups": [
+            [
+              "R2",
+              "R8"
+            ]
+          ],
+          "identicalResultCount": 2
+        },
+        "choiceFlags": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": true
+        },
+        "seedId": "S0482",
+        "resultsChecked": 8,
+        "matrix": {
+          "A": [
+            2,
+            2,
+            2,
+            4,
+            2,
+            2,
+            4,
+            4
+          ],
+          "B": [
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            2,
+            2
+          ],
+          "C": [
+            2,
+            4,
+            4,
+            2,
+            1,
+            4,
+            4,
+            2
+          ],
+          "D": [
+            4,
+            2,
+            2,
+            4,
+            2,
+            2,
+            2,
+            4
+          ]
+        }
+      }
+    },
+    "distributionReview": "逐結果依原文中的教師核對、記錄、說明、補送或具體待辦評估工作時間；僅收件、點頭或學生自行做事不推定教師體力增減。短暫作業多用−1，多步重送、實作或明確新增任務用−2；心理與情緒依合作、質疑、期限及解決程度分別判讀。未完成事項不當成已解決，不為平均製造反向效果。警示僅供因果複核，不以配額消除。完整跨篇比較另見本批審查總表。"
+  }
+}

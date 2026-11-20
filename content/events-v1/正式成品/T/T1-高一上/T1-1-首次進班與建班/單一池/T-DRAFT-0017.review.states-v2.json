@@ -1,0 +1,581 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "僅在高一新班首次接課務要求且全班仍依入學說明準備時，任課教師首通知才會同時受原說明挑戰。導師能比對、協調與停止同儕比較，作業期限權責留給任課教師。",
+  "fourCodes": "S0342由現任學生持有。R1願意私下給老師看草稿，R2質疑來源查證方法，R3認可新班使用統一入口的原則，R4追問查證進度。",
+  "fourChoices": "用 shuf 抽1、5、3。普通案為日期與來源對讀、提出實作與繳交分開及蒐集準備分布。D阻止個別比較並翻面保存已交件，未替任課作決定。另三備選為自願試作、詢問原窗口、限定課務公告人。",
+  "eightResults": "八個R各留下私下進度、查證質疑、口徑認可、督促、已完成者詢問、附頁、新公告意向與待確認清單。修正文案使開場與半頁草稿一致，R8一般資訊用朗讀而不是讓同學看教師筆記。四碼各總量2，四狀態總量0、−3、3、1。",
+  "causal32": "causalMatrix保存32格。D只翻原作業，不阻止R5保留完成成果的詢問。C保證只交人數，R1草稿只由本人私下展示且未外送。A送逐項確認，R6另有證據，不代表原查證作廢。",
+  "timeAndLaw": "T1-1首週且初次課務口徑尚未確定。報到紙與任課紙都只以能取得的方式檢閱，保護個別準備程度，不由導師擅改評價、期限或決定文件失效。",
+  "duplicates": "摘要、全文比對前十六篇。T1-010雖也有入門學習，爭點是空白答案是否成能力分組；本篇是選哪一份有權的作業說明，沒有分組。T1-006字面命中來自報到與正式安排切換，但該篇的視線與座位決策不涉及任課課務權。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "把兩份文字標好來源和日期，請任課教師逐句說清有效範圍"
+      },
+      {
+        "id": 2,
+        "action": "安排一段可先自願試寫的時間，讓任課教師回覆如何處理原先未準備者"
+      },
+      {
+        "id": 3,
+        "action": "讓各人私下填報自己看過哪份說明及準備到哪裡，再交人數給任課教師"
+      },
+      {
+        "id": 4,
+        "action": "請原報到窗口確認入學說明是否適用這科，先請同事保留未收的作業狀態"
+      },
+      {
+        "id": 5,
+        "action": "向任課教師提議區分首堂課的練習材料與正式繳交，不替他答應"
+      },
+      {
+        "id": 6,
+        "action": "在班級公告設一個任課教師回覆區，只由原任課教師更新決定"
+      }
+    ],
+    "selectedIds": [
+      1,
+      5,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 5,
+      "C": 3,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "reason": "兩份說明已列作材料，學生可另外私下證明目前進度。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "reason": "逐份標日期使人注意版本，最能引發對只靠日期判斷的質疑。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 4,
+      "reason": "向原任課請確認合適的公開口徑，學生容易接受同一入口。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "reason": "已送對照材料但未取得結論，學生可以問查到哪裡。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "reason": "文件對照不等於已交作業如何使用，學生仍能問原投入。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "reason": "核對原報到材料會吸引持有附頁的人補上它。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "reason": "任課教師持有已標的來源，可以迅速決定接手發出更新。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "reason": "已分來源日期，導師最能向全班說哪一點仍待確認。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "reason": "討論練習方式時可私下核對原有草稿，並非要求交稿。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "reason": "只提課務安排未處理適用範圍，學生仍可質疑導師查證。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "reason": "請任課分課中與正式交件，仍可接受日後由一個入口發布。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "reason": "兩種交法的提議未獲答覆，最容易被問何時確定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 4,
+      "reason": "提出分開練與交，已寫學生可能直接擔心作品是否適用。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "reason": "提案不排除學生補報到材料，但焦點先在課務方法。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "reason": "任課教師收到具體提議，較可能自己出面處理公告。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "reason": "有可選課務方案仍需確認原說明，教師可比照列為待確認。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 4,
+      "reason": "私下填寫讓學生可以直接給導師看自己做到一半的草稿。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "reason": "人數只能說明接觸分布，仍可能有人問老師是否查來源。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "reason": "僅交分類人數不影響等候任課老師統一對外說明。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "reason": "分類人數已蒐集或正在蒐集，容易有人追問何時會有答覆。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "reason": "已有完成者人數可引出是否保留原成果的疑問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "reason": "詢問看過哪份材料，有人可主動提出同一份附頁。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "reason": "任課老師可在掌握人數後自己說明，仍延續C不外流個別資料。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "reason": "分類資訊可補已知部分，但尚不回答報到承諾涵蓋範圍。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "reason": "阻止同學公開判斷後，學生更願意私下給老師看未完成的一頁。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "reason": "翻面保護交件者不直接核對文件，學生仍可能質疑查證方式。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "reason": "擋比較後任課要求仍有效待查，可再接受統一入口。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "reason": "導師先處理同儕反應，仍會遇到想問確切進度的學生。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "reason": "翻面處理直接使已完成者想知道付出是否仍算數。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 1,
+      "reason": "D當下沒有開始比對資料，持有附頁者仍可能主動找任課老師。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "reason": "D未更改課務，任課仍可自行接手回覆。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "reason": "阻止同儕比較容易延伸成把已知與未知分開說，進而停止催交。",
+      "actionPreserved": true
+    }
+  ],
+  "stateRevision": {
+    "kind": "teacher-states-v1-to-v2",
+    "verdict": "approved",
+    "reviewer": "ChatGPT",
+    "version": 2,
+    "storyId": "T1-017",
+    "originalVersion": 1,
+    "originalSourceCommit": "79433b46a6199e8e56d680a8e03a0ec5a2b53fd0",
+    "originalLedgerRevision": 94,
+    "originalLedgerDigest": "5c29e54ee4ec662777dfac51b6e31eeb431675fd0f4580669eaa3cf78b20dca1",
+    "originalManuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0017.md",
+    "originalManuscriptDigest": "3bca12149d077826f5f1c11228e5a34064dfc5b8b65c4448693e24a20c69e8f5",
+    "originalReviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0017.review.json",
+    "originalReviewDigest": "bcd5fa1c77a9f2571d6425fb5d4698693a9324f1e52fa48b927003147b8e8db8",
+    "manuscriptDigest": "495b3aa226f3fcb29c46aa7c56a44723a47ea40dd377a0264a845ed3b9d8282e",
+    "before": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "after": [
+      [
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        -2,
+        -1,
+        -2
+      ],
+      [
+        -1,
+        1,
+        2,
+        1
+      ],
+      [
+        -1,
+        -2,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        1,
+        1
+      ],
+      [
+        0,
+        2,
+        2,
+        2
+      ],
+      [
+        -1,
+        2,
+        1,
+        1
+      ]
+    ],
+    "otherFieldsUnchanged": true,
+    "causality": [
+      {
+        "result": "R1",
+        "states": [
+          "體力（-1）：私下核對半頁進度，占用處理時間",
+          "精神（1）：知道實際做到哪裡，少一層猜測",
+          "熱忱（1）：學生願讓導師看準備，信任略增",
+          "情緒（1）：得到坦白進度，稍感安心"
+        ]
+      },
+      {
+        "result": "R2",
+        "states": [
+          "體力（-1）：把來源疑問另記旁邊，增加紀錄",
+          "精神（-2）：不能只看日期，查證效力更複雜",
+          "熱忱（-1）：查證方法被質疑，略感受挫",
+          "情緒（-2）：學生質疑有沒有找原作者，明顯窘迫"
+        ]
+      },
+      {
+        "result": "R3",
+        "states": [
+          "體力（-1）：向同學說明統一入口，花短暫時間",
+          "精神（1）：將來去哪看有共識，少管道混亂",
+          "熱忱（2）：正式口徑被明確認可，帶班信心增",
+          "情緒（1）：學生接受等待辦法，稍感安定"
+        ]
+      },
+      {
+        "result": "R4",
+        "states": [
+          "體力（-1）：逐端交代聯繫與未覆狀況，耗時",
+          "精神（-2）：上課前時限且答案未出，壓力明確",
+          "熱忱（-1）：還不能解決繳交疑問，略有挫折",
+          "情緒（-1）：被催問而仍未定，短暫焦躁"
+        ]
+      },
+      {
+        "result": "R5",
+        "states": [
+          "體力（-1）：再向任課提已完成者處理請求",
+          "精神（-1）：要顧已寫與未寫兩端，增加權衡",
+          "熱忱（1）：能補入原先未處理的公平需要",
+          "情緒（-1）：同學擔心白做，稍感掛心"
+        ]
+      },
+      {
+        "result": "R6",
+        "states": [
+          "體力（0）：附頁由學生交任課，導師未另動作",
+          "精神（-1）：多一份適用科目不明的查證材料",
+          "熱忱（1）：有新的釐清線索，略增解題動力",
+          "情緒（1）：看到可追查的附頁，稍減無頭緒"
+        ]
+      },
+      {
+        "result": "R7",
+        "states": [
+          "體力（0）：只承諾後續發文，未發生教師省工",
+          "精神（2）：任課明確接手改說明，權責更清楚",
+          "熱忱（2）：合作有了明確推進，增進處理信心",
+          "情緒（2）：不當場評未交者，明顯鬆一口氣"
+        ]
+      },
+      {
+        "result": "R8",
+        "states": [
+          "體力（-1）：整理筆記並念清兩點，增加短時工作",
+          "精神（2）：已知與待核分列，認知混亂降低",
+          "熱忱（1）：同學停止互催，略有帶班進展",
+          "情緒（1）：教室比較不催迫，稍感舒緩"
+        ]
+      }
+    ],
+    "mechanicalReport": {
+      "stage": "full",
+      "mechanicalPass": true,
+      "errors": [],
+      "warnings": [
+        "程式不判斷32組真實敘事因果、角色知情與跨批重複；須由同一創作AI另行檢查並留下證據。"
+      ],
+      "details": {
+        "stateRulesVersion": 2,
+        "stateDistribution": {
+          "complete": true,
+          "resultsParsed": 8,
+          "zeroTotal": 2,
+          "zeroByResult": {
+            "R1": 0,
+            "R2": 0,
+            "R3": 0,
+            "R4": 0,
+            "R5": 0,
+            "R6": 1,
+            "R7": 1,
+            "R8": 0
+          },
+          "byState": {
+            "體力": {
+              "zeros": 2,
+              "positive": 0,
+              "negative": 6,
+              "mean": -0.75
+            },
+            "精神": {
+              "zeros": 0,
+              "positive": 4,
+              "negative": 4,
+              "mean": 0
+            },
+            "熱忱": {
+              "zeros": 0,
+              "positive": 6,
+              "negative": 2,
+              "mean": 0.75
+            },
+            "情緒": {
+              "zeros": 0,
+              "positive": 5,
+              "negative": 3,
+              "mean": 0.25
+            }
+          },
+          "absoluteCounts": {
+            "0": 2,
+            "1": 22,
+            "2": 8,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0
+          },
+          "identicalGroups": [],
+          "identicalResultCount": 0
+        },
+        "choiceFlags": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": true
+        },
+        "seedId": "S0342",
+        "resultsChecked": 8,
+        "matrix": {
+          "A": [
+            2,
+            4,
+            4,
+            2,
+            2,
+            4,
+            4,
+            4
+          ],
+          "B": [
+            2,
+            2,
+            2,
+            4,
+            4,
+            2,
+            4,
+            2
+          ],
+          "C": [
+            4,
+            2,
+            2,
+            4,
+            2,
+            2,
+            2,
+            2
+          ],
+          "D": [
+            4,
+            2,
+            2,
+            2,
+            4,
+            1,
+            2,
+            4
+          ]
+        }
+      }
+    },
+    "distributionReview": "逐結果依原文中的教師核對、記錄、說明、補送或具體待辦評估工作時間；僅收件、點頭或學生自行做事不推定教師體力增減。短暫作業多用−1，多步重送、實作或明確新增任務用−2；心理與情緒依合作、質疑、期限及解決程度分別判讀。未完成事項不當成已解決，不為平均製造反向效果。警示僅供因果複核，不以配額消除。完整跨篇比較另見本批審查總表。"
+  }
+}

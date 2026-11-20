@@ -1,0 +1,587 @@
+{
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "storyAndRoles": "高一新班第一次匯入只有一欄的報到聯絡資料時，日常通知與驗證簽署首次被設成同一來源。現任照顧者有已核對的通知角色，未取得本件簽署資格結論；任何角色都不代其他家庭成員授權。",
+  "fourCodes": "S1597四碼由本班照顧者完整持有。R1以有限轉述表達可信任，R3主動提供接送細節，R4自願改變原交件期待，R2提供本人登記聯來支援來源查對。",
+  "fourChoices": "shuf抽2、6、5。普通項分別確認個案的通知方式、送正式查驗、實測訊息到達。另三候選分欄、公開入口說明及向建檔詢問。D停止合欄確認，仍可依原流程發日常訊息。B短句已改清楚是請窗口查驗而非聲稱完成文件交付。",
+  "eightResults": "八項分別是限定轉述許可、憑據、需求說明、改變要求、欄位待核、補送格式、保留資料及取得文件名稱。四碼各總量2，四狀態總量0、−3、3、2。各結果不宣告簽署人已核定。",
+  "causal32": "causalMatrix附32格。B保留日常發送，R6補送正文不撤回原訊息。D退回的是新暫用表，R7仍保留原始報到資料。R2提供聯絡來源，不能替代R8的文件資格查驗。",
+  "timeAndLaw": "限高一暑輔第一週初始化聯繫欄位且新回執未完成資格查驗。聯絡角色與法律權限各自確認，不要求孩子或同班同學知悉家庭資料；各項內容經身分核對及必要範圍處理。",
+  "duplicates": "摘要、全文比對T1-001至T1-014。T1-007也有親師入口，但爭點是舊群退出時個案如何不中斷；本稿仍可正常通知，爭點是聯絡用途與簽署資格。T1-002也比對報到資料，但處理班籍而非家庭功能分欄。",
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "將班級聯絡欄和需審查資格的回執欄分開，暫留後者待核"
+      },
+      {
+        "id": 2,
+        "action": "先以正式管道私下擬定這一戶的通知方式，再另問承辦簽署流程"
+      },
+      {
+        "id": 3,
+        "action": "發一張不含家庭欄位的班級說明，只列不同回執種類的詢問入口"
+      },
+      {
+        "id": 4,
+        "action": "請建檔承辦暫停匯入第二用途，先提供欄位依據及補正管道"
+      },
+      {
+        "id": 5,
+        "action": "請現有聯絡人只指出哪些日常資訊接不到，安排一個可驗證的通知測試"
+      },
+      {
+        "id": 6,
+        "action": "先將第一份正式回執交校方個案窗口查驗，日常通知仍繼續發"
+      }
+    ],
+    "selectedIds": [
+      2,
+      6,
+      5
+    ],
+    "finalChoiceMap": {
+      "A": 2,
+      "B": 6,
+      "C": 5,
+      "D": "emotional"
+    }
+  },
+  "causalMatrix": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "reason": "個別說明先把日常範圍界定，照顧者能放心允許少量資訊轉述。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "reason": "正在擬定這一戶的通知方式，對方有理由拿原聯供核對。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 4,
+      "reason": "私下詢問家庭使用方式容易得到門口等實際接送需求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "reason": "提出日常與簽署兩條路，最容易使當事人接受分開處理。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "reason": "個案作法能暴露共同欄位問題，承辦仍可提出結構調整。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "reason": "已開始商議日常訊息，測試或例行通知可能顯出附件問題。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "reason": "A另問個案流程不阻止承辦交代原報到表的限定用途。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "reason": "已向校方詢問流程，有機會被要求提供回執題目。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "reason": "B送出查驗後家長仍可同意轉述一句，窗口查驗仍須進行。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "reason": "正式查驗將原欄是否可靠變成問題，鼓勵家庭供登記聯作聯絡來源憑據。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "reason": "原日常通知續發，家長也可以主動指出它需要加一個地點。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "reason": "已有分開運作的做法，家長最容易調整所有表都送同一處的要求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "reason": "送審查驗沒有改欄位，建檔者可另收到欄位變更需求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 1,
+      "reason": "例行通知仍在，可能偶然出現附件問題，B不專做測試。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "reason": "查驗與例行通知已並行，最容易促使承辦說明原表只適用其中一事。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "reason": "B提的是查驗請求，承辦可回覆要先取得表題及日期。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "reason": "限定日常測試足以使家長理解資訊不會代作簽署，有機會同意必要轉述。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "reason": "測試若需要確認入口來源，家長仍可補原本持有的聯。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "reason": "明確問原本接不到的資訊，最容易得到門口說明。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "reason": "實證可讀的日常訊息仍可與未核定的簽署程序和平共存。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 1,
+      "reason": "只測通知格式，尚不直接要求建檔調欄，承辦仍可自行提出。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "reason": "已啟動回覆測試，最容易立即發現附件而補用正文。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 1,
+      "reason": "重點在訊息到達，較少直接找承辦問原表用途，但仍可能得到說明。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "reason": "即使先測試日常，另一路個案承辦仍可問文件名稱。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "reason": "擋下合欄通過顯示教師會維持用途界線，較能獲得限縮轉述同意。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "reason": "暫用表被退回，家長仍可提供原聯釐清資料來源。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "reason": "退表未取消日常通知，家長可補接送說明。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "reason": "D只拒絕合欄，家庭仍能另外同意日常繼續而簽署待查。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "reason": "暫用表被退回直接促使建檔承辦提出可維持待核的欄位。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 1,
+      "reason": "退的是表，日常通知未改，偶然的格式回報仍可出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "reason": "拒絕新暫表但保留原聯絡，最易形成原資料與查驗分開留存的安排。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "reason": "未在D送正式查驗，個案窗口仍可能由承辦轉請說明回執名稱。",
+      "actionPreserved": true
+    }
+  ],
+  "stateRevision": {
+    "kind": "teacher-states-v1-to-v2",
+    "verdict": "approved",
+    "reviewer": "ChatGPT",
+    "version": 2,
+    "storyId": "T1-015",
+    "originalVersion": 1,
+    "originalSourceCommit": "79433b46a6199e8e56d680a8e03a0ec5a2b53fd0",
+    "originalLedgerRevision": 94,
+    "originalLedgerDigest": "5c29e54ee4ec662777dfac51b6e31eeb431675fd0f4580669eaa3cf78b20dca1",
+    "originalManuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0015.md",
+    "originalManuscriptDigest": "f0426b0bda35582e47caa0866ed8ae7861c58e3a13e9a70347c00bf1882c57b7",
+    "originalReviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0015.review.json",
+    "originalReviewDigest": "2a328dd6123a40fe388a007c20d52c7a8b3a903f14f3c72cea8ab75449857473",
+    "manuscriptDigest": "11d3abdacb7722e37c2c394c30c5f03030c34a74e5537ceaade56d0a4e9d05bc",
+    "before": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ]
+    ],
+    "after": [
+      [
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        1,
+        2,
+        1
+      ],
+      [
+        -1,
+        2,
+        2,
+        2
+      ],
+      [
+        -1,
+        -2,
+        -1,
+        -1
+      ],
+      [
+        -2,
+        -2,
+        -1,
+        -1
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        -1,
+        0,
+        1
+      ]
+    ],
+    "otherFieldsUnchanged": true,
+    "causality": [
+      {
+        "result": "R1",
+        "states": [
+          "體力（-1）：另抄可轉述的一句，新增紀錄時間",
+          "精神（1）：許可範圍明確，減少誤送判斷",
+          "熱忱（1）：家庭願意授予必要轉述，合作略增",
+          "情緒（1）：取得有限信任，稍感安心"
+        ]
+      },
+      {
+        "result": "R2",
+        "states": [
+          "體力（0）：憑據由當事人上傳，未另交代教師作業",
+          "精神（1）：電話來源可查，資訊多一層依據",
+          "熱忱（1）：家庭主動協助查證，略增動力",
+          "情緒（1）：願提供本人憑據，稍感寬慰"
+        ]
+      },
+      {
+        "result": "R3",
+        "states": [
+          "體力（-1）：補寫接送門口需求，花短暫時間",
+          "精神（1）：放學與接送位置差異被釐清",
+          "熱忱（2）：日常通知可更實用，明確工作意義",
+          "情緒（1）：有了具體改善方向，稍欣慰"
+        ]
+      },
+      {
+        "result": "R4",
+        "states": [
+          "體力（-1）：分記日常與簽署兩件事，耗時",
+          "精神（2）：家庭接受分流，兩項職能更好辨認",
+          "熱忱（2）：協商有實際共識，明確增進信心",
+          "情緒（2）：期待衝突下降，明顯寬慰"
+        ]
+      },
+      {
+        "result": "R5",
+        "states": [
+          "體力（-1）：請承辦列入改版需求，增加溝通",
+          "精神（-2）：原表無法保留待核，還要解結構問題",
+          "熱忱（-1）：個案辦法暫不能落表，略感受挫",
+          "情緒（-1）：系統未改且資格未定，稍掛心"
+        ]
+      },
+      {
+        "result": "R6",
+        "states": [
+          "體力（-2）：必要時間須重新打正文補送，多做一輪",
+          "精神（-2）：送達不等於可讀，需重想格式",
+          "熱忱（-1）：通知未能一次可用，輕度挫折",
+          "情緒（-1）：附件失效耽誤通知，稍感煩躁"
+        ]
+      },
+      {
+        "result": "R7",
+        "states": [
+          "體力（0）：僅把既有表件分放，無額外負擔依據",
+          "精神（1）：原聯絡與查驗用途分清，少一層混淆",
+          "熱忱（1）：保留來源又不代簽，略有進展感",
+          "情緒（1）：不必刪掉仍有用的原資料，稍安心"
+        ]
+      },
+      {
+        "result": "R8",
+        "states": [
+          "體力（-1）：回覆表題日期，增加短暫補件",
+          "精神（-1）：文件類型還待查驗，需留意範圍",
+          "熱忱（0）：只是提供識別，尚不構成工作成就",
+          "情緒（1）：窗口說清需要什麼，稍減無頭緒"
+        ]
+      }
+    ],
+    "mechanicalReport": {
+      "stage": "full",
+      "mechanicalPass": true,
+      "errors": [],
+      "warnings": [
+        "四狀態有完全相同排列：R2、R7；須審查因果，非硬性配額。",
+        "程式不判斷32組真實敘事因果、角色知情與跨批重複；須由同一創作AI另行檢查並留下證據。"
+      ],
+      "details": {
+        "stateRulesVersion": 2,
+        "stateDistribution": {
+          "complete": true,
+          "resultsParsed": 8,
+          "zeroTotal": 3,
+          "zeroByResult": {
+            "R1": 0,
+            "R2": 1,
+            "R3": 0,
+            "R4": 0,
+            "R5": 0,
+            "R6": 0,
+            "R7": 1,
+            "R8": 1
+          },
+          "byState": {
+            "體力": {
+              "zeros": 2,
+              "positive": 0,
+              "negative": 6,
+              "mean": -0.875
+            },
+            "精神": {
+              "zeros": 0,
+              "positive": 5,
+              "negative": 3,
+              "mean": 0.125
+            },
+            "熱忱": {
+              "zeros": 1,
+              "positive": 5,
+              "negative": 2,
+              "mean": 0.625
+            },
+            "情緒": {
+              "zeros": 0,
+              "positive": 6,
+              "negative": 2,
+              "mean": 0.625
+            }
+          },
+          "absoluteCounts": {
+            "0": 3,
+            "1": 22,
+            "2": 7,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0
+          },
+          "identicalGroups": [
+            [
+              "R2",
+              "R7"
+            ]
+          ],
+          "identicalResultCount": 2
+        },
+        "choiceFlags": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": true
+        },
+        "seedId": "S1597",
+        "resultsChecked": 8,
+        "matrix": {
+          "A": [
+            4,
+            2,
+            4,
+            4,
+            2,
+            2,
+            2,
+            2
+          ],
+          "B": [
+            2,
+            4,
+            2,
+            4,
+            2,
+            1,
+            4,
+            4
+          ],
+          "C": [
+            2,
+            2,
+            4,
+            2,
+            1,
+            4,
+            1,
+            2
+          ],
+          "D": [
+            4,
+            2,
+            2,
+            2,
+            4,
+            1,
+            4,
+            2
+          ]
+        }
+      }
+    },
+    "distributionReview": "逐結果依原文中的教師核對、記錄、說明、補送或具體待辦評估工作時間；僅收件、點頭或學生自行做事不推定教師體力增減。短暫作業多用−1，多步重送、實作或明確新增任務用−2；心理與情緒依合作、質疑、期限及解決程度分別判讀。未完成事項不當成已解決，不為平均製造反向效果。警示僅供因果複核，不以配額消除。完整跨篇比較另見本批審查總表。"
+  }
+}

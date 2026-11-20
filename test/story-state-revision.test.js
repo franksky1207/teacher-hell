@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync,mkdtempSync,writeFileSync,rmSync,mkdirSync} from 'node:fs';
 import {join,relative} from 'node:path';
 import {spawnSync} from 'node:child_process';
-import {manuscriptDigest as sha,stateMatrix} from '../scripts/story-state-revision.js';
+import {manuscriptDigest as sha,stateMatrix,unchangedStory} from '../scripts/story-state-revision.js';
 import {validateStoryDraft,seedCodesFromMarkdown,topicIdsFromMarkdown} from '../scripts/story-draft-validator.js';
 import {readTopicWindows} from '../scripts/story-production-ledger.js';
 import {exportReaderData} from '../scripts/export-story-reader.mjs';
@@ -51,4 +51,39 @@ test('isolated CLI same-ID revision guards, historical/current audit and reader 
    assert.equal(detail.sourceMarkdown,revised);assert.equal(detail.results[0].playerStates,'-1,2,1,1');
   }).finally(()=>{rmSync(temp,{recursive:true,force:true});rmSync(join(root,'work/revision-reader-test'),{recursive:true,force:true})});
  }catch(error){rmSync(temp,{recursive:true,force:true});throw error;}
+});
+
+test('all 30 reviewed stories: 14 V2 revisions, 16 explicit blockers, original bytes and identity preserved',()=>{
+ const ledger=JSON.parse(read('data/story-production-ledger.json'));
+ const report=JSON.parse(read('docs/story-production-v1/state-v2-review/results.json'));
+ const blockers=JSON.parse(read('docs/story-production-v1/state-v2-review/blocked-stories.json')).stories;
+ assert.equal(report.batchStatus,'partial-not-complete');assert.equal(report.stories.length,30);
+ assert.equal(report.approved,14);assert.equal(blockers.length,16);assert.equal(ledger.revision,108);
+ assert.equal(Object.values(ledger.candidates).filter(r=>r.status==='locked').length,30);
+ assert.equal(ledger.candidates['T-DRAFT-0001'].status,'revoked');
+ const baseline=JSON.parse(spawnSync('git',['show',report.baselineCommit+':data/story-production-ledger.json'],{cwd:root,encoding:'utf8'}).stdout);
+ assert.deepEqual(ledger.candidates['T-DRAFT-0001'],baseline.candidates['T-DRAFT-0001']);
+ let approved=0;
+ for(const item of report.stories){
+  const row=ledger.candidates[item.storyId.replace('T1-','T-DRAFT-0')],old=baseline.candidates[row.draftRef];
+  for(const key of ['storyId','seedId','date','tags','summary','poolId','topicId','status'])assert.deepEqual(row[key],old[key]);
+  const original=read(item.originalManuscriptPath),latest=read(row.manuscriptPath);
+  assert.equal(sha(original),old.manuscriptDigest);assert.equal(sha(read(item.originalReviewPath)),old.review.digest);
+  assert.equal(sha(latest),row.manuscriptDigest);
+  assert.equal(unchangedStory(original,latest),true);
+  const full=validateStoryDraft(latest,options);assert.deepEqual(item.mechanicalReport,full);
+  if(row.stateRulesVersion===2){
+   approved++;assert.equal(full.mechanicalPass,true);
+   const review=JSON.parse(read(row.review.filePath));
+   const {stateRevision,...preserved}=review;assert.deepEqual(preserved,JSON.parse(read(old.review.filePath)));
+   assert.equal(stateRevision.verdict,'approved');assert.deepEqual(stateRevision.after,stateMatrix(latest));
+   assert.equal(stateRevision.causality.length,8);assert.equal(row.manuscriptVersions[0].manuscriptDigest,old.manuscriptDigest);
+  }else{
+   assert.equal(full.mechanicalPass,false);assert.equal(latest,original);assert.deepEqual(row,old);
+   const proof=blockers.find(b=>b.storyId===item.storyId);assert.equal(proof.status,'blocked');
+   assert.ok(proof.resultReview.filter(r=>r.physicalAssessment.value===0).length>=3);
+   assert.equal(proof.resultReview.length,8);assert.ok(proof.resultReview.every(r=>r.after===null));
+  }
+ }
+ assert.equal(approved,14);
 });

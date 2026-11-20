@@ -1,0 +1,29 @@
+name: Story reader data focused check
+on:
+  push:
+    branches: [content/events-production-v1]
+    paths:
+      - '.github/workflows/story-reader-data-check.yml'
+      - 'scripts/export-story-reader.mjs'
+      - 'test/story-reader-export.test.js'
+      - 'data/story-production-ledger.json'
+      - 'content/events-v1/正式成品/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  story-reader-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Verify read-only story export
+        run: node --test test/story-reader-export.test.js
+      - name: Ensure source ledger stays unchanged
+        if: always()
+        run: git diff --exit-code HEAD -- data/story-production-ledger.json

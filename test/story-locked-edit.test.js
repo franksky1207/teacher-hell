@@ -47,7 +47,7 @@ test('locked story allows in-place content update with fixed identity/seed/numbe
  assert.equal(after.locked.total,before.locked.total);
  assert.equal(after.seedStatus.unused,before.seedStatus.unused);
  assert.equal(after.revision,base.revision+1);
- assert.deepEqual(validateLedger(result.ledger,{seeds,windows}).T,12);
+ assert.equal(validateLedger(result.ledger,{seeds,windows}).T,before.locked.T);
 });
 test('rejects outdated source SHA and changes of protected identity or seed',()=>{
  assert.throws(()=>act({...input,expectedManuscriptDigest:'0'.repeat(64)}),/SHA/);

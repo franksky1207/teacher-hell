@@ -10,7 +10,7 @@ import {exportReaderData} from '../scripts/export-story-reader.mjs';
 const root=new URL('..',import.meta.url).pathname;
 const read=p=>readFileSync(join(root,p),'utf8');
 const seeds=seedCodesFromMarkdown(read('docs/事件四數值三層平衡種子2400組.md')),topicsText=read('docs/T1-T6-特定故事20主題與觸發日期.md');
-const options={stage:'full',seeds,topics:topicIdsFromMarkdown(topicsText),windows:readTopicWindows(topicsText)};
+const options={stage:'full',stateRulesVersion:2,seeds,topics:topicIdsFromMarkdown(topicsText),windows:readTopicWindows(topicsText)};
 test('isolated CLI same-ID revision guards, historical/current audit and reader latest only',{skip:!JSON.parse(read('data/story-production-ledger.json')).candidates['T-DRAFT-0009']},()=>{
  const current=JSON.parse(read('data/story-production-ledger.json'));
  // A real historical manuscript is used as an immutable byte-level baseline, in an isolated ledger.
@@ -33,7 +33,7 @@ test('isolated CLI same-ID revision guards, historical/current audit and reader 
   const head='a'.repeat(40);
   // Deterministic Git responses isolate CLI remote compare logic from live GitHub.
   writeFileSync(join(bin,'git'),'#!/bin/sh\ncase "$1" in\nrev-parse) echo '+head+';;\nls-remote) echo "'+head+' refs/heads/content/events-production-v1";;\n*) exit 1;;\nesac\n',{mode:0o755});
-  const cli=(args,env={})=>spawnSync(process.execPath,['scripts/manage-story-production.mjs',...args,'--ledger',join(temp,'ledger.json')],{cwd:root,encoding:'utf8',env:{...process.env,PATH:bin+':'+process.env.PATH,...env}});
+  const cli=(args,env={})=>spawnSync(process.execPath,['scripts/manage-story-production.mjs',...args,'--state-rules-version','2','--ledger',join(temp,'ledger.json')],{cwd:root,encoding:'utf8',env:{...process.env,PATH:bin+':'+process.env.PATH,...env}});
   const args=['revise-locked','--ref',row.draftRef,'--owner',row.owner,'--file',join(temp,'v2.md'),'--review',join(temp,'v2.json'),'--expect-manuscript-sha',row.manuscriptDigest,'--expect-review-sha',row.review.digest,'--expect-head',head,'--expect-ledger-sha',sha(read(p('ledger.json')))];
   for(const [key,value,message] of [['--expect-head','b'.repeat(40),'HEAD'],['--expect-ledger-sha','0'.repeat(64),'帳本SHA'],['--expect-manuscript-sha','0'.repeat(64),'原SHA']]){
    const bad=[...args];bad[bad.indexOf(key)+1]=value;const result=cli(bad);assert.equal(result.status,1);assert.match(result.stderr,new RegExp(message));

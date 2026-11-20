@@ -1,7 +1,7 @@
 import {
  filterStories, selectOptions, neighboringIds, sanitizeReaderPreferences, topicDisplayName, poolDisplayName,
- safeDetailPath, validateReaderIndex, validateReaderDetail
-} from './reader-core.js?v=e1c0cca7486e6faa7145617fec5bc11a73c43e8c';
+ safeDetailPath, validateReaderIndex, validateReaderDetail, readerTechnicalTables, READER_STATES
+} from './reader-core.js?v=d88b8b5ca97318edd53221dbdd71543c53d50ca3';
 
 const $=id=>document.getElementById(id);
 const state={all:[],filtered:[],selected:null,detail:null,request:0,cache:new Map(),
@@ -84,6 +84,30 @@ function addResults(detail){
   card.append(extra);root.append(card);
  }
 }
+function technicalTable(headers,records,{firstHeader='結果'}={}){
+ const scroll=make('div','matrix-scroller');
+ const table=make('table','matrix technical-table');
+ const thead=make('thead'),head=make('tr');
+ for(const label of [firstHeader,...headers])head.append(make('th','',label));
+ thead.append(head);table.append(thead);
+ const tbody=make('tbody');
+ for(const record of records){
+  const tr=make('tr');
+  tr.append(make('th','',record.label));
+  for(const value of record.values){
+   const text=value===null?'—':String(value);
+   const cell=make('td','',text);
+   if(typeof value==='number'){
+    cell.classList.add(value>0?'delta-positive':value<0?'delta-negative':'delta-neutral');
+    cell.textContent=value>0?'+'+value:String(value);
+   }
+   tr.append(cell);
+  }
+  tbody.append(tr);
+ }
+ table.append(tbody);scroll.append(table);
+ return scroll;
+}
 function addTechnical(detail){
  const root=$('technical-content');root.replaceChildren();
  const tags=detail.tags?.join('、')||'無';
@@ -95,24 +119,38 @@ function addTechnical(detail){
   ['四碼種子',detail.seedId||'無'],['G分類標籤',tags]
  ])appendLabelValue(info,label,value);
  root.append(info,make('h4','','4×8 因果權重矩陣'));
- const scroll=make('div','matrix-scroller'),table=make('table','matrix'),thead=make('thead'),tr=make('tr');
- for(const label of ['選項','R1','R2','R3','R4','R5','R6','R7','R8'])tr.append(make('th','',label));
- thead.append(tr);table.append(thead);
- const tbody=make('tbody');
- for(const id of ['A','B','C','D']){
-  const row=make('tr');row.append(make('th','',id));
-  for(const n of detail.matrix?.[id]??[])row.append(make('td','',n));
-  tbody.append(row);
+ const matrixRows=['A','B','C','D'].map(id=>({label:id,values:detail.matrix?.[id]??[]}));
+ // Display 4/2/1/0 as relative weights, never as percentages.
+ root.append(technicalTable(['R1','R2','R3','R4','R5','R6','R7','R8'],matrixRows,{firstHeader:'選項'}));
+ root.append(make('p','technical-hint','權重說明：4＝高、2＝中、1＝低、0＝不可達；每個選項各自換算機率，不是百分比。'));
+
+ const parsed=readerTechnicalTables(detail.results);
+ root.append(make('h4','','教師四狀態｜八結果對照'));
+ root.append(technicalTable(READER_STATES,parsed.rows.map(x=>({
+  label:x.id,values:x.stateValues??READER_STATES.map(()=>null)
+ }))));
+ root.append(make('p','technical-hint','＋表示增加，−表示減少，0表示不變；此表列的是原稿結算值，不是故事抽中機率。'));
+
+ root.append(make('h4','','NPC 四碼｜各人各結果增減'));
+ if(!parsed.actors.length){
+  root.append(make('p','technical-hint','這篇沒有NPC底層變動。'));
+ }else{
+  for(const actor of parsed.actors){
+   root.append(make('h5','technical-actor',actor));
+   const codes=parsed.codes.filter(code=>parsed.rows.some(x=>Object.hasOwn(x.deltaMap,actor+':'+code)));
+   root.append(technicalTable(codes,parsed.rows.map(x=>({
+    label:x.id,values:codes.map(code=>x.deltaMap[actor+':'+code]??(x.deltaValid?0:null))
+   }))));
+  }
+  root.append(make('p','technical-hint','欄位為種子碼；＋／−／0依原稿逐結果列出。原稿未列出的合法增減視為0；未能解析的格式以「—」標示，應回原稿核對。'));
  }
- table.append(tbody);scroll.append(table);root.append(scroll,make('h4','','各結果數值'));
- for(const result of detail.results){
-  const wrap=make('div','detail-list');
-  appendLabelValue(wrap,result.id+' 底層增減',result.deltas||'無');
-  appendLabelValue(wrap,'玩家四狀態',result.playerStates||'未填');
-  root.append(wrap);
- }
- root.append(make('h4','','原始 Markdown（完整保留）'));
- root.append(make('pre','',detail.sourceMarkdown||''));
+ if(parsed.rows.some(x=>!x.deltaValid||!x.stateValues))
+  root.append(make('p','technical-warning','部分數值格式未能解析，請展開原始稿檢查，系統未更動原始數值。'));
+
+ const original=make('details','original-details');
+ const summary=make('summary','','原始 Markdown（完整保留，點此展開）');
+ original.append(summary,make('pre','',detail.sourceMarkdown||''));
+ root.append(original);
 }
 function setExpanded(button,expanded){
  const target=$(button.dataset.target);

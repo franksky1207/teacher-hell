@@ -1,5 +1,5 @@
 import {
- filterStories, selectOptions, neighboringIds, sanitizeReaderPreferences,
+ filterStories, selectOptions, neighboringIds, sanitizeReaderPreferences, topicDisplayName, poolDisplayName,
  safeDetailPath, validateReaderIndex, validateReaderDetail
 } from './reader-core.js';
 
@@ -173,13 +173,13 @@ function syncFilters(){
  const topics=selectOptions(state.all,'topicId',story=>
   !state.filters.semester||(state.filters.semester==='G'?
     story.type==='G':story.topicId?.split('-')[0]===state.filters.semester));
- updateSelect('topic',topics);
+ updateSelect('topic',topics,topicDisplayName);
  state.filters.topic=$('topic').value;
  const pools=selectOptions(state.all,'poolId',story=>
   (!state.filters.semester||(state.filters.semester==='G'?
     story.type==='G':story.topicId?.split('-')[0]===state.filters.semester))&&
   (!state.filters.topic||story.topicId===state.filters.topic));
- updateSelect('pool',pools);
+ updateSelect('pool',pools,poolDisplayName);
  state.filters.pool=$('pool').value;
  state.filtered=filterStories(state.all,state.filters);
  drawList();

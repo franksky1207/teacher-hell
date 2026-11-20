@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {selectOptions,filterStories,neighboringIds,sanitizeReaderPreferences,safeDetailPath,validateReaderIndex,validateReaderDetail} from '../story-reader/reader-core.js';
+import {selectOptions,filterStories,neighboringIds,sanitizeReaderPreferences,safeDetailPath,validateReaderIndex,validateReaderDetail,topicDisplayName,poolDisplayName} from '../story-reader/reader-core.js';
 
 const stories=[
  {storyId:'T1-002',draftRef:'T-DRAFT-0002',title:'我在哪一班',type:'T',topicId:'T1-1',poolId:'T1-1:single',summary:{事件起因:'首次點名'},detail:'stories/T1-002.json'},
@@ -41,4 +41,13 @@ test('dropdown values use the selected field and parent filter',()=>{
  assert.deepEqual(selectOptions(stories,'topicId'),['T1-1','T2-1']);
  assert.deepEqual(selectOptions(stories,'poolId',s=>s.topicId==='T1-1'),['T1-1:single']);
  assert.deepEqual(selectOptions(stories,'topicId',s=>s.type==='G'),[]);
+});
+
+test('topic and pool dropdown display official Chinese event titles, preserving original IDs',()=>{
+ assert.equal(topicDisplayName('T1-5'),'首次校慶擺攤');
+ assert.equal(topicDisplayName('T4-2'),'畢業旅行行前安排');
+ assert.equal(poolDisplayName('T1-5:before'),'首次校慶擺攤（活動前）');
+ assert.equal(poolDisplayName('T1-5:after'),'首次校慶擺攤（活動後）');
+ assert.equal(poolDisplayName('T1-1:single'),'首次進班與建班');
+ assert.equal(poolDisplayName('G-0001'), 'G-0001');
 });

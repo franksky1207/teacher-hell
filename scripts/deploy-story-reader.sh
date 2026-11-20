@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # Publish only /stories/; retry against the latest Pages tree without force pushes.
+# A ledger commit pushed with GitHub Actions GITHUB_TOKEN does not recursively trigger
+# this publishing workflow. After a one-time batch-lock job, run this publisher
+# explicitly, or make a normal content-branch push that matches the workflow paths.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 test "$(git rev-parse HEAD)" = "$(git rev-parse origin/content/events-production-v1)" || {

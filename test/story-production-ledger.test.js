@@ -7,7 +7,7 @@ import {join} from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {seedCodesFromMarkdown,topicIdsFromMarkdown,validateStoryDraft} from '../scripts/story-draft-validator.js';
-import {initialProductionLedger,readTopicWindows,extractDraftSummary,duplicateCandidates,ledgerProgress,validateLedger,changeProductionLedger,storyPlaybackWindow,queryTWindowEligibility} from '../scripts/story-production-ledger.js';
+import {reviewEvidence,initialProductionLedger,readTopicWindows,extractDraftSummary,duplicateCandidates,ledgerProgress,validateLedger,changeProductionLedger,storyPlaybackWindow,queryTWindowEligibility} from '../scripts/story-production-ledger.js';
 const file=path=>readFileSync(new URL(path,import.meta.url),'utf8');
 const seeds=seedCodesFromMarkdown(file('../docs/事件四數值三層平衡種子2400組.md'));
 const topics=topicIdsFromMarkdown(file('../docs/T1-T6-特定故事20主題與觸發日期.md'));
@@ -842,4 +842,27 @@ test('reset T1 first 30 selected seeds retain immutable source, quota, and zero 
  const next=lock(reserve(prop(ledger,sample).ledger,'T-DRAFT-001','S0001').ledger,sample).ledger;
  assert.equal(next.candidates['T-DRAFT-001'].storyId,'T1-001');
  assert.equal(ledger.revision,0,'original ledger remains unchanged');
+});
+
+test('V3 lock evidence guard rejects missing, unmatched and unresolved NPC warnings',()=>{
+ const evidence='已逐一對照開場、四選項及八個結果，確認人物的行為和個別數值變化具有具體且可追蹤的因果。';
+ const review={
+  reviewer:'ChatGPT',verdict:'approved',isFixture:false,
+  storyAndRoles:evidence,fourCodes:evidence,fourChoices:evidence,eightResults:evidence,
+  causal32:evidence,timeAndLaw:evidence,duplicates:evidence,
+  ordinaryChoiceSelection:{
+   ordinaryCandidates:Array.from({length:6},(_,i)=>({id:i+1,action:'合法且不同的普通行動候選'+(i+1)})),
+   selectedIds:[1,2,3],
+   finalChoiceMap:{A:'emotional',B:1,C:2,D:3}
+  },characterAudit:evidence,npcDeltaAudit:evidence,npcWarningReviews:[]
+ };
+ const flags={A:true,B:false,C:false,D:false};
+ const npcAudit={warningIds:['npc_single_actor','npc_all_zero_code:student_a:2-3']};
+ assert.throws(()=>reviewEvidence(review,flags,npcAudit,3),/未完成複查/);
+ const resolved={...review,npcWarningReviews:npcAudit.warningIds.map(id=>({id,decision:'retain',evidence}))};
+ assert.doesNotThrow(()=>reviewEvidence(resolved,flags,npcAudit,3));
+ assert.throws(()=>reviewEvidence({...resolved,npcWarningReviews:[{id:'npc_single_actor',decision:'revise',evidence},resolved.npcWarningReviews[1]]},flags,npcAudit,3),/待修正/);
+ assert.throws(()=>reviewEvidence({...resolved,npcWarningReviews:[{id:'unmatched',decision:'retain',evidence}]},flags,npcAudit,3),/無效或重複/);
+ assert.throws(()=>reviewEvidence({...resolved,characterAudit:'空泛'},flags,npcAudit,3),/反向盤點/);
+ assert.doesNotThrow(()=>reviewEvidence(review,flags,npcAudit,2));
 });

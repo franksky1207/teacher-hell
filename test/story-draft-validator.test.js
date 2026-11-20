@@ -1,7 +1,7 @@
 import test from 'node:test';
 import {readFileSync} from 'node:fs';
 import assert from 'node:assert/strict';
-import {validateStoryDraft,seedCodesFromMarkdown,topicIdsFromMarkdown} from '../scripts/story-draft-validator.js';
+import {STATE_GROUPS,validateStoryDraft,seedCodesFromMarkdown,topicIdsFromMarkdown} from '../scripts/story-draft-validator.js';
 import {readTopicWindows} from '../scripts/story-production-ledger.js';
 const windows=readTopicWindows(readFileSync(new URL('../docs/T1-T6-特定故事20主題與觸發日期.md',import.meta.url),'utf8'));
 const seeds=seedCodesFromMarkdown('| S1461 | 1-1 | 2-3 | 7-4 | 9-1 |');
@@ -66,7 +66,7 @@ function draft(){
  '- **0權重因果理由**：無'
  ].join('\n').replaceAll('§',String.fromCharCode(96));
 }
-const audit=(s,stage='full')=>validateStoryDraft(s,{stage,seeds,topics,windows});
+const audit=(s,stage='full')=>validateStoryDraft(s,{stage,stateRulesVersion:2,seeds,topics,windows});
 test('seed source syntax is parsed correctly',()=>assert.deepEqual(seeds.get('S1461'),['1-1','2-3','7-4','9-1']));
 test('a synthetic full filled draft passes mechanical checking, without narrative approval',()=>{
  const r=audit(draft());assert.equal(r.mechanicalPass,true,JSON.stringify(r.errors));assert.ok(r.warnings.length>0);
@@ -111,7 +111,7 @@ test('S0451 isolated draft fixture passes all three mechanical stages without cl
  assert.equal(fullSeeds.size,2400);
  assert.equal(fullTopics.size,20);
  for(const stage of ['summary','choices','full']){
-  const report=validateStoryDraft(fixture,{stage,seeds:fullSeeds,topics:fullTopics});
+  const report=validateStoryDraft(fixture,{stage,stateRulesVersion:2,seeds:fullSeeds,topics:fullTopics});
   assert.equal(report.mechanicalPass,true,stage+': '+JSON.stringify(report.errors));
  }
  assert.match(fixture,/SAMPLE-S0451-01/);
@@ -248,11 +248,11 @@ test('batch09 incomplete role type and opening pages are rejected',()=>{
 
 test('batch10 draft required_window is an authoritative pool identity',()=>{
  const fullTopics=new Set(windows.topics.keys());
- const check=s=>validateStoryDraft(s,{stage:'summary',seeds,topics:fullTopics,windows});
+ const check=s=>validateStoryDraft(s,{stage:'summary',stateRulesVersion:2,seeds,topics:fullTopics,windows});
  const s=draft().replace('| G |','| T |').replace('T主題ID | 無','T主題ID | T1-4').replace('活動窗口 | 無','活動窗口 | T1-4:before');
  assert.equal(check(s).mechanicalPass,true);
  for(const value of ['2026/11/04','T1-4:unknown','T1-3:before','前5日'])assert.ok(check(s.replace('活動窗口 | T1-4:before','活動窗口 | '+value)).errors.some(e=>e.code==='window'));
- assert.ok(validateStoryDraft(s,{stage:'summary',seeds,topics:fullTopics}).errors.some(e=>e.code==='window'));
+ assert.ok(validateStoryDraft(s,{stage:'summary',stateRulesVersion:2,seeds,topics:fullTopics}).errors.some(e=>e.code==='window'));
  assert.equal(check(draft()).mechanicalPass,true); // G needs no pool.
  assert.ok(check(draft().replace('活動窗口 | 無','活動窗口 | T1-4:before')).errors.some(e=>e.code==='window'));
 });
@@ -330,4 +330,31 @@ test('V2 malformed results are excluded and do not produce misleading aggregate 
  assert.equal(r.errors.filter(e=>e.code.startsWith('state_')).length,1);
  assert.equal(r.errors.find(e=>e.code==='state_format').detail.includes('R1'),true);
  for(const stage of ['summary','choices'])assert.equal(audit(broken,stage).details.stateDistribution,null);
+});
+
+
+function draftV3(){
+ let i=0;
+ const cols=[STATE_GROUPS.A,STATE_GROUPS.B,STATE_GROUPS.C,STATE_GROUPS.D];
+ return draft().replace('## 1｜故事基本資料與必要資格','## 1｜故事基本資料與必要資格\n| state_rules_version｜數值規則版本 | 3 |')
+  .replace(/- \*\*玩家四狀態\*\*（體力、精神、熱忱、情緒）：[^\n]*/g,()=>'- **玩家四狀態**（精神、熱忱、情緒、掌控）：'+cols.map((arr,j)=>arr[(i+j*2)%8]).join(',')+(++i&&''));
+}
+test('V3 NPC averages beyond ±3 pass while single ±8 remains enforced',()=>{
+ const s=draftV3().replaceAll('student_a:1-1:+2','student_a:1-1:+8');
+ const result=validateStoryDraft(s,{stage:'full',seeds,topics,windows});
+ assert.equal(result.mechanicalPass,true,JSON.stringify(result.errors));
+ assert.ok(result.details.npcAudit.warningIds.includes('npc_single_actor'));
+ assert.ok(result.details.npcAudit.warningIds.includes('npc_all_zero_code:student_a:2-3'));
+ assert.equal(result.details.npcAudit.byActor.student_a.byCode['1-1'].positive,8);
+ assert.ok(validateStoryDraft(s.replace('student_a:1-1:+8','student_a:1-1:+9'),{stage:'full',seeds,topics,windows}).errors.some(e=>e.code==='delta_range'));
+});
+test('V3 NPC multiple valid slots get independent opposite delta statistics',()=>{
+ const s=draftV3().replace('| \`student_a\` | 本班學生 | 在籍當日知情 | 是，四碼合法 |','| \`student_a\` | 本班學生 | 在籍當日知情 | 是，四碼合法 |\n| student_b | 本班學生 | 在籍當日知情 | 是，四碼合法 |')
+  .replaceAll('- **合法底層增減**：student_a:1-1:+2','- **合法底層增減**：student_a:1-1:+2; student_b:1-1:-1');
+ const result=validateStoryDraft(s,{stage:'full',seeds,topics,windows});
+ assert.equal(result.mechanicalPass,true,JSON.stringify(result.errors));
+ assert.equal(result.details.npcAudit.actorCount,2);
+ assert.equal(result.details.npcAudit.activeActorCount,2);
+ assert.equal(result.details.npcAudit.byActor.student_b.byCode['1-1'].negative,8);
+ assert.ok(!result.details.npcAudit.warningIds.some(x=>x.startsWith('npc_identical_pattern')));
 });

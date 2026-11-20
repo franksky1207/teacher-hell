@@ -1,3 +1,4 @@
+export const STATE_GROUPS=Object.freeze(Object.fromEntries(Object.entries({A:[1,1,0,0,-1,-1,-2,-2],B:[2,0,-1,-1,-1,-1,-1,-1],C:[1,1,0,-1,-1,-1,-1,-2],D:[2,1,0,-1,-1,-1,-2,-2],E:[1,1,1,0,-1,-2,-2,-2]}).map(([k,v])=>[k,Object.freeze(v)])));
 import {resolveTopicPool} from './story-production-ledger.js';
 /** 17D Markdown V1 draft checker. Read-only: not a game engine or approval. */
 const personal=new Set('1-1 1-2 1-3 1-4 2-1 2-2 2-3 2-4 3-1 3-2 3-3 3-4 4-1 4-2 4-3 4-4 6-1 6-2 6-3 6-4 7-1 7-2 7-3 7-4 8-3 8-4 11-1 11-2'.split(' '));
@@ -10,8 +11,9 @@ const holderType=s=>/其他班|其他年級|校外|無數值|臨時|私人/.test
 const eligible=(role,c)=>role==='student'?personal.has(c)||relationship.has(c)||['9-3','9-4'].includes(c):role==='teacher'?personal.has(c)||['9-3','9-4'].includes(c):role==='guardian'?personal.has(c)||relationship.has(c):role==='class_staff'?personal.has(c)||relationship.has(c)||c==='9-4':role==='staff'?personal.has(c)||(relationship.has(c)&&c!=='9-1')||c==='9-4':false;
 export function seedCodesFromMarkdown(s){const result=new Map();for(const l of s.split(/\r?\n/)){const m=l.match(/^\|\s*(S\d{4})\s*\|\s*(\d{1,2}-[1-4])\s*\|\s*(\d{1,2}-[1-4])\s*\|\s*(\d{1,2}-[1-4])\s*\|\s*(\d{1,2}-[1-4])\s*\|/);if(m)result.set(m[1],m.slice(2,6))}return result}
 export function topicIdsFromMarkdown(s){return new Set([...s.matchAll(/^\|\s*\*\*(T[1-6]-\d+)\*\*\s*\|/gm)].map(m=>m[1]))}
-export function validateStoryDraft(md,{stage='full',seeds=new Map(),topics=new Set(),windows}={}){
+export function validateStoryDraft(md,{stage='full',stateRulesVersion=3,seeds=new Map(),topics=new Set(),windows}={}){
  if(!['summary','choices','full'].includes(stage))throw Error('stage must be summary, choices or full');
+ if(![1,2,3].includes(stateRulesVersion))throw Error('Unsupported state rules version');
  const errors=[],warnings=[],fail=(code,detail)=>errors.push({code,detail});
  const headings=[...md.matchAll(/^ {0,3}##[ \t]+([0-9０-９]+)[ \t]*[｜|]([^\r\n]*)/gm)],sec=new Map();
  for(let i=0;i<headings.length;i++){
@@ -30,6 +32,8 @@ export function validateStoryDraft(md,{stage='full',seeds=new Map(),topics=new S
  for(const k of ['draft_ref','event_type','t_topic_id','tags','required_window','required_conditions'])if(unfilled(data.get(k)))fail('metadata',k+' 尚未完成');
  if(!/^[A-Za-z][A-Za-z0-9_-]{2,63}$/.test(data.get('draft_ref')||''))fail('draft_ref','稿件暫識別格式錯誤');
  if(!data.has('story_id')||!clean(data.get('story_id'))||(unfilled(data.get('story_id'))&&data.get('story_id')!=='【待驗收鎖定後由管理端配號】'))fail('story_id','正式ID必填合法ID或配號占位');
+ if(stateRulesVersion===3&&data.get('state_rules_version')!=='3')fail('state_version','V3稿必須明列 state_rules_version=3，舊稿不得誤認為V3');
+ if(data.has('state_rules_version')&&data.get('state_rules_version')!==String(stateRulesVersion))fail('state_version','稿件版本與指定驗收版本不符');
  const type=data.get('event_type');
  if(type&&!unfilled(type)&&!['T','G'].includes(type))fail('type','僅接受T或G');
  const tags=clean(data.get('tags')).split(/[、，,;\s／/]+/).filter(Boolean);
@@ -97,9 +101,11 @@ export function validateStoryDraft(md,{stage='full',seeds=new Map(),topics=new S
   const labels=[...choices.values()].map(r=>r[1].replace(/\s/g,''));if(new Set(labels).size!==labels.length)fail('choice_same','有完全重複的選項文字');
   for(const [,slot] of four.matchAll(/{{\s*([a-z][a-z0-9_]*)\.[a-z_]+\s*}}/g))if(slot!=='teacher'&&!slots.has(slot))fail('placeholder','未知人物槽位 '+slot);
  }
- let resultCount=0,matrix=null,stateDistribution=null;
+ let resultCount=0,matrix=null,stateDistribution=null,npcAudit=null;
  if(stage==='full'){
-  const stateNames=['體力','精神','熱忱','情緒'],stateRows=new Map();
+  const stateNames=stateRulesVersion===3?['精神','熱忱','情緒','掌控']:['體力','精神','熱忱','情緒'],stateRows=new Map();
+  const npcChanges=new Map();
+  for(const slot of slots.keys())npcChanges.set(slot,new Map(fourCodes.map(code=>[code,Array(8).fill(0)])));
   const markers=[...five.matchAll(/^### R(\d+)｜([^\n]*)/gm)],results=new Map(),total=new Map(),states=[0,0,0,0],texts=[];
   if(markers.length!==8)fail('result_count','必須恰好八個結果');
   const matrixPos=five.indexOf('### 四選項對八共用結果的權重');
@@ -129,20 +135,44 @@ export function validateStoryDraft(md,{stage='full',seeds=new Map(),topics=new S
      if(!eligible(who==='teacher'?'teacher':slots.get(who),code))fail('delta_eligibility','R'+n+' '+who+' 無資格 '+code);
      if(d<-8||d>8)fail('delta_range','R'+n+' '+key+' 超出−8～+8');
      total.set(key,(total.get(key)||0)+d);
+     if(npcChanges.has(who)&&npcChanges.get(who).has(code)&&n>=1&&n<=8)npcChanges.get(who).get(code)[n-1]=d;
     }
    }
+   if(stateRulesVersion===3&&!body.includes('**玩家四狀態**（精神、熱忱、情緒、掌控）'))fail('state_names','V3四狀態順序必須精神、熱忱、情緒、掌控');
    const q=rawStates.split(/[，,]/).map(clean);
    if(q.length!==4||q.some(v=>!/^[-+]?\d+$/.test(v)))fail('state_format','R'+n+' 必須填4個整數');
    else {
     const values=q.map(Number);
     if(values.some(d=>!Number.isSafeInteger(d))){fail('state_format','R'+n+' 必須填4個安全整數');continue;}
     stateRows.set('R'+n,values);
-    if(values.filter(d=>d===0).length>1)fail('state_zero_row','R'+n+' 四狀態最多一個0');
+    if(stateRulesVersion>=2&&values.filter(d=>d===0).length>(stateRulesVersion===3?2:1))fail('state_zero_row','R'+n+(stateRulesVersion===2?' 四狀態最多一個0':' 四狀態最多兩個0'));
     values.forEach((d,i)=>{states[i]+=d;if(d<-6||d>6)fail('state_range','R'+n+' '+stateNames[i]+' 超出−6～+6')});
    }
   }
   if(resultCount===8&&new Set(texts).size!==8)fail('result_same','八結果有完全相同文字');
-  for(const [k,sum] of total)if(Math.abs(sum)>24)fail('delta_mean',k+' 八R等權平均超出−3～+3');
+  // NPC V3 mean cap retired; historical V1/V2 checks remain reproducible.
+  for(const [key,sum] of total)if(stateRulesVersion<3&&Math.abs(sum)>24)fail('delta_mean',key+' 八R等權平均超出−3～+3');
+  npcAudit={actorCount:slots.size,activeActorCount:0,byActor:{},warningIds:[]};
+  for(const [slot,codes] of npcChanges){
+   const byCode={},signature=[];
+   let nonzero=0;
+   for(const [code,values] of codes){
+    const positive=values.filter(v=>v>0).length,negative=values.filter(v=>v<0).length,zero=values.filter(v=>v===0).length;
+    byCode[code]={positive,negative,zero,values};
+    nonzero+=positive+negative;signature.push(...values);
+    if(zero===8)npcAudit.warningIds.push('npc_all_zero_code:'+slot+':'+code);
+   }
+   if(!nonzero)npcAudit.warningIds.push('npc_all_zero_actor:'+slot);
+   else npcAudit.activeActorCount++;
+   npcAudit.byActor[slot]={nonzero,byCode,signature};
+  }
+  if(slots.size===1)npcAudit.warningIds.push('npc_single_actor');
+  const names=[...npcChanges.keys()];
+  for(let i=0;i<names.length;i++)for(let j=i+1;j<names.length;j++){
+   const a=npcAudit.byActor[names[i]],b=npcAudit.byActor[names[j]];
+   if(a.signature.join(',')===b.signature.join(','))npcAudit.warningIds.push('npc_identical_pattern:'+names[i]+':'+names[j]);
+  }
+  for(const id of npcAudit.warningIds)warnings.push('NPC品質警示 '+id+'：需要具體內容複查，不能僅憑機械通過宣稱核准。');
   const complete=stateRows.size===8;
   stateDistribution={complete,resultsParsed:stateRows.size,zeroTotal:0,zeroByResult:{},byState:{},absoluteCounts:Object.fromEntries(Array.from({length:7},(_,i)=>[i,0])),identicalGroups:[],identicalResultCount:0};
   const groups=new Map();
@@ -155,9 +185,15 @@ export function validateStoryDraft(md,{stage='full',seeds=new Map(),topics=new S
   stateNames.forEach((name,i)=>{
    const values=[...stateRows.values()].map(row=>row[i]),zeros=values.filter(d=>d===0).length;
    stateDistribution.byState[name]={zeros,positive:values.filter(d=>d>0).length,negative:values.filter(d=>d<0).length,mean:complete?states[i]/8:null};
+   if(stateRulesVersion===3&&complete){
+    const sorted=values.slice().sort((a,b)=>b-a).join(',');
+    const group=Object.entries(STATE_GROUPS).find(([,v])=>v.join(',')===sorted)?.[0]??null;
+    stateDistribution.byState[name].group=group;
+    if(!group)fail('state_group',name+' 必須符合 A～E 多重集合，總和−4、平均−0.5');
+   }
    // Incomplete matrices report partial counts, without derivative column/mean errors.
-   if(complete&&zeros>2)fail('state_zero_column',name+' 八結果最多兩個0，目前'+zeros+'個');
-   if(complete&&Math.abs(states[i])>16)fail('state_mean',name+' 八R等權平均超出−2～+2');
+   if(stateRulesVersion===2&&complete&&zeros>2)fail('state_zero_column',name+' 八結果最多兩個0，目前'+zeros+'個');
+   if(stateRulesVersion<3&&complete&&Math.abs(states[i])>16)fail('state_mean',name+' 八R等權平均超出−2～+2');
   });
   stateDistribution.identicalGroups=[...groups.values()].filter(ids=>ids.length>1);
   stateDistribution.identicalResultCount=stateDistribution.identicalGroups.reduce((sum,ids)=>sum+ids.length,0);
@@ -188,5 +224,5 @@ export function validateStoryDraft(md,{stage='full',seeds=new Map(),topics=new S
   if(!zeros.length&&unfilled(why))fail('zero_reason','沒有0時填「無」');
   warnings.push('程式不判斷32組真實敘事因果、角色知情與跨批重複；須由同一創作AI另行檢查並留下證據。');
  }
- return {stage,mechanicalPass:errors.length===0,errors,warnings,details:{stateRulesVersion:2,stateDistribution,choiceFlags,seedId:sid,resultsChecked:resultCount,matrix:matrix?Object.fromEntries(matrix):null}};
+ return {stage,mechanicalPass:errors.length===0,errors,warnings,details:{npcAudit:stage==='full'?npcAudit:null,stateRulesVersion,stateDistribution,choiceFlags,seedId:sid,resultsChecked:resultCount,matrix:matrix?Object.fromEntries(matrix):null}};
 }

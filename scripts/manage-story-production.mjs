@@ -51,6 +51,7 @@ else{
   const seeds=seedCodesFromMarkdown(seedText),windows=readTopicWindows(topicText),topics=topicIdsFromMarkdown(topicText);
   if(seeds.size!==2400||windows.topics.size!==20||windows.days.size!==108)throw Error('來源資料數量異常，停止操作');
   const mutating=['propose','reserve','revise','release','reject','lock','revoke','revise-locked'].includes(cmd);
+  if(mutating&&['propose','revise','lock','revise-locked'].includes(cmd)&&ledgerPath===resolve(root,'data/story-production-ledger.json')&&Number(option('--state-rules-version')||3)!==3)throw Error('正式量產只接受V3；歷史版本參數僅供讀取或隔離驗收');
   const report=option('--json');
   if(has('--json')&&(!report||!['audit','duplicates'].includes(cmd)))throw Error('--json 只支援 audit／duplicates 的獨立報告檔');
   if(report&&[ledgerPath,lockPath,resolve(root,'data/story-production-ledger.json')].includes(resolve(report)))throw Error('報告不得覆寫帳本或鎖檔');
@@ -65,7 +66,7 @@ else{
   if(lockHandle&&Number(option('--expect-revision'))!==ledger.revision)throw Error('帳本修訂版已改變，請重新讀取預覽；禁止覆寫舊版');
   if(cmd==='revise-locked'){
    const expectedHead=option('--expect-head');
-   if(!/^[a-f0-9]{40}$/.test(expectedHead??'')||execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8',timeout:30000}).trim()!==expectedHead||execFileSync('git',['ls-remote','origin','refs/heads/content/events-production-v1'],{cwd:root,encoding:'utf8',timeout:30000}).split(/\s/)[0]!==expectedHead)throw Error('本機／遠端HEAD與預期不符');
+   if(!/^[a-f0-9]{40}$/.test(expectedHead??'')||execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8',timeout:30000}).trim()!==expectedHead||execFileSync('git',['ls-remote','origin','refs/heads/'+(option('--branch')||'content/events-production-v1')],{cwd:root,encoding:'utf8',timeout:30000}).split(/\s/)[0]!==expectedHead)throw Error('本機／遠端HEAD與預期不符');
    if(digest(await readFile(ledgerPath))!==option('--expect-ledger-sha'))throw Error('帳本SHA已改變');
   }
   validateLedger(ledger,{seeds,windows});
@@ -79,7 +80,7 @@ else{
   }else if(cmd==='audit'){
    const problems=[];
    let versionsChecked=0;
-   const validateDraft=(s,stage)=>validateStoryDraft(s,{stage,seeds,topics,windows});
+   const validateDraft=(s,stage)=>validateStoryDraft(s,{stage,stateRulesVersion:Number(option('--state-rules-version')||3),seeds,topics,windows});
    for(const current of Object.values(ledger.candidates).filter(x=>['locked','revoked'].includes(x.status))){
     for(const row of [...(current.manuscriptVersions??[]).map(v=>({...current,...v})),current]){
     versionsChecked++;
@@ -102,9 +103,13 @@ else{
    }
     if(current.manuscriptVersions?.length){
      try{
-      const original=current.manuscriptVersions[0],originalMarkdown=await readFile(await evidencePath(original.manuscriptPath,'.md'),'utf8'),originalReviewText=await readFile(await evidencePath(original.review.filePath,'.json'),'utf8');
-      const markdown=await readFile(await evidencePath(current.manuscriptPath,'.md'),'utf8'),reviewText=await readFile(await evidencePath(current.review.filePath,'.json'),'utf8');
-      validateStateRevision({...current,...original,status:'locked',stateRulesVersion:1,manuscriptVersions:undefined}, {originalMarkdown,originalReviewText,markdown,reviewText,manuscriptDigest:current.manuscriptDigest,reviewDigest:current.review.digest,expectedManuscriptDigest:original.manuscriptDigest,expectedReviewDigest:original.review.digest,manuscriptPath:current.manuscriptPath,reviewFile:current.review.filePath},validateDraft);
+      const chain=[...current.manuscriptVersions,{...current,version:current.manuscriptVersion}];
+      for(let i=1;i<chain.length;i++){
+       const original=chain[i-1],latest=chain[i];
+       const originalMarkdown=await readFile(await evidencePath(original.manuscriptPath,'.md'),'utf8'),originalReviewText=await readFile(await evidencePath(original.review.filePath,'.json'),'utf8');
+       const markdown=await readFile(await evidencePath(latest.manuscriptPath,'.md'),'utf8'),reviewText=await readFile(await evidencePath(latest.review.filePath,'.json'),'utf8');
+       validateStateRevision({...current,...original,status:'locked',manuscriptVersions:i>1?chain.slice(0,i-1):undefined}, {targetStateRulesVersion:latest.stateRulesVersion,originalMarkdown,originalReviewText,markdown,reviewText,manuscriptDigest:latest.manuscriptDigest,reviewDigest:latest.review.digest,expectedManuscriptDigest:original.manuscriptDigest,expectedReviewDigest:original.review.digest,manuscriptPath:latest.manuscriptPath,reviewFile:latest.review.filePath},(s,stage)=>validateStoryDraft(s,{stage,stateRulesVersion:latest.stateRulesVersion,seeds,topics,windows}));
+      }
      }catch(e){problems.push({ref:current.draftRef,reason:'修訂鏈無法稽核：'+e.message})}
     }
    }
@@ -134,9 +139,9 @@ else{
    const reviewPath=option('--review')?relative(root,resolve(option('--review'))).replaceAll('\\','/'):null;
    const reviewBytes=['lock','revise-locked'].includes(cmd)&&reviewPath?await readFile(await evidencePath(reviewPath,'.json')):null;
    const review=reviewBytes?JSON.parse(reviewBytes.toString('utf8')):null;
-   const validateDraft=(s,stage)=>validateStoryDraft(s,{stage,seeds,topics,windows});
+   const validateDraft=(s,stage)=>validateStoryDraft(s,{stage,stateRulesVersion:Number(option('--state-rules-version')||3),seeds,topics,windows});
    const request={action:cmd,ref:option('--ref'),owner:option('--owner'),seedId:option('--seed'),
-    reason:option('--reason'),date:option('--date'),markdown,review,
+    targetStateRulesVersion:Number(option('--state-rules-version')||3),reason:option('--reason'),date:option('--date'),markdown,review,
     reviewFile:reviewPath,reviewDigest:reviewBytes?digest(reviewBytes):null,
     manuscriptPath,manuscriptDigest:markdownBytes?digest(markdownBytes):null};
    if(cmd==='revise-locked'){

@@ -7,13 +7,13 @@ import {join} from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {seedCodesFromMarkdown,topicIdsFromMarkdown,validateStoryDraft} from '../scripts/story-draft-validator.js';
-import {initialProductionLedger,readTopicWindows,extractDraftSummary,duplicateCandidates,ledgerProgress,validateLedger,changeProductionLedger,storyPlaybackWindow,queryTWindowEligibility} from '../scripts/story-production-ledger.js';
+import {reviewEvidence,initialProductionLedger,readTopicWindows,extractDraftSummary,duplicateCandidates,ledgerProgress,validateLedger,changeProductionLedger,storyPlaybackWindow,queryTWindowEligibility} from '../scripts/story-production-ledger.js';
 const file=path=>readFileSync(new URL(path,import.meta.url),'utf8');
 const seeds=seedCodesFromMarkdown(file('../docs/事件四數值三層平衡種子2400組.md'));
 const topics=topicIdsFromMarkdown(file('../docs/T1-T6-特定故事20主題與觸發日期.md'));
 const windows=readTopicWindows(file('../docs/T1-T6-特定故事20主題與觸發日期.md'));
 const base=file('./fixtures/17d-draft-sample-s0451.md');
-const validate=(s,stage)=>validateStoryDraft(s,{stage,seeds,topics,windows});
+const validate=(s,stage)=>validateStoryDraft(s,{stage,stateRulesVersion:2,seeds,topics,windows});
 const context={seeds,windows,validateDraft:validate};
 const act=(state,action,ref='T-DRAFT-001',extra={})=>changeProductionLedger(state,{action,ref,owner:'ChatGPT',...extra},context);
 const reason='這組四碼可從學生承擔的班務壓力與導師安排配合形成合理因果';
@@ -358,13 +358,13 @@ test('batch10 CLI reads source pools and previews proposals with an isolated led
  try{
   const ledgerPath=join(dir,'ledger.json'),draftPath=join(dir,'draft.md'),initial=JSON.stringify(initialProductionLedger());
   writeFileSync(ledgerPath,initial);writeFileSync(draftPath,windowDraft('T1-4','T1-4:before'));
-  const cli=(...args)=>spawnSync(process.execPath,['scripts/manage-story-production.mjs',...args,'--ledger',ledgerPath],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
+  const cli=(...args)=>spawnSync(process.execPath,['scripts/manage-story-production.mjs',...args,'--state-rules-version','2','--ledger',ledgerPath],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
   const lookup=cli('windows','--topic','T1-4');assert.equal(lookup.status,0,lookup.stderr);
   const pools=JSON.parse(lookup.stdout).pools;assert.deepEqual(pools.map(p=>[p.phase,p.dates.length]),[['before',5],['after',2]]);
   const preview=cli('propose','--ref','T-DRAFT-001','--owner','ChatGPT','--file',draftPath,'--date','2026-11-04');
   assert.equal(preview.status,0,preview.stderr);assert.equal(JSON.parse(preview.stdout).applied,false);
   const invalid=cli('propose','--ref','T-DRAFT-001','--owner','ChatGPT','--file',draftPath,'--date','2026-11-12');assert.equal(invalid.status,1);
-  const check=spawnSync(process.execPath,['scripts/check-story-draft.mjs','--input',draftPath,'--stage','summary'],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
+  const check=spawnSync(process.execPath,['scripts/check-story-draft.mjs','--state-rules-version','2','--input',draftPath,'--stage','summary'],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
   assert.equal(check.status,0,check.stderr);
   const proposed=prop(initialProductionLedger(),windowDraft('T1-4','T1-4:before'),'T-DRAFT-001','2026-11-04').ledger;
   writeFileSync(ledgerPath,JSON.stringify(proposed));
@@ -429,7 +429,7 @@ test('batch11 protected transitions preserve ledger, history and formal numberin
  assert.equal(rejected.history.at(-1).action,'reject');
 });
 
-const cli=(ledgerPath,...args)=>spawnSync(process.execPath,['scripts/manage-story-production.mjs',...args,'--ledger',ledgerPath],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
+const cli=(ledgerPath,...args)=>spawnSync(process.execPath,['scripts/manage-story-production.mjs',...args,'--state-rules-version','2','--ledger',ledgerPath],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
 const ok=result=>{assert.equal(result.status,0,result.stderr);return JSON.parse(result.stdout)};
 const fail=(result,pattern)=>{assert.equal(result.status,1,result.stdout);assert.match(result.stderr,pattern)};
 
@@ -575,7 +575,7 @@ test('batch12 isolated T CLI lifecycle, failures and evidence audit',t=>{
  };
  const refuseWrite=(pattern,action,ref,...extra)=>refused(pattern,...args(action,ref,...extra),'--apply','--expect-revision',String(read().revision));
  const check=(stage,path)=>{
-  const result=spawnSync(process.execPath,['scripts/check-story-draft.mjs','--stage',stage,'--input',path],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
+  const result=spawnSync(process.execPath,['scripts/check-story-draft.mjs','--state-rules-version','2','--stage',stage,'--input',path],{cwd:new URL('..',import.meta.url),encoding:'utf8'});
   assert.equal(result.status,0,result.stdout+result.stderr);
  };
  const date=['--date','2026-07-20'],src=['--file',summaryPath,...date],hold=['--seed','S0001','--reason',reason];
@@ -842,4 +842,27 @@ test('reset T1 first 30 selected seeds retain immutable source, quota, and zero 
  const next=lock(reserve(prop(ledger,sample).ledger,'T-DRAFT-001','S0001').ledger,sample).ledger;
  assert.equal(next.candidates['T-DRAFT-001'].storyId,'T1-001');
  assert.equal(ledger.revision,0,'original ledger remains unchanged');
+});
+
+test('V3 lock evidence guard rejects missing, unmatched and unresolved NPC warnings',()=>{
+ const evidence='已逐一對照開場、四選項及八個結果，確認人物的行為和個別數值變化具有具體且可追蹤的因果。';
+ const review={
+  reviewer:'ChatGPT',verdict:'approved',isFixture:false,
+  storyAndRoles:evidence,fourCodes:evidence,fourChoices:evidence,eightResults:evidence,
+  causal32:evidence,timeAndLaw:evidence,duplicates:evidence,
+  ordinaryChoiceSelection:{
+   ordinaryCandidates:Array.from({length:6},(_,i)=>({id:i+1,action:'合法且不同的普通行動候選'+(i+1)})),
+   selectedIds:[1,2,3],
+   finalChoiceMap:{A:'emotional',B:1,C:2,D:3}
+  },characterAudit:evidence,npcDeltaAudit:evidence,npcWarningReviews:[]
+ };
+ const flags={A:true,B:false,C:false,D:false};
+ const npcAudit={warningIds:['npc_single_actor','npc_all_zero_code:student_a:2-3']};
+ assert.throws(()=>reviewEvidence(review,flags,npcAudit,3),/未完成複查/);
+ const resolved={...review,npcWarningReviews:npcAudit.warningIds.map(id=>({id,decision:'retain',evidence}))};
+ assert.doesNotThrow(()=>reviewEvidence(resolved,flags,npcAudit,3));
+ assert.throws(()=>reviewEvidence({...resolved,npcWarningReviews:[{id:'npc_single_actor',decision:'revise',evidence},resolved.npcWarningReviews[1]]},flags,npcAudit,3),/待修正/);
+ assert.throws(()=>reviewEvidence({...resolved,npcWarningReviews:[{id:'unmatched',decision:'retain',evidence}]},flags,npcAudit,3),/無效或重複/);
+ assert.throws(()=>reviewEvidence({...resolved,characterAudit:'空泛'},flags,npcAudit,3),/反向盤點/);
+ assert.doesNotThrow(()=>reviewEvidence(review,flags,npcAudit,2));
 });

@@ -7,7 +7,8 @@ import { canonicalData } from '../changes/settlement.js';
 import { ANNUAL_KEY } from '../runtime/annual.js';
 export const SAVE_KIND='teacher-hell-save';
 function checkedSave(input,detach) {
-  const value=typeof input==='string'?JSON.parse(input):input;
+  let value=typeof input==='string'?JSON.parse(input):input;
+  if(hasLegacyTeacherState(value))value=migrateTeacherState(value);
   ensure(value&&value.kind===SAVE_KIND&&value.version===2,'VERSION','Unsupported save format/version');
   ensure(Object.keys(value).sort().join(',')==='kind,opening,version,world','SCHEMA','Unexpected save fields');
   const world=value.world,opening=value.opening;
@@ -40,3 +41,20 @@ export function sameToken(a,b){return same(a,b);}
 // disposable complete world/opening pair merely to turn it into JSON.
 export const encodeSave=payload=>JSON.stringify(checkedSave(payload,false));
 export const sameRequest=(a,b)=>canonicalData(a)===canonicalData(b);
+
+// Old saves store derived panels in snapshots, histories and recovery audits.
+// Rename keys and exact audit labels only; never rewrite prose or numeric codes.
+// Exact state-name labels may occur in legacy audit arrays. Ordinary text
+// arrays are not state records and must remain untouched.
+const STATE_LABEL_ARRAY_KEYS = new Set(['audit','stateNames','stateOrder']);
+function hasLegacyTeacherState(value,field=''){
+ if(!value||typeof value!=='object')return false;
+ if(Array.isArray(value))return value.some(item=>(STATE_LABEL_ARRAY_KEYS.has(field)&&item==='體力')||hasLegacyTeacherState(item));
+ return Object.entries(value).some(([key,item])=>key==='體力'||hasLegacyTeacherState(item,key));
+}
+export function migrateTeacherState(value,field=''){
+ if(Array.isArray(value))return value.map(item=>STATE_LABEL_ARRAY_KEYS.has(field)&&item==='體力'?'掌控':migrateTeacherState(item));
+ if(!value||typeof value!=='object')return value;
+ if(Object.hasOwn(value,'體力')&&Object.hasOwn(value,'掌控'))throw new RangeError('Conflicting legacy teacher state keys');
+ return Object.fromEntries(Object.entries(value).map(([key,item])=>[key==='體力'?'掌控':key,migrateTeacherState(item,key)]));
+}

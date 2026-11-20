@@ -73,3 +73,28 @@ export function validateReaderDetail(detail,summary){
   throw Error('故事資料不完整或ID不符');
  return detail;
 }
+
+/** Presentation-only parsing. Keep source Markdown and exported strings unchanged. */
+export const READER_STATES=Object.freeze(['精神','熱忱','情緒','掌控']);
+export function readerTechnicalTables(results=[]){
+ const codes=new Set(),actors=new Set();
+ const rows=(results||[]).map(result=>{
+  const raw=String(result.deltas??'').trim(),deltaMap={};
+  let valid=raw===''||raw==='無';
+  if(raw&&raw!=='無'){
+   valid=true;
+   for(const piece of raw.split(';').map(x=>x.trim()).filter(Boolean)){
+    const match=piece.match(/^([a-z][a-z0-9_]*):(\d{1,2}-[1-4]):([+-]?\d+)$/);
+    if(!match){valid=false;continue}
+    const [,actor,code,d]=match,amount=Number(d);
+    actors.add(actor);codes.add(code);
+    deltaMap[actor+':'+code]=(deltaMap[actor+':'+code]??0)+amount;
+   }
+  }
+  const stateParts=String(result.playerStates??'').split(/[,，]/).map(x=>x.trim());
+  const stateValues=stateParts.length===4&&stateParts.every(x=>/^[+-]?\d+$/.test(x))
+    ?stateParts.map(Number):null;
+  return {id:result.id,title:result.title||'',stateValues,deltaMap,deltaRaw:raw,deltaValid:valid};
+ });
+ return {rows,actors:[...actors].sort(),codes:[...codes].sort((a,b)=>a.localeCompare(b,'en',{numeric:true}))};
+}

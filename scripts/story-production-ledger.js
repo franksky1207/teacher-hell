@@ -149,8 +149,9 @@ export function validateLedger(ledger,{seeds,windows}){
    if(!new RegExp(r.type==='G'?'^G-\\d{4,}$':'^'+r.topicId.split('-')[0]+'-\\d{3,}$').test(r.storyId))throw Error('正式故事ID類型錯誤：'+key);
    if(r.manuscriptVersions!==undefined){
     const versions=r.manuscriptVersions;
-    if(!Array.isArray(versions)||versions.length!==1||r.manuscriptVersion!==2||r.stateRulesVersion!==2||r.stateRevision?.kind!=='teacher-states-v1-to-v2'||!Number.isSafeInteger(r.stateRevision.revision)||r.stateRevision.revision<1||r.stateRevision.revision>ledger.revision||
-     versions.some(v=>v.version!==1||v.stateRulesVersion!==1||!trim(v.manuscriptPath)||!/^[a-f0-9]{64}$/.test(v.manuscriptDigest??'')||!trim(v.review?.filePath)||!/^[a-f0-9]{64}$/.test(v.review?.digest??'')||v.manuscriptPath===r.manuscriptPath||v.review.filePath===r.review.filePath))throw Error('歷史修訂鏈無效：'+key);
+    const chain=[...versions,{version:r.manuscriptVersion,stateRulesVersion:r.stateRulesVersion,manuscriptPath:r.manuscriptPath,manuscriptDigest:r.manuscriptDigest,review:r.review}];
+    if(!Array.isArray(versions)||!versions.length||r.manuscriptVersion!==versions.length+1||![2,3].includes(r.stateRulesVersion)||!Number.isSafeInteger(r.stateRevision?.revision)||r.stateRevision.revision<1||r.stateRevision.revision>ledger.revision||
+     chain.some((v,i)=>v.version!==i+1||![1,2,3].includes(v.stateRulesVersion)||!trim(v.manuscriptPath)||!/^[a-f0-9]{64}$/.test(v.manuscriptDigest??'')||!trim(v.review?.filePath)||!/^[a-f0-9]{64}$/.test(v.review?.digest??'')||(i>0&&v.stateRulesVersion<=chain[i-1].stateRulesVersion))||new Set(chain.flatMap(v=>[v.manuscriptPath,v.review.filePath])).size!==chain.length*2||r.stateRevision.kind!==`teacher-states-v${chain.at(-2).stateRulesVersion}-to-v${r.stateRulesVersion}`)throw Error('歷史修訂鏈無效：'+key);
    }
    storyIds.add(r.storyId);
    if(r.status==='locked'){
@@ -243,9 +244,10 @@ export function changeProductionLedger(ledger,request,{seeds,windows,validateDra
    validateStateRevision(prior,request,validateDraft);
    const usedPaths=new Set(Object.values(next.candidates).flatMap(r=>[r,...(r.manuscriptVersions??[])].flatMap(v=>[v.manuscriptPath,v.review?.filePath])));
    if(usedPaths.has(request.manuscriptPath)||usedPaths.has(request.reviewFile))throw Error('新版路徑已使用，禁止覆寫歷史或其他作品');
-   prior.manuscriptVersions=[{version:1,stateRulesVersion:1,manuscriptPath:prior.manuscriptPath,manuscriptDigest:prior.manuscriptDigest,review:structuredClone(prior.review)}];
-   prior.manuscriptVersion=2;prior.stateRulesVersion=2;
-   prior.stateRevision={kind:'teacher-states-v1-to-v2',revision:next.revision+1};
+   const source=prior.stateRulesVersion??1,target=request.targetStateRulesVersion??2;
+   prior.manuscriptVersions=[...(prior.manuscriptVersions??[]),{version:prior.manuscriptVersion??1,stateRulesVersion:source,manuscriptPath:prior.manuscriptPath,manuscriptDigest:prior.manuscriptDigest,review:structuredClone(prior.review)}];
+   prior.manuscriptVersion=(prior.manuscriptVersion??1)+1;prior.stateRulesVersion=target;
+   prior.stateRevision={kind:`teacher-states-v${source}-to-v${target}`,revision:next.revision+1};
    prior.manuscriptPath=request.manuscriptPath;prior.manuscriptDigest=request.manuscriptDigest;
    prior.review={...prior.review,filePath:request.reviewFile,digest:request.reviewDigest};
   }else if(prior.status==='locked')throw Error('已鎖定作品不可退還、改寫或重新占用');
@@ -289,7 +291,7 @@ export function changeProductionLedger(ledger,request,{seeds,windows,validateDra
     if(before.T>=MAX_T)throw Error('T648已滿');
     if((before.days.get(prior.date)||0)>=6)throw Error('T日期六篇配額已滿');
    }else if(before.T!==MAX_T||before.G>=MAX_G)throw Error('須完成T648後才鎖G，且G最多1752篇');
-   prior.stateRulesVersion=2;
+   prior.stateRulesVersion=result.details?.stateRulesVersion??2;
    prior.status='locked';prior.storyId=storyIdFor(prior.type,next,prior.topicId);
    prior.manuscriptDigest=request.manuscriptDigest;
    prior.manuscriptPath=request.manuscriptPath||null;

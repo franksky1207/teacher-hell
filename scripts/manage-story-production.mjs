@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import {execFileSync} from 'node:child_process';
+import {validateStateRevision} from './story-state-revision.js';
 /** Production ledger CLI V1. Preview by default; --apply writes one local ledger.
  * GitHub cross-machine concurrency requires normal SHA/PR conflict checking.
  */
@@ -37,6 +39,7 @@ const usage=[
  'node scripts/manage-story-production.mjs release|reject --ref REF --owner AI --reason "..." [--apply --expect-revision N]',
  'node scripts/manage-story-production.mjs revoke --ref REF --owner AI --reason "..." [--apply --expect-revision N]',
  'node scripts/manage-story-production.mjs lock --ref REF --owner AI --file STORY.md --review REVIEW.json [--apply --expect-revision N]',
+ 'node scripts/manage-story-production.mjs revise-locked --ref REF --owner AI --file NEW.md --review NEW.json --expect-manuscript-sha SHA --expect-review-sha SHA --expect-ledger-sha SHA256 --expect-head HEAD [--apply --expect-revision N]',
  'note: G proposals/locks require T648 locked; SAMPLE drafts never enter production.'
 ].join('\n');
 if(cmd==='help'||has('--help'))console.log(usage);
@@ -47,7 +50,7 @@ else{
   const topicText=await readFile(join(root,'docs','T1-T6-特定故事20主題與觸發日期.md'),'utf8');
   const seeds=seedCodesFromMarkdown(seedText),windows=readTopicWindows(topicText),topics=topicIdsFromMarkdown(topicText);
   if(seeds.size!==2400||windows.topics.size!==20||windows.days.size!==108)throw Error('來源資料數量異常，停止操作');
-  const mutating=['propose','reserve','revise','release','reject','lock','revoke'].includes(cmd);
+  const mutating=['propose','reserve','revise','release','reject','lock','revoke','revise-locked'].includes(cmd);
   const report=option('--json');
   if(has('--json')&&(!report||!['audit','duplicates'].includes(cmd)))throw Error('--json 只支援 audit／duplicates 的獨立報告檔');
   if(report&&[ledgerPath,lockPath,resolve(root,'data/story-production-ledger.json')].includes(resolve(report)))throw Error('報告不得覆寫帳本或鎖檔');
@@ -60,6 +63,11 @@ else{
   try{ledger=JSON.parse(await readFile(ledgerPath,'utf8'))}
   catch(e){if(e.code==='ENOENT'&&ledgerPath===resolve(join(root,'data','story-production-ledger.json')))throw Error('缺少正式帳本，請確認分支及檔案');throw e}
   if(lockHandle&&Number(option('--expect-revision'))!==ledger.revision)throw Error('帳本修訂版已改變，請重新讀取預覽；禁止覆寫舊版');
+  if(cmd==='revise-locked'){
+   const expectedHead=option('--expect-head');
+   if(!/^[a-f0-9]{40}$/.test(expectedHead??'')||execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8',timeout:30000}).trim()!==expectedHead||execFileSync('git',['ls-remote','origin','refs/heads/content/events-production-v1'],{cwd:root,encoding:'utf8',timeout:30000}).split(/\s/)[0]!==expectedHead)throw Error('本機／遠端HEAD與預期不符');
+   if(digest(await readFile(ledgerPath))!==option('--expect-ledger-sha'))throw Error('帳本SHA已改變');
+  }
   validateLedger(ledger,{seeds,windows});
   let response={action:cmd,applied:false};
   if(cmd==='windows'){
@@ -70,7 +78,11 @@ else{
    response.progress=ledgerProgress(ledger,{seeds,windows});
   }else if(cmd==='audit'){
    const problems=[];
-   for(const row of Object.values(ledger.candidates).filter(x=>['locked','revoked'].includes(x.status))){
+   let versionsChecked=0;
+   const validateDraft=(s,stage)=>validateStoryDraft(s,{stage,seeds,topics,windows});
+   for(const current of Object.values(ledger.candidates).filter(x=>['locked','revoked'].includes(x.status))){
+    for(const row of [...(current.manuscriptVersions??[]).map(v=>({...current,...v})),current]){
+    versionsChecked++;
     if(!row.manuscriptPath){problems.push({ref:row.draftRef,reason:'已鎖作品未記錄來源路徑'});continue}
     for(const [label,path,hash,extension] of [
      ['完整稿',row.manuscriptPath,row.manuscriptDigest,'.md'],
@@ -88,7 +100,15 @@ else{
      }catch(e){problems.push({ref:row.draftRef,reason:label+'無法稽核：'+e.message})}
     }
    }
-   response.audit={pass:problems.length===0,lockedFilesChecked:Object.values(ledger.candidates).filter(x=>['locked','revoked'].includes(x.status)).length,problems};
+    if(current.manuscriptVersions?.length){
+     try{
+      const original=current.manuscriptVersions[0],originalMarkdown=await readFile(await evidencePath(original.manuscriptPath,'.md'),'utf8'),originalReviewText=await readFile(await evidencePath(original.review.filePath,'.json'),'utf8');
+      const markdown=await readFile(await evidencePath(current.manuscriptPath,'.md'),'utf8'),reviewText=await readFile(await evidencePath(current.review.filePath,'.json'),'utf8');
+      validateStateRevision({...current,...original,status:'locked',stateRulesVersion:1,manuscriptVersions:undefined}, {originalMarkdown,originalReviewText,markdown,reviewText,manuscriptDigest:current.manuscriptDigest,reviewDigest:current.review.digest,expectedManuscriptDigest:original.manuscriptDigest,expectedReviewDigest:original.review.digest,manuscriptPath:current.manuscriptPath,reviewFile:current.review.filePath},validateDraft);
+     }catch(e){problems.push({ref:current.draftRef,reason:'修訂鏈無法稽核：'+e.message})}
+    }
+   }
+   response.audit={versionsChecked,pass:problems.length===0,lockedFilesChecked:Object.values(ledger.candidates).filter(x=>['locked','revoked'].includes(x.status)).length,problems};
    if(problems.length)process.exitCode=1;
   }else if(cmd==='available'){
    const taken=new Set(Object.values(ledger.candidates).filter(r=>['reserved','locked'].includes(r.status)).map(r=>r.seedId).filter(Boolean));
@@ -109,16 +129,25 @@ else{
   }else if(mutating){
    const file=option('--file');
    const manuscriptPath=file?relative(root,resolve(file)).replaceAll('\\','/'):null;
-   const markdownBytes=file?await readFile(cmd==='lock'?await evidencePath(manuscriptPath,'.md'):resolve(file)):null;
+   const markdownBytes=file?await readFile(['lock','revise-locked'].includes(cmd)?await evidencePath(manuscriptPath,'.md'):resolve(file)):null;
    const markdown=markdownBytes?.toString('utf8')??null;
    const reviewPath=option('--review')?relative(root,resolve(option('--review'))).replaceAll('\\','/'):null;
-   const reviewBytes=cmd==='lock'&&reviewPath?await readFile(await evidencePath(reviewPath,'.json')):null;
+   const reviewBytes=['lock','revise-locked'].includes(cmd)&&reviewPath?await readFile(await evidencePath(reviewPath,'.json')):null;
    const review=reviewBytes?JSON.parse(reviewBytes.toString('utf8')):null;
    const validateDraft=(s,stage)=>validateStoryDraft(s,{stage,seeds,topics,windows});
    const request={action:cmd,ref:option('--ref'),owner:option('--owner'),seedId:option('--seed'),
     reason:option('--reason'),date:option('--date'),markdown,review,
     reviewFile:reviewPath,reviewDigest:reviewBytes?digest(reviewBytes):null,
     manuscriptPath,manuscriptDigest:markdownBytes?digest(markdownBytes):null};
+   if(cmd==='revise-locked'){
+    const current=ledger.candidates[request.ref];if(!current)throw Error('找不到原稿');
+    request.originalMarkdown=await readFile(await evidencePath(current.manuscriptPath,'.md'),'utf8');
+    request.originalReviewText=await readFile(await evidencePath(current.review.filePath,'.json'),'utf8');
+    request.reviewText=reviewBytes?.toString('utf8');
+    request.expectedManuscriptDigest=option('--expect-manuscript-sha');request.expectedReviewDigest=option('--expect-review-sha');
+    const used=new Set(Object.values(ledger.candidates).flatMap(r=>[r,...(r.manuscriptVersions??[])].flatMap(v=>[v.manuscriptPath,v.review?.filePath])));
+    if(used.has(request.manuscriptPath)||used.has(request.reviewFile))throw Error('新版路徑已被歷史或其他稿件使用');
+   }
    const result=changeProductionLedger(ledger,request,{seeds,windows,validateDraft});
    response.change=result.change;response.progress=ledgerProgress(result.ledger,{seeds,windows});
    if(has('--apply')){

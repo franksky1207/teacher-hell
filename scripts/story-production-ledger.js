@@ -1,3 +1,4 @@
+import {validateStateRevision} from './story-state-revision.js';
 import {calendarDay,gradeAt,SENIOR_CALENDAR_VERSION} from '../src/calendar/calendar.js';
 /** 17D isolated production ledger V1; immutable 2400 seed source is external.
  * No game runtime hooks. Tool decisions != narrative quality certification.
@@ -146,6 +147,11 @@ export function validateLedger(ledger,{seeds,windows}){
    if(r.status==='revoked'&&(!r.revocation||!Number.isSafeInteger(r.revocation.revision)||r.revocation.revision<1||trim(r.revocation.reason).length<12||!seeds.has(r.seedId)))throw Error('撤銷作品缺少原因、原種子或修訂紀錄：'+key);
    if(!r.storyId||storyIds.has(r.storyId)||!/^[a-f0-9]{64}$/.test(r.manuscriptDigest??'')||!trim(r.manuscriptPath)||!r.review||!/^[a-f0-9]{64}$/.test(r.review.digest??'')||!trim(r.review.filePath))throw Error('正式故事缺ID、稿件或審查檔案的路徑／SHA256：'+key);
    if(!new RegExp(r.type==='G'?'^G-\\d{4,}$':'^'+r.topicId.split('-')[0]+'-\\d{3,}$').test(r.storyId))throw Error('正式故事ID類型錯誤：'+key);
+   if(r.manuscriptVersions!==undefined){
+    const versions=r.manuscriptVersions;
+    if(!Array.isArray(versions)||versions.length!==1||r.manuscriptVersion!==2||r.stateRulesVersion!==2||r.stateRevision?.kind!=='teacher-states-v1-to-v2'||!Number.isSafeInteger(r.stateRevision.revision)||r.stateRevision.revision<1||r.stateRevision.revision>ledger.revision||
+     versions.some(v=>v.version!==1||v.stateRulesVersion!==1||!trim(v.manuscriptPath)||!/^[a-f0-9]{64}$/.test(v.manuscriptDigest??'')||!trim(v.review?.filePath)||!/^[a-f0-9]{64}$/.test(v.review?.digest??'')||v.manuscriptPath===r.manuscriptPath||v.review.filePath===r.review.filePath))throw Error('歷史修訂鏈無效：'+key);
+   }
    storyIds.add(r.storyId);
    if(r.status==='locked'){
     if(r.type==='T'){T++;dates.set(r.date,(dates.get(r.date)||0)+1)}
@@ -200,7 +206,7 @@ function storyIdFor(type,ledger,topicId){
 export function changeProductionLedger(ledger,request,{seeds,windows,validateDraft,readReview}){
  const before=validateLedger(ledger,{seeds,windows}),next=JSON.parse(JSON.stringify(ledger));
  const {action,ref,owner}=request;
- if(!['propose','reserve','release','revise','reject','lock','revoke'].includes(action))throw Error('不支援的管理動作');
+ if(!['propose','reserve','release','revise','reject','lock','revoke','revise-locked'].includes(action))throw Error('不支援的管理動作');
  if(!draftIdPattern.test(ref??''))throw Error('候選ID格式錯誤');
  if(action==='propose'&&/^(SAMPLE|TEST)[-_]/i.test(ref))throw Error('試作草稿不得進正式量產帳本');
  if(otherIdPattern.test(ref))throw Error('候選ID不得使用種子、T主題或正式故事ID');
@@ -233,6 +239,15 @@ export function changeProductionLedger(ledger,request,{seeds,windows,validateDra
    if(trim(request.reason).length<12)throw Error('撤銷須附具體事實及審查原因');
    prior.status='revoked';
    prior.revocation={revision:next.revision+1,reason:trim(request.reason)};
+  }else if(action==='revise-locked'){
+   validateStateRevision(prior,request,validateDraft);
+   const usedPaths=new Set(Object.values(next.candidates).flatMap(r=>[r,...(r.manuscriptVersions??[])].flatMap(v=>[v.manuscriptPath,v.review?.filePath])));
+   if(usedPaths.has(request.manuscriptPath)||usedPaths.has(request.reviewFile))throw Error('新版路徑已使用，禁止覆寫歷史或其他作品');
+   prior.manuscriptVersions=[{version:1,stateRulesVersion:1,manuscriptPath:prior.manuscriptPath,manuscriptDigest:prior.manuscriptDigest,review:structuredClone(prior.review)}];
+   prior.manuscriptVersion=2;prior.stateRulesVersion=2;
+   prior.stateRevision={kind:'teacher-states-v1-to-v2',revision:next.revision+1};
+   prior.manuscriptPath=request.manuscriptPath;prior.manuscriptDigest=request.manuscriptDigest;
+   prior.review={...prior.review,filePath:request.reviewFile,digest:request.reviewDigest};
   }else if(prior.status==='locked')throw Error('已鎖定作品不可退還、改寫或重新占用');
   if(prior.status==='rejected')throw Error('已退件候選不可再修改，須使用新draft_ref');
   if(prior.status==='revoked'&&action!=='revoke')throw Error('已撤銷作品不可再修改或重新鎖定');

@@ -773,3 +773,41 @@ test('new locks record V2 while zero matrices fail atomically',()=>{
  assert.throws(()=>lock(reserved,bad),/完整稿機械驗收未通過.*state_zero_row/);
  assert.deepEqual(reserved,original);
 });
+
+test('isolated V1→V2 same-ID revision preserves immutable source and ledger identity',async t=>{
+ const {manuscriptDigest:sha,stateMatrix}=await import('../scripts/story-state-revision.js');
+ const story=draft(),oldReviewText=JSON.stringify(proof),locked=lock(reserve(prop(initialProductionLedger(),story).ledger).ledger,story).ledger;
+ const row=locked.candidates['T-DRAFT-001'];delete row.stateRulesVersion;
+ row.review.digest=sha(oldReviewText);
+ const old=structuredClone(locked),markdown=story.replace('：-1,+1,+1,+1','：-2,+1,+1,+1');
+ const report=validate(markdown,'full');assert.equal(report.mechanicalPass,true);
+ const stateRevision={kind:'teacher-states-v1-to-v2',verdict:'approved',reviewer:'ChatGPT',storyId:row.storyId,version:2,
+  originalManuscriptDigest:row.manuscriptDigest,originalReviewDigest:row.review.digest,manuscriptDigest:sha(markdown),before:stateMatrix(story),after:stateMatrix(markdown),otherFieldsUnchanged:true,
+  causality:Array.from({length:8},(_,i)=>({result:'R'+(i+1),states:Array(4).fill('隔離合成測試證據：具體結果與數值因果待實質審查')})),distributionReview:'隔離合成測試的分布審查，只驗證安全機制不核准真實故事。',mechanicalReport:report};
+ const reviewText=JSON.stringify({...proof,stateRevision});
+ const request={action:'revise-locked',ref:'T-DRAFT-001',owner:'ChatGPT',originalMarkdown:story,originalReviewText:oldReviewText,markdown,reviewText,manuscriptDigest:sha(markdown),reviewDigest:sha(reviewText),expectedManuscriptDigest:row.manuscriptDigest,expectedReviewDigest:row.review.digest,manuscriptPath:'content/events-v1/正式成品/isolated.v2.md',reviewFile:'content/events-v1/正式成品/isolated.v2.review.json'};
+ const changed=changeProductionLedger(locked,request,context).ledger,newRow=changed.candidates[request.ref];
+ assert.equal(changed.revision,locked.revision+1);assert.equal(newRow.storyId,row.storyId);
+ for(const key of ['seedId','date','tags','summary','status','topicId','poolId'])assert.deepEqual(newRow[key],row[key]);
+ assert.deepEqual(newRow.manuscriptVersions,[{version:1,stateRulesVersion:1,manuscriptPath:row.manuscriptPath,manuscriptDigest:row.manuscriptDigest,review:row.review}]);
+ assert.deepEqual({...ledgerProgress(changed,context),revision:locked.revision},ledgerProgress(locked,context));assert.deepEqual(locked,old);
+ const cases=[
+  ['stale source SHA',{expectedManuscriptDigest:'0'.repeat(64)},/原SHA/],
+  ['tampered original',{originalMarkdown:story+'x'},/原稿/],
+  ['tampered new digest',{manuscriptDigest:'0'.repeat(64)},/新版SHA/],
+  ['changed prose',{markdown:markdown+'x',manuscriptDigest:sha(markdown+'x')},/只准修改/],
+  ['overwriting source',{manuscriptPath:row.manuscriptPath},/禁止覆寫/],
+  ['overwriting review',{reviewFile:row.review.filePath},/禁止覆寫/],
+  ['missing review',{reviewText:'{}',reviewDigest:sha('{}')},/原七項/],
+ ];
+ for(const [name,patch,error] of cases)await t.test(name,()=>assert.throws(()=>changeProductionLedger(locked,{...request,...patch},context),error));
+ const invalid=markdown.replace(/(\*\*玩家四狀態\*\*[^：\n]*：)[^\n]*/g,'$1'+'0,0,0,0');
+ const invalidProof={...stateRevision,after:stateMatrix(invalid),manuscriptDigest:sha(invalid),mechanicalReport:validate(invalid,'full')};
+ const badReview=JSON.stringify({...proof,stateRevision:invalidProof});
+ assert.throws(()=>changeProductionLedger(locked,{...request,markdown:invalid,manuscriptDigest:sha(invalid),reviewText:badReview,reviewDigest:sha(badReview)},context),/full V2未通過/);
+ assert.throws(()=>changeProductionLedger(changed,request,context),/一次修訂/);
+ const revoked=structuredClone(locked);revoked.candidates[request.ref].status='revoked';revoked.candidates[request.ref].revocation={revision:3,reason:'隔離測試：舊作品撤銷之後不得正式復活'};
+ assert.throws(()=>changeProductionLedger(revoked,request,context),/僅接受locked/);
+ const broken=structuredClone(changed);broken.candidates[request.ref].manuscriptVersions=[];
+ assert.throws(()=>validateLedger(broken,context),/歷史修訂鏈/);
+});

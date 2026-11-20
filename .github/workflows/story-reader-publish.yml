@@ -1,0 +1,37 @@
+name: Publish locked story reader
+on:
+  workflow_dispatch:
+  push:
+    branches: [content/events-production-v1]
+    paths:
+      - data/story-production-ledger.json
+      - 'content/events-v1/正式成品/**/*.md'
+      - 'story-reader/**'
+      - scripts/export-story-reader.mjs
+      - scripts/deploy-story-reader.sh
+      - test/story-reader-export.test.js
+      - test/story-reader-ui.test.js
+      - .github/workflows/story-reader-publish.yml
+permissions:
+  contents: write
+concurrency:
+  group: teacher-hell-story-reader-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content/events-production-v1
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Configure publication identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Publish reader only, preserving all other Pages paths
+        run: bash scripts/deploy-story-reader.sh

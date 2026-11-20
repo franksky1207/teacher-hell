@@ -14,7 +14,7 @@ export function matchesStory(story,filters={}){
 export function filterStories(stories,filters){
  return stories.filter(story=>matchesStory(story,filters));
 }
-export function selectOptions(stories,key,field,parentFilter){
+export function selectOptions(stories,field,parentFilter){
  const values=new Set(stories.filter(x=>!parentFilter||parentFilter(x)).map(x=>x[field]).filter(Boolean));
  return [...values].sort((a,b)=>a.localeCompare(b,'zh-Hant',{numeric:true}));
 }

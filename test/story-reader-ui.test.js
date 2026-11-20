@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {filterStories,neighboringIds,sanitizeReaderPreferences,safeDetailPath,validateReaderIndex,validateReaderDetail} from '../story-reader/reader-core.js';
+import {selectOptions,filterStories,neighboringIds,sanitizeReaderPreferences,safeDetailPath,validateReaderIndex,validateReaderDetail} from '../story-reader/reader-core.js';
 
 const stories=[
  {storyId:'T1-002',draftRef:'T-DRAFT-0002',title:'我在哪一班',type:'T',topicId:'T1-1',poolId:'T1-1:single',summary:{事件起因:'首次點名'},detail:'stories/T1-002.json'},
@@ -35,4 +35,10 @@ test('detail must match index and have four choices and eight results',()=>{
  const valid={storyId:'T1-002',options:Array(4).fill({}),results:Array(8).fill({}),matrix:{A:[],B:[],C:[],D:[]}};
  assert.equal(validateReaderDetail(valid,stories[0]),valid);
  assert.throws(()=>validateReaderDetail({...valid,storyId:'T1-003'},stories[0]),/不完整/);
+});
+
+test('dropdown values use the selected field and parent filter',()=>{
+ assert.deepEqual(selectOptions(stories,'topicId'),['T1-1','T2-1']);
+ assert.deepEqual(selectOptions(stories,'poolId',s=>s.topicId==='T1-1'),['T1-1:single']);
+ assert.deepEqual(selectOptions(stories,'topicId',s=>s.type==='G'),[]);
 });

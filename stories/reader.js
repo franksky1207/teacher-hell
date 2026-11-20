@@ -1,7 +1,7 @@
 import {
  filterStories, selectOptions, neighboringIds, sanitizeReaderPreferences, topicDisplayName, poolDisplayName,
  safeDetailPath, validateReaderIndex, validateReaderDetail
-} from './reader-core.js?v=f42bcf9862370904145431badfd5669a33874949';
+} from './reader-core.js?v=10fdb203a4216623f508a3bf1365be8249102b7e';
 
 const $=id=>document.getElementById(id);
 const state={all:[],filtered:[],selected:null,detail:null,request:0,cache:new Map(),

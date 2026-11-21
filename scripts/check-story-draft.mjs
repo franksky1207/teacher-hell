@@ -4,7 +4,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve,join,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {validateStoryDraft,seedCodesFromMarkdown,topicIdsFromMarkdown} from './story-draft-validator.js';
-import {readTopicWindows} from './story-production-ledger.js';
+import {readTopicWindows} from './story-windows.js';
 const args=process.argv.slice(2);
 const param=k=>{const i=args.indexOf(k);return i>=0?args[i+1]:null};
 const usage='node scripts/check-story-draft.mjs --input <story.md> [--stage summary|choices|full] [--json <report.json>]';
@@ -24,7 +24,7 @@ else{
    seeds:seedCodesFromMarkdown(seedText),
    topics:topicIdsFromMarkdown(topicText),windows:readTopicWindows(topicText)
   });
-  console.log('17D草稿｜四狀態V'+report.details.stateRulesVersion+'｜'+(report.mechanicalPass?'機械檢查通過':'機械檢查失敗')+'｜'+report.stage+'｜錯誤'+report.errors.length+'項');
+  console.log('故事稿｜四狀態V'+report.details.stateRulesVersion+'｜'+(report.mechanicalPass?'機械檢查通過':'機械檢查失敗')+'｜'+report.stage+'｜錯誤'+report.errors.length+'項');
   for(const item of report.errors)console.log('✗ '+item.code+'：'+item.detail);
   for(const item of report.warnings)console.log('△ '+item);
   if(report.details.stateDistribution)console.log('四狀態分布：'+JSON.stringify(report.details.stateDistribution));

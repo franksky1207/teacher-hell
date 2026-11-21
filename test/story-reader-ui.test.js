@@ -3,14 +3,14 @@ import assert from 'node:assert/strict';
 import {selectOptions,filterStories,neighboringIds,sanitizeReaderPreferences,safeDetailPath,validateReaderIndex,validateReaderDetail,topicDisplayName,poolDisplayName,readerTechnicalTables,READER_STATES} from '../story-reader/reader-core.js';
 
 const stories=[
- {storyId:'T1-002',draftRef:'T-DRAFT-0002',title:'我在哪一班',type:'T',topicId:'T1-1',poolId:'T1-1:single',summary:{事件起因:'首次點名'},detail:'stories/T1-002.json'},
- {storyId:'T1-003',draftRef:'T-DRAFT-0003',title:'我的名字',type:'T',topicId:'T1-1',poolId:'T1-1:single',summary:{核心衝突:'同學稱呼'},detail:'stories/T1-003.json'},
- {storyId:'T2-001',draftRef:'T-DRAFT-0040',title:'班呼練習',type:'T',topicId:'T2-1',poolId:'T2-1:before',summary:{導師困境:'如何參與'},detail:'stories/T2-001.json'},
- {storyId:'G-0001',draftRef:'G-DRAFT-0001',title:'生活瑣事',type:'G',topicId:null,poolId:null,summary:{事件起因:'校園生活'},detail:'stories/G-0001.json'}
+ {storyId:'T1-002',title:'我在哪一班',type:'T',topicId:'T1-1',poolId:'T1-1:single',summary:{事件起因:'首次點名'},detail:'stories/T1-002.json'},
+ {storyId:'T1-003',title:'我的名字',type:'T',topicId:'T1-1',poolId:'T1-1:single',summary:{核心衝突:'同學稱呼'},detail:'stories/T1-003.json'},
+ {storyId:'T2-001',title:'班呼練習',type:'T',topicId:'T2-1',poolId:'T2-1:before',summary:{導師困境:'如何參與'},detail:'stories/T2-001.json'},
+ {storyId:'G-0001',title:'生活瑣事',type:'G',topicId:null,poolId:null,summary:{事件起因:'校園生活'},detail:'stories/G-0001.json'}
 ];
-test('search title, ID, draft reference, summary and combined semester/topic/pool filters',()=>{
+test('search title, ID, summary and combined semester/topic/pool filters',()=>{
  assert.deepEqual(filterStories(stories,{query:'我在哪'}).map(x=>x.storyId),['T1-002']);
- assert.deepEqual(filterStories(stories,{query:'t-draft-0003'}).map(x=>x.storyId),['T1-003']);
+ assert.deepEqual(filterStories(stories,{query:'t1-003'}).map(x=>x.storyId),['T1-003']);
  assert.deepEqual(filterStories(stories,{query:'首次點名'}).map(x=>x.storyId),['T1-002']);
  assert.deepEqual(filterStories(stories,{semester:'T1',topic:'T1-1',pool:'T1-1:single'}).map(x=>x.storyId),['T1-002','T1-003']);
  assert.deepEqual(filterStories(stories,{semester:'G'}).map(x=>x.storyId),['G-0001']);

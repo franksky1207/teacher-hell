@@ -1,5 +1,6 @@
+import {storyMetadataHeading, storyMetadataKeys, seedIdPattern} from './story-catalog.js';
 export const STATE_GROUPS=Object.freeze(Object.fromEntries(Object.entries({A:[1,1,0,0,-1,-1,-2,-2],B:[2,0,-1,-1,-1,-1,-1,-1],C:[1,1,0,-1,-1,-1,-1,-2],D:[2,1,0,-1,-1,-1,-2,-2],E:[1,1,1,0,-1,-2,-2,-2]}).map(([k,v])=>[k,Object.freeze(v)])));
-import {resolveTopicPool} from './story-production-ledger.js';
+import {resolveTopicPool} from './story-windows.js';
 /** 17D Markdown V1 draft checker. Read-only: not a game engine or approval. */
 const personal=new Set('1-1 1-2 1-3 1-4 2-1 2-2 2-3 2-4 3-1 3-2 3-3 3-4 4-1 4-2 4-3 4-4 6-1 6-2 6-3 6-4 7-1 7-2 7-3 7-4 8-3 8-4 11-1 11-2'.split(' '));
 const relationship=new Set('5-1 5-2 5-3 5-4 8-1 8-2 9-1 9-2 10-1 10-2 10-3 10-4 11-3 11-4 12-1 12-2 12-3 12-4'.split(' '));
@@ -20,6 +21,7 @@ export function validateStoryDraft(md,{stage='full',stateRulesVersion=3,seeds=ne
   const heading=headings[i],id=heading[1],title=heading[2];
   if(!/^[1-5]$/.test(id)){fail('section_id','非法故事區塊編號：'+id);continue;}
   if(!heading[0].startsWith('## '+id+'｜'))fail('section_format','第'+id+'區標題須使用範本格式');
+  if(id==='1'&&heading[0].trimEnd()!==storyMetadataHeading)fail('section_format','第一區標題須使用「故事基本資料」');
   if(unfilled(title))fail('section_title','第'+id+'區標題未完成');
   if(sec.has(Number(id)))fail('section_duplicate','重複第'+id+'區');
   sec.set(Number(id),md.slice(heading.index,headings[i+1]?.index??md.length));
@@ -28,10 +30,8 @@ export function validateStoryDraft(md,{stage='full',stateRulesVersion=3,seeds=ne
  for(const n of needed)if(!sec.has(n))fail('section','缺少第'+n+'區塊');
  const one=sec.get(1)||'',two=sec.get(2)||'',three=sec.get(3)||'',four=sec.get(4)||'',five=sec.get(5)||'';
  const data=new Map();
- for(const r of rows(one)){const key=r[0].match(/^([a-z_]+)｜/);if(key){if(data.has(key[1]))fail('metadata_duplicate',key[1]+' 重複');if(r.length!==2)fail('metadata_format',key[1]+' 欄數錯誤');data.set(key[1],r[1])}}
- for(const k of ['draft_ref','event_type','t_topic_id','tags','required_window','required_conditions'])if(unfilled(data.get(k)))fail('metadata',k+' 尚未完成');
- if(!/^[A-Za-z][A-Za-z0-9_-]{2,63}$/.test(data.get('draft_ref')||''))fail('draft_ref','稿件暫識別格式錯誤');
- if(!data.has('story_id')||!clean(data.get('story_id'))||(unfilled(data.get('story_id'))&&data.get('story_id')!=='【待驗收鎖定後由管理端配號】'))fail('story_id','正式ID必填合法ID或配號占位');
+ for(const r of rows(one)){const key=r[0].match(/^([a-z_]+)｜/);if(key){if(!storyMetadataKeys.has(key[1]))fail('metadata_unknown',key[1]+' 不屬於正式故事欄位');if(data.has(key[1]))fail('metadata_duplicate',key[1]+' 重複');if(r.length!==2)fail('metadata_format',key[1]+' 欄數錯誤');data.set(key[1],r[1])}}
+ for(const k of ['event_type','t_topic_id','tags','required_window','required_conditions'])if(unfilled(data.get(k)))fail('metadata',k+' 尚未完成');
  if(stateRulesVersion===3&&data.get('state_rules_version')!=='3')fail('state_version','V3稿必須明列 state_rules_version=3，舊稿不得誤認為V3');
  if(data.has('state_rules_version')&&data.get('state_rules_version')!==String(stateRulesVersion))fail('state_version','稿件版本與指定驗收版本不符');
  const type=data.get('event_type');
@@ -39,19 +39,25 @@ export function validateStoryDraft(md,{stage='full',stateRulesVersion=3,seeds=ne
  const tags=clean(data.get('tags')).split(/[、，,;\s／/]+/).filter(Boolean);
  if(!unfilled(data.get('tags'))&&(!tags.length||new Set(tags).size!==tags.length||tags.some(x=>!/^G(0[1-9]|1[01])$/.test(x))))fail('tags','G01～G11標籤格式／重複錯誤');
  const topic=data.get('t_topic_id'),window=data.get('required_window'),storyId=data.get('story_id');
- if(storyId&&!unfilled(storyId)){const valid=type==='G'?/^G-\d{4,}$/.test(storyId):type==='T'?/^T[1-6]-\d{3,}$/.test(storyId):false;if(!valid)fail('story_id','正式故事ID與T/G類型不符');}
+ const validId=type==='G'?/^G-\d{4,}$/.test(storyId):type==='T'?new RegExp('^'+(topic?.match(/^T[1-6]/)?.[0]??'T[1-6]')+'-\\d{3,}$').test(storyId):false;
+ if(!validId)fail('story_id','正式故事ID與T/G類型或學期不符');
+ const quotaDate=data.get('quota_date');
+ if(type==='T'&&!/^\d{4}-\d{2}-\d{2}$/.test(quotaDate??''))fail('quota_date','T必須填配額歸屬日');
+ if(type==='G'&&quotaDate!=='無')fail('quota_date','G的配額歸屬日應填無');
  if(type==='T'&&(!/^T[1-6]-\d+$/.test(topic||'')||!topics.has(topic)||unfilled(window)||window==='無'))fail('topic','T必須填合法T主題及窗口');
  if(type==='G'&&topic!=='無')fail('topic','G的T主題應填無');
  if(type==='T'){
   if(!windows)fail('window','缺少正式T故事池來源');
-  else try{resolveTopicPool(windows,topic,window)}catch(e){fail('window',e.message)}
+  else try{if(!resolveTopicPool(windows,topic,window).dates.has(quotaDate))fail('quota_date','配額歸屬日不屬於指定故事池')}catch(e){fail('window',e.message)}
  }
  if(type==='G'&&/^T[1-6]-\d+:/.test(window||''))fail('window','G不能指定T故事池');
  for(const k of ['事件起因','核心衝突','導師困境','故事獨特性']){const found=rows(two).filter(r=>r[0]===k);if(found.length!==1||found[0]?.length!==2||unfilled(found[0]?.[1]))fail('summary',k+' 缺少、重複或格式錯誤');}
- let fourCodes=[],slots=new Map(),sid=null,choiceFlags=null;
+ const seedId=data.get('seed_id');
+ const sid=seedIdPattern.test(seedId)?seedId:null;
+ if(!seeds.has(sid))fail('seed','第一區 seed_id 必須使用正式種子');
+ if(/^\s*-\s*\*\*種子ID\*\*[^\r\n]*：/m.test(three))fail('seed_location','種子只填在第一區 seed_id');
+ let fourCodes=[],slots=new Map(),choiceFlags=null;
  if(stage!=='summary'){
-  sid=named(three,'種子ID').match(/^S\d{4}$/)?.[0];
-  if(!seeds.has(sid))fail('seed','種子ID不在正式表');
   fourCodes=named(three,'本篇四碼').split(/[／/,，、]/).map(clean).filter(Boolean);
   if(fourCodes.length!==4||new Set(fourCodes).size!==4||fourCodes.some(c=>!/^(?:[1-9]|1[0-2])-[1-4]$/.test(c)))fail('codes','需填4個不同合法碼');
   if(seeds.has(sid)&&fourCodes.slice().sort().join()!==seeds.get(sid).slice().sort().join())fail('seed_mismatch','種子ID與四碼不一致');

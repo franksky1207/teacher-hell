@@ -1,5 +1,7 @@
 # 教師四狀態 V2｜第二批逐篇審查進度（未結案）
 
+> 歷史紀錄。當時的路徑與操作保留供追溯，現行流程見[故事製作目錄](https://github.com/franksky1207/teacher-hell/tree/content/events-production-v1/content/events-v1)。
+
 30篇均已讀全文、原審查與32格因果；14篇完成同ID V2修訂，16篇保留V1原稿並記錄因果衝突。**不是30篇全部通過，第二批尚未完成。**
 
 基準 `79433b46a6199e8e56d680a8e03a0ec5a2b53fd0`，帳本 revision 94 → 108；locked 30、revoked 1，ID、種子、配額日期與所有非教師數值欄位不變。原31份稿與原審查全部原路徑保留；14篇另增版本，audit應核對45個版本。

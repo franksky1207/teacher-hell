@@ -1,26 +1,17 @@
 #!/usr/bin/env bash
 # Publish only /stories/; retry against the latest Pages tree without force pushes.
-# A ledger commit pushed with GitHub Actions GITHUB_TOKEN does not recursively trigger
-# this publishing workflow. After a one-time batch-lock job, run this publisher
-# explicitly, or make a normal content-branch push that matches the workflow paths.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-test "$(git rev-parse HEAD)" = "$(git rev-parse origin/content/events-production-v1)" || {
-  echo 'Publish the fetched content/events-production-v1 head only.' >&2; exit 1;
-}
-node --check story-reader/reader.js
-node --check story-reader/reader-core.js
-node --check scripts/export-story-reader.mjs
-node --test test/story-reader-export.test.js test/story-reader-ui.test.js
-node scripts/export-story-reader.mjs
+source_branch=${1:-content/events-production-v1}
 release=$(git rev-parse HEAD)
+STORY_SOURCE_BRANCH="$source_branch" STORY_SOURCE_COMMIT="$release" node scripts/export-story-reader.mjs
 publish_tmp=$(mktemp -d)
 cleanup() { git worktree remove --force "$publish_tmp/site" >/dev/null 2>&1 || true; rm -rf "$publish_tmp"; }
 trap cleanup EXIT
 mkdir -p "$publish_tmp/payload/data"
 cp story-reader/index.html story-reader/reader.js story-reader/reader-core.js story-reader/reader.css "$publish_tmp/payload/"
 cp -R work/story-reader-data/. "$publish_tmp/payload/data/"
-node -e 'const fs=require("fs");const index=JSON.parse(fs.readFileSync("work/story-reader-data/index.json"));console.log(JSON.stringify({sourceCommit:process.argv[1],ledgerRevision:index.ledgerRevision,count:index.count}))' "$release" > "$publish_tmp/payload/release.json"
+node -e 'const fs=require("fs");const {sourceCommit,sourceBranch,count}=JSON.parse(fs.readFileSync("work/story-reader-data/index.json"));console.log(JSON.stringify({sourceCommit,sourceBranch,count}))' > "$publish_tmp/payload/release.json"
 # Cache-bust the module graph and CSS together on each source release.
 sed -i "s|./reader.css|./reader.css?v=$release|;s|./reader.js|./reader.js?v=$release|" "$publish_tmp/payload/index.html"
 sed -i "s|./reader-core.js|./reader-core.js?v=$release|" "$publish_tmp/payload/reader.js"

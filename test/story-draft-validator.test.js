@@ -2,7 +2,7 @@ import test from 'node:test';
 import {readFileSync} from 'node:fs';
 import assert from 'node:assert/strict';
 import {STATE_GROUPS,validateStoryDraft,seedCodesFromMarkdown,topicIdsFromMarkdown} from '../scripts/story-draft-validator.js';
-import {readTopicWindows} from '../scripts/story-production-ledger.js';
+import {readTopicWindows} from '../scripts/story-windows.js';
 const windows=readTopicWindows(readFileSync(new URL('../docs/T1-T6-特定故事20主題與觸發日期.md',import.meta.url),'utf8'));
 const seeds=seedCodesFromMarkdown('| S1461 | 1-1 | 2-3 | 7-4 | 9-1 |');
 const topics=topicIdsFromMarkdown('| **T1-1** | 首次進班 |');
@@ -16,10 +16,11 @@ function draft(){
   '- **玩家四狀態**（體力、精神、熱忱、情緒）：1,1,1,1'
  ].join('\n')).join('\n');
  return [
- '## 1｜故事基本資料與必要資格',
+ '## 1｜故事基本資料',
  '| 欄位鍵 | 填寫值 |','|---|---|',
- '| §draft_ref§｜稿件暫識別 | SAMPLE-1461 |',
- '| §story_id§｜正式故事ID | 【待驗收鎖定後由管理端配號】 |',
+ '| §story_id§｜正式故事ID | G-0001 |',
+ '| §seed_id§｜種子ID | S1461 |',
+ '| §quota_date§｜配額歸屬日 | 無 |',
  '| §event_type§｜事件類型 | G |',
  '| §t_topic_id§｜T主題ID | 無 |',
  '| §tags§｜T/G共用11類多標籤 | G02、G04 |',
@@ -32,7 +33,6 @@ function draft(){
  '| 導師困境 | 規範與支持之間取捨 |',
  '| 故事獨特性 | 學生當場提出不同替代方案 |',
  '## 3｜四碼種子及角色槽位',
- '- **種子ID**：S1461',
  '- **本篇四碼**：1-1／2-3／7-4／9-1',
  '- **選角方向**：偏負向',
  '- **常駐數值角色槽位**：',
@@ -114,8 +114,7 @@ test('S0451 isolated draft fixture passes all three mechanical stages without cl
   const report=validateStoryDraft(fixture,{stage,stateRulesVersion:2,seeds:fullSeeds,topics:fullTopics});
   assert.equal(report.mechanicalPass,true,stage+': '+JSON.stringify(report.errors));
  }
- assert.match(fixture,/SAMPLE-S0451-01/);
- assert.match(fixture,/【待驗收鎖定後由管理端配號】/);
+ assert.match(fixture,/G-0001/);
 });
 
 const rejected=(s,code,stage='full')=>assert.ok(audit(s,stage).errors.some(e=>e.code===code),code+': '+JSON.stringify(audit(s,stage).errors));
@@ -134,8 +133,11 @@ test('batch09 stages, metadata, tables and placeholders reject malformed drafts'
   ['missing field',s=>s.replace(/^.*required_conditions.*\n/m,''),'metadata','summary'],
   ['missing window',s=>s.replace(/^.*required_window.*\n/m,''),'metadata','summary'],
   ['missing story ID field',s=>s.replace(/^.*story_id.*\n/m,''),'story_id','summary'],
-  ['wrong story ID',s=>s.replace('【待驗收鎖定後由管理端配號】','T1-001'),'story_id','summary'],
-  ['bad draft ID',s=>s.replace('SAMPLE-1461','??'),'draft_ref','summary'],
+  ['obsolete draft field',s=>s.replace('## 2｜','| `draft_ref`｜稿件暫識別 | T-DRAFT-0001 |\n## 2｜'),'metadata_unknown','summary'],
+  ['obsolete ID placeholder',s=>s.replace('G-0001','【待驗收鎖定後由管理端配號】'),'story_id','summary'],
+  ['obsolete first heading',s=>s.replace('故事基本資料','故事基本資料與必要資格'),'section_format','summary'],
+  ['missing seed metadata',s=>s.replace(/^.*seed_id.*\n/m,''),'seed','summary'],
+  ['wrong story ID',s=>s.replace('G-0001','T1-001'),'story_id','summary'],
   ['duplicate metadata',s=>s.replace('## 2｜','| `event_type`｜事件類型 | G |\n## 2｜'),'metadata_duplicate','summary'],
   ['bad metadata columns',s=>s.replace('| G |','| G | extra |'),'metadata_format','summary'],
   ['invalid type',s=>s.replace('| G |','| P |'),'type','summary'],
@@ -144,7 +146,7 @@ test('batch09 stages, metadata, tables and placeholders reject malformed drafts'
   ['bad tag',s=>s.replace('G02、G04','G00'),'tags','summary'],
   ['duplicate tag',s=>s.replace('G02、G04','G02、G02'),'tags','summary'],
   ['G topic',s=>s.replace('T主題ID | 無','T主題ID | T1-1'),'topic','summary'],
-  ['T unknown topic',s=>s.replace('| G |','| T |').replace('T主題ID | 無','T主題ID | T1-999'),'topic','summary'],
+  ['T unknown topic',s=>s.replace('| G |','| T |').replace('G-0001','T1-001').replace('配額歸屬日 | 無','配額歸屬日 | 2026-07-20').replace('T主題ID | 無','T主題ID | T1-999'),'topic','summary'],
   ['invalid flag',s=>s.replace('| true |','| TRUE |'),'choice_flag','choices'],
   ['missing choice',s=>s.replace(/^\| D \| 改派.*\n/m,''),'choice_missing','choices'],
   ['duplicate choice',s=>s.replace('| D | 改派','| A | 改派'),'choice_duplicate','choices'],
@@ -156,12 +158,13 @@ test('batch09 stages, metadata, tables and placeholders reject malformed drafts'
  ];
  for(const [name,mutate,code,stage] of cases)await t.test(name,()=>rejected(mutate(draft()),code,stage));
  const summary=draft().split('## 3｜')[0];assert.equal(audit(summary,'summary').mechanicalPass,true);
- const validT=summary.replace('| G |','| T |').replace('T主題ID | 無','T主題ID | T1-1').replace('活動窗口 | 無','活動窗口 | T1-1:single');
+ const validT=summary.replace('| G |','| T |').replace('G-0001','T1-001').replace('配額歸屬日 | 無','配額歸屬日 | 2026-07-20').replace('T主題ID | 無','T主題ID | T1-1').replace('活動窗口 | 無','活動窗口 | T1-1:single');
  assert.equal(audit(validT,'summary').mechanicalPass,true,JSON.stringify(audit(validT,'summary').errors));
  rejected(summary,'section','choices');
 });
 test('batch09 seed, whole-NPC eligibility, causes and illegal settlements',async t=>{
  const cases=[
+  ['duplicated seed in section three',s=>s.replace('## 3｜四碼種子及角色槽位','## 3｜四碼種子及角色槽位\n- **種子ID**：S1461'),'seed_location'],
   ['unknown seed',s=>s.replace('S1461','S9999'),'seed'],
   ['seed suffix',s=>s.replace('S1461','S1461junk'),'seed'],
   ['duplicate code',s=>s.replace('1-1／2-3／7-4／9-1','1-1／1-1／7-4／9-1'),'codes'],
@@ -249,7 +252,7 @@ test('batch09 incomplete role type and opening pages are rejected',()=>{
 test('batch10 draft required_window is an authoritative pool identity',()=>{
  const fullTopics=new Set(windows.topics.keys());
  const check=s=>validateStoryDraft(s,{stage:'summary',stateRulesVersion:2,seeds,topics:fullTopics,windows});
- const s=draft().replace('| G |','| T |').replace('T主題ID | 無','T主題ID | T1-4').replace('活動窗口 | 無','活動窗口 | T1-4:before');
+ const s=draft().replace('| G |','| T |').replace('G-0001','T1-001').replace('配額歸屬日 | 無','配額歸屬日 | 2026-11-04').replace('T主題ID | 無','T主題ID | T1-4').replace('活動窗口 | 無','活動窗口 | T1-4:before');
  assert.equal(check(s).mechanicalPass,true);
  for(const value of ['2026/11/04','T1-4:unknown','T1-3:before','前5日'])assert.ok(check(s.replace('活動窗口 | T1-4:before','活動窗口 | '+value)).errors.some(e=>e.code==='window'));
  assert.ok(validateStoryDraft(s,{stage:'summary',stateRulesVersion:2,seeds,topics:fullTopics}).errors.some(e=>e.code==='window'));
@@ -336,7 +339,7 @@ test('V2 malformed results are excluded and do not produce misleading aggregate 
 function draftV3(){
  let i=0;
  const cols=[STATE_GROUPS.A,STATE_GROUPS.B,STATE_GROUPS.C,STATE_GROUPS.D];
- return draft().replace('## 1｜故事基本資料與必要資格','## 1｜故事基本資料與必要資格\n| state_rules_version｜數值規則版本 | 3 |')
+ return draft().replace('## 1｜故事基本資料','## 1｜故事基本資料\n| state_rules_version｜數值規則版本 | 3 |')
   .replace(/- \*\*玩家四狀態\*\*（體力、精神、熱忱、情緒）：[^\n]*/g,()=>'- **玩家四狀態**（精神、熱忱、情緒、掌控）：'+cols.map((arr,j)=>arr[(i+j*2)%8]).join(',')+(++i&&''));
 }
 test('V3 NPC averages beyond ±3 pass while single ±8 remains enforced',()=>{

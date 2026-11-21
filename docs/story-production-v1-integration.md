@@ -1,5 +1,7 @@
 # 故事量產 V1 第13批整合白名單
 
+> 歷史紀錄。當時的路徑與操作保留供追溯，現行流程見[故事製作目錄](https://github.com/franksky1207/teacher-hell/tree/content/events-production-v1/content/events-v1)。
+
 - 主＝`main`，`5293a9f2b6bfec8a4774630d78baa97a9fffae8c`。
 - 暫＝`docs/teacher-centered-stats-20261117`，`a850d7009dece4d019fbf3b7fc8ff02b7b5b7be8`，相對 main 有225個提交及35個差異檔。
 - 本批＝基於主分支新寫的整合說明或局部編輯。第13批分支 `integration/story-production-v1` 以主分支 SHA 為直接父提交的基準。

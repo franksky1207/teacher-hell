@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="《教師荒謬地獄》已鎖定事件故事的只讀全文閱讀器">
+  <meta name="description" content="《教師荒謬地獄》事件故事的只讀全文閱讀器">
   <title>事件故事全文閱讀器｜教師荒謬地獄</title>
   <link rel="stylesheet" href="./reader.css">
   <script type="module" src="./reader.js"></script>
@@ -48,6 +48,7 @@
           <button type="button" class="quiet-button" id="clear-filters">清除篩選</button>
         </div>
         <div class="list-meta muted" id="list-meta" aria-live="polite"></div>
+        <p id="catalog-warnings" class="muted"></p>
         <div id="story-list" class="story-list" role="list"></div>
       </aside>
       <main class="reader" id="reader" tabindex="-1">
@@ -65,7 +66,8 @@
             <h2 id="story-title"></h2>
             <p id="story-subtitle" class="muted"></p>
           </header>
-          <div class="reading-sections">
+          <pre id="source-preview" class="section-body story-prose" hidden></pre>
+          <div id="structured-preview" class="reading-sections">
             <section aria-labelledby="summary-heading" class="reader-section">
               <div class="section-head"><h3 id="summary-heading">事件起因與創作摘要</h3><button type="button" class="section-toggle quiet-button" data-target="summary-content" aria-expanded="true">收合</button></div>
               <div id="summary-content" class="section-body"></div>

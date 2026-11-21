@@ -28,7 +28,7 @@ export function matchesStory(story,filters={}){
  if(topic&&story.topicId!==topic)return false;
  if(pool&&story.poolId!==pool)return false;
  if(!q)return true;
- const fields=[story.storyId,story.draftRef,story.title,story.topicId,story.poolId,
+ const fields=[story.storyId,story.title,story.topicId,story.poolId,
    ...Object.values(story.summary??{})].filter(Boolean);
  return fields.some(x=>String(x).toLocaleLowerCase('zh-Hant').includes(q));
 }
@@ -50,7 +50,7 @@ export function sanitizeReaderPreferences(value={}){
  };
 }
 export function safeDetailPath(path){
- if(typeof path!=='string'||!/^stories\/(?:T[1-6]-\d+|G-\d+)\.json$/.test(path))
+ if(typeof path!=='string'||!/^stories\/(?:T[1-6]-\d+|G-\d+|P[1-6]-\d+)\.json$/.test(path))
   throw Error('非法故事資料路徑');
  return path;
 }
@@ -59,7 +59,7 @@ export function validateReaderIndex(index){
   throw Error('故事索引格式不符');
  const ids=new Set();
  for(const story of index.stories){
-  if(!/^(?:T[1-6]-\d+|G-\d+)$/.test(story.storyId??'')||ids.has(story.storyId))
+  if(!/^(?:T[1-6]-\d+|G-\d+|P[1-6]-\d+)$/.test(story.storyId??'')||ids.has(story.storyId))
    throw Error('故事索引ID重複或錯誤');
   ids.add(story.storyId);
   if(story.detail!=='stories/'+story.storyId+'.json')throw Error('故事資料路徑與ID不符');
@@ -68,6 +68,7 @@ export function validateReaderIndex(index){
  return index.stories;
 }
 export function validateReaderDetail(detail,summary){
+ if(detail?.storyId===summary.storyId&&typeof detail.previewIssue==='string'&&typeof detail.sourceMarkdown==='string')return detail;
  if(!detail||detail.storyId!==summary.storyId||!Array.isArray(detail.options)||detail.options.length!==4||
  !Array.isArray(detail.results)||detail.results.length!==8||!detail.matrix)
   throw Error('故事資料不完整或ID不符');

@@ -45,9 +45,8 @@
     "content:audit": "node scripts/audit-content.mjs",
     "content:audit:strict": "node scripts/audit-content.mjs --strict",
     "content:draft-check": "node scripts/check-story-draft.mjs",
-    "content:production": "node scripts/manage-story-production.mjs",
+    "content:production": "node scripts/check-story-production.mjs",
     "test:story-draft": "node --test test/story-draft-validator.test.js",
-    "test:production-ledger": "node --test test/story-production-ledger.test.js",
     "content:state-matrix": "node scripts/story-state-matrix.mjs"
   },
   "devDependencies": {

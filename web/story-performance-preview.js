@@ -130,12 +130,12 @@ export function renderStoryPerformancePreview(state,modeControl){
     <option value="${AVG_DEMO_ID}"${demo?' selected':''}>完整演出示範</option>
     <optgroup label="已發布正式故事">${published}</optgroup>
    </select></label>
+   ${state.preview?.detail.storyId===state.storyId?renderPreviewCastControls(state.preview,state.castSelection):''}
    <button type="button" data-action="avg-start"${working?' disabled':''}>${startLabel}</button>
    ${state.indexError?'<button type="button" data-action="avg-reload-index">重新載入正式故事</button>':''}
    ${resultControl}
    <button type="button" data-action="dev-center">返回測試中心</button>
   </nav>
-  ${state.preview?.detail.storyId===state.storyId?renderPreviewCastControls(state.preview,state.castSelection):''}
   ${projection?renderStoryView(projection.view):'<section class="avg-preview-empty">選擇試演內容後開始測試。</section>'}
   <p class="ui2-preview-caption" role="status">${esc(state.error|| (working?'正在載入故事…':activeLabel?activeLabel+'｜'+available+(state.showingResult?' 八種結果皆可手動試演。':'') : '試演不會改動玩家存檔。'))} ${esc(state.indexError)} <span data-avg-background-status></span></p>
  </main>`};

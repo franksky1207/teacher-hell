@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="《教師荒謬地獄》已鎖定事件故事的只讀全文閱讀器">
+  <meta name="description" content="《教師荒謬地獄》事件故事的只讀全文閱讀器">
   <title>事件故事全文閱讀器｜教師荒謬地獄</title>
-  <link rel="stylesheet" href="./reader.css?v=c8e50a9e92a6b213ca89e1635d6be8d093e14017">
-  <script type="module" src="./reader.js?v=c8e50a9e92a6b213ca89e1635d6be8d093e14017"></script>
+  <link rel="stylesheet" href="./reader.css?v=da810197bfbbb7e1064d2c9227a6461c53d51b5b">
+  <script type="module" src="./reader.js?v=da810197bfbbb7e1064d2c9227a6461c53d51b5b"></script>
 </head>
 <body data-theme="paper">
   <a class="skip-link" href="#reader">跳到故事正文</a>
@@ -48,6 +48,7 @@
           <button type="button" class="quiet-button" id="clear-filters">清除篩選</button>
         </div>
         <div class="list-meta muted" id="list-meta" aria-live="polite"></div>
+        <p id="catalog-warnings" class="muted"></p>
         <div id="story-list" class="story-list" role="list"></div>
       </aside>
       <main class="reader" id="reader" tabindex="-1">
@@ -65,7 +66,8 @@
             <h2 id="story-title"></h2>
             <p id="story-subtitle" class="muted"></p>
           </header>
-          <div class="reading-sections">
+          <pre id="source-preview" class="section-body story-prose" hidden></pre>
+          <div id="structured-preview" class="reading-sections">
             <section aria-labelledby="summary-heading" class="reader-section">
               <div class="section-head"><h3 id="summary-heading">事件起因與創作摘要</h3><button type="button" class="section-toggle quiet-button" data-target="summary-content" aria-expanded="true">收合</button></div>
               <div id="summary-content" class="section-body"></div>
@@ -83,7 +85,7 @@
               <div id="results-content" class="section-body"></div>
             </section>
             <section aria-labelledby="technical-heading" class="reader-section technical">
-              <div class="section-head"><h3 id="technical-heading">因果、數值與原始稿</h3><button type="button" class="section-toggle quiet-button" data-target="technical-content" aria-expanded="false">展開</button></div>
+              <div class="section-head"><h3 id="technical-heading">因果與數值</h3><button type="button" class="section-toggle quiet-button" data-target="technical-content" aria-expanded="false">展開</button></div>
               <div id="technical-content" class="section-body" hidden></div>
             </section>
           </div>

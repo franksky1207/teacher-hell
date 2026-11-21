@@ -1,7 +1,7 @@
 import {
  filterStories, selectOptions, neighboringIds, sanitizeReaderPreferences, topicDisplayName, poolDisplayName,
  safeDetailPath, validateReaderIndex, validateReaderDetail, readerTechnicalTables, READER_STATES
-} from './reader-core.js?v=c8e50a9e92a6b213ca89e1635d6be8d093e14017';
+} from './reader-core.js?v=da810197bfbbb7e1064d2c9227a6461c53d51b5b';
 
 const $=id=>document.getElementById(id);
 const state={all:[],filtered:[],selected:null,detail:null,request:0,cache:new Map(),
@@ -113,7 +113,7 @@ function addTechnical(detail){
  const tags=detail.tags?.join('、')||'無';
  const info=make('div','detail-list');
  for(const [label,value] of [
-  ['正式故事ID',detail.storyId],['草稿編號',detail.draftRef],
+  ['正式故事ID',detail.storyId],
   ['類型／主題',detail.type+'／'+(detail.topicId||'無')],
   ['正式故事池',detail.poolId||'無'],['配額日期',detail.quotaDate||'無'],
   ['四碼種子',detail.seedId||'無'],['G分類標籤',tags]
@@ -147,7 +147,7 @@ function addTechnical(detail){
  if(parsed.rows.some(x=>!x.deltaValid||!x.stateValues))
   root.append(make('p','technical-warning','部分數值格式未能解析，請展開原始稿檢查，系統未更動原始數值。'));
 
- // 原始 Markdown 僅供帳本追溯與資料完整性，不在閱讀介面顯示。
+
 }
 function setExpanded(button,expanded){
  const target=$(button.dataset.target);
@@ -163,14 +163,22 @@ function presentStory(detail,record){
  state.detail=detail;
  setText('story-meta',[record.type,record.topicId,record.poolId].filter(Boolean).join(' · '));
  setText('story-title',detail.title);
- setText('story-subtitle',[record.storyId,record.draftRef,record.quotaDate].filter(Boolean).join(' · '));
+ setText('story-subtitle',[record.storyId,record.quotaDate].filter(Boolean).join(' · '));
+ const partial=Boolean(detail.previewIssue);
+ $('structured-preview').hidden=partial;
+ $('source-preview').hidden=!partial;
+ setText('source-preview',partial?detail.sourceMarkdown:'');
+ $('story-content').hidden=false;
+ if(partial){
+  setStatus('此篇以原稿預覽。'+detail.previewIssue);
+  return;
+ }
  addSummary(detail);
  setText('opening-content',detail.opening??'');
  addOptions(detail);
  addResults(detail);
  addTechnical(detail);
  resetSections();
- $('story-content').hidden=false;
  setStatus('');
 }
 function updateNeighbors(){
@@ -206,13 +214,13 @@ function updateSelect(id,values,formatter){
 }
 function syncFilters(){
  const topics=selectOptions(state.all,'topicId',story=>
-  !state.filters.semester||(state.filters.semester==='G'?
-    story.type==='G':story.topicId?.split('-')[0]===state.filters.semester));
+  !state.filters.semester||(['G','P'].includes(state.filters.semester)?
+    story.type===state.filters.semester:story.topicId?.split('-')[0]===state.filters.semester));
  updateSelect('topic',topics,topicDisplayName);
  state.filters.topic=$('topic').value;
  const pools=selectOptions(state.all,'poolId',story=>
-  (!state.filters.semester||(state.filters.semester==='G'?
-    story.type==='G':story.topicId?.split('-')[0]===state.filters.semester))&&
+  (!state.filters.semester||(['G','P'].includes(state.filters.semester)?
+    story.type===state.filters.semester:story.topicId?.split('-')[0]===state.filters.semester))&&
   (!state.filters.topic||story.topicId===state.filters.topic));
  updateSelect('pool',pools,poolDisplayName);
  state.filters.pool=$('pool').value;
@@ -242,6 +250,7 @@ async function selectStory(id,{keepScroll=false}={}){
   let detail=state.cache.get(id);
   if(!detail){
    const url=new URL(safeDetailPath(record.detail),DATA_BASE);
+   if(state.sourceCommit)url.searchParams.set('source',state.sourceCommit);
    const response=await fetch(url,{cache:'no-store'});
    if(!response.ok)throw Error('HTTP '+response.status);
    detail=validateReaderDetail(await response.json(),record);
@@ -269,19 +278,21 @@ function selectAdjacent(direction){
 async function bootstrap(){
  preferences();
  for(const [name,label] of [['T1','T1 高一上'],['T2','T2 高一下'],['T3','T3 高二上'],
-  ['T4','T4 高二下'],['T5','T5 高三上'],['T6','T6 高三下'],['G','G 通用']]){
+  ['T4','T4 高二下'],['T5','T5 高三上'],['T6','T6 高三下'],['G','G 通用'],['P','P 被動事件']]){
   $('semester').add(new Option(label,name));
  }
  const response=await fetch(new URL('./data/index.json',import.meta.url),{cache:'no-store'});
  if(!response.ok)throw Error('索引 HTTP '+response.status+'；目前尚未發布閱讀資料');
  const index=await response.json();
  state.all=validateReaderIndex(index);
+ state.sourceCommit=index.sourceCommit;
+ setText('catalog-warnings',(index.warnings??[]).join('；'));
  syncFilters();
  const fromHash=decodeURIComponent(location.hash.slice(1));
  const first=state.all.find(x=>x.storyId===fromHash)?.storyId||
   state.all.find(x=>x.storyId===stored(LAST_KEY))?.storyId||state.all[0]?.storyId;
  if(first)await selectStory(first,{keepScroll:true});
- else setStatus('目前尚無已鎖定故事。');
+ else setStatus('目前尚無故事。');
 }
 $('theme').addEventListener('change',e=>updatePrefs({theme:e.target.value}));
 $('font-less').addEventListener('click',()=>updatePrefs({size:state.prefs.size-1}));

@@ -411,3 +411,7 @@
 @media(max-width:650px),(orientation:portrait){
  .avg-story-preview{background-image:linear-gradient(180deg,rgba(7,18,35,.32),rgba(7,18,35,.18) 65%,rgba(7,18,35,.44)),var(--scene-preview-mobile,linear-gradient(180deg,#30445b,#131f33))}
 }
+
+/* AVG 開發試演專用角色選單：不影響正式遊戲畫面 */
+.avg-cast-choices{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;margin:.4rem .9rem;padding:.5rem .8rem;border:1px solid rgba(198,175,125,.55);border-radius:.6rem;background:rgba(17,30,47,.8)}
+.avg-cast-choices legend{padding:0 .4rem;font-size:.85rem}.avg-cast-choices label{display:flex;gap:.35rem;align-items:center;flex-wrap:wrap;font-size:.85rem}.avg-cast-choices select{max-width:12rem}

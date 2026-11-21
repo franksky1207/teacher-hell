@@ -1,0 +1,76 @@
+name: T1-2 one-time full story acceptance
+on:
+  push:
+    branches: [content/events-production-v1]
+    paths: ['.github/workflows/t1-2-one-time-formal-audit.yml']
+permissions:
+  contents: read
+jobs:
+  t1-2-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Audit T1-031-060 with catalog uniqueness and fixed seed/date rules
+        shell: bash
+        run: |
+          node scripts/check-story-production.mjs audit > /tmp/t1-2-audit.json
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const j=JSON.parse(fs.readFileSync('/tmp/t1-2-audit.json','utf8'));
+          const ids=Array.from({length:30},(_,i)=>'T1-'+String(i+31).padStart(3,'0'));
+          const bad=ids.filter(id=>!j.reports.find(x=>x.storyId===id)?.mechanicalPass);
+          console.log('T1-2 mechanical='+String(30-bad.length)+'/30, catalog issues='+j.issues.length);
+          if(bad.length){for(const id of bad){const r=j.reports.find(x=>x.storyId===id);console.log(id,JSON.stringify(r?.errors||r))}process.exitCode=1}
+          if(j.issues.length){console.log(JSON.stringify(j.issues.slice(0,20)));process.exitCode=1}
+          NODE
+      - name: Check that all 30 stored evidence versions match checked-out Git blob
+        shell: bash
+        run: |
+          mkdir -p /tmp/t1-2-evidence
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {execFileSync} from 'node:child_process';
+          const root='content/events-v1/T/T1-高一上/T1-2-高中新生適應/';
+          const expected=new Set(Array.from({length:30},(_,i)=>'T1-'+String(i+31).padStart(3,'0')));
+          let count=0;
+          for(const [a,b]of [[31,35],[36,40],[41,45],[46,50],[51,55],[56,60]]){
+            const f=root+'驗收紀錄/T1-'+String(a).padStart(3,'0')+'-'+String(b).padStart(3,'0')+'-正式驗收紀錄.json';
+            const data=JSON.parse(fs.readFileSync(f,'utf8'));
+            if(data.records.length!==5)throw Error('expected 5 reviews in '+f);
+            for(const rec of data.records){
+              if(!expected.delete(rec.story_id))throw Error('duplicate or unexpected '+rec.story_id);
+              const story=root+'單一池/'+rec.story_id+'.md';
+              const actual=execFileSync('git',['hash-object',story],{encoding:'utf8'}).trim();
+              if(actual!==rec.source_blob_sha)throw Error('STALE evidence '+rec.story_id+' actual '+actual+' saved '+rec.source_blob_sha);
+              fs.writeFileSync('/tmp/t1-2-evidence/'+rec.story_id+'.json',JSON.stringify(rec.review));
+              count++;
+            }
+          }
+          if(expected.size||count!==30)throw Error('missing evidence IDs '+[...expected].join(','));
+          console.log('T1-2 current evidence blobs='+count+'/30');
+          NODE
+      - name: Official CLI review-evidence checks for all 30 T1-2 stories
+        shell: bash
+        run: |
+          failed=0
+          for n in $(seq 31 60); do
+            id=$(printf 'T1-%03d' "$n")
+            if node scripts/check-story-production.mjs audit "$id" --evidence "/tmp/t1-2-evidence/$id.json" > "/tmp/t1-2-evidence/$id.out" 2> "/tmp/t1-2-evidence/$id.err"; then
+              echo "$id review PASS"
+            else
+              echo "$id review FAIL"
+              cat "/tmp/t1-2-evidence/$id.err"
+              head -c 1500 "/tmp/t1-2-evidence/$id.out" || true
+              failed=$((failed+1))
+            fi
+          done
+          echo "T1-2 review evidence=$((30-failed))/30 passed"
+          test "$failed" -eq 0

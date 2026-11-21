@@ -1,6 +1,7 @@
 /** 15-D display-only wardrobe and adult art assignment. No save-schema changes. */
 import {calendarDay,gradeAt} from '../src/calendar/calendar.js';
 import {FULL_SHEET_CASUAL_SCENES} from './full-sheet-preview.js';
+import {STORY_ADULT_POSES} from '../src/runtime/story-performance.js';
 import {NPC_SILHOUETTE_IDS} from './npc-silhouette-preview.js';
 const casual=new Set(FULL_SHEET_CASUAL_SCENES.map(([id])=>id));
 const winterMonths=new Set([11,12,1,2,3]);
@@ -51,7 +52,7 @@ export function stableAdultArt(id,profile={},ageStage='adult'){
  const name='adult-'+(ageStage==='young'?'young-':'')+type+'-0'+index;
  return NPC_SILHOUETTE_IDS.some(entry=>entry.id===name)?name:null;
 }
-export const ADULT_POSES=Object.freeze(['neutral','side','hand-on-hip','arms-open','gesture','weight-shift']);
+export const ADULT_POSES=STORY_ADULT_POSES;
 export function adultPoseForExpression(expression){
  return ({calm:'neutral',happy:'arms-open',angry:'hand-on-hip',sad:'side',surprised:'gesture',embarrassed:'weight-shift'})[expression]??'neutral';
 }

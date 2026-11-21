@@ -1,4 +1,4 @@
-/** 17-D first-release samples: authored, versioned, causal content.
+/** 17-D legacy engineering samples, now assigned G codes (not an active production inventory): authored, versioned, causal content.
  * Three DISTINCT school situations, not three student-name skins.
  * The story-content authority validates and freezes these on load.
  */
@@ -13,7 +13,7 @@ const change=(role,code,delta)=>({role,holder:'person',code,delta});
 const claim=(role,statement,visible=false)=>({role,statement,belief:'uncertain',visible});
 export const PHASE17D_STORIES=[
  {
-  resourceId:'content:17d-study-plan',definitionId:'content:17d-study-plan',version:'1',topicId:'T01-01',status:'ready',choiceContract:'four-v2',
+  resourceId:'content:17d-study-plan',definitionId:'content:17d-study-plan',version:'1',topicId:'G-0001',status:'ready',choiceContract:'four-v2',
   premise:{description:'早自習結束前，學生主動拿來一張連續幾天未完成的讀書計畫表。',data:{type:'study-plan-provided',completed:false}},
   entry:'opening',stages:[
    {id:'opening',pages:[
@@ -39,7 +39,7 @@ export const PHASE17D_STORIES=[
   ]
  },
  {
-  resourceId:'content:17d-student-artwork',definitionId:'content:17d-student-artwork',version:'1',topicId:'T10-04',status:'ready',choiceContract:'four-v2',
+  resourceId:'content:17d-student-artwork',definitionId:'content:17d-student-artwork',version:'1',topicId:'G-0002',status:'ready',choiceContract:'four-v2',
   premise:{description:'午餐時，一名學生主動向教師展示自己畫的班級活動海報草稿。',data:{type:'student-work-shared',publicPermission:false}},
   entry:'opening',stages:[{id:'opening',pages:[
    p(1,'午餐時間，學生拿著一張還沒上色的班級活動海報草稿走到你旁邊。',{scene:'school:classroom'}),
@@ -54,7 +54,7 @@ export const PHASE17D_STORIES=[
   ],next:null}]
  },
  {
-  resourceId:'content:17d-admin-deadline',definitionId:'content:17d-admin-deadline',version:'1',topicId:'T14-01',status:'ready',choiceContract:'four-v2',
+  resourceId:'content:17d-admin-deadline',definitionId:'content:17d-admin-deadline',version:'1',topicId:'G-0003',status:'ready',choiceContract:'four-v2',
   premise:{description:'上課期間以外，行政同仁向導師詢問一份新增調查表能否盡快回覆。',data:{type:'school-admin-request',formalOrder:false}},
   entry:'opening',stages:[{id:'opening',pages:[
    p(1,'你回到辦公室後，行政同仁拿著一份臨時增加的調查表走過來。',{scene:'school:teachers-office'}),

@@ -10,7 +10,7 @@ import { academicEligible,academicState } from './academics.js';
 import { npcGroups } from './autonomy.js';
 import { validateStoryReference } from './story-content.js';
 /** Internal engine contracts. Content/eligibility/weights/lifecycle remain separate. */
-import { TOPIC_IDS } from './topics.js';
+import { isSelectableEventTopicId } from './topics.js';
 import { canonicalData } from '../changes/settlement.js';
 import { targetRecord } from '../changes/targets.js';
 import { requireValue } from '../numeric/record.js';
@@ -32,7 +32,7 @@ export function validateEventDefinitions(definitions){
  for(const d of definitions){
   assertShape(d,['id','topicId','type','content','coreCodes','additionalCodes','weights','directions','eligibility','repetition']);
   identifier(d.id);need(!ids.has(d.id),'Duplicate subtopic / direct-cumulative version');ids.add(d.id);
-  need(TOPIC_IDS.includes(d.topicId)&&['direct','cumulative'].includes(d.type),'Unknown topic/type');
+  need(isSelectableEventTopicId(d.topicId)&&['direct','cumulative'].includes(d.type),'Unknown topic/type');
   assertShape(d.content,['status','version','resourceId']);identifier(d.content.version);identifier(d.content.resourceId);
   need(['unwritten','engineering-test','ready'].includes(d.content.status),'Unknown content status');
   for(const k of ['coreCodes','additionalCodes'])need(Array.isArray(d[k])&&d[k].length===3&&d[k].every(c=>/^(?:[1-9]|1[0-2])-[1-4]$/.test(c)),'Three valid numeric codes required');

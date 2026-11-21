@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 54,
+  "revision": 55,
   "candidates": {
     "T-DRAFT-0001": {
       "draftRef": "T-DRAFT-0001",
@@ -559,23 +559,23 @@
         "G08"
       ],
       "summary": {
-        "事件起因": "第一張課表貼在門外、第二張出現在手機，兩張日期一樣卻指向不同教室，學生已有人準備抱著書包跑到另一層樓。",
-        "核心衝突": "學生及任課老師都希望準時上課，但未核實的圖片不能代替教務確認；教師也不能把制度版次問題歸咎第一位轉傳者。",
-        "導師困境": "導師需決定核對教室代碼、聯絡任課老師、暫留安全位置或先到校內公告處查證，兼顧等待與移動成本。",
-        "故事獨特性": "同日兩份都貌似官方的課表產生教室代碼歧義，而非T1-006的學籍名冊錯置或T1-007的私人言語截圖。"
+        "事件起因": "同日期的紙本及手機課表，星期三第二節分別寫著英文與數學，學生不知道該準備哪一科教材。",
+        "核心衝突": "學生依收到的課表準備教材，教師依授課通知準備上課；資料版本不一致不能歸咎學生沒準備。",
+        "導師困境": "導師要在追查正式版本、核對任課通知、安定學生的教材準備與親自承擔通知工作間取捨。",
+        "故事獨特性": "同日課表對同一節列出不同科目，影響學生備課與教師授課通知；與學籍名冊及私人訊息無關。"
       },
       "seedId": "S1065",
       "storyId": "T1-012",
-      "manuscriptDigest": "7b3aba20a303d7a811ba7d430d640aa35670215d68ea8148f6a7533b79af4745",
+      "manuscriptDigest": "16ea4dfdccccfff05ef7273fe5684db1e73bc92094773ed053da5923f489eb47",
       "attempts": 1,
-      "reason": "遵循故事量產V3：保留主題與正式種子身分，全面重寫人物、選項、八R、NPC及教師四狀態、32格因果權重",
+      "reason": "修改T1-012劇情：普通高中固定教室，兩版課表節次科目不一致，重審四選項、八結果與32格權重",
       "stateRulesVersion": 3,
       "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0012.md",
       "review": {
         "reviewer": "ChatGPT",
         "verdict": "approved",
         "filePath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0012.review.json",
-        "digest": "4b659791dc9ae7e4641e8d4666e29b98867db9f2a19a613d098b7142dc4cf11e",
+        "digest": "0fd81987872f1eb05185e4f174a47fb3cb9157f99601753c458a513a514e3712",
         "possibleDuplicateCount": 11
       },
       "contentHistory": [
@@ -586,9 +586,17 @@
           "manuscriptDigest": "86c6b1de25013a12db509293f97684fbaa9d7de6e6efa9cb2a4e697926c2ec47",
           "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0012.review.json",
           "reviewDigest": "5b0a434ad754b800b274f7c2830a1684a2b6f54833155a89fc5f486269520959"
+        },
+        {
+          "version": 2,
+          "sourceCommit": "e102b7a3733b9d1da29d44295a5c73b785f93e70",
+          "manuscriptPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0012.md",
+          "manuscriptDigest": "7b3aba20a303d7a811ba7d430d640aa35670215d68ea8148f6a7533b79af4745",
+          "reviewPath": "content/events-v1/正式成品/T/T1-高一上/T1-1-首次進班與建班/單一池/T-DRAFT-0012.review.json",
+          "reviewDigest": "4b659791dc9ae7e4641e8d4666e29b98867db9f2a19a613d098b7142dc4cf11e"
         }
       ],
-      "contentVersion": 2
+      "contentVersion": 3
     }
   },
   "history": [
@@ -1077,6 +1085,15 @@
       "seedId": "S1065",
       "storyId": "T1-012",
       "reason": "遵循故事量產V3：保留主題與正式種子身分，全面重寫人物、選項、八R、NPC及教師四狀態、32格因果權重"
+    },
+    {
+      "revision": 55,
+      "action": "edit-locked",
+      "ref": "T-DRAFT-0012",
+      "owner": "ChatGPT",
+      "seedId": "S1065",
+      "storyId": "T1-012",
+      "reason": "修改T1-012劇情：普通高中固定教室，兩版課表節次科目不一致，重審四選項、八結果與32格權重"
     }
   ]
 }

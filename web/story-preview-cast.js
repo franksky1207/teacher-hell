@@ -15,10 +15,29 @@ export function choosePreviewCast(preview,current,role,artId){
  return {selection:{...current,[role]:artId}};
 }
 
+/** 只根據實際會渲染立繪的頁面判斷；電話、訊息、公告等畫面不會顯示人物。 
+ * 一次掃描完整開場及 R1～R8，避免只在特定結果露面的常駐角色被隱藏。
+ * 尚無演出標記的故事保留全部選角，避免資料未完成時誤判。
+ */
+export function visiblePreviewCastRoles(preview){
+ if(!preview?.slots?.size)return new Set();
+ if(!preview.hasAnnotations)return new Set(preview.slots.keys());
+ const visible=new Set();
+ for(const page of [...(preview.pages??[]),...(preview.results??[])]){
+  if(!['dialogue','narration'].includes(page?.presentation))continue;
+  for(const actor of page.cast??[]){
+   if(preview.slots.has(actor.role))visible.add(actor.role);
+  }
+ }
+ return visible;
+}
+
 export function renderPreviewCastControls(preview,selection={}){
  if(!preview?.slots?.size)return '';
+ const visible=visiblePreviewCastRoles(preview);
+ if(!visible.size)return '';
  const kindLabel={student:'學生',guardian:'家長／照顧者',staff:'教職員'};
- const controls=[...preview.slots].map(([role,kind])=>{
+ const controls=[...preview.slots].filter(([role])=>visible.has(role)).map(([role,kind])=>{
   const list=kind==='student'?students.map((id,i)=>[id,'學生 '+id.slice(-3)+(i>=40?'（轉入生）':'')]):NPC_SILHOUETTE_IDS.map(({id,name})=>[id,name]);
   return '<label>'+escapeHtml(role)+'（'+escapeHtml(kindLabel[kind]??'常駐角色')+'） <select data-avg-cast-role="'+escapeHtml(role)+'">'+
    '<option value="">自動分配</option>'+list.map(([id,label])=>'<option value="'+id+'"'+(selection[role]===id?' selected':'')+'>'+escapeHtml(label)+'</option>').join('')+

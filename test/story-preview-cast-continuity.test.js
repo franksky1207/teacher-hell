@@ -33,12 +33,14 @@ test('T1-001 to T1-005: all 40 results compile as independent multi-page stage s
    total+=pages.length;
   }
  }
- assert.equal(total,123);
+ assert.equal(total,124);
 });
 test('T1-004: R3 concludes on student B rather than student A and staff; R8 returns to class',async()=>{
  const p=await readStory(4);
  const lastR3=p.resultPages[2].at(-1);
  assert.equal(lastR3.scene,'school:classroom');
+ assert.deepEqual(cast(p.resultPages[2][0]),['subject_teacher_a']);
+ assert.deepEqual(cast(p.resultPages[2][2]),['student_a','student_b']);
  assert.deepEqual(cast(lastR3),['student_b']);
  assert.match(lastR3.text,/student_b\.name/);
  const lastR8=p.resultPages[7].at(-1);
@@ -57,10 +59,14 @@ test('T1-005: remote family conversations cannot leave guardian sprites in schoo
   assert.deepEqual(cast(p.resultPages[i].at(-1)),['student_a']);
   assert.equal(p.resultPages[i].at(-1).scene,'school:classroom');
  }
- assert.deepEqual(cast(p.resultPages[4][1]),[]);
- assert.equal(p.resultPages[4][1].scene,'school:teachers-office');
- assert.deepEqual(cast(p.resultPages[4][2]),['student_a']);
- assert.equal(p.resultPages[4][2].scene,'school:classroom');
+ const parentFirst=p.resultPages[4];
+ assert.equal(parentFirst[0].scene,'school:teachers-office');
+ assert.deepEqual(cast(parentFirst[0]),[]);
+ assert.equal(parentFirst[1].presentation,'phone');
+ assert.equal(parentFirst[1].speaker,'guardian_a');
+ assert.equal(parentFirst[2].scene,'school:classroom');
+ assert.deepEqual(cast(parentFirst[2]),['student_a']);
+ assert.deepEqual(cast(parentFirst[3]),['student_a']);
  for(const i of [2,6,7]){
   assert.equal(p.resultPages[i].at(-1).scene,'school:teachers-office');
   assert.deepEqual(cast(p.resultPages[i].at(-1)),[]);

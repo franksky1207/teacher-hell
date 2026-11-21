@@ -7,6 +7,9 @@ on:
       - 'src/runtime/story-scenes.js'
       - 'src/runtime/story-content.js'
       - 'src/runtime/story-performance.js'
+      - 'src/runtime/story-music.js'
+      - 'web/music-context.js'
+      - 'test/music-player.test.js'
       - 'src/runtime/story-preview-content.js'
       - 'web/story-performance-preview.js'
       - 'test/story-performance.test.js'
@@ -30,4 +33,4 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - name: Focused exposure and AVG staging checks
-        run: node --test --test-isolation=none test/phase17c-exposure-and-scenes.test.js test/story-performance.test.js
+        run: node --test --test-isolation=none test/phase17c-exposure-and-scenes.test.js test/story-performance.test.js test/music-player.test.js

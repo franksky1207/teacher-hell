@@ -56,7 +56,7 @@ export function renderScenePreview(id='opening',castMode='two',wearMode='auto',m
   }
  }
  const note=costume.wear==='casual'?'便服格位：'+costume.cell:costume.wear;
- return {entry,simulateMissing,html:`<main class="game game--story scene-preview" data-has-scene="${!!entry}">
+ return {entry,context:item.context,simulateMissing,html:`<main class="game game--story scene-preview" data-has-scene="${!!entry}">
   <div class="top">${modeControl??'15-D｜場景與人物演出驗收・示範資料，不寫入存檔'}</div>
   <div class="scene-preview__tools">
    <label>場景 <select data-scene-case>${SCENE_CASES.map(c=>`<option value="${esc(c.id)}" ${item.id===c.id?'selected':''}>${esc(c.label)}</option>`).join('')}</select></label>

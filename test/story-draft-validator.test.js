@@ -342,3 +342,14 @@ test('optional AVG block is validated without changing choices or result weights
  assert.deepEqual(valid,before);
  assert.ok(audit(withCue('school:missing')).errors.some(error=>error.code==='avg_performance'));
 });
+
+
+test('draft music is optional for legacy drafts and may be set only once at story level',()=>{
+ const source=draft(),row='| music｜事件配樂 | touching |';
+ const withMusic=source.replace('## 2｜',row+'\n## 2｜');
+ assert.equal(audit(source).mechanicalPass,true);
+ assert.ok(!audit(withMusic).warnings.includes('尚未指定事件音樂'));
+ for(const invalid of [withMusic.replace('touching','bgm01'),withMusic.replace(row,row+'\n'+row),source+'\n'+row]){
+  assert.ok(audit(invalid).errors.some(error=>error.code==='music'));
+ }
+});

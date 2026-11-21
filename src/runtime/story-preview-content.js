@@ -1,3 +1,4 @@
+import {validateStoryMusic} from './story-music.js';
 import {advanceStoryPerformance,createStoryPerformance} from './story-performance.js';
 
 const pageLine=/^[ \t]*-[ \t]*\*\*(P\d{2,})｜([^\r\n]+?)\*\*：[ \t]?(.*)$/gm;
@@ -80,9 +81,30 @@ function authoredPage(cue,text,speaker,roles){
  return page;
 }
 
+/** The reader export retains the exact Markdown even when its index lacks music. */
+export function storyMusicFromMarkdown(source){
+ let section=null,music;
+ for(const line of source.split(/\r?\n/)){
+  const heading=/^ {0,3}##[ \t]+([1-5])[ \t]*[｜|]/.exec(line);
+  if(heading)section=heading[1];
+  const row=/^[ \t]*\|[ \t]*`?music`?[ \t]*(?:｜[^|]*)?\|(.*)$/.exec(line);
+  if(!row)continue;
+  if(section!=='1')reject('music 只能設定於第 1 區的故事基本資料');
+  if(music!==undefined)reject('每篇只能指定一個 music');
+  const value=/^([^|]*)\|[ \t]*$/.exec(row[1]);
+  if(!value)reject('music 須填單一音樂代碼');
+  music=validateStoryMusic({music:value[1].trim()});
+ }
+ return music;
+}
+
 /** Use the public reader's opening/results and preserve its private mechanics as-is. */
 export function compileStoryPreview(detail,slots=storyPreviewSlots(detail.sourceMarkdown??'')){
  const source=detail.sourceMarkdown??'';
+ const authoredMusic=storyMusicFromMarkdown(source),exportedMusic=validateStoryMusic(detail);
+ if(authoredMusic!==undefined&&exportedMusic!==undefined&&authoredMusic!==exportedMusic)reject('匯出與原稿的事件音樂不一致');
+ const music=exportedMusic??authoredMusic;
+ if(detail.results.some(result=>Object.hasOwn(result,'music')))reject('music 只能設定於整篇故事');
  const blocks=[...source.matchAll(/^[ \t]*```avg[ \t]*\r?\n([\s\S]*?)^[ \t]*```[ \t]*\r?$/gm)];
  const fences=[...source.matchAll(/^[ \t]*```avg[ \t]*\r?$/gm)];
  if(fences.length>1)reject('每篇只能有一個 avg 區塊');
@@ -117,5 +139,5 @@ export function compileStoryPreview(detail,slots=storyPreviewSlots(detail.source
   const page=advanceStoryPerformance(structuredClone(stage),authoredPage(cue,result.text,null,roles),roles);
   return {...page,label:result.title,annotated:true};
  });
- return {pages,results,slots,hasAnnotations:blocks.length>0};
+ return {pages,results,slots,music,hasAnnotations:blocks.length>0};
 }

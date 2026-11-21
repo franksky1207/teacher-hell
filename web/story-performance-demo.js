@@ -42,7 +42,7 @@ const outcomes=[
 ];
 
 export const AVG_DEMO_DETAIL={
- storyId:AVG_DEMO_ID,title:'完整演出示範',quotaDate:'2026-07-20',
+ storyId:AVG_DEMO_ID,title:'完整演出示範',music:'touching',quotaDate:'2026-07-20',
  opening:pages.map(([speaker,text],i)=>'- **P0'+(i+1)+'｜'+speaker+'**：'+text).join('\n'),
  options:['一起核對清單','請教職員聯絡下一組','回教室找另一位同學','先讓學生說明經過'].map((text,i)=>({id:'ABCD'[i],text:'ABCD'[i]+'｜'+text})),
  results:outcomes.map(([title,text],i)=>({id:'R'+(i+1),title,text})),

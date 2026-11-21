@@ -1,3 +1,4 @@
+import {contextMusic,eventMusic,slotActivityKinds} from './music-context.js';
 import {AVG_DEMO_DETAIL,AVG_DEMO_ID} from './story-performance-demo.js';
 export {AVG_DEMO_ID};
 import {compileStoryPreview} from '../src/runtime/story-preview-content.js';
@@ -70,9 +71,8 @@ function sampleWorld(preview){
  const world={identity:{playerId:actors.get('teacher')},position:date&&slot?{date,slotId:slot.id}:null,
   extensions:{'teacher-hell/world':{plan:{startYear,calendarVersion:CALENDAR_VERSION}}},
   numeric:{evolution:{world:{people,registry:{homeClassId:'avg-preview-class',cohorts:[{classId:'avg-preview-class',initialStudentIds:initial}],profiles}}}}};
- const activityIds=new Set(slot?.activityIds??[]);
  return {world,actors,profiles,context:{slotId:slot?.id,dayKind:day?.kind,grade,termId:day?.term?.id??day?.courseSemesterId,
-  activityKinds:day?.activities.filter(activity=>activityIds.has(activity.id)).map(activity=>activity.kind)??[]}};
+  activityKinds:slotActivityKinds(day,slot?.id)}};
 }
 
 export function storyPreviewProjection(preview,state){
@@ -120,7 +120,9 @@ export function renderStoryPerformancePreview(state,modeControl){
  const activeLabel=activeId===AVG_DEMO_ID?'完整演出示範':activeId;
  const startLabel=state.storyId===activeId?'重新開始':'開始測試';
  const published=options||`<option disabled>${state.indexLoading?'載入中…':'目前無可選故事'}</option>`;
- return {entry:projection?.entry,html:`<main class="game game--story ui2-preview avg-story-preview">
+ const sample=state.preview?.sample;
+ const music=eventMusic(state.preview?.music,contextMusic(sample?.context));
+ return {music,entry:projection?.entry,html:`<main class="game game--story ui2-preview avg-story-preview">
   <div class="top">${modeControl}</div>
   <nav class="ui2-preview-tools" aria-label="正式故事測試">
    <label>試演內容 <select data-avg-story${working?' disabled':''}>

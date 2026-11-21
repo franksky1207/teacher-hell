@@ -1,3 +1,4 @@
+import {contextMusic} from '../web/music-context.js';
 /** 15-F integration boundaries: no full-game traversal or persistent writes. */
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -6,7 +7,7 @@ import {projectNotebookPeople,renderNotebookPeople} from '../web/notebook-people
 import {studentArtForActor,projectStoryScene,renderStoryScene} from '../web/story-scene.js';
 import {storyCostume} from '../web/story-art-context.js';
 import {selectScene,sceneImageUrls} from '../web/scene-context.js';
-import {MUSIC_TRACKS,musicMoodForVisible,parseMusicSettings} from '../web/music-player.js';
+import {MUSIC_TRACKS,parseMusicSettings} from '../web/music-player.js';
 
 test('15-F: a student keeps the same identity across story and notebook; display is read-only',()=>{
  const {world}=beginDemo();
@@ -60,9 +61,9 @@ test('15-F: background and soundtrack follow disclosed location; unknown art doe
  const urls=sceneImageUrls(home,'https://example.test/teacher-hell/preview/');
  assert.ok(urls.desktop.includes('/web/assets/backgrounds/desktop/'));
  assert.ok(urls.mobile.includes('/web/assets/backgrounds/mobile/'));
- assert.equal(musicMoodForVisible({sceneName:home.scene,slotId:'private'}),'home');
- assert.equal(musicMoodForVisible({sceneName:office.scene,text:'家長與老師爭執'}),'conflict');
- assert.equal(musicMoodForVisible({sceneName:office.scene,text:'一般行政通知'}),'school');
+ assert.equal(contextMusic({slotId:'private'}),'home');
+ assert.equal(contextMusic({slotId:'p4',text:'家長與老師爭執'}),'school');
+ assert.equal(contextMusic({slotId:'p4',text:'一般行政通知'}),'school');
 });
 
 test('15-F: seven audio keys are immutable source metadata and player preferences stay outside world',()=>{
@@ -70,6 +71,6 @@ test('15-F: seven audio keys are immutable source metadata and player preference
  assert.equal(MUSIC_TRACKS.length,7);
  assert.equal(new Set(MUSIC_TRACKS.map(t=>t.key)).size,7);
  assert.deepEqual(parseMusicSettings('{"enabled":false,"volume":0.27}'),{enabled:false,volume:0.27});
- assert.equal(musicMoodForVisible({moodKey:'unexpected',sceneName:'school-classroom'}),'school');
+ assert.equal(contextMusic({slotId:'early'}),'school');
  assert.equal(JSON.stringify(world),before);
 });

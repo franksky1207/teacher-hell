@@ -9,7 +9,9 @@ export function currentStory(world){
  const candidates=[];
  for(const item of selected){
   const event=world.events.find(e=>e.id===item.eventId);
-  if(!event||!storyContent(world,event.id))continue;
+  if(!event)continue;
+  const content=storyContent(world,event.id);
+  if(!content)continue;
   const state=storyState(world,event.id);
   if(!state||state.mode==='ended')continue;
   const view=readStory(world,event.id);
@@ -19,7 +21,9 @@ export function currentStory(world){
    speaker:projectStoryScene(world,{page}).speaker,text:page.text,own:page.speaker===world.identity.playerId
   }));
   const expressionHistory=new Map(Object.entries(castExpressions));
-  candidates.push({...display,resultConfirmed:state.mode==='result',sceneView:projectStoryScene(world,view,expressionHistory),chatMessages});
+  const musicStart=content.music===undefined?history.find(h=>h.type==='story'&&h.eventId===event.id&&h.data.action.action==='start'):null;
+  const musicOrigin=musicStart?{at:musicStart.at,cursor:musicStart.cursor,order:musicStart.order}:null;
+  candidates.push({...display,music:content.music,musicOrigin,resultConfirmed:state.mode==='result',sceneView:projectStoryScene(world,view,expressionHistory),chatMessages});
  }
  return candidates[0]??null;
 }

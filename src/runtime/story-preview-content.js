@@ -132,12 +132,25 @@ export function compileStoryPreview(detail,slots=storyPreviewSlots(detail.source
   const page=advanceStoryPerformance(stage,authoredPage(cue,text,speaker,roles),roles);
   return {...page,label,annotated:marked};
  });
- const results=detail.results.map(result=>{
+ // An R result may contain one legacy cue or an ordered `pages` sequence.
+ // Every R starts from the same opening snapshot; pages within that R share only
+ // its own state. Original result.text / numeric mechanics remain untouched.
+ const resultPages=detail.results.map(result=>{
+  const marked=Object.hasOwn(cues.results??{},result.id);
   const cue=cues.results?.[result.id];
-  if(!Object.hasOwn(cues.results??{},result.id))return {text:result.text,label:result.title,annotated:false,scene:null,speaker:null,cast:[],presentation:'narration'};
-  // Each result starts from the same visible opening, independent of prior previews.
-  const page=advanceStoryPerformance(structuredClone(stage),authoredPage(cue,result.text,null,roles),roles);
-  return {...page,label:result.title,annotated:true};
+  if(!marked)return [{text:result.text,label:result.title,annotated:false,scene:null,speaker:null,cast:[],presentation:'narration'}];
+  const sequence=Object.hasOwn(cue??{},'pages');
+  if(sequence&&(!object(cue)||Object.keys(cue).length!==1||!Array.isArray(cue.pages)||!cue.pages.length))reject('無效的多頁結果 '+result.id);
+  const state=structuredClone(stage);
+  return (sequence?cue.pages:[cue]).map((part,index)=>{
+   if(!object(part))reject('結果頁面必須是物件 '+result.id);
+   const {text,...acting}=part;
+   if(sequence&&(typeof text!=='string'||!text.trim()))reject('結果演出頁缺少文字 '+result.id);
+   if(!sequence&&Object.hasOwn(part,'text'))reject('單頁結果不可覆寫原文 '+result.id);
+   const page=advanceStoryPerformance(state,authoredPage(acting,sequence?text:result.text,null,roles),roles);
+   return {...page,label:result.title,annotated:true,resultId:result.id,resultPage:index};
+  });
  });
- return {pages,results,slots,music,hasAnnotations:blocks.length>0};
+ const results=resultPages.map(group=>group[0]); // Backward-compatible first-page projection.
+ return {pages,results,resultPages,slots,music,hasAnnotations:blocks.length>0};
 }

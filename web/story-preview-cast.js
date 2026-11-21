@@ -23,7 +23,7 @@ export function visiblePreviewCastRoles(preview){
  if(!preview?.slots?.size)return new Set();
  if(!preview.hasAnnotations)return new Set(preview.slots.keys());
  const visible=new Set();
- for(const page of [...(preview.pages??[]),...(preview.results??[])]){
+ for(const page of [...(preview.pages??[]),...(preview.resultPages?.flat()??preview.results??[])]){
   if(!['dialogue','narration'].includes(page?.presentation))continue;
   for(const actor of page.cast??[]){
    if(preview.slots.has(actor.role))visible.add(actor.role);

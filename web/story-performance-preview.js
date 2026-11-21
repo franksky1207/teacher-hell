@@ -78,7 +78,10 @@ function sampleWorld(preview){
 
 export function storyPreviewProjection(preview,state){
  const {detail,pages,results}=preview;
- const result=state.showingResult?results.find((_,i)=>detail.results[i].id===state.resultId):null;
+ const resultIndex=state.showingResult?detail.results.findIndex(item=>item.id===state.resultId):-1;
+ const group=resultIndex>=0?(preview.resultPages?.[resultIndex]??[results[resultIndex]]):null;
+ const resultPage=Math.max(0,Math.min(group?.length-1??0,state.resultPage??0));
+ const result=group?.[resultPage]??null;
  const page=result??pages[state.page];
  const last=state.page===pages.length-1;
  const chosen=detail.options.find(option=>option.id===state.selected);
@@ -94,15 +97,16 @@ export function storyPreviewProjection(preview,state){
  const entry=selectScene({...context,sceneTag:page.scene});
  let chatMessages;
  if(page.presentation==='chat'){
-  let first=state.page;
-  if(!result)while(first>0&&pages[first-1].presentation==='chat')first--;
-  chatMessages=(result?[page]:pages.slice(first,state.page+1)).map(message=>({
+  let first=result?resultPage:state.page;
+  const sequence=result?group:pages;
+  while(first>0&&sequence[first-1].presentation==='chat')first--;
+  chatMessages=sequence.slice(first,(result?resultPage:state.page)+1).map(message=>({
    speaker:message.speaker==='teacher'?'老師':profiles[actors.get(message.speaker)]?.displayName??'訊息',
    text:display(message.text),own:message.speaker==='teacher'
   }));
  }
- return {entry,page,view:{page:boundPage,sceneView,chatMessages,pageIndex:result?0:state.page,pageCount:result?1:pages.length,
-  canPrevious:!result&&!chosen&&state.page>0,canNext:!result&&!last,
+ return {entry,page,view:{page:boundPage,sceneView,chatMessages,pageIndex:result?resultPage:state.page,pageCount:result?group.length:pages.length,
+  canPrevious:result?resultPage>0:!chosen&&state.page>0,canNext:result?resultPage<group.length-1:!last,
   choices:!result&&last&&!chosen?detail.options.map(option=>({...option,text:display(option.text)})):[],
   confirmation:!result&&chosen?{optionId:chosen.id,text:display(chosen.text)}:null}};
 }

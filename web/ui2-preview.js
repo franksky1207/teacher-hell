@@ -41,12 +41,12 @@ export function ui2PreviewProjection(state){
   waiting:false,canResume:false,ended:false,
   sceneView:{label:'開發驗收場景',speaker,cast}};
 }
-export function renderUi2Preview(state){
+export function renderUi2Preview(state,modeControl=null){
  const chosen=UI2_CASES.find(x=>x[0]===state.caseId);
  const desktop=new URL('./web/assets/backgrounds/desktop/school-classroom-day.webp',document.baseURI).href;
  const mobile=new URL('./web/assets/backgrounds/mobile/school-classroom-day.webp',document.baseURI).href;
  return `<main class="game game--story ui2-preview" style="--ui2-bg-desktop:url('${desktop}');--ui2-bg-mobile:url('${mobile}')">
-  <div class="top">UI-2｜正式劇情畫面視覺驗收・示範資料，不會寫入遊戲</div>
+  <div class="top">${modeControl??'UI-2｜正式劇情畫面視覺驗收・示範資料，不會寫入遊戲'}</div>
   <nav class="ui2-preview-tools" aria-label="劇情預覽控制">
    <label>情境 <select data-ui2-case>${UI2_CASES.map(([id,label])=>`<option value="${id}" ${state.caseId===id?'selected':''}>${escape(label)}</option>`).join('')}</select></label>
    <label>左邊表情 <select data-ui2-left-expression>${expressions.map((x,i)=>`<option value="${i}" ${state.leftExpression===i?'selected':''}>${labels[i]}</option>`).join('')}</select></label><label>右邊表情 <select data-ui2-right-expression>${expressions.map((x,i)=>`<option value="${i}" ${state.rightExpression===i?'selected':''}>${labels[i]}</option>`).join('')}</select></label>

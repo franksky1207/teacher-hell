@@ -1,3 +1,4 @@
+import {replayStoryPerformance} from './story-performance.js';
 import {validateIssueReservation,issueReservationDefinition,issueFollowupAllowed} from './event-candidates.js';
 import {boundRoles,validateBoundSelection} from './issue-candidates.js';
 import {compileConsequences} from './story-consequences.js';
@@ -69,7 +70,16 @@ export function compileStory(w,op,{panelWitness=false,compilerContract=null,view
   need(op.action==='select'?typeof op.optionId==='string':op.optionId===null,'option only on select');
  if(op.action==='start'){need(!previous,'already started');
   for(const stage of c.stages)for(const option of optionsOf(stage))for(const result of [option.outcome,...(option.variants??[]).map(v=>v.outcome)])for(const change of result.changes){const target={kind:change.role==='teacher'?`player-${change.holder}`:'person',id:change.role==='teacher'?w.identity.playerId:roleActor(w,e,change.role)};need(numericContext?numericContext.has(target,change.code):Object.hasOwn(targetRecord(w.numeric.evolution.world,target),change.code),'missing outcome field on bound actor');}
-  for(const stage of c.stages){for(const page of stage.pages)for(const actor of [...page.cast.map(a=>a.role),...(page.speaker?[page.speaker]:[])])need(actor!=='companion'||e.participantIds[1],'missing cast binding');for(const option of optionsOf(stage))for(const result of [option.outcome,...(option.variants??[]).map(v=>v.outcome)])for(const claim of result.claims)need(claim.role!=='companion'||e.participantIds[1],'missing claim actor');}
+  for(const stage of c.stages){
+   for(const page of stage.pages){
+    const cast=page.cast?.map(a=>a.role)??page.performance?.enter??[];
+    for(const role of cast){
+     const actor=storyPageActor(w,e,c,reservation,role);
+     need(actor&&actor!==w.identity.playerId,'missing NPC cast binding');
+    }
+   }
+   for(const option of optionsOf(stage))for(const result of [option.outcome,...(option.variants??[]).map(v=>v.outcome)])for(const claim of result.claims)need(claim.role!=='companion'||e.participantIds[1],'missing claim actor');
+  }
   e.choice=carrier(c,c.entry,state.choiceOrder);
   if(c.premise){const fid=createId('fact',[e.id,c.version,'premise']),subjects=[...new Set([...e.participantIds,w.identity.playerId])];operations.push({type:'fact',id:fid,eventId:e.id,stageId:e.stageId,subjectIds:subjects,witnessIds:subjects,description:c.premise.description,data:structuredClone(c.premise.data),categoryCodes:[],causeIds:[]},{type:'reveal',actorId:w.identity.playerId,factId:fid,source:{kind:'observation',actorId:w.identity.playerId,basisFactId:fid}});state.basisFactId=fid;}
  }
@@ -145,12 +155,26 @@ export function guardStoryOperation(w,op,internal){
  if(!id&&op.claimId){const f=r(w).claims.find(c=>c.id===op.claimId&&c.versionId===op.versionId)?.factId;id=r(w).facts.find(x=>x.id===f)?.eventId;}
  if(id&&['stage','result','confirm-choice','fact','link-fact','claim','learn','belief','reveal','event-lifecycle','event-exposure'].includes(op.type))need(!storyContent(w,id),'playable consequences require story operation');
 }
+function storyPageActor(w,event,content,selected,role){
+ if(role==='teacher')return w.identity.playerId;
+ const binding=Object.hasOwn(content.roleBindings??{},role)?content.roleBindings[role]:null;
+ if(binding)return binding.candidateRole?boundRoles(selected)[binding.candidateRole]:binding.personId;
+ return event.participantIds[role==='companion'?1:0];
+}
 export function readStory(w,eventId){
  const c=storyContent(w,eventId),state=storyState(w,eventId);need(c&&state,'story not started');const s=c.stages.find(s=>s.id===state.stage),e=w.events.find(e=>e.id===eventId);
  const selected=r(w).history.filter(h=>h.type==='event-selection').flatMap(h=>h.data.selected).find(s=>s.eventId===eventId);
- const actor=role=>role==='teacher'?w.identity.playerId:c.roleBindings?.[role]?(c.roleBindings[role].candidateRole?boundRoles(selected)[c.roleBindings[role].candidateRole]:c.roleBindings[role].personId):e.participantIds[role==='companion'?1:0];
- const p=s.pages[state.page];
- return {eventId,page:{...structuredClone(p),speaker:p.speaker===null?null:actor(p.speaker),cast:p.cast.map(a=>({...a,actorId:actor(a.role)}))},pageIndex:state.page,pageCount:s.pages.length,
+ const actor=role=>storyPageActor(w,e,c,selected,role);
+ const roles=new Set(['teacher','participant','companion',...Object.keys(c.roleBindings??{})]);
+ const bindPage=p=>{
+  const {performance,...page}=structuredClone(p);
+  return {...page,speaker:p.speaker===null?null:actor(p.speaker),cast:p.cast.map(a=>({...a,actorId:actor(a.role)}))};
+ };
+ const staged=replayStoryPerformance(s.pages,state.page,roles);
+ const page=bindPage(staged.page);
+ const chatPages=staged.chatPages.map(bindPage);
+ const castExpressions=Object.fromEntries(staged.page.cast.map(a=>[a.role,staged.looks.get(a.role)?.expression??'calm']));
+ return {eventId,page,castExpressions,...(chatPages.length?{chatPages}:{}),pageIndex:state.page,pageCount:s.pages.length,
  canPrevious:state.mode==='reading'&&state.page>0,canNext:state.mode==='reading'&&state.page<s.pages.length-1,
  choices:state.mode==='reading'&&state.page===s.pages.length-1?state.choiceOrder.map(id=>optionsOf(s).find(o=>o.id===id)).map(o=>({id:o.id,text:o.text})):[],
  confirmation:state.mode==='confirming'?{optionId:state.pending,text:optionsOf(s).find(o=>o.id===state.pending).text}:null,

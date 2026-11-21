@@ -6,6 +6,10 @@ on:
       - 'src/runtime/student-exposure.js'
       - 'src/runtime/story-scenes.js'
       - 'src/runtime/story-content.js'
+      - 'src/runtime/story-performance.js'
+      - 'src/runtime/story-preview-content.js'
+      - 'web/story-performance-preview.js'
+      - 'test/story-performance.test.js'
       - 'web/scene-context.js'
       - 'web/story-scene.js'
       - 'test/phase17c-exposure-and-scenes.test.js'
@@ -25,5 +29,5 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --ignore-scripts
-      - name: Only 17-C read-only exposure and authored-scene checks
-        run: node --test --test-isolation=none test/phase17c-exposure-and-scenes.test.js
+      - name: Focused exposure and AVG staging checks
+        run: node --test --test-isolation=none test/phase17c-exposure-and-scenes.test.js test/story-performance.test.js

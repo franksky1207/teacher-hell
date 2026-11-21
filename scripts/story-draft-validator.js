@@ -1,3 +1,4 @@
+import {compileStoryPreview} from '../src/runtime/story-preview-content.js';
 import {resolveTopicPool} from './story-production-ledger.js';
 /** 17D Markdown V1 draft checker. Read-only: not a game engine or approval. */
 const personal=new Set('1-1 1-2 1-3 1-4 2-1 2-2 2-3 2-4 3-1 3-2 3-3 3-4 4-1 4-2 4-3 4-4 6-1 6-2 6-3 6-4 7-1 7-2 7-3 7-4 8-3 8-4 11-1 11-2'.split(' '));
@@ -187,6 +188,15 @@ export function validateStoryDraft(md,{stage='full',seeds=new Map(),topics=new S
   for(const item of zeros)if(!why.includes(item))fail('zero_reason','缺少 '+item+' 的理由');
   if(!zeros.length&&unfilled(why))fail('zero_reason','沒有0時填「無」');
   warnings.push('程式不判斷32組真實敘事因果、角色知情與跨批重複；須由同一創作AI另行檢查並留下證據。');
+ }
+ if(stage!=='summary'&&/^\s*```avg(?:\s|$)/m.test(md)){
+  const opening=four.split('### 開場')[1]?.split('### 四個最終教師選項')[0]??'';
+  const results=[...five.matchAll(/^### (R[1-8])｜([^\r\n]*)/gm)]
+   .map(([,id,title])=>({id,title,text:''}));
+  // At choices stage the results may not have been authored yet.
+  const previewResults=stage==='full'?results:Array.from({length:8},(_,i)=>({id:'R'+(i+1),title:'',text:''}));
+  try{compileStoryPreview({sourceMarkdown:md,opening,results:previewResults},slots);}
+  catch(error){fail('avg_performance',error.message);}
  }
  return {stage,mechanicalPass:errors.length===0,errors,warnings,details:{stateRulesVersion:2,stateDistribution,choiceFlags,seedId:sid,resultsChecked:resultCount,matrix:matrix?Object.fromEntries(matrix):null}};
 }

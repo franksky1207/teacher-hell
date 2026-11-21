@@ -82,7 +82,8 @@ export async function exportReaderData({storyRoot=join(ROOT,'content/events-v1')
    story={...readerRecord(entry),sourceMarkdown:markdown,previewIssue:error.message};
   }
   const filename='stories/'+storyId+'.json';
-  generated.push([filename,JSON.stringify(story)]);
+  // Bind each detail to the exact release snapshot that produced the index.
+  generated.push([filename,JSON.stringify({...story,sourceCommit,sourceBranch})]);
   index.push({...readerRecord(entry),detail:filename});
  }
  const staging=dir+'.staging-'+process.pid;

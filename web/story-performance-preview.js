@@ -15,17 +15,20 @@ const hasIds=(items,ids)=>Array.isArray(items)&&items.length===ids.length&&ids.e
 export async function loadStoryIndex(base){
  const index=await readJson(new URL('index.json',base));
  if(index?.schemaVersion!==1||!Array.isArray(index.stories)||index.count!==index.stories.length)throw Error('故事索引格式不符');
+ if(typeof index.sourceCommit!=='string'||!index.sourceCommit||typeof index.sourceBranch!=='string'||!index.sourceBranch)throw Error('故事索引缺少來源發布版本');
  const ids=new Set();
  for(const item of index.stories){
   if(!validId(item.storyId)||ids.has(item.storyId)||item.detail!=='stories/'+item.storyId+'.json')throw Error('故事索引格式不符');
   ids.add(item.storyId);
  }
- return index.stories;
+ return index.stories.map(item=>({...item,sourceCommit:index.sourceCommit,sourceBranch:index.sourceBranch}));
 }
 
 export async function loadStoryPreview(base,summary){
  if(!validId(summary.storyId))throw Error('故事編號不符');
  const detail=await readJson(new URL('stories/'+summary.storyId+'.json',base));
+ if(detail?.sourceCommit!==summary.sourceCommit||detail?.sourceBranch!==summary.sourceBranch)
+  throw Error('故事索引與內容版本不同，請重新開始測試（索引 '+summary.sourceCommit?.slice(0,8)+'、故事 '+(detail?.sourceCommit?.slice(0,8)??'未知')+'）');
  if(detail?.storyId!==summary.storyId||typeof detail.opening!=='string'||
   !hasIds(detail.options,[...'ABCD'])||!hasIds(detail.results,Array.from({length:8},(_,i)=>'R'+(i+1))))throw Error('這篇故事的開場、四個選項或八種結果不完整');
  return preparePreview(detail);

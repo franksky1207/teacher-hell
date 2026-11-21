@@ -101,12 +101,19 @@ async function startAvgPreview(){
   Object.assign(avgPreview,{preview:loadAvgDemo(),castSelection:{},page:0,resultPage:0,selected:null,showingResult:false,resultId:'R1',error:''});
   showFormalPreview();return;
  }
- const summary=avgPreview.index.find(item=>item.storyId===avgPreview.storyId);
+ const requestedId=avgPreview.storyId;
+ const summary=avgPreview.index.find(item=>item.storyId===requestedId);
  if(!summary)return;
  avgPreview.loading=true;avgPreview.error='';showFormalPreview();
  try{
-  const preview=await loadStoryPreview(avgPreview.base,summary);
-  const resultId=avgPreview.preview?.detail.storyId===summary.storyId?avgPreview.resultId:preview.detail.results[0].id;
+  // Refresh the index on each rehearsal start: the source release can change
+  // after the story dropdown was initially loaded.
+  const freshIndex=await loadStoryIndex(avgPreview.base);
+  const currentSummary=freshIndex.find(item=>item.storyId===requestedId);
+  if(!currentSummary)throw Error('這篇故事已不在最新版故事清單');
+  avgPreview.index=freshIndex;
+  const preview=await loadStoryPreview(avgPreview.base,currentSummary);
+  const resultId=avgPreview.preview?.detail.storyId===requestedId?avgPreview.resultId:preview.detail.results[0].id;
   Object.assign(avgPreview,{preview,castSelection:{},page:0,resultPage:0,selected:null,showingResult:false,resultId});
  }catch(error){avgPreview.error='無法開始測試。'+error.message;}
  finally{avgPreview.loading=false;if(screen==='avg-formal')showFormalPreview();}

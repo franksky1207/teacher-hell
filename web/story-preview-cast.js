@@ -24,7 +24,7 @@ export function renderPreviewCastControls(preview,selection={}){
    '<option value="">自動分配</option>'+list.map(([id,label])=>'<option value="'+id+'"'+(selection[role]===id?' selected':'')+'>'+escapeHtml(label)+'</option>').join('')+
    '</select></label>';
  }).join('');
- return '<fieldset class="avg-cast-choices" aria-label="AVG 試演人物"><legend>試演選角（不影響正式遊戲）</legend>'+controls+'</fieldset>';
+ return '<span class="avg-cast-choices" role="group" aria-label="人物外貌選擇">'+controls+'</span>';
 }
 
 export function previewCastWorld(preview,selection={}){

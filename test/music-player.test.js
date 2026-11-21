@@ -59,3 +59,13 @@ test('AVG demo keeps touching through dialogue, confirmation and every result',(
  for(const option of preview.detail.options)assert.equal(music({page:7,selected:option.id}),'touching');
  for(const outcome of preview.detail.results)assert.equal(music({page:7,showingResult:true,resultId:outcome.id}),'touching');
 });
+
+// Keep the UI call wired: a correct context resolver alone does not play the track.
+test('formal game screen forwards contextual track to MusicPlayer via set',async()=>{
+ const {readFile} = await import('node:fs/promises');
+ const source=await readFile(new URL('../web/game.js',import.meta.url),'utf8');
+ const game=source.split('function showGame(){')[1]?.split('function h4Controls(')[0];
+ assert.ok(game,'showGame body is present');
+ assert.match(game,/const visibleStory\s*=/);
+ assert.match(game,/set\(`<main[\s\S]*?<\/main>`,gameMusic\(w,visibleStory,sceneContext\)\);mountSceneBackground/);
+});

@@ -15,22 +15,53 @@ export function storyOpeningPages(opening){
  }));
 }
 
+const slotHeading=/^[ \t]*[-*+][ \t]+\*\*常駐數值角色槽位\*\*[：:]?[ \t]*\r?$/m;
+const sectionThree=/^ {0,3}##[ \t]+3[ \t]*[｜|][^\r\n]*\r?\n([\s\S]*?)(?=^ {0,3}##[ \t]+|(?![\s\S]))/m;
+const slotKey=/^[a-z][a-z0-9_]*$/;
+
+export function storySlotRows(section){
+ const heading=slotHeading.exec(section);
+ if(!heading)return [];
+ const lines=section.slice(heading.index+heading[0].length).trimStart().split(/\r?\n/);
+ const table=[];
+ for(const line of lines){
+  const row=line.trim();
+  if(!row.startsWith('|')||!row.endsWith('|'))break;
+  table.push(row.slice(1,-1).split('|').map(cell=>cell.trim().replace(/^`([^`]+)`$/,'$1')));
+ }
+ return table.filter(row=>row[0]!=='槽位鍵'&&!row.every(cell=>/^:?-+:?$/.test(cell)));
+}
+
+export function storySlotIdentity(description){
+ return description.split(/[，,；;：:、]/,1)[0].trim();
+}
+
+export function storySlotKind(identity){
+ const role=identity.match(/(?<guardian>(?:本班學生(?:的)?(?:合法)?(?:家長|實際照顧者))|家長|照顧者)|(?<student>本班學生|導師班學生|學生)|(?<staff>教職|教師|老師|校長|行政|護理|輔導|學務|教務|支援)/)?.groups;
+ if(role?.guardian)return 'guardian';
+ if(role?.student)return 'student';
+ if(role?.staff||/校內/.test(identity))return 'staff';
+ return null;
+}
+
 export function storyPreviewSlots(markdown){
- const slotPart=markdown.split('- **常駐數值角色槽位**')[1]?.split('- **無數值情境角色**')[0]??'';
- const slots=new Map();
- for(const [,role,type] of slotPart.matchAll(/^[ \t]*\|[ \t]*`?([a-z][a-z0-9_]*)`?[ \t]*\|([^|]+)\|/gm)){
-  if(role==='teacher')continue;
-  const identity=type.split(/[，,；;：:]/,1)[0];
-  if(/家長|照顧者/.test(identity))slots.set(role,'guardian');
-  else if(/學生/.test(identity))slots.set(role,'student');
-  else if(/教職|教師|老師|校長|護理|輔導|學務|教務|支援/.test(identity))slots.set(role,'staff');
+ const section=sectionThree.exec(markdown)?.[1]??'';
+ const slots=new Map(),seen=new Set();
+ for(const [role,description,...constraints] of storySlotRows(section)){
+  if(!slotKey.test(role)||role==='teacher'||constraints.length!==2)reject('非法角色槽位 '+role);
+  if(seen.has(role))reject('重複角色槽位 '+role);
+  seen.add(role);
+  const kind=storySlotKind(storySlotIdentity(description));
+  if(kind)slots.set(role,kind);
  }
  return slots;
 }
 
-function legacySpeaker(label,roles){
+function legacySpeaker(label,roles,marked){
  if(!label||label==='旁白')return null;
- const key=label.match(nameToken)?.[1]??label;
+ const token=label.match(nameToken)?.[1];
+ const key=token??label;
+ if(marked&&(token||slotKey.test(label))&&!roles.has(key))reject('未知說話者 '+key);
  return roles.has(key)?key:null;
 }
 
@@ -73,7 +104,7 @@ export function compileStoryPreview(detail,slots=storyPreviewSlots(detail.source
   if(Object.hasOwn(cues.opening??{},id))staged=true;
   if(!staged)return {text,label,annotated:false,scene:null,speaker:null,cast:[],presentation:'narration'};
   const marked=Object.hasOwn(cues.opening??{},id);
-  const inferred=legacySpeaker(label,roles);
+  const inferred=legacySpeaker(label,roles,marked);
   const speaker=marked||inferred==='teacher'||stage.cast.some(actor=>actor.role===inferred)?inferred:null;
   const cue=marked?cues.opening[id]:{};
   const page=advanceStoryPerformance(stage,authoredPage(cue,text,speaker,roles),roles);

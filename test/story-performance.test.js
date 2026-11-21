@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import {DEMO_STORY,validateStory} from '../src/runtime/story-content.js';
 import {replayStoryPerformance} from '../src/runtime/story-performance.js';
 import {compileStoryPreview,storyPreviewSlots} from '../src/runtime/story-preview-content.js';
-import {storyPreviewProjection} from '../web/story-performance-preview.js';
+import {AVG_DEMO_ID,loadAvgDemo,renderStoryPerformancePreview,storyPreviewProjection} from '../web/story-performance-preview.js';
 import {renderStoryView} from '../web/story-view.js';
 
 const roles=new Map([['student_a','student'],['staff_a','staff'],['guardian_a','guardian']]);
@@ -89,13 +90,97 @@ test('missing cues remain text-only and invalid cues fail clearly',()=>{
 });
 
 
-test('preview identities follow declared roles, including student descriptions mentioning guardians',()=>{
- const source=[
-  '- **常駐數值角色槽位**：',
-  '| learner | 現任本班學生，擔心家長失望 |',
-  '| caregiver | 本班學生的合法家長或實際照顧者 |',
-  '| colleague | 本班規範任課教師 |',
-  '- **無數值情境角色**：無'
- ].join('\n');
- assert.deepEqual([...storyPreviewSlots(source)],[['learner','student'],['caregiver','guardian'],['colleague','staff']]);
+const published=JSON.parse(readFileSync(new URL('./fixtures/published-story-slots.json',import.meta.url)));
+const expectedRoles=[
+ [['student_a','student']],
+ [['student_a','student'],['student_b','student'],['subject_teacher_a','staff']],
+ [['guardian_a','guardian'],['student_a','student']],
+ [['student_a','student']],
+ [['guardian_a','guardian'],['student_a','student']],
+ [['student_a','student'],['subject_teacher_a','staff']]
+];
+const codeFence=String.fromCharCode(96).repeat(3);
+
+function draftExcerpt(publishedCase){
+ const {headings,slotTable,opening}=publishedCase;
+ return [...headings.slice(0,3),slotTable,headings[3],opening,headings[4]].join('\n');
+}
+
+test('published five-section drafts resolve declared slots only, preserving reader payloads',()=>{
+ for(const [i,story] of published.cases.entries()){
+  const detail={...fixture(null),storyId:story.storyId,title:story.title,
+   sourceMarkdown:draftExcerpt(story),opening:story.opening};
+  const before=structuredClone(detail);
+  const preview={detail,...compileStoryPreview(detail)};
+  assert.deepEqual([...preview.slots],expectedRoles[i],story.storyId);
+  assert.ok(preview.pages.every(page=>!page.annotated&&page.cast.length===0),story.storyId);
+  assert.deepEqual(detail,before);
+ }
+ const actual=draftExcerpt(published.cases[3]);
+ const elsewhere=actual.replace('## 2｜四欄創意摘要','## 2｜四欄創意摘要\n'+published.cases[2].slotTable)
+  .replace('## 4｜玩家可見開場與四個行動','\n| ghost | 行政人員 | 正文 | 正文 |\n\n## 4｜玩家可見開場與四個行動');
+ assert.deepEqual([...storyPreviewSlots(elsewhere)],expectedRoles[3]);
+});
+
+test('published student, caregiver and teacher slots bind distinct stable art for legal cues',()=>{
+ for(const i of [1,2]){
+  const story=published.cases[i],entries=expectedRoles[i];
+  const first=story.opening.match(/P01｜\{\{([a-z_]+)\.name\}\}/)[1];
+  const firstKind=new Map(entries).get(first);
+  const second=entries.find(([,kind])=>kind!==firstKind)[0];
+  const pose=Object.fromEntries(entries.filter(([slot,kind])=>[first,second].includes(slot)&&kind!=='student').map(([slot])=>[slot,'gesture']));
+  const expression=Object.fromEntries(entries.filter(([slot,kind])=>[first,second].includes(slot)&&kind==='student').map(([slot])=>[slot,'sad']));
+  const cues={opening:{P01:{enter:[first,second],expression,pose}},results:{R1:{speaker:second,exit:[first]}}};
+  const detail={...fixture(null),storyId:story.storyId,opening:story.opening,
+   sourceMarkdown:draftExcerpt(story)+'\n'+codeFence+'avg\n'+JSON.stringify(cues)+'\n'+codeFence};
+  const preview={detail,...compileStoryPreview(detail)};
+  const start=storyPreviewProjection(preview,state).view.sceneView;
+  const end=storyPreviewProjection(preview,{...state,showingResult:true}).view.sceneView;
+  assert.equal(start.cast.length,2);
+  assert.notEqual(start.cast[0].id,start.cast[1].id);
+  assert.match(start.cast.find(actor=>actor.kind==='student').artId,/^student-/);
+  assert.match(start.cast.find(actor=>actor.kind==='adult').artId,/^adult-/);
+  assert.equal(end.cast[0].id,start.cast[1].id);
+  assert.equal(end.cast[0].artId,start.cast[1].artId);
+  assert.deepEqual(storyPreviewProjection({detail,...compileStoryPreview(detail)},state).view.sceneView,start);
+  assert.throws(()=>compileStoryPreview({...detail,opening:detail.opening.replace('{{'+first+'.name}}','{{ghost.name}}')}),/未知說話者 ghost/);
+  for(const [field,value,error] of [
+   ['speaker','unknown_slot',/未知說話者.*unknown_slot/],['enter',['unknown_slot'],/槽位.*unknown_slot/],
+   ['exit',['unknown_slot'],/槽位.*unknown_slot/],
+   ['expression',{unknown_slot:'angry'},/unknown_slot/],['pose',{unknown_slot:'gesture'},/unknown_slot/]
+  ]){
+   const invalid=structuredClone(cues);
+   invalid.results.R1[field]=value;
+   assert.throws(()=>compileStoryPreview({...detail,sourceMarkdown:draftExcerpt(story)+'\n'+codeFence+'avg\n'+JSON.stringify(invalid)+'\n'+codeFence}),error);
+  }
+ }
+});
+
+test('isolated full demo displays the approved actors and backgrounds, with eight repeatable results',()=>{
+ const demo=loadAvgDemo();
+ const at=page=>storyPreviewProjection(demo,{...state,page});
+ const actor=(page,i)=>at(page).view.sceneView.cast[i];
+ assert.equal(demo.detail.storyId,AVG_DEMO_ID);
+ assert.equal(actor(0,0).position,'center');
+ assert.deepEqual(at(1).view.sceneView.cast.map(a=>[a.position,a.speaking]),[['left',false],['right',true]]);
+ assert.deepEqual(at(2).view.sceneView.cast.map(a=>[a.expression,a.speaking]),[['angry',true],['surprised',false]]);
+ assert.equal(actor(3,0).expression,'angry');
+ assert.equal(at(4).view.sceneView.speaker,'老師');
+ assert.equal(at(4).view.sceneView.cast.length,1);
+ assert.equal(at(4).entry.scene,'school-corridor');
+ assert.equal(at(6).entry,at(4).entry);
+ assert.equal(actor(5,1).kind,'adult');
+ assert.deepEqual([5,6,7].map(page=>actor(page,1).pose),['gesture','side','arms-open']);
+ assert.equal(actor(7,1).id,actor(5,1).id);
+ assert.deepEqual(at(7).view.choices.map(o=>o.id),[...'ABCD']);
+ for(const [i,result] of demo.detail.results.entries()){
+  const selected={...state,page:7,showingResult:true,resultId:'R'+(i+1)};
+  const view=storyPreviewProjection(demo,selected).view;
+  assert.equal(view.page.text,result.text);
+  assert.ok(view.sceneView.cast.length<=2);
+  assert.deepEqual(view,storyPreviewProjection(loadAvgDemo(),selected).view);
+ }
+ assert.equal(demo.detail.results.length,8);
+ assert.deepEqual(at(0).view,storyPreviewProjection(loadAvgDemo(),state).view);
+ assert.match(renderStoryPerformancePreview({storyId:AVG_DEMO_ID,index:[],indexError:'',indexLoading:true},'').html,/value="avg-demo" selected>完整演出示範/);
 });

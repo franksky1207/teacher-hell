@@ -1,4 +1,4 @@
-import {compileStoryPreview} from '../src/runtime/story-preview-content.js';
+import {compileStoryPreview,storySlotRows,storySlotIdentity,storySlotKind} from '../src/runtime/story-preview-content.js';
 import {resolveTopicPool} from './story-production-ledger.js';
 /** 17D Markdown V1 draft checker. Read-only: not a game engine or approval. */
 const personal=new Set('1-1 1-2 1-3 1-4 2-1 2-2 2-3 2-4 3-1 3-2 3-3 3-4 4-1 4-2 4-3 4-4 6-1 6-2 6-3 6-4 7-1 7-2 7-3 7-4 8-3 8-4 11-1 11-2'.split(' '));
@@ -7,7 +7,14 @@ const clean=x=>String(x??'').trim().replaceAll(String.fromCharCode(96),'');
 const unfilled=x=>!clean(x)||/【|】|待填/.test(clean(x));
 const rows=s=>s.split(/\r?\n/).filter(x=>/^\s*\|.*\|\s*$/.test(x)).map(x=>x.trim().slice(1,-1).split('|').map(clean));
 const named=(s,k)=>{const v=s.split(/\r?\n/).find(x=>x.includes('**'+k+'**'));return v?clean(v.slice(v.indexOf('：')+1)):''};
-const holderType=s=>/其他班|其他年級|校外|無數值|臨時|私人/.test(s)?null:/家長|照顧者/.test(s)?'guardian':/本班學生|導師班學生/.test(s)?'student':/本班規範任課|實際參與導師班規範/.test(s)?'class_staff':/校內|教職|教師|老師|校長|護理|輔導|學務|教務|支援/.test(s)?'staff':null;
+function holderType(description){
+ if(/其他班|其他年級|校外|無數值|臨時|私人/.test(description))return null;
+ const identity=storySlotIdentity(description);
+ const kind=storySlotKind(identity);
+ if(kind==='student')return /本班學生|導師班學生/.test(identity)?kind:null;
+ if(/本班規範任課|實際參與導師班規範/.test(identity))return 'class_staff';
+ return kind;
+}
 const eligible=(role,c)=>role==='student'?personal.has(c)||relationship.has(c)||['9-3','9-4'].includes(c):role==='teacher'?personal.has(c)||['9-3','9-4'].includes(c):role==='guardian'?personal.has(c)||relationship.has(c):role==='class_staff'?personal.has(c)||relationship.has(c)||c==='9-4':role==='staff'?personal.has(c)||(relationship.has(c)&&c!=='9-1')||c==='9-4':false;
 export function seedCodesFromMarkdown(s){const result=new Map();for(const l of s.split(/\r?\n/)){const m=l.match(/^\|\s*(S\d{4})\s*\|\s*(\d{1,2}-[1-4])\s*\|\s*(\d{1,2}-[1-4])\s*\|\s*(\d{1,2}-[1-4])\s*\|\s*(\d{1,2}-[1-4])\s*\|/);if(m)result.set(m[1],m.slice(2,6))}return result}
 export function topicIdsFromMarkdown(s){return new Set([...s.matchAll(/^\|\s*\*\*(T[1-6]-\d+)\*\*\s*\|/gm)].map(m=>m[1]))}
@@ -53,9 +60,7 @@ export function validateStoryDraft(md,{stage='full',seeds=new Map(),topics=new S
   if(fourCodes.length!==4||new Set(fourCodes).size!==4||fourCodes.some(c=>!/^(?:[1-9]|1[0-2])-[1-4]$/.test(c)))fail('codes','需填4個不同合法碼');
   if(seeds.has(sid)&&fourCodes.slice().sort().join()!==seeds.get(sid).slice().sort().join())fail('seed_mismatch','種子ID與四碼不一致');
   if(!['偏正向','偏負向'].includes(named(three,'選角方向')))fail('direction','請選偏正向／偏負向');
-  const slotPart=three.split('- **常駐數值角色槽位**')[1]?.split('- **無數值情境角色**')[0]||'';
-  for(const r of rows(slotPart)){
-   if(r[0]==='槽位鍵'||r.every(c=>/^:?-+:?$/.test(c)))continue;
+  for(const r of storySlotRows(three)){
    if(r.length!==4||!/^[a-z][a-z0-9_]*$/.test(r[0])||r[0]==='teacher'){fail('slot_format',r[0]+' 槽位格式錯誤');continue;}
    if(slots.has(r[0]))fail('slot_duplicate',r[0]+' 重複');
    const role=holderType(r[1]);if(!role)fail('slot_type',r[0]+' 資格類別不明');

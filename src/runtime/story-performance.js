@@ -35,8 +35,9 @@ export function advanceStoryPerformance(state,page,roles){
  for(const key of ['exit','enter']){
   if(!Object.hasOwn(cue,key))continue;
   const names=cue[key];
-  need(Array.isArray(names)&&new Set(names).size===names.length&&names.every(validRole),'無效進退場槽位 '+key);
+  need(Array.isArray(names)&&new Set(names).size===names.length,'無效進退場槽位 '+key);
   for(const role of names){
+   need(validRole(role),'未知或不可登場的槽位 '+String(role));
    const index=state.cast.findIndex(actor=>actor.role===role);
    if(key==='exit'){
     need(index>=0,'未登場的角色不能退場 '+role);

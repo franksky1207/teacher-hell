@@ -26,9 +26,19 @@ export async function loadStoryIndex(base){
 
 export async function loadStoryPreview(base,summary){
  if(!validId(summary.storyId))throw Error('故事編號不符');
- const detail=await readJson(new URL('stories/'+summary.storyId+'.json',base));
- if(detail?.sourceCommit!==summary.sourceCommit||detail?.sourceBranch!==summary.sourceBranch)
-  throw Error('故事索引與內容版本不同，請重新開始測試（索引 '+summary.sourceCommit?.slice(0,8)+'、故事 '+(detail?.sourceCommit?.slice(0,8)??'未知')+'）');
+ // Pages may serve the new index before a detail (or vice versa).
+ // Retry by re-reading the *whole version pair*; never silently show an old R.
+ let detail,expected=summary;
+ for(let attempt=0;attempt<3;attempt++){
+  if(attempt>0){
+   const fresh=await loadStoryIndex(base);
+   expected=fresh.find(item=>item.storyId===summary.storyId);
+   if(!expected)throw Error('最新版故事清單已移除這篇故事');
+  }
+  detail=await readJson(new URL('stories/'+summary.storyId+'.json',base));
+  if(detail?.sourceCommit===expected.sourceCommit&&detail?.sourceBranch===expected.sourceBranch)break;
+  if(attempt===2)throw Error('故事版本仍未同步（索引 '+expected.sourceCommit?.slice(0,8)+'、故事 '+(detail?.sourceCommit?.slice(0,8)??'未知')+'），拒絕顯示舊劇情');
+ }
  if(detail?.storyId!==summary.storyId||typeof detail.opening!=='string'||
   !hasIds(detail.options,[...'ABCD'])||!hasIds(detail.results,Array.from({length:8},(_,i)=>'R'+(i+1))))throw Error('這篇故事的開場、四個選項或八種結果不完整');
  return preparePreview(detail);

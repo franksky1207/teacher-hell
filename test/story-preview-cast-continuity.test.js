@@ -57,7 +57,11 @@ test('T1-005: remote family conversations cannot leave guardian sprites in schoo
   assert.deepEqual(cast(p.resultPages[i].at(-1)),['student_a']);
   assert.equal(p.resultPages[i].at(-1).scene,'school:classroom');
  }
- for(const i of [2,4,6,7]){
+ assert.deepEqual(cast(p.resultPages[4][1]),[]);
+ assert.equal(p.resultPages[4][1].scene,'school:teachers-office');
+ assert.deepEqual(cast(p.resultPages[4][2]),['student_a']);
+ assert.equal(p.resultPages[4][2].scene,'school:classroom');
+ for(const i of [2,6,7]){
   assert.equal(p.resultPages[i].at(-1).scene,'school:teachers-office');
   assert.deepEqual(cast(p.resultPages[i].at(-1)),[]);
  }

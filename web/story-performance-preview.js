@@ -39,7 +39,11 @@ function preparePreview(detail){
 }
 
 async function readJson(url){
- const response=await fetch(url);
+ // Reader data is regenerated independently of the versioned preview runtime.
+ // A fresh story must not reuse an old cached single-page script after publishing.
+ const fresh=new URL(url.href);
+ fresh.searchParams.set('preview_refresh',String(Date.now()));
+ const response=await fetch(fresh,{cache:'no-store'});
  if(!response.ok)throw Error('無法讀取故事資料（'+response.status+'）');
  return response.json();
 }

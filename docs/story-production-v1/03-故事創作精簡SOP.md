@@ -142,3 +142,27 @@ npm run content:production -- audit T1-001
 `content/events-v1/{T,G,P}/...` 的單篇 Markdown 是目前唯一故事施工來源。來源分支 `content/events-production-v1` 的 `story-reader-publish.yml` 在故事 Markdown 推送後，執行 `export-story-reader.mjs`，產生含 `sourceMarkdown` 的 `gh-pages/stories/data/stories/<storyId>.json`。開發預覽頁的 AVG 正式故事演出再讀取這份 JSON，依 `sourceMarkdown` 中的 `avg` 與事件 `music` 顯示。**演出資料不要先併入 main，也不要手動直接編輯 gh-pages 匯出產物。**
 
 每篇記錄 `storyId`、事件音樂、P 頁／R 結果標記狀態、發布讀取情況、演出是否符合原文及必要修正。區分「已編排」「已發布」「已試演通過」；只有實際試演成功才列入 AVG 完成篇數。先以幾篇不同情境建立順暢流程，才批次製作前 60 篇。
+
+
+### AVG 八結果多頁演出格式（第一階段引擎契約）
+
+- **正式故事五區塊與數值原文不變**：第五區 `玩家可見結果`、客觀後果、合法增減、教師四狀態及 4×8 矩陣照舊；本功能僅在第四區原本的 ```avg` JSON 中擴充 `results.R1～R8` 的演出頁。
+- **新格式**：`results.R6.pages` 是非空陣列；每頁必填非空字串 `text`，可填 `speaker`（人物槽位、`teacher` 或 `null`）、`presentation`、`scene`、`enter`、`exit`、`expression`、`pose`；不額外建立故事結果 ID 或數值欄位。示例：
+
+```json
+{
+  "results": {
+    "R6": {
+      "pages": [
+        {"text":"老師，我可以再問一件事嗎？","speaker":"student_a"},
+        {"text":"你確認他還有疑問，決定先聽完整。","speaker":null,"presentation":"narration"},
+        {"text":"謝謝老師，我知道要怎麼問了。","speaker":"student_a","expression":{"student_a":"happy"}}
+      ]
+    }
+  }
+}
+```
+
+- **相容規則**：原有 `results.R6: {speaker, scene, ...}` 仍採用第五區原結果文字，呈現單頁 `1/1`；尚未標記的 R 同樣維持單頁旁白。使用 `pages` 後，演出文字才由各頁 `text` 提供；不可在同一個 R 同時混用 `pages` 與舊式單頁欄位，亦不可用舊式單頁 `text` 覆蓋結果原文。
+- **狀態與鏡頭**：每個 R 從開場結束時的相同演出狀態獨立開始，R 內各頁按順序延續人物進退場、表情、姿勢與場景；切換不同 R 時回第一頁，不承接前一個 R 的人物狀態。
+- **寫作與審查**：人物對話框只寫人物真正說出的話；第三人稱／教師觀察另用旁白頁；電話或訊息採對應 `presentation`。換頁數量依劇情自然安排，不強制三頁。**演出改寫不得改動既定客觀事實、人物知情、結果數值與因果；第二階段才處理 T1-001～005 的實際演出改寫。**

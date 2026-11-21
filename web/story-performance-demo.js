@@ -58,7 +58,13 @@ export const AVG_DEMO_DETAIL={
   '```avg',
   JSON.stringify({
    opening:Object.fromEntries(pages.map(([, ,cue],i)=>['P0'+(i+1),cue])),
-   results:Object.fromEntries(outcomes.map(([, ,speaker,cue],i)=>['R'+(i+1),{speaker,...cue}]))
+   results:Object.fromEntries(outcomes.map(([, ,speaker,cue],i)=>['R'+(i+1),i===0?{
+    pages:[
+     {text:'老師，盒子確認好了，我現在就把清單改正。',speaker:'student_a',expression:{student_a:'happy'}},
+     {text:'你核對交接紀錄，確定遺漏的欄位已經補上。',speaker:null,presentation:'narration'},
+     {text:'這次清楚了，我再通知下一組過來領。',speaker:'staff_a',pose:{staff_a:'gesture'}}
+    ]
+   }:{speaker,...cue}]))
   }),
   '```'
  ].join('\n')

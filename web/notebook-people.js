@@ -1,12 +1,13 @@
 /** Phase 14-B: official roster + teacher-disclosed knowledge only. No private NPC state. */
 import {teacherDisplayName} from '../src/runtime/teacher-profile.js';
 import {notebookRoster} from './notebook-roster.js';
+import {renderStoryText,storySubject} from '../src/runtime/story-text.js';
 import {readPlayerView} from '../src/runtime/views.js';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const beliefs={believed:'目前相信',uncertain:'尚待確認',rejected:'目前不採信'};
 export function projectNotebookPeople(world){
  const roster=notebookRoster(world);
- const known=readPlayerView(world);
+ const known=readPlayerView(world),subject=storySubject(world);
  if(!roster)return {className:'導師班',people:[],facts:[],claims:[]};
  const map=new Map();
  for(const student of roster.students){
@@ -48,8 +49,8 @@ export function projectNotebookPeople(world){
  }
  // Only teacher-visible disclosures. A source is not treated as the subject of a claim.
  return {className:roster.className,classSummary,people:[...map.values()],relations,teacher:{id:teacherId,name:teacherDisplayName(world)},
-  facts:known.facts.map(f=>({description:f.description,subjectIds:f.subjectIds,occurredAt:f.occurredAt})),
-  claims:known.claims.map(c=>({statement:c.statement,sourceId:c.sourceId,belief:c.belief}))};
+  facts:known.facts.map(f=>({description:renderStoryText(f.description,subject),subjectIds:f.subjectIds,occurredAt:f.occurredAt})),
+  claims:known.claims.map(c=>({statement:renderStoryText(c.statement,subject),sourceId:c.sourceId,belief:c.belief}))};
 }
 export function renderNotebookPeople(data,selectedId=null,search='',category='student',portrait=null){
  if(!data||!Array.isArray(data.people)||!Array.isArray(data.facts)||!Array.isArray(data.claims))throw new TypeError('Invalid notebook people projection');

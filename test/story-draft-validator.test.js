@@ -361,3 +361,22 @@ test('V3 NPC multiple valid slots get independent opposite delta statistics',()=
  assert.equal(result.details.npcAudit.byActor.student_b.byCode['1-1'].negative,8);
  assert.ok(!result.details.npcAudit.warningIds.some(x=>x.startsWith('npc_identical_pattern')));
 });
+
+test('subject placeholders follow the same validation in all three draft stages',()=>{
+ const token='{{teacher.subject}}';
+ const source=draft().replace('學生早自習無法完成任務',token+'課後的情形')
+  .replace('確認學生情況','確認'+token+'學習情況')
+  .replace('學生產生第1種不同的反應。','學生談到'+token+'。');
+ for(const stage of ['summary','choices','full']){
+  assert.equal(audit(source,stage).mechanicalPass,true,stage);
+  const bad=audit(source.replaceAll(token,'{{teacher.topic}}'),stage);
+  assert.ok(bad.errors.some(e=>e.code==='placeholder'&&e.detail.includes('未知教師欄位')));
+ }
+ for(const [token,diagnostic] of [
+  ['{{ghost.name}}','未知人物槽位'],['{{student_a.subject}}','未知人物欄位'],
+  ['{{teacher.subject}','格式錯誤'],['{{{teacher.subject}}}','格式錯誤'],['{{teacher subject}}','格式錯誤']
+ ]){
+  const report=audit(source.replace('學生談到{{teacher.subject}}','學生談到'+token),'full');
+  assert.ok(report.errors.some(e=>e.code==='placeholder'&&e.detail.includes(diagnostic)),token);
+ }
+});

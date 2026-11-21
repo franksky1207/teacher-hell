@@ -1,10 +1,10 @@
 import {
  filterStories, selectOptions, neighboringIds, sanitizeReaderPreferences, topicDisplayName, poolDisplayName,
- safeDetailPath, validateReaderIndex, validateReaderDetail, readerTechnicalTables, READER_STATES
+ safeDetailPath, validateReaderIndex, validateReaderDetail, readerTechnicalTables, READER_STATES, projectReaderText, renderStoryText, SCHOOL_SUBJECTS
 } from './reader-core.js';
 
 const $=id=>document.getElementById(id);
-const state={all:[],filtered:[],selected:null,detail:null,request:0,cache:new Map(),
+const state={previewSubject:'數學',all:[],filtered:[],selected:null,detail:null,request:0,cache:new Map(),
   filters:{query:'',semester:'',topic:'',pool:''},prefs:sanitizeReaderPreferences()};
 const PREF_KEY='teacher-hell-story-reader-prefs-v1';
 const LAST_KEY='teacher-hell-story-reader-last-v1';
@@ -159,8 +159,9 @@ function resetSections(){
  document.querySelectorAll('.section-toggle').forEach(button=>
   setExpanded(button,button.dataset.target!=='technical-content'));
 }
-function presentStory(detail,record){
- state.detail=detail;
+function presentStory(source,record,{reset=true}={}){
+ state.detail=source;
+ const detail=projectReaderText(source,state.previewSubject);
  setText('story-meta',[record.type,record.topicId,record.poolId].filter(Boolean).join(' · '));
  setText('story-title',detail.title);
  setText('story-subtitle',[record.storyId,record.quotaDate].filter(Boolean).join(' · '));
@@ -178,7 +179,7 @@ function presentStory(detail,record){
  addOptions(detail);
  addResults(detail);
  addTechnical(detail);
- resetSections();
+ if(reset)resetSections();
  setStatus('');
 }
 function updateNeighbors(){
@@ -191,7 +192,7 @@ function storyButton(record){
  button.type='button';
  button.setAttribute('role','listitem');
  button.setAttribute('aria-current',String(record.storyId===state.selected));
- button.append(make('span','item-name',record.title));
+ button.append(make('span','item-name',renderStoryText(record.title,state.previewSubject)));
  button.append(make('span','item-sub',[record.storyId,record.poolId].filter(Boolean).join(' · ')));
  button.addEventListener('click',()=>selectStory(record.storyId));
  return button;
@@ -294,6 +295,15 @@ async function bootstrap(){
  if(first)await selectStory(first,{keepScroll:true});
  else setStatus('目前尚無故事。');
 }
+const previewSubject=$('preview-subject');
+for(const subject of SCHOOL_SUBJECTS)previewSubject.add(new Option(subject,subject));
+previewSubject.value=state.previewSubject;
+previewSubject.addEventListener('change',()=>{
+ state.previewSubject=previewSubject.value;
+ drawList();
+ const record=state.all.find(story=>story.storyId===state.detail?.storyId);
+ if(record?.storyId===state.selected&&state.detail)presentStory(state.detail,record,{reset:false});
+});
 $('theme').addEventListener('change',e=>updatePrefs({theme:e.target.value}));
 $('font-less').addEventListener('click',()=>updatePrefs({size:state.prefs.size-1}));
 $('font-more').addEventListener('click',()=>updatePrefs({size:state.prefs.size+1}));

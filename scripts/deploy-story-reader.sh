@@ -10,6 +10,10 @@ cleanup() { git worktree remove --force "$publish_tmp/site" >/dev/null 2>&1 || t
 trap cleanup EXIT
 mkdir -p "$publish_tmp/payload/data"
 cp story-reader/index.html story-reader/reader.js story-reader/reader-core.js story-reader/reader.css "$publish_tmp/payload/"
+mkdir -p "$publish_tmp/payload/shared/$release/"{runtime,world}
+cp src/runtime/story-text.js "$publish_tmp/payload/shared/$release/runtime/"
+cp src/world/school-subjects.js "$publish_tmp/payload/shared/$release/world/"
+sed -i "s|../src/runtime/story-text.js|./shared/$release/runtime/story-text.js|" "$publish_tmp/payload/reader-core.js"
 cp -R work/story-reader-data/. "$publish_tmp/payload/data/"
 node -e 'const fs=require("fs");const {sourceCommit,sourceBranch,count}=JSON.parse(fs.readFileSync("work/story-reader-data/index.json"));console.log(JSON.stringify({sourceCommit,sourceBranch,count}))' > "$publish_tmp/payload/release.json"
 # Cache-bust the module graph and CSS together on each source release.

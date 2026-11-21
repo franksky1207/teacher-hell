@@ -1,3 +1,4 @@
+import {DEMO_STORY} from '../src/runtime/story-content.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {currentStory,makeStoryRequest} from '../web/story-controller.js';
@@ -96,4 +97,29 @@ test('13-C: resultConfirmed matches persisted formal mode, not the button text',
  world=issue(world,'confirm');
  assert.equal(currentStory(world).resultConfirmed,true);
  assert.equal(currentStory(structuredClone(world)).resultConfirmed,true);
+});
+
+test('story result projection uses the saved plan subject while keeping raw facts and causal data',()=>{
+ const eventId='event:subject-projection';
+ const playerId='teacher';
+ const fact={id:'subject-fact',description:'談到{{teacher.subject}}。'};
+ const {resourceId,version,status,entry}=DEMO_STORY;
+ const world={
+  identity:{playerId},events:[{id:eventId,participantIds:['student'],facts:[{id:fact.id}]}],
+  extensions:{'teacher-hell/world':{
+   plan:{subject:'數學'},facts:[fact],disclosures:[{actorId:playerId,factId:fact.id}],
+   history:[
+    {type:'event-selection',data:{selected:[{eventId,content:{resourceId,version,status}}]}},
+    {type:'story',eventId,data:{state:{stage:entry,page:0,mode:'result',panelDelta:{精神:2}}}}
+   ]
+  }}
+ };
+ const snapshot=JSON.stringify(world);
+ const result=readStory(JSON.parse(snapshot),eventId);
+ assert.deepEqual(result.result,['談到數學。']);
+ assert.deepEqual(readStory(JSON.parse(snapshot),eventId),result);
+ const another=JSON.parse(snapshot);
+ another.extensions['teacher-hell/world'].plan.subject='歷史';
+ assert.deepEqual(readStory(another,eventId),{...result,result:['談到歷史。']});
+ assert.equal(JSON.stringify(world),snapshot);
 });

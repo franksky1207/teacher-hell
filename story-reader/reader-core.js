@@ -1,3 +1,16 @@
+import {renderStoryText,SCHOOL_SUBJECTS} from '../src/runtime/story-text.js';
+
+export {renderStoryText,SCHOOL_SUBJECTS};
+
+export function projectReaderText(detail,subject){
+ const display=text=>renderStoryText(text,subject);
+ return {
+  ...detail,title:display(detail.title),opening:display(detail.opening),
+  options:detail.options?.map(option=>({...option,text:display(option.text)})),
+  results:detail.results?.map(result=>({...result,title:display(result.title),text:display(result.text)}))
+ };
+}
+
 /* Pure helpers: no DOM, storage, network or game dependencies. */
 /* Only human-readable labels; official topic/pool IDs remain the filter values. */
 const TOPIC_TITLES=Object.freeze({

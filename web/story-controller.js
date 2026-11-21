@@ -1,6 +1,7 @@
 import {projectStoryScene,expressionsThroughPage} from './story-scene.js';
 /** Phase 13-B: legal readStory projections and persisted story operations. No event generation. */
 import {readStory,storyState,storyContent} from '../src/runtime/story.js';
+import {renderStoryText,storySubject} from '../src/runtime/story-text.js';
 import {createId} from '../src/contracts/foundation.js';
 /** Previously visible chat pages only; never project future pages. */
 function readChatHistory(world,event,stage,index){
@@ -11,7 +12,7 @@ function readChatHistory(world,event,stage,index){
   const actorId=p.speaker===null?null:roleId(p.speaker);
   // A message speaker must be introduced by the current or earlier page.
   const rendered={page:{...p,speaker:actorId,cast:p.cast.map(a=>({...a,actorId:roleId(a.role)}))}};
-  return {speaker:projectStoryScene(world,rendered).speaker,text:p.text,own:actorId===world.identity.playerId};
+  return {speaker:projectStoryScene(world,rendered).speaker,text:renderStoryText(p.text,storySubject(world)),own:actorId===world.identity.playerId};
  });
 }
 

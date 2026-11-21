@@ -1,3 +1,4 @@
+import {storyPlaceholderIssues} from '../src/runtime/story-text.js';
 import {storyMetadataHeading, storyMetadataKeys, seedIdPattern} from './story-catalog.js';
 export const STATE_GROUPS=Object.freeze(Object.fromEntries(Object.entries({A:[1,1,0,0,-1,-1,-2,-2],B:[2,0,-1,-1,-1,-1,-1,-1],C:[1,1,0,-1,-1,-1,-1,-2],D:[2,1,0,-1,-1,-1,-2,-2],E:[1,1,1,0,-1,-2,-2,-2]}).map(([k,v])=>[k,Object.freeze(v)])));
 import {resolveTopicPool} from './story-windows.js';
@@ -105,7 +106,6 @@ export function validateStoryDraft(md,{stage='full',stateRulesVersion=3,seeds=ne
   if([...choices.values()].filter(x=>x[2]==='true').length!==1)fail('emotional','必須恰好一個情緒選項');
   choiceFlags=Object.fromEntries([...choices].map(([id,r])=>[id,r[2]==='true']));
   const labels=[...choices.values()].map(r=>r[1].replace(/\s/g,''));if(new Set(labels).size!==labels.length)fail('choice_same','有完全重複的選項文字');
-  for(const [,slot] of four.matchAll(/{{\s*([a-z][a-z0-9_]*)\.[a-z_]+\s*}}/g))if(slot!=='teacher'&&!slots.has(slot))fail('placeholder','未知人物槽位 '+slot);
  }
  let resultCount=0,matrix=null,stateDistribution=null,npcAudit=null;
  if(stage==='full'){
@@ -235,5 +235,8 @@ export function validateStoryDraft(md,{stage='full',stateRulesVersion=3,seeds=ne
   if(!zeros.length&&unfilled(why))fail('zero_reason','沒有0時填「無」');
   warnings.push('程式不判斷32組真實敘事因果、角色知情與跨批重複；須由同一創作AI另行檢查並留下證據。');
  }
+ const preamble=md.slice(0,headings[0]?.index??md.length);
+ const checkedText=[preamble,...needed.map(n=>sec.get(n)??'')].join('\n');
+ for(const issue of storyPlaceholderIssues(checkedText,slots))fail('placeholder',issue);
  return {stage,mechanicalPass:errors.length===0,errors,warnings,details:{npcAudit:stage==='full'?npcAudit:null,stateRulesVersion,stateDistribution,choiceFlags,seedId:sid,resultsChecked:resultCount,matrix:matrix?Object.fromEntries(matrix):null}};
 }

@@ -1,3 +1,4 @@
+import {renderStoryText} from '../src/runtime/story-text.js';
 import {renderSpecialStoryBody} from '../web/story-formats.js';
 import {projectStoryScene,renderStoryScene,studentArtForActor} from '../web/story-scene.js';
 import test from 'node:test';
@@ -201,4 +202,21 @@ test('UI-2 formal expressions: only current speaker updates; narration and liste
  assert.equal(at3.get('participant'),'embarrassed');assert.equal(at3.get('companion'),'surprised');
  assert.equal(expressionsThroughPage(pages,1).get('participant'),'happy');
  assert.deepEqual([...expressionsThroughPage(pages,3)],[...at3]);
+});
+
+test('rendered teaching subject uses existing HTML escaping across all story presentations',()=>{
+ const raw='{{teacher.subject}} <b>&</b>';
+ for(const format of ['narration','dialogue','phone','chat','notice','email','news']){
+  const view=read({page:{text:renderStoryText(raw,'歷史'),speaker:null,presentation:format,cast:[]}});
+  if(format==='chat')view.chatMessages=[{text:renderStoryText(raw,'歷史'),speaker:'老師'}];
+  const html=renderStoryView(view);
+  assert.match(html,/歷史 &lt;b&gt;&amp;&lt;\/b&gt;/,format);
+  assert.doesNotMatch(html,/&amp;lt;|{{teacher.subject}}/,format);
+ }
+ for(const subject of [undefined,null,'<script>','數學A'])assert.equal(renderStoryText(raw,subject),raw);
+ for(const token of ['{{teacher.name}}','{{teacher.subj}}','{{{teacher.subject}}}','{{teacher.subject}}}','{{teacher.subject}']){
+  assert.equal(renderStoryText(token,'數學'),token);
+ }
+ assert.equal(renderStoryText('不含占位符','數學'),'不含占位符');
+ assert.equal(renderStoryText('{{ teacher.subject }}與{{teacher.subject}}','數學'),'數學與數學');
 });

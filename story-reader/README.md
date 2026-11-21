@@ -5,11 +5,15 @@
 本機預覽可執行：
 
 ```bash
-mkdir -p work/story-site
-cp story-reader/{index.html,reader.js,reader-core.js,reader.css} work/story-site/
-node scripts/export-story-reader.mjs --output work/story-site/data
+mkdir -p work/story-site/{story-reader,src/runtime,src/world}
+cp story-reader/{index.html,reader.js,reader-core.js,reader.css} work/story-site/story-reader/
+cp src/runtime/story-text.js work/story-site/src/runtime/
+cp src/world/school-subjects.js work/story-site/src/world/
+node scripts/export-story-reader.mjs --output work/story-site/story-reader/data
 python3 -m http.server 8080 --directory work/story-site
 ```
+
+開啟 `http://localhost:8080/story-reader/`。預覽科目可以在九科之間切換，預設數學。
 
 有完整區塊的故事保留選擇、摘要、開場、四選項、八結果、教師四狀態、NPC 與矩陣。尚未寫完的檔案可讀原 Markdown。正式驗收可獨立使用[故事工具](../docs/story-production-v1/06-種子與量產管理.md)。
 

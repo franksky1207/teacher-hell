@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {selectOptions,filterStories,neighboringIds,sanitizeReaderPreferences,safeDetailPath,validateReaderIndex,validateReaderDetail,topicDisplayName,poolDisplayName,readerTechnicalTables,READER_STATES} from '../story-reader/reader-core.js';
+import {selectOptions,filterStories,neighboringIds,sanitizeReaderPreferences,safeDetailPath,validateReaderIndex,validateReaderDetail,topicDisplayName,poolDisplayName,readerTechnicalTables,READER_STATES,projectReaderText,SCHOOL_SUBJECTS} from '../story-reader/reader-core.js';
 
 const stories=[
  {storyId:'T1-002',title:'我在哪一班',type:'T',topicId:'T1-1',poolId:'T1-1:single',summary:{事件起因:'首次點名'},detail:'stories/T1-002.json'},
@@ -74,4 +74,25 @@ test('technical tables fail visibly for malformed values rather than inventing z
  const parsed=readerTechnicalTables([{id:'R8',deltas:'student_a:5-1:+x',playerStates:'1,2,3'}]);
  assert.equal(parsed.rows[0].deltaValid,false);
  assert.equal(parsed.rows[0].stateValues,null);
+});
+
+test('nine preview subjects update words without changing the cached manuscript or story rules',()=>{
+ const token='{{teacher.subject}}';
+ const story={title:'熟悉的課堂',opening:'你走進'+token+'教室。',
+  options:[{id:'A',text:'回應'+token+'問題',action:'確認原本安排',emotional:false}],
+  results:[{id:'R1',title:'結果',text:token+'課後繼續討論',deltas:'student_a:1-1:+1',playerStates:'0,0,-1,-1'}],
+  matrix:{A:[4,2,1,0,2,1,2,1]},sourceMarkdown:token};
+ const before=structuredClone(story);
+ for(const subject of SCHOOL_SUBJECTS){
+  const projected=projectReaderText(story,subject);
+  assert.equal(projected.opening,'你走進'+subject+'教室。');
+  assert.equal(projected.options[0].text,'回應'+subject+'問題');
+  assert.equal(projected.results[0].text,subject+'課後繼續討論');
+  assert.equal(projected.options[0].action,story.options[0].action);
+  assert.equal(projected.results[0].deltas,story.results[0].deltas);
+  assert.equal(projected.results[0].playerStates,story.results[0].playerStates);
+  assert.equal(projected.matrix,story.matrix);
+  assert.equal(projected.sourceMarkdown,token);
+ }
+ assert.deepEqual(story,before);
 });

@@ -20,11 +20,11 @@ export function poolDisplayName(id){
  const phase={before:'活動前',after:'活動後',single:''}[m[2]];
  return topicDisplayName(m[1])+(phase?'（'+phase+'）':'');
 }
-export const semesters=['T1','T2','T3','T4','T5','T6','G','P'];
+export const semesters=['T1','T2','T3','T4','T5','T6','G'];
 export function matchesStory(story,filters={}){
  const q=String(filters.query??'').trim().toLocaleLowerCase('zh-Hant');
  const semester=filters.semester??'',topic=filters.topic??'',pool=filters.pool??'';
- if(semester&&(['G','P'].includes(semester)?story.type!==semester:story.topicId?.split('-')[0]!==semester))return false;
+ if(semester&&(semester==='G'?story.type!=='G':story.topicId?.split('-')[0]!==semester))return false;
  if(topic&&story.topicId!==topic)return false;
  if(pool&&story.poolId!==pool)return false;
  if(!q)return true;

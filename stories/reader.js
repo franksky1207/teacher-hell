@@ -1,7 +1,7 @@
 import {
  filterStories, selectOptions, neighboringIds, sanitizeReaderPreferences, topicDisplayName, poolDisplayName,
  safeDetailPath, validateReaderIndex, validateReaderDetail, readerTechnicalTables, READER_STATES
-} from './reader-core.js?v=da810197bfbbb7e1064d2c9227a6461c53d51b5b';
+} from './reader-core.js?v=141291d14ff954b83a82e50a49dfcaee2b181290';
 
 const $=id=>document.getElementById(id);
 const state={all:[],filtered:[],selected:null,detail:null,request:0,cache:new Map(),
@@ -214,13 +214,13 @@ function updateSelect(id,values,formatter){
 }
 function syncFilters(){
  const topics=selectOptions(state.all,'topicId',story=>
-  !state.filters.semester||(['G','P'].includes(state.filters.semester)?
-    story.type===state.filters.semester:story.topicId?.split('-')[0]===state.filters.semester));
+  !state.filters.semester||(state.filters.semester==='G'?
+    story.type==='G':story.topicId?.split('-')[0]===state.filters.semester));
  updateSelect('topic',topics,topicDisplayName);
  state.filters.topic=$('topic').value;
  const pools=selectOptions(state.all,'poolId',story=>
-  (!state.filters.semester||(['G','P'].includes(state.filters.semester)?
-    story.type===state.filters.semester:story.topicId?.split('-')[0]===state.filters.semester))&&
+  (!state.filters.semester||(state.filters.semester==='G'?
+    story.type==='G':story.topicId?.split('-')[0]===state.filters.semester))&&
   (!state.filters.topic||story.topicId===state.filters.topic));
  updateSelect('pool',pools,poolDisplayName);
  state.filters.pool=$('pool').value;
@@ -278,7 +278,7 @@ function selectAdjacent(direction){
 async function bootstrap(){
  preferences();
  for(const [name,label] of [['T1','T1 高一上'],['T2','T2 高一下'],['T3','T3 高二上'],
-  ['T4','T4 高二下'],['T5','T5 高三上'],['T6','T6 高三下'],['G','G 通用'],['P','P 被動事件']]){
+  ['T4','T4 高二下'],['T5','T5 高三上'],['T6','T6 高三下'],['G','G 通用']]){
   $('semester').add(new Option(label,name));
  }
  const response=await fetch(new URL('./data/index.json',import.meta.url),{cache:'no-store'});

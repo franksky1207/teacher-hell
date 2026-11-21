@@ -412,26 +412,15 @@
  .avg-story-preview{background-image:linear-gradient(180deg,rgba(7,18,35,.32),rgba(7,18,35,.18) 65%,rgba(7,18,35,.44)),var(--scene-preview-mobile,linear-gradient(180deg,#30445b,#131f33))}
 }
 
-/* AVG 選角獨立佔一列。保持舞台為唯一可伸縮區，避免選角蓋掉人物／對話。 */
-.game--story.ui2-preview.avg-story-preview{
- grid-template-rows:auto auto auto minmax(0,1fr) auto!important;
-}
-.avg-story-preview .top{grid-row:1;min-height:0}
-.avg-story-preview .ui2-preview-tools{grid-row:2;min-height:0}
-.avg-story-preview .avg-cast-choices{
- grid-row:3;display:flex;flex-wrap:wrap;align-content:center;align-items:center;gap:.45rem 1rem;
- min-width:0;min-height:0;max-height:30dvh;overflow-y:auto;
- margin:0;padding:.35rem .8rem;border:1px solid rgba(198,175,125,.55);
- border-radius:.6rem;background:rgba(17,30,47,.85);
-}
-.avg-story-preview .avg-cast-choices legend{padding:0 .4rem;font-size:.82rem;color:#f5dfb5}
-.avg-story-preview .avg-cast-choices label{display:flex;gap:.35rem;align-items:center;flex-wrap:wrap;font-size:.82rem}
-.avg-story-preview .avg-cast-choices select{max-width:12rem;min-width:7rem;background:#203753;color:white;border:1px solid #a9a8a2;border-radius:6px;padding:.25rem}
-.avg-story-preview .story-view--avg,.avg-story-preview .avg-preview-empty{grid-row:4;min-height:0;overflow:hidden}
-.avg-story-preview .ui2-preview-caption{grid-row:5;min-height:0}
+/* 開發試演人物選單與故事選擇共用工具列，不另佔舞台一列。 */
+.game--story.ui2-preview.avg-story-preview{grid-template-rows:auto auto minmax(0,1fr) auto!important}
+.avg-story-preview .ui2-preview-tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.35rem .6rem}
+.avg-story-preview .avg-cast-choices{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.35rem .6rem;min-width:0}
+.avg-story-preview .avg-cast-choices label{display:inline-flex;align-items:center;gap:.3rem;font-size:.8rem;white-space:nowrap}
+.avg-story-preview .avg-cast-choices select{min-width:7rem;max-width:11rem;font-size:.82rem;padding:.3rem;color:white;background:#203753;border:1px solid #a9a8a2;border-radius:8px}
 @media(max-width:650px),(orientation:portrait){
- .game--story.ui2-preview.avg-story-preview{grid-template-rows:auto auto minmax(0,auto) minmax(0,1fr) auto!important}
- .avg-story-preview .avg-cast-choices{gap:.25rem .45rem;padding:.2rem .4rem;max-height:25dvh}
+ .avg-story-preview .ui2-preview-tools{gap:.3rem}
+ .avg-story-preview .avg-cast-choices{gap:.25rem}
  .avg-story-preview .avg-cast-choices label{font-size:.75rem}
- .avg-story-preview .avg-cast-choices select{max-width:9rem;min-width:6rem;min-height:38px}
+ .avg-story-preview .avg-cast-choices select{min-width:5.5rem;max-width:8.5rem}
 }

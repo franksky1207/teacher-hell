@@ -1,3 +1,5 @@
+import {SHORT_STORY} from '../src/runtime/story-content.js';
+import {gameMusic} from '../web/music-context.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {currentStory,makeStoryRequest} from '../web/story-controller.js';
@@ -96,4 +98,26 @@ test('13-C: resultConfirmed matches persisted formal mode, not the button text',
  world=issue(world,'confirm');
  assert.equal(currentStory(world).resultConfirmed,true);
  assert.equal(currentStory(structuredClone(world)).resultConfirmed,true);
+});
+
+
+test('a legacy event uses its original calendar context across story navigation and reload',()=>{
+ const {world,eventId}=beginDemo(1,SHORT_STORY);
+ const first=currentStory(world);
+ assert.equal(first.music,undefined);
+ assert.deepEqual(first.musicOrigin.at,{date:world.position.date,slotId:world.position.slotId});
+ const next=issue(world,'next');
+ assert.equal(currentStory(next).eventId,eventId);
+ const changedContext={slotId:'private'};
+ const restored=currentStory(structuredClone(next));
+ assert.equal(gameMusic(next,restored,changedContext),'school');
+ let ending=next;
+ while(currentStory(ending).canNext)ending=issue(ending,'next');
+ ending=issue(ending,'select','listen');
+ assert.equal(gameMusic(ending,currentStory(ending),changedContext),'school');
+ ending=issue(ending,'confirm');
+ assert.equal(gameMusic(ending,currentStory(ending),changedContext),'school');
+ ending=issue(ending,'finish');
+ assert.equal(currentStory(ending),null);
+ assert.equal(gameMusic(ending,currentStory(ending),changedContext),'home');
 });

@@ -4,7 +4,7 @@ import {readFile} from 'node:fs/promises';
 const read=path=>readFile(new URL('../'+path,import.meta.url),'utf8');
 test('13-G: story main and header are valid HTML openings',async()=>{
  const src=await read('web/game.js');
- assert.match(src,/<main class="game game--story" data-revision="\$\{w\.extensions\['teacher-hell\/world'\]\.revision\}">/);
+ assert.match(src,/<main class="game game--story \$\{activeStory[^}]*'game--active-dialogue'[^}]*\}" data-revision="\$\{w\.extensions\['teacher-hell\/world'\]\.revision\}">/);
  assert.ok(src.includes('<div class="top">'+"\${"+'w.position.date}'));
  assert.ok(!src.includes('<div class="top"'+"\${"+'w.position.date}'));
 });

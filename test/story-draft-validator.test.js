@@ -331,3 +331,25 @@ test('V2 malformed results are excluded and do not produce misleading aggregate 
  assert.equal(r.errors.find(e=>e.code==='state_format').detail.includes('R1'),true);
  for(const stage of ['summary','choices'])assert.equal(audit(broken,stage).details.stateDistribution,null);
 });
+
+test('optional AVG block is validated without changing choices or result weights',()=>{
+ const base=draft(),before=audit(base);
+ const withCue=scene=>base.replace('### 開場',[
+  '```avg',JSON.stringify({opening:{P01:{scene,enter:['student_a'],expression:{student_a:'sad'}}},results:{R8:{exit:['student_a']}}}),
+  '```','### 開場'
+ ].join('\n'));
+ const valid=audit(withCue('school:classroom'));
+ assert.deepEqual(valid,before);
+ assert.ok(audit(withCue('school:missing')).errors.some(error=>error.code==='avg_performance'));
+});
+
+
+test('draft music is optional for legacy drafts and may be set only once at story level',()=>{
+ const source=draft(),row='| music｜事件配樂 | touching |';
+ const withMusic=source.replace('## 2｜',row+'\n## 2｜');
+ assert.equal(audit(source).mechanicalPass,true);
+ assert.ok(!audit(withMusic).warnings.includes('尚未指定事件音樂'));
+ for(const invalid of [withMusic.replace('touching','bgm01'),withMusic.replace(row,row+'\n'+row),source+'\n'+row]){
+  assert.ok(audit(invalid).errors.some(error=>error.code==='music'));
+ }
+});

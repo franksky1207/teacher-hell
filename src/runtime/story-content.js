@@ -1,3 +1,4 @@
+import {validateStoryMusic} from './story-music.js';
 import {PACKAGE4_SAMPLES} from './story-samples-package4.js';
 import {PILOT_18B2_CAUSAL_STORIES} from './story-samples-18b2.js';
 import {validateConsequences} from './story-consequences.js';
@@ -7,14 +8,15 @@ import { canonicalData } from '../changes/settlement.js';
 import { assertShape, identifier } from '../player/panel.js';
 import { isSelectableEventTopicId } from './topics.js';
 import { STORY_SCENE_IDS } from './story-scenes.js';
+import {advanceStoryPerformance,createStoryPerformance,STORY_EXPRESSIONS} from './story-performance.js';
 import {PHASE17D_STORIES} from './story-samples-17d.js';
 const need=(ok,code,message)=>{if(!ok)throw new RangeError(`CONTENT_${code}: ${message}`);};
 const baseRoles=['teacher','participant','companion'];
-const expressions=['calm','happy','angry','sad','surprised','embarrassed'];
 const scenes=STORY_SCENE_IDS;
 export function validateStory(c){
+ validateStoryMusic(c);
  const roles=[...baseRoles,...Object.keys(c.roleBindings??{})];
- canonicalData(c);assertShape(c,['resourceId','definitionId','version','topicId','status','entry','stages',...(Object.hasOwn(c,'compilerContract')?['compilerContract']:[]),...(Object.hasOwn(c,'roleBindings')?['roleBindings']:[]),...(Object.hasOwn(c,'bindingContract')?['bindingContract']:[]),...(Object.hasOwn(c,'premise')?['premise']:[]),...(Object.hasOwn(c,'choiceContract')?['choiceContract']:[])]);
+ canonicalData(c);assertShape(c,['resourceId','definitionId','version','topicId','status','entry','stages',...(Object.hasOwn(c,'music')?['music']:[]),...(Object.hasOwn(c,'compilerContract')?['compilerContract']:[]),...(Object.hasOwn(c,'roleBindings')?['roleBindings']:[]),...(Object.hasOwn(c,'bindingContract')?['bindingContract']:[]),...(Object.hasOwn(c,'premise')?['premise']:[]),...(Object.hasOwn(c,'choiceContract')?['choiceContract']:[])]);
  need(!Object.hasOwn(c,'compilerContract')||c.compilerContract===2,'CONTRACT','unsupported compiler contract');
  if(c.roleBindings){need(c.compilerContract===2,'CONTRACT','named roles require v2');for(const [name,b] of Object.entries(c.roleBindings)){identifier(name);need(!baseRoles.includes(name),'ROLE','reserved role');if('candidateRole' in b){assertShape(b,['candidateRole']);need(c.bindingContract===1,'ROLE','dynamic role requires binding contract');identifier(b.candidateRole);}else{assertShape(b,['personId']);identifier(b.personId);}}}
  if('bindingContract' in c)need(c.bindingContract===1&&c.compilerContract===2&&!c.premise,'CONTRACT','binding contract requires explicit v2 consequences');
@@ -26,12 +28,20 @@ export function validateStory(c){
  need(new Set(ids).size===ids.length&&ids.includes(c.entry),'GRAPH','stage identities');
  for(const s of c.stages){
   assertShape(s,['id','pages','choices','next']);identifier(s.id);need(s.pages.length>0,'EMPTY','pages');
+  const performance=createStoryPerformance(),roleSet=new Set(roles);
   for(const [i,p] of s.pages.entries()){
-   assertShape(p,['order','text','speaker','scene','cast','presentation']);identifier(p.text);need(scenes.includes(p.scene),'SCENE','unknown scene resource');
+   const annotated=Object.hasOwn(p,'performance');
+   assertShape(p,['order','text','presentation',...(annotated?
+    ['performance',...['scene','speaker'].filter(k=>Object.hasOwn(p,k))]:['scene','speaker','cast'])]);
+   identifier(p.text);
    need(p.order===i+1,'PAGE','page order');need(['dialogue','narration','phone','chat','notice','email','news'].includes(p.presentation),'PAGE','presentation');
-   need(p.cast.length<=2&&new Set(p.cast.map(a=>a.role)).size===p.cast.length&&new Set(p.cast.map(a=>a.position)).size===p.cast.length,'CAST','at most two unique actors');
-   for(const a of p.cast){assertShape(a,['role','position','expression']);need(['participant','companion'].includes(a.role)&&['left','right','center'].includes(a.position),'CAST','actor reference');need(expressions.includes(a.expression),'CAST','expression');}
-   need(p.speaker===null?['narration','notice','email','news'].includes(p.presentation):roles.includes(p.speaker)&&(p.speaker==='teacher'||p.cast.some(a=>a.role===p.speaker)),'SPEAKER','speaker/cast');
+   if(!annotated){
+    need(scenes.includes(p.scene),'SCENE','unknown scene resource');
+    need(Array.isArray(p.cast)&&p.cast.length<=2&&new Set(p.cast.map(a=>a.role)).size===p.cast.length&&new Set(p.cast.map(a=>a.position)).size===p.cast.length,'CAST','at most two unique actors');
+    for(const a of p.cast){assertShape(a,['role','position','expression']);need(roles.includes(a.role)&&a.role!=='teacher'&&['left','right','center'].includes(a.position),'CAST','actor reference');need(STORY_EXPRESSIONS.includes(a.expression),'CAST','expression');}
+   }
+   const staged=advanceStoryPerformance(performance,p,roleSet);
+   need(staged.speaker===null?['narration','notice','email','news'].includes(p.presentation):roles.includes(staged.speaker)&&(staged.speaker==='teacher'||staged.cast.some(a=>a.role===staged.speaker)),'SPEAKER','speaker/cast');
   }
   need(Array.isArray(s.choices),'CHOICE','choices');
   if(s.choices.length){need(s.next===null&&(s.choices.length===4),'CHOICE','valid number of choices');need(s.choices.every(o=>!o.requires?.length),'CHOICE','all four base options must be available');need(s.choices.filter(o=>!o.requires?.length).length>=3&&s.choices.some(o=>o.emotional&&!o.requires?.length),'QUALIFICATION','three basic options and emotion stay available');const n=s.choices.filter(o=>o.emotional).length;need(n>=1&&n<=2,'EMOTION','1–2 emotional options');}

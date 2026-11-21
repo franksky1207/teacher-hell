@@ -5,3 +5,7 @@
 從整合分支手動執行 `npm ci --ignore-scripts`，再執行 `npm run deploy:preview`。指令建立必要產物，取回 `gh-pages`，只替換其 `preview/` 並保留根目錄其他檔案，使用普通 push 防止覆蓋並行更新。GitHub Pages 從 `gh-pages` 根目錄發布，故固定網址為 `https://franksky1207.github.io/teacher-hell/preview/`。每次一般程式 push 不會部署；部署不執行自然三年或 30 年模擬。指令需對儲存庫有 push 權限，並要求本機 git 已設定提交者身分。
 
 若 Pages 尚未啟用，儲存庫擁有者在 GitHub 的 Settings → Pages → Build and deployment 選擇 Deploy from a branch、`gh-pages`、`/(root)`，按 Save。發布後應等 Pages 建置完成，再開啟上述網址並確認載入、資源及重整；Actions 成功本身不代表網址已可用。
+
+## 本機 AVG 驗收
+
+要驗收實際學生立繪，先以已安裝 Pillow 和 NumPy 的 Python 執行 `python scripts/portrait-calibration.py`，再執行 `npm run build` 和 `npm run preview`。校正腳本只產生原流程使用的校正資料。正式故事演出讀取同站 `/stories/` 的資料，單獨啟動本機預覽時可讀取 GitHub Pages 上已發布的故事。

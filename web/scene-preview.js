@@ -24,7 +24,7 @@ function chooseWear(item,requested){
  if(STUDENT_ART_OUTFITS.some(([key])=>key===requested&&key!=='casual'))return {wear:requested,cell:null};
  return {wear:'uniform-summer',cell:null};
 }
-export function renderScenePreview(id='opening',castMode='two',wearMode='auto'){
+export function renderScenePreview(id='opening',castMode='two',wearMode='auto',modeControl=null){
  const item=SCENE_CASES.find(x=>x.id===id)??SCENE_CASES[0];
  const entry=selectScene(item.context),simulateMissing=item.context.simulateMissing===true;
  const chosen=['one','two','phone','adult','transfer','unknown'].includes(castMode)?castMode:'two';
@@ -56,8 +56,8 @@ export function renderScenePreview(id='opening',castMode='two',wearMode='auto'){
   }
  }
  const note=costume.wear==='casual'?'便服格位：'+costume.cell:costume.wear;
- return {entry,simulateMissing,html:`<main class="game game--story scene-preview" data-has-scene="${!!entry}">
-  <div class="top">15-D｜場景與人物演出驗收・示範資料，不寫入存檔</div>
+ return {entry,context:item.context,simulateMissing,html:`<main class="game game--story scene-preview" data-has-scene="${!!entry}">
+  <div class="top">${modeControl??'15-D｜場景與人物演出驗收・示範資料，不寫入存檔'}</div>
   <div class="scene-preview__tools">
    <label>場景 <select data-scene-case>${SCENE_CASES.map(c=>`<option value="${esc(c.id)}" ${item.id===c.id?'selected':''}>${esc(c.label)}</option>`).join('')}</select></label>
    <label>人物 <select data-scene-cast>${[['one','單人'],['two','雙人'],['adult','成人剪影'],['transfer','轉入生'],['unknown','無公開外貌'],['phone','電話（不顯示對方）']].map(([key,label])=>`<option value="${key}" ${chosen===key?'selected':''}>${label}</option>`).join('')}</select></label>

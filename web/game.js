@@ -1,4 +1,6 @@
-import {MusicPlayer,MUSIC_TRACKS,musicMoodForVisible} from './music-player.js';
+import {AVG_DEMO_ID,loadAvgDemo,loadStoryIndex,loadStoryPreview,renderStoryPerformancePreview} from './story-performance-preview.js';
+import {MusicPlayer,MUSIC_TRACKS} from './music-player.js';
+import {contextMusic,gameMusic,slotActivityKinds} from './music-context.js';
 import {nextProgression} from '../src/runtime/progression.js';
 import {makeTeacherProfile,teacherDisplayName} from '../src/runtime/teacher-profile.js';
 import { readAftercare } from '../src/runtime/aftercare.js';
@@ -36,7 +38,7 @@ import {SUBJECT_LOAD} from '../src/calendar/timetable.js';
 
 const app=document.querySelector('#app');
 const music=new MusicPlayer();
-let gameMusicMood='school',musicPreviewMood='school';
+let musicPreviewMood='school';
 // Resolve original shared art from the published preview root, not versioned JS.
 const gateDesktop=new URL('./web/assets/backgrounds/desktop/school-gate-day.webp',document.baseURI).href;
 const gateMobile=new URL('./web/assets/backgrounds/mobile/school-gate-day.webp',document.baseURI).href;
@@ -50,8 +52,85 @@ let ceremonyPage=0;
 let ui2PreviewState=makeUi2PreviewState();
 let ui4PreviewCase='phone',ui4PreviewPage=0;
 let scenePreviewCase='opening',scenePreviewCast='two',scenePreviewWear='auto';
-function showScenePreview(){screen='scene-preview';const preview=renderScenePreview(scenePreviewCase,scenePreviewCast,scenePreviewWear);set(preview.html);mountSceneBackground(app.querySelector('.scene-preview'),preview.entry,{preview:true,simulateMissing:preview.simulateMissing,caption:app.querySelector('.scene-preview__load')});void mountStoryPortraits(app);}
-function showUi2Preview(){screen='ui2-preview';set(renderUi2Preview(ui2PreviewState));mountUi2Preview(app);}
+const AVG_MODES=[['formal','正式故事演出'],['reader','故事閱讀'],['free','自由演出'],['scene','場景測試']];
+const avgPreview={index:[],base:null,storyId:AVG_DEMO_ID,indexLoading:false,indexError:'',preview:null,page:0,selected:null,showingResult:false,resultId:'R1',loading:false,error:''};
+const storyReaderUrl=new URL('../stories/',document.baseURI);
+const hostedStoryReaderUrl=new URL('https://franksky1207.github.io/teacher-hell/stories/');
+const localPreview=['127.0.0.1','localhost'].includes(storyReaderUrl.hostname);
+function avgModeControl(mode){
+ return `<label class="avg-mode-control">AVG 測試模式 <select data-avg-mode>${AVG_MODES.map(([id,label])=>
+  `<option value="${id}"${mode===id?' selected':''}>${label}</option>`).join('')}</select></label>`;
+}
+function showScenePreview(){
+ screen='scene-preview';
+ const preview=renderScenePreview(scenePreviewCase,scenePreviewCast,scenePreviewWear,avgModeControl('scene'));
+ set(preview.html,contextMusic(preview.context));
+ mountSceneBackground(app.querySelector('.scene-preview'),preview.entry,{preview:true,simulateMissing:preview.simulateMissing,caption:app.querySelector('.scene-preview__load')});
+ void mountStoryPortraits(app);
+}
+function showUi2Preview(){
+ screen='ui2-preview';set(renderUi2Preview(ui2PreviewState,avgModeControl('free')));mountUi2Preview(app);
+}
+function showFormalPreview(){
+ screen='avg-formal';
+ const preview=renderStoryPerformancePreview(avgPreview,avgModeControl('formal'));
+ set(preview.html,preview.music);
+ if(preview.entry)mountSceneBackground(app.querySelector('.avg-story-preview'),preview.entry,{
+  preview:true,caption:app.querySelector('[data-avg-background-status]')
+ });
+ void mountStoryPortraits(app);
+}
+async function loadAvgIndex(){
+ if(avgPreview.indexLoading||avgPreview.base)return;
+ avgPreview.indexLoading=true;avgPreview.indexError='';showFormalPreview();
+ try{
+  const local=new URL('data/',storyReaderUrl);
+  try{avgPreview.index=await loadStoryIndex(local);avgPreview.base=local;}
+  catch(error){
+   if(!localPreview)throw error;
+   const hosted=new URL('data/',hostedStoryReaderUrl);
+   avgPreview.index=await loadStoryIndex(hosted);avgPreview.base=hosted;
+  }
+ }catch(error){avgPreview.indexError='正式故事清單載入失敗。'+error.message;}
+ finally{avgPreview.indexLoading=false;if(screen==='avg-formal')showFormalPreview();}
+}
+async function startAvgPreview(){
+ if(avgPreview.loading)return;
+ if(avgPreview.storyId===AVG_DEMO_ID){
+  Object.assign(avgPreview,{preview:loadAvgDemo(),page:0,selected:null,showingResult:false,resultId:'R1',error:''});
+  showFormalPreview();return;
+ }
+ const summary=avgPreview.index.find(item=>item.storyId===avgPreview.storyId);
+ if(!summary)return;
+ avgPreview.loading=true;avgPreview.error='';showFormalPreview();
+ try{
+  const preview=await loadStoryPreview(avgPreview.base,summary);
+  const resultId=avgPreview.preview?.detail.storyId===summary.storyId?avgPreview.resultId:preview.detail.results[0].id;
+  Object.assign(avgPreview,{preview,page:0,selected:null,showingResult:false,resultId});
+ }catch(error){avgPreview.error='無法開始測試。'+error.message;}
+ finally{avgPreview.loading=false;if(screen==='avg-formal')showFormalPreview();}
+}
+async function openStoryReader(){
+ let url=storyReaderUrl;
+ if(localPreview){
+  if(avgPreview.base?.origin===hostedStoryReaderUrl.origin)url=hostedStoryReaderUrl;
+  else if(!avgPreview.base){
+   const response=await fetch(url,{method:'HEAD'}).catch(()=>null);
+   if(!response?.ok)url=hostedStoryReaderUrl;
+  }
+ }
+ if(screen==='avg-reader')location.assign(url.href);
+}
+function openAvgMode(mode){
+ if(mode==='formal'){showFormalPreview();void loadAvgIndex();}
+ else if(mode==='free')showUi2Preview();
+ else if(mode==='scene')showScenePreview();
+ else if(mode==='reader'){
+  screen='avg-reader';
+  set(`<main class="screen"><section class="panel"><h1>故事閱讀</h1>${avgModeControl('reader')}
+   <p>${button('開啟故事閱讀','story-reader')} ${button('返回測試中心','dev-center')}</p></section></main>`);
+ }
+}
 let yearResultPage=0;
 let notebookTab='people',notebookPersonId=null,notebookPersonCategory='student',notebookPersonSearch='',notebookEventSearch='',notebookEventView='time',notebookEventTerm=null;
 let notebookEventYear='all',notebookEventKind='all',notebookEventPage=1;
@@ -71,7 +150,7 @@ const taipeiDate=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',yea
 const seed=()=>crypto.getRandomValues(new Uint32Array(1))[0];
 const value=displayPanelValue;
 function panelBars(p,names){return `<div class="bars">${names.map(n=>`<div class="bar"><span>${n}</span><progress max="100" value="${p[n]}"></progress><span>${value(p[n])}</span></div>`).join('')}</div>`;}
-function set(html){app.innerHTML=html;music.sync();music.select(screen==='game'?gameMusicMood:screen==='music-preview'?musicPreviewMood:'school');}
+function set(html,track='school'){app.innerHTML=html;music.sync();music.select(track);}
 /** Retain the student's list scroll within an open notebook; a new notebook
  * always starts at the top. Avoid scrollIntoView (which can move the modal).
  */
@@ -88,8 +167,22 @@ function replaceNotebookContent(html,{preservePersonScroll=false}={}){
 }
 function dialog(title,body){app.insertAdjacentHTML('beforeend',`<div class="overlay" data-action="outside"><section class="dialog" role="dialog" aria-modal="true" aria-label="${esc(title)}"><header><h2>${esc(title)}</h2>${button('×','close','aria-label="關閉"')}</header>${body}</section></div>`);music.sync();}
 function showHome(){screen='home';forgetCurrentView();const desktopArt=gateDesktop,mobileArt=gateMobile;set(`<main class="home home--avg" style="--home-desktop-art:url('${desktopArt}');--home-mobile-art:url('${mobileArt}')"><div class="home__shade" aria-hidden="true"></div><div class="home__layout"><header class="home__title"><p class="home__eyebrow">一段教書生涯，一所充滿意外的學校。</p><h1>教師荒謬地獄</h1><p class="home__subtitle">三年導師生涯 · 一場荒謬的日常</p></header><nav class="home__menu" aria-label="主選單">${button('繼續遊戲','continue')}${button('選擇存檔','slots')}${button('遊戲說明','help')}${button('設定','settings')}</nav></div><aside class="home__dev-tools" aria-label="開發工具">${button('開發測試中心','dev-center')}</aside></main>`);}
-function showMusicPreview(){screen='music-preview';set(`<main class="screen music-preview"><section class="panel"><h1>背景音樂｜15-E 試聽</h1><p>七種情境皆使用正式 OGG 音檔。選曲僅切換音樂，不會推進時間或更動存檔。</p><div class="music-preview__choices">${MUSIC_TRACKS.map(t=>button(`${esc(t.label)}｜${esc(t.title)}`,`music-preview-track:${t.key}`,`class="${musicPreviewMood===t.key?'music-preview__active':''}"`)).join('')}</div><p>使用畫面右上角的小喇叭開關音樂；展開箭頭即可調整音量。</p><p>${button('返回開發測試中心','dev-center')}</p></section></main>`);}
-function showDeveloperCenter(){screen='dev-center';forgetCurrentView();set(`<main class="screen dev-center" aria-label="開發測試中心"><header class="dev-center__header"><p class="dev-center__eyebrow">DEVELOPER PREVIEW</p><h1>開發測試中心</h1><p>僅供畫面驗收；不會產生事件、推進時間或寫入存檔。</p></header><section class="dev-center__grid" aria-label="可用的驗收工具"><article class="dev-center__card"><span class="dev-center__symbol" aria-hidden="true">◈</span><h2>美術素材</h2><p>學生立繪、成人剪影與校園背景。</p>${button('人物與背景','art-preview')}</article><article class="dev-center__card"><span class="dev-center__symbol" aria-hidden="true">▣</span><h2>劇情呈現</h2><p>對話、人物站位、六表情與選項確認。</p>${button('劇情呈現','ui2-preview')}</article><article class="dev-center__card"><span class="dev-center__symbol" aria-hidden="true">▤</span><h2>特殊畫面</h2><p>通訊、公告、回顧與結局。</p>${button('特殊畫面','ui4-preview')}</article><article class="dev-center__card"><span class="dev-center__symbol" aria-hidden="true">▧</span><h2>場景演出</h2><p>背景時段、人物站位、家長電話與中性降級。</p>${button('故事場景','scene-preview')}</article><article class="dev-center__card"><span class="dev-center__symbol" aria-hidden="true">♫</span><h2>背景音樂</h2><p>七種情境試聽、切換、音量與靜音。</p>${button('聆聽音樂','music-preview')}</article><article class="dev-center__card"><span class="dev-center__symbol" aria-hidden="true">📖</span><h2>事件故事</h2><p>完整閱讀事件敘述、教師選項與八種結果。</p>${button('閱讀故事','story-reader')}</article></section><footer class="dev-center__footer">${button('返回首頁','home')}<p>配樂試聽不會寫入任何生涯存檔。</p></footer></main>`);}
+function showMusicPreview(){screen='music-preview';set(`<main class="screen music-preview"><section class="panel"><h1>背景音樂｜15-E 試聽</h1><p>七種情境皆使用正式 OGG 音檔。選曲僅切換音樂，不會推進時間或更動存檔。</p><div class="music-preview__choices">${MUSIC_TRACKS.map(t=>button(`${esc(t.label)}｜${esc(t.title)}`,`music-preview-track:${t.key}`,`class="${musicPreviewMood===t.key?'music-preview__active':''}"`)).join('')}</div><p>使用畫面右上角的小喇叭開關音樂；展開箭頭即可調整音量。</p><p>${button('返回開發測試中心','dev-center')}</p></section></main>`,musicPreviewMood);}
+function showDeveloperCenter(){
+ screen='dev-center';forgetCurrentView();
+ const cards=[
+  ['◈','美術素材','學生立繪、成人剪影與校園背景。','art-preview'],
+  ['▣','AVG 劇情演出','正式故事演出、故事閱讀、自由演出與場景測試。','avg-preview'],
+  ['▤','特殊畫面','通訊、公告、回顧與結局。','ui4-preview'],
+  ['♫','背景音樂','七種情境試聽、切換、音量與靜音。','music-preview']
+ ];
+ set(`<main class="screen dev-center" aria-label="開發測試中心"><header class="dev-center__header"><h1>開發測試中心</h1>
+  <p>僅供畫面驗收。操作不會推進遊戲或寫入存檔。</p></header>
+  <section class="dev-center__grid" aria-label="可用的驗收工具">${cards.map(([symbol,label,description,action])=>
+   `<article class="dev-center__card"><span class="dev-center__symbol" aria-hidden="true">${symbol}</span><h2>${label}</h2>
+   <p>${description}</p>${button(label,action)}</article>`).join('')}</section>
+  <footer class="dev-center__footer">${button('返回首頁','home')}</footer></main>`);
+}
 const UI4_CASES=[['phone','電話'],['chat','即時訊息'],['notice','公告'],['email','電子郵件'],['news','新聞'],['semester','學期回顧'],['annual','學年結算'],['failure','職務中斷'],['career','三年結局'],['warning','不可逆操作']];
 function ui4FixtureBody(type){
  const msg='關於明天的班級活動，校方已收到你的需求。確認後會再公告相關安排。';
@@ -170,14 +263,13 @@ async function load(i){slot=i;set('<main class="screen"><p role="status">正在�
 let displayedSession=null,displayedWorld=null,displayedToken=null;
 function gameData(){if(displayedSession!==current){displayedSession=current;const snap=current.snapshot();displayedWorld=snap.payload.world;displayedToken=snap.token;notebookCache.clear();notebookOwner=null;}return displayedWorld;}
 function showGame(){screen='game';const w=gameData(),failed=!!failureResult(w),activeStory=currentStory(w),plan=w.extensions['teacher-hell/world'].plan,n=w.numeric.evolution.world,day=runtimeCalendarDay(w),panel=deriveWorldPanel(n),done=!!careerResult(w),grade=gradeAt(w.position.date,plan.startYear),period=periodLabel(w.position.date,day),aftercarePhase=!!aftercareWindow(w)&&w.position.date>=aftercareWindow(w).startDate,slotText=({early:'早自習',lunch:'午餐',noon:'午休',private:'私人時間',morning:'上午',afternoon:'下午',evening:'晚間',dinner:'晚餐','vacation-day':'假期','festival-day':'春節'})[w.position.slotId]??(w.position.slotId.startsWith('p')?`第 ${w.position.slotId.slice(1)} 節`:w.position.slotId);let place='';const occ=formalSlot(w);if(occ.slot.lesson&&(!aftercarePhase||continuesAftercareTeaching(w,occ.slot.lesson))){const table=plan.tables.find(t=>t.semesterId===occ.day.courseSemesterId);place=`・${classLabel(table,n.registry,occ.slot.lesson.classId)}`;}
-const visualScene=selectScene({opening:openingPage>0,completed:done,failed,aftercare:aftercarePhase,
- sceneTag:activeStory?.page?.scene??null,presentation:activeStory?.page?.presentation??null,
+const sceneContext={opening:openingPage>0,completed:done,failed,aftercare:aftercarePhase,
  slotId:w.position.slotId,hasLesson:!!occ.slot.lesson,dayKind:day.kind,
- activityKinds:(day.slots.find(s=>s.id===w.position.slotId)?.activityIds??[]).map(id=>day.activities.find(a=>a.id===id)?.kind).filter(Boolean),
- grade,termId:day.term?.id??day.courseSemesterId});
+ activityKinds:slotActivityKinds(day,w.position.slotId),grade,termId:day.term?.id??day.courseSemesterId};
+const visibleStory=!done&&!failed&&!openingPage?activeStory:null;
+const visualScene=selectScene({...sceneContext,sceneTag:activeStory?.page?.scene??null,presentation:activeStory?.page?.presentation??null});
 app.dataset.sceneName=visualScene?.filename??'neutral';
-gameMusicMood=musicMoodForVisible({sceneName:visualScene?.scene??'',activities:(day.slots.find(s=>s.id===w.position.slotId)?.activityIds??[]).map(id=>day.activities.find(a=>a.id===id)?.kind).filter(Boolean),slotId:w.position.slotId,text:activeStory?.page?.text??'',moodKey:activeStory?.page?.musicMood??''});
-set(`<main class="game game--story ${activeStory&&!done&&!failed&&!openingPage?'game--active-dialogue':''}" data-revision="${w.extensions['teacher-hell/world'].revision}"><div class="top">${w.position.date} 星期${'一二三四五六日'[weekday(w.position.date)-1]}・任教第 ${teacherTenure(w)} 年・導師 ${esc(teacherDisplayName(w))}・高${'一二三'[grade-1]}<br>遊玩第 ${w.position.serviceYear} 學年・${aftercarePhase?'六月教師善後':period}・${aftercarePhase?'週進度':slotText}${place}</div><nav class="game-nav">${button('課表','timetable')}${button('筆記本','notebook')}${button('選單','menu')}</nav><section class="states" aria-label="教師當前狀態">${STATE_NAMES.map(k=>`<div class="state-meter"><span class="state-meter__head"><span class="state-meter__name">${esc(k)}</span><span class="state-meter__value">${value(panel[k])}</span></span><progress max="100" value="${Math.max(0,Math.min(100,Number(panel[k])||0))}" aria-label="${esc(k)}"></progress></div>`).join('')}${button('<span aria-hidden="true">▤</span> 教師能力與狀態 <span aria-hidden="true">›</span>','panel','class="state-detail-button" aria-label="查看教師六項長期能力與六項當前狀態"')}</section>${activeStory&&!done&&!failed&&!openingPage?renderStoryView(activeStory):`<div class="story ${!done&&!failed?'story--idle':''}">${done?completionCard(w):failed?failureCard(w):openingPage===1?'【開場 1／2】暑輔的第一天，你站在校門前。新的三年，從這裡開始。':openingPage===2?'【開場 2／2】走進校園，準備迎接你的導師班。接下來依校曆與班級近況展開。':aftercareWindow(w)&&w.position.date>=aftercareWindow(w).startDate?'學生已離校，導師繼續處理六月善後。':aftercareWindow(w)&&w.position.date===aftercareWindow(w).ceremonyDate?'畢業典禮依正式校曆進行。':'依正式校曆處理課程、校務及事件。'}${!done&&!failed&&!openingPage?(scheduledPhase(day,w.position.slotId)?'<p>'+esc(scheduledPhase(day,w.position.slotId))+'</p>':'')+h4Controls(w)+progressionControls(w):''}${openingPage?`<p>${button(openingPage===1?'下一頁':'結束開場','opening-next')}</p>`:''}</div>`}</main>`);mountSceneBackground(app,visualScene);if(activeStory&&!done&&!failed&&!openingPage)void mountStoryPortraits(app);showPendingReview();void remindKnownDeadlines().catch(error=>console.error('待辦提醒查閱失敗',error));}
+set(`<main class="game game--story ${activeStory&&!done&&!failed&&!openingPage?'game--active-dialogue':''}" data-revision="${w.extensions['teacher-hell/world'].revision}"><div class="top">${w.position.date} 星期${'一二三四五六日'[weekday(w.position.date)-1]}・任教第 ${teacherTenure(w)} 年・導師 ${esc(teacherDisplayName(w))}・高${'一二三'[grade-1]}<br>遊玩第 ${w.position.serviceYear} 學年・${aftercarePhase?'六月教師善後':period}・${aftercarePhase?'週進度':slotText}${place}</div><nav class="game-nav">${button('課表','timetable')}${button('筆記本','notebook')}${button('選單','menu')}</nav><section class="states" aria-label="教師當前狀態">${STATE_NAMES.map(k=>`<div class="state-meter"><span class="state-meter__head"><span class="state-meter__name">${esc(k)}</span><span class="state-meter__value">${value(panel[k])}</span></span><progress max="100" value="${Math.max(0,Math.min(100,Number(panel[k])||0))}" aria-label="${esc(k)}"></progress></div>`).join('')}${button('<span aria-hidden="true">▤</span> 教師能力與狀態 <span aria-hidden="true">›</span>','panel','class="state-detail-button" aria-label="查看教師六項長期能力與六項當前狀態"')}</section>${activeStory&&!done&&!failed&&!openingPage?renderStoryView(activeStory):`<div class="story ${!done&&!failed?'story--idle':''}">${done?completionCard(w):failed?failureCard(w):openingPage===1?'【開場 1／2】暑輔的第一天，你站在校門前。新的三年，從這裡開始。':openingPage===2?'【開場 2／2】走進校園，準備迎接你的導師班。接下來依校曆與班級近況展開。':aftercareWindow(w)&&w.position.date>=aftercareWindow(w).startDate?'學生已離校，導師繼續處理六月善後。':aftercareWindow(w)&&w.position.date===aftercareWindow(w).ceremonyDate?'畢業典禮依正式校曆進行。':'依正式校曆處理課程、校務及事件。'}${!done&&!failed&&!openingPage?(scheduledPhase(day,w.position.slotId)?'<p>'+esc(scheduledPhase(day,w.position.slotId))+'</p>':'')+h4Controls(w)+progressionControls(w):''}${openingPage?`<p>${button(openingPage===1?'下一頁':'結束開場','opening-next')}</p>`:''}</div>`}</main>`,gameMusic(w,visibleStory,sceneContext));mountSceneBackground(app,visualScene);if(activeStory&&!done&&!failed&&!openingPage)void mountStoryPortraits(app);showPendingReview();void remindKnownDeadlines().catch(error=>console.error('待辦提醒查閱失敗',error));}
 function h4Controls(w){
  const bounds=aftercareWindow(w);if(!bounds)return '';
  const fact=w.extensions['teacher-hell/world'].facts.findLast(f=>f.data.graduationSummary);
@@ -285,7 +377,7 @@ async function acknowledgeReview(id){
 function showTimetable(){const w=gameData(),plan=w.extensions['teacher-hell/world'].plan,n=w.numeric.evolution.world,base=viewedWeek??weekMonday(w.position.date),grade=gradeAt(w.position.date,plan.startYear);let cells='<div></div>'+['一','二','三','四','五'].map(x=>`<div class="head">週${x}</div>`).join('');for(let period=1;period<=8;period++){cells+=`<div class="period">${period}</div>`;for(let d=0;d<5;d++){const date=addDays(base,d),day=calendarDay(date,grade,plan.calendarVersion),table=plan.tables.find(t=>t.semesterId===day.courseSemesterId),s=day.slots.find(x=>x.id===`p${period}`);let label='',detail=`${date} 第 ${period} 節：空堂`;if(aftercareCellIsEmpty(w,date,s,table&&s?slotOccupancy(date,grade,s.id,table,plan.calendarVersion):null)){label='';detail=`${date}：原班已離校，使用週善後流程`;}else if(!s){label=day.holiday[0]?.name??((day.activities[0]?activityName(day.activities[0]):'休假'));detail=`${date}：${label}`;}else if(s.kind==='activity'){label='活動';detail=`${date} 第 ${period} 節：${day.activities.filter(a=>s.activityIds.includes(a.id)).map(activityName).join('、')}`;}else if(s.kind==='exam'){label=scheduledPhase(day,s.id)??'考試';detail=`${date} 第 ${period} 節：${label}`;}else if(s.kind==='assembly'||s.kind==='class-meeting'){label=s.kind==='assembly'?'週會':'班會';detail=`${date} 第 ${period} 節：${label}`;}else if(!table){label='未排定';detail=`${date} 第 ${period} 節：此學期課表尚未建立`;}else if(table){const o=slotOccupancy(date,grade,`p${period}`,table,plan.calendarVersion),c=o.lesson&&n.registry.classes[o.lesson.classId];if(c){label=classLabel(table,n.registry,c.id);detail=`${date} 第 ${period} 節：${label}・${table.subject}`;}}cells+=button(esc(label),'cell',`data-detail="${esc(detail)}" aria-label="${esc(label||'空堂')}"`);}}
 const first=calendarDay(base,grade,plan.calendarVersion),weeks=comparableWeeks(w.position.date,grade,plan.calendarVersion),actual=base===weeks.actual;dialog('完整週課表',`<section class="ui3-timetable"><p>${base} 起・${first.week?`第 ${first.week} 週（${first.week%2?'單':'雙'}週）`:periodLabel(base,first)}・${actual?'實際當週':'比較週，非實際當週'}</p><div class="row">${button('單週','week:odd',weeks.odd?'':'disabled')}${button('雙週','week:even',weeks.even?'':'disabled')}${button('回到實際當週','week:actual')}</div><p class="muted">${weeks.odd&&weeks.even?'切換只供查閱，不會改變遊戲時間。':'目前沒有可比較的同學期單雙週；顯示實際當週。'} 點格子查看資訊。</p><div class="table">${cells}</div></section>`);}
 function close(){if(current&&!failureResult(gameData())&&!careerResult(gameData())&&pendingSemesterReview(gameData())&&document.querySelector('.overlay .notebook-reviews'))return;document.querySelector('.overlay')?.remove();}
-async function act(action,el){if(action==='outside'){if(el.classList.contains('overlay'))close();return;}if(action==='close'){close();return;}if(action==='home'){showHome();return;}if(action==='slots'){await showSlots();return;}if(action==='continue'){for(let i=1;i<=3;i++){const s=await workerRead({slot:i,summary:true});if(s.summary){await load(i);return;}}await showSlots();return;}if(action==='help'){document.querySelector('.overlay')?.remove();dialog('遊戲說明',`<div class="help-guide ui4-info-panel"><p>一段三年的私校導師生涯，由你的選擇推進。</p><h3>開始生涯</h3><p>在「選擇存檔」建立教師，依序選難度、姓名、重抽六項長期能力、選任教科目，再確認建檔。三種難度的遊玩長度都是三年。</p><h3>每日流程</h3><p>主畫面以「進度」接續課程及校務。目前尚未接入新一輪正式事件，保留日常活動、校曆與其他系統；人物、美術及劇情 UI 可至開發測試中心查看。</p><h3>查閱校務</h3><p>課表可查看單雙週及任課安排；筆記本可查已知人物、關係、學業、歷史和待辦。查閱資料不會推進遊戲時間。</p><h3>存檔與結算</h3><p>三個存檔保存在本機瀏覽器，建議定期匯出備份。六月先閱讀學年報告，再執行結算；三年結束後原槽仍可唯讀查閱，覆蓋之前請先匯出。</p><h3>背景音樂</h3><p>所有畫面右上角的小喇叭可直接開啟或關閉音樂；點旁邊的箭頭可展開音量調整。音樂開關與音量會自動記住，不必進入設定。</p></div>`);return;}if(action==='story-reader'){location.assign(new URL('../stories/',location.href).href);return;}if(action==='dev-center'){showDeveloperCenter();return;}if(action==='music-preview'){musicPreviewMood='school';showMusicPreview();return;}if(action.startsWith('music-preview-track:')){const key=action.slice('music-preview-track:'.length);if(MUSIC_TRACKS.some(t=>t.key===key)){musicPreviewMood=key;showMusicPreview();}return;}if(action==='ui4-preview'){ui4PreviewCase='phone';ui4PreviewPage=0;showUi4Preview();return;}if(action==='scene-preview'){scenePreviewCase='opening';scenePreviewCast='two';scenePreviewWear='auto';showScenePreview();return;}if(action==='ui2-preview'){ui2PreviewState=makeUi2PreviewState();showUi2Preview();return;}if(action==='art-preview'){dialog('美術素材預覽',renderArtPreview());mountArtPreview(document.querySelector('.overlay .art-preview'));return;}if(action==='settings'){dialog('設定',`<section class="ui4-info-panel"><h3>顯示與操作</h3><p>遊戲可在手機直式與電腦橫式操作；遊玩資料儲存在本機瀏覽器。</p><h3>版本資訊</h3><p>《教師荒謬地獄》開發預覽版，舊事件量產內容已撤除，目前遊玩流程沒有正式事件抽選。美術及畫面測試中心維持可用；舊版開發存檔並未刪除。</p></section>`);return;}
+async function act(action,el){if(action==='outside'){if(el.classList.contains('overlay'))close();return;}if(action==='close'){close();return;}if(action==='home'){showHome();return;}if(action==='slots'){await showSlots();return;}if(action==='continue'){for(let i=1;i<=3;i++){const s=await workerRead({slot:i,summary:true});if(s.summary){await load(i);return;}}await showSlots();return;}if(action==='help'){document.querySelector('.overlay')?.remove();dialog('遊戲說明',`<div class="help-guide ui4-info-panel"><p>一段三年的私校導師生涯，由你的選擇推進。</p><h3>開始生涯</h3><p>在「選擇存檔」建立教師，依序選難度、姓名、重抽六項長期能力、選任教科目，再確認建檔。三種難度的遊玩長度都是三年。</p><h3>每日流程</h3><p>主畫面以「進度」接續課程及校務。目前尚未接入新一輪正式事件，保留日常活動、校曆與其他系統；人物、美術及劇情 UI 可至開發測試中心查看。</p><h3>查閱校務</h3><p>課表可查看單雙週及任課安排；筆記本可查已知人物、關係、學業、歷史和待辦。查閱資料不會推進遊戲時間。</p><h3>存檔與結算</h3><p>三個存檔保存在本機瀏覽器，建議定期匯出備份。六月先閱讀學年報告，再執行結算；三年結束後原槽仍可唯讀查閱，覆蓋之前請先匯出。</p><h3>背景音樂</h3><p>所有畫面右上角的小喇叭可直接開啟或關閉音樂；點旁邊的箭頭可展開音量調整。音樂開關與音量會自動記住，不必進入設定。</p></div>`);return;}if(action==='story-reader'){await openStoryReader();return;}if(action==='avg-preview'){openAvgMode('formal');return;}if(action==='avg-start'){await startAvgPreview();return;}if(action==='avg-reload-index'){await loadAvgIndex();return;}if(action==='avg-back-opening'){avgPreview.showingResult=false;avgPreview.selected=null;showFormalPreview();return;}if(action==='dev-center'){showDeveloperCenter();return;}if(action==='music-preview'){musicPreviewMood='school';showMusicPreview();return;}if(action.startsWith('music-preview-track:')){const key=action.slice('music-preview-track:'.length);if(MUSIC_TRACKS.some(t=>t.key===key)){musicPreviewMood=key;showMusicPreview();}return;}if(action==='ui4-preview'){ui4PreviewCase='phone';ui4PreviewPage=0;showUi4Preview();return;}if(action==='scene-preview'){scenePreviewCase='opening';scenePreviewCast='two';scenePreviewWear='auto';showScenePreview();return;}if(action==='ui2-preview'){ui2PreviewState=makeUi2PreviewState();showUi2Preview();return;}if(action==='art-preview'){dialog('美術素材預覽',renderArtPreview());mountArtPreview(document.querySelector('.overlay .art-preview'));return;}if(action==='settings'){dialog('設定',`<section class="ui4-info-panel"><h3>顯示與操作</h3><p>遊戲可在手機直式與電腦橫式操作；遊玩資料儲存在本機瀏覽器。</p><h3>版本資訊</h3><p>《教師荒謬地獄》開發預覽版，舊事件量產內容已撤除，目前遊玩流程沒有正式事件抽選。美術及畫面測試中心維持可用；舊版開發存檔並未刪除。</p></section>`);return;}
 const [cmd,...argParts]=action.split(':');const arg=argParts.join(':');if(screen==='ui4-preview'&&cmd==='notebook-review'){showUi4Preview();return;}if(cmd==='ui4-case'){if(!UI4_CASES.some(([key])=>key===arg))return;ui4PreviewCase=arg;ui4PreviewPage=0;showUi4Preview();return;}if(cmd==='year-result-page'&&screen==='ui4-preview'){ui4PreviewPage=Math.max(0,Math.min(3,Number(arg)||0));showUi4Preview();return;}if(cmd==='new'){draftStart(Number(arg));return;}if(cmd==='load'){await load(Number(arg));return;}if(cmd==='difficulty'){if(arg){draft.difficulty=arg;proposal=null;showDifficulty();}else showDifficulty();return;}if(cmd==='teacher'){try{makeTeacherProfile(draft.surname,draft.givenName);}catch(e){alert(e.message);return;}await showTeacher();return;}if(cmd==='reroll'){draft.candidate=rerollCandidate(draft.candidate);proposal=null;await showTeacher();return;}if(cmd==='subjects'){showSubjects();return;}if(cmd==='subject'){draft.subject=arg;proposal=null;showSubjects();return;}if(cmd==='review'){await showReview();return;}if(cmd==='create'){await create();return;}if(cmd==='opening-next'){openingPage=openingPage===1?2:0;showGame();return;}if(cmd==='ceremony-page'){ceremonyPage=Math.max(0,ceremonyPage+Number(arg));showGame();return;}if(cmd==='progress'){const next=nextProgression(gameData());if(next.status==='action')await executeProgress(next.request);else showGame();return;}if(cmd==='completion-details'){await act('notebook');await act('notebook-tab:career');return;}if(cmd==='panel'){const p=deriveWorldPanel(gameData().numeric.evolution.world);dialog('教師狀態',`<h3>長期能力</h3>${panelBars(p,ABILITY_NAMES)}<h3>當前狀態</h3>${panelBars(p,STATE_NAMES)}`);return;}if(cmd==='timetable'){viewedWeek=null;showTimetable();return;}if(cmd==='week'){const w=gameData(),p=w.extensions['teacher-hell/world'].plan,weeks=comparableWeeks(w.position.date,gradeAt(w.position.date,p.startYear),p.calendarVersion);if(weeks[arg])viewedWeek=weeks[arg];close();showTimetable();return;}if(cmd==='cell'){alert(el.dataset.detail);return;}if(cmd==='review-open'){document.querySelectorAll('.overlay').forEach(node=>node.remove());showPendingReview();return;}if(cmd==='review-ack'){await acknowledgeReview(arg);return;}
 if(cmd==='year-result'){document.querySelector('.overlay')?.remove();showYearResult();return;}
 if(cmd==='year-result-page'){
@@ -373,6 +465,16 @@ if(cmd==='export'){await storageAction('正在驗證並匯出完整存檔…',as
 if(cmd==='import'){const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.onchange=async()=>{try{if(!input.files.length)return;await storageAction('正在驗證匯入存檔…',async()=>{const incoming=input.files[0],{review}=await workerRead({slot:Number(arg),reviewImport:incoming});if(!confirm(`匯入生涯 ${review.incoming.identity.careerId}？${review.replacing?'此槽已有存檔，將被覆蓋。':''}`))return;if(review.replacing&&!confirm('再次確認覆蓋原存檔？'))return;await workerRead({slot:Number(arg),import:incoming,expectedToken:review.token,confirmed:true});await showSlots();});}catch(e){alert(`匯入失敗：${e.message}`);}};input.click();}}
 
 app.addEventListener('change',event=>{
+ const field=event.target;
+ if(field.matches('[data-avg-mode]'))openAvgMode(field.value);
+ else if(screen==='avg-formal'&&field.matches('[data-avg-story]'))avgPreview.storyId=field.value;
+ else if(screen==='avg-formal'&&field.matches('[data-avg-result]')&&avgPreview.preview?.detail.results.some(r=>r.id===field.value)){
+  avgPreview.resultId=field.value;
+  showFormalPreview();
+  app.querySelector('[data-avg-result]')?.focus();
+ }
+});
+app.addEventListener('change',event=>{
  if(screen!=='scene-preview')return;
  if(event.target.matches('[data-scene-case]')){scenePreviewCase=event.target.value;showScenePreview();}
  else if(event.target.matches('[data-scene-cast]')){scenePreviewCast=event.target.value;showScenePreview();}
@@ -402,6 +504,22 @@ app.addEventListener('change',event=>{
  if(event.target.matches('[data-ui2-right-expression]')){ui2PreviewState.rightExpression=Number(event.target.value);showUi2Preview();}
 });
 app.addEventListener('click',async event=>{
+ if(screen==='avg-formal'&&!avgPreview.loading){
+  const control=event.target.closest('[data-story-action]');
+  const surface=event.target.closest('[data-story-advance]');
+  const safeSurface=surface&&!event.target.closest('.story-chat,.story-document,.story-phone,button,a,input,select,textarea');
+  if((control||safeSurface)&&avgPreview.preview&&!avgPreview.showingResult){
+   const storyAction=control?.dataset.storyAction??surface.dataset.storyAdvance;
+   const optionId=control?.dataset.optionId;
+   const last=avgPreview.preview.pages.length-1;
+   if(storyAction==='next')avgPreview.page=Math.min(last,avgPreview.page+1);
+   else if(storyAction==='previous')avgPreview.page=Math.max(0,avgPreview.page-1);
+   else if(storyAction==='select'&&avgPreview.page===last&&avgPreview.preview.detail.options.some(o=>o.id===optionId))avgPreview.selected=optionId;
+   else if(storyAction==='cancel')avgPreview.selected=null;
+   else if(storyAction==='confirm'&&avgPreview.selected)avgPreview.showingResult=true;
+   showFormalPreview();return;
+  }
+ }
  if(screen==='ui2-preview'){
   const control=event.target.closest('[data-story-action]');
   const surface=event.target.closest('[data-story-advance]');

@@ -1,34 +1,14 @@
 /** 15-E background music. Playback is a nonblocking, save-independent UI effect.
  * Browser user gesture controls playback (especially iOS Safari).
  */
-export const MUSIC_TRACKS=Object.freeze([
- {key:'school',label:'一般校園',title:'Good Morning',author:"You're Perfect Studio",source:'https://opengameart.org/content/good-morning',license:'CC0'},
- {key:'conflict',label:'衝突',title:'Tension',author:'tapatilorenzo',source:'https://opengameart.org/content/midi-2-tension-songs',license:'CC0'},
- {key:'serious',label:'重大事情',title:'Unsolved Investigation',author:'isaiah658',source:'https://opengameart.org/content/unsolved-investigation',license:'CC0'},
- {key:'home',label:'在家',title:'Forget Me Not',author:'Kistol',source:'https://opengameart.org/content/forget-me-not',license:'CC0'},
- {key:'playful',label:'遊玩',title:'Happy Adventure',author:'TinyWorlds',source:'https://opengameart.org/content/happy-adventure-loop',license:'CC0'},
- {key:'touching',label:'溫馨感動',title:'First Light Particles',author:'Yoiyami',source:'https://opengameart.org/node/182244',license:'CC0'},
- {key:'absurd',label:'荒謬幽默',title:'Wacky Wobblings',author:'Fupi',source:'https://opengameart.org/content/wacky-wobblings',license:'CC0'}
-]);
-export const MUSIC_KEYS=new Set(MUSIC_TRACKS.map(t=>t.key));
+import {MUSIC_TRACKS,MUSIC_KEYS} from '../src/runtime/story-music.js';
+export {MUSIC_TRACKS,MUSIC_KEYS};
 export const MUSIC_STORE_KEY='teacher-hell:music:v1';
 export function parseMusicSettings(text){
  try {const data=JSON.parse(text);return {
   enabled:typeof data.enabled==='boolean'?data.enabled:true,
   volume:Number.isFinite(data.volume)?Math.max(0,Math.min(1,data.volume)):0.65
  };} catch {return {enabled:true,volume:0.65};}
-}
-/** Only disclosed scene, activity and current visible dialogue text; no hidden NPC values. */
-export function musicMoodForVisible({sceneName='',activities=[],text='',slotId='',moodKey=''}={}){
- if(MUSIC_KEYS.has(moodKey))return moodKey;
- const page=String(text).slice(0,800);
- if(/荒謬|離譜|傻眼|哭笑不得|莫名其妙|搞笑|滑稽/.test(page))return 'absurd';
- if(/感謝|道謝|和解|感動|畢業|祝福|回憶|珍惜/.test(page))return 'touching';
- if(/衝突|爭執|吵架|爭吵|怒|抗議|責罵|咆哮|施壓/.test(page))return 'conflict';
- if(/緊急|重大|危機|調查|通報|意外事故|校安|嚴重/.test(page))return 'serious';
- if(activities.some(a=>['field-trip','graduation-trip-1','graduation-trip-2','graduation-trip-3','sports','fair','clubs'].includes(a)))return 'playful';
- if(/^(home-|vacation-|outside-neutral)/.test(sceneName)||['private','vacation-day','festival-day'].includes(slotId))return 'home';
- return 'school';
 }
 export class MusicPlayer {
  constructor({doc=document,store=globalThis.localStorage,AudioClass=globalThis.Audio,assetBase=new URL('./web/assets/music/',document.baseURI).href}={}){

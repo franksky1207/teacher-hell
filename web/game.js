@@ -1,4 +1,5 @@
 import {AVG_DEMO_ID,loadAvgDemo,loadStoryIndex,loadStoryPreview,renderStoryPerformancePreview} from './story-performance-preview.js';
+import {choosePreviewCast} from './story-preview-cast.js';
 import {MusicPlayer,MUSIC_TRACKS} from './music-player.js';
 import {contextMusic,gameMusic,slotActivityKinds} from './music-context.js';
 import {nextProgression} from '../src/runtime/progression.js';
@@ -53,7 +54,7 @@ let ui2PreviewState=makeUi2PreviewState();
 let ui4PreviewCase='phone',ui4PreviewPage=0;
 let scenePreviewCase='opening',scenePreviewCast='two',scenePreviewWear='auto';
 const AVG_MODES=[['formal','正式故事演出'],['reader','故事閱讀'],['free','自由演出'],['scene','場景測試']];
-const avgPreview={index:[],base:null,storyId:AVG_DEMO_ID,indexLoading:false,indexError:'',preview:null,page:0,selected:null,showingResult:false,resultId:'R1',loading:false,error:''};
+const avgPreview={index:[],base:null,storyId:AVG_DEMO_ID,indexLoading:false,indexError:'',preview:null,castSelection:{},page:0,selected:null,showingResult:false,resultId:'R1',loading:false,error:''};
 const storyReaderUrl=new URL('../stories/',document.baseURI);
 const hostedStoryReaderUrl=new URL('https://franksky1207.github.io/teacher-hell/stories/');
 const localPreview=['127.0.0.1','localhost'].includes(storyReaderUrl.hostname);
@@ -97,7 +98,7 @@ async function loadAvgIndex(){
 async function startAvgPreview(){
  if(avgPreview.loading)return;
  if(avgPreview.storyId===AVG_DEMO_ID){
-  Object.assign(avgPreview,{preview:loadAvgDemo(),page:0,selected:null,showingResult:false,resultId:'R1',error:''});
+  Object.assign(avgPreview,{preview:loadAvgDemo(),castSelection:{},page:0,selected:null,showingResult:false,resultId:'R1',error:''});
   showFormalPreview();return;
  }
  const summary=avgPreview.index.find(item=>item.storyId===avgPreview.storyId);
@@ -106,7 +107,7 @@ async function startAvgPreview(){
  try{
   const preview=await loadStoryPreview(avgPreview.base,summary);
   const resultId=avgPreview.preview?.detail.storyId===summary.storyId?avgPreview.resultId:preview.detail.results[0].id;
-  Object.assign(avgPreview,{preview,page:0,selected:null,showingResult:false,resultId});
+  Object.assign(avgPreview,{preview,castSelection:{},page:0,selected:null,showingResult:false,resultId});
  }catch(error){avgPreview.error='無法開始測試。'+error.message;}
  finally{avgPreview.loading=false;if(screen==='avg-formal')showFormalPreview();}
 }
@@ -468,6 +469,14 @@ app.addEventListener('change',event=>{
  const field=event.target;
  if(field.matches('[data-avg-mode]'))openAvgMode(field.value);
  else if(screen==='avg-formal'&&field.matches('[data-avg-story]'))avgPreview.storyId=field.value;
+ else if(screen==='avg-formal'&&field.matches('[data-avg-cast-role]')&&avgPreview.preview){
+  const role=field.dataset.avgCastRole;
+  const changed=choosePreviewCast(avgPreview.preview,avgPreview.castSelection,role,field.value);
+  if(changed.error)avgPreview.error=changed.error;
+  else{avgPreview.castSelection=changed.selection;avgPreview.error='';}
+  showFormalPreview();
+  app.querySelector('[data-avg-cast-role="'+role+'"]')?.focus();
+ }
  else if(screen==='avg-formal'&&field.matches('[data-avg-result]')&&avgPreview.preview?.detail.results.some(r=>r.id===field.value)){
   avgPreview.resultId=field.value;
   showFormalPreview();

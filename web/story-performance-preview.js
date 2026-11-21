@@ -6,6 +6,7 @@ import {calendarDay,CALENDAR_VERSION,gradeAt} from '../src/calendar/calendar.js'
 import {selectScene} from './scene-context.js';
 import {projectStoryScene} from './story-scene.js';
 import {renderStoryView} from './story-view.js';
+import {renderPreviewCastControls,previewCastWorld,overridePreviewAdultArt} from './story-preview-cast.js';
 
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const validId=id=>typeof id==='string'&&/^(?:T[1-6]-\d+|G-\d+|P[1-6]-\d+)$/.test(id);
@@ -81,14 +82,14 @@ export function storyPreviewProjection(preview,state){
  const page=result??pages[state.page];
  const last=state.page===pages.length-1;
  const chosen=detail.options.find(option=>option.id===state.selected);
- const {world,actors,profiles,context}=preview.sample??sampleWorld(preview);
+ const {world,actors,profiles,context}=previewCastWorld(preview,state.castSelection)??sampleWorld(preview);
  const display=text=>text.replace(/\{\{\s*([a-z][a-z0-9_]*)\.name\s*\}\}/g,(token,role)=>{
   if(role==='teacher')return '老師';
   return profiles[actors.get(role)]?.displayName??token;
  }).replace(/\{\{\s*teacher\.subject\s*\}\}/g,'數學');
  const boundPage={...page,text:display(page.text),speaker:actors.get(page.speaker)??null,
   cast:page.cast.map(actor=>({...actor,actorId:actors.get(actor.role)}))};
- const sceneView=projectStoryScene(world,{page:boundPage});
+ const sceneView=overridePreviewAdultArt(projectStoryScene(world,{page:boundPage}),actors,preview.slots,state.castSelection);
  if(!page.speaker&&page.label&&!result)sceneView.speaker=display(page.label);
  const entry=selectScene({...context,sceneTag:page.scene});
  let chatMessages;
@@ -134,6 +135,7 @@ export function renderStoryPerformancePreview(state,modeControl){
    ${resultControl}
    <button type="button" data-action="dev-center">返回測試中心</button>
   </nav>
+  ${state.preview?.detail.storyId===state.storyId?renderPreviewCastControls(state.preview,state.castSelection):''}
   ${projection?renderStoryView(projection.view):'<section class="avg-preview-empty">選擇試演內容後開始測試。</section>'}
   <p class="ui2-preview-caption" role="status">${esc(state.error|| (working?'正在載入故事…':activeLabel?activeLabel+'｜'+available+(state.showingResult?' 八種結果皆可手動試演。':'') : '試演不會改動玩家存檔。'))} ${esc(state.indexError)} <span data-avg-background-status></span></p>
  </main>`};

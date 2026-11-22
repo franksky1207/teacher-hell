@@ -99,3 +99,12 @@ test('T1-073～084: 384 causal review cells match 12 live choice-result matrices
     }
   }
 });
+
+
+test('story visible length never counts P page markers or speaker labels',()=>{
+  const marked='- **P01｜旁白**：週一家長來電。\n- **P02｜{{student_a.name}}**：老師，我有問題！';
+  const unmarked='週一家長來電。老師，我有問題！';
+  assert.equal(storyVisibleLength(marked),storyVisibleLength(unmarked));
+  assert.equal(storyVisibleLength('P03｜旁白：請看這份摘要。'),storyVisibleLength('請看這份摘要。'));
+  assert.equal(storyVisibleLength('這一句真的提到 P01｜旁白，不是頁面標頭。'),storyVisibleLength('這一句真的提到 P01｜旁白，不是頁面標頭。'));
+});

@@ -1,0 +1,1349 @@
+{
+  "phase": "initial-draft",
+  "stories": [
+    {
+      "storyId": "T1-121",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "請學生先說清日方夥伴分享的實例",
+            "action": "已讓學生記下日方夥伴親口描述的單次分組經驗，與自己推想的新做法分開",
+            "tradeoff": "能界定來源，卻尚未處理如何執行"
+          },
+          {
+            "id": 2,
+            "short": "讓學生先找兩名真正自願的協作者",
+            "action": "已請他先確認同學是否自願參與，未替全班指定任務",
+            "tradeoff": "尊重自願，但可能沒有足夠人手"
+          },
+          {
+            "id": 3,
+            "short": "只允許不影響課業的小型試做",
+            "action": "已確認可以在原有班務時間內評估一個可逆小步驟，不承諾全面改革",
+            "tradeoff": "降低成本，但學生的宏大構想可能被縮小"
+          },
+          {
+            "id": 4,
+            "short": "將導師可協助與學生要負責的事分開",
+            "action": "已列清你可協助確認校規與時段、學生須自行整理提案和協作意願",
+            "tradeoff": "分清責任，學生可能覺得老師沒有全力接手"
+          },
+          {
+            "id": 5,
+            "short": "請學生拿出可撤回的替代方案",
+            "action": "已請學生為不成功的試行準備停止條件及原本分工的保留方式",
+            "tradeoff": "能控制代價，但增加事前準備"
+          },
+          {
+            "id": 6,
+            "short": "請他先詢問班上究竟需要解決什麼",
+            "action": "已請學生蒐集班級實際合作困難，不讓外校聽來的點子凌駕在地問題",
+            "tradeoff": "避免空泛移植，可能改變原構想"
+          }
+        ],
+        "selectedIds": [
+          2,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 6,
+          "D": 2
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "E",
+        "D",
+        "C",
+        "A"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 153,
+          "delta": "student_a:10-4:-1",
+          "consequence": "學生承認協作者需要自願，暫停代替他人答應",
+          "stats": [
+            -2,
+            -1,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 148,
+          "delta": "student_a:11-3:+2",
+          "consequence": "學生規劃在既有時間內進行一次小型自願合作，不擅改長期制度",
+          "stats": [
+            1,
+            0,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 149,
+          "delta": "student_a:12-3:+1",
+          "consequence": "學生區分教師協助範圍與自己須完成的工作",
+          "stats": [
+            0,
+            -2,
+            -1,
+            -2
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 161,
+          "delta": "student_a:4-2:+2",
+          "consequence": "學生修正對日本學校合作方式的概括說法",
+          "stats": [
+            1,
+            -1,
+            1,
+            0
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 155,
+          "delta": "student_a:12-3:+2",
+          "consequence": "學生依本班需求修訂跨校交流後的提案",
+          "stats": [
+            1,
+            -1,
+            0,
+            -2
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 149,
+          "delta": "student_a:11-3:-1",
+          "consequence": "學生主動撤回無法長期維持的合作方案",
+          "stats": [
+            -2,
+            1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 145,
+          "delta": "student_a:10-4:+2",
+          "consequence": "學生提出可撤回方案，取得少數自願參與者的具體同意",
+          "stats": [
+            -1,
+            -2,
+            -1,
+            0
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 137,
+          "delta": "無",
+          "consequence": "學生保留點子並接受尚未取得足夠共識的現實",
+          "stats": [
+            -2,
+            2,
+            -1,
+            1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈肯定學生跨校交流後願意思考本班合作，尚未答應代替執行」不排斥「學生承認協作者需要自願，暫停代替他人答應」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈肯定學生跨校交流後願意思考本班合作，尚未答應代替執行」不排斥「學生規劃在既有時間內進行一次小型自願合作，不擅改長期制度」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈肯定學生跨校交流後願意思考本班合作，尚未答應代替執行」不排斥「學生區分教師協助範圍與自己須完成的工作」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈肯定學生跨校交流後願意思考本班合作，尚未答應代替執行」不排斥「學生修正對日本學校合作方式的概括說法」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈肯定學生跨校交流後願意思考本班合作，尚未答應代替執行」不排斥「學生依本班需求修訂跨校交流後的提案」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈肯定學生跨校交流後願意思考本班合作，尚未答應代替執行」不排斥「學生主動撤回無法長期維持的合作方案」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈肯定學生跨校交流後願意思考本班合作，尚未答應代替執行」不排斥「學生提出可撤回方案，取得少數自願參與者的具體同意」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈肯定學生跨校交流後願意思考本班合作，尚未答應代替執行」不排斥「學生保留點子並接受尚未取得足夠共識的現實」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已列清你可協助確認校規與時段、學生須自行整理提案和協作意願」，與「學生承認協作者需要自願，暫停代替他人答應」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已列清你可協助確認校規與時段、學生須自行整理提案和協作意願」不排斥「學生規劃在既有時間內進行一次小型自願合作，不擅改長期制度」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已列清你可協助確認校規與時段、學生須自行整理提案和協作意願」，與「學生區分教師協助範圍與自己須完成的工作」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已列清你可協助確認校規與時段、學生須自行整理提案和協作意願」不排斥「學生修正對日本學校合作方式的概括說法」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已列清你可協助確認校規與時段、學生須自行整理提案和協作意願」不排斥「學生依本班需求修訂跨校交流後的提案」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已列清你可協助確認校規與時段、學生須自行整理提案和協作意願」不排斥「學生主動撤回無法長期維持的合作方案」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已列清你可協助確認校規與時段、學生須自行整理提案和協作意願」，與「學生提出可撤回方案，取得少數自願參與者的具體同意」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已列清你可協助確認校規與時段、學生須自行整理提案和協作意願」，與「學生保留點子並接受尚未取得足夠共識的現實」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請學生蒐集班級實際合作困難，不讓外校聽來的點子凌駕在地問題」不排斥「學生承認協作者需要自願，暫停代替他人答應」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請學生蒐集班級實際合作困難，不讓外校聽來的點子凌駕在地問題」不排斥「學生規劃在既有時間內進行一次小型自願合作，不擅改長期制度」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請學生蒐集班級實際合作困難，不讓外校聽來的點子凌駕在地問題」，與「學生區分教師協助範圍與自己須完成的工作」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請學生蒐集班級實際合作困難，不讓外校聽來的點子凌駕在地問題」，與「學生修正對日本學校合作方式的概括說法」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請學生蒐集班級實際合作困難，不讓外校聽來的點子凌駕在地問題」，與「學生依本班需求修訂跨校交流後的提案」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請學生蒐集班級實際合作困難，不讓外校聽來的點子凌駕在地問題」不排斥「學生主動撤回無法長期維持的合作方案」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請學生蒐集班級實際合作困難，不讓外校聽來的點子凌駕在地問題」不排斥「學生提出可撤回方案，取得少數自願參與者的具體同意」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請學生蒐集班級實際合作困難，不讓外校聽來的點子凌駕在地問題」，與「學生保留點子並接受尚未取得足夠共識的現實」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請他先確認同學是否自願參與，未替全班指定任務」，與「學生承認協作者需要自願，暫停代替他人答應」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請他先確認同學是否自願參與，未替全班指定任務」不排斥「學生規劃在既有時間內進行一次小型自願合作，不擅改長期制度」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請他先確認同學是否自願參與，未替全班指定任務」不排斥「學生區分教師協助範圍與自己須完成的工作」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請他先確認同學是否自願參與，未替全班指定任務」不排斥「學生修正對日本學校合作方式的概括說法」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請他先確認同學是否自願參與，未替全班指定任務」，與「學生依本班需求修訂跨校交流後的提案」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "已完成「已請他先確認同學是否自願參與，未替全班指定任務」，但與「學生主動撤回無法長期維持的合作方案」的方向有張力；當事人仍可能自行調整。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請他先確認同學是否自願參與，未替全班指定任務」，與「學生提出可撤回方案，取得少數自願參與者的具體同意」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請他先確認同學是否自願參與，未替全班指定任務」不排斥「學生保留點子並接受尚未取得足夠共識的現實」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        }
+      ]
+    },
+    {
+      "storyId": "T1-122",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "請學生原樣記下當時的問答",
+            "action": "已協助區分自己問了什麼、對方實際答了什麼，以及尚未確認的部分",
+            "tradeoff": "讓期待有事實依據，但不立即得到答案"
+          },
+          {
+            "id": 2,
+            "short": "核對有無明確約定後續回覆",
+            "action": "已確認昨天沒有提出具體回信時間或正式答覆承諾",
+            "tradeoff": "減少誤會，學生可能一時失落"
+          },
+          {
+            "id": 3,
+            "short": "提供一種不靠私人聯絡的查證途徑",
+            "action": "已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果",
+            "tradeoff": "保留探索能力，但增加自主查找工作"
+          },
+          {
+            "id": 4,
+            "short": "請學生把問題縮成一個可回答的句子",
+            "action": "已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問",
+            "tradeoff": "便於後續查證，但可能無法回答全部好奇"
+          },
+          {
+            "id": 5,
+            "short": "說明不能擅自替日方夥伴答應回覆",
+            "action": "已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務",
+            "tradeoff": "尊重對方自主，學生可能覺得被拒絕"
+          },
+          {
+            "id": 6,
+            "short": "和學生約定停止反覆追問的界線",
+            "action": "已協助學生訂出等待及轉用其他來源的時點，不讓疑問變成持續催訊",
+            "tradeoff": "降低聯絡壓力，但不能消除不確定"
+          }
+        ],
+        "selectedIds": [
+          3,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": 4,
+          "D": "emotional"
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "A",
+        "B",
+        "E",
+        "D"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 138,
+          "delta": "student_a:8-4:+2",
+          "consequence": "學生修正對日方夥伴當時回覆的記憶，不再認定已有寄信約定",
+          "stats": [
+            1,
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 148,
+          "delta": "student_a:10-2:+2",
+          "consequence": "學生使用可追溯的公開來源整理部分答案，不冒稱日方回覆",
+          "stats": [
+            -2,
+            -1,
+            1,
+            -2
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 148,
+          "delta": "student_a:11-3:+1",
+          "consequence": "學生完成不含催促的正式詢問草稿，接受對方未必回覆",
+          "stats": [
+            0,
+            -1,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 156,
+          "delta": "student_a:8-4:-1",
+          "consequence": "學生停止在沒有授權的情況下反覆追查日方聯絡資訊",
+          "stats": [
+            -1,
+            -1,
+            1,
+            -1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 151,
+          "delta": "student_a:5-1:+1",
+          "consequence": "學生發現其他同學的口述無法替代自己的日方夥伴當時未答",
+          "stats": [
+            0,
+            -1,
+            -2,
+            1
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 153,
+          "delta": "student_a:11-3:+2",
+          "consequence": "學生整理出可查核的具體問題，不要求日方替整個制度背書",
+          "stats": [
+            -1,
+            -1,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 157,
+          "delta": "student_a:8-4:-1",
+          "consequence": "學生撤回對日方夥伴失信的指責，重新界定當時互動",
+          "stats": [
+            1,
+            -1,
+            -1,
+            0
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 158,
+          "delta": "student_a:10-2:+2",
+          "consequence": "學生接受目前無答覆，保留查證計畫與停止條件",
+          "stats": [
+            -2,
+            2,
+            0,
+            -2
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」，與「學生修正對日方夥伴當時回覆的記憶，不再認定已有寄信約定」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」不排斥「學生使用可追溯的公開來源整理部分答案，不冒稱日方回覆」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」，與「學生完成不含催促的正式詢問草稿，接受對方未必回覆」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」，與「學生停止在沒有授權的情況下反覆追查日方聯絡資訊」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」不排斥「學生發現其他同學的口述無法替代自己的日方夥伴當時未答」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」不排斥「學生整理出可查核的具體問題，不要求日方替整個制度背書」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」，與「學生撤回對日方夥伴失信的指責，重新界定當時互動」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」不排斥「學生接受目前無答覆，保留查證計畫與停止條件」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "已完成「已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果」，但與「學生修正對日方夥伴當時回覆的記憶，不再認定已有寄信約定」的方向有張力；當事人仍可能自行調整。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果」，與「學生使用可追溯的公開來源整理部分答案，不冒稱日方回覆」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果」不排斥「學生完成不含催促的正式詢問草稿，接受對方未必回覆」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果」不排斥「學生停止在沒有授權的情況下反覆追查日方聯絡資訊」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果」，與「學生發現其他同學的口述無法替代自己的日方夥伴當時未答」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果」，與「學生整理出可查核的具體問題，不要求日方替整個制度背書」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果」不排斥「學生撤回對日方夥伴失信的指責，重新界定當時互動」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果」，與「學生接受目前無答覆，保留查證計畫與停止條件」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」不排斥「學生修正對日方夥伴當時回覆的記憶，不再認定已有寄信約定」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」，與「學生使用可追溯的公開來源整理部分答案，不冒稱日方回覆」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」，與「學生完成不含催促的正式詢問草稿，接受對方未必回覆」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」不排斥「學生停止在沒有授權的情況下反覆追查日方聯絡資訊」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」，與「學生發現其他同學的口述無法替代自己的日方夥伴當時未答」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」，與「學生整理出可查核的具體問題，不要求日方替整個制度背書」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」不排斥「學生撤回對日方夥伴失信的指責，重新界定當時互動」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」，與「學生接受目前無答覆，保留查證計畫與停止條件」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已安慰學生並表達相信會有好結果，尚未取得日方任何回覆保證」不排斥「學生修正對日方夥伴當時回覆的記憶，不再認定已有寄信約定」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已安慰學生並表達相信會有好結果，尚未取得日方任何回覆保證」不排斥「學生使用可追溯的公開來源整理部分答案，不冒稱日方回覆」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已安慰學生並表達相信會有好結果，尚未取得日方任何回覆保證」不排斥「學生完成不含催促的正式詢問草稿，接受對方未必回覆」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已安慰學生並表達相信會有好結果，尚未取得日方任何回覆保證」不排斥「學生停止在沒有授權的情況下反覆追查日方聯絡資訊」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已安慰學生並表達相信會有好結果，尚未取得日方任何回覆保證」不排斥「學生發現其他同學的口述無法替代自己的日方夥伴當時未答」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已安慰學生並表達相信會有好結果，尚未取得日方任何回覆保證」不排斥「學生整理出可查核的具體問題，不要求日方替整個制度背書」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已安慰學生並表達相信會有好結果，尚未取得日方任何回覆保證」不排斥「學生撤回對日方夥伴失信的指責，重新界定當時互動」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已安慰學生並表達相信會有好結果，尚未取得日方任何回覆保證」不排斥「學生接受目前無答覆，保留查證計畫與停止條件」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        }
+      ]
+    },
+    {
+      "storyId": "T1-123",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "先請學生暫停公開，查核肖像授權",
+            "action": "已要求影片在日方夥伴及其他入鏡者的公開同意未確認前維持私下保存",
+            "tradeoff": "優先保護隱私，但影片成果無法立刻發布"
+          },
+          {
+            "id": 2,
+            "short": "請把標題改成自己在本校的配對經驗",
+            "action": "已明確區分本校所拍的一小段互動與對日本學生整體的推論",
+            "tradeoff": "保留故事真實性，降低宣傳式語氣"
+          },
+          {
+            "id": 3,
+            "short": "陪學生逐段標示鏡頭時間與前後脈絡",
+            "action": "已協助他註明短片只拍到哪些片刻、未拍到哪些反應",
+            "tradeoff": "可以修正解釋範圍，但較費時"
+          },
+          {
+            "id": 4,
+            "short": "讓學生先寫一份不含個資的文字版",
+            "action": "已請他先用文字描述可確定的交流經過，不附姓名、名牌或未經許可的影像",
+            "tradeoff": "可先分享收穫，少了直觀影音"
+          },
+          {
+            "id": 5,
+            "short": "檢查其他入鏡者及背景個人資料",
+            "action": "已提醒學生核對畫面內的姓名、證件、手機與其他同學授權",
+            "tradeoff": "維護安全，可能要刪掉畫面最佳的片段"
+          },
+          {
+            "id": 6,
+            "short": "請學生討論『開放』究竟是哪個動作",
+            "action": "已讓他具體指出影片能看見的表現，避免從笑容推論整校性格",
+            "tradeoff": "提升觀察能力，但不能給出想要的簡單標語"
+          }
+        ],
+        "selectedIds": [
+          5,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 3,
+          "D": "emotional"
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "A",
+        "B",
+        "E",
+        "D"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 157,
+          "delta": "student_a:5-1:+2",
+          "consequence": "學生在授權未明前暫不公開配對影片",
+          "stats": [
+            -2,
+            -1,
+            1,
+            0
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 153,
+          "delta": "student_a:8-2:+2",
+          "consequence": "學生修正影片標題，避免把一名配對夥伴概括成全體",
+          "stats": [
+            -1,
+            -1,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 150,
+          "delta": "student_a:9-4:+1",
+          "consequence": "學生補充剪輯不能呈現全程的限制，不拿短片證明完整相處",
+          "stats": [
+            -2,
+            -1,
+            1,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 157,
+          "delta": "student_a:5-1:+1",
+          "consequence": "學生發現入鏡者資料，先移除或遮蔽未獲許可的資訊",
+          "stats": [
+            1,
+            0,
+            -1,
+            -2
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 155,
+          "delta": "student_a:11-1:+2",
+          "consequence": "學生以未涉及個資的文字記錄代替未獲授權影像",
+          "stats": [
+            1,
+            2,
+            1,
+            -1
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 149,
+          "delta": "student_a:8-2:-1",
+          "consequence": "學生停止從日方夥伴的笑容推論全體意見",
+          "stats": [
+            0,
+            -1,
+            -2,
+            1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 147,
+          "delta": "student_a:5-1:+1",
+          "consequence": "學生接受授權限制，取消特定片段公開展示",
+          "stats": [
+            0,
+            -1,
+            -2,
+            2
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 161,
+          "delta": "student_a:9-4:+2",
+          "consequence": "學生完成尊重同意與來源範圍的發布前說明",
+          "stats": [
+            -1,
+            -1,
+            0,
+            -2
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已提醒學生核對畫面內的姓名、證件、手機與其他同學授權」，與「學生在授權未明前暫不公開配對影片」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已提醒學生核對畫面內的姓名、證件、手機與其他同學授權」不排斥「學生修正影片標題，避免把一名配對夥伴概括成全體」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已提醒學生核對畫面內的姓名、證件、手機與其他同學授權」不排斥「學生補充剪輯不能呈現全程的限制，不拿短片證明完整相處」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已提醒學生核對畫面內的姓名、證件、手機與其他同學授權」，與「學生發現入鏡者資料，先移除或遮蔽未獲許可的資訊」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已提醒學生核對畫面內的姓名、證件、手機與其他同學授權」不排斥「學生以未涉及個資的文字記錄代替未獲授權影像」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已提醒學生核對畫面內的姓名、證件、手機與其他同學授權」不排斥「學生停止從日方夥伴的笑容推論全體意見」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已提醒學生核對畫面內的姓名、證件、手機與其他同學授權」，與「學生接受授權限制，取消特定片段公開展示」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已提醒學生核對畫面內的姓名、證件、手機與其他同學授權」，與「學生完成尊重同意與來源範圍的發布前說明」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已要求影片在日方夥伴及其他入鏡者的公開同意未確認前維持私下保存」，與「學生在授權未明前暫不公開配對影片」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已要求影片在日方夥伴及其他入鏡者的公開同意未確認前維持私下保存」不排斥「學生修正影片標題，避免把一名配對夥伴概括成全體」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已要求影片在日方夥伴及其他入鏡者的公開同意未確認前維持私下保存」不排斥「學生補充剪輯不能呈現全程的限制，不拿短片證明完整相處」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已要求影片在日方夥伴及其他入鏡者的公開同意未確認前維持私下保存」，與「學生發現入鏡者資料，先移除或遮蔽未獲許可的資訊」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已要求影片在日方夥伴及其他入鏡者的公開同意未確認前維持私下保存」不排斥「學生以未涉及個資的文字記錄代替未獲授權影像」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已要求影片在日方夥伴及其他入鏡者的公開同意未確認前維持私下保存」，與「學生停止從日方夥伴的笑容推論全體意見」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已要求影片在日方夥伴及其他入鏡者的公開同意未確認前維持私下保存」，與「學生接受授權限制，取消特定片段公開展示」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已要求影片在日方夥伴及其他入鏡者的公開同意未確認前維持私下保存」，與「學生完成尊重同意與來源範圍的發布前說明」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助他註明短片只拍到哪些片刻、未拍到哪些反應」不排斥「學生在授權未明前暫不公開配對影片」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助他註明短片只拍到哪些片刻、未拍到哪些反應」不排斥「學生修正影片標題，避免把一名配對夥伴概括成全體」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助他註明短片只拍到哪些片刻、未拍到哪些反應」，與「學生補充剪輯不能呈現全程的限制，不拿短片證明完整相處」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助他註明短片只拍到哪些片刻、未拍到哪些反應」不排斥「學生發現入鏡者資料，先移除或遮蔽未獲許可的資訊」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助他註明短片只拍到哪些片刻、未拍到哪些反應」不排斥「學生以未涉及個資的文字記錄代替未獲授權影像」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助他註明短片只拍到哪些片刻、未拍到哪些反應」不排斥「學生停止從日方夥伴的笑容推論全體意見」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "已完成「已協助他註明短片只拍到哪些片刻、未拍到哪些反應」，但與「學生接受授權限制，取消特定片段公開展示」的方向有張力；當事人仍可能自行調整。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助他註明短片只拍到哪些片刻、未拍到哪些反應」，與「學生完成尊重同意與來源範圍的發布前說明」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已當場稱讚拍攝者的努力與畫面，尚未取得公開授權或查明內容是否可代表他人」不排斥「學生在授權未明前暫不公開配對影片」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已當場稱讚拍攝者的努力與畫面，尚未取得公開授權或查明內容是否可代表他人」不排斥「學生修正影片標題，避免把一名配對夥伴概括成全體」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已當場稱讚拍攝者的努力與畫面，尚未取得公開授權或查明內容是否可代表他人」不排斥「學生補充剪輯不能呈現全程的限制，不拿短片證明完整相處」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已當場稱讚拍攝者的努力與畫面，尚未取得公開授權或查明內容是否可代表他人」不排斥「學生發現入鏡者資料，先移除或遮蔽未獲許可的資訊」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已當場稱讚拍攝者的努力與畫面，尚未取得公開授權或查明內容是否可代表他人」不排斥「學生以未涉及個資的文字記錄代替未獲授權影像」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已當場稱讚拍攝者的努力與畫面，尚未取得公開授權或查明內容是否可代表他人」不排斥「學生停止從日方夥伴的笑容推論全體意見」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已當場稱讚拍攝者的努力與畫面，尚未取得公開授權或查明內容是否可代表他人」不排斥「學生接受授權限制，取消特定片段公開展示」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已當場稱讚拍攝者的努力與畫面，尚未取得公開授權或查明內容是否可代表他人」不排斥「學生完成尊重同意與來源範圍的發布前說明」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        }
+      ]
+    }
+  ]
+}

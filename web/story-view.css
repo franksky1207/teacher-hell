@@ -424,3 +424,56 @@
  .avg-story-preview .avg-cast-choices label{font-size:.75rem}
  .avg-story-preview .avg-cast-choices select{min-width:5.5rem;max-width:8.5rem}
 }
+
+/* AVG formal reader: one fixed-height toolbar, all other controls in its settings dialog. */
+.game--story.ui2-preview.avg-story-preview{
+ grid-template-rows:auto minmax(0,1fr) auto!important;
+ gap:.25rem;padding-top:clamp(.45rem,1.2dvh,.85rem);
+}
+.avg-story-preview .avg-compact-tools{
+ display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;
+ min-height:44px;max-height:48px;gap:.4rem;padding:.15rem .35rem;
+ position:relative;z-index:2;
+}
+.avg-story-preview .avg-compact-tools .avg-compact-results{
+ flex:1;min-width:0;display:flex;align-items:center;gap:.35rem;white-space:nowrap;
+}
+.avg-story-preview .avg-compact-results select{
+ width:100%;max-width:none;min-width:0;
+}
+.avg-story-preview .avg-compact-tools>button{flex:none;white-space:nowrap;min-height:40px}
+.avg-story-preview>.story-view{min-height:0;overflow:hidden}
+.avg-story-preview .avg-preview-empty{min-height:0}
+.avg-settings-body{display:grid;gap:1rem}
+.avg-settings-body .avg-mode-control{justify-content:flex-start}
+.avg-settings-body .avg-mode-control select,
+.avg-settings-body select,.avg-settings-body input{min-height:44px}
+.avg-picker{display:grid;gap:.65rem;min-width:0}
+.avg-picker__tabs{display:flex;gap:.35rem;flex-wrap:wrap}
+.avg-picker__tabs button{flex:1;min-height:44px}
+.avg-picker__tabs button.selected,.avg-picker__results button.selected{outline:2px solid #f5cd7d}
+.avg-picker__search{display:grid;gap:.35rem}
+.avg-picker__search input{width:100%;box-sizing:border-box}
+.avg-picker__filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:.5rem}
+.avg-picker__filters label{display:grid;gap:.35rem;min-width:0}
+.avg-picker__filters select{width:100%;max-width:100%;min-width:0}
+.avg-picker__count{margin:0;font-size:.8rem;opacity:.85}
+.avg-picker__results{display:grid;align-content:start;gap:.3rem;max-height:min(29dvh,18rem);overflow-y:auto;overscroll-behavior:contain}
+.avg-picker__results button{text-align:left;display:flex;align-items:flex-start;gap:.6rem;min-height:42px}
+.avg-picker__results button strong{flex:none}
+.avg-picker__results button span{min-width:0;overflow-wrap:anywhere}
+.avg-picker__paging{display:flex;gap:.6rem;align-items:center;justify-content:center}
+.avg-picker__paging button:disabled{opacity:.4}
+.avg-settings-cast{display:grid;gap:.4rem}
+.avg-settings-cast h3{margin:0}
+.avg-settings-cast .avg-cast-choices{display:grid;gap:.5rem}
+.avg-settings-cast .avg-cast-choices label{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.avg-settings-cast .avg-cast-choices select{flex:1;min-width:10rem;max-width:100%}
+.avg-settings-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+.dialog:has(.avg-settings-body){width:min(100%,760px)}
+@media(max-width:650px),(orientation:portrait){
+ .avg-story-preview .avg-compact-tools{flex-wrap:nowrap;max-height:48px}
+ .avg-story-preview .avg-compact-results select{max-width:100%;font-size:.78rem}
+ .avg-picker__results{max-height:min(31dvh,14rem)}
+ .avg-picker__results button{font-size:.85rem}
+}

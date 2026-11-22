@@ -128,36 +128,22 @@ export function storyPreviewProjection(preview,state){
   confirmation:!result&&chosen?{optionId:chosen.id,text:display(chosen.text)}:null}};
 }
 
-export function renderStoryPerformancePreview(state,modeControl){
- const working=state.loading;
- const options=state.index.map(item=>`<option value="${item.storyId}"${item.storyId===state.storyId?' selected':''}>${esc(item.storyId+'｜'+item.title)}</option>`).join('');
+export function renderStoryPerformancePreview(state){
  const projection=state.preview?storyPreviewProjection(state.preview,state):null;
  const available=projection?.page.annotated?'本頁已套用演出標記。角色與時段採試演設定。':
   state.preview?.hasAnnotations?'本頁沒有新的演出標記。':'這篇尚未提供演出標記。可閱讀文字及測試四個選項與八種結果。';
- const resultControl=state.showingResult?`<label>故事結果 <select data-avg-result>${state.preview.detail.results.map(r=>
-  `<option value="${r.id}"${state.resultId===r.id?' selected':''}>${esc(r.id+'｜'+r.title)}</option>`).join('')}</select></label>
-  <button type="button" data-action="avg-back-opening">回到開場</button>`:'';
+ const resultControl=state.showingResult&&state.preview?`<label class="avg-compact-results">故事結果 <select data-avg-result aria-label="切換 R1～R8 結果">${state.preview.detail.results.map(r=>
+  `<option value="${r.id}"${state.resultId===r.id?' selected':''}>${esc(r.id+'｜'+r.title)}</option>`).join('')}</select></label>`:'';
  const activeId=state.preview?.detail.storyId;
- const demo=state.storyId===AVG_DEMO_ID;
  const activeLabel=activeId===AVG_DEMO_ID?'完整演出示範':activeId;
- const startLabel=state.storyId===activeId?'重新開始':'開始測試';
- const published=options||`<option disabled>${state.indexLoading?'載入中…':'目前無可選故事'}</option>`;
  const sample=state.preview?.sample;
  const music=eventMusic(state.preview?.music,contextMusic(sample?.context));
  return {music,entry:projection?.entry,html:`<main class="game game--story ui2-preview avg-story-preview">
-  <div class="top">${modeControl}</div>
-  <nav class="ui2-preview-tools" aria-label="正式故事測試">
-   <label>試演內容 <select data-avg-story${working?' disabled':''}>
-    <option value="${AVG_DEMO_ID}"${demo?' selected':''}>完整演出示範</option>
-    <optgroup label="已發布正式故事">${published}</optgroup>
-   </select></label>
-   ${state.preview?.detail.storyId===state.storyId?renderPreviewCastControls(state.preview,state.castSelection):''}
-   <button type="button" data-action="avg-start"${working?' disabled':''}>${startLabel}</button>
-   ${state.indexError?'<button type="button" data-action="avg-reload-index">重新載入正式故事</button>':''}
+  <nav class="ui2-preview-tools avg-compact-tools" aria-label="正式故事測試">
    ${resultControl}
-   <button type="button" data-action="dev-center">返回測試中心</button>
+   <button type="button" data-action="avg-settings" aria-label="開啟 AVG 試演設定" title="選故事、選人與測試操作">⚙ 設定</button>
   </nav>
-  ${projection?renderStoryView(projection.view):'<section class="avg-preview-empty">選擇試演內容後開始測試。</section>'}
-  <p class="ui2-preview-caption" role="status">${esc(state.error|| (working?'正在載入故事…':activeLabel?activeLabel+'｜'+available+(state.showingResult?' 八種結果皆可手動試演。':'') : '試演不會改動玩家存檔。'))} ${esc(state.indexError)} <span data-avg-background-status></span></p>
+  ${projection?renderStoryView(projection.view):'<section class="avg-preview-empty">請點右上角「設定」，選擇故事並開始試演。</section>'}
+  <p class="ui2-preview-caption" role="status">${esc(state.error|| (state.loading?'正在載入故事…':activeLabel?activeLabel+'｜'+available+(state.showingResult?' 八種結果皆可手動試演。':'') : '試演不會改動玩家存檔。'))} ${esc(state.indexError)} <span data-avg-background-status></span></p>
  </main>`};
 }

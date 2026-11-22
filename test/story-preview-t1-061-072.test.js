@@ -21,7 +21,7 @@ test('T1-061～072: twelve V3 drafts, 96 distinct results, legal seeds and windo
   for(let n=61;n<=72;n++){
     const id=storyId(n),md=read(folder+id+'.md');
     const validation=validateStoryDraft(md,{stage:'full',...requirements});
-    assert.deepEqual(validation.errors,[],id+' full validator errors');
+    assert.deepEqual(validation.errors,[],id+' full validator errors'); // Includes exact slot eligibility and original seed codes
     assert.equal(validation.details.resultsChecked,8,id);
     assert.ok(md.indexOf('```avg')<md.indexOf('### 開場'),id+' raw AVG leaks into opening');
     assert.equal((md.match(/^```avg$/gm)||[]).length,1,id);

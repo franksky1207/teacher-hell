@@ -1,0 +1,377 @@
+{
+  "storyId": "T1-120",
+  "verdict": "approved",
+  "reviewer": "Antigravity Full Pre-Merge Acceptance Audit (2026-11-22)",
+  "storyAndRoles": "T1-120 符合 11/11 日本學校數百名學生來本校一對一陪伴交流設定，無赴日觀課情節；雙學生槽位 student_a 與 student_b 身分、在籍、知情與說話焦點已逐 R 核實一致，日方夥伴僅為無數值情境角色。",
+  "fourCodes": "T1-120 使用原種子四碼並由合法本班學生完整持有（48 碼），無將 NPC 關係碼寫入 teacher；每碼皆有對應因果與合理單 R ±8 範圍內增減。",
+  "fourChoices": "T1-120 具四個實質不同教師行動與取捨，恰一個 emotional=true（選項 B），普通候選六選三與 A～D 映射與正文一致；無法驗證的原始隨機亂數歷程以既有創作紀錄留存。",
+  "eightResults": "T1-120 八個共用 R1～R8 轉折與收束各自獨立，保留所有可達選項之已完成教師行動，未替日方人物追加未經證實承諾；V3 教師四狀態符合規定組別與 -0.5 均值。",
+  "causal32": "T1-120 32 格因果相容性、方向與權重（4/2/1/0）已逐格複核，各格皆具具體機制理由，與第 5 區矩陣及正文完全一致。",
+  "timeAndLaw": "T1-120 屬於 T1-4:after（11/12、11/13 共用池），已清除昨日/隔天等鎖死單日用語，肖像權、個資與跨校聯絡界線合規，且不依賴前池任一篇結果。",
+  "duplicates": "T1-120 已完成本批 12 篇互比及跨批（含 T1-085～114 與早期 T1）摘要與全文查重，教師核心困境與轉折機制具備獨立性，無換皮重複。",
+  "characterAudit": "全文重要角色為 student_a 與 student_b（均為當前本班合法學生，持完整 48 碼）及無數值情境角色（已離校日方配對夥伴、背景同學）；兩位學生各自保有獨立反應與說話者歸屬。",
+  "npcDeltaAudit": "已逐 R 核對所有非零與零值變動，單 R 變動皆在 -2～+2（符合 ±8 上限），且每次增減均對應當事學生的實際事件反應與客觀後果。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_all_zero_code:student_a:6-3",
+      "decision": "retain",
+      "evidence": "T1-120 修訂後，6-3（社交主動性）於 R4 歸屬少照片觀察者 student_b 提出疑問卡片；照片較多的分享者 student_a 則依 9-1 與 11-3 結算，故 student_a 的 6-3 為合理零值。"
+    },
+    {
+      "id": "npc_all_zero_code:student_a:10-3",
+      "decision": "retain",
+      "evidence": "T1-120 修訂後，10-3（協商彈性）於 R1、R8 歸屬少照片觀察者 student_b 主動口述與自選細節；student_a 則依 9-1 與 11-3 結算，故 student_a 的 10-3 為合理零值。"
+    },
+    {
+      "id": "npc_all_zero_code:student_b:9-1",
+      "decision": "retain",
+      "evidence": "T1-120 中 9-1（規範接受度）對應拍攝者 student_a 遵守肖像授權與標註範圍（R2、R7）；少照片觀察者 student_b 未涉及拍攝授權規範變動，故其 9-1 為合理零值。"
+    },
+    {
+      "id": "npc_all_zero_code:student_b:11-3",
+      "decision": "retain",
+      "evidence": "T1-120 中 11-3（人力投入度）對應拍攝者 student_a 整理與反思照片張數的投入（R3、R6）；student_b 改以 6-3 與 10-3 結算，故其 11-3 為合理零值。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "安排照片與口述並列的分享方式",
+        "action": "已確認兩種記錄形式都可在班上自願展示，不按照片數量排序",
+        "tradeoff": "呈現較公平，但需要控制分享時間"
+      },
+      {
+        "id": 2,
+        "short": "先查照片是否取得可公開分享的同意",
+        "action": "已核對日方夥伴與在場者的肖像及公開授權，不拿已拍攝等同同意",
+        "tradeoff": "保護隱私，可能使部分照片不能展示"
+      },
+      {
+        "id": 3,
+        "short": "請少照片的學生說出一個確實記得的動作",
+        "action": "已讓學生自選一個能確認的配對互動細節，不要求補拍或編造見聞",
+        "tradeoff": "可讓口述有位置，但學生仍需鼓起勇氣表達"
+      },
+      {
+        "id": 4,
+        "short": "請照片多的學生先說明拍攝範圍",
+        "action": "已提醒拍到的是本校當時一小段互動，不能代替完整的日方夥伴經歷",
+        "tradeoff": "避免影像過度代表，學生可能覺得被潑冷水"
+      },
+      {
+        "id": 5,
+        "short": "改成每人自願分享一個疑問",
+        "action": "已讓班上可用尚未解答的問題代替成果展示，所有配對經驗都不必正向總結",
+        "tradeoff": "降低表現壓力，但少了直觀的照片交流"
+      },
+      {
+        "id": 6,
+        "short": "提供可寫字也可留白的簡短回饋頁",
+        "action": "已發下允許筆記、口述摘要或空白的回饋方式，避免制式高分範本",
+        "tradeoff": "兼容不同記錄習慣，但需要師生接受不齊一的成果"
+      }
+    ],
+    "selectedIds": [
+      2,
+      4,
+      1
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": "emotional",
+      "C": 2,
+      "D": 4
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已確認兩種記錄形式都可在班上自願展示，不按照片數量排序」，與「少照片學生主動口述一段確實發生的交流，獲得分享位置」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已確認兩種記錄形式都可在班上自願展示，不按照片數量排序」不排斥「拍攝者收回未取得同意的照片，改留可合法展示的資料」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「拍攝者承認影像只記錄短暫片段，沒有替其他配對下結論」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已確認兩種記錄形式都可在班上自願展示，不按照片數量排序」不排斥「學生用自己留下的疑問完成自願分享」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已確認兩種記錄形式都可在班上自願展示，不按照片數量排序」不排斥「選擇不展示的學生保有個人交流經驗，不被強迫補成果」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已確認兩種記錄形式都可在班上自願展示，不按照片數量排序」，與「學生停止以成果形式評論不同配對的價值」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已確認兩種記錄形式都可在班上自願展示，不按照片數量排序」不排斥「分享者修改展示說明，保留影像來源與授權範圍」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已確認兩種記錄形式都可在班上自願展示，不按照片數量排序」不排斥「照片少的學生自選一小段確定的觀察，沒有補造故事」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開大力讚許照片很多的學生，尚未釐清其他交流方式能否同樣被看見」不排斥「少照片學生主動口述一段確實發生的交流，獲得分享位置」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開大力讚許照片很多的學生，尚未釐清其他交流方式能否同樣被看見」不排斥「拍攝者收回未取得同意的照片，改留可合法展示的資料」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開大力讚許照片很多的學生，尚未釐清其他交流方式能否同樣被看見」不排斥「拍攝者承認影像只記錄短暫片段，沒有替其他配對下結論」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開大力讚許照片很多的學生，尚未釐清其他交流方式能否同樣被看見」不排斥「學生用自己留下的疑問完成自願分享」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開大力讚許照片很多的學生，尚未釐清其他交流方式能否同樣被看見」不排斥「選擇不展示的學生保有個人交流經驗，不被強迫補成果」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開大力讚許照片很多的學生，尚未釐清其他交流方式能否同樣被看見」不排斥「學生停止以成果形式評論不同配對的價值」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開大力讚許照片很多的學生，尚未釐清其他交流方式能否同樣被看見」不排斥「分享者修改展示說明，保留影像來源與授權範圍」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開大力讚許照片很多的學生，尚未釐清其他交流方式能否同樣被看見」不排斥「照片少的學生自選一小段確定的觀察，沒有補造故事」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已核對日方夥伴與在場者的肖像及公開授權，不拿已拍攝等同同意」不排斥「少照片學生主動口述一段確實發生的交流，獲得分享位置」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已核對日方夥伴與在場者的肖像及公開授權，不拿已拍攝等同同意」，與「拍攝者收回未取得同意的照片，改留可合法展示的資料」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「拍攝者承認影像只記錄短暫片段，沒有替其他配對下結論」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已核對日方夥伴與在場者的肖像及公開授權，不拿已拍攝等同同意」不排斥「學生用自己留下的疑問完成自願分享」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已核對日方夥伴與在場者的肖像及公開授權，不拿已拍攝等同同意」不排斥「選擇不展示的學生保有個人交流經驗，不被強迫補成果」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已核對日方夥伴與在場者的肖像及公開授權，不拿已拍攝等同同意」不排斥「學生停止以成果形式評論不同配對的價值」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「分享者修改展示說明，保留影像來源與授權範圍」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已核對日方夥伴與在場者的肖像及公開授權，不拿已拍攝等同同意」不排斥「照片少的學生自選一小段確定的觀察，沒有補造故事」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提醒拍到的是本校當時一小段互動，不能代替完整的日方夥伴經歷」不排斥「少照片學生主動口述一段確實發生的交流，獲得分享位置」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「拍攝者收回未取得同意的照片，改留可合法展示的資料」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提醒拍到的是本校當時一小段互動，不能代替完整的日方夥伴經歷」，與「拍攝者承認影像只記錄短暫片段，沒有替其他配對下結論」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提醒拍到的是本校當時一小段互動，不能代替完整的日方夥伴經歷」不排斥「學生用自己留下的疑問完成自願分享」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提醒拍到的是本校當時一小段互動，不能代替完整的日方夥伴經歷」不排斥「選擇不展示的學生保有個人交流經驗，不被強迫補成果」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提醒拍到的是本校當時一小段互動，不能代替完整的日方夥伴經歷」，與「學生停止以成果形式評論不同配對的價值」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提醒拍到的是本校當時一小段互動，不能代替完整的日方夥伴經歷」，與「分享者修改展示說明，保留影像來源與授權範圍」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提醒拍到的是本校當時一小段互動，不能代替完整的日方夥伴經歷」不排斥「照片少的學生自選一小段確定的觀察，沒有補造故事」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    }
+  ]
+}

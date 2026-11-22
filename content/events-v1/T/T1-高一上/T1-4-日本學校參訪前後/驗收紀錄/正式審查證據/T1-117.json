@@ -1,0 +1,367 @@
+{
+  "storyId": "T1-117",
+  "verdict": "approved",
+  "reviewer": "Antigravity Full Pre-Merge Acceptance Audit (2026-11-22)",
+  "storyAndRoles": "T1-117 符合 11/11 日本學校數百名學生來本校一對一陪伴交流設定，無赴日觀課情節；雙學生槽位 student_a 與 student_b 身分、在籍、知情與說話焦點已逐 R 核實一致，日方夥伴僅為無數值情境角色。",
+  "fourCodes": "T1-117 使用原種子四碼並由合法本班學生完整持有（48 碼），無將 NPC 關係碼寫入 teacher；每碼皆有對應因果與合理單 R ±8 範圍內增減。",
+  "fourChoices": "T1-117 具四個實質不同教師行動與取捨，恰一個 emotional=true（選項 C），普通候選六選三與 A～D 映射與正文一致；無法驗證的原始隨機亂數歷程以既有創作紀錄留存。",
+  "eightResults": "T1-117 八個共用 R1～R8 轉折與收束各自獨立，保留所有可達選項之已完成教師行動，未替日方人物追加未經證實承諾；V3 教師四狀態符合規定組別與 -0.5 均值。",
+  "causal32": "T1-117 32 格因果相容性、方向與權重（4/2/1/0）已逐格複核，各格皆具具體機制理由，與第 5 區矩陣及正文完全一致。",
+  "timeAndLaw": "T1-117 屬於 T1-4:after（11/12、11/13 共用池），已清除昨日/隔天等鎖死單日用語，肖像權、個資與跨校聯絡界線合規，且不依賴前池任一篇結果。",
+  "duplicates": "T1-117 已完成本批 12 篇互比及跨批（含 T1-085～114 與早期 T1）摘要與全文查重，教師核心困境與轉折機制具備獨立性，無換皮重複。",
+  "characterAudit": "全文重要角色為 student_a 與 student_b（均為當前本班合法學生，持完整 48 碼）及無數值情境角色（已離校日方配對夥伴、背景同學）；兩位學生各自保有獨立反應與說話者歸屬。",
+  "npcDeltaAudit": "已逐 R 核對所有非零與零值變動，單 R 變動皆在 -2～+2（符合 ±8 上限），且每次增減均對應當事學生的實際事件反應與客觀後果。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_all_zero_code:student_b:7-2",
+      "decision": "retain",
+      "evidence": "T1-117 中 7-2（家庭照顧負擔）的因果影響主要發生在放學須照顧家人的 student_a（R2、R5）；student_b 作為無此照顧限制的分享者，在本篇八 R 中未因 7-2 產生數值變動，屬合理零值。"
+    },
+    {
+      "id": "npc_all_zero_code:student_b:9-3",
+      "decision": "retain",
+      "evidence": "T1-117 中 student_b 的自主反應集中於收回全體化語句（8-2）與保留個人觀察（5-1），未另透過 9-3（班務參與度）結算，屬依實際情節反應判定的合理零值。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "讓兩人分別記錄各自夥伴的原話",
+        "action": "已讓兩人把各自能確定的對話分開記下並標示配對來源",
+        "tradeoff": "避免把轉述混成一份，但分歧仍需查證"
+      },
+      {
+        "id": 2,
+        "short": "把比較安排在原本的班級時間",
+        "action": "已把必要整理排進既有班級討論，不要求任何人放學後留下",
+        "tradeoff": "照顧時間限制，但壓縮其他班務時間"
+      },
+      {
+        "id": 3,
+        "short": "明確說明單一配對不能代表全校",
+        "action": "已提醒兩人各自聽到的是不同日方學生的經驗，不判定任何一方說謊",
+        "tradeoff": "修正推論範圍，可能讓急著定論的學生失落"
+      },
+      {
+        "id": 4,
+        "short": "允許不同答案並列而不強迫投票",
+        "action": "已確認先把兩份口述並列，註明可能因個人或情境不同，不要求選唯一版本",
+        "tradeoff": "降低對立，但仍保留不確定感"
+      },
+      {
+        "id": 5,
+        "short": "請提出主張者補齊可查證的條件",
+        "action": "已請將『每天都這樣』的說法標出需要證據的頻率與條件",
+        "tradeoff": "增加資訊準確性，讓發言者覺得被嚴格要求"
+      },
+      {
+        "id": 6,
+        "short": "整理一份任何同學都能讀的摘要",
+        "action": "已決定用班級原有紀錄提供簡要摘要，無須放學後另參加活動",
+        "tradeoff": "提升可及性，但摘要必須避免冒稱日方學校的官方說明"
+      }
+    ],
+    "selectedIds": [
+      6,
+      4,
+      1
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 6,
+      "C": "emotional",
+      "D": 4
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已讓兩人把各自能確定的對話分開記下並標示配對來源」，與「學生分清不同配對來源，兩段資訊不再互相取代」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓兩人把各自能確定的對話分開記下並標示配對來源」不排斥「需要照顧家人的學生不因無法留校而失去表達機會」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓兩人把各自能確定的對話分開記下並標示配對來源」不排斥「主張自己版本唯一正確的學生撤回全體化語句」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已讓兩人把各自能確定的對話分開記下並標示配對來源」，與「兩種無法證實的說法被並列標註，沒有投票決定真相」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓兩人把各自能確定的對話分開記下並標示配對來源」不排斥「學生在合法班級時間取得同樣的交流資訊」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已讓兩人把各自能確定的對話分開記下並標示配對來源」，與「學生將相互矛盾的口述標成待查，避免責怪配對夥伴」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓兩人把各自能確定的對話分開記下並標示配對來源」不排斥「發言者在被質疑後保留個人觀察，不再宣稱代表全校」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已讓兩人把各自能確定的對話分開記下並標示配對來源」，與「雙方把不同說法整理成可核實的問題而非輸贏」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已決定用班級原有紀錄提供簡要摘要，無須放學後另參加活動」不排斥「學生分清不同配對來源，兩段資訊不再互相取代」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已決定用班級原有紀錄提供簡要摘要，無須放學後另參加活動」，與「需要照顧家人的學生不因無法留校而失去表達機會」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「主張自己版本唯一正確的學生撤回全體化語句」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已決定用班級原有紀錄提供簡要摘要，無須放學後另參加活動」，與「兩種無法證實的說法被並列標註，沒有投票決定真相」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已決定用班級原有紀錄提供簡要摘要，無須放學後另參加活動」，與「學生在合法班級時間取得同樣的交流資訊」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已決定用班級原有紀錄提供簡要摘要，無須放學後另參加活動」不排斥「學生將相互矛盾的口述標成待查，避免責怪配對夥伴」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已決定用班級原有紀錄提供簡要摘要，無須放學後另參加活動」不排斥「發言者在被質疑後保留個人觀察，不再宣稱代表全校」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已決定用班級原有紀錄提供簡要摘要，無須放學後另參加活動」，與「雙方把不同說法整理成可核實的問題而非輸贏」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "此情緒選項已完成「已先安撫兩名學生因彼此說法被否定而產生的委屈，尚未判定任何一方的資料正確」，但 R 的後果「學生分清不同配對來源，兩段資訊不再互相取代」仍有獨立的來源判斷與學生自主選擇，無顯著促進或抑制，判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "此情緒選項已完成「已先安撫兩名學生因彼此說法被否定而產生的委屈，尚未判定任何一方的資料正確」，但 R 的後果「需要照顧家人的學生不因無法留校而失去表達機會」仍有獨立的來源判斷與學生自主選擇，無顯著促進或抑制，判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "此情緒選項已完成「已先安撫兩名學生因彼此說法被否定而產生的委屈，尚未判定任何一方的資料正確」，但 R 的後果「主張自己版本唯一正確的學生撤回全體化語句」仍有獨立的來源判斷與學生自主選擇，無顯著促進或抑制，判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "此情緒選項已完成「已先安撫兩名學生因彼此說法被否定而產生的委屈，尚未判定任何一方的資料正確」，但 R 的後果「兩種無法證實的說法被並列標註，沒有投票決定真相」仍有獨立的來源判斷與學生自主選擇，無顯著促進或抑制，判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "此情緒選項已完成「已先安撫兩名學生因彼此說法被否定而產生的委屈，尚未判定任何一方的資料正確」，但 R 的後果「學生在合法班級時間取得同樣的交流資訊」仍有獨立的來源判斷與學生自主選擇，無顯著促進或抑制，判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師先接住兩人被否定的委屈，有助於停止把不同口述上升為對人品的指控，直接促進 R6 不再互判說謊。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "此情緒選項已完成「已先安撫兩名學生因彼此說法被否定而產生的委屈，尚未判定任何一方的資料正確」，但 R 的後果「發言者在被質疑後保留個人觀察，不再宣稱代表全校」仍有獨立的來源判斷與學生自主選擇，無顯著促進或抑制，判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "此情緒選項已完成「已先安撫兩名學生因彼此說法被否定而產生的委屈，尚未判定任何一方的資料正確」，但 R 的後果「雙方把不同說法整理成可核實的問題而非輸贏」仍有獨立的來源判斷與學生自主選擇，無顯著促進或抑制，判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已確認先把兩份口述並列，註明可能因個人或情境不同，不要求選唯一版本」，與「學生分清不同配對來源，兩段資訊不再互相取代」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已確認先把兩份口述並列，註明可能因個人或情境不同，不要求選唯一版本」不排斥「需要照顧家人的學生不因無法留校而失去表達機會」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已確認先把兩份口述並列，註明可能因個人或情境不同，不要求選唯一版本」不排斥「主張自己版本唯一正確的學生撤回全體化語句」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已確認先把兩份口述並列，註明可能因個人或情境不同，不要求選唯一版本」，與「兩種無法證實的說法被並列標註，沒有投票決定真相」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已確認先把兩份口述並列，註明可能因個人或情境不同，不要求選唯一版本」不排斥「學生在合法班級時間取得同樣的交流資訊」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已確認先把兩份口述並列，註明可能因個人或情境不同，不要求選唯一版本」不排斥「學生將相互矛盾的口述標成待查，避免責怪配對夥伴」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已確認先把兩份口述並列，註明可能因個人或情境不同，不要求選唯一版本」，與「發言者在被質疑後保留個人觀察，不再宣稱代表全校」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已確認先把兩份口述並列，註明可能因個人或情境不同，不要求選唯一版本」，與「雙方把不同說法整理成可核實的問題而非輸贏」可形成直接促進鏈。",
+      "actionPreserved": true
+    }
+  ]
+}

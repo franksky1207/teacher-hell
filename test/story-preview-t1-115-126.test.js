@@ -25,10 +25,13 @@ test('T1-115~126: all twelve V3 manuscripts have valid seeds, two-day pool, and 
   assert.deepEqual(checked.errors,[],id+' official V3 mechanical validation');
   assert.equal(md.indexOf('\x60\x60\x60avg')<md.indexOf('### 開場'),true,id+' AVG must precede player opening');
   assert.equal((md.match(/^\x60{3}avg$/gm)||[]).length,1,id+' unique AVG block');
-  assert.ok(!/昨天|沒去的人|未參與者/.test(md),id+' must be playable on Nov 12 or 13');
+  assert.ok(!/昨天|昨日|隔天|沒去的人|未參與者/.test(md),id+' must be playable on Nov 12 or 13');
   assert.ok(md.includes('日本學校數百名學生來本校'),id+' real on-campus 1:1 setting');
   assert.ok(md.includes('一對一'),id+' partner ratio');
   assert.ok(!/(我們去日本|赴日參訪|進入日本學校觀課|親眼看到日本學校)/.test(md),id+' no fictional Japan school visit');
+  if(['T1-117','T1-120','T1-124'].includes(id)){
+   assert.ok(md.includes('student_a:')&&md.includes('student_b:'),id+' two-student story must settle both student_a and student_b deltas');
+  }
   const date=md.match(/\| \x60quota_date\x60｜配額歸屬日 \| (\d{4}-\d{2}-\d{2}) \|/)?.[1];
   assert.ok(date,id+' quota date');
   dates.set(date,(dates.get(date)||0)+1);
@@ -46,6 +49,7 @@ test('T1-115~126: 96 separate R outcomes compile with 384 non-leaking AVG pages 
     options:['A','B','C','D'].map(x=>({id:x,text:x})),results,sourceMarkdown:md});
   assert.equal(preview.pages.length,3,id+' opening 3 pages');
   assert.equal(preview.resultPages.length,8,id+' outcomes 8');
+  const resultSpeakers=new Set();
   for(let i=0;i<8;i++){
    const authored=avg.results['R'+(i+1)].pages,pages=preview.resultPages[i];
    assert.equal(pages.length,authored.length,id+' R'+(i+1)+' stage length');
@@ -58,12 +62,16 @@ test('T1-115~126: 96 separate R outcomes compile with 384 non-leaking AVG pages 
     assert.ok(!/\x60{3}avg|"opening"\s*:|"results"\s*:/.test(p.text),id+' raw JSON leaked');
     assert.ok(p.cast.length<=2,id+' maximum 2 NPC');
     if(a.speaker){
+     resultSpeakers.add(a.speaker);
      const actor=p.cast.find(x=>x.role===a.speaker);
      assert.ok(actor,id+' R'+(i+1)+' missing speaker '+a.speaker);
      assert.equal(actor.expression,a.expression[a.speaker],id+' R'+(i+1)+' expression');
     }else assert.equal(p.speaker,null,id+' narration speaker');
     totalPages++;
    }
+  }
+  if(['T1-117','T1-120','T1-124'].includes(id)){
+   assert.ok(resultSpeakers.has('student_a')&&resultSpeakers.has('student_b'),id+' both students must speak in results');
   }
   totalOpen+=preview.pages.length;
   totalResults+=results.length;

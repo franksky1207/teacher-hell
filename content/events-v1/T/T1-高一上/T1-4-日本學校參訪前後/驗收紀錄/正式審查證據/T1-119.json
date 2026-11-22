@@ -1,0 +1,362 @@
+{
+  "storyId": "T1-119",
+  "verdict": "approved",
+  "reviewer": "Antigravity Full Pre-Merge Acceptance Audit (2026-11-22)",
+  "storyAndRoles": "T1-119 符合 11/11 日本學校數百名學生來本校一對一陪伴交流設定，無赴日觀課情節；單一 student_a 槽位身分、在籍與知情合理，日方夥伴僅為無數值情境角色，導師未越權替科任或日方決定。",
+  "fourCodes": "T1-119 使用原種子四碼並由合法本班學生完整持有（48 碼），無將 NPC 關係碼寫入 teacher；每碼皆有對應因果與合理單 R ±8 範圍內增減。",
+  "fourChoices": "T1-119 具四個實質不同教師行動與取捨，恰一個 emotional=true（選項 B），普通候選六選三與 A～D 映射與正文一致；無法驗證的原始隨機亂數歷程以既有創作紀錄留存。",
+  "eightResults": "T1-119 八個共用 R1～R8 轉折與收束各自獨立，保留所有可達選項之已完成教師行動，未替日方人物追加未經證實承諾；V3 教師四狀態符合規定組別與 -0.5 均值。",
+  "causal32": "T1-119 32 格因果相容性、方向與權重（4/2/1/0）已逐格複核，各格皆具具體機制理由，與第 5 區矩陣及正文完全一致。",
+  "timeAndLaw": "T1-119 屬於 T1-4:after（11/12、11/13 共用池），已清除昨日/隔天等鎖死單日用語，肖像權、個資與跨校聯絡界線合規，且不依賴前池任一篇結果。",
+  "duplicates": "T1-119 已完成本批 12 篇互比及跨批（含 T1-085～114 與早期 T1）摘要與全文查重，教師核心困境與轉折機制具備獨立性，無換皮重複。",
+  "characterAudit": "全文重要角色為 student_a（當前本班合法學生，持完整 48 碼）及無數值情境角色（已離校日方配對夥伴、背景同學或外部資料）；無其他須建檔之常駐數值角色。",
+  "npcDeltaAudit": "已逐 R 核對所有非零與零值變動，單 R 變動皆在 -2～+2（符合 ±8 上限），且每次增減均對應當事學生的實際事件反應與客觀後果。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "本篇事件起因與核心衝突均聚焦單一本班學生在本校一對一交流後的個別反思或請求（日方夥伴為無數值情境角色，不建常駐四碼），無第二位須獨立保存四碼數值的本校常駐角色，故維持單一 student_a 槽位。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "先核對確定發生的動作與未知反應",
+        "action": "已陪學生分清『我笑了』和『他一定受傷』，沒有擅自替對方下心理判斷",
+        "tradeoff": "可防止過度推論，但不立即消除內疚"
+      },
+      {
+        "id": 2,
+        "short": "把長信改成簡短且不強迫回覆的文字",
+        "action": "已示範一段可選擇保留的簡短致意，沒有認定必須正式道歉",
+        "tradeoff": "能減少對方負擔，但學生可能覺得做得不夠"
+      },
+      {
+        "id": 3,
+        "short": "請學生先整理當時說話的前後脈絡",
+        "action": "已請學生回想笑之前及之後自己能確認的對話，標註缺失部分",
+        "tradeoff": "讓疑慮有依據，卻可能喚起更強的不安"
+      },
+      {
+        "id": 4,
+        "short": "確認兩校是否有正式後續聯繫方式",
+        "action": "已查明目前能否經校方轉達問候，未擅取日方個人資訊",
+        "tradeoff": "尊重管道，卻不保證能補問當時的意思"
+      },
+      {
+        "id": 5,
+        "short": "讓學生決定是否先暫緩寄信",
+        "action": "已說明沒有證據時可以保留草稿等待情緒平穩，不要求立即補救",
+        "tradeoff": "保留自主，學生可能覺得沒有完成道歉"
+      },
+      {
+        "id": 6,
+        "short": "讓學生寫下下次聽不懂時的求助句",
+        "action": "已協助學生準備一個不假裝聽懂的簡短請求方式，作為往後練習",
+        "tradeoff": "能改善未來互動，卻無法倒轉昨天那一刻"
+      }
+    ],
+    "selectedIds": [
+      5,
+      4,
+      2
+    ],
+    "finalChoiceMap": {
+      "A": 4,
+      "B": "emotional",
+      "C": 5,
+      "D": 2
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已查明目前能否經校方轉達問候，未擅取日方個人資訊」不排斥「學生在草稿上分開自己的失誤與未確認的對方感受」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生選擇保留簡短而不催回覆的禮貌訊息」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已查明目前能否經校方轉達問候，未擅取日方個人資訊」不排斥「學生停止將自己緊張時的笑直接判為惡意冒犯」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已查明目前能否經校方轉達問候，未擅取日方個人資訊」不排斥「學生決定冷靜後再判斷是否有必要轉達」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已查明目前能否經校方轉達問候，未擅取日方個人資訊」，與「學生拒絕以未授權方式寄出道歉訊息」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已查明目前能否經校方轉達問候，未擅取日方個人資訊」不排斥「學生準備下次不懂時的具體求助方式而非補造當日結果」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已查明目前能否經校方轉達問候，未擅取日方個人資訊」不排斥「學生不再援引網路案例斷定日方夥伴的反應」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生接受尚無法確認對方心情，保留適度的後續選項」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已先同理學生因沒聽懂而羞窘、想補救的感受，沒有斷言對方受冒犯」，但「學生在草稿上分開自己的失誤與未確認的對方感受」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已先同理學生因沒聽懂而羞窘、想補救的感受，沒有斷言對方受冒犯」，但「學生選擇保留簡短而不催回覆的禮貌訊息」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已先同理學生因沒聽懂而羞窘、想補救的感受，沒有斷言對方受冒犯」，但「學生停止將自己緊張時的笑直接判為惡意冒犯」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已先同理學生因沒聽懂而羞窘、想補救的感受，沒有斷言對方受冒犯」，但「學生決定冷靜後再判斷是否有必要轉達」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已先同理學生因沒聽懂而羞窘、想補救的感受，沒有斷言對方受冒犯」，但「學生拒絕以未授權方式寄出道歉訊息」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已先同理學生因沒聽懂而羞窘、想補救的感受，沒有斷言對方受冒犯」，但「學生準備下次不懂時的具體求助方式而非補造當日結果」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已先同理學生因沒聽懂而羞窘、想補救的感受，沒有斷言對方受冒犯」，但「學生不再援引網路案例斷定日方夥伴的反應」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已先同理學生因沒聽懂而羞窘、想補救的感受，沒有斷言對方受冒犯」，但「學生接受尚無法確認對方心情，保留適度的後續選項」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已說明沒有證據時可以保留草稿等待情緒平穩，不要求立即補救」不排斥「學生在草稿上分開自己的失誤與未確認的對方感受」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已說明沒有證據時可以保留草稿等待情緒平穩，不要求立即補救」不排斥「學生選擇保留簡短而不催回覆的禮貌訊息」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已說明沒有證據時可以保留草稿等待情緒平穩，不要求立即補救」不排斥「學生停止將自己緊張時的笑直接判為惡意冒犯」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已說明沒有證據時可以保留草稿等待情緒平穩，不要求立即補救」，與「學生決定冷靜後再判斷是否有必要轉達」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已說明沒有證據時可以保留草稿等待情緒平穩，不要求立即補救」，與「學生拒絕以未授權方式寄出道歉訊息」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已說明沒有證據時可以保留草稿等待情緒平穩，不要求立即補救」不排斥「學生準備下次不懂時的具體求助方式而非補造當日結果」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生不再援引網路案例斷定日方夥伴的反應」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已說明沒有證據時可以保留草稿等待情緒平穩，不要求立即補救」，與「學生接受尚無法確認對方心情，保留適度的後續選項」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生在草稿上分開自己的失誤與未確認的對方感受」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已示範一段可選擇保留的簡短致意，沒有認定必須正式道歉」，與「學生選擇保留簡短而不催回覆的禮貌訊息」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已示範一段可選擇保留的簡短致意，沒有認定必須正式道歉」不排斥「學生停止將自己緊張時的笑直接判為惡意冒犯」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生決定冷靜後再判斷是否有必要轉達」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已示範一段可選擇保留的簡短致意，沒有認定必須正式道歉」不排斥「學生拒絕以未授權方式寄出道歉訊息」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已示範一段可選擇保留的簡短致意，沒有認定必須正式道歉」不排斥「學生準備下次不懂時的具體求助方式而非補造當日結果」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生不再援引網路案例斷定日方夥伴的反應」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已示範一段可選擇保留的簡短致意，沒有認定必須正式道歉」不排斥「學生接受尚無法確認對方心情，保留適度的後續選項」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    }
+  ]
+}

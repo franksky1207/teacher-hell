@@ -1,0 +1,362 @@
+{
+  "storyId": "T1-122",
+  "verdict": "approved",
+  "reviewer": "Antigravity Full Pre-Merge Acceptance Audit (2026-11-22)",
+  "storyAndRoles": "T1-122 符合 11/11 日本學校數百名學生來本校一對一陪伴交流設定，無赴日觀課情節；單一 student_a 槽位身分、在籍與知情合理，日方夥伴僅為無數值情境角色，導師未越權替科任或日方決定。",
+  "fourCodes": "T1-122 使用原種子四碼並由合法本班學生完整持有（48 碼），無將 NPC 關係碼寫入 teacher；每碼皆有對應因果與合理單 R ±8 範圍內增減。",
+  "fourChoices": "T1-122 具四個實質不同教師行動與取捨，恰一個 emotional=true（選項 D），普通候選六選三與 A～D 映射與正文一致；無法驗證的原始隨機亂數歷程以既有創作紀錄留存。",
+  "eightResults": "T1-122 八個共用 R1～R8 轉折與收束各自獨立，保留所有可達選項之已完成教師行動，未替日方人物追加未經證實承諾；V3 教師四狀態符合規定組別與 -0.5 均值。",
+  "causal32": "T1-122 32 格因果相容性、方向與權重（4/2/1/0）已逐格複核，各格皆具具體機制理由，與第 5 區矩陣及正文完全一致。",
+  "timeAndLaw": "T1-122 屬於 T1-4:after（11/12、11/13 共用池），已清除昨日/隔天等鎖死單日用語，肖像權、個資與跨校聯絡界線合規，且不依賴前池任一篇結果。",
+  "duplicates": "T1-122 已完成本批 12 篇互比及跨批（含 T1-085～114 與早期 T1）摘要與全文查重，教師核心困境與轉折機制具備獨立性，無換皮重複。",
+  "characterAudit": "全文重要角色為 student_a（當前本班合法學生，持完整 48 碼）及無數值情境角色（已離校日方配對夥伴、背景同學或外部資料）；無其他須建檔之常駐數值角色。",
+  "npcDeltaAudit": "已逐 R 核對所有非零與零值變動，單 R 變動皆在 -2～+2（符合 ±8 上限），且每次增減均對應當事學生的實際事件反應與客觀後果。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "本篇事件起因與核心衝突均聚焦單一本班學生在本校一對一交流後的個別反思或請求（日方夥伴為無數值情境角色，不建常駐四碼），無第二位須獨立保存四碼數值的本校常駐角色，故維持單一 student_a 槽位。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "請學生原樣記下當時的問答",
+        "action": "已協助區分自己問了什麼、對方實際答了什麼，以及尚未確認的部分",
+        "tradeoff": "讓期待有事實依據，但不立即得到答案"
+      },
+      {
+        "id": 2,
+        "short": "核對有無明確約定後續回覆",
+        "action": "已確認昨天沒有提出具體回信時間或正式答覆承諾",
+        "tradeoff": "減少誤會，學生可能一時失落"
+      },
+      {
+        "id": 3,
+        "short": "提供一種不靠私人聯絡的查證途徑",
+        "action": "已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果",
+        "tradeoff": "保留探索能力，但增加自主查找工作"
+      },
+      {
+        "id": 4,
+        "short": "請學生把問題縮成一個可回答的句子",
+        "action": "已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問",
+        "tradeoff": "便於後續查證，但可能無法回答全部好奇"
+      },
+      {
+        "id": 5,
+        "short": "說明不能擅自替日方夥伴答應回覆",
+        "action": "已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務",
+        "tradeoff": "尊重對方自主，學生可能覺得被拒絕"
+      },
+      {
+        "id": 6,
+        "short": "和學生約定停止反覆追問的界線",
+        "action": "已協助學生訂出等待及轉用其他來源的時點，不讓疑問變成持續催訊",
+        "tradeoff": "降低聯絡壓力，但不能消除不確定"
+      }
+    ],
+    "selectedIds": [
+      3,
+      4,
+      5
+    ],
+    "finalChoiceMap": {
+      "A": 5,
+      "B": 3,
+      "C": 4,
+      "D": "emotional"
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」，與「學生修正對日方夥伴當時回覆的記憶，不再認定已有寄信約定」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」不排斥「學生使用可追溯的公開來源整理部分答案，不冒稱日方回覆」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」，與「學生完成不含催促的正式詢問草稿，接受對方未必回覆」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」，與「學生停止在沒有授權的情況下反覆追查日方聯絡資訊」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」不排斥「學生發現其他同學的口述無法替代自己的日方夥伴當時未答」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」不排斥「學生整理出可查核的具體問題，不要求日方替整個制度背書」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」，與「學生撤回對日方夥伴失信的指責，重新界定當時互動」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已清楚告知對方有不答、不再聯繫的選擇，不能把禮貌交流變成義務」不排斥「學生接受目前無答覆，保留查證計畫與停止條件」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生修正對日方夥伴當時回覆的記憶，不再認定已有寄信約定」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果」，與「學生使用可追溯的公開來源整理部分答案，不冒稱日方回覆」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果」不排斥「學生完成不含催促的正式詢問草稿，接受對方未必回覆」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果」不排斥「學生停止在沒有授權的情況下反覆追查日方聯絡資訊」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生發現其他同學的口述無法替代自己的日方夥伴當時未答」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生整理出可查核的具體問題，不要求日方替整個制度背書」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果」不排斥「學生撤回對日方夥伴失信的指責，重新界定當時互動」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提出可用公開資料或合法校方窗口查核問題的方式，未保證找到結果」，與「學生接受目前無答覆，保留查證計畫與停止條件」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」不排斥「學生修正對日方夥伴當時回覆的記憶，不再認定已有寄信約定」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」，與「學生使用可追溯的公開來源整理部分答案，不冒稱日方回覆」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」，與「學生完成不含催促的正式詢問草稿，接受對方未必回覆」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」不排斥「學生停止在沒有授權的情況下反覆追查日方聯絡資訊」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生發現其他同學的口述無法替代自己的日方夥伴當時未答」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」，與「學生整理出可查核的具體問題，不要求日方替整個制度背書」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」不排斥「學生撤回對日方夥伴失信的指責，重新界定當時互動」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已陪學生聚焦自己真正困惑的部分，避免把數個不同問題一起催問」，與「學生接受目前無答覆，保留查證計畫與停止條件」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定學生問出真問題並接住等待焦慮，但沒有查明對方是否答應回覆」，但「學生修正對日方夥伴當時回覆的記憶，不再認定已有寄信約定」仍須學生自行選擇、求證與取得許可；情緒支持不構成外界回覆或影片公開授權，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定學生問出真問題並接住等待焦慮，但沒有查明對方是否答應回覆」，但「學生使用可追溯的公開來源整理部分答案，不冒稱日方回覆」仍須學生自行選擇、求證與取得許可；情緒支持不構成外界回覆或影片公開授權，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定學生問出真問題並接住等待焦慮，但沒有查明對方是否答應回覆」，但「學生完成不含催促的正式詢問草稿，接受對方未必回覆」仍須學生自行選擇、求證與取得許可；情緒支持不構成外界回覆或影片公開授權，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定學生問出真問題並接住等待焦慮，但沒有查明對方是否答應回覆」，但「學生停止在沒有授權的情況下反覆追查日方聯絡資訊」仍須學生自行選擇、求證與取得許可；情緒支持不構成外界回覆或影片公開授權，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定學生問出真問題並接住等待焦慮，但沒有查明對方是否答應回覆」，但「學生發現其他同學的口述無法替代自己的日方夥伴當時未答」仍須學生自行選擇、求證與取得許可；情緒支持不構成外界回覆或影片公開授權，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定學生問出真問題並接住等待焦慮，但沒有查明對方是否答應回覆」，但「學生整理出可查核的具體問題，不要求日方替整個制度背書」仍須學生自行選擇、求證與取得許可；情緒支持不構成外界回覆或影片公開授權，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定學生問出真問題並接住等待焦慮，但沒有查明對方是否答應回覆」，但「學生撤回對日方夥伴失信的指責，重新界定當時互動」仍須學生自行選擇、求證與取得許可；情緒支持不構成外界回覆或影片公開授權，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定學生問出真問題並接住等待焦慮，但沒有查明對方是否答應回覆」，但「學生接受目前無答覆，保留查證計畫與停止條件」仍須學生自行選擇、求證與取得許可；情緒支持不構成外界回覆或影片公開授權，判定為中性相容。",
+      "actionPreserved": true
+    }
+  ]
+}

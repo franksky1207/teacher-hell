@@ -1,0 +1,362 @@
+{
+  "storyId": "T1-116",
+  "verdict": "approved",
+  "reviewer": "Antigravity Full Pre-Merge Acceptance Audit (2026-11-22)",
+  "storyAndRoles": "T1-116 符合 11/11 日本學校數百名學生來本校一對一陪伴交流設定，無赴日觀課情節；單一 student_a 槽位身分、在籍與知情合理，日方夥伴僅為無數值情境角色，導師未越權替科任或日方決定。",
+  "fourCodes": "T1-116 使用原種子四碼並由合法本班學生完整持有（48 碼），無將 NPC 關係碼寫入 teacher；每碼皆有對應因果與合理單 R ±8 範圍內增減。",
+  "fourChoices": "T1-116 具四個實質不同教師行動與取捨，恰一個 emotional=true（選項 C），普通候選六選三與 A～D 映射與正文一致；無法驗證的原始隨機亂數歷程以既有創作紀錄留存。",
+  "eightResults": "T1-116 八個共用 R1～R8 轉折與收束各自獨立，保留所有可達選項之已完成教師行動，未替日方人物追加未經證實承諾；V3 教師四狀態符合規定組別與 -0.5 均值。",
+  "causal32": "T1-116 32 格因果相容性、方向與權重（4/2/1/0）已逐格複核，各格皆具具體機制理由，與第 5 區矩陣及正文完全一致。",
+  "timeAndLaw": "T1-116 屬於 T1-4:after（11/12、11/13 共用池），已清除昨日/隔天等鎖死單日用語，肖像權、個資與跨校聯絡界線合規，且不依賴前池任一篇結果。",
+  "duplicates": "T1-116 已完成本批 12 篇互比及跨批（含 T1-085～114 與早期 T1）摘要與全文查重，教師核心困境與轉折機制具備獨立性，無換皮重複。",
+  "characterAudit": "全文重要角色為 student_a（當前本班合法學生，持完整 48 碼）及無數值情境角色（已離校日方配對夥伴、背景同學或外部資料）；無其他須建檔之常駐數值角色。",
+  "npcDeltaAudit": "已逐 R 核對所有非零與零值變動，單 R 變動皆在 -2～+2（符合 ±8 上限），且每次增減均對應當事學生的實際事件反應與客觀後果。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "本篇事件起因與核心衝突均聚焦單一本班學生在本校一對一交流後的個別反思或請求（日方夥伴為無數值情境角色，不建常駐四碼），無第二位須獨立保存四碼數值的本校常駐角色，故維持單一 student_a 槽位。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "請他重述日方夥伴親口說過的部分",
+        "action": "已請學生逐句分出對方個人經驗與自己推測，沒有認定代表日本全校",
+        "tradeoff": "能釐清傳聞，卻未立即給出制度變動"
+      },
+      {
+        "id": 2,
+        "short": "與班級原有值日表逐項對照",
+        "action": "已拿現行分工表和他提到的工作對照，標出不同場域與工具",
+        "tradeoff": "避免忽略本班現況，但比較可能拖慢討論"
+      },
+      {
+        "id": 3,
+        "short": "安排一項安全的小範圍自願試做",
+        "action": "已同意在不撤除現有規則下試做一項無風險的自願分工，定好觀察範圍",
+        "tradeoff": "可取得本班經驗，不能代表對方學校全套制度"
+      },
+      {
+        "id": 4,
+        "short": "請學生先確認安全與校內規定",
+        "action": "已一併釐清清潔安全、器具使用與校內工作界線，拒絕未核實就全面更換",
+        "tradeoff": "保障安全，可能讓期待立刻改變的學生失望"
+      },
+      {
+        "id": 5,
+        "short": "讓全班各自說出目前最麻煩的工作",
+        "action": "已請願意分享的同學提出本班值日困難，沒有先把日方說法當唯一答案",
+        "tradeoff": "讓本班需求被看見，但未必會採納新制度"
+      },
+      {
+        "id": 6,
+        "short": "請學生把改制提案寫成兩種可選方案",
+        "action": "已陪他列出『維持分工』與『局部試做』的差異和成本",
+        "tradeoff": "給討論具體依據，但還需要同學自願支持"
+      }
+    ],
+    "selectedIds": [
+      1,
+      5,
+      6
+    ],
+    "finalChoiceMap": {
+      "A": 5,
+      "B": 6,
+      "C": "emotional",
+      "D": 1
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請願意分享的同學提出本班值日困難，沒有先把日方說法當唯一答案」不排斥「學生修正普遍化描述，保留日方夥伴的個別說法」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請願意分享的同學提出本班值日困難，沒有先把日方說法當唯一答案」不排斥「學生辨認本班分工的實際需求，取消立即廢除提議」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請願意分享的同學提出本班值日困難，沒有先把日方說法當唯一答案」不排斥「學生在原規定內完成一次小分工試行，留下具體效果」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請願意分享的同學提出本班值日困難，沒有先把日方說法當唯一答案」不排斥「學生辨認未知安全條件，撤回立即動手的要求」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已請願意分享的同學提出本班值日困難，沒有先把日方說法當唯一答案」，與「學生收到班級現況回饋，修正自己的提案優先順序」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請願意分享的同學提出本班值日困難，沒有先把日方說法當唯一答案」不排斥「學生交出可比較的局部改善案，不要求立刻全面實施」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生尊重同學沒有自願試做，改以觀察既有制度為下一步」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請願意分享的同學提出本班值日困難，沒有先把日方說法當唯一答案」不排斥「學生註明打掃方式尚待確認，不把口述當制度公告」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已陪他列出『維持分工』與『局部試做』的差異和成本」不排斥「學生修正普遍化描述，保留日方夥伴的個別說法」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已陪他列出『維持分工』與『局部試做』的差異和成本」，與「學生辨認本班分工的實際需求，取消立即廢除提議」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已陪他列出『維持分工』與『局部試做』的差異和成本」，與「學生在原規定內完成一次小分工試行，留下具體效果」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已陪他列出『維持分工』與『局部試做』的差異和成本」不排斥「學生辨認未知安全條件，撤回立即動手的要求」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已陪他列出『維持分工』與『局部試做』的差異和成本」不排斥「學生收到班級現況回饋，修正自己的提案優先順序」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已陪他列出『維持分工』與『局部試做』的差異和成本」，與「學生交出可比較的局部改善案，不要求立刻全面實施」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生尊重同學沒有自願試做，改以觀察既有制度為下一步」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生註明打掃方式尚待確認，不把口述當制度公告」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開讚許學生願意提出跨校交流心得，尚未確認其制度描述是否正確」不排斥「學生修正普遍化描述，保留日方夥伴的個別說法」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開讚許學生願意提出跨校交流心得，尚未確認其制度描述是否正確」不排斥「學生辨認本班分工的實際需求，取消立即廢除提議」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開讚許學生願意提出跨校交流心得，尚未確認其制度描述是否正確」不排斥「學生在原規定內完成一次小分工試行，留下具體效果」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開讚許學生願意提出跨校交流心得，尚未確認其制度描述是否正確」不排斥「學生辨認未知安全條件，撤回立即動手的要求」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開讚許學生願意提出跨校交流心得，尚未確認其制度描述是否正確」不排斥「學生收到班級現況回饋，修正自己的提案優先順序」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開讚許學生願意提出跨校交流心得，尚未確認其制度描述是否正確」不排斥「學生交出可比較的局部改善案，不要求立刻全面實施」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開讚許學生願意提出跨校交流心得，尚未確認其制度描述是否正確」不排斥「學生尊重同學沒有自願試做，改以觀察既有制度為下一步」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已公開讚許學生願意提出跨校交流心得，尚未確認其制度描述是否正確」不排斥「學生註明打掃方式尚待確認，不把口述當制度公告」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已請學生逐句分出對方個人經驗與自己推測，沒有認定代表日本全校」，與「學生修正普遍化描述，保留日方夥伴的個別說法」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請學生逐句分出對方個人經驗與自己推測，沒有認定代表日本全校」不排斥「學生辨認本班分工的實際需求，取消立即廢除提議」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請學生逐句分出對方個人經驗與自己推測，沒有認定代表日本全校」不排斥「學生在原規定內完成一次小分工試行，留下具體效果」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生辨認未知安全條件，撤回立即動手的要求」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請學生逐句分出對方個人經驗與自己推測，沒有認定代表日本全校」不排斥「學生收到班級現況回饋，修正自己的提案優先順序」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請學生逐句分出對方個人經驗與自己推測，沒有認定代表日本全校」不排斥「學生交出可比較的局部改善案，不要求立刻全面實施」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請學生逐句分出對方個人經驗與自己推測，沒有認定代表日本全校」不排斥「學生尊重同學沒有自願試做，改以觀察既有制度為下一步」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已請學生逐句分出對方個人經驗與自己推測，沒有認定代表日本全校」，與「學生註明打掃方式尚待確認，不把口述當制度公告」可形成直接促進鏈。",
+      "actionPreserved": true
+    }
+  ]
+}

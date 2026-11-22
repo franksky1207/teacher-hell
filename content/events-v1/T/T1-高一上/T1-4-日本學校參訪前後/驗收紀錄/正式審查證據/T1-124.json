@@ -1,0 +1,372 @@
+{
+  "storyId": "T1-124",
+  "verdict": "approved",
+  "reviewer": "Antigravity Full Pre-Merge Acceptance Audit (2026-11-22)",
+  "storyAndRoles": "T1-124 符合 11/11 日本學校數百名學生來本校一對一陪伴交流設定，無赴日觀課情節；雙學生槽位 student_a 與 student_b 身分、在籍、知情與說話焦點已逐 R 核實一致，日方夥伴僅為無數值情境角色。",
+  "fourCodes": "T1-124 使用原種子四碼並由合法本班學生完整持有（48 碼），無將 NPC 關係碼寫入 teacher；每碼皆有對應因果與合理單 R ±8 範圍內增減。",
+  "fourChoices": "T1-124 具四個實質不同教師行動與取捨，恰一個 emotional=true（選項 A），普通候選六選三與 A～D 映射與正文一致；無法驗證的原始隨機亂數歷程以既有創作紀錄留存。",
+  "eightResults": "T1-124 八個共用 R1～R8 轉折與收束各自獨立，保留所有可達選項之已完成教師行動，未替日方人物追加未經證實承諾；V3 教師四狀態符合規定組別與 -0.5 均值。",
+  "causal32": "T1-124 32 格因果相容性、方向與權重（4/2/1/0）已逐格複核，各格皆具具體機制理由，與第 5 區矩陣及正文完全一致。",
+  "timeAndLaw": "T1-124 屬於 T1-4:after（11/12、11/13 共用池），已清除昨日/隔天等鎖死單日用語，肖像權、個資與跨校聯絡界線合規，且不依賴前池任一篇結果。",
+  "duplicates": "T1-124 已完成本批 12 篇互比及跨批（含 T1-085～114 與早期 T1）摘要與全文查重，教師核心困境與轉折機制具備獨立性，無換皮重複。",
+  "characterAudit": "全文重要角色為 student_a 與 student_b（均為當前本班合法學生，持完整 48 碼）及無數值情境角色（已離校日方配對夥伴、背景同學）；兩位學生各自保有獨立反應與說話者歸屬。",
+  "npcDeltaAudit": "已逐 R 核對所有非零與零值變動，單 R 變動皆在 -2～+2（符合 ±8 上限），且每次增減均對應當事學生的實際事件反應與客觀後果。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_all_zero_code:student_b:8-4",
+      "decision": "retain",
+      "evidence": "T1-124 中 8-4（資訊傳達主動性）於 R5 由持有贈物的 student_a 說明圖案由來；提議借用的 student_b 主要反應為撤回輪流帶回提議與停止比較（12-1），故 student_b 的 8-4 為合理零值。"
+    },
+    {
+      "id": "npc_all_zero_code:student_b:9-4",
+      "decision": "retain",
+      "evidence": "T1-124 中 9-4（安全意識）於 R2、R7 由持有贈物的 student_a 負責保管與避免損壞；student_b 未保管該物件，故其 9-4 為合理零值。"
+    },
+    {
+      "id": "npc_all_zero_code:student_b:10-4",
+      "decision": "retain",
+      "evidence": "T1-124 中 10-4（協調合作度）於 R3、R8 由物主 student_a 決定自願分享故事而非實物；student_b 的反應集中於 12-1 程序要求調整，故 student_b 的 10-4 為合理零值。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "先讓持有者說明願意分享的範圍",
+        "action": "已請物主自行決定只展示、口述或允許觸摸，不假定他必須出借",
+        "tradeoff": "尊重所有權，可能讓其他人好奇心無法立刻滿足"
+      },
+      {
+        "id": 2,
+        "short": "確認物品是否可以安全操作",
+        "action": "已先釐清用途、是否能拆裝及學校安全規範，未知前不允許試用",
+        "tradeoff": "避免損壞與受傷，但需要等待資訊"
+      },
+      {
+        "id": 3,
+        "short": "提供只看說明、不碰物件的分享方式",
+        "action": "已安排物主可用文字或照片說明其來歷，任何人都不必觸碰實物",
+        "tradeoff": "可降低風險，少了親手體驗"
+      },
+      {
+        "id": 4,
+        "short": "明確說明私人贈物不列入班級公物",
+        "action": "已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意",
+        "tradeoff": "分清財物權屬，但求借者可能覺得太嚴格"
+      },
+      {
+        "id": 5,
+        "short": "請提議輪流借用者說出真正想知道的事",
+        "action": "已協助學生將『想帶回家』縮成物件用途、材料或紀念意義的具體問題",
+        "tradeoff": "釐清需求，但可能失去大家原本的興奮感"
+      },
+      {
+        "id": 6,
+        "short": "討論沒有贈物的人也可分享交流",
+        "action": "已提醒大家一對一陪伴經驗不以是否收到小物為高低，邀請用其他方式自願分享",
+        "tradeoff": "減少炫耀比較，但要避免否定物主的珍惜"
+      }
+    ],
+    "selectedIds": [
+      6,
+      4,
+      5
+    ],
+    "finalChoiceMap": {
+      "A": "emotional",
+      "B": 6,
+      "C": 5,
+      "D": 4
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「借看者先取得物主同意，沒有逕自觸摸贈物」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「兩位學生暫停不明小物拆裝，以安全與所有權為先」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「物主自願分享贈物由來，不出借實物」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「求借者承認個人贈物不應成為班級借用義務」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「求借者把好奇轉成可回答的問題，不再要求實物借用」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「學生分清一對一經驗與收到禮物並非同一種成果」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「學生改以保管袋展示，避免擁擠與不必要的碰觸」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「物主以個人紀錄留下贈物情境，沒有假設日方全體贈禮」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提醒大家一對一陪伴經驗不以是否收到小物為高低，邀請用其他方式自願分享」不排斥「借看者先取得物主同意，沒有逕自觸摸贈物」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提醒大家一對一陪伴經驗不以是否收到小物為高低，邀請用其他方式自願分享」不排斥「兩位學生暫停不明小物拆裝，以安全與所有權為先」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「物主自願分享贈物由來，不出借實物」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提醒大家一對一陪伴經驗不以是否收到小物為高低，邀請用其他方式自願分享」不排斥「求借者承認個人贈物不應成為班級借用義務」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「求借者把好奇轉成可回答的問題，不再要求實物借用」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提醒大家一對一陪伴經驗不以是否收到小物為高低，邀請用其他方式自願分享」，與「學生分清一對一經驗與收到禮物並非同一種成果」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提醒大家一對一陪伴經驗不以是否收到小物為高低，邀請用其他方式自願分享」不排斥「學生改以保管袋展示，避免擁擠與不必要的碰觸」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「物主以個人紀錄留下贈物情境，沒有假設日方全體贈禮」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「借看者先取得物主同意，沒有逕自觸摸贈物」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「兩位學生暫停不明小物拆裝，以安全與所有權為先」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助學生將『想帶回家』縮成物件用途、材料或紀念意義的具體問題」不排斥「物主自願分享贈物由來，不出借實物」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已協助學生將『想帶回家』縮成物件用途、材料或紀念意義的具體問題」，與「求借者承認個人贈物不應成為班級借用義務」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已協助學生將『想帶回家』縮成物件用途、材料或紀念意義的具體問題」，與「求借者把好奇轉成可回答的問題，不再要求實物借用」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助學生將『想帶回家』縮成物件用途、材料或紀念意義的具體問題」不排斥「學生分清一對一經驗與收到禮物並非同一種成果」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助學生將『想帶回家』縮成物件用途、材料或紀念意義的具體問題」不排斥「學生改以保管袋展示，避免擁擠與不必要的碰觸」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助學生將『想帶回家』縮成物件用途、材料或紀念意義的具體問題」不排斥「物主以個人紀錄留下贈物情境，沒有假設日方全體贈禮」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意」，與「借看者先取得物主同意，沒有逕自觸摸贈物」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意」不排斥「兩位學生暫停不明小物拆裝，以安全與所有權為先」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意」不排斥「物主自願分享贈物由來，不出借實物」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意」，與「求借者承認個人贈物不應成為班級借用義務」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意」不排斥「求借者把好奇轉成可回答的問題，不再要求實物借用」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生分清一對一經驗與收到禮物並非同一種成果」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意」不排斥「學生改以保管袋展示，避免擁擠與不必要的碰觸」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意」不排斥「物主以個人紀錄留下贈物情境，沒有假設日方全體贈禮」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    }
+  ]
+}

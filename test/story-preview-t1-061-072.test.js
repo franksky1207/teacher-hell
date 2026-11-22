@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {validateStoryDraft,seedCodesFromMarkdown,topicIdsFromMarkdown} from '../scripts/story-draft-validator.js';
 import {readTopicWindows} from '../scripts/story-windows.js';
 import {compileStoryPreview} from '../src/runtime/story-preview-content.js';
-import {storyVisibleLength,storyLengthBand} from '../scripts/story-visible-length.js';
+import {storyVisibleLength,storyAvgVisibleLength,storyLengthBand} from '../scripts/story-visible-length.js';
 
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 const folder='content/events-v1/T/T1-高一上/T1-3-高一上家長日/活動前/';
@@ -124,6 +124,7 @@ test('T1-001～072: all 576 results use visible-text-only length audit and valid
       const pages=cues.results[r.id]?.pages;
       assert.ok(Array.isArray(pages)&&pages.length>=2,id+' '+r.id+' needs independent AVG pages');
       const words=storyVisibleLength(r.text);
+      assert.equal(storyAvgVisibleLength(pages),storyVisibleLength(pages.map(page=>page.text).join('')),id+' '+r.id+' metadata must not count');
       assert.ok(words>0,id+' '+r.id+' has no authored visible narrative');
       if(storyLengthBand(words)==='priority'||storyLengthBand(words)==='review')under90++;
       assert.ok(words<=[...r.text.replace(/\s/g,'')].length,id+' '+r.id+' length count cannot include template tokens');
@@ -149,4 +150,11 @@ test('Visible text length excludes complete template tokens, without replacing n
   assert.equal(storyLengthBand(110,'opening'),'reference');
   assert.equal(storyLengthBand(90),'reference');
   assert.equal(storyLengthBand(130),'pace');
+  const dialogue={text:'老師，{{student_a.name}}來了。',speaker:'student_a',enter:['student_a'],exit:['student_b'],expression:'happy',pose:'standing',scene:'classroom',music:'school',presentation:'dialogue',id:'P01'};
+  const original=storyVisibleLength(dialogue.text);
+  assert.equal(storyAvgVisibleLength([dialogue]),original);
+  assert.equal(storyAvgVisibleLength([{...dialogue,enter:['new_character'],exit:[],speaker:'long_code',music:'extra-long-code',id:'R8'}]),original);
+  assert.equal(storyAvgVisibleLength([{...dialogue,text:'{{student_a.name}}'}]),0);
+  assert.equal(storyAvgVisibleLength(JSON.parse(JSON.stringify([dialogue]))),original);
+  assert.equal(storyAvgVisibleLength({opening:{P01:dialogue},results:{R1:{pages:[dialogue]}}}),original*2);
 });

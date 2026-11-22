@@ -44,12 +44,19 @@ test('T1-085~114: all 30 stories pass draft validator, compileStoryPreview, AVG 
     assert.equal(rBlocks.length, 8, `${id} must have 8 results`);
 
     const avgJson = JSON.parse(md.match(/```avg\n([\s\S]*?)\n```/)[1]);
+    // Students have six facial expressions; adults use pose, never expression.
+    for (const page of [...Object.values(avgJson.opening), ...Object.values(avgJson.results).flatMap(result => result.pages)]) {
+      for (const actor of Object.keys(page.expression || {})) {
+        assert.ok(actor.startsWith('student_'), `${id} adult/non-student ${actor} cannot use expression; use pose instead`);
+      }
+    }
+
     const results = rBlocks.map(([, rid, title, body]) => {
       const pt = body.match(/- \*\*玩家可見結果\*\*：(.+)/)[1];
       const rLen = storyVisibleLength(pt);
-      assert.ok(rLen >= 70, `${id} ${rid} visible length ${rLen} < 70`);
+      assert.ok(rLen >= 110, `${id} ${rid} regression: outcome length ${rLen} < 110; review narrative completeness (not a global SOP minimum)`);
       const pages = avgJson.results[rid].pages;
-      assert.equal(pages.length, 3, `${id} ${rid} AVG must have 3 pages`);
+      assert.ok(pages.length >= 2, `${id} ${rid} AVG must have naturally paced pages`);
       assert.equal(pages.map(p => p.text).join(''), pt, `${id} ${rid} AVG text must equal Section 5`);
       assert.equal(storyAvgVisibleLength(pages), rLen, `${id} ${rid} AVG visible length mismatch`);
       return { id: rid, title, text: pt };
@@ -66,7 +73,7 @@ test('T1-085~114: all 30 stories pass draft validator, compileStoryPreview, AVG 
     });
     assert.equal(preview.pages.length, 3, `${id} compiled opening must have 3 pages`);
     assert.equal(preview.resultPages.length, 8, `${id} compiled results must have 8 entries`);
-    assert.ok(preview.resultPages.every(r => r.length === 3), `${id} every compiled result must have 3 pages`);
+    assert.ok(preview.resultPages.every((r, i) => r.length === avgJson.results[`R${i+1}`].pages.length), `${id} compiled pages must match each story-specific AVG result`);
   }
 });
 

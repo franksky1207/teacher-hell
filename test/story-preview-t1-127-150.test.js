@@ -38,7 +38,8 @@ test('T1-127~150: 192 results and AVG pages have exact written-text parity',()=>
   const items=resultsFor(md);
   assert.equal(items.length,8,id+' results');
   const opening=[...md.matchAll(/^- \*\*(P\d+｜[^*]+\*\*：.+)$/gm)].map(m=>'- **'+m[1]).join('\n');
-  const preview=compileStoryPreview({storyId:id,title:id,opening,music:'school',options:['A','B','C','D'].map(c=>({id:c,text:c})),results:items,sourceMarkdown:md});
+  const music=md.match(/\| `music`｜事件配樂 \| (\S+) \|/)?.[1] || 'school';
+  const preview=compileStoryPreview({storyId:id,title:id,opening,music,options:['A','B','C','D'].map(c=>({id:c,text:c})),results:items,sourceMarkdown:md});
   assert.equal(preview.pages.length,3,id+' opening');
   assert.equal(preview.resultPages.length,8,id+' endings');
   for(let j=0;j<8;j++){

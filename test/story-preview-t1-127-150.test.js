@@ -33,11 +33,11 @@ test('T1-127~150: 192 results and AVG pages have exact written-text parity',()=>
  let count=0,pages=0;
  for(const id of ids){
   const md=read(base+id+'.md');
-  assert.ok(md.indexOf('\\x60\\x60\\x60avg')<md.indexOf('### 開場'),id+' AVG placement');
-  const avg=JSON.parse(md.match(/\\x60{3}avg\\n([\\s\\S]*?)\\n\\x60{3}/)[1]);
+  assert.ok(md.indexOf('\x60\x60\x60avg')<md.indexOf('### 開場'),id+' AVG placement');
+  const avg=JSON.parse(md.match(/\x60{3}avg\n([\s\S]*?)\n\x60{3}/)[1]);
   const items=resultsFor(md);
   assert.equal(items.length,8,id+' results');
-  const opening=[...md.matchAll(/^- \\*\\*(P\\d+｜[^*]+\\*\\*：.+)$/gm)].map(m=>'- **'+m[1]).join('\\n');
+  const opening=[...md.matchAll(/^- \*\*(P\d+｜[^*]+\*\*：.+)$/gm)].map(m=>'- **'+m[1]).join('\n');
   const preview=compileStoryPreview({storyId:id,title:id,opening,music:'school',options:['A','B','C','D'].map(c=>({id:c,text:c})),results:items,sourceMarkdown:md});
   assert.equal(preview.pages.length,3,id+' opening');
   assert.equal(preview.resultPages.length,8,id+' endings');

@@ -2,7 +2,9 @@
 # Manual Pages publication. Preserve the root and unrelated files in gh-pages.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-npm run build
+if [[ "${STORY_PREVIEW_BUILD_ONLY:-0}" != "1" ]]; then
+  npm run build
+fi
 preview_tmp=$(mktemp -d)
 preview_branch="preview-publish-$$"
 cleanup() { git worktree remove --force "$preview_tmp/site" >/dev/null 2>&1 || true; rm -rf "$preview_tmp"; git branch -D "$preview_branch" >/dev/null 2>&1 || true; }

@@ -53,3 +53,54 @@ test('T1-127~150: 192 results and AVG pages have exact written-text parity',()=>
  }
  assert.equal(count,192);assert.ok(pages>=576);
 });
+
+const evidenceNames=[
+ '驗收紀錄/活動前-127-138-創作選項與逐格因果初審.json',
+ '驗收紀錄/活動前-139-150-創作選項與逐格因果初審.json'
+];
+const reviews=new Map(evidenceNames.flatMap(name=>JSON.parse(read(base+name)).stories).map(x=>[x.storyId,x]));
+const dualStudentIds=new Set(['T1-129','T1-138','T1-143','T1-144']);
+test('T1-127~150: 24 reviews cover 192 results and 768 causal cells',()=>{
+ assert.equal(reviews.size,24);
+ let cells=0;
+ for(const id of ids){
+  const md=read(base+id+'.md'),ev=reviews.get(id);
+  assert.ok(ev,id+' review record');
+  const choices=[...md.matchAll(/^\| ([ABCD]) \| ([^|]+) \| (true|false) \| ([^|]+) \| ([^|]+) \|$/gm)];
+  assert.equal(choices.length,4,id+' choices');
+  const emotional=choices.filter(x=>x[3]==='true');
+  assert.equal(emotional.length,1,id+' emotional choice count');
+  const sel=ev.ordinaryChoiceSelection;
+  assert.equal(sel.ordinaryCandidates.length,6,id+' six candidates');
+  assert.equal(new Set(sel.selectedIds).size,3,id+' three selected candidates');
+  for(const x of choices){
+   const selected=sel.finalChoiceMap[x[1]];
+   assert.ok(selected==='emotional'||sel.selectedIds.includes(selected),id+' choice selection mismatch');
+   if(selected==='emotional')assert.equal(x[3],'true',id+' emotion mapping');
+  }
+  const results=resultsFor(md);
+  assert.equal(ev.resultAudit.length,8,id+' eight result audits');
+  for(let i=0;i<8;i++){
+   const section=md.match(new RegExp('### R'+(i+1)+'｜[\\s\\S]*?- \\*\\*合法底層增減\\*\\*：([^\\n]+)'));
+   assert.ok(section,id+' settlement missing');
+   assert.equal(ev.resultAudit[i].delta,section[1],id+' stale result audit R'+(i+1));
+   assert.ok(storyVisibleLength(results[i].text)>=90,id+' brief result R'+(i+1));
+  }
+  const matrix=new Map([...md.matchAll(/^\| ([ABCD]) \| ([0124]) \| ([0124]) \| ([0124]) \| ([0124]) \| ([0124]) \| ([0124]) \| ([0124]) \| ([0124]) \|$/gm)]
+   .map(m=>[m[1],m.slice(2,10).map(Number)]));
+  assert.equal(matrix.size,4,id+' matrix');
+  assert.equal(ev.causal32Evidence.length,32,id+' causal evidence');
+  for(const cell of ev.causal32Evidence){
+   assert.equal(cell.weight,matrix.get(cell.choice)[Number(cell.result.slice(1))-1],id+' weight mismatch');
+   assert.equal(cell.actionPreserved,true,id+' action preserved');
+   assert.ok(cell.reason.length>=25,id+' causal rationale');
+   cells++;
+  }
+  if(dualStudentIds.has(id)){
+   const avg=JSON.parse(md.match(/\x60{3}avg\n([\s\S]*?)\n\x60{3}/)[1]);
+   const actors=new Set(Object.values(avg.results).flatMap(r=>r.pages.map(x=>x.speaker)).filter(Boolean));
+   assert.ok(actors.has('student_a')&&actors.has('student_b'),id+' both roles must speak');
+  }
+ }
+ assert.equal(cells,768);
+});

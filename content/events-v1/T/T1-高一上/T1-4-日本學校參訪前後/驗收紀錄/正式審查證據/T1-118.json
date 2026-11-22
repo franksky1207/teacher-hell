@@ -1,0 +1,362 @@
+{
+  "storyId": "T1-118",
+  "verdict": "approved",
+  "reviewer": "Antigravity Full Pre-Merge Acceptance Audit (2026-11-22)",
+  "storyAndRoles": "T1-118 符合 11/11 日本學校數百名學生來本校一對一陪伴交流設定，無赴日觀課情節；單一 student_a 槽位身分、在籍與知情合理，日方夥伴僅為無數值情境角色，導師未越權替科任或日方決定。",
+  "fourCodes": "T1-118 使用原種子四碼並由合法本班學生完整持有（48 碼），無將 NPC 關係碼寫入 teacher；每碼皆有對應因果與合理單 R ±8 範圍內增減。",
+  "fourChoices": "T1-118 具四個實質不同教師行動與取捨，恰一個 emotional=true（選項 C），普通候選六選三與 A～D 映射與正文一致；無法驗證的原始隨機亂數歷程以既有創作紀錄留存。",
+  "eightResults": "T1-118 八個共用 R1～R8 轉折與收束各自獨立，保留所有可達選項之已完成教師行動，未替日方人物追加未經證實承諾；V3 教師四狀態符合規定組別與 -0.5 均值。",
+  "causal32": "T1-118 32 格因果相容性、方向與權重（4/2/1/0）已逐格複核，各格皆具具體機制理由，與第 5 區矩陣及正文完全一致。",
+  "timeAndLaw": "T1-118 屬於 T1-4:after（11/12、11/13 共用池），已清除昨日/隔天等鎖死單日用語，肖像權、個資與跨校聯絡界線合規，且不依賴前池任一篇結果。",
+  "duplicates": "T1-118 已完成本批 12 篇互比及跨批（含 T1-085～114 與早期 T1）摘要與全文查重，教師核心困境與轉折機制具備獨立性，無換皮重複。",
+  "characterAudit": "全文重要角色為 student_a（當前本班合法學生，持完整 48 碼）及無數值情境角色（已離校日方配對夥伴、背景同學或外部資料）；無其他須建檔之常駐數值角色。",
+  "npcDeltaAudit": "已逐 R 核對所有非零與零值變動，單 R 變動皆在 -2～+2（符合 ±8 上限），且每次增減均對應當事學生的實際事件反應與客觀後果。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "本篇事件起因與核心衝突均聚焦單一本班學生在本校一對一交流後的個別反思或請求（日方夥伴為無數值情境角色，不建常駐四碼），無第二位須獨立保存四碼數值的本校常駐角色，故維持單一 student_a 槽位。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "和學生逐句還原當時聽到的說法",
+        "action": "已協助學生區分臨別禮貌話、明確約定與自己後來的推測，沒有替日方夥伴承諾",
+        "tradeoff": "可釐清事實，可能令學生暫時失望"
+      },
+      {
+        "id": 2,
+        "short": "核對兩校正式可用的聯繫管道",
+        "action": "已查核活動承辦核准的後續聯絡方式，未擅自索取日方學生私人帳號",
+        "tradeoff": "保護雙方隱私，但不保證能直接連絡個人"
+      },
+      {
+        "id": 3,
+        "short": "讓學生自行寫一段不催回覆的感謝",
+        "action": "已陪學生整理一段可選擇不寄出的簡短致謝，不夾帶固定聯繫要求",
+        "tradeoff": "有表達出口，對方也可能不會收到或答覆"
+      },
+      {
+        "id": 4,
+        "short": "請學生明確寫出自己真正期待的是什麼",
+        "action": "已請學生將想道謝、想交朋友和想得到回覆分成不同願望",
+        "tradeoff": "能看見情緒需求，卻未立刻解決等待的不安"
+      },
+      {
+        "id": 5,
+        "short": "說明不回訊息不代表拒絕友誼",
+        "action": "已提醒學生不同生活時程與聯絡許可不可推定，避免把沉默當成評價",
+        "tradeoff": "能減少自責，但仍需接受沒有確定答案"
+      },
+      {
+        "id": 6,
+        "short": "約定一個不侵犯對方的等待界線",
+        "action": "已協助學生設定不反覆催問、不尋找私人聯絡資料的自我界線",
+        "tradeoff": "降低越界風險，學生可能覺得只能被動等候"
+      }
+    ],
+    "selectedIds": [
+      2,
+      6,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 3,
+      "B": 2,
+      "C": "emotional",
+      "D": 6
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生將含糊的臨別話與明確聯絡約定分開」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已陪學生整理一段可選擇不寄出的簡短致謝，不夾帶固定聯繫要求」不排斥「學生停止透過他人查找日方夥伴私人聯絡資訊」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已陪學生整理一段可選擇不寄出的簡短致謝，不夾帶固定聯繫要求」，與「學生擬好只表達感謝的短訊，保留是否透過正式管道送出的選擇」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生停止把未知的未回覆歸因於自己失禮」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已陪學生整理一段可選擇不寄出的簡短致謝，不夾帶固定聯繫要求」，與「學生把相遇的感受寫下，暫不向對方施加回覆壓力」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已陪學生整理一段可選擇不寄出的簡短致謝，不夾帶固定聯繫要求」不排斥「學生了解校方窗口能確認流程，不能承諾對方私人回信」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生拒絕依別人的配對經驗推斷自己夥伴的心意」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已陪學生整理一段可選擇不寄出的簡短致謝，不夾帶固定聯繫要求」不排斥「學生設定尊重彼此選擇的後續界線」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已查核活動承辦核准的後續聯絡方式，未擅自索取日方學生私人帳號」不排斥「學生將含糊的臨別話與明確聯絡約定分開」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已查核活動承辦核准的後續聯絡方式，未擅自索取日方學生私人帳號」，與「學生停止透過他人查找日方夥伴私人聯絡資訊」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生擬好只表達感謝的短訊，保留是否透過正式管道送出的選擇」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已查核活動承辦核准的後續聯絡方式，未擅自索取日方學生私人帳號」不排斥「學生停止把未知的未回覆歸因於自己失禮」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已查核活動承辦核准的後續聯絡方式，未擅自索取日方學生私人帳號」不排斥「學生把相遇的感受寫下，暫不向對方施加回覆壓力」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已查核活動承辦核准的後續聯絡方式，未擅自索取日方學生私人帳號」，與「學生了解校方窗口能確認流程，不能承諾對方私人回信」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已查核活動承辦核准的後續聯絡方式，未擅自索取日方學生私人帳號」不排斥「學生拒絕依別人的配對經驗推斷自己夥伴的心意」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已查核活動承辦核准的後續聯絡方式，未擅自索取日方學生私人帳號」不排斥「學生設定尊重彼此選擇的後續界線」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已當場陪學生回味友善交流並肯定他珍惜相遇，沒有替日方夥伴承諾固定聯絡」，但「學生將含糊的臨別話與明確聯絡約定分開」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已當場陪學生回味友善交流並肯定他珍惜相遇，沒有替日方夥伴承諾固定聯絡」，但「學生停止透過他人查找日方夥伴私人聯絡資訊」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已當場陪學生回味友善交流並肯定他珍惜相遇，沒有替日方夥伴承諾固定聯絡」，但「學生擬好只表達感謝的短訊，保留是否透過正式管道送出的選擇」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已當場陪學生回味友善交流並肯定他珍惜相遇，沒有替日方夥伴承諾固定聯絡」，但「學生停止把未知的未回覆歸因於自己失禮」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已當場陪學生回味友善交流並肯定他珍惜相遇，沒有替日方夥伴承諾固定聯絡」，但「學生把相遇的感受寫下，暫不向對方施加回覆壓力」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已當場陪學生回味友善交流並肯定他珍惜相遇，沒有替日方夥伴承諾固定聯絡」，但「學生了解校方窗口能確認流程，不能承諾對方私人回信」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已當場陪學生回味友善交流並肯定他珍惜相遇，沒有替日方夥伴承諾固定聯絡」，但「學生拒絕依別人的配對經驗推斷自己夥伴的心意」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已當場陪學生回味友善交流並肯定他珍惜相遇，沒有替日方夥伴承諾固定聯絡」，但「學生設定尊重彼此選擇的後續界線」仍須學生自行選擇和查證；此鼓勵不等於替日本夥伴作出承諾，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助學生設定不反覆催問、不尋找私人聯絡資料的自我界線」不排斥「學生將含糊的臨別話與明確聯絡約定分開」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已協助學生設定不反覆催問、不尋找私人聯絡資料的自我界線」，與「學生停止透過他人查找日方夥伴私人聯絡資訊」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已協助學生設定不反覆催問、不尋找私人聯絡資料的自我界線」，與「學生擬好只表達感謝的短訊，保留是否透過正式管道送出的選擇」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助學生設定不反覆催問、不尋找私人聯絡資料的自我界線」不排斥「學生停止把未知的未回覆歸因於自己失禮」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助學生設定不反覆催問、不尋找私人聯絡資料的自我界線」不排斥「學生把相遇的感受寫下，暫不向對方施加回覆壓力」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生了解校方窗口能確認流程，不能承諾對方私人回信」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助學生設定不反覆催問、不尋找私人聯絡資料的自我界線」不排斥「學生拒絕依別人的配對經驗推斷自己夥伴的心意」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已協助學生設定不反覆催問、不尋找私人聯絡資料的自我界線」，與「學生設定尊重彼此選擇的後續界線」可形成直接促進鏈。",
+      "actionPreserved": true
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "storyId": "T1-125",
+  "verdict": "approved",
+  "reviewer": "Antigravity Full Pre-Merge Acceptance Audit (2026-11-22)",
+  "storyAndRoles": "T1-125 符合 11/11 日本學校數百名學生來本校一對一陪伴交流設定，無赴日觀課情節；單一 student_a 槽位身分、在籍與知情合理，日方夥伴僅為無數值情境角色，導師未越權替科任或日方決定。",
+  "fourCodes": "T1-125 使用原種子四碼並由合法本班學生完整持有（48 碼），無將 NPC 關係碼寫入 teacher；每碼皆有對應因果與合理單 R ±8 範圍內增減。",
+  "fourChoices": "T1-125 具四個實質不同教師行動與取捨，恰一個 emotional=true（選項 D），普通候選六選三與 A～D 映射與正文一致；無法驗證的原始隨機亂數歷程以既有創作紀錄留存。",
+  "eightResults": "T1-125 八個共用 R1～R8 轉折與收束各自獨立，保留所有可達選項之已完成教師行動，未替日方人物追加未經證實承諾；V3 教師四狀態符合規定組別與 -0.5 均值。",
+  "causal32": "T1-125 32 格因果相容性、方向與權重（4/2/1/0）已逐格複核，各格皆具具體機制理由，與第 5 區矩陣及正文完全一致。",
+  "timeAndLaw": "T1-125 屬於 T1-4:after（11/12、11/13 共用池），已清除昨日/隔天等鎖死單日用語，肖像權、個資與跨校聯絡界線合規，且不依賴前池任一篇結果。",
+  "duplicates": "T1-125 已完成本批 12 篇互比及跨批（含 T1-085～114 與早期 T1）摘要與全文查重，教師核心困境與轉折機制具備獨立性，無換皮重複。",
+  "characterAudit": "全文重要角色為 student_a（當前本班合法學生，持完整 48 碼）及無數值情境角色（已離校日方配對夥伴、背景同學或外部資料）；無其他須建檔之常駐數值角色。",
+  "npcDeltaAudit": "已逐 R 核對所有非零與零值變動，單 R 變動皆在 -2～+2（符合 ±8 上限），且每次增減均對應當事學生的實際事件反應與客觀後果。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "本篇事件起因與核心衝突均聚焦單一本班學生在本校一對一交流後的個別反思或請求（日方夥伴為無數值情境角色，不建常駐四碼），無第二位須獨立保存四碼數值的本校常駐角色，故維持單一 student_a 槽位。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "請學生說清日方夥伴實際講的互動",
+        "action": "已請他分清個人描述、自己的想像與尚待查證的教法細節",
+        "tradeoff": "可保留證據範圍，但不能直接定成教學改革"
+      },
+      {
+        "id": 2,
+        "short": "把喜歡的學習感受改寫成具體需求",
+        "action": "已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求",
+        "tradeoff": "便於與科任對話，但學生可能覺得願景被縮小"
+      },
+      {
+        "id": 3,
+        "short": "明確說明導師不能替所有科任承諾",
+        "action": "已告知不同科目由任課教師依課程自行決定，自己不會代替他們答應",
+        "tradeoff": "守住權責，但學生可能感到掃興"
+      },
+      {
+        "id": 4,
+        "short": "提供合法的科任回饋轉達管道",
+        "action": "已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納",
+        "tradeoff": "讓建議可被聽見，但結果仍由科任決定"
+      },
+      {
+        "id": 5,
+        "short": "請學生列出本校現有可比較的互動",
+        "action": "已請他回想自己班級實際經驗，不預設台日教室必然完全相反",
+        "tradeoff": "避免簡單對立，可能需要花時間整理"
+      },
+      {
+        "id": 6,
+        "short": "讓學生自選一科先形成提問",
+        "action": "已請學生就自己有具體學習需要的一科整理意見，沒有向整個年級發布命令",
+        "tradeoff": "聚焦可行，但並非所有科目立刻改變"
+      }
+    ],
+    "selectedIds": [
+      2,
+      4,
+      6
+    ],
+    "finalChoiceMap": {
+      "A": 6,
+      "B": 2,
+      "C": 4,
+      "D": "emotional"
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請學生就自己有具體學習需要的一科整理意見，沒有向整個年級發布命令」不排斥「學生將日方夥伴的個人描述與日本學校制度分開」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已請學生就自己有具體學習需要的一科整理意見，沒有向整個年級發布命令」，與「學生將籠統要求拆成可向科任表達的學習需求」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請學生就自己有具體學習需要的一科整理意見，沒有向整個年級發布命令」不排斥「學生區分導師願意傾聽與他科任課教師的自主決定」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請學生就自己有具體學習需要的一科整理意見，沒有向整個年級發布命令」不排斥「學生透過合法管道提出意見並尊重科任是否採納」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請學生就自己有具體學習需要的一科整理意見，沒有向整個年級發布命令」不排斥「學生理解不同學科與本班需求的差異」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生撤回要求導師對他科教法作保證的主張」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生以一段具體口述反思自己的學習，不推導全校通則」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已請學生就自己有具體學習需要的一科整理意見，沒有向整個年級發布命令」，與「學生完成尊重權責的回饋草稿，保留科任回應自由」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求」不排斥「學生將日方夥伴的個人描述與日本學校制度分開」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求」，與「學生將籠統要求拆成可向科任表達的學習需求」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求」不排斥「學生區分導師願意傾聽與他科任課教師的自主決定」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求」，與「學生透過合法管道提出意見並尊重科任是否採納」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師雖已完成此選項的具體行動，但「學生理解不同學科與本班需求的差異」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求」不排斥「學生撤回要求導師對他科教法作保證的主張」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求」不排斥「學生以一段具體口述反思自己的學習，不推導全校通則」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求」，與「學生完成尊重權責的回饋草稿，保留科任回應自由」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」不排斥「學生將日方夥伴的個人描述與日本學校制度分開」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」不排斥「學生將籠統要求拆成可向科任表達的學習需求」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」，與「學生區分導師願意傾聽與他科任課教師的自主決定」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」，與「學生透過合法管道提出意見並尊重科任是否採納」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」不排斥「學生理解不同學科與本班需求的差異」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」，與「學生撤回要求導師對他科教法作保證的主張」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」不排斥「學生以一段具體口述反思自己的學習，不推導全校通則」，但不能據此斷定強力促進。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」，與「學生完成尊重權責的回饋草稿，保留科任回應自由」可形成直接促進鏈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生將日方夥伴的個人描述與日本學校制度分開」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生將籠統要求拆成可向科任表達的學習需求」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生區分導師願意傾聽與他科任課教師的自主決定」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生透過合法管道提出意見並尊重科任是否採納」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生理解不同學科與本班需求的差異」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生撤回要求導師對他科教法作保證的主張」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生以一段具體口述反思自己的學習，不推導全校通則」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生完成尊重權責的回饋草稿，保留科任回應自由」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+      "actionPreserved": true
+    }
+  ]
+}

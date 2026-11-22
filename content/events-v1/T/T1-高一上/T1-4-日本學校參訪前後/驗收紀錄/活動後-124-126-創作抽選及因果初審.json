@@ -1,0 +1,1367 @@
+{
+  "phase": "emotional-option-and-causality-reviewed",
+  "stories": [
+    {
+      "storyId": "T1-124",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "先讓持有者說明願意分享的範圍",
+            "action": "已請物主自行決定只展示、口述或允許觸摸，不假定他必須出借",
+            "tradeoff": "尊重所有權，可能讓其他人好奇心無法立刻滿足"
+          },
+          {
+            "id": 2,
+            "short": "確認物品是否可以安全操作",
+            "action": "已先釐清用途、是否能拆裝及學校安全規範，未知前不允許試用",
+            "tradeoff": "避免損壞與受傷，但需要等待資訊"
+          },
+          {
+            "id": 3,
+            "short": "提供只看說明、不碰物件的分享方式",
+            "action": "已安排物主可用文字或照片說明其來歷，任何人都不必觸碰實物",
+            "tradeoff": "可降低風險，少了親手體驗"
+          },
+          {
+            "id": 4,
+            "short": "明確說明私人贈物不列入班級公物",
+            "action": "已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意",
+            "tradeoff": "分清財物權屬，但求借者可能覺得太嚴格"
+          },
+          {
+            "id": 5,
+            "short": "請提議輪流借用者說出真正想知道的事",
+            "action": "已協助學生將『想帶回家』縮成物件用途、材料或紀念意義的具體問題",
+            "tradeoff": "釐清需求，但可能失去大家原本的興奮感"
+          },
+          {
+            "id": 6,
+            "short": "討論沒有贈物的人也可分享交流",
+            "action": "已提醒大家一對一陪伴經驗不以是否收到小物為高低，邀請用其他方式自願分享",
+            "tradeoff": "減少炫耀比較，但要避免否定物主的珍惜"
+          }
+        ],
+        "selectedIds": [
+          6,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 5,
+          "D": 4
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "A",
+        "D",
+        "E",
+        "C"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 143,
+          "delta": "student_a:12-1:+1",
+          "consequence": "借看者先取得物主同意，沒有逕自觸摸贈物",
+          "stats": [
+            0,
+            -2,
+            -2,
+            1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 145,
+          "delta": "student_a:9-4:+2",
+          "consequence": "兩位學生暫停不明小物拆裝，以安全與所有權為先",
+          "stats": [
+            1,
+            -1,
+            1,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 141,
+          "delta": "student_a:10-4:+2",
+          "consequence": "物主自願分享贈物由來，不出借實物",
+          "stats": [
+            1,
+            1,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 153,
+          "delta": "student_b:12-1:-1",
+          "consequence": "求借者承認個人贈物不應成為班級借用義務",
+          "stats": [
+            -1,
+            -1,
+            1,
+            0
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 152,
+          "delta": "student_a:8-4:+1",
+          "consequence": "求借者把好奇轉成可回答的問題，不再要求實物借用",
+          "stats": [
+            -2,
+            -2,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 151,
+          "delta": "student_b:12-1:+2",
+          "consequence": "學生分清一對一經驗與收到禮物並非同一種成果",
+          "stats": [
+            -2,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 146,
+          "delta": "student_a:9-4:-1",
+          "consequence": "學生改以保管袋展示，避免擁擠與不必要的碰觸",
+          "stats": [
+            0,
+            2,
+            1,
+            -2
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 163,
+          "delta": "student_a:10-4:+2",
+          "consequence": "物主以個人紀錄留下贈物情境，沒有假設日方全體贈禮",
+          "stats": [
+            -1,
+            -1,
+            -2,
+            -1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「借看者先取得物主同意，沒有逕自觸摸贈物」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「兩位學生暫停不明小物拆裝，以安全與所有權為先」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「物主自願分享贈物由來，不出借實物」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「求借者承認個人贈物不應成為班級借用義務」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「求借者把好奇轉成可回答的問題，不再要求實物借用」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「學生分清一對一經驗與收到禮物並非同一種成果」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「學生改以保管袋展示，避免擁擠與不必要的碰觸」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝」，但「物主以個人紀錄留下贈物情境，沒有假設日方全體贈禮」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已提醒大家一對一陪伴經驗不以是否收到小物為高低，邀請用其他方式自願分享」不排斥「借看者先取得物主同意，沒有逕自觸摸贈物」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已提醒大家一對一陪伴經驗不以是否收到小物為高低，邀請用其他方式自願分享」不排斥「兩位學生暫停不明小物拆裝，以安全與所有權為先」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師雖已完成此選項的具體行動，但「物主自願分享贈物由來，不出借實物」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已提醒大家一對一陪伴經驗不以是否收到小物為高低，邀請用其他方式自願分享」不排斥「求借者承認個人贈物不應成為班級借用義務」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師雖已完成此選項的具體行動，但「求借者把好奇轉成可回答的問題，不再要求實物借用」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已提醒大家一對一陪伴經驗不以是否收到小物為高低，邀請用其他方式自願分享」，與「學生分清一對一經驗與收到禮物並非同一種成果」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已提醒大家一對一陪伴經驗不以是否收到小物為高低，邀請用其他方式自願分享」不排斥「學生改以保管袋展示，避免擁擠與不必要的碰觸」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師雖已完成此選項的具體行動，但「物主以個人紀錄留下贈物情境，沒有假設日方全體贈禮」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師雖已完成此選項的具體行動，但「借看者先取得物主同意，沒有逕自觸摸贈物」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師雖已完成此選項的具體行動，但「兩位學生暫停不明小物拆裝，以安全與所有權為先」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助學生將『想帶回家』縮成物件用途、材料或紀念意義的具體問題」不排斥「物主自願分享贈物由來，不出借實物」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助學生將『想帶回家』縮成物件用途、材料或紀念意義的具體問題」，與「求借者承認個人贈物不應成為班級借用義務」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助學生將『想帶回家』縮成物件用途、材料或紀念意義的具體問題」，與「求借者把好奇轉成可回答的問題，不再要求實物借用」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助學生將『想帶回家』縮成物件用途、材料或紀念意義的具體問題」不排斥「學生分清一對一經驗與收到禮物並非同一種成果」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助學生將『想帶回家』縮成物件用途、材料或紀念意義的具體問題」不排斥「學生改以保管袋展示，避免擁擠與不必要的碰觸」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助學生將『想帶回家』縮成物件用途、材料或紀念意義的具體問題」不排斥「物主以個人紀錄留下贈物情境，沒有假設日方全體贈禮」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意」，與「借看者先取得物主同意，沒有逕自觸摸贈物」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意」不排斥「兩位學生暫停不明小物拆裝，以安全與所有權為先」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意」不排斥「物主自願分享贈物由來，不出借實物」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意」，與「求借者承認個人贈物不應成為班級借用義務」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意」不排斥「求借者把好奇轉成可回答的問題，不再要求實物借用」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師雖已完成此選項的具體行動，但「學生分清一對一經驗與收到禮物並非同一種成果」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意」不排斥「學生改以保管袋展示，避免擁擠與不必要的碰觸」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已告知全班贈物仍歸物主所有，任何借用都須由本人另行同意」不排斥「物主以個人紀錄留下贈物情境，沒有假設日方全體贈禮」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "A",
+        "short": "這份小禮物很特別！先陪大家欣賞",
+        "completed": "已肯定這份個別贈物令人驚喜，邀大家保持距離欣賞，尚未確認能否傳看或拆裝",
+        "tradeoff": "氣氛溫暖，但物主仍需清楚表達分享意願"
+      }
+    },
+    {
+      "storyId": "T1-125",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "請學生說清日方夥伴實際講的互動",
+            "action": "已請他分清個人描述、自己的想像與尚待查證的教法細節",
+            "tradeoff": "可保留證據範圍，但不能直接定成教學改革"
+          },
+          {
+            "id": 2,
+            "short": "把喜歡的學習感受改寫成具體需求",
+            "action": "已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求",
+            "tradeoff": "便於與科任對話，但學生可能覺得願景被縮小"
+          },
+          {
+            "id": 3,
+            "short": "明確說明導師不能替所有科任承諾",
+            "action": "已告知不同科目由任課教師依課程自行決定，自己不會代替他們答應",
+            "tradeoff": "守住權責，但學生可能感到掃興"
+          },
+          {
+            "id": 4,
+            "short": "提供合法的科任回饋轉達管道",
+            "action": "已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納",
+            "tradeoff": "讓建議可被聽見，但結果仍由科任決定"
+          },
+          {
+            "id": 5,
+            "short": "請學生列出本校現有可比較的互動",
+            "action": "已請他回想自己班級實際經驗，不預設台日教室必然完全相反",
+            "tradeoff": "避免簡單對立，可能需要花時間整理"
+          },
+          {
+            "id": 6,
+            "short": "讓學生自選一科先形成提問",
+            "action": "已請學生就自己有具體學習需要的一科整理意見，沒有向整個年級發布命令",
+            "tradeoff": "聚焦可行，但並非所有科目立刻改變"
+          }
+        ],
+        "selectedIds": [
+          2,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "E",
+        "D",
+        "B",
+        "C"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 161,
+          "delta": "student_a:9-2:+2",
+          "consequence": "學生將日方夥伴的個人描述與日本學校制度分開",
+          "stats": [
+            1,
+            1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 156,
+          "delta": "student_a:8-3:+2",
+          "consequence": "學生將籠統要求拆成可向科任表達的學習需求",
+          "stats": [
+            -2,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 149,
+          "delta": "student_a:12-2:+1",
+          "consequence": "學生區分導師願意傾聽與他科任課教師的自主決定",
+          "stats": [
+            -2,
+            -1,
+            -1,
+            -2
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 156,
+          "delta": "student_a:5-1:+2",
+          "consequence": "學生透過合法管道提出意見並尊重科任是否採納",
+          "stats": [
+            -1,
+            2,
+            -1,
+            1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 161,
+          "delta": "student_a:9-2:+1",
+          "consequence": "學生理解不同學科與本班需求的差異",
+          "stats": [
+            -2,
+            -2,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 161,
+          "delta": "student_a:12-2:-1",
+          "consequence": "學生撤回要求導師對他科教法作保證的主張",
+          "stats": [
+            0,
+            -2,
+            2,
+            -1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 171,
+          "delta": "student_a:8-3:+2",
+          "consequence": "學生以一段具體口述反思自己的學習，不推導全校通則",
+          "stats": [
+            1,
+            0,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 165,
+          "delta": "student_a:5-1:+2",
+          "consequence": "學生完成尊重權責的回饋草稿，保留科任回應自由",
+          "stats": [
+            1,
+            -1,
+            -1,
+            1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請學生就自己有具體學習需要的一科整理意見，沒有向整個年級發布命令」不排斥「學生將日方夥伴的個人描述與日本學校制度分開」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請學生就自己有具體學習需要的一科整理意見，沒有向整個年級發布命令」，與「學生將籠統要求拆成可向科任表達的學習需求」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請學生就自己有具體學習需要的一科整理意見，沒有向整個年級發布命令」不排斥「學生區分導師願意傾聽與他科任課教師的自主決定」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請學生就自己有具體學習需要的一科整理意見，沒有向整個年級發布命令」不排斥「學生透過合法管道提出意見並尊重科任是否採納」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請學生就自己有具體學習需要的一科整理意見，沒有向整個年級發布命令」不排斥「學生理解不同學科與本班需求的差異」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師雖已完成此選項的具體行動，但「學生撤回要求導師對他科教法作保證的主張」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師雖已完成此選項的具體行動，但「學生以一段具體口述反思自己的學習，不推導全校通則」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請學生就自己有具體學習需要的一科整理意見，沒有向整個年級發布命令」，與「學生完成尊重權責的回饋草稿，保留科任回應自由」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求」不排斥「學生將日方夥伴的個人描述與日本學校制度分開」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求」，與「學生將籠統要求拆成可向科任表達的學習需求」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求」不排斥「學生區分導師願意傾聽與他科任課教師的自主決定」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求」，與「學生透過合法管道提出意見並尊重科任是否採納」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師雖已完成此選項的具體行動，但「學生理解不同學科與本班需求的差異」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求」不排斥「學生撤回要求導師對他科教法作保證的主張」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求」不排斥「學生以一段具體口述反思自己的學習，不推導全校通則」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助他從『照日本的教』改成『我想有更多機會提問』等自身需求」，與「學生完成尊重權責的回饋草稿，保留科任回應自由」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」不排斥「學生將日方夥伴的個人描述與日本學校制度分開」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」不排斥「學生將籠統要求拆成可向科任表達的學習需求」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」，與「學生區分導師願意傾聽與他科任課教師的自主決定」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」，與「學生透過合法管道提出意見並尊重科任是否採納」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」不排斥「學生理解不同學科與本班需求的差異」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」，與「學生撤回要求導師對他科教法作保證的主張」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」不排斥「學生以一段具體口述反思自己的學習，不推導全校通則」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助學生準備可尊重科任專業的回饋方式，沒有要求教師必須採納」，與「學生完成尊重權責的回饋草稿，保留科任回應自由」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生將日方夥伴的個人描述與日本學校制度分開」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生將籠統要求拆成可向科任表達的學習需求」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生區分導師願意傾聽與他科任課教師的自主決定」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生透過合法管道提出意見並尊重科任是否採納」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生理解不同學科與本班需求的差異」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生撤回要求導師對他科教法作保證的主張」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生以一段具體口述反思自己的學習，不推導全校通則」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學」，但「學生完成尊重權責的回饋草稿，保留科任回應自由」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "D",
+        "short": "這個想法好厲害！聽了好想鼓掌",
+        "completed": "已熱烈讚許學生從一對一交流思考學習方式，沒有答應替其他科任改教學",
+        "tradeoff": "鼓勵學生發言，卻仍須區分傾聽與真正的權限"
+      }
+    },
+    {
+      "storyId": "T1-126",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "接受有疑問而沒有正向結論的心得",
+            "action": "已說明可以如實記錄不確定，並請學生標出自己真正經歷的部分",
+            "tradeoff": "尊重多樣感受，但分享可能沒有漂亮的結尾"
+          },
+          {
+            "id": 2,
+            "short": "請學生選一個真實未解問題",
+            "action": "已請他提出一個源於本人配對交流的具體疑問，不要求當場解答",
+            "tradeoff": "讓不確定可追問，仍需要時間整理"
+          },
+          {
+            "id": 3,
+            "short": "讓學生把所見與猜測分成兩欄",
+            "action": "已協助他區分本校交流中親見、夥伴口述和自己推想的部分",
+            "tradeoff": "提升準確性，寫作節奏可能放慢"
+          },
+          {
+            "id": 4,
+            "short": "提供不必交成統一模板的紀錄方式",
+            "action": "已提供允許短文、對話片段或問題卡的回饋格式，不強制正面口號",
+            "tradeoff": "降低表現壓力，但成果形式可能不整齊"
+          },
+          {
+            "id": 5,
+            "short": "請學生回想最讓自己遲疑的一句話",
+            "action": "已陪他找出昨天一對一對話裡最困惑的一句，僅寫他確實聽到的範圍",
+            "tradeoff": "有具體起點，未必能形成完整結論"
+          },
+          {
+            "id": 6,
+            "short": "請他確認是否願意向同學分享未知",
+            "action": "已讓學生自行決定哪些疑問可以公開、哪些只記給自己，不要求代替日方夥伴發言",
+            "tradeoff": "尊重自願，可能少了班級共同討論"
+          }
+        ],
+        "selectedIds": [
+          6,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 2,
+          "D": 3
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "A",
+        "E",
+        "B",
+        "C"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 145,
+          "delta": "student_a:5-2:+2",
+          "consequence": "學生完成保留疑問的真實紀錄，不強求正面總結",
+          "stats": [
+            -1,
+            1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 156,
+          "delta": "student_a:10-4:+2",
+          "consequence": "學生將模糊疑惑整理成一個由本人經驗出發的問題",
+          "stats": [
+            1,
+            -1,
+            2,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 163,
+          "delta": "student_a:8-3:+2",
+          "consequence": "學生不再複製同學的正面感想，保留各自配對經驗的差異",
+          "stats": [
+            -2,
+            -2,
+            -1,
+            1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 154,
+          "delta": "student_a:10-4:+1",
+          "consequence": "學生明確區分親見與日方夥伴說法，不拿猜測當事實",
+          "stats": [
+            0,
+            1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 152,
+          "delta": "student_a:5-2:+1",
+          "consequence": "學生自主選擇只保留私人感受，不被迫公開全部交流細節",
+          "stats": [
+            0,
+            1,
+            -1,
+            0
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 159,
+          "delta": "student_a:10-4:-1",
+          "consequence": "學生停止將個別說法推成日本文化固定特徵",
+          "stats": [
+            -2,
+            0,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 154,
+          "delta": "student_a:8-3:+2",
+          "consequence": "學生記錄一段沒有戲劇高潮的真實配對交流",
+          "stats": [
+            -1,
+            -2,
+            0,
+            -2
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 162,
+          "delta": "student_a:11-2:+2",
+          "consequence": "學生交出包含具體經歷與下一步問題的心得",
+          "stats": [
+            1,
+            -2,
+            -1,
+            1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定學生願意思考、接納其暫時說不清的感受，未強迫正向結論」，但「學生完成保留疑問的真實紀錄，不強求正面總結」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定學生願意思考、接納其暫時說不清的感受，未強迫正向結論」，但「學生將模糊疑惑整理成一個由本人經驗出發的問題」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定學生願意思考、接納其暫時說不清的感受，未強迫正向結論」，但「學生不再複製同學的正面感想，保留各自配對經驗的差異」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定學生願意思考、接納其暫時說不清的感受，未強迫正向結論」，但「學生明確區分親見與日方夥伴說法，不拿猜測當事實」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定學生願意思考、接納其暫時說不清的感受，未強迫正向結論」，但「學生自主選擇只保留私人感受，不被迫公開全部交流細節」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定學生願意思考、接納其暫時說不清的感受，未強迫正向結論」，但「學生停止將個別說法推成日本文化固定特徵」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定學生願意思考、接納其暫時說不清的感受，未強迫正向結論」，但「學生記錄一段沒有戲劇高潮的真實配對交流」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已肯定學生願意思考、接納其暫時說不清的感受，未強迫正向結論」，但「學生交出包含具體經歷與下一步問題的心得」仍需學生的自主反應與必要規範確認，情緒鼓勵並不取代具體流程，判定為中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師雖已完成此選項的具體行動，但「學生完成保留疑問的真實紀錄，不強求正面總結」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已讓學生自行決定哪些疑問可以公開、哪些只記給自己，不要求代替日方夥伴發言」不排斥「學生將模糊疑惑整理成一個由本人經驗出發的問題」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已讓學生自行決定哪些疑問可以公開、哪些只記給自己，不要求代替日方夥伴發言」不排斥「學生不再複製同學的正面感想，保留各自配對經驗的差異」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已讓學生自行決定哪些疑問可以公開、哪些只記給自己，不要求代替日方夥伴發言」不排斥「學生明確區分親見與日方夥伴說法，不拿猜測當事實」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已讓學生自行決定哪些疑問可以公開、哪些只記給自己，不要求代替日方夥伴發言」，與「學生自主選擇只保留私人感受，不被迫公開全部交流細節」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已讓學生自行決定哪些疑問可以公開、哪些只記給自己，不要求代替日方夥伴發言」不排斥「學生停止將個別說法推成日本文化固定特徵」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已讓學生自行決定哪些疑問可以公開、哪些只記給自己，不要求代替日方夥伴發言」不排斥「學生記錄一段沒有戲劇高潮的真實配對交流」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師雖已完成此選項的具體行動，但「學生交出包含具體經歷與下一步問題的心得」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請他提出一個源於本人配對交流的具體疑問，不要求當場解答」不排斥「學生完成保留疑問的真實紀錄，不強求正面總結」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請他提出一個源於本人配對交流的具體疑問，不要求當場解答」，與「學生將模糊疑惑整理成一個由本人經驗出發的問題」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請他提出一個源於本人配對交流的具體疑問，不要求當場解答」不排斥「學生不再複製同學的正面感想，保留各自配對經驗的差異」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請他提出一個源於本人配對交流的具體疑問，不要求當場解答」不排斥「學生明確區分親見與日方夥伴說法，不拿猜測當事實」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請他提出一個源於本人配對交流的具體疑問，不要求當場解答」不排斥「學生自主選擇只保留私人感受，不被迫公開全部交流細節」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請他提出一個源於本人配對交流的具體疑問，不要求當場解答」不排斥「學生停止將個別說法推成日本文化固定特徵」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已請他提出一個源於本人配對交流的具體疑問，不要求當場解答」不排斥「學生記錄一段沒有戲劇高潮的真實配對交流」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請他提出一個源於本人配對交流的具體疑問，不要求當場解答」，與「學生交出包含具體經歷與下一步問題的心得」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助他區分本校交流中親見、夥伴口述和自己推想的部分」不排斥「學生完成保留疑問的真實紀錄，不強求正面總結」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師雖已完成此選項的具體行動，但「學生將模糊疑惑整理成一個由本人經驗出發的問題」仍需學生另作自主反應；既非此選項能顯著直接促成，也不受它實質阻擋，改判中性相容。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助他區分本校交流中親見、夥伴口述和自己推想的部分」不排斥「學生不再複製同學的正面感想，保留各自配對經驗的差異」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助他區分本校交流中親見、夥伴口述和自己推想的部分」，與「學生明確區分親見與日方夥伴說法，不拿猜測當事實」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助他區分本校交流中親見、夥伴口述和自己推想的部分」不排斥「學生自主選擇只保留私人感受，不被迫公開全部交流細節」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助他區分本校交流中親見、夥伴口述和自己推想的部分」，與「學生停止將個別說法推成日本文化固定特徵」可形成直接促進鏈。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "已完成「已協助他區分本校交流中親見、夥伴口述和自己推想的部分」不排斥「學生記錄一段沒有戲劇高潮的真實配對交流」，但不能據此斷定強力促進。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助他區分本校交流中親見、夥伴口述和自己推想的部分」，與「學生交出包含具體經歷與下一步問題的心得」可形成直接促進鏈。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "A",
+        "short": "還在想就表示你很在意！先鼓勵他",
+        "completed": "已肯定學生願意思考、接納其暫時說不清的感受，未強迫正向結論",
+        "tradeoff": "先接住情緒，但具體疑問與經驗仍待梳理"
+      }
+    }
+  ]
+}

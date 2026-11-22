@@ -491,3 +491,10 @@
  .avg-story-preview .avg-compact-tools .avg-compact-results{flex:1;max-width:min(48vw,21rem)}
  .avg-story-preview .avg-compact-tools>button[data-action="avg-settings"]{padding:.3rem .42rem}
 }
+
+/* Keep the music controls on the far right unobstructed even on narrow phones. */
+@media(max-width:650px),(orientation:portrait){
+ .avg-story-preview .avg-compact-tools{box-sizing:border-box;padding-right:4.9rem;width:100%;min-width:0}
+ .avg-story-preview .avg-compact-tools .avg-compact-results{min-width:0;flex:1 1 0;max-width:none}
+ .avg-story-preview .avg-compact-tools .avg-compact-results select{min-width:0;width:100%}
+}

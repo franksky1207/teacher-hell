@@ -69,7 +69,7 @@ test('T1-006..010: result pages explicitly direct all visible faces and adult po
  let totalPages=0,expressed=0,posed=0;
  for(let n=6;n<=10;n++){
   const {preview,sourceMarkdown}=await story(n);
-  const cues=JSON.parse(sourceMarkdown.match(/```avg\\s*([\\s\\S]*?)```/)?.[1]??'null');
+  const cues=JSON.parse(sourceMarkdown.match(/```avg\s*([\s\S]*?)```/)?.[1]??'null');
   assert.ok(cues,id(n)+' missing AVG directives');
   const signatures=new Set();
   for(let i=0;i<8;i++){

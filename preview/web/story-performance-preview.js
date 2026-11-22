@@ -140,10 +140,10 @@ export function renderStoryPerformancePreview(state){
  const music=eventMusic(state.preview?.music,contextMusic(sample?.context));
  return {music,entry:projection?.entry,html:`<main class="game game--story ui2-preview avg-story-preview">
   <nav class="ui2-preview-tools avg-compact-tools" aria-label="正式故事測試">
-   ${resultControl}
    <button type="button" data-action="avg-settings" aria-label="開啟 AVG 試演設定" title="選故事、選人與測試操作">⚙ 設定</button>
+   ${resultControl}
   </nav>
-  ${projection?renderStoryView(projection.view):'<section class="avg-preview-empty">請點右上角「設定」，選擇故事並開始試演。</section>'}
+  ${projection?renderStoryView(projection.view):'<section class="avg-preview-empty">請點左上角「設定」，選擇故事並開始試演。</section>'}
   <p class="ui2-preview-caption" role="status">${esc(state.error|| (state.loading?'正在載入故事…':activeLabel?activeLabel+'｜'+available+(state.showingResult?' 八種結果皆可手動試演。':'') : '試演不會改動玩家存檔。'))} ${esc(state.indexError)} <span data-avg-background-status></span></p>
  </main>`};
 }

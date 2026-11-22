@@ -5,7 +5,7 @@ export const storyIdPattern=/^(?:T[1-6]-\d{3,}|G-\d{4,}|P[1-6]-\d{3,})$/;
 export const storyMetadataHeading='## 1｜故事基本資料';
 export const storyMetadataKeys=new Set([
  'story_id','seed_id','event_type','t_topic_id','tags','required_window','quota_date',
- 'required_conditions','state_rules_version'
+ 'required_conditions','state_rules_version','music'
 ]);
 export const seedIdPattern=/^S\d{4}$/;
 export const summaryLabels=['事件起因','核心衝突','導師困境','故事獨特性'];

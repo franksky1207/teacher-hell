@@ -18,8 +18,18 @@ on:
       - 'docs/T1-T6-特定故事20主題與觸發日期.md'
       - 'src/calendar/**'
   pull_request:
-    branches: [main]
-    paths: *tooling
+    branches: [main, content/events-production-v1]
+    paths:
+      - '.github/workflows/story-production-v1-focused.yml'
+      - 'content/events-v1/**'
+      - 'docs/**'
+      - 'scripts/*story*'
+      - 'story-reader/**'
+      - 'test/story-*.test.js'
+      - 'web/story-*.js'
+      - 'web/story-*.css'
+      - 'package.json'
+      - '.nvmrc'
   workflow_dispatch:
 
 permissions:

@@ -116,7 +116,7 @@ test('T1-073–084: 384 distinct evidence mechanisms and no known cross-choice A
   let count=0;
   for(let n=73;n<=84;n++){
     const id=storyId(n),md=read(folder+id+'.md');
-    const choices=Object.fromEntries([...md.matchAll(/^\\| ([ABCD]) \\| [^\\n|]+ \\| (?:true|false) \\| ([^\\n|]+) \\|/gm)].map(m=>[m[1],m[2]]));
+    const choices=Object.fromEntries([...md.matchAll(/^\| ([ABCD]) \| [^\n|]+ \| (?:true|false) \| ([^\n|]+) \|/gm)].map(m=>[m[1],m[2]]));
     const entry=evidence.reviews[id];
     assert.ok(entry,id+' causal evidence missing');
     for(const cell of entry.causal32Evidence){
@@ -129,8 +129,8 @@ test('T1-073–084: 384 distinct evidence mechanisms and no known cross-choice A
       assert.ok(!mechanisms.has(mechanism),id+' '+cell.choice+cell.result+' duplicated mechanism');
       mechanisms.add(mechanism);
     }
-    const avg=JSON.parse(md.match(/```avg\\n([\\s\\S]*?)\\n```/)[1]);
-    const allPages=Object.values(avg.results).flatMap(r=>r.pages).map(p=>p.text).join('\\n');
+    const avg=JSON.parse(md.match(/```avg\n([\s\S]*?)\n```/)[1]);
+    const allPages=Object.values(avg.results).flatMap(r=>r.pages).map(p=>p.text).join('\n');
     assert.doesNotMatch(allPages,/我的致謝只針對熱心|你剛剛稱讚表很完整|我剛才不該在班上泛提/,id+' option-specific fact leaks into AVG');
   }
   assert.equal(count,384);

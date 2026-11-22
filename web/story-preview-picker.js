@@ -1,5 +1,5 @@
 // Story catalog stays a lightweight index. Full Markdown/AVG is fetched only for a selected story.
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;':'&quot;',"'":'&#39;'}[c]));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const AVG_PICKER_LIMIT=50;
 export const storyKind=s=>s.type??(/^P[1-6]-/.test(s.storyId)?'P':/^G-/.test(s.storyId)?'G':'T');
 export const storyNumber=s=>Number(s.storyId.match(/(\d+)$/)?.[1])||0;

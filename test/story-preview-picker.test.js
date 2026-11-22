@@ -50,3 +50,16 @@ test('AVG result previous/next keeps 8 results ordered, stops at R1 and R8',()=>
  assert.equal(adjacentAvgResultId(preview,'R8',1),'R8');
  assert.equal(adjacentAvgResultId(preview,'R8',-1),'R7');
 });
+
+// The story preview is a single stage; cast and story edits must remain in the modal
+// until the explicit confirmation action is clicked.
+test('AVG settings selector exposes explicit confirmation and does not autostart upon story choice',async()=>{
+ const {readFile}=await import('node:fs/promises');
+ const src=await readFile(new URL('../web/game.js',import.meta.url),'utf8');
+ assert.match(src,/async function chooseAvgDraftStory\(id\)/);
+ assert.match(src,/if\(action\.startsWith\('avg-select-story:'\)\)\{await chooseAvgDraftStory/);
+ assert.match(src,/if\(action==='avg-start'\)\{confirmAvgDraft\(\)/);
+ assert.match(src,/draft\.preview=await loadStoryPreview\(avgPreview\.base,summary\)/);
+ assert.match(src,/if\(same\)\{\s*avgPreview\.castSelection=/);
+ assert.doesNotMatch(src,/async function startAvgPreview\(\)/);
+});

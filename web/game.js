@@ -93,6 +93,7 @@ function avgSettingsContent(){
  return '<div class="avg-settings-body">'+
   avgModeControl('formal')+
   renderAvgStoryPicker(avgPreview.index,avgPicker,draft?.storyId??'')+
+  '<div class="avg-picker-demo">'+button('完整演出示範','avg-select-story:'+AVG_DEMO_ID)+'</div>'+
   '<p class="avg-settings-selection" role="status">已選故事：'+esc(draft?.storyId??'尚未選擇')+'｜'+esc(title)+'</p>'+
   '<section class="avg-settings-cast"><h3>人物選擇</h3>'+
   (draft?.loading?'<p>正在讀取故事及人物槽位…</p>':
@@ -130,6 +131,11 @@ async function chooseAvgDraftStory(id){
  if(id!==AVG_DEMO_ID&&!avgPreview.index.some(s=>s.storyId===id))return;
  if(avgDraft.storyId===id&&avgDraft.preview)return;
  const draft=avgDraft;
+ if(avgPreview.preview?.detail.storyId===id){
+  draft.storyId=id;draft.preview=avgPreview.preview;
+  draft.castSelection={...avgPreview.castSelection};draft.loading=false;draft.error='';
+  refreshAvgSettings();return;
+ }
  draft.storyId=id;draft.preview=null;draft.castSelection={};draft.error='';draft.loading=true;
  refreshAvgSettings();
  try{
@@ -201,29 +207,6 @@ async function loadAvgIndex(){
   if(app.querySelector('.overlay .avg-settings-body'))refreshAvgSettings();
   else showFormalPreview();
  }}
-}
-async function startAvgPreview(){
- if(avgPreview.loading)return;
- if(avgPreview.storyId===AVG_DEMO_ID){
-  Object.assign(avgPreview,{preview:loadAvgDemo(),castSelection:{},page:0,resultPage:0,selected:null,showingResult:false,resultId:'R1',error:''});
-  showFormalPreview();return;
- }
- const requestedId=avgPreview.storyId;
- const summary=avgPreview.index.find(item=>item.storyId===requestedId);
- if(!summary)return;
- avgPreview.loading=true;avgPreview.error='';showFormalPreview();
- try{
-  // Refresh the index on each rehearsal start: the source release can change
-  // after the story dropdown was initially loaded.
-  const freshIndex=await loadStoryIndex(avgPreview.base);
-  const currentSummary=freshIndex.find(item=>item.storyId===requestedId);
-  if(!currentSummary)throw Error('這篇故事已不在最新版故事清單');
-  avgPreview.index=freshIndex;
-  const preview=await loadStoryPreview(avgPreview.base,currentSummary);
-  const resultId=avgPreview.preview?.detail.storyId===requestedId?avgPreview.resultId:preview.detail.results[0].id;
-  Object.assign(avgPreview,{preview,castSelection:{},page:0,resultPage:0,selected:null,showingResult:false,resultId});
- }catch(error){avgPreview.error='無法開始測試。'+error.message;}
- finally{avgPreview.loading=false;if(screen==='avg-formal')showFormalPreview();}
 }
 async function openStoryReader(){
  let url=storyReaderUrl;

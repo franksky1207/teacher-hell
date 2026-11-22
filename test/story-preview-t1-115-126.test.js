@@ -1,12 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {join} from 'node:path';
 import {validateStoryDraft,seedCodesFromMarkdown,topicIdsFromMarkdown} from '../scripts/story-draft-validator.js';
 import {readTopicWindows} from '../scripts/story-windows.js';
 import {compileStoryPreview} from '../src/runtime/story-preview-content.js';
 import {storyVisibleLength,storyAvgVisibleLength} from '../scripts/story-visible-length.js';
 
-const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
+const read=p=>readFileSync(join(process.cwd(),p),'utf8');
 const base='content/events-v1/T/T1-高一上/T1-4-日本學校參訪前後/';
 const folder=base+'活動後/';
 const topicText=read('docs/T1-T6-特定故事20主題與觸發日期.md');

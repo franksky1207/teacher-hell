@@ -6,8 +6,10 @@ on:
     paths:
       - '.github/workflows/t1-001-072-focused-audit.yml'
       - 'scripts/story-batch-audit-T1-001-072.mjs'
-      - 'content/events-v1/T/T1-高一上/**'
   workflow_dispatch:
+concurrency:
+  group: t1-001-072-focused-audit
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:

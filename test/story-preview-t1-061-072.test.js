@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {validateStoryDraft,seedCodesFromMarkdown,topicIdsFromMarkdown} from '../scripts/story-draft-validator.js';
 import {readTopicWindows} from '../scripts/story-windows.js';
 import {compileStoryPreview} from '../src/runtime/story-preview-content.js';
-import {storyVisibleLength,storyAvgVisibleLength,storyLengthBand} from '../scripts/story-visible-length.js';
+import {storyVisibleText,storyVisibleLength,storyAvgVisibleLength,storyLengthBand} from '../scripts/story-visible-length.js';
 
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 const folder='content/events-v1/T/T1-高一上/T1-3-高一上家長日/活動前/';
@@ -43,7 +43,9 @@ test('T1-061～072: twelve V3 drafts, 96 distinct results, legal seeds and windo
       const original=results[i].text.replace(/\s/g,'');
       const rendered=pages.map(p=>p.text).join('').replace(/\s/g,'');
       assert.equal(rendered,original,id+' R'+(i+1)+' text and AVG mismatch');
-      assert.ok([...original].length>=90,id+' R'+(i+1)+' prose warning');
+      const visibleWords=storyVisibleLength(results[i].text);
+      assert.ok(visibleWords>0,id+' R'+(i+1)+' has no authored prose');
+      assert.equal(storyAvgVisibleLength(pages),visibleWords,id+' R'+(i+1)+' controls or tokens inflated length');
       assert.ok(!pages.some(p=>/```avg|"opening"\s*:|"results"\s*:/.test(p.text)),id+' raw AVG exposed');
       for(const page of pages){
         assert.ok(page.cast.length<=2,id+' casts >2');
@@ -146,6 +148,14 @@ test('Visible text length excludes complete template tokens, without replacing n
   assert.equal(storyVisibleLength('甲{{guardian_a.name}}乙{{teacher.subject}}丙'),3);
   assert.equal(storyVisibleLength('甲 \n {{ student_a.name }} \t乙'),2);
   assert.equal(storyVisibleLength('{{student_a.name}}'),0);
+  assert.equal(storyVisibleLength('**老師**：{{student_a.name}}到了。'),'老師：到了。'.length);
+  assert.equal(storyVisibleText('訊息：[請點這裡](https://example.org/path)'),'訊息：請點這裡');
+  assert.equal(storyVisibleLength('甲`scene`乙'),2);
+  assert.equal(storyVisibleLength('甲<!-- speaker:student_a -->乙'),2);
+  assert.equal(storyVisibleLength('甲![圖](image.png)乙'),2);
+  assert.equal(storyVisibleLength('甲\\n```avg\\n{ "speaker":"test", "text":"假的" }\\n```\\n乙'.replaceAll('\\n','\n')),2);
+  assert.equal(storyVisibleLength('「enter」是學生說的原文'),[...'「enter」是學生說的原文'].length);
+  assert.equal(storyVisibleLength('甲<em>乙</em>丙'),3);
   assert.equal(storyLengthBand(89,'opening'),'priority');
   assert.equal(storyLengthBand(110,'opening'),'reference');
   assert.equal(storyLengthBand(90),'reference');

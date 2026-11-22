@@ -1,6 +1,20 @@
-/** Count only authored, player-visible characters; template/technical tokens count as zero. */
+/** Remove technical notation while preserving the words actually read by a player. */
+export function storyVisibleText(text){
+  return String(text??'')
+    .replace(/^[ \t]*`{3,}[^\r\n]*\r?\n[\s\S]*?^[ \t]*`{3,}[ \t]*$/gm,'')
+    .replace(/<!--[^]*?-->/g,'')
+    .replace(/\{\{[^]*?\}\}/g,'')
+    .replace(/!\[[^\]]*\]\([^\r\n)]*\)/g,'')
+    .replace(/\[([^\]]+)\]\([^\r\n)]*\)/g,'$1')
+    .replace(/`[^`\r\n]*`/g,'')
+    .replace(/<\/?[A-Za-z][^>]*>/g,'')
+    .replace(/^[ \t]{0,3}(?:#{1,6}[ \t]+|>[ \t]+|[-*+][ \t]+|\d+[.)][ \t]+)/gm,'')
+    .replace(/\*\*|__|~~/g,'')
+    .replace(/\s/g,'');
+}
+/** Called only on extracted story prose, never on serialized JSON or metadata. */
 export function storyVisibleLength(text){
-  return [...String(text??'').replace(/\{\{[\s\S]*?\}\}/g,'').replace(/\s/g,'')].length;
+  return [...storyVisibleText(text)].length;
 }
 /** AVG performance data: only page.text is story prose; all control metadata is zero. */
 export function storyAvgVisibleLength(pages){

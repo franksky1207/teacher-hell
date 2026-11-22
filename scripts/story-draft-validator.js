@@ -96,7 +96,7 @@ export function validateStoryDraft(md,{stage='full',stateRulesVersion=3,seeds=ne
    const openingLength=storyVisibleLength(pages.map(page=>page[3]).join(''));
    if(openingLength<110)warnings.push('開場字數'+openingLength+'（程式變數不計）：'+(openingLength<90?'少於90，優先複核':'90～109，複核人物互動與導師困境')+'；字數不等於品質。');
    if(storyLengthBand(openingLength,'opening')==='pace')warnings.push('開場字數'+openingLength+'（程式變數不計）：超過140，複核節奏與重述；不是硬性上限。');
-  for(const [,id,speaker,text] of pages){if(pageIds.has(id))fail('opening_duplicate','P'+id+' 重複');pageIds.add(id);if(unfilled(speaker)||unfilled(text))fail('opening','P'+id+' 未完成');}
+  for(const [,id,speaker,text] of pages){if(pageIds.has(id))fail('opening_duplicate','P'+id+' 重複');pageIds.add(id);if(unfilled(speaker)||unfilled(text)||storyVisibleLength(text)===0)fail('opening','P'+id+' 未完成或只有技術代碼');}
   const optionPart=four.split('### 四個最終教師選項')[1]||'',choices=new Map();
   for(const r of rows(optionPart)){
    if(r[0]==='選項ID'||r.every(c=>/^:?-+:?$/.test(c)))continue;
@@ -129,7 +129,7 @@ export function validateStoryDraft(md,{stage='full',stateRulesVersion=3,seeds=ne
    const body=results.get(n);
    if(!body){fail('result_missing','缺少R'+n);continue}resultCount++;
    const content=named(body,'玩家可見結果'),fact=named(body,'客觀後果'),effects=named(body,'合法底層增減'),rawStates=named(body,'玩家四狀態');
-   if(unfilled(content))fail('result_text','R'+n+' 結果未填');
+   if(unfilled(content)||storyVisibleLength(content)===0)fail('result_text','R'+n+' 結果未填或只有技術代碼');
    if(unfilled(fact))fail('result_fact','R'+n+' 客觀後果未填');
    texts.push(content.replace(/\s/g,''));
     const resultLength=storyVisibleLength(content);

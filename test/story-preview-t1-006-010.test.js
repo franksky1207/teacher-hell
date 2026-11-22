@@ -62,3 +62,47 @@ test('T1-006 and T1-007 and T1-010 keep two participating students available for
   for(const p of preview.resultPages.flat())assert.deepEqual(new Set(scene(p)),new Set(['student_a','student_b']));
  }
 });
+
+test('T1-006..010: result pages explicitly direct all visible faces and adult poses',async()=>{
+ const expressions=new Set(['calm','happy','angry','sad','surprised','embarrassed']);
+ const poses=new Set(['neutral','side','hand-on-hip','arms-open','gesture','weight-shift']);
+ let totalPages=0,expressed=0,posed=0;
+ for(let n=6;n<=10;n++){
+  const {preview,sourceMarkdown}=await story(n);
+  const cues=JSON.parse(sourceMarkdown.match(/```avg\\s*([\\s\\S]*?)```/)?.[1]??'null');
+  assert.ok(cues,id(n)+' missing AVG directives');
+  const signatures=new Set();
+  for(let i=0;i<8;i++){
+   const pages=preview.resultPages[i],instructions=cues.results['R'+(i+1)].pages;
+   assert.equal(pages.length,instructions.length);
+   const sequence=[];
+   for(let j=0;j<pages.length;j++){
+    const page=pages[j],source=instructions[j],active=new Set(page.cast.map(actor=>actor.role));
+    totalPages++;
+    // No arbitrary actors solely for expressions: secret papers stay empty.
+    if(active.size){
+     assert.ok(source.expression,id(n)+' R'+(i+1)+' page '+(j+1)+' lacks expression');
+     for(const role of active)assert.ok(Object.hasOwn(source.expression,role),id(n)+' '+role+' missing expression');
+     for(const [role,expression] of Object.entries(source.expression)){
+      assert.ok(active.has(role),'off-stage expression '+role);
+      assert.ok(expressions.has(expression),'unsupported expression '+expression);
+      assert.equal(page.cast.find(actor=>actor.role===role).expression,expression);
+     }
+     expressed++;
+    }else assert.equal(source.expression,undefined,'no expressions in anonymous empty scenes');
+    for(const [role,pose] of Object.entries(source.pose??{})){
+     assert.equal(n,8,'adult pose used in non-adult story');
+     assert.equal(role,'subject_teacher_a');
+     assert.ok(active.has(role));
+     assert.ok(poses.has(pose));posed++;
+    }
+    sequence.push(page.cast.map(actor=>actor.role+':'+actor.expression).join(','));
+   }
+   signatures.add(sequence.join('|'));
+  }
+  assert.ok(signatures.size>=4,id(n)+' all R endings look too similar');
+ }
+ assert.equal(totalPages,128);
+ assert.equal(expressed,120);
+ assert.ok(posed>=4);
+});

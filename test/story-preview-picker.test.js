@@ -40,3 +40,13 @@ test('AVG story picker: search by ID or title without loading full story data',(
  assert.deepEqual(pickAvgStories(stories,{kind:'T',query:'冷氣'}).map(s=>s.storyId),['T1-006']);
  assert.deepEqual(pickAvgStories(stories,{kind:'T',query:'007'}).map(s=>s.storyId),['T1-007']);
 });
+
+import {adjacentAvgResultId} from '../web/story-performance-preview.js';
+test('AVG result previous/next keeps 8 results ordered, stops at R1 and R8',()=>{
+ const preview={detail:{results:Array.from({length:8},(_,i)=>({id:'R'+(i+1)}))}};
+ assert.equal(adjacentAvgResultId(preview,'R1',-1),'R1');
+ assert.equal(adjacentAvgResultId(preview,'R1',1),'R2');
+ assert.equal(adjacentAvgResultId(preview,'R5',1),'R6');
+ assert.equal(adjacentAvgResultId(preview,'R8',1),'R8');
+ assert.equal(adjacentAvgResultId(preview,'R8',-1),'R7');
+});

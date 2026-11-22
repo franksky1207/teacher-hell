@@ -44,13 +44,11 @@ jobs:
         run: |
           python -m pip install --quiet Pillow numpy
           python scripts/portrait-calibration.py
-      - name: Build standalone AVG preview without the obsolete legacy health fixture
-        run: node scripts/build-story-preview.mjs
       - name: Publish only the preview subtree from the story branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          STORY_PREVIEW_BUILD_ONLY=1 bash scripts/deploy-preview.sh
+          bash scripts/deploy-preview.sh
       - name: Verify current versioned preview resources
         run: |
           git fetch origin gh-pages

@@ -3,7 +3,7 @@ import { numericValue } from '../numeric/math.js';
 import { validateRecord, requireValue } from '../numeric/record.js';
 import { PANEL_SOURCES, ABILITY_NAMES, STATE_NAMES, derivePanel, assertShape, identifier } from './panel.js';
 
-export const INITIAL_STATES = Object.freeze({ 體力:100, 精神:100, 抗壓:100, 聲望:40, 熱忱:100, 情緒:100 });
+export const INITIAL_STATES = Object.freeze({ 精神:100, 熱忱:100, 情緒:100, 掌控:100 });
 // Aggregate the same model matrix; never maintain a second set of coefficients.
 const columns = new Map();
 for (const name of ABILITY_NAMES) for (const [,code,weight,reverse] of PANEL_SOURCES[name]) {

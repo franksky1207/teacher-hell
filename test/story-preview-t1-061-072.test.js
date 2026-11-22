@@ -140,7 +140,7 @@ test('T1-001～072: all 576 results use visible-text-only length audit and valid
   }
   assert.equal(checked,576);
   assert.equal(openingChecked,72);
-  assert.ok(under90>0,'Legacy visible-text short results must be reported rather than masked by template length');
+  assert.equal(under90,0,'all reviewed endings meet the visible-text minimum');
 });
 
 test('Visible text length excludes complete template tokens, without replacing names',()=>{

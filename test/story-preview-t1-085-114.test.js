@@ -117,45 +117,42 @@ test('T1-085~114: formal evidence JSON covers all 30 stories and 960 causal cell
 });
 
 
-test('T1-085~114: every R restores its own opening cast and result-specific expression; staff use poses', () => {
+
+test('T1-085~114: R1-R8 stage playback retains student faces and adult poses', () => {
   const allowedExpressions = new Set(['calm', 'happy', 'angry', 'sad', 'surprised', 'embarrassed']);
   const allowedPoses = new Set(['neutral', 'side', 'hand-on-hip', 'arms-open', 'gesture', 'weight-shift']);
   for (const id of storyIds) {
-    const md = fs.readFileSync(path.join(storyDir, `${id}.md`), 'utf8');
-    const cues = JSON.parse(md.match(/```avg\n([\s\S]*?)\n```/)[1]);
-    const results = storyIds && Array.from({length: 8}, (_, i) => {
-      const rid = `R${i + 1}`;
-      const raw = md.match(new RegExp(`### ${rid}｜[^\\n]+\\n\\n([\\s\\S]*?)(?=\\n### |\\n$)`))?.[1];
-      const pt = raw?.match(/- \\*\\*玩家可見結果\\*\\*：(.+)/)?.[1];
-      assert.ok(pt, `${id} ${rid} result text missing`);
-      return {id: rid, title: rid, text: pt};
-    });
-    const detail = {
-      storyId: id, title: id,
-      music: md.match(/\\| `music`｜事件配樂 \\| (\\S+) \\|/)?.[1] || 'school',
-      opening: [...md.matchAll(/^- \\*\\*(P\\d+｜[^*]+\\*\\*：.+)$/gm)].map(m => `- **${m[1]}`).join('\\n'),
-      options: ['A','B','C','D'].map(c => ({id: c, text: c})),
+    const md = fs.readFileSync(path.join(storyDir, id + '.md'), 'utf8');
+    const cues = JSON.parse(md.match(/\x60{3}avg\n([\s\S]*?)\n\x60{3}/)[1]);
+    const results = [...md.matchAll(/### (R[1-8])｜([^\n]+)\n\n([\s\S]*?)(?=\n### |\n$)/g)]
+      .map(([,rid,title,body]) => ({id:rid, title, text:body.match(/- \*\*玩家可見結果\*\*：(.+)/)[1]}));
+    assert.equal(results.length, 8, id + ' must contain 8 results');
+    const opening = [...md.matchAll(/^- \*\*(P\d+｜[^*]+\*\*：.+)$/gm)]
+      .map(m => '- **' + m[1]).join('\n');
+    const music = md.match(/事件配樂 \| (\S+) \|/)?.[1] || 'school';
+    const preview = compileStoryPreview({
+      storyId: id, title: id, music, opening,
+      options: ['A','B','C','D'].map(c => ({id:c,text:c})),
       results, sourceMarkdown: md,
-    };
-    const preview = compileStoryPreview(detail);
+    });
     for (let i = 0; i < 8; i++) {
-      const rid = `R${i + 1}`, authored = cues.results[rid].pages[0];
+      const rid = 'R' + (i + 1), authored = cues.results[rid].pages[0];
       const staged = preview.resultPages[i][0];
-      const firstSpeaker = authored.speaker;
-      if (firstSpeaker?.startsWith('student_')) {
-        const expected = authored.expression?.[firstSpeaker];
-        assert.ok(allowedExpressions.has(expected), `${id} ${rid} missing/invalid first-page expression`);
-        const actor = staged.cast.find(a => a.role === firstSpeaker);
-        assert.equal(actor?.expression, expected, `${id} ${rid} first-page actor emotion mismatches playback`);
+      const speaker = authored.speaker;
+      if (speaker?.startsWith('student_')) {
+        const expected = authored.expression?.[speaker];
+        assert.ok(allowedExpressions.has(expected), id + ' ' + rid + ' lacks legal student expression');
+        assert.equal(staged.cast.find(a => a.role === speaker)?.expression, expected,
+          id + ' ' + rid + ' student expression differs from actual stage');
       }
-      if (firstSpeaker?.startsWith('staff_')) {
-        const expected = authored.pose?.[firstSpeaker];
-        assert.ok(allowedPoses.has(expected), `${id} ${rid} missing/invalid adult pose`);
-        const actor = staged.cast.find(a => a.role === firstSpeaker);
-        assert.equal(actor?.pose, expected, `${id} ${rid} adult pose mismatches playback`);
+      if (speaker?.startsWith('staff_')) {
+        const expected = authored.pose?.[speaker];
+        assert.ok(allowedPoses.has(expected), id + ' ' + rid + ' lacks legal adult pose');
+        assert.equal(staged.cast.find(a => a.role === speaker)?.pose, expected,
+          id + ' ' + rid + ' adult pose differs from actual stage');
       }
       for (const role of Object.keys(authored.expression || {}))
-        assert.ok(role.startsWith('student_'), `${id} ${rid} adult must never use expression`);
+        assert.ok(role.startsWith('student_'), id + ' ' + rid + ' adult must not use expression');
     }
   }
 });

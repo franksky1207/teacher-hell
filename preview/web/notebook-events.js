@@ -1,5 +1,6 @@
 /** Phase 14-C: the teacher's disclosed knowledge, never an omniscient event log. */
 import {notebookRoster} from './notebook-roster.js';
+import {renderStoryText,storySubject} from '../src/runtime/story-text.js';
 import {readPlayerView} from '../src/runtime/views.js';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dateOf=moment=>typeof moment?.date==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(moment.date)?moment.date:null;
@@ -16,6 +17,8 @@ export function projectNotebookEvents(world){
   for(const caregiver of student.caregivers??[])names.set(caregiver.id,caregiver.name);
  }
  names.set(world.identity.playerId,'老師');
+ const subject=storySubject(world);
+ const display=text=>renderStoryText(text,subject);
  const runtime=world.extensions['teacher-hell/world'];
  const originByFact=new Map(runtime.facts.map(f=>[f.id,f.eventId]));
  const entries=[],seenFacts=new Set(),seenClaims=new Set();
@@ -23,14 +26,14 @@ export function projectNotebookEvents(world){
   if(seenFacts.has(f.id))continue;
   seenFacts.add(f.id);
   entries.push({kind:'fact',learnedDate:dateOf(f.learnedAt),
-   occurredDate:dateOf(f.occurredAt),text:f.description,eventId:originByFact.get(f.id)??null,subjectNames:(f.subjectIds??[]).map(id=>names.get(id)).filter(Boolean)});
+   occurredDate:dateOf(f.occurredAt),text:display(f.description),eventId:originByFact.get(f.id)??null,subjectNames:(f.subjectIds??[]).map(id=>names.get(id)).filter(Boolean)});
  }
  for(const c of view.claims){
   const key=JSON.stringify([c.claimId,c.versionId]);
   if(seenClaims.has(key))continue;
   seenClaims.add(key);
   entries.push({kind:'claim',learnedDate:dateOf(c.acquiredAt),occurredDate:null,
-   text:c.statement,sourceName:names.get(c.sourceId)??'來源未標示',
+   text:display(c.statement),sourceName:names.get(c.sourceId)??'來源未標示',
    belief:attitudes[c.belief]??'紀錄中態度未標示'});
  }
  // Explicit retrospective layer: only objective facts that already happened.
@@ -39,12 +42,12 @@ export function projectNotebookEvents(world){
  for(const f of runtime.facts){
   if(knownIds.has(f.id)||!f.occurredAt?.date||f.occurredAt.date>world.position.date)continue;
   entries.push({kind:'objective',learnedDate:dateOf(f.occurredAt),occurredDate:dateOf(f.occurredAt),
-   text:f.description,eventId:f.eventId,subjectNames:(f.subjectIds??[]).map(id=>names.get(id)).filter(Boolean),
-   causes:(f.causeIds??[]).map(id=>runtime.facts.find(previous=>previous.id===id)?.description).filter(Boolean),retrospective:true});
+   text:display(f.description),eventId:f.eventId,subjectNames:(f.subjectIds??[]).map(id=>names.get(id)).filter(Boolean),
+   causes:(f.causeIds??[]).map(id=>runtime.facts.find(previous=>previous.id===id)?.description).filter(Boolean).map(display),retrospective:true});
  }
  for(const c of view.choices??[]){
   entries.push({kind:'choice',learnedDate:dateOf(c.at),occurredDate:dateOf(c.at),eventId:c.eventId,
-   text:c.optionText??c.text??'曾作出正式事件選擇',subjectNames:[]});
+   text:display(c.optionText??c.text??'曾作出正式事件選擇'),subjectNames:[]});
  }
  // Sort by the date the teacher could know about it, not the hidden event chronology.
  entries.sort((a,b)=>(b.learnedDate??'').localeCompare(a.learnedDate??'')||(a.kind===b.kind?0:a.kind==='fact'?-1:1));

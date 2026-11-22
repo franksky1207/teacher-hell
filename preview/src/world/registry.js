@@ -5,7 +5,8 @@ import { createPerson, sampleRecord, withFamilyContext, FAMILY_CODES, GROUP_CODE
 import { validateRoles } from './roles.js';
 import {chooseSurname,chooseGivenName,surnameOf,GIVEN_NAME_CATALOG} from './name-catalog.js';
 
-export const SCHOOL_SUBJECTS=Object.freeze(['國文','英文','數學','地理','歷史','物理','化學','公民','生物']);
+import {SCHOOL_SUBJECTS} from './school-subjects.js';
+export {SCHOOL_SUBJECTS};
 export const CLASS_NAMES=Object.freeze([... '忠孝仁愛信義和平勤樸']);
 const need=(ok,message)=>{if(!ok)throw new RangeError(message);};
 const own=(o,k)=>Object.hasOwn(o,k);

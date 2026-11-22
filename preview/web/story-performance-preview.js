@@ -6,6 +6,7 @@ import {calendarDay,CALENDAR_VERSION,gradeAt} from '../src/calendar/calendar.js'
 import {selectScene} from './scene-context.js';
 import {projectStoryScene} from './story-scene.js';
 import {renderStoryView} from './story-view.js';
+import {previewCastWorld,overridePreviewAdultArt} from './story-preview-cast.js';
 
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const validId=id=>typeof id==='string'&&/^(?:T[1-6]-\d+|G-\d+|P[1-6]-\d+)$/.test(id);
@@ -14,17 +15,30 @@ const hasIds=(items,ids)=>Array.isArray(items)&&items.length===ids.length&&ids.e
 export async function loadStoryIndex(base){
  const index=await readJson(new URL('index.json',base));
  if(index?.schemaVersion!==1||!Array.isArray(index.stories)||index.count!==index.stories.length)throw Error('故事索引格式不符');
+ if(typeof index.sourceCommit!=='string'||!index.sourceCommit||typeof index.sourceBranch!=='string'||!index.sourceBranch)throw Error('故事索引缺少來源發布版本');
  const ids=new Set();
  for(const item of index.stories){
   if(!validId(item.storyId)||ids.has(item.storyId)||item.detail!=='stories/'+item.storyId+'.json')throw Error('故事索引格式不符');
   ids.add(item.storyId);
  }
- return index.stories;
+ return index.stories.map(item=>({...item,sourceCommit:index.sourceCommit,sourceBranch:index.sourceBranch}));
 }
 
 export async function loadStoryPreview(base,summary){
  if(!validId(summary.storyId))throw Error('故事編號不符');
- const detail=await readJson(new URL('stories/'+summary.storyId+'.json',base));
+ // Pages may serve the new index before a detail (or vice versa).
+ // Retry by re-reading the *whole version pair*; never silently show an old R.
+ let detail,expected=summary;
+ for(let attempt=0;attempt<3;attempt++){
+  if(attempt>0){
+   const fresh=await loadStoryIndex(base);
+   expected=fresh.find(item=>item.storyId===summary.storyId);
+   if(!expected)throw Error('最新版故事清單已移除這篇故事');
+  }
+  detail=await readJson(new URL('stories/'+summary.storyId+'.json',base));
+  if(detail?.sourceCommit===expected.sourceCommit&&detail?.sourceBranch===expected.sourceBranch)break;
+  if(attempt===2)throw Error('故事版本仍未同步（索引 '+expected.sourceCommit?.slice(0,8)+'、故事 '+(detail?.sourceCommit?.slice(0,8)??'未知')+'），拒絕顯示舊劇情');
+ }
  if(detail?.storyId!==summary.storyId||typeof detail.opening!=='string'||
   !hasIds(detail.options,[...'ABCD'])||!hasIds(detail.results,Array.from({length:8},(_,i)=>'R'+(i+1))))throw Error('這篇故事的開場、四個選項或八種結果不完整');
  return preparePreview(detail);
@@ -38,7 +52,11 @@ function preparePreview(detail){
 }
 
 async function readJson(url){
- const response=await fetch(url);
+ // Reader data is regenerated independently of the versioned preview runtime.
+ // A fresh story must not reuse an old cached single-page script after publishing.
+ const fresh=new URL(url.href);
+ fresh.searchParams.set('preview_refresh',String(Date.now()));
+ const response=await fetch(fresh,{cache:'no-store'});
  if(!response.ok)throw Error('無法讀取故事資料（'+response.status+'）');
  return response.json();
 }
@@ -77,64 +95,55 @@ function sampleWorld(preview){
 
 export function storyPreviewProjection(preview,state){
  const {detail,pages,results}=preview;
- const result=state.showingResult?results.find((_,i)=>detail.results[i].id===state.resultId):null;
+ const resultIndex=state.showingResult?detail.results.findIndex(item=>item.id===state.resultId):-1;
+ const group=resultIndex>=0?(preview.resultPages?.[resultIndex]??[results[resultIndex]]):null;
+ const resultPage=Math.max(0,Math.min(group?.length-1??0,state.resultPage??0));
+ const result=group?.[resultPage]??null;
  const page=result??pages[state.page];
  const last=state.page===pages.length-1;
  const chosen=detail.options.find(option=>option.id===state.selected);
- const {world,actors,profiles,context}=preview.sample??sampleWorld(preview);
+ const {world,actors,profiles,context}=previewCastWorld(preview,state.castSelection)??sampleWorld(preview);
  const display=text=>text.replace(/\{\{\s*([a-z][a-z0-9_]*)\.name\s*\}\}/g,(token,role)=>{
   if(role==='teacher')return '老師';
   return profiles[actors.get(role)]?.displayName??token;
  }).replace(/\{\{\s*teacher\.subject\s*\}\}/g,'數學');
  const boundPage={...page,text:display(page.text),speaker:actors.get(page.speaker)??null,
   cast:page.cast.map(actor=>({...actor,actorId:actors.get(actor.role)}))};
- const sceneView=projectStoryScene(world,{page:boundPage});
+ const sceneView=overridePreviewAdultArt(projectStoryScene(world,{page:boundPage}),actors,preview.slots,state.castSelection);
  if(!page.speaker&&page.label&&!result)sceneView.speaker=display(page.label);
  const entry=selectScene({...context,sceneTag:page.scene});
  let chatMessages;
  if(page.presentation==='chat'){
-  let first=state.page;
-  if(!result)while(first>0&&pages[first-1].presentation==='chat')first--;
-  chatMessages=(result?[page]:pages.slice(first,state.page+1)).map(message=>({
+  let first=result?resultPage:state.page;
+  const sequence=result?group:pages;
+  while(first>0&&sequence[first-1].presentation==='chat')first--;
+  chatMessages=sequence.slice(first,(result?resultPage:state.page)+1).map(message=>({
    speaker:message.speaker==='teacher'?'老師':profiles[actors.get(message.speaker)]?.displayName??'訊息',
    text:display(message.text),own:message.speaker==='teacher'
   }));
  }
- return {entry,page,view:{page:boundPage,sceneView,chatMessages,pageIndex:result?0:state.page,pageCount:result?1:pages.length,
-  canPrevious:!result&&!chosen&&state.page>0,canNext:!result&&!last,
+ return {entry,page,view:{page:boundPage,sceneView,chatMessages,pageIndex:result?resultPage:state.page,pageCount:result?group.length:pages.length,
+  canPrevious:result?resultPage>0:!chosen&&state.page>0,canNext:result?resultPage<group.length-1:!last,
   choices:!result&&last&&!chosen?detail.options.map(option=>({...option,text:display(option.text)})):[],
   confirmation:!result&&chosen?{optionId:chosen.id,text:display(chosen.text)}:null}};
 }
 
-export function renderStoryPerformancePreview(state,modeControl){
- const working=state.loading;
- const options=state.index.map(item=>`<option value="${item.storyId}"${item.storyId===state.storyId?' selected':''}>${esc(item.storyId+'｜'+item.title)}</option>`).join('');
+export function renderStoryPerformancePreview(state){
  const projection=state.preview?storyPreviewProjection(state.preview,state):null;
  const available=projection?.page.annotated?'本頁已套用演出標記。角色與時段採試演設定。':
   state.preview?.hasAnnotations?'本頁沒有新的演出標記。':'這篇尚未提供演出標記。可閱讀文字及測試四個選項與八種結果。';
- const resultControl=state.showingResult?`<label>故事結果 <select data-avg-result>${state.preview.detail.results.map(r=>
-  `<option value="${r.id}"${state.resultId===r.id?' selected':''}>${esc(r.id+'｜'+r.title)}</option>`).join('')}</select></label>
-  <button type="button" data-action="avg-back-opening">回到開場</button>`:'';
+ const resultControl=state.showingResult&&state.preview?`<label class="avg-compact-results">故事結果 <select data-avg-result aria-label="切換 R1～R8 結果">${state.preview.detail.results.map(r=>
+  `<option value="${r.id}"${state.resultId===r.id?' selected':''}>${esc(r.id+'｜'+r.title)}</option>`).join('')}</select></label>`:'';
  const activeId=state.preview?.detail.storyId;
- const demo=state.storyId===AVG_DEMO_ID;
  const activeLabel=activeId===AVG_DEMO_ID?'完整演出示範':activeId;
- const startLabel=state.storyId===activeId?'重新開始':'開始測試';
- const published=options||`<option disabled>${state.indexLoading?'載入中…':'目前無可選故事'}</option>`;
  const sample=state.preview?.sample;
  const music=eventMusic(state.preview?.music,contextMusic(sample?.context));
  return {music,entry:projection?.entry,html:`<main class="game game--story ui2-preview avg-story-preview">
-  <div class="top">${modeControl}</div>
-  <nav class="ui2-preview-tools" aria-label="正式故事測試">
-   <label>試演內容 <select data-avg-story${working?' disabled':''}>
-    <option value="${AVG_DEMO_ID}"${demo?' selected':''}>完整演出示範</option>
-    <optgroup label="已發布正式故事">${published}</optgroup>
-   </select></label>
-   <button type="button" data-action="avg-start"${working?' disabled':''}>${startLabel}</button>
-   ${state.indexError?'<button type="button" data-action="avg-reload-index">重新載入正式故事</button>':''}
+  <nav class="ui2-preview-tools avg-compact-tools" aria-label="正式故事測試">
    ${resultControl}
-   <button type="button" data-action="dev-center">返回測試中心</button>
+   <button type="button" data-action="avg-settings" aria-label="開啟 AVG 試演設定" title="選故事、選人與測試操作">⚙ 設定</button>
   </nav>
-  ${projection?renderStoryView(projection.view):'<section class="avg-preview-empty">選擇試演內容後開始測試。</section>'}
-  <p class="ui2-preview-caption" role="status">${esc(state.error|| (working?'正在載入故事…':activeLabel?activeLabel+'｜'+available+(state.showingResult?' 八種結果皆可手動試演。':'') : '試演不會改動玩家存檔。'))} ${esc(state.indexError)} <span data-avg-background-status></span></p>
+  ${projection?renderStoryView(projection.view):'<section class="avg-preview-empty">請點右上角「設定」，選擇故事並開始試演。</section>'}
+  <p class="ui2-preview-caption" role="status">${esc(state.error|| (state.loading?'正在載入故事…':activeLabel?activeLabel+'｜'+available+(state.showingResult?' 八種結果皆可手動試演。':'') : '試演不會改動玩家存檔。'))} ${esc(state.indexError)} <span data-avg-background-status></span></p>
  </main>`};
 }

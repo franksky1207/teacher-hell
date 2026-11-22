@@ -65,3 +65,10 @@ test('AVG settings selector exposes explicit confirmation and does not autostart
  assert.match(src,/if\(same\)\{\s*avgPreview\.castSelection=/);
  assert.doesNotMatch(src,/async function startAvgPreview\(\)/);
 });
+
+test('AVG formal settings only lists actual published stories, not the legacy demo entry',async()=>{
+ const {readFile}=await import('node:fs/promises');
+ const src=await readFile(new URL('../web/game.js',import.meta.url),'utf8');
+ assert.doesNotMatch(src,/完整演出示範|avg-picker-demo|AVG_DEMO_ID|loadAvgDemo/);
+ assert.match(src,/renderAvgStoryPicker\(avgPreview\.index,avgPicker/);
+});

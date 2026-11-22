@@ -1,4 +1,4 @@
-import {AVG_DEMO_ID,loadAvgDemo,loadStoryIndex,loadStoryPreview,renderStoryPerformancePreview,adjacentAvgResultId} from './story-performance-preview.js';
+import {loadStoryIndex,loadStoryPreview,renderStoryPerformancePreview,adjacentAvgResultId} from './story-performance-preview.js';
 import {choosePreviewCast,renderPreviewCastControls} from './story-preview-cast.js';
 import {renderAvgStoryPicker,pickAvgStories} from './story-preview-picker.js';
 import {MusicPlayer,MUSIC_TRACKS} from './music-player.js';
@@ -55,7 +55,7 @@ let ui2PreviewState=makeUi2PreviewState();
 let ui4PreviewCase='phone',ui4PreviewPage=0;
 let scenePreviewCase='opening',scenePreviewCast='two',scenePreviewWear='auto';
 const AVG_MODES=[['formal','正式故事演出'],['reader','故事閱讀'],['free','自由演出'],['scene','場景測試']];
-const avgPreview={index:[],base:null,storyId:AVG_DEMO_ID,indexLoading:false,indexError:'',preview:null,castSelection:{},page:0,resultPage:0,selected:null,showingResult:false,resultId:'R1',loading:false,error:''};
+const avgPreview={index:[],base:null,storyId:null,indexLoading:false,indexError:'',preview:null,castSelection:{},page:0,resultPage:0,selected:null,showingResult:false,resultId:'R1',loading:false,error:''};
 const avgPicker={kind:'T',term:'all',topic:'all',group:'all',pClass:'all',event:'all',query:'',page:0};
 // The modal is a transaction: its selected story/cast never alters the stage until confirmed.
 let avgDraft=null;
@@ -93,7 +93,6 @@ function avgSettingsContent(){
  return '<div class="avg-settings-body">'+
   avgModeControl('formal')+
   renderAvgStoryPicker(avgPreview.index,avgPicker,draft?.storyId??'')+
-  '<div class="avg-picker-demo">'+button('完整演出示範','avg-select-story:'+AVG_DEMO_ID)+'</div>'+
   '<p class="avg-settings-selection" role="status">已選故事：'+esc(draft?.storyId??'尚未選擇')+'｜'+esc(title)+'</p>'+
   '<section class="avg-settings-cast"><h3>人物選擇</h3>'+
   (draft?.loading?'<p>正在讀取故事及人物槽位…</p>':
@@ -128,7 +127,7 @@ function refreshAvgSettings(focusSelector=null){
 }
 async function chooseAvgDraftStory(id){
  if(!avgDraft||avgDraft.loading||screen!=='avg-formal')return;
- if(id!==AVG_DEMO_ID&&!avgPreview.index.some(s=>s.storyId===id))return;
+ if(!avgPreview.index.some(s=>s.storyId===id))return;
  if(avgDraft.storyId===id&&avgDraft.preview)return;
  const draft=avgDraft;
  if(avgPreview.preview?.detail.storyId===id){
@@ -139,12 +138,9 @@ async function chooseAvgDraftStory(id){
  draft.storyId=id;draft.preview=null;draft.castSelection={};draft.error='';draft.loading=true;
  refreshAvgSettings();
  try{
-  if(id===AVG_DEMO_ID)draft.preview=loadAvgDemo();
-  else{
-   if(!avgPreview.base)throw Error('故事清單尚未載入，請稍後再試');
-   const summary=avgPreview.index.find(item=>item.storyId===id);
-   draft.preview=await loadStoryPreview(avgPreview.base,summary);
-  }
+  if(!avgPreview.base)throw Error('故事清單尚未載入，請稍後再試');
+  const summary=avgPreview.index.find(item=>item.storyId===id);
+  draft.preview=await loadStoryPreview(avgPreview.base,summary);
  }catch(error){draft.error='無法讀取故事：'+error.message;}
  finally{
   draft.loading=false;

@@ -111,6 +111,16 @@ function refreshAvgSettings(focusSelector=null){
  if(updated)updated.scrollTop=scrolling;
  if(focusSelector)app.querySelector('.overlay '+focusSelector)?.focus();
 }
+function refreshAvgSearchResults(){
+ const picker=app.querySelector('.overlay .avg-picker');
+ if(!picker)return;
+ const container=document.createElement('div');
+ container.innerHTML=renderAvgStoryPicker(avgPreview.index,avgPicker,avgPreview.storyId);
+ for(const selector of ['.avg-picker__count','.avg-picker__results','.avg-picker__paging']){
+  const original=picker.querySelector(selector),replacement=container.querySelector(selector);
+  if(original&&replacement)original.replaceWith(replacement);
+ }
+}
 function updateAvgPicker(key,value){
  if(key==='kind'){
   Object.assign(avgPicker,{kind:value,term:'all',topic:'all',group:'all',pClass:'all',event:'all',query:'',page:0});
@@ -134,7 +144,10 @@ async function loadAvgIndex(){
    avgPreview.index=await loadStoryIndex(hosted);avgPreview.base=hosted;
   }
  }catch(error){avgPreview.indexError='正式故事清單載入失敗。'+error.message;}
- finally{avgPreview.indexLoading=false;if(screen==='avg-formal')showFormalPreview();}
+ finally{avgPreview.indexLoading=false;if(screen==='avg-formal'){
+  const settingsOpen=!!app.querySelector('.overlay .avg-settings-body');
+  showFormalPreview();if(settingsOpen)openAvgSettings();
+ }}
 }
 async function startAvgPreview(){
  if(avgPreview.loading)return;
@@ -540,11 +553,10 @@ app.addEventListener('change',event=>{
 });
 app.addEventListener('input',event=>{
  if(screen!=='avg-formal'||!event.target.matches('[data-avg-search]'))return;
- const input=event.target,caret=input.selectionStart;
- avgPicker.query=input.value;avgPicker.page=0;
- refreshAvgSettings('[data-avg-search]');
- const focused=app.querySelector('.overlay [data-avg-search]');
- if(focused&&caret!==null)focused.setSelectionRange(caret,caret);
+ avgPicker.query=event.target.value;avgPicker.page=0;
+ // Keep the actual input node: replacing a focused search field closes the
+ // software keyboard on some phones and interrupts Chinese IME composition.
+ refreshAvgSearchResults();
 });
 app.addEventListener('input',event=>{
  const field=event.target.closest('input[name="teacher-surname"],input[name="teacher-given-name"]');

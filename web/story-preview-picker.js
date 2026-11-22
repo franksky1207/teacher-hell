@@ -1,6 +1,28 @@
 // Story catalog stays a lightweight index. Full Markdown/AVG is fetched only for a selected story.
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const AVG_PICKER_LIMIT=50;
+export const AVG_TOPIC_NAMES={
+ "T1-1": "首次進班與建班",
+ "T1-2": "高中新生適應",
+ "T1-3": "高一上家長日",
+ "T1-4": "日本學校參訪前後",
+ "T1-5": "首次校慶擺攤",
+ "T2-1": "班呼／校歌比賽前後",
+ "T3-1": "英文歌曲比賽前後",
+ "T3-2": "高二校慶擺攤",
+ "T4-1": "第二次升學輔導與大學博覽會",
+ "T4-2": "畢業旅行行前安排",
+ "T5-1": "高三教師節活動",
+ "T5-2": "最後一次運動會",
+ "T5-3": "最後一次校慶（高三不擺攤）",
+ "T5-4": "最後一次聖誕晚會",
+ "T5-5": "學測前最後階段特殊安排",
+ "T6-1": "學測成績公布後的學生心情",
+ "T6-2": "申請入學第一階段篩選",
+ "T6-3": "申請入學第二階段面試安排",
+ "T6-4": "最後一次園遊會",
+ "T6-5": "畢業典禮前的特殊師生請求"
+};
 export const storyKind=s=>s.type??(/^P[1-6]-/.test(s.storyId)?'P':/^G-/.test(s.storyId)?'G':'T');
 export const storyNumber=s=>Number(s.storyId.match(/(\d+)$/)?.[1])||0;
 export const storyPClass=s=>s.storyId.match(/^(P[1-6])-/)?.[1]??'P';
@@ -39,7 +61,7 @@ export function renderAvgStoryPicker(index,filter={},selectedId=''){
  const base=index.filter(s=>storyKind(s)===state.kind).sort(sortIds);
  const terms=unique(base.map(s=>s.topicId?.match(/^T[1-6]/)?.[0]).filter(Boolean)).sort();
  const matchingTerm=state.term==='all'?base:base.filter(s=>s.topicId?.startsWith(state.term+'-'));
- const topics=unique(matchingTerm.map(s=>s.topicId).filter(Boolean)).sort();
+ const topics=unique(matchingTerm.map(s=>s.topicId).filter(Boolean)).sort((a,b)=>a.localeCompare(b,'en',{numeric:true}));
  const categories=unique(base.map(storyPClass)).sort();
  const matchingCategory=state.pClass==='all'?base:base.filter(s=>storyPClass(s)===state.pClass);
  const events=unique(matchingCategory.map(storyPEvent)).sort();
@@ -47,8 +69,8 @@ export function renderAvgStoryPicker(index,filter={},selectedId=''){
  const groupList=groups(relevant,index);
  let fields='<div class="avg-picker__filters">';
  if(state.kind==='T'){
-  fields+=field('term','學期',[['all','全部學期'],...terms.map(t=>[t,t])],state.term);
-  fields+=field('topic','主題',[['all','全部主題'],...topics.map(t=>[t,t])],state.topic);
+  fields+=field('term','學期',[['all','全部學期'],...terms.map(t=>[t,({T1:'高一上',T2:'高一下',T3:'高二上',T4:'高二下',T5:'高三上',T6:'高三下'}[t]??t)+'（'+t+'）'])],state.term);
+  fields+=field('topic','主題',[['all','全部主題'],...topics.map(t=>[t,t+'｜'+(AVG_TOPIC_NAMES[t]??t)])],state.topic);
  }else if(state.kind==='G'){
   fields+=field('group','50 篇分組',[['all','全部組別'],...groupList],state.group);
  }else{

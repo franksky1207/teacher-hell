@@ -6,7 +6,7 @@ import {calendarDay,CALENDAR_VERSION,gradeAt} from '../src/calendar/calendar.js'
 import {selectScene} from './scene-context.js';
 import {projectStoryScene} from './story-scene.js';
 import {renderStoryView} from './story-view.js';
-import {renderPreviewCastControls,previewCastWorld,overridePreviewAdultArt} from './story-preview-cast.js';
+import {previewCastWorld,overridePreviewAdultArt} from './story-preview-cast.js';
 
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const validId=id=>typeof id==='string'&&/^(?:T[1-6]-\d+|G-\d+|P[1-6]-\d+)$/.test(id);

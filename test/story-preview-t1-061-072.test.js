@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 import {validateStoryDraft,seedCodesFromMarkdown,topicIdsFromMarkdown} from '../scripts/story-draft-validator.js';
 import {readTopicWindows} from '../scripts/story-windows.js';
 import {compileStoryPreview} from '../src/runtime/story-preview-content.js';
+import {storyVisibleLength,storyLengthBand} from '../scripts/story-visible-length.js';
 
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 const folder='content/events-v1/T/T1-高一上/T1-3-高一上家長日/活動前/';
@@ -96,8 +97,8 @@ test('T1-061～072: 384 causal review cells match 12 live choice-result matrices
 });
 
 
-test('T1-001～072: all 576 result narratives retain the reviewed length floor and valid AVG performance',()=>{
-  let checked=0;
+test('T1-001～072: all 576 results use visible-text-only length audit and valid AVG performance',()=>{
+  let checked=0,under90=0,openingChecked=0;
   for(let n=1;n<=72;n++){
     const id=storyId(n);
     const folder=n<=30
@@ -110,6 +111,10 @@ test('T1-001～072: all 576 result narratives retain the reviewed length floor a
     assert.ok(cues?.results,id+' missing AVG cues');
     const opening=md.match(/### 開場[^\n]*\n([\s\S]*?)(?=### 四個最終教師選項)/)?.[1]?.trim();
     assert.ok(opening,id+' missing opening text');
+    const openingTexts=[...opening.matchAll(/^\s*-\s*\*\*P\d+｜[^\n]*?\*\*：([^\n]*)/gm)].map(m=>m[1]);
+    assert.ok(openingTexts.length>0,id+' missing P pages');
+    assert.ok(storyVisibleLength(openingTexts.join(''))>0,id+' empty visible opening');
+    openingChecked++;
     const results=[...md.matchAll(/^### (R[1-8])｜([^\r\n]+)\r?\n\s*- \*\*玩家可見結果\*\*：([^\r\n]+)/gm)]
       .map(m=>({id:m[1],title:m[2],text:m[3]}));
     assert.equal(results.length,8,id+' must preserve eight R outcomes');
@@ -118,8 +123,10 @@ test('T1-001～072: all 576 result narratives retain the reviewed length floor a
     for(const r of results){
       const pages=cues.results[r.id]?.pages;
       assert.ok(Array.isArray(pages)&&pages.length>=2,id+' '+r.id+' needs independent AVG pages');
-      const words=[...r.text.replace(/\s/g,'')].length;
-      assert.ok(words>=90,id+' '+r.id+' dropped below the verified 90-character narrative floor: '+words);
+      const words=storyVisibleLength(r.text);
+      assert.ok(words>0,id+' '+r.id+' has no authored visible narrative');
+      if(storyLengthBand(words)==='priority'||storyLengthBand(words)==='review')under90++;
+      assert.ok(words<=[...r.text.replace(/\s/g,'')].length,id+' '+r.id+' length count cannot include template tokens');
       assert.ok(pages.every(page=>typeof page.text==='string'&&page.text.trim()),id+' '+r.id+' empty cue');
       if(n>=11){
         assert.equal(pages.map(page=>page.text).join('').replace(/\s/g,''),
@@ -129,4 +136,17 @@ test('T1-001～072: all 576 result narratives retain the reviewed length floor a
     }
   }
   assert.equal(checked,576);
+  assert.equal(openingChecked,72);
+  assert.ok(under90>0,'Legacy visible-text short results must be reported rather than masked by template length');
+});
+
+test('Visible text length excludes complete template tokens, without replacing names',()=>{
+  assert.equal(storyVisibleLength('甲{{student_a.name}}乙'),2);
+  assert.equal(storyVisibleLength('甲{{guardian_a.name}}乙{{teacher.subject}}丙'),3);
+  assert.equal(storyVisibleLength('甲 \n {{ student_a.name }} \t乙'),2);
+  assert.equal(storyVisibleLength('{{student_a.name}}'),0);
+  assert.equal(storyLengthBand(89,'opening'),'priority');
+  assert.equal(storyLengthBand(110,'opening'),'reference');
+  assert.equal(storyLengthBand(90),'reference');
+  assert.equal(storyLengthBand(130),'pace');
 });

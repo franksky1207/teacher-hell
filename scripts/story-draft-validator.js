@@ -1,4 +1,5 @@
 import {storyPlaceholderIssues} from '../src/runtime/story-text.js';
+import {storyVisibleLength,storyLengthBand} from './story-visible-length.js';
 import {storyMetadataHeading, storyMetadataKeys, seedIdPattern} from './story-catalog.js';
 export const STATE_GROUPS=Object.freeze(Object.fromEntries(Object.entries({A:[1,1,0,0,-1,-1,-2,-2],B:[2,0,-1,-1,-1,-1,-1,-1],C:[1,1,0,-1,-1,-1,-1,-2],D:[2,1,0,-1,-1,-1,-2,-2],E:[1,1,1,0,-1,-2,-2,-2]}).map(([k,v])=>[k,Object.freeze(v)])));
 import {resolveTopicPool} from './story-windows.js';
@@ -92,6 +93,9 @@ export function validateStoryDraft(md,{stage='full',stateRulesVersion=3,seeds=ne
   const opening=four.split('### 開場')[1]?.split('### 四個最終教師選項')[0]||'';
   if(!/^\s*-\s*\*\*P\d{2}｜/m.test(opening)||/【|】|待填/.test(opening))fail('opening','開場頁面未完成');
   const pages=[...opening.matchAll(/^\s*-\s*\*\*P(\d{2})｜([^\n]*?)\*\*：([^\n]*)/gm)],pageIds=new Set();
+   const openingLength=storyVisibleLength(pages.map(page=>page[3]).join(''));
+   if(openingLength<110)warnings.push('開場字數'+openingLength+'（程式變數不計）：'+(openingLength<90?'少於90，優先複核':'90～109，複核人物互動與導師困境')+'；字數不等於品質。');
+   if(storyLengthBand(openingLength,'opening')==='pace')warnings.push('開場字數'+openingLength+'（程式變數不計）：超過140，複核節奏與重述；不是硬性上限。');
   for(const [,id,speaker,text] of pages){if(pageIds.has(id))fail('opening_duplicate','P'+id+' 重複');pageIds.add(id);if(unfilled(speaker)||unfilled(text))fail('opening','P'+id+' 未完成');}
   const optionPart=four.split('### 四個最終教師選項')[1]||'',choices=new Map();
   for(const r of rows(optionPart)){
@@ -128,6 +132,10 @@ export function validateStoryDraft(md,{stage='full',stateRulesVersion=3,seeds=ne
    if(unfilled(content))fail('result_text','R'+n+' 結果未填');
    if(unfilled(fact))fail('result_fact','R'+n+' 客觀後果未填');
    texts.push(content.replace(/\s/g,''));
+    const resultLength=storyVisibleLength(content);
+    const resultBand=storyLengthBand(resultLength);
+    if(resultBand==='priority'||resultBand==='review')warnings.push('R'+n+' 字數'+resultLength+'（程式變數不計）：'+(resultBand==='priority'?'少於70，優先複核':'70～89，審查人物反應與收束')+'；不可單為補字灌水。');
+    else if(resultBand==='pace')warnings.push('R'+n+' 字數'+resultLength+'（程式變數不計）：達130以上，留意重述與節奏；不是硬性上限。');
    if(unfilled(effects))fail('delta_empty','R'+n+' 底層增減未填');
    else if(effects!=='無'){
     const used=new Set();

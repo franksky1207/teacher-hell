@@ -94,5 +94,50 @@ for(let n=START;n<=END;n++) {
   }
   checked++;
 }
-console.log(JSON.stringify({checked,checkedResults,pages,directMatches,issues:problems.length},null,2));
+
+const packPaths = [
+  ...['001-004','005-008','009-012','013-018','019-024','025-030'].map(s => `${ROOT}/T1-1-首次進班與建班/驗收紀錄/T1-${s}-正式驗收紀錄.json`),
+  ...['031-035','036-040','041-045','046-050','051-055','056-060'].map(s => `${ROOT}/T1-2-高中新生適應/驗收紀錄/T1-${s}-正式驗收紀錄.json`),
+];
+const evidence = new Map();
+for (const file of packPaths) {
+  const pack = JSON.parse(fs.readFileSync(file, 'utf8'));
+  for (const item of pack.records || []) {
+    if (evidence.has(item.story_id)) problems.push('duplicate evidence record ' + item.story_id);
+    evidence.set(item.story_id, { cells:item.review?.causal32Evidence || [], originalSha:item.source_blob_sha });
+  }
+}
+const lastPack = JSON.parse(fs.readFileSync(`${ROOT}/T1-3-高一上家長日/驗收紀錄/活動前-061-072-逐格因果核對.json`, 'utf8'));
+for (const [id, review] of Object.entries(lastPack.reviews || {})) {
+  if (evidence.has(id)) problems.push('duplicate evidence record ' + id);
+  evidence.set(id, { cells:review.causal32Evidence || [], originalSha:review.sourceBlob });
+}
+let causalCellsChecked = 0, staleEvidenceSources = 0;
+for(let n=START;n<=END;n++) {
+  const id='T1-'+String(n).padStart(3,'0'), file=allFiles.find(f=>path.basename(f)===id+'.md'), item=evidence.get(id);
+  if(!item) { problems.push(id+': no causal evidence');continue; }
+  if(!file)continue;
+  const raw=fs.readFileSync(file,'utf8');
+  const matrix=raw.match(/### 四選項對八共用結果的權重([\\s\\S]*?)(?=\\n## |$)/)?.[1]||'';
+  const rows=matrix.split('\\n').filter(line=>/^\\| [ABCD] \\|/.test(line)).map(line=>line.split('|').slice(2,10).map(s=>Number(s.trim())));
+  const keys=new Set();
+  if(item.cells.length!==32)problems.push(id+': evidence cells '+item.cells.length+' != 32');
+  for(const cell of item.cells) {
+    const key=cell.choice+cell.result, ci='ABCD'.indexOf(cell.choice), ri=Number(String(cell.result).slice(1))-1;
+    if(keys.has(key))problems.push(id+': duplicate '+key);
+    keys.add(key);
+    if(ci<0||ri<0||ri>7||!Number.isInteger(ri))problems.push(id+': invalid evidence key '+key);
+    else if(rows[ci]?.[ri]!==cell.weight)problems.push(id+': causal weight differs '+key);
+    if(!cell.reason||!cell.actionPreserved||!cell.compatibility||!cell.causalDirection)
+      problems.push(id+': incomplete causal evidence '+key);
+    causalCellsChecked++;
+  }
+  for(const choice of 'ABCD')for(let k=1;k<=8;k++)
+    if(!keys.has(choice+'R'+k))problems.push(id+': missing causal evidence '+choice+'R'+k);
+  // Old blob identifiers are historical; their presence does not certify the current edited story.
+  if(item.originalSha)staleEvidenceSources++;
+}
+if(causalCellsChecked!==2304)problems.push('causal evidence cell total '+causalCellsChecked+' != 2304');
+
+console.log(JSON.stringify({checked,checkedResults,pages,directMatches,causalCellsChecked,historicalSourceReferences:staleEvidenceSources,issues:problems.length},null,2));
 if(problems.length) {for(const p of problems) console.error(p); process.exitCode=1;}

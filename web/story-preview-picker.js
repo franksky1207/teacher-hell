@@ -20,14 +20,20 @@ export function pickAvgStories(index,filter={}){
  }else{
   if(pClass!=='all')base=base.filter(s=>storyPClass(s)===pClass);
   if(event!=='all')base=base.filter(s=>storyPEvent(s)===event);
-  if(group!=='all')base=base.filter(s=>storyGroup(s)===Number(group));
+  if(group!=='all')base=base.filter(s=>storyPickerGroup(s,index)===Number(group));
  }
  if(q)base=base.filter(s=>s.storyId.toLocaleLowerCase().includes(q)||s.title.toLocaleLowerCase().includes(q));
  return base;
 }
 const field=(name,label,items,selected)=>'<label>'+label+'<select data-avg-filter="'+name+'">'+items.map(([value,title])=>
  '<option value="'+esc(value)+'"'+(value===selected?' selected':'')+'>'+esc(title)+'</option>').join('')+'</select></label>';
-const groups=(stories)=>unique(stories.map(storyGroup)).sort((a,b)=>a-b).map(n=>[String(n),'第 '+String(n).padStart(2,'0')+' 組（編號 '+((n-1)*50+1)+'～'+(n*50)+'）']);
+// P3-P6 first group by their concrete event, then split that event into pages of 50.
+export function storyPickerGroup(s,index){
+ if(storyKind(s)!=='P'||['P1','P2'].includes(storyPClass(s)))return storyGroup(s);
+ const same=index.filter(other=>storyKind(other)==='P'&&storyPClass(other)===storyPClass(s)&&storyPEvent(other)===storyPEvent(s)).sort(sortIds);
+ return Math.floor(Math.max(0,same.findIndex(other=>other.storyId===s.storyId))/AVG_PICKER_LIMIT)+1;
+}
+const groups=(stories,index)=>unique(stories.map(s=>storyPickerGroup(s,index))).sort((a,b)=>a-b).map(n=>[String(n),'第 '+String(n).padStart(2,'0')+' 組（最多50篇）']);
 export function renderAvgStoryPicker(index,filter={},selectedId=''){
  const state={kind:'T',term:'all',topic:'all',group:'all',pClass:'all',event:'all',query:'',...filter};
  const base=index.filter(s=>storyKind(s)===state.kind).sort(sortIds);
@@ -38,7 +44,7 @@ export function renderAvgStoryPicker(index,filter={},selectedId=''){
  const matchingCategory=state.pClass==='all'?base:base.filter(s=>storyPClass(s)===state.pClass);
  const events=unique(matchingCategory.map(storyPEvent)).sort();
  const relevant=state.kind==='G'?base:matchingCategory.filter(s=>state.event==='all'||storyPEvent(s)===state.event);
- const groupList=groups(relevant);
+ const groupList=groups(relevant,index);
  let fields='<div class="avg-picker__filters">';
  if(state.kind==='T'){
   fields+=field('term','學期',[['all','全部學期'],...terms.map(t=>[t,t])],state.term);

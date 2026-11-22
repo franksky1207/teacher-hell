@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import {createHash} from 'node:crypto';
 
 const ROOT = 'content/events-v1/T/T1-高一上';
 const START = 1, END = 72;
@@ -104,7 +105,7 @@ for (const file of packPaths) {
   const pack = JSON.parse(fs.readFileSync(file, 'utf8'));
   for (const item of pack.records || []) {
     if (evidence.has(item.story_id)) problems.push('duplicate evidence record ' + item.story_id);
-    evidence.set(item.story_id, { cells:item.review?.causal32Evidence || [], originalSha:item.source_blob_sha });
+    evidence.set(item.story_id, { cells:item.review?.causal32Evidence || [], originalSha:item.source_blob_sha, review:item.review });
   }
 }
 const lastPack = JSON.parse(fs.readFileSync(`${ROOT}/T1-3-高一上家長日/驗收紀錄/活動前-061-072-逐格因果核對.json`, 'utf8'));
@@ -120,6 +121,14 @@ for(let n=START;n<=END;n++) {
   const raw=fs.readFileSync(file,'utf8');
   const matrix=raw.match(/### 四選項對八共用結果的權重([\s\S]*?)(?=\n## |$)/)?.[1]||'';
   const rows=matrix.split('\n').filter(line=>/^\| [ABCD] \|/.test(line)).map(line=>line.split('|').slice(2,10).map(s=>Number(s.trim())));
+  const choiceSection=raw.match(/### 四個最終教師選項([\s\S]*?)(?=## 5｜)/)?.[1]||'';
+  const completedActions=choiceSection.split('\n').filter(line=>/^\| [ABCD] \|/.test(line)).map(line=>line.split('|')[4]?.trim());
+  const effects=Array.from({length:8}, (_,i)=>raw.match(new RegExp('### R'+(i+1)+'｜[\\s\\S]*?- \\*\\*客觀後果\\*\\*：([^\\n]+)'))?.[1]||'');
+  const blobSha=createHash('sha1').update('blob '+Buffer.byteLength(raw)+'\0').update(raw).digest('hex');
+  if(item.originalSha && item.originalSha!==blobSha)staleEvidenceSources++;
+  if(item.review?.eightResults)
+    for(let k=0;k<8;k++)if(!item.review.eightResults.includes(effects[k]))
+      problems.push(id+': reviewed outcome no longer equals R'+(k+1)+' factual consequence');
   const keys=new Set();
   if(item.cells.length!==32)problems.push(id+': evidence cells '+item.cells.length+' != 32');
   for(const cell of item.cells) {
@@ -128,14 +137,15 @@ for(let n=START;n<=END;n++) {
     keys.add(key);
     if(ci<0||ri<0||ri>7||!Number.isInteger(ri))problems.push(id+': invalid evidence key '+key);
     else if(rows[ci]?.[ri]!==cell.weight)problems.push(id+': causal weight differs '+key);
+    if(ci>=0 && completedActions[ci] && !String(cell.actionPreserved||'').includes(completedActions[ci]))
+      problems.push(id+': reviewed action no longer equals '+key);
     if(!cell.reason||!cell.actionPreserved||!cell.compatibility||!cell.causalDirection)
       problems.push(id+': incomplete causal evidence '+key);
     causalCellsChecked++;
   }
   for(const choice of 'ABCD')for(let k=1;k<=8;k++)
     if(!keys.has(choice+'R'+k))problems.push(id+': missing causal evidence '+choice+'R'+k);
-  // Old blob identifiers are historical; their presence does not certify the current edited story.
-  if(item.originalSha)staleEvidenceSources++;
+  // Historical source references are counted as stale when their actual Git blob SHA differs.
 }
 if(causalCellsChecked!==2304)problems.push('causal evidence cell total '+causalCellsChecked+' != 2304');
 

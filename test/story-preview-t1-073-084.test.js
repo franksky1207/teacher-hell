@@ -108,3 +108,31 @@ test('story visible length never counts P page markers or speaker labels',()=>{
   assert.equal(storyVisibleLength('P03｜旁白：請看這份摘要。'),storyVisibleLength('請看這份摘要。'));
   assert.equal(storyVisibleLength('這一句真的提到 P01｜旁白，不是頁面標頭。'),storyVisibleLength('這一句真的提到 P01｜旁白，不是頁面標頭。'));
 });
+
+
+test('T1-073–084: 384 distinct evidence mechanisms and no known cross-choice AVG presuppositions',()=>{
+  const evidence=JSON.parse(read('content/events-v1/T/T1-高一上/T1-3-高一上家長日/驗收紀錄/活動後-073-084-逐格因果核對.json'));
+  const mechanisms=new Set();
+  let count=0;
+  for(let n=73;n<=84;n++){
+    const id=storyId(n),md=read(folder+id+'.md');
+    const choices=Object.fromEntries([...md.matchAll(/^\\| ([ABCD]) \\| [^\\n|]+ \\| (?:true|false) \\| ([^\\n|]+) \\|/gm)].map(m=>[m[1],m[2]]));
+    const entry=evidence.reviews[id];
+    assert.ok(entry,id+' causal evidence missing');
+    for(const cell of entry.causal32Evidence){
+      count++;
+      assert.equal(cell.actionPreserved,choices[cell.choice],id+' '+cell.choice+cell.result+' source action mismatch');
+      assert.ok(cell.reason.includes(cell.actionPreserved),id+' '+cell.choice+cell.result+' ignores teacher action');
+      assert.ok(!/事件仍可透過當事人後續自主反應自然發展至此結果|具有一定抑制或緩衝作用|在因果上具顯著促進效果/.test(cell.reason),id+' generic justification');
+      const mechanism=cell.reason.split('；').slice(1).join('；').split('。權重')[0];
+      assert.ok(mechanism.length>=12,id+' '+cell.choice+cell.result+' insufficient causal mechanism');
+      assert.ok(!mechanisms.has(mechanism),id+' '+cell.choice+cell.result+' duplicated mechanism');
+      mechanisms.add(mechanism);
+    }
+    const avg=JSON.parse(md.match(/```avg\\n([\\s\\S]*?)\\n```/)[1]);
+    const allPages=Object.values(avg.results).flatMap(r=>r.pages).map(p=>p.text).join('\\n');
+    assert.doesNotMatch(allPages,/我的致謝只針對熱心|你剛剛稱讚表很完整|我剛才不該在班上泛提/,id+' option-specific fact leaks into AVG');
+  }
+  assert.equal(count,384);
+  assert.equal(mechanisms.size,384);
+});

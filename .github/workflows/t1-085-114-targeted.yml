@@ -1,0 +1,21 @@
+name: T1-085-114 targeted Node verification
+on:
+  push:
+    branches:
+      - work/t1-085-114-japan-visit-before-20261122
+    paths:
+      - .github/workflows/t1-085-114-targeted.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  targeted-node:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Targeted AVG and story regressions (4 files)
+        run: node --test test/story-preview-multipage.test.js test/story-preview-cast-continuity.test.js test/story-preview-snapshot.test.js test/story-preview-t1-085-114.test.js

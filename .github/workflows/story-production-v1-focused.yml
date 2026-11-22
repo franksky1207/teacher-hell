@@ -9,6 +9,10 @@ on:
       - 'scripts/*story*'
       - 'story-reader/**'
       - 'test/story-*.test.js'
+      - 'web/story-preview-picker.js'
+      - 'web/story-performance-preview.js'
+      - 'web/game.js'
+      - 'web/story-view.css'
       - 'data/story-production-selected-seeds-T1-001-030.json'
       - 'docs/事件四數值三層平衡種子2400組.md'
       - 'docs/T1-T6-特定故事20主題與觸發日期.md'
@@ -35,4 +39,4 @@ jobs:
           node-version-file: .nvmrc
       - run: |
           node --check story-reader/reader.js
-          node --test test/story-draft-validator.test.js test/story-state-matrix.test.js test/story-reader-export.test.js test/story-reader-ui.test.js test/story-production-catalog.test.js test/story-preview-multipage.test.js test/story-preview-snapshot.test.js test/story-preview-cast-continuity.test.js test/story-preview-t1-006-010.test.js
+          node --test test/story-draft-validator.test.js test/story-state-matrix.test.js test/story-reader-export.test.js test/story-reader-ui.test.js test/story-production-catalog.test.js test/story-preview-multipage.test.js test/story-preview-snapshot.test.js test/story-preview-cast-continuity.test.js test/story-preview-t1-006-010.test.js test/story-preview-picker.test.js

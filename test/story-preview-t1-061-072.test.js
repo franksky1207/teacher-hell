@@ -61,3 +61,36 @@ test('T1-061～072: twelve V3 drafts, 96 distinct results, legal seeds and windo
   assert.equal(distinct.size,96);
   assert.equal(emotionalSlots.size,4,'emotional option must not always be in the same slot');
 });
+
+
+test('T1-061～072: 384 causal review cells match 12 live choice-result matrices',()=>{
+  const evidence=JSON.parse(read('content/events-v1/T/T1-高一上/T1-3-高一上家長日/驗收紀錄/活動前-061-072-逐格因果核對.json'));
+  assert.equal(evidence.cellCount,384);
+  assert.equal(Object.keys(evidence.reviews).length,12);
+  for(let n=61;n<=72;n++){
+    const id=storyId(n),md=read(folder+id+'.md'),entry=evidence.reviews[id];
+    assert.ok(entry,id+' missing review');
+    const matrixRows=md.split(/\r?\n/).filter(line=>/^\| [ABCD] \| [0124] \|/.test(line));
+    assert.equal(matrixRows.length,4,id+' matrix row count');
+    const matrix=Object.fromEntries(matrixRows.map(line=>{
+      const fields=line.split('|').map(v=>v.trim()).filter(Boolean);
+      assert.equal(fields.length,9,id+' matrix cell count');
+      return [fields[0],fields.slice(1).map(Number)];
+    }));
+    for(let k=0;k<8;k++){
+      assert.ok(!'ABCD'.split('').every(c=>matrix[c][k]===4),id+' R'+(k+1)+' indiscriminate all-four weights');
+      assert.ok('ABCD'.split('').filter(c=>matrix[c][k]===0).length<=1,id+' R'+(k+1)+' too many zero weights');
+    }
+    assert.equal(entry.causal32Evidence.length,32,id+' review count');
+    const seen=new Set();
+    for(const cell of entry.causal32Evidence){
+      const key=cell.choice+'-'+cell.result;
+      assert.ok(/^[ABCD]$/.test(cell.choice)&&/^R[1-8]$/.test(cell.result),id+' invalid review key '+key);
+      assert.ok(!seen.has(key),id+' duplicated review '+key);
+      seen.add(key);
+      assert.equal(cell.weight,matrix[cell.choice][Number(cell.result.slice(1))-1],id+' stale review '+key);
+      assert.ok(typeof cell.reason==='string'&&cell.reason.length>=50,id+' ungrounded review '+key);
+      assert.ok(typeof cell.actionPreserved==='string'&&cell.actionPreserved.length>=5,id+' missing action '+key);
+    }
+  }
+});

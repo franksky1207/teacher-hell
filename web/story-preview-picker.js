@@ -33,7 +33,7 @@ export function renderAvgStoryPicker(index,filter={},selectedId=''){
  const base=index.filter(s=>storyKind(s)===state.kind).sort(sortIds);
  const terms=unique(base.map(s=>s.topicId?.match(/^T[1-6]/)?.[0]).filter(Boolean)).sort();
  const matchingTerm=state.term==='all'?base:base.filter(s=>s.topicId?.startsWith(state.term+'-'));
- const topics=unique(matchingTerm.map(s=>s.topicId).filter(Boolean)).sort(sortIds);
+ const topics=unique(matchingTerm.map(s=>s.topicId).filter(Boolean)).sort();
  const categories=unique(base.map(storyPClass)).sort();
  const matchingCategory=state.pClass==='all'?base:base.filter(s=>storyPClass(s)===state.pClass);
  const events=unique(matchingCategory.map(storyPEvent)).sort();

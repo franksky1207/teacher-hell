@@ -477,3 +477,17 @@
  .avg-picker__results{max-height:min(31dvh,14rem)}
  .avg-picker__results button{font-size:.85rem}
 }
+
+/* Result-page quick navigation shares the single left-aligned toolbar row. */
+.avg-story-preview .avg-compact-tools .avg-result-step{
+ flex:0 0 40px;min-width:40px;min-height:40px;max-width:44px;
+ padding:0;font-size:1.65rem;line-height:1;
+}
+.avg-story-preview .avg-compact-tools .avg-result-step:disabled{opacity:.38;cursor:not-allowed}
+.avg-settings-selection{margin:0;font-size:.86rem;overflow-wrap:anywhere}
+@media(max-width:650px),(orientation:portrait){
+ .avg-story-preview .avg-compact-tools .avg-result-step{flex-basis:36px;min-width:36px;max-width:36px}
+ .avg-story-preview .avg-compact-results span{display:none}
+ .avg-story-preview .avg-compact-tools .avg-compact-results{flex:1;max-width:min(48vw,21rem)}
+ .avg-story-preview .avg-compact-tools>button[data-action="avg-settings"]{padding:.3rem .42rem}
+}

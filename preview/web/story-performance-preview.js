@@ -128,12 +128,22 @@ export function storyPreviewProjection(preview,state){
   confirmation:!result&&chosen?{optionId:chosen.id,text:display(chosen.text)}:null}};
 }
 
+export function adjacentAvgResultId(preview,currentId,direction){
+ const ids=preview?.detail?.results?.map(item=>item.id)??[];
+ const index=ids.indexOf(currentId);
+ if(!ids.length||index<0||![-1,1].includes(direction))return currentId;
+ return ids[Math.max(0,Math.min(ids.length-1,index+direction))];
+}
+
 export function renderStoryPerformancePreview(state){
  const projection=state.preview?storyPreviewProjection(state.preview,state):null;
  const available=projection?.page.annotated?'本頁已套用演出標記。角色與時段採試演設定。':
   state.preview?.hasAnnotations?'本頁沒有新的演出標記。':'這篇尚未提供演出標記。可閱讀文字及測試四個選項與八種結果。';
- const resultControl=state.showingResult&&state.preview?`<label class="avg-compact-results">故事結果 <select data-avg-result aria-label="切換 R1～R8 結果">${state.preview.detail.results.map(r=>
-  `<option value="${r.id}"${state.resultId===r.id?' selected':''}>${esc(r.id+'｜'+r.title)}</option>`).join('')}</select></label>`:'';
+ const resultControl=state.showingResult&&state.preview?`
+  <button type="button" class="avg-result-step" data-action="avg-result-prev" aria-label="上一個結果" title="上一個結果"${state.resultId===state.preview.detail.results[0]?.id?' disabled':''}>‹</button>
+  <label class="avg-compact-results"><span>故事結果</span><select data-avg-result aria-label="切換 R1～R8 結果">${state.preview.detail.results.map(r=>
+  `<option value="${r.id}"${state.resultId===r.id?' selected':''}>${esc(r.id+'｜'+r.title)}</option>`).join('')}</select></label>
+  <button type="button" class="avg-result-step" data-action="avg-result-next" aria-label="下一個結果" title="下一個結果"${state.resultId===state.preview.detail.results.at(-1)?.id?' disabled':''}>›</button>`:'';
  const activeId=state.preview?.detail.storyId;
  const activeLabel=activeId===AVG_DEMO_ID?'完整演出示範':activeId;
  const sample=state.preview?.sample;

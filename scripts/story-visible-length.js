@@ -3,6 +3,7 @@ export function storyVisibleText(text){
   return String(text??'')
     .replace(/^[ \t]*`{3,}[^\r\n]*\r?\n[\s\S]*?^[ \t]*`{3,}[ \t]*$/gm,'')
     .replace(/<!--[^]*?-->/g,'')
+    .replace(/^[ \t]*(?:[-*+][ \t]+)?(?:\*\*)?P\d{2,}｜[^\r\n：]*?(?:\*\*)?[：:][ \t]*/gm,'')
     .replace(/\{\{[^]*?\}\}/g,'')
     .replace(/!\[[^\]]*\]\([^\r\n)]*\)/g,'')
     .replace(/\[([^\]]+)\]\([^\r\n)]*\)/g,'$1')

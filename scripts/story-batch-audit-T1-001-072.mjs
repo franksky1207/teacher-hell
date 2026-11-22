@@ -118,8 +118,8 @@ for(let n=START;n<=END;n++) {
   if(!item) { problems.push(id+': no causal evidence');continue; }
   if(!file)continue;
   const raw=fs.readFileSync(file,'utf8');
-  const matrix=raw.match(/### 四選項對八共用結果的權重([\\s\\S]*?)(?=\\n## |$)/)?.[1]||'';
-  const rows=matrix.split('\\n').filter(line=>/^\\| [ABCD] \\|/.test(line)).map(line=>line.split('|').slice(2,10).map(s=>Number(s.trim())));
+  const matrix=raw.match(/### 四選項對八共用結果的權重([\s\S]*?)(?=\n## |$)/)?.[1]||'';
+  const rows=matrix.split('\n').filter(line=>/^\| [ABCD] \|/.test(line)).map(line=>line.split('|').slice(2,10).map(s=>Number(s.trim())));
   const keys=new Set();
   if(item.cells.length!==32)problems.push(id+': evidence cells '+item.cells.length+' != 32');
   for(const cell of item.cells) {

@@ -1,0 +1,27 @@
+name: T1 001-072 focused audit
+on:
+  push:
+    branches:
+      - work/story-001-072-high-target-audit-20261122
+    paths:
+      - '.github/workflows/t1-001-072-focused-audit.yml'
+      - 'scripts/story-batch-audit-T1-001-072.mjs'
+      - 'content/events-v1/T/T1-高一上/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  focused-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Full T1 story data contract
+        run: node scripts/story-batch-audit-T1-001-072.mjs
+      - name: Targeted AVG and story Node regression
+        run: node --test test/story-preview-multipage.test.js test/story-preview-cast-continuity.test.js test/story-preview-snapshot.test.js test/story-preview-t1-006-010.test.js test/story-preview-t1-061-072.test.js test/story-state-matrix.test.js

@@ -17,7 +17,7 @@ const storyId=n=>'T1-'+String(n).padStart(3,'0');
 
 test('T1-061～072: twelve V3 drafts, 96 distinct results, legal seeds and windows',()=>{
   let totalResults=0,openingPages=0;
-  const distinct=new Set(),dates=new Map();
+  const distinct=new Set(),dates=new Map(),emotionalSlots=new Set();
   for(let n=61;n<=72;n++){
     const id=storyId(n),md=read(folder+id+'.md');
     const validation=validateStoryDraft(md,{stage:'full',...requirements});
@@ -28,6 +28,11 @@ test('T1-061～072: twelve V3 drafts, 96 distinct results, legal seeds and windo
     const opening=md.match(/### 開場[^\n]*\n([\s\S]*?)(?=### 四個最終教師選項)/)?.[1]?.trim();
     const results=[...md.matchAll(/^### (R[1-8])｜([^\r\n]+)\r?\n\s*- \*\*玩家可見結果\*\*：([^\r\n]+)/gm)].map(m=>({id:m[1],title:m[2],text:m[3]}));
     assert.equal(results.length,8,id);
+    const finalOptions=[...md.matchAll(/^\| ([ABCD]) \| [^\n|]+ \| (true|false) \|/gm)];
+    assert.equal(finalOptions.length,4,id+' missing choices');
+    const emotional=finalOptions.filter(x=>x[2]==='true');
+    assert.equal(emotional.length,1,id+' emotional choice count');
+    emotionalSlots.add(emotional[0][1]);
     const preview=compileStoryPreview({storyId:id,sourceMarkdown:md,opening,results});
     assert.equal(preview.pages.length,3,id);
     assert.equal(preview.resultPages.length,8,id);
@@ -54,4 +59,5 @@ test('T1-061～072: twelve V3 drafts, 96 distinct results, legal seeds and windo
   assert.equal(totalResults,96);
   assert.equal(openingPages,36);
   assert.equal(distinct.size,96);
+  assert.equal(emotionalSlots.size,4,'emotional option must not always be in the same slot');
 });

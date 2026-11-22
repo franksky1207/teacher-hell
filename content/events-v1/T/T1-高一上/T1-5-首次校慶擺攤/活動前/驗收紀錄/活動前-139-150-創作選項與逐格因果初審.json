@@ -1,0 +1,5453 @@
+{
+  "phase": "working-draft-review",
+  "stories": [
+    {
+      "storyId": "T1-139",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "先肯定貢獻並分開討論排班原則",
+            "action": "已記錄實際準備工作，同時不授予自動優先權",
+            "tradeoff": "肯定投入但須另談分配"
+          },
+          {
+            "id": 2,
+            "short": "請班級提出透明而不追溯剝奪的排班方式",
+            "action": "已邀請提出可事先理解的分配原則，不代替未在場者同意",
+            "tradeoff": "有程序但可能不滿所有人"
+          },
+          {
+            "id": 3,
+            "short": "詢問學生真正需要該時段的原因",
+            "action": "已私下確認其需求而非要求展示更多勞動",
+            "tradeoff": "能看見真正限制但隱私須保護"
+          },
+          {
+            "id": 4,
+            "short": "確認熱門時段是否有個別不可公開的限制",
+            "action": "已就「確認熱門時段是否有個別不可公開的限制」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "更能掌握實際限制，需花時間協調"
+          },
+          {
+            "id": 5,
+            "short": "將前置準備工作記錄與班表分開保存",
+            "action": "已就「將前置準備工作記錄與班表分開保存」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "保留選擇彈性，可能延後最終定稿"
+          },
+          {
+            "id": 6,
+            "short": "提出事前公告且所有人可理解的排班標準",
+            "action": "已就「提出事前公告且所有人可理解的排班標準」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "有機會降低誤會，但仍需正式核准"
+          }
+        ],
+        "selectedIds": [
+          5,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 6,
+          "D": 5
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "B",
+        "E",
+        "D",
+        "C"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 131,
+          "delta": "student_a:1-1:+2",
+          "consequence": "貢獻被具體記錄，時段分配仍待共同確認。",
+          "stats": [
+            2,
+            -2,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 128,
+          "delta": "student_a:4-2:+2",
+          "consequence": "班級分開肯定貢獻與追溯優先權。",
+          "stats": [
+            -1,
+            -2,
+            -1,
+            1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 135,
+          "delta": "student_a:5-1:+1",
+          "consequence": "分配開始考慮真實可到條件，不以私事換待遇。",
+          "stats": [
+            -1,
+            1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 127,
+          "delta": "student_a:10-3:-1",
+          "consequence": "原本的過度依賴得到處理，沒有保證特定時段。",
+          "stats": [
+            0,
+            -1,
+            -2,
+            -2
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 126,
+          "delta": "student_a:1-1:+2",
+          "consequence": "排班原則回到事前可理解的討論程序。",
+          "stats": [
+            -1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 128,
+          "delta": "student_a:4-2:+2",
+          "consequence": "工作價值不被簡化為工時排名。",
+          "stats": [
+            -1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 127,
+          "delta": "student_a:5-1:+1",
+          "consequence": "稱讚與正式安排被釐清，減少不實期待。",
+          "stats": [
+            -1,
+            1,
+            2,
+            -1
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 128,
+          "delta": "student_a:10-3:+2",
+          "consequence": "需求進入可協商程序，未預先保證熱門班段。",
+          "stats": [
+            -1,
+            -2,
+            -2,
+            -1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已私下確認其需求而非要求展示更多勞動」不排斥「貢獻被具體記錄，時段分配仍待共同確認。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已私下確認其需求而非要求展示更多勞動」；結果「班級分開肯定貢獻與追溯優先權。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已私下確認其需求而非要求展示更多勞動」；結果「分配開始考慮真實可到條件，不以私事換待遇。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已私下確認其需求而非要求展示更多勞動」，學生若隨後做出「原本的過度依賴得到處理，沒有保證特定時段。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已私下確認其需求而非要求展示更多勞動」不排斥「排班原則回到事前可理解的討論程序。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已私下確認其需求而非要求展示更多勞動」；結果「工作價值不被簡化為工時排名。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已私下確認其需求而非要求展示更多勞動」；結果「稱讚與正式安排被釐清，減少不實期待。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已私下確認其需求而非要求展示更多勞動」，學生若隨後做出「需求進入可協商程序，未預先保證熱門班段。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已公開肯定學生努力，尚未正式變更排班資格」；結果「貢獻被具體記錄，時段分配仍待共同確認。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已公開肯定學生努力，尚未正式變更排班資格」；結果「班級分開肯定貢獻與追溯優先權。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已公開肯定學生努力，尚未正式變更排班資格」；結果「分配開始考慮真實可到條件，不以私事換待遇。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已公開肯定學生努力，尚未正式變更排班資格」；結果「原本的過度依賴得到處理，沒有保證特定時段。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已公開肯定學生努力，尚未正式變更排班資格」；結果「排班原則回到事前可理解的討論程序。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已公開肯定學生努力，尚未正式變更排班資格」；結果「工作價值不被簡化為工時排名。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已公開肯定學生努力，尚未正式變更排班資格」；結果「稱讚與正式安排被釐清，減少不實期待。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已公開肯定學生努力，尚未正式變更排班資格」；結果「需求進入可協商程序，未預先保證熱門班段。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「提出事前公告且所有人可理解的排班標準」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「貢獻被具體記錄，時段分配仍待共同確認。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「提出事前公告且所有人可理解的排班標準」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「班級分開肯定貢獻與追溯優先權。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「提出事前公告且所有人可理解的排班標準」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「分配開始考慮真實可到條件，不以私事換待遇。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「提出事前公告且所有人可理解的排班標準」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「原本的過度依賴得到處理，沒有保證特定時段。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「提出事前公告且所有人可理解的排班標準」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「排班原則回到事前可理解的討論程序。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「提出事前公告且所有人可理解的排班標準」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「工作價值不被簡化為工時排名。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「提出事前公告且所有人可理解的排班標準」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「稱讚與正式安排被釐清，減少不實期待。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「提出事前公告且所有人可理解的排班標準」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「需求進入可協商程序，未預先保證熱門班段。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「將前置準備工作記錄與班表分開保存」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「貢獻被具體記錄，時段分配仍待共同確認。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「將前置準備工作記錄與班表分開保存」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「班級分開肯定貢獻與追溯優先權。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「將前置準備工作記錄與班表分開保存」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「分配開始考慮真實可到條件，不以私事換待遇。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「將前置準備工作記錄與班表分開保存」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「原本的過度依賴得到處理，沒有保證特定時段。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「將前置準備工作記錄與班表分開保存」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「排班原則回到事前可理解的討論程序。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「將前置準備工作記錄與班表分開保存」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「工作價值不被簡化為工時排名。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「將前置準備工作記錄與班表分開保存」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「稱讚與正式安排被釐清，減少不實期待。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「將前置準備工作記錄與班表分開保存」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「需求進入可協商程序，未預先保證熱門班段。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "B",
+        "short": "你做那麼多，當然值得優先被看見！",
+        "completed": "已公開肯定學生努力，尚未正式變更排班資格",
+        "tradeoff": "學生獲肯定但可能被解讀為特權"
+      }
+    },
+    {
+      "storyId": "T1-140",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "請學生核對兩邊已公開的版本與日期",
+            "action": "已要求查明資訊來源，不以傳聞認定抄襲",
+            "tradeoff": "有證據基礎但發布可能延後"
+          },
+          {
+            "id": 2,
+            "short": "保留兩個可替代且不混淆的攤名",
+            "action": "已請學生設計備案，尚未強迫放棄原名",
+            "tradeoff": "減少風險但創作者可能不甘心"
+          },
+          {
+            "id": 3,
+            "short": "先請承辦確認正式名稱登記方式",
+            "action": "已向權責單位核實校慶攤名流程，未擅自裁決兩班爭議",
+            "tradeoff": "權責清楚但需等待"
+          },
+          {
+            "id": 4,
+            "short": "請學生保留原始設計與公開日期",
+            "action": "已就「請學生保留原始設計與公開日期」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "更能掌握實際限制，需花時間協調"
+          },
+          {
+            "id": 5,
+            "short": "調整宣傳加入本班攤位位置資訊",
+            "action": "已就「調整宣傳加入本班攤位位置資訊」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "保留選擇彈性，可能延後最終定稿"
+          },
+          {
+            "id": 6,
+            "short": "暫停用對方的社群截圖發動公開比較",
+            "action": "已就「暫停用對方的社群截圖發動公開比較」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "有機會降低誤會，但仍需正式核准"
+          }
+        ],
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 3
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "B",
+        "C",
+        "A",
+        "E"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 117,
+          "delta": "student_a:1-2:+2",
+          "consequence": "兩張海報不再被當成本屆名稱衝突的確證。",
+          "stats": [
+            -1,
+            0,
+            0,
+            -2
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 117,
+          "delta": "student_a:3-4:+2",
+          "consequence": "宣傳暫停待核，不必倉促製造公開爭議。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            0
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 118,
+          "delta": "student_a:6-2:+1",
+          "consequence": "創作脈絡被保留，未以推測發動指控。",
+          "stats": [
+            -1,
+            -2,
+            1,
+            -2
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 124,
+          "delta": "student_a:8-4:-1",
+          "consequence": "宣傳可讀性得到改善，仍需正式核對攤名。",
+          "stats": [
+            0,
+            -1,
+            0,
+            -1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 121,
+          "delta": "student_a:1-2:+2",
+          "consequence": "名稱歸屬交由適當窗口核實。",
+          "stats": [
+            2,
+            -1,
+            -1,
+            1
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 125,
+          "delta": "student_a:3-4:+2",
+          "consequence": "未核爭議未公開擴散，尊重他班創作。",
+          "stats": [
+            -1,
+            -1,
+            -2,
+            1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 125,
+          "delta": "student_a:6-2:+1",
+          "consequence": "備案有獨立辨識性，尚未強制換名。",
+          "stats": [
+            -1,
+            1,
+            -2,
+            -2
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 123,
+          "delta": "student_a:8-4:+2",
+          "consequence": "宣傳資訊先求準確，攤名依核准流程確定。",
+          "stats": [
+            -1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「調整宣傳加入本班攤位位置資訊」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「兩張海報不再被當成本屆名稱衝突的確證。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「調整宣傳加入本班攤位位置資訊」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「宣傳暫停待核，不必倉促製造公開爭議。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「調整宣傳加入本班攤位位置資訊」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「創作脈絡被保留，未以推測發動指控。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「調整宣傳加入本班攤位位置資訊」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「宣傳可讀性得到改善，仍需正式核對攤名。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「調整宣傳加入本班攤位位置資訊」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「名稱歸屬交由適當窗口核實。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「調整宣傳加入本班攤位位置資訊」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「未核爭議未公開擴散，尊重他班創作。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「調整宣傳加入本班攤位位置資訊」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「備案有獨立辨識性，尚未強制換名。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「調整宣傳加入本班攤位位置資訊」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「宣傳資訊先求準確，攤名依核准流程確定。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定團隊命名投入，尚未宣布搶名成功」；結果「兩張海報不再被當成本屆名稱衝突的確證。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定團隊命名投入，尚未宣布搶名成功」；結果「宣傳暫停待核，不必倉促製造公開爭議。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定團隊命名投入，尚未宣布搶名成功」；結果「創作脈絡被保留，未以推測發動指控。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定團隊命名投入，尚未宣布搶名成功」；結果「宣傳可讀性得到改善，仍需正式核對攤名。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定團隊命名投入，尚未宣布搶名成功」；結果「名稱歸屬交由適當窗口核實。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定團隊命名投入，尚未宣布搶名成功」；結果「未核爭議未公開擴散，尊重他班創作。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定團隊命名投入，尚未宣布搶名成功」；結果「備案有獨立辨識性，尚未強制換名。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定團隊命名投入，尚未宣布搶名成功」；結果「宣傳資訊先求準確，攤名依核准流程確定。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已要求查明資訊來源，不以傳聞認定抄襲」，學生若隨後做出「兩張海報不再被當成本屆名稱衝突的確證。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已要求查明資訊來源，不以傳聞認定抄襲」；結果「宣傳暫停待核，不必倉促製造公開爭議。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已要求查明資訊來源，不以傳聞認定抄襲」；結果「創作脈絡被保留，未以推測發動指控。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已要求查明資訊來源，不以傳聞認定抄襲」不排斥「宣傳可讀性得到改善，仍需正式核對攤名。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已要求查明資訊來源，不以傳聞認定抄襲」，學生若隨後做出「名稱歸屬交由適當窗口核實。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已要求查明資訊來源，不以傳聞認定抄襲」；結果「未核爭議未公開擴散，尊重他班創作。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已要求查明資訊來源，不以傳聞認定抄襲」；結果「備案有獨立辨識性，尚未強制換名。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已要求查明資訊來源，不以傳聞認定抄襲」不排斥「宣傳資訊先求準確，攤名依核准流程確定。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已向權責單位核實校慶攤名流程，未擅自裁決兩班爭議」不排斥「兩張海報不再被當成本屆名稱衝突的確證。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已向權責單位核實校慶攤名流程，未擅自裁決兩班爭議」；結果「宣傳暫停待核，不必倉促製造公開爭議。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已向權責單位核實校慶攤名流程，未擅自裁決兩班爭議」；結果「創作脈絡被保留，未以推測發動指控。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已向權責單位核實校慶攤名流程，未擅自裁決兩班爭議」，學生若隨後做出「宣傳可讀性得到改善，仍需正式核對攤名。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已向權責單位核實校慶攤名流程，未擅自裁決兩班爭議」不排斥「名稱歸屬交由適當窗口核實。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已向權責單位核實校慶攤名流程，未擅自裁決兩班爭議」；結果「未核爭議未公開擴散，尊重他班創作。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已向權責單位核實校慶攤名流程，未擅自裁決兩班爭議」；結果「備案有獨立辨識性，尚未強制換名。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已向權責單位核實校慶攤名流程，未擅自裁決兩班爭議」，學生若隨後做出「宣傳資訊先求準確，攤名依核准流程確定。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "B",
+        "short": "你們的創意很有記憶點，我先鼓勵！",
+        "completed": "已肯定團隊命名投入，尚未宣布搶名成功",
+        "tradeoff": "支持熱情但衝突仍未解"
+      }
+    },
+    {
+      "storyId": "T1-141",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "明確說出可到場時段與必要校務責任",
+            "action": "已向學生說明能承諾的範圍，不說自己全天可用",
+            "tradeoff": "界線清楚但可能令學生失望"
+          },
+          {
+            "id": 2,
+            "short": "建立攤位問題的正式求助及交接方式",
+            "action": "已與學生確認何時找現場權責窗口，導師可協助的事項另列",
+            "tradeoff": "提高可預期性但不能取代陪伴"
+          },
+          {
+            "id": 3,
+            "short": "請學生具體說出最怕哪種狀況",
+            "action": "已詢問學生真正需要協助的事件，不要求公開個人焦慮",
+            "tradeoff": "釐清需求但可能需要後續支持"
+          },
+          {
+            "id": 4,
+            "short": "讓學生列出最擔心老師缺席的具體事故",
+            "action": "已就「讓學生列出最擔心老師缺席的具體事故」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "更能掌握實際限制，需花時間協調"
+          },
+          {
+            "id": 5,
+            "short": "提供非即時回覆的正式求助流程",
+            "action": "已就「提供非即時回覆的正式求助流程」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "保留選擇彈性，可能延後最終定稿"
+          },
+          {
+            "id": 6,
+            "short": "確認校慶當天導師已有的正式勤務",
+            "action": "已就「確認校慶當天導師已有的正式勤務」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "有機會降低誤會，但仍需正式核准"
+          }
+        ],
+        "selectedIds": [
+          2,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "D",
+        "B",
+        "C",
+        "E"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 123,
+          "delta": "student_a:4-3:+2",
+          "consequence": "學生理解職務限制，導師未虛構全天承諾。",
+          "stats": [
+            -2,
+            -1,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 135,
+          "delta": "student_a:5-3:+2",
+          "consequence": "緊急求助方向更明確，仍依校規辦理。",
+          "stats": [
+            -2,
+            -1,
+            -1,
+            -2
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 126,
+          "delta": "student_a:6-4:+1",
+          "consequence": "關係焦慮有了具體表述，未擴大成班際競爭。",
+          "stats": [
+            -1,
+            -1,
+            0,
+            1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 128,
+          "delta": "student_a:12-1:-1",
+          "consequence": "成果分享與全天在場被分開處理。",
+          "stats": [
+            1,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 128,
+          "delta": "student_a:4-3:+2",
+          "consequence": "到場時間依實際職務核對，不製造保證。",
+          "stats": [
+            2,
+            0,
+            -2,
+            1
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 118,
+          "delta": "student_a:5-3:+2",
+          "consequence": "學生自主範圍更清楚，不越權處理安全及行政。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            -2
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 126,
+          "delta": "student_a:6-4:+1",
+          "consequence": "情感期待轉為可協商需求。",
+          "stats": [
+            0,
+            2,
+            -1,
+            -2
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 127,
+          "delta": "student_a:12-1:+2",
+          "consequence": "支持與校務責任得到兼顧，未假定校慶成果。",
+          "stats": [
+            -1,
+            -1,
+            1,
+            0
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「確認校慶當天導師已有的正式勤務」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「學生理解職務限制，導師未虛構全天承諾。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「確認校慶當天導師已有的正式勤務」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「緊急求助方向更明確，仍依校規辦理。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「確認校慶當天導師已有的正式勤務」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「關係焦慮有了具體表述，未擴大成班際競爭。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「確認校慶當天導師已有的正式勤務」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「成果分享與全天在場被分開處理。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「確認校慶當天導師已有的正式勤務」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「到場時間依實際職務核對，不製造保證。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「確認校慶當天導師已有的正式勤務」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「學生自主範圍更清楚，不越權處理安全及行政。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「確認校慶當天導師已有的正式勤務」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「情感期待轉為可協商需求。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「確認校慶當天導師已有的正式勤務」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「支持與校務責任得到兼顧，未假定校慶成果。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已與學生確認何時找現場權責窗口，導師可協助的事項另列」；結果「學生理解職務限制，導師未虛構全天承諾。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已與學生確認何時找現場權責窗口，導師可協助的事項另列」，學生若隨後做出「緊急求助方向更明確，仍依校規辦理。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已與學生確認何時找現場權責窗口，導師可協助的事項另列」不排斥「關係焦慮有了具體表述，未擴大成班際競爭。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已與學生確認何時找現場權責窗口，導師可協助的事項另列」；結果「成果分享與全天在場被分開處理。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已與學生確認何時找現場權責窗口，導師可協助的事項另列」；結果「到場時間依實際職務核對，不製造保證。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已與學生確認何時找現場權責窗口，導師可協助的事項另列」，學生若隨後做出「學生自主範圍更清楚，不越權處理安全及行政。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已與學生確認何時找現場權責窗口，導師可協助的事項另列」不排斥「情感期待轉為可協商需求。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已與學生確認何時找現場權責窗口，導師可協助的事項另列」；結果「支持與校務責任得到兼顧，未假定校慶成果。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達對班級的期待與支持，未答應整日站攤」；結果「學生理解職務限制，導師未虛構全天承諾。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達對班級的期待與支持，未答應整日站攤」；結果「緊急求助方向更明確，仍依校規辦理。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達對班級的期待與支持，未答應整日站攤」；結果「關係焦慮有了具體表述，未擴大成班際競爭。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達對班級的期待與支持，未答應整日站攤」；結果「成果分享與全天在場被分開處理。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達對班級的期待與支持，未答應整日站攤」；結果「到場時間依實際職務核對，不製造保證。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達對班級的期待與支持，未答應整日站攤」；結果「學生自主範圍更清楚，不越權處理安全及行政。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達對班級的期待與支持，未答應整日站攤」；結果「情感期待轉為可協商需求。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達對班級的期待與支持，未答應整日站攤」；結果「支持與校務責任得到兼顧，未假定校慶成果。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已詢問學生真正需要協助的事件，不要求公開個人焦慮」不排斥「學生理解職務限制，導師未虛構全天承諾。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已詢問學生真正需要協助的事件，不要求公開個人焦慮」；結果「緊急求助方向更明確，仍依校規辦理。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已詢問學生真正需要協助的事件，不要求公開個人焦慮」；結果「關係焦慮有了具體表述，未擴大成班際競爭。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已詢問學生真正需要協助的事件，不要求公開個人焦慮」，學生若隨後做出「成果分享與全天在場被分開處理。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已詢問學生真正需要協助的事件，不要求公開個人焦慮」不排斥「到場時間依實際職務核對，不製造保證。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已詢問學生真正需要協助的事件，不要求公開個人焦慮」；結果「學生自主範圍更清楚，不越權處理安全及行政。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已詢問學生真正需要協助的事件，不要求公開個人焦慮」；結果「情感期待轉為可協商需求。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已詢問學生真正需要協助的事件，不要求公開個人焦慮」，學生若隨後做出「支持與校務責任得到兼顧，未假定校慶成果。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "C",
+        "short": "第一次校慶我也很期待，你們很棒！",
+        "completed": "已表達對班級的期待與支持，未答應整日站攤",
+        "tradeoff": "情緒受到支持但要求仍待處理"
+      }
+    },
+    {
+      "storyId": "T1-142",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "請學生先做基本款的完整流程試演",
+            "action": "已要求以基本款測試製作、交接及清潔步驟",
+            "tradeoff": "降低不確定性但難立即展示所有創意"
+          },
+          {
+            "id": 2,
+            "short": "與學生挑選少數可核實的變化",
+            "action": "已請學生按合法材料與人力刪減版本",
+            "tradeoff": "增加穩定性但學生可能失望"
+          },
+          {
+            "id": 3,
+            "short": "列出每一版本不同的材料與標示",
+            "action": "已請學生逐一查核成本、成分與交接限制",
+            "tradeoff": "資訊透明但準備更繁瑣"
+          },
+          {
+            "id": 4,
+            "short": "讓兩位同學試做同一基本款比較差異",
+            "action": "已就「讓兩位同學試做同一基本款比較差異」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "更能掌握實際限制，需花時間協調"
+          },
+          {
+            "id": 5,
+            "short": "將十種版本的交接說明逐項列出",
+            "action": "已就「將十種版本的交接說明逐項列出」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "保留選擇彈性，可能延後最終定稿"
+          },
+          {
+            "id": 6,
+            "short": "把未確認成分的客製項目暫存備案",
+            "action": "已就「把未確認成分的客製項目暫存備案」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "有機會降低誤會，但仍需正式核准"
+          }
+        ],
+        "selectedIds": [
+          6,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 2
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "B",
+        "A",
+        "E",
+        "D"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 124,
+          "delta": "student_a:1-1:+2",
+          "consequence": "基本流程增加可複現的步驟，仍須正式核准。",
+          "stats": [
+            -1,
+            0,
+            1,
+            -1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 117,
+          "delta": "student_a:4-3:+2",
+          "consequence": "版本數量重新評估，沒有擴張未核桌位。",
+          "stats": [
+            -1,
+            -2,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 113,
+          "delta": "student_a:5-1:+1",
+          "consequence": "創作被肯定，不再以選項數量證明能力。",
+          "stats": [
+            2,
+            0,
+            1,
+            -2
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 110,
+          "delta": "student_a:8-1:-1",
+          "consequence": "未知安全條件未被直接納入可售菜單。",
+          "stats": [
+            -1,
+            -2,
+            1,
+            -1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 120,
+          "delta": "student_a:1-1:+2",
+          "consequence": "複雜流程的等待與衛生風險得到辨識。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            0
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 123,
+          "delta": "student_a:4-3:+2",
+          "consequence": "討論回到實際可行性，不預言營收。",
+          "stats": [
+            -1,
+            -1,
+            -2,
+            -2
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 117,
+          "delta": "student_a:5-1:+1",
+          "consequence": "交接負荷清楚化，方案仍可縮減。",
+          "stats": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 110,
+          "delta": "student_a:8-1:+2",
+          "consequence": "菜單回到有證據的可行範圍，未提前宣稱成功。",
+          "stats": [
+            -1,
+            1,
+            -2,
+            2
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定創意投入，未核准十種客製販售」；結果「基本流程增加可複現的步驟，仍須正式核准。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定創意投入，未核准十種客製販售」；結果「版本數量重新評估，沒有擴張未核桌位。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定創意投入，未核准十種客製販售」；結果「創作被肯定，不再以選項數量證明能力。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定創意投入，未核准十種客製販售」；結果「未知安全條件未被直接納入可售菜單。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定創意投入，未核准十種客製販售」；結果「複雜流程的等待與衛生風險得到辨識。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定創意投入，未核准十種客製販售」；結果「討論回到實際可行性，不預言營收。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定創意投入，未核准十種客製販售」；結果「交接負荷清楚化，方案仍可縮減。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定創意投入，未核准十種客製販售」；結果「菜單回到有證據的可行範圍，未提前宣稱成功。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把未確認成分的客製項目暫存備案」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「基本流程增加可複現的步驟，仍須正式核准。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「把未確認成分的客製項目暫存備案」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「版本數量重新評估，沒有擴張未核桌位。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「把未確認成分的客製項目暫存備案」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「創作被肯定，不再以選項數量證明能力。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把未確認成分的客製項目暫存備案」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「未知安全條件未被直接納入可售菜單。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把未確認成分的客製項目暫存備案」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「複雜流程的等待與衛生風險得到辨識。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「把未確認成分的客製項目暫存備案」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「討論回到實際可行性，不預言營收。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「把未確認成分的客製項目暫存備案」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「交接負荷清楚化，方案仍可縮減。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把未確認成分的客製項目暫存備案」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「菜單回到有證據的可行範圍，未提前宣稱成功。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已要求以基本款測試製作、交接及清潔步驟」，學生若隨後做出「基本流程增加可複現的步驟，仍須正式核准。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已要求以基本款測試製作、交接及清潔步驟」；結果「版本數量重新評估，沒有擴張未核桌位。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已要求以基本款測試製作、交接及清潔步驟」；結果「創作被肯定，不再以選項數量證明能力。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已要求以基本款測試製作、交接及清潔步驟」不排斥「未知安全條件未被直接納入可售菜單。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已要求以基本款測試製作、交接及清潔步驟」，學生若隨後做出「複雜流程的等待與衛生風險得到辨識。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已要求以基本款測試製作、交接及清潔步驟」；結果「討論回到實際可行性，不預言營收。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已要求以基本款測試製作、交接及清潔步驟」；結果「交接負荷清楚化，方案仍可縮減。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已要求以基本款測試製作、交接及清潔步驟」不排斥「菜單回到有證據的可行範圍，未提前宣稱成功。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生按合法材料與人力刪減版本」；結果「基本流程增加可複現的步驟，仍須正式核准。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請學生按合法材料與人力刪減版本」，學生若隨後做出「版本數量重新評估，沒有擴張未核桌位。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已請學生按合法材料與人力刪減版本」不排斥「創作被肯定，不再以選項數量證明能力。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生按合法材料與人力刪減版本」；結果「未知安全條件未被直接納入可售菜單。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生按合法材料與人力刪減版本」；結果「複雜流程的等待與衛生風險得到辨識。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請學生按合法材料與人力刪減版本」，學生若隨後做出「討論回到實際可行性，不預言營收。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已請學生按合法材料與人力刪減版本」不排斥「交接負荷清楚化，方案仍可縮減。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生按合法材料與人力刪減版本」；結果「菜單回到有證據的可行範圍，未提前宣稱成功。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "A",
+        "short": "你想到這麼多花樣，真厲害！",
+        "completed": "已肯定創意投入，未核准十種客製販售",
+        "tradeoff": "先讓創作者被看見，流程問題仍待處理"
+      }
+    },
+    {
+      "storyId": "T1-143",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "將遊戲移到不衝突的時段試排",
+            "action": "已請學生比較工作時段，不代替人員接受雙重任務",
+            "tradeoff": "保留部分創意但遊戲時間變短"
+          },
+          {
+            "id": 2,
+            "short": "要求先核實遊戲規則和人力",
+            "action": "已請承辦確認玩法及學生實際可用時間",
+            "tradeoff": "降低違規風險但不能立刻定案"
+          },
+          {
+            "id": 3,
+            "short": "分別詢問兩位學生的任務負荷",
+            "action": "已私下核實創作者與被重複排班者的需求",
+            "tradeoff": "能保護當事人但整合進度較慢"
+          },
+          {
+            "id": 4,
+            "short": "先核對遊戲獎品的合法性與來源",
+            "action": "已就「先核對遊戲獎品的合法性與來源」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "更能掌握實際限制，需花時間協調"
+          },
+          {
+            "id": 5,
+            "short": "把遊戲與供餐需求畫在同一時間表",
+            "action": "已就「把遊戲與供餐需求畫在同一時間表」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "保留選擇彈性，可能延後最終定稿"
+          },
+          {
+            "id": 6,
+            "short": "請被雙重排班者自行選擇願承擔的任務",
+            "action": "已就「請被雙重排班者自行選擇願承擔的任務」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "有機會降低誤會，但仍需正式核准"
+          }
+        ],
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": "emotional",
+          "D": 4
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "B",
+        "E",
+        "D",
+        "C"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 117,
+          "delta": "student_a:1-4:+2",
+          "consequence": "雙重任務不再視為已承諾，排程待修。",
+          "stats": [
+            -1,
+            1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 116,
+          "delta": "student_a:3-4:+2",
+          "consequence": "縮時方案成形，需確認實際參與者意願。",
+          "stats": [
+            2,
+            -2,
+            -2,
+            1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 112,
+          "delta": "student_b:11-1:+1",
+          "consequence": "創作成果被保存，活動資格仍待查。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 111,
+          "delta": "student_a:12-2:-1",
+          "consequence": "沒有用網路範例取代本校核准程序。",
+          "stats": [
+            -1,
+            -2,
+            2,
+            0
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 112,
+          "delta": "student_a:1-4:+2",
+          "consequence": "工作負荷得到真實呈現，未強迫兼任。",
+          "stats": [
+            -1,
+            1,
+            0,
+            -1
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 109,
+          "delta": "student_b:3-4:+2",
+          "consequence": "意願與工作責任分開，避免強迫。",
+          "stats": [
+            -1,
+            1,
+            1,
+            -1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 113,
+          "delta": "student_a:11-1:+1",
+          "consequence": "備案降低人力依賴，未宣稱已通過審核。",
+          "stats": [
+            -1,
+            0,
+            -2,
+            -2
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 123,
+          "delta": "student_a:12-2:+2",
+          "consequence": "創意與必要營運分開決策。",
+          "stats": [
+            0,
+            -2,
+            -1,
+            1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「把遊戲與供餐需求畫在同一時間表」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「雙重任務不再視為已承諾，排程待修。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把遊戲與供餐需求畫在同一時間表」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「縮時方案成形，需確認實際參與者意願。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把遊戲與供餐需求畫在同一時間表」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「創作成果被保存，活動資格仍待查。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「把遊戲與供餐需求畫在同一時間表」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「沒有用網路範例取代本校核准程序。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「把遊戲與供餐需求畫在同一時間表」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「工作負荷得到真實呈現，未強迫兼任。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把遊戲與供餐需求畫在同一時間表」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「意願與工作責任分開，避免強迫。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把遊戲與供餐需求畫在同一時間表」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「備案降低人力依賴，未宣稱已通過審核。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「把遊戲與供餐需求畫在同一時間表」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「創意與必要營運分開決策。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請學生比較工作時段，不代替人員接受雙重任務」，學生若隨後做出「雙重任務不再視為已承諾，排程待修。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生比較工作時段，不代替人員接受雙重任務」；結果「縮時方案成形，需確認實際參與者意願。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生比較工作時段，不代替人員接受雙重任務」；結果「創作成果被保存，活動資格仍待查。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已請學生比較工作時段，不代替人員接受雙重任務」不排斥「沒有用網路範例取代本校核准程序。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請學生比較工作時段，不代替人員接受雙重任務」，學生若隨後做出「工作負荷得到真實呈現，未強迫兼任。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生比較工作時段，不代替人員接受雙重任務」；結果「意願與工作責任分開，避免強迫。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生比較工作時段，不代替人員接受雙重任務」；結果「備案降低人力依賴，未宣稱已通過審核。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已請學生比較工作時段，不代替人員接受雙重任務」不排斥「創意與必要營運分開決策。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達欣賞，未授權將遊戲直接加入攤位」；結果「雙重任務不再視為已承諾，排程待修。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達欣賞，未授權將遊戲直接加入攤位」；結果「縮時方案成形，需確認實際參與者意願。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達欣賞，未授權將遊戲直接加入攤位」；結果「創作成果被保存，活動資格仍待查。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達欣賞，未授權將遊戲直接加入攤位」；結果「沒有用網路範例取代本校核准程序。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達欣賞，未授權將遊戲直接加入攤位」；結果「工作負荷得到真實呈現，未強迫兼任。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達欣賞，未授權將遊戲直接加入攤位」；結果「意願與工作責任分開，避免強迫。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達欣賞，未授權將遊戲直接加入攤位」；結果「備案降低人力依賴，未宣稱已通過審核。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達欣賞，未授權將遊戲直接加入攤位」；結果「創意與必要營運分開決策。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「先核對遊戲獎品的合法性與來源」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「雙重任務不再視為已承諾，排程待修。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「先核對遊戲獎品的合法性與來源」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「縮時方案成形，需確認實際參與者意願。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「先核對遊戲獎品的合法性與來源」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「創作成果被保存，活動資格仍待查。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「先核對遊戲獎品的合法性與來源」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「沒有用網路範例取代本校核准程序。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「先核對遊戲獎品的合法性與來源」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「工作負荷得到真實呈現，未強迫兼任。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「先核對遊戲獎品的合法性與來源」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「意願與工作責任分開，避免強迫。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「先核對遊戲獎品的合法性與來源」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「備案降低人力依賴，未宣稱已通過審核。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「先核對遊戲獎品的合法性與來源」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「創意與必要營運分開決策。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "C",
+        "short": "這活動很熱鬧，點子真的很棒！",
+        "completed": "已表達欣賞，未授權將遊戲直接加入攤位",
+        "tradeoff": "創作者被看見，人力衝突仍在"
+      }
+    },
+    {
+      "storyId": "T1-144",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "請協助者先等候三秒再提示",
+            "action": "已示範等待與有限提示，讓練習者先完成自己的話",
+            "tradeoff": "增加自主機會但進度較慢"
+          },
+          {
+            "id": 2,
+            "short": "由本人決定需要哪一種提示方式",
+            "action": "已請練習者選擇口頭、文字或暫不提示",
+            "tradeoff": "尊重差異但需協調"
+          },
+          {
+            "id": 3,
+            "short": "分別和兩人確認練習及幫忙的目的",
+            "action": "已分別核實兩人的需求，不以熱心定罪",
+            "tradeoff": "釐清界線但需要時間"
+          },
+          {
+            "id": 4,
+            "short": "讓練習者選出自己最需要提示的一句話",
+            "action": "已就「讓練習者選出自己最需要提示的一句話」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "更能掌握實際限制，需花時間協調"
+          },
+          {
+            "id": 5,
+            "short": "請熱心協助者擔任流程觀察而不搶答",
+            "action": "已就「請熱心協助者擔任流程觀察而不搶答」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "保留選擇彈性，可能延後最終定稿"
+          },
+          {
+            "id": 6,
+            "short": "安排短時試演並留下本人選擇是否再練",
+            "action": "已就「安排短時試演並留下本人選擇是否再練」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "有機會降低誤會，但仍需正式核准"
+          }
+        ],
+        "selectedIds": [
+          3,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 3,
+          "D": "emotional"
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "E",
+        "A",
+        "D",
+        "C"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 125,
+          "delta": "student_a:1-2:+2",
+          "consequence": "練習者取得完整發言機會，未強迫正式排班。",
+          "stats": [
+            -2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 121,
+          "delta": "student_a:6-1:+2",
+          "consequence": "協助方式具體化，尊重練習者自主。",
+          "stats": [
+            -2,
+            1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 109,
+          "delta": "student_b:8-1:+1",
+          "consequence": "幫忙與同意分開，避免情緒勒索。",
+          "stats": [
+            1,
+            0,
+            2,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 120,
+          "delta": "student_a:11-3:-1",
+          "consequence": "協助者學會保留空間，練習效果可觀察。",
+          "stats": [
+            -2,
+            -2,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 122,
+          "delta": "student_a:1-2:+2",
+          "consequence": "求助界線清楚，未預設實際客人反應。",
+          "stats": [
+            0,
+            -1,
+            -2,
+            0
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 114,
+          "delta": "student_b:6-1:+2",
+          "consequence": "合作分工與自主發言開始相容。",
+          "stats": [
+            1,
+            -2,
+            -1,
+            -2
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 113,
+          "delta": "student_a:8-1:+1",
+          "consequence": "練習失誤得到處理，不以嘲笑作評分。",
+          "stats": [
+            1,
+            -1,
+            0,
+            -1
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 122,
+          "delta": "student_a:11-3:+2",
+          "consequence": "練習者保有主體性，正式站位仍可再協商。",
+          "stats": [
+            -1,
+            0,
+            -2,
+            1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請練習者選擇口頭、文字或暫不提示」；結果「練習者取得完整發言機會，未強迫正式排班。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請練習者選擇口頭、文字或暫不提示」，學生若隨後做出「協助方式具體化，尊重練習者自主。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已請練習者選擇口頭、文字或暫不提示」不排斥「幫忙與同意分開，避免情緒勒索。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請練習者選擇口頭、文字或暫不提示」；結果「協助者學會保留空間，練習效果可觀察。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請練習者選擇口頭、文字或暫不提示」；結果「求助界線清楚，未預設實際客人反應。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請練習者選擇口頭、文字或暫不提示」，學生若隨後做出「合作分工與自主發言開始相容。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已請練習者選擇口頭、文字或暫不提示」不排斥「練習失誤得到處理，不以嘲笑作評分。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請練習者選擇口頭、文字或暫不提示」；結果「練習者保有主體性，正式站位仍可再協商。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「安排短時試演並留下本人選擇是否再練」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「練習者取得完整發言機會，未強迫正式排班。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「安排短時試演並留下本人選擇是否再練」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「協助方式具體化，尊重練習者自主。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「安排短時試演並留下本人選擇是否再練」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「幫忙與同意分開，避免情緒勒索。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「安排短時試演並留下本人選擇是否再練」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「協助者學會保留空間，練習效果可觀察。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「安排短時試演並留下本人選擇是否再練」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「求助界線清楚，未預設實際客人反應。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「安排短時試演並留下本人選擇是否再練」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「合作分工與自主發言開始相容。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「安排短時試演並留下本人選擇是否再練」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「練習失誤得到處理，不以嘲笑作評分。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「安排短時試演並留下本人選擇是否再練」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「練習者保有主體性，正式站位仍可再協商。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已分別核實兩人的需求，不以熱心定罪」不排斥「練習者取得完整發言機會，未強迫正式排班。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已分別核實兩人的需求，不以熱心定罪」；結果「協助方式具體化，尊重練習者自主。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已分別核實兩人的需求，不以熱心定罪」；結果「幫忙與同意分開，避免情緒勒索。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已分別核實兩人的需求，不以熱心定罪」，學生若隨後做出「協助者學會保留空間，練習效果可觀察。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已分別核實兩人的需求，不以熱心定罪」不排斥「求助界線清楚，未預設實際客人反應。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已分別核實兩人的需求，不以熱心定罪」；結果「合作分工與自主發言開始相容。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已分別核實兩人的需求，不以熱心定罪」；結果「練習失誤得到處理，不以嘲笑作評分。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已分別核實兩人的需求，不以熱心定罪」，學生若隨後做出「練習者保有主體性，正式站位仍可再協商。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定練習者主動嘗試，尚未介入搶答」；結果「練習者取得完整發言機會，未強迫正式排班。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定練習者主動嘗試，尚未介入搶答」；結果「協助方式具體化，尊重練習者自主。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定練習者主動嘗試，尚未介入搶答」；結果「幫忙與同意分開，避免情緒勒索。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定練習者主動嘗試，尚未介入搶答」；結果「協助者學會保留空間，練習效果可觀察。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定練習者主動嘗試，尚未介入搶答」；結果「求助界線清楚，未預設實際客人反應。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定練習者主動嘗試，尚未介入搶答」；結果「合作分工與自主發言開始相容。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定練習者主動嘗試，尚未介入搶答」；結果「練習失誤得到處理，不以嘲笑作評分。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定練習者主動嘗試，尚未介入搶答」；結果「練習者保有主體性，正式站位仍可再協商。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "D",
+        "short": "你願意開口就很有勇氣，真棒！",
+        "completed": "已肯定練習者主動嘗試，尚未介入搶答",
+        "tradeoff": "接住焦慮但練習機會仍可能被搶走"
+      }
+    },
+    {
+      "storyId": "T1-145",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "停止新預訂並核對已承諾內容",
+            "action": "已要求暫停新增對外承諾並整理已傳訊息",
+            "tradeoff": "減少風險但須面對熟人不滿"
+          },
+          {
+            "id": 2,
+            "short": "向承辦確認供應與取貨規範",
+            "action": "已提出正式程序詢問，未承認私人接單有效",
+            "tradeoff": "責任清楚但無法立刻答覆"
+          },
+          {
+            "id": 3,
+            "short": "請學生向對方明說尚無確定時間",
+            "action": "已請學生用原聯絡管道更正不確定條件",
+            "tradeoff": "維護誠信但可能失去訂單"
+          },
+          {
+            "id": 4,
+            "short": "把已收款與僅詢問的狀態分開記錄",
+            "action": "已就「把已收款與僅詢問的狀態分開記錄」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "更能掌握實際限制，需花時間協調"
+          },
+          {
+            "id": 5,
+            "short": "向既有聯絡者說明無法保證的取貨條件",
+            "action": "已就「向既有聯絡者說明無法保證的取貨條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "保留選擇彈性，可能延後最終定稿"
+          },
+          {
+            "id": 6,
+            "short": "核對對外資訊是否只涉及公開活動事項",
+            "action": "已就「核對對外資訊是否只涉及公開活動事項」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "有機會降低誤會，但仍需正式核准"
+          }
+        ],
+        "selectedIds": [
+          4,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 4,
+          "D": 6
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "B",
+        "A",
+        "E",
+        "C"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 116,
+          "delta": "student_a:1-2:+2",
+          "consequence": "詢問與正式訂單被分開，避免擴大承諾。",
+          "stats": [
+            -1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 119,
+          "delta": "student_a:3-2:+2",
+          "consequence": "取貨時段回歸正式安排，不擅自保證。",
+          "stats": [
+            -1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 118,
+          "delta": "student_a:6-1:+1",
+          "consequence": "對外責任由本人清楚處理，不越權動員全班。",
+          "stats": [
+            -1,
+            -2,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 114,
+          "delta": "student_a:8-4:-1",
+          "consequence": "金流未被擅自視為攤位收入。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            -2
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 112,
+          "delta": "student_a:1-2:+2",
+          "consequence": "供應限制得到揭露，無虛構庫存。",
+          "stats": [
+            -1,
+            0,
+            0,
+            -1
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 110,
+          "delta": "student_a:3-2:+2",
+          "consequence": "未核預購訊息停止擴散。",
+          "stats": [
+            -1,
+            1,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 112,
+          "delta": "student_a:6-1:+1",
+          "consequence": "宣傳保留合法範圍，交易部分待正式核准。",
+          "stats": [
+            0,
+            -2,
+            1,
+            -1
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 123,
+          "delta": "student_a:8-4:+2",
+          "consequence": "對外聯絡恢復可追溯和有界線的狀態。",
+          "stats": [
+            2,
+            -1,
+            -2,
+            1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「向既有聯絡者說明無法保證的取貨條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「詢問與正式訂單被分開，避免擴大承諾。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「向既有聯絡者說明無法保證的取貨條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「取貨時段回歸正式安排，不擅自保證。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「向既有聯絡者說明無法保證的取貨條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「對外責任由本人清楚處理，不越權動員全班。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「向既有聯絡者說明無法保證的取貨條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「金流未被擅自視為攤位收入。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「向既有聯絡者說明無法保證的取貨條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「供應限制得到揭露，無虛構庫存。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「向既有聯絡者說明無法保證的取貨條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「未核預購訊息停止擴散。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「向既有聯絡者說明無法保證的取貨條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「宣傳保留合法範圍，交易部分待正式核准。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「向既有聯絡者說明無法保證的取貨條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「對外聯絡恢復可追溯和有界線的狀態。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定學生主動性，未授權收取款項或保證交付」；結果「詢問與正式訂單被分開，避免擴大承諾。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定學生主動性，未授權收取款項或保證交付」；結果「取貨時段回歸正式安排，不擅自保證。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定學生主動性，未授權收取款項或保證交付」；結果「對外責任由本人清楚處理，不越權動員全班。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定學生主動性，未授權收取款項或保證交付」；結果「金流未被擅自視為攤位收入。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定學生主動性，未授權收取款項或保證交付」；結果「供應限制得到揭露，無虛構庫存。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定學生主動性，未授權收取款項或保證交付」；結果「未核預購訊息停止擴散。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定學生主動性，未授權收取款項或保證交付」；結果「宣傳保留合法範圍，交易部分待正式核准。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定學生主動性，未授權收取款項或保證交付」；結果「對外聯絡恢復可追溯和有界線的狀態。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把已收款與僅詢問的狀態分開記錄」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「詢問與正式訂單被分開，避免擴大承諾。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「把已收款與僅詢問的狀態分開記錄」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「取貨時段回歸正式安排，不擅自保證。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「把已收款與僅詢問的狀態分開記錄」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「對外責任由本人清楚處理，不越權動員全班。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把已收款與僅詢問的狀態分開記錄」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「金流未被擅自視為攤位收入。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把已收款與僅詢問的狀態分開記錄」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「供應限制得到揭露，無虛構庫存。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「把已收款與僅詢問的狀態分開記錄」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「未核預購訊息停止擴散。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「把已收款與僅詢問的狀態分開記錄」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「宣傳保留合法範圍，交易部分待正式核准。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把已收款與僅詢問的狀態分開記錄」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「對外聯絡恢復可追溯和有界線的狀態。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「核對對外資訊是否只涉及公開活動事項」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「詢問與正式訂單被分開，避免擴大承諾。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「核對對外資訊是否只涉及公開活動事項」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「取貨時段回歸正式安排，不擅自保證。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「核對對外資訊是否只涉及公開活動事項」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「對外責任由本人清楚處理，不越權動員全班。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「核對對外資訊是否只涉及公開活動事項」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「金流未被擅自視為攤位收入。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「核對對外資訊是否只涉及公開活動事項」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「供應限制得到揭露，無虛構庫存。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「核對對外資訊是否只涉及公開活動事項」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「未核預購訊息停止擴散。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「核對對外資訊是否只涉及公開活動事項」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「宣傳保留合法範圍，交易部分待正式核准。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「核對對外資訊是否只涉及公開活動事項」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「對外聯絡恢復可追溯和有界線的狀態。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "B",
+        "short": "你願意替班上宣傳，真的很用心！",
+        "completed": "已肯定學生主動性，未授權收取款項或保證交付",
+        "tradeoff": "保留熱情但既有誤會需更正"
+      }
+    },
+    {
+      "storyId": "T1-146",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "先確認試吃是否符合校方衛生規範",
+            "action": "已向權責窗口詢問試吃、清潔及分裝限制，未同意立即執行",
+            "tradeoff": "保障安全但活動形式須等待"
+          },
+          {
+            "id": 2,
+            "short": "改以非食用的產品介紹示範",
+            "action": "已請學生準備不需實際試吃的解說備案",
+            "tradeoff": "可保留宣傳但互動性較少"
+          },
+          {
+            "id": 3,
+            "short": "列出一次分裝所需人力與耗材",
+            "action": "已請學生估算乾淨器具、份量與交接工作",
+            "tradeoff": "細節清楚但可能壓縮計畫"
+          },
+          {
+            "id": 4,
+            "short": "先試算免費試吃的容器與清潔成本",
+            "action": "已就「先試算免費試吃的容器與清潔成本」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "更能掌握實際限制，需花時間協調"
+          },
+          {
+            "id": 5,
+            "short": "將試吃計畫與食品安全核准分開處理",
+            "action": "已就「將試吃計畫與食品安全核准分開處理」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "保留選擇彈性，可能延後最終定稿"
+          },
+          {
+            "id": 6,
+            "short": "請學生設計不供餐的現場產品展示",
+            "action": "已就「請學生設計不供餐的現場產品展示」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "有機會降低誤會，但仍需正式核准"
+          }
+        ],
+        "selectedIds": [
+          4,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": "emotional",
+          "D": 4
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "C",
+        "D",
+        "E",
+        "B"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 115,
+          "delta": "student_a:4-1:+2",
+          "consequence": "試吃所需耗材被辨識，尚未核准執行。",
+          "stats": [
+            -2,
+            -1,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 112,
+          "delta": "student_a:6-3:+2",
+          "consequence": "衛生問題被列為先決條件。",
+          "stats": [
+            1,
+            -2,
+            1,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 114,
+          "delta": "student_a:8-2:+1",
+          "consequence": "宣傳目的被保留，不強行提供食物。",
+          "stats": [
+            -1,
+            -2,
+            1,
+            2
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 109,
+          "delta": "student_a:11-2:-1",
+          "consequence": "未獲准的試吃不對外保證。",
+          "stats": [
+            -1,
+            0,
+            1,
+            -1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 108,
+          "delta": "student_a:4-1:+2",
+          "consequence": "過敏及資訊安全優先，尚不供試吃。",
+          "stats": [
+            -1,
+            -1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 114,
+          "delta": "student_a:6-3:+2",
+          "consequence": "工作負荷被具體化，未自動增加輪班義務。",
+          "stats": [
+            1,
+            -1,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 118,
+          "delta": "student_a:8-2:+1",
+          "consequence": "合法替代宣傳方式得以準備。",
+          "stats": [
+            0,
+            1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 105,
+          "delta": "student_a:11-2:+2",
+          "consequence": "試吃仍屬待核提案，準備流程更透明。",
+          "stats": [
+            -1,
+            2,
+            -2,
+            -1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已請學生估算乾淨器具、份量與交接工作」不排斥「試吃所需耗材被辨識，尚未核准執行。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生估算乾淨器具、份量與交接工作」；結果「衛生問題被列為先決條件。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生估算乾淨器具、份量與交接工作」；結果「宣傳目的被保留，不強行提供食物。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請學生估算乾淨器具、份量與交接工作」，學生若隨後做出「未獲准的試吃不對外保證。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已請學生估算乾淨器具、份量與交接工作」不排斥「過敏及資訊安全優先，尚不供試吃。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生估算乾淨器具、份量與交接工作」；結果「工作負荷被具體化，未自動增加輪班義務。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生估算乾淨器具、份量與交接工作」；結果「合法替代宣傳方式得以準備。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請學生估算乾淨器具、份量與交接工作」，學生若隨後做出「試吃仍屬待核提案，準備流程更透明。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生準備不需實際試吃的解說備案」；結果「試吃所需耗材被辨識，尚未核准執行。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請學生準備不需實際試吃的解說備案」，學生若隨後做出「衛生問題被列為先決條件。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已請學生準備不需實際試吃的解說備案」不排斥「宣傳目的被保留，不強行提供食物。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生準備不需實際試吃的解說備案」；結果「未獲准的試吃不對外保證。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生準備不需實際試吃的解說備案」；結果「過敏及資訊安全優先，尚不供試吃。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已請學生準備不需實際試吃的解說備案」，學生若隨後做出「工作負荷被具體化，未自動增加輪班義務。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已請學生準備不需實際試吃的解說備案」不排斥「合法替代宣傳方式得以準備。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已請學生準備不需實際試吃的解說備案」；結果「試吃仍屬待核提案，準備流程更透明。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定分享心意，未核准食品試吃」；結果「試吃所需耗材被辨識，尚未核准執行。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定分享心意，未核准食品試吃」；結果「衛生問題被列為先決條件。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定分享心意，未核准食品試吃」；結果「宣傳目的被保留，不強行提供食物。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定分享心意，未核准食品試吃」；結果「未獲准的試吃不對外保證。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定分享心意，未核准食品試吃」；結果「過敏及資訊安全優先，尚不供試吃。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定分享心意，未核准食品試吃」；結果「工作負荷被具體化，未自動增加輪班義務。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定分享心意，未核准食品試吃」；結果「合法替代宣傳方式得以準備。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定分享心意，未核准食品試吃」；結果「試吃仍屬待核提案，準備流程更透明。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「先試算免費試吃的容器與清潔成本」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「試吃所需耗材被辨識，尚未核准執行。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「先試算免費試吃的容器與清潔成本」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「衛生問題被列為先決條件。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「先試算免費試吃的容器與清潔成本」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「宣傳目的被保留，不強行提供食物。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「先試算免費試吃的容器與清潔成本」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「未獲准的試吃不對外保證。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「先試算免費試吃的容器與清潔成本」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「過敏及資訊安全優先，尚不供試吃。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「先試算免費試吃的容器與清潔成本」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「工作負荷被具體化，未自動增加輪班義務。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「先試算免費試吃的容器與清潔成本」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「合法替代宣傳方式得以準備。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「先試算免費試吃的容器與清潔成本」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「試吃仍屬待核提案，準備流程更透明。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "C",
+        "short": "你想到讓大家試試看，真的很熱情！",
+        "completed": "已肯定分享心意，未核准食品試吃",
+        "tradeoff": "提議者被理解，衛生風險仍待查"
+      }
+    },
+    {
+      "storyId": "T1-147",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "先說明目前無法保證營收及成人補貼",
+            "action": "已清楚區分假設損益與實際款項，未接受私人保證",
+            "tradeoff": "較能釐清責任但家長可能焦慮"
+          },
+          {
+            "id": 2,
+            "short": "請學生在合法支出上限內重做估算",
+            "action": "已協助列出最壞情境與可調整支出，不要求私下負擔",
+            "tradeoff": "促進學習但需要時間"
+          },
+          {
+            "id": 3,
+            "short": "向正式財務權責窗口核實支出與處理程序",
+            "action": "已依規定詢問合法收支及可能盈虧的處理方式",
+            "tradeoff": "守住程序但無法立即消除擔心"
+          },
+          {
+            "id": 4,
+            "short": "將家長善意與正式帳務責任分開",
+            "action": "已就「將家長善意與正式帳務責任分開」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "更能掌握實際限制，需花時間協調"
+          },
+          {
+            "id": 5,
+            "short": "把可能損耗納入可核實的支出上限",
+            "action": "已就「把可能損耗納入可核實的支出上限」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "保留選擇彈性，可能延後最終定稿"
+          },
+          {
+            "id": 6,
+            "short": "請學生重新標示假設營收與實際營收差異",
+            "action": "已就「請學生重新標示假設營收與實際營收差異」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "有機會降低誤會，但仍需正式核准"
+          }
+        ],
+        "selectedIds": [
+          4,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "A",
+        "C",
+        "D",
+        "E"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 133,
+          "delta": "student_a:4-2:+2",
+          "consequence": "估算能呈現不確定性，不虛構已發生的虧損。",
+          "stats": [
+            0,
+            1,
+            -1,
+            1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 105,
+          "delta": "student_a:6-4:+2",
+          "consequence": "事前風險控制納入學習，尚未產生實際剩貨。",
+          "stats": [
+            -1,
+            -2,
+            1,
+            -2
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 115,
+          "delta": "student_a:10-2:+1",
+          "consequence": "情感支持不變成財務保證。",
+          "stats": [
+            1,
+            -1,
+            -1,
+            -2
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 116,
+          "delta": "student_a:11-2:-1",
+          "consequence": "避免經濟條件造成班級壓力。",
+          "stats": [
+            -2,
+            -1,
+            0,
+            -2
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 109,
+          "delta": "student_a:4-2:+2",
+          "consequence": "對外與內部資訊不再把預測當成事實。",
+          "stats": [
+            0,
+            0,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 124,
+          "delta": "student_a:6-4:+2",
+          "consequence": "預算方案更有彈性，不靠私人補貼掩蓋風險。",
+          "stats": [
+            1,
+            -1,
+            2,
+            1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 107,
+          "delta": "student_a:10-2:+1",
+          "consequence": "財務與家庭隱私得以分開。",
+          "stats": [
+            -1,
+            -1,
+            -2,
+            0
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 118,
+          "delta": "student_a:11-2:+2",
+          "consequence": "學生敢於誠實估算，沒有提前判定成敗。",
+          "stats": [
+            -2,
+            1,
+            -1,
+            1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「請學生重新標示假設營收與實際營收差異」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「估算能呈現不確定性，不虛構已發生的虧損。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「請學生重新標示假設營收與實際營收差異」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「事前風險控制納入學習，尚未產生實際剩貨。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「請學生重新標示假設營收與實際營收差異」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「情感支持不變成財務保證。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「請學生重新標示假設營收與實際營收差異」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「避免經濟條件造成班級壓力。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「請學生重新標示假設營收與實際營收差異」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「對外與內部資訊不再把預測當成事實。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「請學生重新標示假設營收與實際營收差異」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「預算方案更有彈性，不靠私人補貼掩蓋風險。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「請學生重新標示假設營收與實際營收差異」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「財務與家庭隱私得以分開。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「請學生重新標示假設營收與實際營收差異」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「學生敢於誠實估算，沒有提前判定成敗。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「將家長善意與正式帳務責任分開」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「估算能呈現不確定性，不虛構已發生的虧損。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「將家長善意與正式帳務責任分開」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「事前風險控制納入學習，尚未產生實際剩貨。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「將家長善意與正式帳務責任分開」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「情感支持不變成財務保證。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「將家長善意與正式帳務責任分開」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「避免經濟條件造成班級壓力。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「將家長善意與正式帳務責任分開」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「對外與內部資訊不再把預測當成事實。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「將家長善意與正式帳務責任分開」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「預算方案更有彈性，不靠私人補貼掩蓋風險。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「將家長善意與正式帳務責任分開」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「財務與家庭隱私得以分開。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「將家長善意與正式帳務責任分開」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「學生敢於誠實估算，沒有提前判定成敗。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已協助列出最壞情境與可調整支出，不要求私下負擔」；結果「估算能呈現不確定性，不虛構已發生的虧損。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助列出最壞情境與可調整支出，不要求私下負擔」，學生若隨後做出「事前風險控制納入學習，尚未產生實際剩貨。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已協助列出最壞情境與可調整支出，不要求私下負擔」不排斥「情感支持不變成財務保證。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已協助列出最壞情境與可調整支出，不要求私下負擔」；結果「避免經濟條件造成班級壓力。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已協助列出最壞情境與可調整支出，不要求私下負擔」；結果「對外與內部資訊不再把預測當成事實。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助列出最壞情境與可調整支出，不要求私下負擔」，學生若隨後做出「預算方案更有彈性，不靠私人補貼掩蓋風險。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已協助列出最壞情境與可調整支出，不要求私下負擔」不排斥「財務與家庭隱私得以分開。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已協助列出最壞情境與可調整支出，不要求私下負擔」；結果「學生敢於誠實估算，沒有提前判定成敗。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達感謝，未同意補貼或要求學生接受」；結果「估算能呈現不確定性，不虛構已發生的虧損。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達感謝，未同意補貼或要求學生接受」；結果「事前風險控制納入學習，尚未產生實際剩貨。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達感謝，未同意補貼或要求學生接受」；結果「情感支持不變成財務保證。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達感謝，未同意補貼或要求學生接受」；結果「避免經濟條件造成班級壓力。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達感謝，未同意補貼或要求學生接受」；結果「對外與內部資訊不再把預測當成事實。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達感謝，未同意補貼或要求學生接受」；結果「預算方案更有彈性，不靠私人補貼掩蓋風險。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達感謝，未同意補貼或要求學生接受」；結果「財務與家庭隱私得以分開。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已表達感謝，未同意補貼或要求學生接受」；結果「學生敢於誠實估算，沒有提前判定成敗。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "D",
+        "short": "家長願意照顧大家，這份心意真難得！",
+        "completed": "已表達感謝，未同意補貼或要求學生接受",
+        "tradeoff": "肯定善意，財務界線仍待核"
+      }
+    },
+    {
+      "storyId": "T1-148",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "請學生逐項確認借用、贈與與採購來源",
+            "action": "已協助建立來源與使用條件的清單，不預設所有權移轉",
+            "tradeoff": "保護權益但整理較費時"
+          },
+          {
+            "id": 2,
+            "short": "先將需歸還的物件單獨標示",
+            "action": "已請學生區分保管與可消耗物品",
+            "tradeoff": "立即降低混淆但其他物品仍須查"
+          },
+          {
+            "id": 3,
+            "short": "請物主自行確認允許使用與歸還方式",
+            "action": "已透過適當聯絡方式核對本人意願，不擅取私人資訊",
+            "tradeoff": "尊重權利但需等待答覆"
+          },
+          {
+            "id": 4,
+            "short": "單獨標註來自學校的借用設備",
+            "action": "已就「單獨標註來自學校的借用設備」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "更能掌握實際限制，需花時間協調"
+          },
+          {
+            "id": 5,
+            "short": "列出需要歸還但無法當天搬走的物品",
+            "action": "已就「列出需要歸還但無法當天搬走的物品」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "保留選擇彈性，可能延後最終定稿"
+          },
+          {
+            "id": 6,
+            "short": "向物主確認是否允許再轉借給他人",
+            "action": "已就「向物主確認是否允許再轉借給他人」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "有機會降低誤會，但仍需正式核准"
+          }
+        ],
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 6,
+          "D": 4
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "E",
+        "A",
+        "C",
+        "B"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 112,
+          "delta": "student_a:1-1:+2",
+          "consequence": "借物被明確辨識，歸還義務得到保留。",
+          "stats": [
+            -2,
+            -2,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 110,
+          "delta": "student_a:3-1:+2",
+          "consequence": "使用與保管的差異得到釐清。",
+          "stats": [
+            -2,
+            0,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 116,
+          "delta": "student_a:6-1:+1",
+          "consequence": "標籤改成事實狀態，避免推定權利。",
+          "stats": [
+            1,
+            1,
+            1,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 103,
+          "delta": "student_a:8-3:-1",
+          "consequence": "來源核實與隱私保護並行。",
+          "stats": [
+            0,
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 109,
+          "delta": "student_a:1-1:+2",
+          "consequence": "借用範圍未被任意擴張。",
+          "stats": [
+            -1,
+            1,
+            -1,
+            0
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 103,
+          "delta": "student_a:3-1:+2",
+          "consequence": "歸還責任變得可追溯，尚待本人同意。",
+          "stats": [
+            -2,
+            -1,
+            0,
+            -1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 109,
+          "delta": "student_a:6-1:+1",
+          "consequence": "校方與私人借物分別管理。",
+          "stats": [
+            1,
+            -2,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 105,
+          "delta": "student_a:8-3:+2",
+          "consequence": "物權與實際管理有了清楚界線。",
+          "stats": [
+            1,
+            -1,
+            -2,
+            -1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已當面感謝整理者，尚未認定都是公物」；結果「借物被明確辨識，歸還義務得到保留。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已當面感謝整理者，尚未認定都是公物」；結果「使用與保管的差異得到釐清。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已當面感謝整理者，尚未認定都是公物」；結果「標籤改成事實狀態，避免推定權利。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已當面感謝整理者，尚未認定都是公物」；結果「來源核實與隱私保護並行。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已當面感謝整理者，尚未認定都是公物」；結果「借用範圍未被任意擴張。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已當面感謝整理者，尚未認定都是公物」；結果「歸還責任變得可追溯，尚待本人同意。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已當面感謝整理者，尚未認定都是公物」；結果「校方與私人借物分別管理。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已當面感謝整理者，尚未認定都是公物」；結果「物權與實際管理有了清楚界線。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助建立來源與使用條件的清單，不預設所有權移轉」，學生若隨後做出「借物被明確辨識，歸還義務得到保留。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已協助建立來源與使用條件的清單，不預設所有權移轉」；結果「使用與保管的差異得到釐清。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已協助建立來源與使用條件的清單，不預設所有權移轉」；結果「標籤改成事實狀態，避免推定權利。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已協助建立來源與使用條件的清單，不預設所有權移轉」不排斥「來源核實與隱私保護並行。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已協助建立來源與使用條件的清單，不預設所有權移轉」，學生若隨後做出「借用範圍未被任意擴張。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已協助建立來源與使用條件的清單，不預設所有權移轉」；結果「歸還責任變得可追溯，尚待本人同意。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已協助建立來源與使用條件的清單，不預設所有權移轉」；結果「校方與私人借物分別管理。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已協助建立來源與使用條件的清單，不預設所有權移轉」不排斥「物權與實際管理有了清楚界線。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「向物主確認是否允許再轉借給他人」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「借物被明確辨識，歸還義務得到保留。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「向物主確認是否允許再轉借給他人」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「使用與保管的差異得到釐清。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「向物主確認是否允許再轉借給他人」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「標籤改成事實狀態，避免推定權利。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「向物主確認是否允許再轉借給他人」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「來源核實與隱私保護並行。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「向物主確認是否允許再轉借給他人」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「借用範圍未被任意擴張。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「向物主確認是否允許再轉借給他人」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「歸還責任變得可追溯，尚待本人同意。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「向物主確認是否允許再轉借給他人」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「校方與私人借物分別管理。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「向物主確認是否允許再轉借給他人」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「物權與實際管理有了清楚界線。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「單獨標註來自學校的借用設備」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「借物被明確辨識，歸還義務得到保留。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「單獨標註來自學校的借用設備」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「使用與保管的差異得到釐清。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「單獨標註來自學校的借用設備」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「標籤改成事實狀態，避免推定權利。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「單獨標註來自學校的借用設備」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「來源核實與隱私保護並行。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「單獨標註來自學校的借用設備」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「借用範圍未被任意擴張。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「單獨標註來自學校的借用設備」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「歸還責任變得可追溯，尚待本人同意。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「單獨標註來自學校的借用設備」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「校方與私人借物分別管理。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「單獨標註來自學校的借用設備」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「物權與實際管理有了清楚界線。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "A",
+        "short": "你把材料整理得這麼整齊，真用心！",
+        "completed": "已當面感謝整理者，尚未認定都是公物",
+        "tradeoff": "肯定付出但權屬問題未解"
+      }
+    },
+    {
+      "storyId": "T1-149",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "公開說明不買也不影響合法參與",
+            "action": "已明確告知服裝自願性及正式服儀須依校規",
+            "tradeoff": "保護選擇但一致造型可能難成"
+          },
+          {
+            "id": 2,
+            "short": "先蒐集自願、可撤回的需求與尺寸條件",
+            "action": "已要求不公開個別家庭財務和尺寸資訊",
+            "tradeoff": "更能估量但有管理成本"
+          },
+          {
+            "id": 3,
+            "short": "研究現有校服或配件替代方案",
+            "action": "已請學生比較符合服儀的無額外購買選項",
+            "tradeoff": "降低花費但外觀變化有限"
+          },
+          {
+            "id": 4,
+            "short": "先檢查校慶正式服儀及既有衣物選項",
+            "action": "已就「先檢查校慶正式服儀及既有衣物選項」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "更能掌握實際限制，需花時間協調"
+          },
+          {
+            "id": 5,
+            "short": "詢問衣服交貨時間與取消條件",
+            "action": "已就「詢問衣服交貨時間與取消條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "保留選擇彈性，可能延後最終定稿"
+          },
+          {
+            "id": 6,
+            "short": "讓工作排班不以是否購買制服分流",
+            "action": "已就「讓工作排班不以是否購買制服分流」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "有機會降低誤會，但仍需正式核准"
+          }
+        ],
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 6
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "A",
+        "E",
+        "C",
+        "D"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 104,
+          "delta": "student_a:1-2:+2",
+          "consequence": "購買與攤位工作不再綁定。",
+          "stats": [
+            -1,
+            -2,
+            1,
+            -1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 114,
+          "delta": "student_a:6-1:+2",
+          "consequence": "尺寸與隱私風險被納入考量。",
+          "stats": [
+            -2,
+            -1,
+            -1,
+            2
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 113,
+          "delta": "student_a:9-1:+1",
+          "consequence": "團隊感有其他可行形式。",
+          "stats": [
+            0,
+            1,
+            0,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 104,
+          "delta": "student_a:11-2:-1",
+          "consequence": "私人購物提案不再冒充校方要求。",
+          "stats": [
+            -2,
+            -2,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 106,
+          "delta": "student_a:1-2:+2",
+          "consequence": "排班資格不以消費決定。",
+          "stats": [
+            1,
+            1,
+            -1,
+            0
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 109,
+          "delta": "student_a:6-1:+2",
+          "consequence": "採購時程與風險被看見。",
+          "stats": [
+            -1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 113,
+          "delta": "student_a:9-1:+1",
+          "consequence": "非購買替代選項具體化。",
+          "stats": [
+            1,
+            -2,
+            -1,
+            -2
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 110,
+          "delta": "student_a:11-2:+2",
+          "consequence": "服裝提案維持自願，不損害參與資格。",
+          "stats": [
+            0,
+            1,
+            -2,
+            -2
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定共同創作期待，未發起正式團購」；結果「購買與攤位工作不再綁定。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定共同創作期待，未發起正式團購」；結果「尺寸與隱私風險被納入考量。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定共同創作期待，未發起正式團購」；結果「團隊感有其他可行形式。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定共同創作期待，未發起正式團購」；結果「私人購物提案不再冒充校方要求。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定共同創作期待，未發起正式團購」；結果「排班資格不以消費決定。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定共同創作期待，未發起正式團購」；結果「採購時程與風險被看見。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定共同創作期待，未發起正式團購」；結果「非購買替代選項具體化。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已肯定共同創作期待，未發起正式團購」；結果「服裝提案維持自願，不損害參與資格。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已要求不公開個別家庭財務和尺寸資訊」；結果「購買與攤位工作不再綁定。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已要求不公開個別家庭財務和尺寸資訊」，學生若隨後做出「尺寸與隱私風險被納入考量。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已要求不公開個別家庭財務和尺寸資訊」不排斥「團隊感有其他可行形式。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已要求不公開個別家庭財務和尺寸資訊」；結果「私人購物提案不再冒充校方要求。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已要求不公開個別家庭財務和尺寸資訊」；結果「排班資格不以消費決定。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已要求不公開個別家庭財務和尺寸資訊」，學生若隨後做出「採購時程與風險被看見。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已要求不公開個別家庭財務和尺寸資訊」不排斥「非購買替代選項具體化。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已要求不公開個別家庭財務和尺寸資訊」；結果「服裝提案維持自願，不損害參與資格。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「詢問衣服交貨時間與取消條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「購買與攤位工作不再綁定。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「詢問衣服交貨時間與取消條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「尺寸與隱私風險被納入考量。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「詢問衣服交貨時間與取消條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「團隊感有其他可行形式。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「詢問衣服交貨時間與取消條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「私人購物提案不再冒充校方要求。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「詢問衣服交貨時間與取消條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「排班資格不以消費決定。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「詢問衣服交貨時間與取消條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「採購時程與風險被看見。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「詢問衣服交貨時間與取消條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「非購買替代選項具體化。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「詢問衣服交貨時間與取消條件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「服裝提案維持自願，不損害參與資格。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「讓工作排班不以是否購買制服分流」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「購買與攤位工作不再綁定。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「讓工作排班不以是否購買制服分流」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「尺寸與隱私風險被納入考量。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「讓工作排班不以是否購買制服分流」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「團隊感有其他可行形式。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「讓工作排班不以是否購買制服分流」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「私人購物提案不再冒充校方要求。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「讓工作排班不以是否購買制服分流」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「排班資格不以消費決定。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「讓工作排班不以是否購買制服分流」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「採購時程與風險被看見。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「讓工作排班不以是否購買制服分流」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「非購買替代選項具體化。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「讓工作排班不以是否購買制服分流」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「服裝提案維持自願，不損害參與資格。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "A",
+        "short": "大家想一起穿很有向心力，先鼓勵！",
+        "completed": "已肯定共同創作期待，未發起正式團購",
+        "tradeoff": "照顧情緒但同儕壓力仍待釐清"
+      }
+    },
+    {
+      "storyId": "T1-150",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "short": "向學生清楚區分草圖與正式核准",
+            "action": "已說明原設計非保證，並提供正式桌位資訊",
+            "tradeoff": "責任透明但學生可能失望"
+          },
+          {
+            "id": 2,
+            "short": "協助整理可保留的核心工作區",
+            "action": "已請學生按核定桌數重新試排收銀、展示與支援",
+            "tradeoff": "能保留功能但必須刪減部分構想"
+          },
+          {
+            "id": 3,
+            "short": "循正式管道核實桌位能否調整",
+            "action": "已提出明確詢問，不宣稱學校必須增桌",
+            "tradeoff": "可能爭取資訊但不能拖延備案"
+          },
+          {
+            "id": 4,
+            "short": "在核定桌數內重新試演取餐動線",
+            "action": "已就「在核定桌數內重新試演取餐動線」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "更能掌握實際限制，需花時間協調"
+          },
+          {
+            "id": 5,
+            "short": "把未核准的新增桌位寫為明確待確認",
+            "action": "已就「把未核准的新增桌位寫為明確待確認」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "保留選擇彈性，可能延後最終定稿"
+          },
+          {
+            "id": 6,
+            "short": "與設計者共同列出能沿用的原圖部件",
+            "action": "已就「與設計者共同列出能沿用的原圖部件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾",
+            "tradeoff": "有機會降低誤會，但仍需正式核准"
+          }
+        ],
+        "selectedIds": [
+          5,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": 5,
+          "D": "emotional"
+        }
+      },
+      "selectedTeacherStateGroups": [
+        "B",
+        "E",
+        "C",
+        "D"
+      ],
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 107,
+          "delta": "student_a:1-3:+2",
+          "consequence": "草圖與核准資訊被清楚區分。",
+          "stats": [
+            -1,
+            -2,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 109,
+          "delta": "student_a:6-4:+2",
+          "consequence": "新配置需實測而非想像。",
+          "stats": [
+            -1,
+            -2,
+            1,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 114,
+          "delta": "student_a:10-1:+1",
+          "consequence": "部分設計可沿用，修改範圍較清楚。",
+          "stats": [
+            -1,
+            1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 107,
+          "delta": "student_a:12-4:-1",
+          "consequence": "未擅占他班資源。",
+          "stats": [
+            -1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 107,
+          "delta": "student_a:1-3:+2",
+          "consequence": "基本安全動線先列入重排。",
+          "stats": [
+            -1,
+            1,
+            0,
+            -2
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 122,
+          "delta": "student_a:6-4:+2",
+          "consequence": "情緒獲承接，正式桌位沒有被擅改。",
+          "stats": [
+            2,
+            -2,
+            -1,
+            0
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 113,
+          "delta": "student_a:10-1:+1",
+          "consequence": "可行備案不依賴未核新增桌位。",
+          "stats": [
+            0,
+            -1,
+            -1,
+            2
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 123,
+          "delta": "student_a:12-4:+2",
+          "consequence": "重排方向明確，不預測當天實際營運結果。",
+          "stats": [
+            -1,
+            1,
+            -2,
+            -2
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已說明原設計非保證，並提供正式桌位資訊」，學生若隨後做出「草圖與核准資訊被清楚區分。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已說明原設計非保證，並提供正式桌位資訊」；結果「新配置需實測而非想像。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已說明原設計非保證，並提供正式桌位資訊」；結果「部分設計可沿用，修改範圍較清楚。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已說明原設計非保證，並提供正式桌位資訊」不排斥「未擅占他班資源。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已說明原設計非保證，並提供正式桌位資訊」，學生若隨後做出「基本安全動線先列入重排。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已說明原設計非保證，並提供正式桌位資訊」；結果「情緒獲承接，正式桌位沒有被擅改。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已說明原設計非保證，並提供正式桌位資訊」；結果「可行備案不依賴未核新增桌位。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已說明原設計非保證，並提供正式桌位資訊」不排斥「重排方向明確，不預測當天實際營運結果。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「與設計者共同列出能沿用的原圖部件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「草圖與核准資訊被清楚區分。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「與設計者共同列出能沿用的原圖部件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「新配置需實測而非想像。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「與設計者共同列出能沿用的原圖部件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「部分設計可沿用，修改範圍較清楚。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「與設計者共同列出能沿用的原圖部件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「未擅占他班資源。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「與設計者共同列出能沿用的原圖部件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「基本安全動線先列入重排。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「與設計者共同列出能沿用的原圖部件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「情緒獲承接，正式桌位沒有被擅改。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「與設計者共同列出能沿用的原圖部件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「可行備案不依賴未核新增桌位。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「與設計者共同列出能沿用的原圖部件」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「重排方向明確，不預測當天實際營運結果。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把未核准的新增桌位寫為明確待確認」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「草圖與核准資訊被清楚區分。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「把未核准的新增桌位寫為明確待確認」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「新配置需實測而非想像。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「把未核准的新增桌位寫為明確待確認」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「部分設計可沿用，修改範圍較清楚。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把未核准的新增桌位寫為明確待確認」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「未擅占他班資源。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把未核准的新增桌位寫為明確待確認」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「基本安全動線先列入重排。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "「已就「把未核准的新增桌位寫為明確待確認」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」不排斥「情緒獲承接，正式桌位沒有被擅改。」，只是仍需要當事人另外跨過協調或查核障礙，故相對抑制而非不可能。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "已完成「已就「把未核准的新增桌位寫為明確待確認」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」，學生若隨後做出「可行備案不依賴未核新增桌位。」，前者提供具體可用的準備條件，較能促進但不能直接保證。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已就「把未核准的新增桌位寫為明確待確認」完成可核實的學生協調與正式限制檢查，沒有替未在場者承諾」；結果「重排方向明確，不預測當天實際營運結果。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已同理投入與失望，尚未許諾再爭取桌位」；結果「草圖與核准資訊被清楚區分。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已同理投入與失望，尚未許諾再爭取桌位」；結果「新配置需實測而非想像。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已同理投入與失望，尚未許諾再爭取桌位」；結果「部分設計可沿用，修改範圍較清楚。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已同理投入與失望，尚未許諾再爭取桌位」；結果「未擅占他班資源。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已同理投入與失望，尚未許諾再爭取桌位」；結果「基本安全動線先列入重排。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已同理投入與失望，尚未許諾再爭取桌位」；結果「情緒獲承接，正式桌位沒有被擅改。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已同理投入與失望，尚未許諾再爭取桌位」；結果「可行備案不依賴未核新增桌位。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "選項已完成「已同理投入與失望，尚未許諾再爭取桌位」；結果「重排方向明確，不預測當天實際營運結果。」可由學生自主選擇形成，不因教師此行動而必然或不可能發生。",
+          "actionPreserved": true
+        }
+      ],
+      "emotionalChoice": {
+        "option": "D",
+        "short": "你們畫這麼用心，真的很可惜！",
+        "completed": "已同理投入與失望，尚未許諾再爭取桌位",
+        "tradeoff": "照顧感受但實際配置仍需調整"
+      }
+    }
+  ]
+}

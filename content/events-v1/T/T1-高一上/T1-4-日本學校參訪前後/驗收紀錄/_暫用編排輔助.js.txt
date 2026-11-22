@@ -1,0 +1,85 @@
+(function formatDraft(planText,id,c){
+const m=planText.match(new RegExp("### "+id+"｜([^\\n]+)\\n([\\s\\S]*?)(?=\\n### T1-|$)"));if(!m)throw Error("planning not found "+id);
+const p=m[2],get=k=>p.match(new RegExp("- \\*\\*"+k+"\\*\\*：([^\\n]+)"))?.[1]??"",codes=[...get("種子原四碼").matchAll(/`([\d-]+)`/g)].map(x=>x[1]),seed=get("種子 ID").replaceAll("`",""),quota=get("配額歸屬日").match(/\d{4}-\d{2}-\d{2}/)?.[0];
+const roles=[...p.matchAll(/^\| `(student_[ab]|guardian_[ab]|staff_[ab])` \| ([^|]+) \| ([^|]+) \|/gm)].map(x=>({key:x[1],type:x[2],desc:x[3]}));if(codes.length!==4||!quota||roles.length===0||c.R.length!==8||c.N.length!==6)throw Error("invalid content "+id);
+const shuffle=a=>a.map(v=>({v,k:Math.random()})).sort((x,y)=>x.k-y.k).map(x=>x.v),pool={A:[1,1,0,0,-1,-1,-2,-2],B:[2,0,-1,-1,-1,-1,-1,-1],C:[1,1,0,-1,-1,-1,-1,-2],D:[2,1,0,-1,-1,-1,-2,-2],E:[1,1,1,0,-1,-2,-2,-2]};const groups=shuffle(Object.entries(pool)).slice(0,4);let states=[];for(let z=0;z<1000;z++){states=groups.map(x=>shuffle(x[1]));if(Array.from({length:8},(_,j)=>states.filter(x=>x[j]===0).length).every(x=>x<=2))break;}if(Array.from({length:8},(_,j)=>states.filter(x=>x[j]===0).length).some(x=>x>2))throw Error("too many zeros");
+const candidates=c.N.map((text,i)=>({id:i+1,text})),selected=shuffle(candidates).slice(0,3),choices=shuffle([...selected.map(x=>({...x,emotional:false})),{id:"emotional",text:c.E,emotional:true}]);
+const avg={opening:{},results:{}},expr=Object.fromEntries(roles.filter(x=>x.key.startsWith("student")).map(x=>[x.key,"calm"]));
+c.P.forEach((_,i)=>avg.opening["P"+String(i+1).padStart(2,"0")]=i===0?{scene:c.scene??"school:classroom",enter:roles.map(x=>x.key),expression:expr}:{});
+const results=c.R.map((r,i)=>{if(r.length!==5)throw Error("five pieces "+id+" "+i);const speaker=(c.speakers&&c.speakers[i])||(roles.length>1&&i%3===1?roles[1].key:roles[0].key),remote=speaker==="staff_a"||speaker.startsWith("guardian");const pages=[{text:`「${r[1]}」`,speaker,presentation:remote?"chat":"dialogue"},{text:r[2],presentation:"narration"},{text:`「${r[3]}」`,speaker:"teacher",presentation:remote?"chat":"dialogue"},{text:r[4],presentation:"narration"}];if(remote)pages[3].exit=[speaker];avg.results["R"+(i+1)]={pages};return`「${r[1]}」${r[2]}「${r[3]}」${r[4]}`});
+const mode=c.mode??"school",matrix=c.matrix??choices.map((x,i)=>c.R.map((_,j)=>x.emotional?(j%5===0?4:j===6?1:2):(j+i)%5===0?4:(j+i)%6===2?1:2));
+const delta=c.delta??c.R.map((_,i)=>`${roles.length>1&&i%3===1?roles[1].key:roles[0].key}:${codes[(i+1)%4]}:${i===3||i===5?"-1":i===6?"+2":"+1"}`);
+const summary=["事件起因","核心衝突","導師困境","故事獨特性"].map(k=>`| ${k} | ${c.summary?.[k]??get(k)} |`).join("\n");
+const motif=get("四碼因果規劃"),motives=codes.map(x=>motif.match(new RegExp("`"+x+"`：([^；\\n]+)"))?.[1]??"當事人在一對一接待準備中的態度");
+const options=choices.map((x,i)=>`| ${"ABCD"[i]} | ${x.text} | ${x.emotional} | ${c.actions?.[x.id]??("已"+x.text.replace(/[？！!?]$/,"")+"，未替日方或承辦作出後續決定")} | ${c.tradeoffs?.[x.id]??(x.emotional?"先肯定心意但尚須核實":"完成一項可行的準備而不預設他人意願")} |`).join("\n");
+const R=c.R.map((r,i)=>`### R${i+1}｜${r[0]}\n\n- **玩家可見結果**：${results[i]}\n- **客觀後果**：${c.consequence?.[i]??r[4]}\n- **合法底層增減**：${delta[i]}\n- **玩家四狀態**（精神、熱忱、情緒、掌控）：${states.map(a=>a[i]).join(",")}\n`).join("\n");
+const md=`# ${c.title??m[1]}
+
+## 1｜故事基本資料
+
+| 欄位鍵 | 填寫值 |
+| --- | --- |
+| state_rules_version｜數值規則版本 | 3 |
+| \`story_id\`｜正式故事ID | ${id} |
+| \`seed_id\`｜種子ID | ${seed} |
+| \`quota_date\`｜配額歸屬日 | ${quota} |
+| \`event_type\`｜事件類型 | T |
+| \`music\`｜事件配樂 | ${mode} |
+| \`t_topic_id\`｜T主題ID | T1-4 |
+| \`tags\`｜T/G共用11類多標籤 | ${get("規劃題材標籤").match(/G\d\d/g).join("、")} |
+| \`required_window\`｜必要合法日期／活動窗口 | T1-4:before |
+| \`required_conditions\`｜必要人物／資格／已知條件 | ${c.conditions??"11/11數百位日方學生將到本校，高一原則一對一陪伴；本班角色須在籍、知情，日方個人資料與同意尚未確認。"} |
+
+## 2｜四欄創意摘要
+
+| 固定欄位 | 故事摘要 |
+| --- | --- |
+${summary}
+
+## 3｜四碼種子及角色槽位
+
+- **本篇四碼**：${codes.join("／")}
+- **選角方向**：${c.bias??"偏正向"}
+- **常駐數值角色槽位**：
+
+| 槽位鍵 | 人物資格／類別 | 必要在籍、關係、職權與知情限制 | 參與四碼抽選／合法結算 |
+| --- | --- | --- | --- |
+${roles.map(x=>`| ${x.key} | ${x.type} | ${x.desc}；本人合法在籍／任職且對本篇已知情 | 是；原四碼完整資格 |`).join("\n")}
+
+- **無數值情境角色**：尚未來校的日方學生只作未確定對象；背景人物不建立四碼／永久關係。
+- **四碼的必要因果用途**：
+
+| 種子碼 | 合法持有者槽位 | 如何實際參與故事起因／衝突／人物反應／結果 |
+| --- | --- | --- |
+${codes.map((x,i)=>`| ${x} | ${roles.map(r=>r.key).join("、")} | ${motives[i]} |`).join("\n")}
+
+## 4｜玩家可見開場與四個行動
+
+\`\`\`avg
+${JSON.stringify(avg,null,2)}
+\`\`\`
+
+### 開場（依自然閱讀長度分頁）
+
+${c.P.map((x,i)=>`- **P${String(i+1).padStart(2,"0")}｜旁白**：${x}`).join("\n")}
+
+### 四個最終教師選項（內部固定A～D；玩家顯示另外隨機排列）
+
+| 選項ID | 玩家可見短句（當下可做的行動） | \`emotional\` | 教師已完成的客觀行動／確認事實 | 採取此方案的實際取捨（不顯示玩家） |
+| --- | --- | --- | --- | --- |
+${options}
+
+## 5｜R1～R8共用結果、結算與4×8因果矩陣
+
+${R}
+### 四選項對八共用結果的權重
+
+| 選項／結果 | R1 | R2 | R3 | R4 | R5 | R6 | R7 | R8 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+${matrix.map((a,i)=>`| ${"ABCD"[i]} | ${a.join(" | ")} |`).join("\n")}
+
+- **0權重因果理由**：無。
+`;
+const chars=x=>[...x.replace(/\{\{[^}]*\}\}/g,"").replace(/\s/g,"")].length;
+return{md,record:{id,seed,quota,ordinaryCandidates:candidates,selectedIds:selected.map(x=>x.id),finalChoiceMap:Object.fromEntries(choices.map((x,i)=>["ABCD"[i],x.id])),v3GroupMap:Object.fromEntries(groups.map((x,i)=>[["精神","熱忱","情緒","掌控"][i],x[0]])),status:"draft-pending-audit"},stats:{id,opening:chars(c.P.join("")),resultLengths:results.map(chars),pages:8*4}};
+})

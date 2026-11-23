@@ -95,3 +95,61 @@ test('T1-151–174: each story has four legal choices, 32 result weights, and V3
   }
  }
 });
+
+const reviewFiles=[
+ '驗收紀錄/活動後-151-158-數值與32格初審.json',
+ '驗收紀錄/活動後-159-166-數值與32格初審.json',
+ '驗收紀錄/活動後-167-174-數值與32格初審.json'
+];
+test('T1-151–174: evidence matches 24 current drafts, 192 results and 768 weighted causal cells',()=>{
+ const reviews=reviewFiles.flatMap(p=>JSON.parse(read(base+p)).stories);
+ assert.equal(reviews.length,24,'one review per story');
+ assert.equal(new Set(reviews.map(x=>x.storyId)).size,24,'unique review stories');
+ let checked=0;
+ for(const id of ids){
+  const draft=read(base+id+'.md');
+  const review=reviews.find(x=>x.storyId===id);
+  assert.ok(review,id+' missing review');
+  const outcomes=mdResults(draft);
+  assert.equal(review.resultAudit.length,8,id+' eight audited endings');
+  const choices=[...draft.matchAll(/^\| ([ABCD]) \| ([^|]+) \| (true|false) \| ([^|]+) \| ([^|]+) \|$/gm)];
+  const selected=review.ordinaryChoiceSelection;
+  assert.equal(selected.ordinaryCandidates.length,6,id+' six lawful candidates');
+  assert.equal(selected.selectedIds.length,3,id+' selected three ordinary candidates');
+  assert.equal(new Set(selected.selectedIds).size,3,id+' selected candidates distinct');
+  for(const choice of choices){
+   const src=selected.finalChoiceMap[choice[1]];
+   assert.ok(src==='emotional'||selected.selectedIds.includes(src),id+' choice selection provenance');
+   assert.equal(choice[3]==='true',src==='emotional',id+' emotional selection mapping');
+   if(src!=='emotional'){
+    const c=selected.ordinaryCandidates.find(x=>x.id===src);
+    assert.equal(choice[2],c.text,id+' selected choice text');
+    assert.equal(choice[4],c.action,id+' selected completed action');
+   }
+  }
+  for(let i=0;i<8;i++){
+   const audit=review.resultAudit[i],outcome=outcomes[i];
+   assert.equal(audit.id,outcome.id,id+' result order');
+   assert.equal(audit.chars,storyVisibleLength(outcome.text),id+' prose length R'+(i+1));
+   assert.equal(audit.delta,outcome.delta,id+' settlement R'+(i+1));
+   assert.deepEqual(audit.stats,outcome.stats,id+' V3 values R'+(i+1));
+  }
+  const matrix=new Map([...draft.matchAll(/^\| ([ABCD]) \| ([0124]) \| ([0124]) \| ([0124]) \| ([0124]) \| ([0124]) \| ([0124]) \| ([0124]) \| ([0124]) \|$/gm)]
+    .map(m=>[m[1],m.slice(2).map(Number)]));
+  assert.equal(matrix.size,4,id+' matrix');
+  assert.equal(review.causal32Evidence.length,32,id+' 32 distinct cells');
+  const keys=new Set();
+  for(const cell of review.causal32Evidence){
+   const index=Number(cell.result.slice(1))-1;
+   const key=cell.choice+cell.result;
+   assert.ok(!keys.has(key),id+' duplicate causal cell '+key);
+   keys.add(key);
+   assert.equal(cell.weight,matrix.get(cell.choice)?.[index],id+' matrix/evidence '+key);
+   assert.equal(cell.actionPreserved,true,id+' preserve action '+key);
+   assert.ok(typeof cell.reason==='string'&&cell.reason.length>=25,id+' rationale missing '+key);
+   checked++;
+  }
+  assert.equal(keys.size,32,id+' full causal grid');
+ }
+ assert.equal(checked,768);
+});

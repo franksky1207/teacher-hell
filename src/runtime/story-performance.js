@@ -61,7 +61,7 @@ export function advanceStoryPerformance(state,page,roles){
   }
  }
  const speaker=page.speaker??null;
- need(speaker===null||speaker==='teacher'||state.cast.some(actor=>actor.role===speaker),'說話者未登場 '+speaker);
+ need(speaker===null||speaker==='teacher'||(['chat','phone','email'].includes(page.presentation)&&roles.has(speaker))||state.cast.some(actor=>actor.role===speaker),'說話者未登場 '+speaker);
  // A legacy centered actor may be joined by a second actor on an annotated page.
  if(state.cast.length===2){
   if(state.cast[0].position==='right'||state.cast[1].position==='left')state.cast.reverse();

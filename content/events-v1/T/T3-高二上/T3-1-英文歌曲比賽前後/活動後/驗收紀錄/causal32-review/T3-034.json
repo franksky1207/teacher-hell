@@ -1,6 +1,6 @@
 {
   "storyId": "T3-034",
-  "sourceBlobSha": "9fef9325270a918065b4d7690d965176e093022f",
+  "sourceBlobSha": "091734b8d97d7727c87454e1920f7841d58ee9da",
   "reviewer": "GPT-6｜2026-11-23 工作分支因果審核",
   "verdict": "requires_independent_review",
   "scope": "32格逐格重判，正式六選三及Node/S6仍待驗",
@@ -391,5 +391,48 @@
       "reviewStatus": "故事特定理由已整理，待獨立複驗"
     }
   ],
-  "qualification": "此審查記錄不代替06要求的六普通候選實際抽三證據或05的正式核准；4與1的具體機制須補證後才能提交正式evidence。"
+  "qualification": "此審查記錄不代替06要求的六普通候選實際抽三證據或05的正式核准；4與1的具體機制須補證後才能提交正式evidence。",
+  "npcDeltaReview": [
+    {
+      "result": "R1",
+      "delta": "student_a:8-3:-1; student_a:3-1:+1",
+      "review": "已與該R結果正文逐項複核；無可驗證因果時應為無；正式Node證據仍待跑"
+    },
+    {
+      "result": "R2",
+      "delta": "student_a:8-3:+1",
+      "review": "已與該R結果正文逐項複核；無可驗證因果時應為無；正式Node證據仍待跑"
+    },
+    {
+      "result": "R3",
+      "delta": "student_a:8-3:-2",
+      "review": "已與該R結果正文逐項複核；無可驗證因果時應為無；正式Node證據仍待跑"
+    },
+    {
+      "result": "R4",
+      "delta": "student_a:3-1:+1",
+      "review": "已與該R結果正文逐項複核；無可驗證因果時應為無；正式Node證據仍待跑"
+    },
+    {
+      "result": "R5",
+      "delta": "無",
+      "review": "已與該R結果正文逐項複核；無可驗證因果時應為無；正式Node證據仍待跑"
+    },
+    {
+      "result": "R6",
+      "delta": "無",
+      "review": "已與該R結果正文逐項複核；無可驗證因果時應為無；正式Node證據仍待跑"
+    },
+    {
+      "result": "R7",
+      "delta": "student_a:3-1:+2; student_a:8-3:-1",
+      "review": "已與該R結果正文逐項複核；無可驗證因果時應為無；正式Node證據仍待跑"
+    },
+    {
+      "result": "R8",
+      "delta": "student_a:8-3:-1",
+      "review": "已與該R結果正文逐項複核；無可驗證因果時應為無；正式Node證據仍待跑"
+    }
+  ],
+  "technicalTests": "Node CLI 未執行；Actions 禁止；未發布 S5/S6"
 }

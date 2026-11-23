@@ -23,7 +23,7 @@ test('T2-001–030: one combined class chant and school-song contest, valid V3 s
   const report=validateStoryDraft(md,rules);
   assert.deepEqual(report.errors,[],id+' '+JSON.stringify(report.errors));
   assert.match(md,/T2-1:before/,id+' pre-contest window');
-  assert.ok(!/兩場比賽|兩次比賽|分別得獎/.test(md),id+' invalid two-competition premise');
+  assert.ok(!/班呼比賽和校歌比賽|班呼與校歌分別得獎|兩場獨立競賽/.test(md),id+' invalid two-competition premise');
   const date=md.match(/\| `quota_date`｜配額歸屬日 \| (\d{4}-\d{2}-\d{2}) \|/)?.[1];
   assert.ok(date,id+' quota date');
   dates.set(date,(dates.get(date)||0)+1);

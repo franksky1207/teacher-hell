@@ -54,6 +54,17 @@ jobs:
       - run: |
           node --check story-reader/reader.js
           node --test test/story-preview-catalog-playback.test.js test/story-draft-validator.test.js test/story-state-matrix.test.js test/story-reader-export.test.js test/story-reader-ui.test.js test/story-production-catalog.test.js test/story-preview-multipage.test.js test/story-preview-snapshot.test.js test/story-preview-cast-continuity.test.js test/story-preview-t1-006-010.test.js test/story-preview-t1-061-072.test.js test/story-preview-t1-073-084.test.js test/story-preview-t1-085-114.test.js test/story-preview-t1-115-126.test.js test/story-preview-t1-127-150.test.js test/story-preview-t1-151-174.test.js test/story-preview-t1-cross-day-pools.test.js test/story-preview-t2-001-030.test.js test/story-preview-t2-031-042.test.js test/story-preview-t3-001-030.test.js test/story-preview-t3-043-066.test.js test/story-preview-picker.test.js
+      - name: Verify T4-001–024 full drafts and formal evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          for n in $(seq 1 24); do
+            printf -v id "T4-%03d" "$n"
+            root="content/events-v1/T/T4-高二下/T4-1-第二次升學輔導與大學博覽會"
+            if (( n <= 12 )); then phase="活動前"; else phase="活動後"; fi
+            node scripts/check-story-draft.mjs --input "$root/$phase/$id.md" --stage full
+            node scripts/check-story-production.mjs audit "$id" --evidence "$root/活動後/驗收紀錄/evidence/$id.json"
+          done
       - name: Verify T3-067–090 post-event full drafts and formal evidence
         shell: bash
         run: |

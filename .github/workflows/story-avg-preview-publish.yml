@@ -4,6 +4,9 @@ on:
     branches: [content/events-production-v1]
     paths:
       - '.github/workflows/story-avg-preview-publish.yml'
+      - 'src/runtime/story-preview-content.js'
+      - 'src/runtime/story-performance.js'
+      - 'scripts/deploy-preview.sh'
       - 'web/game.js'
       - 'web/story-performance-preview.js'
       - 'web/story-preview-picker.js'
@@ -14,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: teacher-hell-preview-publication
@@ -39,7 +43,7 @@ jobs:
           node --check web/game.js
           node --check web/story-performance-preview.js
           node --check web/story-preview-picker.js
-          node --test test/story-preview-picker.test.js test/story-preview-multipage.test.js test/story-preview-t1-006-010.test.js
+          node --test test/story-preview-catalog-playback.test.js test/story-preview-picker.test.js test/story-preview-multipage.test.js test/story-preview-t1-006-010.test.js
       - name: Regenerate approved shared portrait calibration
         run: |
           python -m pip install --quiet Pillow numpy
@@ -49,6 +53,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           bash scripts/deploy-preview.sh
+      # GITHUB_TOKEN pushes do not start a legacy Pages build. Request it explicitly.
+      - name: Request Pages build for the published subtree
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
       - name: Verify current versioned preview resources
         run: |
           git fetch origin gh-pages

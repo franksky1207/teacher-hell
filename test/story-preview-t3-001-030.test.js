@@ -1,3 +1,6 @@
+import {compileStoryPreview} from '../src/runtime/story-preview-content.js';
+import {parseReaderStory} from '../scripts/export-story-reader.mjs';
+import {readStoryMetadata} from '../scripts/story-catalog.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -36,11 +39,14 @@ test('T3-001–030: 90 opening pages render actual text and 240 R agree with AVG
    const match=md.match(/```avg\n([\s\S]*?)\n```/);
    assert.ok(match,id+' missing AVG');
    const avg=JSON.parse(match[1]);
+   const compiled=compileStoryPreview(parseReaderStory(md,readStoryMetadata(md,id,root+id+'.md')));
    const ps=[...md.matchAll(/^- \*\*(P\d\d)｜([^\n]*?)\*\*：([^\n]+)/gm)];
    assert.equal(ps.length,3,id+' opening P count');
    for(const [,p,who,text] of ps){
       const page=avg.opening[p];
-      assert.ok(page&&page.text===text,id+' '+p+' opening text');
+      assert.ok(page,id+' '+p+' opening cue');
+      assert.equal(compiled.pages.find(page=>page.label===who&&page.text===text)?.text,text,id+' '+p+' rendered opening text');
+      assert.ok(!Object.hasOwn(page,'text'),id+' '+p+' text belongs in the opening prose');
       assert.ok(storyVisibleLength(text)>0,id+' '+p+' empty text');
       if(who==='旁白')assert.equal(page.presentation,'narration');
       openings++;

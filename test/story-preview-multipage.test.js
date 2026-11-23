@@ -67,3 +67,13 @@ test('AVG: opening actors are snapshot-isolated across results',()=>{
  assert.deepEqual(p.resultPages[0][1].cast.map(x=>x.role),['staff_a']);
  assert.deepEqual(p.resultPages[1][0].cast.map(x=>x.role),['student_a']);
 });
+test('AVG: declared remote speakers need no physical entrance; local dialogue still does',()=>{
+ for(const presentation of ['chat','phone','email']){
+  const detail=makeDetail({R1:{pages:[{text:'遠端回覆',speaker:'staff_a',presentation}]}});
+  const p=compileStoryPreview(detail);
+  assert.equal(p.resultPages[0][0].speaker,'staff_a');
+  assert.deepEqual(p.resultPages[0][0].cast.map(x=>x.role),['student_a']);
+ }
+ assert.throws(()=>compileStoryPreview(makeDetail({R1:{pages:[{text:'現場',speaker:'staff_a',presentation:'dialogue'}]}})),/說話者未登場/);
+ assert.throws(()=>compileStoryPreview(makeDetail({R1:{pages:[{text:'未知',speaker:'unknown',presentation:'chat'}]}})),/未知說話者/);
+});

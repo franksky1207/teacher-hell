@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 concurrency:
   group: teacher-hell-story-reader-publication
   cancel-in-progress: false
@@ -34,12 +35,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
+      - name: Verify every exported story can play
+        run: node --test test/story-preview-catalog-playback.test.js
       - name: Configure publication identity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Publish reader and Markdown snapshot
         run: bash scripts/deploy-story-reader.sh "${GITHUB_REF_NAME}"
+      # GITHUB_TOKEN pushes do not start a legacy Pages build. Request it explicitly.
+      - name: Request Pages build for the published subtree
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
       - name: Verify the published reader snapshot
         shell: bash
         run: |

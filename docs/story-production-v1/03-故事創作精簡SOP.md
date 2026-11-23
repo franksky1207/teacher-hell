@@ -149,6 +149,17 @@ node --test test/story-preview-multipage.test.js test/story-preview-cast-continu
 6. **最後才開 PR、跑必要 Actions**：前五關已完成且工作分支已達候選封關狀態，才視需要建立 **一次 PR** 指向 `content/events-production-v1`；**Draft 也會觸發 CI，不是免跑的替代品**。事先確認工作流程監聽的事件、路徑與分支，避免新增不相關測試或無故重跑。CI 若因具體錯誤失敗，依失敗範圍在原暫存分支集中修好並定向重檢，再讓必要 CI 重跑；**不限制真錯所需修正次數，但禁止無目的反覆跑 CI**。
 7. **確認後一次晉升與發布**：CI 與所有可在發布前完成的審核通過，才將整批一次合併／快轉至正式 V1，核對 SHA 並確認 Pages、閱讀器來源版本及實際可驗畫面。**只對真正完成的關卡宣稱通過**；`main` 一律須另經使用者授權。發布後除確認錯誤需修復，不為報告、瑣碎措辭或反覆確認而重新發布。
 
+### 本機 Node 不可用時的 Actions 代跑機制（驗收環境替代，不是跳關）
+
+1. **預設優先在 CHAT／Codex 可用的完整專案環境執行必要的定向 Node**（專案 `.nvmrc`／`package.json` 指定的 Node 版本）；只跑當批受影響的故事 CLI、AVG／人物／索引／匯出回歸，不把全部遊戲測試當作每批必跑項目。
+2. **符合條件才改用 GitHub Actions 執行同等 Node 驗收**：本機版本不符、無法取得完整專案或執行環境確實受限時，先在 `work/` 分支完成整批文字、AVG、數值、32 格、證據、來源 SHA、唯讀／靜態檢查和所有可用自檢；如實記錄本機未執行的命令及原因。**不得冒稱本機 Node 已通過，也不得為了借 CI 在創作未完成時提早開 PR**。
+3. **開 PR 前先盤點 CI 的「實際執行內容」**：核對 `.github/workflows/story-production-v1-focused.yml` 等相應 workflow 的觸發事件／目標分支／路徑、Node 版本、測試指令、驗收故事 ID 全集與正式 evidence 路徑。若工作流程只驗到其他舊批次，即使綠燈也**不算本批通過**；在同一候選 `work/` 分支先補齊**本批**的逐篇 `node scripts/check-story-production.mjs audit <ID> --evidence <JSON>` 及必要 AVG／索引／播放回歸，再集中建立一次 PR。
+4. **正式跑一次必要 Actions，逐項核對結果**：確認當批每篇正式證據 CLI 實際成功（例如 12 篇須 12／12，而非只跑到一兩篇）、相關 Node 定向回歸成功、workflow run／job／step 結論與所驗證的 head SHA 一致。**Actions 是 Node 的執行環境替代，不是任何綠燈都能替代正確的驗收項目**。失敗時依錯誤集中修復，僅重跑受影響的必要驗收；不要無故重跑無關流程。
+5. **合併與 AVG 播放分開判定**：本批資料及 Node／Actions 均通過後，才依原七關一次晉升 V1；確認 `Publish story reader` 的 `stories/data/index.json`、各篇 JSON 與 `release.json` 均為同一個正式來源版本，且 `/preview/` 讀取該版本。**`Publish story reader` 與 `Publish AVG story workbench preview` 是不同的發布工作流程**；其中一項成功不代表另一項或公開 AVG 已能播放。對本批全部故事做可讀取 P／R1～R8 的批次檢查，並實際抽測各區段首尾及代表性故事的選篇→開場→選項→結果→翻頁（含手機畫面）；無可用瀏覽器或真機測試時，記錄為「未實測」，不可宣稱播放成功。
+6. **留下可追溯且不重複的紀錄**：每批列出 `Node 執行環境（本機／Actions）`、無法本機執行原因、實際命令、故事 ID 與通過數、來源 head SHA、run／job／step 連結、PR／合併 SHA、故事發布來源 SHA、公開 AVG 載入／實際播放狀態與待辦。**機械資料、劇情語意、公開播放三種驗收互不冒充**。
+
+**2026-11-23 實例與防再犯**：T3-031～042 原 PR #114 的 `Story tooling checks` 成功，但 workflow 未列入本批逐篇 evidence audit；後續 PR #115 補上 `Verify T3-031–042 after-event formal evidence`，在 Node Actions 中完成 12／12，才補齊技術驗收。此外 T2-031～042 與 T3-001～042 曾發生「故事已核准但 AVG 無法播放」，後續經 Codex 修復並由使用者手機實測恢復；因此**Node／Actions 成功與公開 AVG 能播放是兩個不同的必驗關卡**。不得反過來把這兩次補救當成「以後可先合併再補驗」的慣例。
+
 **成本與紀錄**：每批驗收記錄須寫明暫存分支、PR 建立時點、工作流程實際觸發條件、Actions 執行次數及原因、首次發布次數、可避免的額外 CI；若發現當前 GitHub 工作流程會因「暫存 push」也自動跑，**先確認並調整作業路徑／觸發條件（需授權時先取得授權）**，不可把未經驗證的 `work/` 分支當作必然免 CI。適用於工作流程既有的 `push`／`pull_request`／`workflow_dispatch` 等觸發來源。
 
 **順序口訣**：`核對 V1 → 建暫存分支 → 整批寫完 → 語意及資料自檢修好 → 本地／唯讀定向驗證 → 開 PR → 必要 Actions → 一次合併 V1 → 發布與版本／畫面確認`。

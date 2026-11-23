@@ -1,6 +1,6 @@
 {
   "storyId": "T3-041",
-  "sourceBlobSha": "3d125254032b028d98e6561b93f93fa0cb8c077c",
+  "sourceBlobSha": "ded4bedeb2651e8e7ed3f8960a92a6808933112a",
   "reviewer": "GPT-6｜2026-11-23 工作分支因果審核",
   "verdict": "requires_independent_review",
   "scope": "逐格重判32個可能後果及相容性，未補正式候選抽樣與Node",
@@ -391,5 +391,48 @@
       "reviewStatus": "因果方向已重新分析，仍需正式證據核准"
     }
   ],
-  "note": "檢查並未取得六選三真實隨機抽選紀錄，亦未執行正式node CLI；不得用此稽核資料充作正式驗收。"
+  "note": "檢查並未取得六選三真實隨機抽選紀錄，亦未執行正式node CLI；不得用此稽核資料充作正式驗收。",
+  "npcDeltaReview": [
+    {
+      "result": "R1",
+      "delta": "student_a:10-3:+2",
+      "review": "依當事人實際行動與四碼方向初步查核；正式Node証據尚待產生"
+    },
+    {
+      "result": "R2",
+      "delta": "student_a:10-3:+1",
+      "review": "依當事人實際行動與四碼方向初步查核；正式Node証據尚待產生"
+    },
+    {
+      "result": "R3",
+      "delta": "student_a:10-3:+1",
+      "review": "依當事人實際行動與四碼方向初步查核；正式Node証據尚待產生"
+    },
+    {
+      "result": "R4",
+      "delta": "student_a:12-3:+1",
+      "review": "依當事人實際行動與四碼方向初步查核；正式Node証據尚待產生"
+    },
+    {
+      "result": "R5",
+      "delta": "無",
+      "review": "依當事人實際行動與四碼方向初步查核；正式Node証據尚待產生"
+    },
+    {
+      "result": "R6",
+      "delta": "student_a:4-1:+1",
+      "review": "依當事人實際行動與四碼方向初步查核；正式Node証據尚待產生"
+    },
+    {
+      "result": "R7",
+      "delta": "student_a:10-3:+1",
+      "review": "依當事人實際行動與四碼方向初步查核；正式Node証據尚待產生"
+    },
+    {
+      "result": "R8",
+      "delta": "student_a:10-3:+1",
+      "review": "依當事人實際行動與四碼方向初步查核；正式Node証據尚待產生"
+    }
+  ],
+  "technicalTests": "Node CLI 未執行；Actions 禁止；未發布 S5/S6"
 }

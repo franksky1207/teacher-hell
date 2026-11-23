@@ -1,0 +1,484 @@
+{
+  "reviewer": "Antigravity｜2026-11-23 T3-055 全文精修與32格因果複驗",
+  "verdict": "approved",
+  "storyAndRoles": "T3-055事件：高一校慶曾主動留守幫忙機動班的student_a，今年想只排基本一小時班段並留時間當客人逛攤，卻被負責排班的老搭檔student_b以去年合作默契與班級情誼不斷拜託再撐全場。核心衝突為「過去的熱心與同儕情誼不應變成今年不得退出的義務；但直接回絕又怕傷了朋友感情或讓排班卡住。」，導師困境為「既要守住學生今年只排基本班段、自由逛攤的空間，也要引導班級透過公開拆段填補機動人力，不能替任何一方勉強答應或代排班表。」。雙常駐槽位student_a與student_b皆為現任本班學生且親自互動發言，無跨篇前置依賴。",
+  "fourCodes": "T3-055固定使用S0644與四碼1-2、4-3、5-2、11-3，第三區與R1～R8均有雙人具體因果結算；單R增減皆在±8內，教師V3四狀態嚴格符合A～E不重複組別、每R最多兩0、各欄總和-4。",
+  "fourChoices": "六選三依choice-selection/T3-055.json（seed=4242410500，selectedIds=[6,3,5]，finalChoiceMap={A:emotional,B:3,C:5,D:6}）可重現抽選，恰一項emotional=true，四選項皆為具體且互異的教師已完成行動與取捨。",
+  "eightResults": "八個共用結果R1～R8涵蓋只簽基本班、留交接便條、老搭檔坦承焦慮、拆半小時短班獲認領、旁人玩笑干擾、兩人錯開輪流逛攤、空白格追問候補起爭執、保留待認領午休再徵人等八種獨立轉折，原稿與AVG分頁正文100%逐字一致。",
+  "causal32": "已逐格獨立複核T3-055共32格因果相容性、方向、機制與權重，所有促進（4）、中性（2）、抑制（1）理由均具體對應教師已完成行動與R客觀後果。",
+  "timeAndLaw": "T3-2:before合法播放日為2027-12-06～2027-12-09四日共用池（12/10運動會、12/11高二第二次校慶前）；已逐日確認四日語意、排班白板情境、在場與教師權責皆成立，未寫明天即校慶或預支當天營收。",
+  "duplicates": "已比對同池T3-043～T3-066各篇，本篇聚焦「高一留守幫忙者高二想當客人逛外攤 vs 老搭檔用人情挽留包場機動班」，與T3-044不想再收銀、T3-047人人備援整天及T3-052提前接三人工作在場景物件、人物互動與八結局均具實質差異。",
+  "characterAudit": "已核對T3-055常駐槽位student_a（想只站一小時基本班並去逛攤的去年留守學生）與student_b（拿去年默契與人情拜託對方續撐機動班的排班同學）均為現任本班學生，於開場及R1～R8皆有實際對白與非零四碼結算；其餘填表同學僅作現場背景，無非法新增永久角色。",
+  "npcDeltaAudit": "R1: student_a:4-3:+2; student_b:1-2:-1；R2: student_a:4-3:+1; student_a:11-3:+1; student_b:5-2:+1；R3: student_a:5-2:+2; student_b:5-2:+1; student_b:1-2:-1；R4: student_b:11-3:+2; student_a:4-3:+1；R5: student_a:4-3:-1; student_a:5-2:-1; student_b:11-3:+1；R6: student_a:4-3:+2; student_a:11-3:+1; student_b:4-3:+1；R7: student_b:1-2:+2; student_a:1-2:+1; student_a:11-3:-1；R8: student_a:4-3:+1; student_b:1-2:-1; student_b:11-3:+1",
+  "npcWarningReviews": [],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "請排班同學先向全班公開徵求短班志願者",
+        "action": "已請student_b先把機動班拆段向全班公開徵求志願者，不在未徵人前直接鎖定student_a。",
+        "tradeoff": "能擴大認領來源，但需要等待其他同學回應。",
+        "text": "請排班同學先向全班公開徵求短班志願者"
+      },
+      {
+        "id": 2,
+        "short": "請想逛攤的學生先寫下希望保留的自由時段",
+        "action": "已請student_a在排班表旁註明今年想保留去逛外班與社團的時段，不預先替他排入機動待命。",
+        "tradeoff": "能讓本人自主時段具體可見，但空出的機動班仍待他人填補。",
+        "text": "請想逛攤的學生先寫下希望保留的自由時段"
+      },
+      {
+        "id": 3,
+        "short": "確認基本班段已完成並請雙方先列交接重點",
+        "action": "已確認student_a填妥的一小時基本班符合班級規定，並請他只列出去年機動支援的注意事項供後人參考，不把交接經驗當成續任全場。",
+        "tradeoff": "能把經驗留給班級並守住當事人界線，但仍需時間等待其他同學認領空班。",
+        "text": "確認基本班段已完成並請雙方先列交接重點"
+      },
+      {
+        "id": 4,
+        "short": "提醒排班同學區分過去感謝與今年排班同意",
+        "action": "已私下提醒student_b肯定去年幫忙不等於今年已取得本人同意，須按今年意願重新詢問。",
+        "tradeoff": "能減少人情綁架話術，但排班者仍可能擔心臨時找不到替手。",
+        "text": "提醒排班同學區分過去感謝與今年排班同意"
+      },
+      {
+        "id": 5,
+        "short": "在白板標明去年支援不自動延續為今年班段",
+        "action": "已在排班白板旁註明今年各班段均重新依本人意願填寫，高一額外留守紀錄不自動延續為高二固定職務。",
+        "tradeoff": "能建立清楚的退出自由原則，但原本依賴熟手的排班同學短期內會感到找人壓力。",
+        "text": "在白板標明去年支援不自動延續為今年班段"
+      },
+      {
+        "id": 6,
+        "short": "與兩位學生一起對照白板尚未認領的空段時數",
+        "action": "已和student_a、student_b一起在白板圈出真正還缺人的兩個半小時空段，確認問題是特定時段待補而非需要一人包辦全天。",
+        "tradeoff": "能把模糊的人情挽留收斂成具體缺額，但當下尚未確定哪幾位同學願意接手。",
+        "text": "與兩位學生一起對照白板尚未認領的空段時數"
+      }
+    ],
+    "selectedIds": [
+      6,
+      3,
+      5
+    ],
+    "finalChoiceMap": {
+      "A": "emotional",
+      "B": 3,
+      "C": 5,
+      "D": 6
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師肯定student_a去年的貢獻並接住雙方感受，雖緩解了現場人情拉扯，但未直接規定白板拆分方式；student_a仍可自主只簽一小時基本班並由student_b改找他人。",
+      "actionPreserved": "導師已完成「當面肯定去年留守貢獻並接住想逛攤心願與缺人焦慮、不代排班表」的行動，在R1中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師接住兩人的情緒與心願後，未直接要求撰寫交接重點，但student_a基於善意主動整理十分鐘叫號找零備忘給老搭檔去徵人，與導師行動自然相容。",
+      "actionPreserved": "導師已完成「當面肯定去年留守貢獻並接住想逛攤心願與缺人焦慮、不代排班表」的行動，在R2中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "可共存",
+      "causalDirection": "促進",
+      "reason": "導師同時同理student_a想逛攤的心願與student_b怕缺人的焦慮，降低了雙方的防衛心，直接促成student_b卸下心防坦承是怕臨時沒人救才拿人情施壓。",
+      "actionPreserved": "導師已完成「當面肯定去年留守貢獻並接住想逛攤心願與缺人焦慮、不代排班表」的行動，在R3中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師先安撫雙方情緒而未直接拆解時段，後續班上同學自行發現拆成半小時即可輪流頂班並主動認領，屬於同儕自主反應，與導師行動可共存。",
+      "actionPreserved": "導師已完成「當面肯定去年留守貢獻並接住想逛攤心願與缺人焦慮、不代排班表」的行動，在R4中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師雖在排班白板前接住兩人情緒，但未在白板公開標示不延續舊職，下課其他同學隨口喊「鎮攤之寶」仍可能讓student_a心裡有些放不開。",
+      "actionPreserved": "導師已完成「當面肯定去年留守貢獻並接住想逛攤心願與缺人焦慮、不代排班表」的行動，在R5中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "可共存",
+      "causalDirection": "促進",
+      "reason": "導師肯定去年兩人的付出並支持今年體驗當客人的心願，直接促成student_a與student_b把焦點轉向「去年都沒逛到、今年一起錯開班段輪流去逛」。",
+      "actionPreserved": "導師已完成「當面肯定去年留守貢獻並接住想逛攤心願與缺人焦慮、不代排班表」的行動，在R6中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師接住雙方感受但未當場解決空班缺口，當白板還空兩格時，student_b仍可能因焦慮回頭追問能否把student_a列為候補而引發口角。",
+      "actionPreserved": "導師已完成「當面肯定去年留守貢獻並接住想逛攤心願與缺人焦慮、不代排班表」的行動，在R7中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師同理雙方且不代排班表，兩人隨後平靜決定先簽妥一小時基本班、剩餘兩格標待認領等午休再問，與導師行動完全相容。",
+      "actionPreserved": "導師已完成「當面肯定去年留守貢獻並接住想逛攤心願與缺人焦慮、不代排班表」的行動，在R8中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師確認一小時基本班符合規定並請雙方列交接重點，student_a據此只簽十點基本班、student_b同意把後段改拆三格找人，過程自然相容。",
+      "actionPreserved": "導師已完成「確認基本班符合規定並請列交接注意事項、不把交接當續任全場」的行動，在R1中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "可共存",
+      "causalDirection": "促進",
+      "reason": "導師明確區分「交接去年經驗」與「今年續站全場」並請雙方列注意事項，直接促成student_a寫出十分鐘叫號找零備忘交給student_b去徵求新機動。",
+      "actionPreserved": "導師已完成「確認基本班符合規定並請列交接注意事項、不把交接當續任全場」的行動，在R2中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師將討論聚焦於基本班確認與交接重點，未直接探問人情施壓動機，但student_b在釐清交接後仍可能主動坦承剛才是怕缺人才拿去年情誼壓人。",
+      "actionPreserved": "導師已完成「確認基本班符合規定並請列交接注意事項、不把交接當續任全場」的行動，在R3中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "可共存",
+      "causalDirection": "促進",
+      "reason": "導師請student_a列出具體交接事項，降低了新接手同學對機動班的陌生門檻，直接促使旁邊同學願意合拆中午半小時短班認領。",
+      "actionPreserved": "導師已完成「確認基本班符合規定並請列交接注意事項、不把交接當續任全場」的行動，在R4中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師確認基本班與交接事項後，未針對班上外圍同學的玩笑話做公開標示，下課旁人隨口喊「鎮攤之寶」仍可能讓student_a有些介意。",
+      "actionPreserved": "導師已完成「確認基本班符合規定並請列交接注意事項、不把交接當續任全場」的行動，在R5中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師確認基本班已完成並釐清交接界線後，兩人進一步協調錯開各自的一小時班段輪流去逛外班，屬於學生自主延伸安排。",
+      "actionPreserved": "導師已完成「確認基本班符合規定並請列交接注意事項、不把交接當續任全場」的行動，在R6中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 1,
+      "compatibility": "可共存",
+      "causalDirection": "抑制",
+      "reason": "導師已明確確認student_a的一小時基本班並將他的協助限定在「列交接注意事項而非續任」，有效抑制了student_b再要求他排全天候補的藉口，僅在空班遲未補齊時偶爾復發。",
+      "actionPreserved": "導師已完成「確認基本班符合規定並請列交接注意事項、不把交接當續任全場」的行動，在R7中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師確認基本班符合規定後，雙方將還沒人接的兩格機動標為待認領、等午休再問社團撞期的人，與導師處置自然銜接。",
+      "actionPreserved": "導師已完成「確認基本班符合規定並請列交接注意事項、不把交接當續任全場」的行動，在R8中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "可共存",
+      "causalDirection": "促進",
+      "reason": "導師在白板旁標明高一留守紀錄不自動延續為高二職務，直接賦予student_a正當依據只簽一小時基本班，並促使student_b停止挽留改拆三格找人。",
+      "actionPreserved": "導師已完成「在排班白板旁註明今年重新依意願填寫、去年留守不自動延續」的行動，在R1中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師在白板標明不自動延續舊職後，未強制要求交接，但student_a在界線受保障後自願寫十分鐘備忘協助老搭檔招人，與導師行動相容。",
+      "actionPreserved": "導師已完成「在排班白板旁註明今年重新依意願填寫、去年留守不自動延續」的行動，在R2中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師於白板標明規則界線，雖偏重制度宣告而非情緒引導，但student_b看到規則後仍可能私下向student_a承認剛才是怕缺人才拿去年情誼施壓。",
+      "actionPreserved": "導師已完成「在排班白板旁註明今年重新依意願填寫、去年留守不自動延續」的行動，在R3中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師標明去年留守不自動延續後，班上同學明白不能再靠同一人包場，進而在拆成半小時短班後主動認領，與導師行動可共存。",
+      "actionPreserved": "導師已完成「在排班白板旁註明今年重新依意願填寫、去年留守不自動延續」的行動，在R4中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 1,
+      "compatibility": "可共存",
+      "causalDirection": "抑制",
+      "reason": "導師已在白板公開註明高一額外留守不自動延續為今年職務，讓全班看見排班規則，明顯抑制了同儕繼續拿「去年有留今年也要留」開玩笑的風氣，僅剩零星隨口調侃。",
+      "actionPreserved": "導師已完成「在排班白板旁註明今年重新依意願填寫、去年留守不自動延續」的行動，在R5中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師標明今年班段重新依意願填寫後，student_a與student_b各自按意願填一小時並約定錯開逛攤，與白板規則完全相容。",
+      "actionPreserved": "導師已完成「在排班白板旁註明今年重新依意願填寫、去年留守不自動延續」的行動，在R6中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師在白板標明不自動延續舊職，讓原本依賴熟手的student_b頓時面臨找人壓力，面對兩格空白時仍可能焦急追問student_a能否當候補而起爭執。",
+      "actionPreserved": "導師已完成「在排班白板旁註明今年重新依意願填寫、去年留守不自動延續」的行動，在R7中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "可共存",
+      "causalDirection": "促進",
+      "reason": "導師在白板明訂今年依本人意願重填、不自動延續舊職，直接支持student_a只簽妥基本班並由student_b將剩餘兩格標為待認領、午休再向全班徵人。",
+      "actionPreserved": "導師已完成「在排班白板旁註明今年重新依意願填寫、去年留守不自動延續」的行動，在R8中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師與兩人一起圈出真正還缺人的時段後，student_a簽下十點基本班、student_b把後段改拆三格待認領，與盤點結果相容。",
+      "actionPreserved": "導師已完成「與兩位學生對照白板圈出實際待補空段時數、確認非需一人包辦全天」的行動，在R1中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師帶兩人對照實際空段時數後，student_a額外整理十分鐘交接備忘幫助student_b去填補空段，與導師盤點時段的行動自然相容。",
+      "actionPreserved": "導師已完成「與兩位學生對照白板圈出實際待補空段時數、確認非需一人包辦全天」的行動，在R2中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師帶兩人看清實際只缺兩個半小時空段而非全天無著落，減輕了student_b的恐慌，使他隨後願意承認剛才是怕缺人才拿人情施壓。",
+      "actionPreserved": "導師已完成「與兩位學生對照白板圈出實際待補空段時數、確認非需一人包辦全天」的行動，在R3中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "可共存",
+      "causalDirection": "促進",
+      "reason": "導師與兩人直接在白板圈出真正還缺的半小時空段，讓缺額從模糊的「撐全場」變成具體短格，直接促成旁邊兩名同學上前認領中午半小時。",
+      "actionPreserved": "導師已完成「與兩位學生對照白板圈出實際待補空段時數、確認非需一人包辦全天」的行動，在R4中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "可共存",
+      "causalDirection": "中性",
+      "reason": "導師雖與兩位當事人盤點完白板空段，但未對全班做額外說明，下課其他同學隨口喊「鎮攤之寶」仍可能讓student_a有些放不開。",
+      "actionPreserved": "導師已完成「與兩位學生對照白板圈出實際待補空段時數、確認非需一人包辦全天」的行動，在R5中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "可共存",
+      "causalDirection": "促進",
+      "reason": "導師帶兩人對照白板上的具體時段格，讓雙方清楚看見各自的值班與空檔位置，直接促成兩人排出錯開的一小時班段並約定輪流去逛外班。",
+      "actionPreserved": "導師已完成「與兩位學生對照白板圈出實際待補空段時數、確認非需一人包辦全天」的行動，在R6中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 1,
+      "compatibility": "可共存",
+      "causalDirection": "抑制",
+      "reason": "導師已帶兩人確認問題只是兩個半小時空段待補而非需要一人全天待命，大幅削弱了student_b要求對方當全天候補的理由，僅在久未補滿時微幅發生。",
+      "actionPreserved": "導師已完成「與兩位學生對照白板圈出實際待補空段時數、確認非需一人包辦全天」的行動，在R7中完全保留且未被撤銷。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "可共存",
+      "causalDirection": "促進",
+      "reason": "導師已在白板圈出真正待補的兩個空段，直接促成student_a先簽好基本班、student_b將這兩格標為待認領並留待午休向尚未排班者徵求。",
+      "actionPreserved": "導師已完成「與兩位學生對照白板圈出實際待補空段時數、確認非需一人包辦全天」的行動，在R8中完全保留且未被撤銷。"
+    }
+  ],
+  "sharedPoolDateReview": [
+    {
+      "date": "2027-12-06",
+      "eligible": true,
+      "reason": "12/06（週一）為高二校慶擺攤活動前共用池首日；教室排班白板討論、四選項與八結局均無特定單日限定詞，完全可演。"
+    },
+    {
+      "date": "2027-12-07",
+      "eligible": true,
+      "reason": "12/07（週二）為高二校慶擺攤活動前共用池第二日；排班協商與機動班拆分在活動前任一上課日均自然成立。"
+    },
+    {
+      "date": "2027-12-08",
+      "eligible": true,
+      "reason": "12/08（週三，配額歸屬日）為高二校慶擺攤活動前共用池第三日；未綁定倒數天數，完全符合校曆與知情限制。"
+    },
+    {
+      "date": "2027-12-09",
+      "eligible": true,
+      "reason": "12/09（週四）為高二校慶擺攤活動前共用池第四日；內文未出現明天即校慶或運動會已結束等限定語，四日皆可通用。"
+    }
+  ],
+  "avgParity": "exact-100-percent",
+  "selectionSeed": 4242410500,
+  "sourceBlobSha": "13bb01c0f98058b4cf378b3d644e0a681a3afc3b",
+  "resultAudit": [
+    {
+      "id": "R1",
+      "title": "只簽基本一小時並退回全天機動",
+      "chars": 122,
+      "delta": "student_a:4-3:+2; student_b:1-2:-1",
+      "stats": [
+        -1,
+        1,
+        -2,
+        1
+      ]
+    },
+    {
+      "id": "R2",
+      "title": "留下十分鐘交接便條後安心去逛",
+      "chars": 118,
+      "delta": "student_a:4-3:+1; student_a:11-3:+1; student_b:5-2:+1",
+      "stats": [
+        1,
+        1,
+        -2,
+        -2
+      ]
+    },
+    {
+      "id": "R3",
+      "title": "老搭檔承認是怕缺人才拿人情施壓",
+      "chars": 119,
+      "delta": "student_a:5-2:+2; student_b:5-2:+1; student_b:1-2:-1",
+      "stats": [
+        1,
+        0,
+        -1,
+        0
+      ]
+    },
+    {
+      "id": "R4",
+      "title": "機動班拆成半小時後有人主動認領",
+      "chars": 128,
+      "delta": "student_b:11-3:+2; student_a:4-3:+1",
+      "stats": [
+        -1,
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "id": "R5",
+      "title": "旁人隨口喊鎮攤之寶讓他仍有些介意",
+      "chars": 122,
+      "delta": "student_a:4-3:-1; student_a:5-2:-1; student_b:11-3:+1",
+      "stats": [
+        0,
+        -1,
+        -1,
+        -2
+      ]
+    },
+    {
+      "id": "R6",
+      "title": "兩人約好錯開班段輪流去逛外班",
+      "chars": 123,
+      "delta": "student_a:4-3:+2; student_a:11-3:+1; student_b:4-3:+1",
+      "stats": [
+        -1,
+        -2,
+        2,
+        1
+      ]
+    },
+    {
+      "id": "R7",
+      "title": "空白格還沒補齊又被追問能否排候補",
+      "chars": 120,
+      "delta": "student_b:1-2:+2; student_a:1-2:+1; student_a:11-3:-1",
+      "stats": [
+        -2,
+        -2,
+        1,
+        -2
+      ]
+    },
+    {
+      "id": "R8",
+      "title": "保留兩格待認領等午休再向全班徵人",
+      "chars": 114,
+      "delta": "student_a:4-3:+1; student_b:1-2:-1; student_b:11-3:+1",
+      "stats": [
+        -1,
+        0,
+        0,
+        -1
+      ]
+    }
+  ]
+}

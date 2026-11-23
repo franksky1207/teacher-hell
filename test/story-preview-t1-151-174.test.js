@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdtempSync,rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {execFileSync} from 'node:child_process';
 import {join} from 'node:path';
 import {validateStoryDraft,seedCodesFromMarkdown,topicIdsFromMarkdown} from '../scripts/story-draft-validator.js';
 import {readTopicWindows} from '../scripts/story-windows.js';
@@ -152,4 +154,31 @@ test('T1-151–174: evidence matches 24 current drafts, 192 results and 768 weig
   assert.equal(keys.size,32,id+' full causal grid');
  }
  assert.equal(checked,768);
+});
+
+
+test('T1-151–174: all 24 manuscripts pass actual audit --evidence CLI',()=>{
+ const reviews=reviewFiles.flatMap(p=>JSON.parse(read(base+p)).stories);
+ const temp=mkdtempSync(join(tmpdir(),'teacher-hell-t1-151-174-audit-'));
+ try{
+  for(const id of ids){
+   const evidence=reviews.find(r=>r.storyId===id);
+   assert.ok(evidence,id+' evidence not found');
+   const file=join(temp,id+'.json');
+   writeFileSync(file,JSON.stringify(evidence),'utf8');
+   let output;
+   try{
+    output=execFileSync(process.execPath,['scripts/check-story-production.mjs','audit',id,'--evidence',file],
+     {cwd:process.cwd(),encoding:'utf8',maxBuffer:4*1024*1024});
+   }catch(error){
+    assert.fail(id+' audit CLI failed: '+String(error.stderr||error.stdout||error.message));
+   }
+   const report=JSON.parse(output);
+   assert.equal(report.reviewEvidenceChecked,true,id+' evidence was not checked');
+   assert.deepEqual(report.issues,[],id+' catalog issues');
+   assert.equal(report.reports.length,1,id+' result count');
+   assert.equal(report.reports[0].storyId,id,id+' actual audited ID');
+   assert.equal(report.reports[0].mechanicalPass,true,id+' mechanical audit failed: '+JSON.stringify(report.reports[0].errors));
+  }
+ }finally{rmSync(temp,{recursive:true,force:true});}
 });

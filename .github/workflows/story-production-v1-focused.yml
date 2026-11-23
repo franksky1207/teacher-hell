@@ -53,7 +53,16 @@ jobs:
           node-version-file: .nvmrc
       - run: |
           node --check story-reader/reader.js
-          node --test test/story-preview-catalog-playback.test.js test/story-draft-validator.test.js test/story-state-matrix.test.js test/story-reader-export.test.js test/story-reader-ui.test.js test/story-production-catalog.test.js test/story-preview-multipage.test.js test/story-preview-snapshot.test.js test/story-preview-cast-continuity.test.js test/story-preview-t1-006-010.test.js test/story-preview-t1-061-072.test.js test/story-preview-t1-073-084.test.js test/story-preview-t1-085-114.test.js test/story-preview-t1-115-126.test.js test/story-preview-t1-127-150.test.js test/story-preview-t1-151-174.test.js test/story-preview-t1-cross-day-pools.test.js test/story-preview-t2-001-030.test.js test/story-preview-t2-031-042.test.js test/story-preview-t3-001-030.test.js test/story-preview-picker.test.js
+          node --test test/story-preview-catalog-playback.test.js test/story-draft-validator.test.js test/story-state-matrix.test.js test/story-reader-export.test.js test/story-reader-ui.test.js test/story-production-catalog.test.js test/story-preview-multipage.test.js test/story-preview-snapshot.test.js test/story-preview-cast-continuity.test.js test/story-preview-t1-006-010.test.js test/story-preview-t1-061-072.test.js test/story-preview-t1-073-084.test.js test/story-preview-t1-085-114.test.js test/story-preview-t1-115-126.test.js test/story-preview-t1-127-150.test.js test/story-preview-t1-151-174.test.js test/story-preview-t1-cross-day-pools.test.js test/story-preview-t2-001-030.test.js test/story-preview-t2-031-042.test.js test/story-preview-t3-001-030.test.js test/story-preview-t3-043-066.test.js test/story-preview-picker.test.js
+      - name: Verify T3-043–066 pre-event formal evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          for n in $(seq 43 66); do
+            printf -v id "T3-%03d" "$n"
+            evidence="content/events-v1/T/T3-高二上/T3-2-高二校慶擺攤/活動前/驗收紀錄/evidence/${id}.json"
+            node scripts/check-story-production.mjs audit "$id" --evidence "$evidence"
+          done
       - name: Verify T3-001–030 pre-event formal evidence
         shell: bash
         run: |

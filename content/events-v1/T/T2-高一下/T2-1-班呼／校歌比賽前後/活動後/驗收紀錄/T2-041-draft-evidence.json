@@ -1,0 +1,381 @@
+{
+  "storyId": "T2-041",
+  "poolId": "T2-1:after",
+  "legalDates": [
+    "2027-04-12",
+    "2027-04-13"
+  ],
+  "seed": "S0431",
+  "choices": [
+    {
+      "choice": "A",
+      "source": 0,
+      "emotional": false,
+      "action": "已先詢問學生當下身體狀況並提供符合校內規範的休息與求助資訊"
+    },
+    {
+      "choice": "B",
+      "source": "emotional",
+      "emotional": true,
+      "action": "已透過適當聯絡方式回應家長的擔心，並尊重學生珍惜參與的感受"
+    },
+    {
+      "choice": "C",
+      "source": 2,
+      "emotional": false,
+      "action": "已先分別詢問家長與學生掌握的資訊，避免一方代言另一方"
+    },
+    {
+      "choice": "D",
+      "source": 3,
+      "emotional": false,
+      "action": "已說明先處理不適，責任問題依實際事實另循適當程序確認"
+    }
+  ],
+  "unselectedOrdinary": [
+    {
+      "source": 5,
+      "action": "已告知家長後續如何提供事實及取得合適協助"
+    },
+    {
+      "source": 4,
+      "action": "已核實家長身分與聯絡權限後整理可分享的練習資訊"
+    },
+    {
+      "source": 1,
+      "action": "已查核有權可得的本次練習紀錄，不憑印象否認負擔"
+    }
+  ],
+  "stateValues": [
+    [
+      -1,
+      2,
+      -1,
+      -1,
+      -1,
+      0,
+      -1,
+      -1
+    ],
+    [
+      -2,
+      1,
+      -2,
+      1,
+      0,
+      1,
+      -2,
+      -1
+    ],
+    [
+      -1,
+      0,
+      -1,
+      1,
+      -2,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      0,
+      -1,
+      -1,
+      -2,
+      -1,
+      2,
+      -2
+    ]
+  ],
+  "causal32": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已先詢問學生當下身體狀況並提供符合校內規範的休息與求助資訊，而「學生說出不舒服卻不想被代言」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已先詢問學生當下身體狀況並提供符合校內規範的休息與求助資訊，而「家長仍要求立即認定教師責任」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已先詢問學生當下身體狀況並提供符合校內規範的休息與求助資訊，而「學生拒絕再用嗓子證明努力」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已先詢問學生當下身體狀況並提供符合校內規範的休息與求助資訊，而「親子兩人的記憶出現落差」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已先詢問學生當下身體狀況並提供符合校內規範的休息與求助資訊，而「家長主動提供較完整的症狀描述」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已先詢問學生當下身體狀況並提供符合校內規範的休息與求助資訊，而「學生擔心以後被禁止參與」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已先詢問學生當下身體狀況並提供符合校內規範的休息與求助資訊，而「訊息傳遞造成額外誤會」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已先詢問學生當下身體狀況並提供符合校內規範的休息與求助資訊，而「照護與查核終於分成兩條線」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已透過適當聯絡方式回應家長的擔心，並尊重學生珍惜參與的感受，而「學生說出不舒服卻不想被代言」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已透過適當聯絡方式回應家長的擔心，並尊重學生珍惜參與的感受，而「家長仍要求立即認定教師責任」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已透過適當聯絡方式回應家長的擔心，並尊重學生珍惜參與的感受，而「學生拒絕再用嗓子證明努力」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已透過適當聯絡方式回應家長的擔心，並尊重學生珍惜參與的感受，而「親子兩人的記憶出現落差」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已透過適當聯絡方式回應家長的擔心，並尊重學生珍惜參與的感受，而「家長主動提供較完整的症狀描述」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已透過適當聯絡方式回應家長的擔心，並尊重學生珍惜參與的感受，而「學生擔心以後被禁止參與」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已透過適當聯絡方式回應家長的擔心，並尊重學生珍惜參與的感受，而「訊息傳遞造成額外誤會」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已透過適當聯絡方式回應家長的擔心，並尊重學生珍惜參與的感受，而「照護與查核終於分成兩條線」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已先分別詢問家長與學生掌握的資訊，避免一方代言另一方，而「學生說出不舒服卻不想被代言」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已先分別詢問家長與學生掌握的資訊，避免一方代言另一方，而「家長仍要求立即認定教師責任」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已先分別詢問家長與學生掌握的資訊，避免一方代言另一方，而「學生拒絕再用嗓子證明努力」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已先分別詢問家長與學生掌握的資訊，避免一方代言另一方，而「親子兩人的記憶出現落差」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已先分別詢問家長與學生掌握的資訊，避免一方代言另一方，而「家長主動提供較完整的症狀描述」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已先分別詢問家長與學生掌握的資訊，避免一方代言另一方，而「學生擔心以後被禁止參與」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已先分別詢問家長與學生掌握的資訊，避免一方代言另一方，而「訊息傳遞造成額外誤會」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已先分別詢問家長與學生掌握的資訊，避免一方代言另一方，而「照護與查核終於分成兩條線」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已說明先處理不適，責任問題依實際事實另循適當程序確認，而「學生說出不舒服卻不想被代言」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已說明先處理不適，責任問題依實際事實另循適當程序確認，而「家長仍要求立即認定教師責任」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已說明先處理不適，責任問題依實際事實另循適當程序確認，而「學生拒絕再用嗓子證明努力」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已說明先處理不適，責任問題依實際事實另循適當程序確認，而「親子兩人的記憶出現落差」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已說明先處理不適，責任問題依實際事實另循適當程序確認，而「家長主動提供較完整的症狀描述」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已說明先處理不適，責任問題依實際事實另循適當程序確認，而「學生擔心以後被禁止參與」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已說明先處理不適，責任問題依實際事實另循適當程序確認，而「訊息傳遞造成額外誤會」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已說明先處理不適，責任問題依實際事實另循適當程序確認，而「照護與查核終於分成兩條線」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    }
+  ]
+}

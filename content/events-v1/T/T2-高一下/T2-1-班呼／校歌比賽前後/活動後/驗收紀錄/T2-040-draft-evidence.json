@@ -1,0 +1,381 @@
+{
+  "storyId": "T2-040",
+  "poolId": "T2-1:after",
+  "legalDates": [
+    "2027-04-12",
+    "2027-04-13"
+  ],
+  "seed": "S0430",
+  "choices": [
+    {
+      "choice": "A",
+      "source": 3,
+      "emotional": false,
+      "action": "已邀請學生為每條做法加入可能例外"
+    },
+    {
+      "choice": "B",
+      "source": "emotional",
+      "emotional": true,
+      "action": "已肯定學生整理流程的投入，同時沒有替未來每次活動保證一套做法"
+    },
+    {
+      "choice": "C",
+      "source": 5,
+      "emotional": false,
+      "action": "已請學生澄清只是留紀錄，還是要求對未來全體具拘束力"
+    },
+    {
+      "choice": "D",
+      "source": 1,
+      "emotional": false,
+      "action": "已請學生標註本次比賽特有的隊形、場地與時段限制"
+    }
+  ],
+  "unselectedOrdinary": [
+    {
+      "source": 4,
+      "action": "已提供不記名或具名的自願回饋管道"
+    },
+    {
+      "source": 0,
+      "action": "已告知這份文件是供下一次評估的經驗，不是立即生效的班規"
+    },
+    {
+      "source": 2,
+      "action": "已說明未來涉及學生時間及職權者須再確認合法安排"
+    }
+  ],
+  "stateValues": [
+    [
+      -2,
+      1,
+      0,
+      0,
+      -1,
+      -1,
+      1,
+      -2
+    ],
+    [
+      -1,
+      -1,
+      0,
+      -2,
+      -2,
+      1,
+      -1,
+      2
+    ],
+    [
+      -1,
+      -2,
+      -2,
+      -2,
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      2,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      -1,
+      -1
+    ]
+  ],
+  "causal32": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已邀請學生為每條做法加入可能例外，而「守則裡出現第一個例外」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已邀請學生為每條做法加入可能例外，而「學生認為不固定就會亂」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已邀請學生為每條做法加入可能例外，而「沒被詢問的學生提出限制」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已邀請學生為每條做法加入可能例外，而「一條有效做法被保留下來」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已邀請學生為每條做法加入可能例外，而「守則被誤貼成正式班規」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已邀請學生為每條做法加入可能例外，而「有人提出完全不同的活動需求」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已邀請學生為每條做法加入可能例外，而「學生願意替建議加上版本日期」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已邀請學生為每條做法加入可能例外，而「文件留下討論空白」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已肯定學生整理流程的投入，同時沒有替未來每次活動保證一套做法，而「守則裡出現第一個例外」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已肯定學生整理流程的投入，同時沒有替未來每次活動保證一套做法，而「學生認為不固定就會亂」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已肯定學生整理流程的投入，同時沒有替未來每次活動保證一套做法，而「沒被詢問的學生提出限制」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已肯定學生整理流程的投入，同時沒有替未來每次活動保證一套做法，而「一條有效做法被保留下來」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已肯定學生整理流程的投入，同時沒有替未來每次活動保證一套做法，而「守則被誤貼成正式班規」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已肯定學生整理流程的投入，同時沒有替未來每次活動保證一套做法，而「有人提出完全不同的活動需求」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已肯定學生整理流程的投入，同時沒有替未來每次活動保證一套做法，而「學生願意替建議加上版本日期」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已肯定學生整理流程的投入，同時沒有替未來每次活動保證一套做法，而「文件留下討論空白」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請學生澄清只是留紀錄，還是要求對未來全體具拘束力，而「守則裡出現第一個例外」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請學生澄清只是留紀錄，還是要求對未來全體具拘束力，而「學生認為不固定就會亂」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請學生澄清只是留紀錄，還是要求對未來全體具拘束力，而「沒被詢問的學生提出限制」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請學生澄清只是留紀錄，還是要求對未來全體具拘束力，而「一條有效做法被保留下來」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已請學生澄清只是留紀錄，還是要求對未來全體具拘束力，而「守則被誤貼成正式班規」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請學生澄清只是留紀錄，還是要求對未來全體具拘束力，而「有人提出完全不同的活動需求」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請學生澄清只是留紀錄，還是要求對未來全體具拘束力，而「學生願意替建議加上版本日期」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已請學生澄清只是留紀錄，還是要求對未來全體具拘束力，而「文件留下討論空白」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請學生標註本次比賽特有的隊形、場地與時段限制，而「守則裡出現第一個例外」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已請學生標註本次比賽特有的隊形、場地與時段限制，而「學生認為不固定就會亂」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請學生標註本次比賽特有的隊形、場地與時段限制，而「沒被詢問的學生提出限制」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請學生標註本次比賽特有的隊形、場地與時段限制，而「一條有效做法被保留下來」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請學生標註本次比賽特有的隊形、場地與時段限制，而「守則被誤貼成正式班規」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請學生標註本次比賽特有的隊形、場地與時段限制，而「有人提出完全不同的活動需求」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已請學生標註本次比賽特有的隊形、場地與時段限制，而「學生願意替建議加上版本日期」仍取決於本篇當事人面對比賽經驗的自主反應。當下資訊與溝通界線更清楚，使此類結果較易出現。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請學生標註本次比賽特有的隊形、場地與時段限制，而「文件留下討論空白」仍取決於本篇當事人面對比賽經驗的自主反應。既定處置不會阻止此結果發生。",
+      "actionPreserved": true,
+      "weight": 2
+    }
+  ]
+}

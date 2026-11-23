@@ -1,0 +1,381 @@
+{
+  "id": "T2-033",
+  "seed": "S0405",
+  "pool": "T2-1:after",
+  "dates": [
+    "2027-04-12",
+    "2027-04-13"
+  ],
+  "selectedChoices": [
+    {
+      "choice": "A",
+      "source": "emotion",
+      "emotional": true,
+      "action": "已承認作者想留下回憶、被拍者不想再次曝光的心情，未代任何人同意播放"
+    },
+    {
+      "choice": "B",
+      "source": 0,
+      "emotional": false,
+      "action": "已明確暫停未獲被攝者同意的公開播放"
+    },
+    {
+      "choice": "C",
+      "source": 2,
+      "emotional": false,
+      "action": "已區分私人留存、班內播放及對外公開三種用途"
+    },
+    {
+      "choice": "D",
+      "source": 1,
+      "emotional": false,
+      "action": "已請剪輯學生重新列出可保留的其他班級畫面"
+    }
+  ],
+  "unselectedOrdinary": [
+    {
+      "source": 4,
+      "action": "已請保管影片者確認被攝者及影片使用權限"
+    },
+    {
+      "source": 5,
+      "action": "已提出由各人自願提交可被分享的段落"
+    },
+    {
+      "source": 3,
+      "action": "已先讓被拍學生在沒有旁人圍觀時表達是否允許使用"
+    }
+  ],
+  "states": {
+    "精神": [
+      -1,
+      2,
+      -1,
+      -1,
+      -1,
+      0,
+      -1,
+      -1
+    ],
+    "熱忱": [
+      0,
+      -1,
+      1,
+      -1,
+      2,
+      -2,
+      -1,
+      -2
+    ],
+    "情緒": [
+      1,
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      -2
+    ],
+    "掌控": [
+      0,
+      1,
+      -2,
+      -1,
+      -2,
+      1,
+      1,
+      -2
+    ]
+  },
+  "causal32": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已承認作者想留下回憶、被拍者不想再次曝光的心情，未代任何人同意播放，而「鏡頭移開後，笑容才回來」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已承認作者想留下回憶、被拍者不想再次曝光的心情，未代任何人同意播放，使當事人更有條件面對「剪輯者覺得作品被否定」所需的資料或情緒，仍由本人自行選擇後續反應。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已承認作者想留下回憶、被拍者不想再次曝光的心情，未代任何人同意播放，而「被拍者提出更精確的界線」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已承認作者想留下回憶、被拍者不想再次曝光的心情，未代任何人同意播放，而「有人已經把特寫傳到群組」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已承認作者想留下回憶、被拍者不想再次曝光的心情，未代任何人同意播放，使當事人更有條件面對「笑聲被誤認為大家都同意」所需的資料或情緒，仍由本人自行選擇後續反應。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已承認作者想留下回憶、被拍者不想再次曝光的心情，未代任何人同意播放，而「共同回憶改用文字整理」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已承認作者想留下回憶、被拍者不想再次曝光的心情，未代任何人同意播放，而「原檔留下，但公開版本縮小」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已承認作者想留下回憶、被拍者不想再次曝光的心情，未代任何人同意播放，而「兩人暫時沒有達成共識」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已明確暫停未獲被攝者同意的公開播放，而「鏡頭移開後，笑容才回來」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已明確暫停未獲被攝者同意的公開播放，而「剪輯者覺得作品被否定」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已明確暫停未獲被攝者同意的公開播放，而「被拍者提出更精確的界線」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已明確暫停未獲被攝者同意的公開播放，使當事人更有條件面對「有人已經把特寫傳到群組」所需的資料或情緒，仍由本人自行選擇後續反應。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已明確暫停未獲被攝者同意的公開播放，而「笑聲被誤認為大家都同意」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已明確暫停未獲被攝者同意的公開播放，而「共同回憶改用文字整理」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已明確暫停未獲被攝者同意的公開播放，使當事人更有條件面對「原檔留下，但公開版本縮小」所需的資料或情緒，仍由本人自行選擇後續反應。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已明確暫停未獲被攝者同意的公開播放，而「兩人暫時沒有達成共識」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已區分私人留存、班內播放及對外公開三種用途，使當事人更有條件面對「鏡頭移開後，笑容才回來」所需的資料或情緒，仍由本人自行選擇後續反應。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已區分私人留存、班內播放及對外公開三種用途，而「剪輯者覺得作品被否定」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已區分私人留存、班內播放及對外公開三種用途，而「被拍者提出更精確的界線」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已區分私人留存、班內播放及對外公開三種用途，而「有人已經把特寫傳到群組」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已區分私人留存、班內播放及對外公開三種用途，而「笑聲被誤認為大家都同意」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已區分私人留存、班內播放及對外公開三種用途，使當事人更有條件面對「共同回憶改用文字整理」所需的資料或情緒，仍由本人自行選擇後續反應。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已區分私人留存、班內播放及對外公開三種用途，而「原檔留下，但公開版本縮小」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已區分私人留存、班內播放及對外公開三種用途，而「兩人暫時沒有達成共識」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請剪輯學生重新列出可保留的其他班級畫面，而「鏡頭移開後，笑容才回來」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請剪輯學生重新列出可保留的其他班級畫面，而「剪輯者覺得作品被否定」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已請剪輯學生重新列出可保留的其他班級畫面，使當事人更有條件面對「被拍者提出更精確的界線」所需的資料或情緒，仍由本人自行選擇後續反應。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請剪輯學生重新列出可保留的其他班級畫面，而「有人已經把特寫傳到群組」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請剪輯學生重新列出可保留的其他班級畫面，而「笑聲被誤認為大家都同意」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請剪輯學生重新列出可保留的其他班級畫面，而「共同回憶改用文字整理」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "compatibility": "compatible",
+      "causalDirection": "neutral",
+      "reason": "教師已已請剪輯學生重新列出可保留的其他班級畫面，而「原檔留下，但公開版本縮小」由當事人依比賽後實際經驗自行回應，不需取消既有行動；發生仍合理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "compatibility": "compatible",
+      "causalDirection": "promotes",
+      "reason": "教師已已請剪輯學生重新列出可保留的其他班級畫面，使當事人更有條件面對「兩人暫時沒有達成共識」所需的資料或情緒，仍由本人自行選擇後續反應。",
+      "actionPreserved": true,
+      "weight": 4
+    }
+  ]
+}

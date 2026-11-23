@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-006 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 2-4（愉悅）、8-1（專業肯定度）、9-1（規範接受度）、12-1（程序變更要求度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 B 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [B,E,C,D] 組別合法配置並與各結局對教師之影響相符。【2026-11-23 文字修訂後複核】本篇八個結果新增現場具體互動後，逐 R 重新閱讀；新增對話與行動皆仍屬賽前準備，不預設正式賽果，人物未越權。R 字數：R1=160、R2=151、R3=149、R4=149、R5=151、R6=145、R7=149、R8=162。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。【文字修訂後複核】新增加的學生提問、試排或反應已反向對照 A～D 四種既成教師行動與 32 格相容性：不撤銷選項行動、不憑空創造正式規則，原矩陣權重與四狀態、NPC 增減保持不變。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 2-4（愉悅）、8-1（專業肯定度）、9-1（規範接受度）、12-1（程序變更要求度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-006 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "詢問是否願意讓工作紀錄公開",
+        "action": "已詢問班呼與校歌各組是否願意公開工作紀錄，未強制公開個人貢獻細節",
+        "tradeoff": "尊重學生公開意願，但部分幕後同學仍可能因低調而未被看見"
+      },
+      {
+        "id": 2,
+        "short": "提醒同學不把領呼者當成唯一功勞",
+        "action": "已在班上提醒不可把整場準備說成領呼者一人的功勞，要求停止過度誇大單人貼圖",
+        "tradeoff": "直接替幕後同學發聲，但領呼者可能一時感到被公開潑冷水"
+      },
+      {
+        "id": 3,
+        "short": "在成果紀錄中分別註明班呼與校歌分工",
+        "action": "已在排練成果紀錄中分別註明班呼與校歌的各類分工項目，不設人氣排名",
+        "tradeoff": "留下具體協作證據，但對早已流傳的群組稱讚風向未必能立刻扭轉"
+      },
+      {
+        "id": 4,
+        "short": "請領呼者自己說明平時靠哪些同學配合",
+        "action": "已私下詢問領呼者是否願意向同學說明平時後排與校歌組的配合細節",
+        "tradeoff": "由當事人主動肯定同伴最有說服力，但可能讓他感到必須公開表態的壓力"
+      },
+      {
+        "id": 5,
+        "short": "補拍一張包含全班與後方指揮的排練照",
+        "action": "已建議下次排練時留下一張能拍到後排與指揮的完整工作畫面",
+        "tradeoff": "補足視覺紀錄盲點，但無法立刻處理現有照片引起的誤會"
+      },
+      {
+        "id": 6,
+        "short": "請大家改用具體協作事項感謝同學",
+        "action": "已引導學生在班群感謝時寫出具體幫忙的項目，而非只貼單人表情貼圖",
+        "tradeoff": "建立健康的感謝文化，但需要同學主動配合改變說話習慣"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": "emotional",
+      "C": 2,
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "B",
+    "E",
+    "C",
+    "D"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "詢問是否願意公開工作紀錄，有助大家談分工，但領呼者私下壓力未必馬上說出，屬自然可達。",
+      "actionPreserved": "保留「詢問是否願意讓工作紀錄公開」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "討論工作紀錄公開範圍時，校歌組最容易把時間表攤開列出後方接手工作，顯著促進。",
+      "actionPreserved": "保留「詢問是否願意讓工作紀錄公開」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論紀錄公開時，幕後同學有機會說出自己不想爭人氣只求分工公平，屬自然可達。",
+      "actionPreserved": "保留「詢問是否願意讓工作紀錄公開」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "問是否公開紀錄偏程序確認，對領呼者坦白『貼圖讓他壓力很大』較無直接觸動，屬抑制。",
+      "actionPreserved": "保留「詢問是否願意讓工作紀錄公開」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "公開工作紀錄的討論能帶出校歌組看拍工作的說明，屬自然可達。",
+      "actionPreserved": "保留「詢問是否願意讓工作紀錄公開」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "在確認公開紀錄原則時，全班顯著傾向否決公開排名而改寫具體協作。",
+      "actionPreserved": "保留「詢問是否願意讓工作紀錄公開」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "檢查要公開的資料時，容易順帶發現現有照片只拍到前排，屬自然可達。",
+      "actionPreserved": "保留「詢問是否願意讓工作紀錄公開」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "公開紀錄的討論最終有助整合兩段工作證據，屬自然可達。",
+      "actionPreserved": "保留「詢問是否願意讓工作紀錄公開」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師同時理解領呼者壓力與幕後失落，顯著促進領呼者主動說出『也覺得這樣不對』。",
+      "actionPreserved": "保留「被稱讚很開心，沒被看見的付出也會難過。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒被接納後，校歌組較心平氣和地攤開時間表說明後方工作，屬自然可達。",
+      "actionPreserved": "保留「被稱讚很開心，沒被看見的付出也會難過。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "降低對立情緒後，幕後同學比較願意說出真正在意的是負擔而非爭人氣，屬自然可達。",
+      "actionPreserved": "保留「被稱讚很開心，沒被看見的付出也會難過。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師接住兩邊感受，顯著促進領呼者卸下防備坦白『貼圖讓我壓力很大』。",
+      "actionPreserved": "保留「被稱讚很開心，沒被看見的付出也會難過。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "氣氛緩和後，同學也較願意聽校歌組說明看拍的工作，屬自然可達。",
+      "actionPreserved": "保留「被稱讚很開心，沒被看見的付出也會難過。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師不作人氣評斷的態度，有助大家同意稱讚不該公開排名，屬自然可達。",
+      "actionPreserved": "保留「被稱讚很開心，沒被看見的付出也會難過。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "談及感受時，攝影者也較能平實解釋當時只拍前面的初衷，屬自然可達。",
+      "actionPreserved": "保留「被稱讚很開心，沒被看見的付出也會難過。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定雙方付出後，全班更易回到同一班共同完成表演的共識，屬自然可達。",
+      "actionPreserved": "保留「被稱讚很開心，沒被看見的付出也會難過。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師提醒不可把功勞全歸一人後，領呼者雖可能有一瞬尷尬，仍會主動附和自己靠後排提示，屬自然可達。",
+      "actionPreserved": "保留「提醒同學不把領呼者當成唯一功勞」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "糾正單人功勞說法後，校歌組更敢攤開時間表呈現幕後工作，屬自然可達。",
+      "actionPreserved": "保留「提醒同學不把領呼者當成唯一功勞」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師點出問題後，幕後同學能借機釐清自己不是在爭人氣，屬自然可達。",
+      "actionPreserved": "保留「提醒同學不把領呼者當成唯一功勞」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "公開提醒別只歸功一人，會讓同學撤回誇張貼圖並緩解領呼者被捧過頭的壓力，屬自然可達。",
+      "actionPreserved": "保留「提醒同學不把領呼者當成唯一功勞」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "要求停止誇大單人功勞後，同學更留意校歌組看拍的努力，屬自然可達。",
+      "actionPreserved": "保留「提醒同學不把領呼者當成唯一功勞」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師明確反對單人造神，顯著促進班上拒絕『前三名表演者』的公開排名提議。",
+      "actionPreserved": "保留「提醒同學不把領呼者當成唯一功勞」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "檢討只看領呼者的偏差時，照片只拍前排的盲點自然會被提出，屬自然可達。",
+      "actionPreserved": "保留「提醒同學不把領呼者當成唯一功勞」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師直接打破單人功勞迷思，顯著促進全班回到同一班團隊合作的紀錄。",
+      "actionPreserved": "保留「提醒同學不把領呼者當成唯一功勞」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "直接按項目整理分工表，比較偏行政紀錄，對領呼者主動向大家表態較無直接觸動，屬抑制。",
+      "actionPreserved": "保留「在成果紀錄中分別註明班呼與校歌分工」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師在紀錄中分別註明班呼與校歌分工，顯著促進校歌組把時間表與後方工作補齊。",
+      "actionPreserved": "保留「在成果紀錄中分別註明班呼與校歌分工」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "用具體分工表取代口頭吹捧，顯著促進幕後同學把擔心轉成具體工作交接。",
+      "actionPreserved": "保留「在成果紀錄中分別註明班呼與校歌分工」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "分工表上清楚列出多人名字，能替領呼者分擔『全靠他』的壓力，屬自然可達。",
+      "actionPreserved": "保留「在成果紀錄中分別註明班呼與校歌分工」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "在整理校歌分工項目時，顯著促進同學發現校歌起唱觀察拍點的重要性。",
+      "actionPreserved": "保留「在成果紀錄中分別註明班呼與校歌分工」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "既然已有分工表紀錄各項工作，就更不需要公開排名，屬自然可達。",
+      "actionPreserved": "保留「在成果紀錄中分別註明班呼與校歌分工」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "核對分工表與現有照片時，顯著促進發現照片只拍到前排而補上文字說明。",
+      "actionPreserved": "保留「在成果紀錄中分別註明班呼與校歌分工」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "分別註明班呼與校歌分工的紀錄本身，顯著促進形成同一班完整合作證據。",
+      "actionPreserved": "保留「在成果紀錄中分別註明班呼與校歌分工」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

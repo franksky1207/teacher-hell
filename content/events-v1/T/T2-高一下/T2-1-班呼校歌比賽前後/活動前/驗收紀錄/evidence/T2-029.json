@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-029 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 1-4（原則性）、3-2（判斷能力）、8-2（專業質疑度）、12-2（導師關注度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 A 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [E,C,B,A] 組別合法配置並與各結局對教師之影響相符。【2026-11-23 文字修訂後複核】本篇八個結果新增現場具體互動後，逐 R 重新閱讀；新增對話與行動皆仍屬賽前準備，不預設正式賽果，人物未越權。R 字數：R1=144、R2=146、R3=138、R4=159、R5=138、R6=136、R7=157、R8=143。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。【文字修訂後複核】新增加的學生提問、試排或反應已反向對照 A～D 四種既成教師行動與 32 格相容性：不撤銷選項行動、不憑空創造正式規則，原矩陣權重與四狀態、NPC 增減保持不變。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 1-4（原則性）、3-2（判斷能力）、8-2（專業質疑度）、12-2（導師關注度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-029 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "私下聽學生對站位衝突的實際經過",
+        "action": "已私下傾聽當事學生對站位衝突的實際經過，了解為何原本投入校歌卻突然拒比",
+        "tradeoff": "找出未經溝通就被移到後排的真正導火線，但另一方的說法仍須併案核對"
+      },
+      {
+        "id": 2,
+        "short": "尊重學生目前未定的參與意願",
+        "action": "已尊重學生目前未定的參與意願，要求幹部在確認前不得擅自將其從名單除名",
+        "tradeoff": "保住學生的自主選擇權與緩衝空間，但隊形組在最後一天前仍存在人數變數"
+      },
+      {
+        "id": 3,
+        "short": "請雙方分開說明各自看見的事情",
+        "action": "已安排發生爭執的雙方分開說明各自看見的動作與路線，避免當場圍觀起鬨",
+        "tradeoff": "防止衝突在教室當眾擴大，但雙方直接對話修復仍須看各自意願"
+      },
+      {
+        "id": 4,
+        "short": "請編排者檢查換位決定前是否曾通知本人",
+        "action": "已請編排者對照站位圖與通知紀錄，確認臨時移動該生位置前是否曾說明原因",
+        "tradeoff": "釐清程序疏失讓當事人感覺被尊重，但編排者可能感到被追究責任"
+      },
+      {
+        "id": 5,
+        "short": "確認班呼與校歌兩段隊形是否可各有不同站位",
+        "action": "已請隊形組檢視班呼動作與校歌站位是否本可依段落切換調整，減少同位摩擦",
+        "tradeoff": "提供不須全程綁死同一站位的彈性，但轉場走位必須再試順"
+      },
+      {
+        "id": 6,
+        "short": "請雙方先各自寫下聽到的話再決定是否安靜對談",
+        "action": "已提議雙方若願意溝通，可先寫下各自理解並在無旁人起鬨的小空間對談",
+        "tradeoff": "降低見面就吵的風險，但前提是兩人都願意踏出對話這一步"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": "emotional",
+      "B": 1,
+      "C": 2,
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "E",
+    "C",
+    "B",
+    "A"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師接住生氣情緒且不逼他在氣頭上做整場決定，顯著促進他冷靜說出「不是想退出校歌」。",
+      "actionPreserved": "保留「你現在很生氣，不代表一定要立刻做整場的決定。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒不被逼迫後，當事人較願意與編排者一起回頭看站位圖釐清沒先問他的流程疏失，屬自然可達。",
+      "actionPreserved": "保留「你現在很生氣，不代表一定要立刻做整場的決定。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師明確不強迫當場承諾，顯著促進學生敢說出「怕明天又被大家盯著看」並保留思考空間。",
+      "actionPreserved": "保留「你現在很生氣，不代表一定要立刻做整場的決定。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "氣消一些後，對聽見另一人其實也以為被挑釁的說明較不排斥，屬自然可達。",
+      "actionPreserved": "保留「你現在很生氣，不代表一定要立刻做整場的決定。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒降溫讓大家能回到隊形圖討論兩段切換站位，屬自然可達。",
+      "actionPreserved": "保留「你現在很生氣，不代表一定要立刻做整場的決定。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不逼當場決定有助於擋下幹部擅自劃掉名字的作法，屬自然可達。",
+      "actionPreserved": "保留「你現在很生氣，不代表一定要立刻做整場的決定。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "冷靜下來後，學生比較願意考慮在安靜處跟對方說清楚，屬自然可達。",
+      "actionPreserved": "保留「你現在很生氣，不代表一定要立刻做整場的決定。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師「不必在氣頭上做決定」的回應，顯著促進「明天的決定不必靠今天氣話」的收束。",
+      "actionPreserved": "保留「你現在很生氣，不代表一定要立刻做整場的決定。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師私下傾聽衝突經過，顯著促進學生區分「氣話拒比班呼」與「其實還想唱校歌」。",
+      "actionPreserved": "保留「私下聽學生對站位衝突的實際經過」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "私下釐清經過時追問換位過程，顯著促進編排者翻出站位圖發現當初沒先問他。",
+      "actionPreserved": "保留「私下聽學生對站位衝突的實際經過」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下傾聽讓學生有機會坦白怕上台被盯著看的恐懼，屬自然可達。",
+      "actionPreserved": "保留「私下聽學生對站位衝突的實際經過」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "了解當事人視角後，再比對另一方說法能找出路線誤會，屬自然可達。",
+      "actionPreserved": "保留「私下聽學生對站位衝突的實際經過」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下聽完站位衝突後，也有助大家思考兩段站位可否在轉場時分開，屬自然可達。",
+      "actionPreserved": "保留「私下聽學生對站位衝突的實際經過」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "掌握真實經過後，更能支持暫時保留名單在待確認狀態，屬自然可達。",
+      "actionPreserved": "保留「私下聽學生對站位衝突的實際經過」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下釐清經過是後續雙方願意安靜對談的良好基礎，屬自然可達。",
+      "actionPreserved": "保留「私下聽學生對站位衝突的實際經過」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下傾聽不逼表態，讓學生能留下未定回覆空間，屬自然可達。",
+      "actionPreserved": "保留「私下聽學生對站位衝突的實際經過」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "尊重未定意願讓其他同學明白一句氣話不等於正式退出，屬自然可達。",
+      "actionPreserved": "保留「尊重學生目前未定的參與意願」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "暫緩定案的緩衝期間，編排者剛好查出換位沒先通知的疏失，屬自然可達。",
+      "actionPreserved": "保留「尊重學生目前未定的參與意願」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師尊重未定的參與意願，顯著促進學生在保留思考空間下坦白怕明天被盯著看。",
+      "actionPreserved": "保留「尊重學生目前未定的參與意願」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "沒有被逼立刻退賽或服從，雙方較有空間釐清方向判斷誤會，屬自然可達。",
+      "actionPreserved": "保留「尊重學生目前未定的參與意願」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留參與彈性有助兩段切換時調整站位，屬自然可達。",
+      "actionPreserved": "保留「尊重學生目前未定的參與意願」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師明確禁止未確認前擅自除名，顯著促進同學擋下群組把名字劃掉的舉動。",
+      "actionPreserved": "保留「尊重學生目前未定的參與意願」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "尊重意願讓當事人自主提出想在安靜處和對方談清楚，屬自然可達。",
+      "actionPreserved": "保留「尊重學生目前未定的參與意願」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "尊重未定意願的決定，顯著促進排練表留下「尚未確認、適當時候再回覆」的空間。",
+      "actionPreserved": "保留「尊重學生目前未定的參與意願」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "分開說明避免當場吵翻，讓學生較快冷靜澄清自己並非想退出校歌，屬自然可達。",
+      "actionPreserved": "保留「請雙方分開說明各自看見的事情」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "分開說明各自看見的事情，顯著促進對照站位圖發現「原來換位沒先問他」。",
+      "actionPreserved": "保留「請雙方分開說明各自看見的事情」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "避開全班圍觀起鬨，減輕當事人怕被盯著看的壓力，屬自然可達。",
+      "actionPreserved": "保留「請雙方分開說明各自看見的事情」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師安排雙方分開說明各自看見的動作與路線，顯著促進發現「另一人也以為被挑釁」並畫清路線。",
+      "actionPreserved": "保留「請雙方分開說明各自看見的事情」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "各自看清動作路線後，自然會發現班呼與校歌位置未必得一樣，屬自然可達。",
+      "actionPreserved": "保留「請雙方分開說明各自看見的事情」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在雙方分開說明釐清期間，自然不應在群組先把人劃掉，屬自然可達。",
+      "actionPreserved": "保留「請雙方分開說明各自看見的事情」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師避免當場圍觀起鬨的安排，顯著促進雙方同意在無旁人起鬨下寫下經過再對談。",
+      "actionPreserved": "保留「請雙方分開說明各自看見的事情」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "分開說明後雙方至少停止氣話升級，保留明天再確認的空間，屬自然可達。",
+      "actionPreserved": "保留「請雙方分開說明各自看見的事情」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

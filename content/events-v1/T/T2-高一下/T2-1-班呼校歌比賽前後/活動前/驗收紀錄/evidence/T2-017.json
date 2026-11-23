@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-017 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 4-2（安全需求）、5-2（親近）、6-1（群體影響力）、10-1（決策支持度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 D 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [E,C,A,B] 組別合法配置並與各結局對教師之影響相符。【2026-11-23 文字修訂後複核】本篇八個結果新增現場具體互動後，逐 R 重新閱讀；新增對話與行動皆仍屬賽前準備，不預設正式賽果，人物未越權。R 字數：R1=152、R2=148、R3=150、R4=144、R5=156、R6=148、R7=142、R8=152。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。【文字修訂後複核】新增加的學生提問、試排或反應已反向對照 A～D 四種既成教師行動與 32 格相容性：不撤銷選項行動、不憑空創造正式規則，原矩陣權重與四狀態、NPC 增減保持不變。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 4-2（安全需求）、5-2（親近）、6-1（群體影響力）、10-1（決策支持度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-017 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "核對拍攝者及上傳者的實際權限",
+        "action": "已核對拍攝者與上傳者的實際用途及取得授權範圍，未承認班群分享等同對外授權",
+        "tradeoff": "釐清授權界線並保護不願曝光者，但原本想發限動加油的同學可能覺得掃興"
+      },
+      {
+        "id": 2,
+        "short": "提醒不用用出席練習換取影像授權",
+        "action": "已向全班提醒不得用「出席比賽練習」交換或綁定個人影像公開授權",
+        "tradeoff": "守住影像自主權與參與平等，但須另行說明成果紀錄仍可在同意範圍內進行"
+      },
+      {
+        "id": 3,
+        "short": "先停止未經同意的對外公開",
+        "action": "已要求先停止任何未經全部入鏡者同意的對外公開或轉傳計畫",
+        "tradeoff": "即時擋下未授權外流風險，但已存在班群裡的影片如何保存仍須訂出規則"
+      },
+      {
+        "id": 4,
+        "short": "把班群影片標記為僅供內部排練檢視不得外傳",
+        "action": "已要求在班群影片貼文補註「僅限班內檢視」，禁止未經確認轉貼至外部公開平台",
+        "tradeoff": "兼顧排練檢討功能與隱私界線，但仍依賴班員自律遵守"
+      },
+      {
+        "id": 5,
+        "short": "請拍攝者檢查畫面背景是否拍到他班無關同學",
+        "action": "已請拍攝者重新檢視影片背景與校服標誌，確認是否包含未取得同意的他班學生",
+        "tradeoff": "避免波及無關第三人隱私，但該段影片可能因此無法作為公開宣傳用"
+      },
+      {
+        "id": 6,
+        "short": "勸阻直接裁切不願露臉者以防誤導參與紀錄",
+        "action": "已提醒同學不可未經溝通就把人從影片裁掉，以免後續被誤會沒有參與練習",
+        "tradeoff": "保護當事人的參與證明，但現有影片就無法簡單裁切了事"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": 3,
+      "D": "emotional"
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "E",
+    "C",
+    "A",
+    "B"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核對拍攝者與上傳者授權範圍，直接支持「傳在班群不代表可以轉到公開」，屬自然可達。",
+      "actionPreserved": "保留「核對拍攝者及上傳者的實際權限」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "釐清用途與授權後，不願曝光者也較放心區分內部紀錄與對外發布，屬自然可達。",
+      "actionPreserved": "保留「核對拍攝者及上傳者的實際權限」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "檢視原片授權範圍時，仍須留意直接裁掉人可能造成參與紀錄誤會，屬自然可達。",
+      "actionPreserved": "保留「核對拍攝者及上傳者的實際權限」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師核對是否真的取得授權，顯著促進拆穿「沒回訊就是答應」的錯誤假設並停下發布。",
+      "actionPreserved": "保留「核對拍攝者及上傳者的實際權限」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "檢查授權範圍時，最容易發現背景還拍到隔壁班無關同學，顯著促進擴大檢查影像界線。",
+      "actionPreserved": "保留「核對拍攝者及上傳者的實際權限」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "明確授權界線能讓不敢拒絕的學生知道自己有權不回應公開要求，屬自然可達。",
+      "actionPreserved": "保留「核對拍攝者及上傳者的實際權限」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核對拍攝用途時，也會順帶補上伴奏只是教室練習版的說明，屬自然可達。",
+      "actionPreserved": "保留「核對拍攝者及上傳者的實際權限」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "授權範圍盤點完成後，自然能將內部紀錄與待確認公開分開處理，屬自然可達。",
+      "actionPreserved": "保留「核對拍攝者及上傳者的實際權限」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "提醒不得用練習換取影像授權，讓當事人不必被迫離開鏡頭才能保住隱私，屬自然可達。",
+      "actionPreserved": "保留「提醒不用用出席練習換取影像授權」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "守住參與平等後，學生更能安心表達可接受內部排練紀錄，屬自然可達。",
+      "actionPreserved": "保留「提醒不用用出席練習換取影像授權」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師強調不得抹去參與權，顯著促進同學提出「直接裁掉人會被誤會沒參與」的提醒。",
+      "actionPreserved": "保留「提醒不用用出席練習換取影像授權」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "區分出席與授權後，上傳者也較能理解沉默不等於同意，屬自然可達。",
+      "actionPreserved": "保留「提醒不用用出席練習換取影像授權」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "既然不能強迫本班出席換授權，對背景拍到的他班同學更須謹慎檢查，屬自然可達。",
+      "actionPreserved": "保留「提醒不用用出席練習換取影像授權」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師明確表態不准用參與交換授權，顯著促進當事人說出「怕拒絕就被說不合群」並獲保護。",
+      "actionPreserved": "保留「提醒不用用出席練習換取影像授權」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "談清練習與宣傳的區別，有助影片註明只是彩排紀錄，屬自然可達。",
+      "actionPreserved": "保留「提醒不用用出席練習換取影像授權」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "參與權與公開決定權分開後，班級能順利留下內部回憶又保留公開決定權，屬自然可達。",
+      "actionPreserved": "保留「提醒不用用出席練習換取影像授權」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師要求先停止未經同意的對外公開，顯著促進分享者停手並重新詢問用途。",
+      "actionPreserved": "保留「先停止未經同意的對外公開」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "擋下對外公開後，雙方得以冷靜分辨拍攝與發布並非一回事，屬自然可達。",
+      "actionPreserved": "保留「先停止未經同意的對外公開」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停下公開計畫時，同學仍會討論替代方式而發現裁切可能造成誤會，屬自然可達。",
+      "actionPreserved": "保留「先停止未經同意的對外公開」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "停止未經同意公開的指令，顯著促進當場駁回「沒回訊就是答應」並停下發布。",
+      "actionPreserved": "保留「先停止未經同意的對外公開」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "暫停公開期間重新檢查原片，更容易發現背景拍到隔壁班，屬自然可達。",
+      "actionPreserved": "保留「先停止未經同意的對外公開」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "先停下公開壓力，讓不敢拒絕的學生比較敢在私下說出擔憂，屬自然可達。",
+      "actionPreserved": "保留「先停止未經同意的對外公開」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "既然不急著對外發片，同學較願意把影片老實註記為教室彩排紀錄，屬自然可達。",
+      "actionPreserved": "保留「先停止未經同意的對外公開」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "先停下未經同意公開的決定，顯著促進建立「僅供內部查閱、公開另行確認」的雙軌紀錄。",
+      "actionPreserved": "保留「先停止未經同意的對外公開」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "理解雙方心情後，熱心分享者不再覺得被當壞人，較願意停下來詢問用途，屬自然可達。",
+      "actionPreserved": "保留「你想留下回憶，也可以決定自己的影像怎麼被使用。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師肯定想留回憶與想決定影像權的心情，顯著促進當事人說出「不是討厭拍影片，只是不想公開」。",
+      "actionPreserved": "保留「你想留下回憶，也可以決定自己的影像怎麼被使用。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在尊重雙方的前提下，同學更願意考量裁掉畫面對當事人的影響，屬自然可達。",
+      "actionPreserved": "保留「你想留下回憶，也可以決定自己的影像怎麼被使用。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "心情被接住後，上傳者也較願意放下急著分享的衝動、停止把沒回訊當同意，屬自然可達。",
+      "actionPreserved": "保留「你想留下回憶，也可以決定自己的影像怎麼被使用。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "理性溝通氣氛下，大家也願意檢查背景是否拍到他班同學，屬自然可達。",
+      "actionPreserved": "保留「你想留下回憶，也可以決定自己的影像怎麼被使用。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師直接接住學生怕被說不合群的為難，顯著促進當事人坦白不敢回訊的真實心理。",
+      "actionPreserved": "保留「你想留下回憶，也可以決定自己的影像怎麼被使用。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不急著否定任何一方後，拍攝者較能平實補上伴奏與彩排紀錄說明，屬自然可達。",
+      "actionPreserved": "保留「你想留下回憶，也可以決定自己的影像怎麼被使用。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定回憶價值又尊重影像自主，自然導向「回憶可留、公開另定」的收束，屬自然可達。",
+      "actionPreserved": "保留「你想留下回憶，也可以決定自己的影像怎麼被使用。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

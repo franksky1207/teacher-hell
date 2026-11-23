@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-014 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 4-3（自主需求）、5-3（尊重）、11-2（時間餘裕）、12-3（決策介入度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 B 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [B,A,E,C] 組別合法配置並與各結局對教師之影響相符。【2026-11-23 文字修訂後複核】本篇八個結果新增現場具體互動後，逐 R 重新閱讀；新增對話與行動皆仍屬賽前準備，不預設正式賽果，人物未越權。R 字數：R1=151、R2=149、R3=157、R4=153、R5=155、R6=140、R7=154、R8=155。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。【文字修訂後複核】新增加的學生提問、試排或反應已反向對照 A～D 四種既成教師行動與 32 格相容性：不撤銷選項行動、不憑空創造正式規則，原矩陣權重與四狀態、NPC 增減保持不變。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 4-3（自主需求）、5-3（尊重）、11-2（時間餘裕）、12-3（決策介入度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-014 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "取消未經同意的額外集合承諾",
+        "action": "已取消未經全班同意的額外強制集合，明訂只有合法協調時段才可安排合練",
+        "tradeoff": "立刻釋放學生午休與作業時間，但急著想多練幾遍的幹部可能感到焦慮"
+      },
+      {
+        "id": 2,
+        "short": "與相關任課及活動窗口確認合法時段",
+        "action": "已與相關任課教師及活動窗口確認合法可用時段，未擅自停課或變更作業期限",
+        "tradeoff": "守住教學與校規界線，但無法靠「借課」增加練習時間，必須提高現有時段效率"
+      },
+      {
+        "id": 3,
+        "short": "私下了解受練習安排影響的學生",
+        "action": "已私下了解作業進度受影響與過度疲累學生的實際困難，未要求其在群組公開抱怨",
+        "tradeoff": "掌握真實生活負擔並保護學生，但尚須回頭說服排程幹部縮減重複練習"
+      },
+      {
+        "id": 4,
+        "short": "請班呼與校歌組整併時段改練關鍵轉場",
+        "action": "已建議兩組停止各自占滿兩個完整時段，將有限時間集中練習最易出錯的銜接段",
+        "tradeoff": "大幅縮短集合總時數，但各自片段的熟練度須靠學生自主複習"
+      },
+      {
+        "id": 5,
+        "short": "請排程者檢視最近幾次是否只重複練已熟段落",
+        "action": "已請排程幹部翻開練習紀錄，盤點是否把時間花在重複喊早已熟練的開頭",
+        "tradeoff": "把焦點從「練多久」轉向「練什麼」，但幹部可能覺得被檢討效率"
+      },
+      {
+        "id": 6,
+        "short": "明訂群組通知須標註自願與正式集合的區別",
+        "action": "已要求班群排練通知必須區分正式核定時段與自由練習，不得寫「全員必到」",
+        "tradeoff": "避免假性強制通知造成壓力，但自由練習的出席率可能下降"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": "emotional",
+      "C": 2,
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "B",
+    "A",
+    "E",
+    "C"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "取消未經同意的額外強制集合後，排程者更願意把占滿午休的時段圈出來調整，屬自然可達。",
+      "actionPreserved": "保留「取消未經同意的額外集合承諾」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "取消多餘強制集合後，班呼組勢必得檢視是否一直在重練已熟段落，屬自然可達。",
+      "actionPreserved": "保留「取消未經同意的額外集合承諾」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止強制集合讓作業趕不完的同學能拿任課期限出來協調，屬自然可達。",
+      "actionPreserved": "保留「取消未經同意的額外集合承諾」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "減少強制集合壓力後，疲憊學生也較敢私下反映真實體力狀況，屬自然可達。",
+      "actionPreserved": "保留「取消未經同意的額外集合承諾」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師取消未經同意的額外集合承諾，顯著促進排程者撤除「全員必到」等未授權字眼。",
+      "actionPreserved": "保留「取消未經同意的額外集合承諾」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不能無限加練後，兩組更須思考合併時段改練整體銜接，屬自然可達。",
+      "actionPreserved": "保留「取消未經同意的額外集合承諾」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "縮短無效集合時間後，更容易觀察到提早結束反而唱得更順，屬自然可達。",
+      "actionPreserved": "保留「取消未經同意的額外集合承諾」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "取消無共識集合的行動本身，顯著促進學生把正式時段與額外集合分開列出。",
+      "actionPreserved": "保留「取消未經同意的額外集合承諾」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定帶隊用心同時點出吃飯與作業需求，讓排程者較不防衛而願意調整午休，屬自然可達。",
+      "actionPreserved": "保留「你想帶大家完成表演，也得讓大家有時間過日子。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "理解幹部想練好的焦慮後，幹部比較聽得進「不要重練同一段」的建議，屬自然可達。",
+      "actionPreserved": "保留「你想帶大家完成表演，也得讓大家有時間過日子。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "點出同學要過日子，讓提出作業期限的學生不致被當成偷懶，屬自然可達。",
+      "actionPreserved": "保留「你想帶大家完成表演，也得讓大家有時間過日子。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師溫和提醒要讓大家有時間過日子，顯著促進不敢說累的學生私下吐露「只想睡覺」。",
+      "actionPreserved": "保留「你想帶大家完成表演，也得讓大家有時間過日子。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "減少焦慮後，排程者也較能平靜修正自己發的全員必到通知，屬自然可達。",
+      "actionPreserved": "保留「你想帶大家完成表演，也得讓大家有時間過日子。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "引導大家兼顧生活與比賽，有助兩組談合併時段順序，屬自然可達。",
+      "actionPreserved": "保留「你想帶大家完成表演，也得讓大家有時間過日子。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定用心讓幹部願意嘗試看重練習品質而非只衝時數，屬自然可達。",
+      "actionPreserved": "保留「你想帶大家完成表演，也得讓大家有時間過日子。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "氣氛緩和後，全班更容易同意拿掉沒有共識的集合，屬自然可達。",
+      "actionPreserved": "保留「你想帶大家完成表演，也得讓大家有時間過日子。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "與任課及活動窗口確認合法時段時，自然會發現午休本來就該留給用餐，屬自然可達。",
+      "actionPreserved": "保留「與相關任課及活動窗口確認合法時段」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認可用時段有限且不能借課後，兩組須更有效率地停止重練已熟開頭，屬自然可達。",
+      "actionPreserved": "保留「與相關任課及活動窗口確認合法時段」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師親自向任課教師與窗口確認合法時段而不越權改作業期限，顯著促進雙方依正式期限協調。",
+      "actionPreserved": "保留「與相關任課及活動窗口確認合法時段」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認不能擅停課後，受影響學生較安心私下說明疲憊與作業限制，屬自然可達。",
+      "actionPreserved": "保留「與相關任課及活動窗口確認合法時段」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "向窗口查清規定能直接戳破「全員必到」通知其實沒有正式授權，屬自然可達。",
+      "actionPreserved": "保留「與相關任課及活動窗口確認合法時段」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "合法時段固定後，班呼與校歌必須在有限時間內排出共同順序，屬自然可達。",
+      "actionPreserved": "保留「與相關任課及活動窗口確認合法時段」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在合法時段內精簡練習，仍有機會發現提早結束反而唱得順，屬自然可達。",
+      "actionPreserved": "保留「與相關任課及活動窗口確認合法時段」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "明確哪些是窗口核定時段，有助全班分清正式集合與無共識加練，屬自然可達。",
+      "actionPreserved": "保留「與相關任課及活動窗口確認合法時段」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師私下了解受影響學生困難後，能具體指出連午餐都來不及吃的事實，顯著促進排程者調整午休。",
+      "actionPreserved": "保留「私下了解受練習安排影響的學生」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "了解學生疲於奔命的狀況後，更容易對照出其實一直在重練同一段，屬自然可達。",
+      "actionPreserved": "保留「私下了解受練習安排影響的學生」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "掌握學生真實作業困境後，有助班幹部面對任課教師期限而調整排練，屬自然可達。",
+      "actionPreserved": "保留「私下了解受練習安排影響的學生」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師私下傾聽受影響學生，顯著促進當事人說出「寧願不說自己太累」的真實負擔。",
+      "actionPreserved": "保留「私下了解受練習安排影響的學生」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "得知學生被強制通知壓垮後，排程者更願意拿掉「全員必到」字眼，屬自然可達。",
+      "actionPreserved": "保留「私下了解受練習安排影響的學生」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "知道大家已被兩段重複集合累壞，有助兩組談合併時段，屬自然可達。",
+      "actionPreserved": "保留「私下了解受練習安排影響的學生」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "減輕疲勞後進行短練習，更容易驗證品質勝過時數，屬自然可達。",
+      "actionPreserved": "保留「私下了解受練習安排影響的學生」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "了解基層學生真實負荷後，班上較容易同意拿掉沒有共識的集合，屬自然可達。",
+      "actionPreserved": "保留「私下了解受練習安排影響的學生」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

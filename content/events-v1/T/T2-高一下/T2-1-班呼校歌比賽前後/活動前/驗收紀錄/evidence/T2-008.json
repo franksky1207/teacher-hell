@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-008 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 5-4（不滿）、6-3（社交主動性）、7-4（生活穩定度）、8-2（專業質疑度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 B 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [E,D,A,C] 組別合法配置並與各結局對教師之影響相符。【2026-11-23 文字修訂後複核】本篇八個結果新增現場具體互動後，逐 R 重新閱讀；新增對話與行動皆仍屬賽前準備，不預設正式賽果，人物未越權。R 字數：R1=168、R2=163、R3=166、R4=163、R5=158、R6=164、R7=160、R8=155。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。【文字修訂後複核】新增加的學生提問、試排或反應已反向對照 A～D 四種既成教師行動與 32 格相容性：不撤銷選項行動、不憑空創造正式規則，原矩陣權重與四狀態、NPC 增減保持不變。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 5-4（不滿）、6-3（社交主動性）、7-4（生活穩定度）、8-2（專業質疑度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-008 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "讓學生保留兩份歌詞圖及發布時間",
+        "action": "已讓學生保留兩份歌詞圖及各自的發布時間與來源連結，避免覆蓋原始資料",
+        "tradeoff": "保留完整查證軌跡，但多版本並存期間同學可能暫時不知該背哪一字"
+      },
+      {
+        "id": 2,
+        "short": "向正式承辦窗口詢問適用版本",
+        "action": "已向正式承辦窗口詢問本次比賽適用的官方校歌版本，未在回覆前自行拍板",
+        "tradeoff": "能取得最權威的正確歌詞，但等待回覆期間校歌文字練習只能先標記待查"
+      },
+      {
+        "id": 3,
+        "short": "請校歌組圈出真正有差異的字",
+        "action": "已請校歌組把兩版真正有差異的單字圈出來，確認其餘完全相同的段落可繼續練習",
+        "tradeoff": "避免全班恐慌重背整首，但被圈出的那一個字仍須等正式確認才能定案"
+      },
+      {
+        "id": 4,
+        "short": "把雲端共享歌詞檔案設為待核對唯讀副本",
+        "action": "已請資料整理者保留雲端歷史版本並標註待核對，禁止直接覆蓋覆寫",
+        "tradeoff": "防止舊資料遺失，但仍未查出哪一版才是官方版"
+      },
+      {
+        "id": 5,
+        "short": "請班呼與校歌兩組先照常練習轉場節奏",
+        "action": "已請兩組先練習不受單字差異影響的班呼尾聲與校歌起唱節奏",
+        "tradeoff": "不浪費寶貴排練時間，但唱詞部分仍需另行補齊確認"
+      },
+      {
+        "id": 6,
+        "short": "提醒群組停止指責最早傳圖的同學",
+        "action": "已在班群提醒大家查證是全班共同責任，不可把未核對截圖歸咎給單一傳訊者",
+        "tradeoff": "穩定班內氣氛，但未能提供任何版本比對的技術線索"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": "emotional",
+      "C": 2,
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "E",
+    "D",
+    "A",
+    "C"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "保留兩份歌詞圖與來源連結，顯著促進傳圖者翻回原貼文發現無校方署名。",
+      "actionPreserved": "保留「讓學生保留兩份歌詞圖及發布時間」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "兩份圖並排保留後，校歌組自然能核對出差異其實只有一字，屬自然可達。",
+      "actionPreserved": "保留「讓學生保留兩份歌詞圖及發布時間」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留原始資訊來源而非刪除，有助帶練者追溯對話並減輕背黑鍋壓力，屬自然可達。",
+      "actionPreserved": "保留「讓學生保留兩份歌詞圖及發布時間」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "保留兩份圖及發布時間的要求，顯著促進學生發現網路截圖根本少了發布日期。",
+      "actionPreserved": "保留「讓學生保留兩份歌詞圖及發布時間」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "看清只有一字有別後，轉場組較容易決定先練不受影響的節奏，屬自然可達。",
+      "actionPreserved": "保留「讓學生保留兩份歌詞圖及發布時間」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "要求保留兩份來源不覆蓋，顯著促進學生擋下直接覆蓋雲端歌詞的舉動。",
+      "actionPreserved": "保留「讓學生保留兩份歌詞圖及發布時間」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "有清楚來源對照後，同學比較知道之後要向全班統一通知確認版，屬自然可達。",
+      "actionPreserved": "保留「讓學生保留兩份歌詞圖及發布時間」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留完整查證紀錄有助把資料錯誤與個人能力分開，屬自然可達。",
+      "actionPreserved": "保留「讓學生保留兩份歌詞圖及發布時間」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定帶練好意同時提醒查證，讓傳圖者不害怕被怪罪而願意回頭查原貼文，屬自然可達。",
+      "actionPreserved": "保留「你帶大家背歌詞是好意，查證很重要。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "氣氛穩定後，校歌組也能冷靜並排比對差異，屬自然可達。",
+      "actionPreserved": "保留「你帶大家背歌詞是好意，查證很重要。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師肯定帶練者好意並未怪罪，顯著促進他吐露「怕你們怪我害全班唱錯」並獲同學聲援。",
+      "actionPreserved": "保留「你帶大家背歌詞是好意，查證很重要。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "提醒查證重要性有助同學開始注意截圖缺少發布日期，屬自然可達。",
+      "actionPreserved": "保留「你帶大家背歌詞是好意，查證很重要。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "鼓勵不否定先前努力，讓大家願意先繼續練不受影響的節奏，屬自然可達。",
+      "actionPreserved": "保留「你帶大家背歌詞是好意，查證很重要。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "安撫情緒後，學生較理性保留雲端歷史副本而非慌張覆蓋，屬自然可達。",
+      "actionPreserved": "保留「你帶大家背歌詞是好意，查證很重要。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "帶練者獲得肯定後，更願意等正式依據出來再好好通知全班，屬自然可達。",
+      "actionPreserved": "保留「你帶大家背歌詞是好意，查證很重要。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師明確區分好意與資料查證，顯著促進學生體會「修改不代表之前的努力消失」。",
+      "actionPreserved": "保留「你帶大家背歌詞是好意，查證很重要。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "向承辦窗口詢問的過程中，同學也會回頭檢查該網路圖有無校方署名，屬自然可達。",
+      "actionPreserved": "保留「向正式承辦窗口詢問適用版本」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "單純向承辦發問等待回覆，對現場校歌組立刻並排圈字、停止全面重練的直接觸發較低，屬抑制。",
+      "actionPreserved": "保留「向正式承辦窗口詢問適用版本」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "有正式窗口接手確認，能減輕帶練學生獨自承擔對錯的壓力，屬自然可達。",
+      "actionPreserved": "保留「向正式承辦窗口詢問適用版本」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核對官方版本時，容易對照出網路截圖缺乏發布日期，屬自然可達。",
+      "actionPreserved": "保留「向正式承辦窗口詢問適用版本」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "等承辦回覆期間，轉場組照常試排節奏是合理的安排，屬自然可達。",
+      "actionPreserved": "保留「向正式承辦窗口詢問適用版本」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "既然已向承辦詢問，學生更會要求雲端歌詞先保留原狀不要擅自覆蓋，屬自然可達。",
+      "actionPreserved": "保留「向正式承辦窗口詢問適用版本」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師已向承辦窗口詢問適用版本，顯著促進學生約定「問清楚後還要讓全班知道」。",
+      "actionPreserved": "保留「向正式承辦窗口詢問適用版本」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "把最終確認交給承辦窗口，有助減輕全班對整首練錯的恐慌，屬自然可達。",
+      "actionPreserved": "保留「向正式承辦窗口詢問適用版本」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "圈出差異字的過程中，同學也會順帶檢查原貼文有沒有署名，屬自然可達。",
+      "actionPreserved": "保留「請校歌組圈出真正有差異的字」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師請校歌組圈出真正有差異的字，顯著促進大家發現只差一字並停止全面重練。",
+      "actionPreserved": "保留「請校歌組圈出真正有差異的字」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認只有一個字不同後，帶練學生不至於被怪成整首教錯，屬自然可達。",
+      "actionPreserved": "保留「請校歌組圈出真正有差異的字」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "比對差異字時會注意到截圖來源與日期問題，屬自然可達。",
+      "actionPreserved": "保留「請校歌組圈出真正有差異的字」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "圈出差異僅在單字歌詞，顯著促進轉場與指揮確認「校歌節奏不需要全部重排」。",
+      "actionPreserved": "保留「請校歌組圈出真正有差異的字」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "知道只有一字待核後，學生更不會急著把整份雲端歌詞覆蓋掉，屬自然可達。",
+      "actionPreserved": "保留「請校歌組圈出真正有差異的字」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "圈好待查單字後，同學也方便約定確認後再通知全班，屬自然可達。",
+      "actionPreserved": "保留「請校歌組圈出真正有差異的字」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "將差異縮小到「待查一字」，顯著促進學生把小差異與整班努力失敗的恐慌分開。",
+      "actionPreserved": "保留「請校歌組圈出真正有差異的字」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

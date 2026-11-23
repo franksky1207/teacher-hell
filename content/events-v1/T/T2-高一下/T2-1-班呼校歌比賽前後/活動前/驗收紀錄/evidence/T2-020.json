@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-020 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 1-4（原則性）、2-2（焦慮）、10-1（決策支持度）、12-4（問責要求度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 C 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [E,B,A,C] 組別合法配置並與各結局對教師之影響相符。【2026-11-23 文字修訂後複核】本篇八個結果新增現場具體互動後，逐 R 重新閱讀；新增對話與行動皆仍屬賽前準備，不預設正式賽果，人物未越權。R 字數：R1=163、R2=140、R3=145、R4=145、R5=150、R6=139、R7=139、R8=153。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。【文字修訂後複核】新增加的學生提問、試排或反應已反向對照 A～D 四種既成教師行動與 32 格相容性：不撤銷選項行動、不憑空創造正式規則，原矩陣權重與四狀態、NPC 增減保持不變。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 1-4（原則性）、2-2（焦慮）、10-1（決策支持度）、12-4（問責要求度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-020 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "確認影片使用是否取得當事人同意",
+        "action": "已確認彩排影片拍攝與班群轉傳是否取得當事人同意，禁止未經同意特寫散播",
+        "tradeoff": "直接切斷走音畫面被反覆嘲笑的源頭，但已留在部分同學口頭記憶的玩笑仍須處理"
+      },
+      {
+        "id": 2,
+        "short": "請校歌指揮說明全班需要的共同起唱訊號",
+        "action": "已請校歌指揮說明全班需要的是共同起唱訊號與整體齊唱，而非對個人獨唱挑錯",
+        "tradeoff": "減輕怕走音學生的孤立審視感，但同學仍可能私下擔心自己聲音突兀"
+      },
+      {
+        "id": 3,
+        "short": "停止在練習時對個人唱法起鬨",
+        "action": "已當場制止練習時對個人唱法或破音的模仿起鬨，要求將排練氣氛拉回正軌",
+        "tradeoff": "立刻保護現場安全感，但部分以為只是開玩笑的同學可能一時感到被訓斥"
+      },
+      {
+        "id": 4,
+        "short": "請有意願的同學私下陪練但由當事人決定是否接受",
+        "action": "已允許熟識同學提供不錄影的小空間對音協助，但明確表示當事人可自由拒絕",
+        "tradeoff": "提供低壓力練習選項，但若當事人婉拒仍須另尋安心跟唱法"
+      },
+      {
+        "id": 5,
+        "short": "允許當事人暫時以較小音量跟唱校歌起唱段落",
+        "action": "已同意學生在團體練唱時先從自己能接受的小音量跟唱，不強迫立刻大聲開口",
+        "tradeoff": "讓學生願意留在校歌隊伍不整場沉默，但整體音量平衡須靠其他同學支撐"
+      },
+      {
+        "id": 6,
+        "short": "把校歌起唱目標標註在練習表讓學生自主選擇段落",
+        "action": "已請學生在練習表標記自己願意嘗試跟唱的段落，保留暫不開口的緩衝空間",
+        "tradeoff": "將參與主動權還給本人，但指揮須適應部分人分階段加入的節奏"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": "emotional",
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "E",
+    "B",
+    "A",
+    "C"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師確認影片授權與禁止外傳後，當事人最容易放下對嘴防備並在確認不公開下試唱第一句，顯著促進。",
+      "actionPreserved": "保留「確認影片使用是否取得當事人同意」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "擋下影片外傳的討論中，旁邊同學也可能澄清目光只是想跟著起唱，屬自然可達。",
+      "actionPreserved": "保留「確認影片使用是否取得當事人同意」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "檢討影片流傳時，會一併發現笑聲與拍片對其他人的寒蟬效應，屬自然可達。",
+      "actionPreserved": "保留「確認影片使用是否取得當事人同意」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確定沒有鏡頭盯著抓錯後，學生較敢向指揮提出先小音量跟唱，屬自然可達。",
+      "actionPreserved": "保留「確認影片使用是否取得當事人同意」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師確認影片未取得當事人同意即轉傳，顯著促進當事人抗議放大特寫並重新界定影片用途。",
+      "actionPreserved": "保留「確認影片使用是否取得當事人同意」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止影片轉傳有助減少「以後變綽號」的恐懼，屬自然可達。",
+      "actionPreserved": "保留「確認影片使用是否取得當事人同意」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "強調不錄影的原則，與同學提議「不錄影小空間陪練」相呼應，屬自然可達。",
+      "actionPreserved": "保留「確認影片使用是否取得當事人同意」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "影像安全獲得保障後，學生更願意在練習表標出可跟唱段落，屬自然可達。",
+      "actionPreserved": "保留「確認影片使用是否取得當事人同意」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "指揮強調不對個人挑錯後，學生比較敢承認先前是怕被笑才對嘴，屬自然可達。",
+      "actionPreserved": "保留「請校歌指揮說明全班需要的共同起唱訊號」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "指揮說明團體起唱訊號，有助大家理解旁人只是跟著領拍起唱，屬自然可達。",
+      "actionPreserved": "保留「請校歌指揮說明全班需要的共同起唱訊號」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "強調團體齊唱而非個人獨唱，有助檢討先前模仿破音的不當氣氛，屬自然可達。",
+      "actionPreserved": "保留「請校歌指揮說明全班需要的共同起唱訊號」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師請校歌指揮說明全班需要的是共同起唱而非獨唱挑錯，顯著促進學生敢問能否小音量跟唱。",
+      "actionPreserved": "保留「請校歌指揮說明全班需要的共同起唱訊號」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "釐清目標在團體合演而非抓個人走音後，放大特寫影片更站不住腳，屬自然可達。",
+      "actionPreserved": "保留「請校歌指揮說明全班需要的共同起唱訊號」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "降低獨唱壓力後，學生較願意說出真正害怕的是被叫綽號，屬自然可達。",
+      "actionPreserved": "保留「請校歌指揮說明全班需要的共同起唱訊號」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "了解重點在起唱與節奏後，學生剛好願意從起唱位置開始對音練習，屬自然可達。",
+      "actionPreserved": "保留「請校歌指揮說明全班需要的共同起唱訊號」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師與指揮共同強調「不是個人獨唱考試」，顯著促進學生不用先唱到最好才敢標記段落有聲音參與。",
+      "actionPreserved": "保留「請校歌指揮說明全班需要的共同起唱訊號」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師保障學生決定練習方式的權利，顯著促進他敢坦承對嘴原因並試唱第一句。",
+      "actionPreserved": "保留「你不想再被笑很正常，也有權決定怎麼練。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "知道自己有權決定練習節奏後，他能冷靜聽進旁人並非嘲笑而是想跟唱，屬自然可達。",
+      "actionPreserved": "保留「你不想再被笑很正常，也有權決定怎麼練。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "把自主權還給當事人時，全班也容易反省笑聲造成沉默的現象，屬自然可達。",
+      "actionPreserved": "保留「你不想再被笑很正常，也有權決定怎麼練。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "獲得導師撐腰後，學生敢直接跟指揮協調小音量跟唱，屬自然可達。",
+      "actionPreserved": "保留「你不想再被笑很正常，也有權決定怎麼練。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "知道自己有決定權後，當事人更敢堅決拒絕特寫影片轉傳，屬自然可達。",
+      "actionPreserved": "保留「你不想再被笑很正常，也有權決定怎麼練。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師私下理解並接住情緒，顯著促進學生吐露「怕被叫綽號」的深層恐懼。",
+      "actionPreserved": "保留「你不想再被笑很正常，也有權決定怎麼練。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師明確表示由本人決定練習方式，顯著促進學生自主決定接受不錄影陪練、從起唱位置試起。",
+      "actionPreserved": "保留「你不想再被笑很正常，也有權決定怎麼練。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "保有練習決定權的處置，顯著促進學生主動在練習表標出可跟上段落「至少讓自己有聲音」。",
+      "actionPreserved": "保留「你不想再被笑很正常，也有權決定怎麼練。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "制止起鬨保護現場後，當事人比較不用再用對嘴保護自己，屬自然可達。",
+      "actionPreserved": "保留「停止在練習時對個人唱法起鬨」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停下嘲笑後，大家才看得出旁邊同學原本只是想跟著起唱，屬自然可達。",
+      "actionPreserved": "保留「停止在練習時對個人唱法起鬨」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師當場制止對破音的模仿起鬨，顯著促進全班看見「笑聲讓其他人也不敢唱」的連鎖反應。",
+      "actionPreserved": "保留「停止在練習時對個人唱法起鬨」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "現場不再有人起鬨後，學生較敢詢問能否先小音量跟唱，屬自然可達。",
+      "actionPreserved": "保留「停止在練習時對個人唱法起鬨」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "制止嘲笑起鬨的風氣，有助當場要求停止轉傳放大走音的特寫影片，屬自然可達。",
+      "actionPreserved": "保留「停止在練習時對個人唱法起鬨」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師當場擋下模仿起鬨，顯著促進學生把心裡的怕被取笑綽號說出來並與練習分開。",
+      "actionPreserved": "保留「停止在練習時對個人唱法起鬨」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "現場氣氛變安全後，熟識同學才敢主動提出陪練，屬自然可達。",
+      "actionPreserved": "保留「停止在練習時對個人唱法起鬨」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "制止起鬨建立安全練習環境，讓學生願意重新開口參與，屬自然可達。",
+      "actionPreserved": "保留「停止在練習時對個人唱法起鬨」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

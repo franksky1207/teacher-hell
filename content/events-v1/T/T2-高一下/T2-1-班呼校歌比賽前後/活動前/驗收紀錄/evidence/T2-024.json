@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-024 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 2-3（疲勞）、6-1（群體影響力）、10-3（協商彈性）、12-1（程序變更要求度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 B 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [C,A,E,B] 組別合法配置並與各結局對教師之影響相符。【2026-11-23 文字修訂後複核】本篇八個結果新增現場具體互動後，逐 R 重新閱讀；新增對話與行動皆仍屬賽前準備，不預設正式賽果，人物未越權。R 字數：R1=148、R2=142、R3=143、R4=139、R5=142、R6=135、R7=149、R8=144。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。【文字修訂後複核】新增加的學生提問、試排或反應已反向對照 A～D 四種既成教師行動與 32 格相容性：不撤銷選項行動、不憑空創造正式規則，原矩陣權重與四狀態、NPC 增減保持不變。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 2-3（疲勞）、6-1（群體影響力）、10-3（協商彈性）、12-1（程序變更要求度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-024 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "與合法請假窗口確認既有資訊",
+        "action": "已與合法請假窗口核對既有的請假紀錄，確認合法缺席人數但不公開請假事由",
+        "tradeoff": "替合法請假學生正名並守住隱私，但尚未回覆群組的同學名單仍須確認"
+      },
+      {
+        "id": 2,
+        "short": "私下聽被點名者對名單的擔憂",
+        "action": "已私下傾聽被點名學生對公開名單的擔憂，確認其真正錯過的是哪一段練習",
+        "tradeoff": "掌握實際補練需求而不逼當事人公開家務，但群組上對缺席者的誤會須另行降溫"
+      },
+      {
+        "id": 3,
+        "short": "將必要人數統計與個人隱私分開",
+        "action": "已要求將「必要出席人數統計」與「個人請假隱私理由」分欄處理，禁止貼出含事由名單",
+        "tradeoff": "建立清楚的班級資料界線，但幹部必須重新整理現有兩張混雜的表格"
+      },
+      {
+        "id": 4,
+        "short": "把「未回覆訊息」從「拒絕出席」欄位改列為待確認",
+        "action": "已請幹部將未讀或未回訊者改標為待確認，停止直接推定為故意拒絕排練",
+        "tradeoff": "避免誤傷沒看到訊息的同學，但確認出席人數的時間會拉長"
+      },
+      {
+        "id": 5,
+        "short": "整合班呼與校歌兩組缺席統計表避免重複計算",
+        "action": "已請班呼與校歌負責人合併核對出席表，確認是否因分表統計導致缺席次數重複",
+        "tradeoff": "修正失真統計數字，但需要兩組各自把舊紀錄拿出來比對"
+      },
+      {
+        "id": 6,
+        "short": "檢視臨時加練通知時間是否過晚",
+        "action": "已要求排程幹部檢視群組發訊時間，不得把放學後才臨時通知的練習計為無故缺席",
+        "tradeoff": "公平對待已有合法安排的同學，但臨時加練的彈性會變小"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": "emotional",
+      "C": 2,
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "C",
+    "A",
+    "E",
+    "B"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師與合法請假窗口核對既有資訊，顯著促進幹部確認「那一天他其實有正式請假」並更正分類。",
+      "actionPreserved": "保留「與合法請假窗口確認既有資訊」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核對合法請假後，剩餘沒記錄的人更容易被發現只是未讀訊息而非拒絕，屬自然可達。",
+      "actionPreserved": "保留「與合法請假窗口確認既有資訊」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "有老師核實公假後，當事人較不擔心被說找藉口，屬自然可達。",
+      "actionPreserved": "保留「與合法請假窗口確認既有資訊」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核對官方請假日期時，也有機會順帶發現班呼與校歌兩張表統計不一致，屬自然可達。",
+      "actionPreserved": "保留「與合法請假窗口確認既有資訊」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核對日期時若對照群組紀錄，仍可發現有一次臨時加練沒先通知，屬自然可達。",
+      "actionPreserved": "保留「與合法請假窗口確認既有資訊」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師核對公假卻不公開事由的作法，顯著促進幹部接受「不須交代家裡的事」之隱私界線。",
+      "actionPreserved": "保留「與合法請假窗口確認既有資訊」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認請假日期後，補練組可對應指出那次缺席只錯過轉場，屬自然可達。",
+      "actionPreserved": "保留「與合法請假窗口確認既有資訊」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核實請假資料有助最終建立乾淨的參與與待補表，屬自然可達。",
+      "actionPreserved": "保留「與合法請假窗口確認既有資訊」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "點出統計出席不能變公開審判後，幹部開始回頭檢查請假分類是否搞錯，屬自然可達。",
+      "actionPreserved": "保留「統計出席可以做，不能因此公開審判個人。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "禁止公開審判個人，讓大家願意把未讀訊息改回待回覆，屬自然可達。",
+      "actionPreserved": "保留「統計出席可以做，不能因此公開審判個人。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師明確表態不得公開審判個人，顯著促進幹部理解點名管理不等於把個人困境當話題。",
+      "actionPreserved": "保留「統計出席可以做，不能因此公開審判個人。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止公審後，同學才靜下心檢查兩組是不是用了兩張重複計算的表，屬自然可達。",
+      "actionPreserved": "保留「統計出席可以做，不能因此公開審判個人。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不急著審判缺席者後，排程者較能面對自己臨時加練通知太晚的事實，屬自然可達。",
+      "actionPreserved": "保留「統計出席可以做，不能因此公開審判個人。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "禁止公開審判的立場，顯著促進停止強制要求在公開表格填寫家庭請假細節。",
+      "actionPreserved": "保留「統計出席可以做，不能因此公開審判個人。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不貼標籤後，補練重心轉向實際錯過的轉場段落，屬自然可達。",
+      "actionPreserved": "保留「統計出席可以做，不能因此公開審判個人。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "建立不公審的統計原則，有助推出只記可確認狀況與待補內容的新表，屬自然可達。",
+      "actionPreserved": "保留「統計出席可以做，不能因此公開審判個人。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下聽取當事人擔憂時，當事人也最容易說出自己那天其實有正式請假，屬自然可達。",
+      "actionPreserved": "保留「私下聽被點名者對名單的擔憂」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下溝通時可能發現對方根本沒看到群組臨時通知，屬自然可達。",
+      "actionPreserved": "保留「私下聽被點名者對名單的擔憂」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師私下傾聽被點名者對名單的擔憂，顯著促進接住「怕全班都在看自己名字」的壓力。",
+      "actionPreserved": "保留「私下聽被點名者對名單的擔憂」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "了解當事人實際有去另一段練習後，有助揭露兩張表重複計算的問題，屬自然可達。",
+      "actionPreserved": "保留「私下聽被點名者對名單的擔憂」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下傾聽也常會聽到「那天是放學後才通知加練」的實情，屬自然可達。",
+      "actionPreserved": "保留「私下聽被點名者對名單的擔憂」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "尊重私下擔憂有助於守住不公開家庭細節的界線，屬自然可達。",
+      "actionPreserved": "保留「私下聽被點名者對名單的擔憂」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師確認當事人真正錯過的段落，顯著促進「缺席者可能只錯過轉場」的精準補練安排。",
+      "actionPreserved": "保留「私下聽被點名者對名單的擔憂」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "了解個別擔憂與需求後，支持改用記錄待補內容的新表，屬自然可達。",
+      "actionPreserved": "保留「私下聽被點名者對名單的擔憂」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "將人數統計與隱私分開的規則，促使幹部修正原本混雜的請假與缺席分類，屬自然可達。",
+      "actionPreserved": "保留「將必要人數統計與個人隱私分開」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師要求嚴謹分開統計與隱私，顯著促進停止猜測並將「未讀訊息」改回待回覆。",
+      "actionPreserved": "保留「將必要人數統計與個人隱私分開」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "隱私從公開名單移除後，減輕當事人怕名字被盯著看的恐懼，屬自然可達。",
+      "actionPreserved": "保留「將必要人數統計與個人隱私分開」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "重新整理分離統計表時，顯著促進發現班呼與校歌用了兩張表造成重複計算。",
+      "actionPreserved": "保留「將必要人數統計與個人隱私分開」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "整理表格來源時，較容易順帶對照出未先通知的臨時加練紀錄，屬自然可達。",
+      "actionPreserved": "保留「將必要人數統計與個人隱私分開」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "統計與隱私分開的制度要求，顯著促進拒絕強制填寫家庭細節的表格作法。",
+      "actionPreserved": "保留「將必要人數統計與個人隱私分開」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "清楚分欄記錄後，也能把只錯過轉場的具體需求標出來，屬自然可達。",
+      "actionPreserved": "保留「將必要人數統計與個人隱私分開」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "要求統計與隱私分開，顯著促進最終產出「記錄可確認狀況與待補內容」的單一整合表。",
+      "actionPreserved": "保留「將必要人數統計與個人隱私分開」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

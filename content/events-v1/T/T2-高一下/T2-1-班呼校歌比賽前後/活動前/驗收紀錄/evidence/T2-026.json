@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-026 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 2-4（愉悅）、3-2（判斷能力）、10-4（協調合作度）、12-4（問責要求度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 B 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [E,B,C,A] 組別合法配置並與各結局對教師之影響相符。【2026-11-23 文字修訂後複核】本篇八個結果新增現場具體互動後，逐 R 重新閱讀；新增對話與行動皆仍屬賽前準備，不預設正式賽果，人物未越權。R 字數：R1=145、R2=152、R3=140、R4=150、R5=145、R6=136、R7=141、R8=141。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。【文字修訂後複核】新增加的學生提問、試排或反應已反向對照 A～D 四種既成教師行動與 32 格相容性：不撤銷選項行動、不憑空創造正式規則，原矩陣權重與四狀態、NPC 增減保持不變。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 2-4（愉悅）、3-2（判斷能力）、10-4（協調合作度）、12-4（問責要求度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-026 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "安排討論是否需要調整相似句子",
+        "action": "已安排班內討論是否需要微調相似押韻句，但明確表示修改與否不等於承認抄襲",
+        "tradeoff": "替創作組保留表達班級特色的空間，但當事人可能擔心一改反而被誤認理虧"
+      },
+      {
+        "id": 2,
+        "short": "確認校方是否有相關活動規定",
+        "action": "已向承辦確認比賽辦法對口號原創與相似爭議的既有規範，未替校方自訂標準",
+        "tradeoff": "確立官方處理依據而非私下吵架，但等待規範說明期間群組猜測未必立即消失"
+      },
+      {
+        "id": 3,
+        "short": "向合法窗口反映尚待查核的爭議",
+        "action": "已向學校合法承辦窗口反映目前尚待查核的影片爭議，並阻止學生私下跨班質問",
+        "tradeoff": "避免跨班衝突升級，但設計者須配合整理草稿時間序供查核"
+      },
+      {
+        "id": 4,
+        "short": "請設計者整理先前小組討論的草稿與修改日期紀錄",
+        "action": "已請創作組保存最初構想草稿與修改紀錄供查證，不要求交出私人聊天全部內容",
+        "tradeoff": "建立客觀創作時間序證據，但時間早也不等於能證明他班是否看過"
+      },
+      {
+        "id": 5,
+        "short": "把兩段班呼全文並列比對而非只看幾秒剪輯短片",
+        "action": "已請同學將兩段班呼全文與節拍並列檢視，避免被斷章取義的幾秒剪輯誤導",
+        "tradeoff": "快速看清全文差異與僅末尾押韻相近的事實，但仍須確認社群傳播來源"
+      },
+      {
+        "id": 6,
+        "short": "提醒群組停止把相似押韻直接貼標籤成抄襲",
+        "action": "已在班群重申單靠一段相似影片不足以認定抄襲，禁止在查證前公開貼標籤",
+        "tradeoff": "保護組員名譽不被群組公審，但質疑者仍可能私下嘀咕"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": "emotional",
+      "C": 2,
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "E",
+    "B",
+    "C",
+    "A"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論是否需要微調相似句時，自然會先把兩段全文寫下來比對哪裡相像，屬自然可達。",
+      "actionPreserved": "保留「安排討論是否需要調整相似句子」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "檢視相似句來源時，設計者會拿出更早的小組草稿佐證，屬自然可達。",
+      "actionPreserved": "保留「安排討論是否需要調整相似句子」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論修改同時，同學仍能理性指出兩班可能根本沒聽過彼此，屬自然可達。",
+      "actionPreserved": "保留「安排討論是否需要調整相似句子」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論改句時容易觸發設計者「其實大家不信任我」的委屈而說出來，屬自然可達。",
+      "actionPreserved": "保留「安排討論是否需要調整相似句子」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "比對為何只像這句時，有機會發現轉傳影片刻意只剪出押韻幾秒，屬自然可達。",
+      "actionPreserved": "保留「安排討論是否需要調整相似句子」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "班內已展開創作調整討論，有助壓下衝去別班走廊質問的衝動，屬自然可達。",
+      "actionPreserved": "保留「安排討論是否需要調整相似句子」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師明確表示修改與否不等於承認抄襲並安排討論，顯著促進學生將創作選擇與責任判定分開。",
+      "actionPreserved": "保留「安排討論是否需要調整相似句子」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論微調後，設計者更願意把歷次草稿與修改理由留存下來，屬自然可達。",
+      "actionPreserved": "保留「安排討論是否需要調整相似句子」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師壓下定罪評論後，大家冷靜把兩段全文寫下才發現只像最後四字，屬自然可達。",
+      "actionPreserved": "保留「被懷疑抄襲會很委屈，先查清楚再評論。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不被預先定罪後，設計者更願意翻出更早的小組草稿核對時序，屬自然可達。",
+      "actionPreserved": "保留「被懷疑抄襲會很委屈，先查清楚再評論。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止定罪讓雙方能客觀思考兩班各自排練其實無接觸證據，屬自然可達。",
+      "actionPreserved": "保留「被懷疑抄襲會很委屈，先查清楚再評論。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師接住被懷疑抄襲的委屈並保證不先定罪，顯著促進設計者說出「最氣的是大家不相信我」並獲理解。",
+      "actionPreserved": "保留「被懷疑抄襲會很委屈，先查清楚再評論。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "冷靜檢視證據時，也較容易發現轉傳影片是被斷章剪輯的，屬自然可達。",
+      "actionPreserved": "保留「被懷疑抄襲會很委屈，先查清楚再評論。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師撐腰後，設計者與同學較不會衝動跑去別班質問，屬自然可達。",
+      "actionPreserved": "保留「被懷疑抄襲會很委屈，先查清楚再評論。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "在「不被當成承認抄襲」的安全感下，顯著促進班呼組把改一句與認錯分開。",
+      "actionPreserved": "保留「被懷疑抄襲會很委屈，先查清楚再評論。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒獲得保障後，學生更願意平靜整理創作歷程備查，屬自然可達。",
+      "actionPreserved": "保留「被懷疑抄襲會很委屈，先查清楚再評論。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認比賽辦法對原創的界線後，同學對照全文更確定僅四字押韻不構成抄襲，屬自然可達。",
+      "actionPreserved": "保留「確認校方是否有相關活動規定」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "知道正式規範重證據後，學生更能分辨創作時間序與接觸證據，屬自然可達。",
+      "actionPreserved": "保留「確認校方是否有相關活動規定」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師核對官方規定後，顯著促進全班理解無接觸證據前不可替他班貼標籤。",
+      "actionPreserved": "保留「確認校方是否有相關活動規定」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "等待官方規範說明期間，設計者仍可能吐露被懷疑的委屈並拿出歷程，屬自然可達。",
+      "actionPreserved": "保留「確認校方是否有相關活動規定」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "依規範檢視證據完整性時，容易發現比對影片被剪得只剩幾秒，屬自然可達。",
+      "actionPreserved": "保留「確認校方是否有相關活動規定」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "有校方規則可循，能阻止學生私下跨班質問，屬自然可達。",
+      "actionPreserved": "保留「確認校方是否有相關活動規定」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "了解比賽規定後，班呼組較能安心決定是否自行調整詞句，屬自然可達。",
+      "actionPreserved": "保留「確認校方是否有相關活動規定」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "確認合法規定後，顯著促進設計者把草稿版本與日期整理好交窗口備查。",
+      "actionPreserved": "保留「確認校方是否有相關活動規定」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "向合法窗口反映爭議前，須先全文比對究竟哪裡相似，屬自然可達。",
+      "actionPreserved": "保留「向合法窗口反映尚待查核的爭議」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "準備交給窗口查核的資料時，顯著促進設計者拿出早於社群貼文的小組草稿並釐清時序。",
+      "actionPreserved": "保留「向合法窗口反映尚待查核的爭議」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "窗口查核強調證據，有助大家保留評價不瞎猜，屬自然可達。",
+      "actionPreserved": "保留「向合法窗口反映尚待查核的爭議」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "配合窗口整理歷程時，設計者可保留私人聊天內容而只交設計紀錄，屬自然可達。",
+      "actionPreserved": "保留「向合法窗口反映尚待查核的爭議」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師請合法窗口查核影片爭議，顯著促進找回較長原片並拆穿斷章剪輯的事實。",
+      "actionPreserved": "保留「向合法窗口反映尚待查核的爭議」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師向窗口反映並明確阻止跨班質問，顯著促進設計者攔下同學去走廊找對方說理。",
+      "actionPreserved": "保留「向合法窗口反映尚待查核的爭議」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "既然爭議交由正式窗口處理，班內討論改詞就更不必怕被當認錯，屬自然可達。",
+      "actionPreserved": "保留「向合法窗口反映尚待查核的爭議」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "向合法窗口反映爭議的處置，顯著促進學生整理「草稿版本、日期與修改理由」的創作歷程。",
+      "actionPreserved": "保留「向合法窗口反映尚待查核的爭議」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

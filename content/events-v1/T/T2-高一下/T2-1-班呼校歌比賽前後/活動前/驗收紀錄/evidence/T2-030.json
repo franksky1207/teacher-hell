@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-030 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 5-3（尊重）、7-3（生活資源）、9-3（班務參與度）、12-3（決策介入度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 B 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [D,C,A,B] 組別合法配置並與各結局對教師之影響相符。【2026-11-23 文字修訂後複核】本篇八個結果新增現場具體互動後，逐 R 重新閱讀；新增對話與行動皆仍屬賽前準備，不預設正式賽果，人物未越權。R 字數：R1=159、R2=152、R3=140、R4=147、R5=139、R6=143、R7=145、R8=174。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。【文字修訂後複核】新增加的學生提問、試排或反應已反向對照 A～D 四種既成教師行動與 32 格相容性：不撤銷選項行動、不憑空創造正式規則，原矩陣權重與四狀態、NPC 增減保持不變。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 5-3（尊重）、7-3（生活資源）、9-3（班務參與度）、12-3（決策介入度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-030 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "確認剩餘合法彩排時間與場地",
+        "action": "已確認今日剩餘的合法彩排時間與場地使用上限，明確告知無法無限延長",
+        "tradeoff": "建立客觀時間框架逼出優先順序，但想各自加練片段的組別會感到時間緊迫"
+      },
+      {
+        "id": 2,
+        "short": "請兩組共同列出尚未接過的轉場",
+        "action": "已請班呼與校歌兩組共同列出目前還沒完整接過一遍的轉場清單",
+        "tradeoff": "把焦點精準鎖定在未驗證的交接空白，但已熟練片段的組員可能覺得沒練到不夠穩"
+      },
+      {
+        "id": 3,
+        "short": "保留尚未驗證的問題而不臨時追加承諾",
+        "action": "已決定保留尚未驗證的問題標註在流程表，不替學生臨時追加或保證賽前一定能完美",
+        "tradeoff": "誠實面對現況不製造假承諾，但部分求好心切的同學可能對留下空格感到不安"
+      },
+      {
+        "id": 4,
+        "short": "請同學用手機計時比較重練熟段與走一次轉場的時間",
+        "action": "已請同學實際計時一分鐘，對照反覆喊熟段與走過一次轉場交接的時間成本",
+        "tradeoff": "用客觀數據說服大家讓出時間，但須花幾分鐘做時間盤點"
+      },
+      {
+        "id": 5,
+        "short": "把班呼組與校歌組兩份轉場標記併列核對",
+        "action": "已請兩組打開各自共享檔案併列比對轉場拍點，禁止覆蓋任何一方原始紀錄",
+        "tradeoff": "快速找出兩組文件不同步之處，但比對時會暫停現場走位"
+      },
+      {
+        "id": 6,
+        "short": "請已熟練開頭的領呼者示範讓出時間給校歌銜接",
+        "action": "已詢問班呼組是否同意從已經穩定的開頭讓出幾分鐘，優先完成一次完整合演",
+        "tradeoff": "直接解決時間分配僵局，但前提是班呼組先看清開頭其實已經很熟"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": "emotional",
+      "C": 2,
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "D",
+    "C",
+    "A",
+    "B"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認剩餘時間有限不能無限重練，促使大家先完整走一次找出空白，屬自然可達。",
+      "actionPreserved": "保留「確認剩餘合法彩排時間與場地」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "知道時間上限後，領呼者較容易看出開頭已熟而願意讓出時間，屬自然可達。",
+      "actionPreserved": "保留「確認剩餘合法彩排時間與場地」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在有限時間內排序，校歌組更有機會說出每次都被排到最後的困境，屬自然可達。",
+      "actionPreserved": "保留「確認剩餘合法彩排時間與場地」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "時間有限仍可能讓怕出錯的人想抓緊熟段，經過溝通才轉念，屬自然可達。",
+      "actionPreserved": "保留「確認剩餘合法彩排時間與場地」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師確認剩餘合法彩排時間上限，顯著促進學生拿手機計時對照「一分鐘重喊 vs 試一次交接」。",
+      "actionPreserved": "保留「確認剩餘合法彩排時間與場地」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "盤點時間同時打開共享檔比對，仍可能發現兩組最後版本不一致，屬自然可達。",
+      "actionPreserved": "保留「確認剩餘合法彩排時間與場地」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師明確告知時間與場地使用上限不可無限延長，顯著促進幹部擋下硬延長並尊重他人生計行程。",
+      "actionPreserved": "保留「確認剩餘合法彩排時間與場地」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "清楚時間框架有助全班收斂進同一張流程表，屬自然可達。",
+      "actionPreserved": "保留「確認剩餘合法彩排時間與場地」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師點出必須合起來走過一次才算驗證，顯著促進全班從頭走到尾並發現交接空白。",
+      "actionPreserved": "保留「每一段都想做好很正常，但整班還需要合起來走一次。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定每段都想做好後，領呼者較不覺得被否定而願意讓出已熟開頭的時間，屬自然可達。",
+      "actionPreserved": "保留「每一段都想做好很正常，但整班還需要合起來走一次。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師回應兩邊急切心情並強調合演驗證，顯著促進校歌組說出「不是最後才補上的東西」。",
+      "actionPreserved": "保留「每一段都想做好很正常，但整班還需要合起來走一次。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師接住每段都想做好的焦慮，顯著促進學生坦白「怕完整走一遍會出錯」並改將試排視為找問題。",
+      "actionPreserved": "保留「每一段都想做好很正常，但整班還需要合起來走一次。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定追求完美的心意後，再用計時工具比較效率較容易被接受，屬自然可達。",
+      "actionPreserved": "保留「每一段都想做好很正常，但整班還需要合起來走一次。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "合起來走一次時，兩組會拿各自共享檔對照而發現版本差異，屬自然可達。",
+      "actionPreserved": "保留「每一段都想做好很正常，但整班還需要合起來走一次。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒穩住後，大家較能理性接受今天不能硬延長時間，屬自然可達。",
+      "actionPreserved": "保留「每一段都想做好很正常，但整班還需要合起來走一次。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "體會合起來走一次的意義，有助形成「練同一場比賽」的整體流程表，屬自然可達。",
+      "actionPreserved": "保留「每一段都想做好很正常，但整班還需要合起來走一次。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師請兩組共同列出尚未接過的轉場清單，顯著促進完整走完時立刻標出兩段間的停頓空白。",
+      "actionPreserved": "保留「請兩組共同列出尚未接過的轉場」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "列出未驗證的轉場清單後，顯著促進領呼者對照紀錄發現開頭已熟而讓出時間。",
+      "actionPreserved": "保留「請兩組共同列出尚未接過的轉場」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "共同列清單的過程讓校歌組能把過去總是最後才練的處境講出來，屬自然可達。",
+      "actionPreserved": "保留「請兩組共同列出尚未接過的轉場」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "把未接過的轉場列出來，能把模糊的「怕出錯」轉成具體要測的點，屬自然可達。",
+      "actionPreserved": "保留「請兩組共同列出尚未接過的轉場」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "清單列出待測轉場後，學生容易拿手機計時看重練熟段是否划算，屬自然可達。",
+      "actionPreserved": "保留「請兩組共同列出尚未接過的轉場」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "請兩組共同列轉場清單並對照資料，顯著促進發現「兩組各有一份最後版本」並併列保留。",
+      "actionPreserved": "保留「請兩組共同列出尚未接過的轉場」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "聚焦未驗證轉場清單，有助在有限時間內完成確認而不硬延長，屬自然可達。",
+      "actionPreserved": "保留「請兩組共同列出尚未接過的轉場」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "共同列出轉場清單的作法，顯著促進把班呼、轉場與校歌串成同一張流程表。",
+      "actionPreserved": "保留「請兩組共同列出尚未接過的轉場」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留尚未驗證問題而不臨時追加保證，讓大家誠實面對走完後仍有空白，屬自然可達。",
+      "actionPreserved": "保留「保留尚未驗證的問題而不臨時追加承諾」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不要求賽前把每段都逼到極致，讓領呼者比較放心地把時間讓給銜接，屬自然可達。",
+      "actionPreserved": "保留「保留尚未驗證的問題而不臨時追加承諾」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不製造假承諾的務實態度，有助兩組按共同需求重新排練順序，屬自然可達。",
+      "actionPreserved": "保留「保留尚未驗證的問題而不臨時追加承諾」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師明確表示不要求做到完美才算數、允許保留未驗證空格，顯著促進怕出錯的學生敢嘗試完整試排。",
+      "actionPreserved": "保留「保留尚未驗證的問題而不臨時追加承諾」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "誠實面對剩餘時間與問題，有助同學用計時數據務實安排練習目的，屬自然可達。",
+      "actionPreserved": "保留「保留尚未驗證的問題而不臨時追加承諾」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留待查問題的原則，與「不覆蓋任一方原始紀錄」的作法相符，屬自然可達。",
+      "actionPreserved": "保留「保留尚未驗證的問題而不臨時追加承諾」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不臨時追加承諾能防止為了硬湊完美而違法延長留校時間，屬自然可達。",
+      "actionPreserved": "保留「保留尚未驗證的問題而不臨時追加承諾」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師決定保留尚未驗證的問題標註在流程表，顯著促進最後整合出「留有已確認與尚需注意空格」的流程表。",
+      "actionPreserved": "保留「保留尚未驗證的問題而不臨時追加承諾」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

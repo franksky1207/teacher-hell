@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-003 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 1-1（責任感）、3-2（判斷能力）、9-1（規範接受度）、10-2（進度督促度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 D 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [C,A,E,D] 組別合法配置並與各結局對教師之影響相符。【本輪修稿後複核】已重新逐字閱讀本篇 R1～R8 新增人物言行，八個結果皆屬本場比賽前已知的準備資訊；每 R 均由至少一位學生主動提問、確認或提出可試方案，未將未核准的規範寫為既成事實。修稿後結果字數：R1 155、R2 147、R3 151、R4 152、R5 156、R6 152、R7 149、R8 145。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。【本輪修稿後複核】已將新增的學生對話／排練反應反向對照本篇 A～D 原始已完成行動與全部 32 格；新增內容不撤銷任何選項已完成事實，不改變原四項狀態增減、NPC 增減或各格既有權重，維持原 32 格理由。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 1-1（責任感）、3-2（判斷能力）、9-1（規範接受度）、10-2（進度督促度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-003 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "讓同學試聽未修改校歌前奏的完整版本",
+        "action": "已讓同學試聽未修改校歌前奏的原始版本，標記出兩者在起唱拍點上的差異",
+        "tradeoff": "能讓全班聽清原曲規範與起唱點，但節奏組可能覺得創意立刻被冷落"
+      },
+      {
+        "id": 2,
+        "short": "向正式承辦窗口確認是否可有轉場音效",
+        "action": "已向正式承辦窗口詢問班呼接校歌轉場是否允許自加音效，未在回覆前自行放行",
+        "tradeoff": "確保規則依據明確，但等待回覆期間兩組須先用保守版練習"
+      },
+      {
+        "id": 3,
+        "short": "將自創節奏保留在班呼部分試排",
+        "action": "已將自創節奏保留在班呼段落試排，並要求校歌段落維持原曲前奏不混用",
+        "tradeoff": "保住節奏組的設計成果又守住校歌原曲，但兩段銜接仍須另外設計訊號"
+      },
+      {
+        "id": 4,
+        "short": "請節奏組與校歌組並排標記兩種版本檔名",
+        "action": "已請兩組將共享資料夾內的原始校歌與自創剪輯版清楚改名區隔",
+        "tradeoff": "避免誤拿錯檔練習，但尚未解決轉場銜接問題"
+      },
+      {
+        "id": 5,
+        "short": "試排不用鼓點改以手勢或隊形轉場",
+        "action": "已請兩組在不加音軌的情況下，試排一次純靠手勢或隊形的轉場方式",
+        "tradeoff": "不涉及改曲違規風險，但節奏組擔心舞台氣氛不夠連貫"
+      },
+      {
+        "id": 6,
+        "short": "請後排同學回饋試聽剪輯版是否聽清起唱",
+        "action": "已請後排同學實際試聽並回報重拍是否干擾校歌第一句進場",
+        "tradeoff": "能快速檢驗現場聽感，但可能讓節奏組覺得作品被挑毛病"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": 3,
+      "D": "emotional"
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "C",
+    "A",
+    "E",
+    "D"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "試聽未修改的原版校歌前奏，能當場對照出重拍只在自創剪輯版，顯著促進來源區分。",
+      "actionPreserved": "保留「讓同學試聽未修改校歌前奏的完整版本」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "聽到原曲前奏的留白後，剪輯者更易說出害怕冷場才加鼓點的原因，屬自然可達。",
+      "actionPreserved": "保留「讓同學試聽未修改校歌前奏的完整版本」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "對照原曲後試播剪輯版，前排與後排起唱混亂的差異會立刻浮現，顯著促進發現問題。",
+      "actionPreserved": "保留「讓同學試聽未修改校歌前奏的完整版本」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "試聽原版音檔時最容易發現資料夾裡「正式校歌」檔名與內容不符，顯著促進改名標記。",
+      "actionPreserved": "保留「讓同學試聽未修改校歌前奏的完整版本」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "試聽原版雖能看清差異，但規則許可仍須另有正式窗口確認，屬自然可達。",
+      "actionPreserved": "保留「讓同學試聽未修改校歌前奏的完整版本」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "試聽原版後對照混音版，熟練同學更能指著音檔說明新鼓點讓人被迫猜拍，顯著促進。",
+      "actionPreserved": "保留「讓同學試聽未修改校歌前奏的完整版本」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "回到原曲後，兩組自然可討論把自創節奏移回班呼，屬自然可達。",
+      "actionPreserved": "保留「讓同學試聽未修改校歌前奏的完整版本」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "看清原曲與自創差異後，較易理解兩部分可合作而不混為一首，屬自然可達。",
+      "actionPreserved": "保留「讓同學試聽未修改校歌前奏的完整版本」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "詢問承辦後等待回覆，對比對原版與剪輯版有一定提醒效果，屬自然可達。",
+      "actionPreserved": "保留「向正式承辦窗口確認是否可有轉場音效」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "向行政承辦詢問規則的舉動偏程序面，對剪輯者吐露怕冷場的心聲較無直接促進，屬抑制。",
+      "actionPreserved": "保留「向正式承辦窗口確認是否可有轉場音效」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "單純向承辦詢問音效規定並未安排教室試播，對發現後排第二拍落差屬抑制。",
+      "actionPreserved": "保留「向正式承辦窗口確認是否可有轉場音效」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核對官方規範有助意識到檔名不可混標為正式版，屬自然可達。",
+      "actionPreserved": "保留「向正式承辦窗口確認是否可有轉場音效」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師已正式向承辦窗口確認能否加轉場音效，顯著促進學生停止拿截圖猜規定。",
+      "actionPreserved": "保留「向正式承辦窗口確認是否可有轉場音效」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "向承辦查規則本身未進行現場試唱，對發現熟手被迫猜拍的聽覺困難屬抑制。",
+      "actionPreserved": "保留「向正式承辦窗口確認是否可有轉場音效」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在等待官方回覆期間，先將鼓點移回班呼草稿是合理的保守作法，屬自然可達。",
+      "actionPreserved": "保留「向正式承辦窗口確認是否可有轉場音效」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "向承辦確認規則的行動本身就強化了「同場比賽不可隨意改校歌」的界線，顯著促進。",
+      "actionPreserved": "保留「向正式承辦窗口確認是否可有轉場音效」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "將自創節奏保留在班呼段落，本身就預設了校歌原檔與自創版的區隔，屬自然可達。",
+      "actionPreserved": "保留「將自創節奏保留在班呼部分試排」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留自創節奏給班呼，讓剪輯者不覺得創意被全盤否定而願意談怕冷場，屬自然可達。",
+      "actionPreserved": "保留「將自創節奏保留在班呼部分試排」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在調整兩段銜接時試播，仍可能觀察到後排對拍點落差，屬自然可達。",
+      "actionPreserved": "保留「將自創節奏保留在班呼部分試排」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "兩段音檔分開處理後，更容易發現共享資料夾檔名混亂的問題，屬自然可達。",
+      "actionPreserved": "保留「將自創節奏保留在班呼部分試排」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "校歌先維持原曲不混用，符合不依賴未知許可的保守練習，屬自然可達。",
+      "actionPreserved": "保留「將自創節奏保留在班呼部分試排」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "校歌改回原曲前奏後，能直接對比先前猜拍的困難，屬自然可達。",
+      "actionPreserved": "保留「將自創節奏保留在班呼部分試排」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師直接將自創節奏保留在班呼並維持校歌原曲，最直接顯著促進 R7 移回班呼草稿的發展。",
+      "actionPreserved": "保留「將自創節奏保留在班呼部分試排」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "兩段各自獨立標記的作法，顯著促進學生在總排練表分清自創班呼與正式校歌。",
+      "actionPreserved": "保留「將自創節奏保留在班呼部分試排」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定設計用心而不馬上判錯，讓學生較願意冷靜對照原檔與剪輯版，屬自然可達。",
+      "actionPreserved": "保留「你想把兩段接得漂亮，這個想法值得討論。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師肯定學生想讓兩段接得漂亮的用心，顯著促進剪輯者坦白怕台上冷場的初衷。",
+      "actionPreserved": "保留「你想把兩段接得漂亮，這個想法值得討論。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒緩和後，兩組更願意客觀記錄後排試聽差異而非互相指責，屬自然可達。",
+      "actionPreserved": "保留「你想把兩段接得漂亮，這個想法值得討論。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定創意不否定動機，讓製作者不必因承認檔名誤導而被當成想作弊，屬自然可達。",
+      "actionPreserved": "保留「你想把兩段接得漂亮，這個想法值得討論。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "理解學生用心同時未承諾可改曲，有助大家理性接受須待窗口確認，屬自然可達。",
+      "actionPreserved": "保留「你想把兩段接得漂亮，這個想法值得討論。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不責怪節奏組的前提下，節奏組也較聽得進歌者被迫猜拍的難處，屬自然可達。",
+      "actionPreserved": "保留「你想把兩段接得漂亮，這個想法值得討論。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定設計價值讓節奏組願意把鼓點移回班呼而不覺被否定，屬自然可達。",
+      "actionPreserved": "保留「你想把兩段接得漂亮，這個想法值得討論。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "認可兩段銜接用心有助形成合作共識，屬自然可達。",
+      "actionPreserved": "保留「你想把兩段接得漂亮，這個想法值得討論。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

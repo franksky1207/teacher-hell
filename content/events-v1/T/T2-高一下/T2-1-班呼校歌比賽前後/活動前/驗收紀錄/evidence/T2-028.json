@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-028 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 2-4（愉悅）、4-2（安全需求）、5-1（信任）、11-3（人力投入度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 D 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [A,B,E,C] 組別合法配置並與各結局對教師之影響相符。【2026-11-23 文字修訂後複核】本篇八個結果新增現場具體互動後，逐 R 重新閱讀；新增對話與行動皆仍屬賽前準備，不預設正式賽果，人物未越權。R 字數：R1=143、R2=155、R3=145、R4=139、R5=137、R6=147、R7=136、R8=164。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。【文字修訂後複核】新增加的學生提問、試排或反應已反向對照 A～D 四種既成教師行動與 32 格相容性：不撤銷選項行動、不憑空創造正式規則，原矩陣權重與四狀態、NPC 增減保持不變。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 2-4（愉悅）、4-2（安全需求）、5-1（信任）、11-3（人力投入度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-028 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "保留截圖及其缺失的上下文",
+        "action": "已要求保留該張截圖並標註其缺失的學校名稱、年份與原始出處，禁止當正式依據",
+        "tradeoff": "以具體證據漏洞阻止流言擴散，但轉傳截圖的同學可能一時感到沒面子"
+      },
+      {
+        "id": 2,
+        "short": "向有權承辦窗口確認評分資訊",
+        "action": "已向有權承辦窗口確認本次比賽的正式評分項目與比重規定，未在回覆前自行裁定",
+        "tradeoff": "守住官方規範的權威性，但等待回覆期間兩組須先維持原本兩段準備"
+      },
+      {
+        "id": 3,
+        "short": "要求修改練習安排前先說明依據",
+        "action": "已要求任何想大幅縮減校歌或改動排練的提案，必須先提出正式公告依據否則維持原案",
+        "tradeoff": "保護校歌組不被流言任意刪減時間，但急著搶分數的班呼組可能覺得變通慢"
+      },
+      {
+        "id": 4,
+        "short": "請同學對照截圖與今年校方正式活動通知是否一致",
+        "action": "已請同學翻出今年度校方發布的正式比賽通知，核對班呼與校歌兩段是否皆列其中",
+        "tradeoff": "以現有官方文件穩住基本盤，但細部評分比例仍須另行詢問"
+      },
+      {
+        "id": 5,
+        "short": "實測只顧提高班呼音量對整場合演銜接的影響",
+        "action": "已提醒班呼組即使暫照高音量試喊，也要檢查是否反而蓋過節奏與校歌起唱",
+        "tradeoff": "用實際演練打破「越大聲越好」迷思，但仍須防止過度用嗓"
+      },
+      {
+        "id": 6,
+        "short": "將截圖傳聞與已核對官方公告分欄寫在班級紀錄表",
+        "action": "已請幹部把未證實截圖與已確認公告分兩欄整理，讓全班看清哪些是事實、哪些是傳聞",
+        "tradeoff": "建立清楚的資訊過濾習慣，但需花時間逐筆追查轉傳來源"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": 3,
+      "D": "emotional"
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "A",
+    "B",
+    "E",
+    "C"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師要求保留截圖並標註缺失的上下文，顯著促進學生放大檢查出「沒有活動名稱與年份日期」。",
+      "actionPreserved": "保留「保留截圖及其缺失的上下文」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "追蹤截圖缺失的來源出處，顯著促進揭露「群組裡每個人都說是別人傳的」而無原始出處。",
+      "actionPreserved": "保留「保留截圖及其缺失的上下文」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "把截圖漏洞挑出來後，校歌組的努力不再被未證實截圖否定，屬自然可達。",
+      "actionPreserved": "保留「保留截圖及其缺失的上下文」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "檢視缺失的年份與日期時，顯著促進揪出有人拿舊年度規則冒充今年規定。",
+      "actionPreserved": "保留「保留截圖及其缺失的上下文」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止迷信截圖後，若班呼組曾按截圖試喊大聲，也會看出實測更亂，屬自然可達。",
+      "actionPreserved": "保留「保留截圖及其缺失的上下文」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留截圖待查而非一句話判假，符合「不靠大人代替資料說話」，屬自然可達。",
+      "actionPreserved": "保留「保留截圖及其缺失的上下文」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "比對缺失上下文的截圖與真公告時，容易確認班呼和校歌都在公告裡，屬自然可達。",
+      "actionPreserved": "保留「保留截圖及其缺失的上下文」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "把截圖漏洞標註清楚，直接支援最後「截圖與已核公告分欄」的整理，屬自然可達。",
+      "actionPreserved": "保留「保留截圖及其缺失的上下文」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "向承辦確認評分資訊的動作，本身就提示該截圖缺乏正式出處，屬自然可達。",
+      "actionPreserved": "保留「向有權承辦窗口確認評分資訊」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "等待承辦回覆時追問群組來源，也能發現截圖無原始出處，屬自然可達。",
+      "actionPreserved": "保留「向有權承辦窗口確認評分資訊」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師向承辦查證而非順從刪減校歌，減輕校歌組覺得沒價值的失落，屬自然可達。",
+      "actionPreserved": "保留「向有權承辦窗口確認評分資訊」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "向承辦查今年度規定，有助辨識舊年度資料不能直接套用，屬自然可達。",
+      "actionPreserved": "保留「向有權承辦窗口確認評分資訊」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "等候官方規則期間照常練轉場時，仍可驗證大聲喊不一定更清楚，屬自然可達。",
+      "actionPreserved": "保留「向有權承辦窗口確認評分資訊」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師親自向有權承辦窗口確認而不私自裁定，顯著促進學生理解「不是老師一句話就能改評分」。",
+      "actionPreserved": "保留「向有權承辦窗口確認評分資訊」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "向承辦窗口核對今年正式活動內容，顯著促進確認「班呼和校歌都在公告裡」。",
+      "actionPreserved": "保留「向有權承辦窗口確認評分資訊」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "有官方窗口把關，使全班不再只練半場，屬自然可達。",
+      "actionPreserved": "保留「向有權承辦窗口確認評分資訊」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "要求改排練須先說明公告依據，迫使大家回去看截圖有無活動名稱與日期，屬自然可達。",
+      "actionPreserved": "保留「要求修改練習安排前先說明依據」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "要求提出依據讓大家追問評分比重出處，發現只是層層轉傳，屬自然可達。",
+      "actionPreserved": "保留「要求修改練習安排前先說明依據」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "沒有正式依據前不准刪除校歌，直接保護了校歌組的準備價值，屬自然可達。",
+      "actionPreserved": "保留「要求修改練習安排前先說明依據」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "要求拿出正式依據時，有人翻出舊年度規則而被看穿年份不符，屬自然可達。",
+      "actionPreserved": "保留「要求修改練習安排前先說明依據」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "維持原案練習節奏與轉場，能對照出單純提高音量反而混亂，屬自然可達。",
+      "actionPreserved": "保留「要求修改練習安排前先說明依據」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "堅持要看正式公告依據而非老師口頭定案，與「不靠大人代替資料說話」一致，屬自然可達。",
+      "actionPreserved": "保留「要求修改練習安排前先說明依據」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師要求以正式公告依據為準，顯著促進學生翻出今年公告確認「班呼與校歌都在裡面」。",
+      "actionPreserved": "保留「要求修改練習安排前先說明依據」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "要求修改安排須有依據的原則，顯著促進「截圖與已核公告分欄、完整呈現兩段」。",
+      "actionPreserved": "保留「要求修改練習安排前先說明依據」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "提醒沒有來源不能亂改後，學生較願意冷靜放大截圖找漏洞，屬自然可達。",
+      "actionPreserved": "保留「擔心練錯方向很正常，但沒有來源就不能亂改。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒穩住後，學生追查來源時較能就事論事列出待查問題而不抓人公審，屬自然可達。",
+      "actionPreserved": "保留「擔心練錯方向很正常，但沒有來源就不能亂改。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師理解大家擔心練錯方向的不安並穩住校歌練習，顯著促進校歌組吐露被否定的失落並獲班呼組理解。",
+      "actionPreserved": "保留「擔心練錯方向很正常，但沒有來源就不能亂改。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "提醒要有正式來源，讓想直接套用舊資料的人願意停下來對照日期，屬自然可達。",
+      "actionPreserved": "保留「擔心練錯方向很正常，但沒有來源就不能亂改。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不急著否定校歌後，班呼組也較能客觀檢視大聲喊導致起唱混亂的問題，屬自然可達。",
+      "actionPreserved": "保留「擔心練錯方向很正常，但沒有來源就不能亂改。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "誠實說明在沒有正式來源前不能亂宣布，有助學生接受應向窗口確認，屬自然可達。",
+      "actionPreserved": "保留「擔心練錯方向很正常，但沒有來源就不能亂改。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "穩住大家不隨便推翻練習，與核對公告保留兩段準備相輔相成，屬自然可達。",
+      "actionPreserved": "保留「擔心練錯方向很正常，但沒有來源就不能亂改。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "理解焦慮同時守住兩段練習，有助形成完整呈現班呼與校歌的共識，屬自然可達。",
+      "actionPreserved": "保留「擔心練錯方向很正常，但沒有來源就不能亂改。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

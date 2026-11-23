@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-021 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 2-3（疲勞）、3-1（溝通能力）、9-1（規範接受度）、11-3（人力投入度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 D 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [E,C,B,D] 組別合法配置並與各結局對教師之影響相符。【2026-11-23 文字修訂後複核】本篇八個結果新增現場具體互動後，逐 R 重新閱讀；新增對話與行動皆仍屬賽前準備，不預設正式賽果，人物未越權。R 字數：R1=144、R2=146、R3=148、R4=135、R5=144、R6=144、R7=143、R8=150。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。【文字修訂後複核】新增加的學生提問、試排或反應已反向對照 A～D 四種既成教師行動與 32 格相容性：不撤銷選項行動、不憑空創造正式規則，原矩陣權重與四狀態、NPC 增減保持不變。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 2-3（疲勞）、3-1（溝通能力）、9-1（規範接受度）、11-3（人力投入度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-021 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "私下聽當事人對詞句的具體感受",
+        "action": "已私下聽取當事人對爭議詞句的具體感受，並承諾不逼迫其在全班面前解釋",
+        "tradeoff": "保護當事人隱私與心理安全，但寫詞同學可能暫時不知道哪裡踩到線"
+      },
+      {
+        "id": 2,
+        "short": "停止強迫不願者公開喊爭議句",
+        "action": "已要求停止強迫不願意的同學公開喊該爭議句，並暫緩將該句列入正式定稿",
+        "tradeoff": "立刻止住排練中的被迫參與感，但班呼口號必須另行補寫替代句"
+      },
+      {
+        "id": 3,
+        "short": "保留修改紀錄供班內再討論",
+        "action": "已保留班呼草稿的修改紀錄與討論空間，要求班內就詞句本身再行檢視調整",
+        "tradeoff": "讓設計組有修正機會而非直接否決整段作品，但定稿進度會稍微延後"
+      },
+      {
+        "id": 4,
+        "short": "請班呼組以共同練習趣事試寫同拍點替代句",
+        "action": "已請班呼設計組保留原節奏拍點，試寫以全班共同練習經驗為主題的替代押韻句",
+        "tradeoff": "兼顧節奏效果與全班共鳴，但部分堅持原笑點的人可能覺得少了刺激感"
+      },
+      {
+        "id": 5,
+        "short": "提醒多數人覺得好笑不能用投票壓過少數人感受",
+        "action": "已向全班說明班呼是共同喊出的作品，不可用多數決強迫少數同學接受冒犯用語",
+        "tradeoff": "建立團體尊重界線，但可能引發少數主張投票決定者的短暫反彈"
+      },
+      {
+        "id": 6,
+        "short": "勸阻熱心同學在班群公開點名是誰反對該句",
+        "action": "已制止同學在班群公開標註反對者姓名，要求所有討論僅針對句子本身",
+        "tradeoff": "防止當事人成為箭靶，但班群討論得靠匿名意見匯整"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": 3,
+      "D": "emotional"
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "E",
+    "C",
+    "B",
+    "D"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師私下聽當事人對詞句的感受且不逼公開解釋，顯著促進大家只討論句子本身不追問私事。",
+      "actionPreserved": "保留「私下聽當事人對詞句的具體感受」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "得知有真實感受後，寫詞者較容易明白自己雖無心仍造成影響，屬自然可達。",
+      "actionPreserved": "保留「私下聽當事人對詞句的具體感受」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下傾聽時，較能察覺被影射者連校歌都放低音量的連鎖反應，屬自然可達。",
+      "actionPreserved": "保留「私下聽當事人對詞句的具體感受」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認具體不舒服的詞句後，班呼組可針對該句找同韻替代句，屬自然可達。",
+      "actionPreserved": "保留「私下聽當事人對詞句的具體感受」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "了解當事人真實感受後，更能說明為何不能靠多數決否定個人不適，屬自然可達。",
+      "actionPreserved": "保留「私下聽當事人對詞句的具體感受」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下溝通的重點有助寫詞者區分私聊與公開舞台的差別，屬自然可達。",
+      "actionPreserved": "保留「私下聽當事人對詞句的具體感受」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師承諾不逼當事人在全班面前解釋，顯著促進擋下熱心同學在班群公開點名反對者。",
+      "actionPreserved": "保留「私下聽當事人對詞句的具體感受」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保護當事人意願後，新候選口號更容易獲得大家接納，屬自然可達。",
+      "actionPreserved": "保留「私下聽當事人對詞句的具體感受」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止強迫公開喊爭議句，讓不喜歡的人不用在大家面前解釋也能先退出該句，屬自然可達。",
+      "actionPreserved": "保留「停止強迫不願者公開喊爭議句」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "暫緩定稿讓寫詞者知道必須調整，雙方較能討論具體修改，屬自然可達。",
+      "actionPreserved": "保留「停止強迫不願者公開喊爭議句」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師要求停止強迫喊爭議句並暫緩定稿，顯著促進全班正視「被點名者後來連校歌都不開口」的嚴重性。",
+      "actionPreserved": "保留「停止強迫不願者公開喊爭議句」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "既然暫緩定稿，班呼組勢必得找同韻替代句補上，屬自然可達。",
+      "actionPreserved": "保留「停止強迫不願者公開喊爭議句」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師明確禁止強迫喊出爭議句，顯著促進駁回「多數人贊成就直接定稿」的投票主張。",
+      "actionPreserved": "保留「停止強迫不願者公開喊爭議句」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "暫緩定稿本身就提醒了公開場合與私聊的差異，屬自然可達。",
+      "actionPreserved": "保留「停止強迫不願者公開喊爭議句」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止強迫參與後，也比較不會有人急著在班群點名誰反對，屬自然可達。",
+      "actionPreserved": "保留「停止強迫不願者公開喊爭議句」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "重新找出能讓大家一起喊的新口號，是暫緩爭議句後的合理收束，屬自然可達。",
+      "actionPreserved": "保留「停止強迫不願者公開喊爭議句」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留修改紀錄讓班內檢視句子效果，不須逼當事人公開交代經歷，屬自然可達。",
+      "actionPreserved": "保留「保留修改紀錄供班內再討論」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師保留修改紀錄供班內再討論，顯著促進寫詞者翻看草稿解釋初衷並啟動具體修改對話。",
+      "actionPreserved": "保留「保留修改紀錄供班內再討論」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "檢視詞句影響時，會注意到爭議句讓人連校歌都不想唱的問題，屬自然可達。",
+      "actionPreserved": "保留「保留修改紀錄供班內再討論」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "保留討論與修改空間，顯著促進班呼組以班級共同練習經驗寫出同拍點替代句。",
+      "actionPreserved": "保留「保留修改紀錄供班內再討論」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在班內檢視調整時，同學仍須處理「不能只靠投票壓感受」的原則，屬自然可達。",
+      "actionPreserved": "保留「保留修改紀錄供班內再討論」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師要求重新檢視詞句本身，顯著促進寫詞者想通「班呼不是私人群組對話」而收回原句。",
+      "actionPreserved": "保留「保留修改紀錄供班內再討論」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "聚焦詞句修改紀錄有助把討論留在句子本身而非反對者姓名，屬自然可達。",
+      "actionPreserved": "保留「保留修改紀錄供班內再討論」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "保留修改空間的作法，顯著促進產出「笑點留下來也能讓人一起喊」的新候選口號。",
+      "actionPreserved": "保留「保留修改紀錄供班內再討論」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師明確表示不須在大家面前證明介意的原因，顯著促進不追問私人故事而只談句子效果。",
+      "actionPreserved": "保留「覺得不舒服可以說，也不必在大家面前證明原因。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒被接住後，寫詞者與同學更願意互相理解而非貼標籤，屬自然可達。",
+      "actionPreserved": "保留「覺得不舒服可以說，也不必在大家面前證明原因。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "被同理後，旁人也較能注意到當事人先前連校歌都放低音量的沉默訊號，屬自然可達。",
+      "actionPreserved": "保留「覺得不舒服可以說，也不必在大家面前證明原因。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "減輕當事人壓力後，他也較願意聽看看班呼組試寫的同韻替代句，屬自然可達。",
+      "actionPreserved": "保留「覺得不舒服可以說，也不必在大家面前證明原因。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定個人感受的正當性，直接支撐「投票不能替人決定感受」，屬自然可達。",
+      "actionPreserved": "保留「覺得不舒服可以說，也不必在大家面前證明原因。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "理解公開喊出與私下聊天的不同，有助寫詞者自願保留原稿不上台，屬自然可達。",
+      "actionPreserved": "保留「覺得不舒服可以說，也不必在大家面前證明原因。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師重申不必公開證明原因，顯著促進當事人阻止熱心同學把反對者名字發出去。",
+      "actionPreserved": "保留「覺得不舒服可以說，也不必在大家面前證明原因。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在安全不被逼迫的氣氛下，新口號更容易讓更多人敢跟著喊，屬自然可達。",
+      "actionPreserved": "保留「覺得不舒服可以說，也不必在大家面前證明原因。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

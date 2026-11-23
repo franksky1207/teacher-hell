@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-016 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 3-2（判斷能力）、4-2（安全需求）、7-4（生活穩定度）、11-1（任務負荷），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 A 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [A,D,E,C] 組別合法配置並與各結局對教師之影響相符。【2026-11-23 文字修訂後複核】本篇八個結果新增現場具體互動後，逐 R 重新閱讀；新增對話與行動皆仍屬賽前準備，不預設正式賽果，人物未越權。R 字數：R1=152、R2=148、R3=139、R4=144、R5=137、R6=144、R7=151、R8=146。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。【文字修訂後複核】新增加的學生提問、試排或反應已反向對照 A～D 四種既成教師行動與 32 格相容性：不撤銷選項行動、不憑空創造正式規則，原矩陣權重與四狀態、NPC 增減保持不變。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 3-2（判斷能力）、4-2（安全需求）、7-4（生活穩定度）、11-1（任務負荷） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-016 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "在流程表標記唯一交棒時點",
+        "action": "已在總流程表標記唯一的班呼轉校歌交棒時點，要求兩組按同一張表核對",
+        "tradeoff": "立刻解決兩份節拍表各說各話的混亂，但表上定義仍須現場試走驗證是否順暢"
+      },
+      {
+        "id": 2,
+        "short": "確認校歌起唱是否符合正式曲速",
+        "action": "已核對校歌起唱是否符合原曲正式曲速與前奏長度，未擅自變更校歌節奏",
+        "tradeoff": "守住校歌原曲準確度，但班呼領拍者可能覺得只有自己那段要配合修改"
+      },
+      {
+        "id": 3,
+        "short": "讓後排說明能看見哪種手勢",
+        "action": "已請後排同學實際說明從自身位置能看見哪一隻手勢與視線死角",
+        "tradeoff": "從全班可跟上的角度找出盲點，但兩名指揮可能暫時不習慣調整站位距離"
+      },
+      {
+        "id": 4,
+        "short": "請錄影同學為不同日期的試排影片標上版本時間",
+        "action": "已請負責存檔的同學依日期標記各段試排影片，避免大家拿舊版交棒法練習",
+        "tradeoff": "防止舊版本持續誤導全班，但需要花時間清點整理檔案"
+      },
+      {
+        "id": 5,
+        "short": "測試單人依序交棒與兩人同時數拍的差異",
+        "action": "已安排試排比較前後依序交棒與同時倒數的效果，讓兩組自行聽辨哪種清楚",
+        "tradeoff": "用實際聽感說服學生，但試排時可能短暫出現更亂的過渡期"
+      },
+      {
+        "id": 6,
+        "short": "請兩名指揮面對面寫下各自以為的結束與起唱訊號",
+        "action": "已請班呼領拍者與校歌指揮把各自認知的交棒動作寫在同一張紙上比對",
+        "tradeoff": "快速揭露隱性誤會，但仍須實際站位演練才算完成交接"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": "emotional",
+      "B": 1,
+      "C": 2,
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "A",
+    "D",
+    "E",
+    "C"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定兩人都努力且點出不是誰失職，讓兩名指揮願意平靜對照各自以為的交棒訊號，屬自然可達。",
+      "actionPreserved": "保留「兩個人都努力帶領，交接沒談好不代表誰失職。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不怪罪失職的前提下，兩組較能客觀檢視拍點表空白的定義差異，屬自然可達。",
+      "actionPreserved": "保留「兩個人都努力帶領，交接沒談好不代表誰失職。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒緩和後，指揮與後排較願意從站位視線找原因而非互推責任，屬自然可達。",
+      "actionPreserved": "保留「兩個人都努力帶領，交接沒談好不代表誰失職。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師點出交接沒談好不是誰失職且不選人氣，顯著促進校歌指揮坦白「不想變成搶指揮的人」。",
+      "actionPreserved": "保留「兩個人都努力帶領，交接沒談好不代表誰失職。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不追責失職後，學生更願意單純整理影片版本時間供核對，屬自然可達。",
+      "actionPreserved": "保留「兩個人都努力帶領，交接沒談好不代表誰失職。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "既然不撤掉誰的領導身分，大家也較願意試完同時數拍後坦然喊停，屬自然可達。",
+      "actionPreserved": "保留「兩個人都努力帶領，交接沒談好不代表誰失職。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定兩組各自努力後，兩組較不抗拒一起檢視完整合演而非只拿單獨影片自保，屬自然可達。",
+      "actionPreserved": "保留「兩個人都努力帶領，交接沒談好不代表誰失職。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "維持雙方任務尊嚴有助共同完成交棒排練表，屬自然可達。",
+      "actionPreserved": "保留「兩個人都努力帶領，交接沒談好不代表誰失職。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師在流程表標記唯一交棒時點，顯著促進兩人寫下各自原本認知的訊號並發現「各以為對方會等」。",
+      "actionPreserved": "保留「在流程表標記唯一交棒時點」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "要求按同一張流程表核對，顯著促進發現兩份拍點表對「同一格空白」定義完全不同。",
+      "actionPreserved": "保留「在流程表標記唯一交棒時點」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "按流程表試排交棒時點時，仍可能暴露後排只看得到其中一隻手的站位問題，屬自然可達。",
+      "actionPreserved": "保留「在流程表標記唯一交棒時點」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "有明確的流程表時點可談，能減輕指揮怕被當搶風頭的心理負擔，屬自然可達。",
+      "actionPreserved": "保留「在流程表標記唯一交棒時點」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "建立唯一流程表時，容易順帶發現群組影片有好幾個不同版本，屬自然可達。",
+      "actionPreserved": "保留「在流程表標記唯一交棒時點」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論唯一交棒時點時，若有人提議同時數拍，試排就會證實更混亂，屬自然可達。",
+      "actionPreserved": "保留「在流程表標記唯一交棒時點」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "用同一張流程表看整場，有助大家放棄只看單獨成功片段，屬自然可達。",
+      "actionPreserved": "保留「在流程表標記唯一交棒時點」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "在流程表標記唯一交棒時點的行動，顯著促進手勢與起唱位置寫進共用排練表。",
+      "actionPreserved": "保留「在流程表標記唯一交棒時點」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核對校歌正式曲速後，能協助對照班呼停手與校歌起唱的時間差，屬自然可達。",
+      "actionPreserved": "保留「確認校歌起唱是否符合正式曲速」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認正式曲速有助定義校歌起唱前的空白拍點，屬自然可達。",
+      "actionPreserved": "保留「確認校歌起唱是否符合正式曲速」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "純粹核對校歌正式曲速與前奏長度，對後排看不見哪隻手勢的站位視線問題較間接，屬抑制。",
+      "actionPreserved": "保留「確認校歌起唱是否符合正式曲速」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認校歌起唱曲速是技術基準，有助校歌指揮有依據談交棒，屬自然可達。",
+      "actionPreserved": "保留「確認校歌起唱是否符合正式曲速」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核對曲速後，整理檔案時也更容易辨識哪個版本影片才對，屬自然可達。",
+      "actionPreserved": "保留「確認校歌起唱是否符合正式曲速」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "知道正式曲速固定，有助淘汰兩個人同時數拍的混亂作法，屬自然可達。",
+      "actionPreserved": "保留「確認校歌起唱是否符合正式曲速」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認校歌基準後，大家更清楚合演不能只看班呼好看片段，屬自然可達。",
+      "actionPreserved": "保留「確認校歌起唱是否符合正式曲速」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "守住校歌正式曲速，為共用排練表提供穩定起唱基準，屬自然可達。",
+      "actionPreserved": "保留「確認校歌起唱是否符合正式曲速」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "後排說明看到的狀況時，兩人會發現原來各自給的訊號本來就不同，屬自然可達。",
+      "actionPreserved": "保留「讓後排說明能看見哪種手勢」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "後排的觀察也會反映出空白拍點讓大家不知所措，屬自然可達。",
+      "actionPreserved": "保留「讓後排說明能看見哪種手勢」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師請後排說明能看見哪種手勢與死角，顯著促進發現「兩人站太近、後排只看得到一隻手」。",
+      "actionPreserved": "保留「讓後排說明能看見哪種手勢」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "後排反映混亂後，兩位指揮更能理解這不是誰搶風頭而是視線交接問題，屬自然可達。",
+      "actionPreserved": "保留「讓後排說明能看見哪種手勢」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "從後排視角比對時，也可能發現不同天錄的影片版本不一致，屬自然可達。",
+      "actionPreserved": "保留「讓後排說明能看見哪種手勢」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "後排直接回饋同時數拍更聽不清，有助停下該方案，屬自然可達。",
+      "actionPreserved": "保留「讓後排說明能看見哪種手勢」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "後排指出只有合起來唱才看得見問題，有助大家不拿局部影片背書，屬自然可達。",
+      "actionPreserved": "保留「讓後排說明能看見哪種手勢」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "納入後排能看見的位置後，交棒手勢才能真正落進共用排練表，屬自然可達。",
+      "actionPreserved": "保留「讓後排說明能看見哪種手勢」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

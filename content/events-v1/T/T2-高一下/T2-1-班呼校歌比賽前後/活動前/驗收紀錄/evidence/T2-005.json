@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-005 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 4-2（安全需求）、5-2（親近）、8-4（資訊傳達主動性）、9-3（班務參與度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 C 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [A,E,B,D] 組別合法配置並與各結局對教師之影響相符。【2026-11-23 文字修訂後複核】本篇八個結果新增現場具體互動後，逐 R 重新閱讀；新增對話與行動皆仍屬賽前準備，不預設正式賽果，人物未越權。R 字數：R1=143、R2=146、R3=147、R4=148、R5=148、R6=148、R7=150、R8=156。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。【文字修訂後複核】新增加的學生提問、試排或反應已反向對照 A～D 四種既成教師行動與 32 格相容性：不撤銷選項行動、不憑空創造正式規則，原矩陣權重與四狀態、NPC 增減保持不變。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 4-2（安全需求）、5-2（親近）、8-4（資訊傳達主動性）、9-3（班務參與度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-005 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "確認校歌段落是否仍可合理參與",
+        "action": "已向學生確認校歌段落仍可站著參與，但未替全班或活動規則承諾固定舞台站位",
+        "tradeoff": "能立刻安撫「怕連校歌都沒位置」的恐懼，但班呼段的替代位置仍待編排組配合"
+      },
+      {
+        "id": 2,
+        "short": "請編排組提出不需要跳躍的站位方案",
+        "action": "已請編排組研擬不需要跳躍的替代站位方案，禁止要求受傷學生做跳躍動作",
+        "tradeoff": "直接解除跳躍安全風險，但編排組可能擔心隊形整齊度受影響而有抱怨"
+      },
+      {
+        "id": 3,
+        "short": "私下詢問學生目前能負擔的動作",
+        "action": "已私下詢問學生目前能負擔的動作範圍，同時保留其不公開醫療細節的隱私",
+        "tradeoff": "掌握精確的可參與條件又保護隱私，但需要額外時間與編排組對齊細節"
+      },
+      {
+        "id": 4,
+        "short": "請同學停止模仿或猜測受傷學生的動作",
+        "action": "已制止排練時模仿同學落地姿態或質疑裝病的言論，要求尊重個人健康邊界",
+        "tradeoff": "保護當事人免受二次傷害，但不能直接解決隊形站位缺口"
+      },
+      {
+        "id": 5,
+        "short": "保留名單不因暫時不能跳就擅自除名",
+        "action": "已要求幹部暫時保留該生於參賽名單，不得未經詢問即因效率考量刪名",
+        "tradeoff": "守住學生的平等參與權，但編排組須承擔調整隊形的額外工作"
+      },
+      {
+        "id": 6,
+        "short": "把班呼跳躍與校歌合唱分段記錄可參與度",
+        "action": "已請排練紀錄表把班呼跳躍與校歌合唱分欄記錄，不以單一動作綁定整場資格",
+        "tradeoff": "清楚區分兩段需求，但需要所有組員配合更新紀錄方式"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": "emotional",
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "A",
+    "E",
+    "B",
+    "D"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師確認校歌仍可站著參與，顯著促進學生主動說出「站著唱校歌沒問題，只是不能跳」。",
+      "actionPreserved": "保留「確認校歌段落是否仍可合理參與」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認校歌參與權後，學生較安心，但未直接處理同儕模仿裝病的壓力，屬自然可達。",
+      "actionPreserved": "保留「確認校歌段落是否仍可合理參與」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "單確認校歌段落未直接請編排組找班呼不用跳的位置，對找出轉場手勢位置較間接，屬抑制。",
+      "actionPreserved": "保留「確認校歌段落是否仍可合理參與」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認校歌可參與後，熱心同學若提議攙扶仍會被當事人拒絕，屬自然可達。",
+      "actionPreserved": "保留「確認校歌段落是否仍可合理參與」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師區分校歌段落可參與，顯著促進全班把跳躍動作限定在班呼而校歌站立唱。",
+      "actionPreserved": "保留「確認校歌段落是否仍可合理參與」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "若編排組仍嫌麻煩想刪名，須由當事人與同學擋下，屬自然可達。",
+      "actionPreserved": "保留「確認校歌段落是否仍可合理參與」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "確認校歌段落後，對檢視先前試排跳躍落地影片的安全問題較間接，屬抑制。",
+      "actionPreserved": "保留「確認校歌段落是否仍可合理參與」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "知道校歌能唱後，學生更願意主動提出兼顧班呼數拍與校歌合唱的作法，屬自然可達。",
+      "actionPreserved": "保留「確認校歌段落是否仍可合理參與」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "請編排組提出不用跳的站位方案後，編排組自然會把兩種動作分開記錄，屬自然可達。",
+      "actionPreserved": "保留「請編排組提出不需要跳躍的站位方案」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "直接請編排組改位置，未必立刻讓當事人說出先前被模仿裝病的私下心結，屬抑制。",
+      "actionPreserved": "保留「請編排組提出不需要跳躍的站位方案」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師要求編排組提不用跳的方案，顯著促進同學在隊形圖上找出轉場手勢位置。",
+      "actionPreserved": "保留「請編排組提出不需要跳躍的站位方案」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論替代站位時，熱心同學提議全程攙扶但被拒絕是常見插曲，屬自然可達。",
+      "actionPreserved": "保留「請編排組提出不需要跳躍的站位方案」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "調整班呼不用跳的站位時，也較容易順帶釐清校歌本就不需跳，屬自然可達。",
+      "actionPreserved": "保留「請編排組提出不需要跳躍的站位方案」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使要求提替代方案，幹部仍可能一度想直接刪名求快而被擋下，屬自然可達。",
+      "actionPreserved": "保留「請編排組提出不需要跳躍的站位方案」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "要求重看站位方案時，也可能順帶檢視試排影片中的落地停頓，屬自然可達。",
+      "actionPreserved": "保留「請編排組提出不需要跳躍的站位方案」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "編排組尋找不用跳的位置時，顯著促進學生提出「幫忙數拍與唱校歌」的可行分工。",
+      "actionPreserved": "保留「請編排組提出不需要跳躍的站位方案」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒被接納後，學生更敢明確說出自己能站著唱校歌、不是什麼都做不到，屬自然可達。",
+      "actionPreserved": "保留「想一起上台很重要，但腳踝不舒服不能硬撐。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師私下理解他想上台卻怕硬撐的心情，顯著促進他吐露「怕大家說我裝病」的真正委屈。",
+      "actionPreserved": "保留「想一起上台很重要，但腳踝不舒服不能硬撐。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "安撫情緒後，同伴比較願意幫忙在隊形圖找合適位置，屬自然可達。",
+      "actionPreserved": "保留「想一起上台很重要，但腳踝不舒服不能硬撐。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在安全與自尊被重視的氣氛下，學生也較敢拒絕依賴同學攙扶，屬自然可達。",
+      "actionPreserved": "保留「想一起上台很重要，但腳踝不舒服不能硬撐。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "安撫後討論回到實際動作，兩段分開處理的建議仍可自然出現，屬自然可達。",
+      "actionPreserved": "保留「想一起上台很重要，但腳踝不舒服不能硬撐。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "若幹部私下提議刪名，當事人有了老師支持更敢堅持保留名單，屬自然可達。",
+      "actionPreserved": "保留「想一起上台很重要，但腳踝不舒服不能硬撐。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒支持後，學生也較不硬撐著在影片中假裝沒事，屬自然可達。",
+      "actionPreserved": "保留「想一起上台很重要，但腳踝不舒服不能硬撐。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "心情穩定後，學生願意提出可負擔的數拍與合唱工作，屬自然可達。",
+      "actionPreserved": "保留「想一起上台很重要，但腳踝不舒服不能硬撐。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "私下詢問能負擔的動作範圍，顯著促進學生清楚區分「能站著唱、不能反覆跳」。",
+      "actionPreserved": "保留「私下詢問學生目前能負擔的動作」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "詢問動作範圍時未強迫公開醫療細節，讓學生保留隱私地說明可練範圍，屬自然可達。",
+      "actionPreserved": "保留「私下詢問學生目前能負擔的動作」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "掌握學生能負擔的動作後，編排者較容易對應找到不用跳的手勢位置，屬自然可達。",
+      "actionPreserved": "保留「私下詢問學生目前能負擔的動作」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師親自確認學生可負擔範圍並尊重自主意願，顯著促進學生拒絕被指定同學攙扶。",
+      "actionPreserved": "保留「私下詢問學生目前能負擔的動作」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "釐清可負擔動作後，自然有助於將跳躍止於班呼、校歌站著唱，屬自然可達。",
+      "actionPreserved": "保留「私下詢問學生目前能負擔的動作」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認當事人意願與能力後，更能擋下幹部未經詢問就刪名的作法，屬自然可達。",
+      "actionPreserved": "保留「私下詢問學生目前能負擔的動作」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "回頭對照試排影片時，更清楚分辨畫面整齊不等於動作可負擔，屬自然可達。",
+      "actionPreserved": "保留「私下詢問學生目前能負擔的動作」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "私下盤點過可負擔動作後，顯著促進學生具體提出「可以唱，也可以幫忙數拍」的方案。",
+      "actionPreserved": "保留「私下詢問學生目前能負擔的動作」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

@@ -59,6 +59,15 @@ jobs:
             evidence="content/events-v1/T/T3-高二上/T3-1-英文歌曲比賽前後/活動前/驗收紀錄/evidence/${id}.json"
             node scripts/check-story-production.mjs audit "$id" --evidence "$evidence"
           done
+      - name: Verify T3-031–042 after-event formal evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          for n in $(seq 31 42); do
+            printf -v id "T3-%03d" "$n"
+            evidence="content/events-v1/T/T3-高二上/T3-1-英文歌曲比賽前後/活動後/驗收紀錄/evidence/${id}.json"
+            node scripts/check-story-production.mjs audit "$id" --evidence "$evidence"
+          done
       - name: Verify T2-031–042 after-event formal evidence
         shell: bash
         run: |

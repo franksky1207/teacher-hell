@@ -51,3 +51,20 @@ test('T2-001–030: all 240 outcomes match the AVG source text exactly',()=>{
  }
  assert.equal(count,240);
 });
+
+test('T2-001–030: every story stays playable on every date of its five-day shared pool',()=>{
+ const forbidden=[
+  /(?:四月[七八]日|4月[78]日|2027[/-]04[/-]0[78])/,
+  /(?:明天|後天).{0,15}(?:正式比賽|整場|上台|場地|得名)/,
+  /(?:賽前最後一次|最後一天|最後一次完整彩排|比賽前一天|隔天比賽|比賽只剩幾天)/,
+ ];
+ for(const id of ids){
+  const md=read(base+id+'.md');
+  const storyText=md.slice(md.indexOf('## 2｜')); // exclude quota_date and shared-pool calendar metadata
+  assert.ok(storyText.length>0,id+' must have story contents');
+  for(const pattern of forbidden){
+   assert.doesNotMatch(storyText,pattern,id+' must not assume its quota date equals playback date');
+  }
+  assert.match(md,/T2-1:before/,id+' shared playback pool');
+ }
+});

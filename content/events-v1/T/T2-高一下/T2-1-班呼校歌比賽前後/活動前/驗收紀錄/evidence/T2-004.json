@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-004 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 2-2（焦慮）、4-2（安全需求）、10-2（進度督促度）、11-4（資源提供度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 B 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [D,E,C,A] 組別合法配置並與各結局對教師之影響相符。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 2-2（焦慮）、4-2（安全需求）、10-2（進度督促度）、11-4（資源提供度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-004 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "讓節奏設計者提出可替代的簡單版本",
+        "action": "已請節奏設計者提出可替換的簡化手拍版本作為備案，未要求立刻定案刪除原設計",
+        "tradeoff": "降低後排跟拍門檻，但設計者可能覺得辛苦編的亮眼動作被迫降級"
+      },
+      {
+        "id": 2,
+        "short": "把回報落拍的問題改成不具名工作紀錄",
+        "action": "已把群組公開點名回報落拍的作法，改為不具名的位置與拍點問題紀錄",
+        "tradeoff": "保護後排自尊不再被公開貼標籤，但部分前排同學可能暫時覺得難追蹤誰沒跟上"
+      },
+      {
+        "id": 3,
+        "short": "確認轉接校歌時後排也能看見指揮",
+        "action": "已現場確認班呼轉接校歌時後排能否看見指揮手勢，並記下視線受阻位置",
+        "tradeoff": "能同時顧及兩段演出的視線銜接，但無法當場解決班呼複雜拍點本身的難度"
+      },
+      {
+        "id": 4,
+        "short": "請前後排暫時交換站位試喊一次",
+        "action": "已安排前後排短暫交換位置試排一次，讓雙方體驗彼此的聽覺與視線條件",
+        "tradeoff": "最能建立同理心，但可能打亂原本排好的身高隊形習慣"
+      },
+      {
+        "id": 5,
+        "short": "請學生私下交出個人練習錄音確認熟悉度",
+        "action": "已提供管道讓落拍同學私下傳個人練習錄音，區分個人熟練度與現場干擾",
+        "tradeoff": "替後排洗清偷懶誤會，但會增加導師與幹部聽音檔的工作"
+      },
+      {
+        "id": 6,
+        "short": "停止排練時的嘲笑起鬨並重申排練禮節",
+        "action": "已當場制止練習時對落拍同學的笑聲起鬨，要求以討論代替嘲笑",
+        "tradeoff": "維持基本尊重，但未能直接找出後排慢半拍的技術原因"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": "emotional",
+      "C": 2,
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "D",
+    "E",
+    "C",
+    "A"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "請設計者準備簡化備案時，主要聚焦手拍動作本身，未必先驗到回音差異，屬抑制。",
+      "actionPreserved": "保留「讓節奏設計者提出可替代的簡單版本」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "設計者提出備案時，落拍同學更有機會拿出練習錄音證明並非不想練，屬自然可達。",
+      "actionPreserved": "保留「讓節奏設計者提出可替代的簡單版本」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "比對簡化版與原版時，前後排交換站位測試自然會發生，屬自然可達。",
+      "actionPreserved": "保留「讓節奏設計者提出可替代的簡單版本」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師請設計者研擬簡化替代版，顯著促進大家在細節中找出其實只有一處換節奏太急。",
+      "actionPreserved": "保留「讓節奏設計者提出可替代的簡單版本」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論替代方案時，較能順帶釐清先前笑聲對後排造成的心理影響，屬自然可達。",
+      "actionPreserved": "保留「讓節奏設計者提出可替代的簡單版本」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "簡化班呼動作的討論也會連帶檢視轉接校歌的拍點，屬自然可達。",
+      "actionPreserved": "保留「讓節奏設計者提出可替代的簡單版本」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論版本差異時，後排能指著簡化稿指出自己其實聽懂拍點，屬自然可達。",
+      "actionPreserved": "保留「讓節奏設計者提出可替代的簡單版本」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "簡化方案讓後排重新願意嘗試，有助一起標出可見領拍位置，屬自然可達。",
+      "actionPreserved": "保留「讓節奏設計者提出可替代的簡單版本」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師肯定沒跟上不等於不用心，降低防禦後前後排較願意交換聽看看回音，屬自然可達。",
+      "actionPreserved": "保留「前後排都練得辛苦，沒跟上不等於不用心。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師當場說出「沒跟上不等於不用心」，顯著促進被批評者敢拿出在家練習錄音自證。",
+      "actionPreserved": "保留「前後排都練得辛苦，沒跟上不等於不用心。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒被接納後，前後排較不抗拒暫時換位體驗，屬自然可達。",
+      "actionPreserved": "保留「前後排都練得辛苦，沒跟上不等於不用心。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒安撫讓設計者不覺被全盤否定，願一起看哪裡換節奏太急，屬自然可達。",
+      "actionPreserved": "保留「前後排都練得辛苦，沒跟上不等於不用心。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師點出後排不是不用心，顯著促進釐清「笑聲不是在活絡氣氛而是造成壓力」。",
+      "actionPreserved": "保留「前後排都練得辛苦，沒跟上不等於不用心。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "僅做情緒安撫未立即檢查轉場視線，對發現校歌第一句被拖慢較無直接推進，屬抑制。",
+      "actionPreserved": "保留「前後排都練得辛苦，沒跟上不等於不用心。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒被理解後，後排較敢比出拍點向設計者說明轉身盲點，屬自然可達。",
+      "actionPreserved": "保留「前後排都練得辛苦，沒跟上不等於不用心。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "雙方放下指責後，較容易合作標出領拍位置，屬自然可達。",
+      "actionPreserved": "保留「前後排都練得辛苦，沒跟上不等於不用心。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "改成不具名位置與拍點紀錄，有助大家不貼標籤而開始查回音問題，屬自然可達。",
+      "actionPreserved": "保留「把回報落拍的問題改成不具名工作紀錄」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止公開點名後，後排比較不用害怕被嘲笑，仍可提出練習錄音，屬自然可達。",
+      "actionPreserved": "保留「把回報落拍的問題改成不具名工作紀錄」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不具名紀錄問題後，大家更容易聚焦測試前後排站位視線，屬自然可達。",
+      "actionPreserved": "保留「把回報落拍的問題改成不具名工作紀錄」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不具名紀錄讓討論回到拍點本身而非針對人，屬自然可達。",
+      "actionPreserved": "保留「把回報落拍的問題改成不具名工作紀錄」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "改為不具名紀錄後，能減少對特定同學的笑聲與點名壓力，屬自然可達。",
+      "actionPreserved": "保留「把回報落拍的問題改成不具名工作紀錄」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不具名紀錄問題後，轉場拖慢校歌的現象也能一併被寫入排練表，屬自然可達。",
+      "actionPreserved": "保留「把回報落拍的問題改成不具名工作紀錄」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "去除點名壓力後，後排同學顯著更願意當場比出拍點說明轉身看不到領拍。",
+      "actionPreserved": "保留「把回報落拍的問題改成不具名工作紀錄」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "建立不具名工作紀錄的作法，顯著促進全班共同畫出可見領拍位置與待測清單。",
+      "actionPreserved": "保留「把回報落拍的問題改成不具名工作紀錄」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認轉接校歌視線時，對單純班呼回音差異的直接觸發較間接，屬抑制。",
+      "actionPreserved": "保留「確認轉接校歌時後排也能看見指揮」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "聚焦轉接校歌視線的現場檢查，對拿出在家練習班呼錄音較無直接觸發，屬抑制。",
+      "actionPreserved": "保留「確認轉接校歌時後排也能看見指揮」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "實測後排能否看見指揮，顯著促進前後排交換站位體驗被遮住視線的困難。",
+      "actionPreserved": "保留「確認轉接校歌時後排也能看見指揮」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "看視線時也會順帶發現某些換節奏轉身太快，屬自然可達。",
+      "actionPreserved": "保留「確認轉接校歌時後排也能看見指揮」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "只檢查校歌轉場視線，對處理先前班呼笑聲誤會較間接，屬抑制。",
+      "actionPreserved": "保留「確認轉接校歌時後排也能看見指揮」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師直接檢查班呼轉接校歌時後排的視線，顯著促進發現校歌第一句被拖慢的銜接問題。",
+      "actionPreserved": "保留「確認轉接校歌時後排也能看見指揮」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "現場測試視線時，後排最容易直接指出在哪個轉身看不到領拍，顯著促進。",
+      "actionPreserved": "保留「確認轉接校歌時後排也能看見指揮」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "確認前後排都能看見指揮手勢，顯著促進全班畫出可見領拍位置並重新開口練習。",
+      "actionPreserved": "保留「確認轉接校歌時後排也能看見指揮」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

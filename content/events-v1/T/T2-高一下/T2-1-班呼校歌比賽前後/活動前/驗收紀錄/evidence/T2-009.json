@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-009 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 1-3（同理心）、4-2（安全需求）、5-2（親近）、12-1（程序變更要求度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 B 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [E,C,A,D] 組別合法配置並與各結局對教師之影響相符。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 1-3（同理心）、4-2（安全需求）、5-2（親近）、12-1（程序變更要求度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-009 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "向承辦確認舞台與道具限制",
+        "action": "已向承辦確認比賽舞台的道具尺寸、擺放與黏貼限制，未在回覆前自行放行",
+        "tradeoff": "能掌握正式舞台與安全規範，但教室現場的視線遮擋問題須先靠試擺測試"
+      },
+      {
+        "id": 2,
+        "short": "請後排指出指揮被遮住的角度",
+        "action": "已請後排同學實地指出指揮被手牌遮住的具體角度，並記在隊形圖上",
+        "tradeoff": "精準定位視線死角而非空泛抱怨，但製作者當下可能覺得作品被指指點點"
+      },
+      {
+        "id": 3,
+        "short": "與製作者討論替代擺放位置",
+        "action": "已與製作者討論保留班名識別又能讓開指揮視線的替代擺放位置",
+        "tradeoff": "兼顧作品呈現與動線需求，但實際效果仍須校歌指揮與正式場地尺寸驗證"
+      },
+      {
+        "id": 4,
+        "short": "請兩組在班呼與校歌轉場設計暫放手牌時點",
+        "action": "已提議兩組討論在班呼結束、校歌起唱前暫放或收側手牌的動作節奏",
+        "tradeoff": "讓兩段各得其所，但須另行安排負責收牌與遞牌的同學"
+      },
+      {
+        "id": 5,
+        "short": "提醒手牌邊角安全並暫停未核准膠帶固定",
+        "action": "已檢查手牌轉身動線安全，要求在未確認場地規定前不得使用膠帶黏貼",
+        "tradeoff": "避免碰撞受傷與毀損場地，但道具穩固性問題須另尋合法方式"
+      },
+      {
+        "id": 6,
+        "short": "請大家把教室試擺數據標註為待核實觀察",
+        "action": "已要求在隊形草圖註明教室間距僅供參考，正式舞台尺寸待核對",
+        "tradeoff": "防止把教室觀察當成正式定案，但正式擺位得等場地資訊才能定稿"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": "emotional",
+      "C": 2,
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "E",
+    "C",
+    "A",
+    "D"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "向承辦查舞台道具限制偏程序面，對教室現場交換位置測視線死角的直接促進較少，屬抑制。",
+      "actionPreserved": "保留「向承辦確認舞台與道具限制」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "詢問道具限制時，學生也會連帶注意安全與黏貼問題，屬自然可達。",
+      "actionPreserved": "保留「向承辦確認舞台與道具限制」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "等待承辦確認同時，兩組仍可試看能顯示班名的候選位置，屬自然可達。",
+      "actionPreserved": "保留「向承辦確認舞台與道具限制」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師向承辦確認舞台道具與黏貼限制，顯著促進學生警覺場地規定並收起未核准膠帶。",
+      "actionPreserved": "保留「向承辦確認舞台與道具限制」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "確認官方舞台規範的行動，顯著促進學生分清教室測量與未知正式場地尺寸。",
+      "actionPreserved": "保留「向承辦確認舞台與道具限制」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "對照舞台限制與草圖時，也容易在檔案補上「正式場地待核」，屬自然可達。",
+      "actionPreserved": "保留「向承辦確認舞台與道具限制」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "程序詢問與編排圖溝通屬不同層面，但氣氛理性時可並行，屬自然可達。",
+      "actionPreserved": "保留「向承辦確認舞台與道具限制」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "把需核對的官方限制標進流程圖，是向承辦詢問後的自然延續，屬自然可達。",
+      "actionPreserved": "保留「向承辦確認舞台與道具限制」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師安撫雙方不責怪製作者後，製作者較不抗拒交換位置測看看角度，屬自然可達。",
+      "actionPreserved": "保留「手牌花了很多心血，遮住指揮也確實要解決。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定心血讓持牌者更願意配合調整握法試解決擋視線問題，屬自然可達。",
+      "actionPreserved": "保留「手牌花了很多心血，遮住指揮也確實要解決。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師看見製作者投入的心血，顯著促進他坦白「最在意讓班名被看見而非非站中央」。",
+      "actionPreserved": "保留「手牌花了很多心血，遮住指揮也確實要解決。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "顧及彼此感受的討論，有助大家停下來重視轉身擦撞的安全問題，屬自然可達。",
+      "actionPreserved": "保留「手牌花了很多心血，遮住指揮也確實要解決。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "心情緩和後，前排也能更客觀從影片發現沒把問題說清楚，屬自然可達。",
+      "actionPreserved": "保留「手牌花了很多心血，遮住指揮也確實要解決。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不指責單方的前提下，大家較能把問題歸因於道具轉場位置而非後排不專心，屬自然可達。",
+      "actionPreserved": "保留「手牌花了很多心血，遮住指揮也確實要解決。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師維護製作者心血、不讓其單獨背鍋，顯著促進「做牌的人不該獨自挨罵」與圖面重標。",
+      "actionPreserved": "保留「手牌花了很多心血，遮住指揮也確實要解決。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "看見作品仍被尊重保留後，製作者更願意配合討論收牌時點，屬自然可達。",
+      "actionPreserved": "保留「手牌花了很多心血，遮住指揮也確實要解決。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師請後排實地指出被遮住的角度，顯著促進交換位置實測並圈出後排中央死角。",
+      "actionPreserved": "保留「請後排指出指揮被遮住的角度」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "檢查遮擋角度時，若嘗試舉高牌子就會當場測出連前排也擋到，屬自然可達。",
+      "actionPreserved": "保留「請後排指出指揮被遮住的角度」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "知道後排哪裡看不到後，兩組可開始找不擋該角度的替代站位，屬自然可達。",
+      "actionPreserved": "保留「請後排指出指揮被遮住的角度」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "實地試站移動時，也可能直接注意到轉身擦撞邊框的安全問題，屬自然可達。",
+      "actionPreserved": "保留「請後排指出指揮被遮住的角度」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "測量教室視線角度後，更提醒大家正式舞台尺寸還不知道，屬自然可達。",
+      "actionPreserved": "保留「請後排指出指揮被遮住的角度」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "請後排指出遮擋角度並對照影片，顯著促進證實校歌第一句被遮且在圖面標註待核。",
+      "actionPreserved": "保留「請後排指出指揮被遮住的角度」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "指出遮擋位置後，有助持牌者與編排者一起把轉身拍點畫清楚，屬自然可達。",
+      "actionPreserved": "保留「請後排指出指揮被遮住的角度」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "看清整個視線死角後，兩組更易同意在兩段之間安排收牌時點，屬自然可達。",
+      "actionPreserved": "保留「請後排指出指揮被遮住的角度」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論替代擺放位置時，仍須先了解哪裡會被擋住，屬自然可達。",
+      "actionPreserved": "保留「與製作者討論替代擺放位置」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "與製作者討論替代位置並實測不同握法與高度，顯著促進發現舉高更擋而改握邊緣。",
+      "actionPreserved": "保留「與製作者討論替代擺放位置」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師直接與製作者討論保留班名的替代擺放位置，顯著促進提出兩個候選位置給指揮確認。",
+      "actionPreserved": "保留「與製作者討論替代擺放位置」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "試擺替代位置時，安全動線與邊框碰撞自然會被納入考量，屬自然可達。",
+      "actionPreserved": "保留「與製作者討論替代擺放位置」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論不同擺位時，同學容易提醒教室間距不等於正式舞台尺寸，屬自然可達。",
+      "actionPreserved": "保留「與製作者討論替代擺放位置」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "試不同擺位同時回看影片，能對照出校歌第一句被遮的狀況，屬自然可達。",
+      "actionPreserved": "保留「與製作者討論替代擺放位置」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "與製作者共同研究擺位，有助釐清原站位圖標示不清之處，屬自然可達。",
+      "actionPreserved": "保留「與製作者討論替代擺放位置」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "討論如何讓開指揮視線又不放棄道具時，顯著促進設計出「兩段之間暫放手牌時點」。",
+      "actionPreserved": "保留「與製作者討論替代擺放位置」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

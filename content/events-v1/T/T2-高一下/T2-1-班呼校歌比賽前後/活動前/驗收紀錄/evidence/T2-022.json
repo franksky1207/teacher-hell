@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-022 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 7-3（生活資源）、9-4（校園安全意識）、11-2（時間餘裕）、12-2（導師關注度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 C 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [B,C,A,D] 組別合法配置並與各結局對教師之影響相符。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 7-3（生活資源）、9-4（校園安全意識）、11-2（時間餘裕）、12-2（導師關注度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-022 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "聽學生說明對最後排的具體擔心",
+        "action": "已私下聽學生說明對站在最後排的具體擔心，釐清其並非抗拒配合隊形",
+        "tradeoff": "讓被誤解的學生感到被看見，但實際站位視線與攝影效果仍須與編排者協調"
+      },
+      {
+        "id": 2,
+        "short": "向編排者確認站位採用的實際條件",
+        "action": "已向編排者與攝影同學確認排隊形時採用的實際技術條件，要求不得以優劣定義站位",
+        "tradeoff": "把問題拉回視線與動線功能，但攝影者仍須花時間解釋原意"
+      },
+      {
+        "id": 3,
+        "short": "避免在班群以身高或人氣排名",
+        "action": "已要求停止在班群以身高排名或點名誰要求換位置，僅記錄站位編號與視線需求",
+        "tradeoff": "保護個人外貌隱私與自尊，但部分同學可能覺得用編號溝通比較繞圈"
+      },
+      {
+        "id": 4,
+        "short": "請學生實地試站最後排確認能否看見班呼領拍與校歌指揮",
+        "action": "已請學生實際站到後排與中間不同角度，測試兩段演出時各自能看見的訊號範圍",
+        "tradeoff": "用親眼所見化解猜測，但需要全班短暫配合站位測試"
+      },
+      {
+        "id": 5,
+        "short": "請編排者在站位圖補註每一排的動作與視線任務",
+        "action": "已請編排者在隊形圖標示各排的視線重點與轉場責任，取消好壞位置分法",
+        "tradeoff": "讓每個位置都有清楚價值，但增加了編排者的繪圖整理工作"
+      },
+      {
+        "id": 6,
+        "short": "比較攝影畫面整齊與現場起唱視線何者優先",
+        "action": "已請攝影者與校歌指揮共同比對，確認不得為了拍照整齊犧牲後排起唱視線",
+        "tradeoff": "守住現場比賽表現品質，但攝影成品可能不像純身高排列那麼整齊"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": "emotional",
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "B",
+    "C",
+    "A",
+    "D"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下聽取學生對最後排的擔心後，再邀其試站確認視野，能理解功能同時仍希望被先說明，屬自然可達。",
+      "actionPreserved": "保留「聽學生說明對最後排的具體擔心」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師私下傾聽對最後排的擔心，顯著促進學生吐露「最近幾次都覺得被排除」的真實難過。",
+      "actionPreserved": "保留「聽學生說明對最後排的具體擔心」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "得知學生對最後排的顧慮後，有助於回頭檢視攝影角度與現場視線是否衝突，屬自然可達。",
+      "actionPreserved": "保留「聽學生說明對最後排的具體擔心」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "聽見學生在意被按身高排在最後，會促成討論改用編號而非報身高，屬自然可達。",
+      "actionPreserved": "保留「聽學生說明對最後排的具體擔心」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師了解其具體擔心後讓其試換位置，顯著促進發現「換到前排其實不一定舒服」並改試中間位。",
+      "actionPreserved": "保留「聽學生說明對最後排的具體擔心」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "學生說出最後排的擔心時，校歌組也會附議後排更須看清指揮，屬自然可達。",
+      "actionPreserved": "保留「聽學生說明對最後排的具體擔心」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下保護學生的擔憂，有助於在群組擋下把換位者寫進名單，屬自然可達。",
+      "actionPreserved": "保留「聽學生說明對最後排的具體擔心」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "需求被聽見後，學生較願意參與後續不帶優劣分類的站位圖調整，屬自然可達。",
+      "actionPreserved": "保留「聽學生說明對最後排的具體擔心」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師確認編排站位的實際條件且不定義優劣，顯著促進學生試站後發現後排視線其實清楚並要求事先說明。",
+      "actionPreserved": "保留「向編排者確認站位採用的實際條件」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "把站位拉回技術條件，能減輕「是不是針對我」的排除感，屬自然可達。",
+      "actionPreserved": "保留「向編排者確認站位採用的實際條件」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "核對編排條件的討論，顯著促進發現「攝影整齊」與「起唱視線」不同而不能只看照片。",
+      "actionPreserved": "保留「向編排者確認站位採用的實際條件」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "要求回到技術條件而非身高比較，有助改用站位編號討論，屬自然可達。",
+      "actionPreserved": "保留「向編排者確認站位採用的實際條件」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "按技術條件調整時，讓學生試到前排也容易體驗到動作空間差異，屬自然可達。",
+      "actionPreserved": "保留「向編排者確認站位採用的實際條件」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "確認站位條件須兼顧兩段演出，顯著促進納入「後排也要唱得出校歌」的視線需求。",
+      "actionPreserved": "保留「向編排者確認站位採用的實際條件」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "聚焦技術功能後，自然不須把要求換位的人點名寫進名單，屬自然可達。",
+      "actionPreserved": "保留「向編排者確認站位採用的實際條件」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "要求不得以優劣定義站位，顯著促進編排者畫出「沒有優劣之分」的視線與轉場站位圖。",
+      "actionPreserved": "保留「向編排者確認站位採用的實際條件」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "安慰「排後面不代表不重要」後，學生較不帶防備地試站後排並看清視線，屬自然可達。",
+      "actionPreserved": "保留「站位會讓人在意，但排後面不代表你比較不重要。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師直接回應「排後面不代表你比較不重要」，顯著促進學生說出怕被大家排除的深層難過。",
+      "actionPreserved": "保留「站位會讓人在意，但排後面不代表你比較不重要。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒穩住後，學生較能客觀參與攝影與現場視線的討論，屬自然可達。",
+      "actionPreserved": "保留「站位會讓人在意，但排後面不代表你比較不重要。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定個人價值不取決於站位，有助於停止公開報身高，屬自然可達。",
+      "actionPreserved": "保留「站位會讓人在意，但排後面不代表你比較不重要。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "心情安定後，學生試站前排若覺不舒服也較敢坦白改試中間位，屬自然可達。",
+      "actionPreserved": "保留「站位會讓人在意，但排後面不代表你比較不重要。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認後排同樣重要，直接呼應「後排也要唱得出校歌」，屬自然可達。",
+      "actionPreserved": "保留「站位會讓人在意，但排後面不代表你比較不重要。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師明確肯定其價值，減少同學把換位需求貼成麻煩人物的機率，屬自然可達。",
+      "actionPreserved": "保留「站位會讓人在意，但排後面不代表你比較不重要。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "消除「好位置／差位置」心結後，全班較易達成無優劣站位圖共識，屬自然可達。",
+      "actionPreserved": "保留「站位會讓人在意，但排後面不代表你比較不重要。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止在班群排名點名後，學生較願意配合實測後排視線並期待事先說明，屬自然可達。",
+      "actionPreserved": "保留「避免在班群以身高或人氣排名」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不公開點名保護了當事人，使其更安心私下談怕被排除的感受，屬自然可達。",
+      "actionPreserved": "保留「避免在班群以身高或人氣排名」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "減少以身高排名討論後，焦點自然轉回攝影角度與現場視線差異，屬自然可達。",
+      "actionPreserved": "保留「避免在班群以身高或人氣排名」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師要求停止在班群以身高排名並改用編號，顯著促進「改用站位編號、不要求報身高」的結果。",
+      "actionPreserved": "保留「避免在班群以身高或人氣排名」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "用編號理性測試位置時，學生仍可提出前排不舒服想試中間位，屬自然可達。",
+      "actionPreserved": "保留「避免在班群以身高或人氣排名」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "聚焦視線需求紀錄，有助校歌組把後排看指揮的需求寫進紀錄，屬自然可達。",
+      "actionPreserved": "保留「避免在班群以身高或人氣排名」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師禁止在班群點名誰要求換位置，顯著促進當場擋下「把抱怨者寫進名單」的作法。",
+      "actionPreserved": "保留「避免在班群以身高或人氣排名」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "只記站位編號與視線需求的規範，有助最終形成沒有優劣之分的站位圖，屬自然可達。",
+      "actionPreserved": "保留「避免在班群以身高或人氣排名」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

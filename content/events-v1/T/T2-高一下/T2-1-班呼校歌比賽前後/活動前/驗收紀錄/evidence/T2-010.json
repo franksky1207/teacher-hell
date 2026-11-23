@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-010 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 2-2（焦慮）、3-3（執行能力）、8-3（訊息採信度）、11-3（人力投入度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 C 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [D,A,E,B] 組別合法配置並與各結局對教師之影響相符。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 2-2（焦慮）、3-3（執行能力）、8-3（訊息採信度）、11-3（人力投入度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-010 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "向承辦核對正式收音設備資訊",
+        "action": "已向承辦核對正式比賽現場的收音與麥克風配置資訊，未擅自假定沿用教室設備",
+        "tradeoff": "釐清正式比賽究竟有幾支麥克風，但教室排練當下的換手爭執仍須先協調"
+      },
+      {
+        "id": 2,
+        "short": "記錄目前借用設備與正式規則的差異",
+        "action": "已記錄目前教室借用麥克風的限制與正式比賽規則的差異，貼在排練表旁提醒",
+        "tradeoff": "避免兩組為了一支暫借器材白吵，但還沒實際測試換手動作順不順"
+      },
+      {
+        "id": 3,
+        "short": "實測領呼與校歌起唱的換手時間",
+        "action": "已現場實測領呼結束到校歌起唱之間的換手秒數，並記下卡住的動作位置",
+        "tradeoff": "立刻取得客觀的換手時間數據，但若器材本身不適合移動還得另想固定收音法"
+      },
+      {
+        "id": 4,
+        "short": "請兩組討論麥克風固定在定點不動的可行性",
+        "action": "已請兩組測試將麥克風留在固定位置、改以站位或手勢交接的替代作法",
+        "tradeoff": "省去台上傳接風險與拉線危機，但離麥克風較遠的人可能收音較小"
+      },
+      {
+        "id": 5,
+        "short": "核對教室麥克風借用單上的保管與移動規定",
+        "action": "已要求借用同學拿出借用單，確認設備移動範圍與歸還保管責任",
+        "tradeoff": "守住公物保管規範，但會讓原本急著排練的兩組暫停討論流程"
+      },
+      {
+        "id": 6,
+        "short": "把伴奏與人聲音量分開試聽記錄",
+        "action": "已請同學分開測試純人聲與加伴奏時的收音效果，確認是否伴奏過大蓋過人聲",
+        "tradeoff": "能找出真實收音問題，但需要多花時間調整音控"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": "emotional",
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "D",
+    "A",
+    "E",
+    "B"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師向承辦核對正式收音設備資訊，顯著促進學生意識到教室麥克風只是暫借、把器材放回桌上。",
+      "actionPreserved": "保留「向承辦核對正式收音設備資訊」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "向承辦查規則本身未在教室實際傳接麥克風，對發現換手兩三個動作卡住的直接觸發較少，屬抑制。",
+      "actionPreserved": "保留「向承辦核對正式收音設備資訊」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核對正式收音配置後，主唱較願意說出怕沒麥克風聲音太小的擔憂，屬自然可達。",
+      "actionPreserved": "保留「向承辦核對正式收音設備資訊」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "向承辦確認設備配置時，也可能同時查到線材與場地限制，屬自然可達。",
+      "actionPreserved": "保留「向承辦核對正式收音設備資訊」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "若得知正式舞台可能只提供固定收音，有助討論定點方案，屬自然可達。",
+      "actionPreserved": "保留「向承辦核對正式收音設備資訊」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認收音設備時，也可一併檢討伴奏音量問題，屬自然可達。",
+      "actionPreserved": "保留「向承辦核對正式收音設備資訊」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核對正式規定有助打破「先借到就歸誰管」的猜測，屬自然可達。",
+      "actionPreserved": "保留「向承辦核對正式收音設備資訊」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "取得承辦收音規範後，顯著促進兩組把未確定正式設備畫成虛線放進同一張流程表。",
+      "actionPreserved": "保留「向承辦核對正式收音設備資訊」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "記錄教室借用與正式規則的差異，顯著促進學生翻出借用記錄並停搶教室麥克風。",
+      "actionPreserved": "保留「記錄目前借用設備與正式規則的差異」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "記下設備差異同時看排練問題，仍可能觀察到換手空檔，屬自然可達。",
+      "actionPreserved": "保留「記錄目前借用設備與正式規則的差異」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "區分教室器材與正式比賽後，主唱較能把焦點從搶麥克風轉為需要明確進場，屬自然可達。",
+      "actionPreserved": "保留「記錄目前借用設備與正式規則的差異」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核對借用設備限制時，更容易發現線材不夠長與不可貼膠帶的規定，屬自然可達。",
+      "actionPreserved": "保留「記錄目前借用設備與正式規則的差異」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "看到設備移動限制後，自然會考慮固定位置方案，屬自然可達。",
+      "actionPreserved": "保留「記錄目前借用設備與正式規則的差異」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "記錄設備狀況也有助於客觀分析伴奏太大聲問題，屬自然可達。",
+      "actionPreserved": "保留「記錄目前借用設備與正式規則的差異」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "寫下教室借用與正式規則差異，顯著促進兩組釐清「先借到不等於能決定」與保管責任。",
+      "actionPreserved": "保留「記錄目前借用設備與正式規則的差異」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "將差異貼在排練表旁，有助兩組整合在同一張流程表，屬自然可達。",
+      "actionPreserved": "保留「記錄目前借用設備與正式規則的差異」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒被接納後，兩組不再急著搶奪暫借麥克風而願看借用記錄，屬自然可達。",
+      "actionPreserved": "保留「兩組都希望被聽見，這不是誰比較重要。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不爭誰重要後，雙方較能平靜面對換手時全班停住的實測問題，屬自然可達。",
+      "actionPreserved": "保留「兩組都希望被聽見，這不是誰比較重要。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師點出兩組都希望被聽見而非比誰重要，顯著促進起唱者坦白怕聲音太小的真心話。",
+      "actionPreserved": "保留「兩組都希望被聽見，這不是誰比較重要。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "減少爭搶情緒後，拉線時一發現跨過動線就比較願意立刻停手，屬自然可達。",
+      "actionPreserved": "保留「兩組都希望被聽見，這不是誰比較重要。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "放下爭奪誰先拿後，大家較能接受麥克風留在同一處的折衷法，屬自然可達。",
+      "actionPreserved": "保留「兩組都希望被聽見，這不是誰比較重要。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師不以誰最重要評斷兩組，顯著促進大家客觀發現是伴奏太大聲而非不會拿麥克風。",
+      "actionPreserved": "保留「兩組都希望被聽見，這不是誰比較重要。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒降溫後，雙方也願意停止拿先借到當理由而補查保管責任，屬自然可達。",
+      "actionPreserved": "保留「兩組都希望被聽見，這不是誰比較重要。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "同理兩組立場後，更易合作畫出同一張交接流程表，屬自然可達。",
+      "actionPreserved": "保留「兩組都希望被聽見，這不是誰比較重要。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "現場實測換手時拿取麥克風，也會順帶檢查到這支只是教室借的，屬自然可達。",
+      "actionPreserved": "保留「實測領呼與校歌起唱的換手時間」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師實測領呼與校歌換手時間，顯著促進當場發現「換手一下全班都停住」的卡點。",
+      "actionPreserved": "保留「實測領呼與校歌起唱的換手時間」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "實測換手過程會讓主唱說出自己真正怕的是沒人聽見，屬自然可達。",
+      "actionPreserved": "保留「實測領呼與校歌起唱的換手時間」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "實際移動麥克風測試換手時，顯著促進立刻暴露線材不夠長跨過隊形路線的問題。",
+      "actionPreserved": "保留「實測領呼與校歌起唱的換手時間」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "測出換手過慢且線材受限後，顯著促進學生提出「固定位置也有可能」的替代方案。",
+      "actionPreserved": "保留「實測領呼與校歌起唱的換手時間」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "現場實測換手試唱時，也能一併測出伴奏太大聲蓋過人聲，屬自然可達。",
+      "actionPreserved": "保留「實測領呼與校歌起唱的換手時間」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "實測過程若發生借用權爭執，仍會回到查看借用資訊與保管責任，屬自然可達。",
+      "actionPreserved": "保留「實測領呼與校歌起唱的換手時間」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "取得實測換手秒數後，顯著促進兩組把班呼、器材與起唱畫進同一張時間線流程表。",
+      "actionPreserved": "保留「實測領呼與校歌起唱的換手時間」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

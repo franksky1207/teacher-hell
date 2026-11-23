@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-023 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 3-1（溝通能力）、4-4（認同依賴度）、5-4（不滿）、6-3（社交主動性），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 B 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [E,D,B,A] 組別合法配置並與各結局對教師之影響相符。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 3-1（溝通能力）、4-4（認同依賴度）、5-4（不滿）、6-3（社交主動性） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-023 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "保留戶外版本並註明適用條件",
+        "action": "已保留原本戶外排練版本並明確註明「僅適用戶外場地」，未因猜測天氣就整套重編",
+        "tradeoff": "保住先前累積的默契不白費，但若比賽當天真的啟用雨備，轉場仍須備案"
+      },
+      {
+        "id": 2,
+        "short": "核對校方正式雨備公告內容",
+        "action": "已核對校方正式公告的雨備啟動條件與通知時點，確認目前尚未發布任何場地變更",
+        "tradeoff": "阻止未證實的天氣截圖在班群擴散，但正式舞台尺寸與音響仍須等窗口回覆"
+      },
+      {
+        "id": 3,
+        "short": "向承辦詢問雨備器材及動線",
+        "action": "已向承辦窗口詢問雨備場地的實際器材配置、空間寬度與動線規範",
+        "tradeoff": "取得規劃備案所需的真實限制條件，但教室內的試音仍須兼顧鄰班安寧"
+      },
+      {
+        "id": 4,
+        "short": "請兩組把室內外都要用的關鍵轉場抽出來優先微調",
+        "action": "已請班呼與校歌組標出無論晴天或雨天都必須清楚的轉場拍點，先聚焦核心微調",
+        "tradeoff": "不須為未知天氣重編整套，但細節音量平衡仍要視場地而定"
+      },
+      {
+        "id": 5,
+        "short": "在合法時段做小範圍室內音量與鄰班干擾測試",
+        "action": "已允許在規定時段內進行短暫小範圍測試，並要求記錄音量與隔壁班干擾情形",
+        "tradeoff": "取得真實室內回音數據，但測試時間受限且不能大聲全開"
+      },
+      {
+        "id": 6,
+        "short": "提醒班群不得拿天氣預報截圖自行宣布改期或改場",
+        "action": "已在班群重申只有校方正式通知能決定啟用雨備，不得轉傳降雨截圖代為宣布",
+        "tradeoff": "杜絕群組假消息恐慌，但部分想提早準備雨具服裝的同學須等正式消息"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": "emotional",
+      "C": 2,
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "E",
+    "D",
+    "B",
+    "A"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留戶外版本並註明適用條件，與查證「雨備還沒正式啟用」的結論完全一致，屬自然可達。",
+      "actionPreserved": "保留「保留戶外版本並註明適用條件」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留戶外版同時在教室試一小段，自然會對比出戶外音量在室內顯得刺耳，屬自然可達。",
+      "actionPreserved": "保留「保留戶外版本並註明適用條件」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在教室對照戶外版節奏時，容易聽出校歌第一句被回音拖住，屬自然可達。",
+      "actionPreserved": "保留「保留戶外版本並註明適用條件」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師保留原本戶外版本不整套重編，顯著促進學生同意只微調受場地影響的少數環節。",
+      "actionPreserved": "保留「保留戶外版本並註明適用條件」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不因雨天猜測就廢棄戶外版，有助擋下群組拿天氣圖宣布改室內的作法，屬自然可達。",
+      "actionPreserved": "保留「保留戶外版本並註明適用條件」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留戶外版並註明條件，避免在不知道舞台寬度前就瞎改新隊形，屬自然可達。",
+      "actionPreserved": "保留「保留戶外版本並註明適用條件」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教室小範圍測試時仍可能接到隔壁班反映而改善紀錄，屬自然可達。",
+      "actionPreserved": "保留「保留戶外版本並註明適用條件」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "保留既有基礎並註明適用條件，顯著促進全班聚焦「先準備最關鍵的轉場」。",
+      "actionPreserved": "保留「保留戶外版本並註明適用條件」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "安慰「不代表現在白練」讓急著重排的人冷靜下來看清雨備還沒啟用，屬自然可達。",
+      "actionPreserved": "保留「準備雨備不表示一定會下雨，也不代表現在白練。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒穩住後，班呼組較願意聽音場變化而非硬喊，屬自然可達。",
+      "actionPreserved": "保留「準備雨備不表示一定會下雨，也不代表現在白練。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不把室內卡住怪成有人唱不好，有助大家冷靜比較錄音找出回音問題，屬自然可達。",
+      "actionPreserved": "保留「準備雨備不表示一定會下雨，也不代表現在白練。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師回應擔心白練的焦慮，顯著促進學生坦白怕多一套會更亂並達成「分先後微調」共識。",
+      "actionPreserved": "保留「準備雨備不表示一定會下雨，也不代表現在白練。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "減少恐慌情緒後，同學比較不會被手機天氣截圖帶著跑，屬自然可達。",
+      "actionPreserved": "保留「準備雨備不表示一定會下雨，也不代表現在白練。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "心情安定後，大家較能接受先留待詢問限制而不急著猜舞台寬度，屬自然可達。",
+      "actionPreserved": "保留「準備雨備不表示一定會下雨，也不代表現在白練。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "面對鄰班反映時較能平和溝通並記錄門窗音量條件，屬自然可達。",
+      "actionPreserved": "保留「準備雨備不表示一定會下雨，也不代表現在白練。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定現有練習價值後，大家更願意把心力集中到關鍵轉場，屬自然可達。",
+      "actionPreserved": "保留「準備雨備不表示一定會下雨，也不代表現在白練。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師核對校方正式雨備公告內容，顯著促進全班確認「雨備其實還沒正式啟用」並保留現有練習。",
+      "actionPreserved": "保留「核對校方正式雨備公告內容」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在未啟用雨備前做小測試，仍可觀察到室內刺耳的音場差異，屬自然可達。",
+      "actionPreserved": "保留「核對校方正式雨備公告內容」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認尚未改室內同時，教室試播仍能發現回音拖住校歌第一句，屬自然可達。",
+      "actionPreserved": "保留「核對校方正式雨備公告內容」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "得知校方尚未宣布改室內，減輕學生怕要同時練兩套的壓力，屬自然可達。",
+      "actionPreserved": "保留「核對校方正式雨備公告內容」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師查核正式公告與啟動條件，顯著促進駁斥「手機天氣圖不能當校方公告」。",
+      "actionPreserved": "保留「核對校方正式雨備公告內容」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "強調須依校方正式通知，有助阻止拿教室尺寸直接推算雨備舞台，屬自然可達。",
+      "actionPreserved": "保留「核對校方正式雨備公告內容」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "依規定在合法時段測試並記錄鄰班需求，與守規則態度一致，屬自然可達。",
+      "actionPreserved": "保留「核對校方正式雨備公告內容」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "釐清公告現況後，兩組可安心先準備跨場地都需要的高效轉場，屬自然可達。",
+      "actionPreserved": "保留「核對校方正式雨備公告內容」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "向承辦詢問雨備器材及動線的動作，本身就代表雨備細節尚未確定啟用，屬自然可達。",
+      "actionPreserved": "保留「向承辦詢問雨備器材及動線」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "詢問器材配置時，教室試音仍能發現室內音量刺耳的問題，屬自然可達。",
+      "actionPreserved": "保留「向承辦詢問雨備器材及動線」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "了解實際場地器材與動線差異，有助對比錄音確認回音影響，屬自然可達。",
+      "actionPreserved": "保留「向承辦詢問雨備器材及動線」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "等待承辦確認具體限制期間，兩組自然會先只處理少數關鍵環節，屬自然可達。",
+      "actionPreserved": "保留「向承辦詢問雨備器材及動線」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "有老師向承辦窗口詢問，能有效壓下群組轉傳天氣截圖自訂規則的亂象，屬自然可達。",
+      "actionPreserved": "保留「向承辦詢問雨備器材及動線」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師向承辦詢問空間寬度與動線規範，顯著促進學生意識到不能用教室尺寸直接推算舞台寬度。",
+      "actionPreserved": "保留「向承辦詢問雨備器材及動線」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "向承辦問場地規範時，也較容易把鄰班安寧與門窗條件列入紀錄，屬自然可達。",
+      "actionPreserved": "保留「向承辦詢問雨備器材及動線」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "等候正式動線回覆同時，先準備好班呼尾聲與校歌起唱的關鍵轉場，屬自然可達。",
+      "actionPreserved": "保留「向承辦詢問雨備器材及動線」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

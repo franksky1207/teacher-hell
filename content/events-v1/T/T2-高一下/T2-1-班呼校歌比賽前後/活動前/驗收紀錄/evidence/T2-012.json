@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-012 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 4-1（成就動機）、6-3（社交主動性）、8-3（訊息採信度）、10-3（協商彈性），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 C 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [D,C,E,B] 組別合法配置並與各結局對教師之影響相符。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 4-1（成就動機）、6-3（社交主動性）、8-3（訊息採信度）、10-3（協商彈性） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-012 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "勸阻公開指認私人帳號的做法",
+        "action": "已勸阻學生在班群公開點名或貼出拍攝者私人帳號，要求僅保留影像事實供查核",
+        "tradeoff": "防止對單一同學的網路公審與二次傷害，但急著出氣的學生可能覺得委屈沒處發"
+      },
+      {
+        "id": 2,
+        "short": "向適當窗口詢問影像公開與傳播處理",
+        "action": "已向學校適當行政窗口詢問影像未經同意流傳與不實指控的正式處理管道",
+        "tradeoff": "依循合法程序處理外部擴散風險，但等待窗口回應前群組流言仍可能發酵"
+      },
+      {
+        "id": 3,
+        "short": "核對正式比賽的伴奏收音規則",
+        "action": "已核對正式比賽的伴奏與現場收音規則，確認排練試音與正式規範的差異",
+        "tradeoff": "釐清技術與規則層面的疑慮，但尚未直接處理社群已流傳的短片誤解"
+      },
+      {
+        "id": 4,
+        "short": "請在場同學找出完整原始影片對照前後文",
+        "action": "已請當時在場錄影的同學提供完整未剪輯影片，核對手機播放伴奏的前後對話",
+        "tradeoff": "最能還原當時只是在試音，但前提是原始完整檔還留著"
+      },
+      {
+        "id": 5,
+        "short": "提醒學生先存回想反擊別班的草稿訊息",
+        "action": "已勸阻學生將他班練習片段貼出反擊，避免把未證實爭議擴大到無關班級",
+        "tradeoff": "防止跨班衝突升級，但當事學生短期內仍須忍受澄清等待"
+      },
+      {
+        "id": 6,
+        "short": "請同學註記每段試拍影片的排練用途",
+        "action": "已請班呼與校歌組為所有試拍影片加上用途與日期註記，區分試音與完整合演",
+        "tradeoff": "建立良好檔案管理習慣，但對已流傳出去的舊片段沒有追回效力"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": "emotional",
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "D",
+    "C",
+    "E",
+    "B"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "勸阻公開肉搜私人帳號後，同學把心力轉回找完整原始影片釐清事實，屬自然可達。",
+      "actionPreserved": "保留「勸阻公開指認私人帳號的做法」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不針對個人算帳後，在場同學比較願意平實回憶當時的試唱位置，屬自然可達。",
+      "actionPreserved": "保留「勸阻公開指認私人帳號的做法」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "勸阻公開點名後，也能連帶擋下貼別班影片反擊的衝動，屬自然可達。",
+      "actionPreserved": "保留「勸阻公開指認私人帳號的做法」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止對個人帳號發火後，學生較能冷靜重讀留言區分提問與指控，屬自然可達。",
+      "actionPreserved": "保留「勸阻公開指認私人帳號的做法」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師直接勸阻公開指認私人帳號，顯著促進學生刪去澄清稿中的拍攝者姓名與個資。",
+      "actionPreserved": "保留「勸阻公開指認私人帳號的做法」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留影像事實查核的做法，與波形圖交技術窗口判讀方向一致，屬自然可達。",
+      "actionPreserved": "保留「勸阻公開指認私人帳號的做法」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止針對拍攝者後，學生也比較不會去別人影片下亂貼推測，屬自然可達。",
+      "actionPreserved": "保留「勸阻公開指認私人帳號的做法」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "僅保留必要資料交由正式窗口處理，符合不要求網友公開道歉的收束，屬自然可達。",
+      "actionPreserved": "保留「勸阻公開指認私人帳號的做法」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "向學校窗口詢問影像處理同時，也需準備完整原片作為佐證，屬自然可達。",
+      "actionPreserved": "保留「向適當窗口詢問影像公開與傳播處理」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "依程序處理時，在場同學需要如實陳述親眼看到的試音經過，屬自然可達。",
+      "actionPreserved": "保留「向適當窗口詢問影像公開與傳播處理」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "有正式窗口可反映，能減輕學生想在社群貼他班影片反擊的衝動，屬自然可達。",
+      "actionPreserved": "保留「向適當窗口詢問影像公開與傳播處理」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "程序查核有助大家分清哪些是一般提問、哪些須澄清誤傳，屬自然可達。",
+      "actionPreserved": "保留「向適當窗口詢問影像公開與傳播處理」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "交由學校窗口處理影像爭議，本身就要求不私下公審私人帳號，屬自然可達。",
+      "actionPreserved": "保留「向適當窗口詢問影像公開與傳播處理」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "向窗口反映期間，同學拿技術波形圖來輔助說明仍可能發生，屬自然可達。",
+      "actionPreserved": "保留「向適當窗口詢問影像公開與傳播處理」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "窗口處理強調證據與用途標示，有助班呼組為試拍影片補註用途，屬自然可達。",
+      "actionPreserved": "保留「向適當窗口詢問影像公開與傳播處理」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師向適當窗口詢問處理管道，顯著促進學生整理原片與經過交由正式窗口處理。",
+      "actionPreserved": "保留「向適當窗口詢問影像公開與傳播處理」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師提醒先確認影片究竟拍到什麼，直接促使學生去找完整原片，屬自然可達。",
+      "actionPreserved": "保留「被誤會很委屈，但要先確認影片真的拍到什麼。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒被理解後，帶唱者更冷靜說出當時還沒練完與試音細節，屬自然可達。",
+      "actionPreserved": "保留「被誤會很委屈，但要先確認影片真的拍到什麼。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師先接住被誤會的委屈並勸冷靜查證，顯著促進學生把反擊草稿存回不送出。",
+      "actionPreserved": "保留「被誤會很委屈，但要先確認影片真的拍到什麼。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "情緒穩住後重讀留言，顯著促進學生看清「有些留言只是在問音源」而非惡意指控。",
+      "actionPreserved": "保留「被誤會很委屈，但要先確認影片真的拍到什麼。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "冷靜下來後，學生較容易接受不要拿別人私人帳號出氣，屬自然可達。",
+      "actionPreserved": "保留「被誤會很委屈，但要先確認影片真的拍到什麼。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認「影片拍到什麼」的過程中，學生仍會試著用波形圖但發現有限，屬自然可達。",
+      "actionPreserved": "保留「被誤會很委屈，但要先確認影片真的拍到什麼。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "理解要看清實際畫面內容後，也比較不會對別班拿手機的畫面妄下斷語，屬自然可達。",
+      "actionPreserved": "保留「被誤會很委屈，但要先確認影片真的拍到什麼。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "被理解委屈後，學生能把重點放在澄清誤解而非要求每個人道歉，屬自然可達。",
+      "actionPreserved": "保留「被誤會很委屈，但要先確認影片真的拍到什麼。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "核對正式伴奏與收音規則時，最需要找回原片確認當時究竟是試音還是表演，顯著促進。",
+      "actionPreserved": "保留「核對正式比賽的伴奏收音規則」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認試音與正式伴奏規則差異，有助帶唱者說清楚當時只是試唱，屬自然可達。",
+      "actionPreserved": "保留「核對正式比賽的伴奏收音規則」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核對規則能讓學生知道合規與否不靠吵架，降低貼他班影片反擊的念頭，屬自然可達。",
+      "actionPreserved": "保留「核對正式比賽的伴奏收音規則」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "知道正式規則後，回覆「問音源」的留言會更謹慎不亂代替未來下定論，屬自然可達。",
+      "actionPreserved": "保留「核對正式比賽的伴奏收音規則」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "純粹核對比賽伴奏收音規則，對班群是否公開拍攝者私人帳號的直接約束較間接，屬抑制。",
+      "actionPreserved": "保留「核對正式比賽的伴奏收音規則」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "核對技術收音規則的討論，顯著促進學生看清音量波形圖不能證明誰在唱的技術界線。",
+      "actionPreserved": "保留「核對正式比賽的伴奏收音規則」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "釐清試音與正式收音差別，顯著促進班呼組發現拿手機不等於對嘴並補註影片用途。",
+      "actionPreserved": "保留「核對正式比賽的伴奏收音規則」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認比賽規範有助學生有底氣把事實整理交給正式窗口，屬自然可達。",
+      "actionPreserved": "保留「核對正式比賽的伴奏收音規則」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

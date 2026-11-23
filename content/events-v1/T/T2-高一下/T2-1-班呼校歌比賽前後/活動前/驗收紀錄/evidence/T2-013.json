@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-013 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 2-2（焦慮）、3-4（學習適應能力）、4-3（自主需求）、12-1（程序變更要求度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 D 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [B,D,E,C] 組別合法配置並與各結局對教師之影響相符。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 2-2（焦慮）、3-4（學習適應能力）、4-3（自主需求）、12-1（程序變更要求度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-013 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "私下聽不方便購買者的意願",
+        "action": "已私下傾聽不方便購買同學的真實顧慮，並保護其家庭財務狀況不在班群曝光",
+        "tradeoff": "維護學生尊嚴與隱私，但設計者若不知困難點仍可能覺得只是有人不配合"
+      },
+      {
+        "id": 2,
+        "short": "讓同學提出無須購買的替代搭配",
+        "action": "已請同學提出無須額外花錢購買的替代穿搭方案（如相近色系現有衣物）",
+        "tradeoff": "消除家庭經濟門檻又保留班級辨識度，但設計者原有的新班服圖案可能無處使用"
+      },
+      {
+        "id": 3,
+        "short": "核對活動服裝的正式規範",
+        "action": "已核對活動服裝的正式規範，確認比賽並未強制規定必須新購統一班服",
+        "tradeoff": "以官方規範解除「沒買不能上台」的假壓力，但班內對視覺整體感的期待仍須協調"
+      },
+      {
+        "id": 4,
+        "short": "要求班群停止公布或催繳未買班服名單",
+        "action": "已明確要求幹部不得在班群點名或統計未購買班服學生，避免形成同儕壓力",
+        "tradeoff": "防止家庭條件變成團體評分，但收齊意願調查的速度會變慢"
+      },
+      {
+        "id": 5,
+        "short": "請設計者說明目前僅在詢價尚未墊款或定案",
+        "action": "已請設計者向全班澄清目前僅停留在詢價階段，未取得同意前不會動用班費或代墊",
+        "tradeoff": "化解財務誤會，但仍須解決要不要買班服的核心爭議"
+      },
+      {
+        "id": 6,
+        "short": "請有意願的同學先用現有衣物試站確認隊形效果",
+        "action": "已安排同學穿現有相近色系衣物試站一次，檢驗不買新班服是否影響整體辨識",
+        "tradeoff": "用實測代替想像爭論，但需額外協調大家帶衣服來試"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": 3,
+      "D": "emotional"
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "B",
+    "D",
+    "E",
+    "C"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "私下傾聽不方便購買者的顧慮並保護隱私，顯著促進學生說出「家裡不是不支持班級」並放心留隊練習。",
+      "actionPreserved": "保留「私下聽不方便購買者的意願」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保護私下意願同時，同學仍可能去查活動服儀規範以解除壓力，屬自然可達。",
+      "actionPreserved": "保留「私下聽不方便購買者的意願」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "得知有同學確實不方便花錢後，班上更願意試穿現有相近色系衣物，屬自然可達。",
+      "actionPreserved": "保留「私下聽不方便購買者的意願」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下溝通期間若有人誤會已墊款，設計者拿出紀錄即可澄清，屬自然可達。",
+      "actionPreserved": "保留「私下聽不方便購買者的意願」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師親自保護不願公開財務狀況的學生，顯著促進在班群擋下公布未付款名單。",
+      "actionPreserved": "保留「私下聽不方便購買者的意願」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論不強迫購買時，也有機會順帶發現統一樣品尺寸與材質不合，屬自然可達。",
+      "actionPreserved": "保留「私下聽不方便購買者的意願」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "強調每家狀況不同，有助防止把單一家長意見當成全班同意，屬自然可達。",
+      "actionPreserved": "保留「私下聽不方便購買者的意願」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "顧及家庭差異後，大家較能接受回到可參與、可負擔的班級感方案，屬自然可達。",
+      "actionPreserved": "保留「私下聽不方便購買者的意願」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "提出無須購買的替代搭配後，家裡不方便的學生不必在群組解釋帳目也能參加，屬自然可達。",
+      "actionPreserved": "保留「讓同學提出無須購買的替代搭配」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "尋找替代穿搭時，同學也順勢確認原本比賽就沒強制買班服，屬自然可達。",
+      "actionPreserved": "保留「讓同學提出無須購買的替代搭配」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師請同學提出無須購買的替代搭配，顯著促進試穿現有相近色系衣物驗證隊形效果。",
+      "actionPreserved": "保留「讓同學提出無須購買的替代搭配」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "改推替代搭配時，設計者更須澄清購物車只是詢價還沒墊款，屬自然可達。",
+      "actionPreserved": "保留「讓同學提出無須購買的替代搭配」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "既然有了無須購買的替代方案，就更沒有理由在群組公布未付款名單，屬自然可達。",
+      "actionPreserved": "保留「讓同學提出無須購買的替代搭配」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "比較替代搭配與樣品時，更容易發現統一款式尺寸材質未必適合所有人，屬自然可達。",
+      "actionPreserved": "保留「讓同學提出無須購買的替代搭配」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "推替代方案期間，同學會更謹慎核對家長訊息是否真的支持購買，屬自然可達。",
+      "actionPreserved": "保留「讓同學提出無須購買的替代搭配」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "無須購買的替代方案，顯著促進全班達成「穿出班級感而不必強制消費」的共識。",
+      "actionPreserved": "保留「讓同學提出無須購買的替代搭配」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認不必買新班服後，擔心花錢的學生壓力大減而願繼續參與練習，屬自然可達。",
+      "actionPreserved": "保留「核對活動服裝的正式規範」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師核對活動服裝正式規範，顯著促進同學看見「原本根本沒規定要買班服」並停止催單。",
+      "actionPreserved": "保留「核對活動服裝的正式規範」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "知道規範沒強制買後，班上自然會改試現有相近色系衣物，屬自然可達。",
+      "actionPreserved": "保留「核對活動服裝的正式規範」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認規範無強制後，同學更能把購物車詢價與正式決議分開，屬自然可達。",
+      "actionPreserved": "保留「核對活動服裝的正式規範」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "既然規則沒要求必買，公開誰沒付款就更站不住腳，屬自然可達。",
+      "actionPreserved": "保留「核對活動服裝的正式規範」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在確認規範只要求服儀合適時，也較容易談到尺寸與活動安全，屬自然可達。",
+      "actionPreserved": "保留「核對活動服裝的正式規範」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "核對正式規範與決議程序，顯著促進學生拆穿「單一家長訊息被當全班同意」的誤傳。",
+      "actionPreserved": "保留「核對活動服裝的正式規範」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "規範釐清後，全班更容易走向可負擔的共同方案，屬自然可達。",
+      "actionPreserved": "保留「核對活動服裝的正式規範」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師肯定好意又點出家庭負擔差異，讓雙方都能冷靜溝通不追問帳目，屬自然可達。",
+      "actionPreserved": "保留「想讓畫面整齊是好意，不代表每個人都能負擔。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "溫和提醒不能假定人人都能負擔後，同學較願意查證是否真有規定必買，屬自然可達。",
+      "actionPreserved": "保留「想讓畫面整齊是好意，不代表每個人都能負擔。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在肯定整齊初衷的前提下，設計者較願意嘗試相近色系衣物，屬自然可達。",
+      "actionPreserved": "保留「想讓畫面整齊是好意，不代表每個人都能負擔。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒緩和後，設計者拿出詢價紀錄澄清未墊款時較不會被誤解，屬自然可達。",
+      "actionPreserved": "保留「想讓畫面整齊是好意，不代表每個人都能負擔。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "提醒家庭經濟差異的存在，有助阻止群組公開未付款名單，屬自然可達。",
+      "actionPreserved": "保留「想讓畫面整齊是好意，不代表每個人都能負擔。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "體諒不同人的現實條件，也讓設計者願意把尺寸與舒適納入考慮，屬自然可達。",
+      "actionPreserved": "保留「想讓畫面整齊是好意，不代表每個人都能負擔。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "提醒並非每家都同意花錢，有助大家看清單一家長訊息不等於全班同意，屬自然可達。",
+      "actionPreserved": "保留「想讓畫面整齊是好意，不代表每個人都能負擔。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師肯定設計者想讓畫面整齊的心意並顧及負擔，顯著促進「大家想穿出的是班級感」之共識。",
+      "actionPreserved": "保留「想讓畫面整齊是好意，不代表每個人都能負擔。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

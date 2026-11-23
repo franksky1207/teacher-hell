@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-007 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 1-1（責任感）、2-4（愉悅）、5-3（尊重）、9-4（校園安全意識），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 D 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [C,A,D,B] 組別合法配置並與各結局對教師之影響相符。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 1-1（責任感）、2-4（愉悅）、5-3（尊重）、9-4（校園安全意識） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-007 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "查核班呼版本的原始押韻文字",
+        "action": "已查核班呼草稿中的原始押韻文字與前後修改脈絡，標出爭議句來源，未代替學生定稿",
+        "tradeoff": "能釐清詞句究竟如何演變，但尚未直接處理擔心被連累同學的不安"
+      },
+      {
+        "id": 2,
+        "short": "私下聽不舒服的同學真正擔憂",
+        "action": "已私下聽取感到不舒服同學的具體擔憂，同時保護其人際顧慮不在班群曝光",
+        "tradeoff": "顧及當事人心理安全，但寫詞組可能以為是少數人私下打小報告"
+      },
+      {
+        "id": 3,
+        "short": "讓大家試寫不嘲笑別班的替代口號",
+        "action": "已請大家試寫不針對或嘲笑別班的替代押韻口號，保留原有節奏架構",
+        "tradeoff": "保住創作空間又避開跨班衝突，但部分學生可能覺得新詞不如原梗有衝擊力"
+      },
+      {
+        "id": 4,
+        "short": "請學生確認最早貼出草稿的社群分享範圍",
+        "action": "已請相關同學確認該句是否已流出至班外公開社群並先行撤下草稿標記",
+        "tradeoff": "即時止血擴散風險，但無法改變已看過截圖者的印象"
+      },
+      {
+        "id": 5,
+        "short": "請校歌組一起試喊修正後的替代句確認銜接",
+        "action": "已請班呼與校歌兩組用替代句試接一次，確認整段比賽口吻一致",
+        "tradeoff": "確保整場演出不突兀，但前提是班呼組先願意試寫新句"
+      },
+      {
+        "id": 6,
+        "short": "核對比賽辦法對口號內容的禮節規範",
+        "action": "已查閱活動辦法中關於表演禮節與禁止人身或班級攻擊的相關說明",
+        "tradeoff": "提供客觀規則依據，但容易讓學生覺得只是用規定壓人"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": 3,
+      "D": "emotional"
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "C",
+    "A",
+    "D",
+    "B"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "查核原始押韻文字與修改脈絡，顯著促進寫詞者翻出最早草稿發現矛頭是後來改寫才指向別人。",
+      "actionPreserved": "保留「查核班呼版本的原始押韻文字」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "核對文字來源時，最容易查證出所謂別班綽號其實根本沒人說過，顯著促進撤下標記。",
+      "actionPreserved": "保留「查核班呼版本的原始押韻文字」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "看清文字修改脈絡後，設計組也較願意從自己班的經驗另寫新押韻句，屬自然可達。",
+      "actionPreserved": "保留「查核班呼版本的原始押韻文字」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "查核字句期間，不願在走廊遇見被提者的同學可維持不公開私交，屬自然可達。",
+      "actionPreserved": "保留「查核班呼版本的原始押韻文字」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師核對原始押韻文字，顯著促進對照出「轉傳出去的版本被人加了更尖銳的字」。",
+      "actionPreserved": "保留「查核班呼版本的原始押韻文字」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "看清爭議句演變後，校歌組更能就事論事表明不想替該句背書，屬自然可達。",
+      "actionPreserved": "保留「查核班呼版本的原始押韻文字」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "查核脈絡能證明其餘段落本來就沒問題，有助只修爭議句不刪整首，屬自然可達。",
+      "actionPreserved": "保留「查核班呼版本的原始押韻文字」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "完成文字查核後，班上可順利改寫為描述本班合作的口號，屬自然可達。",
+      "actionPreserved": "保留「查核班呼版本的原始押韻文字」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下聽取不舒服同學的擔憂後，寫詞者較能體會玩笑可能外流傷人，屬自然可達。",
+      "actionPreserved": "保留「私下聽不舒服的同學真正擔憂」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下釐清擔憂時，也能核實綽號其實毫無根據，屬自然可達。",
+      "actionPreserved": "保留「私下聽不舒服的同學真正擔憂」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "得知有同學真正擔心被連帶罵後，班呼組較願意試改本班經驗句，屬自然可達。",
+      "actionPreserved": "保留「私下聽不舒服的同學真正擔憂」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師私下聽取感到不舒服同學的真實擔憂，顯著促進保護其不在群組公開私交的界線。",
+      "actionPreserved": "保留「私下聽不舒服的同學真正擔憂」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下對話雖保護了當事人，但仍須比對草稿才會發現轉傳版被加字，屬自然可達。",
+      "actionPreserved": "保留「私下聽不舒服的同學真正擔憂」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師私下聽見校歌組或當事人的擔憂，顯著促進校歌組明確拒絕替爭議句背書。",
+      "actionPreserved": "保留「私下聽不舒服的同學真正擔憂」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認擔憂只針對特定句子後，全班更容易接受只修該句而非刪整首，屬自然可達。",
+      "actionPreserved": "保留「私下聽不舒服的同學真正擔憂」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "聽見同學真實擔憂後，班上較願意拿掉針對別人的稱呼，屬自然可達。",
+      "actionPreserved": "保留「私下聽不舒服的同學真正擔憂」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在準備試寫替代口號時，寫詞者看到舊句被轉傳會更乾脆標為草稿，屬自然可達。",
+      "actionPreserved": "保留「讓大家試寫不嘲笑別班的替代口號」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "試寫替代口號的過程中，起鬨者也能放下沒根據的綽號梗，屬自然可達。",
+      "actionPreserved": "保留「讓大家試寫不嘲笑別班的替代口號」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師請大家試寫不嘲笑別班的替代口號，顯著促進從本班經驗找出新押韻句且讓原本沉默者跟著喊。",
+      "actionPreserved": "保留「讓大家試寫不嘲笑別班的替代口號」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "直接聚焦集體寫新口號，對個別學生私下交代走廊人際擔憂的觸發較少，屬抑制。",
+      "actionPreserved": "保留「讓大家試寫不嘲笑別班的替代口號」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "試寫新句對比舊稿時，仍可發現轉傳版本被改動的事實，屬自然可達。",
+      "actionPreserved": "保留「讓大家試寫不嘲笑別班的替代口號」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "改寫口號的討論會強化班呼與校歌是同台共同作品的認知，屬自然可達。",
+      "actionPreserved": "保留「讓大家試寫不嘲笑別班的替代口號」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "保留節奏架構並試寫替代口號，顯著促進「只處理爭議句、不刪整首」的共識。",
+      "actionPreserved": "保留「讓大家試寫不嘲笑別班的替代口號」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "試寫不貶低他班的口號，顯著促進把草稿定調為描述本班合作、競爭不必靠貶低別人。",
+      "actionPreserved": "保留「讓大家試寫不嘲笑別班的替代口號」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師肯定想喊出氣勢但提醒尊重界線，讓寫詞者不帶防備地檢視草稿，屬自然可達。",
+      "actionPreserved": "保留「你想喊出氣勢，也不希望傷害別班。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "被溫和提醒後，起鬨者較容易收起手機不再堅持綽號，屬自然可達。",
+      "actionPreserved": "保留「你想喊出氣勢，也不希望傷害別班。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定創作動機讓班呼組更有動力改寫出一樣有氣勢的本班押韻句，屬自然可達。",
+      "actionPreserved": "保留「你想喊出氣勢，也不希望傷害別班。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師理解雙方立場，讓擔憂者不用在群組被逼表態，屬自然可達。",
+      "actionPreserved": "保留「你想喊出氣勢，也不希望傷害別班。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒緩和後，寫詞者更願意坦白自己原本寫什麼，不像防衛時推卸責任，屬自然可達。",
+      "actionPreserved": "保留「你想喊出氣勢，也不希望傷害別班。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "點出同台尊重界線，有助兩組把班呼與校歌視為共同作品，屬自然可達。",
+      "actionPreserved": "保留「你想喊出氣勢，也不希望傷害別班。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師肯定想喊出氣勢的用心，顯著促進大家同意「不是有人反對就要刪整首」。",
+      "actionPreserved": "保留「你想喊出氣勢，也不希望傷害別班。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "溫和指出氣勢不必靠貶低別人，顯著促進全班拿掉針對別班的稱呼。",
+      "actionPreserved": "保留「你想喊出氣勢，也不希望傷害別班。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

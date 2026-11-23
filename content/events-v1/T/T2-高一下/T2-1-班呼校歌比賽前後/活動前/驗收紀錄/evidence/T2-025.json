@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-025 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 3-4（學習適應能力）、4-3（自主需求）、9-3（班務參與度）、11-1（任務負荷），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 B 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [C,D,A,B] 組別合法配置並與各結局對教師之影響相符。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 3-4（學習適應能力）、4-3（自主需求）、9-3（班務參與度）、11-1（任務負荷） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-025 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "向兩邊參與者釐清實際音量與時段",
+        "action": "已向本班與隔壁班參與者釐清各自實際的音量需求與練習時段，未替任一方決定空間歸屬",
+        "tradeoff": "讓兩班看見彼此都不是故意找麻煩，但公共走廊的使用權限仍須向行政確認"
+      },
+      {
+        "id": 2,
+        "short": "核對公共空間可使用的正式規範",
+        "action": "已核對學校公共空間與走廊使用的正式規範，確認沒有任何一班擁有走廊專用權",
+        "tradeoff": "以校規釐清「先到先占」的誤解，但原本靠走廊大喊練習的班呼組須改練法"
+      },
+      {
+        "id": 3,
+        "short": "請學生先停止互相提高音量的競爭",
+        "action": "已請本班學生先停止與隔壁班互相提高音量的競爭，避免兩邊都聽不清自己拍點",
+        "tradeoff": "立刻停止噪音升級衝突，但部分想測試真實喊聲氣勢的同學會覺得受限"
+      },
+      {
+        "id": 4,
+        "short": "請班呼組先改練不用大喊的隊形、拍點與轉場手勢",
+        "action": "已引導班呼組整理出不需大音量吶喊的隊形移動與轉場手勢先行演練",
+        "tradeoff": "不干擾鄰班又能推進進度，但實際音量氣勢仍待合適場地測試"
+      },
+      {
+        "id": 5,
+        "short": "把兩班需要大聲或安靜的時段清單交管理窗口協調",
+        "action": "已請學生列出本班需要測試音量的具體條件與時段需求，交由場地管理窗口確認",
+        "tradeoff": "循正式管道解決空間衝突，但當天無法立即取得新場地"
+      },
+      {
+        "id": 6,
+        "short": "盤點本班放學後有合法行程的同學以決定可練習時段",
+        "action": "已盤點組員放學後的實際可留校時間，避免以延後到鄰班離開作為唯一解方",
+        "tradeoff": "尊重學生合法生活安排，但可安排兩班錯開的白天時段變得更緊湊"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": "emotional",
+      "C": 2,
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "C",
+    "D",
+    "A",
+    "B"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師向兩邊參與者釐清實際音量與時段，顯著促進本班發現隔壁班也在準備同一種比賽而放下敵意。",
+      "actionPreserved": "保留「向兩邊參與者釐清實際音量與時段」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "釐清時段需求時，幹部也會翻看場地公告確認誰能用走廊，屬自然可達。",
+      "actionPreserved": "保留「向兩邊參與者釐清實際音量與時段」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "盤點音量需求時，兩組較容易看出互蓋音量反而讓本班校歌難起唱，屬自然可達。",
+      "actionPreserved": "保留「向兩邊參與者釐清實際音量與時段」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師讓兩班說出各自音量與時段需求，顯著促進本班聽見「對方不是抱怨而是真的聽不見」。",
+      "actionPreserved": "保留「向兩邊參與者釐清實際音量與時段」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "釐清整個時段前後脈絡，有助學生不被只拍到爭吵的短片誤導，屬自然可達。",
+      "actionPreserved": "保留「向兩邊參與者釐清實際音量與時段」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "知道兩邊各自需要練習時段後，本班更願意先挑不用大喊的部分來練，屬自然可達。",
+      "actionPreserved": "保留「向兩邊參與者釐清實際音量與時段」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "盤點雙方可用時段時，本班同學會提出放學後另有合法安排的限制，屬自然可達。",
+      "actionPreserved": "保留「向兩邊參與者釐清實際音量與時段」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "釐清雙方實際需求後，顯著促進把動線、空間與待詢時段列成清楚清單。",
+      "actionPreserved": "保留「向兩邊參與者釐清實際音量與時段」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "點出其他班也需要合理空間，讓想反嗆的同學願意去聽聽隔壁班在練什麼，屬自然可達。",
+      "actionPreserved": "保留「你們很想練好，也得讓其他班有合理空間。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "提醒公共空間要共享，能引導幹部撤回「我們先到」的獨占說法，屬自然可達。",
+      "actionPreserved": "保留「你們很想練好，也得讓其他班有合理空間。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒緩和後，領呼者較能檢討拉高音量其實害到自己班的校歌，屬自然可達。",
+      "actionPreserved": "保留「你們很想練好，也得讓其他班有合理空間。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師肯定想練好也提醒尊重他班空間，顯著促進雙方聽懂「聽不見」的真實困難而非挑釁。",
+      "actionPreserved": "保留「你們很想練好，也得讓其他班有合理空間。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "減輕對立後，學生比較不會拿爭吵短片去擴大衝突，屬自然可達。",
+      "actionPreserved": "保留「你們很想練好，也得讓其他班有合理空間。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "理解他班也有練習需要後，班呼組較願意改練低音量的隊形手勢，屬自然可達。",
+      "actionPreserved": "保留「你們很想練好，也得讓其他班有合理空間。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "提醒兼顧合理空間與生活安排，有助大家否定強迫全員留到放學後的點子，屬自然可達。",
+      "actionPreserved": "保留「你們很想練好，也得讓其他班有合理空間。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "建立互相尊重的基調，有助於兩班在不互相侵占下各自練好，屬自然可達。",
+      "actionPreserved": "保留「你們很想練好，也得讓其他班有合理空間。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "核對公共空間規範後，本班停止對立並開始看對方也在準備比賽，屬自然可達。",
+      "actionPreserved": "保留「核對公共空間可使用的正式規範」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師核對公共空間與走廊使用正式規範，顯著促進幹部查明無獨占核准並撤回「我們先到」。",
+      "actionPreserved": "保留「核對公共空間可使用的正式規範」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "知道走廊無專用權後，本班不再用大聲壓人，較易發現原本音量反而蓋過校歌，屬自然可達。",
+      "actionPreserved": "保留「核對公共空間可使用的正式規範」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "規則明確後，雙方能在合法範圍討論錯開時段而不必誰認輸，屬自然可達。",
+      "actionPreserved": "保留「核對公共空間可使用的正式規範」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "依規範釐清時間序，避免拿片段爭吵影片互相指控，屬自然可達。",
+      "actionPreserved": "保留「核對公共空間可使用的正式規範」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "既然走廊不能大喊獨占，班呼組自然會整理不用大喊的項目先練，屬自然可達。",
+      "actionPreserved": "保留「核對公共空間可使用的正式規範」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "規範限制下討論其他合法時段時，自然會盤點放學後誰不能留，屬自然可達。",
+      "actionPreserved": "保留「核對公共空間可使用的正式規範」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "依正式規範把可借空間與待詢時段列成清單，是合理的行政接續，屬自然可達。",
+      "actionPreserved": "保留「核對公共空間可使用的正式規範」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止互相提高音量的競爭後，教室門口安靜下來才聽得見對方也在練校歌，屬自然可達。",
+      "actionPreserved": "保留「請學生先停止互相提高音量的競爭」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停下音量競爭後，幹部才冷靜回頭查場地公告，屬自然可達。",
+      "actionPreserved": "保留「請學生先停止互相提高音量的競爭」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師請學生停止互相提高音量的競爭，顯著促進領呼者看見「喊越大聲、自己班校歌越難起唱」。",
+      "actionPreserved": "保留「請學生先停止互相提高音量的競爭」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止比大聲後，隔壁班才有機會說出剛才真的聽不見，屬自然可達。",
+      "actionPreserved": "保留「請學生先停止互相提高音量的競爭」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "制止競爭升級有助停下拍攝爭吵畫面並標明前因後果，屬自然可達。",
+      "actionPreserved": "保留「請學生先停止互相提高音量的競爭」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師要求停止提高音量競爭，顯著促進班呼組轉而整理「先練不用大喊的隊形與轉場手勢」。",
+      "actionPreserved": "保留「請學生先停止互相提高音量的競爭」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停下白天噪音對抗後，討論何時補練時就會發現不是人人都能留到放學，屬自然可達。",
+      "actionPreserved": "保留「請學生先停止互相提高音量的競爭」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止無效吼叫競爭後，團隊更易聚焦可執行的動線與空間清單，屬自然可達。",
+      "actionPreserved": "保留「請學生先停止互相提高音量的競爭」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

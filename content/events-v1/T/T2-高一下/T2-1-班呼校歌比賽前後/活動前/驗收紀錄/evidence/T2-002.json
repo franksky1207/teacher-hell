@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-002 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 7-4（生活穩定度）、9-4（校園安全意識）、10-3（協商彈性）、11-4（資源提供度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 D 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [A,B,C,D] 組別合法配置並與各結局對教師之影響相符。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 7-4（生活穩定度）、9-4（校園安全意識）、10-3（協商彈性）、11-4（資源提供度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-002 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "私下確認是否需要家長或健康專業協助",
+        "action": "已私下詢問學生嗓音狀況，確認是否需要聯絡家長或請健康中心評估，未在班上公開其健康細節",
+        "tradeoff": "優先照顧健康與隱私，但學生可能擔心被當成要退出比賽而更緊張"
+      },
+      {
+        "id": 2,
+        "short": "讓學生保留能不勉強發聲的排練位置",
+        "action": "已讓學生保留能不勉強發聲的排練位置，明確免除其當下大聲領喊的義務",
+        "tradeoff": "能維持參與感並保護喉嚨，但班呼領喊人力需要其他同學臨時補位"
+      },
+      {
+        "id": 3,
+        "short": "先停止以大聲喊叫當成練習成果的要求",
+        "action": "已要求全班停止把「喊得越大聲越好」當成練習驗收標準，改回節拍與銜接練習",
+        "tradeoff": "從源頭減少全班傷嗓風險，但原本靠聲量帶動氣氛的同學可能一時不知如何練習"
+      },
+      {
+        "id": 4,
+        "short": "請幾位同學一起分擔班呼領喊口令",
+        "action": "已詢問班上其他同學自願分擔領喊口令，避免由單一學生扛起全部音量",
+        "tradeoff": "分散用嗓負擔，但需要時間重新對齊領拍默契"
+      },
+      {
+        "id": 5,
+        "short": "改用拍手與手勢對齊班呼轉校歌拍點",
+        "action": "已提議當次練習改用拍手與手勢核對節奏，暫停全班連續大吼",
+        "tradeoff": "保護所有人喉嚨，但無法測試實際喊聲與校歌音量平衡"
+      },
+      {
+        "id": 6,
+        "short": "把嗓音休息需求記為排練調整事項",
+        "action": "已將不適學生的休息需求記為排練調整項目，不要求其提出就醫證明才准休息",
+        "tradeoff": "尊重隱私與健康，但部分同學可能誤以為標準不一"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": 3,
+      "D": "emotional"
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下確認健康支援後，學生較願意停下領喊並交出節拍紙條，屬自然可達。",
+      "actionPreserved": "保留「私下確認是否需要家長或健康專業協助」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "私下健康確認未直接改變全班對「大聲才好」的看法，須待全班聽錄音才轉向，屬抑制。",
+      "actionPreserved": "保留「私下確認是否需要家長或健康專業協助」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下評估期間暫停領喊，同伴仍可能接上第一句，屬自然可達。",
+      "actionPreserved": "保留「私下確認是否需要家長或健康專業協助」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "被問到是否需健康協助時，學生容易說出怕被換掉的真心話，屬自然可達。",
+      "actionPreserved": "保留「私下確認是否需要家長或健康專業協助」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "確認健康支援會讓學生正視校歌也用同一副嗓子，顯著促進停止勉強開口。",
+      "actionPreserved": "保留「私下確認是否需要家長或健康專業協助」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "私下處理不張揚病情，與學生拒絕當眾道歉的態度相容，屬自然可達。",
+      "actionPreserved": "保留「私下確認是否需要家長或健康專業協助」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師未公開健康細節而先做私下評估，顯著促進後續保護隱私、免交就醫證明的結果。",
+      "actionPreserved": "保留「私下確認是否需要家長或健康專業協助」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認身體狀況優先後，學生較願意改做非喊叫工作，屬自然可達。",
+      "actionPreserved": "保留「私下確認是否需要家長或健康專業協助」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "保留不發聲位置直接免除領喊壓力，顯著促進學生放心放下領喊紙條交由組員分擔。",
+      "actionPreserved": "保留「讓學生保留能不勉強發聲的排練位置」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留不發聲位置後，全班改以手勢與站位核對配合，屬自然可達。",
+      "actionPreserved": "保留「讓學生保留能不勉強發聲的排練位置」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留位置讓領呼者退一步不出聲，讓全班有機會發現大家已記得第一句，屬自然可達。",
+      "actionPreserved": "保留「讓學生保留能不勉強發聲的排練位置」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "明確保留排練位置能直接觸動並承接他「怕被換掉」的焦慮，顯著促進討論轉場提示角色。",
+      "actionPreserved": "保留「讓學生保留能不勉強發聲的排練位置」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "在班呼已免發聲後，學生到校歌仍可能試開口才發現不適，屬自然可達。",
+      "actionPreserved": "保留「讓學生保留能不勉強發聲的排練位置」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保有位置而不被圍觀，讓學生不需同學當眾道歉，屬自然可達。",
+      "actionPreserved": "保留「讓學生保留能不勉強發聲的排練位置」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已明確保留位置，減輕班群質疑沒喊就是不認真的壓力，屬自然可達。",
+      "actionPreserved": "保留「讓學生保留能不勉強發聲的排練位置」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "保留非發聲排練位置直接為後續「隊形圖分配接續口令與非喊叫工作」鋪路，顯著促進。",
+      "actionPreserved": "保留「讓學生保留能不勉強發聲的排練位置」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止要求大聲喊叫後，領呼者不必硬撐，願意先停領喊，屬自然可達。",
+      "actionPreserved": "保留「先停止以大聲喊叫當成練習成果的要求」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "直接否定「越大聲越好」的要求，顯著促進全班從錄音反省刺耳不等於合拍。",
+      "actionPreserved": "保留「先停止以大聲喊叫當成練習成果的要求」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "停止大聲喊叫改練節奏後，全班不必靠領呼者吼聲帶動，顯著促進發現大家已記得第一句。",
+      "actionPreserved": "保留「先停止以大聲喊叫當成練習成果的要求」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止唯聲量標準雖減壓，但未直接處理個人定位焦慮，屬自然可達。",
+      "actionPreserved": "保留「先停止以大聲喊叫當成練習成果的要求」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止要求大聲喊叫後，校歌組更願意改檢視起唱手勢，屬自然可達。",
+      "actionPreserved": "保留「先停止以大聲喊叫當成練習成果的要求」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "全班調整練習方式後，起鬨者可能想道歉但被當事人婉拒，屬自然可達。",
+      "actionPreserved": "保留「先停止以大聲喊叫當成練習成果的要求」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "既然不再以聲量評斷練習成果，群組拿沒喊來指責的說法更易被駁回，屬自然可達。",
+      "actionPreserved": "保留「先停止以大聲喊叫當成練習成果的要求」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止唯聲量要求，有助全班分擔兩段工作，屬自然可達。",
+      "actionPreserved": "保留「先停止以大聲喊叫當成練習成果的要求」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒被接納後，學生較敢承認喉嚨不適而非繼續硬撐，屬自然可達。",
+      "actionPreserved": "保留「你這幾天真的很努力，聲音撐不住會難受。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "理解求勝心後，學生較不把不喊當成認輸，屬自然可達。",
+      "actionPreserved": "保留「你這幾天真的很努力，聲音撐不住會難受。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒緩和後，學生能笑著把節拍標記交給同伴，屬自然可達。",
+      "actionPreserved": "保留「你這幾天真的很努力，聲音撐不住會難受。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "私下同理他想上台又怕被換掉的心情，顯著促進他吐露「怕被換掉就沒人記得」。",
+      "actionPreserved": "保留「你這幾天真的很努力，聲音撐不住會難受。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "僅做情緒回應後，學生到校歌段落仍可能因求好心切試唱才發現不行，屬自然可達。",
+      "actionPreserved": "保留「你這幾天真的很努力，聲音撐不住會難受。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師私下溫和安撫使他感受到尊重，顯著促進他不願全班圍觀道歉的自主表態。",
+      "actionPreserved": "保留「你這幾天真的很努力，聲音撐不住會難受。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒支持後，學生更敢堅持不適不是錯誤並拒絕公開就醫資料，屬自然可達。",
+      "actionPreserved": "保留「你這幾天真的很努力，聲音撐不住會難受。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒接納後，學生較能放下個人壓力把演出交給全班協作，屬自然可達。",
+      "actionPreserved": "保留「你這幾天真的很努力，聲音撐不住會難受。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

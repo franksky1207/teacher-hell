@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-001 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 3-4（學習適應能力）、4-3（自主需求）、11-4（資源提供度）、12-1（程序變更要求度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 D 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [C,B,A,E] 組別合法配置並與各結局對教師之影響相符。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 3-4（學習適應能力）、4-3（自主需求）、11-4（資源提供度）、12-1（程序變更要求度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-001 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "先聽校歌指揮說明他看見的起唱空檔",
+        "action": "已聽校歌指揮說明他看見的起唱空檔，並記下轉場落差點，未替班呼組或校歌組逕自拍板改稿",
+        "tradeoff": "能精準定位校歌起唱困難，但班呼設計組可能擔心自己的創意被優先檢討"
+      },
+      {
+        "id": 2,
+        "short": "在不變動正式歌曲內容下試一次完整轉場",
+        "action": "已在不變動正式校歌內容的前提下，安排全班試走一次完整轉場並記錄卡點",
+        "tradeoff": "能直接驗證兩段銜接問題，但會消耗有限的午休排練時間並可能當場暴露爭議"
+      },
+      {
+        "id": 3,
+        "short": "向承辦確認整段演出與交接的時間限制",
+        "action": "已向承辦窗口確認整段演出總時長與轉場的時間規範，未擅自放寬或自訂規定",
+        "tradeoff": "能釐清官方時間界線避免白練，但尚無法立即解決班內兩組的協調情緒"
+      },
+      {
+        "id": 4,
+        "short": "請兩組把各自拍點寫在同一張流程表",
+        "action": "已請班呼與校歌負責人將各自節拍標記在同一份流程表上供比對",
+        "tradeoff": "有助看清時間差，但文字比對仍不如實際走位直觀"
+      },
+      {
+        "id": 5,
+        "short": "先調出先前分開錄製的彩排影片核對",
+        "action": "已請負責錄影的同學整理兩段分開練習的影片供對照",
+        "tradeoff": "不占現場排練時間，但單獨片段未必能反映現場視線問題"
+      },
+      {
+        "id": 6,
+        "short": "暫時保留現有班呼尾句長度並標記待測",
+        "action": "已暫時保留班呼現有尾句設計並標註為待確認項目，避免當場否定創意",
+        "tradeoff": "維持設計組士氣，但起唱擠壓問題會延後解決"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": 3,
+      "D": "emotional"
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "C",
+    "B",
+    "A",
+    "E"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "聽校歌指揮說明起唱空檔後，容易對照錄影釐清不是故意搶拍，屬自然可達。",
+      "actionPreserved": "保留「先聽校歌指揮說明他看見的起唱空檔」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "聽指揮說出他以為的出發手勢，能直接促成領呼者與指揮核對轉身訊號。",
+      "actionPreserved": "保留「先聽校歌指揮說明他看見的起唱空檔」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "得知起唱困難後，有助討論需要從頭合演一次，但尚未直接進入排程。",
+      "actionPreserved": "保留「先聽校歌指揮說明他看見的起唱空檔」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "校歌指揮說明後排才吸氣就被蓋掉的困境，直接促進大家重視唱歌者需求。",
+      "actionPreserved": "保留「先聽校歌指揮說明他看見的起唱空檔」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "僅聽校歌指揮說明單方觀察，對查明承辦總時長規定沒有直接推進，屬抑制。",
+      "actionPreserved": "保留「先聽校歌指揮說明他看見的起唱空檔」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "指揮點出視線與拍點落差，有助後續畫出隊形死角，屬自然可達。",
+      "actionPreserved": "保留「先聽校歌指揮說明他看見的起唱空檔」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "聽見校歌起唱需要空檔後，促成兩組各自提出試排調整方案，屬自然可達。",
+      "actionPreserved": "保留「先聽校歌指揮說明他看見的起唱空檔」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "聽取指揮意見有助理解整體銜接重要，但仍須班呼組配合才形成共識。",
+      "actionPreserved": "保留「先聽校歌指揮說明他看見的起唱空檔」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "實際試走完整轉場能直接拍下或觀察到領呼與指揮的動作重疊，顯著促進釐清誤會。",
+      "actionPreserved": "保留「在不變動正式歌曲內容下試一次完整轉場」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "試走轉場時雙方動作並陳，能自然發現各自誤判的轉身手勢訊號。",
+      "actionPreserved": "保留「在不變動正式歌曲內容下試一次完整轉場」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "安排完整試排直接回應「還沒從頭接完一次」的盲點，顯著促進兩組留出合演時段。",
+      "actionPreserved": "保留「在不變動正式歌曲內容下試一次完整轉場」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "試走過程中後排起唱被蓋住的現象會浮現，但仍須口頭表達才形成設計共識。",
+      "actionPreserved": "保留「在不變動正式歌曲內容下試一次完整轉場」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "教室試走轉場並未向承辦詢問總時長規定，對官方規則釐清有抑制。",
+      "actionPreserved": "保留「在不變動正式歌曲內容下試一次完整轉場」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "現場試走會立刻暴露前排手勢被後排視線遮住的死角，顯著促進重畫站位圖。",
+      "actionPreserved": "保留「在不變動正式歌曲內容下試一次完整轉場」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "實際走過轉場卡點後，班呼組與校歌組最容易當場圈出可縮短的一拍，顯著促進交接方案。",
+      "actionPreserved": "保留「在不變動正式歌曲內容下試一次完整轉場」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "完整試走一次後，大家會看見班呼到校歌的空白需要共同處理，屬自然可達。",
+      "actionPreserved": "保留「在不變動正式歌曲內容下試一次完整轉場」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "先問承辦總時長屬於規則確認，對現場兩人互相責怪搶拍的技術釐清較間接，屬抑制。",
+      "actionPreserved": "保留「向承辦確認整段演出與交接的時間限制」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "確認總時長未直接討論領呼者轉身手勢，僅間接提供調整空間，屬抑制。",
+      "actionPreserved": "保留「向承辦確認整段演出與交接的時間限制」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認總時長後能讓兩組知道須在總時間內合演，屬自然可達。",
+      "actionPreserved": "保留「向承辦確認整段演出與交接的時間限制」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "查總時長未直接觸及後排唱歌者被當背景的感受，屬抑制。",
+      "actionPreserved": "保留「向承辦確認整段演出與交接的時間限制」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師已向承辦確認總時長與交接時間限制，直接促成學生拿正式資訊停止猜測。",
+      "actionPreserved": "保留「向承辦確認整段演出與交接的時間限制」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "官方總時長規範不處理教室隊形視線死角，屬抑制。",
+      "actionPreserved": "保留「向承辦確認整段演出與交接的時間限制」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "明確總時長限制後，班呼組與校歌組更容易開始討論如何縮短尾句以符合時間，屬自然可達。",
+      "actionPreserved": "保留「向承辦確認整段演出與交接的時間限制」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認整段共用一個總時長，有助強化「同一場比賽整體演出」的認知，屬自然可達。",
+      "actionPreserved": "保留「向承辦確認整段演出與交接的時間限制」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "安撫雙方情緒降低對立後，兩人比較願意靜下來對照錄影而非互相怪罪，屬自然可達。",
+      "actionPreserved": "保留「你們兩邊都很用心，接不上真的會急。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒被接納後，領呼者與指揮更願意坦白各自誤以為的訊號，屬自然可達。",
+      "actionPreserved": "保留「你們兩邊都很用心，接不上真的會急。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定兩邊用心有助兩組放下門戶之見，願意試排合演，屬自然可達。",
+      "actionPreserved": "保留「你們兩邊都很用心，接不上真的會急。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師同理兩組投入並肯定唱歌者與領呼者同等重要，顯著促進把唱歌者需求納入設計。",
+      "actionPreserved": "保留「你們兩邊都很用心，接不上真的會急。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "情緒回應本身不提供承辦窗口的總時長文件，對規則查明屬抑制。",
+      "actionPreserved": "保留「你們兩邊都很用心，接不上真的會急。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "降低緊張氣氛後，學生較願意實測站位而不怪後排不認真，屬自然可達。",
+      "actionPreserved": "保留「你們兩邊都很用心，接不上真的會急。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定雙方用心有助各自退一步試排，但具體空出一拍仍待技術協調，屬自然可達。",
+      "actionPreserved": "保留「你們兩邊都很用心，接不上真的會急。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師點出兩邊都在為同一場比賽用心，顯著促進全班把焦點放回單一班級完整演出。",
+      "actionPreserved": "保留「你們兩邊都很用心，接不上真的會急。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

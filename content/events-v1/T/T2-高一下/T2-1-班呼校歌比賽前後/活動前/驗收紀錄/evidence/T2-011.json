@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-011 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 4-4（認同依賴度）、5-1（信任）、7-3（生活資源）、12-4（問責要求度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 D 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [D,E,B,C] 組別合法配置並與各結局對教師之影響相符。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 4-4（認同依賴度）、5-1（信任）、7-3（生活資源）、12-4（問責要求度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-011 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "查明正式校歌歌詞及表演規則",
+        "action": "已查明正式校歌歌詞及比賽表演規則，確認不得私改校歌原詞，未替學生申請例外",
+        "tradeoff": "直接守住校歌正式性與規則底線，但提議改詞的同學可能覺得點子被一刀切斷"
+      },
+      {
+        "id": 2,
+        "short": "詢問學生真正想呈現的班級趣味",
+        "action": "已詢問改詞學生真正想在舞台呈現的班級趣味與記憶點，引導其說明創作初衷",
+        "tradeoff": "讓創意動機被聽見而較願意溝通，但仍須另找合法位置安放笑點"
+      },
+      {
+        "id": 3,
+        "short": "提醒不要先將改詞稿稱為正式版",
+        "action": "已提醒整理者不得將帶有笑話改詞的草稿標示為正式版，要求恢復原詞來源標註",
+        "tradeoff": "避免新加入同學誤唱錯詞，但可能讓原本熱心排版的人覺得被挑剔"
+      },
+      {
+        "id": 4,
+        "short": "請班呼組找出一拍可放入班級回憶的段落",
+        "action": "已請班呼設計組檢視現有草稿，看是否能將全班共鳴的幽默移回班呼段",
+        "tradeoff": "兼顧創意與校歌莊重，但須重新調整班呼節奏拍點"
+      },
+      {
+        "id": 5,
+        "short": "請帶唱者說明兩人同時唱不同版本的效果",
+        "action": "已請校歌帶唱同學示範原詞與改詞混唱時的聽覺落差，讓全班自行聽辨",
+        "tradeoff": "讓大家親耳聽見混亂問題，但可能使原提案者當場尷尬"
+      },
+      {
+        "id": 6,
+        "short": "請提案者確認他校影片是否適用本校規範",
+        "action": "已請拿出網路影片的同學補充該校背景與本校規則差異，避免把靈感當許可",
+        "tradeoff": "釐清跨校模仿的誤區，但會多花時間查對公告"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": 2,
+      "C": 3,
+      "D": "emotional"
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "D",
+    "E",
+    "B",
+    "C"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "查明正式校歌歌詞與規則後，顯著促進學生對照原詞承認笑話句是自己加上去的。",
+      "actionPreserved": "保留「查明正式校歌歌詞及表演規則」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "規則明確後，提案者解釋只是怕太普通，雙方轉回合法候選句，屬自然可達。",
+      "actionPreserved": "保留「查明正式校歌歌詞及表演規則」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "規則確認後試唱，仍可能暴露少數人偷加梗導致混亂，屬自然可達。",
+      "actionPreserved": "保留「查明正式校歌歌詞及表演規則」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "單純查明校方歌詞規定，對班內小圈子才懂的笑話落差較無直接觸動，屬抑制。",
+      "actionPreserved": "保留「查明正式校歌歌詞及表演規則」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師查明本校正式表演規則，顯著促進學生確認「別校影片不能當本校許可」。",
+      "actionPreserved": "保留「查明正式校歌歌詞及表演規則」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認原詞規範後，整理者也較快修正雲端紅字誤標，屬自然可達。",
+      "actionPreserved": "保留「查明正式校歌歌詞及表演規則」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "校歌確定不能改後，設計組自然會回頭看班呼草稿有無空間放笑點，屬自然可達。",
+      "actionPreserved": "保留「查明正式校歌歌詞及表演規則」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "正式校歌規則確立後，顯著促進兩份檔案在總排練稿中明確分開不互相冒充。",
+      "actionPreserved": "保留「查明正式校歌歌詞及表演規則」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論想呈現的趣味時，提案者較能坦白原歌詞本來就沒有那句，屬自然可達。",
+      "actionPreserved": "保留「詢問學生真正想呈現的班級趣味」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師詢問學生真正想呈現的班級趣味，顯著促進改詞者吐露初衷並讓反對者也願提合法候選句。",
+      "actionPreserved": "保留「詢問學生真正想呈現的班級趣味」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論趣味呈現時，仍須試唱驗證才不會半班原詞半班笑話，屬自然可達。",
+      "actionPreserved": "保留「詢問學生真正想呈現的班級趣味」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師引導說出真正想呈現的趣味，顯著促進發現「這個梗只有幾個朋友懂」而改找全班共同經驗。",
+      "actionPreserved": "保留「詢問學生真正想呈現的班級趣味」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "討論趣味來源時若有人拿別校影片，仍可區分靈感與規定，屬自然可達。",
+      "actionPreserved": "保留「詢問學生真正想呈現的班級趣味」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "釐清趣味只是討論點子後，整理者較能接受把紅字改回待討論草稿，屬自然可達。",
+      "actionPreserved": "保留「詢問學生真正想呈現的班級趣味」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "聚焦班級趣味而非硬改校歌，顯著促進在班呼草稿找到一拍放入大家懂的回憶。",
+      "actionPreserved": "保留「詢問學生真正想呈現的班級趣味」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "理解趣味可放班呼後，自然支持兩段分開標示的安排，屬自然可達。",
+      "actionPreserved": "保留「詢問學生真正想呈現的班級趣味」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "要求恢復原詞來源標註，直接促使提案者面對那句不在原歌詞裡，屬自然可達。",
+      "actionPreserved": "保留「提醒不要先將改詞稿稱為正式版」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "停止把草稿標成正式版後，雙方較能冷靜談合法候選句，屬自然可達。",
+      "actionPreserved": "保留「提醒不要先將改詞稿稱為正式版」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "禁止把改詞稿當正式版，有助避免半班唱錯，屬自然可達。",
+      "actionPreserved": "保留「提醒不要先將改詞稿稱為正式版」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "檢討草稿標示時，也會順帶發現笑點只有少數人懂的問題，屬自然可達。",
+      "actionPreserved": "保留「提醒不要先將改詞稿稱為正式版」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "強調未經核准不能稱正式版，有助看清別校影片不是本校許可，屬自然可達。",
+      "actionPreserved": "保留「提醒不要先將改詞稿稱為正式版」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師直接提醒不得將改詞稿標為正式版，顯著促進修正雲端紅字誤導並恢復來源標註。",
+      "actionPreserved": "保留「提醒不要先將改詞稿稱為正式版」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "把改詞稿移出正式校歌文件後，大家更願意把笑點移回班呼，屬自然可達。",
+      "actionPreserved": "保留「提醒不要先將改詞稿稱為正式版」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "清楚區分正式校歌與草稿標示的行動，顯著促進總排練稿「兩份不互相冒充」的定案。",
+      "actionPreserved": "保留「提醒不要先將改詞稿稱為正式版」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定創作特色同時提醒尊重規則，讓學生不帶防備地承認原詞沒有該句，屬自然可達。",
+      "actionPreserved": "保留「想加趣味能理解，但正式校歌要先尊重規則。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師理解想讓表演有特色的用心，顯著促進提案者說出「不是故意不尊重學校」。",
+      "actionPreserved": "保留「想加趣味能理解，但正式校歌要先尊重規則。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "氣氛緩和後，試唱發現混亂時帶唱者較能就事論事重試，屬自然可達。",
+      "actionPreserved": "保留「想加趣味能理解，但正式校歌要先尊重規則。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "肯定用心後，設計組較聽得進其他同學「聽不懂小圈子梗」的回饋，屬自然可達。",
+      "actionPreserved": "保留「想加趣味能理解，但正式校歌要先尊重規則。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "提醒尊重本校規則，有助學生把別校影片降格為靈感參考，屬自然可達。",
+      "actionPreserved": "保留「想加趣味能理解，但正式校歌要先尊重規則。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "理解動機不否定人，讓整理者更願意坦然改掉誤導的紅字標示，屬自然可達。",
+      "actionPreserved": "保留「想加趣味能理解，但正式校歌要先尊重規則。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師保住學生創作熱情，顯著促進設計者在班呼草稿裡找到地方安放笑點。",
+      "actionPreserved": "保留「想加趣味能理解，但正式校歌要先尊重規則。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "鼓勵創作同時守住校歌底線，有助建立兩段分開合作共識，屬自然可達。",
+      "actionPreserved": "保留「想加趣味能理解，但正式校歌要先尊重規則。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

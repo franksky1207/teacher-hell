@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-018 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 1-2（衝動性）、7-2（家庭負擔）、8-1（專業肯定度）、9-2（安排配合度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 B 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [D,C,B,E] 組別合法配置並與各結局對教師之影響相符。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 1-2（衝動性）、7-2（家庭負擔）、8-1（專業肯定度）、9-2（安排配合度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-018 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "查核音響借用與移動的正式範圍",
+        "action": "已查核音響借用單上的使用範圍、供電限制與移動規定，未擅自批准推去走廊",
+        "tradeoff": "依規守住器材與場地安全，但班呼組當下測不到走廊回音而感到挫折"
+      },
+      {
+        "id": 2,
+        "short": "保留當前設備狀態並記錄問題",
+        "action": "已先保留音響於原核定位置不動，並將走廊試音需求與電線問題記為待查事項",
+        "tradeoff": "防止電線絆倒與公物損壞風險，但班呼組須暫時改用其他方式對齊拍點"
+      },
+      {
+        "id": 3,
+        "short": "嘗試不移動設備的排練方案",
+        "action": "已引導兩組嘗試不移動音響的替代排練方式，分別測試音準參考與手拍節奏",
+        "tradeoff": "兼顧校歌聽音準與班呼練節奏而不違規，但無法完全模擬大空間音量"
+      },
+      {
+        "id": 4,
+        "short": "請負責借用的同學說明設備保管與損壞責任範圍",
+        "action": "已請借用登記人說明當初簽借的保管條件，釐清為何不宜讓多人隨意搬動設備",
+        "tradeoff": "化解「故意刁難」的誤會，但同時凸顯共用器材的責任歸屬問題"
+      },
+      {
+        "id": 5,
+        "short": "確認走廊通道是否影響他班通行與鄰班練習",
+        "action": "已實地察看走廊寬度與鄰班上課／排練狀況，禁止堵住公共通道或製造過大噪音",
+        "tradeoff": "顧及他班權益與逃生動線安全，但縮小了本班可大聲喊叫的空間"
+      },
+      {
+        "id": 6,
+        "short": "請管理窗口評估是否有合法可大聲試音的時段與場地",
+        "action": "已將班呼與校歌各自需要的音場條件列成清單，向場地管理窗口申請確認",
+        "tradeoff": "循正式管道解決場地需求，但當天排練無法立即獲得大音量設備"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": "emotional",
+      "C": 2,
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "D",
+    "C",
+    "B",
+    "E"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師查核音響借用與移動的正式範圍，顯著促進學生翻出借用單確認未核准搬到走廊而停手。",
+      "actionPreserved": "保留「查核音響借用與移動的正式範圍」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "查核移動範圍時，也會連帶注意到走廊屬公共通行空間，屬自然可達。",
+      "actionPreserved": "保留「查核音響借用與移動的正式範圍」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認設備應留置原位後，兩組較能就音準與音場需求對話，屬自然可達。",
+      "actionPreserved": "保留「查核音響借用與移動的正式範圍」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "查核供電與移動規定，顯著促進在推到門口前檢出電線與插座限制並拍照向窗口確認。",
+      "actionPreserved": "保留「查核音響借用與移動的正式範圍」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "既然器材不能推去走廊，學生改比較不違規的拍手音量而發現環境差異，屬自然可達。",
+      "actionPreserved": "保留「查核音響借用與移動的正式範圍」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師主動查核借用規定，顯著促進負責借用的學生說出「怕弄壞要自己賠」並釐清保管責任。",
+      "actionPreserved": "保留「查核音響借用與移動的正式範圍」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認設備使用規範時，也較容易把鄰班安靜需求納入考量，屬自然可達。",
+      "actionPreserved": "保留「查核音響借用與移動的正式範圍」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "依正式規範查核完畢後，顯著促進兩組將試音需求寫成清單交給管理窗口。",
+      "actionPreserved": "保留「查核音響借用與移動的正式範圍」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "點出不能想搬就搬後，急著推音響的同學較願意回頭看借用單，屬自然可達。",
+      "actionPreserved": "保留「兩段都需要練，但器材不是想搬就能搬。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "安撫雙方後，學生比較不會跟走廊路過的人起爭執，屬自然可達。",
+      "actionPreserved": "保留「兩段都需要練，但器材不是想搬就能搬。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師理解兩組都想練好的心情，顯著促進校歌組與班呼組聽懂彼此需求而非互指占器材。",
+      "actionPreserved": "保留「兩段都需要練，但器材不是想搬就能搬。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "提醒器材不能隨便搬動，讓同學在門口發現電線問題時更果斷停手，屬自然可達。",
+      "actionPreserved": "保留「兩段都需要練，但器材不是想搬就能搬。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "情緒穩住後，班呼組較能接受在教室內做不違規的測試比較，屬自然可達。",
+      "actionPreserved": "保留「兩段都需要練，但器材不是想搬就能搬。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師體諒雙方難處，顯著促進借用登記人卸下防備坦白「怕弄壞要自己賠」。",
+      "actionPreserved": "保留「兩段都需要練，但器材不是想搬就能搬。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "減少班內火氣後，面對隔壁班反映音量也較能平和協調時段，屬自然可達。",
+      "actionPreserved": "保留「兩段都需要練，但器材不是想搬就能搬。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "兩組放下對立後，願意配合留下現狀等待窗口確認場地，屬自然可達。",
+      "actionPreserved": "保留「兩段都需要練，但器材不是想搬就能搬。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師先保留音響不動的處置，顯著促進學生承認借用單本就沒寫可以搬走。",
+      "actionPreserved": "保留「保留當前設備狀態並記錄問題」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "保留器材在教室後，走廊通行問題也能被記進待查事項避免衝突，屬自然可達。",
+      "actionPreserved": "保留「保留當前設備狀態並記錄問題」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "音響留在原位讓校歌組保有音準參考，同時展開與班呼組的溝通，屬自然可達。",
+      "actionPreserved": "保留「保留當前設備狀態並記錄問題」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "保留原位並記下電線問題，顯著促進停下硬拉設備與拍照向管理窗口確認的作法。",
+      "actionPreserved": "保留「保留當前設備狀態並記錄問題」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "音響留在教室期間，班呼組改試拍手音量仍可體會環境差異，屬自然可達。",
+      "actionPreserved": "保留「保留當前設備狀態並記錄問題」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "器材不動能直接緩解借用人的賠償焦慮，使其願意說出顧慮，屬自然可達。",
+      "actionPreserved": "保留「保留當前設備狀態並記錄問題」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "器材未推出走廊，有助降低音量擴散並配合鄰班反映調整時段，屬自然可達。",
+      "actionPreserved": "保留「保留當前設備狀態並記錄問題」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "保留設備現狀並將問題記為待查，顯著促進整理清單交給管理窗口確認。",
+      "actionPreserved": "保留「保留當前設備狀態並記錄問題」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "嘗試不移動設備的替代方案時，同學也會回頭核對借用單原本的限制，屬自然可達。",
+      "actionPreserved": "保留「嘗試不移動設備的排練方案」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不移動音響到走廊，自然減少堵住通道的機率，但若仍在門口試站仍可能發現通行問題，屬自然可達。",
+      "actionPreserved": "保留「嘗試不移動設備的排練方案」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師設計不移動音響的替代排練，讓兩組各自試音準與手拍節奏而不搶器材，屬自然可達。",
+      "actionPreserved": "保留「嘗試不移動設備的排練方案」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不移動設備雖避開硬拉，但收線檢查時仍可能發現原本電線跨動線問題，屬自然可達。",
+      "actionPreserved": "保留「嘗試不移動設備的排練方案」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師引導測試不移動設備的手拍與音量比較，顯著促進發現「戶外音量不等於室內聽感」。",
+      "actionPreserved": "保留「嘗試不移動設備的排練方案」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不移動設備讓借用者安心不少，較願意談起保管責任顧慮，屬自然可達。",
+      "actionPreserved": "保留「嘗試不移動設備的排練方案」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使不推音響，大聲喊或室內音場仍可能接到隔壁班反映而需協調時段，屬自然可達。",
+      "actionPreserved": "保留「嘗試不移動設備的排練方案」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "替代方案能先維持排練，同時促成向管理窗口確認正式試音地點，屬自然可達。",
+      "actionPreserved": "保留「嘗試不移動設備的排練方案」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

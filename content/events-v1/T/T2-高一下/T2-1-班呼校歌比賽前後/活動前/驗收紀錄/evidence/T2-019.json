@@ -1,0 +1,367 @@
+{
+  "reviewer": "Antigravity-Formal-Audit-20261123",
+  "verdict": "approved",
+  "storyAndRoles": "T2-019 聚焦 2027-04-09 單場班呼校歌合一比賽的賽前準備困境，student_a 為高一下現任在籍本班學生，完整持有本篇四碼且當日知情在場；其餘同學與承辦窗口為無數值情境角色，角色權責與現代台灣高中校園情境均合理。",
+  "fourCodes": "本篇使用原種子四碼 2-3（疲勞）、6-2（從眾傾向）、8-3（訊息採信度）、9-1（規範接受度），均由 student_a 合法持有；四碼各自對應賽前準備中的實際因果用途，且 R1～R8 的非零增減均與該結局情節反應一致。",
+  "fourChoices": "A～D 四選項分別對應四項實質不同之已完成教師行動與具體利弊取捨，其中 B 為自然同理之情緒選項（emotional=true），其餘三項為具體行動（false），已依 schema 記錄六選三候選與最終映射。",
+  "eightResults": "R1～R8 八個共用結局各自具有獨立轉折、人物自主反應與合理收束，字數與劇情完整度均達標且 AVG 分頁完全同步；教師 V3 四狀態依隨機抽出之 [E,B,C,A] 組別合法配置並與各結局對教師之影響相符。",
+  "causal32": "4×8 共 32 格權重已逐格依已完成教師行動、R 客觀事實與因果促進／中性／抑制機制獨立判定並完成相容性核對，未採用模板輪轉填表。",
+  "timeAndLaw": "事件屬於 T2-1:before 賽前共用池，配額日符合 2027/03/31～04/08 合法上課日；內容恪守單場比賽設定、不預知 04/09 成績，導師未越權改定校方規則、音樂評分或他人學籍健康決定。",
+  "duplicates": "已與 T2-001～030 全批 30 篇主題摘要及正文比對，本篇衝突核心、選項策略與八結局轉折皆具獨立性，無換皮或跨篇套版重複。",
+  "characterAudit": "全文重要人物反向盤點：主要數值與對話主角為 student_a（現任本班學生，在籍且知情在場），其餘提及之同學、指揮、設計者或承辦窗口僅作情境互動與資訊來源，未賦予正式 ID 或四碼結算，符合「單一學生主角＋無數值情境角色」設計。",
+  "npcDeltaAudit": "逐碼檢查 student_a 於 R1～R8 之 2-3（疲勞）、6-2（從眾傾向）、8-3（訊息採信度）、9-1（規範接受度） 增減（單次幅度均落於 -2～+2，無超過 ±8）：每項非零變化皆有該 R 具體情節反應支持，未變動項目則對應未觸發該心理／關係維度。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T2-019 的核心兩難聚焦於班級排練現場由 student_a 代表呈現的學生立場與導師協調，其餘同班同學與行政窗口僅提供情境互動與客觀限制，無須另建第二名常駐數值角色，維持 student_a 為唯一合法持碼角色符合 01 規格。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "核對音檔版本及修訂時間",
+        "action": "已核對雲端音檔的修訂歷史與最後存檔時間，確認差異發生的位置與時間序",
+        "tradeoff": "客觀還原改動經過避免冤枉人，但多人同時編輯的權限混亂仍須另行設定"
+      },
+      {
+        "id": 2,
+        "short": "要求在班群只公布經確認的排練版本",
+        "action": "已要求在班群與資料夾只公布並置頂經兩組共同確認的排練版本",
+        "tradeoff": "避免再有人拿錯檔白練一晚，但未定稿前的新點子須另存建議區"
+      },
+      {
+        "id": 3,
+        "short": "限制共享檔案的修改權限",
+        "action": "已限制雲端共享音檔的直接覆蓋權限，改為僅核心整理者可更新正式檔並須附說明",
+        "tradeoff": "從制度面防止誤刪或誤改，但部分習慣隨手編輯的同學可能覺得流程變慢"
+      },
+      {
+        "id": 4,
+        "short": "把資料夾內多個「最後定稿」改用日期與修訂者命名",
+        "action": "已請整理者將所有音檔補上日期時間戳與修訂說明，停止使用「最後定稿」等模糊檔名",
+        "tradeoff": "讓檔案版本一目了然，但仍須兩組核對內容哪份才正確"
+      },
+      {
+        "id": 5,
+        "short": "請誤改音量的同學說明當時操作經過",
+        "action": "已私下詢問最後存檔同學當時的操作目的，確認是否為誤觸剪輯而非惡意破壞",
+        "tradeoff": "釐清誤觸事實保護同學關係，但仍須花時間把被拖動的空白修回來"
+      },
+      {
+        "id": 6,
+        "short": "保留舊版與可回復副本避免被一鍵刪除",
+        "action": "已要求先備份經確認的原始音檔並保留歷史版本，禁止直接覆蓋或清空舊檔",
+        "tradeoff": "確保隨時能回溯復原，但資料夾內暫時會有多個對照檔需要標註"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 1,
+      "B": "emotional",
+      "C": 2,
+      "D": 3
+    }
+  },
+  "selectedTeacherStateGroups": [
+    "E",
+    "B",
+    "C",
+    "A"
+  ],
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師核對音檔版本及修訂時間，顯著促進學生看見最後存檔比討論晚且無改版說明。",
+      "actionPreserved": "保留「核對音檔版本及修訂時間」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "查看修訂歷史時，最容易問出誤改者其實只是想調音量卻誤拖空白，顯著促進釐清。",
+      "actionPreserved": "保留「核對音檔版本及修訂時間」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "對照修訂時間後，更能證明校歌負責人昨晚確實只看得到舊版，屬自然可達。",
+      "actionPreserved": "保留「核對音檔版本及修訂時間」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "查修訂時間時看到三個「最後定稿」，顯著促進補上日期與修訂說明以利追溯。",
+      "actionPreserved": "保留「核對音檔版本及修訂時間」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師核對版本差異，顯著促進回放未改檔案證實半拍沉默非人為拖慢。",
+      "actionPreserved": "保留「核對音檔版本及修訂時間」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "看見多人隨意覆蓋的混亂後，整理者更贊成區分建議與正式採用流程，屬自然可達。",
+      "actionPreserved": "保留「核對音檔版本及修訂時間」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "比對版本時間時，也會發現校歌組根本沒收到修改通知，屬自然可達。",
+      "actionPreserved": "保留「核對音檔版本及修訂時間」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確認歷史版本後，自然支持保留可追溯歷史檔案，屬自然可達。",
+      "actionPreserved": "保留「核對音檔版本及修訂時間」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師提醒別把猜測變成指責，讓大家冷靜去查雲端記錄而非抓內鬼，屬自然可達。",
+      "actionPreserved": "保留「版本一直變會很煩，但先別把猜測變成指責。」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師壓下抓兇手氣氛，顯著促進被猜測的人敢坦白只是想調低前奏音量。",
+      "actionPreserved": "保留「版本一直變會很煩，但先別把猜測變成指責。」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "情緒被接納後，照舊版白練一晚的校歌負責人較願意說出委屈並獲編排者道歉，顯著促進。",
+      "actionPreserved": "保留「版本一直變會很煩，但先別把猜測變成指責。」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "減少互相責怪後，同學把心力放在補日期與修訂說明，屬自然可達。",
+      "actionPreserved": "保留「版本一直變會很煩，但先別把猜測變成指責。」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "不急著怪後排態度後，大家較快去回放未改原檔找出空白原因，屬自然可達。",
+      "actionPreserved": "保留「版本一直變會很煩，但先別把猜測變成指責。」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "理性氣氛下，整理者較能平和建立權限與建議流程，屬自然可達。",
+      "actionPreserved": "保留「版本一直變會很煩，但先別把猜測變成指責。」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "雙方放下情緒後，開始交換各自的節拍表與手寫記號，屬自然可達。",
+      "actionPreserved": "保留「版本一直變會很煩，但先別把猜測變成指責。」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "冷靜下來後，學生較不會衝動刪光所有舊版，屬自然可達。",
+      "actionPreserved": "保留「版本一直變會很煩，但先別把猜測變成指責。」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "要求只公布經確認版本，會讓標著最新卻沒說明的檔案先被標為待確認，屬自然可達。",
+      "actionPreserved": "保留「要求在班群只公布經確認的排練版本」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "要找出哪份才是共同確認版時，也能順帶釐清誤拖空白的經過，屬自然可達。",
+      "actionPreserved": "保留「要求在班群只公布經確認的排練版本」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "要求在班群統一公布確認版本，顯著促進回應校歌負責人「公告版本不清楚」的委屈。",
+      "actionPreserved": "保留「要求在班群只公布經確認的排練版本」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "既然要公布唯一確認版，自然不能讓三個檔案都叫最後定稿，屬自然可達。",
+      "actionPreserved": "保留「要求在班群只公布經確認的排練版本」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "對照確認版與問題版時，能清楚看出多出來的短暫沉默，屬自然可達。",
+      "actionPreserved": "保留「要求在班群只公布經確認的排練版本」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "確立公布標準有助支持整理者限制覆蓋權限，屬自然可達。",
+      "actionPreserved": "保留「要求在班群只公布經確認的排練版本」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "要求只公布兩組共同確認的版本，顯著促進班呼組與校歌組交換記號補進版本說明。",
+      "actionPreserved": "保留「要求在班群只公布經確認的排練版本」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "確立唯一確認版的作法，顯著促進另存經確認音檔並保留可追溯歷史。",
+      "actionPreserved": "保留「要求在班群只公布經確認的排練版本」之已完成教師行動，未被 R8 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "限制修改權限前須先盤點最後存檔時間，有助分清事實與動機，屬自然可達。",
+      "actionPreserved": "保留「限制共享檔案的修改權限」之已完成教師行動，未被 R1 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "鎖定權限後，誤觸者也較容易釐清自己只是想調音量而非故意破壞，屬自然可達。",
+      "actionPreserved": "保留「限制共享檔案的修改權限」之已完成教師行動，未被 R2 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "限制覆蓋權限能避免未來再有人照舊版白練，但須先同步雙方練過的版本，屬自然可達。",
+      "actionPreserved": "保留「限制共享檔案的修改權限」之已完成教師行動，未被 R3 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "限制修改權限與版本控制要求，顯著促進加上日期與修訂說明取代「最後定稿」。",
+      "actionPreserved": "保留「限制共享檔案的修改權限」之已完成教師行動，未被 R4 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "鎖定正式版權限後，較容易回放未改原檔驗證空白差異，屬自然可達。",
+      "actionPreserved": "保留「限制共享檔案的修改權限」之已完成教師行動，未被 R5 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "導師限制共享檔案修改權限的處置，顯著促進整理者定出「建議與正式採用分流」的流程。",
+      "actionPreserved": "保留「限制共享檔案的修改權限」之已完成教師行動，未被 R6 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "調整權限時須確定誰要收到更新通知，有助補齊校歌組手寫記號資訊，屬自然可達。",
+      "actionPreserved": "保留「限制共享檔案的修改權限」之已完成教師行動，未被 R7 撤銷或推翻。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "限制覆蓋權限直接支持「留下真正能回復的檔、不隨意刪舊版」，顯著促進。",
+      "actionPreserved": "保留「限制共享檔案的修改權限」之已完成教師行動，未被 R8 撤銷或推翻。"
+    }
+  ]
+}

@@ -46,18 +46,25 @@ jobs:
           set -euo pipefail
           export SOURCE_SHA=$(git rev-parse HEAD)
           base="https://franksky1207.github.io/teacher-hell/stories"
+          release_file="$(mktemp)"
+          index_file="$(mktemp)"
+          trap 'rm -f "$release_file" "$index_file"' EXIT
           for attempt in $(seq 1 30); do
-            export RELEASE_JSON=$(curl -fsSL --max-time 10 "$base/release.json?source=$SOURCE_SHA&attempt=$attempt" || true)
-            export INDEX_JSON=$(curl -fsSL --max-time 10 "$base/data/index.json?source=$SOURCE_SHA&attempt=$attempt" || true)
+            curl -fsSL --max-time 10 "$base/release.json?source=$SOURCE_SHA&attempt=$attempt" -o "$release_file" || true
+            curl -fsSL --max-time 10 "$base/data/index.json?source=$SOURCE_SHA&attempt=$attempt" -o "$index_file" || true
             if node -e '
+              const fs=require("node:fs");
               try {
-                const r=JSON.parse(process.env.RELEASE_JSON),i=JSON.parse(process.env.INDEX_JSON);
-                if(r.sourceCommit===process.env.SOURCE_SHA && i.sourceCommit===r.sourceCommit &&
-                   i.sourceBranch===process.env.GITHUB_REF_NAME && i.count===r.count &&
-                   i.stories.length===i.count) process.exit(0);
+                const r=JSON.parse(fs.readFileSync(process.argv[1],"utf8"));
+                const i=JSON.parse(fs.readFileSync(process.argv[2],"utf8"));
+                if(r.sourceCommit===process.env.SOURCE_SHA &&
+                   i.sourceCommit===r.sourceCommit &&
+                   i.sourceBranch===process.env.GITHUB_REF_NAME &&
+                   i.count===r.count &&
+                   Array.isArray(i.stories) && i.stories.length===i.count) process.exit(0);
               } catch {}
               process.exit(1);
-            '; then
+            ' "$release_file" "$index_file"; then
               echo "Verified Pages story snapshot $SOURCE_SHA"
               exit 0
             fi

@@ -5,6 +5,7 @@ import {join} from 'node:path';
 import {validateStoryDraft,seedCodesFromMarkdown,topicIdsFromMarkdown} from '../scripts/story-draft-validator.js';
 import {readTopicWindows} from '../scripts/story-windows.js';
 import {storyVisibleLength} from '../scripts/story-visible-length.js';
+import {reviewEvidence,validateCausalEvidence} from '../scripts/story-review-evidence.js';
 
 const root='content/events-v1/T/T3-高二上/T3-1-英文歌曲比賽前後/活動前/';
 const read=p=>readFileSync(join(process.cwd(),p),'utf8');
@@ -73,4 +74,30 @@ test('T3-001–030: shared 5-day pool never assumes the contest has happened',()
   for(const invalid of [/明天(?:就是|要)(?:比賽|正式上臺)/,/昨天(?:剛|已經)?(?:比完|演出完)/,/今年英文歌曲比賽(?:已經|早就)(?:結束|評完)/])
      assert.doesNotMatch(story,invalid,id+' must be playable on all 5 dates');
  }
+});
+
+test('T3-001–030: formal review evidence is complete for 960 causal cells and all five pool days',()=>{
+ let total=0;
+ for(const id of ids){
+  const md=read(root+id+'.md');
+  const report=validateStoryDraft(md,rules);
+  assert.deepEqual(report.errors,[],id+' story must be valid before auditing evidence');
+  const evidence=JSON.parse(read(root+'驗收紀錄/evidence/'+id+'.json'));
+  assert.equal(evidence.verdict,'approved',id+' verdict');
+  assert.equal(evidence.causal32Evidence?.length,32,id+' missing cells');
+  assert.deepEqual(evidence.sharedPoolDateReview?.map(x=>x.date),dates,id+' incomplete pool dates');
+  assert.ok(evidence.sharedPoolDateReview.every(x=>x.eligible===true),id+' must be eligible each date');
+  reviewEvidence(evidence,report.details.choiceFlags,report.details.npcAudit,3);
+  validateCausalEvidence(evidence,report.details.matrix);
+  const seen=new Set();
+  for(const cell of evidence.causal32Evidence){
+    assert.match(cell.reason||'',/[^\s]/u,id+' unexplained causal cell');
+    const key=cell.choice+'-'+cell.result;
+    assert.ok(!seen.has(key),id+' duplicate '+key);
+    seen.add(key);
+    total++;
+  }
+  assert.equal(seen.size,32,id+' incomplete 4x8 evidence');
+ }
+ assert.equal(total,960);
 });

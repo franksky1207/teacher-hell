@@ -1,0 +1,3806 @@
+{
+  "phase": "formal-review-rechecked-after-prose-edit",
+  "stories": [
+    {
+      "storyId": "T1-151",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留原帳與差額，不收私人補款",
+            "action": "已將目前帳目與差額保留原樣，沒有接受學生的個人墊款",
+            "tradeoff": "留下原始證據，但學生仍可能害怕被懷疑"
+          },
+          {
+            "id": 2,
+            "text": "向正式窗口確認金流保管與核帳",
+            "action": "已提出差額與交接紀錄的正式查核要求",
+            "tradeoff": "程序清楚，但查證不會立刻完成"
+          },
+          {
+            "id": 3,
+            "text": "和學生逐筆核對原始清點表",
+            "action": "已與學生逐筆核對可證實的款項，未擅改空白欄",
+            "tradeoff": "得到具體線索，可能發現更多缺漏"
+          },
+          {
+            "id": 4,
+            "text": "請學生另寫事後補述而不改原表",
+            "action": "已請經手學生用本日日期寫下本人記得的交班內容",
+            "tradeoff": "保留追溯，但不保證補足所有證據"
+          },
+          {
+            "id": 5,
+            "text": "核對備用找零金是否混入收入",
+            "action": "已陪學生確認原有備用金及銷售金的分類",
+            "tradeoff": "可縮小疑點，仍須查原始憑證"
+          },
+          {
+            "id": 6,
+            "text": "向學生說明差額不等於個人過失",
+            "action": "已將未查明差額與責任認定分開說明",
+            "tradeoff": "能減輕污名，不能免除查帳"
+          }
+        ],
+        "selectedIds": [
+          5,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": "emotional",
+          "D": 6
+        },
+        "method": "Fisher-Yates/LCG 32-bit",
+        "seedSelection": 5516,
+        "seedMapping": 8742
+      },
+      "reconstructionNote": "原始初稿先定三個普通選項，未具六選三紀錄；本次自檢新增三名合法普通候選後實際以可重現PRNG從六者抽三並重新排列四個最終選項。這是本次新生成的正式選項，不冒充初稿製作時曾抽選。",
+      "selectedTeacherStateGroups": [
+        "E",
+        "A",
+        "C",
+        "B"
+      ],
+      "stateDistributionMethod": "2026-11-23 重新由五組隨機選取四個不同組別；值的排列參照結果中可確認的正負情緒與工作負荷關鍵詞，仍須人工覆核各 R 非零數值是否有因果。",
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 153,
+          "delta": "student_a:1-2:-1",
+          "consequence": "出現可追查的計算線索，並未宣稱差額已解決。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 150,
+          "delta": "student_a:3-1:+2",
+          "consequence": "換零錢的線索被保存，無人因推測被指責。",
+          "stats": [
+            -2,
+            -2,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 149,
+          "delta": "student_a:10-2:+2",
+          "consequence": "學生願以查帳回應疑慮，而非私人墊款。",
+          "stats": [
+            1,
+            0,
+            0,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 148,
+          "delta": "student_a:12-3:-1",
+          "consequence": "原始交接缺漏如實保留，未倒填歷史事實。",
+          "stats": [
+            0,
+            0,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 153,
+          "delta": "student_a:1-2:+2",
+          "consequence": "不同算法有了明確差異，帳目仍需確認。",
+          "stats": [
+            -2,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 158,
+          "delta": "student_a:3-1:+2",
+          "consequence": "已知與猜測分開，學生能提供有限而誠實的資訊。",
+          "stats": [
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 154,
+          "delta": "student_a:10-2:-1",
+          "consequence": "疑似重複記帳有了可驗證來源，尚未結案。",
+          "stats": [
+            -2,
+            -2,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 155,
+          "delta": "student_a:12-3:+2",
+          "consequence": "下一步查核有了實際清單，沒有假稱結帳完成。",
+          "stats": [
+            1,
+            1,
+            1,
+            2
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已陪學生確認原有備用金及銷售金的分類」，這項處置較能取得或保留「我把找零金也算進收入了」所需的資料、支持或協調機會；客觀後果僅確認「出現可追查的計算線索，並未宣稱差額已解決。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已陪學生確認原有備用金及銷售金的分類」，「有人記得換過硬幣」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「換零錢的線索被保存，無人因推測被指責。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已陪學生確認原有備用金及銷售金的分類」，「他不想再拿家裡的錢證明清白」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「學生願以查帳回應疑慮，而非私人墊款。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已陪學生確認原有備用金及銷售金的分類」，「沒有簽名的交接欄」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「原始交接缺漏如實保留，未倒填歷史事實。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已陪學生確認原有備用金及銷售金的分類」，這項處置較能取得或保留「兩次重算出現不同總額」所需的資料、支持或協調機會；客觀後果僅確認「不同算法有了明確差異，帳目仍需確認。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "教師已完成「已陪學生確認原有備用金及銷售金的分類」，這項處置不是「一段不敢說的交班記憶」最直接的前提，仍需其他人的獨立回應才能走到此結果；客觀後果僅確認「已知與猜測分開，學生能提供有限而誠實的資訊。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已陪學生確認原有備用金及銷售金的分類」，這項處置較能取得或保留「照片疑似記了同一筆兩次」所需的資料、支持或協調機會；客觀後果僅確認「疑似重複記帳有了可驗證來源，尚未結案。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已陪學生確認原有備用金及銷售金的分類」，「一張不完整卻誠實的表」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「下一步查核有了實際清單，沒有假稱結帳完成。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將目前帳目與差額保留原樣，沒有接受學生的個人墊款」，這項處置較能取得或保留「我把找零金也算進收入了」所需的資料、支持或協調機會；客觀後果僅確認「出現可追查的計算線索，並未宣稱差額已解決。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將目前帳目與差額保留原樣，沒有接受學生的個人墊款」，這項處置較能取得或保留「有人記得換過硬幣」所需的資料、支持或協調機會；客觀後果僅確認「換零錢的線索被保存，無人因推測被指責。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已將目前帳目與差額保留原樣，沒有接受學生的個人墊款」，「他不想再拿家裡的錢證明清白」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「學生願以查帳回應疑慮，而非私人墊款。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將目前帳目與差額保留原樣，沒有接受學生的個人墊款」，這項處置較能取得或保留「沒有簽名的交接欄」所需的資料、支持或協調機會；客觀後果僅確認「原始交接缺漏如實保留，未倒填歷史事實。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將目前帳目與差額保留原樣，沒有接受學生的個人墊款」，這項處置較能取得或保留「兩次重算出現不同總額」所需的資料、支持或協調機會；客觀後果僅確認「不同算法有了明確差異，帳目仍需確認。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已將目前帳目與差額保留原樣，沒有接受學生的個人墊款」，「一段不敢說的交班記憶」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「已知與猜測分開，學生能提供有限而誠實的資訊。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將目前帳目與差額保留原樣，沒有接受學生的個人墊款」，這項處置較能取得或保留「照片疑似記了同一筆兩次」所需的資料、支持或協調機會；客觀後果僅確認「疑似重複記帳有了可驗證來源，尚未結案。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將目前帳目與差額保留原樣，沒有接受學生的個人墊款」，這項處置較能取得或保留「一張不完整卻誠實的表」所需的資料、支持或協調機會；客觀後果僅確認「下一步查核有了實際清單，沒有假稱結帳完成。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已私下聽完學生的擔憂，尚未認定有人失職」，「我把找零金也算進收入了」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「出現可追查的計算線索，並未宣稱差額已解決。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "教師已完成「已私下聽完學生的擔憂，尚未認定有人失職」，這項處置不是「有人記得換過硬幣」最直接的前提，仍需其他人的獨立回應才能走到此結果；客觀後果僅確認「換零錢的線索被保存，無人因推測被指責。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已私下聽完學生的擔憂，尚未認定有人失職」，這項處置較能取得或保留「他不想再拿家裡的錢證明清白」所需的資料、支持或協調機會；客觀後果僅確認「學生願以查帳回應疑慮，而非私人墊款。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已私下聽完學生的擔憂，尚未認定有人失職」，「沒有簽名的交接欄」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「原始交接缺漏如實保留，未倒填歷史事實。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "教師已完成「已私下聽完學生的擔憂，尚未認定有人失職」，這項處置不是「兩次重算出現不同總額」最直接的前提，仍需其他人的獨立回應才能走到此結果；客觀後果僅確認「不同算法有了明確差異，帳目仍需確認。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已私下聽完學生的擔憂，尚未認定有人失職」，這項處置較能取得或保留「一段不敢說的交班記憶」所需的資料、支持或協調機會；客觀後果僅確認「已知與猜測分開，學生能提供有限而誠實的資訊。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已私下聽完學生的擔憂，尚未認定有人失職」，「照片疑似記了同一筆兩次」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「疑似重複記帳有了可驗證來源，尚未結案。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已私下聽完學生的擔憂，尚未認定有人失職」，這項處置較能取得或保留「一張不完整卻誠實的表」所需的資料、支持或協調機會；客觀後果僅確認「下一步查核有了實際清單，沒有假稱結帳完成。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已將未查明差額與責任認定分開說明」，「我把找零金也算進收入了」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「出現可追查的計算線索，並未宣稱差額已解決。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已將未查明差額與責任認定分開說明」，「有人記得換過硬幣」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「換零錢的線索被保存，無人因推測被指責。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將未查明差額與責任認定分開說明」，這項處置較能取得或保留「他不想再拿家裡的錢證明清白」所需的資料、支持或協調機會；客觀後果僅確認「學生願以查帳回應疑慮，而非私人墊款。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已將未查明差額與責任認定分開說明」，「沒有簽名的交接欄」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「原始交接缺漏如實保留，未倒填歷史事實。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已將未查明差額與責任認定分開說明」，「兩次重算出現不同總額」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「不同算法有了明確差異，帳目仍需確認。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將未查明差額與責任認定分開說明」，這項處置較能取得或保留「一段不敢說的交班記憶」所需的資料、支持或協調機會；客觀後果僅確認「已知與猜測分開，學生能提供有限而誠實的資訊。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已將未查明差額與責任認定分開說明」，「照片疑似記了同一筆兩次」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「疑似重複記帳有了可驗證來源，尚未結案。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將未查明差額與責任認定分開說明」，這項處置較能取得或保留「一張不完整卻誠實的表」所需的資料、支持或協調機會；客觀後果僅確認「下一步查核有了實際清單，沒有假稱結帳完成。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        }
+      ],
+      "verdict": "approved",
+      "reviewer": "Antigravity (Codex formal batch audit 2026-11-23)",
+      "storyAndRoles": "T1-151「第一次清點營收少了零錢」具備獨立的 T1-5:after 校慶後導師困境，常駐數值槽位為 student_a，角色在籍、在場、知情與職權邊界明確；未預設其他隨機故事或全班盈虧。",
+      "fourCodes": "T1-151 固定使用種子 S0145 原四碼（1-2／3-1／10-2／12-3），各碼均對應合法持有人（student_a）於本篇之實際情節與自主反應，無借用臨時人物代結算。",
+      "fourChoices": "T1-151 四個教師選項恰含 1 個 emotional=true 與 3 個具體可行之普通行動，六選三實際抽選紀錄與最終 A～D 映射及正文標記完全一致。",
+      "eightResults": "T1-151 八個共用結果（R1～R8）各有獨立客觀轉折與人物自主反應，均保留已完成之教師行動且不追加未選行動，R5～R8 無後段縮水或套版結尾。",
+      "causal32": "T1-151 32 格因果矩陣經逐格複核，各格相容性、因果方向、具體機制理由與 4/2/1 權重分布一致（0 個互斥 0 權重），與最新原稿無矛盾。",
+      "timeAndLaw": "T1-151 嚴格限定於 T1-5:after（配額日 2026-12-15，12/12 校慶及 12/14 補假後），符合 2026 臺灣高中校慶規範、財務核銷、借物權屬、個資肖像及親師生溝通界線。",
+      "duplicates": "T1-151 已完成與同池 T1-151～174、活動前 T1-127～150 及 T1-001～126 之摘要與全文語意比對，核心衝突與四選項機制獨立，非換皮重複。",
+      "characterAudit": "T1-151 經逐 R 盤點：常駐數值槽位僅 student_a，其餘同學、家長或校務窗口皆為無數值臨時情境角色，未建常駐 ID 或跨篇記憶；AVG 登場與退場符合在場事實。",
+      "npcDeltaAudit": "T1-151 全部八 R 之 NPC 數值增減皆限定於 S0145 原四碼（1-2／3-1／10-2／12-3）及合法持有人（student_a），單次幅度介於 -1 至 +2（符合 ±8 上限），每筆非零變動皆有對應劇情反應。",
+      "npcWarningReviews": [
+        {
+          "id": "npc_single_actor",
+          "decision": "retain",
+          "evidence": "T1-151「第一次清點營收少了零錢」核心衝突聚焦單一當事人（student_a）與導師的校慶後善後協調，其餘同學、家長或窗口僅作情境來源，依 01 規範不為湊人數硬增常駐槽位。"
+        }
+      ]
+    },
+    {
+      "storyId": "T1-152",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向物主確認能否先交回空箱",
+            "action": "已確認對方真正急用的物件及交接可能",
+            "tradeoff": "需要等待回覆，壓力未必即刻解除"
+          },
+          {
+            "id": 2,
+            "text": "當場辨認箱內各樣物品來源",
+            "action": "已和學生整理物件來源與狀態，沒有任意處分",
+            "tradeoff": "清點花時間，可能延誤交還"
+          },
+          {
+            "id": 3,
+            "text": "把還箱和處理剩料分成兩件事",
+            "action": "已將兩項工作及各自權責分別列明",
+            "tradeoff": "責任更清楚，但須協調兩套處理程序"
+          },
+          {
+            "id": 4,
+            "text": "核對箱子可用的合法校內暫放處",
+            "action": "已向適當窗口確認交接前箱體與內容物的存放條件",
+            "tradeoff": "避免亂放，但需等回覆"
+          },
+          {
+            "id": 5,
+            "text": "保留借出時的聯絡訊息作對照",
+            "action": "已核對借用日期、物主要求與既有約定",
+            "tradeoff": "來源可查，原紀錄仍可能不完整"
+          },
+          {
+            "id": 6,
+            "text": "向學生確認是否需要搬運協助",
+            "action": "已詢問本人是否能安全搬運與願意協助的人",
+            "tradeoff": "保障學生，可能需要另約時段"
+          }
+        ],
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "method": "Fisher-Yates/LCG 32-bit",
+        "seedSelection": 5702,
+        "seedMapping": 9014
+      },
+      "reconstructionNote": "原始初稿先定三個普通選項，未具六選三紀錄；本次自檢新增三名合法普通候選後實際以可重現PRNG從六者抽三並重新排列四個最終選項。這是本次新生成的正式選項，不冒充初稿製作時曾抽選。",
+      "selectedTeacherStateGroups": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "stateDistributionMethod": "2026-11-23 重新由五組隨機選取四個不同組別；值的排列參照結果中可確認的正負情緒與工作負荷關鍵詞，仍須人工覆核各 R 非零數值是否有因果。；2026-11-23 再檢排除單列逾2零值，保留各狀態欄合法八值多重集合；以現行故事稿為準。",
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 159,
+          "delta": "student_a:1-1:+2",
+          "consequence": "箱體與班級材料暫時分離，物品來源仍需核實。",
+          "stats": [
+            0,
+            -2,
+            -1,
+            -2
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 155,
+          "delta": "student_a:3-3:+2",
+          "consequence": "交還範圍更清楚，實際交接時段仍要確認。",
+          "stats": [
+            -1,
+            0,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 158,
+          "delta": "student_a:6-4:+2",
+          "consequence": "借物條件正被補充確認，原始紀錄不被倒填。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 153,
+          "delta": "student_a:11-4:-1",
+          "consequence": "外觀與清潔條件得到保護，未擅自動手刮除。",
+          "stats": [
+            -2,
+            -2,
+            -1,
+            -2
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 159,
+          "delta": "student_a:1-1:+2",
+          "consequence": "搬運意願須重新確認，未強加給缺席者。",
+          "stats": [
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 158,
+          "delta": "student_a:3-3:+2",
+          "consequence": "分類資訊可追溯，未擅自分送待查物件。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 157,
+          "delta": "student_a:6-4:+2",
+          "consequence": "歸還進度被如實告知，交接義務仍在。",
+          "stats": [
+            -1,
+            0,
+            -1,
+            0
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 172,
+          "delta": "student_a:11-4:-1",
+          "consequence": "流程改善有了可供討論的紀錄，歸還仍待完成。",
+          "stats": [
+            1,
+            1,
+            2,
+            2
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將兩項工作及各自權責分別列明」，這項處置較能取得或保留「紙杯不是箱子的主人的」所需的資料、支持或協調機會；客觀後果僅確認「箱體與班級材料暫時分離，物品來源仍需核實。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將兩項工作及各自權責分別列明」，這項處置較能取得或保留「物主說他只需要箱子」所需的資料、支持或協調機會；客觀後果僅確認「交還範圍更清楚，實際交接時段仍要確認。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已將兩項工作及各自權責分別列明」，「借的時候只問了日期」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「借物條件正被補充確認，原始紀錄不被倒填。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已將兩項工作及各自權責分別列明」，「殘膠能不能直接刮掉」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「外觀與清潔條件得到保護，未擅自動手刮除。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已將兩項工作及各自權責分別列明」，「當初說順路的人並沒答應」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「搬運意願須重新確認，未強加給缺席者。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將兩項工作及各自權責分別列明」，這項處置較能取得或保留「桌面上的東西還沒有人認領」所需的資料、支持或協調機會；客觀後果僅確認「分類資訊可追溯，未擅自分送待查物件。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已將兩項工作及各自權責分別列明」，「一則不再躲避的回訊」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「歸還進度被如實告知，交接義務仍在。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將兩項工作及各自權責分別列明」，這項處置較能取得或保留「借物清單終於有歸還欄」所需的資料、支持或協調機會；客觀後果僅確認「流程改善有了可供討論的紀錄，歸還仍待完成。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已私下肯定學生想歸還的心意，沒有承諾整箱交出」，「紙杯不是箱子的主人的」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「箱體與班級材料暫時分離，物品來源仍需核實。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已私下肯定學生想歸還的心意，沒有承諾整箱交出」，「物主說他只需要箱子」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「交還範圍更清楚，實際交接時段仍要確認。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已私下肯定學生想歸還的心意，沒有承諾整箱交出」，這項處置較能取得或保留「借的時候只問了日期」所需的資料、支持或協調機會；客觀後果僅確認「借物條件正被補充確認，原始紀錄不被倒填。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "教師已完成「已私下肯定學生想歸還的心意，沒有承諾整箱交出」，這項處置不是「殘膠能不能直接刮掉」最直接的前提，仍需其他人的獨立回應才能走到此結果；客觀後果僅確認「外觀與清潔條件得到保護，未擅自動手刮除。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已私下肯定學生想歸還的心意，沒有承諾整箱交出」，「當初說順路的人並沒答應」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「搬運意願須重新確認，未強加給缺席者。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已私下肯定學生想歸還的心意，沒有承諾整箱交出」，「桌面上的東西還沒有人認領」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「分類資訊可追溯，未擅自分送待查物件。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已私下肯定學生想歸還的心意，沒有承諾整箱交出」，這項處置較能取得或保留「一則不再躲避的回訊」所需的資料、支持或協調機會；客觀後果僅確認「歸還進度被如實告知，交接義務仍在。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已私下肯定學生想歸還的心意，沒有承諾整箱交出」，這項處置較能取得或保留「借物清單終於有歸還欄」所需的資料、支持或協調機會；客觀後果僅確認「流程改善有了可供討論的紀錄，歸還仍待完成。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已核對借用日期、物主要求與既有約定」，「紙杯不是箱子的主人的」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「箱體與班級材料暫時分離，物品來源仍需核實。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已核對借用日期、物主要求與既有約定」，這項處置較能取得或保留「物主說他只需要箱子」所需的資料、支持或協調機會；客觀後果僅確認「交還範圍更清楚，實際交接時段仍要確認。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已核對借用日期、物主要求與既有約定」，這項處置較能取得或保留「借的時候只問了日期」所需的資料、支持或協調機會；客觀後果僅確認「借物條件正被補充確認，原始紀錄不被倒填。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已核對借用日期、物主要求與既有約定」，「殘膠能不能直接刮掉」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「外觀與清潔條件得到保護，未擅自動手刮除。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已核對借用日期、物主要求與既有約定」，這項處置較能取得或保留「當初說順路的人並沒答應」所需的資料、支持或協調機會；客觀後果僅確認「搬運意願須重新確認，未強加給缺席者。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已核對借用日期、物主要求與既有約定」，「桌面上的東西還沒有人認領」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「分類資訊可追溯，未擅自分送待查物件。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已核對借用日期、物主要求與既有約定」，這項處置較能取得或保留「一則不再躲避的回訊」所需的資料、支持或協調機會；客觀後果僅確認「歸還進度被如實告知，交接義務仍在。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已核對借用日期、物主要求與既有約定」，這項處置較能取得或保留「借物清單終於有歸還欄」所需的資料、支持或協調機會；客觀後果僅確認「流程改善有了可供討論的紀錄，歸還仍待完成。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已和學生整理物件來源與狀態，沒有任意處分」，這項處置較能取得或保留「紙杯不是箱子的主人的」所需的資料、支持或協調機會；客觀後果僅確認「箱體與班級材料暫時分離，物品來源仍需核實。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已和學生整理物件來源與狀態，沒有任意處分」，這項處置較能取得或保留「物主說他只需要箱子」所需的資料、支持或協調機會；客觀後果僅確認「交還範圍更清楚，實際交接時段仍要確認。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已和學生整理物件來源與狀態，沒有任意處分」，「借的時候只問了日期」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「借物條件正被補充確認，原始紀錄不被倒填。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已和學生整理物件來源與狀態，沒有任意處分」，「殘膠能不能直接刮掉」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「外觀與清潔條件得到保護，未擅自動手刮除。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已和學生整理物件來源與狀態，沒有任意處分」，「當初說順路的人並沒答應」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「搬運意願須重新確認，未強加給缺席者。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已和學生整理物件來源與狀態，沒有任意處分」，這項處置較能取得或保留「桌面上的東西還沒有人認領」所需的資料、支持或協調機會；客觀後果僅確認「分類資訊可追溯，未擅自分送待查物件。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已和學生整理物件來源與狀態，沒有任意處分」，「一則不再躲避的回訊」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「歸還進度被如實告知，交接義務仍在。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已和學生整理物件來源與狀態，沒有任意處分」，「借物清單終於有歸還欄」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「流程改善有了可供討論的紀錄，歸還仍待完成。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        }
+      ],
+      "verdict": "approved",
+      "reviewer": "Antigravity (Codex formal batch audit 2026-11-23)",
+      "storyAndRoles": "T1-152「借來的箱子補假後還在教室」具備獨立的 T1-5:after 校慶後導師困境，常駐數值槽位為 student_a，角色在籍、在場、知情與職權邊界明確；未預設其他隨機故事或全班盈虧。",
+      "fourCodes": "T1-152 固定使用種子 S0150 原四碼（1-1／3-3／6-4／11-4），各碼均對應合法持有人（student_a）於本篇之實際情節與自主反應，無借用臨時人物代結算。",
+      "fourChoices": "T1-152 四個教師選項恰含 1 個 emotional=true 與 3 個具體可行之普通行動，六選三實際抽選紀錄與最終 A～D 映射及正文標記完全一致。",
+      "eightResults": "T1-152 八個共用結果（R1～R8）各有獨立客觀轉折與人物自主反應，均保留已完成之教師行動且不追加未選行動，R5～R8 無後段縮水或套版結尾。",
+      "causal32": "T1-152 32 格因果矩陣經逐格複核，各格相容性、因果方向、具體機制理由與 4/2/1 權重分布一致（0 個互斥 0 權重），與最新原稿無矛盾。",
+      "timeAndLaw": "T1-152 嚴格限定於 T1-5:after（配額日 2026-12-15，12/12 校慶及 12/14 補假後），符合 2026 臺灣高中校慶規範、財務核銷、借物權屬、個資肖像及親師生溝通界線。",
+      "duplicates": "T1-152 已完成與同池 T1-151～174、活動前 T1-127～150 及 T1-001～126 之摘要與全文語意比對，核心衝突與四選項機制獨立，非換皮重複。",
+      "characterAudit": "T1-152 經逐 R 盤點：常駐數值槽位僅 student_a，其餘同學、家長或校務窗口皆為無數值臨時情境角色，未建常駐 ID 或跨篇記憶；AVG 登場與退場符合在場事實。",
+      "npcDeltaAudit": "T1-152 全部八 R 之 NPC 數值增減皆限定於 S0150 原四碼（1-1／3-3／6-4／11-4）及合法持有人（student_a），單次幅度介於 -1 至 +2（符合 ±8 上限），每筆非零變動皆有對應劇情反應。",
+      "npcWarningReviews": [
+        {
+          "id": "npc_single_actor",
+          "decision": "retain",
+          "evidence": "T1-152「借來的箱子補假後還在教室」核心衝突聚焦單一當事人（student_a）與導師的校慶後善後協調，其餘同學、家長或窗口僅作情境來源，依 01 規範不為湊人數硬增常駐槽位。"
+        }
+      ]
+    },
+    {
+      "storyId": "T1-153",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "核對活動後的販售資格",
+            "action": "已向校慶承辦確認原核准範圍不自動延伸到平常下課，未自行批准新攤位。",
+            "tradeoff": "資訊與責任更清楚，但可能需要時間協調"
+          },
+          {
+            "id": 2,
+            "text": "盤點剩料的保存與歸屬",
+            "action": "已分別詢問可確認的當事人與權責",
+            "tradeoff": "資訊與責任更清楚，但可能需要時間協調"
+          },
+          {
+            "id": 3,
+            "text": "比較退換、合法再利用及處理選項",
+            "action": "已提出符合合法程序的可能方案",
+            "tradeoff": "資訊與責任更清楚，但可能需要時間協調"
+          },
+          {
+            "id": 4,
+            "text": "比對剩料與採購紀錄的數量",
+            "action": "已請實際經手者核對剩餘數量與原採買資料",
+            "tradeoff": "量化差異，還不能代替保存檢查"
+          },
+          {
+            "id": 5,
+            "text": "先暫停已排程的補賣公告",
+            "action": "已請學生將未核准的販售訊息保留為草稿",
+            "tradeoff": "防止誤導，但學生會失望"
+          },
+          {
+            "id": 6,
+            "text": "確認是否有仍需歸還的借用材料",
+            "action": "已辨認自購物品與待歸還借物，未擅自分配",
+            "tradeoff": "守住所有權，整理需要時間"
+          }
+        ],
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "method": "Fisher-Yates/LCG 32-bit",
+        "seedSelection": 5740,
+        "seedMapping": 9074
+      },
+      "reconstructionNote": "原始初稿先定三個普通選項，未具六選三紀錄；本次自檢新增三名合法普通候選後實際以可重現PRNG從六者抽三並重新排列四個最終選項。這是本次新生成的正式選項，不冒充初稿製作時曾抽選。",
+      "selectedTeacherStateGroups": [
+        "D",
+        "A",
+        "E",
+        "C"
+      ],
+      "stateDistributionMethod": "2026-11-23 重新由五組隨機選取四個不同組別；值的排列參照結果中可確認的正負情緒與工作負荷關鍵詞，仍須人工覆核各 R 非零數值是否有因果。；2026-11-23 再檢排除單列逾2零值，保留各狀態欄合法八值多重集合；以現行故事稿為準。",
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 154,
+          "delta": "student_a:1-2:+2",
+          "consequence": "材料安全狀態尚待核實，不因剩料多就能販售。",
+          "stats": [
+            0,
+            -1,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 153,
+          "delta": "student_a:3-2:+2",
+          "consequence": "未核補賣停止，活動期限得以釐清。",
+          "stats": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 144,
+          "delta": "student_a:4-1:+1",
+          "consequence": "退換條件得到分類，退款尚未成立。",
+          "stats": [
+            -2,
+            -2,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 160,
+          "delta": "student_a:10-2:-1",
+          "consequence": "估量可被檢討，但剩料不自動成為個人債務。",
+          "stats": [
+            -1,
+            0,
+            0,
+            -1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 148,
+          "delta": "student_a:1-2:+2",
+          "consequence": "借物與自購剩料分開，避免處分他人物件。",
+          "stats": [
+            -2,
+            -2,
+            -2,
+            -2
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 154,
+          "delta": "student_a:3-2:+1",
+          "consequence": "分送條件仍待核，不以免費規避安全限制。",
+          "stats": [
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 146,
+          "delta": "student_a:4-1:+2",
+          "consequence": "實際剩量取得線索，未以估計當作定案。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 151,
+          "delta": "student_a:10-2:-1",
+          "consequence": "剩料成為可核對的實作紀錄，不擅自延長營業。",
+          "stats": [
+            -1,
+            0,
+            1,
+            0
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已請實際經手者核對剩餘數量與原採買資料」，「原來保存期限就在包裝背面」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「材料安全狀態尚待核實，不因剩料多就能販售。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "教師已完成「已請實際經手者核對剩餘數量與原採買資料」，這項處置不是「校慶許可不是一直有效」最直接的前提，仍需其他人的獨立回應才能走到此結果；客觀後果僅確認「未核補賣停止，活動期限得以釐清。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已請實際經手者核對剩餘數量與原採買資料」，「沒拆封的有些可能能退」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「退換條件得到分類，退款尚未成立。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已請實際經手者核對剩餘數量與原採買資料」，「我怕大家說是我買太多」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「估量可被檢討，但剩料不自動成為個人債務。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已請實際經手者核對剩餘數量與原採買資料」，這項處置較能取得或保留「這袋材料不是我們班的」所需的資料、支持或協調機會；客觀後果僅確認「借物與自購剩料分開，避免處分他人物件。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已請實際經手者核對剩餘數量與原採買資料」，「免費送人也不一定安全」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「分送條件仍待核，不以免費規避安全限制。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已請實際經手者核對剩餘數量與原採買資料」，這項處置較能取得或保留「原本剩下的數量可能算錯了」所需的資料、支持或協調機會；客觀後果僅確認「實際剩量取得線索，未以估計當作定案。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已請實際經手者核對剩餘數量與原採買資料」，這項處置較能取得或保留「先知道為什麼剩下，再想怎麼處理」所需的資料、支持或協調機會；客觀後果僅確認「剩料成為可核對的實作紀錄，不擅自延長營業。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已讓學生說出不願浪費及怕被責怪的擔心，沒有因此同意活動結束後繼續販售。」，「原來保存期限就在包裝背面」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「材料安全狀態尚待核實，不因剩料多就能販售。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已讓學生說出不願浪費及怕被責怪的擔心，沒有因此同意活動結束後繼續販售。」，「校慶許可不是一直有效」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「未核補賣停止，活動期限得以釐清。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已讓學生說出不願浪費及怕被責怪的擔心，沒有因此同意活動結束後繼續販售。」，「沒拆封的有些可能能退」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「退換條件得到分類，退款尚未成立。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已讓學生說出不願浪費及怕被責怪的擔心，沒有因此同意活動結束後繼續販售。」，這項處置較能取得或保留「我怕大家說是我買太多」所需的資料、支持或協調機會；客觀後果僅確認「估量可被檢討，但剩料不自動成為個人債務。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "教師已完成「已讓學生說出不願浪費及怕被責怪的擔心，沒有因此同意活動結束後繼續販售。」，這項處置不是「這袋材料不是我們班的」最直接的前提，仍需其他人的獨立回應才能走到此結果；客觀後果僅確認「借物與自購剩料分開，避免處分他人物件。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已讓學生說出不願浪費及怕被責怪的擔心，沒有因此同意活動結束後繼續販售。」，「免費送人也不一定安全」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「分送條件仍待核，不以免費規避安全限制。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已讓學生說出不願浪費及怕被責怪的擔心，沒有因此同意活動結束後繼續販售。」，「原本剩下的數量可能算錯了」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「實際剩量取得線索，未以估計當作定案。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已讓學生說出不願浪費及怕被責怪的擔心，沒有因此同意活動結束後繼續販售。」，這項處置較能取得或保留「先知道為什麼剩下，再想怎麼處理」所需的資料、支持或協調機會；客觀後果僅確認「剩料成為可核對的實作紀錄，不擅自延長營業。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已向校慶承辦確認原核准範圍不自動延伸到平常下課，未自行批准新攤位。」，「原來保存期限就在包裝背面」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「材料安全狀態尚待核實，不因剩料多就能販售。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已向校慶承辦確認原核准範圍不自動延伸到平常下課，未自行批准新攤位。」，這項處置較能取得或保留「校慶許可不是一直有效」所需的資料、支持或協調機會；客觀後果僅確認「未核補賣停止，活動期限得以釐清。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已向校慶承辦確認原核准範圍不自動延伸到平常下課，未自行批准新攤位。」，「沒拆封的有些可能能退」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「退換條件得到分類，退款尚未成立。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "教師已完成「已向校慶承辦確認原核准範圍不自動延伸到平常下課，未自行批准新攤位。」，這項處置不是「我怕大家說是我買太多」最直接的前提，仍需其他人的獨立回應才能走到此結果；客觀後果僅確認「估量可被檢討，但剩料不自動成為個人債務。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已向校慶承辦確認原核准範圍不自動延伸到平常下課，未自行批准新攤位。」，「這袋材料不是我們班的」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「借物與自購剩料分開，避免處分他人物件。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已向校慶承辦確認原核准範圍不自動延伸到平常下課，未自行批准新攤位。」，這項處置較能取得或保留「免費送人也不一定安全」所需的資料、支持或協調機會；客觀後果僅確認「分送條件仍待核，不以免費規避安全限制。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "教師已完成「已向校慶承辦確認原核准範圍不自動延伸到平常下課，未自行批准新攤位。」，這項處置不是「原本剩下的數量可能算錯了」最直接的前提，仍需其他人的獨立回應才能走到此結果；客觀後果僅確認「實際剩量取得線索，未以估計當作定案。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已向校慶承辦確認原核准範圍不自動延伸到平常下課，未自行批准新攤位。」，「先知道為什麼剩下，再想怎麼處理」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「剩料成為可核對的實作紀錄，不擅自延長營業。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已請學生將未核准的販售訊息保留為草稿」，「原來保存期限就在包裝背面」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「材料安全狀態尚待核實，不因剩料多就能販售。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已請學生將未核准的販售訊息保留為草稿」，這項處置較能取得或保留「校慶許可不是一直有效」所需的資料、支持或協調機會；客觀後果僅確認「未核補賣停止，活動期限得以釐清。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已請學生將未核准的販售訊息保留為草稿」，「沒拆封的有些可能能退」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「退換條件得到分類，退款尚未成立。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "教師已完成「已請學生將未核准的販售訊息保留為草稿」，這項處置不是「我怕大家說是我買太多」最直接的前提，仍需其他人的獨立回應才能走到此結果；客觀後果僅確認「估量可被檢討，但剩料不自動成為個人債務。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已請學生將未核准的販售訊息保留為草稿」，「這袋材料不是我們班的」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「借物與自購剩料分開，避免處分他人物件。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已請學生將未核准的販售訊息保留為草稿」，這項處置較能取得或保留「免費送人也不一定安全」所需的資料、支持或協調機會；客觀後果僅確認「分送條件仍待核，不以免費規避安全限制。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已請學生將未核准的販售訊息保留為草稿」，「原本剩下的數量可能算錯了」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「實際剩量取得線索，未以估計當作定案。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已請學生將未核准的販售訊息保留為草稿」，「先知道為什麼剩下，再想怎麼處理」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「剩料成為可核對的實作紀錄，不擅自延長營業。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        }
+      ],
+      "verdict": "approved",
+      "reviewer": "Antigravity (Codex formal batch audit 2026-11-23)",
+      "storyAndRoles": "T1-153「學生發現剩餘材料比預期多」具備獨立的 T1-5:after 校慶後導師困境，常駐數值槽位為 student_a，角色在籍、在場、知情與職權邊界明確；未預設其他隨機故事或全班盈虧。",
+      "fourCodes": "T1-153 固定使用種子 S0151 原四碼（1-2／3-2／4-1／10-2），各碼均對應合法持有人（student_a）於本篇之實際情節與自主反應，無借用臨時人物代結算。",
+      "fourChoices": "T1-153 四個教師選項恰含 1 個 emotional=true 與 3 個具體可行之普通行動，六選三實際抽選紀錄與最終 A～D 映射及正文標記完全一致。",
+      "eightResults": "T1-153 八個共用結果（R1～R8）各有獨立客觀轉折與人物自主反應，均保留已完成之教師行動且不追加未選行動，R5～R8 無後段縮水或套版結尾。",
+      "causal32": "T1-153 32 格因果矩陣經逐格複核，各格相容性、因果方向、具體機制理由與 4/2/1 權重分布一致（0 個互斥 0 權重），與最新原稿無矛盾。",
+      "timeAndLaw": "T1-153 嚴格限定於 T1-5:after（配額日 2026-12-15，12/12 校慶及 12/14 補假後），符合 2026 臺灣高中校慶規範、財務核銷、借物權屬、個資肖像及親師生溝通界線。",
+      "duplicates": "T1-153 已完成與同池 T1-151～174、活動前 T1-127～150 及 T1-001～126 之摘要與全文語意比對，核心衝突與四選項機制獨立，非換皮重複。",
+      "characterAudit": "T1-153 經逐 R 盤點：常駐數值槽位僅 student_a，其餘同學、家長或校務窗口皆為無數值臨時情境角色，未建常駐 ID 或跨篇記憶；AVG 登場與退場符合在場事實。",
+      "npcDeltaAudit": "T1-153 全部八 R 之 NPC 數值增減皆限定於 S0151 原四碼（1-2／3-2／4-1／10-2）及合法持有人（student_a），單次幅度介於 -1 至 +2（符合 ±8 上限），每筆非零變動皆有對應劇情反應。",
+      "npcWarningReviews": [
+        {
+          "id": "npc_single_actor",
+          "decision": "retain",
+          "evidence": "T1-153「學生發現剩餘材料比預期多」核心衝突聚焦單一當事人（student_a）與導師的校慶後善後協調，其餘同學、家長或窗口僅作情境來源，依 01 規範不為湊人數硬增常駐槽位。"
+        }
+      ]
+    },
+    {
+      "storyId": "T1-154",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把付款、取貨與待查欄分開",
+            "action": "已核對具體事實並保留原始資料",
+            "tradeoff": "資訊與責任更清楚，但可能需要時間協調"
+          },
+          {
+            "id": 2,
+            "text": "保留原始訂單並核對可確認資訊",
+            "action": "已分別詢問可確認的當事人與權責",
+            "tradeoff": "資訊與責任更清楚，但可能需要時間協調"
+          },
+          {
+            "id": 3,
+            "text": "向權責人確認未取貨與退款程序",
+            "action": "已提出符合合法程序的可能方案",
+            "tradeoff": "資訊與責任更清楚，但可能需要時間協調"
+          },
+          {
+            "id": 4,
+            "text": "請學生列出各筆缺乏的交付證據",
+            "action": "已將各訂單缺漏的付款或領取資料逐筆標記",
+            "tradeoff": "容易追查，但會暴露更多空白"
+          },
+          {
+            "id": 5,
+            "text": "先保留不同版本的原始表格",
+            "action": "已保存修改前訂單及每次修正來源",
+            "tradeoff": "有助核對，但不能立刻確定營收"
+          },
+          {
+            "id": 6,
+            "text": "確認現有客人聯絡資訊是否可合法使用",
+            "action": "已要求核對蒐集目的和後續聯絡資格",
+            "tradeoff": "保護隱私，減少能立即查詢的對象"
+          }
+        ],
+        "selectedIds": [
+          5,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "method": "Fisher-Yates/LCG 32-bit",
+        "seedSelection": 6185,
+        "seedMapping": 9717
+      },
+      "reconstructionNote": "原始初稿先定三個普通選項，未具六選三紀錄；本次自檢新增三名合法普通候選後實際以可重現PRNG從六者抽三並重新排列四個最終選項。這是本次新生成的正式選項，不冒充初稿製作時曾抽選。",
+      "selectedTeacherStateGroups": [
+        "D",
+        "B",
+        "A",
+        "C"
+      ],
+      "stateDistributionMethod": "2026-11-23 重新由五組隨機選取四個不同組別；值的排列參照結果中可確認的正負情緒與工作負荷關鍵詞，仍須人工覆核各 R 非零數值是否有因果。；2026-11-23 再檢排除單列逾2零值，保留各狀態欄合法八值多重集合；以現行故事稿為準。",
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 148,
+          "delta": "student_a:1-4:+2",
+          "consequence": "訂單詢問與成交被區分，金額未擅自認列。",
+          "stats": [
+            0,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 152,
+          "delta": "student_a:3-3:+2",
+          "consequence": "記憶與交付證據分開，避免替客人錯認訂單。",
+          "stats": [
+            -2,
+            -1,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 141,
+          "delta": "student_a:4-3:+1",
+          "consequence": "未知資料如實留下，不以好看程度評價責任。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 146,
+          "delta": "student_a:8-3:-1",
+          "consequence": "金流和交貨分別待核，不擅自處分商品。",
+          "stats": [
+            -1,
+            -1,
+            0,
+            -1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 146,
+          "delta": "student_a:1-4:+2",
+          "consequence": "欄位分類改善，仍需與實際憑證核對。",
+          "stats": [
+            -2,
+            -1,
+            -2,
+            -2
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 157,
+          "delta": "student_a:3-3:+1",
+          "consequence": "後續聯繫必須合乎原蒐集目的與校方程序。",
+          "stats": [
+            2,
+            -1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 145,
+          "delta": "student_a:4-3:+2",
+          "consequence": "新增補述與原始紀錄有明確區別。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 145,
+          "delta": "student_a:8-3:-1",
+          "consequence": "結算資料更可信，未提前宣布正式盈虧。",
+          "stats": [
+            1,
+            0,
+            1,
+            1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已要求核對蒐集目的和後續聯絡資格」，「有品項不代表已成交」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「訂單詢問與成交被區分，金額未擅自認列。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已要求核對蒐集目的和後續聯絡資格」，「同一種品項，不一定是同一個人拿的」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「記憶與交付證據分開，避免替客人錯認訂單。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "教師已完成「已要求核對蒐集目的和後續聯絡資格」，這項處置不是「我怕你覺得我整理得很爛」最直接的前提，仍需其他人的獨立回應才能走到此結果；客觀後果僅確認「未知資料如實留下，不以好看程度評價責任。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已要求核對蒐集目的和後續聯絡資格」，「已付款不等於已交貨」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「金流和交貨分別待核，不擅自處分商品。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已要求核對蒐集目的和後續聯絡資格」，「已售和已收款寫在同一欄」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「欄位分類改善，仍需與實際憑證核對。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已要求核對蒐集目的和後續聯絡資格」，這項處置較能取得或保留「不是每份聯絡資料都能拿來群發」所需的資料、支持或協調機會；客觀後果僅確認「後續聯繫必須合乎原蒐集目的與校方程序。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已要求核對蒐集目的和後續聯絡資格」，「事後補記不能假裝是當天簽收」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「新增補述與原始紀錄有明確區別。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已要求核對蒐集目的和後續聯絡資格」，這項處置較能取得或保留「這張表可以有還不知道的答案」所需的資料、支持或協調機會；客觀後果僅確認「結算資料更可信，未提前宣布正式盈虧。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將各訂單缺漏的付款或領取資料逐筆標記」，這項處置較能取得或保留「有品項不代表已成交」所需的資料、支持或協調機會；客觀後果僅確認「訂單詢問與成交被區分，金額未擅自認列。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將各訂單缺漏的付款或領取資料逐筆標記」，這項處置較能取得或保留「同一種品項，不一定是同一個人拿的」所需的資料、支持或協調機會；客觀後果僅確認「記憶與交付證據分開，避免替客人錯認訂單。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已將各訂單缺漏的付款或領取資料逐筆標記」，「我怕你覺得我整理得很爛」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「未知資料如實留下，不以好看程度評價責任。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將各訂單缺漏的付款或領取資料逐筆標記」，這項處置較能取得或保留「已付款不等於已交貨」所需的資料、支持或協調機會；客觀後果僅確認「金流和交貨分別待核，不擅自處分商品。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將各訂單缺漏的付款或領取資料逐筆標記」，這項處置較能取得或保留「已售和已收款寫在同一欄」所需的資料、支持或協調機會；客觀後果僅確認「欄位分類改善，仍需與實際憑證核對。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已將各訂單缺漏的付款或領取資料逐筆標記」，「不是每份聯絡資料都能拿來群發」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「後續聯繫必須合乎原蒐集目的與校方程序。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將各訂單缺漏的付款或領取資料逐筆標記」，這項處置較能取得或保留「事後補記不能假裝是當天簽收」所需的資料、支持或協調機會；客觀後果僅確認「新增補述與原始紀錄有明確區別。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已將各訂單缺漏的付款或領取資料逐筆標記」，這項處置較能取得或保留「這張表可以有還不知道的答案」所需的資料、支持或協調機會；客觀後果僅確認「結算資料更可信，未提前宣布正式盈虧。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已接住當事人感受，但不以同理取代核實」，「有品項不代表已成交」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「訂單詢問與成交被區分，金額未擅自認列。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "教師已完成「已接住當事人感受，但不以同理取代核實」，這項處置不是「同一種品項，不一定是同一個人拿的」最直接的前提，仍需其他人的獨立回應才能走到此結果；客觀後果僅確認「記憶與交付證據分開，避免替客人錯認訂單。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已接住當事人感受，但不以同理取代核實」，這項處置較能取得或保留「我怕你覺得我整理得很爛」所需的資料、支持或協調機會；客觀後果僅確認「未知資料如實留下，不以好看程度評價責任。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已接住當事人感受，但不以同理取代核實」，「已付款不等於已交貨」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「金流和交貨分別待核，不擅自處分商品。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已接住當事人感受，但不以同理取代核實」，「已售和已收款寫在同一欄」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「欄位分類改善，仍需與實際憑證核對。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已接住當事人感受，但不以同理取代核實」，「不是每份聯絡資料都能拿來群發」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「後續聯繫必須合乎原蒐集目的與校方程序。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已接住當事人感受，但不以同理取代核實」，「事後補記不能假裝是當天簽收」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「新增補述與原始紀錄有明確區別。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已接住當事人感受，但不以同理取代核實」，這項處置較能取得或保留「這張表可以有還不知道的答案」所需的資料、支持或協調機會；客觀後果僅確認「結算資料更可信，未提前宣布正式盈虧。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已保存修改前訂單及每次修正來源」，這項處置較能取得或保留「有品項不代表已成交」所需的資料、支持或協調機會；客觀後果僅確認「訂單詢問與成交被區分，金額未擅自認列。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已保存修改前訂單及每次修正來源」，這項處置較能取得或保留「同一種品項，不一定是同一個人拿的」所需的資料、支持或協調機會；客觀後果僅確認「記憶與交付證據分開，避免替客人錯認訂單。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已保存修改前訂單及每次修正來源」，「我怕你覺得我整理得很爛」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「未知資料如實留下，不以好看程度評價責任。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已保存修改前訂單及每次修正來源」，「已付款不等於已交貨」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「金流和交貨分別待核，不擅自處分商品。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已保存修改前訂單及每次修正來源」，這項處置較能取得或保留「已售和已收款寫在同一欄」所需的資料、支持或協調機會；客觀後果僅確認「欄位分類改善，仍需與實際憑證核對。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "教師已完成「已保存修改前訂單及每次修正來源」，「不是每份聯絡資料都能拿來群發」仍可能依當事人的獨立行動發生，教師處置並不直接排除或保證此路徑；客觀後果僅確認「後續聯繫必須合乎原蒐集目的與校方程序。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已保存修改前訂單及每次修正來源」，這項處置較能取得或保留「事後補記不能假裝是當天簽收」所需的資料、支持或協調機會；客觀後果僅確認「新增補述與原始紀錄有明確區別。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "教師已完成「已保存修改前訂單及每次修正來源」，這項處置較能取得或保留「這張表可以有還不知道的答案」所需的資料、支持或協調機會；客觀後果僅確認「結算資料更可信，未提前宣布正式盈虧。」，並未追加其他選項才有的教師行動。",
+          "actionPreserved": true
+        }
+      ],
+      "verdict": "approved",
+      "reviewer": "Antigravity (Codex formal batch audit 2026-11-23)",
+      "storyAndRoles": "T1-154「第一次結帳有訂單沒註明取貨」具備獨立的 T1-5:after 校慶後導師困境，常駐數值槽位為 student_a，角色在籍、在場、知情與職權邊界明確；未預設其他隨機故事或全班盈虧。",
+      "fourCodes": "T1-154 固定使用種子 S0163 原四碼（1-4／3-3／4-3／8-3），各碼均對應合法持有人（student_a）於本篇之實際情節與自主反應，無借用臨時人物代結算。",
+      "fourChoices": "T1-154 四個教師選項恰含 1 個 emotional=true 與 3 個具體可行之普通行動，六選三實際抽選紀錄與最終 A～D 映射及正文標記完全一致。",
+      "eightResults": "T1-154 八個共用結果（R1～R8）各有獨立客觀轉折與人物自主反應，均保留已完成之教師行動且不追加未選行動，R5～R8 無後段縮水或套版結尾。",
+      "causal32": "T1-154 32 格因果矩陣經逐格複核，各格相容性、因果方向、具體機制理由與 4/2/1 權重分布一致（0 個互斥 0 權重），與最新原稿無矛盾。",
+      "timeAndLaw": "T1-154 嚴格限定於 T1-5:after（配額日 2026-12-15，12/12 校慶及 12/14 補假後），符合 2026 臺灣高中校慶規範、財務核銷、借物權屬、個資肖像及親師生溝通界線。",
+      "duplicates": "T1-154 已完成與同池 T1-151～174、活動前 T1-127～150 及 T1-001～126 之摘要與全文語意比對，核心衝突與四選項機制獨立，非換皮重複。",
+      "characterAudit": "T1-154 經逐 R 盤點：常駐數值槽位僅 student_a，其餘同學、家長或校務窗口皆為無數值臨時情境角色，未建常駐 ID 或跨篇記憶；AVG 登場與退場符合在場事實。",
+      "npcDeltaAudit": "T1-154 全部八 R 之 NPC 數值增減皆限定於 S0163 原四碼（1-4／3-3／4-3／8-3）及合法持有人（student_a），單次幅度介於 -1 至 +2（符合 ±8 上限），每筆非零變動皆有對應劇情反應。",
+      "npcWarningReviews": [
+        {
+          "id": "npc_single_actor",
+          "decision": "retain",
+          "evidence": "T1-154「第一次結帳有訂單沒註明取貨」核心衝突聚焦單一當事人（student_a）與導師的校慶後善後協調，其餘同學、家長或窗口僅作情境來源，依 01 規範不為湊人數硬增常駐槽位。"
+        }
+      ]
+    },
+    {
+      "storyId": "T1-155",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "私下確認學生對參與的理解",
+            "action": "已核對具體事實並保留原始資料",
+            "tradeoff": "資訊與責任更清楚，但可能需要時間協調"
+          },
+          {
+            "id": 2,
+            "text": "向家長說明已知財務規定與未知部分",
+            "action": "已向家長說明營收尚有成本與用途待核，並沒有承諾依參與人數分發現金。",
+            "tradeoff": "資訊與責任更清楚，但可能需要時間協調"
+          },
+          {
+            "id": 3,
+            "text": "請合法權責人核對收入用途",
+            "action": "已把共同活動收入能否分配的問題交正式權責人確認，尚未宣布個人可以領款。",
+            "tradeoff": "資訊與責任更清楚，但可能需要時間協調"
+          },
+          {
+            "id": 4,
+            "text": "與學生討論如何向家長表達當天經驗",
+            "action": "已陪孩子整理本人真正想向家人分享的工作感受",
+            "tradeoff": "有助親子溝通，卻不能取代財務說明"
+          },
+          {
+            "id": 5,
+            "text": "請家長釐清關切的是分錢還是肯定孩子",
+            "action": "已透過適當管道確認家長希望解決的問題",
+            "tradeoff": "降低誤解，但可能需要多次聯絡"
+          },
+          {
+            "id": 6,
+            "text": "核對活動原始分工與收入用途是否約定",
+            "action": "已確認可用的班級安排資料，沒有替全班決議分配",
+            "tradeoff": "釐清期待，仍須遵守合法程序"
+          }
+        ],
+        "selectedIds": [
+          3,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "method": "Fisher-Yates/LCG 32-bit",
+        "seedSelection": 6223,
+        "seedMapping": 9777
+      },
+      "reconstructionNote": "原始初稿先定三個普通選項，未具六選三紀錄；本次自檢新增三名合法普通候選後實際以可重現PRNG從六者抽三並重新排列四個最終選項。這是本次新生成的正式選項，不冒充初稿製作時曾抽選。",
+      "selectedTeacherStateGroups": [
+        "C",
+        "E",
+        "D",
+        "A"
+      ],
+      "stateDistributionMethod": "2026-11-23 重新由五組隨機選取四個不同組別；值的排列參照結果中可確認的正負情緒與工作負荷關鍵詞，仍須人工覆核各 R 非零數值是否有因果。；2026-11-23 再檢排除單列逾2零值，保留各狀態欄合法八值多重集合；以現行故事稿為準。",
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 121,
+          "delta": "student_a:1-3:+2",
+          "consequence": "學生表達參與意義，不替全班決定分配。",
+          "stats": [
+            0,
+            -2,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 120,
+          "delta": "guardian_a:4-2:+2",
+          "consequence": "財務資訊分層說明，未承諾個人領款。",
+          "stats": [
+            -1,
+            -2,
+            -2,
+            -2
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 118,
+          "delta": "student_a:10-2:+1",
+          "consequence": "家庭提問未公開冒充學生或全班立場。",
+          "stats": [
+            -1,
+            0,
+            -1,
+            0
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 115,
+          "delta": "guardian_a:11-4:-1",
+          "consequence": "勞動肯定和未核定的薪資分配分開。",
+          "stats": [
+            -2,
+            -2,
+            -2,
+            -2
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 121,
+          "delta": "student_a:1-3:+2",
+          "consequence": "個人理解獲得表達，沒有冒充正式勞動關係。",
+          "stats": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 117,
+          "delta": "student_a:4-2:+1",
+          "consequence": "成就感不依賴未確認的款項數字。",
+          "stats": [
+            -1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 117,
+          "delta": "guardian_a:10-2:+2",
+          "consequence": "溝通進入可核對範圍，家長仍可保有疑問。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 124,
+          "delta": "student_a:11-4:-1",
+          "consequence": "學生可自主溝通，財務分配仍依合法程序。",
+          "stats": [
+            1,
+            1,
+            2,
+            1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已確認可用的班級安排資料，沒有替全班決議分配」；這對「我想被記住的是那天做的事」而言較可能直接幫助當事人找到通往「我想被記住的是那天做的事」所需的資料或信任條件。實際後果限於「學生表達參與意義，不替全班決定分配。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已確認可用的班級安排資料，沒有替全班決議分配」；這對「原來收入還要扣支出」而言較可能直接幫助當事人找到通往「原來收入還要扣支出」所需的資料或信任條件。實際後果限於「財務資訊分層說明，未承諾個人領款。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已確認可用的班級安排資料，沒有替全班決議分配」；這對「我不想被同學當成來要錢的」而言不會把「我不想被同學當成來要錢的」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「家庭提問未公開冒充學生或全班立場。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已確認可用的班級安排資料，沒有替全班決議分配」；這對「忙最多的人就該分最多嗎」而言較可能直接幫助當事人找到通往「忙最多的人就該分最多嗎」所需的資料或信任條件。實際後果限於「勞動肯定和未核定的薪資分配分開。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已確認可用的班級安排資料，沒有替全班決議分配」；這對「我當時答應的是一起做攤位」而言較可能直接幫助當事人找到通往「我當時答應的是一起做攤位」所需的資料或信任條件。實際後果限於「個人理解獲得表達，沒有冒充正式勞動關係。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已確認可用的班級安排資料，沒有替全班決議分配」；這對「如果沒賺錢，努力還有價值嗎」而言不會把「如果沒賺錢，努力還有價值嗎」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「成就感不依賴未確認的款項數字。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已確認可用的班級安排資料，沒有替全班決議分配」；這對「家長願意先等正式答覆」而言不會把「家長願意先等正式答覆」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「溝通進入可核對範圍，家長仍可保有疑問。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已確認可用的班級安排資料，沒有替全班決議分配」；這對「我會跟家人說我們做了什麼」而言不會把「我會跟家人說我們做了什麼」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「學生可自主溝通，財務分配仍依合法程序。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已向家長說明營收尚有成本與用途待核，並沒有承諾依參與人數分發現金。」；這對「我想被記住的是那天做的事」而言不會把「我想被記住的是那天做的事」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「學生表達參與意義，不替全班決定分配。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已向家長說明營收尚有成本與用途待核，並沒有承諾依參與人數分發現金。」；這對「原來收入還要扣支出」而言較可能直接幫助當事人找到通往「原來收入還要扣支出」所需的資料或信任條件。實際後果限於「財務資訊分層說明，未承諾個人領款。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已向家長說明營收尚有成本與用途待核，並沒有承諾依參與人數分發現金。」；這對「我不想被同學當成來要錢的」而言不會把「我不想被同學當成來要錢的」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「家庭提問未公開冒充學生或全班立場。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已向家長說明營收尚有成本與用途待核，並沒有承諾依參與人數分發現金。」；這對「忙最多的人就該分最多嗎」而言較可能直接幫助當事人找到通往「忙最多的人就該分最多嗎」所需的資料或信任條件。實際後果限於「勞動肯定和未核定的薪資分配分開。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已向家長說明營收尚有成本與用途待核，並沒有承諾依參與人數分發現金。」；這對「我當時答應的是一起做攤位」而言不會把「我當時答應的是一起做攤位」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「個人理解獲得表達，沒有冒充正式勞動關係。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已向家長說明營收尚有成本與用途待核，並沒有承諾依參與人數分發現金。」；這對「如果沒賺錢，努力還有價值嗎」而言不會把「如果沒賺錢，努力還有價值嗎」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「成就感不依賴未確認的款項數字。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已向家長說明營收尚有成本與用途待核，並沒有承諾依參與人數分發現金。」；這對「家長願意先等正式答覆」而言較可能直接幫助當事人找到通往「家長願意先等正式答覆」所需的資料或信任條件。實際後果限於「溝通進入可核對範圍，家長仍可保有疑問。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已向家長說明營收尚有成本與用途待核，並沒有承諾依參與人數分發現金。」；這對「我會跟家人說我們做了什麼」而言不會把「我會跟家人說我們做了什麼」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「學生可自主溝通，財務分配仍依合法程序。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別理解家長想肯定辛勞、學生不想被同儕看成討錢的感受，未擅作分配承諾。」；這對「我想被記住的是那天做的事」而言較可能直接幫助當事人找到通往「我想被記住的是那天做的事」所需的資料或信任條件。實際後果限於「學生表達參與意義，不替全班決定分配。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已分別理解家長想肯定辛勞、學生不想被同儕看成討錢的感受，未擅作分配承諾。」；這對「原來收入還要扣支出」而言不會把「原來收入還要扣支出」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「財務資訊分層說明，未承諾個人領款。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別理解家長想肯定辛勞、學生不想被同儕看成討錢的感受，未擅作分配承諾。」；這對「我不想被同學當成來要錢的」而言較可能直接幫助當事人找到通往「我不想被同學當成來要錢的」所需的資料或信任條件。實際後果限於「家庭提問未公開冒充學生或全班立場。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已分別理解家長想肯定辛勞、學生不想被同儕看成討錢的感受，未擅作分配承諾。」；這對「忙最多的人就該分最多嗎」而言不會把「忙最多的人就該分最多嗎」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「勞動肯定和未核定的薪資分配分開。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別理解家長想肯定辛勞、學生不想被同儕看成討錢的感受，未擅作分配承諾。」；這對「我當時答應的是一起做攤位」而言較可能直接幫助當事人找到通往「我當時答應的是一起做攤位」所需的資料或信任條件。實際後果限於「個人理解獲得表達，沒有冒充正式勞動關係。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別理解家長想肯定辛勞、學生不想被同儕看成討錢的感受，未擅作分配承諾。」；這對「如果沒賺錢，努力還有價值嗎」而言較可能直接幫助當事人找到通往「如果沒賺錢，努力還有價值嗎」所需的資料或信任條件。實際後果限於「成就感不依賴未確認的款項數字。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已分別理解家長想肯定辛勞、學生不想被同儕看成討錢的感受，未擅作分配承諾。」；這對「家長願意先等正式答覆」而言不會把「家長願意先等正式答覆」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「溝通進入可核對範圍，家長仍可保有疑問。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別理解家長想肯定辛勞、學生不想被同儕看成討錢的感受，未擅作分配承諾。」；這對「我會跟家人說我們做了什麼」而言較可能直接幫助當事人找到通往「我會跟家人說我們做了什麼」所需的資料或信任條件。實際後果限於「學生可自主溝通，財務分配仍依合法程序。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已把共同活動收入能否分配的問題交正式權責人確認，尚未宣布個人可以領款。」；這對「我想被記住的是那天做的事」而言不會把「我想被記住的是那天做的事」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「學生表達參與意義，不替全班決定分配。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已把共同活動收入能否分配的問題交正式權責人確認，尚未宣布個人可以領款。」；這對「原來收入還要扣支出」而言較可能直接幫助當事人找到通往「原來收入還要扣支出」所需的資料或信任條件。實際後果限於「財務資訊分層說明，未承諾個人領款。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已把共同活動收入能否分配的問題交正式權責人確認，尚未宣布個人可以領款。」；這對「我不想被同學當成來要錢的」而言不會把「我不想被同學當成來要錢的」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「家庭提問未公開冒充學生或全班立場。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已把共同活動收入能否分配的問題交正式權責人確認，尚未宣布個人可以領款。」；這對「忙最多的人就該分最多嗎」而言較可能直接幫助當事人找到通往「忙最多的人就該分最多嗎」所需的資料或信任條件。實際後果限於「勞動肯定和未核定的薪資分配分開。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已把共同活動收入能否分配的問題交正式權責人確認，尚未宣布個人可以領款。」；這對「我當時答應的是一起做攤位」而言不會把「我當時答應的是一起做攤位」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「個人理解獲得表達，沒有冒充正式勞動關係。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "導師已完成「已把共同活動收入能否分配的問題交正式權責人確認，尚未宣布個人可以領款。」；這對「如果沒賺錢，努力還有價值嗎」而言尚未直接處理「如果沒賺錢，努力還有價值嗎」所牽涉的另一項實際限制，仍須當事人自行查明或提出。實際後果限於「成就感不依賴未確認的款項數字。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已把共同活動收入能否分配的問題交正式權責人確認，尚未宣布個人可以領款。」；這對「家長願意先等正式答覆」而言較可能直接幫助當事人找到通往「家長願意先等正式答覆」所需的資料或信任條件。實際後果限於「溝通進入可核對範圍，家長仍可保有疑問。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已把共同活動收入能否分配的問題交正式權責人確認，尚未宣布個人可以領款。」；這對「我會跟家人說我們做了什麼」而言不會把「我會跟家人說我們做了什麼」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「學生可自主溝通，財務分配仍依合法程序。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        }
+      ],
+      "verdict": "approved",
+      "reviewer": "Antigravity (Codex formal batch audit 2026-11-23)",
+      "storyAndRoles": "T1-155「家長認為孩子忙一天應分到錢」具備獨立的 T1-5:after 校慶後導師困境，常駐數值槽位為 guardian_a、student_a，角色在籍、在場、知情與職權邊界明確；家長僅透過合法遠端通訊參與並各自知情，未預設其他隨機故事或全班盈虧。",
+      "fourCodes": "T1-155 固定使用種子 S0164 原四碼（1-3／4-2／10-2／11-4），各碼均對應合法持有人（guardian_a、student_a）於本篇之實際情節與自主反應，無借用臨時人物代結算。",
+      "fourChoices": "T1-155 四個教師選項恰含 1 個 emotional=true 與 3 個具體可行之普通行動，六選三實際抽選紀錄與最終 A～D 映射及正文標記完全一致。",
+      "eightResults": "T1-155 八個共用結果（R1～R8）各有獨立客觀轉折與人物自主反應，均保留已完成之教師行動且不追加未選行動，R5～R8 無後段縮水或套版結尾。",
+      "causal32": "T1-155 32 格因果矩陣經逐格複核，各格相容性、因果方向、具體機制理由與 4/2/1 權重分布一致（0 個互斥 0 權重），與最新原稿無矛盾。",
+      "timeAndLaw": "T1-155 嚴格限定於 T1-5:after（配額日 2026-12-15，12/12 校慶及 12/14 補假後），符合 2026 臺灣高中校慶規範、財務核銷、借物權屬、個資肖像及親師生溝通界線。",
+      "duplicates": "T1-155 已完成與同池 T1-151～174、活動前 T1-127～150 及 T1-001～126 之摘要與全文語意比對，核心衝突與四選項機制獨立，非換皮重複。",
+      "characterAudit": "T1-155 經逐 R 盤點：常駐數值槽位僅 guardian_a、student_a，其餘同學、家長或校務窗口皆為無數值臨時情境角色，未建常駐 ID 或跨篇記憶；AVG 登場與退場符合在場事實。",
+      "npcDeltaAudit": "T1-155 全部八 R 之 NPC 數值增減皆限定於 S0164 原四碼（1-3／4-2／10-2／11-4）及合法持有人（guardian_a、student_a），單次幅度介於 -1 至 +2（符合 ±8 上限），每筆非零變動皆有對應劇情反應。",
+      "npcWarningReviews": [
+        {
+          "id": "npc_all_zero_code:guardian_a:1-3",
+          "decision": "retain",
+          "evidence": "T1-155 雙／多角色分工明確，guardian_a 於八 R 中依實際出場與知情僅結算自身直接相關之原碼，未於全部四碼強行製造反應；1-3 由另一合法持有人完整承擔對應情節結算，符合 01／05 規範。"
+        }
+      ]
+    },
+    {
+      "storyId": "T1-156",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "確認可合法查找的清運及存放範圍",
+            "action": "已向校內清運與保管窗口詢問招牌可能的去向及合法查找範圍，未保證全數追回。",
+            "tradeoff": "資訊與責任更清楚，但可能需要時間協調"
+          },
+          {
+            "id": 2,
+            "text": "協助整理作品現存的合法照片",
+            "action": "已分別詢問可確認的當事人與權責",
+            "tradeoff": "資訊與責任更清楚，但可能需要時間協調"
+          },
+          {
+            "id": 3,
+            "text": "詢問當時經手者實際清理順序",
+            "action": "已請實際清理者按本人記憶說明搬運順序並註記未知段落，未先指稱有人故意丟棄。",
+            "tradeoff": "資訊與責任更清楚，但可能需要時間協調"
+          },
+          {
+            "id": 4,
+            "text": "確認招牌哪些部分曾標記要保留",
+            "action": "已查核作品保留標示與當時的拆攤紀錄",
+            "tradeoff": "有助尋找，可能仍無原件"
+          },
+          {
+            "id": 5,
+            "text": "詢問清理者知道的實際搬運位置",
+            "action": "已聽取經手者記得的去向，不假定故意丟棄",
+            "tradeoff": "取得線索，但原物可能已清走"
+          },
+          {
+            "id": 6,
+            "text": "先詢問作者願意如何保存影像和署名",
+            "action": "已確認作者及相關同學的影像使用意願",
+            "tradeoff": "保留紀念，不保證找回作品"
+          }
+        ],
+        "selectedIds": [
+          1,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "method": "Fisher-Yates/LCG 32-bit",
+        "seedSelection": 6298,
+        "seedMapping": 9890
+      },
+      "reconstructionNote": "原始初稿先定三個普通選項，未具六選三紀錄；本次自檢新增三名合法普通候選後實際以可重現PRNG從六者抽三並重新排列四個最終選項。這是本次新生成的正式選項，不冒充初稿製作時曾抽選。",
+      "selectedTeacherStateGroups": [
+        "D",
+        "A",
+        "E",
+        "B"
+      ],
+      "stateDistributionMethod": "2026-11-23 重新由五組隨機選取四個不同組別；值的排列參照結果中可確認的正負情緒與工作負荷關鍵詞，仍須人工覆核各 R 非零數值是否有因果。",
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 115,
+          "delta": "student_a:1-2:+2",
+          "consequence": "部分原件找到，完整招牌仍未能恢復。",
+          "stats": [
+            2,
+            1,
+            1,
+            2
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 122,
+          "delta": "student_a:3-1:+2",
+          "consequence": "影像紀念有了可能，公開仍須尊重當事人。",
+          "stats": [
+            0,
+            0,
+            1,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 118,
+          "delta": "student_a:4-3:+1",
+          "consequence": "清理原因獲初步說明，未直接認定惡意。",
+          "stats": [
+            -1,
+            -1,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 113,
+          "delta": "student_a:8-3:-1",
+          "consequence": "保存需求提出，實際移交尚待確認。",
+          "stats": [
+            -1,
+            0,
+            0,
+            -1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 121,
+          "delta": "student_a:1-2:+2",
+          "consequence": "新紀念方式可討論，原有遺憾沒有被否認。",
+          "stats": [
+            -2,
+            -2,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 119,
+          "delta": "student_a:3-1:+1",
+          "consequence": "去向仍待查，未用不完整記憶指責。",
+          "stats": [
+            -2,
+            -2,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 117,
+          "delta": "student_a:4-3:+2",
+          "consequence": "紀念需求更明確，照片及署名使用仍須同意。",
+          "stats": [
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 125,
+          "delta": "student_a:8-3:-1",
+          "consequence": "留下可執行的提醒，未虛構原件恢復。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已向校內清運與保管窗口詢問招牌可能的去向及合法查找範圍，未保證全數追回。」；這對「只找到招牌的一角」而言較可能直接幫助當事人找到通往「只找到招牌的一角」所需的資料或信任條件。實際後果限於「部分原件找到，完整招牌仍未能恢復。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已向校內清運與保管窗口詢問招牌可能的去向及合法查找範圍，未保證全數追回。」；這對「照片留下了每個人的筆跡」而言不會把「照片留下了每個人的筆跡」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「影像紀念有了可能，公開仍須尊重當事人。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已向校內清運與保管窗口詢問招牌可能的去向及合法查找範圍，未保證全數追回。」；這對「清理者不知道有人想保存」而言較可能直接幫助當事人找到通往「清理者不知道有人想保存」所需的資料或信任條件。實際後果限於「清理原因獲初步說明，未直接認定惡意。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已向校內清運與保管窗口詢問招牌可能的去向及合法查找範圍，未保證全數追回。」；這對「找到的碎片也不能隨便帶走」而言較可能直接幫助當事人找到通往「找到的碎片也不能隨便帶走」所需的資料或信任條件。實際後果限於「保存需求提出，實際移交尚待確認。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "導師已完成「已向校內清運與保管窗口詢問招牌可能的去向及合法查找範圍，未保證全數追回。」；這對「重畫一張不等於找回原本那張」而言尚未直接處理「重畫一張不等於找回原本那張」所牽涉的另一項實際限制，仍須當事人自行查明或提出。實際後果限於「新紀念方式可討論，原有遺憾沒有被否認。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已向校內清運與保管窗口詢問招牌可能的去向及合法查找範圍，未保證全數追回。」；這對「沒有人從頭到尾看見去向」而言較可能直接幫助當事人找到通往「沒有人從頭到尾看見去向」所需的資料或信任條件。實際後果限於「去向仍待查，未用不完整記憶指責。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已向校內清運與保管窗口詢問招牌可能的去向及合法查找範圍，未保證全數追回。」；這對「他最想留下的是背面簽名」而言不會把「他最想留下的是背面簽名」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「紀念需求更明確，照片及署名使用仍須同意。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已向校內清運與保管窗口詢問招牌可能的去向及合法查找範圍，未保證全數追回。」；這對「下次拆攤先問作品要不要留」而言不會把「下次拆攤先問作品要不要留」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「留下可執行的提醒，未虛構原件恢復。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已請實際清理者按本人記憶說明搬運順序並註記未知段落，未先指稱有人故意丟棄。」；這對「只找到招牌的一角」而言不會把「只找到招牌的一角」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「部分原件找到，完整招牌仍未能恢復。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "導師已完成「已請實際清理者按本人記憶說明搬運順序並註記未知段落，未先指稱有人故意丟棄。」；這對「照片留下了每個人的筆跡」而言尚未直接處理「照片留下了每個人的筆跡」所牽涉的另一項實際限制，仍須當事人自行查明或提出。實際後果限於「影像紀念有了可能，公開仍須尊重當事人。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已請實際清理者按本人記憶說明搬運順序並註記未知段落，未先指稱有人故意丟棄。」；這對「清理者不知道有人想保存」而言較可能直接幫助當事人找到通往「清理者不知道有人想保存」所需的資料或信任條件。實際後果限於「清理原因獲初步說明，未直接認定惡意。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已請實際清理者按本人記憶說明搬運順序並註記未知段落，未先指稱有人故意丟棄。」；這對「找到的碎片也不能隨便帶走」而言不會把「找到的碎片也不能隨便帶走」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「保存需求提出，實際移交尚待確認。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "導師已完成「已請實際清理者按本人記憶說明搬運順序並註記未知段落，未先指稱有人故意丟棄。」；這對「重畫一張不等於找回原本那張」而言尚未直接處理「重畫一張不等於找回原本那張」所牽涉的另一項實際限制，仍須當事人自行查明或提出。實際後果限於「新紀念方式可討論，原有遺憾沒有被否認。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已請實際清理者按本人記憶說明搬運順序並註記未知段落，未先指稱有人故意丟棄。」；這對「沒有人從頭到尾看見去向」而言較可能直接幫助當事人找到通往「沒有人從頭到尾看見去向」所需的資料或信任條件。實際後果限於「去向仍待查，未用不完整記憶指責。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已請實際清理者按本人記憶說明搬運順序並註記未知段落，未先指稱有人故意丟棄。」；這對「他最想留下的是背面簽名」而言不會把「他最想留下的是背面簽名」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「紀念需求更明確，照片及署名使用仍須同意。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已請實際清理者按本人記憶說明搬運順序並註記未知段落，未先指稱有人故意丟棄。」；這對「下次拆攤先問作品要不要留」而言不會把「下次拆攤先問作品要不要留」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「留下可執行的提醒，未虛構原件恢復。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已讓作者說出自己對手作招牌與同學署名的留戀，未承諾一定找回原件。」；這對「只找到招牌的一角」而言不會把「只找到招牌的一角」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「部分原件找到，完整招牌仍未能恢復。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已讓作者說出自己對手作招牌與同學署名的留戀，未承諾一定找回原件。」；這對「照片留下了每個人的筆跡」而言較可能直接幫助當事人找到通往「照片留下了每個人的筆跡」所需的資料或信任條件。實際後果限於「影像紀念有了可能，公開仍須尊重當事人。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已讓作者說出自己對手作招牌與同學署名的留戀，未承諾一定找回原件。」；這對「清理者不知道有人想保存」而言不會把「清理者不知道有人想保存」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「清理原因獲初步說明，未直接認定惡意。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "導師已完成「已讓作者說出自己對手作招牌與同學署名的留戀，未承諾一定找回原件。」；這對「找到的碎片也不能隨便帶走」而言尚未直接處理「找到的碎片也不能隨便帶走」所牽涉的另一項實際限制，仍須當事人自行查明或提出。實際後果限於「保存需求提出，實際移交尚待確認。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已讓作者說出自己對手作招牌與同學署名的留戀，未承諾一定找回原件。」；這對「重畫一張不等於找回原本那張」而言較可能直接幫助當事人找到通往「重畫一張不等於找回原本那張」所需的資料或信任條件。實際後果限於「新紀念方式可討論，原有遺憾沒有被否認。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已讓作者說出自己對手作招牌與同學署名的留戀，未承諾一定找回原件。」；這對「沒有人從頭到尾看見去向」而言不會把「沒有人從頭到尾看見去向」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「去向仍待查，未用不完整記憶指責。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已讓作者說出自己對手作招牌與同學署名的留戀，未承諾一定找回原件。」；這對「他最想留下的是背面簽名」而言較可能直接幫助當事人找到通往「他最想留下的是背面簽名」所需的資料或信任條件。實際後果限於「紀念需求更明確，照片及署名使用仍須同意。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已讓作者說出自己對手作招牌與同學署名的留戀，未承諾一定找回原件。」；這對「下次拆攤先問作品要不要留」而言較可能直接幫助當事人找到通往「下次拆攤先問作品要不要留」所需的資料或信任條件。實際後果限於「留下可執行的提醒，未虛構原件恢復。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已聽取經手者記得的去向，不假定故意丟棄」；這對「只找到招牌的一角」而言不會把「只找到招牌的一角」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「部分原件找到，完整招牌仍未能恢復。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "導師已完成「已聽取經手者記得的去向，不假定故意丟棄」；這對「照片留下了每個人的筆跡」而言尚未直接處理「照片留下了每個人的筆跡」所牽涉的另一項實際限制，仍須當事人自行查明或提出。實際後果限於「影像紀念有了可能，公開仍須尊重當事人。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已聽取經手者記得的去向，不假定故意丟棄」；這對「清理者不知道有人想保存」而言較可能直接幫助當事人找到通往「清理者不知道有人想保存」所需的資料或信任條件。實際後果限於「清理原因獲初步說明，未直接認定惡意。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已聽取經手者記得的去向，不假定故意丟棄」；這對「找到的碎片也不能隨便帶走」而言不會把「找到的碎片也不能隨便帶走」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「保存需求提出，實際移交尚待確認。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已聽取經手者記得的去向，不假定故意丟棄」；這對「重畫一張不等於找回原本那張」而言不會把「重畫一張不等於找回原本那張」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「新紀念方式可討論，原有遺憾沒有被否認。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已聽取經手者記得的去向，不假定故意丟棄」；這對「沒有人從頭到尾看見去向」而言較可能直接幫助當事人找到通往「沒有人從頭到尾看見去向」所需的資料或信任條件。實際後果限於「去向仍待查，未用不完整記憶指責。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已聽取經手者記得的去向，不假定故意丟棄」；這對「他最想留下的是背面簽名」而言不會把「他最想留下的是背面簽名」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「紀念需求更明確，照片及署名使用仍須同意。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已聽取經手者記得的去向，不假定故意丟棄」；這對「下次拆攤先問作品要不要留」而言不會把「下次拆攤先問作品要不要留」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「留下可執行的提醒，未虛構原件恢復。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        }
+      ],
+      "verdict": "approved",
+      "reviewer": "Antigravity (Codex formal batch audit 2026-11-23)",
+      "storyAndRoles": "T1-156「手作招牌被收進廢棄物袋」具備獨立的 T1-5:after 校慶後導師困境，常駐數值槽位為 student_a，角色在籍、在場、知情與職權邊界明確；未預設其他隨機故事或全班盈虧。",
+      "fourCodes": "T1-156 固定使用種子 S0166 原四碼（1-2／3-1／4-3／8-3），各碼均對應合法持有人（student_a）於本篇之實際情節與自主反應，無借用臨時人物代結算。",
+      "fourChoices": "T1-156 四個教師選項恰含 1 個 emotional=true 與 3 個具體可行之普通行動，六選三實際抽選紀錄與最終 A～D 映射及正文標記完全一致。",
+      "eightResults": "T1-156 八個共用結果（R1～R8）各有獨立客觀轉折與人物自主反應，均保留已完成之教師行動且不追加未選行動，R5～R8 無後段縮水或套版結尾。",
+      "causal32": "T1-156 32 格因果矩陣經逐格複核，各格相容性、因果方向、具體機制理由與 4/2/1 權重分布一致（0 個互斥 0 權重），與最新原稿無矛盾。",
+      "timeAndLaw": "T1-156 嚴格限定於 T1-5:after（配額日 2026-12-15，12/12 校慶及 12/14 補假後），符合 2026 臺灣高中校慶規範、財務核銷、借物權屬、個資肖像及親師生溝通界線。",
+      "duplicates": "T1-156 已完成與同池 T1-151～174、活動前 T1-127～150 及 T1-001～126 之摘要與全文語意比對，核心衝突與四選項機制獨立，非換皮重複。",
+      "characterAudit": "T1-156 經逐 R 盤點：常駐數值槽位僅 student_a，其餘同學、家長或校務窗口皆為無數值臨時情境角色，未建常駐 ID 或跨篇記憶；AVG 登場與退場符合在場事實。",
+      "npcDeltaAudit": "T1-156 全部八 R 之 NPC 數值增減皆限定於 S0166 原四碼（1-2／3-1／4-3／8-3）及合法持有人（student_a），單次幅度介於 -1 至 +2（符合 ±8 上限），每筆非零變動皆有對應劇情反應。",
+      "npcWarningReviews": [
+        {
+          "id": "npc_single_actor",
+          "decision": "retain",
+          "evidence": "T1-156「手作招牌被收進廢棄物袋」核心衝突聚焦單一當事人（student_a）與導師的校慶後善後協調，其餘同學、家長或窗口僅作情境來源，依 01 規範不為湊人數硬增常駐槽位。"
+        }
+      ]
+    },
+    {
+      "storyId": "T1-157",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先把已知物件和來源待查分欄",
+            "action": "已請兩人共同列出確知來源與不確定項目",
+            "tradeoff": "具體資訊更明確，但須尊重相關當事人意願"
+          },
+          {
+            "id": 2,
+            "text": "分別詢問當時交接的實際過程",
+            "action": "已各自聽完兩位學生所知，不強迫互相指責",
+            "tradeoff": "具體資訊更明確，但須尊重相關當事人意願"
+          },
+          {
+            "id": 3,
+            "text": "向正式借物窗口核對物權資料",
+            "action": "已向有權窗口詢問借物及歸還紀錄",
+            "tradeoff": "具體資訊更明確，但須尊重相關當事人意願"
+          },
+          {
+            "id": 4,
+            "text": "對照當天借物清單與照片",
+            "action": "已將可辨物件和照片逐項核對，未知仍留空",
+            "tradeoff": "能查來源，但紀錄可能不足"
+          },
+          {
+            "id": 5,
+            "text": "請兩名學生各寫自己的交接記憶",
+            "action": "已分別記下 A、B 本人知道的經過，不要求統一口徑",
+            "tradeoff": "保護兩人，需另核真實資料"
+          },
+          {
+            "id": 6,
+            "text": "確認來源不明物件的暫時保管窗口",
+            "action": "已向校方核實可以合法暫放及交回的位置",
+            "tradeoff": "減少遺失，仍不能替物主決定"
+          }
+        ],
+        "selectedIds": [
+          2,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "method": "Fisher-Yates/LCG 32-bit",
+        "seedSelection": 6447,
+        "seedMapping": 10109
+      },
+      "reconstructionNote": "原始初稿先定三個普通選項，未具六選三紀錄；本次自檢新增三名合法普通候選後實際以可重現PRNG從六者抽三並重新排列四個最終選項。這是本次新生成的正式選項，不冒充初稿製作時曾抽選。",
+      "selectedTeacherStateGroups": [
+        "B",
+        "D",
+        "E",
+        "A"
+      ],
+      "stateDistributionMethod": "2026-11-23 重新由五組隨機選取四個不同組別；值的排列參照結果中可確認的正負情緒與工作負荷關鍵詞，仍須人工覆核各 R 非零數值是否有因果。",
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 123,
+          "delta": "student_a:3-4:+2",
+          "consequence": "疑似借物被標為待核，不擅自處分。",
+          "stats": [
+            -1,
+            -2,
+            -2,
+            -2
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 129,
+          "delta": "student_b:4-4:+2",
+          "consequence": "口頭交接的歧義被辨識，尚待物件來源核實。",
+          "stats": [
+            -1,
+            -2,
+            -2,
+            -2
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 122,
+          "delta": "student_a:5-2:+1",
+          "consequence": "工作與紀錄缺漏分開處理，不把事後記憶倒填。",
+          "stats": [
+            -1,
+            -1,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 117,
+          "delta": "student_b:9-1:-1",
+          "consequence": "影像可證範圍被限定，物權仍須核對。",
+          "stats": [
+            -1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 123,
+          "delta": "student_a:3-4:+2",
+          "consequence": "保管責任交回合法安排，未擅自搬離校園。",
+          "stats": [
+            -1,
+            -1,
+            -2,
+            -1
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 133,
+          "delta": "student_b:4-4:+1",
+          "consequence": "交接補述可追溯，不偽造當時簽收。",
+          "stats": [
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 112,
+          "delta": "student_a:5-2:+2",
+          "consequence": "跨班物品不被擅自歸屬，來源待查。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 125,
+          "delta": "student_b:9-1:-1",
+          "consequence": "善後工作有了共同可查的界線，未預設衝突消失。",
+          "stats": [
+            2,
+            2,
+            1,
+            1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已分別記下 A、B 本人知道的經過，不要求統一口徑」；這對「「這條延長線不是我們班買的。」」而言不會把「「這條延長線不是我們班買的。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「疑似借物被標為待核，不擅自處分。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別記下 A、B 本人知道的經過，不要求統一口徑」；這對「「我有說放在這裡，沒說那就是公物。」」而言較可能直接幫助當事人找到通往「「我有說放在這裡，沒說那就是公物。」」所需的資料或信任條件。實際後果限於「口頭交接的歧義被辨識，尚待物件來源核實。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別記下 A、B 本人知道的經過，不要求統一口徑」；這對「「我以為沒寫下來就等於沒人做。」」而言較可能直接幫助當事人找到通往「「我以為沒寫下來就等於沒人做。」」所需的資料或信任條件。實際後果限於「工作與紀錄缺漏分開處理，不把事後記憶倒填。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別記下 A、B 本人知道的經過，不要求統一口徑」；這對「「這張照片只照到箱子，照不到裡面。」」而言較可能直接幫助當事人找到通往「「這張照片只照到箱子，照不到裡面。」」所需的資料或信任條件。實際後果限於「影像可證範圍被限定，物權仍須核對。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已分別記下 A、B 本人知道的經過，不要求統一口徑」；這對「「如果找不到主人，我先放在家裡？」」而言不會把「「如果找不到主人，我先放在家裡？」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「保管責任交回合法安排，未擅自搬離校園。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別記下 A、B 本人知道的經過，不要求統一口徑」；這對「「我想幫忙補記，但不能叫我現在簽那天的名。」」而言較可能直接幫助當事人找到通往「「我想幫忙補記，但不能叫我現在簽那天的名。」」所需的資料或信任條件。實際後果限於「交接補述可追溯，不偽造當時簽收。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別記下 A、B 本人知道的經過，不要求統一口徑」；這對「「那袋應該還有別班的東西。」」而言較可能直接幫助當事人找到通往「「那袋應該還有別班的東西。」」所需的資料或信任條件。實際後果限於「跨班物品不被擅自歸屬，來源待查。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別記下 A、B 本人知道的經過，不要求統一口徑」；這對「「我不是要你背錯，是希望下次有人說得清楚。」」而言較可能直接幫助當事人找到通往「「我不是要你背錯，是希望下次有人說得清楚。」」所需的資料或信任條件。實際後果限於「善後工作有了共同可查的界線，未預設衝突消失。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已同理兩人處境，尚未要求任何人認錯」；這對「「這條延長線不是我們班買的。」」而言不會把「「這條延長線不是我們班買的。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「疑似借物被標為待核，不擅自處分。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已同理兩人處境，尚未要求任何人認錯」；這對「「我有說放在這裡，沒說那就是公物。」」而言較可能直接幫助當事人找到通往「「我有說放在這裡，沒說那就是公物。」」所需的資料或信任條件。實際後果限於「口頭交接的歧義被辨識，尚待物件來源核實。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已同理兩人處境，尚未要求任何人認錯」；這對「「我以為沒寫下來就等於沒人做。」」而言較可能直接幫助當事人找到通往「「我以為沒寫下來就等於沒人做。」」所需的資料或信任條件。實際後果限於「工作與紀錄缺漏分開處理，不把事後記憶倒填。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "導師已完成「已同理兩人處境，尚未要求任何人認錯」；這對「「這張照片只照到箱子，照不到裡面。」」而言尚未直接處理「「這張照片只照到箱子，照不到裡面。」」所牽涉的另一項實際限制，仍須當事人自行查明或提出。實際後果限於「影像可證範圍被限定，物權仍須核對。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已同理兩人處境，尚未要求任何人認錯」；這對「「如果找不到主人，我先放在家裡？」」而言不會把「「如果找不到主人，我先放在家裡？」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「保管責任交回合法安排，未擅自搬離校園。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已同理兩人處境，尚未要求任何人認錯」；這對「「我想幫忙補記，但不能叫我現在簽那天的名。」」而言不會把「「我想幫忙補記，但不能叫我現在簽那天的名。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「交接補述可追溯，不偽造當時簽收。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已同理兩人處境，尚未要求任何人認錯」；這對「「那袋應該還有別班的東西。」」而言不會把「「那袋應該還有別班的東西。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「跨班物品不被擅自歸屬，來源待查。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已同理兩人處境，尚未要求任何人認錯」；這對「「我不是要你背錯，是希望下次有人說得清楚。」」而言較可能直接幫助當事人找到通往「「我不是要你背錯，是希望下次有人說得清楚。」」所需的資料或信任條件。實際後果限於「善後工作有了共同可查的界線，未預設衝突消失。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已將可辨物件和照片逐項核對，未知仍留空」；這對「「這條延長線不是我們班買的。」」而言較可能直接幫助當事人找到通往「「這條延長線不是我們班買的。」」所需的資料或信任條件。實際後果限於「疑似借物被標為待核，不擅自處分。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已將可辨物件和照片逐項核對，未知仍留空」；這對「「我有說放在這裡，沒說那就是公物。」」而言不會把「「我有說放在這裡，沒說那就是公物。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「口頭交接的歧義被辨識，尚待物件來源核實。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已將可辨物件和照片逐項核對，未知仍留空」；這對「「我以為沒寫下來就等於沒人做。」」而言不會把「「我以為沒寫下來就等於沒人做。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「工作與紀錄缺漏分開處理，不把事後記憶倒填。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已將可辨物件和照片逐項核對，未知仍留空」；這對「「這張照片只照到箱子，照不到裡面。」」而言較可能直接幫助當事人找到通往「「這張照片只照到箱子，照不到裡面。」」所需的資料或信任條件。實際後果限於「影像可證範圍被限定，物權仍須核對。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已將可辨物件和照片逐項核對，未知仍留空」；這對「「如果找不到主人，我先放在家裡？」」而言不會把「「如果找不到主人，我先放在家裡？」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「保管責任交回合法安排，未擅自搬離校園。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已將可辨物件和照片逐項核對，未知仍留空」；這對「「我想幫忙補記，但不能叫我現在簽那天的名。」」而言不會把「「我想幫忙補記，但不能叫我現在簽那天的名。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「交接補述可追溯，不偽造當時簽收。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已將可辨物件和照片逐項核對，未知仍留空」；這對「「那袋應該還有別班的東西。」」而言較可能直接幫助當事人找到通往「「那袋應該還有別班的東西。」」所需的資料或信任條件。實際後果限於「跨班物品不被擅自歸屬，來源待查。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已將可辨物件和照片逐項核對，未知仍留空」；這對「「我不是要你背錯，是希望下次有人說得清楚。」」而言不會把「「我不是要你背錯，是希望下次有人說得清楚。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「善後工作有了共同可查的界線，未預設衝突消失。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已各自聽完兩位學生所知，不強迫互相指責」；這對「「這條延長線不是我們班買的。」」而言不會把「「這條延長線不是我們班買的。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「疑似借物被標為待核，不擅自處分。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已各自聽完兩位學生所知，不強迫互相指責」；這對「「我有說放在這裡，沒說那就是公物。」」而言較可能直接幫助當事人找到通往「「我有說放在這裡，沒說那就是公物。」」所需的資料或信任條件。實際後果限於「口頭交接的歧義被辨識，尚待物件來源核實。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已各自聽完兩位學生所知，不強迫互相指責」；這對「「我以為沒寫下來就等於沒人做。」」而言較可能直接幫助當事人找到通往「「我以為沒寫下來就等於沒人做。」」所需的資料或信任條件。實際後果限於「工作與紀錄缺漏分開處理，不把事後記憶倒填。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已各自聽完兩位學生所知，不強迫互相指責」；這對「「這張照片只照到箱子，照不到裡面。」」而言較可能直接幫助當事人找到通往「「這張照片只照到箱子，照不到裡面。」」所需的資料或信任條件。實際後果限於「影像可證範圍被限定，物權仍須核對。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已各自聽完兩位學生所知，不強迫互相指責」；這對「「如果找不到主人，我先放在家裡？」」而言不會把「「如果找不到主人，我先放在家裡？」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「保管責任交回合法安排，未擅自搬離校園。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已各自聽完兩位學生所知，不強迫互相指責」；這對「「我想幫忙補記，但不能叫我現在簽那天的名。」」而言較可能直接幫助當事人找到通往「「我想幫忙補記，但不能叫我現在簽那天的名。」」所需的資料或信任條件。實際後果限於「交接補述可追溯，不偽造當時簽收。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已各自聽完兩位學生所知，不強迫互相指責」；這對「「那袋應該還有別班的東西。」」而言不會把「「那袋應該還有別班的東西。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「跨班物品不被擅自歸屬，來源待查。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已各自聽完兩位學生所知，不強迫互相指責」；這對「「我不是要你背錯，是希望下次有人說得清楚。」」而言較可能直接幫助當事人找到通往「「我不是要你背錯，是希望下次有人說得清楚。」」所需的資料或信任條件。實際後果限於「善後工作有了共同可查的界線，未預設衝突消失。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        }
+      ],
+      "verdict": "approved",
+      "reviewer": "Antigravity (Codex formal batch audit 2026-11-23)",
+      "storyAndRoles": "T1-157「最後一班只留下口頭交接」具備獨立的 T1-5:after 校慶後導師困境，常駐數值槽位為 student_a、student_b，角色在籍、在場、知情與職權邊界明確；雙學生各具獨立立場、發言與反應，未預設其他隨機故事或全班盈虧。",
+      "fourCodes": "T1-157 固定使用種子 S0170 原四碼（3-4／4-4／5-2／9-1），各碼均對應合法持有人（student_a、student_b）於本篇之實際情節與自主反應，無借用臨時人物代結算。",
+      "fourChoices": "T1-157 四個教師選項恰含 1 個 emotional=true 與 3 個具體可行之普通行動，六選三實際抽選紀錄與最終 A～D 映射及正文標記完全一致。",
+      "eightResults": "T1-157 八個共用結果（R1～R8）各有獨立客觀轉折與人物自主反應，均保留已完成之教師行動且不追加未選行動，R5～R8 無後段縮水或套版結尾。",
+      "causal32": "T1-157 32 格因果矩陣經逐格複核，各格相容性、因果方向、具體機制理由與 4/2/1 權重分布一致（0 個互斥 0 權重），與最新原稿無矛盾。",
+      "timeAndLaw": "T1-157 嚴格限定於 T1-5:after（配額日 2026-12-16，12/12 校慶及 12/14 補假後），符合 2026 臺灣高中校慶規範、財務核銷、借物權屬、個資肖像及親師生溝通界線。",
+      "duplicates": "T1-157 已完成與同池 T1-151～174、活動前 T1-127～150 及 T1-001～126 之摘要與全文語意比對，核心衝突與四選項機制獨立，非換皮重複。",
+      "characterAudit": "T1-157 經逐 R 盤點：常駐數值槽位僅 student_a、student_b，其餘同學、家長或校務窗口皆為無數值臨時情境角色，未建常駐 ID 或跨篇記憶；AVG 登場與退場符合在場事實。",
+      "npcDeltaAudit": "T1-157 全部八 R 之 NPC 數值增減皆限定於 S0170 原四碼（3-4／4-4／5-2／9-1）及合法持有人（student_a、student_b），單次幅度介於 -1 至 +2（符合 ±8 上限），每筆非零變動皆有對應劇情反應。",
+      "npcWarningReviews": [
+        {
+          "id": "npc_all_zero_code:student_a:4-4",
+          "decision": "retain",
+          "evidence": "T1-157 雙／多角色分工明確，student_a 於八 R 中依實際出場與知情僅結算自身直接相關之原碼，未於全部四碼強行製造反應；4-4 由另一合法持有人完整承擔對應情節結算，符合 01／05 規範。"
+        },
+        {
+          "id": "npc_all_zero_code:student_a:9-1",
+          "decision": "retain",
+          "evidence": "T1-157 雙／多角色分工明確，student_a 於八 R 中依實際出場與知情僅結算自身直接相關之原碼，未於全部四碼強行製造反應；9-1 由另一合法持有人完整承擔對應情節結算，符合 01／05 規範。"
+        },
+        {
+          "id": "npc_all_zero_code:student_b:3-4",
+          "decision": "retain",
+          "evidence": "T1-157 雙／多角色分工明確，student_b 於八 R 中依實際出場與知情僅結算自身直接相關之原碼，未於全部四碼強行製造反應；3-4 由另一合法持有人完整承擔對應情節結算，符合 01／05 規範。"
+        },
+        {
+          "id": "npc_all_zero_code:student_b:5-2",
+          "decision": "retain",
+          "evidence": "T1-157 雙／多角色分工明確，student_b 於八 R 中依實際出場與知情僅結算自身直接相關之原碼，未於全部四碼強行製造反應；5-2 由另一合法持有人完整承擔對應情節結算，符合 01／05 規範。"
+        }
+      ]
+    },
+    {
+      "storyId": "T1-158",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請兩人分別說出自己真正做的工作",
+            "action": "已記錄兩名學生的具體工作，不做人氣排名",
+            "tradeoff": "具體資訊更明確，但須尊重相關當事人意願"
+          },
+          {
+            "id": 2,
+            "text": "核對當日備料與前台交接紀錄",
+            "action": "已整理能確證的前後台分工與時間",
+            "tradeoff": "具體資訊更明確，但須尊重相關當事人意願"
+          },
+          {
+            "id": 3,
+            "text": "邀請學生自行決定是否分享經驗",
+            "action": "已詢問兩人對照片與文字分享的意願",
+            "tradeoff": "具體資訊更明確，但須尊重相關當事人意願"
+          },
+          {
+            "id": 4,
+            "text": "請備料者自行選擇是否分享心得",
+            "action": "已私下確認 B 是否願意留下工作回憶",
+            "tradeoff": "尊重自主，但成果呈現可能較少"
+          },
+          {
+            "id": 5,
+            "text": "整理前台與備料工作之間的具體依賴",
+            "action": "已核對招呼與備料交接的實際資料",
+            "tradeoff": "看見合作，不替兩人比較辛苦"
+          },
+          {
+            "id": 6,
+            "text": "先核對照片的肖像公開同意",
+            "action": "已詢問照片可用範圍，暫不直接轉傳未核影像",
+            "tradeoff": "保護隱私，成果發布可能延後"
+          }
+        ],
+        "selectedIds": [
+          6,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 6,
+          "D": 2
+        },
+        "method": "Fisher-Yates/LCG 32-bit",
+        "seedSelection": 6559,
+        "seedMapping": 10275
+      },
+      "reconstructionNote": "原始初稿先定三個普通選項，未具六選三紀錄；本次自檢新增三名合法普通候選後實際以可重現PRNG從六者抽三並重新排列四個最終選項。這是本次新生成的正式選項，不冒充初稿製作時曾抽選。",
+      "selectedTeacherStateGroups": [
+        "E",
+        "D",
+        "B",
+        "C"
+      ],
+      "stateDistributionMethod": "2026-11-23 重新由五組隨機選取四個不同組別；值的排列參照結果中可確認的正負情緒與工作負荷關鍵詞，仍須人工覆核各 R 非零數值是否有因果。",
+      "resultAudit": [
+        {
+          "id": "R1",
+          "chars": 125,
+          "delta": "student_a:3-3:+2",
+          "consequence": "前後台的實際依賴關係被看見，未排名。",
+          "stats": [
+            -2,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R2",
+          "chars": 120,
+          "delta": "student_b:4-4:+2",
+          "consequence": "兩人的需求獨立表達，分享仍須本人同意。",
+          "stats": [
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R3",
+          "chars": 115,
+          "delta": "student_a:8-4:+1",
+          "consequence": "影像與工作紀錄分別保存，不用照片評定貢獻。",
+          "stats": [
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "id": "R4",
+          "chars": 121,
+          "delta": "student_b:10-1:-1",
+          "consequence": "補記不冒充當日照片，尊重本人意願。",
+          "stats": [
+            1,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "id": "R5",
+          "chars": 114,
+          "delta": "student_a:3-3:+2",
+          "consequence": "招呼者保留個人成就，不須承擔全部功勞。",
+          "stats": [
+            -2,
+            -2,
+            -1,
+            -2
+          ]
+        },
+        {
+          "id": "R6",
+          "chars": 117,
+          "delta": "student_b:4-4:+1",
+          "consequence": "備料者保有發言與不公開的選擇。",
+          "stats": [
+            1,
+            0,
+            -1,
+            0
+          ]
+        },
+        {
+          "id": "R7",
+          "chars": 129,
+          "delta": "student_a:8-4:+2",
+          "consequence": "紀念方式避開未核肖像公開。",
+          "stats": [
+            0,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "R8",
+          "chars": 128,
+          "delta": "student_b:10-1:-1",
+          "consequence": "班級記錄有兩種視角，不以出鏡次數決定價值。",
+          "stats": [
+            -2,
+            -2,
+            -1,
+            -1
+          ]
+        }
+      ],
+      "causal32Evidence": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已私下確認 B 是否願意留下工作回憶」；這對「「他站前面喊，我在後面一直補杯子。」」而言較可能直接幫助當事人找到通往「「他站前面喊，我在後面一直補杯子。」」所需的資料或信任條件。實際後果限於「前後台的實際依賴關係被看見，未排名。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已私下確認 B 是否願意留下工作回憶」；這對「「我不是要他不要被稱讚。」」而言較可能直接幫助當事人找到通往「「我不是要他不要被稱讚。」」所需的資料或信任條件。實際後果限於「兩人的需求獨立表達，分享仍須本人同意。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已私下確認 B 是否願意留下工作回憶」；這對「「照片真的沒有拍到這段。」」而言不會把「「照片真的沒有拍到這段。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「影像與工作紀錄分別保存，不用照片評定貢獻。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已私下確認 B 是否願意留下工作回憶」；這對「「如果現在要補拍一張，會不會更假？」」而言較可能直接幫助當事人找到通往「「如果現在要補拍一張，會不會更假？」」所需的資料或信任條件。實際後果限於「補記不冒充當日照片，尊重本人意願。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已私下確認 B 是否願意留下工作回憶」；這對「「大家一直叫我招牌人物，我開始有壓力了。」」而言不會把「「大家一直叫我招牌人物，我開始有壓力了。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「招呼者保留個人成就，不須承擔全部功勞。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已私下確認 B 是否願意留下工作回憶」；這對「「我怕說出來，就會被嫌在計較。」」而言較可能直接幫助當事人找到通往「「我怕說出來，就會被嫌在計較。」」所需的資料或信任條件。實際後果限於「備料者保有發言與不公開的選擇。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已私下確認 B 是否願意留下工作回憶」；這對「「有人拍到我搬材料，但背景也拍到別班學生。」」而言不會把「「有人拍到我搬材料，但背景也拍到別班學生。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「紀念方式避開未核肖像公開。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已私下確認 B 是否願意留下工作回憶」；這對「「明年回想時，我希望兩邊的工作都還在。」」而言較可能直接幫助當事人找到通往「「明年回想時，我希望兩邊的工作都還在。」」所需的資料或信任條件。實際後果限於「班級記錄有兩種視角，不以出鏡次數決定價值。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別表達肯定，沒有要求誰把功勞讓給誰」；這對「「他站前面喊，我在後面一直補杯子。」」而言較可能直接幫助當事人找到通往「「他站前面喊，我在後面一直補杯子。」」所需的資料或信任條件。實際後果限於「前後台的實際依賴關係被看見，未排名。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別表達肯定，沒有要求誰把功勞讓給誰」；這對「「我不是要他不要被稱讚。」」而言較可能直接幫助當事人找到通往「「我不是要他不要被稱讚。」」所需的資料或信任條件。實際後果限於「兩人的需求獨立表達，分享仍須本人同意。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已分別表達肯定，沒有要求誰把功勞讓給誰」；這對「「照片真的沒有拍到這段。」」而言不會把「「照片真的沒有拍到這段。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「影像與工作紀錄分別保存，不用照片評定貢獻。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已分別表達肯定，沒有要求誰把功勞讓給誰」；這對「「如果現在要補拍一張，會不會更假？」」而言不會把「「如果現在要補拍一張，會不會更假？」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「補記不冒充當日照片，尊重本人意願。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別表達肯定，沒有要求誰把功勞讓給誰」；這對「「大家一直叫我招牌人物，我開始有壓力了。」」而言較可能直接幫助當事人找到通往「「大家一直叫我招牌人物，我開始有壓力了。」」所需的資料或信任條件。實際後果限於「招呼者保留個人成就，不須承擔全部功勞。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別表達肯定，沒有要求誰把功勞讓給誰」；這對「「我怕說出來，就會被嫌在計較。」」而言較可能直接幫助當事人找到通往「「我怕說出來，就會被嫌在計較。」」所需的資料或信任條件。實際後果限於「備料者保有發言與不公開的選擇。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已分別表達肯定，沒有要求誰把功勞讓給誰」；這對「「有人拍到我搬材料，但背景也拍到別班學生。」」而言不會把「「有人拍到我搬材料，但背景也拍到別班學生。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「紀念方式避開未核肖像公開。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已分別表達肯定，沒有要求誰把功勞讓給誰」；這對「「明年回想時，我希望兩邊的工作都還在。」」而言較可能直接幫助當事人找到通往「「明年回想時，我希望兩邊的工作都還在。」」所需的資料或信任條件。實際後果限於「班級記錄有兩種視角，不以出鏡次數決定價值。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "導師已完成「已詢問照片可用範圍，暫不直接轉傳未核影像」；這對「「他站前面喊，我在後面一直補杯子。」」而言尚未直接處理「「他站前面喊，我在後面一直補杯子。」」所牽涉的另一項實際限制，仍須當事人自行查明或提出。實際後果限於「前後台的實際依賴關係被看見，未排名。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已詢問照片可用範圍，暫不直接轉傳未核影像」；這對「「我不是要他不要被稱讚。」」而言不會把「「我不是要他不要被稱讚。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「兩人的需求獨立表達，分享仍須本人同意。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已詢問照片可用範圍，暫不直接轉傳未核影像」；這對「「照片真的沒有拍到這段。」」而言不會把「「照片真的沒有拍到這段。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「影像與工作紀錄分別保存，不用照片評定貢獻。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已詢問照片可用範圍，暫不直接轉傳未核影像」；這對「「如果現在要補拍一張，會不會更假？」」而言較可能直接幫助當事人找到通往「「如果現在要補拍一張，會不會更假？」」所需的資料或信任條件。實際後果限於「補記不冒充當日照片，尊重本人意願。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "reason": "導師已完成「已詢問照片可用範圍，暫不直接轉傳未核影像」；這對「「大家一直叫我招牌人物，我開始有壓力了。」」而言尚未直接處理「「大家一直叫我招牌人物，我開始有壓力了。」」所牽涉的另一項實際限制，仍須當事人自行查明或提出。實際後果限於「招呼者保留個人成就，不須承擔全部功勞。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已詢問照片可用範圍，暫不直接轉傳未核影像」；這對「「我怕說出來，就會被嫌在計較。」」而言較可能直接幫助當事人找到通往「「我怕說出來，就會被嫌在計較。」」所需的資料或信任條件。實際後果限於「備料者保有發言與不公開的選擇。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已詢問照片可用範圍，暫不直接轉傳未核影像」；這對「「有人拍到我搬材料，但背景也拍到別班學生。」」而言較可能直接幫助當事人找到通往「「有人拍到我搬材料，但背景也拍到別班學生。」」所需的資料或信任條件。實際後果限於「紀念方式避開未核肖像公開。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已詢問照片可用範圍，暫不直接轉傳未核影像」；這對「「明年回想時，我希望兩邊的工作都還在。」」而言不會把「「明年回想時，我希望兩邊的工作都還在。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「班級記錄有兩種視角，不以出鏡次數決定價值。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已整理能確證的前後台分工與時間」；這對「「他站前面喊，我在後面一直補杯子。」」而言較可能直接幫助當事人找到通往「「他站前面喊，我在後面一直補杯子。」」所需的資料或信任條件。實際後果限於「前後台的實際依賴關係被看見，未排名。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已整理能確證的前後台分工與時間」；這對「「我不是要他不要被稱讚。」」而言較可能直接幫助當事人找到通往「「我不是要他不要被稱讚。」」所需的資料或信任條件。實際後果限於「兩人的需求獨立表達，分享仍須本人同意。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已整理能確證的前後台分工與時間」；這對「「照片真的沒有拍到這段。」」而言較可能直接幫助當事人找到通往「「照片真的沒有拍到這段。」」所需的資料或信任條件。實際後果限於「影像與工作紀錄分別保存，不用照片評定貢獻。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已整理能確證的前後台分工與時間」；這對「「如果現在要補拍一張，會不會更假？」」而言不會把「「如果現在要補拍一張，會不會更假？」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「補記不冒充當日照片，尊重本人意願。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已整理能確證的前後台分工與時間」；這對「「大家一直叫我招牌人物，我開始有壓力了。」」而言較可能直接幫助當事人找到通往「「大家一直叫我招牌人物，我開始有壓力了。」」所需的資料或信任條件。實際後果限於「招呼者保留個人成就，不須承擔全部功勞。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "reason": "導師已完成「已整理能確證的前後台分工與時間」；這對「「我怕說出來，就會被嫌在計較。」」而言不會把「「我怕說出來，就會被嫌在計較。」」變成不可能，但還需要故事裡的人自願決定及後續資料。實際後果限於「備料者保有發言與不公開的選擇。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已整理能確證的前後台分工與時間」；這對「「有人拍到我搬材料，但背景也拍到別班學生。」」而言較可能直接幫助當事人找到通往「「有人拍到我搬材料，但背景也拍到別班學生。」」所需的資料或信任條件。實際後果限於「紀念方式避開未核肖像公開。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "reason": "導師已完成「已整理能確證的前後台分工與時間」；這對「「明年回想時，我希望兩邊的工作都還在。」」而言較可能直接幫助當事人找到通往「「明年回想時，我希望兩邊的工作都還在。」」所需的資料或信任條件。實際後果限於「班級記錄有兩種視角，不以出鏡次數決定價值。」，沒有替其他角色允諾未經確認的事。",
+          "actionPreserved": true
+        }
+      ],
+      "verdict": "approved",
+      "reviewer": "Antigravity (Codex formal batch audit 2026-11-23)",
+      "storyAndRoles": "T1-158「回來後大家只記得喊叫招客的人」具備獨立的 T1-5:after 校慶後導師困境，常駐數值槽位為 student_a、student_b，角色在籍、在場、知情與職權邊界明確；雙學生各具獨立立場、發言與反應，未預設其他隨機故事或全班盈虧。",
+      "fourCodes": "T1-158 固定使用種子 S0173 原四碼（3-3／4-4／8-4／10-1），各碼均對應合法持有人（student_a、student_b）於本篇之實際情節與自主反應，無借用臨時人物代結算。",
+      "fourChoices": "T1-158 四個教師選項恰含 1 個 emotional=true 與 3 個具體可行之普通行動，六選三實際抽選紀錄與最終 A～D 映射及正文標記完全一致。",
+      "eightResults": "T1-158 八個共用結果（R1～R8）各有獨立客觀轉折與人物自主反應，均保留已完成之教師行動且不追加未選行動，R5～R8 無後段縮水或套版結尾。",
+      "causal32": "T1-158 32 格因果矩陣經逐格複核，各格相容性、因果方向、具體機制理由與 4/2/1 權重分布一致（0 個互斥 0 權重），與最新原稿無矛盾。",
+      "timeAndLaw": "T1-158 嚴格限定於 T1-5:after（配額日 2026-12-16，12/12 校慶及 12/14 補假後），符合 2026 臺灣高中校慶規範、財務核銷、借物權屬、個資肖像及親師生溝通界線。",
+      "duplicates": "T1-158 已完成與同池 T1-151～174、活動前 T1-127～150 及 T1-001～126 之摘要與全文語意比對，核心衝突與四選項機制獨立，非換皮重複。",
+      "characterAudit": "T1-158 經逐 R 盤點：常駐數值槽位僅 student_a、student_b，其餘同學、家長或校務窗口皆為無數值臨時情境角色，未建常駐 ID 或跨篇記憶；AVG 登場與退場符合在場事實。",
+      "npcDeltaAudit": "T1-158 全部八 R 之 NPC 數值增減皆限定於 S0173 原四碼（3-3／4-4／8-4／10-1）及合法持有人（student_a、student_b），單次幅度介於 -1 至 +2（符合 ±8 上限），每筆非零變動皆有對應劇情反應。",
+      "npcWarningReviews": [
+        {
+          "id": "npc_all_zero_code:student_a:4-4",
+          "decision": "retain",
+          "evidence": "T1-158 雙／多角色分工明確，student_a 於八 R 中依實際出場與知情僅結算自身直接相關之原碼，未於全部四碼強行製造反應；4-4 由另一合法持有人完整承擔對應情節結算，符合 01／05 規範。"
+        },
+        {
+          "id": "npc_all_zero_code:student_a:10-1",
+          "decision": "retain",
+          "evidence": "T1-158 雙／多角色分工明確，student_a 於八 R 中依實際出場與知情僅結算自身直接相關之原碼，未於全部四碼強行製造反應；10-1 由另一合法持有人完整承擔對應情節結算，符合 01／05 規範。"
+        },
+        {
+          "id": "npc_all_zero_code:student_b:3-3",
+          "decision": "retain",
+          "evidence": "T1-158 雙／多角色分工明確，student_b 於八 R 中依實際出場與知情僅結算自身直接相關之原碼，未於全部四碼強行製造反應；3-3 由另一合法持有人完整承擔對應情節結算，符合 01／05 規範。"
+        },
+        {
+          "id": "npc_all_zero_code:student_b:8-4",
+          "decision": "retain",
+          "evidence": "T1-158 雙／多角色分工明確，student_b 於八 R 中依實際出場與知情僅結算自身直接相關之原碼，未於全部四碼強行製造反應；8-4 由另一合法持有人完整承擔對應情節結算，符合 01／05 規範。"
+        }
+      ]
+    }
+  ],
+  "syncNote": "2026-11-23 同步對照此批每個 R 的實際可見字數、四狀態與合法 NPC delta；本檔仍為初審，不表示逐格語意審查已全面通過。",
+  "reviewer": "Antigravity (Codex formal batch audit 2026-11-23)",
+  "auditedAt": "2026-11-23"
+}

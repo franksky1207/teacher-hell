@@ -1,6 +1,6 @@
 {
   "storyId": "T3-036",
-  "sourceBlobSha": "3efed9e23ba5a1b2ceb4c947020aa86e07ee25ce",
+  "sourceBlobSha": "b5f08c41e6bf15118d16defda42cc927a65837b5",
   "reviewer": "GPT-6｜2026-11-23 工作分支因果審核",
   "verdict": "requires_independent_review",
   "scope": "12篇正式核准前的逐格因果初審；六選三與Node/S6未補",
@@ -391,5 +391,48 @@
       "reviewStatus": "中性暫可達"
     }
   ],
-  "note": "六選三抽樣歷程尚無可追溯紀錄，不能以事後編造候選代替。權重4/1待補故事專屬因果橋接。"
+  "note": "六選三抽樣歷程尚無可追溯紀錄，不能以事後編造候選代替。權重4/1待補故事專屬因果橋接。",
+  "npcDeltaReview": [
+    {
+      "result": "R1",
+      "delta": "student_a:11-1:+1",
+      "review": "依實際敘事重讀NPC反應；未經正式CLI機械測試"
+    },
+    {
+      "result": "R2",
+      "delta": "student_a:12-3:+1",
+      "review": "依實際敘事重讀NPC反應；未經正式CLI機械測試"
+    },
+    {
+      "result": "R3",
+      "delta": "student_a:12-3:-1",
+      "review": "依實際敘事重讀NPC反應；未經正式CLI機械測試"
+    },
+    {
+      "result": "R4",
+      "delta": "student_a:12-3:-1",
+      "review": "依實際敘事重讀NPC反應；未經正式CLI機械測試"
+    },
+    {
+      "result": "R5",
+      "delta": "無",
+      "review": "依實際敘事重讀NPC反應；未經正式CLI機械測試"
+    },
+    {
+      "result": "R6",
+      "delta": "student_a:12-3:-1",
+      "review": "依實際敘事重讀NPC反應；未經正式CLI機械測試"
+    },
+    {
+      "result": "R7",
+      "delta": "student_a:8-2:-1",
+      "review": "依實際敘事重讀NPC反應；未經正式CLI機械測試"
+    },
+    {
+      "result": "R8",
+      "delta": "student_a:6-2:-1",
+      "review": "依實際敘事重讀NPC反應；未經正式CLI機械測試"
+    }
+  ],
+  "technicalTests": "Node CLI 未執行；Actions 禁止；未發布 S5/S6"
 }

@@ -1,0 +1,356 @@
+{
+  "storyId": "T5-012",
+  "verdict": "needs-review",
+  "reviewer": "GPT-6 第二輪故事重製：因果先行覆核稿（正式驗收未通過）",
+  "storyAndRoles": "本篇仍依# T5-012｜學生假日補寫道謝核對原規劃角色、合法身分及知情順序。",
+  "fourCodes": "四碼保持 4-4／5-1／10-4／12-3，數值角色的獨立變化與合法持碼待正式審閱。",
+  "fourChoices": "依可追溯 xorshift32 初始種子抽選六個普通候選中的三個，另加情緒選項組 A～D，均有客觀已完成行動。",
+  "eightResults": "八結局內容與 AVG 多頁對話已同步重寫，字數與逐人自主反應待定向驗收及實質審核。",
+  "causal32": "逐格附相容性、促進／中性／抑制及其理由；不因 32 筆資料齊全便宣稱已核准。",
+  "timeAndLaw": "T5-1:after；2028 年教師節活動後共用池，不冒稱他人有同意及科任承諾。",
+  "duplicates": "與其他 11 篇的主題及主要決策機制不同，完整同池／跨池重複性審查待完成。",
+  "characterAudit": "原第三區之持碼 NPC 才得更新數值；無數值背景學生／科任不自動轉成常駐。",
+  "npcDeltaAudit": "本篇原四碼 NPC 增減仍需依具體結果逐碼核對；不替導師持有 NPC 對教師的關係碼。",
+  "npcWarningReviews": [],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "告訴學生個人道謝不受活動日期限制",
+        "action": "已明確告知可以另外交卡，未要求補辦全班活動",
+        "tradeoff": "減少時間焦慮，但沒替他決定是否交付"
+      },
+      {
+        "id": 2,
+        "short": "提供私下交卡的位置，不安排公開補送",
+        "action": "已提供不打擾全班的交付方式，不替學生發布文字",
+        "tradeoff": "尊重隱私，儀式感可能較少"
+      },
+      {
+        "id": 3,
+        "short": "請他保留未完成的卡片，寫完再自行決定",
+        "action": "已明確表示可以繼續保留卡片，不要求立即完成",
+        "tradeoff": "保留創作自由，當下沒有得到正式道謝"
+      },
+      {
+        "id": 4,
+        "short": "告訴學生電子訊息也可以是自己的道謝",
+        "action": "已說明不一定要手寫或公開，仍由學生選",
+        "tradeoff": "降低形式焦慮，但會改變原本卡片計畫"
+      },
+      {
+        "id": 5,
+        "short": "先問學生想不想獨自與老師交談",
+        "action": "已提出自願一對一的方式，未要求當下交付",
+        "tradeoff": "照顧私密感，需配合師生雙方時間"
+      },
+      {
+        "id": 6,
+        "short": "請朋友停止催促他交出未寫完的卡片",
+        "action": "已向催促者表示不得代替當事人決定完成時間",
+        "tradeoff": "降低同儕壓力，可能需要更多溝通"
+      }
+    ],
+    "selectedIds": [
+      2,
+      1,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 2,
+      "B": 1,
+      "C": 3,
+      "D": "emotional"
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提供不打擾全班的交付方式，不替學生發布文字」，因此使「個人道謝仍可在活動後交付」有明確的推進路徑，較容易出現「學生確認個人卡片可在教師節活動後自行交付。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提供不打擾全班的交付方式，不替學生發布文字」後，「班群不再討論卡片，學生解除一定要同日交出的期待。」依然可能發生，且沒有取消該選項已做的事；但「學生不必配合班群的日程交卡」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提供不打擾全班的交付方式，不替學生發布文字」後，「學生說明未寫完是因面對畢業情緒需要時間。」依然可能發生，且沒有取消該選項已做的事；但「學生能說明難以完成卡片的原因」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提供不打擾全班的交付方式，不替學生發布文字」，因此使「學生不需要補辦全班活動」有明確的推進路徑，較容易出現「學生決定不為自己一張卡要求全班補辦活動。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提供不打擾全班的交付方式，不替學生發布文字」，因此使「未完成卡片的私人內容不被公開」有明確的推進路徑，較容易出現「學生不希望未完成卡片內容被其他人先看到。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提供不打擾全班的交付方式，不替學生發布文字」後，「學生理解致謝沒有唯一截止日期，保留自己的步調。」依然可能發生，且沒有取消該選項已做的事；但「道謝時間仍由學生自主」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提供不打擾全班的交付方式，不替學生發布文字」後，「學生擔心補交被誤認為敷衍，仍在斟酌文字。」依然可能發生，且沒有取消該選項已做的事；但「學生不被貼上補交敷衍的標籤」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提供不打擾全班的交付方式，不替學生發布文字」，因此使「學生有權寫完後仍再決定交付」有明確的推進路徑，較容易出現「學生完成最後一行，尚未決定是否立即交付。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確告知可以另外交卡，未要求補辦全班活動」，因此使「個人道謝仍可在活動後交付」有明確的推進路徑，較容易出現「學生確認個人卡片可在教師節活動後自行交付。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確告知可以另外交卡，未要求補辦全班活動」，因此使「學生不必配合班群的日程交卡」有明確的推進路徑，較容易出現「班群不再討論卡片，學生解除一定要同日交出的期待。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已明確告知可以另外交卡，未要求補辦全班活動」後，「學生說明未寫完是因面對畢業情緒需要時間。」依然可能發生，且沒有取消該選項已做的事；但「學生能說明難以完成卡片的原因」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確告知可以另外交卡，未要求補辦全班活動」，因此使「學生不需要補辦全班活動」有明確的推進路徑，較容易出現「學生決定不為自己一張卡要求全班補辦活動。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已明確告知可以另外交卡，未要求補辦全班活動」後，「學生不希望未完成卡片內容被其他人先看到。」依然可能發生，且沒有取消該選項已做的事；但「未完成卡片的私人內容不被公開」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確告知可以另外交卡，未要求補辦全班活動」，因此使「道謝時間仍由學生自主」有明確的推進路徑，較容易出現「學生理解致謝沒有唯一截止日期，保留自己的步調。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確告知可以另外交卡，未要求補辦全班活動」，因此使「學生不被貼上補交敷衍的標籤」有明確的推進路徑，較容易出現「學生擔心補交被誤認為敷衍，仍在斟酌文字。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已明確告知可以另外交卡，未要求補辦全班活動」後，「學生完成最後一行，尚未決定是否立即交付。」依然可能發生，且沒有取消該選項已做的事；但「學生有權寫完後仍再決定交付」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已明確表示可以繼續保留卡片，不要求立即完成」後，「學生確認個人卡片可在教師節活動後自行交付。」依然可能發生，且沒有取消該選項已做的事；但「個人道謝仍可在活動後交付」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已明確表示可以繼續保留卡片，不要求立即完成」後，「班群不再討論卡片，學生解除一定要同日交出的期待。」依然可能發生，且沒有取消該選項已做的事；但「學生不必配合班群的日程交卡」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確表示可以繼續保留卡片，不要求立即完成」，因此使「學生能說明難以完成卡片的原因」有明確的推進路徑，較容易出現「學生說明未寫完是因面對畢業情緒需要時間。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已明確表示可以繼續保留卡片，不要求立即完成」後，「學生決定不為自己一張卡要求全班補辦活動。」依然可能發生，且沒有取消該選項已做的事；但「學生不需要補辦全班活動」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確表示可以繼續保留卡片，不要求立即完成」，因此使「未完成卡片的私人內容不被公開」有明確的推進路徑，較容易出現「學生不希望未完成卡片內容被其他人先看到。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確表示可以繼續保留卡片，不要求立即完成」，因此使「道謝時間仍由學生自主」有明確的推進路徑，較容易出現「學生理解致謝沒有唯一截止日期，保留自己的步調。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確表示可以繼續保留卡片，不要求立即完成」，因此使「學生不被貼上補交敷衍的標籤」有明確的推進路徑，較容易出現「學生擔心補交被誤認為敷衍，仍在斟酌文字。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確表示可以繼續保留卡片，不要求立即完成」，因此使「學生有權寫完後仍再決定交付」有明確的推進路徑，較容易出現「學生完成最後一行，尚未決定是否立即交付。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」，因此使「個人道謝仍可在活動後交付」有明確的推進路徑，較容易出現「學生確認個人卡片可在教師節活動後自行交付。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」後，「班群不再討論卡片，學生解除一定要同日交出的期待。」依然可能發生，且沒有取消該選項已做的事；但「學生不必配合班群的日程交卡」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」，因此使「學生能說明難以完成卡片的原因」有明確的推進路徑，較容易出現「學生說明未寫完是因面對畢業情緒需要時間。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」後，「學生決定不為自己一張卡要求全班補辦活動。」依然可能發生，且沒有取消該選項已做的事；但「學生不需要補辦全班活動」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」後，「學生不希望未完成卡片內容被其他人先看到。」依然可能發生，且沒有取消該選項已做的事；但「未完成卡片的私人內容不被公開」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」，因此使「道謝時間仍由學生自主」有明確的推進路徑，較容易出現「學生理解致謝沒有唯一截止日期，保留自己的步調。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」，因此使「學生不被貼上補交敷衍的標籤」有明確的推進路徑，較容易出現「學生擔心補交被誤認為敷衍，仍在斟酌文字。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」，因此使「學生有權寫完後仍再決定交付」有明確的推進路徑，較容易出現「學生完成最後一行，尚未決定是否立即交付。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    }
+  ]
+}

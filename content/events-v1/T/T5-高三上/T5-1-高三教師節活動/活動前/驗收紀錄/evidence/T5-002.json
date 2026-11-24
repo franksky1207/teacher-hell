@@ -1,0 +1,356 @@
+{
+  "storyId": "T5-002",
+  "verdict": "needs-review",
+  "reviewer": "GPT-6 第二輪內容重製，待正式語意與 Node 驗收",
+  "storyAndRoles": "本篇聚焦「# T5-002｜同學想整理三年老師口頭禪」；角色須按原第三區在籍／親子關係及遠端知情限制核實。",
+  "fourCodes": "固定種子四碼 3-1／6-3／8-1／9-2，未重抽；NPC 結算仍須對照完整合法持碼與各 R 反應。",
+  "fourChoices": "已重新提出六個普通候選，實際依記載 PRNG 洗牌選三並連同一個情緒候選排列 A～D；四個客觀行動分開記錄，待逐 R 對應再驗。",
+  "eightResults": "八個 R 已逐篇補入角色真實對話與不同結果客觀後果，AVG 分頁與原文同一份事件；角色語氣與情緒需正式語意審閱。",
+  "causal32": "重建了 32 格 4／2／1 相對權重及逐格解釋；目前為待覆核因果理由，不把機械存在視為已核准。",
+  "timeAndLaw": "T5-1:before 共用合法日；不得預設教師節活動已發生，或導師已替其他人作公開同意。",
+  "duplicates": "與本池其餘題材比較核心焦點；全庫跨篇語意查重及正式批准仍待完成。",
+  "characterAudit": "student_a 現任本班學生；其餘必要出場人物只作情境角色，不自建永久數值。",
+  "npcDeltaAudit": "沿用每 R 固定四碼合法底層數值草案，待依 01 與 05 對各人物逐碼理由再次覆核。",
+  "npcWarningReviews": [],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "逐句核對口頭禪的原始上下文",
+        "action": "已和學生標出斷章取義的語錄，未宣布可公開",
+        "tradeoff": "笑點可能減少，後續仍要取得引用同意"
+      },
+      {
+        "id": 2,
+        "short": "把影片改成學生自己的課堂回憶小卡",
+        "action": "已請學生停止模仿教師語氣，改寫自身經驗",
+        "tradeoff": "能避開嘲諷，但製作得重來"
+      },
+      {
+        "id": 3,
+        "short": "請製作者逐一詢問被引用教師能否公開",
+        "action": "已要求在取得教師同意前不公開引用或影像",
+        "tradeoff": "尊重被拍者，可能趕不上原排定時程"
+      },
+      {
+        "id": 4,
+        "short": "請同學先詢問被引用教師願否被拍攝",
+        "action": "已提出先詢問影像及錄音同意的安排",
+        "tradeoff": "取得同意需要時間，可能捨棄鏡頭"
+      },
+      {
+        "id": 5,
+        "short": "請同學從公開版移除可能刺傷他人的段落",
+        "action": "已要求保留私下修改空間而非直接發佈",
+        "tradeoff": "降低傷害，但個別感受仍要確認"
+      },
+      {
+        "id": 6,
+        "short": "請製作者檢查影片是否已被轉傳到其他群組",
+        "action": "已啟動轉傳範圍確認，不保證能一次撤回",
+        "tradeoff": "處理外流，可能揭露先前疏忽"
+      }
+    ],
+    "selectedIds": [
+      3,
+      5,
+      2
+    ],
+    "finalChoiceMap": {
+      "A": 2,
+      "B": "emotional",
+      "C": 3,
+      "D": 5
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請學生停止模仿教師語氣，改寫自身經驗」並不阻止「學生補回遭截斷的教師原話，撤掉誤導剪輯。」。但截圖少了一半的關鍵轉折仍取決於「學生察覺語錄斷章取義」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請學生停止模仿教師語氣，改寫自身經驗」並不阻止「製作者移除未經同意的教師照片，暫緩公開。」。但老師沒有答應入鏡的關鍵轉折仍取決於「未授權肖像先被移除」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已請學生停止模仿教師語氣，改寫自身經驗」，這項處理直接促進「學生選擇用自述回憶取代模仿」的條件，因此較容易出現一張手寫小卡所述的「學生改用手寫回憶卡，不直接模仿教師語氣。」；仍須由當事人實際配合。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請學生停止模仿教師語氣，改寫自身經驗」並不阻止「學生將使同學難過的段落移出公開版本。」。但群組有人不笑的關鍵轉折仍取決於「聽到受傷者的具體感受」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已請學生停止模仿教師語氣，改寫自身經驗」，這項處理直接促進「學生把模仿台詞改成自身經歷」的條件，因此較容易出現字幕改成自己的話所述的「學生改以自身經驗描述教師影響，減少模仿演出。」；仍須由當事人實際配合。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請學生停止模仿教師語氣，改寫自身經驗」並不阻止「半成品被轉傳，學生啟動撤下及流向確認。」。但傳播比想像快的關鍵轉折仍取決於「外流作品能被追查與請求撤下」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已請學生停止模仿教師語氣，改寫自身經驗」，這項處理直接促進「學生願意納入更多不同師長的回憶」的條件，因此較容易出現想謝謝的老師不只一位所述的「學生擴大徵集回憶，不以口頭禪做教師排名。」；仍須由當事人實際配合。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請學生停止模仿教師語氣，改寫自身經驗」並不阻止「學生保留尊重教師意願的版本，尚待個別公開同意。」。但笑點終於有了分寸的關鍵轉折仍取決於「公開版本只保留尊重授權的內容」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓學生說明最在意的笑點和擔心，未直接核准素材」並不阻止「學生補回遭截斷的教師原話，撤掉誤導剪輯。」。但截圖少了一半的關鍵轉折仍取決於「學生察覺語錄斷章取義」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓學生說明最在意的笑點和擔心，未直接核准素材」並不阻止「製作者移除未經同意的教師照片，暫緩公開。」。但老師沒有答應入鏡的關鍵轉折仍取決於「未授權肖像先被移除」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓學生說明最在意的笑點和擔心，未直接核准素材」並不阻止「學生改用手寫回憶卡，不直接模仿教師語氣。」。但一張手寫小卡的關鍵轉折仍取決於「學生選擇用自述回憶取代模仿」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已讓學生說明最在意的笑點和擔心，未直接核准素材」，這項處理直接促進「聽到受傷者的具體感受」的條件，因此較容易出現群組有人不笑所述的「學生將使同學難過的段落移出公開版本。」；仍須由當事人實際配合。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓學生說明最在意的笑點和擔心，未直接核准素材」並不阻止「學生改以自身經驗描述教師影響，減少模仿演出。」。但字幕改成自己的話的關鍵轉折仍取決於「學生把模仿台詞改成自身經歷」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓學生說明最在意的笑點和擔心，未直接核准素材」並不阻止「半成品被轉傳，學生啟動撤下及流向確認。」。但傳播比想像快的關鍵轉折仍取決於「外流作品能被追查與請求撤下」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓學生說明最在意的笑點和擔心，未直接核准素材」並不阻止「學生擴大徵集回憶，不以口頭禪做教師排名。」。但想謝謝的老師不只一位的關鍵轉折仍取決於「學生願意納入更多不同師長的回憶」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已讓學生說明最在意的笑點和擔心，未直接核准素材」，這項處理直接促進「公開版本只保留尊重授權的內容」的條件，因此較容易出現笑點終於有了分寸所述的「學生保留尊重教師意願的版本，尚待個別公開同意。」；仍須由當事人實際配合。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求在取得教師同意前不公開引用或影像」並不阻止「學生補回遭截斷的教師原話，撤掉誤導剪輯。」。但截圖少了一半的關鍵轉折仍取決於「學生察覺語錄斷章取義」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已要求在取得教師同意前不公開引用或影像」，這項處理直接促進「未授權肖像先被移除」的條件，因此較容易出現老師沒有答應入鏡所述的「製作者移除未經同意的教師照片，暫緩公開。」；仍須由當事人實際配合。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求在取得教師同意前不公開引用或影像」並不阻止「學生改用手寫回憶卡，不直接模仿教師語氣。」。但一張手寫小卡的關鍵轉折仍取決於「學生選擇用自述回憶取代模仿」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求在取得教師同意前不公開引用或影像」並不阻止「學生將使同學難過的段落移出公開版本。」。但群組有人不笑的關鍵轉折仍取決於「聽到受傷者的具體感受」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求在取得教師同意前不公開引用或影像」並不阻止「學生改以自身經驗描述教師影響，減少模仿演出。」。但字幕改成自己的話的關鍵轉折仍取決於「學生把模仿台詞改成自身經歷」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "教師已完成「已要求在取得教師同意前不公開引用或影像」，使處理焦點先移到別的環節；傳播比想像快所需的「外流作品能被追查與請求撤下」因此較少被直接推動，但相關人物仍能自行促成「半成品被轉傳，學生啟動撤下及流向確認。」，並非客觀互斥。",
+      "actionPreserved": true,
+      "weight": 1
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求在取得教師同意前不公開引用或影像」並不阻止「學生擴大徵集回憶，不以口頭禪做教師排名。」。但想謝謝的老師不只一位的關鍵轉折仍取決於「學生願意納入更多不同師長的回憶」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已要求在取得教師同意前不公開引用或影像」，這項處理直接促進「公開版本只保留尊重授權的內容」的條件，因此較容易出現笑點終於有了分寸所述的「學生保留尊重教師意願的版本，尚待個別公開同意。」；仍須由當事人實際配合。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求保留私下修改空間而非直接發佈」並不阻止「學生補回遭截斷的教師原話，撤掉誤導剪輯。」。但截圖少了一半的關鍵轉折仍取決於「學生察覺語錄斷章取義」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求保留私下修改空間而非直接發佈」並不阻止「製作者移除未經同意的教師照片，暫緩公開。」。但老師沒有答應入鏡的關鍵轉折仍取決於「未授權肖像先被移除」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求保留私下修改空間而非直接發佈」並不阻止「學生改用手寫回憶卡，不直接模仿教師語氣。」。但一張手寫小卡的關鍵轉折仍取決於「學生選擇用自述回憶取代模仿」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已要求保留私下修改空間而非直接發佈」，這項處理直接促進「聽到受傷者的具體感受」的條件，因此較容易出現群組有人不笑所述的「學生將使同學難過的段落移出公開版本。」；仍須由當事人實際配合。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已要求保留私下修改空間而非直接發佈」，這項處理直接促進「學生把模仿台詞改成自身經歷」的條件，因此較容易出現字幕改成自己的話所述的「學生改以自身經驗描述教師影響，減少模仿演出。」；仍須由當事人實際配合。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求保留私下修改空間而非直接發佈」並不阻止「半成品被轉傳，學生啟動撤下及流向確認。」。但傳播比想像快的關鍵轉折仍取決於「外流作品能被追查與請求撤下」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求保留私下修改空間而非直接發佈」並不阻止「學生擴大徵集回憶，不以口頭禪做教師排名。」。但想謝謝的老師不只一位的關鍵轉折仍取決於「學生願意納入更多不同師長的回憶」，並非教師已完成行動即可保證，故以自然可達處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已要求保留私下修改空間而非直接發佈」，這項處理直接促進「公開版本只保留尊重授權的內容」的條件，因此較容易出現笑點終於有了分寸所述的「學生保留尊重教師意願的版本，尚待個別公開同意。」；仍須由當事人實際配合。",
+      "actionPreserved": true,
+      "weight": 4
+    }
+  ]
+}

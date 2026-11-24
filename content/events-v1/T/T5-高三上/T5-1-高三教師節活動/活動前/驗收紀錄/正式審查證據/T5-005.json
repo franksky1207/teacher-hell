@@ -1,0 +1,368 @@
+{
+  "storyId": "T5-005",
+  "verdict": "pending-content-review",
+  "reviewer": "第二輪重製：結局與因果待實質審閱，非正式核准",
+  "sourceStoryBlobSha": "e91bda621d87dcfcbea04760cbdb0dc7691ae4c3",
+  "storyAndRoles": "需實查本篇各幕常駐角色、無數值情境人物及已知資料。",
+  "fourCodes": "沿用既定四碼；尚未逐碼比對結果增減。",
+  "fourChoices": "6 個具體普通候選已重列並執行可追溯的 3 選抽樣；角色獨立後果待驗。",
+  "eightResults": "已增加角色演出並擴寫八結局，但仍需逐 R 判斷是否重複或過度說明。",
+  "causal32": "384 格中的本篇 32 格已分列個別草案；尚待核准具體因果。",
+  "timeAndLaw": "合法日期與前後池逐日核對待驗。",
+  "duplicates": "相同主題與跨 T 全文查重待驗。",
+  "characterAudit": "待驗",
+  "npcDeltaAudit": "待驗",
+  "npcWarningReviews": [],
+  "ordinaryChoiceSelection": {
+    "storyId": "T5-005",
+    "stage": "second-round-actual-draw",
+    "rng": "xorshift32 Fisher-Yates",
+    "initialSeed": 20300719,
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "明確告訴學生可以只感謝那位科任",
+        "action": "明確告訴學生可以只感謝那位科任",
+        "tradeoff": "減輕內疚，仍須由學生自行決定",
+        "establishedFact": "已向學生說明不需兼顧導師面子，不替科任接受卡片"
+      },
+      {
+        "id": 2,
+        "short": "請學生直接詢問科任是否方便收卡及時間",
+        "action": "請學生直接詢問科任是否方便收卡及時間",
+        "tradeoff": "尊重對方工作安排，可能等不到即時回覆",
+        "establishedFact": "已請學生先確認對方可接收方式，沒有替科任答應"
+      },
+      {
+        "id": 3,
+        "short": "停止把教師名字做成感謝排名或投票",
+        "action": "停止把教師名字做成感謝排名或投票",
+        "tradeoff": "避免比較，班級活動形式要重新協調",
+        "establishedFact": "已要求籌備者移除教師人氣排序構想，不禁止個人卡片"
+      },
+      {
+        "id": 4,
+        "short": "協助學生把感謝寫成一段具體課堂回憶",
+        "action": "協助學生把感謝寫成一段具體課堂回憶",
+        "tradeoff": "內容更真誠，但耗時整理",
+        "establishedFact": "已請學生使用自己經驗寫卡，沒要求向每位教師表態"
+      },
+      {
+        "id": 5,
+        "short": "確認被感謝科任是否願意公開被提及",
+        "action": "確認被感謝科任是否願意公開被提及",
+        "tradeoff": "尊重教師意願，可能無法放入活動",
+        "establishedFact": "已請學生先詢問科任公開授權，未代為允諾"
+      },
+      {
+        "id": 6,
+        "short": "請班級停止比較誰收到的卡片多",
+        "action": "請班級停止比較誰收到的卡片多",
+        "tradeoff": "降低比較壓力，但不能直接決定個人心意",
+        "establishedFact": "已要求不要彙整送卡數量作教師排名"
+      }
+    ],
+    "selectedIds": [
+      6,
+      2,
+      5
+    ],
+    "finalChoiceMap": {
+      "A": 5,
+      "B": 2,
+      "C": "emotional",
+      "D": 6
+    },
+    "note": "依固定初始種子執行六選三及四選項洗牌，保留候選行動和明確取捨；內容因果尚需逐格審查。"
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生先詢問科任公開授權，未代為允諾」，「學生不必硬把導師加入卡片名單」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生先詢問科任公開授權，未代為允諾」，「科任接收卡片的時間與同意需要核實」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已請學生先詢問科任公開授權，未代為允諾」出發，此處置有機會直接促使「不能用教師收到的卡片數量排序」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生先詢問科任公開授權，未代為允諾」，「學生將真實受幫助經驗寫進卡片」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生先詢問科任公開授權，未代為允諾」，「學生不再以導師可能吃醋決定謝誰」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生先詢問科任公開授權，未代為允諾」，「卡片偶然被看到仍屬當事人的私事」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已請學生先詢問科任公開授權，未代為允諾」出發，此處置有機會直接促使「不同師生關係不需一式一樣的謝意」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生先詢問科任公開授權，未代為允諾」，「學生親自交付自己選擇的卡片」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生先確認對方可接收方式，沒有替科任答應」，「學生不必硬把導師加入卡片名單」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已請學生先確認對方可接收方式，沒有替科任答應」出發，此處置有機會直接促使「科任接收卡片的時間與同意需要核實」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生先確認對方可接收方式，沒有替科任答應」，「不能用教師收到的卡片數量排序」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生先確認對方可接收方式，沒有替科任答應」，「學生將真實受幫助經驗寫進卡片」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生先確認對方可接收方式，沒有替科任答應」，「學生不再以導師可能吃醋決定謝誰」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生先確認對方可接收方式，沒有替科任答應」，「卡片偶然被看到仍屬當事人的私事」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生先確認對方可接收方式，沒有替科任答應」，「不同師生關係不需一式一樣的謝意」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已請學生先確認對方可接收方式，沒有替科任答應」出發，此處置有機會直接促使「學生親自交付自己選擇的卡片」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已私下聽學生擔心的來源，不要求他一定送導師卡片」，「學生不必硬把導師加入卡片名單」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已私下聽學生擔心的來源，不要求他一定送導師卡片」，「科任接收卡片的時間與同意需要核實」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已私下聽學生擔心的來源，不要求他一定送導師卡片」，「不能用教師收到的卡片數量排序」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已私下聽學生擔心的來源，不要求他一定送導師卡片」出發，此處置有機會直接促使「學生將真實受幫助經驗寫進卡片」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已私下聽學生擔心的來源，不要求他一定送導師卡片」出發，此處置有機會直接促使「學生不再以導師可能吃醋決定謝誰」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已私下聽學生擔心的來源，不要求他一定送導師卡片」，「卡片偶然被看到仍屬當事人的私事」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已私下聽學生擔心的來源，不要求他一定送導師卡片」出發，此處置有機會直接促使「不同師生關係不需一式一樣的謝意」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已私下聽學生擔心的來源，不要求他一定送導師卡片」出發，此處置有機會直接促使「學生親自交付自己選擇的卡片」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已要求不要彙整送卡數量作教師排名」，「學生不必硬把導師加入卡片名單」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已要求不要彙整送卡數量作教師排名」出發，此處置有機會直接促使「科任接收卡片的時間與同意需要核實」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已要求不要彙整送卡數量作教師排名」出發，此處置有機會直接促使「不能用教師收到的卡片數量排序」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已要求不要彙整送卡數量作教師排名」，「學生將真實受幫助經驗寫進卡片」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已要求不要彙整送卡數量作教師排名」，「學生不再以導師可能吃醋決定謝誰」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已要求不要彙整送卡數量作教師排名」，「卡片偶然被看到仍屬當事人的私事」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已要求不要彙整送卡數量作教師排名」出發，此處置有機會直接促使「不同師生關係不需一式一樣的謝意」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已要求不要彙整送卡數量作教師排名」出發，此處置有機會直接促使「學生親自交付自己選擇的卡片」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    }
+  ]
+}

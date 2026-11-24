@@ -1,0 +1,2782 @@
+{
+  "pool": "T6-1:after",
+  "stage": "author-phase static checks only",
+  "dates": [
+    "2029-02-26",
+    "2029-02-27",
+    "2029-03-02",
+    "2029-03-05",
+    "2029-03-06",
+    "2029-03-07",
+    "2029-03-08",
+    "2029-03-09"
+  ],
+  "stories": {
+    "T6-019": {
+      "sourceBlobSha": "5b6f01226cc4de0d1d20c364abc95c288d175614",
+      "seed": "S1385",
+      "openingLength": 164,
+      "resultLengths": [
+        118,
+        103,
+        112,
+        103,
+        117,
+        100,
+        104,
+        112
+      ],
+      "resultTitles": [
+        "學生以為導師一句話就能讓他不用再上課",
+        "任課教師說課程仍有未完成的學習內容",
+        "學生原本說課再上也沒用",
+        "有同學跟著要求全班停課",
+        "科任提供一項依法可行的課內替代任務",
+        "學生把多出來的自習時間都塞進新的升學查詢",
+        "家長支持孩子立即退出",
+        "學生最終繼續參與必要課程"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "先問明白他想退出的具體原因",
+          "emotional": true,
+          "completed": "你已先問明白他想退出的具體原因，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "先讓焦慮能說出口，尚未消除資訊缺口。"
+        },
+        {
+          "id": "B",
+          "action": "將個人疲倦與正式課務分開處理",
+          "emotional": false,
+          "completed": "你已將個人疲倦與正式課務分開處理，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "可以提供可確認依據，但未保證對方接受。"
+        },
+        {
+          "id": "C",
+          "action": "向有權任課教師詢問可行調整",
+          "emotional": false,
+          "completed": "你已向有權任課教師詢問可行調整，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "行動範圍較具體，仍須當事人後續參與。"
+        },
+        {
+          "id": "D",
+          "action": "協助學生安排課外時間而不擅停課",
+          "emotional": false,
+          "completed": "你已協助學生安排課外時間而不擅停課，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "可尊重不同需求，卻可能無法立即得到答案。"
+        }
+      ],
+      "matrix": [
+        {
+          "choice": "A",
+          "weights": [
+            4,
+            2,
+            1,
+            2,
+            4,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            2,
+            4,
+            2,
+            1,
+            2,
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            1,
+            2,
+            4,
+            2,
+            1,
+            2,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            2,
+            1,
+            2,
+            4,
+            2,
+            1,
+            2,
+            4
+          ]
+        }
+      ],
+      "states": [
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ]
+      ],
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已先問明白他想退出的具體原因，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生以為導師一句話就能讓他不用再上課",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先問明白他想退出的具體原因，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "任課教師說課程仍有未完成的學習內容",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已先問明白他想退出的具體原因，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生原本說課再上也沒用",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已先問明白他想退出的具體原因，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有同學跟著要求全班停課",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已先問明白他想退出的具體原因，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "科任提供一項依法可行的課內替代任務",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先問明白他想退出的具體原因，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生把多出來的自習時間都塞進新的升學查詢",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已先問明白他想退出的具體原因，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長支持孩子立即退出",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已先問明白他想退出的具體原因，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生最終繼續參與必要課程",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已將個人疲倦與正式課務分開處理，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生以為導師一句話就能讓他不用再上課",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已將個人疲倦與正式課務分開處理，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "任課教師說課程仍有未完成的學習內容",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已將個人疲倦與正式課務分開處理，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生原本說課再上也沒用",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已將個人疲倦與正式課務分開處理，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有同學跟著要求全班停課",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已將個人疲倦與正式課務分開處理，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "科任提供一項依法可行的課內替代任務",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已將個人疲倦與正式課務分開處理，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生把多出來的自習時間都塞進新的升學查詢",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已將個人疲倦與正式課務分開處理，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長支持孩子立即退出",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已將個人疲倦與正式課務分開處理，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生最終繼續參與必要課程",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已向有權任課教師詢問可行調整，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生以為導師一句話就能讓他不用再上課",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已向有權任課教師詢問可行調整，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "任課教師說課程仍有未完成的學習內容",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已向有權任課教師詢問可行調整，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生原本說課再上也沒用",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已向有權任課教師詢問可行調整，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有同學跟著要求全班停課",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已向有權任課教師詢問可行調整，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "科任提供一項依法可行的課內替代任務",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已向有權任課教師詢問可行調整，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生把多出來的自習時間都塞進新的升學查詢",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已向有權任課教師詢問可行調整，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長支持孩子立即退出",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已向有權任課教師詢問可行調整，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生最終繼續參與必要課程",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已協助學生安排課外時間而不擅停課，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生以為導師一句話就能讓他不用再上課",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已協助學生安排課外時間而不擅停課，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "任課教師說課程仍有未完成的學習內容",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已協助學生安排課外時間而不擅停課，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生原本說課再上也沒用",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已協助學生安排課外時間而不擅停課，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有同學跟著要求全班停課",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已協助學生安排課外時間而不擅停課，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "科任提供一項依法可行的課內替代任務",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已協助學生安排課外時間而不擅停課，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生把多出來的自習時間都塞進新的升學查詢",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已協助學生安排課外時間而不擅停課，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長支持孩子立即退出",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已協助學生安排課外時間而不擅停課，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生最終繼續參與必要課程",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        }
+      ],
+      "crossDayPrecheck": [
+        {
+          "date": "2029-02-26",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-02-27",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-02",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-05",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-06",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-07",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-08",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-09",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        }
+      ],
+      "staticFailures": [],
+      "environment": "GitHub file-based static inspection; Node/Actions not run"
+    },
+    "T6-020": {
+      "sourceBlobSha": "1f00e32cd14b2b1cd6f0211c864ba510bcf01cb3",
+      "seed": "S1388",
+      "openingLength": 159,
+      "resultLengths": [
+        107,
+        98,
+        108,
+        104,
+        99,
+        112,
+        99,
+        108
+      ],
+      "resultTitles": [
+        "被討論的幹部說自己願意繼續做事",
+        "有人把猜測的成績拿來當撤換理由",
+        "幹部自己提出想卸任",
+        "另一名高分同學被拱接任",
+        "有人要求公布所有幹部成績作比較",
+        "原先提出撤換的學生承認自己是怕同學被工作拖累",
+        "當事人因議論而暫停一次班務",
+        "班級最後保留職務"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "先釐清幹部實際職務與規範",
+          "emotional": true,
+          "completed": "你已先釐清幹部實際職務與規範，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "先讓焦慮能說出口，尚未消除資訊缺口。"
+        },
+        {
+          "id": "B",
+          "action": "讓被議論者說明自身意願",
+          "emotional": false,
+          "completed": "你已讓被議論者說明自身意願，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "可以提供可確認依據，但未保證對方接受。"
+        },
+        {
+          "id": "C",
+          "action": "制止以未授權成績替人貼標籤",
+          "emotional": false,
+          "completed": "你已制止以未授權成績替人貼標籤，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "行動範圍較具體，仍須當事人後續參與。"
+        },
+        {
+          "id": "D",
+          "action": "就工作量另討論合理分工",
+          "emotional": false,
+          "completed": "你已就工作量另討論合理分工，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "可尊重不同需求，卻可能無法立即得到答案。"
+        }
+      ],
+      "matrix": [
+        {
+          "choice": "A",
+          "weights": [
+            4,
+            2,
+            1,
+            2,
+            4,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            2,
+            4,
+            2,
+            1,
+            2,
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            1,
+            2,
+            4,
+            2,
+            1,
+            2,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            2,
+            1,
+            2,
+            4,
+            2,
+            1,
+            2,
+            4
+          ]
+        }
+      ],
+      "states": [
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ]
+      ],
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已先釐清幹部實際職務與規範，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "被討論的幹部說自己願意繼續做事",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先釐清幹部實際職務與規範，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人把猜測的成績拿來當撤換理由",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已先釐清幹部實際職務與規範，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "幹部自己提出想卸任",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已先釐清幹部實際職務與規範，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "另一名高分同學被拱接任",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已先釐清幹部實際職務與規範，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人要求公布所有幹部成績作比較",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先釐清幹部實際職務與規範，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "原先提出撤換的學生承認自己是怕同學被工作拖累",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已先釐清幹部實際職務與規範，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "當事人因議論而暫停一次班務",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已先釐清幹部實際職務與規範，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "班級最後保留職務",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已讓被議論者說明自身意願，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "被討論的幹部說自己願意繼續做事",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已讓被議論者說明自身意願，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人把猜測的成績拿來當撤換理由",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已讓被議論者說明自身意願，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "幹部自己提出想卸任",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已讓被議論者說明自身意願，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "另一名高分同學被拱接任",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已讓被議論者說明自身意願，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人要求公布所有幹部成績作比較",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已讓被議論者說明自身意願，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "原先提出撤換的學生承認自己是怕同學被工作拖累",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已讓被議論者說明自身意願，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "當事人因議論而暫停一次班務",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已讓被議論者說明自身意願，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "班級最後保留職務",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已制止以未授權成績替人貼標籤，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "被討論的幹部說自己願意繼續做事",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已制止以未授權成績替人貼標籤，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人把猜測的成績拿來當撤換理由",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已制止以未授權成績替人貼標籤，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "幹部自己提出想卸任",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已制止以未授權成績替人貼標籤，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "另一名高分同學被拱接任",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已制止以未授權成績替人貼標籤，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人要求公布所有幹部成績作比較",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已制止以未授權成績替人貼標籤，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "原先提出撤換的學生承認自己是怕同學被工作拖累",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已制止以未授權成績替人貼標籤，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "當事人因議論而暫停一次班務",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已制止以未授權成績替人貼標籤，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "班級最後保留職務",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已就工作量另討論合理分工，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "被討論的幹部說自己願意繼續做事",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已就工作量另討論合理分工，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人把猜測的成績拿來當撤換理由",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已就工作量另討論合理分工，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "幹部自己提出想卸任",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已就工作量另討論合理分工，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "另一名高分同學被拱接任",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已就工作量另討論合理分工，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人要求公布所有幹部成績作比較",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已就工作量另討論合理分工，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "原先提出撤換的學生承認自己是怕同學被工作拖累",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已就工作量另討論合理分工，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "當事人因議論而暫停一次班務",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已就工作量另討論合理分工，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "班級最後保留職務",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        }
+      ],
+      "crossDayPrecheck": [
+        {
+          "date": "2029-02-26",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-02-27",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-02",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-05",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-06",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-07",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-08",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-09",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        }
+      ],
+      "staticFailures": [],
+      "environment": "GitHub file-based static inspection; Node/Actions not run"
+    },
+    "T6-021": {
+      "sourceBlobSha": "43a872c2518836c282a3ea83b49144fb1227625c",
+      "seed": "S1393",
+      "openingLength": 163,
+      "resultLengths": [
+        111,
+        106,
+        114,
+        112,
+        108,
+        104,
+        109,
+        114
+      ],
+      "resultTitles": [
+        "學生把『還沒公布』打進訊息草稿又刪掉",
+        "家長突然來電詢問",
+        "學生坦承自己怕的是被罵而不是成績本身",
+        "家長從正式管道知道成績已公布",
+        "學生原本想讓導師替他傳話",
+        "有同學建議隨便截一張查分故障畫面",
+        "家長回覆得很冷淡",
+        "學生終於說明已知道成績且尚未準備好談每一科"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "先確認學生害怕的具體風險",
+          "emotional": true,
+          "completed": "你已先確認學生害怕的具體風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "先讓焦慮能說出口，尚未消除資訊缺口。"
+        },
+        {
+          "id": "B",
+          "action": "說明老師不能協助編造公布日期",
+          "emotional": false,
+          "completed": "你已說明老師不能協助編造公布日期，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "可以提供可確認依據，但未保證對方接受。"
+        },
+        {
+          "id": "C",
+          "action": "陪他擬可自己說出口的訊息",
+          "emotional": false,
+          "completed": "你已陪他擬可自己說出口的訊息，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "行動範圍較具體，仍須當事人後續參與。"
+        },
+        {
+          "id": "D",
+          "action": "評估是否需要正式安全與輔導支援",
+          "emotional": false,
+          "completed": "你已評估是否需要正式安全與輔導支援，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "可尊重不同需求，卻可能無法立即得到答案。"
+        }
+      ],
+      "matrix": [
+        {
+          "choice": "A",
+          "weights": [
+            4,
+            2,
+            1,
+            2,
+            4,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            2,
+            4,
+            2,
+            1,
+            2,
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            1,
+            2,
+            4,
+            2,
+            1,
+            2,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            2,
+            1,
+            2,
+            4,
+            2,
+            1,
+            2,
+            4
+          ]
+        }
+      ],
+      "states": [
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ]
+      ],
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已先確認學生害怕的具體風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生把『還沒公布』打進訊息草稿又刪掉",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先確認學生害怕的具體風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長突然來電詢問",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已先確認學生害怕的具體風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生坦承自己怕的是被罵而不是成績本身",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已先確認學生害怕的具體風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長從正式管道知道成績已公布",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已先確認學生害怕的具體風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生原本想讓導師替他傳話",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先確認學生害怕的具體風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有同學建議隨便截一張查分故障畫面",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已先確認學生害怕的具體風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長回覆得很冷淡",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已先確認學生害怕的具體風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生終於說明已知道成績且尚未準備好談每一科",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已說明老師不能協助編造公布日期，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生把『還沒公布』打進訊息草稿又刪掉",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已說明老師不能協助編造公布日期，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長突然來電詢問",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已說明老師不能協助編造公布日期，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生坦承自己怕的是被罵而不是成績本身",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已說明老師不能協助編造公布日期，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長從正式管道知道成績已公布",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已說明老師不能協助編造公布日期，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生原本想讓導師替他傳話",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已說明老師不能協助編造公布日期，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有同學建議隨便截一張查分故障畫面",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已說明老師不能協助編造公布日期，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長回覆得很冷淡",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已說明老師不能協助編造公布日期，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生終於說明已知道成績且尚未準備好談每一科",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已陪他擬可自己說出口的訊息，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生把『還沒公布』打進訊息草稿又刪掉",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已陪他擬可自己說出口的訊息，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長突然來電詢問",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已陪他擬可自己說出口的訊息，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生坦承自己怕的是被罵而不是成績本身",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已陪他擬可自己說出口的訊息，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長從正式管道知道成績已公布",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已陪他擬可自己說出口的訊息，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生原本想讓導師替他傳話",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已陪他擬可自己說出口的訊息，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有同學建議隨便截一張查分故障畫面",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已陪他擬可自己說出口的訊息，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長回覆得很冷淡",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已陪他擬可自己說出口的訊息，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生終於說明已知道成績且尚未準備好談每一科",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已評估是否需要正式安全與輔導支援，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生把『還沒公布』打進訊息草稿又刪掉",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已評估是否需要正式安全與輔導支援，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長突然來電詢問",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已評估是否需要正式安全與輔導支援，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生坦承自己怕的是被罵而不是成績本身",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已評估是否需要正式安全與輔導支援，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長從正式管道知道成績已公布",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已評估是否需要正式安全與輔導支援，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生原本想讓導師替他傳話",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已評估是否需要正式安全與輔導支援，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有同學建議隨便截一張查分故障畫面",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已評估是否需要正式安全與輔導支援，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長回覆得很冷淡",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已評估是否需要正式安全與輔導支援，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生終於說明已知道成績且尚未準備好談每一科",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        }
+      ],
+      "crossDayPrecheck": [
+        {
+          "date": "2029-02-26",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-02-27",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-02",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-05",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-06",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-07",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-08",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-09",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        }
+      ],
+      "staticFailures": [],
+      "environment": "GitHub file-based static inspection; Node/Actions not run"
+    },
+    "T6-022": {
+      "sourceBlobSha": "d0b06743c27befdfaadcd99dd57fc096d165440a",
+      "seed": "S1395",
+      "openingLength": 166,
+      "resultLengths": [
+        108,
+        112,
+        100,
+        106,
+        100,
+        100,
+        105,
+        110
+      ],
+      "resultTitles": [
+        "家長把訊息停在送出前",
+        "孩子看見自己的截圖被預先做成賀圖",
+        "親友群有人先聽到消息",
+        "家長說只是讓大家開心",
+        "有人建議把截圖裁掉姓名即可",
+        "孩子原先同意家長私訊一位親人",
+        "家長把報喜改為『孩子完成一件努力很久的事』",
+        "孩子最後願意與家長一起選一張沒有成績的合照留念"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "先肯定家長喜悅並確認分享範圍",
+          "emotional": true,
+          "completed": "你已先肯定家長喜悅並確認分享範圍，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "先讓焦慮能說出口，尚未消除資訊缺口。"
+        },
+        {
+          "id": "B",
+          "action": "請家長與孩子分開說明同意內容",
+          "emotional": false,
+          "completed": "你已請家長與孩子分開說明同意內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "可以提供可確認依據，但未保證對方接受。"
+        },
+        {
+          "id": "C",
+          "action": "說明轉貼截圖與個資風險",
+          "emotional": false,
+          "completed": "你已說明轉貼截圖與個資風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "行動範圍較具體，仍須當事人後續參與。"
+        },
+        {
+          "id": "D",
+          "action": "協助改寫不含成績與姓名的報喜內容",
+          "emotional": false,
+          "completed": "你已協助改寫不含成績與姓名的報喜內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "可尊重不同需求，卻可能無法立即得到答案。"
+        }
+      ],
+      "matrix": [
+        {
+          "choice": "A",
+          "weights": [
+            4,
+            2,
+            1,
+            2,
+            4,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            2,
+            4,
+            2,
+            1,
+            2,
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            1,
+            2,
+            4,
+            2,
+            1,
+            2,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            2,
+            1,
+            2,
+            4,
+            2,
+            1,
+            2,
+            4
+          ]
+        }
+      ],
+      "states": [
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ]
+      ],
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已先肯定家長喜悅並確認分享範圍，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長把訊息停在送出前",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先肯定家長喜悅並確認分享範圍，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "孩子看見自己的截圖被預先做成賀圖",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已先肯定家長喜悅並確認分享範圍，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "親友群有人先聽到消息",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已先肯定家長喜悅並確認分享範圍，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長說只是讓大家開心",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已先肯定家長喜悅並確認分享範圍，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人建議把截圖裁掉姓名即可",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先肯定家長喜悅並確認分享範圍，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "孩子原先同意家長私訊一位親人",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已先肯定家長喜悅並確認分享範圍，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長把報喜改為『孩子完成一件努力很久的事』",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已先肯定家長喜悅並確認分享範圍，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "孩子最後願意與家長一起選一張沒有成績的合照留念",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已請家長與孩子分開說明同意內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長把訊息停在送出前",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已請家長與孩子分開說明同意內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "孩子看見自己的截圖被預先做成賀圖",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已請家長與孩子分開說明同意內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "親友群有人先聽到消息",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已請家長與孩子分開說明同意內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長說只是讓大家開心",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已請家長與孩子分開說明同意內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人建議把截圖裁掉姓名即可",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已請家長與孩子分開說明同意內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "孩子原先同意家長私訊一位親人",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已請家長與孩子分開說明同意內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長把報喜改為『孩子完成一件努力很久的事』",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已請家長與孩子分開說明同意內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "孩子最後願意與家長一起選一張沒有成績的合照留念",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已說明轉貼截圖與個資風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長把訊息停在送出前",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已說明轉貼截圖與個資風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "孩子看見自己的截圖被預先做成賀圖",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已說明轉貼截圖與個資風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "親友群有人先聽到消息",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已說明轉貼截圖與個資風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長說只是讓大家開心",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已說明轉貼截圖與個資風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人建議把截圖裁掉姓名即可",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已說明轉貼截圖與個資風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "孩子原先同意家長私訊一位親人",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已說明轉貼截圖與個資風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長把報喜改為『孩子完成一件努力很久的事』",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已說明轉貼截圖與個資風險，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "孩子最後願意與家長一起選一張沒有成績的合照留念",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已協助改寫不含成績與姓名的報喜內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長把訊息停在送出前",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已協助改寫不含成績與姓名的報喜內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "孩子看見自己的截圖被預先做成賀圖",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已協助改寫不含成績與姓名的報喜內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "親友群有人先聽到消息",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已協助改寫不含成績與姓名的報喜內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長說只是讓大家開心",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已協助改寫不含成績與姓名的報喜內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人建議把截圖裁掉姓名即可",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已協助改寫不含成績與姓名的報喜內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "孩子原先同意家長私訊一位親人",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已協助改寫不含成績與姓名的報喜內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長把報喜改為『孩子完成一件努力很久的事』",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已協助改寫不含成績與姓名的報喜內容，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "孩子最後願意與家長一起選一張沒有成績的合照留念",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        }
+      ],
+      "crossDayPrecheck": [
+        {
+          "date": "2029-02-26",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-02-27",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-02",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-05",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-06",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-07",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-08",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-09",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        }
+      ],
+      "staticFailures": [],
+      "environment": "GitHub file-based static inspection; Node/Actions not run"
+    },
+    "T6-023": {
+      "sourceBlobSha": "c2ddb10e6a1155a62a4b89290b0810542b594b5c",
+      "seed": "S1396",
+      "openingLength": 164,
+      "resultLengths": [
+        109,
+        103,
+        98,
+        107,
+        102,
+        110,
+        97,
+        100
+      ],
+      "resultTitles": [
+        "學生把那個方向的公開條件指給你看",
+        "有同學聽到消息就喊『你穩了』",
+        "家長原本打算勸他放棄",
+        "學生查到自己欠缺一項必要條件",
+        "他把網路論壇的成功案例拿來比較",
+        "同學問他為什麼考得普通還那麼開心",
+        "學生約定自己先完成一份條件核對",
+        "他將新方向列在清單中"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "先確認他找到的是哪一條正式條件",
+          "emotional": true,
+          "completed": "你已先確認他找到的是哪一條正式條件，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "先讓焦慮能說出口，尚未消除資訊缺口。"
+        },
+        {
+          "id": "B",
+          "action": "一起把仍未符合的項目列清楚",
+          "emotional": false,
+          "completed": "你已一起把仍未符合的項目列清楚，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "可以提供可確認依據，但未保證對方接受。"
+        },
+        {
+          "id": "C",
+          "action": "肯定探索但不保證一階資格",
+          "emotional": false,
+          "completed": "你已肯定探索但不保證一階資格，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "行動範圍較具體，仍須當事人後續參與。"
+        },
+        {
+          "id": "D",
+          "action": "協助訂下自願且可行的查核步驟",
+          "emotional": false,
+          "completed": "你已協助訂下自願且可行的查核步驟，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "可尊重不同需求，卻可能無法立即得到答案。"
+        }
+      ],
+      "matrix": [
+        {
+          "choice": "A",
+          "weights": [
+            4,
+            2,
+            1,
+            2,
+            4,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            2,
+            4,
+            2,
+            1,
+            2,
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            1,
+            2,
+            4,
+            2,
+            1,
+            2,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            2,
+            1,
+            2,
+            4,
+            2,
+            1,
+            2,
+            4
+          ]
+        }
+      ],
+      "states": [
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ]
+      ],
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已先確認他找到的是哪一條正式條件，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生把那個方向的公開條件指給你看",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先確認他找到的是哪一條正式條件，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有同學聽到消息就喊『你穩了』",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已先確認他找到的是哪一條正式條件，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長原本打算勸他放棄",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已先確認他找到的是哪一條正式條件，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生查到自己欠缺一項必要條件",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已先確認他找到的是哪一條正式條件，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他把網路論壇的成功案例拿來比較",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先確認他找到的是哪一條正式條件，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "同學問他為什麼考得普通還那麼開心",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已先確認他找到的是哪一條正式條件，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生約定自己先完成一份條件核對",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已先確認他找到的是哪一條正式條件，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他將新方向列在清單中",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已一起把仍未符合的項目列清楚，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生把那個方向的公開條件指給你看",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已一起把仍未符合的項目列清楚，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有同學聽到消息就喊『你穩了』",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已一起把仍未符合的項目列清楚，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長原本打算勸他放棄",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已一起把仍未符合的項目列清楚，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生查到自己欠缺一項必要條件",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已一起把仍未符合的項目列清楚，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他把網路論壇的成功案例拿來比較",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已一起把仍未符合的項目列清楚，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "同學問他為什麼考得普通還那麼開心",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已一起把仍未符合的項目列清楚，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生約定自己先完成一份條件核對",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已一起把仍未符合的項目列清楚，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他將新方向列在清單中",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已肯定探索但不保證一階資格，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生把那個方向的公開條件指給你看",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已肯定探索但不保證一階資格，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有同學聽到消息就喊『你穩了』",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已肯定探索但不保證一階資格，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長原本打算勸他放棄",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已肯定探索但不保證一階資格，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生查到自己欠缺一項必要條件",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已肯定探索但不保證一階資格，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他把網路論壇的成功案例拿來比較",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已肯定探索但不保證一階資格，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "同學問他為什麼考得普通還那麼開心",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已肯定探索但不保證一階資格，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生約定自己先完成一份條件核對",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已肯定探索但不保證一階資格，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他將新方向列在清單中",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已協助訂下自願且可行的查核步驟，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生把那個方向的公開條件指給你看",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已協助訂下自願且可行的查核步驟，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有同學聽到消息就喊『你穩了』",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已協助訂下自願且可行的查核步驟，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "家長原本打算勸他放棄",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已協助訂下自願且可行的查核步驟，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生查到自己欠缺一項必要條件",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已協助訂下自願且可行的查核步驟，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他把網路論壇的成功案例拿來比較",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已協助訂下自願且可行的查核步驟，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "同學問他為什麼考得普通還那麼開心",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已協助訂下自願且可行的查核步驟，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生約定自己先完成一份條件核對",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已協助訂下自願且可行的查核步驟，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他將新方向列在清單中",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        }
+      ],
+      "crossDayPrecheck": [
+        {
+          "date": "2029-02-26",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-02-27",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-02",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-05",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-06",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-07",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-08",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-09",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        }
+      ],
+      "staticFailures": [],
+      "environment": "GitHub file-based static inspection; Node/Actions not run"
+    },
+    "T6-024": {
+      "sourceBlobSha": "4b8a5d7a5220a039e1457930fd4a7b3a63c50ed8",
+      "seed": "S1397",
+      "openingLength": 159,
+      "resultLengths": [
+        103,
+        102,
+        104,
+        106,
+        104,
+        107,
+        105,
+        109
+      ],
+      "resultTitles": [
+        "學生在筆記寫下一個很基本的問題",
+        "同學說『天才還問這個』",
+        "他私下說被叫天才有時也會高興",
+        "有人把他的錯題拍成玩笑",
+        "學生終於在群組問一道簡單題",
+        "一位同學說自己原本也怕被高分者嫌笨",
+        "學生想乾脆不再參與討論",
+        "他最後自己說『我考得不錯"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "先確認當事人是否願意談這個稱呼",
+          "emotional": true,
+          "completed": "你已先確認當事人是否願意談這個稱呼，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "先讓焦慮能說出口，尚未消除資訊缺口。"
+        },
+        {
+          "id": "B",
+          "action": "指出高分不代表所有內容都會",
+          "emotional": false,
+          "completed": "你已指出高分不代表所有內容都會，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "可以提供可確認依據，但未保證對方接受。"
+        },
+        {
+          "id": "C",
+          "action": "提供不必公開的課堂提問方式",
+          "emotional": false,
+          "completed": "你已提供不必公開的課堂提問方式，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "行動範圍較具體，仍須當事人後續參與。"
+        },
+        {
+          "id": "D",
+          "action": "讓同學討論稱呼是否得到本人同意",
+          "emotional": false,
+          "completed": "你已讓同學討論稱呼是否得到本人同意，沒有替學生宣布升學結果或取消其他教師職權。",
+          "tradeoff": "可尊重不同需求，卻可能無法立即得到答案。"
+        }
+      ],
+      "matrix": [
+        {
+          "choice": "A",
+          "weights": [
+            4,
+            2,
+            1,
+            2,
+            4,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            2,
+            4,
+            2,
+            1,
+            2,
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            1,
+            2,
+            4,
+            2,
+            1,
+            2,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            2,
+            1,
+            2,
+            4,
+            2,
+            1,
+            2,
+            4
+          ]
+        }
+      ],
+      "states": [
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ]
+      ],
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已先確認當事人是否願意談這個稱呼，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生在筆記寫下一個很基本的問題",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先確認當事人是否願意談這個稱呼，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "同學說『天才還問這個』",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已先確認當事人是否願意談這個稱呼，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他私下說被叫天才有時也會高興",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已先確認當事人是否願意談這個稱呼，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人把他的錯題拍成玩笑",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已先確認當事人是否願意談這個稱呼，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生終於在群組問一道簡單題",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先確認當事人是否願意談這個稱呼，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "一位同學說自己原本也怕被高分者嫌笨",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已先確認當事人是否願意談這個稱呼，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生想乾脆不再參與討論",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已先確認當事人是否願意談這個稱呼，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他最後自己說『我考得不錯",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已指出高分不代表所有內容都會，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生在筆記寫下一個很基本的問題",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已指出高分不代表所有內容都會，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "同學說『天才還問這個』",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已指出高分不代表所有內容都會，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他私下說被叫天才有時也會高興",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已指出高分不代表所有內容都會，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人把他的錯題拍成玩笑",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已指出高分不代表所有內容都會，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生終於在群組問一道簡單題",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已指出高分不代表所有內容都會，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "一位同學說自己原本也怕被高分者嫌笨",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已指出高分不代表所有內容都會，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生想乾脆不再參與討論",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已指出高分不代表所有內容都會，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他最後自己說『我考得不錯",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已提供不必公開的課堂提問方式，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生在筆記寫下一個很基本的問題",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已提供不必公開的課堂提問方式，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "同學說『天才還問這個』",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已提供不必公開的課堂提問方式，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他私下說被叫天才有時也會高興",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已提供不必公開的課堂提問方式，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人把他的錯題拍成玩笑",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已提供不必公開的課堂提問方式，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生終於在群組問一道簡單題",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已提供不必公開的課堂提問方式，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "一位同學說自己原本也怕被高分者嫌笨",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已提供不必公開的課堂提問方式，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生想乾脆不再參與討論",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已提供不必公開的課堂提問方式，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他最後自己說『我考得不錯",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已讓同學討論稱呼是否得到本人同意，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生在筆記寫下一個很基本的問題",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已讓同學討論稱呼是否得到本人同意，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "同學說『天才還問這個』",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已讓同學討論稱呼是否得到本人同意，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他私下說被叫天才有時也會高興",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已讓同學討論稱呼是否得到本人同意，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "有人把他的錯題拍成玩笑",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已讓同學討論稱呼是否得到本人同意，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生終於在群組問一道簡單題",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已讓同學討論稱呼是否得到本人同意，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "一位同學說自己原本也怕被高分者嫌笨",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已讓同學討論稱呼是否得到本人同意，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "學生想乾脆不再參與討論",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已讓同學討論稱呼是否得到本人同意，沒有替學生宣布升學結果或取消其他教師職權。",
+          "resultTitle": "他最後自己說『我考得不錯",
+          "semanticReview": "author candidate; full independent causal verification not yet performed"
+        }
+      ],
+      "crossDayPrecheck": [
+        {
+          "date": "2029-02-26",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-02-27",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-02",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-05",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-06",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-07",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-08",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-09",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        }
+      ],
+      "staticFailures": [],
+      "environment": "GitHub file-based static inspection; Node/Actions not run"
+    }
+  }
+}

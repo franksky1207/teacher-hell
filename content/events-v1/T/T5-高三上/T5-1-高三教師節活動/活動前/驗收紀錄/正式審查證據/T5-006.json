@@ -1,0 +1,368 @@
+{
+  "storyId": "T5-006",
+  "verdict": "pending-content-review",
+  "reviewer": "第二輪重製：結局與因果待實質審閱，非正式核准",
+  "sourceStoryBlobSha": "973189196aab60bebb4f4bb2c192aa2211f12f52",
+  "storyAndRoles": "需實查本篇各幕常駐角色、無數值情境人物及已知資料。",
+  "fourCodes": "沿用既定四碼；尚未逐碼比對結果增減。",
+  "fourChoices": "6 個具體普通候選已重列並執行可追溯的 3 選抽樣；角色獨立後果待驗。",
+  "eightResults": "已增加角色演出並擴寫八結局，但仍需逐 R 判斷是否重複或過度說明。",
+  "causal32": "384 格中的本篇 32 格已分列個別草案；尚待核准具體因果。",
+  "timeAndLaw": "合法日期與前後池逐日核對待驗。",
+  "duplicates": "相同主題與跨 T 全文查重待驗。",
+  "characterAudit": "待驗",
+  "npcDeltaAudit": "待驗",
+  "npcWarningReviews": [],
+  "ordinaryChoiceSelection": {
+    "storyId": "T5-006",
+    "stage": "second-round-actual-draw",
+    "rng": "xorshift32 Fisher-Yates",
+    "initialSeed": 20308638,
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "告訴籌備者自己不接受無預告的拍攝",
+        "action": "告訴籌備者自己不接受無預告的拍攝",
+        "tradeoff": "保護隱私，可能改變驚喜形式",
+        "establishedFact": "已向籌備者表明導師肖像使用界線，但未禁止所有致意"
+      },
+      {
+        "id": 2,
+        "short": "只要求活動不得影響正式課務和安全",
+        "action": "只要求活動不得影響正式課務和安全",
+        "tradeoff": "保留秘密，但拍攝與公開仍有疑慮",
+        "establishedFact": "已設定課務與安全底線，沒有詢問驚喜內容"
+      },
+      {
+        "id": 3,
+        "short": "請學生設計不需導師上台的私下致意方案",
+        "action": "請學生設計不需導師上台的私下致意方案",
+        "tradeoff": "減少臨場壓力，學生需要重新準備",
+        "establishedFact": "已請學生另備不強迫上台的形式，未承諾接受影片"
+      },
+      {
+        "id": 4,
+        "short": "詢問學生是否已經拍到導師未同意的畫面",
+        "action": "詢問學生是否已經拍到導師未同意的畫面",
+        "tradeoff": "能防未授權曝光，可能打亂剪輯",
+        "establishedFact": "已確認影像授權問題待查，未同意公開"
+      },
+      {
+        "id": 5,
+        "short": "預留一種不需拍攝的短句道謝方式",
+        "action": "預留一種不需拍攝的短句道謝方式",
+        "tradeoff": "照顧界線，但需重新分工",
+        "establishedFact": "已請學生準備不攝影的替代方案"
+      },
+      {
+        "id": 6,
+        "short": "與活動承辦確認驚喜是否會影響正式流程",
+        "action": "與活動承辦確認驚喜是否會影響正式流程",
+        "tradeoff": "降低衝突，但仍未處理老師感受",
+        "establishedFact": "已向承辦核對流程，未要求公開驚喜細節"
+      }
+    ],
+    "selectedIds": [
+      2,
+      4,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 2,
+      "B": 4,
+      "C": 3,
+      "D": "emotional"
+    },
+    "note": "依固定初始種子執行六選三及四選項洗牌，保留候選行動和明確取捨；內容因果尚需逐格審查。"
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已設定課務與安全底線，沒有詢問驚喜內容」出發，此處置有機會直接促使「只處理安全及課務仍能保留驚喜」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已設定課務與安全底線，沒有詢問驚喜內容」，「彼此坦白緊張與期待減少誤會」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已設定課務與安全底線，沒有詢問驚喜內容」，「未同意的影片不得擅自公開」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已設定課務與安全底線，沒有詢問驚喜內容」，「導師過早說不要可能造成方案重排」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已設定課務與安全底線，沒有詢問驚喜內容」，「學生留下未署名的私人心意草稿」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已設定課務與安全底線，沒有詢問驚喜內容」，「同學不能以拍下導師落淚為目的」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已設定課務與安全底線，沒有詢問驚喜內容」，「對鏡頭的擔心不等於拒絕學生祝福」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已設定課務與安全底線，沒有詢問驚喜內容」出發，此處置有機會直接促使「保留驚喜同時遵守必要同意」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已確認影像授權問題待查，未同意公開」，「只處理安全及課務仍能保留驚喜」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已確認影像授權問題待查，未同意公開」，「彼此坦白緊張與期待減少誤會」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已確認影像授權問題待查，未同意公開」出發，此處置有機會直接促使「未同意的影片不得擅自公開」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已確認影像授權問題待查，未同意公開」，「導師過早說不要可能造成方案重排」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已確認影像授權問題待查，未同意公開」，「學生留下未署名的私人心意草稿」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已確認影像授權問題待查，未同意公開」，「同學不能以拍下導師落淚為目的」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已確認影像授權問題待查，未同意公開」出發，此處置有機會直接促使「對鏡頭的擔心不等於拒絕學生祝福」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已確認影像授權問題待查，未同意公開」出發，此處置有機會直接促使「保留驚喜同時遵守必要同意」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生另備不強迫上台的形式，未承諾接受影片」，「只處理安全及課務仍能保留驚喜」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生另備不強迫上台的形式，未承諾接受影片」，「彼此坦白緊張與期待減少誤會」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已請學生另備不強迫上台的形式，未承諾接受影片」出發，此處置有機會直接促使「未同意的影片不得擅自公開」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已請學生另備不強迫上台的形式，未承諾接受影片」出發，此處置有機會直接促使「導師過早說不要可能造成方案重排」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生另備不強迫上台的形式，未承諾接受影片」，「學生留下未署名的私人心意草稿」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已請學生另備不強迫上台的形式，未承諾接受影片」，「同學不能以拍下導師落淚為目的」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已請學生另備不強迫上台的形式，未承諾接受影片」出發，此處置有機會直接促使「對鏡頭的擔心不等於拒絕學生祝福」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已請學生另備不強迫上台的形式，未承諾接受影片」出發，此處置有機會直接促使「保留驚喜同時遵守必要同意」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已說明自己的緊張及學生心意，未同意公開入鏡」，「只處理安全及課務仍能保留驚喜」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已說明自己的緊張及學生心意，未同意公開入鏡」出發，此處置有機會直接促使「彼此坦白緊張與期待減少誤會」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已說明自己的緊張及學生心意，未同意公開入鏡」，「未同意的影片不得擅自公開」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已說明自己的緊張及學生心意，未同意公開入鏡」出發，此處置有機會直接促使「導師過早說不要可能造成方案重排」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已說明自己的緊張及學生心意，未同意公開入鏡」出發，此處置有機會直接促使「學生留下未署名的私人心意草稿」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已說明自己的緊張及學生心意，未同意公開入鏡」，「同學不能以拍下導師落淚為目的」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已說明自己的緊張及學生心意，未同意公開入鏡」出發，此處置有機會直接促使「對鏡頭的擔心不等於拒絕學生祝福」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已說明自己的緊張及學生心意，未同意公開入鏡」出發，此處置有機會直接促使「保留驚喜同時遵守必要同意」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    }
+  ]
+}

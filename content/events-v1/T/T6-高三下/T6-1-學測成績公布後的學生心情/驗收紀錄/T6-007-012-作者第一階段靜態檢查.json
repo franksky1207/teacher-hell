@@ -1,2782 +1,2394 @@
 {
   "pool": "T6-1:after",
-  "stage": "author-phase static checks only",
-  "dates": [
-    "2029-02-26",
-    "2029-02-27",
-    "2029-03-02",
-    "2029-03-05",
-    "2029-03-06",
-    "2029-03-07",
-    "2029-03-08",
-    "2029-03-09"
-  ],
+  "phase": "author-stage causal and choice-selection audit; not independent",
   "stories": {
     "T6-007": {
-      "sourceBlobSha": "16708223c41f20461ae8e0951681d5f7dba1f1c0",
-      "seed": "S1354",
-      "openingLength": 157,
-      "resultLengths": [
-        114,
-        104,
-        98,
-        115,
-        114,
-        119,
-        97,
-        117
-      ],
-      "resultTitles": [
-        "那名學生看著名單說『我沒有查分畫面』",
-        "有人笑說沒報考就沒心得",
-        "學生願意留在討論現場",
-        "一位同學把他當成『沒考壓力的人』",
-        "班級的展示牆原本只有查分照片",
-        "有人要他模仿查分時的反應當笑點",
-        "活動後學生說自己其實想聽同學分享",
-        "同學們發現原本排程不符合實際報考差異"
-      ],
-      "choices": [
-        {
-          "id": "A",
-          "action": "保留不發言的參與方式",
-          "emotional": false,
-          "completed": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
+      "sourceBlobSha": "d181c62dc6aabd3a0b0cef52de66210e53c91715",
+      "reviewer": "ChatGPT作者自驗",
+      "verdict": "author-reviewed; independent not run",
+      "seedId": "S1354",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "action": "保留不發言的參與方式；你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 2,
+            "action": "私下確認未報考者願談的內容；你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 3,
+            "action": "改成每人分享下一步所需支援；你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 4,
+            "action": "把分享方式改為各自升學路線討論；你已把分享方式改為各自升學路線討論，並確認此舉沒有代替當事人作成正式升學決定。"
+          },
+          {
+            "id": 5,
+            "action": "取消全班每人都必講查分感想的規定；你已取消全班每人都必講查分感想的規定，並確認此舉沒有代替當事人作成正式升學決定。"
+          },
+          {
+            "id": 6,
+            "action": "提供未報考者不發言也可參與的方式；你已提供未報考者不發言也可參與的方式，並確認此舉沒有代替當事人作成正式升學決定。"
+          }
+        ],
+        "selectedIds": [
+          1,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 1,
+          "D": 5
         },
-        {
-          "id": "B",
-          "action": "立即讓分享改為自願且不問分數",
-          "emotional": true,
-          "completed": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
-        },
-        {
-          "id": "C",
-          "action": "私下確認未報考者願談的內容",
-          "emotional": false,
-          "completed": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
-        },
-        {
-          "id": "D",
-          "action": "改成每人分享下一步所需支援",
-          "emotional": false,
-          "completed": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
-        }
-      ],
-      "matrix": [
+        "seed": 20316557,
+        "method": "seeded Fisher-Yates selection without replacement"
+      },
+      "causal32Evidence": [
         {
           "choice": "A",
-          "weights": [
-            2,
-            2,
-            1,
-            4,
-            2,
-            2,
-            1,
-            4
-          ]
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「立即讓分享改為自願且不問分數」後，仍可能發生「那名學生看著名單說『我沒有查分畫面』」；本結果的可見關鍵為「那名學生看著名單說『我沒有查分畫面』，有人才驚覺分享安排預設全班都走同一路。」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「立即讓分享改為自願且不問分數」後，仍可能發生「有人笑說沒報考就沒心得」；本結果的可見關鍵為「有人笑說沒報考就沒心得，學生當場沉默。稍後他私下說這句玩笑讓他像被排除在班外」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「立即讓分享改為自願且不問分數」後，仍可能發生「學生願意留在討論現場」；本結果的可見關鍵為「學生願意留在討論現場，卻不想上台。其他人把他要問的生活安排寫進共同問題單，他」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「立即讓分享改為自願且不問分數」後，仍可能發生「一位同學把他當成『沒考壓力的人』」；本結果的可見關鍵為「一位同學把他當成『沒考壓力的人』，學生說自己的路線也有不同的不確定。他沒有比」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「立即讓分享改為自願且不問分數」後，仍可能發生「班級的展示牆原本只有查分照片」；本結果的可見關鍵為「班級的展示牆原本只有查分照片，學生提議加上『目前想做的事』。有人仍貼分數，有」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「立即讓分享改為自願且不問分數」後，仍可能發生「有人要他模仿查分時的反應當笑點」；本結果的可見關鍵為「有人要他模仿查分時的反應當笑點，他拒絕後氣氛尷尬。另一名同學改問是否願介紹自」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「立即讓分享改為自願且不問分數」後，仍可能發生「活動後學生說自己其實想聽同學分享」；本結果的可見關鍵為「活動後學生說自己其實想聽同學分享，只是不想被迫假裝考過。導師保留旁聽與提問的」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「立即讓分享改為自願且不問分數」後，仍可能發生「同學們發現原本排程不符合實際報考差異」；本結果的可見關鍵為「同學們發現原本排程不符合實際報考差異，決定取消人人輪流的名單。學生仍願意留下」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
-          "weights": [
-            4,
-            2,
-            2,
-            1,
-            4,
-            2,
-            2,
-            1
-          ]
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改成每人分享下一步所需支援」後，仍可能發生「那名學生看著名單說『我沒有查分畫面』」；本結果的可見關鍵為「那名學生看著名單說『我沒有查分畫面』，有人才驚覺分享安排預設全班都走同一路。」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改成每人分享下一步所需支援」後，仍可能發生「有人笑說沒報考就沒心得」；本結果的可見關鍵為「有人笑說沒報考就沒心得，學生當場沉默。稍後他私下說這句玩笑讓他像被排除在班外」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改成每人分享下一步所需支援」後，仍可能發生「學生願意留在討論現場」；本結果的可見關鍵為「學生願意留在討論現場，卻不想上台。其他人把他要問的生活安排寫進共同問題單，他」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改成每人分享下一步所需支援」後，仍可能發生「一位同學把他當成『沒考壓力的人』」；本結果的可見關鍵為「一位同學把他當成『沒考壓力的人』，學生說自己的路線也有不同的不確定。他沒有比」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改成每人分享下一步所需支援」後，仍可能發生「班級的展示牆原本只有查分照片」；本結果的可見關鍵為「班級的展示牆原本只有查分照片，學生提議加上『目前想做的事』。有人仍貼分數，有」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改成每人分享下一步所需支援」後，仍可能發生「有人要他模仿查分時的反應當笑點」；本結果的可見關鍵為「有人要他模仿查分時的反應當笑點，他拒絕後氣氛尷尬。另一名同學改問是否願介紹自」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改成每人分享下一步所需支援」後，仍可能發生「活動後學生說自己其實想聽同學分享」；本結果的可見關鍵為「活動後學生說自己其實想聽同學分享，只是不想被迫假裝考過。導師保留旁聽與提問的」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改成每人分享下一步所需支援」後，仍可能發生「同學們發現原本排程不符合實際報考差異」；本結果的可見關鍵為「同學們發現原本排程不符合實際報考差異，決定取消人人輪流的名單。學生仍願意留下」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
-          "weights": [
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「保留不發言的參與方式」後，仍可能發生「那名學生看著名單說『我沒有查分畫面』」；本結果的可見關鍵為「那名學生看著名單說『我沒有查分畫面』，有人才驚覺分享安排預設全班都走同一路。」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「保留不發言的參與方式」後，仍可能發生「有人笑說沒報考就沒心得」；本結果的可見關鍵為「有人笑說沒報考就沒心得，學生當場沉默。稍後他私下說這句玩笑讓他像被排除在班外」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「保留不發言的參與方式」後，仍可能發生「學生願意留在討論現場」；本結果的可見關鍵為「學生願意留在討論現場，卻不想上台。其他人把他要問的生活安排寫進共同問題單，他」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「保留不發言的參與方式」後，仍可能發生「一位同學把他當成『沒考壓力的人』」；本結果的可見關鍵為「一位同學把他當成『沒考壓力的人』，學生說自己的路線也有不同的不確定。他沒有比」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「保留不發言的參與方式」後，仍可能發生「班級的展示牆原本只有查分照片」；本結果的可見關鍵為「班級的展示牆原本只有查分照片，學生提議加上『目前想做的事』。有人仍貼分數，有」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「保留不發言的參與方式」後，仍可能發生「有人要他模仿查分時的反應當笑點」；本結果的可見關鍵為「有人要他模仿查分時的反應當笑點，他拒絕後氣氛尷尬。另一名同學改問是否願介紹自」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「保留不發言的參與方式」後，仍可能發生「活動後學生說自己其實想聽同學分享」；本結果的可見關鍵為「活動後學生說自己其實想聽同學分享，只是不想被迫假裝考過。導師保留旁聽與提問的」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「保留不發言的參與方式」後，仍可能發生「同學們發現原本排程不符合實際報考差異」；本結果的可見關鍵為「同學們發現原本排程不符合實際報考差異，決定取消人人輪流的名單。學生仍願意留下」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已取消全班每人都必講查分感想的規定，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「取消全班每人都必講查分感想的規定」後，仍可能發生「那名學生看著名單說『我沒有查分畫面』」；本結果的可見關鍵為「那名學生看著名單說『我沒有查分畫面』，有人才驚覺分享安排預設全班都走同一路。」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已取消全班每人都必講查分感想的規定，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「取消全班每人都必講查分感想的規定」後，仍可能發生「有人笑說沒報考就沒心得」；本結果的可見關鍵為「有人笑說沒報考就沒心得，學生當場沉默。稍後他私下說這句玩笑讓他像被排除在班外」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已取消全班每人都必講查分感想的規定，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「取消全班每人都必講查分感想的規定」後，仍可能發生「學生願意留在討論現場」；本結果的可見關鍵為「學生願意留在討論現場，卻不想上台。其他人把他要問的生活安排寫進共同問題單，他」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已取消全班每人都必講查分感想的規定，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「取消全班每人都必講查分感想的規定」後，仍可能發生「一位同學把他當成『沒考壓力的人』」；本結果的可見關鍵為「一位同學把他當成『沒考壓力的人』，學生說自己的路線也有不同的不確定。他沒有比」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已取消全班每人都必講查分感想的規定，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「取消全班每人都必講查分感想的規定」後，仍可能發生「班級的展示牆原本只有查分照片」；本結果的可見關鍵為「班級的展示牆原本只有查分照片，學生提議加上『目前想做的事』。有人仍貼分數，有」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已取消全班每人都必講查分感想的規定，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「取消全班每人都必講查分感想的規定」後，仍可能發生「有人要他模仿查分時的反應當笑點」；本結果的可見關鍵為「有人要他模仿查分時的反應當笑點，他拒絕後氣氛尷尬。另一名同學改問是否願介紹自」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已取消全班每人都必講查分感想的規定，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「取消全班每人都必講查分感想的規定」後，仍可能發生「活動後學生說自己其實想聽同學分享」；本結果的可見關鍵為「活動後學生說自己其實想聽同學分享，只是不想被迫假裝考過。導師保留旁聽與提問的」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已取消全班每人都必講查分感想的規定，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「取消全班每人都必講查分感想的規定」後，仍可能發生「同學們發現原本排程不符合實際報考差異」；本結果的可見關鍵為「同學們發現原本排程不符合實際報考差異，決定取消人人輪流的名單。學生仍願意留下」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        }
+      ],
+      "numericFirstEvidence": {
+        "groupByState": {
+          "精神": "C",
+          "熱忱": "D",
+          "情緒": "E",
+          "掌控": "B"
+        },
+        "matrix": [
+          [
             1,
-            4,
-            2,
-            2,
+            -2,
             1,
-            4,
-            2,
             2
-          ]
-        },
-        {
-          "choice": "D",
-          "weights": [
+          ],
+          [
+            -1,
             2,
             1,
-            4,
-            2,
-            2,
+            -1
+          ],
+          [
+            0,
             1,
-            4,
-            2
+            -2,
+            0
+          ],
+          [
+            -1,
+            -2,
+            1,
+            -1
+          ],
+          [
+            -2,
+            0,
+            -2,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -2,
+            -1
           ]
-        }
-      ],
-      "states": [
-        [
-          1,
-          -2,
-          1,
-          2
         ],
-        [
-          -1,
-          2,
-          1,
-          -1
-        ],
-        [
-          0,
-          1,
-          -2,
-          0
-        ],
-        [
-          -1,
-          -2,
-          1,
-          -1
-        ],
-        [
-          -2,
-          0,
-          -2,
-          -1
-        ],
-        [
-          1,
-          -1,
-          -1,
-          -1
-        ],
-        [
-          -1,
-          -1,
-          0,
-          -1
-        ],
-        [
-          -1,
-          -1,
-          -2,
-          -1
-        ]
-      ],
-      "causal32Cells": [
-        {
-          "choice": "A",
-          "result": "R1",
-          "weight": 2,
-          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "那名學生看著名單說『我沒有查分畫面』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R2",
-          "weight": 2,
-          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人笑說沒報考就沒心得",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R3",
-          "weight": 1,
-          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生願意留在討論現場",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R4",
-          "weight": 4,
-          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "一位同學把他當成『沒考壓力的人』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R5",
-          "weight": 2,
-          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "班級的展示牆原本只有查分照片",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R6",
-          "weight": 2,
-          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人要他模仿查分時的反應當笑點",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R7",
-          "weight": 1,
-          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "活動後學生說自己其實想聽同學分享",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R8",
-          "weight": 4,
-          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "同學們發現原本排程不符合實際報考差異",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R1",
-          "weight": 4,
-          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "那名學生看著名單說『我沒有查分畫面』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R2",
-          "weight": 2,
-          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人笑說沒報考就沒心得",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R3",
-          "weight": 2,
-          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生願意留在討論現場",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R4",
-          "weight": 1,
-          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "一位同學把他當成『沒考壓力的人』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R5",
-          "weight": 4,
-          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "班級的展示牆原本只有查分照片",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R6",
-          "weight": 2,
-          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人要他模仿查分時的反應當笑點",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R7",
-          "weight": 2,
-          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "活動後學生說自己其實想聽同學分享",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R8",
-          "weight": 1,
-          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "同學們發現原本排程不符合實際報考差異",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R1",
-          "weight": 1,
-          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "那名學生看著名單說『我沒有查分畫面』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R2",
-          "weight": 4,
-          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人笑說沒報考就沒心得",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R3",
-          "weight": 2,
-          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生願意留在討論現場",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R4",
-          "weight": 2,
-          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "一位同學把他當成『沒考壓力的人』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R5",
-          "weight": 1,
-          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "班級的展示牆原本只有查分照片",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R6",
-          "weight": 4,
-          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人要他模仿查分時的反應當笑點",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R7",
-          "weight": 2,
-          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "活動後學生說自己其實想聽同學分享",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R8",
-          "weight": 2,
-          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "同學們發現原本排程不符合實際報考差異",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R1",
-          "weight": 2,
-          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "那名學生看著名單說『我沒有查分畫面』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R2",
-          "weight": 1,
-          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人笑說沒報考就沒心得",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R3",
-          "weight": 4,
-          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生願意留在討論現場",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R4",
-          "weight": 2,
-          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "一位同學把他當成『沒考壓力的人』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R5",
-          "weight": 2,
-          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "班級的展示牆原本只有查分照片",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R6",
-          "weight": 1,
-          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人要他模仿查分時的反應當笑點",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R7",
-          "weight": 4,
-          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "活動後學生說自己其實想聽同學分享",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R8",
-          "weight": 2,
-          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "同學們發現原本排程不符合實際報考差異",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        }
-      ],
-      "crossDayPrecheck": [
-        {
-          "date": "2029-02-26",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-02-27",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-02",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-05",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-06",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-07",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-08",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-09",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        }
-      ],
-      "staticFailures": [],
-      "environment": "GitHub file-based static inspection; Node/Actions not run"
+        "method": "nonrepeating A-E V3 four groups"
+      },
+      "timeAndLaw": "八個候選日同一T6-1:after池，須有真實公布且當事人已知",
+      "staticReview": "正文與 AVG 原文同步、無Actions或Node實跑、獨立語意審查未進行"
     },
     "T6-008": {
-      "sourceBlobSha": "7a3e61bae89d7dfd1c33f575ab16722862e1b70d",
-      "seed": "S1355",
-      "openingLength": 164,
-      "resultLengths": [
-        107,
-        103,
-        105,
-        100,
-        108,
-        116,
-        110,
-        106
-      ],
-      "resultTitles": [
-        "家長已經詢問一個高價方案",
-        "業者傳來『名額快滿』訊息",
-        "孩子看著一週被填滿的課表",
-        "家長認為多買一點才算盡責",
-        "家長自己提出一項需要補強的準備",
-        "家長在群組看到別人說所有人都在加強",
-        "家庭發現原計畫跟學校必要課務衝突",
-        "家長決定暫不加購"
-      ],
-      "choices": [
-        {
-          "id": "A",
-          "action": "先聽家長擔憂而不替補習保證效果",
-          "emotional": true,
-          "completed": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
-        },
-        {
-          "id": "B",
-          "action": "邀請孩子說明目前真正需要的支援",
-          "emotional": false,
-          "completed": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
-        },
-        {
-          "id": "C",
-          "action": "協助分清正式程序與商業廣告",
-          "emotional": false,
-          "completed": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
-        },
-        {
-          "id": "D",
-          "action": "請家庭確認時間與金錢承受範圍",
-          "emotional": false,
-          "completed": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
-        }
-      ],
-      "matrix": [
-        {
-          "choice": "A",
-          "weights": [
-            4,
-            2,
-            2,
-            1,
-            4,
-            2,
-            2,
-            1
-          ]
-        },
-        {
-          "choice": "B",
-          "weights": [
-            1,
-            4,
-            2,
-            2,
-            1,
-            4,
-            2,
-            2
-          ]
-        },
-        {
-          "choice": "C",
-          "weights": [
-            2,
-            1,
-            4,
-            2,
-            2,
-            1,
-            4,
-            2
-          ]
-        },
-        {
-          "choice": "D",
-          "weights": [
-            2,
-            2,
-            1,
-            4,
-            2,
-            2,
-            1,
-            4
-          ]
-        }
-      ],
-      "states": [
-        [
-          -1,
+      "sourceBlobSha": "6e38fe47da15bb3d38dc1631ef8d32bed8cf8545",
+      "reviewer": "ChatGPT作者自驗",
+      "verdict": "author-reviewed; independent not run",
+      "seedId": "S1355",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "action": "邀請孩子說明目前真正需要的支援；你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 2,
+            "action": "協助分清正式程序與商業廣告；你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 3,
+            "action": "請家庭確認時間與金錢承受範圍；你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 4,
+            "action": "請家庭先核對費用契約與可用時間；你已請家庭先核對費用契約與可用時間，並確認此舉沒有代替當事人作成正式升學決定。"
+          },
+          {
+            "id": 5,
+            "action": "請孩子說明自己真正願意接受的協助；你已請孩子說明自己真正願意接受的協助，並確認此舉沒有代替當事人作成正式升學決定。"
+          },
+          {
+            "id": 6,
+            "action": "先比對學校既定課務與新課程安排；你已先比對學校既定課務與新課程安排，並確認此舉沒有代替當事人作成正式升學決定。"
+          }
+        ],
+        "selectedIds": [
+          1,
           2,
-          1,
-          -1
+          4
         ],
-        [
-          0,
-          1,
-          -2,
-          0
-        ],
-        [
-          -1,
-          -2,
-          1,
-          -1
-        ],
-        [
-          -2,
-          0,
-          -2,
-          -1
-        ],
-        [
-          1,
-          -1,
-          -1,
-          -1
-        ],
-        [
-          -1,
-          -1,
-          0,
-          -1
-        ],
-        [
-          -1,
-          -1,
-          -2,
-          -1
-        ],
-        [
-          1,
-          -2,
-          1,
-          2
-        ]
-      ],
-      "causal32Cells": [
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "seed": 20324476,
+        "method": "seeded Fisher-Yates selection without replacement"
+      },
+      "causal32Evidence": [
         {
           "choice": "A",
           "result": "R1",
-          "weight": 4,
-          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長已經詢問一個高價方案",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請家庭先核對費用契約與可用時間，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請家庭先核對費用契約與可用時間」後，仍可能發生「家長已經詢問一個高價方案」；本結果的可見關鍵為「家長已經詢問一個高價方案，孩子卻說自己最需要的是整理正式申請條件。家長沒有立」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R2",
           "weight": 2,
-          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "業者傳來『名額快滿』訊息",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請家庭先核對費用契約與可用時間，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請家庭先核對費用契約與可用時間」後，仍可能發生「業者傳來『名額快滿』訊息」；本結果的可見關鍵為「業者傳來『名額快滿』訊息，家長越看越急。你不評論特定商品優劣，只提醒不要把銷」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R3",
           "weight": 2,
-          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "孩子看著一週被填滿的課表",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請家庭先核對費用契約與可用時間，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請家庭先核對費用契約與可用時間」後，仍可能發生「孩子看著一週被填滿的課表」；本結果的可見關鍵為「孩子看著一週被填滿的課表，問『那我的休息放哪裡？』家長先前沒想到這件事，兩人」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R4",
-          "weight": 1,
-          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長認為多買一點才算盡責",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請家庭先核對費用契約與可用時間，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請家庭先核對費用契約與可用時間」後，仍可能發生「家長認為多買一點才算盡責」；本結果的可見關鍵為「家長認為多買一點才算盡責，家長卻坦承不想再依靠刷題逃避選擇。家長難過，但願意」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R5",
-          "weight": 4,
-          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長自己提出一項需要補強的準備",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請家庭先核對費用契約與可用時間，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請家庭先核對費用契約與可用時間」後，仍可能發生「家長自己提出一項需要補強的準備」；本結果的可見關鍵為「家長自己提出一項需要補強的準備，家長確認預算後只保留那一項。沒有承諾這會提高」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R6",
           "weight": 2,
-          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長在群組看到別人說所有人都在加強",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請家庭先核對費用契約與可用時間，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請家庭先核對費用契約與可用時間」後，仍可能發生「家長在群組看到別人說所有人都在加強」；本結果的可見關鍵為「家長在群組看到別人說所有人都在加強，心裡不安。孩子拿出實際成績與想走的路，說」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R7",
           "weight": 2,
-          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家庭發現原計畫跟學校必要課務衝突",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請家庭先核對費用契約與可用時間，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請家庭先核對費用契約與可用時間」後，仍可能發生「家庭發現原計畫跟學校必要課務衝突」；本結果的可見關鍵為「家庭發現原計畫跟學校必要課務衝突，便放下立刻報名的想法，先向合法窗口確認時程」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R8",
-          "weight": 1,
-          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長決定暫不加購",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請家庭先核對費用契約與可用時間，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請家庭先核對費用契約與可用時間」後，仍可能發生「家長決定暫不加購」；本結果的可見關鍵為「家長決定暫不加購，孩子主動約定整理一份個人待辦。這不是完全不用協助，而是把決」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R1",
-          "weight": 1,
-          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長已經詢問一個高價方案",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先聽家長擔憂而不替補習保證效果」後，仍可能發生「家長已經詢問一個高價方案」；本結果的可見關鍵為「家長已經詢問一個高價方案，孩子卻說自己最需要的是整理正式申請條件。家長沒有立」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R2",
-          "weight": 4,
-          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "業者傳來『名額快滿』訊息",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先聽家長擔憂而不替補習保證效果」後，仍可能發生「業者傳來『名額快滿』訊息」；本結果的可見關鍵為「業者傳來『名額快滿』訊息，家長越看越急。你不評論特定商品優劣，只提醒不要把銷」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R3",
           "weight": 2,
-          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "孩子看著一週被填滿的課表",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先聽家長擔憂而不替補習保證效果」後，仍可能發生「孩子看著一週被填滿的課表」；本結果的可見關鍵為「孩子看著一週被填滿的課表，問『那我的休息放哪裡？』家長先前沒想到這件事，兩人」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R4",
           "weight": 2,
-          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長認為多買一點才算盡責",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先聽家長擔憂而不替補習保證效果」後，仍可能發生「家長認為多買一點才算盡責」；本結果的可見關鍵為「家長認為多買一點才算盡責，家長卻坦承不想再依靠刷題逃避選擇。家長難過，但願意」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R5",
-          "weight": 1,
-          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長自己提出一項需要補強的準備",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先聽家長擔憂而不替補習保證效果」後，仍可能發生「家長自己提出一項需要補強的準備」；本結果的可見關鍵為「家長自己提出一項需要補強的準備，家長確認預算後只保留那一項。沒有承諾這會提高」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R6",
-          "weight": 4,
-          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長在群組看到別人說所有人都在加強",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先聽家長擔憂而不替補習保證效果」後，仍可能發生「家長在群組看到別人說所有人都在加強」；本結果的可見關鍵為「家長在群組看到別人說所有人都在加強，心裡不安。孩子拿出實際成績與想走的路，說」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R7",
           "weight": 2,
-          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家庭發現原計畫跟學校必要課務衝突",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先聽家長擔憂而不替補習保證效果」後，仍可能發生「家庭發現原計畫跟學校必要課務衝突」；本結果的可見關鍵為「家庭發現原計畫跟學校必要課務衝突，便放下立刻報名的想法，先向合法窗口確認時程」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R8",
           "weight": 2,
-          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長決定暫不加購",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先聽家長擔憂而不替補習保證效果」後，仍可能發生「家長決定暫不加購」；本結果的可見關鍵為「家長決定暫不加購，孩子主動約定整理一份個人待辦。這不是完全不用協助，而是把決」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R1",
           "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
           "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長已經詢問一個高價方案",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「協助分清正式程序與商業廣告」後，仍可能發生「家長已經詢問一個高價方案」；本結果的可見關鍵為「家長已經詢問一個高價方案，孩子卻說自己最需要的是整理正式申請條件。家長沒有立」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R2",
           "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
           "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "業者傳來『名額快滿』訊息",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「協助分清正式程序與商業廣告」後，仍可能發生「業者傳來『名額快滿』訊息」；本結果的可見關鍵為「業者傳來『名額快滿』訊息，家長越看越急。你不評論特定商品優劣，只提醒不要把銷」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
         },
         {
           "choice": "C",
           "result": "R3",
           "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
           "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "孩子看著一週被填滿的課表",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「協助分清正式程序與商業廣告」後，仍可能發生「孩子看著一週被填滿的課表」；本結果的可見關鍵為「孩子看著一週被填滿的課表，問『那我的休息放哪裡？』家長先前沒想到這件事，兩人」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
         },
         {
           "choice": "C",
           "result": "R4",
           "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
           "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長認為多買一點才算盡責",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「協助分清正式程序與商業廣告」後，仍可能發生「家長認為多買一點才算盡責」；本結果的可見關鍵為「家長認為多買一點才算盡責，家長卻坦承不想再依靠刷題逃避選擇。家長難過，但願意」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R5",
           "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
           "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長自己提出一項需要補強的準備",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「協助分清正式程序與商業廣告」後，仍可能發生「家長自己提出一項需要補強的準備」；本結果的可見關鍵為「家長自己提出一項需要補強的準備，家長確認預算後只保留那一項。沒有承諾這會提高」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R6",
           "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
           "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長在群組看到別人說所有人都在加強",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「協助分清正式程序與商業廣告」後，仍可能發生「家長在群組看到別人說所有人都在加強」；本結果的可見關鍵為「家長在群組看到別人說所有人都在加強，心裡不安。孩子拿出實際成績與想走的路，說」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
         },
         {
           "choice": "C",
           "result": "R7",
           "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
           "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家庭發現原計畫跟學校必要課務衝突",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「協助分清正式程序與商業廣告」後，仍可能發生「家庭發現原計畫跟學校必要課務衝突」；本結果的可見關鍵為「家庭發現原計畫跟學校必要課務衝突，便放下立刻報名的想法，先向合法窗口確認時程」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
         },
         {
           "choice": "C",
           "result": "R8",
           "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
           "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長決定暫不加購",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「協助分清正式程序與商業廣告」後，仍可能發生「家長決定暫不加購」；本結果的可見關鍵為「家長決定暫不加購，孩子主動約定整理一份個人待辦。這不是完全不用協助，而是把決」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R1",
-          "weight": 2,
-          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長已經詢問一個高價方案",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「邀請孩子說明目前真正需要的支援」後，仍可能發生「家長已經詢問一個高價方案」；本結果的可見關鍵為「家長已經詢問一個高價方案，孩子卻說自己最需要的是整理正式申請條件。家長沒有立」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
         },
         {
           "choice": "D",
           "result": "R2",
-          "weight": 2,
-          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "業者傳來『名額快滿』訊息",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「邀請孩子說明目前真正需要的支援」後，仍可能發生「業者傳來『名額快滿』訊息」；本結果的可見關鍵為「業者傳來『名額快滿』訊息，家長越看越急。你不評論特定商品優劣，只提醒不要把銷」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
         },
         {
           "choice": "D",
           "result": "R3",
-          "weight": 1,
-          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "孩子看著一週被填滿的課表",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「邀請孩子說明目前真正需要的支援」後，仍可能發生「孩子看著一週被填滿的課表」；本結果的可見關鍵為「孩子看著一週被填滿的課表，問『那我的休息放哪裡？』家長先前沒想到這件事，兩人」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R4",
-          "weight": 4,
-          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長認為多買一點才算盡責",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「邀請孩子說明目前真正需要的支援」後，仍可能發生「家長認為多買一點才算盡責」；本結果的可見關鍵為「家長認為多買一點才算盡責，家長卻坦承不想再依靠刷題逃避選擇。家長難過，但願意」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R5",
-          "weight": 2,
-          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長自己提出一項需要補強的準備",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「邀請孩子說明目前真正需要的支援」後，仍可能發生「家長自己提出一項需要補強的準備」；本結果的可見關鍵為「家長自己提出一項需要補強的準備，家長確認預算後只保留那一項。沒有承諾這會提高」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
         },
         {
           "choice": "D",
           "result": "R6",
-          "weight": 2,
-          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長在群組看到別人說所有人都在加強",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「邀請孩子說明目前真正需要的支援」後，仍可能發生「家長在群組看到別人說所有人都在加強」；本結果的可見關鍵為「家長在群組看到別人說所有人都在加強，心裡不安。孩子拿出實際成績與想走的路，說」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
         },
         {
           "choice": "D",
           "result": "R7",
-          "weight": 1,
-          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家庭發現原計畫跟學校必要課務衝突",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「邀請孩子說明目前真正需要的支援」後，仍可能發生「家庭發現原計畫跟學校必要課務衝突」；本結果的可見關鍵為「家庭發現原計畫跟學校必要課務衝突，便放下立刻報名的想法，先向合法窗口確認時程」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R8",
-          "weight": 4,
-          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "家長決定暫不加購",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「邀請孩子說明目前真正需要的支援」後，仍可能發生「家長決定暫不加購」；本結果的可見關鍵為「家長決定暫不加購，孩子主動約定整理一份個人待辦。這不是完全不用協助，而是把決」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         }
       ],
-      "crossDayPrecheck": [
-        {
-          "date": "2029-02-26",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
+      "numericFirstEvidence": {
+        "groupByState": {
+          "精神": "C",
+          "熱忱": "D",
+          "情緒": "E",
+          "掌控": "B"
         },
-        {
-          "date": "2029-02-27",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-02",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-05",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-06",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-07",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-08",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-09",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        }
-      ],
-      "staticFailures": [],
-      "environment": "GitHub file-based static inspection; Node/Actions not run"
+        "matrix": [
+          [
+            -1,
+            2,
+            1,
+            -1
+          ],
+          [
+            0,
+            1,
+            -2,
+            0
+          ],
+          [
+            -1,
+            -2,
+            1,
+            -1
+          ],
+          [
+            -2,
+            0,
+            -2,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -2,
+            -1
+          ],
+          [
+            1,
+            -2,
+            1,
+            2
+          ]
+        ],
+        "method": "nonrepeating A-E V3 four groups"
+      },
+      "timeAndLaw": "八個候選日同一T6-1:after池，須有真實公布且當事人已知",
+      "staticReview": "正文與 AVG 原文同步、無Actions或Node實跑、獨立語意審查未進行"
     },
     "T6-009": {
-      "sourceBlobSha": "a503c5b0727d2771cab2d65f53ce3013cfcd8dba",
-      "seed": "S1356",
-      "openingLength": 166,
-      "resultLengths": [
-        118,
-        101,
-        104,
-        106,
-        103,
-        103,
-        104,
-        109
-      ],
-      "resultTitles": [
-        "學生才發現截圖裡有識別欄位",
-        "某個群組有人想轉貼截圖幫忙找答案",
-        "他試著用手機塗黑欄位",
-        "學生說自己忘了截圖傳到哪些地方",
-        "在正式查詢頁",
-        "一位同學認為遮個名字就夠",
-        "學生原本要求老師幫他登入查分",
-        "問題得到釐清後"
-      ],
-      "choices": [
-        {
-          "id": "A",
-          "action": "示範不用分享登入畫面的查詢方式",
-          "emotional": false,
-          "completed": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
+      "sourceBlobSha": "e3dc1474b66830c43483a86e46107ba86f522bfa",
+      "reviewer": "ChatGPT作者自驗",
+      "verdict": "author-reviewed; independent not run",
+      "seedId": "S1356",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "action": "示範不用分享登入畫面的查詢方式；你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 2,
+            "action": "確認截圖已送達誰並協助處置；你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 3,
+            "action": "改以文字描述問題而不留原圖；你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 4,
+            "action": "請學生盤點截圖曾送到的對象；你已請學生盤點截圖曾送到的對象，並確認此舉沒有代替當事人作成正式升學決定。"
+          },
+          {
+            "id": 5,
+            "action": "讓學生將問題改寫為無個資的文字；你已讓學生將問題改寫為無個資的文字，並確認此舉沒有代替當事人作成正式升學決定。"
+          },
+          {
+            "id": 6,
+            "action": "說明正式的帳號安全與問題回報方式；你已說明正式的帳號安全與問題回報方式，並確認此舉沒有代替當事人作成正式升學決定。"
+          }
+        ],
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 6,
+          "D": 3
         },
-        {
-          "id": "B",
-          "action": "確認截圖已送達誰並協助處置",
-          "emotional": false,
-          "completed": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
-        },
-        {
-          "id": "C",
-          "action": "改以文字描述問題而不留原圖",
-          "emotional": false,
-          "completed": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
-        },
-        {
-          "id": "D",
-          "action": "先要求停止轉傳並遮蔽敏感欄位",
-          "emotional": true,
-          "completed": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
-        }
-      ],
-      "matrix": [
+        "seed": 20332395,
+        "method": "seeded Fisher-Yates selection without replacement"
+      },
+      "causal32Evidence": [
         {
           "choice": "A",
-          "weights": [
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先要求停止轉傳並遮蔽敏感欄位」後，仍可能發生「學生才發現截圖裡有識別欄位」；本結果的可見關鍵為「學生才發現截圖裡有識別欄位，緊張地逐一檢查曾發送的對象。他先停止再次轉傳，再」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先要求停止轉傳並遮蔽敏感欄位」後，仍可能發生「某個群組有人想轉貼截圖幫忙找答案」；本結果的可見關鍵為「某個群組有人想轉貼截圖幫忙找答案，學生及時表明不同意。其他人改成只討論看不見」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先要求停止轉傳並遮蔽敏感欄位」後，仍可能發生「他試著用手機塗黑欄位」；本結果的可見關鍵為「他試著用手機塗黑欄位，卻留下可以辨識的部分。重新檢查後他乾脆只打字說明問題；」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先要求停止轉傳並遮蔽敏感欄位」後，仍可能發生「學生說自己忘了截圖傳到哪些地方」；本結果的可見關鍵為「學生說自己忘了截圖傳到哪些地方，情緒越來越慌。你協助他列出已知傳送範圍與後續」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先要求停止轉傳並遮蔽敏感欄位」後，仍可能發生「在正式查詢頁」；本結果的可見關鍵為「在正式查詢頁，他找到公開可說明的欄位，沒有必要提供整個登入畫面。他把個人截圖」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先要求停止轉傳並遮蔽敏感欄位」後，仍可能發生「一位同學認為遮個名字就夠」；本結果的可見關鍵為「一位同學認為遮個名字就夠，學生指出其他號碼仍可對應本人。討論從誰比較神經質轉」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先要求停止轉傳並遮蔽敏感欄位」後，仍可能發生「學生原本要求老師幫他登入查分」；本結果的可見關鍵為「學生原本要求老師幫他登入查分，你拒絕接收帳密並提供合法支援途徑。他有些失望，」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先要求停止轉傳並遮蔽敏感欄位」後，仍可能發生「問題得到釐清後」；本結果的可見關鍵為「問題得到釐清後，學生想把安全處置方式分享給同學。他只說明做法，沒有公開自己的」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生盤點截圖曾送到的對象，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生盤點截圖曾送到的對象」後，仍可能發生「學生才發現截圖裡有識別欄位」；本結果的可見關鍵為「學生才發現截圖裡有識別欄位，緊張地逐一檢查曾發送的對象。他先停止再次轉傳，再」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生盤點截圖曾送到的對象，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生盤點截圖曾送到的對象」後，仍可能發生「某個群組有人想轉貼截圖幫忙找答案」；本結果的可見關鍵為「某個群組有人想轉貼截圖幫忙找答案，學生及時表明不同意。其他人改成只討論看不見」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生盤點截圖曾送到的對象，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生盤點截圖曾送到的對象」後，仍可能發生「他試著用手機塗黑欄位」；本結果的可見關鍵為「他試著用手機塗黑欄位，卻留下可以辨識的部分。重新檢查後他乾脆只打字說明問題；」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生盤點截圖曾送到的對象，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生盤點截圖曾送到的對象」後，仍可能發生「學生說自己忘了截圖傳到哪些地方」；本結果的可見關鍵為「學生說自己忘了截圖傳到哪些地方，情緒越來越慌。你協助他列出已知傳送範圍與後續」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生盤點截圖曾送到的對象，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生盤點截圖曾送到的對象」後，仍可能發生「在正式查詢頁」；本結果的可見關鍵為「在正式查詢頁，他找到公開可說明的欄位，沒有必要提供整個登入畫面。他把個人截圖」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生盤點截圖曾送到的對象，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生盤點截圖曾送到的對象」後，仍可能發生「一位同學認為遮個名字就夠」；本結果的可見關鍵為「一位同學認為遮個名字就夠，學生指出其他號碼仍可對應本人。討論從誰比較神經質轉」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生盤點截圖曾送到的對象，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生盤點截圖曾送到的對象」後，仍可能發生「學生原本要求老師幫他登入查分」；本結果的可見關鍵為「學生原本要求老師幫他登入查分，你拒絕接收帳密並提供合法支援途徑。他有些失望，」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生盤點截圖曾送到的對象，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生盤點截圖曾送到的對象」後，仍可能發生「問題得到釐清後」；本結果的可見關鍵為「問題得到釐清後，學生想把安全處置方式分享給同學。他只說明做法，沒有公開自己的」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已說明正式的帳號安全與問題回報方式，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「說明正式的帳號安全與問題回報方式」後，仍可能發生「學生才發現截圖裡有識別欄位」；本結果的可見關鍵為「學生才發現截圖裡有識別欄位，緊張地逐一檢查曾發送的對象。他先停止再次轉傳，再」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已說明正式的帳號安全與問題回報方式，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「說明正式的帳號安全與問題回報方式」後，仍可能發生「某個群組有人想轉貼截圖幫忙找答案」；本結果的可見關鍵為「某個群組有人想轉貼截圖幫忙找答案，學生及時表明不同意。其他人改成只討論看不見」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已說明正式的帳號安全與問題回報方式，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「說明正式的帳號安全與問題回報方式」後，仍可能發生「他試著用手機塗黑欄位」；本結果的可見關鍵為「他試著用手機塗黑欄位，卻留下可以辨識的部分。重新檢查後他乾脆只打字說明問題；」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已說明正式的帳號安全與問題回報方式，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「說明正式的帳號安全與問題回報方式」後，仍可能發生「學生說自己忘了截圖傳到哪些地方」；本結果的可見關鍵為「學生說自己忘了截圖傳到哪些地方，情緒越來越慌。你協助他列出已知傳送範圍與後續」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已說明正式的帳號安全與問題回報方式，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「說明正式的帳號安全與問題回報方式」後，仍可能發生「在正式查詢頁」；本結果的可見關鍵為「在正式查詢頁，他找到公開可說明的欄位，沒有必要提供整個登入畫面。他把個人截圖」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已說明正式的帳號安全與問題回報方式，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「說明正式的帳號安全與問題回報方式」後，仍可能發生「一位同學認為遮個名字就夠」；本結果的可見關鍵為「一位同學認為遮個名字就夠，學生指出其他號碼仍可對應本人。討論從誰比較神經質轉」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已說明正式的帳號安全與問題回報方式，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「說明正式的帳號安全與問題回報方式」後，仍可能發生「學生原本要求老師幫他登入查分」；本結果的可見關鍵為「學生原本要求老師幫他登入查分，你拒絕接收帳密並提供合法支援途徑。他有些失望，」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已說明正式的帳號安全與問題回報方式，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「說明正式的帳號安全與問題回報方式」後，仍可能發生「問題得到釐清後」；本結果的可見關鍵為「問題得到釐清後，學生想把安全處置方式分享給同學。他只說明做法，沒有公開自己的」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改以文字描述問題而不留原圖」後，仍可能發生「學生才發現截圖裡有識別欄位」；本結果的可見關鍵為「學生才發現截圖裡有識別欄位，緊張地逐一檢查曾發送的對象。他先停止再次轉傳，再」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改以文字描述問題而不留原圖」後，仍可能發生「某個群組有人想轉貼截圖幫忙找答案」；本結果的可見關鍵為「某個群組有人想轉貼截圖幫忙找答案，學生及時表明不同意。其他人改成只討論看不見」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改以文字描述問題而不留原圖」後，仍可能發生「他試著用手機塗黑欄位」；本結果的可見關鍵為「他試著用手機塗黑欄位，卻留下可以辨識的部分。重新檢查後他乾脆只打字說明問題；」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改以文字描述問題而不留原圖」後，仍可能發生「學生說自己忘了截圖傳到哪些地方」；本結果的可見關鍵為「學生說自己忘了截圖傳到哪些地方，情緒越來越慌。你協助他列出已知傳送範圍與後續」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改以文字描述問題而不留原圖」後，仍可能發生「在正式查詢頁」；本結果的可見關鍵為「在正式查詢頁，他找到公開可說明的欄位，沒有必要提供整個登入畫面。他把個人截圖」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改以文字描述問題而不留原圖」後，仍可能發生「一位同學認為遮個名字就夠」；本結果的可見關鍵為「一位同學認為遮個名字就夠，學生指出其他號碼仍可對應本人。討論從誰比較神經質轉」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改以文字描述問題而不留原圖」後，仍可能發生「學生原本要求老師幫他登入查分」；本結果的可見關鍵為「學生原本要求老師幫他登入查分，你拒絕接收帳密並提供合法支援途徑。他有些失望，」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「改以文字描述問題而不留原圖」後，仍可能發生「問題得到釐清後」；本結果的可見關鍵為「問題得到釐清後，學生想把安全處置方式分享給同學。他只說明做法，沒有公開自己的」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
+        }
+      ],
+      "numericFirstEvidence": {
+        "groupByState": {
+          "精神": "C",
+          "熱忱": "D",
+          "情緒": "E",
+          "掌控": "B"
+        },
+        "matrix": [
+          [
+            0,
             1,
-            4,
-            2,
-            2,
+            -2,
+            0
+          ],
+          [
+            -1,
+            -2,
             1,
-            4,
-            2,
+            -1
+          ],
+          [
+            -2,
+            0,
+            -2,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -2,
+            -1
+          ],
+          [
+            1,
+            -2,
+            1,
             2
+          ],
+          [
+            -1,
+            2,
+            1,
+            -1
           ]
-        },
-        {
-          "choice": "B",
-          "weights": [
-            2,
-            1,
-            4,
-            2,
-            2,
-            1,
-            4,
-            2
-          ]
-        },
-        {
-          "choice": "C",
-          "weights": [
-            2,
-            2,
-            1,
-            4,
-            2,
-            2,
-            1,
-            4
-          ]
-        },
-        {
-          "choice": "D",
-          "weights": [
-            4,
-            2,
-            2,
-            1,
-            4,
-            2,
-            2,
-            1
-          ]
-        }
-      ],
-      "states": [
-        [
-          0,
-          1,
-          -2,
-          0
         ],
-        [
-          -1,
-          -2,
-          1,
-          -1
-        ],
-        [
-          -2,
-          0,
-          -2,
-          -1
-        ],
-        [
-          1,
-          -1,
-          -1,
-          -1
-        ],
-        [
-          -1,
-          -1,
-          0,
-          -1
-        ],
-        [
-          -1,
-          -1,
-          -2,
-          -1
-        ],
-        [
-          1,
-          -2,
-          1,
-          2
-        ],
-        [
-          -1,
-          2,
-          1,
-          -1
-        ]
-      ],
-      "causal32Cells": [
-        {
-          "choice": "A",
-          "result": "R1",
-          "weight": 1,
-          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生才發現截圖裡有識別欄位",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R2",
-          "weight": 4,
-          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "某個群組有人想轉貼截圖幫忙找答案",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R3",
-          "weight": 2,
-          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他試著用手機塗黑欄位",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R4",
-          "weight": 2,
-          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生說自己忘了截圖傳到哪些地方",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R5",
-          "weight": 1,
-          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "在正式查詢頁",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R6",
-          "weight": 4,
-          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "一位同學認為遮個名字就夠",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R7",
-          "weight": 2,
-          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生原本要求老師幫他登入查分",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R8",
-          "weight": 2,
-          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "問題得到釐清後",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R1",
-          "weight": 2,
-          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生才發現截圖裡有識別欄位",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R2",
-          "weight": 1,
-          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "某個群組有人想轉貼截圖幫忙找答案",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R3",
-          "weight": 4,
-          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他試著用手機塗黑欄位",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R4",
-          "weight": 2,
-          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生說自己忘了截圖傳到哪些地方",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R5",
-          "weight": 2,
-          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "在正式查詢頁",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R6",
-          "weight": 1,
-          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "一位同學認為遮個名字就夠",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R7",
-          "weight": 4,
-          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生原本要求老師幫他登入查分",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R8",
-          "weight": 2,
-          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "問題得到釐清後",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R1",
-          "weight": 2,
-          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生才發現截圖裡有識別欄位",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R2",
-          "weight": 2,
-          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "某個群組有人想轉貼截圖幫忙找答案",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R3",
-          "weight": 1,
-          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他試著用手機塗黑欄位",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R4",
-          "weight": 4,
-          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生說自己忘了截圖傳到哪些地方",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R5",
-          "weight": 2,
-          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "在正式查詢頁",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R6",
-          "weight": 2,
-          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "一位同學認為遮個名字就夠",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R7",
-          "weight": 1,
-          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生原本要求老師幫他登入查分",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R8",
-          "weight": 4,
-          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "問題得到釐清後",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R1",
-          "weight": 4,
-          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生才發現截圖裡有識別欄位",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R2",
-          "weight": 2,
-          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "某個群組有人想轉貼截圖幫忙找答案",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R3",
-          "weight": 2,
-          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他試著用手機塗黑欄位",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R4",
-          "weight": 1,
-          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生說自己忘了截圖傳到哪些地方",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R5",
-          "weight": 4,
-          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "在正式查詢頁",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R6",
-          "weight": 2,
-          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "一位同學認為遮個名字就夠",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R7",
-          "weight": 2,
-          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生原本要求老師幫他登入查分",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R8",
-          "weight": 1,
-          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "問題得到釐清後",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        }
-      ],
-      "crossDayPrecheck": [
-        {
-          "date": "2029-02-26",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-02-27",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-02",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-05",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-06",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-07",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-08",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-09",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        }
-      ],
-      "staticFailures": [],
-      "environment": "GitHub file-based static inspection; Node/Actions not run"
+        "method": "nonrepeating A-E V3 four groups"
+      },
+      "timeAndLaw": "八個候選日同一T6-1:after池，須有真實公布且當事人已知",
+      "staticReview": "正文與 AVG 原文同步、無Actions或Node實跑、獨立語意審查未進行"
     },
     "T6-010": {
-      "sourceBlobSha": "e1a1c4cb37322ffec8c350528aff8b9b3f162cb7",
-      "seed": "S1362",
-      "openingLength": 158,
-      "resultLengths": [
-        102,
-        101,
-        98,
-        108,
-        99,
-        103,
-        98,
-        113
-      ],
-      "resultTitles": [
-        "學生終於在紙上寫下『我真的很開心』",
-        "那位說運氣的同學坦承自己也在焦慮",
-        "學生在班群只貼了一句感謝幫忙的老師",
-        "有人要求他公開讀書方法來證明不是運氣",
-        "學生興奮地跟朋友講了很多",
-        "班上開始把高分者捧成榜樣",
-        "一位同學真誠祝賀",
-        "學生主動把成績記在個人紀錄中"
-      ],
-      "choices": [
-        {
-          "id": "A",
-          "action": "先允許當事人表達真正的喜悅",
-          "emotional": true,
-          "completed": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
-        },
-        {
-          "id": "B",
-          "action": "請當事人說明想如何回應運氣說法",
-          "emotional": false,
-          "completed": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
-        },
-        {
-          "id": "C",
-          "action": "區分成果分享與比較別人分數",
-          "emotional": false,
-          "completed": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
-        },
-        {
-          "id": "D",
-          "action": "制止以揶揄方式評斷同學努力",
-          "emotional": false,
-          "completed": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
-        }
-      ],
-      "matrix": [
-        {
-          "choice": "A",
-          "weights": [
-            4,
-            2,
-            2,
-            1,
-            4,
-            2,
-            2,
-            1
-          ]
-        },
-        {
-          "choice": "B",
-          "weights": [
-            1,
-            4,
-            2,
-            2,
-            1,
-            4,
-            2,
-            2
-          ]
-        },
-        {
-          "choice": "C",
-          "weights": [
-            2,
-            1,
-            4,
-            2,
-            2,
-            1,
-            4,
-            2
-          ]
-        },
-        {
-          "choice": "D",
-          "weights": [
-            2,
-            2,
-            1,
-            4,
-            2,
-            2,
-            1,
-            4
-          ]
-        }
-      ],
-      "states": [
-        [
-          -1,
-          -2,
-          1,
-          -1
+      "sourceBlobSha": "9076eff062e6c3e1f1740e87285561d28605f43b",
+      "reviewer": "ChatGPT作者自驗",
+      "verdict": "author-reviewed; independent not run",
+      "seedId": "S1362",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "action": "請當事人說明想如何回應運氣說法；你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 2,
+            "action": "區分成果分享與比較別人分數；你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 3,
+            "action": "制止以揶揄方式評斷同學努力；你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 4,
+            "action": "停止以公開分數做班級比較；你已停止以公開分數做班級比較，並確認此舉沒有代替當事人作成正式升學決定。"
+          },
+          {
+            "id": 5,
+            "action": "私下詢問揶揄者是否願意澄清；你已私下詢問揶揄者是否願意澄清，並確認此舉沒有代替當事人作成正式升學決定。"
+          },
+          {
+            "id": 6,
+            "action": "提議只分享準備經驗而不分享級分；你已提議只分享準備經驗而不分享級分，並確認此舉沒有代替當事人作成正式升學決定。"
+          }
         ],
-        [
-          -2,
-          0,
-          -2,
-          -1
-        ],
-        [
-          1,
-          -1,
-          -1,
-          -1
-        ],
-        [
-          -1,
-          -1,
-          0,
-          -1
-        ],
-        [
-          -1,
-          -1,
-          -2,
-          -1
-        ],
-        [
-          1,
-          -2,
-          1,
-          2
-        ],
-        [
-          -1,
+        "selectedIds": [
           2,
-          1,
-          -1
+          3,
+          5
         ],
-        [
-          0,
-          1,
-          -2,
-          0
-        ]
-      ],
-      "causal32Cells": [
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "seed": 20340314,
+        "method": "seeded Fisher-Yates selection without replacement"
+      },
+      "causal32Evidence": [
         {
           "choice": "A",
           "result": "R1",
-          "weight": 4,
-          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生終於在紙上寫下『我真的很開心』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已私下詢問揶揄者是否願意澄清，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「私下詢問揶揄者是否願意澄清」後，仍可能發生「學生終於在紙上寫下『我真的很開心』」；本結果的可見關鍵為「學生終於在紙上寫下『我真的很開心』，卻又用手遮住。你沒有要求他公開分享，他把」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R2",
           "weight": 2,
-          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "那位說運氣的同學坦承自己也在焦慮",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已私下詢問揶揄者是否願意澄清，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「私下詢問揶揄者是否願意澄清」後，仍可能發生「那位說運氣的同學坦承自己也在焦慮」；本結果的可見關鍵為「那位說運氣的同學坦承自己也在焦慮，沒有再替對方定義成績。兩人沒有立刻變成好朋」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R3",
           "weight": 2,
-          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生在班群只貼了一句感謝幫忙的老師",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已私下詢問揶揄者是否願意澄清，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「私下詢問揶揄者是否願意澄清」後，仍可能發生「學生在班群只貼了一句感謝幫忙的老師」；本結果的可見關鍵為「學生在班群只貼了一句感謝幫忙的老師，沒有附分數。有人仍猜測，他表明不打算公開」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R4",
-          "weight": 1,
-          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人要求他公開讀書方法來證明不是運氣",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已私下詢問揶揄者是否願意澄清，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「私下詢問揶揄者是否願意澄清」後，仍可能發生「有人要求他公開讀書方法來證明不是運氣」；本結果的可見關鍵為「有人要求他公開讀書方法來證明不是運氣，他拒絕把個人準備變成辯論證據。這份拒絕」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R5",
-          "weight": 4,
-          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生興奮地跟朋友講了很多",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已私下詢問揶揄者是否願意澄清，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「私下詢問揶揄者是否願意澄清」後，仍可能發生「學生興奮地跟朋友講了很多」；本結果的可見關鍵為「學生興奮地跟朋友講了很多，才發現對方當天不想談考試。他停下來問是否改聊別的，」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R6",
           "weight": 2,
-          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "班上開始把高分者捧成榜樣",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已私下詢問揶揄者是否願意澄清，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「私下詢問揶揄者是否願意澄清」後，仍可能發生「班上開始把高分者捧成榜樣」；本結果的可見關鍵為「班上開始把高分者捧成榜樣，學生卻更不自在。他私下說自己也有不少失誤，班級逐漸」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R7",
           "weight": 2,
-          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "一位同學真誠祝賀",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已私下詢問揶揄者是否願意澄清，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「私下詢問揶揄者是否願意澄清」後，仍可能發生「一位同學真誠祝賀」；本結果的可見關鍵為「一位同學真誠祝賀，學生才相信不是每句反應都藏著比較。他回以謝謝，沒有急著補一」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R8",
-          "weight": 1,
-          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生主動把成績記在個人紀錄中",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已私下詢問揶揄者是否願意澄清，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「私下詢問揶揄者是否願意澄清」後，仍可能發生「學生主動把成績記在個人紀錄中」；本結果的可見關鍵為「學生主動把成績記在個人紀錄中，旁邊寫下這段準備最值得保留的做法。那不是證明給」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R1",
-          "weight": 1,
-          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生終於在紙上寫下『我真的很開心』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「區分成果分享與比較別人分數」後，仍可能發生「學生終於在紙上寫下『我真的很開心』」；本結果的可見關鍵為「學生終於在紙上寫下『我真的很開心』，卻又用手遮住。你沒有要求他公開分享，他把」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R2",
-          "weight": 4,
-          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "那位說運氣的同學坦承自己也在焦慮",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「區分成果分享與比較別人分數」後，仍可能發生「那位說運氣的同學坦承自己也在焦慮」；本結果的可見關鍵為「那位說運氣的同學坦承自己也在焦慮，沒有再替對方定義成績。兩人沒有立刻變成好朋」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
         },
         {
           "choice": "B",
           "result": "R3",
-          "weight": 2,
-          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生在班群只貼了一句感謝幫忙的老師",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「區分成果分享與比較別人分數」後，仍可能發生「學生在班群只貼了一句感謝幫忙的老師」；本結果的可見關鍵為「學生在班群只貼了一句感謝幫忙的老師，沒有附分數。有人仍猜測，他表明不打算公開」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
         },
         {
           "choice": "B",
           "result": "R4",
           "weight": 2,
-          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人要求他公開讀書方法來證明不是運氣",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「區分成果分享與比較別人分數」後，仍可能發生「有人要求他公開讀書方法來證明不是運氣」；本結果的可見關鍵為「有人要求他公開讀書方法來證明不是運氣，他拒絕把個人準備變成辯論證據。這份拒絕」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R5",
-          "weight": 1,
-          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生興奮地跟朋友講了很多",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「區分成果分享與比較別人分數」後，仍可能發生「學生興奮地跟朋友講了很多」；本結果的可見關鍵為「學生興奮地跟朋友講了很多，才發現對方當天不想談考試。他停下來問是否改聊別的，」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R6",
-          "weight": 4,
-          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "班上開始把高分者捧成榜樣",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「區分成果分享與比較別人分數」後，仍可能發生「班上開始把高分者捧成榜樣」；本結果的可見關鍵為「班上開始把高分者捧成榜樣，學生卻更不自在。他私下說自己也有不少失誤，班級逐漸」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
         },
         {
           "choice": "B",
           "result": "R7",
-          "weight": 2,
-          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "一位同學真誠祝賀",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「區分成果分享與比較別人分數」後，仍可能發生「一位同學真誠祝賀」；本結果的可見關鍵為「一位同學真誠祝賀，學生才相信不是每句反應都藏著比較。他回以謝謝，沒有急著補一」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
         },
         {
           "choice": "B",
           "result": "R8",
           "weight": 2,
-          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生主動把成績記在個人紀錄中",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「區分成果分享與比較別人分數」後，仍可能發生「學生主動把成績記在個人紀錄中」；本結果的可見關鍵為「學生主動把成績記在個人紀錄中，旁邊寫下這段準備最值得保留的做法。那不是證明給」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R1",
           "weight": 2,
-          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生終於在紙上寫下『我真的很開心』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先允許當事人表達真正的喜悅」後，仍可能發生「學生終於在紙上寫下『我真的很開心』」；本結果的可見關鍵為「學生終於在紙上寫下『我真的很開心』，卻又用手遮住。你沒有要求他公開分享，他把」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R2",
-          "weight": 1,
-          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "那位說運氣的同學坦承自己也在焦慮",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先允許當事人表達真正的喜悅」後，仍可能發生「那位說運氣的同學坦承自己也在焦慮」；本結果的可見關鍵為「那位說運氣的同學坦承自己也在焦慮，沒有再替對方定義成績。兩人沒有立刻變成好朋」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R3",
-          "weight": 4,
-          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生在班群只貼了一句感謝幫忙的老師",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先允許當事人表達真正的喜悅」後，仍可能發生「學生在班群只貼了一句感謝幫忙的老師」；本結果的可見關鍵為「學生在班群只貼了一句感謝幫忙的老師，沒有附分數。有人仍猜測，他表明不打算公開」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R4",
           "weight": 2,
-          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人要求他公開讀書方法來證明不是運氣",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先允許當事人表達真正的喜悅」後，仍可能發生「有人要求他公開讀書方法來證明不是運氣」；本結果的可見關鍵為「有人要求他公開讀書方法來證明不是運氣，他拒絕把個人準備變成辯論證據。這份拒絕」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R5",
           "weight": 2,
-          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生興奮地跟朋友講了很多",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先允許當事人表達真正的喜悅」後，仍可能發生「學生興奮地跟朋友講了很多」；本結果的可見關鍵為「學生興奮地跟朋友講了很多，才發現對方當天不想談考試。他停下來問是否改聊別的，」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R6",
-          "weight": 1,
-          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "班上開始把高分者捧成榜樣",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先允許當事人表達真正的喜悅」後，仍可能發生「班上開始把高分者捧成榜樣」；本結果的可見關鍵為「班上開始把高分者捧成榜樣，學生卻更不自在。他私下說自己也有不少失誤，班級逐漸」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R7",
-          "weight": 4,
-          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "一位同學真誠祝賀",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先允許當事人表達真正的喜悅」後，仍可能發生「一位同學真誠祝賀」；本結果的可見關鍵為「一位同學真誠祝賀，學生才相信不是每句反應都藏著比較。他回以謝謝，沒有急著補一」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R8",
           "weight": 2,
-          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生主動把成績記在個人紀錄中",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先允許當事人表達真正的喜悅」後，仍可能發生「學生主動把成績記在個人紀錄中」；本結果的可見關鍵為「學生主動把成績記在個人紀錄中，旁邊寫下這段準備最值得保留的做法。那不是證明給」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R1",
           "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
           "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生終於在紙上寫下『我真的很開心』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「制止以揶揄方式評斷同學努力」後，仍可能發生「學生終於在紙上寫下『我真的很開心』」；本結果的可見關鍵為「學生終於在紙上寫下『我真的很開心』，卻又用手遮住。你沒有要求他公開分享，他把」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R2",
           "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
           "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "那位說運氣的同學坦承自己也在焦慮",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「制止以揶揄方式評斷同學努力」後，仍可能發生「那位說運氣的同學坦承自己也在焦慮」；本結果的可見關鍵為「那位說運氣的同學坦承自己也在焦慮，沒有再替對方定義成績。兩人沒有立刻變成好朋」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R3",
           "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
           "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生在班群只貼了一句感謝幫忙的老師",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「制止以揶揄方式評斷同學努力」後，仍可能發生「學生在班群只貼了一句感謝幫忙的老師」；本結果的可見關鍵為「學生在班群只貼了一句感謝幫忙的老師，沒有附分數。有人仍猜測，他表明不打算公開」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
         },
         {
           "choice": "D",
           "result": "R4",
           "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
           "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人要求他公開讀書方法來證明不是運氣",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「制止以揶揄方式評斷同學努力」後，仍可能發生「有人要求他公開讀書方法來證明不是運氣」；本結果的可見關鍵為「有人要求他公開讀書方法來證明不是運氣，他拒絕把個人準備變成辯論證據。這份拒絕」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
         },
         {
           "choice": "D",
           "result": "R5",
           "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
           "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生興奮地跟朋友講了很多",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「制止以揶揄方式評斷同學努力」後，仍可能發生「學生興奮地跟朋友講了很多」；本結果的可見關鍵為「學生興奮地跟朋友講了很多，才發現對方當天不想談考試。他停下來問是否改聊別的，」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R6",
           "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
           "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "班上開始把高分者捧成榜樣",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「制止以揶揄方式評斷同學努力」後，仍可能發生「班上開始把高分者捧成榜樣」；本結果的可見關鍵為「班上開始把高分者捧成榜樣，學生卻更不自在。他私下說自己也有不少失誤，班級逐漸」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R7",
           "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
           "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "一位同學真誠祝賀",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「制止以揶揄方式評斷同學努力」後，仍可能發生「一位同學真誠祝賀」；本結果的可見關鍵為「一位同學真誠祝賀，學生才相信不是每句反應都藏著比較。他回以謝謝，沒有急著補一」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
         },
         {
           "choice": "D",
           "result": "R8",
           "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
           "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生主動把成績記在個人紀錄中",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「制止以揶揄方式評斷同學努力」後，仍可能發生「學生主動把成績記在個人紀錄中」；本結果的可見關鍵為「學生主動把成績記在個人紀錄中，旁邊寫下這段準備最值得保留的做法。那不是證明給」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
         }
       ],
-      "crossDayPrecheck": [
-        {
-          "date": "2029-02-26",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
+      "numericFirstEvidence": {
+        "groupByState": {
+          "精神": "C",
+          "熱忱": "D",
+          "情緒": "E",
+          "掌控": "B"
         },
-        {
-          "date": "2029-02-27",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-02",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-05",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-06",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-07",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-08",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-09",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        }
-      ],
-      "staticFailures": [],
-      "environment": "GitHub file-based static inspection; Node/Actions not run"
+        "matrix": [
+          [
+            -1,
+            -2,
+            1,
+            -1
+          ],
+          [
+            -2,
+            0,
+            -2,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -2,
+            -1
+          ],
+          [
+            1,
+            -2,
+            1,
+            2
+          ],
+          [
+            -1,
+            2,
+            1,
+            -1
+          ],
+          [
+            0,
+            1,
+            -2,
+            0
+          ]
+        ],
+        "method": "nonrepeating A-E V3 four groups"
+      },
+      "timeAndLaw": "八個候選日同一T6-1:after池，須有真實公布且當事人已知",
+      "staticReview": "正文與 AVG 原文同步、無Actions或Node實跑、獨立語意審查未進行"
     },
     "T6-011": {
-      "sourceBlobSha": "a4fd29bce8ab3d0498f2d97e6a539daf09999d5e",
-      "seed": "S1365",
-      "openingLength": 171,
-      "resultLengths": [
-        109,
-        99,
-        108,
-        111,
-        105,
-        94,
-        106,
-        107
-      ],
-      "resultTitles": [
-        "學生把原本寫著『很笨』的便條揉成一團",
-        "有人誇他一夜變成學霸",
-        "他重新整理三年學習紀錄",
-        "學生要求你在班上宣布他已經改頭換面",
-        "他試著把原本失敗的筆記丟掉",
-        "另一名同學問他以後是不是可以教所有科",
-        "學生把成績告訴家人",
-        "他在筆記首頁把『我就是不會』改成『我找到了一些"
-      ],
-      "choices": [
-        {
-          "id": "A",
-          "action": "先請他說明舊標籤帶來的傷害",
-          "emotional": true,
-          "completed": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
+      "sourceBlobSha": "6ad9fd7a0b2b1e9df064e3b9711fe14d96ab6538",
+      "reviewer": "ChatGPT作者自驗",
+      "verdict": "author-reviewed; independent not run",
+      "seedId": "S1365",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "action": "把可核的成績與不能量化的能力分開；你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 2,
+            "action": "協助整理這次成功的具體方法；你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 3,
+            "action": "討論未來遇到低分時如何看自己；你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 4,
+            "action": "請學生整理自己實際改變的學習方法；你已請學生整理自己實際改變的學習方法，並確認此舉沒有代替當事人作成正式升學決定。"
+          },
+          {
+            "id": 5,
+            "action": "取消以高低分數替同學取綽號的做法；你已取消以高低分數替同學取綽號的做法，並確認此舉沒有代替當事人作成正式升學決定。"
+          },
+          {
+            "id": 6,
+            "action": "保留高分學生仍可私下提問的管道；你已保留高分學生仍可私下提問的管道，並確認此舉沒有代替當事人作成正式升學決定。"
+          }
+        ],
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
         },
-        {
-          "id": "B",
-          "action": "把可核的成績與不能量化的能力分開",
-          "emotional": false,
-          "completed": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
-        },
-        {
-          "id": "C",
-          "action": "協助整理這次成功的具體方法",
-          "emotional": false,
-          "completed": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
-        },
-        {
-          "id": "D",
-          "action": "討論未來遇到低分時如何看自己",
-          "emotional": false,
-          "completed": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
-        }
-      ],
-      "matrix": [
+        "seed": 20348233,
+        "method": "seeded Fisher-Yates selection without replacement"
+      },
+      "causal32Evidence": [
         {
           "choice": "A",
-          "weights": [
-            4,
-            2,
-            2,
-            1,
-            4,
-            2,
-            2,
-            1
-          ]
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生整理自己實際改變的學習方法，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生整理自己實際改變的學習方法」後，仍可能發生「學生把原本寫著『很笨』的便條揉成一團」；本結果的可見關鍵為「學生把原本寫著『很笨』的便條揉成一團，卻沒有立刻貼上『天才』。他說想先知道自」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生整理自己實際改變的學習方法，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生整理自己實際改變的學習方法」後，仍可能發生「有人誇他一夜變成學霸」；本結果的可見關鍵為「有人誇他一夜變成學霸，他笑得勉強。回到座位後他承認還是會怕難題，你尊重這份不」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生整理自己實際改變的學習方法，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生整理自己實際改變的學習方法」後，仍可能發生「他重新整理三年學習紀錄」；本結果的可見關鍵為「他重新整理三年學習紀錄，發現進步來自多次調整習慣，而非某天突然變聰明。成績仍」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生整理自己實際改變的學習方法，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生整理自己實際改變的學習方法」後，仍可能發生「學生要求你在班上宣布他已經改頭換面」；本結果的可見關鍵為「學生要求你在班上宣布他已經改頭換面。你沒有替他發表永久評語，他稍感失落，後來」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生整理自己實際改變的學習方法，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生整理自己實際改變的學習方法」後，仍可能發生「他試著把原本失敗的筆記丟掉」；本結果的可見關鍵為「他試著把原本失敗的筆記丟掉，翻開卻看見自己改正過的地方。『這些醜的也算我走過」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生整理自己實際改變的學習方法，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生整理自己實際改變的學習方法」後，仍可能發生「另一名同學問他以後是不是可以教所有科」；本結果的可見關鍵為「另一名同學問他以後是不是可以教所有科，他坦承不能。班級氣氛稍微安靜，但他沒有」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生整理自己實際改變的學習方法，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生整理自己實際改變的學習方法」後，仍可能發生「學生把成績告訴家人」；本結果的可見關鍵為「學生把成績告訴家人，家人立刻改口說早知道他是資優。他說那樣聽起來還是壓力，請」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已請學生整理自己實際改變的學習方法，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「請學生整理自己實際改變的學習方法」後，仍可能發生「他在筆記首頁把『我就是不會』改成『我找到了一些」；本結果的可見關鍵為「他在筆記首頁把『我就是不會』改成『我找到了一些有效方法』。這句話沒那麼響亮，」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
-          "weights": [
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先請他說明舊標籤帶來的傷害」後，仍可能發生「學生把原本寫著『很笨』的便條揉成一團」；本結果的可見關鍵為「學生把原本寫著『很笨』的便條揉成一團，卻沒有立刻貼上『天才』。他說想先知道自」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先請他說明舊標籤帶來的傷害」後，仍可能發生「有人誇他一夜變成學霸」；本結果的可見關鍵為「有人誇他一夜變成學霸，他笑得勉強。回到座位後他承認還是會怕難題，你尊重這份不」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先請他說明舊標籤帶來的傷害」後，仍可能發生「他重新整理三年學習紀錄」；本結果的可見關鍵為「他重新整理三年學習紀錄，發現進步來自多次調整習慣，而非某天突然變聰明。成績仍」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先請他說明舊標籤帶來的傷害」後，仍可能發生「學生要求你在班上宣布他已經改頭換面」；本結果的可見關鍵為「學生要求你在班上宣布他已經改頭換面。你沒有替他發表永久評語，他稍感失落，後來」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先請他說明舊標籤帶來的傷害」後，仍可能發生「他試著把原本失敗的筆記丟掉」；本結果的可見關鍵為「他試著把原本失敗的筆記丟掉，翻開卻看見自己改正過的地方。『這些醜的也算我走過」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先請他說明舊標籤帶來的傷害」後，仍可能發生「另一名同學問他以後是不是可以教所有科」；本結果的可見關鍵為「另一名同學問他以後是不是可以教所有科，他坦承不能。班級氣氛稍微安靜，但他沒有」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先請他說明舊標籤帶來的傷害」後，仍可能發生「學生把成績告訴家人」；本結果的可見關鍵為「學生把成績告訴家人，家人立刻改口說早知道他是資優。他說那樣聽起來還是壓力，請」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「先請他說明舊標籤帶來的傷害」後，仍可能發生「他在筆記首頁把『我就是不會』改成『我找到了一些」；本結果的可見關鍵為「他在筆記首頁把『我就是不會』改成『我找到了一些有效方法』。這句話沒那麼響亮，」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論未來遇到低分時如何看自己」後，仍可能發生「學生把原本寫著『很笨』的便條揉成一團」；本結果的可見關鍵為「學生把原本寫著『很笨』的便條揉成一團，卻沒有立刻貼上『天才』。他說想先知道自」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論未來遇到低分時如何看自己」後，仍可能發生「有人誇他一夜變成學霸」；本結果的可見關鍵為「有人誇他一夜變成學霸，他笑得勉強。回到座位後他承認還是會怕難題，你尊重這份不」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論未來遇到低分時如何看自己」後，仍可能發生「他重新整理三年學習紀錄」；本結果的可見關鍵為「他重新整理三年學習紀錄，發現進步來自多次調整習慣，而非某天突然變聰明。成績仍」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論未來遇到低分時如何看自己」後，仍可能發生「學生要求你在班上宣布他已經改頭換面」；本結果的可見關鍵為「學生要求你在班上宣布他已經改頭換面。你沒有替他發表永久評語，他稍感失落，後來」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論未來遇到低分時如何看自己」後，仍可能發生「他試著把原本失敗的筆記丟掉」；本結果的可見關鍵為「他試著把原本失敗的筆記丟掉，翻開卻看見自己改正過的地方。『這些醜的也算我走過」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論未來遇到低分時如何看自己」後，仍可能發生「另一名同學問他以後是不是可以教所有科」；本結果的可見關鍵為「另一名同學問他以後是不是可以教所有科，他坦承不能。班級氣氛稍微安靜，但他沒有」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論未來遇到低分時如何看自己」後，仍可能發生「學生把成績告訴家人」；本結果的可見關鍵為「學生把成績告訴家人，家人立刻改口說早知道他是資優。他說那樣聽起來還是壓力，請」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論未來遇到低分時如何看自己」後，仍可能發生「他在筆記首頁把『我就是不會』改成『我找到了一些」；本結果的可見關鍵為「他在筆記首頁把『我就是不會』改成『我找到了一些有效方法』。這句話沒那麼響亮，」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已保留高分學生仍可私下提問的管道，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「保留高分學生仍可私下提問的管道」後，仍可能發生「學生把原本寫著『很笨』的便條揉成一團」；本結果的可見關鍵為「學生把原本寫著『很笨』的便條揉成一團，卻沒有立刻貼上『天才』。他說想先知道自」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已保留高分學生仍可私下提問的管道，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「保留高分學生仍可私下提問的管道」後，仍可能發生「有人誇他一夜變成學霸」；本結果的可見關鍵為「有人誇他一夜變成學霸，他笑得勉強。回到座位後他承認還是會怕難題，你尊重這份不」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已保留高分學生仍可私下提問的管道，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「保留高分學生仍可私下提問的管道」後，仍可能發生「他重新整理三年學習紀錄」；本結果的可見關鍵為「他重新整理三年學習紀錄，發現進步來自多次調整習慣，而非某天突然變聰明。成績仍」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已保留高分學生仍可私下提問的管道，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「保留高分學生仍可私下提問的管道」後，仍可能發生「學生要求你在班上宣布他已經改頭換面」；本結果的可見關鍵為「學生要求你在班上宣布他已經改頭換面。你沒有替他發表永久評語，他稍感失落，後來」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已保留高分學生仍可私下提問的管道，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「保留高分學生仍可私下提問的管道」後，仍可能發生「他試著把原本失敗的筆記丟掉」；本結果的可見關鍵為「他試著把原本失敗的筆記丟掉，翻開卻看見自己改正過的地方。『這些醜的也算我走過」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已保留高分學生仍可私下提問的管道，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「保留高分學生仍可私下提問的管道」後，仍可能發生「另一名同學問他以後是不是可以教所有科」；本結果的可見關鍵為「另一名同學問他以後是不是可以教所有科，他坦承不能。班級氣氛稍微安靜，但他沒有」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已保留高分學生仍可私下提問的管道，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「保留高分學生仍可私下提問的管道」後，仍可能發生「學生把成績告訴家人」；本結果的可見關鍵為「學生把成績告訴家人，家人立刻改口說早知道他是資優。他說那樣聽起來還是壓力，請」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已保留高分學生仍可私下提問的管道，並確認此舉沒有代替當事人作成正式升學決定。",
+          "reason": "已完成「保留高分學生仍可私下提問的管道」後，仍可能發生「他在筆記首頁把『我就是不會』改成『我找到了一些」；本結果的可見關鍵為「他在筆記首頁把『我就是不會』改成『我找到了一些有效方法』。這句話沒那麼響亮，」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
+        }
+      ],
+      "numericFirstEvidence": {
+        "groupByState": {
+          "精神": "C",
+          "熱忱": "D",
+          "情緒": "E",
+          "掌控": "B"
+        },
+        "matrix": [
+          [
+            -2,
+            0,
+            -2,
+            -1
+          ],
+          [
             1,
-            4,
-            2,
-            2,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -2,
+            -1
+          ],
+          [
             1,
-            4,
-            2,
+            -2,
+            1,
             2
+          ],
+          [
+            -1,
+            2,
+            1,
+            -1
+          ],
+          [
+            0,
+            1,
+            -2,
+            0
+          ],
+          [
+            -1,
+            -2,
+            1,
+            -1
           ]
-        },
-        {
-          "choice": "C",
-          "weights": [
-            2,
-            1,
-            4,
-            2,
-            2,
-            1,
-            4,
-            2
-          ]
-        },
-        {
-          "choice": "D",
-          "weights": [
-            2,
-            2,
-            1,
-            4,
-            2,
-            2,
-            1,
-            4
-          ]
-        }
-      ],
-      "states": [
-        [
-          -2,
-          0,
-          -2,
-          -1
         ],
-        [
-          1,
-          -1,
-          -1,
-          -1
-        ],
-        [
-          -1,
-          -1,
-          0,
-          -1
-        ],
-        [
-          -1,
-          -1,
-          -2,
-          -1
-        ],
-        [
-          1,
-          -2,
-          1,
-          2
-        ],
-        [
-          -1,
-          2,
-          1,
-          -1
-        ],
-        [
-          0,
-          1,
-          -2,
-          0
-        ],
-        [
-          -1,
-          -2,
-          1,
-          -1
-        ]
-      ],
-      "causal32Cells": [
-        {
-          "choice": "A",
-          "result": "R1",
-          "weight": 4,
-          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生把原本寫著『很笨』的便條揉成一團",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R2",
-          "weight": 2,
-          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人誇他一夜變成學霸",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R3",
-          "weight": 2,
-          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他重新整理三年學習紀錄",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R4",
-          "weight": 1,
-          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生要求你在班上宣布他已經改頭換面",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R5",
-          "weight": 4,
-          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他試著把原本失敗的筆記丟掉",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R6",
-          "weight": 2,
-          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "另一名同學問他以後是不是可以教所有科",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R7",
-          "weight": 2,
-          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生把成績告訴家人",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "A",
-          "result": "R8",
-          "weight": 1,
-          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他在筆記首頁把『我就是不會』改成『我找到了一些",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R1",
-          "weight": 1,
-          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生把原本寫著『很笨』的便條揉成一團",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R2",
-          "weight": 4,
-          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人誇他一夜變成學霸",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R3",
-          "weight": 2,
-          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他重新整理三年學習紀錄",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R4",
-          "weight": 2,
-          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生要求你在班上宣布他已經改頭換面",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R5",
-          "weight": 1,
-          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他試著把原本失敗的筆記丟掉",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R6",
-          "weight": 4,
-          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "另一名同學問他以後是不是可以教所有科",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R7",
-          "weight": 2,
-          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生把成績告訴家人",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "B",
-          "result": "R8",
-          "weight": 2,
-          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他在筆記首頁把『我就是不會』改成『我找到了一些",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R1",
-          "weight": 2,
-          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生把原本寫著『很笨』的便條揉成一團",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R2",
-          "weight": 1,
-          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人誇他一夜變成學霸",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R3",
-          "weight": 4,
-          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他重新整理三年學習紀錄",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R4",
-          "weight": 2,
-          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生要求你在班上宣布他已經改頭換面",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R5",
-          "weight": 2,
-          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他試著把原本失敗的筆記丟掉",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R6",
-          "weight": 1,
-          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "另一名同學問他以後是不是可以教所有科",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R7",
-          "weight": 4,
-          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生把成績告訴家人",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "C",
-          "result": "R8",
-          "weight": 2,
-          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他在筆記首頁把『我就是不會』改成『我找到了一些",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R1",
-          "weight": 2,
-          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生把原本寫著『很笨』的便條揉成一團",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R2",
-          "weight": 2,
-          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "有人誇他一夜變成學霸",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R3",
-          "weight": 1,
-          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他重新整理三年學習紀錄",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R4",
-          "weight": 4,
-          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生要求你在班上宣布他已經改頭換面",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R5",
-          "weight": 2,
-          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他試著把原本失敗的筆記丟掉",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R6",
-          "weight": 2,
-          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "另一名同學問他以後是不是可以教所有科",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R7",
-          "weight": 1,
-          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生把成績告訴家人",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        },
-        {
-          "choice": "D",
-          "result": "R8",
-          "weight": 4,
-          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他在筆記首頁把『我就是不會』改成『我找到了一些",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
-        }
-      ],
-      "crossDayPrecheck": [
-        {
-          "date": "2029-02-26",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-02-27",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-02",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-05",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-06",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-07",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-08",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-09",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        }
-      ],
-      "staticFailures": [],
-      "environment": "GitHub file-based static inspection; Node/Actions not run"
+        "method": "nonrepeating A-E V3 four groups"
+      },
+      "timeAndLaw": "八個候選日同一T6-1:after池，須有真實公布且當事人已知",
+      "staticReview": "正文與 AVG 原文同步、無Actions或Node實跑、獨立語意審查未進行"
     },
     "T6-012": {
-      "sourceBlobSha": "ae0d7e93491e0ae113ebbc30a54b221eabc94685",
-      "seed": "S1368",
-      "openingLength": 161,
-      "resultLengths": [
-        102,
-        98,
-        98,
-        97,
-        108,
-        101,
-        109,
-        100
-      ],
-      "resultTitles": [
-        "學生寫下『老師以前幫我很多』",
-        "他打好要道歉的訊息",
-        "支持他的老師收到學生的坦白後表示願意聽理由",
-        "學生原想瞞著原老師",
-        "同學說『老師那麼照顧你",
-        "學生把過去曾受指導的作品帶來",
-        "他急著請你直接聯絡那位老師說服對方",
-        "學生仍保留原方向作比較"
-      ],
-      "choices": [
-        {
-          "id": "A",
-          "action": "明確說明支持不以照舊志願為交換",
-          "emotional": true,
-          "completed": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
-        },
-        {
-          "id": "B",
-          "action": "請學生列出自己對新方向真正的理由",
-          "emotional": false,
-          "completed": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
-        },
-        {
-          "id": "C",
-          "action": "陪他擬一段不保證結果的說明",
-          "emotional": false,
-          "completed": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
-        },
-        {
-          "id": "D",
-          "action": "討論如何感謝老師而不請求批准",
-          "emotional": false,
-          "completed": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
-        }
-      ],
-      "matrix": [
-        {
-          "choice": "A",
-          "weights": [
-            4,
-            2,
-            2,
-            1,
-            4,
-            2,
-            2,
-            1
-          ]
-        },
-        {
-          "choice": "B",
-          "weights": [
-            1,
-            4,
-            2,
-            2,
-            1,
-            4,
-            2,
-            2
-          ]
-        },
-        {
-          "choice": "C",
-          "weights": [
-            2,
-            1,
-            4,
-            2,
-            2,
-            1,
-            4,
-            2
-          ]
-        },
-        {
-          "choice": "D",
-          "weights": [
-            2,
-            2,
-            1,
-            4,
-            2,
-            2,
-            1,
-            4
-          ]
-        }
-      ],
-      "states": [
-        [
+      "sourceBlobSha": "f77e5b25dc87488226091b510cfa298f2814b8c8",
+      "reviewer": "ChatGPT作者自驗",
+      "verdict": "author-reviewed; independent not run",
+      "seedId": "S1368",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "action": "請學生列出自己對新方向真正的理由；你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 2,
+            "action": "陪他擬一段不保證結果的說明；你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 3,
+            "action": "討論如何感謝老師而不請求批准；你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。"
+          },
+          {
+            "id": 4,
+            "action": "請學生核對新方向真正的申請條件；你已請學生核對新方向真正的申請條件，並確認此舉沒有代替當事人作成正式升學決定。"
+          },
+          {
+            "id": 5,
+            "action": "示範如何感謝支持而不承諾志願；你已示範如何感謝支持而不承諾志願，並確認此舉沒有代替當事人作成正式升學決定。"
+          },
+          {
+            "id": 6,
+            "action": "由學生自己決定何時與原老師分享；你已由學生自己決定何時與原老師分享，並確認此舉沒有代替當事人作成正式升學決定。"
+          }
+        ],
+        "selectedIds": [
           1,
-          -1,
-          -1,
-          -1
-        ],
-        [
-          -1,
-          -1,
-          0,
-          -1
-        ],
-        [
-          -1,
-          -1,
-          -2,
-          -1
-        ],
-        [
-          1,
-          -2,
-          1,
-          2
-        ],
-        [
-          -1,
           2,
-          1,
-          -1
+          3
         ],
-        [
-          0,
-          1,
-          -2,
-          0
-        ],
-        [
-          -1,
-          -2,
-          1,
-          -1
-        ],
-        [
-          -2,
-          0,
-          -2,
-          -1
-        ]
-      ],
-      "causal32Cells": [
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 3,
+          "D": "emotional"
+        },
+        "seed": 20356152,
+        "method": "seeded Fisher-Yates selection without replacement"
+      },
+      "causal32Evidence": [
         {
           "choice": "A",
           "result": "R1",
-          "weight": 4,
-          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生寫下『老師以前幫我很多』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「陪他擬一段不保證結果的說明」後，仍可能發生「學生寫下『老師以前幫我很多』」；本結果的可見關鍵為「學生寫下『老師以前幫我很多』，卻在旁邊補上『我想研究別的領域』。兩句話放在一」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R2",
-          "weight": 2,
-          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他打好要道歉的訊息",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「陪他擬一段不保證結果的說明」後，仍可能發生「他打好要道歉的訊息」；本結果的可見關鍵為「他打好要道歉的訊息，又刪掉『我辜負您』幾個字。最後只說明自己在新分數後開始探」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
         },
         {
           "choice": "A",
           "result": "R3",
-          "weight": 2,
-          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "支持他的老師收到學生的坦白後表示願意聽理由",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「陪他擬一段不保證結果的說明」後，仍可能發生「支持他的老師收到學生的坦白後表示願意聽理由」；本結果的可見關鍵為「支持他的老師收到學生的坦白後表示願意聽理由，但不保證一定認同。學生雖緊張，仍」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
         },
         {
           "choice": "A",
           "result": "R4",
-          "weight": 1,
-          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生原想瞞著原老師",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「陪他擬一段不保證結果的說明」後，仍可能發生「學生原想瞞著原老師」；本結果的可見關鍵為「學生原想瞞著原老師，直到確定方向才說。想了一會兒，他決定先查資料而不是編造進」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R5",
-          "weight": 4,
-          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "同學說『老師那麼照顧你",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「陪他擬一段不保證結果的說明」後，仍可能發生「同學說『老師那麼照顧你」；本結果的可見關鍵為「同學說『老師那麼照顧你，你不可以改』，學生難過地問是否欠下一個志願。你沒有替」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "A",
           "result": "R6",
-          "weight": 2,
-          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生把過去曾受指導的作品帶來",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「陪他擬一段不保證結果的說明」後，仍可能發生「學生把過去曾受指導的作品帶來」；本結果的可見關鍵為「學生把過去曾受指導的作品帶來，發現那些能力也可能運用在新方向。他沒有否定舊目」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
         },
         {
           "choice": "A",
           "result": "R7",
-          "weight": 2,
-          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他急著請你直接聯絡那位老師說服對方",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「陪他擬一段不保證結果的說明」後，仍可能發生「他急著請你直接聯絡那位老師說服對方」；本結果的可見關鍵為「他急著請你直接聯絡那位老師說服對方，你先確認學生願分享哪些資訊與真正需要的協」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
         },
         {
           "choice": "A",
           "result": "R8",
-          "weight": 1,
-          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生仍保留原方向作比較",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「陪他擬一段不保證結果的說明」後，仍可能發生「學生仍保留原方向作比較」；本結果的可見關鍵為「學生仍保留原方向作比較，也開始查新領域的正式條件。『我想謝謝老師，但不想用我」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R1",
           "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
           "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生寫下『老師以前幫我很多』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「請學生列出自己對新方向真正的理由」後，仍可能發生「學生寫下『老師以前幫我很多』」；本結果的可見關鍵為「學生寫下『老師以前幫我很多』，卻在旁邊補上『我想研究別的領域』。兩句話放在一」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
         },
         {
           "choice": "B",
           "result": "R2",
           "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
           "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他打好要道歉的訊息",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「請學生列出自己對新方向真正的理由」後，仍可能發生「他打好要道歉的訊息」；本結果的可見關鍵為「他打好要道歉的訊息，又刪掉『我辜負您』幾個字。最後只說明自己在新分數後開始探」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
         },
         {
           "choice": "B",
           "result": "R3",
           "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
           "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "支持他的老師收到學生的坦白後表示願意聽理由",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「請學生列出自己對新方向真正的理由」後，仍可能發生「支持他的老師收到學生的坦白後表示願意聽理由」；本結果的可見關鍵為「支持他的老師收到學生的坦白後表示願意聽理由，但不保證一定認同。學生雖緊張，仍」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R4",
           "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
           "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生原想瞞著原老師",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「請學生列出自己對新方向真正的理由」後，仍可能發生「學生原想瞞著原老師」；本結果的可見關鍵為「學生原想瞞著原老師，直到確定方向才說。想了一會兒，他決定先查資料而不是編造進」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R5",
           "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
           "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "同學說『老師那麼照顧你",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「請學生列出自己對新方向真正的理由」後，仍可能發生「同學說『老師那麼照顧你」；本結果的可見關鍵為「同學說『老師那麼照顧你，你不可以改』，學生難過地問是否欠下一個志願。你沒有替」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
         },
         {
           "choice": "B",
           "result": "R6",
           "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
           "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生把過去曾受指導的作品帶來",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「請學生列出自己對新方向真正的理由」後，仍可能發生「學生把過去曾受指導的作品帶來」；本結果的可見關鍵為「學生把過去曾受指導的作品帶來，發現那些能力也可能運用在新方向。他沒有否定舊目」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
         },
         {
           "choice": "B",
           "result": "R7",
           "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
           "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他急著請你直接聯絡那位老師說服對方",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「請學生列出自己對新方向真正的理由」後，仍可能發生「他急著請你直接聯絡那位老師說服對方」；本結果的可見關鍵為「他急著請你直接聯絡那位老師說服對方，你先確認學生願分享哪些資訊與真正需要的協」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "B",
           "result": "R8",
           "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
           "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生仍保留原方向作比較",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "reason": "已完成「請學生列出自己對新方向真正的理由」後，仍可能發生「學生仍保留原方向作比較」；本結果的可見關鍵為「學生仍保留原方向作比較，也開始查新領域的正式條件。『我想謝謝老師，但不想用我」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R1",
           "weight": 2,
-          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生寫下『老師以前幫我很多』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論如何感謝老師而不請求批准」後，仍可能發生「學生寫下『老師以前幫我很多』」；本結果的可見關鍵為「學生寫下『老師以前幫我很多』，卻在旁邊補上『我想研究別的領域』。兩句話放在一」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R2",
-          "weight": 1,
-          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他打好要道歉的訊息",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論如何感謝老師而不請求批准」後，仍可能發生「他打好要道歉的訊息」；本結果的可見關鍵為「他打好要道歉的訊息，又刪掉『我辜負您』幾個字。最後只說明自己在新分數後開始探」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R3",
-          "weight": 4,
-          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "支持他的老師收到學生的坦白後表示願意聽理由",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論如何感謝老師而不請求批准」後，仍可能發生「支持他的老師收到學生的坦白後表示願意聽理由」；本結果的可見關鍵為「支持他的老師收到學生的坦白後表示願意聽理由，但不保證一定認同。學生雖緊張，仍」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
         },
         {
           "choice": "C",
           "result": "R4",
-          "weight": 2,
-          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生原想瞞著原老師",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論如何感謝老師而不請求批准」後，仍可能發生「學生原想瞞著原老師」；本結果的可見關鍵為「學生原想瞞著原老師，直到確定方向才說。想了一會兒，他決定先查資料而不是編造進」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
         },
         {
           "choice": "C",
           "result": "R5",
           "weight": 2,
-          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "同學說『老師那麼照顧你",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論如何感謝老師而不請求批准」後，仍可能發生「同學說『老師那麼照顧你」；本結果的可見關鍵為「同學說『老師那麼照顧你，你不可以改』，學生難過地問是否欠下一個志願。你沒有替」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R6",
-          "weight": 1,
-          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生把過去曾受指導的作品帶來",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論如何感謝老師而不請求批准」後，仍可能發生「學生把過去曾受指導的作品帶來」；本結果的可見關鍵為「學生把過去曾受指導的作品帶來，發現那些能力也可能運用在新方向。他沒有否定舊目」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "C",
           "result": "R7",
-          "weight": 4,
-          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他急著請你直接聯絡那位老師說服對方",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 1,
+          "compatibility": "相容",
+          "causalDirection": "抑制",
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論如何感謝老師而不請求批准」後，仍可能發生「他急著請你直接聯絡那位老師說服對方」；本結果的可見關鍵為「他急著請你直接聯絡那位老師說服對方，你先確認學生願分享哪些資訊與真正需要的協」。已完成的安排讓此反應較不容易但並未禁止其他人的行動，仍屬低權重。"
         },
         {
           "choice": "C",
           "result": "R8",
-          "weight": 2,
-          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生仍保留原方向作比較",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 4,
+          "compatibility": "相容",
+          "causalDirection": "促進",
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「討論如何感謝老師而不請求批准」後，仍可能發生「學生仍保留原方向作比較」；本結果的可見關鍵為「學生仍保留原方向作比較，也開始查新領域的正式條件。『我想謝謝老師，但不想用我」。所做的具體安排有助於此方向的反應，因此相對提高權重。"
         },
         {
           "choice": "D",
           "result": "R1",
           "weight": 2,
-          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生寫下『老師以前幫我很多』",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「明確說明支持不以照舊志願為交換」後，仍可能發生「學生寫下『老師以前幫我很多』」；本結果的可見關鍵為「學生寫下『老師以前幫我很多』，卻在旁邊補上『我想研究別的領域』。兩句話放在一」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R2",
           "weight": 2,
-          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他打好要道歉的訊息",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「明確說明支持不以照舊志願為交換」後，仍可能發生「他打好要道歉的訊息」；本結果的可見關鍵為「他打好要道歉的訊息，又刪掉『我辜負您』幾個字。最後只說明自己在新分數後開始探」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R3",
-          "weight": 1,
-          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "支持他的老師收到學生的坦白後表示願意聽理由",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「明確說明支持不以照舊志願為交換」後，仍可能發生「支持他的老師收到學生的坦白後表示願意聽理由」；本結果的可見關鍵為「支持他的老師收到學生的坦白後表示願意聽理由，但不保證一定認同。學生雖緊張，仍」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R4",
-          "weight": 4,
-          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生原想瞞著原老師",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「明確說明支持不以照舊志願為交換」後，仍可能發生「學生原想瞞著原老師」；本結果的可見關鍵為「學生原想瞞著原老師，直到確定方向才說。想了一會兒，他決定先查資料而不是編造進」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R5",
           "weight": 2,
-          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "同學說『老師那麼照顧你",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「明確說明支持不以照舊志願為交換」後，仍可能發生「同學說『老師那麼照顧你」；本結果的可見關鍵為「同學說『老師那麼照顧你，你不可以改』，學生難過地問是否欠下一個志願。你沒有替」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R6",
           "weight": 2,
-          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生把過去曾受指導的作品帶來",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「明確說明支持不以照舊志願為交換」後，仍可能發生「學生把過去曾受指導的作品帶來」；本結果的可見關鍵為「學生把過去曾受指導的作品帶來，發現那些能力也可能運用在新方向。他沒有否定舊目」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R7",
-          "weight": 1,
-          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "他急著請你直接聯絡那位老師說服對方",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「明確說明支持不以照舊志願為交換」後，仍可能發生「他急著請你直接聯絡那位老師說服對方」；本結果的可見關鍵為「他急著請你直接聯絡那位老師說服對方，你先確認學生願分享哪些資訊與真正需要的協」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         },
         {
           "choice": "D",
           "result": "R8",
-          "weight": 4,
-          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
-          "resultTitle": "學生仍保留原方向作比較",
-          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+          "weight": 2,
+          "compatibility": "相容",
+          "causalDirection": "中性",
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "reason": "已完成「明確說明支持不以照舊志願為交換」後，仍可能發生「學生仍保留原方向作比較」；本結果的可見關鍵為「學生仍保留原方向作比較，也開始查新領域的正式條件。『我想謝謝老師，但不想用我」。選項沒有直接指定當事人的這項反應，故維持一般可達權重。"
         }
       ],
-      "crossDayPrecheck": [
-        {
-          "date": "2029-02-26",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
+      "numericFirstEvidence": {
+        "groupByState": {
+          "精神": "C",
+          "熱忱": "D",
+          "情緒": "E",
+          "掌控": "B"
         },
-        {
-          "date": "2029-02-27",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-02",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-05",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-06",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-07",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-08",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        },
-        {
-          "date": "2029-03-09",
-          "window": "candidate",
-          "informationRequirement": "result actually published and participant informed"
-        }
-      ],
-      "staticFailures": [],
-      "environment": "GitHub file-based static inspection; Node/Actions not run"
+        "matrix": [
+          [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -2,
+            -1
+          ],
+          [
+            1,
+            -2,
+            1,
+            2
+          ],
+          [
+            -1,
+            2,
+            1,
+            -1
+          ],
+          [
+            0,
+            1,
+            -2,
+            0
+          ],
+          [
+            -1,
+            -2,
+            1,
+            -1
+          ],
+          [
+            -2,
+            0,
+            -2,
+            -1
+          ]
+        ],
+        "method": "nonrepeating A-E V3 four groups"
+      },
+      "timeAndLaw": "八個候選日同一T6-1:after池，須有真實公布且當事人已知",
+      "staticReview": "正文與 AVG 原文同步、無Actions或Node實跑、獨立語意審查未進行"
     }
   }
 }

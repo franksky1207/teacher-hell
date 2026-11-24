@@ -1,7 +1,7 @@
 {
   "storyId": "T5-007",
   "verdict": "pending-content-review",
-  "reviewer": "第二輪重製：結局與因果待實質審閱，非正式核准",
+  "reviewer": "GPT-6 第二輪因果與角色審查草案，尚待原生 Node full/audit 及最終核准",
   "sourceStoryBlobSha": "663ba360fd42d5d1a01ac148a1fac214bcd048cd",
   "storyAndRoles": "需實查本篇各幕常駐角色、無數值情境人物及已知資料。",
   "fourCodes": "沿用既定四碼；尚未逐碼比對結果增減。",
@@ -10,47 +10,47 @@
   "causal32": "384 格中的本篇 32 格已分列個別草案；尚待核准具體因果。",
   "timeAndLaw": "合法日期與前後池逐日核對待驗。",
   "duplicates": "相同主題與跨 T 全文查重待驗。",
-  "characterAudit": "待驗",
+  "characterAudit": "保留原數值槽及情境人物界線，遠端及第三人發言須按實際媒介重驗。",
   "npcDeltaAudit": [
     {
       "result": "R1",
       "deltas": "student_a:6-4:-1",
-      "reason": "學生主動詢問長卡是否被留意，而非因怕破壞氣氛一直悶住"
+      "reason": "學生願意接受可行的回覆安排，肯定導師據實處理"
     },
     {
       "result": "R2",
       "deltas": "student_a:8-1:+1",
-      "reason": "學生理解平台已讀不等於教師必須立即回覆，對導師處理資訊的判斷較正面"
+      "reason": "學生不再用已讀符號猜測，而主動澄清誤會"
     },
     {
       "result": "R3",
       "deltas": "student_a:10-4:+2",
-      "reason": "學生把卡片裡的具體求助獨立提出，願意協調下一步"
+      "reason": "學生將真實求助說出，理解導師辨別緊急程度的專業判斷"
     },
     {
       "result": "R4",
       "deltas": "student_a:11-1:+1",
-      "reason": "與同學比較回覆速度，反而增加學生追問與整理心情的負荷"
+      "reason": "學生以回覆速度比較別人，暫時難與導師合作安排"
     },
     {
       "result": "R5",
       "deltas": "student_a:8-1:+2",
-      "reason": "學生發現導師重視其真正困難的一句，專業肯定上升"
+      "reason": "學生確認重要句子被理解，願共同安排後續閱讀"
     },
     {
       "result": "R6",
       "deltas": "student_a:11-1:+2",
-      "reason": "回覆時間未定使學生持續投入心力追問，任務負荷上升"
+      "reason": "雖然回覆日期未確定，學生仍說出不安而非完全沉默"
     },
     {
       "result": "R7",
       "deltas": "student_a:6-4:-1",
-      "reason": "學生不再靠同儕代言，轉向直接詢問自己的卡片"
+      "reason": "學生不再依同學代言，而願意直接向導師確認"
     },
     {
       "result": "R8",
       "deltas": "student_a:10-4:+2",
-      "reason": "學生接受分段閱讀與合宜時間，願意合作整理需求"
+      "reason": "學生配合分段閱讀和不公開的方式，協調合作提高"
     }
   ],
   "npcWarningReviews": [],
@@ -120,290 +120,290 @@
     {
       "choice": "A",
       "result": "R1",
-      "weight": 4,
       "compatibility": "相容",
       "causalDirection": "促進",
-      "reason": "由「已聆聽學生失落，未以敷衍承諾換取安心」出發，此處置有機會直接促使「學生知道長卡沒有遺失並了解已讀進度」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
-      "actionPreserved": true
+      "reason": "已完成「已聆聽學生失落，未以敷衍承諾換取安心」；聽懂等回覆的失落，使學生較能確認卡片沒有被隨意擱置。",
+      "actionPreserved": true,
+      "weight": 4
     },
     {
       "choice": "A",
       "result": "R2",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已聆聽學生失落，未以敷衍承諾換取安心」，「平台已讀符號不代表全文已閱讀」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已聆聽學生失落，未以敷衍承諾換取安心」；傾聽不等於確認已讀符號代表什麼，仍需說明資訊。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "A",
       "result": "R3",
-      "weight": 4,
       "compatibility": "相容",
       "causalDirection": "促進",
-      "reason": "由「已聆聽學生失落，未以敷衍承諾換取安心」出發，此處置有機會直接促使「長卡中的求助內容應被辨識」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
-      "actionPreserved": true
+      "reason": "已完成「已聆聽學生失落，未以敷衍承諾換取安心」；願意聽學生真正難過的地方，較容易發現長卡藏有求助。",
+      "actionPreserved": true,
+      "weight": 4
     },
     {
       "choice": "A",
       "result": "R4",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已聆聽學生失落，未以敷衍承諾換取安心」，「同儕比較回覆速度容易誤解教師心意」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已聆聽學生失落，未以敷衍承諾換取安心」；情緒安撫不能立即停止同學之間比較回覆速度。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "A",
       "result": "R5",
-      "weight": 4,
       "compatibility": "相容",
       "causalDirection": "促進",
-      "reason": "由「已聆聽學生失落，未以敷衍承諾換取安心」出發，此處置有機會直接促使「學生感到自己重要的一句被理解」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
-      "actionPreserved": true
+      "reason": "已完成「已聆聽學生失落，未以敷衍承諾換取安心」；學生敢講出最重要的那句話，能形成被理解的回應。",
+      "actionPreserved": true,
+      "weight": 4
     },
     {
       "choice": "A",
       "result": "R6",
-      "weight": 4,
       "compatibility": "相容",
       "causalDirection": "促進",
-      "reason": "由「已聆聽學生失落，未以敷衍承諾換取安心」出發，此處置有機會直接促使「回覆負荷尚在，不能保證即刻回長文」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
-      "actionPreserved": true
+      "reason": "已完成「已聆聽學生失落，未以敷衍承諾換取安心」；不以空話安撫而承認未回完，使學生較能接受時間不確定。",
+      "actionPreserved": true,
+      "weight": 4
     },
     {
       "choice": "A",
       "result": "R7",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已聆聽學生失落，未以敷衍承諾換取安心」，「同學替導師答話未必有真實依據」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已聆聽學生失落，未以敷衍承諾換取安心」；聽他說失落不會直接拆穿其他同學代答的傳言。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "A",
       "result": "R8",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已聆聽學生失落，未以敷衍承諾換取安心」，「可以分次閱讀而不公開表演」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已聆聽學生失落，未以敷衍承諾換取安心」；傾聽不等於已選定分段閱讀形式，學生仍需商量。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "B",
       "result": "R1",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已詢問是否包含即時求助，並將一般感謝和急事區分」，「學生知道長卡沒有遺失並了解已讀進度」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」；辨別是否有急事與卡片仍否保存關聯有限。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "B",
       "result": "R2",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已詢問是否包含即時求助，並將一般感謝和急事區分」，「平台已讀符號不代表全文已閱讀」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」；急事查核不會告訴學生已讀符號可否作證。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "B",
       "result": "R3",
-      "weight": 4,
       "compatibility": "相容",
       "causalDirection": "促進",
-      "reason": "由「已詢問是否包含即時求助，並將一般感謝和急事區分」出發，此處置有機會直接促使「長卡中的求助內容應被辨識」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
-      "actionPreserved": true
+      "reason": "已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」；先問是否包含立即求助，最直接把該段從一般祝福分流。",
+      "actionPreserved": true,
+      "weight": 4
     },
     {
       "choice": "B",
       "result": "R4",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已詢問是否包含即時求助，並將一般感謝和急事區分」，「同儕比較回覆速度容易誤解教師心意」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」；急事分流不能立即停止同儕比較教師回覆快慢。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "B",
       "result": "R5",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已詢問是否包含即時求助，並將一般感謝和急事區分」，「學生感到自己重要的一句被理解」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」；先查有無急事不等於已讀懂整封卡片的情感內容。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "B",
       "result": "R6",
-      "weight": 4,
       "compatibility": "相容",
       "causalDirection": "促進",
-      "reason": "由「已詢問是否包含即時求助，並將一般感謝和急事區分」出發，此處置有機會直接促使「回覆負荷尚在，不能保證即刻回長文」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
-      "actionPreserved": true
+      "reason": "已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」；明言要先分急事與普通留言，使其他部分尚待回覆更容易被接受。",
+      "actionPreserved": true,
+      "weight": 4
     },
     {
       "choice": "B",
       "result": "R7",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已詢問是否包含即時求助，並將一般感謝和急事區分」，「同學替導師答話未必有真實依據」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」；急事提問不會讓同學代老師說過的話自動消失。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "B",
       "result": "R8",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已詢問是否包含即時求助，並將一般感謝和急事區分」，「可以分次閱讀而不公開表演」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」；急事分流與分段閱讀原意並不矛盾，但沒有直接決定方式。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "C",
       "result": "R1",
-      "weight": 4,
       "compatibility": "相容",
       "causalDirection": "促進",
-      "reason": "由「已告知學生實際閱讀範圍，未假稱整封已仔細看完」出發，此處置有機會直接促使「學生知道長卡沒有遺失並了解已讀進度」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
-      "actionPreserved": true
+      "reason": "已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」；如實說明實際看過哪段，學生更能確認卡片未被遺失。",
+      "actionPreserved": true,
+      "weight": 4
     },
     {
       "choice": "C",
       "result": "R2",
-      "weight": 4,
       "compatibility": "相容",
       "causalDirection": "促進",
-      "reason": "由「已告知學生實際閱讀範圍，未假稱整封已仔細看完」出發，此處置有機會直接促使「平台已讀符號不代表全文已閱讀」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
-      "actionPreserved": true
+      "reason": "已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」；澄清已讀範圍最直接修正『已讀即全部看完』的誤解。",
+      "actionPreserved": true,
+      "weight": 4
     },
     {
       "choice": "C",
       "result": "R3",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已告知學生實際閱讀範圍，未假稱整封已仔細看完」，「長卡中的求助內容應被辨識」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」；指出已讀段落不保證第一時間發現後面未讀的求助。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "C",
       "result": "R4",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已告知學生實際閱讀範圍，未假稱整封已仔細看完」，「同儕比較回覆速度容易誤解教師心意」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」；自己說明閱讀範圍不會自動制止其他學生互相比較。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "C",
       "result": "R5",
-      "weight": 4,
       "compatibility": "相容",
       "causalDirection": "促進",
-      "reason": "由「已告知學生實際閱讀範圍，未假稱整封已仔細看完」出發，此處置有機會直接促使「學生感到自己重要的一句被理解」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
-      "actionPreserved": true
+      "reason": "已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」；具體講出看過的句子，使學生覺得那段被認真理解。",
+      "actionPreserved": true,
+      "weight": 4
     },
     {
       "choice": "C",
       "result": "R6",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已告知學生實際閱讀範圍，未假稱整封已仔細看完」，「回覆負荷尚在，不能保證即刻回長文」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」；如實告知未讀完，難直接給出完成回覆時間。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "C",
       "result": "R7",
-      "weight": 4,
       "compatibility": "相容",
       "causalDirection": "促進",
-      "reason": "由「已告知學生實際閱讀範圍，未假稱整封已仔細看完」出發，此處置有機會直接促使「同學替導師答話未必有真實依據」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
-      "actionPreserved": true
+      "reason": "已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」；導師親自說出範圍，可減少同學代替老師猜測。",
+      "actionPreserved": true,
+      "weight": 4
     },
     {
       "choice": "C",
       "result": "R8",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已告知學生實際閱讀範圍，未假稱整封已仔細看完」，「可以分次閱讀而不公開表演」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」；核實閱讀範圍本身沒有承諾一次全部讀完。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "D",
       "result": "R1",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已請學生選擇偏好的回應方式，不保證立刻答覆」，「學生知道長卡沒有遺失並了解已讀進度」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」；問回覆媒介不保證學生立刻知道卡片被保留。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "D",
       "result": "R2",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已請學生選擇偏好的回應方式，不保證立刻答覆」，「平台已讀符號不代表全文已閱讀」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」；選擇書面或面談不能證明已讀圖示代表全文。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "D",
       "result": "R3",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已請學生選擇偏好的回應方式，不保證立刻答覆」，「長卡中的求助內容應被辨識」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」；選回覆媒介不取代急事分流，求助仍需另辨識。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "D",
       "result": "R4",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已請學生選擇偏好的回應方式，不保證立刻答覆」，「同儕比較回覆速度容易誤解教師心意」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」；改用面談或書面不會自然停止同儕排名。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "D",
       "result": "R5",
-      "weight": 4,
       "compatibility": "相容",
       "causalDirection": "促進",
-      "reason": "由「已請學生選擇偏好的回應方式，不保證立刻答覆」出發，此處置有機會直接促使「學生感到自己重要的一句被理解」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
-      "actionPreserved": true
+      "reason": "已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」；讓學生挑自己舒服的回覆形式，更容易談到真正重要的內容。",
+      "actionPreserved": true,
+      "weight": 4
     },
     {
       "choice": "D",
       "result": "R6",
-      "weight": 4,
       "compatibility": "相容",
       "causalDirection": "促進",
-      "reason": "由「已請學生選擇偏好的回應方式，不保證立刻答覆」出發，此處置有機會直接促使「回覆負荷尚在，不能保證即刻回長文」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
-      "actionPreserved": true
+      "reason": "已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」；回覆媒介被問清楚，有助接受需要另約可行時間。",
+      "actionPreserved": true,
+      "weight": 4
     },
     {
       "choice": "D",
       "result": "R7",
-      "weight": 2,
       "compatibility": "相容",
       "causalDirection": "中性",
-      "reason": "即使已「已請學生選擇偏好的回應方式，不保證立刻答覆」，「同學替導師答話未必有真實依據」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
-      "actionPreserved": true
+      "reason": "已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」；討論形式不會自行消除同學對老師意見的轉述。",
+      "actionPreserved": true,
+      "weight": 2
     },
     {
       "choice": "D",
       "result": "R8",
-      "weight": 4,
       "compatibility": "相容",
       "causalDirection": "促進",
-      "reason": "由「已請學生選擇偏好的回應方式，不保證立刻答覆」出發，此處置有機會直接促使「可以分次閱讀而不公開表演」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
-      "actionPreserved": true
+      "reason": "已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」；由學生選擇形式，直接支持分段私下交流而非公開朗讀。",
+      "actionPreserved": true,
+      "weight": 4
     }
   ]
 }

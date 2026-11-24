@@ -1,0 +1,368 @@
+{
+  "storyId": "T5-008",
+  "verdict": "pending-content-review",
+  "reviewer": "第二輪重製：結局與因果待實質審閱，非正式核准",
+  "sourceStoryBlobSha": "14cd820f32b2dd2fefb6516a4d42cf9db67092f4",
+  "storyAndRoles": "需實查本篇各幕常駐角色、無數值情境人物及已知資料。",
+  "fourCodes": "沿用既定四碼；尚未逐碼比對結果增減。",
+  "fourChoices": "6 個具體普通候選已重列並執行可追溯的 3 選抽樣；角色獨立後果待驗。",
+  "eightResults": "已增加角色演出並擴寫八結局，但仍需逐 R 判斷是否重複或過度說明。",
+  "causal32": "384 格中的本篇 32 格已分列個別草案；尚待核准具體因果。",
+  "timeAndLaw": "合法日期與前後池逐日核對待驗。",
+  "duplicates": "相同主題與跨 T 全文查重待驗。",
+  "characterAudit": "待驗",
+  "npcDeltaAudit": "待驗",
+  "npcWarningReviews": [],
+  "ordinaryChoiceSelection": {
+    "storyId": "T5-008",
+    "stage": "second-round-actual-draw",
+    "rng": "xorshift32 Fisher-Yates",
+    "initialSeed": 20324476,
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "請上傳者暫停分享，先核對授權與原始影片",
+        "action": "請上傳者暫停分享，先核對授權與原始影片",
+        "tradeoff": "降低擴散，可能引起製作者不滿",
+        "establishedFact": "已要求暫停擴散並啟動比對，未擅自宣告全片違法"
+      },
+      {
+        "id": 2,
+        "short": "與學生逐句核對導師實際說過的感謝內容",
+        "action": "與學生逐句核對導師實際說過的感謝內容",
+        "tradeoff": "改善資訊品質，無法單靠逐字稿消除受傷感",
+        "establishedFact": "已比對影片截句與原話，未替未入鏡者編造致詞"
+      },
+      {
+        "id": 3,
+        "short": "請製作者主動詢問未入鏡者是否願加文字註解",
+        "action": "請製作者主動詢問未入鏡者是否願加文字註解",
+        "tradeoff": "可能補足視角，仍需尊重不參加者",
+        "establishedFact": "已提出自願補充方案，不要求任何人重拍或公開身分"
+      },
+      {
+        "id": 4,
+        "short": "請上傳者加註影片僅呈現部分片段",
+        "action": "請上傳者加註影片僅呈現部分片段",
+        "tradeoff": "補充脈絡，可能仍有誤解",
+        "establishedFact": "已要求加註部分影像範圍，未代未參加者發言"
+      },
+      {
+        "id": 5,
+        "short": "先私下約剪輯者核對疑慮，避免公開責罵",
+        "action": "先私下約剪輯者核對疑慮，避免公開責罵",
+        "tradeoff": "減少對立，但影片仍需後續處理",
+        "establishedFact": "已安排私下釐清剪輯流程，未認定惡意"
+      },
+      {
+        "id": 6,
+        "short": "請參與者確認哪些人願意公開露臉或發言",
+        "action": "請參與者確認哪些人願意公開露臉或發言",
+        "tradeoff": "保護個資，可能撤下部分片段",
+        "establishedFact": "已提出逐人核對同意的要求"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      4
+    ],
+    "finalChoiceMap": {
+      "A": 4,
+      "B": "emotional",
+      "C": 2,
+      "D": 1
+    },
+    "note": "依固定初始種子執行六選三及四選項洗牌，保留候選行動和明確取捨；內容因果尚需逐格審查。"
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已要求加註部分影像範圍，未代未參加者發言」出發，此處置有機會直接促使「原始影片能還原被剪去的完整脈絡」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已要求加註部分影像範圍，未代未參加者發言」，「公開片段需要逐人同意」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已要求加註部分影像範圍，未代未參加者發言」，「留言點名讓沒入鏡的人受到傷害」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已要求加註部分影像範圍，未代未參加者發言」，「剪輯者受到批評後有委屈但可修正」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已要求加註部分影像範圍，未代未參加者發言」出發，此處置有機會直接促使「片尾說明能降低片段誤導」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已要求加註部分影像範圍，未代未參加者發言」，「公開道歉可能增加當事人的曝光」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已要求加註部分影像範圍，未代未參加者發言」，「不入鏡不等於對老師沒有謝意」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已要求加註部分影像範圍，未代未參加者發言」出發，此處置有機會直接促使「教師謝意不能被短片定義成只給部分人」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已先聆聽學生的難受，未把剪輯者定罪」，「原始影片能還原被剪去的完整脈絡」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已先聆聽學生的難受，未把剪輯者定罪」，「公開片段需要逐人同意」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已先聆聽學生的難受，未把剪輯者定罪」出發，此處置有機會直接促使「留言點名讓沒入鏡的人受到傷害」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已先聆聽學生的難受，未把剪輯者定罪」出發，此處置有機會直接促使「剪輯者受到批評後有委屈但可修正」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已先聆聽學生的難受，未把剪輯者定罪」，「片尾說明能降低片段誤導」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已先聆聽學生的難受，未把剪輯者定罪」出發，此處置有機會直接促使「公開道歉可能增加當事人的曝光」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已先聆聽學生的難受，未把剪輯者定罪」出發，此處置有機會直接促使「不入鏡不等於對老師沒有謝意」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已先聆聽學生的難受，未把剪輯者定罪」，「教師謝意不能被短片定義成只給部分人」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已比對影片截句與原話，未替未入鏡者編造致詞」出發，此處置有機會直接促使「原始影片能還原被剪去的完整脈絡」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已比對影片截句與原話，未替未入鏡者編造致詞」，「公開片段需要逐人同意」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已比對影片截句與原話，未替未入鏡者編造致詞」，「留言點名讓沒入鏡的人受到傷害」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已比對影片截句與原話，未替未入鏡者編造致詞」，「剪輯者受到批評後有委屈但可修正」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已比對影片截句與原話，未替未入鏡者編造致詞」出發，此處置有機會直接促使「片尾說明能降低片段誤導」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已比對影片截句與原話，未替未入鏡者編造致詞」，「公開道歉可能增加當事人的曝光」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已比對影片截句與原話，未替未入鏡者編造致詞」，「不入鏡不等於對老師沒有謝意」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已比對影片截句與原話，未替未入鏡者編造致詞」出發，此處置有機會直接促使「教師謝意不能被短片定義成只給部分人」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已要求暫停擴散並啟動比對，未擅自宣告全片違法」出發，此處置有機會直接促使「原始影片能還原被剪去的完整脈絡」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已要求暫停擴散並啟動比對，未擅自宣告全片違法」出發，此處置有機會直接促使「公開片段需要逐人同意」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已要求暫停擴散並啟動比對，未擅自宣告全片違法」，「留言點名讓沒入鏡的人受到傷害」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已要求暫停擴散並啟動比對，未擅自宣告全片違法」，「剪輯者受到批評後有委屈但可修正」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已要求暫停擴散並啟動比對，未擅自宣告全片違法」，「片尾說明能降低片段誤導」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已要求暫停擴散並啟動比對，未擅自宣告全片違法」出發，此處置有機會直接促使「公開道歉可能增加當事人的曝光」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "即使已「已要求暫停擴散並啟動比對，未擅自宣告全片違法」，「不入鏡不等於對老師沒有謝意」仍可能由學生、同儕或籌備者的後續行為發生，該選項對此變化沒有已成立的直接推力。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "由「已要求暫停擴散並啟動比對，未擅自宣告全片違法」出發，此處置有機會直接促使「教師謝意不能被短片定義成只給部分人」；仍尊重當事人決定及其他人的配合，不保證必然出現。",
+      "actionPreserved": true
+    }
+  ]
+}

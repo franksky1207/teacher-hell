@@ -1,0 +1,368 @@
+{
+  "storyId": "T5-011",
+  "verdict": "pending-content-review",
+  "reviewer": "第二輪施工：暫存逐格因果草案，正式語意審核未通過",
+  "sourceStoryBlobSha": "e82bcba36722792597a851591200def93a953301",
+  "storyAndRoles": "學生、科任及其他角色的身分、資訊與在場仍待逐頁正式複核。",
+  "fourCodes": "沿用正式種子四碼；個別結局增減尚需逐碼因果複審。",
+  "fourChoices": "實際六選三與四選項排列已產出並可追溯，仍須檢查相容性。",
+  "eightResults": "96 個結局的本篇八結果已補充自然對話與 AVG，但是否演出完整仍待正式核准。",
+  "causal32": "本篇 32 格已列出權重與逐格草案，不能用量化補滿充當正式驗收。",
+  "timeAndLaw": "須核對 2028-09-29 後池各合法日及人物知情。",
+  "duplicates": "同主題全文及相近 T/G 跨批查重待審。",
+  "characterAudit": "待驗",
+  "npcDeltaAudit": "待驗",
+  "npcWarningReviews": [],
+  "ordinaryChoiceSelection": {
+    "storyId": "T5-011",
+    "stage": "second-round-actual-draw",
+    "rng": "xorshift32 Fisher-Yates",
+    "initialSeed": 20348233,
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "只轉述科任確實說過的感動，不增加保證",
+        "action": "只轉述科任確實說過的感動，不增加保證",
+        "tradeoff": "避免誤傳，學生可能覺得掃興",
+        "establishedFact": "已按科任原話更正轉述，未替科任放寬作業要求"
+      },
+      {
+        "id": 2,
+        "short": "和學生區分被肯定與仍要履行課業責任",
+        "action": "和學生區分被肯定與仍要履行課業責任",
+        "tradeoff": "界線清楚，還要處理學生的受挫",
+        "establishedFact": "已說明感謝不能交換免交作業，未插手科任評分"
+      },
+      {
+        "id": 3,
+        "short": "協助學生整理想向科任反映的具體困難",
+        "action": "協助學生整理想向科任反映的具體困難",
+        "tradeoff": "建立可對話議題，需由任課教師自行決定",
+        "establishedFact": "已幫學生整理可提出的課業困難，未保證科任接受"
+      },
+      {
+        "id": 4,
+        "short": "請學生把班群的免責傳言先停止轉發",
+        "action": "請學生把班群的免責傳言先停止轉發",
+        "tradeoff": "降低誤解，但可能讓學生覺得掃興",
+        "establishedFact": "已要求停止擴散未經科任證實的話"
+      },
+      {
+        "id": 5,
+        "short": "詢問科任是否願意親自澄清其原意",
+        "action": "詢問科任是否願意親自澄清其原意",
+        "tradeoff": "資訊更直接，仍須等待科任意願",
+        "establishedFact": "已向科任提出澄清邀請，未替對方決定"
+      },
+      {
+        "id": 6,
+        "short": "協助學生安排合宜時機向科任提問",
+        "action": "協助學生安排合宜時機向科任提問",
+        "tradeoff": "提供討論機會，但學生要自行面對",
+        "establishedFact": "已提出正式對話管道，未允諾改分數或豁免"
+      }
+    ],
+    "selectedIds": [
+      3,
+      4,
+      6
+    ],
+    "finalChoiceMap": {
+      "A": 4,
+      "B": "emotional",
+      "C": 3,
+      "D": 6
+    },
+    "note": "依固定初始種子執行六選三及四選項洗牌，保留候選行動和取捨，待八結局與逐格因果正式驗證。"
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已要求停止擴散未經科任證實的話」，「科任受感動不等於同意作業豁免」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已要求停止擴散未經科任證實的話」，能有效促進「班群擴散未經確認的免交作業消息」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已要求停止擴散未經科任證實的話」，「科任在乎被學生理解但仍維持教學職責」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已要求停止擴散未經科任證實的話」，「學生把免責要求改成具體課業問題」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已要求停止擴散未經科任證實的話」，能有效促進「轉述時添上一句不存在的保證導致誤會」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已要求停止擴散未經科任證實的話」，能有效促進「學生確認謝意不是交換未來規範」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已要求停止擴散未經科任證實的話」，「學生願意說出害怕被責備的原因」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已要求停止擴散未經科任證實的話」，能有效促進「導師僅準確轉達科任表達的感動」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已聽學生描述過去被責備的感受，未承諾免責」，「科任受感動不等於同意作業豁免」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已聽學生描述過去被責備的感受，未承諾免責」，「班群擴散未經確認的免交作業消息」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已聽學生描述過去被責備的感受，未承諾免責」，「科任在乎被學生理解但仍維持教學職責」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已聽學生描述過去被責備的感受，未承諾免責」，能有效促進「學生把免責要求改成具體課業問題」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已聽學生描述過去被責備的感受，未承諾免責」，「轉述時添上一句不存在的保證導致誤會」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已聽學生描述過去被責備的感受，未承諾免責」，「學生確認謝意不是交換未來規範」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已聽學生描述過去被責備的感受，未承諾免責」，能有效促進「學生願意說出害怕被責備的原因」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已聽學生描述過去被責備的感受，未承諾免責」，「導師僅準確轉達科任表達的感動」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已幫學生整理可提出的課業困難，未保證科任接受」，「科任受感動不等於同意作業豁免」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已幫學生整理可提出的課業困難，未保證科任接受」，「班群擴散未經確認的免交作業消息」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已幫學生整理可提出的課業困難，未保證科任接受」，「科任在乎被學生理解但仍維持教學職責」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已幫學生整理可提出的課業困難，未保證科任接受」，能有效促進「學生把免責要求改成具體課業問題」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已幫學生整理可提出的課業困難，未保證科任接受」，「轉述時添上一句不存在的保證導致誤會」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已幫學生整理可提出的課業困難，未保證科任接受」，能有效促進「學生確認謝意不是交換未來規範」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已幫學生整理可提出的課業困難，未保證科任接受」，能有效促進「學生願意說出害怕被責備的原因」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已幫學生整理可提出的課業困難，未保證科任接受」，「導師僅準確轉達科任表達的感動」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出正式對話管道，未允諾改分數或豁免」，「科任受感動不等於同意作業豁免」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出正式對話管道，未允諾改分數或豁免」，「班群擴散未經確認的免交作業消息」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提出正式對話管道，未允諾改分數或豁免」，能有效促進「科任在乎被學生理解但仍維持教學職責」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提出正式對話管道，未允諾改分數或豁免」，能有效促進「學生把免責要求改成具體課業問題」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出正式對話管道，未允諾改分數或豁免」，「轉述時添上一句不存在的保證導致誤會」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出正式對話管道，未允諾改分數或豁免」，「學生確認謝意不是交換未來規範」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提出正式對話管道，未允諾改分數或豁免」，能有效促進「學生願意說出害怕被責備的原因」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提出正式對話管道，未允諾改分數或豁免」，能有效促進「導師僅準確轉達科任表達的感動」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    }
+  ]
+}

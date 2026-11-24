@@ -1,0 +1,65 @@
+name: T5-043-048 one-time Node validation
+on:
+  pull_request:
+    branches: [content/events-production-v1]
+    paths:
+      - 'content/events-v1/T/T5-高三上/T5-4-最後一次聖誕晚會/活動前/**'
+      - '.github/workflows/t5-043-048-one-time-validation.yml'
+  push:
+    branches: [work/t5-043-048-drafts-20261124]
+    paths:
+      - '.github/workflows/t5-043-048-one-time-validation.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Full draft checks (six stories)
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='content/events-v1/T/T5-高三上/T5-4-最後一次聖誕晚會/活動前'
+          for id in 043 044 045 046 047 048; do
+            echo "=== T5-$id full ==="
+            npm run content:draft-check -- --input "$base/T5-$id.md" --stage full
+          done
+      - name: Independently archived semantic evidence audit (six stories)
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='content/events-v1/T/T5-高三上/T5-4-最後一次聖誕晚會/活動前/驗收紀錄/正式審查證據'
+          for id in 043 044 045 046 047 048; do
+            echo "=== T5-$id evidence ==="
+            npm run content:production -- audit "T5-$id" --evidence "$base/T5-$id.json"
+          done
+      - name: Full catalog audit
+        run: npm run content:production -- audit
+      - name: Targeted story validator and AVG tests
+        run: |
+          npm run test:story-draft
+          node --test test/story-preview-multipage.test.js test/story-preview-cast-continuity.test.js test/story-preview-snapshot.test.js
+      - name: Confirm T5-043-048 current Markdown R equals AVG pages
+        shell: bash
+        run: |
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          const base='content/events-v1/T/T5-高三上/T5-4-最後一次聖誕晚會/活動前';
+          for(let n=43;n<=48;n++){
+            const id='T5-'+String(n).padStart(3,'0');
+            const md=fs.readFileSync(base+'/'+id+'.md','utf8');
+            const m=md.match(/`{3}avg\n([\s\S]*?)\n`{3}/);
+            if(!m)throw Error(id+' missing AVG');
+            const avg=JSON.parse(m[1]);
+            for(let k=1;k<=8;k++){
+              const r=md.match(new RegExp('### R'+k+'｜[^\\n]+\\n- \\*\\*玩家可見結果\\*\\*：([^\\n]+)'));
+              if(!r||!Array.isArray(avg.results['R'+k]?.pages)||r[1]!==avg.results['R'+k].pages.map(p=>p.text).join(''))throw Error(id+' R'+k+' AVG mismatch');
+            }
+            console.log(id+' 8/8 R and AVG pass');
+          }
+          EOF

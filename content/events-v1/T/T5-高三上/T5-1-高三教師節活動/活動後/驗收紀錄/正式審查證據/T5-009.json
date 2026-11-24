@@ -1,0 +1,368 @@
+{
+  "storyId": "T5-009",
+  "verdict": "pending-content-review",
+  "reviewer": "第二輪施工：暫存逐格因果草案，正式語意審核未通過",
+  "sourceStoryBlobSha": "a11a9e192b2b37e9f81bcad3f68d82db97b8c69e",
+  "storyAndRoles": "學生、科任及其他角色的身分、資訊與在場仍待逐頁正式複核。",
+  "fourCodes": "沿用正式種子四碼；個別結局增減尚需逐碼因果複審。",
+  "fourChoices": "實際六選三與四選項排列已產出並可追溯，仍須檢查相容性。",
+  "eightResults": "96 個結局的本篇八結果已補充自然對話與 AVG，但是否演出完整仍待正式核准。",
+  "causal32": "本篇 32 格已列出權重與逐格草案，不能用量化補滿充當正式驗收。",
+  "timeAndLaw": "須核對 2028-09-29 後池各合法日及人物知情。",
+  "duplicates": "同主題全文及相近 T/G 跨批查重待審。",
+  "characterAudit": "待驗",
+  "npcDeltaAudit": "待驗",
+  "npcWarningReviews": [],
+  "ordinaryChoiceSelection": {
+    "storyId": "T5-009",
+    "stage": "second-round-actual-draw",
+    "rng": "xorshift32 Fisher-Yates",
+    "initialSeed": 20332395,
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "公開說清導師可以回覆的時段與聯絡管道",
+        "action": "公開說清導師可以回覆的時段與聯絡管道",
+        "tradeoff": "避免錯誤期待，部分學生會感到失落",
+        "establishedFact": "已將可提供的協助界線告知學生，未承諾全天在線"
+      },
+      {
+        "id": 2,
+        "short": "先辨識這次求助是否涉及立即安全危機",
+        "action": "先辨識這次求助是否涉及立即安全危機",
+        "tradeoff": "能優先處理急事，但無法替所有學科即時解題",
+        "establishedFact": "已向當事人釐清緊急程度，未把一般考試焦慮等同危機"
+      },
+      {
+        "id": 3,
+        "short": "建立考前同學互助及各科正式問答途徑",
+        "action": "建立考前同學互助及各科正式問答途徑",
+        "tradeoff": "分散負荷，學生需自行使用管道",
+        "establishedFact": "已提出適當分流和求助方式，未代科任承諾時間"
+      },
+      {
+        "id": 4,
+        "short": "說明老師不會全天回覆，並列出其他求助人員",
+        "action": "說明老師不會全天回覆，並列出其他求助人員",
+        "tradeoff": "讓期待可行，但學生需要轉換習慣",
+        "establishedFact": "已向學生清楚告知回訊限制和其他管道"
+      },
+      {
+        "id": 5,
+        "short": "請學生整理最急的三個考前問題",
+        "action": "請學生整理最急的三個考前問題",
+        "tradeoff": "有助處理優先順序，但不能包辦各科",
+        "establishedFact": "已要求學生區分近期迫切問題與可延後提問"
+      },
+      {
+        "id": 6,
+        "short": "安排固定的短時段來蒐集班級困惑",
+        "action": "安排固定的短時段來蒐集班級困惑",
+        "tradeoff": "降低突發打擾，但個別需求可能需轉介",
+        "establishedFact": "已提出班級固定回應時段，不保證即時一對一"
+      }
+    ],
+    "selectedIds": [
+      4,
+      6,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": "emotional",
+      "B": 4,
+      "C": 6,
+      "D": 3
+    },
+    "note": "依固定初始種子執行六選三及四選項洗牌，保留候選行動和取捨，待八結局與逐格因果正式驗證。"
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已接住他對被放棄的擔心，沒有將安慰變成全天承諾」，「學生以深夜未回訊息重新理解導師的協助界線」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已接住他對被放棄的擔心，沒有將安慰變成全天承諾」，「班群過度延伸教師節承諾並由學生澄清」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已接住他對被放棄的擔心，沒有將安慰變成全天承諾」，「求助資訊分流減少考前無處可問的焦慮」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已接住他對被放棄的擔心，沒有將安慰變成全天承諾」，「避免全部問題由導師一人承擔」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已接住他對被放棄的擔心，沒有將安慰變成全天承諾」，能有效促進「學生意識到全天客服式的錯誤期待」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已接住他對被放棄的擔心，沒有將安慰變成全天承諾」，能有效促進「某則未讀訊息容易被誤認成老師不在乎」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已接住他對被放棄的擔心，沒有將安慰變成全天承諾」，能有效促進「學生說出真正的學測壓力來源」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已接住他對被放棄的擔心，沒有將安慰變成全天承諾」，「學生將教師節感謝和合理協助時段分開」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已向學生清楚告知回訊限制和其他管道」，能有效促進「學生以深夜未回訊息重新理解導師的協助界線」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已向學生清楚告知回訊限制和其他管道」，能有效促進「班群過度延伸教師節承諾並由學生澄清」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已向學生清楚告知回訊限制和其他管道」，「求助資訊分流減少考前無處可問的焦慮」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已向學生清楚告知回訊限制和其他管道」，「避免全部問題由導師一人承擔」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已向學生清楚告知回訊限制和其他管道」，能有效促進「學生意識到全天客服式的錯誤期待」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已向學生清楚告知回訊限制和其他管道」，「某則未讀訊息容易被誤認成老師不在乎」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已向學生清楚告知回訊限制和其他管道」，「學生說出真正的學測壓力來源」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已向學生清楚告知回訊限制和其他管道」，能有效促進「學生將教師節感謝和合理協助時段分開」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出班級固定回應時段，不保證即時一對一」，「學生以深夜未回訊息重新理解導師的協助界線」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出班級固定回應時段，不保證即時一對一」，「班群過度延伸教師節承諾並由學生澄清」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提出班級固定回應時段，不保證即時一對一」，能有效促進「求助資訊分流減少考前無處可問的焦慮」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出班級固定回應時段，不保證即時一對一」，「避免全部問題由導師一人承擔」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出班級固定回應時段，不保證即時一對一」，「學生意識到全天客服式的錯誤期待」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出班級固定回應時段，不保證即時一對一」，「某則未讀訊息容易被誤認成老師不在乎」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提出班級固定回應時段，不保證即時一對一」，能有效促進「學生說出真正的學測壓力來源」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出班級固定回應時段，不保證即時一對一」，「學生將教師節感謝和合理協助時段分開」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出適當分流和求助方式，未代科任承諾時間」，「學生以深夜未回訊息重新理解導師的協助界線」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出適當分流和求助方式，未代科任承諾時間」，「班群過度延伸教師節承諾並由學生澄清」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提出適當分流和求助方式，未代科任承諾時間」，能有效促進「求助資訊分流減少考前無處可問的焦慮」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提出適當分流和求助方式，未代科任承諾時間」，能有效促進「避免全部問題由導師一人承擔」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出適當分流和求助方式，未代科任承諾時間」，「學生意識到全天客服式的錯誤期待」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出適當分流和求助方式，未代科任承諾時間」，「某則未讀訊息容易被誤認成老師不在乎」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提出適當分流和求助方式，未代科任承諾時間」，能有效促進「學生說出真正的學測壓力來源」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提出適當分流和求助方式，未代科任承諾時間」，能有效促進「學生將教師節感謝和合理協助時段分開」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    }
+  ]
+}

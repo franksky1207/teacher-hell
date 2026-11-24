@@ -1,0 +1,356 @@
+{
+  "storyId": "T5-007",
+  "verdict": "needs-review",
+  "reviewer": "GPT-6 第二輪逐格重建，未取得正式 Node／整池驗收",
+  "storyAndRoles": "原主題 # T5-007｜假日後學生發現導師沒回長卡片，人物角色以當篇第三區和實際資訊順序為限。",
+  "fourCodes": "沿用原種子 6-4／8-1／10-4／11-1；NPC 各碼後果仍須分人實質審核。",
+  "fourChoices": "六個普通候選有獨立行動與取捨，依固定種子的 PRNG 洗牌選三並加入情緒方案，不以效果好壞選。",
+  "eightResults": "本篇八結局正文與 AVG 已同步補充當事人角色對話及各自轉折，待正式語意核對。",
+  "causal32": "各四選八結果逐格設置相容性、因果方向、理由及權重；仍作初步證據，不認定正式內容核准。",
+  "timeAndLaw": "T5-1:after 於 2028-09-29；教師節活動已過，其他故事發生與否不作前提。",
+  "duplicates": "獨立困境與前後池其他篇已初步區分，正式全文跨庫查重仍待完成。",
+  "characterAudit": "保留原數值槽及情境人物界線，遠端及第三人發言須按實際媒介重驗。",
+  "npcDeltaAudit": "原底層四碼未洗牌，待逐 R／逐 NPC 對照確切定義及正負反應。",
+  "npcWarningReviews": [],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "如實說明自己讀到卡片的哪一段",
+        "action": "已告知學生實際閱讀範圍，未假稱整封已仔細看完",
+        "tradeoff": "資訊透明，但學生可能仍在等完整回應"
+      },
+      {
+        "id": 2,
+        "short": "訂一個可負擔的私下回覆時段",
+        "action": "已提出可以做到的回覆安排，不保證立刻寫長篇",
+        "tradeoff": "給出可預期方向，但要佔用導師時間"
+      },
+      {
+        "id": 3,
+        "short": "請學生指出卡片裡是否有需要即刻處理的事",
+        "action": "已詢問是否包含即時求助，並將一般感謝和急事區分",
+        "tradeoff": "先照顧緊急性，但容易讓學生以為被分類"
+      },
+      {
+        "id": 4,
+        "short": "向學生確認卡片是否包含急需協助的事情",
+        "action": "已詢問有無緊急求助，未假稱全部讀完",
+        "tradeoff": "能辨別急事，但學生可能感到被分類"
+      },
+      {
+        "id": 5,
+        "short": "詢問學生希望回覆是當面還是書面",
+        "action": "已請學生選擇偏好的回應方式，不保證立刻答覆",
+        "tradeoff": "尊重形式，仍需安排可行時間"
+      },
+      {
+        "id": 6,
+        "short": "向班上說明卡片不會按回覆速度排名",
+        "action": "已告知不以回覆順序判定感謝的價值",
+        "tradeoff": "可減少比較，但當事人仍有失落"
+      }
+    ],
+    "selectedIds": [
+      3,
+      5,
+      1
+    ],
+    "finalChoiceMap": {
+      "A": "emotional",
+      "B": 3,
+      "C": 1,
+      "D": 5
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已聆聽學生失落，未以敷衍承諾換取安心」。它能直接打開「學生知道卡片沒有被隨意丟棄」的條件，因此比其他處置更可能導向「學生確認長卡仍被保存，回覆時間另行安排。」；但不直接代替學生或剪輯者作決定。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已聆聽學生失落，未以敷衍承諾換取安心」，與「學生不再以訊息已讀符號判斷導師是否讀完。」並無互斥；但該結果主要由「已讀符號不能代表全文已細讀」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已聆聽學生失落，未以敷衍承諾換取安心」。它能直接打開「長卡是否含急迫求助需另辨識」的條件，因此比其他處置更可能導向「長卡含實際求助內容，需與一般致謝分開處理。」；但不直接代替學生或剪輯者作決定。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已聆聽學生失落，未以敷衍承諾換取安心」，與「學生因比較同學的回覆時間感到不安。」並無互斥；但該結果主要由「班級停止以回覆速度做情感比較」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已聆聽學生失落，未以敷衍承諾換取安心」。它能直接打開「導師能接住卡片真正重要的內容」的條件，因此比其他處置更可能導向「師生就長卡中具體一句話建立理解，不需公開朗讀。」；但不直接代替學生或剪輯者作決定。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已聆聽學生失落，未以敷衍承諾換取安心」。它能直接打開「未完成回覆的時間界線被承認」的條件，因此比其他處置更可能導向「師生承認回覆尚無即刻完成的保證。」；但不直接代替學生或剪輯者作決定。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已聆聽學生失落，未以敷衍承諾換取安心」，與「學生發現同儕代替導師的說法沒有直接證據。」並無互斥；但該結果主要由「學生不依第三方猜測導師看法」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已聆聽學生失落，未以敷衍承諾換取安心」，與「學生接受卡片可分段閱讀，無需一次公開表演。」並無互斥；但該結果主要由「卡片可由師生用可負擔的步調交流」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」，與「學生確認長卡仍被保存，回覆時間另行安排。」並無互斥；但該結果主要由「學生知道卡片沒有被隨意丟棄」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」，與「學生不再以訊息已讀符號判斷導師是否讀完。」並無互斥；但該結果主要由「已讀符號不能代表全文已細讀」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」。它能直接打開「長卡是否含急迫求助需另辨識」的條件，因此比其他處置更可能導向「長卡含實際求助內容，需與一般致謝分開處理。」；但不直接代替學生或剪輯者作決定。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」，與「學生因比較同學的回覆時間感到不安。」並無互斥；但該結果主要由「班級停止以回覆速度做情感比較」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」，與「師生就長卡中具體一句話建立理解，不需公開朗讀。」並無互斥；但該結果主要由「導師能接住卡片真正重要的內容」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」。它能直接打開「未完成回覆的時間界線被承認」的條件，因此比其他處置更可能導向「師生承認回覆尚無即刻完成的保證。」；但不直接代替學生或剪輯者作決定。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」，與「學生發現同儕代替導師的說法沒有直接證據。」並無互斥；但該結果主要由「學生不依第三方猜測導師看法」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已詢問是否包含即時求助，並將一般感謝和急事區分」，與「學生接受卡片可分段閱讀，無需一次公開表演。」並無互斥；但該結果主要由「卡片可由師生用可負擔的步調交流」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」。它能直接打開「學生知道卡片沒有被隨意丟棄」的條件，因此比其他處置更可能導向「學生確認長卡仍被保存，回覆時間另行安排。」；但不直接代替學生或剪輯者作決定。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」。它能直接打開「已讀符號不能代表全文已細讀」的條件，因此比其他處置更可能導向「學生不再以訊息已讀符號判斷導師是否讀完。」；但不直接代替學生或剪輯者作決定。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」，與「長卡含實際求助內容，需與一般致謝分開處理。」並無互斥；但該結果主要由「長卡是否含急迫求助需另辨識」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」，與「學生因比較同學的回覆時間感到不安。」並無互斥；但該結果主要由「班級停止以回覆速度做情感比較」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」。它能直接打開「導師能接住卡片真正重要的內容」的條件，因此比其他處置更可能導向「師生就長卡中具體一句話建立理解，不需公開朗讀。」；但不直接代替學生或剪輯者作決定。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」，與「師生承認回覆尚無即刻完成的保證。」並無互斥；但該結果主要由「未完成回覆的時間界線被承認」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」。它能直接打開「學生不依第三方猜測導師看法」的條件，因此比其他處置更可能導向「學生發現同儕代替導師的說法沒有直接證據。」；但不直接代替學生或剪輯者作決定。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已告知學生實際閱讀範圍，未假稱整封已仔細看完」，與「學生接受卡片可分段閱讀，無需一次公開表演。」並無互斥；但該結果主要由「卡片可由師生用可負擔的步調交流」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」，與「學生確認長卡仍被保存，回覆時間另行安排。」並無互斥；但該結果主要由「學生知道卡片沒有被隨意丟棄」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」，與「學生不再以訊息已讀符號判斷導師是否讀完。」並無互斥；但該結果主要由「已讀符號不能代表全文已細讀」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」，與「長卡含實際求助內容，需與一般致謝分開處理。」並無互斥；但該結果主要由「長卡是否含急迫求助需另辨識」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」，與「學生因比較同學的回覆時間感到不安。」並無互斥；但該結果主要由「班級停止以回覆速度做情感比較」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」。它能直接打開「導師能接住卡片真正重要的內容」的條件，因此比其他處置更可能導向「師生就長卡中具體一句話建立理解，不需公開朗讀。」；但不直接代替學生或剪輯者作決定。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」。它能直接打開「未完成回覆的時間界線被承認」的條件，因此比其他處置更可能導向「師生承認回覆尚無即刻完成的保證。」；但不直接代替學生或剪輯者作決定。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」，與「學生發現同儕代替導師的說法沒有直接證據。」並無互斥；但該結果主要由「學生不依第三方猜測導師看法」以及相關人物後續行動形成，教師本次措施本身不保證此事。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已請學生選擇偏好的回應方式，不保證立刻答覆」。它能直接打開「卡片可由師生用可負擔的步調交流」的條件，因此比其他處置更可能導向「學生接受卡片可分段閱讀，無需一次公開表演。」；但不直接代替學生或剪輯者作決定。",
+      "actionPreserved": true,
+      "weight": 4
+    }
+  ]
+}

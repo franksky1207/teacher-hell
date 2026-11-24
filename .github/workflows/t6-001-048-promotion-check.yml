@@ -1,0 +1,72 @@
+name: T6-001–048 promotion checks
+on:
+  pull_request:
+    branches: [content/events-production-v1]
+    paths:
+      - '.github/workflows/t6-001-048-promotion-check.yml'
+      - 'content/events-v1/T/T6-高三下/T6-1-學測成績公布後的學生心情/**'
+      - 'scripts/*story*'
+      - 'src/runtime/story-preview-content.js'
+      - 'src/runtime/story-performance.js'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  t6-48-node:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Run focused story and AVG regression tests
+        run: |
+          node --test test/story-draft-validator.test.js test/story-preview-multipage.test.js test/story-preview-cast-continuity.test.js test/story-preview-snapshot.test.js
+      - name: Check current story blob SHA, original-vs-AVG texts and 48 complete R sets
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {execFileSync} from 'node:child_process';
+          const root='content/events-v1/T/T6-高三下/T6-1-學測成績公布後的學生心情';
+          const record=JSON.parse(fs.readFileSync(root+'/驗收紀錄/T6-001-048-文字複查靜態核對.json','utf8'));
+          for(let n=1;n<=48;n++){
+            const id='T6-'+String(n).padStart(3,'0');
+            const path=root+'/活動後/'+id+'.md';
+            const raw=fs.readFileSync(path,'utf8');
+            const entry=record.stories[id];
+            if(!entry)throw Error(id+' missing current evidence');
+            const sha=execFileSync('git',['hash-object',path],{encoding:'utf8'}).trim();
+            if(sha!==entry.sha)throw Error(id+' source SHA differs from current review record');
+            const block=raw.match(/```avg\s*\n([\s\S]*?)\n```/);
+            if(!block)throw Error(id+' AVG missing');
+            const avg=JSON.parse(block[1]);
+            const resultTexts=[...raw.matchAll(/- \*\*玩家可見結果\*\*：([^\n]+)/g)].map(m=>m[1]);
+            if(resultTexts.length!==8)throw Error(id+' must contain exactly eight outcomes');
+            for(let i=0;i<8;i++){
+              const pages=avg.results['R'+(i+1)]?.pages;
+              if(!Array.isArray(pages)||!pages.length||pages.some(p=>!p.text))throw Error(id+' missing pages R'+(i+1));
+              if(pages.map(p=>p.text).join('')!==resultTexts[i])throw Error(id+' AVG mismatch R'+(i+1));
+            }
+          }
+          console.log('PASS: 48 current blobs; 384 outcomes match AVG page text');
+          NODE
+      - name: Verify T6-001–048 native Node full drafts and formal causal evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          root='content/events-v1/T/T6-高三下/T6-1-學測成績公布後的學生心情'
+          for n in $(seq 1 48); do
+            printf -v id 'T6-%03d' "$n"
+            node scripts/check-story-draft.mjs --input "$root/活動後/$id.md" --stage full >/dev/null
+            node scripts/check-story-production.mjs audit "$id" --evidence "$root/驗收紀錄/T6-001-048-第二階段獨立驗收證據/$id.json" >/dev/null
+            echo "PASS full+audit: $id"
+          done
+          node scripts/check-story-production.mjs windows T6-1 >/dev/null
+          echo "PASS: 48 full+audit and T6-1 windows"

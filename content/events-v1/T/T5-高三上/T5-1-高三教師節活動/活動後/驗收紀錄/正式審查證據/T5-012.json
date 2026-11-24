@@ -1,0 +1,368 @@
+{
+  "storyId": "T5-012",
+  "verdict": "pending-content-review",
+  "reviewer": "第二輪施工：暫存逐格因果草案，正式語意審核未通過",
+  "sourceStoryBlobSha": "3e453887f67b8b5de5faf47650919c467be797fa",
+  "storyAndRoles": "學生、科任及其他角色的身分、資訊與在場仍待逐頁正式複核。",
+  "fourCodes": "沿用正式種子四碼；個別結局增減尚需逐碼因果複審。",
+  "fourChoices": "實際六選三與四選項排列已產出並可追溯，仍須檢查相容性。",
+  "eightResults": "96 個結局的本篇八結果已補充自然對話與 AVG，但是否演出完整仍待正式核准。",
+  "causal32": "本篇 32 格已列出權重與逐格草案，不能用量化補滿充當正式驗收。",
+  "timeAndLaw": "須核對 2028-09-29 後池各合法日及人物知情。",
+  "duplicates": "同主題全文及相近 T/G 跨批查重待審。",
+  "characterAudit": "待驗",
+  "npcDeltaAudit": "待驗",
+  "npcWarningReviews": [],
+  "ordinaryChoiceSelection": {
+    "storyId": "T5-012",
+    "stage": "second-round-actual-draw",
+    "rng": "xorshift32 Fisher-Yates",
+    "initialSeed": 20356152,
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "告訴學生個人道謝不受活動日期限制",
+        "action": "告訴學生個人道謝不受活動日期限制",
+        "tradeoff": "減少時間焦慮，但沒替他決定是否交付",
+        "establishedFact": "已明確告知可以另外交卡，未要求補辦全班活動"
+      },
+      {
+        "id": 2,
+        "short": "提供私下交卡的位置，不安排公開補送",
+        "action": "提供私下交卡的位置，不安排公開補送",
+        "tradeoff": "尊重隱私，儀式感可能較少",
+        "establishedFact": "已提供不打擾全班的交付方式，不替學生發布文字"
+      },
+      {
+        "id": 3,
+        "short": "請他保留未完成的卡片，寫完再自行決定",
+        "action": "請他保留未完成的卡片，寫完再自行決定",
+        "tradeoff": "保留創作自由，當下沒有得到正式道謝",
+        "establishedFact": "已明確表示可以繼續保留卡片，不要求立即完成"
+      },
+      {
+        "id": 4,
+        "short": "告訴學生電子訊息也可以是自己的道謝",
+        "action": "告訴學生電子訊息也可以是自己的道謝",
+        "tradeoff": "降低形式焦慮，但會改變原本卡片計畫",
+        "establishedFact": "已說明不一定要手寫或公開，仍由學生選"
+      },
+      {
+        "id": 5,
+        "short": "先問學生想不想獨自與老師交談",
+        "action": "先問學生想不想獨自與老師交談",
+        "tradeoff": "照顧私密感，需配合師生雙方時間",
+        "establishedFact": "已提出自願一對一的方式，未要求當下交付"
+      },
+      {
+        "id": 6,
+        "short": "請朋友停止催促他交出未寫完的卡片",
+        "action": "請朋友停止催促他交出未寫完的卡片",
+        "tradeoff": "降低同儕壓力，可能需要更多溝通",
+        "establishedFact": "已向催促者表示不得代替當事人決定完成時間"
+      }
+    ],
+    "selectedIds": [
+      2,
+      1,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 2,
+      "B": 1,
+      "C": 3,
+      "D": "emotional"
+    },
+    "note": "依固定初始種子執行六選三及四選項洗牌，保留候選行動和取捨，待八結局與逐格因果正式驗證。"
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提供不打擾全班的交付方式，不替學生發布文字」，能有效促進「活動結束不代表個人卡片無法交付」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提供不打擾全班的交付方式，不替學生發布文字」，「班群已轉移話題並不代表感謝過期」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提供不打擾全班的交付方式，不替學生發布文字」，「學生因畢業情緒而未能完成卡片」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提供不打擾全班的交付方式，不替學生發布文字」，能有效促進「個人的心意不必強迫全班補辦活動」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提供不打擾全班的交付方式，不替學生發布文字」，能有效促進「私人卡片內容不應擅自給同學看」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提供不打擾全班的交付方式，不替學生發布文字」，「學生理解致謝不受固定截止日約束」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提供不打擾全班的交付方式，不替學生發布文字」，「擔心太晚表達而被誤當敷衍」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提供不打擾全班的交付方式，不替學生發布文字」，能有效促進「學生終於寫完但仍自行決定何時交卡」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已明確告知可以另外交卡，未要求補辦全班活動」，能有效促進「活動結束不代表個人卡片無法交付」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已明確告知可以另外交卡，未要求補辦全班活動」，能有效促進「班群已轉移話題並不代表感謝過期」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已明確告知可以另外交卡，未要求補辦全班活動」，「學生因畢業情緒而未能完成卡片」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已明確告知可以另外交卡，未要求補辦全班活動」，能有效促進「個人的心意不必強迫全班補辦活動」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已明確告知可以另外交卡，未要求補辦全班活動」，「私人卡片內容不應擅自給同學看」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已明確告知可以另外交卡，未要求補辦全班活動」，能有效促進「學生理解致謝不受固定截止日約束」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已明確告知可以另外交卡，未要求補辦全班活動」，能有效促進「擔心太晚表達而被誤當敷衍」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已明確告知可以另外交卡，未要求補辦全班活動」，「學生終於寫完但仍自行決定何時交卡」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已明確表示可以繼續保留卡片，不要求立即完成」，「活動結束不代表個人卡片無法交付」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已明確表示可以繼續保留卡片，不要求立即完成」，「班群已轉移話題並不代表感謝過期」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已明確表示可以繼續保留卡片，不要求立即完成」，能有效促進「學生因畢業情緒而未能完成卡片」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已明確表示可以繼續保留卡片，不要求立即完成」，「個人的心意不必強迫全班補辦活動」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已明確表示可以繼續保留卡片，不要求立即完成」，能有效促進「私人卡片內容不應擅自給同學看」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已明確表示可以繼續保留卡片，不要求立即完成」，能有效促進「學生理解致謝不受固定截止日約束」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已明確表示可以繼續保留卡片，不要求立即完成」，能有效促進「擔心太晚表達而被誤當敷衍」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已明確表示可以繼續保留卡片，不要求立即完成」，能有效促進「學生終於寫完但仍自行決定何時交卡」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」，能有效促進「活動結束不代表個人卡片無法交付」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」，「班群已轉移話題並不代表感謝過期」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」，能有效促進「學生因畢業情緒而未能完成卡片」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」，「個人的心意不必強迫全班補辦活動」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」，「私人卡片內容不應擅自給同學看」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」，能有效促進「學生理解致謝不受固定截止日約束」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」，能有效促進「擔心太晚表達而被誤當敷衍」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」，能有效促進「學生終於寫完但仍自行決定何時交卡」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    }
+  ]
+}

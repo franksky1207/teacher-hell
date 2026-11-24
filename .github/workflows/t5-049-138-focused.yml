@@ -1,0 +1,54 @@
+name: T5-049-138 focused Node acceptance
+on:
+  pull_request:
+    branches: [content/events-production-v1]
+    paths:
+      - 'content/events-v1/T/T5-高三上/T5-5-學測前最後階段特殊安排/**'
+      - '.github/workflows/t5-049-138-focused.yml'
+  push:
+    branches: [content/events-production-v1]
+    paths:
+      - 'content/events-v1/T/T5-高三上/T5-5-學測前最後階段特殊安排/**'
+      - '.github/workflows/t5-049-138-focused.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  t5-node:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Validate T5-049 through T5-138 full drafts and semantic review evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="content/events-v1/T/T5-高三上/T5-5-學測前最後階段特殊安排"
+          mkdir -p /tmp/t5-evidence
+          node --input-type=module <<'NODE'
+          import {readFileSync,writeFileSync} from 'node:fs';
+          const root='content/events-v1/T/T5-高三上/T5-5-學測前最後階段特殊安排';
+          const batch=JSON.parse(readFileSync(`${root}/驗收紀錄/T5-049-138-Codex獨立驗收證據.json`,'utf8'));
+          if(Object.keys(batch.stories).length!==90)throw Error('Expected precisely 90 evidence entries');
+          for(let n=49;n<=138;n++){
+            const id=`T5-${String(n).padStart(3,'0')}`;
+            if(!batch.stories[id])throw Error(`Missing evidence ${id}`);
+            writeFileSync(`/tmp/t5-evidence/${id}.json`,JSON.stringify(batch.stories[id]));
+          }
+          NODE
+          for n in $(seq 49 138); do
+            printf -v id 'T5-%03d' "$n"
+            node scripts/check-story-draft.mjs --input "$root/活動前/$id.md" --stage full > /dev/null
+            node scripts/check-story-production.mjs audit "$id" --evidence "/tmp/t5-evidence/$id.json" > /dev/null
+            echo "PASS full draft and evidence: $id"
+          done
+      - name: Verify AVG story preview and cast continuity
+        run: node --test test/story-preview-multipage.test.js test/story-preview-cast-continuity.test.js test/story-preview-snapshot.test.js

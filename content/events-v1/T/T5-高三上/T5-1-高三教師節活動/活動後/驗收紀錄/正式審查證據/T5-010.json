@@ -1,0 +1,368 @@
+{
+  "storyId": "T5-010",
+  "verdict": "pending-content-review",
+  "reviewer": "第二輪施工：暫存逐格因果草案，正式語意審核未通過",
+  "sourceStoryBlobSha": "3ff4e1e6c15c25670116671f505cbb00aa57a569",
+  "storyAndRoles": "學生、科任及其他角色的身分、資訊與在場仍待逐頁正式複核。",
+  "fourCodes": "沿用正式種子四碼；個別結局增減尚需逐碼因果複審。",
+  "fourChoices": "實際六選三與四選項排列已產出並可追溯，仍須檢查相容性。",
+  "eightResults": "96 個結局的本篇八結果已補充自然對話與 AVG，但是否演出完整仍待正式核准。",
+  "causal32": "本篇 32 格已列出權重與逐格草案，不能用量化補滿充當正式驗收。",
+  "timeAndLaw": "須核對 2028-09-29 後池各合法日及人物知情。",
+  "duplicates": "同主題全文及相近 T/G 跨批查重待審。",
+  "characterAudit": "待驗",
+  "npcDeltaAudit": "待驗",
+  "npcWarningReviews": [],
+  "ordinaryChoiceSelection": {
+    "storyId": "T5-010",
+    "stage": "second-round-actual-draw",
+    "rng": "xorshift32 Fisher-Yates",
+    "initialSeed": 20340314,
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "立刻請禮物製作者移除未經同意的署名",
+        "action": "立刻請禮物製作者移除未經同意的署名",
+        "tradeoff": "直接保障署名權，可能引發朋友間誤會",
+        "establishedFact": "已提出更正要求，不預設製作者已修改所有版本"
+      },
+      {
+        "id": 2,
+        "short": "先查明購買款項是否也被代墊或代收",
+        "action": "先查明購買款項是否也被代墊或代收",
+        "tradeoff": "釐清財務責任，可能讓同學覺得小題大作",
+        "establishedFact": "已詢問費用與名單來源，未臆測當事人欠款"
+      },
+      {
+        "id": 3,
+        "short": "提供只更正名字、不公開退出理由的方式",
+        "action": "提供只更正名字、不公開退出理由的方式",
+        "tradeoff": "減少人際壓力，製作者仍需配合",
+        "establishedFact": "已向當事人提出私下更正管道，未替他公開心情"
+      },
+      {
+        "id": 4,
+        "short": "私下與代填名單的同學談授權觀念",
+        "action": "私下與代填名單的同學談授權觀念",
+        "tradeoff": "減少再犯，未必立即修好已發布版本",
+        "establishedFact": "已提醒製作者不可代人同意，未公開指責"
+      },
+      {
+        "id": 5,
+        "short": "請製作者核對不同版本的簽名及合照",
+        "action": "請製作者核對不同版本的簽名及合照",
+        "tradeoff": "能找出殘留名字，增加處理成本",
+        "establishedFact": "已提出核對印刷及電子版本，不保證都能撤回"
+      },
+      {
+        "id": 6,
+        "short": "讓當事人自行選擇是否向朋友說明退出",
+        "action": "讓當事人自行選擇是否向朋友說明退出",
+        "tradeoff": "保留關係空間，誤解可能持續",
+        "establishedFact": "已提供個人說明的選項，未替學生宣告立場"
+      }
+    ],
+    "selectedIds": [
+      5,
+      3,
+      2
+    ],
+    "finalChoiceMap": {
+      "A": 5,
+      "B": 2,
+      "C": "emotional",
+      "D": 3
+    },
+    "note": "依固定初始種子執行六選三及四選項洗牌，保留候選行動和取捨，待八結局與逐格因果正式驗證。"
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提出核對印刷及電子版本，不保證都能撤回」，能有效促進「名單上未經同意的署名獲得修正」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出核對印刷及電子版本，不保證都能撤回」，「擅自代填表單使同意與費用有疑點」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出核對印刷及電子版本，不保證都能撤回」，「退出禮物被同儕誤解為不尊重老師」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提出核對印刷及電子版本，不保證都能撤回」，能有效促進「合照或不同版本仍存不正確署名」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出核對印刷及電子版本，不保證都能撤回」，「朋友的好心並不能代替詢問同意」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出核對印刷及電子版本，不保證都能撤回」，「代墊付款來源需要被真正核清」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已提出核對印刷及電子版本，不保證都能撤回」，能有效促進「當事人想保留合照而更正署名」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已提出核對印刷及電子版本，不保證都能撤回」，「學生選擇不參與共同禮物的私人道謝」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已詢問費用與名單來源，未臆測當事人欠款」，「名單上未經同意的署名獲得修正」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已詢問費用與名單來源，未臆測當事人欠款」，能有效促進「擅自代填表單使同意與費用有疑點」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已詢問費用與名單來源，未臆測當事人欠款」，「退出禮物被同儕誤解為不尊重老師」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已詢問費用與名單來源，未臆測當事人欠款」，「合照或不同版本仍存不正確署名」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已詢問費用與名單來源，未臆測當事人欠款」，「朋友的好心並不能代替詢問同意」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已詢問費用與名單來源，未臆測當事人欠款」，能有效促進「代墊付款來源需要被真正核清」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已詢問費用與名單來源，未臆測當事人欠款」，「當事人想保留合照而更正署名」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已詢問費用與名單來源，未臆測當事人欠款」，「學生選擇不參與共同禮物的私人道謝」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已讓學生說出矛盾，未代替他決定是否署名」，「名單上未經同意的署名獲得修正」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已讓學生說出矛盾，未代替他決定是否署名」，「擅自代填表單使同意與費用有疑點」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已讓學生說出矛盾，未代替他決定是否署名」，能有效促進「退出禮物被同儕誤解為不尊重老師」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已讓學生說出矛盾，未代替他決定是否署名」，「合照或不同版本仍存不正確署名」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已讓學生說出矛盾，未代替他決定是否署名」，能有效促進「朋友的好心並不能代替詢問同意」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已讓學生說出矛盾，未代替他決定是否署名」，「代墊付款來源需要被真正核清」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已讓學生說出矛盾，未代替他決定是否署名」，「當事人想保留合照而更正署名」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已讓學生說出矛盾，未代替他決定是否署名」，能有效促進「學生選擇不參與共同禮物的私人道謝」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已向當事人提出私下更正管道，未替他公開心情」，能有效促進「名單上未經同意的署名獲得修正」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已向當事人提出私下更正管道，未替他公開心情」，「擅自代填表單使同意與費用有疑點」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已向當事人提出私下更正管道，未替他公開心情」，「退出禮物被同儕誤解為不尊重老師」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已向當事人提出私下更正管道，未替他公開心情」，能有效促進「合照或不同版本仍存不正確署名」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已向當事人提出私下更正管道，未替他公開心情」，能有效促進「朋友的好心並不能代替詢問同意」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師已「已向當事人提出私下更正管道，未替他公開心情」，「代墊付款來源需要被真正核清」仍可能隨其他人的行動發生；這個選項未直接造成該轉折，故列一般可達。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已向當事人提出私下更正管道，未替他公開心情」，能有效促進「當事人想保留合照而更正署名」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "當導師已「已向當事人提出私下更正管道，未替他公開心情」，能有效促進「學生選擇不參與共同禮物的私人道謝」的條件，但後續是否發生仍由學生及相關人員自主決定。",
+      "actionPreserved": true
+    }
+  ]
+}

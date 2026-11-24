@@ -1,5 +1,8 @@
 name: T5 013-042 one-time Node validation
 on:
+  pull_request:
+    branches:
+      - content/events-production-v1
   push:
     branches:
       - work/t5-013-042-drafts-20261124

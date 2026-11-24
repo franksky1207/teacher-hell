@@ -1,0 +1,366 @@
+{
+  "storyId": "T5-044",
+  "verdict": "approved",
+  "reviewer": "Codex",
+  "sourceStoryBlobSha": "c9e98fefe4a734ac0bbefd695e3c087d53b4c073",
+  "storyAndRoles": "T5-044 具獨立導師困境（核對出席與報名資格而不代承諾）與 T5-4:before 時間必要性；雙學生 student_a（代報聯絡人）與 student_b（被列名未到場者）均為本班學生、身分與立場分明。",
+  "fourCodes": "沿用 S1002 原四碼（1-1、3-2、4-3、8-4），student_a 負責 1-1/3-2/8-4，student_b 持有 4-3 自主需求，R1～R8 增減均在 ±1～±2 內。",
+  "fourChoices": "A～D 四行動實質不同且均已完成（C 為 emotional=true）；與六選三紀錄（候選 6、5、2 及情緒項）及 A～D 映射一致。",
+  "eightResults": "R1～R8 各自呈現貼圖誤認、早先缺席截圖、舞台走位安全、班群誤傳取消、遠端影片協助、縮短曲段、背景投影未問同意、自願勾選名單，皆不推翻 A～D；V3 四組 D/B/E/C 合法。",
+  "causal32": "完成 32 格逐格審查：四行動均與 R1～R8 相容（無 0 權重），D 對 R7 為 1（僅核人數欄位較不直接處理投影名字的同意權，但仍可達），其餘 4/2 權重符合因果。",
+  "timeAndLaw": "唯一合法日 2028-12-20（T5-4:before），晚會 2028-12-21 尚未舉行；不代學生報名、不擅改承辦核定節目、尊重未到場者姓名與出席同意權。",
+  "duplicates": "與同池及 T5-017/042（攝影肖像同意）不同，本篇聚焦舞台表演名額、走位安全與集體節目報名程序。",
+  "characterAudit": "本篇設 student_a（代報集體節目的本班聯絡人）與 student_b（已表明不能到場卻被列名者）兩名常駐學生槽位，開場雙人同框並依 R1～R8 各自對話與反應；承辦及群組同學為匿名背景。",
+  "npcDeltaAudit": "R1(student_a:1-1:+2,3-2:+1)、R2(student_a:1-1:+1,student_b:4-3:+2)、R3(student_a:3-2:+2,8-4:+1)、R4(student_a:8-4:+2,1-1:-1)、R5(student_b:4-3:+1,student_a:3-2:+1)、R6(student_a:1-1:+1,3-2:+2)、R7(student_b:4-3:+2,student_a:8-4:-1)、R8(student_a:1-1:+1,student_b:4-3:+1)。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_all_zero_code:student_a:4-3",
+      "decision": "retain",
+      "evidence": "4-3（自主需求）在本篇核心對應被代填名單卻無法到場的 student_b 之拒絕被代表權，student_a 負責責任感、判斷與資訊傳達，不重複結算 4-3。"
+    },
+    {
+      "id": "npc_all_zero_code:student_b:1-1",
+      "decision": "retain",
+      "evidence": "1-1（責任感）在本篇對應代報聯絡人 student_a 核對與修正草稿的責任，student_b 並未負責報名作業，維持 0 變動符合角色分工。"
+    },
+    {
+      "id": "npc_all_zero_code:student_b:3-2",
+      "decision": "retain",
+      "evidence": "3-2（判斷能力）對應聯絡人 student_a 辨識群組貼圖與實際上台人數之證據落差，student_b 早已明確告知缺席，維持 0 變動合理。"
+    },
+    {
+      "id": "npc_all_zero_code:student_b:8-4",
+      "decision": "retain",
+      "evidence": "8-4（資訊傳達主動性）對應 student_a 向承辦與班群澄清節目狀態的責任，非 student_b 的義務，維持 0 變動合理。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "請聯絡人逐名核對本人出席與同意"
+      },
+      {
+        "id": 2,
+        "action": "對照舞台人數及正式報名欄位"
+      },
+      {
+        "id": 3,
+        "action": "請學生另提不強制全員的段落"
+      },
+      {
+        "id": 4,
+        "action": "請聯絡人把未確認者改列候選"
+      },
+      {
+        "id": 5,
+        "action": "向承辦查明更改節目人數期限"
+      },
+      {
+        "id": 6,
+        "action": "請兩位學生各自寫下可以承擔的部分"
+      }
+    ],
+    "selectedIds": [
+      6,
+      5,
+      2
+    ],
+    "finalChoiceMap": {
+      "A": 6,
+      "B": 5,
+      "C": "emotional",
+      "D": 2
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "請兩位學生各自寫下可以承擔的部分（已分別記錄意願），直接促成「聯絡人核對名單發現貼圖不等於報名上台」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 A 已完成行動（「請兩位學生各自寫下可以承擔的部分（已分別記錄意願）」），R1 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "請兩位學生各自寫下可以承擔的部分（已分別記錄意願），直接促成「缺席者拿出早先傳出的缺席截圖釐清責任」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 A 已完成行動（「請兩位學生各自寫下可以承擔的部分（已分別記錄意願）」），R2 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "自然可達（中性）",
+      "reason": "請兩位學生各自寫下可以承擔的部分（已分別記錄意願）後，與「承辦回覆舞台站位只能依實際人數編排」無客觀互斥，事件仍可自然發展。",
+      "actionPreserved": "保留選項 A 已完成行動（「請兩位學生各自寫下可以承擔的部分（已分別記錄意願）」），R3 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "請兩位學生各自寫下可以承擔的部分（已分別記錄意願），直接促成「班群誤傳整段取消，聯絡人澄清可證實狀態」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 A 已完成行動（「請兩位學生各自寫下可以承擔的部分（已分別記錄意願）」），R4 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "請兩位學生各自寫下可以承擔的部分（已分別記錄意願），直接促成「缺席者自願整理班內影片但不算上台人數」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 A 已完成行動（「請兩位學生各自寫下可以承擔的部分（已分別記錄意願）」），R5 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "自然可達（中性）",
+      "reason": "請兩位學生各自寫下可以承擔的部分（已分別記錄意願）後，與「人數不足以支撐原曲段，聯絡人縮短候選段落」無客觀互斥，事件仍可自然發展。",
+      "actionPreserved": "保留選項 A 已完成行動（「請兩位學生各自寫下可以承擔的部分（已分別記錄意願）」），R6 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "請兩位學生各自寫下可以承擔的部分（已分別記錄意願），直接促成「有人提議投影缺席者姓名遭拒絕而撤回」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 A 已完成行動（「請兩位學生各自寫下可以承擔的部分（已分別記錄意願）」），R7 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "請兩位學生各自寫下可以承擔的部分（已分別記錄意願），直接促成「新草稿只勾選確定上台者，其餘留空待承辦確認」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 A 已完成行動（「請兩位學生各自寫下可以承擔的部分（已分別記錄意願）」），R8 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "自然可達（中性）",
+      "reason": "向承辦查明更改節目人數期限（已查詢期限與程序）後，與「聯絡人核對名單發現貼圖不等於報名上台」無客觀互斥，事件仍可自然發展。",
+      "actionPreserved": "保留選項 B 已完成行動（「向承辦查明更改節目人數期限（已查詢期限與程序）」），R1 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "自然可達（中性）",
+      "reason": "向承辦查明更改節目人數期限（已查詢期限與程序）後，與「缺席者拿出早先傳出的缺席截圖釐清責任」無客觀互斥，事件仍可自然發展。",
+      "actionPreserved": "保留選項 B 已完成行動（「向承辦查明更改節目人數期限（已查詢期限與程序）」），R2 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "向承辦查明更改節目人數期限（已查詢期限與程序），直接促成「承辦回覆舞台站位只能依實際人數編排」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 B 已完成行動（「向承辦查明更改節目人數期限（已查詢期限與程序）」），R3 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "自然可達（中性）",
+      "reason": "向承辦查明更改節目人數期限（已查詢期限與程序）後，與「班群誤傳整段取消，聯絡人澄清可證實狀態」無客觀互斥，事件仍可自然發展。",
+      "actionPreserved": "保留選項 B 已完成行動（「向承辦查明更改節目人數期限（已查詢期限與程序）」），R4 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "自然可達（中性）",
+      "reason": "向承辦查明更改節目人數期限（已查詢期限與程序）後，與「缺席者自願整理班內影片但不算上台人數」無客觀互斥，事件仍可自然發展。",
+      "actionPreserved": "保留選項 B 已完成行動（「向承辦查明更改節目人數期限（已查詢期限與程序）」），R5 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "向承辦查明更改節目人數期限（已查詢期限與程序），直接促成「人數不足以支撐原曲段，聯絡人縮短候選段落」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 B 已完成行動（「向承辦查明更改節目人數期限（已查詢期限與程序）」），R6 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "自然可達（中性）",
+      "reason": "向承辦查明更改節目人數期限（已查詢期限與程序）後，與「有人提議投影缺席者姓名遭拒絕而撤回」無客觀互斥，事件仍可自然發展。",
+      "actionPreserved": "保留選項 B 已完成行動（「向承辦查明更改節目人數期限（已查詢期限與程序）」），R7 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "向承辦查明更改節目人數期限（已查詢期限與程序），直接促成「新草稿只勾選確定上台者，其餘留空待承辦確認」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 B 已完成行動（「向承辦查明更改節目人數期限（已查詢期限與程序）」），R8 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "自然可達（中性）",
+      "reason": "承認想留完整回憶與被代填都很委屈（已聆聽雙方感受）後，與「聯絡人核對名單發現貼圖不等於報名上台」無客觀互斥，事件仍可自然發展。",
+      "actionPreserved": "保留選項 C 已完成行動（「承認想留完整回憶與被代填都很委屈（已聆聽雙方感受）」），R1 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "承認想留完整回憶與被代填都很委屈（已聆聽雙方感受），直接促成「缺席者拿出早先傳出的缺席截圖釐清責任」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 C 已完成行動（「承認想留完整回憶與被代填都很委屈（已聆聽雙方感受）」），R2 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "自然可達（中性）",
+      "reason": "承認想留完整回憶與被代填都很委屈（已聆聽雙方感受）後，與「承辦回覆舞台站位只能依實際人數編排」無客觀互斥，事件仍可自然發展。",
+      "actionPreserved": "保留選項 C 已完成行動（「承認想留完整回憶與被代填都很委屈（已聆聽雙方感受）」），R3 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "承認想留完整回憶與被代填都很委屈（已聆聽雙方感受），直接促成「班群誤傳整段取消，聯絡人澄清可證實狀態」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 C 已完成行動（「承認想留完整回憶與被代填都很委屈（已聆聽雙方感受）」），R4 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "自然可達（中性）",
+      "reason": "承認想留完整回憶與被代填都很委屈（已聆聽雙方感受）後，與「缺席者自願整理班內影片但不算上台人數」無客觀互斥，事件仍可自然發展。",
+      "actionPreserved": "保留選項 C 已完成行動（「承認想留完整回憶與被代填都很委屈（已聆聽雙方感受）」），R5 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "承認想留完整回憶與被代填都很委屈（已聆聽雙方感受），直接促成「人數不足以支撐原曲段，聯絡人縮短候選段落」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 C 已完成行動（「承認想留完整回憶與被代填都很委屈（已聆聽雙方感受）」），R6 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "承認想留完整回憶與被代填都很委屈（已聆聽雙方感受），直接促成「有人提議投影缺席者姓名遭拒絕而撤回」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 C 已完成行動（「承認想留完整回憶與被代填都很委屈（已聆聽雙方感受）」），R7 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "承認想留完整回憶與被代填都很委屈（已聆聽雙方感受），直接促成「新草稿只勾選確定上台者，其餘留空待承辦確認」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 C 已完成行動（「承認想留完整回憶與被代填都很委屈（已聆聽雙方感受）」），R8 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "自然可達（中性）",
+      "reason": "對照舞台人數及正式報名欄位（已核對承辦人數欄位）後，與「聯絡人核對名單發現貼圖不等於報名上台」無客觀互斥，事件仍可自然發展。",
+      "actionPreserved": "保留選項 D 已完成行動（「對照舞台人數及正式報名欄位（已核對承辦人數欄位）」），R1 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "自然可達（中性）",
+      "reason": "對照舞台人數及正式報名欄位（已核對承辦人數欄位）後，與「缺席者拿出早先傳出的缺席截圖釐清責任」無客觀互斥，事件仍可自然發展。",
+      "actionPreserved": "保留選項 D 已完成行動（「對照舞台人數及正式報名欄位（已核對承辦人數欄位）」），R2 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "對照舞台人數及正式報名欄位（已核對承辦人數欄位），直接促成「承辦回覆舞台站位只能依實際人數編排」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 D 已完成行動（「對照舞台人數及正式報名欄位（已核對承辦人數欄位）」），R3 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "自然可達（中性）",
+      "reason": "對照舞台人數及正式報名欄位（已核對承辦人數欄位）後，與「班群誤傳整段取消，聯絡人澄清可證實狀態」無客觀互斥，事件仍可自然發展。",
+      "actionPreserved": "保留選項 D 已完成行動（「對照舞台人數及正式報名欄位（已核對承辦人數欄位）」），R4 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "自然可達（中性）",
+      "reason": "對照舞台人數及正式報名欄位（已核對承辦人數欄位）後，與「缺席者自願整理班內影片但不算上台人數」無客觀互斥，事件仍可自然發展。",
+      "actionPreserved": "保留選項 D 已完成行動（「對照舞台人數及正式報名欄位（已核對承辦人數欄位）」），R5 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "對照舞台人數及正式報名欄位（已核對承辦人數欄位），直接促成「人數不足以支撐原曲段，聯絡人縮短候選段落」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 D 已完成行動（「對照舞台人數及正式報名欄位（已核對承辦人數欄位）」），R6 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 1,
+      "compatibility": "相容",
+      "causalDirection": "輕微抑制但仍可達",
+      "reason": "已核對舞台人數與正式報名欄位，焦點放在人數規格而非姓名授權，對「投影缺席者姓名」的爭議推動較間接，但並未阻止他人提出與撤回，故為輕微抑制但可達。",
+      "actionPreserved": "保留選項 D 已完成行動（「對照舞台人數及正式報名欄位（已核對承辦人數欄位）」），R7 未推翻或取消該既成事實。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "顯著促進",
+      "reason": "對照舞台人數及正式報名欄位（已核對承辦人數欄位），直接促成「新草稿只勾選確定上台者，其餘留空待承辦確認」的關鍵釐清或調整，因果促進顯著。",
+      "actionPreserved": "保留選項 D 已完成行動（「對照舞台人數及正式報名欄位（已核對承辦人數欄位）」），R8 未推翻或取消該既成事實。"
+    }
+  ]
+}

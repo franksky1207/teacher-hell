@@ -1,0 +1,356 @@
+{
+  "storyId": "T5-011",
+  "verdict": "needs-review",
+  "reviewer": "GPT-6 第二輪故事重製：因果先行覆核稿（正式驗收未通過）",
+  "storyAndRoles": "本篇仍依# T5-011｜科任託導師轉達很受感動核對原規劃角色、合法身分及知情順序。",
+  "fourCodes": "四碼保持 1-3／3-4／11-3／12-1，數值角色的獨立變化與合法持碼待正式審閱。",
+  "fourChoices": "依可追溯 xorshift32 初始種子抽選六個普通候選中的三個，另加情緒選項組 A～D，均有客觀已完成行動。",
+  "eightResults": "八結局內容與 AVG 多頁對話已同步重寫，字數與逐人自主反應待定向驗收及實質審核。",
+  "causal32": "逐格附相容性、促進／中性／抑制及其理由；不因 32 筆資料齊全便宣稱已核准。",
+  "timeAndLaw": "T5-1:after；2028 年教師節活動後共用池，不冒稱他人有同意及科任承諾。",
+  "duplicates": "與其他 11 篇的主題及主要決策機制不同，完整同池／跨池重複性審查待完成。",
+  "characterAudit": "原第三區之持碼 NPC 才得更新數值；無數值背景學生／科任不自動轉成常駐。",
+  "npcDeltaAudit": "本篇原四碼 NPC 增減仍需依具體結果逐碼核對；不替導師持有 NPC 對教師的關係碼。",
+  "npcWarningReviews": [],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "只轉述科任確實說過的感動，不增加保證",
+        "action": "已按科任原話更正轉述，未替科任放寬作業要求",
+        "tradeoff": "避免誤傳，學生可能覺得掃興"
+      },
+      {
+        "id": 2,
+        "short": "和學生區分被肯定與仍要履行課業責任",
+        "action": "已說明感謝不能交換免交作業，未插手科任評分",
+        "tradeoff": "界線清楚，還要處理學生的受挫"
+      },
+      {
+        "id": 3,
+        "short": "協助學生整理想向科任反映的具體困難",
+        "action": "已幫學生整理可提出的課業困難，未保證科任接受",
+        "tradeoff": "建立可對話議題，需由任課教師自行決定"
+      },
+      {
+        "id": 4,
+        "short": "請學生把班群的免責傳言先停止轉發",
+        "action": "已要求停止擴散未經科任證實的話",
+        "tradeoff": "降低誤解，但可能讓學生覺得掃興"
+      },
+      {
+        "id": 5,
+        "short": "詢問科任是否願意親自澄清其原意",
+        "action": "已向科任提出澄清邀請，未替對方決定",
+        "tradeoff": "資訊更直接，仍須等待科任意願"
+      },
+      {
+        "id": 6,
+        "short": "協助學生安排合宜時機向科任提問",
+        "action": "已提出正式對話管道，未允諾改分數或豁免",
+        "tradeoff": "提供討論機會，但學生要自行面對"
+      }
+    ],
+    "selectedIds": [
+      3,
+      4,
+      6
+    ],
+    "finalChoiceMap": {
+      "A": 4,
+      "B": "emotional",
+      "C": 3,
+      "D": 6
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求停止擴散未經科任證實的話」後，「科任受到感動仍維持作業規範，學生理解兩者並不矛盾。」依然可能發生，且沒有取消該選項已做的事；但「科任的感動與教學要求能同時存在」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已要求停止擴散未經科任證實的話」，因此使「班群擅傳免交作業的說法受質疑」有明確的推進路徑，較容易出現「班群誤傳教師節後可免交作業，須停止擴散。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求停止擴散未經科任證實的話」後，「學生了解科任也在乎自己的教學與回應。」依然可能發生，且沒有取消該選項已做的事；但「學生理解科任被感動的原意」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求停止擴散未經科任證實的話」後，「學生將免責要求改為提出具體課業困難。」依然可能發生，且沒有取消該選項已做的事；但「學生提出可向科任討論的具體困難」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已要求停止擴散未經科任證實的話」，因此使「被添寫的免責承諾遭到更正」有明確的推進路徑，較容易出現「科任轉述被他人擅添保證，學生重新釐清原話。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已要求停止擴散未經科任證實的話」，因此使「學生不把感謝當成交易」有明確的推進路徑，較容易出現「學生理解致謝不構成科任免責交換。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求停止擴散未經科任證實的話」後，「學生坦承害怕被責備，轉向尋求適當溝通。」依然可能發生，且沒有取消該選項已做的事；但「學生說出怕被責備的根本壓力」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已要求停止擴散未經科任證實的話」，因此使「轉述回到科任確實說過的話」有明確的推進路徑，較容易出現「導師轉述回到科任真實原意，未添加教學承諾。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已聽學生描述過去被責備的感受，未承諾免責」後，「科任受到感動仍維持作業規範，學生理解兩者並不矛盾。」依然可能發生，且沒有取消該選項已做的事；但「科任的感動與教學要求能同時存在」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已聽學生描述過去被責備的感受，未承諾免責」後，「班群誤傳教師節後可免交作業，須停止擴散。」依然可能發生，且沒有取消該選項已做的事；但「班群擅傳免交作業的說法受質疑」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已聽學生描述過去被責備的感受，未承諾免責」後，「學生了解科任也在乎自己的教學與回應。」依然可能發生，且沒有取消該選項已做的事；但「學生理解科任被感動的原意」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已聽學生描述過去被責備的感受，未承諾免責」，因此使「學生提出可向科任討論的具體困難」有明確的推進路徑，較容易出現「學生將免責要求改為提出具體課業困難。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已聽學生描述過去被責備的感受，未承諾免責」後，「科任轉述被他人擅添保證，學生重新釐清原話。」依然可能發生，且沒有取消該選項已做的事；但「被添寫的免責承諾遭到更正」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已聽學生描述過去被責備的感受，未承諾免責」後，「學生理解致謝不構成科任免責交換。」依然可能發生，且沒有取消該選項已做的事；但「學生不把感謝當成交易」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已聽學生描述過去被責備的感受，未承諾免責」，因此使「學生說出怕被責備的根本壓力」有明確的推進路徑，較容易出現「學生坦承害怕被責備，轉向尋求適當溝通。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已聽學生描述過去被責備的感受，未承諾免責」後，「導師轉述回到科任真實原意，未添加教學承諾。」依然可能發生，且沒有取消該選項已做的事；但「轉述回到科任確實說過的話」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已幫學生整理可提出的課業困難，未保證科任接受」後，「科任受到感動仍維持作業規範，學生理解兩者並不矛盾。」依然可能發生，且沒有取消該選項已做的事；但「科任的感動與教學要求能同時存在」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已幫學生整理可提出的課業困難，未保證科任接受」後，「班群誤傳教師節後可免交作業，須停止擴散。」依然可能發生，且沒有取消該選項已做的事；但「班群擅傳免交作業的說法受質疑」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已幫學生整理可提出的課業困難，未保證科任接受」後，「學生了解科任也在乎自己的教學與回應。」依然可能發生，且沒有取消該選項已做的事；但「學生理解科任被感動的原意」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已幫學生整理可提出的課業困難，未保證科任接受」，因此使「學生提出可向科任討論的具體困難」有明確的推進路徑，較容易出現「學生將免責要求改為提出具體課業困難。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已幫學生整理可提出的課業困難，未保證科任接受」後，「科任轉述被他人擅添保證，學生重新釐清原話。」依然可能發生，且沒有取消該選項已做的事；但「被添寫的免責承諾遭到更正」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已幫學生整理可提出的課業困難，未保證科任接受」，因此使「學生不把感謝當成交易」有明確的推進路徑，較容易出現「學生理解致謝不構成科任免責交換。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已幫學生整理可提出的課業困難，未保證科任接受」，因此使「學生說出怕被責備的根本壓力」有明確的推進路徑，較容易出現「學生坦承害怕被責備，轉向尋求適當溝通。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已幫學生整理可提出的課業困難，未保證科任接受」後，「導師轉述回到科任真實原意，未添加教學承諾。」依然可能發生，且沒有取消該選項已做的事；但「轉述回到科任確實說過的話」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提出正式對話管道，未允諾改分數或豁免」後，「科任受到感動仍維持作業規範，學生理解兩者並不矛盾。」依然可能發生，且沒有取消該選項已做的事；但「科任的感動與教學要求能同時存在」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提出正式對話管道，未允諾改分數或豁免」後，「班群誤傳教師節後可免交作業，須停止擴散。」依然可能發生，且沒有取消該選項已做的事；但「班群擅傳免交作業的說法受質疑」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提出正式對話管道，未允諾改分數或豁免」，因此使「學生理解科任被感動的原意」有明確的推進路徑，較容易出現「學生了解科任也在乎自己的教學與回應。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提出正式對話管道，未允諾改分數或豁免」，因此使「學生提出可向科任討論的具體困難」有明確的推進路徑，較容易出現「學生將免責要求改為提出具體課業困難。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提出正式對話管道，未允諾改分數或豁免」後，「科任轉述被他人擅添保證，學生重新釐清原話。」依然可能發生，且沒有取消該選項已做的事；但「被添寫的免責承諾遭到更正」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提出正式對話管道，未允諾改分數或豁免」後，「學生理解致謝不構成科任免責交換。」依然可能發生，且沒有取消該選項已做的事；但「學生不把感謝當成交易」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提出正式對話管道，未允諾改分數或豁免」，因此使「學生說出怕被責備的根本壓力」有明確的推進路徑，較容易出現「學生坦承害怕被責備，轉向尋求適當溝通。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提出正式對話管道，未允諾改分數或豁免」，因此使「轉述回到科任確實說過的話」有明確的推進路徑，較容易出現「導師轉述回到科任真實原意，未添加教學承諾。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    }
+  ]
+}

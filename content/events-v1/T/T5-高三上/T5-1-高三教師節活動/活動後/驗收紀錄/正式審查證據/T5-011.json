@@ -2,7 +2,7 @@
   "storyId": "T5-011",
   "verdict": "pending-content-review",
   "reviewer": "第二輪施工：暫存逐格因果草案，正式語意審核未通過",
-  "sourceStoryBlobSha": "931f1efe469bea52a52a020dcd25922956b624b8",
+  "sourceStoryBlobSha": "7ab651bf09accb31f91e38a7528925bd0ef19d32",
   "storyAndRoles": "學生、科任及其他角色的身分、資訊與在場仍待逐頁正式複核。",
   "fourCodes": "沿用正式種子四碼；個別結局增減尚需逐碼因果複審。",
   "fourChoices": "實際六選三與四選項排列已產出並可追溯，仍須檢查相容性。",
@@ -10,7 +10,7 @@
   "causal32": "32 格已同步目前分支內矩陣、方向與來源 SHA；真正的因果語意與角色知情仍待正式核定。",
   "timeAndLaw": "須核對 2028-09-29 後池各合法日及人物知情。",
   "duplicates": "同主題全文及相近 T/G 跨批查重待審。",
-  "characterAudit": "student_a 現場與導師討論；subject_teacher_a 是本班實際任課科任，僅於 R3/R4/R7/R8 收到學生本人課務詢問後，透過既有課後聯絡介面自行回覆；不得因導師轉述就替科任推算其他 R 的數值。",
+  "characterAudit": "student_a 現場與導師討論；subject_teacher_a 實際任教本班，僅 R3/R4/R7/R8 由學生本人經既有課後聯絡途徑詢問並取得科任實際回覆，才有科任個人數值改動；其餘結果不得替遠端教師臆測反應。",
   "npcDeltaAudit": [
     {
       "result": "R1",
@@ -24,13 +24,13 @@
     },
     {
       "result": "R3",
-      "deltas": "student_a:1-3:+1",
-      "reason": "最新結果為「學生主動向科任提出課業困難，科任本人回覆願意額外留時間了解。」，本格 NPC 非零項現為「student_a:1-3:+1」。與上一證據不同，須對照合法四碼語義、角色知情與自主反應再次核定；目前未核准。"
+      "deltas": "student_a:1-3:+1; subject_teacher_a:11-3:+2",
+      "reason": "學生在既有課業管道提出真實困難，科任知情後明言可額外留時間協助，因此科任 11-3 人力投入增加。"
     },
     {
       "result": "R4",
-      "deltas": "student_a:3-4:+2",
-      "reason": "最新結果為「學生自行交付具體問題，科任得知後提出調整講解順序的可能。」，本格 NPC 非零項現為「student_a:3-4:+2」。與上一證據不同，須對照合法四碼語義、角色知情與自主反應再次核定；目前未核准。"
+      "deltas": "student_a:3-4:+2; subject_teacher_a:12-1:+1",
+      "reason": "學生親自遞交具體題目，科任看過後主動提出調整講解順序，因此科任 12-1 程序變更要求增加。"
     },
     {
       "result": "R5",
@@ -44,13 +44,13 @@
     },
     {
       "result": "R7",
-      "deltas": "student_a:3-4:+1",
-      "reason": "最新結果為「學生直接讓科任知道擔憂，科任回應願意額外協助釐清問題。」，本格 NPC 非零項現為「student_a:3-4:+1」。與上一證據不同，須對照合法四碼語義、角色知情與自主反應再次核定；目前未核准。"
+      "deltas": "student_a:3-4:+1; subject_teacher_a:11-3:+1",
+      "reason": "學生親自說出被提醒時的害怕，科任知情後表示願意另外協助釐清，因此科任 11-3 人力投入增加。"
     },
     {
       "result": "R8",
-      "deltas": "student_a:1-3:+1",
-      "reason": "最新結果為「學生當面確認科任原意，科任本人回覆保持既有課堂規範。」，本格 NPC 非零項現為「student_a:1-3:+1」。與上一證據不同，須對照合法四碼語義、角色知情與自主反應再次核定；目前未核准。"
+      "deltas": "student_a:1-3:+1; subject_teacher_a:12-1:-1",
+      "reason": "學生向科任確認轉述並取得明確回覆，科任維持既有評量與教學程序，因此科任 12-1 程序變更要求下降。"
     }
   ],
   "npcWarningReviews": [],

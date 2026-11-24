@@ -1,0 +1,2806 @@
+{
+  "pool": "T6-1:after",
+  "stage": "author-first-phase-only; no independent review",
+  "dates": [
+    "2029-02-26",
+    "2029-02-27",
+    "2029-03-02",
+    "2029-03-05",
+    "2029-03-06",
+    "2029-03-07",
+    "2029-03-08",
+    "2029-03-09"
+  ],
+  "stories": {
+    "T6-001": {
+      "sourceBlobSha": "b68a5d1672edf588b4c61f9b9810d8ace3ccb523",
+      "seed": "S1339",
+      "openingLength": 195,
+      "resultLengths": [
+        161,
+        152,
+        160,
+        149,
+        154,
+        149,
+        165,
+        153
+      ],
+      "resultTitles": [
+        "把兩條路放回桌上",
+        "喜悅變成別人的期待",
+        "名稱與課程不相同",
+        "尚未寄出的宣布",
+        "比較表裡的空格",
+        "善意清單不是志願",
+        "原來的方向還在",
+        "可能仍不是保證"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "先接住他怕浪費分數的心情",
+          "emotional": true,
+          "completed": "你當面承認分數超出預期後仍會困惑，聽完他對原本興趣的猶豫；沒有替他宣告志願。",
+          "tradeoff": "情緒有機會被理解，但尚未建立可查核的比較依據。"
+        },
+        {
+          "id": "B",
+          "action": "一起列出兩條方向的比較條件",
+          "emotional": false,
+          "completed": "你與學生寫下興趣、課程內容、申請條件三項比較欄，保留兩邊未核實處。",
+          "tradeoff": "能降低倉促決定，但整理本身無法消除旁人期待。"
+        },
+        {
+          "id": "C",
+          "action": "示範查核正式招生與課程資料",
+          "emotional": false,
+          "completed": "你示範從正式可核對的資料確認條件與課程，不預測一階或錄取。",
+          "tradeoff": "資訊更清楚，學生自己的偏好仍需要時間形成。"
+        },
+        {
+          "id": "D",
+          "action": "請他先留下自己願意承擔的理由",
+          "emotional": false,
+          "completed": "你請學生各寫出喜歡原方向與好奇新方向的理由，並確認不須當場交出定案。",
+          "tradeoff": "自主感提高，卻可能暫時得不到立即的確定答案。"
+        }
+      ],
+      "weightMatrix": [
+        {
+          "choice": "A",
+          "weights": [
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            2,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            4,
+            2,
+            4,
+            2,
+            2,
+            2,
+            2,
+            4
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            2,
+            2,
+            2,
+            4,
+            4,
+            4,
+            2,
+            2
+          ]
+        }
+      ],
+      "states": [
+        [
+          -1,
+          1,
+          1,
+          2
+        ],
+        [
+          -2,
+          -2,
+          -2,
+          -1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -2,
+          -2,
+          -1
+        ],
+        [
+          0,
+          2,
+          1,
+          -1
+        ]
+      ],
+      "reviewedCrossDates": [
+        {
+          "date": "2029-02-26",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-02-27",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-02",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-05",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-06",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-07",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-08",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-09",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        }
+      ],
+      "staticAudit": {
+        "issues": [],
+        "avgVerbatim": true,
+        "notNode": true,
+        "notIndependent": true
+      },
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你當面承認分數超出預期後仍會困惑，聽完他對原本興趣的猶豫；沒有替他宣告志願。",
+          "resultTitle": "把兩條路放回桌上",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你當面承認分數超出預期後仍會困惑，聽完他對原本興趣的猶豫；沒有替他宣告志願。",
+          "resultTitle": "喜悅變成別人的期待",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你當面承認分數超出預期後仍會困惑，聽完他對原本興趣的猶豫；沒有替他宣告志願。",
+          "resultTitle": "名稱與課程不相同",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你當面承認分數超出預期後仍會困惑，聽完他對原本興趣的猶豫；沒有替他宣告志願。",
+          "resultTitle": "尚未寄出的宣布",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你當面承認分數超出預期後仍會困惑，聽完他對原本興趣的猶豫；沒有替他宣告志願。",
+          "resultTitle": "比較表裡的空格",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你當面承認分數超出預期後仍會困惑，聽完他對原本興趣的猶豫；沒有替他宣告志願。",
+          "resultTitle": "善意清單不是志願",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你當面承認分數超出預期後仍會困惑，聽完他對原本興趣的猶豫；沒有替他宣告志願。",
+          "resultTitle": "原來的方向還在",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你當面承認分數超出預期後仍會困惑，聽完他對原本興趣的猶豫；沒有替他宣告志願。",
+          "resultTitle": "可能仍不是保證",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你與學生寫下興趣、課程內容、申請條件三項比較欄，保留兩邊未核實處。",
+          "resultTitle": "把兩條路放回桌上",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你與學生寫下興趣、課程內容、申請條件三項比較欄，保留兩邊未核實處。",
+          "resultTitle": "喜悅變成別人的期待",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你與學生寫下興趣、課程內容、申請條件三項比較欄，保留兩邊未核實處。",
+          "resultTitle": "名稱與課程不相同",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你與學生寫下興趣、課程內容、申請條件三項比較欄，保留兩邊未核實處。",
+          "resultTitle": "尚未寄出的宣布",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你與學生寫下興趣、課程內容、申請條件三項比較欄，保留兩邊未核實處。",
+          "resultTitle": "比較表裡的空格",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你與學生寫下興趣、課程內容、申請條件三項比較欄，保留兩邊未核實處。",
+          "resultTitle": "善意清單不是志願",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你與學生寫下興趣、課程內容、申請條件三項比較欄，保留兩邊未核實處。",
+          "resultTitle": "原來的方向還在",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你與學生寫下興趣、課程內容、申請條件三項比較欄，保留兩邊未核實處。",
+          "resultTitle": "可能仍不是保證",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你示範從正式可核對的資料確認條件與課程，不預測一階或錄取。",
+          "resultTitle": "把兩條路放回桌上",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你示範從正式可核對的資料確認條件與課程，不預測一階或錄取。",
+          "resultTitle": "喜悅變成別人的期待",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你示範從正式可核對的資料確認條件與課程，不預測一階或錄取。",
+          "resultTitle": "名稱與課程不相同",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你示範從正式可核對的資料確認條件與課程，不預測一階或錄取。",
+          "resultTitle": "尚未寄出的宣布",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你示範從正式可核對的資料確認條件與課程，不預測一階或錄取。",
+          "resultTitle": "比較表裡的空格",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你示範從正式可核對的資料確認條件與課程，不預測一階或錄取。",
+          "resultTitle": "善意清單不是志願",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你示範從正式可核對的資料確認條件與課程，不預測一階或錄取。",
+          "resultTitle": "原來的方向還在",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你示範從正式可核對的資料確認條件與課程，不預測一階或錄取。",
+          "resultTitle": "可能仍不是保證",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你請學生各寫出喜歡原方向與好奇新方向的理由，並確認不須當場交出定案。",
+          "resultTitle": "把兩條路放回桌上",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你請學生各寫出喜歡原方向與好奇新方向的理由，並確認不須當場交出定案。",
+          "resultTitle": "喜悅變成別人的期待",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你請學生各寫出喜歡原方向與好奇新方向的理由，並確認不須當場交出定案。",
+          "resultTitle": "名稱與課程不相同",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你請學生各寫出喜歡原方向與好奇新方向的理由，並確認不須當場交出定案。",
+          "resultTitle": "尚未寄出的宣布",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你請學生各寫出喜歡原方向與好奇新方向的理由，並確認不須當場交出定案。",
+          "resultTitle": "比較表裡的空格",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你請學生各寫出喜歡原方向與好奇新方向的理由，並確認不須當場交出定案。",
+          "resultTitle": "善意清單不是志願",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你請學生各寫出喜歡原方向與好奇新方向的理由，並確認不須當場交出定案。",
+          "resultTitle": "原來的方向還在",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你請學生各寫出喜歡原方向與好奇新方向的理由，並確認不須當場交出定案。",
+          "resultTitle": "可能仍不是保證",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        }
+      ]
+    },
+    "T6-002": {
+      "sourceBlobSha": "60e62063b75e336ec053617c20ca770077394268",
+      "seed": "S1342",
+      "openingLength": 172,
+      "resultLengths": [
+        108,
+        114,
+        117,
+        111,
+        110,
+        109,
+        114,
+        121
+      ],
+      "resultTitles": [
+        "他將刪掉的三個方向重新抄到另一頁",
+        "朋友傳來一張沒有年份的門檻截圖",
+        "學生仍然害怕面對結果",
+        "在正式簡章裡",
+        "原本被他刪掉的志願中",
+        "他把刪除清單轉傳到班群",
+        "查資料時他發現有個方向要額外準備不同內容",
+        "學生要求你直接告訴他能不能上"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "示範查核當年度正式招生資料",
+          "emotional": false,
+          "completed": "你已示範查核當年度正式招生資料，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
+        },
+        {
+          "id": "B",
+          "action": "請他保留原清單並記下查核期限",
+          "emotional": false,
+          "completed": "你已請他保留原清單並記下查核期限，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
+        },
+        {
+          "id": "C",
+          "action": "先陪他說出刪除每一項的原因",
+          "emotional": true,
+          "completed": "你已先陪他說出刪除每一項的原因，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
+        },
+        {
+          "id": "D",
+          "action": "一起標出哪些條件已知、哪些仍待查",
+          "emotional": false,
+          "completed": "你已一起標出哪些條件已知、哪些仍待查，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
+        }
+      ],
+      "weightMatrix": [
+        {
+          "choice": "A",
+          "weights": [
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2
+          ]
+        }
+      ],
+      "states": [
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ]
+      ],
+      "reviewedCrossDates": [
+        {
+          "date": "2029-02-26",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-02-27",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-02",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-05",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-06",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-07",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-08",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-09",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        }
+      ],
+      "staticAudit": {
+        "issues": [],
+        "avgVerbatim": true,
+        "notNode": true,
+        "notIndependent": true
+      },
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已示範查核當年度正式招生資料，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他將刪掉的三個方向重新抄到另一頁",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已示範查核當年度正式招生資料，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "朋友傳來一張沒有年份的門檻截圖",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已示範查核當年度正式招生資料，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生仍然害怕面對結果",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已示範查核當年度正式招生資料，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "在正式簡章裡",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已示範查核當年度正式招生資料，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "原本被他刪掉的志願中",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已示範查核當年度正式招生資料，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他把刪除清單轉傳到班群",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已示範查核當年度正式招生資料，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "查資料時他發現有個方向要額外準備不同內容",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已示範查核當年度正式招生資料，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生要求你直接告訴他能不能上",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已請他保留原清單並記下查核期限，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他將刪掉的三個方向重新抄到另一頁",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已請他保留原清單並記下查核期限，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "朋友傳來一張沒有年份的門檻截圖",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已請他保留原清單並記下查核期限，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生仍然害怕面對結果",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已請他保留原清單並記下查核期限，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "在正式簡章裡",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已請他保留原清單並記下查核期限，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "原本被他刪掉的志願中",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已請他保留原清單並記下查核期限，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他把刪除清單轉傳到班群",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已請他保留原清單並記下查核期限，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "查資料時他發現有個方向要額外準備不同內容",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已請他保留原清單並記下查核期限，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生要求你直接告訴他能不能上",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已先陪他說出刪除每一項的原因，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他將刪掉的三個方向重新抄到另一頁",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先陪他說出刪除每一項的原因，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "朋友傳來一張沒有年份的門檻截圖",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已先陪他說出刪除每一項的原因，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生仍然害怕面對結果",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已先陪他說出刪除每一項的原因，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "在正式簡章裡",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已先陪他說出刪除每一項的原因，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "原本被他刪掉的志願中",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先陪他說出刪除每一項的原因，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他把刪除清單轉傳到班群",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已先陪他說出刪除每一項的原因，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "查資料時他發現有個方向要額外準備不同內容",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已先陪他說出刪除每一項的原因，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生要求你直接告訴他能不能上",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已一起標出哪些條件已知、哪些仍待查，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他將刪掉的三個方向重新抄到另一頁",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已一起標出哪些條件已知、哪些仍待查，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "朋友傳來一張沒有年份的門檻截圖",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已一起標出哪些條件已知、哪些仍待查，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生仍然害怕面對結果",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已一起標出哪些條件已知、哪些仍待查，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "在正式簡章裡",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已一起標出哪些條件已知、哪些仍待查，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "原本被他刪掉的志願中",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已一起標出哪些條件已知、哪些仍待查，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他把刪除清單轉傳到班群",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已一起標出哪些條件已知、哪些仍待查，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "查資料時他發現有個方向要額外準備不同內容",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已一起標出哪些條件已知、哪些仍待查，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生要求你直接告訴他能不能上",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        }
+      ]
+    },
+    "T6-003": {
+      "sourceBlobSha": "05c3608b5c63453ad10fa277c6f9d3f17ce042d9",
+      "seed": "S1343",
+      "openingLength": 152,
+      "resultLengths": [
+        113,
+        113,
+        116,
+        118,
+        118,
+        114,
+        113,
+        111
+      ],
+      "resultTitles": [
+        "被問分數的學生把螢幕蓋上",
+        "有人把自己的猜測填進共享表",
+        "原本最熱心的同學覺得被拒絕很難堪",
+        "當事人自願分享部分科目級分",
+        "某個同學提議大家互貼成績才能比對",
+        "共享表裡出現一筆明顯不一致的個人成績",
+        "兩位學生把合作拆成公開規則查找與個人條件自查",
+        "當事人最後決定不加入群組"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "讓當事人自行決定是否參與討論",
+          "emotional": false,
+          "completed": "你已讓當事人自行決定是否參與討論，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
+        },
+        {
+          "id": "B",
+          "action": "先保護不想公開者的選擇",
+          "emotional": true,
+          "completed": "你已先保護不想公開者的選擇，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
+        },
+        {
+          "id": "C",
+          "action": "建立不含姓名分數的共同資訊表",
+          "emotional": false,
+          "completed": "你已建立不含姓名分數的共同資訊表，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
+        },
+        {
+          "id": "D",
+          "action": "個別詢問分享界線後再分工",
+          "emotional": false,
+          "completed": "你已個別詢問分享界線後再分工，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
+        }
+      ],
+      "weightMatrix": [
+        {
+          "choice": "A",
+          "weights": [
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "states": [
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ]
+      ],
+      "reviewedCrossDates": [
+        {
+          "date": "2029-02-26",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-02-27",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-02",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-05",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-06",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-07",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-08",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-09",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        }
+      ],
+      "staticAudit": {
+        "issues": [],
+        "avgVerbatim": true,
+        "notNode": true,
+        "notIndependent": true
+      },
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已讓當事人自行決定是否參與討論，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "被問分數的學生把螢幕蓋上",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已讓當事人自行決定是否參與討論，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人把自己的猜測填進共享表",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已讓當事人自行決定是否參與討論，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "原本最熱心的同學覺得被拒絕很難堪",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已讓當事人自行決定是否參與討論，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "當事人自願分享部分科目級分",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已讓當事人自行決定是否參與討論，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "某個同學提議大家互貼成績才能比對",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已讓當事人自行決定是否參與討論，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "共享表裡出現一筆明顯不一致的個人成績",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已讓當事人自行決定是否參與討論，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "兩位學生把合作拆成公開規則查找與個人條件自查",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已讓當事人自行決定是否參與討論，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "當事人最後決定不加入群組",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已先保護不想公開者的選擇，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "被問分數的學生把螢幕蓋上",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先保護不想公開者的選擇，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人把自己的猜測填進共享表",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已先保護不想公開者的選擇，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "原本最熱心的同學覺得被拒絕很難堪",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已先保護不想公開者的選擇，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "當事人自願分享部分科目級分",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已先保護不想公開者的選擇，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "某個同學提議大家互貼成績才能比對",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先保護不想公開者的選擇，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "共享表裡出現一筆明顯不一致的個人成績",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已先保護不想公開者的選擇，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "兩位學生把合作拆成公開規則查找與個人條件自查",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已先保護不想公開者的選擇，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "當事人最後決定不加入群組",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已建立不含姓名分數的共同資訊表，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "被問分數的學生把螢幕蓋上",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已建立不含姓名分數的共同資訊表，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人把自己的猜測填進共享表",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已建立不含姓名分數的共同資訊表，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "原本最熱心的同學覺得被拒絕很難堪",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已建立不含姓名分數的共同資訊表，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "當事人自願分享部分科目級分",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已建立不含姓名分數的共同資訊表，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "某個同學提議大家互貼成績才能比對",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已建立不含姓名分數的共同資訊表，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "共享表裡出現一筆明顯不一致的個人成績",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已建立不含姓名分數的共同資訊表，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "兩位學生把合作拆成公開規則查找與個人條件自查",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已建立不含姓名分數的共同資訊表，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "當事人最後決定不加入群組",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已個別詢問分享界線後再分工，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "被問分數的學生把螢幕蓋上",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已個別詢問分享界線後再分工，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人把自己的猜測填進共享表",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已個別詢問分享界線後再分工，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "原本最熱心的同學覺得被拒絕很難堪",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已個別詢問分享界線後再分工，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "當事人自願分享部分科目級分",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已個別詢問分享界線後再分工，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "某個同學提議大家互貼成績才能比對",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已個別詢問分享界線後再分工，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "共享表裡出現一筆明顯不一致的個人成績",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已個別詢問分享界線後再分工，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "兩位學生把合作拆成公開規則查找與個人條件自查",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已個別詢問分享界線後再分工，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "當事人最後決定不加入群組",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        }
+      ]
+    },
+    "T6-004": {
+      "sourceBlobSha": "81bb668ff50b7b2cc856639cc9212adbf3310248",
+      "seed": "S1344",
+      "openingLength": 161,
+      "resultLengths": [
+        111,
+        123,
+        115,
+        112,
+        113,
+        114,
+        114,
+        110
+      ],
+      "resultTitles": [
+        "家長拿出的只是同學轉述",
+        "學生發現有人把自己的截圖轉給別人",
+        "家長認為導師早已知道全班成績",
+        "學生只願意先分享一科",
+        "家長在群組詢問那位同學",
+        "原轉述者承認自己把聽來的數字講成確定",
+        "家長想請老師出具一份成績證明",
+        "學生提出自己可以先寫一段給家裡的訊息"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "先分別核對雙方各自知道的事",
+          "emotional": true,
+          "completed": "你已先分別核對雙方各自知道的事，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
+        },
+        {
+          "id": "B",
+          "action": "和學生確認可向家長回覆的範圍",
+          "emotional": false,
+          "completed": "你已和學生確認可向家長回覆的範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
+        },
+        {
+          "id": "C",
+          "action": "只回應合法程序與查詢方式",
+          "emotional": false,
+          "completed": "你已只回應合法程序與查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
+        },
+        {
+          "id": "D",
+          "action": "先安撫家長焦慮但不認可傳聞",
+          "emotional": false,
+          "completed": "你已先安撫家長焦慮但不認可傳聞，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
+        }
+      ],
+      "weightMatrix": [
+        {
+          "choice": "A",
+          "weights": [
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4
+          ]
+        }
+      ],
+      "states": [
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ]
+      ],
+      "reviewedCrossDates": [
+        {
+          "date": "2029-02-26",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-02-27",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-02",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-05",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-06",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-07",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-08",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-09",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        }
+      ],
+      "staticAudit": {
+        "issues": [],
+        "avgVerbatim": true,
+        "notNode": true,
+        "notIndependent": true
+      },
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已先分別核對雙方各自知道的事，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長拿出的只是同學轉述",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先分別核對雙方各自知道的事，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生發現有人把自己的截圖轉給別人",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已先分別核對雙方各自知道的事，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長認為導師早已知道全班成績",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已先分別核對雙方各自知道的事，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生只願意先分享一科",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已先分別核對雙方各自知道的事，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長在群組詢問那位同學",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先分別核對雙方各自知道的事，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "原轉述者承認自己把聽來的數字講成確定",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已先分別核對雙方各自知道的事，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長想請老師出具一份成績證明",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已先分別核對雙方各自知道的事，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生提出自己可以先寫一段給家裡的訊息",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已和學生確認可向家長回覆的範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長拿出的只是同學轉述",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已和學生確認可向家長回覆的範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生發現有人把自己的截圖轉給別人",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已和學生確認可向家長回覆的範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長認為導師早已知道全班成績",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已和學生確認可向家長回覆的範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生只願意先分享一科",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已和學生確認可向家長回覆的範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長在群組詢問那位同學",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已和學生確認可向家長回覆的範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "原轉述者承認自己把聽來的數字講成確定",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已和學生確認可向家長回覆的範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長想請老師出具一份成績證明",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已和學生確認可向家長回覆的範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生提出自己可以先寫一段給家裡的訊息",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已只回應合法程序與查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長拿出的只是同學轉述",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已只回應合法程序與查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生發現有人把自己的截圖轉給別人",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已只回應合法程序與查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長認為導師早已知道全班成績",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已只回應合法程序與查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生只願意先分享一科",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已只回應合法程序與查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長在群組詢問那位同學",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已只回應合法程序與查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "原轉述者承認自己把聽來的數字講成確定",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已只回應合法程序與查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長想請老師出具一份成績證明",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已只回應合法程序與查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生提出自己可以先寫一段給家裡的訊息",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已先安撫家長焦慮但不認可傳聞，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長拿出的只是同學轉述",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先安撫家長焦慮但不認可傳聞，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生發現有人把自己的截圖轉給別人",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已先安撫家長焦慮但不認可傳聞，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長認為導師早已知道全班成績",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已先安撫家長焦慮但不認可傳聞，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生只願意先分享一科",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已先安撫家長焦慮但不認可傳聞，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長在群組詢問那位同學",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先安撫家長焦慮但不認可傳聞，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "原轉述者承認自己把聽來的數字講成確定",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已先安撫家長焦慮但不認可傳聞，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長想請老師出具一份成績證明",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已先安撫家長焦慮但不認可傳聞，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生提出自己可以先寫一段給家裡的訊息",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        }
+      ]
+    },
+    "T6-005": {
+      "sourceBlobSha": "f45c2ec2dde4d5b7c50cafac1f0d8969b666a759",
+      "seed": "S1351",
+      "openingLength": 167,
+      "resultLengths": [
+        111,
+        114,
+        112,
+        113,
+        110,
+        103,
+        113,
+        119
+      ],
+      "resultTitles": [
+        "他拿出舊筆記",
+        "當學生把所有活動證明推到一邊",
+        "核對不同方向的正式採計方式後",
+        "他拒絕參加原定的討論",
+        "學生在班群寫下『三年都白費』",
+        "家中有人只問那科怎麼失手",
+        "他主動去查是否有正式可行的其他學習路徑",
+        "學生試著把一張被塗黑的三年紀錄重新整理"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "分開核對該科對不同路徑的影響",
+          "emotional": false,
+          "completed": "你已分開核對該科對不同路徑的影響，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
+        },
+        {
+          "id": "B",
+          "action": "請學生列出不由該科衡量的經驗",
+          "emotional": false,
+          "completed": "你已請學生列出不由該科衡量的經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
+        },
+        {
+          "id": "C",
+          "action": "安排合法輔導資源處理持續壓力",
+          "emotional": false,
+          "completed": "你已安排合法輔導資源處理持續壓力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
+        },
+        {
+          "id": "D",
+          "action": "先承認失落而不急著勸樂觀",
+          "emotional": true,
+          "completed": "你已先承認失落而不急著勸樂觀，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
+        }
+      ],
+      "weightMatrix": [
+        {
+          "choice": "A",
+          "weights": [
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1
+          ]
+        }
+      ],
+      "states": [
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ]
+      ],
+      "reviewedCrossDates": [
+        {
+          "date": "2029-02-26",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-02-27",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-02",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-05",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-06",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-07",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-08",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-09",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        }
+      ],
+      "staticAudit": {
+        "issues": [],
+        "avgVerbatim": true,
+        "notNode": true,
+        "notIndependent": true
+      },
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已分開核對該科對不同路徑的影響，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他拿出舊筆記",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已分開核對該科對不同路徑的影響，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "當學生把所有活動證明推到一邊",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已分開核對該科對不同路徑的影響，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "核對不同方向的正式採計方式後",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已分開核對該科對不同路徑的影響，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他拒絕參加原定的討論",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已分開核對該科對不同路徑的影響，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生在班群寫下『三年都白費』",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已分開核對該科對不同路徑的影響，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家中有人只問那科怎麼失手",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已分開核對該科對不同路徑的影響，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他主動去查是否有正式可行的其他學習路徑",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已分開核對該科對不同路徑的影響，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生試著把一張被塗黑的三年紀錄重新整理",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已請學生列出不由該科衡量的經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他拿出舊筆記",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已請學生列出不由該科衡量的經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "當學生把所有活動證明推到一邊",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已請學生列出不由該科衡量的經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "核對不同方向的正式採計方式後",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已請學生列出不由該科衡量的經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他拒絕參加原定的討論",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已請學生列出不由該科衡量的經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生在班群寫下『三年都白費』",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已請學生列出不由該科衡量的經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家中有人只問那科怎麼失手",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已請學生列出不由該科衡量的經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他主動去查是否有正式可行的其他學習路徑",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已請學生列出不由該科衡量的經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生試著把一張被塗黑的三年紀錄重新整理",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已安排合法輔導資源處理持續壓力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他拿出舊筆記",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已安排合法輔導資源處理持續壓力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "當學生把所有活動證明推到一邊",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已安排合法輔導資源處理持續壓力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "核對不同方向的正式採計方式後",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已安排合法輔導資源處理持續壓力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他拒絕參加原定的討論",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已安排合法輔導資源處理持續壓力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生在班群寫下『三年都白費』",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已安排合法輔導資源處理持續壓力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家中有人只問那科怎麼失手",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已安排合法輔導資源處理持續壓力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他主動去查是否有正式可行的其他學習路徑",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已安排合法輔導資源處理持續壓力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生試著把一張被塗黑的三年紀錄重新整理",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已先承認失落而不急著勸樂觀，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他拿出舊筆記",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先承認失落而不急著勸樂觀，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "當學生把所有活動證明推到一邊",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已先承認失落而不急著勸樂觀，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "核對不同方向的正式採計方式後",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已先承認失落而不急著勸樂觀，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他拒絕參加原定的討論",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已先承認失落而不急著勸樂觀，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生在班群寫下『三年都白費』",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先承認失落而不急著勸樂觀，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家中有人只問那科怎麼失手",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已先承認失落而不急著勸樂觀，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他主動去查是否有正式可行的其他學習路徑",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已先承認失落而不急著勸樂觀，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生試著把一張被塗黑的三年紀錄重新整理",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        }
+      ]
+    },
+    "T6-006": {
+      "sourceBlobSha": "3d18fec7ac1a3690d7195687e7ae81df797280cd",
+      "seed": "S1352",
+      "openingLength": 170,
+      "resultLengths": [
+        108,
+        105,
+        110,
+        110,
+        103,
+        96,
+        104,
+        108
+      ],
+      "resultTitles": [
+        "學生坦承自己也還沒研究好",
+        "有同學拿著自己的分數請他保證能上哪裡",
+        "他原本答應整理大家的選擇",
+        "班上有人說高分就該回饋同學",
+        "他主動提出一次短時間的資料示範",
+        "有同學把他的私人志願討論截成『推薦名單』傳開",
+        "老師收到家長追問為什麼沒讓高分者帶其他人",
+        "學生把原本約好的協助時段退掉一半"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "徵詢他願意分享的有限經驗",
+          "emotional": false,
+          "completed": "你已徵詢他願意分享的有限經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
+        },
+        {
+          "id": "B",
+          "action": "請班上自行列問題而非索取他的判斷",
+          "emotional": false,
+          "completed": "你已請班上自行列問題而非索取他的判斷，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
+        },
+        {
+          "id": "C",
+          "action": "當面解除他替別人分析的義務",
+          "emotional": true,
+          "completed": "你已當面解除他替別人分析的義務，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
+        },
+        {
+          "id": "D",
+          "action": "將需求轉給正式可查的資訊管道",
+          "emotional": false,
+          "completed": "你已將需求轉給正式可查的資訊管道，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
+        }
+      ],
+      "weightMatrix": [
+        {
+          "choice": "A",
+          "weights": [
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2
+          ]
+        }
+      ],
+      "states": [
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ]
+      ],
+      "reviewedCrossDates": [
+        {
+          "date": "2029-02-26",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-02-27",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-02",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-05",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-06",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-07",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-08",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        },
+        {
+          "date": "2029-03-09",
+          "stage": "author window semantic precheck",
+          "runtimePublishedAndInformed": "required"
+        }
+      ],
+      "staticAudit": {
+        "issues": [],
+        "avgVerbatim": true,
+        "notNode": true,
+        "notIndependent": true
+      },
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已徵詢他願意分享的有限經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生坦承自己也還沒研究好",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已徵詢他願意分享的有限經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有同學拿著自己的分數請他保證能上哪裡",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已徵詢他願意分享的有限經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他原本答應整理大家的選擇",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已徵詢他願意分享的有限經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "班上有人說高分就該回饋同學",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已徵詢他願意分享的有限經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他主動提出一次短時間的資料示範",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已徵詢他願意分享的有限經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有同學把他的私人志願討論截成『推薦名單』傳開",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已徵詢他願意分享的有限經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "老師收到家長追問為什麼沒讓高分者帶其他人",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已徵詢他願意分享的有限經驗，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把原本約好的協助時段退掉一半",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已請班上自行列問題而非索取他的判斷，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生坦承自己也還沒研究好",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已請班上自行列問題而非索取他的判斷，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有同學拿著自己的分數請他保證能上哪裡",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已請班上自行列問題而非索取他的判斷，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他原本答應整理大家的選擇",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已請班上自行列問題而非索取他的判斷，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "班上有人說高分就該回饋同學",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已請班上自行列問題而非索取他的判斷，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他主動提出一次短時間的資料示範",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已請班上自行列問題而非索取他的判斷，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有同學把他的私人志願討論截成『推薦名單』傳開",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已請班上自行列問題而非索取他的判斷，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "老師收到家長追問為什麼沒讓高分者帶其他人",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已請班上自行列問題而非索取他的判斷，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把原本約好的協助時段退掉一半",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已當面解除他替別人分析的義務，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生坦承自己也還沒研究好",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已當面解除他替別人分析的義務，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有同學拿著自己的分數請他保證能上哪裡",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已當面解除他替別人分析的義務，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他原本答應整理大家的選擇",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已當面解除他替別人分析的義務，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "班上有人說高分就該回饋同學",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已當面解除他替別人分析的義務，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他主動提出一次短時間的資料示範",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已當面解除他替別人分析的義務，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有同學把他的私人志願討論截成『推薦名單』傳開",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已當面解除他替別人分析的義務，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "老師收到家長追問為什麼沒讓高分者帶其他人",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已當面解除他替別人分析的義務，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把原本約好的協助時段退掉一半",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已將需求轉給正式可查的資訊管道，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生坦承自己也還沒研究好",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已將需求轉給正式可查的資訊管道，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有同學拿著自己的分數請他保證能上哪裡",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已將需求轉給正式可查的資訊管道，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他原本答應整理大家的選擇",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已將需求轉給正式可查的資訊管道，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "班上有人說高分就該回饋同學",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已將需求轉給正式可查的資訊管道，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他主動提出一次短時間的資料示範",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已將需求轉給正式可查的資訊管道，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有同學把他的私人志願討論截成『推薦名單』傳開",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已將需求轉給正式可查的資訊管道，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "老師收到家長追問為什麼沒讓高分者帶其他人",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已將需求轉給正式可查的資訊管道，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把原本約好的協助時段退掉一半",
+          "note": "作者創作階段之權重與結果記錄；完整逐格語意理由不得以此快照取代"
+        }
+      ]
+    }
+  }
+}

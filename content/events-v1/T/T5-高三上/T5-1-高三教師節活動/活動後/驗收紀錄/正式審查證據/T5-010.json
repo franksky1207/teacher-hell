@@ -1,0 +1,416 @@
+{
+  "storyId": "T5-010",
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "sourceStoryBlobSha": "98e111841a4975cfaef81c5e0d0f7c2f28739c0e",
+  "storyAndRoles": "T5-010 具獨立教師困境與 T5-1（活動後）時間必要性；常駐數值槽位符合 01 資格，現場與遠端（chat/dialogue）在場及知情媒介一致，無未授權代承諾。",
+  "fourCodes": "沿用原固定種子四碼，各碼均由合法常駐角色完整持有並實際參與起因、衝突與 R1～R8 因果結算；無使用非種子碼或將 NPC 關係碼誤結算給導師。",
+  "fourChoices": "A～D 四項為實質不同且可執行之教師行動，恰含一項 emotional=true；六普通候選互異並已完成 Fisher-Yates 六選三及映射驗證，取捨與既成事實明確。",
+  "eightResults": "R1～R8 共用結果各有獨立轉折、人物反應與收束；教師 V3 四狀態採合法 A～E 四組不重複分布（各欄總和 -4、均值 -0.5），AVG 分頁文字與原稿逐字一致。",
+  "causal32": "已完成 A～D × R1～R8 共 32 格逐格因果核對，確認 4/2/1/0 權重符合已完成教師行動與客觀相容性，無公式化套版或抹除已執行行動。",
+  "timeAndLaw": "歸屬 2028-09-29（T5-1:after），符合 2028/09/27 高三教師節活動與 09/28 假日前後隔離規範；肖像、個資、課務與親師界線符合臺灣高中實務。",
+  "duplicates": "已比對同池 6 篇及 T1～T4 既有 360 篇故事（最高片語重疊約 0.48～0.52），核心衝突、當事人困境與四選項處理機制均具實質差異，無換皮重複。",
+  "characterAudit": "本篇僅設 student_a（現任本班學生）為常駐數值槽位，完整持有種子四碼並承擔八 R 獨立反應；其餘提及之籌備同學或科任僅為無數值情境角色，不跨篇建檔或賦予四碼。",
+  "npcDeltaAudit": "逐R核對NPC四碼非零變動與事件因果一致（單項皆於±8內、無NPC均值超限規則）：R1(student_a:9-1:+2)、R2(student_a:11-4:-1; student_a:1-4:+1)、R3(student_a:1-4:+2)、R4(student_a:3-3:-2)、R5(student_a:9-1:+2)、R6(student_a:11-4:-1; student_a:1-4:+1)、R7(student_a:1-4:+2)、R8(student_a:3-3:+2)；其餘未變動碼別均因當局未觸發對應反應而維持0。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "本篇核心衝突聚焦於單一當事學生與導師的直接互動，其餘同學或科任僅屬無數值情境角色，依01與05規格不為湊人數增設常駐槽位，保留單槽位並已完成全八R正負向與幅度審查。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "storyId": "T5-010",
+    "stage": "second-round-actual-draw",
+    "rng": "xorshift32 Fisher-Yates",
+    "initialSeed": 20340314,
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "立刻請禮物製作者移除未經同意的署名",
+        "action": "立刻請禮物製作者移除未經同意的署名",
+        "tradeoff": "直接保障署名權，可能引發朋友間誤會",
+        "establishedFact": "已提出更正要求，不預設製作者已修改所有版本"
+      },
+      {
+        "id": 2,
+        "short": "先查明購買款項是否也被代墊或代收",
+        "action": "先查明購買款項是否也被代墊或代收",
+        "tradeoff": "釐清財務責任，可能讓同學覺得小題大作",
+        "establishedFact": "已詢問費用與名單來源，未臆測當事人欠款"
+      },
+      {
+        "id": 3,
+        "short": "提供只更正名字、不公開退出理由的方式",
+        "action": "提供只更正名字、不公開退出理由的方式",
+        "tradeoff": "減少人際壓力，製作者仍需配合",
+        "establishedFact": "已向當事人提出私下更正管道，未替他公開心情"
+      },
+      {
+        "id": 4,
+        "short": "私下與代填名單的同學談授權觀念",
+        "action": "私下與代填名單的同學談授權觀念",
+        "tradeoff": "減少再犯，未必立即修好已發布版本",
+        "establishedFact": "已提醒製作者不可代人同意，未公開指責"
+      },
+      {
+        "id": 5,
+        "short": "請製作者核對不同版本的簽名及合照",
+        "action": "請製作者核對不同版本的簽名及合照",
+        "tradeoff": "能找出殘留名字，增加處理成本",
+        "establishedFact": "已提出核對印刷及電子版本，不保證都能撤回"
+      },
+      {
+        "id": 6,
+        "short": "讓當事人自行選擇是否向朋友說明退出",
+        "action": "讓當事人自行選擇是否向朋友說明退出",
+        "tradeoff": "保留關係空間，誤解可能持續",
+        "establishedFact": "已提供個人說明的選項，未替學生宣告立場"
+      }
+    ],
+    "selectedIds": [
+      5,
+      3,
+      2
+    ],
+    "finalChoiceMap": {
+      "A": 5,
+      "B": 2,
+      "C": "emotional",
+      "D": 3
+    },
+    "note": "依固定初始種子執行六選三及四選項洗牌，保留候選行動和取捨，待八結局與逐格因果正式驗證。"
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已提出核對印刷及電子版本，不保證都能撤回」；核對各版本的署名可找出錯誤並要求修正。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已提出核對印刷及電子版本，不保證都能撤回」；查照片姓名不等於已查明表單由誰代填。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已提出核對印刷及電子版本，不保證都能撤回」；版本查核不會自行消除退出被誤認為不感謝。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已提出核對印刷及電子版本，不保證都能撤回」；逐版檢查最直接發現合照仍留著未授權名字。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已提出核對印刷及電子版本，不保證都能撤回」；查署名版本不代表已和代填朋友說清用意。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已提出核對印刷及電子版本，不保證都能撤回」；核對影像無法查清禮物是否有人代墊款項。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已提出核對印刷及電子版本，不保證都能撤回」；只更正有問題的名字，較能保留其他回憶照片。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已提出核對印刷及電子版本，不保證都能撤回」；版本校正和學生是否寫獨立卡片沒有直接關係。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已詢問費用與名單來源，未臆測當事人欠款」；查明代墊款可能提醒未同意署名，仍需另行更正。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已詢問費用與名單來源，未臆測當事人欠款」；核對款項最能揭露同意表單及付款責任缺口。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已詢問費用與名單來源，未臆測當事人欠款」；核對金額不能制止同學把不買禮物誤解成不感謝。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已詢問費用與名單來源，未臆測當事人欠款」；財務核對不會直接發現合照殘留署名。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已詢問費用與名單來源，未臆測當事人欠款」；查款項不同於確認朋友是否因好意代填。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已詢問費用與名單來源，未臆測當事人欠款」；直接追查代收代墊，最能釐清不清楚的費用。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已詢問費用與名單來源，未臆測當事人欠款」；金錢釐清不必然保存回憶圖或修好名字。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已詢問費用與名單來源，未臆測當事人欠款」；查明款項不能代學生決定私人道謝方式。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已讓學生說出矛盾，未代替他決定是否署名」；學生不怕被迫表態，仍需製作者實際修改名字。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已讓學生說出矛盾，未代替他決定是否署名」；聽他怕朋友生氣，無法直接查明表單代填與費用。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已讓學生說出矛盾，未代替他決定是否署名」；說出被誤解的難過，較可能澄清退出並非無謝意。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已讓學生說出矛盾，未代替他決定是否署名」；被傾聽不代表已發布合照立即修好。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已讓學生說出矛盾，未代替他決定是否署名」；理解雙方尷尬，較能談出代填其實需要先問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已讓學生說出矛盾，未代替他決定是否署名」；情緒交流不會直接整理未釐清的帳目。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已讓學生說出矛盾，未代替他決定是否署名」；聆聽沒有決定是否保存照片，仍由本人選。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已讓學生說出矛盾，未代替他決定是否署名」；允許不跟共同禮物，學生更敢選個人卡片。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已向當事人提出私下更正管道，未替他公開心情」；私下更正方式使製作者較可能只修署名。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已向當事人提出私下更正管道，未替他公開心情」；不公開退出理由不能直接查清誰代填表單。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已向當事人提出私下更正管道，未替他公開心情」；不公開說明可降低猜測，但不能保證不被誤解。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已向當事人提出私下更正管道，未替他公開心情」；請求只改名字，也需找出合照殘存署名。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已向當事人提出私下更正管道，未替他公開心情」；不公開責怪朋友，對方較容易承認代填需先問。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已向當事人提出私下更正管道，未替他公開心情」；署名更正與款項代收不同，仍要查帳。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已向當事人提出私下更正管道，未替他公開心情」；只修名字不抹除作品，最能保留回憶照片。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已向當事人提出私下更正管道，未替他公開心情」；不公開退出原因也能改名，學生較願另行致謝。",
+      "actionPreserved": true
+    }
+  ],
+  "npcDeltaDetails": [
+    {
+      "result": "R1",
+      "deltas": "student_a:9-1:+2",
+      "reason": "更正未經同意的署名讓學生更認同本人授權的規範"
+    },
+    {
+      "result": "R2",
+      "deltas": "student_a:11-4:-1; student_a:1-4:+1",
+      "reason": "費用與代填未明，學生暫不提供資源，並要求清楚遵守本人同意原則"
+    },
+    {
+      "result": "R3",
+      "deltas": "student_a:1-4:+2",
+      "reason": "即使被誤會不感謝，學生仍堅持署名需要本人同意"
+    },
+    {
+      "result": "R4",
+      "deltas": "student_a:3-3:-2",
+      "reason": "學生發現合照上仍有錯誤署名，嘗試修正卻未完成，執行受挫"
+    },
+    {
+      "result": "R5",
+      "deltas": "student_a:9-1:+2",
+      "reason": "朋友承認代填問題後，學生更接受須先詢問的規範"
+    },
+    {
+      "result": "R6",
+      "deltas": "student_a:11-4:-1; student_a:1-4:+1",
+      "reason": "金流來源不明，學生保留個人資源且要求尊重本人選擇"
+    },
+    {
+      "result": "R7",
+      "deltas": "student_a:1-4:+2",
+      "reason": "學生願保留回憶又堅持刪除不實署名，原則性增加"
+    },
+    {
+      "result": "R8",
+      "deltas": "student_a:3-3:+2",
+      "reason": "學生自行安排非聯名的道謝方式，執行能力增加"
+    }
+  ]
+}

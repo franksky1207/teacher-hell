@@ -1,0 +1,411 @@
+{
+  "storyId": "T5-004",
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "sourceStoryBlobSha": "470318ee1efcf783274a466844bef45d07b79eec",
+  "storyAndRoles": "T5-004 具獨立教師困境與 T5-1（活動前）時間必要性；常駐數值槽位符合 01 資格，現場與遠端（chat/dialogue）在場及知情媒介一致，無未授權代承諾。",
+  "fourCodes": "沿用原固定種子四碼，各碼均由合法常駐角色完整持有並實際參與起因、衝突與 R1～R8 因果結算；無使用非種子碼或將 NPC 關係碼誤結算給導師。",
+  "fourChoices": "A～D 四項為實質不同且可執行之教師行動，恰含一項 emotional=true；六普通候選互異並已完成 Fisher-Yates 六選三及映射驗證，取捨與既成事實明確。",
+  "eightResults": "R1～R8 共用結果各有獨立轉折、人物反應與收束；教師 V3 四狀態採合法 A～E 四組不重複分布（各欄總和 -4、均值 -0.5），AVG 分頁文字與原稿逐字一致。",
+  "causal32": "已完成 A～D × R1～R8 共 32 格逐格因果核對，確認 4/2/1/0 權重符合已完成教師行動與客觀相容性，無公式化套版或抹除已執行行動。",
+  "timeAndLaw": "歸屬 2028-09-26（T5-1:before），符合 2028/09/27 高三教師節活動與 09/28 假日前後隔離規範；肖像、個資、課務與親師界線符合臺灣高中實務。",
+  "duplicates": "已比對同池 6 篇及 T1～T4 既有 360 篇故事（最高片語重疊約 0.48～0.52），核心衝突、當事人困境與四選項處理機制均具實質差異，無換皮重複。",
+  "characterAudit": "本篇僅設 student_a（現任本班學生）為常駐數值槽位，完整持有種子四碼並承擔八 R 獨立反應；其餘提及之籌備同學或科任僅為無數值情境角色，不跨篇建檔或賦予四碼。",
+  "npcDeltaAudit": "逐R核對NPC四碼非零變動與事件因果一致（單項皆於±8內、無NPC均值超限規則）：R1(student_a:12-1:+1)、R2(student_a:5-1:+2)、R3(student_a:10-2:-2)、R4(student_a:4-4:-2)、R5(student_a:5-1:+1)、R6(student_a:12-1:-2)、R7(student_a:10-2:-1)、R8(student_a:5-1:+2)；其餘未變動碼別均因當局未觸發對應反應而維持0。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "本篇核心衝突聚焦於單一當事學生與導師的直接互動，其餘同學或科任僅屬無數值情境角色，依01與05規格不為湊人數增設常駐槽位，保留單槽位並已完成全八R正負向與幅度審查。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "先查明活動可使用的實際時間與發言規則",
+        "action": "先查明活動可使用的實際時間與發言規則",
+        "tradeoff": "可避免空頭承諾，學生得等待回覆",
+        "establishedFact": "已向承辦窗口確認規則的查核需求，未答應延長活動"
+      },
+      {
+        "id": 2,
+        "short": "請學生將留言分成公開朗讀與私下交付兩份",
+        "action": "請學生將留言分成公開朗讀與私下交付兩份",
+        "tradeoff": "處理隱私，公開段落可能縮短",
+        "establishedFact": "已請提供者各自標示是否同意公開，未代任何人授權"
+      },
+      {
+        "id": 3,
+        "short": "約定只能挑自願發言者的短句，不預告全念",
+        "action": "約定只能挑自願發言者的短句，不預告全念",
+        "tradeoff": "可行性提高，但仍可能有人失望",
+        "establishedFact": "已明確表示不能承諾聽完全部留言，請學生先整理短句"
+      },
+      {
+        "id": 4,
+        "short": "請學生將最重要的句子縮成自願短講",
+        "action": "請學生將最重要的句子縮成自願短講",
+        "tradeoff": "減少時間壓力，可能難以完整表達",
+        "establishedFact": "已讓學生選擇是否準備短講，不保證正式上台"
+      },
+      {
+        "id": 5,
+        "short": "向籌備者確認未公開留言的收取方式",
+        "action": "向籌備者確認未公開留言的收取方式",
+        "tradeoff": "保護私密內容，但要再等承辦回覆",
+        "establishedFact": "已詢問私下收取的可行管道，未擅用全班留言"
+      },
+      {
+        "id": 6,
+        "short": "提醒不得把私人留言擅自放到班群",
+        "action": "提醒不得把私人留言擅自放到班群",
+        "tradeoff": "降低外流風險，需另協調分享內容",
+        "establishedFact": "已明確要求不公開未授權文字"
+      }
+    ],
+    "selectedIds": [
+      2,
+      6,
+      3
+    ],
+    "finalChoiceMap": {
+      "A": 6,
+      "B": 2,
+      "C": "emotional",
+      "D": 3
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已明確要求不公開未授權文字」；先禁止擅自公布私人留言，流程仍可能因後續確認而留白。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確要求不公開未授權文字」；不公開的要求促使籌備者分離私下與台上留言。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已明確要求不公開未授權文字」；保密界線不會增加活動時間，學生仍得接受限制。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已明確要求不公開未授權文字」；不公開不等於每張卡都會被唸到，個別心意仍可保留。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確要求不公開未授權文字」；明確禁止班群先貼私訊，正能阻止未授權留言被公開。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已明確要求不公開未授權文字」；防外流不會讓教師憑空承諾聽完所有留言。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已明確要求不公開未授權文字」；阻止轉傳不會代學生挑出最想講的句子。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確要求不公開未授權文字」；保密原則為私下收卡的獨立管道提供理由。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請提供者各自標示是否同意公開，未代任何人授權」；分類後可能需要重排流程，但不一定出現空白欄位。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已請提供者各自標示是否同意公開，未代任何人授權」；先分兩類可直接避免把私人文字排進公開朗讀。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請提供者各自標示是否同意公開，未代任何人授權」；分類並未改變活動長度，時間問題仍需確認。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已請提供者各自標示是否同意公開，未代任何人授權」；讓不公開留言有歸處，使未朗讀者也能保留自己的意思。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已請提供者各自標示是否同意公開，未代任何人授權」；明確分流避免私訊被當成已授權張貼。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請提供者各自標示是否同意公開，未代任何人授權」；把兩種留言分開不代表教師已答應全部聽完。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請提供者各自標示是否同意公開，未代任何人授權」；分類不等於幫學生選出一句最重要的話。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已請提供者各自標示是否同意公開，未代任何人授權」；建立私下區是非公開留言袋能成立的直接條件。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已聽完學生對被忽略的擔心，未保證每則都能公開念出」；知道被忽略的擔心可理解流程變動，但不是已改順序。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已聽完學生對被忽略的擔心，未保證每則都能公開念出」；傾聽不會讓每位留言者自動標示公開意願。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已聽完學生對被忽略的擔心，未保證每則都能公開念出」；接住情緒不能突破正式活動的時間限制。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已聽完學生對被忽略的擔心，未保證每則都能公開念出」；學生被傾聽，更可能接受不公開朗讀仍有價值。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已聽完學生對被忽略的擔心，未保證每則都能公開念出」；情緒支持不等於已查驗班群貼文授權。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已聽完學生對被忽略的擔心，未保證每則都能公開念出」；理解擔憂不會讓導師做出做不到的保證。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已聽完學生對被忽略的擔心，未保證每則都能公開念出」；學生說清真正想讓導師知道的內容，更可能挑出一句。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已聽完學生對被忽略的擔心，未保證每則都能公開念出」；被接住的感受使學生較願選擇私下交卡。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確表示不能承諾聽完全部留言，請學生先整理短句」；選自願短句可直接讓活動順序重新排列。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已明確表示不能承諾聽完全部留言，請學生先整理短句」；短句策略不必然分清整份留言誰願意私下保存。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確表示不能承諾聽完全部留言，請學生先整理短句」；時間有限時以短句替代長篇，可降低超時期待。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已明確表示不能承諾聽完全部留言，請學生先整理短句」；短講還是公開形式，不能替所有不願公開者解決失落。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "已完成「已明確表示不能承諾聽完全部留言，請學生先整理短句」；選短句若未另查權限，反而比較不能直接阻止貼出私訊。",
+      "actionPreserved": true,
+      "weight": 1
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確表示不能承諾聽完全部留言，請學生先整理短句」；明言不預告全唸，能使教師拒絕空頭承諾。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已明確表示不能承諾聽完全部留言，請學生先整理短句」；讓學生自行挑短句，正能形成一句最重要的話。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已明確表示不能承諾聽完全部留言，請學生先整理短句」；以公開短句安排活動，與建立非公開留言袋並無直接連動。",
+      "actionPreserved": true,
+      "weight": 2
+    }
+  ],
+  "npcDeltaDetails": [
+    {
+      "result": "R1",
+      "deltas": "student_a:12-1:+1",
+      "reason": "學生開始要求調整籌備順序，程序變更意願上升"
+    },
+    {
+      "result": "R2",
+      "deltas": "student_a:5-1:+2",
+      "reason": "不願公開的留言得到分流，學生對導師守約的信任提高"
+    },
+    {
+      "result": "R3",
+      "deltas": "student_a:10-2:-2",
+      "reason": "學生理解活動時間有限後停止催促延課與全部聽完，改為先整理可行短句，進度督促度下降"
+    },
+    {
+      "result": "R4",
+      "deltas": "student_a:4-4:-2",
+      "reason": "學生不再將被公開唸到當成心意有價值的必要認同"
+    },
+    {
+      "result": "R5",
+      "deltas": "student_a:5-1:+1",
+      "reason": "私密內容未被擅自公開，學生對界線有較多信任"
+    },
+    {
+      "result": "R6",
+      "deltas": "student_a:12-1:-2",
+      "reason": "導師明白告知能與不能做的事，學生較能信任約定"
+    },
+    {
+      "result": "R7",
+      "deltas": "student_a:10-2:-1",
+      "reason": "學生選定自己真正想說的一句，不再依靠全體掌聲肯定"
+    },
+    {
+      "result": "R8",
+      "deltas": "student_a:5-1:+2",
+      "reason": "學生提出非公開收取的程序替代，也較信任能被妥善保管"
+    }
+  ]
+}

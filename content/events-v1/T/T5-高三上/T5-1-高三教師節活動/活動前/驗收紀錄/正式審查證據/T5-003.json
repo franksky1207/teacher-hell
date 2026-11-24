@@ -1,0 +1,405 @@
+{
+  "storyId": "T5-003",
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "sourceStoryBlobSha": "46d740759268c0b055f0a955926db70436a9efff",
+  "storyAndRoles": "T5-003 具獨立教師困境與 T5-1（活動前）時間必要性；常駐數值槽位符合 01 資格，現場與遠端（chat/dialogue）在場及知情媒介一致，無未授權代承諾。",
+  "fourCodes": "沿用原固定種子四碼，各碼均由合法常駐角色完整持有並實際參與起因、衝突與 R1～R8 因果結算；無使用非種子碼或將 NPC 關係碼誤結算給導師。",
+  "fourChoices": "A～D 四項為實質不同且可執行之教師行動，恰含一項 emotional=true；六普通候選互異並已完成 Fisher-Yates 六選三及映射驗證，取捨與既成事實明確。",
+  "eightResults": "R1～R8 共用結果各有獨立轉折、人物反應與收束；教師 V3 四狀態採合法 A～E 四組不重複分布（各欄總和 -4、均值 -0.5），AVG 分頁文字與原稿逐字一致。",
+  "causal32": "已完成 A～D × R1～R8 共 32 格逐格因果核對，確認 4/2/1/0 權重符合已完成教師行動與客觀相容性，無公式化套版或抹除已執行行動。",
+  "timeAndLaw": "歸屬 2028-09-26（T5-1:before），符合 2028/09/27 高三教師節活動與 09/28 假日前後隔離規範；肖像、個資、課務與親師界線符合臺灣高中實務。",
+  "duplicates": "已比對同池 6 篇及 T1～T4 既有 360 篇故事（最高片語重疊約 0.48～0.52），核心衝突、當事人困境與四選項處理機制均具實質差異，無換皮重複。",
+  "characterAudit": "本篇常駐數值槽位為 guardian_a（本班合法家長或實際照顧者，於 R1～R8 透過 chat 遠端參與並有獨立數值反應）與 student_a（現任本班學生，於教室／辦公室現場對話）；其餘同學僅屬無數值情境角色。",
+  "npcDeltaAudit": "逐R核對NPC四碼非零變動與事件因果一致（單項皆於±8內、無NPC均值超限規則）：R1(guardian_a:11-1:-1; student_a:3-3:+1)、R2(guardian_a:6-2:+1; student_a:6-2:-1)、R3(guardian_a:6-2:-2; student_a:8-4:+2)、R4(guardian_a:8-4:+2; student_a:11-1:+1)、R5(guardian_a:8-4:+1; student_a:8-4:+1)、R6(guardian_a:3-3:+2; student_a:6-2:-1)、R7(guardian_a:6-2:-1; student_a:8-4:+1)、R8(guardian_a:11-1:-1; student_a:3-3:+2)；其餘未變動碼別均因當局未觸發對應反應而維持0。",
+  "npcWarningReviews": [],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "直接回覆家長：導師不需要也不接受加碼禮品",
+        "action": "直接回覆家長：導師不需要也不接受加碼禮品",
+        "tradeoff": "迅速畫清界線，仍可能需要再溝通",
+        "establishedFact": "已透過原聯絡管道告知家長無須訂購，不預設對方已取消"
+      },
+      {
+        "id": 2,
+        "short": "邀請學生保留原本不花錢的那句道謝",
+        "action": "邀請學生保留原本不花錢的那句道謝",
+        "tradeoff": "守住學生自主，無法直接控制家長購物",
+        "establishedFact": "已向學生明確表示短句可以獨立表達，不需由禮物替代"
+      },
+      {
+        "id": 3,
+        "short": "請家長先暫停下單並查明校方收禮規範",
+        "action": "請家長先暫停下單並查明校方收禮規範",
+        "tradeoff": "避免既成事實，須等待正式查核",
+        "establishedFact": "已請家長在確認前不要付款或交付，不自行宣稱規範內容"
+      },
+      {
+        "id": 4,
+        "short": "在家長群組澄清沒有全班共同送禮決議",
+        "action": "在家長群組澄清沒有全班共同送禮決議",
+        "tradeoff": "降低群體壓力，但可能讓提議家長尷尬",
+        "establishedFact": "已向群組澄清提議不是全班共識，也不要求付款"
+      },
+      {
+        "id": 5,
+        "short": "詢問是否已有實際付款或下訂商品",
+        "action": "詢問是否已有實際付款或下訂商品",
+        "tradeoff": "有助釐清現況，無法直接化解分歧",
+        "establishedFact": "已向家長核實訂購狀態，未要求學生負擔費用"
+      },
+      {
+        "id": 6,
+        "short": "告訴學生可以不在家長提出的禮盒上署名",
+        "action": "告訴學生可以不在家長提出的禮盒上署名",
+        "tradeoff": "保留自主，但家長可能需要再說明",
+        "establishedFact": "已向學生說明個人署名需本人同意"
+      }
+    ],
+    "selectedIds": [
+      3,
+      2,
+      1
+    ],
+    "finalChoiceMap": {
+      "A": "emotional",
+      "B": 3,
+      "C": 1,
+      "D": 2
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已分開聽取家長和學生的想法，不替雙方互相同意」；先聽取雙方想法不保證家長立即取消付款，仍需本人決定。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已分開聽取家長和學生的想法，不替雙方互相同意」；聽清不同心意不代表家長立即放棄送禮念頭。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已分開聽取家長和學生的想法，不替雙方互相同意」；雙方有機會說明心意，家長較可能真正讀到孩子的文字。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已分開聽取家長和學生的想法，不替雙方互相同意」；親子對話不直接處理群組跟買問題，仍可因外部消息發生。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已分開聽取家長和學生的想法，不替雙方互相同意」；分別理解親子立場，較能避免彼此代簽或代言。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已分開聽取家長和學生的想法，不替雙方互相同意」；傾聽不是正式查核收禮規範，家長仍可能自行求證。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已分開聽取家長和學生的想法，不替雙方互相同意」；孩子心意被認真聽見後，較敢唸出卡片而非只靠禮物。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已分開聽取家長和學生的想法，不替雙方互相同意」；理解各自心意不必然已經分開禮盒與卡片，仍須親子各自採取行動。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已請家長在確認前不要付款或交付，不自行宣稱規範內容」；暫緩下單的要求直接讓禮盒先停在購物車。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "已完成「已請家長在確認前不要付款或交付，不自行宣稱規範內容」；家長可能仍提出要送的主張，但暫停下單降低立刻購買的機會。",
+      "actionPreserved": true,
+      "weight": 1
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請家長在確認前不要付款或交付，不自行宣稱規範內容」；暫停購買提供親子讀卡片的空間，尚需孩子自願。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請家長在確認前不要付款或交付，不自行宣稱規範內容」；暫停單筆購物不會自動阻止其他家長在群組比較價格。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請家長在確認前不要付款或交付，不自行宣稱規範內容」；停下訂購讓署名還能重談，但不直接讓雙方同意。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已請家長在確認前不要付款或交付，不自行宣稱規範內容」；要求確認規範直接促成家長停止套用網路別校標準。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已請家長在確認前不要付款或交付，不自行宣稱規範內容」；停買不等於孩子已敢讀卡片，仍依他自主決定。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已請家長在確認前不要付款或交付，不自行宣稱規範內容」；暫停下單最直接形成禮物未付款、卡片另外完成的局面。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已透過原聯絡管道告知家長無須訂購，不預設對方已取消」；清楚拒收加碼禮物，使家長較可能關掉結帳流程。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "抑制",
+      "reason": "已完成「已透過原聯絡管道告知家長無須訂購，不預設對方已取消」；明確拒收會降低繼續送禮的可行性，家長仍可能表達不同意見。",
+      "actionPreserved": true,
+      "weight": 1
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已透過原聯絡管道告知家長無須訂購，不預設對方已取消」；拒收不能保證親子讀卡片，但留下不靠購物的選擇。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "導師告知拒收禮物，不等於家長會主動在群組澄清團購誤會；該澄清須家長自行察覺其他家庭的壓力。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已透過原聯絡管道告知家長無須訂購，不預設對方已取消」；拒收禮品不必然使親子各說各話，仍需彼此尊重。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已透過原聯絡管道告知家長無須訂購，不預設對方已取消」；說明不能收加碼禮品，家長較可能改查正式規範。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已透過原聯絡管道告知家長無須訂購，不預設對方已取消」；不用買東西，孩子較可能以短卡把感謝說出來。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已透過原聯絡管道告知家長無須訂購，不預設對方已取消」；拒收使禮物與卡片分成兩件事而不需綁定交付。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已向學生明確表示短句可以獨立表達，不需由禮物替代」；明示短句也可獨立道謝，家長較容易暫時放下購物安排。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已向學生明確表示短句可以獨立表達，不需由禮物替代」；鼓勵學生短句不代表家長必然同意，仍可能堅持送。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已向學生明確表示短句可以獨立表達，不需由禮物替代」；保留學生原話正是讓家長看見卡片內容的直接條件。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已向學生明確表示短句可以獨立表達，不需由禮物替代」；短卡被肯定不會自動制止其他家長的價格比較。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已向學生明確表示短句可以獨立表達，不需由禮物替代」；讓孩子擁有自己的文字，較能避免被家長代為署名。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已向學生明確表示短句可以獨立表達，不需由禮物替代」；短句可交付與收禮制度查核是不同工作，仍可並行。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已向學生明確表示短句可以獨立表達，不需由禮物替代」；孩子得到短句被尊重的確認，更敢親自念出卡片。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已向學生明確表示短句可以獨立表達，不需由禮物替代」；卡片不再依附禮盒，自然更可能分開完成。",
+      "actionPreserved": true,
+      "weight": 4
+    }
+  ],
+  "npcDeltaDetails": [
+    {
+      "result": "R1",
+      "deltas": "guardian_a:11-1:-1; student_a:3-3:+1",
+      "reason": "家長實際停下結帳、減少後續購物工作；學生主動呈現卡片"
+    },
+    {
+      "result": "R2",
+      "deltas": "guardian_a:6-2:+1; student_a:6-2:-1",
+      "reason": "家長仍難以落實不送禮的共識，學生卻未跟著團體期待署名"
+    },
+    {
+      "result": "R3",
+      "deltas": "guardian_a:6-2:-2; student_a:8-4:+2",
+      "reason": "家長不再用消費形式替孩子決定；學生主動讓家人讀卡片"
+    },
+    {
+      "result": "R4",
+      "deltas": "guardian_a:8-4:+2; student_a:11-1:+1",
+      "reason": "家長主動在群組澄清消息，同時增加了處理其他人疑問的工作"
+    },
+    {
+      "result": "R5",
+      "deltas": "guardian_a:8-4:+1; student_a:8-4:+1",
+      "reason": "親子各說各的感謝，家長不以全家共識施壓、孩子說明自己立場"
+    },
+    {
+      "result": "R6",
+      "deltas": "guardian_a:3-3:+2; student_a:6-2:-1",
+      "reason": "家長停止照抄別校做法並開始正式查證，行動更能落實且較不從眾"
+    },
+    {
+      "result": "R7",
+      "deltas": "guardian_a:6-2:-1; student_a:8-4:+1",
+      "reason": "家長尊重孩子獨立表達，學生主動把真正心意讀出"
+    },
+    {
+      "result": "R8",
+      "deltas": "guardian_a:11-1:-1; student_a:3-3:+2",
+      "reason": "家長告知未付款及查詢進度，購物工作縮減；學生將卡片完成"
+    }
+  ]
+}

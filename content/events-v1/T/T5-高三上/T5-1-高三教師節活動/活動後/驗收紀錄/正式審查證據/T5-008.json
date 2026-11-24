@@ -1,0 +1,416 @@
+{
+  "storyId": "T5-008",
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "sourceStoryBlobSha": "5d36edd8e73579d7ef36e95603f19cd83f9e47aa",
+  "storyAndRoles": "T5-008 具獨立教師困境與 T5-1（活動後）時間必要性；常駐數值槽位符合 01 資格，現場與遠端（chat/dialogue）在場及知情媒介一致，無未授權代承諾。",
+  "fourCodes": "沿用原固定種子四碼，各碼均由合法常駐角色完整持有並實際參與起因、衝突與 R1～R8 因果結算；無使用非種子碼或將 NPC 關係碼誤結算給導師。",
+  "fourChoices": "A～D 四項為實質不同且可執行之教師行動，恰含一項 emotional=true；六普通候選互異並已完成 Fisher-Yates 六選三及映射驗證，取捨與既成事實明確。",
+  "eightResults": "R1～R8 共用結果各有獨立轉折、人物反應與收束；教師 V3 四狀態採合法 A～E 四組不重複分布（各欄總和 -4、均值 -0.5），AVG 分頁文字與原稿逐字一致。",
+  "causal32": "已完成 A～D × R1～R8 共 32 格逐格因果核對，確認 4/2/1/0 權重符合已完成教師行動與客觀相容性，無公式化套版或抹除已執行行動。",
+  "timeAndLaw": "歸屬 2028-09-29（T5-1:after），符合 2028/09/27 高三教師節活動與 09/28 假日前後隔離規範；肖像、個資、課務與親師界線符合臺灣高中實務。",
+  "duplicates": "已比對同池 6 篇及 T1～T4 既有 360 篇故事（最高片語重疊約 0.48～0.52），核心衝突、當事人困境與四選項處理機制均具實質差異，無換皮重複。",
+  "characterAudit": "本篇僅設 student_a（現任本班學生）為常駐數值槽位，完整持有種子四碼並承擔八 R 獨立反應；其餘提及之籌備同學或科任僅為無數值情境角色，不跨篇建檔或賦予四碼。",
+  "npcDeltaAudit": "逐R核對NPC四碼非零變動與事件因果一致（單項皆於±8內、無NPC均值超限規則）：R1(student_a:9-1:+1)、R2(student_a:5-4:+1)、R3(student_a:5-4:+2)、R4(student_a:6-3:+1)、R5(student_a:9-1:+2)、R6(student_a:4-3:+2)、R7(student_a:4-3:+2)、R8(student_a:9-1:+2)；其餘未變動碼別均因當局未觸發對應反應而維持0。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "本篇核心衝突聚焦於單一當事學生與導師的直接互動，其餘同學或科任僅屬無數值情境角色，依01與05規格不為湊人數增設常駐槽位，保留單槽位並已完成全八R正負向與幅度審查。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "storyId": "T5-008",
+    "stage": "second-round-actual-draw",
+    "rng": "xorshift32 Fisher-Yates",
+    "initialSeed": 20324476,
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "請上傳者暫停分享，先核對授權與原始影片",
+        "action": "請上傳者暫停分享，先核對授權與原始影片",
+        "tradeoff": "降低擴散，可能引起製作者不滿",
+        "establishedFact": "已要求暫停擴散並啟動比對，未擅自宣告全片違法"
+      },
+      {
+        "id": 2,
+        "short": "與學生逐句核對導師實際說過的感謝內容",
+        "action": "與學生逐句核對導師實際說過的感謝內容",
+        "tradeoff": "改善資訊品質，無法單靠逐字稿消除受傷感",
+        "establishedFact": "已比對影片截句與原話，未替未入鏡者編造致詞"
+      },
+      {
+        "id": 3,
+        "short": "請製作者主動詢問未入鏡者是否願加文字註解",
+        "action": "請製作者主動詢問未入鏡者是否願加文字註解",
+        "tradeoff": "可能補足視角，仍需尊重不參加者",
+        "establishedFact": "已提出自願補充方案，不要求任何人重拍或公開身分"
+      },
+      {
+        "id": 4,
+        "short": "請上傳者加註影片僅呈現部分片段",
+        "action": "請上傳者加註影片僅呈現部分片段",
+        "tradeoff": "補充脈絡，可能仍有誤解",
+        "establishedFact": "已要求加註部分影像範圍，未代未參加者發言"
+      },
+      {
+        "id": 5,
+        "short": "先私下約剪輯者核對疑慮，避免公開責罵",
+        "action": "先私下約剪輯者核對疑慮，避免公開責罵",
+        "tradeoff": "減少對立，但影片仍需後續處理",
+        "establishedFact": "已安排私下釐清剪輯流程，未認定惡意"
+      },
+      {
+        "id": 6,
+        "short": "請參與者確認哪些人願意公開露臉或發言",
+        "action": "請參與者確認哪些人願意公開露臉或發言",
+        "tradeoff": "保護個資，可能撤下部分片段",
+        "establishedFact": "已提出逐人核對同意的要求"
+      }
+    ],
+    "selectedIds": [
+      1,
+      2,
+      4
+    ],
+    "finalChoiceMap": {
+      "A": 4,
+      "B": "emotional",
+      "C": 2,
+      "D": 1
+    },
+    "note": "依固定初始種子執行六選三及四選項洗牌，保留候選行動和明確取捨；內容因果尚需逐格審查。"
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求加註部分影像範圍，未代未參加者發言」；加註只是局部短片不等於已核對原始影片，仍可能另有人找出原話。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求加註部分影像範圍，未代未參加者發言」；片尾註記無法代替入鏡者本人同意，仍有授權待處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求加註部分影像範圍，未代未參加者發言」；補充註解不會立即消除留言區對未入鏡者的點名。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求加註部分影像範圍，未代未參加者發言」；文字更正尚未解釋剪輯者當初取得哪些素材。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已要求加註部分影像範圍，未代未參加者發言」；要求加註片段範圍，正直接促成片尾補充說明。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求加註部分影像範圍，未代未參加者發言」；註記不等於公開替受傷學生道歉，仍須個別確認。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已要求加註部分影像範圍，未代未參加者發言」；說明只是局部片段，使未入鏡者較容易保有自己的解釋。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已要求加註部分影像範圍，未代未參加者發言」；明示短片並非全部，可直接避免把局部謝意當成導師只謝某些人。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已先聆聽學生的難受，未把剪輯者定罪」；被傾聽不等於教師原話已被找到，仍待素材比對。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已先聆聽學生的難受，未把剪輯者定罪」；了解沒入鏡的痛苦不會直接取得公開授權。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已先聆聽學生的難受，未把剪輯者定罪」；學生說出被排除的感覺，較可能有人停止留言點名。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已先聆聽學生的難受，未把剪輯者定罪」；先不責怪製作者，使雙方較能聽懂彼此委屈。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已先聆聽學生的難受，未把剪輯者定罪」；聽學生難過不直接編出正確片尾說明，需另找事實。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已先聆聽學生的難受，未把剪輯者定罪」；學生擔心再被公開點名，較可能提出不要公開道歉的請求。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已先聆聽學生的難受，未把剪輯者定罪」；允許其說明不想入鏡，使旁人較能理解缺席鏡頭不代表無心意。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已先聆聽學生的難受，未把剪輯者定罪」；單獨聽感受不一定找出導師致謝的完整原話。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已比對影片截句與原話，未替未入鏡者編造致詞」；核對原始素材直接揭露老師原本有向全班道謝。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已比對影片截句與原話，未替未入鏡者編造致詞」；比對剪輯與授權是兩件事，不會直接找出未同意者。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已比對影片截句與原話，未替未入鏡者編造致詞」；核實原話不會自然阻止留言區對同學的猜測。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已比對影片截句與原話，未替未入鏡者編造致詞」；找到原始片段可以釐清素材不全，但不保證剪輯者不委屈。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已比對影片截句與原話，未替未入鏡者編造致詞」；知道被剪掉什麼有助補充說明，卻未直接決定要加片尾註記。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已比對影片截句與原話，未替未入鏡者編造致詞」；比對影片本身不能替受傷學生決定是否公開道歉。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已比對影片截句與原話，未替未入鏡者編造致詞」；核對原話不會直接使未入鏡學生願意自己說明。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已比對影片截句與原話，未替未入鏡者編造致詞」；比對完整片段最能還原老師其實是謝全班的脈絡。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已要求暫停擴散並啟動比對，未擅自宣告全片違法」；暫停擴散讓核對原始片段的工作有空間開始。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已要求暫停擴散並啟動比對，未擅自宣告全片違法」；停止分享避免在未確認授權時繼續公開，促進重新確認出鏡同意。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求暫停擴散並啟動比對，未擅自宣告全片違法」；影片暫停傳送不保證已留下的點名留言都被處理。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求暫停擴散並啟動比對，未擅自宣告全片違法」；要求暫停不等於剪輯者已能說清楚素材來源。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求暫停擴散並啟動比對，未擅自宣告全片違法」；停傳只是先控制擴散，沒有直接寫好補充註記。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "要求暫停轉傳並查核授權，不代表當事人必然提出或拒絕公開道歉；是否擔心再次被點名取決於當事人自己，兩種情節可並存。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已要求暫停擴散並啟動比對，未擅自宣告全片違法」；停傳不等於未入鏡者已向同學說明選擇。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已要求暫停擴散並啟動比對，未擅自宣告全片違法」；暫停轉傳提供先還原原話和補足背景的空間。",
+      "actionPreserved": true,
+      "weight": 4
+    }
+  ],
+  "npcDeltaDetails": [
+    {
+      "result": "R1",
+      "deltas": "student_a:9-1:+1",
+      "reason": "學生對原始影片脈絡及尊重同意的處理較能接受"
+    },
+    {
+      "result": "R2",
+      "deltas": "student_a:5-4:+1",
+      "reason": "知道有人未經同意入鏡，學生對草率公開的反感上升"
+    },
+    {
+      "result": "R3",
+      "deltas": "student_a:5-4:+2",
+      "reason": "網路點名造成排除感，學生對處置更不滿"
+    },
+    {
+      "result": "R4",
+      "deltas": "student_a:6-3:+1",
+      "reason": "學生理解剪輯者非刻意排擠，私人反感減弱"
+    },
+    {
+      "result": "R5",
+      "deltas": "student_a:9-1:+2",
+      "reason": "學生願自行決定能否用文字補足自己的視角"
+    },
+    {
+      "result": "R6",
+      "deltas": "student_a:4-3:+2",
+      "reason": "學生不願再因公開道歉被點名，對該安排感到不舒服"
+    },
+    {
+      "result": "R7",
+      "deltas": "student_a:4-3:+2",
+      "reason": "學生主動澄清不入鏡不等於不參與，社交表達更主動"
+    },
+    {
+      "result": "R8",
+      "deltas": "student_a:9-1:+2",
+      "reason": "學生理解教師謝意面向全班並接受公開授權界線"
+    }
+  ]
+}

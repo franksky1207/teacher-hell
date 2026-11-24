@@ -130,3 +130,26 @@ jobs:
             evidence="content/events-v1/T/T2-高一下/T2-1-班呼校歌比賽前後/活動前/驗收紀錄/evidence/${id}.json"
             node scripts/check-story-production.mjs audit "$id" --evidence "$evidence"
           done
+
+      - name: Verify T5-001–012 full draft structure and V3 legality
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="content/events-v1/T/T5-高三上/T5-1-高三教師節活動"
+          for n in $(seq 1 12); do
+            printf -v id "T5-%03d" "$n"
+            if (( n <= 6 )); then phase="活動前"; else phase="活動後"; fi
+            node scripts/check-story-draft.mjs --input "$root/$phase/$id.md" --stage full >/dev/null
+            echo "PASS full: $id"
+          done
+      - name: Verify T5-001–012 formal semantic approval evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="content/events-v1/T/T5-高三上/T5-1-高三教師節活動"
+          for n in $(seq 1 12); do
+            printf -v id "T5-%03d" "$n"
+            if (( n <= 6 )); then phase="活動前"; else phase="活動後"; fi
+            node scripts/check-story-production.mjs audit "$id" --evidence "$root/$phase/驗收紀錄/正式審查證據/$id.json" >/dev/null
+            echo "PASS evidence: $id"
+          done

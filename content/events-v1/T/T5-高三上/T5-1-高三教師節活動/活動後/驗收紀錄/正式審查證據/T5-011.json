@@ -1,0 +1,421 @@
+{
+  "storyId": "T5-011",
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "sourceStoryBlobSha": "9245f55ea21fc25c851025317cd4d22d4b96e3be",
+  "storyAndRoles": "T5-011 具獨立教師困境與 T5-1（活動後）時間必要性；常駐數值槽位符合 01 資格，現場與遠端（chat/dialogue）在場及知情媒介一致，無未授權代承諾。",
+  "fourCodes": "沿用原固定種子四碼，各碼均由合法常駐角色完整持有並實際參與起因、衝突與 R1～R8 因果結算；無使用非種子碼或將 NPC 關係碼誤結算給導師。",
+  "fourChoices": "A～D 四項為實質不同且可執行之教師行動，恰含一項 emotional=true；六普通候選互異並已完成 Fisher-Yates 六選三及映射驗證，取捨與既成事實明確。",
+  "eightResults": "R1～R8 共用結果各有獨立轉折、人物反應與收束；教師 V3 四狀態採合法 A～E 四組不重複分布（各欄總和 -4、均值 -0.5），AVG 分頁文字與原稿逐字一致。",
+  "causal32": "已完成 A～D × R1～R8 共 32 格逐格因果核對，確認 4/2/1/0 權重符合已完成教師行動與客觀相容性，無公式化套版或抹除已執行行動。",
+  "timeAndLaw": "歸屬 2028-09-29（T5-1:after），符合 2028/09/27 高三教師節活動與 09/28 假日前後隔離規範；肖像、個資、課務與親師界線符合臺灣高中實務。",
+  "duplicates": "已比對同池 6 篇及 T1～T4 既有 360 篇故事（最高片語重疊約 0.48～0.52），核心衝突、當事人困境與四選項處理機制均具實質差異，無換皮重複。",
+  "characterAudit": "本篇常駐數值槽位為 student_a（現任本班學生，現場對話）與 subject_teacher_a（本班規範任課教師，僅於 R3/R4/R7/R8 透過課後文字管道 chat 回覆並結算對應反應）；其餘同學不建常駐數值。",
+  "npcDeltaAudit": "逐R核對NPC四碼非零變動與事件因果一致（單項皆於±8內、無NPC均值超限規則）：R1(student_a:1-3:+2)、R2(student_a:3-4:-1)、R3(student_a:1-3:+1; subject_teacher_a:11-3:+1)、R4(student_a:3-4:+2; subject_teacher_a:3-4:+1)、R5(student_a:3-4:+1)、R6(student_a:1-3:+2)、R7(student_a:3-4:+1; subject_teacher_a:1-3:+1)、R8(student_a:1-3:+1; subject_teacher_a:12-1:-1)；其餘未變動碼別均因當局未觸發對應反應而維持0。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_all_zero_code:student_a:11-3",
+      "decision": "retain",
+      "evidence": "11-3人力投入度在本篇對應科任教師是否願意額外留時間協助學習（已於R3由subject_teacher_a結算+1），student_a僅為提出困難與澄清傳言之學生，並未承擔教學人力投入，故維持0。"
+    },
+    {
+      "id": "npc_all_zero_code:student_a:12-1",
+      "decision": "retain",
+      "evidence": "12-1程序變更要求在本篇對應教學與評量規則之維持或調整權責（已於R8由subject_teacher_a明確維持原規範結算-1），student_a在各R均已撤回免責要求，不具改制變動，故維持0。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "storyId": "T5-011",
+    "stage": "second-round-actual-draw",
+    "rng": "xorshift32 Fisher-Yates",
+    "initialSeed": 20348233,
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "只轉述科任確實說過的感動，不增加保證",
+        "action": "只轉述科任確實說過的感動，不增加保證",
+        "tradeoff": "避免誤傳，學生可能覺得掃興",
+        "establishedFact": "已按科任原話更正轉述，未替科任放寬作業要求"
+      },
+      {
+        "id": 2,
+        "short": "和學生區分被肯定與仍要履行課業責任",
+        "action": "和學生區分被肯定與仍要履行課業責任",
+        "tradeoff": "界線清楚，還要處理學生的受挫",
+        "establishedFact": "已說明感謝不能交換免交作業，未插手科任評分"
+      },
+      {
+        "id": 3,
+        "short": "協助學生整理想向科任反映的具體困難",
+        "action": "協助學生整理想向科任反映的具體困難",
+        "tradeoff": "建立可對話議題，需由任課教師自行決定",
+        "establishedFact": "已幫學生整理可提出的課業困難，未保證科任接受"
+      },
+      {
+        "id": 4,
+        "short": "請學生把班群的免責傳言先停止轉發",
+        "action": "請學生把班群的免責傳言先停止轉發",
+        "tradeoff": "降低誤解，但可能讓學生覺得掃興",
+        "establishedFact": "已要求停止擴散未經科任證實的話"
+      },
+      {
+        "id": 5,
+        "short": "詢問科任是否願意親自澄清其原意",
+        "action": "詢問科任是否願意親自澄清其原意",
+        "tradeoff": "資訊更直接，仍須等待科任意願",
+        "establishedFact": "已向科任提出澄清邀請，未替對方決定"
+      },
+      {
+        "id": 6,
+        "short": "協助學生安排合宜時機向科任提問",
+        "action": "協助學生安排合宜時機向科任提問",
+        "tradeoff": "提供討論機會，但學生要自行面對",
+        "establishedFact": "已提出正式對話管道，未允諾改分數或豁免"
+      }
+    ],
+    "selectedIds": [
+      3,
+      4,
+      6
+    ],
+    "finalChoiceMap": {
+      "A": 4,
+      "B": "emotional",
+      "C": 3,
+      "D": 6
+    },
+    "note": "依固定初始種子執行六選三及四選項洗牌，保留候選行動和取捨，待八結局與逐格因果正式驗證。"
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已要求停止擴散未經科任證實的話」；止謠不會自動使學生理解感動與作業規範可並存。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已要求停止擴散未經科任證實的話」；要求不要再轉發假免責消息，直接降低群組誤導。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已要求停止擴散未經科任證實的話」；停止謠言尚未讓學生了解科任的教學心意。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已要求停止擴散未經科任證實的話」；阻止轉傳不能替學生整理真正的課業問題。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已要求停止擴散未經科任證實的話」；指出傳言未證實，較容易發現轉述遭加上承諾。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已要求停止擴散未經科任證實的話」；不再傳謠能阻止把致謝當成免責依據。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已要求停止擴散未經科任證實的話」；先止謠不代表學生已敢講被責備的委屈。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已要求停止擴散未經科任證實的話」；只流通科任確實說的話，有助轉述回到原意。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已聽學生描述過去被責備的感受，未承諾免責」；理解學生怕被責備，不會直接改變課業規範。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已聽學生描述過去被責備的感受，未承諾免責」；情緒接納不等於班群傳言已被更正。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已聽學生描述過去被責備的感受，未承諾免責」；對學生情緒的理解不直接帶來科任新說明。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已聽學生描述過去被責備的感受，未承諾免責」；聽懂擔憂，較可能找出該向科任提出的問題。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已聽學生描述過去被責備的感受，未承諾免責」；傾聽不會自動刪掉被添入轉述的字句。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已聽學生描述過去被責備的感受，未承諾免責」；學生受安慰不代表已了解致謝不能交換免責。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已聽學生描述過去被責備的感受，未承諾免責」；讓學生說出被責備的恐懼，直接促進後續溝通。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已聽學生描述過去被責備的感受，未承諾免責」；聽心情不能代科任重述原話，仍需正式查核。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已幫學生整理可提出的課業困難，未保證科任接受」；整理課業問題不會使科任既有作業規範失效。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已幫學生整理可提出的課業困難，未保證科任接受」；找出困難不會使同儕自行停止傳謠。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已幫學生整理可提出的課業困難，未保證科任接受」；整理問題不直接讓學生明白科任感動的真意。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已幫學生整理可提出的課業困難，未保證科任接受」；把免責要求改成具體問題，是此方案的直接效果。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已幫學生整理可提出的課業困難，未保證科任接受」；課業困難與查出被添寫的話是兩項工作。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已幫學生整理可提出的課業困難，未保證科任接受」；知道要談具體困難，較少將教師節致謝視為交易。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已幫學生整理可提出的課業困難，未保證科任接受」；準備具體困難使怕被罵的學生更敢提出需求。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已幫學生整理可提出的課業困難，未保證科任接受」；整理題目不能代任課老師決定如何澄清原話。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已提出正式對話管道，未允諾改分數或豁免」；安排提問不等於科任已答應變更作業規範。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已提出正式對話管道，未允諾改分數或豁免」；正式提問管道不會立即刪除班群既有誤傳。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已提出正式對話管道，未允諾改分數或豁免」；有機會確認原意，較能理解科任也重視教學。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已提出正式對話管道，未允諾改分數或豁免」；交回科任處理具體問題，能直接避免導師越權。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已提出正式對話管道，未允諾改分數或豁免」；有提問管道可避免再依不完整轉述，但不立即修正舊訊息。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "教師已完成「已提出正式對話管道，未允諾改分數或豁免」；安排對話不代表學生自動認同感謝與常規分界。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已提出正式對話管道，未允諾改分數或豁免」；知道能合宜提出困難，降低因害怕責備而沉默。",
+      "actionPreserved": true
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "教師已完成「已提出正式對話管道，未允諾改分數或豁免」；正式澄清機會更容易保留科任實際說過的意思。",
+      "actionPreserved": true
+    }
+  ],
+  "npcDeltaDetails": [
+    {
+      "result": "R1",
+      "deltas": "student_a:1-3:+2",
+      "reason": "學生理解科任受到感動與保有作業規範並存，並修正自己原先的期待"
+    },
+    {
+      "result": "R2",
+      "deltas": "student_a:3-4:-1",
+      "reason": "學生一度相信班群免責傳言，難以即時適應真實規範"
+    },
+    {
+      "result": "R3",
+      "deltas": "student_a:1-3:+1; subject_teacher_a:11-3:+1",
+      "reason": "學生理解科任希望被重視；科任得到本人請求後真的願意額外花時間聆聽；科任本人在正式管道回覆，同意留時間，11-3 人力投入才可變動"
+    },
+    {
+      "result": "R4",
+      "deltas": "student_a:3-4:+2; subject_teacher_a:3-4:+1",
+      "reason": "學生改為整理學習疑問，科任收到本人問題後提出調整解說流程；科任已收到學生問題並提出調整教學順序，12-1 程序變更要求才可變動"
+    },
+    {
+      "result": "R5",
+      "deltas": "student_a:3-4:+1",
+      "reason": "學生發現他人擅添科任承諾，開始適應查證並要求釐清程序"
+    },
+    {
+      "result": "R6",
+      "deltas": "student_a:1-3:+2",
+      "reason": "學生理解感謝不能豁免課業，願調整做法並顧及科任職責"
+    },
+    {
+      "result": "R7",
+      "deltas": "student_a:3-4:+1; subject_teacher_a:1-3:+1",
+      "reason": "學生主動表明擔心、準備改用合宜提問；科任知情後表示願額外協助"
+    },
+    {
+      "result": "R8",
+      "deltas": "student_a:1-3:+1; subject_teacher_a:12-1:-1",
+      "reason": "學生在當面核對後理解課堂規範，科任明言不變更原先程序"
+    }
+  ]
+}

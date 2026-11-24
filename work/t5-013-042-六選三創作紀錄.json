@@ -1,0 +1,819 @@
+{
+  "stage": "creation-choice-sampling",
+  "baseCommit": "805fa59596b63ecb1a7c76e2d06fd5f8e8fdd729",
+  "ordinaryCandidatesRule": "每篇普通候選1～3為 baseCommit 的該故事最終四選項表中，按照 A～D 順序排除 emotional=true 的三條普通選項。普通候選4～6見 extraCandidates。這讓六候選皆可追溯，不依賴事後猜測。",
+  "emotionalCandidateRule": "同一 baseCommit 該篇 emotional=true 的選項文字。",
+  "note": "此檔是特定創作提交時點的六選三抽選歷史紀錄。其後同一分支有針對選項與既存創作證據的修訂，因此選項映射可能不再對應最新 T5-013～042 正文。不得直接將本檔 selectedIds/finalChoiceMap 當作目前現稿已驗收證據；應以最新故事主檔及當時實際抽選紀錄重新對帳。不是正式七項內容核准。",
+  "stories": {
+    "T5-013": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "分別向兩位學生確認目前真正的出賽意願"
+        },
+        {
+          "id": 5,
+          "action": "向承辦確認棒次調整期限與合法程序"
+        },
+        {
+          "id": 6,
+          "action": "請隊友說明具體的公平選拔疑問"
+        }
+      ],
+      "selectedIds": [
+        5,
+        2,
+        1
+      ],
+      "finalChoiceMap": {
+        "A": 1,
+        "B": 2,
+        "C": "emotional",
+        "D": 5
+      }
+    },
+    "T5-014": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "核對學生能否安全參與非競賽支援"
+        },
+        {
+          "id": 5,
+          "action": "邀學生列出不能公開的身體資訊範圍"
+        },
+        {
+          "id": 6,
+          "action": "向校內正式健康支援窗口詢問處理管道"
+        }
+      ],
+      "selectedIds": [
+        3,
+        1,
+        2
+      ],
+      "finalChoiceMap": {
+        "A": 2,
+        "B": 3,
+        "C": 1,
+        "D": "emotional"
+      }
+    },
+    "T5-015": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請班級評估每一排練項目所需分鐘數"
+        },
+        {
+          "id": 5,
+          "action": "先讓不參加額外練習的人安全表達限制"
+        },
+        {
+          "id": 6,
+          "action": "把必要安全動線與紀念性演出分開列"
+        }
+      ],
+      "selectedIds": [
+        1,
+        3,
+        2
+      ],
+      "finalChoiceMap": {
+        "A": 2,
+        "B": 1,
+        "C": "emotional",
+        "D": 3
+      }
+    },
+    "T5-016": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請學生把傳聞的原始來源與年份找出"
+        },
+        {
+          "id": 5,
+          "action": "說明必須循正式請假程序而非口頭推定"
+        },
+        {
+          "id": 6,
+          "action": "協助區分校內活動出席與校外自主複習"
+        }
+      ],
+      "selectedIds": [
+        1,
+        5,
+        3
+      ],
+      "finalChoiceMap": {
+        "A": "emotional",
+        "B": 5,
+        "C": 3,
+        "D": 1
+      }
+    },
+    "T5-017": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "先詢問合影是否只供班內留存"
+        },
+        {
+          "id": 5,
+          "action": "安排學生依意願提出拍攝或不入鏡方案"
+        },
+        {
+          "id": 6,
+          "action": "先查活動拍攝能否不妨礙正式集合"
+        }
+      ],
+      "selectedIds": [
+        2,
+        3,
+        4
+      ],
+      "finalChoiceMap": {
+        "A": 2,
+        "B": 3,
+        "C": "emotional",
+        "D": 4
+      }
+    },
+    "T5-018": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "讓原後勤學生自行寫下今年真正想參加的項目"
+        },
+        {
+          "id": 5,
+          "action": "向隊伍確認後勤工作是否為正式必要項目"
+        },
+        {
+          "id": 6,
+          "action": "請原選手說明他擔心換人的具體原因"
+        }
+      ],
+      "selectedIds": [
+        4,
+        2,
+        3
+      ],
+      "finalChoiceMap": {
+        "A": "emotional",
+        "B": 4,
+        "C": 2,
+        "D": 3
+      }
+    },
+    "T5-019": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請學生就預定參加的項目提出具體限制清單"
+        },
+        {
+          "id": 5,
+          "action": "與家長確認最在意的是哪一項可核實風險"
+        },
+        {
+          "id": 6,
+          "action": "請正式窗口區分不同參與方式的安全條件"
+        }
+      ],
+      "selectedIds": [
+        3,
+        1,
+        5
+      ],
+      "finalChoiceMap": {
+        "A": "emotional",
+        "B": 3,
+        "C": 1,
+        "D": 5
+      }
+    },
+    "T5-020": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請學生補上舊紀錄的賽制與年份"
+        },
+        {
+          "id": 5,
+          "action": "詢問隊友是否願把口號當目標而非義務"
+        },
+        {
+          "id": 6,
+          "action": "把比賽前能檢核的練習指標列給提案者"
+        }
+      ],
+      "selectedIds": [
+        1,
+        5,
+        2
+      ],
+      "finalChoiceMap": {
+        "A": "emotional",
+        "B": 2,
+        "C": 1,
+        "D": 5
+      }
+    },
+    "T5-021": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請學生指出最希望教師出現的一個時刻"
+        },
+        {
+          "id": 5,
+          "action": "提供正式值勤與求助方式的已知資訊"
+        },
+        {
+          "id": 6,
+          "action": "先確認全班是否真的共同提出全程陪伴要求"
+        }
+      ],
+      "selectedIds": [
+        1,
+        4,
+        2
+      ],
+      "finalChoiceMap": {
+        "A": 4,
+        "B": 2,
+        "C": 1,
+        "D": "emotional"
+      }
+    },
+    "T5-022": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請學生確認是否願意保留舊服只供私人紀念"
+        },
+        {
+          "id": 5,
+          "action": "向承辦確認替代識別與活動服裝規則"
+        },
+        {
+          "id": 6,
+          "action": "請班級停止公開討論他人的衣服尺寸"
+        }
+      ],
+      "selectedIds": [
+        1,
+        4,
+        5
+      ],
+      "finalChoiceMap": {
+        "A": "emotional",
+        "B": 5,
+        "C": 4,
+        "D": 1
+      }
+    },
+    "T5-023": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請工作表標示每人是否實際同意"
+        },
+        {
+          "id": 5,
+          "action": "確認應援與正式安全任務的權責差異"
+        },
+        {
+          "id": 6,
+          "action": "詢問非參賽學生願意支援的有限時間"
+        }
+      ],
+      "selectedIds": [
+        5,
+        6,
+        1
+      ],
+      "finalChoiceMap": {
+        "A": 5,
+        "B": 6,
+        "C": "emotional",
+        "D": 1
+      }
+    },
+    "T5-024": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "先請隊長區分『想參賽』和『必須上場』"
+        },
+        {
+          "id": 5,
+          "action": "要求先核對各賽項的合法名額限制"
+        },
+        {
+          "id": 6,
+          "action": "請隊長列出不比賽也願意參與的方式"
+        }
+      ],
+      "selectedIds": [
+        4,
+        2,
+        5
+      ],
+      "finalChoiceMap": {
+        "A": 4,
+        "B": "emotional",
+        "C": 2,
+        "D": 5
+      }
+    },
+    "T5-025": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請提案學生先確認對方願否被提及"
+        },
+        {
+          "id": 5,
+          "action": "查詢正式集合流程有無致謝環節"
+        },
+        {
+          "id": 6,
+          "action": "請學生把感謝寫成只依本人記憶的內容"
+        }
+      ],
+      "selectedIds": [
+        4,
+        1,
+        5
+      ],
+      "finalChoiceMap": {
+        "A": 4,
+        "B": 1,
+        "C": "emotional",
+        "D": 5
+      }
+    },
+    "T5-026": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請學生列出計畫要求的實際時數"
+        },
+        {
+          "id": 5,
+          "action": "確認所有額外訓練必須自願且符合校規"
+        },
+        {
+          "id": 6,
+          "action": "詢問他希望改善哪項賽前技術"
+        }
+      ],
+      "selectedIds": [
+        3,
+        6,
+        4
+      ],
+      "finalChoiceMap": {
+        "A": 4,
+        "B": 6,
+        "C": 3,
+        "D": "emotional"
+      }
+    },
+    "T5-027": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "邀編者標示每個資料的實際年份"
+        },
+        {
+          "id": 5,
+          "action": "讓被寫到的同學決定能否公開個人回憶"
+        },
+        {
+          "id": 6,
+          "action": "請編者先刪除無來源的未來成績"
+        }
+      ],
+      "selectedIds": [
+        6,
+        4,
+        3
+      ],
+      "finalChoiceMap": {
+        "A": 4,
+        "B": 6,
+        "C": "emotional",
+        "D": 3
+      }
+    },
+    "T5-028": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "向邀請方說明高三本屆不負擔攤位營運"
+        },
+        {
+          "id": 5,
+          "action": "邀熟手只回答一個具體的技術問題"
+        },
+        {
+          "id": 6,
+          "action": "請高三學生明確回覆是否願意幫忙"
+        }
+      ],
+      "selectedIds": [
+        3,
+        4,
+        1
+      ],
+      "finalChoiceMap": {
+        "A": 4,
+        "B": 1,
+        "C": 3,
+        "D": "emotional"
+      }
+    },
+    "T5-029": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請學生先查本屆場地及動線安排"
+        },
+        {
+          "id": 5,
+          "action": "建議在不妨礙攤位的位置保留照片"
+        },
+        {
+          "id": 6,
+          "action": "請學生自願分享不同的往年回憶點"
+        }
+      ],
+      "selectedIds": [
+        5,
+        1,
+        3
+      ],
+      "finalChoiceMap": {
+        "A": 3,
+        "B": "emotional",
+        "C": 5,
+        "D": 1
+      }
+    },
+    "T5-030": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請學生向家長確認已轉寄的邀請範圍"
+        },
+        {
+          "id": 5,
+          "action": "提供正式校慶公告供家長自行轉告"
+        },
+        {
+          "id": 6,
+          "action": "確認高三可以參與的合法活動內容"
+        }
+      ],
+      "selectedIds": [
+        2,
+        5,
+        1
+      ],
+      "finalChoiceMap": {
+        "A": 2,
+        "B": "emotional",
+        "C": 1,
+        "D": 5
+      }
+    },
+    "T5-031": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請學生找到本校本屆的正式出席通知"
+        },
+        {
+          "id": 5,
+          "action": "先確認個人預約能否依法取消"
+        },
+        {
+          "id": 6,
+          "action": "向班上澄清簽到不等於可任意離開"
+        }
+      ],
+      "selectedIds": [
+        3,
+        5,
+        2
+      ],
+      "finalChoiceMap": {
+        "A": 5,
+        "B": 2,
+        "C": 3,
+        "D": "emotional"
+      }
+    },
+    "T5-032": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "先核對今年的正式服裝與身分識別規定"
+        },
+        {
+          "id": 5,
+          "action": "詢問每位學生是否真願意穿舊攤服"
+        },
+        {
+          "id": 6,
+          "action": "請學生標出舊班服可能造成的誤認"
+        }
+      ],
+      "selectedIds": [
+        2,
+        5,
+        3
+      ],
+      "finalChoiceMap": {
+        "A": "emotional",
+        "B": 3,
+        "C": 5,
+        "D": 2
+      }
+    },
+    "T5-033": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "先確認舊帳務資料是否獲准公開"
+        },
+        {
+          "id": 5,
+          "action": "邀學生記錄當年非銷售工作的貢獻"
+        },
+        {
+          "id": 6,
+          "action": "請刪除有個資及未核實金額的圖表"
+        }
+      ],
+      "selectedIds": [
+        4,
+        6,
+        1
+      ],
+      "finalChoiceMap": {
+        "A": 4,
+        "B": 6,
+        "C": 1,
+        "D": "emotional"
+      }
+    },
+    "T5-034": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "先確認邀請是否屬正式必要值勤"
+        },
+        {
+          "id": 5,
+          "action": "協助學生設定可接受的有限支援時間"
+        },
+        {
+          "id": 6,
+          "action": "請熟手先對照今年最新的校慶動線"
+        }
+      ],
+      "selectedIds": [
+        4,
+        5,
+        2
+      ],
+      "finalChoiceMap": {
+        "A": 2,
+        "B": 4,
+        "C": "emotional",
+        "D": 5
+      }
+    },
+    "T5-035": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請兩位同學各自寫下真正想參與的活動"
+        },
+        {
+          "id": 5,
+          "action": "核對休息區與正式出席活動的界線"
+        },
+        {
+          "id": 6,
+          "action": "提醒同學不要用『最後一次』強迫同行"
+        }
+      ],
+      "selectedIds": [
+        5,
+        3,
+        6
+      ],
+      "finalChoiceMap": {
+        "A": "emotional",
+        "B": 6,
+        "C": 3,
+        "D": 5
+      }
+    },
+    "T5-036": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請學生暫停從舊訂單直接發私人訊息"
+        },
+        {
+          "id": 5,
+          "action": "詢問舊訂單依法應如何保存與刪除"
+        },
+        {
+          "id": 6,
+          "action": "建議改寫不含個資的集體感謝訊息"
+        }
+      ],
+      "selectedIds": [
+        1,
+        4,
+        2
+      ],
+      "finalChoiceMap": {
+        "A": 2,
+        "B": 1,
+        "C": 4,
+        "D": "emotional"
+      }
+    },
+    "T5-037": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "先向校方確認是否設置正式評選制度"
+        },
+        {
+          "id": 5,
+          "action": "詢問新生是否願意接受具體建議"
+        },
+        {
+          "id": 6,
+          "action": "請學生把評分欄改成事實觀察欄"
+        }
+      ],
+      "selectedIds": [
+        4,
+        6,
+        3
+      ],
+      "finalChoiceMap": {
+        "A": 3,
+        "B": 6,
+        "C": "emotional",
+        "D": 4
+      }
+    },
+    "T5-038": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "把學生要求的陪逛地點先依重要性排序"
+        },
+        {
+          "id": 5,
+          "action": "查核導師正式值勤與可能空檔"
+        },
+        {
+          "id": 6,
+          "action": "請發起人更正已擅自宣布教師全程同行"
+        }
+      ],
+      "selectedIds": [
+        6,
+        1,
+        4
+      ],
+      "finalChoiceMap": {
+        "A": "emotional",
+        "B": 6,
+        "C": 4,
+        "D": 1
+      }
+    },
+    "T5-039": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "向家長說明高三本屆未獲設攤身分"
+        },
+        {
+          "id": 5,
+          "action": "先詢問學生是否願意承接新的紀念工作"
+        },
+        {
+          "id": 6,
+          "action": "提出無營業、無額外場地要求的紀念方向"
+        }
+      ],
+      "selectedIds": [
+        5,
+        6,
+        4
+      ],
+      "finalChoiceMap": {
+        "A": 4,
+        "B": 5,
+        "C": "emotional",
+        "D": 6
+      }
+    },
+    "T5-040": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "先移除未獲證實的升學校名和結果"
+        },
+        {
+          "id": 5,
+          "action": "請同學自願分享對未來的希望"
+        },
+        {
+          "id": 6,
+          "action": "先檢查海報公開範圍及影像授權"
+        }
+      ],
+      "selectedIds": [
+        3,
+        2,
+        6
+      ],
+      "finalChoiceMap": {
+        "A": 3,
+        "B": 2,
+        "C": "emotional",
+        "D": 6
+      }
+    },
+    "T5-041": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "請原後勤者列出今年願意與不願意做的事"
+        },
+        {
+          "id": 5,
+          "action": "向請託者說明高三今年沒有本班攤位工作"
+        },
+        {
+          "id": 6,
+          "action": "詢問邀請方是否真有正式任務需要支援"
+        }
+      ],
+      "selectedIds": [
+        2,
+        5,
+        3
+      ],
+      "finalChoiceMap": {
+        "A": 3,
+        "B": "emotional",
+        "C": 2,
+        "D": 5
+      }
+    },
+    "T5-042": {
+      "extraCandidates": [
+        {
+          "id": 4,
+          "action": "讓學生分別確認拍攝與公開發布的同意"
+        },
+        {
+          "id": 5,
+          "action": "先核對活動可拍攝的合法時段"
+        },
+        {
+          "id": 6,
+          "action": "請發起人刪除群組裡的默認同意條款"
+        }
+      ],
+      "selectedIds": [
+        5,
+        4,
+        2
+      ],
+      "finalChoiceMap": {
+        "A": 2,
+        "B": "emotional",
+        "C": 5,
+        "D": 4
+      }
+    }
+  }
+}

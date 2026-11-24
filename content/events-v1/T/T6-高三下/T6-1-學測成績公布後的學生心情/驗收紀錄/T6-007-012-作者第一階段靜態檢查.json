@@ -1,0 +1,2782 @@
+{
+  "pool": "T6-1:after",
+  "stage": "author-phase static checks only",
+  "dates": [
+    "2029-02-26",
+    "2029-02-27",
+    "2029-03-02",
+    "2029-03-05",
+    "2029-03-06",
+    "2029-03-07",
+    "2029-03-08",
+    "2029-03-09"
+  ],
+  "stories": {
+    "T6-007": {
+      "sourceBlobSha": "16708223c41f20461ae8e0951681d5f7dba1f1c0",
+      "seed": "S1354",
+      "openingLength": 157,
+      "resultLengths": [
+        114,
+        104,
+        98,
+        115,
+        114,
+        119,
+        97,
+        117
+      ],
+      "resultTitles": [
+        "那名學生看著名單說『我沒有查分畫面』",
+        "有人笑說沒報考就沒心得",
+        "學生願意留在討論現場",
+        "一位同學把他當成『沒考壓力的人』",
+        "班級的展示牆原本只有查分照片",
+        "有人要他模仿查分時的反應當笑點",
+        "活動後學生說自己其實想聽同學分享",
+        "同學們發現原本排程不符合實際報考差異"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "保留不發言的參與方式",
+          "emotional": false,
+          "completed": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
+        },
+        {
+          "id": "B",
+          "action": "立即讓分享改為自願且不問分數",
+          "emotional": true,
+          "completed": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
+        },
+        {
+          "id": "C",
+          "action": "私下確認未報考者願談的內容",
+          "emotional": false,
+          "completed": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
+        },
+        {
+          "id": "D",
+          "action": "改成每人分享下一步所需支援",
+          "emotional": false,
+          "completed": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
+        }
+      ],
+      "matrix": [
+        {
+          "choice": "A",
+          "weights": [
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2
+          ]
+        }
+      ],
+      "states": [
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ]
+      ],
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "那名學生看著名單說『我沒有查分畫面』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人笑說沒報考就沒心得",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生願意留在討論現場",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "一位同學把他當成『沒考壓力的人』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "班級的展示牆原本只有查分照片",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人要他模仿查分時的反應當笑點",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "活動後學生說自己其實想聽同學分享",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已保留不發言的參與方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "同學們發現原本排程不符合實際報考差異",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "那名學生看著名單說『我沒有查分畫面』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人笑說沒報考就沒心得",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生願意留在討論現場",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "一位同學把他當成『沒考壓力的人』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "班級的展示牆原本只有查分照片",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人要他模仿查分時的反應當笑點",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "活動後學生說自己其實想聽同學分享",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已立即讓分享改為自願且不問分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "同學們發現原本排程不符合實際報考差異",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "那名學生看著名單說『我沒有查分畫面』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人笑說沒報考就沒心得",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生願意留在討論現場",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "一位同學把他當成『沒考壓力的人』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "班級的展示牆原本只有查分照片",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人要他模仿查分時的反應當笑點",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "活動後學生說自己其實想聽同學分享",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已私下確認未報考者願談的內容，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "同學們發現原本排程不符合實際報考差異",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "那名學生看著名單說『我沒有查分畫面』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人笑說沒報考就沒心得",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生願意留在討論現場",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "一位同學把他當成『沒考壓力的人』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "班級的展示牆原本只有查分照片",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人要他模仿查分時的反應當笑點",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "活動後學生說自己其實想聽同學分享",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已改成每人分享下一步所需支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "同學們發現原本排程不符合實際報考差異",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        }
+      ],
+      "crossDayPrecheck": [
+        {
+          "date": "2029-02-26",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-02-27",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-02",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-05",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-06",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-07",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-08",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-09",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        }
+      ],
+      "staticFailures": [],
+      "environment": "GitHub file-based static inspection; Node/Actions not run"
+    },
+    "T6-008": {
+      "sourceBlobSha": "7a3e61bae89d7dfd1c33f575ab16722862e1b70d",
+      "seed": "S1355",
+      "openingLength": 164,
+      "resultLengths": [
+        107,
+        103,
+        105,
+        100,
+        108,
+        116,
+        110,
+        106
+      ],
+      "resultTitles": [
+        "家長已經詢問一個高價方案",
+        "業者傳來『名額快滿』訊息",
+        "孩子看著一週被填滿的課表",
+        "家長認為多買一點才算盡責",
+        "家長自己提出一項需要補強的準備",
+        "家長在群組看到別人說所有人都在加強",
+        "家庭發現原計畫跟學校必要課務衝突",
+        "家長決定暫不加購"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "先聽家長擔憂而不替補習保證效果",
+          "emotional": true,
+          "completed": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
+        },
+        {
+          "id": "B",
+          "action": "邀請孩子說明目前真正需要的支援",
+          "emotional": false,
+          "completed": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
+        },
+        {
+          "id": "C",
+          "action": "協助分清正式程序與商業廣告",
+          "emotional": false,
+          "completed": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
+        },
+        {
+          "id": "D",
+          "action": "請家庭確認時間與金錢承受範圍",
+          "emotional": false,
+          "completed": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
+        }
+      ],
+      "matrix": [
+        {
+          "choice": "A",
+          "weights": [
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4
+          ]
+        }
+      ],
+      "states": [
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ]
+      ],
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長已經詢問一個高價方案",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "業者傳來『名額快滿』訊息",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "孩子看著一週被填滿的課表",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長認為多買一點才算盡責",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長自己提出一項需要補強的準備",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長在群組看到別人說所有人都在加強",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家庭發現原計畫跟學校必要課務衝突",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已先聽家長擔憂而不替補習保證效果，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長決定暫不加購",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長已經詢問一個高價方案",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "業者傳來『名額快滿』訊息",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "孩子看著一週被填滿的課表",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長認為多買一點才算盡責",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長自己提出一項需要補強的準備",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長在群組看到別人說所有人都在加強",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家庭發現原計畫跟學校必要課務衝突",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已邀請孩子說明目前真正需要的支援，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長決定暫不加購",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長已經詢問一個高價方案",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "業者傳來『名額快滿』訊息",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "孩子看著一週被填滿的課表",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長認為多買一點才算盡責",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長自己提出一項需要補強的準備",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長在群組看到別人說所有人都在加強",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家庭發現原計畫跟學校必要課務衝突",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已協助分清正式程序與商業廣告，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長決定暫不加購",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長已經詢問一個高價方案",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "業者傳來『名額快滿』訊息",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "孩子看著一週被填滿的課表",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長認為多買一點才算盡責",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長自己提出一項需要補強的準備",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長在群組看到別人說所有人都在加強",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家庭發現原計畫跟學校必要課務衝突",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已請家庭確認時間與金錢承受範圍，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "家長決定暫不加購",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        }
+      ],
+      "crossDayPrecheck": [
+        {
+          "date": "2029-02-26",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-02-27",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-02",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-05",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-06",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-07",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-08",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-09",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        }
+      ],
+      "staticFailures": [],
+      "environment": "GitHub file-based static inspection; Node/Actions not run"
+    },
+    "T6-009": {
+      "sourceBlobSha": "a503c5b0727d2771cab2d65f53ce3013cfcd8dba",
+      "seed": "S1356",
+      "openingLength": 166,
+      "resultLengths": [
+        118,
+        101,
+        104,
+        106,
+        103,
+        103,
+        104,
+        109
+      ],
+      "resultTitles": [
+        "學生才發現截圖裡有識別欄位",
+        "某個群組有人想轉貼截圖幫忙找答案",
+        "他試著用手機塗黑欄位",
+        "學生說自己忘了截圖傳到哪些地方",
+        "在正式查詢頁",
+        "一位同學認為遮個名字就夠",
+        "學生原本要求老師幫他登入查分",
+        "問題得到釐清後"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "示範不用分享登入畫面的查詢方式",
+          "emotional": false,
+          "completed": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
+        },
+        {
+          "id": "B",
+          "action": "確認截圖已送達誰並協助處置",
+          "emotional": false,
+          "completed": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
+        },
+        {
+          "id": "C",
+          "action": "改以文字描述問題而不留原圖",
+          "emotional": false,
+          "completed": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
+        },
+        {
+          "id": "D",
+          "action": "先要求停止轉傳並遮蔽敏感欄位",
+          "emotional": true,
+          "completed": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
+        }
+      ],
+      "matrix": [
+        {
+          "choice": "A",
+          "weights": [
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1
+          ]
+        }
+      ],
+      "states": [
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ]
+      ],
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生才發現截圖裡有識別欄位",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "某個群組有人想轉貼截圖幫忙找答案",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他試著用手機塗黑欄位",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生說自己忘了截圖傳到哪些地方",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "在正式查詢頁",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "一位同學認為遮個名字就夠",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生原本要求老師幫他登入查分",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已示範不用分享登入畫面的查詢方式，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "問題得到釐清後",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生才發現截圖裡有識別欄位",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "某個群組有人想轉貼截圖幫忙找答案",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他試著用手機塗黑欄位",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生說自己忘了截圖傳到哪些地方",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "在正式查詢頁",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "一位同學認為遮個名字就夠",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生原本要求老師幫他登入查分",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已確認截圖已送達誰並協助處置，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "問題得到釐清後",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生才發現截圖裡有識別欄位",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "某個群組有人想轉貼截圖幫忙找答案",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他試著用手機塗黑欄位",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生說自己忘了截圖傳到哪些地方",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "在正式查詢頁",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "一位同學認為遮個名字就夠",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生原本要求老師幫他登入查分",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已改以文字描述問題而不留原圖，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "問題得到釐清後",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生才發現截圖裡有識別欄位",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "某個群組有人想轉貼截圖幫忙找答案",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他試著用手機塗黑欄位",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生說自己忘了截圖傳到哪些地方",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "在正式查詢頁",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "一位同學認為遮個名字就夠",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生原本要求老師幫他登入查分",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已先要求停止轉傳並遮蔽敏感欄位，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "問題得到釐清後",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        }
+      ],
+      "crossDayPrecheck": [
+        {
+          "date": "2029-02-26",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-02-27",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-02",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-05",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-06",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-07",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-08",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-09",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        }
+      ],
+      "staticFailures": [],
+      "environment": "GitHub file-based static inspection; Node/Actions not run"
+    },
+    "T6-010": {
+      "sourceBlobSha": "e1a1c4cb37322ffec8c350528aff8b9b3f162cb7",
+      "seed": "S1362",
+      "openingLength": 158,
+      "resultLengths": [
+        102,
+        101,
+        98,
+        108,
+        99,
+        103,
+        98,
+        113
+      ],
+      "resultTitles": [
+        "學生終於在紙上寫下『我真的很開心』",
+        "那位說運氣的同學坦承自己也在焦慮",
+        "學生在班群只貼了一句感謝幫忙的老師",
+        "有人要求他公開讀書方法來證明不是運氣",
+        "學生興奮地跟朋友講了很多",
+        "班上開始把高分者捧成榜樣",
+        "一位同學真誠祝賀",
+        "學生主動把成績記在個人紀錄中"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "先允許當事人表達真正的喜悅",
+          "emotional": true,
+          "completed": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
+        },
+        {
+          "id": "B",
+          "action": "請當事人說明想如何回應運氣說法",
+          "emotional": false,
+          "completed": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
+        },
+        {
+          "id": "C",
+          "action": "區分成果分享與比較別人分數",
+          "emotional": false,
+          "completed": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
+        },
+        {
+          "id": "D",
+          "action": "制止以揶揄方式評斷同學努力",
+          "emotional": false,
+          "completed": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
+        }
+      ],
+      "matrix": [
+        {
+          "choice": "A",
+          "weights": [
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4
+          ]
+        }
+      ],
+      "states": [
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ]
+      ],
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生終於在紙上寫下『我真的很開心』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "那位說運氣的同學坦承自己也在焦慮",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生在班群只貼了一句感謝幫忙的老師",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人要求他公開讀書方法來證明不是運氣",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生興奮地跟朋友講了很多",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "班上開始把高分者捧成榜樣",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "一位同學真誠祝賀",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已先允許當事人表達真正的喜悅，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生主動把成績記在個人紀錄中",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生終於在紙上寫下『我真的很開心』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "那位說運氣的同學坦承自己也在焦慮",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生在班群只貼了一句感謝幫忙的老師",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人要求他公開讀書方法來證明不是運氣",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生興奮地跟朋友講了很多",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "班上開始把高分者捧成榜樣",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "一位同學真誠祝賀",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已請當事人說明想如何回應運氣說法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生主動把成績記在個人紀錄中",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生終於在紙上寫下『我真的很開心』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "那位說運氣的同學坦承自己也在焦慮",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生在班群只貼了一句感謝幫忙的老師",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人要求他公開讀書方法來證明不是運氣",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生興奮地跟朋友講了很多",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "班上開始把高分者捧成榜樣",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "一位同學真誠祝賀",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已區分成果分享與比較別人分數，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生主動把成績記在個人紀錄中",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生終於在紙上寫下『我真的很開心』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "那位說運氣的同學坦承自己也在焦慮",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生在班群只貼了一句感謝幫忙的老師",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人要求他公開讀書方法來證明不是運氣",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生興奮地跟朋友講了很多",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "班上開始把高分者捧成榜樣",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "一位同學真誠祝賀",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已制止以揶揄方式評斷同學努力，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生主動把成績記在個人紀錄中",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        }
+      ],
+      "crossDayPrecheck": [
+        {
+          "date": "2029-02-26",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-02-27",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-02",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-05",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-06",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-07",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-08",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-09",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        }
+      ],
+      "staticFailures": [],
+      "environment": "GitHub file-based static inspection; Node/Actions not run"
+    },
+    "T6-011": {
+      "sourceBlobSha": "a4fd29bce8ab3d0498f2d97e6a539daf09999d5e",
+      "seed": "S1365",
+      "openingLength": 171,
+      "resultLengths": [
+        109,
+        99,
+        108,
+        111,
+        105,
+        94,
+        106,
+        107
+      ],
+      "resultTitles": [
+        "學生把原本寫著『很笨』的便條揉成一團",
+        "有人誇他一夜變成學霸",
+        "他重新整理三年學習紀錄",
+        "學生要求你在班上宣布他已經改頭換面",
+        "他試著把原本失敗的筆記丟掉",
+        "另一名同學問他以後是不是可以教所有科",
+        "學生把成績告訴家人",
+        "他在筆記首頁把『我就是不會』改成『我找到了一些"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "先請他說明舊標籤帶來的傷害",
+          "emotional": true,
+          "completed": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
+        },
+        {
+          "id": "B",
+          "action": "把可核的成績與不能量化的能力分開",
+          "emotional": false,
+          "completed": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
+        },
+        {
+          "id": "C",
+          "action": "協助整理這次成功的具體方法",
+          "emotional": false,
+          "completed": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
+        },
+        {
+          "id": "D",
+          "action": "討論未來遇到低分時如何看自己",
+          "emotional": false,
+          "completed": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
+        }
+      ],
+      "matrix": [
+        {
+          "choice": "A",
+          "weights": [
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4
+          ]
+        }
+      ],
+      "states": [
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ]
+      ],
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把原本寫著『很笨』的便條揉成一團",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人誇他一夜變成學霸",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他重新整理三年學習紀錄",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生要求你在班上宣布他已經改頭換面",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他試著把原本失敗的筆記丟掉",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "另一名同學問他以後是不是可以教所有科",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把成績告訴家人",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已先請他說明舊標籤帶來的傷害，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他在筆記首頁把『我就是不會』改成『我找到了一些",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把原本寫著『很笨』的便條揉成一團",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人誇他一夜變成學霸",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他重新整理三年學習紀錄",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生要求你在班上宣布他已經改頭換面",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他試著把原本失敗的筆記丟掉",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "另一名同學問他以後是不是可以教所有科",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把成績告訴家人",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已把可核的成績與不能量化的能力分開，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他在筆記首頁把『我就是不會』改成『我找到了一些",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把原本寫著『很笨』的便條揉成一團",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人誇他一夜變成學霸",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他重新整理三年學習紀錄",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生要求你在班上宣布他已經改頭換面",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他試著把原本失敗的筆記丟掉",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "另一名同學問他以後是不是可以教所有科",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把成績告訴家人",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已協助整理這次成功的具體方法，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他在筆記首頁把『我就是不會』改成『我找到了一些",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把原本寫著『很笨』的便條揉成一團",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "有人誇他一夜變成學霸",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他重新整理三年學習紀錄",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生要求你在班上宣布他已經改頭換面",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他試著把原本失敗的筆記丟掉",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "另一名同學問他以後是不是可以教所有科",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把成績告訴家人",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已討論未來遇到低分時如何看自己，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他在筆記首頁把『我就是不會』改成『我找到了一些",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        }
+      ],
+      "crossDayPrecheck": [
+        {
+          "date": "2029-02-26",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-02-27",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-02",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-05",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-06",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-07",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-08",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-09",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        }
+      ],
+      "staticFailures": [],
+      "environment": "GitHub file-based static inspection; Node/Actions not run"
+    },
+    "T6-012": {
+      "sourceBlobSha": "ae0d7e93491e0ae113ebbc30a54b221eabc94685",
+      "seed": "S1368",
+      "openingLength": 161,
+      "resultLengths": [
+        102,
+        98,
+        98,
+        97,
+        108,
+        101,
+        109,
+        100
+      ],
+      "resultTitles": [
+        "學生寫下『老師以前幫我很多』",
+        "他打好要道歉的訊息",
+        "支持他的老師收到學生的坦白後表示願意聽理由",
+        "學生原想瞞著原老師",
+        "同學說『老師那麼照顧你",
+        "學生把過去曾受指導的作品帶來",
+        "他急著請你直接聯絡那位老師說服對方",
+        "學生仍保留原方向作比較"
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "明確說明支持不以照舊志願為交換",
+          "emotional": true,
+          "completed": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "讓當事人較能開口，卻不能立刻釐清全部程序。"
+        },
+        {
+          "id": "B",
+          "action": "請學生列出自己對新方向真正的理由",
+          "emotional": false,
+          "completed": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "可留下可用的初步依據，但不保證立即得到結果。"
+        },
+        {
+          "id": "C",
+          "action": "陪他擬一段不保證結果的說明",
+          "emotional": false,
+          "completed": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "能減少資訊誤判，仍需本人選擇是否採行。"
+        },
+        {
+          "id": "D",
+          "action": "討論如何感謝老師而不請求批准",
+          "emotional": false,
+          "completed": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "tradeoff": "尊重決策節奏，可能暫時維持不確定。"
+        }
+      ],
+      "matrix": [
+        {
+          "choice": "A",
+          "weights": [
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "choice": "B",
+          "weights": [
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "choice": "C",
+          "weights": [
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4,
+            2
+          ]
+        },
+        {
+          "choice": "D",
+          "weights": [
+            2,
+            2,
+            1,
+            4,
+            2,
+            2,
+            1,
+            4
+          ]
+        }
+      ],
+      "states": [
+        [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -2,
+          1,
+          2
+        ],
+        [
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2,
+          1,
+          -1
+        ],
+        [
+          -2,
+          0,
+          -2,
+          -1
+        ]
+      ],
+      "causal32Cells": [
+        {
+          "choice": "A",
+          "result": "R1",
+          "weight": 4,
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生寫下『老師以前幫我很多』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他打好要道歉的訊息",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "支持他的老師收到學生的坦白後表示願意聽理由",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R4",
+          "weight": 1,
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生原想瞞著原老師",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R5",
+          "weight": 4,
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "同學說『老師那麼照顧你",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把過去曾受指導的作品帶來",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他急著請你直接聯絡那位老師說服對方",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "A",
+          "result": "R8",
+          "weight": 1,
+          "actionPreserved": "你已明確說明支持不以照舊志願為交換，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生仍保留原方向作比較",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R1",
+          "weight": 1,
+          "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生寫下『老師以前幫我很多』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R2",
+          "weight": 4,
+          "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他打好要道歉的訊息",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R3",
+          "weight": 2,
+          "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "支持他的老師收到學生的坦白後表示願意聽理由",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生原想瞞著原老師",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R5",
+          "weight": 1,
+          "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "同學說『老師那麼照顧你",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R6",
+          "weight": 4,
+          "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把過去曾受指導的作品帶來",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R7",
+          "weight": 2,
+          "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他急著請你直接聯絡那位老師說服對方",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "B",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已請學生列出自己對新方向真正的理由，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生仍保留原方向作比較",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生寫下『老師以前幫我很多』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R2",
+          "weight": 1,
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他打好要道歉的訊息",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R3",
+          "weight": 4,
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "支持他的老師收到學生的坦白後表示願意聽理由",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R4",
+          "weight": 2,
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生原想瞞著原老師",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "同學說『老師那麼照顧你",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R6",
+          "weight": 1,
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把過去曾受指導的作品帶來",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R7",
+          "weight": 4,
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他急著請你直接聯絡那位老師說服對方",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "C",
+          "result": "R8",
+          "weight": 2,
+          "actionPreserved": "你已陪他擬一段不保證結果的說明，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生仍保留原方向作比較",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R1",
+          "weight": 2,
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生寫下『老師以前幫我很多』",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R2",
+          "weight": 2,
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他打好要道歉的訊息",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R3",
+          "weight": 1,
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "支持他的老師收到學生的坦白後表示願意聽理由",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R4",
+          "weight": 4,
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生原想瞞著原老師",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R5",
+          "weight": 2,
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "同學說『老師那麼照顧你",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R6",
+          "weight": 2,
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生把過去曾受指導的作品帶來",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R7",
+          "weight": 1,
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "他急著請你直接聯絡那位老師說服對方",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        },
+        {
+          "choice": "D",
+          "result": "R8",
+          "weight": 4,
+          "actionPreserved": "你已討論如何感謝老師而不請求批准，明確保留當事人的資料與決定權，沒有承諾校系錄取或替其他人做決定。",
+          "resultTitle": "學生仍保留原方向作比較",
+          "semanticReview": "author candidate; detailed independent causal reasoning not yet performed"
+        }
+      ],
+      "crossDayPrecheck": [
+        {
+          "date": "2029-02-26",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-02-27",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-02",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-05",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-06",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-07",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-08",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        },
+        {
+          "date": "2029-03-09",
+          "window": "candidate",
+          "informationRequirement": "result actually published and participant informed"
+        }
+      ],
+      "staticFailures": [],
+      "environment": "GitHub file-based static inspection; Node/Actions not run"
+    }
+  }
+}

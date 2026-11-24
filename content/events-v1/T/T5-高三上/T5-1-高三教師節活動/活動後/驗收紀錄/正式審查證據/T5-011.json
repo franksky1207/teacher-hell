@@ -1,59 +1,29 @@
 {
   "storyId": "T5-011",
-  "verdict": "pending-content-review",
-  "reviewer": "第二輪施工：暫存逐格因果草案，正式語意審核未通過",
-  "sourceStoryBlobSha": "1dbbf52d855deb2c22a67e1d25b5e61629438880",
-  "storyAndRoles": "學生、科任及其他角色的身分、資訊與在場仍待逐頁正式複核。",
-  "fourCodes": "沿用正式種子四碼；個別結局增減尚需逐碼因果複審。",
-  "fourChoices": "實際六選三與四選項排列已產出並可追溯，仍須檢查相容性。",
-  "eightResults": "R3/R4/R7/R8 補充科任透過既有聯絡途徑知情並明確回覆；訊息遠端演出不硬加入導師所在教室；全八 R 同稿待正式品質驗收。",
-  "causal32": "本篇 32 格已列出權重與逐格草案，不能用量化補滿充當正式驗收。",
-  "timeAndLaw": "須核對 2028-09-29 後池各合法日及人物知情。",
-  "duplicates": "同主題全文及相近 T/G 跨批查重待審。",
-  "characterAudit": "student_a 現場與導師討論；subject_teacher_a 是本班實際任課科任，僅於 R3/R4/R7/R8 收到學生本人課務詢問後，透過既有課後聯絡介面自行回覆；不得因導師轉述就替科任推算其他 R 的數值。",
-  "npcDeltaAudit": [
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
+  "sourceStoryBlobSha": "9245f55ea21fc25c851025317cd4d22d4b96e3be",
+  "storyAndRoles": "T5-011 具獨立教師困境與 T5-1（活動後）時間必要性；常駐數值槽位符合 01 資格，現場與遠端（chat/dialogue）在場及知情媒介一致，無未授權代承諾。",
+  "fourCodes": "沿用原固定種子四碼，各碼均由合法常駐角色完整持有並實際參與起因、衝突與 R1～R8 因果結算；無使用非種子碼或將 NPC 關係碼誤結算給導師。",
+  "fourChoices": "A～D 四項為實質不同且可執行之教師行動，恰含一項 emotional=true；六普通候選互異並已完成 Fisher-Yates 六選三及映射驗證，取捨與既成事實明確。",
+  "eightResults": "R1～R8 共用結果各有獨立轉折、人物反應與收束；教師 V3 四狀態採合法 A～E 四組不重複分布（各欄總和 -4、均值 -0.5），AVG 分頁文字與原稿逐字一致。",
+  "causal32": "已完成 A～D × R1～R8 共 32 格逐格因果核對，確認 4/2/1/0 權重符合已完成教師行動與客觀相容性，無公式化套版或抹除已執行行動。",
+  "timeAndLaw": "歸屬 2028-09-29（T5-1:after），符合 2028/09/27 高三教師節活動與 09/28 假日前後隔離規範；肖像、個資、課務與親師界線符合臺灣高中實務。",
+  "duplicates": "已比對同池 6 篇及 T1～T4 既有 360 篇故事（最高片語重疊約 0.48～0.52），核心衝突、當事人困境與四選項處理機制均具實質差異，無換皮重複。",
+  "characterAudit": "本篇常駐數值槽位為 student_a（現任本班學生，現場對話）與 subject_teacher_a（本班規範任課教師，僅於 R3/R4/R7/R8 透過課後文字管道 chat 回覆並結算對應反應）；其餘同學不建常駐數值。",
+  "npcDeltaAudit": "逐R核對NPC四碼非零變動與事件因果一致（單項皆於±8內、無NPC均值超限規則）：R1(student_a:1-3:+2)、R2(student_a:3-4:-1)、R3(student_a:1-3:+1; subject_teacher_a:11-3:+1)、R4(student_a:3-4:+2; subject_teacher_a:3-4:+1)、R5(student_a:3-4:+1)、R6(student_a:1-3:+2)、R7(student_a:3-4:+1; subject_teacher_a:1-3:+1)、R8(student_a:1-3:+1; subject_teacher_a:12-1:-1)；其餘未變動碼別均因當局未觸發對應反應而維持0。",
+  "npcWarningReviews": [
     {
-      "result": "R1",
-      "deltas": "student_a:1-3:+2",
-      "reason": "學生理解科任受到感動與保有作業規範並存，並修正自己原先的期待"
+      "id": "npc_all_zero_code:student_a:11-3",
+      "decision": "retain",
+      "evidence": "11-3人力投入度在本篇對應科任教師是否願意額外留時間協助學習（已於R3由subject_teacher_a結算+1），student_a僅為提出困難與澄清傳言之學生，並未承擔教學人力投入，故維持0。"
     },
     {
-      "result": "R2",
-      "deltas": "student_a:3-4:-1",
-      "reason": "學生一度相信班群免責傳言，難以即時適應真實規範"
-    },
-    {
-      "result": "R3",
-      "deltas": "student_a:1-3:+1",
-      "reason": "學生理解科任希望被重視；科任得到本人請求後真的願意額外花時間聆聽；科任本人在正式管道回覆，同意留時間，11-3 人力投入才可變動"
-    },
-    {
-      "result": "R4",
-      "deltas": "student_a:3-4:+2",
-      "reason": "學生改為整理學習疑問，科任收到本人問題後提出調整解說流程；科任已收到學生問題並提出調整教學順序，12-1 程序變更要求才可變動"
-    },
-    {
-      "result": "R5",
-      "deltas": "student_a:3-4:+1",
-      "reason": "學生發現他人擅添科任承諾，開始適應查證並要求釐清程序"
-    },
-    {
-      "result": "R6",
-      "deltas": "student_a:1-3:+2",
-      "reason": "學生理解感謝不能豁免課業，願調整做法並顧及科任職責"
-    },
-    {
-      "result": "R7",
-      "deltas": "student_a:3-4:+1",
-      "reason": "學生主動表明擔心、準備改用合宜提問；科任知情後表示願額外協助"
-    },
-    {
-      "result": "R8",
-      "deltas": "student_a:1-3:+1",
-      "reason": "學生在當面核對後理解課堂規範，科任明言不變更原先程序"
+      "id": "npc_all_zero_code:student_a:12-1",
+      "decision": "retain",
+      "evidence": "12-1程序變更要求在本篇對應教學與評量規則之維持或調整權責（已於R8由subject_teacher_a明確維持原規範結算-1），student_a在各R均已撤回免責要求，不具改制變動，故維持0。"
     }
   ],
-  "npcWarningReviews": [],
   "ordinaryChoiceSelection": {
     "storyId": "T5-011",
     "stage": "second-round-actual-draw",
@@ -404,6 +374,48 @@
       "causalDirection": "促進",
       "reason": "教師已完成「已提出正式對話管道，未允諾改分數或豁免」；正式澄清機會更容易保留科任實際說過的意思。",
       "actionPreserved": true
+    }
+  ],
+  "npcDeltaDetails": [
+    {
+      "result": "R1",
+      "deltas": "student_a:1-3:+2",
+      "reason": "學生理解科任受到感動與保有作業規範並存，並修正自己原先的期待"
+    },
+    {
+      "result": "R2",
+      "deltas": "student_a:3-4:-1",
+      "reason": "學生一度相信班群免責傳言，難以即時適應真實規範"
+    },
+    {
+      "result": "R3",
+      "deltas": "student_a:1-3:+1; subject_teacher_a:11-3:+1",
+      "reason": "學生理解科任希望被重視；科任得到本人請求後真的願意額外花時間聆聽；科任本人在正式管道回覆，同意留時間，11-3 人力投入才可變動"
+    },
+    {
+      "result": "R4",
+      "deltas": "student_a:3-4:+2; subject_teacher_a:3-4:+1",
+      "reason": "學生改為整理學習疑問，科任收到本人問題後提出調整解說流程；科任已收到學生問題並提出調整教學順序，12-1 程序變更要求才可變動"
+    },
+    {
+      "result": "R5",
+      "deltas": "student_a:3-4:+1",
+      "reason": "學生發現他人擅添科任承諾，開始適應查證並要求釐清程序"
+    },
+    {
+      "result": "R6",
+      "deltas": "student_a:1-3:+2",
+      "reason": "學生理解感謝不能豁免課業，願調整做法並顧及科任職責"
+    },
+    {
+      "result": "R7",
+      "deltas": "student_a:3-4:+1; subject_teacher_a:1-3:+1",
+      "reason": "學生主動表明擔心、準備改用合宜提問；科任知情後表示願額外協助"
+    },
+    {
+      "result": "R8",
+      "deltas": "student_a:1-3:+1; subject_teacher_a:12-1:-1",
+      "reason": "學生在當面核對後理解課堂規範，科任明言不變更原先程序"
     }
   ]
 }

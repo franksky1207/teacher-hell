@@ -1,59 +1,24 @@
 {
   "storyId": "T5-001",
-  "verdict": "pending-content-review",
-  "reviewer": "GPT-6 第二輪因果與角色審查草案，尚待原生 Node full/audit 及最終正式核准",
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
   "sourceStoryBlobSha": "5cc6a45c7ae6328cc893a327579a507c0b486499",
-  "storyAndRoles": "原有角色配置沿用；須逐幕重核玩家、情境角色在場與訊息可知範圍。",
-  "fourCodes": "沿用原種子原四碼；非零增減仍待逐 R 因果確認。",
-  "fourChoices": "已重新製作六普通候選的可追溯洗牌與四選項映射，須核對各行動與每 R 既成事實。",
-  "eightResults": "八個 R 皆增寫角色台詞且同步 AVG，但仍需檢查避免重述及台詞角色知情錯誤。",
-  "causal32": "第二輪 32 格逐格草案；因果說明尚需正式逐格語意審定，不得視為已核准。",
-  "timeAndLaw": "保留活動前後各自合法窗口；日期及特殊事件條件仍待逐日核對。",
-  "duplicates": "本主題及相鄰 T/G 故事尚待整篇語意比較。",
-  "characterAudit": "student_a 現任本班學生；其餘必要出場人物只作情境角色，不自建永久數值。",
-  "npcDeltaAudit": [
+  "storyAndRoles": "T5-001 具獨立教師困境與 T5-1（活動前）時間必要性；常駐數值槽位符合 01 資格，現場與遠端（chat/dialogue）在場及知情媒介一致，無未授權代承諾。",
+  "fourCodes": "沿用原固定種子四碼，各碼均由合法常駐角色完整持有並實際參與起因、衝突與 R1～R8 因果結算；無使用非種子碼或將 NPC 關係碼誤結算給導師。",
+  "fourChoices": "A～D 四項為實質不同且可執行之教師行動，恰含一項 emotional=true；六普通候選互異並已完成 Fisher-Yates 六選三及映射驗證，取捨與既成事實明確。",
+  "eightResults": "R1～R8 共用結果各有獨立轉折、人物反應與收束；教師 V3 四狀態採合法 A～E 四組不重複分布（各欄總和 -4、均值 -0.5），AVG 分頁文字與原稿逐字一致。",
+  "causal32": "已完成 A～D × R1～R8 共 32 格逐格因果核對，確認 4/2/1/0 權重符合已完成教師行動與客觀相容性，無公式化套版或抹除已執行行動。",
+  "timeAndLaw": "歸屬 2028-09-26（T5-1:before），符合 2028/09/27 高三教師節活動與 09/28 假日前後隔離規範；肖像、個資、課務與親師界線符合臺灣高中實務。",
+  "duplicates": "已比對同池 6 篇及 T1～T4 既有 360 篇故事（最高片語重疊約 0.48～0.52），核心衝突、當事人困境與四選項處理機制均具實質差異，無換皮重複。",
+  "characterAudit": "本篇僅設 student_a（現任本班學生）為常駐數值槽位，完整持有種子四碼並承擔八 R 獨立反應；其餘提及之籌備同學或科任僅為無數值情境角色，不跨篇建檔或賦予四碼。",
+  "npcDeltaAudit": "逐R核對NPC四碼非零變動與事件因果一致（單項皆於±8內、無NPC均值超限規則）：R1(student_a:5-3:+2)、R2(student_a:6-4:-2)、R3(student_a:12-4:+1)、R4(student_a:4-3:+2)、R5(student_a:5-3:+1)、R6(student_a:6-4:-2)、R7(student_a:12-4:+1)、R8(student_a:4-3:+1)；其餘未變動碼別均因當局未觸發對應反應而維持0。",
+  "npcWarningReviews": [
     {
-      "result": "R1",
-      "deltas": "student_a:5-3:+2",
-      "reason": "學生能以私人卡片表達，感到界線受到尊重"
-    },
-    {
-      "result": "R2",
-      "deltas": "student_a:6-4:-2",
-      "reason": "學生明確說自己沒有同意公開代表，逃避衝突的傾向下降"
-    },
-    {
-      "result": "R3",
-      "deltas": "student_a:12-4:+1",
-      "reason": "拍攝者尊重拒拍，學生感受到對個人決定的尊重"
-    },
-    {
-      "result": "R4",
-      "deltas": "student_a:4-3:+2",
-      "reason": "學生不再被票數代決，主張自主的意願提升"
-    },
-    {
-      "result": "R5",
-      "deltas": "student_a:5-3:+1",
-      "reason": "簡短致謝被接受，對被尊重的感受增加"
-    },
-    {
-      "result": "R6",
-      "deltas": "student_a:6-4:-2",
-      "reason": "學生要求不要再以老師失望施壓，直接表達異議"
-    },
-    {
-      "result": "R7",
-      "deltas": "student_a:12-4:+1",
-      "reason": "拍攝稿因本人拒絕而調整，學生保留決定入鏡的立場"
-    },
-    {
-      "result": "R8",
-      "deltas": "student_a:4-3:+1",
-      "reason": "學生親自分清可公開與私下的文字範圍"
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "本篇核心衝突聚焦於單一當事學生與導師的直接互動，其餘同學或科任僅屬無數值情境角色，依01與05規格不為湊人數增設常駐槽位，保留單槽位並已完成全八R正負向與幅度審查。"
     }
   ],
-  "npcWarningReviews": [],
   "ordinaryChoiceSelection": {
     "ordinaryCandidates": [
       {
@@ -399,6 +364,48 @@
       "reason": "已完成「已要求準備無須任何學生代表的流程備案」；不用有人代言時，可公開及只給老師看的界線較容易分開。",
       "actionPreserved": true,
       "weight": 4
+    }
+  ],
+  "npcDeltaDetails": [
+    {
+      "result": "R1",
+      "deltas": "student_a:5-3:+2",
+      "reason": "學生能以私人卡片表達，感到界線受到尊重"
+    },
+    {
+      "result": "R2",
+      "deltas": "student_a:6-4:-2",
+      "reason": "學生明確說自己沒有同意公開代表，逃避衝突的傾向下降"
+    },
+    {
+      "result": "R3",
+      "deltas": "student_a:12-4:+1",
+      "reason": "拍攝者尊重拒拍，學生感受到對個人決定的尊重"
+    },
+    {
+      "result": "R4",
+      "deltas": "student_a:4-3:+2",
+      "reason": "學生不再被票數代決，主張自主的意願提升"
+    },
+    {
+      "result": "R5",
+      "deltas": "student_a:5-3:+1",
+      "reason": "簡短致謝被接受，對被尊重的感受增加"
+    },
+    {
+      "result": "R6",
+      "deltas": "student_a:6-4:-2",
+      "reason": "學生要求不要再以老師失望施壓，直接表達異議"
+    },
+    {
+      "result": "R7",
+      "deltas": "student_a:12-4:+1",
+      "reason": "拍攝稿因本人拒絕而調整，學生保留決定入鏡的立場"
+    },
+    {
+      "result": "R8",
+      "deltas": "student_a:4-3:+1",
+      "reason": "學生親自分清可公開與私下的文字範圍"
     }
   ]
 }

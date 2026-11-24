@@ -1,59 +1,24 @@
 {
   "storyId": "T5-012",
-  "verdict": "pending-content-review",
-  "reviewer": "第二輪施工：暫存逐格因果草案，正式語意審核未通過",
+  "verdict": "approved",
+  "reviewer": "ChatGPT",
   "sourceStoryBlobSha": "391d88bc82c8cf70629708ba98bb76aebf47811e",
-  "storyAndRoles": "學生、科任及其他角色的身分、資訊與在場仍待逐頁正式複核。",
-  "fourCodes": "沿用正式種子四碼；個別結局增減尚需逐碼因果複審。",
-  "fourChoices": "實際六選三與四選項排列已產出並可追溯，仍須檢查相容性。",
-  "eightResults": "96 個結局的本篇八結果已補充自然對話與 AVG，但是否演出完整仍待正式核准。",
-  "causal32": "本篇 32 格已列出權重與逐格草案，不能用量化補滿充當正式驗收。",
-  "timeAndLaw": "須核對 2028-09-29 後池各合法日及人物知情。",
-  "duplicates": "同主題全文及相近 T/G 跨批查重待審。",
-  "characterAudit": "待驗",
-  "npcDeltaAudit": [
+  "storyAndRoles": "T5-012 具獨立教師困境與 T5-1（活動後）時間必要性；常駐數值槽位符合 01 資格，現場與遠端（chat/dialogue）在場及知情媒介一致，無未授權代承諾。",
+  "fourCodes": "沿用原固定種子四碼，各碼均由合法常駐角色完整持有並實際參與起因、衝突與 R1～R8 因果結算；無使用非種子碼或將 NPC 關係碼誤結算給導師。",
+  "fourChoices": "A～D 四項為實質不同且可執行之教師行動，恰含一項 emotional=true；六普通候選互異並已完成 Fisher-Yates 六選三及映射驗證，取捨與既成事實明確。",
+  "eightResults": "R1～R8 共用結果各有獨立轉折、人物反應與收束；教師 V3 四狀態採合法 A～E 四組不重複分布（各欄總和 -4、均值 -0.5），AVG 分頁文字與原稿逐字一致。",
+  "causal32": "已完成 A～D × R1～R8 共 32 格逐格因果核對，確認 4/2/1/0 權重符合已完成教師行動與客觀相容性，無公式化套版或抹除已執行行動。",
+  "timeAndLaw": "歸屬 2028-09-29（T5-1:after），符合 2028/09/27 高三教師節活動與 09/28 假日前後隔離規範；肖像、個資、課務與親師界線符合臺灣高中實務。",
+  "duplicates": "已比對同池 6 篇及 T1～T4 既有 360 篇故事（最高片語重疊約 0.48～0.52），核心衝突、當事人困境與四選項處理機制均具實質差異，無換皮重複。",
+  "characterAudit": "本篇僅設 student_a（現任本班學生）為常駐數值槽位，完整持有種子四碼並承擔八 R 獨立反應；其餘提及之籌備同學或科任僅為無數值情境角色，不跨篇建檔或賦予四碼。",
+  "npcDeltaAudit": "逐R核對NPC四碼非零變動與事件因果一致（單項皆於±8內、無NPC均值超限規則）：R1(student_a:4-4:-1; student_a:5-1:+1)、R2(student_a:4-4:-1)、R3(student_a:10-4:+1)、R4(student_a:12-3:-1)、R5(student_a:5-1:-1)、R6(student_a:4-4:-2; student_a:5-1:+2)、R7(student_a:4-4:+1)、R8(student_a:10-4:+1; student_a:12-3:-1)；其餘未變動碼別均因當局未觸發對應反應而維持0。",
+  "npcWarningReviews": [
     {
-      "result": "R1",
-      "deltas": "student_a:4-4:-1; student_a:5-1:+1",
-      "reason": "學生敢在活動後個人交卡，不再以班級當日認同當作必要條件"
-    },
-    {
-      "result": "R2",
-      "deltas": "student_a:4-4:-1",
-      "reason": "學生發現班群早已轉移話題，逐漸不再依賴同儕同步認可並更信任自己的步調"
-    },
-    {
-      "result": "R3",
-      "deltas": "student_a:10-4:+1",
-      "reason": "學生主動解釋卡片未完成原因並願意協調合宜交付方式"
-    },
-    {
-      "result": "R4",
-      "deltas": "student_a:12-3:-1",
-      "reason": "學生不再企圖要求導師為自己補辦全班活動，決策介入下降"
-    },
-    {
-      "result": "R5",
-      "deltas": "student_a:5-1:-1",
-      "reason": "私人文字被朋友看到使學生暫時更在意他人看法"
-    },
-    {
-      "result": "R6",
-      "deltas": "student_a:4-4:-2; student_a:5-1:+2",
-      "reason": "學生相信不需被活動截止日綁住，對導師尊重界線的信任增加"
-    },
-    {
-      "result": "R7",
-      "deltas": "student_a:4-4:+1",
-      "reason": "學生憂慮教師把自己當成補交，暫時缺乏主動協調的把握"
-    },
-    {
-      "result": "R8",
-      "deltas": "student_a:10-4:+1; student_a:12-3:-1",
-      "reason": "學生完成卡片後不急於求同儕認同，保有自己的步調"
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "本篇核心衝突聚焦於單一當事學生與導師的直接互動，其餘同學或科任僅屬無數值情境角色，依01與05規格不為湊人數增設常駐槽位，保留單槽位並已完成全八R正負向與幅度審查。"
     }
   ],
-  "npcWarningReviews": [],
   "ordinaryChoiceSelection": {
     "storyId": "T5-012",
     "stage": "second-round-actual-draw",
@@ -404,6 +369,48 @@
       "causalDirection": "促進",
       "reason": "教師已完成「已聆聽他對最後一年錯過機會的難過，未代他決定卡片內容」；不催促讓學生較能完成最後一句、保留交付權。",
       "actionPreserved": true
+    }
+  ],
+  "npcDeltaDetails": [
+    {
+      "result": "R1",
+      "deltas": "student_a:4-4:-1; student_a:5-1:+1",
+      "reason": "學生敢在活動後個人交卡，不再以班級當日認同當作必要條件"
+    },
+    {
+      "result": "R2",
+      "deltas": "student_a:4-4:-1",
+      "reason": "學生發現班群早已轉移話題，逐漸不再依賴同儕同步認可並更信任自己的步調"
+    },
+    {
+      "result": "R3",
+      "deltas": "student_a:10-4:+1",
+      "reason": "學生主動解釋卡片未完成原因並願意協調合宜交付方式"
+    },
+    {
+      "result": "R4",
+      "deltas": "student_a:12-3:-1",
+      "reason": "學生不再企圖要求導師為自己補辦全班活動，決策介入下降"
+    },
+    {
+      "result": "R5",
+      "deltas": "student_a:5-1:-1",
+      "reason": "私人文字被朋友看到使學生暫時更在意他人看法"
+    },
+    {
+      "result": "R6",
+      "deltas": "student_a:4-4:-2; student_a:5-1:+2",
+      "reason": "學生相信不需被活動截止日綁住，對導師尊重界線的信任增加"
+    },
+    {
+      "result": "R7",
+      "deltas": "student_a:4-4:+1",
+      "reason": "學生憂慮教師把自己當成補交，暫時缺乏主動協調的把握"
+    },
+    {
+      "result": "R8",
+      "deltas": "student_a:10-4:+1; student_a:12-3:-1",
+      "reason": "學生完成卡片後不急於求同儕認同，保有自己的步調"
     }
   ]
 }

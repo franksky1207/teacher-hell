@@ -1,0 +1,356 @@
+{
+  "storyId": "T5-010",
+  "verdict": "needs-review",
+  "reviewer": "GPT-6 第二輪故事重製：因果先行覆核稿（正式驗收未通過）",
+  "storyAndRoles": "本篇仍依# T5-010｜共同禮物有未同意被列名的學生核對原規劃角色、合法身分及知情順序。",
+  "fourCodes": "四碼保持 1-4／3-3／9-1／11-4，數值角色的獨立變化與合法持碼待正式審閱。",
+  "fourChoices": "依可追溯 xorshift32 初始種子抽選六個普通候選中的三個，另加情緒選項組 A～D，均有客觀已完成行動。",
+  "eightResults": "八結局內容與 AVG 多頁對話已同步重寫，字數與逐人自主反應待定向驗收及實質審核。",
+  "causal32": "逐格附相容性、促進／中性／抑制及其理由；不因 32 筆資料齊全便宣稱已核准。",
+  "timeAndLaw": "T5-1:after；2028 年教師節活動後共用池，不冒稱他人有同意及科任承諾。",
+  "duplicates": "與其他 11 篇的主題及主要決策機制不同，完整同池／跨池重複性審查待完成。",
+  "characterAudit": "原第三區之持碼 NPC 才得更新數值；無數值背景學生／科任不自動轉成常駐。",
+  "npcDeltaAudit": "本篇原四碼 NPC 增減仍需依具體結果逐碼核對；不替導師持有 NPC 對教師的關係碼。",
+  "npcWarningReviews": [],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "short": "立刻請禮物製作者移除未經同意的署名",
+        "action": "已提出更正要求，不預設製作者已修改所有版本",
+        "tradeoff": "直接保障署名權，可能引發朋友間誤會"
+      },
+      {
+        "id": 2,
+        "short": "先查明購買款項是否也被代墊或代收",
+        "action": "已詢問費用與名單來源，未臆測當事人欠款",
+        "tradeoff": "釐清財務責任，可能讓同學覺得小題大作"
+      },
+      {
+        "id": 3,
+        "short": "提供只更正名字、不公開退出理由的方式",
+        "action": "已向當事人提出私下更正管道，未替他公開心情",
+        "tradeoff": "減少人際壓力，製作者仍需配合"
+      },
+      {
+        "id": 4,
+        "short": "私下與代填名單的同學談授權觀念",
+        "action": "已提醒製作者不可代人同意，未公開指責",
+        "tradeoff": "減少再犯，未必立即修好已發布版本"
+      },
+      {
+        "id": 5,
+        "short": "請製作者核對不同版本的簽名及合照",
+        "action": "已提出核對印刷及電子版本，不保證都能撤回",
+        "tradeoff": "能找出殘留名字，增加處理成本"
+      },
+      {
+        "id": 6,
+        "short": "讓當事人自行選擇是否向朋友說明退出",
+        "action": "已提供個人說明的選項，未替學生宣告立場",
+        "tradeoff": "保留關係空間，誤解可能持續"
+      }
+    ],
+    "selectedIds": [
+      5,
+      3,
+      2
+    ],
+    "finalChoiceMap": {
+      "A": 5,
+      "B": 2,
+      "C": "emotional",
+      "D": 3
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提出核對印刷及電子版本，不保證都能撤回」，因此使「製作者能修正不實署名」有明確的推進路徑，較容易出現「未經同意的署名被更正，學生仍可自主致意。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提出核對印刷及電子版本，不保證都能撤回」後，「共同禮物名單存在代填同意，財務問題待釐清。」依然可能發生，且沒有取消該選項已做的事；但「未經本人同意的表單與費用被查明」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提出核對印刷及電子版本，不保證都能撤回」後，「退出共同禮物的學生遭到被誤認為不感謝教師。」依然可能發生，且沒有取消該選項已做的事；但「學生能澄清退出不等於不尊重老師」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提出核對印刷及電子版本，不保證都能撤回」，因此使「不同版本合照內的名字被追查」有明確的推進路徑，較容易出現「學生發現合照上仍留有未授權署名，需追查版本。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提出核對印刷及電子版本，不保證都能撤回」後，「朋友承認是好意代填，學生要求未來先詢問。」依然可能發生，且沒有取消該選項已做的事；但「代填的善意與本人授權被區分」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提出核對印刷及電子版本，不保證都能撤回」後，「禮物款項與代墊資訊尚未說清，須核對責任。」依然可能發生，且沒有取消該選項已做的事；但「共同禮物款項的責任被釐清」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已提出核對印刷及電子版本，不保證都能撤回」，因此使「學生不必為改署名而放棄全部回憶」有明確的推進路徑，較容易出現「學生要求保留回憶照片但修正不實署名。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已提出核對印刷及電子版本，不保證都能撤回」後，「學生選擇自行道謝，不以共同禮物表態。」依然可能發生，且沒有取消該選項已做的事；但「學生可自行選擇獨立致謝方式」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已詢問費用與名單來源，未臆測當事人欠款」後，「未經同意的署名被更正，學生仍可自主致意。」依然可能發生，且沒有取消該選項已做的事；但「製作者能修正不實署名」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已詢問費用與名單來源，未臆測當事人欠款」，因此使「未經本人同意的表單與費用被查明」有明確的推進路徑，較容易出現「共同禮物名單存在代填同意，財務問題待釐清。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已詢問費用與名單來源，未臆測當事人欠款」後，「退出共同禮物的學生遭到被誤認為不感謝教師。」依然可能發生，且沒有取消該選項已做的事；但「學生能澄清退出不等於不尊重老師」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已詢問費用與名單來源，未臆測當事人欠款」後，「學生發現合照上仍留有未授權署名，需追查版本。」依然可能發生，且沒有取消該選項已做的事；但「不同版本合照內的名字被追查」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已詢問費用與名單來源，未臆測當事人欠款」後，「朋友承認是好意代填，學生要求未來先詢問。」依然可能發生，且沒有取消該選項已做的事；但「代填的善意與本人授權被區分」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已詢問費用與名單來源，未臆測當事人欠款」，因此使「共同禮物款項的責任被釐清」有明確的推進路徑，較容易出現「禮物款項與代墊資訊尚未說清，須核對責任。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已詢問費用與名單來源，未臆測當事人欠款」後，「學生要求保留回憶照片但修正不實署名。」依然可能發生，且沒有取消該選項已做的事；但「學生不必為改署名而放棄全部回憶」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已詢問費用與名單來源，未臆測當事人欠款」後，「學生選擇自行道謝，不以共同禮物表態。」依然可能發生，且沒有取消該選項已做的事；但「學生可自行選擇獨立致謝方式」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓學生說出矛盾，未代替他決定是否署名」後，「未經同意的署名被更正，學生仍可自主致意。」依然可能發生，且沒有取消該選項已做的事；但「製作者能修正不實署名」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓學生說出矛盾，未代替他決定是否署名」後，「共同禮物名單存在代填同意，財務問題待釐清。」依然可能發生，且沒有取消該選項已做的事；但「未經本人同意的表單與費用被查明」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已讓學生說出矛盾，未代替他決定是否署名」，因此使「學生能澄清退出不等於不尊重老師」有明確的推進路徑，較容易出現「退出共同禮物的學生遭到被誤認為不感謝教師。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓學生說出矛盾，未代替他決定是否署名」後，「學生發現合照上仍留有未授權署名，需追查版本。」依然可能發生，且沒有取消該選項已做的事；但「不同版本合照內的名字被追查」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已讓學生說出矛盾，未代替他決定是否署名」，因此使「代填的善意與本人授權被區分」有明確的推進路徑，較容易出現「朋友承認是好意代填，學生要求未來先詢問。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓學生說出矛盾，未代替他決定是否署名」後，「禮物款項與代墊資訊尚未說清，須核對責任。」依然可能發生，且沒有取消該選項已做的事；但「共同禮物款項的責任被釐清」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已讓學生說出矛盾，未代替他決定是否署名」後，「學生要求保留回憶照片但修正不實署名。」依然可能發生，且沒有取消該選項已做的事；但「學生不必為改署名而放棄全部回憶」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已讓學生說出矛盾，未代替他決定是否署名」，因此使「學生可自行選擇獨立致謝方式」有明確的推進路徑，較容易出現「學生選擇自行道謝，不以共同禮物表態。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已向當事人提出私下更正管道，未替他公開心情」，因此使「製作者能修正不實署名」有明確的推進路徑，較容易出現「未經同意的署名被更正，學生仍可自主致意。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已向當事人提出私下更正管道，未替他公開心情」後，「共同禮物名單存在代填同意，財務問題待釐清。」依然可能發生，且沒有取消該選項已做的事；但「未經本人同意的表單與費用被查明」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已向當事人提出私下更正管道，未替他公開心情」後，「退出共同禮物的學生遭到被誤認為不感謝教師。」依然可能發生，且沒有取消該選項已做的事；但「學生能澄清退出不等於不尊重老師」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已向當事人提出私下更正管道，未替他公開心情」，因此使「不同版本合照內的名字被追查」有明確的推進路徑，較容易出現「學生發現合照上仍留有未授權署名，需追查版本。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已向當事人提出私下更正管道，未替他公開心情」，因此使「代填的善意與本人授權被區分」有明確的推進路徑，較容易出現「朋友承認是好意代填，學生要求未來先詢問。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "reason": "已完成「已向當事人提出私下更正管道，未替他公開心情」後，「禮物款項與代墊資訊尚未說清，須核對責任。」依然可能發生，且沒有取消該選項已做的事；但「共同禮物款項的責任被釐清」仍由其他人是否配合主導，無直接提高機率的依據。",
+      "actionPreserved": true,
+      "weight": 2
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已向當事人提出私下更正管道，未替他公開心情」，因此使「學生不必為改署名而放棄全部回憶」有明確的推進路徑，較容易出現「學生要求保留回憶照片但修正不實署名。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "reason": "已完成「已向當事人提出私下更正管道，未替他公開心情」，因此使「學生可自行選擇獨立致謝方式」有明確的推進路徑，較容易出現「學生選擇自行道謝，不以共同禮物表態。」。此促進不表示教師可代替相關人物做完後續事。",
+      "actionPreserved": true,
+      "weight": 4
+    }
+  ]
+}

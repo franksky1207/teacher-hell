@@ -238,3 +238,11 @@ T5-001～T5-138 共 138 篇均已針對開場 P、四選項 A～D、八結局 R1
 - T4 A: world projection scales actual teaching to three sources and quality to first two endpoints; prior background and annual grades do not score（test/three-year.test.js:34:1） — Expected values to be strictly equal: + actual - expected + 'rated' - 'synthetic'
 - T4 B: genuine three-mode openings preserve tenure and reject early completion without publishing partial data（test/three-year.test.js:57:1） — INVALID: Expected a finite number
 - T4 B: confirmed three-year stories retain their actual panel sources across later state changes（test/three-year.test.js:115:1） — INVALID: Expected a finite number
+
+## T1-001～072 短結局字數規格複核（2026-11-26）
+
+- 依唯一正式規範 `docs/story-production-v1/05-故事品質與驗收契約.md`，少於 70 字應優先複核、70～89 字須檢視人物反應及收束；**90 字是一般參考起點，不是強制最低字數**。
+- 經 `scripts/story-visible-length.js` 計算，576 個結果中有 **111 個低於 90 字**，已按故事 ID、結局、全文、實際字數及逐筆理由保存在 `reviews/stage5-story-audit/T1/short-result-review-*.json` 四份紀錄；本次 111 筆均判定合理保留，不以重複敘述補字。
+- 修正 `test/story-preview-t1-061-072.test.js`：取消舊的 `under90===0` 機械退件，改為逐筆核對短篇清單及文字專屬複核證據。若短篇被新增、刪除、改字、改標題或字數變化，測試均要求重建對應審查紀錄；仍保留 AVG 分頁、合法角色、結局文字一致等既有檢查。
+- 未修改任何故事正文、AVG、四碼、V3 或 4×8 權重；本次僅調整與正式規範不一致的字數硬斷言，不改其他回歸測試或流程。
+- **驗證邊界**：以 GitHub 原稿與審查證據做定向靜態核對，未在本輪執行完整本地 Node 測試或 GitHub Actions。短篇字數複核不取代第五階段原有 A／B 審查結論，也不保證 648 篇沒有未發現問題。

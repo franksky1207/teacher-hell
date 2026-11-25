@@ -3,7 +3,7 @@ import { validateOpeningSnapshot } from './schedule.js';
  * Crisis memory is an event-qualification observation, never a second teacher stat. */
 import { canonicalData } from '../changes/settlement.js';
 import { assertShape,ABILITY_NAMES,STATE_NAMES } from '../player/panel.js';
-import { worldCrisis,crisisFromStates } from '../assessment/crisis.js';
+import { worldCrisisStates,crisisFromStates } from '../assessment/crisis.js';
 import { deriveWorldPanel } from '../social/reputation.js';
 import { createId } from '../contracts/foundation.js';
 import { planMode,positionFor } from '../calendar/calendar.js';
@@ -21,11 +21,11 @@ export function initializeHomeroom(w){
 }
 export const failureResult=w=>r(w).history.find(h=>h.type==='annual-failure'&&h.data.year===w.position.serviceYear)??null;
 export function crisisObservation(w){
- const date=w.position.date,last=r(w).history.findLast(h=>h.type==='crisis-observation'),risk=worldCrisis(w.numeric.evolution.world);
+ const date=w.position.date,last=r(w).history.findLast(h=>h.type==='crisis-observation'),states=worldCrisisStates(w.numeric.evolution.world),risk=crisisFromStates(states);
  const elapsed=last?Math.max(0,dayNumber(date)-dayNumber(last.at.date)):0;
  // Two-week half life; recovery reduces current risk immediately, retained exposure gradually.
  const memory=(last?.data.memory??0)*2**(-elapsed/14)+(risk.compositeDepth+Object.values(risk.single).reduce((a,x)=>Math.max(a,x.depth),0))*Math.max(1,elapsed);
- const panel=deriveWorldPanel(w.numeric.evolution.world);return {version:1,states:Object.fromEntries(STATE_NAMES.map(k=>[k,panel[k]])),risk,memory};
+ return {version:1,states,risk,memory};
 }
 export function crisisContext(w){const observation=crisisObservation(w);return {...observation,ordinary:r(w).history.filter(h=>h.type==='homeroom-result'&&h.data.kind==='pressure').length};}
 export function homeroomBaseline(w){

@@ -7,7 +7,7 @@ import { runtimeOf,restoreWorldState,ATTEMPT_LINEAGE_KEY } from '../src/runtime/
 import { createSave,restoreSave } from '../src/storage/format.js';
 import { id,request,runtimeScenario } from './support/runtime.js';
 import { openProcedure,addEvidence,resolveCase,sourceFact } from './support/procedure-scenario.js';
-import { academicBaseline,applySchool } from './support/academic-scenario.js';
+import { assessAcademicRound,applySchool } from './support/academic-scenario.js';
 import { semester } from '../src/calendar/calendar.js';
 import { yearData } from '../src/calendar/calendar.js';
 import { eventWorld } from './support/event-fixtures.js';
@@ -24,15 +24,15 @@ test('annual: final examination day still runs every slot before the annual barr
  assert.throws(()=>apply(next,'not-end-of-day',[{type:'settle-school-year'}]),/June final/);
 });
 
-test('annual: real summer opening, twelve baseline values, strict versions and early settlement rejection',()=>{
+test('annual: real summer opening, ten baseline values, strict versions and early settlement rejection',()=>{
  let opening;const w=annualOpening({events:false,onOpening:x=>opening=x});
- assert.equal(w.position.date,'2026-07-20');assert.equal(Object.keys(w.extensions[ANNUAL_KEY].start.abilities).length,6);assert.equal(Object.keys(w.extensions[ANNUAL_KEY].start.states).length,6);
+ assert.equal(w.position.date,'2026-07-20');assert.equal(Object.keys(w.extensions[ANNUAL_KEY].start.abilities).length,6);assert.equal(Object.keys(w.extensions[ANNUAL_KEY].start.states).length,4);
  assert.deepEqual(restoreSave(JSON.stringify(createSave(w,opening))).world,w);
  assert.throws(()=>apply(w,'too-early',[{type:'settle-school-year'}]),/June final/);
  const bad=structuredClone(w);bad.extensions[ANNUAL_KEY].version=2;assert.throws(()=>restoreWorldState(bad),/unsupported annual/);
  assert.equal(annualEvidence(w).rating.status,'insufficient');assert.equal(annualEvidence(w).rating.score,null);
  assert.equal(annualEvidence(w).records.some(row=>row.kind==='completion'),false);
- const altered=structuredClone(w);altered.extensions[ANNUAL_KEY].start.states.體力--;assert.throws(()=>createSave(altered,opening),/Annual observation opening differs/);
+ const altered=structuredClone(w);altered.extensions[ANNUAL_KEY].start.states.掌控--;assert.throws(()=>createSave(altered,opening),/Retry baseline differs from annual history/);
 });
 
 test('annual: atomic ordered commands reproduce normal single-command execution and reject invalid tails',()=>{
@@ -75,7 +75,7 @@ test('annual: allegation or subjective complaint without competent result is nev
 
 test('annual: sparse-event academic development uses actual marks, credits and attendance without forcing success',()=>{
  let w=annualOpening({events:false});const meta=semester('2026:autumn');
- for(const round of [1,2,3,0]){w=academicBaseline(w,meta.exams[round===0?2:round-1].at(-1));w=applySchool(w,[{type:'academic',action:'assess',termId:meta.id,round}]);}
+ for(const round of [1,2,3,0])w=assessAcademicRound(w,round,meta.id);
  w=applySchool(w,[{type:'academic',action:'close',termId:meta.id}]);const evidence=annualEvidence(w);
  assert.equal(evidence.records.filter(row=>row.kind==='student').length,40);assert.equal(evidence.rating.status,'insufficient');
  assert.ok(evidence.records.filter(row=>row.kind==='student').every(row=>Number.isFinite(row.quality)&&row.accountability===100));
@@ -92,7 +92,7 @@ test('annual: import cannot erase retired attempts by stripping both derived lin
  const w=runtimeScenario(),options=tag=>({attemptId:id('attempt',tag),seeds:{settlement:33,streams:{events:44}}});
  const first=forkWorldAttempt(w,options('annual-first')),second=forkWorldAttempt(w,options('annual-second'),first);
  const bad=structuredClone(second);delete bad.extensions[ATTEMPT_LINEAGE_KEY];delete runtimeOf(bad).history.at(-1).data.attemptIds;
- assert.throws(()=>restoreSave({kind:'teacher-hell-save',version:1,world:bad,opening:w}),/lineage is missing/);
+ assert.throws(()=>restoreSave({kind:'teacher-hell-save',version:2,world:bad,opening:w}),/lineage is missing/);
 });
 
 test('annual: real choices in the same admitted story create different official snapshot evidence',()=>{
@@ -124,7 +124,7 @@ test('annual: placement is a ready school decision with genuine objection choice
  const {buildEventCandidates}=await import('../src/runtime/event-candidates.js');
  const {readArchivedClass}=await import('../src/runtime/views.js');
  const w=annualOpening({continuity:true,events:false}),definition=homeroomCatalogue().definitions.find(d=>d.id===PLACEMENT_STORY.definitionId);
- assert.equal(PLACEMENT_STORY.status,'ready');assert.deepEqual(PLACEMENT_STORY.stages[0].choices.map(o=>o.id),['accept','negotiate','refuse']);
+ assert.equal(PLACEMENT_STORY.status,'ready');assert.deepEqual(PLACEMENT_STORY.stages[0].choices.map(o=>o.id),['accept','negotiate','refuse','record']);
  assert.ok(PLACEMENT_STORY.stages[0].choices.some(o=>o.emotional));assert.ok(PLACEMENT_STORY.stages[0].choices.every(o=>!o.outcome.duty));
  assert.equal(buildEventCandidates(w,[definition]).candidates.length,0);
  assert.equal(readArchivedClass(w,w.numeric.evolution.world.classroom.id),null);

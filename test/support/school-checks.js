@@ -11,7 +11,7 @@ const check=(ok,label)=>{if(!ok)throw Error(label);};
 export async function schoolStorage(testId){
  const name=testId+'-school',db=createIndexedDBStorage({factory:globalThis.indexedDB,namespace:'test',testId:name});
  const f=foundationScenario(74);f.events=[];f.enrollments=[];
- const w=startSchoolCareer(f,{startYear:2026,subject:'國文',seed:75});
+ const w=startSchoolCareer(f,{startYear:2026,subject:'國文',seed:75,career:{version:2,mode:'three-year',difficulty:'hard',backgroundSeed:(75^0x54325032)>>>0}});
  const a=await createStoredSession(db,1);await a.initialize(w);const before=await db.read(1);
  const e=event(w,'school-browser');e.definitionId='procedure:school';e.participantIds=[w.identity.playerId,...w.numeric.evolution.world.classroom.studentIds];
  const cause=fact(e,'school-browser',{subjectIds:e.participantIds,witnessIds:[]});

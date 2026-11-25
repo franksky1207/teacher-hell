@@ -1,6 +1,6 @@
 import {restoreWorldState,findFact} from '../src/runtime/model.js';
 import {createId} from '../src/contracts/foundation.js';
-import {isCampOpeningPosition} from '../src/runtime/schedule.js';
+import {isCampOpeningPosition,formalSlot} from '../src/runtime/schedule.js';
 import {eventWorld} from './support/event-fixtures.js';
 import {academicAt} from './support/senior-academic.js';
 import {THREE_YEAR,positionFor,CALENDAR_VERSION,calendarDay} from '../src/calendar/calendar.js';
@@ -70,8 +70,8 @@ test('H5 notebook lists semesters chronologically and defaults to senior autumn,
 });
 
 test('H5 frozen senior summer mock is a legal first-slot transition and future timetable boundary',()=>{
- let w=eventWorld(74,null,null,{version:1,mode:THREE_YEAR,difficulty:'hard'});for(const date of ['2027-02-19','2027-09-01','2028-02-21'])w=academicAt(w,date);w=academicAt(w,'2028-07-24','morning');w=academicAt(w,'2028-07-23',calendarDay('2028-07-23',2,w.extensions['teacher-hell/world'].plan.calendarVersion).slots.at(-1).id);const c=progressionContext(w),p=c.plan;
- assert.equal(isCampOpeningPosition(p,{date:'2028-07-24',slotId:'morning'}),true);assert.equal(isCampOpeningPosition(p,{date:'2028-07-24',slotId:'early'}),false);assert.equal(isCampOpeningPosition(p,{date:'2028-07-24',slotId:'afternoon'}),false);
+ let w=eventWorld(74,null,null,{version:1,mode:THREE_YEAR,difficulty:'hard'});for(const date of ['2027-02-19','2027-09-01','2028-02-21'])w=academicAt(w,date);const mock=academicAt(w,'2028-07-27','morning');assert.equal(formalSlot(mock).slot.protected,true);w=academicAt(w,'2028-07-24','early');w=academicAt(w,'2028-07-23',calendarDay('2028-07-23',2,w.extensions['teacher-hell/world'].plan.calendarVersion).slots.at(-1).id);const c=progressionContext(w),p=c.plan;
+ assert.equal(isCampOpeningPosition(p,{date:'2028-07-24',slotId:'morning'}),false);assert.equal(isCampOpeningPosition(p,{date:'2028-07-24',slotId:'early'}),true);assert.equal(isCampOpeningPosition(p,{date:'2028-07-24',slotId:'afternoon'}),false);
  assert.equal(isCampOpeningPosition({...p,calendarVersion:CALENDAR_VERSION},{date:'2028-07-24',slotId:'early'}),true);
  assert.equal(p.tables.length,5);assert.throws(()=>academicAt(w,'2028-07-22'),/future semester|TIMETABLE/);
  const ready={...c,schoolEnabled:true,annualSettled:true,academicYear:2027,dayDrawn:true,slotComplete:true,catalogueIds:['entrance:guidance-v1']};assert.equal(planProgression(ready).request.operations[0].type,'transition-school-year');

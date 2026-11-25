@@ -32,7 +32,7 @@ test('npc: evidence clarification requires actual informed witness and contact, 
  const f=runtimeOf(w).facts[0];w=npcApply(w,[{type:'claim',id:claimId,versionId:'alternative',factId:f.id,statement:'另一項未查證說法。',sourceId:a},{type:'learn',actorId:a,claimId,versionId:'alternative',source:{kind:'observation',actorId:a,basisFactId:f.id},belief:'believed',confidence:.6}]);assert.equal(runtimeOf(w).knowledge.filter(k=>k.actorId===a&&k.belief==='believed').length,1);
 });
 test('npc: missing contact path cannot transmit and protected activities do no background work',async()=>{
- const {informationScenario}=await import('./support/npc-scenario.js'),{positionFor,cursorFor}=await import('../src/calendar/calendar.js');const {world:w}=informationScenario();const r=runtimeOf(w);w.position=positionFor('2026-11-20','p6',2026);r.plan.cursor=cursorFor(w.position.date,w.position.slotId,2026);assert.deepEqual(npcWork(w),[]);assert.equal(compileNpcUpdate(w).decisions.length,0);
+ const {informationScenario}=await import('./support/npc-scenario.js'),{positionFor,cursorFor}=await import('../src/calendar/calendar.js');const {world:w}=informationScenario();const r=runtimeOf(w);w.position=positionFor('2026-11-11','morning',2026);r.plan.cursor=cursorFor(w.position.date,w.position.slotId,2026);assert.deepEqual(npcWork(w),[]);assert.equal(compileNpcUpdate(w).decisions.length,0);
 });
 test('npc: former pupils and private-life NPCs keep identity and have contact-driven lightweight continuation',()=>{
  let {world:w,a,b,conflictId,contactId}=peerScenario();
@@ -83,12 +83,11 @@ test('npc: witnessed version-specific evidence may support and later refute a ru
  assert.throws(()=>npcApply(w,[{type:'npc-clarify',sourceId:b,toId:a,claimId,versionId:'original',contactId,evidence:{factId:'fact:["evidence-rejected"]',conclusion:'rejected'}}]));
 });
 
-test('npc: retained pre-opening social history audits its recorded attempt after a new attempt is initialized',async()=>{
- // Engineering retry-carrier test only; the real later-year terminal is in demo:career.
+test('npc: formal retry rejects an opening snapshot with first-day social history',async()=>{
  const {forkWorldAttempt}=await import('../src/runtime/transactions.js');const {createId}=await import('../src/contracts/foundation.js');
- const {world}=peerScenario(),w=npcApply(world,[{type:'npc-update'}]),before=clone(runtimeOf(w).history);
- const next=forkWorldAttempt(w,{attemptId:createId('attempt',['retained-npc-audit']),seeds:{settlement:31,streams:Object.fromEntries(Object.keys(w.random).map(k=>[k,32]))}});
- assert.deepEqual(runtimeOf(next).history.slice(0,before.length),before);assert.notEqual(next.identity.attemptId,w.identity.attemptId);assert.doesNotThrow(()=>restoreWorldState(next));
+ const {world}=peerScenario(),w=npcApply(world,[{type:'npc-update'}]),before=clone(w);
+ assert.throws(()=>forkWorldAttempt(w,{attemptId:createId('attempt',['retained-npc-audit']),seeds:{settlement:31,streams:Object.fromEntries(Object.keys(w.random).map(k=>[k,32]))}}),/Initial opening snapshot precedes the first world action/);
+ assert.deepEqual(w,before);assert.deepEqual(restoreWorldState(w),before);
 });
 
 test('npc: historical audit accepts deeply frozen evidence without modifying any shared source',()=>{

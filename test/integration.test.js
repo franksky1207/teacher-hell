@@ -8,6 +8,7 @@ import { startEvolution,nextGameDate } from '../src/evolution/time.js';
 import { startSettlement,settleResult,advanceSettlementDay,createSettlementSession,restoreSettlement,restoreSettlementCheckpoint,canonicalData } from '../src/changes/settlement.js';
 import { registerPersonEvaluation } from '../src/social/reputation.js';
 import { addSyntheticCohort } from '../simulation/fixtures.js';
+import { syntheticCurrentWorld } from './support/synthetic-current-world.js';
 const player=confirmCandidate(createCandidate({seed:6,playerId:'teacher',schoolId:'school'}));
 const make=()=>createWorld({seed:7,player});
 const natural=date=>({date,schoolYearId:'Y1',openingId:'O1',serviceYear:1});
@@ -99,12 +100,11 @@ test('unrelated NPCs, JSON key order and private-session imports do not change e
 });
 
 test('synthetic low/high current baselines never alter the validated new-career archive',async()=>{
-  const {syntheticWorld}=await import('../simulation/durability.js');
   const {derivePanel,ABILITY_NAMES,STATE_NAMES}=await import('../src/player/panel.js');
   for(const profile of ['low','high','negative','recovery']) {
-    const world=syntheticWorld(40,profile),panel=derivePanel(world.player.initial);
+    const world=syntheticCurrentWorld(40,profile),panel=derivePanel(world.player.initial);
     assert.equal(ABILITY_NAMES.reduce((sum,name)=>sum+panel[name],0),240);
-    assert.deepEqual(STATE_NAMES.map(n=>panel[n]),[100,100,100,40,100,100]);
+    assert.deepEqual(STATE_NAMES.map(n=>panel[n]),[100,100,100,100]);
   }
 });
 

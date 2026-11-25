@@ -3,6 +3,7 @@ import { createRandom } from '../../src/numeric/random.js';
 import { beginDemo,apply,storyAction,advanceDemo } from './story-scenario.js';
 import { eventWorld } from './event-fixtures.js';
 import { readStory } from '../../src/runtime/story.js';
+import { isFormal } from '../../src/runtime/schedule.js';
 import { runtimeOf,restoreWorldState } from '../../src/runtime/model.js';
 import { createId } from '../../src/contracts/foundation.js';
 import { prepareWorldOperation } from '../../src/runtime/transactions.js';
@@ -30,7 +31,7 @@ export function npcReport(w){
  const d=definition('test:npc-followup');d.topicId='E02-01';d.eligibility.facts=updates.flatMap(h=>h.data.decisions.filter(d=>d.factId).map(d=>({id:d.factId,participant:true}))).slice(0,1);
  const before=JSON.stringify(w),restored=restoreWorldState(before);
  const request=JSON.parse(r.commits.at(-1).request),resend=prepareWorldOperation(restored,request);
- return {resend:resend.duplicate&&JSON.stringify(resend.world)===before,knowledge:r.knowledge.map(k=>({actorId:k.actorId,claimId:k.claimId,versionId:k.versionId,source:k.source,belief:k.belief})),consequences:r.history.filter(h=>h.type==='effect'&&w.events.find(e=>e.id===h.eventId)?.definitionId==='procedure:npc-social').map(h=>h.data.observed),objectiveActions:r.facts.filter(f=>f.data.type?.startsWith('npc-')).map(f=>({id:f.id,description:f.description,data:f.data,causeIds:f.causeIds})),position:w.position,decisions:updates.flatMap(h=>h.data.decisions),player:readPlayerView(w),candidateCount:r.plan.validation==='fixed-calendar-v1'?buildEventCandidates(w,[d],{engineering:true}).candidates.length:null,restored:JSON.stringify(restored)===before,formalSelections:r.history.filter(h=>h.type==='event-selection').length,numericReceipts:w.numeric.receipts.length};
+ return {resend:resend.duplicate&&JSON.stringify(resend.world)===before,knowledge:r.knowledge.map(k=>({actorId:k.actorId,claimId:k.claimId,versionId:k.versionId,source:k.source,belief:k.belief})),consequences:r.history.filter(h=>h.type==='effect'&&w.events.find(e=>e.id===h.eventId)?.definitionId==='procedure:npc-social').map(h=>h.data.observed),objectiveActions:r.facts.filter(f=>f.data.type?.startsWith('npc-')).map(f=>({id:f.id,description:f.description,data:f.data,causeIds:f.causeIds})),position:w.position,decisions:updates.flatMap(h=>h.data.decisions),player:readPlayerView(w),candidateCount:isFormal(r.plan)?buildEventCandidates(w,[d],{engineering:true}).candidates.length:null,restored:JSON.stringify(restored)===before,formalSelections:r.history.filter(h=>h.type==='event-selection').length,numericReceipts:w.numeric.receipts.length};
 }
 export function informationScenario(seed=1){
  let {world:w,a,b,conflictId,contactId}=peerScenario(seed);const claimId=createId('claim',[conflictId]);

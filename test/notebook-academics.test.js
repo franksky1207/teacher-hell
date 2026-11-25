@@ -28,7 +28,8 @@ test('14-D: closed academic semester remains computed but release is deferred in
  assert.ok(result.semester.courses.length>0);
  assert.equal(data.pendingPublication,true);
  assert.equal(data.transcript.closed,false);
- assert.equal(data.transcript.assessments.length,4);
+ assert.equal(data.transcript.assessments.length,3);
+ assert.equal(data.transcript.assessments.find(a=>a.round===0).marks,null);
  assert.deepEqual(data.transcript.courses,[]);
  assert.equal(data.qualification,null);
  assert.match(renderNotebookAcademics(data),/尚未完成正式公布/);
@@ -48,10 +49,10 @@ test('14-D: render only public projection and escape names and subject text',()=
  assert.match(html,/data-action="notebook-academic-student:x:1"/);
 });
 
-test('14-D: score publication begins the next calendar day for all three exam rounds',()=>{
+test('14-D: score publication follows the dates assigned by the three-year calendar',()=>{
  for(const [last,next,round] of [
   ['2026-10-06','2026-10-07',1],
-  ['2026-12-01','2026-12-02',2],
+  ['2026-12-06','2026-12-07',2],
   ['2027-01-22','2027-01-23',3]
  ]){
   assert.equal(isExamScorePublished('2026:autumn',1,round,last),false);
@@ -67,7 +68,7 @@ test('14-D: term close on final day keeps third exam, term mark and credits undi
  assert.equal(complete.position.date,'2027-01-22');
  assert.equal(onFinal.pendingPublication,true);
  assert.equal(onFinal.transcript.closed,false);
- assert.equal(onFinal.transcript.assessments.find(a=>a.round===3)?.marks,null);
+ assert.equal(onFinal.transcript.assessments.find(a=>a.round===3)?.marks,undefined);
  assert.ok(onFinal.transcript.assessments.find(a=>a.round===1)?.marks);
  assert.deepEqual(onFinal.transcript.courses,[]);
  assert.equal(onFinal.qualification,null);

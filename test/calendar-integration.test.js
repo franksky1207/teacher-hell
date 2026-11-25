@@ -18,13 +18,15 @@ import { generateTimetable } from '../src/calendar/timetable.js';
 import { schoolCatalogue } from '../src/world/registry.js';
 import { SUBJECT_LOAD } from '../src/calendar/timetable.js';
 function t1Foundation(){const f=foundationScenario(74);f.events=[];f.enrollments=[];return f;}
-function t1World(difficulty='easy',taipeiDate='2026-11-05'){const {startYear}=newThreeYearStart(taipeiDate);return startFailureSchoolCareer(t1Foundation(),{startYear,subject:'國文',seed:75,career:{version:1,mode:THREE_YEAR,difficulty}});}
+function t1World(difficulty='easy',taipeiDate='2026-11-05'){
+ return startThreeYearSchoolCareer(t1Foundation(),{taipeiDate,difficulty,subject:'國文',seed:75});
+}
 
-test('calendar-integration T1: all difficulties create play year one with no veteran awards, histories or relations',()=>{
+test('calendar-integration T1: all difficulties start play year one without completed gameplay or annual awards',()=>{
  const old=t1World('hard');
  for(const [difficulty,tenure] of Object.entries(DIFFICULTY_TENURE)){
   const w=t1World(difficulty),r=runtimeOf(w);assert.equal(planMode(r.plan),THREE_YEAR);assert.equal(w.position.serviceYear,1);assert.equal(w.numeric.evolution.world.player.year,1);assert.equal(teacherTenure(w),tenure);
-  assert.deepEqual(w.numeric,old.numeric);assert.deepEqual(w.enrollments,old.enrollments);assert.deepEqual(w.events,[]);assert.equal(r.history.length,1);assert.equal(r.commits.length,1);assert.equal(w.numeric.receipts.length,0);assert.equal(w.numeric.evolution.clock.lastNaturalDate,null);
+  assert.deepEqual(w.enrollments,old.enrollments);assert.deepEqual(w.events,[]);assert.equal(r.history.length,1);assert.equal(r.commits.length,1);assert.equal(w.numeric.receipts.length,0);assert.equal(w.numeric.evolution.clock.lastNaturalDate,null);
   assert.equal(r.history.some(h=>['annual-success','academic-opening','cohort-completion','career-completion'].includes(h.type)),false);
   assert.deepEqual(restoreWorldState(JSON.stringify(w)),w);
   const next=prepareWorldOperation(w,advanceRequest(w,'t1-'+difficulty)).world;assert.equal(teacherTenure(next),tenure);assert.equal(next.position.serviceYear,1);
@@ -64,14 +66,14 @@ test('calendar-integration T1: creation dates keep the fixed 2026 opening and ti
 test('calendar-integration T1: forged difficulty, tenure, mode and twentieth play year are rejected',()=>{
  for(const mutate of [
   w=>runtimeOf(w).plan.career.difficulty='normal',w=>runtimeOf(w).plan.career.difficulty=['easy'],w=>runtimeOf(w).plan.career.initialTenure=20,
-  w=>runtimeOf(w).plan.career.mode='career-30',w=>runtimeOf(w).plan.career.version=2,
+  w=>runtimeOf(w).plan.career.mode='career-30',w=>runtimeOf(w).plan.career.version=1,
   w=>delete runtimeOf(w).plan.career,w=>runtimeOf(w).plan.validation='fixed-calendar-v1',
   w=>w.position.serviceYear=20,w=>w.numeric.evolution.world.player.year=20,
   w=>{const p=runtimeOf(w).plan;p.career.difficulty='normal';p.id=p.id.replace(':easy',':normal');},
   w=>{const p=runtimeOf(w).plan;delete p.career;p.validation='fixed-calendar-v1';p.id=p.id.replace(':three-year:easy','');},
   w=>runtimeOf(w).plan.startYear=2027,w=>runtimeOf(w).plan.calendarVersion='future',
  ]){const w=t1World();mutate(w);assert.throws(()=>restoreWorldState(w));}
- const save=createSave(t1World(),t1World());save.world= t1World('normal');assert.throws(()=>restoreSave(save),/SNAPSHOT/);
+ const save=createSave(t1World(),t1World());save.world= t1World('normal');assert.throws(()=>restoreSave(save),/Retry baseline differs from annual history/);
  assert.throws(()=>startFailureSchoolCareer(t1Foundation(),{startYear:2026,subject:'國文',seed:75}),/MODE/,'Legacy mode without three-year identity is forbidden');
 });
 
@@ -92,7 +94,7 @@ test('calendar-integration T2: real seeded openings preserve novice contracts, s
   assert.deepEqual(n.random,ordinary.random);assert.deepEqual(w.random,hard.random);assert.deepEqual(w.numeric.random,hard.numeric.random);assert.deepEqual(w.numeric.evolution.random,hard.numeric.evolution.random);assert.deepEqual(n.player.random,ordinary.player.random);
   const table=r.plan.tables[0];assert.equal(table.lessons.length,18);assert.ok(table.lessons.some(l=>l.classId===table.homeClassId));assert.deepEqual(table,runtimeOf(hard).plan.tables[0]);
   assert.deepEqual(n.registry.assignments,ordinary.registry.assignments);validateWorld(n,{stage:'runtime'});
-  if(difficulty==='hard'){assert.equal(n.player.version,1);assert.equal(n.background,undefined);assert.deepEqual(STATE_NAMES.map(k=>p[k]),[100,100,100,40,100,100]);assert.equal(ABILITY_NAMES.reduce((s,k)=>s+p[k],0),240);}
+  if(difficulty==='hard'){assert.equal(n.player.version,1);assert.equal(n.background,undefined);assert.deepEqual(STATE_NAMES.map(k=>p[k]),[100,100,100,100]);assert.equal(ABILITY_NAMES.reduce((s,k)=>s+p[k],0),240);}
   else{
    assert.equal(n.player.version,2);assert.equal(n.background.episodes.length,difficulty==='normal'?4:6);assert.deepEqual(p,derivePanel(n.player.initial));assert.notDeepEqual(p,deriveWorldPanel(ordinary));
    assert.equal(n.player.current.evaluations.length,3);assert.equal(Object.keys(n.contacts).length,Object.keys(ordinary.contacts).length+3);

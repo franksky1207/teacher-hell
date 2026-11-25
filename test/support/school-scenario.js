@@ -20,9 +20,9 @@ export const enter=(classId,personId=null,action='transfer-in')=>({type:'school-
 /** Engineering date baselines only: retain identity and history, do not claim daily gameplay. */
 export function longPlan(w){
  const positions=[];for(let date=w.position.date;date<=careerRange(2026).end;date=addDays(date,1)){
-  const p=date===w.position.date?structuredClone(w.position):positionFor(date,calendarDay(date,gradeAt(date,2026)).slots[0].id,2026);if(p.serviceYear===1){p.schoolYearId=w.position.schoolYearId;p.openingId=w.position.openingId;}if(p.serviceYear<=30)positions.push(p);
+  const p=date===w.position.date?structuredClone(w.position):positionFor(date,calendarDay(date,gradeAt(date,2026)).slots[0].id,2026);if(p.serviceYear===1){p.schoolYearId=w.position.schoolYearId;p.openingId=w.position.openingId;}positions.push(p);
  }
- runtimeOf(w).plan={id:'synthetic-school-thirty-year-baselines',validation:'unverified',positions,cursor:0};w.position=structuredClone(positions[0]);
+ runtimeOf(w).plan={id:'synthetic-school-three-year-baselines',validation:'unverified',positions,cursor:0};w.position=structuredClone(positions[0]);
  Object.assign(w.numeric.evolution.clock,{date:w.position.date,schoolYearId:w.position.schoolYearId,openingId:w.position.openingId,lastNaturalDate:null});return restoreWorldState(w);
 }
 export function baseline(w,date){

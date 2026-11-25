@@ -9,7 +9,7 @@ import { failureResult,crisisContext } from '../../src/runtime/homeroom.js';
 import { readStory } from '../../src/runtime/story.js';
 import { schoolActions } from '../../src/runtime/campus.js';
 import { formalSlot } from '../../src/runtime/schedule.js';
-export function failureOpening(seed=1){const f=foundationScenario(74);f.events=[];f.enrollments=[];f.random.events=createRandom(seed).snapshot();return startFailureSchoolCareer(f,{startYear:2026,subject:'國文',seed:75});}
+export function failureOpening(seed=1){const f=foundationScenario(74);f.events=[];f.enrollments=[];f.random.events=createRandom(seed).snapshot();return startFailureSchoolCareer(f,{startYear:2026,subject:'國文',seed:75,career:{version:2,mode:'three-year',difficulty:'hard',backgroundSeed:(75^0x54325032)>>>0}});}
 export function failureRequest(w,operations,kind='formal-event'){return {id:createId('operation',[w.identity.attemptId,'failure-driver',String(runtimeOf(w).revision)]),attemptId:w.identity.attemptId,expectedRevision:runtimeOf(w).revision,actorId:w.identity.playerId,preconditions:[],calendarContext:{kind},operations};}
 export const failureApply=(w,operations,kind)=>prepareWorldOperation(w,failureRequest(w,operations,kind)).world;
 export function catalogueFor(mode,id='homeroom:'+mode){const c=homeroomCatalogue();c.catalogueId=id;c.definitions=c.definitions.filter(d=>mode==='all'||(mode==='social'?d.id.includes('replacement'):mode==='pressure'?d.id.includes('ordinary-pressure'):mode==='burnout'?d.id.includes('exhaustion'):mode==='support'?d.id.includes('crisis-support'):d.id.includes('exhaustion')||d.id.includes('crisis-support')));c.bindings=c.bindings.filter(b=>c.definitions.some(d=>d.id===b.definitionId));return c;}

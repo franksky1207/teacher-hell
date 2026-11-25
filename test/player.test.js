@@ -24,7 +24,7 @@ test('all 12 source lists and inverse directions match the formal document exact
   const text = readFileSync(new URL('../docs/02-隱藏數值與事件引擎.md', import.meta.url), 'utf8');
   let count = 0;
   for (const [name, entries] of Object.entries(PANEL_SOURCES)) {
-    const line = text.split('\n').find(line => line.startsWith(`| ${name} |`) && /\d+-\d/.test(line));
+    const line = text.split('\n').find(line => line.startsWith(`| ${name === "掌控" ? "體力" : name} |`) && /\d+-\d/.test(line));
     assert.ok(line);
     const expected = [...line.matchAll(/(\d+-\d)(（反向）)?/g)].map(([,code,reverse]) => [code,Boolean(reverse)]);
     assert.deepEqual(entries.map(([,code,,reverse]) => [code,reverse]), expected);
@@ -169,8 +169,8 @@ test('candidate rerolls, confirmation, reload replay and initial/current separat
   future.year = 2;
   const restored = restoreCreation(future);
   assert.notEqual(abilityTotal(derivePanel(restored.current)), 240);
-  assert.equal(derivePanel(restored.initial).體力, 100);
-  assert.ok(derivePanel(restored.current).體力 < 100);
+  assert.equal(derivePanel(restored.initial).掌控, 100);
+  assert.ok(derivePanel(restored.current).掌控 < 100);
   assert.throws(() => { restored.initial.person['3-1']=0; });
   for (const change of [s=>{s.version=2;},s=>{s.phase='other';},s=>{s.random.state=-1;},s=>{s.candidate.person['3-1']=0;},s=>{s.candidate.person['2-3']=1;},s=>{s.panel={};}]) {
     const s=clone(first); change(s); assert.throws(() => restoreCreation(s));

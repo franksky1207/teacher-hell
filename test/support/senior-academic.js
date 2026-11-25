@@ -5,7 +5,7 @@ import {request} from './runtime.js';
 import {runtimeOf,restoreWorldState} from '../../src/runtime/model.js';
 import {prepareWorldOperation,prepareWorldSequence} from '../../src/runtime/transactions.js';
 import {academicState} from '../../src/runtime/academics.js';
-import {calendarDay,gradeAt,positionFor,cursorFor,latestPreparedSemester,semester,examSchedule,THREE_YEAR} from '../../src/calendar/calendar.js';
+import {calendarDay,gradeAt,positionFor,cursorFor,latestPreparedSemester,semester,examSchedule,assessmentCalendar,THREE_YEAR} from '../../src/calendar/calendar.js';
 import {generateTimetable} from '../../src/calendar/timetable.js';
 import {schoolCatalogue,applySchoolOperation} from '../../src/world/registry.js';
 export function academicApply(w,ops,tag='h2'){return prepareWorldOperation(w,{...request(w,tag+'-'+runtimeOf(w).revision,ops),calendarContext:{kind:'routine'}}).world;}
@@ -29,7 +29,18 @@ export function fiveTerms(){
  }
  cached=w;return structuredClone(w);
 }
-export function seniorMarks(){let w=academicAt(fiveTerms(),'2029-02-19');w=academicApply(w,[{type:'academic',action:'open'}]);w=academicAt(w,'2029-04-06','p8');w=academicApply(w,[{type:'academic',action:'assess',round:1}]);w=academicAt(w,'2029-05-08','p8');return academicApply(w,[{type:'school-action',activity:'automatic'}]);}
+export function seniorMarks(){
+ const termId='2029:spring',policy=assessmentCalendar(termId,3);
+ let w=academicAt(fiveTerms(),semester(termId).start);
+ w=academicApply(w,[{type:'academic',action:'open'}]);
+ w=academicAt(w,policy.exams[0].dates.at(-1),'p8');
+ w=academicApply(w,[{type:'academic',action:'assess',round:1}]);
+ w=academicAt(w,policy.marksCloseDate,'p8');
+ for(const activity of ['automatic','automatic','supervise','supervise','supervise']){
+  w=academicApply(w,[{type:'school-action',activity}]);
+ }
+ return w;
+}
 /** Execute every legal slot from May 8 to May 31 using the existing draft owner. */
 export function throughMay(w,{stopBeforeReview=false}={}){return prepareWorldSequence(w,c=>{
  if(c.position.date>'2029-05-31'||stopBeforeReview&&c.position.date==='2029-05-31'&&c.position.slotId==='private')return null;

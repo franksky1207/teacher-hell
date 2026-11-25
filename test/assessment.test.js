@@ -4,7 +4,6 @@ import assert from 'node:assert/strict';
 import { performance } from 'node:perf_hooks';
 import { weightedMean } from '../src/numeric/math.js';
 import { createRandom } from '../src/numeric/random.js';
-import { STATE_NAMES } from '../src/player/panel.js';
 import { createCandidate,confirmCandidate } from '../src/player/creation.js';
 import { createWorld } from '../src/world/world.js';
 import { directedKey } from '../src/world/relationships.js';
@@ -18,7 +17,8 @@ import { rateAnnual } from '../src/assessment/annual.js';
 import { rateThreeYearCareer } from '../src/assessment/career.js';
 
 const copy=x=>structuredClone(x);
-const states=n=>Object.fromEntries(STATE_NAMES.map(name=>[name,n]));
+const CRISIS_NAMES=['掌控','精神','抗壓','聲望','熱忱','情緒'];
+const states=n=>Object.fromEntries(CRISIS_NAMES.map(name=>[name,n]));
 const player=confirmCandidate(createCandidate({seed:3,playerId:'teacher',schoolId:'school'}));
 const make=()=>createWorld({seed:9,player});
 /** Synthetic evidence authority only. No fixture claims real events or game outcomes. */
@@ -33,7 +33,7 @@ test('crisis fixed weights, exact bands, parallel single thresholds and external
     assert.equal(crisisBand(value),band);
     if(value>0&&value<100) {assert.equal(crisisBand(value+1e-10),band);assert.notEqual(crisisBand(value-1e-10),band);}
   }
-  for(const name of STATE_NAMES) {
+  for(const name of CRISIS_NAMES) {
     const at=states(100);at[name]=CRISIS_THRESHOLDS[name];
     assert.equal(crisisFromStates(at).single[name].hit,true);
     at[name]+=1e-10;assert.equal(crisisFromStates(at).single[name].hit,false);
@@ -41,7 +41,7 @@ test('crisis fixed weights, exact bands, parallel single thresholds and external
   }
   const low=states(100);low.聲望=0;const risk=crisisFromStates(low);
   assert.equal(risk.score,95);assert.equal(risk.band,'一般');assert.equal(risk.single.聲望.category,'external');
-  assert.ok(STATE_NAMES.filter(n=>n!=='聲望').every(n=>!risk.single[n].hit));
+  assert.ok(CRISIS_NAMES.filter(n=>n!=='聲望').every(n=>!risk.single[n].hit));
   const zero=crisisFromStates(states(0));assert.equal(zero.score,0);assert.ok(Object.values(zero.single).every(s=>s.hit));assert.ok(!Object.hasOwn(zero,'gameOver'));
   for(const n of [NaN,Infinity,-1,101])assert.throws(()=>crisisFromStates(states(n)));
   assert.throws(()=>crisisFromStates({...states(50),教學能力:100}));
@@ -76,7 +76,7 @@ test('N4 evolution and N6 confirmed impacts/recovery rederive risk without mutat
   const saved=JSON.stringify(s),risk=worldCrisis(s.evolution.world);
   for(let i=0;i<10;i++)assert.deepEqual(worldCrisis(s.evolution.world),risk);
   assert.equal(JSON.stringify(s),saved);assert.deepEqual(worldCrisis(restoreSettlement(saved).evolution.world),risk);
-  const snap=captureAssessment(s.evolution.world,{id:'snapshot',provenance:'synthetic',attemptId:s.attemptId});assert.equal(snap.states.聲望,deriveWorldPanel(s.evolution.world).聲望);
+  const snap=captureAssessment(s.evolution.world,{id:'snapshot',provenance:'synthetic',attemptId:s.attemptId});assert.equal(snap.states.掌控,deriveWorldPanel(s.evolution.world).掌控);
 });
 
 test('raw grade boundaries never use display rounding; development rewards actual change and high maintenance',()=>{
@@ -129,9 +129,9 @@ test('annual evidence number is normalized, responsibility matters, and reused p
   const a={...f.records.get('outcome:1:handling'),quality:100,completion:100,accountability:100,responsibility:1};
   const b={...a,quality:0,completion:0,accountability:0,responsibility:.1};assert.ok(outcomeScore([a,b])>90);
   const originalRelations=baseline.parts.relationships;
-  f.records.get('end:1').states.聲望=0;const changed=rateAnnual('year:1',f.source);
+  f.records.get('end:1').states.掌控=0;const changed=rateAnnual('year:1',f.source);
   assert.equal(changed.parts.relationships,originalRelations);assert.ok(changed.parts.states<baseline.parts.states);
-  assert.throws(()=>{f.records.get('end:1').states.聲望=NaN;rateAnnual('year:1',f.source);});
+  assert.throws(()=>{f.records.get('end:1').states.掌控=NaN;rateAnnual('year:1',f.source);});
 });
 
 test('career N7 requires three legal years and one cohort; the six score budgets remain intact',()=>{
@@ -149,7 +149,7 @@ test('career N7 requires three legal years and one cohort; the six score budgets
 test('100,000 seeded state vectors are monotone, bounded, repeatable and preserve independent threshold signals',t=>{
   const rng=createRandom(20261101),bands={},began=performance.now();let sum=0,min=100,max=0,parallel=0;
   for(let i=0;i<100000;i++) {
-    const s=Object.fromEntries(STATE_NAMES.map(name=>[name,rng.uniform(0,100)])),risk=crisisFromStates(s),name=STATE_NAMES[i%6];
+    const s=Object.fromEntries(CRISIS_NAMES.map(name=>[name,rng.uniform(0,100)])),risk=crisisFromStates(s),name=CRISIS_NAMES[i%CRISIS_NAMES.length];
     sum+=risk.score;min=Math.min(min,risk.score);max=Math.max(max,risk.score);bands[risk.band]=(bands[risk.band]??0)+1;
     parallel+=risk.band==='一般'&&Object.values(risk.single).some(x=>x.hit);
     const higher={...s,[name]:Math.min(100,s[name]+5)},next=crisisFromStates(higher);
@@ -216,8 +216,8 @@ test('adjacent representable thresholds and 200,000 integer vectors agree with e
   }
   const rng=createRandom(66);
   for(let i=0;i<200000;i++) {
-    const s=Object.fromEntries(STATE_NAMES.map(name=>[name,rng.integer(0,100)]));
-    const exact=STATE_NAMES.reduce((total,name)=>total+s[name]*CRISIS_WEIGHTS[name],0)/100;
+    const s=Object.fromEntries(CRISIS_NAMES.map(name=>[name,rng.integer(0,100)]));
+    const exact=CRISIS_NAMES.reduce((total,name)=>total+s[name]*CRISIS_WEIGHTS[name],0)/100;
     assert.equal(crisisFromStates(s).band,crisisBand(exact));
   }
 });

@@ -19,7 +19,7 @@ test('failure: real healthy teacher, notice, cross-day executed unfair replaceme
  const notice=runtimeOf(w).history.find(h=>h.type==='homeroom-result'&&h.data.kind==='notice');assert.ok(notice.at.date<h.at.date);assert.equal(h.data.kinds[0],'replaced');assert.equal(h.data.score,null);assert.equal(h.data.grade,null);
  assert.equal(runtimeOf(w).history.filter(h=>h.type==='annual-failure').length,1);assert.equal(runtimeOf(w).history.some(h=>h.type==='annual-success'),false);
  const baseline=w.extensions[HOMEROOM_KEY],a=w.numeric.evolution.world.registry.assignments.find(a=>a.id===baseline.assignmentId);assert.equal(a.until,h.at.date);assert.equal(w.numeric.evolution.world.player.year,1);assert.equal(w.numeric.evolution.world.classroom.studentIds.length,40);
- const visible=readAnnualFailure(w);assert.equal(Object.keys(visible.comparison).length,12);for(const k of ['memory','risk','sourceHistoryIds','attemptId','playerId','factIds'])assert.equal(k in visible,false);assert.match(visible.summary,/爭議/);
+ const visible=readAnnualFailure(w);assert.equal(Object.keys(visible.comparison).length,10);for(const k of ['memory','risk','sourceHistoryIds','attemptId','playerId','factIds'])assert.equal(k in visible,false);assert.match(visible.summary,/爭議/);
  const last=JSON.parse(runtimeOf(w).commits.at(-1).request);assert.equal(prepareWorldOperation(w,last).duplicate,true);
  for(const ops of [[{type:'advance-time',planId:runtimeOf(w).plan.id,steps:1}],[{type:'settle-school-year'}],[{type:'sample',stream:'events',id:'after-failure',weights:[1]}]])assert.throws(()=>prepareWorldOperation(w,failureRequest(w,ops,'routine')),{code:'YEAR_FAILED'});
 });

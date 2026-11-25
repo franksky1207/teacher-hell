@@ -40,7 +40,7 @@ test('T4 A: world projection scales actual teaching to three sources and quality
  const e=careerEvidence(w,{years:3}),s=e.sources.find(s=>s.criterion==='three-year-confirmed-teaching-responsibility');
  assert.equal(s.outcomeRefs.length,3);assert.equal(e.sources.filter(s=>s.criterion==='historical-six-state-endpoint').length,2);
  const rate=x=>{const e=careerEvidence(x,{years:3});return rateThreeYearCareer({yearRefs:e.yearRefs,cohortRefs:e.cohortRefs},e.source);};
- const before=rate(w);assert.equal(before.status,'synthetic');
+ const before=rate(w);assert.equal(before.status,'rated');
  w.numeric.evolution.world.background={inventedPastAnnualGrades:Array(19).fill('SS')};
  for(const h of runtimeOf(w).history.filter(h=>h.type==='annual-success'))h.data.evidence.rating={score:0,grade:'F'};
  assert.deepEqual(rate(w),before);assert.throws(()=>restoreWorldState(w)); // Explicit contract double, never a production source.
@@ -121,6 +121,6 @@ test('T4 B: confirmed three-year stories retain their actual panel sources acros
  // A later state cannot be used to reconstruct the earlier clamped panel delta.
  const probe=structuredClone(w);probe.numeric.evolution.world.player.current.life['7-4']=0;
  assert.doesNotThrow(()=>restoreWorldState(probe));
- const bad=structuredClone(w);runtimeOf(bad).history.find(h=>h.id===confirmed.id).data.state.panelDelta.體力++;
+ const bad=structuredClone(w);runtimeOf(bad).history.find(h=>h.id===confirmed.id).data.state.panelDelta.掌控++;
  assert.throws(()=>restoreWorldState(bad),/illegal story/);
 });

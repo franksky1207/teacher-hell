@@ -47,7 +47,7 @@ test('H4 one weekly operation traverses original slots and emits one summary, wi
  const bad=structuredClone(next);r(bad).history.find(h=>h.type==='aftercare-week-summary').data.endDate='2029-06-09';assert.throws(()=>restoreWorldState(bad),/summary|interval/);
 });
 test('H4 final partial week stops at June boundary without settling or entering July',()=>{
- let w=base('2029-06-27');const before=academicState(w).terms['2029:spring'];w=week(w);assert.equal(w.position.date,'2029-06-29');assert.equal(w.position.slotId,'private');assert.equal(readAftercare(w).weeks.length,1);assert.equal(nextAftercareOperation(w).status,'boundary');
+ let w=base('2029-06-27');const before=academicState(w).terms['2029:spring'];w=week(w);assert.equal(w.position.date,'2029-06-29');assert.equal(w.position.slotId,calendarDay('2029-06-29',3,SENIOR_CALENDAR_VERSION).slots.at(-1).id);assert.equal(readAftercare(w).weeks.length,1);assert.equal(nextAftercareOperation(w).status,'boundary');
  assert.deepEqual(academicState(w).terms['2029:spring'],before);assert.ok(!r(w).history.some(h=>['annual-success','career-completion','cohort-completion'].includes(h.type)));
  assert.throws(()=>week(w));assert.equal(w.numeric.evolution.world.classroom.studentIds.length,40);
 });
@@ -142,7 +142,7 @@ test('H4 ceremony reads genuine published offers while June allocations and late
  for(const activity of ['automatic','rest'])w=academicApply(w,[{type:'school-action',activity}]);
  w=week(w);const q=nextAftercareOperation(w).request,normal=prepareWorldOperation(w,q).world;let supplied=false;
  const sequenced=prepareWorldSequence(w,()=>{if(supplied)return null;supplied=true;return q;});assert.deepEqual(sequenced.world,normal);
- const june=readAdmissions(normal);for(const [kind,date] of [['stars8-result','2029-06-04'],['application-allocation','2029-06-11'],['application-confirm','2029-06-13']])assert.equal(june.completed.find(n=>n.kind===kind).date,date);
+ const june=readAdmissions(normal);for(const [kind,date] of [['stars8-result','2029-06-04'],['application-allocation','2029-06-12'],['application-confirm','2029-06-14']])assert.equal(june.completed.find(n=>n.kind===kind).date,date);
  assert.ok(Object.values(june.students).every(p=>p.offers.filter(o=>o.status==='confirmed').length<=1));
  assert.deepEqual(readAftercare(normal).weeks.map(s=>s.endDate),['2029-06-08','2029-06-15']);
 });

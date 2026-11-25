@@ -154,7 +154,7 @@ test('weekend rates count actual N2 state improvement, separately from favorable
       const out=recoveryChanges(sources,context(),rng),changed={player:{current:copy(sources)}};
       attempted+=out.favorableAttempt;opportunities+=out.opportunity;
       for(const c of out.changes) {const record=targetRecord(changed,c.target);record[c.code]+=c.delta;totalMagnitude+=Math.abs(c.delta);}
-      const after=derivePanel(changed.player.current),names=['體力','精神','抗壓','聲望','熱忱','情緒'];
+      const after=derivePanel(changed.player.current),names=['掌控','精神','抗壓','聲望','熱忱','情緒'];
       const improved=names.some(n=>after[n]>before[n]);actual+=improved;none+=!improved;negative+=names.some(n=>after[n]<before[n]);
     }
     assert.equal(opportunities,10000);assert.ok(actual/10000>=.70&&actual/10000<=.80);assert.equal(actual,attempted);assert.ok(none>0&&negative>0);
@@ -167,7 +167,7 @@ test('weekend rates count actual N2 state improvement, separately from favorable
     if(out.favorableAttempt) assert.equal(out.changes.length,0);
     for(const c of out.changes) targetRecord(changed,c.target)[c.code]+=c.delta;
     const before=derivePanel(full),after=derivePanel(changed.player.current);
-    actual+=['體力','精神','抗壓','聲望','熱忱','情緒'].some(name=>after[name]>before[name]);
+    actual+=['掌控','精神','抗壓','聲望','熱忱','情緒'].some(name=>after[name]>before[name]);
   }
   assert.equal(actual,0);stats.full={samples:1000,favorableAttempts:attempts,actualImproved:actual,opportunities:0};
   assert.ok(stats[100].meanAbsDelta>stats[0].meanAbsDelta);
@@ -253,7 +253,7 @@ test('N4/N6 cursors remain independent, batch failure publishes nothing, and rec
 });
 
 test('500 holiday trajectories and one 400-NPC transaction retain heterogeneous bounded outcomes',t=>{
-  const base=strained(7).player.current,initial=derivePanel(base),names=['體力','精神','抗壓','熱忱','情緒'];
+  const base=strained(7).player.current,initial=derivePanel(base),names=['掌控','精神','抗壓','熱忱','情緒'];
   let shortGain=0,longGain=0,allFull=0,negativeDays=0;
   const longGains=[];
   for(let seed=0;seed<500;seed++) {

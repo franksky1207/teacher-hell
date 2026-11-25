@@ -127,18 +127,13 @@ test('T3 legal-source integration: real opening and school activity cannot suppl
 });
 
 
-test('T3 30-year domain transaction probe: common leaves still feed school-year and new forty-person cohort, with duplicate-ID protection',()=>{
- let w=probe();const camp=new Date(yearData(2029).summerCamp+'T00:00:00Z');
- // Existing synthetic school calendar baseline, never a forged annual playthrough.
- w=baseline(w,new Date(camp.getTime()-86400000).toISOString().slice(0,10));
- const plan=compiled(w,false),operations=[...plan.operations,{type:'school',basisFactId:null,change:{type:'school-year',academicYear:2029}},{type:'school',basisFactId:null,change:{type:'school-cohort'}}];
- const q={...request(w,'cohort-probe',operations),calendarContext:{kind:'procedure'}};
- // Compiler IDs and command IDs deliberately coincide in the production path.
- const result=prepareWorldOperation(w,q),after=result.world;
- assert.equal(n(after).registry.academicYear,2029);assert.equal(n(after).registry.cohorts.length,2);assert.equal(n(after).classroom.studentIds.length,40);
- assert.ok(n(w).classroom.studentIds.every(p=>!n(after).classroom.studentIds.includes(p)&&n(after).people[p]));
- assert.equal(prepareWorldOperation(after,q).duplicate,true);
- assert.throws(()=>prepareWorldOperation(after,{...request(after,'different-completion',operations),calendarContext:{kind:'procedure'}}));
+test('T3 terminal domain transaction rejects a fourth school year or replacement cohort',()=>{
+ const w=probe(),before=structuredClone(w),plan=compiled(w);
+ for(const change of [{type:'school-year',academicYear:2029},{type:'school-cohort'}]){
+  const q={...request(w,'cohort-probe',[...plan.operations,{type:'school',basisFactId:null,change}]),calendarContext:{kind:'procedure'}};
+  assert.throws(()=>prepareWorldOperation(w,q));
+  assert.deepEqual(w,before);
+ }
 });
 
 

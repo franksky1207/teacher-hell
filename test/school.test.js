@@ -77,27 +77,33 @@ test('school: teacher identity, appointment succession, all role configurations 
  const staff=Object.values(n(w).people).filter(p=>p.kind==='other');assert.ok(staff.length>=90);validateWorld(n(w),{stage:'runtime'});
 });
 
-test('school: ten cohort engineering baselines retain histories, household links and bounded daily work',()=>{
- const start=performance.now(),heapBefore=process.memoryUsage().heapUsed;let w=longPlan(initial()),all=new Set(),sizes=[];const first=n(w).classroom.studentIds[0],firstValues=structuredClone(n(w).people[first].values),firstLinks=structuredClone(n(w).careLinks.filter(l=>l.studentId===first));
- for(let cohort=0;cohort<10;cohort++){
-  const startYear=2026+cohort*3,ids=[...n(w).classroom.studentIds];assert.equal(ids.length,40);for(const id of ids){assert.ok(!all.has(id));all.add(id);}
-  for(let offset=1;offset<=2;offset++){w=year(w,startYear+offset);assert.deepEqual(n(w).classroom.studentIds,ids);}
-  const catalogue=schoolCatalogue(n(w),Object.keys(SUBJECT_LOAD));assert.equal(catalogue.length,30);
-  const table=generateTimetable({subject:'國文',semesterId:`${startYear+2}:autumn`,academicYear:startYear+2,classes:catalogue,homeClassId:n(w).classroom.id,random:createRandom(31).snapshot()});assert.equal(table.table.lessons.length,18);
-  w=baseline(w,`${startYear+3}-06-05`);w=change(w,`graduate-${cohort}`,[{type:'school-graduate',personIds:ids,reason:'synthetic documented academic qualification'}]);
-  assert.equal(n(w).classroom.studentIds.length,0);assert.ok(n(w).people[ids[0]]);assert.ok(!dailySchoolPeople(n(w)).has(ids[0]));
-  sizes.push({cohort:cohort+1,people:Object.keys(n(w).people).length,enrollments:n(w).registry.enrollments.length,bytes:Buffer.byteLength(encodeSave(createSave(w)))});
-  if(cohort<9){w=year(w,startYear+3);w=commit(w,'new-cohort-'+cohort,[school({type:'school-cohort'})]);}
+test('school: three-year engineering baseline retains the graduating cohort, household links and bounded daily work',()=>{
+ const start=performance.now(),heapBefore=process.memoryUsage().heapUsed;
+ let w=longPlan(initial());
+ const ids=[...n(w).classroom.studentIds],first=ids[0],firstValues=structuredClone(n(w).people[first].values),firstLinks=structuredClone(n(w).careLinks.filter(l=>l.studentId===first));
+ assert.equal(new Set(ids).size,40);
+ for(const academicYear of [2027,2028]){
+  w=year(w,academicYear);
+  assert.deepEqual(n(w).classroom.studentIds,ids);
  }
- assert.equal(all.size,400);assert.equal(n(w).registry.cohorts.length,10);assert.deepEqual(n(w).careLinks.filter(l=>l.studentId===first),firstLinks);
+ const catalogue=schoolCatalogue(n(w),Object.keys(SUBJECT_LOAD));assert.equal(catalogue.length,30);
+ const table=generateTimetable({subject:'國文',semesterId:'2028:autumn',academicYear:2028,classes:catalogue,homeClassId:n(w).classroom.id,random:createRandom(31).snapshot()});
+ assert.equal(table.table.lessons.length,18);
+ w=baseline(w,'2029-06-05');
+ w=change(w,'graduate-first-cohort',[{type:'school-graduate',personIds:ids,reason:'synthetic documented academic qualification'}]);
+ assert.equal(n(w).classroom.studentIds.length,0);
+ assert.ok(ids.every(id=>n(w).people[id]&&!dailySchoolPeople(n(w)).has(id)));
+ assert.equal(n(w).registry.cohorts.length,1);
+ assert.deepEqual(n(w).careLinks.filter(l=>l.studentId===first),firstLinks);
  assert.deepEqual(n(w).people[first].values,firstValues);assert.deepEqual(restoreSave(encodeSave(createSave(w))).world,w);
  const evolved=evolveWorldSnapshot(n(w),42);assert.deepEqual(evolved.people[first].values,firstValues);assert.ok(evolutionHolders(n(w)).length<150);
- const report={provenance:'synthetic lifecycle baselines; no 30-year daily gameplay',uniqueStudents:all.size,sizes,dailyHolders:evolutionHolders(n(w)).length,elapsedMs:Math.round(performance.now()-start),heapDeltaBytes:process.memoryUsage().heapUsed-heapBefore,numericBytes:Buffer.byteLength(JSON.stringify(n(w))),registryBytes:Buffer.byteLength(JSON.stringify(n(w).registry)),historyEntries:runtimeOf(w).history.length,finalBytes:Buffer.byteLength(encodeSave(createSave(w)))};
+ const report={provenance:'synthetic three-year lifecycle baselines',uniqueStudents:ids.length,dailyHolders:evolutionHolders(n(w)).length,elapsedMs:Math.round(performance.now()-start),heapDeltaBytes:process.memoryUsage().heapUsed-heapBefore,numericBytes:Buffer.byteLength(JSON.stringify(n(w))),registryBytes:Buffer.byteLength(JSON.stringify(n(w).registry)),historyEntries:runtimeOf(w).history.length,finalBytes:Buffer.byteLength(encodeSave(createSave(w)))};
  console.log('SCHOOL_LIFECYCLE_REPORT '+JSON.stringify(report));
 });
 
-test('school: calendar 2026-2065 dates, initial reference migration and operation resends',()=>{
- for(let y=2026;y<=2065;y++){const d=yearData(y);assert.ok(calendarDay(d.summerCamp,1).slots.length);}
+test('school: calendar 2026–2029 dates, initial reference migration and operation resends',()=>{
+ for(let y=2026;y<=2028;y++){const d=yearData(y);assert.ok(calendarDay(d.summerCamp,y-2025).slots.length);}
+ assert.throws(()=>calendarDay(yearData(2029).summerCamp,1),/RANGE/);
  const old=runtimeScenario();assert.throws(()=>commit(old,'cannot-guess',[school({type:'school-initialize',academicYear:2026})]),/MIGRATION/);assert.deepEqual(restoreWorldState(old),old);
  let w=runtimeScenario();w.enrollments=[];const q=request(w,'replay-init',[school({type:'school-initialize',academicYear:2026})]),one=prepareWorldOperation(w,q);assert.equal(prepareWorldOperation(one.world,q).duplicate,true);
  const changed=structuredClone(q);changed.operations[0].change.academicYear=2027;assert.throws(()=>prepareWorldOperation(one.world,changed),/CONFLICT/);
@@ -105,7 +111,7 @@ test('school: calendar 2026-2065 dates, initial reference migration and operatio
 
 test('school: official bootstrap supplies real timetable classes and a recoverable opening snapshot',async()=>{
  const {foundationScenario}=await import('./support/scenarios.js');const {startSchoolCareer}=await import('../src/runtime/transactions.js');
- const f=foundationScenario();f.events=[];f.enrollments=[];const w=startSchoolCareer(f,{startYear:2026,subject:'國文',seed:31}),r=n(w).registry;
+ const f=foundationScenario();f.events=[];f.enrollments=[];const w=startSchoolCareer(f,{startYear:2026,subject:'國文',seed:31,career:{version:2,mode:'three-year',difficulty:'hard',backgroundSeed:(31^0x54325032)>>>0}}),r=n(w).registry;
  assert.ok(runtimeOf(w).plan.tables[0].classes.every(c=>r.classes[c.id]));assert.equal(runtimeOf(w).revision,1);
  assert.deepEqual(restoreSave(encodeSave(createSave(w,w))).world,w);
  const {readSchoolRoster}=await import('../src/runtime/views.js');const roster=readSchoolRoster(w);assert.equal(roster.students.length,40);assert.ok(CLASS_NAMES.includes(roster.className));assert.ok(!JSON.stringify(roster).includes('values'));

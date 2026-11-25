@@ -10,7 +10,7 @@ import {yearData} from '../src/calendar/calendar.js';
 import {pendingSemesterReview} from '../src/runtime/reviews.js';
 import {createId} from '../src/contracts/foundation.js';
 import {restoreWorldState} from '../src/runtime/model.js';
-const initial=()=>{const f=foundationScenario(74);f.events=[];f.enrollments=[];return startReviewedSchoolCareer(f,{startYear:2026,subject:'國文',seed:75});};
+const initial=()=>{const f=foundationScenario(74);f.events=[];f.enrollments=[];return startReviewedSchoolCareer(f,{startYear:2026,subject:'國文',seed:75,career:{version:2,mode:'three-year',difficulty:'hard',backgroundSeed:(75^0x54325032)>>>0}});};
 const finish=w=>prepareWorldOperation(w,{...request(w,'finish14E',[{type:'finish-slot',completedActivityIds:[]}]),calendarContext:{kind:'routine'}}).world;
 test('14-E: initial notebook contains no fabricated semester, year or ending',()=>{
  const w=initial(),before=JSON.stringify(w),d=projectNotebookReviews(w),c=projectNotebookCareer(w);

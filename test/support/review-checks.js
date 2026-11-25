@@ -13,7 +13,7 @@ const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 export async function reviewStorage(testId){
  const name=testId+'-reviews',options={factory:globalThis.indexedDB,namespace:'test',testId:name},db=createIndexedDBStorage(options);
  const f=foundationScenario(74);f.events=[];f.enrollments=[];
- const opening=startReviewedSchoolCareer(f,{startYear:2026,subject:'國文',seed:75}),w=academicBaseline(opening,yearData(2027).winterFinal,'private');
+ const opening=startReviewedSchoolCareer(f,{startYear:2026,subject:'國文',seed:75,career:{version:2,mode:'three-year',difficulty:'hard',backgroundSeed:(75^0x54325032)>>>0}}),w=academicBaseline(opening,yearData(2027).winterFinal,'private');
  await db.write(1,createSave(w,opening),null);const a=await createStoredSession(db,1),before=a.snapshot();
  const q={...request(w,'review-browser-finish',[{type:'finish-slot',completedActivityIds:[]}]),calendarContext:{kind:'routine'}};
  const faulty=createIndexedDBStorage({...options,faults:{beforeCommit(){throw new DOMException('injected review quota','QuotaExceededError');}}}),failed=await createStoredSession(faulty,1);

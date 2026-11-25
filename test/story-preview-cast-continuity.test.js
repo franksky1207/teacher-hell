@@ -28,7 +28,8 @@ test('T1-001 to T1-005: all 40 results compile as independent multi-page stage s
     assert.ok(page.cast.length<=2,'stage capacity');
     if(page.presentation==='dialogue')assert.ok(page.speaker,'dialogue must have actor');
     if(page.presentation==='narration')assert.equal(page.speaker,null,'narration must have no speaker');
-    if(page.speaker&&page.speaker!=='teacher')assert.ok(cast(page).includes(page.speaker),'speaker must be on stage');
+    // Remote phone/chat/email speakers are not physically present in the scene.
+    if(page.speaker&&page.speaker!=='teacher'&&!['phone','chat','email'].includes(page.presentation))assert.ok(cast(page).includes(page.speaker),'on-site speaker must be on stage');
    }
    total+=pages.length;
   }

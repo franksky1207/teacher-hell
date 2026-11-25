@@ -94,7 +94,7 @@
     },
     {
       "result": "R3",
-      "slot": "subject_teacher_a",
+      "slot": "student_a",
       "code": "8-2",
       "delta": -1,
       "observedEvent": "學生想剪出科任說『你們這樣不行』的一句話當笑點，重新聽完整堂課才發現那是在提醒安全操作，並非平常的幽默責備。",
@@ -112,7 +112,7 @@
     },
     {
       "result": "R5",
-      "slot": "subject_teacher_a",
+      "slot": "student_a",
       "code": "8-2",
       "delta": 1,
       "observedEvent": "學生整理剪輯素材時，無意間把課堂原音檔放進對外共享的資料夾，發現後才知道影片尚未發布也可能讓原始資料提前外流。",
@@ -139,7 +139,7 @@
     },
     {
       "result": "R8",
-      "slot": "subject_teacher_a",
+      "slot": "student_a",
       "code": "5-3",
       "delta": 1,
       "observedEvent": "學生最後用自己拍攝且獲授權的教室畫面，搭配原創文字致意，而不是直接搬用科任的舊錄音或其他學生的聲音。",
@@ -161,8 +161,8 @@
       "choice": "A",
       "result": "R2",
       "compatibility": "相容",
-      "causalDirection": "促進",
-      "weight": 4,
+      "causalDirection": "中性",
+      "weight": 2,
       "actionPreserved": "你已先聽那段課堂聲音對學生的回憶，沒有因「背景聲音其實是同學」取消此客觀處理。",
       "reason": "你已完成「先聽那段課堂聲音對學生的回憶」；R2的具體觸發為「學生放慢檢查錄音時，發現其中含有同學當年回答問題的聲音和姓名，原先只注意老師講解的那一段，根本沒有問過其他人。」。此處理有助當事人及早確認相應權責或採行可行方式，故提高此結果相對機會；但不保證旁人配合。"
     },
@@ -206,8 +206,8 @@
       "choice": "A",
       "result": "R7",
       "compatibility": "相容",
-      "causalDirection": "中性",
-      "weight": 2,
+      "causalDirection": "促進",
+      "weight": 4,
       "actionPreserved": "你已先聽那段課堂聲音對學生的回憶，沒有因「學生發現自己還能轉述那堂課」取消此客觀處理。",
       "reason": "你已完成「先聽那段課堂聲音對學生的回憶」；R7的具體觸發為「學生試著說明自己究竟記得那堂課的哪件事，才知道最難忘的不是某個口頭禪，而是第一次聽懂一個困擾很久的觀念。」。該後續要由實際當事人的資訊、同意或其他事實才會成立，並不被這項已完成教師行動直接決定或排除。"
     },
@@ -404,8 +404,8 @@
       "choice": "D",
       "result": "R5",
       "compatibility": "相容",
-      "causalDirection": "促進",
-      "weight": 4,
+      "causalDirection": "中性",
+      "weight": 2,
       "actionPreserved": "你已核對錄音內其他人物的聲音，沒有因「原檔誤放共享資料夾」取消此客觀處理。",
       "reason": "你已完成「核對錄音內其他人物的聲音」；R5的具體觸發為「學生整理剪輯素材時，無意間把課堂原音檔放進對外共享的資料夾，發現後才知道影片尚未發布也可能讓原始資料提前外流。」。此處理有助當事人及早確認相應權責或採行可行方式，故提高此結果相對機會；但不保證旁人配合。"
     },
@@ -617,5 +617,5 @@
     "duplicates": "與已完成T5、T6-3及前批近題比對後製作，集中批次仍需複核"
   },
   "authorRevision": "第一階段正式稿和AVG製作；未執行Actions、PR或V1合併",
-  "sourceBlobSha": "62bbdee1d7f1b5355d8c704f8d229f703d55eb0e"
+  "sourceBlobSha": "2b7b8f0d8aa65d48489f2969bc5c09e195104f19"
 }

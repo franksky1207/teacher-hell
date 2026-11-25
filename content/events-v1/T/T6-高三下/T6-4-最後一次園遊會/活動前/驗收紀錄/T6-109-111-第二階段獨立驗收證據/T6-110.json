@@ -1,0 +1,359 @@
+{
+  "storyId": "T6-110",
+  "seedId": "S1655",
+  "stage": "stage2-independent-acceptance",
+  "verdict": "approved",
+  "reviewer": "Antigravity (Stage 2 Independent Acceptance)",
+  "reviewedAt": "2026-11-25",
+  "sourceCommitAtStart": "4823b2c6cedee0d5db10833042818f69e1f2dd7f",
+  "sourceBlobSha": "ecdb8a9cc16fd3c5fdda71125ddcaf0d76ce6f30",
+  "poolId": "T6-4:before",
+  "legalDatesChecked": [
+    "2029-05-17"
+  ],
+  "storyAndRoles": "T6-110｜T6-110｜學生想穿舊攤服幫校外商家招客 具備獨立的 T6-4:before 校園情境與導師困境；常駐槽位之在籍、知情與職權依 01 核實無誤，無無數值人物越權建槽。",
+  "fourCodes": "T6-110 使用種子 S1655 原四碼（3-3、5-4、9-2、11-2），均對應合法持有人且在 R1～R8 具具體情節因果作用，無借碼或硬湊數值。",
+  "fourChoices": "T6-110 A～D 四個教師行動實質不同且已完成，恰一項為 emotional=true；六選三候選與最終映射經逐項核對與正文完全一致。",
+  "eightResults": "T6-110 R1～R8 各具獨立客觀轉折、自主反應與完整收束，無後段縮水或套版；V3 四狀態屬四組相異 A～E 合法組別且各欄總和 -4。",
+  "causal32": "T6-110 4×8 共 32 格經第二階段獨立覆核，全部與正文矩陣權重一致，逐格具具體因果方向與機制理由，且保留教師既成行動。",
+  "timeAndLaw": "T6-110 逐日核對 T6-4:before 全部 1 個合法日，依實際在籍、在場、知情與校曆條件成立，未將配額日當唯一播放日且不預知未揭露結果。",
+  "duplicates": "T6-110 經 T6-109～150 整批及全庫 648 篇 T 故事 6-gram 相似度（內容最高 Jaccard <= 0.0064）與核心衝突／機制實質比對，無換皮重複。",
+  "characterAudit": "全文重要人物反向盤點完成：T6-110 常駐數值角色皆具備完整合法持碼資格，情境人物僅作文字情境使用，未建永久 ID 或跨篇記憶。",
+  "npcDeltaAudit": "逐 NPC 四碼變化與零值因果審查完成：T6-110 所有非零增減均在 -8～+8 合法範圍且對應具體 R 反應；其餘零值項目經核對無強湊數值之必要。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T6-110 僅設單一常駐數值人物，其餘背景或窗口角色依 01 規格維持無數值情境角色，不為消除警示硬增常駐槽位。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "先查商家是否允許參與宣傳"
+      },
+      {
+        "id": 2,
+        "action": "請學生將舊攤服改作私人紀念"
+      },
+      {
+        "id": 3,
+        "action": "釐清本次校外攤商和學生的職責"
+      },
+      {
+        "id": 4,
+        "action": "確認服裝是否符合活動安全規定"
+      },
+      {
+        "id": 5,
+        "action": "討論在不招客下如何展示舊回憶"
+      },
+      {
+        "id": 6,
+        "action": "提醒不得假稱學校或攤商代表"
+      }
+    ],
+    "selectedIds": [
+      3,
+      6,
+      5
+    ],
+    "finalChoiceMap": {
+      "A": 6,
+      "B": 3,
+      "C": "emotional",
+      "D": 5
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已提醒不得假稱學校或攤商代表，該事實不被後續穿上衣服被誤認員工取消。",
+      "reason": "提醒身分界線不會決定商家是否接納協助、飾品是否勾到桌角或同學如何理解邀請。師長將穿舊工作服的學生誤認為隔天的協助人員，學生決定不穿它招呼顧客。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已提醒不得假稱學校或攤商代表，該事實不被後續攤商婉拒免費幫忙取消。",
+      "reason": "提醒身分界線不會決定商家是否接納協助、飾品是否勾到桌角或同學如何理解邀請。學生詢問商家，商家依現場安排拒絕臨時協助。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已提醒不得假稱學校或攤商代表，該事實不被後續舊照片讓笑聲回來取消。",
+      "reason": "提醒身分界線不會決定商家是否接納協助、飾品是否勾到桌角或同學如何理解邀請。學生和同學回顧當年照片，改約分享回憶。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已提醒不得假稱學校或攤商代表，該事實不被後續衣服上的吊飾勾住桌角取消。",
+      "reason": "提醒身分界線不會決定商家是否接納協助、飾品是否勾到桌角或同學如何理解邀請。試穿時發現袖口飾物容易勾到桌角，學生卸下。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已提醒不得假稱學校或攤商代表，該事實不被後續同學以為全班都要幫忙取消。",
+      "reason": "提醒身分界線不會決定商家是否接納協助、飾品是否勾到桌角或同學如何理解邀請。班群誤認將重新安排值班，學生澄清沒有班級攤位。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "actionPreserved": "你已提醒不得假稱學校或攤商代表，該事實不被後續直播喊口號惹出疑慮取消。",
+      "reason": "先釐清不能假稱代表，使學生更容易意識到宣傳直播也需確認拍攝與使用權限。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已提醒不得假稱學校或攤商代表，該事實不被後續以觀眾身分重新看園遊會取消。",
+      "reason": "提醒身分界線不會決定商家是否接納協助、飾品是否勾到桌角或同學如何理解邀請。學生閱讀攤商介紹並記下想逛的攤位，期待隔天以顧客身分參加。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已提醒不得假稱學校或攤商代表，該事實不被後續舊口號留在班內取消。",
+      "reason": "提醒身分界線不會決定商家是否接納協助、飾品是否勾到桌角或同學如何理解邀請。學生邀同學在教室回顧舊口號，不對外招客。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "actionPreserved": "你已釐清本次校外攤商和學生的職責，該事實不被後續穿上衣服被誤認員工取消。",
+      "reason": "先說明學生與攤商職責，有助於辨識舊工作服造成的身分誤認並停止招客。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已釐清本次校外攤商和學生的職責，該事實不被後續攤商婉拒免費幫忙取消。",
+      "reason": "職責說明不會直接決定學生的紀念方式或商家及同學的個別反應。學生詢問商家，商家依現場安排拒絕臨時協助。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已釐清本次校外攤商和學生的職責，該事實不被後續舊照片讓笑聲回來取消。",
+      "reason": "職責說明不會直接決定學生的紀念方式或商家及同學的個別反應。學生和同學回顧當年照片，改約分享回憶。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已釐清本次校外攤商和學生的職責，該事實不被後續衣服上的吊飾勾住桌角取消。",
+      "reason": "職責說明不會直接決定學生的紀念方式或商家及同學的個別反應。試穿時發現袖口飾物容易勾到桌角，學生卸下。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已釐清本次校外攤商和學生的職責，該事實不被後續同學以為全班都要幫忙取消。",
+      "reason": "職責說明不會直接決定學生的紀念方式或商家及同學的個別反應。班群誤認將重新安排值班，學生澄清沒有班級攤位。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已釐清本次校外攤商和學生的職責，該事實不被後續直播喊口號惹出疑慮取消。",
+      "reason": "職責說明不會直接決定學生的紀念方式或商家及同學的個別反應。學生想到直播可能拍到未同意的顧客或商家內容，停止計畫。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已釐清本次校外攤商和學生的職責，該事實不被後續以觀眾身分重新看園遊會取消。",
+      "reason": "職責說明不會直接決定學生的紀念方式或商家及同學的個別反應。學生閱讀攤商介紹並記下想逛的攤位，期待隔天以顧客身分參加。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已釐清本次校外攤商和學生的職責，該事實不被後續舊口號留在班內取消。",
+      "reason": "職責說明不會直接決定學生的紀念方式或商家及同學的個別反應。學生邀同學在教室回顧舊口號，不對外招客。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他想找回當年吶喊聲的心情，該事實不被後續穿上衣服被誤認員工取消。",
+      "reason": "傾聽懷念不會決定衣物安全、商家人力安排或班群如何解讀訊息。師長將穿舊工作服的學生誤認為隔天的協助人員，學生決定不穿它招呼顧客。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他想找回當年吶喊聲的心情，該事實不被後續攤商婉拒免費幫忙取消。",
+      "reason": "傾聽懷念不會決定衣物安全、商家人力安排或班群如何解讀訊息。學生詢問商家，商家依現場安排拒絕臨時協助。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他想找回當年吶喊聲的心情，該事實不被後續舊照片讓笑聲回來取消。",
+      "reason": "傾聽懷念不會決定衣物安全、商家人力安排或班群如何解讀訊息。學生和同學回顧當年照片，改約分享回憶。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他想找回當年吶喊聲的心情，該事實不被後續衣服上的吊飾勾住桌角取消。",
+      "reason": "傾聽懷念不會決定衣物安全、商家人力安排或班群如何解讀訊息。試穿時發現袖口飾物容易勾到桌角，學生卸下。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他想找回當年吶喊聲的心情，該事實不被後續同學以為全班都要幫忙取消。",
+      "reason": "傾聽懷念不會決定衣物安全、商家人力安排或班群如何解讀訊息。班群誤認將重新安排值班，學生澄清沒有班級攤位。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他想找回當年吶喊聲的心情，該事實不被後續直播喊口號惹出疑慮取消。",
+      "reason": "傾聽懷念不會決定衣物安全、商家人力安排或班群如何解讀訊息。學生想到直播可能拍到未同意的顧客或商家內容，停止計畫。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他想找回當年吶喊聲的心情，該事實不被後續以觀眾身分重新看園遊會取消。",
+      "reason": "傾聽懷念不會決定衣物安全、商家人力安排或班群如何解讀訊息。學生閱讀攤商介紹並記下想逛的攤位，期待隔天以顧客身分參加。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "actionPreserved": "你已先聽他想找回當年吶喊聲的心情，該事實不被後續舊口號留在班內取消。",
+      "reason": "讓學生說出想念的吶喊聲，有助於把懷念轉成班內回顧舊口號，而非對外招客。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已討論在不招客下如何展示舊回憶，該事實不被後續穿上衣服被誤認員工取消。",
+      "reason": "討論不招客的紀念方式不會代替商家同意、同學理解或現場安全確認。師長將穿舊工作服的學生誤認為隔天的協助人員，學生決定不穿它招呼顧客。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已討論在不招客下如何展示舊回憶，該事實不被後續攤商婉拒免費幫忙取消。",
+      "reason": "討論不招客的紀念方式不會代替商家同意、同學理解或現場安全確認。學生詢問商家，商家依現場安排拒絕臨時協助。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已討論在不招客下如何展示舊回憶，該事實不被後續舊照片讓笑聲回來取消。",
+      "reason": "討論不招客的紀念方式不會代替商家同意、同學理解或現場安全確認。學生和同學回顧當年照片，改約分享回憶。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已討論在不招客下如何展示舊回憶，該事實不被後續衣服上的吊飾勾住桌角取消。",
+      "reason": "討論不招客的紀念方式不會代替商家同意、同學理解或現場安全確認。試穿時發現袖口飾物容易勾到桌角，學生卸下。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已討論在不招客下如何展示舊回憶，該事實不被後續同學以為全班都要幫忙取消。",
+      "reason": "討論不招客的紀念方式不會代替商家同意、同學理解或現場安全確認。班群誤認將重新安排值班，學生澄清沒有班級攤位。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已討論在不招客下如何展示舊回憶，該事實不被後續直播喊口號惹出疑慮取消。",
+      "reason": "討論不招客的紀念方式不會代替商家同意、同學理解或現場安全確認。學生想到直播可能拍到未同意的顧客或商家內容，停止計畫。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已討論在不招客下如何展示舊回憶，該事實不被後續以觀眾身分重新看園遊會取消。",
+      "reason": "討論不招客的紀念方式不會代替商家同意、同學理解或現場安全確認。學生閱讀攤商介紹並記下想逛的攤位，期待隔天以顧客身分參加。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "actionPreserved": "你已討論在不招客下如何展示舊回憶，該事實不被後續舊口號留在班內取消。",
+      "reason": "討論不招客的展示方式，直接提供在教室回顧口號的替代方案。"
+    }
+  ]
+}

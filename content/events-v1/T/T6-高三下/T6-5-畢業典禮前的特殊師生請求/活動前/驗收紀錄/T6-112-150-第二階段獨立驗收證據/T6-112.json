@@ -1,0 +1,367 @@
+{
+  "storyId": "T6-112",
+  "seedId": "S1658",
+  "stage": "stage2-independent-acceptance",
+  "verdict": "approved",
+  "reviewer": "Antigravity (Stage 2 Independent Acceptance)",
+  "reviewedAt": "2026-11-25",
+  "sourceCommitAtStart": "4823b2c6cedee0d5db10833042818f69e1f2dd7f",
+  "sourceBlobSha": "01e90f673ce46da2f5cf9758f5f1bf8ee5e293ec",
+  "poolId": "T6-5:before",
+  "legalDatesChecked": [
+    "2029-05-21",
+    "2029-05-22",
+    "2029-05-23",
+    "2029-05-24",
+    "2029-05-25",
+    "2029-05-28",
+    "2029-05-29",
+    "2029-05-30",
+    "2029-05-31"
+  ],
+  "storyAndRoles": "T6-112｜T6-112｜畢典前學生想把三年共用箱帶走 具備獨立的 T6-5:before 校園情境與導師困境；常駐槽位之在籍、知情與職權依 01 核實無誤，無無數值人物越權建槽。",
+  "fourCodes": "T6-112 使用種子 S1658 原四碼（1-1、3-1、4-2、11-1），均對應合法持有人且在 R1～R8 具具體情節因果作用，無借碼或硬湊數值。",
+  "fourChoices": "T6-112 A～D 四個教師行動實質不同且已完成，恰一項為 emotional=true；六選三候選與最終映射經逐項核對與正文完全一致。",
+  "eightResults": "T6-112 R1～R8 各具獨立客觀轉折、自主反應與完整收束，無後段縮水或套版；V3 四狀態屬四組相異 A～E 合法組別且各欄總和 -4。",
+  "causal32": "T6-112 4×8 共 32 格經第二階段獨立覆核，全部與正文矩陣權重一致，逐格具具體因果方向與機制理由，且保留教師既成行動。",
+  "timeAndLaw": "T6-112 逐日核對 T6-5:before 全部 9 個合法日，依實際在籍、在場、知情與校曆條件成立，未將配額日當唯一播放日且不預知未揭露結果。",
+  "duplicates": "T6-112 經 T6-109～150 整批及全庫 648 篇 T 故事 6-gram 相似度（內容最高 Jaccard <= 0.0064）與核心衝突／機制實質比對，無換皮重複。",
+  "characterAudit": "全文重要人物反向盤點完成：T6-112 常駐數值角色皆具備完整合法持碼資格，情境人物僅作文字情境使用，未建永久 ID 或跨篇記憶。",
+  "npcDeltaAudit": "逐 NPC 四碼變化與零值因果審查完成：T6-112 所有非零增減均在 -8～+8 合法範圍且對應具體 R 反應；其餘零值項目經核對無強湊數值之必要。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_single_actor",
+      "decision": "retain",
+      "evidence": "T6-112 僅設單一常駐數值人物，其餘背景或窗口角色依 01 規格維持無數值情境角色，不為消除警示硬增常駐槽位。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "先把借物與可紀念品分開清點"
+      },
+      {
+        "id": 2,
+        "action": "查詢物品原借用與保管紀錄"
+      },
+      {
+        "id": 3,
+        "action": "請本人提出希望留存的具體物件"
+      },
+      {
+        "id": 4,
+        "action": "安排合法點交時間與管理人"
+      },
+      {
+        "id": 5,
+        "action": "協助為共用箱拍照留存紀錄"
+      },
+      {
+        "id": 6,
+        "action": "核對哪些物品能由全班共同處置"
+      }
+    ],
+    "selectedIds": [
+      1,
+      6,
+      5
+    ],
+    "finalChoiceMap": {
+      "A": 6,
+      "B": 5,
+      "C": "emotional",
+      "D": 1
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已核對哪些物品能由全班共同處置，該事實不被後續借物主人突然出現取消。",
+      "reason": "核對共同處置的範圍不會決定借物主人是否出現、器材現況或個人珍惜哪件物品。借物主人前來詢問器材歸還，學生留下清點紀錄。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已核對哪些物品能由全班共同處置，該事實不被後續清單裡少了一件取消。",
+      "reason": "核對共同處置的範圍不會決定借物主人是否出現、器材現況或個人珍惜哪件物品。收納盒去向不明，學生請保管者查借用紀錄。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已核對哪些物品能由全班共同處置，該事實不被後續真正想留的是一張紙取消。",
+      "reason": "核對共同處置的範圍不會決定借物主人是否出現、器材現況或個人珍惜哪件物品。學生發現只想保存手繪地圖，確認所有權及複印許可。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已核對哪些物品能由全班共同處置，該事實不被後續破損的器材無人承認取消。",
+      "reason": "核對共同處置的範圍不會決定借物主人是否出現、器材現況或個人珍惜哪件物品。器材有裂痕且損壞責任不明，學生據實記錄現況。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已核對哪些物品能由全班共同處置，該事實不被後續兩種物品有不同歸處取消。",
+      "reason": "核對共同處置的範圍不會決定借物主人是否出現、器材現況或個人珍惜哪件物品。校產與經作者同意贈送的小卡分開處理。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已核對哪些物品能由全班共同處置，該事實不被後續空教室不是永久倉庫取消。",
+      "reason": "核對共同處置的範圍不會決定借物主人是否出現、器材現況或個人珍惜哪件物品。學生確認教室的暫放期限和逾期處理方式。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "actionPreserved": "你已核對哪些物品能由全班共同處置，該事實不被後續認領讓大家說出故事取消。",
+      "reason": "釐清全班可共同處置的物品與私人所有物，有助於通知各自物主認領並引出共同回憶。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已核對哪些物品能由全班共同處置，該事實不被後續拍下來不等於帶走取消。",
+      "reason": "核對共同處置的範圍不會決定借物主人是否出現、器材現況或個人珍惜哪件物品。學生拍攝可留存的共用物，點交後僅保留經同意的小物。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已協助為共用箱拍照留存紀錄，該事實不被後續借物主人突然出現取消。",
+      "reason": "拍照留存不會代替歸屬、破損責任、認領及教室使用期限的確認。借物主人前來詢問器材歸還，學生留下清點紀錄。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已協助為共用箱拍照留存紀錄，該事實不被後續清單裡少了一件取消。",
+      "reason": "拍照留存不會代替歸屬、破損責任、認領及教室使用期限的確認。收納盒去向不明，學生請保管者查借用紀錄。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已協助為共用箱拍照留存紀錄，該事實不被後續真正想留的是一張紙取消。",
+      "reason": "拍照留存不會代替歸屬、破損責任、認領及教室使用期限的確認。學生發現只想保存手繪地圖，確認所有權及複印許可。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已協助為共用箱拍照留存紀錄，該事實不被後續破損的器材無人承認取消。",
+      "reason": "拍照留存不會代替歸屬、破損責任、認領及教室使用期限的確認。器材有裂痕且損壞責任不明，學生據實記錄現況。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已協助為共用箱拍照留存紀錄，該事實不被後續兩種物品有不同歸處取消。",
+      "reason": "拍照留存不會代替歸屬、破損責任、認領及教室使用期限的確認。校產與經作者同意贈送的小卡分開處理。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已協助為共用箱拍照留存紀錄，該事實不被後續空教室不是永久倉庫取消。",
+      "reason": "拍照留存不會代替歸屬、破損責任、認領及教室使用期限的確認。學生確認教室的暫放期限和逾期處理方式。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已協助為共用箱拍照留存紀錄，該事實不被後續認領讓大家說出故事取消。",
+      "reason": "拍照留存不會代替歸屬、破損責任、認領及教室使用期限的確認。學生通知物主認領，大家分享物品相關回憶。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "actionPreserved": "你已協助為共用箱拍照留存紀錄，該事實不被後續拍下來不等於帶走取消。",
+      "reason": "先協助拍照留存，讓學生看見不用搬走整箱也能保存回憶的可行做法。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他害怕三年回憶被清空的心情，該事實不被後續借物主人突然出現取消。",
+      "reason": "傾聽不會代替物主決定、器材盤點或場地管理規定。借物主人前來詢問器材歸還，學生留下清點紀錄。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他害怕三年回憶被清空的心情，該事實不被後續清單裡少了一件取消。",
+      "reason": "傾聽不會代替物主決定、器材盤點或場地管理規定。收納盒去向不明，學生請保管者查借用紀錄。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他害怕三年回憶被清空的心情，該事實不被後續真正想留的是一張紙取消。",
+      "reason": "傾聽不會代替物主決定、器材盤點或場地管理規定。學生發現只想保存手繪地圖，確認所有權及複印許可。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他害怕三年回憶被清空的心情，該事實不被後續破損的器材無人承認取消。",
+      "reason": "傾聽不會代替物主決定、器材盤點或場地管理規定。器材有裂痕且損壞責任不明，學生據實記錄現況。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他害怕三年回憶被清空的心情，該事實不被後續兩種物品有不同歸處取消。",
+      "reason": "傾聽不會代替物主決定、器材盤點或場地管理規定。校產與經作者同意贈送的小卡分開處理。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他害怕三年回憶被清空的心情，該事實不被後續空教室不是永久倉庫取消。",
+      "reason": "傾聽不會代替物主決定、器材盤點或場地管理規定。學生確認教室的暫放期限和逾期處理方式。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他害怕三年回憶被清空的心情，該事實不被後續認領讓大家說出故事取消。",
+      "reason": "傾聽不會代替物主決定、器材盤點或場地管理規定。學生通知物主認領，大家分享物品相關回憶。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "actionPreserved": "你已先聽他害怕三年回憶被清空的心情，該事實不被後續拍下來不等於帶走取消。",
+      "reason": "先聽學生害怕回憶消失的心情，能降低他執著整箱搬走的壓力，使拍照留念較易被接受。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先把借物與可紀念品分開清點，該事實不被後續借物主人突然出現取消。",
+      "reason": "分類清點不會代替物主同意、查明借物去向或確認教室期限。借物主人前來詢問器材歸還，學生留下清點紀錄。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先把借物與可紀念品分開清點，該事實不被後續清單裡少了一件取消。",
+      "reason": "分類清點不會代替物主同意、查明借物去向或確認教室期限。收納盒去向不明，學生請保管者查借用紀錄。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先把借物與可紀念品分開清點，該事實不被後續真正想留的是一張紙取消。",
+      "reason": "分類清點不會代替物主同意、查明借物去向或確認教室期限。學生發現只想保存手繪地圖，確認所有權及複印許可。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先把借物與可紀念品分開清點，該事實不被後續破損的器材無人承認取消。",
+      "reason": "分類清點不會代替物主同意、查明借物去向或確認教室期限。器材有裂痕且損壞責任不明，學生據實記錄現況。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "actionPreserved": "你已先把借物與可紀念品分開清點，該事實不被後續兩種物品有不同歸處取消。",
+      "reason": "先區分借物和紀念物，可使校產及取得作者同意的小卡依不同來源處理，避免混算。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先把借物與可紀念品分開清點，該事實不被後續空教室不是永久倉庫取消。",
+      "reason": "分類清點不會代替物主同意、查明借物去向或確認教室期限。學生確認教室的暫放期限和逾期處理方式。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先把借物與可紀念品分開清點，該事實不被後續認領讓大家說出故事取消。",
+      "reason": "分類清點不會代替物主同意、查明借物去向或確認教室期限。學生通知物主認領，大家分享物品相關回憶。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先把借物與可紀念品分開清點，該事實不被後續拍下來不等於帶走取消。",
+      "reason": "分類清點不會代替物主同意、查明借物去向或確認教室期限。學生拍攝可留存的共用物，點交後僅保留經同意的小物。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    }
+  ]
+}

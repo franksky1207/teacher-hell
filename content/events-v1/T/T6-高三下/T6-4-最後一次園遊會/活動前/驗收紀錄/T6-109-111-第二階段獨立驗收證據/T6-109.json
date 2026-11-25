@@ -1,0 +1,364 @@
+{
+  "storyId": "T6-109",
+  "seedId": "S1649",
+  "stage": "stage2-independent-acceptance",
+  "verdict": "approved",
+  "reviewer": "Antigravity (Stage 2 Independent Acceptance)",
+  "reviewedAt": "2026-11-25",
+  "sourceCommitAtStart": "4823b2c6cedee0d5db10833042818f69e1f2dd7f",
+  "sourceBlobSha": "67a4454d890c770bb5ac5c2defcc8400931d8973",
+  "poolId": "T6-4:before",
+  "legalDatesChecked": [
+    "2029-05-17"
+  ],
+  "storyAndRoles": "T6-109｜T6-109｜最後園遊會明日舉行 具備獨立的 T6-4:before 校園情境與導師困境；常駐槽位之在籍、知情與職權依 01 核實無誤，無無數值人物越權建槽。",
+  "fourCodes": "T6-109 使用種子 S1649 原四碼（4-4、6-3、8-1、10-2），均對應合法持有人且在 R1～R8 具具體情節因果作用，無借碼或硬湊數值。",
+  "fourChoices": "T6-109 A～D 四個教師行動實質不同且已完成，恰一項為 emotional=true；六選三候選與最終映射經逐項核對與正文完全一致。",
+  "eightResults": "T6-109 R1～R8 各具獨立客觀轉折、自主反應與完整收束，無後段縮水或套版；V3 四狀態屬四組相異 A～E 合法組別且各欄總和 -4。",
+  "causal32": "T6-109 4×8 共 32 格經第二階段獨立覆核，全部與正文矩陣權重一致，逐格具具體因果方向與機制理由，且保留教師既成行動。",
+  "timeAndLaw": "T6-109 逐日核對 T6-4:before 全部 1 個合法日，依實際在籍、在場、知情與校曆條件成立，未將配額日當唯一播放日且不預知未揭露結果。",
+  "duplicates": "T6-109 經 T6-109～150 整批及全庫 648 篇 T 故事 6-gram 相似度（內容最高 Jaccard <= 0.0064）與核心衝突／機制實質比對，無換皮重複。",
+  "characterAudit": "全文重要人物反向盤點完成：T6-109 常駐數值角色皆具備完整合法持碼資格，情境人物僅作文字情境使用，未建永久 ID 或跨篇記憶。",
+  "npcDeltaAudit": "逐 NPC 四碼變化與零值因果審查完成：T6-109 所有非零增減均在 -8～+8 合法範圍且對應具體 R 反應；其餘零值項目經核對無強湊數值之必要。",
+  "npcWarningReviews": [
+    {
+      "id": "npc_all_zero_code:student_b:6-3",
+      "decision": "retain",
+      "evidence": "T6-109 多角色各自承擔與實際情節相符之結果反應，student_b 於原碼 6-3 未發生可證明的直接因果事件，依 01/05 保留 0 不強湊數值。"
+    },
+    {
+      "id": "npc_all_zero_code:student_b:10-2",
+      "decision": "retain",
+      "evidence": "T6-109 多角色各自承擔與實際情節相符之結果反應，student_b 於原碼 10-2 未發生可證明的直接因果事件，依 01/05 保留 0 不強湊數值。"
+    }
+  ],
+  "ordinaryChoiceSelection": {
+    "ordinaryCandidates": [
+      {
+        "id": 1,
+        "action": "核對商家是否接受無付款預留"
+      },
+      {
+        "id": 2,
+        "action": "請提出預訂前要取得的本人同意"
+      },
+      {
+        "id": 3,
+        "action": "協助寫一則不附消費承諾的邀請"
+      },
+      {
+        "id": 4,
+        "action": "釐清代購付款和無法取貨責任"
+      },
+      {
+        "id": 5,
+        "action": "提醒不要把限量商品當成唯一紀念"
+      },
+      {
+        "id": 6,
+        "action": "邀雙方確認能否以其他方式留念"
+      }
+    ],
+    "selectedIds": [
+      6,
+      4,
+      2
+    ],
+    "finalChoiceMap": {
+      "A": 6,
+      "B": "emotional",
+      "C": 2,
+      "D": 4
+    }
+  },
+  "causal32Evidence": [
+    {
+      "choice": "A",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已邀雙方確認能否以其他方式留念，該事實不被後續先付款的人反而尷尬取消。",
+      "reason": "討論其他紀念方式不會改變商家的庫存、面試安排或付款條件。學生先自行預訂，隨後因取貨資訊及退款條件暫停訂單。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已邀雙方確認能否以其他方式留念，該事實不被後續缺席同學自己回話取消。",
+      "reason": "討論其他紀念方式不會改變商家的庫存、面試安排或付款條件。可能缺席的同學回覆不想收食物，但希望看到園遊會照片。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已邀雙方確認能否以其他方式留念，該事實不被後續商家只保留到某時段取消。",
+      "reason": "討論其他紀念方式不會改變商家的庫存、面試安排或付款條件。攤商提出有限的保留時間和付款、領取條件。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已邀雙方確認能否以其他方式留念，該事實不被後續同學其實能短暫到場取消。",
+      "reason": "討論其他紀念方式不會改變商家的庫存、面試安排或付款條件。同學確認面試及交通後發現可能短暫到場，仍自行決定購買。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已邀雙方確認能否以其他方式留念，該事實不被後續限量商品預訂已額滿取消。",
+      "reason": "討論其他紀念方式不會改變商家的庫存、面試安排或付款條件。攤商在活動前通知預訂已額滿；學生先據實告知同學，預計活動開始後再分享照片。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已邀雙方確認能否以其他方式留念，該事實不被後續代領安排出現空隙取消。",
+      "reason": "討論其他紀念方式不會改變商家的庫存、面試安排或付款條件。原代領者臨時有事，取貨時段及替補人選尚未確認，學生核對取消規則。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "A",
+      "result": "R7",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "actionPreserved": "你已邀雙方確認能否以其他方式留念，該事實不被後續一張攤位明信片取消。",
+      "reason": "詢問其他留念方式直接引出不必花錢的介紹卡與自願祝福。"
+    },
+    {
+      "choice": "A",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已邀雙方確認能否以其他方式留念，該事實不被後續取消預訂並非撤回友情取消。",
+      "reason": "討論其他紀念方式不會改變商家的庫存、面試安排或付款條件。確認對方未曾同意代訂後，學生在付款前取消預訂。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他怕最後一次同逛落空的失落，該事實不被後續先付款的人反而尷尬取消。",
+      "reason": "傾聽失落不會代替商家答覆、同學意願或代領人行程。學生先自行預訂，隨後因取貨資訊及退款條件暫停訂單。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他怕最後一次同逛落空的失落，該事實不被後續缺席同學自己回話取消。",
+      "reason": "傾聽失落不會代替商家答覆、同學意願或代領人行程。可能缺席的同學回覆不想收食物，但希望看到園遊會照片。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他怕最後一次同逛落空的失落，該事實不被後續商家只保留到某時段取消。",
+      "reason": "傾聽失落不會代替商家答覆、同學意願或代領人行程。攤商提出有限的保留時間和付款、領取條件。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他怕最後一次同逛落空的失落，該事實不被後續同學其實能短暫到場取消。",
+      "reason": "傾聽失落不會代替商家答覆、同學意願或代領人行程。同學確認面試及交通後發現可能短暫到場，仍自行決定購買。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他怕最後一次同逛落空的失落，該事實不被後續限量商品預訂已額滿取消。",
+      "reason": "傾聽失落不會代替商家答覆、同學意願或代領人行程。攤商在活動前通知預訂已額滿；學生先據實告知同學，預計活動開始後再分享照片。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他怕最後一次同逛落空的失落，該事實不被後續代領安排出現空隙取消。",
+      "reason": "傾聽失落不會代替商家答覆、同學意願或代領人行程。原代領者臨時有事，取貨時段及替補人選尚未確認，學生核對取消規則。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已先聽他怕最後一次同逛落空的失落，該事實不被後續一張攤位明信片取消。",
+      "reason": "傾聽失落不會代替商家答覆、同學意願或代領人行程。學生使用公開活動介紹卡，邀同學自願留下祝福。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "B",
+      "result": "R8",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "actionPreserved": "你已先聽他怕最後一次同逛落空的失落，該事實不被後續取消預訂並非撤回友情取消。",
+      "reason": "聽完學生對缺席的失落，可降低他把取消代訂當成否定友情的壓力，因而促進自主撤單。"
+    },
+    {
+      "choice": "C",
+      "result": "R1",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已請提出預訂前要取得的本人同意，該事實不被後續先付款的人反而尷尬取消。",
+      "reason": "確認本人同意的要求不會決定商品是否有貨、代領人是否有空或同學的交通安排。學生先自行預訂，隨後因取貨資訊及退款條件暫停訂單。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R2",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "actionPreserved": "你已請提出預訂前要取得的本人同意，該事實不被後續缺席同學自己回話取消。",
+      "reason": "提醒先取得本人同意，促使學生直接詢問對方，才有機會聽到不要食物而想看照片的需求。"
+    },
+    {
+      "choice": "C",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已請提出預訂前要取得的本人同意，該事實不被後續商家只保留到某時段取消。",
+      "reason": "確認本人同意的要求不會決定商品是否有貨、代領人是否有空或同學的交通安排。攤商提出有限的保留時間和付款、領取條件。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已請提出預訂前要取得的本人同意，該事實不被後續同學其實能短暫到場取消。",
+      "reason": "確認本人同意的要求不會決定商品是否有貨、代領人是否有空或同學的交通安排。同學確認面試及交通後發現可能短暫到場，仍自行決定購買。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已請提出預訂前要取得的本人同意，該事實不被後續限量商品預訂已額滿取消。",
+      "reason": "確認本人同意的要求不會決定商品是否有貨、代領人是否有空或同學的交通安排。攤商在活動前通知預訂已額滿；學生先據實告知同學，預計活動開始後再分享照片。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已請提出預訂前要取得的本人同意，該事實不被後續代領安排出現空隙取消。",
+      "reason": "確認本人同意的要求不會決定商品是否有貨、代領人是否有空或同學的交通安排。原代領者臨時有事，取貨時段及替補人選尚未確認，學生核對取消規則。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已請提出預訂前要取得的本人同意，該事實不被後續一張攤位明信片取消。",
+      "reason": "確認本人同意的要求不會決定商品是否有貨、代領人是否有空或同學的交通安排。學生使用公開活動介紹卡，邀同學自願留下祝福。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "C",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已請提出預訂前要取得的本人同意，該事實不被後續取消預訂並非撤回友情取消。",
+      "reason": "確認本人同意的要求不會決定商品是否有貨、代領人是否有空或同學的交通安排。確認對方未曾同意代訂後，學生在付款前取消預訂。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R1",
+      "weight": 4,
+      "compatibility": "相容",
+      "causalDirection": "促進",
+      "actionPreserved": "你已釐清代購付款和無法取貨責任，該事實不被後續先付款的人反而尷尬取消。",
+      "reason": "先釐清付款與取貨責任，使學生更可能辨識訂單的個資與退款問題並暫停操作。"
+    },
+    {
+      "choice": "D",
+      "result": "R2",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已釐清代購付款和無法取貨責任，該事實不被後續缺席同學自己回話取消。",
+      "reason": "付款及取貨責任的說明不會代替本人選擇或商家實際供貨。可能缺席的同學回覆不想收食物，但希望看到園遊會照片。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R3",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已釐清代購付款和無法取貨責任，該事實不被後續商家只保留到某時段取消。",
+      "reason": "付款及取貨責任的說明不會代替本人選擇或商家實際供貨。攤商提出有限的保留時間和付款、領取條件。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R4",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已釐清代購付款和無法取貨責任，該事實不被後續同學其實能短暫到場取消。",
+      "reason": "付款及取貨責任的說明不會代替本人選擇或商家實際供貨。同學確認面試及交通後發現可能短暫到場，仍自行決定購買。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R5",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已釐清代購付款和無法取貨責任，該事實不被後續限量商品預訂已額滿取消。",
+      "reason": "付款及取貨責任的說明不會代替本人選擇或商家實際供貨。攤商在活動前通知預訂已額滿；學生先據實告知同學，預計活動開始後再分享照片。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R6",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已釐清代購付款和無法取貨責任，該事實不被後續代領安排出現空隙取消。",
+      "reason": "付款及取貨責任的說明不會代替本人選擇或商家實際供貨。原代領者臨時有事，取貨時段及替補人選尚未確認，學生核對取消規則。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R7",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已釐清代購付款和無法取貨責任，該事實不被後續一張攤位明信片取消。",
+      "reason": "付款及取貨責任的說明不會代替本人選擇或商家實際供貨。學生使用公開活動介紹卡，邀同學自願留下祝福。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    },
+    {
+      "choice": "D",
+      "result": "R8",
+      "weight": 2,
+      "compatibility": "相容",
+      "causalDirection": "中性",
+      "actionPreserved": "你已釐清代購付款和無法取貨責任，該事實不被後續取消預訂並非撤回友情取消。",
+      "reason": "付款及取貨責任的說明不會代替本人選擇或商家實際供貨。確認對方未曾同意代訂後，學生在付款前取消預訂。此轉折仍可在該教師行動完成後發生，原行動不必撤回。"
+    }
+  ]
+}

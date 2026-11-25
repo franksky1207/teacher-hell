@@ -1,0 +1,87 @@
+name: T6-109-150 focused promotion acceptance
+on:
+  pull_request:
+    branches: [content/events-production-v1]
+    paths:
+      - '.github/workflows/t6-109-150-promotion-check.yml'
+      - 'content/events-v1/T/T6-高三下/T6-4-最後一次園遊會/**'
+      - 'content/events-v1/T/T6-高三下/T6-5-畢業典禮前的特殊師生請求/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  t6-final-focused-node:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Validate 42 full stories and independent audit evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          for n in $(seq 109 150); do
+            printf -v id 'T6-%03d' "$n"
+            if (( n <= 111 )); then
+              root='content/events-v1/T/T6-高三下/T6-4-最後一次園遊會/活動前'
+              evidence="$root/驗收紀錄/T6-109-111-第二階段獨立驗收證據/$id.json"
+            else
+              root='content/events-v1/T/T6-高三下/T6-5-畢業典禮前的特殊師生請求/活動前'
+              evidence="$root/驗收紀錄/T6-112-150-第二階段獨立驗收證據/$id.json"
+            fi
+            test -s "$root/$id.md"
+            test -s "$evidence"
+            node scripts/check-story-draft.mjs --input "$root/$id.md" --stage full
+            node scripts/check-story-production.mjs audit "$id" --evidence "$evidence"
+            echo "PASS full + audit: $id"
+          done
+      - name: Verify 336 results against AVG, and both evidence source blobs
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {execFileSync} from 'node:child_process';
+          let total=0;
+          for(let n=109;n<=150;n++){
+            const id='T6-'+String(n).padStart(3,'0');
+            const root=n<=111?'content/events-v1/T/T6-高三下/T6-4-最後一次園遊會/活動前':'content/events-v1/T/T6-高三下/T6-5-畢業典禮前的特殊師生請求/活動前';
+            const path=root+'/'+id+'.md';
+            const raw=fs.readFileSync(path,'utf8');
+            const blob=execFileSync('git',['hash-object',path],{encoding:'utf8'}).trim();
+            const evidencePaths=n<=111
+              ? [root+'/驗收紀錄/'+id+'-第一階段作者證據.json',root+'/驗收紀錄/T6-109-111-第二階段獨立驗收證據/'+id+'.json']
+              : [root+'/驗收紀錄/'+id+'-第一階段作者證據.json',root+'/驗收紀錄/T6-112-150-第二階段獨立驗收證據/'+id+'.json'];
+            for(const file of evidencePaths){
+              const ev=JSON.parse(fs.readFileSync(file,'utf8'));
+              if(ev.sourceBlobSha!==blob)throw Error(id+' sourceBlobSha mismatch '+file);
+            }
+            const match=raw.match(/```avg\s*\n([\s\S]*?)\n```/);
+            if(!match)throw Error(id+' missing AVG');
+            const avg=JSON.parse(match[1]);
+            const texts=[...raw.matchAll(/- \*\*玩家可見結果\*\*：([^\n]+)/g)].map(m=>m[1]);
+            if(texts.length!==8)throw Error(id+' expected 8 original texts got '+texts.length);
+            for(let r=1;r<=8;r++){
+              const pages=avg.results['R'+r]?.pages;
+              if(!Array.isArray(pages)||!pages.length)throw Error(id+' missing R'+r+' pages');
+              if(pages.map(p=>p.text).join('')!==texts[r-1])throw Error(id+' R'+r+' original/AVG mismatch');
+              total++;
+            }
+          }
+          if(total!==336)throw Error('Expected 336 R, found '+total);
+          console.log('PASS 42 stories, 336 outcomes, 84 source SHA references');
+          NODE
+      - name: Run Node story validators and AVG regression tests
+        run: |
+          npm run test:story-draft
+          node --test test/story-preview-multipage.test.js test/story-preview-cast-continuity.test.js test/story-preview-snapshot.test.js test/story-reader-export.test.js test/story-production-catalog.test.js
+      - name: Validate T6-4 and T6-5 date windows
+        run: |
+          node scripts/check-story-production.mjs windows T6-4
+          node scripts/check-story-production.mjs windows T6-5

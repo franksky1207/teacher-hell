@@ -153,3 +153,17 @@ jobs:
             node scripts/check-story-production.mjs audit "$id" --evidence "$root/$phase/驗收紀錄/正式審查證據/$id.json" >/dev/null
             echo "PASS evidence: $id"
           done
+
+      - name: Verify T6-049–072 final Markdown and independent evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="content/events-v1/T/T6-高三下/T6-2-申請入學第一階段篩選"
+          for n in $(seq 49 72); do
+            printf -v id "T6-%03d" "$n"
+            node scripts/check-story-draft.mjs --input "$root/活動後/$id.md" --stage full >/dev/null
+            node scripts/check-story-production.mjs audit "$id" --evidence "$root/驗收紀錄/T6-049-072-第二階段獨立驗收證據/$id.json" >/dev/null
+            echo "PASS full + evidence: $id"
+          done
+          node scripts/check-story-production.mjs windows T6-2 >/dev/null
+          echo "PASS T6-049–072 full/evidence/windows"

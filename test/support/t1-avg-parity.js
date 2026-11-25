@@ -6,6 +6,9 @@ export function normalizeT1AvgParity(text) {
     .replace(/\{\{student_b\.name\}\}對排班的\{\{student_a\.name\}\}說：/g, '')
     .replace(/\{\{(?:student_[ab]|guardian_[ab])\.name\}\}說：/g, '')
     .replace(/(?:導師|老師|家長)說：/g, '')
-    .replace(/[「」]/g, '')
+    .replace(/\{\{guardian_a\.name\}\}傳來訊息：/g, '')
+    .replace(/\{\{student_a\.name\}\}(?:看著卡片說|指著圖說)：/g, '')
+    .replace(/\{\{student_b\.name\}\}小聲說：/g, '')
+    .replace(/[「」『』]/g, '')
     .replace(/\s/g, '');
 }

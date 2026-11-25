@@ -2,11 +2,11 @@
   "baselineCommitSha": "0d80d456e2905b35db096e9179069d783a66a249",
   "workBranch": "work/t1-t6-natural-dialogue-pass-20261125",
   "totalStories": 648,
-  "r1CompletedCount": 498,
-  "formalCompletedCount": 498,
-  "aFindingsCount": 75,
-  "bFindingsCount": 197,
-  "cObservationsCount": 60,
+  "r1CompletedCount": 648,
+  "formalCompletedCount": 648,
+  "aFindingsCount": 77,
+  "bFindingsCount": 342,
+  "cObservationsCount": 61,
   "lastBatches": [
     "T1-001-010.json",
     "T1-011-025.json",
@@ -59,7 +59,10 @@
     "T5/audit-109-117.json",
     "T5/audit-118-126.json",
     "T5/audit-127-135.json",
-    "T5/audit-136-138.json"
+    "T5/audit-136-138.json",
+    "T6/audit-summary.json",
+    "T6/findings.json",
+    "T6/coverage.json"
   ],
   "termStats": {
     "T1": {
@@ -128,17 +131,24 @@
     "T6": {
       "total": 150,
       "actualFiles": 150,
-      "r1Done": 0,
+      "r1Done": 150,
       "r2Done": null,
-      "fullDone": 0,
-      "passed": 0,
-      "needsFix": 0,
-      "aTotal": 0,
-      "bTotal": 0,
-      "cTotal": 0
+      "fullDone": 150,
+      "passed": 40,
+      "needsFix": 110,
+      "aTotal": 2,
+      "bTotal": 145,
+      "cTotal": 1,
+      "structuralScreened": 150,
+      "semanticCompleted": 150,
+      "semanticPending": 0,
+      "avgMatchedOutcomes": 1200
     }
   },
   "t3StructuralScreened": 90,
   "t3DeepSemanticReviewPending": 0,
-  "t3RoutcomeTextVerified": 720
+  "t3RoutcomeTextVerified": 720,
+  "lastReviewedStoryId": "T6-150",
+  "nextWork": "第五階段第二步集中修正，須另行授權，不得直接改稿",
+  "t6Report": "T6/report.md"
 }

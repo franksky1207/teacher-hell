@@ -1,0 +1,25 @@
+name: T1 stage5 correction regression
+on:
+  push:
+    branches:
+      - work/t1-t6-natural-dialogue-pass-20261125
+    paths:
+      - '.github/workflows/t1-stage5-regression.yml'
+      - 'test/story-preview-*.test.js'
+      - 'content/events-v1/T/T1-高一上/**'
+permissions:
+  contents: read
+jobs:
+  t1-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: T1 regression suite
+        run: |
+          node --test test/story-preview-cast-continuity.test.js test/story-preview-t1-006-010.test.js test/story-preview-t1-061-072.test.js test/story-preview-t1-073-084.test.js test/story-preview-t1-085-114.test.js test/story-preview-t1-115-126.test.js test/story-preview-t1-127-150.test.js test/story-preview-t1-151-174.test.js test/story-preview-t1-cross-day-pools.test.js
+      - name: Story reader regression
+        run: node --test test/story-reader-export.test.js test/story-preview-catalog-playback.test.js test/story-preview-multipage.test.js test/story-production-catalog.test.js

@@ -53,7 +53,8 @@ test('T1-073～084: twelve V3 drafts, 96 distinct results, dialogue-first AVG, l
           assert.equal(page.speaker,null,id+' narration must have null speaker');
           assert.ok(!page.cast.some(c=>c.role.startsWith('guardian_')),id+' R'+(i+1)+' remote guardian sprite leaked into narration');
         }
-        if(page.speaker&&page.speaker!=='teacher')assert.ok(page.cast.some(c=>c.role===page.speaker),id+' R'+(i+1)+' speaker missing from cast');
+        // Remote phone/chat/email speakers are intentionally off-stage per the AVG contract.
+        if(page.speaker&&page.speaker!=='teacher'&&!['phone','chat','email'].includes(page.presentation))assert.ok(page.cast.some(c=>c.role===page.speaker),id+' R'+(i+1)+' on-site speaker missing from cast');
       }
       distinct.add(id+':'+results[i].title);
       resultPageTotal+=pages.length;

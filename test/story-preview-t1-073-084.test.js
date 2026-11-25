@@ -5,6 +5,7 @@ import {validateStoryDraft,seedCodesFromMarkdown,topicIdsFromMarkdown} from '../
 import {readTopicWindows} from '../scripts/story-windows.js';
 import {compileStoryPreview} from '../src/runtime/story-preview-content.js';
 import {storyVisibleLength,storyAvgVisibleLength} from '../scripts/story-visible-length.js';
+import {normalizeT1AvgParity} from './support/t1-avg-parity.js';
 
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 const folder='content/events-v1/T/T1-高一上/T1-3-高一上家長日/活動後/';

@@ -2658,19 +2658,892 @@
       "qualityInspection": "規則與原文證據篩查，非逐篇人工語意判定"
     },
     {
-      "i": 112,
-      "path": "content/events-v1/T/T6-高三下/T6-4-最後一次園遊會/活動前/T6-112.md",
-      "error": "NOT_FOUND: Error code: NOT_FOUND; Error: GitHub API error 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}"
+      "storyId": "T6-112",
+      "file": "content/events-v1/T/T6-高三下/T6-5-畢業典禮前的特殊師生請求/活動前/T6-112.md",
+      "sourceSha": "87537160119eb3438dc00ce7be928f419289b7c9",
+      "opening": [
+        {
+          "page": "P01",
+          "label": "旁白",
+          "text": "{{student_a.name}}在畢典前整理教室，抱起裝了三年零碎物品的共用箱，說想整箱帶回家珍藏。你卻看到箱底有標著借用人的工具、未歸還的活動用品和幾張未確認所有權的作品。",
+          "avg": {
+            "scene": "school:classroom",
+            "enter": [
+              "student_a"
+            ],
+            "presentation": "narration"
+          }
+        },
+        {
+          "page": "P02",
+          "label": "student_a",
+          "text": "「我不是要佔便宜，只是怕畢業後這些東西直接被丟掉。」",
+          "avg": {
+            "scene": "school:classroom",
+            "speaker": "student_a",
+            "presentation": "dialogue"
+          }
+        },
+        {
+          "page": "P03",
+          "label": "旁白",
+          "text": "一個箱子裝著共同記憶，也混著不同人的財物和責任。只要還沒完成必要點交，誰都不能把整箱當成自己的紀念品。",
+          "avg": {
+            "scene": "school:classroom",
+            "presentation": "narration"
+          }
+        }
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "核對哪些東西能由全班一起決定去留",
+          "emotional": false,
+          "objective": "你已核對哪些物品能由全班共同處置，未替當事人或權責窗口決定結果。",
+          "tradeoff": "分清共同物品與私人借物，能避免直接帶走爭議品，卻使分配不如預期簡單。"
+        },
+        {
+          "id": "B",
+          "action": "幫大家為共用箱拍照留個紀錄",
+          "emotional": false,
+          "objective": "你已協助為共用箱拍照留存紀錄，未替當事人或權責窗口決定結果。",
+          "tradeoff": "拍下物品可留念，但照片可能拍入他人資料，也不取代所有權確認。"
+        },
+        {
+          "id": "C",
+          "action": "先聽他害怕三年回憶被清空的心情",
+          "emotional": true,
+          "objective": "你已先聽他害怕三年回憶被清空的心情，未替當事人或權責窗口決定結果。",
+          "tradeoff": "理解他怕共用箱被清空的心情，卻不能因此免去物品返還與場地整理。"
+        },
+        {
+          "id": "D",
+          "action": "先把借來的東西和紀念品分開清點",
+          "emotional": false,
+          "objective": "你已先把借物與可紀念品分開清點，未替當事人或權責窗口決定結果。",
+          "tradeoff": "先清點借物能減少漏還，但也可能發現部分物品無法帶走。"
+        }
+      ],
+      "results": [
+        {
+          "id": "R1",
+          "title": "借物主人突然出現",
+          "playerText": "學生翻到箱底一件貼有姓名的器材，物主正好來問什麼時候可以拿回去。他這才知道，放在班上很久的東西並不一定屬於全班。「我以為放在班上很久就是大家的，原來根本不是。」他把器材交給負責保管的人，並在清單上註明歸屬。雖然很想留下這些回憶，他也知道不能把同學借出的東西直接帶回家。",
+          "avgPages": [
+            {
+              "text": "學生翻到箱底一件貼有姓名的器材，物主正好來問什麼時候可以拿回去。他這才知道，放在班上很久的東西並不一定屬於全班。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「我以為放在班上很久就是大家的，原來根本不是。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "embarrassed"
+              }
+            },
+            {
+              "text": "他把器材交給負責保管的人，並在清單上註明歸屬。雖然很想留下這些回憶，他也知道不能把同學借出的東西直接帶回家。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R2",
+          "title": "清單裡少了一件",
+          "playerText": "盤點時，學生發現清單上記著一個借出去的收納盒，箱裡卻找不到。原本想整箱搬回家的他開始有些緊張。「如果我現在拿走，別人可能以為不見的也是我帶走的。」他請負責保管的人查一下借用紀錄，暫時不帶走尚未確認的物品。比起急著搬箱子回家，他現在更想先弄清楚那個收納盒到底在哪裡。",
+          "avgPages": [
+            {
+              "text": "盤點時，學生發現清單上記著一個借出去的收納盒，箱裡卻找不到。原本想整箱搬回家的他開始有些緊張。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「如果我現在拿走，別人可能以為不見的也是我帶走的。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "embarrassed"
+              }
+            },
+            {
+              "text": "他請負責保管的人查一下借用紀錄，暫時不帶走尚未確認的物品。比起急著搬箱子回家，他現在更想先弄清楚那個收納盒到底在哪裡。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R3",
+          "title": "真正想留的是一張紙",
+          "playerText": "學生逐件翻看後發現自己最在意的不是整箱雜物，而是一張班級活動時手繪的舊地圖，其他物品對他並沒有太多特殊意義。「我一直說想要整箱，結果最想留下的只有這一張。」他詢問地圖的所有權與可否複製，讓原本的整箱爭議縮成一項可確認的請求。他把地圖小心攤平，等確認能不能複印後，再決定要怎麼保存。",
+          "avgPages": [
+            {
+              "text": "學生逐件翻看後發現自己最在意的不是整箱雜物，而是一張班級活動時手繪的舊地圖，其他物品對他並沒有太多特殊意義。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「我一直說想要整箱，結果最想留下的只有這一張。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "surprised"
+              }
+            },
+            {
+              "text": "他詢問地圖的所有權與可否複製，讓原本的整箱爭議縮成一項可確認的請求。他把地圖小心攤平，等確認能不能複印後，再決定要怎麼保存。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R4",
+          "title": "破損的器材無人承認",
+          "playerText": "箱裡一件共同使用的器材已經裂開，誰也說不清損壞時間，學生擔心一旦清點就會被說成自己弄壞。「我可以說我看到它裂了，可是我真的不知道是誰弄壞的。」他把裂痕記在清單上，請負責保管的人確認，沒有隨便猜是誰弄壞的。雖然還要花時間處理，至少不會讓某個同學莫名其妙背黑鍋。",
+          "avgPages": [
+            {
+              "text": "箱裡一件共同使用的器材已經裂開，誰也說不清損壞時間，學生擔心一旦清點就會被說成自己弄壞。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「我可以說我看到它裂了，可是我真的不知道是誰弄壞的。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "sad"
+              }
+            },
+            {
+              "text": "他把裂痕記在清單上，請負責保管的人確認，沒有隨便猜是誰弄壞的。雖然還要花時間處理，至少不會讓某個同學莫名其妙背黑鍋。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R5",
+          "title": "兩種物品有不同歸處",
+          "playerText": "整理發現部分物品必須返還校方，少數自費製作的小卡則由原創作者同意讓學生保存，不能用同一張領取單處理。「原來不是這箱東西要不要留下，而是每一件本來就不一樣。」他把要還給學校的物品和同意贈送的小卡分開放好。整理得比預期久了一點，但他終於知道哪些東西可以放心帶回家。",
+          "avgPages": [
+            {
+              "text": "整理發現部分物品必須返還校方，少數自費製作的小卡則由原創作者同意讓學生保存，不能用同一張領取單處理。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「原來不是這箱東西要不要留下，而是每一件本來就不一樣。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "embarrassed"
+              }
+            },
+            {
+              "text": "他把要還給學校的物品和同意贈送的小卡分開放好。整理得比預期久了一點，但他終於知道哪些東西可以放心帶回家。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R6",
+          "title": "空教室不是永久倉庫",
+          "playerText": "學生提議先把未整理的箱子留在原教室，等畢業後再回來拿，才發現教室將交由後續班級使用，沒有永久保管的承諾。「我以為放著就好，忘了這間教室也不會一直是我們的。」他去問負責管理教室的人，確認箱子最多能放到什麼時候、逾期該怎麼處理。知道期限後，他也開始安排剩下的整理工作。",
+          "avgPages": [
+            {
+              "text": "學生提議先把未整理的箱子留在原教室，等畢業後再回來拿，才發現教室將交由後續班級使用，沒有永久保管的承諾。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「我以為放著就好，忘了這間教室也不會一直是我們的。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "calm"
+              }
+            },
+            {
+              "text": "他去問負責管理教室的人，確認箱子最多能放到什麼時候、逾期該怎麼處理。知道期限後，他也開始安排剩下的整理工作。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R7",
+          "title": "認領讓大家說出故事",
+          "playerText": "學生通知幾位同學來認領已確認歸屬的物品。大家聊起當時借東西的經過，他才發現同一件小事竟然有這麼多不同的回憶。「他記得的是借出去那天，我記得的卻是大家用它的時候。」大家一邊認領，一邊聊起以前在教室裡發生的事。東西各自回到主人手上，他也多聽到了幾段原本不知道的故事。",
+          "avgPages": [
+            {
+              "text": "學生通知幾位同學來認領已確認歸屬的物品。大家聊起當時借東西的經過，他才發現同一件小事竟然有這麼多不同的回憶。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「他記得的是借出去那天，我記得的卻是大家用它的時候。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "happy"
+              }
+            },
+            {
+              "text": "大家一邊認領，一邊聊起以前在教室裡發生的事。東西各自回到主人手上，他也多聽到了幾段原本不知道的故事。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R8",
+          "title": "拍下來不等於帶走",
+          "playerText": "學生替確認可以拍攝的共用物留下一張整理前的照片，把該歸還的東西還給原主，只留下經同意可以帶走的小物。「我只是怕以後沒人記得這些事，有照片好像也沒那麼捨不得了。」他完成點交，把照片存進自己的紀念相簿。整理後剩下的東西少了很多，他卻已經不再堅持要把整箱搬回家。",
+          "avgPages": [
+            {
+              "text": "學生替確認可以拍攝的共用物留下一張整理前的照片，把該歸還的東西還給原主，只留下經同意可以帶走的小物。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「我只是怕以後沒人記得這些事，有照片好像也沒那麼捨不得了。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "calm"
+              }
+            },
+            {
+              "text": "他完成點交，把照片存進自己的紀念相簿。整理後剩下的東西少了很多，他卻已經不再堅持要把整箱搬回家。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        }
+      ],
+      "codeExplanations": [
+        "用於「畢典前學生想把三年共用箱帶走」的當事人反應與實際負擔，依八結局所列合法持碼人的具體行動增減；不得移轉至無數值情境人物。",
+        "用於「畢典前學生想把三年共用箱帶走」的當事人反應與實際負擔，依八結局所列合法持碼人的具體行動增減；不得移轉至無數值情境人物。",
+        "用於「畢典前學生想把三年共用箱帶走」的當事人反應與實際負擔，依八結局所列合法持碼人的具體行動增減；不得移轉至無數值情境人物。",
+        "用於「畢典前學生想把三年共用箱帶走」的當事人反應與實際負擔，依八結局所列合法持碼人的具體行動增減；不得移轉至無數值情境人物。"
+      ],
+      "signals": [
+        {
+          "severity": "B",
+          "kind": "四碼因果用途套版",
+          "location": "四碼表",
+          "evidence": "用於「畢典前學生想把三年共用箱帶走」的當事人反應與實際負擔，依八結局所列合法持碼人的具體行動增減；不得移轉至無數值情境人物。"
+        }
+      ],
+      "structureChecked": true,
+      "qualityInspection": "規則與原文證據篩查，非逐篇人工語意判定"
     },
     {
-      "i": 113,
-      "path": "content/events-v1/T/T6-高三下/T6-4-最後一次園遊會/活動前/T6-113.md",
-      "error": "NOT_FOUND: Error code: NOT_FOUND; Error: GitHub API error 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}"
+      "storyId": "T6-113",
+      "file": "content/events-v1/T/T6-高三下/T6-5-畢業典禮前的特殊師生請求/活動前/T6-113.md",
+      "sourceSha": "46195d247c8c58682d3719bf5c3d582349a30c42",
+      "opening": [
+        {
+          "page": "P01",
+          "label": "旁白",
+          "text": "{{student_a.name}}拿著一張空白卡片，希望你在畢典前寫上「你永遠是我教過最努力的學生」，他打算把這句話裱起來送給家人。你知道他曾認真補救過失誤，卻不可能替每一個時段的努力或其他學生的經歷排名。",
+          "avg": {
+            "scene": "school:classroom",
+            "enter": [
+              "student_a"
+            ],
+            "presentation": "narration"
+          }
+        },
+        {
+          "page": "P02",
+          "label": "student_a",
+          "text": "「老師，只有一句最努力也不行嗎？我只是希望有人真的記得我。」",
+          "avg": {
+            "scene": "school:classroom",
+            "speaker": "student_a",
+            "presentation": "dialogue"
+          }
+        },
+        {
+          "page": "P03",
+          "label": "旁白",
+          "text": "最後留言能留下真實見證，但導師的職責不包括替學生訂下永遠不變的絕對標籤。",
+          "avg": {
+            "scene": "school:classroom",
+            "presentation": "narration"
+          }
+        }
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "請他選擇最想被記得的實際經歷",
+          "emotional": false,
+          "objective": "你已請他選擇最想被記得的實際經歷，沒有替當事人或職權單位承諾後續結果。",
+          "tradeoff": "請他挑一件真實經歷，能避免空泛讚美，卻不保證他想要的『永遠最努力』評語會出現。"
+        },
+        {
+          "id": "B",
+          "action": "確認卡片是不是要拿去當申請證明用",
+          "emotional": false,
+          "objective": "你已核對卡片是否另有申請證明用途，沒有替當事人或職權單位承諾後續結果。",
+          "tradeoff": "查明卡片用途可避免被誤當正式證明，但家人可能仍期待更肯定的措辭。"
+        },
+        {
+          "id": "C",
+          "action": "先聽他怕畢業後努力無人記得的委屈",
+          "emotional": true,
+          "objective": "你已先聽他怕畢業後努力無人記得的委屈，沒有替當事人或職權單位承諾後續結果。",
+          "tradeoff": "理解努力不被記得的委屈，不能替全班或未來的他給出絕對排名。"
+        },
+        {
+          "id": "D",
+          "action": "幫他把「最」字輩的評語改成具體觀察",
+          "emotional": false,
+          "objective": "你已協助把絕對形容改成有限觀察，沒有替當事人或職權單位承諾後續結果。",
+          "tradeoff": "以具體觀察取代最高級形容較可靠，卻可能讓他一開始覺得不夠感人。"
+        }
+      ],
+      "results": [
+        {
+          "id": "R1",
+          "title": "被比較的人聽見了",
+          "playerText": "學生將想要的『最努力』字句念給同學聽，旁人問起是不是代表其他人都不夠認真，他才發現稱讚會帶出無意的排名。「我真的只是想知道老師看見我，沒想把別人放到後面。」他重新衡量卡片上的用語，不再把肯定建立在另一個人的落差上。被看見仍然重要，只是最刺眼的那個字未必能保住原來的心意。",
+          "avgPages": [
+            {
+              "text": "學生將想要的『最努力』字句念給同學聽，旁人問起是不是代表其他人都不夠認真，他才發現稱讚會帶出無意的排名。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「我真的只是想知道老師看見我，沒想把別人放到後面。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "embarrassed"
+              }
+            },
+            {
+              "text": "他重新衡量卡片上的用語，不再把肯定建立在另一個人的落差上。被看見仍然重要，只是最刺眼的那個字未必能保住原來的心意。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R2",
+          "title": "一件小事比大話清楚",
+          "playerText": "學生回想三年來自己曾在一次失敗後主動補交紀錄，老師也確實記得他如何重新完成，兩人決定把細節寫下來。「這樣寫大家看得到我做過什麼，不用先說我是第一名。」卡片上沒有「最努力」三個字，卻清楚寫下他那次重新振作、補交紀錄的經過。他第一次感覺，真正具體的肯定比任何無從證明的『永遠』都站得住腳。",
+          "avgPages": [
+            {
+              "text": "學生回想三年來自己曾在一次失敗後主動補交紀錄，老師也確實記得他如何重新完成，兩人決定把細節寫下來。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「這樣寫大家看得到我做過什麼，不用先說我是第一名。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "happy"
+              }
+            },
+            {
+              "text": "卡片上沒有「最努力」三個字，卻清楚寫下他那次重新振作、補交紀錄的經過。他第一次感覺，真正具體的肯定比任何無從證明的『永遠』都站得住腳。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R3",
+          "title": "家人把留言當成證明",
+          "playerText": "學生原想帶卡片回家分享，家人卻問能不能拿這句『最努力』當成升學或評選證明，令他不知如何回答。「原來我只是要一句紀念，他們卻以為老師替我保證了什麼。」他說明卡片是私人觀察與祝福，不能代替正式推薦或評量程序。當用途被講清楚，原本真誠的留言才不必承擔它無權證明的事情。",
+          "avgPages": [
+            {
+              "text": "學生原想帶卡片回家分享，家人卻問能不能拿這句『最努力』當成升學或評選證明，令他不知如何回答。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「原來我只是要一句紀念，他們卻以為老師替我保證了什麼。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "surprised"
+              }
+            },
+            {
+              "text": "他說明卡片是私人觀察與祝福，不能代替正式推薦或評量程序。當用途被講清楚，原本真誠的留言才不必承擔它無權證明的事情。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R4",
+          "title": "舊挫折其實很難說",
+          "playerText": "學生希望老師略去自己曾消沉的那段時間，只寫三年從沒放棄，你想起他當時也曾需要很長的休息。「我怕你寫到我停下來的時候，大家就覺得我沒有努力。」兩人找到能尊重隱私又不虛構連續成功的說法。學生開始接受努力也可能包含停頓，而教師不必因為畢業就把真實經驗修成沒有裂縫的故事。",
+          "avgPages": [
+            {
+              "text": "學生希望老師略去自己曾消沉的那段時間，只寫三年從沒放棄，你想起他當時也曾需要很長的休息。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「我怕你寫到我停下來的時候，大家就覺得我沒有努力。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "sad"
+              }
+            },
+            {
+              "text": "兩人找到能尊重隱私又不虛構連續成功的說法。學生開始接受努力也可能包含停頓，而教師不必因為畢業就把真實經驗修成沒有裂縫的故事。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R5",
+          "title": "要求每個人同樣的稱讚",
+          "playerText": "有同學得知這張卡片後，也想請導師寫同樣的超級稱號，學生才發現唯一性的語句一旦複製便失去意義。「我原來想要的是只屬於我的話，不是大家都拿到一模一樣的獎。」他轉而挑選一件只有自己知道來龍去脈的事情，請老師在可見證範圍內留言。公平不必等於一句空泛的最高級評語。",
+          "avgPages": [
+            {
+              "text": "有同學得知這張卡片後，也想請導師寫同樣的超級稱號，學生才發現唯一性的語句一旦複製便失去意義。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「我原來想要的是只屬於我的話，不是大家都拿到一模一樣的獎。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "calm"
+              }
+            },
+            {
+              "text": "他轉而挑選一件只有自己知道來龍去脈的事情，請老師在可見證範圍內留言。公平不必等於一句空泛的最高級評語。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R6",
+          "title": "畢典前還來得及自己寫",
+          "playerText": "學生忽然提出先由自己寫一段三年轉變，再請老師只確認其中確實見過的部分，沒有要求代筆包裝形象。「我原本等人替我說，現在想試著自己把那件事講完整。」他不再要求老師替自己的三年評出一個高低，也終於能說清楚自己為什麼想留下這張卡片。這張卡最後留下的是兩個視角，而不是一個不容質疑的稱號。",
+          "avgPages": [
+            {
+              "text": "學生忽然提出先由自己寫一段三年轉變，再請老師只確認其中確實見過的部分，沒有要求代筆包裝形象。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「我原本等人替我說，現在想試著自己把那件事講完整。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "calm"
+              }
+            },
+            {
+              "text": "他不再要求老師替自己的三年評出一個高低，也終於能說清楚自己為什麼想留下這張卡片。這張卡最後留下的是兩個視角，而不是一個不容質疑的稱號。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R7",
+          "title": "一張空白卡造成誤會",
+          "playerText": "學生將尚未填寫的卡片帶回去，家人以為老師拒絕肯定他的努力；他才發現自己沒有解釋教師尚在確認可寫的範圍。「不是老師不肯寫，是我一直要一個不能隨便保證的詞。」他主動向家人澄清，也接受等真實內容確認後再完成留言。把誤會說開之後，留白不再等於否定自己曾做過的努力。",
+          "avgPages": [
+            {
+              "text": "學生將尚未填寫的卡片帶回去，家人以為老師拒絕肯定他的努力；他才發現自己沒有解釋教師尚在確認可寫的範圍。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「不是老師不肯寫，是我一直要一個不能隨便保證的詞。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "happy"
+              }
+            },
+            {
+              "text": "他主動向家人澄清，也接受等真實內容確認後再完成留言。把誤會說開之後，留白不再等於否定自己曾做過的努力。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R8",
+          "title": "最後留下一句不誇張的話",
+          "playerText": "學生拿到老師記錄的具體觀察：即使曾經停下，他仍願意回來處理該負的責任，沒有任何人的努力被排在他後面。「我現在比較想把這句留下來，因為我知道是哪一天發生的。」他把卡片收好，決定不再要求超越別人的絕對稱號。畢業前留下的不是完美人設，而是一段他自己也承認真實的成長。",
+          "avgPages": [
+            {
+              "text": "學生拿到老師記錄的具體觀察：即使曾經停下，他仍願意回來處理該負的責任，沒有任何人的努力被排在他後面。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「我現在比較想把這句留下來，因為我知道是哪一天發生的。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "happy"
+              }
+            },
+            {
+              "text": "他把卡片收好，決定不再要求超越別人的絕對稱號。畢業前留下的不是完美人設，而是一段他自己也承認真實的成長。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        }
+      ],
+      "codeExplanations": [
+        "關係、責任與負荷依「被記住與教師見證」及本人實際後續行動區別；僅在八結果有具體反應時由合法人物更新。",
+        "關係、責任與負荷依「被記住與教師見證」及本人實際後續行動區別；僅在八結果有具體反應時由合法人物更新。",
+        "關係、責任與負荷依「被記住與教師見證」及本人實際後續行動區別；僅在八結果有具體反應時由合法人物更新。",
+        "關係、責任與負荷依「被記住與教師見證」及本人實際後續行動區別；僅在八結果有具體反應時由合法人物更新。"
+      ],
+      "signals": [
+        {
+          "severity": "B",
+          "kind": "四碼因果用途套版",
+          "location": "四碼表",
+          "evidence": "關係、責任與負荷依「被記住與教師見證」及本人實際後續行動區別；僅在八結果有具體反應時由合法人物更新。"
+        }
+      ],
+      "structureChecked": true,
+      "qualityInspection": "規則與原文證據篩查，非逐篇人工語意判定"
     },
     {
-      "i": 114,
-      "path": "content/events-v1/T/T6-高三下/T6-4-最後一次園遊會/活動前/T6-114.md",
-      "error": "NOT_FOUND: Error code: NOT_FOUND; Error: GitHub API error 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}"
+      "storyId": "T6-114",
+      "file": "content/events-v1/T/T6-高三下/T6-5-畢業典禮前的特殊師生請求/活動前/T6-114.md",
+      "sourceSha": "023694e147ca30f3311aedc9c9bba982d3f0bc0e",
+      "opening": [
+        {
+          "page": "P01",
+          "label": "旁白",
+          "text": "{{guardian_a.name}}透過平常的聯絡方式問你，能不能趁上班請假的空檔，在畢典前把{{student_a.name}}的所有離校文件先領走，免得當天跑來跑去。但學生卻說還有資料得自己核對，連哪些文件已經辦好都不確定。",
+          "avg": {
+            "scene": "school:classroom",
+            "enter": [
+              "student_a"
+            ],
+            "presentation": "narration"
+          }
+        },
+        {
+          "page": "P02",
+          "label": "student_a",
+          "text": "「家長說只要老師先給就好，可是有些資料我還沒有簽完。」",
+          "avg": {
+            "scene": "school:classroom",
+            "speaker": "student_a",
+            "presentation": "dialogue"
+          }
+        },
+        {
+          "page": "P03",
+          "label": "旁白",
+          "text": "導師可以協助釐清窗口和可辦項目，不能替註冊、學籍或其他權責單位省略必要程序，也不能假定家長有權代領每份文件。",
+          "avg": {
+            "scene": "school:classroom",
+            "presentation": "narration"
+          }
+        }
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "action": "先聽家長難以再請假的壓力",
+          "emotional": true,
+          "objective": "你已先聽家長難以再請假的壓力，沒有替當事人或職權單位承諾後續結果。",
+          "tradeoff": "先聽家長請假不易的壓力，但不能因此提前發放尚未完成程序的文件。"
+        },
+        {
+          "id": "B",
+          "action": "請行政處室列出可以提前領的項目",
+          "emotional": false,
+          "objective": "你已請行政窗口列出可提前領取項目，沒有替當事人或職權單位承諾後續結果。",
+          "tradeoff": "詢問行政可提前領取的範圍，能減少白跑，卻不等於所有證件都能現在交付。"
+        },
+        {
+          "id": "C",
+          "action": "確認家長代領的資格跟授權方式",
+          "emotional": false,
+          "objective": "你已核對家長代領資格及授權方式，沒有替當事人或職權單位承諾後續結果。",
+          "tradeoff": "核對代領授權可保護學生資料，但未具資格的人仍無法立即領取。"
+        },
+        {
+          "id": "D",
+          "action": "確認學生還有哪些手續得自己辦完",
+          "emotional": false,
+          "objective": "你已確認學生尚需完成的本人程序，沒有替當事人或職權單位承諾後續結果。",
+          "tradeoff": "確認學生本人待辦事項能避免漏件，卻可能需要另排時間完成。"
+        }
+      ],
+      "results": [
+        {
+          "id": "R1",
+          "title": "真正能先領的只有一部分",
+          "playerText": "行政回覆部分證明可依規定提前申請，另幾份仍待本人確認後才能處理，和家長原先想像的整包領取不同。「原來不是學校不通融，是每一張文件的用途都不一樣。」學生與家長分開安排可辦項目，沒有由導師偷跑流程。家長仍需調整時間，卻終於知道哪些等待有實際原因，而不是所有文件都被當成同一件事。",
+          "avgPages": [
+            {
+              "text": "行政回覆部分證明可依規定提前申請，另幾份仍待本人確認後才能處理，和家長原先想像的整包領取不同。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「原來不是學校不通融，是每一張文件的用途都不一樣。」",
+              "scene": "school:classroom",
+              "speaker": "guardian_a",
+              "presentation": "chat"
+            },
+            {
+              "text": "學生與家長分開安排可辦項目，沒有由導師偷跑流程。家長仍需調整時間，卻終於知道哪些等待有實際原因，而不是所有文件都被當成同一件事。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R2",
+          "title": "孩子還差最後的確認",
+          "playerText": "學生檢視自己的離校資料，才發現一份需本人確認的項目尚未完成；家長以為早就辦妥，兩人因此有些爭執。「我不是故意拖，只是那欄要我自己核對，我還沒看清楚。」他們把責任拆成本人確認與家長可協助的部分，沒有要求導師代簽。最後幾日的時間不多，但一次清楚分工比催著交出不存在的完整文件更有幫助。",
+          "avgPages": [
+            {
+              "text": "學生檢視自己的離校資料，才發現一份需本人確認的項目尚未完成；家長以為早就辦妥，兩人因此有些爭執。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「我不是故意拖，只是那欄要我自己核對，我還沒看清楚。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "embarrassed"
+              }
+            },
+            {
+              "text": "他們把責任拆成本人確認與家長可協助的部分，沒有要求導師代簽。最後幾日的時間不多，但一次清楚分工比催著交出不存在的完整文件更有幫助。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R3",
+          "title": "代領資格與關係並非同一件事",
+          "playerText": "家長拿出聯絡紀錄，以為一直由自己和導師聯繫便能直接領任何資料，行政窗口卻仍要求相應授權與身分核對。「我平常都在處理他的事情，原來領這份還要另外確認。」你協助說明正式程序，讓家長向權責窗口確認方法。長期照顧值得尊重，卻不會自動取代每一份個人文件的法律或校務資格。",
+          "avgPages": [
+            {
+              "text": "家長拿出聯絡紀錄，以為一直由自己和導師聯繫便能直接領任何資料，行政窗口卻仍要求相應授權與身分核對。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「我平常都在處理他的事情，原來領這份還要另外確認。」",
+              "scene": "school:classroom",
+              "speaker": "guardian_a",
+              "presentation": "chat"
+            },
+            {
+              "text": "你協助說明正式程序，讓家長向權責窗口確認方法。長期照顧值得尊重，卻不會自動取代每一份個人文件的法律或校務資格。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R4",
+          "title": "少一個章差點白跑",
+          "playerText": "家長準備提前到校，學生核對通知時發現申請表還少一個必要的正式確認，若當天直接到場可能徒勞往返。「幸好先看，不然我會以為老師在學校就一定拿得到。」他們改依承辦單位提供的資訊安排，不逼導師臨時替別的單位補章。一次避免的白跑沒有解決所有手續，卻讓家庭少背一個可預防的成本。",
+          "avgPages": [
+            {
+              "text": "家長準備提前到校，學生核對通知時發現申請表還少一個必要的正式確認，若當天直接到場可能徒勞往返。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「幸好先看，不然我會以為老師在學校就一定拿得到。」",
+              "scene": "school:classroom",
+              "speaker": "guardian_a",
+              "presentation": "chat"
+            },
+            {
+              "text": "他們改依承辦單位提供的資訊安排，不逼導師臨時替別的單位補章。一次避免的白跑沒有解決所有手續，卻讓家庭少背一個可預防的成本。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R5",
+          "title": "畢典當天仍有獨立程序",
+          "playerText": "家長原以為提前領件等於畢典當天所有事都可以不管，學生發現其中還包含需依正式行程辦理的事項。「我們把先領資料和當天要不要到場混成同一件事了。」兩人重新分開確認，不再要求導師為未到的程序保證免除。提早處理是減少奔波，不是把學生剩下的在籍責任提前畫上句點。",
+          "avgPages": [
+            {
+              "text": "家長原以為提前領件等於畢典當天所有事都可以不管，學生發現其中還包含需依正式行程辦理的事項。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「我們把先領資料和當天要不要到場混成同一件事了。」",
+              "scene": "school:classroom",
+              "speaker": "student_a",
+              "presentation": "dialogue",
+              "expression": {
+                "student_a": "calm"
+              }
+            },
+            {
+              "text": "兩人重新分開確認，不再要求導師為未到的程序保證免除。提早處理是減少奔波，不是把學生剩下的在籍責任提前畫上句點。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R6",
+          "title": "兩份相似信封差點拿錯",
+          "playerText": "學生整理資料時發現兩個外觀相近的信封用途不同，家長差點把其中一份誤認為要提前領走的離校證明。「如果直接請老師一起交給我，我可能回家才發現拿錯。」他們只對照必要的正式清單，不再用一句口頭的「全部」帶過逐項核對。原本一團亂的好意，終於變成照著做的步驟。",
+          "avgPages": [
+            {
+              "text": "學生整理資料時發現兩個外觀相近的信封用途不同，家長差點把其中一份誤認為要提前領走的離校證明。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「如果直接請老師一起交給我，我可能回家才發現拿錯。」",
+              "scene": "school:classroom",
+              "speaker": "guardian_a",
+              "presentation": "chat"
+            },
+            {
+              "text": "他們只對照必要的正式清單，不再用一句口頭的「全部」帶過逐項核對。原本一團亂的好意，終於變成照著做的步驟。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R7",
+          "title": "家長接受分次辦理",
+          "playerText": "家長聽完可辦項目與身份限制後，主動排出兩個可行時段，讓學生自己完成必要簽核，其餘再依法辦理。「我不是一定要全部今天拿，只是怕最後沒時間。」家長與學生都還有事情要做，卻不再把時間壓力推給導師的私人保管。程序沒有神奇縮短，彼此卻終於有了可以遵守的安排。",
+          "avgPages": [
+            {
+              "text": "家長聽完可辦項目與身份限制後，主動排出兩個可行時段，讓學生自己完成必要簽核，其餘再依法辦理。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「我不是一定要全部今天拿，只是怕最後沒時間。」",
+              "scene": "school:classroom",
+              "speaker": "guardian_a",
+              "presentation": "chat"
+            },
+            {
+              "text": "家長與學生都還有事情要做，卻不再把時間壓力推給導師的私人保管。程序沒有神奇縮短，彼此卻終於有了可以遵守的安排。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        },
+        {
+          "id": "R8",
+          "title": "導師沒有變成代辦櫃台",
+          "playerText": "學生與家長拿到正式承辦資訊，明白導師能協助說明但不能任意開封、保管或私下交付全部文件。「老師幫我們找到正確窗口，比私下拿一疊資料可靠多了。」家長仍得依規定申請，學生也得負責自己的確認。畢業前最後一段校務關係因此有了清楚界線，不是靠互相通融把責任藏起來。",
+          "avgPages": [
+            {
+              "text": "學生與家長拿到正式承辦資訊，明白導師能協助說明但不能任意開封、保管或私下交付全部文件。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            },
+            {
+              "text": "「老師幫我們找到正確窗口，比私下拿一疊資料可靠多了。」",
+              "scene": "school:classroom",
+              "speaker": "guardian_a",
+              "presentation": "chat"
+            },
+            {
+              "text": "家長仍得依規定申請，學生也得負責自己的確認。畢業前最後一段校務關係因此有了清楚界線，不是靠互相通融把責任藏起來。",
+              "scene": "school:classroom",
+              "presentation": "narration"
+            }
+          ],
+          "textMatched": true
+        }
+      ],
+      "codeExplanations": [
+        "關係、責任與負荷依「家庭便利與在籍流程」及本人實際後續行動區別；僅在八結果有具體反應時由合法人物更新。",
+        "關係、責任與負荷依「家庭便利與在籍流程」及本人實際後續行動區別；僅在八結果有具體反應時由合法人物更新。",
+        "關係、責任與負荷依「家庭便利與在籍流程」及本人實際後續行動區別；僅在八結果有具體反應時由合法人物更新。",
+        "關係、責任與負荷依「家庭便利與在籍流程」及本人實際後續行動區別；僅在八結果有具體反應時由合法人物更新。"
+      ],
+      "signals": [
+        {
+          "severity": "B",
+          "kind": "四碼因果用途套版",
+          "location": "四碼表",
+          "evidence": "關係、責任與負荷依「家庭便利與在籍流程」及本人實際後續行動區別；僅在八結果有具體反應時由合法人物更新。"
+        }
+      ],
+      "structureChecked": true,
+      "qualityInspection": "規則與原文證據篩查，非逐篇人工語意判定"
     },
     {
       "storyId": "T6-115",

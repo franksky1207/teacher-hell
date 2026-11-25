@@ -49,7 +49,8 @@ test('T1-061～072: twelve V3 drafts, 96 distinct results, legal seeds and windo
       assert.ok(!pages.some(p=>/```avg|"opening"\s*:|"results"\s*:/.test(p.text)),id+' raw AVG exposed');
       for(const page of pages){
         assert.ok(page.cast.length<=2,id+' casts >2');
-        if(page.speaker&&page.speaker!=='teacher')assert.ok(page.cast.some(c=>c.role===page.speaker));
+        // Remote phone/chat/email speakers are intentionally off-stage per the AVG contract.
+        if(page.speaker&&page.speaker!=='teacher'&&!['phone','chat','email'].includes(page.presentation))assert.ok(page.cast.some(c=>c.role===page.speaker));
       }
       distinct.add(id+':'+results[i].title);
     }

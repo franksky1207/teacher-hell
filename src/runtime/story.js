@@ -1,4 +1,5 @@
 import {replayStoryPerformance} from './story-performance.js';
+import {renderStoryText,storySubject} from './story-text.js';
 import {validateIssueReservation,issueReservationDefinition,issueFollowupAllowed} from './event-candidates.js';
 import {boundRoles,validateBoundSelection} from './issue-candidates.js';
 import {compileConsequences} from './story-consequences.js';
@@ -179,7 +180,7 @@ export function readStory(w,eventId){
  choices:state.mode==='reading'&&state.page===s.pages.length-1?state.choiceOrder.map(id=>optionsOf(s).find(o=>o.id===id)).map(o=>({id:o.id,text:o.text})):[],
  confirmation:state.mode==='confirming'?{optionId:state.pending,text:optionsOf(s).find(o=>o.id===state.pending).text}:null,
  canFinish:state.mode==='result'||state.mode==='reading'&&!s.choices.length&&state.page===s.pages.length-1,waiting:state.mode==='waiting',canResume:state.mode==='waiting'&&state.dueDate<=w.position.date&&permitsStoryFollowup(w,e)&&issueFollowupAllowed(w,e.id)&&!formalSlot(w).slot.protected,ended:state.mode==='ended',teacherDelta:state.panelDelta,
- result:state.mode==='result'||state.mode==='ended'?r(w).disclosures.filter(d=>d.actorId===w.identity.playerId&&e.facts.some(f=>f.id===d.factId)).map(d=>r(w).facts.find(f=>f.id===d.factId).description):[]};
+ result:state.mode==='result'||state.mode==='ended'?r(w).disclosures.filter(d=>d.actorId===w.identity.playerId&&e.facts.some(f=>f.id===d.factId)).map(d=>renderStoryText(r(w).facts.find(f=>f.id===d.factId).description,storySubject(w))):[]};
 }
 /** Audit action transitions and compiled consequences, never trust saved stage/page labels. */
 export function validateStoryHistory(w){

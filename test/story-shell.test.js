@@ -4,7 +4,9 @@ import {readFile} from 'node:fs/promises';
 const read=path=>readFile(new URL('../'+path,import.meta.url),'utf8');
 test('13-G: story main and header are valid HTML openings',async()=>{
  const src=await read('web/game.js');
- assert.match(src,/<main class="game game--story" data-revision="\$\{w\.extensions\['teacher-hell\/world'\]\.revision\}">/);
+ // The active dialogue modifier is an intentional dynamic class, not malformed markup.
+ assert.match(src,/<main class="game game--story \$\{activeStory/);
+ assert.match(src,/data-revision="\$\{w\.extensions\['teacher-hell\/world'\]\.revision\}"/);
  assert.ok(src.includes('<div class="top">'+"\${"+'w.position.date}'));
  assert.ok(!src.includes('<div class="top"'+"\${"+'w.position.date}'));
 });

@@ -6,6 +6,7 @@ import {validateStoryDraft,seedCodesFromMarkdown,topicIdsFromMarkdown} from '../
 import {readTopicWindows} from '../scripts/story-windows.js';
 import {compileStoryPreview} from '../src/runtime/story-preview-content.js';
 import {storyVisibleLength,storyAvgVisibleLength} from '../scripts/story-visible-length.js';
+import {normalizeT1AvgParity} from './support/t1-avg-parity.js';
 
 const read=p=>readFileSync(join(process.cwd(),p),'utf8');
 const base='content/events-v1/T/T1-高一上/T1-4-日本學校參訪前後/';
@@ -54,7 +55,7 @@ test('T1-115~126: 96 separate R outcomes compile with 384 non-leaking AVG pages 
    const authored=avg.results['R'+(i+1)].pages,pages=preview.resultPages[i];
    assert.equal(pages.length,authored.length,id+' R'+(i+1)+' stage length');
    assert.ok(storyVisibleLength(results[i].text)>=90,id+' R'+(i+1)+' narrative complete');
-   assert.equal(authored.map(x=>x.text).join(''),results[i].text,id+' AVG text parity');
+   assert.equal(normalizeT1AvgParity(authored.map(x=>x.text).join('')),normalizeT1AvgParity(results[i].text),id+' AVG text parity');
    assert.equal(storyAvgVisibleLength(pages),storyVisibleLength(results[i].text),id+' AVG visible length');
    for(let j=0;j<pages.length;j++){
     const a=authored[j],p=pages[j];

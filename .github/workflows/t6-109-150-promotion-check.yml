@@ -34,7 +34,7 @@ jobs:
               evidence="$root/驗收紀錄/T6-109-111-第二階段獨立驗收證據/$id.json"
             else
               root='content/events-v1/T/T6-高三下/T6-5-畢業典禮前的特殊師生請求/活動前'
-              evidence="$root/驗收紀錄/T6-109-150-第二階段獨立驗收證據/$id.json"
+              evidence="$root/驗收紀錄/T6-112-150-第二階段獨立驗收證據/$id.json"
             fi
             test -s "$root/$id.md"
             test -s "$evidence"
@@ -57,7 +57,7 @@ jobs:
             const blob=execFileSync('git',['hash-object',path],{encoding:'utf8'}).trim();
             const evidencePaths=n<=111
               ? [root+'/驗收紀錄/'+id+'-第一階段作者證據.json',root+'/驗收紀錄/T6-109-111-第二階段獨立驗收證據/'+id+'.json']
-              : [root+'/驗收紀錄/'+id+'-第一階段作者證據.json',root+'/驗收紀錄/T6-109-150-第二階段獨立驗收證據/'+id+'.json'];
+              : [root+'/驗收紀錄/'+id+'-第一階段作者證據.json',root+'/驗收紀錄/T6-112-150-第二階段獨立驗收證據/'+id+'.json'];
             for(const file of evidencePaths){
               const ev=JSON.parse(fs.readFileSync(file,'utf8'));
               if(ev.sourceBlobSha!==blob)throw Error(id+' sourceBlobSha mismatch '+file);

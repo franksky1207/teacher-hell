@@ -1,0 +1,84 @@
+name: T6-073–108 focused promotion acceptance
+on:
+  pull_request:
+    branches: [content/events-production-v1]
+    paths:
+      - '.github/workflows/t6-073-108-promotion-check.yml'
+      - 'content/events-v1/T/T6-高三下/T6-3-申請入學第二階段面試安排/**'
+  push:
+    branches: [content/events-production-v1]
+    paths:
+      - '.github/workflows/t6-073-108-promotion-check.yml'
+      - 'content/events-v1/T/T6-高三下/T6-3-申請入學第二階段面試安排/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: t6-073-108-focused-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  t6-focused-node:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Validate 36 full Markdown drafts and independent evidence against current Git blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          root='content/events-v1/T/T6-高三下/T6-3-申請入學第二階段面試安排'
+          for n in $(seq 73 108); do
+            printf -v id 'T6-%03d' "$n"
+            story="$root/單一池/$id.md"
+            evidence="$root/驗收紀錄/T6-073-108-第二階段獨立驗收證據/$id.json"
+            test -s "$story"
+            test -s "$evidence"
+            node scripts/check-story-draft.mjs --input "$story" --stage full >/dev/null
+            node scripts/check-story-production.mjs audit "$id" --evidence "$evidence" >/dev/null
+            echo "PASS full+audit: $id"
+          done
+      - name: Verify current 288 R texts, AVG pages and independent evidence source blobs
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {execFileSync} from 'node:child_process';
+          const root='content/events-v1/T/T6-高三下/T6-3-申請入學第二階段面試安排';
+          let resultCount=0;
+          for(let n=73;n<=108;n++){
+            const id='T6-'+String(n).padStart(3,'0');
+            const file=root+'/單一池/'+id+'.md';
+            const raw=fs.readFileSync(file,'utf8');
+            const evidence=JSON.parse(fs.readFileSync(root+'/驗收紀錄/T6-073-108-第二階段獨立驗收證據/'+id+'.json','utf8'));
+            const blob=execFileSync('git',['hash-object',file],{encoding:'utf8'}).trim();
+            if(blob!==evidence.sourceBlobSha)throw Error(id+' sourceBlobSha mismatch');
+            const match=raw.match(/```avg\s*\n([\s\S]*?)\n```/);
+            if(!match)throw Error(id+' missing AVG');
+            const avg=JSON.parse(match[1]);
+            const texts=[...raw.matchAll(/- \*\*玩家可見結果\*\*：([^\n]+)/g)].map(m=>m[1]);
+            if(texts.length!==8)throw Error(id+' expected eight R texts');
+            for(let i=0;i<8;i++){
+              const pages=avg.results['R'+(i+1)]?.pages;
+              if(!Array.isArray(pages)||pages.length===0)throw Error(id+' empty result');
+              if(pages.map(p=>p.text).join('')!==texts[i])throw Error(id+' R'+(i+1)+' AVG text mismatch');
+              resultCount++;
+            }
+            if(/「「|」」/.test(raw))throw Error(id+' doubled quotation marks');
+          }
+          if(resultCount!==288)throw Error('Expected 288 outcomes');
+          console.log('PASS 36 source blob SHAs, 288 original/AVG result texts and punctuation');
+          NODE
+      - name: Run relevant Node regression tests
+        run: |
+          node --test test/story-draft-validator.test.js test/story-preview-multipage.test.js test/story-preview-cast-continuity.test.js test/story-preview-snapshot.test.js test/story-preview-catalog-playback.test.js
+      - name: Verify T6-3 legal windows
+        run: node scripts/check-story-production.mjs windows T6-3

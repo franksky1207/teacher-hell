@@ -2,8 +2,8 @@
 
 > 本清單由第一步審查自動彙整，僅含 A 級與 B 級問題（不含 C 級觀察）。
 
-- A 級（明確錯誤，必須修正）：18 項
-- B 級（品質問題，建議修正）：41 項
+- A 級（明確錯誤，必須修正）：27 項
+- B 級（品質問題，建議修正）：42 項
 
 ## A 級修正清單
 
@@ -184,6 +184,96 @@
 - **判定理由**：角色對話框內不應包含第三人稱旁白敘述，屬於明確的說話者與旁白歸屬錯誤。
 - **建議修正**：將 R1 AVG 拆分為三頁：P1 旁白（`student_b` 寫卡）、P2 `student_a` 對話（「這句很有意思...不能只看簽名數量。」）、P3 旁白（「另一位同學說：『...』」）。
 - **必須保留**：保留 R1 原有文本內容與學生間的互動邏輯。
+- **同步修正 AVG**：是
+- **修正狀態**：尚未修正｜**驗收狀態**：尚未驗收
+
+### F-T1-073-01｜T1-073（AVG / R1-R8 P1 & P3）
+- **問題類型**：AVG規格違規/通訊演出不應enter
+- **檔案**：`content/events-v1/T/T1-高一上/T1-3-高一上家長日/活動後/T1-073.md`
+- **問題說明**：R1 至 R8 全數在 `presentation: "chat"` 的 AVG_P1 中對遠端家長（`guardian_a` / `guardian_b`，R4 與 R6 甚至在 P1、P2 同時讓兩位家長 enter）使用 `"enter"`，並在 AVG_P3 使用 `"exit"`。
+- **判定理由**：依 AVG 演出規範，`phone` / `chat` 遠端訊息不得對遠端人物使用 `enter` 或 `pose`，否則會造成未到場家長立繪憑空出現在教室場景中的穿幫。
+- **建議修正**：移除 R1-R8 中所有 `presentation: "chat"` 頁面的 `"enter": [...]`（包含 R4、R6 的 `guardian_a` 與 `guardian_b`），並移除對應 AVG_P3 的 `"exit": [...]`。
+- **必須保留**：保留 R1-R8 的 chat 對話內容、`speaker` 標記與旁白收尾文字。
+- **同步修正 AVG**：是
+- **修正狀態**：尚未修正｜**驗收狀態**：尚未驗收
+
+### F-T1-075-01｜T1-075（AVG / R1-R8 P1 & P3）
+- **問題類型**：AVG規格違規/通訊演出不應enter
+- **檔案**：`content/events-v1/T/T1-高一上/T1-3-高一上家長日/活動後/T1-075.md`
+- **問題說明**：R1 至 R8 全數在 `presentation: "chat"` 的 AVG_P1 中使用 `"enter": ["guardian_a"]`，並在 AVG_P3 使用 `"exit": ["guardian_a"]`。
+- **判定理由**：依 AVG 演出規範，`phone` / `chat` 遠端訊息不得對遠端人物使用 `enter` 或 `pose`。
+- **建議修正**：移除 R1-R8 中 AVG_P1 的 `"enter": ["guardian_a"]` 與 AVG_P3 的 `"exit": ["guardian_a"]`。
+- **必須保留**：保留 R1-R8 的 chat 對話內容、`speaker` 標記與旁白收尾文字。
+- **同步修正 AVG**：是
+- **修正狀態**：尚未修正｜**驗收狀態**：尚未驗收
+
+### F-T1-076-01｜T1-076（AVG / R5 P1 & P3）
+- **問題類型**：AVG規格違規/電話演出不應enter
+- **檔案**：`content/events-v1/T/T1-高一上/T1-3-高一上家長日/活動後/T1-076.md`
+- **問題說明**：R5 使用 `presentation: "phone"` 呈現家長來電，卻在 AVG_P1 使用 `"enter": ["guardian_a"]`，並在 AVG_P3 使用 `"exit": ["guardian_a"]`。
+- **判定理由**：依 AVG 演出規範，`phone` / `chat` 遠端通話不得對遠端人物使用 `enter` 或 `pose`。
+- **建議修正**：移除 R5 AVG_P1 的 `"enter": ["guardian_a"]` 與 AVG_P3 的 `"exit": ["guardian_a"]`。
+- **必須保留**：保留 R5 的通話對話與旁白結尾內容。
+- **同步修正 AVG**：是
+- **修正狀態**：尚未修正｜**驗收狀態**：尚未驗收
+
+### F-T1-077-01｜T1-077（AVG / R1-R8 P1 & P3）
+- **問題類型**：AVG規格違規/通訊演出不應enter
+- **檔案**：`content/events-v1/T/T1-高一上/T1-3-高一上家長日/活動後/T1-077.md`
+- **問題說明**：R1 至 R8 全數在 `presentation: "chat"` 的 AVG_P1 中使用 `"enter": ["guardian_a"]`，並在 AVG_P3 使用 `"exit": ["guardian_a"]`。
+- **判定理由**：依 AVG 演出規範，`phone` / `chat` 遠端訊息不得對遠端人物使用 `enter` 或 `pose`。
+- **建議修正**：移除 R1-R8 中 AVG_P1 的 `"enter": ["guardian_a"]` 與 AVG_P3 的 `"exit": ["guardian_a"]`。
+- **必須保留**：保留 R1-R8 的 chat 對話內容、`speaker` 標記與旁白收尾文字。
+- **同步修正 AVG**：是
+- **修正狀態**：尚未修正｜**驗收狀態**：尚未驗收
+
+### F-T1-078-01｜T1-078（AVG / R1-R8 P1 & P3）
+- **問題類型**：AVG規格違規/通訊演出不應enter
+- **檔案**：`content/events-v1/T/T1-高一上/T1-3-高一上家長日/活動後/T1-078.md`
+- **問題說明**：R1 至 R8 全數在 `presentation: "chat"` 的 AVG_P1 中使用 `"enter": ["guardian_a"]`，並在 AVG_P3 使用 `"exit": ["guardian_a"]`。
+- **判定理由**：依 AVG 演出規範，`phone` / `chat` 遠端訊息不得對遠端人物使用 `enter` 或 `pose`。
+- **建議修正**：移除 R1-R8 中 AVG_P1 的 `"enter": ["guardian_a"]` 與 AVG_P3 的 `"exit": ["guardian_a"]`。
+- **必須保留**：保留 R1-R8 的 chat 對話內容、`speaker` 標記與旁白收尾文字。
+- **同步修正 AVG**：是
+- **修正狀態**：尚未修正｜**驗收狀態**：尚未驗收
+
+### F-T1-080-01｜T1-080（AVG / R1-R8 P1 & P3）
+- **問題類型**：AVG規格違規/通訊演出不應enter
+- **檔案**：`content/events-v1/T/T1-高一上/T1-3-高一上家長日/活動後/T1-080.md`
+- **問題說明**：R1 至 R8 全數在 `presentation: "chat"` 的 AVG_P1 中使用 `"enter": ["guardian_a"]`，並在 AVG_P3 使用 `"exit": ["guardian_a"]`。
+- **判定理由**：依 AVG 演出規範，`phone` / `chat` 遠端訊息不得對遠端人物使用 `enter` 或 `pose`。
+- **建議修正**：移除 R1-R8 中 AVG_P1 的 `"enter": ["guardian_a"]` 與 AVG_P3 的 `"exit": ["guardian_a"]`。
+- **必須保留**：保留 R1-R8 的 chat 對話內容、`speaker` 標記與旁白收尾文字。
+- **同步修正 AVG**：是
+- **修正狀態**：尚未修正｜**驗收狀態**：尚未驗收
+
+### F-T1-081-01｜T1-081（AVG / R1-R8 P1 & P3）
+- **問題類型**：AVG規格違規/通訊演出不應enter
+- **檔案**：`content/events-v1/T/T1-高一上/T1-3-高一上家長日/活動後/T1-081.md`
+- **問題說明**：R1 至 R8 全數在 `presentation: "chat"` 的 AVG_P1 中使用 `"enter": ["guardian_b"]`，並在 AVG_P3 使用 `"exit": ["guardian_b"]`。
+- **判定理由**：依 AVG 演出規範，`phone` / `chat` 遠端訊息不得對遠端人物使用 `enter` 或 `pose`。
+- **建議修正**：移除 R1-R8 中 AVG_P1 的 `"enter": ["guardian_b"]` 與 AVG_P3 的 `"exit": ["guardian_b"]`。
+- **必須保留**：保留 R1-R8 的 chat 對話內容、`speaker` 標記與旁白收尾文字。
+- **同步修正 AVG**：是
+- **修正狀態**：尚未修正｜**驗收狀態**：尚未驗收
+
+### F-T1-082-01｜T1-082（AVG / R1-R8 P1 & P3）
+- **問題類型**：AVG規格違規/通訊演出不應enter
+- **檔案**：`content/events-v1/T/T1-高一上/T1-3-高一上家長日/活動後/T1-082.md`
+- **問題說明**：R1 至 R8 全數在 `presentation: "chat"` 的 AVG_P1 中使用 `"enter": ["guardian_a"]`，並在 AVG_P3 使用 `"exit": ["guardian_a"]`。
+- **判定理由**：依 AVG 演出規範，`phone` / `chat` 遠端訊息不得對遠端人物使用 `enter` 或 `pose`。
+- **建議修正**：移除 R1-R8 中 AVG_P1 的 `"enter": ["guardian_a"]` 與 AVG_P3 的 `"exit": ["guardian_a"]`。
+- **必須保留**：保留 R1-R8 的 chat 對話內容、`speaker` 標記與旁白收尾文字。
+- **同步修正 AVG**：是
+- **修正狀態**：尚未修正｜**驗收狀態**：尚未驗收
+
+### F-T1-084-01｜T1-084（AVG / R1-R8 P1 & P3）
+- **問題類型**：AVG規格違規/通訊與電話演出不應enter
+- **檔案**：`content/events-v1/T/T1-高一上/T1-3-高一上家長日/活動後/T1-084.md`
+- **問題說明**：R1-R4、R6-R8 在 `presentation: "chat"` 中使用 `"enter": ["guardian_a"]`，R5 在 `presentation: "phone"` 中使用 `"enter": ["guardian_a"]`，且 R1-R8 的 AVG_P3 皆有對應的 `"exit": ["guardian_a"]`。
+- **判定理由**：依 AVG 演出規範，`phone` / `chat` 遠端訊息與通話不得對遠端人物使用 `enter` 或 `pose`。
+- **建議修正**：移除 R1-R8 中 AVG_P1 的 `"enter": ["guardian_a"]` 與 AVG_P3 的 `"exit": ["guardian_a"]`。
+- **必須保留**：保留 R1-R8 的 chat/phone 對話內容、`speaker` 標記與旁白收尾文字。
 - **同步修正 AVG**：是
 - **修正狀態**：尚未修正｜**驗收狀態**：尚未驗收
 
@@ -516,5 +606,13 @@
 - **問題說明**：R5 P1 明寫「{{student_a.name}}...反而不高興」，AVG 卻因機械循環表情而設定為 `happy`。
 - **建議修正**：將 R5 P1 的 `student_a` 表情改為 `sad` 或 `angry`。
 - **必須保留**：保留 R5 的文字內容與事件因果。
+- **同步修正 AVG**：是
+
+### F-T1-071-01｜T1-071（AVG / R1 P2）
+- **問題類型**：AVG旁白與對話歸屬錯誤
+- **檔案**：`content/events-v1/T/T1-高一上/T1-3-高一上家長日/活動前/T1-071.md`
+- **問題說明**：R1 AVG_P2 設定為 `speaker: student_a, presentation: dialogue`，卻將結尾的第三人稱旁白句「長輩也回訊說：『我可以照地址慢慢走，到了再問人。』」一併放入學生的對話氣泡中。
+- **建議修正**：將「長輩也回訊說：『我可以照地址慢慢走，到了再問人。』」拆分為獨立的 `AVG_P3`（`presentation: "narration"`）。
+- **必須保留**：保留 `student_a` 表達長輩能自行找路的台詞與長輩回訊的旁白內容。
 - **同步修正 AVG**：是
 

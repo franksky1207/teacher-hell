@@ -2,12 +2,12 @@
 
 - 基準 Commit SHA：`0d80d456e2905b35db096e9179069d783a66a249`
 - 故事總數：174（預期 174）
-- 第一輪完成：70 / 174
+- 第一輪完成：115 / 174
 - 第二輪複核完成：0 / 174
 - 正式完成（含必要複核）：0 / 174
 - 完整審查通過：0
 - 有待修正問題：0
-- 問題統計：A 級 18 項、B 級 41 項、C 級觀察 21 項
+- 問題統計：A 級 27 項、B 級 42 項、C 級觀察 24 項
 
 ## 問題類型分布
 
@@ -15,6 +15,7 @@
 |---|---:|
 | AVG演出重複/旁白冗贅 | 13 |
 | AI 制式重複/旁白冗贅 | 11 |
+| AVG規格違規/通訊演出不應enter | 8 |
 | 敘事視角混亂/MD 缺乏引號區分說話者 | 7 |
 | AVG中繼資料缺漏/music欄位空白 | 5 |
 | 敘事與引號混亂/MD未標示說話者 | 5 |
@@ -23,7 +24,6 @@
 | AVG人物在場與場景切換錯誤 | 1 |
 | AVG遠端通話違規登場與姿勢 | 1 |
 | AVG場景切換與敘事時間矛盾 | 1 |
-| AVG規格違規/通訊演出不應enter | 1 |
 | 說話者錯置/雙人台詞混併 | 1 |
 | AVG遠端演出違規(chat不可enter/exit) | 1 |
 | 敘事前後矛盾 | 1 |
@@ -32,6 +32,9 @@
 | 錯別字/外語殘留 | 1 |
 | AVG遠距演出違規/chat模式使用enter與pose | 1 |
 | AVG說話者歸屬錯誤/對話夾帶第三人稱旁白 | 1 |
+| AVG旁白與對話歸屬錯誤 | 1 |
+| AVG規格違規/電話演出不應enter | 1 |
+| AVG規格違規/通訊與電話演出不應enter | 1 |
 
 ## A 級與 B 級問題摘要
 
@@ -94,3 +97,13 @@
 - **F-T1-068-01** [B] T1-068 (Results / R2 MD & R8 MD)｜敘事與引號混亂/MD未標示說話者：R2 與 R8 的 MD 正文中，第三人稱旁白後直接接上未加引號與說話提示的第一人稱學生發言（「我最怕同學亂猜...」、「原來我可以先講好...」）。
 - **F-T1-069-01** [B] T1-069 (Results / R1 MD & R2 MD)｜敘事與引號混亂/MD未標示說話者：R1 與 R2 的 MD 正文中，未加引號與說話提示便直接出現學生的第一人稱對話（「老師，我只想讓家人知道...」、「我想先讓老師看就好...」），隨後接回第三人稱旁白「你沒有拿全文當作證明...」。
 - **F-T1-069-02** [B] T1-069 (AVG / R5 P1)｜AVG表情與劇情不符/機械循環：R5 P1 明寫「{{student_a.name}}...反而不高興」，AVG 卻因機械循環表情而設定為 `happy`。
+- **F-T1-071-01** [B] T1-071 (AVG / R1 P2)｜AVG旁白與對話歸屬錯誤：R1 AVG_P2 設定為 `speaker: student_a, presentation: dialogue`，卻將結尾的第三人稱旁白句「長輩也回訊說：『我可以照地址慢慢走，到了再問人。』」一併放入學生的對話氣泡中。
+- **F-T1-073-01** [A] T1-073 (AVG / R1-R8 P1 & P3)｜AVG規格違規/通訊演出不應enter：R1 至 R8 全數在 `presentation: "chat"` 的 AVG_P1 中對遠端家長（`guardian_a` / `guardian_b`，R4 與 R6 甚至在 P1、P2 同時讓兩位家長 enter）使用 `"enter"`，並在 AVG_P3 使用 `"exit"`。
+- **F-T1-075-01** [A] T1-075 (AVG / R1-R8 P1 & P3)｜AVG規格違規/通訊演出不應enter：R1 至 R8 全數在 `presentation: "chat"` 的 AVG_P1 中使用 `"enter": ["guardian_a"]`，並在 AVG_P3 使用 `"exit": ["guardian_a"]`。
+- **F-T1-076-01** [A] T1-076 (AVG / R5 P1 & P3)｜AVG規格違規/電話演出不應enter：R5 使用 `presentation: "phone"` 呈現家長來電，卻在 AVG_P1 使用 `"enter": ["guardian_a"]`，並在 AVG_P3 使用 `"exit": ["guardian_a"]`。
+- **F-T1-077-01** [A] T1-077 (AVG / R1-R8 P1 & P3)｜AVG規格違規/通訊演出不應enter：R1 至 R8 全數在 `presentation: "chat"` 的 AVG_P1 中使用 `"enter": ["guardian_a"]`，並在 AVG_P3 使用 `"exit": ["guardian_a"]`。
+- **F-T1-078-01** [A] T1-078 (AVG / R1-R8 P1 & P3)｜AVG規格違規/通訊演出不應enter：R1 至 R8 全數在 `presentation: "chat"` 的 AVG_P1 中使用 `"enter": ["guardian_a"]`，並在 AVG_P3 使用 `"exit": ["guardian_a"]`。
+- **F-T1-080-01** [A] T1-080 (AVG / R1-R8 P1 & P3)｜AVG規格違規/通訊演出不應enter：R1 至 R8 全數在 `presentation: "chat"` 的 AVG_P1 中使用 `"enter": ["guardian_a"]`，並在 AVG_P3 使用 `"exit": ["guardian_a"]`。
+- **F-T1-081-01** [A] T1-081 (AVG / R1-R8 P1 & P3)｜AVG規格違規/通訊演出不應enter：R1 至 R8 全數在 `presentation: "chat"` 的 AVG_P1 中使用 `"enter": ["guardian_b"]`，並在 AVG_P3 使用 `"exit": ["guardian_b"]`。
+- **F-T1-082-01** [A] T1-082 (AVG / R1-R8 P1 & P3)｜AVG規格違規/通訊演出不應enter：R1 至 R8 全數在 `presentation: "chat"` 的 AVG_P1 中使用 `"enter": ["guardian_a"]`，並在 AVG_P3 使用 `"exit": ["guardian_a"]`。
+- **F-T1-084-01** [A] T1-084 (AVG / R1-R8 P1 & P3)｜AVG規格違規/通訊與電話演出不應enter：R1-R4、R6-R8 在 `presentation: "chat"` 中使用 `"enter": ["guardian_a"]`，R5 在 `presentation: "phone"` 中使用 `"enter": ["guardian_a"]`，且 R1-R8 的 AVG_P3 皆有對應的 `"exit": ["guardian_a"]`。

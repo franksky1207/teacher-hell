@@ -403,7 +403,10 @@
   max-height:min(48dvh,21rem);
   padding:clamp(.55rem,1.3dvh,.85rem) clamp(.7rem,1.6vw,1rem);
   gap:.25rem;
-  overflow-y:auto;
+  overflow:visible;
+ }
+ .game--story .story-view--avg .story-reader{
+  flex:1 1 auto;min-height:0;overflow-y:auto;
   overscroll-behavior:contain;
  }
  .game--story .story-view--avg[data-story-state="choosing"] .story-bottom-frame,

@@ -1,4 +1,4 @@
-import {renderStoryText,SCHOOL_SUBJECTS} from './shared/1705fbbc93c4e3c14677f328b82f30aa5eca008e/runtime/story-text.js';
+import {renderStoryText,SCHOOL_SUBJECTS} from './shared/8397304ea858db7c2d802bec2cd2793679a0a9a9/runtime/story-text.js';
 
 export {renderStoryText,SCHOOL_SUBJECTS};
 

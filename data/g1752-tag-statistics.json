@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "status": "initialized-no-G-batches-accepted",
+  "branch": "content/events-production-v1",
+  "description": "T648 frozen baseline and G1752 incrementally accepted per-batch label ledger. No automated updater installed yet.",
+  "tBaseline": {
+    "frozen": true,
+    "snapshotDate": "2026-11-26",
+    "storyCount": 648,
+    "labelOccurrenceCount": 881,
+    "tagCounts": {
+      "G01": 66,
+      "G02": 133,
+      "G03": 130,
+      "G04": 190,
+      "G05": 46,
+      "G06": 102,
+      "G07": 21,
+      "G08": 61,
+      "G09": 25,
+      "G10": 88,
+      "G11": 19
+    },
+    "sourceIndexCommit": "ad654a0228e41096e886ff2d3665302585f52d16"
+  },
+  "gAccepted": {
+    "storyCount": 0,
+    "batchCount": 0,
+    "labelOccurrenceCount": 0,
+    "tagCounts": {
+      "G01": 0,
+      "G02": 0,
+      "G03": 0,
+      "G04": 0,
+      "G05": 0,
+      "G06": 0,
+      "G07": 0,
+      "G08": 0,
+      "G09": 0,
+      "G10": 0,
+      "G11": 0
+    },
+    "acceptedBatches": []
+  },
+  "combined": {
+    "storyCount": 648,
+    "labelOccurrenceCount": 881,
+    "tagCounts": {
+      "G01": 66,
+      "G02": 133,
+      "G03": 130,
+      "G04": 190,
+      "G05": 46,
+      "G06": 102,
+      "G07": 21,
+      "G08": 61,
+      "G09": 25,
+      "G10": 88,
+      "G11": 19
+    },
+    "tagPercentages": {
+      "G01": 7.4915,
+      "G02": 15.0965,
+      "G03": 14.756,
+      "G04": 21.5664,
+      "G05": 5.2213,
+      "G06": 11.5778,
+      "G07": 2.3837,
+      "G08": 6.924,
+      "G09": 2.8377,
+      "G10": 9.9886,
+      "G11": 2.1566
+    }
+  },
+  "targetBands": {
+    "G01": {
+      "targetPercent": 12,
+      "minPercent": 9,
+      "maxPercent": 15
+    },
+    "G02": {
+      "targetPercent": 12,
+      "minPercent": 9,
+      "maxPercent": 15
+    },
+    "G03": {
+      "targetPercent": 11,
+      "minPercent": 8,
+      "maxPercent": 14
+    },
+    "G04": {
+      "targetPercent": 11,
+      "minPercent": 8,
+      "maxPercent": 14
+    },
+    "G05": {
+      "targetPercent": 8,
+      "minPercent": 6,
+      "maxPercent": 10
+    },
+    "G06": {
+      "targetPercent": 10,
+      "minPercent": 7,
+      "maxPercent": 13
+    },
+    "G07": {
+      "targetPercent": 8,
+      "minPercent": 6,
+      "maxPercent": 10
+    },
+    "G08": {
+      "targetPercent": 10,
+      "minPercent": 7,
+      "maxPercent": 13
+    },
+    "G09": {
+      "targetPercent": 4,
+      "minPercent": 3,
+      "maxPercent": 5
+    },
+    "G10": {
+      "targetPercent": 7,
+      "minPercent": 5,
+      "maxPercent": 9
+    },
+    "G11": {
+      "targetPercent": 7,
+      "minPercent": 5,
+      "maxPercent": 9
+    }
+  },
+  "updatePolicy": {
+    "batchSize": 24,
+    "requiredUniqueBatches": 73,
+    "acceptedBatchIdPattern": "G0001-G0024",
+    "entryRule": "Only after all 24 stories in the batch pass the required G story and tag-content review; a draft or partial batch is never accepted.",
+    "deduplication": "Reject duplicate batchId, story IDs or source SHA mismatch. Do not append an already accepted batch.",
+    "counting": "At most one occurrence per distinct G01..G11 tag per story; multiple valid tags allowed.",
+    "sourceOfTruth": "gAccepted.acceptedBatches has per-story final tag list; totals and percentages must be recomputed from T frozen baseline plus accepted batches.",
+    "onStoryRevision": "If a prior accepted story must be formally revised, replace the affected existing batch entry after re-approval and recompute (never add the revised story a second time).",
+    "branchPromotion": "The accepted batch record must refer to the correct approved revision and be committed with the corresponding authorized V1 batch promotion.",
+    "planning": "Read this JSON before each 24-story batch; use overall gap as directional guidance, not individual G/T quota.",
+    "invariants": "0<=batchCount<=73, storyCount=batchCount*24, count of accepted unique story IDs=storyCount, sum(gAccepted.tagCounts)=gAccepted.labelOccurrenceCount, combined.tagCounts=tBaseline.tagCounts+gAccepted.tagCounts, sum(combined.tagCounts)=combined.labelOccurrenceCount, percentages=100*tagCount/combined.labelOccurrenceCount."
+  }
+}

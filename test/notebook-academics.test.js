@@ -1,3 +1,4 @@
+import { assertRetiredSave,retiredSaveFixture } from './support/retired-saves.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {projectNotebookAcademics,renderNotebookAcademics,isExamScorePublished,isSemesterResultPublished} from '../web/notebook-academics.js';
@@ -77,15 +78,6 @@ test('14-D: term close on final day keeps third exam, term mark and credits undi
  assert.equal(isSemesterResultPublished('2026:autumn','2027-01-23'),true);
 });
 
-// Real H1 payload: display the missing policy honestly until its normal H2 adoption.
-import {readFileSync} from 'node:fs';
-import {gunzipSync} from 'node:zlib';
-import {restoreSave} from '../src/storage/format.js';
-test('H5 legacy H1 transcript does not invent a policy before formal adoption',()=>{
- const fixture=JSON.parse(gunzipSync(readFileSync(new URL('./fixtures/h2-pre-061bf63.json.gz',import.meta.url))));
- const w=restoreSave(fixture.h1).world,before=JSON.stringify(w),roster=projectNotebookAcademics(w);
- const d=projectNotebookAcademics(w,roster.students[0].id,'2029:spring');
- assert.equal(d.transcript.weights,null);assert.deepEqual(d.transcript.examColumns.map(c=>c.round),[1,2]);
- const html=renderNotebookAcademics(d);assert.match(html,/評量政策待正式校務接續/);assert.doesNotMatch(html,/40％／20％／20％／20％|<th>三段<\/th>/);
- assert.equal(JSON.stringify(w),before);
+test('H5 rejects retired H1 save v1 before projecting the notebook',()=>{
+ assertRetiredSave(retiredSaveFixture('h2-pre-061bf63.json.gz').h1);
 });

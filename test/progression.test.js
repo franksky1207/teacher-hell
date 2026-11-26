@@ -1,23 +1,20 @@
+import { assertRetiredSave,retiredSaveFixture } from './support/retired-saves.js';
 import {restoreWorldState,findFact} from '../src/runtime/model.js';
 import {createId} from '../src/contracts/foundation.js';
 import {isCampOpeningPosition,formalSlot} from '../src/runtime/schedule.js';
 import {eventWorld} from './support/event-fixtures.js';
 import {academicAt} from './support/senior-academic.js';
 import {THREE_YEAR,positionFor,CALENDAR_VERSION,calendarDay} from '../src/calendar/calendar.js';
-import {aftercareCellIsEmpty,scheduledPhase} from '../web/presentation.js';
-import {slotOccupancy} from '../src/calendar/calendar.js';
+import {scheduledPhase} from '../web/presentation.js';
 import {fiveTerms} from './support/senior-academic.js';
 import {projectNotebookAcademics} from '../web/notebook-academics.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
-import {gunzipSync} from 'node:zlib';
 import {createCandidate} from '../src/player/creation.js';
 import {createCareerOpening} from '../src/runtime/opening.js';
 import {nextProgression,progressionContext,planProgression} from '../src/runtime/progression.js';
 import {prepareWorldSequence,prepareWorldOperation} from '../src/runtime/transactions.js';
 import {academicState,academicTermStatus,withAcademicProjection} from '../src/runtime/academics.js';
-import {restoreSave} from '../src/storage/format.js';
 import {projectSeniorSummary,renderSeniorSummary} from '../web/senior-summary.js';
 const opening=()=>createCareerOpening({candidate:createCandidate({seed:74,playerId:'teacher',schoolId:'school'}),seed:75,taipeiDate:'2026-11-06',difficulty:'normal',subject:'國文',careerKey:'h5-test'});
 test('H5 controller emits checked actions and deterministic revision ids without mutating state',()=>{
@@ -31,18 +28,8 @@ test('H5 controller gates review, completion, failure and event attention before
  assert.equal(planProgression({...c,stories:[{waiting:false,eventId:'event'}]}).status,'attention-required');
  const aftercare={...c,schoolEnabled:true,catalogueIds:['aftercare:representatives-v1'],aftercare:{status:'advance',request:{},activeWeek:false}};assert.equal(planProgression(aftercare).label,'推進一週善後');assert.equal(planProgression({...aftercare,aftercare:{...aftercare.aftercare,activeWeek:true}}).label,'繼續本週善後');
 });
-test('H5 real old June terminal selects the unique annual entry, never another week',()=>{
- const fixtures=JSON.parse(gunzipSync(readFileSync(new URL('./fixtures/h4-pre-5c21854.json.gz',import.meta.url))));
- const w=restoreSave(fixtures.terminal).world,c=progressionContext(w),next=planProgression(c);
- assert.equal(w.position.date,'2029-06-29');assert.equal(next.status,'action');assert.deepEqual(next.request.operations,[{type:'settle-school-year'}]);
- const reserved=restoreSave(fixtures.reserved).world,before=JSON.stringify(reserved),view=progressionContext(reserved);assert.ok(view.reserved.length);view.reserved[0].date='2099-01-01';assert.equal(JSON.stringify(reserved),before);
- const adoption=nextProgression(reserved);assert.equal(adoption.request.operations[0].type,'register-event-catalogue');const retired=prepareWorldOperation(reserved,adoption.request).world;assert.ok(retired.extensions['teacher-hell/world'].history.find(h=>h.type==='aftercare-adoption').data.retiredReservationIds.length);assert.equal(progressionContext(retired).reserved.length,0);assert.deepEqual(retired.extensions['teacher-hell/world'].history.slice(0,reserved.extensions['teacher-hell/world'].history.length),reserved.extensions['teacher-hell/world'].history);
- const oldAfter=restoreSave(fixtures.after).world,adopted=prepareWorldOperation(oldAfter,nextProgression(oldAfter).request).world,p=adopted.extensions['teacher-hell/world'].plan,table=p.tables.at(-1);
- const early=slotOccupancy(adopted.position.date,3,'early',table,p.calendarVersion);assert.equal(aftercareCellIsEmpty(adopted,adopted.position.date,early,early),false);
- const late=slotOccupancy(adopted.position.date,3,'p8',table,p.calendarVersion);assert.equal(aftercareCellIsEmpty(adopted,adopted.position.date,late,late),true);
- assert.equal(next.request.expectedRevision,c.revision);assert.equal(next.settlement,true);
- assert.equal(planProgression({...c,stories:[{waiting:false,eventId:'necessary'}]}).status,'attention-required');
- assert.equal(planProgression({...c,reserved:[{eventId:'necessary'}]}).request.operations[0].type,'admit-event');
+test('H5 rejects retired save v1 at the June terminal boundary',()=>{
+ assertRetiredSave(retiredSaveFixture('h4-pre-5c21854.json.gz').terminal);
 });
 test('H5 saved summary does not fabricate ceremony, offers or future results at opening',()=>{
  const w=opening(),before=JSON.stringify(w),d=projectSeniorSummary(w);assert.equal(d.ceremony,null);assert.equal(d.knownOffers,0);assert.equal(d.weeks.length,0);assert.equal(renderSeniorSummary(d),'');assert.equal(JSON.stringify(w),before);

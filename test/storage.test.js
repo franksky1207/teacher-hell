@@ -1,3 +1,4 @@
+import { retiredSaveError,retiredSaveFixture } from './support/retired-saves.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { runtimeScenario,request,id,event,fact,open,result } from './support/runtime.js';
@@ -72,6 +73,17 @@ test('storage: disk success plus memory failure returns durable outcome and requ
 test('storage: import confirmation, CAS, invalid data and quota preserve destination',async()=>{
  const db=memory(),s=await createStoredSession(db,1),w=runtimeScenario();await s.initialize(w);const before=s.snapshot(),text=await s.export();
  await assert.rejects(s.import(text,{expectedToken:before.token}),{code:'CONFIRM'});await assert.rejects(s.import('{}',{expectedToken:before.token,confirmed:true}));assert.deepEqual(await db.read(1),before);
+ for(const fixture of ['h2-pre-061bf63.json.gz','h4-pre-5c21854.json.gz']){
+  for(const payload of Object.values(retiredSaveFixture(fixture)).filter(value=>value?.kind==='teacher-hell-save')){
+   assert.equal(payload.version,1);
+   const legacy=JSON.stringify(payload);
+   await assert.rejects(s.reviewImport(legacy),retiredSaveError);
+   await assert.rejects(s.import(legacy,{expectedToken:before.token,confirmed:true}),retiredSaveError);
+   assert.deepEqual(s.snapshot(),before);
+   assert.deepEqual(await db.read(1),before);
+   assert.deepEqual((await createStoredSession(db,1)).snapshot(),before);
+  }
+ }
  db.fail();await assert.rejects(s.import(text,{expectedToken:before.token,confirmed:true}),/quota/);assert.deepEqual(await db.read(1),before);
  const review=await s.reviewImport(text);assert.deepEqual(review.replacing.identity,w.identity);await s.execute(sample(w,'later'));await assert.rejects(s.import(text,{expectedToken:review.token,confirmed:true}),{code:'STALE'});
  const fresh=s.snapshot();await s.import(text,{expectedToken:fresh.token,confirmed:true});assert.deepEqual(s.snapshot().payload,before.payload);assert.notDeepEqual(s.snapshot().token,before.token);

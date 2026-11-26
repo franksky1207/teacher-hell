@@ -1,12 +1,11 @@
+import { assertRetiredSave,retiredSaveFixture } from './support/retired-saves.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
-import {gunzipSync} from 'node:zlib';
 import {semesterScore,curriculum,graduation,rulesFor,standard} from '../src/academics/rules.js';
 import {emptyAcademics,openTerm,assess,closeTerm} from '../src/academics/learning.js';
 import {SENIOR_ASSESSMENT_POLICY as POLICY} from '../src/academics/policy.js';
 import {createRandom} from '../src/numeric/random.js';
-import {applyAcademic,academicState,academicVersion,readAcademicQualification,readSeniorAcademicReview,readGrades,academicTermClosed,academicSupport} from '../src/runtime/academics.js';
+import {applyAcademic,academicState,readAcademicQualification,readSeniorAcademicReview,readGrades,academicTermClosed,academicSupport} from '../src/runtime/academics.js';
 import {runtimeOf,restoreWorldState,WorldError} from '../src/runtime/model.js';
 import {prepareWorldOperation} from '../src/runtime/transactions.js';
 import {assessmentCalendar,CALENDAR_VERSION,SENIOR_CALENDAR_VERSION,calendarDay} from '../src/calendar/calendar.js';
@@ -17,7 +16,6 @@ import {projectNotebookAcademics,renderNotebookAcademics,isExamScorePublished} f
 import {fiveTerms,seniorMarks,academicApply as apply,academicAt as at,throughMay} from './support/senior-academic.js';
 import {compileCohortCompletion} from '../src/runtime/cohort.js';
 import {request} from './support/runtime.js';
-const legacy=()=>JSON.parse(gunzipSync(readFileSync(new URL('./fixtures/h2-pre-061bf63.json.gz',import.meta.url))));
 let savedMarks,savedClose,savedMay,savedMayEve,reviewFailure;
 const marks=()=>structuredClone(savedMarks??=seniorMarks());
 const closed=()=>structuredClone(savedClose??=apply(marks(),[{type:'campus',activity:'rest'},{type:'finish-slot',completedActivityIds:[]}],'close-May'));
@@ -83,15 +81,12 @@ test('H2-C: June teacher boundary consumes frozen May results; no second scoring
  const incomplete=closed();assert.equal(academicTermClosed(incomplete,final(incomplete)),false,'May marks alone cannot satisfy T4');
 });
 
-test('H2-D: actual pre-H2 v2 save replays exactly, old three-exam transcript and original calendar stay frozen',()=>{
- const p=legacy().v2,loaded=restoreSave(p);assert.deepEqual(loaded,p);assert.equal(encodeSave(loaded),encodeSave(p));assert.equal(academicVersion(loaded.world),2);const t=academicState(loaded.world).terms['2026:autumn'];assert.equal(t.assessments.length,4);assert.equal(t.assessmentPolicy,undefined);assert.equal(runtimeOf(loaded.world).plan.calendarVersion,CALENDAR_VERSION);
+test('H2-D: rejects retired save v1 with academic policy v2',()=>{
+ assertRetiredSave(retiredSaveFixture('h2-pre-061bf63.json.gz').v2);
 });
 
-test('H2-D: H1 unversioned senior log adopts by an appended operation, preserving every old mark and row',()=>{
- const p=legacy().h1,w=restoreSave(p).world,before=runtimeOf(w).history,marks=final(w).assessments;assert.equal(final(w).assessmentPolicy,undefined);
- const adopted=apply(w,[{type:'academic',action:'adopt-senior-policy'}]);assert.deepEqual(runtimeOf(adopted).history.slice(0,before.length),before);assert.deepEqual(final(adopted).assessments,marks);assert.equal(final(adopted).assessmentPolicy,POLICY);assert.deepEqual(restoreSave(encodeSave(createSave(adopted))).world,adopted);
- assert.throws(()=>apply(adopted,[{type:'academic',action:'adopt-senior-policy'}]),/unversioned/);assert.throws(()=>apply(adopted,[{type:'academic',action:'assess',round:3}]),/round unavailable/);assert.throws(()=>apply(legacy().v2.world,[{type:'academic',action:'adopt-senior-policy'}]),/unversioned/);
- const late=apply(at(legacy().h1.world,'2029-05-15','private'),[{type:'academic',action:'adopt-senior-policy'}]);assert.deepEqual(final(late).assessments,marks);assert.throws(()=>apply(late,[{type:'academic',action:'assess',round:0}]),/actual final day/);assert.throws(()=>apply(late,[{type:'academic',action:'close'}]),/exact term policy assessments/);assert.equal(final(late).assessments.some(a=>a.round===0||a.round===3),false);
+test('H2-D: rejects retired H1 save v1 before academic policy adoption',()=>{
+ assertRetiredSave(retiredSaveFixture('h2-pre-061bf63.json.gz').h1);
 });
 
 test('H2-D: imports reject changed term policy, calendar, final marks, sources, future completion and review outcomes',()=>{

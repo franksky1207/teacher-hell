@@ -1,7 +1,7 @@
 import {
  filterStories, selectOptions, neighboringIds, sanitizeReaderPreferences, topicDisplayName, poolDisplayName,
  safeDetailPath, validateReaderIndex, validateReaderDetail, readerTechnicalTables, READER_STATES, projectReaderText, renderStoryText, SCHOOL_SUBJECTS
-} from './reader-core.js?v=d15ccf9b662044e48bc66ee6d5e030d755ad7645';
+} from './reader-core.js?v=c2ddffeae66bdb1bf63c032d391c76a1e8f9b12e';
 
 const $=id=>document.getElementById(id);
 const state={previewSubject:'數學',all:[],filtered:[],selected:null,detail:null,request:0,cache:new Map(),

@@ -393,16 +393,32 @@
   bottom:clamp(8rem,20dvh,14rem);
  }
 }
-/* Short desktop/laptop windows: preserve the same thigh-up composition as
-   mobile portrait. Bound the square canvas by available HEIGHT, not a 20rem
-   width cap; position the figure above the dialogue without cropping its head. */
+/* Desktop landscape, short browser windows: the dialogue is a compact
+   foreground strip, not a tall blank card. Frame the actual thigh-up figure
+   by scaling and lifting its square canvas together; keep the mobile portrait
+   calibration and all story states unchanged. Long text can scroll in-panel. */
 @media (min-width:651px) and (orientation:landscape) and (max-height:700px){
+ .game--story .story-view--avg .story-bottom-frame{
+  min-height:clamp(7.75rem,19dvh,9.25rem);
+  max-height:min(48dvh,21rem);
+  padding:clamp(.55rem,1.3dvh,.85rem) clamp(.7rem,1.6vw,1rem);
+  gap:.25rem;
+  overflow:visible;
+ }
+ .game--story .story-view--avg .story-reader{
+  flex:1 1 auto;min-height:0;overflow-y:auto;
+  overscroll-behavior:contain;
+ }
+ .game--story .story-view--avg[data-story-state="choosing"] .story-bottom-frame,
+ .game--story .story-view--avg[data-story-state="confirming"] .story-bottom-frame{
+  max-height:min(63dvh,27rem);
+ }
  .game--story .story-view--avg .story-portrait-canvas{
-  width:clamp(22rem,min(43vw,68dvh),39rem);
-  bottom:clamp(3.5rem,11dvh,6rem);
+  width:clamp(26rem,min(47vw,82dvh),40rem);
+  bottom:clamp(6rem,20dvh,9rem);
  }
  .game--story .story-view--avg .story-actor-shape{
-  bottom:clamp(3.5rem,11dvh,6rem);
+  bottom:clamp(6rem,20dvh,9rem);
  }
 }
 

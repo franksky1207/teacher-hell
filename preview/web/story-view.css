@@ -316,10 +316,10 @@
  }
  .game--story .story-view--avg .story-bottom-frame{max-height:78dvh}
 }
+/* Keep the dialogue scrollable on short viewports, but do not globally shrink
+   an illustrated portrait to 20rem. Desktop landscape has its own stage-aware
+   framing rule below; mobile portrait retains the approved thigh-up calibration. */
 @media(max-height:650px){
- .game--story .story-view--avg .story-portrait-canvas{
-  width:min(42vw,20rem);
- }
  .game--story .story-view--avg .story-bottom-frame{max-height:85dvh}
 }
 @media(max-width:650px) and (orientation:portrait){
@@ -393,10 +393,16 @@
   bottom:clamp(8rem,20dvh,14rem);
  }
 }
+/* Short desktop/laptop windows: preserve the same thigh-up composition as
+   mobile portrait. Bound the square canvas by available HEIGHT, not a 20rem
+   width cap; position the figure above the dialogue without cropping its head. */
 @media (min-width:651px) and (orientation:landscape) and (max-height:700px){
- .game--story .story-view--avg .story-portrait-canvas,
+ .game--story .story-view--avg .story-portrait-canvas{
+  width:clamp(22rem,min(43vw,68dvh),39rem);
+  bottom:clamp(3.5rem,11dvh,6rem);
+ }
  .game--story .story-view--avg .story-actor-shape{
-  bottom:clamp(3rem,9dvh,6rem);
+  bottom:clamp(3.5rem,11dvh,6rem);
  }
 }
 

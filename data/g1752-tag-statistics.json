@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "initialized-no-G-batches-accepted",
   "branch": "content/events-production-v1",
-  "description": "T648 frozen baseline and accepted G batches; machine updater not yet implemented. Story-level Markdown Git blob SHA tracks revisions without self-referential ledger commit SHA.",
+  "description": "T648 frozen baseline and accepted G batches only; incremental update policy, machine updater not yet implemented. Planning estimates are stored separately in the existing topic index. Approved Markdown Git blob SHA tracks revisions.",
   "tBaseline": {
     "frozen": true,
     "snapshotDate": "2026-11-26",
@@ -136,10 +136,11 @@
     "entryRule": "A new 24-story batch is counted once only after semantic, technical and tag review and authorized promotion to the V1 source branch.",
     "deduplication": "Reject duplicate batchId or storyId; for an approved revision replace the original story entry, do not append or count a new story.",
     "counting": "At most one occurrence per distinct G01..G11 tag per story; multiple valid tags allowed.",
-    "sourceOfTruth": "gAccepted.acceptedBatches holds each approved storyId, final distinct tags, approved Markdown Git blob SHA, and audit evidence path. Derive all tag totals and percentages from these records plus frozen T baseline.",
-    "onStoryRevision": "Replace the affected approved story record with the newly approved Markdown Git blob SHA and final tags; recalculate, never increment accepted story or batch counts.",
+    "sourceOfTruth": "gAccepted.acceptedBatches holds approved storyId, final distinct tags, approved Markdown Git blob SHA, and audit evidence path. Maintain cached totals by deltas from affected records; derive combined totals and percentages from the 11 counters plus frozen T baseline.",
+    "onStoryRevision": "Replace only the affected approved story record with its approved Markdown Git blob SHA, evidence path and final tags. Apply set differences of old/new tags to counters; never increment accepted story or batch counts. If tags unchanged, no recount.",
     "branchPromotion": "Record approved source Markdown Git blob SHAs rather than the eventual ledger commit SHA, avoiding self-reference. Git commit history tracks the ledger itself. Only approved authorized V1 versions are recorded.",
-    "planning": "Read this JSON before each 24-story planning batch; use combined T+G gap as directional guidance, not batch quotas. Draft/planning tags never count.",
-    "invariants": "0<=batchCount<=73, storyCount=batchCount*24, count of accepted unique story IDs=storyCount, sum(gAccepted.tagCounts)=gAccepted.labelOccurrenceCount, combined.tagCounts=tBaseline.tagCounts+gAccepted.tagCounts, sum(combined.tagCounts)=combined.labelOccurrenceCount, percentages=100*tagCount/combined.labelOccurrenceCount."
+    "planning": "Before each planning batch read planningEstimate in data/g1752-story-topic-index.json and targetBands here. Estimate includes T plus all planned or accepted G once per ID. Never add estimate and formal counts; draft/planning tags never enter this ledger. Formal creation follows existing plans.",
+    "invariants": "0<=batchCount<=73, storyCount=batchCount*24, count of accepted unique story IDs=storyCount, sum(gAccepted.tagCounts)=gAccepted.labelOccurrenceCount, combined.tagCounts=tBaseline.tagCounts+gAccepted.tagCounts, sum(combined.tagCounts)=combined.labelOccurrenceCount, percentages=100*tagCount/combined.labelOccurrenceCount.",
+    "incremental": "For new accepted batches increment counters from only the 24 new records; revisions use old/new distinct tag set differences. Update combined totals and percentages from 11 counters. Synchronize the original topic index entries and planning estimate per SOP 06/07. No routine full recount. Full JSON recount only for inconsistency, recovery, explicit full audit or final planning/formal completion check."
   }
 }

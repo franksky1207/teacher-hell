@@ -4,7 +4,7 @@ import {validateIssueEligibility,issueOptions,validateBoundSelection,rejectedIss
 import { runtimeCalendarDay,aftercareDefinition,retiredAftercareReservation } from './aftercare-calendar.js';
 import { entranceCondition,entranceAbsent } from './entrance.js';
 import { HOMEROOM_KEY,crisisContext } from './homeroom.js';
-import { crisisCandidateParameters } from '../assessment/crisis.js';
+import { CRISIS_WEIGHTS,crisisCandidateParameters } from '../assessment/crisis.js';
 import { institutionState,procedureEligible } from './procedures.js';
 import { academicEligible,academicState } from './academics.js';
 import { npcGroups } from './autonomy.js';
@@ -21,7 +21,7 @@ import { dayNumber } from '../calendar/civil.js';
 import { isFormal } from './schedule.js';
 import { assertShape, identifier } from '../player/panel.js';
 
-const STATE_CHANNELS=['體力','精神','抗壓','聲望','熱忱','情緒'];
+const STATE_CHANNELS=Object.keys(CRISIS_WEIGHTS);
 const need=(ok,message)=>{if(!ok)throw new RangeError(`EVENT_CANDIDATE: ${message}`);};
 const runtime=w=>w.extensions['teacher-hell/world'];
 export const EVENT_K=Object.freeze({negative:1.6,neutral:1,positive:0.7});

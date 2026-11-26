@@ -9,11 +9,12 @@ const finite=value=>typeof value==='number'&&Number.isFinite(value)?String(value
 const semesterLabel=id=>{const match=/^(\d{4}):(autumn|spring)$/.exec(id);return match?`${Number(match[1])-(match[2]==='spring'?1:0)}學年度${match[2]==='autumn'?'上':'下'}學期`:id;};
 const statusLabel={graduation:'符合畢業條件','completion-certificate':'符合修業證明條件',incomplete:'尚未符合畢業條件'};
 const reasonLabel={'study-period':'修業期間尚未完成','required-study-load':'修課學分不足','unattended-compulsory':'尚有未修必修課程','total-credits':'取得學分不足','required-credits':'必修學分不足','elective-credits':'選修學分不足',conduct:'獎懲條件未符合','chinese-study-load':'國文修課時數不足','foreign-language-study-load':'外語修課時數不足','practical-study-load':'實作課程時數不足'};
-/** Exact publication boundary: computed on exam day, shown from next calendar day. */
+/** Use the publication date assigned to each exam by the calendar. */
 export function isExamScorePublished(termId,grade,round,viewDate,version){
  if(![1,2,3].includes(round))throw new RangeError('Invalid exam round');
- const period=examSchedule(termId,grade,version).find(e=>e.round===round)?.dates;if(!period)throw new RangeError('Invalid exam round for term policy');
- return viewDate>=addDays(period.at(-1),1);
+ const publication=assessmentCalendar(termId,grade,version).examPublications.find(e=>e.round===round);
+ if(!publication)throw new RangeError('Invalid exam round for term policy');
+ return viewDate>=publication.date;
 }
 export function isSemesterResultPublished(termId,viewDate,grade=1,version){
  return viewDate>=addDays(assessmentCalendar(termId,grade,version).ordinaryAssessmentDates.at(-1),1);
@@ -35,7 +36,7 @@ export function projectNotebookAcademics(world,studentId=null,termId=null){
  const actual=term&&academic.terms[term.id],finalReleased=!actual||released(actual);
  const releasedTerms=Object.values(academic.terms).filter(t=>t.closed&&t.results&&released(t)).sort((a,b)=>semester(a.termId).start.localeCompare(semester(b.termId).start));
  const classTerm=releasedTerms.at(-1)??null;
- const classSubjects=classTerm?[...new Set(classTerm.results.flatMap(r=>r.courses.map(c=>c.subject)))]:[];
+ const classSubjects=classTerm?[...new Set(classTerm.results.flatMap(r=>(r.courses??[]).map(c=>c.subject)))]:[];
  const classTable=classTerm?{label:semesterLabel(classTerm.termId),subjects:classSubjects,students:(roster?.students??[]).map(s=>{
   const result=classTerm.results.find(r=>r.id===s.id);
   return {id:s.id,name:s.name,seatNo:s.seatNo??null,marks:Object.fromEntries((result?.courses??[]).filter(c=>typeof c.mark==='number').map(c=>[c.subject,c.mark]))};

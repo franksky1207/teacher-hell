@@ -47,6 +47,6 @@ export function validateRetryPair(checkpoint,world){
 }
 export function captureRetryCheckpoint(previous,next,checkpoint){
  if(!semesterRetry(next))return next.position.openingId!==previous.position.openingId;
- if(retrySemester(next)===retrySemester(checkpoint))return false;
+ if(retrySemester(next)===retrySemester(checkpoint??previous))return false;
  validateRetryCheckpoint(next);return true;
 }

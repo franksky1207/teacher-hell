@@ -15,14 +15,155 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2d2d1bbc49a612e2091db0074dbc8e3abe0b1f3007d68f343ca1acfef06b9fa3",
+      "checkedAt": "2026-11-27T14:27:47.330Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由我向總務提出撤借，原借出人依規定接返還。",
+            "action": "導師已提出限原管理程序的撤借需求，未完成物件返還或核銷。",
+            "tradeoff": "要再跑一次流程"
+          },
+          {
+            "id": 2,
+            "text": "請原借用登記人自行聯繫總務，我提供沒有活動的確認。",
+            "action": "導師已提供本人無活動的必要確認及原登記窗口資訊，不代改帳。",
+            "tradeoff": "伯伯得再說一次白忙"
+          },
+          {
+            "id": 3,
+            "text": "問總務是否有當日已核准的其他用途可接，不自行另找班來用。",
+            "action": "導師已提出限既有核可需求的物件接續詢問，未完成轉借或更動用途。",
+            "tradeoff": "可能沒有需求"
+          },
+          {
+            "id": 4,
+            "text": "不再經警衛室留放，申請按總務指示安全移回原處。",
+            "action": "導師已提出需原管理及安全人力的有限移置需求，未完成搬運。",
+            "tradeoff": "要等合適成人搬運"
+          },
+          {
+            "id": 5,
+            "text": "只處理原借物接續，不在門口聊誰先說錯。",
+            "action": "導師已停止本人非必要來源閒聊，維持原借物處理。",
+            "tradeoff": "人情上的尷尬沒有散"
+          },
+          {
+            "id": 6,
+            "text": "伯伯若願意，私下確認以後這類需求先向我核一句再借。",
+            "action": "導師已提出可拒絕的有限未來需求確認方式，未建立新校規或核定角色。",
+            "tradeoff": "少了驚喜式幫忙"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我捨不得他白忙，向總務報自己願意協助這次搬回，先確認人力和安全條件；伯伯留門口，不為這兩張桌子跑掉。",
+          "action": "導師已向總務提出本人可自願協助本次返還搬運的意願，須總務確認重量、原場地與適當成人人力，未取得同意或實際搬運，不調離警衛必要門禁職務。",
+          "tradeoff": "用掉自己空檔，還可能因條件不合幫不上"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2302079354
+        },
+        "selectedIds": [
+          2,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "d2b9dada1870c4f45f1d2ea6df7edecd5345822673c1bd54dac09f03c08cf869"
+      },
+      "consequenceDirections": {
+        "A": "可保合作，不把普通寒暄變核准承諾。",
+        "B": "可由原流程結束，不把他推成唯一錯的人。",
+        "C": "教師提出本人實際出力而非只請總務安排他人搬；核可及安全不成立便不搬，原撤借及必要門口安全各分支照常。",
+        "D": "可減謠言源頭追查，不妨礙必要事實澄清。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒親自打撤借電話仍與普通1向總務撤借實質相同；改為本人自願有限安全搬運支援申請，承擔身體與時間投入，不假稱完成。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "由我向總務提出撤借，原借出人依規定接返還。",
+                "action": "導師已提出限原管理程序的撤借需求，未完成物件返還或核銷。",
+                "tradeoff": "要再跑一次流程"
+              },
+              {
+                "id": 2,
+                "text": "請原借用登記人自行聯繫總務，我提供沒有活動的確認。",
+                "action": "導師已提供本人無活動的必要確認及原登記窗口資訊，不代改帳。",
+                "tradeoff": "伯伯得再說一次白忙"
+              },
+              {
+                "id": 3,
+                "text": "問總務是否有當日已核准的其他用途可接，不自行另找班來用。",
+                "action": "導師已提出限既有核可需求的物件接續詢問，未完成轉借或更動用途。",
+                "tradeoff": "可能沒有需求"
+              },
+              {
+                "id": 4,
+                "text": "不再經警衛室留放，申請按總務指示安全移回原處。",
+                "action": "導師已提出需原管理及安全人力的有限移置需求，未完成搬運。",
+                "tradeoff": "要等合適成人搬運"
+              },
+              {
+                "id": 5,
+                "text": "只處理原借物接續，不在門口聊誰先說錯。",
+                "action": "導師已停止本人非必要來源閒聊，維持原借物處理。",
+                "tradeoff": "人情上的尷尬沒有散"
+              },
+              {
+                "id": 6,
+                "text": "伯伯若願意，私下確認以後這類需求先向我核一句再借。",
+                "action": "導師已提出可拒絕的有限未來需求確認方式，未建立新校規或核定角色。",
+                "tradeoff": "少了驚喜式幫忙"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也捨不得他那個笑垮掉，自己承擔這次撤借電話，明說我沒及時留意風聲，但不接下不存在的義賣；讓他先顧門口。",
+              "action": "導師已親自向原總務提出本次撤借說明並承擔本人有限聯繫，不承認不存在活動、未完成返還。",
+              "tradeoff": "自己得再解釋，也可能被人以為原本真有辦"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3944118663
+            },
+            "selectedIds": [
+              4,
+              2,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 1,
+              "C": 2,
+              "D": 4
+            },
+            "optionsDigest": "399d1b7bec5a393dad10a3bfa1dfb14c1f30300fc44f681174fa8cc1ee31b285"
+          },
+          "previousConsequenceDirections": {
+            "A": "教師接走明確有限的額外聯繫，不虛認活動曾核准，門禁仍由原人員依法執行。",
+            "B": "可減誤會，不擅搬桌或假稱已歸還。",
+            "C": "可由原流程結束，不把他推成唯一錯的人。",
+            "D": "可恢復門口空間，不能自己搬重物冒險。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4b15ea8a617e53b1796298b14c0a06d61f8134de7001b8409c494f4ce28fb5af",
+    "draftSha256": "2d2d1bbc49a612e2091db0074dbc8e3abe0b1f3007d68f343ca1acfef06b9fa3",
     "seedAssignmentVersion": 1
   }
 }

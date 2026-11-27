@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6a061e762a7c22cea642d9406995c73e40a94c0ecf37c41ec479cc161242ec5f",
+      "checkedAt": "2026-11-27T14:27:47.340Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持原核定閱讀，不加非必要刷題。",
+            "action": "導師已維持原核定安排，婉拒本人越權改課及新增刷題要求。",
+            "tradeoff": "可能被越級投訴"
+          },
+          {
+            "id": 2,
+            "text": "把建議交原課程權責評估，不向家長承諾採用。",
+            "action": "導師已提出限原程序的課程建議受理，未核准或更動課表。",
+            "tradeoff": "要等，可能無變動"
+          },
+          {
+            "id": 3,
+            "text": "提供可公開的原閱讀目標和本班整體非識別學習情形。",
+            "action": "導師已提供原可公開的有限課程與整體資料，不揭個別成績。",
+            "tradeoff": "可能被說只是辯解"
+          },
+          {
+            "id": 4,
+            "text": "邀原英文、數學教師依各自職權回覆練習安排。",
+            "action": "導師已提出限原授課角色的有限學習說明需求，未取得協作或新增課時。",
+            "tradeoff": "要協調，也未必同時能答"
+          },
+          {
+            "id": 5,
+            "text": "讓願意的學生說明自己在閱讀課需要什麼，再交給課程承辦評估。",
+            "action": "導師已提出原程序內有限自願學習需求回饋，不取得全班立場或課程核准。",
+            "tradeoff": "家長可能覺得學生只會選輕鬆"
+          },
+          {
+            "id": 6,
+            "text": "閱讀課不改，給想多練的人現有題目，別再另加全班作業。",
+            "action": "導師已提供原可用練習資訊，不新增必做量或變更核定閱讀。",
+            "tradeoff": "不像家長要的全班衝刺"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想爭這兩節值得，自己選一段原有閱讀，邀他在原可用親師時段自願讀看看，先別替全班刷掉。",
+          "action": "導師已提出限原合法材料與時段的有限家長自願閱讀邀請，未取得參與或更改課表。",
+          "tradeoff": "得用自己的聯絡空檔，也可能更被嫌浪費"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2459202392
+        },
+        "selectedIds": [
+          6,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "b67a00b4ae051241d38fedb62f45c83f89eee39543d95fe653f75c0c802ccdb2"
+      },
+      "consequenceDirections": {
+        "A": "可有個別選擇，不承諾用資源必然升名次。",
+        "B": "可保原課程，不把堅持當拒收學習疑問。",
+        "C": "教師用實際閱讀邀請承擔說服失敗，未答應不當成已讀或同意課程，不逼學生證明。",
+        "D": "可保學習者參與，不拿喜好票直接定課表。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4ca874570643988ecf5f8eab6993e6325b1377b2d1a4317ef6dbd1e77c4b9367",
+    "draftSha256": "6a061e762a7c22cea642d9406995c73e40a94c0ecf37c41ec479cc161242ec5f",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f3aeba3351379ccb3a6c63f3e74e4983574c475fc422ee97460c0ed46dc35e72",
+      "checkedAt": "2026-11-27T14:27:47.342Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只談還會影響實際執行的那一句，其他問號今天先不辯。",
+            "action": "導師已在原職權限縮本次有限文字核對範圍，不保留已知誤導。",
+            "tradeoff": "他可能覺得敷衍"
+          },
+          {
+            "id": 2,
+            "text": "請他用原正式管道寫具體建議，我按原可行時限回。",
+            "action": "導師已提供既有有限建議受理方式，不承諾逐字採用。",
+            "tradeoff": "討論會變慢"
+          },
+          {
+            "id": 3,
+            "text": "邀他自願改寫一條本人認為最可行的版本，另行核對。",
+            "action": "導師已提出可拒絕的有限改寫邀請，未取得成品或核定新規。",
+            "tradeoff": "他可能不想代寫"
+          },
+          {
+            "id": 4,
+            "text": "把我能改的說明補成具體例子，原來的規則不加碼。",
+            "action": "導師已在原班務權限補充有限執行例示，不更改實質權益或他科權限。",
+            "tradeoff": "版面較長，仍可能被挑"
+          },
+          {
+            "id": 5,
+            "text": "還有實際爭議的那一條，請主管確認，不請他裁判誰比較專業。",
+            "action": "導師已提出限實務需要的單項正式釐清，不取得裁定或公開批評。",
+            "tradeoff": "小字句進正式流程"
+          },
+          {
+            "id": 6,
+            "text": "今天完成必要事項就結束，不在下課追完所有問號。",
+            "action": "導師已結束本人非必要即時逐字辯論，維持原正式溝通與必要更正。",
+            "tradeoff": "同事可能更不滿"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被紅筆激起來，挑自己最有把握的一條，當場提出兩種合法情境請他判怎麼用；我若寫不通就改，別只比誰圈得多。",
+          "action": "導師已提出限原規則的兩個有限實務情境檢驗邀請，未取得參與或證實規則無誤。",
+          "tradeoff": "可能當場證明自己真的寫不好"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 610064247
+        },
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "420e83fe36b3a3d799c1af95e6664f6a37b178c2da1f12f4a8668489a8bad0f6"
+      },
+      "consequenceDirections": {
+        "A": "可保實務，不用修辭問題推翻全部規則。",
+        "B": "可讓執行易懂，不用例子增新義務。",
+        "C": "可找權責，不擴大私人爭辯。",
+        "D": "教師提出有限具體反例檢驗，不與普通改寫或補例同動作，不藉輸贏保留違誤。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e8aec9826a40c73c923148bf4f1e3b22147b47553ba4929c3c70975264ea068a",
+    "draftSha256": "f3aeba3351379ccb3a6c63f3e74e4983574c475fc422ee97460c0ed46dc35e72",
     "seedAssignmentVersion": 1
   }
 }

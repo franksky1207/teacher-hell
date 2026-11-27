@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4b2867dffe0704c130d7585438bdd99c530b54866ecbbf542f4744902feee482",
+      "checkedAt": "2026-11-27T14:27:47.345Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請工作人員依場規處理，我在原安全座位等。",
+            "action": "玩家已提出依原場規處理干擾的需求，未取得驅離或服務改善結果。",
+            "tradeoff": "還會耗掉觀影時間"
+          },
+          {
+            "id": 2,
+            "text": "詢問是否有合法空位可換，願意的話按工作人員安排。",
+            "action": "玩家已提出有限換位請求，未取得座位或完成換位。",
+            "tradeoff": "可能在角落或沒有位"
+          },
+          {
+            "id": 3,
+            "text": "詢問原票種退費條件，未同意不自稱已退。",
+            "action": "玩家已提出限原購票事實的退費條件詢問，未取得退款或解約。",
+            "tradeoff": "可能退不到，也看不完"
+          },
+          {
+            "id": 4,
+            "text": "這場到這裡，依出口安全離場，不追加補償爭辯。",
+            "action": "玩家已結束本人本場自願觀影並安全離場，不宣稱業者已補償。",
+            "tradeoff": "花了票錢卻沒看完"
+          },
+          {
+            "id": 5,
+            "text": "按原正常客服管道提交本人遭遇，不公開旁人影像。",
+            "action": "玩家已提出限必要事實的正式服務反映，不取得裁定或公開第三人。",
+            "tradeoff": "還要花時間"
+          },
+          {
+            "id": 6,
+            "text": "請工作人員確認是否有原規定的補看方式，不當場再買一張。",
+            "action": "玩家已查詢原服務條件內的補看可能性，未取得新票或預訂。",
+            "tradeoff": "可能沒有，也要再排時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想把剩下的晚上也賠進去，直接向櫃台申請退票，這場不看了；退不退依原條件，我不再回去跟鄰座吵。",
+          "action": "玩家已結束本人本場觀看並向原客服正式提出退票需求，不只是查詢條件，未取得退款、解除契約核准或要求強行驅離他人。",
+          "tradeoff": "電影沒看完，退票也可能被拒，票錢仍可能損失"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3499750948
+        },
+        "selectedIds": [
+          4,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "17a653201e9b86d028c2f689cbfbaf352ddfdda3a9b52e3505c39ad60dcd5717"
+      },
+      "consequenceDirections": {
+        "A": "採取停止本場服務及正式退票請求，與普通3只查條件、普通4離場不追加補救不同；未核准不能認定已退費，必要安全仍交工作人員。",
+        "B": "可要求原服務，不替業者決定請離或保證安靜。",
+        "C": "可查替代服務，詢問不是票已到手。",
+        "D": "可結束耗損，必要正式資訊仍可依法保留。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒同普通2換安全空位，僅不甘心和看完態度不同；改為結束觀看並正式申請退票的不同消費行動，清楚區分申請與退款。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "請工作人員依場規處理，我在原安全座位等。",
+                "action": "玩家已提出依原場規處理干擾的需求，未取得驅離或服務改善結果。",
+                "tradeoff": "還會耗掉觀影時間"
+              },
+              {
+                "id": 2,
+                "text": "詢問是否有合法空位可換，願意的話按工作人員安排。",
+                "action": "玩家已提出有限換位請求，未取得座位或完成換位。",
+                "tradeoff": "可能在角落或沒有位"
+              },
+              {
+                "id": 3,
+                "text": "詢問原票種退費條件，未同意不自稱已退。",
+                "action": "玩家已提出限原購票事實的退費條件詢問，未取得退款或解約。",
+                "tradeoff": "可能退不到，也看不完"
+              },
+              {
+                "id": 4,
+                "text": "這場到這裡，依出口安全離場，不追加補償爭辯。",
+                "action": "玩家已結束本人本場自願觀影並安全離場，不宣稱業者已補償。",
+                "tradeoff": "花了票錢卻沒看完"
+              },
+              {
+                "id": 5,
+                "text": "按原正常客服管道提交本人遭遇，不公開旁人影像。",
+                "action": "玩家已提出限必要事實的正式服務反映，不取得裁定或公開第三人。",
+                "tradeoff": "還要花時間"
+              },
+              {
+                "id": 6,
+                "text": "請工作人員確認是否有原規定的補看方式，不當場再買一張。",
+                "action": "玩家已查詢原服務條件內的補看可能性，未取得新票或預訂。",
+                "tradeoff": "可能沒有，也要再排時間"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我不想連剩下的電影也送給他，請人員若有合適空位就換我過去，這次不等對方道歉；我要把能看的看完。",
+              "action": "玩家已提出需工作人員同意的有限換位需求，未取得座位、道歉或觀影完成。",
+              "tradeoff": "放掉當場討公道，座位可能比較差"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 858330523
+            },
+            "selectedIds": [
+              4,
+              3,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": "emotional",
+              "C": 1,
+              "D": 4
+            },
+            "optionsDigest": "5523466dd021e06e7762402f738dfd0e796fe2be0bd0fd35f311e51f71c3f4bc"
+          },
+          "previousConsequenceDirections": {
+            "A": "可查消費權益，不用高聲爭執逼現金。",
+            "B": "玩家提出以保留餘場為優先的限定換位請求，與普通2同樣換位仍須另有實質差異才能成立。",
+            "C": "可要求原服務，不替業者決定請離或保證安靜。",
+            "D": "可結束耗損，必要正式資訊仍可依法保留。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2dcb99798ca92561ec3111b0679662a80222937da99e112f7dfc0debf3b87866",
+    "draftSha256": "4b2867dffe0704c130d7585438bdd99c530b54866ecbbf542f4744902feee482",
     "seedAssignmentVersion": 1
   }
 }

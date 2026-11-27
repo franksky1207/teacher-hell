@@ -16,14 +16,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d309829e7785a8713d7e0d6814f0f9526f15dfbc2c8839e1ffcd60c69753be24",
+      "checkedAt": "2026-11-27T14:27:47.349Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把家長和平台該怎麼處理的資訊給他，學校不另加處罰。",
+            "action": "導師已提供既有可公開家庭消費處理資訊，婉拒新增越權處分。",
+            "tradeoff": "家長可能覺得沒幫忙"
+          },
+          {
+            "id": 2,
+            "text": "邀孩子自願在原可用時段談消費判斷，不代家長追債。",
+            "action": "導師已提出有限自願非敏感消費談話邀請，未取得參與或家庭資料。",
+            "tradeoff": "可能不願說"
+          },
+          {
+            "id": 3,
+            "text": "提供學校輔導管道，依實際需要由適任人員協助。",
+            "action": "導師已提供既有合法輔導資訊並提出有限需求，不取得服務或診斷。",
+            "tradeoff": "需要等也可能不參加"
+          },
+          {
+            "id": 4,
+            "text": "家長若願，協助整理他自己要向孩子說的界線，不替他講。",
+            "action": "導師已提出有限自願家長溝通整理協助，未代管款項或取得家庭同意。",
+            "tradeoff": "他仍得面對家裡衝突"
+          },
+          {
+            "id": 5,
+            "text": "本次不再加面談，原必要訊息回完即結束非急聯繫。",
+            "action": "導師已在必要事項回覆後結束本人非急追加諮詢，不阻正式求助。",
+            "tradeoff": "看起來不如他期待熱心"
+          },
+          {
+            "id": 6,
+            "text": "用教師自編虛構例子作原課內一般消費教育，不提個案。",
+            "action": "導師已提出限無識別虛構材料的有限一般教學，不公開家庭帳務或原委託。",
+            "tradeoff": "占原可調短段，也不能只為一人設題"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不想再當他那句全權拜託的收件人，直接退回所有罰則選單，只答應下一次先聽他本人怎麼和孩子談，不幫他選罰。",
+          "action": "導師已拒絕本人非必要家庭懲罰決策角色，提出可拒絕的日後家長自述交流，不代罰或保證談話已發生。",
+          "tradeoff": "他可能不再覺得老師好說話，還未必願回來"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2644561674
+        },
+        "selectedIds": [
+          4,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 1,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "4b934ab76f42e818a285fff42eec9a8551336a71d89fc712f9a150e9f12d990e"
+      },
+      "consequenceDirections": {
+        "A": "可有支持，不以轉介判成癮或保證改變。",
+        "B": "可保角色，不以不代罰等於不關心孩子。",
+        "C": "可支援而不外包，不替家庭定金錢契約。",
+        "D": "教師明確將下一步留給家長實際溝通，不要求回報私密細節或以家長做完才提供必要支持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1a15d7d19320c315d1dc41815382286f6b4edc5f27e3972da2e71be311744365",
+    "draftSha256": "d309829e7785a8713d7e0d6814f0f9526f15dfbc2c8839e1ffcd60c69753be24",
     "seedAssignmentVersion": 1
   }
 }

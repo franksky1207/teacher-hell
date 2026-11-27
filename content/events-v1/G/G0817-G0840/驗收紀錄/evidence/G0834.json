@@ -15,14 +15,82 @@
     "G06",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "631fc941dde8cc5eb82be30b319fcd07d3c6fa0013e09b47a6978b804b63ea65",
+      "checkedAt": "2026-11-27T14:27:47.343Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持校方已確認的現行安全安排，不接受私改集合點。",
+            "action": "導師已維持原已確認安全接續，婉拒本人越權改點。",
+            "tradeoff": "家長會覺得沒被採用"
+          },
+          {
+            "id": 2,
+            "text": "把家長建議交原交通權責作正式評估。",
+            "action": "導師已提出限原程序的替代點建議，未獲核准或取得店家場地。",
+            "tradeoff": "可能不准也要等"
+          },
+          {
+            "id": 3,
+            "text": "請承辦確認學校需不需要這批裝備，沒准以前先不收、不用。",
+            "action": "導師已提出原受贈及用途需求確認，未取得物件或部署許可。",
+            "tradeoff": "家長花錢可能白等"
+          },
+          {
+            "id": 4,
+            "text": "告知原合法志工申請方式，由原權責評估其能做的工作。",
+            "action": "導師已提供現有合法志工申請資訊，未取得錄用、訓練或交通權。",
+            "tradeoff": "不是立刻能站崗"
+          },
+          {
+            "id": 5,
+            "text": "請校方提供可公開的施工期間接送說明，我依原窗口轉交。",
+            "action": "導師已提出限可公開的原交通資訊需求，未完成新公告或路線核准。",
+            "tradeoff": "資訊未必如他要的快"
+          },
+          {
+            "id": 6,
+            "text": "本次不接私人裝備，依原權屬安全返還。",
+            "action": "導師已婉拒本人本次非必要物資收受並提出返還安排，不阻正式安全建議。",
+            "tradeoff": "他可能覺得好意被退"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想讓他知道不是嫌麻煩，申請自己找個安全位置看一次實際接送，再提意見；不陪他站車道吹哨。",
+          "action": "導師已提出本人在原校方安全允許範圍作有限觀察的申請，未獲准、實施或取得交通指揮權。",
+          "tradeoff": "要花自己時間，也可能看不出新方法"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1161691271
+        },
+        "selectedIds": [
+          2,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "942c2d1b2f55707aedf73698e4651badc03e381d8d90d5a86e10ad0ba3530f50"
+      },
+      "consequenceDirections": {
+        "A": "可分物資與決策，不用收物換私改。",
+        "B": "可保參與，不把申請當超商已同意。",
+        "C": "可保職權，不以現行就一定沒風險免必要追蹤。",
+        "D": "教師承擔有限觀察工作，需校方核可且不取代已需完成的專業風險確認，不保證改點。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "59965476d70183830da30e29a504ca4145473c08a361b6edafd2c20cc1be1ef2",
+    "draftSha256": "631fc941dde8cc5eb82be30b319fcd07d3c6fa0013e09b47a6978b804b63ea65",
     "seedAssignmentVersion": 1
   }
 }

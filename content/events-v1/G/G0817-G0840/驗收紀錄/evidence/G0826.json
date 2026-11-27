@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "177f2da9c6bb40f67871e13f00d96d5fe5afd87dde67af4a357f188be52c4ef3",
+      "checkedAt": "2026-11-27T14:27:47.337Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只代表本人依正式管道反映，不替其他人發言。",
+            "action": "玩家已提出本人有限工作負荷意見，不冒其他教師立場或擅離工作。",
+            "tradeoff": "大家可能覺得被放下"
+          },
+          {
+            "id": 2,
+            "text": "願意反映的人，各自寫下真實工作負荷、自己署名，再送正式窗口。",
+            "action": "玩家已提出有限自願個別事實整理邀請，未取得聯署或代表權。",
+            "tradeoff": "要整理，也可能有人退"
+          },
+          {
+            "id": 3,
+            "text": "先申請原可用工作會談時段，不今天突然圍辦公室。",
+            "action": "玩家已提出原程序內的有限工作會談申請，未獲准或形成代表團。",
+            "tradeoff": "熱度會降，也未必約成"
+          },
+          {
+            "id": 4,
+            "text": "本次只把本人非急可調工作提出重排需求，不談全校。",
+            "action": "玩家已提出本人原權限可申請的有限工作重排需求，未獲准或免正式責任。",
+            "tradeoff": "同事可能覺得只顧自己"
+          },
+          {
+            "id": 5,
+            "text": "先把這頓飯安靜吃完，之後各人照正常管道反映。",
+            "action": "玩家已結束本人非必要午餐動員，保留各人正常反映權與原任務接續。",
+            "tradeoff": "像潑了冷水"
+          },
+          {
+            "id": 6,
+            "text": "詢問原合法教師組織的正常諮詢方式，不自任帶頭者。",
+            "action": "玩家已查詢既有合法工作諮詢管道，未建立新組織或取得代理。",
+            "tradeoff": "程序未必快"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再笑說只是隨口，這次願意當申請會談的聯絡人，但先逐一問誰真的要來，不替沒答應的人掛名。",
+          "action": "玩家已提出本人擔任有限正式會談聯繫的意願並發出自願參與詢問，未取得代表權、會談核准或出席同意。",
+          "tradeoff": "自己的名字會被記住，之後得花時間聯繫"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3159858422
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "5befe444b6fb9ca59a2d941e0c2b8fa1b619917412f50c10c10d9065b23eebf8"
+      },
+      "consequenceDirections": {
+        "A": "玩家自願承擔有限程序協調，與只送本人意見不同，不讓領導欲變強迫出席或未核准集結。",
+        "B": "可停止非必要動員，不否認剛才的不滿或阻他人發聲。",
+        "C": "可有真實個人意見，不把附和當授權。",
+        "D": "可讓來源明確，不強迫聯署或留敏感私事。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8ca503913a6747e3a0c1321f24db0e81d8081f2cd650cebea254f87298670353",
+    "draftSha256": "177f2da9c6bb40f67871e13f00d96d5fe5afd87dde67af4a357f188be52c4ef3",
     "seedAssignmentVersion": 1
   }
 }

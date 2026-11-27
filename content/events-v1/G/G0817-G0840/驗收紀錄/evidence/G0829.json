@@ -15,14 +15,155 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "05e3bcb50e792217b81a8cf716fc66f5ee1d6fd9f27db34e3345b9a10de2d84c",
+      "checkedAt": "2026-11-27T14:27:47.339Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "各人守住基本要求，按自己的進度做，不必等全組整份一起完成。",
+            "action": "導師已在原一般教學範圍提供有限個別進度安排，不撤必要基本要求。",
+            "tradeoff": "小組同步感變少"
+          },
+          {
+            "id": 2,
+            "text": "原組保留，只在原一題共同問題會合，其餘各自做。",
+            "action": "導師已限縮本人可調小組共同工作為原等量的一題，不增總量或代教。",
+            "tradeoff": "合作內容縮小"
+          },
+          {
+            "id": 3,
+            "text": "先和相關同學確認能不能重組，不公開說是誰難相處。",
+            "action": "導師已提出原合法班務範圍的有限重組方案，未取得必要同意或完成換組。",
+            "tradeoff": "他可能仍感到被排斥"
+          },
+          {
+            "id": 4,
+            "text": "他想繼續，就做原本已有的進階題，不負責催同組。",
+            "action": "導師已提供原可用進階材料的自願學習選擇，不授予學生管理進度權。",
+            "tradeoff": "少了帶人跟上的成就"
+          },
+          {
+            "id": 5,
+            "text": "本短段由我統一處理各人的一個卡點，不請學生互教。",
+            "action": "導師已承接原課內有限個別問題回應，不將全份補進度轉給同學。",
+            "tradeoff": "教師回應量增多"
+          },
+          {
+            "id": 6,
+            "text": "請各人私下標自己本次做得到的範圍，我據真實條件安排。",
+            "action": "導師已安排原負擔內的有限個人工作範圍確認，不公開速度比較。",
+            "tradeoff": "規劃花時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他那張補進度表，我也喘不過氣。這回替他向各科詢問能不能錯開可調的補件，不再只誇他追得快。",
+          "action": "導師已在本人班級協調職權內向相關授課者提出有限非急補件時程可行性詢問，未更動他科期限、正式評量或取得准許，不索家庭隱私。",
+          "tradeoff": "自己要多協調，也可能被認為干涉別科，學生未必想被關心"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2848637288
+        },
+        "selectedIds": [
+          1,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "20ba7a1347b0b1fac17f1eadbe9890c88d90ef7593f41c388246a11c8effaddf"
+      },
+      "consequenceDirections": {
+        "A": "可改合作配置，未同意不能假稱已換好。",
+        "B": "教師投入跨科非必要額外協調而非撤掉虛構延伸任務，必要學習支持原已共同維持；他科未允許前仍守原合法期限，不承諾一定減負。",
+        "C": "可保差異，不把快者變等候或慢者變拖累。",
+        "D": "可繼續學習，不給額外進階作為獎懲。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒臨時假設老師加了必做延伸題再收回，有湊取消活動前提疑慮；改為直接承接原多科補進度的自願額外時程協調詢問。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "改為各人依原基本門檻走自己的進度，不互相等整份。",
+                "action": "導師已在原一般教學範圍提供有限個別進度安排，不撤必要基本要求。",
+                "tradeoff": "小組同步感變少"
+              },
+              {
+                "id": 2,
+                "text": "原組保留，只在原一題共同問題會合，其餘各自做。",
+                "action": "導師已限縮本人可調小組共同工作為原等量的一題，不增總量或代教。",
+                "tradeoff": "合作內容縮小"
+              },
+              {
+                "id": 3,
+                "text": "依原權限協調自願重組，不公開說因誰難相處。",
+                "action": "導師已提出原合法班務範圍的有限重組方案，未取得必要同意或完成換組。",
+                "tradeoff": "他可能仍感到被排斥"
+              },
+              {
+                "id": 4,
+                "text": "快者可自願做原已有進階題，不擔任組內催辦。",
+                "action": "導師已提供原可用進階材料的自願學習選擇，不授予學生管理進度權。",
+                "tradeoff": "少了帶人跟上的成就"
+              },
+              {
+                "id": 5,
+                "text": "本短段由我統一處理各人的一個卡點，不請學生互教。",
+                "action": "導師已承接原課內有限個別問題回應，不將全份補進度轉給同學。",
+                "tradeoff": "教師回應量增多"
+              },
+              {
+                "id": 6,
+                "text": "請各人私下標自己本次做得到的範圍，我據真實條件安排。",
+                "action": "導師已安排原負擔內的有限個人工作範圍確認，不公開速度比較。",
+                "tradeoff": "規劃花時間"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也有點被他追上的速度追著跑，乾脆把這段原先加的延伸題收回，大家包含他都只做原必要部分，剩下可調幾分鐘真休息。",
+              "action": "導師已停止本人本段非必要延伸要求並保留原允許休息，不縮必要學習或取消學生自主延伸權。",
+              "tradeoff": "自己少了一份進階成果，他可能正想挑戰"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3001190830
+            },
+            "selectedIds": [
+              5,
+              1,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 5,
+              "C": 2,
+              "D": 1
+            },
+            "optionsDigest": "9d0343f417d1262694e02494879623714774dc90774284531b152e72eef0aa57"
+          },
+          "previousConsequenceDirections": {
+            "A": "教師撤回本人已準備且非必需的延伸要求，進階材料可自願帶走但不再成任務，不以休息懲罰快者。",
+            "B": "可回成人教學，不保證每問當場解完。",
+            "C": "可有交會點，不要求一人教完全部。",
+            "D": "可保差異，不把快者變等候或慢者變拖累。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2d790cfb8f1b383b4b5156b7601c80a675abe43e3c7a58291039285c9e44cfec",
+    "draftSha256": "05e3bcb50e792217b81a8cf716fc66f5ee1d6fd9f27db34e3345b9a10de2d84c",
     "seedAssignmentVersion": 1
   }
 }

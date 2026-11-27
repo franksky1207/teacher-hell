@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e2dcfb79cc2d8b8c8b4e24838b1315c121d6c204cd5034595fbc97ca7d03006d",
+      "checkedAt": "2026-11-27T14:27:47.329Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "原值日時間不變，按校方已確認安全動線執行。",
+            "action": "導師已維持原合法清運時段及必要安全接續，不增加交換勞務。",
+            "tradeoff": "他可能仍對下午有壓力"
+          },
+          {
+            "id": 2,
+            "text": "依原規範請雙方自願交換等量班務，不加一週。",
+            "action": "導師已提出限等值負擔及雙方自願的班務交換方案，未取得同意或完成換班。",
+            "tradeoff": "未必找得到願意者"
+          },
+          {
+            "id": 3,
+            "text": "申請原清運成人在既有時段到核准集放點接，不讓學生走後門。",
+            "action": "導師已提出限現有制度的集放點接運需求，未取得核准或接運。",
+            "tradeoff": "可能增加成人工作，也可能不准"
+          },
+          {
+            "id": 4,
+            "text": "先問備援值日生能不能接這次搬送，他改做等量的室內整理。",
+            "action": "導師已在原班務允許範圍提出有限等值備援調整，未取得必要參與者同意。",
+            "tradeoff": "其他排班要協調"
+          },
+          {
+            "id": 5,
+            "text": "他只在安全的公共區核對分類，搬送仍請原來的成人接手。",
+            "action": "導師已提出原安全管理範圍內的有限分工調整，未增總量或要求翻袋。",
+            "tradeoff": "工作內容改，可能少了自主"
+          },
+          {
+            "id": 6,
+            "text": "今天先不換班，把下午怎麼走、找誰交接寫清楚給他。",
+            "action": "導師已提供本人可核實的有限清運接續資訊，不更改原輪值。",
+            "tradeoff": "沒有立刻得到自己要的時段"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想讓他每次拿加班換安心，這次我接一段原核准集放點的非危險搬送，讓他照原等值室內班務走，先試一次而已。",
+          "action": "導師已在本人職務與身體安全允許範圍提出一次有限搬送承接，未替未到清運時間的垃圾另行棄置或承諾永久代勞。",
+          "tradeoff": "用掉自己的時間，學生可能以為以後都由我做"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4194021792
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "6647b59aed488df060c127c9c84c63e7d546033d2a9056bb87a55449c1de11e1"
+      },
+      "consequenceDirections": {
+        "A": "可有暫時調整，不把恐懼當永久免責或集體多做。",
+        "B": "可保有限責任，不把學生變垃圾檢驗工或摸危險物。",
+        "C": "可保可預期，不捏造中午可收。",
+        "D": "教師自願承接一次明確有限實務，不把共同必要安全支援變特例、不違清運規定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9d73cace0d5495468cf93c95d008461bf19cb709ee1d6d121c4be82b626eb678",
+    "draftSha256": "e2dcfb79cc2d8b8c8b4e24838b1315c121d6c204cd5034595fbc97ca7d03006d",
     "seedAssignmentVersion": 1
   }
 }

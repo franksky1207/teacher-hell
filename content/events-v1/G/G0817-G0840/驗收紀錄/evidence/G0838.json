@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bdfd139ec4952b40064be75712d2cdcbc7f74730b034f5638654301502b0cc00",
+      "checkedAt": "2026-11-27T14:27:47.348Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依原時點一次交接，不逐節讓他追問。",
+            "action": "導師已在原班務權限確認有限固定交接時點，不減必要通知。",
+            "tradeoff": "他得忍住等"
+          },
+          {
+            "id": 2,
+            "text": "這週不再找他額外幫忙，收發由原來負責的成人接回。",
+            "action": "導師已停止本人本週非必要幫手需求，按原成人責任接回收發。",
+            "tradeoff": "可能像失去被誇獎的位置"
+          },
+          {
+            "id": 3,
+            "text": "只讓他送已封妥的整份，不等批改結果。",
+            "action": "導師已提出限非敏感封件的有限交接分工，未取得學生意願或改資料權限。",
+            "tradeoff": "完成感變少"
+          },
+          {
+            "id": 4,
+            "text": "依原正常親師管道向家長說明幫手工作範圍，不公開批評孩子。",
+            "action": "導師已提出限必要知情的有限班務範圍說明，不索家庭細節。",
+            "tradeoff": "家長可能覺得自己誇錯"
+          },
+          {
+            "id": 5,
+            "text": "他願意的話，只談哪些班務想繼續、哪些不想做。",
+            "action": "導師已提出有限自願班務意願確認，不以回答換肯定。",
+            "tradeoff": "他可能只回答都可以"
+          },
+          {
+            "id": 6,
+            "text": "原回條用現有合法收件盒交成人，不再由學生逐本催。",
+            "action": "導師已在既有安全保管條件下接回成人點收，不授予學生查閱或新蒐集權。",
+            "tradeoff": "教師要自己點收"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被追得想躲，今天明說下課這幾分鐘我要自己走，不帶小幫手；他有事仍用原管道，我不再用「再幫一下」留他。",
+          "action": "導師已停止本人本次非必要隨行與臨時差遣邀請，保留學生正常求助及既定班務交接。",
+          "tradeoff": "他可能失落，我也少一雙隨叫隨到的手"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 200215151
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "7a1716d13ca4d8e1a594bba8da3de864bae4f1dc77acbe8c8be63c389ad0a9f6"
+      },
+      "consequenceDirections": {
+        "A": "可有可預期節奏，急迫必要事項仍可反映。",
+        "B": "教師退出本人非必要隨行互動與臨時差遣，必要回覆和原收發不消失，不把學生趕離公共區。",
+        "C": "可減依附壓力，不懲罰其熱心或扣正常參與。",
+        "D": "可保選擇，不以會說不作成熟測驗。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7f98821803d20b78badf5b90d2dcc45e882a47e99e3aea603cb9de7b9d1718b8",
+    "draftSha256": "bdfd139ec4952b40064be75712d2cdcbc7f74730b034f5638654301502b0cc00",
     "seedAssignmentVersion": 1
   }
 }

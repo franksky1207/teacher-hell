@@ -16,14 +16,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7725c529270e54d1e24bd7c9ce71cdeea7a26053134bda894c2b91b411716dab",
+      "checkedAt": "2026-11-27T14:27:47.331Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "本段由我依原標準提供具體回饋，不再讓同儕口評。",
+            "action": "導師已在本人授課權限接回本段有限講評，不削減必要評量。",
+            "tradeoff": "少了學生互動"
+          },
+          {
+            "id": 2,
+            "text": "想提意見的人改寫紙條給我，我先看過再回覆，不當場念人身批評。",
+            "action": "導師已提出原負擔內有限文字回饋方式，由成人把關，不公開攻擊內容。",
+            "tradeoff": "較慢，也少現場語氣"
+          },
+          {
+            "id": 3,
+            "text": "只讓原組自評一處想改的地方，不請全班再評他們。",
+            "action": "導師已提供有限自願自評選擇，不強迫受傷者解釋感受。",
+            "tradeoff": "看不到其他意見"
+          },
+          {
+            "id": 4,
+            "text": "用自編無識別例句練把批評改成可做的建議。",
+            "action": "導師已安排原課內有限虛構例句改寫，不公開原攻擊或學生身份。",
+            "tradeoff": "原報告進度變短"
+          },
+          {
+            "id": 5,
+            "text": "他若願意，私下只挑一個有根據的問題給我看。",
+            "action": "導師已提出限本人自願的有限事實評論核對，不重開公開講評。",
+            "tradeoff": "失去台上笑聲"
+          },
+          {
+            "id": 6,
+            "text": "本次結束額外互評短段，依原必要工作接續。",
+            "action": "導師已結束本人可調整的非必要互評延伸，維持原課程回饋及必要修復。",
+            "tradeoff": "有人覺得氣氛被打斷"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不服他說我只會好聽話，拿自己的一頁舊簡報請他挑三處能改的；這回別借同學的臉講笑話。",
+          "action": "導師已提出限自有非敏感材料的有限自願評論邀請，未取得答應或證實評論正確。",
+          "tradeoff": "老師也可能被說得難堪，課內彈性會少"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 794462711
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "60e24d456fca0921c075f10421cefb133b4ac98fac25182609420e93ae599748"
+      },
+      "consequenceDirections": {
+        "A": "可保真內容，不以指出一錯免除傷害處理。",
+        "B": "可停止擴大受傷，不拿全班取消當懲罰。",
+        "C": "可減表演動機，不收集人身攻擊作新展示。",
+        "D": "教師提供新且自願的本人作品承受批評，不拿新活動替代必要被害保護或強迫他道歉。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bfe8a4a730a30f6d3a66a3debbe3804e4e6e909f98ef40e3611f4b9d22442bd1",
+    "draftSha256": "7725c529270e54d1e24bd7c9ce71cdeea7a26053134bda894c2b91b411716dab",
     "seedAssignmentVersion": 1
   }
 }

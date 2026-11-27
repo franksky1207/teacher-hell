@@ -15,14 +15,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f927dd7bf4281f414d9b4541c7084814526563777d662a68ba9504ae9a982625",
+      "checkedAt": "2026-11-27T14:27:47.346Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "以後本科收件由原任課教師按實際紀錄，不替他對外背書。",
+            "action": "導師已確認原任課權責及真實紀錄要求，不代作失實說明。",
+            "tradeoff": "同事可能覺得沒有被幫"
+          },
+          {
+            "id": 2,
+            "text": "商量能不能共用一份收件記錄，照資料規定辦，不再各抄一次。",
+            "action": "導師已提出原資料權限內的有限收件協作需求，未獲准或合併成績。",
+            "tradeoff": "要再整理，也可能不准"
+          },
+          {
+            "id": 3,
+            "text": "平常的家長通知走學校管道和時段，不再打他的私人晚間電話；急事照常處理。",
+            "action": "導師已提出原允許範圍的必要例行通知方式確認，不延誤急迫聯繫。",
+            "tradeoff": "家長可能嫌不即時"
+          },
+          {
+            "id": 4,
+            "text": "私下只確認他真正在意哪個工作環節，暫不新增協作。",
+            "action": "導師已提出可拒絕的有限工作負擔詢問，不取得家庭隱私或免責同意。",
+            "tradeoff": "沒有立即減量"
+          },
+          {
+            "id": 5,
+            "text": "申請原主管提供正式記錄支援，不再靠老師互相口頭代記。",
+            "action": "導師已提出限原制度的有限紀錄支援申請，未取得人力或轉移責任。",
+            "tradeoff": "可能不准，也多一層流程"
+          },
+          {
+            "id": 6,
+            "text": "把原可公開的遲交處理步驟提供學生，不用每次靠老師臨時勸。",
+            "action": "導師已提供原合法紀錄流程的有限說明，不授予同儕執法權。",
+            "tradeoff": "看起來比較冷"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想替他保住晚飯，這次自願接一件原本可由我處理的非急家長說明，但只講本班共同原則，不替他保證本科紀錄。",
+          "action": "導師已提出在本人原職權及時段內承接一次有限共同原則說明的意願，未取得家長聯繫完成或接管本科責任。",
+          "tradeoff": "自己的私人空檔少，也可能被當固定窗口"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 951147776
+        },
+        "selectedIds": [
+          1,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "c282b9423db0747aa5ffb3bf32ce4e01f0c72c33f047748ec98c4a255c90723f"
+      },
+      "consequenceDirections": {
+        "A": "教師承擔一次有限合法聯繫，不掩護漏記、不使此後全部外包給導師。",
+        "B": "可保可行界線，急迫必要資訊仍須即時處理。",
+        "C": "可保原責任，不用個人壓力當假紀錄理由。",
+        "D": "可減工作，不把共用資料變無權跨科改分。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9d419f53527373424c5edd11c5db928fff32a79cfcfba992227ea5c0d6d1b22a",
+    "draftSha256": "f927dd7bf4281f414d9b4541c7084814526563777d662a68ba9504ae9a982625",
     "seedAssignmentVersion": 1
   }
 }

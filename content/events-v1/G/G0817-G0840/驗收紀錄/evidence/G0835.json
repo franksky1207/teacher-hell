@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "33a0a4dbc69f219f1304b3693b3000f6cf421ea6f5dc0fda385f398a363ee09c",
+      "checkedAt": "2026-11-27T14:27:47.344Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依原時點正常放行已完成必要班務且自願參加者，不追求全到。",
+            "action": "導師已維持原合規分流安排，不承諾全員準時出席或延長解題。",
+            "tradeoff": "有人少聽一段"
+          },
+          {
+            "id": 2,
+            "text": "申請把能調的非急班務提前，不挪正式課。",
+            "action": "導師已提出原權限內有限非急班務重排需求，未核准或縮必要內容。",
+            "tradeoff": "自己前段較忙，也未必准"
+          },
+          {
+            "id": 3,
+            "text": "問科任是否可在原總時限縮成一題完整解說，不等整班到齊。",
+            "action": "導師已提出需原授課者同意的有限單題方案，未取得同意或更動結束時間。",
+            "tradeoff": "內容量少"
+          },
+          {
+            "id": 4,
+            "text": "未及到場者提供原已可用文字解題，不另約科任加班。",
+            "action": "導師已提供原合法可用解題材料的有限替代途徑，不新增教師工時。",
+            "tradeoff": "沒有即問即答"
+          },
+          {
+            "id": 5,
+            "text": "回條這次由我點收，學生照原分工把該做的班務做完。",
+            "action": "導師已承接本人權限內有限非急點收工作，不省必要班務或取得外部人力。",
+            "tradeoff": "自己的空檔更少"
+          },
+          {
+            "id": 6,
+            "text": "這次不再額外催學生參加，保留原自願解題安排。",
+            "action": "導師已停止本人非必要解題動員，維持原核可自願參與及安全接續。",
+            "tradeoff": "科任可能覺得準備白費"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想準時吃飯，不把班務趕成一團。準備好的人先去，來不及問的題目留到我的課再接，不叫他多留。",
+          "action": "導師已維持原正常分流並承諾在本人原合法授課時間承接有限未及提問，不更動科任結束時間或正式課程。",
+          "tradeoff": "自己後面要多答題，也得放棄全班都到的好看進度"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1224419127
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "ca86dab00c48f5c188bdcd748b9a701071caed91cd4d80a2039ccccd56a10106"
+      },
+      "consequenceDirections": {
+        "A": "可重排不草率略過，申請不是已改。",
+        "B": "可保完整段落，未答應不替他刪教學。",
+        "C": "教師具體承擔本人授課範圍的有限後續問答，不保證每題答完或替科任延長勞務。",
+        "D": "可減班務等待，不讓學生代成人核安全。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d18b0a109a7a7b6d29f6bde926345e8c78071ec27abf8075bb62ca51d36b628e",
+    "draftSha256": "33a0a4dbc69f219f1304b3693b3000f6cf421ea6f5dc0fda385f398a363ee09c",
     "seedAssignmentVersion": 1
   }
 }

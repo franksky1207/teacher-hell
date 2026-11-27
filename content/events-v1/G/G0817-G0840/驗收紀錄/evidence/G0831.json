@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "655b90de024b5e06206f026c801726bdb8e32309783d125ce47d60e9ef1932ce",
+      "checkedAt": "2026-11-27T14:27:47.341Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只訂本科可行例外，其他科仍由原教師決定。",
+            "action": "導師已提出限本科雙方職權的例外協議方案，未擅改其他科標準。",
+            "tradeoff": "要向學生解釋差異"
+          },
+          {
+            "id": 2,
+            "text": "共同紀錄先留著，只刪我能決定的多餘欄位，不動別科評分標準。",
+            "action": "導師已在本人原權限精簡非必要跨科紀錄欄，不改他科評量權。",
+            "tradeoff": "同事可能覺得仍做白工"
+          },
+          {
+            "id": 3,
+            "text": "請各科老師透過原本的教學協調管道，確認哪些要求真的共用。",
+            "action": "導師已提出限原正式角色的共同原則協調需求，未取得全科同意。",
+            "tradeoff": "不能當場定"
+          },
+          {
+            "id": 4,
+            "text": "這次只用原合法匿名題練判斷關鍵理由，不先改格式。",
+            "action": "導師已安排原課內有限理由辨識，不將教學當新評量規格。",
+            "tradeoff": "臨時困惑未全解"
+          },
+          {
+            "id": 5,
+            "text": "原共用紀錄只留進度，內容依各科既有合法要求。",
+            "action": "導師已在本人權限限縮非必要跨科蒐集為有限進度，不介入各科合法內容認定。",
+            "tradeoff": "統一版面不再看得出細節"
+          },
+          {
+            "id": 6,
+            "text": "先把兩人已同意的分工寫清，未同意的部分不向學生宣布。",
+            "action": "導師已記錄限雙方實際同意的有限分工及未定事項，不冒全科授權。",
+            "tradeoff": "同事可能嫌太保守"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想被說只重表格，這次拿自己的那份訂正範例先刪成只剩關鍵理由，請他自願挑毛病；別先拿學生當試稿。",
+          "action": "導師已在本人有權材料範圍製作有限精簡示例並提出自願專業檢視邀請，未取得認可或規格核准。",
+          "tradeoff": "自己的教法可能被挑到重做"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2517330517
+        },
+        "selectedIds": [
+          2,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "9e28e56cbd14f32f069329c195d5c4bff098e9a98a3fd2c5f08bc225c9c291bc"
+      },
+      "consequenceDirections": {
+        "A": "教師製作並開放本人新示例受檢，不以被挑過等於全科通用或改正式標準。",
+        "B": "可保適切性，不把例外說成全班通則。",
+        "C": "可避免單科代全科，申請不是已共識。",
+        "D": "可減總負擔，不能侵害本科有效作答認定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3dd858473c3147d173da2db38724b7dd6057d3d206e509395e6a4c3d64c5d3fe",
+    "draftSha256": "655b90de024b5e06206f026c801726bdb8e32309783d125ce47d60e9ef1932ce",
     "seedAssignmentVersion": 1
   }
 }

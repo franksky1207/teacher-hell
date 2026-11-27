@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ebe17dbec7bbf34ec3e408df86b0b066898cf50b1fdacadabd8707ed62dbe47b",
+      "checkedAt": "2026-11-27T14:27:47.332Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依原程序開放全班匿名補充意見，不立刻重投。",
+            "action": "導師已提出原班務範圍的有限匿名補充方式，不公開求助來源或核定活動。",
+            "tradeoff": "多數提案暫時仍在"
+          },
+          {
+            "id": 2,
+            "text": "按原合法程序申請重新不記名表決，理由只說補足參與。",
+            "action": "導師已提出原程序允許的有限重表決方案，未執行或指定結果。",
+            "tradeoff": "多數可能不滿"
+          },
+          {
+            "id": 3,
+            "text": "原投票先留著，另外申請安靜、不刺激的參加方式，讓不想玩的人能選。",
+            "action": "導師已提出需原核可及自願的有限替代參與方案，未取得核准或人力。",
+            "tradeoff": "需要另規劃，不一定可行"
+          },
+          {
+            "id": 4,
+            "text": "把現有提案送學校看安全和人力能不能配合，不先答應辦。",
+            "action": "導師已提出原提案的正式可行性審查，不核准未定活動或公開個別立場。",
+            "tradeoff": "班上可能覺得熱度被澆"
+          },
+          {
+            "id": 5,
+            "text": "全班先各寫一項可接受與不可接受條件，不問誰怕。",
+            "action": "導師已安排有限非識別條件蒐集，不追問私人恐懼或承諾提案通過。",
+            "tradeoff": "討論時間拉長"
+          },
+          {
+            "id": 6,
+            "text": "今天不作新決定，只公布原規定的下一個確認時點。",
+            "action": "導師已維持原合法決策程序並提供可確認時點，不許諾活動或重投結果。",
+            "tradeoff": "他暫時仍不安心"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己也不想演很勇敢，向班上提出一個亮著燈也能玩的解謎案，署我的名字，不拿他當理由；讓大家照原程序看兩案。",
+          "action": "導師已提交本人有限明室解謎替代提案，未核准、定案或透露學生求助。",
+          "tradeoff": "自己的提案可能輸，也多做一份"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4197803978
+        },
+        "selectedIds": [
+          4,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "7a4059e34cb257e72b03e32518d98517291305b1123cf364b8d4cbf89d6014ca"
+      },
+      "consequenceDirections": {
+        "A": "教師承擔新替代提案的創作與被拒風險，不把私人怕當否決權或取代安全核可。",
+        "B": "可把喜好化具體條件，不讓少數變心理測試。",
+        "C": "可按程序，不拿安全審查假裝學生意見已同意。",
+        "D": "可以不跟多數參加，安全與人力不可省略。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e7a2c4f5a8256cc239030e7daf84c5c34b10ca5460b059b4391eb6e3ff5aed75",
+    "draftSha256": "ebe17dbec7bbf34ec3e408df86b0b066898cf50b1fdacadabd8707ed62dbe47b",
     "seedAssignmentVersion": 1
   }
 }

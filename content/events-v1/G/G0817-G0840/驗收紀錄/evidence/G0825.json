@@ -14,14 +14,155 @@
   "plannedTags": [
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1a2f45db9400a0ec9de858830288a9fcada6f5b62a86e7e174a33ffe04112fa4",
+      "checkedAt": "2026-11-27T14:27:47.335Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "本次再收一個具體問題，答完結束非急電話。",
+            "action": "導師已明示本次非急諮詢的有限題數及結束界線，維持必要安全聯繫。",
+            "tradeoff": "她會覺得沒聊夠"
+          },
+          {
+            "id": 2,
+            "text": "改請她將非急問題用原文字管道列清，按原時限回。",
+            "action": "導師已提供既有有限文字聯繫方式及原回覆條件，不承諾隨時答。",
+            "tradeoff": "她喜歡的聊天感少了"
+          },
+          {
+            "id": 3,
+            "text": "外部場地問題提供原管理窗口，學校只處理本校可核部分。",
+            "action": "導師已提供限可公開的外部場地負責窗口資訊，不代判設備安全。",
+            "tradeoff": "不再有一位老師全包"
+          },
+          {
+            "id": 4,
+            "text": "選課的問題給她正式課程說明，再請輔導老師依職務協助；不替孩子選。",
+            "action": "導師已提供既有合法課程諮詢資訊，不替學生定志願。",
+            "tradeoff": "沒有立即答案"
+          },
+          {
+            "id": 5,
+            "text": "問她要不要另約校內可用的短面談，先帶最關心的一個問題。",
+            "action": "導師已提出限原時段的有限自願面談邀請，未取得同意或新增常態服務。",
+            "tradeoff": "要另外安排，也未必約成"
+          },
+          {
+            "id": 6,
+            "text": "必要事項答完，今天不再接下一個非急話題。",
+            "action": "導師已在必要事項接續後結束本次非急諮詢，維持原正式聯繫。",
+            "tradeoff": "好溝通的關係可能降溫"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "今天我也想聽點開心的，剩下這小段先不分析風險，問她願不願只聊孩子最近一件普通趣事；備課那頁我自己挪。",
+          "action": "導師已在既有允許聯絡時段及不影響必要課務下，提出有限非敏感近況交流邀請，將本人可調非急備課後移，不新增私人時段常態諮詢或取得答應。",
+          "tradeoff": "貪這段好聊的感覺，自己的備課就得晚些補"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1915953665
+        },
+        "selectedIds": [
+          4,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "17537e9a1710aa459c40c843060e2652ecc9aa08b5a1b7b02e5770c7d1f4ef9a"
+      },
+      "consequenceDirections": {
+        "A": "教師自願用當次可調時間維持普通親師交流，而非繼續提供跨領域安全判斷；家長可拒或仍想問風險，必要問題仍依法接續，不形成每週新義務。",
+        "B": "可有清楚範圍，不讓急迫必要事情被限題拒掉。",
+        "C": "可有焦點，不能變每週必約。",
+        "D": "可有合適資訊，不能保證有名額或家長意見等於孩子志願。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒拒絕私人追加諮詢與普通6結束非急聯繫過近，且私人追加尚未成立；改為當次允許時段內主動轉為有限普通近況交流、本人重排非急備課的真實私心取捨。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "本次再收一個具體問題，答完結束非急電話。",
+                "action": "導師已明示本次非急諮詢的有限題數及結束界線，維持必要安全聯繫。",
+                "tradeoff": "她會覺得沒聊夠"
+              },
+              {
+                "id": 2,
+                "text": "改請她將非急問題用原文字管道列清，按原時限回。",
+                "action": "導師已提供既有有限文字聯繫方式及原回覆條件，不承諾隨時答。",
+                "tradeoff": "她喜歡的聊天感少了"
+              },
+              {
+                "id": 3,
+                "text": "外部場地問題提供原管理窗口，學校只處理本校可核部分。",
+                "action": "導師已提供限可公開的外部場地負責窗口資訊，不代判設備安全。",
+                "tradeoff": "不再有一位老師全包"
+              },
+              {
+                "id": 4,
+                "text": "選課疑問提供正式課程說明與原輔導管道，不替孩子選。",
+                "action": "導師已提供既有合法課程諮詢資訊，不替學生定志願。",
+                "tradeoff": "沒有立即答案"
+              },
+              {
+                "id": 5,
+                "text": "詢問她是否願改用原可安排的一次短面談，先帶最關心的一項。",
+                "action": "導師已提出限原時段的有限自願面談邀請，未取得同意或新增常態服務。",
+                "tradeoff": "要另外安排，也未必約成"
+              },
+              {
+                "id": 6,
+                "text": "必要事項答完，今天不再接下一個非急話題。",
+                "action": "導師已在必要事項接續後結束本次非急諮詢，維持原正式聯繫。",
+                "tradeoff": "好溝通的關係可能降溫"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也貪心那句老師好專業，才一直接下去，現在先停；今晚自己的備課照原計畫做，不再把私人空檔許成下一通電話。",
+              "action": "導師已拒絕本人未承諾、非必要的私人時段追加諮詢，保留原正式必要回覆及急迫通知。",
+              "tradeoff": "可能失去隨叫隨到的好老師形象"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 61545943
+            },
+            "selectedIds": [
+              2,
+              4,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 2,
+              "C": 1,
+              "D": "emotional"
+            },
+            "optionsDigest": "d67dcdf44681dcde88c18576116a9b1be70c2ea88b2a2f89f69b3ddfb0c695ca"
+          },
+          "previousConsequenceDirections": {
+            "A": "可有合適資訊，不能保證有名額或家長意見等於孩子志願。",
+            "B": "可保可追，不能把文字當無限即時服務。",
+            "C": "可有清楚範圍，不讓急迫必要事情被限題拒掉。",
+            "D": "教師明確撤回未定的額外私人諮詢意願，原正常聯繫不變，不用自責要求家長安慰。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f832362903175aca945ccf7e53f9c1a0bd1393c7703ac8289d142c0b39b81a88",
+    "draftSha256": "1a2f45db9400a0ec9de858830288a9fcada6f5b62a86e7e174a33ffe04112fa4",
     "seedAssignmentVersion": 1
   }
 }

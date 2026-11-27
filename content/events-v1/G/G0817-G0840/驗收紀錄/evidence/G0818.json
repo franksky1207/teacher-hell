@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "04e362ebade3d61172d414abe3b7adaeb244be6940c99e852938a946b4bf934e",
+      "checkedAt": "2026-11-27T14:27:47.326Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "婉拒金錢心意，衣服自己帶回再處理。",
+            "action": "玩家已婉拒非必要金錢收受並收妥本人衣物，不索賠或判定設備責任。",
+            "tradeoff": "只能自己承擔損失"
+          },
+          {
+            "id": 2,
+            "text": "雙方都願意的話，只接受一份明確非賠償的小心意。",
+            "action": "玩家已提出限雙方自願、非債務的有限收受條件，未取得交付或強索。",
+            "tradeoff": "他可能還會一路道歉"
+          },
+          {
+            "id": 3,
+            "text": "依洗標向洗衣專業店詢問可否處理，不自行亂拉。",
+            "action": "玩家已提出本人衣物的有限專業處理詢問，未取得修復或承諾效果。",
+            "tradeoff": "可能花錢又救不回"
+          },
+          {
+            "id": 4,
+            "text": "先回家挑現有可穿的衣服，今晚不再消費。",
+            "action": "玩家已停止本人當晚非必要添購安排，選用既有可穿衣物，不保證原襯衫恢復。",
+            "tradeoff": "明天不是原本那套"
+          },
+          {
+            "id": 5,
+            "text": "詢問鄰居是否願下次只各顧各的機台，有問題一起找店家。",
+            "action": "玩家已提出可拒絕的有限未來互助界線，不取得約定或免必要安全協助。",
+            "tradeoff": "會顯得少了熱心"
+          },
+          {
+            "id": 6,
+            "text": "把本次本人使用的模式記下，只向店家詢問設定，不替鄰居背維修費。",
+            "action": "玩家已記錄本人使用資訊並提出有限操作詢問，不判定店家賠償或故障原因。",
+            "tradeoff": "要再花一點時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看那短袖口也氣笑了，乾脆問他願不願拿手上的心意換一杯熱飲，兩個人坐店外允許的位置把今天講完；襯衫不算他的債。",
+          "action": "玩家已提出需雙方自願、各自可負擔的有限共同飲品邀約，未取得答應、飲品或座位。",
+          "tradeoff": "自己也要付自己的部分，還可能聽更多道歉"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3380407987
+        },
+        "selectedIds": [
+          4,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "0c241ee1ae2e0a4e5ee2c150961afa06a9a8d949b0ff48ec818cef760cd5d675"
+      },
+      "consequenceDirections": {
+        "A": "可照原生活資源，不把節省當不氣。",
+        "B": "可保持界線，不把拒收當對方做錯更多。",
+        "C": "當下共同消費直接處理互相過意不去，不保證邀約成立、不拿人情抵賠償。",
+        "D": "可有人情往來，不以自願金額換其承擔過失。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7e814b1eb10a39c4e2dda19155a1626085ea0d7a8cb1006fe8818d016a8f1e8e",
+    "draftSha256": "04e362ebade3d61172d414abe3b7adaeb244be6940c99e852938a946b4bf934e",
     "seedAssignmentVersion": 1
   }
 }

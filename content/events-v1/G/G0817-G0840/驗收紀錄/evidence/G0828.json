@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c9861633db28fcf4256785c1e10e6ab934d39ea8ab1f11e44f5da5ffb3d67dc2",
+      "checkedAt": "2026-11-27T14:27:47.338Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "有疑慮由成人查清楚，他只做本來就能做的班務記錄。",
+            "action": "導師已明確接回成人必要查核職責，限原班務記錄，不授權搜物。",
+            "tradeoff": "他可能覺得被降格"
+          },
+          {
+            "id": 2,
+            "text": "私下用教師自編的外觀例子練分辨看到與推測。",
+            "action": "導師已安排有限無識別虛構判斷練習，不索學生新證物。",
+            "tradeoff": "要用課內可調短段"
+          },
+          {
+            "id": 3,
+            "text": "他若願，先向成人說明下次會怎麼反映疑慮，不找原同學演。",
+            "action": "導師已提出有限自願程序口述邀請，未取得道歉接受或新管理權。",
+            "tradeoff": "說法可能還很生硬"
+          },
+          {
+            "id": 4,
+            "text": "本次不在班上延伸討論，依原必要個別處理走。",
+            "action": "導師已停止本人非必要公開討論，維持必要更正保護及個案接續。",
+            "tradeoff": "全班沒有一場結論"
+          },
+          {
+            "id": 5,
+            "text": "在原一般班務時間說清任何同學都不許搶物，不帶原個案細節。",
+            "action": "導師已作有限一般性物權及求助提醒，不公開原個案或叫當事人示範。",
+            "tradeoff": "可能被猜到對象"
+          },
+          {
+            "id": 6,
+            "text": "和有權調整分工的人商量，讓他暫時改做不碰別人物件的班務。",
+            "action": "導師已提出原權限內有限班務調整，不增加總量或強制勞務。",
+            "tradeoff": "他少了想證明俐落的位置"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想每回被笑管太慢就加速，今天明說我寧願多查一遍，親自陪他把這次「看見」和「猜的」分兩欄，只留成人必要紀錄，不給全班看。",
+          "action": "導師已在原必要知情及合法時段安排有限當次事實分類協助，不公開紀錄或保證其接受。",
+          "tradeoff": "自己多花時間，他可能嫌像被留堂"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2989691233
+        },
+        "selectedIds": [
+          1,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "46e5c6f696780365a0d4594c093282a505845d5fcb280db7a8908fefa70083c2"
+      },
+      "consequenceDirections": {
+        "A": "教師投入原可用短段具體事實重建，不強迫超時、不以字跡或心理推測定罪。",
+        "B": "可練判斷，不重演原受害者物件。",
+        "C": "可保參與又改實際接觸，不無限期剝奪幹部權益。",
+        "D": "可界定真權限，不把記錄當學生執法。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a756cce3da5d8a5fad176b364623c2f965eae141c0f7781c20556cc1cae73a9e",
+    "draftSha256": "c9861633db28fcf4256785c1e10e6ab934d39ea8ab1f11e44f5da5ffb3d67dc2",
     "seedAssignmentVersion": 1
   }
 }

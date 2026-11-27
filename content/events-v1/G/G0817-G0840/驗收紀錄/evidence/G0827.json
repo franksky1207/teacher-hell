@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c924d8d47a48f9aedcec6b9d8a4614a9fa12f1b9d595f53cc59d146aae7cbd8c",
+      "checkedAt": "2026-11-27T14:27:47.338Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在原權限內調整分組，先徵相關必要條件，不公開原因。",
+            "action": "導師已提出原班務權限內的有限安全分組調整，未取得必要同意或完成換組。",
+            "tradeoff": "同學可能還是猜得到"
+          },
+          {
+            "id": 2,
+            "text": "原組保留，但本課每人只負責可安全完成的一項，由成人核。",
+            "action": "導師已在本人授課權限具體重分有限安全任務並保留成人核實，不讓學生自行裁負擔。",
+            "tradeoff": "教師得多看，仍可能有壓力"
+          },
+          {
+            "id": 3,
+            "text": "這次停止所有非必要器材操作，回原合法文字材料。",
+            "action": "導師已停止本人可調整的非必要新操作，採原有限文字學習方式。",
+            "tradeoff": "實作進度少一段"
+          },
+          {
+            "id": 4,
+            "text": "這次讓他改做不用搬洗的等量個人練習，照同樣標準給回饋。",
+            "action": "導師已在原一般教學範圍提供有限等值個人方式，不擅改正式評量。",
+            "tradeoff": "暫時少同組互動"
+          },
+          {
+            "id": 5,
+            "text": "請學校輔導人員評估怎麼支持他面對同儕壓力。",
+            "action": "導師已提出限必要知情的既有輔導支持請求，未取得服務或診斷。",
+            "tradeoff": "可能不想再對人說一次"
+          },
+          {
+            "id": 6,
+            "text": "讓各人自願只交自己實際做過的原分工，不讓他代全組填。",
+            "action": "導師已提出限原負擔內的個別實作記錄核對，不作公開逼供。",
+            "tradeoff": "會看見不同說法"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看著箱子也很懊惱，這次不讓他替我證明分組安排沒問題，自己向原主管說明我的分工追蹤漏掉了什麼，申請後續課務支援。",
+          "action": "導師已提交本人可核實的有限工作缺漏及支援申請，不保證核准或以自責代替必要學生保護。",
+          "tradeoff": "要承認自己沒看見，也可能被檢討"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2596560682
+        },
+        "selectedIds": [
+          2,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "5cb2a81af7c978e2fead99b540cca5ecd0378472f38951daed8e8291a470668a"
+      },
+      "consequenceDirections": {
+        "A": "可有適任接續，必要保護不因拒非急談話停止。",
+        "B": "教師主動承擔真實工作缺漏並申請支援，不替組員免責、不等於支援已到。",
+        "C": "可改真實分工，不把說平均就當已平均。",
+        "D": "可調負荷，不因休息減少必要支持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "91d33ba2c3320c68e349e298dfe0a500a4a42c3d695b17bdfbc76c4cff473e26",
+    "draftSha256": "c924d8d47a48f9aedcec6b9d8a4614a9fa12f1b9d595f53cc59d146aae7cbd8c",
     "seedAssignmentVersion": 1
   }
 }

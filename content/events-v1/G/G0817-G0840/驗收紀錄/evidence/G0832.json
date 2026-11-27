@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dc94f874e54761ea24cb86663ad599e2e128e12eafc2c517812938834cd60068",
+      "checkedAt": "2026-11-27T14:27:47.341Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "直接說可負擔預算，請他提出原安全條件內的書面項目。",
+            "action": "玩家已提出本人有權範圍的有限預算及書面報價請求，未取得同意或開工。",
+            "tradeoff": "可能談不成"
+          },
+          {
+            "id": 2,
+            "text": "已確認的書面報價就照範圍委託，該有的同意完成後，不再繞著問。",
+            "action": "玩家已在有權及安全條件下提出限既定書面範圍的委託同意，未宣稱施工完成。",
+            "tradeoff": "可能仍覺得貴"
+          },
+          {
+            "id": 3,
+            "text": "今晚不作非急新委託，依安全暫置狀態另找報價。",
+            "action": "玩家已停止本人非急追加委託並提出另家有限報價詢問，不保證約成或修復。",
+            "tradeoff": "要再安排時間"
+          },
+          {
+            "id": 4,
+            "text": "請師傅只把尚未明確的一項材料寫清，不重問整套。",
+            "action": "玩家已提出限原報價範圍的一項書面釐清請求，未取得補充或議價結果。",
+            "tradeoff": "仍可能不耐"
+          },
+          {
+            "id": 5,
+            "text": "若屋主願意，邀原有權家人共同看報價，再按程序決定。",
+            "action": "玩家已提出需有權者自願的有限共同審閱邀請，未取得出資或委託。",
+            "tradeoff": "多等一人"
+          },
+          {
+            "id": 6,
+            "text": "這次只做原本約好的付費檢查，不急的修繕另外決定。",
+            "action": "玩家已依原約處理本人有權的檢查範圍與費用，不追加非急施工或宣稱完工。",
+            "tradeoff": "還沒有修好的結果"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再裝懂，坦白說怕花錯家裡錢才一直問，請他若願用白話重說一次最必要的項目；我不再考材料名。",
+          "action": "玩家已作本人有限預算焦慮說明並提出必要項目排序請求，未取得回覆、減價或修繕結果。",
+          "tradeoff": "顯得外行，也可能得不到耐心"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3267836841
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "c97d529c2ba44ac5f56433d46462aca900eba40c220caa690c77a9a2f2aad45d"
+      },
+      "consequenceDirections": {
+        "A": "可以讓專業做，委託不等完工或保固兌現。",
+        "B": "玩家放棄技術盤問改承認真正顧慮，提出一次具體優先排序請求，不用示弱換折扣或省安全。",
+        "C": "可談真問題，不以低價要求省掉必要安全。",
+        "D": "可分診斷與施工，不能擅欠原應付檢查費。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "463e42744f87c9a20bf377459e64ecf4846dcdcd40e65b336325b914180da216",
+    "draftSha256": "dc94f874e54761ea24cb86663ad599e2e128e12eafc2c517812938834cd60068",
     "seedAssignmentVersion": 1
   }
 }

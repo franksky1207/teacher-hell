@@ -15,14 +15,82 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2b2e2c7394046f8135b9864dfb0c9304fc085a5e561d81de976266894e56d4d6",
+      "checkedAt": "2026-11-27T15:03:31.129Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只說明本人可公開的班務內容，不新增個案分享。",
+            "action": "導師已提供限可公開的有限班務事實，不披第三人或作零風險保證。",
+            "tradeoff": "她可能還是猜"
+          },
+          {
+            "id": 2,
+            "text": "提供既有正式反映方式，請有直接事實者各自向窗口說。",
+            "action": "導師已提供現有合法反映資訊，不蒐集傳聞聯署或授予查訪權。",
+            "tradeoff": "沒有一場多人討論"
+          },
+          {
+            "id": 3,
+            "text": "詢問她孩子是否有願意談的具體不適，不追別人。",
+            "action": "導師已提出限本人自願與必要知情的有限支持需求詢問，未取得結論。",
+            "tradeoff": "話題可能縮得很小"
+          },
+          {
+            "id": 4,
+            "text": "原班務通知下次只寫必要事項，不加容易猜人的非必要處理語句。",
+            "action": "導師已調整本人往後非必要公告表述範圍，不隱匿應通知資訊。",
+            "tradeoff": "訊息看起來簡短"
+          },
+          {
+            "id": 5,
+            "text": "請原輔導窗口提供一般親子安全關心資訊，不安排家長互查。",
+            "action": "導師已提出既有可公開親子支持資訊需求，未取得資料或個案服務。",
+            "tradeoff": "不像立刻有答案"
+          },
+          {
+            "id": 6,
+            "text": "必要內容回覆後不開額外多人會，保持原聯繫。",
+            "action": "導師已婉拒本人非必要多人猜測會談，維持必要支持與原正常管道。",
+            "tradeoff": "她可能覺得沒被重視"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想每句公告都變成猜謎，自己撤掉原那句容易反推的非必要文字，另留必要班務；不叫任何孩子出來證明沒事。",
+          "action": "導師已在原紀錄保留規範下修正本人非必要公開語句並維持必要資訊，不刪案件證據或保證無風險。",
+          "tradeoff": "可能被認為心虛，也得解釋文字用途"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2309887302
+        },
+        "selectedIds": [
+          5,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "f4142818b3e89902a4ad7a1dbe42a0e8da22b4b34298786e838d6ee0914da32f"
+      },
+      "consequenceDirections": {
+        "A": "可保隱私，不用含糊絕對否認風險。",
+        "B": "可減反推，不省必要告知。",
+        "C": "教師調整本人當次非必要公告內容，不刪必要證據或掩事實，既有必要查核與告知照常。",
+        "D": "可有方法，查資料不是服務已到。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e21b684cf0018a2eb36cf42804a90bcae47c4ed77dcf3eecf2a58fcab398a35d",
+    "draftSha256": "2b2e2c7394046f8135b9864dfb0c9304fc085a5e561d81de976266894e56d4d6",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e9f23b31b42331ab8c072fa397393a284bc5595e794514b51881cb45ff645502",
+      "checkedAt": "2026-11-27T15:03:31.110Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由成人依原校方方式處理入門，不請他提醒別人。",
+            "action": "導師已接回本人原現場管理，停止非必要學生代催，不免必要安全。",
+            "tradeoff": "他少了能幹的位置"
+          },
+          {
+            "id": 2,
+            "text": "請他自願只示範自己的傘怎麼套，不碰同伴。",
+            "action": "導師已提出有限自願本人操作示範邀請，未取得參與或准操作他人物。",
+            "tradeoff": "可能被拒，也占短段時間"
+          },
+          {
+            "id": 3,
+            "text": "按校方原可用傘架方式收置，不強求每把都套。",
+            "action": "導師已在原核可範圍選用有限傘架接續，不占通道或操作危險物。",
+            "tradeoff": "要多一種安排"
+          },
+          {
+            "id": 4,
+            "text": "只把現有正確用法標示指給入門者，不辦新示範。",
+            "action": "導師已提供校方既有操作資訊，不取得所有人已理解結果。",
+            "tradeoff": "看不懂者仍要成人協助"
+          },
+          {
+            "id": 5,
+            "text": "向原總務反映這次入口流程卡住，請評估動線。",
+            "action": "導師已提出限原職權的入口流程建議，未取得動線變更許可。",
+            "tradeoff": "回覆可能慢"
+          },
+          {
+            "id": 6,
+            "text": "等原清理完成，依原分流各自回班，不延伸談誰比較守規矩。",
+            "action": "導師已結束本人非必要公開比較，維持原安全分流。",
+            "tradeoff": "他會覺得沒被肯定"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被他喊得也有點嘴硬，自己拿著那把我能處理的濕傘站在成人收置點等，不搶著說都會了；讓他看老師也得照次序。",
+          "action": "導師已以本人可用物依既有安全收置程序等候及辦理，不碰同學傘或新增規則。",
+          "tradeoff": "自己慢一步，還可能被覺得演給人看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3089932006
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "2076b96e59885f3abc878103d18eddef4ded27e03a1b0b254d22355cc0b778c1"
+      },
+      "consequenceDirections": {
+        "A": "可停對峙，必要事實與安全回覆仍完成。",
+        "B": "可分享技能，不拿沒套者當反例。",
+        "C": "教師用本人合法可支配傘配合真實成人流程，不以示範代必要清理或逼學生鼓掌。",
+        "D": "可回權責，不把學得快當管人資格。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5f1a0022652d08bf6bdb72b381cbbd85df59e7c1ad2abb9d9bdd2522a007f266",
+    "draftSha256": "e9f23b31b42331ab8c072fa397393a284bc5595e794514b51881cb45ff645502",
     "seedAssignmentVersion": 1
   }
 }

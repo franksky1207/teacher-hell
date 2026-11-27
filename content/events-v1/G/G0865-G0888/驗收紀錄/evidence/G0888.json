@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "80613a20211907fb86948935178c80e66033f7dc95cfe378536462ef9f0bb61a",
+      "checkedAt": "2026-11-27T15:03:31.134Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不新增這套題庫使用，回原合法材料。",
+            "action": "導師已婉拒本人可決定的非必要新題庫安排，維持原合法教學支持。",
+            "tradeoff": "同事覺得錢白花"
+          },
+          {
+            "id": 2,
+            "text": "向原數位學習權責查可否依授權作全體自願使用。",
+            "action": "導師已提出限原授權及校規的有限使用可行性詢問，未取得帳號或核准。",
+            "tradeoff": "可能不准或資源不足"
+          },
+          {
+            "id": 3,
+            "text": "請科任在原本科時間決定合法補充，不改本班早自習。",
+            "action": "導師已提出限原任課權的有限補充建議，未取得同意或改課表。",
+            "tradeoff": "他可能覺得進度還是不夠"
+          },
+          {
+            "id": 4,
+            "text": "邀他用一題合法可用例子與原計畫對照，不交學生新作業。",
+            "action": "導師已提出限合法資料的有限共同題例檢視邀請，未取得參與或結論。",
+            "tradeoff": "要花兩人時間"
+          },
+          {
+            "id": 5,
+            "text": "向原主管提出既有合法學習資源需求，不再靠私人分送。",
+            "action": "導師已提出有限正式資源需求，未取得採購、授權或服務。",
+            "tradeoff": "可能沒預算"
+          },
+          {
+            "id": 6,
+            "text": "本次不再非急追問他觀察過哪些動向，原教學異議走正式管道。",
+            "action": "導師已停止本人非必要行程推問，提供既有教學溝通途徑。",
+            "tradeoff": "私人關係會冷"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不服他躲著嫌計畫，自己把原讀書計畫中那段可調的重複練習拿出來，提出一次公開教學協作比較；我也接受自己的方案被換掉。",
+          "action": "導師已提出限正式必要知情的有限教學方案比較需求，未取得評估結論、替代核准或新題庫權。",
+          "tradeoff": "要讓主管看見分歧，還可能真的輸"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2096620229
+        },
+        "selectedIds": [
+          5,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "4b7a076f605bd50c8308d3ab80e8e151385bb77b60bb47de0b43b7add8c64cb5"
+      },
+      "consequenceDirections": {
+        "A": "可回正式配置，申請不等取得。",
+        "B": "可回職權，不私換其他課。",
+        "C": "教師提交本人可調部分接受正式教學評估，不讓學生站隊或先改既定必要課程。",
+        "D": "可查公平條件，不把查詢當有全班帳號。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6eb78d30c2b765566a9c38cbc70571678352762388c12d0172b353c3437f0834",
+    "draftSha256": "80613a20211907fb86948935178c80e66033f7dc95cfe378536462ef9f0bb61a",
     "seedAssignmentVersion": 1
   }
 }

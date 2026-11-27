@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a67582c456844d128629c5ab4ea97261432cfa9b38ac5a68cf7ad56dc885944f",
+      "checkedAt": "2026-11-27T15:03:31.126Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "婉拒這次私稿借閱，維持原教材並照需要回饋。",
+            "action": "導師已婉拒本人非必要私稿借閱，不否定既有支持或改正式課。",
+            "tradeoff": "家長可能覺得不領情"
+          },
+          {
+            "id": 2,
+            "text": "只私下借閱一段與本課有關的內容，依約返還。",
+            "action": "導師已提出限原允許用途的有限私人借閱安排，未取得文件或新授權。",
+            "tradeoff": "要時間也不能直接印"
+          },
+          {
+            "id": 3,
+            "text": "請家長只提出一項孩子真正卡住的概念，不比整套深度。",
+            "action": "導師已提出有限自願概念需求詢問，不取得家教內容再製權。",
+            "tradeoff": "他可能還想逐頁問"
+          },
+          {
+            "id": 4,
+            "text": "用本人原合法材料回應同一概念，不轉用私稿。",
+            "action": "導師已選用本人有權使用的有限概念例，不複製家教私稿。",
+            "tradeoff": "少了家長認為更好的解法"
+          },
+          {
+            "id": 5,
+            "text": "請原授課者依職權說明本科複習安排，不由導師保證各科。",
+            "action": "導師已提出限原任課職權的有限說明需求，未取得協作或改課。",
+            "tradeoff": "要再聯絡"
+          },
+          {
+            "id": 6,
+            "text": "本次不延伸教材比較，原正式問題用既有管道接續。",
+            "action": "導師已結束本人非急額外逐頁比較，維持必要教學聯繫。",
+            "tradeoff": "她可能覺得被擋"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那句來不及刺到，拿自己已備好的同概念例題請她自願看我怎麼教；不和家教比價，只讓我的做法自己站出來。",
+          "action": "導師已提出限本人有權材料及原時段的有限自願教法說明邀請，未取得參與或比較結論。",
+          "tradeoff": "用掉親師空檔，也可能更被挑"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2159085469
+        },
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "1117da009906c68b0615f4dec08d2e72814754d49d40e12a3f567b9239dc29bc"
+      },
+      "consequenceDirections": {
+        "A": "可保教學來源，不宣稱已解決全部落差。",
+        "B": "教師提供本人具體示例說明，不暗示家長必須認同或私稿無效。",
+        "C": "可保備課自主，不忽略真需求。",
+        "D": "可找適任者，請求不等對方答應。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f1428f08d388a7bb077d16dd50ddca492160dcb64ab9d3afd25a2a6db7894a3d",
+    "draftSha256": "a67582c456844d128629c5ab4ea97261432cfa9b38ac5a68cf7ad56dc885944f",
     "seedAssignmentVersion": 1
   }
 }

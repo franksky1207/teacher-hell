@@ -15,14 +15,82 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "facb3c10a9facda3f9dd7e144850d1d4d407698e2c8d3f7ac0e994c9c6634c53",
+      "checkedAt": "2026-11-27T15:03:31.127Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在原合法素材中加長正確引導，縮短反面橋段。",
+            "action": "導師已提出限原授權素材的有限重剪方案，未完成新片或核准發布。",
+            "tradeoff": "笑點變少"
+          },
+          {
+            "id": 2,
+            "text": "本次只交分鏡與說明，不另發影片。",
+            "action": "導師已在可調一般教學範圍採有限分鏡回饋，不新發布。",
+            "tradeoff": "少了演出成果"
+          },
+          {
+            "id": 3,
+            "text": "把原反面橋段全不採用，只留合法安全門示意。",
+            "action": "導師已提出原權利範圍的有限成片用途限縮，不破壞原檔或新增拍攝。",
+            "tradeoff": "前段努力不用"
+          },
+          {
+            "id": 4,
+            "text": "請原安全權責提供可公開官方片，作獨立參考不混剪。",
+            "action": "導師已查詢既有合法安全影片資訊，不取得再剪授權或代交學生作品。",
+            "tradeoff": "少了學生創作特色"
+          },
+          {
+            "id": 5,
+            "text": "原作者若願意，改用中性紙偶在桌上畫面講同一情節，不演真人。",
+            "action": "導師已提出限安全原場規的自願紙偶新作邀請，未取得參與、作品或發布權。",
+            "tradeoff": "要重做一段"
+          },
+          {
+            "id": 6,
+            "text": "只在原課內不錄影演讀台詞，刪危險動作。",
+            "action": "導師已提供有限自願無動作演讀方式，不取得參與或拍攝同意。",
+            "tradeoff": "沒有新影像"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想證明正確那段不一定無聊，自己用一分鐘寫一個只走安全門的新開頭，先給他挑；他可以嫌難笑，不能再拿真危險賭。",
+          "action": "導師已製作本人有限安全情節新稿供自願參考，未取得採用、演出或發布核准。",
+          "tradeoff": "多花自己時間，也可能被學生吐槽"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2644311583
+        },
+        "selectedIds": [
+          1,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "b97bc877a28527a1cc1189169442aaa0e969acb00cf5214a61a46e01b28f4ba1"
+      },
+      "consequenceDirections": {
+        "A": "教師提供新創作替案而非親自演危險，不強迫採用或取代必要正確資訊。",
+        "B": "可談意思，參與自願不作正式避難演練。",
+        "C": "可改主次，重剪須權利同意，不假稱改完人人懂。",
+        "D": "可清楚訊息，移除不等所有原檔可擅刪。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "139657f5e9098d46e2fad52a101249e2a177011d11e05045f785429a4c636d7e",
+    "draftSha256": "facb3c10a9facda3f9dd7e144850d1d4d407698e2c8d3f7ac0e994c9c6634c53",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "024de476e8f6588cd36fbdf00cd3b3651c3c804ea63175d264cd4a40d8add778",
+      "checkedAt": "2026-11-27T15:03:31.122Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "申請原核可掃具位置，按管理者指示配置。",
+            "action": "導師已提出原校內合法存放配置需求，未取得新位置核准。",
+            "tradeoff": "可能不夠放"
+          },
+          {
+            "id": 2,
+            "text": "保留原已安全暫置，請主管評估永久位置。",
+            "action": "導師已提出限既有安全暫置的接續方案，不宣稱永久配置已核。",
+            "tradeoff": "需持續管理"
+          },
+          {
+            "id": 3,
+            "text": "在本人班務權限減少非必要重複掃具，不增新採購。",
+            "action": "導師已提出有限重複用品整理需求，不擅丟校產或減必要清潔。",
+            "tradeoff": "用具選擇少"
+          },
+          {
+            "id": 4,
+            "text": "向總務查是否可用既有共用櫃，未准不放。",
+            "action": "導師已查詢既有核可共用存放資源，未取得調用或放置許可。",
+            "tradeoff": "要走較遠"
+          },
+          {
+            "id": 5,
+            "text": "原課內只讓學生畫出取放路線，由成人核，不走危險處。",
+            "action": "導師已提供有限自願安全取放路線圖記方式，不新增實際搬運。",
+            "tradeoff": "沒有立刻搬好"
+          },
+          {
+            "id": 6,
+            "text": "請原權責說明複查要核對的實際項目，不多做展示。",
+            "action": "導師已提出有限正式複查條件確認，不免原安全責任。",
+            "tradeoff": "像仍在被檢查"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再讓掃把往哪靠都靠到別人身上，這週本人接一次課末原安全存放核對，記完才走，不再只叫幹部提醒。",
+          "action": "導師已在本人可支配工作內承諾本週一次有限課末存放核對，不移轉專業複查或保證永不再犯。",
+          "tradeoff": "自己的放學空檔少，也可能被嫌太緊張"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1397695138
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "008eb206c0c10e2f96a93901467a16daa2427e251487c0208f9cffeda989243a"
+      },
+      "consequenceDirections": {
+        "A": "可有清楚標準，不以問規格拖必需改善。",
+        "B": "可有正式去向，不先定新櫃位。",
+        "C": "可減存放量，原物須按物權與財產程序處理。",
+        "D": "教師承擔一週有限額外核對，必要成人安全責任並非僅此分支存在，學生不代檢消防。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d1d35f954cb412a91f3aba5ac541f69a90c3323438257fe78092bb6379050d98",
+    "draftSha256": "024de476e8f6588cd36fbdf00cd3b3651c3c804ea63175d264cd4a40d8add778",
     "seedAssignmentVersion": 1
   }
 }

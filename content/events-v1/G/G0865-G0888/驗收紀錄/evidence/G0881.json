@@ -15,14 +15,155 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "11d1f19bc42c3f80cc5a9deca89ac4ee6210b6da7e19cf1e6b401de0860b657d",
+      "checkedAt": "2026-11-27T15:03:31.128Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只簽本人能確認的事實欄，不代核處分。",
+            "action": "導師已在原職權內提供有限事實確認，不核准越權懲處。",
+            "tradeoff": "他可能覺得被拆台"
+          },
+          {
+            "id": 2,
+            "text": "協助按原申請程序交有權者審，不另附贊成意見。",
+            "action": "導師已提出原程序內有限送審協助，不取得裁決或背書。",
+            "tradeoff": "看起來不夠挺"
+          },
+          {
+            "id": 3,
+            "text": "請科任自願在原課內改作一次概念診斷，不追罰成績。",
+            "action": "導師已提出限原任課職權的有限診斷教學建議，未取得同意或改評量。",
+            "tradeoff": "要花教學時間"
+          },
+          {
+            "id": 4,
+            "text": "邀科任和原適任輔導者在允許時段只談行為支持。",
+            "action": "導師已提出限必要知情的有限工作支持協作，未取得參與或服務。",
+            "tradeoff": "可能不願意"
+          },
+          {
+            "id": 5,
+            "text": "這次不加私人說情，由原正式窗口回覆。",
+            "action": "導師已停止本人非必要私人懲處協商，維持原案件必要接續。",
+            "tradeoff": "交情可能變冷"
+          },
+          {
+            "id": 6,
+            "text": "提供原可公開的懲處條件及學生陳述程序，不評論誰比較懂管教。",
+            "action": "導師已提供限可公開的有限程序資訊，不替學生放棄陳述權。",
+            "tradeoff": "他可能嫌講道理"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被那個差你一個逼得不耐，直接在本人能表態的欄位寫明不同意依目前資料建議處分，不借印章讓事情先過。",
+          "action": "導師已在本人有權表示意見的原欄位註明對目前處分建議的不同意，不塗改他人陳述、毀原件或代有權者裁定。",
+          "tradeoff": "同事可能覺得我當面反對，往後合作更僵"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 374683775
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "b1b575c3289e10a762dba586473593a39f52196adfb889c8e5906ead104e0ddd"
+      },
+      "consequenceDirections": {
+        "A": "可保程序，不以退出免必要事實提供。",
+        "B": "教師明確留下不同意建議的正式立場，與普通1只確認本人所知事實不同；仍保留對方合法送審與補充事實權，不等於最終不處分。",
+        "C": "可讓案件被查，不把送審當處分成立。",
+        "D": "可保真紀錄，不用交情冒認結論。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒假設已有未經本人確認的贊成勾選可劃掉，開場未成立；改為在本人原可表示意見處明示不同意現有處分建議。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "只簽本人能確認的事實欄，不代核處分。",
+                "action": "導師已在原職權內提供有限事實確認，不核准越權懲處。",
+                "tradeoff": "他可能覺得被拆台"
+              },
+              {
+                "id": 2,
+                "text": "協助按原申請程序交有權者審，不另附贊成意見。",
+                "action": "導師已提出原程序內有限送審協助，不取得裁決或背書。",
+                "tradeoff": "看起來不夠挺"
+              },
+              {
+                "id": 3,
+                "text": "請科任自願在原課內改作一次概念診斷，不追罰成績。",
+                "action": "導師已提出限原任課職權的有限診斷教學建議，未取得同意或改評量。",
+                "tradeoff": "要花教學時間"
+              },
+              {
+                "id": 4,
+                "text": "邀科任和原適任輔導者在允許時段只談行為支持。",
+                "action": "導師已提出限必要知情的有限工作支持協作，未取得參與或服務。",
+                "tradeoff": "可能不願意"
+              },
+              {
+                "id": 5,
+                "text": "這次不加私人說情，由原正式窗口回覆。",
+                "action": "導師已停止本人非必要私人懲處協商，維持原案件必要接續。",
+                "tradeoff": "交情可能變冷"
+              },
+              {
+                "id": 6,
+                "text": "提供原可公開的懲處條件及學生陳述程序，不評論誰比較懂管教。",
+                "action": "導師已提供限可公開的有限程序資訊，不替學生放棄陳述權。",
+                "tradeoff": "他可能嫌講道理"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也被那個差你一個逼得不耐，直接把未經我確認的贊成勾選劃掉，註明只待事實審查，不借印章替誰消氣。",
+              "action": "導師已在本人有權欄位明示不作未核事實贊成背書，保留原其他陳述與正式送審權，不核定處分。",
+              "tradeoff": "同事可能覺得我當面打臉"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3757669528
+            },
+            "selectedIds": [
+              4,
+              3,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 5,
+              "C": 4,
+              "D": "emotional"
+            },
+            "optionsDigest": "50b09261a9fcf06f6ae0e679cb16e879914e1304037b80908ac0bd21d761c6b3"
+          },
+          "previousConsequenceDirections": {
+            "A": "可看學習，不免已需處理的實際行為。",
+            "B": "可保程序，不以退出免必要事實提供。",
+            "C": "可找方法，不將輔導當處罰或免查。",
+            "D": "教師僅更正本人原可表示的立場欄，不塗改他人陳述或毀原件，必要程序照常。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bd7d07b5e73a52832faa5974afa35998481763aaadfef8a6e8ed970426352d15",
+    "draftSha256": "11d1f19bc42c3f80cc5a9deca89ac4ee6210b6da7e19cf1e6b401de0860b657d",
     "seedAssignmentVersion": 1
   }
 }

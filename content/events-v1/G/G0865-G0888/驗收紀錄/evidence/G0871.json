@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dd0a59d9f2f9656866fce884295e0b493c74c27b4d02264d3177bb6b71a426a1",
+      "checkedAt": "2026-11-27T15:03:31.119Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只提供原正式明細與來源，不加自己的價值判斷。",
+            "action": "導師已提供限可公開的正式費用資訊，不核准價格或推薦購買。",
+            "tradeoff": "他可能仍不覺得值得"
+          },
+          {
+            "id": 2,
+            "text": "向原承辦提出去年與今年項目差異的具體問題。",
+            "action": "導師已提出有限正式差異釐清需求，未取得結論或退費。",
+            "tradeoff": "要等回覆"
+          },
+          {
+            "id": 3,
+            "text": "讓家長依原期限決定是否參加，不額外勸報。",
+            "action": "導師已停止本人非必要報名勸說，維持原選擇及必要課務權益。",
+            "tradeoff": "班上人數可能少"
+          },
+          {
+            "id": 4,
+            "text": "詢問是否有原已核可的較低負擔方案，不先說能轉。",
+            "action": "導師已查詢既有合法替代方案資訊，未取得資源或核定減價。",
+            "tradeoff": "可能沒有"
+          },
+          {
+            "id": 5,
+            "text": "請原窗口在現有時段受理個別費用諮詢，我不代答審價。",
+            "action": "導師已提出既有費用諮詢需求，未取得時段或正式答覆。",
+            "tradeoff": "家長要再約"
+          },
+          {
+            "id": 6,
+            "text": "本次不再比去年誰報過，只確認孩子本人參與需要。",
+            "action": "導師已提出有限自願本人需求確認，不取得參與同意或價格認可。",
+            "tradeoff": "可能與家長想談不同"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點怕那句肯定變成必須保證值得，直接承認這筆我不替學校推銷；自己把原可用的免費學習途徑整理給他，報不報都一樣。",
+          "action": "導師已整理本人可合法提供的有限免費學習資訊，不新增正式替代資格或取得資源。",
+          "tradeoff": "自己得多整理，也可能被承辦覺得拆台"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 95491016
+        },
+        "selectedIds": [
+          1,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "716ed1df8a8323975c29558c8cb6f02ae91db0afe9a0d01203e27c938edc697b"
+      },
+      "consequenceDirections": {
+        "A": "可釐清差額，不以去年價當今年必須同價。",
+        "B": "可查選擇，詢問不是取得名額或折扣。",
+        "C": "可查事實，不用專業聲望背書價格。",
+        "D": "教師提供具體非付費資訊，不保證與營隊等值或藉此阻自願參加。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cba4234e277d3e61205ae1eeac6e4065a829505faa1d5bc3ea840a6fa555ea0d",
+    "draftSha256": "dd0a59d9f2f9656866fce884295e0b493c74c27b4d02264d3177bb6b71a426a1",
     "seedAssignmentVersion": 1
   }
 }

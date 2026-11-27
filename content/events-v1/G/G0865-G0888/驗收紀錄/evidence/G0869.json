@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "52acf837dcb4e028cc118847a6ad42784b5c751c2adab8c882b7952e187238ba",
+      "checkedAt": "2026-11-27T15:03:31.115Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先只選和原課需要相符的一頁，不整本加派。",
+            "action": "導師已在授課協作權限提出有限單頁選用方案，未擅改本科或取得新用途權。",
+            "tradeoff": "同事可能覺得心力被切小"
+          },
+          {
+            "id": 2,
+            "text": "請原任課者在自己的合法課內決定怎麼用，我不代派。",
+            "action": "導師已將新增講義使用決策交原任課職權，不承諾派發。",
+            "tradeoff": "班級看不到統一安排"
+          },
+          {
+            "id": 3,
+            "text": "本人只私下借閱作理解參考，不交學生新份。",
+            "action": "導師已提出有限私人借閱邀請，未取得講義或複製授權。",
+            "tradeoff": "不能立刻看到成效"
+          },
+          {
+            "id": 4,
+            "text": "學生若願，提供原課內一次有限個別回饋，不加總量。",
+            "action": "導師已提出原一般學習範圍的有限自願個別回饋，未取得參與或成效。",
+            "tradeoff": "要教師時間"
+          },
+          {
+            "id": 5,
+            "text": "把講義作原教學協作的可選資料，不先決定這次採用。",
+            "action": "導師已提出有限正式材料協作評估，不取得共識或新增作業。",
+            "tradeoff": "他會覺得冷掉"
+          },
+          {
+            "id": 6,
+            "text": "這次婉拒額外整本供料，先用原已有材料接續。",
+            "action": "導師已婉拒本人非必要整本供料，採原合法材料，不處分原稿。",
+            "tradeoff": "同事可能失望"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不服孩子只剩一句教不會，自己挪原可調時間，和同事申請一起試這一小段；我陪著看，不把他丟回一整本。",
+          "action": "導師已提出需原教學安排與雙方同意的有限協同短段，未取得核准、參與或學習結果。",
+          "tradeoff": "自己的原工作要挪，也可能試不出好方法"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1492207767
+        },
+        "selectedIds": [
+          5,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "27eacc8076042d3e07e6237fdf9ccf2d529fff8f6e7ed54b6b62ab360d355747"
+      },
+      "consequenceDirections": {
+        "A": "可看適用性，不以資源多等於有用。",
+        "B": "可有支持，不用參加證明努力或免嘲弄。",
+        "C": "教師提出雙成人有限共同教學投入，不逼學生示範成效或代替必要支持。",
+        "D": "可聚焦，不把全部資料變學生欠的功課。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7b5c502cbbe02b4fa5c2eee7c16727fa8f6ce6c42bee00c5d6a577d17ac217e7",
+    "draftSha256": "52acf837dcb4e028cc118847a6ad42784b5c751c2adab8c882b7952e187238ba",
     "seedAssignmentVersion": 1
   }
 }

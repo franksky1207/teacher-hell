@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "81b1296372555bea73b5b0ba4efcfc9ea0ea33e4de28f0f457e9736283ba5239",
+      "checkedAt": "2026-11-27T15:03:31.129Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問工作人員是否有合法空位可換。",
+            "action": "玩家已提出有限換位需求，未取得座位或驅離他人。",
+            "tradeoff": "可能更遠或沒有位"
+          },
+          {
+            "id": 2,
+            "text": "依場規留原位，非必要閒聊不再接。",
+            "action": "玩家已停止本人非必要鄰座互動，依原場規留場，不承諾安靜結果。",
+            "tradeoff": "還可能受聲音影響"
+          },
+          {
+            "id": 3,
+            "text": "本次提早離場，不再跟對方談交情。",
+            "action": "玩家已結束本人當次自願觀演並安全離場，不索無據賠償。",
+            "tradeoff": "票錢與後面曲目放掉"
+          },
+          {
+            "id": 4,
+            "text": "向原客服詢問可行補救條件，不先說一定能退。",
+            "action": "玩家已查詢原消費事實下的服務補救條件，未取得補償。",
+            "tradeoff": "要花時間"
+          },
+          {
+            "id": 5,
+            "text": "對方若願意，簡短說明自己想安靜聽這一首，不邀整晚聊天。",
+            "action": "玩家已提出限不影響演出及自願的有限安靜聆聽偏好，不取得對方配合保證。",
+            "tradeoff": "他可能覺得掃興"
+          },
+          {
+            "id": 6,
+            "text": "演後依正常管道反映實際干擾，不在現場加對峙。",
+            "action": "玩家已選定原正式服務反映途徑並整理本人有限非敏感事實，不宣稱已受理。",
+            "tradeoff": "整晚心情仍受影響"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我連這份票錢都不想再拿，提出自願把原價退給他；票照原約是他的，不換道歉、不叫他走。",
+          "action": "玩家已提出限本人可支配金錢的自願退還原讓票價款邀請，不撤對方原有效入場權，未取得收受、完成付款或要求道歉離場。",
+          "tradeoff": "自己多損失一張票的錢，對方還可能覺得被羞辱"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3361943995
+        },
+        "selectedIds": [
+          1,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "c1b7a02c0ab71b61e54769cd83de91a83a0810ebca017f802156ca8c466c5e4e"
+      },
+      "consequenceDirections": {
+        "A": "可表達偏好，不用語氣換安全權利。",
+        "B": "可保剩餘聆聽，不把請求當已換成。",
+        "C": "可結束耗損，不要求對方另賠整晚。",
+        "D": "玩家以真實金錢取捨切開私人欠情期待，與一般停止聊天或換位不同；邀請可拒，不以給錢要求對方放棄場內正當權利。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒說不交朋友後不回話，實質仍與普通2停止非必要互動過近，安可只是附帶動作；改為自願退還讓票價款的不同私人取捨。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "詢問工作人員是否有合法空位可換。",
+                "action": "玩家已提出有限換位需求，未取得座位或驅離他人。",
+                "tradeoff": "可能更遠或沒有位"
+              },
+              {
+                "id": 2,
+                "text": "依場規留原位，非必要閒聊不再接。",
+                "action": "玩家已停止本人非必要鄰座互動，依原場規留場，不承諾安靜結果。",
+                "tradeoff": "還可能受聲音影響"
+              },
+              {
+                "id": 3,
+                "text": "本次提早離場，不再跟對方談交情。",
+                "action": "玩家已結束本人當次自願觀演並安全離場，不索無據賠償。",
+                "tradeoff": "票錢與後面曲目放掉"
+              },
+              {
+                "id": 4,
+                "text": "向原客服詢問可行補救條件，不先說一定能退。",
+                "action": "玩家已查詢原消費事實下的服務補救條件，未取得補償。",
+                "tradeoff": "要花時間"
+              },
+              {
+                "id": 5,
+                "text": "對方若願意，簡短說明自己想安靜聽這一首，不邀整晚聊天。",
+                "action": "玩家已提出限不影響演出及自願的有限安靜聆聽偏好，不取得對方配合保證。",
+                "tradeoff": "他可能覺得掃興"
+              },
+              {
+                "id": 6,
+                "text": "演後依正常管道反映實際干擾，不在現場加對峙。",
+                "action": "玩家已選定原正式服務反映途徑並整理本人有限非敏感事實，不宣稱已受理。",
+                "tradeoff": "整晚心情仍受影響"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我現在真不想再演熱心朋友，直說讓票不代表要一起玩；這首若還能安全聽，就只對台上喊安可，不再回他。",
+              "action": "玩家已明確撤回本人非必要交友互動並依場規參與演出，不限制他人合法歌唱或取得安靜保證。",
+              "tradeoff": "對方可能覺得翻臉，自己也失去被感謝的好人樣子"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3567537647
+            },
+            "selectedIds": [
+              2,
+              4,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 4,
+              "C": 5,
+              "D": 2
+            },
+            "optionsDigest": "e5cf984498d863488326ec91a0ac59386d9e094ea94c85a207b43afbe4199711"
+          },
+          "previousConsequenceDirections": {
+            "A": "玩家撤回非必要私人交友意願、保留正常觀演，必要拒觸和場規仍共同維持，不用聲浪報復。",
+            "B": "可查權益，不把詢問當退款或補場。",
+            "C": "可表達偏好，不用語氣換安全權利。",
+            "D": "可守本人空間，必要界線與求助仍共同維持。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f0091d9fc23ca0a9b320b5dc07505a31468756ceca58c209eec7b188bbcfe545",
+    "draftSha256": "81b1296372555bea73b5b0ba4efcfc9ea0ea33e4de28f0f457e9736283ba5239",
     "seedAssignmentVersion": 1
   }
 }

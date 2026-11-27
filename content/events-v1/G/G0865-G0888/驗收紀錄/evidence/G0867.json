@@ -14,14 +14,82 @@
   "plannedTags": [
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a8cf26feadabd6622108b8e5d7711990efd4cd41e5d847ed914cef7b4884a471",
+      "checkedAt": "2026-11-27T15:03:31.113Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在本人可行期限內只寫可核實事實，先說明時程。",
+            "action": "導師已提出本人可行的有限真實推薦撰寫安排，未完成信或保證錄取。",
+            "tradeoff": "可能趕不上"
+          },
+          {
+            "id": 2,
+            "text": "這次婉拒額外推薦，提供原學校正常申請管道。",
+            "action": "導師已婉拒本人非必要額外撰寫邀請並提供既有管道，不代承諾其他人。",
+            "tradeoff": "家長可能失望"
+          },
+          {
+            "id": 3,
+            "text": "請學生自願提供一項真實作品供我核對，再決定可寫範圍。",
+            "action": "導師已提出有限自願作品核對邀請，未取得作品或推薦內容。",
+            "tradeoff": "多一段等待"
+          },
+          {
+            "id": 4,
+            "text": "詢問主辦是否接受原已可提供的正式在學資料，不先宣稱能替代。",
+            "action": "導師已提出限本人知情的文件替代條件詢問，未取得受理或資格。",
+            "tradeoff": "可能不接受"
+          },
+          {
+            "id": 5,
+            "text": "請原校方權責確認有無正式函件流程，先不私交未定稿。",
+            "action": "導師已提出原正式函件程序確認，不交付草稿或授權秘書改寫。",
+            "tradeoff": "看起來慢"
+          },
+          {
+            "id": 6,
+            "text": "邀家長停止非急連續催件，改以原可行的一次進度回覆。",
+            "action": "導師已提出有限例行進度聯繫安排，未保證信件完成或免原承諾。",
+            "tradeoff": "他可能更焦慮"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想自己的名字變成秘書的橡皮章，若要我寫，就由我依事實獨立定稿直接走主辦允許的正式送件，不先給家長修。",
+          "action": "導師已提出本人獨立定稿及限正式允許管道的直接送件方案，未完成信、取得送件許可或受理。",
+          "tradeoff": "少了替家長包裝的彈性，還得自己多辦一步"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2776105089
+        },
+        "selectedIds": [
+          1,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "0680184c832f298a1e109669ee7d1778a3ea520ed921da1b9bde8a9f0118d65d"
+      },
+      "consequenceDirections": {
+        "A": "教師提出真實獨立撰寫及合法直接送件方式，須原程序允許，未定不承諾錄取或假已送。",
+        "B": "可守可行負荷，不撤必要學生支持。",
+        "C": "可保真實，不以收費高保證漂亮推薦。",
+        "D": "可有本人材料，不變額外評比或代造事蹟。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "96b556777631d1bc673e9fda15aac9d23d8c481f4b2b1a049f4cbcdf22166b85",
+    "draftSha256": "a8cf26feadabd6622108b8e5d7711990efd4cd41e5d847ed914cef7b4884a471",
     "seedAssignmentVersion": 1
   }
 }

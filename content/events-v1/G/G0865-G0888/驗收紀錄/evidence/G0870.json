@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "49a84979db9a80c701b596099ca7169c1a0e848c1329835444a712a410fc3040",
+      "checkedAt": "2026-11-27T15:03:31.118Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只回一句謝謝關心，不談醫療細節。",
+            "action": "導師已作本人有限一般性致謝，不揭私人醫療資訊。",
+            "tradeoff": "他可能覺得被擋"
+          },
+          {
+            "id": 2,
+            "text": "今天停止桌邊額外閒聊，照原班務走。",
+            "action": "導師已停止本人本次非必要桌邊寒暄，維持原正常聯繫。",
+            "tradeoff": "親近感暫時少"
+          },
+          {
+            "id": 3,
+            "text": "用教師自編無識別例子，在原班務時間談看到與猜測。",
+            "action": "導師已安排有限虛構資訊辨認活動，不公開原醫療內容。",
+            "tradeoff": "用掉短段時間"
+          },
+          {
+            "id": 4,
+            "text": "邀他自願說明自己希望怎麼表達關心，不再追牙醫。",
+            "action": "導師已提出有限自願關心方式詢問，未取得參與或新關係承諾。",
+            "tradeoff": "可能只說不知道"
+          },
+          {
+            "id": 5,
+            "text": "回應一般上課安排，今天不加個人近況分享。",
+            "action": "導師已提供原可公開的有限當日課務資訊，不揭私人近況。",
+            "tradeoff": "沒有他想聽的新消息"
+          },
+          {
+            "id": 6,
+            "text": "收回本人原桌邊容易看見的私票據，另作自己的遮存方式。",
+            "action": "導師已調整本人私票據的後續保管方式，不蒐查學生資料或重用已公開資訊。",
+            "tradeoff": "自己要多整理"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也捨不得他以後什麼都不問，乾脆讓他問一個我願意回答的普通小問題，答不答由我，不讓他替我播全班預告。",
+          "action": "導師已提出限本人同意範圍的自願單題一般交流，未取得提問或透露醫療資訊。",
+          "tradeoff": "可能還會被誤傳，我也得自己守界線"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2071497552
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "739c3914285d0957098376c70ea47fe392578c8cde426b0fd299cea66aed22ed"
+      },
+      "consequenceDirections": {
+        "A": "可保私人界線，不把關心一概當錯。",
+        "B": "可教界線，不重演原收據。",
+        "C": "教師提出一次本人可拒答的有限私人寒暄，不給醫療查問權或學生傳訊任務。",
+        "D": "可給可預期教學，不用日程證明自己沒脾氣。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "809004f13270b7b0328099cf122d61cd0522054f443b15db48b748c355218356",
+    "draftSha256": "49a84979db9a80c701b596099ca7169c1a0e848c1329835444a712a410fc3040",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ad4e89f78604335d390c70dc3ae65f6bfc594cc08d3adf71298c70b1302d06de",
+      "checkedAt": "2026-11-27T15:03:31.127Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把兩個替代提案送原承辦評估，不先代領。",
+            "action": "導師已提出需原權責核可的有限代領及電子確認可行性詢問，未獲准或交件。",
+            "tradeoff": "可能都不准"
+          },
+          {
+            "id": 2,
+            "text": "申請本件延後領取，附家長願提供的必要事實。",
+            "action": "導師已提出有限個案展延申請，未獲准或保留權益結果。",
+            "tradeoff": "可能超過原規定不被接受"
+          },
+          {
+            "id": 3,
+            "text": "家長若自願能依原規定另安排本人到場，提供原可行會客資訊。",
+            "action": "導師已提供原規則內有限合法到場資訊，不代安排家庭或視為已簽收。",
+            "tradeoff": "仍要自己協調"
+          },
+          {
+            "id": 4,
+            "text": "詢問原承辦是否接受正式有權代理書，不先讓孩子簽。",
+            "action": "導師已查詢既有合法代理條件，未取得授權、文件或交付。",
+            "tradeoff": "有文件成本，也未必可行"
+          },
+          {
+            "id": 5,
+            "text": "請原主管就此必要制度疑問提供書面回覆。",
+            "action": "導師已提出有限正式程序回覆需求，未取得決定或改領件條件。",
+            "tradeoff": "流程更正式"
+          },
+          {
+            "id": 6,
+            "text": "本次不再非急來回通話，原必要進度由同一窗口文字接續。",
+            "action": "導師已提出既有管道內有限文字聯繫安排，不免本人原責任。",
+            "tradeoff": "少了即時討論"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被這個時間卡得煩，自己具名把這次實務障礙送主管，要求正面評估能不能有替代，不只幫忙傳一句家長很忙。",
+          "action": "導師已提交本人具名的有限領件可及性改善建議，未核准制度或取得文件。",
+          "tradeoff": "要承受主管覺得我替家長找麻煩，也未必改得動"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1858154068
+        },
+        "selectedIds": [
+          4,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "fecd2cbd0281172327c1e1f8b547a1b68c802a8026895b4942a10fbb9fe0bbdc"
+      },
+      "consequenceDirections": {
+        "A": "可有正式選擇，不將提案當已同意。",
+        "B": "可留下依據，不以書面要求當已改規。",
+        "C": "教師新增本人具名制度建議及理由，不冒全體家長名義或先行放寬個資權利。",
+        "D": "可分代理與冒領，查詢不是授權已成立。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2af288beb28448df9da2843d32b33bd2df364f9ed032ba3efec52acaeb03f898",
+    "draftSha256": "ad4e89f78604335d390c70dc3ae65f6bfc594cc08d3adf71298c70b1302d06de",
     "seedAssignmentVersion": 1
   }
 }

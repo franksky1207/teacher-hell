@@ -15,14 +15,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a5e28916828f31014923df964ffc2806aefd30d613fc9ee4d00fefacadcd4f70",
+      "checkedAt": "2026-11-27T15:03:31.130Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提供本人有權給的這段簡要課內重點，不要求補抄整份。",
+            "action": "導師已提供限原課合法材料的有限重點支持，不加強迫補量。",
+            "tradeoff": "內容較少"
+          },
+          {
+            "id": 2,
+            "text": "待健康可行，由原任課者安排一次有限自願口頭回顧。",
+            "action": "導師已提出需健康可行及原授課安排允許的有限回顧邀請，未取得參與或結果。",
+            "tradeoff": "要另排可用短段"
+          },
+          {
+            "id": 3,
+            "text": "本次不新增補件，原必要學習依健康調整接續。",
+            "action": "導師已停止本人本次非必要補件要求，保留必要健康與教學支持。",
+            "tradeoff": "他可能不甘心空著"
+          },
+          {
+            "id": 4,
+            "text": "請適任輔導者依本人需要協助看長期負荷。",
+            "action": "導師已提出限必要知情的既有負荷支持需求，未取得服務或診斷。",
+            "tradeoff": "可能不想重說"
+          },
+          {
+            "id": 5,
+            "text": "若他願，先把自己最在意的一個問題記在教師紙上，暫不解完整題。",
+            "action": "導師已提供有限自願問題留存方式，不宣稱答完或要求繼續學習。",
+            "tradeoff": "只留一小點"
+          },
+          {
+            "id": 6,
+            "text": "讓原已同意分享的非敏感課堂摘要供他自行取用，不指定同學代抄。",
+            "action": "導師已提供既有合法摘要取用資訊，不代取、公開個資或增加同儕任務。",
+            "tradeoff": "未必符合他習慣"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也捨不得他把休息算成輸，自己在他原筆記旁只寫下「停在這裡」，經他同意才標；這回不替他補成完美的一頁。",
+          "action": "導師已提出需物主同意的有限筆記斷點標記，未取得同意或更改原作品內容。",
+          "tradeoff": "看著缺口可能更不舒服，我也得忍住幫完的習慣"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1799999492
+        },
+        "selectedIds": [
+          3,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "156eda441af2edb6aa19c68e34d920a8d6e6ddc78db13fa6aff8d15f3d40915c"
+      },
+      "consequenceDirections": {
+        "A": "可減額外負荷，不把免補當他不在乎學業。",
+        "B": "教師提出本人自願的具體斷點標記，而非重新教學或強迫抄寫，必要健康仍先行。",
+        "C": "可留期待，不讓記下變當天必解承諾。",
+        "D": "可有互動，邀約不是回顧已做。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3e15b050f6b02528e3d5720cd441dd50ce7e87ae59e5cd5aa4af5601ed9a9cad",
+    "draftSha256": "a5e28916828f31014923df964ffc2806aefd30d613fc9ee4d00fefacadcd4f70",
     "seedAssignmentVersion": 1
   }
 }

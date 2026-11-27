@@ -15,14 +15,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5fc1955573c26fe2f06c8aaf289ddd2d07cb14fb5dffeb35b781cecb0ae627ca",
+      "checkedAt": "2026-11-27T15:03:31.126Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "尊重這次拒絕，不再追問他改變心意。",
+            "action": "導師已受理本人對非必要工讀邀請的拒絕並停止本次勸說，不代定其兼職。",
+            "tradeoff": "辛苦問的名額用不上"
+          },
+          {
+            "id": 2,
+            "text": "問他願不願只標出目前不能動的時間，供原支持安排參考。",
+            "action": "導師已提出有限自願時段資訊詢問，未取得資料或新工作同意。",
+            "tradeoff": "像又多整理一次"
+          },
+          {
+            "id": 3,
+            "text": "向原工讀窗口查是否有可行彈性，不先替他保留。",
+            "action": "導師已提出既有合法工讀彈性詢問，未取得名額或時段核准。",
+            "tradeoff": "可能沒有"
+          },
+          {
+            "id": 4,
+            "text": "提供既有助學與照顧支持資訊，由本人選要不要申請。",
+            "action": "導師已提供現有合法支持申請資訊，不代核或取得資源。",
+            "tradeoff": "程序仍要走"
+          },
+          {
+            "id": 5,
+            "text": "若他願，請原輔導者協助評估負荷，不替他挑工作。",
+            "action": "導師已提出限必要知情及自願的既有負荷支持需求，未取得參與或診斷。",
+            "tradeoff": "可能得再講一次"
+          },
+          {
+            "id": 6,
+            "text": "本次只將名額如實回覆原窗口，不公開他家的理由。",
+            "action": "導師已依原權限回覆此非必要邀請未接受的事實，不透露私人家庭資訊。",
+            "tradeoff": "其他人可能問為什麼"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實還有點捨不得自己白問，先把這句吞回去，請他自願教我看一次他怎麼排得開；我這次當聽的人，不再幫他重排。",
+          "action": "導師已提出有限自願安排經驗收聽邀請並停止本人非必要代排，不取得資料或新時程權。",
+          "tradeoff": "要承認自己未必懂他的生活，也可能被拒"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3637562361
+        },
+        "selectedIds": [
+          4,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "4ea8f68d822920bb2c4db413fb59106bbdfc1e419123e05eec785e74d32319bd"
+      },
+      "consequenceDirections": {
+        "A": "可查選擇，查詢不等工作已調。",
+        "B": "可有專業支持，不把拒服務當不配合。",
+        "C": "可分工讀與求助，不保證資格或款項。",
+        "D": "教師交換決策位置並聽本人方法，不索私密細節或暗中評分，不用情緒要求感謝。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ba6f678e5fe61c0191c4fad3b65549d82b8df27bb3aa73fa72bcf5249632334b",
+    "draftSha256": "5fc1955573c26fe2f06c8aaf289ddd2d07cb14fb5dffeb35b781cecb0ae627ca",
     "seedAssignmentVersion": 1
   }
 }

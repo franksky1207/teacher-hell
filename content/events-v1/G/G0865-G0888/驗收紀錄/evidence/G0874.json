@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f9ab33ff26e62b9b02fd96fa0142d140624369c1df95a55acdad2c3c4f3366cf",
+      "checkedAt": "2026-11-27T15:03:31.123Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只維持已確認的安全通行方式，不另提美化。",
+            "action": "玩家已維持原校方確認的安全接續，停止本人非必要美化提案。",
+            "tradeoff": "主任可能不高興"
+          },
+          {
+            "id": 2,
+            "text": "請原總務評估符合安全要求的替代樣式。",
+            "action": "玩家已提出限安全要求的替代樣式評估需求，未取得核准或施工。",
+            "tradeoff": "可能沒有更好看的"
+          },
+          {
+            "id": 3,
+            "text": "把本人所見撕除與接續情形書面送原主管。",
+            "action": "玩家已提交限必要知情的有限現場事實記錄，不判他人法律責任。",
+            "tradeoff": "要承受職場壓力"
+          },
+          {
+            "id": 4,
+            "text": "若原承辦允許，參訪改走既有安全路線，不展這一段。",
+            "action": "玩家已提出需原承辦核可的有限參訪路線調整，未獲准或帶隊改道。",
+            "tradeoff": "參觀內容少"
+          },
+          {
+            "id": 5,
+            "text": "這次不再私下辯貼紙字樣，轉由正式設施窗口統一回覆。",
+            "action": "玩家已停止本人非必要字樣爭辯並提出原設施窗口接續需求，未取得回覆。",
+            "tradeoff": "自己像失去話語位置"
+          },
+          {
+            "id": 6,
+            "text": "向主管申請未來美化前先由原設施權責檢視，不自創全校制度。",
+            "action": "玩家已提出有限設施協作建議，未核定新制度或承諾工程。",
+            "tradeoff": "可能被嫌小題大作"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再用繞話保面子，當面說我不接受把這件事說成只是貼得醜，請主管讓我在正式紀錄上留下異議。",
+          "action": "玩家已提出本人具名安全美化取捨異議供原主管知情，不取得裁定或拒絕合法原工作。",
+          "tradeoff": "交情會僵，也可能被記成難配合"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2684470438
+        },
+        "selectedIds": [
+          2,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 6,
+          "D": 2
+        },
+        "optionsDigest": "4a768ce546924566a5a473b238533a911425d94a058d715ef260c70549922204"
+      },
+      "consequenceDirections": {
+        "A": "可回專業，不把轉交當必要告知免做。",
+        "B": "玩家明確提出本人具名價值與工作異議，不以憤怒阻必要安全接續或羞辱對方。",
+        "C": "可提出建議，未准不能說已成新規。",
+        "D": "可有正式選擇，不讓美觀先於專業確認。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "29b7e479c6a5041f5f2ca2dd50f98c8ecaaa30cd33c949c780eb79aeec4de6ab",
+    "draftSha256": "f9ab33ff26e62b9b02fd96fa0142d140624369c1df95a55acdad2c3c4f3366cf",
     "seedAssignmentVersion": 1
   }
 }

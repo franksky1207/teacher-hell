@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "396440c0236a67db65bb012e61084e0e32794899c352d5a89659347d0d01f413",
+      "checkedAt": "2026-11-27T15:03:31.121Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "雙方同意才拍共同成品，不一定要合照。",
+            "action": "玩家已提出需原作者同意的有限成品紀錄方案，未取得授權或拍攝。",
+            "tradeoff": "少了熱鬧紀念"
+          },
+          {
+            "id": 2,
+            "text": "不拍新照，只依原課程程序處理燒製與取件。",
+            "action": "玩家已停止本人非必要拍攝需求，維持原合法作品接續。",
+            "tradeoff": "看不到今天亮眼的證據"
+          },
+          {
+            "id": 3,
+            "text": "詢問搭檔願不願按真實分工各說一句製作過程。",
+            "action": "玩家已提出有限自願過程分享邀請，未取得參與或改署名。",
+            "tradeoff": "可能尷尬或被拒"
+          },
+          {
+            "id": 4,
+            "text": "請教練確認作品可否依權利分開取回，不私切原作。",
+            "action": "玩家已提出需相關權利同意的有限作品去向詢問，未分割或取得全部作品。",
+            "tradeoff": "可能破壞完整性或不可行"
+          },
+          {
+            "id": 5,
+            "text": "下次報名只選原允許的個人桌，不再接雙人收尾。",
+            "action": "玩家已提出本人日後可行的個人課程詢問，不取得名額或新合約。",
+            "tradeoff": "少了新朋友機會"
+          },
+          {
+            "id": 6,
+            "text": "若對方願，現在由他接原安全清潔的可分工部分，我只處理自己。",
+            "action": "玩家已提出限雙方自願與課程規則的清潔分工建議，未取得答應或免自身責任。",
+            "tradeoff": "可能又要等"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還真想留一張自己被看見的照片，問老師能不能只拍我和這次親手做的部分；另一半不抹掉，也不假裝我不在意。",
+          "action": "玩家已提出需相關同意的本人與真實製作局部拍照需求，未取得照片或排除他人物權。",
+          "tradeoff": "搭檔可能覺得被排除，自己顯得很想被誇"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3464883381
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "f141056cb83f6583fcd5905d90ebb30f2d66fb63609a61b43c0c7d427ba4d89b"
+      },
+      "consequenceDirections": {
+        "A": "可分去向，詢問不是已分物權。",
+        "B": "可分享，不逼對方公開認錯。",
+        "C": "可要求合作但不能強迫，必要清潔仍按原約完成。",
+        "D": "玩家提出本人肖像及真實局部作品的有限拍攝邀請，需原權利同意、不改共同署名。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a5e342f5746eacc15c8a3adec0c868c8ec3d664aeefbe22584e82c61ffa062cc",
+    "draftSha256": "396440c0236a67db65bb012e61084e0e32794899c352d5a89659347d0d01f413",
     "seedAssignmentVersion": 1
   }
 }

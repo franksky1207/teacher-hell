@@ -15,14 +15,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "271d4146749dc432d5f290d45981a93b38d85b7e1577b757e7dc7dc38e2285c4",
+      "checkedAt": "2026-11-27T15:03:31.114Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持課堂原方式，私人平板不新增入班用途。",
+            "action": "導師已婉拒本人越權新增課堂私機用途，維持原合法教學安排。",
+            "tradeoff": "花錢卻用不上課"
+          },
+          {
+            "id": 2,
+            "text": "向原授課者及校方詢問是否有可核可的文字筆記用途。",
+            "action": "導師已提出限校規與任課權的私機用途詢問，未獲准或上機。",
+            "tradeoff": "未必准"
+          },
+          {
+            "id": 3,
+            "text": "提供現有合法筆記練習資訊，讓孩子自願在允許處使用。",
+            "action": "導師已提供既有合法筆記方法資訊，不取得使用許可或完成筆記。",
+            "tradeoff": "不是自動拍下就完成"
+          },
+          {
+            "id": 4,
+            "text": "若家長願意，只讓他說明孩子目前怎麼預習，不再示範拍人。",
+            "action": "導師已提出有限自願預習方式詢問，不錄製、公開或新增授權。",
+            "tradeoff": "看不到新機亮點"
+          },
+          {
+            "id": 5,
+            "text": "請原數位學習窗口提供可公開的校內設備辦法。",
+            "action": "導師已提出既有正式設備資訊需求，未取得新資源或核准。",
+            "tradeoff": "需等資料"
+          },
+          {
+            "id": 6,
+            "text": "本次不加個別試機，必要事情回覆後結束。",
+            "action": "導師已停止本人非必要個別私機試用，維持必要資訊與權利處理。",
+            "tradeoff": "家長可能覺得白買"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點好奇他那頁怎麼做，問他願不願只用自家無敏感例子教我一次整理文字；不拍老師、不把我學過當學校准用。",
+          "action": "導師已提出以家長有權示例作有限自願文字整理交流，未取得參與、設備或校內用途許可。",
+          "tradeoff": "花自己空檔，還可能越看越想買"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3679030241
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "0e2ec43a759c93917b103622d4d6ce48168b6c55552fa5a2c19c83318b1944a6"
+      },
+      "consequenceDirections": {
+        "A": "可聽真經驗，不把操作流暢等於懂內容。",
+        "B": "可回學習，不直接供未授權教材或許錄音。",
+        "C": "教師請教具體合法文字整理，不讓私人興趣代替核心用途核可，未同意不操作私物。",
+        "D": "可停加碼，正當疑問仍可原管道提出。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "da4417eeae43819e15850867503a7063d03d43a5231888d6767b411b8c211bb4",
+    "draftSha256": "271d4146749dc432d5f290d45981a93b38d85b7e1577b757e7dc7dc38e2285c4",
     "seedAssignmentVersion": 1
   }
 }

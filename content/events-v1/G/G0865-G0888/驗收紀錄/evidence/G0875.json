@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6cbd8d385d30a450cf844c193edae801a376e8570e0be2cb0d68905b5d20c387",
+      "checkedAt": "2026-11-27T15:03:31.125Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不私借兩節，維持原核定安排。",
+            "action": "導師已婉拒本人越權私換課，維持原必要教學接續。",
+            "tradeoff": "他可能覺得沒被支持"
+          },
+          {
+            "id": 2,
+            "text": "把兩節補教方案送原教務評估。",
+            "action": "導師已提出需原課務權責的有限補教排課申請，未獲准或換課。",
+            "tradeoff": "可能只准部分"
+          },
+          {
+            "id": 3,
+            "text": "請他在本科原可調短段處理一個共通卡點，不借他科。",
+            "action": "導師已提出限原任課職權的有限補教建議，未取得協作或減其他課。",
+            "tradeoff": "能補的少"
+          },
+          {
+            "id": 4,
+            "text": "原班務只精簡本人能改的重複說明，不動必要事項。",
+            "action": "導師已在本人班務權限精簡非必要重複說明，不核定全班改課。",
+            "tradeoff": "自己要整理"
+          },
+          {
+            "id": 5,
+            "text": "用原已合法可用的練習資訊提供自願查找，不另派必做。",
+            "action": "導師已提供既有有限自願練習資訊，不增加作業總量。",
+            "tradeoff": "學生未必使用"
+          },
+          {
+            "id": 6,
+            "text": "邀兩人只核一個代表題，先找退步發生哪裡。",
+            "action": "導師已提出限合法匿名題的有限共同檢視邀請，未取得定論。",
+            "tradeoff": "會慢一點"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不服一張平均就把早自習判掉，自己做一份真實時間使用說明送原主管，願意被看，但不讓他先替我刪兩節。",
+          "action": "導師已提交本人有限非敏感班務時間事實供正式評估，不取得改課核准或拒必要教學改善。",
+          "tradeoff": "要多整理，還可能看出自己安排確實有問題"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3099702193
+        },
+        "selectedIds": [
+          1,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "1c08ac8fdabd8194ce75a5122cab33de87f95a99a760ee459abe902995705f89"
+      },
+      "consequenceDirections": {
+        "A": "可有正式安排，不先對學生宣布。",
+        "B": "可回授課自主，邀請不等同事已答應。",
+        "C": "可守程序，不否定真學習需要。",
+        "D": "教師提交本人可核實工作資料接受檢視，不以競爭保留已知錯誤或冒其他人立場。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2a5f111d7ceae0d35ea60c45516dee29892bad8695b0dbf1988350cd3553df5f",
+    "draftSha256": "6cbd8d385d30a450cf844c193edae801a376e8570e0be2cb0d68905b5d20c387",
     "seedAssignmentVersion": 1
   }
 }

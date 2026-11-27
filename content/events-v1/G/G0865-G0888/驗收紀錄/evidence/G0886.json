@@ -15,14 +15,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ad10a4db1bf270953f35b8b81789d0c4643f702227c116974fc388e1f342ced6",
+      "checkedAt": "2026-11-27T15:03:31.132Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只說明本人願公開的整理用途，不談人事。",
+            "action": "導師已提供本人同意公開的有限整理說明，不揭私人或未定人事。",
+            "tradeoff": "他可能覺得沒內幕"
+          },
+          {
+            "id": 2,
+            "text": "原班務照常，今天不再加個人近況問答。",
+            "action": "導師已停止本人本次非必要私人問答，維持原師生聯繫。",
+            "tradeoff": "親近感少"
+          },
+          {
+            "id": 3,
+            "text": "用教師自編假消息練分辨看到與推測，不秀原匿名帖。",
+            "action": "導師已安排有限無識別虛構資訊練習，不公開原帳號。",
+            "tradeoff": "用課內彈性"
+          },
+          {
+            "id": 4,
+            "text": "請他自願把今後想轉述的消息先核來源，不替全班跑新聞。",
+            "action": "導師已提出有限自願資訊查核建議，不任命學生蒐集人事消息。",
+            "tradeoff": "少了搶先說的快感"
+          },
+          {
+            "id": 5,
+            "text": "只提供校方已有可公開的人事公告查閱位置。",
+            "action": "導師已提供既有公開資訊查閱方式，不推論未公告結果。",
+            "tradeoff": "沒有新答案"
+          },
+          {
+            "id": 6,
+            "text": "這次不請他再幫忙任何私文件整理，由我自己收。",
+            "action": "導師已停止本人非必要私物整理求助，接回自身資料保管，不聲稱原先已委派。",
+            "tradeoff": "自己多工"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他盯箱子也有點想笑，讓他若願意猜一個我同意公開的普通物件，答案由我自己揭；人事消息這箱不裝。",
+          "action": "導師已提出限本人可公開物件的有限自願猜物邀請，未取得參與、開箱或新私事權。",
+          "tradeoff": "可能又變傳話素材，自己得守住揭到哪"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1584188340
+        },
+        "selectedIds": [
+          3,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "88236e9b9e6d6a720792ea789fe81e73642af657d619d37ed32fb01af041188d"
+      },
+      "consequenceDirections": {
+        "A": "可減誤見，不以不派事懲罰好奇。",
+        "B": "可學判斷，不將學生當笑點。",
+        "C": "可停追問，不阻正常工作或求助。",
+        "D": "教師提供一次本人可控的新猜物互動，不讓他翻箱或以玩笑代必要更正。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "631707c84977080bccccc3629742b22e7ed2a3501ada30fe17c02cb3ddd738ac",
+    "draftSha256": "ad10a4db1bf270953f35b8b81789d0c4643f702227c116974fc388e1f342ced6",
     "seedAssignmentVersion": 1
   }
 }

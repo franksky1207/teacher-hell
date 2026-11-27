@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "560fcf8115895bef31c0b9dd88a2ad73860dd10e9a94d2a4f9dafe19a591572f",
+      "checkedAt": "2026-11-27T08:46:53.298Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓他自選一行，用自己的話試說，不要求全板。",
+            "action": "導師已在授課範圍提供有限自選說明，未以一次表現概括能力。",
+            "tradeoff": "看不出全部理解"
+          },
+          {
+            "id": 2,
+            "text": "各人用不同短段寫一個疑問，不再整桌同抄。",
+            "action": "導師已調整本人可決定的摘錄練習為個別短提問，不增加私人功課。",
+            "tradeoff": "板面不再整齊一致"
+          },
+          {
+            "id": 3,
+            "text": "我用另一段自有可用文本示範從摘句到說想法。",
+            "action": "導師已以授權文本完成有限示範，保留後續學生自身理解確認。",
+            "tradeoff": "教師多做一段"
+          },
+          {
+            "id": 4,
+            "text": "停止這次額外全板展字，回到各人正常閱讀。",
+            "action": "導師已取消自身非必要板面成果展示，必要課業回饋照常。",
+            "tradeoff": "少了成果畫面"
+          },
+          {
+            "id": 5,
+            "text": "班務只留原公告整理，課程摘錄由教師安排，不再壓在他身上。",
+            "action": "導師已取消該生額外課程抄板任務，保留合宜原班務及必要成人責任。",
+            "tradeoff": "教師要多備板面"
+          },
+          {
+            "id": 6,
+            "text": "兩人自願互說一個疑問，我巡看不指定誰當標準答案。",
+            "action": "導師已在本人課內安排有限自願互說，提供個別替代，不讓學生裁判同學。",
+            "tradeoff": "教室較分散"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "漂亮句子我也愛抄，今天自己的讀書筆記只留一句真想問的。",
+          "action": "導師已於私人可用時間在自有閱讀筆記記下一個自身疑問，不複製學生私稿或要求回覆。",
+          "tradeoff": "筆記不漂亮，也得承認自己未懂"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3332319673
+        },
+        "selectedIds": [
+          1,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "72415c765a062fbdc0f39fb8aabfd593f91b40e05619416630331089eb193699"
+      },
+      "consequenceDirections": {
+        "A": "問題可有差異，教師需回應而非只收件。",
+        "B": "能有小起點，也可能發現那行仍不懂。",
+        "C": "原文本能重新讀，不把抄錯外形當整份沒用。",
+        "D": "教師可有不完整的私人閱讀，不拿它當學生作業樣板。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f7d901bb7330d75e53c4213e315b4f00284decdb50d2c68f62097e37d7b612df",
+    "draftSha256": "560fcf8115895bef31c0b9dd88a2ad73860dd10e9a94d2a4f9dafe19a591572f",
     "seedAssignmentVersion": 1
   }
 }

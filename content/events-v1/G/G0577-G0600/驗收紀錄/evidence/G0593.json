@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a4d63344f14a5ddbfacea6bc625e1549321c00df3ad02004963eb8e473e7cc3a",
+      "checkedAt": "2026-11-27T08:46:53.302Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把這個練法留作自選，另保留已可行的完成方式。",
+            "action": "導師已在本人課程提供同目標可行選項，不強制家庭支援。",
+            "tradeoff": "作品形式不一致"
+          },
+          {
+            "id": 2,
+            "text": "這次整份改在正常課內完成，不加家庭陪練。",
+            "action": "導師已在自身授課範圍調整完成時段，保留必要指導與合理份量。",
+            "tradeoff": "新進度需讓時間"
+          },
+          {
+            "id": 3,
+            "text": "課內自願互問一小題，輪換問與答，不固定誰當家教。",
+            "action": "導師已安排有限自願互問並保留個別替代，不轉派學生承擔他人學業。",
+            "tradeoff": "用掉課內時間，也可能彼此不熟"
+          },
+          {
+            "id": 4,
+            "text": "向任課同儕討論一般方法限制，不傳他的家事與私稿。",
+            "action": "導師已發出不含可識別學生資料的教法交流邀請，尚未約成。",
+            "tradeoff": "需工作時間，也未必有共識"
+          },
+          {
+            "id": 5,
+            "text": "提供自用的通用短問句，沒人陪也可自己查一步。",
+            "action": "導師已提供有權使用的自助提問材料，不要求購印或家庭逐題簽名。",
+            "tradeoff": "資料未必完全解決困難"
+          },
+          {
+            "id": 6,
+            "text": "把下一次同類作業改為正常課內分段回饋，不一次等完整成果。",
+            "action": "導師已在自身可調整課程規劃有限分段回饋，維持總量合宜與可行完成方式。",
+            "tradeoff": "教師回饋次數增加"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不服，私人空檔自己做一次，看沒人在旁提醒到底卡哪。",
+          "action": "導師已在自身可用時間獨立試作另一自有題，不替代正式適用性確認或要求學生幫看。",
+          "tradeoff": "花自己的時間，也可能發現原來沒那麼省事"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1318230037
+        },
+        "selectedIds": [
+          2,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "7a8eee26c8fa5d3beaad4c72fa8e6ef9b252e18396a16212981896501227ff72"
+      },
+      "consequenceDirections": {
+        "A": "教師能看到實作，不能要求沒做完再全帶回家。",
+        "B": "問題能早浮現，不能把分段變加倍工作量。",
+        "C": "可理解適用差異，不把這位學生當全班量尺。",
+        "D": "教師可承受自己的試錯，不拿私試宣布全班可用。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "aa692acac25d0a2918df0476675ee3f4a6c5e7ec04b2a9c0e189f8daef3e65c6",
+    "draftSha256": "a4d63344f14a5ddbfacea6bc625e1549321c00df3ad02004963eb8e473e7cc3a",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3edd2a5a0c277967e0bd7e3fab77ad82c5b87b5f2caad8d911d2399c87361da7",
+      "checkedAt": "2026-11-27T08:46:53.297Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在確認合宜的另一組參與原練習。",
+            "action": "導師已依必要限制安排合宜替代分組，不強迫當事人和解或搶他人機會。",
+            "tradeoff": "要重接分工"
+          },
+          {
+            "id": 2,
+            "text": "提供同目標個別練習，不必為了留下再站到全班前。",
+            "action": "導師已於本人課程提供合宜個別替代，保留正常回饋。",
+            "tradeoff": "少了同儕互動"
+          },
+          {
+            "id": 3,
+            "text": "若他願意，這次先作有限觀察，不代替永久參與。",
+            "action": "導師已提出本次有限自願觀察方式，未以其沉默視為放棄學習。",
+            "tradeoff": "動手或開口次數減少"
+          },
+          {
+            "id": 4,
+            "text": "經本人知悉，邀家長另談怎麼支持原練習，不追加陪練責任。",
+            "action": "導師已發出正常工作時段的有限親師邀約，不以家長到場換學生權益。",
+            "tradeoff": "要配家庭時間"
+          },
+          {
+            "id": 5,
+            "text": "取消我自己加的全班公開展示，正常練習照常。",
+            "action": "導師已撤回自身非必要展示環節，不省略原課內內容。",
+            "tradeoff": "其他人也少一次表現"
+          },
+          {
+            "id": 6,
+            "text": "讓他自選今天最想先處理的一個短講重點，我課內回應。",
+            "action": "導師已提供正常課內有限重點回饋選擇，不以回答作參與資格。",
+            "tradeoff": "範圍縮小"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被頂那句我也很悶，原休息空檔買杯自己喜歡的，不叫他來陪我解氣。",
+          "action": "導師已於可用休息且必要職務接續後自費購飲，不以飲料交換學生回應或擅離照看。",
+          "tradeoff": "花自己的錢，也少了一段額外準備"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2665265443
+        },
+        "selectedIds": [
+          5,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "3ee9087e744dc9b614b01c320afa8866f03fc03d4a3881d812899157d99c5c63"
+      },
+      "consequenceDirections": {
+        "A": "本人能提出真正擔心，教師不保證每項一次解開。",
+        "B": "教師能照顧心情，未解工作仍須依約接續。",
+        "C": "學生可保留參與，不能把換組變特殊獎勵。",
+        "D": "不靠一次上台證明分組成功，取消不作連坐懲罰。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "56d3e29db089c4feccf03d99fb7aa83dcec95cfb23cf1823a28de050b4118740",
+    "draftSha256": "3edd2a5a0c277967e0bd7e3fab77ad82c5b87b5f2caad8d911d2399c87361da7",
     "seedAssignmentVersion": 1
   }
 }

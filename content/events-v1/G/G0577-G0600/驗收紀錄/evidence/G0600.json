@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a60800d9ec305163217c6feda2ebd9b0c20402f9ec76a88490ae2b4257b99eb0",
+      "checkedAt": "2026-11-27T08:46:53.308Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照原約吃完就分開，我自己回家。",
+            "action": "導師已婉拒本次新增排練邀請，完成自身餐費並依私人安排離開，不替同事作決定。",
+            "tradeoff": "少一次合唱相處"
+          },
+          {
+            "id": 2,
+            "text": "願意接這個新邀請，先請原訂位者確認能加入。",
+            "action": "導師已表達本人參加意願並提出加入詢問，尚未取得場地及原參與者確認。",
+            "tradeoff": "晚點回家，也要配合原安排"
+          },
+          {
+            "id": 3,
+            "text": "只在合宜公共位置打個招呼，不進去唱。",
+            "action": "導師已提出有限短招呼邀請，尚未同行或取得進入私人場地權利。",
+            "tradeoff": "仍花一小段時間"
+          },
+          {
+            "id": 4,
+            "text": "另約一次兩人都能完整空出的私人短聚，今天不續。",
+            "action": "導師已發出可拒絕的日後私人邀約，未替對方取消原練習。",
+            "tradeoff": "可能很難喬"
+          },
+          {
+            "id": 5,
+            "text": "若大家都願意，提議改成短聊不唱，原排練費用照實處理。",
+            "action": "導師已提出需各當事人同意的私人改約建議，未取消他人安排、費用或場所。",
+            "tradeoff": "原想練歌的人可能失望"
+          },
+          {
+            "id": 6,
+            "text": "我不去，若他本來就有可合法分享的個人短段，願意時再傳我聽。",
+            "action": "導師已發出限定本人既有授權素材的自願分享邀請，不含他人聲畫、不預設同意或取樣。",
+            "tradeoff": "少了現場共同記憶，也可能沒收到"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還想吃那碗甜湯，自己加點，你們照原約先走，別等我。",
+          "action": "導師已在店家允許續坐時自費下單個人甜湯，婉拒當次續練，不要求同事或伙伴改約等候。",
+          "tradeoff": "多花自己的錢，也會錯過同行"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1410393519
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "56ca071868bc2f1a5796ac4b34c0a6b09f403a10c3994baa663c8fb1f49ddc4d"
+      },
+      "consequenceDirections": {
+        "A": "同事可赴其原約，不需為教師一同離場。",
+        "B": "教師可享受小任性，不把吃慢變全團等候。",
+        "C": "所有人都可說不，教師不能替別人退訂。",
+        "D": "可以見到伙伴，不能被默認再留整晚。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1de9f2a984d6d9b748e075a3eca25d9d252c2e24b3a4a6c7d00e58f85902b3a7",
+    "draftSha256": "a60800d9ec305163217c6feda2ebd9b0c20402f9ec76a88490ae2b4257b99eb0",
     "seedAssignmentVersion": 1
   }
 }

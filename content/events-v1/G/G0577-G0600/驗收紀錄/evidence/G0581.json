@@ -15,14 +15,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d8426c152c30cf0f45a9b87647f36e2be5690beebe91412582d7fb8350845764",
+      "checkedAt": "2026-11-27T08:46:53.291Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次不再拍，恢復原課間安排。",
+            "action": "導師已結束本次非必要拍攝徵詢，不擅刪依法須保存資料。",
+            "tradeoff": "笑點沒完成"
+          },
+          {
+            "id": 2,
+            "text": "只詢問本人是否願保留僅含自己的可用片段。",
+            "action": "導師已提出限本人素材的使用評估與意願詢問，未假稱已去識別或獲授權。",
+            "tradeoff": "作品會短，也可能無法乾淨切開"
+          },
+          {
+            "id": 3,
+            "text": "改寫成虛構人物的文字笑話，不重演真人。",
+            "action": "導師已提出非強制的無指認文字創作替代，未收作業或公開原事件。",
+            "tradeoff": "少了影像效果"
+          },
+          {
+            "id": 4,
+            "text": "把道具留作可自願玩的東西，不錄影、不演固定人的糗事。",
+            "action": "導師已在校規允許範圍提出不錄影的自願道具玩法，未取得全班參與同意。",
+            "tradeoff": "沒成片可重看"
+          },
+          {
+            "id": 5,
+            "text": "只給作者私下看構圖的回饋，不把影片當班級節目。",
+            "action": "導師已提供限定私下技術回饋方式，不保證或新增影像使用權。",
+            "tradeoff": "曝光少，也需另留時間"
+          },
+          {
+            "id": 6,
+            "text": "暫停這次非必要分享，讓作者自己決定是否還想創作。",
+            "action": "導師已取消自身當次額外成片分享邀請，未要求作者繼續或撤去正常支持。",
+            "tradeoff": "興致可能淡掉"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "冷笑話我自己也愛，回去拍個只有小物件的短片，只給自己笑。",
+          "action": "導師已以自有安全物件與本人創作內容製作私人短片，不含他人聲畫、不強迫分享或評論。",
+          "tradeoff": "花自己的材料與空檔，也可能很無聊"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2420394890
+        },
+        "selectedIds": [
+          6,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "e25eee440f86fae05118bb129e00e5eae6f89e8c56b52c9b1e062b8cbb1b2039"
+      },
+      "consequenceDirections": {
+        "A": "樂趣可在現場，沒人必須替作者撐效果。",
+        "B": "教師可有私人口味，不拿學生湊觀眾。",
+        "C": "不需用立刻重拍證明沒生氣，正常課業不受影響。",
+        "D": "可以保留創作，不能用化名繼續影射朋友。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ef66b92399c4067ea2b512dfbda5ef930ff0b36131860c66fb6b6f1e97e6e008",
+    "draftSha256": "d8426c152c30cf0f45a9b87647f36e2be5690beebe91412582d7fb8350845764",
     "seedAssignmentVersion": 1
   }
 }

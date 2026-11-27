@@ -15,14 +15,155 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "415d25f86dc488ef7e3e95d381b02d1cb82dd24f3d67326ec0bf4c64f0a4ed45",
+      "checkedAt": "2026-11-27T08:46:53.290Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "等聲音恢復且條件可行，再邀一次限定短試，不反覆加碼。",
+            "action": "導師已提出受健康條件限制的未來單次短試邀請，未要求當場發聲或假定恢復。",
+            "tradeoff": "結果不一定達個人理想"
+          },
+          {
+            "id": 2,
+            "text": "這次先用文字標停頓，只回饋理解，不要求出聲。",
+            "action": "導師已在自身可調整課內安排無聲文字回饋，未將其冒充完整口說結果。",
+            "tradeoff": "缺少口語證據"
+          },
+          {
+            "id": 3,
+            "text": "問學校有沒有可借的學習輔助工具，不叫他另外買一套。",
+            "action": "導師已向校內既有支持窗口查詢可用語音或文字學習輔助資源，尚未確認可借或要求學生購買；當下健康照顧與合理回饋不等待查詢。",
+            "tradeoff": "需等回覆，也可能沒有適合工具"
+          },
+          {
+            "id": 4,
+            "text": "把個人脫稿目標與本次必要要求分開，額外練習不列完成門檻。",
+            "action": "導師已刪除自身可取消的額外脫稿門檻，明示原核心要求，不放任傷嗓練習。",
+            "tradeoff": "少了漂亮達標感"
+          },
+          {
+            "id": 5,
+            "text": "取消這次非必要公開示範，後續依正常課程照顧。",
+            "action": "導師已撤去自身額外公開示範安排，不減健康或課業支持。",
+            "tradeoff": "少一次表現機會"
+          },
+          {
+            "id": 6,
+            "text": "另約正常工作短談，只選一個可負荷的個人目標。",
+            "action": "導師已發出自願有限目標短談邀請，不作醫療診斷或額外評分。",
+            "tradeoff": "時間另占，也可能不願談"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不服自己老卡一句，私人空檔只錄一遍，卡住也留著不重錄。",
+          "action": "導師已於私人可用時間以自有文本錄本人安全短句一次自存，不強撐聲音、不含學生資料或取代正常教學。",
+          "tradeoff": "成品不漂亮，自己的時間自己花"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1019645319
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "54cc0df4be13593820a6bd211b8d20967807793d2111f4b6fecc3c94797e726b"
+      },
+      "consequenceDirections": {
+        "A": "成就慾可有小起點，不讓教師把每個目標變作業。",
+        "B": "若有適合資源，可在恢復及使用條件確認後自選使用；若沒有，仍保留合理替代，不能因工具欠缺再加量。",
+        "C": "教師能留失手，不能要求學生學會欣賞教師的糗。",
+        "D": "能保留當下可做部分，不能假稱已會脫稿。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通3以是否另有授課者為條件提出評量替代，與本篇導師自主朗讀的權限及其他替代候選不夠清楚；改為具體查詢校內輔助資源，區分已詢問與已取得。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "等聲音恢復且條件可行，再邀一次限定短試，不反覆加碼。",
+                "action": "導師已提出受健康條件限制的未來單次短試邀請，未要求當場發聲或假定恢復。",
+                "tradeoff": "結果不一定達個人理想"
+              },
+              {
+                "id": 2,
+                "text": "這次先用文字標停頓，只回饋理解，不要求出聲。",
+                "action": "導師已在自身可調整課內安排無聲文字回饋，未將其冒充完整口說結果。",
+                "tradeoff": "缺少口語證據"
+              },
+              {
+                "id": 3,
+                "text": "向授課者詢問本次可否採合宜替代，不把自定脫稿當必交。",
+                "action": "導師已提出合理課業替代詢問，未擅改他科標準。",
+                "tradeoff": "要等確認"
+              },
+              {
+                "id": 4,
+                "text": "把個人脫稿目標與本次必要要求分開，額外練習不列完成門檻。",
+                "action": "導師已刪除自身可取消的額外脫稿門檻，明示原核心要求，不放任傷嗓練習。",
+                "tradeoff": "少了漂亮達標感"
+              },
+              {
+                "id": 5,
+                "text": "取消這次非必要公開示範，後續依正常課程照顧。",
+                "action": "導師已撤去自身額外公開示範安排，不減健康或課業支持。",
+                "tradeoff": "少一次表現機會"
+              },
+              {
+                "id": 6,
+                "text": "另約正常工作短談，只選一個可負荷的個人目標。",
+                "action": "導師已發出自願有限目標短談邀請，不作醫療診斷或額外評分。",
+                "tradeoff": "時間另占，也可能不願談"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也不服自己老卡一句，私人空檔只錄一遍，卡住也留著不重錄。",
+              "action": "導師已於私人可用時間以自有文本錄本人安全短句一次自存，不強撐聲音、不含學生資料或取代正常教學。",
+              "tradeoff": "成品不漂亮，自己的時間自己花"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 563625488
+            },
+            "selectedIds": [
+              2,
+              1,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 2,
+              "C": 1,
+              "D": 4
+            },
+            "optionsDigest": "73283299620c94d22086c1e9ac025669a3ffa8b5eaabe5a02ca6faf404ee90d1"
+          },
+          "previousConsequenceDirections": {
+            "A": "教師能留失手，不能要求學生學會欣賞教師的糗。",
+            "B": "能保留當下可做部分，不能假稱已會脫稿。",
+            "C": "可有清楚終點，當下不需傷嗓證明。",
+            "D": "學生可停止為老師猜加量，未來自選仍須健康限度。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3012aad6eb25396cc0f9a04902201580e9e19de3669216097d931a09fd22b2aa",
+    "draftSha256": "415d25f86dc488ef7e3e95d381b02d1cb82dd24f3d67326ec0bf4c64f0a4ed45",
     "seedAssignmentVersion": 1
   }
 }

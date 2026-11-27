@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1c5a556d8fe7c99c9bc8c7ab1ca1b93989df52814e830ecd57c10ebe40dd025a",
+      "checkedAt": "2026-11-27T08:46:53.304Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只試一個容易混淆的變式，回饋限於實際看見處。",
+            "action": "導師已在授課權限內安排有限單題回饋，不以家長在場強迫額外表現。",
+            "tradeoff": "不能一題證明全部"
+          },
+          {
+            "id": 2,
+            "text": "讓家長按原時間走，孩子在正常課內完成再按權限回覆。",
+            "action": "導師已提供不延長家庭停留的正常課內接續安排，不假稱學生已完成。",
+            "tradeoff": "家長看不到當場過程"
+          },
+          {
+            "id": 3,
+            "text": "給家長一份通用短問法，不逐題講全本。",
+            "action": "導師已提供有權使用的短提問資料，未要求家庭打卡或簽整本。",
+            "tradeoff": "資訊較少，也未必解所有問題"
+          },
+          {
+            "id": 4,
+            "text": "若屬他科，向原授課者詢問一個明確問題，不先代答。",
+            "action": "導師已在必要範圍提出授課詢問，未擅改他科要求或給未核答案。",
+            "tradeoff": "需等回覆"
+          },
+          {
+            "id": 5,
+            "text": "讓孩子先選一個不懂的步驟自己說，不立刻加新題。",
+            "action": "導師已提供正常課內的有限自選表述機會，保留必要協助。",
+            "tradeoff": "可能說不出來，進度較慢"
+          },
+          {
+            "id": 6,
+            "text": "在原稿標出幾個具體可回問處，讓孩子之後自己帶來。",
+            "action": "導師已在本人批閱權限內補具體回饋標記，不要求家庭另抄或代完成。",
+            "tradeoff": "教師要重看，也延後部分問答"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再被每個來電牽著走，先回熟同事稍後聯繫，把非急提醒關到原回覆時段。",
+          "action": "導師已向私人非急聯絡者發出有限稍後回覆訊息並設定提醒，原緊急管道與必要親師回應不減省。",
+          "tradeoff": "少了即時掌握，也可能被對方嫌變慢"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3418341071
+        },
+        "selectedIds": [
+          2,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "88b56c092a078d9605b89b7e77daca926fbb9c195a354fca228e73cea1cc8342"
+      },
+      "consequenceDirections": {
+        "A": "照護行程能接上，教師仍須履行回覆。",
+        "B": "學生有可追的地方，不靠整本紅字猜。",
+        "C": "可得到來源清楚的說明，不能保證額外約談一定成。",
+        "D": "親師短談不再不斷被打斷，正式急事仍可接上。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "efcbd565e2f5c8b7b071060eb376a7b24821e2d719e6ab3f1004449d5d71273f",
+    "draftSha256": "1c5a556d8fe7c99c9bc8c7ab1ca1b93989df52814e830ecd57c10ebe40dd025a",
     "seedAssignmentVersion": 1
   }
 }

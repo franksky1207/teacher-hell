@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5461b6e947c32a2aa524cae80ba26c59adc6971452fd6adeaa243fcb46f4d401",
+      "checkedAt": "2026-11-27T08:46:53.305Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按他新做法收下，保持無框放自己的私人畫夾。",
+            "action": "導師已在作者明確同意下私人受贈並以無框畫夾保管，不轉贈或列入校產。",
+            "tradeoff": "得自行保管，也少了掛牆效果"
+          },
+          {
+            "id": 2,
+            "text": "婉拒收畫，讓他自己帶回。",
+            "action": "導師已婉拒本次受贈，未要求另送或交公共收藏。",
+            "tradeoff": "朋友可能失落"
+          },
+          {
+            "id": 3,
+            "text": "不收，若他願意，只聊一次怎麼從鬆框改成無框。",
+            "action": "導師已婉拒轉移物權並提出自願技術交流邀請，尚未取得參與同意。",
+            "tradeoff": "心意可能變得像被問技術"
+          },
+          {
+            "id": 4,
+            "text": "問能否只短借，先約好歸還，不當收下禮物。",
+            "action": "導師已提出依校規可行的有限短借邀請，尚未交付或取得同意。",
+            "tradeoff": "有保管與返還責任"
+          },
+          {
+            "id": 5,
+            "text": "如果他願意，另授一張限私人欣賞的照片，原畫仍帶回。",
+            "action": "導師已徵詢限定影像使用權，尚未拍攝或接受素材。",
+            "tradeoff": "少了實物質感，也要確認新用途"
+          },
+          {
+            "id": 6,
+            "text": "提議各拿一件有權交換的私人小作，雙方願意才換。",
+            "action": "導師已提出合規、無職務交換的自有作品交流邀請，尚未成交或要求回禮。",
+            "tradeoff": "要放下自己的作品，也可能被拒"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是想掛，先自費買個穩當空框，再問他願不願意按這方式給我。",
+          "action": "導師已自費購買安全適用空框並提出經作者同意才成立的受贈方式，尚未收畫、更動原作或轉移給第三人。",
+          "tradeoff": "可能買了框卻沒收成，錢自己花"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1835349323
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "eff55cb0661ba60c1d4c547cb68935f7227b4a5a2c45aa5390c6e244757f9fd6"
+      },
+      "consequenceDirections": {
+        "A": "交換不成不影響原友情，不能成為收禮門檻。",
+        "B": "作者可拒絕新條件，不能以借延成私藏。",
+        "C": "作者可不送，教師不能拿已花錢催同意。",
+        "D": "可看見他的試作，作者也可不想多講。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "06cc52dc3912c6cf260882e07f84f2f984a1f6126c1c2c5ce2767dbb273d41e5",
+    "draftSha256": "5461b6e947c32a2aa524cae80ba26c59adc6971452fd6adeaa243fcb46f4d401",
     "seedAssignmentVersion": 1
   }
 }

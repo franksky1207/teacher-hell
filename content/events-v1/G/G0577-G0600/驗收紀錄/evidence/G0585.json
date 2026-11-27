@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1114afd77142a282189f029bdd10c91f1ebf6702c5ccbab71a3a6c43650f3a8d",
+      "checkedAt": "2026-11-27T08:46:53.294Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先接收已完成紙本，回饋實際做出的部分。",
+            "action": "導師已在本人權限內核收紙本過程稿，未抹掉剩餘目標。",
+            "tradeoff": "仍有未完成處"
+          },
+          {
+            "id": 2,
+            "text": "詢問校內原可用設備是否有適合時段，不要求現在轉抄。",
+            "action": "導師已提出既有設備使用查詢，尚未取得預約或要求使用。",
+            "tradeoff": "需等安排"
+          },
+          {
+            "id": 3,
+            "text": "在我能決定的範圍分段補交，他科則協助詢問。",
+            "action": "導師已調整本人可決定的分段安排，未替其他教師承諾延期。",
+            "tradeoff": "回饋延後"
+          },
+          {
+            "id": 4,
+            "text": "下一次同類自訂作業直接提供紙筆與電子兩條可行路。",
+            "action": "導師已在自身可決定、目標不依媒介的後續作業提供可行選項，不更改他科。",
+            "tradeoff": "教師要準備兩種收件"
+          },
+          {
+            "id": 5,
+            "text": "若本人願意，課內只分享怎麼改手寫，不說家裡為何停電。",
+            "action": "導師已發出限定技術經驗的自願邀請，未取得公開家庭資訊的權利。",
+            "tradeoff": "可能被多問，也可拒絕"
+          },
+          {
+            "id": 6,
+            "text": "提供原可用校內自習空間資訊，讓他選是否需要。",
+            "action": "導師已提供已確認的校內學習空間資訊，不假稱已保留位置。",
+            "tradeoff": "要配合既有時段"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "螢幕我也看膩了，拿紙寫自己的備課筆記，別把電腦當成唯一像樣的東西。",
+          "action": "導師已在自身工作空檔手寫個人備課筆記，安全保管必要資料，不追加學生勞務。",
+          "tradeoff": "自己的速度可能變慢"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3010675527
+        },
+        "selectedIds": [
+          6,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "7efdfb93df029ed24a8dcb288b5d094c03cc1b6a127fbc938dc25c00882a7ce2"
+      },
+      "consequenceDirections": {
+        "A": "可留下實作經驗，不把家庭困難當教材。",
+        "B": "能有安全桌面，不能因此被要求延長留校。",
+        "C": "改法被看見，不等於半份自動算整份。",
+        "D": "教師可換工具，學生不必替教師轉檔。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "215a81aa307071eee7431eafcf8ca48da55d8861ffefc9b626f0e858af5e3deb",
+    "draftSha256": "1114afd77142a282189f029bdd10c91f1ebf6702c5ccbab71a3a6c43650f3a8d",
     "seedAssignmentVersion": 1
   }
 }

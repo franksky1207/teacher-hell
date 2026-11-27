@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0ca36203389cdfd0e2e8f0a0b72a86d9bb12c1d5f52a48df3cdc7fe726022d71",
+      "checkedAt": "2026-11-27T08:46:53.296Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消非必要板面裝飾，今天只留必要工作。",
+            "action": "導師已撤去自身額外板面美化要求，必要安全班務照常。",
+            "tradeoff": "少了漂亮效果"
+          },
+          {
+            "id": 2,
+            "text": "名單的非必要重整由我自己做，不再讓他兜。",
+            "action": "導師已接回自身另加的名單整理，不移交正式出勤或私人資料給學生。",
+            "tradeoff": "用掉教師工作空檔"
+          },
+          {
+            "id": 3,
+            "text": "向管理者詢問小物歸還能否改原正常班務時段，安全保管先做好。",
+            "action": "導師已提出非重件歸還排程詢問，尚未改期限，必要保管持續。",
+            "tradeoff": "可能不獲准"
+          },
+          {
+            "id": 4,
+            "text": "只留他原合宜分工，其他自願份重新徵詢，不默認有人接。",
+            "action": "導師已停止對該生追加額外工作，向可合法參與者徵詢有限意願，不轉嫁必要成人責任。",
+            "tradeoff": "可能沒人願意"
+          },
+          {
+            "id": 5,
+            "text": "取消我自己辦的「有空再多做一件」額外挑戰。",
+            "action": "導師已取消自身非必要加量挑戰，未削減正常學習回饋或責怪參與者。",
+            "tradeoff": "少了熱鬧，也可能有人失去表現機會"
+          },
+          {
+            "id": 6,
+            "text": "小物正常交回即可，不再加學生口頭逐件報數。",
+            "action": "導師已撤去自身額外學生口頭報數環節，必要成人點收與紀錄照常。",
+            "tradeoff": "少一層我覺得方便的即時回報"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我心軟了，寫張小卡只謝他已做好那段，不發什麼「包辦王」獎。",
+          "action": "導師已以自有文字完成有限事實的私人短謝卡，向本人提供且可拒收，不記家庭私事、不交換權益。",
+          "tradeoff": "花自己的時間，也可能讓他更想接下一件"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1889425291
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "1b4ea368d36801a139106a8704d2bcab057d89d2b6001e1eca0d7c399897e9f9"
+      },
+      "consequenceDirections": {
+        "A": "不再用接最多競逐稱讚，必要服務仍有分工。",
+        "B": "成人需按實況減量或接續，不用最熱心者保底。",
+        "C": "教師須明說感謝不續工，不能拿卡片換服務。",
+        "D": "正式點收仍由成人完成，學生不用靠報得齊證明可靠。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0d949e278d50cae005c94ca91503b4f19526a3405ed9570ec80940241e15f06c",
+    "draftSha256": "0ca36203389cdfd0e2e8f0a0b72a86d9bb12c1d5f52a48df3cdc7fe726022d71",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6a022fce27b62562c96061aa945b6ffc30f2f7583320f96b5c259db8b47b1de6",
+      "checkedAt": "2026-11-27T08:46:53.303Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在共用題上補線型與文字圖例，使用同一份清楚版本。",
+            "action": "導師已於本人權限補製具必要線索的共用題，保留原錯判更正。",
+            "tradeoff": "教師需重製"
+          },
+          {
+            "id": 2,
+            "text": "改用條件完整的另一題，不要求補印原圖。",
+            "action": "導師已在授課範圍替換不適合原用途的題目，必要說明照常。",
+            "tradeoff": "少了原題延伸"
+          },
+          {
+            "id": 3,
+            "text": "留兩版作線索辨識練習，不再按原單一答案評。",
+            "action": "導師已提出經授權才成立的雙版本辨識方案，未收稿或公開。",
+            "tradeoff": "占課內時間"
+          },
+          {
+            "id": 4,
+            "text": "提供家長可自行選用的判圖短問法，不要家庭再買印色。",
+            "action": "導師已提供一般自用判圖提問，不交付家長教材品質查核責任。",
+            "tradeoff": "可能只適合部分題型"
+          },
+          {
+            "id": 5,
+            "text": "把我自己的出圖底板加上線型圖例，後續自製題先用這個。",
+            "action": "導師已修改本人自有繪圖底板，不改他人教案或宣稱模板可自動保證正確。",
+            "tradeoff": "多一道備課工作"
+          },
+          {
+            "id": 6,
+            "text": "邀孩子正常工作時段自己說一個判圖步驟，不另請家長印資料。",
+            "action": "導師已發出限定單步回饋邀請，未將未回覆或單次表現判為全懂。",
+            "tradeoff": "要留時間，也可能說不完整"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "這回換我被考，請同事拿一題線索完整的黑白圖，不讓我偷看彩色。",
+          "action": "導師已向適當同事提出私人自測邀請，限可使用無個資題目，尚未獲同意，不替代必要教材核實。",
+          "tradeoff": "自己的面子也可能掛不住，還要用空檔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3239882480
+        },
+        "selectedIds": [
+          1,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "9c7205b7d4a8de85a2b30d16511c886a723127685bb0f7f2203215ea2fd19e9d"
+      },
+      "consequenceDirections": {
+        "A": "學生不再靠彩印猜，仍要教圖例怎麼讀。",
+        "B": "教師可直接看理解，不靠家長材料量判會不會。",
+        "C": "能回到學習目標，不能藉換題抹掉原錯。",
+        "D": "教師可發現自己依賴什麼，不能拿答對當全班適用證明。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f3bbcb44ac37493fdc7feb5a2718f8777ecee6a13358b8cbac58f3cc2e6be8b2",
+    "draftSha256": "6a022fce27b62562c96061aa945b6ffc30f2f7583320f96b5c259db8b47b1de6",
     "seedAssignmentVersion": 1
   }
 }

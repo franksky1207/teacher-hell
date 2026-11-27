@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0a5f12ffb432edec91793cafaa9943c6cfb4d7a6af73d27573cc1d9235a61b43",
+      "checkedAt": "2026-11-27T08:46:53.288Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按原分工各自完成，不等他逐項發令。",
+            "action": "導師已重申各人原合宜分工，接回成人統籌與必要確認。",
+            "tradeoff": "有人需要重新看自己的範圍"
+          },
+          {
+            "id": 2,
+            "text": "取消我自己加的非必要細部美化。",
+            "action": "導師已撤去自身額外美化要求，必要清潔照原安排完成。",
+            "tradeoff": "整齊程度不如預期"
+          },
+          {
+            "id": 3,
+            "text": "我親手接下安全可做的剩餘收桌，不叫他補全組。",
+            "action": "導師已在自身可用工作範圍完成有限安全收桌，未冒險搬重物或代派學生。",
+            "tradeoff": "教師用掉工作空檔"
+          },
+          {
+            "id": 4,
+            "text": "下次不設額外學生總指揮，各組依原清單自行核對。",
+            "action": "導師已取消本人可調整的非必要學生總指揮角色，保留必要成人監督。",
+            "tradeoff": "教師需多看各組"
+          },
+          {
+            "id": 5,
+            "text": "正常班務時間把每人實際剩下的工作說清楚，不比較誰聽誰的。",
+            "action": "導師已安排本人可用班務時段的工作核對，不公開家庭細節或製作排名。",
+            "tradeoff": "需整理而非立刻催"
+          },
+          {
+            "id": 6,
+            "text": "另約他談以後是否還願意帶短示範，不預定他天天指揮。",
+            "action": "導師已發出可拒絕的未來有限分工邀請，尚未取得同意。",
+            "tradeoff": "要另留時間，也可能完全不願"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再用大聲證明我才是老師，收住自己的長訓話，只留必要交代。",
+          "action": "導師已停止自身非必要長篇訓話，保留實際班務與安全資訊，不追加懲罰或延長留校。",
+          "tradeoff": "少了發洩的痛快，也要真的接回統籌"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1435844418
+        },
+        "selectedIds": [
+          5,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "c07456c8b7d1137d3e71553165dbc306fee388fbdc5a482af640a2fc6024ebe5"
+      },
+      "consequenceDirections": {
+        "A": "減量是真少一項，不改成回家補作業。",
+        "B": "工作可接續，帶頭者不再替每人記進度。",
+        "C": "可看出過量處，不能靠件數就判誰偷懶。",
+        "D": "學生不被多留聽道理，必要班務仍得完成。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fb80c56befb1dbf138ca61c8899beda2365b9a5d280818e985ed48aedc32e8da",
+    "draftSha256": "0a5f12ffb432edec91793cafaa9943c6cfb4d7a6af73d27573cc1d9235a61b43",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3e0be68b35c2e5aa256970bc563a37ec73442d12e92736a37895397fa0394eb7",
+      "checkedAt": "2026-11-27T08:46:53.292Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "各人只做一題，教師看關鍵步驟再接新內容。",
+            "action": "導師已於授課範圍安排限定單題回饋，必要個別協助照常。",
+            "tradeoff": "進度放慢"
+          },
+          {
+            "id": 2,
+            "text": "自願匿名交一句最不確定的地方，成人再分辨共同問題。",
+            "action": "導師已提供不含姓名的自願短疑問方式，不將未交視為已懂。",
+            "tradeoff": "看不到每人的完整狀況"
+          },
+          {
+            "id": 3,
+            "text": "先停新增教材，回到已教步驟做有限練習。",
+            "action": "導師已在本人可調整課程中暫停新內容，安排有限原目標練習。",
+            "tradeoff": "新進度延後"
+          },
+          {
+            "id": 4,
+            "text": "讓兩人自願互說一個理由，兩位教師分頭聽。",
+            "action": "導師已在協同分工允許下安排有限互說與成人巡看，不指定學生裁判。",
+            "tradeoff": "現場較分散"
+          },
+          {
+            "id": 5,
+            "text": "把必要重點畫成自有簡圖，請學生指出一個接不上的地方。",
+            "action": "導師已以自製可用簡圖提供同目標回饋方式，不拿學生作品未經同意示範。",
+            "tradeoff": "教師多一段準備"
+          },
+          {
+            "id": 6,
+            "text": "邀同事只接一小段回饋，我完成其他原工作。",
+            "action": "導師已提出協同者有限分工邀請，尚未獲同意，不擅離必要授課。",
+            "tradeoff": "要確認對方餘裕"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "這張之外我也想挑戰一題，私人空檔自己做，不偷看提示。",
+          "action": "導師已於自身可用時間獨立試作另一自有題，不替代課內必要核實或要求同事提示。",
+          "tradeoff": "花自己的時間，也可能卡很久"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1931128654
+        },
+        "selectedIds": [
+          2,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "129e10829eebca78e41c8481477a1e0b4144a3a82c8a93f09646de6c559e4be5"
+      },
+      "consequenceDirections": {
+        "A": "可看出具體缺口，不以一題概括所有目標。",
+        "B": "學生有重接機會，不能因重做就加倍題量。",
+        "C": "共通盲點可浮出，仍需保留個別求助。",
+        "D": "教師可承擔好勝，不把私試當正式教案查核。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3486d8ca33e1b3d259852877c018f3c0fa879c7f7088c8b131495a11a91dfd8a",
+    "draftSha256": "3e0be68b35c2e5aa256970bc563a37ec73442d12e92736a37895397fa0394eb7",
     "seedAssignmentVersion": 1
   }
 }

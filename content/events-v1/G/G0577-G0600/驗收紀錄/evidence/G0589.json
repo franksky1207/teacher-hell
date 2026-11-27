@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e9f272ccd08911bfc834148a4aa25e1aef916cbce423bfda82d353f87368300b",
+      "checkedAt": "2026-11-27T08:46:53.299Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先做不需全到的原任務，團體狀態照實保留。",
+            "action": "導師已在本人班務範圍啟動可獨立完成部分，未把部分開始當全組完成。",
+            "tradeoff": "成果不完整"
+          },
+          {
+            "id": 2,
+            "text": "這組先做原個別工作，不進這輪額外團體活動。",
+            "action": "導師已提供同目標個別替代，必要學習支持照常。",
+            "tradeoff": "少一次合作機會"
+          },
+          {
+            "id": 3,
+            "text": "把活動改為可自由加入的小組短段，不固定湊滿人數。",
+            "action": "導師已於可調整範圍拆分非必要團體活動，保留必要成人確認。",
+            "tradeoff": "要重整材料與流程"
+          },
+          {
+            "id": 4,
+            "text": "我自己做額外活動人數統整，不再讓他兼三項外還跑腿。",
+            "action": "導師已接回本次額外活動統整，未將其作正式出勤或派學生查人。",
+            "tradeoff": "教師工作增加"
+          },
+          {
+            "id": 5,
+            "text": "取消我自己加的非必要成品美化，只留原核心內容。",
+            "action": "導師已撤去自身額外成果美化要求，不影響必要教學。",
+            "tradeoff": "少了漂亮成果"
+          },
+          {
+            "id": 6,
+            "text": "我把材料分成小份，未到者那份先留著，不叫他逐人送。",
+            "action": "導師已在本人可用班務時間分裝安全活動材料並依規保管，未替未到者作出勤或完成判定。",
+            "tradeoff": "教師多做一段準備"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想把自己買的卡先玩懂，私人空檔自己試，不叫他湊一桌陪我。",
+          "action": "導師已於私人可用時間試玩自有活動卡，不占正式課務、不要求學生陪玩或取得評分。",
+          "tradeoff": "用掉自己的時間，也可能玩不起來"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 555385071
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "1dd41b63ac2b37e42423449a949978753698ee43c28568232eeb819c6171f51f"
+      },
+      "consequenceDirections": {
+        "A": "需要者後續能取得，保留材料不等於認定本人到場。",
+        "B": "晚到者可依法接上，不讓原班務生變門禁。",
+        "C": "教師可為好奇試玩，學生不需當私人測試員。",
+        "D": "學生可回原合理份量，正式出勤仍不是這張活動表。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4aa7ca9eaa90127ea97e249934b7eb870f523269a1fa37aa5583fb7a0deb146f",
+    "draftSha256": "e9f272ccd08911bfc834148a4aa25e1aef916cbce423bfda82d353f87368300b",
     "seedAssignmentVersion": 1
   }
 }

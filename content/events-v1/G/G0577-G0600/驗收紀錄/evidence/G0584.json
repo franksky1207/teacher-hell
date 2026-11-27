@@ -15,14 +15,155 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b448267eaeb392f94c56b1cc1fedcfb1526e266790f4292b52397c4dd8aa9a84",
+      "checkedAt": "2026-11-27T08:46:53.294Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天各自回家，不再追問哪條路。",
+            "action": "導師已結束當次非必要同行邀請，不追問私人行程。",
+            "tradeoff": "少了原本短聊"
+          },
+          {
+            "id": 2,
+            "text": "另約雙方有空的私人短聚，不靠車站偶遇。",
+            "action": "導師已發出可拒絕的日後私人邀約，尚未約成。",
+            "tradeoff": "可能很難喬"
+          },
+          {
+            "id": 3,
+            "text": "取消我自己期待的固定同站碰面，不把未出現當失約。",
+            "action": "導師已撤回自身固定私人碰面期待，未替同事宣告新的行程承諾。",
+            "tradeoff": "少一項熟悉日常"
+          },
+          {
+            "id": 4,
+            "text": "問他要不要只傳一小段日常訊息，不現場站著聊。",
+            "action": "導師已發出非急私人短訊邀請，未索取病情或要求即答。",
+            "tradeoff": "少了當面語氣"
+          },
+          {
+            "id": 5,
+            "text": "問他有沒有一本願意借我的書，不追問這陣子為什麼少看。",
+            "action": "導師已向同事提出可拒絕的自願借書請求，尚未取得書籍或同意，不以還書綁固定路線或索取家庭資訊。",
+            "tradeoff": "可能被拒，也多一份自己的保管與歸還責任"
+          },
+          {
+            "id": 6,
+            "text": "問他是否想短借我這本，不需為還書改回原路。",
+            "action": "導師已提出自有適合書籍短借邀請，尚未交付或要求讀後回報。",
+            "tradeoff": "書有借還責任，也可能不想讀"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點怕被他討厭，把那段替自己辯的長訊息刪掉，不送去逼回覆。",
+          "action": "導師已刪除自身未發送的私人辯解草稿，不刪正式已發紀錄或略過必要回應。",
+          "tradeoff": "少了把自己說清楚的痛快，也得承受仍未被原諒"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2379410654
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "fbe476cc091eea1331d2c78134bf948f6431f8d76ae4d2d172e5d83552356774"
+      },
+      "consequenceDirections": {
+        "A": "能有明確新邀請，也不能因親近催答。",
+        "B": "可以另有共同話題，不拿借物換私事。",
+        "C": "可另選輕量聯繫，不把已讀當家事說明。",
+        "D": "教師不再增加對方情緒負擔，必要更正仍已完成。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通5改日聊共同興趣與普通2日後私人短聚的主要行動相近；改為教師向同事借書，與教師出借自有書的普通6亦有不同的物品責任與決定權。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "今天各自回家，不再追問哪條路。",
+                "action": "導師已結束當次非必要同行邀請，不追問私人行程。",
+                "tradeoff": "少了原本短聊"
+              },
+              {
+                "id": 2,
+                "text": "另約雙方有空的私人短聚，不靠車站偶遇。",
+                "action": "導師已發出可拒絕的日後私人邀約，尚未約成。",
+                "tradeoff": "可能很難喬"
+              },
+              {
+                "id": 3,
+                "text": "取消我自己期待的固定同站碰面，不把未出現當失約。",
+                "action": "導師已撤回自身固定私人碰面期待，未替同事宣告新的行程承諾。",
+                "tradeoff": "少一項熟悉日常"
+              },
+              {
+                "id": 4,
+                "text": "問他要不要只傳一小段日常訊息，不現場站著聊。",
+                "action": "導師已發出非急私人短訊邀請，未索取病情或要求即答。",
+                "tradeoff": "少了當面語氣"
+              },
+              {
+                "id": 5,
+                "text": "邀他改天各自有空再聊共同興趣，不以家裡情況作開場。",
+                "action": "導師已提出自願興趣交流邀約，不將沉默視為接受。",
+                "tradeoff": "話題可能接不起來"
+              },
+              {
+                "id": 6,
+                "text": "問他是否想短借我這本，不需為還書改回原路。",
+                "action": "導師已提出自有適合書籍短借邀請，尚未交付或要求讀後回報。",
+                "tradeoff": "書有借還責任，也可能不想讀"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我有點怕被他討厭，把那段替自己辯的長訊息刪掉，不送去逼回覆。",
+              "action": "導師已刪除自身未發送的私人辯解草稿，不刪正式已發紀錄或略過必要回應。",
+              "tradeoff": "少了把自己說清楚的痛快，也得承受仍未被原諒"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3854202198
+            },
+            "selectedIds": [
+              2,
+              3,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": "emotional",
+              "C": 1,
+              "D": 3
+            },
+            "optionsDigest": "50283105adced3ffc37754b80a8daf19c6c80c899b8c33bd33cc5d84be5dd43e"
+          },
+          "previousConsequenceDirections": {
+            "A": "能有明確新邀請，也不能因親近催答。",
+            "B": "教師不再增加對方情緒負擔，必要更正仍已完成。",
+            "C": "朋友可保有未說部分，關心不等於要交代。",
+            "D": "之後可以偶遇，沒有每天守著的義務。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "212b18238e065d4c4bbfd16dfdab61bd05e31bbe13ae22c326e3f1dd47d249ad",
+    "draftSha256": "b448267eaeb392f94c56b1cc1fedcfb1526e266790f4292b52397c4dd8aa9a84",
     "seedAssignmentVersion": 1
   }
 }

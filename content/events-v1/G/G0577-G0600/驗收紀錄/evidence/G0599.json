@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "eb1be2755378a677286bf7ca320e568c1ab6804399335f8c2b5253eec4a15254",
+      "checkedAt": "2026-11-27T08:46:53.307Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留兩種已核實方法，分開標明適用處。",
+            "action": "導師已在本人教學權限內整理可用雙方法與條件，不追加原量。",
+            "tradeoff": "資料較複雜"
+          },
+          {
+            "id": 2,
+            "text": "各人自選一邊作有限練習，教師確認需要的缺口。",
+            "action": "導師已在同目標範圍安排有限自選練習與正常回饋，不省略必要內容。",
+            "tradeoff": "看不到每人兩邊全做"
+          },
+          {
+            "id": 3,
+            "text": "今天只練第一題可靠方法，第二題接後續正常課。",
+            "action": "導師已在本人可調整課程分段處理，未把第二題假稱已學完。",
+            "tradeoff": "進度延後"
+          },
+          {
+            "id": 4,
+            "text": "我用自有另一例示範新法，學生先看不再重做原份。",
+            "action": "導師已以自有可用例子補充新法，保留必要理解回饋，不加原量。",
+            "tradeoff": "教師多備一例"
+          },
+          {
+            "id": 5,
+            "text": "請學生自願寫一句為何第二題不能照套，不比誰寫長。",
+            "action": "導師已提供有限自願理由回饋方式，不新增整篇反省或補做。",
+            "tradeoff": "可能說得不完整"
+          },
+          {
+            "id": 6,
+            "text": "取消我原想辦的非必要統一教具展示，正常課照可用內容走。",
+            "action": "導師已撤回自身非必要教具成果展示提案，不減正確教學或刪必要紀錄。",
+            "tradeoff": "少一次成果曝光"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "萬能我不敢再說，這套卡倒捨不得，自己折個小套收著。",
+          "action": "導師已以自有材料為本人自有非必要教具製作私人收納套，不取學生資料或影響正常教材供給。",
+          "tradeoff": "花自己的空檔，也少了拿來炫耀的用途"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1275811898
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "711471315755864fd936d1c523fbea2fcbd95d6eb94b79adb6d653bda5215312"
+      },
+      "consequenceDirections": {
+        "A": "教師可珍惜私物，不能把收藏又變學生驗證任務。",
+        "B": "可看到差異，不能把教師演完當學生全懂。",
+        "C": "第一個成果可保留，另一方法仍有明確接續。",
+        "D": "能留自主，不以少做一邊判逃避。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d40762842645c66cba42b0a1b9aba12dcf07dfe84720654e301542215b8d66b0",
+    "draftSha256": "eb1be2755378a677286bf7ca320e568c1ab6804399335f8c2b5253eec4a15254",
     "seedAssignmentVersion": 1
   }
 }

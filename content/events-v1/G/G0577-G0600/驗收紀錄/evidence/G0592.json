@@ -16,14 +16,82 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f88deca70f519e1c645b8fb04570d0e61ad64a93c458e0ad1a63a8180e30124a",
+      "checkedAt": "2026-11-27T08:46:53.301Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在完整權利確認後，只評估保留無誤導的製作片頭。",
+            "action": "導師已提出限用途片頭評估與意願詢問，尚未重新公開或取得新授權。",
+            "tradeoff": "成片變短，也可能無法分乾淨"
+          },
+          {
+            "id": 2,
+            "text": "這次不採影片，正常課內只看已確認的文字與實作紀錄。",
+            "action": "導師已取消自身非必要影片展示，改用已核實可用資料，不刪必要證據。",
+            "tradeoff": "少了幽默成片"
+          },
+          {
+            "id": 3,
+            "text": "邀作者在核准條件內自願示範模型實測過什麼。",
+            "action": "導師已提出限安全核定條件的模型示範邀請，尚未同意或安排實測。",
+            "tradeoff": "要留課內時間"
+          },
+          {
+            "id": 4,
+            "text": "我用自有圖說明尺度與載重不能直接放大，不再操作現物。",
+            "action": "導師已在授課範圍以自製可用圖提供尺度說明，不進行人體或不安全試載。",
+            "tradeoff": "少了動手觀察"
+          },
+          {
+            "id": 5,
+            "text": "作者願意的話，另寫一段只談實測條件的作品說明，先只給自己用。",
+            "action": "導師已發出不評罰的有限自願作品說明邀請，未將新稿當必要更正的替代。",
+            "tradeoff": "多一小段整理，也可拒絕"
+          },
+          {
+            "id": 6,
+            "text": "下次正常班務討論影像怎麼讓人誤以為真，不播放這個人的片。",
+            "action": "導師已安排無指認的一般影像判讀延伸，不使用未授權片段。",
+            "tradeoff": "用掉班務時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想搭，回去拿自己的紙做個擺件，承不了就讓它歪著。",
+          "action": "導師已以自有安全紙材製作無承載用途的私人小橋擺件，不作人體試載或公開安全主張。",
+          "tradeoff": "花私人材料與空檔，也可能馬上垮"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3999202611
+        },
+        "selectedIds": [
+          3,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "32b7cc0d28aada892b352253f7993c1a346e40797609d24fc976b190e47d6ebe"
+      },
+      "consequenceDirections": {
+        "A": "教師能玩結構，不把擺件拿來向學生誇承重。",
+        "B": "能保留真正做成的事，不要求再拍片自證。",
+        "C": "可學推論邊界，圖不取代原必要事實更正。",
+        "D": "能看見小尺度限制，不能把示範推向更大荷載。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b8af4528615bad9cdb7ba3303926b8dba18fee353744ef878557c64a6318a75c",
+    "draftSha256": "f88deca70f519e1c645b8fb04570d0e61ad64a93c458e0ad1a63a8180e30124a",
     "seedAssignmentVersion": 1
   }
 }

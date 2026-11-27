@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "caabeae6aac11606c21a17796553b46288c56a92d7d95bf638a0035797542894",
+      "checkedAt": "2026-11-27T08:46:53.289Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "原一次已足夠，不再追加家庭訪談作業。",
+            "action": "導師已取消自身非必要追加家訪要求，核收原已完成部分，不以拒訪扣分。",
+            "tradeoff": "少了第二回素材"
+          },
+          {
+            "id": 2,
+            "text": "向校內有意願成人徵詢一次限定主題短訪。",
+            "action": "導師已發出正常工作時段的有限受訪邀請，尚未約成。",
+            "tradeoff": "需配合時間，也可能沒人願意"
+          },
+          {
+            "id": 3,
+            "text": "使用已有授權的口述資料，不另請誰錄新檔。",
+            "action": "導師已在授課範圍改用既有可用口述素材，不錄家庭或新增製作。",
+            "tradeoff": "少了即時追問"
+          },
+          {
+            "id": 4,
+            "text": "若作者願意，從原已交稿自選一處試寫新的追問，不必真的問家人。",
+            "action": "導師已提出非強制的原稿追問練習，拒絕不影響原完成認定。",
+            "tradeoff": "多一小段自願嘗試，也可不做"
+          },
+          {
+            "id": 5,
+            "text": "改在課內扮虛構角色練問，不以真家人作教材。",
+            "action": "導師已在授課權限內安排無指認角色練習，未要求分享私事。",
+            "tradeoff": "真實生活感較少"
+          },
+          {
+            "id": 6,
+            "text": "另約家長工作時段說明以後怎樣聯繫才不打進居家工作。",
+            "action": "導師已發出限定未來聯繫安排的自願邀約，尚未約成，不取代本次必要補正。",
+            "tradeoff": "要再配時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想少跑一趟，自己的訪談示範另錄，不再借人家客廳。",
+          "action": "導師已以本人聲音與自有無他人私事的內容製作短訪談示例，不錄住家或冒稱真實他人訪談。",
+          "tradeoff": "花我的準備時間，也不能用別人家故事省事"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3697970995
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "ad7b61fc7bfad334aa21c8b7d466b0f39947d7e58335c72c3f1dac98e122a064"
+      },
+      "consequenceDirections": {
+        "A": "可延伸技巧，不把老師越界變學生補件義務。",
+        "B": "可有明確界線，不保證所有非急訊息即時回。",
+        "C": "可練提問，不能把家長不接待轉成同事義務。",
+        "D": "教師能提供自製例子，學生不需替導師補素材。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a8e5769e410c3dca775fff4d32de9a741d4fc86077bddf9a92df2a2be297a98a",
+    "draftSha256": "caabeae6aac11606c21a17796553b46288c56a92d7d95bf638a0035797542894",
     "seedAssignmentVersion": 1
   }
 }

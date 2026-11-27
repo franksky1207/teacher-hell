@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "80e9c0dbfe7a8ddc2fb79835a6523b2f990ba3994344b00ee12ef831ac2bbdf9",
+      "checkedAt": "2026-11-27T08:46:53.300Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只留原規定允許的一小桌自願練習，由他帶一次，我提供有限協助。",
+            "action": "導師已在原合法空檔徵詢並限定本次自願小桌練習，不強迫出席或發言。",
+            "tradeoff": "午間空檔會少一點"
+          },
+          {
+            "id": 2,
+            "text": "口語回正常課內，午餐各自安排。",
+            "action": "導師已取消自身額外午間口語徵詢，於授課權限內安排正常接續。",
+            "tradeoff": "失去放鬆開口的場景"
+          },
+          {
+            "id": 3,
+            "text": "若大家願意，只共同吃飯，不設任何口語任務。",
+            "action": "導師已提出不含教學任務的自願合餐建議，未代訂餐、收費或記參與名單。",
+            "tradeoff": "看不到練習成果"
+          },
+          {
+            "id": 4,
+            "text": "不以班級班務名義擴大飯局，私人合法邀請仍由各人選。",
+            "action": "導師已婉拒未成立的額外班級餐敘提案，不禁止依規自願小聚。",
+            "tradeoff": "少了整班熱鬧"
+          },
+          {
+            "id": 5,
+            "text": "若本人願意，只協助桌位聯絡，有限引導我自己做。",
+            "action": "導師已提出有限自願分工邀請，未取得學生協助或全桌參與同意。",
+            "tradeoff": "教師用掉空檔，學生少一次帶領機會"
+          },
+          {
+            "id": 6,
+            "text": "提供不涉私事的通用話題卡，不設固定引導人。",
+            "action": "導師已提供自製可用短話題卡供自願者使用，不取個資或增加必交工作。",
+            "tradeoff": "可能沒人接話"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我先去買惦記的那個點心，不把每個午間空檔都拿來指導。",
+          "action": "導師已在自身可休息且必要職務妥善接續時自費購食，不擅離照看或要學生代買。",
+          "tradeoff": "花自己的錢，也會錯過這次聊天"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4279013708
+        },
+        "selectedIds": [
+          1,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "02ae6212958e34593bbf36041cd670a44eb43405aef8165526482103a1ede166"
+      },
+      "consequenceDirections": {
+        "A": "工作能分清，不讓引導變替同儕表意。",
+        "B": "材料可用也可不用，教師不要求報成果。",
+        "C": "教師可保留私人喜好，學生不需等教師一句稱讚才開始合法活動。",
+        "D": "參與者可隨時停，不能變成每天固定責任。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "329aeb02e2dd3ad9f41853001abd0d7029ece2f057a808ab2db679071df88348",
+    "draftSha256": "80e9c0dbfe7a8ddc2fb79835a6523b2f990ba3994344b00ee12ef831ac2bbdf9",
     "seedAssignmentVersion": 1
   }
 }

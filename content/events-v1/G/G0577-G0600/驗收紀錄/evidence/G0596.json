@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b1673838eecce8af2ea269fdd6aa6ac18877e8cd3dde8d272884efc7d34d9c6f",
+      "checkedAt": "2026-11-27T08:46:53.304Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "留下具體待辦，不列個人做了多少的排名。",
+            "action": "導師已將本人可決定的班務表限縮為實際待辦交接，必要正式紀錄另保留。",
+            "tradeoff": "看不到完整個人功勞"
+          },
+          {
+            "id": 2,
+            "text": "讓各組只認自己確實能做的安全小段，空缺由成人安排。",
+            "action": "導師已提出限量自願認領並接回未定部分的成人統籌，不把沉默視為承諾。",
+            "tradeoff": "可能沒人認某段"
+          },
+          {
+            "id": 3,
+            "text": "學生只協助實際物品點數，不再統計每人出力。",
+            "action": "導師已限縮學生額外統整為安全合宜的物品協助，保留必要成人核實。",
+            "tradeoff": "少一份人力比較資料"
+          },
+          {
+            "id": 4,
+            "text": "我接一段安全收桌，他保留原合宜點物工作。",
+            "action": "導師已在自身可用工作範圍完成有限安全收桌，不代派重件或讓學生負正式帳務。",
+            "tradeoff": "教師多花時間"
+          },
+          {
+            "id": 5,
+            "text": "問扶牌的人是否願意說自己為什麼先扶，不替他寫成功勞。",
+            "action": "導師已發出可拒絕、限親見小動作的短詢問，不要求公開私事或作道德示範。",
+            "tradeoff": "可能被覺得小題大作，也可不回答"
+          },
+          {
+            "id": 6,
+            "text": "下次原輪值讓大家熟悉另一個小工作，不固定一人兼所有統整。",
+            "action": "導師已在可調整原分工內規劃安全小項輪替，不增加額外時數。",
+            "tradeoff": "初次會慢些"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看不下去只記誰多做，先私下謝那個扶牌的人，不開誰最辛苦的票選。",
+          "action": "導師已向確實完成安全小協助者私下致謝，不頒正式排名、交換權益或追加其工作。",
+          "tradeoff": "原記錄者可能覺得自己的努力被忽略"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 541314295
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "0156f84b0413e57503a71b5518e93ed3efb8e08e6ab5441c1fd94d4bd181d227"
+      },
+      "consequenceDirections": {
+        "A": "角色較小，正式保管責任仍不交學生代簽。",
+        "B": "可以聽見不同做事理由，不用人人先領一個名次。",
+        "C": "教師的感謝也會被比較，不能用一句謝謝取代公平分工。",
+        "D": "工作可被接續，不把未記到的人當沒做。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "52704b15028534f19972b58e5d6f947ea529162858ac176f47ad096ccb0fb3d9",
+    "draftSha256": "b1673838eecce8af2ea269fdd6aa6ac18877e8cd3dde8d272884efc7d34d9c6f",
     "seedAssignmentVersion": 1
   }
 }

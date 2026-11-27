@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dd93a33b7998a9ee72c4084c94b8ee916c023933f6180299b0bf17badf80bbda",
+      "checkedAt": "2026-11-27T08:46:53.299Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只接受本次已授權的有限支援，不替未來答應。",
+            "action": "導師已確認並接受同事本次有限合法支援，未作續排承諾。",
+            "tradeoff": "後續仍要另排"
+          },
+          {
+            "id": 2,
+            "text": "不再提出本次以外的新加碼，正式需求由課務另評。",
+            "action": "導師已撤回自身未成立額外加量建議，未拒絕合法正式課務。",
+            "tradeoff": "少了想擴大的成果"
+          },
+          {
+            "id": 3,
+            "text": "請主管檢視整體負荷與優先次序，不只換一科給他。",
+            "action": "導師已提出非必要重複負荷的檢視需求，尚未取得調課核准。",
+            "tradeoff": "需工作資料，也未必減得成"
+          },
+          {
+            "id": 4,
+            "text": "我提出自己有資格的一個短段支援，先由課務確認。",
+            "action": "導師已提出符合本人授課資格的有限自願支援，尚未獲排班核准。",
+            "tradeoff": "自己的準備時間減少"
+          },
+          {
+            "id": 5,
+            "text": "只分享我已有權使用的教材，不另承諾人到場。",
+            "action": "導師已提供無學生個資的自製可用教材，明示非額外出席承諾。",
+            "tradeoff": "材料未必完全符合需要"
+          },
+          {
+            "id": 6,
+            "text": "取消我原想發起的非必要常態補救系列，正常支持另依制度。",
+            "action": "導師已撤回自身未成正式課務的非必要系列提案，不中止既有學生權益。",
+            "tradeoff": "少一項長期計畫"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "漂亮版我今天不做了，自己那份講義用已能教的版本，不拼熬夜。",
+          "action": "導師已停止自身非必要美編，保留已確認正確可用的教材，不以此省略必要備課。",
+          "tradeoff": "少了得意版面，也得接受不夠精美"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4111797169
+        },
+        "selectedIds": [
+          3,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "2f84adedbd5e22ab033cb7356749ef8bca6696f5f26e573ea2c5b676fad33083"
+      },
+      "consequenceDirections": {
+        "A": "當日可接上，不把一次熱心變常態。",
+        "B": "可看到真正取捨，不能以看似喜歡那科掩量。",
+        "C": "不再拿固定系列壓私人生活，必要校務仍須接續。",
+        "D": "同事不用再幫教師補漂亮成品，教材正確與可用仍須確保。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "56cee6eea5b46c4159c8203fb174fabb770d91ac0e99ba031b3c044ca139435e",
+    "draftSha256": "dd93a33b7998a9ee72c4084c94b8ee916c023933f6180299b0bf17badf80bbda",
     "seedAssignmentVersion": 1
   }
 }

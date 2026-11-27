@@ -15,14 +15,155 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a715eb64f424d303690e318da6f1a2ef5a16e702de32865b83237c46dacddfb6",
+      "checkedAt": "2026-11-27T19:07:48.399Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀孩子自願談感受，不替家長推計畫。",
+            "action": "提出一次有限個別傾聽邀約，明確不以答應訓練為目標。",
+            "tradeoff": "教師增加時間，家長可能覺得沒幫勸。"
+          },
+          {
+            "id": 2,
+            "text": "婉拒額外介入，請家長先留幾天空間。",
+            "action": "不代約子女或安排訓練，建議親子自主對話。",
+            "tradeoff": "家長可能失落冷淡，教師保留時間。"
+          },
+          {
+            "id": 3,
+            "text": "邀親子一起談，讓孩子自己決定要不要出席。",
+            "action": "提出正常聯絡時段的自願親師生會談，不將拒練當問題待治。",
+            "tradeoff": "教師增加協調，孩子可能拒絕。"
+          },
+          {
+            "id": 4,
+            "text": "請家長自願說清楚他最怕孩子放掉什麼，我先只聽他。",
+            "action": "提出個別家長會談，區分成人期待與學生既定意願。",
+            "tradeoff": "教師承擔傾聽時間，未提供訓練解方。"
+          },
+          {
+            "id": 5,
+            "text": "問家長是否願用一段不談練習的親子時間取代排程，我只提供討論協助。",
+            "action": "提出自願親子互動建議，不代定行程、不保證孩子接受。",
+            "tradeoff": "家長須放下成果期待，教師花一次回談時間。"
+          },
+          {
+            "id": 6,
+            "text": "在必要支持外，徵詢親子是否想找合適校內人員協助對話。",
+            "action": "提出自願專業溝通資源需求，先取得各自同意，不默認轉介成立。",
+            "tradeoff": "增加教師聯絡與親子可能被標籤的顧慮。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再拿交情勸孩子，邀家長把真正想說的寫下來，我幫他看看是不是又變成新訓練條件。",
+          "action": "提出由家長自願撰寫給孩子的支持訊息、教師協助檢視是否仍夾帶逼迫承諾的邀約，由家長自行決定是否轉交，孩子可不讀；不替家長編造已接受休息的心情。",
+          "tradeoff": "教師增加文字討論時間，家長可能不喜被指出仍在施壓，也不保證親子因此緩和。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4212678533
+        },
+        "selectedIds": [
+          4,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "7820343f9b4db7c7dd39f47c4a4b0b6338221a66e3236bd5a9cda841c8a40c6f"
+      },
+      "consequenceDirections": {
+        "A": "親近與生活安穩能否容納無訓練目標的週末可發展。",
+        "B": "好勝與協商彈性能否承認自己的不甘可發展。",
+        "C": "親近與好勝能否從減量加練改為真實表達不甘與支持，協商彈性可發展。",
+        "D": "親近與好勝能否容納非說服式協助可發展。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒與普通2同為不介入與不代說服，改為具體支持訊息的自願協作。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "邀孩子自願談感受，不替家長推計畫。",
+                "action": "提出一次有限個別傾聽邀約，明確不以答應訓練為目標。",
+                "tradeoff": "教師增加時間，家長可能覺得沒幫勸。"
+              },
+              {
+                "id": 2,
+                "text": "婉拒額外介入，請家長先留幾天空間。",
+                "action": "不代約子女或安排訓練，建議親子自主對話。",
+                "tradeoff": "家長可能失落冷淡，教師保留時間。"
+              },
+              {
+                "id": 3,
+                "text": "邀親子一起談，讓孩子自己決定要不要出席。",
+                "action": "提出正常聯絡時段的自願親師生會談，不將拒練當問題待治。",
+                "tradeoff": "教師增加協調，孩子可能拒絕。"
+              },
+              {
+                "id": 4,
+                "text": "請家長自願說清楚他最怕孩子放掉什麼，我先只聽他。",
+                "action": "提出個別家長會談，區分成人期待與學生既定意願。",
+                "tradeoff": "教師承擔傾聽時間，未提供訓練解方。"
+              },
+              {
+                "id": 5,
+                "text": "問家長是否願用一段不談練習的親子時間取代排程，我只提供討論協助。",
+                "action": "提出自願親子互動建議，不代定行程、不保證孩子接受。",
+                "tradeoff": "家長須放下成果期待，教師花一次回談時間。"
+              },
+              {
+                "id": 6,
+                "text": "在必要支持外，徵詢親子是否想找合適校內人員協助對話。",
+                "action": "提出自願專業溝通資源需求，先取得各自同意，不默認轉介成立。",
+                "tradeoff": "增加教師聯絡與親子可能被標籤的顧慮。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也不想把這份交情用來勸孩子，直接向家長說明我不當備戰計畫的中間人。",
+              "action": "明確婉拒代傳與追問訓練意願，提出由教師只就正常學校生活提供必要聯絡的範圍。",
+              "tradeoff": "家長可能覺得私交被收回，教師承擔關係代價但不增加家庭協調工作。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2443386678
+            },
+            "selectedIds": [
+              3,
+              4,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 4,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "35bb39525d85323919a3980f170a7a9cf7d33a0dc67029acc9be5336b74beac7"
+          },
+          "previousConsequenceDirections": {
+            "A": "親近與生活安穩能否容納無訓練目標的週末可發展。",
+            "B": "好勝與協商彈性能否承認自己的不甘可發展。",
+            "C": "親近家長能否在教師面前聽見真實意願可發展。",
+            "D": "對導師親近與好勝期待是否能接受角色收縮可發展，與暫不介入不同在明確不承接後續訓練傳話。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ebd1de08cbebef3b169120b816dc8bc2eec8ebd6c4c81928436357474567bdc7",
+    "draftSha256": "a715eb64f424d303690e318da6f1a2ef5a16e702de32865b83237c46dacddfb6",
     "seedAssignmentVersion": 1
   }
 }

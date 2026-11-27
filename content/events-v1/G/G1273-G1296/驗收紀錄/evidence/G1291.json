@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "26155137133d0348a319ea50a1ba071b32ed5fb7cb5465c492e7be1b1c7f6427",
+      "checkedAt": "2026-11-27T19:07:48.422Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我提出合法借球申請，保管分工先談清楚。",
+            "action": "查詢備球並依規申請，先確認借還責任，不預設取得。",
+            "tradeoff": "教師增加簽借與管理時間，庫存可能不足。"
+          },
+          {
+            "id": 2,
+            "text": "只支持安全整理，不接額外借球。",
+            "action": "提出教師核可範圍內的自願分類打氣安排，必要維修另走權責。",
+            "tradeoff": "學生仍可能暫時無球，教師需監督安全。"
+          },
+          {
+            "id": 3,
+            "text": "邀器材人員帶一次安全保養，修補角先別自行開張。",
+            "action": "提出合格人員自願教學需求，未成行前不進行不熟維修。",
+            "tradeoff": "教師增加聯絡與陪同，對方可能沒時間。"
+          },
+          {
+            "id": 4,
+            "text": "由他們自願直接提出借用需求，我陪一次說明。",
+            "action": "提出教師陪同學生向正式器材窗口詢問的安排，不代主管保證核准。",
+            "tradeoff": "教師犧牲課間，學生需自己面對規則。"
+          },
+          {
+            "id": 5,
+            "text": "我向校方詢問可否調度合格替代器材，不只等同一批補貨。",
+            "action": "提出資源調配需求，不挪用他班已保有使用權器材。",
+            "tradeoff": "教師多花跨單位聯絡，可能無替代。"
+          },
+          {
+            "id": 6,
+            "text": "本次不建立班內站，讓他們參與既有合法保養活動資訊。",
+            "action": "婉拒新增教室修補管理，提供真實可查的校內自願參與管道，不保證有名額。",
+            "tradeoff": "少了自治空間，教師節省長期管理。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想快點有球打，願把自己的合格備球短借給班上，先談好怎麼還。",
+          "action": "在校規允許與實際安全確認後，提出教師本人已持有之私人備球短期自願借用安排，公平分工保管，不要求學生對無責損失無限賠償。",
+          "tradeoff": "教師承擔私人球具耗損與借還管理，學生可能期待延借；尚未談妥不稱已出借。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3703451943
+        },
+        "selectedIds": [
+          4,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "d5da26a3ef6b0c40f052b44e901f53fc0c02329873b65740bbe871f277a71971"
+      },
+      "consequenceDirections": {
+        "A": "協商彈性是否接受部分採納可發展。",
+        "B": "質問轉向合作的意願可發展。",
+        "C": "自願出力能否接受技術界線可發展。",
+        "D": "學生號召與出力能否接住不同於學校公物借用的真實資源責任，協商彈性可發展。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒親自陪安全整理與普通2必要教師安全監督重疊，改為教師自有備球的私人借用邀約。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我提出合法借球申請，保管分工先談清楚。",
+                "action": "查詢備球並依規申請，先確認借還責任，不預設取得。",
+                "tradeoff": "教師增加簽借與管理時間，庫存可能不足。"
+              },
+              {
+                "id": 2,
+                "text": "只支持安全整理，不接額外借球。",
+                "action": "提出教師核可範圍內的自願分類打氣安排，必要維修另走權責。",
+                "tradeoff": "學生仍可能暫時無球，教師需監督安全。"
+              },
+              {
+                "id": 3,
+                "text": "邀器材人員帶一次安全保養，修補角先別自行開張。",
+                "action": "提出合格人員自願教學需求，未成行前不進行不熟維修。",
+                "tradeoff": "教師增加聯絡與陪同，對方可能沒時間。"
+              },
+              {
+                "id": 4,
+                "text": "由他們自願直接提出借用需求，我陪一次說明。",
+                "action": "提出教師陪同學生向正式器材窗口詢問的安排，不代主管保證核准。",
+                "tradeoff": "教師犧牲課間，學生需自己面對規則。"
+              },
+              {
+                "id": 5,
+                "text": "我向校方詢問可否調度合格替代器材，不只等同一批補貨。",
+                "action": "提出資源調配需求，不挪用他班已保有使用權器材。",
+                "tradeoff": "教師多花跨單位聯絡，可能無替代。"
+              },
+              {
+                "id": 6,
+                "text": "本次不建立班內站，讓他們參與既有合法保養活動資訊。",
+                "action": "婉拒新增教室修補管理，提供真實可查的校內自願參與管道，不保證有名額。",
+                "tradeoff": "少了自治空間，教師節省長期管理。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也想快點有球打，願多留一段課間陪他們整理，借球另外依法問。",
+              "action": "提出教師於可調課間親自陪同安全分類及允許打氣的自願安排，不承諾借球必成。",
+              "tradeoff": "教師少了休息，學生可能期待教師固定在場。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 997260411
+            },
+            "selectedIds": [
+              5,
+              1,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": 2,
+              "C": 5,
+              "D": "emotional"
+            },
+            "optionsDigest": "64e4dcf21ecbba986c6d8e4ac3f337cb73ac3c2f3253037ab03ea6e07183fce5"
+          },
+          "previousConsequenceDirections": {
+            "A": "號召與人力投入能否接上真實責任可發展。",
+            "B": "協商彈性是否接受部分採納可發展。",
+            "C": "群體期待是否接受不同器材與等待可發展。",
+            "D": "共同動手能否保留彈性與投入而不忽略正式借用限制可發展。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2c42144e74aefab83578bac6863998f6e57faa794c166f7ce0a6454fc76f6414",
+    "draftSha256": "26155137133d0348a319ea50a1ba071b32ed5fb7cb5465c492e7be1b1c7f6427",
     "seedAssignmentVersion": 1
   }
 }

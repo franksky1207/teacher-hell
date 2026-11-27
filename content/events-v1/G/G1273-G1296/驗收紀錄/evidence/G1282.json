@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9eb1504367c5de169ce173bc32433e7fde5d31a107cc6463acb09fd3354d3c16",
+      "checkedAt": "2026-11-27T19:07:48.402Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "結果維持，另花一段班會談秘密投票保護什麼。",
+            "action": "安排額外原則討論，不追查個別選擇。",
+            "tradeoff": "占用班會時間，學生可能覺得說教。"
+          },
+          {
+            "id": 2,
+            "text": "提議下次先有等量方案說明，再維持匿名投票。",
+            "action": "提出公平發言時間及資訊整理的程序協商，不預設通過。",
+            "tradeoff": "教師增加主持，可能仍有人改票。"
+          },
+          {
+            "id": 3,
+            "text": "邀自願者公開講理由，但選票繼續保密。",
+            "action": "提出理由分享與保密選票分開的方案，不強制任何人發言。",
+            "tradeoff": "教師須控場，強勢者仍可能多說。"
+          },
+          {
+            "id": 4,
+            "text": "請另一位有權教師協助一回程序說明，我仍承擔班務責任。",
+            "action": "提出合法協作需求，不把學生交給外部裁決。",
+            "tradeoff": "增加聯絡時間，對方不保證有空。"
+          },
+          {
+            "id": 5,
+            "text": "邀他提出一份兼顧少數不受壓的方案，我另留時間討論。",
+            "action": "提供自願程序提案機會，未審議前維持現行合法制度。",
+            "tradeoff": "教師增加審閱，學生可能嫌不是立刻改。"
+          },
+          {
+            "id": 6,
+            "text": "這次不加開程序課，先恢復議程，下次正式列案再談。",
+            "action": "婉拒即時改制與額外延長，承諾將合法程序建議列入下次可用議程。",
+            "tradeoff": "學生需等待，教師需後續準備。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不服氣公正被說成只看結果，邀他和我各替相反立場說一次理由。",
+          "action": "提出自願角色互換的程序論證練習，教師也為公開理由可能的好處作論述，選票與結果不因此改動。",
+          "tradeoff": "占用可調班會時間，學生可拒絕，教師承擔被挑錯。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 900346602
+        },
+        "selectedIds": [
+          6,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "07a5c587a5f61f1db4982941df7c3dba6691330f8d3d319eafef2425bf5fc984"
+      },
+      "consequenceDirections": {
+        "A": "對導師專業質疑與程序變更期待可發展。",
+        "B": "對導師公正的認可是否容納暫不改制可發展。",
+        "C": "衝動與反從眾能否經雙向論證調整程序要求可發展，不把練習當民主正確答案考試。",
+        "D": "不從眾者能否尊重不願表態者可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b33433563e205c64d80a3b90f09f9e8c7628c8345365bd7e376f59d9d5316f1e",
+    "draftSha256": "9eb1504367c5de169ce173bc32433e7fde5d31a107cc6463acb09fd3354d3c16",
     "seedAssignmentVersion": 1
   }
 }

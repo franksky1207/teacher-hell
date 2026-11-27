@@ -16,14 +16,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0de2106b83395df7bfbafc4763e4f3e8c7aeaf548170be0508c559e86c5f6e9f",
+      "checkedAt": "2026-11-27T19:07:48.404Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我接一次入班申請，先做需求與內容核對。",
+            "action": "提出協助本次送審的承諾，依法先確認學生需求及材料，不保證核准。",
+            "tradeoff": "教師增加審閱聯絡，可能最終未成。"
+          },
+          {
+            "id": 2,
+            "text": "提供統一職涯人才庫管道，不接單班安排。",
+            "action": "婉拒教師額外代辦，請家長依既有合法人才庫自願登記。",
+            "tradeoff": "家長需自行處理且不保證被邀。"
+          },
+          {
+            "id": 3,
+            "text": "先徵詢學生想聽什麼，讓家長按需求再提。",
+            "action": "安排額外自願需求蒐集，未定前不送特定講者入班。",
+            "tradeoff": "教師增加整理，家長可能要重做。"
+          },
+          {
+            "id": 4,
+            "text": "邀家長與輔導窗口直接談，我陪一次但不包辦。",
+            "action": "提出一次共同對接需求，家長自行提供資料，核准依權責。",
+            "tradeoff": "教師花陪同時間，對方可能無空檔。"
+          },
+          {
+            "id": 5,
+            "text": "建議先送公開書面職涯經驗，審過再供全班自願閱讀。",
+            "action": "提出非入班的合法素材審閱方案，不任意公開講者資料。",
+            "tradeoff": "教師增加閱讀核對，少了真人交流。"
+          },
+          {
+            "id": 6,
+            "text": "本期不新增講座，我願提供下期正式提案資訊。",
+            "action": "婉拒本期額外安排，提供可查真實提案管道，不保證下期有名額。",
+            "tradeoff": "家長熱情須等待，教師少了當期準備。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想聽，但不想因為一份人情改掉整節，提議跟既有合宜課程共同送審。",
+          "action": "提出由相關有權教師共同評估能否將分享納入既有課程的需求，導師願多花協調，不先占班會。",
+          "tradeoff": "增加跨教師聯絡且可能沒有合適課程，講者未必願調整。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1602768939
+        },
+        "selectedIds": [
+          2,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "1b2453e4bf365003f69b6b92f0a54fa45a7d8278cef76c8d9757853e81804fe6"
+      },
+      "consequenceDirections": {
+        "A": "人脈資源是否能接受替代形式可發展。",
+        "B": "充裕資源與時間的熱情是否接受統一程序可發展。",
+        "C": "穩定資源與信任能否容納不即刻採用可發展。",
+        "D": "家長的協商彈性能否接受未定跨課合作可發展，不能預設已合併安排。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3e57aa867e529615c00c1d0b981979f0161a849a0ddb2a824813cff771486cf8",
+    "draftSha256": "0de2106b83395df7bfbafc4763e4f3e8c7aeaf548170be0508c559e86c5f6e9f",
     "seedAssignmentVersion": 1
   }
 }

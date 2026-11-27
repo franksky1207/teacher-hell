@@ -15,14 +15,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5428e82659c4e81c8383460700c7bc7b8238c9462877ca31c537939a4f0cfa23",
+      "checkedAt": "2026-11-27T19:07:48.417Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次不再使用家長版總表，只保留正式公告。",
+            "action": "婉拒導師額外維護與背書，請家長依合法權限停用錯誤公開版本。",
+            "tradeoff": "家長可能覺得技術心意被拒，教師少一份更新負擔。"
+          },
+          {
+            "id": 2,
+            "text": "若他願意，只留正式來源索引，不再重抄日期。",
+            "action": "提出改成合法連結索引的協作方案，須確認權限與資料適切。",
+            "tradeoff": "教師仍花檢視時間，失去一頁看完的便利。"
+          },
+          {
+            "id": 3,
+            "text": "我另約一次版本協調，讓他自己判斷是否還想維護。",
+            "action": "提出成人間明確分工會談，不承諾每次公告都私訊提醒。",
+            "tradeoff": "教師花會談時間，家長可能選擇放棄。"
+          },
+          {
+            "id": 4,
+            "text": "請資訊窗口評估有無既有合法公告整合方式。",
+            "action": "提出正式需求查詢，不自行架設第二官方系統。",
+            "tradeoff": "教師增加聯絡，可能無可用工具。"
+          },
+          {
+            "id": 5,
+            "text": "邀他向群組自願說明個人版的限制，我協助核對字句。",
+            "action": "提出協作說明邀約，必要更正不以家長願發文為前提。",
+            "tradeoff": "教師花潤稿時間，家長須面對失誤。"
+          },
+          {
+            "id": 6,
+            "text": "我提供一次最新正式來源對照，但不接後續固定校稿。",
+            "action": "承諾額外比對本次合法公開內容，明確未來不為個人表持續驗證。",
+            "tradeoff": "教師增加一次檢視，家長可能期待長期服務。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想少翻訊息，願向校方提一個正式來源整合需求，不把他當免費維護員。",
+          "action": "提出教師具名的校內公告易查需求，徵詢家長是否自願提供一般使用回饋，不交付個資或承諾採其工具。",
+          "tradeoff": "教師增加行政協調，家長可能覺得成品被取代，未保證系統改變。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2350922416
+        },
+        "selectedIds": [
+          4,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "3621ab8863ce3946a8c89367c537d946d38276c37d36aa6899cf4fe33c184b8d"
+      },
+      "consequenceDirections": {
+        "A": "資源與數位能力能否轉為不超過本人負荷的協作可發展。",
+        "B": "疲勞與工具執行能否接受有限協作可發展。",
+        "C": "數位熟手是否願接受非個人主導方案可發展。",
+        "D": "寬裕資源與實際疲勞能否容納維護成本可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8bc11013444b3cb01ecfe795ed0dcd118f22c26918ef56fe699c80a2cb82aad7",
+    "draftSha256": "5428e82659c4e81c8383460700c7bc7b8238c9462877ca31c537939a4f0cfa23",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9f5dbb88c7799a4f6e40c043e74683099c3911bc46833780d034b26860e0ce00",
+      "checkedAt": "2026-11-27T19:07:48.428Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "核對公開展訊後轉給親子，自行前往由家庭決定。",
+            "action": "提供合法公開資訊及限制，不以班級名義私辦同行。",
+            "tradeoff": "教師花簡短核對，沒有現場教學成果。"
+          },
+          {
+            "id": 2,
+            "text": "詢問本週是否仍來得及依法送審，來不及就不辦學生參訪。",
+            "action": "提出真實流程與館方時段查詢，不走特批捷徑或承諾成功。",
+            "tradeoff": "教師增加聯絡，極可能無法完成所有程序。"
+          },
+          {
+            "id": 3,
+            "text": "向館方查詢可合法使用的數位導覽，考慮留在校內。",
+            "action": "提出公開或授權素材查詢，取得前不拷貝侵權內容。",
+            "tradeoff": "教師增加資料核對，可能沒有可用素材。"
+          },
+          {
+            "id": 4,
+            "text": "我不接新活動，請他在本科依法判斷可用的公開內容。",
+            "action": "婉拒導師額外代辦，仍正常合作，不代其決定授課。",
+            "tradeoff": "好友可能失望，導師保留休息。"
+          },
+          {
+            "id": 5,
+            "text": "邀他共同核對展期後相關館藏活動，不預設原展延長。",
+            "action": "提出查詢其他真實可行資源的協作邀約，另案仍依法處理。",
+            "tradeoff": "教師花時間，可能沒有相近活動。"
+          },
+          {
+            "id": 6,
+            "text": "若學生自願，我協調一次校內分享已合法取得的觀展經驗。",
+            "action": "提出由願意且合法已觀展者自願分享的有條件方案，不假定已有學生參觀、不以參觀當作業。",
+            "tradeoff": "教師增加篩選與安排，可能無分享者。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己也想看，邀好友在館方真實開放、彼此私人可用時段一起去。",
+          "action": "提出僅成人私人觀展邀約，不帶學生、不冒校方名義，先核實展期時段與雙方意願。",
+          "tradeoff": "教師讓出私人時間並自行負擔合法交通費，未必約成。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1949572012
+        },
+        "selectedIds": [
+          2,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "b5eb10146164e0c357c7ccc205166c973e29e77a9dfe519c5aedbe78edfbef8f"
+      },
+      "consequenceDirections": {
+        "A": "不從眾的即興期待如何面對合法時程可發展。",
+        "B": "同事的訊息熱情是否接受未必有成果可發展。",
+        "C": "親近與分享熱情能否接受有限運用可發展。",
+        "D": "親近與非從眾興趣能否在教師私人界線內延續可發展，不假裝學生參訪已辦。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a4ebddc7b1e4ebe4b22273593000033d6f5096ca41b120308d2023d80d254f02",
+    "draftSha256": "9f5dbb88c7799a4f6e40c043e74683099c3911bc46833780d034b26860e0ce00",
     "seedAssignmentVersion": 1
   }
 }

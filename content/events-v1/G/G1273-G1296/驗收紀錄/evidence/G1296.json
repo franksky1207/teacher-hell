@@ -15,14 +15,155 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "65865ad45a0b8ce33dbbcd528d407f9c971b3c27ee13e000c6a162bfbf7f9f42",
+      "checkedAt": "2026-11-27T19:07:48.429Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我確認可去識別公開的受贈方式，再請他決定要不要送。",
+            "action": "向權責承辦查詢必要登錄與公開範圍，真實條件下徵其同意。",
+            "tradeoff": "教師增加聯絡，家長可能仍不安心。"
+          },
+          {
+            "id": 2,
+            "text": "先婉拒收下，請他依方便時段合法領回。",
+            "action": "不承擔新增受贈協調，安排物品退回，不擅使用。",
+            "tradeoff": "家長可能覺得好意被退，教師保留時間。"
+          },
+          {
+            "id": 3,
+            "text": "問他可否改交校內共用耗材庫，依統一受贈規定辦。",
+            "action": "徵詢改受贈對象同意後提出需求，不直接轉出。",
+            "tradeoff": "教師多一段協調，對方可能不收或仍須必要具名。"
+          },
+          {
+            "id": 4,
+            "text": "我願陪他向帳務窗口詢問一次，不替他亂承諾匿名。",
+            "action": "提出成人共同查詢邀約，限必要個資知情。",
+            "tradeoff": "教師花陪同時間，家長可能怕更多人認識自己。"
+          },
+          {
+            "id": 5,
+            "text": "若他願意，改由他自己按正式程序捐，不經我私下收。",
+            "action": "提供正式受贈管道並婉拒個別代辦，不保證匿名條件。",
+            "tradeoff": "家長須自行聯絡，教師可能被覺得疏遠。"
+          },
+          {
+            "id": 6,
+            "text": "問他願不願賣給我，作我的私人備課用品，不列班級物資。",
+            "action": "提出合理價格私人購買邀約，與子女權益分開且依校規辦，不藉交易掩飾班級受贈。",
+            "tradeoff": "若成立教師負擔費用，家長可能不願把好意變交易。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕這份好意變成班群猜謎，願多查一段正式轉贈管道，讓他選要不要改送別處。",
+          "action": "徵詢家長是否願自行改贈合法校外受贈對象，教師協助查詢可公開的正式管道及是否接受此類耗材，不擅自轉物、不保證對方接受或完全匿名。",
+          "tradeoff": "教師增加查詢時間，家長可能覺得心意被轉走，實際運送及必要登錄仍由其依法決定。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 71875465
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "9fff47aabe7966a8ecdef735418d0c0ec5f2b356f9f053bcb4b64ceff908e14f"
+      },
+      "consequenceDirections": {
+        "A": "親近與迴避衝突如何面對透明條件可發展。",
+        "B": "親近與怕衝突能否接受資源不進本班而走另一條合法路徑，專業肯定可發展。",
+        "C": "對專業肯定與資源提供是否因拒收受影響可發展。",
+        "D": "低調期待與不同資源使用範圍可發展。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒個別談受贈條件與普通4共同查詢內容過近，改為徵詢另行合法校外轉贈的資訊協助。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我確認可去識別公開的受贈方式，再請他決定要不要送。",
+                "action": "向權責承辦查詢必要登錄與公開範圍，真實條件下徵其同意。",
+                "tradeoff": "教師增加聯絡，家長可能仍不安心。"
+              },
+              {
+                "id": 2,
+                "text": "先婉拒收下，請他依方便時段合法領回。",
+                "action": "不承擔新增受贈協調，安排物品退回，不擅使用。",
+                "tradeoff": "家長可能覺得好意被退，教師保留時間。"
+              },
+              {
+                "id": 3,
+                "text": "問他可否改交校內共用耗材庫，依統一受贈規定辦。",
+                "action": "徵詢改受贈對象同意後提出需求，不直接轉出。",
+                "tradeoff": "教師多一段協調，對方可能不收或仍須必要具名。"
+              },
+              {
+                "id": 4,
+                "text": "我願陪他向帳務窗口詢問一次，不替他亂承諾匿名。",
+                "action": "提出成人共同查詢邀約，限必要個資知情。",
+                "tradeoff": "教師花陪同時間，家長可能怕更多人認識自己。"
+              },
+              {
+                "id": 5,
+                "text": "若他願意，改由他自己按正式程序捐，不經我私下收。",
+                "action": "提供正式受贈管道並婉拒個別代辦，不保證匿名條件。",
+                "tradeoff": "家長須自行聯絡，教師可能被覺得疏遠。"
+              },
+              {
+                "id": 6,
+                "text": "問他願不願賣給我，作我的私人備課用品，不列班級物資。",
+                "action": "提出合理價格私人購買邀約，與子女權益分開且依校規辦，不藉交易掩飾班級受贈。",
+                "tradeoff": "若成立教師負擔費用，家長可能不願把好意變交易。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也怕這份好意變成班群猜謎，願意另花時間先和他談清楚能接受的曝光界線。",
+              "action": "提出自願個別受贈條件會談，逐項對照校規可做到與做不到之處，未合意前不拆用、不承諾特殊秘密。",
+              "tradeoff": "教師花額外時間，可能談完仍退物，家長須面對無法完全避免猜測。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 4218795878
+            },
+            "selectedIds": [
+              1,
+              5,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": "emotional",
+              "C": 6,
+              "D": 1
+            },
+            "optionsDigest": "b1c52235b268025caf53c6e09f7e271ff9e39e34dba1fd07cb9934012ebde8d1"
+          },
+          "previousConsequenceDirections": {
+            "A": "對導師專業的認可能否容納不同角色可發展。",
+            "B": "衝突迴避與對導師親近信任能否承受不保證結果可發展，非只有此項維持誠實登錄。",
+            "C": "資源提供與親近感如何面對用途改變可發展，未同意不記已付。",
+            "D": "親近與衝突迴避能否接受有限保密可發展。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a65b31c79cd858c424580b6e3822596d47ba1260350efb2a60aa7a2e490f753f",
+    "draftSha256": "65865ad45a0b8ce33dbbcd528d407f9c971b3c27ee13e000c6a162bfbf7f9f42",
     "seedAssignmentVersion": 1
   }
 }

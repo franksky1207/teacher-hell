@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1d529e9af2cc123befc25a024b5370935873ce8256868824bf3b4b6f0627f02e",
+      "checkedAt": "2026-11-27T19:07:48.390Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "徵求真正自願者，改貼只含月份且不記名的合宜內容。",
+            "action": "提出不連結個人的月份主題布置，徵詢必要同意並避免以人數空缺識別。",
+            "tradeoff": "教師增加設計檢視，無法保留原個人生日牆。"
+          },
+          {
+            "id": 2,
+            "text": "改成全班自願祝福牆，不再列任何生日。",
+            "action": "提出改為不含個資的祝福內容，由作者自願提供，教師核實合宜。",
+            "tradeoff": "股長需重做部分布置，可能覺得題目失去原意。"
+          },
+          {
+            "id": 3,
+            "text": "這次不再做牆面，我接下後續收整。",
+            "action": "婉拒本次非必要新牆面，教師負責依法整理，保留其正常幹部位置。",
+            "tradeoff": "教師增加收尾，學生可能失落。"
+          },
+          {
+            "id": 4,
+            "text": "徵詢本人是否想收回自己的卡片，不再當公開展示。",
+            "action": "提出合法個別領回的自願方案，未領依規妥處，不能轉交同儕分送。",
+            "tradeoff": "教師增加逐人聯絡，學生未必想留。"
+          },
+          {
+            "id": 5,
+            "text": "讓他自願提出三種不含個資的新用途，我另外留時間一起挑。",
+            "action": "提出非強制重設布置的合作邀約，不以改好才免責或補過。",
+            "tradeoff": "教師花討論時間，學生可能不想再做。"
+          },
+          {
+            "id": 6,
+            "text": "另辦一次全班自願慶祝心情的活動，和生日脫鉤。",
+            "action": "提出合法可調時段的一般自願班級互動，內容經協商而不公布生日。",
+            "tradeoff": "增加教師活動準備，可能有人不參加。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我捨不得他熬夜的心意，邀他把沒個資的空白氣球改成共同創作，我陪著剪。",
+          "action": "提出自願以未含個資或依法去識別可用材料重新創作的邀約，不自行認定遮字就不可還原。",
+          "tradeoff": "教師付出課間勞力，仍可能得重用新紙，學生可拒絕。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4175960989
+        },
+        "selectedIds": [
+          4,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "8b86119c12e711f7a31c85f730c7da94502338032939fbcf3dcca48995ca1374"
+      },
+      "consequenceDirections": {
+        "A": "其敬重與合作是否能容納教師一同承擔手作收尾可發展，不因善意放寬個資。",
+        "B": "手作能否從公共活動改為個人選擇可發展。",
+        "C": "開朗心意與合作能否容納匿名化改作可發展。",
+        "D": "熱情與未採納心意的關係取捨可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "55515bbb53891dfa696bf6ec2f3118f3da7802e8127fcf0cf346b589df20da5e",
+    "draftSha256": "1d529e9af2cc123befc25a024b5370935873ce8256868824bf3b4b6f0627f02e",
     "seedAssignmentVersion": 1
   }
 }

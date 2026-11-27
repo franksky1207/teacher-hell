@@ -15,14 +15,155 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b132e53b122804e8efe1501d4893d3a2647d52f75a5ad7cfbc6b87ec7669b9da",
+      "checkedAt": "2026-11-27T19:07:48.409Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他只在有疑慮時私下提需要，不必蒐集完整故事。",
+            "action": "協商非緊急時可用最少必要資訊求助的方式，危機處置照規。",
+            "tradeoff": "教師承擔聽取零碎疑慮的時間，學生仍可能拿不準。"
+          },
+          {
+            "id": 2,
+            "text": "安排一次額外情境討論，我和他一起練習怎麼求助。",
+            "action": "提供自願一般情境演練，不要求辨認診斷或背危機表。",
+            "tradeoff": "教師花課間，學生可能覺得被補考。"
+          },
+          {
+            "id": 3,
+            "text": "問他願不願找關懷協作同事聽一般原則，我陪同。",
+            "action": "提出不揭個案家訊的專業諮詢邀約，必要安全說明各分支均有。",
+            "tradeoff": "增加教師聯絡，對方未必有空。"
+          },
+          {
+            "id": 4,
+            "text": "這次不加訓練，我只在正常課間再問他有沒有掛心。",
+            "action": "提出一次非必要個別回談邀約，不要求監看女生。",
+            "tradeoff": "教師多花時間，學生可能不想再提。"
+          },
+          {
+            "id": 5,
+            "text": "另向全班說明怎樣在不探聽隱私下找成人，不用這件事當例子。",
+            "action": "安排可調班務的一般求助原則說明，不點出女生或股長。",
+            "tradeoff": "占用班務，可能仍有人聯想。"
+          },
+          {
+            "id": 6,
+            "text": "問他想不想暫時少接額外關懷工作，我協調成人接續。",
+            "action": "提出自願調整非必要幹部負荷，原安全責任不轉嫁學生。",
+            "tradeoff": "教師增加工作，學生可能覺得體貼被撤。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我捨不得讓他一直替大家擔心，願這週多回班一段，讓想找成人的人能自己來。",
+          "action": "提出本週於本人合法可調課間增加一次自願可接觸時段，不點名女生、不請幹部替自己監看情緒，原必要成人照管及求助支持各分支照常。",
+          "tradeoff": "教師失去辦公收整時間，學生可能無人想談，股長也可能覺得自己被接回工作。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2412052435
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "1101a5ea541bb264aa209cfb36f2a9230d54f2ed12fcf1f1fe470c522ec35a3e"
+      },
+      "consequenceDirections": {
+        "A": "同理與班務參與能否容納休息界線可發展。",
+        "B": "同理與支持安靜自習的立場能否容納教師額外在場，不預設有人接受談話或因此沒有風險。",
+        "C": "班務責任與支持安靜立場如何相容可發展。",
+        "D": "善意經驗能否接受不同觀點可發展。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒與普通4皆為個別問其掛心感受，改為教師增加本人可接觸時段而非再次個談。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "邀他只在有疑慮時私下提需要，不必蒐集完整故事。",
+                "action": "協商非緊急時可用最少必要資訊求助的方式，危機處置照規。",
+                "tradeoff": "教師承擔聽取零碎疑慮的時間，學生仍可能拿不準。"
+              },
+              {
+                "id": 2,
+                "text": "安排一次額外情境討論，我和他一起練習怎麼求助。",
+                "action": "提供自願一般情境演練，不要求辨認診斷或背危機表。",
+                "tradeoff": "教師花課間，學生可能覺得被補考。"
+              },
+              {
+                "id": 3,
+                "text": "問他願不願找關懷協作同事聽一般原則，我陪同。",
+                "action": "提出不揭個案家訊的專業諮詢邀約，必要安全說明各分支均有。",
+                "tradeoff": "增加教師聯絡，對方未必有空。"
+              },
+              {
+                "id": 4,
+                "text": "這次不加訓練，我只在正常課間再問他有沒有掛心。",
+                "action": "提出一次非必要個別回談邀約，不要求監看女生。",
+                "tradeoff": "教師多花時間，學生可能不想再提。"
+              },
+              {
+                "id": 5,
+                "text": "另向全班說明怎樣在不探聽隱私下找成人，不用這件事當例子。",
+                "action": "安排可調班務的一般求助原則說明，不點出女生或股長。",
+                "tradeoff": "占用班務，可能仍有人聯想。"
+              },
+              {
+                "id": 6,
+                "text": "問他想不想暫時少接額外關懷工作，我協調成人接續。",
+                "action": "提出自願調整非必要幹部負荷，原安全責任不轉嫁學生。",
+                "tradeoff": "教師增加工作，學生可能覺得體貼被撤。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我有點心疼他替大家想這麼多，邀他放下幹部身分，這回只談自己被嚇到沒有。",
+              "action": "提出自願個別傾聽，聚焦其本人感受，不再請其描述女生家訊或代報恢復進度。",
+              "tradeoff": "教師犧牲課間，學生可能不習慣成為被關心者。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1248335949
+            },
+            "selectedIds": [
+              6,
+              2,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": "emotional",
+              "C": 6,
+              "D": 4
+            },
+            "optionsDigest": "9742f4ce3989a113e5a588c5a3c1c9c45a6750a95678107cfccdd86165c76b9f"
+          },
+          "previousConsequenceDirections": {
+            "A": "班務責任與支持安靜立場如何相容可發展。",
+            "B": "同理他人與自身需要如何相容、對導師立場的支持可發展。",
+            "C": "同理與班務參與能否容納休息界線可發展。",
+            "D": "班務角色是否因得到關注而減少自責可發展。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b0df110e22cee1e3f3c5887e1c4ad4187fbebb60e688da5868a9d24a818f1722",
+    "draftSha256": "b132e53b122804e8efe1501d4893d3a2647d52f75a5ad7cfbc6b87ec7669b9da",
     "seedAssignmentVersion": 1
   }
 }

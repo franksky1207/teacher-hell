@@ -16,14 +16,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3fd1f5839ab682cf48d1557ac9b732554a0db6e5896315dc031d69d2d5a078a2",
+      "checkedAt": "2026-11-27T19:07:48.405Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先私下具體謝謝他，不把代做當全班榜樣。",
+            "action": "以具體事實個別肯定其用心，明確不建立他應持續補掃的期待。",
+            "tradeoff": "學生可能覺得沒得到想要的公開認可。"
+          },
+          {
+            "id": 2,
+            "text": "若他願意，公開肯定整理技巧，不表揚替別人扛責任。",
+            "action": "徵詢本人自願公開分享一項合宜清潔技巧，教師準備不揭個案的介紹。",
+            "tradeoff": "教師增加安排，學生可能仍覺得不是自己要的。"
+          },
+          {
+            "id": 3,
+            "text": "邀全班重議公平分工，他也能選不再補掃。",
+            "action": "安排額外分工討論，教師主持並維持必要原責任查明。",
+            "tradeoff": "占用班務時間，可能引發他人抱怨。"
+          },
+          {
+            "id": 4,
+            "text": "問他願保留哪項額外工作，其餘我接回協調。",
+            "action": "提出個別負荷協商，不因時間充裕要求無限補缺。",
+            "tradeoff": "教師增加調度，學生可能覺得不被需要。"
+          },
+          {
+            "id": 5,
+            "text": "邀有權幹部協作者一同看實際工作，先不辦表揚。",
+            "action": "提出自願共同分工檢視的需求，不讓同儕裁決他人處罰。",
+            "tradeoff": "教師增加協調時間，股長可能擔心功勞被分掉。"
+          },
+          {
+            "id": 6,
+            "text": "這次不另做公開肯定，正常處理班務，不替第一名加戲。",
+            "action": "婉拒額外表揚安排，仍提供必要真實回饋及責任處理。",
+            "tradeoff": "學生可能失落，教師保留班會時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點捨不得他白忙，願多花一段時間，陪他把『想被看見』這句話說清楚。",
+          "action": "提出自願個別會談，教師願聽其對公開肯定的期待並討論可接受形式，不承諾以代勞換表揚。",
+          "tradeoff": "教師犧牲課間，學生可能覺得被看穿或拒談。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2990119373
+        },
+        "selectedIds": [
+          6,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "fa5953dfeb3ff3535bcf3e0adc286a645dd196fdb6258f841653702f5354005f"
+      },
+      "consequenceDirections": {
+        "A": "認可依賴能否接受付出未換得公開獎勵可發展。",
+        "B": "有餘裕與渴望被認可的取捨可發展。",
+        "C": "班務參與能否從代勞轉為可共享方法可發展。",
+        "D": "認可需求與主動代勞的動機能否被直接談及可發展，不預設他已放下。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4a7bbe2760a24f1e72df91b86e716f6b3c05713e24994fd91f69c1655b137280",
+    "draftSha256": "3fd1f5839ab682cf48d1557ac9b732554a0db6e5896315dc031d69d2d5a078a2",
     "seedAssignmentVersion": 1
   }
 }

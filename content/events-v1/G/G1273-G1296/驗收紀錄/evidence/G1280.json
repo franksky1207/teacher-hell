@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cb80b1830b901bf60cc9fffa129548623c3567c545ffa0431fb9d6e2e7e3d23c",
+      "checkedAt": "2026-11-27T19:07:48.396Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不另加爭辯，這次只保留必要整改回覆。",
+            "action": "完成必要回覆後不增加非必要私談或副本論述。",
+            "tradeoff": "保留時間，教師可能仍感委屈且關係不會自動改善。"
+          },
+          {
+            "id": 2,
+            "text": "私下邀他談日常提醒，正式紀錄照留。",
+            "action": "提出個別合作會談，不要求取消通報或隱瞞缺失。",
+            "tradeoff": "教師花會談時間，對方可能不願。"
+          },
+          {
+            "id": 3,
+            "text": "另回覆主任，說明希望協調非緊急缺失的聯絡方式。",
+            "action": "提出由主管評估協調需求，不把口頭提醒列為合法通報的前置限制。",
+            "tradeoff": "增加主管關注及整理工作，可能激化同事不滿。"
+          },
+          {
+            "id": 4,
+            "text": "邀三方會談一次，不在副本信裡逐句攻防。",
+            "action": "提出主管與雙方自願工作協調需求，限必要職務資訊。",
+            "tradeoff": "教師增加排程，未必安排成。"
+          },
+          {
+            "id": 5,
+            "text": "我額外整理本班現有收納問題，請總務看能否改善。",
+            "action": "提出以實際物品及通道需求為主的收納評估，不因整理而免除當次責任。",
+            "tradeoff": "教師多花整理，未必有空間預算。"
+          },
+          {
+            "id": 6,
+            "text": "另約他談上月置物櫃那次摩擦，這次信不夾帶舊事。",
+            "action": "提出非強制私下關係會談，不指控其本次必為報復。",
+            "tradeoff": "教師承受舊怨被說開的情緒及時間代價。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想替自己說話，願具名請主管檢視整段通道管理分工。",
+          "action": "提出額外正式分工檢視需求，整理教師與校安可執行範圍，不否認學生提袋有風險。",
+          "tradeoff": "教師增加資料與會談工作，可能被認為反咬通報者。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1454698619
+        },
+        "selectedIds": [
+          2,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "3b44386f061494a2a928134630098a0b038d6170f34ca7a1355f764d3c1dd656"
+      },
+      "consequenceDirections": {
+        "A": "不滿是否能不藉安全缺失傳遞可發展。",
+        "B": "專業安全要求與過勞分工能否被共同看見可發展，非只有此項如實回覆。",
+        "C": "安全原則與舊怨是否能在第三方場域討論可發展。",
+        "D": "安全防護與私人不滿能否分開可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "340dd1e6eda4907b40090a2496462197dac3a4fc3fdb72a24e7777360d41cdbf",
+    "draftSha256": "cb80b1830b901bf60cc9fffa129548623c3567c545ffa0431fb9d6e2e7e3d23c",
     "seedAssignmentVersion": 1
   }
 }

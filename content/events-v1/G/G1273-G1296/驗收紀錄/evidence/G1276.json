@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9cd365703471a3ca5b5764dfa6a12cd15f472db34fec1eeb4ca48b5fc9261d08",
+      "checkedAt": "2026-11-27T19:07:48.385Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先提供去識別的實際困難，請他據此判斷難度。",
+            "action": "額外整理本班學習需求供科任參考，不替其命題或保證難度一定降低。",
+            "tradeoff": "教師增加彙整，同事可能覺得被質疑。"
+          },
+          {
+            "id": 2,
+            "text": "建議進階自選，基本要求仍有可達成路徑。",
+            "action": "向科任提出分層自願挑戰方案，學科設計由其決定。",
+            "tradeoff": "教師需協調說明，科任增加設計負擔。"
+          },
+          {
+            "id": 3,
+            "text": "邀他先看少量學生自願試作，不整班一次推出。",
+            "action": "提出經公平課務同意的限量非計分試作方案，不用成績壓學生。",
+            "tradeoff": "教師增加安排，回饋不代表全班成效。"
+          },
+          {
+            "id": 4,
+            "text": "我不額外替新卷宣傳，請他自己在本科說明目的。",
+            "action": "婉拒教師加碼動員，仍履行必要班務與學習需求溝通。",
+            "tradeoff": "同事可能失望，教師保留時間。"
+          },
+          {
+            "id": 5,
+            "text": "提議延後非必要進階卷，先把基本困難處理到位。",
+            "action": "提出時程協商，須由科任判斷，不宣稱已停發。",
+            "tradeoff": "教師承擔潑冷水的關係代價，未必獲同意。"
+          },
+          {
+            "id": 6,
+            "text": "若他願意，我接行政整理，不碰命題，讓他少扛一段。",
+            "action": "提出分擔可依法交接之既有研習彙整需求，須主管授權及資料權限，不代其決題。",
+            "tradeoff": "教師增加額外工作，不保證可交接。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點怕辜負他的看好，願意多留一次課內可調輔助，接住想挑戰卻卡基礎的人。",
+          "action": "提出教師額外一般學習協助的自願時段，專業內容超出能力仍與科任確認，不替學生代解或保證高分。",
+          "tradeoff": "教師犧牲可調工作時間，同事可能認為還需更多；必要補學各分支都有。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 381115983
+        },
+        "selectedIds": [
+          5,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "cec99acca465e9faa1de7cc42c078ce36d8c089a5dc1222a34f03a9fbac8d635"
+      },
+      "consequenceDirections": {
+        "A": "教師額外投入能否調整科任對班情的判斷、過勞主見可發展。",
+        "B": "主見與工作負荷如何回應具體分擔可發展。",
+        "C": "過勞與不從眾是否願暫放自編計畫可發展。",
+        "D": "主見與負荷能否容納小規模試行可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d29ad52f5b2dae35b88a175ed9b77b3f187b4ca073da8e7e0346517178eea829",
+    "draftSha256": "9cd365703471a3ca5b5764dfa6a12cd15f472db34fec1eeb4ca48b5fc9261d08",
     "seedAssignmentVersion": 1
   }
 }

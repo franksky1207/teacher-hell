@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a213491c535e161de72b97b9d845718f3280a33b3771d0cb73f817b7e260a281",
+      "checkedAt": "2026-11-27T19:07:48.392Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依規回去挑戰，這十分鐘就拚零提示。",
+            "action": "確認可合法續玩後返回解謎，其他人自願決定是否同行。",
+            "tradeoff": "暫不陪休息朋友，可能最後仍解不出。"
+          },
+          {
+            "id": 2,
+            "text": "我自己退出，去陪朋友，其他人想玩就留。",
+            "action": "向工作人員依規結束本人參與，到休息區自願陪同，不要求全團停。",
+            "tradeoff": "放棄本人紀錄機會，可能錯過通關。"
+          },
+          {
+            "id": 3,
+            "text": "提議拿一個提示，把最後一題一起收完。",
+            "action": "徵詢剩餘成員依規索取提示，未取得同意不擅按。",
+            "tradeoff": "放下零提示紀錄且仍花少量遊戲時間。"
+          },
+          {
+            "id": 4,
+            "text": "只再嘗試一個具體解法，不行我就退出。",
+            "action": "設定本人限一次嘗試後退出的界線，依場館規則操作且不拖延必要照護。",
+            "tradeoff": "可能停在快解出時，承受自我收手。"
+          },
+          {
+            "id": 5,
+            "text": "我把現有推理交給自願續玩者，自己出去陪朋友。",
+            "action": "向願留者說明已知線索與推理，不暗中聯絡已退出者作弊，本人依規退出。",
+            "tradeoff": "犧牲親自解出的滿足，對方不一定採用。"
+          },
+          {
+            "id": 6,
+            "text": "詢問可否合法暫停，不能就讓大家各自選續玩或退出。",
+            "action": "向場館提出一次暫停規則詢問，不主張補時權，自己先不繼續推算。",
+            "tradeoff": "耗費有限時間，可能被告知無法暫停。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不甘心連答案都不知道，決定放棄自己的紀錄，問場館何時能聽最後一題解說。",
+          "action": "依規結束本人挑戰，向工作人員詢問合法解說服務及可參與時點；若同伴仍續玩不泄題或干擾，工作人員允許且不延誤必要照護才參加。",
+          "tradeoff": "放棄本人通關紀錄並花額外等候解說時間，可能須等全組結束，朋友可能覺得自己仍放不下謎題。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1340571744
+        },
+        "selectedIds": [
+          6,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "98a5de63ec0b098a0c63eabc0c9b11b54cec2e1b72ec9c9de6b956ca81407f82"
+      },
+      "consequenceDirections": {
+        "A": "執行與不從眾能否接受規則未給理想解法可發展。",
+        "B": "不從眾與體貼如何承受不在場結局可發展。",
+        "C": "執行力與好勝能否守住自行限度可發展。",
+        "D": "好勝與執行衝勁能否改為接受別人解說而非自己解出，同理朋友的陪伴取捨可發展，不保證立刻得答案。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒與普通1皆為本人續玩而同伴自由決定去留，實質重疊；改為放棄本人紀錄並詢問合法解說。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "依規回去挑戰，這十分鐘就拚零提示。",
+                "action": "確認可合法續玩後返回解謎，其他人自願決定是否同行。",
+                "tradeoff": "暫不陪休息朋友，可能最後仍解不出。"
+              },
+              {
+                "id": 2,
+                "text": "我自己退出，去陪朋友，其他人想玩就留。",
+                "action": "向工作人員依規結束本人參與，到休息區自願陪同，不要求全團停。",
+                "tradeoff": "放棄本人紀錄機會，可能錯過通關。"
+              },
+              {
+                "id": 3,
+                "text": "提議拿一個提示，把最後一題一起收完。",
+                "action": "徵詢剩餘成員依規索取提示，未取得同意不擅按。",
+                "tradeoff": "放下零提示紀錄且仍花少量遊戲時間。"
+              },
+              {
+                "id": 4,
+                "text": "只再嘗試一個具體解法，不行我就退出。",
+                "action": "設定本人限一次嘗試後退出的界線，依場館規則操作且不拖延必要照護。",
+                "tradeoff": "可能停在快解出時，承受自我收手。"
+              },
+              {
+                "id": 5,
+                "text": "我把現有推理交給自願續玩者，自己出去陪朋友。",
+                "action": "向願留者說明已知線索與推理，不暗中聯絡已退出者作弊，本人依規退出。",
+                "tradeoff": "犧牲親自解出的滿足，對方不一定採用。"
+              },
+              {
+                "id": 6,
+                "text": "詢問可否合法暫停，不能就讓大家各自選續玩或退出。",
+                "action": "向場館提出一次暫停規則詢問，不主張補時權，自己先不繼續推算。",
+                "tradeoff": "耗費有限時間，可能被告知無法暫停。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我不甘心就這樣輸，邀剩下的人換我只做最後推算，其他人各決定去留。",
+              "action": "提出本人專注最後密碼、其他成員不必被迫陪拚的分工邀約，遵守場館規則，不借傷病者當紀錄壓力。",
+              "tradeoff": "自己承擔孤軍作戰與可能被朋友覺得太拚的關係代價，記錄不保證成功。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2132213823
+            },
+            "selectedIds": [
+              5,
+              2,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 5,
+              "C": 6,
+              "D": "emotional"
+            },
+            "optionsDigest": "8c0ccb9a7da9e26bc69295a817c4e981b1a62cedea0ded262b6328916304cae0"
+          },
+          "previousConsequenceDirections": {
+            "A": "不從眾與體貼如何承受不在場結局可發展。",
+            "B": "同理與想贏能否以讓出主導權折衷可發展。",
+            "C": "執行與不從眾能否接受規則未給理想解法可發展。",
+            "D": "好勝與同理能否容納同伴不一起追紀錄可發展，與全體共同續玩有不同實際分工。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c29ac13ef17420b8a5b60dba381f05d1082d67f59a5e569ea645e51b4b8bb623",
+    "draftSha256": "a213491c535e161de72b97b9d845718f3280a33b3771d0cb73f817b7e260a281",
     "seedAssignmentVersion": 1
   }
 }

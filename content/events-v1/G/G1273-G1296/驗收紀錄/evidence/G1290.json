@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d22204570c490dd437a025c1b38cf322701cfafe355890853d7b85039d44f55a",
+      "checkedAt": "2026-11-27T19:07:48.420Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先去配螺絲，問到合規尺寸就買，組裝留飯後。",
+            "action": "先向朋友說明購物繞路，前往五金行確認規格並購買可用件，不當場承諾有貨。",
+            "tradeoff": "可能短暫遲到且買不到，仍保留飯後家務。"
+          },
+          {
+            "id": 2,
+            "text": "安全收起零件，直接赴約，今晚不再碰書架。",
+            "action": "暫停組裝，整理安全後出門與友人吃飯。",
+            "tradeoff": "多付收整時間，日後還要補件。"
+          },
+          {
+            "id": 3,
+            "text": "先致電店家問能否留貨，飯後或下次依其規則領。",
+            "action": "提出規格及保留商品查詢，不主張店家延後打烊。",
+            "tradeoff": "花通話時間，未必有貨或可留。"
+          },
+          {
+            "id": 4,
+            "text": "問朋友能不能稍晚，我想今晚先把架子做完。",
+            "action": "誠實提出改晚赴約的請求，只有對方同意才安排購物返家組裝，不保證半小時能完成。",
+            "tradeoff": "可能讓老友失望或被拒，自己要放下準時原計畫。"
+          },
+          {
+            "id": 5,
+            "text": "聯絡賣家補件，今晚仍按原約吃飯。",
+            "action": "提出缺件補寄需求，未取得承諾不假定免費或及時送達，安全收納後赴約。",
+            "tradeoff": "可能等數日，賣家可能不願負擔運費。"
+          },
+          {
+            "id": 6,
+            "text": "詢問合法配送或代購，自己先赴約，不強求今夜到。",
+            "action": "查詢可核規格的合規服務與費用，未報價同意前不委託。",
+            "tradeoff": "若成立增加私人費用，可能比螺絲本身貴。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想讓這兩顆螺絲贏我，邀朋友飯後一起來看，但先說不保證能裝完。",
+          "action": "提出自願飯後共同檢視缺件的邀約，材料未到不硬組、不用交情逼做工。",
+          "tradeoff": "讓私人晚間被家務占用，朋友可能拒絕或覺得被拐來修東西。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3193775058
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "4f31f9e020367afb586fd5ebcedaa667789982c743c63b9aea2e370bba27e70e"
+      },
+      "consequenceDirections": {
+        "A": "開朗動手與私人社交的取捨可發展。",
+        "B": "開朗與執行力能否接受社交改成共同動手且未有成果可發展。",
+        "C": "精打細算與省時的衝突可發展，不寫成已付費。",
+        "D": "精算與執行力是否能接受分段完成可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "52db51cd9f5da02b59e8632ab3f7f43779a70ca881bf4c5eaad562711572e8b0",
+    "draftSha256": "d22204570c490dd437a025c1b38cf322701cfafe355890853d7b85039d44f55a",
     "seedAssignmentVersion": 1
   }
 }

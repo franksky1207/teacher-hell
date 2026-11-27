@@ -16,14 +16,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "56467b3575da35404d22f8da03b336f39e6c721f431bae442d64d25e43953bf6",
+      "checkedAt": "2026-11-27T19:07:48.414Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪他讀題意，從讀者角度指出哪句可能誤讀。",
+            "action": "提出有限文字理解協助，不代判專業答案或改分。",
+            "tradeoff": "教師花時間，好友可能不愛聽。"
+          },
+          {
+            "id": 2,
+            "text": "我不替題目背書，但留一段時間聽他這週的負荷。",
+            "action": "提供自願個別傾聽，不把同情當評分結論。",
+            "tradeoff": "教師失去休息，未解決配分決定。"
+          },
+          {
+            "id": 3,
+            "text": "邀他找同科合格者檢視，我協助聯絡一次。",
+            "action": "提出專業協作需求，先徵其同意，不擅交學生個資。",
+            "tradeoff": "教師多花聯絡，同事可能覺得面子受損。"
+          },
+          {
+            "id": 4,
+            "text": "若他願意，我陪一次師生意見溝通，不替任何人決定分數。",
+            "action": "提出合規自願會談，教師協助表達問題，科任依法處理評量。",
+            "tradeoff": "增加主持時間，學生或好友可拒絕。"
+          },
+          {
+            "id": 5,
+            "text": "今天不加談題目，請他按本科程序處理，我維持正常班務。",
+            "action": "婉拒非必要陪聊與共同審題，不阻斷學生正式反映管道。",
+            "tradeoff": "好友可能覺得被冷落，教師保留時間。"
+          },
+          {
+            "id": 6,
+            "text": "邀他下次在正常工作時段共同檢視出題負荷，不只補這一題。",
+            "action": "提出可合法討論的命題工作量協商需求，由有權者處理調整，不保證減量。",
+            "tradeoff": "教師增加協調，他可能怕被當能力不足。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點不服氣被要求當同溫層，直說今天只願當朋友，不幫他把學生說成輸不起。",
+          "action": "明確拒絕替題目作未經確認的正當性背書，提出下班合法私人短談邀約，只談成人感受不傳學生個資，科任仍按規處理爭議。",
+          "tradeoff": "教師讓出私人時間，好友可能覺得忠言太硬；不保證接受邀請。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2028053372
+        },
+        "selectedIds": [
+          6,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "40c82db4c4a2a2d7689cd1d6167e06f2ddcbd773d165dc86ad594f7fc0f5a91a"
+      },
+      "consequenceDirections": {
+        "A": "親近與好勝能否容納具體疑義可發展。",
+        "B": "好勝與任務負荷如何回應可持續分工可發展。",
+        "C": "親近能否承受不站隊又願陪伴的界線可發展，與課間支持有不同私人安排成本。",
+        "D": "親近關係與過勞討拍的落差可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e54f5791a28c2ea3ce42faef0cf5b96086182c2a6280fa23690a5c0326c4cbf9",
+    "draftSha256": "56467b3575da35404d22f8da03b336f39e6c721f431bae442d64d25e43953bf6",
     "seedAssignmentVersion": 1
   }
 }

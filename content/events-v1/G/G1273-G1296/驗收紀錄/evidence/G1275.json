@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9b630209fd1d5ef132cd43893c4badd4e47459f02b081cd03e1d3dcd8fd1d02b",
+      "checkedAt": "2026-11-27T19:07:48.381Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不在前門試，邀他去看較寬的合法候選區。",
+            "action": "提出另覓安全位置的共同勘查邀約，未核可前不設動線。",
+            "tradeoff": "教師多花時間，對方可能掃興。"
+          },
+          {
+            "id": 2,
+            "text": "只先用合宜擦鞋區，不做單行甩水路線。",
+            "action": "提出限縮為安全門墊配置的方案，須權責確認防滑與通道。",
+            "tradeoff": "效果有限，教師要協調清潔管理。"
+          },
+          {
+            "id": 3,
+            "text": "請他先在非尖峰用成人安全模擬，再談班級試辦。",
+            "action": "提出無學生受風險的人流桌面或成人模擬需求，不預設測得可行。",
+            "tradeoff": "教師增加配合時間，同事要重做設計。"
+          },
+          {
+            "id": 4,
+            "text": "我婉拒本班試辦，請他另循校內正式評估。",
+            "action": "不額外提供本班場地，維持既有安全動線。",
+            "tradeoff": "可能傷同事心情，教師少一項改善機會。"
+          },
+          {
+            "id": 5,
+            "text": "邀學生自願提出通行困難，由我彙整給他。",
+            "action": "提供最少必要去識別使用回饋，教師額外整理，不讓學生決定安全規格。",
+            "tradeoff": "教師花整理時間，學生意見可能互相矛盾。"
+          },
+          {
+            "id": 6,
+            "text": "請主管協調整段走廊，不只借一班門口試。",
+            "action": "提出跨區安全動線評估需求，未批准前不設施。",
+            "tradeoff": "增加多方聯絡，可能耗更久。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被他的好心情帶起來，願意放學一起排一次不擋路的版本。",
+          "action": "提出在合法可調放學時段共同調整安全方案的邀約，不用學生作活體壓力測試。",
+          "tradeoff": "教師延後私人收尾，仍可能排不出可行版本。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2222892229
+        },
+        "selectedIds": [
+          5,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "e44f58b7331bc2aed03322e00d9925d668751e7a0df14dc99de316997350ce8f"
+      },
+      "consequenceDirections": {
+        "A": "主見與合作能否容納換地點可發展。",
+        "B": "設計主見能否接納實際使用需要可發展。",
+        "C": "開朗與主見是否願在共同動手後調整可發展，不預設已實施。",
+        "D": "開朗熱情是否接受部分採納可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b87b755fc090bb660d3512f7e905ccabbc0edb9a3b168bbcc11dc7e231565d55",
+    "draftSha256": "9b630209fd1d5ef132cd43893c4badd4e47459f02b081cd03e1d3dcd8fd1d02b",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "61c4cb20acf4d62af56c644f42ca3231935756bfd931b7dd1590f3f8be60ba71",
+      "checkedAt": "2026-11-27T19:07:48.374Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照核定方式使用，我另約他把檢查說明看懂。",
+            "action": "維持合法可用設定，提供額外個別說明，不重做已完成檢查。",
+            "tradeoff": "教師花時間，學生未必立即安心。"
+          },
+          {
+            "id": 2,
+            "text": "暫採合宜低段風速，先問各區是否仍舒適。",
+            "action": "在權責確認可行及不致熱危害下調低該扇設定，協調合宜通風。",
+            "tradeoff": "部分學生可能嫌熱，教師增加現場協調。"
+          },
+          {
+            "id": 3,
+            "text": "申請提前清潔調整，由技工評估能否排。",
+            "action": "提出非緊急提前維護需求，不自行拆機，原安全使用條件照常。",
+            "tradeoff": "教師增加聯絡，可能被拒提前。"
+          },
+          {
+            "id": 4,
+            "text": "他願意的話，我協調一個不在吊扇正下方的合法座位。",
+            "action": "提出自願公平換位，須兼顧他人視力動線與意願，不因換位假裝設備有危險。",
+            "tradeoff": "教師增加協調，可能無空位。"
+          },
+          {
+            "id": 5,
+            "text": "邀家長於正常時段一起聽技工可公開的說明。",
+            "action": "提出親師及權責人員自願共同說明需求，不公開學生無關資訊。",
+            "tradeoff": "教師增加多方聯絡，對方未必有空。"
+          },
+          {
+            "id": 6,
+            "text": "改用可安全調配的其他通風方式，先協調全班需求。",
+            "action": "提出在合宜溫度及通風下減少此扇使用的方案，由權責人員確認可行。",
+            "tradeoff": "教師增加調配，可能沒有足夠替代設備。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那支影片弄煩了，邀他一起查來源怎麼把『晃』剪成『快塌』。",
+          "action": "提出額外自願媒體查證活動，核對原片來源與語境，不據此推翻設備專業檢查。",
+          "tradeoff": "教師犧牲課間，可能找不到原片，學生可拒絕。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1455516659
+        },
+        "selectedIds": [
+          5,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "d1afbaa2812fd141fb8f805e10c8f641256b5ed4ed4bdc82ee606b6816a7405f"
+      },
+      "consequenceDirections": {
+        "A": "家庭支持能否接受專業界線與學生轉述可發展。",
+        "B": "誤信與安全意識如何分開、對導師問責是否改變可發展。",
+        "C": "家庭支持的防護要求能否容納他人舒適需求可發展。",
+        "D": "餘悸與家人安全期待能否在個別安排下緩和可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7ca649b9cac0fca25e39a3a09210609976d4833c6982c6ae6a98ae1d791e9036",
+    "draftSha256": "61c4cb20acf4d62af56c644f42ca3231935756bfd931b7dd1590f3f8be60ba71",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G06",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f48407e57fd85e21f3cbeb75d347c3d88d0d15ba7b0a840ce0e07ddde9b36544",
+      "checkedAt": "2026-11-27T19:07:48.387Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另留幾分鐘，陪他把新聞時間與官方資料比對一遍。",
+            "action": "提供額外個別資料比對，不重宣稱未來數值已知。",
+            "tradeoff": "教師犧牲晨間時間，家長可能尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "我不延長通話，請他先休息，按正常聯絡再談非緊急疑問。",
+            "action": "在必要澄清後婉拒當下額外討論，提供正常聯絡安排。",
+            "tradeoff": "家長可能覺得被推開，教師保留工作時間。"
+          },
+          {
+            "id": 3,
+            "text": "向體育老師提出一次共同說明，讓他聽到實際課務原則。",
+            "action": "提出正常時段三方自願通話需求，不承諾當日能成。",
+            "tradeoff": "教師增加協調，科任未必有空。"
+          },
+          {
+            "id": 4,
+            "text": "我整理可自行查本地即時資訊的方式，讓他下次不用等我截圖。",
+            "action": "承諾提供已確認正確的官方查詢方法與限制說明。",
+            "tradeoff": "教師花整理時間，不保證家長今後不再看錯。"
+          },
+          {
+            "id": 5,
+            "text": "若他願意，我另約親師生談孩子真實的戶外活動需要。",
+            "action": "提出限必要資訊的需求會談，不把家長焦慮直接當孩子健康事實。",
+            "tradeoff": "多花時間，學生可拒絕非必要談話。"
+          },
+          {
+            "id": 6,
+            "text": "這次我多做一回額外回覆，活動安排確定後說明可告知的部分。",
+            "action": "提出一次額外課務訊息回覆承諾，不提供定位或逐步健康監測。",
+            "tradeoff": "增加教師聯絡，不能保證家長因此安心。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想每天替昨晚的新聞善後，邀他一起約定非緊急空品疑問的聯絡節奏。",
+          "action": "提出明確正常聯絡時段及可彙整疑問的協商，緊急健康訊息仍即時處理，不任意阻斷管道。",
+          "tradeoff": "教師承擔家長可能不滿的關係代價與協商時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 384804932
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "b8e921a4436f698a55cdd80077f94d363b5c8846e8b0965d184643ce1b7fadcd"
+      },
+      "consequenceDirections": {
+        "A": "家長密切關注與子女自身需要的差異可發展。",
+        "B": "疲勞誤讀與健康需求如何面對事實可發展。",
+        "C": "衝動與疲憊能否接受不逐訊息即刻回覆可發展，非只增加口氣。",
+        "D": "家長對導師動態的關注能否轉成理解權責可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "06fd6efc4f7766887d0e30cd9f97e00746de3cf413a8b6ed9cea5a8a9cffe8fe",
+    "draftSha256": "f48407e57fd85e21f3cbeb75d347c3d88d0d15ba7b0a840ce0e07ddde9b36544",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "673d05aab47774c6f77108cddd1d9d881cb16f7718ee2993a99289c43697e6a5",
+      "checkedAt": "2026-11-27T19:07:48.423Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我查辦公室可合法提供的紙，再請科任確認是否合規。",
+            "action": "提出備品查詢與規格確認需求，確認可用才提供。",
+            "tradeoff": "教師多花查找時間，可能無適用紙。"
+          },
+          {
+            "id": 2,
+            "text": "協助向科任申請合理延後，不先叫他再花錢。",
+            "action": "依真實缺材及公平原則提出期限調整需求，必要支持照常。",
+            "tradeoff": "教師增加聯絡，未必能延。"
+          },
+          {
+            "id": 3,
+            "text": "詢問是否有等值替代紙材或呈現方式。",
+            "action": "向授課者提出專業判斷需求，不以普通影印紙直接冒原規格。",
+            "tradeoff": "增加教師協調，替代方案可能不成立。"
+          },
+          {
+            "id": 4,
+            "text": "若本人願意，我陪他向受助同學詢問可否自願提供合規材料支援。",
+            "action": "提出非強迫的同儕資源詢問邀約，不把原贈與改成欠債或要求對方交出成品。",
+            "tradeoff": "教師花陪同時間，雙方可能尷尬且未必有紙。"
+          },
+          {
+            "id": 5,
+            "text": "向既有材料管理窗口提出借用或提供需求，讓資格照規辦。",
+            "action": "提出正式資源申請，不預設有庫存或已獲准。",
+            "tradeoff": "教師增加申請等待，可能仍需替代課務。"
+          },
+          {
+            "id": 6,
+            "text": "我額外陪他把能先做的步驟完成，等材料確定再收尾。",
+            "action": "提出合法不代作的準備協助，僅在科任同意課務範圍內進行。",
+            "tradeoff": "教師犧牲時間，材料問題仍須依法接續。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我心軟，願私人出資，但先問他和家庭是否接受一次合規材料贈與。",
+          "action": "依校規提出有限自願贈材邀約，先確認實際規格、同意與取得，不以接受換成績或公開表揚。",
+          "tradeoff": "若成立教師增加私人費用與採買時間，學生可能覺得被可憐；未同意不記已付。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3677488749
+        },
+        "selectedIds": [
+          3,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "13957c8e39b81157c3428a72c4a891f77154308c182872f805fad3b1c1128fc5"
+      },
+      "consequenceDirections": {
+        "A": "規範認同與實際資源限制可發展。",
+        "B": "家計與執行力是否能接受等待可發展。",
+        "C": "衝動義氣與對準時規範的認同如何承受未定支援可發展。",
+        "D": "衝動分享後是否願接受幫助、家計與規範認同可發展，必要救助各分支都有。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d5cee03c781d972f6f6cc4bf3b2dc4ac2771d1e211c280f97084666c73329800",
+    "draftSha256": "673d05aab47774c6f77108cddd1d9d881cb16f7718ee2993a99289c43697e6a5",
     "seedAssignmentVersion": 1
   }
 }

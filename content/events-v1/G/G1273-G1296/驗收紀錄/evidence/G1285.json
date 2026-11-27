@@ -16,14 +16,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f183fbf41c082d07fb44e1d66bc7b3eed3cf04f9b4891bae7afda392aae1a332",
+      "checkedAt": "2026-11-27T19:07:48.407Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "徵詢他是否願由我陪著，另作一次簡短真實說明。",
+            "action": "邀幹部自願與教師共同補充誤傳經過，不重複必要更正或要求公開自責。",
+            "tradeoff": "教師花時間，學生可能怕同儕責怪。"
+          },
+          {
+            "id": 2,
+            "text": "由我另發簡短說明，承認自己草稿擺放不清楚的部分。",
+            "action": "教師承擔額外公開說明，僅依真實責任不替他捏造授權。",
+            "tradeoff": "教師承受面子及整理時間，不能保證同學不再議論。"
+          },
+          {
+            "id": 3,
+            "text": "不再加公開事件，我私下陪他想怎麼回應同學。",
+            "action": "提出個別自願短談，必要班級資訊已澄清。",
+            "tradeoff": "教師犧牲課間，學生可能仍怕出去。"
+          },
+          {
+            "id": 4,
+            "text": "改為只轉交我正式確認的訊息，這週由我親自公告。",
+            "action": "提出本週非必要傳話工作收回、日後須正式確認的分工，不免除必要一般溝通。",
+            "tradeoff": "教師增加公告工作，學生可能覺得被撤信任。"
+          },
+          {
+            "id": 5,
+            "text": "邀他一起檢視公告交接，只談一個他願意做的確認方式。",
+            "action": "提出自願師生協作的訊息交接改進，未定前不加設收件表。",
+            "tradeoff": "教師花討論時間，幹部可能覺得又多一道工。"
+          },
+          {
+            "id": 6,
+            "text": "如果他想暫停傳話，我尊重並依班規協調接手。",
+            "action": "徵詢自願職務調整，不以退職懲罰誤傳，教師承擔必要接續。",
+            "tradeoff": "教師需另排人，學生可能失去被需要的感受。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想那張便條只留下誤會，邀全班在適當時段評估我原先的構想，願不願意都能說。",
+          "action": "提出在合法可調班務時間討論原未定筆記檢視構想是否有實際需要，教師主持並接受不採用，不把討論當新作業、抽查或補償誤傳。",
+          "tradeoff": "教師增加準備及被學生否決的面子代價，幹部可能怕又被視為推動者，不要求其動員。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4200628073
+        },
+        "selectedIds": [
+          4,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "61d5b3152caa55fd110281f94de77de1e961e80c43354f0d9ad5b0e7cd4bbef5"
+      },
+      "consequenceDirections": {
+        "A": "信任與家庭支持下的班務參與可發展。",
+        "B": "對導師動態的信任能否容納教師想法尚可改變，班務參與與家庭支持可發展，不預設新制度成立。",
+        "C": "班務認同與對導師信任在私下支持下可發展。",
+        "D": "高度關注能否接受有限任務可發展。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒僅整理教師私人草稿，核心傳話信任轉為私人整理出口；改為讓原未定構想接受實際自願班務討論，不追認不存在的抽查。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "徵詢他是否願由我陪著，另作一次簡短真實說明。",
+                "action": "邀幹部自願與教師共同補充誤傳經過，不重複必要更正或要求公開自責。",
+                "tradeoff": "教師花時間，學生可能怕同儕責怪。"
+              },
+              {
+                "id": 2,
+                "text": "由我另發簡短說明，承認自己草稿擺放不清楚的部分。",
+                "action": "教師承擔額外公開說明，僅依真實責任不替他捏造授權。",
+                "tradeoff": "教師承受面子及整理時間，不能保證同學不再議論。"
+              },
+              {
+                "id": 3,
+                "text": "不再加公開事件，我私下陪他想怎麼回應同學。",
+                "action": "提出個別自願短談，必要班級資訊已澄清。",
+                "tradeoff": "教師犧牲課間，學生可能仍怕出去。"
+              },
+              {
+                "id": 4,
+                "text": "改為只轉交我正式確認的訊息，這週由我親自公告。",
+                "action": "提出本週非必要傳話工作收回、日後須正式確認的分工，不免除必要一般溝通。",
+                "tradeoff": "教師增加公告工作，學生可能覺得被撤信任。"
+              },
+              {
+                "id": 5,
+                "text": "邀他一起檢視公告交接，只談一個他願意做的確認方式。",
+                "action": "提出自願師生協作的訊息交接改進，未定前不加設收件表。",
+                "tradeoff": "教師花討論時間，幹部可能覺得又多一道工。"
+              },
+              {
+                "id": 6,
+                "text": "如果他想暫停傳話，我尊重並依班規協調接手。",
+                "action": "徵詢自願職務調整，不以退職懲罰誤傳，教師承擔必要接續。",
+                "tradeoff": "教師需另排人，學生可能失去被需要的感受。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也被這場烏龍弄得心累，請他陪我把自己的未定構想收回私人備忘，不再讓它混進班務訊息。",
+              "action": "提出自願協作整理不含個資的本案草稿區分方式，實際收存由教師處理，明說不請學生替教師監看桌面。",
+              "tradeoff": "教師增加整理並失去隨手展示想法的便利，學生可能覺得老師因自己變疏遠。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2937608304
+            },
+            "selectedIds": [
+              5,
+              6,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 6,
+              "C": 2,
+              "D": 5
+            },
+            "optionsDigest": "5813a52527e336781d32f7639b902c165a21e7d387ef898ed70568f9f7f4f174"
+          },
+          "previousConsequenceDirections": {
+            "A": "對導師動態的關注能否轉為尊重未公開構想可發展，不讓學生整理教師私人資料。",
+            "B": "信任受挫後是否願保留參與可發展。",
+            "C": "幹部信任是否能保留與對導師關注方式可發展。",
+            "D": "班務參與與家庭支持的期待可發展。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9c8f2ba3f3acbe252c04bbec499af2bcc02a3bf6f94d911cc3ca4c52c2f761ab",
+    "draftSha256": "f183fbf41c082d07fb44e1d66bc7b3eed3cf04f9b4891bae7afda392aae1a332",
     "seedAssignmentVersion": 1
   }
 }

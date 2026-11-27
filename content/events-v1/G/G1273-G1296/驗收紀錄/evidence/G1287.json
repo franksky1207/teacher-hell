@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1bb58452f37bfd15b60f9d910b3bde497f0dcb63e06c0be53a831bf4c922b798",
+      "checkedAt": "2026-11-27T19:07:48.411Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "放自取區，我只作一次簡短說明，不追蹤填寫。",
+            "action": "依核實專業內容提供自願小卡及一次說明，不記任何個人飲水量。",
+            "tradeoff": "教師增加擺放說明，卡片可能沒人拿。"
+          },
+          {
+            "id": 2,
+            "text": "不發卡，配合一次口頭衛教，其餘由必要個別照護處理。",
+            "action": "婉拒紙本推廣但承擔額外一次口頭提醒，不減必要健康支持。",
+            "tradeoff": "校護可能失落，教師仍占短段班務。"
+          },
+          {
+            "id": 3,
+            "text": "邀校護自己入班作一段合宜說明，我協調時段。",
+            "action": "提出正常可調時段專業衛教邀約，不預設排成。",
+            "tradeoff": "教師增加協調，校護需投入自己的餘裕。"
+          },
+          {
+            "id": 4,
+            "text": "先問學生想不想要這種提醒，再決定推廣方式。",
+            "action": "安排不蒐集健康數據的自願形式偏好詢問，回覆校護。",
+            "tradeoff": "教師增加整理，可能得到沒興趣的答案。"
+          },
+          {
+            "id": 5,
+            "text": "請校護改成一份可公開閱覽的原則，我不放四十張個人卡。",
+            "action": "提出非個人紀錄的合宜共用資訊方案，內容先由專業確認。",
+            "tradeoff": "需雙方重整，校護可能覺得白印。"
+          },
+          {
+            "id": 6,
+            "text": "我不接兩週提醒任務，提供已有宣導資訊即可。",
+            "action": "婉拒新增教師持續推廣，校護可循正式管道依法宣導，必要照護照常。",
+            "tradeoff": "可能讓校護覺得不被支持，教師保留時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也常忘記休息，邀校護先和我談教師這邊怎樣做得到，不急著對全班許諾。",
+          "action": "提出成人間一次實際可行推廣負荷會談，教師表達自身時間限制，未定前不承諾兩週追蹤。",
+          "tradeoff": "教師花會談時間，校護可能覺得小事談太久。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 581154312
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "821bcd5256f1ec1028270f29a409b28014534a91e0298522e97755760ed45116"
+      },
+      "consequenceDirections": {
+        "A": "防護主見與對導師信任可發展。",
+        "B": "校護的餘裕與對教師可靠的期待如何調整可發展，不把自己喝水當無關私人出口。",
+        "C": "有空的執行力能否轉為現場專業說明可發展。",
+        "D": "信任是否能容納不同工作餘裕可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b451ef6f182c474f189f8ed2e3ebff93c791a8fcd9c75df6bb255b71d54bda68",
+    "draftSha256": "1bb58452f37bfd15b60f9d910b3bde497f0dcb63e06c0be53a831bf4c922b798",
     "seedAssignmentVersion": 1
   }
 }

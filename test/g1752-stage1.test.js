@@ -248,11 +248,28 @@ test('complete Stage 1 content without semantic review returns stage1-ready-for-
   assert.equal(readyCheck.state, 'stage1-ready-for-review');
   assert.equal(readyCheck.errors.length, 0);
 
-  // Confirm Stage 1 passed -> records SHA and returns stage1-passed
-  const passedRes = await confirmStage1Passed({ mdPath, evidencePath: evPath, expectedAssignment: G0001_ASSIGNMENT, reviewer: 'qa-reviewer' });
+  // Mechanical completeness alone must never self-authorize semantic approval.
+  await assert.rejects(
+    () => confirmStage1Passed({ mdPath, evidencePath: evPath, expectedAssignment: G0001_ASSIGNMENT, reviewer: 'qa-reviewer' }),
+    /必須完成語意品質審查/,
+  );
+  await assert.rejects(
+    () => confirmStage1Passed({ mdPath, evidencePath: evPath, expectedAssignment: G0001_ASSIGNMENT, semanticReviewConfirmed: true }),
+    /非空白審查者/,
+  );
+  await assert.rejects(
+    () => confirmStage1Passed({ mdPath, evidencePath: evPath, expectedAssignment: G0001_ASSIGNMENT, reviewer: '  ', semanticReviewConfirmed: true }),
+    /非空白審查者/,
+  );
+  const stillPending = JSON.parse(await readFile(evPath, 'utf8'));
+  assert.notEqual(stillPending.stages.stage1.status, 'passed');
+
+  // An actual semantic review is explicitly attested by the reviewer before marking passed.
+  const passedRes = await confirmStage1Passed({ mdPath, evidencePath: evPath, expectedAssignment: G0001_ASSIGNMENT, reviewer: 'qa-reviewer', semanticReviewConfirmed: true });
   assert.equal(passedRes.state, 'stage1-passed');
 
   const passedEv = JSON.parse(await readFile(evPath, 'utf8'));
+  assert.equal(passedEv.stages.stage1.reviewer, 'qa-reviewer');
   const passedCheck = validateG1752Stage1Story({ mdText: completeMd, evidence: passedEv, filePath: mdPath, expectedAssignment: G0001_ASSIGNMENT });
   assert.equal(passedCheck.state, 'stage1-passed');
 

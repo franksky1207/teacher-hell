@@ -15,14 +15,82 @@
     "G10",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1f56106cca3e2ad5d5674ac192f8d120c4df27320b94f1147dc944879a76c5fd",
+      "checkedAt": "2026-11-27T16:06:01.117Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "留下把低消用完，但不再加點。",
+            "action": "在朋友可自由去留下，選擇本人留下消費已付低消，不要求分攤新增費用。",
+            "tradeoff": "少損失預付額，須忍受噪音且聚會可能散。"
+          },
+          {
+            "id": 2,
+            "text": "認賠這筆，我們各自決定要不要換地方。",
+            "action": "放棄本人預付消費，提出轉場邀請，未替朋友付新店費用或訂位。",
+            "tradeoff": "離開吵雜，損失預付且有人可能不想再跑。"
+          },
+          {
+            "id": 3,
+            "text": "先問店員能不能換到較安靜的位置。",
+            "action": "向店員詢問不額外付費的換位可能，未取得安排。",
+            "tradeoff": "可能保住聚會，需等待且未必有位置。"
+          },
+          {
+            "id": 4,
+            "text": "問能不能改外帶，大家別在這裡硬聊。",
+            "action": "詢問已付低消可否依店規轉外帶，未取得承諾。",
+            "tradeoff": "或可減少浪費，品項受限且不一定獲准。"
+          },
+          {
+            "id": 5,
+            "text": "我先走，這次就不硬當主揪了。",
+            "action": "在結清本人責任後退出當晚聚會，朋友可自行續留或另約。",
+            "tradeoff": "保住休息，放棄當晚相聚且可能被虧。"
+          },
+          {
+            "id": 6,
+            "text": "提出下次重新約，今天只各自喝一杯就散。",
+            "action": "提出縮短當晚相聚與另約的建議，不代朋友同意或先訂新場。",
+            "tradeoff": "少拖時間，但相聚縮短且下次未必約得成。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏不想今天就這樣算了，自費多走一趟先看附近店，再回來問大家。",
+          "action": "自願花本人時間步行查看鄰近可營業場所與價格，再向好友提出實查選項。",
+          "tradeoff": "想挽回聚會，增加疲勞且不保證找到或有人跟。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2798139319
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "47b2b01c584acc3db7e3eba03899de7f0aa683f24677b66069645f2ee592a466"
+      },
+      "consequenceDirections": {
+        "A": "店員可能協助或拒絕，朋友可能等不下去；詢問不等於改善已成立。",
+        "B": "好友可同行或先回家，主揪號召力可能受挫；新場所仍須實查。",
+        "C": "有人可能接受、有人仍想聊，導師需尊重分開決定；號召不再自動得到一致回應。",
+        "D": "實查可能找到適合處也可能更失望，朋友可不等；不先替所有人付下一筆訂金。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8a7b01b5952f061e0b8e6fdf6db0b971c2e5cc0395f06ef6e968bd7d7fd0b7c0",
+    "draftSha256": "1f56106cca3e2ad5d5674ac192f8d120c4df27320b94f1147dc944879a76c5fd",
     "seedAssignmentVersion": 1
   }
 }

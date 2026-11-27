@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8ec8acf0a5d4ede461b800056dbf9409cdef26ee0d72d328f39c2fb6674213e6",
+      "checkedAt": "2026-11-27T16:06:01.113Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "一起申請這次課務調整，等核准再做。",
+            "action": "與同事提出一次課務調整申請，未獲准前維持合法安排。",
+            "tradeoff": "可能得到緩衝，增加申請時間且可能被拒。"
+          },
+          {
+            "id": 2,
+            "text": "不借他的課，我調短自己權限內的學習單。",
+            "action": "刪減本人可調的重複練習，保留必要學習目標。",
+            "tradeoff": "由自己吸收調整，可能少練幾題且要重排教案。"
+          },
+          {
+            "id": 3,
+            "text": "先請他指出這疊哪裡最耗時間，不請他代盯。",
+            "action": "邀同事自願從教學經驗提出學習單可改處，未委託代課或代評。",
+            "tradeoff": "保留專業互助，耗其休息且他可拒絕。"
+          },
+          {
+            "id": 4,
+            "text": "另向年級召集人提議錯開大型報告期限。",
+            "action": "提出跨科作業期限協調建議，未替其他教師更改期限。",
+            "tradeoff": "有較長期空間，需溝通且當天未必受益。"
+          },
+          {
+            "id": 5,
+            "text": "謝謝他的好意，今天不另加跨科合作。",
+            "action": "婉拒本次額外跨科安排，維持各自課程與必要支持。",
+            "tradeoff": "免去臨時協調，學生與同事可能覺得錯失緩衝。"
+          },
+          {
+            "id": 6,
+            "text": "提議以後共同備一份能用的閱讀材料，今天不臨時換。",
+            "action": "邀同事於後續可用時間共同備跨科材料，未定成品或排程。",
+            "tradeoff": "可延續互助，增加備課且未必合作成。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想喘，今天放棄自己原本要精修的版面，直接用清楚的舊版。",
+          "action": "在內容正確可用前提下停止本人非必要美編，採用既有清楚版學習單。",
+          "tradeoff": "少一點精緻成品，保留自身休息與教學準備。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 251413685
+        },
+        "selectedIds": [
+          5,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "66753a62852736b75868c92b8b71558572654ba4ab4f8f07f84a8e6b9760396c"
+      },
+      "consequenceDirections": {
+        "A": "同事可能理解或認為導師太僵，雙方仍須自行調整合法授課節奏。",
+        "B": "同事可能會心一笑，學生可能不介意或抱怨版面普通；行動直接減少教師額外投入，不虛稱已解決作業量。",
+        "C": "召集人可能受理或各科不同意，學生仍須獲得現有必要支持。",
+        "D": "同事可接受或拒絕，跨科內容可能難整合；不預設新材料已減輕負擔。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2abdb3688d22cd8882adbf1b833f40db3b9b0b78b0cea63e68c059b393bdb0fe",
+    "draftSha256": "8ec8acf0a5d4ede461b800056dbf9409cdef26ee0d72d328f39c2fb6674213e6",
     "seedAssignmentVersion": 1
   }
 }

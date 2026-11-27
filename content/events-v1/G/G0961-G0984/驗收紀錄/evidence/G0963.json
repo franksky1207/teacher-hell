@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "94de5fcb13f80b7a013b239c87948fa7115ef9fcd685dcc0c5636e983b03a866",
+      "checkedAt": "2026-11-27T16:06:01.064Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把問題縮成三項，請他寫一份分項估價。",
+            "action": "提出三項主要費用問題並請店員提供分項書面估價，未成交。",
+            "tradeoff": "便於比較，店員未必願意當場完成。"
+          },
+          {
+            "id": 2,
+            "text": "先問能不能到府看過，再談總價。",
+            "action": "詢問現勘方式、費用及是否可抵購機款，未預約成功。",
+            "tradeoff": "可縮小施工不確定性，可能多一筆勘查費與等待。"
+          },
+          {
+            "id": 3,
+            "text": "說明我不是同行，請他先講這台最常被抱怨什麼。",
+            "action": "澄清私人買家身分並詢問該機常見使用限制。",
+            "tradeoff": "能轉向使用經驗，但仍需自行判斷銷售說法。"
+          },
+          {
+            "id": 4,
+            "text": "今天只拿型錄，回去比別家的安裝條件。",
+            "action": "結束當日洽談，取得可公開索取的型錄後另作比較。",
+            "tradeoff": "保留選擇，得多跑店且暫時無新冷氣。"
+          },
+          {
+            "id": 5,
+            "text": "問可不可以改談一台施工條件比較單純的機型。",
+            "action": "請店員依既有住屋資訊另列較易安裝的候選機種。",
+            "tradeoff": "少一點施工變數，可能放棄原先偏好的性能或價格。"
+          },
+          {
+            "id": 6,
+            "text": "留聯絡方式，請他有空再回覆這份問題。",
+            "action": "詢問店員是否願意於營業時間回覆問題清單，未取得答覆承諾。",
+            "tradeoff": "不佔現場太久，但要等且可能沒有回音。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被當同行我還挺得意，乾脆請他出一題考我懂不懂。",
+          "action": "半開玩笑邀店員用一項購機問題考自己，暫停價格追問。",
+          "tradeoff": "可化解尷尬，也可能更像挑釁並浪費時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2141083224
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "d1ea95ebd0a421fa7ba8709e86f0f2b50ccf4e1f7a22416cc70e605c418e181a"
+      },
+      "consequenceDirections": {
+        "A": "店員可能願意接續或拒絕留單，導師須自行決定等待多久；尚未付款。",
+        "B": "店員可能接梗或更冷淡，導師可能答錯丟臉；玩笑不取代契約費用確認。",
+        "C": "估價若完整可降低疑慮，店員也可能仍不耐；導師須再核對而非視為保證零加價。",
+        "D": "現勘可能揭露額外需求，亦可能無此服務；預算與選機需再取捨。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "12017781798baabae9bd9b2eea64c98f19b4f441efdfe133db750e7db0540c6d",
+    "draftSha256": "94de5fcb13f80b7a013b239c87948fa7115ef9fcd685dcc0c5636e983b03a866",
     "seedAssignmentVersion": 1
   }
 }

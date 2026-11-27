@@ -15,14 +15,155 @@
     "G04",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "76bd0eca1a2413fcdf8c48c9d830a20974077a4dde799e15600834a6133b6c12",
+      "checkedAt": "2026-11-27T16:06:01.084Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "和他挑一段真實觀察，當場改成只寫看見的事。",
+            "action": "共同改寫一段有來源的實際觀察作為示例，不重新散布家庭推測。",
+            "tradeoff": "可釐清寫法，佔雙方排班時間。"
+          },
+          {
+            "id": 2,
+            "text": "請主管提供現有紀錄範例，不由我另訂格式。",
+            "action": "向權責主管詢問可使用的既有紀錄範例，未承諾主管會提供。",
+            "tradeoff": "避免口耳規則，需等待且可能暫無範例。"
+          },
+          {
+            "id": 3,
+            "text": "問他下次能不能特別留意，孩子課間想不想加入活動。",
+            "action": "在既有觀察任務及排班內另邀助理自願聚焦學生課間參與情形，不追加家庭調查或工時。",
+            "tradeoff": "可獲具體互動線索，擠占原任務內其他觀察且對方可拒。"
+          },
+          {
+            "id": 4,
+            "text": "邀他在排班內參加一次紀錄討論。",
+            "action": "提出排班內成人紀錄討論的邀請，未排定出席或變更工時。",
+            "tradeoff": "有共同學習機會，可能需調度且他不一定想參與。"
+          },
+          {
+            "id": 5,
+            "text": "先不用他這份額外彙整，以後改口頭交換直接觀察。",
+            "action": "不再委託此類額外彙整，改約排班內必要口頭觀察交換並照規定留紀錄。",
+            "tradeoff": "減少重工，導師增加自行整理時間。"
+          },
+          {
+            "id": 6,
+            "text": "請他列出哪些觀察最想讓我知道，再由我回應用途。",
+            "action": "邀助理自願選出任務內關鍵觀察，導師逐項說明是否有助後續工作。",
+            "tradeoff": "保留合作價值，需時間且未必每項都用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我怕自己平常也寫太快，拿我一段舊紀錄一起挑毛病。",
+          "action": "以本人有權使用且去識別的舊紀錄邀助理共同檢視寫法。",
+          "tradeoff": "願暴露自己的疏漏，耗整理時間且可能被對方直接批評。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1127477804
+        },
+        "selectedIds": [
+          4,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "b90cde046acfd4def8da0e06690323ab07fee6f5cf6bf4c77e97e2b896875cfb"
+      },
+      "consequenceDirections": {
+        "A": "助理可能願等或覺得被上報，主管可能提供方向；必要更正不因等待停下。",
+        "B": "助理可能較敢談或指出導師問題；成人共同檢視仍不把彼此同意當事實查證。",
+        "C": "助理可拒絕或願意參加，主管須決定安排；不能因提供邀請就視為完成訓練。",
+        "D": "助理可能覺得輕鬆或失落；口頭內容也須核實保密，不以口頭逃避紀錄責任。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通3只收直接觀察接近紀錄共同底線，改成在既有合法任務內另邀聚焦課間參與觀察。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "和他挑一段真實觀察，當場改成只寫看見的事。",
+                "action": "共同改寫一段有來源的實際觀察作為示例，不重新散布家庭推測。",
+                "tradeoff": "可釐清寫法，佔雙方排班時間。"
+              },
+              {
+                "id": 2,
+                "text": "請主管提供現有紀錄範例，不由我另訂格式。",
+                "action": "向權責主管詢問可使用的既有紀錄範例，未承諾主管會提供。",
+                "tradeoff": "避免口耳規則，需等待且可能暫無範例。"
+              },
+              {
+                "id": 3,
+                "text": "這次只接他的直接觀察，額外分析先別委託他。",
+                "action": "決定本次後續合作僅接收任務內直接觀察，不追加家庭分析工作。",
+                "tradeoff": "範圍明確，可能少一些背景資訊。"
+              },
+              {
+                "id": 4,
+                "text": "邀他在排班內參加一次紀錄討論。",
+                "action": "提出排班內成人紀錄討論的邀請，未排定出席或變更工時。",
+                "tradeoff": "有共同學習機會，可能需調度且他不一定想參與。"
+              },
+              {
+                "id": 5,
+                "text": "先不用他這份額外彙整，以後改口頭交換直接觀察。",
+                "action": "不再委託此類額外彙整，改約排班內必要口頭觀察交換並照規定留紀錄。",
+                "tradeoff": "減少重工，導師增加自行整理時間。"
+              },
+              {
+                "id": 6,
+                "text": "請他列出哪些觀察最想讓我知道，再由我回應用途。",
+                "action": "邀助理自願選出任務內關鍵觀察，導師逐項說明是否有助後續工作。",
+                "tradeoff": "保留合作價值，需時間且未必每項都用。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我怕自己平常也寫太快，拿我一段舊紀錄一起挑毛病。",
+              "action": "以本人有權使用且去識別的舊紀錄邀助理共同檢視寫法。",
+              "tradeoff": "願暴露自己的疏漏，耗整理時間且可能被對方直接批評。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3337890187
+            },
+            "selectedIds": [
+              3,
+              2,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 2,
+              "C": 5,
+              "D": "emotional"
+            },
+            "optionsDigest": "ad11701bd703eec0b94cf0b9d934773a1cc6eeb5a60f2b60bebf272c407ad007"
+          },
+          "previousConsequenceDirections": {
+            "A": "助理可能安心或覺得專業被否定；導師須自行向合格權責者確認必要背景。",
+            "B": "助理可能願等或覺得被上報，主管可能提供方向；必要更正不因等待停下。",
+            "C": "助理可能覺得輕鬆或失落；口頭內容也須核實保密，不以口頭逃避紀錄責任。",
+            "D": "助理可能較敢談或指出導師問題；成人共同檢視仍不把彼此同意當事實查證。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0f84afc71a94893b883f284ad424c0d19289ee07ea538b049efd6bbcb34a2444",
+    "draftSha256": "76bd0eca1a2413fcdf8c48c9d830a20974077a4dde799e15600834a6133b6c12",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bf97d57f2a84c8be42e952402703cb8c7f7362576465e90b6fadad0ce3cc1a5f",
+      "checkedAt": "2026-11-27T16:06:01.104Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留班上週記，讓孩子自選一次有興趣的時事題。",
+            "action": "在既有寫作目標內提供學生可自選的一次時事題，不採家長批改認證。",
+            "tradeoff": "容納興趣，教師需另想評語且家長可能嫌太少。"
+          },
+          {
+            "id": 2,
+            "text": "拿一篇去識別的週記，說明我到底在看什麼。",
+            "action": "用有權使用的去識別寫作例子說明教學回饋方式。",
+            "tradeoff": "讓專業具體，花說明時間且未必說服家長。"
+          },
+          {
+            "id": 3,
+            "text": "邀孩子另談他想寫什麼，家長題單先不進課堂。",
+            "action": "暫不採用題單，另邀學生自願說明寫作興趣與壓力。",
+            "tradeoff": "聽本人聲音，增加聯絡且家長可能覺得被排除。"
+          },
+          {
+            "id": 4,
+            "text": "請家長把職場經驗改成一次自願分享邀請。",
+            "action": "提出由家長自願分享職場表達經驗的建議，未批准入班或要求學生參加。",
+            "tradeoff": "保留其專長，需校方程序且可能不成。"
+          },
+          {
+            "id": 5,
+            "text": "這學期不改題目，提供現有寫作資源讓他自行參考。",
+            "action": "維持原教學安排，提供合法既有寫作資源資訊，不代孩子加派。",
+            "tradeoff": "班級一致，家長可能認為不肯變通。"
+          },
+          {
+            "id": 6,
+            "text": "若還談不攏，我邀課程承辦一起說明，不在這裡先簽名。",
+            "action": "提出另約課程承辦共同說明的邀請，未取得承辦出席或改課核准。",
+            "tradeoff": "有機會釐清權責，增加排程且家長可能嫌拖延。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏想知道他題目難在哪，請他選一題，當面跟我各寫三句。",
+          "action": "邀家長做成人間自願短寫比較，不拿孩子成績當賭注。",
+          "tradeoff": "可能打開對話，也可能變成較勁並佔時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3449753021
+        },
+        "selectedIds": [
+          2,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "3f68a17f6fc7e0f1ea0cca31285de194cdb13d3ede65e812d9c5c509998b03f2"
+      },
+      "consequenceDirections": {
+        "A": "家長可能接受、拒絕或批評導師答案；成人表現不能推論孩子必須適應。",
+        "B": "承辦可能願意參與或另提供處理方式，家長也可拒邀；必要課程建議入口仍須照實告知。",
+        "C": "學生可拒談或表達不同意願，教師不能因而允諾免做所有必要作業。",
+        "D": "家長可能理解寫作目的或繼續質疑，導師承擔公開方法被挑戰的風險。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通6提供正式建議管道可能僅是共同應告知資訊，改為額外多方說明邀請。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "保留班上週記，讓孩子自選一次有興趣的時事題。",
+                "action": "在既有寫作目標內提供學生可自選的一次時事題，不採家長批改認證。",
+                "tradeoff": "容納興趣，教師需另想評語且家長可能嫌太少。"
+              },
+              {
+                "id": 2,
+                "text": "拿一篇去識別的週記，說明我到底在看什麼。",
+                "action": "用有權使用的去識別寫作例子說明教學回饋方式。",
+                "tradeoff": "讓專業具體，花說明時間且未必說服家長。"
+              },
+              {
+                "id": 3,
+                "text": "邀孩子另談他想寫什麼，家長題單先不進課堂。",
+                "action": "暫不採用題單，另邀學生自願說明寫作興趣與壓力。",
+                "tradeoff": "聽本人聲音，增加聯絡且家長可能覺得被排除。"
+              },
+              {
+                "id": 4,
+                "text": "請家長把職場經驗改成一次自願分享邀請。",
+                "action": "提出由家長自願分享職場表達經驗的建議，未批准入班或要求學生參加。",
+                "tradeoff": "保留其專長，需校方程序且可能不成。"
+              },
+              {
+                "id": 5,
+                "text": "這學期不改題目，提供現有寫作資源讓他自行參考。",
+                "action": "維持原教學安排，提供合法既有寫作資源資訊，不代孩子加派。",
+                "tradeoff": "班級一致，家長可能認為不肯變通。"
+              },
+              {
+                "id": 6,
+                "text": "若他仍要整學期替換，請他循課程建議管道提出。",
+                "action": "提供正式課程建議入口並婉拒現場承諾整學期替換。",
+                "tradeoff": "權責明確，程序較慢且可能被向上投訴。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我偏想知道他題目難在哪，請他選一題，當面跟我各寫三句。",
+              "action": "邀家長做成人間自願短寫比較，不拿孩子成績當賭注。",
+              "tradeoff": "可能打開對話，也可能變成較勁並佔時間。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1753131605
+            },
+            "selectedIds": [
+              2,
+              4,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 6,
+              "C": 2,
+              "D": 4
+            },
+            "optionsDigest": "1ca1e9f2202e254fdc3ef3e7406240b9f38b8877f01e5a094dd780b6949ec91c"
+          },
+          "previousConsequenceDirections": {
+            "A": "家長可能接受、拒絕或批評導師答案；成人表現不能推論孩子必須適應。",
+            "B": "權責者可能支持或拒絕建議，導師需說明現行安排；孩子不受申請成敗懲罰。",
+            "C": "家長可能理解寫作目的或繼續質疑，導師承擔公開方法被挑戰的風險。",
+            "D": "家長可能願改角色或不滿失去主導；不能將邀請當已取得演講資格。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "85706acc678d45a6326229dbf61f9259ffdec652e80f47295ff1c383cf229816",
+    "draftSha256": "bf97d57f2a84c8be42e952402703cb8c7f7362576465e90b6fadad0ce3cc1a5f",
     "seedAssignmentVersion": 1
   }
 }

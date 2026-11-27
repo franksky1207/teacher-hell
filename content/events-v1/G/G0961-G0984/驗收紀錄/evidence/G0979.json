@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9e0478be63b409ec5c7d344c6ec3b3b2a4138d3c8f3f6b18ce7a24158065c159",
+      "checkedAt": "2026-11-27T16:06:01.111Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另外問他這幾次請客，最希望大家記得什麼。",
+            "action": "邀學生自願談請客期待，不預設承認爭寵。",
+            "tradeoff": "可接近本人動機，耗課間且可能只得到玩笑。"
+          },
+          {
+            "id": 2,
+            "text": "下次稱讚後留一點時間，讓本人把做法說完。",
+            "action": "於本人授課的可用時間增加自願分享解法環節，不強迫被稱讚者登台。",
+            "tradeoff": "肯定有具體內容，耗課時且同學可能不想講。"
+          },
+          {
+            "id": 3,
+            "text": "提議班上討論大量請客要不要先問大家的意願。",
+            "action": "安排班會討論自願受贈與大量訂購的相處方式，不創設金錢門檻。",
+            "tradeoff": "讓拒絕比較容易，需時間且可能被指針對個人。"
+          },
+          {
+            "id": 4,
+            "text": "不追加班級規定，先觀察他下次怎麼做。",
+            "action": "在必要規範持續下不新增請客限制，另觀察具體互動。",
+            "tradeoff": "避免過度干預，教師需花注意力且問題可能持續。"
+          },
+          {
+            "id": 5,
+            "text": "邀他做一次不用花錢的班級活動提案。",
+            "action": "邀學生自願提出無消費要求的同儕活動，未批准或保證有人參加。",
+            "tradeoff": "提供另一種號召方式，可能變額外負擔或被拒。"
+          },
+          {
+            "id": 6,
+            "text": "邀願意的同學匿名說說，收請客時有沒有壓力。",
+            "action": "提供自願匿名表達受贈壓力的短回饋，不調查個人財力。",
+            "tradeoff": "能聽到沉默者，需整理且可能無人填。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點吃味，今天下課不接受他的飲料，留在黑板旁繼續問那個解法。",
+          "action": "導師婉拒本人受贈，將課間用於向原解題者自願請教，不要求同學旁聽。",
+          "tradeoff": "滿足想把話聽完的心情，失去休息且請客者可能感到被冷落。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2038396467
+        },
+        "selectedIds": [
+          2,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "fdabea1e596b0dca77ab7742ab45ff3fcd030bcd7217778b222f6af7a371dcf6"
+      },
+      "consequenceDirections": {
+        "A": "他可能找到其他互動也可能覺得被安排工作；不能要求靠服務換老師肯定。",
+        "B": "同學可能聽見努力或仍關心飲料，學生的注意可能轉移或反彈；不保證人氣重分配。",
+        "C": "解題者可能願談或想休息，請客者可能敏感反彈；不以不收飲料羞辱學生。",
+        "D": "學生可能自然收斂或繼續以請客聚眾，後續只能依事實處理而非動機猜測。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a33f62d74d9bfe9faeb7ea1204a9c7b967280db1990b4405df3e737aa21b7125",
+    "draftSha256": "9e0478be63b409ec5c7d344c6ec3b3b2a4138d3c8f3f6b18ce7a24158065c159",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c7928eda59294a3be178a1a73caa1de546d863b50379ef871fff3ac2809bbb35",
+      "checkedAt": "2026-11-27T16:06:01.087Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把這次排程卡住的情況，另送主管討論修繕追蹤方式。",
+            "action": "提出跨單位修繕追蹤制度建議，超出本案必要催修。",
+            "tradeoff": "可能改善長期排程，增加提案時間與行政摩擦。"
+          },
+          {
+            "id": 2,
+            "text": "邀他一起設計設備停用時的替代教學。",
+            "action": "提出在安全空間共同規劃無投影設備教學的邀請，未分派同事工作。",
+            "tradeoff": "可減少課程停頓，但雙方需投入備課。"
+          },
+          {
+            "id": 3,
+            "text": "我另向總務問，修好前有沒有可借的移動白板。",
+            "action": "詢問替代教具的借用條件，尚未取得白板。",
+            "tradeoff": "可改善臨時教學，須聯絡且可能無庫存。"
+          },
+          {
+            "id": 4,
+            "text": "等他下課後，另談剛才在辦公室問責的方式。",
+            "action": "邀同事於可用時間討論公開質問對合作的影響，不阻止其反映安全。",
+            "tradeoff": "可說出委屈，可能被認為在轉移焦點。"
+          },
+          {
+            "id": 5,
+            "text": "我不再加掛教室展示，先把自己管的非必要佈置撤下。",
+            "action": "撤除本人可安全處理的非必要懸掛展示，不碰鬆動設備。",
+            "tradeoff": "減少額外佈置管理，學生作品展示暫少。"
+          },
+          {
+            "id": 6,
+            "text": "請他提供自己遇過的停用案例，供我調整班務。",
+            "action": "邀同事分享不含敏感資訊的替代運作經驗，尚未取得案例。",
+            "tradeoff": "可少摸索，可能被拒絕或取得不適用經驗。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我現在真的不想再被圍著問，額外討論留到下午。",
+          "action": "暫停非必要公開討論，明確約定可用時段再談，將課間留作休息。",
+          "tradeoff": "保住喘息，可能被同事解讀成逃避。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2137197192
+        },
+        "selectedIds": [
+          1,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "c3da8ccdf735443261766e5d6d72b0ba40711611e7ccfc510cb4308694c3e8af"
+      },
+      "consequenceDirections": {
+        "A": "同事可能理解或更不滿，雙方關係改變；安全資訊仍可依法反映。",
+        "B": "同事可能願意從指責轉為經驗交流，亦可能認為導師該自己處理；必要責任不外包。",
+        "C": "同事可能接受或向主管反映態度，導師需履行約定；緊急安全聯絡仍即時處理。",
+        "D": "主管可能採納或認為已有流程，同事可能願支持；不以提案取代當日安全接續。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "dd01842b84865fd405cd74d3268f80ea86a1ba766e854b5414ad5f96b6bd0031",
+    "draftSha256": "c7928eda59294a3be178a1a73caa1de546d863b50379ef871fff3ac2809bbb35",
     "seedAssignmentVersion": 1
   }
 }

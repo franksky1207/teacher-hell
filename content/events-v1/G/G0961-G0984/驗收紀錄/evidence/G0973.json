@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bb8a9db93342e74a0609bea9209861639624a7ea22bd8bbc2402199b610c6c6c",
+      "checkedAt": "2026-11-27T16:06:01.094Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "約一次有結束時間的電話，請他先列最想問的三件事。",
+            "action": "另約一次限時聯絡，邀家長自行整理主要問題，不延長當下非必要通話。",
+            "tradeoff": "集中問題，需再排時間且家長可能仍不安心。"
+          },
+          {
+            "id": 2,
+            "text": "整理孩子最近幾項學習表現，讓他拿事實跟家人談。",
+            "action": "提供本人有權回覆的具體學習觀察供家長參考，不代寫升學保證。",
+            "tradeoff": "減少空泛安慰，耗整理時間且資料可能被過度解讀。"
+          },
+          {
+            "id": 3,
+            "text": "問孩子願不願意一起談，他自己覺得哪科需要幫忙。",
+            "action": "邀孩子自願參與學習需求短談，未替其同意或判定需要補習。",
+            "tradeoff": "納入本人聲音，親子期待可能衝突。"
+          },
+          {
+            "id": 4,
+            "text": "提供校內現有課輔資訊，讓家庭自行比較。",
+            "action": "提供現有課輔時段與申請資訊，未報名或保證名額。",
+            "tradeoff": "有具體資源，家長需自行評估且未必符合需求。"
+          },
+          {
+            "id": 5,
+            "text": "邀他先觀察一段日常作息，再決定要不要加課。",
+            "action": "建議家庭自願記錄一段既有讀書與休息安排，不以提交紀錄換支持。",
+            "tradeoff": "有助看時間負擔，增加家庭工作且不保證找到答案。"
+          },
+          {
+            "id": 6,
+            "text": "今天就談到這裡，讓他照原計畫走，不再追加分析。",
+            "action": "結束非必要重複分析，維持已確認的校內學習計畫與必要聯絡。",
+            "tradeoff": "保住批改時間，家長可能覺得安慰不足。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那句名師惹煩了，願意陪他練一次怎麼回親戚。",
+          "action": "邀家長做一次成人對話演練，回應比較壓力，不替家庭傳話。",
+          "tradeoff": "直接承接飯桌壓力，耗時間且可能顯得多管閒事。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3694482054
+        },
+        "selectedIds": [
+          4,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "01b39d5d150dcb2ed199aad2fdeadff5416e497c34327ca9d61414fcb577f006"
+      },
+      "consequenceDirections": {
+        "A": "家庭可能選用或不用；若無名額須維持必要學習支持，不將資訊當已完成輔導。",
+        "B": "家長可能看見已有負荷，也可能認為浪費時間；孩子不被迫交出私人全天紀錄。",
+        "C": "家長可能笑出來或覺得不夠實用；演練不保證親戚收口或成績上升。",
+        "D": "家長可能找到可談內容或更挑剔落差；導師需說清資料適用範圍。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "be6867057fcee916fdee8cd30e4ae2907e79b110d1189bacec143c677f59b0b5",
+    "draftSha256": "bb8a9db93342e74a0609bea9209861639624a7ea22bd8bbc2402199b610c6c6c",
     "seedAssignmentVersion": 1
   }
 }

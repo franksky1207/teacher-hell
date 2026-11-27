@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8837adc0a5e9f61330908507efae113c24a34e3a36ef907f41a54808aa3a4751",
+      "checkedAt": "2026-11-27T16:06:01.121Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他單獨回想，衝過去前還看見了哪些求助機會。",
+            "action": "於情緒可談時邀學生自願回顧求助選擇，不重演危險或要求自責。",
+            "tradeoff": "可能找替代方式，耗時間且學生可能覺得被怪。"
+          },
+          {
+            "id": 2,
+            "text": "請校安提供適合學生使用的通報方式說明。",
+            "action": "向校安詢問可提供的學生求助說明，未排定講座或訓練。",
+            "tradeoff": "有專業資訊，需協調且未必很快取得。"
+          },
+          {
+            "id": 3,
+            "text": "等雙方都願意，再安排談這次各自害怕的事。",
+            "action": "提出事件後自願對話的邀請，不強迫和解或免除調查。",
+            "tradeoff": "有修復可能，需準備且有人可能拒絕。"
+          },
+          {
+            "id": 4,
+            "text": "提議把糾察任務縮到觀察通報，不再讓學生扛攔阻期待。",
+            "action": "向權責者提出明確限縮學生協作職責的建議，未直接改校制。",
+            "tradeoff": "減少角色誤解，需制度討論且可能被當卸責。"
+          },
+          {
+            "id": 5,
+            "text": "在我的班會用不具名情境談制止和求助。",
+            "action": "於班會安排不具名、無危險模擬的求助情境討論，不揭事件細節。",
+            "tradeoff": "可讓全班學習，佔班會且同學仍可能猜到。"
+          },
+          {
+            "id": 6,
+            "text": "今天不加談話，讓他先照原安排休息。",
+            "action": "不追加非必要反思任務，維持已確認的照看與後續聯繫。",
+            "tradeoff": "留情緒緩衝，暫少一次理解機會。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他說好人難做，我想陪他把那句話寫成只給我看的短箋。",
+          "action": "邀學生自願以私人短箋表達委屈，教師另花可用時間閱讀，不作悔過書。",
+          "tradeoff": "接住不服氣，耗教師時間且學生可能拒寫。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2795608758
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "7ca95e0162f0c99c2af5b0c68f2d936021e38275d36e386a1696193ee6d97578"
+      },
+      "consequenceDirections": {
+        "A": "學生可能辨出可行求助或仍認為只能硬搶，教師須承受其不服；調查仍另行。",
+        "B": "雙方可接受或不願見面，教師需尊重拒絕；未對話不影響必要權益。",
+        "C": "學生可能願寫或覺得矯情，教師須回應其具體感受；不以寫完換免責或肯定。",
+        "D": "學生可能安心或覺得不被信任，校方可能採納或另議；既有無強制權限制仍共同成立。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "55bd2d8444835e560126c42d329312c2e8e4918c19da282bf6540f3a1fb0a9b4",
+    "draftSha256": "8837adc0a5e9f61330908507efae113c24a34e3a36ef907f41a54808aa3a4751",
     "seedAssignmentVersion": 1
   }
 }

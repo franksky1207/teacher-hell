@@ -15,14 +15,82 @@
     "G08",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ea032cd7bc5deefdbb88bca6780e2abd73140eef56512336ea6be90cb0217c96",
+      "checkedAt": "2026-11-27T16:06:01.092Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "轉發原賀報一次，明確標示是學校宣傳資訊。",
+            "action": "在素材合法且預告已澄清後，自願轉發一次學校賀報並標明來源。",
+            "tradeoff": "省協調時間，班群增加宣傳訊息且家長可能反感。"
+          },
+          {
+            "id": 2,
+            "text": "只寫一段真實得獎消息，附官方公告讓想看的人點。",
+            "action": "自行撰寫簡短得獎消息並提供官方來源，不轉貼招生圖。",
+            "tradeoff": "資訊精簡，導師須另寫且公關可能嫌曝光不足。"
+          },
+          {
+            "id": 3,
+            "text": "不貼班群，改問校方能否用既有校訊寄送。",
+            "action": "拒絕自願班群轉發，提出由既有校訊發布的替代建議。",
+            "tradeoff": "保留班群用途，增加公關安排工作且未必被接受。"
+          },
+          {
+            "id": 4,
+            "text": "我可以幫忙校對獎項文字，轉發請另找願意的人。",
+            "action": "提供一次獎項文案校對協助，婉拒班群宣傳。",
+            "tradeoff": "仍有實際合作，耗校對時間且不滿足轉發目標。"
+          },
+          {
+            "id": 5,
+            "text": "問他能不能讓得獎者自願寫學習經驗，再決定是否分享。",
+            "action": "提出先徵詢獲獎者自願分享經驗的建議，尚未取得稿件或同意。",
+            "tradeoff": "較有教育內容，需等待且獲獎者可拒絕。"
+          },
+          {
+            "id": 6,
+            "text": "請主管先談清楚，這類宣傳以後由誰負責。",
+            "action": "提出主管釐清未來宣傳工作分工的議題，本次未承諾轉發。",
+            "tradeoff": "可避免先斬後奏，增加正式協調與關係壓力。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是不想再替這種先斬後奏收尾，這次額外宣傳全婉拒。",
+          "action": "拒絕本次所有自願宣傳協助，明說原因是未先徵詢，仍配合必要正式工作。",
+          "tradeoff": "保住界線，容易加深既有不滿。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2529937906
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "34ca3520a7a3434caaf4600ffa28e9c657ae611a84e972523fc3fbe9268f69e6"
+      },
+      "consequenceDirections": {
+        "A": "主管可能明確分工或暫無結論，公關可能更不滿；本次必要更正照常。",
+        "B": "家長可能願看，公關可能要求原圖；導師須守住同意的宣傳範圍。",
+        "C": "公關可能收斂或指責不合作，導師承擔人際代價；不得因此拒絕學生必要權益訊息。",
+        "D": "公關可能接受分工或認為挑工作；不以校對取代其原查證責任。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4f5281f4470fb2f1f4415c97f5fcbe123d2fd7b2be4a66b7c5d1c094bdaaefec",
+    "draftSha256": "ea032cd7bc5deefdbb88bca6780e2abd73140eef56512336ea6be90cb0217c96",
     "seedAssignmentVersion": 1
   }
 }

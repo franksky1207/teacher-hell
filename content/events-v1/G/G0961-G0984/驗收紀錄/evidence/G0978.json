@@ -15,14 +15,82 @@
     "G08",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fe679ceb4915f5b34480576e23d0e154d28dcf1cc9f3e45a9cb3e2de43e8643e",
+      "checkedAt": "2026-11-27T16:06:01.109Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我願意提供一次實際操作回饋，但只用假資料。",
+            "action": "同意在可用時段以無個資測試資料提供一次使用回饋。",
+            "tradeoff": "能改善介面，增加時間且意見未必被採用。"
+          },
+          {
+            "id": 2,
+            "text": "請主管安排各端一起談流程，不只找我班試。",
+            "action": "向主管提出跨端流程討論建議，未召集會議或強派人員。",
+            "tradeoff": "減少單班承擔，需協調且可能延後改版。"
+          },
+          {
+            "id": 3,
+            "text": "先不參與改版，我把空堂留給班上。",
+            "action": "婉拒非必要系統改版協助，維持既有必要問題回報。",
+            "tradeoff": "守住班務時間，職員可能覺得心血被拒。"
+          },
+          {
+            "id": 4,
+            "text": "挑三個最常被誤讀的畫面，整理成使用者問題。",
+            "action": "另整理三項介面理解問題供職員參考，不代為編程或核准。",
+            "tradeoff": "回饋明確，需整理且不能涵蓋所有需求。"
+          },
+          {
+            "id": 5,
+            "text": "問能不能安排不影響工時的後台訓練給老師自願參加。",
+            "action": "向權責者詢問自願後台說明的安排可能，未保證開課或他人出席。",
+            "tradeoff": "降低陌生感，需資源且不一定排得出。"
+          },
+          {
+            "id": 6,
+            "text": "提出先只做查詢功能，不急著擴充申請入口。",
+            "action": "提出下個開發階段聚焦唯讀查詢的建議，未變更正式權限。",
+            "tradeoff": "縮小風險面，可能延後原無紙化目標。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再一早被驚醒，請他把非緊急測試通知集中到工作時段。",
+          "action": "要求將非緊急測試訊息集中於上班時段，不關閉正式緊急通報。",
+          "tradeoff": "減少疲勞，職員可能認為被嫌棄。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2890602382
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "5d169ab4d2721c58d233025b67581d1e00fb5f5907c0a92be4659c60a7312182"
+      },
+      "consequenceDirections": {
+        "A": "職員可能調整排程或提出技術限制，導師須另談可行通知方式；緊急缺席仍即時接續。",
+        "B": "職員可能願說明或認為需先修系統；詢問不能當訓練已完成。",
+        "C": "職員可能另找試用者或更失落，導師承擔合作關係影響而非停止法定配合。",
+        "D": "職員可能接受分段或覺得被打回原點，主管仍需自行決策。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3ffc8f40cbcdf31e160b4f9d89db2022bb7d63260842b0ff7cd02f484fab5a66",
+    "draftSha256": "fe679ceb4915f5b34480576e23d0e154d28dcf1cc9f3e45a9cb3e2de43e8643e",
     "seedAssignmentVersion": 1
   }
 }

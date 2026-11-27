@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9ed9edec7951273057ceb7b954c3bbcc939770d9ff6224a9466348e72befa0af",
+      "checkedAt": "2026-11-27T16:06:01.074Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請家長先停十分鐘，讓學生把自己的動線講完。",
+            "action": "安排十分鐘學生方案說明，請志工暫停非必要調整。",
+            "tradeoff": "學生有發言空間，成人等待且未必認同。"
+          },
+          {
+            "id": 2,
+            "text": "把可交給成人的搬運集中，攤位怎麼擺留給學生。",
+            "action": "在安全分工內將成人協助集中於搬運，學生自行決定可自主的陳列。",
+            "tradeoff": "界線清楚，成人可能覺得只被當勞力。"
+          },
+          {
+            "id": 3,
+            "text": "邀他跟一名學生一起當聯絡窗口，其他人先別各自改。",
+            "action": "提出親師生各一窗口的協作邀請，未任命未同意者。",
+            "tradeoff": "減少多頭指揮，增加窗口負荷且仍須協商。"
+          },
+          {
+            "id": 4,
+            "text": "今天先接受這套高效率擺法，另保留學生負責現場介紹。",
+            "action": "採用現有安全擺法，將非必要解說內容交學生自主準備。",
+            "tradeoff": "節省重做時間，學生原設計暫未實現。"
+          },
+          {
+            "id": 5,
+            "text": "先試擺兩邊各一小段，再一起看排隊會卡在哪。",
+            "action": "在不開火、不交易的空間進行兩方案桌椅動線小規模試擺。",
+            "tradeoff": "可用具體結果談，耗場地與時間且不能代表實際人潮。"
+          },
+          {
+            "id": 6,
+            "text": "多來的志工先請回，今天不把明天的份一起做。",
+            "action": "婉拒超出今日需求的額外志工服務與預作，維持必要人力。",
+            "tradeoff": "減少成人主導，但會辜負特地到校的心意。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我忍不住想護那張圖，今天就陪學生照它擺一次。",
+          "action": "導師投入自己的可用籌備時間，支持學生在安全範圍照原圖試擺。",
+          "tradeoff": "保住原創作，導師失去休息且可能擺得較慢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3795615244
+        },
+        "selectedIds": [
+          1,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "27079eb1f428293e35257bf3bf000ec855211653e29214eac980a779b0cd48b3"
+      },
+      "consequenceDirections": {
+        "A": "家長可能滿意，學生可能接受介紹工作也可能仍覺得被架空；導師須承擔取捨。",
+        "B": "學生可能被支持也可能暴露設計缺陷，志工可能覺得辛勞被否定；不得預寫試擺必成功。",
+        "C": "家長可能願減班或覺得白跑，學生須完成原定工作；不強制其承接新增備料。",
+        "D": "學生可能說清原因或卡住，家長可能願聽也可能不耐；導師須主持討論而非預定學生獲勝。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ffe5ad2d61cbede9b1324ef2d403bee45b995fa7b2c0e91f41d7cbb3345f5192",
+    "draftSha256": "9ed9edec7951273057ceb7b954c3bbcc939770d9ff6224a9466348e72befa0af",
     "seedAssignmentVersion": 1
   }
 }

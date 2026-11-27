@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "de5326d1c8706052093b2b5daa3db66636702fee6b53c1194323d0ff6c9d39cf",
+      "checkedAt": "2026-11-27T16:06:01.051Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "熱門書改用全班都能登記的輪候單。",
+            "action": "公布並啟用全班均可使用的熱門書輪候登記。",
+            "tradeoff": "減少搶書，須維護順序且有人得等。"
+          },
+          {
+            "id": 2,
+            "text": "這兩本先只留教室看，大家輪短一點。",
+            "action": "將兩本熱門書改為暫不外借、課間短時輪讀，公開說明期限。",
+            "tradeoff": "流通快，但讀長篇的同學難以連貫。"
+          },
+          {
+            "id": 3,
+            "text": "請股長提出一個照顧慢來的人、又不藏書的辦法。",
+            "action": "邀股長另提公開借閱方案，尚未承諾採納。",
+            "tradeoff": "保留其投入，方案未形成前仍照既有規則。"
+          },
+          {
+            "id": 4,
+            "text": "找圖書館問問，能不能替班上短期借一套。",
+            "action": "向校內圖書館詢問同套書的班級短期借用可能，未取得書。",
+            "tradeoff": "可能增加供應，須聯絡且未必有館藏。"
+          },
+          {
+            "id": 5,
+            "text": "約一次自願分享，請借過的人講講這套哪裡好看。",
+            "action": "安排課間自願、不劇透的口頭薦書邀請，不以參與換借閱。",
+            "tradeoff": "可把興趣帶到其他書，佔課間且可能冷場。"
+          },
+          {
+            "id": 6,
+            "text": "先維持先到先借，改在固定兩個時段開放借書。",
+            "action": "公開設定兩個可到場借閱的時段，依原規則出借。",
+            "tradeoff": "便於管理，但有課間任務者仍未必趕得上。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想看，這回我排在最後，陪等不到的人一起等。",
+          "action": "導師自願登記在目前學生輪候之後借讀，不占學生順位。",
+          "tradeoff": "有共同等待的親近感，教師得晚讀且不能保證學生也願意等。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 368535939
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "0f07bb258dffc5f9ab1891e9e3ebf8c0152c643fe6f810702e863d02ec2fd721"
+      },
+      "consequenceDirections": {
+        "A": "導師親自排末位可能緩和敵意，也可能被笑跟學生搶漫畫；原爭議仍須依共同規則處理。",
+        "B": "輪候讓不擅擠書架者也能登記；股長可能願意補救，維護名單成為新負擔。",
+        "C": "書留教室可能增加接觸機會，也可能引起想帶回家者反對，股長須處理現場輪替。",
+        "D": "固定時段減少撲空，排隊可能更集中；股長須面對未解的時間差。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "dcdc7f7d57548632bed47f7e47b2441f41d199ebb29ebc248b4d1c0508bc1f98",
+    "draftSha256": "de5326d1c8706052093b2b5daa3db66636702fee6b53c1194323d0ff6c9d39cf",
     "seedAssignmentVersion": 1
   }
 }

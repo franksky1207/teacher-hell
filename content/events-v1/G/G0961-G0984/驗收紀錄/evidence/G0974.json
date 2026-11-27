@@ -15,14 +15,155 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5bb1d9779c30c75b54e663d8ed2173c702f3c44413a2742d33b40b26b0b7e5e4",
+      "checkedAt": "2026-11-27T16:06:01.097Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先問修書店能不能修，不急著拿膠帶亂貼。",
+            "action": "向專業修書服務詢問可行處理與估價，未授權施工或取得賠款。",
+            "tradeoff": "可能保住原書，需聯絡且修復費可能高。"
+          },
+          {
+            "id": 2,
+            "text": "支持他以後不借整本，只分享自己的讀書心得。",
+            "action": "支持物主終止實體出借，另邀其自願以自己的心得交流。",
+            "tradeoff": "保護藏書，少了直接查閱便利且他未必想分享。"
+          },
+          {
+            "id": 3,
+            "text": "我查圖書館是否有同類資源，別再只靠他一套。",
+            "action": "查詢可合法借閱的同類參考資源，尚未取得或替代原書。",
+            "tradeoff": "分散依賴，花搜尋時間且可能不適用。"
+          },
+          {
+            "id": 4,
+            "text": "請願意的人用自己的筆記辦一次題目討論。",
+            "action": "邀同學以自有筆記與可合法使用題目自願交流，不再傳原書。",
+            "tradeoff": "改變共學方式，需準備且可能少人參與。"
+          },
+          {
+            "id": 5,
+            "text": "問同學願不願意各帶一本自己的書，別只靠他一套。",
+            "action": "提出以物主自主同意、清楚借還條件的同儕互借方案，未徵得任何人提供書籍。",
+            "tradeoff": "改成互惠而非單人供應，需協商且可能沒人願借。"
+          },
+          {
+            "id": 6,
+            "text": "問他要不要保留有限借閱，但改由當面同看。",
+            "action": "提出在物主願意時以現場短時閱讀替代帶走的方案，未取得同意。",
+            "tradeoff": "可兼顧交流，物主需在場且可能被迫分心。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看了也心疼，自己出一筆修復贊助，但不替弄壞的人免責。",
+          "action": "向物主提出本人自願且無附帶條件的修復費贊助，未強迫接受。",
+          "tradeoff": "願分擔痛心，花私人錢且可能使責任界線被誤解。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2513919225
+        },
+        "selectedIds": [
+          1,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "cca2d6b38c2940fa43c4c2a43640803a4f1c4f7bdc5a7f6250c5fe8db2e4a0d6"
+      },
+      "consequenceDirections": {
+        "A": "討論可能有新解法或品質不齊，物主可選擇不參加；不要求其繼續供應答案。",
+        "B": "物主可能願意繼續互助或完全休息；同學需自行找合法資料，不能要求他重寫書內容。",
+        "C": "估價可能有助後續協商，也可能確認無法復原；物主仍決定是否修，責任不轉嫁給他。",
+        "D": "物主可能接受或拒絕，後續依法處理不得重複補償；導師可能被期待往後都自掏腰包。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通5停止教師安排共學無既有前提，改為自願互借各自書籍的互惠方案。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "先問修書店能不能修，不急著拿膠帶亂貼。",
+                "action": "向專業修書服務詢問可行處理與估價，未授權施工或取得賠款。",
+                "tradeoff": "可能保住原書，需聯絡且修復費可能高。"
+              },
+              {
+                "id": 2,
+                "text": "支持他以後不借整本，只分享自己的讀書心得。",
+                "action": "支持物主終止實體出借，另邀其自願以自己的心得交流。",
+                "tradeoff": "保護藏書，少了直接查閱便利且他未必想分享。"
+              },
+              {
+                "id": 3,
+                "text": "我查圖書館是否有同類資源，別再只靠他一套。",
+                "action": "查詢可合法借閱的同類參考資源，尚未取得或替代原書。",
+                "tradeoff": "分散依賴，花搜尋時間且可能不適用。"
+              },
+              {
+                "id": 4,
+                "text": "請願意的人用自己的筆記辦一次題目討論。",
+                "action": "邀同學以自有筆記與可合法使用題目自願交流，不再傳原書。",
+                "tradeoff": "改變共學方式，需準備且可能少人參與。"
+              },
+              {
+                "id": 5,
+                "text": "先停這一輪共學借閱，讓他專心準備自己的考試。",
+                "action": "暫停導師協助安排的自願共學借閱，取消對物主的額外提供期待。",
+                "tradeoff": "保住本人備考，班上共同進度可能慢。"
+              },
+              {
+                "id": 6,
+                "text": "問他要不要保留有限借閱，但改由當面同看。",
+                "action": "提出在物主願意時以現場短時閱讀替代帶走的方案，未取得同意。",
+                "tradeoff": "可兼顧交流，物主需在場且可能被迫分心。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我看了也心疼，自己出一筆修復贊助，但不替弄壞的人免責。",
+              "action": "向物主提出本人自願且無附帶條件的修復費贊助，未強迫接受。",
+              "tradeoff": "願分擔痛心，花私人錢且可能使責任界線被誤解。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1932225072
+            },
+            "selectedIds": [
+              1,
+              2,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": "emotional",
+              "C": 2,
+              "D": 1
+            },
+            "optionsDigest": "1ccc99f38b0710e0be8b6d2be924252cc9a55fa4cb9e6edfdd473da44a6c1b39"
+          },
+          "previousConsequenceDirections": {
+            "A": "物主可能安心或覺得失去原想帶大家進步的機會，同學需自己調整準備。",
+            "B": "物主可能接受或拒絕，後續依法處理不得重複補償；導師可能被期待往後都自掏腰包。",
+            "C": "物主可能願意繼續互助或完全休息；同學需自行找合法資料，不能要求他重寫書內容。",
+            "D": "估價可能有助後續協商，也可能確認無法復原；物主仍決定是否修，責任不轉嫁給他。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "72c5971b021eb0fcd27d8b925b8806ec39f31651e3136ec76d0b4ef583587096",
+    "draftSha256": "5bb1d9779c30c75b54e663d8ed2173c702f3c44413a2742d33b40b26b0b7e5e4",
     "seedAssignmentVersion": 1
   }
 }

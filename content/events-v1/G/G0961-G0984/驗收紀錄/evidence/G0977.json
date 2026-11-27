@@ -16,14 +16,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "edcc029343200c68186e86ee0e3d71a28988057ac3a2d1d7265b928326bf4f93",
+      "checkedAt": "2026-11-27T16:06:01.106Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "回一段可靠的睡眠衛教資料，請他自行參考。",
+            "action": "提供適當可靠來源的睡眠衛教資訊，不為個人診斷或改班級作息。",
+            "tradeoff": "提供替代資訊，需查讀且家長可能不看。"
+          },
+          {
+            "id": 2,
+            "text": "邀他一起看文章如何引用研究，當作一次查來源練習。",
+            "action": "提出成人間共同核對引用方法的邀請，不再散播原文給學生。",
+            "tradeoff": "可能增進辨識，佔聯絡時間且可能傷熱情。"
+          },
+          {
+            "id": 3,
+            "text": "問班上願不願意匿名提午休最困擾的事。",
+            "action": "邀學生自願匿名提出實際午休困擾，不收健康診斷或家庭隱私。",
+            "tradeoff": "回到真實需求，需整理且未必與聲音有關。"
+          },
+          {
+            "id": 4,
+            "text": "維持現在的午休，只謝謝他的心意就結束。",
+            "action": "明確維持既有午休安排，婉拒額外試行與延伸討論。",
+            "tradeoff": "節省時間，家長可能覺得熱心被冷處理。"
+          },
+          {
+            "id": 5,
+            "text": "把建議送給既有午休管理承辦，註明來源尚不可靠。",
+            "action": "徵得可轉達範圍後將建議送權責承辦參考，明列未驗證，不要求採納。",
+            "tradeoff": "送對討論窗口，增加承辦工作且可能無回覆。"
+          },
+          {
+            "id": 6,
+            "text": "只問他孩子在家有沒有自己喜歡的放鬆方式。",
+            "action": "提出自願分享一般生活偏好的詢問，不要求揭露健康問題或改全班。",
+            "tradeoff": "能承接關心，可能拉長談話且家長不便回答。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他講得我也想睡，先把手機靜音，這段午休我自己休息。",
+          "action": "暫停非緊急訊息回覆，將本人可用午休留作休息，之後再看訊息。",
+          "tradeoff": "保住休息，家長可能誤以為被已讀不回。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2714391141
+        },
+        "selectedIds": [
+          6,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "b4753e7b464a73f7334ab232f411c8fefc4b6ef3cac5fb86128479003500fab3"
+      },
+      "consequenceDirections": {
+        "A": "家長可分享或不答，教師不以個別偏好推論班級安排。",
+        "B": "學生可能提光線、吵鬧或無意見，家長方案未必被採用；教師須依權限另評估。",
+        "C": "家長可能接受或失落，合作關係可能略變；不把高配合視為不會受傷。",
+        "D": "家長可能安靜等候或持續傳訊，導師需於工作安排內處理必要聯絡；沒有聲音試驗。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "db208e5d8da900a69e0d4a63e317611f4cc595795b8fd8b3b78e78244537381d",
+    "draftSha256": "edcc029343200c68186e86ee0e3d71a28988057ac3a2d1d7265b928326bf4f93",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a521966b3388f90c7e409ac85a2f9bbbed64e1c97ca642e2802497fa784e9e4e",
+      "checkedAt": "2026-11-27T16:06:01.090Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "陪他出席一次申訴諮詢，讓他自己說明。",
+            "action": "提供一次非必要的成人陪同諮詢，學生自行陳述，未代評審認定。",
+            "tradeoff": "有人陪伴，佔教師時間且可能被看作站隊。"
+          },
+          {
+            "id": 2,
+            "text": "幫他把資料整理成時間線，留原檔供權責者查。",
+            "action": "協助製作可核對的資料時間線，不將先建立等同抄襲證明。",
+            "tradeoff": "便於閱讀，耗整理時間且證據仍可能不足。"
+          },
+          {
+            "id": 3,
+            "text": "先陪他想，自己的作品還能強化哪一處。",
+            "action": "在不取代申訴的前提下，提供一段專題內容改進討論。",
+            "tradeoff": "可回到作品競爭力，學生可能覺得被迫退讓。"
+          },
+          {
+            "id": 4,
+            "text": "問承辦能不能安排雙方自願說明，不由我私下對質。",
+            "action": "詢問權責承辦是否有自願說明安排，未聯絡或召集對方。",
+            "tradeoff": "可能釐清相似來源，須等回覆且對方可拒絕。"
+          },
+          {
+            "id": 5,
+            "text": "替他讀一遍他寫的申訴稿，只指出容易誤解的句子。",
+            "action": "受邀後核讀學生自撰文字的可理解性，不替其新增指控或代送。",
+            "tradeoff": "保留本人主張，導師耗時間且學生仍須自行完成。"
+          },
+          {
+            "id": 6,
+            "text": "我的額外協助先到這裡，讓他依管道自己提出。",
+            "action": "不另加陪同或文稿協助，維持必要資訊與支持，保留學生自行送件權。",
+            "tradeoff": "保住原班務時間，學生可能感到孤單。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也替他不甘心，願意留下來聽他把整個作品從頭講一次。",
+          "action": "在不延誤期限下，自願另用可用時間聽學生完整介紹作品。",
+          "tradeoff": "讓投入被看見，教師犧牲休息且可能無助證明抄襲。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 464008065
+        },
+        "selectedIds": [
+          2,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "538f0798e1c433556e31c84f43f5d27f130f0af9c22581a5c0ab5241a72ce8e3"
+      },
+      "consequenceDirections": {
+        "A": "學生可能更能陳述或仍希望教師代言；承辦可有不同判斷，陪同不保證申訴成立。",
+        "B": "承辦可能認為不適宜或提供程序；不能預設外班承認或和解。",
+        "C": "學生可能更看清強弱處或不滿沒有直接結論，評審仍自主認定。",
+        "D": "學生可能恢復表達信心或越講越氣；欣賞作品不等同承諾得獎或認定侵權。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a2edef794320face32cd00db11e16aef938584e5cdd30e8e918ace2deb9a99d0",
+    "draftSha256": "a521966b3388f90c7e409ac85a2f9bbbed64e1c97ca642e2802497fa784e9e4e",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2ffe6b354c57652795be327f4e0eb00aa477b052f504a7e5b18408223c812c0e",
+      "checkedAt": "2026-11-27T16:06:01.115Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我替班上買一本平裝版，別再只靠他的珍藏。",
+            "action": "以教師本人額外預算購買一本正常販售的同類平裝小說供班級使用，不當作原藏書賠償。",
+            "tradeoff": "減少對私人珍藏依賴，花教師私人錢且不能補齊整套。"
+          },
+          {
+            "id": 2,
+            "text": "問他願不願意只留兩本，改成不帶回家。",
+            "action": "提出物主可自願縮為少量現場閱讀的借用方案，未取得同意。",
+            "tradeoff": "降低流失，仍需保管且閱讀受限。"
+          },
+          {
+            "id": 3,
+            "text": "我向圖書館問同類小說，讓他的收藏先休息。",
+            "action": "詢問校內可借的替代小說資源，不保證同套或已借到。",
+            "tradeoff": "分散個人供應，需查詢且未必有。"
+          },
+          {
+            "id": 4,
+            "text": "經他同意，讓學生自願寫一張閱讀感想給他。",
+            "action": "徵詢家長是否願收自願、無隱私的讀後短卡，不強迫學生交作業。",
+            "tradeoff": "讓支持有回音，需安排且可能只有少數參與。"
+          },
+          {
+            "id": 5,
+            "text": "這學期暫不再徵借私人書，我自己重整現有書架。",
+            "action": "停止導師追加私人藏書徵借，將可用時間投入現有書籍整理。",
+            "tradeoff": "減少私人風險，耗教師時間且新書減少。"
+          },
+          {
+            "id": 6,
+            "text": "邀他分享一次最喜歡哪本，形式由他挑，不另要求到校。",
+            "action": "提出自願、可用文字或錄音分享的邀請，未取得同意或素材。",
+            "tradeoff": "可承接收藏感情，但家長疲勞時可能不想多做。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想好好讀一次他珍惜的書，等修好後向他借第一集給自己看。",
+          "action": "向物主提出教師私人借閱第一集的請求，未取得書或同意。",
+          "tradeoff": "真實承接閱讀興趣，新增個人保管責任且可能被拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 574608244
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "75e8a2ae879fdadd5cd42c7526185963c1d151f2fdea4c56c7088a35748791c7"
+      },
+      "consequenceDirections": {
+        "A": "若有館藏可接續閱讀，若無班上選擇縮減；原藏書修復不因此免除。",
+        "B": "家長可能願分享或拒絕，教師須另花整理時間；不以分享要求其寬免損害。",
+        "C": "家長可能欣慰或覺得現在還談借書不合時宜；教師須接受拒絕，不優先搶走學生借閱權。",
+        "D": "家長可能感動或不想再收紙卡，學生可拒絕；感謝不能替代損害責任。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通1協助終止出借接近物主可隨時行使的共同權利，改為教師額外購買班級平裝書。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "請他決定是否提前收回整套，我協助結束出借。",
+                "action": "邀物主決定提前終止出借，依其決定安排歸還，不以續借換補償。",
+                "tradeoff": "尊重物權，班級少一套熱門小說。"
+              },
+              {
+                "id": 2,
+                "text": "問他願不願意只留兩本，改成不帶回家。",
+                "action": "提出物主可自願縮為少量現場閱讀的借用方案，未取得同意。",
+                "tradeoff": "降低流失，仍需保管且閱讀受限。"
+              },
+              {
+                "id": 3,
+                "text": "我向圖書館問同類小說，讓他的收藏先休息。",
+                "action": "詢問校內可借的替代小說資源，不保證同套或已借到。",
+                "tradeoff": "分散個人供應，需查詢且未必有。"
+              },
+              {
+                "id": 4,
+                "text": "經他同意，讓學生自願寫一張閱讀感想給他。",
+                "action": "徵詢家長是否願收自願、無隱私的讀後短卡，不強迫學生交作業。",
+                "tradeoff": "讓支持有回音，需安排且可能只有少數參與。"
+              },
+              {
+                "id": 5,
+                "text": "這學期暫不再徵借私人書，我自己重整現有書架。",
+                "action": "停止導師追加私人藏書徵借，將可用時間投入現有書籍整理。",
+                "tradeoff": "減少私人風險，耗教師時間且新書減少。"
+              },
+              {
+                "id": 6,
+                "text": "邀他分享一次最喜歡哪本，形式由他挑，不另要求到校。",
+                "action": "提出自願、可用文字或錄音分享的邀請，未取得同意或素材。",
+                "tradeoff": "可承接收藏感情，但家長疲勞時可能不想多做。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我想好好讀一次他珍惜的書，等修好後向他借第一集給自己看。",
+              "action": "向物主提出教師私人借閱第一集的請求，未取得書或同意。",
+              "tradeoff": "真實承接閱讀興趣，新增個人保管責任且可能被拒。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 612397384
+            },
+            "selectedIds": [
+              1,
+              6,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 6,
+              "C": "emotional",
+              "D": 1
+            },
+            "optionsDigest": "f88fa96f9fd94afdc483d6894a5e4a460711f2db6740045777e875dddc960216"
+          },
+          "previousConsequenceDirections": {
+            "A": "家長可能認為謹慎或覺得好意被封住，班級閱讀須適應現有資源。",
+            "B": "家長可能願分享或拒絕，教師須另花整理時間；不以分享要求其寬免損害。",
+            "C": "家長可能欣慰或覺得現在還談借書不合時宜；教師須接受拒絕，不優先搶走學生借閱權。",
+            "D": "家長可能安心或捨不得中斷支持，學生須另找讀物；追回損害仍共同處理。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "78d504b4eee534cb4b82ee9fb6dc01d92bf8c6a15dde888a5f3df7fd161f52d1",
+    "draftSha256": "2ffe6b354c57652795be327f4e0eb00aa477b052f504a7e5b18408223c812c0e",
     "seedAssignmentVersion": 1
   }
 }

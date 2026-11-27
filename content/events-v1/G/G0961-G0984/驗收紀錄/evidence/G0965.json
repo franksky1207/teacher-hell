@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "63a31b62732c37e17464b2d508b70207c6788d13f95030dbdbc0bc055c7c136a",
+      "checkedAt": "2026-11-27T16:06:01.071Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "一起看三題錯得最多的題目，再談要改哪一段。",
+            "action": "與同事共同檢視去識別題目與錯答類型，不宣稱已找到原因。",
+            "tradeoff": "能縮小問題，耗空堂且未必立即得出方法。"
+          },
+          {
+            "id": 2,
+            "text": "先支持他換回熟悉的節奏，由他決定怎麼調。",
+            "action": "明確支持同事自主暫停原討論安排，未替其決定新教案。",
+            "tradeoff": "降低被勸服壓力，原試行中止且資料不完整。"
+          },
+          {
+            "id": 3,
+            "text": "我找一份自己也教失敗過的課例給他。",
+            "action": "提供本人可分享且去識別的失敗課例，說明當時調整與限制。",
+            "tradeoff": "可減少單方面說教，暴露自己的失敗且未必適用。"
+          },
+          {
+            "id": 4,
+            "text": "問他願不願意讓我看一次課，只看學生怎麼討論。",
+            "action": "提出一次依校規可安排的觀課邀請，未取得同意或排定。",
+            "tradeoff": "可看到互動，但需調課且同事可能覺得被檢查。"
+          },
+          {
+            "id": 5,
+            "text": "提供校內可自行預約的教學諮詢資訊。",
+            "action": "提供既有教學諮詢入口，未替同事聯絡第三人。",
+            "tradeoff": "多一個觀點，但同事可能感到導師在推開問題。"
+          },
+          {
+            "id": 6,
+            "text": "各寫一版下一節課的短教案，讓他選要不要採用。",
+            "action": "導師自願另寫一版短教案供比較，同事保留採用權。",
+            "tradeoff": "有具體備案，導師增加備課而同事未必使用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不服氣，想請他挑一個最難的概念讓我試講給他聽。",
+          "action": "邀同事指定一個概念，由導師向成人同事試講，未接管學生課堂。",
+          "tradeoff": "滿足證明自己的衝動，可能當場講砸且耗雙方時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3132612215
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "2444d5931c69f05e49067acecc17bb7331d8b546d8c90a22db7e1b0314078487"
+      },
+      "consequenceDirections": {
+        "A": "同事可能放鬆或認為建議不可靠，學生要適應再次轉換；導師不能保證分數回升。",
+        "B": "若同意可獲課堂線索，若拒絕須接受；不能把邀請寫成已觀課。",
+        "C": "同事可能指出導師也說不清楚，或提供新修法；成人試講不當作班級學習效果。",
+        "D": "同事可能願意繼續談，也可能更質疑導師；例子不能證明其班級也會同樣改善。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "53644c91c447b2ce8935140b1cca61797795db9babd9110f6951210d225ebccc",
+    "draftSha256": "63a31b62732c37e17464b2d508b70207c6788d13f95030dbdbc0bc055c7c136a",
     "seedAssignmentVersion": 1
   }
 }

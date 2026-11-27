@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bea44c8a1f4af14d6a7a9b1ed7637631c74f7f7d0eb85d4048acb51a34f50877",
+      "checkedAt": "2026-11-27T16:06:01.081Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問他願不願意把清理好的盒子改成少量登記借用。",
+            "action": "向物主提出衛生確認後的小規模具名借還方案，尚未獲同意。",
+            "tradeoff": "可保留共享，須登記且物主可能不想再借。"
+          },
+          {
+            "id": 2,
+            "text": "支持他收回全部餐盒，不再替班上準備備品。",
+            "action": "支持物主終止自願出借，安排處理後交還其所有餐具。",
+            "tradeoff": "保障停止付出的選擇，忘帶者少了便利。"
+          },
+          {
+            "id": 3,
+            "text": "向總務問有沒有校方能負責的備用餐具。",
+            "action": "詢問校方既有備用餐具與管理資源，未取得物資。",
+            "tradeoff": "減少個人承擔，需聯絡且未必有供應。"
+          },
+          {
+            "id": 4,
+            "text": "請借用過的人自願提出下次自己能負責什麼。",
+            "action": "邀借用者提出自願的後續借還協作，不以發言代替損害責任釐清。",
+            "tradeoff": "讓受惠者出力，可能沒人願接且不能強制輪值。"
+          },
+          {
+            "id": 5,
+            "text": "這次不再借盒子，改讓全班挑一件自己做得到的減塑事。",
+            "action": "提出以個人自選、不新增採購的減塑行動取代共用備品推廣。",
+            "tradeoff": "降低共同餐具需求，成效較零散且要重談目標。"
+          },
+          {
+            "id": 6,
+            "text": "把共享計畫先停到學期末，不急著找人接手。",
+            "action": "暫停導師推廣的自願共享餐盒計畫，不再招募新提供者。",
+            "tradeoff": "避免倉促重演，放棄短期共享便利。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不甘心他的熱心變成這樣，願意向學校提公用餐具的預算案。",
+          "action": "額外具名向校方提出公共備用餐具與成人管理的預算建議，未獲採購或人力核准。",
+          "tradeoff": "替支持減塑者爭取制度資源，須準備提案且可能碰壁。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4244174334
+        },
+        "selectedIds": [
+          4,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "0660c8d7585578495fe257ee85f9db9b366df810f78617f440f2364bf5b3a21c"
+      },
+      "consequenceDirections": {
+        "A": "學生可能感到熱心被承接或不再願等，校方可能否決預算；原餐具衛生與損害責任仍各自依法處理。",
+        "B": "若有資源可另談管理，若無則維持各自準備；學生不能被默認繼續提供。",
+        "C": "可能出現可行分工或沉默，物主可拒絕新方案；導師須避免好意再次集中一人。",
+        "D": "物主可能接受有限開放或拒絕，學生須承擔可追溯借還的不便；不以新制度抵銷原損害。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒停止號召共享與普通6停止共享過近，改為校方公用餐具預算提案，超出必要衛生處置。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "問他願不願意把清理好的盒子改成少量登記借用。",
+                "action": "向物主提出衛生確認後的小規模具名借還方案，尚未獲同意。",
+                "tradeoff": "可保留共享，須登記且物主可能不想再借。"
+              },
+              {
+                "id": 2,
+                "text": "支持他收回全部餐盒，不再替班上準備備品。",
+                "action": "支持物主終止自願出借，安排處理後交還其所有餐具。",
+                "tradeoff": "保障停止付出的選擇，忘帶者少了便利。"
+              },
+              {
+                "id": 3,
+                "text": "向總務問有沒有校方能負責的備用餐具。",
+                "action": "詢問校方既有備用餐具與管理資源，未取得物資。",
+                "tradeoff": "減少個人承擔，需聯絡且未必有供應。"
+              },
+              {
+                "id": 4,
+                "text": "請借用過的人自願提出下次自己能負責什麼。",
+                "action": "邀借用者提出自願的後續借還協作，不以發言代替損害責任釐清。",
+                "tradeoff": "讓受惠者出力，可能沒人願接且不能強制輪值。"
+              },
+              {
+                "id": 5,
+                "text": "這次不再借盒子，改讓全班挑一件自己做得到的減塑事。",
+                "action": "提出以個人自選、不新增採購的減塑行動取代共用備品推廣。",
+                "tradeoff": "降低共同餐具需求，成效較零散且要重談目標。"
+              },
+              {
+                "id": 6,
+                "text": "把共享計畫先停到學期末，不急著找人接手。",
+                "action": "暫停導師推廣的自願共享餐盒計畫，不再招募新提供者。",
+                "tradeoff": "避免倉促重演，放棄短期共享便利。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我還是想推減塑，這次把我自己的備用盒留給自己用，不再喊大家跟我。",
+              "action": "停止由導師號召全班共享，改以本人自用餐盒持續實踐。",
+              "tradeoff": "保留個人堅持，承認集體方案失敗且減少號召成效。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 587502715
+            },
+            "selectedIds": [
+              5,
+              6,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 1,
+              "C": 5,
+              "D": 6
+            },
+            "optionsDigest": "505e35d76a71012de48f29bdb6b559c0696612160d4f40d1f0b4ab8fcdcd1ad0"
+          },
+          "previousConsequenceDirections": {
+            "A": "物主可能感到被理解或失望，班上可能不再一窩蜂；不將個人示範當清理與賠償的替代。",
+            "B": "物主可能接受有限開放或拒絕，學生須承擔可追溯借還的不便；不以新制度抵銷原損害。",
+            "C": "學生可能找到可持續做法或敷衍，物主可能覺得熱心被轉移；原損害仍另處理。",
+            "D": "有人可能鬆口氣，有人怪少數人拖累全班；導師需說明不歸罪於未查明的人。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇語意核讀：開場、七候選、資格時段、共同責任、候選ID與A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "73b19bac21d9c08256569d822e202de71dc0f777a26d00bafe5e5a9facb72dd3",
+    "draftSha256": "bea44c8a1f4af14d6a7a9b1ed7637631c74f7f7d0eb85d4048acb51a34f50877",
     "seedAssignmentVersion": 1
   }
 }

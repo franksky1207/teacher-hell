@@ -1,5 +1,5 @@
 import {readFile, readdir} from 'node:fs/promises';
-import {basename, join, relative, sep} from 'node:path';
+import {basename, dirname, join, relative, sep} from 'node:path';
 
 export const storyIdPattern=/^(?:T[1-6]-\d{3,}|G-\d{4,}|P[1-6]-\d{3,})$/;
 export const storyMetadataHeading='## 1｜故事基本資料';
@@ -11,6 +11,19 @@ export const seedIdPattern=/^S\d{4}$/;
 export const summaryLabels=['事件起因','核心衝突','導師困境','故事獨特性'];
 export const tableRows=text=>text.split(/\r?\n/).filter(line=>/^\s*\|.*\|\s*$/.test(line))
  .map(line=>line.trim().slice(1,-1).split('|').map(cell=>cell.trim()));
+
+export async function isUnfinishedGStory(entry){
+ if(!entry||(entry.type!=='G'&&!/^G\d{4}$/.test(entry.storyId)))return false;
+ if(/【待填/.test(entry.markdown??''))return true;
+ if(!/^G\d{4}$/.test(entry.storyId))return false;
+ try{
+  const evidencePath=join(dirname(entry.path),'驗收紀錄','evidence',entry.storyId+'.json');
+  const evidence=JSON.parse(await readFile(evidencePath,'utf8'));
+  return evidence?.stages?.stage3?.semanticApproved!==true;
+ }catch{
+  return true;
+ }
+}
 
 export function readStoryMetadata(markdown,storyId,path){
  const header=markdown.split(/^## 1｜故事基本資料[ \t]*\r?$/m)[1]?.split(/^## [2-5]｜/m,1)[0]??'';

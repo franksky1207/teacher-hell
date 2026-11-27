@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /** Build the static reader snapshot from the checked-out Markdown. */
 import {mkdir, writeFile, rm, rename} from 'node:fs/promises';
-import {readStoryCatalog, storyMetadataHeading, summaryLabels, tableRows} from './story-catalog.js';
+import {readStoryCatalog, isUnfinishedGStory, storyMetadataHeading, summaryLabels, tableRows} from './story-catalog.js';
 import {dirname, resolve, relative, join, sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -69,6 +69,7 @@ export async function exportReaderData({storyRoot=join(ROOT,'content/events-v1')
  const counts=new Map();
  for(const {storyId} of entries)counts.set(storyId,(counts.get(storyId)??0)+1);
  for(const entry of entries){
+  if(await isUnfinishedGStory(entry))continue;
   const {storyId,markdown}=entry;
   if(counts.get(storyId)>1){
    if(!ids.has(storyId))warnings.push(storyId+'：檔名重複，請檢查故事目錄');

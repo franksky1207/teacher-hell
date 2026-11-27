@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "44e2bfca4e8bd06697797acd402b863af7d4e912810ed1bdab7c88774c233fac",
+      "checkedAt": "2026-11-27T19:21:52.523Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把剛才的順序說清楚，但不要求他停機。",
+            "action": "平和向男子敘述自己先等候與離開換零錢的經過，詢問是否注意籃子，不主張無依據的強制讓機。",
+            "tradeoff": "可能遭冷淡回應或爭辯，需面對正面衝突。"
+          },
+          {
+            "id": 2,
+            "text": "不跟他說了，我留在店裡等下一台。",
+            "action": "自行確認下一台適合衣物的可用時間，在店內合法等候並顧好自己的物品，不以籃子佔用多台。",
+            "tradeoff": "付出等待時間，怒氣可能一路帶回家。"
+          },
+          {
+            "id": 3,
+            "text": "打給店家問使用順序，讓規則來說，不吵衣服先後。",
+            "action": "透過店內公告聯絡方式向業者詢問排隊及物品移動規則，據實說明，不要求店家無據處分對方。",
+            "tradeoff": "增加聯絡時間，店家可能不即時回覆。"
+          },
+          {
+            "id": 4,
+            "text": "看看小台能不能分批烘，我寧可多花一點換早回家。",
+            "action": "依洗標及機器容量評估合法使用可用小型機分批乾燥，確認費用後才投幣，不預設有足夠空機。",
+            "tradeoff": "可能增加費用與分批操作，不能保證更快。"
+          },
+          {
+            "id": 5,
+            "text": "把衣服帶去另一家，我今天不想一直看著他。",
+            "action": "確認附近另一合法店家可到達後帶走自己的衣物尋找空機，不保證該處即刻可用。",
+            "tradeoff": "多走路、搬濕衣並可能仍排隊。"
+          },
+          {
+            "id": 6,
+            "text": "先把能在家晾的帶回去，剩下合適的再等機器。",
+            "action": "依洗標與自己實際可用晾衣空間將衣物分成可回家晾與需烘者，僅為後者等候，不保證今晚全乾。",
+            "tradeoff": "需重整濕衣、占用家中空間，部分衣物較晚能穿。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不要今晚都裝沒事；先離開去買一杯自己想喝的，再回來看空機。",
+          "action": "因不甘心而暫時帶走全部私人物品到附近正常營業店家自費買飲料後再回洗衣店，放棄任何原等候位置，不用飲料占機。",
+          "tradeoff": "多花私人費用與時間，回來也可能沒空機。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4244692307
+        },
+        "selectedIds": [
+          4,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "791133ae3e3c9688016a82fe82ceabdfaa761c61d120cd82f9331668f6658392"
+      },
+      "consequenceDirections": {
+        "A": "可承接理性拆解需求雖省等待卻未處理情緒的落差。",
+        "B": "可發展用金錢與操作換掉等待是否值得，以及私人不甘心仍存在。",
+        "C": "可承接避開衝突的輕鬆與沒把話說出的懊惱。",
+        "D": "可發展賭氣用小享受安慰自己是否奏效，及避衝突又想掌控晚間的矛盾。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b5da5d4f5da9543a607fa6a2580a70410bdc98366f6abd2208e71c432ec81102",
+    "draftSha256": "44e2bfca4e8bd06697797acd402b863af7d4e912810ed1bdab7c88774c233fac",
     "seedAssignmentVersion": 1
   }
 }

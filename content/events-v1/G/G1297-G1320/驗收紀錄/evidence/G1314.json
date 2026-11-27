@@ -15,14 +15,82 @@
     "G08",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e156aceed9915f7c625d63c1eee8efbbf7d2295466039ccd55d386a89ced3dc6",
+      "checkedAt": "2026-11-27T19:21:52.532Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我只先說明能反映的正式管道，建議由你自己送。",
+            "action": "向學生說明已可公開的版本限制及正式意見管道，讓其自願自行送件，保留必要故障協助不變。",
+            "tradeoff": "學生可能覺得教師只是轉一個網址，自己需整理內容。"
+          },
+          {
+            "id": 2,
+            "text": "我陪你把十項分成真的卡住作業和只是想更好看，再一起送。",
+            "action": "額外協助學生依實際使用影響整理建議後送資訊組，必要故障立即照原支援處理，不預設改版。",
+            "tradeoff": "占導師工作時間，學生可能不喜歡喜愛功能被列為低優先。"
+          },
+          {
+            "id": 3,
+            "text": "你願意的話，我替你約資訊組聽一次，但不替他們答應改。",
+            "action": "徵詢資訊組與學生意願安排合法短段意見交流，只談可公開資訊，不預設承辦有餘裕。",
+            "tradeoff": "需多方協調，交流可能仍只得到維持現況的答案。"
+          },
+          {
+            "id": 4,
+            "text": "先針對一個最卡的步驟，你示範，我記下來送給承辦。",
+            "action": "在不呈現個資的測試範圍，請學生自願展示一個操作困難，導師整理具體可重現的使用回饋供承辦評估。",
+            "tradeoff": "花示範紀錄時間，單一問題不代表整套系統已證實有缺陷。"
+          },
+          {
+            "id": 5,
+            "text": "要談全班需求，我先徵詢不用昂貴平板的同學怎麼看。",
+            "action": "以不比較家境的方式於合法班級時段徵詢不同裝置使用者對平台的需求，再將共通意見送承辦。",
+            "tradeoff": "占班級時間，學生想要的高階功能可能不是多數優先。"
+          },
+          {
+            "id": 6,
+            "text": "若你想設計新版概念，我可以替你詢問校內是否有合法展示機會。",
+            "action": "協助查詢不接觸真實平台與個資的介面概念設計分享機會，未獲同意不宣稱已有活動或可上線。",
+            "tradeoff": "需額外詢問，容易讓學生誤期待設計會被採購。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也常按錯，這回我想請你教我一個現有功能，別只把老師當轉信箱。",
+          "action": "因被視為改版窗口而有點不服，徵求學生自願於合法課間教導師一項平台已有功能；不以教學交換處理反映，不移交帳密或學生資料。",
+          "tradeoff": "暴露自己的數位不熟，也可能被學生吐槽，另花休息時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1200660074
+        },
+        "selectedIds": [
+          1,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "14962c939cd836f6ffae6f2086c37a3c9ed11b69ab3586c9c1e2f6233c0bcbcb"
+      },
+      "consequenceDirections": {
+        "A": "可承接開朗熟手是否能在提出要求之外看見別人學習操作的困難，以及師生角色短暫倒轉。",
+        "B": "可承接消費者期待遇到實際權限界線時的失望或自主行動。",
+        "C": "可承接直爽質問轉為與實際維護者對話的態度改變。",
+        "D": "可發展學生的建設性想像是否能接受創作與正式系統改版分開。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6b0df3fe0a3cb0287d84b46e84219aee754efe7499aef73a19fc79c20c0187ca",
+    "draftSha256": "e156aceed9915f7c625d63c1eee8efbbf7d2295466039ccd55d386a89ced3dc6",
     "seedAssignmentVersion": 1
   }
 }

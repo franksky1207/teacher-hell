@@ -16,14 +16,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5b2139d7ca0ed768259eaed5e23024d83ea7e00ae96935a9b40f65fd45d0eac1",
+      "checkedAt": "2026-11-27T19:21:52.514Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我們約一個私下求助的說法，你不必替別人挨餓。",
+            "action": "與學生約定可在午餐前私下使用的求助短句與聯絡方式，說明仍可主動關心同學，不承諾絕對保密於必要照護。",
+            "tradeoff": "需花個別溝通時間，也可能被學生視為多一道規矩。"
+          },
+          {
+            "id": 2,
+            "text": "我過幾天用不指向任何人的方式，向全班重新說明代餐。",
+            "action": "避開當下可辨識情境，於合適日常班務時間向全班說明既有代餐管道，不提本次兩人或家庭狀況。",
+            "tradeoff": "仍有被聯想到的風險，需仔細拿捏時間與說法。"
+          },
+          {
+            "id": 3,
+            "text": "若你願意，我們把『不借錢』的班規寫清楚，別讓人以為只能餓著。",
+            "action": "徵詢學生是否願意提供不具名意見，導師另行釐清班規文字中合法求助及自願互助界線，不把其參與當條件。",
+            "tradeoff": "增加班規溝通工作，學生可能不願再參與。"
+          },
+          {
+            "id": 4,
+            "text": "你想不想讓同學自己向你說聲謝謝？要兩邊都願意才談。",
+            "action": "分別徵詢兩位學生是否願意私下談本次分享與各自需求，雙方同意才安排，不要求公開感謝或回報。",
+            "tradeoff": "可能被其中一人拒絕，也需保護彼此面子。"
+          },
+          {
+            "id": 5,
+            "text": "我再問午餐承辦，能不能把求助的位置放得更不顯眼。",
+            "action": "向有權承辦提出既有緊急代餐領取方式的隱私改善建議，不含學生姓名，未核可不改制度。",
+            "tradeoff": "需額外協調，承辦未必有場地或人力。"
+          },
+          {
+            "id": 6,
+            "text": "你願意的話，我們找家長談平常午餐是否足夠，不把今天當成責備。",
+            "action": "在必要照護已完成之外，徵詢學生意願並依法與其家長討論一般午餐份量與可用支持，避免披露另一學生狀況。",
+            "tradeoff": "學生可能怕被家人擔心，導師需多花聯絡時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點心疼，也有點氣自己太晚看見；今天我的休息時間陪你把剩下的飯慢慢吃完。",
+          "action": "在餐食已供應且學生願意下，自願留下陪其於允許用餐的時段吃飯，不催促、不另塞更多食物，不取代必要照看。",
+          "tradeoff": "放棄自己的休息，學生也可能不想被陪。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3183833443
+        },
+        "selectedIds": [
+          2,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "d90d39042be92adf975561106581d16d009ad0e315e1647814e394eb34ff8967"
+      },
+      "consequenceDirections": {
+        "A": "可承接學生是否敢在下次困窘時開口，以及信任能否轉成不自我犧牲的求助。",
+        "B": "可發展學生對教師守信的感受與全班實際使用支持的變化。",
+        "C": "可發展經濟壓力下的家庭面子與接受協助的掙扎，不預設家長有能力加餐。",
+        "D": "可承接師生是否能在不談貧困下自在相處，以及教師心軟造成的個人時間負擔。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c79817d730c3865c9939e4a05a6027d0d6e973ea711119330b677482e1d49d86",
+    "draftSha256": "5b2139d7ca0ed768259eaed5e23024d83ea7e00ae96935a9b40f65fd45d0eac1",
     "seedAssignmentVersion": 1
   }
 }

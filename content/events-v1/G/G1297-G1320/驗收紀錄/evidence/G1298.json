@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "76a5718e081b63e258dcb29f241303b4f99f6bc90594b9ec5341a7ce4a7a5909",
+      "checkedAt": "2026-11-27T19:21:52.497Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我今天先提醒裝水，也把『還沒確定』一起說清楚。",
+            "action": "課間向全班口頭傳達可能停水及待確認狀態，提醒正常裝滿個人水壺，不發布確定時段。",
+            "tradeoff": "需追蹤並更正變動，口頭訊息仍可能被轉述失真。"
+          },
+          {
+            "id": 2,
+            "text": "我等正式通知，但明早專程再看一次，別讓訊息被洗掉。",
+            "action": "安排明早查看總務正式通知，若已核定再向全班提醒；未核定仍維持必要供水應變。",
+            "tradeoff": "導師多一項追蹤，確認較晚時準備時間有限。"
+          },
+          {
+            "id": 3,
+            "text": "我先問總務，能不能發一則全校都看得到的預告。",
+            "action": "向有權責的總務承辦提出附帶不確定性的全校預告建議，尚未獲採納不自行充作正式公告。",
+            "tradeoff": "需協調措辭，承辦可能認為未確認不宜發出。"
+          },
+          {
+            "id": 4,
+            "text": "我只先提醒明天帶水壺，不替還沒定的工期下標題。",
+            "action": "做一次不聲稱停水已定的日常飲水提醒，仍在正式消息成立後另行轉達。",
+            "tradeoff": "提醒理由不完整可能使學生不當回事，也不能隱瞞其必要知情資訊。"
+          },
+          {
+            "id": 5,
+            "text": "我請班長明早和我一起留意公告，不讓你一個人記。",
+            "action": "徵求班長自願協助在既有公開公告處留意訊息，導師仍負責確認與轉達。",
+            "tradeoff": "需說明不代負責，學生未必有空協助。"
+          },
+          {
+            "id": 6,
+            "text": "我向總務問清楚別棟的飲水位置，再陪全班認一次路。",
+            "action": "詢問可合法使用的替代飲水點，核實後於適當課間向全班說明位置及行走方式，不等待其他候選執行。",
+            "tradeoff": "占課間時間且仍不能保證替代飲水點不排隊。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我怕明天又忘記，現在就把鬧鐘設給自己，午休前親自進班看水壺。",
+          "action": "因不放心而將明日午休前的私人休息切出一段，設定提醒並計畫親自進班詢問是否有飲水困難；不強制檢查私人物品。",
+          "tradeoff": "犧牲自己的午休開頭，即使最後沒停水也已為此留出時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 233881327
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "5281cf493686f172482adda4fd4b72412eb9fbeb3afe08d7b49ef835c9308d3e"
+      },
+      "consequenceDirections": {
+        "A": "可發展職員對導師額外投入的反應及教師覺得多此一舉或慶幸的心情。",
+        "B": "可承接預先熟悉替代動線的時間代價與停水變動後是否白忙的感受。",
+        "C": "可發展資訊可靠性與提醒時點較晚的實際不便。",
+        "D": "可發展提前準備的便利與未定消息被家長轉述後的解釋負荷。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ffb070645291c88928ddc3d0d0f5918e1bb4867a0e579c717dabeb0d45879b34",
+    "draftSha256": "76a5718e081b63e258dcb29f241303b4f99f6bc90594b9ec5341a7ce4a7a5909",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0450765b4c549853ee421d62e645ae8786a582a5835e46bb5c3a3c3599ed1e48",
+      "checkedAt": "2026-11-27T19:21:52.528Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "謝謝你的心意，這次就停在更正，不再另外加一場。",
+            "action": "完成必要更正後私下致謝並明確結束本次設備建議，不新增展示或採購詢問。",
+            "tradeoff": "家長可能覺得熱情沒地方放，導師需承受冷下來的氣氛。"
+          },
+          {
+            "id": 2,
+            "text": "若你願意，我們約校內允許的時間讓你看看正常畫面。",
+            "action": "提出經校規與班級隱私許可後的簡短設備觀看邀請，未獲准或家長未同意不安排入班。",
+            "tradeoff": "增加接待時間，也可能讓小誤會變成正式行程。"
+          },
+          {
+            "id": 3,
+            "text": "以後你看到照片有疑問，先直接問我一句，我們約個簡單聯絡方式。",
+            "action": "與家長商定不妨礙原有正式反映權的私下詢問管道及回覆時段，不要求先過導師才能陳情。",
+            "tradeoff": "多一個日常詢問來源，可能增加教師聯絡負擔。"
+          },
+          {
+            "id": 4,
+            "text": "你那封信的善意還在；要不要由你再補一句撤回換機建議？",
+            "action": "在必要更正已完成外，邀家長自願以本人名義向原收件者補充自己的誤判並撤回本次換機提議，不代其署名或強求道歉。",
+            "tradeoff": "可能使家長更沒面子，也要花額外聯絡時間。"
+          },
+          {
+            "id": 5,
+            "text": "這次不換機，你若仍想支持學校，我陪你問公開的受贈管道。",
+            "action": "徵得家長意願後協助查詢學校正式受贈方式，不承諾接受捐贈、指定採購或優待。",
+            "tradeoff": "增加詢問工作，可能把一場誤會延伸成更大期待。"
+          },
+          {
+            "id": 6,
+            "text": "我整理一張正常拍攝與反光的對照，讓原收件者看懂差在哪。",
+            "action": "在不曝光學生個資且校內允許下額外整理同一正常設備畫面於不同窗簾狀態的說明，只用以理解影像限制，不作專業檢測。",
+            "tradeoff": "花拍攝整理時間，家長可能覺得自己被當成反面教材。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你誇我的那段我很受用；我想把信留給自己，但請不要拿我的名義募集換機款。",
+          "action": "坦承喜歡被肯定，徵詢可否私下保留合法可留的致謝文字，同時明確要求未經授權不以教師名義募集本次換機資金。",
+          "tradeoff": "顯露教師也愛聽好話的私心，且直白界線可能使家長尷尬。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1423888220
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "d54157118738a36b66663824e6ee4a5a4320e0f38df0ee303a0c4cf8d3d675d2"
+      },
+      "consequenceDirections": {
+        "A": "可承接家長密切關注班群如何轉為較少誤判但更頻繁的私訊。",
+        "B": "可發展家長發現導師享受稱讚卻不接受代為募款時的微妙互動，不預設已有募款行動。",
+        "C": "可發展親眼看見與經驗判斷的衝突，以及家長是否願意接受自己看錯。",
+        "D": "可承接家長願否自己收拾善意過快的判斷及導師不包辦面子的關係代價。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "68fc0d0d57e7c0c10127746ca9a372c161df7b49e10922df718f0f5bd6dc233c",
+    "draftSha256": "0450765b4c549853ee421d62e645ae8786a582a5835e46bb5c3a3c3599ed1e48",
     "seedAssignmentVersion": 1
   }
 }

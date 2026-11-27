@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f99620b9a076199877d58426541fbdfe4ad2d29e93b600d8cd2b20df97184bcd",
+      "checkedAt": "2026-11-27T19:21:52.530Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先評估乾淨乾燥鞋能否入個人櫃，標準對全班一樣。",
+            "action": "在權責內檢查櫃區空間及衛生條件，提出乾燥清潔鞋袋存放的一致規則，確認可行與校規後才改制。",
+            "tradeoff": "需逐一協調空間，可能無法容納所有需求。"
+          },
+          {
+            "id": 2,
+            "text": "我向學校申請把鞋架移到不淋雨又不擋路的位置。",
+            "action": "向有權承辦提出鞋架合法移位需求，未核准前維持必要防雨與保管措施，不自行占消防通道。",
+            "tradeoff": "需等待場地評估，仍須處理錯穿辨識。"
+          },
+          {
+            "id": 3,
+            "text": "先改善鞋子辨認，我和孩子用現有方式標清楚，不叫你再花錢。",
+            "action": "與學生討論並自願使用不傷鞋的既有可用標示或定位方式，保護個資，不以外觀價值分級。",
+            "tradeoff": "增加維護辨識工作，仍不能保證完全不被誤拿。"
+          },
+          {
+            "id": 4,
+            "text": "要加遮雨設備，我請總務評估適合的做法，不讓學生自己掛塑膠簾。",
+            "action": "提出合法鞋架遮雨評估申請，確認風險、費用與權限後才施工，不借用學生勞動或宣稱已完工。",
+            "tradeoff": "程序較慢且可能無預算，需持續聯絡。"
+          },
+          {
+            "id": 5,
+            "text": "孩子願意每天帶回家的話，我們談一個不增加花費的收納方式。",
+            "action": "徵詢學生是否願意以已有鞋袋攜帶乾淨鞋往返，在不剝奪正常存放權益下作個人自願選項，濕鞋另按衛生處理。",
+            "tradeoff": "學生增加通勤負重，家長可能覺得仍是自己承擔。"
+          },
+          {
+            "id": 6,
+            "text": "我先聽全班的櫃位需求，再把鞋子和其他物品一起重排。",
+            "action": "於合法班級時間徵集櫃位使用需求，在安全衛生與學生權益範圍內提出整體空間配置，不預設已有空櫃。",
+            "tradeoff": "占討論及整理時間，也可能無法換得足夠容量。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想讓你一直證明買不起；我自願陪孩子練一次鞋袋怎麼收、怎麼拿，之後由他選。",
+          "action": "因不忍家長反覆說家計，額外用合法課間陪學生以現有鞋袋練習乾鞋收納與搬運，尊重其意願，不代替後續公共存放決定。",
+          "tradeoff": "花個人休息時間，家長也可能認為只是把制度問題縮成孩子的工作。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2461802042
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "d10fc37484c2e36e379f67c138edbf75d6afe1e10aa76cd10687410309a294fc"
+      },
+      "consequenceDirections": {
+        "A": "可承接經濟壓力下不花額外費用的保護方式及家長對實際可靠性的擔心。",
+        "B": "可承接教師心軟的具體陪做是否讓學生更有把握，或仍未回應家長最想改的規則。",
+        "C": "可發展空間資源與家長安全期待的落差，不承諾立刻有新位置。",
+        "D": "可承接保管自主與每日搬運成本，而非把沒錢當作必須辛苦的理由。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d3126687293e40a161cdb830b12393167c2a599c96b3efb74d3e36da9a9e0337",
+    "draftSha256": "f99620b9a076199877d58426541fbdfe4ad2d29e93b600d8cd2b20df97184bcd",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "266b914fa2fd2f4509a6e66d277e11cc140842ce7b9940c57a1b1de5f9e0e02b",
+      "checkedAt": "2026-11-27T19:21:52.494Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我分別聽兩個人的寫作經過，再把原話交給你判斷。",
+            "action": "另約合法課間分別請學生自願說明作業形成經過，紀錄必要原話供科任查核；不預判抄襲或代評。",
+            "tradeoff": "導師額外花兩段時間，學生可能以為導師也在查辦。"
+          },
+          {
+            "id": 2,
+            "text": "我幫你約時間，問題由你自己問。",
+            "action": "協助聯絡兩名學生於合法時段各自與科任說明，導師不代為詢問內容。",
+            "tradeoff": "省去代問但仍需協調，科任可能覺得未獲情感支援。"
+          },
+          {
+            "id": 3,
+            "text": "你問，我坐旁邊；別把開頭也塞給我。",
+            "action": "提出由科任主問、導師在雙方知情下陪同的個別談話，待時間及參與安排成立才進行。",
+            "tradeoff": "導師須陪同並可能被期待接話救場。"
+          },
+          {
+            "id": 4,
+            "text": "我們先把中性的問題寫好，你再去問。",
+            "action": "抽一段課間與科任擬定不預斷抄襲的查核問句，由科任後續個別詢問。",
+            "tradeoff": "花備課時間但不在現場，無法即時替同事解圍。"
+          },
+          {
+            "id": 5,
+            "text": "請學生各自補寫解題想法，你依課程規定看。",
+            "action": "向科任建議在不影響既有評量權益下，邀兩人各自補充寫作思路，是否採行及評量由科任決定。",
+            "tradeoff": "可能多出師生書寫與判讀時間，也未必能釐清抄襲。"
+          },
+          {
+            "id": 6,
+            "text": "你先和教學組確認查核方式，我陪你去問這一趟。",
+            "action": "陪科任向有權責的教學單位詢問疑似作業抄襲的處理方式，不將未定案學生資料擴散。",
+            "tradeoff": "增加行政詢問時間，同事可能覺得小事被正式化。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕當壞人；這次請你示範怎麼開口，我把自己的班規怎麼說給你聽。",
+          "action": "坦承自己也不喜歡質問學生，主動讓科任參照本班反抄襲說明的實際措辭，並請他先向導師演練第一次開口。",
+          "tradeoff": "暴露自己的不自在，還要花時間陪同事演練而非代問。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4114503102
+        },
+        "selectedIds": [
+          5,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "bd4f8d6bb978b61a0fd970858dfe87f5e793aee69ffc2f7481d041727dd42993"
+      },
+      "consequenceDirections": {
+        "A": "可發展明確處理邊界是否減輕科任焦慮或反而使其更緊張。",
+        "B": "可發展科任面對學生的焦慮及時間協調是否真的促成查核，不預設談話完成。",
+        "C": "可承接文字補充仍相似或出現不同理解時，原則派科任如何判斷。",
+        "D": "可發展同事是否願意練習直面衝突，以及彼此從推工作轉成承認害怕的互動。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4fccce5c02a3ed2bdb5926bbb0c5de477175b8fa32512e3e2d089c6f40acf8c2",
+    "draftSha256": "266b914fa2fd2f4509a6e66d277e11cc140842ce7b9940c57a1b1de5f9e0e02b",
     "seedAssignmentVersion": 1
   }
 }

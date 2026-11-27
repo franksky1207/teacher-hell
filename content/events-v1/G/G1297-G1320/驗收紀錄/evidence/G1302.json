@@ -16,14 +16,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7b06e9db027c830b7a1c8e2fce8ccd27b31122d92af0137caddce41065f59484",
+      "checkedAt": "2026-11-27T19:21:52.507Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我提議固定直排，討論課改用轉身分組，先一起試看看。",
+            "action": "向相關科任提出以固定直排加不搬桌的分組互動取代併桌，經協調再試行，不單方實施。",
+            "tradeoff": "導師原有小組活動便利降低，科任也需改互動方式。"
+          },
+          {
+            "id": 2,
+            "text": "先維持併桌，我和你談能不能換座向、不換桌型。",
+            "action": "與科任討論在原併桌下調整學生面向與授課活動，待安全及教學需求確認後採行。",
+            "tradeoff": "科任可能覺得專業質疑未被接受，導師需協助調整。"
+          },
+          {
+            "id": 3,
+            "text": "請所有任課老師一起談一次，不再讓學生傳話。",
+            "action": "邀有關科任於合法共同時段協調可長期共用的桌型，未形成共識前維持安全暫行教學。",
+            "tradeoff": "協調耗時，怕衝突的同事可能更緊張。"
+          },
+          {
+            "id": 4,
+            "text": "我先聽學生這幾天上不同課的實際不便，再帶回來談。",
+            "action": "在合法班級時間徵集不點名攻擊教師的座向、視線與搬動經驗，供師長後續協調，不由學生裁定科任對錯。",
+            "tradeoff": "需整理意見，科任可能擔心變成公開評比。"
+          },
+          {
+            "id": 5,
+            "text": "如果學校有可用教室，我先申請讓你那一節在直排空間上。",
+            "action": "詢問並申請課表允許的其他教室供該科使用，未獲核准不轉班，學生移動仍按規範。",
+            "tradeoff": "增加移動與借用協調，未必有空間。"
+          },
+          {
+            "id": 6,
+            "text": "我們各看對方一小段課，再談分心到底發生在哪裡。",
+            "action": "提出在不影響課務與學生權益下互相觀察部分教學，須雙方願意及校規允許，不作人事考核。",
+            "tradeoff": "需挪時間，也可能因被觀察而不自在。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我承認我也怕你嫌我排錯；這次我自己重做一份不搬桌的分組教案給你挑毛病。",
+          "action": "坦白自己的護面子，額外改寫一份適用現有桌型的分組教案請科任提出具體質疑，不要求對方採用或代課。",
+          "tradeoff": "花私人備課餘裕且可能被直接否定。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 19902380
+        },
+        "selectedIds": [
+          2,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "cc642f187137baa8ac55db8294bf7c720ad01ac5f7dc6967498984c69ab6226c"
+      },
+      "consequenceDirections": {
+        "A": "可承接學生經驗是否修正雙方假設，以及同事對資料被使用的戒心。",
+        "B": "可承接對併桌的專業質疑是否因看見實際教學而變具體。",
+        "C": "可承接對分心的疑慮是否能在不搬桌下處理及彼此專業信任。",
+        "D": "可發展從暗中搬桌到對教案具體交鋒的關係改變，不預設質疑消失。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a9e8fc447066dd520bd96a86978a7d87ca37f041b19aa4e5a44aae24f549adec",
+    "draftSha256": "7b06e9db027c830b7a1c8e2fce8ccd27b31122d92af0137caddce41065f59484",
     "seedAssignmentVersion": 1
   }
 }

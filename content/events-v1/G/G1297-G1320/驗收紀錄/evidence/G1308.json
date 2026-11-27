@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "62c6426c6092928c732c1abd03bd45d602992f5f76e0aaf7a56f57fb3f7d90f5",
+      "checkedAt": "2026-11-27T19:21:52.520Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這週伸展先不用音樂，你仍可以帶動作。",
+            "action": "暫停本班本週非必要伸展配樂，學生若願意仍可在核可活動內帶不需音響的動作，不影響必要教學設備。",
+            "tradeoff": "減少音樂趣味，學生可能仍覺得被撤職。"
+          },
+          {
+            "id": 2,
+            "text": "先練安全操作，測試過才談讓你再播。",
+            "action": "安排不干擾教學的合法時段由有能力者帶學生檢查配對、起始音量及曲目，之後是否恢復須再確認場景許可。",
+            "tradeoff": "花師生練習時間且不保證恢復配樂。"
+          },
+          {
+            "id": 3,
+            "text": "以後要配樂由我操作，你先負責帶操。",
+            "action": "在合法允許且先測試條件下由導師掌控播放，學生只在願意時帶動作，不再把手機操作交給他。",
+            "tradeoff": "導師增添設備工作，學生失去控音機會。"
+          },
+          {
+            "id": 4,
+            "text": "若你願意，找另一個同學一起練，之後兩人互相確認。",
+            "action": "提議徵求自願同學於核可時段共同練習與互核設備操作，未有人同意前不設搭檔，不讓同儕負最終安全責任。",
+            "tradeoff": "需協調搭檔，學生可能覺得不被信任。"
+          },
+          {
+            "id": 5,
+            "text": "我們問隔壁什麼時段絕對不能用，再決定還要不要配樂。",
+            "action": "額外與鄰班任課教師協調非必要配樂是否有不干擾的時段，不假設取得對方同意，也不以問過取代設備管制。",
+            "tradeoff": "多出跨班協調，可能根本沒有合適時段。"
+          },
+          {
+            "id": 6,
+            "text": "下一次換成學生自己選的無音響提神方式，先聽全班意見。",
+            "action": "於合適班級時段徵詢全班是否以不需擴音的活動替代原伸展配樂，未決定前不先實施新活動。",
+            "tradeoff": "占討論時間，該生可能失去原本擅長的服務位置。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被嚇到還有點氣，今天這三分鐘我自己帶，你坐著喘口氣。",
+          "action": "在停止配樂及必要處理後，因不想立刻假裝沒事，導師承擔本次合法伸展帶領，讓該生可自願休息；不公開羞辱或當作永久撤換。",
+          "tradeoff": "導師親自付出體力時間，也可能被學生誤解為不再信任。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3654607777
+        },
+        "selectedIds": [
+          5,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "bcabe03d445d3bd903897ccf75db9eba4d454aa0c2dd141721fb68f3ea544f00"
+      },
+      "consequenceDirections": {
+        "A": "可發展教師尚有情緒卻不羞辱學生的尷尬，以及一次暫代與長期機會不同的理解。",
+        "B": "可承接學生從經驗自信改為確認步驟的挫折或成長，不把測試當免責。",
+        "C": "可發展學生的善意是否能理解別人的教學需求，以及教師維持鄰里關係的成本。",
+        "D": "可承接配合班務的熱情如何在合作與被監督的感覺間變化。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2a2ed5faf3a28e1349eca5a10bcc02c94175651fbe1f5c3a489606e07fa42aff",
+    "draftSha256": "62c6426c6092928c732c1abd03bd45d602992f5f76e0aaf7a56f57fb3f7d90f5",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f384ef4f03c582aab5ab4e26b1b0aeecbc1c85968d20948a2bfcd84c1e693da9",
+      "checkedAt": "2026-11-27T19:21:52.500Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先和孩子談換座位的可能，不直接把全班調更冷。",
+            "action": "在不影響其他學生合理需求下詢問該生與相關同學的自願換位意願，經安排確認後才換座。",
+            "tradeoff": "協調耗時，也可能找不到合適座位。"
+          },
+          {
+            "id": 2,
+            "text": "今天我記幾個位置的實際溫度，再帶著資料請總務看。",
+            "action": "於工作時段記錄教室不同位置可取得的溫度資訊，向總務提出檢視氣流與設備需求；不宣稱檢修已完成。",
+            "tradeoff": "導師額外花時間，資料不能直接診斷熱疹。"
+          },
+          {
+            "id": 3,
+            "text": "規定先照做，我安排一次家長和總務都在的說明。",
+            "action": "邀家長與有權責的總務承辦協調合法時段討論定溫及通風限制，待雙方同意才進行。",
+            "tradeoff": "多方時間難湊，家長可能覺得被轉交別人。"
+          },
+          {
+            "id": 4,
+            "text": "我申請在規定內先試二十六度，聽聽前後排的感受。",
+            "action": "向有權單位確認本班可調範圍並申請在通風不變下試行二十六度；未核可不擅調，必要保暖照護照常。",
+            "tradeoff": "可能引發怕冷同學反對，也不保證核可或改善皮膚。"
+          },
+          {
+            "id": 5,
+            "text": "我和孩子找一個不用曝曬、也不擋別人的課間休息位置。",
+            "action": "與該生討論校內合法可用的較涼爽課間位置，確認可行後提供選擇，不限制其正常上課。",
+            "tradeoff": "需額外熟悉動線，家長可能認為只是把孩子移開。"
+          },
+          {
+            "id": 6,
+            "text": "我陪你把想改的設備條件寫成正式建議，別只剩二十三度一個答案。",
+            "action": "協助家長向校方提出具體環境改善建議，載明不同座位體感與通風需求，是否採納仍由權責單位評估。",
+            "tradeoff": "導師需協助整理，處理速度不一定符合家長期待。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也坐後排上一節自己的課，先別只叫孩子說給我聽。",
+          "action": "在課務與照看許可下，導師於自己任課的合適活動段改在後排觀察實際悶熱感受，不改通風規定或當作醫療測試。",
+          "tradeoff": "教學動線需調整，親身感受仍不能代表所有人。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2543119613
+        },
+        "selectedIds": [
+          3,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "853f58ae5fb04ab4e89f7ddb15ba31cbfd6fc8b1115befdcc6b24715f6b16690"
+      },
+      "consequenceDirections": {
+        "A": "可承接短暫舒緩與沒有改變全班環境之間的評價差異。",
+        "B": "可發展合法小幅調整是否足以回應家長及不同體感的協調。",
+        "C": "可發展制度要求與付費期待正面相遇時，導師居中承受的壓力。",
+        "D": "可發展家長對教師親自承受不便的信任或質疑，以及教師更理解體感後的立場。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "261cc1ef63afa63e3c98a94ba8d353a9c96a4b060206c37876688cec12fda795",
+    "draftSha256": "f384ef4f03c582aab5ab4e26b1b0aeecbc1c85968d20948a2bfcd84c1e693da9",
     "seedAssignmentVersion": 1
   }
 }

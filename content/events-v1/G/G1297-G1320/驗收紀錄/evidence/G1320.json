@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3cb6981f9eb3d76eaecc353c5dbf2f3dc1eba76af9996354756170113a176982",
+      "checkedAt": "2026-11-27T19:21:52.542Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天先讓你放心，不再追加報名建議。",
+            "action": "在必要澄清完成後結束本次額外推介，保留學生與家庭日後自主詢問與學習支持，不替孩子決定永不參加。",
+            "tradeoff": "可能暫未接住孩子的嘗試興趣，導師需接受不立刻促成的遺憾。"
+          },
+          {
+            "id": 2,
+            "text": "如果你願意，我先查有沒有補助，再只回覆確認過的資格與期限。",
+            "action": "徵求家長是否願意接收補助資訊，向正式承辦查詢實際資格、名額與期限，未確認不先說一定可考。",
+            "tradeoff": "增加查詢聯絡時間，也可能得到無名額的答案。"
+          },
+          {
+            "id": 3,
+            "text": "我先另外問孩子想怎麼看這件事，要他願意才一起談。",
+            "action": "於合法個別時段徵詢學生意願與是否願和家長共同討論，不把過去私下詢問直接當報名承諾。",
+            "tradeoff": "多花談話時間，學生可能仍不願開口。"
+          },
+          {
+            "id": 4,
+            "text": "不用付報名費也能先看看公開樣題，你們願意再拿就好。",
+            "action": "提供合法公開免費樣題來源供家庭自願體驗，不新增必交練習或承諾與正式檢定等值。",
+            "tradeoff": "教師需確認資訊可用，家長可能仍覺得多一項隱性功課。"
+          },
+          {
+            "id": 5,
+            "text": "如果這次不合適，我可幫你查下一梯的時間，現在不用先答應。",
+            "action": "在家長願意下查詢正式未來場次與費用資訊，僅提供已公布內容，不承諾未來有補助或價格較低。",
+            "tradeoff": "額外查詢且可能延長家長的焦慮等待。"
+          },
+          {
+            "id": 6,
+            "text": "我把群裡的自由資訊另外標清楚，讓大家不用每次猜是不是必辦。",
+            "action": "在既有必要更正之外，調整自己未來班群貼文呈現，將自願自費資訊與必要事項分開標示，不另建報名制度。",
+            "tradeoff": "多做訊息整理且不能保證所有家長都不誤會。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我捨不得孩子連試的機會都沒有；若他和你都願意，我自費負擔一次報名，但先走校內規範。",
+          "action": "因心軟提出在校規允許、家庭與學生自由同意且不造成偏袒評量下，申請以導師私人款項支應一次報名；未核可或未同意不付款、不保證成績，必要支持不以接受為條件。",
+          "tradeoff": "承擔私人費用與公平觀感，也可能被家庭婉拒，不能以此代替學校既有責任。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1055073056
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "4b8b28d14bca95c8131aa3bde0640b3a21957c9f3e13d5ad7705260e8e36f212"
+      },
+      "consequenceDirections": {
+        "A": "可承接守規矩家長對資格申請的期待與怕被看見經濟狀況的猶豫。",
+        "B": "可發展延後準備是否讓家庭較能安排，孩子對失去本次機會的感受仍待確認。",
+        "C": "可發展家長卸下費用焦慮與孩子仍未說出口的想法之間的落差。",
+        "D": "可發展家長感激與自尊的拉扯、學生是否感到欠人情，以及教師心軟造成的後續界線困難。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ea15f358517a5f46598c953515e98de88dd4b3ef29924f94b35fe6cf15e596cd",
+    "draftSha256": "3cb6981f9eb3d76eaecc353c5dbf2f3dc1eba76af9996354756170113a176982",
     "seedAssignmentVersion": 1
   }
 }

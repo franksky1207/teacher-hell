@@ -16,14 +16,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e67e8a8f722c8294d3bf9d703dd86ee5389ef1655382f6e7dc2b7f84e1e40e7c",
+      "checkedAt": "2026-11-27T19:21:52.522Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我提早掃方案，但只問本來就能那時到的人，不逼通勤生早起。",
+            "action": "徵詢自願且原已合法早到的學生能否承接部分早段清掃，核對總負擔與校規後再提變更，不按住址強派。",
+            "tradeoff": "協調複雜且可能無足夠早到人力。"
+          },
+          {
+            "id": 2,
+            "text": "先不改時段，我們把等乾這種不必站著等的收尾重整。",
+            "action": "檢視並提出不需全員等候的安全工具收整流程，必要晾放與保管按校規處理，學生不因無意義等待延誤返程。",
+            "tradeoff": "需實際重排收尾工作，未必縮短其他清掃耗時。"
+          },
+          {
+            "id": 3,
+            "text": "我把實際班次和清掃時間帶去請主管調整，先不替學校答應。",
+            "action": "在不蒐集不必要行蹤下整理學生自願提供的公開班次與校內清掃時段，向主管提出全班時段調整需求。",
+            "tradeoff": "正式協調較慢，學生可能認為又要等。"
+          },
+          {
+            "id": 4,
+            "text": "我們先讓全班談不同時段各卡在哪裡，再分工作，不分遠近陣營。",
+            "action": "於合法班級時間討論各人可行時段與工作需求，在共同安全返程前提下研議自願公平分工，不公開住址。",
+            "tradeoff": "占討論時間，可能激化對誰做更多的爭論。"
+          },
+          {
+            "id": 5,
+            "text": "我先申請一週短期分段試行，條件談妥才開始。",
+            "action": "向有權單位提出限期且可回復的分段清掃試行，須確保監督、合法到校與自願公平分工，核可前不實施。",
+            "tradeoff": "需設計與協調試行，人力未必足夠。"
+          },
+          {
+            "id": 6,
+            "text": "外掃若是瓶頸，我們請學校重新看責任區，不把全班都往早上搬。",
+            "action": "向清掃權責單位反映外掃範圍及放學交通衝突，請求評估責任區調整，不把工作轉嫁他班或承諾減免。",
+            "tradeoff": "增加對外溝通，也可能遭到拒絕。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再看你打呵欠硬撐；明天我自願接一段可由成人做的工具收整，不叫你替我留。",
+          "action": "因心疼學生而提出在校規與勞動安全允許下，導師明日額外承擔一段合法工具收整；原有必要安全不以此為條件，不要求學生等待或報恩。",
+          "tradeoff": "教師少一段下班餘裕且只是短期個人投入，不能代替長期分工。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1910073026
+        },
+        "selectedIds": [
+          5,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "46b1b08cc81857a357e98cb0c1982194f9069a0fe3efd369991492a46c94ca2f"
+      },
+      "consequenceDirections": {
+        "A": "可發展學生對公平分工是調時段還是改工作範圍的不同認知。",
+        "B": "可承接直接質問轉成制度提案的期待與失落，不預設校方同意。",
+        "C": "可發展學生接受照顧的尷尬與導師代勞後是否更願推動持續改變。",
+        "D": "可承接學生急於執行與試行條件尚待確認的摩擦，不能預設整潔改善。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9b87db71e509940c90a02e5a798ab8c7b58224b051bef09ba11d71b5ed246a78",
+    "draftSha256": "e67e8a8f722c8294d3bf9d703dd86ee5389ef1655382f6e7dc2b7f84e1e40e7c",
     "seedAssignmentVersion": 1
   }
 }

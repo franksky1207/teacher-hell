@@ -16,14 +16,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9ac8a866209d50de108d0a39051f80262e7163a7f1b78d42b0cd1563002fb77c",
+      "checkedAt": "2026-11-27T19:21:52.526Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我提議全班都能選等值格式，寫完紙本的也不用重做。",
+            "action": "在合法權責內公布本次可選的等值分享格式與相同內容要求，保留已完成紙本作品，不強迫他人改作數位。",
+            "tradeoff": "需額外核對多種格式與可及性，增加教師閱讀時間。"
+          },
+          {
+            "id": 2,
+            "text": "這次先留一份簡短紙本重點，心智圖和音檔可以補充，不要求八百字重寫。",
+            "action": "向全班一致說明在校規允許下的最低紙本重點要求及可自願補充媒介，該生可據此調整，不單獨開特例。",
+            "tradeoff": "學生仍需轉換部分文字，創作自由受限。"
+          },
+          {
+            "id": 3,
+            "text": "先不改這次，我邀你把格式提案放到下次閱讀分享前討論。",
+            "action": "本次維持原格式且提供必要學習支持，另邀學生自願於下次任務公布前說明替代媒介提案，不承諾採用。",
+            "tradeoff": "學生本次準備的數位作品不能直接替代，可能感到受挫。"
+          },
+          {
+            "id": 4,
+            "text": "你願意讓全班試看一小段，再一起談什麼算讀得紮實嗎？",
+            "action": "在學生同意及合法班級時段下展示其願分享的片段，徵詢內容判準，未達成一致不先宣布個別替代獲准。",
+            "tradeoff": "占討論時間，作品可能被同學挑剔。"
+          },
+          {
+            "id": 5,
+            "text": "我們把圖轉成紙本內容來看，不為了漂亮另加分。",
+            "action": "提出由學生保留心智圖結構、提供可讀紙本或校內可及版本以對照既有內容要求，經本人願意與一致說明後採用。",
+            "tradeoff": "需整理輸出，音檔的表達優勢可能無法完全呈現。"
+          },
+          {
+            "id": 6,
+            "text": "我先向教學主管確認能怎麼調整，再給全班同一個答覆。",
+            "action": "攜帶不含不必要個資的格式提案向有權主管詢問合法調整空間，未回覆前不給該生私下保證。",
+            "tradeoff": "延後答覆並增加協調，學生可能等不及。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很想聽你怎麼講；今天自己的休息借你兩分鐘，這不是先答應替代。",
+          "action": "因好奇與喜愛其創意，自願用自己的合法休息聆聽學生願分享的兩分鐘音檔，只回應閱讀內容，不先核准繳交特例。",
+          "tradeoff": "犧牲休息且需說明聆聽不等於格式批准，可能讓學生先期待。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1061286234
+        },
+        "selectedIds": [
+          2,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "4bf6927f10213d2e2b8d18fde38040477e1b8bb598655c95f59255fa3daf7e8a"
+      },
+      "consequenceDirections": {
+        "A": "可承接不從眾的學生面對真實同儕回饋與教師維持公平的成本。",
+        "B": "可發展數位學習快的學生是否願意讓內容離開技術效果接受理解。",
+        "C": "可承接學生對折衷的接受或認為教師仍拘格式，與其他學生的公平觀感。",
+        "D": "可發展親近師生能否分清願意看見創作與評量公平的差異。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "33670f7c680004855c27692342d458bbe479c85f50a952fc7cbbb51c084a0083",
+    "draftSha256": "9ac8a866209d50de108d0a39051f80262e7163a7f1b78d42b0cd1563002fb77c",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6cd816bd3c6140e4df2a53ab83491140c5307b69ffc648038adc38a7c2fc12ce",
+      "checkedAt": "2026-11-27T19:21:52.512Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪你走，公車就算了。",
+            "action": "徵得長輩同意且確認路線安全後，共撐自己的傘、協助提可負荷材料送到住處公共入口，再自行安排晚間合法返程。",
+            "tradeoff": "錯過直達車，雨中勞動並多花轉乘時間或車費。"
+          },
+          {
+            "id": 2,
+            "text": "我幫你叫車，等你上去；我的公車不一定趕得上。",
+            "action": "經長輩同意協助叫合法計程車並等候安全上車，車資先由對方確認負擔，不保證五分鐘內到車。",
+            "tradeoff": "可能同樣錯過直達車，長輩需承擔車費。"
+          },
+          {
+            "id": 3,
+            "text": "我問值班人員能不能借傘，你在這裡等，我先趕車。",
+            "action": "在確認長輩可安全由值班人員協助等候後，詢問有無可借用雨傘並經雙方同意交接，自己前往搭車；無可行交接則不逕離。",
+            "tradeoff": "可能無傘可借或耽誤車次，長輩仍需自己負擔材料。"
+          },
+          {
+            "id": 4,
+            "text": "我把自己的傘借你，袋子請你慢慢提；我另想辦法回去。",
+            "action": "在長輩願意且能安全自行返家前提下借出自己的大傘，約簡單歸還方式；自己留在安全處另安排交通。",
+            "tradeoff": "私人傘有遺失風險，自己可能多花車費或等雨時間。"
+          },
+          {
+            "id": 5,
+            "text": "不急著出門，我陪你在這裡等雨小一點。",
+            "action": "確認活動中心可留候時段後，提議一同在屋簷內等候雨勢，期間重新評估安全交通，不保證雨會及時停。",
+            "tradeoff": "放棄追末班直達車，等待時間無法確定。"
+          },
+          {
+            "id": 6,
+            "text": "你要不要問家人能不能接？我幫你把話說清楚再走。",
+            "action": "徵得長輩同意後協助其聯絡自選親友說明接送需求；確認可安全等候及值班交接再離開，不假定親友答應。",
+            "tradeoff": "要等待回覆且可能趕不上車，也可能令長輩不願麻煩家人。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我今天也想舒服一點，問你願不願一起搭車，這趟我出。",
+          "action": "因不想雨夜轉車又捨不得丟下新朋友，提出自費合乘合法計程車，確認兩人同意路線與下車點後才叫車，不把邀請當接受。",
+          "tradeoff": "多付一筆私人車費，仍需等車且未必能合乘。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 867259611
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "78acf7f9f38a0268c89f53dd85f7c9d46d0971500192393fc589eea4e8770d17"
+      },
+      "consequenceDirections": {
+        "A": "可承接親友支持與自主面子的不同考量，以及協助遭拒時的尷尬。",
+        "B": "可承接務實交通協助與時間不確定性，避免把叫車寫成必然趕上公車。",
+        "C": "可發展新交情的親近與回程疲憊、後悔或滿足，不保證全身不濕。",
+        "D": "可發展出於同理也出於怕累的邀約被接受或婉拒，以及花錢換便利的心情。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4b4bf4fa2bbb279f5f2a2b6d74bf183489096ec0f4dbf8c62972ebb2f7bc99b3",
+    "draftSha256": "6cd816bd3c6140e4df2a53ab83491140c5307b69ffc648038adc38a7c2fc12ce",
     "seedAssignmentVersion": 1
   }
 }

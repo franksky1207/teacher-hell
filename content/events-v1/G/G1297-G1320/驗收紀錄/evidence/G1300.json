@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d3faf587e7a4715e4e2469f1d7e1d019ea302a58ed1cef93b173d234a5de7c67",
+      "checkedAt": "2026-11-27T19:21:52.503Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "全班格式先不改，我把原因直接說清楚。",
+            "action": "明確回覆維持條列聯絡事項，說明現有批閱時間與全班負荷，不另承諾反思課程。",
+            "tradeoff": "家長可能將界線理解為不願投入。"
+          },
+          {
+            "id": 2,
+            "text": "若孩子自己想寫，我每月看一篇，不承諾每天批。",
+            "action": "向家長提出以孩子自願為前提、每月另交一篇反思供導師回饋的有限協助，不變動全班聯絡簿。",
+            "tradeoff": "導師仍增加固定閱讀工作，家長可能嫌太少。"
+          },
+          {
+            "id": 3,
+            "text": "我先聽全班對每週一次的想法，再決定要不要提案。",
+            "action": "在合法班級討論時間徵詢學生對非強迫的每週反思安排意見，尚不實施，必要規範與負荷評估後再決定。",
+            "tradeoff": "占班級討論時間，提案可能被否決。"
+          },
+          {
+            "id": 4,
+            "text": "請你先讓孩子試自己的寫法，再由孩子決定要不要拿給我看。",
+            "action": "建議家長與孩子自願在家試寫，導師只接受孩子願意分享的內容，不新增規定或固定批閱承諾。",
+            "tradeoff": "家長須自己投入，導師無法保證其期待的訓練成效。"
+          },
+          {
+            "id": 5,
+            "text": "如果要變成正式寫作任務，我們先找國文老師談課程是否合適。",
+            "action": "徵詢有任課資格的國文教師是否願評估此提議與既有課程銜接；未獲同意不替其承諾批閱。",
+            "tradeoff": "需跨教師協調，也可能沒有課程空間。"
+          },
+          {
+            "id": 6,
+            "text": "我把你的提案連同每天需要的批閱時間送教學主管評估。",
+            "action": "以具名家長提案及估計工作量向有權主管請求評估，不宣稱尚未發生的實際耗時或已核准改制。",
+            "tradeoff": "正式化可能拉長等待，也使導師必須說明自身工作安排。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我今天就讓你看我正在改的這一疊有多厚，但不翻任何孩子的內容。",
+          "action": "因被反覆稱讚又催促而不服氣，提出在不曝露學生資料的前提下展示當日待批本數與自己的批閱時段，請家長估算新增工作。",
+          "tradeoff": "暴露工作節奏並可能被說計較，還得花時間解說。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1558574801
+        },
+        "selectedIds": [
+          5,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "2512f0ba75c2a6cdf0ed6273688a34a97120d87ae4e3bb94ab795001173d8a6c"
+      },
+      "consequenceDirections": {
+        "A": "可承接主管與家長對負荷的不同理解，不預設提案實施。",
+        "B": "可發展家長是否看見稱讚背後的勞動，以及導師護住時間的直白是否傷和氣。",
+        "C": "可發展家長是否願意親自承擔支持，以及孩子拒絕分享時的反應。",
+        "D": "可發展家長對專業分工的接受或持續要求導師親自承擔。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "85258c1fc5d0c5a6c8bbec2d54fa25fc8c4ccd1939da0cf7f779bcd6fa98321d",
+    "draftSha256": "d3faf587e7a4715e4e2469f1d7e1d019ea302a58ed1cef93b173d234a5de7c67",
     "seedAssignmentVersion": 1
   }
 }

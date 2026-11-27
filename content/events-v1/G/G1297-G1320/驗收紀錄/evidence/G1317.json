@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ed01c775d92594ccf8de65e8ddaa45216f8949c6622f9b52c25243fd9ecf2cbe",
+      "checkedAt": "2026-11-27T19:21:52.537Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天真的不用幫，你先回去；我會自己把這一疊處理好。",
+            "action": "向學生具體道謝並婉拒本日非必要協助，確認原有安全返程後由導師自行完成講義，不把拒絕當否定心意。",
+            "tradeoff": "教師保留全部整理工作，學生可能覺得派不上用場。"
+          },
+          {
+            "id": 2,
+            "text": "如果你真的還有力氣，只分這十份，五分鐘就停，不等全部做完。",
+            "action": "在所有身體、校規與交通條件成立且本人願意下，只接受限定五分鐘的輕量分紙，不用裝訂器具，時間到即停並維持安全離校。",
+            "tradeoff": "導師仍須收尾並控時，學生可能想越做越多。"
+          },
+          {
+            "id": 3,
+            "text": "不用留下，你明天正常到校後願意幫忙發就夠了。",
+            "action": "提出不要求提早到校的次日合法課間自願發放輕量工作，本日不接受留校整理，不預設學生明日答應。",
+            "tradeoff": "教師今晚仍獨自整理，學生可能覺得被延後敷衍。"
+          },
+          {
+            "id": 4,
+            "text": "我向行政問能不能用核准的分頁服務，今天不靠你撐。",
+            "action": "查詢現有合法文書支援或機器分頁服務的可用性，未取得不宣稱完成，學生照常安全返程。",
+            "tradeoff": "需額外詢問及等待，仍可能得自己手工分。"
+          },
+          {
+            "id": 5,
+            "text": "明天的活動若允許，我改成小組共用，不必今晚裝四十份。",
+            "action": "在導師自身課程與既定教材可及性允許下評估改為小組共用版本，保留個別必要學習材料，不剝奪學生權益。",
+            "tradeoff": "導師需重備活動，個人使用便利可能降低。"
+          },
+          {
+            "id": 6,
+            "text": "我先問同仁願不願接一小段，讓你知道幫忙不只你一個人能做。",
+            "action": "向具職務資格且可合法自願協助的成人同仁提出短段支援需求，對方未接受不移交，不以學生留下補缺。",
+            "tradeoff": "增加協調與欠人情的壓力，可能無人有空。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你一說我才發現自己也不想撐；我今晚不裝訂了，明天按原課程先發未裝訂的版本。",
+          "action": "因被學生心疼而承認自己的疲倦，在材料使用與教學規範允許下停止非必要裝訂，確保明日同等完整內容可正常發放，本日一起準時離開各自安全返程。",
+          "tradeoff": "教師得承受教材外觀不整齊與明日管理散頁的麻煩，不以降低學習支持換休息。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1609698173
+        },
+        "selectedIds": [
+          4,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "1497c02da1d012d3d3d7f383acb9ea93a39258aaa0aa82db40ae0c3b736822c7"
+      },
+      "consequenceDirections": {
+        "A": "可承接學生看見教師願求助成人系統而非總靠師生硬撐的反應。",
+        "B": "可發展兩個累壞的人停止互相搶工作後的自在或不安，及教師不完美呈現的面子代價。",
+        "C": "可發展教師為減少無謂工作改變教學安排，學生是否認為自己的關心真的有影響。",
+        "D": "可發展信任很深的學生如何理解老師拒絕照顧自己，以及導師獨自加班的感受。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d3d2bf126d4a1f6e01dabb2079a2311b1aa55f7dc3faccd8db83a90f11b5208d",
+    "draftSha256": "ed01c775d92594ccf8de65e8ddaa45216f8949c6622f9b52c25243fd9ecf2cbe",
     "seedAssignmentVersion": 1
   }
 }

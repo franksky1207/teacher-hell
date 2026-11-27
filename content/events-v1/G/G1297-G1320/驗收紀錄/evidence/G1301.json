@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d4f8a320a75c78a9c673ef4d9ef489e473a56bc78d87edd84cd8f1a4fd609fae",
+      "checkedAt": "2026-11-27T19:21:52.505Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "可以問一次，對方說不要就停；下午不夠人也不硬湊。",
+            "action": "允許在不妨礙休息的課間向同學一次性徵詢自願參賽意願，確認同意與程序後才送件。",
+            "tradeoff": "組隊倉促，教師需確認同意且可能仍無法報名。"
+          },
+          {
+            "id": 2,
+            "text": "這梯先不追，班會再公開說明，下次有準備地報。",
+            "action": "決定不以本班名義趕本梯送件，於既定合法班會安排公開自願資訊說明，未承諾下次必成隊。",
+            "tradeoff": "失去當次機會，學生可能認為熱情被澆熄。"
+          },
+          {
+            "id": 3,
+            "text": "你先寫出要花多少時間，讓想參加的人看過再決定。",
+            "action": "請學生先完成簡短參賽工作與課外時間估算，再向同學徵求知情同意；來不及則不送件。",
+            "tradeoff": "準備吃掉招募時間，估算也可能讓同學退出。"
+          },
+          {
+            "id": 4,
+            "text": "我陪你去學務處問個人參賽能不能成立，先別找替補。",
+            "action": "陪同詢問簡章是否允許本人單獨參賽，未確認前不宣稱已有個人名額或修改隊伍規則。",
+            "tradeoff": "占導師課間，也可能完全不符合資格。"
+          },
+          {
+            "id": 5,
+            "text": "先找願意當共同召集的人，別又由你替大家拍板。",
+            "action": "建議學生先徵求一名自願共同召集者，一起談工作分配後再招募與依法送件，不預設有人接受。",
+            "tradeoff": "召集多一步協商，可能趕不上截止。"
+          },
+          {
+            "id": 6,
+            "text": "我留一小段課間讓你說明，但不替你背書拉人。",
+            "action": "在不剝奪休息與不施壓參加下提供合法短段公開說明機會，由學生講規則與需求，同學自由離開及拒絕。",
+            "tradeoff": "導師需控時，公開說明也可能冷場。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你這股衝勁我有點羨慕；我借你自己的畫具，但隊友還是得自己願意。",
+          "action": "因被學生熱情打動，主動提出合法借用導師確實自有且適合的普通畫具，經對方願意接用與校規允許才交付；不以此保證參賽。",
+          "tradeoff": "承擔私人畫具損耗與借還聯絡，仍可能沒有隊伍。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 822449572
+        },
+        "selectedIds": [
+          5,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "ebf1f63c545a2080be3dc3de7fcc205d1177c98338d7b8a888a008118e67d52d"
+      },
+      "consequenceDirections": {
+        "A": "可發展執行力從搶名額轉為估計承擔，以及實際時間揭露造成的變化。",
+        "B": "可發展強行動者是否願分享決定權及合作形成的真實困難。",
+        "C": "可發展學生的彈性如何從換人變成尊重拒絕，以及短時間組隊的磨合。",
+        "D": "可發展物質支持是否讓學生更珍惜同意，或誤以為教師已答應包辦比賽。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "358251bb7915e6688f904e9fe35a8997ea031565d61c17f213cfa49fc5080a69",
+    "draftSha256": "d4f8a320a75c78a9c673ef4d9ef489e473a56bc78d87edd84cd8f1a4fd609fae",
     "seedAssignmentVersion": 1
   }
 }

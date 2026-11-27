@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "df3f0080c485105241140209f6870b4ccc65be74444f9f565480784ca2be9e4e",
+      "checkedAt": "2026-11-27T06:02:48.986Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓每人先提願意的角色，再協調重複選項",
+            "action": "導師已讓每人先提願意的角色，再協調重複選項",
+            "tradeoff": "需要時間，也不保證人人第一志願"
+          },
+          {
+            "id": 2,
+            "text": "照已說明的輪替完成這一輪，下一輪再談調整",
+            "action": "導師已照已說明的輪替完成這一輪，下一輪再談調整",
+            "tradeoff": "他可能覺得又要等，你必須真的回談"
+          },
+          {
+            "id": 3,
+            "text": "在當事人都願意下試同伴提名，保留本人拒絕",
+            "action": "導師已在當事人都願意下試同伴提名，保留本人拒絕",
+            "tradeoff": "可能又集中熟悉的人，需要成人公平核對"
+          },
+          {
+            "id": 4,
+            "text": "讓他保留一段自己喜歡的記錄任務，不綁定下一次全部角色",
+            "action": "導師已讓他保留一段自己喜歡的記錄任務，不綁定下一次全部角色",
+            "tradeoff": "有些工作得重分，也不能只挑有趣部分不談必要分擔"
+          },
+          {
+            "id": 5,
+            "text": "請小組先說這次各角色實際學到什麼，再決定下輪需求",
+            "action": "導師已請小組先說這次各角色實際學到什麼，再決定下輪需求",
+            "tradeoff": "進度會慢，也可能發現原角色分法不合理"
+          },
+          {
+            "id": 6,
+            "text": "讓願意的人短試不熟悉角色，教師提供必要協助",
+            "action": "導師已讓願意的人短試不熟悉角色，教師提供必要協助",
+            "tradeoff": "成品可能生疏，也須有退出與公平安排"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想暫時不用主持，交出自己非必要的帶場段落，坐下做一輪記錄",
+          "action": "導師已在正常教學安排內讓出本人非必要帶場段，邀適任自願者接話並由本人記錄，保留必要教學、安全與學生拒絕權",
+          "tradeoff": "要確認有人自願且適合接話，必要教師責任仍在"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 305979735
+        },
+        "selectedIds": [
+          1,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "42b1b9cf12645bfd0382855105fd11af396dddaf368157ccd12ea0c2eef2f39d"
+      },
+      "consequenceDirections": {
+        "A": "學生能按經驗再選，不能把一次試不好固定成永遠不適任。",
+        "B": "學生有機會主導短段，你則要忍住不把每句再接回來，也可能發現記錄比想像忙。",
+        "C": "新發現能留下，主持期待仍需與他人協調。",
+        "D": "選擇能被聽見，原主持者不能用最先提就拿回原位。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f0dafcdeb964d267a10ae0d0cda38d19f05f96a9cf0d03355e8f9b5c434f0c1c",
+    "draftSha256": "df3f0080c485105241140209f6870b4ccc65be74444f9f565480784ca2be9e4e",
     "seedAssignmentVersion": 1
   }
 }

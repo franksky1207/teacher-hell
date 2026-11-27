@@ -15,14 +15,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "68d08d89727f0e72215f6d2721301f72f456d38b7125be0813d2764cb6c3896d",
+      "checkedAt": "2026-11-27T06:02:48.983Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由你向原看見者說明是自己未查清就採用，不讓學生獨扛",
+            "action": "導師已由你向原看見者說明是自己未查清就採用，不讓學生獨扛",
+            "tradeoff": "要承認失誤，也不能替作者答應原諒"
+          },
+          {
+            "id": 2,
+            "text": "改用你自己畫的普通轉場圖，不借他人梗",
+            "action": "導師已改用你自己畫的普通轉場圖，不借他人梗",
+            "tradeoff": "多花備課時間，也未必好笑"
+          },
+          {
+            "id": 3,
+            "text": "今天不放圖，照原課程往下上",
+            "action": "導師已今天不放圖，照原課程往下上",
+            "tradeoff": "少了熱鬧，你得接受有人失望"
+          },
+          {
+            "id": 4,
+            "text": "私下聽學生為何對你反感，不把談話變成替作者代答",
+            "action": "導師已私下聽學生為何對你反感，不把談話變成替作者代答",
+            "tradeoff": "要另留時間，可能聽到你不愛聽的話"
+          },
+          {
+            "id": 5,
+            "text": "請學生把素材來源交適當窗口，不再自行問遍同學",
+            "action": "導師已請學生把素材來源交適當窗口，不再自行問遍同學",
+            "tradeoff": "資訊可能不完整，也不能代查私人裝置"
+          },
+          {
+            "id": 6,
+            "text": "以不展示原圖的例子說明分享與授權，不影射當事人",
+            "action": "導師已以不展示原圖的例子說明分享與授權，不影射當事人",
+            "tradeoff": "占用課內時間，也可能仍被猜到"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被自己帶歪氣氛弄得很煩，取消你這週自願主持的梗圖分享，不再收學生投稿來暖場",
+          "action": "導師已取消本人非必要梗圖主持與徵稿，保留合法創作、正常課程及原事件處理，不要求作者重新授權",
+          "tradeoff": "少了大家期待的趣味，不能以此懲罰學生私下合法創作"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1390007139
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "a1533ddcff391efb25c24427831dde705556b66624b7a160a7d773a211479a65"
+      },
+      "consequenceDirections": {
+        "A": "他能說出成人帶頭的影響，卻不能用你也錯免除自身責任。",
+        "B": "同學知道轉傳不等於無主，教師仍須完成這件事的具體處理。",
+        "C": "教師不用急著找下一張救面子，卻仍得把正常教學帶下去，也要承認取消不是作者害的。",
+        "D": "課程可接續，但教師不能把新圖畫得一樣可辨識又稱原創。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "99953afbc2d8c3c2ef5357ed672503a5431c6a2005595eaf97d688a5a43ccf4e",
+    "draftSha256": "68d08d89727f0e72215f6d2721301f72f456d38b7125be0813d2764cb6c3896d",
     "seedAssignmentVersion": 1
   }
 }

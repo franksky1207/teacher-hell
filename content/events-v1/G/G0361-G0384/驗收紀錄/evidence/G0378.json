@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7e1dfc87a53eec7de9210715091cf481d20d5f5a8ce5a293a31ea3b04b63a264",
+      "checkedAt": "2026-11-27T06:02:48.995Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持已確認的局部隔離，照可用通路安排",
+            "action": "導師已維持已確認的局部隔離，照可用通路安排",
+            "tradeoff": "活動空間變小，仍須保持成人照看"
+          },
+          {
+            "id": 2,
+            "text": "暫停這輪非必要搬件，先讓正常通行恢復",
+            "action": "導師已暫停這輪非必要搬件，先讓正常通行恢復",
+            "tradeoff": "整理進度延後，也得另外安排"
+          },
+          {
+            "id": 3,
+            "text": "請場地管理者接手範圍與時段協調",
+            "action": "導師已請場地管理者接手範圍與時段協調",
+            "tradeoff": "需要完整交接，不等於你可不再顧本班"
+          },
+          {
+            "id": 4,
+            "text": "將物品移到核准暫放處，由適任成人處理",
+            "action": "導師已將物品移到核准暫放處，由適任成人處理",
+            "tradeoff": "要有人力與可用空間，不能轉堵別處"
+          },
+          {
+            "id": 5,
+            "text": "和同仁當面核對顧慮，不再把默默放錐當全部說明",
+            "action": "導師已和同仁當面核對顧慮，不再把默默放錐當全部說明",
+            "tradeoff": "要花他的正常工作空檔，也可能聽到更多不滿"
+          },
+          {
+            "id": 6,
+            "text": "改約人流少且正式允許的時段整理",
+            "action": "導師已改約人流少且正式允許的時段整理",
+            "tradeoff": "會影響你的工作排程，也不保證立刻排得上"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再欠私人器材的人情，向總務申請學校標錐，按交接把他的還回去",
+          "action": "導師已向總務提出校有器材接替需求，確認同等安全措施與物主歸還方式後才交還私人標錐，不空置防護或強派人力",
+          "tradeoff": "未必有現貨，也不能未確認就撤掉必要隔離"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3456294150
+        },
+        "selectedIds": [
+          5,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "ab7071c7940fe5d1400b9ae3a408772be9a678e175a7cf0359f5623a56d26eac"
+      },
+      "consequenceDirections": {
+        "A": "資源責任回到學校，同仁可收回自己的物件，但你得接受申請與交接的工作，不是說還就走。",
+        "B": "原通道能真正清楚，搬運卻可能比留原地費時。",
+        "C": "決定有正式承接，值勤者也不用只用私人標錐替大家撐場。",
+        "D": "界線有共同理解，但不能談完就省略現場必要管理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "005f7c8ec87312ddb8a90fff4ae1714d74cbf5dcc90c5a7fda3f191cd4984c7e",
+    "draftSha256": "7e1dfc87a53eec7de9210715091cf481d20d5f5a8ce5a293a31ea3b04b63a264",
     "seedAssignmentVersion": 1
   }
 }

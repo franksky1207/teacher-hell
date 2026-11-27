@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f523319f8b88487d3a78a1f8e0909b978e59db4af73933b21adf6f7431dca8ac",
+      "checkedAt": "2026-11-27T06:02:48.992Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓本人自願在適當處穿好合用護具，不拿他作公開典範",
+            "action": "導師已讓本人自願在適當處穿好合用護具，不拿他作公開典範",
+            "tradeoff": "他可能仍怕被笑，必要防護不是只對一人要求"
+          },
+          {
+            "id": 2,
+            "text": "由任課老師重排安全練法，取消硬摔與逞強比較",
+            "action": "導師已由任課老師重排安全練法，取消硬摔與逞強比較",
+            "tradeoff": "原活動刺激減少，也須維持課程必要目標"
+          },
+          {
+            "id": 3,
+            "text": "結束今天這段非必要練習，照原課程接續",
+            "action": "導師已結束今天這段非必要練習，照原課程接續",
+            "tradeoff": "少一次練習，不能以停止代替必要照護"
+          },
+          {
+            "id": 4,
+            "text": "私下聽他想怎麼向同伴改口，不要求公開認錯演說",
+            "action": "導師已私下聽他想怎麼向同伴改口，不要求公開認錯演說",
+            "tradeoff": "要另留時間，他也可能選擇不多解釋"
+          },
+          {
+            "id": 5,
+            "text": "以不點人的方式說明護具用途，不把家庭購買拿來比較",
+            "action": "導師已以不點人的方式說明護具用途，不把家庭購買拿來比較",
+            "tradeoff": "要確認內容，也可能有人還想笑"
+          },
+          {
+            "id": 6,
+            "text": "向學校確認可借的合用備品，符合安全條件才恢復相關操作",
+            "action": "導師已向學校確認可借的合用備品，符合安全條件才恢復相關操作",
+            "tradeoff": "可能數量不足，正式安排也需時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也對那套護具好奇，請任課老師確認有合用的校用備品，自己試穿一次，不借學生私物",
+          "action": "導師已向任課教師提出本人自願試穿合用校用護具的請求，獲准才做，不實施危險動作、不挪用學生物件或要求跟進",
+          "tradeoff": "占你的空檔，也可能穿起來很笨重"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1135365123
+        },
+        "selectedIds": [
+          1,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "5c4c37994c8bbf8e30c5e2cf9754c5bec289beab075909d2f891e0991455e360"
+      },
+      "consequenceDirections": {
+        "A": "學生看見成人也可直接試，不必替老師表演勇敢；但教師試穿不取代任何人的安全核對。",
+        "B": "號召力有重新使用的可能，但不靠他替成人管理全班。",
+        "C": "學生可先保護自己，同伴反應仍需教師依具體行為處理。",
+        "D": "危險玩法不再延伸，學生卻可能失望好不容易想改就沒機會試。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0679f36b2c940f93a5144137ba2d37bd6a343ea2a6f58587c8165f4c15554619",
+    "draftSha256": "f523319f8b88487d3a78a1f8e0909b978e59db4af73933b21adf6f7431dca8ac",
     "seedAssignmentVersion": 1
   }
 }

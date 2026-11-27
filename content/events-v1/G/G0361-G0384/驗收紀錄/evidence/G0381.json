@@ -14,14 +14,82 @@
   "plannedTags": [
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bb5713e6fd6f10175eef708f6d00c42b4cf9c8da9de7a6f2a2afbc1468649603",
+      "checkedAt": "2026-11-27T06:02:48.997Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓他安靜休息，不把候車算學習義務",
+            "action": "導師已讓他安靜休息，不把候車算學習義務",
+            "tradeoff": "今天少一段額外練習，仍須留意必要聯繫"
+          },
+          {
+            "id": 2,
+            "text": "若本人真願意，只給可隨車到就停的小練習",
+            "action": "導師已若本人真願意，只給可隨車到就停的小練習",
+            "tradeoff": "要守時間與健康條件，不以完成換離校"
+          },
+          {
+            "id": 3,
+            "text": "和承辦確認往後固定候車位置與可用時段",
+            "action": "導師已和承辦確認往後固定候車位置與可用時段",
+            "tradeoff": "要協調，也不能保證每次同一座位"
+          },
+          {
+            "id": 4,
+            "text": "與家庭核對是否有其他實際可負擔的交通支持",
+            "action": "導師已與家庭核對是否有其他實際可負擔的交通支持",
+            "tradeoff": "可能沒有新方案，也不代家庭承諾支出"
+          },
+          {
+            "id": 5,
+            "text": "讓本人選一個符合規定且不妨礙他人的到車提醒",
+            "action": "導師已讓本人選一個符合規定且不妨礙他人的到車提醒",
+            "tradeoff": "需先確認規則，也不能全把照護責任推給疲倦者"
+          },
+          {
+            "id": 6,
+            "text": "明確撤回你額外要求的候車加練，不讓其他人再催他交",
+            "action": "導師已明確撤回你額外要求的候車加練，不讓其他人再催他交",
+            "tradeoff": "你要承擔原先安排不妥，仍保留正常課業"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也很想準時下班，向原當值老師完成必要交接，結束自己非當值的額外陪等",
+          "action": "導師已於本人非當值且原有合格照看持續的前提完成資訊交接後離開，不代改離校安排、不拒絕必要急迫協助",
+          "tradeoff": "得真正確認接續，不是把學生放著就走"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2209761203
+        },
+        "selectedIds": [
+          1,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "8c7da049a8f5e0952415492eb9580f1aaa1da51913bc1315a422f6e8b9b27211"
+      },
+      "consequenceDirections": {
+        "A": "他仍有人照看，你保住私人時間，卻可能被覺得不夠貼心，仍須清楚說明聯繫方式。",
+        "B": "等待限制能被看見，但不能把找過資訊當作從此都能早回。",
+        "C": "等待可用來緩一點疲勞，教師不能因他沒寫題就說不配合。",
+        "D": "他能少一點盯時刻表的緊繃，當值成人仍須正常照看。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bb79e6619bd72c8d2c8f67ed7a482b19361f2b07ced0374cb73e675c5de265ce",
+    "draftSha256": "bb5713e6fd6f10175eef708f6d00c42b4cf9c8da9de7a6f2a2afbc1468649603",
     "seedAssignmentVersion": 1
   }
 }

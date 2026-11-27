@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f0fd469a778881f3af047c493d9d73a40094d4c0c9950a0394a5c69557a994ad",
+      "checkedAt": "2026-11-27T06:02:49.000Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "重問他仍願提供哪些箱子與用途，依同意處理",
+            "action": "導師已重問他仍願提供哪些箱子與用途，依同意處理",
+            "tradeoff": "可能少了材料，教師須另找方法"
+          },
+          {
+            "id": 2,
+            "text": "若他想收回，按原約歸還，不要求補別的",
+            "action": "導師已若他想收回，按原約歸還，不要求補別的",
+            "tradeoff": "整理進度可能變慢，也要處理正常交接"
+          },
+          {
+            "id": 3,
+            "text": "向學校申請所需收納與暫放空間，不再算家庭一定有",
+            "action": "導師已向學校申請所需收納與暫放空間，不再算家庭一定有",
+            "tradeoff": "等待需要時間，也不保證原尺寸"
+          },
+          {
+            "id": 4,
+            "text": "由你向實際見到的人說明擅改用途是你的決定，不怪提供者",
+            "action": "導師已由你向實際見到的人說明擅改用途是你的決定，不怪提供者",
+            "tradeoff": "要承認失誤，可能引出更多追問"
+          },
+          {
+            "id": 5,
+            "text": "把後續搬運與位置交場地管理者核對，不臨時想到哪放哪",
+            "action": "導師已把後續搬運與位置交場地管理者核對，不臨時想到哪放哪",
+            "tradeoff": "少了方便，也需符合現有人力"
+          },
+          {
+            "id": 6,
+            "text": "保留核准且物主同意的小份量，其餘按約交回",
+            "action": "導師已保留核准且物主同意的小份量，其餘按約交回",
+            "tradeoff": "收納效果有限，也不再是整批任用"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再為借箱欠一堆解釋，自己出錢買本人要用的收納箱，把他的依約還回",
+          "action": "導師已以本人預算訂購私人自用教具收納箱，依法依校規安排位置，確認現場安全與物主歸還後交還借物，不挪公費或私自占場",
+          "tradeoff": "要花私人預算，也不能自買就占公共空間或要求學校報帳"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3462312729
+        },
+        "selectedIds": [
+          1,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "005a40d5f1de308e9b7500734952a58a0376d7f4b7e88047395f02bc0968f757"
+      },
+      "consequenceDirections": {
+        "A": "私人資源不被鎖成公共供應，但班務仍須另安排。",
+        "B": "學生不必再擔心物件被亂用，你卻仍需為原擅改道歉與修正，不能用買新的洗掉舊事。",
+        "C": "資源責任回到學校，眼前仍要用已確認安全方式整理。",
+        "D": "好意能保留邊界，學生不用為了老師已用過就繼續借。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "02ba6ae0a67abb93d4815a4d670a12d4e9f1308c2b7bfa6758e014744c14cce3",
+    "draftSha256": "f0fd469a778881f3af047c493d9d73a40094d4c0c9950a0394a5c69557a994ad",
     "seedAssignmentVersion": 1
   }
 }

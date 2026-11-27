@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "77753ca2105e8424c90c49abeab008b336d14e1bf6b5fdca49b5bfe884849ab2",
+      "checkedAt": "2026-11-27T06:02:48.984Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "陪他與家長查清正常退換規則，不保證一定退成",
+            "action": "導師已陪他與家長查清正常退換規則，不保證一定退成",
+            "tradeoff": "要整理交易資料，也可能遇到已使用的限制"
+          },
+          {
+            "id": 2,
+            "text": "先用學校已有的共用工具，不再要求私人添購",
+            "action": "導師已先用學校已有的共用工具，不再要求私人添購",
+            "tradeoff": "要排借與歸還，也未必完全同款"
+          },
+          {
+            "id": 3,
+            "text": "向原聽見推薦的人補充非必購，不讓親近變購買壓力",
+            "action": "導師已向原聽見推薦的人補充非必購，不讓親近變購買壓力",
+            "tradeoff": "你得承認原說明不夠，也可能接到其他詢問"
+          },
+          {
+            "id": 4,
+            "text": "請他先說真正需要練的部分，再看工具是否合用",
+            "action": "導師已請他先說真正需要練的部分，再看工具是否合用",
+            "tradeoff": "花時間，不會立刻回答值不值得"
+          },
+          {
+            "id": 5,
+            "text": "讓家庭自行訂支出範圍，你不替學生說服家人付款",
+            "action": "導師已讓家庭自行訂支出範圍，你不替學生說服家人付款",
+            "tradeoff": "可能買不到原想要的，仍可找其他練法"
+          },
+          {
+            "id": 6,
+            "text": "提供可試用的公開練習，不先買整份",
+            "action": "導師已提供可試用的公開練習，不先買整份",
+            "tradeoff": "選擇有限，也要確認使用權與期限"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你自己其實也想試，決定出自己的錢買一份私用，不靠學生先買來告訴你好不好用",
+          "action": "導師已以本人預算向正常合法來源購買私人試用份，不代購、收款或強制使用，學生交易與正常學習對待不變",
+          "tradeoff": "增加你的私人支出，也可能發現根本不合用"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 598676209
+        },
+        "selectedIds": [
+          3,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "54d8a6b950dba4a1caf0d573cabb52780be9ab574609895c0d8fa786343af0f4"
+      },
+      "consequenceDirections": {
+        "A": "學生不用替教師試錯，但仍可能把你的購買誤認新推薦，你得說清他的退換與不購買都不受影響。",
+        "B": "沒有買的人不會以為被落下，已買者仍須各自處理交易。",
+        "C": "學生有實際反悔管道，教師不會靠專業身分替店家或家庭作決定。",
+        "D": "學生能先看適不適合，但試用不代表之後必須付費。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "497edb5a67feefde05cad74b5f7c2ae8cdc581610aff03ffc8bb85dc6ca3c598",
+    "draftSha256": "77753ca2105e8424c90c49abeab008b336d14e1bf6b5fdca49b5bfe884849ab2",
     "seedAssignmentVersion": 1
   }
 }

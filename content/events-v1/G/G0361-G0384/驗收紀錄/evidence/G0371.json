@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0540ccd28f3e3f7dd2a172cc33c084f32510cc501f91995d2650e7138a323ded",
+      "checkedAt": "2026-11-27T06:02:48.991Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只做一般招呼，不談學生與班級比較",
+            "action": "導師已只做一般招呼，不談學生與班級比較",
+            "tradeoff": "可能被覺得冷淡，你也要承受場面變安靜"
+          },
+          {
+            "id": 2,
+            "text": "直接說今天只在等候，不接受校務問答",
+            "action": "導師已直接說今天只在等候，不接受校務問答",
+            "tradeoff": "對方可能失望，也不能為拒絕補更多私人理由"
+          },
+          {
+            "id": 3,
+            "text": "在候診規則允許下換到可用座位，不占他人位置",
+            "action": "導師已在候診規則允許下換到可用座位，不占他人位置",
+            "tradeoff": "可能失去原本安靜角落，也須留意叫號"
+          },
+          {
+            "id": 4,
+            "text": "若家長自願，接受他把話題帶回公開日常，不讓他替你說病情",
+            "action": "導師已若家長自願，接受他把話題帶回公開日常，不讓他替你說病情",
+            "tradeoff": "他也在陪親人，不能變成你的專屬擋話人"
+          },
+          {
+            "id": 5,
+            "text": "給正式校務聯絡方式，讓需要的人另向窗口詢問",
+            "action": "導師已給正式校務聯絡方式，讓需要的人另向窗口詢問",
+            "tradeoff": "可能還要多說一句，也不保證對方立刻停"
+          },
+          {
+            "id": 6,
+            "text": "只聊雙方都願意的一個非隱私日常話題，不開成小型親師會",
+            "action": "導師已只聊雙方都願意的一個非隱私日常話題，不開成小型親師會",
+            "tradeoff": "要控制時間，也隨時可因叫號結束"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你其實有點怕空等，問他願不願意一起猜候診雜誌的謎題，今天不帶課",
+          "action": "導師已邀家長自願在候診規則允許範圍使用公開可讀雜誌作短暫趣味問答，不記他人資料、不延誤就醫或要求陪伴",
+          "tradeoff": "可能答不出來，也須尊重他陪親人的時間與候診規則"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2349699117
+        },
+        "selectedIds": [
+          3,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "9e6afb94ed8ca45554d648b296f5bc4e5f6c313607cb4f94dd1b700fa337c0a7"
+      },
+      "consequenceDirections": {
+        "A": "你能暫離圍問，卻不能讓換位被解讀成診間優先或特別服務。",
+        "B": "真正問題有可用去處，卻不是你答應私人代查。",
+        "C": "兩人可以一起打發幾分鐘，家長也可拒絕；你不必把猜輸說成在示範教法。",
+        "D": "相處能自然轉向，教師仍要自己守住後續問題的界線。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "695946c9625260bb1cb4aa1bf294c2bc90d251598d94f5b4f4bbc34c2cd54178",
+    "draftSha256": "0540ccd28f3e3f7dd2a172cc33c084f32510cc501f91995d2650e7138a323ded",
     "seedAssignmentVersion": 1
   }
 }

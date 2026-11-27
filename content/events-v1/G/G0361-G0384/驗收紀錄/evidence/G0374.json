@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fc3d83573691a85960892d39fddc867c47bff429120c0bfc9b179ead7488d1b6",
+      "checkedAt": "2026-11-27T06:02:48.993Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "停掉非必要頁面，保留已能用的內容",
+            "action": "導師已停掉非必要頁面，保留已能用的內容",
+            "tradeoff": "全冊不完整，也要向參與者說明縮減"
+          },
+          {
+            "id": 2,
+            "text": "先收目前成品，不再以全做完才承認投入",
+            "action": "導師已先收目前成品，不再以全做完才承認投入",
+            "tradeoff": "後續呈現要重排，也不能說收了就全部達標"
+          },
+          {
+            "id": 3,
+            "text": "在課內限時讓各組自願補一張，時間到便停",
+            "action": "導師已在課內限時讓各組自願補一張，時間到便停",
+            "tradeoff": "要有正式可用時段，也不能強迫他繼續主編"
+          },
+          {
+            "id": 4,
+            "text": "請他把原主編範圍交回成人，必要班務另排",
+            "action": "導師已請他把原主編範圍交回成人，必要班務另排",
+            "tradeoff": "教師工作增加，他也可能不甘心放手"
+          },
+          {
+            "id": 5,
+            "text": "提供可自願使用的睡眠與家庭支持資訊，不把噪音全算他能控制",
+            "action": "導師已提供可自願使用的睡眠與家庭支持資訊，不把噪音全算他能控制",
+            "tradeoff": "需要合適窗口，未必立即解決住處問題"
+          },
+          {
+            "id": 6,
+            "text": "讓作者選擇是否只保留單張分享，不做成冊",
+            "action": "導師已讓作者選擇是否只保留單張分享，不做成冊",
+            "tradeoff": "少了完整作品感，也須尊重共同素材使用權"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你自己也很想有一本，先徵求授權，只自費印一份現有版本留作私人紀念，不再逼他補齊",
+          "action": "導師已提出本人自費、取得全部必要授權且不涉學生隱私的單份私人留存請求，不公開出版、不要求補頁或代付印費",
+          "tradeoff": "你花自己的錢，也要接受缺頁與不整齊，不能要求未同意者出現"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1482634041
+        },
+        "selectedIds": [
+          2,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "f47a44fc7a8ecc328b88554bd38f659bae46613a5a8d9bbd72ff4630223cbde3"
+      },
+      "consequenceDirections": {
+        "A": "學生可能因現版被珍惜而放鬆，也可能不想把疲倦作品留下；你須接受拒絕，不拿收藏當新任務。",
+        "B": "工作有機會分散，但不保證風格一致或全數補齊。",
+        "C": "已完成的努力能留下，學生仍可能想私下把缺頁補完。",
+        "D": "小成果能被看見，卻不能因此要求每人再做另一套版面。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8dc5a162465073544eaa6d59955306f63014d4d9f8d6a40916713771de70bbec",
+    "draftSha256": "fc3d83573691a85960892d39fddc867c47bff429120c0bfc9b179ead7488d1b6",
     "seedAssignmentVersion": 1
   }
 }

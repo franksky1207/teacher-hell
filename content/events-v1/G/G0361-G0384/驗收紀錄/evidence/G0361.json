@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "784e598436a2cf206fc338494c0b61ede5445120fc33f32863be7408a9bb8d4a",
+      "checkedAt": "2026-11-27T06:02:48.979Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "接回你原該做的收尾，讓他按原分工離開",
+            "action": "導師已接回你原該做的收尾，讓他按原分工離開",
+            "tradeoff": "你的工作增加，不能默認其他人再替你補"
+          },
+          {
+            "id": 2,
+            "text": "向原收到訊息的人寫清他已做與未答應的部分",
+            "action": "導師已向原收到訊息的人寫清他已做與未答應的部分",
+            "tradeoff": "要承認話說太滿，也得實際重排工作"
+          },
+          {
+            "id": 3,
+            "text": "取消不影響教學的額外整理，只留必要項目",
+            "action": "導師已取消不影響教學的額外整理，只留必要項目",
+            "tradeoff": "場面沒那麼整齊，也要說明取捨"
+          },
+          {
+            "id": 4,
+            "text": "請他自己圈出仍願意接的一項，其他不再算他的",
+            "action": "導師已請他自己圈出仍願意接的一項，其他不再算他的",
+            "tradeoff": "他可完全拒絕，不能把詢問變勸說"
+          },
+          {
+            "id": 5,
+            "text": "請主管依正常分工補上必要人力，不私下指定別人",
+            "action": "導師已請主管依正常分工補上必要人力，不私下指定別人",
+            "tradeoff": "協調需要時間，也未必立刻有人"
+          },
+          {
+            "id": 6,
+            "text": "和他約定下次臨時支援何時結束、交回給誰",
+            "action": "導師已和他約定下次臨時支援何時結束、交回給誰",
+            "tradeoff": "要多一段確認，也不能修掉這次已造成的不滿"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你很怕自己的漂亮說法被拆穿，乾脆撤回原想拿去交流的救場案例，不用他的加班替你做成果",
+          "action": "導師已撤回本人尚未成立的非必要校內案例分享，保留原事件事實、更正與必要工作，不要求同事因此原諒",
+          "tradeoff": "少一次自我展示，還要自己向承辦解釋"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3089834677
+        },
+        "selectedIds": [
+          1,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "3d8b609e7803e39183e0e597d1f0f060a97570ce1676b11c01e719f3a6348311"
+      },
+      "consequenceDirections": {
+        "A": "後續交辦不再憑你那句話延伸，但同事不一定立即放心。",
+        "B": "同事能停止額外承擔，仍可能不滿你原先把幫忙說成包辦。",
+        "C": "同事不用一邊善後一邊看你受讚，但撤案例不抵銷必要更正與收尾。",
+        "D": "負荷減少，原先期待漂亮成果的人可能失望，必要工作仍須有人做。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6b6338cb6071b3ae3acb8491ea36b25f93cf2d6835292d574643e80270983168",
+    "draftSha256": "784e598436a2cf206fc338494c0b61ede5445120fc33f32863be7408a9bb8d4a",
     "seedAssignmentVersion": 1
   }
 }

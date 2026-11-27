@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bedb597b47448feebe4c67dc5bad6f58e6170e2ba7c3d7276e39ce5c8ef5b203",
+      "checkedAt": "2026-11-27T06:02:48.982Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "停用這一扇窗作迎接點，改從正常門口進班",
+            "action": "導師已停用這一扇窗作迎接點，改從正常門口進班",
+            "tradeoff": "少了熟悉小儀式，也不能擠住門口"
+          },
+          {
+            "id": 2,
+            "text": "把等候位置移到已確認安全的區域，不再圍窗",
+            "action": "導師已把等候位置移到已確認安全的區域，不再圍窗",
+            "tradeoff": "需要重新說明動線，還得有人適當照看"
+          },
+          {
+            "id": 3,
+            "text": "請總務確認窗簾可用的操作方式，再談何時恢復",
+            "action": "導師已請總務確認窗簾可用的操作方式，再談何時恢復",
+            "tradeoff": "要等處理結果，不能先試拉看看"
+          },
+          {
+            "id": 4,
+            "text": "把教材放回核准的收納處，移動用途先交代",
+            "action": "導師已把教材放回核准的收納處，移動用途先交代",
+            "tradeoff": "你得多走幾趟，也可能少了順手方便"
+          },
+          {
+            "id": 5,
+            "text": "和班上改用不需搬物拉簾的短招呼",
+            "action": "導師已和班上改用不需搬物拉簾的短招呼",
+            "tradeoff": "熱鬧方式改變，也要尊重不想參加的人"
+          },
+          {
+            "id": 6,
+            "text": "請場地管理者一起確認教具暫放範圍，不只靠值勤者提醒",
+            "action": "導師已請場地管理者一起確認教具暫放範圍，不只靠值勤者提醒",
+            "tradeoff": "要協調，也不保證原想要的位置可用"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也嫌每天搬一大袋太累，刪掉自己非必要的大道具，只帶本節真會用的",
+          "action": "導師已精簡本人可決定的非必要教具，依課程需求另備可用材料，必要安全處理與正常教學不減省",
+          "tradeoff": "少了你喜歡的展示效果，得重新備課"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 512802287
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "934af5c53b13ed6f95c569eb93053f8c0e2a9ae21976bc624192238dd7876854"
+      },
+      "consequenceDirections": {
+        "A": "學生仍可表達歡迎，卻不把教具與繩索當遊戲的一部分。",
+        "B": "同仁能預期窗旁情況，教師卻要真的守住放置安排。",
+        "C": "窗邊不再成你的臨時倉庫，同仁卻仍可指出剩餘動線問題，不必因你少帶就說安全了。",
+        "D": "責任與位置較清楚，但不能送出詢問就放回未准處。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "dffd69182f73b8b9337ac446252f9c5ad17ff4e6e3c7a920a18a2732eff4007a",
+    "draftSha256": "bedb597b47448feebe4c67dc5bad6f58e6170e2ba7c3d7276e39ce5c8ef5b203",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "45480ea7f59f99f8b2bb3a4129bc51dbdaebfc0301b4bf6868abf22a2a24bdd5",
+      "checkedAt": "2026-11-27T06:02:48.995Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "如實說明原判斷與不足，不以好意要求家長諒解",
+            "action": "導師已如實說明原判斷與不足，不以好意要求家長諒解",
+            "tradeoff": "要面對直接批評，也不能補出沒看過的事實"
+          },
+          {
+            "id": 2,
+            "text": "維持真正需要的課內支持，不把家庭另加陪讀列前提",
+            "action": "導師已維持真正需要的課內支持，不把家庭另加陪讀列前提",
+            "tradeoff": "教師要承接實際安排，也需任課權責確認"
+          },
+          {
+            "id": 3,
+            "text": "把這次已知學習表現說清楚，別再猜家庭願不願陪",
+            "action": "導師已把這次已知學習表現說清楚，別再猜家庭願不願陪",
+            "tradeoff": "要整理觀察，可能暫時資料有限"
+          },
+          {
+            "id": 4,
+            "text": "和家庭只約真正可行的聯繫，不把每次到校當固定義務",
+            "action": "導師已和家庭只約真正可行的聯繫，不把每次到校當固定義務",
+            "tradeoff": "你可能少了當面談的方便"
+          },
+          {
+            "id": 5,
+            "text": "讓孩子自己說哪些協助有用，不由成人互相證明誰做得多",
+            "action": "導師已讓孩子自己說哪些協助有用，不由成人互相證明誰做得多",
+            "tradeoff": "需有合適時段與本人意願"
+          },
+          {
+            "id": 6,
+            "text": "請適任同仁核對補救範圍與資源，不全靠你個人想像",
+            "action": "導師已請適任同仁核對補救範圍與資源，不全靠你個人想像",
+            "tradeoff": "多一次協調，也不保證立即有新資源"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被問得很難堪，拿紙和他各寫下這次真能做的一件事，確認後留一份，不再說多陪一點就好",
+          "action": "導師已邀家長自願共同核對本次可行支持與聯繫的一頁記錄，只列各自同意及依法必要事項，不以簽署換取學習機會或增加家庭義務",
+          "tradeoff": "你也得寫自己的工作，不能把紙變成家庭保證書"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 367806773
+        },
+        "selectedIds": [
+          2,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "8c0c8b596d2393cb1f4572976c4a46292b4138d0f7bdd043bc5ef8ba39c4dfce"
+      },
+      "consequenceDirections": {
+        "A": "支持有較完整根據，卻不能以轉問別人免除你對原話的說明。",
+        "B": "討論能回到孩子實際需要，卻不能靠幾個片段斷定全部原因。",
+        "C": "承諾可被雙方核對，家長卻可能拒絕額外項目，你須接受，而不是再拿好家長施壓。",
+        "D": "孩子不因家庭空檔少失去機會，家長仍須依法提供必要資訊。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d57b91dc18be3569641c7c65062e1a61aa1ae77755006cb6a83140a976c9b704",
+    "draftSha256": "45480ea7f59f99f8b2bb3a4129bc51dbdaebfc0301b4bf6868abf22a2a24bdd5",
     "seedAssignmentVersion": 1
   }
 }

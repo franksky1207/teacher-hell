@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "967071a180b1866ba11e1fd4280b250c649aadaccc250b227de9581157ddee55",
+      "checkedAt": "2026-11-27T06:02:48.996Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留安全粗糙版展示，依原學習目標給具體說明",
+            "action": "導師已保留安全粗糙版展示，依原學習目標給具體說明",
+            "tradeoff": "外觀不整齊，也可能有人不欣賞"
+          },
+          {
+            "id": 2,
+            "text": "在作者自願下比較原版與修整示例，不要求他再做一件",
+            "action": "導師已在作者自願下比較原版與修整示例，不要求他再做一件",
+            "tradeoff": "需有合法可用示例，也要時間說明"
+          },
+          {
+            "id": 3,
+            "text": "暫停這次非必要展示，先問孩子願意怎樣呈現",
+            "action": "導師已暫停這次非必要展示，先問孩子願意怎樣呈現",
+            "tradeoff": "家長期待會延後，也要有確實回覆"
+          },
+          {
+            "id": 4,
+            "text": "如實說明原門檻怎麼形成，收回不屬原要求的商品外觀標準",
+            "action": "導師已如實說明原門檻怎麼形成，收回不屬原要求的商品外觀標準",
+            "tradeoff": "要承認自己加碼，也可能被其他家庭追問"
+          },
+          {
+            "id": 5,
+            "text": "讓作者選擇只說一處自己做成的步驟，不必公開家庭勞務",
+            "action": "導師已讓作者選擇只說一處自己做成的步驟，不必公開家庭勞務",
+            "tradeoff": "觀眾看得到的有限，也要本人真願意"
+          },
+          {
+            "id": 6,
+            "text": "把展示與必要評量分開說清楚，不用上不上台判定學會多少",
+            "action": "導師已把展示與必要評量分開說清楚，不用上不上台判定學會多少",
+            "tradeoff": "要整理依據，不能私改既定規則"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你還是喜歡平整的，自己做一件示範，不再要求孩子把他的磨成一樣",
+          "action": "導師已以本人合法取得材料自製非評量修整示例，確認安全，不要求學生追加勞務，不影響原符合要求作品的展示與公平對待",
+          "tradeoff": "花你的材料與備課，自己也可能磨不好"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4069548275
+        },
+        "selectedIds": [
+          5,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "5362417394528f45972aab01d000feb248edf93074a60ad7649e8a491683486e"
+      },
+      "consequenceDirections": {
+        "A": "你可保留審美偏好，卻得承擔成本，不能把自己的平整版偷偷變回全班唯一標準。",
+        "B": "本人不是成人爭論用的物件，卻可能仍很想今天就展示。",
+        "C": "參與門檻能回到課程，教師仍需公平處理同類作品。",
+        "D": "成就能落在具體工作，卻不保證家長覺得已得到充分肯定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "59d57a432c2df86a6a5f5223f04e5782d4bee9e747c205958e07ded17437a767",
+    "draftSha256": "967071a180b1866ba11e1fd4280b250c649aadaccc250b227de9581157ddee55",
     "seedAssignmentVersion": 1
   }
 }

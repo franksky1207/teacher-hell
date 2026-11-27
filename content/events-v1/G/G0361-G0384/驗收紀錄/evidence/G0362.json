@@ -15,14 +15,82 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e2dce1c76c8b1ec3ee4e7d4f47e7941fbdbe4c7f94d597fedbacfe7b1a78f1e2",
+      "checkedAt": "2026-11-27T06:02:48.981Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消這段追逐演出，讓小組另選安全內容",
+            "action": "導師已取消這段追逐演出，讓小組另選安全內容",
+            "tradeoff": "原有成果用不上，也要重新分工"
+          },
+          {
+            "id": 2,
+            "text": "今天不再公開放片，只用不含人臉的簡圖說明問題",
+            "action": "導師已今天不再公開放片，只用不含人臉的簡圖說明問題",
+            "tradeoff": "少了現場感，也要避免圖示變成新模仿指南"
+          },
+          {
+            "id": 3,
+            "text": "讓小組改畫紙上分鏡，先不實拍",
+            "action": "導師已讓小組改畫紙上分鏡，先不實拍",
+            "tradeoff": "實作機會延後，仍須經教師確認內容"
+          },
+          {
+            "id": 4,
+            "text": "請他只提供親見的必要經過，別再去擋人",
+            "action": "導師已請他只提供親見的必要經過，別再去擋人",
+            "tradeoff": "他可能覺得幫得太少，成人要接起管理"
+          },
+          {
+            "id": 5,
+            "text": "在他同意下，私下談這次真正做對的一步，不公開封他安全隊長",
+            "action": "導師已在他同意下，私下談這次真正做對的一步，不公開封他安全隊長",
+            "tradeoff": "沒有全班掌聲，也不能讓他繼續代管"
+          },
+          {
+            "id": 6,
+            "text": "把後續重拍交回任課老師排定，不在這個轉角臨時試",
+            "action": "導師已把後續重拍交回任課老師排定，不在這個轉角臨時試",
+            "tradeoff": "要等正式時間與場地，今天未必能拍"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想試鏡頭的騙術，拿自己的手機在安全位置拍一段原地假跑，只錄自己",
+          "action": "導師已以本人設備在獲准安全位置錄本人原地示範，不拍其他人、不追跑，必要影像與安全處理照常",
+          "tradeoff": "用掉你的空檔，效果也可能很蠢"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3582940937
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "f3809cfc849de61e1e606759729d32b8722a3e6be634c7e15af6f9a09f1a5157"
+      },
+      "consequenceDirections": {
+        "A": "創意可以繼續，卻不會畫好就自動取得拍攝許可。",
+        "B": "班上能知道哪裡有風險，但不再重播當事人出糗。",
+        "C": "學生的資訊有用，卻不需要為了被肯定承擔制止同伴的風險。",
+        "D": "學生可看到不靠轉角追逐也能做效果，卻不能因教師示範就私下恢復危險段落。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0ac4a35f9308b070c36b8c95fa37a8abd9790352e2191d333f5245a974c3c576",
+    "draftSha256": "e2dce1c76c8b1ec3ee4e7d4f47e7941fbdbe4c7f94d597fedbacfe7b1a78f1e2",
     "seedAssignmentVersion": 1
   }
 }

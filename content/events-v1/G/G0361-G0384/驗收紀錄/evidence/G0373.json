@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4f9371f49eb82f6020bf7aa50a8ca28bb810d88d1235a6b93eee02cb87985157",
+      "checkedAt": "2026-11-27T06:02:48.992Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留已依約完成的速度局，另開自願說明局",
+            "action": "導師已保留已依約完成的速度局，另開自願說明局",
+            "tradeoff": "多用課內時間，也不保證同樣的人會出聲"
+          },
+          {
+            "id": 2,
+            "text": "和參與者確認後取消本局非正式結果，重新說明玩法",
+            "action": "導師已和參與者確認後取消本局非正式結果，重新說明玩法",
+            "tradeoff": "有人會不滿已投入白費，不能暗改正式評分"
+          },
+          {
+            "id": 3,
+            "text": "照原玩法收束，不再延長這一局，後續教學另看推理",
+            "action": "導師已照原玩法收束，不再延長這一局，後續教學另看推理",
+            "tradeoff": "慢答者仍可能失落，你也要真正安排回應"
+          },
+          {
+            "id": 4,
+            "text": "讓全班先寫一步推理再邀發言，不再搶第一聲",
+            "action": "導師已讓全班先寫一步推理再邀發言，不再搶第一聲",
+            "tradeoff": "熱鬧減少，教師要多看內容"
+          },
+          {
+            "id": 5,
+            "text": "請他說出最想保留的挑戰，再聽其他人各自意見",
+            "action": "導師已請他說出最想保留的挑戰，再聽其他人各自意見",
+            "tradeoff": "需要時間，也不由帶頭者代答全班"
+          },
+          {
+            "id": 6,
+            "text": "如實說明原先選速度回饋的理由，再公開可改與不可追溯部分",
+            "action": "導師已如實說明原先選速度回饋的理由，再公開可改與不可追溯部分",
+            "tradeoff": "要承擔質疑，不能用解釋當作大家須同意"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被問得有點掛不住，邀適任同事協助主持剩下這輪，自己先不當裁判",
+          "action": "導師已向合格同事提出短段協作主持請求，依正常權責與自願安排，不空置教學照看、不免除原決策說明",
+          "tradeoff": "要對方有空且願意，不能移走你的必要責任"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2389006993
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "fed53f8b50a0c66e52785959d1e241dad4ce77676beeefd3a8d0419ee1a2490e"
+      },
+      "consequenceDirections": {
+        "A": "學生知道決定不是隨便，仍可指出原目的沒有照顧到的地方。",
+        "B": "若有人接續，學生能聽見另一個成人的帶法；若沒有，你仍須把原決定說清楚，不能躲到下課。",
+        "C": "學生能先形成答案，卻可能覺得競爭感消失。",
+        "D": "遊戲可以重設，但教師須承認自己原先規則不足。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a407b1ba322dea78338efa2be02e5a1cdd2325a3c64183b867fe9cea10894289",
+    "draftSha256": "4f9371f49eb82f6020bf7aa50a8ca28bb810d88d1235a6b93eee02cb87985157",
     "seedAssignmentVersion": 1
   }
 }

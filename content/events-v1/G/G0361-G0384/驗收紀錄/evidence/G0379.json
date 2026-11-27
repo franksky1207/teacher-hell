@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3ea47b2b178e998e1c58af3ed9eec8a8ac628fc70588ecc7ed68ca0d57d1418c",
+      "checkedAt": "2026-11-27T06:02:48.996Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在核准的本班範圍內繼續，自願試吃仍按原食安安排",
+            "action": "導師已在核准的本班範圍內繼續，自願試吃仍按原食安安排",
+            "tradeoff": "參與人數變少，也不能讓未參加者失去學習"
+          },
+          {
+            "id": 2,
+            "text": "撤下食物，只保留圖片與說明，不做現場試吃",
+            "action": "導師已撤下食物，只保留圖片與說明，不做現場試吃",
+            "tradeoff": "少了感官經驗，也要另備可用材料"
+          },
+          {
+            "id": 3,
+            "text": "另向場地管理者申請合適時地，未准前不恢復",
+            "action": "導師已另向場地管理者申請合適時地，未准前不恢復",
+            "tradeoff": "會延後，也不保證有空間"
+          },
+          {
+            "id": 4,
+            "text": "由你向原受邀者更正，不讓行政同仁替你擋人",
+            "action": "導師已由你向原受邀者更正，不讓行政同仁替你擋人",
+            "tradeoff": "要承認先答應過頭，也可能面對抱怨"
+          },
+          {
+            "id": 5,
+            "text": "請各組記下原本想觀察的問題，用可行方式先完成必要內容",
+            "action": "導師已請各組記下原本想觀察的問題，用可行方式先完成必要內容",
+            "tradeoff": "作品可能不完整，也須原任課要求容許"
+          },
+          {
+            "id": 6,
+            "text": "和同仁核對以後共享場地先找誰、問哪些必要事項",
+            "action": "導師已和同仁核對以後共享場地先找誰、問哪些必要事項",
+            "tradeoff": "要多做前置，也不能把所有責任交他提醒"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你其實餓了，把自己原想分給旁觀者的那份留作午餐，不再拿食物招人",
+          "action": "導師已撤回本人未成立的私人分食邀請，自行食用本人自備且經確認可食的份量，維持必要照看與活動收尾，不挪用他人食物",
+          "tradeoff": "只能是本人有權處理且安全可食那份，不動公用或學生餐點"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1327799081
+        },
+        "selectedIds": [
+          3,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "b4850a79d00b1bfdd6374ada14f2a0e8008161b0cec299ed1a3ecf7316ee8df4"
+      },
+      "consequenceDirections": {
+        "A": "下次不再用食安合格代替場地許可，這次仍需正常收尾。",
+        "B": "外班知道不是同仁突然不准，教師仍須承擔原安排的落差。",
+        "C": "活動有正式機會，但不能把申請中說成明天一定辦。",
+        "D": "你能好好吃一餐，也可能被說老師自己先吃；場地與原邀請仍要如實更正，不因肚子餓就算結案。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2c89613693bb58b3a057cb523097d87c9888edff701916c95f376d05df9787be",
+    "draftSha256": "3ea47b2b178e998e1c58af3ed9eec8a8ac628fc70588ecc7ed68ca0d57d1418c",
     "seedAssignmentVersion": 1
   }
 }

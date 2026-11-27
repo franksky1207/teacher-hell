@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d1deda8606f34524f76b5eb05f8ec27c51a906a702c511de263017a1f798d7a9",
+      "checkedAt": "2026-11-27T06:02:48.988Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先核對裝冊最低用量，留出各方同意的份量再談其他用途",
+            "action": "導師已先核對裝冊最低用量，留出各方同意的份量再談其他用途",
+            "tradeoff": "剩下可玩的線減少，也要尊重原提供範圍"
+          },
+          {
+            "id": 2,
+            "text": "讓願意的人保留已做手環，不要求拆掉來補班刊",
+            "action": "導師已讓願意的人保留已做手環，不要求拆掉來補班刊",
+            "tradeoff": "裝冊可能缺料，教師須另找方案"
+          },
+          {
+            "id": 3,
+            "text": "改以安全可用的簡單裝訂，不追原設計線色",
+            "action": "導師已改以安全可用的簡單裝訂，不追原設計線色",
+            "tradeoff": "外觀變普通，也要學校有材料可用"
+          },
+          {
+            "id": 4,
+            "text": "讓各組保留散頁，先按必要內容交件",
+            "action": "導師已讓各組保留散頁，先按必要內容交件",
+            "tradeoff": "收存不便，也少了整冊成就感"
+          },
+          {
+            "id": 5,
+            "text": "請物主重新確認願意提供的範圍，不把帶來等於全部送出",
+            "action": "導師已請物主重新確認願意提供的範圍，不把帶來等於全部送出",
+            "tradeoff": "他可能收回部分，教室得接受資源變少"
+          },
+          {
+            "id": 6,
+            "text": "把裝訂與自願飾品分成不同時段，先確認材料與參與",
+            "action": "導師已把裝訂與自願飾品分成不同時段，先確認材料與參與",
+            "tradeoff": "需要教師協調，也可能有人不想再玩"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也很想有一條醜手環，先用自己的可用餘線做一條，不動裝冊那份",
+          "action": "導師已以本人合法取得餘線自願製作私人小物，不挪用預留裝冊材料、不要求學生供料或免費代作",
+          "tradeoff": "花自己的空檔，還可能比學生做得更鬆垮"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2743247726
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "c160ce21cae585778aa1c423991693ee1a6ca0e3bff0e938581c60619ac0cdd2"
+      },
+      "consequenceDirections": {
+        "A": "教師能參與純粹的試玩，卻不能把想玩的心情又塞成全班必做；班刊缺口仍照正常方式處理。",
+        "B": "學習成果不會因缺線被當作沒做，後續仍須自行保管。",
+        "C": "兩種用途能各有位置，但不能用分時名義預支家庭更多餘線。",
+        "D": "班刊有機會裝起來，學生卻需面對先前邀大家任取說得太滿。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "42ab39048487abaaf91a4a1e2dad6a0745058c2bb4ec449b01d1aef1888d439e",
+    "draftSha256": "d1deda8606f34524f76b5eb05f8ec27c51a906a702c511de263017a1f798d7a9",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fa9c63e3dedb94badf2dbae016a02b834ef94521cf96f05eef2d7b22c0bb2e71",
+      "checkedAt": "2026-11-27T06:02:48.998Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把本次安排與費用範圍寫清楚，讓她可直接核對",
+            "action": "導師已把本次安排與費用範圍寫清楚，讓她可直接核對",
+            "tradeoff": "要整理準確資訊，不能延伸保證外部課程"
+          },
+          {
+            "id": 2,
+            "text": "讓家庭自己決定支出範圍，不把多買說成才有心",
+            "action": "導師已讓家庭自己決定支出範圍，不把多買說成才有心",
+            "tradeoff": "可能無法參加所有課外選項"
+          },
+          {
+            "id": 3,
+            "text": "提供不需額外購買的現有練習方式",
+            "action": "導師已提供不需額外購買的現有練習方式",
+            "tradeoff": "資源有限，也未必有外部課程同樣便利"
+          },
+          {
+            "id": 4,
+            "text": "若本人與安排都容許，先試一小段校內示範，再判斷需要",
+            "action": "導師已若本人與安排都容許，先試一小段校內示範，再判斷需要",
+            "tradeoff": "要遵守參與與場地規則，不等於答應後續付費"
+          },
+          {
+            "id": 5,
+            "text": "請家長把原收到說法交你核對，只更正必要範圍",
+            "action": "導師已請家長把原收到說法交你核對，只更正必要範圍",
+            "tradeoff": "可能找不到所有轉述者，也不公開家計"
+          },
+          {
+            "id": 6,
+            "text": "先聽孩子最想學的是什麼，再比較家中可行選擇",
+            "action": "導師已先聽孩子最想學的是什麼，再比較家中可行選擇",
+            "tradeoff": "要另留時間，不由成人替他表達全部"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你很不服被當推銷，請主管就本次費用與授課安排直接回覆，不再只有你來回解釋",
+          "action": "導師已向主管提出依事實直接說明本次校內活動費用與安排的請求，不外洩家庭私事、不要求處分家長或替外部商品背書",
+          "tradeoff": "多一道正常聯繫，也可能被認為太認真"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1244416232
+        },
+        "selectedIds": [
+          5,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "4b92bc199a21a9542c7e5d02cf41ca99f7d095ba477357c69f1d93265429120f"
+      },
+      "consequenceDirections": {
+        "A": "錯訊有機會停下，教師不能藉此要求其他家長公開認錯。",
+        "B": "預算與興趣能同時存在，卻不保證每個想學的都辦得到。",
+        "C": "家庭不用靠傳話猜，但家長仍可能對先前誤會有點尷尬。",
+        "D": "家長有另一個可核實來源，你卻不能拿主管回覆逼她承認自己多麼委屈，必要親師回應仍要做。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "639e7e63493edf57dbe39db571aa49aca1377d22201cc85b9c2efb0b6095f67a",
+    "draftSha256": "fa9c63e3dedb94badf2dbae016a02b834ef94521cf96f05eef2d7b22c0bb2e71",
     "seedAssignmentVersion": 1
   }
 }

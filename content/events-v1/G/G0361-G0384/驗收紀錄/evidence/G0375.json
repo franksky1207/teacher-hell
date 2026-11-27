@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6347373ecbefc43dba0c0e0a04937471844395e63ebda4a66ebc688fb6e91cfe",
+      "checkedAt": "2026-11-27T06:02:48.993Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "當場寫一個手寫步驟，示範實際要看什麼",
+            "action": "導師已當場寫一個手寫步驟，示範實際要看什麼",
+            "tradeoff": "用掉短暫課內時間，不能一例代替全部標準"
+          },
+          {
+            "id": 2,
+            "text": "維持原發題時間，明確容許同目標的不同呈現",
+            "action": "導師已維持原發題時間，明確容許同目標的不同呈現",
+            "tradeoff": "教師要核對公平要求，也不能只口頭隨便說都行"
+          },
+          {
+            "id": 3,
+            "text": "若校內條件容許，協助申請可用設備時段",
+            "action": "導師已若校內條件容許，協助申請可用設備時段",
+            "tradeoff": "可能排不到，也不代家庭准延留"
+          },
+          {
+            "id": 4,
+            "text": "核對能否提前提供通用說明，不先發尚未定案題目",
+            "action": "導師已核對能否提前提供通用說明，不先發尚未定案題目",
+            "tradeoff": "會限制你臨時調整，也不保證整份提早"
+          },
+          {
+            "id": 5,
+            "text": "請家庭只確認實際可用時段，不要求學生替兄弟排課",
+            "action": "導師已請家庭只確認實際可用時段，不要求學生替兄弟排課",
+            "tradeoff": "可能仍沒有合適空檔，也需保留其他呈現方式"
+          },
+          {
+            "id": 6,
+            "text": "請學生以一小段現有內容自己選媒介，先試哪種說得清楚",
+            "action": "導師已請學生以一小段現有內容自己選媒介，先試哪種說得清楚",
+            "tradeoff": "教師多看一版，也不要求添購"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也受不了每次交件都像排機器，自己走一遍現有線上步驟，把麻煩處交承辦回覆",
+          "action": "導師已以本人有權使用帳號及原創測試資料試走既有交件方式，向承辦回報問題，不索取學生密碼、不新增工具或改評分媒介",
+          "tradeoff": "花你的工作空檔，可能發現原說明確實難用"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2189144295
+        },
+        "selectedIds": [
+          6,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "852426e49ad4f3f28943bc600e1cf59f15b09ae472587dd06b317b22d1962927"
+      },
+      "consequenceDirections": {
+        "A": "負荷可被看見，但不能把家庭協調當取得正常學習的前提。",
+        "B": "學生可先安排必要準備，內容仍可能依課程改動。",
+        "C": "學生不用再充當除錯員，你卻要真的回覆核對結果，而不是以試過作結。",
+        "D": "他能依實際表現判斷，卻不能因哪種比較漂亮就改掉原評量目標。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8e6d66723f0acc80310527c65118e6353fda264440988d14f4ac14dd42fa54b7",
+    "draftSha256": "6347373ecbefc43dba0c0e0a04937471844395e63ebda4a66ebc688fb6e91cfe",
     "seedAssignmentVersion": 1
   }
 }

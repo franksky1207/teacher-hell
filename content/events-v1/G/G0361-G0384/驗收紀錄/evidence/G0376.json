@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2118323789e1fd4ee2e957f23838b157a2bcf6bfe87e33aeb9fe72a641a31b61",
+      "checkedAt": "2026-11-27T06:02:48.994Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "給明確可履行的回覆時間，未定部分如實說未定",
+            "action": "導師已給明確可履行的回覆時間，未定部分如實說未定",
+            "tradeoff": "你要跟進，也不能為準時隨便核准"
+          },
+          {
+            "id": 2,
+            "text": "先準備不綁特定主持人的通用段落，參加仍另問",
+            "action": "導師已先準備不綁特定主持人的通用段落，參加仍另問",
+            "tradeoff": "可能有準備用不上，也不把先做當錄取"
+          },
+          {
+            "id": 3,
+            "text": "取消尚未成立的指定主持，改由核准後自願徵詢",
+            "action": "導師已取消尚未成立的指定主持，改由核准後自願徵詢",
+            "tradeoff": "等待可能拉長，原期待者會失落"
+          },
+          {
+            "id": 4,
+            "text": "由你向原小組澄清他沒有先得消息，不要求他自己辯解",
+            "action": "導師已由你向原小組澄清他沒有先得消息，不要求他自己辯解",
+            "tradeoff": "要承擔回覆遲延帶來的誤會"
+          },
+          {
+            "id": 5,
+            "text": "請承辦直接提供核定範圍與徵詢方式，避免多層轉述",
+            "action": "導師已請承辦直接提供核定範圍與徵詢方式，避免多層轉述",
+            "tradeoff": "需要正常交接，也可能得到較少選項"
+          },
+          {
+            "id": 6,
+            "text": "聽他目前願意接哪一小項，不先把全部班務算他答應",
+            "action": "導師已聽他目前願意接哪一小項，不先把全部班務算他答應",
+            "tradeoff": "可能沒有足夠人手，也不強迫先承諾"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也怕最後冷場，先備一段自己的短開場，不再靠他先拉人湊",
+          "action": "導師已準備本人原創備用短稿，僅在正常核可與實際需要時使用，不代承辦核准主持、不預約學生人力或壓過公平徵詢",
+          "tradeoff": "增加你的準備，也可能核准後根本用不到"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3559487477
+        },
+        "selectedIds": [
+          3,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "8baf6a124b9390a7c307f448f61a4a943dcac3ed8f97d537ef530e17f1bf0193"
+      },
+      "consequenceDirections": {
+        "A": "學生知道何時再確認，但不確定性仍可能讓他緊張。",
+        "B": "學生不用替教師擔心有沒有人救場，你卻須接受自己的稿不一定上台，不能因此搶走自願者機會。",
+        "C": "投入可有邊界，原計畫若不夠人就須縮小或另排。",
+        "D": "名額不再靠私下追問先拿，但必要流程仍得清楚公布。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9edc4e020fa737b25ec2d33418c6b2ea65e72593758719616c8eb6d755fab396",
+    "draftSha256": "2118323789e1fd4ee2e957f23838b157a2bcf6bfe87e33aeb9fe72a641a31b61",
     "seedAssignmentVersion": 1
   }
 }

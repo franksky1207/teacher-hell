@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8ce8d337814f598e5cab140fee6dd99c5a0ebf22ddf8a0f1548557f99b7e9cdb",
+      "checkedAt": "2026-11-27T06:02:48.989Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持目前整體放行，不替個別接送另開未確認例外",
+            "action": "導師已維持目前整體放行，不替個別接送另開未確認例外",
+            "tradeoff": "家長要多等，可能對你不滿"
+          },
+          {
+            "id": 2,
+            "text": "在有足夠合格成人時分批，逐段確認接續",
+            "action": "導師已在有足夠合格成人時分批，逐段確認接續",
+            "tradeoff": "需要調度與正式同意，不能只分名單"
+          },
+          {
+            "id": 3,
+            "text": "請現場有權管理者決定整體順序，不由你私改",
+            "action": "導師已請現場有權管理者決定整體順序，不由你私改",
+            "tradeoff": "回覆需要時間，也不能用等待讓學生無人照看"
+          },
+          {
+            "id": 4,
+            "text": "由你向家長說明目前可用方式，不讓職員一面引導一面解釋",
+            "action": "導師已由你向家長說明目前可用方式，不讓職員一面引導一面解釋",
+            "tradeoff": "占你的時間，必要資訊須說準"
+          },
+          {
+            "id": 5,
+            "text": "把職員提出的新方案交管理者核對，未准前不先試",
+            "action": "導師已把職員提出的新方案交管理者核對，未准前不先試",
+            "tradeoff": "不保證採用，也要保留原安全安排"
+          },
+          {
+            "id": 6,
+            "text": "記下今天兩線何時相遇，回報後續排程需要",
+            "action": "導師已記下今天兩線何時相遇，回報後續排程需要",
+            "tradeoff": "要做正常紀錄，也不能讓紀錄取代當場照看"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也不想一直站著等，向現場申請自己多陪最後一小組走完校內安全段",
+          "action": "導師已向現場管理者提出本人在職權內額外校內陪行的申請，不接管門禁交管、不空置其他學生照看或自行放人",
+          "tradeoff": "要先確認資格與其他班級照看，也會花掉你的空檔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1923740830
+        },
+        "selectedIds": [
+          3,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "848289807197d387be32cb537539902f86e4e4259d9c6c0b581bc22a43b6ff19"
+      },
+      "consequenceDirections": {
+        "A": "若獲准可分散一點陪行工作，若不准仍照原方案，不能因自己急就放行。",
+        "B": "安全動線不用臨時重排，職員也不必替一句主管傳話負全責。",
+        "C": "職員能專心現場，教師則要承受接送者的急躁。",
+        "D": "決定有明確責任，家長卻可能抱怨連小事都要問。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "22b1d26bfcd72a0e9917f71a86654d1e4c96102ae2340802b032c8ee942a5a6a",
+    "draftSha256": "8ce8d337814f598e5cab140fee6dd99c5a0ebf22ddf8a0f1548557f99b7e9cdb",
     "seedAssignmentVersion": 1
   }
 }

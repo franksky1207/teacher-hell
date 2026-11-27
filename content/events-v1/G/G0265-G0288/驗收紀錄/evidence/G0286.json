@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9348ef7c5786d68c50a45392475e8f15296a9f5f3d1bb04e040c566a7582e429",
+      "checkedAt": "2026-11-27T05:05:35.325Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消個別作品只收代表稿的安排，各人交自己的",
+            "action": "導師已取消個別作品只收代表稿的安排，各人交自己的",
+            "tradeoff": "收件與批閱增加，也要符合實際任課規則"
+          },
+          {
+            "id": 2,
+            "text": "保留自願共同封面，內頁各自署名與說明貢獻",
+            "action": "導師已保留自願共同封面，內頁各自署名與說明貢獻",
+            "tradeoff": "要核對所有人意願，也可能有人不想共用"
+          },
+          {
+            "id": 3,
+            "text": "先分清本次哪些是真正共同作業，再依各自規則收交",
+            "action": "導師已先分清本次哪些是真正共同作業，再依各自規則收交",
+            "tradeoff": "會占用課堂，可能發現原說明不清楚"
+          },
+          {
+            "id": 4,
+            "text": "請每人自行選是否退出非必要共名，不由領頭學生代答",
+            "action": "導師已請每人自行選是否退出非必要共名，不由領頭學生代答",
+            "tradeoff": "可能破壞原整齊外觀，也會有朋友失望"
+          },
+          {
+            "id": 5,
+            "text": "安排簡短個別說明，核對各人實際完成的部分",
+            "action": "導師已安排簡短個別說明，核對各人實際完成的部分",
+            "tradeoff": "時間增加，也可能和紙上呈現不一致"
+          },
+          {
+            "id": 6,
+            "text": "和學生重談今後代表稿只代表什麼，不把便利變評量全部",
+            "action": "導師已和學生重談今後代表稿只代表什麼，不把便利變評量全部",
+            "tradeoff": "要改掉熟悉流程，也不能事後追溯改規則不說明"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再當共同名號的評審，撤掉自己原加的最佳封面票選，這次不比哪桌最整齊",
+          "action": "導師已取消本人可調整的非必要封面趣味票選，不改動正式評分與作者歸屬，必要課程作業照常",
+          "tradeoff": "少了遊戲與漂亮展示，仍要保留正常課業確認"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 303236990
+        },
+        "selectedIds": [
+          6,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "1074223afb68a3965244a73932f38997a1b241811df37fb09b7ebc4781129331"
+      },
+      "consequenceDirections": {
+        "A": "共名不再帶來你額外給的獎勵，卻有人可能覺得自己的設計心力白費，需要你回應。",
+        "B": "能力不只由封面判定，卻不能光靠口頭自述取代所有必要查核。",
+        "C": "個人參與能被看見，共同名號不再替代作者資訊。",
+        "D": "收件方便能保留有限用途，但教師仍須看見各人必要成果。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e1a4bceb6354660240fcffcd15f0bd49212b964e4007cdc7167c1dc93579ba67",
+    "draftSha256": "9348ef7c5786d68c50a45392475e8f15296a9f5f3d1bb04e040c566a7582e429",
     "seedAssignmentVersion": 1
   }
 }

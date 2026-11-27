@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ef2c6897385827a12ae3d11c444ae965e1354dfeceac77bb51f1091e9c7a91be",
+      "checkedAt": "2026-11-27T05:05:35.312Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "私下給一項真正可用的剪輯回饋，不先談入選",
+            "action": "導師已私下給一項真正可用的剪輯回饋，不先談入選",
+            "tradeoff": "你要另花時間，他也可能仍只想知道會不會放"
+          },
+          {
+            "id": 2,
+            "text": "說清楚原先選例要教的技法，不把沒選解釋成整部不好",
+            "action": "導師已說清楚原先選例要教的技法，不把沒選解釋成整部不好",
+            "tradeoff": "他可能不接受，也會追問為何選別人"
+          },
+          {
+            "id": 3,
+            "text": "若作者與課程安排同意，比較兩版不同用途，不排最好最差",
+            "action": "導師已若作者與課程安排同意，比較兩版不同用途，不排最好最差",
+            "tradeoff": "需用課堂時間，也會讓修改過程被看見"
+          },
+          {
+            "id": 4,
+            "text": "請他自己選最想改的一處，先說目標再看第二版",
+            "action": "導師已請他自己選最想改的一處，先說目標再看第二版",
+            "tradeoff": "他得自己判斷，不只是等教師肯定"
+          },
+          {
+            "id": 5,
+            "text": "邀合適且自願的同儕就指定片段回饋，先核對分享同意",
+            "action": "導師已邀合適且自願的同儕就指定片段回饋，先核對分享同意",
+            "tradeoff": "多一人看見作品，也可能收到不同意見"
+          },
+          {
+            "id": 6,
+            "text": "今天不再要求他重剪，保留現版，另排可行的回覆時間",
+            "action": "導師已今天不再要求他重剪，保留現版，另排可行的回覆時間",
+            "tradeoff": "期待會延後，教師必須如期看完"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想挑戰那個難剪的轉場，請他讓你用自己的原創片段試一版，再一起看哪裡失敗",
+          "action": "導師已邀學生自願共同觀看本人原創片段的剪輯嘗試，不取代學生作品、不要求其額外剪輯或公開",
+          "tradeoff": "花你的備課空檔，成品可能比他還卡"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1176602043
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "f0df7e0eee719e1704be5356699c4826790d50d115bee375fb5c32601e692389"
+      },
+      "consequenceDirections": {
+        "A": "判斷有可理解依據，親近關係仍不能換成必然入選。",
+        "B": "學生能從成人的試錯看見具體技法，但不能把你的版本壓成新的標準答案。",
+        "C": "他能先停下反覆修改，但等待期間仍可能擔心自己被忘記。",
+        "D": "努力有具體回應，但不保證轉場改好就取得展示位置。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "37e8e4942f6d95f3eb99fc196740c9b433684add9324855bffde636dcc737449",
+    "draftSha256": "ef2c6897385827a12ae3d11c444ae965e1354dfeceac77bb51f1091e9c7a91be",
     "seedAssignmentVersion": 1
   }
 }

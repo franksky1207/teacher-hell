@@ -16,14 +16,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5e0aea093d3c72fe117268d602f184889fb4e769fb3e03ad9b67e455ad99cd78",
+      "checkedAt": "2026-11-27T05:05:35.321Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先改掉可辨識影射的詞，再談場地與音量",
+            "action": "導師已先改掉可辨識影射的詞，再談場地與音量",
+            "tradeoff": "要重新創作，也未必能保留最受歡迎那句"
+          },
+          {
+            "id": 2,
+            "text": "取消本次非必要公開傳播，作品依規則保留查核",
+            "action": "導師已取消本次非必要公開傳播，作品依規則保留查核",
+            "tradeoff": "少了展示機會，不能以不傳就免除已發生影響"
+          },
+          {
+            "id": 3,
+            "text": "若內容與使用範圍合規，讓他另作自用版本，不邀全班圍觀",
+            "action": "導師已若內容與使用範圍合規，讓他另作自用版本，不邀全班圍觀",
+            "tradeoff": "要取得必要授權，也不能把自用說成可任意轉傳"
+          },
+          {
+            "id": 4,
+            "text": "安排他與任課老師核對口號真正要表達什麼，不只談大小聲",
+            "action": "導師已安排他與任課老師核對口號真正要表達什麼，不只談大小聲",
+            "tradeoff": "要配合對方時間，暫時不能立刻重錄"
+          },
+          {
+            "id": 5,
+            "text": "由學生自願提出不針對人的新詞，教師提供明確回覆時間",
+            "action": "導師已由學生自願提出不針對人的新詞，教師提供明確回覆時間",
+            "tradeoff": "要再花創作心力，也可能沒有合適版本"
+          },
+          {
+            "id": 6,
+            "text": "今天先用無錄音的安全動作練習完成課程必要部分",
+            "action": "導師已今天先用無錄音的安全動作練習完成課程必要部分",
+            "tradeoff": "少了聲音成果，也須符合任課安排"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你聽到到底有沒有聽有點不服，拿出自己原先寫的口號先刪一句，當場示範你也要改，不要求他的版本來救場",
+          "action": "導師已撤改本人自擬的非必要口號句，使用不含他人私事的原創稿說明，不新增影射或替學生完成評量",
+          "tradeoff": "你得暴露自己同樣寫得不妥，也可能沒有更好的句子"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3984288886
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "ab3d8f4f9bc5f486eaa0c4d8d211caeceea705dd6ac6f9ecc43822234a39d4d5"
+      },
+      "consequenceDirections": {
+        "A": "活動能繼續一部分，學生卻仍需另有說明處理被影射的人。",
+        "B": "學生看得到教師實際放棄的內容，卻不必因此認同你的所有修改；既有影射仍按事實處理。",
+        "C": "內容風險不再被小聲掩蓋，學生卻可能覺得成品少了原本氣勢。",
+        "D": "學生的專業質疑有具體回應，教師也可能發現原判斷太窄。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "25b6e5c5129622c977bf57cff3a9e54ca6a4661c2e16c80ab4f9554275c029bf",
+    "draftSha256": "5e0aea093d3c72fe117268d602f184889fb4e769fb3e03ad9b67e455ad99cd78",
     "seedAssignmentVersion": 1
   }
 }

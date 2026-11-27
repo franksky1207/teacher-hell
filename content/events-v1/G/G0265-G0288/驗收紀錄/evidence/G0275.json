@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8189424ac8ec17b2675a1bd55003e4828ecb2715ff0aa4ee720c9396f9777d4c",
+      "checkedAt": "2026-11-27T05:05:35.317Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只收不指人且內容正確的版本，整理成課內匿名教材",
+            "action": "導師已只收不指人且內容正確的版本，整理成課內匿名教材",
+            "tradeoff": "要逐則核對與取得使用同意，工作不少"
+          },
+          {
+            "id": 2,
+            "text": "讓學生自願票選可用句子，教師仍確認正確與不傷人",
+            "action": "導師已讓學生自願票選可用句子，教師仍確認正確與不傷人",
+            "tradeoff": "投票花時間，也不以多數票放行針對笑話"
+          },
+          {
+            "id": 3,
+            "text": "今天不印，只保留已確認合適的口頭練習",
+            "action": "導師已今天不印，只保留已確認合適的口頭練習",
+            "tradeoff": "成品感消失，也要避免口頭又變回綽號"
+          },
+          {
+            "id": 4,
+            "text": "把小冊改成每人自己的記憶卡，不強制全班用同一笑點",
+            "action": "導師已把小冊改成每人自己的記憶卡，不強制全班用同一笑點",
+            "tradeoff": "製作較分散，也失去共同作品的熱鬧"
+          },
+          {
+            "id": 5,
+            "text": "請發起者只交代自己同意分享的版本，不替其他作者答應",
+            "action": "導師已請發起者只交代自己同意分享的版本，不替其他作者答應",
+            "tradeoff": "要逐一詢問，可能少很多內容"
+          },
+          {
+            "id": 6,
+            "text": "先實際試記一小段，再決定是否印製",
+            "action": "導師已先實際試記一小段，再決定是否印製",
+            "tradeoff": "要多觀察一次，不能只因好笑就當有效"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你很想把自己最冷那句救回來，邀學生設一輪不計分的冷笑話挑戰，你也交一張原創卡",
+          "action": "導師已提出自願非評量原創記憶卡挑戰並提交本人版本，所有內容同樣接受正確性與不傷人確認，不賭獎金",
+          "tradeoff": "可能沒人笑，你得接受作品被淘汰"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4077715222
+        },
+        "selectedIds": [
+          5,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "8bfa0120961ab90f73b57fdb44ea6df17bca4bfdcfb24542ae7b9628574b76d8"
+      },
+      "consequenceDirections": {
+        "A": "課內能試效果，學生卻可能遺憾整理半天沒有一本書。",
+        "B": "師生可比實際記憶效果，教師卻不能因為是自己的句子就強迫印進去。",
+        "C": "學生有參與，最後卻可能不喜歡教師刪掉人氣最高那句。",
+        "D": "領頭者不用包辦全班授權，但成果可能因不同意分享而縮小。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4d29d38adae058451c90a926382923595a6a4df216a1bbf999fd7cab9c2d0fb0",
+    "draftSha256": "8189424ac8ec17b2675a1bd55003e4828ecb2715ff0aa4ee720c9396f9777d4c",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bbff916d15ae0dcd9e27f34b6eb823151ba67d0508c1d99d0f9cf0c1174e485f",
+      "checkedAt": "2026-11-27T05:05:35.318Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "守住原約半堂，其餘不再代他答應",
+            "action": "導師已守住原約半堂，其餘不再代他答應",
+            "tradeoff": "追加工作仍有缺口，要正式回報"
+          },
+          {
+            "id": 2,
+            "text": "共同向教務退回新增要求，請重新分派",
+            "action": "導師已共同向教務退回新增要求，請重新分派",
+            "tradeoff": "可能面對不悅，也需協調新的承接者"
+          },
+          {
+            "id": 3,
+            "text": "申請把原半堂移到另一個合適時段，先保住教學完整性",
+            "action": "導師已申請把原半堂移到另一個合適時段，先保住教學完整性",
+            "tradeoff": "要經課務核准，會牽動安排"
+          },
+          {
+            "id": 4,
+            "text": "刪減這次可取消的非必要成果整理，讓授課優先",
+            "action": "導師已刪減這次可取消的非必要成果整理，讓授課優先",
+            "tradeoff": "行政成品會變簡單，也得說明取捨"
+          },
+          {
+            "id": 5,
+            "text": "由你承接自己有資格且獲准的一小項新增工作，不擴大他的部分",
+            "action": "導師已由你承接自己有資格且獲准的一小項新增工作，不擴大他的部分",
+            "tradeoff": "你的負荷增加，也不能保證填滿全部缺口"
+          },
+          {
+            "id": 6,
+            "text": "請主管列清楚本節到底必須做哪些事，再由雙方確認可做範圍",
+            "action": "導師已請主管列清楚本節到底必須做哪些事，再由雙方確認可做範圍",
+            "tradeoff": "協調需時間，不能等到學生已上課才找答案"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也被那張清單惹毛，決定撤掉自己原想加上的示範花樣，這次只把原定半堂踏實帶完",
+          "action": "導師已取消本人非必要教學加碼示範，維持已核定核心半堂與合格照看，不自行拒辦法定或必要工作",
+          "tradeoff": "少了一個你期待的亮點，不能拿少加碼當成不準備"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1284451602
+        },
+        "selectedIds": [
+          5,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "3358e070f0063c147a3fd538ff33d26a5b084b53120daf655db727029f655123"
+      },
+      "consequenceDirections": {
+        "A": "同事能按約出力，教務卻須面對不是一節就能塞完的現實。",
+        "B": "同事不用陪你追求額外漂亮效果，你則要接受這次成果看起來很普通；必要工作仍正常處理。",
+        "C": "同事看得到實際分擔，卻可能擔心你又用硬撐讓加碼變常態。",
+        "D": "加碼不會落在已準備者身上，但今天仍須完成原必要課程。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "60189f855cbd721d63bb12715076a99aa30328a61ae4a2de37010273b2d45e8c",
+    "draftSha256": "bbff916d15ae0dcd9e27f34b6eb823151ba67d0508c1d99d0f9cf0c1174e485f",
     "seedAssignmentVersion": 1
   }
 }

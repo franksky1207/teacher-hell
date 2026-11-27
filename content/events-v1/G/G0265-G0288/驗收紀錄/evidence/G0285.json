@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e5cc57c20d2edb2bc97e6c34dc4e6f9e65fe0a671fc74927853b8f1276d74c50",
+      "checkedAt": "2026-11-27T05:05:35.324Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "明確重述各人今天只承諾哪一段，未成立部分不算進去",
+            "action": "導師已明確重述各人今天只承諾哪一段，未成立部分不算進去",
+            "tradeoff": "可能留下缺口，需要你正式回報"
+          },
+          {
+            "id": 2,
+            "text": "取消可刪的超額整理，保留必要部分",
+            "action": "導師已取消可刪的超額整理，保留必要部分",
+            "tradeoff": "成品變簡單，也要向期待的人解釋"
+          },
+          {
+            "id": 3,
+            "text": "把剩餘必要工作交學校負責單位重新安排",
+            "action": "導師已把剩餘必要工作交學校負責單位重新安排",
+            "tradeoff": "要做完整交接，不能只把袋子往窗口一放"
+          },
+          {
+            "id": 4,
+            "text": "向傳出全包說法的人更正，不讓家長逐個辯解",
+            "action": "導師已向傳出全包說法的人更正，不讓家長逐個辯解",
+            "tradeoff": "你得面對原話如何形成的追問"
+          },
+          {
+            "id": 5,
+            "text": "請家長自行選是否保留原本自願部分，不要求用退出理由說服你",
+            "action": "導師已請家長自行選是否保留原本自願部分，不要求用退出理由說服你",
+            "tradeoff": "可能連原人力都沒有，也不能因此埋怨家庭"
+          },
+          {
+            "id": 6,
+            "text": "依志工規則另徵自願且適任者，只問明確的一小項",
+            "action": "導師已依志工規則另徵自願且適任者，只問明確的一小項",
+            "tradeoff": "需要訓練交接，也可能沒人接"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也不想再被當成全包，當著她的面取消自己原預留的非必要美化工作，照原時間離開",
+          "action": "導師已取消本人非必要美化加碼，於必要責任完成或合格交接後依原安排離開，不以此放棄學生照護",
+          "tradeoff": "少了你原想做的漂亮收尾，也須確保必要工作已交接"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2091115253
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "64a8c08d547c4590d1863e7e51b497cfeecda8b08a2776a4a74d5dd7719ec5b4"
+      },
+      "consequenceDirections": {
+        "A": "家長看見界線不是只准她說，你則要承受成果普通與別人不滿，而非私下熬夜補回。",
+        "B": "參與是實際選擇，教師得接受計畫必須再縮小。",
+        "C": "志工不用靠延留補洞，其他人可能不滿原來說好的都包沒有做到。",
+        "D": "分擔有機會增加，但不能把整份重擔移到另一個不敢拒絕的人身上。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "685170efb88af178cfdf3a30b93a5f8e1cfa9366057bc417109159dba29f5777",
+    "draftSha256": "e5cc57c20d2edb2bc97e6c34dc4e6f9e65fe0a671fc74927853b8f1276d74c50",
     "seedAssignmentVersion": 1
   }
 }

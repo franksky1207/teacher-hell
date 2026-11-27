@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "16b87103ba2e56767654b8fa1a2d364aa5f47881a555deab26d333dc1f3f22f7",
+      "checkedAt": "2026-11-27T05:05:35.313Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留一小塊原樣作樣品，其餘再拆",
+            "action": "導師已保留一小塊原樣作樣品，其餘再拆",
+            "tradeoff": "可重用的線變少，也可能不夠原想做的尺寸"
+          },
+          {
+            "id": 2,
+            "text": "在你同意的範圍內拆完重做，請他只示範你不會的步驟",
+            "action": "導師已在你同意的範圍內拆完重做，請他只示範你不會的步驟",
+            "tradeoff": "今晚的時間可能全花在拆，不能要求他幫你織完"
+          },
+          {
+            "id": 3,
+            "text": "只補到自己能接受的程度，不追求完美帽形",
+            "action": "導師已只補到自己能接受的程度，不追求完美帽形",
+            "tradeoff": "可能不耐看或用途有限，仍須依實際可用性判斷"
+          },
+          {
+            "id": 4,
+            "text": "向原店詢問未使用的餘線能否依規定退換，不動已拆過的部分",
+            "action": "導師已向原交易店家詢問本人尚未使用線材的正常退換條件，不要求店家承擔已使用損失",
+            "tradeoff": "店家可能不接受，要自行處理憑證與交通，也未必換得合適材料"
+          },
+          {
+            "id": 5,
+            "text": "今天收起來，自己另想一晚，不讓同事繼續代拆",
+            "action": "導師已今天收起來，自己另想一晚，不讓同事繼續代拆",
+            "tradeoff": "要再帶回未完成品，也可能下次又不想動"
+          },
+          {
+            "id": 6,
+            "text": "和同事各織自己的，約好只在你開口時才幫",
+            "action": "導師已和同事各織自己的，約好只在你開口時才幫",
+            "tradeoff": "進度會慢，錯了也得自己先發現"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你突然不想做實用的，提議用自己的餘線織個故意歪掉的小怪物，今晚就為好笑",
+          "action": "導師已決定以本人有權處分的餘線另作自願趣味作品，不拆毀他人物件或要求同事免費代工",
+          "tradeoff": "可能花時間做出毫無用途的東西，也別要求同事一起改目標"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3165907510
+        },
+        "selectedIds": [
+          4,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "1d9d3c270af154caa43e77e74d89d8090b4aa51688d5f179189c644c4e55a845"
+      },
+      "consequenceDirections": {
+        "A": "作品能停在可接受的位置，同事卻可能覺得再多改一點會更好。",
+        "B": "若符合條件，可換得較適合的材料；若不符合，仍須自己決定用途，不能把詢問當成已承諾退款。",
+        "C": "私人興趣有荒唐的出口，你卻得接受最後既不是帽子也不是漂亮紀念品。",
+        "D": "決定權回到你手裡，同事得接受自己的興致沒有被一路採用。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "當批核讀發現候選行動範圍過近：改為正常退換餘線、取消非必要例行彙報或教師親自試錄，依原工具真實重抽一次，保留原抽選與後果，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "保留一小塊原樣作樣品，其餘再拆",
+                "action": "導師已保留一小塊原樣作樣品，其餘再拆",
+                "tradeoff": "可重用的線變少，也可能不夠原想做的尺寸"
+              },
+              {
+                "id": 2,
+                "text": "在你同意的範圍內拆完重做，請他只示範你不會的步驟",
+                "action": "導師已在你同意的範圍內拆完重做，請他只示範你不會的步驟",
+                "tradeoff": "今晚的時間可能全花在拆，不能要求他幫你織完"
+              },
+              {
+                "id": 3,
+                "text": "只補到自己能接受的程度，不追求完美帽形",
+                "action": "導師已只補到自己能接受的程度，不追求完美帽形",
+                "tradeoff": "可能不耐看或用途有限，仍須依實際可用性判斷"
+              },
+              {
+                "id": 4,
+                "text": "請店員估能做什麼小物，改掉原本毛帽目標",
+                "action": "導師已請店員估能做什麼小物，改掉原本毛帽目標",
+                "tradeoff": "可能要付正常指導費或另備材料，不先承諾"
+              },
+              {
+                "id": 5,
+                "text": "今天收起來，自己另想一晚，不讓同事繼續代拆",
+                "action": "導師已今天收起來，自己另想一晚，不讓同事繼續代拆",
+                "tradeoff": "要再帶回未完成品，也可能下次又不想動"
+              },
+              {
+                "id": 6,
+                "text": "和同事各織自己的，約好只在你開口時才幫",
+                "action": "導師已和同事各織自己的，約好只在你開口時才幫",
+                "tradeoff": "進度會慢，錯了也得自己先發現"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "你突然不想做實用的，提議用自己的餘線織個故意歪掉的小怪物，今晚就為好笑",
+              "action": "導師已決定以本人有權處分的餘線另作自願趣味作品，不拆毀他人物件或要求同事免費代工",
+              "tradeoff": "可能花時間做出毫無用途的東西，也別要求同事一起改目標"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2261825982
+            },
+            "selectedIds": [
+              5,
+              1,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": "emotional",
+              "C": 6,
+              "D": 1
+            },
+            "optionsDigest": "db7fdeefa873ed3078b11ec675b2084e059336bd8f8b1493c7d8dd8ebdb87bdf"
+          },
+          "previousConsequenceDirections": {
+            "A": "決定權回到你手裡，同事得接受自己的興致沒有被一路採用。",
+            "B": "私人興趣有荒唐的出口，你卻得接受最後既不是帽子也不是漂亮紀念品。",
+            "C": "你能保留新手的步調，卻不能再默認對方一直注意著你的針目。",
+            "D": "第一次的痕跡留下，但後續作品得依材料重估。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "35f478f68c0da6e8b572b5a97093fcc6ff22bfa5bf1fd4688001962cc15ebda9",
+    "draftSha256": "16b87103ba2e56767654b8fa1a2d364aa5f47881a555deab26d333dc1f3f22f7",
     "seedAssignmentVersion": 1
   }
 }

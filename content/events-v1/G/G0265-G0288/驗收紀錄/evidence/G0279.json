@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "487669491685dcfe4c9cf8f3db56450da341362b85a16f52c97135289b85851c",
+      "checkedAt": "2026-11-27T05:05:35.320Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "各自試聽，只約一個確認是否離開的時間",
+            "action": "導師已各自試聽，只約一個確認是否離開的時間",
+            "tradeoff": "不能一直分享心得，也不能要求對方一定買"
+          },
+          {
+            "id": 2,
+            "text": "讓他單獨逛，你依自己的計畫離開",
+            "action": "導師已讓他單獨逛，你依自己的計畫離開",
+            "tradeoff": "原邀約縮短，他可能又覺得自己太掃興"
+          },
+          {
+            "id": 3,
+            "text": "問他願不願意只各推薦一張，其餘不打擾",
+            "action": "導師已問他願不願意只各推薦一張，其餘不打擾",
+            "tradeoff": "他可以拒絕，也未必想聽你的那張"
+          },
+          {
+            "id": 4,
+            "text": "今天不一起選，另約雙方真有精神的時間再聊唱片",
+            "action": "導師已今天不一起選，另約雙方真有精神的時間再聊唱片",
+            "tradeoff": "下一次未必排得成，也不必今天先答應消費"
+          },
+          {
+            "id": 5,
+            "text": "直接說你今天其實想聊天，問他要不要改成分開活動",
+            "action": "導師已直接說你今天其實想聊天，問他要不要改成分開活動",
+            "tradeoff": "可能暴露期待不合，也得真接受拒絕"
+          },
+          {
+            "id": 6,
+            "text": "請店員分別介紹各人想找的類型，不由同伴代選",
+            "action": "導師已請店員分別介紹各人想找的類型，不由同伴代選",
+            "tradeoff": "會增加各自選擇時間，也須尊重店家服務範圍"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你突然也不想再顧朋友覺得你品味怎樣，挑一張自己愛的俗氣老歌，自費買走就回家聽",
+          "action": "導師已在本人預算與正常交易條件內自行選購私人唱片並告知離開，不用對方付費或要求陪聽",
+          "tradeoff": "要自己花錢，也可能買到根本不常播的收藏"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3709973836
+        },
+        "selectedIds": [
+          2,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "81109911d7f8a9d8e5f4c09879b4a2e793c1e6593d210b9a65cd7710ab49d150"
+      },
+      "consequenceDirections": {
+        "A": "兩人能同店安靜，卻可能到最後都沒說上幾句。",
+        "B": "同事不用硬聊，你也保住私人安排，但彼此可能要重新理解怎樣算一起。",
+        "C": "交流有小範圍，卻不能把一次推薦延伸成全程比較。",
+        "D": "同事可以笑也可以繼續安靜，你不用用互薦維持面子，卻得承擔這次衝動消費。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d7e75472a7c2546c62c34a390a7d31729718961dd2c6737a277672cea7e947e5",
+    "draftSha256": "487669491685dcfe4c9cf8f3db56450da341362b85a16f52c97135289b85851c",
     "seedAssignmentVersion": 1
   }
 }

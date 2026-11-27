@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2858e31de8ce8056c95050e6cb214b608a4b462c7d7e20fd720e6ab6ce1f7707",
+      "checkedAt": "2026-11-27T05:05:35.326Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依目前課程指出一項核心用途，不替家庭直接下單",
+            "action": "導師已依目前課程指出一項核心用途，不替家庭直接下單",
+            "tradeoff": "其他想練的部分得放下，也不能保證一本適合所有人"
+          },
+          {
+            "id": 2,
+            "text": "提供校內免費可用的材料，不要求補買整套",
+            "action": "導師已提供校內免費可用的材料，不要求補買整套",
+            "tradeoff": "有借用期限或數量限制，也需自己整理"
+          },
+          {
+            "id": 3,
+            "text": "明確說明不購買不影響正常學習與對待，先撤去買齊壓力",
+            "action": "導師已明確說明不購買不影響正常學習與對待，先撤去買齊壓力",
+            "tradeoff": "家長仍需和孩子談失落，不能一句非必要就不管學習需求"
+          },
+          {
+            "id": 4,
+            "text": "先聽孩子想買那本的理由，再與家長比較可行方式",
+            "action": "導師已先聽孩子想買那本的理由，再與家長比較可行方式",
+            "tradeoff": "要另留談話時間，也不能讓孩子承擔說服全家的責任"
+          },
+          {
+            "id": 5,
+            "text": "讓家庭先試借合適部分，確定真會用再談是否購買",
+            "action": "導師已讓家庭先試借合適部分，確定真會用再談是否購買",
+            "tradeoff": "要等借閱與歸還，未必有完全同款"
+          },
+          {
+            "id": 6,
+            "text": "陪家長準備一句對孩子說清楚預算、又不否定需求的話",
+            "action": "導師已陪家長準備一句對孩子說清楚預算、又不否定需求的話",
+            "tradeoff": "她要自己開口，孩子未必當下就好受"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你想到自己也買過整套只用一本，拿自己的合法自用教材示範怎麼先挑需要的頁，不再裝成每套都有用",
+          "action": "導師已以本人合法自用且無敏感資料的教材示範需求挑選，不贈送未授權影本、不替商品背書或代購",
+          "tradeoff": "要露出自己的浪費，也得花時間整理不涉他人的素材"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1099682627
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "5697cf31a610932f6efa55fad7e57d15acf2267f2119a3693160721a9e4a5bec"
+      },
+      "consequenceDirections": {
+        "A": "想買的事能再被談起，但不把家庭負擔說成孩子造成的錯。",
+        "B": "家長能看到成人也會挑錯，卻不能把你的使用經驗直接當成孩子必買哪本的保證。",
+        "C": "家長能按用途選擇，但孩子可能想要的其實是另一種練習。",
+        "D": "家庭支出降低，卻要接受資源不是隨時都能帶回家。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "25eeab330c852737231d7a8499819bcad8905f9b2c4b5174a576dd5020cdf78c",
+    "draftSha256": "2858e31de8ce8056c95050e6cb214b608a4b462c7d7e20fd720e6ab6ce1f7707",
     "seedAssignmentVersion": 1
   }
 }

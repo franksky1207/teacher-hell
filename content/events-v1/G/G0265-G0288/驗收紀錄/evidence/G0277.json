@@ -16,14 +16,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5cf0f96f4ae5c3f69fe7871b2b84fb527c2f83dc0878fcef2bc710535f799213",
+      "checkedAt": "2026-11-27T05:05:35.319Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只保留事前已確認的加練，不再臨放學新增",
+            "action": "導師已只保留事前已確認的加練，不再臨放學新增",
+            "tradeoff": "可辦次數減少，也可能錯過臨時有空的機會"
+          },
+          {
+            "id": 2,
+            "text": "訂一個家長實際收得到的通知窗口，請學校確認後使用",
+            "action": "導師已訂一個家長實際收得到的通知窗口，請學校確認後使用",
+            "tradeoff": "要協調各方，也不能保證每次都有人即回"
+          },
+          {
+            "id": 3,
+            "text": "縮減這次非必要加練，改在原課內補重點",
+            "action": "導師已縮減這次非必要加練，改在原課內補重點",
+            "tradeoff": "課內內容要取捨，額外練習量下降"
+          },
+          {
+            "id": 4,
+            "text": "請家長指出最少需要多久調班，和其他家庭需求一起評估",
+            "action": "導師已請家長指出最少需要多久調班，和其他家庭需求一起評估",
+            "tradeoff": "需要蒐集必要資訊，不能只為一戶定全班"
+          },
+          {
+            "id": 5,
+            "text": "向學校提出由正式窗口統一確認參加與接送，不讓學生口頭帶話",
+            "action": "導師已向學校提出由正式窗口統一確認參加與接送，不讓學生口頭帶話",
+            "tradeoff": "行政需有人承接，也要遵守通知與同意規則"
+          },
+          {
+            "id": 6,
+            "text": "讓學生明確知道可依原安排離校，不替家長搶快點頭",
+            "action": "導師已讓學生明確知道可依原安排離校，不替家長搶快點頭",
+            "tradeoff": "有人會怕錯過，也須避免教師暗示留下才認真"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你忽然不想再當永遠多留的老師，今天把自己那份非必要加練邀請撤回，照原時間下班",
+          "action": "導師已撤回本人可決定且尚未成立的非必要加練，保留正常教學、照護與原核准離校安排",
+          "tradeoff": "少一次你想帶的練習，也得向期待者說明"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 896653558
+        },
+        "selectedIds": [
+          4,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "acdc28ee36ac97178ccea8a7956a04ec67ae8af5ab7606a121c8d7a7c629ba6e"
+      },
+      "consequenceDirections": {
+        "A": "通知方式能有實際依據，但不可能每次滿足所有工作安排。",
+        "B": "家庭不用為今天臨改，教師也真正守住自己的空檔，但之後仍須改善通知而非每次取消。",
+        "C": "家庭不用因孩子已答應而被迫調班，學生仍可能對不能參加失落。",
+        "D": "接送不用多跑，學生卻可能覺得少了原本期待的活動。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "222174f30c53159452472ca8e47b2e6a5e481e7cd04d575ded578e3110e22ef4",
+    "draftSha256": "5cf0f96f4ae5c3f69fe7871b2b84fb527c2f83dc0878fcef2bc710535f799213",
     "seedAssignmentVersion": 1
   }
 }

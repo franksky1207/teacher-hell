@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c8ab6f266a201ea5afd0ba5c5928bca4545a983ac115512f4f6673df0c17c7f0",
+      "checkedAt": "2026-11-27T05:05:35.314Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把你實際問過的話完整說清楚，讓同事自己確認修哪裡",
+            "action": "導師已把你實際問過的話完整說清楚，讓同事自己確認修哪裡",
+            "tradeoff": "他得親自開口，也可能覺得被推回難題"
+          },
+          {
+            "id": 2,
+            "text": "今天你不做，只陪他核對原先那項服務",
+            "action": "導師已今天你不做，只陪他核對原先那項服務",
+            "tradeoff": "少了自己的保養安排，也可能等一段時間"
+          },
+          {
+            "id": 3,
+            "text": "請店員先說明可選項目與各項費用，不接受模糊打包",
+            "action": "導師已請店員先說明可選項目與各項費用，不接受模糊打包",
+            "tradeoff": "要聽完整說明，選擇反而可能更多"
+          },
+          {
+            "id": 4,
+            "text": "請同事直接指給店員看想保留的部分，不用委婉形容",
+            "action": "導師已請同事直接指給店員看想保留的部分，不用委婉形容",
+            "tradeoff": "當場指出不對稱可能有點害羞"
+          },
+          {
+            "id": 5,
+            "text": "若本人不想繼續，依店規結束未開始的服務",
+            "action": "導師已若本人不想繼續，依店規結束未開始的服務",
+            "tradeoff": "可能有原訂預約規則要處理，不能假裝沒約過"
+          },
+          {
+            "id": 6,
+            "text": "各自另約自己的服務，不由你代問第二輪",
+            "action": "導師已各自另約自己的服務，不由你代問第二輪",
+            "tradeoff": "少了朋友代辦的便利，也可能排到不同時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被鏡子裡自己那一高一低逗笑，決定自費諮詢自己的眉型，不再當他的翻譯",
+          "action": "導師已向店家提出本人自費、獨立確認的眉型諮詢需求，不代同事同意處理或追加付費，尊重店家與本人服務界線",
+          "tradeoff": "花自己的費用，也可能得聽店員說你原本就不對稱"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2437361091
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "121c6ac9b079b33de390792c71791ab4626ea7365ec7a3d236ba7282acc8670d"
+      },
+      "consequenceDirections": {
+        "A": "服務範圍不再靠你猜，店員仍需等本人明確同意才開始。",
+        "B": "兩人各自對自己的臉作決定，同事可能終於敢指出想保留的一邊，也可能不想被你搶話。",
+        "C": "下次誤會較不會跨到兩人一起，但同事得練習自己說明。",
+        "D": "他能留下自己要的樣子，但結果仍須接受合理的服務限制。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "02f41f08c991e5d6f07c3529ce9fd2fc89c2c17121bfbcc7127dc571c9806176",
+    "draftSha256": "c8ab6f266a201ea5afd0ba5c5928bca4545a983ac115512f4f6673df0c17c7f0",
     "seedAssignmentVersion": 1
   }
 }

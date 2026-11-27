@@ -15,14 +15,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a6760a34e8202832c998ce56828357541d11baa7417c754c718f90ec07bcdcac",
+      "checkedAt": "2026-11-27T05:05:35.319Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由負責老師核對後，讓孩子私下自選是否試用",
+            "action": "導師已由負責老師核對後，讓孩子私下自選是否試用",
+            "tradeoff": "需要時間，也不能保證耳罩適合每種需求"
+          },
+          {
+            "id": 2,
+            "text": "保留作家庭私人用品，不轉成全班共用",
+            "action": "導師已保留作家庭私人用品，不轉成全班共用",
+            "tradeoff": "學校少一件備品，也須另處理孩子實際需要"
+          },
+          {
+            "id": 3,
+            "text": "先處理教室能改善的噪音源，不把耳罩當唯一辦法",
+            "action": "導師已先處理教室能改善的噪音源，不把耳罩當唯一辦法",
+            "tradeoff": "要全班配合，效果未必足夠"
+          },
+          {
+            "id": 4,
+            "text": "若家長仍願提供，交學校既有器材窗口按規定接收",
+            "action": "導師已若家長仍願提供，交學校既有器材窗口按規定接收",
+            "tradeoff": "用途由合規安排決定，也可能不被接收"
+          },
+          {
+            "id": 5,
+            "text": "和孩子約定不公開原因的求助訊號，必要時再啟動已確認協助",
+            "action": "導師已和孩子約定不公開原因的求助訊號，必要時再啟動已確認協助",
+            "tradeoff": "教師得留意訊號，不能要求孩子一直忍到說出來"
+          },
+          {
+            "id": 6,
+            "text": "向家長說明實際課堂干擾與現有安排，不只討論這一副耳罩",
+            "action": "導師已向家長說明實際課堂干擾與現有安排，不只討論這一副耳罩",
+            "tradeoff": "要整理可分享的班級資訊，也不能談他人個資"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也很想安靜，先停止自己那個總愛用大聲音效開場的非必要習慣，下一堂不用它",
+          "action": "導師已取消本人有權調整的非必要教學音效，不取消必要鈴聲或安全告警，個別支持仍依需求與正式安排處理",
+          "tradeoff": "少了熟悉的熱鬧，你也要接受學生嫌沒趣"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2321374146
+        },
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "c1e4d2a7d7f5a3774bddccd5b9d3414e741cbf894edf8cfa7d63734bbf108503"
+      },
+      "consequenceDirections": {
+        "A": "他不必先戴器材才得到回應，但有時訊號仍可能被漏看。",
+        "B": "孩子有不被圍觀的試用機會，家長卻可能失望他仍不戴。",
+        "C": "資源不綁在孩子公開使用上，家長卻看不到原先想像的直接效果。",
+        "D": "教室少一個你親手加上的干擾，孩子不必因有耳罩承擔全部調適，但其他噪音仍要處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8d00b8873827268bcef57dfc9ee898999bcdb84559ef70a905d2e9ae66007b6b",
+    "draftSha256": "a6760a34e8202832c998ce56828357541d11baa7417c754c718f90ec07bcdcac",
     "seedAssignmentVersion": 1
   }
 }

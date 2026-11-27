@@ -14,14 +14,82 @@
   "plannedTags": [
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "10be9dd8e3d7ed82c7f3f24f309625c07274355d6ce4d28630fcffcaf9c67b9c",
+      "checkedAt": "2026-11-27T05:05:35.323Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "獲准使用安全平地後再練，不回到樓梯邊",
+            "action": "導師已獲准使用安全平地後再練，不回到樓梯邊",
+            "tradeoff": "要重排動線，未必有合適場地"
+          },
+          {
+            "id": 2,
+            "text": "取消這次圍觀，讓同學回各自課間安排",
+            "action": "導師已取消這次圍觀，讓同學回各自課間安排",
+            "tradeoff": "少了觀眾，他可能失望"
+          },
+          {
+            "id": 3,
+            "text": "今天不拍，只在確認安全且允許的範圍練基本步",
+            "action": "導師已今天不拍，只在確認安全且允許的範圍練基本步",
+            "tradeoff": "沒有可帶走的影片，也得接受時間有限"
+          },
+          {
+            "id": 4,
+            "text": "請他自己選擇是否結束，不把停止等同不會跳",
+            "action": "導師已請他自己選擇是否結束，不把停止等同不會跳",
+            "tradeoff": "同學可能起鬨，教師須處理具體施壓"
+          },
+          {
+            "id": 5,
+            "text": "和他談清楚想不想收同學回饋，不因邀看就默認可評",
+            "action": "導師已和他談清楚想不想收同學回饋，不因邀看就默認可評",
+            "tradeoff": "可能有人覺得不能評論就沒意思"
+          },
+          {
+            "id": 6,
+            "text": "向場地管理者詢問日後可用的拍攝空檔，不先替他保留",
+            "action": "導師已向場地管理者詢問日後可用的拍攝空檔，不先替他保留",
+            "tradeoff": "可能沒有場地，也須重新確認拍攝同意"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你忽然想安靜看一次不被鏡頭追著走的舞，問他願不願意在獲准平地只跳給你看一小段",
+          "action": "導師已邀學生在安全獲准時空自願作短段非拍攝分享，不私下延留、不評分或要求專屬表演",
+          "tradeoff": "他可拒絕，你也得放下講評習慣，不延誤勤務"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 540661196
+        },
+        "selectedIds": [
+          1,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "c3d949404671be3b93e018954c5b5c9c9f3666d6c6eb08f180b6e6a0dd07f921"
+      },
+      "consequenceDirections": {
+        "A": "學生能保住退出權，卻未必立刻放下今天想拍好的心情。",
+        "B": "他有合適申請管道，今天的期待卻仍可能落空。",
+        "C": "學生可能享受一次不必做成影片的表現，也可能覺得少了同伴就沒意思；是否繼續由本人決定。",
+        "D": "他能保留自己的跳法，卻不能為原構圖讓場地條件退讓。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "61703183194b66816eef3eefad89a4a3c44a5ddeffb2d01627e7cc38358ad957",
+    "draftSha256": "10be9dd8e3d7ed82c7f3f24f309625c07274355d6ce4d28630fcffcaf9c67b9c",
     "seedAssignmentVersion": 1
   }
 }

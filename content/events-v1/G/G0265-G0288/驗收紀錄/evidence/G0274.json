@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3bc52bb9191acdd734b3581232c61dca43a64342afd5558a467454cff38269ab",
+      "checkedAt": "2026-11-27T05:05:35.317Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在他同意後，把願意分享的餘布加入共同材料，不公開來源",
+            "action": "導師已在他同意後，把願意分享的餘布加入共同材料，不公開來源",
+            "tradeoff": "要確認確切份量，不能把整袋都收走"
+          },
+          {
+            "id": 2,
+            "text": "保留材料只做他自己的作品，不要求多給別人",
+            "action": "導師已保留材料只做他自己的作品，不要求多給別人",
+            "tradeoff": "其他人仍需另找資源，他可能擔心自己顯得小氣"
+          },
+          {
+            "id": 3,
+            "text": "提供全班都能選的舊料做法，不拿他的家庭當例子",
+            "action": "導師已提供全班都能選的舊料做法，不拿他的家庭當例子",
+            "tradeoff": "要準備可靠替代，作品可能不整齊"
+          },
+          {
+            "id": 4,
+            "text": "問他想做作品還是繼續負責布置，兩者分開算",
+            "action": "導師已問他想做作品還是繼續負責布置，兩者分開算",
+            "tradeoff": "可能要重新安排班務，不能因捐料就多派工作"
+          },
+          {
+            "id": 5,
+            "text": "向學校詢問可用備材，後續不把家庭餘布算固定供應",
+            "action": "導師已向學校詢問可用備材，後續不把家庭餘布算固定供應",
+            "tradeoff": "等待與申請需要時間，不一定當天補齊"
+          },
+          {
+            "id": 6,
+            "text": "把展示改成不必帶實物的草圖分享，願意者再做",
+            "action": "導師已把展示改成不必帶實物的草圖分享，願意者再做",
+            "tradeoff": "少了成品觸感，也可能讓已準備者失落"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你突然想留一件不完美的，自己拿合法可用的廢布做個歪布偶一起擺，不讓這桌只比誰買得好",
+          "action": "導師已以本人合法取得的潔淨餘料自願製作非評量作品，不動用學生捐料或要求他人模仿，原材料自主承諾不變",
+          "tradeoff": "花你的空檔，可能成為全場最醜的一件"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 946336704
+        },
+        "selectedIds": [
+          2,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "13ba1c4b72d2bee3fae530f818bdedf054e6bfda19378939960a9401e4fba89a"
+      },
+      "consequenceDirections": {
+        "A": "他能有真正製作時間，教師得接受布置速度變慢。",
+        "B": "同學能使用而不追問家況，學生也可能後來想保留部分，須留可撤回範圍。",
+        "C": "教師也站進低成本製作裡，學生卻未必願意被你陪著凸顯，須讓他自選位置與參與。",
+        "D": "參與不再以捐出多餘布交換，教師須自己處理共同材料缺口。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a06d66a127dff0e241f8d9a593abbfded53c8cc2b42bbdc4074b32d626402fa2",
+    "draftSha256": "3bc52bb9191acdd734b3581232c61dca43a64342afd5558a467454cff38269ab",
     "seedAssignmentVersion": 1
   }
 }

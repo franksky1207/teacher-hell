@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "91b8aa55f25342fbd52b4817ea589645ebde9ae4ddcd6a72f3373635ab52eee1",
+      "checkedAt": "2026-11-27T05:05:35.315Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只借箱一天，期限到再由你決定去留",
+            "action": "導師已只借箱一天，期限到再由你決定去留",
+            "tradeoff": "要按時歸還，也可能隔天還是捨不得"
+          },
+          {
+            "id": 2,
+            "text": "承認今天改變主意，先不捐，自己收回衣櫃",
+            "action": "導師已承認今天改變主意，先不捐，自己收回衣櫃",
+            "tradeoff": "空間問題仍在，也得說清不是同事阻止你"
+          },
+          {
+            "id": 3,
+            "text": "請他只提醒一件上限，最後哪件由你自己選",
+            "action": "導師已請他只提醒一件上限，最後哪件由你自己選",
+            "tradeoff": "要放下很多還喜歡的衣物，也可能對提醒不耐煩"
+          },
+          {
+            "id": 4,
+            "text": "先把口袋與日常必需品取出，再分開處理衣物",
+            "action": "導師已先把口袋與日常必需品取出，再分開處理衣物",
+            "tradeoff": "多一段整理時間，依然沒有替你做去留選擇"
+          },
+          {
+            "id": 5,
+            "text": "向接收單位查明能收的條件，只有你決定送的才交出",
+            "action": "導師已向接收單位查明能收的條件，只有你決定送的才交出",
+            "tradeoff": "可能有衣物不能收，也需自行安排其餘去處"
+          },
+          {
+            "id": 6,
+            "text": "請同事今天先回去，你獨自完成自己的取捨",
+            "action": "導師已請同事今天先回去，你獨自完成自己的取捨",
+            "tradeoff": "少了陪伴與提醒，也得自己承擔拖延"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你突然不想再替每件找理由，先把最想留的那件穿出門，其他暫不動，請他陪你走一小段",
+          "action": "導師已決定穿本人選定外套外出短行並邀同事自願同行，不先處分其餘衣物或占用對方未同意時間",
+          "tradeoff": "今晚整理停下，也占用自願同行者的空檔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 95067722
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "e372c8466bb7b9dc5b64f4f9f00622c41d72a321bd1cfd517ffd7704da9037a9"
+      },
+      "consequenceDirections": {
+        "A": "物品能暫離視線，但不能把借箱當成永久延後決定。",
+        "B": "捐贈不是整袋丟給別人，衣架卻未必立刻空出來。",
+        "C": "你能試試真正會穿哪件，而非只在衣架前想像；回家後其餘仍須自己決定。",
+        "D": "限制能真的發揮作用，但不能把日後後悔全怪到他頭上。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d79d815ba19464662213a864b029f45aa4c0a3f4ba222094da869c63b337f232",
+    "draftSha256": "91b8aa55f25342fbd52b4817ea589645ebde9ae4ddcd6a72f3373635ab52eee1",
     "seedAssignmentVersion": 1
   }
 }

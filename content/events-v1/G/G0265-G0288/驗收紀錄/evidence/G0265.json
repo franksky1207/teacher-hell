@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7fc1ced02ff2093bb47f1522b6f356e093c64c6c82fd907a007f10efb4f316ac",
+      "checkedAt": "2026-11-27T05:05:35.307Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先交出你原本負責的可用成果，不再請他替你補件",
+            "action": "導師已先交出你原本負責的可用成果，不再請他替你補件",
+            "tradeoff": "你要自己承擔時間與品質，其他人的缺口仍在"
+          },
+          {
+            "id": 2,
+            "text": "刪掉可調整的展示加工，保留必要資料",
+            "action": "導師已刪掉可調整的展示加工，保留必要資料",
+            "tradeoff": "成果沒那麼漂亮，也要向主管說明"
+          },
+          {
+            "id": 3,
+            "text": "和主管重新核對每項負責者，再正式調整",
+            "action": "導師已和主管重新核對每項負責者，再正式調整",
+            "tradeoff": "協調需要時間，不能先命令另一人接手"
+          },
+          {
+            "id": 4,
+            "text": "請他明列目前能承接的範圍，未同意部分另由主管決定",
+            "action": "導師已請他明列目前能承接的範圍，未同意部分另由主管決定",
+            "tradeoff": "可能留下空白，教師也要承受原計畫做不完"
+          },
+          {
+            "id": 5,
+            "text": "把必要缺件依期限排出優先順序，請主管決定取捨",
+            "action": "導師已把必要缺件依期限排出優先順序，請主管決定取捨",
+            "tradeoff": "部分事情會延後，也不保證每項都能刪"
+          },
+          {
+            "id": 6,
+            "text": "請原負責者在正式工作聯繫中說明進度，不讓他代替每人追",
+            "action": "導師已請原負責者在正式工作聯繫中說明進度，不讓他代替每人追",
+            "tradeoff": "你要參與正常協調，也可能聽到真有困難"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再把副召集人當萬用膠，提出這輪由你正式承擔整套彙整，不再掛名讓他做",
+          "action": "導師已向主管提出本人承接本輪正式彙整職責的申請，不私派他人或放棄既有必要任務，核准後明確交接",
+          "tradeoff": "須經主管確認，你會多一段實際工作"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3911041166
+        },
+        "selectedIds": [
+          1,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "a62e8dec229dcdd53961ed317f66c9e895662603fb29473d742b9ff1e2de5bde"
+      },
+      "consequenceDirections": {
+        "A": "同事可能鬆口氣，也可能不信只換名就有差；你得真的收齊並承擔缺件說明。",
+        "B": "缺口回到實際分工，不會只因同事做得快就全留給他。",
+        "C": "最後一棒不再只靠一人扛，真正無人能做的部分仍須上級處理。",
+        "D": "同事能看到原分工被履行，但不能因此自動解決整套缺頁。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0d1b27c430d5114c0094568b46aa0620c4e08f1484ed11f2e9bd23fe3a69446e",
+    "draftSha256": "7fc1ced02ff2093bb47f1522b6f356e093c64c6c82fd907a007f10efb4f316ac",
     "seedAssignmentVersion": 1
   }
 }

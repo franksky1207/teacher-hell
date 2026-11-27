@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b6716b6af40551f564c121099d5742b72b6682f1a034b5406029e3a7d3fe1c61",
+      "checkedAt": "2026-11-27T05:05:35.320Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先配合值勤把剩餘人流順完，再由合適成人接續說明",
+            "action": "導師已先配合值勤把剩餘人流順完，再由合適成人接續說明",
+            "tradeoff": "家長要等待，也不能中途空掉導引"
+          },
+          {
+            "id": 2,
+            "text": "請學校窗口向家長說明拍攝與學生隱私規定",
+            "action": "導師已請學校窗口向家長說明拍攝與學生隱私規定",
+            "tradeoff": "要完成必要資訊交接，不把所有問題推走"
+          },
+          {
+            "id": 3,
+            "text": "在不妨礙勤務的位置簡短回應，不提供學生名單或行程",
+            "action": "導師已在不妨礙勤務的位置簡短回應，不提供學生名單或行程",
+            "tradeoff": "要控制談話時間，仍需同仁照看動線"
+          },
+          {
+            "id": 4,
+            "text": "必要時請家長依現場管理移到不擋路的等候處再談",
+            "action": "導師已必要時請家長依現場管理移到不擋路的等候處再談",
+            "tradeoff": "可能引起不悅，也要依實際權限執行"
+          },
+          {
+            "id": 5,
+            "text": "和同仁記下今天哪一處最容易讓孩子停留，交管理者評估",
+            "action": "導師已和同仁記下今天哪一處最容易讓孩子停留，交管理者評估",
+            "tradeoff": "要做正常紀錄，也不能只靠改線就當隱私處理完"
+          },
+          {
+            "id": 6,
+            "text": "若家長想分享學校訊息，請其使用校方已公開授權資料",
+            "action": "導師已若家長想分享學校訊息，請其使用校方已公開授權資料",
+            "tradeoff": "資料可能不如現場生動，也不能任意再加學生資訊"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想讓同仁做完導引還得替你圓場，正式交接後自己留下聽家長把不滿講完，讓他按班表離開",
+          "action": "導師已在必要勤務有合格接續後承接家長非急迫說明，讓同仁依原工作安排離開，不空置通行照看或允許未同意拍攝",
+          "tradeoff": "你的下班會晚，家長也可能越講越多"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3036723297
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "89decfe458a0b26f191158c29661d91e9bcfd36f01043a8aeaf4412ce621fbf6"
+      },
+      "consequenceDirections": {
+        "A": "家長知道拒拍的原因，但不能藉談話又把學生留在旁邊。",
+        "B": "鏡頭不再黏住通行點，家長卻可能覺得自己被當成麻煩人物。",
+        "C": "值勤者不用用私人時間陪談，你則得自己守住談話期限，不再以多一個人站著顯得有人處理。",
+        "D": "家長有正式可問的對象，卻未必接受不能拍的結果。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "564561c17d3b42a9ab803390c571b9a3ae086c8b580bfc60083efe621338cf23",
+    "draftSha256": "b6716b6af40551f564c121099d5742b72b6682f1a034b5406029e3a7d3fe1c61",
     "seedAssignmentVersion": 1
   }
 }

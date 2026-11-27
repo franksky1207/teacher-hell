@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7660f4966085aa7da9d9e24ad1ef34808a00a55da7c41c7a27dfc17cfdf91b60",
+      "checkedAt": "2026-11-27T05:05:35.322Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按約試一張，直接說實際喜歡與不喜歡的地方",
+            "action": "導師已按約試一張，直接說實際喜歡與不喜歡的地方",
+            "tradeoff": "要花私人時間，也不能為體諒而假稱滿意"
+          },
+          {
+            "id": 2,
+            "text": "和他商量撤回未完成的試拍約定，按原狀還零件",
+            "action": "導師已和他商量撤回未完成的試拍約定，按原狀還零件",
+            "tradeoff": "你得承認答應太快，他也可能失落"
+          },
+          {
+            "id": 3,
+            "text": "坦白說自己主要喜歡看展，不想投入這種拍法",
+            "action": "導師已坦白說自己主要喜歡看展，不想投入這種拍法",
+            "tradeoff": "可能傷他的興頭，也讓共同興趣顯得沒那麼多"
+          },
+          {
+            "id": 4,
+            "text": "請他自己示範一張，你只看，不假裝已學會",
+            "action": "導師已請他自己示範一張，你只看，不假裝已學會",
+            "tradeoff": "需要本人願意與可用時間，也不能要求免費教到底"
+          },
+          {
+            "id": 5,
+            "text": "另約你確實能空出的短時試拍，不再只說有空",
+            "action": "導師已另約你確實能空出的短時試拍，不再只說有空",
+            "tradeoff": "要履約，也可能仍不喜歡結果"
+          },
+          {
+            "id": 6,
+            "text": "請店家按一般服務確認使用方法，避免兩人靠猜操作",
+            "action": "導師已請店家按一般服務確認使用方法，避免兩人靠猜操作",
+            "tradeoff": "可能有費用與等待，也不保證效果合意"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被問得有點想逃，今天先把自己的相機收回袋裡，邀他改看一場雙方自願的展覽，不帶器材",
+          "action": "導師已明說今天不試拍並提出另行自願觀展邀請，原借物與承諾另按雙方同意處理，不代購門票或強留零件",
+          "tradeoff": "可能有私人費用，也不能靠新邀約抵掉原承諾而不說明"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 308702850
+        },
+        "selectedIds": [
+          2,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "8eea2bfbe1edb2d174eb2573a85b1b36d0292d2232b192d2b8455a4043dd4192"
+      },
+      "consequenceDirections": {
+        "A": "他或許發現你真正喜歡的部分，也可能拒絕被轉移話題；原試拍須明確重談。",
+        "B": "成像可以被具體討論，但他仍可能更想知道你會不會親自拍。",
+        "C": "催問能結束，但不能把沒試說成零件不好。",
+        "D": "同事得到真實回應，卻可能發現你欣賞的只是展覽，不是這種成像。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1e7ec9f3f82b94a95132790d7e7ac45218d573cdc178941cfab1f216576f0375",
+    "draftSha256": "7660f4966085aa7da9d9e24ad1ef34808a00a55da7c41c7a27dfc17cfdf91b60",
     "seedAssignmentVersion": 1
   }
 }

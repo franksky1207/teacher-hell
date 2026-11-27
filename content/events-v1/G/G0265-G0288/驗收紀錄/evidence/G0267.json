@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8018d4b5b07161d021acbf098acf70bf4c99e2b7f2528fdfd37e98c73d2d9076",
+      "checkedAt": "2026-11-27T05:05:35.310Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按原規則安排每人獨立重作必要小段",
+            "action": "導師已按原規則安排每人獨立重作必要小段",
+            "tradeoff": "要花課內時間，不能只叫這名學生替大家補"
+          },
+          {
+            "id": 2,
+            "text": "請他先說明自己確實會的一步，再看需要補什麼",
+            "action": "導師已請他先說明自己確實會的一步，再看需要補什麼",
+            "tradeoff": "他可能把說明也當成要證明老師錯"
+          },
+          {
+            "id": 3,
+            "text": "保留經核實的交件紀錄，另約時間談他對收件方式的質疑",
+            "action": "導師已保留經核實的交件紀錄，另約時間談他對收件方式的質疑",
+            "tradeoff": "他可能覺得被拖延，教師也須真的回應"
+          },
+          {
+            "id": 4,
+            "text": "改看每人一個關鍵步驟，不再只點份數",
+            "action": "導師已改看每人一個關鍵步驟，不再只點份數",
+            "tradeoff": "你要多看多問，收件速度下降"
+          },
+          {
+            "id": 5,
+            "text": "請另外兩人各自陳述參與情形，不讓他代言",
+            "action": "導師已請另外兩人各自陳述參與情形，不讓他代言",
+            "tradeoff": "說法可能不一致，需再核對"
+          },
+          {
+            "id": 6,
+            "text": "讓全班用相同方式交未完成版本與疑問，不靠整齊外觀過關",
+            "action": "導師已讓全班用相同方式交未完成版本與疑問，不靠整齊外觀過關",
+            "tradeoff": "教師會收到較多缺口，也要另作教學回應"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被只看份數戳中，有點想證明自己真的會看，當場拿你自己的錯解請他找一處問題",
+          "action": "導師已提供本人製作且明標錯例的原創解法，邀學生自願指出問題並當節核正，不更改原查證與公平評量",
+          "tradeoff": "你可能被指出不只一處，也要清楚標錯並核正"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2822665264
+        },
+        "selectedIds": [
+          1,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "85875e99d0cf4493cb6df8073bd19bf3154131e62b3bd6e05378661056543b55"
+      },
+      "consequenceDirections": {
+        "A": "學生不用假裝全做好，但不能把透明交件變成永遠不完成的許可。",
+        "B": "他能把質疑用在實際內容上，但不能把挑出教師錯處當作原交件就算有效。",
+        "C": "各自理解能被看見，但原先交件行為仍須另按事實處理。",
+        "D": "行為與教法能分開處理，學生仍可能不接受原結果。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f8ffcc0f9441e839afe9bf56d49d6666ceb75c9ec2995db68ba4ffa99bc02df0",
+    "draftSha256": "8018d4b5b07161d021acbf098acf70bf4c99e2b7f2528fdfd37e98c73d2d9076",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "efc79405dc2197024108a22d578bd7e2584823ee806e9d51fb8d031480e18e79",
+      "checkedAt": "2026-11-27T05:05:35.315Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留他自願的一桌示範，其他桌由任課老師安排",
+            "action": "導師已保留他自願的一桌示範，其他桌由任課老師安排",
+            "tradeoff": "示範範圍有限，教師要顧其餘學生"
+          },
+          {
+            "id": 2,
+            "text": "家庭作品只供本人使用，教師另備共同材料",
+            "action": "導師已家庭作品只供本人使用，教師另備共同材料",
+            "tradeoff": "要花學校備材時間，也可能今天不夠"
+          },
+          {
+            "id": 3,
+            "text": "由任課老師接回操作，請他只自願說一個觀察",
+            "action": "導師已由任課老師接回操作，請他只自願說一個觀察",
+            "tradeoff": "他少了動手教人的機會，教師工作增加"
+          },
+          {
+            "id": 4,
+            "text": "讓各桌先讀已同意分享的記錄，再提出具體問題",
+            "action": "導師已讓各桌先讀已同意分享的記錄，再提出具體問題",
+            "tradeoff": "少了直接示範，也要注意分享與隱私範圍"
+          },
+          {
+            "id": 5,
+            "text": "和他約定這次可幫多久、到哪一步就停",
+            "action": "導師已和他約定這次可幫多久、到哪一步就停",
+            "tradeoff": "時間到可能還有人不會，不能再用大家在等延長"
+          },
+          {
+            "id": 6,
+            "text": "在課程容許下改成自願小組分次觀察，不一次全班圍看",
+            "action": "導師已在課程容許下改成自願小組分次觀察，不一次全班圍看",
+            "tradeoff": "進度較慢，也須每次重新取得適當同意"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想知道自己的記錄有多粗，拿你自己準備的觀察例子請他挑一處漏寫，不再只挑學生的",
+          "action": "導師已提供本人合法安全觀察材料的記錄供學生自願回饋，不要求學生培養新材料、開罐或替全班負責",
+          "tradeoff": "你得露出不完美，也會占用自己的講解空檔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3043387999
+        },
+        "selectedIds": [
+          1,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "c4aeb20c8e8a03330726e30d0975defb203fd01948a875c1ceab55b5c145875d"
+      },
+      "consequenceDirections": {
+        "A": "學生能用實際經驗指出記錄缺口，但不能把挑錯成人當成代管全班的任務。",
+        "B": "他能真正協助一次，卻不能被要求再逐桌重演。",
+        "C": "學生不會被推成第二個老師，卻得接受成果沒辦法讓全班同時看見。",
+        "D": "他的投入有終點，教師則要接住未完成的學習需求。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5a94e5de212e723666af9e5a08bb68ab079edcc3509ccc6deb66aec1165f9fb0",
+    "draftSha256": "efc79405dc2197024108a22d578bd7e2584823ee806e9d51fb8d031480e18e79",
     "seedAssignmentVersion": 1
   }
 }

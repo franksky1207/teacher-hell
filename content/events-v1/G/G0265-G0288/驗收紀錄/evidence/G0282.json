@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "64d99a00657c267b8f071355ba79e8da597af098636690f0cedb0ed6ca71884d",
+      "checkedAt": "2026-11-27T05:05:35.322Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向原班級更正實際數量與供應範圍，不讓家長代為解釋",
+            "action": "導師已向原班級更正實際數量與供應範圍，不讓家長代為解釋",
+            "tradeoff": "你得承認失誤，學生可能失望"
+          },
+          {
+            "id": 2,
+            "text": "改為任課教師共用示範，先取得家長與課程安排同意",
+            "action": "導師已改為任課教師共用示範，先取得家長與課程安排同意",
+            "tradeoff": "學生能親手拿到的機會減少"
+          },
+          {
+            "id": 3,
+            "text": "取消花材環節，用現有可用教材上課",
+            "action": "導師已取消花材環節，用現有可用教材上課",
+            "tradeoff": "原準備派不上用場，也可能浪費你的備課"
+          },
+          {
+            "id": 4,
+            "text": "把已同意數量按規定交承辦，請其核對實際能做的用途",
+            "action": "導師已把已同意數量按規定交承辦，請其核對實際能做的用途",
+            "tradeoff": "要協調，也可能發現不能照原方式接收"
+          },
+          {
+            "id": 5,
+            "text": "請學生以合法公開圖片觀察，不再要求實體一人一份",
+            "action": "導師已請學生以合法公開圖片觀察，不再要求實體一人一份",
+            "tradeoff": "少了觸感與實物差異，需確認教材使用權"
+          },
+          {
+            "id": 6,
+            "text": "和家長重訂未來借用先確認數量、用途與結束時間的方式",
+            "action": "導師已和家長重訂未來借用先確認數量、用途與結束時間的方式",
+            "tradeoff": "多一段確認，不保證對方往後還願意借"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你很想把自己說出去的大話收回來，決定這次不再領用他的花，向家長正式撤回未交付的借用請求",
+          "action": "導師已撤回本人本次尚未交付的自願借花請求並說明不怪罪家長，保留對原錯誤承諾的更正與必要課程責任",
+          "tradeoff": "少了原本好用的材料，也可能讓對方以為你在鬧脾氣"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1130481164
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "6926fb67f4e744b84a68acd31155b2944fcc758639fa6095b4da8ede9a66f627"
+      },
+      "consequenceDirections": {
+        "A": "家長不用再擔心你從少量慢慢加，但你仍須親自說清學生期待落差，不能把撤借當成事情消失。",
+        "B": "資源能完成一部分教學，但不能把一人一支偷偷說成已經等同滿足。",
+        "C": "原信任有可核對的做法，這次失誤仍須由你負責。",
+        "D": "課程可在現有條件完成，但不能把照片當成完全補回現場觀察。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "435c3b854939625408fcf706462bc876c00b557ab334f93dacacd5128b49d8de",
+    "draftSha256": "64d99a00657c267b8f071355ba79e8da597af098636690f0cedb0ed6ca71884d",
     "seedAssignmentVersion": 1
   }
 }

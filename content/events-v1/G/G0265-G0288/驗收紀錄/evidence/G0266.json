@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0a3cd0001a417c392802543fbd637f2f72f332bbc8122987599a56a9b41c7144",
+      "checkedAt": "2026-11-27T05:05:35.309Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向原群組如實說明自己傳錯，不讓發現者代替解釋",
+            "action": "導師已向原群組如實說明自己傳錯，不讓發現者代替解釋",
+            "tradeoff": "要面對大家追問，不能用一句辛苦了帶過"
+          },
+          {
+            "id": 2,
+            "text": "先更換影響今天授課的頁面，其餘標明稍後補正",
+            "action": "導師已先更換影響今天授課的頁面，其餘標明稍後補正",
+            "tradeoff": "要清楚區分可用部分，可能多版本並存"
+          },
+          {
+            "id": 3,
+            "text": "由你完成本輪錯頁的重新排印與交付",
+            "action": "導師已由你完成本輪錯頁的重新排印與交付",
+            "tradeoff": "增加自己的工作，也不能擅用經費"
+          },
+          {
+            "id": 4,
+            "text": "請課務評估是否可調整今日使用順序，不硬趕印完",
+            "action": "導師已請課務評估是否可調整今日使用順序，不硬趕印完",
+            "tradeoff": "可能影響其他安排，也要先獲同意"
+          },
+          {
+            "id": 5,
+            "text": "和同事另談他為何不敢早說，約定簡單的疑義提醒方式",
+            "action": "導師已和同事另談他為何不敢早說，約定簡單的疑義提醒方式",
+            "tradeoff": "需要再留時間，也不能只叫他下次勇敢"
+          },
+          {
+            "id": 6,
+            "text": "建立這次共編的明確發送者與定稿標示，經參與者確認再用",
+            "action": "導師已建立這次共編的明確發送者與定稿標示，經參與者確認再用",
+            "tradeoff": "多一道共同確認，不會自動消除錯誤"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你又羞又累，撤掉自己原要在交流會展示的這份成果，先不拿它當成功案例",
+          "action": "導師已暫撤本人非必要成果分享，不延誤錯版更正與必要教學，不要求同事因此停止質疑",
+          "tradeoff": "少一次曝光，也須向承辦說明調整"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 49489276
+        },
+        "selectedIds": [
+          6,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "0cddccb8d98ce255c31f5883de39e9fa680bd215efcbdd52289ef926e5934d37"
+      },
+      "consequenceDirections": {
+        "A": "發現者不用再替你善後，若量太大仍須正式協調資源。",
+        "B": "同事不用一面返工一面聽你分享成果，你則得接受原本的亮相暫時取消；必要更正照辦。",
+        "C": "同事不再被當成事後挑錯，印出的紙與返工仍需實際處理。",
+        "D": "下次較不容易把未完成當可印，但本輪返工不能只靠新標示算結束。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d619b3e2a23762ac7015db17833d978b22285254efa45c21a715f1257fa5f691",
+    "draftSha256": "0a3cd0001a417c392802543fbd637f2f72f332bbc8122987599a56a9b41c7144",
     "seedAssignmentVersion": 1
   }
 }

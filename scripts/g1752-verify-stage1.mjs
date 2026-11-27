@@ -73,6 +73,7 @@ async function main() {
     total: expected.length,
     'prebuild-unstarted': 0,
     'stage1-in-progress': 0,
+    'stage1-ready-for-review': 0,
     'stage1-passed': 0,
     invalid: 0,
   };

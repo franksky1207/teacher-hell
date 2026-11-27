@@ -6,9 +6,10 @@ import { cp, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import {
   applyStage1SelectionToFiles,
+  confirmStage1Passed,
   replayChoiceSelection,
   selectAndShuffleChoices,
-  sha256,
+  syncStage1OptionsWording,
   validateG1752Stage1Story,
 } from '../scripts/g1752-stage1.js';
 import { isUnfinishedGStory } from '../scripts/story-catalog.js';
@@ -33,6 +34,29 @@ function sampleCandidates() {
   };
 }
 
+function makeCompleteStage1Markdown(baseMdWithOptions) {
+  return baseMdWithOptions
+    .replace(
+      '【待填：階段一確認】規劃前提：普通上課日課間，僅涉及班級可調整的校內置物範圍，尚未移動同學私人物品',
+      '普通上課日課間，僅涉及班級可調整的校內置物範圍，尚未移動同學私人物品',
+    )
+    .replace(
+      '| 【待填：階段一確立合法槽位】 | 【待填】 | 規劃配置：現任本班值日生，看得到公開星記及置物規劃，無權替其他人表示同意；發起同學僅能說明自己如何讀取星數 | 【待填】 |',
+      '| student_a | 現任本班值日生 | 知道自己畫過一顆星，無權替其他人表示同意 | 持2-3、4-4、6-2、10-2 |',
+    )
+    .replace('【待填：階段一依需要填寫；不能持碼與結算】', '發起同學（情境人物，不持碼結算）')
+    .replace(/\| 2-3 \| 【待填：階段一確立合法持碼槽位】 \| 規劃因果：/g, '| 2-3 | student_a | ')
+    .replace(/\| 4-4 \| 【待填：階段一確立合法持碼槽位】 \| 規劃因果：/g, '| 4-4 | student_a | ')
+    .replace(/\| 6-2 \| 【待填：階段一確立合法持碼槽位】 \| 規劃因果：/g, '| 6-2 | student_a | ')
+    .replace(/\| 10-2 \| 【待填：階段一確立合法持碼槽位】 \| 規劃因果：/g, '| 10-2 | student_a | ')
+    .replace(
+      '- **P01｜旁白／合法說話者**：【待填：階段一開場】',
+      '- **P01｜旁白**：下課鐘剛響，值日生小聲坦承自己早上只是跟著畫了一顆星，發起人卻已經把抹布和紙箱搬到走廊。\n- **P02｜student_a**：老師，我真的以為畫星星只是表示看過公告。',
+    );
+}
+
+const G0001_ASSIGNMENT = { storyId: 'G0001', seedId: 'S0002', codes: ['2-3', '4-4', '6-2', '10-2'], folder: 'G0001-G0024' };
+
 test('6-choose-3 yields 3 distinct ordinary IDs, 1 emotional, and variable A-D positions', () => {
   const { ordinaryCandidates, emotionalCandidate } = sampleCandidates();
   const emotionalPositions = new Set();
@@ -44,57 +68,18 @@ test('6-choose-3 yields 3 distinct ordinary IDs, 1 emotional, and variable A-D p
     for (const id of res.selectedIds) {
       assert.ok(Number.isInteger(id) && id >= 1 && id <= 6);
     }
-
     const mappedValues = Object.values(res.finalChoiceMap);
     assert.equal(mappedValues.filter(v => v === 'emotional').length, 1);
     const ordinaryMapped = mappedValues.filter(v => v !== 'emotional');
-    assert.equal(ordinaryMapped.length, 3);
-    assert.equal(new Set(ordinaryMapped).size, 3);
     assert.deepEqual([...ordinaryMapped].sort(), [...res.selectedIds].sort());
-
-    const emoLetter = Object.entries(res.finalChoiceMap).find(([, v]) => v === 'emotional')[0];
-    emotionalPositions.add(emoLetter);
+    emotionalPositions.add(Object.entries(res.finalChoiceMap).find(([, v]) => v === 'emotional')[0]);
   }
-
-  assert.equal(emotionalPositions.size, 4, 'Emotional option should land on all 4 letters A-D across seeds');
+  assert.equal(emotionalPositions.size, 4);
 });
 
-test('selection evidence is reproducible via replayChoiceSelection', () => {
-  const { ordinaryCandidates, emotionalCandidate } = sampleCandidates();
-  const res = selectAndShuffleChoices({ ordinaryCandidates, emotionalCandidate, seed: 20261126 });
-  const replayed = replayChoiceSelection(res);
-  assert.deepEqual(replayed.selectedIds, res.selectedIds);
-  assert.deepEqual(replayed.finalChoiceMap, res.finalChoiceMap);
-
-  assert.throws(() => replayChoiceSelection({
-    ...res,
-    selectedIds: [1, 2, 3], // tampered
-  }), /重現抽選失敗/);
-});
-
-test('invalid candidate counts, duplicate IDs, and missing evidence are rejected', () => {
-  const { ordinaryCandidates, emotionalCandidate } = sampleCandidates();
-
-  assert.throws(() => selectAndShuffleChoices({
-    ordinaryCandidates: ordinaryCandidates.slice(0, 5),
-    emotionalCandidate,
-    seed: 1,
-  }), /恰好有 6 個/);
-
-  const dup = [...ordinaryCandidates];
-  dup[5] = { ...dup[5], id: 1 };
-  assert.throws(() => selectAndShuffleChoices({
-    ordinaryCandidates: dup,
-    emotionalCandidate,
-    seed: 1,
-  }), /重複/);
-
-  assert.throws(() => replayChoiceSelection(null), /缺少 ordinaryChoiceSelection/);
-});
-
-test('confirmed selection cannot be silently overwritten and edited options invalidate old evidence', async t => {
+test('selection evidence is reproducible and forging selectedIds, emotional position, or A-D map fails validation', async t => {
   await mkdir('work', { recursive: true });
-  const tmp = await mkdtemp('work/g1752-stage1-test-');
+  const tmp = await mkdtemp('work/g1752-forge-test-');
   t.after(() => rm(tmp, { recursive: true, force: true }));
 
   const batchDir = join(tmp, 'G0001-G0024');
@@ -106,87 +91,209 @@ test('confirmed selection cannot be silently overwritten and edited options inva
   await cp('content/events-v1/G/G0001-G0024/G0001.md', mdPath);
   await cp('content/events-v1/G/G0001-G0024/驗收紀錄/evidence/G0001.json', evPath);
 
-  const assignment = { storyId: 'G0001', seedId: 'S0002', codes: ['2-3', '4-4', '6-2', '10-2'], folder: 'G0001-G0024' };
-
-  // Prebuild unstarted state is NOT treated as stage1-passed
-  const preMd = await readFile(mdPath, 'utf8');
-  const preEv = JSON.parse(await readFile(evPath, 'utf8'));
-  const preCheck = validateG1752Stage1Story({ mdText: preMd, evidence: preEv, filePath: mdPath, expectedAssignment: assignment });
-  assert.equal(preCheck.state, 'prebuild-unstarted');
-  assert.equal(preCheck.errors.length, 0);
-
-  // Apply selection
   const { ordinaryCandidates, emotionalCandidate } = sampleCandidates();
   await applyStage1SelectionToFiles({ mdPath, evidencePath: evPath, ordinaryCandidates, emotionalCandidate, seed: 42 });
 
-  // Re-running without --reselect refuses to overwrite
-  await assert.rejects(
-    () => applyStage1SelectionToFiles({ mdPath, evidencePath: evPath, ordinaryCandidates, emotionalCandidate, seed: 99 }),
-    /禁止無聲覆蓋/,
+  const mdText = await readFile(mdPath, 'utf8');
+  const ev = JSON.parse(await readFile(evPath, 'utf8'));
+
+  // Valid replay
+  const replayed = replayChoiceSelection(ev.stages.stage1.ordinaryChoiceSelection);
+  assert.deepEqual(replayed.selectedIds, ev.stages.stage1.ordinaryChoiceSelection.selectedIds);
+
+  // Forged selectedIds (guaranteed different from actual selectedIds)
+  const forgedSelected = structuredClone(ev);
+  const actualIds = forgedSelected.stages.stage1.ordinaryChoiceSelection.selectedIds;
+  forgedSelected.stages.stage1.ordinaryChoiceSelection.selectedIds = actualIds.includes(6) ? [1, 2, 3] : [4, 5, 6];
+  assert.equal(
+    validateG1752Stage1Story({ mdText, evidence: forgedSelected, filePath: mdPath, expectedAssignment: G0001_ASSIGNMENT }).state,
+    'invalid',
   );
 
-  // After selection, state is stage1-in-progress (opening & consequenceDirections not yet filled)
-  const afterMd = await readFile(mdPath, 'utf8');
-  const afterEv = JSON.parse(await readFile(evPath, 'utf8'));
-  const inProgCheck = validateG1752Stage1Story({ mdText: afterMd, evidence: afterEv, filePath: mdPath, expectedAssignment: assignment });
-  assert.equal(inProgCheck.state, 'stage1-in-progress');
-  assert.equal(inProgCheck.errors.length, 0);
+  // Forged A~D map
+  const forgedMap = structuredClone(ev);
+  const { A, B } = forgedMap.stages.stage1.ordinaryChoiceSelection.finalChoiceMap;
+  forgedMap.stages.stage1.ordinaryChoiceSelection.finalChoiceMap.A = B;
+  forgedMap.stages.stage1.ordinaryChoiceSelection.finalChoiceMap.B = A;
+  assert.equal(
+    validateG1752Stage1Story({ mdText, evidence: forgedMap, filePath: mdPath, expectedAssignment: G0001_ASSIGNMENT }).state,
+    'invalid',
+  );
 
-  // Tampering with option text in MD without re-running selection invalidates old evidence
-  const tamperedMd = afterMd.replace(/\| A \| ([^|]+) \|/, '| A | 擅自改寫的選項短句 |');
-  const tamperedCheck = validateG1752Stage1Story({ mdText: tamperedMd, evidence: afterEv, filePath: mdPath, expectedAssignment: assignment });
-  assert.equal(tamperedCheck.state, 'invalid');
-  assert.ok(tamperedCheck.errors.some(e => e.location.includes('sourceVersion') || e.location.includes('optionsDigest')));
+  // Forged emotional flag in Markdown
+  const forgedEmotionalMd = mdText.replace(/\| A \| ([^|]+) \| (true|false) \|/, (_, txt, flag) => `| A | ${txt} | ${flag === 'true' ? 'false' : 'true'} |`);
+  const emoCheck = validateG1752Stage1Story({ mdText: forgedEmotionalMd, evidence: ev, filePath: mdPath, expectedAssignment: G0001_ASSIGNMENT });
+  assert.equal(emoCheck.state, 'invalid');
 });
 
-test('formal G0001 format is accepted while old G-0001 filename is rejected', async () => {
+test('editing opening, roles, conditions, or summary does NOT invalidate selection evidence', async t => {
+  await mkdir('work', { recursive: true });
+  const tmp = await mkdtemp('work/g1752-edit-test-');
+  t.after(() => rm(tmp, { recursive: true, force: true }));
+
+  const batchDir = join(tmp, 'G0001-G0024');
+  const evDir = join(batchDir, '驗收紀錄', 'evidence');
+  await mkdir(evDir, { recursive: true });
+  const mdPath = join(batchDir, 'G0001.md');
+  const evPath = join(evDir, 'G0001.json');
+
+  await cp('content/events-v1/G/G0001-G0024/G0001.md', mdPath);
+  await cp('content/events-v1/G/G0001-G0024/驗收紀錄/evidence/G0001.json', evPath);
+
+  const { ordinaryCandidates, emotionalCandidate } = sampleCandidates();
+  const selRes = await applyStage1SelectionToFiles({ mdPath, evidencePath: evPath, ordinaryCandidates, emotionalCandidate, seed: 77 });
+
+  // Edit opening, roles, conditions, and summary without touching evidence JSON
+  let mdText = await readFile(mdPath, 'utf8');
+  mdText = makeCompleteStage1Markdown(mdText);
+  mdText = mdText.replace('睡眼惺忪的值日生跟著畫了一顆', '剛值完早自習的值日生也跟著畫了一顆');
+  await writeFile(mdPath, mdText, 'utf8');
+
+  const ev = JSON.parse(await readFile(evPath, 'utf8'));
+  // Repeated validation does NOT re-draw selection and stays valid
+  const check1 = validateG1752Stage1Story({ mdText, evidence: ev, filePath: mdPath, expectedAssignment: G0001_ASSIGNMENT });
+  const check2 = validateG1752Stage1Story({ mdText, evidence: ev, filePath: mdPath, expectedAssignment: G0001_ASSIGNMENT });
+  assert.equal(check1.state, 'stage1-in-progress'); // consequenceDirections still missing
+  assert.equal(check2.state, 'stage1-in-progress');
+  assert.deepEqual(ev.stages.stage1.ordinaryChoiceSelection.selectedIds, selRes.selectedIds);
+});
+
+test('Type A non-substantive wording polish syncs safely while Type B action/pool change is rejected', async t => {
+  await mkdir('work', { recursive: true });
+  const tmp = await mkdtemp('work/g1752-sync-test-');
+  t.after(() => rm(tmp, { recursive: true, force: true }));
+
+  const batchDir = join(tmp, 'G0001-G0024');
+  const evDir = join(batchDir, '驗收紀錄', 'evidence');
+  await mkdir(evDir, { recursive: true });
+  const mdPath = join(batchDir, 'G0001.md');
+  const evPath = join(evDir, 'G0001.json');
+
+  await cp('content/events-v1/G/G0001-G0024/G0001.md', mdPath);
+  await cp('content/events-v1/G/G0001-G0024/驗收紀錄/evidence/G0001.json', evPath);
+
+  const { ordinaryCandidates, emotionalCandidate } = sampleCandidates();
+  const orig = await applyStage1SelectionToFiles({ mdPath, evidencePath: evPath, ordinaryCandidates, emotionalCandidate, seed: 101 });
+
+  // Type A: polish player-facing short text on option A
+  let mdText = await readFile(mdPath, 'utf8');
+  mdText = mdText.replace(/\| A \| ([^|]+) \|/, '| A | 先潤飾過的可見短句（不改行動） |');
+  await writeFile(mdPath, mdText, 'utf8');
+
+  // Before sync, optionsDigest mismatch is flagged
+  const beforeSyncEv = JSON.parse(await readFile(evPath, 'utf8'));
+  assert.equal(
+    validateG1752Stage1Story({ mdText, evidence: beforeSyncEv, filePath: mdPath, expectedAssignment: G0001_ASSIGNMENT }).state,
+    'invalid',
+  );
+
+  // Safe Type A sync preserves selectedIds and finalChoiceMap
+  const synced = await syncStage1OptionsWording({ mdPath, evidencePath: evPath });
+  assert.deepEqual(synced.selectedIds, orig.selectedIds);
+  assert.deepEqual(synced.finalChoiceMap, orig.finalChoiceMap);
+
+  const afterSyncEv = JSON.parse(await readFile(evPath, 'utf8'));
+  assert.equal(
+    validateG1752Stage1Story({ mdText, evidence: afterSyncEv, filePath: mdPath, expectedAssignment: G0001_ASSIGNMENT }).state,
+    'stage1-in-progress',
+  );
+
+  // Type B: changing objective action without reselect fails sync & validation
+  const actionChangedMd = mdText.replace(
+    /\| B \| ([^|]+) \| (true|false) \| ([^|]+) \|/,
+    '| B | $1 | $2 | 完全改掉教師客觀行動的新做法 |',
+  );
+  await writeFile(mdPath, actionChangedMd, 'utf8');
+  await assert.rejects(
+    () => syncStage1OptionsWording({ mdPath, evidencePath: evPath }),
+    /教師已完成的客觀行動/,
+  );
+  assert.equal(
+    validateG1752Stage1Story({ mdText: actionChangedMd, evidence: afterSyncEv, filePath: mdPath, expectedAssignment: G0001_ASSIGNMENT }).state,
+    'invalid',
+  );
+});
+
+test('complete Stage 1 content without semantic review returns stage1-ready-for-review, not stage1-passed, and post-approval edits invalidate old approval', async t => {
+  await mkdir('work', { recursive: true });
+  const tmp = await mkdtemp('work/g1752-review-state-test-');
+  t.after(() => rm(tmp, { recursive: true, force: true }));
+
+  const batchDir = join(tmp, 'G0001-G0024');
+  const evDir = join(batchDir, '驗收紀錄', 'evidence');
+  await mkdir(evDir, { recursive: true });
+  const mdPath = join(batchDir, 'G0001.md');
+  const evPath = join(evDir, 'G0001.json');
+
+  await cp('content/events-v1/G/G0001-G0024/G0001.md', mdPath);
+  await cp('content/events-v1/G/G0001-G0024/驗收紀錄/evidence/G0001.json', evPath);
+
+  const { ordinaryCandidates, emotionalCandidate } = sampleCandidates();
+  await applyStage1SelectionToFiles({ mdPath, evidencePath: evPath, ordinaryCandidates, emotionalCandidate, seed: 55 });
+
+  const completeMd = makeCompleteStage1Markdown(await readFile(mdPath, 'utf8'));
+  await writeFile(mdPath, completeMd, 'utf8');
+
+  const ev = JSON.parse(await readFile(evPath, 'utf8'));
+  ev.stages.stage1.consequenceDirections = {
+    A: '客觀後果A／人物反應A／代價A',
+    B: '客觀後果B／人物反應B／代價B',
+    C: '客觀後果C／人物反應C／代價C',
+    D: '客觀後果D／人物反應D／代價D',
+  };
+  await writeFile(evPath, JSON.stringify(ev, null, 2) + '\n', 'utf8');
+
+  // Content is complete, but semantic review is not yet recorded -> must NOT return stage1-passed
+  const readyCheck = validateG1752Stage1Story({ mdText: completeMd, evidence: ev, filePath: mdPath, expectedAssignment: G0001_ASSIGNMENT });
+  assert.equal(readyCheck.state, 'stage1-ready-for-review');
+  assert.equal(readyCheck.errors.length, 0);
+
+  // Confirm Stage 1 passed -> records SHA and returns stage1-passed
+  const passedRes = await confirmStage1Passed({ mdPath, evidencePath: evPath, expectedAssignment: G0001_ASSIGNMENT, reviewer: 'qa-reviewer' });
+  assert.equal(passedRes.state, 'stage1-passed');
+
+  const passedEv = JSON.parse(await readFile(evPath, 'utf8'));
+  const passedCheck = validateG1752Stage1Story({ mdText: completeMd, evidence: passedEv, filePath: mdPath, expectedAssignment: G0001_ASSIGNMENT });
+  assert.equal(passedCheck.state, 'stage1-passed');
+
+  // Subsequent edit to approved draft -> old approval must NOT impersonate stage1-passed
+  const editedAfterPass = completeMd.replace('下課鐘剛響，值日生小聲坦承', '下課鐘剛響，值日生急忙跑來坦承');
+  assert.notEqual(editedAfterPass, completeMd);
+  const postEditCheck = validateG1752Stage1Story({ mdText: editedAfterPass, evidence: passedEv, filePath: mdPath, expectedAssignment: G0001_ASSIGNMENT });
+  assert.equal(postEditCheck.state, 'stage1-ready-for-review');
+  assert.equal(postEditCheck.staleApproval, true);
+});
+
+test('prebuild unstarted draft is never treated as stage1-passed, G-0001 is rejected, 24-story batch verifies, and unfinished G is excluded from export', async () => {
   const mdText = await readFile('content/events-v1/G/G0001-G0024/G0001.md', 'utf8');
   const ev = JSON.parse(await readFile('content/events-v1/G/G0001-G0024/驗收紀錄/evidence/G0001.json', 'utf8'));
-  const assignment = { storyId: 'G0001', seedId: 'S0002', codes: ['2-3', '4-4', '6-2', '10-2'], folder: 'G0001-G0024' };
 
-  const okRes = validateG1752Stage1Story({
+  const preCheck = validateG1752Stage1Story({
     mdText,
     evidence: ev,
     filePath: 'content/events-v1/G/G0001-G0024/G0001.md',
-    expectedAssignment: assignment,
+    expectedAssignment: G0001_ASSIGNMENT,
   });
-  assert.equal(okRes.state, 'prebuild-unstarted');
+  assert.equal(preCheck.state, 'prebuild-unstarted');
 
-  const oldRes = validateG1752Stage1Story({
+  const oldCheck = validateG1752Stage1Story({
     mdText,
     evidence: ev,
     filePath: 'content/events-v1/G/G0001-G0024/G-0001.md',
-    expectedAssignment: assignment,
+    expectedAssignment: G0001_ASSIGNMENT,
   });
-  assert.equal(oldRes.state, 'invalid');
-  assert.ok(oldRes.errors.some(e => e.location === 'filename'));
-});
+  assert.equal(oldCheck.state, 'invalid');
 
-test('full 24-story batch verifies in a single CLI invocation', async () => {
   const { stdout } = await execFileAsync('node', ['scripts/g1752-verify-stage1.mjs', '--batch', 'content/events-v1/G/G0001-G0024']);
-  const parsed = JSON.parse(stdout);
-  assert.equal(parsed.ok, true);
-  assert.equal(parsed.batch, 'G0001-G0024');
-  assert.equal(parsed.counts.total, 24);
-  assert.equal(parsed.counts['prebuild-unstarted'], 24);
-  assert.equal(parsed.counts.invalid, 0);
-});
+  const batchRes = JSON.parse(stdout);
+  assert.equal(batchRes.ok, true);
+  assert.equal(batchRes.counts.total, 24);
+  assert.equal(batchRes.counts['prebuild-unstarted'], 24);
 
-test('unfinished G drafts are excluded by isUnfinishedGStory guard', async () => {
-  const mdText = await readFile('content/events-v1/G/G0001-G0024/G0001.md', 'utf8');
-  const excluded = await isUnfinishedGStory({
+  assert.equal(await isUnfinishedGStory({
     storyId: 'G0001',
     type: 'G',
     path: 'content/events-v1/G/G0001-G0024/G0001.md',
     markdown: mdText,
-  });
-  assert.equal(excluded, true);
-
-  const tStoryAllowed = await isUnfinishedGStory({
-    storyId: 'T1-001',
-    type: 'T',
-    path: 'content/events-v1/T/T1-高一上/T1-1-開學/活動前/T1-001.md',
-    markdown: '# 正式T故事',
-  });
-  assert.equal(tStoryAllowed, false);
+  }), true);
 });

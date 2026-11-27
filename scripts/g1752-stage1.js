@@ -1,11 +1,13 @@
 /**
  * G1752 Stage 1 tooling:
  * - Reproducible 6-choose-3 ordinary choice selection + emotional option shuffle (Mulberry32 v1)
- * - Stage 1 draft & evidence verification (distinguishing prebuild-unstarted, stage1-in-progress, stage1-passed, invalid)
+ * - Targeted options wording sync (Type A) without re-drawing RNG
+ * - Stage 1 draft & evidence verification distinguishing:
+ *   prebuild-unstarted | stage1-in-progress | stage1-ready-for-review | stage1-passed | invalid
  */
 import { createHash, randomInt } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
-import { basename, dirname, join } from 'node:path';
+import { basename, dirname } from 'node:path';
 import { createRandom } from '../src/numeric/random.js';
 
 export const VALID_TAGS = new Set(Array.from({ length: 11 }, (_, i) => 'G' + String(i + 1).padStart(2, '0')));
@@ -182,8 +184,9 @@ export async function applyStage1SelectionToFiles({
   const optionsDigest = computeOptionsDigest(parsedRows);
   const newSha = sha256(updatedMd);
 
-  evidence.status = evidence.status === 'prebuild-unstarted' ? 'stage1-in-progress' : evidence.status;
+  evidence.status = 'stage1-in-progress';
   evidence.stages.stage1.status = 'in_progress';
+  evidence.stages.stage1.semanticReviewed = false;
   evidence.stages.stage1.sourceVersion = newSha;
   evidence.stages.stage1.ordinaryChoiceSelection = {
     ordinaryCandidates: result.ordinaryCandidates,
@@ -200,7 +203,112 @@ export async function applyStage1SelectionToFiles({
     writeFile(evidencePath, JSON.stringify(evidence, null, 2) + '\n', 'utf8'),
   ]);
 
-  return { storyId: evidence.storyId, selectedIds: result.selectedIds, finalChoiceMap: result.finalChoiceMap, seed: result.rng.seed, draftSha256: newSha };
+  return { storyId: evidence.storyId, selectedIds: result.selectedIds, finalChoiceMap: result.finalChoiceMap, seed: result.rng.seed, optionsDigest };
+}
+
+/**
+ * Type A safe targeted sync:
+ * Preserves selectedIds, emotional position, rng seed, and A~D mapping when option display wording
+ * is lightly polished without changing candidate identity or completed objective action.
+ */
+export async function syncStage1OptionsWording({
+  mdPath,
+  evidencePath,
+  allowActionWordingPolish = false,
+}) {
+  const [mdText, evText] = await Promise.all([
+    readFile(mdPath, 'utf8'),
+    readFile(evidencePath, 'utf8'),
+  ]);
+  const evidence = JSON.parse(evText);
+  const selection = evidence.stages?.stage1?.ordinaryChoiceSelection;
+  if (!selection) {
+    throw new Error(`${evidence.storyId} 尚未有已保存的抽選證據，無法同步選項文字`);
+  }
+
+  // Verify existing RNG evidence is valid before syncing
+  replayChoiceSelection(selection);
+
+  const options = parseOptionsTableFromMarkdown(mdText);
+  if (options.length !== 4 || options.map(o => o.id).join('') !== 'ABCD') {
+    throw new Error('第4區必須包含 A、B、C、D 四列選項');
+  }
+
+  for (const letter of CHOICE_LETTERS) {
+    const row = options.find(o => o.id === letter);
+    if (!nonEmptyText(row.text) || !nonEmptyText(row.action) || !nonEmptyText(row.tradeoff)) {
+      throw new Error(`選項 ${letter} 不可為空白或含【待填】`);
+    }
+    const mappedId = selection.finalChoiceMap[letter];
+    const expectedEmotional = String(mappedId === 'emotional');
+    if (row.emotional !== expectedEmotional) {
+      throw new Error(`選項 ${letter} 的 emotional 標記（${row.emotional}）與原抽選映射（${expectedEmotional}）不符，不得擅自調換位置`);
+    }
+
+    const target = mappedId === 'emotional'
+      ? selection.emotionalCandidate
+      : selection.ordinaryCandidates.find(c => c.id === mappedId);
+    if (!target) {
+      throw new Error(`找不到映射候選 ${mappedId}`);
+    }
+
+    if (row.action !== target.action && !allowActionWordingPolish) {
+      throw new Error(`選項 ${letter} 的「教師已完成的客觀行動」已變更；若屬實質行動改變須重新六選三（--reselect），若僅非實質語句潤飾請明確傳入 allowActionWordingPolish`);
+    }
+
+    target.text = row.text;
+    target.tradeoff = row.tradeoff;
+    if (allowActionWordingPolish) {
+      target.action = row.action;
+    }
+  }
+
+  selection.optionsDigest = computeOptionsDigest(options);
+  await writeFile(evidencePath, JSON.stringify(evidence, null, 2) + '\n', 'utf8');
+
+  return {
+    storyId: evidence.storyId,
+    optionsDigest: selection.optionsDigest,
+    finalChoiceMap: selection.finalChoiceMap,
+    selectedIds: selection.selectedIds,
+  };
+}
+
+/**
+ * Mark Stage 1 as formally passed after mechanical + semantic review.
+ * Records the exact source SHA at approval time.
+ */
+export async function confirmStage1Passed({ mdPath, evidencePath, expectedAssignment, reviewer = null }) {
+  const [mdText, evText] = await Promise.all([
+    readFile(mdPath, 'utf8'),
+    readFile(evidencePath, 'utf8'),
+  ]);
+  const evidence = JSON.parse(evText);
+
+  const preCheck = validateG1752Stage1Story({
+    mdText,
+    evidence,
+    filePath: mdPath,
+    expectedAssignment,
+  });
+  if (preCheck.state === 'invalid') {
+    throw new Error(`無法標記階段一通過，存在驗證錯誤：${preCheck.errors.map(e => e.detail).join('；')}`);
+  }
+  if (preCheck.state === 'prebuild-unstarted' || preCheck.state === 'stage1-in-progress') {
+    throw new Error(`無法標記階段一通過，尚有未完成項目：${(preCheck.incompleteReasons ?? [preCheck.state]).join('；')}`);
+  }
+
+  const actualSha = sha256(mdText);
+  evidence.status = 'stage1-passed';
+  evidence.stages.stage1.status = 'passed';
+  evidence.stages.stage1.semanticReviewed = true;
+  evidence.stages.stage1.sourceVersion = actualSha;
+  evidence.stages.stage1.checkedAt = new Date().toISOString();
+  if (reviewer) evidence.stages.stage1.reviewer = reviewer;
+  evidence.sourceVersion.draftSha256 = actualSha;
+
+  await writeFile(evidencePath, JSON.stringify(evidence, null, 2) + '\n', 'utf8');
+  return { storyId: evidence.storyId, state: 'stage1-passed', sourceVersion: actualSha };
 }
 
 function tableRows(text) {
@@ -271,7 +379,7 @@ export function validateG1752Stage1Story({ mdText, evidence, filePath, expectedA
     addErr('section3.codes', `四碼應為 ${expectedAssignment.codes.join('／')}，實為 ${mdCodes.join('／')}`);
   }
 
-  // 4. Evidence JSON checks
+  // 4. Evidence JSON checks (identity & formal approval isolation)
   if (!evidence || typeof evidence !== 'object') {
     addErr('evidence', '缺少對應驗收紀錄 JSON');
     return { state: 'invalid', errors };
@@ -281,12 +389,7 @@ export function validateG1752Stage1Story({ mdText, evidence, filePath, expectedA
       addErr('evidence.identity', '驗收 JSON 的 storyId / seedId / codes 與固定種子不符');
     }
   }
-  const actualSha = sha256(mdText);
-  if (evidence.sourceVersion?.draftSha256 !== actualSha) {
-    addErr('evidence.sourceVersion', '原稿內容已變更但驗收 JSON 的 draftSha256 未同步更新（舊證據不可冒充新版本有效）');
-  }
 
-  // Formal approval isolation: Stage 1 validator must reject fabricated Stage 3 approval
   const s3Ev = evidence.stages?.stage3;
   if (s3Ev?.semanticApproved === true || s3Ev?.avgValidated === true || s3Ev?.reviewer !== null || s3Ev?.approvedAt !== null) {
     addErr('evidence.stage3', '階段一工作草稿不得預填或冒充階段三核准狀態');
@@ -310,23 +413,29 @@ export function validateG1752Stage1Story({ mdText, evidence, filePath, expectedA
     return { state: errors.length ? 'invalid' : 'prebuild-unstarted', errors };
   }
 
-  // Not prebuild: validate selection if present
+  // 5. Option selection evidence check (independent of full-Markdown SHA!)
   const selection = evidence.stages?.stage1?.ordinaryChoiceSelection;
   if (selection !== null && selection !== undefined) {
-    if (evidence.stages.stage1.sourceVersion !== actualSha) {
-      addErr('evidence.stage1.sourceVersion', 'stage1.sourceVersion 與目前原稿 SHA-256 不符，改寫後須重新驗證／抽選');
-    }
     try {
       const replayed = replayChoiceSelection(selection);
       const digest = computeOptionsDigest(options);
       if (selection.optionsDigest !== digest) {
-        addErr('section4.optionsDigest', '第4區選項表格內容與抽選證據 optionsDigest 不符（改寫選項後舊證據無效）');
+        addErr('section4.optionsDigest', '第4區選項表格內容與抽選證據 optionsDigest 不符（若僅非實質文字潤飾請定向同步；若改動實質行動或候選請重新抽選）');
       }
       for (const letter of CHOICE_LETTERS) {
         const row = options.find(o => o.id === letter);
+        const mappedId = replayed.finalChoiceMap[letter];
         const expectedEmotional = String(replayed.choices[letter].emotional);
-        if (row && row.emotional !== expectedEmotional) {
-          addErr(`section4.option.${letter}`, `選項 ${letter} 的 emotional 應為 ${expectedEmotional}，實為 ${row.emotional}`);
+        if (row) {
+          if (row.emotional !== expectedEmotional) {
+            addErr(`section4.option.${letter}`, `選項 ${letter} 的 emotional 應為 ${expectedEmotional}，實為 ${row.emotional}`);
+          }
+          const expectedCandidate = mappedId === 'emotional'
+            ? selection.emotionalCandidate
+            : selection.ordinaryCandidates?.find(c => c.id === mappedId);
+          if (expectedCandidate && row.action !== expectedCandidate.action) {
+            addErr(`section4.option.${letter}.action`, `選項 ${letter} 的「教師已完成的客觀行動」與抽選證據不一致`);
+          }
         }
       }
     } catch (err) {
@@ -334,7 +443,7 @@ export function validateG1752Stage1Story({ mdText, evidence, filePath, expectedA
     }
   }
 
-  // Check completeness for Stage 1 Passed vs Stage 1 In Progress
+  // 6. Check completeness of Stage 1 fields
   const incompleteReasons = [];
   if (!nonEmptyText(info.required_conditions)) incompleteReasons.push('section1.required_conditions 仍含佔位或空白');
   for (const [k, v] of tableRows(s2)) {
@@ -363,7 +472,7 @@ export function validateG1752Stage1Story({ mdText, evidence, filePath, expectedA
     incompleteReasons.push('evidence.stage1.consequenceDirections 四條後果可行方向尚未補齊');
   }
 
-  // Stage 1 boundary: Section 5 must remain Stage 2 placeholder if checking Stage 1
+  // Stage 1 boundary: Section 5 must remain Stage 2 placeholder
   if (!/【待填：階段二/.test(s5)) {
     addErr('section5.boundary', '階段一草稿的第5區應保留階段二佔位，不可提前撰寫完整結局或數值');
   }
@@ -377,9 +486,34 @@ export function validateG1752Stage1Story({ mdText, evidence, filePath, expectedA
   if (errors.length > 0) {
     return { state: 'invalid', errors };
   }
+
+  if (incompleteReasons.length > 0) {
+    return {
+      state: 'stage1-in-progress',
+      incompleteReasons,
+      errors: [],
+    };
+  }
+
+  // 7. Content is complete & mechanically valid: check whether formal Stage 1 semantic review matches current SHA
+  const actualSha = sha256(mdText);
+  const s1Ev = evidence.stages?.stage1 ?? {};
+  const hasPassedRecord = s1Ev.status === 'passed' && s1Ev.semanticReviewed === true;
+  const shaMatchesApproved = hasPassedRecord && s1Ev.sourceVersion === actualSha;
+
+  if (shaMatchesApproved) {
+    return {
+      state: 'stage1-passed',
+      incompleteReasons: [],
+      staleApproval: false,
+      errors: [],
+    };
+  }
+
   return {
-    state: incompleteReasons.length === 0 ? 'stage1-passed' : 'stage1-in-progress',
-    incompleteReasons,
+    state: 'stage1-ready-for-review',
+    incompleteReasons: [],
+    staleApproval: hasPassedRecord && s1Ev.sourceVersion !== actualSha,
     errors: [],
   };
 }

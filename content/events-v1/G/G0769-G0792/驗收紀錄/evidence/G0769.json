@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3c73d7f079895f2bdeb87fb7c81e771b1280692c7df64c6d861b679fda2f6407",
+      "checkedAt": "2026-11-27T14:07:59.127Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把這張換成另兩張中他同意的一張，講真實錯法。",
+            "action": "導師已提出更換匿名例題的具體方案，未擅換或取得新授權。",
+            "tradeoff": "要重接講評"
+          },
+          {
+            "id": 2,
+            "text": "保留猜出的答案，只由我示範如何檢查它。",
+            "action": "導師已以本人教學示範檢驗該答案，明示並非重建作者推理。",
+            "tradeoff": "看不到原本解題歷程"
+          },
+          {
+            "id": 3,
+            "text": "讓全班各自寫一個可能得到這答案的算法，不猜作者。",
+            "action": "導師已安排原課內有限算法練習，明示是新建路徑而非作者原意。",
+            "tradeoff": "可能離原進度很遠"
+          },
+          {
+            "id": 4,
+            "text": "這張不再投，回到原課本例題。",
+            "action": "導師已停止本人可決定的非必要投影，改用原可用例題教學。",
+            "tradeoff": "少了學生作品互動"
+          },
+          {
+            "id": 5,
+            "text": "他若願意，只請他說當時怎麼決定用猜的，不要補算法。",
+            "action": "導師已提出可拒絕的猜答經驗分享邀請，未取得答應或公開身份。",
+            "tradeoff": "可能只有一句沒想法"
+          },
+          {
+            "id": 6,
+            "text": "把猜出的數和原題條件並排，請各人圈出一處不合。",
+            "action": "導師已安排有限條件核對，不以局部找錯取代原教學。",
+            "tradeoff": "只看得到局部問題"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏想知道自己的直覺有多準，先把原備課講評收起來，當著大家說我本來也差點替它編理由。",
+          "action": "導師已停止原推測性講評並作本人有限非敏感備課揭露，不將猜答羞辱化。",
+          "tradeoff": "老師的專業形象會鬆一下，也少講一段"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 60749001
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "2e191dac0af786d7ebad4778d2a7499c4b2fe540d1d4af0bdfccd8673d8256ca"
+      },
+      "consequenceDirections": {
+        "A": "可聽真正決策，不逼作者替教案編理由。",
+        "B": "可以練回題意，仍需教師提供完整正確回饋。",
+        "C": "檢驗結果不同於猜出理由，不冒認學生思路。",
+        "D": "教師公開自己的判讀失誤，不公開作者或逼他配合笑。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6b9a53f3780d27393e2c829a88d872be123dee2c2c94482f3a0107fa2069fbb2",
+    "draftSha256": "3c73d7f079895f2bdeb87fb7c81e771b1280692c7df64c6d861b679fda2f6407",
     "seedAssignmentVersion": 1
   }
 }

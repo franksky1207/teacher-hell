@@ -16,14 +16,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5afd9ac8c5042cf163771eb6bd615c4a1405ad4b0791ce25ca38c9e7de96e17d",
+      "checkedAt": "2026-11-27T14:07:59.147Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在原允許等候時間陪他坐著，不再追問住處細節。",
+            "action": "導師已在既有照看安排及允許時限內提供本人有限安靜陪等，不變更返家交接。",
+            "tradeoff": "自己的原約會晚一點"
+          },
+          {
+            "id": 2,
+            "text": "由原有已知情成人接續照看，我完成交接後按原安排離開。",
+            "action": "導師已依既定可行安排完成本人必要交接，不將學生單獨留置。",
+            "tradeoff": "學生可能捨不得你走"
+          },
+          {
+            "id": 3,
+            "text": "在公共區和他寫下已確認的返家步驟，寫完按原接續走。",
+            "action": "導師已協助整理當下已核實的有限返家資訊，不保證未確認結果。",
+            "tradeoff": "感受可能沒說到"
+          },
+          {
+            "id": 4,
+            "text": "他若願意，只談明天放學希望提前知道哪一件事。",
+            "action": "導師已提出有限自願次日需求詢問，未承諾新照看時段或家庭改變。",
+            "tradeoff": "今天不會立刻改好"
+          },
+          {
+            "id": 5,
+            "text": "讓他在允許時間自選公共區安全座位，成人仍照看。",
+            "action": "導師已提供原照看範圍內的有限座位選擇，不延長留校或退出照護。",
+            "tradeoff": "沒有熟悉教室的感覺"
+          },
+          {
+            "id": 6,
+            "text": "在原接續前做一件他願意的中性小事，例如讀自己帶的書，不談燈。",
+            "action": "導師已提供原允許等候內的自願安靜活動，不減必要照看及交接。",
+            "tradeoff": "問題暫時沒有被說透"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很捨不得他那一眼，取消自己尚可取消的私人碰面，依原允許時段留到當次交接完成，先把晚到的事如實告訴朋友。",
+          "action": "導師已取消本人可自主取消的私人邀約並通知對方，在原允許照看時限內留至既定交接，不延長學生留校。",
+          "tradeoff": "私人關係受影響，也不能保證學生就安心"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4076716296
+        },
+        "selectedIds": [
+          1,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "f6f31d5fbe257dd9deb875be867395587b8934f72e603e9f17e29c8552f07411"
+      },
+      "consequenceDirections": {
+        "A": "可保可靠接續，不把轉交當已不需要支持。",
+        "B": "教師改動自身私人安排以多留完整陪伴，必要照看原已共同有保障，不以犧牲換學生感謝。",
+        "C": "可以降低追問壓力，不以轉移注意代替必要支持。",
+        "D": "可有安靜陪伴，不超過正式交接或許可留校時間。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "dd789c7e368af61b4fc8acf540cbde25210790fbfff7ef47221bc2366a3bcf32",
+    "draftSha256": "5afd9ac8c5042cf163771eb6bd615c4a1405ad4b0791ce25ca38c9e7de96e17d",
     "seedAssignmentVersion": 1
   }
 }

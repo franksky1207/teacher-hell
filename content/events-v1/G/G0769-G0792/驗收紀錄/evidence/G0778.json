@@ -15,14 +15,155 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b8700c1b51ff59f8d2affb13673e7257fce52b700aa9da2157ef87f668652a67",
+      "checkedAt": "2026-11-27T14:07:59.137Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照本人意願不播該曲，其餘原歌單維持適當音量。",
+            "action": "導師已依已確認意願維持原有限歌單，不補播被撤曲。",
+            "tradeoff": "替人出頭的學生可能尷尬"
+          },
+          {
+            "id": 2,
+            "text": "本段改成安靜吃點心，後面再按原安排。",
+            "action": "導師已在可調整班會短段停止非必要播放，維持飲食及照看安排。",
+            "tradeoff": "少了一段音樂"
+          },
+          {
+            "id": 3,
+            "text": "讓願意聽歌的人在原規範下自選，不要求全班一起聽。",
+            "action": "導師已提供原校規允許的有限個人聆聽選擇，不新增設備許可。",
+            "tradeoff": "班內氣氛分散"
+          },
+          {
+            "id": 4,
+            "text": "這段只聊大家喜歡的歌名，不播也不追問家人。",
+            "action": "導師已發起有限自願歌名交流，停止本短段播放。",
+            "tradeoff": "沒有實際音樂"
+          },
+          {
+            "id": 5,
+            "text": "把原剩餘歌曲縮成一首由原主持者依自願回覆選，不辦人氣排名。",
+            "action": "導師已限縮本人可調整播放時段，將單曲選擇交原主持依已知意願處理，不增排名。",
+            "tradeoff": "部分喜好不會播到"
+          },
+          {
+            "id": 6,
+            "text": "他若願意，另約課內允許的短空檔只談上次的不滿。",
+            "action": "導師已提出可拒絕的有限私人談話邀請，未取得答應或要求原諒。",
+            "tradeoff": "會占自己的空檔，也可能被拒"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再拿熱鬧遮過去，剩下班會不當娛樂主持了。留在場內陪大家，接下來依原幹部的既定安排走。",
+          "action": "導師已退出當次剩餘班會的非必要娛樂主持，維持本人全程必要照看與回應，由原合法班務安排接續，不增派學生成人責任。",
+          "tradeoff": "放掉自己掌氣氛的位置，現場冷下來也得待著"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 581029178
+        },
+        "selectedIds": [
+          5,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "a1117c8ba77882ecf8f470f1a3c7f75ce896cd2c0187b31af320a804eabf6b71"
+      },
+      "consequenceDirections": {
+        "A": "可以分享喜好，不逼學生揭露照顧經驗。",
+        "B": "後續娛樂主導真正交回原班務安排，不只暫停一首歌；教師仍須接必要需求，不能因尷尬放任或指責學生。",
+        "C": "可以限時，未投票活動不虛構取消。",
+        "D": "可保當事選擇，不藉歌單處理舊怨。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒只在吃點心短段停主持，與普通2安靜吃點心過近；改為退出本次剩餘非必要娛樂主持，承擔失去主導的代價，必要照看不變。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "照本人意願不播該曲，其餘原歌單維持適當音量。",
+                "action": "導師已依已確認意願維持原有限歌單，不補播被撤曲。",
+                "tradeoff": "替人出頭的學生可能尷尬"
+              },
+              {
+                "id": 2,
+                "text": "本段改成安靜吃點心，後面再按原安排。",
+                "action": "導師已在可調整班會短段停止非必要播放，維持飲食及照看安排。",
+                "tradeoff": "少了一段音樂"
+              },
+              {
+                "id": 3,
+                "text": "讓願意聽歌的人在原規範下自選，不要求全班一起聽。",
+                "action": "導師已提供原校規允許的有限個人聆聽選擇，不新增設備許可。",
+                "tradeoff": "班內氣氛分散"
+              },
+              {
+                "id": 4,
+                "text": "這段只聊大家喜歡的歌名，不播也不追問家人。",
+                "action": "導師已發起有限自願歌名交流，停止本短段播放。",
+                "tradeoff": "沒有實際音樂"
+              },
+              {
+                "id": 5,
+                "text": "把原剩餘歌曲縮成一首由原主持者依自願回覆選，不辦人氣排名。",
+                "action": "導師已限縮本人可調整播放時段，將單曲選擇交原主持依已知意願處理，不增排名。",
+                "tradeoff": "部分喜好不會播到"
+              },
+              {
+                "id": 6,
+                "text": "他若願意，另約課內允許的短空檔只談上次的不滿。",
+                "action": "導師已提出可拒絕的有限私人談話邀請，未取得答應或要求原諒。",
+                "tradeoff": "會占自己的空檔，也可能被拒"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我現在也不想假裝按播放就能接回歡樂，這段由我陪大家吃，不再主持；請原幹部照既定方式接下一段。",
+              "action": "導師已停止本人非必要音樂主持並維持現場照看，由原合法班務安排接續，不免除責任。",
+              "tradeoff": "現場可能冷掉，自己得留在尷尬裡"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2611218337
+            },
+            "selectedIds": [
+              5,
+              1,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 5,
+              "C": "emotional",
+              "D": 1
+            },
+            "optionsDigest": "23086739c9529d5206168e7153c55f3d06a11cc7fd665e15e0f3dfa5a0ba917a"
+          },
+          "previousConsequenceDirections": {
+            "A": "需既有允許的個人方式，不准私帶未准設備或外放互壓。",
+            "B": "可以限時，未投票活動不虛構取消。",
+            "C": "教師退出額外娛樂主導但仍在場履責，不把必要照顧交給學生。",
+            "D": "可保當事選擇，不藉歌單處理舊怨。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a3f78555e2bc45c2ab04d2190a9a816bb8eadf6ca7070d1e4cb7d1a55be56f4d",
+    "draftSha256": "b8700c1b51ff59f8d2affb13673e7257fce52b700aa9da2157ef87f668652a67",
     "seedAssignmentVersion": 1
   }
 }

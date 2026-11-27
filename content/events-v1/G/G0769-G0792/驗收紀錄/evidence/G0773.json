@@ -15,14 +15,82 @@
     "G01",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3ca3a8c9dd5ade6bd6cab3624caa2d4f8f76d6c2b2df7d76309b41909462cde0",
+      "checkedAt": "2026-11-27T14:07:59.132Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓他按自己最後確認的原稿讀，致謝留不留由他。",
+            "action": "導師已提供在原核可範圍保留本人原稿的選擇，不強制致謝。",
+            "tradeoff": "同一句會再聽一遍"
+          },
+          {
+            "id": 2,
+            "text": "協助他刪接不想念的段落，先核對意思再送原承辦確認。",
+            "action": "導師已提供有限刪接協助並提出改稿確認，未取得核准或代定內容。",
+            "tradeoff": "銜接可能沒原來順"
+          },
+          {
+            "id": 3,
+            "text": "他若同意，把原稿改為本人署名文字，不當場朗讀。",
+            "action": "導師已提出可拒絕的文字替代方案，未取得同意或發布。",
+            "tradeoff": "失去現場語氣"
+          },
+          {
+            "id": 4,
+            "text": "向承辦申請把他排到稍後，由他再決定是否朗讀。",
+            "action": "導師已提出限原總時段的順序調整申請，不擅延長活動。",
+            "tradeoff": "可能影響原順序"
+          },
+          {
+            "id": 5,
+            "text": "他想說的話只先私下講給我聽，不把這當已完成展示。",
+            "action": "導師已提出有限私人收聽邀請，未取得答應或替代核定展示。",
+            "tradeoff": "公開成果暫時空著"
+          },
+          {
+            "id": 6,
+            "text": "本次自願朗讀退出，原稿還他，不另安排替代任務。",
+            "action": "導師已受理本人可拒絕的非必要朗讀退出選擇並按原職權交接，不加罰。",
+            "tradeoff": "準備許久卻沒有上場"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點吃味這句先被主任說走，問他願不願跟我坐在旁邊，先由我只讀他准的一小句，再把真正的聲音留給他。",
+          "action": "導師已提出需相關人核可的有限雙人讀法，未取得授權、核准或完成演讀。",
+          "tradeoff": "可能讓我的不甘心比他的作品還顯眼"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3310320234
+        },
+        "selectedIds": [
+          1,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "00ba7690aa3c527462993f3c1772262dcf819b420bd1e754b034ac8607b7fee4"
+      },
+      "consequenceDirections": {
+        "A": "文字用途仍需同意，不用撤讀懲罰生氣。",
+        "B": "新的雙人讀法需本人與承辦同意，不代替他發脾氣或強迫上台。",
+        "C": "可保作者版本，不把重複當校方代說過。",
+        "D": "能保原先期待，不能隱瞞正式安排仍需交接。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4bb6805577809c770ceaf5324ddb8d7857659115abe29b20727f574addebe516",
+    "draftSha256": "3ca3a8c9dd5ade6bd6cab3624caa2d4f8f76d6c2b2df7d76309b41909462cde0",
     "seedAssignmentVersion": 1
   }
 }

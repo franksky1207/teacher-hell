@@ -15,14 +15,82 @@
     "G01",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ed38ef6098f4d967708c1905bf092386030013d24853bc28d1552cdc0d3395a9",
+      "checkedAt": "2026-11-27T14:07:59.141Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持原安全練習節奏，不另加展示輪。",
+            "action": "導師已依體育教師安排維持原有限練習，不增加展示或改安全距離。",
+            "tradeoff": "朋友可能一直沒看清"
+          },
+          {
+            "id": 2,
+            "text": "請體育老師評估一次低速分解示範，觀眾仍在線外。",
+            "action": "導師已提出需專業教師確認的有限分解方案，未核准或執行。",
+            "tradeoff": "占掉一輪完整練習"
+          },
+          {
+            "id": 3,
+            "text": "依教師指示輪換既有安全觀察位，不為一人移近。",
+            "action": "導師已提出原安全站位內的有限輪換安排，未縮減落點或移轉照看責任。",
+            "tradeoff": "其他觀眾也要輪等"
+          },
+          {
+            "id": 4,
+            "text": "改在原課內看既有合法動作圖，不再新增本段助跑。",
+            "action": "導師已在協同權限內採有限圖示回饋，停止本人非必要新增助跑。",
+            "tradeoff": "沒了現場表演感"
+          },
+          {
+            "id": 5,
+            "text": "讓他自願用話指出自己最想讓人注意的一步，不做新動作。",
+            "action": "導師已提出有限自願動作口述邀請，不增加身體示範或拍攝。",
+            "tradeoff": "可能不如直接表演過癮"
+          },
+          {
+            "id": 6,
+            "text": "這小段只記本人練習重點，不留觀眾評論。",
+            "action": "導師已採用有限個人練習記錄，不新增互評或要求他人鼓掌。",
+            "tradeoff": "失去同伴立即肯定"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想看清他到底在炫哪一拍，問他願不願讓我在既有安全線外當這輪唯一受邀觀察者；我說我的，看得不準也認。",
+          "action": "導師已提出限原安全練習內的自願個別觀察邀請，未取得同意或增加助跑。",
+          "tradeoff": "他最想給看的朋友不一定領情，我可能看錯"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2599848453
+        },
+        "selectedIds": [
+          4,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "61fa2395c884b152fea2e520494352db91ff28b5f757754d1bd85bd38d2aff64"
+      },
+      "consequenceDirections": {
+        "A": "可把焦點拉回本人，不抹去原協作與安全貢獻。",
+        "B": "可以公平看，所有位置仍須保持隔離。",
+        "C": "可以談姿勢，不把圖當實際完成技能。",
+        "D": "教師提供有限直接關注，不替朋友答應、不加演示輪或移近危險區。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e020b8084d9ba6830dcf0f23e54984dc17d2386cb5a627f8a84ff10fdfc92239",
+    "draftSha256": "ed38ef6098f4d967708c1905bf092386030013d24853bc28d1552cdc0d3395a9",
     "seedAssignmentVersion": 1
   }
 }

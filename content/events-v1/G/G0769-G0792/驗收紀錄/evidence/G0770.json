@@ -15,14 +15,82 @@
     "G05",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3e7a194324f70a6e3c927e3adcdcd5e509a499a880735925f10db7f62ed43a44",
+      "checkedAt": "2026-11-27T14:07:59.129Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "全班原地重做一輪接收確認，不走動。",
+            "action": "導師已安排原核可範圍內的有限靜態訊息確認，不作正式撤離演練。",
+            "tradeoff": "已聽清的人要再花時間"
+          },
+          {
+            "id": 2,
+            "text": "分前後排各說剛才實際收到哪句，由我補齊。",
+            "action": "導師已在原地逐區查核已接收內容並補充必要訊息，不移轉指揮責任。",
+            "tradeoff": "進度暫停"
+          },
+          {
+            "id": 3,
+            "text": "使用既有可用文字提示，再核對一次意思。",
+            "action": "導師已提供核可文字輔助及必要理解確認，未證實原擴音已改善。",
+            "tradeoff": "少了只聽口令的測試"
+          },
+          {
+            "id": 4,
+            "text": "先結束這段示範，向承辦提出後排聽音問題。",
+            "action": "導師已結束非必要重試並提出具體場地訊息問題，必要交接與安全安排照常。",
+            "tradeoff": "當天沒有新測試結果"
+          },
+          {
+            "id": 5,
+            "text": "只對剛才沒收完整的區域作原地短確認，其餘讀原班會資料。",
+            "action": "導師已在可照看範圍分配有限靜態核對及原資料閱讀，未讓前排代管後排。",
+            "tradeoff": "班內同時兩種安排較難照看"
+          },
+          {
+            "id": 6,
+            "text": "請各人匿名標出自己漏聽的位置，作改善附件。",
+            "action": "導師已收集限本次接收位置的非敏感回饋，不判定正式演練合格。",
+            "tradeoff": "回收整理要時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再站前面喊「大家都有聽到吧」，這段改由我坐最後排，請原有成人夥伴在前方說，我也填漏聽的字。",
+          "action": "導師已提出需原在場成人同意的站位交換測試，未獲同意或完成試驗。",
+          "tradeoff": "要協調成人，也可能證明自己的安排很差"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 38791215
+        },
+        "selectedIds": [
+          1,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "7f6ebea4989094807c4e28b9ae68fffba4c273dd8ab2b592b127f43ac12ddc12"
+      },
+      "consequenceDirections": {
+        "A": "可以不讓全班重複，成人仍照顧所有區域。",
+        "B": "教師親自改接收位置，未答應前不啟動，不把學生當指揮。",
+        "C": "可以檢查是否人人收到，不以整齊動作當聽懂。",
+        "D": "能留下可查問題，不以匿名紙代替當下必要說明。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9a42500f4b81363059a66438e5ce80adf111fe755d7d63abeca2c6a24fdaa4d9",
+    "draftSha256": "3e7a194324f70a6e3c927e3adcdcd5e509a499a880735925f10db7f62ed43a44",
     "seedAssignmentVersion": 1
   }
 }

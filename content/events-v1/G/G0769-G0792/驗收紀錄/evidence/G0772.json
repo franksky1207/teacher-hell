@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "67fb19a8c9a2ace39a1876b983eab3bff0d7559dc78f831d3b6df97f2edf6f23",
+      "checkedAt": "2026-11-27T14:07:59.131Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "退到側邊，這輪只看教練，不追求跳完整首。",
+            "action": "玩家已在教練允許位置退出本輪跟跳，改為有限觀察。",
+            "tradeoff": "今晚的目標延後"
+          },
+          {
+            "id": 2,
+            "text": "請教練允許我只練那個轉向，不參加整首。",
+            "action": "玩家已提出有限分段練習請求，未獲准或完成練習。",
+            "tradeoff": "要切開練習，也可能不被允許"
+          },
+          {
+            "id": 3,
+            "text": "移到不供人跟看的位置，依教練指示跳本輪。",
+            "action": "玩家已在教練同意的非示範位置參與原有限課程，不保證完成。",
+            "tradeoff": "放掉前排位置"
+          },
+          {
+            "id": 4,
+            "text": "今天身體到這裡，向教練告退。",
+            "action": "玩家已結束本人當日自願舞課參與，依場地規則離開。",
+            "tradeoff": "白期待了一整天"
+          },
+          {
+            "id": 5,
+            "text": "在休息處只記下錯拍，這輪不跳也不錄別人。",
+            "action": "玩家已在允許休息處記錄本人錯拍並停止本輪動作。",
+            "tradeoff": "少了身體練習"
+          },
+          {
+            "id": 6,
+            "text": "問後排願不願下課後口頭告訴我跟反在哪裡。",
+            "action": "玩家已提出可拒絕的短回饋邀請，未取得答應或延長場地使用。",
+            "tradeoff": "會用一點休息時間，也可能被拒"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏不甘心用退場結束，問教練能不能讓我面向大家只喊拍、不跳，這次把左右交還給教練。",
+          "action": "玩家已提出在教練掌課下的有限喊拍協助，未獲准或實際領拍。",
+          "tradeoff": "整首仍沒跳完，還可能喊錯挨笑"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1750312949
+        },
+        "selectedIds": [
+          3,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 1,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "e6711056cec20436b768839c231821a488cb32ebb2c4f0a049be2edacdfa7212"
+      },
+      "consequenceDirections": {
+        "A": "可以追整首，不再自任示範，疲勞仍須隨時停。",
+        "B": "可以降低誤帶，觀察不代表已學會。",
+        "C": "可讓疲憊停下，不將退課說成別人害自己。",
+        "D": "玩家換成需核可的有限節拍協助，不因想贏過自己取得指導權。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f6a85520c42dae3fc26f77c7fc0ae75a2d215a5c5fd5b75b83bb735bb2795420",
+    "draftSha256": "67fb19a8c9a2ace39a1876b983eab3bff0d7559dc78f831d3b6df97f2edf6f23",
     "seedAssignmentVersion": 1
   }
 }

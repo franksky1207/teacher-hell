@@ -14,14 +14,82 @@
   "plannedTags": [
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a85e2c77089924da003cae1ec7ac47a9683406e297c1c7706fc34a3e652a5bf9",
+      "checkedAt": "2026-11-27T14:07:59.136Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "卡片分別交還原作者，由他們自行決定私下收送。",
+            "action": "導師已按原權屬返還未公開卡片，不拆閱或代承諾收受。",
+            "tradeoff": "公開心意暫時沒去處"
+          },
+          {
+            "id": 2,
+            "text": "徵得雙方同意，僅協助這張私下轉交。",
+            "action": "導師已提出有限私下轉交協助，未取得雙方同意或完成交付。",
+            "tradeoff": "家長可能覺得沒有被看見"
+          },
+          {
+            "id": 3,
+            "text": "孩子若願意，請他自選一段送原承辦確認是否可展。",
+            "action": "導師已提出限本人自願及原核稿的摘段方案，未獲准或公開。",
+            "tradeoff": "仍可能感到要替大人表態"
+          },
+          {
+            "id": 4,
+            "text": "保留學生原作品，不為卡片新增展區。",
+            "action": "導師已維持原展示內容，不增設私人致謝用途或扣卡。",
+            "tradeoff": "家長這次準備沒進展示"
+          },
+          {
+            "id": 5,
+            "text": "家長若只想道謝，提供私下向原協助者口頭表達的機會。",
+            "action": "導師已發出可拒絕的有限私人致謝交流邀請，未取得收聽或公開同意。",
+            "tradeoff": "話不會留在牆上"
+          },
+          {
+            "id": 6,
+            "text": "詢問是否願保留卡片到家中再選，不在現場拆。",
+            "action": "導師已提出由原持有人帶回再決定的建議，未代管或承諾新用途。",
+            "tradeoff": "事情今天不會解決"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點羨慕孩子有這麼一張不給別人看的卡，乾脆把自己的好奇收掉，請家長也別向我解釋這張寫了什麼。",
+          "action": "導師已拒絕本人對該私卡非必要內容的進一步收聽及閱覽，不限制原權利者自行溝通。",
+          "tradeoff": "家長可能以為我沒興趣聽他的心意"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1270229600
+        },
+        "selectedIds": [
+          1,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "454322e631eacbe61a884ff2c28cffde816441d464bcd978fe86ee846a31a821"
+      },
+      "consequenceDirections": {
+        "A": "可以把致謝與展示分開，不能強求對方留下聽。",
+        "B": "可保權利，不由教師替孩子答應。",
+        "C": "教師明確退出這張卡的內容見證，不替孩子拒收或阻斷家人正常溝通。",
+        "D": "作者、孩子及展示核可都不能省略。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "dab5102fcdd662185d0900c41370ae22cc09c6345f51742e1817081ad4f76b8f",
+    "draftSha256": "a85e2c77089924da003cae1ec7ac47a9683406e297c1c7706fc34a3e652a5bf9",
     "seedAssignmentVersion": 1
   }
 }

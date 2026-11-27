@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cd001ebbd3a7ff7d71e824d68038be858c105a8b37f8e464969bd09557067a98",
+      "checkedAt": "2026-11-27T14:07:59.148Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "各組依原責任自行更正，他只處理自己份。",
+            "action": "導師已停止本人非必要跨組指派，明確回歸各組原有更正責任。",
+            "tradeoff": "他失去一次看完的掌握感"
+          },
+          {
+            "id": 2,
+            "text": "問各組是否願各派一名自願對讀，依原總量互換一小段。",
+            "action": "導師已提出限等值負擔及自願的局部互讀方案，未取得同意或完成核對。",
+            "tradeoff": "要再協調，也可能不同意"
+          },
+          {
+            "id": 3,
+            "text": "我先檢查本課共同格式錯誤，各組仍自行核真數字。",
+            "action": "導師已在本人授課權限作有限共通格式檢查，不承接全部數據保證。",
+            "tradeoff": "教師多花時間"
+          },
+          {
+            "id": 4,
+            "text": "這次不再互借稿，各組只回看自己原始來源。",
+            "action": "導師已限本課新增非必要互傳稿件，要求原負擔內有限來源核對，不扣私物。",
+            "tradeoff": "交流機會少"
+          },
+          {
+            "id": 5,
+            "text": "讓他先停額外校對休息，原組由其他成員接原分工。",
+            "action": "導師已依原分工協調必要接續並停止本人額外校對要求，不強派新總量。",
+            "tradeoff": "他可能怕別人改得不對"
+          },
+          {
+            "id": 6,
+            "text": "將本次發現整理成不署名的兩個檢查提醒，不展示整份錯稿。",
+            "action": "導師已提供本人授課權限內的有限匿名共通檢查提示，不公開個人失誤。",
+            "tradeoff": "看不到各組細節"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也心疼他替大家找完錯才輪到自己，先替他擋掉這一輪所有非必要加問，由我只收各組一個問題，不再把人指回他。",
+          "action": "導師已停止本人轉介額外校對並提供每組限一問的本人授課回應方式，不承諾全稿代校或全答完。",
+          "tradeoff": "問題會堆到自己這裡，也可能只答得完一部分"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2343603764
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "3402703bfb305afb91fc2e42008d41a1d78315613c1308c895197b31294bff59"
+      },
+      "consequenceDirections": {
+        "A": "可分清負擔，必要正確性仍由原授課安排核實。",
+        "B": "可分散閱讀，不以互換變免費全篇代校。",
+        "C": "可讓方法共用，不把提醒當所有稿已核好。",
+        "D": "教師承接明確有限的新問答窗口，學生仍可自願交友不受禁，必要組務不變。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bc1f73d7b47582b81b69660897eab1d265eef69e417b8a911fa3bbb3a99f4d49",
+    "draftSha256": "cd001ebbd3a7ff7d71e824d68038be858c105a8b37f8e464969bd09557067a98",
     "seedAssignmentVersion": 1
   }
 }

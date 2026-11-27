@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0e4923952f791938de98ff387d5c8eb64f85e2445e180f9b2b2fdbaedeabd103",
+      "checkedAt": "2026-11-27T14:07:59.130Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問留言人和他是否同意，把背面另存，正面不再用。",
+            "action": "導師已提出需相關人同意的背面保存方案，未複製或公開。",
+            "tradeoff": "要逐一確認"
+          },
+          {
+            "id": 2,
+            "text": "這次整塊牌交回原保管人，不再加工。",
+            "action": "導師已停止本人額外改造，按原權屬交接整牌，不擅銷毀。",
+            "tradeoff": "那些感謝暫時看不見"
+          },
+          {
+            "id": 3,
+            "text": "用現有空白牌只列書名與借法，不放推薦或留言。",
+            "action": "導師已使用班級可用材料製作無暴雷的必要借閱標示，不轉用原留言。",
+            "tradeoff": "看起來比較冷清"
+          },
+          {
+            "id": 4,
+            "text": "讓他自願選一句只給自己留，其他先原封不動。",
+            "action": "導師已提出有限私人留存建議，未取得同意、抄存或處分其餘文字。",
+            "tradeoff": "可能覺得選不出來"
+          },
+          {
+            "id": 5,
+            "text": "圖書角照原編號運作，本次不放新牌。",
+            "action": "導師已暫不增加非必要新牌，維持原可用分類借閱方式。",
+            "tradeoff": "同學找書較不方便"
+          },
+          {
+            "id": 6,
+            "text": "他願意的話，讓他說明新牌怎麼設計，其他人自願幫做。",
+            "action": "導師已發出限原班務的自願設計協作邀請，未取得參與或新牌成品。",
+            "tradeoff": "會占整理時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想被寫一句，乾脆拿自己的空白便條先認領「只收謝謝、不寫結局」的小角落，願意的人再留給想謝的人。",
+          "action": "導師已設置有限自願私人致謝便條方式並表達本人期待，未保證有人留言或授權公開。",
+          "tradeoff": "可能一張都收不到，也會搶掉股長的焦點"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1010555595
+        },
+        "selectedIds": [
+          1,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "8d80046438fdd3222a6804bd03217001d798d97dfb60325f75b96f2251475d3c"
+      },
+      "consequenceDirections": {
+        "A": "可留情感，不把留言當當然公開素材。",
+        "B": "教師發起另一次自願直接致謝，不挪用原牌、不評誰收得多。",
+        "C": "可由股長決定實用內容，不強迫他先說感謝。",
+        "D": "可以縮小公開壓力，選句仍需留言者相關用途同意。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e9be3e19e2b2a0673d7fd835e00fd465e8cf776588c8afe5d2b7a84d35b7be5c",
+    "draftSha256": "0e4923952f791938de98ff387d5c8eb64f85e2445e180f9b2b2fdbaedeabd103",
     "seedAssignmentVersion": 1
   }
 }

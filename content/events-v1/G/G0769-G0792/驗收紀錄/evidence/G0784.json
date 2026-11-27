@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d0c6150a33321052d0b211fe8ee126b9f1939028beb1a2a330af5b38ceb8eeef",
+      "checkedAt": "2026-11-27T14:07:59.142Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向教務提出本人可依法承接的這一堂，由教務確認。",
+            "action": "導師已提出限本人法定資格與可用時段的代課意願，未獲派或開始代課。",
+            "tradeoff": "自己少一段可安排時間"
+          },
+          {
+            "id": 2,
+            "text": "把本人已知的錯誤溝通書面補給教務，不替任何人答應。",
+            "action": "導師已提交本人可確認的有限溝通補充，未核定他人同意或追究私怨。",
+            "tradeoff": "留下自己說錯話的紀錄"
+          },
+          {
+            "id": 3,
+            "text": "請教務說明未來此類空堂調度的正式依據，不把這堂等到結論才接。",
+            "action": "導師已提出有限正式調度依據詢問，維持現有必要教學交接。",
+            "tradeoff": "可能被看成較真"
+          },
+          {
+            "id": 4,
+            "text": "同事若願意，協助把他本次可承接與不能承接的時段列清。",
+            "action": "導師已提出可拒絕的有限時段整理協助，未取得資料或替他作派課承諾。",
+            "tradeoff": "可能像又叫他填一份"
+          },
+          {
+            "id": 5,
+            "text": "自己不再介入找人，將新增協調交原教務處理。",
+            "action": "導師已停止本人非必要代為找人行為，將新增協調明確交回教務，不退出既有責任。",
+            "tradeoff": "可能被認為只收回話沒幫忙"
+          },
+          {
+            "id": 6,
+            "text": "提議原有可用協同人力作有限支援，請教務評估。",
+            "action": "導師已向教務提出限既有可用人力的支援評估建議，未取得同意或完成調派。",
+            "tradeoff": "未必有合適人，也不能免成本"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我實在怕再開口又像欠人情，這回不當中間人了；請同事別再經我轉派課口信，直接走教務，我也照這樣做。",
+          "action": "導師已撤回本人非必要私下轉派角色並向同事明示正式聯繫方式，不拒法定通知或保證制度變更。",
+          "tradeoff": "少了熟人間的方便，往後自己也不能走捷徑"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1110827189
+        },
+        "selectedIds": [
+          5,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "52daec770996a29cf51db22f8eb8441849b24419c20a023359ac3b52a6d4468d"
+      },
+      "consequenceDirections": {
+        "A": "可以提出現有選項，不擅約其他老師空堂。",
+        "B": "能供原派課釐清，不是重做必要更正換好感。",
+        "C": "可回職權邊界，原必要資訊與本人正式責任不能撤回。",
+        "D": "教師對本人未來非正式轉派方式作明確限制，不阻斷依法通知或必要交接。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c577e943b788d1b30777cc8cbde25cc77fea694bab043d721853f4780ccf6652",
+    "draftSha256": "d0c6150a33321052d0b211fe8ee126b9f1939028beb1a2a330af5b38ceb8eeef",
     "seedAssignmentVersion": 1
   }
 }

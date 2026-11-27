@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "96eb9b7eecdf5034de424a686e834c800c855739417ce9c87bd3b68567c8f9af",
+      "checkedAt": "2026-11-27T14:07:59.134Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "申請在原允許明亮教室重排短戲，不借暗樓梯。",
+            "action": "導師已提出限核可明室的重排方案，未獲准、拍攝或取得出演同意。",
+            "tradeoff": "原故事氣氛要改"
+          },
+          {
+            "id": 2,
+            "text": "這次只交文字分鏡，不再拍新畫面。",
+            "action": "導師已在本課可調範圍改採有限文字分鏡，不新增取景。",
+            "tradeoff": "沒有演員成果"
+          },
+          {
+            "id": 3,
+            "text": "採用原已合法可用的明室畫面，另配自願旁白。",
+            "action": "導師已提出限原授權材料的旁白方案，未取得新聲音權利或完成片段。",
+            "tradeoff": "不能表現原兩人互動"
+          },
+          {
+            "id": 4,
+            "text": "改成課內現場短讀，不錄影。",
+            "action": "導師已提供原課內有限不錄製讀劇方式，未強派角色或取得參與。",
+            "tradeoff": "看不到原動作"
+          },
+          {
+            "id": 5,
+            "text": "本次保留未完成稿，按真實進度回饋，不追加補拍。",
+            "action": "導師已停止本人非必要補拍安排，依現有合法稿件提供有限回饋。",
+            "tradeoff": "沒有新成片"
+          },
+          {
+            "id": 6,
+            "text": "讓原作者自願畫一張明室替代場景，先看人物如何站。",
+            "action": "導師已提出有限自願構圖選擇，未取得作品、許可或核准。",
+            "tradeoff": "只剩一張構圖"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也受不了那句膽小，提議把台詞改成「我就是不走那裡」，由願意的人在亮處念；不把反光帶當勇敢獎章。",
+          "action": "導師已提出限明室、自願的新台詞改作建議，未取得同意或完成演出。",
+          "tradeoff": "要重寫，原作者可能不喜歡老師改題"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3030251994
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "ab4da6aadfbef3f15f93fe8975ed962837ca3928212a46ecc7efea8cba744087"
+      },
+      "consequenceDirections": {
+        "A": "可以留台詞，參與自願，不以表演證明膽量。",
+        "B": "可少動現場，未同意不剪接或錄音。",
+        "C": "教師明確倡議拒絕冒險的新台詞，需作者及演員自願，不再延長嘲弄。",
+        "D": "可保創作，不把文字當實際風險測試。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "388df4b803c3cb8255564e46014ab5f76805aa6f7ece96888f9eea5b6f471ae8",
+    "draftSha256": "96eb9b7eecdf5034de424a686e834c800c855739417ce9c87bd3b68567c8f9af",
     "seedAssignmentVersion": 1
   }
 }

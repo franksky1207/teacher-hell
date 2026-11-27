@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "76b4523e2e64c84103981ab70f9e9e441365bb5224569e113e886b50b63f0272",
+      "checkedAt": "2026-11-27T14:07:59.138Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "用原可調短段回答學生這一問，餘下照原必需進度。",
+            "action": "導師已在本人授課權限內調整有限教學短段，維持必要內容。",
+            "tradeoff": "少練一個延伸例"
+          },
+          {
+            "id": 2,
+            "text": "先記下問題，這堂仍照校正後的卡順序走。",
+            "action": "導師已記錄本次問題並維持原核定教學順序，不宣稱問題已解答。",
+            "tradeoff": "提問者要等"
+          },
+          {
+            "id": 3,
+            "text": "把這一問改作原課末檢核，不另外加題量。",
+            "action": "導師已在原等值負擔內調整有限課末檢核內容，不追加作業。",
+            "tradeoff": "未必能當下討論透"
+          },
+          {
+            "id": 4,
+            "text": "請學生先用課本文句標出卡住哪裡，我們不收新答案。",
+            "action": "導師已安排有限原文定位活動，不增加繳交或替學生定義心理。",
+            "tradeoff": "說話的熱度可能降"
+          },
+          {
+            "id": 5,
+            "text": "兩位教師協議分看原兩小組，各自回一個共通疑問。",
+            "action": "導師已提出限雙方授課權限的分組回應方案，未取得同事同意或啟動分組。",
+            "tradeoff": "照看及進度要協調"
+          },
+          {
+            "id": 6,
+            "text": "這次不再用卡提問，回原課本做一個完整例子。",
+            "action": "導師已在可調範圍停止本人非必要卡片活動，採原可用課本例題。",
+            "tradeoff": "同事編卡暫時沒上場"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點想看看自己的範例能不能接住這題，請同事先歇口氣，這一小段由我不用卡現場答。",
+          "action": "導師已在原授課安排允許的短段承接本人教學，未保證即席解答正確，必要查核回饋仍履行。",
+          "tradeoff": "可能答得不順，也得自己扛住冷場"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2084171374
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "adc751ad63f7b34a49447796147b998d9407d37ef55e555531bea947ff176daa"
+      },
+      "consequenceDirections": {
+        "A": "可以讓原卡有出口，不把重排當同事白做。",
+        "B": "教師接一段實際授課，不把疲倦同事當評審或免必要協同交接。",
+        "C": "可以維持原計畫，未承諾的後續回覆不可假稱已完成。",
+        "D": "能分辨問的是字詞或概念，不逼完整分析。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4cc859f428ec8d30c239bbb5fdbf45b941dd1bd6e58a1af4bea8ffc12a715dad",
+    "draftSha256": "76b4523e2e64c84103981ab70f9e9e441365bb5224569e113e886b50b63f0272",
     "seedAssignmentVersion": 1
   }
 }

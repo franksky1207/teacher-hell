@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "aafb64d770242a5d062363c8a8cd8e9c02605f21884b21cdc9fd189a152117fc",
+      "checkedAt": "2026-11-27T14:07:59.145Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "模型在核可不擋路處留到課末，再依原分類處理。",
+            "action": "導師已在原場規允許的有限位置暫存非承重模型，明定依約清理。",
+            "tradeoff": "占一點空間"
+          },
+          {
+            "id": 2,
+            "text": "徵得同意後只拍模型，不拍人、不傳班外。",
+            "action": "導師已提出限原權利者同意的模型紀錄方案，未取得授權或拍照。",
+            "tradeoff": "笑話沒有老師入鏡"
+          },
+          {
+            "id": 3,
+            "text": "按原物料分類拆回，不留新展示。",
+            "action": "導師已在原管理權限及物權確認下安排有限拆分回收，不把模型當壞作業。",
+            "tradeoff": "同學剛合力完成就要拆"
+          },
+          {
+            "id": 4,
+            "text": "請原作者自願把它改標成迷你道具，不再寫可坐。",
+            "action": "導師已提出有限自願作品改標建議，未取得同意或改造。",
+            "tradeoff": "要再改字"
+          },
+          {
+            "id": 5,
+            "text": "只請協調者說明怎麼分工，不評論誰的字最醜。",
+            "action": "導師已提出可拒絕的有限分工分享邀請，不設排名或授獎。",
+            "tradeoff": "成品笑點會淡"
+          },
+          {
+            "id": 6,
+            "text": "在原可調短段讓各人自願畫一張真正椅子構想，不再碰紙箱。",
+            "action": "導師已提供有限自願構想圖方式，不新增製作、坐壓或負載測試。",
+            "tradeoff": "沒有新立體作品"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏要把這句拿來用，坐在旁邊真正的椅子說「本日資源回收站長就位」，問他們願不願只在教室演完這一小段。",
+          "action": "導師已在安全真椅上作本人有限自嘲發言並提出自願短互動，不錄製或保證全班接受。",
+          "tradeoff": "暱稱可能留下，笑點也可能沒人接"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4093504558
+        },
+        "selectedIds": [
+          6,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "770937cc6cafc98b91e0e473df8956a06f182ee145bfdd9c5c14a14eb497b05a"
+      },
+      "consequenceDirections": {
+        "A": "可以談設計，不把草圖當承重合格。",
+        "B": "教師承擔被玩笑稱呼，不坐模型、不以師生權力取得拍傳同意。",
+        "C": "可看真正協作，不能逼他替所有人代言。",
+        "D": "可留作品，拍攝不自動授權其他用途。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "23587ab71c853f704113ce16cd527d60b475bf74d6979b5e1f809421dcc884d1",
+    "draftSha256": "aafb64d770242a5d062363c8a8cd8e9c02605f21884b21cdc9fd189a152117fc",
     "seedAssignmentVersion": 1
   }
 }

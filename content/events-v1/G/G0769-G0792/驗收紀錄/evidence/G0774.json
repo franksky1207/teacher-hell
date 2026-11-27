@@ -14,14 +14,82 @@
   "plannedTags": [
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3e31d0a6c1d168025ddedf7f973da8d96af3a4a31a19b3442fdebafd74169572",
+      "checkedAt": "2026-11-27T14:07:59.133Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持雙方自願邀約，請他另選目前願意的球友。",
+            "action": "導師已確認不干預雙方自願配對，提供其餘合法場位選擇。",
+            "tradeoff": "他可能覺得自己又剩下"
+          },
+          {
+            "id": 2,
+            "text": "問三人是否願意短輪替，先說清每段長度。",
+            "action": "導師已提出有限自願輪替方案，未取得共同同意或開始輪換。",
+            "tradeoff": "每個人連續練習變短"
+          },
+          {
+            "id": 3,
+            "text": "提供原場可行的個人控球練習，讓他這輪自行選做。",
+            "action": "導師已提供原核准區域的有限自主個人練習，不強迫參加。",
+            "tradeoff": "不會和心儀對手打"
+          },
+          {
+            "id": 4,
+            "text": "他若願意，這輪只看別人開球，下一輪再邀。",
+            "action": "導師已允許本輪非必要參與改為場外安全觀察，不預約他人。",
+            "tradeoff": "當下少動一輪"
+          },
+          {
+            "id": 5,
+            "text": "請有空位的另一組自行確認是否願加一人，不替他保證。",
+            "action": "導師已向既有可安全容納的另一組提出可拒絕邀請，未完成配對。",
+            "tradeoff": "要離開自己原選半場"
+          },
+          {
+            "id": 6,
+            "text": "問新同學是否願意先和他練一小段開球，再各自邀人。",
+            "action": "導師已提出限雙方自願的短開球練習建議，未取得同意或啟動。",
+            "tradeoff": "會改原本想立即對打的節奏"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他嘴硬也有點酸，拿自己的球問他們願不願改雙打，我也下去；先說我反手很爛。",
+          "action": "導師已在原安全範圍提出本人參與的自願雙打邀請，未取得全員同意或開始比賽。",
+          "tradeoff": "可能拖累搭檔，自己也得放掉休息"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2143894415
+        },
+        "selectedIds": [
+          5,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "2ac28353e5bac3cf6fdb2b0f75f2dbdf2e95f54019b1685490b9ff1581ee2563"
+      },
+      "consequenceDirections": {
+        "A": "可以擴大邀約，不將接納變成別組義務。",
+        "B": "教師親自成為需自願配對的一員，不奪原場或保證他得到指定搭檔。",
+        "C": "可有不依靠配對的練法，不暗示落單者較差。",
+        "D": "可保練習回應，不能要求回報教球人情。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "89223feaa771cb99eef8ab200795c1c16a99d9f9846c85e249fb20e0295ca9bf",
+    "draftSha256": "3e31d0a6c1d168025ddedf7f973da8d96af3a4a31a19b3442fdebafd74169572",
     "seedAssignmentVersion": 1
   }
 }

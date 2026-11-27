@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "683ca96c25fec76dea71605719dcf24ba4510521603b1b3f6c1fb2b9f3408754",
+      "checkedAt": "2026-11-27T14:07:59.141Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照原順序先讓他試明格的工具操作，不搶暗格魚。",
+            "action": "導師已在確認安全後維持原有限明格工具測試安排，不改他人順序。",
+            "tradeoff": "第一條魚可能被別人取走"
+          },
+          {
+            "id": 2,
+            "text": "請物主同意把一條假魚移到明格，再依原序測。",
+            "action": "導師已提出需原作者同意的明格移物方案，未完成移動或測試。",
+            "tradeoff": "藏魚的設計少了驚喜"
+          },
+          {
+            "id": 3,
+            "text": "本輪只看別人用工具，不要求他下手。",
+            "action": "導師已提供有限安全觀察選項，不追加必須完成的接觸。",
+            "tradeoff": "少一次親自操作"
+          },
+          {
+            "id": 4,
+            "text": "改用桌上乾盤的磁力魚試工具，不碰水格。",
+            "action": "導師已提供現有安全乾盤的有限替代練習，不宣稱完成原水格測試。",
+            "tradeoff": "不會測到淨水模型"
+          },
+          {
+            "id": 5,
+            "text": "把模型移到成人確認的明亮桌位，再讓各人照原序。",
+            "action": "導師已在原核可場地完成有限安全移位及必要再確認，不改測試次序。",
+            "tradeoff": "展示時間變短"
+          },
+          {
+            "id": 6,
+            "text": "他自己畫出想測的格與工具位置，這輪先不實測。",
+            "action": "導師已提供原課內有限圖記方式，不進行本人安排的新實測。",
+            "tradeoff": "今天可能沒有取魚結果"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那條魚勾得想釣，問他願不願改成合作：我只照他說的位置動工具，他可以隨時喊停，不算誰先拿到。",
+          "action": "導師已提出在既有安全確認下的有限自願合作取物方案，未取得參與或取魚成功。",
+          "tradeoff": "少了獨立成功，也可能指錯更尷尬"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1568387199
+        },
+        "selectedIds": [
+          5,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "18d127f2bdb97f69ab0367fa7320dddb3b74ed8aabe484bab1f26501f4d6c5d8"
+      },
+      "consequenceDirections": {
+        "A": "教師承擔操作、學生可自願指示與退出，不把未知風險轉嫁給孩子。",
+        "B": "可從旁了解，不把觀看者判為膽小。",
+        "C": "可以降低未知，未同意前不拆移他人作品。",
+        "D": "可改善看見程度，移位不是所有安全條件自動滿足。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d2a06716c3073715991118c773562649917f6859d84edc4c3faf6f013201e8d4",
+    "draftSha256": "683ca96c25fec76dea71605719dcf24ba4510521603b1b3f6c1fb2b9f3408754",
     "seedAssignmentVersion": 1
   }
 }

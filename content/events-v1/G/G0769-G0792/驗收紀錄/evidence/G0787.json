@@ -15,14 +15,155 @@
     "G01",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e454146e90e6166f9dba1b4ebaf4c7ac25439b75b17925b1e5b3d4f871540569",
+      "checkedAt": "2026-11-27T14:07:59.144Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留已有效的原分數，照安全規則打完。",
+            "action": "導師已維持雙方原有效分數與安全分場方式，不保證比賽結果。",
+            "tradeoff": "可能被說老師占了提醒的便宜"
+          },
+          {
+            "id": 2,
+            "text": "詢問雙方是否同意此局不結輸贏，轉原技術練習。",
+            "action": "導師已提出需雙方同意的有限練習轉換，不擅更改既有分數。",
+            "tradeoff": "學生離勝利只差的一分沒了"
+          },
+          {
+            "id": 3,
+            "text": "在原可用時段先暫停一小段，讓他休息後再決定接不接。",
+            "action": "導師已在原時限內暫停本人非必要對打，維持安全照看。",
+            "tradeoff": "可打時間縮短"
+          },
+          {
+            "id": 4,
+            "text": "雙方若同意，原局分數如實留下但本次不再續打。",
+            "action": "導師已提出有限中止本次未完局建議，未取得同意或虛定勝負。",
+            "tradeoff": "他不能立刻拿下勝局"
+          },
+          {
+            "id": 5,
+            "text": "照原分數續打，我只打回合法場內，不加原先可選的難球練習。",
+            "action": "導師已限定本人合法回球策略，不違規放分或修改對方得分。",
+            "tradeoff": "競技味可能變淡"
+          },
+          {
+            "id": 6,
+            "text": "問原專業教師是否能在本次原範圍內觀察下一球。",
+            "action": "導師已提出需原在場教師自願同意的有限觀察請求，未取得協助或核定新判分。",
+            "tradeoff": "會讓一球更像考試"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我怕再贏像占便宜，乾脆本局由我棄權；照實說是我不打，不把這一分假裝成他打出來的。",
+          "action": "導師已在雙方原規則允許下表明本人退出本局並承受棄權結果，不修改已實際發生分數或虛造學生擊球得分。",
+          "tradeoff": "學生可能最不想要這種勝利，自己也沒機會認真打完"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3795788189
+        },
+        "selectedIds": [
+          3,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "2946fa2bee0eda88a9a773351008909f8ad2ef081fee4f316ffbadcd23725263"
+      },
+      "consequenceDirections": {
+        "A": "可以給選擇，不保證今日結局或延長場地。",
+        "B": "明確結束本局為教師自願棄權，與普通4保留未完局不定勝負不同；學生仍可不接受其象徵認可，後續只處理當場感受不造假分數。",
+        "C": "可保事實而不硬結冠軍，不設跨篇續局紀錄。",
+        "D": "可有第三方回饋，未答應不能擅調人或改裁判。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒公開不服輸後照原比分續打，實際行動仍與普通1續打相同；改為教師為怕占便宜而自願棄權、明確承擔棄權結果。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "保留已有效的原分數，照安全規則打完。",
+                "action": "導師已維持雙方原有效分數與安全分場方式，不保證比賽結果。",
+                "tradeoff": "可能被說老師占了提醒的便宜"
+              },
+              {
+                "id": 2,
+                "text": "詢問雙方是否同意此局不結輸贏，轉原技術練習。",
+                "action": "導師已提出需雙方同意的有限練習轉換，不擅更改既有分數。",
+                "tradeoff": "學生離勝利只差的一分沒了"
+              },
+              {
+                "id": 3,
+                "text": "在原可用時段先暫停一小段，讓他休息後再決定接不接。",
+                "action": "導師已在原時限內暫停本人非必要對打，維持安全照看。",
+                "tradeoff": "可打時間縮短"
+              },
+              {
+                "id": 4,
+                "text": "雙方若同意，原局分數如實留下但本次不再續打。",
+                "action": "導師已提出有限中止本次未完局建議，未取得同意或虛定勝負。",
+                "tradeoff": "他不能立刻拿下勝局"
+              },
+              {
+                "id": 5,
+                "text": "照原分數續打，我只打回合法場內，不加原先可選的難球練習。",
+                "action": "導師已限定本人合法回球策略，不違規放分或修改對方得分。",
+                "tradeoff": "競技味可能變淡"
+              },
+              {
+                "id": 6,
+                "text": "問原專業教師是否能在本次原範圍內觀察下一球。",
+                "action": "導師已提出需原在場教師自願同意的有限觀察請求，未取得協助或核定新判分。",
+                "tradeoff": "會讓一球更像考試"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也還想贏，乾脆先說清楚不會送這一分，請他若願意照原比分發球；輸了我就說輸，不再拿剛才當笑話。",
+              "action": "導師已表明本人不讓分的競賽意願及真實承認結果承諾，未取得續打同意或形成勝負。",
+              "tradeoff": "他可能覺得老師太認真，自己也可能真輸"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 884706724
+            },
+            "selectedIds": [
+              5,
+              3,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 4,
+              "C": 5,
+              "D": "emotional"
+            },
+            "optionsDigest": "f507a46bfeee2e7071c8313472946dd3f04a7c74d5afaed7885f0dd77564a528"
+          },
+          "previousConsequenceDirections": {
+            "A": "可以給選擇，不保證今日結局或延長場地。",
+            "B": "可保事實而不硬結冠軍，不設跨篇續局紀錄。",
+            "C": "可調本人打法，不能假打或保證對方贏。",
+            "D": "教師明示真實競爭並承諾不以笑話淡化結果，與一般續打不同在公開承擔輸贏姿態，仍不改規則。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "30832ac6970a90c877657816a34d68109b204e951f2484910ab6bdc141a446bd",
+    "draftSha256": "e454146e90e6166f9dba1b4ebaf4c7ac25439b75b17925b1e5b3d4f871540569",
     "seedAssignmentVersion": 1
   }
 }

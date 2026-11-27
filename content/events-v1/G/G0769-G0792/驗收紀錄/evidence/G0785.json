@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e21c869f1701cf8597b0c5daa44d8f7103fcd7fb2fd408bcfb5b0e74768f288f",
+      "checkedAt": "2026-11-27T14:07:59.142Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照原序交給下一位，這次成功照實記下。",
+            "action": "導師已維持原輪候安排並記錄已發生的單次成功，不誇大熟練度。",
+            "tradeoff": "他不能立刻驗第二次"
+          },
+          {
+            "id": 2,
+            "text": "在原時限內請各候用者自願同意多一次完整測試。",
+            "action": "導師已提出需受影響者同意的有限重測安排，未取得同意或完成測試。",
+            "tradeoff": "下一位要等，也可能被拒"
+          },
+          {
+            "id": 3,
+            "text": "改看原已可用且本人同意的操作紀錄，不再動機器。",
+            "action": "導師已提出限既有合法紀錄的有限回看方式，未取得新授權或新增操作。",
+            "tradeoff": "看不到這次手是否還抖"
+          },
+          {
+            "id": 4,
+            "text": "讓他只畫下自己抓成功的步驟，不先下熟練結論。",
+            "action": "導師已提供有限步驟圖記方式，未要求重演或宣稱精熟。",
+            "tradeoff": "沒有新的實作成果"
+          },
+          {
+            "id": 5,
+            "text": "請他自願向下一位只說一個操作提醒，不代對方動手。",
+            "action": "導師已提出有限自願操作提醒邀請，未取得答應或讓其代操。",
+            "tradeoff": "可能仍不敢說，也會少些休息"
+          },
+          {
+            "id": 6,
+            "text": "先離開操作桌休息，在原可用空檔再自行決定要不要排。",
+            "action": "導師已提供原時限內的安全休息及重新輪候選擇，不保留特權。",
+            "tradeoff": "當天可能排不到"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想替那一下高興久一點，這次不加測，請他願意的話把那顆已抓出的球放我桌上到課末，當今天的小紀念。",
+          "action": "導師已提出限物主同意、原物可短留的有限紀念邀請，未取得答應或完成保管。",
+          "tradeoff": "他可能更覺得自己被當展品，球也得依約還"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2469466821
+        },
+        "selectedIds": [
+          2,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "168ee97ea4bc920d6ca7fb987d3e538b696f6bdf19b9ecc4b4740f64503463f5"
+      },
+      "consequenceDirections": {
+        "A": "可以再取一次資料，不挾鼓掌取得插隊權。",
+        "B": "教師提出暫存特定成果物的自願邀請，不把學生手抖展示或占用機器。",
+        "C": "可分享已知經驗，不強派教學責任。",
+        "D": "可保退出壓力的空間，不承諾留機或延後拆卸。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "97cf61f4bc4750fd84d550d70532c353725b0f41c14175c8264572ac103812c8",
+    "draftSha256": "e21c869f1701cf8597b0c5daa44d8f7103fcd7fb2fd408bcfb5b0e74768f288f",
     "seedAssignmentVersion": 1
   }
 }

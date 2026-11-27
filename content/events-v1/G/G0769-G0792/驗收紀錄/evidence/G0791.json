@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "07d5b894e4727a5663b17b516c1dd7ddba544e26fda19d616cbc1968c9608d15",
+      "checkedAt": "2026-11-27T14:07:59.147Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先聽他原本那頁的說法，不借同桌全份標記。",
+            "action": "導師已在原課內維持有限個人原文分享，不代用他人筆記。",
+            "tradeoff": "可能說錯或只說一小段"
+          },
+          {
+            "id": 2,
+            "text": "雙方自願各讀一種筆跡，從同一已讀段落比較。",
+            "action": "導師已提出限雙方自願及已讀範圍的比較讀法，未取得參與或定論。",
+            "tradeoff": "原分享順序要動"
+          },
+          {
+            "id": 3,
+            "text": "各人先寫一處原文和自己的疑問，不公開當場比懂多少。",
+            "action": "導師已安排原負擔內有限原文疑問記錄，不增排名或公開個人錯漏。",
+            "tradeoff": "口頭熱度下降"
+          },
+          {
+            "id": 4,
+            "text": "我先用另一已讀短段教怎麼找敘事者，再回原分享。",
+            "action": "導師已在原授課範圍補充有限辨認方法，未代定原作品唯一解釋。",
+            "tradeoff": "少了學生先發現的驚喜"
+          },
+          {
+            "id": 5,
+            "text": "問同桌是否願把有限標記借他核對，明說是同學幫的。",
+            "action": "導師已提出限物主自願的有限筆記核對邀請，未取得借用或完成理解。",
+            "tradeoff": "他可能更覺得自己落後"
+          },
+          {
+            "id": 6,
+            "text": "今天這小段只列出待查的敘事線索，不急著作全書結論。",
+            "action": "導師已限縮本人本段教學結論範圍，保留有限原文待查線索，不宣稱完成全書分析。",
+            "tradeoff": "沒有漂亮總結"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被他催到也有點不服氣，拿自己的已讀筆記攤開，請他自願找一處我漏掉的；這回不是我要驗他讀完沒。",
+          "action": "導師已提供本人可用且非敏感的有限閱讀筆記並提出自願查漏邀請，未取得參與或證實解讀。",
+          "tradeoff": "老師可能真的漏很多，會占一段分享時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3039403219
+        },
+        "selectedIds": [
+          5,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "e2148e896a301c64283c98b3f6756f0de4ea723f55cfbd397d75edd2a9265e35"
+      },
+      "consequenceDirections": {
+        "A": "可合法用他人協助，不把借筆記當自己已懂。",
+        "B": "教師開放自己閱讀產物被檢視，不索同桌答案或要學生證明老師輸。",
+        "C": "可保本人理解，正常糾正不因焦慮省掉。",
+        "D": "可以容納未知，必要讀法回饋仍完成。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "58454bcb750dc3429a2a854f4c3176206a0c74e31b18d053a836d7785551e788",
+    "draftSha256": "07d5b894e4727a5663b17b516c1dd7ddba544e26fda19d616cbc1968c9608d15",
     "seedAssignmentVersion": 1
   }
 }

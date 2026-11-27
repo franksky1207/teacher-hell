@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "72bfb51ddebb3261ab09acf6f8549a9edda801a94dc5ab21333175612a6dd24d",
+      "checkedAt": "2026-11-27T14:07:59.140Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "兩種各放小份，願意的人自己選，不排輸贏。",
+            "action": "玩家已在安全份量與保存條件下提供兩種自願選擇，不強求試吃。",
+            "tradeoff": "自己想保的漂亮形狀可能最少人拿"
+          },
+          {
+            "id": 2,
+            "text": "完整的這碗留給自己，親友份用已確認可食的碎版。",
+            "action": "玩家已分配本人與自願親友的安全可食份量，未強餵或宣稱喜好較高級。",
+            "tradeoff": "沒有外人替進步鼓掌"
+          },
+          {
+            "id": 3,
+            "text": "問親友各想要口感還是糖水，只記下一項下次參考。",
+            "action": "玩家已提出可拒絕的有限食感詢問並記本人可得回覆，不承諾新成品。",
+            "tradeoff": "今晚不會重做"
+          },
+          {
+            "id": 4,
+            "text": "今天不再供試吃，兩鍋按安全條件自己留用。",
+            "action": "玩家已結束本人自願試吃安排，依食安條件處理現有食物。",
+            "tradeoff": "人情上有點掃興"
+          },
+          {
+            "id": 5,
+            "text": "自己把同一安全成品分出一小碗搗碎，試是不是只差口感。",
+            "action": "玩家已在安全處理下分出本人小份作口感比較，不要求親友配合或宣稱結論。",
+            "tradeoff": "會破壞一部分漂亮成品"
+          },
+          {
+            "id": 6,
+            "text": "保留原整碗，讓親友若願只看照片說喜歡哪種外觀。",
+            "action": "玩家已提出限自願的外觀交流，不增加試吃或推論食品安全。",
+            "tradeoff": "吃不到實際口感"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏想把漂亮那鍋留下別的證據，問親友願不願用乾淨小模具一起壓圖案；這回玩外形，不替哪鍋好吃投票。",
+          "action": "玩家已提出以本人安全可食成品作有限自願壓模創作的邀請，未取得親友參與或完成造型，不改食安處理。",
+          "tradeoff": "完整豆花的模樣會被切掉，還可能沒人想玩"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3135397246
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "125d31a31b6fac689521972430c0e3046ce43e90f51ec43fdf844cf73257eafa"
+      },
+      "consequenceDirections": {
+        "A": "可停止非必要評比，不將退場當親友侮辱自己。",
+        "B": "可以聽真喜好，不靠人氣判定技術對錯。",
+        "C": "從等待味覺評審轉為共同外形創作，教師願犧牲整片成果；若被拒只處理本人份，不逼試吃或宣稱得到認可。",
+        "D": "可聊審美，不能用照片代實際食味評價。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒自己吃漂亮豆花與普通2整碗自留過近；改成提供安全小模具共同壓模的新創作邀請，直接承接本人對完整成品的執著。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "兩種各放小份，願意的人自己選，不排輸贏。",
+                "action": "玩家已在安全份量與保存條件下提供兩種自願選擇，不強求試吃。",
+                "tradeoff": "自己想保的漂亮形狀可能最少人拿"
+              },
+              {
+                "id": 2,
+                "text": "完整的這碗留給自己，親友份用已確認可食的碎版。",
+                "action": "玩家已分配本人與自願親友的安全可食份量，未強餵或宣稱喜好較高級。",
+                "tradeoff": "沒有外人替進步鼓掌"
+              },
+              {
+                "id": 3,
+                "text": "問親友各想要口感還是糖水，只記下一項下次參考。",
+                "action": "玩家已提出可拒絕的有限食感詢問並記本人可得回覆，不承諾新成品。",
+                "tradeoff": "今晚不會重做"
+              },
+              {
+                "id": 4,
+                "text": "今天不再供試吃，兩鍋按安全條件自己留用。",
+                "action": "玩家已結束本人自願試吃安排，依食安條件處理現有食物。",
+                "tradeoff": "人情上有點掃興"
+              },
+              {
+                "id": 5,
+                "text": "自己把同一安全成品分出一小碗搗碎，試是不是只差口感。",
+                "action": "玩家已在安全處理下分出本人小份作口感比較，不要求親友配合或宣稱結論。",
+                "tradeoff": "會破壞一部分漂亮成品"
+              },
+              {
+                "id": 6,
+                "text": "保留原整碗，讓親友若願只看照片說喜歡哪種外觀。",
+                "action": "玩家已提出限自願的外觀交流，不增加試吃或推論食品安全。",
+                "tradeoff": "吃不到實際口感"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我偏要替漂亮豆花爭一口氣，自己加上最喜歡的糖水慢慢吃，不再等他們選我這碗。",
+              "action": "玩家已選定並食用本人安全可食的一份，停止本輪對他人評比邀請，不宣稱他人認同。",
+              "tradeoff": "糖水與份量都算自己的，也可能吃完仍不服氣"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3445344925
+            },
+            "selectedIds": [
+              5,
+              2,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 5,
+              "C": 6,
+              "D": "emotional"
+            },
+            "optionsDigest": "76778e18705e54048ff97d23d744cf31658431cf62218aeaf49d405de6a94282"
+          },
+          "previousConsequenceDirections": {
+            "A": "可保本人偏好，不用別人的胃證明標準。",
+            "B": "可以做本人比較，不能把一口偏好當科學證明。",
+            "C": "可聊審美，不能用照片代實際食味評價。",
+            "D": "玩家直接享用本人偏愛成品，放掉索取親友認可，不把私人甜口變新配方保證。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "57c8e80cd25ec61e53ee9c29fade68440d1eabc3a96ec164affad4494850ea61",
+    "draftSha256": "72bfb51ddebb3261ab09acf6f8549a9edda801a94dc5ab21333175612a6dd24d",
     "seedAssignmentVersion": 1
   }
 }

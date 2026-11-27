@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2911373a199f9c3518d63bd3cef48c1b716444099cb8fdf301ae8bea88ee8e42",
+      "checkedAt": "2026-11-27T14:07:59.135Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只給他個別回應，不將這版作全班範本。",
+            "action": "導師已提供本人有限個別口語回饋，不新增公開用途。",
+            "tradeoff": "別人聽不到這個變化"
+          },
+          {
+            "id": 2,
+            "text": "問他是否同意截一小句，連同語境給全班比較。",
+            "action": "導師已提出需本人同意的有限語境比較方案，未剪取或公開。",
+            "tradeoff": "可能被模仿，也要再確認"
+          },
+          {
+            "id": 3,
+            "text": "讓他自選用原版本或這版作本次一般成果，不要求再錄。",
+            "action": "導師已提供原範圍內的版本自選方式，不追加錄製或更改正式標準。",
+            "tradeoff": "少了兩版可比的材料"
+          },
+          {
+            "id": 4,
+            "text": "只看逐字稿的停頓記號，不播聲音。",
+            "action": "導師已提供有限文字斷句回饋，明示不代替音色語調判斷。",
+            "tradeoff": "聽不見原本最在意的腔"
+          },
+          {
+            "id": 5,
+            "text": "邀他私下對照兩版，自己圈出想保留的一處。",
+            "action": "導師已提出有限自願個別版本比較，未取得答應或新錄音。",
+            "tradeoff": "多花這段練習時間"
+          },
+          {
+            "id": 6,
+            "text": "這次不再挑示範版本，原錄音照約歸還本人保管。",
+            "action": "導師已停止本人非必要留存用途並按原約處理錄音，不削減必要回饋。",
+            "tradeoff": "沒留下班級教材"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想試試不照自己的範本說，問他願不願當聽眾，讓我用自己的習慣講同一句，再由他說聽起來怪在哪。",
+          "action": "導師已提出本人新口語示範及自願聽評邀請，未取得參與或冒認家庭語言權威。",
+          "tradeoff": "老師可能更僵，也占他的時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4080128607
+        },
+        "selectedIds": [
+          4,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "3beb09f45f1660c90da91f524f5ec723d39ea85d63c09ef9b9514d46450f7fa3"
+      },
+      "consequenceDirections": {
+        "A": "可以看語用差異，不把爸爸口頭禪當標準答案。",
+        "B": "教師把聽與被聽位置交換，不索他爸的聲音或保證學會另一腔。",
+        "C": "可看斷句，但不能假稱聲音效果已評。",
+        "D": "可尊重自己腔，仍需明確回應原學習要求。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4958769ac6548812620dbeca07eb6ceb30d8afc1011a42556e85ae397303f028",
+    "draftSha256": "2911373a199f9c3518d63bd3cef48c1b716444099cb8fdf301ae8bea88ee8e42",
     "seedAssignmentVersion": 1
   }
 }

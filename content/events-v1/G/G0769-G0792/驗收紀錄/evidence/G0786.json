@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7dd53d33246d6e2fb14a2c41bd15f8e6f63af31245081d4b1544d85e367d1c79",
+      "checkedAt": "2026-11-27T14:07:59.143Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "清掃按原責任做完，今天不補畫。",
+            "action": "導師已維持原必要有限整理，不增設本人非必要補畫活動。",
+            "tradeoff": "他刻意留的安排消失"
+          },
+          {
+            "id": 2,
+            "text": "他願意的話，在自己的可用小紙上重畫，自行留著。",
+            "action": "導師已提供限本人材料與自願的私人重畫選擇，未取得成品或公開許可。",
+            "tradeoff": "班上不一定看得到"
+          },
+          {
+            "id": 3,
+            "text": "問班級是否願在核可可移除紙上共同作新圖，不稱復原。",
+            "action": "導師已提出限原場規的自願新圖方案，未獲核准或完成重畫。",
+            "tradeoff": "要時間，也可能沒人想參加"
+          },
+          {
+            "id": 4,
+            "text": "只讓他口頭說希望下次清掃先保留哪些可留物，依校規再定。",
+            "action": "導師已提出有限未來清掃界線討論，不核定新留物規則。",
+            "tradeoff": "原圖仍不回來"
+          },
+          {
+            "id": 5,
+            "text": "他若還記得，在空白紙寫一句對原圖的描述，不補形狀。",
+            "action": "導師已提供有限自願文字記憶方式，不收件或要求自揭作者。",
+            "tradeoff": "看不到愛心本來模樣"
+          },
+          {
+            "id": 6,
+            "text": "本次不作任何創作，他把剩餘可支配午休拿回休息。",
+            "action": "導師已停止本人非必要追加邀請，維持學生可支配休息及原責任交接。",
+            "tradeoff": "想展示的那一段沒了"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他捨不得，問他願不願在我自有便條畫一顆，這回貼在我自己的收納盒上，不占教室窗戶。",
+          "action": "導師已提出限本人私物、原作者自願的新作收受邀請，未取得作品、贈與或展示授權。",
+          "tradeoff": "心意會像變成送老師，也可能被拒"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4286268459
+        },
+        "selectedIds": [
+          4,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "d3a46975d9539d11bfab49c223f23e595a4afbd8116d38ed5d544db553fce52e"
+      },
+      "consequenceDirections": {
+        "A": "可保私人創作，不要求承認原作者。",
+        "B": "教師提出明確私人收受用途，作者同意才留，不把幫忙者排除成壞人。",
+        "C": "可處理溝通，不讓一人永久保留公共窗面。",
+        "D": "可以留記憶，不強留情感證據或交作業。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9f125e156ab6d1570d811911f1c9a78bbc4737b9022b9a8eeba93bbbc1bcd562",
+    "draftSha256": "7dd53d33246d6e2fb14a2c41bd15f8e6f63af31245081d4b1544d85e367d1c79",
     "seedAssignmentVersion": 1
   }
 }

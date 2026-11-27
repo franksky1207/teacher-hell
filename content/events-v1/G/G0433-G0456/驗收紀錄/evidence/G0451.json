@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dd47aa590ad45480ce5a5c1e8d8fc6bc8b6d613f7a9aecd09be08c7be0a88c47",
+      "checkedAt": "2026-11-27T06:31:02.121Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先說明當時例外的具體理由與範圍，不把它變成教師好壞比較。",
+            "action": "導師已先說明當時例外的具體理由與範圍，不把它變成教師好壞比較。",
+            "tradeoff": "保留必要彈性，也要面對原先交代不清"
+          },
+          {
+            "id": 2,
+            "text": "收回可撤回、非必要的例外，與相關老師確認一致做法。",
+            "action": "導師已收回可撤回、非必要的例外，與相關老師確認一致做法。",
+            "tradeoff": "標準較單純，也可能失去原本的便利"
+          },
+          {
+            "id": 3,
+            "text": "讓各節老師明示自己採用的合法開場方式，我向班上說明不必完全一樣。",
+            "action": "導師已讓各節老師明示自己採用的合法開場方式，我向班上說明不必完全一樣。",
+            "tradeoff": "保留授課判斷，也增加記住不同安排的負擔"
+          },
+          {
+            "id": 4,
+            "text": "和這位老師一起向學生說明他支持的規範，不讓他獨自再解釋。",
+            "action": "導師已和這位老師一起向學生說明他支持的規範，不讓他獨自再解釋。",
+            "tradeoff": "共同承擔，也要找到雙方可用時間"
+          },
+          {
+            "id": 5,
+            "text": "先聽他每週輪動最難接上的部分，再協調可預期的交接。",
+            "action": "導師已先聽他每週輪動最難接上的部分，再協調可預期的交接。",
+            "tradeoff": "處理真正困擾，不能立刻解決所有課表變動"
+          },
+          {
+            "id": 6,
+            "text": "請相關老師在正常工作時間一起確認例外紀錄，不由學生傳話判誰說過什麼。",
+            "action": "導師已請相關老師在正常工作時間一起確認例外紀錄，不由學生傳話判誰說過什麼。",
+            "tradeoff": "來源較可靠，也多一次協調"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再靠好說話換親切，下次自己的課也照已明示的開場來。",
+          "action": "導師已決定在自身可決定的課堂落實已共同確認的開場，不再私自新增非必要例外；仍保留依法應有的合理調整。",
+          "tradeoff": "得放棄自己臨時通融的方便，也接受學生當面抱怨"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3275387212
+        },
+        "selectedIds": [
+          6,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "8c963039d49b1779e36da1e875ab74a4bb4ba7aab4d08de4a322604afe210f40"
+      },
+      "consequenceDirections": {
+        "A": "若成人記憶不同，須依實際紀錄調整而非要求學生選邊。",
+        "B": "教師的實際做法能被對照，但不能要求其他老師模仿私人風格",
+        "C": "各節可依共同起點開始，原享例外者可能不滿。",
+        "D": "學生知道不是單一教師堅持，之後仍需實際一致執行。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9d41dbe71c247871c77a3ad595e1245161804d97301727a1b7d1cfd6fcbb7d56",
+    "draftSha256": "dd47aa590ad45480ce5a5c1e8d8fc6bc8b6d613f7a9aecd09be08c7be0a88c47",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "716fe7c6e825b7bd91450fd6236f0f7e621fb7eb5f5ea67472f804d422d067e0",
+      "checkedAt": "2026-11-27T06:31:02.118Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留這輪未完成的答案，查明後再決定如何回饋。",
+            "action": "導師已保留這輪未完成的答案，查明後再決定如何回饋。",
+            "tradeoff": "不抹掉現況，也暫時看不到獨立作答表現"
+          },
+          {
+            "id": 2,
+            "text": "換一題等值練習，先講清楚可用哪些資料。",
+            "action": "導師已換一題等值練習，先講清楚可用哪些資料。",
+            "tradeoff": "能重新觀察，但占用額外課程時間"
+          },
+          {
+            "id": 3,
+            "text": "由任課老師接回後續教學，我處理我職權內的說明與聯繫。",
+            "action": "導師已由任課老師接回後續教學，我處理我職權內的說明與聯繫。",
+            "tradeoff": "角色清楚，也可能需要多次對齊資訊"
+          },
+          {
+            "id": 4,
+            "text": "先給全班一段不計分的整理時間，再回到同一學習目標。",
+            "action": "導師已先給全班一段不計分的整理時間，再回到同一學習目標。",
+            "tradeoff": "不急著重測，但進度會往後移"
+          },
+          {
+            "id": 5,
+            "text": "請學生各自說明自己答案中的一個步驟，不以全班重答代替個別核實。",
+            "action": "導師已請學生各自說明自己答案中的一個步驟，不以全班重答代替個別核實。",
+            "tradeoff": "能看到理解，也多花逐人確認時間"
+          },
+          {
+            "id": 6,
+            "text": "課後和老師重查提示物的事前說明，必要時把規則講得更清楚。",
+            "action": "導師已課後和老師重查提示物的事前說明，必要時把規則講得更清楚。",
+            "tradeoff": "處理制度缺口，也可能發現成人交代不一致"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也差點想直接罵，先把自己那句沒說出口的話記下，課後找同事私下消化。",
+          "action": "導師已決定在不含可辨識學生私事的私人筆記中記錄自身反應，另於雙方可用時間與適當同事談情緒，不公開貼文或以抒發取代查證。",
+          "tradeoff": "承認自己的火氣，也得花時間另找適當談話"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 253443832
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "7073b240c76e8cb63af2d115a784ac59c7a533c1e27fea4f0d56fec0bf926d9b"
+      },
+      "consequenceDirections": {
+        "A": "同一答案背後可能有不同理由，教師須分開判斷。",
+        "B": "學生不會同時收到兩套指示，成人仍須共享必要事實。",
+        "C": "原稿能顯示提示出現前後的差異，仍須謹慎解讀。",
+        "D": "情緒不必由學生接住，但教師仍須負責正式處理"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a92b8eddcf2a34154c6e8bfdb1c224bd5dca2f268b5ed591f5729e3006532818",
+    "draftSha256": "716fe7c6e825b7bd91450fd6236f0f7e621fb7eb5f5ea67472f804d422d067e0",
     "seedAssignmentVersion": 1
   }
 }

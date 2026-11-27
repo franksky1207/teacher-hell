@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "edadbc1993e02c8591e6e3c79a771e2a124107f5ad2656395d7a122c233cdf1d",
+      "checkedAt": "2026-11-27T06:31:02.110Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "接受能看懂的粗稿，不要求再謄成完整文章。",
+            "action": "導師已接受能看懂的粗稿，不要求再謄成完整文章。",
+            "tradeoff": "保留資訊，外觀與細節不會漂亮"
+          },
+          {
+            "id": 2,
+            "text": "把查漏與補充交回全組，各人確認自己說過的部分。",
+            "action": "導師已把查漏與補充交回全組，各人確認自己說過的部分。",
+            "tradeoff": "分攤工作，也會增加其他人眼前負擔"
+          },
+          {
+            "id": 3,
+            "text": "請有權決定作業的教師減少非必要練習次數，不只改記錄工具。",
+            "action": "導師已請有權決定作業的教師減少非必要練習次數，不只改記錄工具。",
+            "tradeoff": "真正降低份量，但須調整原計畫"
+          },
+          {
+            "id": 4,
+            "text": "和小組重新分工，下次輪換紀錄者。",
+            "action": "導師已和小組重新分工，下次輪換紀錄者。",
+            "tradeoff": "不再固定壓一人，也可能遇到新手記不好"
+          },
+          {
+            "id": 5,
+            "text": "把剩餘工作分段約定完成時間，先交最重要的部分。",
+            "action": "導師已把剩餘工作分段約定完成時間，先交最重要的部分。",
+            "tradeoff": "減輕今天壓力，任務仍未消失"
+          },
+          {
+            "id": 6,
+            "text": "私下問他是否需要校內協助處理家庭負荷，不要求公開搬家細節。",
+            "action": "導師已私下問他是否需要校內協助處理家庭負荷，不要求公開搬家細節。",
+            "tradeoff": "可能接上支持，也要尊重不願多說"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我先停掉自己想收的額外心得，不想連這個都壓在他們頭上。",
+          "action": "導師已取消自己可自主撤回、非必要且不影響正式評量的額外心得要求，不要求學生以別種作業補回。",
+          "tradeoff": "少了我期待的回饋材料，也要放下完整作品的想像"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3963116819
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "0479fab6970f5f1fd96c64761d0558625b651cf11f9e2b184e40267bbffc77b1"
+      },
+      "consequenceDirections": {
+        "A": "實際可用協助有限，不能以轉介代替作業調整。",
+        "B": "共同任務仍需完成，但少一項由教師興起而加的工作",
+        "C": "延後部分若繼續堆積，須再減量而非一直延。",
+        "D": "全稿可能補齊，也可能顯出沒有人記住的空缺。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fb37157f6000890b5cb1897e13b8448bbddeba061010336e85a17b1d2f0ce198",
+    "draftSha256": "edadbc1993e02c8591e6e3c79a771e2a124107f5ad2656395d7a122c233cdf1d",
     "seedAssignmentVersion": 1
   }
 }

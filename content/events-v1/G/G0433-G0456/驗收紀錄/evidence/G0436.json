@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f2249ae7a58e62d3d73e1097e851c66aa6ff16a2f7bd893de2b2064d3e411579",
+      "checkedAt": "2026-11-27T06:31:02.107Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向體育老師說明實際情況，由對方按課程安排參與方式。",
+            "action": "導師已向體育老師說明實際情況，由對方按課程安排參與方式。",
+            "tradeoff": "不越權准退課，也可能不是他希望的安排"
+          },
+          {
+            "id": 2,
+            "text": "請他回想昨天練過的一個動作，願意的話在老師允許下先試一次。",
+            "action": "導師已請他回想昨天練過的一個動作，願意的話在老師允許下先試一次。",
+            "tradeoff": "從熟悉處起步，也可能試得不順"
+          },
+          {
+            "id": 3,
+            "text": "私下和他分清同學玩笑與實際上場條件，不當眾辯迷信。",
+            "action": "導師已私下和他分清同學玩笑與實際上場條件，不當眾辯迷信。",
+            "tradeoff": "降低難堪，說明未必能立刻讓他安心"
+          },
+          {
+            "id": 4,
+            "text": "請他保留原分組，不為找襪子要求大家重排。",
+            "action": "導師已請他保留原分組，不為找襪子要求大家重排。",
+            "tradeoff": "同儕不被拖著等，但他仍要處理自己的不安"
+          },
+          {
+            "id": 5,
+            "text": "徵得本人同意，提醒帶頭談幸運襪的人別再把輸贏算到衣物上。",
+            "action": "導師已徵得本人同意，提醒帶頭談幸運襪的人別再把輸贏算到衣物上。",
+            "tradeoff": "處理同儕氣氛，也可能有人說只是玩笑"
+          },
+          {
+            "id": 6,
+            "text": "課後再與他談下次忘帶物品的準備，不把今天變成找襪任務。",
+            "action": "導師已課後再與他談下次忘帶物品的準備，不把今天變成找襪任務。",
+            "tradeoff": "建立往後辦法，但當下沒有神奇解法"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想投一球，先問體育老師能不能在不影響課程時用普通襪子試。",
+          "action": "導師已徵得授課老師同意，在適當場地以自身安全裝備自願試投一次，不安排學生賭輸贏、不取代課程或將迷信當眾羞辱。",
+          "tradeoff": "可能當場沒進，不能拿一次結果當科學證明"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4176728673
+        },
+        "selectedIds": [
+          6,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "0237036896bba420e980b56f30d254e7b25347a9ed663df44f46b0a60d97c433"
+      },
+      "consequenceDirections": {
+        "A": "備品與心理準備可分開想，家庭也不必替全隊找同款。",
+        "B": "班上需停止施壓，不能靠嘲笑反過來矯正他。",
+        "C": "一次表現不能證明襪子有無力量，但能讓注意力回到動作。",
+        "D": "教師的私人好勝可能被笑，學生不必跟投或認錯"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c1a76fe30e4d755bfeae4c31524fa7775e9f7aef9c4e333f8bc57de233910eb8",
+    "draftSha256": "f2249ae7a58e62d3d73e1097e851c66aa6ff16a2f7bd893de2b2064d3e411579",
     "seedAssignmentVersion": 1
   }
 }

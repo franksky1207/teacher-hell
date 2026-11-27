@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e1269fa73aed1a00ed5e1d53b7a4faf787d5a5696985c955e8b4d32887ce609f",
+      "checkedAt": "2026-11-27T06:31:02.102Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "接回原定教學，不再請他加帶。",
+            "action": "導師已接回原定教學，不再請他加帶。",
+            "tradeoff": "保住分工，我得自己承擔後半段"
+          },
+          {
+            "id": 2,
+            "text": "刪掉可省的附加活動，保留本節必要內容。",
+            "action": "導師已刪掉可省的附加活動，保留本節必要內容。",
+            "tradeoff": "進度較集中，也失去原先期待的熱鬧"
+          },
+          {
+            "id": 3,
+            "text": "把一段講解改成現有教材的個別練習，由我們巡看。",
+            "action": "導師已把一段講解改成現有教材的個別練習，由我們巡看。",
+            "tradeoff": "減少連續說話，但即時共同討論會變少"
+          },
+          {
+            "id": 4,
+            "text": "向課務詢問是否有可用的正式支援，不自行把課丟給同事。",
+            "action": "導師已向課務詢問是否有可用的正式支援，不自行把課丟給同事。",
+            "tradeoff": "有機會真正分擔，也不保證當節就有人"
+          },
+          {
+            "id": 5,
+            "text": "請學生先按已說明的步驟兩人核對，再集中問共同問題。",
+            "action": "導師已請學生先按已說明的步驟兩人核對，再集中問共同問題。",
+            "tradeoff": "減少重複解釋，但要防止錯誤互相放大"
+          },
+          {
+            "id": 6,
+            "text": "課後和同事重排下次協同，不再把臨場救援算作固定工作。",
+            "action": "導師已課後和同事重排下次協同，不再把臨場救援算作固定工作。",
+            "tradeoff": "多一次協調，也可能取消原本喜歡的合作方式"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再裝精神很好，把自己下班後那場自願分享先取消。",
+          "action": "導師已取消自身非必要、可自由退出的課後分享，完成正常課務與必要照看後休息，不要求學生或同事補場。",
+          "tradeoff": "少一次交流，也要自己向邀請者改口"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2525140929
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "58ec49d041b65738512e656efcb720887ea5a44debd53e2d416e4172f7641b82"
+      },
+      "consequenceDirections": {
+        "A": "問題可被整理，教師需確認而非讓學生自負正確性。",
+        "B": "學生能完整做核心工作，其餘構想留待是否再用。",
+        "C": "巡看可發現個人問題，教師仍須在場協助。",
+        "D": "課內工作照常完成，教師能否休息取決於是否真的放下額外安排"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f0586d0b6af35f424d32a68abe246ff1fc894ebc7284170fb4e079790b33a464",
+    "draftSha256": "e1269fa73aed1a00ed5e1d53b7a4faf787d5a5696985c955e8b4d32887ce609f",
     "seedAssignmentVersion": 1
   }
 }

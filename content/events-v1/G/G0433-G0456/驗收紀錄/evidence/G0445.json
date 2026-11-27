@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3141f5644c931300c82a155785dffad84f878173938bb81d1f81d0974665262a",
+      "checkedAt": "2026-11-27T06:31:02.117Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓他自願只教文字記號，錄音機保持停止。",
+            "action": "導師已讓他自願只教文字記號，錄音機保持停止。",
+            "tradeoff": "保留願意付出的部分，也要留意他的疲倦"
+          },
+          {
+            "id": 2,
+            "text": "由我用新寫的空白範例接手，讓他回去休息。",
+            "action": "導師已由我用新寫的空白範例接手，讓他回去休息。",
+            "tradeoff": "減少他的負擔，我得自己準備"
+          },
+          {
+            "id": 3,
+            "text": "今天取消這桌示範，回到原本課內練習。",
+            "action": "導師已今天取消這桌示範，回到原本課內練習。",
+            "tradeoff": "不再增加臨場負擔，也少一次學工具的機會"
+          },
+          {
+            "id": 4,
+            "text": "請同桌先各自標一小句，再把具體不懂處留到正常課內問。",
+            "action": "導師已請同桌先各自標一小句，再把具體不懂處留到正常課內問。",
+            "tradeoff": "能自行試作，但錯誤不會立刻全部解開"
+          },
+          {
+            "id": 5,
+            "text": "讓他把機器帶回自己保管，後續不把私人器材列成這桌必備品。",
+            "action": "導師已讓他把機器帶回自己保管，後續不把私人器材列成這桌必備品。",
+            "tradeoff": "權利清楚，也失去方便的共同工具"
+          },
+          {
+            "id": 6,
+            "text": "和授課教師另排一次使用學校現有工具的說明，不依賴私人錄音。",
+            "action": "導師已和授課教師另排一次使用學校現有工具的說明，不依賴私人錄音。",
+            "tradeoff": "較能持續，但要確認工具與時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想知道自己念起來多卡，回去只錄自己的聲音自己聽。",
+          "action": "導師已決定在私人可用時間，以自有合法設備及可使用文本錄自己的聲音自聽，不錄學生、不要求上傳、不中止必要資料處理。",
+          "tradeoff": "多花我的時間，也可能聽得很不自在"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1844997694
+        },
+        "selectedIds": [
+          2,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "7897eebdfe457afbc3fefbaab4a9998634bb14e69d528974f68a44077e5dbba3"
+      },
+      "consequenceDirections": {
+        "A": "同桌能學另一種練法，不能因此繼續要求更多示範。",
+        "B": "教師能理解反覆重聽的費力，不把學生試讀拿來比較",
+        "C": "學生的原聲不再被借來教學，教師範例可能不如現成錄音順。",
+        "D": "同桌需改用可取得的方法，不能再默認家庭供應。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c22db4bcbd73b911cc09bc65742bb9ed3c16f5d326b7bc0973c719b1f2beeb00",
+    "draftSha256": "3141f5644c931300c82a155785dffad84f878173938bb81d1f81d0974665262a",
     "seedAssignmentVersion": 1
   }
 }

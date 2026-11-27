@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "29ef46304d649d4c9b33c122aa98347ff5ede18d85c57d90cd57526d685cb736",
+      "checkedAt": "2026-11-27T06:31:02.116Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照他選的半頁刪減，保留他要自己說的結尾。",
+            "action": "導師已照他選的半頁刪減，保留他要自己說的結尾。",
+            "tradeoff": "尊重選擇，也可能仍有點趕"
+          },
+          {
+            "id": 2,
+            "text": "我只負責提問，回答與結尾仍由他掌握。",
+            "action": "導師已我只負責提問，回答與結尾仍由他掌握。",
+            "tradeoff": "分工明確，我得忍住補完每個停頓"
+          },
+          {
+            "id": 3,
+            "text": "保留原結尾，改刪前面的非必要例子。",
+            "action": "導師已保留原結尾，改刪前面的非必要例子。",
+            "tradeoff": "核心結束方式不變，但少一層鋪陳"
+          },
+          {
+            "id": 4,
+            "text": "經他同意今天先停在已完成部分，結尾另排正常課程處理。",
+            "action": "導師已經他同意今天先停在已完成部分，結尾另排正常課程處理。",
+            "tradeoff": "不硬撐，也會改動進度"
+          },
+          {
+            "id": 5,
+            "text": "把結尾改為他確認過的短文字，當節不再要求口頭長講。",
+            "action": "導師已把結尾改為他確認過的短文字，當節不再要求口頭長講。",
+            "tradeoff": "降低說話負擔，也少了臨場語氣"
+          },
+          {
+            "id": 6,
+            "text": "請課務協助確認需要時有哪些替代安排，不預設我一人全接。",
+            "action": "導師已請課務協助確認需要時有哪些替代安排，不預設我一人全接。",
+            "tradeoff": "有真正支援的可能，但要面對排程限制"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想早點把自己的部分講完，刪掉我那段加碼問答，不動他的結尾。",
+          "action": "導師已取消自身非必要、可自主刪減的延伸問答，保留正式教學與必要理解確認，不搶走同事自決的結尾。",
+          "tradeoff": "少了我的臨場表現，也可能留下未延伸的話題"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2501957318
+        },
+        "selectedIds": [
+          1,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "b71dd99bd80c86c14fd7315fb2cfbe58d99db8ad580c9332579db4b8285c7832"
+      },
+      "consequenceDirections": {
+        "A": "結尾能否被理解，需要看前文簡化後是否足夠。",
+        "B": "兩人的刪減不再只落在疲倦者身上，學生可用原有提問管道續問",
+        "C": "節奏可能變慢，學生仍可看見本人如何說明。",
+        "D": "同事能完成在意的一句，其餘銜接須重新確認。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "48437b603b7d8efe0d86679369c98531f6a888eaf45e33e236ede40019fe6fac",
+    "draftSha256": "29ef46304d649d4c9b33c122aa98347ff5ede18d85c57d90cd57526d685cb736",
     "seedAssignmentVersion": 1
   }
 }

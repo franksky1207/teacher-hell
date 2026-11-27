@@ -14,14 +14,82 @@
   "plannedTags": [
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a9207d25548f345ee8ca8982c0101c67015404c2726937ac1adbf93d1fde5cfb",
+      "checkedAt": "2026-11-27T06:31:02.126Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不指名原因，讓符合餐食安排且自願的人各自決定要不要吃。",
+            "action": "導師已不指名原因，讓符合餐食安排且自願的人各自決定要不要吃。",
+            "tradeoff": "不公開關係，也可能沒有形成原本期待的同桌"
+          },
+          {
+            "id": 2,
+            "text": "先私下詢問那位同學是否願意同桌，不拿蛋糕當答應的條件。",
+            "action": "導師已先私下詢問那位同學是否願意同桌，不拿蛋糕當答應的條件。",
+            "tradeoff": "尊重邀請，也可能被拒絕"
+          },
+          {
+            "id": 3,
+            "text": "保留蛋糕原樣，由提供者自己決定是否帶回，不為班級再改圖案。",
+            "action": "導師已保留蛋糕原樣，由提供者自己決定是否帶回，不為班級再改圖案。",
+            "tradeoff": "不讓心意變成全班訂製，也可能少一次分享"
+          },
+          {
+            "id": 4,
+            "text": "讓大家照原本座位分享，不為兩人另外排成搭檔。",
+            "action": "導師已讓大家照原本座位分享，不為兩人另外排成搭檔。",
+            "tradeoff": "降低被起鬨，卻少了主動接近的機會"
+          },
+          {
+            "id": 5,
+            "text": "請學生自己選擇要不要用一句普通邀請開口，我不代他講動機。",
+            "action": "導師已請學生自己選擇要不要用一句普通邀請開口，我不代他講動機。",
+            "tradeoff": "給他練習，也要承受沒被接住的尷尬"
+          },
+          {
+            "id": 6,
+            "text": "今天不在班上分食，讓他依原規定帶回，另找不靠食物的參與方式。",
+            "action": "導師已今天不在班上分食，讓他依原規定帶回，另找不靠食物的參與方式。",
+            "tradeoff": "避開當場壓力，也會辜負期待的熱鬧"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想吃一口，先像大家一樣問他能不能分我，不搶著主持。",
+          "action": "導師已在共同食安及校規條件成立下，詢問提供者是否願意分一小份自食，接受拒絕、不先切取或要求保留教師份量。",
+          "tradeoff": "放下當老師安排全場的衝動，也可能輪不到"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4282847101
+        },
+        "selectedIds": [
+          6,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "683879d6cdc254cac600909cb5d4055e9aa4857a51394a7fd6f13a06cc501a0e"
+      },
+      "consequenceDirections": {
+        "A": "食物能被分到不同桌，關係不由教師編排。",
+        "B": "邀請若成立是當事人的選擇，不是全班見證的配對。",
+        "C": "教師只是自願接受一份食物，不替學生宣布故事或關係",
+        "D": "圖案成品仍屬本人，班上需要另處理落單情況。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ac14229bbbc6866fbd92863845ad8ed85dc0f06161cfaf362dc184ae897711f6",
+    "draftSha256": "a9207d25548f345ee8ca8982c0101c67015404c2726937ac1adbf93d1fde5cfb",
     "seedAssignmentVersion": 1
   }
 }

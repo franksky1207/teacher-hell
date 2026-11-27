@@ -15,14 +15,155 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7df3996170dae58c93617ad83dd8c6fac48ccb1554d66b6c059909f7476586db",
+      "checkedAt": "2026-11-27T06:31:02.125Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由原負責帶隊的人接回，我只協助後段。",
+            "action": "導師已由原負責帶隊的人接回，我只協助後段。",
+            "tradeoff": "指令清楚，也要放下自己主導的習慣"
+          },
+          {
+            "id": 2,
+            "text": "在原地簡短說明哪句已撤回，再按原路線前進。",
+            "action": "導師已在原地簡短說明哪句已撤回，再按原路線前進。",
+            "tradeoff": "學生知道現在依據，也要占一點移動時間"
+          },
+          {
+            "id": 3,
+            "text": "分成兩個可照看的小段，依確認後的順序移動。",
+            "action": "導師已分成兩個可照看的小段，依確認後的順序移動。",
+            "tradeoff": "降低轉角擁塞，也增加成人銜接工作"
+          },
+          {
+            "id": 4,
+            "text": "等通道空出再出發，非必要的停留點今天省掉。",
+            "action": "導師已等通道空出再出發，非必要的停留點今天省掉。",
+            "tradeoff": "保安全與必要行程，也少了原先想看的部分"
+          },
+          {
+            "id": 5,
+            "text": "請相關值勤人員協助實際擁塞處，不臨時叫學生當攔路者。",
+            "action": "導師已請相關值勤人員協助實際擁塞處，不臨時叫學生當攔路者。",
+            "tradeoff": "有額外照看，也須確認對方能否接手"
+          },
+          {
+            "id": 6,
+            "text": "到達後另約同事檢討兩次相反指令，不在隊伍前互相追究。",
+            "action": "導師已到達後另約同事檢討兩次相反指令，不在隊伍前互相追究。",
+            "tradeoff": "避免學生夾在成人爭執中，也不能把事拖沒了"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我氣的是自己竟然先亂喊，找空檔把校內帶隊說明再讀一遍。",
+          "action": "導師已決定在完成當下必要帶隊與照看後，於自身工作空檔重讀校內既有移動帶隊指引，整理自己誤用指令處，不加派同事或學生補做",
+          "tradeoff": "得承認熟悉的工作仍有盲點，也占自己的備課時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3468296224
+        },
+        "selectedIds": [
+          2,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "b312b4b41527c37fbf16204545de61c4be441f5b7c9372d7c076b6f11299a792"
+      },
+      "consequenceDirections": {
+        "A": "各段需知道何時能走，不能把分段變成各自散開。",
+        "B": "誤會可被澄清，不能只靠更大聲蓋過前一句。",
+        "C": "雙方可釐清情緒與權責，下次仍須看實際配合。",
+        "D": "回看可能發現原則早就寫明，也可能找到需向承辦確認的地方；下次是否改善仍取決於實際執行。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "當批語意複核發現情緒候選與普通候選的回覆界線、回饋格式或帶隊交接存在行動涵蓋；改為教師自己的私人短時遊戲、原表自填試作、既有指引自學，明確使用自身時間且不取代共同必要責任。各依原工具真實重抽一次並完整保留舊證據。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "由原負責帶隊的人接回，我只協助後段。",
+                "action": "導師已由原負責帶隊的人接回，我只協助後段。",
+                "tradeoff": "指令清楚，也要放下自己主導的習慣"
+              },
+              {
+                "id": 2,
+                "text": "在原地簡短說明哪句已撤回，再按原路線前進。",
+                "action": "導師已在原地簡短說明哪句已撤回，再按原路線前進。",
+                "tradeoff": "學生知道現在依據，也要占一點移動時間"
+              },
+              {
+                "id": 3,
+                "text": "分成兩個可照看的小段，依確認後的順序移動。",
+                "action": "導師已分成兩個可照看的小段，依確認後的順序移動。",
+                "tradeoff": "降低轉角擁塞，也增加成人銜接工作"
+              },
+              {
+                "id": 4,
+                "text": "等通道空出再出發，非必要的停留點今天省掉。",
+                "action": "導師已等通道空出再出發，非必要的停留點今天省掉。",
+                "tradeoff": "保安全與必要行程，也少了原先想看的部分"
+              },
+              {
+                "id": 5,
+                "text": "請相關值勤人員協助實際擁塞處，不臨時叫學生當攔路者。",
+                "action": "導師已請相關值勤人員協助實際擁塞處，不臨時叫學生當攔路者。",
+                "tradeoff": "有額外照看，也須確認對方能否接手"
+              },
+              {
+                "id": 6,
+                "text": "到達後另約同事檢討兩次相反指令，不在隊伍前互相追究。",
+                "action": "導師已到達後另約同事檢討兩次相反指令，不在隊伍前互相追究。",
+                "tradeoff": "避免學生夾在成人爭執中，也不能把事拖沒了"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我現在不適合再喊，主動把接下來的口頭帶領交給願意接手的同事。",
+              "action": "導師已確認適任同事同意且能合法接手後，讓出本次後續口頭帶領並承擔明確後方照看；無人接手不得擅自退出必要職務。",
+              "tradeoff": "少了掌控，也得自己做較不顯眼的後方照看"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2480849733
+            },
+            "selectedIds": [
+              5,
+              2,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 5,
+              "C": 4,
+              "D": "emotional"
+            },
+            "optionsDigest": "8237e6dfcf54b7ecad669790ead13c900d1470f0b6e54daa28a5e729ebb24c6d"
+          },
+          "previousConsequenceDirections": {
+            "A": "誤會可被澄清，不能只靠更大聲蓋過前一句。",
+            "B": "若人力不足，仍需採現有人手可行的移動方式。",
+            "C": "抵達時間可能延後，需向目的地接手者交代。",
+            "D": "教師退一步不等於不工作，後段仍需要實際照護"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "30babd4cfc913e6501d7f304a6bdbe53cba8edc7792e72849547ef9738a27c3d",
+    "draftSha256": "7df3996170dae58c93617ad83dd8c6fac48ccb1554d66b6c059909f7476586db",
     "seedAssignmentVersion": 1
   }
 }

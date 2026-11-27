@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fe8ddd38c71bb8ad8beb272c7f4e4e6b2fd02813acb83f97f3797e60165e0a67",
+      "checkedAt": "2026-11-27T06:31:02.120Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先讓他把自己喊了什麼、當時看到什麼分開說清楚。",
+            "action": "導師已先讓他把自己喊了什麼、當時看到什麼分開說清楚。",
+            "tradeoff": "避免把目擊與參與混在一起，也需要耐心核對"
+          },
+          {
+            "id": 2,
+            "text": "私下詢問受影響者希望怎麼接收後續說明，不要求當場回應。",
+            "action": "導師已私下詢問受影響者希望怎麼接收後續說明，不要求當場回應。",
+            "tradeoff": "保護選擇，也可能暫時不願接觸"
+          },
+          {
+            "id": 3,
+            "text": "查明後由各自參與者分別回應，不安排整排一起道歉。",
+            "action": "導師已查明後由各自參與者分別回應，不安排整排一起道歉。",
+            "tradeoff": "責任較精確，也多了個別談話"
+          },
+          {
+            "id": 4,
+            "text": "把班上可用的具體稱呼方式重新講清楚，不重播那個綽號。",
+            "action": "導師已把班上可用的具體稱呼方式重新講清楚，不重播那個綽號。",
+            "tradeoff": "避免再次傷害，但要挪一點班務時間"
+          },
+          {
+            "id": 5,
+            "text": "另約他談疲倦是否已影響上課，不拿沒睡飽免除那一聲。",
+            "action": "導師已另約他談疲倦是否已影響上課，不拿沒睡飽免除那一聲。",
+            "tradeoff": "照顧狀況，也需額外時間"
+          },
+          {
+            "id": 6,
+            "text": "和相關學生約定一次短回談，檢查之後有沒有再被起鬨。",
+            "action": "導師已和相關學生約定一次短回談，檢查之後有沒有再被起鬨。",
+            "tradeoff": "能追蹤影響，也不能保證人人願意多談"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再用大聲壓過整排，接下來把自己的口頭長訓縮成一張具體說明。",
+          "action": "導師已取消自己非必要的公開長篇訓話，改在合法處理範圍內提供簡明行為說明，不省略聽取意見、通知或其他必要程序。",
+          "tradeoff": "少了發洩氣勢，也得自己寫清楚"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1414995735
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 6,
+          "D": 2
+        },
+        "optionsDigest": "54e02aecd6f92893b2a9e8225de7ca58d8d36045f40dce801ba6b03a11af7856"
+      },
+      "consequenceDirections": {
+        "A": "不同程度行為會有不同處理，不用集體姿態掩過個人。",
+        "B": "學生能讀到實際要求，教師不能再靠語氣加出沒寫的處罰",
+        "C": "教師可看見表面安靜後的情況，避免只以道歉算結案。",
+        "D": "必要處理照常，關係上的回應不由教師替他決定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e53d54b59e66a94dcad8cdfa34093b8fdb9b10a0e6eba57eb707ef19a0ac3ea9",
+    "draftSha256": "fe8ddd38c71bb8ad8beb272c7f4e4e6b2fd02813acb83f97f3797e60165e0a67",
     "seedAssignmentVersion": 1
   }
 }

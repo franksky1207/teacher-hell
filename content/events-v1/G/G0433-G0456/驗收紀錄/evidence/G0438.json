@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "444d37903a4db41bb02049ae0e5af8275b453adc99068595bb3386df2da67a85",
+      "checkedAt": "2026-11-27T06:31:02.109Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他自願帶大家先完成一小塊，按實際效果決定是否續做。",
+            "action": "導師已請他自願帶大家先完成一小塊，按實際效果決定是否續做。",
+            "tradeoff": "能驗證方法，但要接受試出來不好用"
+          },
+          {
+            "id": 2,
+            "text": "讓各組自行決定今天採哪個已確認可行的排法，不等他統一帶動。",
+            "action": "導師已讓各組自行決定今天採哪個已確認可行的排法，不等他統一帶動。",
+            "tradeoff": "分散依賴，版面可能不一致"
+          },
+          {
+            "id": 3,
+            "text": "請他說明改法和上次差在哪，再由大家提出實際疑問。",
+            "action": "導師已請他說明改法和上次差在哪，再由大家提出實際疑問。",
+            "tradeoff": "把注意力帶回內容，會占用布置時間"
+          },
+          {
+            "id": 4,
+            "text": "取消今天非必要的展示，先把材料收妥。",
+            "action": "導師已取消今天非必要的展示，先把材料收妥。",
+            "tradeoff": "不趕著做完，但會讓期待的人失望"
+          },
+          {
+            "id": 5,
+            "text": "我先照他的說明動手做一段，卡住就直接問。",
+            "action": "導師已我先照他的說明動手做一段，卡住就直接問。",
+            "tradeoff": "占教師工作時間，也得接受學生指正"
+          },
+          {
+            "id": 6,
+            "text": "重新分配今天還需要的人手，只邀請願意且有空的人接續。",
+            "action": "導師已重新分配今天還需要的人手，只邀請願意且有空的人接續。",
+            "tradeoff": "避免全班被一起扣住，但進度可能縮小"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想讓每個表情都變成指令，先寫一句明確的「今天做到哪裡就停」貼在旁邊。",
+          "action": "導師已為本次非必要布置明示有限工作範圍與正常結束時間，不追加到休息或放學，必要安全收拾另依原規定。",
+          "tradeoff": "少了臨時加碼的空間，也得接受作品不完整"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 535013136
+        },
+        "selectedIds": [
+          4,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "3c71d1e76402a6cc270105ab30535169c9ddeb7a3147c1fed81dab232c4a77f9"
+      },
+      "consequenceDirections": {
+        "A": "學生可按約定結束，導師之後不能再用臉色拖長工作",
+        "B": "實際操作可暴露說明缺口，不靠催促大家重開。",
+        "C": "原計畫是否再做需另決定，方法不因取消而被判失敗。",
+        "D": "學生會有不同選擇，班務負責者也得接受不是人人跟隨。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fa1cff10e088c65b218564146233c300be72a64b4f54eff339d5102ff93eb6b3",
+    "draftSha256": "444d37903a4db41bb02049ae0e5af8275b453adc99068595bb3386df2da67a85",
     "seedAssignmentVersion": 1
   }
 }

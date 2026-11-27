@@ -14,14 +14,82 @@
   "plannedTags": [
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "06491efe6790341572042a626dc1f7b4f7d5107b720621b8e6212ed8747cd6b1",
+      "checkedAt": "2026-11-27T06:31:02.122Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天取消這段演出，回到其他正常課內工作。",
+            "action": "導師已今天取消這段演出，回到其他正常課內工作。",
+            "tradeoff": "不再勉強，也少了一次原定練習"
+          },
+          {
+            "id": 2,
+            "text": "私下問當事人是否想在合適時候重試，不把再上台當和好的證明。",
+            "action": "導師已私下問當事人是否想在合適時候重試，不把再上台當和好的證明。",
+            "tradeoff": "保留選擇，時間須另排"
+          },
+          {
+            "id": 3,
+            "text": "改成小組內自願練習，不要求每個人到台前。",
+            "action": "導師已改成小組內自願練習，不要求每個人到台前。",
+            "tradeoff": "壓力較小，也少了全班觀摩"
+          },
+          {
+            "id": 4,
+            "text": "由我用不指向個人的方式說明何種回應不合適，不代述他的心理。",
+            "action": "導師已由我用不指向個人的方式說明何種回應不合適，不代述他的心理。",
+            "tradeoff": "交代界線，也可能有人辯稱沒惡意"
+          },
+          {
+            "id": 5,
+            "text": "讓其他願意者依原序練，暫停者可不在現場觀看。",
+            "action": "導師已讓其他願意者依原序練，暫停者可不在現場觀看。",
+            "tradeoff": "保留部分機會，也要安排合宜照看與去處"
+          },
+          {
+            "id": 6,
+            "text": "另約那位幫忙轉話題的學生談，肯定他實際做了什麼，不稱他救了誰。",
+            "action": "導師已另約那位幫忙轉話題的學生談，肯定他實際做了什麼，不稱他救了誰。",
+            "tradeoff": "接住旁觀者，也需要額外時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再當場講一大段，把自己的延伸講評撤掉，先安靜整理桌面。",
+          "action": "導師已刪除自身非必要的公開延伸講評，在共同安全及停止嘲笑措施後帶回正常整理，不以沉默逃避必要通報或回應。",
+          "tradeoff": "少了我想說完的話，也可能留下未解的氣氛"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4180878442
+        },
+        "selectedIds": [
+          6,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "4c5b881739fa8b63ecc88c35f88d40883670cf5f0c724b3d06aa1ed6e29986fa"
+      },
+      "consequenceDirections": {
+        "A": "有人能繼續準備，教師須確認小組也沒有延續嘲笑。",
+        "B": "他可談自己擔心越幫越忙的地方，不需替同伴解釋。",
+        "C": "本人可能願意，也可能決定不再演這段。",
+        "D": "正常工作可慢慢恢復，必要處理與後續回談仍要完成"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e011778b9a187eac5e2138841acd0f189f490fe2e55043806cc0bbc1c0f5ff41",
+    "draftSha256": "06491efe6790341572042a626dc1f7b4f7d5107b720621b8e6212ed8747cd6b1",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c76663d64d4286aad6d34e39ff1b5508c585c08660e93afbca699632e074028b",
+      "checkedAt": "2026-11-27T06:31:02.123Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "分開記錄已完成的個人部分與仍未完成的團體稿。",
+            "action": "導師已分開記錄已完成的個人部分與仍未完成的團體稿。",
+            "tradeoff": "事實較準確，紀錄也更複雜"
+          },
+          {
+            "id": 2,
+            "text": "請各組員確認自己原分工與實際稿件，不讓他一人補全。",
+            "action": "導師已請各組員確認自己原分工與實際稿件，不讓他一人補全。",
+            "tradeoff": "負擔能被看見，也多一次核對"
+          },
+          {
+            "id": 3,
+            "text": "由我向原先收到缺交通知的人更正，不叫他拿稿到處自證。",
+            "action": "導師已由我向原先收到缺交通知的人更正，不叫他拿稿到處自證。",
+            "tradeoff": "承擔傳達成本，也要承認先前看得不夠細"
+          },
+          {
+            "id": 4,
+            "text": "請有權決定作業的教師明確交代只需補哪些實際缺漏。",
+            "action": "導師已請有權決定作業的教師明確交代只需補哪些實際缺漏。",
+            "tradeoff": "避免整篇重作，也要重新看評量依據"
+          },
+          {
+            "id": 5,
+            "text": "把這次判斷依據逐項解釋給他，有疑義就依原申覆管道處理。",
+            "action": "導師已把這次判斷依據逐項解釋給他，有疑義就依原申覆管道處理。",
+            "tradeoff": "程序較清楚，未必能立即消除怒氣"
+          },
+          {
+            "id": 6,
+            "text": "和小組重訂剩餘部分的交接時間，不再只寫一個整稿截止。",
+            "action": "導師已和小組重訂剩餘部分的交接時間，不再只寫一個整稿截止。",
+            "tradeoff": "多了管理工作，也不能用時間表代替減量"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想下次又憑印象勾一格，自己重做這次的批閱筆記。",
+          "action": "導師已決定自行補寫本次實際批閱依據與更正原因的工作筆記，資料僅於必要權限內保存，不新增學生證明負擔。",
+          "tradeoff": "多花我的時間，也會留下自己誤判的痕跡"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2749972438
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "3b47b95950af567c5f11b1bdfb1a7e314582461ff69e3d59ebc950bfdcb9ffb6"
+      },
+      "consequenceDirections": {
+        "A": "後續回看可對照原稿，而非只留下結論，學生不必代我重抄",
+        "B": "每段有實際接手者，若仍無人完成須再處理分工。",
+        "C": "學生能看見自己的工作，團體仍須面對未完成處。",
+        "D": "空白可能找到真正負責者，或發現原本根本沒分好。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "72ff74bee2d39d6fe4b3f6e7a33bfa2a47fe1cea1de572d871d189fd63fab8f7",
+    "draftSha256": "c76663d64d4286aad6d34e39ff1b5508c585c08660e93afbca699632e074028b",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c4c1bc2aa1fe6821319eb9caadea025826e1da4eff81988ae4236c277510d5c4",
+      "checkedAt": "2026-11-27T06:31:02.111Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先讓孩子自己挑一篇，家長的表暫作備用。",
+            "action": "導師已先讓孩子自己挑一篇，家長的表暫作備用。",
+            "tradeoff": "保留起步意願，也可能打亂家庭已排的進度"
+          },
+          {
+            "id": 2,
+            "text": "只試其中一小段，試完再由孩子說是否能繼續。",
+            "action": "導師已只試其中一小段，試完再由孩子說是否能繼續。",
+            "tradeoff": "降低全套試錯成本，但無法立刻看出長期效果"
+          },
+          {
+            "id": 3,
+            "text": "說明學校不採整套家庭安排，仍依原課程教學。",
+            "action": "導師已說明學校不採整套家庭安排，仍依原課程教學。",
+            "tradeoff": "界線清楚，家長的準備不會全部用上"
+          },
+          {
+            "id": 4,
+            "text": "請家長先聽孩子不喜歡哪裡，不急著解釋文章很好。",
+            "action": "導師已請家長先聽孩子不喜歡哪裡，不急著解釋文章很好。",
+            "tradeoff": "可能找到可調處，也可能聽到只是不想讀"
+          },
+          {
+            "id": 5,
+            "text": "把陪讀改成孩子需要時再求助，先不逐格催填。",
+            "action": "導師已把陪讀改成孩子需要時再求助，先不逐格催填。",
+            "tradeoff": "減少盯進度，也可能讓家長更焦慮"
+          },
+          {
+            "id": 6,
+            "text": "提供學校現有的幾篇不同題材，讓家庭自行比較是否採用。",
+            "action": "導師已提供學校現有的幾篇不同題材，讓家庭自行比較是否採用。",
+            "tradeoff": "多一些選擇，也增加挑選時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想天天替人抓錯，這次只陪讀一段喜歡的，不做逐字訂正。",
+          "action": "導師已在可用工作時段提出一次自願、限定範圍的共讀，以內容交流而非額外逐字校訂為目的，不取代正式課內必要回饋。",
+          "tradeoff": "少了立即可見的糾錯成績，也得說明這不是整週承諾"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3040156424
+        },
+        "selectedIds": [
+          4,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "7ffb1f5f5a1ad5f61a21b2a5e697613d41dbbdcae8d4fc8719fd2cd61ca8f794"
+      },
+      "consequenceDirections": {
+        "A": "對話能分辨難度與題材，不能保證立即開始。",
+        "B": "學生可能開始談內容，家長則要接受沒有滿頁紅字的回饋",
+        "C": "孩子選的內容可能較短，家長須決定能否接受。",
+        "D": "家庭可自行協商閱讀，不把教師變成監工。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b6f3025e84d878bf2eedffba218d7b53a0594fa011aa786b6957a9677107ff59",
+    "draftSha256": "c4c1bc2aa1fe6821319eb9caadea025826e1da4eff81988ae4236c277510d5c4",
     "seedAssignmentVersion": 1
   }
 }

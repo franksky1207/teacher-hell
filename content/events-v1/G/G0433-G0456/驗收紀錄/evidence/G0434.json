@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5777dcf46655c384040a7373c4cbb1891ae9976ca9219ea2ef567f58c4656fd6",
+      "checkedAt": "2026-11-27T06:31:02.104Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "改用全班都可選的共同材料，練原本的提問方式。",
+            "action": "導師已改用全班都可選的共同材料，練原本的提問方式。",
+            "tradeoff": "不必找家人，但材料較少個人生活感"
+          },
+          {
+            "id": 2,
+            "text": "保留孩子已完成且願意交的部分，其餘改用校內材料。",
+            "action": "導師已保留孩子已完成且願意交的部分，其餘改用校內材料。",
+            "tradeoff": "減少重做，也須核對兩段是否能銜接"
+          },
+          {
+            "id": 3,
+            "text": "取消本次家庭訪談，改在課內兩人自願互問中性題。",
+            "action": "導師已取消本次家庭訪談，改在課內兩人自願互問中性題。",
+            "tradeoff": "不用家庭配合，但會占課程時間"
+          },
+          {
+            "id": 4,
+            "text": "讓孩子先選一份口述資料，再自行列出想問的後續問題。",
+            "action": "導師已讓孩子先選一份口述資料，再自行列出想問的後續問題。",
+            "tradeoff": "保留自主，也可能需要更多起步協助"
+          },
+          {
+            "id": 5,
+            "text": "問有意願的校內成人是否能接受一次限定主題訪談，不替對方答應。",
+            "action": "導師已問有意願的校內成人是否能接受一次限定主題訪談，不替對方答應。",
+            "tradeoff": "可練真實互動，但得配合時間與同意"
+          },
+          {
+            "id": 6,
+            "text": "由有權決定作業的教師確認新的完成時間，讓孩子不用急著補整份。",
+            "action": "導師已由有權決定作業的教師確認新的完成時間，讓孩子不用急著補整份。",
+            "tradeoff": "降低眼前壓力，回饋會延後"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再收一疊像家長代寫的稿，自己錄一段生活小事給全班練問。",
+          "action": "導師已決定以自身可使用、無他人私事的經驗製作短口述材料供課內選用，不要求孩子揭露離婚經過或家庭立場。",
+          "tradeoff": "花自己的準備時間，也只公開願意公開的部分"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2668293374
+        },
+        "selectedIds": [
+          3,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "eecf91f04bf2f18e21fa9230d2256f32598e274bd9846f263b6e0eb9a3111bee"
+      },
+      "consequenceDirections": {
+        "A": "作品可能形式不一，教師得按實際完成內容回饋。",
+        "B": "學生仍能練追問，也要尊重同伴不答私人題。",
+        "C": "成品能呈現學生自己的疑問，而非家長替他排好的路。",
+        "D": "學生可對同一段提出不同問題，教師得接受意料外的追問"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f43fee0cf1901d68d09a815de67f9dd12c612548005d321bcb8a4a338362e836",
+    "draftSha256": "5777dcf46655c384040a7373c4cbb1891ae9976ca9219ea2ef567f58c4656fd6",
     "seedAssignmentVersion": 1
   }
 }

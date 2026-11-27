@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3583182b8cf0803f16c5829920acf0bb78d1419cd091f0ee036d124476d3c364",
+      "checkedAt": "2026-11-27T06:31:02.124Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天先停止在走廊模仿通知口吻，回到正常課間。",
+            "action": "導師已今天先停止在走廊模仿通知口吻，回到正常課間。",
+            "tradeoff": "減少混淆，也讓興致當場中斷"
+          },
+          {
+            "id": 2,
+            "text": "讓他在不干擾他人的合適場合，先講明是模仿再試。",
+            "action": "導師已讓他在不干擾他人的合適場合，先講明是模仿再試。",
+            "tradeoff": "可留表演趣味，也得接受場合與音量限制"
+          },
+          {
+            "id": 3,
+            "text": "請他向剛才實際被誤導的人簡短說明，不擴大成全校廣播。",
+            "action": "導師已請他向剛才實際被誤導的人簡短說明，不擴大成全校廣播。",
+            "tradeoff": "本人承擔影響，也會有點丟臉"
+          },
+          {
+            "id": 4,
+            "text": "和他約定只模仿普通招呼，不借用集合與緊急口令。",
+            "action": "導師已和他約定只模仿普通招呼，不借用集合與緊急口令。",
+            "tradeoff": "保留一部分笑點，卻少了最像教師的效果"
+          },
+          {
+            "id": 5,
+            "text": "請他把這次誤會寫成自己的短段子，日後有適合且自願的機會再演。",
+            "action": "導師已請他把這次誤會寫成自己的短段子，日後有適合且自願的機會再演。",
+            "tradeoff": "把即興轉成創作，也增加準備工夫"
+          },
+          {
+            "id": 6,
+            "text": "和受影響的老師確認往後正式通知怎麼辨認，再向班上說明。",
+            "action": "導師已和受影響的老師確認往後正式通知怎麼辨認，再向班上說明。",
+            "tradeoff": "降低再混淆，也多一段成人協調"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想知道到底像在哪，私下請他教我那句，不再叫別人配合。",
+          "action": "導師已在適當不擾人的私人可用時間，自願詢問學生是否願說明模仿特徵，不錄音、不以師生權力要求演出、不再發假指令。",
+          "tradeoff": "可能被指出自己的怪腔，也得接受他不想教"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3932559974
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "9b393c9581de5e1760a67f5372e9838f1a6b1bc4bd6670ebc1014b934860dd20"
+      },
+      "consequenceDirections": {
+        "A": "正式訊息來源較清楚，但不能全靠辨聲音。",
+        "B": "更正能到達原範圍，不讓模仿又變成宣傳。",
+        "C": "學生可能不服，但不用再有別人跟著假通知移動。",
+        "D": "教師能把尷尬換成自嘲，仍不能再用模仿指揮現場"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a43ae5ffa1c84f14fb1f65321e275737dcc8d304804e402d53778077b0072590",
+    "draftSha256": "3583182b8cf0803f16c5829920acf0bb78d1419cd091f0ee036d124476d3c364",
     "seedAssignmentVersion": 1
   }
 }

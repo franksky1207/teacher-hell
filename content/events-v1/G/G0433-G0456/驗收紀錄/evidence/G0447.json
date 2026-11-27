@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bbe14078d372e8effd6bc3ee4b7cb0ee9744015ac308d49d842a9ffe43cb032a",
+      "checkedAt": "2026-11-27T06:31:02.118Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只替明確委託的兩人下單，各自確認餐點與費用。",
+            "action": "導師已只替明確委託的兩人下單，各自確認餐點與費用。",
+            "tradeoff": "範圍小，但仍要等他作出選擇"
+          },
+          {
+            "id": 2,
+            "text": "今天不合訂，我們各自找自己的晚餐。",
+            "action": "導師已今天不合訂，我們各自找自己的晚餐。",
+            "tradeoff": "不用當總召，也少了可能共攤的運費"
+          },
+          {
+            "id": 3,
+            "text": "貼出一次菜單與截止時間，只收主動確認的人，不替沒回覆者點。",
+            "action": "導師已貼出一次菜單與截止時間，只收主動確認的人，不替沒回覆者點。",
+            "tradeoff": "可保留合訂，也增加我的整理負擔"
+          },
+          {
+            "id": 4,
+            "text": "把店家聯絡方式交給同事，由他決定是否自己發起合訂。",
+            "action": "導師已把店家聯絡方式交給同事，由他決定是否自己發起合訂。",
+            "tradeoff": "我退出代辦，但他未必還有精神接"
+          },
+          {
+            "id": 5,
+            "text": "我先買自己的，再問他是否願意自己跟店家加一份。",
+            "action": "導師已我先買自己的，再問他是否願意自己跟店家加一份。",
+            "tradeoff": "不必替他猜菜色，也不保證店家來得及合併"
+          },
+          {
+            "id": 6,
+            "text": "若雙方都願意，離開辦公室到正常營業的店各點各的。",
+            "action": "導師已若雙方都願意，離開辦公室到正常營業的店各點各的。",
+            "tradeoff": "暫時放下工作，也要多花走路與用餐時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我現在只想吃，拿自己原本備著的食物先開，不接今天這單。",
+          "action": "導師已決定吃自有安全適合食物並退出尚未成立的私人代訂，不拿公費、不替其他人取消已確認訂單。",
+          "tradeoff": "放棄想吃的便當，也可能讓他覺得被丟下"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3059709827
+        },
+        "selectedIds": [
+          1,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "82fbcc139a808b3470b67a6b942be9b260044b9dd576ee4df01468549a897003"
+      },
+      "consequenceDirections": {
+        "A": "若他不接，其他人只能各自處理，不能強迫他服務。",
+        "B": "晚餐不再等訊息湊單，仍須各自承擔未完工作安排。",
+        "C": "教師先處理自己的飢餓，同事的晚餐仍由本人決定",
+        "D": "其他人不被自動算入，兩人的訂單照正常條件處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "75bd58b4c17c5b38815b83b30e6fabe874bbeaf873d7a90a16ec2fa459b83cd3",
+    "draftSha256": "bbe14078d372e8effd6bc3ee4b7cb0ee9744015ac308d49d842a9ffe43cb032a",
     "seedAssignmentVersion": 1
   }
 }

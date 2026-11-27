@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fac07a39a5a0af692451106668b6fdff1e8222603efe541c73286f92dc0cae65",
+      "checkedAt": "2026-11-27T06:31:02.108Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先讓他只撤回自己尚未成立的採買承諾，其他人的選擇另問本人。",
+            "action": "導師已先讓他只撤回自己尚未成立的採買承諾，其他人的選擇另問本人。",
+            "tradeoff": "可減少負擔，卻不能保證團購價格不變"
+          },
+          {
+            "id": 2,
+            "text": "先查學校現有材料能完成哪些部分，提供不必家庭加購的做法。",
+            "action": "導師已先查學校現有材料能完成哪些部分，提供不必家庭加購的做法。",
+            "tradeoff": "降低支出，但成品效果可能不同"
+          },
+          {
+            "id": 3,
+            "text": "若已有訂單，請家長和實際下單者按真實條件聯繫店家。",
+            "action": "導師已若已有訂單，請家長和實際下單者按真實條件聯繫店家。",
+            "tradeoff": "釐清責任，也可能有不能退的部分"
+          },
+          {
+            "id": 4,
+            "text": "請小組各自說還願意採買什麼，不公開家長收入變動。",
+            "action": "導師已請小組各自說還願意採買什麼，不公開家長收入變動。",
+            "tradeoff": "保留他人選擇，但要多一次協調"
+          },
+          {
+            "id": 5,
+            "text": "停止以班級名義追加未經同意的採購，先處理既有承諾。",
+            "action": "導師已停止以班級名義追加未經同意的採購，先處理既有承諾。",
+            "tradeoff": "避免負擔繼續長，原計畫會縮小"
+          },
+          {
+            "id": 6,
+            "text": "問有權決定實作的老師能否簡化本次材料要求。",
+            "action": "導師已問有權決定實作的老師能否簡化本次材料要求。",
+            "tradeoff": "可能根本減少需求，也須尊重授課目標"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再當比價中間人，請實際買的人直接對店家，我退出代傳價格。",
+          "action": "導師已退出非必要的私人代詢價與代傳服務，清楚交還未決事項給實際訂購者，不放棄校內必要資源協助或既有依法應負責任。",
+          "tradeoff": "少了熱心形象，也可能被嫌幫到一半"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2157683017
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "7c6cac22774bbd8628d73e8fc48c775a395d8339622e3d490533848b5b299e27"
+      },
+      "consequenceDirections": {
+        "A": "可能改成部分採買、部分用現有材料，未必全組一致。",
+        "B": "小組得重談採買方式，家長不再代表全組。",
+        "C": "資訊少一層轉述，各人的實際訂購責任更明確",
+        "D": "退款與取消範圍會影響後續選擇，不能由導師一句全退承諾。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "05d553757d16b9f867a863bfd81514d55c604a95456b53b9b4a0c9a88743aebb",
+    "draftSha256": "fac07a39a5a0af692451106668b6fdff1e8222603efe541c73286f92dc0cae65",
     "seedAssignmentVersion": 1
   }
 }

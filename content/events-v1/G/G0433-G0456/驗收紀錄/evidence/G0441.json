@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "aed8d5618f72618a3e08532d3be68a3c763ec51dbf9dc1cd4e9fd72855f148f0",
+      "checkedAt": "2026-11-27T06:31:02.112Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他保留原句，另寫一個自己真正想停下來的結尾。",
+            "action": "導師已請他保留原句，另寫一個自己真正想停下來的結尾。",
+            "tradeoff": "能看見個人選擇，也多一次改稿"
+          },
+          {
+            "id": 2,
+            "text": "先讀他前面不同的部分，給具體回饋，不保證列為範文。",
+            "action": "導師已先讀他前面不同的部分，給具體回饋，不保證列為範文。",
+            "tradeoff": "讓差異被看見，也可能仍得不到期待的公開肯定"
+          },
+          {
+            "id": 3,
+            "text": "徵得兩人同意，比較同款結尾放進不同文章是否適合。",
+            "action": "導師已徵得兩人同意，比較同款結尾放進不同文章是否適合。",
+            "tradeoff": "可以看出套用問題，也須避免公開辨認作者"
+          },
+          {
+            "id": 4,
+            "text": "問他原來刪掉的句子想說什麼，先不要求立即重寫。",
+            "action": "導師已問他原來刪掉的句子想說什麼，先不要求立即重寫。",
+            "tradeoff": "從動機起步，成稿要晚一點才改得動"
+          },
+          {
+            "id": 5,
+            "text": "讓全班在正常課內各改一小段，不把他單獨留下補寫。",
+            "action": "導師已讓全班在正常課內各改一小段，不把他單獨留下補寫。",
+            "tradeoff": "共同練習減少被挑中的壓力，也占課程時間"
+          },
+          {
+            "id": 6,
+            "text": "將個別回饋時間說清楚，不用即時點名表揚代替批閱。",
+            "action": "導師已將個別回饋時間說清楚，不用即時點名表揚代替批閱。",
+            "tradeoff": "學生知道何時收到回應，不能立刻滿足焦慮"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也來寫個不用那套句型的結尾，貼在自己的備課本上提醒自己。",
+          "action": "導師已決定自行改寫自有示例的結尾，作私人備課記錄，不抄學生原句、不增加學生作業或強迫評論。",
+          "tradeoff": "要花時間拆掉熟悉寫法，可能寫得很彆扭"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2561446307
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "d69eb23f4db826eeb3e9bc377f9750e79149f95d4e7b6e4c9ad1fffefd8a5052"
+      },
+      "consequenceDirections": {
+        "A": "大家會交出不同版本，教師需逐步回看而非只選最像的一篇。",
+        "B": "他知道教師看了什麼，仍要面對未被選中的感受。",
+        "C": "兩個版本並列後，他須說明比較喜歡哪一個。",
+        "D": "教師的新嘗試可供日後自願交流，不把學生變成評審"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9550d2e629459f00d862f27ab7531711af9daec5185d0130915bc1c17ab9a320",
+    "draftSha256": "aed8d5618f72618a3e08532d3be68a3c763ec51dbf9dc1cd4e9fd72855f148f0",
     "seedAssignmentVersion": 1
   }
 }

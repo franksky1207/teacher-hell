@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "329353b55860fef3e253cb6fd3ad3f884464474492a5c5994c718ec88caac043",
+      "checkedAt": "2026-11-27T06:31:02.105Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他坐一分鐘，吃完這一口再各自回去。",
+            "action": "導師已邀他坐一分鐘，吃完這一口再各自回去。",
+            "tradeoff": "接住談話，也把原本獨處切短了一點"
+          },
+          {
+            "id": 2,
+            "text": "謝謝他特地來說，今天仍想一個人吃飯。",
+            "action": "導師已謝謝他特地來說，今天仍想一個人吃飯。",
+            "tradeoff": "保留休息，也可能讓剛開始的親近有些尷尬"
+          },
+          {
+            "id": 3,
+            "text": "問他願不願意換到陰影處一起吃，各自吃各自的。",
+            "action": "導師已問他願不願意換到陰影處一起吃，各自吃各自的。",
+            "tradeoff": "共享空間，但不能保證對方想久留"
+          },
+          {
+            "id": 4,
+            "text": "約另一個彼此有空的工作日再聊，今天先各自休息。",
+            "action": "導師已約另一個彼此有空的工作日再聊，今天先各自休息。",
+            "tradeoff": "不在疲倦時硬撐，也可能之後一直約不上"
+          },
+          {
+            "id": 5,
+            "text": "告訴他我昨天其實猶豫很久，只說自己願意說的那一段。",
+            "action": "導師已告訴他我昨天其實猶豫很久，只說自己願意說的那一段。",
+            "tradeoff": "交流較真實，也暴露自己的不安"
+          },
+          {
+            "id": 6,
+            "text": "問他現在想有人陪，還是只是想把那句話送到。",
+            "action": "導師已問他現在想有人陪，還是只是想把那句話送到。",
+            "tradeoff": "避免直接猜，但可能讓場面忽然認真"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想換個口味，問他要不要陪我去正常開放的地方買杯飲料，各付各的。",
+          "action": "導師已確認雙方有合法可用休息時間，邀請在不違反離校與值勤規定的可達地點自行購飲，對方可拒絕，不耽誤課務。",
+          "tradeoff": "多花私人零用與午間空檔，也得準時回來"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 685176059
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "2be2ecf6e247af31baa1062df25abd56cb769b3ff873d6b7219396f8c1cfb2f0"
+      },
+      "consequenceDirections": {
+        "A": "後續能否赴約會決定這次邀請有沒有被接續。",
+        "B": "他可選說完就走，或表明希望坐一下。",
+        "C": "短路程可讓談話自然轉開，不必一直誇同一件事",
+        "D": "同事可能接著說自己的經驗，不能因此追問學生私事。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4215b81be6f96bda44f1f2fac4defd1aa65984ddee628b28eea9f741813d7beb",
+    "draftSha256": "329353b55860fef3e253cb6fd3ad3f884464474492a5c5994c718ec88caac043",
     "seedAssignmentVersion": 1
   }
 }

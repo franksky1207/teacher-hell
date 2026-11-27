@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c74a0819e10702b225a025d27006050d3ad6245e00908b4bf6a8e37056b695de",
+      "checkedAt": "2026-11-27T06:31:02.119Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問姓名本人是否願意在明確範圍留下，不同意就不用。",
+            "action": "導師已詢問姓名本人是否願意在明確範圍留下，不同意就不用。",
+            "tradeoff": "保留選擇，也可能整件無法進班刊"
+          },
+          {
+            "id": 2,
+            "text": "請作者收回這件自有成品，班刊不用這個印面。",
+            "action": "導師已請作者收回這件自有成品，班刊不用這個印面。",
+            "tradeoff": "物品歸屬清楚，也少了一份現成設計"
+          },
+          {
+            "id": 3,
+            "text": "若作者願意，改設計無姓名的圖案，實作依安全規定安排。",
+            "action": "導師已若作者願意，改設計無姓名的圖案，實作依安全規定安排。",
+            "tradeoff": "保留手作，也要多花材料與時間"
+          },
+          {
+            "id": 4,
+            "text": "班刊改用經同意的手繪圖，不一定要做成印章。",
+            "action": "導師已班刊改用經同意的手繪圖，不一定要做成印章。",
+            "tradeoff": "少了拓印效果，也降低重作工具需求"
+          },
+          {
+            "id": 5,
+            "text": "讓班刊留白這一格，等作者決定是否另交新作。",
+            "action": "導師已讓班刊留白這一格，等作者決定是否另交新作。",
+            "tradeoff": "尊重不再提供，也接受版面不完整"
+          },
+          {
+            "id": 6,
+            "text": "先談清楚材料是否真願意捐，沒有同意就不把它列成公用用品。",
+            "action": "導師已先談清楚材料是否真願意捐，沒有同意就不把它列成公用用品。",
+            "tradeoff": "不以做成功為理由收走，也可能另找材料"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想玩拓印，自己用安全的現成圖章試，不拿他的成品續印。",
+          "action": "導師已決定以私人預算購用安全、不含他人姓名的現成圖章於私人時間試印，不使用學生材料或要求代刻。",
+          "tradeoff": "花自己的小錢與空檔，也可能沒有手作那麼有趣"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1923945372
+        },
+        "selectedIds": [
+          6,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "22160aa6ec2ecae8054bc97327a3a4984a6ea0f3023655715cb4a31f108a2721"
+      },
+      "consequenceDirections": {
+        "A": "作者能換一種方式提供作品，原章不必硬改。",
+        "B": "回收不代表可再公開使用姓名，作者可另做無姓名作品。",
+        "C": "提供資源與姓名使用被分開，作者能各自決定。",
+        "D": "教師的興趣不再要求學生供應作品，班刊仍另按原流程決定"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9839ce4ccfce59f17c4a0defa6437461d695a104384c6a073ce595b1b9b7f016",
+    "draftSha256": "c74a0819e10702b225a025d27006050d3ad6245e00908b4bf6a8e37056b695de",
     "seedAssignmentVersion": 1
   }
 }

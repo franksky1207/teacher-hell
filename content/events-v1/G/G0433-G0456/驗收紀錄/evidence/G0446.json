@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dc00c681d8de894fc137ea30b07a80d9f464df7da481542af6992be8af968783",
+      "checkedAt": "2026-11-27T06:31:02.117Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "立刻停下，讓他照接送時間離開。",
+            "action": "導師已立刻停下，讓他照接送時間離開。",
+            "tradeoff": "尊重原行程，也可能把剛抓住的感覺放掉"
+          },
+          {
+            "id": 2,
+            "text": "請他先問家人能否等一個明確的短時間，不同意就停。",
+            "action": "導師已請他先問家人能否等一個明確的短時間，不同意就停。",
+            "tradeoff": "有機會多試一次，仍須接受拒絕"
+          },
+          {
+            "id": 3,
+            "text": "另約彼此有空且場地准許的時間，今天收琴。",
+            "action": "導師已另約彼此有空且場地准許的時間，今天收琴。",
+            "tradeoff": "可完整準備，也可能一直喬不到"
+          },
+          {
+            "id": 4,
+            "text": "經他同意，只用不含旁人的手部短示範留給他回看。",
+            "action": "導師已經他同意，只用不含旁人的手部短示範留給他回看。",
+            "tradeoff": "能帶走方法，少了現場互相對拍"
+          },
+          {
+            "id": 5,
+            "text": "在譜上標清楚節拍，把器材歸位後各自走。",
+            "action": "導師已在譜上標清楚節拍，把器材歸位後各自走。",
+            "tradeoff": "沒有影像，也要靠他之後自己試"
+          },
+          {
+            "id": 6,
+            "text": "問他要不要今天只把卡住處說清楚，不再實際彈。",
+            "action": "導師已問他要不要今天只把卡住處說清楚，不再實際彈。",
+            "tradeoff": "保留問題，沒有立即練成的滿足"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還想彈，讓他先走，自己留下練我那一部。",
+          "action": "導師已確認場地仍在允許時間、自身安全返程可行後自行練自有部分，不扣住接送者或同事、不逾時使用設施。",
+          "tradeoff": "多花私人時間，也要自己確認場地與返程"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1770955903
+        },
+        "selectedIds": [
+          1,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "c5b13e37168b925e69b9f1d9e8a8db32b58dd6428ed5713eb1a236301c8bb84a"
+      },
+      "consequenceDirections": {
+        "A": "記號可能有幫助，也可能仍需要下次當面釐清。",
+        "B": "同事不再負責陪到我滿意，教師獨練可能發現問題在自己",
+        "C": "下次須重新找回節奏，不把家人等待當理所當然。",
+        "D": "練習不綁在接送空檔，私人安排要重新協調。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "021f34e64fdde4142351b4455a79c67cef4062069e0daf0aa2c58dfa53366756",
+    "draftSha256": "dc00c681d8de894fc137ea30b07a80d9f464df7da481542af6992be8af968783",
     "seedAssignmentVersion": 1
   }
 }

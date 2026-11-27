@@ -16,14 +16,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8e888005db2ae4eeae943587140cb1e791e1601a03ac57849629a98ddc7fd790",
+      "checkedAt": "2026-11-27T04:34:20.582Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請親子在都方便時試談一次吃飯與錄製的先後安排，不由你替雙方答應",
+            "action": "導師已請親子在都方便時試談一次吃飯與錄製的先後安排，不由你替雙方答應",
+            "tradeoff": "可能仍談不攏，也不能占掉家長上班時間"
+          },
+          {
+            "id": 2,
+            "text": "把校內作業要求與私人作品分開說清楚，不以完成自製影片作學校義務",
+            "action": "導師已把校內作業要求與私人作品分開說清楚，不以完成自製影片作學校義務",
+            "tradeoff": "家長可能少了一個勸停理由，孩子也不能再拿作業當藉口"
+          },
+          {
+            "id": 3,
+            "text": "請家長只提出想保留的共同用餐時間，不先全面禁止孩子創作",
+            "action": "導師已請家長只提出想保留的共同用餐時間，不先全面禁止孩子創作",
+            "tradeoff": "她可能覺得要求太少，孩子也未必接受"
+          },
+          {
+            "id": 4,
+            "text": "另約孩子合適時段聽他怎麼安排錄製，不在家長面前代猜動機",
+            "action": "導師已另約孩子合適時段聽他怎麼安排錄製，不在家長面前代猜動機",
+            "tradeoff": "要多一次聯繫，今晚的安排仍由家庭決定"
+          },
+          {
+            "id": 5,
+            "text": "提供可自願使用的親師或家庭溝通支持資訊，不強制轉介",
+            "action": "導師已提供可自願使用的親師或家庭溝通支持資訊，不強制轉介",
+            "tradeoff": "家長得另外找時間，也可能不需要"
+          },
+          {
+            "id": 6,
+            "text": "明確拒絕替停錄背書，只把已知家規與可協商項目整理回給家長",
+            "action": "導師已明確拒絕替停錄背書，只把已知家規與可協商項目整理回給家長",
+            "tradeoff": "她可能覺得你不肯幫忙，也得自己開口談"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想讓每通電話都變成代管孩子晚餐，說清今天只能談到哪一分鐘，餘下另約，不再陪著線上盯他出房門",
+          "action": "導師已說明非急迫電話結束時間並提出可行後續聯繫，未代下家庭禁令或放棄必要安全協助",
+          "tradeoff": "家長可能失望，今晚也未必談成；急迫安全問題仍須即時處理"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2016109901
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "ef8cb53f3dc28358001153c7a5c4ee52930ed2b6a991fe9b378a93bd423f5e91"
+      },
+      "consequenceDirections": {
+        "A": "她知道教師不能補上夜班前全部陪伴，你則要守住另約時間，不能掛掉便忘。",
+        "B": "爭執較能集中在十幾分鐘的相處，錄製興趣不會直接被說成不務正業。",
+        "C": "家規爭議回到家庭，教師仍負責真正的課業要求。",
+        "D": "教師不會被借作家庭命令來源，親子仍須面對原先互相答應的事。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "757f411140ea91bfa3254a211e4524a976b92b4a99b261a1e1f7512466712591",
+    "draftSha256": "8e888005db2ae4eeae943587140cb1e791e1601a03ac57849629a98ddc7fd790",
     "seedAssignmentVersion": 1
   }
 }

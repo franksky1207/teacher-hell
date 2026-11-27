@@ -14,14 +14,82 @@
   "plannedTags": [
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9809c1bd65c759d0e304d5ee0226d3153991200fcd2e802c04133ee76114465e",
+      "checkedAt": "2026-11-27T04:34:20.589Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請正式學籍與編班窗口核實名額及權限後直接回覆，不給口頭保證",
+            "action": "導師已請正式學籍與編班窗口核實名額及權限後直接回覆，不給口頭保證",
+            "tradeoff": "家長要等待，可能不滿不能立即得到班別"
+          },
+          {
+            "id": 2,
+            "text": "陪同事共同向有權主管確認實際說過什麼，不由他一人承擔追問",
+            "action": "導師已陪同事共同向有權主管確認實際說過什麼，不由他一人承擔追問",
+            "tradeoff": "要占雙方時間，也可能面對主管的不悅"
+          },
+          {
+            "id": 3,
+            "text": "把來電原話與尚待核實事項做正常交班，交下一位合格承辦接續",
+            "action": "導師已把來電原話與尚待核實事項做正常交班，交下一位合格承辦接續",
+            "tradeoff": "同事無法立刻結案，也須寫清楚沒有同意調班"
+          },
+          {
+            "id": 4,
+            "text": "由你向家長說明導師沒有選人換班的權限，後續仍交正式窗口",
+            "action": "導師已由你向家長說明導師沒有選人換班的權限，後續仍交正式窗口",
+            "tradeoff": "你得承受眼前質問，也不能替其他單位保證結果"
+          },
+          {
+            "id": 5,
+            "text": "請同事先依核可方式送出受理確認與回覆窗口，不等於承諾名額",
+            "action": "導師已請同事先依核可方式送出受理確認與回覆窗口，不等於承諾名額",
+            "tradeoff": "多一道必要說明，家長仍可能持續追問"
+          },
+          {
+            "id": 6,
+            "text": "向承辦主管提出統一說明調班詢問程序的需求，避免每通電話臨時求人",
+            "action": "導師已向承辦主管提出統一說明調班詢問程序的需求，避免每通電話臨時求人",
+            "tradeoff": "改善未必當天生效，也要整理具體困難"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再被拉去當人情名單的最後一手，請同事把要你選人這項要求如實寫入交辦紀錄，交主管正式答覆",
+          "action": "導師已要求如實記錄收到的越權選人要求並提交主管確認，不記無關個資、不自行調班或承諾名額",
+          "tradeoff": "會讓彼此的尷尬留下紀錄，也可能被認為太較真"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3587998545
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "66925baf8db7e1cadffd14288529280026ee3c709e640e1249b9727d1660d7bc"
+      },
+      "consequenceDirections": {
+        "A": "口頭壓力變成可核對的交辦問題，你不必偷偷找一個學生犧牲，但仍要配合合法的資料說明。",
+        "B": "案件不會因換班消失，家長卻可能介意要再聽一次確認流程。",
+        "C": "傳聞有機會被更正，但不能因主管一句隨口話就跳過正式規則。",
+        "D": "來電不會懸在誰都以為別人答應的位置，但正式答覆仍需核實。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e6e9ab390c3bec534180c084c2c3ac81da6827f65a4c0c426ce99150397663e3",
+    "draftSha256": "9809c1bd65c759d0e304d5ee0226d3153991200fcd2e802c04133ee76114465e",
     "seedAssignmentVersion": 1
   }
 }

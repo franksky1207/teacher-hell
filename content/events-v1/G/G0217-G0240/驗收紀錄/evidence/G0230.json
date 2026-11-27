@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "932507a0bc4e675f53085a174a30342975dfea7e1dd448e8e63a16d60502bd79",
+      "checkedAt": "2026-11-27T04:34:20.593Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不採用自費採買案，先用校內現有材料完成必要課程",
+            "action": "導師已不採用自費採買案，先用校內現有材料完成必要課程",
+            "tradeoff": "成果可能不如原想像亮眼，他也會失去一個想展示的設計"
+          },
+          {
+            "id": 2,
+            "text": "協助他向有權單位詢問加給條件與申請方式，不替他承諾結果",
+            "action": "導師已協助他向有權單位詢問加給條件與申請方式，不替他承諾結果",
+            "tradeoff": "他得直接面對自己原本迴避的待遇問題"
+          },
+          {
+            "id": 3,
+            "text": "和他協議一次不需新增購物的小範圍試教",
+            "action": "導師已和他協議一次不需新增購物的小範圍試教",
+            "tradeoff": "仍要花備課與試用時間，不能當成已獲加給"
+          },
+          {
+            "id": 4,
+            "text": "依原授權只借用他已備好且願意提供的一小部分，約明歸還與不再追加",
+            "action": "導師已依原授權只借用他已備好且願意提供的一小部分，約明歸還與不再追加",
+            "tradeoff": "他可撤回未成立的借用，材料數量也有限"
+          },
+          {
+            "id": 5,
+            "text": "請他把教學價值與預估成本分開寫清楚，交權責方評估是否由校方負擔",
+            "action": "導師已請他把教學價值與預估成本分開寫清楚，交權責方評估是否由校方負擔",
+            "tradeoff": "要等審核，也可能不核准"
+          },
+          {
+            "id": 6,
+            "text": "請他暫停這次額外提案，先保留既定工作與休息，再決定是否重送",
+            "action": "導師已請他暫停這次額外提案，先保留既定工作與休息，再決定是否重送",
+            "tradeoff": "可能錯過他想把握的機會，也要明說不是嫌他能力差"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不喜歡自己只站在旁邊勸他別花錢，提出用你一段正式可用的協作時間一起備課，讓他決定是否接受",
+          "action": "導師已在本人有資格且可合法安排的時段提出一次自願共同備課，不代核待遇、強派工作或追加私人支出",
+          "tradeoff": "會壓縮你的工作彈性，也不能拿共同備課當待遇承諾"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3221442314
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "a9e0c8e4577a24a0b4ba46132b551f37c075f613a94e3adb44984b6b52200cbf"
+      },
+      "consequenceDirections": {
+        "A": "需求可正式進入預算討論，但不能先買再把費用丟給學校。",
+        "B": "是否有機會按正式規則判斷，不必先花錢證明忠誠。",
+        "C": "設計可用實際效果討論，但若成效普通，他仍需接受據實回饋。",
+        "D": "他得到的是成人實際人力而非再一盒材料，但兩人仍得面對誰做哪些事與成效如何。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "802122a7dcfd8ca30fd25ab6d63727320a8b41783cd4bbfc4e4b8fa91f34d91f",
+    "draftSha256": "932507a0bc4e675f53085a174a30342975dfea7e1dd448e8e63a16d60502bd79",
     "seedAssignmentVersion": 1
   }
 }

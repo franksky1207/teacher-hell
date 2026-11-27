@@ -16,14 +16,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ae3e7764dd7b85ea941ce4cb115c52c0d9b04bf569f1157b200a2c088518317e",
+      "checkedAt": "2026-11-27T04:34:20.602Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "接受任課教師核定的安全分流方式，依約協助其中一組",
+            "action": "導師已接受任課教師核定的安全分流方式，依約協助其中一組",
+            "tradeoff": "你得先學清楚帶法，也要分配合格成人照看"
+          },
+          {
+            "id": 2,
+            "text": "請任課教師先帶全班做一次必要示範，你協助觀察學生看不懂哪裡",
+            "action": "導師已請任課教師先帶全班做一次必要示範，你協助觀察學生看不懂哪裡",
+            "tradeoff": "實際練習時間減少，也可能有人仍只看不會做"
+          },
+          {
+            "id": 3,
+            "text": "由任課教師重排順序，先做不受場地限制的安全基本步驟",
+            "action": "導師已由任課教師重排順序，先做不受場地限制的安全基本步驟",
+            "tradeoff": "原定賽式延後，學生可能覺得又沒玩到"
+          },
+          {
+            "id": 4,
+            "text": "向場地權責者確認另有可用場地後，依任課安排移動",
+            "action": "導師已向場地權責者確認另有可用場地後，依任課安排移動",
+            "tradeoff": "移動會用掉時間，也可能根本沒有空場"
+          },
+          {
+            "id": 5,
+            "text": "協助任課教師記下今日因場地未能完成的實作，另依課程安排接續",
+            "action": "導師已協助任課教師記下今日因場地未能完成的實作，另依課程安排接續",
+            "tradeoff": "當日成果不完整，也要另找正式機會"
+          },
+          {
+            "id": 6,
+            "text": "先請任課教師指出你原提案漏掉的課程目標，依其專業調整你的協助",
+            "action": "導師已先請任課教師指出你原提案漏掉的課程目標，依其專業調整你的協助",
+            "tradeoff": "要承認自己判斷不夠，也可能臨時做得不熟"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被問得有點不服，乾脆在任課老師允許下自己當一次初學者，照最慢那套步驟試給他看，再決定你能幫哪一段",
+          "action": "導師已向任課教師提出本人在安全核可下短暫試做初學步驟的請求，依其決定執行，不越權改課或讓學生跟做未確認動作",
+          "tradeoff": "你可能當場也做不好，會占用一小段可調整時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1187955853
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "93e5d4e6ce48240683a8c5212b14d1f51dbefeec7de9be5ad1ffcf1eeab3ea43"
+      },
+      "consequenceDirections": {
+        "A": "不同程度的人能實際練習，但不能讓分組變成永久貼上快慢標籤。",
+        "B": "技巧仍能往前一點，但教師得說清楚這不是用跑圈取代全部內容。",
+        "C": "教師能看出成人新手也會卡住的地方，你卻不能用自己試過一次就取代專業安全與教學判斷。",
+        "D": "學生不會被記成已會，但補足練習的責任也明確留下。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "223e31a3abcbd9d8fbaec87b4aa25a23e719248a9f3afad20173fe989486302d",
+    "draftSha256": "ae3e7764dd7b85ea941ce4cb115c52c0d9b04bf569f1157b200a2c088518317e",
     "seedAssignmentVersion": 1
   }
 }

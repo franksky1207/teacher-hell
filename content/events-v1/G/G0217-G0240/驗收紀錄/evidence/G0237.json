@@ -15,14 +15,82 @@
     "G01",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "69e6d4f5b05ae204babd59f9e98933e8f2067206366f3f95928f0a7b64b9fd4d",
+      "checkedAt": "2026-11-27T04:34:20.606Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先向已接收者送出核實後的共同更正與版本說明",
+            "action": "導師已先向已接收者送出核實後的共同更正與版本說明",
+            "tradeoff": "要追蹤原接收範圍，也可能暴露題庫先前不夠清楚"
+          },
+          {
+            "id": 2,
+            "text": "由有權任課教師確認後，把暫不適用的題目留待改寫，不急著放回題庫",
+            "action": "導師已由有權任課教師確認後，把暫不適用的題目留待改寫，不急著放回題庫",
+            "tradeoff": "可用題數減少，原準備可能暫時白做"
+          },
+          {
+            "id": 3,
+            "text": "請同事把自己被誤導的步驟寫下，經核對後提供教師作教學參考",
+            "action": "導師已請同事把自己被誤導的步驟寫下，經核對後提供教師作教學參考",
+            "tradeoff": "會公開成人曾答錯，也要避免把趣事當成更正內容"
+          },
+          {
+            "id": 4,
+            "text": "邀合適且自願的任課同仁先試解修訂版，再決定恢復使用",
+            "action": "導師已邀合適且自願的任課同仁先試解修訂版，再決定恢復使用",
+            "tradeoff": "需要他人時間，也可能又找出新問題"
+          },
+          {
+            "id": 5,
+            "text": "把原反例改成已獲准去識別的課堂討論材料，由任課教師決定使用",
+            "action": "導師已把原反例改成已獲准去識別的課堂討論材料，由任課教師決定使用",
+            "tradeoff": "要核對授權與正確性，不能讓人猜出學生"
+          },
+          {
+            "id": 6,
+            "text": "和承辦確認往後版本變更由誰通知、誰撤下舊檔，不只靠私下傳訊",
+            "action": "導師已和承辦確認往後版本變更由誰通知、誰撤下舊檔，不只靠私下傳訊",
+            "tradeoff": "要談清楚責任，也可能發現原流程沒有人負責"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想知道自己是不是只靠剛好看過反例，請同事另出一個同條件的小變化，讓你先做、再一起查",
+          "action": "導師已邀同事自願提供同概念的合法變式供本人試解並共同核對，不以私人試題替代正式修訂或學生評量",
+          "tradeoff": "你可能一樣掉進陷阱，也會占掉一段空檔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3259497733
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "8b6ba7337852e485f7015ae1797ac231360035ff638a7ad32ceceda5e8afb7fc"
+      },
+      "consequenceDirections": {
+        "A": "改版多一次實際核對，卻不能為了等滿所有人就延誤必要告知。",
+        "B": "下次改版較不容易兩套並存，今天仍須完成實際更正。",
+        "C": "各班不會各自猜新版，但仍要確認已教過的學生是否收到必要補充。",
+        "D": "兩人能確認理解是否真的改變，但這次私人試解不能延誤已啟動的勘誤與通知。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "dd2554cef12fed93da5c2573fe02617920215618ddb3d5c4ab6dd08d5d37a093",
+    "draftSha256": "69e6d4f5b05ae204babd59f9e98933e8f2067206366f3f95928f0a7b64b9fd4d",
     "seedAssignmentVersion": 1
   }
 }

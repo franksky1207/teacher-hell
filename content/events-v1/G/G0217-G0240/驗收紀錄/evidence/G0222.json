@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "90742888d3ad8489a55281742c9a6013f2ba37f01ef2967bee6c600ce644d649",
+      "checkedAt": "2026-11-27T04:34:20.586Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取出可合法分享的教案，先問他是否真的要用，再由本人同意留存",
+            "action": "導師已取出可合法分享的教案，先問他是否真的要用，再由本人同意留存",
+            "tradeoff": "要整理版本與用途，也可能仍得留一份備查"
+          },
+          {
+            "id": 2,
+            "text": "只留下自己願意保存的一頁，其餘合法書籍照原計畫寄售",
+            "action": "導師已只留下自己願意保存的一頁，其餘合法書籍照原計畫寄售",
+            "tradeoff": "原教案不再完整，也可能之後想找卻找不回"
+          },
+          {
+            "id": 3,
+            "text": "確認可售範圍後照原計畫寄售，不因同事重視就替自己撤回",
+            "action": "導師已確認可售範圍後照原計畫寄售，不因同事重視就替自己撤回",
+            "tradeoff": "他可能失落，之後也不能保證能買回原本那冊"
+          },
+          {
+            "id": 4,
+            "text": "把尚未決定的這一小份暫留，約一個自己能做決定的期限",
+            "action": "導師已把尚未決定的這一小份暫留，約一個自己能做決定的期限",
+            "tradeoff": "又得帶一點東西回家，期限到時仍要面對取捨"
+          },
+          {
+            "id": 5,
+            "text": "在合法授權與不影響店家交易下，把同事需要的部分轉為他可留用的副本",
+            "action": "導師已在合法授權與不影響店家交易下，把同事需要的部分轉為他可留用的副本",
+            "tradeoff": "需要時間與可能費用，不能複製不具權限的內容"
+          },
+          {
+            "id": 6,
+            "text": "請他說出教案中哪個做法曾有用，只聽這一次，再由你自己決定去留",
+            "action": "導師已請他說出教案中哪個做法曾有用，只聽這一次，再由你自己決定去留",
+            "tradeoff": "可能勾起不想談的工作回憶，也不能要求他說服你"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你今天就是想把箱子清空，請店家依規定估可收的合法書籍，未收的自家紙本交合規回收，不再帶回家",
+          "action": "導師已就本人有權處分且不涉敏感資料的紙本決定依店規估收與合法回收，不處分他人或校有物",
+          "tradeoff": "可能少了寄售收入，也會失去日後反悔的機會"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1098286690
+        },
+        "selectedIds": [
+          2,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "71d28c4c365b75ca93876b63a64b1a4a5cc0e8bb53b16ea8214f9d353998d3df"
+      },
+      "consequenceDirections": {
+        "A": "方法可以離開舊書繼續被用，你自己則可以真正放手實體。",
+        "B": "整理在今天有明確終點，同事可能不捨，但不能再靠替你留一箱延長這個決定。",
+        "C": "同事能保住曾有幫助的方法，你卻不必把整箱帶回家。",
+        "D": "記憶有一個小位置，生活空間則真正減少占用。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7ec3bf9a8801caf241df74211ba182b30aea3adf9173f3406cbff421251e3a98",
+    "draftSha256": "90742888d3ad8489a55281742c9a6013f2ba37f01ef2967bee6c600ce644d649",
     "seedAssignmentVersion": 1
   }
 }

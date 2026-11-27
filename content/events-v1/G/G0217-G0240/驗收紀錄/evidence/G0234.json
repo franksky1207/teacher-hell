@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9d0c2146da432412b3bd8bb8eed9cf53a279bf08377367d07ef557abca63e766",
+      "checkedAt": "2026-11-27T04:34:20.596Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "承認自己先收不妥，接受這局未完且不另判勝負",
+            "action": "導師已承認自己先收不妥，接受這局未完且不另判勝負",
+            "tradeoff": "他可能覺得優勢白費，之後也未必想再開局"
+          },
+          {
+            "id": 2,
+            "text": "兩人一起依記憶記下可確認的局面，日後雙方同意再續",
+            "action": "導師已兩人一起依記憶記下可確認的局面，日後雙方同意再續",
+            "tradeoff": "記錄可能不完整，也得再找合法空檔"
+          },
+          {
+            "id": 3,
+            "text": "若雙方都有可合法挪用的私人空檔，依可確認局面短暫續玩再收",
+            "action": "導師已若雙方都有可合法挪用的私人空檔，依可確認局面短暫續玩再收",
+            "tradeoff": "可能影響自己的私人安排，不能占用必要勤務"
+          },
+          {
+            "id": 4,
+            "text": "在他同意下，把這次可確認的領先如實留下，不把它冒稱成正式完局勝利",
+            "action": "導師已在他同意下，把這次可確認的領先如實留下，不把它冒稱成正式完局勝利",
+            "tradeoff": "你要接受自己確實落後，他也可能嫌這種記法沒意思"
+          },
+          {
+            "id": 5,
+            "text": "先問他今天最希望保留的是什麼，再共同決定要記錄、停下或另約",
+            "action": "導師已先問他今天最希望保留的是什麼，再共同決定要記錄、停下或另約",
+            "tradeoff": "得多留一小段談話，也可能發現不只在意輸贏"
+          },
+          {
+            "id": 6,
+            "text": "與他約定往後收局前先確認與存局，這次已知部分依雙方同意處理",
+            "action": "導師已與他約定往後收局前先確認與存局，這次已知部分依雙方同意處理",
+            "tradeoff": "規則需要真的遵守，也不能修復今天全部損失"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你其實有點怕輸，直接說出這一點，提出下一次由你負責帶自己的點心、照他的可用時間開一局，這局不偷算和局",
+          "action": "導師已承認本人避輸動機並提出自負點心費、配合對方私人時間的新局邀約，不改寫本局未完事實或要求接受",
+          "tradeoff": "要花自己的費用與時間，對方也可以不接受邀約"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2136021633
+        },
+        "selectedIds": [
+          1,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "0873969fe6961412fa692cb2a9291c1ccc4a98544d4d596a8e39b51e649059c7"
+      },
+      "consequenceDirections": {
+        "A": "優勢沒有被你收盒一筆抹去，但日後重開仍是另一局。",
+        "B": "下次不必看誰先拿盒子決定結束，但對方仍可能先觀察幾次才放心。",
+        "C": "同事能知道收盒不只是趕時間，但一頓點心不會買到原諒，下一局仍可能再把你打得很慘。",
+        "D": "今天能準時停下，但不是一句沒結果就消除擅自收局的不滿。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2ac331568e0e9bd4ee0d5ef33ceb2104c5cf7e7352517c7001c55ccc174bedcb",
+    "draftSha256": "9d0c2146da432412b3bd8bb8eed9cf53a279bf08377367d07ef557abca63e766",
     "seedAssignmentVersion": 1
   }
 }

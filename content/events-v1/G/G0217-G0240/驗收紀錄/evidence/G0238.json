@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7ec970910820d5c3f14a20c6c36a9ba6dfc761d8c644e619ea723e6662a6b6aa",
+      "checkedAt": "2026-11-27T04:34:20.607Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "直接承認沒有先問便分掉，讓他說完不滿，不拿好心當理由",
+            "action": "導師已直接承認沒有先問便分掉，讓他說完不滿，不拿好心當理由",
+            "tradeoff": "會很難堪，也不能靠認錯立刻補回家人的心意"
+          },
+          {
+            "id": 2,
+            "text": "詢問他是否願意接受你自費補買當天早餐，款式與份量先由他決定",
+            "action": "導師已詢問他是否願意接受你自費補買當天早餐，款式與份量先由他決定",
+            "tradeoff": "要花自己的費用，也不能把補買當成兩清"
+          },
+          {
+            "id": 3,
+            "text": "請他決定下次還想不想帶，不要求再請家人重做",
+            "action": "導師已請他決定下次還想不想帶，不要求再請家人重做",
+            "tradeoff": "他可能從此不帶，你也失去熟悉的共享早餐"
+          },
+          {
+            "id": 4,
+            "text": "向已拿到的人只更正這不是原本打算公開分享的食物，不要求退還或付錢",
+            "action": "導師已向已拿到的人只更正這不是原本打算公開分享的食物，不要求退還或付錢",
+            "tradeoff": "你得承擔尷尬，也不能把責任推到接收者"
+          },
+          {
+            "id": 5,
+            "text": "和他約定以後私人食物先問用途與對象，未確認就不拆分",
+            "action": "導師已和他約定以後私人食物先問用途與對象，未確認就不拆分",
+            "tradeoff": "會少一些順手互送的便利，也須真正做到"
+          },
+          {
+            "id": 6,
+            "text": "把原先安排和他一起談的非急工作改約，先讓他自己吃飯與休息",
+            "action": "導師已把原先安排和他一起談的非急工作改約，先讓他自己吃飯與休息",
+            "tradeoff": "你的事情要延後，他也未必願意再談早餐"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你很不想繼續看見那個空袋，先用自己的早餐錢買一份單人餐，留給自己吃，不再靠分他的東西撐熟人情",
+          "action": "導師已自費安排本人單人早餐並告知不再擅分同事食物，未要求對方再供餐或把自購餐當補償完成",
+          "tradeoff": "要付自己的錢，也可能顯得你在鬧脾氣，需要說清不是斷交"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1189448524
+        },
+        "selectedIds": [
+          5,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "aecb01a9e604ef755b0c3029b7aa4fe07c1903bfeb3e6b01c0e8c7e17c60e4bf"
+      },
+      "consequenceDirections": {
+        "A": "眼前沒吃到的部分可被照顧，家庭手作的特別意味仍無法重買。",
+        "B": "同事能保留自己的分享範圍，但一次約定不足以證明習慣已改。",
+        "C": "家人的付出不再被視為隨時可補貨，但兩人的日常可能因此改變。",
+        "D": "你不會再順手把私人分享當公用，同事卻可能擔心兩人從此連一起吃飯都變得尷尬。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "78fe9c84bb5b1a1473b036c84658ba61149240501afb9ad916fba64e0c317334",
+    "draftSha256": "7ec970910820d5c3f14a20c6c36a9ba6dfc761d8c644e619ea723e6662a6b6aa",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dfd9a41c3cf42f6461805b202bab6afe4570038f3e737825fad7200a301f654f",
+      "checkedAt": "2026-11-27T04:34:20.591Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "支持他直接拒借，不要求用其他人情補償朋友",
+            "action": "導師已支持他直接拒借，不要求用其他人情補償朋友",
+            "tradeoff": "同伴可能不高興，他也可能擔心之後被排除"
+          },
+          {
+            "id": 2,
+            "text": "在家庭與場地條件都確認後，另談是否有合規且自願的練習，不把今天當場試騎",
+            "action": "導師已在家庭與場地條件都確認後，另談是否有合規且自願的練習，不把今天當場試騎",
+            "tradeoff": "要另找時間與適當成人，也可能最後不借"
+          },
+          {
+            "id": 3,
+            "text": "陪他準備一段不指責對方的拒借說法，由本人自行說",
+            "action": "導師已陪他準備一段不指責對方的拒借說法，由本人自行說",
+            "tradeoff": "他得自己開口，對方也未必接受"
+          },
+          {
+            "id": 4,
+            "text": "協助他與家人確認車燈修補與往後通勤條件，不只把問題當借車爭執",
+            "action": "導師已協助他與家人確認車燈修補與往後通勤條件，不只把問題當借車爭執",
+            "tradeoff": "可能增加家庭費用，修好前仍須使用安全安排"
+          },
+          {
+            "id": 5,
+            "text": "問雙方是否願意在合規安全範圍內一起牽車走到已確認的交接點",
+            "action": "導師已問雙方是否願意在合規安全範圍內一起牽車走到已確認的交接點",
+            "tradeoff": "要多花時間，不能代家庭改變離校安排"
+          },
+          {
+            "id": 6,
+            "text": "若同伴確有持續不當施壓，依具體事實處理，不把普通失望直接定性",
+            "action": "導師已若同伴確有持續不當施壓，依具體事實處理，不把普通失望直接定性",
+            "tradeoff": "要持續觀察與核實，學生可能不想把事情說大"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想在車旁再聽一輪誰比較敢，請合格權責成人接續返家交接，自己帶兩人回到獲准等候區，把借車話題今天停在這裡",
+          "action": "導師已停止現場非必要借車爭辯，帶回合法等候點並向適當成人完成安全返家交接，不扣留車輛作懲罰",
+          "tradeoff": "會讓兩人覺得被打斷，也要確實交接而非一走了之"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1072871140
+        },
+        "selectedIds": [
+          3,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "ab248a1274ac2700f6cc2318b330ad85b3411db36d67debd4bd3aad31554cdcf"
+      },
+      "consequenceDirections": {
+        "A": "壓力暫時離開那個車把，原借車意願卻仍須由車主日後自行決定。",
+        "B": "他有求助管道，但教師不能只憑不喜歡一句玩笑就判定整段友誼。",
+        "C": "界線能說得清楚，仍可能需要後續處理具體的嘲弄或施壓。",
+        "D": "私人車輛不再成為交友測驗，但教師不能保證一句拒絕不會帶來尷尬。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "efc1d2df218d8849909df3af78d74c91c373502fdecd8552deb45d2bed31b440",
+    "draftSha256": "dfd9a41c3cf42f6461805b202bab6afe4570038f3e737825fad7200a301f654f",
     "seedAssignmentVersion": 1
   }
 }

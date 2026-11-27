@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2a24c94ea1aacacc9059ce7cdb108cfe11733a8ca741c4269a9dea63412479d7",
+      "checkedAt": "2026-11-27T04:34:20.587Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留缺口，照現在的樣子收存，不再找替代片",
+            "action": "導師已保留缺口，照現在的樣子收存，不再找替代片",
+            "tradeoff": "每次看都會看見不完整，也不能假裝原品齊全"
+          },
+          {
+            "id": 2,
+            "text": "一起補畫一片，先接受色差會很明顯",
+            "action": "導師已一起補畫一片，先接受色差會很明顯",
+            "tradeoff": "要花時間試尺寸，成品未必好看"
+          },
+          {
+            "id": 3,
+            "text": "向原賣家依正常交易方式詢問是否另有散片，不要求一定補給",
+            "action": "導師已向原賣家依正常交易方式詢問是否另有散片，不要求一定補給",
+            "tradeoff": "可能沒有回覆，也要避免再花超過預算的錢"
+          },
+          {
+            "id": 4,
+            "text": "把這幅先拆回盒內，兩人另選現有可玩的休閒",
+            "action": "導師已把這幅先拆回盒內，兩人另選現有可玩的休閒",
+            "tradeoff": "今天的成就感消失，也可能沒人想再拼一次"
+          },
+          {
+            "id": 5,
+            "text": "只以可移除的紙片試色，不立刻黏上原作",
+            "action": "導師已只以可移除的紙片試色，不立刻黏上原作",
+            "tradeoff": "得多做一步，也可能始終沒有喜歡的色"
+          },
+          {
+            "id": 6,
+            "text": "把缺片情形如實記在盒上，若日後轉讓也清楚告知",
+            "action": "導師已把缺片情形如實記在盒上，若日後轉讓也清楚告知",
+            "tradeoff": "可能降低轉售價值，還要決定現在怎麼收"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再為一片花一毛，提議兩人共同把這盒註明缺片，免費轉給真正願意接手的人，對方不同意就不處分",
+          "action": "導師已向共同參與者提出依所有權與雙方同意公開註明缺片後免費轉讓的方案，未先處分他人物品",
+          "tradeoff": "可能永遠放手這幅共同成果，也要等雙方同意及合適接收者，不能擅自丟掉"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3878932210
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "c38d9b85c16a2d389bc4df43f8cff48db0c23158c4109ba873478661041e7752"
+      },
+      "consequenceDirections": {
+        "A": "兩人能在今天停手，日後卻可能又忍不住想找那一片。",
+        "B": "作品多了一段共同製作，原拼圖畫面卻永遠不會完全一樣。",
+        "C": "收藏不會把同一個驚喜再丟給下一人，但眼前缺口仍存在。",
+        "D": "若雙方同意並找到接收者，缺口會連同整盒離開兩人的休閒；若不同意，你得接受同事仍想留下，而不是自己先送走。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "當批語意審查發現原情緒候選與普通候選行動範圍過近，定向修改其實質行動、代價及對應後果，真實重抽洗牌一次；保留完整舊抽選與後果，未指定組合或重抽取巧。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "保留缺口，照現在的樣子收存，不再找替代片",
+                "action": "導師已保留缺口，照現在的樣子收存，不再找替代片",
+                "tradeoff": "每次看都會看見不完整，也不能假裝原品齊全"
+              },
+              {
+                "id": 2,
+                "text": "一起補畫一片，先接受色差會很明顯",
+                "action": "導師已一起補畫一片，先接受色差會很明顯",
+                "tradeoff": "要花時間試尺寸，成品未必好看"
+              },
+              {
+                "id": 3,
+                "text": "向原賣家依正常交易方式詢問是否另有散片，不要求一定補給",
+                "action": "導師已向原賣家依正常交易方式詢問是否另有散片，不要求一定補給",
+                "tradeoff": "可能沒有回覆，也要避免再花超過預算的錢"
+              },
+              {
+                "id": 4,
+                "text": "把這幅先拆回盒內，兩人另選現有可玩的休閒",
+                "action": "導師已把這幅先拆回盒內，兩人另選現有可玩的休閒",
+                "tradeoff": "今天的成就感消失，也可能沒人想再拼一次"
+              },
+              {
+                "id": 5,
+                "text": "只以可移除的紙片試色，不立刻黏上原作",
+                "action": "導師已只以可移除的紙片試色，不立刻黏上原作",
+                "tradeoff": "得多做一步，也可能始終沒有喜歡的色"
+              },
+              {
+                "id": 6,
+                "text": "把缺片情形如實記在盒上，若日後轉讓也清楚告知",
+                "action": "導師已把缺片情形如實記在盒上，若日後轉讓也清楚告知",
+                "tradeoff": "可能降低轉售價值，還要決定現在怎麼收"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "你越看越覺得缺得很好笑，徵得同事同意後在補片畫一個故意搶眼的小東西，不再努力裝成原圖",
+              "action": "導師已提出由雙方同意製作可移除的刻意改圖補片，不毀損他人物品或偽稱原片",
+              "tradeoff": "他可能覺得太突兀，兩人都得接受作品變調"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2948950204
+            },
+            "selectedIds": [
+              2,
+              3,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": "emotional",
+              "C": 3,
+              "D": 2
+            },
+            "optionsDigest": "cf9413175686f3180a82697053bf091189598522b7f7e77ee27adae6b1734a8b"
+          },
+          "previousConsequenceDirections": {
+            "A": "私人時間不再卡在缺口，但共同完成的想像暫時告一段落。",
+            "B": "這幅能成為共同玩笑，卻不能再冒稱原版完整品，也可能讓你之後看久了想換回空白。",
+            "C": "原片有一點找回機會，兩人的休閒也可能又變成追查商品。",
+            "D": "作品多了一段共同製作，原拼圖畫面卻永遠不會完全一樣。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ea4ad1398e11df07eded0704c99c4bf249495dd93365f8ba217ab3d75b3dd94f",
+    "draftSha256": "2a24c94ea1aacacc9059ce7cdb108cfe11733a8ca741c4269a9dea63412479d7",
     "seedAssignmentVersion": 1
   }
 }

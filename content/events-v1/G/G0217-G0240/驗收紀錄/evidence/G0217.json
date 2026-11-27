@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "76cb0055999f32510447952bf30edda9c3ba1d8535fe0758c2c38ee8bf2389bc",
+      "checkedAt": "2026-11-27T04:34:20.580Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取得雙方同意後，保留兩版說明修改過程，不只展示漂亮的成品",
+            "action": "導師已取得雙方同意後，保留兩版說明修改過程，不只展示漂亮的成品",
+            "tradeoff": "會露出失敗草稿，也多占一段說明時間"
+          },
+          {
+            "id": 2,
+            "text": "讓原作者在合規課內時間補畫最後一格，組長只提供本人願意接受的建議",
+            "action": "導師已讓原作者在合規課內時間補畫最後一格，組長只提供本人願意接受的建議",
+            "tradeoff": "成品可能較粗糙，也會壓縮其他進度"
+          },
+          {
+            "id": 3,
+            "text": "請兩人自願重分畫格與說明內容，先談清楚誰決定修改",
+            "action": "導師已請兩人自願重分畫格與說明內容，先談清楚誰決定修改",
+            "tradeoff": "分工要重做，可能得放棄已完成的一部分"
+          },
+          {
+            "id": 4,
+            "text": "接受原先粗糙但能辨識的版本，評量依課程規則看實際參與",
+            "action": "導師已接受原先粗糙但能辨識的版本，評量依課程規則看實際參與",
+            "tradeoff": "展示不如新稿亮眼，組長可能很不甘心"
+          },
+          {
+            "id": 5,
+            "text": "請原作者自己選要不要上台，另用其可行方式說明實際工作",
+            "action": "導師已請原作者自己選要不要上台，另用其可行方式說明實際工作",
+            "tradeoff": "要依任課規則提供同等表達機會，不能任意免除必要要求"
+          },
+          {
+            "id": 6,
+            "text": "請組長把重畫技巧另做一小張供自願者參考，不再直接覆蓋同學作品",
+            "action": "導師已請組長把重畫技巧另做一小張供自願者參考，不再直接覆蓋同學作品",
+            "tradeoff": "要花時間整理，示範未必人人願意用"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也看那隻手看得心癢，請組長出一個相同姿勢讓你試畫，拿你的歪稿給兩人討論怎樣改",
+          "action": "導師已邀組長自願提供姿勢供本人試畫，使用本人稿件練習評論，不強改學生作品或評量",
+          "tradeoff": "可能暴露自己根本不會畫，也占掉一點空檔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 671822250
+        },
+        "selectedIds": [
+          5,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "9237a290cbdbdb7c56f4de7a59cbcd9fa9b8fba74d8c7c7a92ad29f37c4d055f"
+      },
+      "consequenceDirections": {
+        "A": "他不用替別人的線稿硬講，但仍須呈現自己確實參與的部分。",
+        "B": "能力能轉成可選的協助，原稿則不會一遇到歪線就被換掉。",
+        "C": "兩人能對一張不牽涉成績的稿練習提建議，你卻不能拿自己的示範代替他們真正的署名與分工處理。",
+        "D": "組員能談自己原先怎麼畫，組長也須承認代畫並非共同決定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5508c190f499ce6fc30d50acee53c05a141ab252f82f653e0d15a3fc9108b463",
+    "draftSha256": "76cb0055999f32510447952bf30edda9c3ba1d8535fe0758c2c38ee8bf2389bc",
     "seedAssignmentVersion": 1
   }
 }

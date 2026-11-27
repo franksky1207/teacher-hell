@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "334ef7000e67dae3954d7eefc079fadb853e5381783a434d665df0df28329c1f",
+      "checkedAt": "2026-11-27T04:34:20.608Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把固定的球賽聊天移出正式上課開場，不因此避開那名同學",
+            "action": "導師已把固定的球賽聊天移出正式上課開場，不因此避開那名同學",
+            "tradeoff": "少了熟悉的開場熱度，也須留意下課不再變成另一種固定占位"
+          },
+          {
+            "id": 2,
+            "text": "安排不靠共同興趣的日常短問候，讓不同學生有自然說話機會",
+            "action": "導師已安排不靠共同興趣的日常短問候，讓不同學生有自然說話機會",
+            "tradeoff": "你要多花注意力，也不能機械式一天一人點名"
+          },
+          {
+            "id": 3,
+            "text": "私下承認自己確實常先找熟悉話題，聽他想加入到什麼程度",
+            "action": "導師已私下承認自己確實常先找熟悉話題，聽他想加入到什麼程度",
+            "tradeoff": "要接受偏心的感受，不能用坦白要求他不再在意"
+          },
+          {
+            "id": 4,
+            "text": "問他是否願意自行加入合法的球賽閒聊，不把他私下的話告訴其他人",
+            "action": "導師已問他是否願意自行加入合法的球賽閒聊，不把他私下的話告訴其他人",
+            "tradeoff": "他可能仍怕插不上話，也可以改變主意"
+          },
+          {
+            "id": 5,
+            "text": "在原有課內發言安排中保留多種主題，不只讓擅長聊天的人帶方向",
+            "action": "導師已在原有課內發言安排中保留多種主題，不只讓擅長聊天的人帶方向",
+            "tradeoff": "準備與主持較費心，也可能有人嫌話題不有趣"
+          },
+          {
+            "id": 6,
+            "text": "觀察自己接下來幾次入班實際先回應誰，必要時自行調整，不對學生公布名單",
+            "action": "導師已觀察自己接下來幾次入班實際先回應誰，必要時自行調整，不對學生公布名單",
+            "tradeoff": "要持續注意，改變也未必立刻被看見"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想把每次招呼都算成排名，提議今天先和他私下聊一件你完全不懂、由他自己選的興趣，不急著加入球賽圈",
+          "action": "導師已邀學生在合法空檔自願選擇本人興趣作私人短談，不公開原談話、不承諾專屬或優先待遇",
+          "tradeoff": "你要花空檔從頭聽，也可能真的接不上話"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1839801595
+        },
+        "selectedIds": [
+          3,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "ac9d59f3f0d141d3e6aaed09a57c42dc0c824d9ddafafcdc0c3d12294a994c49"
+      },
+      "consequenceDirections": {
+        "A": "他有主動參與的方式，但教師不能把適應責任全丟回給他。",
+        "B": "他能有一次不靠共同品味的相處，卻不能因此成為下一個被全班看著的固定對象。",
+        "C": "他知道不是自己想太多，但不會因此得到每天都先被打招呼的保證。",
+        "D": "不懂球的人能有自己的入口，卻不代表每個人都想公開分享。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "143370444dcfcd267e120550729810351c04c25475c616c26557744f1e996a3a",
+    "draftSha256": "334ef7000e67dae3954d7eefc079fadb853e5381783a434d665df0df28329c1f",
     "seedAssignmentVersion": 1
   }
 }

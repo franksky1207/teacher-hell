@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6ecf16da969d481ddad0b9554cbaa54f8b96d2b6e969b68c2341052c16bb61f2",
+      "checkedAt": "2026-11-27T04:34:20.594Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "核對收交紀錄與現存版本，若確有錯漏交由有權者依規則更正",
+            "action": "導師已核對收交紀錄與現存版本，若確有錯漏交由有權者依規則更正",
+            "tradeoff": "需要時間查證，不能先保證結果一定變動"
+          },
+          {
+            "id": 2,
+            "text": "在規定容許且可普遍適用的範圍內，安排學生獨立做一小段呈現理解",
+            "action": "導師已在規定容許且可普遍適用的範圍內，安排學生獨立做一小段呈現理解",
+            "tradeoff": "要另有正式時段，不能只因家長到場就開例外"
+          },
+          {
+            "id": 3,
+            "text": "維持經核實的缺交結果，另清楚說明它不等於學生整體態度",
+            "action": "導師已維持經核實的缺交結果，另清楚說明它不等於學生整體態度",
+            "tradeoff": "家長可能仍不滿結果，你也不能再靠道德評語壓過疑問"
+          },
+          {
+            "id": 4,
+            "text": "請孩子自己說明從完成到繳交發生什麼，不由家長或教師代答",
+            "action": "導師已請孩子自己說明從完成到繳交發生什麼，不由家長或教師代答",
+            "tradeoff": "孩子可能不願說，也可能出現與成人記憶不同的版本"
+          },
+          {
+            "id": 5,
+            "text": "把缺交後的可用補交、詢問與協助方式寫清楚交家庭",
+            "action": "導師已把缺交後的可用補交、詢問與協助方式寫清楚交家庭",
+            "tradeoff": "要遵循現行期限，不能私下承諾改分"
+          },
+          {
+            "id": 6,
+            "text": "與任課權責者討論之後如何在作業回饋中分開記錄交件與理解",
+            "action": "導師已與任課權責者討論之後如何在作業回饋中分開記錄交件與理解",
+            "tradeoff": "改善需共同協調，不會立即追溯改動所有資料"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被那句同一件事嗎問得有點難堪，請家長容你當場重新說一遍這次正式會談結論，讓他指出哪句仍在猜孩子",
+          "action": "導師已邀家長核對本人重新作成的本次會談結論，刪除無根據態度推斷，未藉此改變既有合法評量程序",
+          "tradeoff": "要面對直接挑錯，也會延長會談"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 672045006
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "b7e9ae533d1f1564583590349d10510f5d7be4ccef92b5940bf51e28ebb9feef"
+      },
+      "consequenceDirections": {
+        "A": "家長能核對最後留下的說明是否只根據事實，你則不能把重說當成已獲同意。",
+        "B": "孩子有可採取的下一步，家長也可能發現原先錯過了正式管道。",
+        "C": "後續說明可能更清楚，這次仍要按個別事實處理。",
+        "D": "真正卡住的流程能被聽見，仍須和可核對資料一起確認。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "16b90b7406aa77c1774ee70b57c96f05860f54e28629e9b70a52d6ac7dfcc57e",
+    "draftSha256": "6ecf16da969d481ddad0b9554cbaa54f8b96d2b6e969b68c2341052c16bb61f2",
     "seedAssignmentVersion": 1
   }
 }

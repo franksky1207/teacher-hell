@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0cb848ed904405bac5912245a6978788dd6a35b31cfa8029900fd519b656163d",
+      "checkedAt": "2026-11-27T04:34:20.583Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "各自照安全且適合自己的配速跑，約好結束是否會合",
+            "action": "導師已各自照安全且適合自己的配速跑，約好結束是否會合",
+            "tradeoff": "同行聊天減少，也可能在路上完全看不到彼此"
+          },
+          {
+            "id": 2,
+            "text": "只約定同跑前面一小段，之後分開完成",
+            "action": "導師已只約定同跑前面一小段，之後分開完成",
+            "tradeoff": "共同時間有限，不能臨時要求他一路陪到底"
+          },
+          {
+            "id": 3,
+            "text": "接受他自願的慢跑示範，先試一段再自行決定",
+            "action": "導師已接受他自願的慢跑示範，先試一段再自行決定",
+            "tradeoff": "他要挪出自己的訓練時間，你也可能發現慢下來仍不輕鬆"
+          },
+          {
+            "id": 4,
+            "text": "改和適合自己程度且願意的跑團成員同行，不要求同事代邀保證",
+            "action": "導師已改和適合自己程度且願意的跑團成員同行，不要求同事代邀保證",
+            "tradeoff": "需要重新熟悉人，對方也可能不想加入"
+          },
+          {
+            "id": 5,
+            "text": "今天改成雙方都願意的短距離輕鬆跑，不追原訓練量",
+            "action": "導師已今天改成雙方都願意的短距離輕鬆跑，不追原訓練量",
+            "tradeoff": "他與你都要放下一部分目標，不能說成完全沒代價"
+          },
+          {
+            "id": 6,
+            "text": "請他不用逐回觀察你掉在哪裡，有具體安全疑慮再直接提醒",
+            "action": "導師已請他不用逐回觀察你掉在哪裡，有具體安全疑慮再直接提醒",
+            "tradeoff": "你會少一些即時建議，也得自己留意狀況"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你今天就是不想跑給任何人看，改走安全步道散步，讓他照原計畫去跑",
+          "action": "導師已在無不適且合法安全的私人活動範圍內改為自行散步，告知同行者不再參與本次跑程",
+          "tradeoff": "原定訓練少一次，也可能被自己嫌懶"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1155954152
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "5b1be4ad3c19abe9f2a12fe19e8d99fbd376b5357d14b2b783388d0f30e56eaa"
+      },
+      "consequenceDirections": {
+        "A": "私人空檔回到你自己手裡，同事得接受關心不一定換來一起跑完。",
+        "B": "同行不再像被考核，但若真的需要幫忙仍須明說。",
+        "C": "兩人能享受一次真正同行，下次仍須重新說明是否恢復各自計畫。",
+        "D": "你能有熟悉的起步，他也保住後段訓練，分開時卻可能有點失落。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7231905769c155018da39b3f44b1ff735c58df4d13213c95623bac29207ff729",
+    "draftSha256": "0cb848ed904405bac5912245a6978788dd6a35b31cfa8029900fd519b656163d",
     "seedAssignmentVersion": 1
   }
 }

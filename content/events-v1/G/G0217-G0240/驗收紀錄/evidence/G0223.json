@@ -16,14 +16,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0aef4d2438d9b02c67269678c27dc94fab58c628777efec075d12cc9cb52f68e",
+      "checkedAt": "2026-11-27T04:34:20.586Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消這次額外集資，把已談的付款承諾一併清楚撤回",
+            "action": "導師已取消這次額外集資，把已談的付款承諾一併清楚撤回",
+            "tradeoff": "買不到原先想要的蛋糕，有人可能認為準備白做了"
+          },
+          {
+            "id": 2,
+            "text": "改成不花錢的自願祝福卡或口頭祝賀，由想參加的人自行選擇",
+            "action": "導師已改成不花錢的自願祝福卡或口頭祝賀，由想參加的人自行選擇",
+            "tradeoff": "少了吃蛋糕的期待，也不能要求每人都寫"
+          },
+          {
+            "id": 3,
+            "text": "若規則與當事人意願容許，請主辦者只提出自己真正能合法負擔的版本",
+            "action": "導師已若規則與當事人意願容許，請主辦者只提出自己真正能合法負擔的版本",
+            "tradeoff": "規模可能很小，不得要求他人事後分攤"
+          },
+          {
+            "id": 4,
+            "text": "把共同班務與私人出資分開，讓他自行決定保留哪些非金錢協助",
+            "action": "導師已把共同班務與私人出資分開，讓他自行決定保留哪些非金錢協助",
+            "tradeoff": "要重分流程，也不能用做更多工作換取免付"
+          },
+          {
+            "id": 5,
+            "text": "先私下問被慶祝者是否想要這種活動，再由願意的人重談",
+            "action": "導師已先私下問被慶祝者是否想要這種活動，再由願意的人重談",
+            "tradeoff": "大家可能發現主角根本不想公開慶生"
+          },
+          {
+            "id": 6,
+            "text": "釐清先前如何告知預算與自願性，再請說笑者就具體話語回應",
+            "action": "導師已釐清先前如何告知預算與自願性，再請說笑者就具體話語回應",
+            "tradeoff": "會用掉班務時間，不能強迫被嘲笑者立即和解"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你聽到那句就不要買也火大，決定自己不參加這次私人慶生、不替訂蛋糕，讓自願主辦者依規則自行決定",
+          "action": "導師已撤回本人對非必要私人慶生的自願協助，保留班費管理、禁止強迫集資與必要學生照顧責任",
+          "tradeoff": "少了教師協助，活動可能縮小；仍不能放任嘲笑與不當集資"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2738256948
+        },
+        "selectedIds": [
+          5,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "aee28ba0f31eba3bdb25bcd56bff057fb24d9bd0646f87dd3a93cc26b3d58d70"
+      },
+      "consequenceDirections": {
+        "A": "學生不再靠教師介入把錢湊齊，你也得接受他們可能選擇繼續一個你不想加入的合法版本。",
+        "B": "他能留在一起祝福的場合，卻可能仍在意先前被笑的那句話。",
+        "C": "誰都不必靠出錢證明友誼，但仍可另談不花錢的祝福。",
+        "D": "慶祝不再只為主辦者想像的熱鬧，但已投入的人可能感到掃興。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "66bd5fdb7017be9d866fc5ee944ec312f97e0380d0b6074b0629e033884143a3",
+    "draftSha256": "0aef4d2438d9b02c67269678c27dc94fab58c628777efec075d12cc9cb52f68e",
     "seedAssignmentVersion": 1
   }
 }

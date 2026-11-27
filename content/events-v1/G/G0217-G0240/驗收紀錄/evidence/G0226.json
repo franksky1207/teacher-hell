@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9e82ec67554fc43c5fb1c3f0c998ee22ee7fdb994d41bc89a9122850d0d9b544",
+      "checkedAt": "2026-11-27T04:34:20.591Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把已採用部分的實際貢獻逐項核對後補上，不因署名要求加入未採用題",
+            "action": "導師已把已採用部分的實際貢獻逐項核對後補上，不因署名要求加入未採用題",
+            "tradeoff": "整理費時，也可能發現工作不能簡單一人一題切開"
+          },
+          {
+            "id": 2,
+            "text": "和同事共同回到原題庫，依事先可說清楚的課程需求重新檢視",
+            "action": "導師已和同事共同回到原題庫，依事先可說清楚的課程需求重新檢視",
+            "tradeoff": "要多花備課時間，也可能推翻部分原選擇"
+          },
+          {
+            "id": 3,
+            "text": "依授權與貢獻事實採共同整理署名，另列題目來源，不把兩者混成同一欄",
+            "action": "導師已依授權與貢獻事實採共同整理署名，另列題目來源，不把兩者混成同一欄",
+            "tradeoff": "版面更複雜，也須取得相關人確認"
+          },
+          {
+            "id": 4,
+            "text": "請他指出最有疑義的一題，先一起試解再確認是否採用",
+            "action": "導師已請他指出最有疑義的一題，先一起試解再確認是否採用",
+            "tradeoff": "只能先處理一小部分，其他歧見仍在"
+          },
+          {
+            "id": 5,
+            "text": "在核實更正後，先小範圍試用並收具體錯誤回報，不急著全班擴大",
+            "action": "導師已在核實更正後，先小範圍試用並收具體錯誤回報，不急著全班擴大",
+            "tradeoff": "進度較慢，教師要多做回收與修訂"
+          },
+          {
+            "id": 6,
+            "text": "把更正版本與撤回舊版的方式發給原接收者，避免兩套並存",
+            "action": "導師已把更正版本與撤回舊版的方式發給原接收者，避免兩套並存",
+            "tradeoff": "可能需要逐一追蹤，也須承認舊版是你發的"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你很想證明自己不是故意抹人，卻先停止自己原訂的個人教案投稿，等共同貢獻與使用同意整理完再決定",
+          "action": "導師已暫停本人可決定的非必要個人教案投稿，必要來源更正照常完成，不以投稿暫停要求他人原諒或追加授權",
+          "tradeoff": "可能錯過個人投稿時機，也得面對本來算進自己成果的部分"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1714237425
+        },
+        "selectedIds": [
+          1,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "5e8487dea8acee70410e8a0aa33c087a1eb9f3548de79fb751826afbfad6135a"
+      },
+      "consequenceDirections": {
+        "A": "貢獻者不只在你電腦裡恢復名字，其他班仍可能需要補換資料。",
+        "B": "來源更正與選題能分開處理，同事卻仍可能質疑採用標準。",
+        "C": "你不再繼續用模糊來源替自己累積曝光，同事仍可對選題提出不同意見。",
+        "D": "同事能看到調整是否有效，學生也不必一次承受整套未試過的題目。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a82523f3d51b4b4bfe80ef03e508ea17efd98d56b85183fcf670e30323fa8d12",
+    "draftSha256": "9e82ec67554fc43c5fb1c3f0c998ee22ee7fdb994d41bc89a9122850d0d9b544",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G05",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1d657db86ea9a54c48d2873400e7554a9aa0f2c9a572c26349472e8a9cb172be",
+      "checkedAt": "2026-11-27T04:34:20.605Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "和任課教師依現行課程核對哪些章節仍適用，不以年份直接判定全好或全壞",
+            "action": "導師已和任課教師依現行課程核對哪些章節仍適用，不以年份直接判定全好或全壞",
+            "tradeoff": "需要查閱時間，也可能只剩很少內容可用"
+          },
+          {
+            "id": 2,
+            "text": "提供校內合法可用的替代教材或借閱資訊，不要求立刻補買整套",
+            "action": "導師已提供校內合法可用的替代教材或借閱資訊，不要求立刻補買整套",
+            "tradeoff": "資源有數量與期限，也未必完全相同"
+          },
+          {
+            "id": 3,
+            "text": "請家長先親自向孩子更正整套的說法，讓孩子參與選擇",
+            "action": "導師已請家長先親自向孩子更正整套的說法，讓孩子參與選擇",
+            "tradeoff": "要承認自己查證不足，孩子可能很失望"
+          },
+          {
+            "id": 4,
+            "text": "在本人與權責單位同意下，只接收確有用途且合法多出的書，不把不適用的全留校",
+            "action": "導師已在本人與權責單位同意下，只接收確有用途且合法多出的書，不把不適用的全留校",
+            "tradeoff": "要逐本確認，家長可能少了把整箱送出的方便"
+          },
+          {
+            "id": 5,
+            "text": "請家長向原借出者核對有無遺漏與歸還條件，不由教師追討整套",
+            "action": "導師已請家長向原借出者核對有無遺漏與歸還條件，不由教師追討整套",
+            "tradeoff": "可能找不回缺冊，還要維持原借用關係"
+          },
+          {
+            "id": 6,
+            "text": "把眼前必要教材與只是想多練的書分開，協助家庭按實際預算決定",
+            "action": "導師已把眼前必要教材與只是想多練的書分開，協助家庭按實際預算決定",
+            "tradeoff": "部分期待要放下，教師不能替家庭指定消費"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再看一箱書被當成終於解決一切，請家長和你各拿一題實際找答案，先試出能不能讓孩子看懂",
+          "action": "導師已邀家長自願從合法可用書中各試一個現行課程問題，作為使用比較，不安排正式測驗或替商品背書",
+          "tradeoff": "會花時間，也可能讓兩個大人都發現找不到"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3568976841
+        },
+        "selectedIds": [
+          2,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "8aef80dfd4ceba525a05701c96420a9f35db10b5ab99158f7782e6757a0ea97e"
+      },
+      "consequenceDirections": {
+        "A": "資訊有機會更完整，但不能把口頭期待變成對方必須免費補齊的責任。",
+        "B": "孩子先有必要資源，額外練習則不再用整套兩字一口氣要求。",
+        "C": "挑書從數冊數變成一次實際使用，卻不能拿成人看得懂就保證孩子也合適。",
+        "D": "孩子有可繼續學的材料，家庭則要安排不同來源的使用。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c6b5232ef24d01b3201126b21cfac70bc49aef6eeb83a5d62ca1b42eac3f44ca",
+    "draftSha256": "1d657db86ea9a54c48d2873400e7554a9aa0f2c9a572c26349472e8a9cb172be",
     "seedAssignmentVersion": 1
   }
 }

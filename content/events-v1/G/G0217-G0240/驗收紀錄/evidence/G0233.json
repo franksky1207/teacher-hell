@@ -15,14 +15,82 @@
     "G01",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7c4bd43d6db0122465ac03aec52b9faec5a4125aeaa4d70878f6a29d2f68717e",
+      "checkedAt": "2026-11-27T04:34:20.595Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "優先詢問學校是否有合尺寸且安全的備品，由任課老師確認後使用",
+            "action": "導師已優先詢問學校是否有合尺寸且安全的備品，由任課老師確認後使用",
+            "tradeoff": "要等查找，可能還是缺件"
+          },
+          {
+            "id": 2,
+            "text": "在雙方自願且任課確認合用後，只借這次備用手套，說清清潔與歸還",
+            "action": "導師已在雙方自願且任課確認合用後，只借這次備用手套，說清清潔與歸還",
+            "tradeoff": "要處理衛生與保管，也不能把一次分享當成固定供應"
+          },
+          {
+            "id": 3,
+            "text": "把暫無合用防護者改排不需該手套的同目標安全工作",
+            "action": "導師已把暫無合用防護者改排不需該手套的同目標安全工作",
+            "tradeoff": "工作內容不同，之後仍需補足必要技能"
+          },
+          {
+            "id": 4,
+            "text": "由任課老師重排實作順序，等合規防護具到位再輪到相關操作",
+            "action": "導師已由任課老師重排實作順序，等合規防護具到位再輪到相關操作",
+            "tradeoff": "全班流程變慢，其他人也要重新等待"
+          },
+          {
+            "id": 5,
+            "text": "把尺寸與數量的實際缺口報給採購或設備權責單位，不要求家庭持續補",
+            "action": "導師已把尺寸與數量的實際缺口報給採購或設備權責單位，不要求家庭持續補",
+            "tradeoff": "補貨未必即時，也需確認預算與用途"
+          },
+          {
+            "id": 6,
+            "text": "在任課老師同意下，讓學生回饋分工前應檢查什麼，由成人作正式確認",
+            "action": "導師已在任課老師同意下，讓學生回饋分工前應檢查什麼，由成人作正式確認",
+            "tradeoff": "會占用實作時間，學生不能成為最終安全保證人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再一邊趕進度一邊借東西，請任課老師評估把你原先追加的成品展示撤掉，騰出今天的時間把裝備逐項處理好",
+          "action": "導師已向任課教師提出撤去本人非必要成果展示、將可調整時間用於裝備確認的請求，不以展示取代必要課程或安全程序",
+          "tradeoff": "少了你期待的展示，正式實作目標仍得保留"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2814530660
+        },
+        "selectedIds": [
+          5,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "7bb175cfa34252d3c5a24e022eca0e43b7b8eab7d4ff7ea91833f6690db0cc77"
+      },
+      "consequenceDirections": {
+        "A": "學生不必每次靠家庭多帶一副，課程卻可能因庫存不足延後。",
+        "B": "學生不用為了趕漂亮成果催人出借，裝備缺口也可能比預想多，教師得接受當天做不完。",
+        "C": "學生不必冒險湊合，但也不能永遠被分在碰不到實作的那一組。",
+        "D": "下次有機會不再臨時求借，今天仍要使用已確認的安全方案。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cdb6d533d93916a5c42be3f3628d93479343c8bf511c7347c52406975ceace42",
+    "draftSha256": "7c4bd43d6db0122465ac03aec52b9faec5a4125aeaa4d70878f6a29d2f68717e",
     "seedAssignmentVersion": 1
   }
 }

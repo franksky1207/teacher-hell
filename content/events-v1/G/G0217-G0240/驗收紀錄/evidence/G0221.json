@@ -15,14 +15,82 @@
     "G06",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8866a3c8e61d7022fdb71cfc7d918e59746d77555e890ebe658e7b575f95c8d2",
+      "checkedAt": "2026-11-27T04:34:20.585Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "一次回覆目前可確認的安排、尚待確認部分與正式聯絡點",
+            "action": "導師已一次回覆目前可確認的安排、尚待確認部分與正式聯絡點",
+            "tradeoff": "要整理多段問題，也不能提前承諾結果"
+          },
+          {
+            "id": 2,
+            "text": "約定一段雙方都能接的電話時間，把非急件集中討論",
+            "action": "導師已約定一段雙方都能接的電話時間，把非急件集中討論",
+            "tradeoff": "得配合工作空檔，急迫新事實仍須即時反映"
+          },
+          {
+            "id": 3,
+            "text": "由正式案件窗口直接提供權責內的會談安排資訊",
+            "action": "導師已由正式案件窗口直接提供權責內的會談安排資訊",
+            "tradeoff": "需要完成必要交接，不能拿轉窗口當不再回應"
+          },
+          {
+            "id": 4,
+            "text": "確認家人中誰有適當身分且經同意可協助聯繫，避免每個人重問一次",
+            "action": "導師已確認家人中誰有適當身分且經同意可協助聯繫，避免每個人重問一次",
+            "tradeoff": "要核對授權與資訊範圍，不能隨便把案件告訴親屬"
+          },
+          {
+            "id": 5,
+            "text": "請家長把新發生的具體事實和單純問時間分開傳，讓必要資訊不被淹沒",
+            "action": "導師已請家長把新發生的具體事實和單純問時間分開傳，讓必要資訊不被淹沒",
+            "tradeoff": "她得改變傳訊習慣，也可能覺得多一道麻煩"
+          },
+          {
+            "id": 6,
+            "text": "透過核可管道送出可選時段，請家長確認實際能出席者",
+            "action": "導師已透過核可管道送出可選時段，請家長確認實際能出席者",
+            "tradeoff": "可能來回幾次，也不能因未回覆就停下必要處理"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你聽到第三段已經有點喘不過氣，明說今晚不即時聽非急件語音，留下正式急迫聯繫路徑與你下一次回覆時間",
+          "action": "導師已設定本人非急件語音回覆時段並提供有效正式急迫聯絡管道，確保案件持續依法處理",
+          "tradeoff": "家長可能覺得變難找，你也必須如期回覆"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1864372396
+        },
+        "selectedIds": [
+          2,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "53369dda23ce0912c6dfcdd2cd0baded310a5451a22e94591deabaef414570ae"
+      },
+      "consequenceDirections": {
+        "A": "權責人能較快辨認新風險，日程追問則按約定回覆。",
+        "B": "工作與私人時間有了可見界線，案件卻不能因你離線而失去正式承接。",
+        "C": "接送支持有機會轉成合規聯繫協助，家長也可選擇不另授權。",
+        "D": "聯繫不再切成多段語音，卻可能因臨時工作需要再調整。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8358d89f19533b2b86dc80bad4b11ec300a3b990d6eee3296169238d5fb39c3f",
+    "draftSha256": "8866a3c8e61d7022fdb71cfc7d918e59746d77555e890ebe658e7b575f95c8d2",
     "seedAssignmentVersion": 1
   }
 }

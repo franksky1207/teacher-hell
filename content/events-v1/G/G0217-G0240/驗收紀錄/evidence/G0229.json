@@ -15,14 +15,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bf28fac0d609f4f312cb622bff05ed67d1aa28208afbf5979f5a52021909ebb9",
+      "checkedAt": "2026-11-27T04:34:20.593Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只私下回應他畫得像的地方，明說不代表准許公開轉傳",
+            "action": "導師已只私下回應他畫得像的地方，明說不代表准許公開轉傳",
+            "tradeoff": "他少了全班一起笑的期待，也得接受使用範圍受限"
+          },
+          {
+            "id": 2,
+            "text": "若你不願被這樣使用，清楚要求依規則撤下相關公開版本",
+            "action": "導師已若你不願被這樣使用，清楚要求依規則撤下相關公開版本",
+            "tradeoff": "他可能很受挫，已外傳的部分也未必立刻收回"
+          },
+          {
+            "id": 3,
+            "text": "在本人權利與校規允許下，只同意一個明確且有限的使用場合",
+            "action": "導師已在本人權利與校規允許下，只同意一個明確且有限的使用場合",
+            "tradeoff": "須說清楚不能再外傳，實際上仍有違約風險"
+          },
+          {
+            "id": 4,
+            "text": "請他把涉及本人形象的版本改成不指涉特定人的原創角色，由他決定是否願意",
+            "action": "導師已請他把涉及本人形象的版本改成不指涉特定人的原創角色，由他決定是否願意",
+            "tradeoff": "要重畫且可能失去最有趣的部分"
+          },
+          {
+            "id": 5,
+            "text": "和他私下談你沉默時真正還沒決定什麼，請他不用立刻道歉或討好",
+            "action": "導師已和他私下談你沉默時真正還沒決定什麼，請他不用立刻道歉或討好",
+            "tradeoff": "需要面對他的失落，也不能保證談完就准公開"
+          },
+          {
+            "id": 6,
+            "text": "以不展示原圖的方式向全班說明畫人與轉傳要各自取得合適同意",
+            "action": "導師已以不展示原圖的方式向全班說明畫人與轉傳要各自取得合適同意",
+            "tradeoff": "會占用課堂，可能有人猜到這張圖"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被自己的眉毛逗得忍不住，請他只在你自己保留的紙本上畫一版送你，線上那版仍按已確認範圍處理",
+          "action": "導師已邀作者自願提供僅供本人私下留存的紙本新稿，不列為作業或要求免費贈與，既有影像傳播另依法依規處理",
+          "tradeoff": "他可拒絕，畫新稿也要花私人心力，不能當成免處理交換"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1727223508
+        },
+        "selectedIds": [
+          3,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "3467f49235b62b1f0080d08e1574bb7b45a22c8df779908e273283b27e62c57a"
+      },
+      "consequenceDirections": {
+        "A": "你能真心收下一個有限的玩笑，但不能因此替既有轉傳補上追溯同意。",
+        "B": "創作能繼續發展，卻不再靠教師那張臉取得注意。",
+        "C": "作品能得到具體回應，但教師的喜歡不會被讀成一張永久授權。",
+        "D": "學生可分享一次作品，但下一次不能拿這次點頭自動套用。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "98cf8ac7be760572ad6117e9d59c63635b371cb889b023fb95aebfbadc0ea011",
+    "draftSha256": "bf28fac0d609f4f312cb622bff05ed67d1aa28208afbf5979f5a52021909ebb9",
     "seedAssignmentVersion": 1
   }
 }

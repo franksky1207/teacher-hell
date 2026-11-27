@@ -19,8 +19,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "04bf8a57521852b52b886ec6aa528d97896b8bcb0faa3f34e05d9c6eb957be54",
-      "checkedAt": "2026-11-27T12:15:19.377Z",
+      "sourceVersion": "25656ca5f6c292efeff7daa5639ebbe122bc5e9d1d00a322c8d10177f54ebc69",
+      "checkedAt": "2026-11-27T13:06:32.500Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -61,36 +61,109 @@
           }
         ],
         "emotionalCandidate": {
-          "text": "我晚餐也想熱著吃，私人那場臨時續攤先拒了，照原本時間回家。",
-          "action": "導師已婉拒本人非必要成人私人續攤邀請，於正式職務與交接完成後依私人原約返家。",
-          "tradeoff": "可能被說不合群"
+          "text": "聽他聲音累成這樣我也有點心軟，直接說從明天起我下課先在教室門邊多站五分鐘，孩子有問題直接攔我不用等放學。",
+          "action": "導師已於電話中向家長承諾自身將利用日間正常下課空檔留駐門邊接受學生提問，未延長放學留校或變更校方自習規定。",
+          "tradeoff": "以後自己的下課休息和上廁所時間直接被吃掉一截"
         },
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 3353087588
+          "seed": 636928141
         },
         "selectedIds": [
-          4,
           3,
-          2
+          5,
+          1
         ],
         "finalChoiceMap": {
-          "A": "emotional",
-          "B": 2,
+          "A": 5,
+          "B": "emotional",
           "C": 3,
-          "D": 4
+          "D": 1
         },
-        "optionsDigest": "508f09f291aff5bfe892686c9bdc8628ba937cdad7ef2aceb8026c59e8b4a712"
+        "optionsDigest": "a1055410318a4f50065d834255d029e1230c45cd378722094416f7f2f40cdbed"
       },
       "consequenceDirections": {
-        "A": "教師保住自己的私人安排，不在交接未完成時離開。",
-        "B": "沒有家長可到場也能提問，不能只收不答。",
+        "A": "提供免家長簽名的提問卡讓學生自主發問，但不一定涵蓋每個問題。",
+        "B": "家長鬆一口氣不用擔心沒地方問，但教師得自己扛下日間下課被學生包圍的疲勞。",
         "C": "校方可評估，不把建議當下次制度已改。",
-        "D": "不再為鏡頭拖時間，正式照看交接仍共同完成。"
+        "D": "改在日間正常課內安排答疑而不延長放學，學生問題回覆可能較晚。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Antigravity／第六輪情緒候選定向品質複核與修正（核讀原摘要、開場、普通與情緒候選差異、後果方向及客觀行動完成度）",
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選為「私人臨時續攤先拒了準時回家」，與本篇疲憊家長問沒家長站在門口時問題該去哪問的衝突連結偏弱；改為教師承諾明天起下課在門邊多站五分鐘讓孩子直接攔。依原工具真實重抽洗牌一次，保存完整舊抽選與後果方向，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提供原正常課內的答疑時段，不再用尾段加長換問題。",
+                "action": "導師已明示本人可安排的正常課內有限答疑方式，未延長留校或改他人課程。",
+                "tradeoff": "回覆可能較晚"
+              },
+              {
+                "id": 2,
+                "text": "把非急問題改成直接交給我，不經家長代問。",
+                "action": "導師已提供既有教師直接收問與正常回覆方式，不要求家庭代彙整。",
+                "tradeoff": "教師需多收件"
+              },
+              {
+                "id": 3,
+                "text": "向自習承辦提出事前確認流程的修改建議。",
+                "action": "導師已向有權承辦提出非急提問事前確認建議，未改正式自習規則。",
+                "tradeoff": "未必獲採納"
+              },
+              {
+                "id": 4,
+                "text": "取消我自己加的自習後成果拍照。",
+                "action": "導師已撤回本人非必要自習後拍照安排，不影響正式紀錄或離校程序。",
+                "tradeoff": "少了整齊的紀念照"
+              },
+              {
+                "id": 5,
+                "text": "做一張不需家長簽名的提問小卡，學生願用再用。",
+                "action": "導師已提供自製有限提問卡供自願使用，不收家庭證明或延長留校。",
+                "tradeoff": "格式可能不合每個問題"
+              },
+              {
+                "id": 6,
+                "text": "邀家長另選正常工作時段談聯絡方式，只談學校這一端。",
+                "action": "導師已發出限定校方聯絡方式的自願短談邀請，未約成或擅定家庭分工。",
+                "tradeoff": "要再配時間"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我晚餐也想熱著吃，私人那場臨時續攤先拒了，照原本時間回家。",
+              "action": "導師已婉拒本人非必要成人私人續攤邀請，於正式職務與交接完成後依私人原約返家。",
+              "tradeoff": "可能被說不合群"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3353087588
+            },
+            "selectedIds": [
+              4,
+              3,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 2,
+              "C": 3,
+              "D": 4
+            },
+            "optionsDigest": "508f09f291aff5bfe892686c9bdc8628ba937cdad7ef2aceb8026c59e8b4a712"
+          },
+          "previousConsequenceDirections": {
+            "A": "教師保住自己的私人安排，不在交接未完成時離開。",
+            "B": "沒有家長可到場也能提問，不能只收不答。",
+            "C": "校方可評估，不把建議當下次制度已改。",
+            "D": "不再為鏡頭拖時間，正式照看交接仍共同完成。"
+          }
+        }
+      ]
     },
     "stage2": {
       "status": "not_started",
@@ -111,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "04bf8a57521852b52b886ec6aa528d97896b8bcb0faa3f34e05d9c6eb957be54",
+    "draftSha256": "25656ca5f6c292efeff7daa5639ebbe122bc5e9d1d00a322c8d10177f54ebc69",
     "seedAssignmentVersion": 1
   }
 }

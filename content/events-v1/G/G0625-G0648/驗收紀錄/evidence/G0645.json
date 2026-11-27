@@ -19,8 +19,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "1c1a0af0e1042301d8a2fc52413234175cb4fb3b86268b4eb75652f21dcaf72a",
-      "checkedAt": "2026-11-27T12:07:50.841Z",
+      "sourceVersion": "d35654b5e45a643974409b2a58efadf7ddf39d3b9d0f90e68abd2f5cddd4efeb",
+      "checkedAt": "2026-11-27T13:04:46.417Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -61,36 +61,109 @@
           }
         ],
         "emotionalCandidate": {
-          "text": "我剛也想插手把它做好，忍住，拿自己的廢紙折一個給自己玩。",
-          "action": "導師已以自有安全紙材製作私人折物，不接觸學生原件或替代必要回饋。",
-          "tradeoff": "自己費材料，也未必折得漂亮"
+          "text": "看他那麼怕被瞄到，我乾脆立起兩本厚課本幫他當小屏風擋住視線，笑說這樣誰都看不見，要壓要拆隨便你。",
+          "action": "導師已協助以課本遮擋同桌視線給予無圍觀空間，並停止催促完成，提供正常課內自主調整時間。",
+          "tradeoff": "立課本反而有點顯眼，同桌可能會更好奇他在幹嘛"
         },
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 4092784422
+          "seed": 3723643094
         },
         "selectedIds": [
+          5,
           2,
-          3,
-          4
+          6
         ],
         "finalChoiceMap": {
-          "A": "emotional",
-          "B": 2,
-          "C": 4,
-          "D": 3
+          "A": 2,
+          "B": 5,
+          "C": "emotional",
+          "D": 6
         },
-        "optionsDigest": "cbde24e2a7a8eae838dceef85e4eed6d177b6131b07ae3d0b94d8a7bbaf41bc4"
+        "optionsDigest": "3bcf8723c22d9232036ef1f036233845343477de583dcd4dfd0e38346f320236"
       },
       "consequenceDirections": {
-        "A": "教師滿足手癢，不改作者原作或要求同學讚美。",
-        "B": "疲倦者可停止，不將半成品冒充全部完成。",
-        "C": "可以說明想法，不把圖當成手作已完成。",
-        "D": "小範圍不等於自動安全自在，雙方可拒絕。"
+        "A": "疲倦者可停止，不將半成品冒充全部完成。",
+        "B": "今天先收手並保留下次正常課內再試的機會，不延長留校但需等待後續課程。",
+        "C": "學生當下獲得喘息不必在眾目睽睽下修補，但誇張的遮擋可能引來旁邊同學偷笑。",
+        "D": "撤回全桌同步拍片減少圍觀壓力，原學習照常但少一段整齊影片。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Antigravity／第六輪情緒候選定向品質複核與修正（核讀原摘要、開場、普通與情緒候選差異、後果方向及客觀行動完成度）",
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選為「拿自己的廢紙折一個給自己玩」，與本篇學生折壞後怕被圍觀的現場衝突脫節；改為教師立起兩本厚課本幫他擋住同桌視線。依原工具真實重抽洗牌一次，保存完整舊抽選與後果方向，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "這次留一段不被圍看的個別製作時間。",
+                "action": "導師已在本人課內提供有限個別製作安排，不以退出公開展示評罰。",
+                "tradeoff": "少了同儕即時意見"
+              },
+              {
+                "id": 2,
+                "text": "今天先不做新步驟，依已做的部分給回饋。",
+                "action": "導師已停止本人可取消的新步驟要求，依真實半成品提供有限正常回饋。",
+                "tradeoff": "進度暫停"
+              },
+              {
+                "id": 3,
+                "text": "問他是否願意只請一位自己選、也願意的人看。",
+                "action": "導師已提出限單一自願伙伴的觀察邀請方式，未替伙伴答應或重新公開。",
+                "tradeoff": "可能仍有壓力，也可能找不到人"
+              },
+              {
+                "id": 4,
+                "text": "改用步驟草圖說明，不要求再把那角折一次。",
+                "action": "導師已提供原目標內的有限草圖表達替代，不追加成品或評罰媒材。",
+                "tradeoff": "看不到實際熟練度"
+              },
+              {
+                "id": 5,
+                "text": "下次正常課內再提供一次自選嘗試，不另外留校。",
+                "action": "導師已明示本人可安排正常課內的有限再次嘗試方式，不要求延長留校。",
+                "tradeoff": "需要等後續課程"
+              },
+              {
+                "id": 6,
+                "text": "取消我加的全桌同步拍片，其他原學習照常。",
+                "action": "導師已撤回本人非必要同步操作拍攝提案，不取消正常個別支持。",
+                "tradeoff": "少一段整齊影片"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我剛也想插手把它做好，忍住，拿自己的廢紙折一個給自己玩。",
+              "action": "導師已以自有安全紙材製作私人折物，不接觸學生原件或替代必要回饋。",
+              "tradeoff": "自己費材料，也未必折得漂亮"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 4092784422
+            },
+            "selectedIds": [
+              2,
+              3,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 2,
+              "C": 4,
+              "D": 3
+            },
+            "optionsDigest": "cbde24e2a7a8eae838dceef85e4eed6d177b6131b07ae3d0b94d8a7bbaf41bc4"
+          },
+          "previousConsequenceDirections": {
+            "A": "教師滿足手癢，不改作者原作或要求同學讚美。",
+            "B": "疲倦者可停止，不將半成品冒充全部完成。",
+            "C": "可以說明想法，不把圖當成手作已完成。",
+            "D": "小範圍不等於自動安全自在，雙方可拒絕。"
+          }
+        }
+      ]
     },
     "stage2": {
       "status": "not_started",
@@ -111,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1c1a0af0e1042301d8a2fc52413234175cb4fb3b86268b4eb75652f21dcaf72a",
+    "draftSha256": "d35654b5e45a643974409b2a58efadf7ddf39d3b9d0f90e68abd2f5cddd4efeb",
     "seedAssignmentVersion": 1
   }
 }

@@ -19,8 +19,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "56e9092eb855de36b690c542a972139a7044c78dd29421d776055fc52d8d0f94",
-      "checkedAt": "2026-11-27T12:00:08.509Z",
+      "sourceVersion": "989ac57e8bb1804d82f10c65d4abf5dbcbd1b7a5d43a1ac332b3d74aa4d7ecfb",
+      "checkedAt": "2026-11-27T13:02:47.720Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -61,36 +61,109 @@
           }
         ],
         "emotionalCandidate": {
-          "text": "我不想再拿那張漂亮進度表裝沒事，自己的私人打卡今天就空著。",
-          "action": "導師已停止本人私人非必要完美進度打卡，不刪正式收件紀錄或以情緒延誤回饋。",
-          "tradeoff": "少了連續紀錄的滿足"
+          "text": "被他盯著問也有點掛不住面子，我乾脆現在就戴上耳機把整段聽完，當場給他一句話，不讓他再等。",
+          "action": "導師已依原收件規則接收音檔，並於當下可用課間空檔立即聆聽本人音檔給予有限口頭回饋，未公開音檔或延長留校。",
+          "tradeoff": "自己的下課空檔直接沒了，還得現場想回饋"
         },
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 4059094391
+          "seed": 2583555716
         },
         "selectedIds": [
-          1,
-          3,
-          2
+          4,
+          2,
+          3
         ],
         "finalChoiceMap": {
           "A": 2,
-          "B": 1,
+          "B": "emotional",
           "C": 3,
-          "D": "emotional"
+          "D": 4
         },
-        "optionsDigest": "d09706ce748f15d6f50c31e42132021b32362561e0a66850cb22f6cd4822181b"
+        "optionsDigest": "9eb2cdc115002332b84fd3a82acbd52b60e56b509d5d6cc2cfe1da9d34d78b90"
       },
       "consequenceDirections": {
         "A": "可找回回饋起點，不把短段聽完冒充整份評讀。",
-        "B": "努力可被看到，遲交處理仍依已核對規則，不替他消除事實。",
+        "B": "學生立刻確認老師真的聽完而非敷衍，但教師失去整段課間休息且須即席組織回饋。",
         "C": "作品不需靠公開證明，正常評讀仍完成。",
-        "D": "教師承受自己的不整齊，不把學生紀錄抹掉。"
+        "D": "學生可自主決定是否補充文字提問而不必重錄，但教師仍須另排批閱音檔時間。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Antigravity／第六輪情緒候選定向品質複核與修正（核讀原摘要、開場、普通與情緒候選差異、後果方向及客觀行動完成度）",
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選為「私人打卡今天就空著」，與本篇學生當場追問音檔還聽不聽的衝突連結偏弱；改為教師雖掛不住面子仍當場戴上耳機在空檔聽完並立即回應。依原工具真實重抽洗牌一次，保存完整舊抽選與後果方向，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "按原規則收件，回饋先從已完成的部分開始。",
+                "action": "導師已依適用規則接收本人音檔並登錄真實完成與繳交情況，提供正常回饋安排。",
+                "tradeoff": "要另排批閱時間"
+              },
+              {
+                "id": 2,
+                "text": "先聽他自選的一小段，指出一個具體進步。",
+                "action": "導師已在正常授課回饋權限內聆聽作者自選短段並給有限意見，完整收件依法接續。",
+                "tradeoff": "暫時看不到全貌"
+              },
+              {
+                "id": 3,
+                "text": "這次不加公開分享，只把必要回饋給本人。",
+                "action": "導師已取消本人非必要公開音檔分享提案，保留個別必要評讀。",
+                "tradeoff": "少一次班級觀摩"
+              },
+              {
+                "id": 4,
+                "text": "問他是否要用文字列出一個最想問的地方，不要求重錄。",
+                "action": "導師已提供自願單一回饋提問方式，不以填寫作為收件條件。",
+                "tradeoff": "多一次選擇，他可能不想寫"
+              },
+              {
+                "id": 5,
+                "text": "另問校內有沒有可預約的安靜練習位置，給以後用。",
+                "action": "導師已查詢既有可供學生使用的練習空間及預約條件，未取得場地或要求揭露家庭爭執。",
+                "tradeoff": "要等回覆，位置未必合適"
+              },
+              {
+                "id": 6,
+                "text": "把我自加的「全班同一天完成」展示取消。",
+                "action": "導師已取消本人非必要同步完成展示，不變更原合法期限及收件責任。",
+                "tradeoff": "少了整齊成果"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我不想再拿那張漂亮進度表裝沒事，自己的私人打卡今天就空著。",
+              "action": "導師已停止本人私人非必要完美進度打卡，不刪正式收件紀錄或以情緒延誤回饋。",
+              "tradeoff": "少了連續紀錄的滿足"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 4059094391
+            },
+            "selectedIds": [
+              1,
+              3,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 1,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "d09706ce748f15d6f50c31e42132021b32362561e0a66850cb22f6cd4822181b"
+          },
+          "previousConsequenceDirections": {
+            "A": "可找回回饋起點，不把短段聽完冒充整份評讀。",
+            "B": "努力可被看到，遲交處理仍依已核對規則，不替他消除事實。",
+            "C": "作品不需靠公開證明，正常評讀仍完成。",
+            "D": "教師承受自己的不整齊，不把學生紀錄抹掉。"
+          }
+        }
+      ]
     },
     "stage2": {
       "status": "not_started",
@@ -111,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "56e9092eb855de36b690c542a972139a7044c78dd29421d776055fc52d8d0f94",
+    "draftSha256": "989ac57e8bb1804d82f10c65d4abf5dbcbd1b7a5d43a1ac332b3d74aa4d7ecfb",
     "seedAssignmentVersion": 1
   }
 }

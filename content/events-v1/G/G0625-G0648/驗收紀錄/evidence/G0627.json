@@ -19,8 +19,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "eb097ab75377ee4e758d752ef3acd1e660ceec687ef72b2a7d2757e356fae53e",
-      "checkedAt": "2026-11-27T12:07:50.823Z",
+      "sourceVersion": "beea0bb024fea8d3e3a948247f68ab2f3d2aa50807fa43019932fd81f1975000",
+      "checkedAt": "2026-11-27T13:04:45.101Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -61,36 +61,109 @@
           }
         ],
         "emotionalCandidate": {
-          "text": "聽見那段原音我也想留點自己的聲音，私人空檔錄一句給自己，破音就算了。",
-          "action": "導師已在嗓音可負荷時用自有設備及自有文本錄製本人私人短句，不作班級教材或要求同事協助。",
-          "tradeoff": "自己的時間自己花，成品可能難聽"
+          "text": "聽他啞成這樣還防著我轉傳，我乾脆清清喉嚨自己照標記唸一遍，叫他把隨身碟收好別拿出來。",
+          "action": "導師已在本人合規協同範圍內改以本人現場朗讀示範停頓，未使用同事私人音檔或代課。",
+          "tradeoff": "自己唸得沒原音好聽，還得現場被學生聽出沒先練過"
         },
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 914910906
+          "seed": 365523393
         },
         "selectedIds": [
-          2,
-          6,
+          4,
+          5,
           1
         ],
         "finalChoiceMap": {
-          "A": 6,
-          "B": 2,
+          "A": 4,
+          "B": "emotional",
           "C": 1,
-          "D": "emotional"
+          "D": 5
         },
-        "optionsDigest": "b1cfc208b313c7e502a8e4dadb30a5e6c3b50d42aa4b241f46b18e33e6f159c9"
+        "optionsDigest": "92f5e65408da6409b657b5f9a49337778e34d5d88fca8e78768e722486bd6845"
       },
       "consequenceDirections": {
-        "A": "工作問題可被看見，不能宣稱課表已改。",
-        "B": "可保留部分學習，不能宣稱已完成全部口語目標。",
+        "A": "撤回非必要錄音成果分享讓同事減少曝光壓力，但少一份成果展示。",
+        "B": "同事安心收起錄音檔不必擔心被濫用，但教師現場唸得卡頓時得自己扛住場面。",
         "C": "若同意才播放，音檔不代替合法授課安排。",
-        "D": "不是再做一套班級備援，也不借他的設備。"
+        "D": "同事可在不傷嗓的情況下考慮只標書面停頓，但須等其回覆且可能被拒。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Antigravity／第六輪情緒候選定向品質複核與修正（核讀原摘要、開場、普通與情緒候選差異、後果方向及客觀行動完成度）",
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選為「私人空檔錄一句給自己」，與本篇同事怕聲音被濫用、當場防著轉傳的衝突連結偏弱；改為教師直接清喉嚨自己唸一遍、叫同事把檔案收好。依原工具真實重抽洗牌一次，保存完整舊抽選與後果方向，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "只詢問本班這一段的使用範圍，不再請他現場帶。",
+                "action": "導師已提出限本班短段播放的授權詢問，未取得新同意或播放，必要代理另按規處理。",
+                "tradeoff": "少了即時示範"
+              },
+              {
+                "id": 2,
+                "text": "這次用無聲的停頓標記，讓他休嗓不帶示範。",
+                "action": "導師已在本人合規協同範圍採可用文字停頓練習，不以此替代必要合法代理。",
+                "tradeoff": "少了聲音辨聽"
+              },
+              {
+                "id": 3,
+                "text": "改用學校已有可用的語音教材，不取他的檔。",
+                "action": "導師已選取校內既有授權語音素材供合法教學安排，不轉傳同事音檔。",
+                "tradeoff": "內容未必完全合原題"
+              },
+              {
+                "id": 4,
+                "text": "取消我自己提出的額外錄音成果分享。",
+                "action": "導師已撤回自身非必要錄音分享提案，未刪正式必要資料。",
+                "tradeoff": "少一份成果"
+              },
+              {
+                "id": 5,
+                "text": "詢問他願不願意只用書面標一處停頓，不要求立即交。",
+                "action": "導師已提出一次有限可拒絕的文字意見邀請，未取得答應或指定完成時限。",
+                "tradeoff": "要等，也可能拒絕"
+              },
+              {
+                "id": 6,
+                "text": "向主管提出檢視非必要連續加課，別只靠他私人設備撐。",
+                "action": "導師已向有權主管提出非必要加課負荷檢視需求，未擅調正式課務。",
+                "tradeoff": "可能未獲減量"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "聽見那段原音我也想留點自己的聲音，私人空檔錄一句給自己，破音就算了。",
+              "action": "導師已在嗓音可負荷時用自有設備及自有文本錄製本人私人短句，不作班級教材或要求同事協助。",
+              "tradeoff": "自己的時間自己花，成品可能難聽"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 914910906
+            },
+            "selectedIds": [
+              2,
+              6,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 2,
+              "C": 1,
+              "D": "emotional"
+            },
+            "optionsDigest": "b1cfc208b313c7e502a8e4dadb30a5e6c3b50d42aa4b241f46b18e33e6f159c9"
+          },
+          "previousConsequenceDirections": {
+            "A": "工作問題可被看見，不能宣稱課表已改。",
+            "B": "可保留部分學習，不能宣稱已完成全部口語目標。",
+            "C": "若同意才播放，音檔不代替合法授課安排。",
+            "D": "不是再做一套班級備援，也不借他的設備。"
+          }
+        }
+      ]
     },
     "stage2": {
       "status": "not_started",
@@ -111,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "eb097ab75377ee4e758d752ef3acd1e660ceec687ef72b2a7d2757e356fae53e",
+    "draftSha256": "beea0bb024fea8d3e3a948247f68ab2f3d2aa50807fa43019932fd81f1975000",
     "seedAssignmentVersion": 1
   }
 }

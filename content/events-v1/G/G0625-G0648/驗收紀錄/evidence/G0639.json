@@ -18,8 +18,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "a75dfe123c8880836c63c364308c6882c71832db5dd2e1fa3b69f68fbbb86d2e",
-      "checkedAt": "2026-11-27T12:07:50.836Z",
+      "sourceVersion": "12466cec41138c83848454a117d5c096acb6b5e044a1c6850b44dd6c497803a6",
+      "checkedAt": "2026-11-27T13:04:45.858Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -60,36 +60,109 @@
           }
         ],
         "emotionalCandidate": {
-          "text": "我也想留五分鐘發呆，自己的私人待讀清單今天少勾一項就少勾。",
-          "action": "導師已於必要職務接續妥當的休息時段停止本人非必要私人閱讀打卡，不延誤正常學生回饋。",
-          "tradeoff": "看書進度變慢"
+          "text": "被他嫌我太囉唆也有點不服氣，我乾脆舉手投降說這五分鐘只准他問，我最多只能回三句，超過算我輸。",
+          "action": "導師已接受學生自主安排的五分鐘問答界線，僅就本人自選一題作極簡回應並準時結束，未延長占用休息。",
+          "tradeoff": "三句話根本講不完完整觀念，老師自己憋得很難受"
         },
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 1407336716
+          "seed": 2165237177
         },
         "selectedIds": [
-          6,
+          1,
           3,
-          2
+          4
         ],
         "finalChoiceMap": {
           "A": 3,
-          "B": "emotional",
-          "C": 6,
-          "D": 2
+          "B": 4,
+          "C": "emotional",
+          "D": 1
         },
-        "optionsDigest": "6e44d15af0fe08632c560c2d1bb94e869aab84894b58aa5dd72b5551d083bfb9"
+        "optionsDigest": "ad5fb06b7df7247b2eaa63012381e433f4774bea9178d1ffea7234a72bf4d35d"
       },
       "consequenceDirections": {
         "A": "需求可保留，不能收了紙又當沒看見。",
-        "B": "教師保留合法休息，不拿學生問題補私人效率感。",
-        "C": "不再用剩餘休息換關卡，原課學習仍正常。",
-        "D": "可以先解一個卡點，不以未完要求延長休息。"
+        "B": "學生拿到同概念參考例可自行研究，不另加必做題，但可能仍看不懂。",
+        "C": "學生第一次掌握這五分鐘的主導權，但教師精簡過頭可能讓關鍵步驟沒講透。",
+        "D": "尊重學生當下不試五分鐘的選擇，問題留待正常課內回饋，眼前暫不解卡。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Antigravity／第六輪情緒候選定向品質複核與修正（核讀原摘要、開場、普通與情緒候選差異、後果方向及客觀行動完成度）",
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選為「私人待讀清單少勾一項」，與本篇學生只要五分鐘、不讓老師從頭講的現場衝突連結偏弱；改為教師舉手投降只准自己回三句。依原工具真實重抽洗牌一次，保存完整舊抽選與後果方向，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "尊重這次不試，問題留到正常課內回饋。",
+                "action": "導師已接受學生婉拒本次非必要短練，明示正常課內提問接續方式。",
+                "tradeoff": "眼前不會解卡"
+              },
+              {
+                "id": 2,
+                "text": "只看他自選一題的一個步驟，時間到就停。",
+                "action": "導師已在本人自願範圍提供有限單一步驟回饋並維持原停止時間。",
+                "tradeoff": "看不完整題"
+              },
+              {
+                "id": 3,
+                "text": "讓他寫下一個問題，不當場講解。",
+                "action": "導師已提供單一問題留件及正常回覆方式，不要求學生留下等答。",
+                "tradeoff": "答案需等正常課"
+              },
+              {
+                "id": 4,
+                "text": "給他一個同概念小例子自己看，不另加必做題。",
+                "action": "導師已提供自有可用的有限參考例，不收作業或以閱讀作取得回饋條件。",
+                "tradeoff": "可能仍看不懂"
+              },
+              {
+                "id": 5,
+                "text": "邀他選日後正常工作時段再短談，不先占這五分鐘。",
+                "action": "導師已發出可拒絕的日後有限答疑邀請，未約成或延長本次休息。",
+                "tradeoff": "要再配時間"
+              },
+              {
+                "id": 6,
+                "text": "取消我加的課間逐題過關挑戰。",
+                "action": "導師已取消本人非必要課間逐題闖關，不更動正式課程支持。",
+                "tradeoff": "少了闖關成就"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也想留五分鐘發呆，自己的私人待讀清單今天少勾一項就少勾。",
+              "action": "導師已於必要職務接續妥當的休息時段停止本人非必要私人閱讀打卡，不延誤正常學生回饋。",
+              "tradeoff": "看書進度變慢"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1407336716
+            },
+            "selectedIds": [
+              6,
+              3,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": "emotional",
+              "C": 6,
+              "D": 2
+            },
+            "optionsDigest": "6e44d15af0fe08632c560c2d1bb94e869aab84894b58aa5dd72b5551d083bfb9"
+          },
+          "previousConsequenceDirections": {
+            "A": "需求可保留，不能收了紙又當沒看見。",
+            "B": "教師保留合法休息，不拿學生問題補私人效率感。",
+            "C": "不再用剩餘休息換關卡，原課學習仍正常。",
+            "D": "可以先解一個卡點，不以未完要求延長休息。"
+          }
+        }
+      ]
     },
     "stage2": {
       "status": "not_started",
@@ -110,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a75dfe123c8880836c63c364308c6882c71832db5dd2e1fa3b69f68fbbb86d2e",
+    "draftSha256": "12466cec41138c83848454a117d5c096acb6b5e044a1c6850b44dd6c497803a6",
     "seedAssignmentVersion": 1
   }
 }

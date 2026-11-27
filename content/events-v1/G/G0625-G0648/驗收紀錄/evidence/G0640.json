@@ -18,8 +18,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "ba32d3e8c8bb1f15fbd1cbe76f53ffd0519481b4d5f555b71c204eb04511981a",
-      "checkedAt": "2026-11-27T12:07:50.837Z",
+      "sourceVersion": "2fe749fb65decf3984f0b629604d191b8ef13e10d3123b527f53b368c80fb36a",
+      "checkedAt": "2026-11-27T13:04:45.952Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -60,36 +60,109 @@
           }
         ],
         "emotionalCandidate": {
-          "text": "那一頁我看得也手癢，回家拿自己的紙做個歪的，不拿來跟他比。",
-          "action": "導師已以自有材料進行私人短手作，不使用同事原作或宣稱完成同等技法。",
-          "tradeoff": "花私人材料，未必做得出來"
+          "text": "看他一直壓著紙邊不收，我也想趕著吃飯，乾脆直接幫他把剪刀放回盒子，笑說我宣布今天這頁過關、快走。",
+          "action": "導師已在同事同意下協助收攏桌面工具並以玩笑口吻結束非必要評鑑，未代處分他人私物或延誤離校。",
+          "tradeoff": "同事可能還是覺得沒聽到具體哪裡好看，有點意猶未盡"
         },
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 3824946620
+          "seed": 925993983
         },
         "selectedIds": [
           3,
-          5,
-          1
+          6,
+          2
         ],
         "finalChoiceMap": {
           "A": 3,
-          "B": 5,
-          "C": "emotional",
-          "D": 1
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
         },
-        "optionsDigest": "86eca97b6c41ea992002ac50fd8d3ccf0de4e0716ef1ae94259b89ad07152d8f"
+        "optionsDigest": "5e9bfce1d827d5b3156c55d2e27e370ff3cb98e3d71ee549c7ced38861797e60"
       },
       "consequenceDirections": {
         "A": "可自行決定封存，教師不能把提議當對方已收好。",
-        "B": "若願意才分享，不把觀看交換成他必須肯定教師。",
-        "C": "教師滿足手作欲，不要求同事教到會或借工具。",
-        "D": "朋友可欣賞，不能讓一句肯定變成必經批准。"
+        "B": "教師拒絕當評審並準時離開，同事得自己決定收工，可能感到失落。",
+        "C": "改聊對方最喜歡的製作步驟而不拍照評分，同事較放鬆但少了保存畫面。",
+        "D": "僵局被輕鬆打破讓兩人都能準時下班，但同事對自我作品的猶豫可能下次還會出現。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Antigravity／第六輪情緒候選定向品質複核與修正（核讀原摘要、開場、普通與情緒候選差異、後果方向及客觀行動完成度）",
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選為「回家拿自己的紙做個歪的」，未能回應同事在辦公室壓著紙邊等蓋章才敢收工的現場僵局；改為教師急著吃飯直接幫他把剪刀放回盒子並笑稱今天這頁過關快走。依原工具真實重抽洗牌一次，保存完整舊抽選與後果方向，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "只說我確實看到的一個細節，不給分數。",
+                "action": "導師已對本人同意展示的私人作品提供有限具體觀察，不評分或宣稱品質認證。",
+                "tradeoff": "他可能還想聽總評"
+              },
+              {
+                "id": 2,
+                "text": "這次不評作品，直接說我得照自己的時間走。",
+                "action": "導師已婉拒本次私人作品評價並依本人私人安排離開，不替同事收物或承諾改日必評。",
+                "tradeoff": "可能讓他失落"
+              },
+              {
+                "id": 3,
+                "text": "問他是否願意自己選一頁收進本子，不給我審。",
+                "action": "導師已提出自願私人作品收存建議，尚未代收或取得其選擇。",
+                "tradeoff": "他可能仍猶豫"
+              },
+              {
+                "id": 4,
+                "text": "邀他日後去看公共展覽，今天不再改這頁。",
+                "action": "導師已發出可拒絕的日後私人觀展邀請，未約成、購票或要求停作。",
+                "tradeoff": "要另配時間與自付費用"
+              },
+              {
+                "id": 5,
+                "text": "我也拿自己原有的小作互看，先問他想不想看。",
+                "action": "導師已提出本人自有作品的自願私人互看邀請，未取得同意或索取評分。",
+                "tradeoff": "可能又變互相比較"
+              },
+              {
+                "id": 6,
+                "text": "這次不收照片，只聊他最喜歡做哪一步。",
+                "action": "導師已發出限定私人手作過程的可拒絕聊天邀請，不拍攝或留存對方作品。",
+                "tradeoff": "少了保存畫面的機會"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "那一頁我看得也手癢，回家拿自己的紙做個歪的，不拿來跟他比。",
+              "action": "導師已以自有材料進行私人短手作，不使用同事原作或宣稱完成同等技法。",
+              "tradeoff": "花私人材料，未必做得出來"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3824946620
+            },
+            "selectedIds": [
+              3,
+              5,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 5,
+              "C": "emotional",
+              "D": 1
+            },
+            "optionsDigest": "86eca97b6c41ea992002ac50fd8d3ccf0de4e0716ef1ae94259b89ad07152d8f"
+          },
+          "previousConsequenceDirections": {
+            "A": "可自行決定封存，教師不能把提議當對方已收好。",
+            "B": "若願意才分享，不把觀看交換成他必須肯定教師。",
+            "C": "教師滿足手作欲，不要求同事教到會或借工具。",
+            "D": "朋友可欣賞，不能讓一句肯定變成必經批准。"
+          }
+        }
+      ]
     },
     "stage2": {
       "status": "not_started",
@@ -110,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ba32d3e8c8bb1f15fbd1cbe76f53ffd0519481b4d5f555b71c204eb04511981a",
+    "draftSha256": "2fe749fb65decf3984f0b629604d191b8ef13e10d3123b527f53b368c80fb36a",
     "seedAssignmentVersion": 1
   }
 }

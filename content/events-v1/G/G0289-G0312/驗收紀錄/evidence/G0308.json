@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4e2c2a936a53ae4c32000804055aa4bd5efbceec13829a64b40695fd8f0e5a5b",
+      "checkedAt": "2026-11-27T05:13:30.072Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "全班依安全正常路線走，不再追回已不能用的捷徑",
+            "action": "導師已全班依安全正常路線走，不再追回已不能用的捷徑",
+            "tradeoff": "用餐時間會縮短，也要依實際需要協助"
+          },
+          {
+            "id": 2,
+            "text": "向供餐承辦協調合規的延後取餐或保溫安排",
+            "action": "導師已向供餐承辦協調合規的延後取餐或保溫安排",
+            "tradeoff": "未必能延長，也不可破壞食安"
+          },
+          {
+            "id": 3,
+            "text": "在合格成人足夠時分前後組，各有明確照看",
+            "action": "導師已在合格成人足夠時分前後組，各有明確照看",
+            "tradeoff": "調度較複雜，不能讓後組自己留原地"
+          },
+          {
+            "id": 4,
+            "text": "由你說明自己未確認就先答應，不讓職員獨自收抱怨",
+            "action": "導師已由你說明自己未確認就先答應，不讓職員獨自收抱怨",
+            "tradeoff": "要面對學生不滿，也不能只道歉不安排供餐"
+          },
+          {
+            "id": 5,
+            "text": "請管理單位評估濕滑區的後續處理，今天仍依已確認路線",
+            "action": "導師已請管理單位評估濕滑區的後續處理，今天仍依已確認路線",
+            "tradeoff": "維修未必立刻完成，也不以送出需求就重開"
+          },
+          {
+            "id": 6,
+            "text": "抵達後和學生核對實際缺多少用餐時間，必要部分交正式窗口",
+            "action": "導師已抵達後和學生核對實際缺多少用餐時間，必要部分交正式窗口",
+            "tradeoff": "要多花跟進時間，不能只憑印象說沒差"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被問得掛不住，主動請主管把你先行許諾的經過列入這次正式勤務檢視，不只記職員改路",
+          "action": "導師已如實向主管提供本人先行承諾及現場安全處理資訊，供正常勤務檢視，不公開學生個資或私下判責",
+          "tradeoff": "會留下自己的疏漏，也可能被要求改善"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3308736997
+        },
+        "selectedIds": [
+          3,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "32f5ecb37472bbda00ce266a75ca9fd4956f4e9eac1b1911e48e4aefc2a05e6b"
+      },
+      "consequenceDirections": {
+        "A": "先到者可正常取餐，後組也有陪同，但全班不再一起走。",
+        "B": "真正受影響者有資訊可處理，教師也可能發現原估比實際輕或重。",
+        "C": "安全叫停不被當成某人反悔，繞路的實際代價仍存在。",
+        "D": "承諾不是只追究最後喊停的人，你則要接受安全決定不能靠面子拿回來。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e41bff715d620872e600ce8261189893547042b2d4f103575575bda82007c5c2",
+    "draftSha256": "4e2c2a936a53ae4c32000804055aa4bd5efbceec13829a64b40695fd8f0e5a5b",
     "seedAssignmentVersion": 1
   }
 }

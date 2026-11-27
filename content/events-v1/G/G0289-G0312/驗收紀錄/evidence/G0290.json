@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "22d5039e73709acd3a07e4ef9cf355dea2e4db23eda3db9f9ee8dec02587ff5a",
+      "checkedAt": "2026-11-27T05:13:30.055Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "說清楚原決定只管校內收款，不限制家庭合法消費",
+            "action": "導師已說清楚原決定只管校內收款，不限制家庭合法消費",
+            "tradeoff": "要承擔原措辭混淆，也不能替店家保證交易"
+          },
+          {
+            "id": 2,
+            "text": "收回把消費叫奢侈的話，讓家長回應",
+            "action": "導師已收回把消費叫奢侈的話，讓家長回應",
+            "tradeoff": "你得面對不滿，不能用原意良善壓過感受"
+          },
+          {
+            "id": 3,
+            "text": "向同樣收到訊息的家庭補充決定範圍，不點這戶名字",
+            "action": "導師已向同樣收到訊息的家庭補充決定範圍，不點這戶名字",
+            "tradeoff": "會讓更多人注意到措辭問題"
+          },
+          {
+            "id": 4,
+            "text": "讓孩子自己說想跟同學買的原因，再由家庭決定",
+            "action": "導師已讓孩子自己說想跟同學買的原因，再由家庭決定",
+            "tradeoff": "要另留合適時間，也不能替孩子說服家長付款"
+          },
+          {
+            "id": 5,
+            "text": "把校內合訂的實際規則交家長核對，不延伸評論品味",
+            "action": "導師已把校內合訂的實際規則交家長核對，不延伸評論品味",
+            "tradeoff": "說明可能生硬，也無法替家庭處理生日失望"
+          },
+          {
+            "id": 6,
+            "text": "今天只談她急需確認的範圍，其餘另約，不延誤上班",
+            "action": "導師已今天只談她急需確認的範圍，其餘另約，不延誤上班",
+            "tradeoff": "有些不滿暫時談不完，你得守住後續聯繫"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你覺得自己那句話很丟臉，主動把原訊息的錯誤措辭與更正留成正式聯繫紀錄，不只口頭說算了",
+          "action": "導師已如實保存本人原措辭及更正的正式聯繫紀錄，不含無關家庭私事，不變更合法收款處理或替家庭決定購買",
+          "tradeoff": "留下可核對疏漏，也可能被主管要求說明"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1434031505
+        },
+        "selectedIds": [
+          6,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "6803da8d5b190ece0943301df758bc1dfdb8cfd68f4e9d3d5751ebd1310b9216"
+      },
+      "consequenceDirections": {
+        "A": "家長知道存錢的努力未被否定，卻不必因此同意你先前的處理口氣。",
+        "B": "家長不用因追問教師又損失工時，但不能讓改約變成迴避說明。",
+        "C": "家長不必再重複證明老師曾說什麼，你卻要接受文字更正不等於原諒。",
+        "D": "制止的依據可被檢視，家長仍可能認為你那句話不必要。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3ffe992e8c81c5b7da564fbeba250abb75614eaf8bdd14f30cd6d1c56ff63bf1",
+    "draftSha256": "22d5039e73709acd3a07e4ef9cf355dea2e4db23eda3db9f9ee8dec02587ff5a",
     "seedAssignmentVersion": 1
   }
 }

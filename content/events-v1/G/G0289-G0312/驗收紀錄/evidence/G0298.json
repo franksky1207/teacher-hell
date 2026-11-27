@@ -15,14 +15,82 @@
     "G04",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7736cc476f51e7caf7775b86cb8ed936b3b315a4687defa8e5733fa22d632657",
+      "checkedAt": "2026-11-27T05:13:30.064Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先讓孩子從實際可用位置中自選，不保證指定窗位",
+            "action": "導師已先讓孩子從實際可用位置中自選，不保證指定窗位",
+            "tradeoff": "可選範圍有限，家長可能失望"
+          },
+          {
+            "id": 2,
+            "text": "安排可撤回的短試坐，約好核對實際效果",
+            "action": "導師已安排可撤回的短試坐，約好核對實際效果",
+            "tradeoff": "要先協調座位與公平條件，試過也可能不合用"
+          },
+          {
+            "id": 3,
+            "text": "先問孩子除了窗邊，哪些條件真正讓他比較能上課",
+            "action": "導師已先問孩子除了窗邊，哪些條件真正讓他比較能上課",
+            "tradeoff": "需要另一次本人談話，不能只問想不想靠窗"
+          },
+          {
+            "id": 4,
+            "text": "依健康或學習需求走校內支持安排，不靠私下指定",
+            "action": "導師已依健康或學習需求走校內支持安排，不靠私下指定",
+            "tradeoff": "需要資料與時間，也不先承諾特定座位"
+          },
+          {
+            "id": 5,
+            "text": "先改善全班可調整的動線與噪音，再看是否需個別換位",
+            "action": "導師已先改善全班可調整的動線與噪音，再看是否需個別換位",
+            "tradeoff": "大家要配合，效果未必足夠"
+          },
+          {
+            "id": 6,
+            "text": "向家庭清楚說明座位如何確認與調整，不公開他人原因",
+            "action": "導師已向家庭清楚說明座位如何確認與調整，不公開他人原因",
+            "tradeoff": "可能無法回答每一席為什麼有人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想把每扇窗都變成請託，決定把自己的日常觀察位置輪著換，不再只站原來那一側看班",
+          "action": "導師已調整本人合規課堂觀察位置與動線，仍保持必要照看，不移學生座位、不承諾專屬監看或替代個別支持",
+          "tradeoff": "要改自己的習慣，也未必立即解決孩子的不安"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3235301067
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "6f9cbf69aa370e957e2bda433fa5cfae71d6dc5c643d1127a711f057068e3b3f"
+      },
+      "consequenceDirections": {
+        "A": "家長知道不是教師隨便偏愛，但仍需接受無法掌握別人私事。",
+        "B": "你能看見不同座位實際干擾，家長卻不能把你的走動當成孩子已獲指定關照。",
+        "C": "環境不只對一人改動，仍不能用改過全班就拒絕個別合理需求。",
+        "D": "安定感可由經驗判斷，家長卻須接受試坐不是保證長期占用。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3e0b381c8af91cd3f48732aef09a367d1a45a9355c1fbf3c101ae5e91d29d4ec",
+    "draftSha256": "7736cc476f51e7caf7775b86cb8ed936b3b315a4687defa8e5733fa22d632657",
     "seedAssignmentVersion": 1
   }
 }

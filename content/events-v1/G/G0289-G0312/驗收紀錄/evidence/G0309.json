@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "13db7baa2117f7fe836e22ecc3859fd048d83975752c5102aa93f89e08c7995f",
+      "checkedAt": "2026-11-27T05:13:30.073Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "說清楚這次看的是敘述清楚與真實細節，不比料理價格",
+            "action": "導師已說清楚這次看的是敘述清楚與真實細節，不比料理價格",
+            "tradeoff": "家長可能仍怕被比較，你要給可理解的例子"
+          },
+          {
+            "id": 2,
+            "text": "讓孩子自己選願意寫的角度，不必交代家計",
+            "action": "導師已讓孩子自己選願意寫的角度，不必交代家計",
+            "tradeoff": "可能少掉家長最珍惜的部分"
+          },
+          {
+            "id": 3,
+            "text": "提供比較兩種材料用法的題目，不排哪種比較體面",
+            "action": "導師已提供比較兩種材料用法的題目，不排哪種比較體面",
+            "tradeoff": "要重新整理內容，也須避免優劣暗示"
+          },
+          {
+            "id": 4,
+            "text": "先私下看原草稿給具體回饋，不急著公開示範",
+            "action": "導師已先私下看原草稿給具體回饋，不急著公開示範",
+            "tradeoff": "全班暫時看不到，也要另留時間"
+          },
+          {
+            "id": 5,
+            "text": "讓家庭確認哪些內容由誰提供，按真實參與保留，不要求長輩再補故事",
+            "action": "導師已讓家庭確認哪些內容由誰提供，按真實參與保留，不要求長輩再補故事",
+            "tradeoff": "材料可能不完整，教師不能替空白編造"
+          },
+          {
+            "id": 6,
+            "text": "若孩子不願使用家常經驗，容許按課程規則另選安全題材",
+            "action": "導師已若孩子不願使用家常經驗，容許按課程規則另選安全題材",
+            "tradeoff": "可能令家長失望，也不能把換題當不珍惜家人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你突然很想念自己的平常湯，寫一小段本人原創的廉價日常料理示例，先拿自己的生活當素材",
+          "action": "導師已以本人自願公開且不含他人隱私的日常經驗製作書寫示例，不要求家庭供餐、採買或額外訪談",
+          "tradeoff": "要花備課時間，也可能平淡得沒人想看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1986064759
+        },
+        "selectedIds": [
+          6,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "85b944d6e0b971563f29abdc8a166c8fda229e9f62cdfd76122f15cbdbab6a4d"
+      },
+      "consequenceDirections": {
+        "A": "作品能維持本人表意，長輩的回憶不會自動變成全班素材。",
+        "B": "家長能看見日常細節不是價格競賽，卻不能以教師願寫就要求孩子也公開家事。",
+        "C": "陪伴能被如實承認，但孩子仍須自己完成必要書寫。",
+        "D": "作者保有選擇，親子仍須自己談原本沒說出口的尷尬。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "45f33f31ad3cef5839767ed9a4b129ce4f74aaeb0f1795a0084d6e0deb400162",
+    "draftSha256": "13db7baa2117f7fe836e22ecc3859fd048d83975752c5102aa93f89e08c7995f",
     "seedAssignmentVersion": 1
   }
 }

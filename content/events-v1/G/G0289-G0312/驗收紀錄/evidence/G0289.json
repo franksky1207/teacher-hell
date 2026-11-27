@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d3a27ee3124aac17ce2faa302cfb7b82f6bc0964bffe328ee8d4fbd3a5a53af2",
+      "checkedAt": "2026-11-27T05:13:30.053Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "為剛才刻薄的說法道歉，不再替他的穿著打分",
+            "action": "導師已為剛才刻薄的說法道歉，不再替他的穿著打分",
+            "tradeoff": "可能突然安靜，他也不一定想立刻接受"
+          },
+          {
+            "id": 2,
+            "text": "只談各自真喜歡的一個穿搭細節，不做整體好看排名",
+            "action": "導師已只談各自真喜歡的一個穿搭細節，不做整體好看排名",
+            "tradeoff": "要真誠，也可能發現喜好完全不同"
+          },
+          {
+            "id": 3,
+            "text": "問他還想不想一起進場，讓他保留分開看的選擇",
+            "action": "導師已問他還想不想一起進場，讓他保留分開看的選擇",
+            "tradeoff": "今晚邀約可能改變，也須各自處理票規"
+          },
+          {
+            "id": 4,
+            "text": "先停止衣服話題，照雙方都願意的方式看展",
+            "action": "導師已先停止衣服話題，照雙方都願意的方式看展",
+            "tradeoff": "受傷感受未必消失，也不能裝作沒講過"
+          },
+          {
+            "id": 5,
+            "text": "請他自己說想保留哪種穿法，你只聽不提改造建議",
+            "action": "導師已請他自己說想保留哪種穿法，你只聽不提改造建議",
+            "tradeoff": "他可能不想說，你也得忍住補一句"
+          },
+          {
+            "id": 6,
+            "text": "坦白你也常穿得不合期待，讓他決定要不要交換失敗經驗",
+            "action": "導師已坦白你也常穿得不合期待，讓他決定要不要交換失敗經驗",
+            "tradeoff": "可能只有你在講，也不能拿自嘲要求他笑"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你有點想扳回自己的口快，邀他在展內替你選一張最不懂的作品，由你承認看不懂",
+          "action": "導師已邀同事於合法參觀範圍自願挑選公開作品供本人說出疑惑，不評同事外貌、不強迫解說或要求和解",
+          "tradeoff": "可能輪到你掛不住面子，也要對方真願意"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1449829907
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "f06c4e3ef2b1e8935b0229d85c9fe3e729f0dbb863fa1d5c4f5dd0be265f2bda"
+      },
+      "consequenceDirections": {
+        "A": "衣服不必靠教師一票決定好壞，兩人仍要處理那句話留下的不舒服。",
+        "B": "兩人可從衣著評鑑轉為一次你當新手的觀看，他卻可能根本不想陪你玩這套，須接受拒絕。",
+        "C": "他有自己的品味位置，卻不代表從此不會再在意你的眼光。",
+        "D": "共同興趣能談回具體部分，但不能把交換稱讚變成被迫安撫。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c36a52449f8ed6dff78e6645561eb75bcfbc715d8b9ac7743faf0fb210e10a54",
+    "draftSha256": "d3a27ee3124aac17ce2faa302cfb7b82f6bc0964bffe328ee8d4fbd3a5a53af2",
     "seedAssignmentVersion": 1
   }
 }

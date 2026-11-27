@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "810910377da8dc74d383fb9d38adc371ddc18217899dbb59dd4e075b3f13e4ca",
+      "checkedAt": "2026-11-27T05:13:30.071Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "確認短版已符合原要求，不再追加居家加工",
+            "action": "導師已確認短版已符合原要求，不再追加居家加工",
+            "tradeoff": "展示可能不完整，也須按相同規則看所有人"
+          },
+          {
+            "id": 2,
+            "text": "全組共同刪去非必要裝飾，不只把他那份免掉",
+            "action": "導師已全組共同刪去非必要裝飾，不只把他那份免掉",
+            "tradeoff": "成品簡單，原先做裝飾的人可能可惜"
+          },
+          {
+            "id": 3,
+            "text": "讓他選一種能在課內完成的呈現方式，兼顧必要目標",
+            "action": "導師已讓他選一種能在課內完成的呈現方式，兼顧必要目標",
+            "tradeoff": "要協調時間，不能保證與原版效果一樣"
+          },
+          {
+            "id": 4,
+            "text": "請全組各說真正能完成的範圍，再重排共同部分",
+            "action": "導師已請全組各說真正能完成的範圍，再重排共同部分",
+            "tradeoff": "可能無法做齊，也不能強迫別人補他的私人安排"
+          },
+          {
+            "id": 5,
+            "text": "把日後作業可做到哪裡先寫清楚，不再交後才添",
+            "action": "導師已把日後作業可做到哪裡先寫清楚，不再交後才添",
+            "tradeoff": "增加事前準備，也不能追溯變更這次標準"
+          },
+          {
+            "id": 6,
+            "text": "請他指出短版中最能代表自己理解的一處，給聚焦回饋",
+            "action": "導師已請他指出短版中最能代表自己理解的一處，給聚焦回饋",
+            "tradeoff": "要另外看內容，不能只說準時就好"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你聽到回家練琴也有點羨慕，取消自己今天那段非必要加班美化，回去做自己的興趣",
+          "action": "導師已取消本人非必要美化加班，完成必要職務後回歸私人安排，不把原定工作轉派學生或同事",
+          "tradeoff": "你少一次替成品加分的機會，必要工作須先完成或交接"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1801488009
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "0666617b16b6b07c5b03f12b5af63d82d9852e036b84b14eb46b3e364eced692"
+      },
+      "consequenceDirections": {
+        "A": "學生看見私人生活不只是用來補工作，你卻得接受成果不如想像精緻，不能隔天又要求學生補回。",
+        "B": "學生可以守住自己選的興趣時間，其他人卻可能不理解為何沒有整件華麗成果。",
+        "C": "每個承諾可被算清，原方案可能得縮小而非換一人硬扛。",
+        "D": "他感到努力被實際看見，卻仍可能有需要在課內補強之處。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "86a46db36dde32df56ff6cedb750018b801ac70ca8cd992af94c7df223eb215d",
+    "draftSha256": "810910377da8dc74d383fb9d38adc371ddc18217899dbb59dd4e075b3f13e4ca",
     "seedAssignmentVersion": 1
   }
 }

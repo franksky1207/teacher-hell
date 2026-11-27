@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "eb5c446ad6dbf8a4ccc397a55746eb209cd3a2314506a89d4248c29cc24238aa",
+      "checkedAt": "2026-11-27T05:13:30.059Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "重看實際書寫與修改，按原規則修正有誤的回饋",
+            "action": "導師已重看實際書寫與修改，按原規則修正有誤的回饋",
+            "tradeoff": "要核對依據，不能先保證結果變高"
+          },
+          {
+            "id": 2,
+            "text": "把自作要求與材料費用分開說清楚，不要求補買才受理",
+            "action": "導師已把自作要求與材料費用分開說清楚，不要求補買才受理",
+            "tradeoff": "要承認原說明可能讓人誤解"
+          },
+          {
+            "id": 3,
+            "text": "提供全班都可使用的校內材料，按一致規則自願重試",
+            "action": "導師已提供全班都可使用的校內材料，按一致規則自願重試",
+            "tradeoff": "需備材與正式時段，不只給來校家庭特例"
+          },
+          {
+            "id": 4,
+            "text": "請孩子自己說明一處如何改寫，家長不代答",
+            "action": "導師已請孩子自己說明一處如何改寫，家長不代答",
+            "tradeoff": "要另找本人與合適時間"
+          },
+          {
+            "id": 5,
+            "text": "檢視今後材料要求，刪去不影響課程目標的高價規格",
+            "action": "導師已檢視今後材料要求，刪去不影響課程目標的高價規格",
+            "tradeoff": "要多做備課取捨，也可能降低展示整齊度"
+          },
+          {
+            "id": 6,
+            "text": "向必要接收者更正原評語，不公開家庭預算",
+            "action": "導師已向必要接收者更正原評語，不公開家庭預算",
+            "tradeoff": "要留正式更正，可能讓他人注意到教師失準"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你看著那張被壓平的舊紙，決定把自己的示範卡也換成合法可用的回收紙，不再擺亮面新卡當唯一樣子",
+          "action": "導師已重製本人示範字卡採安全潔淨回收紙，保留多種合規材料選擇，不挪用學生物品或改正式評分依據",
+          "tradeoff": "要重做示範，也可能不好看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4146783769
+        },
+        "selectedIds": [
+          5,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "c69e05da62c968e497235c566472e2a563308bde37e99b532889564ca9280e18"
+      },
+      "consequenceDirections": {
+        "A": "資源門檻降低，孩子卻可能不想讓原舊紙作品被當成作廢。",
+        "B": "教師能聽到製作過程，但不能只憑口述順暢就替全部作品下結論。",
+        "C": "以後不再把花費混進用心，這件作品仍須依原允許條件公平處理。",
+        "D": "學生能看見你真的放下材質偏好，卻不能因此被要求人人都用舊紙或重交作品。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f7582edc1b4283d270b247c11beced5290555044cfb9466da11b48503197c354",
+    "draftSha256": "eb5c446ad6dbf8a4ccc397a55746eb209cd3a2314506a89d4248c29cc24238aa",
     "seedAssignmentVersion": 1
   }
 }

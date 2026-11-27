@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "82570d28efab6fb1cdb98c31c99dbcadce1edd5a2d3f698355f5bf2783bb8b01",
+      "checkedAt": "2026-11-27T05:13:30.068Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天只完成必要區域，非急迫加碼另排",
+            "action": "導師已今天只完成必要區域，非急迫加碼另排",
+            "tradeoff": "外觀沒那麼漂亮，也不能略掉真正衛生需求"
+          },
+          {
+            "id": 2,
+            "text": "由你接手餘下安全且必要的小部分，不延留學生",
+            "action": "導師已由你接手餘下安全且必要的小部分，不延留學生",
+            "tradeoff": "花你的工作時間，也不能變成每天都替班"
+          },
+          {
+            "id": 3,
+            "text": "請其他自願且有條件的同學接一小項，確認後交接",
+            "action": "導師已請其他自願且有條件的同學接一小項，確認後交接",
+            "tradeoff": "可能沒人答應，不能用友誼施壓"
+          },
+          {
+            "id": 4,
+            "text": "下次重排每人的合理範圍，不按誰最快就塞更多",
+            "action": "導師已下次重排每人的合理範圍，不按誰最快就塞更多",
+            "tradeoff": "需要核對工作量，也可能有人不滿變動"
+          },
+          {
+            "id": 5,
+            "text": "讓兩人說明節奏怎樣幫得上忙，再判斷合規範圍能否保留",
+            "action": "導師已讓兩人說明節奏怎樣幫得上忙，再判斷合規範圍能否保留",
+            "tradeoff": "要控制音量與安全，不是所有區域都適合"
+          },
+          {
+            "id": 6,
+            "text": "清楚確認今天離班時間與未完工作的接續者，不再邊走邊加任務",
+            "action": "導師已清楚確認今天離班時間與未完工作的接續者，不再邊走邊加任務",
+            "tradeoff": "需要成人明確交接，也可能發現時間本來不夠"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想準時走，向總務詢問更合用的清潔工具，不再只催學生加快",
+          "action": "導師已向總務提出本區域清潔工具與方法的評估需求，不先購置、危險使用或以申請代替必要衛生處理",
+          "tradeoff": "要花時間確認工具用途與資源，未必獲准，今天必要清潔仍須妥善接續"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4107709053
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "e89b5835ce978122a2e668c547eb5e0cb585564a9bc2396e15d4a9291652dcb6"
+      },
+      "consequenceDirections": {
+        "A": "若有合適工具，日後不必全靠動作快；若沒有，仍須重排合理工作量，學生不能因申請沒過就繼續被延留。",
+        "B": "互助方法可被理解，但不能讓教室變成非參加不可的掃地秀。",
+        "C": "工作有機會分散，卻不能讓原幫忙者再負責找完所有接班人。",
+        "D": "學生不必靠拖晚證明熱心，剩下缺口由正常班務安排承擔。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "當批語意核讀發現原情緒候選與普通候選實質過近，分別改成先交還模型、申請清潔工具評估或教師原創回贈，確認代價與後果後依原工具真實重抽一次，完整保留歷史，不挑結果。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "今天只完成必要區域，非急迫加碼另排",
+                "action": "導師已今天只完成必要區域，非急迫加碼另排",
+                "tradeoff": "外觀沒那麼漂亮，也不能略掉真正衛生需求"
+              },
+              {
+                "id": 2,
+                "text": "由你接手餘下安全且必要的小部分，不延留學生",
+                "action": "導師已由你接手餘下安全且必要的小部分，不延留學生",
+                "tradeoff": "花你的工作時間，也不能變成每天都替班"
+              },
+              {
+                "id": 3,
+                "text": "請其他自願且有條件的同學接一小項，確認後交接",
+                "action": "導師已請其他自願且有條件的同學接一小項，確認後交接",
+                "tradeoff": "可能沒人答應，不能用友誼施壓"
+              },
+              {
+                "id": 4,
+                "text": "下次重排每人的合理範圍，不按誰最快就塞更多",
+                "action": "導師已下次重排每人的合理範圍，不按誰最快就塞更多",
+                "tradeoff": "需要核對工作量，也可能有人不滿變動"
+              },
+              {
+                "id": 5,
+                "text": "讓兩人說明節奏怎樣幫得上忙，再判斷合規範圍能否保留",
+                "action": "導師已讓兩人說明節奏怎樣幫得上忙，再判斷合規範圍能否保留",
+                "tradeoff": "要控制音量與安全，不是所有區域都適合"
+              },
+              {
+                "id": 6,
+                "text": "清楚確認今天離班時間與未完工作的接續者，不再邊走邊加任務",
+                "action": "導師已清楚確認今天離班時間與未完工作的接續者，不再邊走邊加任務",
+                "tradeoff": "需要成人明確交接，也可能發現時間本來不夠"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "你也被那兩拍感染，徵得願意的人同意後，親自加入最後一段安全清潔，不再站旁邊當速度裁判",
+              "action": "導師已自願參與本人能力內的安全必要清潔，不搬危險重物、不要求學生延留或以表演代替清潔",
+              "tradeoff": "你得真的動手，也要守住結束時間"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1007825914
+            },
+            "selectedIds": [
+              1,
+              2,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 2,
+              "C": 1,
+              "D": 4
+            },
+            "optionsDigest": "6e30514a99e5232906fc650e2ad8c08f6d07543d6744d2f308e2bb0818a394fa"
+          },
+          "previousConsequenceDirections": {
+            "A": "學生可能覺得一起做比較好玩，也可能嫌老師拖慢，不能因成人加入又多加一區。",
+            "B": "互助者不必最後才走，但班級仍須重談正常分工。",
+            "C": "學生可按原安排離開，教師須接受不是每處都亮晶晶。",
+            "D": "慢的人不再只被催，快的人也不自動成為補缺者。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c00246d23887ca65075ddcab8eda4b473b5dcac84c41a1613442b65068a79c41",
+    "draftSha256": "82570d28efab6fb1cdb98c31c99dbcadce1edd5a2d3f698355f5bf2783bb8b01",
     "seedAssignmentVersion": 1
   }
 }

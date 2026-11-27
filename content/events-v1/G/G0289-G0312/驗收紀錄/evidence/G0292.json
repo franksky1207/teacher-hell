@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "62d18745440c6fc9312ec99f4c53d1acca9c76b4eb48114150aaa39f9a2a563f",
+      "checkedAt": "2026-11-27T05:13:30.057Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "解釋那一筆實際提醒的是什麼，不把它說成整稿核准",
+            "action": "導師已解釋那一筆實際提醒的是什麼，不把它說成整稿核准",
+            "tradeoff": "只能處理一個重點，他可能仍想問其餘全部"
+          },
+          {
+            "id": 2,
+            "text": "讓他先試半段，約定可停與可求助的位置",
+            "action": "導師已讓他先試半段，約定可停與可求助的位置",
+            "tradeoff": "正式完整練習會少一點，也要給同等可用安排"
+          },
+          {
+            "id": 3,
+            "text": "保留完整練習，但清楚允許犯錯後停頓再來",
+            "action": "導師已保留完整練習，但清楚允許犯錯後停頓再來",
+            "tradeoff": "會比流暢演出耗時，教師要真的不拿失誤取笑"
+          },
+          {
+            "id": 4,
+            "text": "請他先指出自己最怕出錯的一處，再聚焦準備",
+            "action": "導師已請他先指出自己最怕出錯的一處，再聚焦準備",
+            "tradeoff": "其他內容不會全被看過，焦慮也未必消失"
+          },
+          {
+            "id": 5,
+            "text": "讓他與自願同學先在小範圍互試，教師核對必要界線",
+            "action": "導師已讓他與自願同學先在小範圍互試，教師核對必要界線",
+            "tradeoff": "要配對與時間，也不能把同伴變保證人"
+          },
+          {
+            "id": 6,
+            "text": "請他自己選今天呈現的合規方式，不以敢不敢上台判定態度",
+            "action": "導師已請他自己選今天呈現的合規方式，不以敢不敢上台判定態度",
+            "tradeoff": "要兼顧原課程必要目標與公平"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再被當護身符，乾脆先用自己的稿試一段，明說你也不先找人保證",
+          "action": "導師已自願以本人稿作非評量短試，不替學生作保、不撤銷其退出與必要支持，也不因學生不跟進而改變對待",
+          "tradeoff": "你可能卡詞，也花掉自己的講評時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2755536321
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "2bc9ff4c42678ede885668136302fb0ae02cf83989b1cb9154eb1c6e5e07ea4e"
+      },
+      "consequenceDirections": {
+        "A": "他有可承受的起步，仍可能在試過後決定先不往下。",
+        "B": "學生看得到成人並非穩過才上場，但可能覺得老師的失誤沒有學生那麼難堪，不能用示範逼他照做。",
+        "C": "學生能完成較完整的經驗，卻不能期待老師替他保證零出糗。",
+        "D": "學生有實際觀眾可練，但仍須接受同儕回應不一定都是鼓勵。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "047960dee7fb33fcb07cc1465ae7975b34b7f7fac821eb9edfbabd33525fe711",
+    "draftSha256": "62d18745440c6fc9312ec99f4c53d1acca9c76b4eb48114150aaa39f9a2a563f",
     "seedAssignmentVersion": 1
   }
 }

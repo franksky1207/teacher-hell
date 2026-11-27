@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fffe91dc285634d34467a72be754cf91c2ef6e7f2a5d263a0b7bcc1be41df26f",
+      "checkedAt": "2026-11-27T05:13:30.067Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天不補短練，把剩餘內容排回正常課內",
+            "action": "導師已今天不補短練，把剩餘內容排回正常課內",
+            "tradeoff": "當日練習少一次，課內進度要調整"
+          },
+          {
+            "id": 2,
+            "text": "下次只在原可用時段讓自願者練，不碰他人休息",
+            "action": "導師已下次只在原可用時段讓自願者練，不碰他人休息",
+            "tradeoff": "參與人數可能少，也須確保不形成隱性強迫"
+          },
+          {
+            "id": 3,
+            "text": "保留明確短練，但時間到就停，不用沙漏再翻一輪",
+            "action": "導師已保留明確短練，但時間到就停，不用沙漏再翻一輪",
+            "tradeoff": "教師要克制加碼，可能每次都留未完成處"
+          },
+          {
+            "id": 4,
+            "text": "先看哪些錯誤最需回課內處理，不把全部當成要多做",
+            "action": "導師已先看哪些錯誤最需回課內處理，不把全部當成要多做",
+            "tradeoff": "需要判讀，未必有立即漂亮的成果"
+          },
+          {
+            "id": 5,
+            "text": "請同事提供一個課內可行的練習版本，不要求他額外帶班",
+            "action": "導師已請同事提供一個課內可行的練習版本，不要求他額外帶班",
+            "tradeoff": "對方可拒絕，也要花原本工作時間協議"
+          },
+          {
+            "id": 6,
+            "text": "問學生這段短練實際幫到哪裡，匿名自願回應",
+            "action": "導師已問學生這段短練實際幫到哪裡，匿名自願回應",
+            "tradeoff": "會占原可調整的課內時間，也可能聽到沒效"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也餓到不想再管沙漏，趁本人非當值的空檔去吃完整一餐，不再回門邊加問一題",
+          "action": "導師已在本人非當值且原照看持續的合法休息時間離開用餐，不擅離必要職務、不把飢餓當成拒絕急迫協助理由",
+          "tradeoff": "少了即時觀察，必要照看須確定仍在"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 956417334
+        },
+        "selectedIds": [
+          2,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "3a86929dbe517e19fd3b0c279cb62c5bfea7b561725fb798af7b15227befe6b5"
+      },
+      "consequenceDirections": {
+        "A": "旁觀的專業可變成合適建議，但不能再把建議轉成無限新工作。",
+        "B": "必要教學能聚焦，教師也可能發現少練不是唯一問題。",
+        "C": "學生可以真正休息，同事也不用陪你看班；你則須接受今天就是看不到後面那一步。",
+        "D": "想練的人有合法選擇，不參加者不能被當成不努力。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "53bb08ac02120d5a2f6854cffa2ac24c4da259242b167d94b7d90451e90abf89",
+    "draftSha256": "fffe91dc285634d34467a72be754cf91c2ef6e7f2a5d263a0b7bcc1be41df26f",
     "seedAssignmentVersion": 1
   }
 }

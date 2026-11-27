@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "30dabbb133a8a71b8cfb8c2e6556fcce7d978d2d17a4e37e77867f6fb9714198",
+      "checkedAt": "2026-11-27T05:13:30.058Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依實際先到順序使用，後到的人自行找別的安排",
+            "action": "導師已依實際先到順序使用，後到的人自行找別的安排",
+            "tradeoff": "仍有人要多走或等待，不能靠關係插隊"
+          },
+          {
+            "id": 2,
+            "text": "你自行去已確認仍營業的別店，不要求他同行",
+            "action": "導師已你自行去已確認仍營業的別店，不要求他同行",
+            "tradeoff": "要多花路程，可能仍遇到沒機器"
+          },
+          {
+            "id": 3,
+            "text": "若衣物與店規都適合，只合洗雙方明確同意的外衣",
+            "action": "導師已若衣物與店規都適合，只合洗雙方明確同意的外衣",
+            "tradeoff": "要談清清潔、分色與費用，任一人都可拒絕"
+          },
+          {
+            "id": 4,
+            "text": "詢問店家是否有其他可安全使用的機器或正式排候方式",
+            "action": "導師已詢問店家是否有其他可安全使用的機器或正式排候方式",
+            "tradeoff": "未必有答案，也不能使用未清潔機器勉強湊"
+          },
+          {
+            "id": 5,
+            "text": "把今天非急著洗的部分帶回，重新安排自己的家務",
+            "action": "導師已把今天非急著洗的部分帶回，重新安排自己的家務",
+            "tradeoff": "家裡待洗物增加，不能因此讓必需品一直沒得用"
+          },
+          {
+            "id": 6,
+            "text": "各自決定可等到何時，超時便依自己的安全返程離開",
+            "action": "導師已各自決定可等到何時，超時便依自己的安全返程離開",
+            "tradeoff": "可能最後都沒洗，還要接受機器不會為你們加速"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你今天真的不想自己守機器，查明正常價格後，改把自己的衣物交合規店家代洗",
+          "action": "導師已詢問並在本人預算與店家條件可行時委託正常代洗，未混用同事衣物、擅自扣費或要求店家延長營業",
+          "tradeoff": "要付較高費用，也須接受店家可不接與取件期限"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1770189379
+        },
+        "selectedIds": [
+          5,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "8c99b15866d5613b02e764394816f5b3666b0f0353c6ccbdd45b8e8439f5252e"
+      },
+      "consequenceDirections": {
+        "A": "你用私人花費換掉今晚家務，同事可能覺得奢侈，你卻不用再裝成彼此禮讓就會有第二臺。",
+        "B": "有機會找到新選擇，卻可能問完仍要回到先後順序。",
+        "C": "你可保住今晚剩餘休息，同事則不必為你一起延後。",
+        "D": "兩人可能共用一次機器，但不能把不同意的私人物品一起倒進去。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "04220d21381e1400da43a80fe01128c6984aba6ba408fe2bd6311e0f65fffdb3",
+    "draftSha256": "30dabbb133a8a71b8cfb8c2e6556fcce7d978d2d17a4e37e77867f6fb9714198",
     "seedAssignmentVersion": 1
   }
 }

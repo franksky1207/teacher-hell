@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "56a098ea5c6c71b975a7955317eb51fe65bf3bcc403b775935b8c89c9fb15c35",
+      "checkedAt": "2026-11-27T05:13:30.069Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓照片中的人先各自表意，再決定合規保存與使用",
+            "action": "導師已讓照片中的人先各自表意，再決定合規保存與使用",
+            "tradeoff": "多人入鏡可能意見不一，不能一人答應就全用"
+          },
+          {
+            "id": 2,
+            "text": "只保留不識人的合規場景片段，個人部分依規定處理",
+            "action": "導師已只保留不識人的合規場景片段，個人部分依規定處理",
+            "tradeoff": "少了表情與人際記憶，也要確認不能被反推身分"
+          },
+          {
+            "id": 3,
+            "text": "取消這次非必要公開相簿，合法私人留存另談",
+            "action": "導師已取消這次非必要公開相簿，合法私人留存另談",
+            "tradeoff": "少了共同分享，不能把取消公開當成刪光一切"
+          },
+          {
+            "id": 4,
+            "text": "把刪照工作收回成人與適當窗口，不由領頭學生替人決定",
+            "action": "導師已把刪照工作收回成人與適當窗口，不由領頭學生替人決定",
+            "tradeoff": "成人工作增加，處理速度下降"
+          },
+          {
+            "id": 5,
+            "text": "先讓當事人私下選可供課內分享的少量照片，不公開淘汰名單",
+            "action": "導師已先讓當事人私下選可供課內分享的少量照片，不公開淘汰名單",
+            "tradeoff": "需要逐一確認，最後可能只剩很少"
+          },
+          {
+            "id": 6,
+            "text": "與班上說清留存、刪除和公開是不同決定，採學校允許的方式辦理",
+            "action": "導師已與班上說清留存、刪除和公開是不同決定，採學校允許的方式辦理",
+            "tradeoff": "要花時間說明，也仍需實際逐案確認"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想留一張自己難看的，主動把本人單獨入鏡的一張歪照從自己的精選刪除名單拿回，只留給自己",
+          "action": "導師已就本人有權保存且無他人可辨識資訊的單人照片決定私人留存，不更動他人影像同意或校方必要刪除規則",
+          "tradeoff": "要面對自己的不完美，不替別人決定公開"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 680318428
+        },
+        "selectedIds": [
+          1,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "c563323305bb03d4882c1cedd0eecbc3fe0d0a37104abd4f09d4c30612a4dfcd"
+      },
+      "consequenceDirections": {
+        "A": "本人可留下喜歡的記憶，共同影像仍須處理不同意的範圍。",
+        "B": "班級仍有活動記錄，但學生可能覺得最好笑的瞬間都消失了。",
+        "C": "學生能看見你不是只准他們接受醜照，你卻不能拿這次自願保存要求任何人同樣保留。",
+        "D": "影像不再為漂亮版面被挑選，但各人的保存需求仍需個別確認。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "959455a44409dd9538384a89e6c20cb08fee4d77e8897c9a34a92bc0aecbea45",
+    "draftSha256": "56a098ea5c6c71b975a7955317eb51fe65bf3bcc403b775935b8c89c9fb15c35",
     "seedAssignmentVersion": 1
   }
 }

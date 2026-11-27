@@ -16,14 +16,82 @@
     "G05",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "82438dd5f4fea4b89ef6105521136fdd399d741841cf09ed40f31ec2e87ec67d",
+      "checkedAt": "2026-11-27T05:13:30.071Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "新題和即時解說移到白天，晚間只留不急回的提問",
+            "action": "導師已新題和即時解說移到白天，晚間只留不急回的提問",
+            "tradeoff": "你要在課內安排真正回應，不能只是改發送時間"
+          },
+          {
+            "id": 2,
+            "text": "讓組員自願輪流整理問題，不再默認由他解說",
+            "action": "導師已讓組員自願輪流整理問題，不再默認由他解說",
+            "tradeoff": "要確認各人範圍，也可能沒人願接"
+          },
+          {
+            "id": 3,
+            "text": "停止這段晚間練習，把舊問題排回課內",
+            "action": "導師已停止這段晚間練習，把舊問題排回課內",
+            "tradeoff": "課程需騰時間，也可能少做新題"
+          },
+          {
+            "id": 4,
+            "text": "提供不記名的白天提問方式，讓只敢晚上問的人仍有出口",
+            "action": "導師已提供不記名的白天提問方式，讓只敢晚上問的人仍有出口",
+            "tradeoff": "教師要整理，也未必人人願意寫"
+          },
+          {
+            "id": 5,
+            "text": "和帶頭學生約定他可不回、不解釋私人原因，不再替全組交作業",
+            "action": "導師已和帶頭學生約定他可不回、不解釋私人原因，不再替全組交作業",
+            "tradeoff": "同學可能失望，教師須處理若有的施壓"
+          },
+          {
+            "id": 6,
+            "text": "請全組先各自試一小題，聚會只談已做過的卡點",
+            "action": "導師已請全組先各自試一小題，聚會只談已做過的卡點",
+            "tradeoff": "大家要自己投入，進度可能較慢"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你自己也不想每晚盯著回覆，取消本人非必要的夜間即時陪聊，正式急件另走原窗口",
+          "action": "導師已終止本人非必要夜間即時解題陪聊並明列一般回覆時段，保留正式急迫管道與依法必要處理，不關閉學生一般提問入口",
+          "tradeoff": "少了熟悉互動，你必須在公告白天時段回應"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 150653055
+        },
+        "selectedIds": [
+          3,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "a3d2812433d9bcca5ba1a270c89a24a9239a7ef6fed6661ca22bd62ad2d011f4"
+      },
+      "consequenceDirections": {
+        "A": "問題不依賴一名同學在線，卻可能失去即時追問的便利。",
+        "B": "學生知道老師也會離線，卻可能把這看成疏遠，需要用實際白天回覆證明不是撒手不管。",
+        "C": "晚上能真的停下，學生卻可能失去習慣的同伴互助。",
+        "D": "學生不用每晚上線主持，但白天仍需消化累積問題。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e16277b13e7d0def90579b2563d3814019acbe4ab81a8f3f788def9962dbc96e",
+    "draftSha256": "82438dd5f4fea4b89ef6105521136fdd399d741841cf09ed40f31ec2e87ec67d",
     "seedAssignmentVersion": 1
   }
 }

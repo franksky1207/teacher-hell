@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "47f8593af56459890035a25d2f8bb34ee88ccd3b55163c0f8fd2c38adbfa6805",
+      "checkedAt": "2026-11-27T05:13:30.074Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把其餘人確實能做的工作重新分清，不等帶頭者醒來",
+            "action": "導師已把其餘人確實能做的工作重新分清，不等帶頭者醒來",
+            "tradeoff": "大家要自己承擔，也可能進展較慢"
+          },
+          {
+            "id": 2,
+            "text": "讓他這次不當負責人，另由自願且適任者接續",
+            "action": "導師已讓他這次不當負責人，另由自願且適任者接續",
+            "tradeoff": "可能找不到人，需要縮小活動"
+          },
+          {
+            "id": 3,
+            "text": "其餘人先各自練習，約定時間再集合核對",
+            "action": "導師已其餘人先各自練習，約定時間再集合核對",
+            "tradeoff": "共同討論時間減少，題目仍可能卡住"
+          },
+          {
+            "id": 4,
+            "text": "請全組先列出只有他才會的說法，核對哪些其實可以自己查",
+            "action": "導師已請全組先列出只有他才會的說法，核對哪些其實可以自己查",
+            "tradeoff": "要花時間，也可能承認長期依賴"
+          },
+          {
+            "id": 5,
+            "text": "在學生自願下提供校內可用的安靜學習與支持資訊",
+            "action": "導師已在學生自願下提供校內可用的安靜學習與支持資訊",
+            "tradeoff": "仍須按規定申請，不能代家庭保證住處改善"
+          },
+          {
+            "id": 6,
+            "text": "把這次共同目標縮到人手能完成的範圍，休息者不算待補人力",
+            "action": "導師已把這次共同目標縮到人手能完成的範圍，休息者不算待補人力",
+            "tradeoff": "成果減少，有人可能不甘心"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也不想每次都先叫第一名來救，親自坐進這組當一次普通提問者，不替他們分工或講完答案",
+          "action": "導師已在合法輔導時段向小組提出必要學習問題並聽各自回答，保留正常教學支持，不代學生完成共同任務或喚醒休息者",
+          "tradeoff": "會占你的輔導空檔，也可能聽見很多沒準備的沉默"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1841566089
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "a0d5f3f01400ab3e01898e83ff55ff48fa1f82489878df941ececb85342abbb4"
+      },
+      "consequenceDirections": {
+        "A": "其他人得回應自己的思路，教師卻要忍住又變成第二個全能隊長。",
+        "B": "休息不只是閉眼幾分鐘，學生也不必醒來就立刻補齊所有指揮。",
+        "C": "全組得接受現實負荷，卻不能以少做為由排擠需要休息的人。",
+        "D": "讀書會能往前一點，卻不能把成果不好全怪在少了第一名。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6571b53ad1860e8cf90943f6efe7f509f89bc3f31965463c63940807e342ed15",
+    "draftSha256": "47f8593af56459890035a25d2f8bb34ee88ccd3b55163c0f8fd2c38adbfa6805",
     "seedAssignmentVersion": 1
   }
 }

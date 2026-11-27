@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5bc140b90f6cd91884e559e96eee5f947018a9da2be88e4f8f62ed7d2a7ffeef",
+      "checkedAt": "2026-11-27T05:13:30.061Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把兩法並列核對條件與步驟，不先排誰比較高明",
+            "action": "導師已把兩法並列核對條件與步驟，不先排誰比較高明",
+            "tradeoff": "要花課程時間，也可能發現兩法各有適用限制"
+          },
+          {
+            "id": 2,
+            "text": "讓同事自願完整示範一小段，你先不插話",
+            "action": "導師已讓同事自願完整示範一小段，你先不插話",
+            "tradeoff": "你的進度會讓出空間，也需留下必要提問時間"
+          },
+          {
+            "id": 3,
+            "text": "先暫停結論，兩位老師課後確認再共同回覆",
+            "action": "導師已先暫停結論，兩位老師課後確認再共同回覆",
+            "tradeoff": "學生暫時沒有定論，你們也必須如期回覆"
+          },
+          {
+            "id": 4,
+            "text": "讓學生自己選一法試同一題，依理由看成效",
+            "action": "導師已讓學生自己選一法試同一題，依理由看成效",
+            "tradeoff": "要分別看不同版本，不能只比誰最快"
+          },
+          {
+            "id": 5,
+            "text": "請同事只帶原約一組，其餘由你按已確認內容接續",
+            "action": "導師已請同事只帶原約一組，其餘由你按已確認內容接續",
+            "tradeoff": "成人注意力要重分，也不能把分組變成老師陣營"
+          },
+          {
+            "id": 6,
+            "text": "和同事約定日後有疑義先核對，不在學生面前先貼錯誤標籤",
+            "action": "導師已和同事約定日後有疑義先核對，不在學生面前先貼錯誤標籤",
+            "tradeoff": "要改變臨場反應，不能只要求對方別生氣"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被糾正得有點不甘心，主動把本題最後的共同更正署上兩人的名字，不再只用你的講義版頭",
+          "action": "導師已提出並依雙方確認發布本題共同更正的具名責任方式，僅列實際貢獻，不以署名代替正確性核對或追加授權",
+          "tradeoff": "要公開共同責任，也可能被問為何原先只有一人判定"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4116060853
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "a4b3b790b6f906eb2e4c7b15b86de286ed4df240f6b75fbb3894a520d48261ca"
+      },
+      "consequenceDirections": {
+        "A": "爭執不在台上延燒，卻不能讓已被否定的方法一直懸著。",
+        "B": "方法可被實際使用，但學生仍可能受教師態度影響而不敢選另一法。",
+        "C": "學生能比較實際理由，教師卻可能都要更正原先說法。",
+        "D": "同事不必以你的附註身分存在，卻仍要同意實際內容，不能用共同署名逼他替你背書。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "772180c986a29b3b325c2e572c027add30e258460b828c172adcb9d0d6772d73",
+    "draftSha256": "5bc140b90f6cd91884e559e96eee5f947018a9da2be88e4f8f62ed7d2a7ffeef",
     "seedAssignmentVersion": 1
   }
 }

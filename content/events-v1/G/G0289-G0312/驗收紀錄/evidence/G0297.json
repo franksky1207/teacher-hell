@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "20e48f6bc32a468a82863dbf391b385a88eb57f12a224cfc137ab3ef542ecedf",
+      "checkedAt": "2026-11-27T05:13:30.063Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "改看自己前後的解題變化，不和同學排位",
+            "action": "導師已改看自己前後的解題變化，不和同學排位",
+            "tradeoff": "需要留前後資料，進步也未必每次都很明顯"
+          },
+          {
+            "id": 2,
+            "text": "在課程與意願允許下保留自願小挑戰，不牽動全班名次",
+            "action": "導師已在課程與意願允許下保留自願小挑戰，不牽動全班名次",
+            "tradeoff": "有人可能不參加，也不能讓退出變成被笑"
+          },
+          {
+            "id": 3,
+            "text": "讓全班只回饋推理哪一步清楚，不記速度榜",
+            "action": "導師已讓全班只回饋推理哪一步清楚，不記速度榜",
+            "tradeoff": "要聽較長說明，也可能顯得不夠熱鬧"
+          },
+          {
+            "id": 4,
+            "text": "請他試填一份新回饋，指出哪格不知道怎麼用",
+            "action": "導師已請他試填一份新回饋，指出哪格不知道怎麼用",
+            "tradeoff": "教師得真的修訂，不能讓學生幫忙完就照舊"
+          },
+          {
+            "id": 5,
+            "text": "讓各組自己訂一個與課程相關的可完成目標，再共同檢視",
+            "action": "導師已讓各組自己訂一個與課程相關的可完成目標，再共同檢視",
+            "tradeoff": "目標可能不一致，需要教師協助"
+          },
+          {
+            "id": 6,
+            "text": "私下問不願上台者需要什麼方式，不讓熱心學生代答",
+            "action": "導師已私下問不願上台者需要什麼方式，不讓熱心學生代答",
+            "tradeoff": "要另留時間，也可能發現排行之外還有原因"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你自己也捨不得那種搶答快感，邀他課後合法空檔只和你比一題，不列班榜",
+          "action": "導師已提出雙方自願、非評量且不占必要休息勤務的一題私下解題挑戰，不設金錢獎懲或恢復公開排行",
+          "tradeoff": "你可能輸，也不能讓這次自願遊戲變成專屬優待"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 195913461
+        },
+        "selectedIds": [
+          5,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "da04e56a77c970cd75db2e760498cfbdf560e0ca727b401e74d8981b68ff6ef1"
+      },
+      "consequenceDirections": {
+        "A": "團隊能有成就感，不能再拿哪組目標最容易當成新的輸贏。",
+        "B": "表單可更貼近學習，卻不保證他立刻喜歡沒有排行的版本。",
+        "C": "學生可享受一次有限競爭，你則得承受輸給學生不嘴硬，其他人不需要跟著上場。",
+        "D": "想競爭的人有有限出口，卻不能把自願挑戰重新推成全班必玩。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6f454c239641f783fff1f19912adc006efa7a2a5155f31866df8ba767f0ae312",
+    "draftSha256": "20e48f6bc32a468a82863dbf391b385a88eb57f12a224cfc137ab3ef542ecedf",
     "seedAssignmentVersion": 1
   }
 }

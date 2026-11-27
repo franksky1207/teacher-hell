@@ -14,14 +14,82 @@
   "plannedTags": [
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1f6e44b34ecd677085bae92c4b37c8a5f23a05538d488be420d906f005830153",
+      "checkedAt": "2026-11-27T05:13:30.069Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先只收下一句最需要的調整，不追問全部家事",
+            "action": "導師已先只收下一句最需要的調整，不追問全部家事",
+            "tradeoff": "資訊有限，必要安排仍須再確認"
+          },
+          {
+            "id": 2,
+            "text": "今天暫停非急迫談話，約他真正可用的時間再說",
+            "action": "導師已今天暫停非急迫談話，約他真正可用的時間再說",
+            "tradeoff": "問題暫時懸著，教師也得守約"
+          },
+          {
+            "id": 3,
+            "text": "讓他把話完整說完，你先不給建議",
+            "action": "導師已讓他把話完整說完，你先不給建議",
+            "tradeoff": "占用短空檔，也可能聽完仍不知道怎麼做"
+          },
+          {
+            "id": 4,
+            "text": "提供可用的文字回覆方式，讓他不用一次當面說全",
+            "action": "導師已提供可用的文字回覆方式，讓他不用一次當面說全",
+            "tradeoff": "他要自己寫，也可能不想留下家庭細節"
+          },
+          {
+            "id": 5,
+            "text": "若他同意，向適當窗口協調眼前課業，不要求他逐位老師重講",
+            "action": "導師已若他同意，向適當窗口協調眼前課業，不要求他逐位老師重講",
+            "tradeoff": "需控制知情與授權，不能保證各科同樣調整"
+          },
+          {
+            "id": 6,
+            "text": "私下問他願不願意使用校內支持，照自己的步調決定",
+            "action": "導師已私下問他願不願意使用校內支持，照自己的步調決定",
+            "tradeoff": "多一位必要成人知情，也不能以轉介取代當下回應"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被不要再問刺了一下，決定先不當顧問，拿張紙只照他願意說的寫，寫完請他刪掉不想留的",
+          "action": "導師已徵詢本人後記錄最低必要需求並供其核對非必要內容，依規定保護資料，不以刪改阻擋必要安全程序",
+          "tradeoff": "要放下解題習慣，也須依法保留必要資訊"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 606913592
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "d33fcd7c3338e67f12ae255830da7980e977d2cee6f195d5ffd1cb585b62e174"
+      },
+      "consequenceDirections": {
+        "A": "他多一個可選出口，卻不必為求助先把全家故事交出來。",
+        "B": "學生可看見自己的話沒被改成老師的版本，但仍能不同意留下非必要私事，教師也不能把筆記當同意書。",
+        "C": "他能休息，不會因生硬口氣就失去說明機會，但後續仍須有人接起。",
+        "D": "學生少一次次解釋，原有課程必要要求仍由任課者決定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0b41117f1c7596d3f504fdd4a813873828edc349614af4e71eca92540fbef530",
+    "draftSha256": "1f6e44b34ecd677085bae92c4b37c8a5f23a05538d488be420d906f005830153",
     "seedAssignmentVersion": 1
   }
 }

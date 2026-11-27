@@ -15,14 +15,82 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "714ddcfdd0f3b4941690789220cd630b17845300c9b569715e724e6866b1cfcc",
+      "checkedAt": "2026-11-27T05:13:30.056Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留已交成品，另收不記名的卡點，不再逐張當場評",
+            "action": "導師已保留已交成品，另收不記名的卡點，不再逐張當場評",
+            "tradeoff": "多一輪回饋，也不能保證大家立刻敢說真話"
+          },
+          {
+            "id": 2,
+            "text": "取得作者同意後比看兩版，承認你太早給了方向",
+            "action": "導師已取得作者同意後比看兩版，承認你太早給了方向",
+            "tradeoff": "會公開自己的影響，也要避免逼作者自證誠實"
+          },
+          {
+            "id": 3,
+            "text": "從下一輪改成全收齊再回應，這次先不推定全班已懂",
+            "action": "導師已從下一輪改成全收齊再回應，這次先不推定全班已懂",
+            "tradeoff": "回饋速度變慢，必要教學仍須當下處理"
+          },
+          {
+            "id": 4,
+            "text": "請各人私下指出一個真的沒懂的步驟，不評論作品好壞",
+            "action": "導師已請各人私下指出一個真的沒懂的步驟，不評論作品好壞",
+            "tradeoff": "需要逐一回應，也可能有人仍說都懂"
+          },
+          {
+            "id": 5,
+            "text": "用一小段不計分的課內練習核對理解，不以掌聲判斷",
+            "action": "導師已用一小段不計分的課內練習核對理解，不以掌聲判斷",
+            "tradeoff": "要占課堂時間，學生也可能覺得又多一題"
+          },
+          {
+            "id": 6,
+            "text": "讓作者自行選是否改回原版，不影響正常學習對待",
+            "action": "導師已讓作者自行選是否改回原版，不影響正常學習對待",
+            "tradeoff": "成品可能不再一片稱讚，你得真能接受"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你突然很想知道自己到底哪句最難懂，撤掉原訂的小結，請全班只匿名改寫你的一句話",
+          "action": "導師已將本人非必要結語改為匿名自願教學語句改寫，不要求批評人格或公開學生回饋，不改正式評分",
+          "tradeoff": "少了整齊收尾，也可能看到很多刺耳版本"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2468630558
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "26ba43b4b7164447f578ee0d6bfcffc8862b36b6d4bf305ccdf486910ece58e8"
+      },
+      "consequenceDirections": {
+        "A": "作者有自己的作品決定權，其他同學是否改稿仍各自選擇。",
+        "B": "學生少了看老師表情改稿的機會，教師則要習慣先讀不立刻講。",
+        "C": "全班能看見稱讚如何改變回饋，卻不能要求每人也公開舊稿。",
+        "D": "學生可直接指出語言卡在哪，教師得自己辨認哪些修改有用，而不是找最客氣的一張當答案。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a37e51cfef6fdf89394cb84fad83a237604c01db06f2aa87f855f08870e28066",
+    "draftSha256": "714ddcfdd0f3b4941690789220cd630b17845300c9b569715e724e6866b1cfcc",
     "seedAssignmentVersion": 1
   }
 }

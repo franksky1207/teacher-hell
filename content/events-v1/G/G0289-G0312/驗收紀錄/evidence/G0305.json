@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8b7e20434391f68c10c8a8534cae3033688bb59050aa5705bc4765b46598288a",
+      "checkedAt": "2026-11-27T05:13:30.070Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "接受先試一輪不計分，之後由任課老師評估",
+            "action": "導師已接受先試一輪不計分，之後由任課老師評估",
+            "tradeoff": "競爭熱度下降，也會占用原定進度"
+          },
+          {
+            "id": 2,
+            "text": "保留真正自願的安全小挑戰，不牽動全班評量",
+            "action": "導師已保留真正自願的安全小挑戰，不牽動全班評量",
+            "tradeoff": "要分清退出不受罰，仍需合格照看"
+          },
+          {
+            "id": 3,
+            "text": "請任課老師自願主帶基礎組，你依約協助其餘部分",
+            "action": "導師已請任課老師自願主帶基礎組，你依約協助其餘部分",
+            "tradeoff": "人力與場地要重新分，不能只丟一群給對方"
+          },
+          {
+            "id": 4,
+            "text": "把回饋改看動作關鍵，不用勝負判定第一次表現",
+            "action": "導師已把回饋改看動作關鍵，不用勝負判定第一次表現",
+            "tradeoff": "教師要更仔細觀察，也未必有漂亮分數"
+          },
+          {
+            "id": 5,
+            "text": "讓學生先自選難度，全部須在任課老師核可範圍內",
+            "action": "導師已讓學生先自選難度，全部須在任課老師核可範圍內",
+            "tradeoff": "選擇可能集中，需要再調整配置"
+          },
+          {
+            "id": 6,
+            "text": "和任課老師重排示範與操作順序，先把最易誤會的步驟講清",
+            "action": "導師已和任課老師重排示範與操作順序，先把最易誤會的步驟講清",
+            "tradeoff": "實際玩樂時間減少，不能只示範不讓學生做"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不太想承認原計分太急，乾脆撤掉自己準備的趣味獎勵，把那份預算與熱情先收回來",
+          "action": "導師已撤回本人尚未成立的非必要私人趣味獎勵，課程由任課教師正常安排，不扣學生既得權益或正式分數",
+          "tradeoff": "少了你期待的競爭場面，也不得影響正式學習評量"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1989659946
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "3625740e5824b6ffdc15681b6a1ca588e5e6b8714b6c35654668fa60a4b0fed8"
+      },
+      "consequenceDirections": {
+        "A": "起點比較清楚，但仍要留出真實練習。",
+        "B": "學生不必追逐教師加的獎，你得接受普通練習未必熱鬧，仍可能有人直說原本獎勵才好玩。",
+        "C": "較慢的人能得到適合帶領，但分組不能成永久能力標籤。",
+        "D": "想挑戰的人有出口，其他人不必靠上場證明敢不敢。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2d971e3b909595ab57a58802eabb1dc1f7fbb42f910834f771e1b440af10ed68",
+    "draftSha256": "8b7e20434391f68c10c8a8534cae3033688bb59050aa5705bc4765b46598288a",
     "seedAssignmentVersion": 1
   }
 }

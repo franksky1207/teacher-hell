@@ -20,8 +20,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "fc275653cdba25c72705cc75699c3a6fc89353434bb21c9a3ea3c462547cbafd",
-      "checkedAt": "2026-11-27T17:53:20.651Z",
+      "sourceVersion": "279c2939d5e249b4ee144f30b1d0047101cbfce6eec0fb389202932ca97f19e3",
+      "checkedAt": "2026-11-27T17:55:35.939Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -50,9 +50,9 @@
           },
           {
             "id": 5,
-            "text": "不另加私人跨處室追蹤表，沿合法原處室程序。",
-            "action": "拒絕真實新表協作，維持必要合法支持與紀錄。",
-            "tradeoff": "對方可能覺得被綁手。"
+            "text": "提議另開家庭可自願提出的一對一資訊諮詢，不先替誰列名。",
+            "action": "向正式窗口提出一般家庭自願個別諮詢方式的新協調建議，不代家庭預約、不建立跨處室名冊或保證有人服務。",
+            "tradeoff": "要協調，個別時段可能有限。"
           },
           {
             "id": 6,
@@ -69,26 +69,26 @@
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 3455791313
+          "seed": 3769129854
         },
         "selectedIds": [
-          1,
           5,
-          2
+          1,
+          4
         ],
         "finalChoiceMap": {
-          "A": "emotional",
+          "A": 1,
           "B": 5,
-          "C": 2,
-          "D": 1
+          "C": 4,
+          "D": "emotional"
         },
-        "optionsDigest": "8d810b29108906d874ecb9fbd32ba8bf236e4af5f9e64b1ea85c590a8b12edb2"
+        "optionsDigest": "59fc08e5e9c38775c5d6b0893d812a1c6651aac24aa1a16a31414b76c6a3a1a8"
       },
       "consequenceDirections": {
-        "A": "主管可無明確答覆，必要保護與授權底線仍共同維持。",
-        "B": "不能因拒表放任實際風險漏接。",
-        "C": "拒參加不影響支持，不能藉說明會暗查家計或辨識需求者。",
-        "D": "示例不等真實家庭已申請。"
+        "A": "示例不等真實家庭已申請。",
+        "B": "窗口可無資源、家庭可不用；個別交流不是必要支持或補助資格條件，不帶出兩戶身分。",
+        "C": "提醒不取代合法必要個案支持。",
+        "D": "主管可無明確答覆，必要保護與授權底線仍共同維持。"
       },
       "semanticReviewed": true,
       "selectionRevisionHistory": [
@@ -162,9 +162,80 @@
             "C": "提醒不取代合法必要個案支持。",
             "D": "主管可無明確答覆，必要保護與授權底線仍共同維持。"
           }
+        },
+        {
+          "reason": "橫向觀察原普通5拒非法跨處室表接近共通必要保護，改為共通底線外的一對一自願諮詢安排提案，區分普通2群體說明邀請。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "一起做全虛構資料的申請準備範例。",
+                "action": "額外製作成人一般流程示例，不放真實學生或代號對照。",
+                "tradeoff": "花時間。"
+              },
+              {
+                "id": 2,
+                "text": "提出供有意願家庭自行參加的一般補助資訊說明，不針對那兩戶。",
+                "action": "向正式窗口提出全班範圍非強制一般資訊說明邀請，不披露個案、不代家庭申請，未取得人力或安排。",
+                "tradeoff": "要協調，可能無人參與。"
+              },
+              {
+                "id": 3,
+                "text": "我願整理可公開的補助資格入口供家庭自選。",
+                "action": "額外提供合法公開資訊，不指名推定貧困或代申請。",
+                "tradeoff": "占備課。"
+              },
+              {
+                "id": 4,
+                "text": "邀職員只整理一般截止提醒，不列個人。",
+                "action": "提出不含個案的新行政資訊協作，不建立影子名單。",
+                "tradeoff": "可能較難追蹤。"
+              },
+              {
+                "id": 5,
+                "text": "不另加私人跨處室追蹤表，沿合法原處室程序。",
+                "action": "拒絕真實新表協作，維持必要合法支持與紀錄。",
+                "tradeoff": "對方可能覺得被綁手。"
+              },
+              {
+                "id": 6,
+                "text": "詢問既有合規的家庭自願諮詢安排。",
+                "action": "查詢正式資源，不代預約或透露名單。",
+                "tradeoff": "可能無空。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "他一收表又開表，我真的想喊停，願用自己的空堂另寫一份不帶個案的流程疑問，具名請主管回答，不再讓我們各自猜。",
+              "action": "額外提出一般資料權限流程釐清請求，不虛構工時、不帶可識別資訊，不以具名才遵法。",
+              "tradeoff": "花時間，可能被說太麻煩。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3455791313
+            },
+            "selectedIds": [
+              1,
+              5,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 5,
+              "C": 2,
+              "D": 1
+            },
+            "optionsDigest": "8d810b29108906d874ecb9fbd32ba8bf236e4af5f9e64b1ea85c590a8b12edb2"
+          },
+          "previousConsequenceDirections": {
+            "A": "主管可無明確答覆，必要保護與授權底線仍共同維持。",
+            "B": "不能因拒表放任實際風險漏接。",
+            "C": "拒參加不影響支持，不能藉說明會暗查家計或辨識需求者。",
+            "D": "示例不等真實家庭已申請。"
+          }
         }
       ],
-      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
+      "reviewer": "Codex／第十輪施工者輕量觀察後定向核讀受影響故事的七候選、共通責任、同一前提、ID映射與方向；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -185,7 +256,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fc275653cdba25c72705cc75699c3a6fc89353434bb21c9a3ea3c462547cbafd",
+    "draftSha256": "279c2939d5e249b4ee144f30b1d0047101cbfce6eec0fb389202932ca97f19e3",
     "seedAssignmentVersion": 1
   }
 }

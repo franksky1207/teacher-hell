@@ -20,8 +20,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "70507d0a10a6779287d38451567f000070914cfda51db8502ddabe7033a1dce8",
-      "checkedAt": "2026-11-27T17:53:20.654Z",
+      "sourceVersion": "b66a1ef6ef2daa979d13a3950ecba0ec161b02e9017ea5c13a71a2c0937f2e72",
+      "checkedAt": "2026-11-27T17:55:35.945Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -56,9 +56,9 @@
           },
           {
             "id": 6,
-            "text": "拒絕這個App例外，但保留正式新工具提案入口。",
-            "action": "不採具體未核可外部註冊要求，不禁止所有合法工具探索。",
-            "tradeoff": "學生可能失落。"
+            "text": "邀資訊端用虛構資料辦一次自願的免費App資料流向說明，不碰這個連結。",
+            "action": "提出額外合規資訊素養說明邀請，僅限虛構離線素材，不安裝或測試陌生App、未取得人力或同意。",
+            "tradeoff": "要協調，可能無人可來。"
           }
         ],
         "emotionalCandidate": {
@@ -69,26 +69,26 @@
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 649902955
+          "seed": 2780001887
         },
         "selectedIds": [
-          6,
           2,
-          5
+          6,
+          4
         ],
         "finalChoiceMap": {
-          "A": 2,
-          "B": 5,
+          "A": 4,
+          "B": "emotional",
           "C": 6,
-          "D": "emotional"
+          "D": 2
         },
-        "optionsDigest": "abd34f6eba5f5dec9e504bc3ae8fc49f2218a1c366ec0131085f9bebae4ee18a"
+        "optionsDigest": "4e7f1b1e4b363aaf4ed4bd29e72779ca6df6ad8d2ff759e2d086a792343ceb84"
       },
       "consequenceDirections": {
-        "A": "入口不等完成指導或取得VIP。",
-        "B": "未改制度前不讓學生冒個資風險。",
-        "C": "必要替代學習支持不能因拒例外消失。",
-        "D": "學生可拒，必要學習支持不依私人借用成立；不宣稱一本書等同VIP全科資源。"
+        "A": "拒談不影響必要學習支持。",
+        "B": "學生可拒，必要學習支持不依私人借用成立；不宣稱一本書等同VIP全科資源。",
+        "C": "可不安排，學生可不參加，必要資安防護與替代學習支持所有分支照常，不以聽說明才給資源。",
+        "D": "入口不等完成指導或取得VIP。"
       },
       "semanticReviewed": true,
       "selectionRevisionHistory": [
@@ -162,9 +162,80 @@
             "C": "學生可不用，查入口不等已取得帳號或個別支持完成。",
             "D": "拒談不影響必要學習支持。"
           }
+        },
+        {
+          "reason": "橫向觀察原普通6僅拒未核可App接近共通資安責任，改為額外人力資訊說明邀請，不把安全放在單一選項。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "查詢校內已授權題庫的使用條件。",
+                "action": "詢問合法既有資源，不取得帳號或假定每人有名額。",
+                "tradeoff": "可能沒有適合內容。"
+              },
+              {
+                "id": 2,
+                "text": "提供具明確使用權的公開練習入口。",
+                "action": "額外給可核實合法公開資訊，不盜版或保證涵蓋全科。",
+                "tradeoff": "資料可能分散。"
+              },
+              {
+                "id": 3,
+                "text": "我願用本人原創題材做一份短練習。",
+                "action": "自製合法一般補充內容，不代商業題庫或保證分數。",
+                "tradeoff": "占備課，量很少。"
+              },
+              {
+                "id": 4,
+                "text": "邀學生自願列出真正缺哪科哪類協助。",
+                "action": "提出低壓一般需求交流，不索收入證明。",
+                "tradeoff": "花課間。"
+              },
+              {
+                "id": 5,
+                "text": "向課程端提出低成本合法學習資源需求。",
+                "action": "提出額外制度協調，不代取得預算或核可App。",
+                "tradeoff": "可能慢或無資源。"
+              },
+              {
+                "id": 6,
+                "text": "拒絕這個App例外，但保留正式新工具提案入口。",
+                "action": "不採具體未核可外部註冊要求，不禁止所有合法工具探索。",
+                "tradeoff": "學生可能失落。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也羨慕過那些會員，願把自己那本可合法外借的普通參考書拿出來問他借不借，不用資料換，也不必說謝。",
+              "action": "提出本人私有合法實體參考書的合意短期借用邀請，不保證適用、未移交，不拿他生個資或以接受換待遇。",
+              "tradeoff": "本人少一本可用書，承擔合理借損風險與交接時間。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 649902955
+            },
+            "selectedIds": [
+              6,
+              2,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 5,
+              "C": 6,
+              "D": "emotional"
+            },
+            "optionsDigest": "abd34f6eba5f5dec9e504bc3ae8fc49f2218a1c366ec0131085f9bebae4ee18a"
+          },
+          "previousConsequenceDirections": {
+            "A": "入口不等完成指導或取得VIP。",
+            "B": "未改制度前不讓學生冒個資風險。",
+            "C": "必要替代學習支持不能因拒例外消失。",
+            "D": "學生可拒，必要學習支持不依私人借用成立；不宣稱一本書等同VIP全科資源。"
+          }
         }
       ],
-      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
+      "reviewer": "Codex／第十輪施工者輕量觀察後定向核讀受影響故事的七候選、共通責任、同一前提、ID映射與方向；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -185,7 +256,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "70507d0a10a6779287d38451567f000070914cfda51db8502ddabe7033a1dce8",
+    "draftSha256": "b66a1ef6ef2daa979d13a3950ecba0ec161b02e9017ea5c13a71a2c0937f2e72",
     "seedAssignmentVersion": 1
   }
 }

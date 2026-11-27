@@ -19,8 +19,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "bb2536efe025948cda22282f6a715a1b633d5303d697890c9c7009a008c57d3c",
-      "checkedAt": "2026-11-27T17:35:44.265Z",
+      "sourceVersion": "21a5160382e98da8e6c8704b3eaeed78e32b7f433cae797aeb3dac7b7a93bcc4",
+      "checkedAt": "2026-11-27T17:55:35.934Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -49,9 +49,9 @@
           },
           {
             "id": 5,
-            "text": "詢問校方能否調整非必要評比分數呈現。",
-            "action": "查詢額外制度改善管道，不保證取消競賽或回補分數。",
-            "tradeoff": "可能不採用。"
+            "text": "詢問校內有沒有合宜的成人清潔協作支援資訊，不再請他多掃。",
+            "action": "額外查詢既有成人非必要清潔協作資源，不取得人力或免除必要安全衛生責任。",
+            "tradeoff": "要聯繫，可能無資源。"
           },
           {
             "id": 6,
@@ -68,26 +68,26 @@
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 1657496226
+          "seed": 924746916
         },
         "selectedIds": [
-          2,
+          3,
           5,
           6
         ],
         "finalChoiceMap": {
           "A": 5,
-          "B": "emotional",
-          "C": 2,
-          "D": 6
+          "B": 6,
+          "C": 3,
+          "D": "emotional"
         },
-        "optionsDigest": "a919af5452b42b8edbf098af26a7cc9a460ebec484e53cb4e8407862c0fb75c2"
+        "optionsDigest": "ae4274db6b384558e956717d72295428e9551612dd4e42a7dce59d04e8f7e90d"
       },
       "consequenceDirections": {
-        "A": "不以制度未改讓股長繼續過勞。",
-        "B": "可能沒有合適課或不接受報名；即使報名也不保證會拒絕，必要學生負擔處理仍先做好，不等教師學完。",
-        "C": "不得要求定位、跟蹤上廁所或學生蒐證。",
-        "D": "可再求助，不將離開當原諒教師。"
+        "A": "可能找不到人，必要合理勞務與成人督導仍須先維持，不將協作資訊當已有人接手。",
+        "B": "可再求助，不將離開當原諒教師。",
+        "C": "圖不代必要督導與合理工作量。",
+        "D": "可能沒有合適課或不接受報名；即使報名也不保證會拒絕，必要學生負擔處理仍先做好，不等教師學完。"
       },
       "semanticReviewed": true,
       "selectionRevisionHistory": [
@@ -232,9 +232,80 @@
             "C": "不以制度未改讓股長繼續過勞。",
             "D": "不得要求定位、跟蹤上廁所或學生蒐證。"
           }
+        },
+        {
+          "reason": "橫向觀察發現原稿未建立整潔評比，原普通5要求調整評比分數不具前提，改為額外成人清潔協作資訊查詢。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "邀他自選保留哪些合宜幹部工作，另談調整。",
+                "action": "提出自願職務範圍調整討論，不以卸任作求助代價。",
+                "tradeoff": "需重新分工。"
+              },
+              {
+                "id": 2,
+                "text": "提議分工以完成可核實任務為主，不互相盯人。",
+                "action": "提出未來公平任務導向安排，不免成人必要督導。",
+                "tradeoff": "要重排，可能不易確認。"
+              },
+              {
+                "id": 3,
+                "text": "我願做一份簡明掃具與區域配置圖。",
+                "action": "自製合規一般工具圖，不新增危險工作。",
+                "tradeoff": "花備課，可能用不到。"
+              },
+              {
+                "id": 4,
+                "text": "徵詢全班自願說工作分配哪裡不清楚。",
+                "action": "提出一般需求檢視，不讓當事人對質或公開自責。",
+                "tradeoff": "占班務，可能有爭。"
+              },
+              {
+                "id": 5,
+                "text": "詢問校方能否調整非必要評比分數呈現。",
+                "action": "查詢額外制度改善管道，不保證取消競賽或回補分數。",
+                "tradeoff": "可能不採用。"
+              },
+              {
+                "id": 6,
+                "text": "今天不加額外檢討，讓他去做自己的功課。",
+                "action": "停止非必要追加會談，必要事件與支持由成人接續。",
+                "tradeoff": "未必立即安心。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "被他問得心虛，我發現自己也老是吞著，想自費詢問一堂成人溝通課，別再拿我不會拒絕當理由。",
+              "action": "另向合法公開成人溝通課提出本人自費參與的資訊與報名條件詢問，不假定有名額、未付款或上課，不將學生個案交外部。",
+              "tradeoff": "花私人查詢時間，若參加另付費與休息，可能覺得沒用。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1657496226
+            },
+            "selectedIds": [
+              2,
+              5,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": "emotional",
+              "C": 2,
+              "D": 6
+            },
+            "optionsDigest": "a919af5452b42b8edbf098af26a7cc9a460ebec484e53cb4e8407862c0fb75c2"
+          },
+          "previousConsequenceDirections": {
+            "A": "不以制度未改讓股長繼續過勞。",
+            "B": "可能沒有合適課或不接受報名；即使報名也不保證會拒絕，必要學生負擔處理仍先做好，不等教師學完。",
+            "C": "不得要求定位、跟蹤上廁所或學生蒐證。",
+            "D": "可再求助，不將離開當原諒教師。"
+          }
         }
       ],
-      "reviewer": "Codex／第十輪施工者定向核讀G1145七候選、共同前提及新映射方向；非獨立審查"
+      "reviewer": "Codex／第十輪施工者輕量觀察後定向核讀受影響故事的七候選、共通責任、同一前提、ID映射與方向；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -255,7 +326,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bb2536efe025948cda22282f6a715a1b633d5303d697890c9c7009a008c57d3c",
+    "draftSha256": "21a5160382e98da8e6c8704b3eaeed78e32b7f433cae797aeb3dac7b7a93bcc4",
     "seedAssignmentVersion": 1
   }
 }

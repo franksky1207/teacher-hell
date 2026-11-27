@@ -15,14 +15,82 @@
     "G01",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9c4a176d493379b19b8fe14b491e19cb55190b1c65a5c72f6b5e4317ab694da8",
+      "checkedAt": "2026-11-27T13:59:04.226Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "看既有可用的正確示範影像，不再靠我臨場猜。",
+            "action": "導師已選用經核對可用的有限示範素材，不追加學生動作量。",
+            "tradeoff": "少了即時互動"
+          },
+          {
+            "id": 2,
+            "text": "問他是否願意在安全乾地自選一小步示範，其他人不跟做。",
+            "action": "導師已提出有限自願單步示範邀請，未取得答應或要求他人模仿。",
+            "tradeoff": "他可能不想"
+          },
+          {
+            "id": 3,
+            "text": "我畫靜態足位示意，只談位置不再表演轉身。",
+            "action": "導師已以自有中性足位圖提供有限回饋，不作危險或不熟動作。",
+            "tradeoff": "少了動態感"
+          },
+          {
+            "id": 4,
+            "text": "只請他口述剛才怎麼調整，不再把成功重做一遍。",
+            "action": "導師已發出限本人方法的自願口頭回顧邀請，未要求補演。",
+            "tradeoff": "看不到完整動作"
+          },
+          {
+            "id": 5,
+            "text": "把原可用說明的適用條件讀清楚，不再以速度催他。",
+            "action": "導師已查核並提供既有可用練習說明，不作個別健康診斷。",
+            "tradeoff": "節奏慢了"
+          },
+          {
+            "id": 6,
+            "text": "今天不再加練，各自回原休息。",
+            "action": "導師已結束本人非必要追加練舞邀請，必要原回饋照常完成。",
+            "tradeoff": "正起勁卻停下"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被他說中我有點不服，自己在乾地只走一小步，請他願意就指出我哪裡還錯，不找藉口說剛才只是故意。",
+          "action": "導師已在確認可負荷的乾地完成本人安全單步並提出自願觀察邀請，不嘗試轉身高難動作或假稱已改正。",
+          "tradeoff": "老師可能更難看，也占自己的休息"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 20635694
+        },
+        "selectedIds": [
+          5,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "676a392e663977473c152de08708aaf2538975f33ed45925a450ec79d508d6cd"
+      },
+      "consequenceDirections": {
+        "A": "教師接受被看見，不要求學生教到會或跟做。",
+        "B": "可以知道限制，不能假稱一般說明已判每人適合。",
+        "C": "可以保留經驗，不能把口述當其他人已學會。",
+        "D": "可說清一個點，不能以圖代實際身體評估。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9d4c7af3072c8bff52b20cf6846d9bc600e90f0200bf568a99806ac2fa6fb337",
+    "draftSha256": "9c4a176d493379b19b8fe14b491e19cb55190b1c65a5c72f6b5e4317ab694da8",
     "seedAssignmentVersion": 1
   }
 }

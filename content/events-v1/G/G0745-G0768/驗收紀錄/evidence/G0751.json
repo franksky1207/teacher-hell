@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "de9a88daea0fc1071ae96e80c8b2468292aaef70089e549a4ef226fd44ceeb35",
+      "checkedAt": "2026-11-27T13:59:04.230Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只回應原作業目標，這張額外對照留給本人。",
+            "action": "導師已依原合法目標提供有限回饋，不另徵方言作業。",
+            "tradeoff": "對照能力沒被細看"
+          },
+          {
+            "id": 2,
+            "text": "問他願不願只在個別範圍說兩欄各怎麼用。",
+            "action": "導師已提出有限自願對照說明邀請，未公開或取得答應。",
+            "tradeoff": "也可能被拒"
+          },
+          {
+            "id": 3,
+            "text": "讓他自選一欄保留原樣，不要求重抄成課本文字。",
+            "action": "導師已提供原回饋範圍內的自選原稿方式，不改學習目標。",
+            "tradeoff": "少一份整齊格式"
+          },
+          {
+            "id": 4,
+            "text": "用自有中性例子說填格法，不借他的家庭話。",
+            "action": "導師已以自有不同例子提供有限方法說明，不複製原句。",
+            "tradeoff": "少了具體生活感"
+          },
+          {
+            "id": 5,
+            "text": "查既有專業語音來源，只為核對我不確定的地方。",
+            "action": "導師已查詢既有合法語音參考，未取得個別方言判定或新增學生負擔。",
+            "tradeoff": "需時間，未必有對應資料"
+          },
+          {
+            "id": 6,
+            "text": "不再延長這次觀看，還稿讓他休息，問題接正常課。",
+            "action": "導師已停止本人額外看稿並返還，原正常回饋接續。",
+            "tradeoff": "話可能沒說完"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是想知道課本以外怎麼說，問他願不願只教我一句，我跟著念，念錯讓他改，不給全班當節目。",
+          "action": "導師已發出限私人單句、自願跟讀的邀請，未取得答應、錄音或宣稱已學會。",
+          "tradeoff": "老師可能很笨，還可能被嫌又想挖他的話"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4216753797
+        },
+        "selectedIds": [
+          3,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "a62f66b790ebb354e906f74314732c6aaadc026a24d43bea60b628662062d234"
+      },
+      "consequenceDirections": {
+        "A": "能保留真實紀錄，不能以不重抄當已核對語音正誤。",
+        "B": "可看轉用方法，不把解釋當教材授權。",
+        "C": "教師自願當學習者，學生可拒，不能因此取得新授權或工作。",
+        "D": "查不到就保留未知，不用教師印象判家中說法錯。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b37cd9959273c49a6bfa335ea428219cd689f5d56e8e7243bc0eddf0a8a0598b",
+    "draftSha256": "de9a88daea0fc1071ae96e80c8b2468292aaef70089e549a4ef226fd44ceeb35",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ae0ea58613a3aae64278d469e54cef00b6ea81d19ab2ed3c4216f954e4d965a5",
+      "checkedAt": "2026-11-27T13:59:04.240Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "原單張格式不變，只重排校名避開折痕，再送原承辦核。",
+            "action": "導師已製作限原格式的校名位置修稿，未核准或大量印製。",
+            "tradeoff": "要再排一次"
+          },
+          {
+            "id": 2,
+            "text": "向承辦申請依真實樣張調整工期，不叫同事承諾加班。",
+            "action": "導師已提出原印製工期調整申請，未定案或擅停正式責任。",
+            "tradeoff": "可能被追問原估算"
+          },
+          {
+            "id": 3,
+            "text": "提出既有授權電子版，請承辦決定是否可替本次紙本用途。",
+            "action": "導師已提出電子用途替代建議，未獲准、公開或削減必要資訊。",
+            "tradeoff": "有人不方便看電子版"
+          },
+          {
+            "id": 4,
+            "text": "改用學校現有可支用紙，不再借這批私紙。",
+            "action": "導師已停止本人額外借私紙需求，選用已可支用校材，不擅新增採購。",
+            "tradeoff": "少了現成供料的方便"
+          },
+          {
+            "id": 5,
+            "text": "提議將原紙折成正式摺頁，校名移到完整面，先做樣。",
+            "action": "導師已提出並製作限內部評估的摺頁樣，不宣稱已核准發行。",
+            "tradeoff": "閱讀方式改，也要再核"
+          },
+          {
+            "id": 6,
+            "text": "提議改成必要資訊的純文字小卡，不追原大圖版。",
+            "action": "導師已向有權承辦提出內容不失真的小卡方案，未定案或印發。",
+            "tradeoff": "宣傳效果較素"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我捨不得他拿來的紙被嫌沒用，先用允許試作的一張折成桌上立卡，校名朝外給承辦看；過不了就走公辦，不要他再補。",
+          "action": "導師已在物主及印前用途允許範圍製作單張內審立卡樣，不擴張供料或外發權。",
+          "tradeoff": "可能被嫌寒酸，也費自己的時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2195106676
+        },
+        "selectedIds": [
+          2,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "e75198a43357f707435b8cdcad811d12becd237983446f843082c75080a0c615"
+      },
+      "consequenceDirections": {
+        "A": "教師做出具體替代樣，不把喜歡折紙當正式核准。",
+        "B": "能呈現限制，未准前必要工作仍依法接續。",
+        "C": "可保內容，不把改稿當已准外發。",
+        "D": "替代需可及與核准，不能只發連結就算完成原任務。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "825b2a35b75ccb5d375fa7a13b84eff69553a56cb71fc3bfa59b8dca0ccc7448",
+    "draftSha256": "ae0ea58613a3aae64278d469e54cef00b6ea81d19ab2ed3c4216f954e4d965a5",
     "seedAssignmentVersion": 1
   }
 }

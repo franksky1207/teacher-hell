@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d34d06364e9bbd8304eda4a40f7caa8cef8f92479409474e5520ef863b423bdb",
+      "checkedAt": "2026-11-27T13:59:04.226Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只展示作者自選一張，不列完成數或作畫速度。",
+            "action": "導師已提出限單張的展示詢問，未取得新同意或投影。",
+            "tradeoff": "其他準備的看不到"
+          },
+          {
+            "id": 2,
+            "text": "只在原同意範圍看一小段作畫方法，不展示完整人像。",
+            "action": "導師已提出需作者及相關權利同意的方法展示邀請，未開檔或錄製。",
+            "tradeoff": "少了成品效果"
+          },
+          {
+            "id": 3,
+            "text": "問他要不要只給一位自己選且願意的同伴看，不作全班投影。",
+            "action": "導師已發出限雙方自願的私人閱覽建議，未取得同意或轉交。",
+            "tradeoff": "公開掌聲變少"
+          },
+          {
+            "id": 4,
+            "text": "接受這次撤展，作品原樣還由本人掌握。",
+            "action": "導師已取消本次本人可決定的作品投影，不扣留檔案或剝奪原正常權益。",
+            "tradeoff": "失去原期待的亮相"
+          },
+          {
+            "id": 5,
+            "text": "這次不展人像，問他願不願意只用無人物草稿說構圖。",
+            "action": "導師已提出限既有無人像稿的可拒絕用途詢問，未取得資料或授權。",
+            "tradeoff": "少了最拿手的臉"
+          },
+          {
+            "id": 6,
+            "text": "讓他自選一個已同意的作品題名，放在原展示名單，不附張數。",
+            "action": "導師已提出限題名與本人同意的紀錄方式，未公開或設定產量要求。",
+            "tradeoff": "看不到圖也少了話題"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也捨不得整場空掉，乾脆投我那張醜自畫像，這輪意見衝老師來，他的先收好。",
+          "action": "導師已撤下學生本次待展內容並在原合規短段展示本人自有測試頭像，評論自願，不要求學生回應。",
+          "tradeoff": "自己的臉和畫技，還可能讓他覺得被搶舞台"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2593923596
+        },
+        "selectedIds": [
+          4,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "103c976067e201253037f26ea7408d9fa470232d31cd408cf2253432ad83ca66"
+      },
+      "consequenceDirections": {
+        "A": "教師提供真實替代成品，不把學生撤展說成害老師補位。",
+        "B": "撤回不抹掉成果，也不代表以后永不展示。",
+        "C": "可以有有限亮相，作品與被畫者仍各自同意。",
+        "D": "讀者可以小，不能因邀一人就暗示其應替全班看。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c2af0c4b03f585259f667e0a9a2bbeed676f749f4020909e091c54f5f9cf0c43",
+    "draftSha256": "d34d06364e9bbd8304eda4a40f7caa8cef8f92479409474e5520ef863b423bdb",
     "seedAssignmentVersion": 1
   }
 }

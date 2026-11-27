@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4bf521b37c5e9a0f734377f9d6b4663ef26fa9b112761b3fb3677a91e48719fe",
+      "checkedAt": "2026-11-27T13:59:04.235Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "原圖只作反例練習，不當門牌，先問作者用途。",
+            "action": "導師已提出限非指路教學的原圖用途詢問，未取得授權或展示。",
+            "tradeoff": "得意轉印成了錯例"
+          },
+          {
+            "id": 2,
+            "text": "我另作正確的練習圖，不改他的原件。",
+            "action": "導師已以自有內容製作不同正確練習圖，不複製或更動學生原作。",
+            "tradeoff": "教師多做一份"
+          },
+          {
+            "id": 3,
+            "text": "問作者是否願只重做班號，其他鏡面設計保留。",
+            "action": "導師已提出限局部的自願改作邀請，未取得答應或要求交件。",
+            "tradeoff": "要多花他的時間，也可拒絕"
+          },
+          {
+            "id": 4,
+            "text": "改成無班號的圖案練習，不再承擔指路功能。",
+            "action": "導師已提供本課有限無指路圖案替代，不改正式標示。",
+            "tradeoff": "失去原想放門上的用途"
+          },
+          {
+            "id": 5,
+            "text": "這次不用他的圖作共同教材，還稿只給個別回饋。",
+            "action": "導師已婉拒本次原圖教材用途並返還，提供有限個別回饋。",
+            "tradeoff": "少了公開亮相"
+          },
+          {
+            "id": 6,
+            "text": "只用原有中性圖講翻面規則，不在門口來回驗新牌。",
+            "action": "導師已選用既有可用中性例圖承接本課，不製作新門牌或妨礙通行。",
+            "tradeoff": "少了空間直觀感"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想證明自己不是只會刪，自己寫兩面名字給他翻著檢，錯就留著改，不再先說老師一定對。",
+          "action": "導師已以自有紙筆製作本人姓名鏡射練習稿並提出自願檢視邀請，不作指路標示或宣稱已驗對。",
+          "tradeoff": "自己的面子，還得接受他可能不想幫看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 55369855
+        },
+        "selectedIds": [
+          6,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "fc71d060b3e2d5ca5d63ed97e3691384113a5bc15cb2c3ad1b85b7e271fcf05d"
+      },
+      "consequenceDirections": {
+        "A": "可以學變換，不能把新功能自動套在原授權上。",
+        "B": "教師做出可檢驗的新稿，不讓學生代教師確認正式指示。",
+        "C": "拒用不否定方法，原權益及正常支持仍在。",
+        "D": "可回概念，不將文字解說當所有版面都正確。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c237abd0436524182f77b07cf711f2f65ac9fae7090be002b77b61f69a52e1bd",
+    "draftSha256": "4bf521b37c5e9a0f734377f9d6b4663ef26fa9b112761b3fb3677a91e48719fe",
     "seedAssignmentVersion": 1
   }
 }

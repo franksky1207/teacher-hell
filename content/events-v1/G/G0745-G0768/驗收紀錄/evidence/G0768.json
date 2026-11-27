@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9c5980c7065e270aa054c04f418a6899ea848a8bb216463299031dd23313a231",
+      "checkedAt": "2026-11-27T13:59:04.244Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持原已核定開場，不另加他的演說；其他自願協作另確認。",
+            "action": "導師已維持既有核定接待流程，未追加演出或強派同事後勤。",
+            "tradeoff": "同事仍可能失落"
+          },
+          {
+            "id": 2,
+            "text": "向承辦提議恢復短雙人開場，不超原總時限。",
+            "action": "導師已提出需雙方及承辦同意的有限雙人方案，未獲准或演出。",
+            "tradeoff": "須再核，也可能擾已知安排"
+          },
+          {
+            "id": 3,
+            "text": "同事若願意，留在原核定接待位置只做原有限工作，不臨時換到門邊。",
+            "action": "導師已提出限原職權位置的自願協作確認，未改派或取得答應。",
+            "tradeoff": "少了被看見的機會"
+          },
+          {
+            "id": 4,
+            "text": "不再借私人貼紙，使用原已有校用識別，私物按約歸還。",
+            "action": "導師已停止本人額外借私物需求，選用既有核准校用識別並依約返還。",
+            "tradeoff": "準備較麻煩"
+          },
+          {
+            "id": 5,
+            "text": "這次不加新展示，另申請後續普通日可行時段再談，不先向來賓宣布。",
+            "action": "導師已提出日後非必要展示可行性詢問，未核准、承諾或改當次動線。",
+            "tradeoff": "當場少一段內容"
+          },
+          {
+            "id": 6,
+            "text": "問原作者及承辦是否可把被刪那段作短文字摘要，不重新上台。",
+            "action": "導師已提出限原權利及核稿的文字用途建議，未取得同意或發送。",
+            "tradeoff": "少了現場表達"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕他覺得只剩貼紙有用，乾脆提議我退到後面，原短開場讓他獨講；我少露一次臉，也別再替他說都可以。",
+          "action": "導師已提出本人退出前台、由同事自願短講的替代方案，未獲同意、核准或改動現行流程。",
+          "tradeoff": "自己失去位置，還可能被嫌又臨時改一次"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3746734543
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "afbed7536052377fae5ef1743596fd262f808556d295ab19a91b46b3c786c025"
+      },
+      "consequenceDirections": {
+        "A": "教師改的是未核定角色提案，需本人與承辦同意，不用內疚逼他接。",
+        "B": "內容可有去處，不能擅用署名或增加印量。",
+        "C": "可保穩定，不把配合當已不生氣。",
+        "D": "不以供貼紙換上場，原必要說明與權益照常。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e448bab5781c45ec1de496330329f4ddd48b9d35acc7ad90fe295644c3d7f4f4",
+    "draftSha256": "9c5980c7065e270aa054c04f418a6899ea848a8bb216463299031dd23313a231",
     "seedAssignmentVersion": 1
   }
 }

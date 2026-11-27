@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "671c1ca911ee3edc8e64035a551bf9492266a04bd9c7436d3b3b8493b09ae5f2",
+      "checkedAt": "2026-11-27T13:59:04.240Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先只回應畫者想問的線條，不替路人解讀。",
+            "action": "導師已在作者意願範圍提供有限私人技法回饋，不轉移原作。",
+            "tradeoff": "可能掃路人的興"
+          },
+          {
+            "id": 2,
+            "text": "原作先還畫者，本次不協調贈送。",
+            "action": "導師已返還本人受邀觀看的原作，婉拒代辦本次贈畫，不替作者承諾。",
+            "tradeoff": "路人可能失望"
+          },
+          {
+            "id": 3,
+            "text": "問畫者是否願意自行決定贈原作，不給他壓力。",
+            "action": "導師已提出可拒絕的原作去向詢問，未取得答應或交付。",
+            "tradeoff": "可能失去自己很滿意的一張"
+          },
+          {
+            "id": 4,
+            "text": "只詢問雙方是否願在原地再看一小會，不拿走。",
+            "action": "導師已發出限原地自願觀看邀請，未取得同意、拍攝或轉交。",
+            "tradeoff": "多用休息時間"
+          },
+          {
+            "id": 5,
+            "text": "若作者想分享，提議只給依法可製的有限副本，原件自留。",
+            "action": "導師已提出限本人權利的可拒絕副本建議，未複製或取得新用途同意。",
+            "tradeoff": "需另處理，也可能根本不願"
+          },
+          {
+            "id": 6,
+            "text": "只向路人說明是本次速寫偶然相似，不替畫者追問那人私事。",
+            "action": "導師已提供有限創作性質說明，不核定真實肖像或代作者決定。",
+            "tradeoff": "少了故事的溫度"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那句像勾住了，問雙方願不願讓路人講一小段不涉私事的記憶，我另紙記，不寫進他的畫。",
+          "action": "導師已提出限非敏感、自願敘述及獨立短記的交流邀請，未取得答應、記錄同意或原作使用權。",
+          "tradeoff": "原本評畫時間沒了，還可能搶走畫者主角"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4241423961
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "7a95f971479ec2736165f58fd9dfc9e3f1ba8cc5892e8d2f5ed5b11645bef227"
+      },
+      "consequenceDirections": {
+        "A": "可以有不同讀者，不能把看畫變複製授權。",
+        "B": "可避免真實人物被誤指，不能宣稱已知陌生人的過去。",
+        "C": "教師滿足當場好奇，雙方可拒，記憶不等於畫中人真實身份。",
+        "D": "可保初讀意見，不能否定別人相似感或代送畫。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "be626cde530fbae3329dac4a08e709299236e4991b192375efc63ce806f6680c",
+    "draftSha256": "671c1ca911ee3edc8e64035a551bf9492266a04bd9c7436d3b3b8493b09ae5f2",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "704613ba90664b26bdb90520890593925e7120d9e25baf6ebdb70c98ba932f61",
+      "checkedAt": "2026-11-27T13:59:04.232Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提示他自願只讀已核對的主旨句，時間到停。",
+            "action": "導師已提出限原核可時間的單句提示，不強迫學生續說。",
+            "tradeoff": "其餘內容不在聲音裡"
+          },
+          {
+            "id": 2,
+            "text": "我接回原剩餘播音，他不用補演。",
+            "action": "導師已在本人原權限內接回有限播音，不搶設備或羞辱學生。",
+            "tradeoff": "學生沒能自己收尾"
+          },
+          {
+            "id": 3,
+            "text": "這段到時結束，不再加演，照原文字頁接資訊。",
+            "action": "導師已按原時限結束本段播音，明示正式文字資訊來源。",
+            "tradeoff": "少了漂亮口頭結尾"
+          },
+          {
+            "id": 4,
+            "text": "問他是否想在正常課內另作一次不廣播的短試。",
+            "action": "導師已發出有限自願課內短試邀請，未約成或新增全校播音。",
+            "tradeoff": "需要等，也可拒絕"
+          },
+          {
+            "id": 5,
+            "text": "只提醒正式文字在哪，不再追完整稿。",
+            "action": "導師已依原權限提供既有正式資訊位置，不省略必要消息渠道。",
+            "tradeoff": "聽眾還要另讀"
+          },
+          {
+            "id": 6,
+            "text": "讓他原稿私留一個想改的地方，不交回也不再上台。",
+            "action": "導師已提供有限私人自願改稿方式，不收件或重播。",
+            "tradeoff": "看不到立即改善"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想他最後只剩被接走麥克風，乾脆在剩下時間問一句：「那今天最想提醒哪件事？」我也陪他冒一次空白的風險。",
+          "action": "導師已在原核可剩餘時段提出單一自願播音提問，未取得回應或宣稱主旨已播出。",
+          "tradeoff": "可能九秒都沒等到答案，老師也顯得救場失敗"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1508973699
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "01076bd9496ba6b482e2da57de5c1f149b6aa93527779628c39d62dfc1746808"
+      },
+      "consequenceDirections": {
+        "A": "能按時完成，不能把接手當他沒有能力。",
+        "B": "能找到正確資訊，不把指路當已傳全文。",
+        "C": "可以留真實未完，不擅加廣播時段。",
+        "D": "教師採雙人問答，不以回答為學生離場或支持條件，完整訊息仍依原渠道。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5d4f52c11ad3abcef460a7e1b58c64ec1d5a113088348b90f2e2886adff7d7c0",
+    "draftSha256": "704613ba90664b26bdb90520890593925e7120d9e25baf6ebdb70c98ba932f61",
     "seedAssignmentVersion": 1
   }
 }

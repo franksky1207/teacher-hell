@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "17fc09af85c0ddd68ee5e599cf9c3a3ca589da4d298f5119c69b0d231dfb6f76",
+      "checkedAt": "2026-11-27T13:59:04.237Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在成人核准的輕量條件內比較接點，不比誰快。",
+            "action": "導師已提出限核准範圍的比較需求，未自行加載或判承重。",
+            "tradeoff": "要再等確認"
+          },
+          {
+            "id": 2,
+            "text": "依已確認的低限用途使用，不再添書作展示。",
+            "action": "導師已限定本次架件使用於已核准範圍，不追加載重。",
+            "tradeoff": "用途較少"
+          },
+          {
+            "id": 3,
+            "text": "這次暫不投入使用，只用本人同意圖解談結構。",
+            "action": "導師已停止本人非必要投用，提出限合法圖解的回饋方案，未公開原圖。",
+            "tradeoff": "少了實用成就感"
+          },
+          {
+            "id": 4,
+            "text": "請有權成人依原說明調整需修的格，不要求學生重做全部。",
+            "action": "導師已向正式承辦提出依核定方法調整需求，未擅修或保證完成。",
+            "tradeoff": "要等人力"
+          },
+          {
+            "id": 5,
+            "text": "邀他自願說明先用哪件工具的理由，不用重裝證明。",
+            "action": "導師已發出限本人方法的自願短分享邀請，未要求拆件。",
+            "tradeoff": "同學可能還嫌慢"
+          },
+          {
+            "id": 6,
+            "text": "讓願意的同伴各畫一個連接步驟，原架不再動。",
+            "action": "導師已提供有限自願結構圖記及個別替代，不新增實物試裝義務。",
+            "tradeoff": "圖可能不準"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我那句簡單講太快，自己拿第三格照圖慢慢裝；他願意才指點，老師卡住也別剪掉。",
+          "action": "導師已在安全工具及成人監督可行範圍提出本人余件試裝與自願指點邀請，未取得答應、完成或核准承載。",
+          "tradeoff": "自己的時間和面子，還可能讓他覺得被叫來當師傅"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2241499342
+        },
+        "selectedIds": [
+          2,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "136d0b69030042f90ddcf93b682efa3f9a2b36a8141c222a4382e7160c3dfdf2"
+      },
+      "consequenceDirections": {
+        "A": "教師親自付出才知道難度，不把新格裝好當已核准使用。",
+        "B": "可保真實成果，不能超出成人核定。",
+        "C": "可看決策，不把能說變全班維修責任。",
+        "D": "可以修具體部分，邀請不代表已修好。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5ab7ea26bf807ad515835db84d7bdcd9fb9b131d5a6190c53cae5d27add99638",
+    "draftSha256": "17fc09af85c0ddd68ee5e599cf9c3a3ca589da4d298f5119c69b0d231dfb6f76",
     "seedAssignmentVersion": 1
   }
 }

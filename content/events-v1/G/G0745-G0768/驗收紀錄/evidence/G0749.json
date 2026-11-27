@@ -16,14 +16,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "617d0de67252bdfd93f231e7b1d3a42a69cf31a5f23b19a64bc78dc09b6497fd",
+      "checkedAt": "2026-11-27T13:59:04.228Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持原兩立場，只用訪談文本，不徵家庭例子。",
+            "action": "導師已將本課有限辯護範圍限定合法採訪內容，不蒐集家庭資料。",
+            "tradeoff": "好友那句兩者都要暫無位置"
+          },
+          {
+            "id": 2,
+            "text": "增設兩者兼顧的立場，願意的人自己選，不指定朋友帶。",
+            "action": "導師已提供本課有限自願多立場選擇，未替任何學生報名或揭家事。",
+            "tradeoff": "原分組要調整"
+          },
+          {
+            "id": 3,
+            "text": "用我自編的虛構就業條件，讓各組比取捨而非比家長。",
+            "action": "導師已以自有中性虛構案例承接本課，不取個案資訊。",
+            "tradeoff": "少了真實經驗感"
+          },
+          {
+            "id": 4,
+            "text": "直接對照採訪不同年代的原句，先不辯誰的選擇好。",
+            "action": "導師已在合法素材範圍提供有限時代語句比較，不作個別就業建議。",
+            "tradeoff": "少了輸贏熱度"
+          },
+          {
+            "id": 5,
+            "text": "讓好友自願只提一個不帶家人細節的反例，再問他是否想停。",
+            "action": "導師已提出限本人可拒絕的非敏感反例分享邀請，未取得答應或保證絕不被猜。",
+            "tradeoff": "仍可能被聯想"
+          },
+          {
+            "id": 6,
+            "text": "改由小組共同列出選工作會考量的條件，不選贏家。",
+            "action": "導師已安排本課有限一般條件整理，不徵家庭證明或強制個人表態。",
+            "tradeoff": "少了原先辯論設計"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不忍把那句都要塞回原題，這小段先不辯了，各自寫自己最捨不得的一個條件，留給自己，不交給誰代表。",
+          "action": "導師已在本課可調整短段改為自願私人價值短記，不收件、不強迫揭家事或省略必要教學。",
+          "tradeoff": "犧牲原辯論時間，還可能讓她覺得白協調"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1095583399
+        },
+        "selectedIds": [
+          4,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "7721f2e934c1551a6729980d1a1ffe65baf736ab043b1d8c33d702ea473e7f60"
+      },
+      "consequenceDirections": {
+        "A": "可以保留自己的聲音，必要保護不以說完交換。",
+        "B": "可練判斷，不假稱虛構人物就是同學家人。",
+        "C": "能看到條件改變，不把舊文當今日所有職業事實。",
+        "D": "教師心軟改活動，不將學生私人價值收來評分，原文本必要回饋仍完成。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bc843323ce7fde28c48632b722e4afc6218e983cce23c3473dae5509d39700ec",
+    "draftSha256": "617d0de67252bdfd93f231e7b1d3a42a69cf31a5f23b19a64bc78dc09b6497fd",
     "seedAssignmentVersion": 1
   }
 }

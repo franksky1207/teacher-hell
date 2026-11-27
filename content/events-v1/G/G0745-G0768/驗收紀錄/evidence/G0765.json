@@ -16,14 +16,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "77d8ed8aa577d0ebdfb5bb50ed13f80d0249a7fed8d2ebb90b454f1dc176b3c0",
+      "checkedAt": "2026-11-27T13:59:04.241Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "各人自選原已同意聲段，重新合成前逐一確認。",
+            "action": "導師已提出需各權利者同意的原聲重組方案，未輸出或宣稱完成。",
+            "tradeoff": "要等，也可能合不成"
+          },
+          {
+            "id": 2,
+            "text": "現版只留給原作者本人作個別練習，不叫共同定稿。",
+            "action": "導師已限縮本人可決定的現版用途至合法個別回饋，未取得他人聲音新權利。",
+            "tradeoff": "失去全組成果名義"
+          },
+          {
+            "id": 3,
+            "text": "只合原可用朗讀，不配生活底聲。",
+            "action": "導師已提出限既有合法朗讀的純聲方案，未取得同意或完成剪接。",
+            "tradeoff": "少了創意背景"
+          },
+          {
+            "id": 4,
+            "text": "這次改用文字稿回饋，不再重剪音軌。",
+            "action": "導師已提供本課有限文字回饋方式，不追加重錄或公開。",
+            "tradeoff": "聽不到聲音效果"
+          },
+          {
+            "id": 5,
+            "text": "各人留獨立短段，不合成全組一片。",
+            "action": "導師已提出限合法個別聲段的分開成果方式，未輸出或要求新素材。",
+            "tradeoff": "共同感減少"
+          },
+          {
+            "id": 6,
+            "text": "本次不產新成品，只看各人已合法完成的部分。",
+            "action": "導師已停止本人非必要新輸出，依原合法材料給有限個別回饋。",
+            "tradeoff": "沒有整片可播"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再看他一個人修到全班像住同一家，剩下這段乾脆讓願意的人現場各接一聲，不錄；做不成就承認今天沒合起來。",
+          "action": "導師已在可調整課內短段發起有限自願中性合聲，未取得全員參與、錄音同意或完成演出。",
+          "tradeoff": "犧牲部分講評彈性，也可能讓他覺得心血被打掉"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3276767139
+        },
+        "selectedIds": [
+          1,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "3055f78b93cdc07c9f432b1f6fdf486e548fb5904c42726391cc1b3b63da8135"
+      },
+      "consequenceDirections": {
+        "A": "可保自己選擇，不替全組用同一生活代表。",
+        "B": "可看內容，不能把文字當錄音技術全部完成。",
+        "C": "能保差異，不讓帶頭等於替全組選。",
+        "D": "教師改成新的自願即時合聲，不把參與當同意錄傳或追加作業。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "041fecd06f2b0919ba63e94ee51e3551c59f6ba627c86db8fbbd0422f8ebd8e7",
+    "draftSha256": "77d8ed8aa577d0ebdfb5bb50ed13f80d0249a7fed8d2ebb90b454f1dc176b3c0",
     "seedAssignmentVersion": 1
   }
 }

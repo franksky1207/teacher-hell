@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0310bf073d8394eaf0b0fede9306d1355eabcdb24fc6b2356fa3b7ef39df1412",
+      "checkedAt": "2026-11-27T13:59:04.239Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在原可用時間陪他自行試音，我不替他選。",
+            "action": "導師已提出限原時段的自願陪選，不代按、下單或延誤課務。",
+            "tradeoff": "午休用掉大半"
+          },
+          {
+            "id": 2,
+            "text": "只比較公開規格，不再反覆試響。",
+            "action": "導師已查閱店家公開鐘款資訊，不作健康判定或代購。",
+            "tradeoff": "聽不到真實聲音"
+          },
+          {
+            "id": 3,
+            "text": "請店員按店規介紹功能，不提他睡覺或聽錯的事。",
+            "action": "導師已詢問一般商品功能，不揭同事私事或要求店員選病症適用品。",
+            "tradeoff": "可能較制式"
+          },
+          {
+            "id": 4,
+            "text": "今天先不買，各記自己想要的型號再回原休息。",
+            "action": "導師已停止本人促成購買的額外建議並記公開型號，不替同事退訂或下單。",
+            "tradeoff": "可能錯過現貨"
+          },
+          {
+            "id": 5,
+            "text": "我照自己的原時間先回去，他願意才自己續看。",
+            "action": "導師已婉拒本人非必要續陪，依原時限離店，不取消同事自主購物。",
+            "tradeoff": "可能被當成不願陪"
+          },
+          {
+            "id": 6,
+            "text": "問店家是否有依規可退換或試用條件，讓本人再決定。",
+            "action": "導師已詢問店家公開試用退換條件，未成交、退款或保證適用。",
+            "tradeoff": "可能沒有，條件也有限"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點想要那只誇張的，自己自費買一只先結帳，不再站旁邊盯他挑；他不用跟我買一樣。",
+          "action": "導師已自費購買本人私人鐘款並結清本人款項，不代同事下單、取笑或抵原道歉責任。",
+          "tradeoff": "多花自己的錢，也可能被他當成又拿聲音開玩笑"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3183889097
+        },
+        "selectedIds": [
+          2,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 6,
+          "D": 2
+        },
+        "optionsDigest": "885a47a0a0b3ffb4dea102bcae4731bc2e5bf7721e780c8c3d87aecb0ccc71ea"
+      },
+      "consequenceDirections": {
+        "A": "教師作自己的消費，讓同事能自己選，但不能宣稱買同款就表示已和好。",
+        "B": "專業資訊可參考，仍由本人選擇與付費。",
+        "C": "查詢不是退款承諾，不能要求無條件保障睡眠。",
+        "D": "可少刺激，不能以規格保證睡得好。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "69956ff54c2989cbcd4f470ff0d50e353ba768ffce5adc0d9d82ce67e166c84f",
+    "draftSha256": "0310bf073d8394eaf0b0fede9306d1355eabcdb24fc6b2356fa3b7ef39df1412",
     "seedAssignmentVersion": 1
   }
 }

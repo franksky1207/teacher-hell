@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5e86f978ecafb2d4844422f5f05c58dedaa51bb21b2fa0179b151d92bea86b48",
+      "checkedAt": "2026-11-27T13:59:04.238Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照原規則到時停止，不替他拿回棄牌。",
+            "action": "導師已依原私人時限停止本人參與，保留真實未完及棄牌事實。",
+            "tradeoff": "局面可能未完"
+          },
+          {
+            "id": 2,
+            "text": "提議這局雙方同意才作無勝負收尾，不硬算輸贏。",
+            "action": "導師已提出可拒絕的本局收尾協商，未改定結果。",
+            "tradeoff": "少了一個結果"
+          },
+          {
+            "id": 3,
+            "text": "若雙方都願意，明說改一次可回取規則，老師也同樣適用。",
+            "action": "導師已提出對等的私人改約邀請，未拿回棄牌或宣稱同意。",
+            "tradeoff": "原玩法被改，可能失去守約感"
+          },
+          {
+            "id": 4,
+            "text": "另提一個原出發前能結束的獨立單輪小局，不抹本局。",
+            "action": "導師已發出限原時限的自願新小局邀請，未開局或替對方答應。",
+            "tradeoff": "時間很短，也可被拒"
+          },
+          {
+            "id": 5,
+            "text": "只談公開那張牌本可怎麼用，不再改走步。",
+            "action": "導師已提供限公開牌面的私人策略意見，不偷看手牌或更改出牌。",
+            "tradeoff": "少了翻盤機會"
+          },
+          {
+            "id": 6,
+            "text": "不再玩，問他要不要聊到我原本出發時點。",
+            "action": "導師已提出限本人出發前的私人聊天邀請，未取得答應或延後交通。",
+            "tradeoff": "局沒有結完"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想知道他到底敢不敢贏，問能不能這最後小段只把我的牌翻明，讓我自己承擔吃虧，不逼他亮牌。",
+          "action": "導師已提出限時、對方可拒絕的本人明牌玩法建議，未公開手牌、取得同意或定案結果。",
+          "tradeoff": "可能輸得很難看，也可能被嫌看穿他還演"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2515885856
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "d2279926adfa2712346de6edafefb67c085a14d8585814b0e34eedebf792b129"
+      },
+      "consequenceDirections": {
+        "A": "相處可以不靠拖牌，對方可拒聊，車次照原確認。",
+        "B": "教師用自己的資訊改局，需對方同意，不改過去棄牌或拖末班車。",
+        "C": "可守原約，不將未完寫成誰輸或保證下次續。",
+        "D": "能有新樂趣，不因玩不完錯過車或改原紀錄。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4dac49e6a712334ca1921e468ff31c2e595fad360d7566540c0a87791ecee2c9",
+    "draftSha256": "5e86f978ecafb2d4844422f5f05c58dedaa51bb21b2fa0179b151d92bea86b48",
     "seedAssignmentVersion": 1
   }
 }

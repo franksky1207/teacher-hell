@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c633d5f6582fd731921f83cbb9b8275b97bdec782cbb354b82929bf16bde9e0d",
+      "checkedAt": "2026-11-27T13:59:04.231Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "用不含人物的圖說明兩個動作風險，不再現場示範。",
+            "action": "導師已用自有中性圖提供有限一般安全回饋，不接近犬隻。",
+            "tradeoff": "少了直觀感"
+          },
+          {
+            "id": 2,
+            "text": "問他願不願只說自己先看到什麼，不爭誰比較懂。",
+            "action": "導師已提出有限自願目擊回顧邀請，不指派學生處理犬隻。",
+            "tradeoff": "可能仍生氣"
+          },
+          {
+            "id": 3,
+            "text": "提供兩格短記，自己對照叫回和丟包，不收。",
+            "action": "導師已提供有限私人自願行動圖記，不收件評罰。",
+            "tradeoff": "未必想寫"
+          },
+          {
+            "id": 4,
+            "text": "讓兩人各自選一種下次能接受的提醒方式，不要求交換或和好。",
+            "action": "導師已提出有限自願提醒偏好詢問，未代任何人答應。",
+            "tradeoff": "關係可能仍僵"
+          },
+          {
+            "id": 5,
+            "text": "給正式單位既有犬隻應對資訊，不拿自家狗經驗直接套。",
+            "action": "導師已提供經確認可用的一般犬隻應對資訊，不取代成人處理。",
+            "tradeoff": "資料較一般"
+          },
+          {
+            "id": 6,
+            "text": "這次不再加共同說明會，各自回原正常安排。",
+            "action": "導師已停止本人非必要共同延伸討論，必要照看與回覆照常。",
+            "tradeoff": "少了立刻爭清的機會"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽他們互罵也累了，這次只邀他到原可談的位置，聽他為什麼那麼想丟包證明，不帶朋友來評。",
+          "action": "導師已發出限本人動機的自願個別對話邀請，未約成、強迫或取消另一方支持。",
+          "tradeoff": "要用自己的工作空檔，也可能被認為偏聽"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3736839743
+        },
+        "selectedIds": [
+          4,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "b4feb7d9c7adf149a07332ca9aecee10b157b322f7c889374de6bad255bc8512"
+      },
+      "consequenceDirections": {
+        "A": "教師選擇先聽動機，不能用聽懂理由免除原風險事實。",
+        "B": "可分清叫回與丟包，不讓圖變試犬依據。",
+        "C": "可談未來界線，不用安全提醒綁友情。",
+        "D": "必要資訊仍由成人提供，不讓停止變不准求助。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "288c452bcad011b637c95791d04c8a5f8ae3ce7036e27a0034e45ecebf054fcb",
+    "draftSha256": "c633d5f6582fd731921f83cbb9b8275b97bdec782cbb354b82929bf16bde9e0d",
     "seedAssignmentVersion": 1
   }
 }

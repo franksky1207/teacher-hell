@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7a9062da6888209bece6665c01df5f72133ac1d30d73c70dcde236c1843b9cd1",
+      "checkedAt": "2026-11-27T13:59:04.242Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這題照原正確條件讓大家解完，不再找背面答案。",
+            "action": "導師已維持本課有限原題練習，明示背面不作解答。",
+            "tradeoff": "少了即時核對"
+          },
+          {
+            "id": 2,
+            "text": "我提供正確的自有解題頁，不要求學生重印全班份。",
+            "action": "導師已提供本人有權使用的有限正確解題材料，不追加家庭印製。",
+            "tradeoff": "教師多製一頁"
+          },
+          {
+            "id": 3,
+            "text": "請他自願只向伙伴講一個已懂的關鍵，不再背全部。",
+            "action": "導師已發出有限自願關鍵步驟分享邀請，未取得答應或指派代教。",
+            "tradeoff": "展示目標縮小"
+          },
+          {
+            "id": 4,
+            "text": "把兩題並列，只比它們為何看似相同。",
+            "action": "導師已在合法材料範圍安排有限題意比較，不改原正確性。",
+            "tradeoff": "花掉原解題時間"
+          },
+          {
+            "id": 5,
+            "text": "讓各人用空白紙只畫比例關係，不抄整題。",
+            "action": "導師已提供本課有限等值比例圖記方式，不追加總量。",
+            "tradeoff": "資訊判讀有限"
+          },
+          {
+            "id": 6,
+            "text": "問他是否願意只重排一張正反面標記，供自己下次核對。",
+            "action": "導師已提出限本人自用單張的自願排版建議，未要求全班印製或取得答應。",
+            "tradeoff": "多一點版面工作，也可拒絕"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也差點看著錯背面點頭，乾脆拿沒答案的這面自己解給他看；他願意才抓我的步驟，不替我證明會教。",
+          "action": "導師已在本課作本人有限試解並邀自願步驟檢視，不假稱已解對或移交評量責任。",
+          "tradeoff": "可能當場卡住，還占原課彈性"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3425643743
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "cec18eabfb8ce6f50871fc11d5804d552e6e319aceda9ff6469f1719df34dd41"
+      },
+      "consequenceDirections": {
+        "A": "教師接受被檢視，不要求學生修全班教材，必要正確回饋仍完成。",
+        "B": "能核對結果，不把補頁當學生原說明無效。",
+        "C": "可以學辨條件，不拿回收面當原作者錯答。",
+        "D": "能力可保留，不能逼他替錯紙救全班。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f194c776464c2159f83a2704f34042e56a275d885b2cf8b834a1736f7c906d20",
+    "draftSha256": "7a9062da6888209bece6665c01df5f72133ac1d30d73c70dcde236c1843b9cd1",
     "seedAssignmentVersion": 1
   }
 }

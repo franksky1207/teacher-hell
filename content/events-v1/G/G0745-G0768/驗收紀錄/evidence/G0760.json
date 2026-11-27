@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9591147f85b3e1356d302ec53b8e377350c3ac9f8798592df566b3725300f76a",
+      "checkedAt": "2026-11-27T13:59:04.238Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "吃完原餐就結帳，不再加點或延聊。",
+            "action": "導師已完成本人原餐與結帳，婉拒非必要續聊，不逃避原清潔責任。",
+            "tradeoff": "少了一種口味"
+          },
+          {
+            "id": 2,
+            "text": "只隔桌問他那碗什麼味，不交換食物。",
+            "action": "導師已提出有限可拒絕的口味問題，未取他人食物或要求陪坐。",
+            "tradeoff": "可能聊不下去"
+          },
+          {
+            "id": 3,
+            "text": "自費另點自己想試的小碗，不請他供餐。",
+            "action": "導師已向店家自費下單本人小份餐點，不索取鄰桌物品。",
+            "tradeoff": "多花錢，也可能吃不完"
+          },
+          {
+            "id": 4,
+            "text": "按店規把原餐外帶，這次先離開。",
+            "action": "導師已依店規完成本人外帶與結帳，不擅離既有補救承諾。",
+            "tradeoff": "少了熱食現場，也可能更尷尬"
+          },
+          {
+            "id": 5,
+            "text": "請店員只介紹菜單口味，不再問鄰桌。",
+            "action": "導師已向店家詢問一般餐點資訊，不轉述鄰桌衣物或要求代說情。",
+            "tradeoff": "少了陌生人的生活話題"
+          },
+          {
+            "id": 6,
+            "text": "留在原位記自己這碗的口味，吃完再走，不加新餐。",
+            "action": "導師已以自有筆記記錄本人餐點感受，不記他人資訊、發布或加點。",
+            "tradeoff": "少了互動，時間也用在自己身上"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是嘴饞，問他願不願意依店規各分一小口，用乾淨餐具；不願就算，不拿賠罪當理由。",
+          "action": "導師已提出符合店規及食安的自願少量交換邀請，未取得答應、分取或以此抵清潔責任。",
+          "tradeoff": "可能被拒，還得把自己的分出去"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4112775470
+        },
+        "selectedIds": [
+          1,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "5350eecaef4070a6e31f81860c92cfc7eeaec6a37807f6c9ed36a99e160d0888"
+      },
+      "consequenceDirections": {
+        "A": "可以收住尷尬，清潔承諾仍須履行。",
+        "B": "能滿足好奇，不把自己消費當賠衣物。",
+        "C": "交換有真實同意與衛生條件，不讓想吃變討好或補償。",
+        "D": "可以享受原餐，不把鄰桌寫進評論或曝光。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c22a31a20a1a5fa4a804d1dd3b19c1f2403f3cdaeb896f8a42f41630afc376af",
+    "draftSha256": "9591147f85b3e1356d302ec53b8e377350c3ac9f8798592df566b3725300f76a",
     "seedAssignmentVersion": 1
   }
 }

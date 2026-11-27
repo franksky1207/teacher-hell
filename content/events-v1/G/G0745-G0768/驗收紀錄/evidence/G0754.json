@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "76e6f9aabf943ef8ca393e7831244adff24f3b5fccd4193addb9c6c795750e51",
+      "checkedAt": "2026-11-27T13:59:04.233Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只保留原自願剪接，不接演員角色，道具另確認。",
+            "action": "導師已取消未成立的本人角色指派，確認原工作與借物分開，不強迫續任。",
+            "tradeoff": "他可能仍太忙"
+          },
+          {
+            "id": 2,
+            "text": "讓他自選一組保留，其餘由各組按教師支持自己完成。",
+            "action": "導師已提供合規有限剪接分工選擇，未替其他學生答應或放棄必要教學。",
+            "tradeoff": "其他組需要再學"
+          },
+          {
+            "id": 3,
+            "text": "這次只按原同意借道具，不請他代剪或出演。",
+            "action": "導師已提出限物品用途的可拒絕借用確認，未取得新同意或本人勞務。",
+            "tradeoff": "少了被需要的肯定"
+          },
+          {
+            "id": 4,
+            "text": "各組先做自己的粗剪，再各問一個技術點，不把全部丟他。",
+            "action": "導師已在本課安排有限分組自主粗剪與教師答疑，不追加其剪接義務。",
+            "tradeoff": "作品沒那麼熟練"
+          },
+          {
+            "id": 5,
+            "text": "提出用合法字幕與音效代替真人反派，作者自選。",
+            "action": "導師已提供有限等值非真人方案，未取得作者改作同意或製作完成。",
+            "tradeoff": "少了演員效果"
+          },
+          {
+            "id": 6,
+            "text": "這次不拍新鏡，只對原合法片段作個別回饋。",
+            "action": "導師已停止本人可取消的新拍攝，依原合法材料作有限回饋。",
+            "tradeoff": "成片不完整"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他那條時間軸也心軟，問這組願不願意只讓我接一小段剪接；我自己花空檔，不讓他再扛三份換稱讚。",
+          "action": "導師已提出在本人合法權限與可用時間內的有限剪接協助邀請，未收檔、取得全員同意或完成製作。",
+          "tradeoff": "自己可能剪得很慢，也可能被當成偏心救援"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1929024977
+        },
+        "selectedIds": [
+          1,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "87b41c5a12cf4f432cc3799aca1d93d5d622f44780962166f4b9209529b831ff"
+      },
+      "consequenceDirections": {
+        "A": "可以分開人與物，三組負荷仍須正常支持。",
+        "B": "資源仍可有限分享，不以借出作為好感交換。",
+        "C": "創作可改，不以替代逼任何人接受新版本。",
+        "D": "教師提供有限真實人力，不保證全片交期或索取未同意素材。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9cebc7d21f1e5d5d09dd734b1de534e3489a7249fbfe9a4cd4018f69f542829b",
+    "draftSha256": "76e6f9aabf943ef8ca393e7831244adff24f3b5fccd4193addb9c6c795750e51",
     "seedAssignmentVersion": 1
   }
 }

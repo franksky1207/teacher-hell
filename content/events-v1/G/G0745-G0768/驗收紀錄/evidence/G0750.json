@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2fbbd9620e26090b708ded4c278d4706e678758324ea8a657d3b4d4c30bc23b7",
+      "checkedAt": "2026-11-27T13:59:04.229Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "看完就當場還本人，只說一個自己看到的動作。",
+            "action": "導師已在原同意範圍看完並返還原冊，給有限私人回應，不展示。",
+            "tradeoff": "沒有更多共同讀者"
+          },
+          {
+            "id": 2,
+            "text": "問他是否願自選一位同學看，拒絕就不另找人。",
+            "action": "導師已提出限定單一自願讀者的詢問，未轉交或取得同意。",
+            "tradeoff": "也許被聽成教師暗示"
+          },
+          {
+            "id": 3,
+            "text": "只談逐格移動的技巧，不再追問畫裡的生活。",
+            "action": "導師已在本人意願範圍提供有限私人技法回饋，不蒐集家事或公開。",
+            "tradeoff": "少了被理解心情的感覺"
+          },
+          {
+            "id": 4,
+            "text": "問他能否自選一格只供我當次記住，不拍照也不留副本。",
+            "action": "導師已提出限當次私人觀看的自選靜格詢問，未拍攝、複製或取得新用途同意。",
+            "tradeoff": "動態效果失去"
+          },
+          {
+            "id": 5,
+            "text": "用我自己的不同圖樣說明逐格變化，原冊還他。",
+            "action": "導師已以自有不同圖例作有限個別說明並返還原冊，不複製原作。",
+            "tradeoff": "少了繼續看魚的樂趣"
+          },
+          {
+            "id": 6,
+            "text": "這次不再看，他依原自主決定收回，正常休息照常。",
+            "action": "導師已停止本人非必要延伸觀看並返還原冊，不影響學生既有權益。",
+            "tradeoff": "可能讓他失望"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看得捨不得還，直接問能不能借到今天工作結束，我自己少休息看，不偷偷讓別人翻。",
+          "action": "導師已提出限當日明確返還及原私人用途的可拒絕借閱詢問，未取得借用同意或扣留原冊。",
+          "tradeoff": "想留的時間變長，也可能當面被拒"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3171722154
+        },
+        "selectedIds": [
+          2,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "ed2b60f7059d7936517db665bc031caf923c6610bf9450cbcd5f49444e7a8ab6"
+      },
+      "consequenceDirections": {
+        "A": "可以保能力，不要求解釋為何畫空缸。",
+        "B": "新讀者需雙方同意，不能以猜到內容當使用權。",
+        "C": "教師承認自己的喜愛，學生不需等老師下班或用借畫換好感。",
+        "D": "可以留未說完，不把停止解讀成不喜歡他。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f83c90613c4086bca86b467664213a5bdb985c92fbb9eabbb8f2f974535823d9",
+    "draftSha256": "2fbbd9620e26090b708ded4c278d4706e678758324ea8a657d3b4d4c30bc23b7",
     "seedAssignmentVersion": 1
   }
 }

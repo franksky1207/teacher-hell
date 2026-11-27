@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8b17c17e57cb4ff989330b1bb9a0586167e8002d49684ccb34e93e938d36c2f9",
+      "checkedAt": "2026-11-27T13:59:04.236Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留原抽中句，確認合法用途後照原版面用。",
+            "action": "導師已提出依原結果定稿的確認邀請，未取得完整同意或送印。",
+            "tradeoff": "得接受不最想公開那句"
+          },
+          {
+            "id": 2,
+            "text": "四句並列成原可容納的小欄，不另排名。",
+            "action": "導師已提出限原版面可行的並列建議，未定案或加印。",
+            "tradeoff": "版面擠，也少了單句收尾力"
+          },
+          {
+            "id": 3,
+            "text": "這次不加片尾笑話，保留必要節目資訊。",
+            "action": "導師已取消本人可決定的非必要片尾話使用，必要資訊照常。",
+            "tradeoff": "少了共同最開心的部分"
+          },
+          {
+            "id": 4,
+            "text": "改由作者自選一個原句，明說這次不沿用抽法。",
+            "action": "導師已提出需雙方同意的自選改約，未定案或改寫抽籤事實。",
+            "tradeoff": "可能被覺得玩不起"
+          },
+          {
+            "id": 5,
+            "text": "我另寫第五句給他選，不拿老師新稿壓過四句。",
+            "action": "導師已以自有文字製作新候選句供可拒絕選擇，未替換原作。",
+            "tradeoff": "自己多寫，還可能更難選"
+          },
+          {
+            "id": 6,
+            "text": "問原作者是否願讓一位自願讀者提一個不記名偏好。",
+            "action": "導師已提出限原權利範圍的單一讀者意見邀請，未轉稿或定案。",
+            "tradeoff": "要等別人，也可能更猶豫"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也捨不得那三句，自己先寫連接句，把四句串成短尾聲請他看，不再叫他一人刪。",
+          "action": "導師已以自有連接語草擬限短版合稿提案，未取得原作者及版面同意或印製。",
+          "tradeoff": "自己多做，篇幅還可能不過，也像老師搶編輯"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2790563969
+        },
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "f77711c9ac8a7f660bf5a66c0268b83dae8d790f8c4934ddd44b4ba4b9d21237"
+      },
+      "consequenceDirections": {
+        "A": "可有新材料，作者可拒，原署名如實。",
+        "B": "可共同改約，不能假稱新選的就是抽中結果。",
+        "C": "新合稿可以被拒，不能以忙著寫就擅用或失真署名。",
+        "D": "可守原共同方法，作者仍能依權拒新用途，不以抽中強迫。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "265edaeaeda92cff9fa06f836c9f735af4f837d80c8704e2272f9eec40a37420",
+    "draftSha256": "8b17c17e57cb4ff989330b1bb9a0586167e8002d49684ccb34e93e938d36c2f9",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b907479c0128b7179d4fd67c27c22b276eb3929ce5c435c5244ca707b9628041",
+      "checkedAt": "2026-11-27T13:59:04.224Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "收回古字測讀，照正常菜名把餐分完。",
+            "action": "導師已結束本人可決定的非必要測讀，必要分餐依原程序接續。",
+            "tradeoff": "少了趣味"
+          },
+          {
+            "id": 2,
+            "text": "古字只留願意的人自己猜，不逐個點名。",
+            "action": "導師已提供有限自願古字猜讀與不參與方式，不影響用餐。",
+            "tradeoff": "看不到整班同樂"
+          },
+          {
+            "id": 3,
+            "text": "請股長自願只講一個字怎麼選，不講針對誰。",
+            "action": "導師已發出限文字設計的自願短說明邀請，未取得答應或公開個案。",
+            "tradeoff": "仍可能被聯想"
+          },
+          {
+            "id": 4,
+            "text": "用我自有的菜圖解釋文字差異，不再找誰讀錯。",
+            "action": "導師已以自有中性圖例作有限文字說明，食安資訊仍依真實來源。",
+            "tradeoff": "多一點說明時間"
+          },
+          {
+            "id": 5,
+            "text": "這張原稿依作者意願留存或帶回，不在班上巡迴傳看。",
+            "action": "導師已提出限本人意願的原稿保存詢問，未扣留或複製。",
+            "tradeoff": "其他人看不到完整設計"
+          },
+          {
+            "id": 6,
+            "text": "若大家願意，每桌一起查一個字，不用單人站起來念。",
+            "action": "導師已提出有限自願查字活動，未替全桌答應或延長午餐工作。",
+            "tradeoff": "可能要等正常班務時段"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看得也火大，乾脆自己先把整張的讀法念出來，卡住就讓人笑我，這次不再拿誰不會讀當懸念。",
+          "action": "導師已用經核對的古字讀法提供本人有限公開解說，不點學生測讀或取代正確餐食資訊。",
+          "tradeoff": "毀掉股長的設計，也可能變老師搶戲"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3374403328
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "abf1723aecbd2ca156223c62d7bd270c4cb966e46ada9538051ded751f347318"
+      },
+      "consequenceDirections": {
+        "A": "吃飯不必先會念，不能把恢復正常當罰股長。",
+        "B": "可以合作解字，不能占必要用餐或強迫當事人同桌。",
+        "C": "教師承擔揭謎與丟臉，不讓自己的笑點再指向學生。",
+        "D": "可以看字義，不把圖像當食材實際標示。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7251a085c97eddbc0bac4eb44039ddc0d5d46747aad30fb347c3e74234265b94",
+    "draftSha256": "b907479c0128b7179d4fd67c27c22b276eb3929ce5c435c5244ca707b9628041",
     "seedAssignmentVersion": 1
   }
 }

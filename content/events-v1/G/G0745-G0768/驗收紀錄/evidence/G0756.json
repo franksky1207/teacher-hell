@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ff3158f301be2286f3f88a5030b4280a70045713191d9ecd3ad6716724cf995b",
+      "checkedAt": "2026-11-27T13:59:04.235Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次按真實自願補位記錄，往後仍走原合法輪值，不另加償還班次。",
+            "action": "導師已依實況確認本次補位，維持原合規輪值與必要調整，不追加班務。",
+            "tradeoff": "幫忙者可能覺得不平"
+          },
+          {
+            "id": 2,
+            "text": "詢問雙方是否願意另作一次等量換班，誰都能拒絕。",
+            "action": "導師已提出需各方同意的有限互換詢問，未改班表或取得答應。",
+            "tradeoff": "要協調，也可能不成立"
+          },
+          {
+            "id": 3,
+            "text": "向原承辦提出未來班務負荷調整需求，不以忙一次就永久除名。",
+            "action": "導師已提出合規有限班務調整申請，未定案或剝奪原參與權。",
+            "tradeoff": "可能不獲准"
+          },
+          {
+            "id": 4,
+            "text": "讓他在正常班務時間自選較可負荷的一項，不現在補做已完區。",
+            "action": "導師已提供原權限內有限班務意願選擇，未替同伴答應接替。",
+            "tradeoff": "其他分工需協調"
+          },
+          {
+            "id": 5,
+            "text": "給一張私留短記，想想下次要怎麼把求援說明白，不收。",
+            "action": "導師已提供有限自願私人求援語句練習，不收件評分。",
+            "tradeoff": "未必想寫"
+          },
+          {
+            "id": 6,
+            "text": "問他是否願向原知情同伴只說這次想借哪段時間。",
+            "action": "導師已發出有限可拒絕的本人需求說明邀請，未取得答應或要求公開檢討。",
+            "tradeoff": "可能再尷尬一次"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽到又要算他欠誰就煩，自己那份非正式練習先不收，改在原課內核對；不是拿值日換優惠，同樣情況照同樣方式。",
+          "action": "導師已取消本人可決定的非正式練習收件，提供原課內等值核對與一致適用說明，不改他科或以勞務交換。",
+          "tradeoff": "少了逐份批閱，還可能被看成偏心"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 986553516
+        },
+        "selectedIds": [
+          1,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "ec9bbc765b3ad99f4c3b22d0a5de01ea82333fb8ac38a9c17a564ceaa15d5a1b"
+      },
+      "consequenceDirections": {
+        "A": "本人可以表意，必要名單更正不交給他代做。",
+        "B": "教師調的是自己的教學手段，不免必要學習或他科作業，班務誤會仍需按實況處理。",
+        "C": "可有清楚約定，不以拒絕當不感恩。",
+        "D": "可保一次援助，成人須處理真實負擔，不生人情債。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0c731dfce664fb225eaf7960cb0089a5aab2c3f473c7d756a0b429c4b10e9b5c",
+    "draftSha256": "ff3158f301be2286f3f88a5030b4280a70045713191d9ecd3ad6716724cf995b",
     "seedAssignmentVersion": 1
   }
 }

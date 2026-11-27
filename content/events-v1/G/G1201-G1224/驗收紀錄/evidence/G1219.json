@@ -16,14 +16,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7532f799706b9a366d0eee29c559914426c70507f40fcf608fa71161caff83f9",
+      "checkedAt": "2026-11-27T18:29:25.741Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問他願不願意換組，先給一個不必每天硬碰的空間。",
+            "action": "提出可依課務公平規範協調換組的選擇，聽取本人意願，不以換組替代必要處理。",
+            "tradeoff": "教師需協調其他學生與任課教師，學生可能覺得自己被迫離開。"
+          },
+          {
+            "id": 2,
+            "text": "他若想留原組，我多排幾次課間到組上，直接看合作怎麼進行。",
+            "action": "徵詢學生對教師增加組內觀察的意見，安排可調課間觀察整組合作，不暗示誰是通報者。",
+            "tradeoff": "教師犧牲可調工作時間，學生可能覺得被盯；必要反霸凌處理不依此才啟動。"
+          },
+          {
+            "id": 3,
+            "text": "提出一段自願個別完成的課務安排，讓他暫時不用交出筆記。",
+            "action": "向任課教師提出在不減損學習及公平評量下，允許本人自願個別完成可拆分任務的方案。",
+            "tradeoff": "要協調課務且未必可行，學生可能失去部分合作經驗。"
+          },
+          {
+            "id": 4,
+            "text": "邀他練一次拒絕借答案的說法，由我扮演那個很煩的人。",
+            "action": "提供自願的情境練習邀約，由教師陪同嘗試其願意使用的拒絕方式，不要求其自行解決排擠。",
+            "tradeoff": "花額外課間時間，學生可能覺得像自己做錯才要練習。"
+          },
+          {
+            "id": 5,
+            "text": "問他想不想找校內輔導老師，我可以陪同第一回。",
+            "action": "在必要照護之外提出自願輔導資源及首次陪同邀約，說明可談孤立感而非強迫交名單。",
+            "tradeoff": "教師陪同需時間，學生或輔導者未必能立即安排。"
+          },
+          {
+            "id": 6,
+            "text": "下一次小組作業，我提議改成每人都有可辨認的獨立部分。",
+            "action": "向任課教師提出未來作業分工調整建議，讓個人貢獻可辨認而不靠互傳成品，待課務確認。",
+            "tradeoff": "增加教師設計協調，不能保證採用，亦不能因此取消必要查證。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想替他硬頂一次，徵詢他願不願由我陪著在組內公開拒絕提供成品。",
+          "action": "提出本人自願、教師陪同且事前評估無報復風險的組內表達方案，明說可以拒絕而不影響保護。",
+          "tradeoff": "教師承擔準備與陪同及被認為偏袒的壓力，學生可能不願公開表態。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2983276577
+        },
+        "selectedIds": [
+          6,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "f405b60b01fbda6bb137e93f94267462cc69ad7e07d9340a44ebbcc69d2da49f"
+      },
+      "consequenceDirections": {
+        "A": "學生是否選擇表達自己的學習原則、對教師正派的敬重能否承受公開介入可發展，絕不強迫作證。",
+        "B": "不從眾的堅持能否在不同作業設計下保留合作空間可發展。",
+        "C": "自主是否被尊重與對導師為人的敬重可發展，未同意前不稱已換組。",
+        "D": "學生對求助與自身尊嚴的理解及對導師的敬重可發展，不預設已轉介完成。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "75028f3977acbd2a095ca537e0c774a90dc1565f089ee9d1af79fe4486e506dd",
+    "draftSha256": "7532f799706b9a366d0eee29c559914426c70507f40fcf608fa71161caff83f9",
     "seedAssignmentVersion": 1
   }
 }

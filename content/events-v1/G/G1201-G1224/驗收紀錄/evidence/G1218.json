@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "94166c9625aa58d1ecb7051afb893bd69669860beac1a42711f2d31954fa50cb",
+      "checkedAt": "2026-11-27T18:29:25.739Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我不另改班級安排，這次幫忙就停在這次。",
+            "action": "感謝本次搬運，明確婉拒延伸為固定家長代掃方案，不再提出後續志工招募。",
+            "tradeoff": "省下新方案協調，但家長可能覺得力氣白費且不願再幫忙。"
+          },
+          {
+            "id": 2,
+            "text": "請他提出成人能做、學生不該做的重物項目，我向總務申請分工。",
+            "action": "邀家長就非學生適齡工作提出自願支援項目，由教師向總務送審成人志工分工，不更動學生適齡掃除。",
+            "tradeoff": "教師增加送審及聯絡，家長可能覺得離免掃訴求太遠。"
+          },
+          {
+            "id": 3,
+            "text": "邀他依正式管道提出掃除制度建議，我陪同一次說明。",
+            "action": "提出由家長自行陳述制度變更理由、教師陪同向權責單位反映的方案，不保證改規。",
+            "tradeoff": "教師花陪同時間並可能承受主管看法，家長可能期待落空。"
+          },
+          {
+            "id": 4,
+            "text": "把班上現在的掃區和時間拿出來，談能不能在規定內更有效率。",
+            "action": "向家長說明不含學生個資的現行班級掃區與時間，邀其提出減少重複工作但不代替學生的建議。",
+            "tradeoff": "教師增加檢視工作，建議未必適齡可行，不能承諾減時早離。"
+          },
+          {
+            "id": 5,
+            "text": "下次班會讓學生自己談掃除分工，我把家長建議一併帶進去。",
+            "action": "提出於可用班會討論適齡分工的安排，將家長意見當參考，不交由學生表決免除校規義務。",
+            "tradeoff": "占用班會且學生未必想改，家長可能不滿自己的勞力未換來決策權。"
+          },
+          {
+            "id": 6,
+            "text": "我先不談新志工，另約親師會談把上次早走的疙瘩講清楚。",
+            "action": "邀家長在正常可聯絡時間就其提及的上次事件另談，當下不建立固定成人代掃。",
+            "tradeoff": "教師增加會談時間，家長可能認為轉移制度問題；不撤回合理規範。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不舒服，直接說：如果幫忙都要拿孩子免掃交換，以後我不再向他邀工。",
+          "action": "向家長明確提出未來不再由導師主動邀請其額外搬運支援，必要工作改走校內正式需求程序；不否定其依公開規範申請志工的權利。",
+          "tradeoff": "教師承擔另找支援的工作與得罪近校家長的關係代價，不抹煞本次付出。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 672972558
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "b54ef188352d91afa76682b4e439230d81faebb2e7f9d36d046a7c0ea8a0b541"
+      },
+      "consequenceDirections": {
+        "A": "家長既有不滿可能加深或願重新界定支援，真實人力投入與制度要求的分離可發展。",
+        "B": "班級自主討論與家長程序變更期待的落差可發展。",
+        "C": "既有不滿與未來人力投入是否改變可發展，不把守規則當唯一優勢。",
+        "D": "既有投入能否轉為合規成人支援及程序變更要求可發展，不預設獲准。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1561d64f25bca49baacf00b4667f2b04e00a855fdf72304b7ec83236e11bc6ba",
+    "draftSha256": "94166c9625aa58d1ecb7051afb893bd69669860beac1a42711f2d31954fa50cb",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "65547d5ff9cbf22ed092833129b07d00596dec77919ad6f7d4a7d5a4e6550768",
+      "checkedAt": "2026-11-27T18:29:25.745Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提議他自己換到新同學旁邊，先問兩邊願不願意。",
+            "action": "協助提出邀請者本人移至新生旁現有合法空位用餐的方案，徵詢兩人及受影響學生意願。",
+            "tradeoff": "邀請者要離開原小組，教師需協調且新生可拒絕。"
+          },
+          {
+            "id": 2,
+            "text": "等打菜結束再找安全空位，今天先約飯後聊。",
+            "action": "提出不改當下用餐座位、待打菜後於既有合法空位自願短聚的方案，不阻礙其他通行。",
+            "tradeoff": "相處時間縮短，教師需確認場地且新生不保證參加。"
+          },
+          {
+            "id": 3,
+            "text": "我撥時間幫他們重排這一小區，但先問每個受影響的人。",
+            "action": "在權責內提出小區桌椅重新配置，以不減通道為條件徵詢相關學生，確認後才移動。",
+            "tradeoff": "花教師及學生準備時間，可能因空間或不同意而無法實施。"
+          },
+          {
+            "id": 4,
+            "text": "今天不改座位，我邀他先陪新同學一起去打菜。",
+            "action": "提出由邀請者先徵詢新生是否願按既有順序一起取餐、各回原位用餐的低干擾方式。",
+            "tradeoff": "不會立刻形成整餐陪伴，學生可能覺得心意只做一半。"
+          },
+          {
+            "id": 5,
+            "text": "問小組願不願意派一人輪流坐到合法空位，不把新同學搬進來。",
+            "action": "協助向小組提出自願輪流到新生附近現有空位用餐的邀約，需新生同意且不指定學生強制輪值。",
+            "tradeoff": "要協調不同意願，不保證有人持續參加，新生可能不喜歡被輪流照顧。"
+          },
+          {
+            "id": 6,
+            "text": "請他先問新同學喜歡怎麼吃飯，位置等有答案再一起想。",
+            "action": "邀學生先以不施壓方式詢問新生用餐偏好，由導師承諾其願意後再投入空間協調，當下不搬桌。",
+            "tradeoff": "不能立即成全邀餐，教師需留後續協調時間且可能得知對方想獨處。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想湊這頓飯，提議把我的可用午餐桌拿來，由我陪著一起吃。",
+          "action": "在確認教師午餐桌位置及空間合法後提出共餐邀請，由新生、邀請者各自決定是否加入，教師負責搬回自己的桌子。",
+          "tradeoff": "教師犧牲午餐休息與搬移時間，學生可能因老師在場反而拘束，不能假定願共餐。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3092924936
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "99738e3dee7aea03a472266136cd8bc8fe5637fbf67c7ad8307746c61b6f2ae1"
+      },
+      "consequenceDirections": {
+        "A": "學生能否不靠獲讚仍願走近及對導師安排的配合可發展。",
+        "B": "學生對導師親自加入的肯定與壓力可發展，非所有融入支持只此分支提供。",
+        "C": "善意在延後後是否仍被保留與協商合作可發展。",
+        "D": "由個人善意轉為同儕自願合作是否適切與發起者的認可需求可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cf46b70a7433f57e8af68963d069685e40022faf7301de5198305c97a0c08e1b",
+    "draftSha256": "65547d5ff9cbf22ed092833129b07d00596dec77919ad6f7d4a7d5a4e6550768",
     "seedAssignmentVersion": 1
   }
 }

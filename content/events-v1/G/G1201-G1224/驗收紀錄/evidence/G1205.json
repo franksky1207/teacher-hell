@@ -16,14 +16,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "268b57a46d8d2f71452f19abc9dbc3f3f85d0dbe066aadd23b9d216068a49a55",
+      "checkedAt": "2026-11-27T18:29:25.713Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "如果他願意，我陪他照程序申請班費追認。",
+            "action": "私下徵詢學生是否願意提出實際購買憑證，再依班費程序申請追認合理班用支出。",
+            "tradeoff": "須等審議結果，學生可能覺得請客的形象受損；不預付班費。"
+          },
+          {
+            "id": 2,
+            "text": "問他願不願意把尚未送出的材料留下自用，布告欄我另找現有材料。",
+            "action": "提出返還其私人材料的方案，以班上既有可用材料替換布告欄，不要求他受贈或報銷。",
+            "tradeoff": "教師增加重貼時間，學生可能覺得心意被退回。"
+          },
+          {
+            "id": 3,
+            "text": "我想私人買下這批材料，但先讓他決定要不要賣。",
+            "action": "提出由教師私人按實際合理價格購買該批材料的邀約，明說與幹部評價及後續班用支出無關。",
+            "tradeoff": "若同意教師才支付款項；可能讓學生覺得被可憐，不能強迫交易。"
+          },
+          {
+            "id": 4,
+            "text": "若他仍想送，就只談這一次，往後的材料一律先由班上決定。",
+            "action": "在無捐贈壓力及生活支持到位後，詢問是否仍自願一次性贈與，並停止由股長自行追加材料。",
+            "tradeoff": "若仍自願捐贈私人支出不會消失；教師要承擔被質疑默許硬撐的壓力。"
+          },
+          {
+            "id": 5,
+            "text": "邀他跟我一起把布告欄花費帶進班會，但不提家裡的事。",
+            "action": "向學生提出在班會由教師說明布置成本、討論未來預算的共同提案，是否由他參與發言由其決定。",
+            "tradeoff": "須準備班會議題，學生可能怕同學猜出自己缺錢；本次追認另照程序。"
+          },
+          {
+            "id": 6,
+            "text": "這次我先不談錢，請他選擇還想做哪些布置工作。",
+            "action": "在必要生活支持之外，單獨重議其幹部分工，提出可只負責設計、由核准預算負擔後續採購的方案。",
+            "tradeoff": "教師承擔重新分工及申購協調；這次自費物品處理仍須與其另行確認，不能假裝損失已解決。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點心酸，忍不住告訴他：不用拿早餐來證明你是好股長。",
+          "action": "私下直接說明自己聽到省早餐的話，提出由教師陪他一起向總務說明是待處理私人墊付，不再維持已決定請客的說法。",
+          "tradeoff": "學生可能因被看穿而生氣；須先獲同意才對總務說明，不公開家計也不保證報銷。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2100637004
+        },
+        "selectedIds": [
+          5,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "ff053f51dfb40f4e97d9a1cf4f0b2ef54aef93c449f4b3bd52906d3775a5740c"
+      },
+      "consequenceDirections": {
+        "A": "班務參與能否從出錢轉為參與決策，以及學生對認可的感受可發展。",
+        "B": "是否願意放下面子撤回贈與意向，與師生對慷慨認可的不同理解可發展。",
+        "C": "追認是否通過及學生能否接受讓付出被視為班務支出可發展。",
+        "D": "學生如何衡量贈與與被認可、能否停止繼續提供資源可發展，不以捐贈換稱讚。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1c28c9453b7e2dac31c6f3f142784ed4242f4a0b8f440caaf99d602b4506b3e9",
+    "draftSha256": "268b57a46d8d2f71452f19abc9dbc3f3f85d0dbe066aadd23b9d216068a49a55",
     "seedAssignmentVersion": 1
   }
 }

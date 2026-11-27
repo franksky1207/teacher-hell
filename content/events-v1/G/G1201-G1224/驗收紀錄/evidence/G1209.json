@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7d179b0a53bbd0f55bd4ac374d94e7b13bbacf079ddf8da72e2a11a7774faa38",
+      "checkedAt": "2026-11-27T18:29:25.721Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "排一次短版快問快答，只做這次，準備範圍全班一起收到。",
+            "action": "在可用早自習安排一次非計分短複習，承諾於指定上課日向全班提供有限範圍。",
+            "tradeoff": "教師增加準備工作並占用可調班務時間，不承諾連續辦理。"
+          },
+          {
+            "id": 2,
+            "text": "明白撤回這個構想，請他把家裡空出的時間自行安排。",
+            "action": "告知家長及全班此次不安排額外抽背，對未講清楚規劃程度致意，釋出家庭自行安排的訊息。",
+            "tradeoff": "保留教師班務時間，家長可能認為說話不算話。"
+          },
+          {
+            "id": 3,
+            "text": "改成自選練習，我提供一小份題目，不點人抽背。",
+            "action": "提出由教師另備全班可自願索取的基礎閱讀練習，不上臺、不收回、不計分，並公開說明與原構想不同。",
+            "tradeoff": "教師仍花備課時間，家長可能覺得缺少正式檢核。"
+          },
+          {
+            "id": 4,
+            "text": "先把這次排程交還給班會，讓學生決定要不要用那段空檔複習。",
+            "action": "在教師可調時段內提出全班討論是否辦自願短複習，未決前不向家長承諾成行。",
+            "tradeoff": "需主持討論且可能被學生否決，家長要承擔不確定。"
+          },
+          {
+            "id": 5,
+            "text": "我只開一次課間自願口頭練習，讓想練的人報名。",
+            "action": "提出於教師可調課間開一次自願口頭練習，向全班同等開放名額與公平安排方式，不作成績。",
+            "tradeoff": "教師犧牲休息，學生可能無人報名或超額需協調。"
+          },
+          {
+            "id": 6,
+            "text": "下個月先不排，我和他另約時間談孩子真正需要複習什麼。",
+            "action": "明確不承諾班級抽背，邀家長在正常親師聯絡時段討論其子女現有學習需求與家庭安排。",
+            "tradeoff": "增加個別聯絡時間且未提供新增全班活動，家長可能不滿。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我怕自己又亂開支票，乾脆把未定的班務構想從對外訊息拿掉。",
+          "action": "向家長承認隨口預告造成困擾，決定此次不辦額外抽背，往後僅公告已確定課務、不再在班群分享未定構想。",
+          "tradeoff": "教師收縮日常溝通，家長可能覺得因此少了可提前準備的資訊。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3023531921
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "cee8e4623ea770e3273c59482e8632e7105fc8f7c76600d247b64becd610b1a3"
+      },
+      "consequenceDirections": {
+        "A": "家長關注方式與教師自我保護之間可形成不同互動；與單純取消不同在未來訊息範圍。",
+        "B": "家長是否繼續配合及密切關注訊息的方式可發展，不以誠實作本項專有優勢。",
+        "C": "家長能否從追蹤教師一句話轉向實際需求，不保證因此認同取消。",
+        "D": "家庭安排能否調整為自主練習與家長對履約原則的理解可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ae71e370c6f1dc933534f9785b541551967cd14075f042bb11598b385d2dd96d",
+    "draftSha256": "7d179b0a53bbd0f55bd4ac374d94e7b13bbacf079ddf8da72e2a11a7774faa38",
     "seedAssignmentVersion": 1
   }
 }

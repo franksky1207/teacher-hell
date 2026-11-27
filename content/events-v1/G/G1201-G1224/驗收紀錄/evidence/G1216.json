@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "358b93bb4b4f5159dc8b58136f01f2d3af72d4403c319cfb706f7af1eb0e16a6",
+      "checkedAt": "2026-11-27T18:29:25.735Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "規定核對清楚就接整箱，我每天撥時間清點。",
+            "action": "在合法責任範圍確認後提出接收十五本閱讀箱的安排，由教師承擔每日非必要加密清點。",
+            "tradeoff": "增加教師日常時間且不能消除實際損壞風險。"
+          },
+          {
+            "id": 2,
+            "text": "請他換成耐用的舊復本，這回不借新精裝。",
+            "action": "向館員提出更換為可借舊平裝復本的需求，待確認庫存後才點收。",
+            "tradeoff": "可能借不到同樣熱門內容，館員可能覺得精挑心意未被接受。"
+          },
+          {
+            "id": 3,
+            "text": "改借三本就好，先讓班上小規模用起來。",
+            "action": "與館員協商限三本的小量借閱，選書與借期待館方確認。",
+            "tradeoff": "選擇變少可能要輪候，教師須管理期待；不預設館員同意拆箱。"
+          },
+          {
+            "id": 4,
+            "text": "問能不能只借一週，我安排一次自願閱讀時段。",
+            "action": "提出縮短借期與一次課內可調自願閱讀安排，時間及館務條件待核准。",
+            "tradeoff": "教師需挪用可調時段，學生閱讀時間縮短。"
+          },
+          {
+            "id": 5,
+            "text": "邀他把這批書留館，我帶願意的學生到館裡看。",
+            "action": "向館員提出館內閱讀方案，再依課務與館方容量申請可用時段，學生依可行安排自願參與。",
+            "tradeoff": "教師多花帶隊協調，未必排得到時段，學生少了隨手翻讀的便利。"
+          },
+          {
+            "id": 6,
+            "text": "請他改成個別借閱介紹，讓有興趣的學生自己依規借。",
+            "action": "提出由圖書館依正常程序向本班介紹書目並開放個別借閱，班級不整箱點收。",
+            "tradeoff": "教師需轉達且不能保證每人借到，館員可能覺得班級推廣效果減弱。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我真的想看這批書，乾脆先以自己的借閱額度借能借的幾本，課間陪學生翻。",
+          "action": "向館員申請依教師本人正常額度借閱部分書，若可借則由本人保管，另邀學生在可調課間現場自願閱讀。",
+          "tradeoff": "教師承擔本人可歸責借閱責任及休息時間，不擅自轉借外帶，不保證十五本全可借。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4064737428
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "601d9e52a6f198c2c47f801c1c0fb0071f4a394e8ec7c30231c17731d90a942e"
+      },
+      "consequenceDirections": {
+        "A": "替代書是否取得及資源支持方式能否調整可發展。",
+        "B": "館員是否願調整支援形式與導師閱讀原則可發展，不假定活動已成行。",
+        "C": "館員是否接受縮量與學生閱讀機會的取捨可發展，非否定全部新書。",
+        "D": "私人想讀與班級分享如何兼顧、館員對教師投入的敬重可發展，未借到前不稱已取得。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ecf886705ff059d333cbd8f5478945fc16da3d9bcdeac5dd70db8ed668f0ca82",
+    "draftSha256": "358b93bb4b4f5159dc8b58136f01f2d3af72d4403c319cfb706f7af1eb0e16a6",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "70de9c055274faa8b84f5b0cfa434a600f3d24eb20d0b84e5c56f9129fdef9bd",
+      "checkedAt": "2026-11-27T18:29:25.708Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問他願不願意改成閱讀角共用書，題字旁補上用途說明。",
+            "action": "向家長徵詢改為班級閱讀角共用的同意，提議在題字旁另貼不遮原字的用途說明。",
+            "tradeoff": "需協商且題字仍可見，家長可能不願改用途。"
+          },
+          {
+            "id": 2,
+            "text": "先婉拒收下，請他安排把兩本書領回。",
+            "action": "向家長說明班級暫不受領冠名獎勵書，請其安排合法領回，未擅自處分。",
+            "tradeoff": "閱讀角少一批新資源，家長及其孩子可能尷尬。"
+          },
+          {
+            "id": 3,
+            "text": "請他同意遮住姓名和獎勵字樣，再供班上自由借閱。",
+            "action": "提出經家長同意後以可移除內頁遮紙遮住題字、改供班級借閱的受贈方案。",
+            "tradeoff": "須花時間處理且可能被認為不領情；取得同意前不動書頁。"
+          },
+          {
+            "id": 4,
+            "text": "如果他願意，我以私人名義買下，書就留給自己。",
+            "action": "提出教師以合理購書價私人購買兩書的邀約，明確與班務、學生評價及受贈分開。",
+            "tradeoff": "若交易成立教師負擔書款，班上仍沒有新書；家長可拒絕。"
+          },
+          {
+            "id": 5,
+            "text": "徵詢他改捐圖書館，由館方決定能不能收。",
+            "action": "向家長提出改向校內圖書館依既有受贈程序申請，並徵詢是否願意自行聯絡館方。",
+            "tradeoff": "教師不代保證收書，家長要多走程序，也可能認為被推走。"
+          },
+          {
+            "id": 6,
+            "text": "可收的話，就保留題字，改作自願索取的贈書。",
+            "action": "徵詢家長同意不以優秀表現評選，改由願意接受題字的學生自願表達意願；多人時採公平方式，無人不硬發。",
+            "tradeoff": "教師須協商用途及說明，可能無人願領而讓家長難堪。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再假裝這只是兩本書，直接跟他談孩子會有多尷尬。",
+          "action": "撥電話給家長，坦白提出其子女可能被同學看作獎品提供者的顧慮，請其重新考慮是否仍要捐贈，暫緩受領。",
+          "tradeoff": "教師承擔直言冒犯的風險，沒有立即替他找下臺階；不把自己的顧慮說成孩子已受欺負。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3039394942
+        },
+        "selectedIds": [
+          1,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "5ec5d8cea379aff06fd88350e73dce6c4879b564f3ab6369c670c22bec81ecd3"
+      },
+      "consequenceDirections": {
+        "A": "學生是否願接受具名贈書與家長面對自願反應可分別發展，不能寫成已發獎。",
+        "B": "家長可能願重議也可能覺得好意被放大，主動溝通與支持意願可有不同走向。",
+        "C": "共用是否談成，以及學生如何理解冠名與資源分享，可承接家長支持與提供資源。",
+        "D": "改捐是否提出、館方是否受理及家長反應均保持未定，不逕將書交出。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8ca3c3f9563718c606f81f9e9b27432af54a7d7b42528af6395d79c823340d03",
+    "draftSha256": "70de9c055274faa8b84f5b0cfa434a600f3d24eb20d0b84e5c56f9129fdef9bd",
     "seedAssignmentVersion": 1
   }
 }

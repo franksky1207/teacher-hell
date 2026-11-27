@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fa3d01c0fc0917b38e0e2e8aace14a6c9bfd9a5d8dae11929019e0a715c3e1d5",
+      "checkedAt": "2026-11-27T18:29:25.717Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先私下問被提到的同學，讓他自己把經過說完。",
+            "action": "以紀錄確實受濕為由個別詢問被提及學生對講桌情況的了解，不宣稱已有證人指認。",
+            "tradeoff": "教師要承受否認與反問，來源仍可能被猜測，不以談話本身成立責任。"
+          },
+          {
+            "id": 2,
+            "text": "向當時在教室的人開放私下補充，不點名叫誰出來。",
+            "action": "向當時在場學生提出可個別提供所見經過的邀請，不公布特定嫌疑人及通報者。",
+            "tradeoff": "資訊可能混雜，教師增加核對工作，也可能引發猜測。"
+          },
+          {
+            "id": 3,
+            "text": "問他願不願意只把親眼看到的部分寫給我。",
+            "action": "邀目擊學生自願提供限教師依職務知悉的書面經過，說明依法或正式程序可能需要的使用界線。",
+            "tradeoff": "學生可拒絕，教師需妥善保管並不能保證永遠無人知道。"
+          },
+          {
+            "id": 4,
+            "text": "請有權責的同事協助個別釐清，我避免一個人把詢問做成對質。",
+            "action": "向負責學生事務的職員提出協助查明需求，只提供必要資訊，是否接手依權責及實際同意。",
+            "tradeoff": "增加交接及協調時間，通報者可能擔心更多成人知情。"
+          },
+          {
+            "id": 5,
+            "text": "我先找客觀紀錄：請保管人核對濕損時間和當時交接。",
+            "action": "在必要補救之外，請紀錄保管人協助比對當天點名簿交接時點，縮小事件範圍，不要求調閱無權資料。",
+            "tradeoff": "要花額外核對時間，仍可能無法指認任何人。"
+          },
+          {
+            "id": 6,
+            "text": "邀他一起想：如果對方來問，他願意採哪種方式找我幫忙。",
+            "action": "與通報學生商議其可接受的聯絡及避開單獨對質安排，徵詢是否需要教師在課間陪同接觸。",
+            "tradeoff": "增加教師課間支援負荷，學生可能仍怕被看出；必要反報復照護各分支皆有。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想逼他當英雄，先把『現在就當面指認』這個期待明白拿掉。",
+          "action": "直接告訴學生不要求其立刻與對方當面指認，詢問他是否願意由教師轉達不具來源的公物修復邀請給當時在場者。",
+          "tradeoff": "教師承受暫時無法確認責任的挫折並負擔逐一邀請時間；不把修復邀請當認罪要求。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 634460522
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "13a68fc90be800ecce7c8e799af59721d218b6b17d806d21d7925821afe5228d"
+      },
+      "consequenceDirections": {
+        "A": "學生能否保留支持教師的立場、在場者是否自願協助修復可發展，仍依法必要查證。",
+        "B": "客觀交接資訊能否減少依賴目擊者，以及學生對未能立即追責的反應可發展。",
+        "C": "學生願意提供到何程度與迴避衝突的拉扯可發展，書面不自動等於事實成立。",
+        "D": "詢問是否取得可核對資訊與通報學生對保護方式的感受可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c7d63c2d0b6b41d5dbf01ed0180d0cb01708f949882e85844b01d5465463f45a",
+    "draftSha256": "fa3d01c0fc0917b38e0e2e8aace14a6c9bfd9a5d8dae11929019e0a715c3e1d5",
     "seedAssignmentVersion": 1
   }
 }

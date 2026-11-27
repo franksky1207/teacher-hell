@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "200d563c49b9b88de554fa5b44cad91f7f2fed256727e07526518603c18ce0ff",
+      "checkedAt": "2026-11-27T18:29:25.728Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "牆先回原用途，想吐槽的內容改由我收，逐件看。",
+            "action": "恢復原核准牆面用途，同時開放學生自願交非公開意見，由教師自行閱讀回應可處理事項。",
+            "tradeoff": "教師增加閱讀工作，學生可能覺得公開空間被收回；正當意見仍可提出。"
+          },
+          {
+            "id": 2,
+            "text": "提議保留一小塊心情區，只寫自己的感受，不拿課程或人當靶。",
+            "action": "向全班提出牆面分區新安排，在導師權責內徵詢規則並說明可表達感受與不可針對個人內容。",
+            "tradeoff": "教師須持續管理，學生可能覺得不夠痛快；不是只把姓名塗掉就放任可辨識攻擊。"
+          },
+          {
+            "id": 3,
+            "text": "今天先把牆面暫停，班會再由大家提出新用途。",
+            "action": "暫停整面非必要互動牆，保留便條供作者領回，將未來用途列入班會討論而非逕自定案。",
+            "tradeoff": "失去原鼓勵牆的短期使用，教師需主持討論，學生可能覺得被一鍋端。"
+          },
+          {
+            "id": 4,
+            "text": "請他自願把同學真正想改的事整理成提案，我陪他送給相關老師。",
+            "action": "邀發起者徵得作者同意後整理具體課堂建議，提出由教師陪同向相關任課教師表達的方案。",
+            "tradeoff": "需要額外整理陪同時間，發起者可拒絕，相關教師不保證接受提案。"
+          },
+          {
+            "id": 5,
+            "text": "留成一次性的班會閱讀材料，不長期掛牆。",
+            "action": "徵詢作者同意後將合宜便條用作一次班會匿名討論材料，未同意的不使用，牆面回原用途。",
+            "tradeoff": "占用班會並需篩選，學生可能擔心口吻被認出。"
+          },
+          {
+            "id": 6,
+            "text": "若想換用途，請他先找願意共同負責的同學，提出管理辦法。",
+            "action": "向發起者提出可自願提交新牆面方案與共同管理分工的機會，審議前維持原用途。",
+            "tradeoff": "須審閱提案且不能把教師必要監督轉嫁學生，也不保證核准。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點吃味：鼓勵牆是我想的，但我願意讓它退場，另開班會讓大家當面吐槽我。",
+          "action": "決定結束原非必要鼓勵牆，另在可調班會時間邀全班自願就自己的班務提出批評，教師當面聽取，不要求先肯定自己。",
+          "tradeoff": "教師要承受公開批評與安排時間，不能替任課教師接受或處理所有意見。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1439087805
+        },
+        "selectedIds": [
+          2,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "1894990b8c4fc425865c07f60fc8e5cf44a0695c41dec423c027e5cb2fb2e869"
+      },
+      "consequenceDirections": {
+        "A": "社交動員能否形成可行管理與擅自介入決策的界線可發展。",
+        "B": "公開抒發是否仍吸引參與、學生對介入用途界線的反應可發展。",
+        "C": "吐槽能否轉為實際建議與學生的資訊主動性可發展，不把合理批評強制轉成作業。",
+        "D": "發起者是否覺得其倡議被接住、教師是否招來更尖銳回應可發展，非僅私人情緒出口。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6569d3e005291614ba522fa0c641b6fc3f44004bb4f5693461b322ade18516c0",
+    "draftSha256": "200d563c49b9b88de554fa5b44cad91f7f2fed256727e07526518603c18ce0ff",
     "seedAssignmentVersion": 1
   }
 }

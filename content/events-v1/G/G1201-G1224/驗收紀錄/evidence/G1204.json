@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "97cef5f16ced61a1f8b10eadeb2186c1c7e6e20c8ec053a7a4c1fadf57da451c",
+      "checkedAt": "2026-11-27T18:29:25.711Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "現在留十分鐘，逐句回應他對昨天通知的問題。",
+            "action": "挪用目前可調的十分鐘，與家長逐項談通知撰寫及誤讀原因，結束時確認尚未答覆處。",
+            "tradeoff": "犧牲課間準備，家長可能認為限定時間敷衍；不編造未做的檢查。"
+          },
+          {
+            "id": 2,
+            "text": "請他把仍想追問的項目寫下，我明天用文字逐項答。",
+            "action": "請家長留下具體問題並承諾次一上課日於可聯絡時段書面答覆，當下不進行長談。",
+            "tradeoff": "教師負擔後續整理時間，家長須等待可能更不滿。"
+          },
+          {
+            "id": 3,
+            "text": "約個能坐下來的時段，也讓孩子說說昨晚怎麼理解。",
+            "action": "向家長提出另約親師生會談，邀孩子自願說明閱讀與作業經過，時段待各方確認。",
+            "tradeoff": "增加協調時間，孩子可能不想參加；不讓孩子替教師承擔責任。"
+          },
+          {
+            "id": 4,
+            "text": "這裡人多，我陪他移到可用的會談室再談。",
+            "action": "詢問家長是否願意移至目前可使用的會談室，就此次通知繼續個別說明。",
+            "tradeoff": "教師繼續投入當下時間，家長可能覺得是把他帶離眾人；不攔阻申訴。"
+          },
+          {
+            "id": 5,
+            "text": "他若希望有人在場，我願意另約主管共同聽這次爭議。",
+            "action": "主動提出可邀有權責主管共同會談的方案，待家長及主管同意後再安排。",
+            "tradeoff": "可能擴大工作評價壓力與協調成本，不保證主管有空或會支持教師。"
+          },
+          {
+            "id": 6,
+            "text": "額外花掉的時間，我想先聽他希望學校怎麼回應。",
+            "action": "明確詢問家長對一小時時間損失的具體期待，記下要求供後續判斷，當場不承諾補償。",
+            "tradeoff": "教師可能聽到難以接受的要求，並需花時間回應其可行性。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我忍不住點明：這次我認文字疏失，但早自習的事不能拿來交換。",
+          "action": "直接回應家長剛提出的舊事，區分本次通知疏失與先前依法依規處理的早自習，拒絕將兩者交換通融。",
+          "tradeoff": "教師把潛在舊怨搬上檯面，可能激化不滿；仍照常回應此次疑問。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1701998275
+        },
+        "selectedIds": [
+          4,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "87eef7786445b1640c91f44166887d2fe99cd4b5ff3ed645d229541fbf6f06d4"
+      },
+      "consequenceDirections": {
+        "A": "談話觀眾減少後家長的直率、不滿與問責形式可發展，不以隱私保護作其他分支缺漏。",
+        "B": "問責進入多方討論或家長拒絕第三人在場可承接對導師的不滿，非已完成正式調查。",
+        "C": "家長可能承認兩事分開或更強烈問責，重點為正面承擔關係衝突而非只有此項願意誠實。",
+        "D": "是否願意共同釐清及家長對孩子時間安排的反應可發展，不能預設已成行。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f75ce5cc665160eae5fd1fc094debe56a0f2fe3e44ea57214358fc3d7bc69d16",
+    "draftSha256": "97cef5f16ced61a1f8b10eadeb2186c1c7e6e20c8ec053a7a4c1fadf57da451c",
     "seedAssignmentVersion": 1
   }
 }

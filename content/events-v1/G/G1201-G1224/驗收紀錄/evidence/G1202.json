@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9de30f3db711ea7e6581b741a7a55636263221637e6bc49bccb1f1f54083c39f",
+      "checkedAt": "2026-11-27T18:29:25.706Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他挑出最想練的一項，我另排一次不計分的練習。",
+            "action": "向家長提出從其表格選取一項適齡內容，由教師設計另次課內非計分練習。",
+            "tradeoff": "需額外備課並挪用可調時間，家長可能覺得只採一項太少。"
+          },
+          {
+            "id": 2,
+            "text": "這次不採用；我把原評量的教學理由完整回覆給他。",
+            "action": "用課程目標與既定評量說明回覆家長，婉拒把其表格納入這次課堂及另設練習。",
+            "tradeoff": "省下改課工作，卻要承擔對方認為專業不被尊重的關係代價。"
+          },
+          {
+            "id": 3,
+            "text": "問他可否讓學生自願帶回表格，當家庭練習參考。",
+            "action": "徵詢家長是否同意將表格定位為家庭自願參考，學生可自行取用而不交回或計分。",
+            "tradeoff": "教師須避免形成暗中加作業，表格可能幾乎無人拿。"
+          },
+          {
+            "id": 4,
+            "text": "請他拿同一段簡報評一次，我們約時間談標準差在哪。",
+            "action": "邀家長以教師自作、不含學生個資的短例稿試評，再另約成人間討論商務與課堂目標落差。",
+            "tradeoff": "教師須寫例稿及安排會談，不保證家長答應或改觀。"
+          },
+          {
+            "id": 5,
+            "text": "下一輪報告，我會在課內徵詢全班想練哪些表達能力。",
+            "action": "提出在下一輪課程規劃時，將家長建議與學生需求一起作為教師調整教學的參考，當下安排一次課內需求討論。",
+            "tradeoff": "占用課內時間，家長建議不保證採納且學生可能提出完全不同需求。"
+          },
+          {
+            "id": 6,
+            "text": "表格先不發；請他把職場上最常失敗的簡報經驗寫給我。",
+            "action": "向家長徵求一則去識別的職場失敗經驗，供教師日後判斷是否可用於課堂，而非請其訂分數。",
+            "tradeoff": "要花時間篩選，家長不一定願意從指導者變成經驗提供者。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不服氣，乾脆邀他來看我的公開教學。",
+          "action": "在既有可申請的家長觀課程序下提出邀請，讓家長先看實際高中課堂再談表格；當下僅提出申請及邀請。",
+          "tradeoff": "教師增加被檢視的壓力及準備時間，須待校方同意並保障學生隱私。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 66529748
+        },
+        "selectedIds": [
+          1,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "b3d3d0ff85538a3998ebcff2928316a3b7fc89e752b1d307a0605007ce6abefb"
+      },
+      "consequenceDirections": {
+        "A": "家長的介入是否轉為具體支持，與學生練習負擔可發展，未承諾採整張表。",
+        "B": "教師保留教學決定權，家長如何面對學生需求與自身專業衝突仍待發展。",
+        "C": "試評討論可能暴露不同判準，家長的時間投入與介入界線可承接四碼。",
+        "D": "觀課可能獲准或未成行，家長能否理解教學步調與教師護專業的心情可後續發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ae51f2134161a3eba81706d0018e96350d7866f19eb3c7e38eadc1fcc283971a",
+    "draftSha256": "9de30f3db711ea7e6581b741a7a55636263221637e6bc49bccb1f1f54083c39f",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "47c8de645cef675e077cf78d17c84026e29cf38c55ca82cd3a32317f7663f739",
+      "checkedAt": "2026-11-27T18:29:25.715Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先接受遠處掛架，調整外掃分工，讓歸還掃具少跑一趟。",
+            "action": "採用備用掛架並將收尾歸還與鄰近掃區工作重新分配，向職員說明這次過渡安排。",
+            "tradeoff": "需協調公平輪換，學生仍得走遠路；不免除任何人安全歸位責任。"
+          },
+          {
+            "id": 2,
+            "text": "我提出原處修繕申請，請他說明能排到什麼時候。",
+            "action": "正式提出修復原掛架的需求，詢問可行工期，等待期間仍用安全備用處。",
+            "tradeoff": "增加申請與追蹤時間，不保證優先施工；同事可能覺得教師急著催促。"
+          },
+          {
+            "id": 3,
+            "text": "陪他到掃區找更近的位置，今天先把候選位置走一遍。",
+            "action": "邀請職員於可行時段實地比較較近的收納候選點，當下先指認位置，不擅自使用。",
+            "tradeoff": "雙方須另花勘查時間，可能一處也不合適。"
+          },
+          {
+            "id": 4,
+            "text": "申請把掃具改由較近的清潔儲藏室保管。",
+            "action": "向職員提出使用附近現有清潔儲藏室的申請，請其確認容量、領用權限及可行性。",
+            "tradeoff": "可能要配合開門時段且未必獲准，教師須重新安排領還。"
+          },
+          {
+            "id": 5,
+            "text": "請他評估用可移動收納架，費用和停放位置我來提案。",
+            "action": "向職員提出採購可移動掃具架的構想，承諾整理需求與位置送審，不先購買或占通道。",
+            "tradeoff": "教師需花時間提案，預算、安全與空間均未必過關。"
+          },
+          {
+            "id": 6,
+            "text": "改向掃區分配單位申請換區，讓掃具和學生少繞一段。",
+            "action": "提出調整本班外掃區至備用架附近的申請，與職員討論需協調的其他班別。",
+            "tradeoff": "可能牽動別班且被拒，教師增加跨單位協調工作。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也嫌那半層樓麻煩，這週收尾我陪學生走，順便試這安排能不能撐。",
+          "action": "決定在本週可調的打掃收尾時段親自陪同歸還至備用架，實際了解搬運負擔後再與職員談長遠位置。",
+          "tradeoff": "犧牲教師可調工作時間，承擔學生日後依賴陪同的可能；不預先宣稱測試結果。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 335570455
+        },
+        "selectedIds": [
+          1,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "437cd4fdcfd47edd7b52a5ac91e4f6a62de353c6eb4c369ceb97e766e32d958e"
+      },
+      "consequenceDirections": {
+        "A": "職員對實際配合與學生是否願遵守分工的反應可發展，安全紀錄不撤銷。",
+        "B": "親身陪走後得到的具體問題與職員是否願進一步調整可發展，非只有此項維持安全。",
+        "C": "有權者是否批准與時間安排衝突可形成後果，不預設已拿到鑰匙。",
+        "D": "修繕排程協商能否兼顧原則及彈性可發展，不宣稱已修好。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "75ba3a0f19125aa852c3823e5d9913a8ccce741e6ea2bf56bdbd6c21d2329ffe",
+    "draftSha256": "47c8de645cef675e077cf78d17c84026e29cf38c55ca82cd3a32317f7663f739",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a3b756f4a202e2685c62b76d74ad4e0647b412953ac8789501d734ee595199b6",
+      "checkedAt": "2026-11-27T18:29:25.744Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我留在這裡等他，自己的聯絡事項改到稍後。",
+            "action": "在確認無即時危險仍自願留於現場等校安到場，向相關聯絡對象說明延後回覆。",
+            "tradeoff": "教師延誤自己的可調工作，校安可獲額外現場陪同；不以此代替專業檢查。"
+          },
+          {
+            "id": 2,
+            "text": "已確認可以離開，我先回辦公室，電話保持可聯絡。",
+            "action": "依值勤端已確認的安全安排返回辦公室處理工作，告知校安到場後可用電話聯絡本人。",
+            "tradeoff": "可能需要二次中斷工作回應，校安須自行定位；安全需求變更時依規處理。"
+          },
+          {
+            "id": 3,
+            "text": "請他到場前先打電話，我再安排能不能過來。",
+            "action": "先回可合法離開的辦公地點，與校安約定到場前聯絡，再依當時課務判斷是否能額外陪同。",
+            "tradeoff": "雙方多一次聯絡且不保證教師能折返，職員要接受不確定。"
+          },
+          {
+            "id": 4,
+            "text": "我向值勤主管請求另派能到場的人，不再讓他硬撐爬樓。",
+            "action": "提出由值勤主管評估支援人力的請求，說明校安疲勞及現場需要，等待正式分派。",
+            "tradeoff": "增加協調並可能讓同事覺得疲勞被呈報，不保證有人可換班。"
+          },
+          {
+            "id": 5,
+            "text": "我把這次非必要聯絡改到電話處理，在旁邊把能做的先做掉。",
+            "action": "在無危險且不影響通道的合法位置，自願留下等候，同時僅處理不含敏感內容的可電話完成工作。",
+            "tradeoff": "注意力被分割，不能完成需文件的部分；不在走廊談個資。"
+          },
+          {
+            "id": 6,
+            "text": "我只多留五分鐘，之後按已確認的安全安排回去。",
+            "action": "告知校安本人最多可額外等候五分鐘，到時無新安全要求便返回辦公室，由其依職務續辦。",
+            "tradeoff": "職員可能趕不上而失望，教師仍付出短段時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也累了，請他別再把『我信你』當成我一定有空，下次先問我課務。",
+          "action": "在返回可離開的辦公地點前，直接提出往後非必要代看與陪等須先確認導師課務，再由值勤端安排人手的協商要求。",
+          "tradeoff": "教師承擔傷及同事感情及後續協商的代價，仍不拒絕當下必要安全責任。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3571912349
+        },
+        "selectedIds": [
+          2,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "e49ddb6c5d14b7bb31316ed47303254c75832ada73f00f24bb99ba591232da58"
+      },
+      "consequenceDirections": {
+        "A": "職員是否能接受信任不等於隨時可用，未來合作方式可發展，非只生氣換語氣。",
+        "B": "校安是否願接受支援及信任關係如何承受上報可發展，不擅自替主管排班。",
+        "C": "職員對未獲現場陪等的反應與遠端合作能否奏效可發展。",
+        "D": "等待與工作折衷是否可行，職員對此有限陪同的反應可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7b5e42cb4a3d1744ff89ce9a00f91b88a3aebda0009101547323033f489e1e87",
+    "draftSha256": "a3b756f4a202e2685c62b76d74ad4e0647b412953ac8789501d734ee595199b6",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c3c626cbfd4eed951508c192125d92089dd15695bf05e46e35758647f4e089e5",
+      "checkedAt": "2026-11-27T18:29:25.737Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "等正式通知再排班務，現在不額外動學生安排。",
+            "action": "決定不據未定消息增加準備或爭取條件，向職員說明等正式通知後再依實際權責安排。",
+            "tradeoff": "教師保留當下時間，可能面臨正式通知後壓縮準備；必要保密處理照常。"
+          },
+          {
+            "id": 2,
+            "text": "請他把『導師需要提前量』這項意見，按正式管道帶回去。",
+            "action": "邀職員在其可用正式回饋程序中轉達接待需足夠班務準備時間，不要求透露會議內容或保證採納。",
+            "tradeoff": "同事增加轉達工作且可能不願再承擔，教師等候未定回應。"
+          },
+          {
+            "id": 3,
+            "text": "由我向主管提出一般性的活動通知提前量建議，不追問這場名單。",
+            "action": "以導師本人身分向有權主管提交普遍性班務提前通知建議，不使用內幕爭取本班特殊利益。",
+            "tradeoff": "教師承擔具名反映的時間與人際壓力，同事仍可能擔心被聯想。"
+          },
+          {
+            "id": 4,
+            "text": "我先盤點自己下週已排的工作，只有公開既定事項，不動學生。",
+            "action": "在私人備課時間整理已合法知悉的下週班務可調與不可調時段，供正式任務出現時評估，不提前提交內幕名單。",
+            "tradeoff": "教師增加自我盤點時間，仍可能白做且不能確知任務。"
+          },
+          {
+            "id": 5,
+            "text": "問他願不願由我陪著，向主管請教這件事應怎麼合法補救。",
+            "action": "在必要回報之外提出陪同職員向有權者說明本次透露及尋求處理方式的自願邀請，不代保證免責。",
+            "tradeoff": "教師需陪同協調，同事可能怕受責而拒絕；不能以拒絕為由免除必要處理。"
+          },
+          {
+            "id": 6,
+            "text": "請他只在正式公告後再提醒我，其他未公開消息不用先替我扛。",
+            "action": "與職員協商日後針對本件僅於正式公告可轉達時再聯絡，導師自行承擔公告前的不確定。",
+            "tradeoff": "教師放棄額外提醒便利，同事可能感到自己的好意被退回。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我累得不想再接人情債，乾脆請主管把我額外支援的上限談清楚。",
+          "action": "在不引用未公開抽調內容的前提下，具名提出檢視本人現有班務與可承擔額外公差範圍的會談需求，不先替班級申請豁免。",
+          "tradeoff": "教師承擔被視為先畫界線的壓力及會談時間，主管可能不接受上限提議。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1604662534
+        },
+        "selectedIds": [
+          5,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "b99537a8923a8e74c8921acb28d5d48f61738e3fd12994720ce57ef41800e83a"
+      },
+      "consequenceDirections": {
+        "A": "其尊重與疲勞如何影響接受陪同及後續資訊傳達方式可發展。",
+        "B": "同事對導師自我保護的反應與正式負荷協商可發展，不能以私下消息換特權。",
+        "C": "工作準備是否降低臨時負擔與同事對提醒效果的感受可發展，不稱已獲調課。",
+        "D": "合法建議是否受理與職員對導師處理分寸的反應可發展，不虛構建議源於公開公告。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6d6c0ce795a69e500eed5524add3d4a7360345df3fd69c41945827fdbbeefe02",
+    "draftSha256": "c3c626cbfd4eed951508c192125d92089dd15695bf05e46e35758647f4e089e5",
     "seedAssignmentVersion": 1
   }
 }

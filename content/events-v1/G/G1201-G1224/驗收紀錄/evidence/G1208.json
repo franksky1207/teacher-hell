@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "81d0ad97ab2d44aba19ef7496249449816044dc745b421930a56bb595bd19664",
+      "checkedAt": "2026-11-27T18:29:25.720Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "一起把信寫完，但只留電子郵件，不留電話。",
+            "action": "與家人核對事實後送出電子客訴，指定僅以郵件聯絡，不提供電話。",
+            "tradeoff": "當晚仍需整理經過並可能收到後續郵件，店家不保證依期待處理。"
+          },
+          {
+            "id": 2,
+            "text": "我自己打給店家，現在講清楚，其他人先別幫我寫。",
+            "action": "自行透過官方聯絡方式撥打電話提出用餐反映，若無人接聽即保留未完成事實。",
+            "tradeoff": "須面對即時對話壓力，也可能再次感到被敷衍。"
+          },
+          {
+            "id": 3,
+            "text": "把草稿存著，明晚還在氣，我再決定要不要送。",
+            "action": "與家人約定保留未送出的草稿，暫停當晚處理，留待自己重新決定。",
+            "tradeoff": "家人可能覺得又在拖延，自己也可能隔天仍惦記；不寫成已客訴。"
+          },
+          {
+            "id": 4,
+            "text": "不追這家了，但請家人陪我換個地方吃點東西。",
+            "action": "明確表示不送客訴，邀家人一同另選店家享用小點，是否同行由家人決定。",
+            "tradeoff": "若成行增加私人花費及外出時間，家人可能仍替自己不平。"
+          },
+          {
+            "id": 5,
+            "text": "我想公開寫一則如實評論，寫完就不跟店家來回。",
+            "action": "在消費評論平台以實際經過發表一次評論，不公布個資、不捏造，關閉可自行管理的通知。",
+            "tradeoff": "公開評論可能遭店家回覆，關閉通知不保證完全沒有後續。"
+          },
+          {
+            "id": 6,
+            "text": "讓家人幫我整理，但信由他陪著、我自己決定每一句再送。",
+            "action": "同意家人協助草擬並一起核對，由本人審閱後以官方管道送出，允許店家依本人提供的電話回覆。",
+            "tradeoff": "須花時間共同寫信且可能接到電話，家人的措辭也可能需刪改。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "今天誰都別替我出頭，我要把手機收起來，今晚不再講那家店。",
+          "action": "明確請家人停止代寫代送，收起自己的手機，決定當晚在家休息且不採取客訴。",
+          "tradeoff": "可能讓熱心家人失落，委屈沒有對外出口，但取回當晚心力。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 377917122
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "88a202c5cd51e651ebc2959f1c3dfe9be2beb300695e0999b38fe7938268cfb2"
+      },
+      "consequenceDirections": {
+        "A": "是否聯絡上及直接溝通對衝突迴避與情緒的影響可發展，不能預設獲道歉。",
+        "B": "家庭支持能否被本人掌握與後續回電負擔可發展，與僅郵件聯絡有實際差別。",
+        "C": "支持被婉拒後的家庭互動與怒氣是否沉澱可發展，非假定家人已接受界線。",
+        "D": "公開表達和避免直接爭辯能否兼顧自主與怒氣可發展，不承諾一切翻篇。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "53dd38c40b642065b309947bc8623aa7a733f93efb1b5e24b28030874347b013",
+    "draftSha256": "81d0ad97ab2d44aba19ef7496249449816044dc745b421930a56bb595bd19664",
     "seedAssignmentVersion": 1
   }
 }

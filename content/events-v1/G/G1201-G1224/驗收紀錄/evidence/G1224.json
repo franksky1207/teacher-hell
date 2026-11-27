@@ -16,14 +16,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c2a2a706b089375d9eb00d11a90a2b7d7ea97b4c856f14eeed0099f12aab30a7",
+      "checkedAt": "2026-11-27T18:29:25.748Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我向教務申請借空教室，今天盡量整班一起上。",
+            "action": "提出借用可安全降溫的空教室及課務移動需求，由教師協調整班暫遷。",
+            "tradeoff": "搬移教材與聯絡任課教師耗時，可能沒有合適空間；必要避暑安排不因申請未成而停。"
+          },
+          {
+            "id": 2,
+            "text": "請校方評估分到兩個可用空間，我承擔多一段聯絡。",
+            "action": "向權責單位提出分流到兩處安全空間的需求，須有足夠成人與課務安排才實施。",
+            "tradeoff": "教師增加人員及教材銜接工作，可能因人力不足被拒，不能讓學生無人照看。"
+          },
+          {
+            "id": 3,
+            "text": "申請把可挪的自修與閱讀課段先移到圖書館。",
+            "action": "向館方及課務單位提出現有可調課段改至圖書館的安排，限容量與秩序允許才執行。",
+            "tradeoff": "導師需重排可調內容，原定互動課可能延後，不保證館方能收整班。"
+          },
+          {
+            "id": 4,
+            "text": "請總務評估借合格移動降溫設備，場地能安全用再談留原班。",
+            "action": "提出由專業人員評估合法臨時降溫設備的支援需求，不自行拉線或買設備，不以等待延誤必要移地。",
+            "tradeoff": "教師多花設備及場地協調時間，未必有設備或適用。"
+          },
+          {
+            "id": 5,
+            "text": "邀兩邊各推願意的人，跟我一起把臨時換教室的需求講清楚。",
+            "action": "在必要安全安置後邀自願學生共同表達不同座位的熱與空氣需求，由教師帶入場地協調，不把決策責任推給學生。",
+            "tradeoff": "增加說明時間，代表不一定願意，不能讓爭論延誤照護。"
+          },
+          {
+            "id": 6,
+            "text": "我先不承諾回原教室，申請預留明天也能用的替代場地。",
+            "action": "在當下安全安置之外，提出下一上課日暫用場地的預約需求，等維修確認後再決定是否返回。",
+            "tradeoff": "教師額外協調可能白忙，課務需提前通知且預約不保證獲准。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我受不了兩邊都像在怪對方，申請把自己的可調課先換過來，由我陪班換場。",
+          "action": "向課務單位提出調整本人可調教學時段、由自己承擔當日臨時場地教學與銜接的請求，待核准及人力可行才執行。",
+          "tradeoff": "教師打亂個人備課節奏並承擔額外移地教學，不保證換課成功；不免除其他教師必要職責。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3392039391
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "af2c4e63bd0076a96d4cd77f4d75847cb4a01e741a66e3d476c4ec580a315a5f"
+      },
+      "consequenceDirections": {
+        "A": "學生能否接受搬班及發起者的號召與協商能力可發展，不預設已借到。",
+        "B": "資源不足時學生是否願調整及對導師可靠處理的信任可發展，不預設取得。",
+        "C": "學生對教師親自承擔安排的信任與連署者是否願協調不同需求可發展，非只有本分支才避熱。",
+        "D": "發起者對防護持續性與西曬學生對反覆搬動的反應可發展，不當作已修復。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "81b8554eac633731098bb656a1674d221e06323863a5fa94a4fc2c021c8ca595",
+    "draftSha256": "c2a2a706b089375d9eb00d11a90a2b7d7ea97b4c856f14eeed0099f12aab30a7",
     "seedAssignmentVersion": 1
   }
 }

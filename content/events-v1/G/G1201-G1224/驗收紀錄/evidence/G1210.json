@@ -16,14 +16,82 @@
     "G03",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c5e2c701bc86bfafd674843a3b68e5d65f07e1ee7ad0ca3ef09ab5b407e11ec2",
+      "checkedAt": "2026-11-27T18:29:25.723Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先提議回原座位，我負責跟同事說明這次為什麼不適合。",
+            "action": "依兩生意願提出恢復原座位，私下向任課老師說明不繼續第一排安排，完成必要座位協調。",
+            "tradeoff": "教師須承擔否定同事做法的尷尬，原座位未必能解決不敢提問。"
+          },
+          {
+            "id": 2,
+            "text": "讓兩個孩子各挑一個較不顯眼的位置，我再協調換位。",
+            "action": "邀兩生個別表達較舒適的位置偏好，再依視力、安全及其他同學權益協調可行座位。",
+            "tradeoff": "教師增加換位協調，兩生想法可能不同且不保證都能滿足。"
+          },
+          {
+            "id": 3,
+            "text": "請同事把額外關照改成課後自願問問題，座位不為關照而移。",
+            "action": "與同事提出回復可接受座位後，以課後自願提問替代近講桌安排的合作方案，須徵詢學生及同事意願。",
+            "tradeoff": "雙方要多留課後時間，學生可能仍不敢來；不作必要學習支持的替代。"
+          },
+          {
+            "id": 4,
+            "text": "問同事能不能改成全班都可書面提問，別只盯著這兩個人。",
+            "action": "向任課老師提出面向全班的自願書面提問方式，座位按學生可接受方案另行協調。",
+            "tradeoff": "可能增加收答工作並改變課堂節奏，同事可提出不同做法。"
+          },
+          {
+            "id": 5,
+            "text": "若他們願意，讓孩子自己跟老師說想坐哪裡，我在旁邊。",
+            "action": "提出教師陪同的自願短會談，讓兩生可分別表達座位需要，不強迫同場或揭露私人原因。",
+            "tradeoff": "教師花陪同時間，學生可能不願面對同事；不同意則照樣維持安全座位。"
+          },
+          {
+            "id": 6,
+            "text": "把以後調位的決定先收回導師這邊，請同事先跟我談。",
+            "action": "在本班既定權責內向任課老師提出座位變更先由導師統整、再與相關教師協調的具體分工。",
+            "tradeoff": "導師承擔更多調位聯絡工作，同事可能覺得被限制教學彈性。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想替孩子擋一下，直說：你是好意，但這回先讓我來處理。",
+          "action": "私下明確請同事暫停本次額外個別關照的安排，由導師承擔與兩生商定可接受座位及非必要接觸方式的工作。",
+          "tradeoff": "自己多接一段工作，同事可能因被推開而受傷；不撤除其授課及必要學習支持責任。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 675544292
+        },
+        "selectedIds": [
+          1,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "7d64d63fad9ee1449551bff086f412a55d0176a7c693f9b6f76a292cc1c7a4f2"
+      },
+      "consequenceDirections": {
+        "A": "對主動介入座位與協調合作的不同期待可發展，必要安全臨時處置不受阻。",
+        "B": "同事對信任與介入界線的反應及後續合作方式可發展。",
+        "C": "同事對導師是否仍信任自己的感受與未來願不願合作可發展，不把好意當惡意。",
+        "D": "合作提案能否減少被特別照顧的壓力與任課老師的反應可發展，非假定制度已實施。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0541f89e3e7cb218626986c411be384b288e51e55ed9ca5bf56b83ee04885216",
+    "draftSha256": "c5e2c701bc86bfafd674843a3b68e5d65f07e1ee7ad0ca3ef09ab5b407e11ec2",
     "seedAssignmentVersion": 1
   }
 }

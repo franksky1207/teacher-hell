@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "193478656ce6e90b07481b8b82babdcc5de61b25e250d5ae90948882d130f422",
+      "checkedAt": "2026-11-27T07:50:12.960Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在相同條件下重看同一類樣本，由授課者帶領。",
+            "action": "導師已提出由有權教師執行的對照觀察方案，尚未擅用私人設備或排定實作。",
+            "tradeoff": "需要時間與操作安排"
+          },
+          {
+            "id": 2,
+            "text": "保留兩份紀錄，分別標清取樣與尺度，不硬併成一個結論。",
+            "action": "導師已在本人教學範圍為經授權資料補充條件標記，不將不一致抹除。",
+            "tradeoff": "版面較複雜"
+          },
+          {
+            "id": 3,
+            "text": "改用已確認可用的教學示意圖，這次不再加做實驗。",
+            "action": "導師已停止自身非必要追加實驗構想，改以可用示意資料接續。",
+            "tradeoff": "少了親手觀察"
+          },
+          {
+            "id": 4,
+            "text": "請各組先寫出自己資料只能回答什麼，不急著互相比高低。",
+            "action": "導師已在授課範圍安排有限資料判讀，不用器材價值評組別。",
+            "tradeoff": "需要課內整理"
+          },
+          {
+            "id": 5,
+            "text": "詢問校內既有器材能否做一次相同條件對照，不借家長那台。",
+            "action": "導師已向承辦查詢既有器材可用性，尚未預約或宣稱可重現結果。",
+            "tradeoff": "要配合學校資源"
+          },
+          {
+            "id": 6,
+            "text": "取消我原想做的對外成果介紹，先留課內討論。",
+            "action": "導師已撤回自身非必要成果宣傳構想，不刪必要教學紀錄。",
+            "tradeoff": "少了漂亮宣傳"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是不甘心一直調不清，課後另問他能不能教我一次調焦。",
+          "action": "導師已向器材所有人發出私人短時技術請教邀請，尚未取得同意、借物或私用校具。",
+          "tradeoff": "占自己的空檔，也可能被拒"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 99615559
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "6aa92b57d8a6268b51c249ccf541e5830867ae4ef5c16b86ed2d1fa16854a0f5"
+      },
+      "consequenceDirections": {
+        "A": "不確定的資料不用急著包成成功案例，必要更正不延後。",
+        "B": "差異可能縮小，也可能仍存在，不先保證答案。",
+        "C": "教師可承認不熟，不讓學生代教或陪等。",
+        "D": "學生仍有正確起點，原兩份觀察不可假稱同一證據。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7e4ddf2e2cdf5dd4872c2219f71a2aa817ddf74ceefff18014554deb8d7c9498",
+    "draftSha256": "193478656ce6e90b07481b8b82babdcc5de61b25e250d5ae90948882d130f422",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fc16f5219fd30d2453c2d97305b685260f18b2d8e68fc21f8b42c66031360c98",
+      "checkedAt": "2026-11-27T07:50:12.961Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只保留本次家長明確願意的有限協助。",
+            "action": "導師已與家長確認本次自願協助範圍，不將一次同意延伸後續。",
+            "tradeoff": "工作未必全做完"
+          },
+          {
+            "id": 2,
+            "text": "改讓孩子在正常課內自行整理，我提供必要回饋。",
+            "action": "導師已在本人授課範圍安排學生自整理與正常回饋，不要求家長到場。",
+            "tradeoff": "進度可能較慢"
+          },
+          {
+            "id": 3,
+            "text": "詢問既有校內支持能否提供合宜短段協助。",
+            "action": "導師已提出校內既有支持詢問，尚未取得人力核准。",
+            "tradeoff": "需要接續時間"
+          },
+          {
+            "id": 4,
+            "text": "接受已完成的部分，剩餘依實際需求分段安排。",
+            "action": "導師已在自身可調整範圍核收實際完成處，不替他科判定全部完成。",
+            "tradeoff": "成品延後"
+          },
+          {
+            "id": 5,
+            "text": "取消我自己加的非必要作品美化，只看核心內容。",
+            "action": "導師已撤去自身額外美化要求，不減必要評量或要求另時補回。",
+            "tradeoff": "少了展覽感"
+          },
+          {
+            "id": 6,
+            "text": "若本人願意，讓家長只私下提供一段對孩子的鼓勵，不參與整理。",
+            "action": "導師已發出非強制家庭鼓勵邀請，不要求署名交件、錄音或作評量。",
+            "tradeoff": "少了成人實際幫手"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再扮作品救火隊，今天不接自己原答應的額外排版代工，改口說清楚。",
+          "action": "導師已在不影響學生必要權益下撤回未開始、可調整的私人額外排版承諾，明示正常教學接續，不讓學生替教師補做。",
+          "tradeoff": "得承認高估自己，也可能讓人失望"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1318632036
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "3aeb643639b8610608f5ce09ba82f1ef0b430e374624fc88336373dc0a9bbe27"
+      },
+      "consequenceDirections": {
+        "A": "孩子有自己的作品，不靠家庭代做。",
+        "B": "有正式資源才可安排，不能口頭保證有人。",
+        "C": "教師仍完成必要回饋，不用成熟的好人形象包住不可能的份量。",
+        "D": "家庭不用補裝飾，學生仍可自選是否自費美化。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "58b80098c66f509494851989de9e91d2c174d9676df73ae288a580bd8e635417",
+    "draftSha256": "fc16f5219fd30d2453c2d97305b685260f18b2d8e68fc21f8b42c66031360c98",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0a2699a3e9fe544dc4df10199026d93c59e739d6caf906b9508174bae362050b",
+      "checkedAt": "2026-11-27T07:50:12.956Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只挑一個小步驟換手，不重做整區。",
+            "action": "導師已在正常掃除時間安排安全小步驟自願換手，不另加整區清掃。",
+            "tradeoff": "學到的範圍有限"
+          },
+          {
+            "id": 2,
+            "text": "讓新同學選想試哪一步，熟手只在需要時說。",
+            "action": "導師已提供可安全選擇的步驟，未把新同學停頓當拒做。",
+            "tradeoff": "速度會慢"
+          },
+          {
+            "id": 3,
+            "text": "今天由原分工完成，另在正常時段排一次新手練習。",
+            "action": "導師已停止當下額外重做，提出既有時段內的後續安全教學安排，未預約私人留校。",
+            "tradeoff": "學習延後"
+          },
+          {
+            "id": 4,
+            "text": "我自己帶新同學試，讓原值日生回自己剩餘工作。",
+            "action": "導師已接回安全清掃說明與陪同，不讓學生負成人照看責任。",
+            "tradeoff": "教師多花時間"
+          },
+          {
+            "id": 5,
+            "text": "用現有工具畫一份簡單步驟圖，供之後輪值查。",
+            "action": "導師已自行整理安全班務步驟圖供班內使用，不要求學生加畫。",
+            "tradeoff": "要花教師整理時間"
+          },
+          {
+            "id": 6,
+            "text": "下次在原輪值中讓兩人換區，不再固定一人擦桌。",
+            "action": "導師已在可調整原輪值內提出換區安排，未加派學生額外時數。",
+            "tradeoff": "要重核分工"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想趕快走，刪掉自己原想做的漂亮擺拍，只收安全完成的現況。",
+          "action": "導師已取消自身非必要清掃成果拍攝，不重排學生或略過安全檢查。",
+          "tradeoff": "沒有整齊宣傳照"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 261947935
+        },
+        "selectedIds": [
+          2,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "a6b2a09b1d486a7872c2fa49c13ff5bc39e35ed958922becb8d5303bcf3bceea"
+      },
+      "consequenceDirections": {
+        "A": "學生不需為教師照片再擦一輪，必要收拾仍完成。",
+        "B": "新同學能真的試，熟手也不需整段重來。",
+        "C": "本人有選擇，不能為求快又全部接走。",
+        "D": "當天能準時結束，後續要確實給機會。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f902d9817012b5784df045c7edb8f0e13672e45f4392d964c4094a22b3d53fbc",
+    "draftSha256": "0a2699a3e9fe544dc4df10199026d93c59e739d6caf906b9508174bae362050b",
     "seedAssignmentVersion": 1
   }
 }

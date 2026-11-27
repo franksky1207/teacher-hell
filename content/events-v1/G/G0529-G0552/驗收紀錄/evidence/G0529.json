@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a7f46abc02bff76d2cb503259ba2189e7dd971ca5318b5fbeda34cbb5765fa22",
+      "checkedAt": "2026-11-27T07:50:12.942Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "給他一次完整短段，回饋放到段落結束後。",
+            "action": "導師已與學生確認並執行一段自願連讀，必要回饋改於段後提供。",
+            "tradeoff": "要忍住立即糾正"
+          },
+          {
+            "id": 2,
+            "text": "取消學生暖場，由我讀自己的例子。",
+            "action": "導師已撤回額外暖場邀請，改以自有可用文本示範。",
+            "tradeoff": "少了同儕版本"
+          },
+          {
+            "id": 3,
+            "text": "讓他先私下讀一次，再自己決定是否公開。",
+            "action": "導師已發出私下短讀邀請，未預定公開演出。",
+            "tradeoff": "要另留時間"
+          },
+          {
+            "id": 4,
+            "text": "改成兩人各自短讀，不設唯一領頭示範。",
+            "action": "導師已在授課權限內改採兩人自願輪讀，必要個別協助照常。",
+            "tradeoff": "聲音與節奏會分散"
+          },
+          {
+            "id": 5,
+            "text": "問他願不願意只交自己想聽的兩處回饋，其餘另按正常教學。",
+            "action": "導師已徵詢本次自願延伸回饋焦點，不取消必要教學。",
+            "tradeoff": "當下回饋範圍有限"
+          },
+          {
+            "id": 6,
+            "text": "暫不公開朗讀，先讓各人標停頓，課內再接續。",
+            "action": "導師已調整本節非必要公開朗讀為個別準備，明示正常課內接續。",
+            "tradeoff": "公開練習延後"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想知道被插話多煩，另邀同事空檔聽我念，不請學生教訓我。",
+          "action": "導師已向適當同事提出私人短讀回饋邀請，尚未獲同意，不使用學生材料。",
+          "tradeoff": "花自己的時間，也可能不好受"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4130356265
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "77ab8c9f60998940b05875b9d421465f4ba6e6215c2aab3899dab1799de1d546"
+      },
+      "consequenceDirections": {
+        "A": "能聽見連續表達，錯誤仍需之後具體回應。",
+        "B": "學生能說想處理什麼，教師仍須回應必要盲點。",
+        "C": "成人能給回饋，學生不需負責讓教師體會。",
+        "D": "學生可退出，等待者仍有可參照內容。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e47b724d6cfdf1992f8e0cf339f4a74cc23dc42203cb8a51ce038f91a4003825",
+    "draftSha256": "a7f46abc02bff76d2cb503259ba2189e7dd971ca5318b5fbeda34cbb5765fa22",
     "seedAssignmentVersion": 1
   }
 }

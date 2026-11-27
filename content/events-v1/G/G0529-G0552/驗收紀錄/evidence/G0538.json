@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f631ebb7d94b73bfeb260af26dd80125e6e76981c714e3e0431075f5a3530b87",
+      "checkedAt": "2026-11-27T07:50:12.954Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消這組互評，改由教師直接回饋。",
+            "action": "導師已在自身課程取消本組非必要同儕互評，接回正常回饋。",
+            "tradeoff": "教師批閱增加"
+          },
+          {
+            "id": 2,
+            "text": "安排符合需要的暫時分開練習，不把搬位當處罰。",
+            "action": "導師已依必要限制安排安全臨時個別練習位置，不強迫其他人接手衝突。",
+            "tradeoff": "要調整空間"
+          },
+          {
+            "id": 3,
+            "text": "保留座位，今天各做自己的，不要求交流。",
+            "action": "導師已在安全條件成立下改為原位個別工作，不以坐近視為關係恢復。",
+            "tradeoff": "少了合作練習"
+          },
+          {
+            "id": 4,
+            "text": "另徵詢是否願意在成人主持下談，不當場湊和好。",
+            "action": "導師已分別提出適當共同談話邀請，未要求道歉交換或視沉默為同意。",
+            "tradeoff": "需額外時間"
+          },
+          {
+            "id": 5,
+            "text": "採正常三人任務輪替，不讓兩人今天固定配對。",
+            "action": "導師已在本人可調整的課內任務改為一般三人輪替，未公開個案或交學生調解。",
+            "tradeoff": "全組分工要重排"
+          },
+          {
+            "id": 6,
+            "text": "把這輪改為各人自評後提一個問題，不互相打分。",
+            "action": "導師已改用同目標個別自評提問，不將自評當唯一學習判定。",
+            "tradeoff": "可能看不出所有盲點"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再說漂亮的和好話，把自己原加的「互相說謝謝」橋段取消。",
+          "action": "導師已取消自身非必要公開感謝儀式，不省略必要補救或依法應辦程序。",
+          "tradeoff": "少了整齊收尾，也要承認不是每件事都能當場好看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 331194231
+        },
+        "selectedIds": [
+          6,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "1d6a9829d85d1741b094a36861f51eb766272cf566feb47f3b9812b255a11c5a"
+      },
+      "consequenceDirections": {
+        "A": "學生不用表演感謝，關係可停在還沒原諒。",
+        "B": "任一方可拒絕，必要處理照常。",
+        "C": "學生能先自己整理，必要教師補充仍在。",
+        "D": "能維持課內運作，也可能仍需另調位置。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d4dbf02f4902a8e60f84bd72df5171c6a100a05afb39b3deaafbdd1be43ba1e4",
+    "draftSha256": "f631ebb7d94b73bfeb260af26dd80125e6e76981c714e3e0431075f5a3530b87",
     "seedAssignmentVersion": 1
   }
 }

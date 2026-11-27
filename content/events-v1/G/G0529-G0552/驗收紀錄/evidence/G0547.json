@@ -15,14 +15,82 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "433588aa7e6d603e7d0264c5b725abcf4d6f7aaec8ec70f0b57b8b467b46f5bc",
+      "checkedAt": "2026-11-27T07:50:12.961Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不再採用這份題庫，後續用已確認教材。",
+            "action": "導師已停止本次未核實題庫教學使用，改用確認教材，不刪必要證據。",
+            "tradeoff": "放棄現成數量"
+          },
+          {
+            "id": 2,
+            "text": "正常課內只選兩題比較解法，未核實的仍標待查。",
+            "action": "導師已安排本人課內有限解法比較，正式正確性仍由教師確認。",
+            "tradeoff": "涵蓋很少"
+          },
+          {
+            "id": 3,
+            "text": "只保留確實核實且可使用的部分供選用。",
+            "action": "導師已限縮採用範圍於已確認適用素材，不要求學生補查全庫。",
+            "tradeoff": "練習量變少"
+          },
+          {
+            "id": 4,
+            "text": "把原清單改成來源判讀練習，不再追求報出答案。",
+            "action": "導師已在授課範圍使用無個資且可用的來源例子作判讀，不擴傳未核答案。",
+            "tradeoff": "原算題進度延後"
+          },
+          {
+            "id": 5,
+            "text": "讓各人交第一個想問的步驟，正常工作時段逐次回。",
+            "action": "導師已提供自願短提問方式與工作回覆安排，不承諾整晚即答。",
+            "tradeoff": "回覆需等候"
+          },
+          {
+            "id": 6,
+            "text": "後續不再辦我自己加的輪報答案競速。",
+            "action": "導師已取消自身非必要輪報競速安排，不減必要教學或以此處罰全班。",
+            "tradeoff": "少了熱鬧快感"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想今晚繼續刷那個網站，自己的額外練題先停一天。",
+          "action": "導師已停止自身私人非必要題庫練習，必要備課與工作回覆依原安排完成。",
+          "tradeoff": "私人進度會落後"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1923618415
+        },
+        "selectedIds": [
+          5,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "9b97d8b8a5d2908ccadcf3053a9472e7e411a1fea7b7e6658c16af83a7fdb201"
+      },
+      "consequenceDirections": {
+        "A": "學生可看見引用不等於正確，不能公開誰先信錯。",
+        "B": "學生可用少量可靠內容，未確認處不冒充答案。",
+        "C": "教師可休息，不把沒做的份量派給學生。",
+        "D": "問題能接到具體處，不再為湊全清單瞎填。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "962082c3d58bbdfa83d48641e9d7dd2ad56cf8f7188c3fbd67f0a5b91df01732",
+    "draftSha256": "433588aa7e6d603e7d0264c5b725abcf4d6f7aaec8ec70f0b57b8b467b46f5bc",
     "seedAssignmentVersion": 1
   }
 }

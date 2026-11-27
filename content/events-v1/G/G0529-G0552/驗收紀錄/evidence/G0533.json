@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "59a372d596cb128c37f80a531e9d08913fd798472227e67afaab0c471273a1cc",
+      "checkedAt": "2026-11-27T07:50:12.947Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "收好後在合適桌旁各談本人部分，不在走廊追問。",
+            "action": "導師已提出收拾後的分別短談安排，尚未將各人沉默當同意共同談話。",
+            "tradeoff": "需另留工作時間"
+          },
+          {
+            "id": 2,
+            "text": "先讓他寫一句最想說的，暫不要求口頭講完。",
+            "action": "導師已提供自願短文字陳述方式，不要求重抄反省或公開。",
+            "tradeoff": "資訊不完整"
+          },
+          {
+            "id": 3,
+            "text": "約下一個正常工作空檔，先依原安排去上課。",
+            "action": "導師已提出明確工作時段邀約，必要即時處置仍共同完成。",
+            "tradeoff": "問題延後"
+          },
+          {
+            "id": 4,
+            "text": "若各方願意，安排有成人主持、可中止的共同談話。",
+            "action": "導師已分別徵詢合宜共同談話意願，未強迫對質或認定已約成。",
+            "tradeoff": "協調成本高"
+          },
+          {
+            "id": 5,
+            "text": "今天不加我原想做的全班回顧，個案只在必要範圍處理。",
+            "action": "導師已取消自身非必要全班案例回顧，不省略必要說明與紀錄。",
+            "tradeoff": "少一次共同討論"
+          },
+          {
+            "id": 6,
+            "text": "請適當承辦接續其職權內部分，我只處理自己知情內容。",
+            "action": "導師已依實際權責交接必要範圍資料，未把全部責任推離或擴散私事。",
+            "tradeoff": "需要交接，也可能多次確認"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想抱著一堆紙還裝作能專心，先放下自己的收件，挪出原工作時間聽。",
+          "action": "導師已暫停自身可延後的收件整理並留出正常工作空檔，不擅停必要職務或逼學生開口。",
+          "tradeoff": "自己的整理會晚"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3610125321
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "15255cec860fbbf7043e83f4807f6b41f6659ff0d3c768f2e450f508fec87866"
+      },
+      "consequenceDirections": {
+        "A": "學生不需在不同成人間傳話，導師仍負自己的責任。",
+        "B": "他能知道何時接續，不需守在走廊等。",
+        "C": "學生能獲完整注意，不能因此被要求一次說完。",
+        "D": "可有起點，後續仍須依法核實。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "097017949ebc9eb18c8fa00945176fda76aae1f4e265bd4b799757e4a2661609",
+    "draftSha256": "59a372d596cb128c37f80a531e9d08913fd798472227e67afaab0c471273a1cc",
     "seedAssignmentVersion": 1
   }
 }

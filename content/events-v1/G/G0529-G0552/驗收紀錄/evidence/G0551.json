@@ -15,14 +15,82 @@
     "G01",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "68417d8fcacdbd8ff70de1bcb954feaed29296b1510c4931485b05e54213ca87",
+      "checkedAt": "2026-11-27T07:50:12.966Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只用圖講搭法，不進工作區。",
+            "action": "導師已在本人授權範圍使用自有可用圖示說明，不啟動工具或安排進區。",
+            "tradeoff": "少了手感"
+          },
+          {
+            "id": 2,
+            "text": "向承辦申請另個核准安全區作簡單試作。",
+            "action": "導師已提出安全試作場地申請，尚未獲准或帶學生移動。",
+            "tradeoff": "可能沒有空間"
+          },
+          {
+            "id": 3,
+            "text": "邀具資格成人在原工作許可範圍示範，學生只在安全觀看處。",
+            "action": "導師已發出有限示範邀請，尚未取得同意或設置觀看位置。",
+            "tradeoff": "需配合對方工作"
+          },
+          {
+            "id": 4,
+            "text": "改用不需工具的安全紙材作桌面模擬。",
+            "action": "導師已在合宜桌面以安全紙材安排原目標模擬，不宣稱可代替正式材料驗證。",
+            "tradeoff": "精度與真材不同"
+          },
+          {
+            "id": 5,
+            "text": "今天不加動手試作，留到後續正常授權課程再談。",
+            "action": "導師已取消自身當次非必要追加試作，不預約學生私人留校。",
+            "tradeoff": "興致可能冷掉"
+          },
+          {
+            "id": 6,
+            "text": "使用已確認可用、無個資的操作影片，適當處暫停問。",
+            "action": "導師已在授權課程使用合法可用影片作說明，不錄現場工作者或學生。",
+            "tradeoff": "少了即時觸摸"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也手癢，私人空檔折一個自己的小模型，不借工作區過癮。",
+          "action": "導師已於私人可用時間以自有安全紙材完成自用小模型，不使用工作區工具或要求學生陪做。",
+          "tradeoff": "花自己的材料，可能歪得很有趣"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3023319626
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "f3fb55610edf00bd829b28d9de3d75ea9df8a6943dfe256fa1f2bb167e8d143d"
+      },
+      "consequenceDirections": {
+        "A": "教師可為好玩試作，不拿它當學生必達樣板。",
+        "B": "學生可比較步驟，不能靠影片取得操作許可。",
+        "C": "成人可拒絕，不能讓旁觀者妨礙原操作。",
+        "D": "獲准後仍需合宜材料與照看，未准就不做。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bddcb07c9003754618f5443d11b8a50579b73a2f5af0bccc1cc8b977b3dbbbbb",
+    "draftSha256": "68417d8fcacdbd8ff70de1bcb954feaed29296b1510c4931485b05e54213ca87",
     "seedAssignmentVersion": 1
   }
 }

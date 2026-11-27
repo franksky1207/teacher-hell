@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "53a72b44bc670abf1fb0ab3bc2886d291920ae17c97918affb3400e0c94c0ab8",
+      "checkedAt": "2026-11-27T07:50:12.967Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請家長在原准許等候處自行休息，不進談話或練習。",
+            "action": "導師已確認本次不需家長陪入，提供原合法等候安排，不把等待當必須。",
+            "tradeoff": "等候仍花家庭時間"
+          },
+          {
+            "id": 2,
+            "text": "若家長願意，按已確認時間離開再回接。",
+            "action": "導師已提供依原接送規則可行的回接選擇，未擅改監護或交接權限。",
+            "tradeoff": "要自己安排往返"
+          },
+          {
+            "id": 3,
+            "text": "向授課者詢問未來可否移到原正常課內，少一次專程接送。",
+            "action": "導師已提出後續課內時段協調需求，尚未核准或取消本次。",
+            "tradeoff": "可能不獲調整"
+          },
+          {
+            "id": 4,
+            "text": "提供既有通用練習說明，不包含孩子個別談話內容。",
+            "action": "導師已提供可合法分享的通用介紹，不公開學生個別陳述。",
+            "tradeoff": "資料較概括"
+          },
+          {
+            "id": 5,
+            "text": "另約一次正常工作時間的短回饋，不逐次直播過程。",
+            "action": "導師已提出有限工作回饋邀約，尚未約成或承諾揭露全部過程。",
+            "tradeoff": "增加成人排程"
+          },
+          {
+            "id": 6,
+            "text": "取消我自己加的非必要家庭成果合照，別讓她以為還要等拍完。",
+            "action": "導師已撤回自身非必要合照構想，不改既有必要結束與交接。",
+            "tradeoff": "少一張宣傳紀念"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想喘口氣，不在她等待時再開自己的加碼教法小講座。",
+          "action": "導師已取消自身未成正式工作之非必要家長教法加講，於原可休息空檔休息，不放棄學生必要照看。",
+          "tradeoff": "少一次展示專業，也得留白"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 704878870
+        },
+        "selectedIds": [
+          5,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "a250b2d512c6165d5e8aff87091f3a6d1ad1c4a6ced2513721fa59d3fdc09d84"
+      },
+      "consequenceDirections": {
+        "A": "家長能聽必要範圍的回應，孩子隱私仍受保障。",
+        "B": "教師不用把所有安靜填滿，必要支持照常由原安排接續。",
+        "C": "孩子有獨立空間，家長可按需要離開合宜安排。",
+        "D": "可取回部分時間，但不能保證交通不變。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "33f91a3a7216b1757ee8630b52c718fcb96afa7b2b1b6a18f6cfeb6e1f140f55",
+    "draftSha256": "53a72b44bc670abf1fb0ab3bc2886d291920ae17c97918affb3400e0c94c0ab8",
     "seedAssignmentVersion": 1
   }
 }

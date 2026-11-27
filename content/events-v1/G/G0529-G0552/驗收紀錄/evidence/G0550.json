@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2074d316e79c81500eb010d0df469541fd3fcac6a8e36d41e50d29e56434d3bf",
+      "checkedAt": "2026-11-27T07:50:12.965Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只把家庭確認可接的兩個時段送去協調，再問孩子意願。",
+            "action": "導師已依同意提交有限時段供協調，未替學生選定或保證名額。",
+            "tradeoff": "選擇變少，也不保證成班"
+          },
+          {
+            "id": 2,
+            "text": "說明原有合法自行離校方式，讓家庭與孩子依實況評估。",
+            "action": "導師已提供經確認的通用離校資訊，未自行核准個案變更。",
+            "tradeoff": "可能並不適用"
+          },
+          {
+            "id": 3,
+            "text": "尊重孩子不加練，回到正常課內支持。",
+            "action": "導師已向學生提供不參加的選項與正常支持方式，未代填退出或中止必要協助。",
+            "tradeoff": "少一次額外練習"
+          },
+          {
+            "id": 4,
+            "text": "詢問可否把同目標回饋放進原正常課內，不另接送。",
+            "action": "導師已向授課者提出課內接續建議，尚未核准或承諾安排。",
+            "tradeoff": "需調整課程，也可能不獲同意"
+          },
+          {
+            "id": 5,
+            "text": "提供不需到校的自用短材料，讓孩子自行選要不要練。",
+            "action": "導師已提供可使用的自願短練材料，不改成新必交作業或要求購印。",
+            "tradeoff": "少了現場互動"
+          },
+          {
+            "id": 6,
+            "text": "請正式窗口直接把可行方案回覆家庭與本人，不再由我代傳承諾。",
+            "action": "導師已提出依權限直接回覆的協調需求，未宣稱送達或免除自身必要聯繫。",
+            "tradeoff": "多一道正式確認"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也早想回家，把自己提的尚未成立加開先撤掉，別再拿「為學生好」撐場。",
+          "action": "導師已撤回自身未成正式課務的非必要加開提案，保留既有正常支持及已成立權益。",
+          "tradeoff": "少一次自我表現，也可能讓期待的人失望"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1765577282
+        },
+        "selectedIds": [
+          1,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "e93e5b856486ee44c45357a4e2303882d065b31645c58c1cf3e5754c849991cd"
+      },
+      "consequenceDirections": {
+        "A": "安排看真實條件，不以送件當報名完成。",
+        "B": "仍有原合法選項可選，不把撤案變成對這家不滿。",
+        "C": "退出不成為教師失望的證據，原學習目標仍能接續。",
+        "D": "資訊能直接到當事人，導師仍負自己應辦部分。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d8a5d3be86783d97f790ab78045acf4a54d790d252ce4246529eea3a556dc1ad",
+    "draftSha256": "2074d316e79c81500eb010d0df469541fd3fcac6a8e36d41e50d29e56434d3bf",
     "seedAssignmentVersion": 1
   }
 }

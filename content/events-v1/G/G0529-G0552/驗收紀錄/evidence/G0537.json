@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a4caffad3f408944ae386b79c9b5cb43f955229fd316cc951fbd74feeb5bdb34",
+      "checkedAt": "2026-11-27T07:50:12.952Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不用錄音，保留課內自願當面練習。",
+            "action": "導師已在授課權限內取消非必要錄音安排，維持可拒絕的當面練習。",
+            "tradeoff": "沒有可重聽檔"
+          },
+          {
+            "id": 2,
+            "text": "另邀有意願的成人錄自己的例句，不借孩子聲音。",
+            "action": "導師已發出限內容與用途的成人錄音邀請，尚未取得素材或使用權。",
+            "tradeoff": "需等成人準備"
+          },
+          {
+            "id": 3,
+            "text": "使用學校已有授權音檔，這次不借私人錄音機。",
+            "action": "導師已改用確認有權使用的既有音檔，不錄學生或接受額外私人設備。",
+            "tradeoff": "題材不一定合孩子生活"
+          },
+          {
+            "id": 4,
+            "text": "讓學生自願做文字或圖卡，不收家庭口音。",
+            "action": "導師已提供同目標可選圖文方式，不新增購材要求。",
+            "tradeoff": "少了聲音練習"
+          },
+          {
+            "id": 5,
+            "text": "若孩子願意，先說明一個限定保存範圍的個人新錄方案，再由本人選。",
+            "action": "導師已提供依法可行條件下的有限錄音方案說明，尚未錄製或取得授權。",
+            "tradeoff": "需要較多確認，也可能不要"
+          },
+          {
+            "id": 6,
+            "text": "取消我自己加的公開語言展示，只做原課內內容。",
+            "action": "導師已撤回自身非必要公開展示構想，保留正常語文教學。",
+            "tradeoff": "少了熱鬧成果"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想到自己也不太敢講，私人空檔錄一句自己聽，不叫孩子替我示範。",
+          "action": "導師已以自有可用設備錄本人一句自聽，無他人資料，不公開或要求學生評判。",
+          "tradeoff": "花自己的時間，也可能不敢重聽"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3689950503
+        },
+        "selectedIds": [
+          5,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "41de3f894ab5b2186854b853dd97fc68fe5c68316a83df30f7f5c87392e1af02"
+      },
+      "consequenceDirections": {
+        "A": "可有示例，也不能拿成人口音當唯一正確。",
+        "B": "教師可自行試錯，錄音不成為比較學生的標準。",
+        "C": "作品能用別種方式呈現，不要求揭家庭背景。",
+        "D": "範圍不含無限公開，未同意便不錄。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5d3561b9b987e080a96e13bf237974878dca9b1af49b64134bd83980749a5ba7",
+    "draftSha256": "a4caffad3f408944ae386b79c9b5cb43f955229fd316cc951fbd74feeb5bdb34",
     "seedAssignmentVersion": 1
   }
 }

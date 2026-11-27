@@ -14,14 +14,82 @@
   "plannedTags": [
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c4a72de49665db840baf3f253e0e6c6a079377938ab183729ef75481227a0030",
+      "checkedAt": "2026-11-27T07:50:12.945Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不再補長文，只完成必要更正及正式回覆。",
+            "action": "導師已刪去自身非必要延伸說明，必要送達與更正仍依共同前提完成。",
+            "tradeoff": "少了替自己解釋的機會"
+          },
+          {
+            "id": 2,
+            "text": "徵詢家長是否需要正常工作時段的短談，說清這次延誤。",
+            "action": "導師已發出限定本次回覆延誤的自願短談邀請，尚未約成。",
+            "tradeoff": "多一段時間"
+          },
+          {
+            "id": 3,
+            "text": "把之後非急件回覆時段明示，不讓人只靠觀察星期幾。",
+            "action": "導師已明示自身工作回覆安排與原緊急管道，不承諾立即處理所有非急件。",
+            "tradeoff": "要按約履行"
+          },
+          {
+            "id": 4,
+            "text": "檢查我自己怎麼把組別抄錯，先修掉重複轉寫那一步。",
+            "action": "導師已檢視並刪除自身可取消的重複抄錄步驟，保留必要正式紀錄。",
+            "tradeoff": "多一道整理"
+          },
+          {
+            "id": 5,
+            "text": "詢問承辦是否有原可用的個別查詢方式，讓家長不用貼群。",
+            "action": "導師已提出既有個別查詢方式詢問，未新增系統或假稱已開通。",
+            "tradeoff": "可能需另學使用"
+          },
+          {
+            "id": 6,
+            "text": "把這次非必要班級成果介紹延後，不趕著連同更正一起發。",
+            "action": "導師已延後自身非必要成果介紹，未延遲法定或應辦更正。",
+            "tradeoff": "少一次即時宣傳"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點心虛，自己設個工作提醒，回到時間就先看待回件，不等人第四次追。",
+          "action": "導師已為自身工作安排設置回覆提醒，未把提醒當已處理或要求家長監督。",
+          "tradeoff": "少一段原空檔，沒做完也得如實說"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 21366569
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "bf107b5e36e8d4eeb48c401d9e20e202e8c987b7df08b266a5c1d8418ffdfaf3"
+      },
+      "consequenceDirections": {
+        "A": "家長可知道何時問進度，緊急事仍不等固定日。",
+        "B": "可減少下次誤寫，不能宣稱從此不會錯。",
+        "C": "校務訊息不與教師成果混成一包，必要通知仍不延誤。",
+        "D": "家長不用替教師管行程，回覆仍看實際進度。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7a5bbed36d0a8176f6d299889cb3194043e4e24cabb8cd0f45fa8cd0569dff90",
+    "draftSha256": "c4a72de49665db840baf3f253e0e6c6a079377938ab183729ef75481227a0030",
     "seedAssignmentVersion": 1
   }
 }

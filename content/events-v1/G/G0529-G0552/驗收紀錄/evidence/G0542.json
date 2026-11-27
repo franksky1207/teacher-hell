@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b62353fa93bc64061c8d3fb636d5b2e381759d68622530d10544e9d781824fd7",
+      "checkedAt": "2026-11-27T07:50:12.958Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "各縫自己的，不互相接手。",
+            "action": "導師已與同事確認各自處理衣物，不拿走對方工具或承諾代修。",
+            "tradeoff": "可能都做得慢"
+          },
+          {
+            "id": 2,
+            "text": "把我自己的安全工具借他，自己今天先不縫。",
+            "action": "導師已提出自有工具短借邀請，尚未取得同意或交付，工具安全與歸還另確認。",
+            "tradeoff": "私人用品需借還"
+          },
+          {
+            "id": 3,
+            "text": "今天不修，改約各自有空時再做，不占這段休息。",
+            "action": "導師已停止自身當日非必要修縫，未阻止同事依願完成。",
+            "tradeoff": "釦子仍鬆，但眼前多一點安靜"
+          },
+          {
+            "id": 4,
+            "text": "問他要不要自己去修改店，我只提供可查的店家資訊。",
+            "action": "導師已提供一般公開修改店資訊，不代送衣、收費或假定委託。",
+            "tradeoff": "要花錢，也未必想委託"
+          },
+          {
+            "id": 5,
+            "text": "只交換自己哪一步卡住，不互評誰縫得像樣。",
+            "action": "導師已提出可拒絕的私人修縫經驗交流，不把同事當免費師傅。",
+            "tradeoff": "未必有專業答案"
+          },
+          {
+            "id": 6,
+            "text": "我先把自己的修縫停在安全可收納處，讓出桌面給他。",
+            "action": "導師已安全收妥自身針線並釋出可用桌面，未占他人工作位置或要求對方完工。",
+            "tradeoff": "自己的家務延後"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看那顆歪的就是不服，拆自己的重縫，做不完也自己帶走。",
+          "action": "導師已在安全可用空檔拆除本人歪釦重新試縫，到原結束時間即安全收妥，不要求同事等候。",
+          "tradeoff": "浪費原先工夫，也可能更歪"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1984192489
+        },
+        "selectedIds": [
+          5,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "0c04e49b5318ab9625d1380a4c06015f46365a7478d5e42c542500a28b02f1a8"
+      },
+      "consequenceDirections": {
+        "A": "各人需自己安排，不把延後變成朋友責任。",
+        "B": "教師能為小事好勝，不動同事那件衣服。",
+        "C": "兩人可保留完成感，沒弄好也不拖別人。",
+        "D": "兩人能分享失手，仍可選不接受建議。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "91a640c98de67ad5360fd30e88886ad9f121f2fe9414f0d9378fc91255af312c",
+    "draftSha256": "b62353fa93bc64061c8d3fb636d5b2e381759d68622530d10544e9d781824fd7",
     "seedAssignmentVersion": 1
   }
 }

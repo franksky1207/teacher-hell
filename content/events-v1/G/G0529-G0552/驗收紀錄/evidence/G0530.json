@@ -15,14 +15,155 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "90103b93a2ffa9f520fd3b084c367139a6c9cfe413f6a8965556981c48215179",
+      "checkedAt": "2026-11-27T07:50:12.944Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "接受他退出這次額外競賽，保留正常練習。",
+            "action": "導師已接受本次非必要遊戲退出，不附加處罰或撤去學習支持。",
+            "tradeoff": "少一次上場經驗"
+          },
+          {
+            "id": 2,
+            "text": "取消我能取消的公開排名，只保留解題回饋。",
+            "action": "導師已撤去本次自訂公開名次，未改正式評量。",
+            "tradeoff": "少了競賽刺激"
+          },
+          {
+            "id": 3,
+            "text": "讓他自選是否上場，先說清楚不給保勝承諾。",
+            "action": "導師已向學生提供可拒絕的參賽選擇，未保證結果或代填意願。",
+            "tradeoff": "焦慮不會立刻消失"
+          },
+          {
+            "id": 4,
+            "text": "提議改做合作解題，徵詢參與者是否接受。",
+            "action": "導師已提出合作替代玩法，尚未取得各人參與同意。",
+            "tradeoff": "競爭形式改變"
+          },
+          {
+            "id": 5,
+            "text": "另約他談自己最怕的那個場面，不當場分析整個家庭。",
+            "action": "導師已發出正常工作時段自願短談邀請，不作家庭心理定論。",
+            "tradeoff": "需要時間，也可能不願說"
+          },
+          {
+            "id": 6,
+            "text": "問他要不要把最怕發生的一件事寫給自己看，不用交我。",
+            "action": "導師已提供可拒絕的私人短記選擇與紙筆，不收取或評分內容，不將書寫當參賽或退出條件",
+            "tradeoff": "他可能不想寫，也可能越想越緊張"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕輸，自己挑一題沒做過的試，不拿他的名次替我爭氣。",
+          "action": "導師已於自身可用時間獨立試作另一題，不安排賭注或學生陪賽。",
+          "tradeoff": "用掉空檔，也可能完全不會"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 736601676
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "107d7366cbbcbce030bbc84be0f5abc78e89c87328dbfebf2fd67e2fe78cade9"
+      },
+      "consequenceDirections": {
+        "A": "真正參與由本人決定，教師不能拿家人陪練催他。",
+        "B": "教師可承受自己的挫折，不把私人好勝交給學生。",
+        "C": "可找到具體擔心，不等於家長真的想看笑話。",
+        "D": "學生可專注方法，也有人會失望。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "普通6提供個別練習並停止遊戲催問與普通1退出遊戲回正常練習的行動範圍重疊，改為不收件、不評分的自願私人短記邀請。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "接受他退出這次額外競賽，保留正常練習。",
+                "action": "導師已接受本次非必要遊戲退出，不附加處罰或撤去學習支持。",
+                "tradeoff": "少一次上場經驗"
+              },
+              {
+                "id": 2,
+                "text": "取消我能取消的公開排名，只保留解題回饋。",
+                "action": "導師已撤去本次自訂公開名次，未改正式評量。",
+                "tradeoff": "少了競賽刺激"
+              },
+              {
+                "id": 3,
+                "text": "讓他自選是否上場，先說清楚不給保勝承諾。",
+                "action": "導師已向學生提供可拒絕的參賽選擇，未保證結果或代填意願。",
+                "tradeoff": "焦慮不會立刻消失"
+              },
+              {
+                "id": 4,
+                "text": "提議改做合作解題，徵詢參與者是否接受。",
+                "action": "導師已提出合作替代玩法，尚未取得各人參與同意。",
+                "tradeoff": "競爭形式改變"
+              },
+              {
+                "id": 5,
+                "text": "另約他談自己最怕的那個場面，不當場分析整個家庭。",
+                "action": "導師已發出正常工作時段自願短談邀請，不作家庭心理定論。",
+                "tradeoff": "需要時間，也可能不願說"
+              },
+              {
+                "id": 6,
+                "text": "給他原目標的個別練習，不再追問遊戲意願。",
+                "action": "導師已提供可用的同目標個別工作，停止本次非必要參賽催問。",
+                "tradeoff": "少了遊戲社交機會"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也怕輸，自己挑一題沒做過的試，不拿他的名次替我爭氣。",
+              "action": "導師已於自身可用時間獨立試作另一題，不安排賭注或學生陪賽。",
+              "tradeoff": "用掉空檔，也可能完全不會"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2214831260
+            },
+            "selectedIds": [
+              6,
+              2,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 2,
+              "C": 4,
+              "D": 6
+            },
+            "optionsDigest": "f5405fc963f522dabb515fb885e78e5a674ac46700b24ddcc2c9d06a5bd9f1a0"
+          },
+          "previousConsequenceDirections": {
+            "A": "教師可承受自己的挫折，不把私人好勝交給學生。",
+            "B": "學生可專注方法，也有人會失望。",
+            "C": "同儕可討論推理，不能因多數贊成強迫他加入。",
+            "D": "他能完成課業，之後是否再玩另選。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "db3ee27dfac46347829e1fd3be44e554727ae36a725a27e862abb41d7db2dce9",
+    "draftSha256": "90103b93a2ffa9f520fd3b084c367139a6c9cfe413f6a8965556981c48215179",
     "seedAssignmentVersion": 1
   }
 }

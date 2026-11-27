@@ -14,14 +14,82 @@
   "plannedTags": [
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "46c934c473c28969be24111511df9cec4ae509f85f8aca525537746654181f57",
+      "checkedAt": "2026-11-27T07:50:12.959Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只保留已明確同意的這一回，不再追加。",
+            "action": "導師已限縮本人徵詢於原一次同意範圍，取消未經同意的追加邀請。",
+            "tradeoff": "後續人力仍有缺口"
+          },
+          {
+            "id": 2,
+            "text": "若家庭改變意願，接受退出本次自願協助。",
+            "action": "導師已提供可撤回自願參與的方式，未將未答覆當已退出或以此懲罰學生。",
+            "tradeoff": "當次需另找合法人力"
+          },
+          {
+            "id": 3,
+            "text": "詢問是否只願提供不需到場的既有素材，由本人選。",
+            "action": "導師已發出非強制替代協助詢問，尚未取得物資或使用授權。",
+            "tradeoff": "可能沒有可用物，也不能保證需要"
+          },
+          {
+            "id": 4,
+            "text": "申請縮小我自己加的非必要志工項目。",
+            "action": "導師已提出非必要項目減量建議，尚未獲主管核准。",
+            "tradeoff": "原成果規模會少"
+          },
+          {
+            "id": 5,
+            "text": "由正式承辦直接徵詢其他有意願的成人，我不再代承諾。",
+            "action": "導師已向正式承辦提出依規自願徵詢需求，未提供未同意者名單作保證。",
+            "tradeoff": "要多一次聯繫"
+          },
+          {
+            "id": 6,
+            "text": "和孩子另談他自己願做的有限工作，不讓家庭熱心代填。",
+            "action": "導師已向學生發出限定安全適齡工作的自願意願詢問，未以家長同意代替本人表意。",
+            "tradeoff": "需另確認學生意願"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想只叫別人付出，自己撤掉原要拿去宣傳的個人成果段落。",
+          "action": "導師已撤回自身非必要志工成果宣傳介紹，不擅刪他人資料或要求家庭感謝。",
+          "tradeoff": "少一次曝光，也得自己改口"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 856339344
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "4c94d1de99ff564b0b677581ca9def718f5e35a6cb90164e1b86497a7f2553b9"
+      },
+      "consequenceDirections": {
+        "A": "退出不傷孩子正常參與，學校不能把缺口推回家庭。",
+        "B": "孩子可能與家長想法不同，必要成人責任不移給他。",
+        "C": "人力仍可能不足，不能用班群壓迫點名。",
+        "D": "學生服務不再替教師個人宣傳補畫面，必要紀錄仍保留。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "87a2e3f39b5abfde5accd92993ae5d07ab8b2aa55827c478b8bcc2b82e8450c0",
+    "draftSha256": "46c934c473c28969be24111511df9cec4ae509f85f8aca525537746654181f57",
     "seedAssignmentVersion": 1
   }
 }

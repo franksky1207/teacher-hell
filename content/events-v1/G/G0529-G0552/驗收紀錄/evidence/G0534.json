@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6777778a51cbe38c284692081c6929dbfa946d51b0f29debc06cf980a41a23a0",
+      "checkedAt": "2026-11-27T07:50:12.948Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這一段先只用單色，減少同時出現的線。",
+            "action": "導師已在本人授課範圍改用單色精簡板書，仍確認必要可讀性。",
+            "tradeoff": "少了顏色提示"
+          },
+          {
+            "id": 2,
+            "text": "把一板拆成幾次擦寫，每次只留當下需要的部分。",
+            "action": "導師已分段呈現自有板書內容，提供必要接續資訊，不刪學習目標。",
+            "tradeoff": "要回接前文，速度較慢"
+          },
+          {
+            "id": 3,
+            "text": "請他先留著粉筆，今天不接受額外提供。",
+            "action": "導師已婉拒本次額外粉筆，使用原校內可用工具，不轉作私人禮物。",
+            "tradeoff": "少一盒方便材料"
+          },
+          {
+            "id": 4,
+            "text": "在原授權範圍把粉筆留給另一個確需顏色的課段，不加在本板。",
+            "action": "導師已徵得提供者同意，將可收受粉筆限用於明確課務段落，未挪作私用。",
+            "tradeoff": "要另安排保管"
+          },
+          {
+            "id": 5,
+            "text": "請同事在可用工作時間幫看一小段版面，我自己重排。",
+            "action": "導師已發出限定版面回饋邀請，尚未獲應允或要求代改。",
+            "tradeoff": "要承受具體批評，也需對方有空"
+          },
+          {
+            "id": 6,
+            "text": "提供必要內容的清楚紙本或既有檔案，黑板只留提問。",
+            "action": "導師已在授課權限內提供可取得的清楚資料並精簡板面，不要求學生加購。",
+            "tradeoff": "要準備材料"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我喜歡那幾個顏色，自己買一小盒畫私人小圖，不再硬塞上課。",
+          "action": "導師已自費購用安全粉筆於准許私人創作處自畫，不取用公物或同事課務贈品。",
+          "tradeoff": "花自己的小錢與空檔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1860279789
+        },
+        "selectedIds": [
+          5,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "8164550ce9a472dec8dc8ab9b844e9e4d6e284a2b5af9244531165205cc3b22e"
+      },
+      "consequenceDirections": {
+        "A": "教師可保留偏愛，同事提供物不被順手拿去私畫。",
+        "B": "工具有合適用途，不代表現在的畫法被支持。",
+        "C": "學生能逐段看，教師需提供可回看重點。",
+        "D": "回饋可落在可改處，不變成請他代備全課。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0958547d0699f37f60aca6696ab09190f4e24896ed546bedda7300ed049e2484",
+    "draftSha256": "6777778a51cbe38c284692081c6929dbfa946d51b0f29debc06cf980a41a23a0",
     "seedAssignmentVersion": 1
   }
 }

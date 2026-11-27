@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6641d5cbe336254d37b533c0fb332b7e8512979c1075c6d36618e12221b5427e",
+      "checkedAt": "2026-11-27T07:50:12.951Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只示範如何從這一題找第一個不確定步驟。",
+            "action": "導師已在自身可回應範圍示範單題查錯，不承諾全本代解。",
+            "tradeoff": "不能一次解完全本"
+          },
+          {
+            "id": 2,
+            "text": "約孩子在正常課內自己說一題，不讓家長繼續代報。",
+            "action": "導師已向學生發出課內回饋安排，未將家長表述直接當學生已懂或不懂。",
+            "tradeoff": "家長暫時聽不到完整答案"
+          },
+          {
+            "id": 3,
+            "text": "提供短小的查錯提問卡，家長可用也可不用。",
+            "action": "導師已提供可使用的通用查錯提問，明示非必填或家長責任。",
+            "tradeoff": "材料未必完全合適"
+          },
+          {
+            "id": 4,
+            "text": "把我負責的練習回饋縮成幾個真正卡住處，不再整頁同樣評語。",
+            "action": "導師已重整自身批閱範圍之具體回饋，不刪原必要評量。",
+            "tradeoff": "教師要重看原稿"
+          },
+          {
+            "id": 5,
+            "text": "若屬他科，向原任課者提出一次有限說明需求。",
+            "action": "導師已按必要範圍聯繫授課者，尚未取得額外會談或延期同意。",
+            "tradeoff": "需等工作回覆"
+          },
+          {
+            "id": 6,
+            "text": "讓家長先按時上工，非急內容另約，不當場拖長電話。",
+            "action": "導師已結束當次非急延伸並提出正常工作回覆邀約，未延誤急迫事項。",
+            "tradeoff": "要另排時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不服那句改整本沒用，請同事空檔看我怎麼給回饋，不先替自己辯。",
+          "action": "導師已發出同儕教學回饋邀請，僅用無學生個資的自製例子，尚未獲同意。",
+          "tradeoff": "會被挑出自己的問題，也占成人時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3945326286
+        },
+        "selectedIds": [
+          6,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "f58d0b18a74bbc4bf9d07153c274e36b5dd1f865a96dafa7fe58775d068289a3"
+      },
+      "consequenceDirections": {
+        "A": "問題能交給真正授課者，不由導師保證答案。",
+        "B": "教師須確實接續，不能把之後再說當結案。",
+        "C": "家庭可減少一題題講解，不能把卡片變新作業。",
+        "D": "可獲另一種看法，學生不需替教師證明批改有效。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0b0ecd16612ddaba80618d152c3029d66529bcaecd8577ffc1a8cd1a83871c88",
+    "draftSha256": "6641d5cbe336254d37b533c0fb332b7e8512979c1075c6d36618e12221b5427e",
     "seedAssignmentVersion": 1
   }
 }

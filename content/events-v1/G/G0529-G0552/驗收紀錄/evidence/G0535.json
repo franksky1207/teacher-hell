@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "58829273907014a1c33149f4673db9ec2c8ad0317853a4c4908a8c65abfb228a",
+      "checkedAt": "2026-11-27T07:50:12.949Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓小組在課內帶一小段兩案說明，我最後補關鍵。",
+            "action": "導師已在本人課內安排有限自願小組說明，必要正確回饋仍由教師負責。",
+            "tradeoff": "占用原進度"
+          },
+          {
+            "id": 2,
+            "text": "我用自己的簡圖只示範條件怎麼改變結果。",
+            "action": "導師已以自有簡圖補充已核實條件，不使用學生未授權稿。",
+            "tradeoff": "少了學生原圖細節"
+          },
+          {
+            "id": 3,
+            "text": "請小組自願在原圖旁加前提註記，不另重畫整張。",
+            "action": "導師已提出有限註記邀請，未要求重製或假定全組同意。",
+            "tradeoff": "需要再整理，外觀不會完美"
+          },
+          {
+            "id": 4,
+            "text": "把兩案討論接到下一個正常課內段，今天先完成必要更正。",
+            "action": "導師已排定本人可調整的正常課內延伸，必要錯判補正不延後。",
+            "tradeoff": "延伸討論延後"
+          },
+          {
+            "id": 5,
+            "text": "安排各人獨立試一個前提，再比較各自走到哪一枝。",
+            "action": "導師已在授課範圍安排同目標個別短試，不新增私人作業。",
+            "tradeoff": "多一次短作答"
+          },
+          {
+            "id": 6,
+            "text": "這次不公開原圖，給作者私下具體回饋。",
+            "action": "導師已停止非必要公開原圖使用，提供本人正常回饋方式。",
+            "tradeoff": "少了全班觀摩"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想找第三條路，空檔自己試，不把沒驗過的再講成答案。",
+          "action": "導師已於自身工作空檔獨立試算另一可能，未對學生宣稱成立，必要已確認教學照常。",
+          "tradeoff": "花自己的時間，可能根本沒有"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2692982671
+        },
+        "selectedIds": [
+          5,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "6a763117f5688d6a22d4a6643eb4a57aa0a6e9a79be211a5a27b0f918ffec881"
+      },
+      "consequenceDirections": {
+        "A": "作品不被工具化，其他學生仍獲正確內容。",
+        "B": "能看到個人理解，不只看小組成品。",
+        "C": "教師可保留好奇，未成立的想法不能拿學生驗。",
+        "D": "完整成果可保留，註記不能變相要求作者改成單一路。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "aad38decf82c6ed7279265282e49ed0c89bd1fdafc73f418d00c293a9ffc0517",
+    "draftSha256": "58829273907014a1c33149f4673db9ec2c8ad0317853a4c4908a8c65abfb228a",
     "seedAssignmentVersion": 1
   }
 }

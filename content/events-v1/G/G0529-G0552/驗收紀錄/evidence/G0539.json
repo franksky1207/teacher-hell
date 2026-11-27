@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5d0701588051e08d48f7cc94e1e349ddce48ec5a4b884d9f56e52f711ad27074",
+      "checkedAt": "2026-11-27T07:50:12.956Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把共同卡住的一題放進正常課內處理。",
+            "action": "導師已在本人授課範圍安排單題課內回饋，不重啟晚段。",
+            "tradeoff": "新進度需挪一點"
+          },
+          {
+            "id": 2,
+            "text": "提供已確認的校內自願支持資訊，不替人報名。",
+            "action": "導師已提供既有合法資源資訊，未承諾名額或要求留校。",
+            "tradeoff": "要配合原時段"
+          },
+          {
+            "id": 3,
+            "text": "整理幾個可自行看的短步驟，供各人按需要使用。",
+            "action": "導師已提供本人有權使用的短自學材料，明示非新增必交工作。",
+            "tradeoff": "教師要先整理"
+          },
+          {
+            "id": 4,
+            "text": "讓學生寫出第一個不懂處，我在工作時段分次回。",
+            "action": "導師已收取自願短提問並明示正常工作回覆方式，不承諾全晚在線。",
+            "tradeoff": "回覆有等待"
+          },
+          {
+            "id": 5,
+            "text": "改在課內自願兩人互說一題，教師巡看。",
+            "action": "導師已於授課範圍安排有限自願互說，保留教師必要確認。",
+            "tradeoff": "會少一段新講解"
+          },
+          {
+            "id": 6,
+            "text": "取消我另加的非必要補充題，不用它占掉原可休息時間。",
+            "action": "導師已撤回自身額外補充題，未以其他形式要求補回。",
+            "tradeoff": "練習量變少"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想把小說看完，今晚私人時間先留一段給自己。",
+          "action": "導師已於私人可用時段開始讀自有小說，未漏接依法必要聯繫或拿學生時間補回。",
+          "tradeoff": "少了一段額外備題空檔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3048552892
+        },
+        "selectedIds": [
+          1,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "f92fa33f4474291528b8a022dc812792673176d75d4029e5b75f668d1fb17da4"
+      },
+      "consequenceDirections": {
+        "A": "教師可以享受自己的事，必要工作仍依原安排。",
+        "B": "不參加晚段者也有材料，不把全看完當新作業。",
+        "C": "需要協助者有去處，不必等放學加班。",
+        "D": "同儕可練，不把懂者當固定免費助教。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "24416ef30b1116acbe0becfb16c8cec5c840ceb538c117ab04a0b4e74d809f21",
+    "draftSha256": "5d0701588051e08d48f7cc94e1e349ddce48ec5a4b884d9f56e52f711ad27074",
     "seedAssignmentVersion": 1
   }
 }

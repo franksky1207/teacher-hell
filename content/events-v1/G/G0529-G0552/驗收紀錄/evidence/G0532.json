@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7f2ccbfbd57907099ffc2b1ac771032e73d4553b4ae011aeab67703d9f5e7be4",
+      "checkedAt": "2026-11-27T07:50:12.947Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只詢問一次有限示範，數量另由本人明確同意。",
+            "action": "導師已提出一次性限量示範邀請，尚未取得設備與人力使用同意。",
+            "tradeoff": "能看見的份量少"
+          },
+          {
+            "id": 2,
+            "text": "向學校提出正式預算與人力估算，不靠私盒續印。",
+            "action": "導師已提交可行性與預算評估需求，未承諾經費或新增同事任務。",
+            "tradeoff": "要等待審核"
+          },
+          {
+            "id": 3,
+            "text": "拒絕我自己提出的擴班建議，只用原已准許部分。",
+            "action": "導師已撤回自身非必要擴班提案，未取消他人正式權利或必要課務。",
+            "tradeoff": "失去推廣機會"
+          },
+          {
+            "id": 4,
+            "text": "改提供可合法自行列印的自製電子檔，不代印裝訂。",
+            "action": "導師已提供本人有權分享、無學生個資的自製檔案，明示不含印製服務。",
+            "tradeoff": "接收者要自行處理成冊"
+          },
+          {
+            "id": 5,
+            "text": "詢問校內既有影印裝訂管道能否接這個有限需求。",
+            "action": "導師已向承辦查詢既有服務與條件，尚未取得預約或核准。",
+            "tradeoff": "需配合原排程"
+          },
+          {
+            "id": 6,
+            "text": "今天不再示範製作，交流只談已完成樣本的教法。",
+            "action": "導師已取消自身非必要現場製作環節，改以已授權樣本作有限討論。",
+            "tradeoff": "少了操作體驗"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實喜歡手工，自己買材料做一小本，不把興趣報成各班都做得到。",
+          "action": "導師已用自費安全材料完成一本自用小冊，不借同事設備或要求續印。",
+          "tradeoff": "花私人預算，也可能做得很慢"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2375868625
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 6,
+          "D": 2
+        },
+        "optionsDigest": "f865d4632f2b7d7e30e1f7b75e2715b511e5a23e41b3e22623788ef4c4d76a5c"
+      },
+      "consequenceDirections": {
+        "A": "可用資源未必足夠，不能轉身再逼同事救急。",
+        "B": "教師可保留樂趣，不拿私人成品當免費量產證明。",
+        "C": "材料可被理解，但樣本仍須本人同意使用。",
+        "D": "學校可看見真實成本，未准前不可先接單。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0ed08612adbb7f2820a2d4fe854447638c579f7eecc28dccdf3e9784a2c35904",
+    "draftSha256": "7f2ccbfbd57907099ffc2b1ac771032e73d4553b4ae011aeab67703d9f5e7be4",
     "seedAssignmentVersion": 1
   }
 }

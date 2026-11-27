@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b255c871775ee2241b64af50cf7cd94686c605320b531b49c8e0541f9c623d99",
+      "checkedAt": "2026-11-27T07:50:12.962Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "支持在確認範圍內各自起步，再接共同內容。",
+            "action": "導師已向授課者支持安全個別起步方案，具體動作仍由授課者執行。",
+            "tradeoff": "節奏不整齊"
+          },
+          {
+            "id": 2,
+            "text": "提議全班先用共同可負荷的低強度內容。",
+            "action": "導師已提出低負荷共同起步建議，未自行更改專業健康判定。",
+            "tradeoff": "部分學生可能嫌太輕"
+          },
+          {
+            "id": 3,
+            "text": "取消我自己加的暖身速度比較，不取消必要暖身。",
+            "action": "導師已撤回自身非必要速度比較環節，不越權刪必要體育內容。",
+            "tradeoff": "少了競賽感"
+          },
+          {
+            "id": 4,
+            "text": "詢問授課者是否需要可回看的安全步驟圖，而不是每次口令追趕。",
+            "action": "導師已提出既有或自製合宜圖示支援邀請，尚未取得採用同意。",
+            "tradeoff": "要整理資料"
+          },
+          {
+            "id": 5,
+            "text": "邀相關專業人員在正常工作時間提供通用恢復節奏資訊，不談個人病史。",
+            "action": "導師已發出不涉個案的專業資訊詢問，未另對學生作健康判斷。",
+            "tradeoff": "要配合時間，也可能無法安排"
+          },
+          {
+            "id": 6,
+            "text": "把後續協作談話約在正式工作空檔，不再吃他唯一短休息。",
+            "action": "導師已提出後續工作協調邀約，不要求授課者以休息換取支持。",
+            "tradeoff": "決定較慢"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己也想伸展，原休息空檔做幾個安全熟悉的動作，不叫他免費教我。",
+          "action": "導師已在自身可休息且安全位置作一般熟悉伸展，不擅示範專業復健、不占學生課務。",
+          "tradeoff": "少了一段滑手機時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3260070658
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "854c703c9ec3af713cf00c12ee43c86f210352d612a48d420a99ba78fe5dfaf0"
+      },
+      "consequenceDirections": {
+        "A": "學生不再為名次趕節奏，原課程照常。",
+        "B": "教師可照顧自己，不把私人練習升成全班要求。",
+        "C": "共同起點可減少標記，仍須照顧個別限制。",
+        "D": "老師能保留私人時間，必要課務仍有接續。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5ede28b720abe4274574887314cce5a0140175c867361fc02e791953188ee200",
+    "draftSha256": "b255c871775ee2241b64af50cf7cd94686c605320b531b49c8e0541f9c623d99",
     "seedAssignmentVersion": 1
   }
 }

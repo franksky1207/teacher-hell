@@ -14,14 +14,82 @@
   "plannedTags": [
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0c16ca7ddff7c5ae60780027a601d24bfe9e61e5d0cb19e06237c2e90a9c93d4",
+      "checkedAt": "2026-11-27T07:50:12.963Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向承辦提出可預排的固定接待範圍，不私排同事。",
+            "action": "導師已提交一般性預排建議，尚未取得排班核准。",
+            "tradeoff": "彈性變少，也可能不獲採用"
+          },
+          {
+            "id": 2,
+            "text": "申請把我自行追加的非必要參訪段落縮掉。",
+            "action": "導師已撤回自身非必要加碼需求，未擅自取消已成立的正式參訪。",
+            "tradeoff": "少了介紹效果"
+          },
+          {
+            "id": 3,
+            "text": "我提出一次有限自願協助，只帶自己確實能負責的段落。",
+            "action": "導師已向權責者提出一次性支援意願，尚未獲排班或替他人答應。",
+            "tradeoff": "占我的工作空檔"
+          },
+          {
+            "id": 4,
+            "text": "提供經核准可分享的通用資料，請承辦評估可否少一段現場介紹。",
+            "action": "導師已提供可用公開資料供評估，未宣稱接待已可無人值守。",
+            "tradeoff": "資料未必能取代現場"
+          },
+          {
+            "id": 5,
+            "text": "請主管檢視其本職與接待的重疊，不只問哪天還空。",
+            "action": "導師已提出工作量檢視需求，未代主管刪除必要職務。",
+            "tradeoff": "需揭示工作量，也不一定減得成"
+          },
+          {
+            "id": 6,
+            "text": "停止我自己額外邀的非必要看校小聚，不把別人的時間算進去。",
+            "action": "導師已取消自身未成正式校務的私人加邀，不更動他人已確認權益。",
+            "tradeoff": "少了一次可能有用的交流"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我怕被嫌不熱心，索性把自己能做多少寫清楚，不再拿大話撐。",
+          "action": "導師已向適當主管提出自身可用工作範圍的如實說明，不提供同事私人行程或承諾額外常態支援。",
+          "tradeoff": "留下自己的限制，也可能不好看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2722483521
+        },
+        "selectedIds": [
+          5,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "6def0c30b255d0a0f4b0e406f0f41e9d4c1928eeeabc4c01143e510db431106f"
+      },
+      "consequenceDirections": {
+        "A": "若採用可省口頭重講，仍不公開學生個資。",
+        "B": "若核准便需真接，不代表能替所有人保證。",
+        "C": "主管可依真實範圍安排，教師須守住自己說的那段。",
+        "D": "可討論真正取捨，不能只再找一個熱心人。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "81b32f100e1e11b7a5e94aa24d3e70b65ce4a2287208aa6ece67947254621d11",
+    "draftSha256": "0c16ca7ddff7c5ae60780027a601d24bfe9e61e5d0cb19e06237c2e90a9c93d4",
     "seedAssignmentVersion": 1
   }
 }

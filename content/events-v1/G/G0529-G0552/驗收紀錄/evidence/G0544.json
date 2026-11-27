@@ -14,14 +14,82 @@
   "plannedTags": [
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "52070cfea54a3c7790aba04ddb5a71ba796b59960b9bdc01ffea6066dbff210a",
+      "checkedAt": "2026-11-27T07:50:12.959Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提議這節改做不用球的原課內練習。",
+            "action": "導師已向體育教師提出不用球的替代練習建議，尚未改課。",
+            "tradeoff": "少了帶球技巧"
+          },
+          {
+            "id": 2,
+            "text": "申請使用另一個已可安全評估的場地，不先移動。",
+            "action": "導師已向場地權責者提出替代使用申請，尚未獲准。",
+            "tradeoff": "可能借不到"
+          },
+          {
+            "id": 3,
+            "text": "詢問授課者能否以低速、限定範圍的基本動作接續。",
+            "action": "導師已提出低速基本練習建議，動作與場地由授課者核定。",
+            "tradeoff": "少了刺激對抗"
+          },
+          {
+            "id": 4,
+            "text": "今天不再加我原提的非必要對抗回合。",
+            "action": "導師已撤回自身非必要加碼回合，不更動授課者原課務。",
+            "tradeoff": "少一次比賽感"
+          },
+          {
+            "id": 5,
+            "text": "下次正常班務用圖談越界後誰處理，不重演追球。",
+            "action": "導師已安排本人可決定的紙面安全經驗回看，未新增實地風險演練。",
+            "tradeoff": "占用班務時間"
+          },
+          {
+            "id": 6,
+            "text": "若他願意，只請他說自己在哪一步停下，不塑造成英雄。",
+            "action": "導師已發出限定親見內容的自願分享邀請，未要求公開認錯或帶隊。",
+            "tradeoff": "仍可能覺得尷尬"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想打球，另找同事空檔玩一次，不借學生的輸贏過癮。",
+          "action": "導師已提出私人成人球敘邀請，限核准場地及安全條件，尚未約成。",
+          "tradeoff": "花自己的時間，也可能被拒"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1036637382
+        },
+        "selectedIds": [
+          3,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "ea930efc0cc1de5717de63e0a04295492162d08248c5544768b49613f3dcc55d"
+      },
+      "consequenceDirections": {
+        "A": "教師的好勝可有成人去處，不扣住學生陪打。",
+        "B": "時間可回到正常內容，不把取消當集體處罰。",
+        "C": "學生可練控制，不能自行放寬邊界。",
+        "D": "可把角色分清，不能讓學生當取球員。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "10626e81ce2043c289c2543d0af0ab297e99a68885d99daf67f699eb4bb2f946",
+    "draftSha256": "52070cfea54a3c7790aba04ddb5a71ba796b59960b9bdc01ffea6066dbff210a",
     "seedAssignmentVersion": 1
   }
 }

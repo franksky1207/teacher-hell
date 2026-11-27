@@ -15,14 +15,155 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "791480a5d8803bd52bf37261e2091a8df40e9898f380215dececd33cce2a3356",
+      "checkedAt": "2026-11-27T07:50:12.957Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在必要限制內採可撤回的短期座位試行。",
+            "action": "導師已在本人班級安排權限內提出短期試行與回看時間，不保證特定席位。",
+            "tradeoff": "要追蹤，也可能再調一次"
+          },
+          {
+            "id": 2,
+            "text": "維持一般順序，對確認的需要另作合理調整。",
+            "action": "導師已依必要條件調整一般排序，不以學業表現分配可及程度。",
+            "tradeoff": "位置不一定合喜好"
+          },
+          {
+            "id": 3,
+            "text": "先私下收集各人可自願說的座位困難，再排。",
+            "action": "導師已提供有限自願需求表達方式，不蒐集無關醫療細節。",
+            "tradeoff": "需要多一道整理"
+          },
+          {
+            "id": 4,
+            "text": "邀學生提出可行互換，再由成人核對必要限制。",
+            "action": "導師已開放非強制互換提案，尚未核准所有交換。",
+            "tradeoff": "可能有連串協商"
+          },
+          {
+            "id": 5,
+            "text": "先改善教材呈現，不把人人看不清都變成搶前排。",
+            "action": "導師已調整自身可決定的板書與材料可讀性，必要個別安排照常。",
+            "tradeoff": "教師要重備可讀材料"
+          },
+          {
+            "id": 6,
+            "text": "約定正常班務時間回看一次實際使用，不天天投票換位。",
+            "action": "導師已明示非急迫座位回看安排，未封閉必要申請。",
+            "tradeoff": "暫時不滿意者需等待一般回看"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想靠桌椅整齊找成就感，自己原想拍的座位擺拍先不拍。",
+          "action": "導師已取消自身非必要的教室桌椅成果擺拍，不為照片另移學生或家具；必要座位支持與不當排名更正仍共同完成",
+          "tradeoff": "少了一張自己想展示的成果照，也得放下整齊畫面"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1892026474
+        },
+        "selectedIds": [
+          1,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "d6ee21b287611bfa8b00ce41e543ce4f12aced3a3ff94316191aeb5470ec4b19"
+      },
+      "consequenceDirections": {
+        "A": "真困難仍隨時處理，不以固定日延誤必要調整。",
+        "B": "學生能取得支持，規則須有可說明依據。",
+        "C": "學生不用為教師照片再換位，教師仍須按實際需求處理座位，不以取消拍攝代替公平安排。",
+        "D": "學生可回報真實感受，不靠成績維持位置。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒撤座位績效圖可能涵蓋所有分支都須撤除的不當排名，改為取消教師自己額外的座位擺拍，不以必要更正當情緒獨有行動。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "在必要限制內採可撤回的短期座位試行。",
+                "action": "導師已在本人班級安排權限內提出短期試行與回看時間，不保證特定席位。",
+                "tradeoff": "要追蹤，也可能再調一次"
+              },
+              {
+                "id": 2,
+                "text": "維持一般順序，對確認的需要另作合理調整。",
+                "action": "導師已依必要條件調整一般排序，不以學業表現分配可及程度。",
+                "tradeoff": "位置不一定合喜好"
+              },
+              {
+                "id": 3,
+                "text": "先私下收集各人可自願說的座位困難，再排。",
+                "action": "導師已提供有限自願需求表達方式，不蒐集無關醫療細節。",
+                "tradeoff": "需要多一道整理"
+              },
+              {
+                "id": 4,
+                "text": "邀學生提出可行互換，再由成人核對必要限制。",
+                "action": "導師已開放非強制互換提案，尚未核准所有交換。",
+                "tradeoff": "可能有連串協商"
+              },
+              {
+                "id": 5,
+                "text": "先改善教材呈現，不把人人看不清都變成搶前排。",
+                "action": "導師已調整自身可決定的板書與材料可讀性，必要個別安排照常。",
+                "tradeoff": "教師要重備可讀材料"
+              },
+              {
+                "id": 6,
+                "text": "約定正常班務時間回看一次實際使用，不天天投票換位。",
+                "action": "導師已明示非急迫座位回看安排，未封閉必要申請。",
+                "tradeoff": "暫時不滿意者需等待一般回看"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也不想再拿座位當我的管理成績，把自己那張排位比較圖撤掉。",
+              "action": "導師已撤除自身非必要座位績效圖，不銷毀必要紀錄或停止合理安排。",
+              "tradeoff": "少了得意的控制工具"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 550941489
+            },
+            "selectedIds": [
+              1,
+              4,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 1,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "db3fab999ddea47e5e4a4d506b55c77c394fac41df34b0a745471016dbedf22a"
+          },
+          "previousConsequenceDirections": {
+            "A": "本人可拒絕換，不讓同儕代判誰該坐後面。",
+            "B": "學生可回報真實感受，不靠成績維持位置。",
+            "C": "安靜者也能提，無需在全班證明自己最需要。",
+            "D": "教師不再把學生前後當表現圖，正式座位紀錄仍保留。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4c095158d08a9f49afb0d562217da3bceb4726e5e901c4fea882a7f2f395d5da",
+    "draftSha256": "791480a5d8803bd52bf37261e2091a8df40e9898f380215dececd33cce2a3356",
     "seedAssignmentVersion": 1
   }
 }

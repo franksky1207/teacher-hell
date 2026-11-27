@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8f22d3ad69e6d4784310df20a174c79b52227ad0cf2420ee508dac7d2024faed",
+      "checkedAt": "2026-11-27T15:22:49.804Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持封鎖，提供原可公開的安全處理資訊，不加展示。",
+            "action": "玩家已維持原封鎖及有限事實說明，不取得檢修完成或通行核准。",
+            "tradeoff": "參訪內容少"
+          },
+          {
+            "id": 2,
+            "text": "向原承辦提出既有核可安全空間的替代導覽建議。",
+            "action": "玩家已提出有限替代行程申請，未獲准或取得場地。",
+            "tradeoff": "可能沒空間"
+          },
+          {
+            "id": 3,
+            "text": "只提供原已授權的無人教學圖像供承辦選，不新入室拍。",
+            "action": "玩家已提出限既有合法素材的展示替代，不取得新用途核准或進室。",
+            "tradeoff": "不像現場"
+          },
+          {
+            "id": 4,
+            "text": "讓原電工或設施窗口依職權回工程狀態，我不補猜原因。",
+            "action": "玩家已提出原設施正式資訊接續需求，未取得事故原因或完工。",
+            "tradeoff": "回覆可能慢"
+          },
+          {
+            "id": 5,
+            "text": "將本人見聞依原程序記錄，不在群中猜前一位教師。",
+            "action": "玩家已提交有限本人事實紀錄，不判定他人過失。",
+            "tradeoff": "自己多整理"
+          },
+          {
+            "id": 6,
+            "text": "本次停止本人非必要群組辯論，原正式回覆由原權責接。",
+            "action": "玩家已停止非必要群組攻防，提出正式窗口接續，不免原通知責任。",
+            "tradeoff": "可能被嫌不積極"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕被說臨時搗亂，但這次自己具名在正式紀錄上承認是我叫停，不把這口氣推給電工；危險原因仍由專業查。",
+          "action": "玩家已提交本人具名的有限停用通報事實及工作立場，不核定責任或解除封鎖。",
+          "tradeoff": "主管可能先記住我，自己得面對追問"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2995783170
+        },
+        "selectedIds": [
+          1,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "8b80f6ff37e98245bb5a18c9843e78f10d95744cf3417f17a2d47749c2032e1d"
+      },
+      "consequenceDirections": {
+        "A": "可保真實，不拿資訊代專業放行。",
+        "B": "玩家承擔本人真實啟動停用的工作立場，不冒電工判定、背不存在工程錯誤或保證事故原因。",
+        "C": "可保成果，圖像不冒室內已安全。",
+        "D": "可保工作，不隱必要安全資訊。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "aade31a2c6361f80ad9a01fbd21c7618c873e541f2841f55ad6c21381b507a05",
+    "draftSha256": "8f22d3ad69e6d4784310df20a174c79b52227ad0cf2420ee508dac7d2024faed",
     "seedAssignmentVersion": 1
   }
 }

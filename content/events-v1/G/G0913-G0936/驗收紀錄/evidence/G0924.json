@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ace4c176d1369eb0f322f5a81d21bb3e22f87dbdf57ebba661139cce80f15597",
+      "checkedAt": "2026-11-27T15:22:49.803Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只按原必要個案程序接續，不再加全班示範。",
+            "action": "導師已停止本人非必要公開延伸活動，維持原財物與行為處理。",
+            "tradeoff": "沒有公開結論"
+          },
+          {
+            "id": 2,
+            "text": "用教師自編假物件情境說明規範不等同執法權。",
+            "action": "導師已安排有限無識別權限辨認練習，不使用私物或真個案。",
+            "tradeoff": "用課內彈性"
+          },
+          {
+            "id": 3,
+            "text": "他若願，私下只說下次看到疑慮怎麼找成人，不再實際碰鎖。",
+            "action": "導師已提出有限自願求助程序回饋邀請，未取得參與或和解。",
+            "tradeoff": "可能覺得自己被看小"
+          },
+          {
+            "id": 4,
+            "text": "原櫃管理由有權成人檢查現有合法流程，不另派學生查。",
+            "action": "導師已向原權責提出有限管理流程檢視需求，未取得調整核准或查閱私物。",
+            "tradeoff": "教師工作多"
+          },
+          {
+            "id": 5,
+            "text": "提供原可公開的物件遺失損壞申請管道，不代判賠償。",
+            "action": "導師已提供既有合法財物異議資訊，不核定責任或款項。",
+            "tradeoff": "當事人要再走程序"
+          },
+          {
+            "id": 6,
+            "text": "這次不再讓支持規範的學生代為提醒別人，原成人照規執行。",
+            "action": "導師已停止本人非必要同儕代催需求，維持成人原職務。",
+            "tradeoff": "少了熱心人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再把支持我的規定當勳章，自己在原班務說明補註支持不等於可以拆別人的鎖，送原權責確認；不再讓他替我出手。",
+          "action": "導師已在本人有權文字範圍提出既有規範不授私人拆物權的有限補註，未核准新規或宣稱原曾授權，不免必要財物處理。",
+          "tradeoff": "要公開承認支持也得有限制，他可能仍不高興"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1430699123
+        },
+        "selectedIds": [
+          5,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "e47a629df844d03c2991e85d8a4410ed47979fc8bbb08561141513234496d4e4"
+      },
+      "consequenceDirections": {
+        "A": "可保救濟，不把資訊當理賠成功。",
+        "B": "可有程序，不以說對免原責任。",
+        "C": "可保當事人，不以低調免必要更正。",
+        "D": "教師具體補明現行權限邊界，不假設原文字確有漏洞或替學生免責，與虛構例教學不同為原說明補註。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒假設原班務說明有可核實含糊處，與明確禁借規範未必相符；改為不承認不存在授權的明確補註提案。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "只按原必要個案程序接續，不再加全班示範。",
+                "action": "導師已停止本人非必要公開延伸活動，維持原財物與行為處理。",
+                "tradeoff": "沒有公開結論"
+              },
+              {
+                "id": 2,
+                "text": "用教師自編假物件情境說明規範不等同執法權。",
+                "action": "導師已安排有限無識別權限辨認練習，不使用私物或真個案。",
+                "tradeoff": "用課內彈性"
+              },
+              {
+                "id": 3,
+                "text": "他若願，私下只說下次看到疑慮怎麼找成人，不再實際碰鎖。",
+                "action": "導師已提出有限自願求助程序回饋邀請，未取得參與或和解。",
+                "tradeoff": "可能覺得自己被看小"
+              },
+              {
+                "id": 4,
+                "text": "原櫃管理由有權成人檢查現有合法流程，不另派學生查。",
+                "action": "導師已向原權責提出有限管理流程檢視需求，未取得調整核准或查閱私物。",
+                "tradeoff": "教師工作多"
+              },
+              {
+                "id": 5,
+                "text": "提供原可公開的物件遺失損壞申請管道，不代判賠償。",
+                "action": "導師已提供既有合法財物異議資訊，不核定責任或款項。",
+                "tradeoff": "當事人要再走程序"
+              },
+              {
+                "id": 6,
+                "text": "這次不再讓支持規範的學生代為提醒別人，原成人照規執行。",
+                "action": "導師已停止本人非必要同儕代催需求，維持成人原職務。",
+                "tradeoff": "少了熱心人"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也被那句支持我的規定刺到，直接把自己原班務說明裡可能讓人以為可自行取物的那句標成待修，向原權責提出改清；不讓他替我的含糊出手。",
+              "action": "導師已提出本人原說明可核實含糊處的有限釐清需求，未核准新規、承認不存在授權或免個案責任。",
+              "tradeoff": "要承認說明可能不好，也可能被他聽成免責"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2787870667
+            },
+            "selectedIds": [
+              5,
+              3,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 5,
+              "C": "emotional",
+              "D": 3
+            },
+            "optionsDigest": "69f8d1062d3f8ec9a6ebd3ec236410b51b1a21f269e3b0c46924f074bc93d270"
+          },
+          "previousConsequenceDirections": {
+            "A": "可改實務，不搜非必要私物。",
+            "B": "可保救濟，不把資訊當理賠成功。",
+            "C": "教師提出真實可確認的本人說明改進，不虛構曾授權、不替學生全責或撤必要財物處理。",
+            "D": "可有程序，不以說對免原責任。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4974b712d26dee2d8f9da667faab88cde4f90cff495f94ec6b46af352224c687",
+    "draftSha256": "ace4c176d1369eb0f322f5a81d21bb3e22f87dbdf57ebba661139cce80f15597",
     "seedAssignmentVersion": 1
   }
 }

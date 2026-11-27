@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "65a7a6e7e9739bad585d5a7a491ba3d216f2e912a5805a40dcc4e5d254d27d50",
+      "checkedAt": "2026-11-27T15:22:49.812Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依已核實現行合法規範處理，不另加班級禁令。",
+            "action": "導師已維持原已核實合法設備安排，不追溯新增違規。",
+            "tradeoff": "他可能還想辯範圍"
+          },
+          {
+            "id": 2,
+            "text": "向原權責提出純文字閱讀器用途釐清，不先宣布全面開放。",
+            "action": "導師已提出有限正式用途確認，未取得新設備核准。",
+            "tradeoff": "要等"
+          },
+          {
+            "id": 3,
+            "text": "本段在原允許範圍改用合法紙本讀同類文字，本人自願選。",
+            "action": "導師已提供原校規內有限自願紙本替代方式，不扣私物或新增購買。",
+            "tradeoff": "沒原機方便"
+          },
+          {
+            "id": 4,
+            "text": "請他自願只說現在想讀哪段，不看帳號或全書庫。",
+            "action": "導師已提出有限自願文本興趣詢問，不取得設備查閱權。",
+            "tradeoff": "像少了設備辯論"
+          },
+          {
+            "id": 5,
+            "text": "將下次規範討論放回原班務程序，不在自習逐句拉鋸。",
+            "action": "導師已提出原程序內有限未來規範建議受理，不核定新規或改當下合法安排。",
+            "tradeoff": "他要等"
+          },
+          {
+            "id": 6,
+            "text": "這次不再加讀後感，按原必要學習接續。",
+            "action": "導師已不追加本人非必要課外書回饋任務，維持原必要課務。",
+            "tradeoff": "看不到新回饋"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那句看字機器勾得好奇，問他若願意只給我看一個不含私資料的字體設定；我不翻他的小說庫，更不把借看當許可。",
+          "action": "導師已提出需原校規允許與本人自願的有限無敏感設定交流，未取得操作、借用或使用核准。",
+          "tradeoff": "會占自願時間，也可能讓人誤會靠親近就能過關"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2791470470
+        },
+        "selectedIds": [
+          6,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "4595ace094e6395a0f2c780cf85d06e7522041d6601a5ce785d3e8cbc4640567"
+      },
+      "consequenceDirections": {
+        "A": "只停止本人非必要新增要求，不宣稱原已有額外作業。",
+        "B": "教師提出本人有限設備興趣交流，不在未准時使用學生設備、課務先依原規接。",
+        "C": "可談閱讀，不拿作品偏好判品行。",
+        "D": "可保正當意見，不拖必要當下權益。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cf543baf8ff54337fb66342bd10eef7b7301bbe0f6d7ea5284433725b6687847",
+    "draftSha256": "65a7a6e7e9739bad585d5a7a491ba3d216f2e912a5805a40dcc4e5d254d27d50",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "481cefb030f13802d1bc7e31b3de44a9eb43e702af971ef61effbe16a621605e",
+      "checkedAt": "2026-11-27T15:22:49.795Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向原設施權責申請通風評估，不自開鎖扣。",
+            "action": "導師已提出有限正式通風評估需求，未取得結果或改設施。",
+            "tradeoff": "要等"
+          },
+          {
+            "id": 2,
+            "text": "在原可核可條件下申請本段替代教室，未准不移班。",
+            "action": "導師已提出原程序內有限替代教室申請，未取得場地或移動核准。",
+            "tradeoff": "移動有成本，也可能無空間"
+          },
+          {
+            "id": 3,
+            "text": "請原權責依現行辦法評估冷氣合理例外，不擅開。",
+            "action": "導師已提出現行制度內有限冷氣條件評估需求，未獲准或啟用。",
+            "tradeoff": "可能不准"
+          },
+          {
+            "id": 4,
+            "text": "這段減少本人非必要口頭連講，依原課內安排作有限個別練習。",
+            "action": "導師已在授課範圍限縮非必要講述，維持必要環境與健康接續。",
+            "tradeoff": "少一段講評"
+          },
+          {
+            "id": 5,
+            "text": "請職員提供可公開的限開與通風使用資訊，不讓學生猜開法。",
+            "action": "導師已提出既有合法設施資訊需求，未取得資料或新操作許可。",
+            "tradeoff": "不像立即解決"
+          },
+          {
+            "id": 6,
+            "text": "將本人可觀察的時間位置回原窗口，不與他爭誰更怕出事。",
+            "action": "導師已提交有限環境現況資訊，不作未測的健康或工程結論。",
+            "tradeoff": "要整理"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想自己講到像在對抗安全，這一小段和願意的學生一起在原安全公共區短休，先申請原課務允許，不逼大家硬坐證明沒事。",
+          "action": "導師已提出需原權責允許的有限自願安全轉場休息方案，未獲准、移班或改鎖。",
+          "tradeoff": "原進度少一段，還可能不被允許"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2704567023
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "9f283be218d52e066e834dafb1b0a1d00283c4f0d1459698b2d1b7e623cbe052"
+      },
+      "consequenceDirections": {
+        "A": "可有共同理解，不教危險拆扣。",
+        "B": "教師申請本人共同有限活動轉場，不將休息當必要健康流程的替代或私自離室。",
+        "C": "可查合法彈性，不以專注低落冒醫療判定。",
+        "D": "可兼看風險，不把申請當空氣已改善。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "47da02dffc0e30cceea090ee13a9ff35dbd2ba87969ce19f35efbeace4a474e9",
+    "draftSha256": "481cefb030f13802d1bc7e31b3de44a9eb43e702af971ef61effbe16a621605e",
     "seedAssignmentVersion": 1
   }
 }

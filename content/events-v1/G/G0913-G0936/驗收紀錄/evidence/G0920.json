@@ -15,14 +15,155 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cfe75df6fc9877472b01e61260dea5f772dd07a1b30dba91eb506ed3fe01130d",
+      "checkedAt": "2026-11-27T15:22:49.798Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只提供原作業要求，私人聚會由各家依法自行決定。",
+            "action": "導師已提供有限原課務資訊，不核准私人聚會或代家長同意。",
+            "tradeoff": "他可能覺得老師不挺"
+          },
+          {
+            "id": 2,
+            "text": "我用自己的材料做一張報告結構示例，放原正式課務管道給各組自願參考，不要求今晚做完。",
+            "action": "導師已製作並提供本人有權使用的有限報告結構示例，不代寫學生報告或改正式截止，不新增私人聚會任務。",
+            "tradeoff": "教師多做，學生也可能覺得用不到"
+          },
+          {
+            "id": 3,
+            "text": "請各組在原合法課內自行確認未完分工，不靠一戶客廳統包。",
+            "action": "導師已提出原課內有限分工確認，不安排新私人聚會。",
+            "tradeoff": "要等到校內"
+          },
+          {
+            "id": 4,
+            "text": "向相關家長只提供本人可核的原作業範圍，不傳其他家庭地址。",
+            "action": "導師已提供限必要知情的有限課務資訊，不洩第三人地址。",
+            "tradeoff": "仍會有人想問更多"
+          },
+          {
+            "id": 5,
+            "text": "若學生願意，回到原可用管道只問一項報告內容，不提供全晚即時指導。",
+            "action": "導師已提供原工作允許範圍的有限自願學習問答途徑，不承諾即時全答。",
+            "tradeoff": "幫助有限"
+          },
+          {
+            "id": 6,
+            "text": "本次不再加私人群聊，後續必要事依原正式管道聯繫。",
+            "action": "導師已停止本人非必要私人聚會延伸聊天，維持必要聯繫。",
+            "tradeoff": "熟悉感少一點"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想他一個人把每家都扛起來，請他自願把原公開的報告分工拿回各組，自己今天只做本人那份；我也不再拿他當全班聯絡站。",
+          "action": "導師已停止本人向其追加非必要跨組聯絡，提出可拒絕的原作業分工回歸建議，不取得各家私人決定。",
+          "tradeoff": "他可能覺得失去大家中心的位置，自己要多聯絡"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1940151607
+        },
+        "selectedIds": [
+          4,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "19ab372a9a12160229864f447aa30fb90499b2d77c9569c70b3bb0ac71178954"
+      },
+      "consequenceDirections": {
+        "A": "可少誤會，不把作業說明冒安全背書。",
+        "B": "可分責任，不由導師支配家中空間。",
+        "C": "新增具體課務支架而非取消不存在的當晚加碼，私人聚會與監護意願仍由各家決定。",
+        "D": "教師停止本人非必要集中學生聯絡角色並承接正式班務聯繫，不命令私人朋友散會或侵屋主權。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通2停止當晚額外成果要求缺少原已存在加碼前提；改為提供本人新製有限結構示例。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "只提供原作業要求，私人聚會由各家依法自行決定。",
+                "action": "導師已提供有限原課務資訊，不核准私人聚會或代家長同意。",
+                "tradeoff": "他可能覺得老師不挺"
+              },
+              {
+                "id": 2,
+                "text": "將非必要當晚成果要求停止，原正式學習依規接續。",
+                "action": "導師已停止本人本日非必要加碼成果需求，維持原正式學習接續。",
+                "tradeoff": "報告可能不夠漂亮"
+              },
+              {
+                "id": 3,
+                "text": "請各組在原合法課內自行確認未完分工，不靠一戶客廳統包。",
+                "action": "導師已提出原課內有限分工確認，不安排新私人聚會。",
+                "tradeoff": "要等到校內"
+              },
+              {
+                "id": 4,
+                "text": "向相關家長只提供本人可核的原作業範圍，不傳其他家庭地址。",
+                "action": "導師已提供限必要知情的有限課務資訊，不洩第三人地址。",
+                "tradeoff": "仍會有人想問更多"
+              },
+              {
+                "id": 5,
+                "text": "若學生願意，回到原可用管道只問一項報告內容，不提供全晚即時指導。",
+                "action": "導師已提供原工作允許範圍的有限自願學習問答途徑，不承諾即時全答。",
+                "tradeoff": "幫助有限"
+              },
+              {
+                "id": 6,
+                "text": "本次不再加私人群聊，後續必要事依原正式管道聯繫。",
+                "action": "導師已停止本人非必要私人聚會延伸聊天，維持必要聯繫。",
+                "tradeoff": "熟悉感少一點"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也不想他一個人把每家都扛起來，請他自願把原公開的報告分工拿回各組，自己今天只做本人那份；我也不再拿他當全班聯絡站。",
+              "action": "導師已停止本人向其追加非必要跨組聯絡，提出可拒絕的原作業分工回歸建議，不取得各家私人決定。",
+              "tradeoff": "他可能覺得失去大家中心的位置，自己要多聯絡"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2185288968
+            },
+            "selectedIds": [
+              4,
+              5,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": "emotional",
+              "C": 4,
+              "D": 6
+            },
+            "optionsDigest": "c26d400878eea362820e101c5aa1ff9da29de57f0cf141b98680006d2ccf46d4"
+          },
+          "previousConsequenceDirections": {
+            "A": "可有學習支持，不讓私人邀約變教師值班。",
+            "B": "教師停止本人非必要集中學生聯絡角色並承接正式班務聯繫，不命令私人朋友散會或侵屋主權。",
+            "C": "可少誤會，不把作業說明冒安全背書。",
+            "D": "可保時間，不中斷急迫安全聯繫。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "82b28534724a797b799ac37ad1ae6b0baccfba10c84d8807800e963c527cf543",
+    "draftSha256": "cfe75df6fc9877472b01e61260dea5f772dd07a1b30dba91eb506ed3fe01130d",
     "seedAssignmentVersion": 1
   }
 }

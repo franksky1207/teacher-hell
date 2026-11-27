@@ -15,14 +15,82 @@
     "G04",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dada2abd957cab35fafc6f63b449cc6b40a3067d6ef51353714b01c5fba1b60b",
+      "checkedAt": "2026-11-27T15:22:49.804Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "後續練習交原社團負責者依真實核實結果接，不私下保證照練。",
+            "action": "導師已提出原合法活動權責接續需求，不取得場地可用結論或免封停。",
+            "tradeoff": "他可能覺得你不幫忙"
+          },
+          {
+            "id": 2,
+            "text": "原場地未確認前，提供既有可行的非實地訓練資訊供自願選。",
+            "action": "導師已提供既有合法一般練習資訊，不新增實地活動或取得資源。",
+            "tradeoff": "不像真正打球"
+          },
+          {
+            "id": 3,
+            "text": "邀他在原安全談話處自願說擔心失去哪段練習，不問他代查風險。",
+            "action": "導師已提出有限自願活動顧慮詢問，未取得完整現場資訊或心理結論。",
+            "tradeoff": "可能仍只說沒事"
+          },
+          {
+            "id": 4,
+            "text": "請校方按程序回覆原報修與場地進度，我只轉核實內容。",
+            "action": "導師已提出原正式維修與場地資訊需求，未取得檢查結論或開放核准。",
+            "tradeoff": "可能要等"
+          },
+          {
+            "id": 5,
+            "text": "這次不再請他額外接報修聯絡，原成人直接處理。",
+            "action": "導師已停止本人非必要學生維修中介需求，維持必要成人核實與資訊接續。",
+            "tradeoff": "少了他熟場地的方便"
+          },
+          {
+            "id": 6,
+            "text": "向原權責詢問是否有已核准安全替代場地，不先讓人移去。",
+            "action": "導師已查詢既有合法替代場地資訊，未取得空間或活動核准。",
+            "tradeoff": "可能沒有"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也捨不得他只聽到封場兩字，提出自己在原可調時間陪一次合法室內無球動作練習；先讓社團與校方評估，不拿陪練換他把話說完整。",
+          "action": "導師已提出需原活動權責核可的本人有限自願陪練申請，未獲准、執行或替代必要封停。",
+          "tradeoff": "自己得多留時間，也可能幫不上忙"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1059521356
+        },
+        "selectedIds": [
+          4,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "10d8813dbea1808c368d2a3a817e1c338bcad112d81b43b676f46d35efb82e0f"
+      },
+      "consequenceDirections": {
+        "A": "可有來源，不用模糊語句判完工。",
+        "B": "可減學生壓力，不阻其正常補充事實。",
+        "C": "可聽需求，不以怕取消免實際危害處理。",
+        "D": "教師提出本人有限活動投入，不作安全查核條件或原球場可用保證，參與需自願核可。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "40684af6bfc8b430641f1f2de98bfbad0fe6a67ad6dc43b3abe6633afb646f63",
+    "draftSha256": "dada2abd957cab35fafc6f63b449cc6b40a3067d6ef51353714b01c5fba1b60b",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a39f30f871290767379443905e2a33117ab1fdb0ae90a6506e785f62f4f1a9a4",
+      "checkedAt": "2026-11-27T15:22:49.803Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按原標準只受理一份主題整體成果，另份不冒正式交件。",
+            "action": "導師已依原評量權限說明並受理可合法提交的主題範圍，不追溯改分。",
+            "tradeoff": "他多做的難放"
+          },
+          {
+            "id": 2,
+            "text": "在原裁量允許且各人同意下，提出兩子題如何共同回答一個問題。",
+            "action": "導師已提出需原標準及本人意願的有限整合方案，未完成作品或核定分數。",
+            "tradeoff": "可能接不起來"
+          },
+          {
+            "id": 3,
+            "text": "只用現有自作內容作課內回饋，未完如實記不急叫全交。",
+            "action": "導師已提供原一般教學範圍的有限現況回饋，不宣稱正式交件已成。",
+            "tradeoff": "沒有漂亮完成感"
+          },
+          {
+            "id": 4,
+            "text": "請各組員自願分別說明自己實際做的部分，不由他代答。",
+            "action": "導師已提出有限自願個人實作確認，不公開逼供或預定責任。",
+            "tradeoff": "會聽到不同說法"
+          },
+          {
+            "id": 5,
+            "text": "依原規則申請等值補作時程，不因先花錢取得特權。",
+            "action": "導師已提出原制度內有限補作申請，未核准或完成補交。",
+            "tradeoff": "可能不准"
+          },
+          {
+            "id": 6,
+            "text": "給組員原有合法選題條件，讓各人自行提交偏好再由成人按規處理。",
+            "action": "導師已提供有限原標準內的選題回饋方式，不取得共識或加總量。",
+            "tradeoff": "還得面對不同意見"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再替兩邊做和事佬，提出由我問兩份同一個具體問題，願意的作者各用一分鐘答；接不起來就老實留著，不讓他再熬一版。",
+          "action": "導師已提出限原課內的有限自願同題對照問答，未取得參與、答案或評量變更。",
+          "tradeoff": "原本的和氣會被戳破，也占課內彈性"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3597229075
+        },
+        "selectedIds": [
+          1,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "f4a03c650aa00b04bcc588a5a8e88d12de228cb4c3564b78e70cdabd8b473c26"
+      },
+      "consequenceDirections": {
+        "A": "教師投入新且可拒絕的對照問答，不代選或要求學生公開爭執，不以答得流利取代原標準。",
+        "B": "可看分工，不把口述當全部責任已證。",
+        "C": "可保選擇，不逼怕衝突者仲裁。",
+        "D": "可保一致，不擅丟其作品。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9c9c28f0cc8ccfff1b84b6745fed960abce7f8965996a04cf30065586e4463ed",
+    "draftSha256": "a39f30f871290767379443905e2a33117ab1fdb0ae90a6506e785f62f4f1a9a4",
     "seedAssignmentVersion": 1
   }
 }

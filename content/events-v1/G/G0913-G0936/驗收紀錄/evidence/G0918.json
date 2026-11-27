@@ -15,14 +15,155 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e5e4fe511c8789f2f215ea3df739556babe1c590f8109d53e81e3a15d2eb4c48",
+      "checkedAt": "2026-11-27T15:22:49.796Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持原課程自然產出，不新增為存件而做的作業。",
+            "action": "導師已停止本人非必要存件導向加碼，維持原合法課務。",
+            "tradeoff": "他覺得太慢"
+          },
+          {
+            "id": 2,
+            "text": "提供正式規則查閱處，不再代讀每場講座。",
+            "action": "導師已提供原可公開的有限正式資訊，不代核未來錄取。",
+            "tradeoff": "他可能覺得投資被否定"
+          },
+          {
+            "id": 3,
+            "text": "請學生自願挑一件既有合法作品先談想留什麼。",
+            "action": "導師已提出有限自願既有作品反思邀請，未取得作品或申報結果。",
+            "tradeoff": "可能沒挑到家長想要的"
+          },
+          {
+            "id": 4,
+            "text": "請原承辦在已有時段答一個程序問題，不直接請人替孩子做。",
+            "action": "導師已提出既有有限程序諮詢需求，未取得時段或完成認證。",
+            "tradeoff": "要等"
+          },
+          {
+            "id": 5,
+            "text": "用教師自編無識別示例說明過程與成果差別，不拿學生當樣板。",
+            "action": "導師已提供有限合法虛構示例，不保證適合個別校系。",
+            "tradeoff": "占可調短段"
+          },
+          {
+            "id": 6,
+            "text": "只就既定課程時點回一次進度，不接每日非急催件。",
+            "action": "導師已提出原管道內有限例行進度回覆安排，不承諾件數。",
+            "tradeoff": "親師即時感變少"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕自己只催漂亮成果，這次在原可調短段親自做一次本課任務，只留我自己的失敗和修改，學生不必跟著交。",
+          "action": "導師已在本人合法授課及材料權限內安排本人有限任務試作與自有修改記錄，不取得學生作品或認證結果，不額外強派任務。",
+          "tradeoff": "要用自己的可調時間，也可能發現任務根本不好做"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3707561462
+        },
+        "selectedIds": [
+          3,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "6b7e1b8f668858463f71668042e4a86cc7f232a8f1fb69960fd5d134ce362650"
+      },
+      "consequenceDirections": {
+        "A": "可教方法，不用示例冒合格申報。",
+        "B": "教師具體試做及留下自身過程，不等於學生歷程完成或示例必合申報；必要規則資訊仍共同行。",
+        "C": "可保本人，不把挑選當已上傳或認證。",
+        "D": "可保時間，不延必要通知。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒取消原多餘成果裝飾缺少已存在裝飾要求的前提；改為本人原課任務試作與自有記錄。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "維持原課程自然產出，不新增為存件而做的作業。",
+                "action": "導師已停止本人非必要存件導向加碼，維持原合法課務。",
+                "tradeoff": "他覺得太慢"
+              },
+              {
+                "id": 2,
+                "text": "提供正式規則查閱處，不再代讀每場講座。",
+                "action": "導師已提供原可公開的有限正式資訊，不代核未來錄取。",
+                "tradeoff": "他可能覺得投資被否定"
+              },
+              {
+                "id": 3,
+                "text": "請學生自願挑一件既有合法作品先談想留什麼。",
+                "action": "導師已提出有限自願既有作品反思邀請，未取得作品或申報結果。",
+                "tradeoff": "可能沒挑到家長想要的"
+              },
+              {
+                "id": 4,
+                "text": "請原承辦在已有時段答一個程序問題，不直接請人替孩子做。",
+                "action": "導師已提出既有有限程序諮詢需求，未取得時段或完成認證。",
+                "tradeoff": "要等"
+              },
+              {
+                "id": 5,
+                "text": "用教師自編無識別示例說明過程與成果差別，不拿學生當樣板。",
+                "action": "導師已提供有限合法虛構示例，不保證適合個別校系。",
+                "tradeoff": "占可調短段"
+              },
+              {
+                "id": 6,
+                "text": "只就既定課程時點回一次進度，不接每日非急催件。",
+                "action": "導師已提出原管道內有限例行進度回覆安排，不承諾件數。",
+                "tradeoff": "親師即時感變少"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也很怕被催到做一堆空作品，自己把本課一項原多餘的成果裝飾拿掉，留下真實修改痕跡，請孩子自願說想不想留。",
+              "action": "導師已在本人可調教學範圍提出有限真實歷程呈現方案，未取得本人作品選用同意或申報。",
+              "tradeoff": "看起來沒那麼精緻，家長可能更不服"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 921866524
+            },
+            "selectedIds": [
+              6,
+              4,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 6,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "b1bf30b04a98cdb2080dd6fc438ba744294d25270c31c48305e516e8f2dac442"
+          },
+          "previousConsequenceDirections": {
+            "A": "可找適任，不把轉介當服務已成。",
+            "B": "可保時間，不延必要通知。",
+            "C": "可保本人，不把挑選當已上傳或認證。",
+            "D": "教師以本課既有作品整理方式減包裝，不假設不存在任務可撤、不處分學生原稿或正式必要項。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6f7ac267a57354081de843aa954739f60d235c2a8f945f2bd76ec23602d90240",
+    "draftSha256": "e5e4fe511c8789f2f215ea3df739556babe1c590f8109d53e81e3a15d2eb4c48",
     "seedAssignmentVersion": 1
   }
 }

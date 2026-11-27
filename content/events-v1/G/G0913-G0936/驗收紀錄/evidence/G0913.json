@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f284a354f7d261683ff4035a62265738c6d22b2d1861a8ef10ad04132360e093",
+      "checkedAt": "2026-11-27T15:22:49.789Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依原合法途徑完成本人的課後安排變更，不加額外說服。",
+            "action": "導師已提出原程序內本人課後安排接續需求，未代核校外課程或交通。",
+            "tradeoff": "要核對必要資料"
+          },
+          {
+            "id": 2,
+            "text": "協助把家長對共同程序的建議送原權責。",
+            "action": "導師已提交有限合法程序建議，不核准全校變更。",
+            "tradeoff": "未必改全校"
+          },
+          {
+            "id": 3,
+            "text": "請孩子自願列一項當期實際學習目標，供原必要支持參考。",
+            "action": "導師已提出有限自願目標回饋邀請，不作離校許可門檻。",
+            "tradeoff": "可能像又要證明選得對"
+          },
+          {
+            "id": 4,
+            "text": "提供學校既有非典型升學諮詢資訊，不代選外部機構。",
+            "action": "導師已提供原可公開的有限升學資訊，不取得服務或替學生定方向。",
+            "tradeoff": "沒有一條保證成功路"
+          },
+          {
+            "id": 5,
+            "text": "僅確認原必要離校聯繫方式，不多收校外日常行程。",
+            "action": "導師已限縮本人非必要校外行程蒐集，維持原合法必要聯繫。",
+            "tradeoff": "掌握感較少"
+          },
+          {
+            "id": 6,
+            "text": "另邀原輔導者在已有時段聽本人需求，不強迫出席。",
+            "action": "導師已提出限原管道及自願的有限輔導交流，未取得參與或新資格。",
+            "tradeoff": "要再約"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想每回都先替主流路線說話，自己在原可公開班級資訊裡補上合法的不同課後選擇，不拿他家當成功案例。",
+          "action": "導師已整理本人有權公開的有限多元課後選擇資訊，不公布家庭或核定校外學習。",
+          "tradeoff": "要重整資訊，也可能被質疑不衝升學"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4294725354
+        },
+        "selectedIds": [
+          1,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "b3f89cf262c700bcc5a2f5ce226bd6227146f031139d704d2748a7a899c775c0"
+      },
+      "consequenceDirections": {
+        "A": "可保自主，不以人少否定路線。",
+        "B": "可談本人需要，不以成果換退出權。",
+        "C": "教師提供普遍資訊的真實工作投入，不把個案當宣傳、未證實路線不保證結果。",
+        "D": "可有適任支持，邀請不等服務已成。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "771b73abd4c524e5882cd996d19deb5c0f5dabd9900bbf13181b34a592091a2c",
+    "draftSha256": "f284a354f7d261683ff4035a62265738c6d22b2d1861a8ef10ad04132360e093",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5a3a0c41ffc5d01d4cde2bec34e82a51270b40677895d6356c5f49805ef68b5a",
+      "checkedAt": "2026-11-27T15:22:49.810Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只按原已同意的本班份量提供，不增外班供應。",
+            "action": "導師已在原合法分食權限維持既定份量用途，不擴張供料或收費。",
+            "tradeoff": "外班會失望"
+          },
+          {
+            "id": 2,
+            "text": "物主若願，原未承諾餘量在核可安全方式給外班自願領。",
+            "action": "導師已提出需物權與校方允許的有限餘量分享方案，未取得同意或完成分發。",
+            "tradeoff": "可能一下就沒"
+          },
+          {
+            "id": 3,
+            "text": "本次結束新邀請，原已合法分配者照規用完。",
+            "action": "導師已停止本人非必要新增參與邀請，維持原安全分食接續。",
+            "tradeoff": "活動熱度降"
+          },
+          {
+            "id": 4,
+            "text": "請原幹部自願只核對本班已同意份量，不替外班排隊執法。",
+            "action": "導師已提出可拒絕的有限本班份量核對協作，未取得參與或移轉管理權。",
+            "tradeoff": "他工作變少也可能不慣"
+          },
+          {
+            "id": 5,
+            "text": "未分原物依食安與物主意願保存或處理，不硬發完。",
+            "action": "導師已提出限原物權與食安的未分食物接續方式，未取得同意或完成處理。",
+            "tradeoff": "有人覺得浪費"
+          },
+          {
+            "id": 6,
+            "text": "未來邀外班前先依法申請與確認，不再今天擴場。",
+            "action": "導師已明確不採本人未核定的當日擴場需求，提供原正常申請途徑。",
+            "tradeoff": "少了隨興"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想喝這杯，偏偏今天把自己能決定的這份自願讓給原本班最後還沒拿到的人；不叫他家再補一壺。",
+          "action": "導師已提出本人合法可支配份量的自願轉讓邀請，未取得收受或改其他人份量，食安照原規。",
+          "tradeoff": "自己沒喝到，也可能被當老師表演大方"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3132556946
+        },
+        "selectedIds": [
+          6,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "96521a73d2ddfbfb2e72cfbfbb7a7c5b73d377b9cd89e8e09ebf6360d5082542"
+      },
+      "consequenceDirections": {
+        "A": "教師放棄原本人已可收的有限份量，不取他人份、不讓私人讓食抵必要公平分配。",
+        "B": "可保權利，不以回收名義拿走私食。",
+        "C": "可有可行界線，不禁止正常交友。",
+        "D": "可保有限班務，成人仍負責安全。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4f98e0483c1af4e7e25ba19f16893cd213073fbedcd0da7c8eb31e91c59b7dd6",
+    "draftSha256": "5a3a0c41ffc5d01d4cde2bec34e82a51270b40677895d6356c5f49805ef68b5a",
     "seedAssignmentVersion": 1
   }
 }

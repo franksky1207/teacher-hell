@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e4913ebca45a1d6e467cc31a51b7b92302609f95ef0ec77eed0b986052605ef7",
+      "checkedAt": "2026-11-27T15:22:49.792Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依已核實程序與本人可行條件辦本次安檢。",
+            "action": "玩家已向原權責提出本人可配合的合法安檢安排，未完成檢查或取得結果。",
+            "tradeoff": "要花原休息時間"
+          },
+          {
+            "id": 2,
+            "text": "詢問正式改約條件，今天不臨時開門。",
+            "action": "玩家已提出原合法安檢改約需求，未取得日期或免除必要義務。",
+            "tradeoff": "可能要另排時間"
+          },
+          {
+            "id": 3,
+            "text": "向管理者查現有可公開預告方式，不再由我猜身分。",
+            "action": "玩家已提出既有安檢通知方式確認，不取得新管理制度。",
+            "tradeoff": "下次仍可能來不及看"
+          },
+          {
+            "id": 4,
+            "text": "只回覆總幹事本人已知部分，不再在群聊評論廠商。",
+            "action": "玩家已停止本人非必要廠商公開推論，維持原必要事實說明。",
+            "tradeoff": "大家可能仍追問"
+          },
+          {
+            "id": 5,
+            "text": "請原管理者在允許範圍確認現場接續，我不介入盤查。",
+            "action": "玩家已提出限原管理職權的有限現場聯繫需求，未取得人力或警政結果。",
+            "tradeoff": "像少做一點"
+          },
+          {
+            "id": 6,
+            "text": "和家人自願確認今後門鈴核實分工，不替全社區定規則。",
+            "action": "玩家已提出有限家庭自願聯繫協作邀請，未取得同意或更改社區程序。",
+            "tradeoff": "家人也要花時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還是怕，也不想裝自己很勇敢，這次請家人若方便陪我依原核實方式一起接待；不把確認過了當自己不能怕。",
+          "action": "玩家已提出需家人自願、原程序允許的有限當次陪同邀請，未取得答應、入門或安檢完成。",
+          "tradeoff": "要承認膽小，也可能沒人能陪"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3192182944
+        },
+        "selectedIds": [
+          3,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "de76d5b6be369330472e33d8918b280fb7e47edf2905eb1084c20b17e0fe0c56"
+      },
+      "consequenceDirections": {
+        "A": "可處理必要事項，不等已檢查通過。",
+        "B": "可改善資訊，查詢不是公告已變。",
+        "C": "可減擴散，不撤必要更正。",
+        "D": "玩家提出當次實際私人陪伴請求，與一般未來分工不同，不強迫家人或以陪伴代專業身分確認。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d866b78a85b750da03ccd8dfea19f90b5e95863b234351fc85fe6a3719612b94",
+    "draftSha256": "e4913ebca45a1d6e467cc31a51b7b92302609f95ef0ec77eed0b986052605ef7",
     "seedAssignmentVersion": 1
   }
 }

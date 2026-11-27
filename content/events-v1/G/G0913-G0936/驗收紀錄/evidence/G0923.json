@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b4f148b3e8823ecd3d7edd172311f5e734d5e6048598c582eb78845a087fbd2a",
+      "checkedAt": "2026-11-27T15:22:49.802Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按原必要範圍交真實既有成果，不加新演出照。",
+            "action": "導師已提出限原合法既有材料的必要交件方案，不新增拍攝或虛構參與。",
+            "tradeoff": "畫面沒新鮮感"
+          },
+          {
+            "id": 2,
+            "text": "申請小規模自願展示，清楚標示只代表參與者。",
+            "action": "導師已提出需核可與具體同意的有限展示方案，未取得參與或核准。",
+            "tradeoff": "人少，也可能不准"
+          },
+          {
+            "id": 3,
+            "text": "提供無人物的合法作品紀錄，不挑誰上鏡。",
+            "action": "導師已提出限原授權作品影像的有限方案，未取得新用途或交付。",
+            "tradeoff": "少了人情味"
+          },
+          {
+            "id": 4,
+            "text": "向主管提出原實際工量與合理展延需求。",
+            "action": "導師已提出限可核事實的有限時程需求，未獲准或停必要工作。",
+            "tradeoff": "可能被追問"
+          },
+          {
+            "id": 5,
+            "text": "讓原作者自願選自己願公開的一小段文字，先送核稿。",
+            "action": "導師已提出有限自願摘段邀請，未取得稿件、權利或核准。",
+            "tradeoff": "材料不一定齊"
+          },
+          {
+            "id": 6,
+            "text": "這次婉拒本人額外成果包裝合作，原正式材料照規交。",
+            "action": "導師已停止本人非必要新增包裝需求，維持原必要交件。",
+            "tradeoff": "對方更難找人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再讓孩子替我們累出笑臉，自己提供一段真實無敏感的班務準備說明，署我的名字，拍不到學生也沒關係。",
+          "action": "導師已製作本人有權提供的有限真實工作說明供審，不取得發布核准或取學生影像。",
+          "tradeoff": "自己得多寫，也可能被嫌不夠漂亮"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3936865127
+        },
+        "selectedIds": [
+          5,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "21f05ff91bc4fe6a3cd9d84281461230fff8ca73b489a664ce05809bd1984632"
+      },
+      "consequenceDirections": {
+        "A": "可保掌控，不逼公開或代作者選。",
+        "B": "教師以本人真實文字承擔呈現，不冒全員參與或把教師努力當學生成效。",
+        "C": "可少動員，不用代表名義取代其他人權益。",
+        "D": "可看成果，物件影像仍需原權利。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "16374494aae29ce20d293de424b8f59733bc7816b7f8d5c824d3bba4f228b31b",
+    "draftSha256": "b4f148b3e8823ecd3d7edd172311f5e734d5e6048598c582eb78845a087fbd2a",
     "seedAssignmentVersion": 1
   }
 }

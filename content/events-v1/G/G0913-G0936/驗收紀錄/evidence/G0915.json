@@ -15,14 +15,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "94261dbace3775aa66c4c4669868c4da62256578d0e1c1f5cf48466e49085325",
+      "checkedAt": "2026-11-27T15:22:49.793Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提供原正式標準查閱處，不再逐段討論匿名留言。",
+            "action": "導師已提供既有合法評分資訊來源，不取得學生認同或撤申覆。",
+            "tradeoff": "他可能覺得答得冷"
+          },
+          {
+            "id": 2,
+            "text": "依原程序受理他一項具體評分疑點。",
+            "action": "導師已提出原權責內有限個案疑點受理，不判全班或改標準。",
+            "tradeoff": "要再整理"
+          },
+          {
+            "id": 3,
+            "text": "以無識別虛構截句練看上下文，不重播原帖。",
+            "action": "導師已安排有限中性資訊練習，不公開原帳號或學生行為。",
+            "tradeoff": "用掉可調短段"
+          },
+          {
+            "id": 4,
+            "text": "邀他私下自願談那句被背叛的感覺，不替他下心理結論。",
+            "action": "導師已提出有限自願私人感受交流邀請，未取得參與或原諒。",
+            "tradeoff": "可能不願說"
+          },
+          {
+            "id": 5,
+            "text": "請原評量權責在既有管道公開一般規則，不談個人截圖。",
+            "action": "導師已提出限可公開一般規則的正式資訊需求，未取得公告或更改標準。",
+            "tradeoff": "要等"
+          },
+          {
+            "id": 6,
+            "text": "必要問題回完，今天先結束非急爭辯，原管道保留。",
+            "action": "導師已停止本人非急延伸對質，維持原正常求助與申覆。",
+            "tradeoff": "他可能仍不甘心"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那句偷偷改刺到，不想只叫他冷靜，請他自願選一份我能合法說明的原作答，我當面把怎麼判這一題講清；有錯就照規改。",
+          "action": "導師已提出限原資料權利的有限評分過程說明邀請，未取得參與或預定改分。",
+          "tradeoff": "自己得被當面檢視，也可能真的出錯"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1216190248
+        },
+        "selectedIds": [
+          2,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "5e4ac58f155adb7e66dc2652df0af46bd17c033c6d6f3e68179857b9dcf40d43"
+      },
+      "consequenceDirections": {
+        "A": "可保正當查核，不保證改分。",
+        "B": "可有來源，不要求只因老師說就信。",
+        "C": "教師提供具體本人合法評分過程說明，不以護面子藏錯或拿他人卷比較。",
+        "D": "可教判讀，不把他氣話變教材。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d559d32e8acfe554fcf65f94466462ccef25661ea48910db9ac63acb63aa6a86",
+    "draftSha256": "94261dbace3775aa66c4c4669868c4da62256578d0e1c1f5cf48466e49085325",
     "seedAssignmentVersion": 1
   }
 }

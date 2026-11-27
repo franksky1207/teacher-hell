@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b27d56a7d49e37e953d67214553bb666bd03c21dd8634bf45a049b6f3df11552",
+      "checkedAt": "2026-11-27T15:22:49.797Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只就本人可核的教學事實回覆，不加入風氣評比。",
+            "action": "導師已提供有限工作事實說明，不公開學生資料或自定風氣結論。",
+            "tradeoff": "他可能嫌你迴避"
+          },
+          {
+            "id": 2,
+            "text": "邀他私下談一個具體看見的情形，不在茶水間拉人作證。",
+            "action": "導師已提出有限自願工作事實交流，未取得參與或結論。",
+            "tradeoff": "可能被拒"
+          },
+          {
+            "id": 3,
+            "text": "請原主管依既有教學協作方式處理專業建議。",
+            "action": "導師已提出有限正式教學協調需求，未取得評定或改課。",
+            "tradeoff": "事情變正式"
+          },
+          {
+            "id": 4,
+            "text": "這次不再延伸私人寒暄，原必要工作仍照常聯繫。",
+            "action": "導師已結束本人非必要茶水間互動，維持原正式職務溝通。",
+            "tradeoff": "交情會冷"
+          },
+          {
+            "id": 5,
+            "text": "只請他在原任課時間記一項直接影響學習的觀察，不追學生私事。",
+            "action": "導師已提出限原授課職權的自願觀察回饋邀請，未取得資料。",
+            "tradeoff": "他未必願意"
+          },
+          {
+            "id": 6,
+            "text": "本人原班務照既有合法安排，不為這句話臨時加嚴。",
+            "action": "導師已維持原合法班務，不新增非必要整班管制。",
+            "tradeoff": "可能被認為不改"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被當場講到火起，直接說我不接受在旁人面前用整班標籤判我的工作；若有具體事，我願在正式場合談。",
+          "action": "導師已對原在場者作有限工作互動界線表達並提供正式討論途徑，不要求他人站隊或核定失職。",
+          "tradeoff": "對方可能更不高興，自己也不能再背後貼他標籤"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3135139577
+        },
+        "selectedIds": [
+          2,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "5bc0688528a991ce6c88480769ad70923421634022b9f70f4e5228bcb0639fe3"
+      },
+      "consequenceDirections": {
+        "A": "可保準確，不拿表面安靜代學習。",
+        "B": "教師明確提出本人工作互動界線及正式異議，不否定正常專業批評或拒查真問題。",
+        "C": "可看證據，不能讓教師變跨課監看。",
+        "D": "可有焦點，不把邀請當他承認說錯。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "283f3fbd7445537a12cf49426b1d3f02ebbf07cd866952e59e87487cf41e9032",
+    "draftSha256": "b27d56a7d49e37e953d67214553bb666bd03c21dd8634bf45a049b6f3df11552",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bab996d6349107d3ae803b2baec9e44582e59886a9eb2a28aa53f55625acbd17",
+      "checkedAt": "2026-11-27T15:22:49.806Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向原承辦提出樣書或合法試閱資訊需求。",
+            "action": "導師已提出既有合法試閱資訊需求，未取得樣書或帳號。",
+            "tradeoff": "要等"
+          },
+          {
+            "id": 2,
+            "text": "請原權責提供原決策依據及適用條件，不替他定合法性。",
+            "action": "導師已提出有限正式訂購依據說明需求，未取得裁決或更改規定。",
+            "tradeoff": "流程正式"
+          },
+          {
+            "id": 3,
+            "text": "在原合法範圍提供不購買時既有學習支持資訊。",
+            "action": "導師已提供既有合法學習接續資訊，不取得資源或代核免購。",
+            "tradeoff": "可能沒有同款功能"
+          },
+          {
+            "id": 4,
+            "text": "原問題交正式費用異議管道，不在私交裡談折扣。",
+            "action": "導師已提供原合法異議資訊並停止非必要私人價款協商，不核准退費。",
+            "tradeoff": "親近感少"
+          },
+          {
+            "id": 5,
+            "text": "請原授課者說明本課真正會用到的部分，不由導師推銷全套。",
+            "action": "導師已提出限原職權的有限教材用途回覆需求，未取得採用結論。",
+            "tradeoff": "要再聯繫"
+          },
+          {
+            "id": 6,
+            "text": "必要問題回完，暫不替未見教材作推薦。",
+            "action": "導師已拒作本人未核實教材的非必要推薦，維持原必要資訊接續。",
+            "tradeoff": "他會覺得老師也不知道"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想熟了就得推銷，自己具名向主管提出反對未提供試閱就催訂的意見；不把家長的名字推上去。",
+          "action": "導師已向原有權主管提交本人真實程序疑慮及反對未供必要試閱資訊即額外催訂的有限具名意見，不擅停合法原課務或代表家長。",
+          "tradeoff": "得面對主管追問，也可能被覺得不配合"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1609125126
+        },
+        "selectedIds": [
+          4,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "bae82b50aab075fd7a953263bfe21b03cdcb9068742d5604f19d6d39390cc9e1"
+      },
+      "consequenceDirections": {
+        "A": "可保誠實，不免原應提供資訊。",
+        "B": "可保公允，不剝正當求助。",
+        "C": "教師承擔本人正式異議的職場代價，與普通1查試閱資訊不同，不保證制度變更或退費，不影響學生必要支持。",
+        "D": "可保可及，不保證等值資格或任意免正式必要項。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒本人申請試閱仍被普通1試閱資訊需求涵蓋，增加想讀的態度不足以區分；改為本人具名程序異議。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "向原承辦提出樣書或合法試閱資訊需求。",
+                "action": "導師已提出既有合法試閱資訊需求，未取得樣書或帳號。",
+                "tradeoff": "要等"
+              },
+              {
+                "id": 2,
+                "text": "請原權責提供原決策依據及適用條件，不替他定合法性。",
+                "action": "導師已提出有限正式訂購依據說明需求，未取得裁決或更改規定。",
+                "tradeoff": "流程正式"
+              },
+              {
+                "id": 3,
+                "text": "在原合法範圍提供不購買時既有學習支持資訊。",
+                "action": "導師已提供既有合法學習接續資訊，不取得資源或代核免購。",
+                "tradeoff": "可能沒有同款功能"
+              },
+              {
+                "id": 4,
+                "text": "原問題交正式費用異議管道，不在私交裡談折扣。",
+                "action": "導師已提供原合法異議資訊並停止非必要私人價款協商，不核准退費。",
+                "tradeoff": "親近感少"
+              },
+              {
+                "id": 5,
+                "text": "請原授課者說明本課真正會用到的部分，不由導師推銷全套。",
+                "action": "導師已提出限原職權的有限教材用途回覆需求，未取得採用結論。",
+                "tradeoff": "要再聯繫"
+              },
+              {
+                "id": 6,
+                "text": "必要問題回完，暫不替未見教材作推薦。",
+                "action": "導師已拒作本人未核實教材的非必要推薦，維持原必要資訊接續。",
+                "tradeoff": "他會覺得老師也不知道"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也不想熟了就得替通知背書，自己按原公開程序申請試閱，真的讀完才表達本人看法，不把孩子當第一個試的人。",
+              "action": "導師已提出本人原允許範圍的有限試閱申請及閱讀意願，未取得材料、閱讀完成或採購決定。",
+              "tradeoff": "自己的空檔要拿去看，還可能看出不適用"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 140290791
+            },
+            "selectedIds": [
+              1,
+              3,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": "emotional",
+              "C": 1,
+              "D": 3
+            },
+            "optionsDigest": "d0aa950b3cf27c5e0fa49f7a9639829358e4b542e52869709c260fcd71448733"
+          },
+          "previousConsequenceDirections": {
+            "A": "可保誠實，不免原應提供資訊。",
+            "B": "教師提出本人實際閱讀評估意願，不把申請說成已拿到，不代原授課或採購權。",
+            "C": "可看內容，不把查詢當已取得。",
+            "D": "可保可及，不保證等值資格或任意免正式必要項。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c7bc4b73d1227bd4e2135c5522d40d6d89330a9cea688dce880de06dcaf8c95b",
+    "draftSha256": "bab996d6349107d3ae803b2baec9e44582e59886a9eb2a28aa53f55625acbd17",
     "seedAssignmentVersion": 1
   }
 }

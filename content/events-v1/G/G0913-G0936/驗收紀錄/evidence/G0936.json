@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a69ce4ce377b56fc353e553d56ec97dd1e35fecde33144402043ba2fd2e6fcb4",
+      "checkedAt": "2026-11-27T15:22:49.813Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依原正式借用紀錄向有權窗口提出本次復原需求。",
+            "action": "導師已提出原管理程序內有限使用後復原需求，未取得完成或判責。",
+            "tradeoff": "要等處理"
+          },
+          {
+            "id": 2,
+            "text": "原早晨開門由成人接回，他不再為方便額外早到。",
+            "action": "導師已停止本人非必要學生提早開門需求，按原成人職務接續，不改交通安排。",
+            "tradeoff": "自己的事務量增"
+          },
+          {
+            "id": 3,
+            "text": "向原管理者申請未來借後點交，不只靠早上第一眼。",
+            "action": "導師已提出有限正式借後點交建議，未核准制度或新增學生義務。",
+            "tradeoff": "程序多一點"
+          },
+          {
+            "id": 4,
+            "text": "請原晚間使用權責提供原可公開的真實接續資訊，不查同學私聊。",
+            "action": "導師已提出限必要知情的使用接續確認，不取得個人私訊或責任裁定。",
+            "tradeoff": "未必立刻有答案"
+          },
+          {
+            "id": 5,
+            "text": "本次不辦全班責備，必要事情按原個別程序做。",
+            "action": "導師已停止本人非必要全班延伸訓話，維持必要衛生與行為處理。",
+            "tradeoff": "他可能覺得沒人被說"
+          },
+          {
+            "id": 6,
+            "text": "在原合法班務內讓他自願選今後願接的有限工作，不讓他默認全包。",
+            "action": "導師已提出有限自願班務意願確認，未取得承接或加總量。",
+            "tradeoff": "他可能覺得不被信任"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想每次只回辛苦，下一次原可行的借後時點自己跟原成人核一次空間，不等他早上拿掃把來找我。",
+          "action": "導師已提出需原管理允許的本人一次有限借後核對邀請，未取得同意、值勤或復原完成。",
+          "tradeoff": "自己的可調時間少，還可能晚間不方便"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3786984689
+        },
+        "selectedIds": [
+          4,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "9dfe8fac3128386012dc0f7c048cdacddb888f1961ca90f8ec38c3ab93029d62"
+      },
+      "consequenceDirections": {
+        "A": "可保公允，不以低調免復原。",
+        "B": "教師提出一次本人實際點交協作意願，須原規則與人力可行，不擅夜留學生或免管理者責任。",
+        "C": "可有來源，不以記錄當所有人故意丟。",
+        "D": "可查責任，申請不是已成新規。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "78b858510bb773f3e0bf253005fc77033f96b7200a7958f0b7bf873e944ccd68",
+    "draftSha256": "a69ce4ce377b56fc353e553d56ec97dd1e35fecde33144402043ba2fd2e6fcb4",
     "seedAssignmentVersion": 1
   }
 }

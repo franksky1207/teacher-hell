@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ec3c69156aecce1c8f32528e72223ebcb871d5db4fc5bd14d6734218d23907c7",
+      "checkedAt": "2026-11-27T15:22:49.805Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依原學習需要，只挑錯題本一個共通卡點回顧。",
+            "action": "導師已在原授課權限提供有限概念回饋，不承諾考題或成績。",
+            "tradeoff": "看不到新題量"
+          },
+          {
+            "id": 2,
+            "text": "提供正式已可用練習資訊，讓本人自願選，不派新量。",
+            "action": "導師已提供既有合法自願練習資訊，不新增必做作業。",
+            "tradeoff": "他仍怕選錯"
+          },
+          {
+            "id": 3,
+            "text": "邀他私下自願談最怕掉名次會失去什麼，不要求成熟分析。",
+            "action": "導師已提出有限自願成就壓力交流，未取得參與或診斷。",
+            "tradeoff": "可能說不出口"
+          },
+          {
+            "id": 4,
+            "text": "原課內用教師自有陌生例題試一個概念，不碰外部卷。",
+            "action": "導師已安排限原教學範圍的有限合法新例練習，不新增正式評量。",
+            "tradeoff": "可能當場卡住"
+          },
+          {
+            "id": 5,
+            "text": "這次不比較誰寫幾本，原班務不加非必要學習排名。",
+            "action": "導師已停止本人非必要題量比較發言，不更動正式評量或另造排名活動。",
+            "tradeoff": "少了競爭刺激"
+          },
+          {
+            "id": 6,
+            "text": "介紹既有輔導支持資訊，本人願意才安排非急談話。",
+            "action": "導師已提供現有合法自願支持資訊，不取得服務或判定病症。",
+            "tradeoff": "需要等"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想證明自己那句不是口號，拿自己有權用的一份舊備課錯例，當著他從頭重看哪裡還會卡；我也可能卡，不跟別人賭命中。",
+          "action": "導師已在本人有權材料內作有限備課錯例自檢並邀自願觀察，不取得參與或考試預測。",
+          "tradeoff": "自己花空檔，也可能露出原來沒想透"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3076448291
+        },
+        "selectedIds": [
+          2,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "a0022a5e0aa02a8aed81999a6c835335475d1542a32a588e33a608beffe771d5"
+      },
+      "consequenceDirections": {
+        "A": "可有來源，不把資訊當交題或包中。",
+        "B": "可有適任支持，不將焦慮當錯誤。",
+        "C": "可看遷移，不用一次表現判能力。",
+        "D": "教師投入本人真實概念自檢，與給學生新題不同，不以示範代答案正確核對或保名次。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d242f535dfd9067f707d71a42337f562ced4185f0724f9b0f507b57ffed05ff1",
+    "draftSha256": "ec3c69156aecce1c8f32528e72223ebcb871d5db4fc5bd14d6734218d23907c7",
     "seedAssignmentVersion": 1
   }
 }

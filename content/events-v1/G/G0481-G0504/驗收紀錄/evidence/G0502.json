@@ -15,14 +15,155 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5dcb3b376177513d175d756b49a611d4680c54b911227e817f5c85c7e04f8c1f",
+      "checkedAt": "2026-11-27T07:24:36.308Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "若作者願意，先存進班級原有收納盒，寫清楚哪天領回。",
+            "action": "導師已提出經作者同意才成立的班級短期保管方案與領回日期，尚未取得同意或代留作品",
+            "tradeoff": "教師增加保管工作，作者也未必願意"
+          },
+          {
+            "id": 2,
+            "text": "問作者是否願意只掛已完成、立刻可放好的那幾張。",
+            "action": "導師已徵詢有限展示意願，限當前可安全立即完成範圍，尚未將未回覆視為同意。",
+            "tradeoff": "版面不完整，也可能不願意"
+          },
+          {
+            "id": 3,
+            "text": "留待下一個原有班務時段，再決定要不要用。",
+            "action": "導師已延後非必要展示決定至既有班務時間，未向學生預約私人加班。",
+            "tradeoff": "熱情可能淡掉"
+          },
+          {
+            "id": 4,
+            "text": "讓仍有合法空檔且自願的人另提小方案，與原案切開。",
+            "action": "導師已提出可拒絕的有限新案徵詢，未恢復已取消原案或延長離校。",
+            "tradeoff": "要重新確認，也可能無人留下"
+          },
+          {
+            "id": 5,
+            "text": "改由作者各自保留，若日後願意分享再自己提出。",
+            "action": "導師已交還可歸還的個人成品，取消本次追加徵集，不作未來使用承諾。",
+            "tradeoff": "班級看不到完整布置"
+          },
+          {
+            "id": 6,
+            "text": "用正常班務時間聽各人說已做哪些，不以件數排誰最支持。",
+            "action": "導師已安排非強制的工作經驗短回顧，不以公開表揚逼學生出席或增加成品。",
+            "tradeoff": "沒有立即整齊畫面"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也捨不得那些紙，自己的那份帶回去貼在私人筆記本，不占全班牆。",
+          "action": "導師已收回本人自製、有權自用的那份裝飾貼入私人筆記本，不取用學生作品或重新開工。",
+          "tradeoff": "自己花時間收，也少了集體成果感"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2858349765
+        },
+        "selectedIds": [
+          5,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "9008e8a40587141363e760beafcc3a947982919613ce6b5b16561116f4bc39f5"
+      },
+      "consequenceDirections": {
+        "A": "成品不必今晚趕著上牆，也可能最後不採用。",
+        "B": "教師可保存私人喜歡，不拿學生作品補自己的本子。",
+        "C": "作品去向回到本人，不需不斷等老師再問。",
+        "D": "新方案規模看實際意願，不能用自願把人扣住。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "普通1收好或交還涵蓋普通5立即歸還，改為有明確領回期限的暫存邀請。 依原工具真實重抽洗牌一次並保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "今天只收好成品，不掛出來。",
+                "action": "導師已結束當次非必要布置，依權利與安全規定保存或交還既有成品，不重啟原案。",
+                "tradeoff": "少了當場看到成果的滿足"
+              },
+              {
+                "id": 2,
+                "text": "問作者是否願意只掛已完成、立刻可放好的那幾張。",
+                "action": "導師已徵詢有限展示意願，限當前可安全立即完成範圍，尚未將未回覆視為同意。",
+                "tradeoff": "版面不完整，也可能不願意"
+              },
+              {
+                "id": 3,
+                "text": "留待下一個原有班務時段，再決定要不要用。",
+                "action": "導師已延後非必要展示決定至既有班務時間，未向學生預約私人加班。",
+                "tradeoff": "熱情可能淡掉"
+              },
+              {
+                "id": 4,
+                "text": "讓仍有合法空檔且自願的人另提小方案，與原案切開。",
+                "action": "導師已提出可拒絕的有限新案徵詢，未恢復已取消原案或延長離校。",
+                "tradeoff": "要重新確認，也可能無人留下"
+              },
+              {
+                "id": 5,
+                "text": "改由作者各自保留，若日後願意分享再自己提出。",
+                "action": "導師已交還可歸還的個人成品，取消本次追加徵集，不作未來使用承諾。",
+                "tradeoff": "班級看不到完整布置"
+              },
+              {
+                "id": 6,
+                "text": "用正常班務時間聽各人說已做哪些，不以件數排誰最支持。",
+                "action": "導師已安排非強制的工作經驗短回顧，不以公開表揚逼學生出席或增加成品。",
+                "tradeoff": "沒有立即整齊畫面"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也捨不得那些紙，自己的那份帶回去貼在私人筆記本，不占全班牆。",
+              "action": "導師已收回本人自製、有權自用的那份裝飾貼入私人筆記本，不取用學生作品或重新開工。",
+              "tradeoff": "自己花時間收，也少了集體成果感"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2653820819
+            },
+            "selectedIds": [
+              4,
+              1,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": "emotional",
+              "C": 1,
+              "D": 4
+            },
+            "optionsDigest": "6bf4fda1b96ba3464a2961f02ee4e53207af9ea57a4cfa481cd1b65e3c85004c"
+          },
+          "previousConsequenceDirections": {
+            "A": "有限成果可留下，但不以空位催別人補做。",
+            "B": "教師可保存私人喜歡，不拿學生作品補自己的本子。",
+            "C": "作者保有作品，後續是否展示另問本人。",
+            "D": "新方案規模看實際意願，不能用自願把人扣住。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4d87abbdd7e5cacff6e74ab166cb7793db5e2777766f42072f32e1aa43a6f946",
+    "draftSha256": "5dcb3b376177513d175d756b49a611d4680c54b911227e817f5c85c7e04f8c1f",
     "seedAssignmentVersion": 1
   }
 }

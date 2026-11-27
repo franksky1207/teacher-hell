@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "88a9f3b26f9198067444a5e39f555da7bb936d7e59cddf22d97890a7ce631136",
+      "checkedAt": "2026-11-27T07:24:36.305Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只回應他願意問的具體技法，不判他算不算放棄。",
+            "action": "導師已就作者自願提出的技法問題提供具體回饋，不以評價換回展示。",
+            "tradeoff": "少了讓人安心的總評"
+          },
+          {
+            "id": 2,
+            "text": "邀他自選一小段，若想給我看再另約。",
+            "action": "導師已提出可拒絕的局部觀看邀請，尚未取得稿件或使用同意。",
+            "tradeoff": "作品不完整，也可能再次拒絕"
+          },
+          {
+            "id": 3,
+            "text": "今天不再談作品，讓他把它完整帶走。",
+            "action": "導師已結束本次非必要作品評議並交還自有作品，不取消正常課業支持。",
+            "tradeoff": "眼前沒有得到新的肯定"
+          },
+          {
+            "id": 4,
+            "text": "提供可自行使用的作品檢視問題，不要求填完交我。",
+            "action": "導師已提供本人可用的自評提問，明示非新增作業或展示資格。",
+            "tradeoff": "多一份材料，未必適合他"
+          },
+          {
+            "id": 5,
+            "text": "若他願意，邀合適同儕只談作品內容，不評人勇不勇敢。",
+            "action": "導師已徵詢作者是否接受限定範圍的同儕回饋，未擅自送出作品。",
+            "tradeoff": "要另確認意願，也可能更緊張"
+          },
+          {
+            "id": 6,
+            "text": "把空位留到本次展示結束，不急著徵一件來補齊。",
+            "action": "導師已停止本人可決定的本次補件徵集，保留空位，不將其標記為作者欠交。",
+            "tradeoff": "版面不完整"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也把自己那件想炫的先收回私藏，今天不當大家的評審範本。",
+          "action": "導師已依本人作品使用權撤回自身非必要展件，未撤其他作者內容或要求同感。",
+          "tradeoff": "少一次展示，也得承認自己很在意被看見"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3594533776
+        },
+        "selectedIds": [
+          5,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "260512f66a3db635c34a97ef46b878d23379b74e496799eb7ef504e736751296"
+      },
+      "consequenceDirections": {
+        "A": "學生可暫時離開被評判的位置，正常回饋仍有原管道。",
+        "B": "他可自己比較想保留什麼，不靠老師一句總評。",
+        "C": "教師的私人選擇不要求學生一起退，展件少一件仍可成立。",
+        "D": "可接觸不同觀點，沒人有義務替他找回信心。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "579c2ef6996a40a3f41652e459460b90b5064148585ec690019cf6d31afebef9",
+    "draftSha256": "88a9f3b26f9198067444a5e39f555da7bb936d7e59cddf22d97890a7ce631136",
     "seedAssignmentVersion": 1
   }
 }

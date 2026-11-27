@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "203dd89664b26489211c31997db4284a4da25f698e50540a2ffad678b9d4c3cc",
+      "checkedAt": "2026-11-27T07:24:36.297Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "兩面按事先說好的短時段輪用。",
+            "action": "導師已徵詢兩方輪用意願並提出時段，未將尚未同意視為輪用成立。",
+            "tradeoff": "有人要等輪到自己的那面"
+          },
+          {
+            "id": 2,
+            "text": "班牌先維持原本完成的那面，新畫由作者留著。",
+            "action": "導師已停止本次追加覆蓋，維持原核准班牌並交回新稿作者保管。",
+            "tradeoff": "新作者會失望"
+          },
+          {
+            "id": 3,
+            "text": "問兩方是否願意把作品並排放到原可用展示處。",
+            "action": "導師已提出雙作並列方案，尚未獲作者同意或移動作品。",
+            "tradeoff": "要另整理位置"
+          },
+          {
+            "id": 4,
+            "text": "請成人先評估可轉支架是否真的做得到，不先答應加做。",
+            "action": "導師已向有權處理器材的成人提出可轉支架可行性詢問，尚未核准製作。",
+            "tradeoff": "需等待，可能不值得做"
+          },
+          {
+            "id": 5,
+            "text": "邀兩方各選一小段，看看願不願意共同排一張新稿。",
+            "action": "導師已發出有限範圍的共版邀請，未動原稿或指定誰應讓出空間。",
+            "tradeoff": "要重做，也可能談不攏"
+          },
+          {
+            "id": 6,
+            "text": "今天先不掛班牌，只在正常班務時間核對這次怎麼重複接單。",
+            "action": "導師已暫停非必要掛牌，安排在本人可用班務時間核對任務交接，不公開責罵作者。",
+            "tradeoff": "少一次展示"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也手癢，自己畫一張醜一點的小牌放桌上，不參加他們的正面之爭。",
+          "action": "導師已以自有安全材料製作私人桌牌，不占班牌位置、不挪用學生作品或要求評選。",
+          "tradeoff": "花自己的材料與時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1655882866
+        },
+        "selectedIds": [
+          4,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "010a542adb32b660872f85b1233086983aa6e6198ce58ac9eb83bab1537c72d5"
+      },
+      "consequenceDirections": {
+        "A": "共同版本須真有同意，不以老師喜歡就蓋掉原作。",
+        "B": "教師可滿足創作慾，學生不用替它找展示位置。",
+        "C": "若不可行就得放棄轉面構想，學生不用當修架工。",
+        "D": "原作不被後來承諾蓋掉，新圖可另決定去處。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "06a6939274746dacb6965e33b2afc936907b4aae7e2c5920a30532f79a98735c",
+    "draftSha256": "203dd89664b26489211c31997db4284a4da25f698e50540a2ffad678b9d4c3cc",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a9762f2f4682385b7d91f07ac792074dc79910e60acc8d9b3b2d7902201dceec",
+      "checkedAt": "2026-11-27T07:24:36.306Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓本人先交一行文字，我直接回應他。",
+            "action": "導師已接受本人自願提交的短問題並直接回應，不要求先有口頭表現。",
+            "tradeoff": "話不一定完整，得慢慢釐清"
+          },
+          {
+            "id": 2,
+            "text": "徵得本人同意，讓朋友只陪這一次、不代答。",
+            "action": "導師已分別詢問當事人與陪同者意願，未將一方願意視為雙方同意。",
+            "tradeoff": "要多顧及兩人感受"
+          },
+          {
+            "id": 3,
+            "text": "提供學校既有語言支持方式，先問本人想不想使用。",
+            "action": "導師已說明可用校內支持並徵詢使用意願，急迫必要協助仍依共同前提提供。",
+            "tradeoff": "需要接續時間"
+          },
+          {
+            "id": 4,
+            "text": "讓他先用自己的方式畫出卡住的位置。",
+            "action": "導師已提供安全紙筆並接受圖示提問，不要求公開或另評語言能力。",
+            "tradeoff": "可能要重問幾次"
+          },
+          {
+            "id": 5,
+            "text": "問本人是否希望改約較安靜的正常工作時段。",
+            "action": "導師已提出私下工作時段邀約，尚未獲同意或得知完整問題。",
+            "tradeoff": "問題延後，也須確實赴約"
+          },
+          {
+            "id": 6,
+            "text": "課內示範怎麼把長問題拆成兩個短問句，使用我自己的例子。",
+            "action": "導師已用有權使用的自製例子示範拆問句，不播放學生輸入或點名其困難。",
+            "tradeoff": "用掉課內時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想試那個工具，先用自己那句老是念錯的外語玩一次。",
+          "action": "導師已在校規允許、本人有權使用的工具上輸入僅涉自身的練習句試用，不借走學生設備或傳入他人資料。",
+          "tradeoff": "花自己的空檔，也可能被工具聽得更怪"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3562430118
+        },
+        "selectedIds": [
+          1,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "e66eb70c2131fbacd199a8a6eb0e5b030b2bc3c01c8faa1048afa8ceab73ea6e"
+      },
+      "consequenceDirections": {
+        "A": "教師可自行試錯，不叫學生當翻譯客服。",
+        "B": "正式協助可減少對同學依賴，不能替本人決定需求。",
+        "C": "圖能提供另一個入口，不必靠朋友翻完整句。",
+        "D": "同桌不再代問，原協助者能退回同學位置。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6b77d4e42ca0e12dff2789b8535d9acfa6fa87fd27f82762fcca6495d8f89920",
+    "draftSha256": "a9762f2f4682385b7d91f07ac792074dc79910e60acc8d9b3b2d7902201dceec",
     "seedAssignmentVersion": 1
   }
 }

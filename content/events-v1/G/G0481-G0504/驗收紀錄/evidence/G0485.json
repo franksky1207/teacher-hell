@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7b9a042e3203c00626f09d9a1441030b2bba8e3d0ec11403278468c99f0709ff",
+      "checkedAt": "2026-11-27T07:24:36.294Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓他安靜坐著，不再要求特定休息姿勢。",
+            "action": "導師已允許學生在安全舒適且不擾人範圍自選靜坐姿勢，維持必要照看。",
+            "tradeoff": "休法不整齊一致，我得放下巡眼睛的習慣"
+          },
+          {
+            "id": 2,
+            "text": "問他是否需要依校內方式到健康中心評估不適。",
+            "action": "導師已詢問非急迫不適及提出健康中心協助選擇；急迫健康需求仍在共同前提即時處理，尚未假定已就診。",
+            "tradeoff": "可能得到協助，也會打斷原午休安排"
+          },
+          {
+            "id": 3,
+            "text": "讓他選安全可用的較暗位置，先避開窗邊光。",
+            "action": "導師已向學生提供班內安全可用的遮光位置選擇，不強迫其他學生讓位或保證成效。",
+            "tradeoff": "需要調整座位，也可能其他人不願被換"
+          },
+          {
+            "id": 4,
+            "text": "把今天可自行取消的午休後加碼練習撤掉。",
+            "action": "導師已取消自身非必要的午休後額外練習，不減法定課程或以其他時段補罰。",
+            "tradeoff": "少一次練習，也要重新安排正常教學"
+          },
+          {
+            "id": 5,
+            "text": "在正常班務時間重新說清楚「安靜」的實際要求，不逐人示範睡姿。",
+            "action": "導師已安排正常班務時段說明可觀察的不擾人要求，未延長本次午休說教。",
+            "tradeoff": "占用班務時間，也得承認過去要求混雜"
+          },
+          {
+            "id": 6,
+            "text": "午休後私下問他願不願意談最近為什麼這麼累。",
+            "action": "導師已向學生發出非強制的後續短談邀請，尚未得知疲倦原因或取得同意。",
+            "tradeoff": "增加工作談話，也可能被拒絕"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己也想靜一靜，把那本一直想批的作業先闔起來。",
+          "action": "導師已於可使用的休息時段停止額外批閱並收起作業，必要照看另按既有安排維持，未擅離職守。",
+          "tradeoff": "批閱會往後移，沒辦法今天什麼都做完"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 38266692
+        },
+        "selectedIds": [
+          1,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "a06c1d1615b0a3a7b1a3914187628f02c3d804fc8a96179bef73ac50a05b59b0"
+      },
+      "consequenceDirections": {
+        "A": "他能試適合自己的方式，仍須顧及周邊安靜。",
+        "B": "其他學生能分辨休法與擾人行為，不靠互相盯眼睛。",
+        "C": "教師在必要值勤仍完成的前提下使用休息，不再靠盯學生撐精神。",
+        "D": "光線可能改善，不能保證因此睡著。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bb3576f765324007856290adfe10f7d8a44fd1f68f9a42a6fa98b40a718c39fe",
+    "draftSha256": "7b9a042e3203c00626f09d9a1441030b2bba8e3d0ec11403278468c99f0709ff",
     "seedAssignmentVersion": 1
   }
 }

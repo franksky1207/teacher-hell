@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "db86e8d4f5d24fa088a6435494388e7a1a0ecbd8e2e07b8c3296a99751ffdfa4",
+      "checkedAt": "2026-11-27T07:24:36.301Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "同意他在原掃除時段只示範一次，之後回自己工作。",
+            "action": "導師已限定並確認本次自願示範的一次性範圍，不新增學生額外值日。",
+            "tradeoff": "會少一點當日進度"
+          },
+          {
+            "id": 2,
+            "text": "不加示範，讓他照原安排去讀書。",
+            "action": "導師已拒絕新增學生示範任務，維持其原有安全分工與可用閱讀空檔。",
+            "tradeoff": "同桌少一個現成教學者"
+          },
+          {
+            "id": 3,
+            "text": "讓那兩位先試，卡住時由我看實際動作。",
+            "action": "導師已在原安全掃除範圍巡看兩名學生自行操作，不要求原協助者繼續代做。",
+            "tradeoff": "占教師時間，也可能做得較慢"
+          },
+          {
+            "id": 4,
+            "text": "把這一區原有步驟畫成小圖，往後依圖接手。",
+            "action": "導師已自行整理既有安全清掃步驟圖供班內使用，不新增學生繪圖工作。",
+            "tradeoff": "教師要先整理，圖也可能不清楚"
+          },
+          {
+            "id": 5,
+            "text": "在原輪替裡讓有意願者下次試不同區，不固定誰是師傅。",
+            "action": "導師已在原可調整輪替範圍徵詢換區意願，尚未強制調派或保證各人選項。",
+            "tradeoff": "需重新核對分工"
+          },
+          {
+            "id": 6,
+            "text": "保留大家今天完成的狀況，暫不決定下次還要加做什麼。",
+            "action": "導師已記下本次已完成班務，明示不新增下次額外工作承諾，不以記錄當排名。",
+            "tradeoff": "沒有立刻解決所有不熟練"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想趁這幾分鐘看書，把自己想加的口頭表揚留到班務時間。",
+          "action": "導師已取消當下非必要集合表揚，於自身可用休息時間閱讀，必要值勤仍由原安排維持。",
+          "tradeoff": "少了當下熱鬧，回饋會晚一點"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2377534151
+        },
+        "selectedIds": [
+          2,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "2dd0cf0977a52aaa2a138d834271b04af79a62a9f7d25b621416d4e48acc11e4"
+      },
+      "consequenceDirections": {
+        "A": "教師須依原分工處理不熟處，不把讀書說成不合群。",
+        "B": "技能能慢慢分散，也可能有人不喜歡換區。",
+        "C": "學生可回原空檔，教師需在約定時間確實回應。",
+        "D": "一次好成果不自動長成額外義務，後續仍依正常分工。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b92f1f658ea6423ec0f3d34b2efc6ad2ad361242588a794e07eaeb04bf2812ee",
+    "draftSha256": "db86e8d4f5d24fa088a6435494388e7a1a0ecbd8e2e07b8c3296a99751ffdfa4",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0f467d4486f9a6e46d5d067c1c1818d687c2d0e9fee29b6432fb925ba7740274",
+      "checkedAt": "2026-11-27T07:24:36.310Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "學生不再經手訂餐名單，由正式供餐窗口接回。",
+            "action": "導師已停止本次學生代整名單的額外安排，將必要供餐資訊依規定交正式窗口。",
+            "tradeoff": "少了班內整理的便利"
+          },
+          {
+            "id": 2,
+            "text": "只讓有意願者整理不含姓名、付款狀態的總數。",
+            "action": "導師已限縮自願學生任務為無法識別個人的總量整理，不交付個別財務資料。",
+            "tradeoff": "不能靠這張直接找漏項"
+          },
+          {
+            "id": 3,
+            "text": "由各人依原流程私下向窗口確認，不在班上加開一張表。",
+            "action": "導師已取消班內平行訂餐表，說明原合法個別確認方式，不中止必要供餐。",
+            "tradeoff": "少一次全班快速清點"
+          },
+          {
+            "id": 4,
+            "text": "在可調整的班會活動裡不再安排額外合訂餐。",
+            "action": "導師已取消本人可決定的非必要班會加訂餐構想，既有訂單依真實條件處理，不擅自全退。",
+            "tradeoff": "少了集體用餐氣氛"
+          },
+          {
+            "id": 5,
+            "text": "邀他在正常班務時間提出名單設計建議，只用虛構例子。",
+            "action": "導師已發出以虛構資料討論流程的自願邀請，未要求學生設計系統或提供真實訂餐資料。",
+            "tradeoff": "要另花時間，也不保證採用"
+          },
+          {
+            "id": 6,
+            "text": "我自己先整理班級多出的餐務工作，向承辦提減少重複核對。",
+            "action": "導師已向承辦提出刪減自身另加餐務核對的建議，未停止依法必要的收件與供餐確認。",
+            "tradeoff": "要多做一次成人協調"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再邊催名單邊餓著，吃自己的原份午餐，不另外當合訂總召。",
+          "action": "導師已退出尚未成立的非必要私人合訂代辦並食用自身正常供餐，未挪用他人餐點或取消學生既有訂單。",
+          "tradeoff": "放棄額外訂餐的方便，也可能少了想吃的菜"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1696763951
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "ed4cd696e17869a8535f1c859d088cb68060a332557d13a9c486c5c982ddbcf0"
+      },
+      "consequenceDirections": {
+        "A": "教師先結束私人代訂角色，必要餐務仍由原窗口處理。",
+        "B": "可能少一層表單，也可能承辦說明仍有必要部分。",
+        "C": "原本正常供餐不變，學生不需為班會另花一筆。",
+        "D": "訂餐仍可完成，班務學生不需當催答者。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "371c3ebdcd6fe26ba1b73c3591af6015094fb95d614212d46d7f7f0468a5e12e",
+    "draftSha256": "0f467d4486f9a6e46d5d067c1c1818d687c2d0e9fee29b6432fb925ba7740274",
     "seedAssignmentVersion": 1
   }
 }

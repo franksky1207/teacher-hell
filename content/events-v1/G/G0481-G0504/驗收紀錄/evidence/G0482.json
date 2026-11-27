@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6443051ccddd5035afd067abaa50175d5f4c6ee71e4715a7862d71771b5cc53b",
+      "checkedAt": "2026-11-27T07:24:36.291Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先說明我當時剪掉那段的理由，再聽他不同意哪裡。",
+            "action": "導師已向作者說明自身剪段依據，請其表達異議，未把說明當成追加使用授權。",
+            "tradeoff": "得承認判斷可能不周，不能保證談完就同意"
+          },
+          {
+            "id": 2,
+            "text": "徵詢他是否願意另留一段自己選的版本。",
+            "action": "導師已邀作者自選願意保留的片段，尚未取得新授權或重新播放。",
+            "tradeoff": "要重新整理，也可能仍被拒絕"
+          },
+          {
+            "id": 3,
+            "text": "這次不再使用他的影片，原稿由他自己留著。",
+            "action": "導師已停止本次教學展示使用，按權利及保存規定處理副本，未要求作者刪除自有原稿。",
+            "tradeoff": "少一件現成範例，得另備課"
+          },
+          {
+            "id": 4,
+            "text": "問他願不願意私下看完整段，我只回應他最在意的地方。",
+            "action": "導師已提出限定範圍的私下觀看與回饋邀請，待作者同意及安排時間，不要求立即交出手機。",
+            "tradeoff": "要另留時間，也可能聽到對剪輯的不滿"
+          },
+          {
+            "id": 5,
+            "text": "用我自己的示例說明長短版怎麼選，不再拿他的稿演示。",
+            "action": "導師已改用有權使用的自製示例進行長短版教學，不複製學生爭議片段。",
+            "tradeoff": "要自己準備，少了真實學生素材"
+          },
+          {
+            "id": 6,
+            "text": "把我的回饋直接寫在他願意交看的稿上，不再評選好笑片段。",
+            "action": "導師已徵詢作者可供回饋的範圍並提供書面回饋方式，未將觀看或改寫同意視為當然。",
+            "tradeoff": "少了熱鬧表揚，也增加逐段閱讀時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不服，拿自己的口說稿也剪一版，看會不會把重點剪沒。",
+          "action": "導師已以自有口說稿完成一份私人短版試剪，未使用學生聲音或讓其評分，正式回饋照常。",
+          "tradeoff": "花自己的時間，也可能證明自己剪得很糟"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2354832532
+        },
+        "selectedIds": [
+          6,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "3103db88dc6b44a8bde1962dc5d3fe849fe34262bc1b15d81faccc2d825f69da"
+      },
+      "consequenceDirections": {
+        "A": "回饋較貼近作者目標，他仍可能不想再展示。",
+        "B": "作者可收回展示，教師不能因此減少正常回饋。",
+        "C": "教師可帶著試作再談，不要求學生教會自己。",
+        "D": "作者能針對真正原因回應，不只猜自己表現差。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "946b21a8a53d6b32ab7ee1288bd33f271f7e195b36f31ce1731c610ab0854a97",
+    "draftSha256": "6443051ccddd5035afd067abaa50175d5f4c6ee71e4715a7862d71771b5cc53b",
     "seedAssignmentVersion": 1
   }
 }

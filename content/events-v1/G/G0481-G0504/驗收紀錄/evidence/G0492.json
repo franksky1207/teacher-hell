@@ -15,14 +15,155 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "213f50de09dc3744d0a002d21ff5eaed6f041d56ff670614066970284d286f4b",
+      "checkedAt": "2026-11-27T07:24:36.301Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "本次不公開整片，正常課內回饋私下完成。",
+            "action": "導師已在有權範圍取消本次非必要整片展示，未刪除依法須保存資料或要求作者棄權。",
+            "tradeoff": "失去成品曝光"
+          },
+          {
+            "id": 2,
+            "text": "重新徵詢各人是否願意保留無爭議片段，沒回覆的不先放。",
+            "action": "導師已發出分段使用意願詢問，尚未取得新授權或重新公開。",
+            "tradeoff": "需多次核對，作品會縮短"
+          },
+          {
+            "id": 3,
+            "text": "改成作者自願撰寫的文字摘要，不再使用聲音與畫面。",
+            "action": "導師已提出去除聲畫、另徵自願文字摘要的替代方案，未代寫學生故事或假定同意。",
+            "tradeoff": "少了影像趣味，也要重新準備"
+          },
+          {
+            "id": 4,
+            "text": "只向本人提供剪輯技巧回饋，不再拿這件公開教學。",
+            "action": "導師已向剪輯學生提供限定私下技巧回饋方式，未要求接受公開案例化。",
+            "tradeoff": "受惠範圍變小"
+          },
+          {
+            "id": 5,
+            "text": "邀願意的作者另做一份全新短片，不沿用這段紀錄。",
+            "action": "導師已提出非強制的新作邀請，尚未收件或核准拍攝，不將重做當補救義務。",
+            "tradeoff": "增加新製作成本，也可能沒人想重做"
+          },
+          {
+            "id": 6,
+            "text": "往後班會不再固定做影片，改回必要的簡短文字紀錄。",
+            "action": "導師已取消本人可決定的後續非必要班會影片製作，保留正常合法文字紀錄，不要求學生補剪",
+            "tradeoff": "少了長期影像成果，也得向期待者改口"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕自己哪天剪壞，拿自己的聲音做個小短片試，不找學生當素材。",
+          "action": "導師已以自有可使用文本與本人聲音完成私人短片試作，不含學生資料、不要求學生評論。",
+          "tradeoff": "花私人空檔，也可能弄得很笨"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 962676607
+        },
+        "selectedIds": [
+          3,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "2ecd84f19162c7b32004cfc16cc80bf781fb770af2c16a9bebff49fd93d8ab94"
+      },
+      "consequenceDirections": {
+        "A": "教師能碰到剪輯的麻煩，不必叫學生負責教會自己。",
+        "B": "摘要仍須核對，不能把假告白換成文字繼續傳。",
+        "C": "完成者能保留學習成果，不必再扛全班展示。",
+        "D": "學生不用繼續固定剪輯，正常班務仍須分工；本次爭議另依原責任處理。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "普通6與普通1皆停止本次展示，改為取消後續固定影片製作。 依原工具真實重抽洗牌一次並保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "本次不公開整片，正常課內回饋私下完成。",
+                "action": "導師已在有權範圍取消本次非必要整片展示，未刪除依法須保存資料或要求作者棄權。",
+                "tradeoff": "失去成品曝光"
+              },
+              {
+                "id": 2,
+                "text": "重新徵詢各人是否願意保留無爭議片段，沒回覆的不先放。",
+                "action": "導師已發出分段使用意願詢問，尚未取得新授權或重新公開。",
+                "tradeoff": "需多次核對，作品會縮短"
+              },
+              {
+                "id": 3,
+                "text": "改成作者自願撰寫的文字摘要，不再使用聲音與畫面。",
+                "action": "導師已提出去除聲畫、另徵自願文字摘要的替代方案，未代寫學生故事或假定同意。",
+                "tradeoff": "少了影像趣味，也要重新準備"
+              },
+              {
+                "id": 4,
+                "text": "只向本人提供剪輯技巧回饋，不再拿這件公開教學。",
+                "action": "導師已向剪輯學生提供限定私下技巧回饋方式，未要求接受公開案例化。",
+                "tradeoff": "受惠範圍變小"
+              },
+              {
+                "id": 5,
+                "text": "邀願意的作者另做一份全新短片，不沿用這段紀錄。",
+                "action": "導師已提出非強制的新作邀請，尚未收件或核准拍攝，不將重做當補救義務。",
+                "tradeoff": "增加新製作成本，也可能沒人想重做"
+              },
+              {
+                "id": 6,
+                "text": "讓這次班會紀錄只進原規定可存取的內部資料，不辦展示。",
+                "action": "導師已取消外加的展示用途，依既有同意與保存規則限縮必要內部存取，不額外留爭議副本。",
+                "tradeoff": "成品少了閱覽者"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也怕自己哪天剪壞，拿自己的聲音做個小短片試，不找學生當素材。",
+              "action": "導師已以自有可使用文本與本人聲音完成私人短片試作，不含學生資料、不要求學生評論。",
+              "tradeoff": "花私人空檔，也可能弄得很笨"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3793905868
+            },
+            "selectedIds": [
+              3,
+              2,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 3,
+              "C": "emotional",
+              "D": 5
+            },
+            "optionsDigest": "340d6e26b456bc977f765f30a46fa5449c5a3695ed55c5413a81a61bedc49fdb"
+          },
+          "previousConsequenceDirections": {
+            "A": "部分成果可留下，沒有人被整片完成綁住。",
+            "B": "摘要仍須核對，不能把假告白換成文字繼續傳。",
+            "C": "教師能碰到剪輯的麻煩，不必叫學生負責教會自己。",
+            "D": "新片可有不同內容，舊案仍依原責任處理。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f8ce1a973514947fdba9f39acf9cc83c05f46308c9cab2e653d1bbe5a83c4f33",
+    "draftSha256": "213f50de09dc3744d0a002d21ff5eaed6f041d56ff670614066970284d286f4b",
     "seedAssignmentVersion": 1
   }
 }

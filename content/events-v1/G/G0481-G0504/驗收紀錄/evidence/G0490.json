@@ -14,14 +14,82 @@
   "plannedTags": [
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1143dab558a0bb55eced7ce2c23cfce314645732adeaada50ea89b1572363b5f",
+      "checkedAt": "2026-11-27T07:24:36.298Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "原場次改為成人短試教，不再增加學生參與。",
+            "action": "導師已向承辦提出成人試教替代案，尚未取得課務核准或新增參與者。",
+            "tradeoff": "少了真實課堂互動"
+          },
+          {
+            "id": 2,
+            "text": "申請取消本次非必要觀摩，正常課程照常。",
+            "action": "導師已提出取消申請，未把申請當核准；共同必要通知依正式結果辦理。",
+            "tradeoff": "前置安排部分白做"
+          },
+          {
+            "id": 3,
+            "text": "只保留原已確認的一小組，不再追加旁觀者。",
+            "action": "導師已明確拒絕自己可拒絕的新增邀請，原活動限既有核准範圍，不代主管更改排程。",
+            "tradeoff": "能看見的人變少"
+          },
+          {
+            "id": 4,
+            "text": "問承辦可否把原案拆成兩次各自重新確認的短段。",
+            "action": "導師已提交分次方案供權責者評估，未承諾時間、人力或第二次出席。",
+            "tradeoff": "增加排程工作，也可能被拒"
+          },
+          {
+            "id": 5,
+            "text": "改看已取得授權且不含學生資料的自製教學示例。",
+            "action": "導師已提供本人有權使用的無學生資料示例，請承辦評估替代現場觀摩，尚未變更正式方案。",
+            "tradeoff": "缺少臨場反應"
+          },
+          {
+            "id": 6,
+            "text": "先撤回我提出的擴班建議，不要求這位承辦再幫忙證明排得下。",
+            "action": "導師已撤回自身非必要擴班建議，明示原到場數不代表持續承辦同意，不阻止必要校務決策。",
+            "tradeoff": "少了一項我想推的成果"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再在大場面裡撐主持，自己的加碼致詞先拿掉。",
+          "action": "導師已取消自身可自主刪除的非必要致詞，未刪除必要規則說明或他人的發言。",
+          "tradeoff": "少一次露臉，也得自己改口"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3233321347
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "a3b57af4998212ba748f0642213369d29af99774a78ba918c015d8169b599859"
+      },
+      "consequenceDirections": {
+        "A": "觀摩可縮成材料討論，教師須補足說明。",
+        "B": "承辦仍可用原短段，但成人需自己準備。",
+        "C": "原範圍可被守住，想擴量者可能不滿。",
+        "D": "活動若續辦會較短，承辦仍可要求必要說明。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1bc0f1ce8ce2e9dae311fc777123decdb8c3686a50b470448088d5e231715884",
+    "draftSha256": "1143dab558a0bb55eced7ce2c23cfce314645732adeaada50ea89b1572363b5f",
     "seedAssignmentVersion": 1
   }
 }

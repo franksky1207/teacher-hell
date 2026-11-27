@@ -15,14 +15,155 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fc28e84ee8730e82c32d89487c0d52c947eba827129c93f884b3f3b45544ed83",
+      "checkedAt": "2026-11-27T07:24:36.309Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只邀他讀不含日期的短段，願意才讀。",
+            "action": "導師已提出限定短段的自願朗讀邀請，未將其讀法當正式資訊查核。",
+            "tradeoff": "參與範圍變小"
+          },
+          {
+            "id": 2,
+            "text": "讓有意願的兩人交叉讀，再由我確認正式內容。",
+            "action": "導師已徵詢兩名自願核讀者的意願，正式版本仍由教師負責，尚未假定兩人答應。",
+            "tradeoff": "要花更多課內時間"
+          },
+          {
+            "id": 3,
+            "text": "由我用第二種說法再講一次，今天不徵學生讀。",
+            "action": "導師已以自身確認的另一種表述重講可公開通知，不轉派學生解釋責任。",
+            "tradeoff": "教師多做一遍，參與機會減少"
+          },
+          {
+            "id": 4,
+            "text": "把通知拆成圖文兩部分，課內讓大家自行核對。",
+            "action": "導師已整理本人可修改的公開通知為圖文對照，未改正式日期或要求學生代製。",
+            "tradeoff": "教師要重排，可能不如口頭快"
+          },
+          {
+            "id": 5,
+            "text": "私下問他是否需要學校提供家庭語言支持的聯絡方式。",
+            "action": "導師已提出非強制支持資訊邀請，不索取租屋私訊、不代作法律翻譯。",
+            "tradeoff": "要另談，也可能不想接受"
+          },
+          {
+            "id": 6,
+            "text": "把非急迫延伸說明移到正常班務時間，今天只講必要通知。",
+            "action": "導師已取消自身當次非必要長篇延伸，另明示正常工作回覆方式，不省略必要內容。",
+            "tradeoff": "少一次完整討論"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也嫌那張字太小，自己印一份大字的，不再瞇著眼找日期。",
+          "action": "導師已自費印製內容不變且僅含可公開通知的大字自用本，不要求學生購印、不改正式版本",
+          "tradeoff": "花自己的小錢與紙張，仍須核對內容"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4174635964
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "d27df810c65ead7cd9b8643293676e671fc4d6b64c04aeeb87822ac007a90935"
+      },
+      "consequenceDirections": {
+        "A": "學生可以休息，通知不因少一雙手延誤。",
+        "B": "學生能先掌握必需資訊，延伸疑問仍有後續。",
+        "C": "教師能舒適自行閱讀，學生不必替教師找字；正式通知仍依原核定內容。",
+        "D": "可發現不同理解，不能用學生互校免除教師責任。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "情緒錄解說與普通3教師另講一次過近，改為自費製作大字自用本。 依原工具真實重抽洗牌一次並保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "只邀他讀不含日期的短段，願意才讀。",
+                "action": "導師已提出限定短段的自願朗讀邀請，未將其讀法當正式資訊查核。",
+                "tradeoff": "參與範圍變小"
+              },
+              {
+                "id": 2,
+                "text": "讓有意願的兩人交叉讀，再由我確認正式內容。",
+                "action": "導師已徵詢兩名自願核讀者的意願，正式版本仍由教師負責，尚未假定兩人答應。",
+                "tradeoff": "要花更多課內時間"
+              },
+              {
+                "id": 3,
+                "text": "由我用第二種說法再講一次，今天不徵學生讀。",
+                "action": "導師已以自身確認的另一種表述重講可公開通知，不轉派學生解釋責任。",
+                "tradeoff": "教師多做一遍，參與機會減少"
+              },
+              {
+                "id": 4,
+                "text": "把通知拆成圖文兩部分，課內讓大家自行核對。",
+                "action": "導師已整理本人可修改的公開通知為圖文對照，未改正式日期或要求學生代製。",
+                "tradeoff": "教師要重排，可能不如口頭快"
+              },
+              {
+                "id": 5,
+                "text": "私下問他是否需要學校提供家庭語言支持的聯絡方式。",
+                "action": "導師已提出非強制支持資訊邀請，不索取租屋私訊、不代作法律翻譯。",
+                "tradeoff": "要另談，也可能不想接受"
+              },
+              {
+                "id": 6,
+                "text": "把非急迫延伸說明移到正常班務時間，今天只講必要通知。",
+                "action": "導師已取消自身當次非必要長篇延伸，另明示正常工作回覆方式，不省略必要內容。",
+                "tradeoff": "少一次完整討論"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也不想再把一張通知講成演講，自己錄一段短解說，限原本該收到的人看。",
+              "action": "導師已用自身聲音製作僅含可公開通知的簡短解說，依原合法收件範圍提供，不含學生或家庭資料。",
+              "tradeoff": "多花我的準備時間，也可能需要重錄"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 779023066
+            },
+            "selectedIds": [
+              3,
+              4,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 3,
+              "C": 4,
+              "D": 5
+            },
+            "optionsDigest": "ac4b3edf24fd05fe0a5825234a047cffd5aeaa887c65e01d65f3dda1067d2bae"
+          },
+          "previousConsequenceDirections": {
+            "A": "學生不必代講，錄音內容仍須本人確認與依規定保存。",
+            "B": "學生可以休息，通知不因少一雙手延誤。",
+            "C": "資訊可回看，仍有疑問者能直接問教師。",
+            "D": "家庭可有別的查詢來源，不靠學生每晚撐著讀。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7f6c6d37223e8eac69c365acc813e0071decb085e51d4c3015381db1a5b642fa",
+    "draftSha256": "fc28e84ee8730e82c32d89487c0d52c947eba827129c93f884b3f3b45544ed83",
     "seedAssignmentVersion": 1
   }
 }

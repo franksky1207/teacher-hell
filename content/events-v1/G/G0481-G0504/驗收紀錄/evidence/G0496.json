@@ -14,14 +14,82 @@
   "plannedTags": [
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e4a50ffc2ab0c8f7ed2dfd1b63b23f7f425b0420833a9b2b9c957f55bf2c68c9",
+      "checkedAt": "2026-11-27T07:24:36.304Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天取消這段表演，回到原有課內工作。",
+            "action": "導師已取消本次可自主取消的非必要表演，不省略原事件必要處理。",
+            "tradeoff": "少一次練習，也讓想演的人失望"
+          },
+          {
+            "id": 2,
+            "text": "提出全新虛構情境，徵詢願意者是否重做。",
+            "action": "導師已發出另作虛構內容的自願邀請，未沿用可指認片段或假定參與同意。",
+            "tradeoff": "要重新準備，也可能沒人參加"
+          },
+          {
+            "id": 3,
+            "text": "改成個別寫短對話，不要求上台。",
+            "action": "導師已在自身可調整課程內改為個別文字練習，保留必要回饋，不強制公開私事。",
+            "tradeoff": "少了現場互動，書面回饋變多"
+          },
+          {
+            "id": 4,
+            "text": "讓原作者自行收回稿，今天不用改給全班看。",
+            "action": "導師已交還自有稿件作者，停止本次展示使用，依法須保存資料另按共同前提處理。",
+            "tradeoff": "現成材料少一份"
+          },
+          {
+            "id": 5,
+            "text": "私下分別問兩人是否願意談剛才哪句造成影響。",
+            "action": "導師已分別發出可拒絕的後續短談邀請，未促成強制對質。",
+            "tradeoff": "得另花談話時間"
+          },
+          {
+            "id": 6,
+            "text": "請願意者只練說故事的節奏，不演誰犯了什麼錯。",
+            "action": "導師已提出以無個人指認文本練敘述節奏的替代練習，尚未指定學生上台。",
+            "tradeoff": "練習目標縮小"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想把自己的糗事講出來，挑一件只牽涉我的短短說完。",
+          "action": "導師已於可用課內時間自願說明一件僅涉本人、無他人私事的小失誤，不要求學生笑或交換揭露。",
+          "tradeoff": "得自己承受沒人笑的尷尬"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 806935420
+        },
+        "selectedIds": [
+          1,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "def17f2b48fe97af3ba4be28a29d7614666e20818ddb0b6d508bde959ab0f719"
+      },
+      "consequenceDirections": {
+        "A": "受影響者不用為全班失去機會負責。",
+        "B": "一人願談不等於另一人必須加入，不能用互相取笑算扯平。",
+        "C": "教師可成為自嘲主體，學生不用拿同桌當笑點。",
+        "D": "學生可在文字中試不同說法，作品不自動公開。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "67ef5914b9c7982c8a9b0533f28a2d5dea6b06e05becfbe4385eafdd60ec7144",
+    "draftSha256": "e4a50ffc2ab0c8f7ed2dfd1b63b23f7f425b0420833a9b2b9c957f55bf2c68c9",
     "seedAssignmentVersion": 1
   }
 }

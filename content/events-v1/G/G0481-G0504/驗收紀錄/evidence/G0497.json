@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "15b26abe28182b3bd37efde37adbba509fac728ac0550f26343fe89eb0b79516",
+      "checkedAt": "2026-11-27T07:24:36.304Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先把剛才聽懂的三個詞記下，不再追著重播。",
+            "action": "導師已停止當次音訊重播，於坐穩安全且可辨交通資訊的空檔記下自身所聽詞語，不要求同事共練",
+            "tradeoff": "保留得不完整，也可能記錯"
+          },
+          {
+            "id": 2,
+            "text": "我先試短段播放，到既定停點就暫停看站訊。",
+            "action": "導師已在規定允許且坐穩處試播自身短段音訊並按停點暫停，必要站訊確認持續執行。",
+            "tradeoff": "練習會被切碎"
+          },
+          {
+            "id": 3,
+            "text": "今天只看同份文字，不播聲音。",
+            "action": "導師已停止自身當次音訊，改讀本人有權使用的對應文本，不要求同事一起停播。",
+            "tradeoff": "少了聽力訓練"
+          },
+          {
+            "id": 4,
+            "text": "我自己試一次到站震動提醒，先核對目前路線。",
+            "action": "導師已為自身行程設定輔助震動提醒並核對路線，不代替官方資訊或替同事報站。",
+            "tradeoff": "要操作設定，也可能提醒不準"
+          },
+          {
+            "id": 5,
+            "text": "把這段改到回家後聽，通勤不再安排補進度。",
+            "action": "導師已取消當次通勤聽力安排，將私人練習留待返家可用時間自行評估，不對同事承諾教學或督促。",
+            "tradeoff": "晚上私人時間會少一些"
+          },
+          {
+            "id": 6,
+            "text": "只和他對照各自怎麼漏接訊息，不替他選一套方法。",
+            "action": "導師已在安全可談話情境交換本人注意分配經驗，未索取同事個人裝置控制權或代負乘車責任。",
+            "tradeoff": "少了立即答案"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我今天只想聽喜歡的歌，不再把通勤當補習。",
+          "action": "導師已在允許情境改播本人有權聆聽的喜愛歌曲，保持可接收交通資訊並自行負責行程，不要求同事陪聽。",
+          "tradeoff": "放棄這次進度，也可能明天更不想練"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3643728525
+        },
+        "selectedIds": [
+          5,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "48b02b8ffeb4f2476e982eb68921929bbf4c645e63bf8ec9ecc55d58bb22fd05"
+      },
+      "consequenceDirections": {
+        "A": "眼前內容可接續，真正聽辨留到另有空檔。",
+        "B": "教師能保留娛樂，仍要自己聽清車訊與下車。",
+        "C": "同事能自行衡量，導師不成為貼身提醒器。",
+        "D": "若回家太累也可能沒聽成，導師需接受進度落後。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "普通1候車前練與普通5返家後練都以改時延練為主，改為停止重播、當場自行回憶筆記。 依原工具真實重抽洗牌一次並保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "把我的聽力練習移到候車前，不在月台反覆重播。",
+                "action": "導師已調整自身私人練習安排至安全非候車時段，未替同事設定必須遵循的作息。",
+                "tradeoff": "得另留時間"
+              },
+              {
+                "id": 2,
+                "text": "我先試短段播放，到既定停點就暫停看站訊。",
+                "action": "導師已在規定允許且坐穩處試播自身短段音訊並按停點暫停，必要站訊確認持續執行。",
+                "tradeoff": "練習會被切碎"
+              },
+              {
+                "id": 3,
+                "text": "今天只看同份文字，不播聲音。",
+                "action": "導師已停止自身當次音訊，改讀本人有權使用的對應文本，不要求同事一起停播。",
+                "tradeoff": "少了聽力訓練"
+              },
+              {
+                "id": 4,
+                "text": "我自己試一次到站震動提醒，先核對目前路線。",
+                "action": "導師已為自身行程設定輔助震動提醒並核對路線，不代替官方資訊或替同事報站。",
+                "tradeoff": "要操作設定，也可能提醒不準"
+              },
+              {
+                "id": 5,
+                "text": "把這段改到回家後聽，通勤不再安排補進度。",
+                "action": "導師已取消當次通勤聽力安排，將私人練習留待返家可用時間自行評估，不對同事承諾教學或督促。",
+                "tradeoff": "晚上私人時間會少一些"
+              },
+              {
+                "id": 6,
+                "text": "只和他對照各自怎麼漏接訊息，不替他選一套方法。",
+                "action": "導師已在安全可談話情境交換本人注意分配經驗，未索取同事個人裝置控制權或代負乘車責任。",
+                "tradeoff": "少了立即答案"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我今天只想聽喜歡的歌，不再把通勤當補習。",
+              "action": "導師已在允許情境改播本人有權聆聽的喜愛歌曲，保持可接收交通資訊並自行負責行程，不要求同事陪聽。",
+              "tradeoff": "放棄這次進度，也可能明天更不想練"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2597828598
+            },
+            "selectedIds": [
+              5,
+              4,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 4,
+              "C": 2,
+              "D": "emotional"
+            },
+            "optionsDigest": "093008d90522e6eee10b723e94fe3392d6b68bf1bec74d0f079b1683fb1148fd"
+          },
+          "previousConsequenceDirections": {
+            "A": "若回家太累也可能沒聽成，導師需接受進度落後。",
+            "B": "提醒只能輔助，實際車訊仍須本人確認。",
+            "C": "可比較能否接回內容，不能把停點當保證不誤車。",
+            "D": "教師能保留娛樂，仍要自己聽清車訊與下車。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0ae81ea6ca5d6db55c942fb9e6d7cf4557abee2f94b5c17ff466fcb5bdafb5fd",
+    "draftSha256": "15b26abe28182b3bd37efde37adbba509fac728ac0550f26343fe89eb0b79516",
     "seedAssignmentVersion": 1
   }
 }

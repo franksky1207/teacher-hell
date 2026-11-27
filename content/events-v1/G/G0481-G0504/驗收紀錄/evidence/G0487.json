@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "92f5134a266c0a183153fce01182cb8184169070c4211d7b136396e3e1347f5d",
+      "checkedAt": "2026-11-27T07:24:36.296Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在原教室讓等候者各自安靜做事，不再全班一起收尾。",
+            "action": "導師已取消非必要全班收尾，保留原安全教室的個別安靜等候，原接送與成人照看不變。",
+            "tradeoff": "留下者少了共同活動"
+          },
+          {
+            "id": 2,
+            "text": "向值勤老師詢問可否改到原有的樓下等候區。",
+            "action": "導師已向值勤者提出替代等候區申請，尚未獲准或帶學生移動。",
+            "tradeoff": "需挪動物品，也未必有空位"
+          },
+          {
+            "id": 3,
+            "text": "讓願意留下的人把牌卡收完，其他人不用為此等。",
+            "action": "導師已將非必要牌卡整理限縮為有合法空檔者自願參與，到原接送時間即停。",
+            "tradeoff": "共同成品可能收得不完整"
+          },
+          {
+            "id": 4,
+            "text": "問等候者要不要玩一輪不走動的小遊戲，隨時能離席。",
+            "action": "導師已向仍在安全照看中的等候者發出可隨時退出的小遊戲邀請，未要求家長延後接送。",
+            "tradeoff": "要分心帶領，可能沒人想玩"
+          },
+          {
+            "id": 5,
+            "text": "提供教室原有可借的讀物，不要求分享讀後感。",
+            "action": "導師已開放原規定可借閱的班級讀物供等候者選用，未新增讀書任務。",
+            "tradeoff": "得按原規定借還"
+          },
+          {
+            "id": 6,
+            "text": "下次正常班務時間再談「一起等」是不是大家都需要。",
+            "action": "導師已排定本人可調整的短班務討論，範圍僅為非必要共同等候習慣，不改成人責任。",
+            "tradeoff": "另占時間，不能立刻得到一致答案"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也餓了，拿自己的點心先吃，不再用忙著陪等當理由拖晚餐。",
+          "action": "導師已在准許飲食且不妨礙照看的位置食用自有安全點心，不要求學生分享或代值勤。",
+          "tradeoff": "動用自己的備糧，也不一定能立刻下班"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1620275652
+        },
+        "selectedIds": [
+          5,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "2fc449d84238a2b2fccbd9455829a5035b52a5a5159c76a6ca03f3edc3454108"
+      },
+      "consequenceDirections": {
+        "A": "有人喜歡安靜，也有人會覺得更難等。",
+        "B": "教師仍在場照看，不需靠學生陪聊天撐著。",
+        "C": "自願者能做有限工作，不因熱心變成最後必走的人。",
+        "D": "學生可以自己選，沒興趣者不必勉強拿一本。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4c99f630dd53c5471403a65b80790156589f1585de271e768e610e96ed38b532",
+    "draftSha256": "92f5134a266c0a183153fce01182cb8184169070c4211d7b136396e3e1347f5d",
     "seedAssignmentVersion": 1
   }
 }

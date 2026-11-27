@@ -14,14 +14,82 @@
   "plannedTags": [
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "60e9278848cc28a128b89ff073e305ce1f915f489af3568d6a00d4edbc200f8c",
+      "checkedAt": "2026-11-27T07:24:36.303Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次回到原已確認的走法，不試新分流。",
+            "action": "導師已恢復原核准動線，由成人照原分工帶隊，不讓學生試領。",
+            "tradeoff": "放棄眼前改良機會"
+          },
+          {
+            "id": 2,
+            "text": "請他用紙畫出轉折，交場地管理者評估。",
+            "action": "導師已接收學生自願繪製的動線草圖並提出評估需求，尚未採用新路線。",
+            "tradeoff": "需等待，也可能被否決"
+          },
+          {
+            "id": 3,
+            "text": "詢問能否另約空場時段由成人空手試走。",
+            "action": "導師已向適當承辦提出成人空場試走申請，未排定或要求學生到場。",
+            "tradeoff": "增加成人工作，也不保證有空場"
+          },
+          {
+            "id": 4,
+            "text": "在原班務時間請各人描述自己看到的指示，不只問帶頭者。",
+            "action": "導師已安排本人可用班務時段收集不涉個資的動線理解，不將學生陳述當安全認證。",
+            "tradeoff": "占用正常班務時間"
+          },
+          {
+            "id": 5,
+            "text": "申請將這次可調整的非必要參觀改在原教室進行。",
+            "action": "導師已提出非必要參觀的場地替代申請，未擅取消正式必要行程。",
+            "tradeoff": "少了實地觀看，可能被拒"
+          },
+          {
+            "id": 6,
+            "text": "暫不再讓學生帶示範，先由我用原圖說一次路線。",
+            "action": "導師已停止本次非必要學生路線示範，於正常班務說明原核准圖，安全指揮仍由原成人負責。",
+            "tradeoff": "學生少一次主導機會"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想知道自己帶得多好，邀同事下次看我一次，不叫學生替我捧場。",
+          "action": "導師已向適任同事提出在合法值勤安排下旁觀本人一次的邀請，尚未取得同意，不錄影或新增學生演練。",
+          "tradeoff": "會被指出自己的盲點，也要配合對方時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 33244458
+        },
+        "selectedIds": [
+          5,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "773d3442b2ccddffb9e6586bbdcfda0a11c5f5c43893553ffe4dbe0daaead7c6"
+      },
+      "consequenceDirections": {
+        "A": "可發現不同位置看見的東西不一樣，不能用最快跟上當成功。",
+        "B": "成人可對教師行為給回饋，不拿學生速度評優劣。",
+        "C": "若獲准可不再移動；未核准仍依安全原案。",
+        "D": "全班能對照既有圖，不代表新構想永遠不得提。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fe5367fa6fda1ea1375f2880808805649219c9a2f2e3f9b170d4f8f192620bd0",
+    "draftSha256": "60e9278848cc28a128b89ff073e305ce1f915f489af3568d6a00d4edbc200f8c",
     "seedAssignmentVersion": 1
   }
 }

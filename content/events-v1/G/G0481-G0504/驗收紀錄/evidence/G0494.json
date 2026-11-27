@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c58b047de6d216de110da12ce4d553242929cc38410d17672d51b84979b56dce",
+      "checkedAt": "2026-11-27T07:24:36.303Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不加袋上的裝飾，只完成可用的基本收納。",
+            "action": "導師已取消本人可決定的非必要袋面裝飾，不另派補做。",
+            "tradeoff": "成品少了原先漂亮效果"
+          },
+          {
+            "id": 2,
+            "text": "每組只完成一份，其餘材料先不發。",
+            "action": "導師已限縮本次班務製作量為每組一份，停止追加發料。",
+            "tradeoff": "數量不足原計畫"
+          },
+          {
+            "id": 3,
+            "text": "由我接回總表，他只負責自己那一份。",
+            "action": "導師已接回本次工作總表與協調責任，不新增學生聯絡任務。",
+            "tradeoff": "教師多一道統整"
+          },
+          {
+            "id": 4,
+            "text": "今天只練基本打結，不要求當場交成品。",
+            "action": "導師已將可自主調整的本次班務練習改為有限操作試作，取消當場全成品要求。",
+            "tradeoff": "沒有立即可展示的成果"
+          },
+          {
+            "id": 5,
+            "text": "讓願意的組別各示範一個步驟，不固定他帶全部。",
+            "action": "導師已向各組徵詢分段自願示範，不將原帶頭者默認為保底人力。",
+            "tradeoff": "轉換較慢，也可能無人自願"
+          },
+          {
+            "id": 6,
+            "text": "把剩餘非必要成品延到下一個已可用的班務時段，再看是否還做。",
+            "action": "導師已停止當次非必要追加，將是否續作留到既有可用班務時段確認，不預約學生私人時間。",
+            "tradeoff": "成果延後，可能熱情消退"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看不下去那張滿格表，自己的加碼示範袋就不做了。",
+          "action": "導師已取消自身非必要的額外示範成品，不將材料轉派學生補齊。",
+          "tradeoff": "少了教師想展示的樣本"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3107596251
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "7499e1614421aa9dd7f62ba9c790c8288c73bdb254e9adbd2cdc2e77b568a4f2"
+      },
+      "consequenceDirections": {
+        "A": "各組能親手試，不能再靠一個人補成全量。",
+        "B": "學生不必追著教師完成量，正常工作不減。",
+        "C": "份量真減少，想裝飾的人須接受今天不做。",
+        "D": "待辦不在今晚追著人跑，後續仍可選取消。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ad6158d547bbbf91954c16c1a4380c5885ad42aaee74b159959736913603c7d1",
+    "draftSha256": "c58b047de6d216de110da12ce4d553242929cc38410d17672d51b84979b56dce",
     "seedAssignmentVersion": 1
   }
 }

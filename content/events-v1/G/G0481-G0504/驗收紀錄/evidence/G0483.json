@@ -15,14 +15,82 @@
     "G02",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a624022c4cefbe17292b9c31e79cf1472833f06b750b109ce8a9028b6cab4abe",
+      "checkedAt": "2026-11-27T07:24:36.292Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "班會照任務需要重新分組，遊戲隊伍不拿來套。",
+            "action": "導師已依本次班會任務另行編組，未採用私人遊戲隊表，必要個別調整照常。",
+            "tradeoff": "得重新協調，熟朋友可能不高興"
+          },
+          {
+            "id": 2,
+            "text": "這次班會採個別完成，不借用他的主機。",
+            "action": "導師已將自身可調整的本次班會任務改為個人版本，不作正式學業評量變更。",
+            "tradeoff": "少了小組互動，也少一項新鮮材料"
+          },
+          {
+            "id": 3,
+            "text": "只在原准許的休閒時間保留自願試玩，不帶進班會。",
+            "action": "導師已明示本次設備使用限於原核准休閒安排，班會不使用該設備或隊表。",
+            "tradeoff": "想玩的人未必玩得到，時間仍有限"
+          },
+          {
+            "id": 4,
+            "text": "讓各人自己寫這次班會想負責的工作，再排組。",
+            "action": "導師已收集學生本次班會工作意願，尚未保證組別或要求提供遊戲帳號。",
+            "tradeoff": "要多整理一次，也不保證跟朋友同組"
+          },
+          {
+            "id": 5,
+            "text": "請他把主機收好，今天不再徵求他提供資源。",
+            "action": "導師已結束自身可決定的當次借用徵詢，請物主依校規保管，未沒收私人設備。",
+            "tradeoff": "收回原本便利，也可能讓熱心者失落"
+          },
+          {
+            "id": 6,
+            "text": "問班上要不要在合法空檔另開不靠主機的遊戲。",
+            "action": "導師已向全班提出不涉及私人設備的自願休閒建議，未承諾一定安排或占用課務。",
+            "tradeoff": "多一種休閒，但可能沒人有興趣"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想玩，問他能不能在允許時段讓我排一次隊，不插隊當特別來賓。",
+          "action": "導師已在原核准時段向物主提出一次自願試玩請求，接受既有順序，尚未取得同意或操作設備。",
+          "tradeoff": "用掉自己的空檔，也可能排不到"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4292479459
+        },
+        "selectedIds": [
+          3,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "b4f86382033e0fce284da00a30fb8a1afe6991ccebc65a1b3d4f7038811785ee"
+      },
+      "consequenceDirections": {
+        "A": "學生能決定是否參與，不能藉此決定正式分組。",
+        "B": "學生可保留私人遊戲，班會由各人獨立參與。",
+        "C": "教師的好奇不取得優先權，學生可拒絕借玩。",
+        "D": "休閒與課內合作被分開，設備不再像交換籌碼。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "82c3afe935ca4da6f7e8aa078a59ec8a3e0d0957ee933ceef5d4f1acd3375dfb",
+    "draftSha256": "a624022c4cefbe17292b9c31e79cf1472833f06b750b109ce8a9028b6cab4abe",
     "seedAssignmentVersion": 1
   }
 }

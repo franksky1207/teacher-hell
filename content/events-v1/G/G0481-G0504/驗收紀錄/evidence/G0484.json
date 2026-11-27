@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7d7059b941903880149e45cc6880ac41529d011ebbfc4c8b9fcb1a74e3f748ab",
+      "checkedAt": "2026-11-27T07:24:36.293Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "展示只放已確認的作品，不附出席評語。",
+            "action": "導師已在自身可決定的展示範圍刪除出席評語，僅保留具授權的實際成品，不替正式紀錄作結論。",
+            "tradeoff": "看不到原想呈現的參與統計"
+          },
+          {
+            "id": 2,
+            "text": "暫時收起這組展示，等本人決定是否重放。",
+            "action": "導師已徵詢並提供暫收展示的選擇，未以作者尚未回覆視為同意永久撤件。",
+            "tradeoff": "降低當場壓力，也少一次作品曝光"
+          },
+          {
+            "id": 3,
+            "text": "向原本看到牌子的人簡短說明判定仍在核對，不公開個人資料。",
+            "action": "導師已向實際在場閱覽者說明該公開判定不宜採信且正核對，未透露學生行蹤或查核內容。",
+            "tradeoff": "要承認展示放得太早，也可能引來更多追問"
+          },
+          {
+            "id": 4,
+            "text": "把作品改放到不分組排名的共同展示區，先問作者是否願意。",
+            "action": "導師已向作者提出共同展示方案，尚未取得授權或移動其作品。",
+            "tradeoff": "失去原分組編排，也要重整位置"
+          },
+          {
+            "id": 5,
+            "text": "今天停止這面成果牆的非必要開放，先處理好版本再說。",
+            "action": "導師已在有權管理的範圍暫停該牆非必要閱覽，不取消正常課程或封鎖必要通道。",
+            "tradeoff": "影響其他想看成果的人，也要另交代"
+          },
+          {
+            "id": 6,
+            "text": "問他願不願意只談成品做了什麼，不用它證明幾點到場。",
+            "action": "導師已提出私下作品回饋邀請，明示不以此代替出席查核，未要求當場接受。",
+            "tradeoff": "有機會保住作品價值，也可能他現在完全不想談"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我掛不住這個失誤，先把我自己的成果介紹撤掉，不再拿這面牆替自己加分。",
+          "action": "導師已申請撤下本人可拒絕的非必要成果宣傳介紹，尚待承辦處理，不擅刪其他人資料。",
+          "tradeoff": "少一次自我展示，也得向承辦改口"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1960492093
+        },
+        "selectedIds": [
+          3,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "9dcf3110112c9b2f5eb162fb7c942b55cf5d83ce3705a2565c160456e8bf473b"
+      },
+      "consequenceDirections": {
+        "A": "學生可先離開被圍看的位置，重放不是自動發生。",
+        "B": "成品可被看見，出席紀錄另依查核處理。",
+        "C": "教師不再趕著包裝成果，既有紀錄仍須如實處理。",
+        "D": "旁觀者知道牌子不能當結論，細節仍不成為談資。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0db509ba4db0d5ca5262e7cf67cbaf4a8799c7654b4369715ad10a9791d413a4",
+    "draftSha256": "7d7059b941903880149e45cc6880ac41529d011ebbfc4c8b9fcb1a74e3f748ab",
     "seedAssignmentVersion": 1
   }
 }

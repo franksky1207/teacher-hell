@@ -15,14 +15,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "751771517e37e6bf88ed02922477c5e4f9aa282be95d713517ae28437945bd27",
+      "checkedAt": "2026-11-27T07:24:36.297Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "分別聽每個人今天願意負責哪一項，不讓他替全組回答。",
+            "action": "導師已逐人詢問本次班務工作意願，不以同排沉默視為共同拒絕。",
+            "tradeoff": "整理較慢"
+          },
+          {
+            "id": 2,
+            "text": "今天改成不需交談的個別小份工作。",
+            "action": "導師已把自身可決定的班務拆為可獨立完成的小份，不更動他科評量。",
+            "tradeoff": "少了合作練習"
+          },
+          {
+            "id": 3,
+            "text": "暫停本次可調整的共同評量，保留個人已完成部分。",
+            "action": "導師已暫停本人有權調整的本次團體回饋，記下個別已完成事實，不替他科改成績。",
+            "tradeoff": "不能立刻得出團體結果"
+          },
+          {
+            "id": 4,
+            "text": "先採他提出的當日換工，下一次安排另外談。",
+            "action": "導師已在必要限制內調整本日班務工作，未承諾永久組別或替其他人同意。",
+            "tradeoff": "今天可接上，長期問題仍在"
+          },
+          {
+            "id": 5,
+            "text": "邀他私下聽我說明重組依據，再由他指出不同意處。",
+            "action": "導師已向學生提出私下說明與聽取異議的短談邀請，未要求當下接受安排才可發言。",
+            "tradeoff": "另花工作時間"
+          },
+          {
+            "id": 6,
+            "text": "今天不做非必要小組展示，各自收妥已有成果。",
+            "action": "導師已取消本次可自主取消的班務成果展示，請各人保存自己的成果。",
+            "tradeoff": "少了展示機會"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被這陣沉默刺到了，找同事說說自己的悶，不拉學生來哄我。",
+          "action": "導師已在雙方可用時間向適當同事談自身受挫感，不透露可識別學生私事、不要求站隊或代為處理。",
+          "tradeoff": "用掉自己的空檔，也可能沒人有空聽"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 229253057
+        },
+        "selectedIds": [
+          6,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "bd3d937d596787e380a451d8ec715e94ef82a2f7eb7b82655f3bac1ade6ec916"
+      },
+      "consequenceDirections": {
+        "A": "投入者可能失落，成品不因沉默就被沒收。",
+        "B": "情緒能有成人去處，學生仍不必為導師心情表態。",
+        "C": "沉默者可能另有理由，分工不一定依他期待。",
+        "D": "教師可能發現自己漏聽了重要資訊，仍須回應具體需求。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "dc81e5c8fa44fccdea4daf895cd20f803013dc6926779dbe09acb85055e304d5",
+    "draftSha256": "751771517e37e6bf88ed02922477c5e4f9aa282be95d713517ae28437945bd27",
     "seedAssignmentVersion": 1
   }
 }

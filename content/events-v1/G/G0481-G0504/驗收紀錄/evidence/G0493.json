@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "64db7502b8a8f1cadb10bb6e1e8d8e4695916eed8b9c0129f4a654e97a1c5c2d",
+      "checkedAt": "2026-11-27T07:24:36.302Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消我自己加的課後技巧講評，正常教學另接。",
+            "action": "導師已撤去自身非必要的下課前追加講評，未影響必要安全資訊與原課程。",
+            "tradeoff": "少了一次即時提醒"
+          },
+          {
+            "id": 2,
+            "text": "把非急迫回饋寫成短紙條，下一個正常課內時段再給。",
+            "action": "導師已將本人非急迫運動回饋改為課內交付的短書面，不要求學生在休息時訂正。",
+            "tradeoff": "批寫占教師時間，也少了即時問答"
+          },
+          {
+            "id": 3,
+            "text": "向體育老師提議後續先用不需這件重器材的課內練習。",
+            "action": "導師已向授課教師提出不用該重件的後續練習建議，尚未取得採用同意。",
+            "tradeoff": "可能犧牲原技巧練習"
+          },
+          {
+            "id": 4,
+            "text": "請器材管理者評估下次能否另放這件器材，不占出口。",
+            "action": "導師已提交未來存放位置評估需求，未移動公物或把新位置當已核准。",
+            "tradeoff": "需重新規劃，未必有位置"
+          },
+          {
+            "id": 5,
+            "text": "詢問體育老師下次正常課內能否帶一次空手收器材演練。",
+            "action": "導師已提出正常課內安全收整流程教學建議，尚未排定或要求學生額外留校。",
+            "tradeoff": "會用掉部分課程時間"
+          },
+          {
+            "id": 6,
+            "text": "另約正常班務時間聽他說，這種短空檔想怎麼用。",
+            "action": "導師已發出可拒絕的班務短談邀請，不占本次三分鐘或改變原承諾。",
+            "tradeoff": "多一段非必要談話，也可能被拒"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不要趁這三分鐘再塞工作，收起技巧卡，喝我自己的水。",
+          "action": "導師已在自身可用休息且必要職務已妥善交接下收起額外教材並補水，不要求學生代值勤。",
+          "tradeoff": "放棄一小段備課進度"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 108380341
+        },
+        "selectedIds": [
+          4,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "469a0b8081e154fb649cfa6962d19835a8d5c8fbff9b9d4d6a61b01e73508b00"
+      },
+      "consequenceDirections": {
+        "A": "替代方案若獲採用，課程會縮小；未核准前不擅改課。",
+        "B": "學生可學交接順序，不能以練習替代成人搬重件。",
+        "C": "長期存放若能調整可減少搬移，當次安全仍照常完成。",
+        "D": "教師停止加碼，必要照看仍有確實接手者。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1014dff75d57ad23ba94971a77c9b0c2796ed6a7156e3d4bd3577d780d1fe516",
+    "draftSha256": "64db7502b8a8f1cadb10bb6e1e8d8e4695916eed8b9c0129f4a654e97a1c5c2d",
     "seedAssignmentVersion": 1
   }
 }

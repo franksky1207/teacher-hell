@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cb63d9cb41f203549712b15b4f73261833bd07fc957002093281ddfb4d6e6825",
+      "checkedAt": "2026-11-27T02:58:52.081Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "協助本人說清想安靜的具體路段。",
+            "action": "導師已協助本人說清想安靜的具體路段。",
+            "tradeoff": "需求明確但需勇氣。"
+          },
+          {
+            "id": 2,
+            "text": "在雙方同意下另約合規自返評估。",
+            "action": "導師已在雙方同意下另約合規自返評估。",
+            "tradeoff": "保留自主但今天仍依核准。"
+          },
+          {
+            "id": 3,
+            "text": "請家長今日先給一段不追問的返程。",
+            "action": "導師已請家長今日先給一段不追問的返程。",
+            "tradeoff": "當天可試但需家長同意。"
+          },
+          {
+            "id": 4,
+            "text": "先與學生練一句可拒絕逐節報告的說法。",
+            "action": "導師已先與學生練一句可拒絕逐節報告的說法。",
+            "tradeoff": "增加表達但不替他講。"
+          },
+          {
+            "id": 5,
+            "text": "邀家長在私下時段聽本人說需求。",
+            "action": "導師已邀家長在私下時段聽本人說需求。",
+            "tradeoff": "減少門口衝突但需等待。"
+          },
+          {
+            "id": 6,
+            "text": "提供校內個別支持，讓本人先整理界線。",
+            "action": "導師已提供校內個別支持，讓本人先整理界線。",
+            "tradeoff": "低壓但多一次接觸。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己也很需要下班後不被問的一段路，先陪他把那句話寫下。",
+          "action": "導師已承認自己也很需要下班後不被問的一段路，先陪他把那句話寫下。",
+          "tradeoff": "以自身經驗靠近但不可套用。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1615734893
+        },
+        "selectedIds": [
+          5,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "089ff565833cc3e2bf8022350f074c5823d7967cefef08b4fdbf97b785132e8d"
+      },
+      "consequenceDirections": {
+        "A": "雙方可協商；學生可不聯談。",
+        "B": "學生可能願談；家長仍有不同感受。",
+        "C": "學生有後續出口；條件未必通過。",
+        "D": "家長可能理解；不保證立即接受。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0a5a9434a7efe7cf587411720be2cccdaa66d5ce9593d392cb23771c8a10c033",
+    "draftSha256": "cb63d9cb41f203549712b15b4f73261833bd07fc957002093281ddfb4d6e6825",
     "seedAssignmentVersion": 1
   }
 }

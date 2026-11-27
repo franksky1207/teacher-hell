@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3e891a135b66685c3c9d342c80a8247995acb2035e1e03891c93b5aacbd01197",
+      "checkedAt": "2026-11-27T02:58:52.085Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "私下和發起者談集體走位的影響。",
+            "action": "導師已私下和發起者談集體走位的影響。",
+            "tradeoff": "不公開對立但需時間。"
+          },
+          {
+            "id": 2,
+            "text": "先讓受影響者選需要的相處距離。",
+            "action": "導師已先讓受影響者選需要的相處距離。",
+            "tradeoff": "尊重感受但不能保證友誼。"
+          },
+          {
+            "id": 3,
+            "text": "在合法課內活動安排自然混合合作。",
+            "action": "導師已在合法課內活動安排自然混合合作。",
+            "tradeoff": "增加接觸但有人不自在。"
+          },
+          {
+            "id": 4,
+            "text": "請發起者停止以群訊號召取笑某人的走位。",
+            "action": "導師已請發起者停止以群訊號召取笑某人的走位。",
+            "tradeoff": "針對行為但可能被視為管交友。"
+          },
+          {
+            "id": 5,
+            "text": "與學生協商保留熟人聊天但不占他人座位。",
+            "action": "導師已與學生協商保留熟人聊天但不占他人座位。",
+            "tradeoff": "兼顧空間但選擇受限。"
+          },
+          {
+            "id": 6,
+            "text": "分別聽親見事實，確認是否需依霸凌權責處理。",
+            "action": "導師已分別聽親見事實，確認是否需依霸凌權責處理。",
+            "tradeoff": "較完整但可能耗時。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "坦白你也會躲回熟人旁，先不說大道理，陪他看一次誰被留下。",
+          "action": "導師已坦白你也會躲回熟人旁，先不說大道理，陪他看一次誰被留下。",
+          "tradeoff": "降低防衛但可能觸痛。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1921384079
+        },
+        "selectedIds": [
+          1,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "986e581effad2c2e3e1ebc59246f38f0133d14533ddf7727bceede922bc486be"
+      },
+      "consequenceDirections": {
+        "A": "他可能理解；不等於承認有排斥意圖。",
+        "B": "學生可反思影響；不公開指認受害者。",
+        "C": "同學可自由走動；不再以人作笑點。",
+        "D": "本人可說需求；不逼加入原圈。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3f3fabbffe6c9de5ae1c06c8ade2ab27946040c421475ef3dfa2fb56804de786",
+    "draftSha256": "3e891a135b66685c3c9d342c80a8247995acb2035e1e03891c93b5aacbd01197",
     "seedAssignmentVersion": 1
   }
 }

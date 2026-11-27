@@ -15,14 +15,155 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4c4350f71230480008c598f6e518423e5346e8045163b060b3a6f2b9b4d567ee",
+      "checkedAt": "2026-11-27T02:58:52.095Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "說明約談依安全與查核需要排序，不承諾他指定次序。",
+            "action": "導師已說明約談依安全與查核需要排序，不承諾他指定次序。",
+            "tradeoff": "界線明確但可能不滿。"
+          },
+          {
+            "id": 2,
+            "text": "協調有權教職員到場，避免私下碰面。",
+            "action": "導師已協調有權教職員到場，避免私下碰面。",
+            "tradeoff": "安全較穩但需人力。"
+          },
+          {
+            "id": 3,
+            "text": "提供本人孩子的正式聯絡及求助窗口。",
+            "action": "導師已提供本人孩子的正式聯絡及求助窗口。",
+            "tradeoff": "有出口但不是全面監看。"
+          },
+          {
+            "id": 4,
+            "text": "分別安排合意時段，不讓雙方在等候區重疊。",
+            "action": "導師已分別安排合意時段，不讓雙方在等候區重疊。",
+            "tradeoff": "減少接觸但排程費工。"
+          },
+          {
+            "id": 5,
+            "text": "請家長提出具體擔憂事實，限縮處理範圍。",
+            "action": "導師已請家長提出具體擔憂事實，限縮處理範圍。",
+            "tradeoff": "可判斷需要但需敘述。"
+          },
+          {
+            "id": 6,
+            "text": "約定只回報可公開的進度，不讓家長代傳訊。",
+            "action": "導師已約定只回報可公開的進度，不讓家長代傳訊。",
+            "tradeoff": "避免介入但回覆有限。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把自己的非急待辦挪後，陪家長走一次正式詢問管道，不替他指定順序。",
+          "action": "導師已把自己的非急待辦挪後，陪家長走一次正式詢問管道，不替他指定順序。",
+          "tradeoff": "想立刻讓焦慮落地，但自己增加聯繫時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3908326936
+        },
+        "selectedIds": [
+          2,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "084718981e11dce5fc800579c176edf7c21ccaf06c62387aa4fdb7e81a0f8d6b"
+      },
+      "consequenceDirections": {
+        "A": "家長可能安心；不保證每刻陪同。",
+        "B": "家長能用正確窗口提問，也可能嫌回覆有限；不取得他家資料或排程權。",
+        "C": "家長知道下一步；不能代監督他方。",
+        "D": "家長可預期原則；不透露他家內容。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "語意審查發現情緒候選客觀行動過於含糊或與普通候選重疊，僅定向修改此候選並依SOP真實重新抽選一次；舊結果保留。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "說明約談依安全與查核需要排序，不承諾他指定次序。",
+                "action": "導師已說明約談依安全與查核需要排序，不承諾他指定次序。",
+                "tradeoff": "界線明確但可能不滿。"
+              },
+              {
+                "id": 2,
+                "text": "協調有權教職員到場，避免私下碰面。",
+                "action": "導師已協調有權教職員到場，避免私下碰面。",
+                "tradeoff": "安全較穩但需人力。"
+              },
+              {
+                "id": 3,
+                "text": "提供本人孩子的正式聯絡及求助窗口。",
+                "action": "導師已提供本人孩子的正式聯絡及求助窗口。",
+                "tradeoff": "有出口但不是全面監看。"
+              },
+              {
+                "id": 4,
+                "text": "分別安排合意時段，不讓雙方在等候區重疊。",
+                "action": "導師已分別安排合意時段，不讓雙方在等候區重疊。",
+                "tradeoff": "減少接觸但排程費工。"
+              },
+              {
+                "id": 5,
+                "text": "請家長提出具體擔憂事實，限縮處理範圍。",
+                "action": "導師已請家長提出具體擔憂事實，限縮處理範圍。",
+                "tradeoff": "可判斷需要但需敘述。"
+              },
+              {
+                "id": 6,
+                "text": "約定只回報可公開的進度，不讓家長代傳訊。",
+                "action": "導師已約定只回報可公開的進度，不讓家長代傳訊。",
+                "tradeoff": "避免介入但回覆有限。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "承認被支持很受用，仍直接拒絕替他排另一家的先後。",
+              "action": "導師已承認被支持很受用，仍直接拒絕替他排另一家的先後。",
+              "tradeoff": "不拿認同換越界但可能失去好感。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2133497958
+            },
+            "selectedIds": [
+              2,
+              1,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 1,
+              "C": 2,
+              "D": 6
+            },
+            "optionsDigest": "f6d459017ea08bbe0ae989b0a898173f05cc19f8b3bd7bf5cae679af5c1a8cb5"
+          },
+          "previousConsequenceDirections": {
+            "A": "家長可繼續支持或不滿；安全仍持續保障。",
+            "B": "家長可預期原則；不透露他家內容。",
+            "C": "家長可能安心；不保證每刻陪同。",
+            "D": "家長知道下一步；不能代監督他方。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "569f5de2ec6168d73e373e2e00ef6bc4cd378b25889468ff6415b5413e82359c",
+    "draftSha256": "4c4350f71230480008c598f6e518423e5346e8045163b060b3a6f2b9b4d567ee",
     "seedAssignmentVersion": 1
   }
 }

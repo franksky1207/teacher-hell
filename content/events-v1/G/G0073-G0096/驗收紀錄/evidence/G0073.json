@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "40a19768fb224af46419b078b424c6aecbebc6222c0ce0a4d3a966b5c061b3f3",
+      "checkedAt": "2026-11-27T02:58:52.078Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先給一項可立即動筆的具體修改建議。",
+            "action": "導師已先給一項可立即動筆的具體修改建議。",
+            "tradeoff": "回應創作但其他問題未解。"
+          },
+          {
+            "id": 2,
+            "text": "協調校內可合法使用的安靜作畫時段。",
+            "action": "導師已協調校內可合法使用的安靜作畫時段。",
+            "tradeoff": "有完整時間但需安排。"
+          },
+          {
+            "id": 3,
+            "text": "私下聽他想停止傳話的需要，提供適當支持。",
+            "action": "導師已私下聽他想停止傳話的需要，提供適當支持。",
+            "tradeoff": "接住負荷但畫稿稍後。"
+          },
+          {
+            "id": 4,
+            "text": "約明確可履行的看稿時間，由本人選是否保留。",
+            "action": "導師已約明確可履行的看稿時間，由本人選是否保留。",
+            "tradeoff": "可預期但仍要等。"
+          },
+          {
+            "id": 5,
+            "text": "讓他先圈最想問的一處，你只回那裡。",
+            "action": "導師已讓他先圈最想問的一處，你只回那裡。",
+            "tradeoff": "自主較高但回饋有限。"
+          },
+          {
+            "id": 6,
+            "text": "經本人同意介紹校內創作資源。",
+            "action": "導師已經本人同意介紹校內創作資源。",
+            "tradeoff": "選項增加但需另接洽。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把手邊非急公文移開，今天先看他原本等的這張畫。",
+          "action": "導師已把手邊非急公文移開，今天先看他原本等的這張畫。",
+          "tradeoff": "補回被忽略感但自己延工。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3701343355
+        },
+        "selectedIds": [
+          5,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "40ec222e10ab1ee673436903c782ad39fd829ce78926ee3ee307e40d0359627b"
+      },
+      "consequenceDirections": {
+        "A": "本人可聚焦；其餘內容需後續。",
+        "B": "學生可不參加；不拿資源代替傾聽。",
+        "C": "學生可能願翻回；仍可拒絕你此刻介入。",
+        "D": "學生可選續畫；教師須確實看稿。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ff23a7f2c4575cdd9de086434ec72bce35e678646602466c7df17fd8a2665ae5",
+    "draftSha256": "40a19768fb224af46419b078b424c6aecbebc6222c0ce0a4d3a966b5c061b3f3",
     "seedAssignmentVersion": 1
   }
 }

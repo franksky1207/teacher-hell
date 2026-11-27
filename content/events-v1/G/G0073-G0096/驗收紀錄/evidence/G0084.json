@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dfc8c55f39e73d61c7e15d1c2a4f4eb9ac1ba454e68b46d982ac396aee28f9ff",
+      "checkedAt": "2026-11-27T02:58:52.087Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "調整濕天清潔範圍及頻率。",
+            "action": "導師已調整濕天清潔範圍及頻率。",
+            "tradeoff": "較實際但標準降低。"
+          },
+          {
+            "id": 2,
+            "text": "在班內共同練習不妨通行的入口整潔。",
+            "action": "導師已在班內共同練習不妨通行的入口整潔。",
+            "tradeoff": "共同承擔但花班務時間。"
+          },
+          {
+            "id": 3,
+            "text": "私下肯定工作，明訂值日不含管理同學。",
+            "action": "導師已私下肯定工作，明訂值日不含管理同學。",
+            "tradeoff": "界線清楚但可能失落。"
+          },
+          {
+            "id": 4,
+            "text": "請自願者協助一次可安全完成的收尾。",
+            "action": "導師已請自願者協助一次可安全完成的收尾。",
+            "tradeoff": "能分擔但未必有人。"
+          },
+          {
+            "id": 5,
+            "text": "依校規申請合用止滑清潔配置。",
+            "action": "導師已依校規申請合用止滑清潔配置。",
+            "tradeoff": "較持續但有成本。"
+          },
+          {
+            "id": 6,
+            "text": "分別談兩人的行為，不把跨線當違規。",
+            "action": "導師已分別談兩人的行為，不把跨線當違規。",
+            "tradeoff": "責任準確但耗時。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "拿起你自己弄髒的那塊地先擦，今天不只站著叫他體諒。",
+          "action": "導師已拿起你自己弄髒的那塊地先擦，今天不只站著叫他體諒。",
+          "tradeoff": "教師加勞但有實際承擔。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 857235681
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "bd3a76c13eb99d6d96df90a0d0d9e23d8ca7a753ff904b7d4b48518149a9baad"
+      },
+      "consequenceDirections": {
+        "A": "衝突可釐清；不逼當場和解。",
+        "B": "學生可能願談；不把示範變成羞辱他人。",
+        "C": "鞋底污泥可減；不能攔阻合法進出。",
+        "D": "值日生可少做；不記拒絕者態度。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bb7c54a879edc5c86eb0b1b7eb30d62adffdde98fcfd41704abca39b8f5b73dd",
+    "draftSha256": "dfc8c55f39e73d61c7e15d1c2a4f4eb9ac1ba454e68b46d982ac396aee28f9ff",
     "seedAssignmentVersion": 1
   }
 }

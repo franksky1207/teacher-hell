@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0940c573d9f9c748f08b1b0a85224b36af01ae57c2c6d832fb8aa3785ac6c422",
+      "checkedAt": "2026-11-27T02:58:52.080Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由教師重演自己的錯誤，不辨識小組。",
+            "action": "導師已由教師重演自己的錯誤，不辨識小組。",
+            "tradeoff": "普及反例但少學生聲音。"
+          },
+          {
+            "id": 2,
+            "text": "徵得各人同意後由自願者分享。",
+            "action": "導師已徵得各人同意後由自願者分享。",
+            "tradeoff": "尊重意願但不是全組出場。"
+          },
+          {
+            "id": 3,
+            "text": "把反例留到下一次合法練習。",
+            "action": "導師已把反例留到下一次合法練習。",
+            "tradeoff": "有準備時間但即時熱度下降。"
+          },
+          {
+            "id": 4,
+            "text": "請全班先各寫矛盾，不先公布發現者。",
+            "action": "導師已請全班先各寫矛盾，不先公布發現者。",
+            "tradeoff": "多人可想但需讀答。"
+          },
+          {
+            "id": 5,
+            "text": "用同結構新例題驗證是否真懂。",
+            "action": "導師已用同結構新例題驗證是否真懂。",
+            "tradeoff": "可遷移但另需教材。"
+          },
+          {
+            "id": 6,
+            "text": "只向小組作口頭回饋，保留其私人發現。",
+            "action": "導師已只向小組作口頭回饋，保留其私人發現。",
+            "tradeoff": "保護參與但其他人未受益。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "乾脆在黑板署上「老師的爛猜法」，把被看的位置留給自己。",
+          "action": "導師已乾脆在黑板署上「老師的爛猜法」，把被看的位置留給自己。",
+          "tradeoff": "放下面子但易搶走學生功勞。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2413076250
+        },
+        "selectedIds": [
+          5,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "070a669b8f149cd0aecdb6a3c00ccec96ba717c6cbad13ee7736c7fbe7d81530"
+      },
+      "consequenceDirections": {
+        "A": "學生可拒絕；功勞需如實說明。",
+        "B": "同學可拆解；教師承擔笑點。",
+        "C": "可保護小組；仍需肯定其推理而不曝光。",
+        "D": "學生可能發現限制；不能只記笑話。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f3adf3d72ad070e333a7a3c41d520ee67510ac64244f91afca84dc75ccd36043",
+    "draftSha256": "0940c573d9f9c748f08b1b0a85224b36af01ae57c2c6d832fb8aa3785ac6c422",
     "seedAssignmentVersion": 1
   }
 }

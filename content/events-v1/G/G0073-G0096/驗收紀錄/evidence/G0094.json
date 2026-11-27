@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b51732656d687ac3c50d226284551e6574e3632c0645480784ef0c74dd13d4cd",
+      "checkedAt": "2026-11-27T02:58:52.093Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只回應作品的具體改進點。",
+            "action": "導師已只回應作品的具體改進點。",
+            "tradeoff": "焦點準但家務負荷未談。"
+          },
+          {
+            "id": 2,
+            "text": "另給一題可用不同形式表達理解的練習供選。",
+            "action": "導師已另給一題可用不同形式表達理解的練習供選。",
+            "tradeoff": "有新出口但可能加負擔。"
+          },
+          {
+            "id": 3,
+            "text": "讓本人決定是否分享不含家事的練法。",
+            "action": "導師已讓本人決定是否分享不含家事的練法。",
+            "tradeoff": "保留自主但無公開故事。"
+          },
+          {
+            "id": 4,
+            "text": "約明確回稿時間，先回他最在意的一處。",
+            "action": "導師已約明確回稿時間，先回他最在意的一處。",
+            "tradeoff": "可預期但其餘要等。"
+          },
+          {
+            "id": 5,
+            "text": "私下詢問照顧與作業是否需協調。",
+            "action": "導師已私下詢問照顧與作業是否需協調。",
+            "tradeoff": "可接支持但需意願。"
+          },
+          {
+            "id": 6,
+            "text": "邀本人比較新舊版本，自己找一項進步。",
+            "action": "導師已邀本人比較新舊版本，自己找一項進步。",
+            "tradeoff": "減少外求認同但需要時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認你也會吃比自己快的人的醋，今天不拿他和任何人比。",
+          "action": "導師已承認你也會吃比自己快的人的醋，今天不拿他和任何人比。",
+          "tradeoff": "靠近真情緒但易投射。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1863463171
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "554addec2b8a712791052c98d67c404cb6412e6e1df92b7e8d47f69336cf13b9"
+      },
+      "consequenceDirections": {
+        "A": "學生可能放鬆；教師仍需看作品證據。",
+        "B": "學生可保留；不能把同意方法當同意背景。",
+        "C": "學生可建立判斷；仍可需要教師肯定。",
+        "D": "學生較安心；導師須履約。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "595e748baaea4ca2f6ebb53bb15951ff58e035c5774e1f49058e81bc6dd0fb18",
+    "draftSha256": "b51732656d687ac3c50d226284551e6574e3632c0645480784ef0c74dd13d4cd",
     "seedAssignmentVersion": 1
   }
 }

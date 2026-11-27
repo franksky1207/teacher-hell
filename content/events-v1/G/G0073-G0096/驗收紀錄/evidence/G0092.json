@@ -15,14 +15,82 @@
     "G06",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "89a5ac10ad07c9052751ab85de74ae8a902687f4dc43e37cf6aeb8dd49512d5b",
+      "checkedAt": "2026-11-27T02:58:52.092Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "婉拒收花，明確感謝後請家長帶回。",
+            "action": "導師已婉拒收花，明確感謝後請家長帶回。",
+            "tradeoff": "界線清楚但可能失落。"
+          },
+          {
+            "id": 2,
+            "text": "經規範允許且家長同意，提案公共擺放由權責方接收。",
+            "action": "導師已經規範允許且家長同意，提案公共擺放由權責方接收。",
+            "tradeoff": "心意可留但用途改變。"
+          },
+          {
+            "id": 3,
+            "text": "與家長短談關心已收到，今天不作任何收受。",
+            "action": "導師已與家長短談關心已收到，今天不作任何收受。",
+            "tradeoff": "接住人情但耗時。"
+          },
+          {
+            "id": 4,
+            "text": "請權責窗口說明可接受的分享方式。",
+            "action": "導師已請權責窗口說明可接受的分享方式。",
+            "tradeoff": "依據明確但需等待。"
+          },
+          {
+            "id": 5,
+            "text": "徵詢家長是否只願分享種花心得，不交花材。",
+            "action": "導師已徵詢家長是否只願分享種花心得，不交花材。",
+            "tradeoff": "保留自主但原準備落空。"
+          },
+          {
+            "id": 6,
+            "text": "另約不含家事細節的合意聯繫時間，先結束訪客停留。",
+            "action": "導師已另約不含家事細節的合意聯繫時間，先結束訪客停留。",
+            "tradeoff": "保護隱私但感謝延後。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "坦白自己很想把花抱回家，仍請他帶回，今晚買自己的小花。",
+          "action": "導師已坦白自己很想把花抱回家，仍請他帶回，今晚買自己的小花。",
+          "tradeoff": "承認喜歡但自付費用。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4043807449
+        },
+        "selectedIds": [
+          6,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "aecebf8f7b841b33b9056887882ea0714005feaa012468b153e536cf633e633e"
+      },
+      "consequenceDirections": {
+        "A": "家長可自行選；不得空約。",
+        "B": "可聊生活；不要求補作其他贈品。",
+        "C": "家長可能理解或難過；不讓私人期待變交換。",
+        "D": "家長有未來選擇；不保證可捐。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cfa096bd23c8c56b7faec61fbc8af1eb6315fd533a3e2ebd68217568ffbdb74c",
+    "draftSha256": "89a5ac10ad07c9052751ab85de74ae8a902687f4dc43e37cf6aeb8dd49512d5b",
     "seedAssignmentVersion": 1
   }
 }

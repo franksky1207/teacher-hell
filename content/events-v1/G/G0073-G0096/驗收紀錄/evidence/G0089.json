@@ -15,14 +15,155 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b4bd55ec31003e8df325477eae55688897f614b18ec9d55309da42a01a6301e8",
+      "checkedAt": "2026-11-27T02:58:52.090Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "私下向本人說明收回推斷，不要求諒解。",
+            "action": "導師已私下向本人說明收回推斷，不要求諒解。",
+            "tradeoff": "修復個人影響但公開誤認仍在。"
+          },
+          {
+            "id": 2,
+            "text": "經本人同意向原聽見者更正無依據評語。",
+            "action": "導師已經本人同意向原聽見者更正無依據評語。",
+            "tradeoff": "回應公開影響但再引注意。"
+          },
+          {
+            "id": 3,
+            "text": "協助確認可合法在校留存的課本。",
+            "action": "導師已協助確認可合法在校留存的課本。",
+            "tradeoff": "實際減重但需保管空間。"
+          },
+          {
+            "id": 4,
+            "text": "在不指涉個案下談通勤負重與整理。",
+            "action": "導師已在不指涉個案下談通勤負重與整理。",
+            "tradeoff": "可普遍受益但占班務。"
+          },
+          {
+            "id": 5,
+            "text": "向家長說清原推斷錯在哪，接受追問。",
+            "action": "導師已向家長說清原推斷錯在哪，接受追問。",
+            "tradeoff": "回應問責但關係可能緊。"
+          },
+          {
+            "id": 6,
+            "text": "邀本人列出願尋支援的就學需求。",
+            "action": "導師已邀本人列出願尋支援的就學需求。",
+            "tradeoff": "自主較高但需思考。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把收回外表評語的更正寫給家長，不再用只是提醒替自己擋。",
+          "action": "導師已把收回外表評語的更正寫給家長，不再用只是提醒替自己擋。",
+          "tradeoff": "承擔書面責任，但家長可能繼續追問。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3566124027
+        },
+        "selectedIds": [
+          5,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "820e98a8c94c6b761d29f0d861ae664b4d0fe9e2adf8ae043bb260480afc2e0d"
+      },
+      "consequenceDirections": {
+        "A": "家長得到可核對的更正；學生家務不公開，實際減重仍須另談。",
+        "B": "照顧者有解釋；不一定原諒。",
+        "C": "學生可提通則；不公開稱量書包。",
+        "D": "導師已私下向本人說明收回推斷，不要求諒解。；可形成不同實際安排，相關人物可接受或提出疑慮；代價為修復個人影響但公開誤認仍在。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "語意審查發現情緒候選客觀行動過於含糊或與普通候選重疊，僅定向修改此候選並依SOP真實重新抽選一次；舊結果保留。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "私下向本人說明收回推斷，不要求諒解。",
+                "action": "導師已私下向本人說明收回推斷，不要求諒解。",
+                "tradeoff": "修復個人影響但公開誤認仍在。"
+              },
+              {
+                "id": 2,
+                "text": "經本人同意向原聽見者更正無依據評語。",
+                "action": "導師已經本人同意向原聽見者更正無依據評語。",
+                "tradeoff": "回應公開影響但再引注意。"
+              },
+              {
+                "id": 3,
+                "text": "協助確認可合法在校留存的課本。",
+                "action": "導師已協助確認可合法在校留存的課本。",
+                "tradeoff": "實際減重但需保管空間。"
+              },
+              {
+                "id": 4,
+                "text": "在不指涉個案下談通勤負重與整理。",
+                "action": "導師已在不指涉個案下談通勤負重與整理。",
+                "tradeoff": "可普遍受益但占班務。"
+              },
+              {
+                "id": 5,
+                "text": "向家長說清原推斷錯在哪，接受追問。",
+                "action": "導師已向家長說清原推斷錯在哪，接受追問。",
+                "tradeoff": "回應問責但關係可能緊。"
+              },
+              {
+                "id": 6,
+                "text": "邀本人列出願尋支援的就學需求。",
+                "action": "導師已邀本人列出願尋支援的就學需求。",
+                "tradeoff": "自主較高但需思考。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "把想說「我只是提醒」的辯解吞下，先替自己的評語負責。",
+              "action": "導師已把想說「我只是提醒」的辯解吞下，先替自己的評語負責。",
+              "tradeoff": "面子受損但不再推責。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 618177677
+            },
+            "selectedIds": [
+              5,
+              6,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": "emotional",
+              "C": 6,
+              "D": 4
+            },
+            "optionsDigest": "f3c9bbe79fd49f56e25d9d716bf57aa27a2062e075526a65f45f3b9f5b13823e"
+          },
+          "previousConsequenceDirections": {
+            "A": "照顧者有解釋；不一定原諒。",
+            "B": "家長可能願談補救；實際減重仍另處理。",
+            "C": "可接校內資源；不替家庭分工。",
+            "D": "學生可提通則；不公開稱量書包。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2378efb891b2e039ef9ead78fcf035d086cf804911ab81cab0af8727b304c13a",
+    "draftSha256": "b4bd55ec31003e8df325477eae55688897f614b18ec9d55309da42a01a6301e8",
     "seedAssignmentVersion": 1
   }
 }

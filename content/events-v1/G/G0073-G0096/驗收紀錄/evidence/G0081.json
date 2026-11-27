@@ -15,14 +15,82 @@
     "G01",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "51909639b170b4b2b5f0c09e1bcca7825f47f0dd64da22ce5fb7cb0913050a5f",
+      "checkedAt": "2026-11-27T02:58:52.084Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先帶學生講兩題，再依進度領紙。",
+            "action": "導師已先帶學生講兩題，再依進度領紙。",
+            "tradeoff": "善用等待但領件較晚。"
+          },
+          {
+            "id": 2,
+            "text": "協調分時領用，不要求學生擠在窗口。",
+            "action": "導師已協調分時領用，不要求學生擠在窗口。",
+            "tradeoff": "疏散隊伍但需通知。"
+          },
+          {
+            "id": 3,
+            "text": "向承辦權責方申請只先印共同重點。",
+            "action": "導師已向承辦權責方申請只先印共同重點。",
+            "tradeoff": "省印量但未必同意。"
+          },
+          {
+            "id": 4,
+            "text": "用既有合法紙本共讀，不以網路替代全部。",
+            "action": "導師已用既有合法紙本共讀，不以網路替代全部。",
+            "tradeoff": "保留可近性但份數有限。"
+          },
+          {
+            "id": 5,
+            "text": "把非急諮詢另約可用時段，先完成必要交付。",
+            "action": "導師已把非急諮詢另約可用時段，先完成必要交付。",
+            "tradeoff": "交付清楚但學習回應晚。"
+          },
+          {
+            "id": 6,
+            "text": "由你在授權範圍完成分裝與領件，讓承辦專心印。",
+            "action": "導師已由你在授權範圍完成分裝與領件，讓承辦專心印。",
+            "tradeoff": "分擔工作但教師加勞。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "放下今天一定要交出漂亮整包的執著，先拿手上兩頁去講。",
+          "action": "導師已放下今天一定要交出漂亮整包的執著，先拿手上兩頁去講。",
+          "tradeoff": "少形式滿足但內容不全。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 110270214
+        },
+        "selectedIds": [
+          5,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "9e39f34d58be58da2d79f12b62187021a9c123968492f0a988ad89566d6932d2"
+      },
+      "consequenceDirections": {
+        "A": "學生可即時學；完整紙本仍要安排。",
+        "B": "承辦較能排程；學生多一次往返。",
+        "C": "學生可先問；需安排合法等候。",
+        "D": "學生可能失望；需履約。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "27e3fd47c6b7dbd22cd26baaad47e1643c31c2cafe41905cc18803f1c1e1af58",
+    "draftSha256": "51909639b170b4b2b5f0c09e1bcca7825f47f0dd64da22ce5fb7cb0913050a5f",
     "seedAssignmentVersion": 1
   }
 }

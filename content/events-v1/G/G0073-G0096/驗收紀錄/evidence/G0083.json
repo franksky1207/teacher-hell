@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cba3ec781a5b875b3306072bbe03783ce182c0d726496cc7f8e79eab9e0c9eda",
+      "checkedAt": "2026-11-27T02:58:52.086Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "陪等下一班，明說可停留多久。",
+            "action": "導師已陪等下一班，明說可停留多久。",
+            "tradeoff": "有陪伴但自己延遲。"
+          },
+          {
+            "id": 2,
+            "text": "協助查兩人各自合適路線後分開。",
+            "action": "導師已協助查兩人各自合適路線後分開。",
+            "tradeoff": "回程明確但陪伴短。"
+          },
+          {
+            "id": 3,
+            "text": "徵得同意提供校內負荷支持資訊。",
+            "action": "導師已徵得同意提供校內負荷支持資訊。",
+            "tradeoff": "有出口但不即時解家庭事。"
+          },
+          {
+            "id": 4,
+            "text": "詢問他現在最需要聽話還是查車。",
+            "action": "導師已詢問他現在最需要聽話還是查車。",
+            "tradeoff": "支持合用但需他表達。"
+          },
+          {
+            "id": 5,
+            "text": "簡短回應後按私人約定離開。",
+            "action": "導師已簡短回應後按私人約定離開。",
+            "tradeoff": "守承諾但可能內疚。"
+          },
+          {
+            "id": 6,
+            "text": "另約非急的午餐短談，今天先各自返程。",
+            "action": "導師已另約非急的午餐短談，今天先各自返程。",
+            "tradeoff": "保留聯繫但得再排。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "陪他笑完這次下錯站，今天暫不把每段聊天都變成改善計畫。",
+          "action": "導師已陪他笑完這次下錯站，今天暫不把每段聊天都變成改善計畫。",
+          "tradeoff": "保留輕鬆但實際負荷未解。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4282717899
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "2a6f173c4e18ba673048728fc2b27974c1b162af1a5808bc5f467005ddeb1633"
+      },
+      "consequenceDirections": {
+        "A": "同事可自選；不擅自轉介。",
+        "B": "同事可選返程；可能仍失落。",
+        "C": "同事可能自在；必要健康風險仍須回應。",
+        "D": "同事可只想聊笑話；不逼求助。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0ef0ba2fa2f6ff64fa4811f491831c3ddf43ed17af63516c92070522b83c1c26",
+    "draftSha256": "cba3ec781a5b875b3306072bbe03783ce182c0d726496cc7f8e79eab9e0c9eda",
     "seedAssignmentVersion": 1
   }
 }

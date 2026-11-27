@@ -15,14 +15,82 @@
     "G04",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c57b894d244c7cfa426a932465c0fcbf94c568ad27c2b698604595c5dc8dde62",
+      "checkedAt": "2026-11-27T02:58:52.079Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在專業限制內讓本人提兩個可行座位。",
+            "action": "導師已在專業限制內讓本人提兩個可行座位。",
+            "tradeoff": "保有主導但需核對。"
+          },
+          {
+            "id": 2,
+            "text": "請校護等有權人員確認座位必要條件。",
+            "action": "導師已請校護等有權人員確認座位必要條件。",
+            "tradeoff": "依據清楚但需等待。"
+          },
+          {
+            "id": 3,
+            "text": "先恢復符合限制的原座，另約討論。",
+            "action": "導師已先恢復符合限制的原座，另約討論。",
+            "tradeoff": "減少曝光但可能要再調。"
+          },
+          {
+            "id": 4,
+            "text": "與本人實走安全路線，不公開健康細節。",
+            "action": "導師已與本人實走安全路線，不公開健康細節。",
+            "tradeoff": "具體可驗但花課間。"
+          },
+          {
+            "id": 5,
+            "text": "經同意調整周邊家具，不把本人單獨搬到門口。",
+            "action": "導師已經同意調整周邊家具，不把本人單獨搬到門口。",
+            "tradeoff": "較自然但影響同學配置。"
+          },
+          {
+            "id": 6,
+            "text": "向全班簡短更正你剛才的命令，不說個案原因。",
+            "action": "導師已向全班簡短更正你剛才的命令，不說個案原因。",
+            "tradeoff": "修復公開影響但再引注意。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "直說自己剛才怕出事就想把人放眼前，先請他選要不要現在談。",
+          "action": "導師已直說自己剛才怕出事就想把人放眼前，先請他選要不要現在談。",
+          "tradeoff": "承認焦慮但權威受挑戰。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2517377760
+        },
+        "selectedIds": [
+          5,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "81924a266ee88983c974f6d129b2d1e17acf9c906531d9b662707d3732948454"
+      },
+      "consequenceDirections": {
+        "A": "照看可維持；他人需適應。",
+        "B": "學生可比較；未必都可採。",
+        "C": "學生可指出障礙；教師須接受修正。",
+        "D": "本人可拒談；必要照護仍照專業執行。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a92444ee06dd421ba144898e932c30bf4cadfbd6f6b9874b7dd4d167333ee230",
+    "draftSha256": "c57b894d244c7cfa426a932465c0fcbf94c568ad27c2b698604595c5dc8dde62",
     "seedAssignmentVersion": 1
   }
 }

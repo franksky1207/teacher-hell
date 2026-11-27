@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "994d03ef75920a694edb2856d0484eb93467bea777a18e4e39e013e5b49760b4",
+      "checkedAt": "2026-11-27T02:58:52.091Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "分享原備課提示及實際偏離處。",
+            "action": "導師已分享原備課提示及實際偏離處。",
+            "tradeoff": "脈絡完整但需整理。"
+          },
+          {
+            "id": 2,
+            "text": "只談一項可遷移的追問原則。",
+            "action": "導師已只談一項可遷移的追問原則。",
+            "tradeoff": "容易帶走但資訊有限。"
+          },
+          {
+            "id": 3,
+            "text": "說明這次差點失控的判斷點。",
+            "action": "導師已說明這次差點失控的判斷點。",
+            "tradeoff": "真實但暴露不足。"
+          },
+          {
+            "id": 4,
+            "text": "用虛構回答共同演練下一句。",
+            "action": "導師已用虛構回答共同演練下一句。",
+            "tradeoff": "可操作但花時間。"
+          },
+          {
+            "id": 5,
+            "text": "另約合法觀課，只觀察一個提問環節。",
+            "action": "導師已另約合法觀課，只觀察一個提問環節。",
+            "tradeoff": "有後續但需排程。"
+          },
+          {
+            "id": 6,
+            "text": "請同事先說自己課堂遇到的類似困難。",
+            "action": "導師已請同事先說自己課堂遇到的類似困難。",
+            "tradeoff": "支持合用但需他分享。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己也喜歡被當高手，仍把那張沒派上用場的備課紙給他看。",
+          "action": "導師已承認自己也喜歡被當高手，仍把那張沒派上用場的備課紙給他看。",
+          "tradeoff": "放下光環但可能失望。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3076847751
+        },
+        "selectedIds": [
+          5,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "5623666da8d7290be930a29d4b373eeab9ac7022a86a9939c517729b701655d5"
+      },
+      "consequenceDirections": {
+        "A": "同事看見不確定；專業信任可更實在。",
+        "B": "同事可試；效果不能保證。",
+        "C": "同事可比較；不要求學生重演。",
+        "D": "同事可理解條件；不含可識別學生評語。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "76664bd98228ef13aa81e9fe3d2c85f8e5192d79af4529f12080eb6b9ce7a1da",
+    "draftSha256": "994d03ef75920a694edb2856d0484eb93467bea777a18e4e39e013e5b49760b4",
     "seedAssignmentVersion": 1
   }
 }

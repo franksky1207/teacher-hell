@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9f7100711ff2e9191e7e79edc61251de43e1de833d87f4f4f4796c24037dcb80",
+      "checkedAt": "2026-11-27T02:58:52.089Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請本人自願示範可接受的陪伴距離。",
+            "action": "導師已請本人自願示範可接受的陪伴距離。",
+            "tradeoff": "主導清楚但需他願意。"
+          },
+          {
+            "id": 2,
+            "text": "與家長核對哪些作業能獨立開始。",
+            "action": "導師已與家長核對哪些作業能獨立開始。",
+            "tradeoff": "支持具體但需時間。"
+          },
+          {
+            "id": 3,
+            "text": "協助訂一小段可隨時退出的陪讀試行。",
+            "action": "導師已協助訂一小段可隨時退出的陪讀試行。",
+            "tradeoff": "有實驗範圍但需回顧。"
+          },
+          {
+            "id": 4,
+            "text": "提供家長自願諮詢的校內管道。",
+            "action": "導師已提供家長自願諮詢的校內管道。",
+            "tradeoff": "較專業但非立即解法。"
+          },
+          {
+            "id": 5,
+            "text": "請家人先問「需要陪還是自己做」，不預設答案。",
+            "action": "導師已請家人先問「需要陪還是自己做」，不預設答案。",
+            "tradeoff": "尊重需要但可能每天不同。"
+          },
+          {
+            "id": 6,
+            "text": "約短期回顧，只談實際感受不報每題進度。",
+            "action": "導師已約短期回顧，只談實際感受不報每題進度。",
+            "tradeoff": "減少監控但教師資訊較少。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "讓家長把埋怨說完，今天不再急著開第二張家庭處方。",
+          "action": "導師已讓家長把埋怨說完，今天不再急著開第二張家庭處方。",
+          "tradeoff": "承受不滿但暫無新解方。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1707875254
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "b755781b60bb717b50162e2493612920634cf8b47ace7bffed41119581f67653"
+      },
+      "consequenceDirections": {
+        "A": "家長可能覺得被聽見；導師仍需釐清原建議。",
+        "B": "家長可另問；不保證孩子參加。",
+        "C": "家長可調整；不能取代必要課業支持。",
+        "D": "家長可試；不強迫孩子演出。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e90c3f13a4ac3cea57cdd1379072e486b0047bfdcfdd84fc13621e822cabcf2b",
+    "draftSha256": "9f7100711ff2e9191e7e79edc61251de43e1de833d87f4f4f4796c24037dcb80",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4140c84da1d24015ba9f772e637d0c0e85e2c847cbed35e872fdc1c260f935c5",
+      "checkedAt": "2026-11-27T02:58:52.080Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向原聽見的學生說明錯誤並道歉，不要求接受。",
+            "action": "導師已向原聽見的學生說明錯誤並道歉，不要求接受。",
+            "tradeoff": "公開修復但自己難堪。"
+          },
+          {
+            "id": 2,
+            "text": "協助本科整理本節未清楚內容供合法補教。",
+            "action": "導師已協助本科整理本節未清楚內容供合法補教。",
+            "tradeoff": "回應學習但增加整理。"
+          },
+          {
+            "id": 3,
+            "text": "向課務窗口反映代課負荷，請評估支援。",
+            "action": "導師已向課務窗口反映代課負荷，請評估支援。",
+            "tradeoff": "處理結構但不即刻解決。"
+          },
+          {
+            "id": 4,
+            "text": "與同事核對當節事實，避免疲倦被寫成失職。",
+            "action": "導師已與同事核對當節事實，避免疲倦被寫成失職。",
+            "tradeoff": "資訊準確但需時間。"
+          },
+          {
+            "id": 5,
+            "text": "協調可用成人共同補一段課內說明。",
+            "action": "導師已協調可用成人共同補一段課內說明。",
+            "tradeoff": "分攤工作但要授權。"
+          },
+          {
+            "id": 6,
+            "text": "與同事約定你向學生說明的明確時間。",
+            "action": "導師已與同事約定你向學生說明的明確時間。",
+            "tradeoff": "可追蹤但同事仍須等。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "讓他把對你的不滿說完，這次不急著搬出自己的忙。",
+          "action": "導師已讓他把對你的不滿說完，這次不急著搬出自己的忙。",
+          "tradeoff": "承受難受但談話較長。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3895679615
+        },
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "23a784714eea1bb867832947b44e1db8b6aa9712b4a6f8e0fb577e2c7ee6b6c3"
+      },
+      "consequenceDirections": {
+        "A": "雙方可修正說法；不替代道歉。",
+        "B": "學生可補足；原進度可能延後。",
+        "C": "同事可能願再合作；實際修復仍須做。",
+        "D": "學生可表達影響；同事可能仍追問。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5f327a05a3c07130af0165ff61e04d213f02e4b5f3fb3606b210972569f6ebb9",
+    "draftSha256": "4140c84da1d24015ba9f772e637d0c0e85e2c847cbed35e872fdc1c260f935c5",
     "seedAssignmentVersion": 1
   }
 }

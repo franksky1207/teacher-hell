@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "febab42fd27d50952fdd68a815321705b12c6a93b8ccf6c628fc4768aebbe4ea",
+      "checkedAt": "2026-11-27T02:58:52.082Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在預算內接受已知瑕疵，確認交易條件後購買。",
+            "action": "導師已在預算內接受已知瑕疵，確認交易條件後購買。",
+            "tradeoff": "得到喜歡物但承擔修繕。"
+          },
+          {
+            "id": 2,
+            "text": "放棄當次交易，謝過同事試音。",
+            "action": "導師已放棄當次交易，謝過同事試音。",
+            "tradeoff": "避免不確定但失去琴。"
+          },
+          {
+            "id": 3,
+            "text": "告知同事只再聽一次，之後由你自行決定。",
+            "action": "導師已告知同事只再聽一次，之後由你自行決定。",
+            "tradeoff": "守自主但資訊有限。"
+          },
+          {
+            "id": 4,
+            "text": "詢問賣家是否願另約檢查，不要求保留。",
+            "action": "導師已詢問賣家是否願另約檢查，不要求保留。",
+            "tradeoff": "可再判斷但可能售出。"
+          },
+          {
+            "id": 5,
+            "text": "取得賣家同意錄下雜音，另請合格維修者估範圍。",
+            "action": "導師已取得賣家同意錄下雜音，另請合格維修者估範圍。",
+            "tradeoff": "資訊較多但需等待。"
+          },
+          {
+            "id": 6,
+            "text": "讓同事先去上課，你自行向賣家核對可見狀況。",
+            "action": "導師已讓同事先去上課，你自行向賣家核對可見狀況。",
+            "tradeoff": "不占對方時間但少專業陪看。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "笑說今天很想任性一次，仍把自己的最高可接受修理費寫下再決定。",
+          "action": "導師已笑說今天很想任性一次，仍把自己的最高可接受修理費寫下再決定。",
+          "tradeoff": "承認慾望但給自己設限。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 347258239
+        },
+        "selectedIds": [
+          2,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "90cadbce3a295605fc948ddae95e3ce9612e1c75c860bcb4499489c47d2cc137"
+      },
+      "consequenceDirections": {
+        "A": "交易可能錯過；不偷錄。",
+        "B": "同事可看見界線；琴仍可能超預算。",
+        "C": "同事可能不贊同；不能保證好修。",
+        "D": "同事可去上課；你可能惋惜。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fde1576fd32f0ae0069445a2fafa147049814a9c27c6e2197b944340780046e0",
+    "draftSha256": "febab42fd27d50952fdd68a815321705b12c6a93b8ccf6c628fc4768aebbe4ea",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fcd6f1a691446cdeb3eaa194ca46ebff99e4806f399aa3dd6bb329793d89923c",
+      "checkedAt": "2026-11-27T02:58:52.082Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "與本人核對提示和講義各用在哪裡。",
+            "action": "導師已與本人核對提示和講義各用在哪裡。",
+            "tradeoff": "用途清楚但需時間。"
+          },
+          {
+            "id": 2,
+            "text": "提供少量合法免費替代題供自選。",
+            "action": "導師已提供少量合法免費替代題供自選。",
+            "tradeoff": "降低費用但範圍有限。"
+          },
+          {
+            "id": 3,
+            "text": "請家長先與孩子討論最常用部分再決定。",
+            "action": "導師已請家長先與孩子討論最常用部分再決定。",
+            "tradeoff": "保留聲音但購買延後。"
+          },
+          {
+            "id": 4,
+            "text": "協助查校內可用的合法借閱資源。",
+            "action": "導師已協助查校內可用的合法借閱資源。",
+            "tradeoff": "多一選項但未必同版。"
+          },
+          {
+            "id": 5,
+            "text": "訂一段試用期，比較實際使用情形。",
+            "action": "導師已訂一段試用期，比較實際使用情形。",
+            "tradeoff": "可據經驗但需記錄。"
+          },
+          {
+            "id": 6,
+            "text": "向家長說清你能提供的回饋上限。",
+            "action": "導師已向家長說清你能提供的回饋上限。",
+            "tradeoff": "避免過度承諾但可能失望。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認被稱讚很受用，仍拒絕扮演「一本書都不用買」的萬能老師。",
+          "action": "導師已承認被稱讚很受用，仍拒絕扮演「一本書都不用買」的萬能老師。",
+          "tradeoff": "放下光環但家長期待落空。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1351093996
+        },
+        "selectedIds": [
+          5,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "6ee0ace6f86c502042e1bb8fcdee5b8cdf26a944df4421a4260c2dac5bc7e151"
+      },
+      "consequenceDirections": {
+        "A": "家長可能修正；原書不必立即丟棄。",
+        "B": "孩子可試；教師需準時提供。",
+        "C": "孩子可能敢說需求；教師需提供實際有限支持。",
+        "D": "家長可重判；不替家庭作預算。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f92211827f83bc804627c339db3a1c36a6060296d911a928d0b7b82817bc2953",
+    "draftSha256": "fcd6f1a691446cdeb3eaa194ca46ebff99e4806f399aa3dd6bb329793d89923c",
     "seedAssignmentVersion": 1
   }
 }

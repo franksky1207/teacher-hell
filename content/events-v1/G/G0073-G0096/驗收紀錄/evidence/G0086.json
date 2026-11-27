@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7eb9faef9791e89e87f4ad8a018bd31b54f07693c50320555621157ed1adc149",
+      "checkedAt": "2026-11-27T02:58:52.088Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "各人認領合法時間內的一小塊清潔。",
+            "action": "導師已各人認領合法時間內的一小塊清潔。",
+            "tradeoff": "可完成部分但需分工。"
+          },
+          {
+            "id": 2,
+            "text": "降低今日目標，只做必要衛生項目。",
+            "action": "導師已降低今日目標，只做必要衛生項目。",
+            "tradeoff": "不超時但整潔程度下降。"
+          },
+          {
+            "id": 3,
+            "text": "分別談全組等待的理由。",
+            "action": "導師已分別談全組等待的理由。",
+            "tradeoff": "責任清楚但需後續時間。"
+          },
+          {
+            "id": 4,
+            "text": "由你確認待辦並帶全組做一輪短清掃。",
+            "action": "導師已由你確認待辦並帶全組做一輪短清掃。",
+            "tradeoff": "示範明確但教師加勞。"
+          },
+          {
+            "id": 5,
+            "text": "調整下次掃除為個人工作確認制。",
+            "action": "導師已調整下次掃除為個人工作確認制。",
+            "tradeoff": "減少等人但登記增加。"
+          },
+          {
+            "id": 6,
+            "text": "先讓組長按健康需要休息，其他人完成各自原任務。",
+            "action": "導師已先讓組長按健康需要休息，其他人完成各自原任務。",
+            "tradeoff": "照顧疲倦但需成人判斷。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "收起想罵「都幾歲了」的火氣，自己只做示範的一角，不替整組掃完。",
+          "action": "導師已收起想罵「都幾歲了」的火氣，自己只做示範的一角，不替整組掃完。",
+          "tradeoff": "克制又留界線但收尾較慢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1730769201
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "956c2074c8dea5fcf9882c2e38caeb405e8cefdb240a6b0be23a268cf3b1f3b1"
+      },
+      "consequenceDirections": {
+        "A": "學生需真接手；教師少了快速結案。",
+        "B": "學生可按時離開；餘項需交接。",
+        "C": "組員可承擔；不以休息當懲罰。",
+        "D": "各人能上手；需避免形成新依賴。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c77bf3cee7f9f30d4c9cd168c56f0efb3b2187ec65381e5b531670d96919e502",
+    "draftSha256": "7eb9faef9791e89e87f4ad8a018bd31b54f07693c50320555621157ed1adc149",
     "seedAssignmentVersion": 1
   }
 }

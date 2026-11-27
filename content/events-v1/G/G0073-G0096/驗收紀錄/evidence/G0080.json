@@ -15,14 +15,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2b81dba6225c7b5e9b2a4f4125b9c0680bfabf1651cc28c21878827180ead771",
+      "checkedAt": "2026-11-27T02:58:52.083Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "陪他等起鬨者離開，再由本人選是否錄。",
+            "action": "導師已陪他等起鬨者離開，再由本人選是否錄。",
+            "tradeoff": "保留機會但教師延留。"
+          },
+          {
+            "id": 2,
+            "text": "協助確認另一個合規安靜處。",
+            "action": "導師已協助確認另一個合規安靜處。",
+            "tradeoff": "減少干擾但需申請。"
+          },
+          {
+            "id": 3,
+            "text": "讓本人決定是否只向一位誤會者說明。",
+            "action": "導師已讓本人決定是否只向一位誤會者說明。",
+            "tradeoff": "可能修復但有揭露風險。"
+          },
+          {
+            "id": 4,
+            "text": "私下談他覺得必須安撫父親的負荷。",
+            "action": "導師已私下談他覺得必須安撫父親的負荷。",
+            "tradeoff": "接住需要但錄音暫停。"
+          },
+          {
+            "id": 5,
+            "text": "提供不需唱歌的祝福形式供本人選。",
+            "action": "導師已提供不需唱歌的祝福形式供本人選。",
+            "tradeoff": "降低壓力但可能覺得心意變少。"
+          },
+          {
+            "id": 6,
+            "text": "只向相關同學重申不得追問他人私人創作。",
+            "action": "導師已只向相關同學重申不得追問他人私人創作。",
+            "tradeoff": "界線明確但個別關係未必好轉。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "先把自己的待辦放下，陪他在角落安靜坐五分鐘，不勸唱。",
+          "action": "導師已先把自己的待辦放下，陪他在角落安靜坐五分鐘，不勸唱。",
+          "tradeoff": "給陪伴但自己晚走。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3615002229
+        },
+        "selectedIds": [
+          6,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 6,
+          "D": 2
+        },
+        "optionsDigest": "e6caebc56505e56752fc635ba891649bd462c3a25d62db44d47e0a0a3a14af53"
+      },
+      "consequenceDirections": {
+        "A": "他可改寫或不送；不代定家庭責任。",
+        "B": "學生可能願意談；沉默也可保留。",
+        "C": "學生少被逼澄清；導師需留意後續。",
+        "D": "本人可重新選；不可自行借室。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a99425f55baaf855b05602028e911668598fbabee5131862aa55056ee517b955",
+    "draftSha256": "2b81dba6225c7b5e9b2a4f4125b9c0680bfabf1651cc28c21878827180ead771",
     "seedAssignmentVersion": 1
   }
 }

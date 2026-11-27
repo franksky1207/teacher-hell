@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a96b1097e722670898ce980bd9466fbeed68307422325976130a466cfeda2df0",
+      "checkedAt": "2026-11-27T02:58:52.092Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "與任課共同示範明確的卸角色語句。",
+            "action": "導師已與任課共同示範明確的卸角色語句。",
+            "tradeoff": "直觀但占課時。"
+          },
+          {
+            "id": 2,
+            "text": "開放學生自願提出活動疑問，再分層說明。",
+            "action": "導師已開放學生自願提出活動疑問，再分層說明。",
+            "tradeoff": "接住疑慮但可能拉長。"
+          },
+          {
+            "id": 3,
+            "text": "由任課以書面補上角色與活動目的。",
+            "action": "導師已由任課以書面補上角色與活動目的。",
+            "tradeoff": "可回看但文字較冷。"
+          },
+          {
+            "id": 4,
+            "text": "下次改用紙上虛構角色。",
+            "action": "導師已下次改用紙上虛構角色。",
+            "tradeoff": "少身分混淆但臨場趣味減少。"
+          },
+          {
+            "id": 5,
+            "text": "請學生只辨認論點與理由，不猜教師私下信念。",
+            "action": "導師已請學生只辨認論點與理由，不猜教師私下信念。",
+            "tradeoff": "學習焦點清楚但需練習。"
+          },
+          {
+            "id": 6,
+            "text": "與任課預演活動後的收束步驟。",
+            "action": "導師已與任課預演活動後的收束步驟。",
+            "tradeoff": "預防再發但備課增加。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "陪同事笑說「反派下班了」，由他親口把角色名牌拿掉。",
+          "action": "導師已陪同事笑說「反派下班了」，由他親口把角色名牌拿掉。",
+          "tradeoff": "用幽默退場但可能過輕。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2457750620
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "cb011ba743623739b9736bf4a1566ef1065dc172f77321677fe279ea41269ce0"
+      },
+      "consequenceDirections": {
+        "A": "學生可看見切換；仍須補足目的說明。",
+        "B": "學生可重看論證；不能禁止合理提問。",
+        "C": "學生有依據；仍可能想追問。",
+        "D": "學生可辨界線；不能保證立刻全懂。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fe592dcf65bb49d4d471360488bb2565f59a1f0d4c91404c9d3bb3c5c2e97a7f",
+    "draftSha256": "a96b1097e722670898ce980bd9466fbeed68307422325976130a466cfeda2df0",
     "seedAssignmentVersion": 1
   }
 }

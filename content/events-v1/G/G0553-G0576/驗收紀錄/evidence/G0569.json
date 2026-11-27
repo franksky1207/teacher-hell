@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a7af1a2f915dbb29990c682114d71b9602dcc98d46481fd5284ae0588af54a21",
+      "checkedAt": "2026-11-27T08:11:20.193Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "設原可用的公共領取點，不附學生出勤名單。",
+            "action": "導師已在有權範圍設置不妨礙安全的教材領取點，未交付私人出勤紀錄。",
+            "tradeoff": "需要成人維護存量"
+          },
+          {
+            "id": 2,
+            "text": "維持原座位，教材由各人依正常方式領回。",
+            "action": "導師已拒絕本次以借講義為由的指定換位提案，保留原合法座位與領取方式。",
+            "tradeoff": "他仍需自行整理"
+          },
+          {
+            "id": 3,
+            "text": "由我接回教材統整，不指定他管理其他人的資料。",
+            "action": "導師已接回本次教材收發統整，不將學生私事交同儕管理。",
+            "tradeoff": "教師工作增加"
+          },
+          {
+            "id": 4,
+            "text": "提供可合法存取的既有電子版本，不讓人每天追一本。",
+            "action": "導師已提供可用電子教材並保留必要替代，不要求私帳或購買設備。",
+            "tradeoff": "設備與閱讀方式未必適合每人"
+          },
+          {
+            "id": 5,
+            "text": "邀本人正常工作時段談接駁變動造成哪些學習缺口。",
+            "action": "導師已發出自願短談邀約，不索取無關家庭路線或同儕行蹤。",
+            "tradeoff": "要另留時間"
+          },
+          {
+            "id": 6,
+            "text": "原班務只輪替整理公用存量，不列各人遲到與借用比較。",
+            "action": "導師已限縮可調整班務為安全公用存量整理，未轉派出勤或個別管理。",
+            "tradeoff": "效率可能降低"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想少找那疊紙，先整理自己的備課抽屜，不把收納工作又丟給他。",
+          "action": "導師已於自身可用工作時間整理本人資料，安全保管必要文件，不新增學生勞務。",
+          "tradeoff": "占我的空檔，也得面對自己的亂"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2704132208
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "c8ac4111d11019168e1a0160221b3a2b2dad683650eb5fbca23067f5a4b2c36a"
+      },
+      "consequenceDirections": {
+        "A": "可以找到真正需要，不用管理他人來補安全感。",
+        "B": "學生能專心自己的份量，班務分工需說清楚。",
+        "C": "教師可先減少個人找物成本，學生不需替教師維持整齊。",
+        "D": "不把交通不穩直接變成全班換位，必要可及支持仍在。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "21bc6b7f1b09406c17d6995345c7a564ee0542cf35a238cd271c2c11b8671edc",
+    "draftSha256": "a7af1a2f915dbb29990c682114d71b9602dcc98d46481fd5284ae0588af54a21",
     "seedAssignmentVersion": 1
   }
 }

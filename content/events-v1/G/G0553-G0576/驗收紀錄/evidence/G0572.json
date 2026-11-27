@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6424fc54736355a4cc2d1c9fed92be5a9c457a058bfda59adbca9acd865173aa",
+      "checkedAt": "2026-11-27T08:11:20.196Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不再續辦我發起的這個非必要系列。",
+            "action": "導師已取消自身非必要系列續辦提案，正式必要課務不受影響。",
+            "tradeoff": "少一項想推的成果"
+          },
+          {
+            "id": 2,
+            "text": "若仍想嘗試，另提一次範圍明確的新邀請。",
+            "action": "導師已提出一次性新案徵詢，尚未獲參與同意或課務核准。",
+            "tradeoff": "要重新確認，可能無人同意"
+          },
+          {
+            "id": 3,
+            "text": "只分享我有權使用的教案，不辦現場示範。",
+            "action": "導師已提供本人自製無學生個資教案，明示非新增授課承諾。",
+            "tradeoff": "看不到臨場反應"
+          },
+          {
+            "id": 4,
+            "text": "若真需常辦，請主管先評估正式人力與課務。",
+            "action": "導師已提交正式可行性評估需求，未替任何人答應常態參與。",
+            "tradeoff": "程序較慢，也可能被否決"
+          },
+          {
+            "id": 5,
+            "text": "保留已獲同意的有限紀錄供內部回看，不另取新演出。",
+            "action": "導師已限縮本人非必要新增素材徵求，既有資料按原授權與期限處理。",
+            "tradeoff": "資料不會變得更完整"
+          },
+          {
+            "id": 6,
+            "text": "先邀同事各提一個真正想改的小問題，不立即開示範課。",
+            "action": "導師已發出正常工作時間的自願問題交流邀請，尚未約成或派工。",
+            "tradeoff": "可能談得很散"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還是想試，私人空檔對自己的空鏡頭練一段，不把他排進去。",
+          "action": "導師已以本人及自有文本錄製私人短段練習，不含學生或他人素材、不公開冒稱試教成果。",
+          "tradeoff": "花自己的時間，也可能演得很尷尬"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1577176230
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "df1c3aff84aa7d4afc9eab727a7431535ceff6b6d36192d092608b86698e92e4"
+      },
+      "consequenceDirections": {
+        "A": "方法可交流，不能把下載當同意試教。",
+        "B": "教師可延續興趣，不能把獨練包成班級成效。",
+        "C": "教師能真正結束，不用停一次又欠下一次。",
+        "D": "不靠同事私生活補常態工作，仍須依法安排。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "dda3d7796a2cc02b2d0915f2e13fdaa4868832c0d743ec40f515a742395193e6",
+    "draftSha256": "6424fc54736355a4cc2d1c9fed92be5a9c457a058bfda59adbca9acd865173aa",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bc9b9569221b03e27076d4f88cb267cfaf6824b363491d702bcb0f4eb3219efe",
+      "checkedAt": "2026-11-27T08:11:20.181Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他回座，個別必要說明私下進行。",
+            "action": "導師已終止非必要台前陳述，提供私下回應方式，不省略必要查核。",
+            "tradeoff": "全班沒有立即完整交代"
+          },
+          {
+            "id": 2,
+            "text": "若他願意，讓他只說本人已確認且可公開的一小段。",
+            "action": "導師已提出限定自願公開陳述選擇，未逼揭露或視站台為同意。",
+            "tradeoff": "可能仍不舒服"
+          },
+          {
+            "id": 3,
+            "text": "讓他以自己的文字提出補充，不照全組稿念。",
+            "action": "導師已接受自願書面補充方式，不要求套句反省或代替他人陳述。",
+            "tradeoff": "需要另作核對"
+          },
+          {
+            "id": 4,
+            "text": "全組展示今天先不做，回正常個別工作。",
+            "action": "導師已取消本次非必要團體展示，必要個別回饋照常。",
+            "tradeoff": "少了成果呈現"
+          },
+          {
+            "id": 5,
+            "text": "另約願意者談未來分工，不把這次當場和解作門檻。",
+            "action": "導師已發出正常工作時段分工短談邀請，未強迫共同道歉。",
+            "tradeoff": "需另排時間"
+          },
+          {
+            "id": 6,
+            "text": "向原真正接收成果的人說明目前只確認哪些，不公開學生私下話。",
+            "action": "導師已在職權與必要範圍提供已確認工作進度，不傳私人陳述或作責任定論。",
+            "tradeoff": "說明可能不完整"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再當漂亮收尾的人，自己的長講評先刪掉。",
+          "action": "導師已取消自身非必要公開長篇講評，未省略依法應辦的說明、補救或通知。",
+          "tradeoff": "少了發洩與說完道理的機會"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 373257411
+        },
+        "selectedIds": [
+          5,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "74f2074b55ad2795fcd2fac0373dc780504797e5dcd1cd934ef0c8ab382dec31"
+      },
+      "consequenceDirections": {
+        "A": "其他人也可能失落，但不把取消當連坐處罰。",
+        "B": "學生不需多站一段，教師仍要完成具體回應。",
+        "C": "本人可停，不能用一段換他人免責。",
+        "D": "可處理工作衝突，拒談不自動證明不負責。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "650662a3e2501f07bae12fd98148a4e9baf9e15e2dd38617822bc8cf9b861c7c",
+    "draftSha256": "bc9b9569221b03e27076d4f88cb267cfaf6824b363491d702bcb0f4eb3219efe",
     "seedAssignmentVersion": 1
   }
 }

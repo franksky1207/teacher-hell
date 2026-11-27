@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "429044ff559069b7a4ddce8f2fcef26b7a8cbf727a6e73558695b5af94a5efa4",
+      "checkedAt": "2026-11-27T08:11:20.177Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只指到入口，座位讓他自己依標示找。",
+            "action": "導師已依公開標示說明入口，不接手同事票券或帶入座。",
+            "tradeoff": "不會一路陪到位"
+          },
+          {
+            "id": 2,
+            "text": "問他要不要一起到驗票前，之後分開。",
+            "action": "導師已發出有限同行邀請，尚未獲同意或查看其完整座位資訊。",
+            "tradeoff": "短陪可能仍讓人不自在"
+          },
+          {
+            "id": 3,
+            "text": "用我自己的票示範怎麼看區排，對方的仍自己拿。",
+            "action": "導師已用自身票券向同事示範一般欄位，不收取或操作其票。",
+            "tradeoff": "花一點時間，也可能沒解決現場方向"
+          },
+          {
+            "id": 4,
+            "text": "請他自行向場內工作人員確認，我先去自己的位置。",
+            "action": "導師已婉拒代帶座並自行入場，指出可詢問的正式服務位置。",
+            "tradeoff": "少了熟人陪問"
+          },
+          {
+            "id": 5,
+            "text": "今天不另約劇後聊天，各自看完依原行程走。",
+            "action": "導師已明示本次不另作私人劇後邀約，未替同事取消其行程。",
+            "tradeoff": "少一段共同分享"
+          },
+          {
+            "id": 6,
+            "text": "問他改天願不願意交換各自最喜歡的一幕，不需今晚回答。",
+            "action": "導師已提出可拒絕的日後私人觀劇交流邀請，未要求寫心得。",
+            "tradeoff": "可能之後就忘了"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想買那本節目冊，自己排隊付錢，先不當帶路人。",
+          "action": "導師已在不耽誤入場且票務規則允許下自費購買節目冊，未要求同事等候或代排。",
+          "tradeoff": "花自己的錢，也可能錯過進場餘裕"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1684995924
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "bd691c26aac00080d97a13be764a63e77278cb73d0df190569f6cce679df7d5e"
+      },
+      "consequenceDirections": {
+        "A": "他可完成獨行，也可能仍要向工作人員詢問。",
+        "B": "可學會讀票，不必交出私人票券。",
+        "C": "教師得自己顧時間，同事仍有正式人員可問。",
+        "D": "獨行不再附帶熟人會合義務，之後可另約。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cdf9bcb5a9cb2921060030c848460a461fde0721636b6b028855a0d1d3d0ec3f",
+    "draftSha256": "429044ff559069b7a4ddce8f2fcef26b7a8cbf727a6e73558695b5af94a5efa4",
     "seedAssignmentVersion": 1
   }
 }

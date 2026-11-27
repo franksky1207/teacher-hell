@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e49e96fb6c1a7e921e52314bc6407018345bc33db2f11ca37bcf6f07b298d19b",
+      "checkedAt": "2026-11-27T08:11:20.192Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先分開聽各人的親見，不安排共同場面。",
+            "action": "導師已提出分別短談安排，必要查核仍依實際權責辦理。",
+            "tradeoff": "成人要多花時間"
+          },
+          {
+            "id": 2,
+            "text": "若各方願意，採斜向座位的有限共同短談，可隨時停。",
+            "action": "導師已分別徵詢有限共同談話意願，未將接受座位等同談話同意。",
+            "tradeoff": "仍可能緊張"
+          },
+          {
+            "id": 3,
+            "text": "暫不用共同會面，讓各人自願交自己的短文字。",
+            "action": "導師已提供非強制的個別文字補充方式，不取消必要聽取機會。",
+            "tradeoff": "文字可能需再釐清"
+          },
+          {
+            "id": 4,
+            "text": "今天非急部分只談未來需要怎樣配合，既有事實另按原流程。",
+            "action": "導師已限縮本次非急延伸主題，必要事實核實與回應照常。",
+            "tradeoff": "可能有人仍想當場論輸贏"
+          },
+          {
+            "id": 5,
+            "text": "邀適當主管協助主持，不請熟人站隊。",
+            "action": "導師已提出經當事人知悉的適當主持需求，尚未有人同意接手。",
+            "tradeoff": "要配合排程"
+          },
+          {
+            "id": 6,
+            "text": "非急共同段改約正常工作時段，今天先各自回原安排。",
+            "action": "導師已結束當日非必要共同延伸並提出後續邀約，急迫事項不延遲。",
+            "tradeoff": "問題要延後"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被夾得很煩，另找同事談自己的悶，不拉孩子安慰我。",
+          "action": "導師已向適當同事發出私人情緒支持邀請，不透露可識別家庭資料，尚未獲應允。",
+          "tradeoff": "占自己的空檔，也可能聽到不好聽的提醒"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 97641802
+        },
+        "selectedIds": [
+          4,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "0326324fa863302cbc344130720fd5bc750d2e839618cddde19375a903c77ff3"
+      },
+      "consequenceDirections": {
+        "A": "坐法不保證安全感，任一方可拒談。",
+        "B": "可留下具體請求，不把放下爭辯當全案和解。",
+        "C": "成人可有情緒去處，不把吐苦水變代查個案。",
+        "D": "可有可回看的版本，不由孩子代寫成人立場。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5519a8e557b00186bd10a397635f78714cb94ba068151d153de3eb296653a89c",
+    "draftSha256": "e49e96fb6c1a7e921e52314bc6407018345bc33db2f11ca37bcf6f07b298d19b",
     "seedAssignmentVersion": 1
   }
 }

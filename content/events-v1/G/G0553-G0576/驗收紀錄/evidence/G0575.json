@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2e8fb143e3c15111acc0259f8f30ba8cc4f8d3c0d32685f6b0ecaef8d97d0bd0",
+      "checkedAt": "2026-11-27T08:11:20.198Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "非必要空格開放自願認領，沒人選就維持未做。",
+            "action": "導師已明示該額外整理格的自願性與未分配狀態，不將空白當有人承諾。",
+            "tradeoff": "看起來不完整"
+          },
+          {
+            "id": 2,
+            "text": "取消這一格額外美化，不再徵人。",
+            "action": "導師已撤回本人可決定的非必要架面美化要求。",
+            "tradeoff": "少一塊漂亮區域"
+          },
+          {
+            "id": 3,
+            "text": "我自己整理這一格，不從學生那裡補工。",
+            "action": "導師已在自身可用工作時間完成安全公用空格整理，不擅處分他人財物。",
+            "tradeoff": "用掉教師空檔"
+          },
+          {
+            "id": 4,
+            "text": "下次原輪值前讓各人先提可換區需求，再公平協調。",
+            "action": "導師已提出原輪值範圍內的公平需求徵詢安排，未給個別優先特權。",
+            "tradeoff": "多一道討論"
+          },
+          {
+            "id": 5,
+            "text": "只邀大家說這個空間未來想放什麼，不立刻動手。",
+            "action": "導師已發出可拒絕的用途建議邀請，不將建議者視為承辦者。",
+            "tradeoff": "當天沒有新成品"
+          },
+          {
+            "id": 6,
+            "text": "我畫一份不記人名的架面配置圖，讓之後借放不靠猜。",
+            "action": "導師已自行製作安全公用架配置示意，不列學生責任排名或私人資料。",
+            "tradeoff": "教師多花整理時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看了也想買收納盒，自己買一個放私人桌面，不搶他們那格。",
+          "action": "導師已自費購用安全自有收納盒於本人可用私人桌面，不占班級公用格或要求學生代整。",
+          "tradeoff": "花自己的錢，桌上可能反而更擠"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3191765718
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "6552f4c3a6c2f79d3562407952228971420a0e88086bb66f12b65c9473bce5e6"
+      },
+      "consequenceDirections": {
+        "A": "能看到可用位置，但圖須隨真實狀態更新。",
+        "B": "教師可享受整理，不把私人喜好變全班任務。",
+        "C": "學生可停止爭位置，成品不必每格填滿。",
+        "D": "孩子不用因喜歡整理就全接，教師也不取得學生其他私人物。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "54147944f1045488afb1523f10d9cfe8e60d41d9f77cb7773bd0b23222bef485",
+    "draftSha256": "2e8fb143e3c15111acc0259f8f30ba8cc4f8d3c0d32685f6b0ecaef8d97d0bd0",
     "seedAssignmentVersion": 1
   }
 }

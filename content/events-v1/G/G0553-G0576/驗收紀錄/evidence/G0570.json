@@ -15,14 +15,155 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7869ac7e01b2c8eb6a40d4450d48d68d2feeff70a1bbdaffe217d134663c2f17",
+      "checkedAt": "2026-11-27T08:11:20.194Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "接受他明確願意的短段，我只做原分工。",
+            "action": "導師已確認並接受同事本次有限授課支援，不追加未同意工作。",
+            "tradeoff": "得讓出一點控制"
+          },
+          {
+            "id": 2,
+            "text": "給全班一段安靜的個別準備，暫不做公開表演。",
+            "action": "導師已在授權課程改為短個別工作，不把安靜當集體處罰。",
+            "tradeoff": "少了現場互動"
+          },
+          {
+            "id": 3,
+            "text": "我用自己的中性例子接回，讓同事回原任務。",
+            "action": "導師已以自有可用文本接回本人段落，不沿用可指認故事。",
+            "tradeoff": "教師要另準備"
+          },
+          {
+            "id": 4,
+            "text": "讓自願者先做一個不涉私事的小問答，不要求每人出聲。",
+            "action": "導師已發出有限課內自願問答邀請，不指定學生補場。",
+            "tradeoff": "可能無人參與"
+          },
+          {
+            "id": 5,
+            "text": "用已確認的中性句子，兩人各練一句，不做全班表演。",
+            "action": "導師已在原授權課程提供中性文本，安排適當兩人短練並保留個別替代，不強迫受影響者配對或公開",
+            "tradeoff": "少了全班觀摩，也要巡看分散對話"
+          },
+          {
+            "id": 6,
+            "text": "課後邀同事回看我那個重講要求，找出誰先該停。",
+            "action": "導師已提出限定成人教學行為的同儕回饋邀請，尚未約成。",
+            "tradeoff": "要承受批評並花工作時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我現在不想再被自己那句話提醒，把自己的長篇心得稿收回不念。",
+          "action": "導師已取消自身非必要公開心得朗讀，不省略必要道歉、更正與回應。",
+          "tradeoff": "少了說完道理的滿足，也可能留著尷尬"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3612425888
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "17f057a75b4110f12e728be62f7c61b74dede0c6e7825f8e5e7062191eeb11a2"
+      },
+      "consequenceDirections": {
+        "A": "可釐清成人操作，不把學生反應當改進作業。",
+        "B": "氣氛可慢下來，正常回饋仍要完成。",
+        "C": "教師停止額外說教，具體補救仍要做。",
+        "D": "同事不必扛全部善後，學生也不必救氣氛。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通5取消暖場只進核心內容可能涵蓋情緒候選收回額外心得朗讀，改為具體的兩人中性句短練，與個別安靜及全班問答不同。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "接受他明確願意的短段，我只做原分工。",
+                "action": "導師已確認並接受同事本次有限授課支援，不追加未同意工作。",
+                "tradeoff": "得讓出一點控制"
+              },
+              {
+                "id": 2,
+                "text": "給全班一段安靜的個別準備，暫不做公開表演。",
+                "action": "導師已在授權課程改為短個別工作，不把安靜當集體處罰。",
+                "tradeoff": "少了現場互動"
+              },
+              {
+                "id": 3,
+                "text": "我用自己的中性例子接回，讓同事回原任務。",
+                "action": "導師已以自有可用文本接回本人段落，不沿用可指認故事。",
+                "tradeoff": "教師要另準備"
+              },
+              {
+                "id": 4,
+                "text": "讓自願者先做一個不涉私事的小問答，不要求每人出聲。",
+                "action": "導師已發出有限課內自願問答邀請，不指定學生補場。",
+                "tradeoff": "可能無人參與"
+              },
+              {
+                "id": 5,
+                "text": "取消我原加的暖場，只進正常核心內容。",
+                "action": "導師已撤去自身非必要暖場設計，保留正式教學。",
+                "tradeoff": "少了熱鬧，也可能節奏生硬"
+              },
+              {
+                "id": 6,
+                "text": "課後邀同事回看我那個重講要求，找出誰先該停。",
+                "action": "導師已提出限定成人教學行為的同儕回饋邀請，尚未約成。",
+                "tradeoff": "要承受批評並花工作時間"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我現在不想再被自己那句話提醒，把自己的長篇心得稿收回不念。",
+              "action": "導師已取消自身非必要公開心得朗讀，不省略必要道歉、更正與回應。",
+              "tradeoff": "少了說完道理的滿足，也可能留著尷尬"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1071887127
+            },
+            "selectedIds": [
+              2,
+              5,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 2,
+              "C": "emotional",
+              "D": 5
+            },
+            "optionsDigest": "c3167bc2bfcdca019399a63bfc7a5ca6522601f13907a0d3b8ef18a1018174e5"
+          },
+          "previousConsequenceDirections": {
+            "A": "互動能小規模恢復，不能以冷場再點人逼笑。",
+            "B": "氣氛可慢下來，正常回饋仍要完成。",
+            "C": "教師停止額外說教，具體補救仍要做。",
+            "D": "課程不必被一個新笑點救回，必要內容照常。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c9dda8c96a53110b32324fc15da650e29a7f477e6342b45b2b77b19570fd6d39",
+    "draftSha256": "7869ac7e01b2c8eb6a40d4450d48d68d2feeff70a1bbdaffe217d134663c2f17",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c6a327adad0369f5634f1f88d4aef1723a4a9c0b433c5e039162da66033b79d0",
+      "checkedAt": "2026-11-27T08:11:20.183Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "若本人願意，在原准許教室只做一題，到原時間就停。",
+            "action": "導師已提出限定時間的自願單題邀請，尚未取得意願或新增留校。",
+            "tradeoff": "做不完整份"
+          },
+          {
+            "id": 2,
+            "text": "取消這次一起讀，各依原合法返家安排走。",
+            "action": "導師已結束自身可決定的當次非必要共讀徵詢，不改必要接送。",
+            "tradeoff": "同行期待落空"
+          },
+          {
+            "id": 3,
+            "text": "只教他以後怎麼查正式開放資訊，下一次由各人自行決定。",
+            "action": "導師已說明正式資訊來源，不替未來開館或共同出席作保。",
+            "tradeoff": "這次沒有成品"
+          },
+          {
+            "id": 4,
+            "text": "提供校內原可用的電子資料資訊，不替人登入私帳。",
+            "action": "導師已提供經確認可存取的既有學習資料指引，不要求私人付費。",
+            "tradeoff": "閱讀方式不同，也未必有想看的書"
+          },
+          {
+            "id": 5,
+            "text": "問他要不要短借我有權借出的那本，歸還方式先講清楚。",
+            "action": "導師已提出安全適用自有書籍短借邀請，尚未交付或取得同意。",
+            "tradeoff": "私人書有借還責任"
+          },
+          {
+            "id": 6,
+            "text": "向館方提出可查近期時段的建議，不替它排開館。",
+            "action": "導師已向正式承辦提出公開時段資訊需求，未取得加開或保留座位承諾。",
+            "tradeoff": "需等回覆"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想看那本，自己查書店有沒有，不叫他們陪我等。",
+          "action": "導師已自行查詢私人欲讀書籍的合法購買資訊，尚未買到或要求學生同行。",
+          "tradeoff": "用掉我的私人空檔，也可能查不到"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3390214641
+        },
+        "selectedIds": [
+          4,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "796561b6a975b440bc344f389baa14a239fb14a40047c32469140781c0fab8fc"
+      },
+      "consequenceDirections": {
+        "A": "學生可自己衡量，不能把看不到當不用功。",
+        "B": "可少一點靠傳聞揪人，但查到不等於能借到位。",
+        "C": "若真買要自己付，不能讓學生跟著補購。",
+        "D": "未來或能較好安排，眼前關閉仍得接受。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "814c7de4b8b5cfc3e38dd938f1aa439bdb7a0a6928c150357208a5a8285108ce",
+    "draftSha256": "c6a327adad0369f5634f1f88d4aef1723a4a9c0b433c5e039162da66033b79d0",
     "seedAssignmentVersion": 1
   }
 }

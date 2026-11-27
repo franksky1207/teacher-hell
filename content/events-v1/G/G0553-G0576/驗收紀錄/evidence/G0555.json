@@ -15,14 +15,82 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b7a6dcabb48ee38c89c6c6f60b662b68bfb3104a3c0e056201ec4bbbf89f63b0",
+      "checkedAt": "2026-11-27T08:11:20.178Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他撤回這次自願到貨提醒，不再當即時報信者。",
+            "action": "導師已向發訊者提出撤回非必要提醒的請求，未代操作其帳號或假稱已刪除。",
+            "tradeoff": "同學少一份快訊"
+          },
+          {
+            "id": 2,
+            "text": "向福利社詢問是否有可公開的固定到貨說明。",
+            "action": "導師已向正式承辦查詢公開資訊方式，尚未取得固定供貨承諾。",
+            "tradeoff": "資訊可能仍不確定"
+          },
+          {
+            "id": 3,
+            "text": "提議由承辦評估分時購買，不由我替全班排特權。",
+            "action": "導師已提出一般購買安排建議，未改店家販售或指定學生先買。",
+            "tradeoff": "有人要等，也可能不能辦"
+          },
+          {
+            "id": 4,
+            "text": "讓他相機收好，這次不再新增班級拍照任務。",
+            "action": "導師已停止自身可決定的額外拍攝徵求，依校規讓本人保管設備。",
+            "tradeoff": "少了現成即時圖片"
+          },
+          {
+            "id": 5,
+            "text": "下次正常班務只談訊息轉傳的時效，不重演人潮。",
+            "action": "導師已安排無個資的一般訊息判讀討論，不把安全管制交學生。",
+            "tradeoff": "占用班務時間"
+          },
+          {
+            "id": 6,
+            "text": "提供原可用的校內其他購食資訊，不保證有同款新貨。",
+            "action": "導師已提供經確認可用的校內購食資訊，必要食物需求仍由原窗口接續。",
+            "tradeoff": "選擇與價格可能不同"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想吃新貨，等自己有空再按正常順序買，不叫學生留一份。",
+          "action": "導師已結束當下追貨徵詢，於自身可用時間循正常管道查購，未保證買到或要求代買。",
+          "tradeoff": "可能賣完，得自己付錢"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2188001379
+        },
+        "selectedIds": [
+          2,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "0cf91d4a8a291eeb9cce2aeb5b79ca88036ca7cb68304a502cf69a6e20c78b30"
+      },
+      "consequenceDirections": {
+        "A": "同學可看官方說明，不把學生照片當時間保證。",
+        "B": "私人設備不成為固定校務工具，資訊另由成人取得。",
+        "C": "真照片也有背景限制，學生不需當反面示範。",
+        "D": "教師不能靠身分插隊，學生不需替老師報貨。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "173bd5672a3d55191fa7f9c784349a5b85090753618b270537141bcc7c6bbab5",
+    "draftSha256": "b7a6dcabb48ee38c89c6c6f60b662b68bfb3104a3c0e056201ec4bbbf89f63b0",
     "seedAssignmentVersion": 1
   }
 }

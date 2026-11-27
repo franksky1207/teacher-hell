@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "aa5cad46924491da1bd8c42bdafb29451233b293b5ae9a8ca8263ac24a6e1e2d",
+      "checkedAt": "2026-11-27T08:11:20.197Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在確認適用範圍只邀一次短題試作，不直接推全班常態。",
+            "action": "導師已提出原授課權限內的一次有限試作邀請，必要適用性核對先完成，尚未常態採用。",
+            "tradeoff": "看不到廣泛效果"
+          },
+          {
+            "id": 2,
+            "text": "不改原教學，先聽孩子自己怎麼做成。",
+            "action": "導師已提供本人正常工作表述機會，不將家長說法作唯一學習判定。",
+            "tradeoff": "家長可能覺得太保守"
+          },
+          {
+            "id": 3,
+            "text": "讓家庭保留自選練法，學校不承諾全面跟進。",
+            "action": "導師已說明家庭自選與學校課務範圍，不替家庭指定每日練習。",
+            "tradeoff": "兩邊方法可能不同"
+          },
+          {
+            "id": 4,
+            "text": "向相關任課者提出一般方法討論，不傳孩子私稿當證明。",
+            "action": "導師已發出不含個資的同儕教法交流邀請，尚未取得採用同意。",
+            "tradeoff": "要另排時間"
+          },
+          {
+            "id": 5,
+            "text": "邀家長正常工作時間只說試過後改了哪裡，不開全班示範。",
+            "action": "導師已提出限定經驗交流邀請，未邀其直接教全班或代改課程。",
+            "tradeoff": "教師需多聽，也可能只適合這個孩子"
+          },
+          {
+            "id": 6,
+            "text": "在已確認適用的兩種方法裡，讓學生課內各試一小段再選。",
+            "action": "導師已在授課範圍安排有限自願方法比較，保留必要指導，不新增私人功課。",
+            "tradeoff": "要用較多課內時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不服自己的老方法輸，私人空檔拿另一題試，不急著吹全科都行。",
+          "action": "導師已以自有另一題作私人練習，不取代課程適用性查核、不向學生宣稱通則。",
+          "tradeoff": "花自己的時間，也可能越試越卡"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1979608694
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "2998ebfb3740274760564cea7fafc928d73e44f5d207817a591ddaf00011fab9"
+      },
+      "consequenceDirections": {
+        "A": "家長仍可支持孩子，必要課業目標不因方法不同削減。",
+        "B": "教師可承受自己的好勝，不能拿私試當正式驗證。",
+        "C": "同事可判斷何處適合，也可不採用。",
+        "D": "可看見具體過程，不用成人興奮代替本人理解。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ff1f559cc0617b261aee8ef8d26e9742941f74262c1ce76dad402ce843443c41",
+    "draftSha256": "aa5cad46924491da1bd8c42bdafb29451233b293b5ae9a8ca8263ac24a6e1e2d",
     "seedAssignmentVersion": 1
   }
 }

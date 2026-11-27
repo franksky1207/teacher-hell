@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fb03b3da827e8c60d094fd07ad9374f043346e2324adc19fc44e6362f10b14b3",
+      "checkedAt": "2026-11-27T08:11:20.199Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀作者另存可共同校對的副本，原檔由本人保留。",
+            "action": "導師已提出限用途副本校對邀請，尚未取得或複製原檔。",
+            "tradeoff": "需再確認權限，也可能不願"
+          },
+          {
+            "id": 2,
+            "text": "若本人願意，先主持一輪已核實費用字句的抄寫核對。",
+            "action": "導師已發出限定公開字句、非財務審核的自願短校邀請，未要求核查家庭帳務。",
+            "tradeoff": "範圍很小，也占原班務時間"
+          },
+          {
+            "id": 3,
+            "text": "按已確認必要事實的現版本出刊，承受不影響意思的小錯字。",
+            "action": "導師已在本人權限與各作者原同意內採用現稿，僅保留非實質小瑕疵，不擅改正式經費資料。",
+            "tradeoff": "外觀不完美"
+          },
+          {
+            "id": 4,
+            "text": "暫停這次非必要班刊出版，正常作品回饋照做。",
+            "action": "導師已取消自身可自主取消的當次出版徵詢，必要回饋與權利保存照常。",
+            "tradeoff": "少了一次成品機會"
+          },
+          {
+            "id": 5,
+            "text": "若需基本班級資訊，改由我自製簡單版，不取用他的版面。",
+            "action": "導師已以自身可使用資料製作限必要內容的簡版，不挪用作者排版或冒稱共同作品。",
+            "tradeoff": "教師多工作，也失去原設計"
+          },
+          {
+            "id": 6,
+            "text": "先不追著拿原檔，另約他談怎麼把後續工作交回小組。",
+            "action": "導師已發出正常工作時段的有限分工短談邀請，未索取私人帳務或預設全組接手。",
+            "tradeoff": "出版決定會慢"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不愛人碰稿，先把自己一篇私人短文送同事挑錯，不拿大道理逼他。",
+          "action": "導師已將本人有權分享且無他人私事的短文交適當同事自願回饋，未要求其立即批改或公開。",
+          "tradeoff": "可能被改得很不舒服，也占自己的時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3887778322
+        },
+        "selectedIds": [
+          4,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "c1337213b86f565dc2ece4a5ac793b66b6f4c84c46741ebaf7282cd1b6b9e6b3"
+      },
+      "consequenceDirections": {
+        "A": "作者不必用控制唯一稿守住所有工作，停刊不當懲罰。",
+        "B": "必要資訊能接上，學生原作仍屬本人。",
+        "C": "教師能承受自己的開放，不以此換學生交檔。",
+        "D": "能保留主導感，實際帳務仍由成人負責。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d2db9536a3367aeee1c8aa681c80f71dabbd3e3ab2732407dead329a758b11b8",
+    "draftSha256": "fb03b3da827e8c60d094fd07ad9374f043346e2324adc19fc44e6362f10b14b3",
     "seedAssignmentVersion": 1
   }
 }

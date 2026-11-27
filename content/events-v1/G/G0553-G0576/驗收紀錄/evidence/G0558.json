@@ -15,14 +15,155 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b6aa183d69e8d12291d3c01ab25ffa0631541622b17c704fdabb4b2541ce98eb",
+      "checkedAt": "2026-11-27T08:11:20.182Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "用紙面情境讓各人排出依正式指示行動的順序。",
+            "action": "導師已在授課範圍安排無個資紙面步驟練習，不啟動警報或實地疏散。",
+            "tradeoff": "要花課內時間"
+          },
+          {
+            "id": 2,
+            "text": "看校方已有可用示範影片，停在容易誤解處討論。",
+            "action": "導師已使用經確認可用的正式示範資料，不自行製造測試聲響。",
+            "tradeoff": "少了自己操作"
+          },
+          {
+            "id": 3,
+            "text": "各自寫一個最不確定的地方，我再向負責人確認。",
+            "action": "導師已收集自願短疑問並提交必要範圍詢問，未宣稱回覆已到。",
+            "tradeoff": "回覆可能延後"
+          },
+          {
+            "id": 4,
+            "text": "請他自願只講自己怎麼誤信，不說同伴名字。",
+            "action": "導師已發出可拒絕的限定經驗分享邀請，未公開同儕或要求代查傳言。",
+            "tradeoff": "可能仍不願公開"
+          },
+          {
+            "id": 5,
+            "text": "取消我自己加的搶答名次，保留原課內的自願問答。",
+            "action": "導師已刪除自身非正式防災搶答名次與速度比較，保留原正確內容及可拒絕的有限問答，不取消必要教育",
+            "tradeoff": "少了競賽刺激，也可能被嫌不熱鬧"
+          },
+          {
+            "id": 6,
+            "text": "提供正式可查的應變資料位置，讓各人於課內自己找一項。",
+            "action": "導師已提供校方允許存取的正式資料指引，安排有限課內查找，不要求個人帳號或私人時間。",
+            "tradeoff": "需要時間，也可能找不到"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再用大聲問答撐精神，自己的加碼長講今天不講。",
+          "action": "導師已取消自身非必要延伸長講，保留原有正式防災教學與必要回應。",
+          "tradeoff": "少一次自我表現，也得忍住把道理講完"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1737739909
+        },
+        "selectedIds": [
+          5,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "07197c7a8809bed8597ab11789200d02208120fe8647ff48c287dfb4be01ef1f"
+      },
+      "consequenceDirections": {
+        "A": "學生可觀察正確流程，不把片中場景套成所有情境。",
+        "B": "學生可以慢慢想，不需為搶名次裝懂；教師仍須確認實際理解，未答者不受羞辱。",
+        "C": "可談傳話造成的判斷，不把學生推成反面人物。",
+        "D": "課程保留必要內容，安靜不等於忽略風險。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通5取消快問快答且只用正常說明，可能涵蓋情緒候選取消額外長講；改為僅撤速度名次並保留原短問答，與是否額外長講分開。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "用紙面情境讓各人排出依正式指示行動的順序。",
+                "action": "導師已在授課範圍安排無個資紙面步驟練習，不啟動警報或實地疏散。",
+                "tradeoff": "要花課內時間"
+              },
+              {
+                "id": 2,
+                "text": "看校方已有可用示範影片，停在容易誤解處討論。",
+                "action": "導師已使用經確認可用的正式示範資料，不自行製造測試聲響。",
+                "tradeoff": "少了自己操作"
+              },
+              {
+                "id": 3,
+                "text": "各自寫一個最不確定的地方，我再向負責人確認。",
+                "action": "導師已收集自願短疑問並提交必要範圍詢問，未宣稱回覆已到。",
+                "tradeoff": "回覆可能延後"
+              },
+              {
+                "id": 4,
+                "text": "請他自願只講自己怎麼誤信，不說同伴名字。",
+                "action": "導師已發出可拒絕的限定經驗分享邀請，未公開同儕或要求代查傳言。",
+                "tradeoff": "可能仍不願公開"
+              },
+              {
+                "id": 5,
+                "text": "取消我原加的防災快問快答競速，只用正常說明。",
+                "action": "導師已撤去自身非必要競速橋段，不取消依法或校規要求的教育。",
+                "tradeoff": "少了遊戲感"
+              },
+              {
+                "id": 6,
+                "text": "提供正式可查的應變資料位置，讓各人於課內自己找一項。",
+                "action": "導師已提供校方允許存取的正式資料指引，安排有限課內查找，不要求個人帳號或私人時間。",
+                "tradeoff": "需要時間，也可能找不到"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也不想再用大聲問答撐精神，自己的加碼長講今天不講。",
+              "action": "導師已取消自身非必要延伸長講，保留原有正式防災教學與必要回應。",
+              "tradeoff": "少一次自我表現，也得忍住把道理講完"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3073900585
+            },
+            "selectedIds": [
+              1,
+              4,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 1,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "a9d23342ed55e9176f9421d71ee235496fbcfef5f58c437da97afd4bf4878532"
+          },
+          "previousConsequenceDirections": {
+            "A": "可談傳話造成的判斷，不把學生推成反面人物。",
+            "B": "可看見理解缺口，不拿填對代替真實應變責任。",
+            "C": "教師可辨認共通疑問，未確認前不編答案。",
+            "D": "課程保留必要內容，安靜不等於忽略風險。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9dcbe3fe80d866e5e63a289d376a5c960becc39a8de95bd13833006213a3fe48",
+    "draftSha256": "b6aa183d69e8d12291d3c01ab25ffa0631541622b17c704fdabb4b2541ce98eb",
     "seedAssignmentVersion": 1
   }
 }

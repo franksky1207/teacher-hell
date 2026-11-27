@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1ac5d0b7f28c1acbfeb75d07e3214306271083cc65d5723e777dabdda62e3734",
+      "checkedAt": "2026-11-27T08:11:20.198Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另約他私下談當時為什麼想分享，不叫全班替他答。",
+            "action": "導師已發出限定分享動機的自願短談邀請，不逼公開反省。",
+            "tradeoff": "需額外時間"
+          },
+          {
+            "id": 2,
+            "text": "用不指人的例子談朋友稱呼和正式場合的差別。",
+            "action": "導師已安排本人可用班務中的一般稱呼討論，不公開個案內容。",
+            "tradeoff": "占班務時間，也可能被嫌小題大作"
+          },
+          {
+            "id": 3,
+            "text": "改用我另寫的虛構角色短對話練表達，不沿用班上人。",
+            "action": "導師已提供自有無指認的短對話，於授課範圍作正常練習。",
+            "tradeoff": "要重備材料"
+          },
+          {
+            "id": 4,
+            "text": "取消我原加的自願自稱接龍，不再繼續追誰最有梗。",
+            "action": "導師已撤回自身非必要接龍活動，不強制刪除合法私人自稱或沒收裝置。",
+            "tradeoff": "少了熱鬧"
+          },
+          {
+            "id": 5,
+            "text": "若學生願意，讓他試寫一則不含他人姓名的假消息，自己看資訊會怎麼變。",
+            "action": "導師已提出有限自願虛構訊息練習，不實際傳播或指認真人。",
+            "tradeoff": "多一小段練習，也可拒絕"
+          },
+          {
+            "id": 6,
+            "text": "下一段正常小組討論讓原自願者主持，我按原分工巡看。",
+            "action": "導師已在原授權課程徵詢有限主持分工，尚未指定未同意者或退出必要照看。",
+            "tradeoff": "少了我的控制，現場可能不齊"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想到自己的蠢綽號，私下講給熟同事聽，不貼進班群。",
+          "action": "導師已向適當成人同事自願分享僅涉本人的舊自稱，不揭學生資料、不要求他人交換私事。",
+          "tradeoff": "自己丟一點臉，也可能沒人覺得好笑"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2607794110
+        },
+        "selectedIds": [
+          4,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "f65a0dff0615afaf5db5eddd0fd798bdc8acd9c2449eb2c96c8d2ab3ca6b2628"
+      },
+      "consequenceDirections": {
+        "A": "教師可以自嘲，不能拿來證明所有人都該接受外號。",
+        "B": "學生可接回原任務，不把主持變處理綽號的責任。",
+        "C": "可聽到跟風的心情，不能以自述代替必要核實。",
+        "D": "學生可保留私人稱呼，不需交出來當班級材料。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4ca4d5a3f3b72f0955bc4efcde20de35fae76b0043dd43b45f1088deac9e35eb",
+    "draftSha256": "1ac5d0b7f28c1acbfeb75d07e3214306271083cc65d5723e777dabdda62e3734",
     "seedAssignmentVersion": 1
   }
 }

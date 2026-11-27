@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1327f5821d736ac3348a57c281a02eb2caa815e4c687206c1ca55350c942e1ca",
+      "checkedAt": "2026-11-27T08:11:20.186Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "兩杯同框，只談各自喜歡哪裡，不排勝負。",
+            "action": "導師已提出雙方有權物品的私人同框拍攝方式，公開另需同意，尚未評選。",
+            "tradeoff": "少了想贏的痛快"
+          },
+          {
+            "id": 2,
+            "text": "各自拍自己那杯，再自願交換照片看。",
+            "action": "導師已發出各自拍攝再交換的邀請，未拍取對方物品或取得公開權。",
+            "tradeoff": "要各自動手，效果可能不一"
+          },
+          {
+            "id": 3,
+            "text": "若雙方願意，只比較一項明確效果，不評做人手藝。",
+            "action": "導師已提出限定攝影效果的自願比較邀請，尚未形成評選或公開。",
+            "tradeoff": "可能真的有差，也會刺到自尊"
+          },
+          {
+            "id": 4,
+            "text": "不拍，先各自用紙畫一個最想保留的形狀。",
+            "action": "導師已提出不需操作他人物品的私人速寫邀請，尚未取得參與同意。",
+            "tradeoff": "少了真實照片，也多花時間"
+          },
+          {
+            "id": 5,
+            "text": "先放下手機，問他要不要說那次被嫌作品的事。",
+            "action": "導師已發出可拒絕的私人談話邀請，不追查陶藝同好身分或代為評理。",
+            "tradeoff": "話題可能不愉快，也可能不願說"
+          },
+          {
+            "id": 6,
+            "text": "他自己掌鏡，我只在同意範圍幫忙排背景。",
+            "action": "導師已提出由同事掌鏡、本人有限協助背景的分工，尚未獲同意或移動物品。",
+            "tradeoff": "少了我想拍的角度"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我忽然想捏個更歪的，自己去問體驗課，不叫他陪著教。",
+          "action": "導師已以私人身分查詢安全合適的陶藝體驗課資訊，尚未報名或委託同事授課。",
+          "tradeoff": "可能花錢，也要自己找時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1904844986
+        },
+        "selectedIds": [
+          4,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "4a281f873446d51dacdf451f2165968f0a85c003a8988ec009e7ce22ffbe22cc"
+      },
+      "consequenceDirections": {
+        "A": "可接住好勝後的在意，不必當場證明誰眼光差。",
+        "B": "教師的好勝可跑去新地方，杯子仍在朋友手裡。",
+        "C": "照片能留下不同趣味，不能假稱對方已不在意比較。",
+        "D": "手繪可能更歪，仍可只留自己看。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "11a5bea9135c839695a3080476883b826c877cb19ce206464456264247674c51",
+    "draftSha256": "1327f5821d736ac3348a57c281a02eb2caa815e4c687206c1ca55350c942e1ca",
     "seedAssignmentVersion": 1
   }
 }

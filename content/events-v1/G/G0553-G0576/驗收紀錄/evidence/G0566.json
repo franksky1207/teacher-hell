@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1e53b0c97035da1d62361e9c8ce23ee8f318469e48b41c2dfaac6aa3cb8f0d68",
+      "checkedAt": "2026-11-27T08:11:20.191Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不新增晚段，孩子照原合法返家安排。",
+            "action": "導師已取消自身未成立的非必要新增留校邀請，不影響既有課務。",
+            "tradeoff": "少一次額外參與"
+          },
+          {
+            "id": 2,
+            "text": "請正式窗口說明現有可申請的接送選項，不由家長私人湊人。",
+            "action": "導師已提出既有接送資訊詢問，未核准變更或指定私人車輛。",
+            "tradeoff": "需時間，也未必適用"
+          },
+          {
+            "id": 3,
+            "text": "詢問能否把同目標短回饋移回正常課內。",
+            "action": "導師已向授課者提出課內接續建議，尚未變更課程。",
+            "tradeoff": "要配合授課安排"
+          },
+          {
+            "id": 4,
+            "text": "提供可自行選用的短資料，不靠晚留才取得內容。",
+            "action": "導師已提供有權使用且可取得的自願資料，保留正常工作提問管道。",
+            "tradeoff": "少了面對面"
+          },
+          {
+            "id": 5,
+            "text": "讓孩子自己表明還想不想參加，不用家長替他保全面子。",
+            "action": "導師已向學生徵詢本人意願，未據此批准留校或責怪家庭。",
+            "tradeoff": "可能聽到想去卻去不了"
+          },
+          {
+            "id": 6,
+            "text": "下次邀請先把實際時間與已有條件寫清楚，不靠一個人先找伙伴。",
+            "action": "導師已重整本人可決定的後續自願邀請資訊，未新增制度或預先保證接送。",
+            "tradeoff": "教師多一段準備"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想準時回家，自己的額外留校整理先移回原工作空檔。",
+          "action": "導師已延後自身可調整的非必要留校整理，必要職務與學生交接不省略。",
+          "tradeoff": "整理會晚完成，也得自己承擔待辦"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2827114579
+        },
+        "selectedIds": [
+          3,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "e17e5caf4e1576a0e40b6a74dcd3ade6a807c88974f9e393041900fae18e51c8"
+      },
+      "consequenceDirections": {
+        "A": "意願與交通條件須分開，不能以想去跳過安全。",
+        "B": "若獲准可少一段接送，未准前維持原案。",
+        "C": "家庭可依真實條件選，不把詢問當新車位。",
+        "D": "教師不用用自願晚留證明熱心，必要照看仍有確實接續。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5171a66f07844659c3a77ed445bebc8d9a82aa1ddea686f2b28ae5c7f814bd40",
+    "draftSha256": "1e53b0c97035da1d62361e9c8ce23ee8f318469e48b41c2dfaac6aa3cb8f0d68",
     "seedAssignmentVersion": 1
   }
 }

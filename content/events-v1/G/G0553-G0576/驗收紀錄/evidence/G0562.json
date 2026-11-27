@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c7f5d626024262b9471c94d766938005bee52305577b9018d6db2256a0c67b1a",
+      "checkedAt": "2026-11-27T08:11:20.187Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "徵詢全桌是否願意在班內合署，不強迫每個人寫名。",
+            "action": "導師已向各作者提出限定範圍合署邀請，未將多數同意代替個人。",
+            "tradeoff": "需逐一確認"
+          },
+          {
+            "id": 2,
+            "text": "若全體同意，作品不署人名，只保留圖。",
+            "action": "導師已提出有限匿名展示方案，尚未取得全部同意。",
+            "tradeoff": "少了具名肯定"
+          },
+          {
+            "id": 3,
+            "text": "請發起者自願說明怎麼從一人變全桌，不排誰畫最好。",
+            "action": "導師已發出限定創作過程分享邀請，未要求公開個人心理或排名。",
+            "tradeoff": "要占班務時間"
+          },
+          {
+            "id": 4,
+            "text": "到原板面使用時間就擦掉，不為保存再占必要教學。",
+            "action": "導師已明示依原許可時間結束非必要畫作展示，必要教學板面照常。",
+            "tradeoff": "原畫不會永久在"
+          },
+          {
+            "id": 5,
+            "text": "徵得各作者同意後，只拍無個資的作品留班內紀念。",
+            "action": "導師已提出限用途、期限的作品留存邀請，尚未拍攝或取得授權。",
+            "tradeoff": "要管理保存與用途"
+          },
+          {
+            "id": 6,
+            "text": "下次不固定叫同一人畫，自願者各加一筆也可不參加。",
+            "action": "導師已取消本人可調整的固定額外畫圖徵求，提出可拒絕的後續共畫方式。",
+            "tradeoff": "圖可能不整齊"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想留半個太陽，自己在私人本子畫，不占他們的角落。",
+          "action": "導師已以自有材料獨立畫私人太陽小圖，不複製學生特定構圖或要求署名給教師。",
+          "tradeoff": "花自己的空檔，也可能不好看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1814807521
+        },
+        "selectedIds": [
+          1,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "2325ff4a7d066970cb3ffb75104cdbe0df6174f36f3dda93f93cf36fb47bfb5c"
+      },
+      "consequenceDirections": {
+        "A": "其他作者也能補充或不發言，故事不只屬帶頭者。",
+        "B": "教師可分享興趣，沒有理由取走學生原作。",
+        "C": "貢獻可被看見，拒署者仍是作者。",
+        "D": "可留一份圖，不能再默認轉作對外成果。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f32fd578cbc7d6ca47b95a1f5c82d61d93ff7c6c028865607c8db76411f39669",
+    "draftSha256": "c7f5d626024262b9471c94d766938005bee52305577b9018d6db2256a0c67b1a",
     "seedAssignmentVersion": 1
   }
 }

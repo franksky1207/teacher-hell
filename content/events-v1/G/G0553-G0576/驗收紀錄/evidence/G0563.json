@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0090cb4e8e434640ca8e3e9a8ae000e544382986cec47883a8b369f1c7902d7f",
+      "checkedAt": "2026-11-27T08:11:20.189Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓家長看通用空白樣式，只說明用途與限制。",
+            "action": "導師已提供可公開的無個資通用樣式說明，不另揭露個案。",
+            "tradeoff": "內容較概括"
+          },
+          {
+            "id": 2,
+            "text": "提議作者先看展示樣稿，再決定是否提供作品。",
+            "action": "導師已提出本人可決定範圍的樣稿回看方案，尚未取得作品授權。",
+            "tradeoff": "教師多一道整理"
+          },
+          {
+            "id": 3,
+            "text": "這次不附個人介紹，只使用確已同意的作品內容。",
+            "action": "導師已限縮自身展示用途，實際匿名與同意依共同前提確認，不假稱已去識別。",
+            "tradeoff": "宣傳故事會少"
+          },
+          {
+            "id": 4,
+            "text": "取消我負責的這次非必要展示，不趕著上牆。",
+            "action": "導師已取消本人可自主取消的非必要展示，必要校務另依原安排。",
+            "tradeoff": "失去一次成果機會"
+          },
+          {
+            "id": 5,
+            "text": "把可行展示先限原已同意的班內範圍，不擴到對外。",
+            "action": "導師已撤回自身可拒絕的對外加用構想，未擴張班內原授權。",
+            "tradeoff": "看見的人變少"
+          },
+          {
+            "id": 6,
+            "text": "邀正式承辦在正常工作時間說明未來欄位，不讓家長靠轉傳猜。",
+            "action": "導師已提出經家長知悉的承辦短談邀請，尚未約成。",
+            "tradeoff": "需另排時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被那幾句噎到了，私人時間去走一小段熟路，不再重看訊息找氣受。",
+          "action": "導師已在必要職務與回覆接續完成後，於私人可用時間在熟悉安全步道散步，不漏接法定急迫聯繫。",
+          "tradeoff": "用掉自己的空檔，工作疑問仍要依約回"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2767253471
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "27cd54427c611e3717c4b40bc8b156c65048b2cecbf92525aa3c738708c9600b"
+      },
+      "consequenceDirections": {
+        "A": "成品可以被看見，仍須防止從內容辨認本人。",
+        "B": "可以得到來源清楚的答覆，也可能仍有未定部分。",
+        "C": "可以降低猜測，不因此取得其他學生資訊。",
+        "D": "教師可讓情緒有去處，家長不必負責安慰。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "df58a0c8d141b6ee3071b134bf264c8d1e286834fabff27c7e8a8a706df43d4f",
+    "draftSha256": "0090cb4e8e434640ca8e3e9a8ae000e544382986cec47883a8b369f1c7902d7f",
     "seedAssignmentVersion": 1
   }
 }

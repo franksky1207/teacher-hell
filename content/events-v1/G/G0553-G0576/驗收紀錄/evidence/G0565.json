@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d704c465d13f97187719e87d74607ab260048f1551ca91d0e6e38e7bea5a6003",
+      "checkedAt": "2026-11-27T08:11:20.191Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留原正常課內練習，不私自另挪家庭時間。",
+            "action": "導師已維持原合法課務，不自行核准中途離校。",
+            "tradeoff": "眼前家庭不便仍在"
+          },
+          {
+            "id": 2,
+            "text": "詢問原授課者能否讓可調整部分改正常課內分段。",
+            "action": "導師已提出限授權範圍的課內分段建議，尚未核准。",
+            "tradeoff": "進度需協調"
+          },
+          {
+            "id": 3,
+            "text": "提供可確認的校內家庭支持資訊，由家長自行評估。",
+            "action": "導師已提供可用支持聯絡資訊，不介入家事裁決或代派學生照料。",
+            "tradeoff": "另多一道聯繫"
+          },
+          {
+            "id": 4,
+            "text": "撤回我自己加的非必要補練邀請，保留正常教學。",
+            "action": "導師已取消自身尚未成正式課務的額外補練徵詢，不取消法定課程。",
+            "tradeoff": "少一次額外練習"
+          },
+          {
+            "id": 5,
+            "text": "讓孩子在正常課內私下說自己的需要，不由兩位成人互猜。",
+            "action": "導師已發出可拒絕的正常工作學生短談邀請，不替家長或孩子承諾結果。",
+            "tradeoff": "要另留時間"
+          },
+          {
+            "id": 6,
+            "text": "另約正常工作時段，只談下次怎樣先確認，不延長今天爭辯。",
+            "action": "導師已提出限定未來聯繫的親師短談邀約，尚未約成。",
+            "tradeoff": "後續需履約"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很委屈，另找熟同事說句「我也沒想害人」，不把這話丟給孩子接。",
+          "action": "導師已在可用時間向適當同事表達自身挫折，不透露可識別個案或以此代替必要回應。",
+          "tradeoff": "用掉自己的空檔，也可能被反問哪裡沒先確認"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2978120711
+        },
+        "selectedIds": [
+          6,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "7d65f904c06dc3a39b2a7ba55e9636d141859c8b72186c02a671bddbd5e773ec"
+      },
+      "consequenceDirections": {
+        "A": "可把溝通流程說清，必要當下處理不延後。",
+        "B": "本人可能提出不同想法，仍須依實際權限安排。",
+        "C": "教師有成人傾訴去處，家庭不需安慰導師。",
+        "D": "必要協助另接，不能把孩子出勤當雙方交換。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "719705d6ea65213ed9d020946593c57d162f961c047b9333e94fda6b4f6b643c",
+    "draftSha256": "d704c465d13f97187719e87d74607ab260048f1551ca91d0e6e38e7bea5a6003",
     "seedAssignmentVersion": 1
   }
 }

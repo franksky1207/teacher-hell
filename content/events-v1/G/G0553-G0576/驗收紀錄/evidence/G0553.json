@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9d82bec3cf60eb779749c59182bf972057fde8d4148f5f7dbfbb6b26ae870812",
+      "checkedAt": "2026-11-27T08:11:20.175Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問孩子是否還願意完成原段，段後再給回饋。",
+            "action": "導師已直接向學生發出自願續說邀請，不以家長意願代答。",
+            "tradeoff": "時間須留出，也可能被拒"
+          },
+          {
+            "id": 2,
+            "text": "結束這次額外示範，回到正常課程。",
+            "action": "導師已撤去自身非必要示範環節，不把中止當學生失敗。",
+            "tradeoff": "少了完成表演的機會"
+          },
+          {
+            "id": 3,
+            "text": "讓孩子另選願說的一小段，不必從頭重來。",
+            "action": "導師已提出有限段落重選方式，未取得新演出同意。",
+            "tradeoff": "原完整安排被打斷"
+          },
+          {
+            "id": 4,
+            "text": "邀家長在正常工作時段只談如何支持孩子，不延長現在的見習。",
+            "action": "導師已發出有限親師短談邀請，尚未約成，不影響必要即時回應。",
+            "tradeoff": "要另排時間"
+          },
+          {
+            "id": 5,
+            "text": "改讓全班個別準備原內容，不再集中看一人示範。",
+            "action": "導師已在授課權限內改採個別準備，保留必要教學。",
+            "tradeoff": "少了共同觀摩"
+          },
+          {
+            "id": 6,
+            "text": "徵詢孩子是否希望正常課內改用文字回饋，不再公開練這段。",
+            "action": "導師已提出限定文字回饋選擇，未代學生放棄正常口語學習權益。",
+            "tradeoff": "少了聲音練習"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想知道自己有多會講，私人空檔錄自己的例句先聽，不拿孩子擋。",
+          "action": "導師已用自有可用文本錄本人聲音自聽，不模仿學生口音、不公開或要求比較。",
+          "tradeoff": "花自己的時間，也可能聽得很丟臉"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3977573038
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "7615e0c7114dce2e801f0d223e3917f02ac058da2537082183ec03abdfda7f3e"
+      },
+      "consequenceDirections": {
+        "A": "家庭的陪練經驗能被聽見，不公開孩子私事。",
+        "B": "他可先處理內容，不以退到文字作能力標籤。",
+        "C": "家長不能替孩子答應，完成不等於一切已好。",
+        "D": "教師可面對自己的聲音，不需孩子替教師評改。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7edcbb7e4d4bcb23b14f8914e38cf941f4fa2e58fb2a37fe6a41666fb3334465",
+    "draftSha256": "9d82bec3cf60eb779749c59182bf972057fde8d4148f5f7dbfbb6b26ae870812",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "816af42a3dba7e4e279f7377fab7b1fea178726b7d60ee42e29bef482f3799cb",
+      "checkedAt": "2026-11-27T08:11:20.192Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "撤回我提出的第二份非必要裝飾需求，交承辦確認既有契約。",
+            "action": "導師已撤回自身未成正式採購的額外需求，既有費用由承辦處理。",
+            "tradeoff": "少了原想做的效果"
+          },
+          {
+            "id": 2,
+            "text": "後續用學校既有可用材料，不再要求家庭加備。",
+            "action": "導師已在本人課程改用已確認可用的校內資源，不挪用未核准公物。",
+            "tradeoff": "材料選擇有限"
+          },
+          {
+            "id": 3,
+            "text": "提議後續改每組共用一套，在原目標內縮小份量。",
+            "action": "導師已提出同目標有限共用方案，尚未獲他科採用或收費核准。",
+            "tradeoff": "個人持有成品變少"
+          },
+          {
+            "id": 4,
+            "text": "延後尚未成立的額外第二輪，先回正常課程。",
+            "action": "導師已停止本人額外第二輪徵詢，不取消已成立學生權益。",
+            "tradeoff": "少了立即延伸練習"
+          },
+          {
+            "id": 5,
+            "text": "額外成果若還想分享，提議只用原已同意的簡單電子版，不另做實體套組。",
+            "action": "導師已提出不需新增家庭費用的有限電子成果分享方案，僅用原可合法存取與授權資料，尚未取得新用途同意或公開",
+            "tradeoff": "少了實體套組，也未必每人願提供"
+          },
+          {
+            "id": 6,
+            "text": "邀家長工作時段聽承辦說明未來材料安排，不靠我一句保證。",
+            "action": "導師已發出經家長知悉的承辦短談邀請，尚未約成，不取代必要帳務說明。",
+            "tradeoff": "需再排時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很想做漂亮封面，自己買一份做給自己，不跟學生收。",
+          "action": "導師已用私人預算購買安全材料完成自用封面，不代替依法退款、不挪用學生材料。",
+          "tradeoff": "私人花費與時間自己出"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1636479246
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "e0437bfefc13a77c4d3891487fdc8236a1a6768d83f92f7701ad5db871f1bddc"
+      },
+      "consequenceDirections": {
+        "A": "教師可滿足喜好，不讓學生替教師的成品補款。",
+        "B": "若有人同意可有限分享，未同意者不補影像或購買軟體；原帳務仍按必要程序處理。",
+        "C": "若獲授課者同意可減量，不能靠分組隱藏欠缺。",
+        "D": "學生仍可達核心目標，不需要補第二份私費。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "普通5取消成果包裝與普通1撤第二份裝飾需求主要行動重疊，改為限既有授權資料的電子分享提案，不以同一取消裝飾換詞。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "撤回我提出的第二份非必要裝飾需求，交承辦確認既有契約。",
+                "action": "導師已撤回自身未成正式採購的額外需求，既有費用由承辦處理。",
+                "tradeoff": "少了原想做的效果"
+              },
+              {
+                "id": 2,
+                "text": "後續用學校既有可用材料，不再要求家庭加備。",
+                "action": "導師已在本人課程改用已確認可用的校內資源，不挪用未核准公物。",
+                "tradeoff": "材料選擇有限"
+              },
+              {
+                "id": 3,
+                "text": "提議後續改每組共用一套，在原目標內縮小份量。",
+                "action": "導師已提出同目標有限共用方案，尚未獲他科採用或收費核准。",
+                "tradeoff": "個人持有成品變少"
+              },
+              {
+                "id": 4,
+                "text": "延後尚未成立的額外第二輪，先回正常課程。",
+                "action": "導師已停止本人額外第二輪徵詢，不取消已成立學生權益。",
+                "tradeoff": "少了立即延伸練習"
+              },
+              {
+                "id": 5,
+                "text": "取消我原想辦的非必要成果包裝，只保留原基本實作。",
+                "action": "導師已取消自身額外成果包裝計畫，不影響核心教學。",
+                "tradeoff": "沒有完整展示套組"
+              },
+              {
+                "id": 6,
+                "text": "邀家長工作時段聽承辦說明未來材料安排，不靠我一句保證。",
+                "action": "導師已發出經家長知悉的承辦短談邀請，尚未約成，不取代必要帳務說明。",
+                "tradeoff": "需再排時間"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我其實很想做漂亮封面，自己買一份做給自己，不跟學生收。",
+              "action": "導師已用私人預算購買安全材料完成自用封面，不代替依法退款、不挪用學生材料。",
+              "tradeoff": "私人花費與時間自己出"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 548800586
+            },
+            "selectedIds": [
+              5,
+              4,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 5,
+              "C": 1,
+              "D": "emotional"
+            },
+            "optionsDigest": "f3051ea60704d0bdbedb35ba1608de41880fad7cbf8d77cbe072ecd88fcc9faf"
+          },
+          "previousConsequenceDirections": {
+            "A": "必要第一輪仍有回饋，不把等待退款拖成未交作業。",
+            "B": "教師需接受外觀較簡單，不改名再收一筆。",
+            "C": "未花部分可評估取消，不能擅毀已成立約定。",
+            "D": "教師可滿足喜好，不讓學生替教師的成品補款。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6c81a0576c25edebdfc67080f178cd3a6b554ffd4c9eb10eb7bee7e31a701579",
+    "draftSha256": "816af42a3dba7e4e279f7377fab7b1fea178726b7d60ee42e29bef482f3799cb",
     "seedAssignmentVersion": 1
   }
 }

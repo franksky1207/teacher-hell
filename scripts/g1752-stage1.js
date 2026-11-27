@@ -278,7 +278,11 @@ export async function syncStage1OptionsWording({
  * Mark Stage 1 as formally passed after mechanical + semantic review.
  * Records the exact source SHA at approval time.
  */
-export async function confirmStage1Passed({ mdPath, evidencePath, expectedAssignment, reviewer = null }) {
+export async function confirmStage1Passed({ mdPath, evidencePath, expectedAssignment, reviewer, semanticReviewConfirmed = false }) {
+  // Explicit reviewer attestation is required; this is a record of a real review, not an automated semantic judgment.
+  if (semanticReviewConfirmed !== true || typeof reviewer !== 'string' || !reviewer.trim()) {
+    throw new Error('階段一核准前必須完成語意品質審查，並明確提供審查確認及非空白審查者');
+  }
   const [mdText, evText] = await Promise.all([
     readFile(mdPath, 'utf8'),
     readFile(evidencePath, 'utf8'),
@@ -304,7 +308,7 @@ export async function confirmStage1Passed({ mdPath, evidencePath, expectedAssign
   evidence.stages.stage1.semanticReviewed = true;
   evidence.stages.stage1.sourceVersion = actualSha;
   evidence.stages.stage1.checkedAt = new Date().toISOString();
-  if (reviewer) evidence.stages.stage1.reviewer = reviewer;
+  evidence.stages.stage1.reviewer = reviewer.trim();
   evidence.sourceVersion.draftSha256 = actualSha;
 
   await writeFile(evidencePath, JSON.stringify(evidence, null, 2) + '\n', 'utf8');
@@ -498,7 +502,7 @@ export function validateG1752Stage1Story({ mdText, evidence, filePath, expectedA
   // 7. Content is complete & mechanically valid: check whether formal Stage 1 semantic review matches current SHA
   const actualSha = sha256(mdText);
   const s1Ev = evidence.stages?.stage1 ?? {};
-  const hasPassedRecord = s1Ev.status === 'passed' && s1Ev.semanticReviewed === true;
+  const hasPassedRecord = s1Ev.status === 'passed' && s1Ev.semanticReviewed === true && typeof s1Ev.reviewer === 'string' && s1Ev.reviewer.trim().length > 0;
   const shaMatchesApproved = hasPassedRecord && s1Ev.sourceVersion === actualSha;
 
   if (shaMatchesApproved) {

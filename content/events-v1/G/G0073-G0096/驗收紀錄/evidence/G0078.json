@@ -18,49 +18,49 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "febab42fd27d50952fdd68a815321705b12c6a93b8ccf6c628fc4768aebbe4ea",
-      "checkedAt": "2026-11-27T02:58:52.082Z",
+      "sourceVersion": "4340969152bb9a4b02558447e73e6542d4cb78e4d4e7deb3eb0dc478b93dd5f0",
+      "checkedAt": "2026-11-27T03:29:59.114Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
             "id": 1,
-            "text": "在預算內接受已知瑕疵，確認交易條件後購買。",
+            "text": "預算內願意接受瑕疵，就問清交易條件後買下。",
             "action": "導師已在預算內接受已知瑕疵，確認交易條件後購買。",
             "tradeoff": "得到喜歡物但承擔修繕。"
           },
           {
             "id": 2,
-            "text": "放棄當次交易，謝過同事試音。",
+            "text": "這次不買，謝謝同事幫試琴。",
             "action": "導師已放棄當次交易，謝過同事試音。",
             "tradeoff": "避免不確定但失去琴。"
           },
           {
             "id": 3,
-            "text": "告知同事只再聽一次，之後由你自行決定。",
+            "text": "告訴同事只再聽一次，之後由你自己決定。",
             "action": "導師已告知同事只再聽一次，之後由你自行決定。",
             "tradeoff": "守自主但資訊有限。"
           },
           {
             "id": 4,
-            "text": "詢問賣家是否願另約檢查，不要求保留。",
+            "text": "問賣家能不能另約檢查，不要求替你留琴。",
             "action": "導師已詢問賣家是否願另約檢查，不要求保留。",
             "tradeoff": "可再判斷但可能售出。"
           },
           {
             "id": 5,
-            "text": "取得賣家同意錄下雜音，另請合格維修者估範圍。",
+            "text": "取得賣家同意後錄下雜音，另問維修師傅大概需修什麼。",
             "action": "導師已取得賣家同意錄下雜音，另請合格維修者估範圍。",
             "tradeoff": "資訊較多但需等待。"
           },
           {
             "id": 6,
-            "text": "讓同事先去上課，你自行向賣家核對可見狀況。",
+            "text": "請同事先去上課，你自己和賣家核對能看出的狀況。",
             "action": "導師已讓同事先去上課，你自行向賣家核對可見狀況。",
             "tradeoff": "不占對方時間但少專業陪看。"
           }
         ],
         "emotionalCandidate": {
-          "text": "笑說今天很想任性一次，仍把自己的最高可接受修理費寫下再決定。",
+          "text": "笑說今天很想任性一次，先寫下最多願花多少修理費再決定。",
           "action": "導師已笑說今天很想任性一次，仍把自己的最高可接受修理費寫下再決定。",
           "tradeoff": "承認慾望但給自己設限。"
         },
@@ -80,7 +80,7 @@
           "C": 1,
           "D": 2
         },
-        "optionsDigest": "90cadbce3a295605fc948ddae95e3ce9612e1c75c860bcb4499489c47d2cc137"
+        "optionsDigest": "add5f179fe73f28dd127158c02c143b6171f2f1fab4f906190db1eea9f44a058"
       },
       "consequenceDirections": {
         "A": "交易可能錯過；不偷錄。",
@@ -89,7 +89,13 @@
         "D": "同事可去上課；你可能惋惜。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Codex／2026-11-27自然語言品質修正：逐篇核讀、修稿及語意複核（非獨立審查者）",
+      "languageRevision": {
+        "baseline": "141d253f624ae83d27a383367789e9c0c55e9c64",
+        "scope": "自然語言完整核讀；開場敘事與候選顯示文字定向潤飾，實質行動及原抽選維持，另有實質修正時記於抽選歷史。",
+        "reviewer": "Codex／本輪完整核讀開場、人物對話、七候選及最終四選項，對照原客觀行動、知情與代價作語意複核",
+        "reviewedAt": "2026-11-27T03:29:59.113Z"
+      }
     },
     "stage2": {
       "status": "not_started",
@@ -110,7 +116,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "febab42fd27d50952fdd68a815321705b12c6a93b8ccf6c628fc4768aebbe4ea",
+    "draftSha256": "4340969152bb9a4b02558447e73e6542d4cb78e4d4e7deb3eb0dc478b93dd5f0",
     "seedAssignmentVersion": 1
   }
 }

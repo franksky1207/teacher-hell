@@ -19,49 +19,49 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "85a33869589b65dfada4e3fd86e9db41465deeb9a5a55caf6559131710ec6ff4",
-      "checkedAt": "2026-11-27T02:58:52.088Z",
+      "sourceVersion": "837be2e95a38a92b3455ad033f7dd94fe5dce351e29d932b377a9825c7649029",
+      "checkedAt": "2026-11-27T03:29:59.126Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
             "id": 1,
-            "text": "自嘲後把焦點拉回一個推理步驟。",
+            "text": "自嘲一句，再帶回其中一個推理步驟。",
             "action": "導師已自嘲後把焦點拉回一個推理步驟。",
             "tradeoff": "接回學習但情緒未談。"
           },
           {
             "id": 2,
-            "text": "先停聲，再依自願順序發言。",
+            "text": "讓願意的人按順序說，先聽完，不互相搶話。",
             "action": "導師已先停聲，再依自願順序發言。",
             "tradeoff": "秩序明確但節奏變慢。"
           },
           {
             "id": 3,
-            "text": "私下問帶頭者在氣哪一次講反。",
+            "text": "私下問他，剛才是哪一次講反讓他生氣。",
             "action": "導師已私下問帶頭者在氣哪一次講反。",
             "tradeoff": "聽真疑慮但需另約。"
           },
           {
             "id": 4,
-            "text": "改全班書面提出反例。",
+            "text": "改讓全班寫下反例。",
             "action": "導師已改全班書面提出反例。",
             "tradeoff": "不受音量壟斷但需讀答。"
           },
           {
             "id": 5,
-            "text": "逐項更正自己前面的混淆。",
+            "text": "把自己前面講混的地方逐一更正。",
             "action": "導師已逐項更正自己前面的混淆。",
             "tradeoff": "責任清楚但占課時。"
           },
           {
             "id": 6,
-            "text": "請學生自願選一個可驗證說法共同檢查。",
+            "text": "請學生自願挑一個能實際核對的說法，一起檢查。",
             "action": "導師已請學生自願選一個可驗證說法共同檢查。",
             "tradeoff": "參與實質但需控制範圍。"
           }
         ],
         "emotionalCandidate": {
-          "text": "明說自己被噓會不爽，先喝口水再聽理由。",
+          "text": "「被噓我也會不爽。」先喝口水，緩過來再聽理由。",
           "action": "導師已明說自己被噓會不爽，先喝口水再聽理由。",
           "tradeoff": "誠實降溫但課堂稍停。"
         },
@@ -81,7 +81,7 @@
           "C": "emotional",
           "D": 5
         },
-        "optionsDigest": "9bfa042a5117c8c98d6834f416dd12813a760c8c9915c952a2fbffaaba719546"
+        "optionsDigest": "18ce2e90a8a41f03636d860e469ef4ade1af18335fb159a2a43a59eda098a7fb"
       },
       "consequenceDirections": {
         "A": "安靜者有入口；教師增加判讀。",
@@ -90,7 +90,14 @@
         "D": "學生可修筆記；信任需靠後續。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Codex／2026-11-27自然語言品質修正：逐篇核讀、修稿及語意複核（非獨立審查者）",
+      "languageRevision": {
+        "baseline": "141d253f624ae83d27a383367789e9c0c55e9c64",
+        "scope": "自然語言完整核讀；開場敘事與候選顯示文字定向潤飾，實質行動及原抽選維持，另有實質修正時記於抽選歷史。",
+        "reviewer": "Codex／本輪完整核讀開場、人物對話、七候選及最終四選項，對照原客觀行動、知情與代價作語意複核",
+        "reviewedAt": "2026-11-27T03:29:59.126Z",
+        "targetedFix": "開場僅制止針對人的噓聲並允許談理由；尚未安排全班依序發言。學生支持可講理由的立場仍保留，普通候選2才完成自願者按序發言；原行動與抽選不變。"
+      }
     },
     "stage2": {
       "status": "not_started",
@@ -111,7 +118,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "85a33869589b65dfada4e3fd86e9db41465deeb9a5a55caf6559131710ec6ff4",
+    "draftSha256": "837be2e95a38a92b3455ad033f7dd94fe5dce351e29d932b377a9825c7649029",
     "seedAssignmentVersion": 1
   }
 }

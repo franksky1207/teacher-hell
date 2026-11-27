@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f610d5d9ff66e1988787fd39143a4cbfe20189947e61c003974ad772c1d7bdda",
+      "checkedAt": "2026-11-27T12:07:50.835Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消我加的借物心得欄，只留必要借還資料。",
+            "action": "導師已刪除本人非必要借物心得欄，保留依法及保管需要的有限紀錄。",
+            "tradeoff": "少了蒐集故事的方便"
+          },
+          {
+            "id": 2,
+            "text": "把往後額外收借工作接回，讓他結束這項非必要班務。",
+            "action": "導師已接回本人可取消的學生額外借物任務，依規完成成人保管交接。",
+            "tradeoff": "教師多一件事"
+          },
+          {
+            "id": 3,
+            "text": "提供只向教師私下詢問的借物方式，不讓同學互問原因。",
+            "action": "導師已提供既有可行的教師私下借物詢問管道，不揭露借用者家庭情況。",
+            "tradeoff": "教師需多接訊息"
+          },
+          {
+            "id": 4,
+            "text": "把可公開的使用說明貼在櫃旁，不貼借用者名字。",
+            "action": "導師已張貼不含個資的用品使用及歸還說明，不公開借物名單。",
+            "tradeoff": "少了直接催還的方便"
+          },
+          {
+            "id": 5,
+            "text": "邀他在正常工作空檔談是否還想做這項班務。",
+            "action": "導師已發出限定未來班務意願的自願短談邀請，未續派任務。",
+            "tradeoff": "要另排時間"
+          },
+          {
+            "id": 6,
+            "text": "取消我原想辦的最節省使用者表揚。",
+            "action": "導師已撤回本人非必要用品使用排名提案，不以資源多寡作公開評價。",
+            "tradeoff": "少一段班級表揚"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己那支快寫完的筆先換芯，不再拿「我都沒換新」來當話題。",
+          "action": "導師已自費更換本人私人筆芯，不領取學生借用品、不索贈或報帳。",
+          "tradeoff": "花自己的小錢，也少了炫節儉的機會"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 542183603
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "3246d09434755d639c6a79c3b11851936b9c600572281e4a612fd1b9f3e437ce"
+      },
+      "consequenceDirections": {
+        "A": "學生可退開，不因退出就刪掉已完成紀錄。",
+        "B": "借物不再要求私事，必要紀錄仍完整。",
+        "C": "教師處理私人用品，不讓學生替他省或提供筆芯。",
+        "D": "不再把借用或省用排名，原正常回饋照常。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4c3e321e770231152e798fb438e2039389ea0f394737e49db2429dae03bd8f7d",
+    "draftSha256": "f610d5d9ff66e1988787fd39143a4cbfe20189947e61c003974ad772c1d7bdda",
     "seedAssignmentVersion": 1
   }
 }

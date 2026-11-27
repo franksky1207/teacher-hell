@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e459cac9ab9d615b1f06a7b643787002bf12c514f27f6063c96286dabef25807",
+      "checkedAt": "2026-11-27T12:07:50.833Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問他是否同意只用留下的一張，限這次暖身。",
+            "action": "導師已提出限單張及單次用途的授權確認詢問，未取得新同意或擴大使用。",
+            "tradeoff": "玩法較少"
+          },
+          {
+            "id": 2,
+            "text": "兩張都不借，改用我自己準備的圖。",
+            "action": "導師已婉拒本次借圖，改用自有可用圖卡，不要求學生另提供。",
+            "tradeoff": "少了學生參與感"
+          },
+          {
+            "id": 3,
+            "text": "這次不用圖，改成只用口頭線索的暖身。",
+            "action": "導師已將本人非必要看圖暖身改為中性口頭線索，不取用學生原圖。",
+            "tradeoff": "畫圖者少了展示機會"
+          },
+          {
+            "id": 4,
+            "text": "邀作者自願說一個畫圖技巧，不出示任何一張。",
+            "action": "導師已提出限定方法的一次自願短分享邀請，未取得發言同意。",
+            "tradeoff": "他可能不想說"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的最佳貢獻票選，原小活動不頒名次。",
+            "action": "導師已取消本人非必要材料貢獻排名，不減原參與權或必要回饋。",
+            "tradeoff": "少了被表揚的機會"
+          },
+          {
+            "id": 6,
+            "text": "向學校查詢既有公共圖卡，不再靠學生捐圖延續玩法。",
+            "action": "導師已查詢校內既有可借圖卡及使用條件，未取得器材或要求學生暫留原圖。",
+            "tradeoff": "資源未必有"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我捨不得那個配色，但自己回去用自己的顏料試，不把他的圖扣下來參考。",
+          "action": "導師已以自有顏料另作不同構圖的私人色彩試作，不取用、攝錄或複製學生原圖。",
+          "tradeoff": "自己花材料，未必畫得像心裡想的"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1135158749
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "f5f8c7e631baca201eefafa9eea02f12fbb270faa660363b669cabc4a2ccbd46"
+      },
+      "consequenceDirections": {
+        "A": "分享可以是方法，不把家庭協助當必談內容。",
+        "B": "可參加不同玩法，不以線索暗指作者。",
+        "C": "教師滿足創作欲，不複製具體原作或要學生代畫。",
+        "D": "不把歸還當拒絕學生，原參與權仍在。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c5c7e734f5b9c15611d063229f21271eb9fe2356c5ed260fb717c0f1f03d4699",
+    "draftSha256": "e459cac9ab9d615b1f06a7b643787002bf12c514f27f6063c96286dabef25807",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9900b100dd4195d4a0371547902631a741bd2bd2211cdf9d57e356b3e4bddb58",
+      "checkedAt": "2026-11-27T12:07:50.825Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把這次額外的班務袋整理接回，我自己收。",
+            "action": "導師已接回本人可取消的學生額外整理任務，必要正式資料由成人保管。",
+            "tradeoff": "教師多一件工作"
+          },
+          {
+            "id": 2,
+            "text": "讓他只完成原先一小格分類，不再守電話或接臨時跑腿。",
+            "action": "導師已限縮本人原有限班務至可負荷小段，明示不含接聽及查人，成人接回其餘工作。",
+            "tradeoff": "部分整理要由成人接續"
+          },
+          {
+            "id": 3,
+            "text": "問他是否願另約輔導老師談聯絡壓力。",
+            "action": "導師已依本人意願及必要知情原則詢問自願支持時段，必要通報照既有程序。",
+            "tradeoff": "需協調，也可不接受非必要短談"
+          },
+          {
+            "id": 4,
+            "text": "取消我加的午休班務回報，改用原正常班務時間。",
+            "action": "導師已撤除本人非必要午休回報安排，保留既有正式聯絡與急件處理。",
+            "tradeoff": "一般問題要晚些討論"
+          },
+          {
+            "id": 5,
+            "text": "給他一張只寫正式聯絡位置的小卡，不含家庭動向。",
+            "action": "導師已提供既有成人急件聯絡方式的簡明資訊，不揭露其他家庭資料。",
+            "tradeoff": "要保管，也未必會看"
+          },
+          {
+            "id": 6,
+            "text": "邀他日後自願選一項不需等訊息的短班務，不現在改派。",
+            "action": "導師已提出可拒絕的日後有限班務選擇邀請，尚未排定或以此取代休息。",
+            "tradeoff": "要再確認意願"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被電話聲弄得很躁，自己的私人群聊先不看，安靜把這口午餐吃完。",
+          "action": "導師已於合法休息時段暫停本人非急私人聊天並用餐，不關閉公務急件渠道。",
+          "tradeoff": "晚點才回朋友訊息"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 683782051
+        },
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "fe086d0bf71e6b170cd41765ce7864fd48ac688b6dad00d59807c01581de902a"
+      },
+      "consequenceDirections": {
+        "A": "可減少反覆確認，不能保證每通電話立即被處理。",
+        "B": "學生能回休息，不把休息當不負責任。",
+        "C": "休息較完整，真正急件仍走共同渠道。",
+        "D": "教師保留私人空檔，正式電話與學生必要照看仍有人接續。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5fc8127f5b245b4e717b3e214ea0bcfe92a73030a34edb78babe63162cf7e998",
+    "draftSha256": "9900b100dd4195d4a0371547902631a741bd2bd2211cdf9d57e356b3e4bddb58",
     "seedAssignmentVersion": 1
   }
 }

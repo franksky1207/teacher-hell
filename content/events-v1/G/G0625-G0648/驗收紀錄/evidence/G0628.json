@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2170b0af29c466186dc274f773c88cba46e5752ee31ccff8789e3c332efcc4da",
+      "checkedAt": "2026-11-27T12:07:50.824Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只接受他提出的兩箱，其他另安排。",
+            "action": "導師已向同事表達僅接受原兩箱的有限協助並確認其自願，不預設已搬完。",
+            "tradeoff": "事情今天不會全完"
+          },
+          {
+            "id": 2,
+            "text": "這次不搬，先把我自己能整理的箱內物品分好。",
+            "action": "導師已停止本次私人搬運，開始自行分類本人安全可處理物品，未要求同事等候。",
+            "tradeoff": "搬動要延後"
+          },
+          {
+            "id": 3,
+            "text": "自費詢問搬運店家，先看報價再決定。",
+            "action": "導師已向正常營業店家提出私人搬運估價詢問，尚未訂約、付費或完成搬運。",
+            "tradeoff": "可能費用超預算"
+          },
+          {
+            "id": 4,
+            "text": "改約另一次有合適成人與工具的私人整理，今天不搬。",
+            "action": "導師已發出可拒絕的日後有限整理邀請，未約成或安排樓梯搬運。",
+            "tradeoff": "還要喬時間，未必約成"
+          },
+          {
+            "id": 5,
+            "text": "取消我自己額外想換房間擺法的計畫，只處理原必要收納。",
+            "action": "導師已撤回本人非必要私人重新配置計畫，不處置他人物品或略過必要安全整理。",
+            "tradeoff": "少了想像中的新空間"
+          },
+          {
+            "id": 6,
+            "text": "問他願不願意只借空車，搬運我另找人處理。",
+            "action": "導師已提出限定用途及返還的私人借車詢問，未取得同意或搬動重物。",
+            "tradeoff": "要保管歸還，也可能借不到"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我肚子餓了，自己的箱子先放妥，自費去吃，不再追那個今天清空的目標。",
+          "action": "導師已在必要安全安置完成後停止本人非急整理，獨自自費用餐，不要求同事加班看物。",
+          "tradeoff": "多花餐費，整理延後"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3328249268
+        },
+        "selectedIds": [
+          1,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "d61c57cbb66e168a7668d60a9751724232650417c49431218538b29714f01f92"
+      },
+      "consequenceDirections": {
+        "A": "物品借用和人力分開，取得車不等於能安全上樓。",
+        "B": "教師不因自己休息讓朋友看箱或等候。",
+        "C": "能接受有限幫忙，不能趁推車已來再添量。",
+        "D": "工作量縮小，不把放棄改裝當物品已歸位。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "99e3eea0a288915785bf2f79208d3143aef648f5f2878c7484b7aaa026271946",
+    "draftSha256": "2170b0af29c466186dc274f773c88cba46e5752ee31ccff8789e3c332efcc4da",
     "seedAssignmentVersion": 1
   }
 }

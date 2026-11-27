@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fc0e7740340887ff40ac4ee9cff80c7d024730fb9a42dd0a665c3b542f7a066d",
+      "checkedAt": "2026-11-27T12:07:50.829Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問孩子是否願意做一題，家長只在旁觀察。",
+            "action": "導師已提供本人自願有限作答與正常回饋機會，未讓家長代答或預設完成。",
+            "tradeoff": "當場可能不願"
+          },
+          {
+            "id": 2,
+            "text": "請家長只向我示範怎麼提問，不拉孩子再做。",
+            "action": "導師已提出成人限定提問示範邀請，尚未取得同意或要求學生旁聽。",
+            "tradeoff": "少了即時學生反應"
+          },
+          {
+            "id": 3,
+            "text": "這次不另陪練，按原正常課給孩子個別回饋。",
+            "action": "導師已停止本人額外親子陪練提案，保留正常個別教學回饋。",
+            "tradeoff": "家長看不到當場進展"
+          },
+          {
+            "id": 4,
+            "text": "我寫一張只含一個中性問句的小卡，家長願用再用。",
+            "action": "導師已以自有內容製作有限提問小卡供自願參考，不加家庭任務。",
+            "tradeoff": "卡片不能涵蓋所有困難"
+          },
+          {
+            "id": 5,
+            "text": "邀家長另談怎麼看出該退開，不討論孩子的排名。",
+            "action": "導師已發出限定成人陪練界線的自願短談邀請，未約成。",
+            "tradeoff": "需另配工作時間"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的全班公開解題觀摩，改用不指向個人的例子。",
+            "action": "導師已撤回本人非必要學生公開解題環節，選用自有中性示例。",
+            "tradeoff": "少了現場學生示範"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我現在被問得很沒面子，自己的那篇教學成功貼文先不發，不急著找人替我按讚。",
+          "action": "導師已停止發布本人未發的非必要教學自誇貼文，不刪必要紀錄或延誤回應。",
+          "tradeoff": "少了曝光，也得忍住辯解"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1864065159
+        },
+        "selectedIds": [
+          1,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "d77164506b61069f622797d5e43050607bde31986fd04e8fc9a386ae00cabbec"
+      },
+      "consequenceDirections": {
+        "A": "可少一點代答，不要求家庭回報成效。",
+        "B": "家長可保留界線，不能把短談當已改變家庭做法。",
+        "C": "可看到本人需要，不能以拒絕當態度不佳。",
+        "D": "教師不拿孩子進度換回面子，必要更正仍已完成。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1252287eab4c07251508df12f0e342ef62628d4c5c113481885499a475cc2aca",
+    "draftSha256": "fc0e7740340887ff40ac4ee9cff80c7d024730fb9a42dd0a665c3b542f7a066d",
     "seedAssignmentVersion": 1
   }
 }

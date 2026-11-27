@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "acbadaaddd6941537404bc4e3e9825132bd8df9b7b7b8e9b1a4ea23da21f221e",
+      "checkedAt": "2026-11-27T12:07:50.836Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把我這次額外展示搬運取消，不再增加這處人流。",
+            "action": "導師已取消本人非必要移展示搬運需求，不改校方封閉與放行決定。",
+            "tradeoff": "少一次集中展示"
+          },
+          {
+            "id": 2,
+            "text": "向主管提出檢視這位職員今天可減的非必要雜務。",
+            "action": "導師已向有權主管提出非必要工作減量需求，未更動正式值勤或宣稱核准。",
+            "tradeoff": "不一定獲准"
+          },
+          {
+            "id": 3,
+            "text": "改用既有授權照片在原教室介紹作品，不安排走看。",
+            "action": "導師已選用既有可用照片於本人可安排教室介紹，不新拍個資或占用其他場地。",
+            "tradeoff": "少了看實物的細節"
+          },
+          {
+            "id": 4,
+            "text": "把我自己的收件點移離此處，搬到已確認可用的位置。",
+            "action": "導師已將本人收件資料移至既有核准安全位置，不改正式通行指示。",
+            "tradeoff": "自己需搬資料"
+          },
+          {
+            "id": 5,
+            "text": "另向承辦提出以後活動前先核對人流的建議。",
+            "action": "導師已向適當承辦提出未來非必要活動動線協調建議，未宣稱制度成立。",
+            "tradeoff": "要等討論，今天無新制度"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的入口留影，不再請學生在貼紙旁排隊。",
+            "action": "導師已取消本人非必要入口拍照提案，不刪必要安全紀錄。",
+            "tradeoff": "少一張活動照"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他那句話我聽了很刺，自己想發的抱怨限動先存著，不叫朋友來評誰兇。",
+          "action": "導師已停止發布本人未發的非必要私人抱怨動態，不含職員個資或妨礙正式處理。",
+          "tradeoff": "少了立即被安慰的機會"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 848518141
+        },
+        "selectedIds": [
+          1,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "dedfe675e57adccc79f70ad36717a893135c27c133d48caf78ec7d1db91ec8df"
+      },
+      "consequenceDirections": {
+        "A": "值勤可少被打斷，導師不能自行排他代理。",
+        "B": "必要通行照校方安排，不能把取消展示當已修好路段。",
+        "C": "不是把學生撤離照相點就算安全處理完成，校方責任仍共同接續。",
+        "D": "教師不把值勤者照片或身份拿去公開，必要回應仍完成。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "45e42b78cba99a5ba64679f00ec201724137f1f33d127b8756cd99010709b2c5",
+    "draftSha256": "acbadaaddd6941537404bc4e3e9825132bd8df9b7b7b8e9b1a4ea23da21f221e",
     "seedAssignmentVersion": 1
   }
 }

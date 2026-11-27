@@ -15,14 +15,155 @@
     "G01",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2dfc54c032b0c8e1c824faaea812eac855023828eb75a2590f41eddefae54985",
+      "checkedAt": "2026-11-27T12:07:50.827Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次只看既有且同意使用的作品照片，不取回實物展示。",
+            "action": "導師已選用原有授權照片作有限回饋，不進入隔離區取物或作新安全結論。",
+            "tradeoff": "少了細節與觸感"
+          },
+          {
+            "id": 2,
+            "text": "向場地承辦申請安全的替代位置，未核准前不移展。",
+            "action": "導師已提出替代展示位置申請，尚未獲准、搬動或使用新場地。",
+            "tradeoff": "要等，也可能沒有位置"
+          },
+          {
+            "id": 3,
+            "text": "取消我安排的額外公開展示，原學習成果照實回饋。",
+            "action": "導師已撤回本人非必要公開展示，不刪真實成果或必要風險紀錄。",
+            "tradeoff": "少了一次被看見的機會"
+          },
+          {
+            "id": 4,
+            "text": "等成人確認可取回，再詢問作者是否要自己帶回保管。",
+            "action": "導師已提出以安全取回條件成立為前提的物主意願詢問，未交付或宣稱檢修完成。",
+            "tradeoff": "在確認前仍需等待"
+          },
+          {
+            "id": 5,
+            "text": "我另畫固定方式的概念圖，與原作品分開說。",
+            "action": "導師已以自有內容製作不含危險操作指示的概念圖供正常教學，未宣告器材可用。",
+            "tradeoff": "教師多備一份"
+          },
+          {
+            "id": 6,
+            "text": "邀作者自願只說做成的一步，不要求再示範組裝。",
+            "action": "導師已發出限定成果方法的一次自願口頭分享邀請，未要求接觸停用試架。",
+            "tradeoff": "看不到動作細節"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想做個站得穩的東西，下班自費買小拼組自己搭，不叫學生替我試。",
+          "action": "導師已自費購買本人私人小拼組並於私人安全空間試搭，不使用停用試架、學生作品或公開安全結論。",
+          "tradeoff": "自己花錢和空檔，可能還是搭歪"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3457092129
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "04f4a47a0f5a91fb32c9e7410bce6930acef6b10a95a79eb91609d305d43fe74"
+      },
+      "consequenceDirections": {
+        "A": "教師可滿足私人動手欲，不把小拼組成功當原試架可用或要求學生接續展示。",
+        "B": "換地點可能可行，申請本身不是取得場地。",
+        "C": "可以回應洞與固定件的問題，不拿圖取代實際檢修。",
+        "D": "能談成品，照片不證明試架安全。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒取消宣傳海報可能被普通3取消公開展示涵蓋，改為教師私人購買試搭，不把停辦同件事換措辭。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "這次只看既有且同意使用的作品照片，不取回實物展示。",
+                "action": "導師已選用原有授權照片作有限回饋，不進入隔離區取物或作新安全結論。",
+                "tradeoff": "少了細節與觸感"
+              },
+              {
+                "id": 2,
+                "text": "向場地承辦申請安全的替代位置，未核准前不移展。",
+                "action": "導師已提出替代展示位置申請，尚未獲准、搬動或使用新場地。",
+                "tradeoff": "要等，也可能沒有位置"
+              },
+              {
+                "id": 3,
+                "text": "取消我安排的額外公開展示，原學習成果照實回饋。",
+                "action": "導師已撤回本人非必要公開展示，不刪真實成果或必要風險紀錄。",
+                "tradeoff": "少了一次被看見的機會"
+              },
+              {
+                "id": 4,
+                "text": "等成人確認可取回，再詢問作者是否要自己帶回保管。",
+                "action": "導師已提出以安全取回條件成立為前提的物主意願詢問，未交付或宣稱檢修完成。",
+                "tradeoff": "在確認前仍需等待"
+              },
+              {
+                "id": 5,
+                "text": "我另畫固定方式的概念圖，與原作品分開說。",
+                "action": "導師已以自有內容製作不含危險操作指示的概念圖供正常教學，未宣告器材可用。",
+                "tradeoff": "教師多備一份"
+              },
+              {
+                "id": 6,
+                "text": "邀作者自願只說做成的一步，不要求再示範組裝。",
+                "action": "導師已發出限定成果方法的一次自願口頭分享邀請，未要求接觸停用試架。",
+                "tradeoff": "看不到動作細節"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我那個一定要展得很壯觀的念頭先放掉，自己的海報不加印了。",
+              "action": "導師已取消本人非必要自費成果宣傳海報加印，未停止正式安全告知或必要紀錄。",
+              "tradeoff": "少了氣派畫面，也得接受小場面"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1858783524
+            },
+            "selectedIds": [
+              3,
+              6,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 6,
+              "C": "emotional",
+              "D": 1
+            },
+            "optionsDigest": "b35342f040cffbd9884daf1124a99d1d8845242bd405db016f20b43d41665076"
+          },
+          "previousConsequenceDirections": {
+            "A": "作品不因未展被抹去，正常學習仍需回應。",
+            "B": "能保留真實完成感，不讓學生負責事故說明。",
+            "C": "教師省的是自己非必要宣傳，不取消必要告知或學生回饋。",
+            "D": "能談成品，照片不證明試架安全。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0ab4c3e543a770cf6af77b5be717918dc75abe191008daf8bdd4aef5f2e80d3f",
+    "draftSha256": "2dfc54c032b0c8e1c824faaea812eac855023828eb75a2590f41eddefae54985",
     "seedAssignmentVersion": 1
   }
 }

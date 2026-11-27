@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0a7afb286ea918db478bb543fe334097088f8a50b39dfd478ecacad82b30160b",
+      "checkedAt": "2026-11-27T12:07:50.828Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "原故事仍可選，再加一個不需家庭經驗的題目。",
+            "action": "導師已在本人課內提供等量雙題選擇，不預設整桌改題或增加總量。",
+            "tradeoff": "教師要看不同內容"
+          },
+          {
+            "id": 2,
+            "text": "各人自己完成短稿，不再綁同桌共用故事。",
+            "action": "導師已將本人非正式練習改為有限個別短稿，不要求家庭交資料。",
+            "tradeoff": "少了合作整理"
+          },
+          {
+            "id": 3,
+            "text": "只練故事的一個轉折，不要整篇重寫。",
+            "action": "導師已在原目標內限縮本人練習至等量短段，保留必要回饋。",
+            "tradeoff": "看不到完整篇章"
+          },
+          {
+            "id": 4,
+            "text": "我用自編故事示範，這次先不徵學生故事。",
+            "action": "導師已用自有虛構故事作課內示範，未取用家庭素材或強迫公開。",
+            "tradeoff": "少了同儕內容"
+          },
+          {
+            "id": 5,
+            "text": "讓願意合作的人重組，不願者保留個別方式。",
+            "action": "導師已提出自願合作與個別等值方案，未替任何學生答應新伙伴。",
+            "tradeoff": "分組要再協調"
+          },
+          {
+            "id": 6,
+            "text": "把我加的最佳故事票選拿掉，只給內容回饋。",
+            "action": "導師已取消本人非必要故事人氣票選，保留正常學習回饋。",
+            "tradeoff": "少了名次話題"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我那段私人糗事本來也想拿來講，今天自己留著，不硬把全班逗笑。",
+          "action": "導師已取消本人非必要私人糗事暖場，未減必要教學或取用學生故事。",
+          "tradeoff": "少了當主角的滿足"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1610566819
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "83f3073a3db5e5b02d0be4e76a3afba354cb3bece6fb97febcaa740a46264a10"
+      },
+      "consequenceDirections": {
+        "A": "可保住原有努力，不能宣稱短段已等於全文能力。",
+        "B": "教師不以自己的分享要求學生也交私事。",
+        "C": "原同桌不必綁在一起，不能把獨作當被排除。",
+        "D": "選擇分開，不能把新題視為較差版本。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5e683a3f8829a64b15b1c38d98ed844592208508b9b682b412da46931f12ca07",
+    "draftSha256": "0a7afb286ea918db478bb543fe334097088f8a50b39dfd478ecacad82b30160b",
     "seedAssignmentVersion": 1
   }
 }

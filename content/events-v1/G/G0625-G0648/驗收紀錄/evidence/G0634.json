@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "46470dbab7039b317fb64d757974093af2d3eee632c689661f7b845cf3f1333b",
+      "checkedAt": "2026-11-27T12:07:50.832Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "給孩子一題虛構例，家長只在本人願意時陪看。",
+            "action": "導師已提供不含財務個資的有限虛構算例與自願陪看方式，未假定孩子接受。",
+            "tradeoff": "當場可能不想做"
+          },
+          {
+            "id": 2,
+            "text": "這次不再出題，先按已完成那題給正常回饋。",
+            "action": "導師已停止本人額外當場練習提案，以既有成果提供有限回饋。",
+            "tradeoff": "沒有當場遷移練習"
+          },
+          {
+            "id": 3,
+            "text": "只請家長向我說明如何問、不幫填，孩子不用示範。",
+            "action": "導師已發出成人限定陪練方法交流邀請，未要求學生參與或替家庭作帳務建議。",
+            "tradeoff": "看不到孩子即時表現"
+          },
+          {
+            "id": 4,
+            "text": "讓孩子選文字圖或口頭說明一個步驟，不追加整題。",
+            "action": "導師已在本課提供等值有限步驟說明選擇，不追加家庭工作。",
+            "tradeoff": "能力判讀較有限"
+          },
+          {
+            "id": 5,
+            "text": "我另做一份大家都能用的虛構範例，不借這家故事。",
+            "action": "導師已以自有內容製作一般虛構例題供本課使用，不公開家庭情況。",
+            "tradeoff": "教師多備資料"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的家庭生活計算分享，回到課內練習。",
+            "action": "導師已取消本人非必要家庭帳務分享環節，不減正常課內回饋。",
+            "tradeoff": "少了生活故事"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我才剛想說自己也最會算，先把私人群組那個搶答邀請拒掉，今晚不當全家的計算機。",
+          "action": "導師已婉拒本人私人非必要算帳娛樂邀請，不涉法定責任、職務或學生資料。",
+          "tradeoff": "可能被說掃興"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1235853941
+        },
+        "selectedIds": [
+          5,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "28195c36d7b31c1c3df6492027e3c16e8516d5275dba1cbf88e41835ef0aa082"
+      },
+      "consequenceDirections": {
+        "A": "可以保留成功，不將一次完成當全面熟練。",
+        "B": "相似概念可教，不讓家庭負擔變教材招牌。",
+        "C": "能自選表達，不以家長擅長什麼替他決定。",
+        "D": "教師為自己的私事設界線，不拿學生家庭當勸說例子。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fa7ba0ce312b25eb5a19dec63c9eacaf61fcf819275e3ef24ceb2b7961bc977e",
+    "draftSha256": "46470dbab7039b317fb64d757974093af2d3eee632c689661f7b845cf3f1333b",
     "seedAssignmentVersion": 1
   }
 }

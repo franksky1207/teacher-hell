@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1c1a0af0e1042301d8a2fc52413234175cb4fb3b86268b4eb75652f21dcaf72a",
+      "checkedAt": "2026-11-27T12:07:50.841Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次留一段不被圍看的個別製作時間。",
+            "action": "導師已在本人課內提供有限個別製作安排，不以退出公開展示評罰。",
+            "tradeoff": "少了同儕即時意見"
+          },
+          {
+            "id": 2,
+            "text": "今天先不做新步驟，依已做的部分給回饋。",
+            "action": "導師已停止本人可取消的新步驟要求，依真實半成品提供有限正常回饋。",
+            "tradeoff": "進度暫停"
+          },
+          {
+            "id": 3,
+            "text": "問他是否願意只請一位自己選、也願意的人看。",
+            "action": "導師已提出限單一自願伙伴的觀察邀請方式，未替伙伴答應或重新公開。",
+            "tradeoff": "可能仍有壓力，也可能找不到人"
+          },
+          {
+            "id": 4,
+            "text": "改用步驟草圖說明，不要求再把那角折一次。",
+            "action": "導師已提供原目標內的有限草圖表達替代，不追加成品或評罰媒材。",
+            "tradeoff": "看不到實際熟練度"
+          },
+          {
+            "id": 5,
+            "text": "下次正常課內再提供一次自選嘗試，不另外留校。",
+            "action": "導師已明示本人可安排正常課內的有限再次嘗試方式，不要求延長留校。",
+            "tradeoff": "需要等後續課程"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的全桌同步拍片，其他原學習照常。",
+            "action": "導師已撤回本人非必要同步操作拍攝提案，不取消正常個別支持。",
+            "tradeoff": "少一段整齊影片"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我剛也想插手把它做好，忍住，拿自己的廢紙折一個給自己玩。",
+          "action": "導師已以自有安全紙材製作私人折物，不接觸學生原件或替代必要回饋。",
+          "tradeoff": "自己費材料，也未必折得漂亮"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4092784422
+        },
+        "selectedIds": [
+          2,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "cbde24e2a7a8eae838dceef85e4eed6d177b6131b07ae3d0b94d8a7bbaf41bc4"
+      },
+      "consequenceDirections": {
+        "A": "教師滿足手癢，不改作者原作或要求同學讚美。",
+        "B": "疲倦者可停止，不將半成品冒充全部完成。",
+        "C": "可以說明想法，不把圖當成手作已完成。",
+        "D": "小範圍不等於自動安全自在，雙方可拒絕。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "da2e3149a09d887d0379505a41864bd62b927e408d2c23503dd2460c997e8e0b",
+    "draftSha256": "1c1a0af0e1042301d8a2fc52413234175cb4fb3b86268b4eb75652f21dcaf72a",
     "seedAssignmentVersion": 1
   }
 }

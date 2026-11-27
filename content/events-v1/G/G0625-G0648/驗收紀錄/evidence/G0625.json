@@ -15,14 +15,155 @@
     "G01",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0e0ad3ff300dbacdaf3beafefc9c5a6dfe0cc24c7cfd9df4c763d5e9be603598",
+      "checkedAt": "2026-11-27T12:07:50.821Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請體育老師用已核實的前段給回饋，不要求補做危險段。",
+            "action": "導師已向體育授課者提出依真實前段回饋的協調需求，未宣稱正式成績確定。",
+            "tradeoff": "看到的能力範圍有限"
+          },
+          {
+            "id": 2,
+            "text": "問體育老師能否提供不接近器材的等值替代。",
+            "action": "導師已向授課者提出安全等值替代詢問，未核准評量或指派新動作。",
+            "tradeoff": "替代方式需確認"
+          },
+          {
+            "id": 3,
+            "text": "我畫一張一般步伐示意給他看，不請他重新做動作。",
+            "action": "導師已以自有內容製作一般步伐示意供自願參考，未指導危險實作或代體育教師評量。",
+            "tradeoff": "少了身體感受，也未必看圖就懂"
+          },
+          {
+            "id": 4,
+            "text": "讓他自願畫出第一輪調整哪一步，不再用身體試一次。",
+            "action": "導師已提出可拒絕的有限步伐圖記邀請，不要求重演或評定體育成績。",
+            "tradeoff": "圖未必說得完整"
+          },
+          {
+            "id": 5,
+            "text": "這次不作班級成果展示，只把個別回饋留給本人。",
+            "action": "導師已撤回本人非必要班級成果分享，保留授課者必要個別回饋。",
+            "tradeoff": "同伴看不到成果"
+          },
+          {
+            "id": 6,
+            "text": "邀學生另在正常短談說說停下時最怕哪件事。",
+            "action": "導師已發出有限自願支持短談邀請，未約成或要求描述危險動作。",
+            "tradeoff": "要另用工作空檔"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我本來也想趁機拍自己很會運動，自己的那段私人挑戰就算了。",
+          "action": "導師已取消本人未開始的非必要私人運動拍片提案，不占用課程或停用器材。",
+          "tradeoff": "少了炫耀的片段"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2748515125
+        },
+        "selectedIds": [
+          3,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "254232d06a84623e191e4b215ec749840d5ad117343ba23fe052bf52694c0d5e"
+      },
+      "consequenceDirections": {
+        "A": "原成果可被理解，正式評量仍由授課者決定。",
+        "B": "可以談已學會的調整，圖不作正式動作完成證明，實際體育回饋仍由授課者負責。",
+        "C": "若不可行不能先令學生做，必要支持不因等待中斷。",
+        "D": "教師不再用學生場地救自己的表現，正常課程仍由授課者安排。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通3取消完成照可能落在普通5取消班級成果展示範圍，改為教師自製一般步伐示意而非另一種取消展示。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "請體育老師用已核實的前段給回饋，不要求補做危險段。",
+                "action": "導師已向體育授課者提出依真實前段回饋的協調需求，未宣稱正式成績確定。",
+                "tradeoff": "看到的能力範圍有限"
+              },
+              {
+                "id": 2,
+                "text": "問體育老師能否提供不接近器材的等值替代。",
+                "action": "導師已向授課者提出安全等值替代詢問，未核准評量或指派新動作。",
+                "tradeoff": "替代方式需確認"
+              },
+              {
+                "id": 3,
+                "text": "取消我自己加的完成照，今天不為照片等補做。",
+                "action": "導師已取消本人非必要完整動作拍照安排，不動正式評量與安全處置。",
+                "tradeoff": "少一張好看的紀錄"
+              },
+              {
+                "id": 4,
+                "text": "讓他自願畫出第一輪調整哪一步，不再用身體試一次。",
+                "action": "導師已提出可拒絕的有限步伐圖記邀請，不要求重演或評定體育成績。",
+                "tradeoff": "圖未必說得完整"
+              },
+              {
+                "id": 5,
+                "text": "這次不作班級成果展示，只把個別回饋留給本人。",
+                "action": "導師已撤回本人非必要班級成果分享，保留授課者必要個別回饋。",
+                "tradeoff": "同伴看不到成果"
+              },
+              {
+                "id": 6,
+                "text": "邀學生另在正常短談說說停下時最怕哪件事。",
+                "action": "導師已發出有限自願支持短談邀請，未約成或要求描述危險動作。",
+                "tradeoff": "要另用工作空檔"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我本來也想趁機拍自己很會運動，自己的那段私人挑戰就算了。",
+              "action": "導師已取消本人未開始的非必要私人運動拍片提案，不占用課程或停用器材。",
+              "tradeoff": "少了炫耀的片段"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 566566925
+            },
+            "selectedIds": [
+              5,
+              1,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": "emotional",
+              "C": 1,
+              "D": 5
+            },
+            "optionsDigest": "9f9ade7998ab57a39609c21845622518d67aba30c19210239e39eee8f5714b09"
+          },
+          "previousConsequenceDirections": {
+            "A": "若不可行不能先令學生做，必要支持不因等待中斷。",
+            "B": "教師不再用學生場地救自己的表現，正常課程仍由授課者安排。",
+            "C": "原成果可被理解，正式評量仍由授課者決定。",
+            "D": "保留隱私，不把報告風險的學生推成安全代言人。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f308974411d26b7292e1427d424edaaffb65e78ec3ea010fa0847cd64c229827",
+    "draftSha256": "0e0ad3ff300dbacdaf3beafefc9c5a6dfe0cc24c7cfd9df4c763d5e9be603598",
     "seedAssignmentVersion": 1
   }
 }

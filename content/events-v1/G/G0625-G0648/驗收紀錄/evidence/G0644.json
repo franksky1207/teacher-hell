@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d8138970d73f5686917b547474bad011a8d8444293adc820674dd5f5f637a839",
+      "checkedAt": "2026-11-27T12:07:50.840Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只在原回饋範圍給本人看，不作公開分享。",
+            "action": "導師已將本人可決定的本次回饋限於個別範圍，未公開學生原句。",
+            "tradeoff": "同學少一個範例"
+          },
+          {
+            "id": 2,
+            "text": "這行讓他自己保存，不作額外收件。",
+            "action": "導師已取消本人非必要讀後句收件要求，不動原正式作業與必要支持。",
+            "tradeoff": "教師看不到這份小成果"
+          },
+          {
+            "id": 3,
+            "text": "全班改看我自寫的一行，各自想不必說。",
+            "action": "導師已以自有中性短句承接原默讀活動，不索取學生私語或強制發言。",
+            "tradeoff": "少了學生聲音"
+          },
+          {
+            "id": 4,
+            "text": "詢問他是否想只和我口頭談意思，不念原句。",
+            "action": "導師已發出限定個別意思交流的自願邀請，未取得同意或要求當場開口。",
+            "tradeoff": "他可能仍不願說"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的同桌互選佳句，只保留各自閱讀。",
+            "action": "導師已撤除本人非必要同桌佳句互選安排，保留正常閱讀及必要回饋。",
+            "tradeoff": "少了互看活動"
+          },
+          {
+            "id": 6,
+            "text": "提供另張空白書籤，願意的人用自己的話留一句。",
+            "action": "導師已提供校內可支用空白書籤供自願私人短記，不收件、評分或要求複寫原句。",
+            "tradeoff": "有人可能不寫"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我那篇寫一半的私人感想也不想給人看，自己的社群草稿先不發。",
+          "action": "導師已停止發布本人未發的私人讀書草稿，不含學生文字或妨礙必要教學。",
+          "tradeoff": "少了朋友回應"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2638374655
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "d2981a4c14299fc28e7845e4cac6017a4229f3d91a877bb4e5679d3bde5a1b5d"
+      },
+      "consequenceDirections": {
+        "A": "有新的私人出口，不把舊句重寫成必交成果。",
+        "B": "正常學習回饋仍有其他方式，不把不交私人句子當沒讀。",
+        "C": "作品仍有回應，作者不必用公開證明認真。",
+        "D": "教師可留不完整的話，不用學生句子替自己發文。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fba6abb722de8a0706353c68588285a7af22d1833721e2217fa7636b5aed4db6",
+    "draftSha256": "d8138970d73f5686917b547474bad011a8d8444293adc820674dd5f5f637a839",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ba32d3e8c8bb1f15fbd1cbe76f53ffd0519481b4d5f555b71c204eb04511981a",
+      "checkedAt": "2026-11-27T12:07:50.837Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只說我確實看到的一個細節，不給分數。",
+            "action": "導師已對本人同意展示的私人作品提供有限具體觀察，不評分或宣稱品質認證。",
+            "tradeoff": "他可能還想聽總評"
+          },
+          {
+            "id": 2,
+            "text": "這次不評作品，直接說我得照自己的時間走。",
+            "action": "導師已婉拒本次私人作品評價並依本人私人安排離開，不替同事收物或承諾改日必評。",
+            "tradeoff": "可能讓他失落"
+          },
+          {
+            "id": 3,
+            "text": "問他是否願意自己選一頁收進本子，不給我審。",
+            "action": "導師已提出自願私人作品收存建議，尚未代收或取得其選擇。",
+            "tradeoff": "他可能仍猶豫"
+          },
+          {
+            "id": 4,
+            "text": "邀他日後去看公共展覽，今天不再改這頁。",
+            "action": "導師已發出可拒絕的日後私人觀展邀請，未約成、購票或要求停作。",
+            "tradeoff": "要另配時間與自付費用"
+          },
+          {
+            "id": 5,
+            "text": "我也拿自己原有的小作互看，先問他想不想看。",
+            "action": "導師已提出本人自有作品的自願私人互看邀請，未取得同意或索取評分。",
+            "tradeoff": "可能又變互相比較"
+          },
+          {
+            "id": 6,
+            "text": "這次不收照片，只聊他最喜歡做哪一步。",
+            "action": "導師已發出限定私人手作過程的可拒絕聊天邀請，不拍攝或留存對方作品。",
+            "tradeoff": "少了保存畫面的機會"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那一頁我看得也手癢，回家拿自己的紙做個歪的，不拿來跟他比。",
+          "action": "導師已以自有材料進行私人短手作，不使用同事原作或宣稱完成同等技法。",
+          "tradeoff": "花私人材料，未必做得出來"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3824946620
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "86eca97b6c41ea992002ac50fd8d3ccf0de4e0716ef1ae94259b89ad07152d8f"
+      },
+      "consequenceDirections": {
+        "A": "可自行決定封存，教師不能把提議當對方已收好。",
+        "B": "若願意才分享，不把觀看交換成他必須肯定教師。",
+        "C": "教師滿足手作欲，不要求同事教到會或借工具。",
+        "D": "朋友可欣賞，不能讓一句肯定變成必經批准。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "49ec7e18f8824f3b4931f14ba118f7d358bb12e8a333655ac7d1dc16bd3b62fe",
+    "draftSha256": "ba32d3e8c8bb1f15fbd1cbe76f53ffd0519481b4d5f555b71c204eb04511981a",
     "seedAssignmentVersion": 1
   }
 }

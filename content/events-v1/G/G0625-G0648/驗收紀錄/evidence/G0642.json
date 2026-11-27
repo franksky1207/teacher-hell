@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "eac7de40dbcf002a8e0a768aef670454dc8079781f31db06be152080e9107162",
+      "checkedAt": "2026-11-27T12:07:50.838Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只把這次當有條件的單次例子，不推成常態。",
+            "action": "導師已將本人可決定的展示範圍限縮為真實單次例子，不改必要回報事實。",
+            "tradeoff": "不能寫出漂亮普遍結論"
+          },
+          {
+            "id": 2,
+            "text": "撤掉我提出的額外成功案例宣傳，正式紀錄照交。",
+            "action": "導師已取消本人非必要成功案例宣傳，不刪正式成果紀錄或必要更正。",
+            "tradeoff": "少一次曝光"
+          },
+          {
+            "id": 3,
+            "text": "共同向主管提出非必要臨時工作量的檢視需求。",
+            "action": "導師已向同事發出有限工作量建議共提邀請，未取得署名同意或宣稱主管核准。",
+            "tradeoff": "未必獲調整"
+          },
+          {
+            "id": 4,
+            "text": "邀他只比較已有合法紀錄中的兩個時段，不再加做一次。",
+            "action": "導師已提出限定既有可用資料的成人方法比對邀請，未取得同意或完成比較。",
+            "tradeoff": "資料未必可比"
+          },
+          {
+            "id": 5,
+            "text": "我另寫一頁備課問題清單，不將它叫成成效報告。",
+            "action": "導師已製作本人備課用的未解問題清單，明示不是已驗證成果，不含未授權個資。",
+            "tradeoff": "多花備課時間"
+          },
+          {
+            "id": 6,
+            "text": "請教學承辦詢問未來是否可在正常課內作有限觀察。",
+            "action": "導師已提出依校規及必要同意的未來教學觀察詢問，未開始觀察或宣稱結果。",
+            "tradeoff": "需等核准與同意"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想證明自己沒寫錯，先去私人空檔解一道自己的題，不抓學生再跑一輪給我看。",
+          "action": "導師已以自有可用題目進行本人私人試解，不新增學生任務或更改真實回報。",
+          "tradeoff": "自己花時間，解出也證明不了原結論"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2169318362
+        },
+        "selectedIds": [
+          6,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "1fbd0c9ee4b8e5f0f5b33786b36f10a1750a1ae33baf6e738e2a54a31367437c"
+      },
+      "consequenceDirections": {
+        "A": "若不可行不能為驗證占學生休息，原教學照常。",
+        "B": "不拿學生結果粉飾排班，真實成果不被刪掉。",
+        "C": "能看出樣本限制，不捏造缺資料的部分。",
+        "D": "教師有不服氣，不能把私下成功偷換為全班成效。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fd859d3476b1cd50edc2a48ecdbb237abc97fc33de560a3feacdd0e01bf39662",
+    "draftSha256": "eac7de40dbcf002a8e0a768aef670454dc8079781f31db06be152080e9107162",
     "seedAssignmentVersion": 1
   }
 }

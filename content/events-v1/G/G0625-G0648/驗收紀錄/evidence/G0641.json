@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "07ddc6b7a5a0d2339037e690ffedb6be650d87fba7be7adbd71f5ef80427ea86",
+      "checkedAt": "2026-11-27T12:07:50.838Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留正常原進度，給他一個不需全班停下的接入點。",
+            "action": "導師已提供本人課內有限個別接續材料，未要求全班等候或更改出勤事實。",
+            "tradeoff": "他少了前段共同時間"
+          },
+          {
+            "id": 2,
+            "text": "把我加的帶頭者開場取消，以後由我直接開始。",
+            "action": "導師已取消自身非必要學生領頭暖場安排，不改必要課務時間。",
+            "tradeoff": "少了學生帶氣氛"
+          },
+          {
+            "id": 3,
+            "text": "這次先做各自可起頭的短練，不排同步討論。",
+            "action": "導師已在自身授課範圍安排有限個別起始練習，不將晚到者另加量。",
+            "tradeoff": "少了即時合作"
+          },
+          {
+            "id": 4,
+            "text": "邀他另選正常課內的一段補問，不占現在休息。",
+            "action": "導師已提出有限正常課內補問選擇，未排成額外留校義務。",
+            "tradeoff": "回饋較晚"
+          },
+          {
+            "id": 5,
+            "text": "提供一張只列今天練習順序的簡單卡，人人可用。",
+            "action": "導師已製作不含個人出勤資料的自有流程卡供本班正常使用。",
+            "tradeoff": "少了口頭帶領的熱鬧"
+          },
+          {
+            "id": 6,
+            "text": "取消我自己加的早到連續紀錄展示。",
+            "action": "導師已撤回本人非必要早到連續排名，不刪必要出勤紀錄。",
+            "tradeoff": "少了整齊的表揚"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也老想當第一個，私人晨間打卡先別發，讓自己慢慢吃完早餐。",
+          "action": "導師已於合法私人早餐時段停止本人非必要搶早打卡，仍按時履行正式職務。",
+          "tradeoff": "少了搶先的成就感"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3489030416
+        },
+        "selectedIds": [
+          6,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "75156a9837f450b4afffba7f4621ab6fd059a0981ab3f2d381fbcb35a8c7ad00"
+      },
+      "consequenceDirections": {
+        "A": "誰都能接進來，不請他替所有人寫筆記。",
+        "B": "到場先後不綁全組，教師仍須回應個別需求。",
+        "C": "不讓車班不穩變人格評價，正式出勤仍記實。",
+        "D": "教師處理自己的競爭心，不遲到職務或等學生代開場。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ba2b07c4dd2a770580f7b7664632223bcf67b01d1aa5772b1272cc30da0d61e9",
+    "draftSha256": "07ddc6b7a5a0d2339037e690ffedb6be650d87fba7be7adbd71f5ef80427ea86",
     "seedAssignmentVersion": 1
   }
 }

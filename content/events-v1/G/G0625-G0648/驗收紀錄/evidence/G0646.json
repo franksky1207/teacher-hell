@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "251e7a4aad26f376408d44a73a0c7c57093300c077e143da3832ee26c5757634",
+      "checkedAt": "2026-11-27T12:07:50.842Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "沿用原本共同可用的教法，不採這套教材。",
+            "action": "導師已維持本人既有可用教學方式，婉拒本次採用私人套裝教材。",
+            "tradeoff": "少了現成設計"
+          },
+          {
+            "id": 2,
+            "text": "查校內是否已有可用公用版本，先不改課。",
+            "action": "導師已向校內資源窗口詢問公用教材與授權條件，未取得資源或改定課程。",
+            "tradeoff": "可能查不到"
+          },
+          {
+            "id": 3,
+            "text": "只請同事自願談一個一般方法，不看原書頁。",
+            "action": "導師已提出限定一般教學方法的成人自願交流邀請，未取得答應或取用教材內容。",
+            "tradeoff": "少了具體套裝細節"
+          },
+          {
+            "id": 4,
+            "text": "我自己另編一個不同例子，維持原學習目標。",
+            "action": "導師已以自有內容另作本課例題，不複製私人教材或要求學生購買。",
+            "tradeoff": "多花備課時間"
+          },
+          {
+            "id": 5,
+            "text": "取消我原想加的品牌教材成果展示。",
+            "action": "導師已撤回本人非必要品牌教材展示提案，不影響原正常教學。",
+            "tradeoff": "少一次漂亮展示"
+          },
+          {
+            "id": 6,
+            "text": "邀同事在原課權限內自願短段協教，內容由他另自備。",
+            "action": "導師已提出需校規與雙方同意的有限協教邀請，未排定課務或取得教材使用權。",
+            "tradeoff": "要另配時間，也可拒絕"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想買，先用自己的錢查清楚私人版再下單，不叫大家跟。",
+          "action": "導師已查詢本人私人使用方案並自費訂購適用單人教材，不報帳、轉借帳密或要求學生購買。",
+          "tradeoff": "自己多花錢，未必合用"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3586044256
+        },
+        "selectedIds": [
+          4,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "1da21b27f17cdd0f9ef08b0627543e66a0fdd450b22feb14cafe77e52d72b680"
+      },
+      "consequenceDirections": {
+        "A": "學生不需添購，仍可正常學習。",
+        "B": "不依賴品牌，也不能複製受保護表達換皮。",
+        "C": "私人消費不成全班規定或教學成效證明。",
+        "D": "查詢不是取得授權，不能要家庭先借給全班頂著。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "953d7ded6e6184e144b31175a1655c8272ad18d9bfc4cea0604ef0af6b21b0a3",
+    "draftSha256": "251e7a4aad26f376408d44a73a0c7c57093300c077e143da3832ee26c5757634",
     "seedAssignmentVersion": 1
   }
 }

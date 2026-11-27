@@ -15,14 +15,82 @@
     "G02",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "aacd20ae48749aeedc442e5e445385df263d934483815b14ea7719ca6d4d5951",
+      "checkedAt": "2026-11-27T12:07:50.844Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消我額外請他代傳班級消息的工作，正式訊息由成人發布。",
+            "action": "導師已收回本人非必要學生代傳請求，不取消成人既有公告及更正責任。",
+            "tradeoff": "教師多做一次"
+          },
+          {
+            "id": 2,
+            "text": "讓他只保留自己願意的非急班務提問，不替他人承諾。",
+            "action": "導師已限縮本人原自願班務訊息任務至非急提問範圍，不移交正式公告權。",
+            "tradeoff": "訊息流轉可能慢些"
+          },
+          {
+            "id": 3,
+            "text": "提供一張來源核對的簡單例子，全班不點名看。",
+            "action": "導師已用自有中性示例進行有限來源辨識，不公開學生原轉傳或家庭訊息。",
+            "tradeoff": "要花正常班務時間"
+          },
+          {
+            "id": 4,
+            "text": "邀他另談哪些代傳最想拒絕，不要求家庭紀錄。",
+            "action": "導師已發出限定本人訊息負擔的自願支持邀請，未約成或蒐集他人通訊。",
+            "tradeoff": "要另排工作短談"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的最快轉發表揚。",
+            "action": "導師已撤回本人非必要訊息速度排名，不刪必要事件紀錄。",
+            "tradeoff": "少了速度成就感"
+          },
+          {
+            "id": 6,
+            "text": "問輔導窗口有哪些適合的自願支持時段，先給他選。",
+            "action": "導師已查詢既有自願支持時段資訊，未代學生報名或省略法定程序。",
+            "tradeoff": "時段未必適合"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也老是搶第一個回，自己的私人群組這次先不接話，等朋友把問題講完。",
+          "action": "導師已暫停本人非急私人群聊的搶答，未退出必要聯絡或轉傳學生資料。",
+          "tradeoff": "少了搶答的存在感"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 302941121
+        },
+        "selectedIds": [
+          6,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "4fdd79a58f2f88ea37c0495b005dd07545f3a8ed0b7584f8ccb448ba3ed976d0"
+      },
+      "consequenceDirections": {
+        "A": "不再以快而非準鼓勵，正常主動求助仍被接住。",
+        "B": "詢問不等於本人同意參與，必要處置不等待。",
+        "C": "能學辨識，不拿這次截圖當公開羞辱材料。",
+        "D": "教師處理自己的習慣，不對公務或學生急件裝沒看到。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c0a9ff28ef43b2dd9194f1d92c46e3a2b4abbb9f9f5f355d1852158c4895e2fa",
+    "draftSha256": "aacd20ae48749aeedc442e5e445385df263d934483815b14ea7719ca6d4d5951",
     "seedAssignmentVersion": 1
   }
 }
